@@ -1,0 +1,758 @@
+{
+ "slug": "attacks-rewritten-as-mandates",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "Chainguard keeps a public ledger of software supply-chain attacks on its AI threat protection page: 28 incidents from 28 May 2024 to 8 October 2026, 23 of them from 2026.",
+   "section": "ledger",
+   "quote": "The list has 28 incidents, from 28 May 2024 to 8 October 2026.",
+   "about": [
+    "entity:chainguard",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 28,
+    "unit": "incidents",
+    "as_of": "2026-10-13"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "Of the 28 incidents in the ledger, 23 are from 2026.",
+   "section": "in-short",
+   "quote": "23 of the 28 are from 2026.",
+   "about": [
+    "entity:chainguard",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 23,
+    "of": 28,
+    "unit": "incidents from 2026",
+    "as_of": "2026-10-13"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Chainguard's framing is that a sophisticated supply chain attack used to need time, resources and a skilled team, and AI has removed all three constraints.",
+   "section": "ledger",
+   "quote": "AI has removed all three constraints.",
+   "about": [
+    "entity:chainguard",
+    "concept:supply-chains"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Counting the vectors, an incident can have two: an install-time hook ran the payload in 17, a maintainer account or token was taken over in 16, a typosquat in 5, a CI workflow in 3, tags repointed in 3, dependency confusion in 2.",
+   "section": "ledger",
+   "quote": "an install-time hook ran the payload in 17, a maintainer account or token was taken over in 16",
+   "about": [
+    "concept:supply-chains",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 17,
+    "of": 28,
+    "unit": "incidents where an install-time hook ran the payload",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "In the Trivy incident compromised credentials force-pushed 75 of 76 version tags, and five days later credentials stolen through that breach published two backdoored versions of LiteLLM, a package with 280 million monthly downloads.",
+   "section": "ledger",
+   "quote": "A security scanner's breach became an AI gateway's breach, five days later.",
+   "about": [
+    "concept:supply-chains",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "An Agent Behaviour Policy has four columns: the reach, measured from what the agent is connected to; the mandate, what it was asked to do; the gap between them; and the barrier on each row of the gap.",
+   "section": "reach",
+   "quote": "the reach, measured from what the agent is connected to; the mandate, what it was asked to do; the gap between them; and the barrier on each row of the gap",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "hypothesis",
+   "text": "Read with those four columns, every row of the ledger is the same shape: a credential, a tag or a build step could do far more than it was meant to, and the attacker used the difference, reach beyond mandate.",
+   "section": "reach",
+   "quote": "By my reading, the other rows have the same shape.",
+   "about": [
+    "concept:reach-beyond-mandate",
+    "concept:behaviour-policy",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "In the tensorlake row, a maintainer's token could publish any version of any package the maintainer owned, while the mandate was to publish releases of one SDK from a reviewed build.",
+   "section": "reach",
+   "quote": "the maintainer's token could publish any version of any package the maintainer owned.",
+   "about": [
+    "concept:reach-beyond-mandate",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "As far as the public accounts show, nobody had written down that these credentials were for one thing, so nothing could notice when they were used for another.",
+   "section": "reach",
+   "quote": "nobody had written down that these credentials were for one thing, so nothing could notice when they were used for another.",
+   "about": [
+    "concept:reach-beyond-mandate",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "By our reading, a consumer-side control, rebuilt from source, a cooldown, no install scripts, an allowlisted registry, pinned actions, would likely have held in 26 of the 28 incidents.",
+   "section": "barriers",
+   "quote": "By our reading, one of these would likely have held in 26 of the 28.",
+   "about": [
+    "concept:consumer-side-barrier",
+    "concept:supply-chains",
+    "entity:chainguard"
+   ],
+   "value": {
+    "n": 26,
+    "of": 28,
+    "unit": "incidents a consumer-side control would likely have held",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "A publisher-side mandate, trusted publishing, a scope per package, two people to release, short-lived tokens, pull request text as data, appears in 16 of the 28, and both kinds in 14.",
+   "section": "barriers",
+   "quote": "One of these appears in 16. Only the publisher can do it, and every item is a mandate",
+   "about": [
+    "concept:publisher-side-mandate",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 16,
+    "of": 28,
+    "unit": "incidents a publisher-side mandate would likely have held",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The consumer side needs nobody's cooperation and is what Chainguard sells; the publisher side makes the bad publish impossible rather than detected, and in two incidents it is the only kind that helps.",
+   "section": "barriers",
+   "quote": "The publisher side makes the bad publish impossible rather than detected.",
+   "about": [
+    "concept:consumer-side-barrier",
+    "concept:publisher-side-mandate",
+    "entity:chainguard"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "The same move as Hope or enforcement: the share of one customer service agent's rules kept only by good behaviour fell from 97% to 23% when the rules moved into the platform.",
+   "section": "barriers",
+   "quote": "the share of its rules kept only by good behaviour fell from 97% to 23% when the rules moved into the platform.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:publisher-side-mandate"
+   ],
+   "value": {
+    "n": 23,
+    "unit": "percent of rules kept by hope after the move",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The first incident in the ledger, May 2024, was a hallucinated package name, huggingface-cli, which ChatGPT repeatedly suggested; registered as a proof of concept, it was downloaded more than 30,000 times in three months.",
+   "section": "agents",
+   "quote": "registered the name as a proof of concept, and it was downloaded more than 30,000 times in three months.",
+   "about": [
+    "entity:chatgpt",
+    "concept:supply-chains",
+    "concept:reach-beyond-mandate"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Chainguard's own agent fleet, skillup, opened 4,746 standards-fix pull requests across its repositories over eight weeks.",
+   "section": "agents",
+   "quote": "Over the last 8 weeks, across our repositories, skillup opened 4,746 standards-fix pull requests.",
+   "about": [
+    "entity:chainguard",
+    "entity:maxime-greau",
+    "concept:multi-agent",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 4746,
+    "unit": "pull requests in eight weeks",
+    "as_of": "2026-06-24"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "A confidence bot graded 3,044 of those pull requests; of 1,117, it judged 840, 75.2%, low-risk and merged them with no human in the loop.",
+   "section": "agents",
+   "quote": "it judged 840 (75.2%) as low-risk and merged them with no human in the loop.",
+   "about": [
+    "entity:chainguard",
+    "concept:human-in-the-loop",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 840,
+    "of": 1117,
+    "unit": "pull requests merged with no human in the loop",
+    "as_of": "2026-06-24"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Read as a policy, Chainguard's post has three of the four columns: the reach is configured, the barriers are in code, and the gap was found by accident; the mandate lives in prompts, bot configuration and a blog post.",
+   "section": "agents",
+   "quote": "The mandate is there too, in good sentences, but it lives in prompts, bot configuration and a blog post.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:chainguard",
+    "concept:reach-beyond-mandate"
+   ],
+   "refs": [
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "hypothesis",
+   "text": "The supply chain for an agent needs three records, trusted inputs, a written mandate, and provable outputs and memory, and only the first has a market yet.",
+   "section": "records",
+   "quote": "the supply chain for an agent needs three records, and only the first has a market yet.",
+   "about": [
+    "concept:three-records",
+    "concept:supply-chains",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Chainguard's hardened agent skills come from a public registry where each skill ships a HARDENING.md recording the exact commit it was hardened from and whether its instructions were changed.",
+   "section": "records",
+   "quote": "the exact commit Chainguard hardened from",
+   "about": [
+    "entity:chainguard",
+    "concept:three-records",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "A hardened skill says nothing about what the agent that loads it may do with the mailbox, repository or publish token; that is the Agent Behaviour Policy, and RiskMandate is the work of writing these down per agent and deployment.",
+   "section": "records",
+   "quote": "RiskMandate is the work of writing these down, per agent and per deployment, for the people who will be asked about them.",
+   "about": [
+    "entity:riskmandate",
+    "concept:behaviour-policy",
+    "concept:liability-line",
+    "concept:three-records"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "For provable outputs and memory the newsroom uses sgit: an encrypted, versioned vault per unit of work, a branch per agent, a reviewed merge, content-addressed history, and a server that holds only ciphertext.",
+   "section": "records",
+   "quote": "an encrypted, versioned vault per unit of work, with a branch per agent, a reviewed merge, content-addressed history, and a server that holds only ciphertext.",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:three-records",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "sgit is open source, Apache-2.0, pure Python with two runtime dependencies, published on PyPI and as a container image built on python:3.12-slim.",
+   "section": "oss",
+   "quote": "sgit is open source: Apache-2.0, pure Python, two runtime dependencies, published on PyPI and as a container image",
+   "about": [
+    "entity:sgit",
+    "entity:apache-2",
+    "entity:python",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "Moving sgit's container image onto a minimal, rebuilt base is a one-line change in its Dockerfile, and for a tool that handles vault keys it is the obvious next step.",
+   "section": "oss",
+   "quote": "Moving it onto a minimal, rebuilt base is a one-line change in its Dockerfile",
+   "about": [
+    "entity:sgit",
+    "entity:chainguard",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Chainguard's pricing offers five free images per organisation, Libraries are priced per language by developers, the skills registry is free to pull from, and EmeritOSS looks after mature projects whose maintainers stepped back.",
+   "section": "oss",
+   "quote": "five images to test and deploy in production for free",
+   "about": [
+    "entity:chainguard",
+    "concept:pricing",
+    "concept:open-source"
+   ],
+   "refs": [
+    "r06",
+    "r05",
+    "r07"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "question",
+   "text": "No published path was found for small, active open source projects to join a hardened registry; on what terms can they join the trusted list, when that is part of the security model?",
+   "section": "oss",
+   "quote": "I could not find a published path for the other end: small, active projects, the long tail where many of the ledger's victims started.",
+   "about": [
+    "entity:chainguard",
+    "concept:open-source",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The incidents are Chainguard's and the columns are ours: names, dates, ecosystems and counts are from the ledger as published on 13 October 2026; the vectors, readings and barriers are the owner's reading.",
+   "section": "limits",
+   "quote": "The vectors, the reach and mandate readings and the barrier for each row are my reading, and they would draw some rows differently.",
+   "about": [
+    "entity:chainguard",
+    "concept:reach-beyond-mandate"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Would likely have held is a judgement: each incident was sorted by the control most likely to have stopped it, and no control was tested against these attacks.",
+   "section": "limits",
+   "quote": "no control was tested against these attacks here.",
+   "about": [
+    "concept:consumer-side-barrier",
+    "concept:publisher-side-mandate"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The four-column reading is a lens, not an audit: it has not been applied to any company's agents with their access, and the Chainguard examples are from what it has published.",
+   "section": "limits",
+   "quote": "The four-column reading is a lens, not an audit.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:chainguard"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The registry terms are as Chainguard's pages state; the owner has not asked Chainguard about open source terms, and the gap described is in what is published.",
+   "section": "limits",
+   "quote": "I have not asked Chainguard about open source terms yet",
+   "about": [
+    "entity:chainguard",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The image change is planned, not made: sgit's image is still built on python:3.12-slim as the article goes out.",
+   "section": "limits",
+   "quote": "The image change is planned, not made.",
+   "about": [
+    "entity:sgit",
+    "entity:python"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The article was written from two voice memos and a message of 13 October 2026, the night before Chainguard Assemble London, from Chainguard's public pages and research done in an encrypted vault for the day.",
+   "section": "sources",
+   "quote": "the night before Chainguard Assemble London, written by this site's agent in the voice of this site from Chainguard's public pages",
+   "about": [
+    "concept:voice-memo",
+    "entity:chainguard-assemble-london",
+    "entity:dinis-cruz",
+    "entity:london"
+   ],
+   "refs": [
+    "r08"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c24",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c23"
+  }
+ ],
+ "entities": [
+  {
+   "id": "chainguard",
+   "role": "keeps the ledger of 28 attacks, sells the consumer-side controls, and runs the agent fleet the article reads as a policy"
+  },
+  {
+   "id": "chatgpt",
+   "role": "hallucinated the package name huggingface-cli in the ledger's first incident"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the work of writing mandates down per agent and deployment"
+  },
+  {
+   "id": "sgit",
+   "role": "the open source vault tool used for provable outputs and memory, whose image is to move to a rebuilt base"
+  },
+  {
+   "id": "apache-2",
+   "role": "sgit's licence"
+  },
+  {
+   "id": "python",
+   "role": "sgit is pure Python and its image is built on python:3.12-slim"
+  },
+  {
+   "id": "london",
+   "role": "where Chainguard Assemble was held on 14 October"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memos and holds editorial responsibility"
+  },
+  {
+   "id": "maxime-greau",
+   "role": "Chainguard engineer who wrote the post describing the skillup agent fleet"
+  },
+  {
+   "id": "chainguard-assemble-london",
+   "role": "the conference on 14 October 2026 whose lightning talk gave the article its title"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "reach-beyond-mandate",
+   "defined_here": true
+  },
+  {
+   "id": "consumer-side-barrier",
+   "defined_here": true
+  },
+  {
+   "id": "publisher-side-mandate",
+   "defined_here": true
+  },
+  {
+   "id": "three-records",
+   "defined_here": true
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.chainguard.dev/solutions/ai-threat-protection",
+   "title": "AI threat protection",
+   "by": "Chainguard",
+   "date": "2026-10-13",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.chainguard.dev/unchained/this-shit-is-hard-how-ai-keeps-our-code-on-standard",
+   "title": "This Sh*t is Hard: How AI keeps our code on standard",
+   "by": "Maxime Gréau",
+   "date": "2026-06-24",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://edu.chainguard.dev/chainguard/workspaces/overview.md",
+   "title": "Workspaces overview",
+   "by": "Chainguard",
+   "date": "2026-10-13",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://edu.chainguard.dev/chainguard/agent-skills/public-registry.md",
+   "title": "The public skills registry",
+   "by": "Chainguard",
+   "date": "2026-10-13",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://edu.chainguard.dev/chainguard/libraries/python/overview.md",
+   "title": "Libraries for Python",
+   "by": "Chainguard",
+   "date": "2026-10-13",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://www.chainguard.dev/pricing",
+   "title": "Pricing",
+   "by": "Chainguard",
+   "date": "2026-10-13",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-emeritoss",
+   "title": "Introducing EmeritOSS",
+   "by": "Chainguard",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.chainguard.dev/assemble-london-2026/agenda",
+   "title": "Assemble London agenda",
+   "by": "Chainguard",
+   "date": "2026-10-13",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-13",
+   "what": "The ledger read and counted, the memos recorded, the night before Chainguard Assemble London"
+  },
+  {
+   "date": "2026-10-14",
+   "what": "Chainguard Assemble London, with the lightning talk Attacks rewritten"
+  },
+  {
+   "date": "2024-05-28",
+   "what": "The first incident in the ledger, a hallucinated package name"
+  },
+  {
+   "date": "2026-10-08",
+   "what": "The last incident in the ledger, a compromised SDK"
+  },
+  {
+   "date": "2026-06-24",
+   "what": "Maxime Gréau's post on the skillup agent fleet"
+  }
+ ]
+}

@@ -1,0 +1,727 @@
+{
+ "slug": "agent-hooks-october-2026",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The technical people trying to control agents for real are reaching for hooks: small programs the agent's harness runs at fixed points, before and after a tool call, when a prompt is submitted, when the agent stops.",
+   "section": "top",
+   "quote": "small programs the agent's harness runs at fixed points, before a tool call, after it, when a prompt is submitted, when the agent stops",
+   "about": [
+    "concept:agent-tooling",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "The design has converged: at least ten agent tools, Claude Code, Codex, Gemini CLI, Copilot, Cursor, Devin Desktop, Grok Build, Factory, Augment and Kiro, document a hook before a tool call that can block it.",
+   "section": "in-short",
+   "quote": "At least ten agent tools document a hook before a tool call that can block it",
+   "about": [
+    "entity:claude-code",
+    "entity:codex",
+    "entity:gemini",
+    "entity:copilot",
+    "entity:cursor",
+    "concept:agent-tooling"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "agent tools with a blocking pre-tool hook, at least",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The tools differ where it matters for security: whether an organisation can force its own hooks, whether a failing hook blocks or lets the action through, whether repository hooks need trust, and whether anything sees the model's output.",
+   "section": "top",
+   "quote": "The design has converged; the security properties have not.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "A hook is a program the agent's harness runs at a fixed point in its loop, with the event on its input and a decision on its output; the pre-tool hook sees the tool and its full input and can allow, deny, ask or rewrite.",
+   "section": "what",
+   "quote": "A hook is a program the agent's harness runs at a fixed point in its loop",
+   "about": [
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Claude Code's reference lists 33 events from session start to configuration changes; most tools have ten to twenty, and on most, exit code 2 blocks.",
+   "section": "what",
+   "quote": "lists 33 events, from session start to configuration changes",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ],
+   "value": {
+    "n": 33,
+    "unit": "hook events in Claude Code's reference",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "This site already runs on hooks: one prints the agent's written policy back after every summary, and another appends the status report at the end of its answers.",
+   "section": "what",
+   "quote": "This site already runs on them.",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Anthropic has the richest surface, an allowManagedHooksOnly setting, and since version 2.1.295 an onFailure block option, because a policy hook with a wrong path or a crashing script lets everything through.",
+   "section": "platforms",
+   "quote": "a policy hook with a wrong path or a crashing script lets everything through",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:fail-closed"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Codex has hooks with a managed-only option, hosted tools such as web search not covered, and docs that call hooks a useful guardrail, not a complete enforcement boundary; ChatGPT has admin controls rather than hooks.",
+   "section": "platforms",
+   "quote": "Treat tool hooks as a useful guardrail, not a complete enforcement boundary.",
+   "about": [
+    "entity:openai",
+    "entity:codex",
+    "entity:chatgpt",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Gemini CLI is the only coding agent with documented hooks around the model call itself, BeforeModel and AfterModel, and it warns that project-level hooks are risky when opening untrusted projects.",
+   "section": "platforms",
+   "quote": "The only coding agent with documented hooks around the model call itself",
+   "about": [
+    "entity:google",
+    "entity:gemini",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "GitHub Copilot lets organisations install machine-wide policy hooks that load before all others, but command hook timeouts are always fail-open, even for admin-deployed policy hooks.",
+   "section": "platforms",
+   "quote": "Command hook timeouts are always fail-open, even for preToolUse and admin-deployed policy hooks.",
+   "about": [
+    "entity:github",
+    "entity:copilot",
+    "concept:fail-closed"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Cursor has hooks at four levels, Enterprise, Team, Project and User; crashes, timeouts and exit codes other than 2 fail open by default, with a failClosed option recommended for MCP hooks.",
+   "section": "platforms",
+   "quote": "Crashes, timeouts, and non-zero exit codes other than 2 fail open by default",
+   "about": [
+    "entity:cursor",
+    "concept:fail-closed"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "On most tools a hook that crashes, times out or returns something malformed lets the action through; a security hook with a bug is no hook at all unless fail closed is set.",
+   "section": "fail",
+   "quote": "A security hook with a bug is no hook at all",
+   "about": [
+    "concept:fail-closed",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Hooks only see what is routed through them: Anthropic's tracker has a case where a hook blocked an edit and the agent made the change through a tool the hook did not cover, closed not planned.",
+   "section": "fail",
+   "quote": "the agent made the change through a different tool the hook did not cover",
+   "about": [
+    "concept:agent-tooling",
+    "concept:reach",
+    "entity:anthropic"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Hooks run with the user's full permissions beside an agent with the same, so unless installed where the agent cannot write, the agent can change the files that define them.",
+   "section": "fail",
+   "quote": "execute shell commands with your full user permissions",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Hooks shipped in a repository are an attack surface: Check Point's Caught in the Hook, 25 February 2026, found hook commands in project settings ran automatically without confirmation, since patched.",
+   "section": "fail",
+   "quote": "hook commands defined in .claude/settings.json will run automatically without confirmation",
+   "about": [
+    "entity:check-point-research",
+    "entity:claude-code",
+    "concept:supply-chains"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "Before version 3.0.0 Cursor could execute workspace-defined Claude hook commands without approval, fixed in June 2026, and a September 2026 paper on attacker-controlled hook updates compromised all seven harnesses it evaluated.",
+   "section": "fail",
+   "quote": "could execute workspace-defined Claude hook commands",
+   "about": [
+    "entity:cursor",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 7,
+    "of": 7,
+    "unit": "harnesses compromised by attacker-controlled hook updates",
+    "as_of": "2026-09"
+   },
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "In a headless or SDK run Claude Code never shows the trust dialog and treats the folder as trusted, so a repository's hooks run unreviewed; and most hooks cannot see the model's output.",
+   "section": "fail",
+   "quote": "treats the folder as trusted",
+   "about": [
+    "entity:claude-code",
+    "concept:hooks-are-kernel-code"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The people who build hook collections agree: Trail of Bits says hooks are not a security boundary, guardrails not walls, and cc-safety-net says it is not a sandbox and a broken config never blocks anything.",
+   "section": "fail",
+   "quote": "The people who build hook collections agree.",
+   "about": [
+    "entity:trail-of-bits",
+    "concept:prompt-injection",
+    "concept:agent-isolation"
+   ],
+   "refs": [
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "In a throwaway repository a project-level hook implementing one rule of the site's policy stopped a push to a disallowed remote in a real headless run, and asked to try other ways the agent declined.",
+   "section": "test",
+   "quote": "the hook stopped the push to the other remote, and nothing arrived there",
+   "about": [
+    "entity:claude-code",
+    "concept:hope-or-enforcement",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "Run directly, the same hook let through a command whose text did not show where it would push, the limit of any hook that reads text rather than effects.",
+   "section": "test",
+   "quote": "which is the limit of any hook that reads text rather than effects",
+   "about": [
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The headless run also loaded the owner's user-level hooks, because hooks follow the user, and a status counter that reads command text counted the throwaway commit as the site's.",
+   "section": "test",
+   "quote": "a hook that infers behaviour from text cannot tell one repository from another",
+   "about": [
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "As a defender: make the organisation's hooks the only hooks, fail closed, hook every path to the same effect, watch the configuration, review repository settings before a headless run, and pair hooks with a boundary.",
+   "section": "defend",
+   "quote": "Hooks decide; the boundary holds.",
+   "about": [
+    "concept:agent-isolation",
+    "concept:fail-closed",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "OWASP's GenAI Security Project hosts the Agent Control Standard, built on declarative hooks: a separate guardian answers allow, deny, modify, ask or defer, using policy engines such as OPA or Cedar.",
+   "section": "standard",
+   "quote": "a separate guardian inspects what an agent is about to do, and answers with allow, deny, modify, ask or defer",
+   "about": [
+    "entity:owasp",
+    "entity:agent-control-standard",
+    "entity:open-policy-agent",
+    "entity:cedar"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "No cross-vendor specification is yet how the major coding agents expose their hooks, which is why the same hook still has to be written several times.",
+   "section": "standard",
+   "quote": "which is why the same hook still has to be written several times",
+   "about": [
+    "entity:agent-control-standard",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The map is from documentation read on 14 October 2026, partly by research agents; the quoted claims were re-checked and the cells marked unknown were not verified.",
+   "section": "limits",
+   "quote": "The map is from documentation.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Products move fast: several of these hook systems are months old and change release by release.",
+   "section": "limits",
+   "quote": "Several of these hook systems are months old and their behaviour is changing release by release.",
+   "about": [
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The test was one check in one tool; it shows a hook enforcing a rule and its limit, not a measure of any product's security.",
+   "section": "limits",
+   "quote": "The test was one check in one tool.",
+   "about": [
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The failure modes are described, not demonstrated; the sources are cited for anyone who needs the detail.",
+   "section": "limits",
+   "quote": "Failure modes are described, not demonstrated.",
+   "about": [
+    "concept:fail-closed"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 14 October 2026, written by the site's agent; four research agents read each vendor's documentation the same day, with the quoted claims re-checked.",
+   "section": "sources",
+   "quote": "The research was done the same day by four research agents reading each vendor's documentation",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "concept:multi-agent",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c20",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c12"
+  }
+ ],
+ "entities": [
+  {
+   "id": "anthropic",
+   "role": "Claude Code's hooks, the richest surface, and the issue tracker case"
+  },
+  {
+   "id": "claude-code",
+   "role": "33 hook events, managed-only hooks, onFailure block, and the test subject"
+  },
+  {
+   "id": "openai",
+   "role": "Codex hooks and ChatGPT's admin controls"
+  },
+  {
+   "id": "codex",
+   "role": "hooks with a managed-only option; hosted tools not covered"
+  },
+  {
+   "id": "chatgpt",
+   "role": "no user hooks; admin controls instead"
+  },
+  {
+   "id": "google",
+   "role": "Gemini CLI, the only agent with hooks around the model call"
+  },
+  {
+   "id": "gemini",
+   "role": "Gemini CLI's BeforeModel and AfterModel hooks"
+  },
+  {
+   "id": "github",
+   "role": "Copilot's machine-wide policy hooks"
+  },
+  {
+   "id": "copilot",
+   "role": "hooks whose timeouts are always fail-open"
+  },
+  {
+   "id": "cursor",
+   "role": "four-level hooks, fail open by default, and CVE-2026-48124"
+  },
+  {
+   "id": "owasp",
+   "role": "its GenAI Security Project hosts the Agent Control Standard"
+  },
+  {
+   "id": "open-policy-agent",
+   "role": "a policy engine the Agent Control Standard can use"
+  },
+  {
+   "id": "cedar",
+   "role": "a policy engine the Agent Control Standard can use"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site that already runs on hooks"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where to write about deploying hooks to govern agents"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, who ran the test and whose memo this is"
+  },
+  {
+   "id": "check-point-research",
+   "role": "Caught in the Hook, on hooks in project settings running without confirmation"
+  },
+  {
+   "id": "trail-of-bits",
+   "role": "its Claude Code configuration says hooks are guardrails, not walls"
+  },
+  {
+   "id": "agent-control-standard",
+   "role": "the open standard for runtime agent control, built on hooks"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-tooling",
+   "defined_here": true
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "fail-closed",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://code.claude.com/docs/en/hooks",
+   "title": "Claude Code hooks reference",
+   "by": "Anthropic",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://learn.chatgpt.com/docs/hooks",
+   "title": "Codex hooks",
+   "by": "OpenAI",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://geminicli.com/docs/hooks/",
+   "title": "Gemini CLI hooks",
+   "by": "Google",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://docs.github.com/en/copilot/reference/hooks-configuration",
+   "title": "Copilot hooks configuration",
+   "by": "GitHub",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://cursor.com/docs/agent/hooks",
+   "title": "Cursor hooks",
+   "by": "Cursor",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/",
+   "title": "Caught in the Hook",
+   "by": "Check Point Research",
+   "date": "2026-02-25",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://arxiv.org/abs/2609.03884",
+   "title": "Attacker-controlled hook updates",
+   "by": "arXiv 2609.03884",
+   "date": "2026-09",
+   "kind": "paper"
+  },
+  {
+   "id": "r08",
+   "url": "https://github.com/trailofbits/claude-code-config",
+   "title": "claude-code-config",
+   "by": "Trail of Bits",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r09",
+   "url": "https://github.com/kenryu42/cc-safety-net",
+   "title": "cc-safety-net",
+   "by": "kenryu42",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r10",
+   "url": "https://github.com/GenAI-Security-Project/agent-control-standard",
+   "title": "Agent Control Standard",
+   "by": "OWASP GenAI Security Project",
+   "date": "undated",
+   "kind": "standard"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo, the research by four agents, and the test in a throwaway repository"
+  },
+  {
+   "date": "2026-02-25",
+   "what": "Check Point publishes Caught in the Hook"
+  },
+  {
+   "date": "2026-06",
+   "what": "Cursor 3.0.0 fixes CVE-2026-48124"
+  },
+  {
+   "date": "2026-09",
+   "what": "A paper reports compromising all seven evaluated harnesses through hook updates"
+  }
+ ]
+}

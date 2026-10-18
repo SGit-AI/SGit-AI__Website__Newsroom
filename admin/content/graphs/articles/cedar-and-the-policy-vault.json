@@ -1,0 +1,809 @@
+{
+ "slug": "cedar-and-the-policy-vault",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "Cedar is the policy language to adopt rather than compete with: the aim is for agent behaviour policies to connect to what others already use, not to sit beside them as one more format.",
+   "section": "why",
+   "quote": "I want our agent behaviour policies to connect to what others are already using, not to sit beside them as one more format.",
+   "about": [
+    "entity:cedar",
+    "concept:behaviour-policy",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "AWS open-sourced Cedar on 10 May 2023 under the Apache License 2.0, written in Rust, as the first policy language built from the ground up to be verified formally.",
+   "section": "why",
+   "quote": "the first policy language built from the ground up to be verified formally",
+   "about": [
+    "entity:cedar",
+    "entity:aws",
+    "entity:apache-2",
+    "concept:open-source"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Cedar was accepted to the CNCF on 8 October 2025 at the Sandbox maturity level, and AWS names Cloudflare, MongoDB, StrongDM, Cloudinary and AWS services among adopters and maintainers.",
+   "section": "why",
+   "quote": "Cedar was accepted to CNCF on October 8, 2025 at the Sandbox maturity level",
+   "about": [
+    "entity:cedar",
+    "entity:cncf",
+    "entity:cloudflare",
+    "entity:aws"
+   ],
+   "refs": [
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "AgentCore Policy intercepts all agent traffic through AgentCore Gateways and evaluates each request against Cedar policies before allowing tool access, generating candidate policies from plain English and checking them with automated reasoning.",
+   "section": "why",
+   "quote": "evaluates each request against defined policies in the policy engine before allowing tool access",
+   "about": [
+    "entity:agentcore-policy",
+    "entity:cedar",
+    "entity:aws",
+    "concept:policy-as-code"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Sondera's open-source harness evaluates Cedar policies before an agent's actions execute, and the Cedar project's cedar-for-agents crate auto-generates a Cedar schema from an MCP server's tool descriptions.",
+   "section": "why",
+   "quote": "A crate for auto-generating a Cedar Schema for an MCP Server's tool descriptions.",
+   "about": [
+    "entity:cedar",
+    "entity:mcp",
+    "entity:sondera"
+   ],
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "Cedar in five ideas: default deny, forbid wins over permit, four parts to every request, principal, action, resource and context, a schema with a validator, and proof in Lean as well as tests.",
+   "section": "language",
+   "quote": "even if a permit policy is satisfied, any satisfied forbid policy overrides it, producing a Deny decision.",
+   "about": [
+    "entity:cedar",
+    "concept:policy-as-code"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The OOPSLA 2024 paper modelled Cedar in Lean and proved properties of its design, and the Lean case study says no new Cedar version is released unless its model, proofs and differential tests are current.",
+   "section": "language",
+   "quote": "No new Cedar version is released unless its model, proofs, and differential tests are current.",
+   "about": [
+    "entity:cedar",
+    "entity:lean",
+    "concept:provenance"
+   ],
+   "refs": [
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The paper finds Cedar's policies subjectively as readable as OpenFGA's and Rego's and objectively far faster.",
+   "section": "language",
+   "quote": "Cedar has equally or more readable policies, but (objectively) performs far better.",
+   "about": [
+    "entity:cedar",
+    "entity:open-policy-agent"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "The crosswalk: the grant is a permit and the schema's actions, a barrier is a forbid, the footprint is the entities, a skill row is a forbid on labels, and business layers are forbids on facts passed as context.",
+   "section": "crosswalk",
+   "quote": "Permit is the grant, forbid is the barrier, the schema is the footprint.",
+   "about": [
+    "concept:policy-crosswalk",
+    "concept:behaviour-policy",
+    "concept:footprint",
+    "entity:cedar"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Two things have no Cedar construct: the mandate, what the agent is for and why each limit exists, and the version in force, which set of rules applied to a given decision.",
+   "section": "crosswalk",
+   "quote": "Two things have no Cedar construct.",
+   "about": [
+    "concept:policy-crosswalk",
+    "concept:behaviour-policy",
+    "entity:cedar"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "decision",
+   "text": "Edges between Cedar's world and the behaviour policy's go in Cedar annotations: every demo policy carries one back to its ABP rule, skill row or layer, a fractal semantic graph move done in code.",
+   "section": "crosswalk",
+   "quote": "We do not need to replace either. We need edges between them, and Cedar gives us a place to put them: annotations.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:policy-crosswalk",
+    "entity:cedar"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "In AWS, Cedar policies live in a Verified Permissions policy store with a STRICT validation mode requiring a schema and IAM deciding who can change what; it is a current state, not a history.",
+   "section": "today",
+   "quote": "But the store is a current state, not a history.",
+   "about": [
+    "entity:amazon-verified-permissions",
+    "entity:aws",
+    "entity:cedar",
+    "concept:the-record"
+   ],
+   "refs": [
+    "r10",
+    "r11"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The API lists create, get, list, update and delete and none for versions, history or export; deleting a store permanently deletes its policies, and deletion protection is disabled for stores created through an API or SDK call.",
+   "section": "today",
+   "quote": "disabled for all policy stores created through an API or SDK call",
+   "about": [
+    "entity:amazon-verified-permissions",
+    "concept:the-record"
+   ],
+   "refs": [
+    "r11",
+    "r12"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "No signing or provenance mechanism for policies was found in Cedar or the store, so teams keep the source in a repository and push it, which gives history but leaves the rules plaintext and ties no decision back to its commit.",
+   "section": "today",
+   "quote": "I found no signing or provenance mechanism for policies, in Cedar or in the store.",
+   "about": [
+    "concept:provenance",
+    "entity:cedar",
+    "entity:amazon-verified-permissions"
+   ],
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "decision",
+   "text": "The site's agent built the demo on a local vault server with sgit 0.21.0 and cedarpy 4.12.2: a schema, four policy files with seven policies, the entities and the test cases, each a request with its expected decision.",
+   "section": "demo",
+   "quote": "this site's agent built it on a local vault server, with sgit 0.21.0 and cedarpy 4.12.2.",
+   "about": [
+    "entity:sgit",
+    "entity:cedar",
+    "concept:policy-vault",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "The gate validates every policy against the schema and runs every test before anything is committed: version one passed fourteen of fourteen and was tagged policies-v1.",
+   "section": "demo",
+   "quote": "Version one passed, fourteen of fourteen, and was pushed and tagged",
+   "about": [
+    "concept:policy-vault",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 14,
+    "of": 14,
+    "unit": "tests passed in version one",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The gate refused version two, a new forbid for ABP rule 2 without a schema change, because its attribute was not found in the context the schema gives a push; with schema and tests changed in the same commit, fifteen of fifteen passed.",
+   "section": "demo",
+   "quote": "A diff between the two tags shows the policy, the schema and the tests changing together, which is the unit I want",
+   "about": [
+    "concept:policy-vault",
+    "concept:behaviour-policy",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The sharp edge: Cedar skips a policy whose evaluation returns an error, so a version-two forbid sent a request in the old shape answered Allow with the error in the diagnostics; a forbid that cannot be evaluated fails open.",
+   "section": "demo",
+   "quote": "A forbid that cannot be evaluated fails open.",
+   "about": [
+    "entity:cedar",
+    "concept:fails-open",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "Validation before deployment is not optional, and an enforcement point should deny on any evaluation error, as Hooks are kernel code would ask of any hook that guards an action.",
+   "section": "demo",
+   "quote": "Validation before deployment is not optional, and an enforcement point should deny on any evaluation error",
+   "about": [
+    "concept:fails-open",
+    "concept:hooks-are-kernel-code",
+    "concept:policy-vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Each tag is signed by the clone that made it and verified on show; the enforcement point cloned with the read key only, was refused when it tried to write, loads only a verified tag and runs the gate again before deciding.",
+   "section": "demo",
+   "quote": "This vault was cloned read-only. To write, re-clone with the full vault key.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:policy-vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The enforcement point decided all fifteen test requests, eight allowed and seven denied, each denial named by the id of the policy that made it, and sealed every decision into an append lane with the hash of the previous record.",
+   "section": "demo",
+   "quote": "eight allowed, seven denied, each denial named by the",
+   "about": [
+    "concept:policy-vault",
+    "concept:vault-design",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 15,
+    "unit": "decisions sealed into the append lane",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The enforcement point holds an append token and nothing else, got 403 when it asked to list its own lane, and the auditor with the enum key read all fifteen back and found the chain intact.",
+   "section": "demo",
+   "quote": "The auditor, with the enum key, read all fifteen back and found the chain intact.",
+   "about": [
+    "concept:vault-design",
+    "concept:provenance",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "A decision took 1.2 milliseconds one at a time and 0.06 batched, and 200 sealed appends took 2.2 milliseconds each, on one machine.",
+   "section": "demo",
+   "quote": "A decision took 1.2 milliseconds one at a time and 0.06 batched; 200 sealed appends took 2.2 milliseconds each, on one machine.",
+   "about": [
+    "concept:policy-vault",
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 1.2,
+    "unit": "milliseconds per decision, one at a time",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "A vault adds distribution, a read key as a deployment credential that cannot change the rules; validation at both ends; evidence naming policy, tag and commit in a lane the decider cannot rewrite; and one versioned unit for English, Cedar, schema, tests and decisions.",
+   "section": "adds",
+   "quote": "A read key is a deployment credential that cannot change the rules.",
+   "about": [
+    "concept:policy-vault",
+    "concept:encryption-and-keys",
+    "concept:liability-line",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "AgentCore now also accepts Dogwood, an open-source policy language derived from Cedar that adds conditions on what happened earlier in the same session; rules about history need a trustworthy history, which an append lane of sealed decisions is.",
+   "section": "adds",
+   "quote": "Rules about history need a trustworthy history, and an append lane of sealed, chained decisions is one.",
+   "about": [
+    "entity:dogwood",
+    "entity:agentcore-policy",
+    "concept:policy-vault"
+   ],
+   "refs": [
+    "r14"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "The MVP brief: start from the demo, make the gate a release rule, deny on error, wire a real hook in the newsroom's session, keep the annotation edges, project rather than fork, prove it in CI, and never print a key.",
+   "section": "brief",
+   "quote": "Then run it on the newsroom's own releases for two weeks and report what it denied.",
+   "about": [
+    "concept:policy-vault",
+    "concept:the-brief",
+    "entity:newsroom-sgit-ai",
+    "concept:fails-open"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The demo is local: one machine, an in-memory vault server, fifteen decisions; not production, not a cloud store.",
+   "section": "limits",
+   "quote": "One machine, an in-memory vault server, fifteen decisions; not production, not a cloud store.",
+   "about": [
+    "concept:policy-vault"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Not proved, only tested: the Cedar ran in cedarpy, an unofficial binding, and Cedar's symbolic analysis was not used.",
+   "section": "limits",
+   "quote": "The Cedar ran in cedarpy, an unofficial binding; we did not use Cedar's symbolic analysis.",
+   "about": [
+    "entity:cedar",
+    "concept:policy-vault"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "No AWS integration yet: the sync into Verified Permissions or AgentCore is proposed, not built, and the adopters list is AWS's, not checked with each company.",
+   "section": "limits",
+   "quote": "The sync into Verified Permissions or AgentCore is proposed, not built.",
+   "about": [
+    "entity:amazon-verified-permissions",
+    "entity:agentcore-policy",
+    "entity:aws"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The evidence key is shared: the demo sealed records with one symmetric key, and a real deployment should seal them to the auditor's public key; Dogwood is new and has been read, not used.",
+   "section": "limits",
+   "quote": "a real deployment should seal them to the auditor's public key.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:dogwood"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The article was written from a voice memo of 14 October 2026; a research agent gathered the facts, the quotes were checked on the primary pages, and the demo was built and run by the site's agent.",
+   "section": "sources",
+   "quote": "A research agent gathered the facts and the quotes were checked on the primary pages; the demo was built and run by this site's agent.",
+   "about": [
+    "concept:voice-memo",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c10",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c19",
+   "verb": "specifies",
+   "to": "c26"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c26"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c22"
+  }
+ ],
+ "entities": [
+  {
+   "id": "cedar",
+   "role": "the policy language the article maps, tests and proposes to adopt"
+  },
+  {
+   "id": "aws",
+   "role": "open-sourced Cedar, runs Verified Permissions and AgentCore"
+  },
+  {
+   "id": "apache-2",
+   "role": "Cedar's licence"
+  },
+  {
+   "id": "cloudflare",
+   "role": "named by AWS as a Cedar adopter"
+  },
+  {
+   "id": "mcp",
+   "role": "cedar-for-agents generates a schema from an MCP server's tools"
+  },
+  {
+   "id": "open-policy-agent",
+   "role": "Rego, compared with Cedar in the OOPSLA paper"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault the demo keeps policies, tests, signed tags and evidence in, version 0.21.0"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "whose own agent session the MVP should wire a real hook into"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memo and holds editorial responsibility"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address to write to about Cedar policies and signed rules"
+  },
+  {
+   "id": "cncf",
+   "role": "accepted Cedar as a Sandbox project on 8 October 2025"
+  },
+  {
+   "id": "agentcore-policy",
+   "role": "evaluates every agent tool call against Cedar policies at the gateway; also accepts Dogwood"
+  },
+  {
+   "id": "amazon-verified-permissions",
+   "role": "the managed Cedar policy store, strict but without history, export or signing"
+  },
+  {
+   "id": "sondera",
+   "role": "its open-source harness evaluates Cedar policies before an agent acts"
+  },
+  {
+   "id": "lean",
+   "role": "the proof assistant Cedar is modelled and proved in"
+  },
+  {
+   "id": "dogwood",
+   "role": "an open-source policy language derived from Cedar with conditions on session history"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "policy-as-code",
+   "defined_here": false
+  },
+  {
+   "id": "policy-crosswalk",
+   "defined_here": true
+  },
+  {
+   "id": "policy-vault",
+   "defined_here": true
+  },
+  {
+   "id": "fails-open",
+   "defined_here": true
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://aws.amazon.com/about-aws/whats-new/2023/05/cedar-open-source-language-access-control/",
+   "title": "Cedar open-sourced",
+   "by": "Amazon Web Services",
+   "date": "2023-05-10",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.cncf.io/projects/cedar/",
+   "title": "Cedar",
+   "by": "Cloud Native Computing Foundation",
+   "date": "2025-10-08",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project",
+   "title": "Cedar joins CNCF as a Sandbox project",
+   "by": "Amazon Web Services",
+   "date": "2025-10",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+   "title": "Policy in AgentCore",
+   "by": "Amazon Web Services",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://pypi.org/project/sondera-harness/",
+   "title": "sondera-harness",
+   "by": "Sondera",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r06",
+   "url": "https://github.com/cedar-policy/cedar-for-agents",
+   "title": "cedar-for-agents",
+   "by": "Cedar",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r07",
+   "url": "https://docs.cedarpolicy.com/auth/authorization.html",
+   "title": "Cedar authorization",
+   "by": "Cedar",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://arxiv.org/abs/2403.04651",
+   "title": "Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization",
+   "by": "Cutler and others",
+   "date": "2024",
+   "kind": "paper"
+  },
+  {
+   "id": "r09",
+   "url": "https://lean-lang.org/use-cases/cedar/",
+   "title": "Cedar case study",
+   "by": "Lean",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r10",
+   "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores.html",
+   "title": "Policy stores",
+   "by": "Amazon Web Services",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r11",
+   "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_Operations.html",
+   "title": "Verified Permissions API operations",
+   "by": "Amazon Web Services",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r12",
+   "url": "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores-delete.html",
+   "title": "Deleting a policy store",
+   "by": "Amazon Web Services",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r13",
+   "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-verifiedpermissions-policystore.html",
+   "title": "AWS::VerifiedPermissions::PolicyStore",
+   "by": "Amazon Web Services",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r14",
+   "url": "https://dogwood-policy.github.io/dogwood/index.html",
+   "title": "Dogwood",
+   "by": "Dogwood",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2023-05-10",
+   "what": "AWS open-sourced Cedar under Apache 2.0"
+  },
+  {
+   "date": "2025-10-08",
+   "what": "Cedar accepted to the CNCF at the Sandbox level"
+  },
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo, the demo built and run, and every source read"
+  }
+ ]
+}

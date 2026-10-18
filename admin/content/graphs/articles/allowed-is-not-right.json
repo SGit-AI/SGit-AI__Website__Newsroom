@@ -1,0 +1,630 @@
+{
+ "slug": "allowed-is-not-right",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Ashish Rajan's article of 16 October opens with Northstar, a fictional retailer whose support agent may refund up to $200, a limit enforced by the payment service, not only written in the agent's instructions.",
+   "section": "question",
+   "quote": "That limit is enforced by the payment service, not just written into the agent's instructions.",
+   "about": [
+    "entity:ashish-rajan",
+    "entity:northstar-twin",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "A customer is entitled to $120, the agent misinterprets a discount and refunds $150, the payment service accepts it, and the logs are complete.",
+   "section": "question",
+   "quote": "But the agent misinterprets a discount and calculates a refund of $150.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:allowed-is-not-right"
+   ],
+   "value": {
+    "n": 150,
+    "of": 120,
+    "unit": "USD refunded against USD owed",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "The problem in one sentence: the system did what it was allowed to do, it just did not do what it was supposed to do.",
+   "section": "question",
+   "quote": "The system did what it was allowed to do. It just didn't do what it was supposed to do.",
+   "about": [
+    "concept:allowed-is-not-right"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "His answer, from AI Security Lab, is four questions: SECURE, OBSERVE, RESPOND and VERIFY, which he says are not four sequential stages and no one of which replaces the others.",
+   "section": "question",
+   "quote": "not four sequential stages, and no single capability replaces the others.",
+   "about": [
+    "entity:ashish-rajan",
+    "concept:four-questions"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "SECURE is answered by the Agent Behaviour Policy: each row names a capability, its reach and a mandate, and says what keeps it, an expectation, a setting or a boundary.",
+   "section": "secure",
+   "quote": "Each row names a capability, its reach, and a mandate: yes, no, or approval.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:four-questions",
+    "entity:abp-sgit-ai",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "In Hope or enforcement the same customer service agent built three ways went from 97% of its rules kept by hope to 23%, as the limits moved into the tools.",
+   "section": "secure",
+   "quote": "went from 97% of its rules kept by hope to 23%, as the limits moved into the tools.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 23,
+    "unit": "percent of rules kept by hope in the third design",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "In the SGit and Ruflo run, Mondweep Chakravorty compiled an ABP into Ruflo's own rules and checked them in enforce mode, outside the agent.",
+   "section": "secure",
+   "quote": "compiled an ABP into Ruflo's own rules and checked them in enforce mode, outside the agent.",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:ruflo",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "A behaviour policy answers may it, and the question was is it right: a limit cannot tell $150 from $120 when both are under $200.",
+   "section": "verify",
+   "quote": "A limit cannot tell $150 from $120 when both are under $200.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:allowed-is-not-right"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "VERIFY needs an intended requirement written down first; for Northstar that is a rule, refund what was paid for the returned item after any discount less anything already refunded, and that is a decision policy.",
+   "section": "verify",
+   "quote": "someone has to have written down what right is, before anyone can prove it happened.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:four-questions",
+    "concept:allowed-is-not-right"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "definition",
+   "text": "An Agent Decision Policy says, at a branch point, who decides, on what evidence, within what limits, and who to call when it is out of bounds.",
+   "section": "verify",
+   "quote": "at a branch point, who decides, on what evidence, within what limits, and who to call when it is out of bounds.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "decision",
+   "text": "His example found a gap in the owner's own work: the refund scenario in three decisions, mapped was marked mature, yet below its 100 GBP limit nothing checked the amount, and the map now adds a fifth state, verified, beside observed.",
+   "section": "verify",
+   "quote": "Observed means we can reconstruct what happened; verified means we can prove it was right.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:corrections-propagate",
+    "concept:allowed-is-not-right"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "His four questions cut across the three policies; VERIFY has nothing in the behaviour column, because a limit can only say what may be done.",
+   "section": "mapping",
+   "quote": "VERIFY has nothing in the behaviour column, and I think it never will: a limit can only say what may be done.",
+   "about": [
+    "concept:four-questions",
+    "concept:behaviour-policy",
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "SECURE has a workflow cell: in the strongest design the agent proposes an amount, the decision policy decides, and the workflow pays the decided amount, so a wrong proposal is a recorded difference, not a payment.",
+   "section": "mapping",
+   "quote": "A wrong proposal is then a recorded difference, not a payment.",
+   "about": [
+    "concept:agent-workflow-policy",
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "Northstar was built as a twin in an sgit vault: thirteen synthetic refund requests, each with something an agent can get wrong, run through four designs of the controls, every step replayable, nothing called live.",
+   "section": "twin",
+   "quote": "It has thirteen synthetic refund requests, each with something an agent can get wrong",
+   "about": [
+    "entity:northstar-twin",
+    "entity:sgit",
+    "concept:synthetic-users",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Design A, as described in the article, overpays $458 and leaves $341.60 owed, getting 1 of 13 cases right with no people's time.",
+   "section": "twin",
+   "quote": "The design in the article overpays $458 and leaves $341.60 owed.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:allowed-is-not-right"
+   ],
+   "value": {
+    "n": 458,
+    "unit": "USD overpaid in design A",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "Design B, secure, observe and respond done well, stops most of the overpayment by refusing and leaves $222.60 owed across four customers.",
+   "section": "twin",
+   "quote": "B leaves $222.60 owed across four customers.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:four-questions"
+   ],
+   "value": {
+    "n": 222.6,
+    "unit": "USD still owed in design B",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Design C adds VERIFY and gets every amount right by sending every mismatch and uncovered case to a person: 57 minutes of people's time on thirteen refunds.",
+   "section": "twin",
+   "quote": "57 minutes on thirteen refunds",
+   "about": [
+    "entity:northstar-twin",
+    "concept:human-in-the-loop"
+   ],
+   "value": {
+    "n": 57,
+    "unit": "minutes of people's time in design C",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Design D, three policies, gets every case right in 18 minutes, because the rules decide where they can, mismatches are recorded rather than escalated, and the first damaged-but-kept case becomes a precedent.",
+   "section": "twin",
+   "quote": "Design D gets every case right in 18, because the rules decide where they can",
+   "about": [
+    "entity:northstar-twin",
+    "concept:agent-decision-policy",
+    "concept:case-law-for-agents"
+   ],
+   "value": {
+    "n": 18,
+    "unit": "minutes of people's time in design D",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Refusing is not the same as being right: the $150 refund is refused, so the customer owed $120 gets nothing, and a control that refuses needs an owner for what it refused.",
+   "section": "twin",
+   "quote": "A control that refuses needs an owner for what it refused",
+   "about": [
+    "concept:allowed-is-not-right",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The right amount can come from the wrong decider: one case is paid exactly right, $261, as three refunds of $87 each under the limit, and only a decision policy that says who decides catches it.",
+   "section": "twin",
+   "quote": "Only a decision policy that says who decides catches it.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:allowed-is-not-right"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "He says adding another model to check the first is not necessarily enough, and that authoritative business rules or deterministic checks are a stronger basis; the twin's amount comes from a calculator the agent cannot change.",
+   "section": "second-model",
+   "quote": "The amount is worked out by a calculator from the order records, which the agent cannot change.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:human-in-the-loop"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The twin answers his five questions: the agent can read the sender's orders and propose a refund but in design D only the workflow can pay, and intervention is a pause, a route up one altitude above $200, and a person for uncovered cases.",
+   "section": "five",
+   "quote": "A pause on refunds for one order, a route up one altitude above $200, and a person for anything no rule covers.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:agent-workflow-policy",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "hypothesis",
+   "text": "The evidence for removing the human is the case record: a person's decision becomes precedent P-1, matching cases follow it, a differing case is distinguished and escalates, and a precedent that holds is written into policy and then code.",
+   "section": "evidence",
+   "quote": "The evidence for removing the human is the record of the cases where the human was there, and agreed.",
+   "about": [
+    "concept:case-law-for-agents",
+    "concept:agent-decision-policy",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Who is accountable is the person who signed off the limit at that altitude: the head of support who signs the rules decide refunds up to $200 owns that sentence when the evidence turns out thin.",
+   "section": "evidence",
+   "quote": "The head of support who signs \"the rules decide refunds up to $200\" owns that sentence",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:risk-acceptance",
+    "concept:agency-scale"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "His closing question should be put to a team in two halves: show me the cases, and show me who signed.",
+   "section": "evidence",
+   "quote": "Show me the cases. And show me who signed.",
+   "about": [
+    "concept:case-law-for-agents",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The twin is a simulation: synthetic orders, scripted mistakes, no real store and no model called; it shows how controls interact, not how often an agent makes each mistake.",
+   "section": "limits",
+   "quote": "Synthetic orders, scripted mistakes, no real store and no model called.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The minutes are assumptions, six a case and three an approval; the comparison between designs matters more than the totals.",
+   "section": "limits",
+   "quote": "Six minutes a case and three an approval are mine; the comparison between designs matters more than the totals.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Northstar is his: the retailer and the $120, $150 and $200 are from his article, and the other twelve cases are ours.",
+   "section": "limits",
+   "quote": "The retailer and the $120, $150 and $200 are from his article; the other twelve cases are ours.",
+   "about": [
+    "entity:ashish-rajan",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The mapping is ours: he presents the four questions as connected capabilities, not as a grid, and placing each control in a cell is our reading.",
+   "section": "limits",
+   "quote": "placing each control in a cell is our reading.",
+   "about": [
+    "concept:four-questions",
+    "entity:ashish-rajan"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The twin was built by this site's agent from his scenario in an sgit vault published with a public read key, and every number in the article is from its engine; the memo is from 18 October 2026.",
+   "section": "sources",
+   "quote": "every number above is from its engine.",
+   "about": [
+    "entity:northstar-twin",
+    "entity:sgit",
+    "entity:dinis-cruz",
+    "concept:voice-memo"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c09"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "supersedes",
+   "to": "c09"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c23",
+   "verb": "answers",
+   "to": "c04"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c12"
+  }
+ ],
+ "entities": [
+  {
+   "id": "ashish-rajan",
+   "role": "author of the article on trustworthy AI systems whose Northstar example and four questions the article answers"
+  },
+  {
+   "id": "northstar-twin",
+   "role": "the vault in which his store was built as a twin with thirteen refunds and four designs"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "the Agent Behaviour Policy that answers SECURE"
+  },
+  {
+   "id": "mondweep-chakravorty",
+   "role": "compiled an ABP into Ruflo's rules in enforce mode"
+  },
+  {
+   "id": "ruflo",
+   "role": "its policy engine enforced the compiled ABP"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault the twin is published in, with a public read key"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memo and holds editorial responsibility"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "allowed-is-not-right",
+   "defined_here": true
+  },
+  {
+   "id": "four-questions",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-decision-policy",
+   "defined_here": true
+  },
+  {
+   "id": "agent-workflow-policy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "case-law-for-agents",
+   "defined_here": false
+  },
+  {
+   "id": "approve-at-altitude",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "agency-scale",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://ashishrajan.substack.com/p/what-does-it-take-to-build-ai-systems",
+   "title": "What Does It Take to Build AI Systems We Can Actually Trust?",
+   "by": "Ashish Rajan",
+   "date": "2026-10-16",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+   "title": "Demystifying evals for AI agents",
+   "by": "Anthropic",
+   "date": "2026-01-09",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://developers.openai.com/api/docs/guides/agent-evals",
+   "title": "Evaluate agent workflows",
+   "by": "OpenAI",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://arxiv.org/abs/2602.16666",
+   "title": "Towards a Science of AI Agent Reliability",
+   "by": "Rabanser and others",
+   "date": "2026",
+   "kind": "paper"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-16",
+   "what": "Ashish Rajan published his article on trustworthy AI systems"
+  },
+  {
+   "date": "2026-10-18",
+   "what": "The article was read in full, the voice memo recorded and the twin's numbers taken from its engine"
+  }
+ ]
+}

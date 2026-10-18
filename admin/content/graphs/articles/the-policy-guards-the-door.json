@@ -1,0 +1,562 @@
+{
+ "slug": "the-policy-guards-the-door",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The third piece on Mondweep Chakravorty's SGit and Ruflo proof of concept is about a path, not a failure.",
+   "section": "top",
+   "quote": "is about a path, not a failure",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:ruflo",
+    "entity:sgit",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "The adapter compiles the four ABP rows into Ruflo rules when the server starts and checks each of its tools with a pinned copy of Ruflo's own policy evaluator in enforce mode.",
+   "section": "paths",
+   "quote": "compiles the four ABP rows into Ruflo rules when the server starts",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:ruflo",
+    "entity:sgit-ruv-memory"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "ABP rows compiled into Ruflo rules",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Steps 4, 5, 6, 8 and 11 pass through the gate, and every one of them did what the policy said.",
+   "section": "paths",
+   "quote": "every one of them did what the policy said",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement",
+    "entity:sgit-ruv-memory"
+   ],
+   "value": {
+    "n": 5,
+    "of": 12,
+    "unit": "steps guarded by the policy gate",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Ruflo's own command line writes the two facts straight into the SQLite memory file in step 3 and reads it in steps 9 and 10, and none of those calls passes the gate.",
+   "section": "paths",
+   "quote": "In step 3 it writes the two facts straight into the SQLite memory file.",
+   "about": [
+    "entity:ruflo",
+    "entity:sqlite",
+    "concept:agent-memory",
+    "concept:enforcer-path"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The author's README states the limit in his own words: only adapter tools pass through this gate, other shell and network tools are unaffected.",
+   "section": "paths",
+   "quote": "Only adapter tools pass through this gate. Other shell/network tools are unaffected.",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "concept:enforcer-path",
+    "entity:mondweep-chakravorty"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "In step 3 the memory file is ordinary, unencrypted SQLite; the ABP adapter and the vault are not on this path.",
+   "section": "shown",
+   "quote": "At this point the memory file is ordinary, unencrypted SQLite.",
+   "about": [
+    "entity:sqlite",
+    "concept:encryption-and-keys",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "In step 9 Ruflo reads a plain copy that came out of the vault, and neither the vault nor the ABP is on this path.",
+   "section": "shown",
+   "quote": "Ruflo reads a plain copy that came out of the vault; neither the vault nor the ABP is on this path.",
+   "about": [
+    "concept:vault",
+    "entity:ruflo",
+    "concept:enforcer-path"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "limit",
+   "text": "What an agent with shell access would do with the same command line or any SQLite client was not tested; the code confirms the path exists and nobody tried to misuse it.",
+   "section": "shown",
+   "quote": "The code confirms the path exists; nobody tried to misuse it, and it was not the run's question.",
+   "about": [
+    "concept:enforcer-path"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The gap is not a mistake in the test but a property of where this ABP is enforced, and the author documents it; using the command line is what makes step 9 convincing.",
+   "section": "shown",
+   "quote": "The gap is not a mistake in the test. It is a property of where this ABP is enforced, and the author documents it.",
+   "about": [
+    "concept:enforcer-path",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "definition",
+   "text": "A policy holds on the paths that pass through its enforcer, and nowhere else.",
+   "section": "why",
+   "quote": "A policy holds on the paths that pass through its enforcer, and nowhere else.",
+   "about": [
+    "concept:enforcer-path",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "When this site's own agent was measured, ten of its eleven rules were kept by the agent choosing to follow them, and the one hard limit was a platform setting the policy did not list.",
+   "section": "why",
+   "quote": "ten of its eleven rules were kept by the agent choosing to follow them",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:the-newsroom"
+   ],
+   "value": {
+    "n": 10,
+    "of": 11,
+    "unit": "rules kept by the agent's choice"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "At The AI Conference speakers said policy must live outside the model; this run does that and fails closed, and the next lesson is that around every path to the data is the harder part.",
+   "section": "why",
+   "quote": "Outside the model is necessary; around every path to the data is the harder part.",
+   "about": [
+    "entity:the-ai-conference",
+    "concept:enforcer-path",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "The fix on the author's list of follow-ups is native plugin registration, so the same compiled rules run where Ruflo runs and the command line's memory calls are checked too.",
+   "section": "close",
+   "quote": "What is missing is running them where Ruflo itself runs, so the command line's memory calls are checked too.",
+   "about": [
+    "entity:ruflo",
+    "concept:enforcer-path",
+    "entity:sgit-ruv-memory"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "Two other ideas, offered not as findings: keep the working memory file where only the adapter can reach it, or make the adapter the only thing that can decrypt memory at all.",
+   "section": "close",
+   "quote": "Keep the working memory file somewhere only the adapter can reach, so the command line has to go through it.",
+   "about": [
+    "concept:agent-memory",
+    "concept:encryption-and-keys",
+    "concept:enforcer-path"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The README is candid that plaintext exists during staging and intentionally in restored workspaces, which is the trade that makes step 9 possible.",
+   "section": "close",
+   "quote": "Plaintext exists during staging and intentionally in restored workspaces",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit-ruv-memory"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Every error reads the same on purpose: the server replaces the detail so as not to leak dependency errors containing private paths or credentials, while the gate's own message names the reason inside.",
+   "section": "questions",
+   "quote": "Do not leak dependency errors containing private paths or credentials.",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Decisions are not yet recorded: the evaluator returns a decision for every call and nothing writes it to a log.",
+   "section": "questions",
+   "quote": "The evaluator returns a decision for every call; nothing writes it to a log.",
+   "about": [
+    "concept:provenance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "An operator log naming the row that fired would turn each decision into evidence.",
+   "section": "questions",
+   "quote": "An operator log naming the row that fired would turn each decision into evidence.",
+   "about": [
+    "concept:provenance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The vault goes nowhere yet: no remote push is performed, remote sync is a follow-up, and each checkpoint is its own SGit vault on the same machine.",
+   "section": "questions",
+   "quote": "Each checkpoint is its own SGit vault on the same machine.",
+   "about": [
+    "entity:sgit",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The file name changes because the adapter stages and restores every checkpoint as memory.sqlite, whatever the source file was called.",
+   "section": "questions",
+   "quote": "The adapter stages and restores every checkpoint as memory.sqlite, whatever the source file was called.",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "entity:sqlite"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Approval means stop because there is nothing yet to give approval with; the run proves the row blocks, and proving it releases with a named approver is the next test.",
+   "section": "questions",
+   "quote": "There is no human approval fulfilment mechanism yet.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:behaviour-policy"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "Between step 2 at run clock 00:11 and the first fact in step 3 at 00:39, 28 seconds of run pass in a few seconds of video, so one wait was trimmed.",
+   "section": "questions",
+   "quote": "28 seconds of run pass in a few seconds of video",
+   "about": [
+    "concept:provenance",
+    "entity:mondweep-chakravorty"
+   ],
+   "value": {
+    "n": 28,
+    "unit": "seconds of run trimmed from the video",
+    "as_of": "2026-10-17"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "Not a vulnerability report: no one tried to bypass the policy, and the author documents the path himself.",
+   "section": "limits",
+   "quote": "No one tried to bypass the policy; the author documents the path himself.",
+   "about": [
+    "concept:enforcer-path"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Not that the run failed: every step the policy guarded behaved as written.",
+   "section": "limits",
+   "quote": "Every step the policy guarded behaved as written.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The fixes are ideas: native plugin registration is the author's follow-up, and the other two are the site's, untested.",
+   "section": "limits",
+   "quote": "Native plugin registration is his follow-up; the other two are mine, untested.",
+   "about": [
+    "concept:enforcer-path"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The code was read, not run, here; its tests and evidence are the author's.",
+   "section": "limits",
+   "quote": "Its tests and evidence are the author's.",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The video was published on YouTube on 17 October 2026, the code read at its commit of 16 October, and the analysis made by Claude from on-screen content and checked against the timeline and the code by the site's agent.",
+   "section": "sources",
+   "quote": "published on YouTube on 17 October 2026, made as a member of the",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:claude",
+    "entity:anthropic",
+    "concept:agents-write-too"
+   ],
+   "refs": [
+    "r01",
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "Mondweep's page on ABP-governed SGit checkpoints was merged into Ruflo's main branch by rUv, the fifth piece in the series.",
+   "section": "top",
+   "quote": "merged into Ruflo's main branch by rUv",
+   "about": [
+    "entity:ruv",
+    "entity:ruflo",
+    "entity:mondweep-chakravorty"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c08",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c13"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c14"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c16"
+  }
+ ],
+ "entities": [
+  {
+   "id": "mondweep-chakravorty",
+   "role": "author of the proof of concept, the video and the adapter"
+  },
+  {
+   "id": "ruflo",
+   "role": "the agent framework whose evaluator runs the compiled rules and whose command line goes around them"
+  },
+  {
+   "id": "sgit",
+   "role": "each checkpoint is its own SGit vault"
+  },
+  {
+   "id": "sgit-ruv-memory",
+   "role": "the adapter's code and README, read at its commit of 16 October 2026"
+  },
+  {
+   "id": "sqlite",
+   "role": "the memory file Ruflo's command line reads and writes directly"
+  },
+  {
+   "id": "the-ai-conference",
+   "role": "where speakers said policy must live outside the model"
+  },
+  {
+   "id": "claude",
+   "role": "made the analysis from on-screen content"
+  },
+  {
+   "id": "anthropic",
+   "role": "maker of the model that did the analysis"
+  },
+  {
+   "id": "ruv",
+   "role": "merged Mondweep's page into Ruflo's main branch"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "enforcer-path",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://youtu.be/rkh6BJiaIrQ",
+   "title": "SGit x Ruflo | Working Proof of Concept",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "video"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/mondweep/sgit-ruv-memory",
+   "title": "sgit-ruv-memory",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-16",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/ruvnet/ruflo",
+   "title": "ruflo",
+   "by": "rUv",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The video published on YouTube; the analysis made and the article written"
+  },
+  {
+   "date": "2026-10-16",
+   "what": "The commit of the adapter's repository that was read"
+  }
+ ]
+}

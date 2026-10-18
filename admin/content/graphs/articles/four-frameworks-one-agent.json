@@ -1,0 +1,779 @@
+{
+ "slug": "four-frameworks-one-agent",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "iason's AI Risk Management Frameworks, research paper issue 81 of November 2025 by Sara Martucci and Margherita Ranieri with Nicola Mazzoni, reads the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act side by side.",
+   "section": "paper",
+   "quote": "research paper series 2025, issue 81, dated November 2025, written by Sara Martucci and Margherita Ranieri and prepared with Nicola Mazzoni",
+   "about": [
+    "concept:ai-governance",
+    "entity:iason",
+    "entity:sara-martucci",
+    "entity:margherita-ranieri"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The paper concludes that despite their differences the four instruments converge on five principles: ethics and human rights, the lifecycle, human oversight, risk tiering with proportionality, and governance as an organisational habit.",
+   "section": "paper",
+   "quote": "converge around a common set of core principles",
+   "about": [
+    "concept:ai-governance",
+    "entity:iason"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The paper's list of what many companies still lack has four items: AI KPIs, a formal adoption and risk strategy, a central governance structure, and processes for reviewing AI-generated outputs.",
+   "section": "paper",
+   "quote": "processes for reviewing AI-generated outputs for accuracy and ethical compliance",
+   "about": [
+    "concept:ai-governance"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "All four instruments take the AI system as their unit, described, tiered and assigned obligations before deployment, which is right for a model behind a form.",
+   "section": "unit",
+   "quote": "All four instruments take the AI system as their unit",
+   "about": [
+    "concept:one-agent-one-deployment",
+    "concept:ai-governance"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "For an agent the unit has to be one agent in one deployment, because what it can do is a property of its connectors, accounts and data, not of the model; risk is a property of one agent in one setup.",
+   "section": "unit",
+   "quote": "risk is a property of one agent in one setup, not of the model",
+   "about": [
+    "concept:one-agent-one-deployment",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The Agent Behaviour Policy, reach, mandate, gap and barriers, with the footprint read afterwards and a blast radius per row, is the classification, the map, the measurement and the tier for an agent.",
+   "section": "unit",
+   "quote": "That is the classification, the map, the measurement and the tier, for an agent",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:footprint",
+    "concept:blast-radius",
+    "concept:one-agent-one-deployment"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Of the OECD's five dimensions, Data and Input matters most for an agent: whether it has private data, untrusted content and a way to send, all three at once, the lethal trifecta.",
+   "section": "oecd",
+   "quote": "does it have private data, untrusted content and a way to send, all three at once",
+   "about": [
+    "concept:lethal-trifecta",
+    "entity:oecd-ai-classification"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The OECD's Task and Output question on human intervention is the right question and the wrong axis: the answer here is a position per output, not a level per system.",
+   "section": "oecd",
+   "quote": "That is the right question and the wrong axis.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:oecd-ai-classification"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "NIST's four functions each name a thing built here: govern is a written policy, map is the gap, measure is the footprint, manage is three doors.",
+   "section": "in-short",
+   "quote": "Govern is a written policy, map is the gap, measure is the footprint, manage is three doors.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:footprint",
+    "concept:risk-acceptance",
+    "entity:nist-ai-rmf"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "The session behind the site was summarised eighteen times in a month, about 98% of its context replaced each time, so the rules live in a file and a hook prints them back after every summary.",
+   "section": "nist",
+   "quote": "the session behind this site was summarised eighteen times in a month, about 98% of its context replaced each time",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 18,
+    "unit": "summaries in a month"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "When the same customer service agent was built three ways, the share of its rules kept only by the model's good behaviour fell from 97% to 23%, and the policy shrank with it.",
+   "section": "nist",
+   "quote": "the share of its rules kept only by the model's good behaviour fell from 97% to 23%",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 23,
+    "unit": "per cent of rules kept only by the model, in the third design"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "The same agent's reach was cut from 38,000 customer records to one customer.",
+   "section": "nist",
+   "quote": "its reach cut from 38,000 customer records to one customer",
+   "about": [
+    "concept:reach",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 38000,
+    "unit": "customer records in reach before the cut"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "People approve almost everything they are shown: Anthropic measured that Claude Code users approve 93% of permission prompts.",
+   "section": "nist",
+   "quote": "Claude Code users approve 93% of permission prompts",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:anthropic",
+    "entity:claude-code"
+   ],
+   "value": {
+    "n": 93,
+    "unit": "per cent of permission prompts approved"
+   },
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Human oversight here is placed by one test, not by tier: can the output be undone, and how much would it cost if it were wrong.",
+   "section": "nist",
+   "quote": "can the output be undone, and how much would it cost if it were wrong",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:one-way-door"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "On the day that article was written the newsroom shipped fourteen releases with no release approved one by one, beside an agent team that drafts every email and sends none.",
+   "section": "nist",
+   "quote": "a newsroom that shipped fourteen releases with no release approved one by one",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:the-newsroom"
+   ],
+   "value": {
+    "n": 14,
+    "unit": "releases in one day, none approved one by one"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Japan's three roles, developer, provider and business user, are for an agent the model vendor, the platform or harness, and the deployer, which here is the owner.",
+   "section": "japan",
+   "quote": "For an agent those are the model vendor, the platform or harness the agent runs in, and the deployer, which here is me.",
+   "about": [
+    "entity:japan-ai-guidelines",
+    "concept:ai-governance"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "What passes between the three roles is a behaviour policy beside the prompt: the vendor publishes its built-in policy, accepts the deployer's, says what it enforces, and reports every breach.",
+   "section": "japan",
+   "quote": "every agent takes a behaviour policy as an input beside its prompt",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:japan-ai-guidelines"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Microsoft's execution containers put the policy outside the workload, and when eight scenarios were run with a behaviour policy on top, three rows that had been hope became boundaries.",
+   "section": "japan",
+   "quote": "three rows that had been hope became boundaries",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:microsoft"
+   ],
+   "value": {
+    "n": 3,
+    "of": 8,
+    "unit": "scenario rows turned from hope into boundaries"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Article 9 of the Act requires residual risk judged to be acceptable and never defines acceptable; the paper restates the obligation without remarking on the gap.",
+   "section": "act",
+   "quote": "The paper restates the obligation without remarking on the gap, which is fair: it is easy to read past.",
+   "about": [
+    "concept:risk-acceptance",
+    "entity:eu-ai-act"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Since the paper the Act was amended by Regulation (EU) 2026/1744, in force from 27 July 2026, with Annex III obligations from 2 December 2027 and Annex I from 2 August 2028.",
+   "section": "act",
+   "quote": "the Act was amended by Regulation (EU) 2026/1744, in force from 27 July 2026",
+   "about": [
+    "concept:regulation",
+    "concept:corrections-propagate",
+    "entity:eu-ai-act"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "From 9 December 2026 software including AI systems is a product under the EU's new product liability rules.",
+   "section": "act",
+   "quote": "software including AI systems is a product under the EU's new product liability rules",
+   "about": [
+    "concept:regulation",
+    "concept:liability-line",
+    "entity:european-union"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "None of the date changes makes the paper wrong; it was right on its day and is the case the site calls status since, which a graph records as a dated edge and a PDF cannot.",
+   "section": "act",
+   "quote": "None of this makes the paper wrong; it was right on its day.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Of the paper's five principles four run on one newsroom and one agent team, and the fifth, risk acceptance as a record, is a published design with a demo behind it.",
+   "section": "principles",
+   "quote": "Four of the five run, on one newsroom and one agent team; risk acceptance as a record is the design.",
+   "about": [
+    "concept:ai-governance",
+    "concept:risk-acceptance",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The lifecycle runs without a retirement step: retiring a device and rotating the master's key are on the list of what is not built, and ending an agent's mandate has no step at all.",
+   "section": "principles",
+   "quote": "ending an agent's mandate has no step at all",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:ai-governance"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "Hari Kota's ten-layer governance stack became a vault in which every cell is a node, 329 edges, 140 between layers, 119 of the site's own each citing the provision it rests on.",
+   "section": "graphs",
+   "quote": "every cell is a node, 329 edges, 140 of them between layers, 119 of ours each citing the provision it rests on",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:ai-governance",
+    "entity:hari-kota",
+    "entity:ai-governance-graph-vault"
+   ],
+   "value": {
+    "n": 329,
+    "unit": "edges in the governance stack graph"
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "data-point",
+   "text": "Jan van Dijke's AI Baseline Control Framework, twenty controls mapped to the NIST AI RMF, ISO/IEC 42001 and the Act, was turned in a day into a graph joined to the Act's text.",
+   "section": "graphs",
+   "quote": "twenty controls mapped to the NIST AI RMF, ISO/IEC 42001 and the Act",
+   "about": [
+    "entity:ai-bcf",
+    "entity:jan-van-dijke",
+    "entity:iso-42001",
+    "entity:nist-ai-rmf",
+    "entity:regulation-graph-vault"
+   ],
+   "value": {
+    "n": 20,
+    "unit": "controls in the AI Baseline Control Framework",
+    "as_of": "2026-10-02"
+   }
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "The graph to build next is the paper's four as one graph, each framework its own world with edges from the texts, and a fifth world, the behaviour policy, so a row can say which provision it answers.",
+   "section": "graphs",
+   "quote": "The one to build next is the paper's four as one graph",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:ai-governance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "data-point",
+   "text": "The mapping file published with the article has thirty-two rows, one per element of the four frameworks and five principles: twenty-three run, five are designed, four are argued.",
+   "section": "graphs",
+   "quote": "Thirty-two rows: twenty-three run, five are designed, four are argued.",
+   "about": [
+    "concept:ai-governance"
+   ],
+   "value": {
+    "n": 23,
+    "of": 32,
+    "unit": "rows that run",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c29",
+   "kind": "hypothesis",
+   "text": "The hardest thing to establish is not ownership, testing or monitoring but the mandate, the written statement of what this agent in this deployment was allowed to do, which none of the four frameworks asks for in a form an agent can carry.",
+   "section": "hardest",
+   "quote": "What is hard, and what none of the four frameworks asks for in a form an agent can carry, is the mandate",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "Risk acceptance as a register is a design: the model is published with a business plan and a demo, and no customer runs it today.",
+   "section": "limits",
+   "quote": "Risk acceptance as a register is a design.",
+   "about": [
+    "concept:risk-acceptance"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The system is small, one newsroom, one agent team, one person; the pattern is defended, not the scale, and the paper is written for financial institutions.",
+   "section": "limits",
+   "quote": "One newsroom, one agent team, one person.",
+   "about": [
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The paper is read, not reproduced: quoted in short phrases with its authors and issue named, and with no link because its research page did not answer.",
+   "section": "limits",
+   "quote": "The paper is read, not reproduced.",
+   "about": [
+    "entity:iason"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "The dates since the paper are this site's, as recorded in two earlier articles checked on 9 and 13 October 2026; the regulations were not re-read for this article.",
+   "section": "limits",
+   "quote": "The dates since the paper are this site's.",
+   "about": [
+    "concept:regulation",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "The NIST rows are a mapping, not a conformance claim; nobody else has assessed the system against the playbook.",
+   "section": "limits",
+   "quote": "The NIST rows are a mapping, not a conformance claim.",
+   "about": [
+    "entity:nist-ai-rmf"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "The graph of the four frameworks is proposed; what exists is the mapping file, the graphs of the Act and of two frameworks that cite it, and the method, and another reader would draw the thirty-two rows differently.",
+   "section": "limits",
+   "quote": "The graph of the four frameworks is proposed.",
+   "about": [
+    "concept:fractal-semantic-graphs"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c14",
+   "verb": "answers",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c26",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c28",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c27"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c20"
+  }
+ ],
+ "entities": [
+  {
+   "id": "iason",
+   "role": "the risk advisory firm whose research paper the article maps"
+  },
+  {
+   "id": "sara-martucci",
+   "role": "co-author of the paper"
+  },
+  {
+   "id": "margherita-ranieri",
+   "role": "co-author of the paper"
+  },
+  {
+   "id": "oecd-ai-classification",
+   "role": "the first of the four frameworks, five dimensions"
+  },
+  {
+   "id": "nist-ai-rmf",
+   "role": "the second framework, govern, map, measure and manage, mapped row by row"
+  },
+  {
+   "id": "japan-ai-guidelines",
+   "role": "the third framework, three roles with duties"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "the fourth framework, tiers, the undefined word acceptable, and dates that moved"
+  },
+  {
+   "id": "european-union",
+   "role": "whose product liability rules make software a product from 9 December 2026"
+  },
+  {
+   "id": "anthropic",
+   "role": "measured that Claude Code users approve 93% of permission prompts"
+  },
+  {
+   "id": "claude-code",
+   "role": "whose users approve 93% of permission prompts"
+  },
+  {
+   "id": "microsoft",
+   "role": "whose execution containers put the policy outside the workload"
+  },
+  {
+   "id": "hari-kota",
+   "role": "whose ten-layer governance stack became the graph with 329 edges"
+  },
+  {
+   "id": "jan-van-dijke",
+   "role": "published the AI Baseline Control Framework on 2 October"
+  },
+  {
+   "id": "ai-bcf",
+   "role": "twenty controls mapped to NIST, ISO 42001 and the Act, turned into a graph in a day"
+  },
+  {
+   "id": "iso-42001",
+   "role": "one of the three instruments the AI-BCF controls map to"
+  },
+  {
+   "id": "ai-governance-graph-vault",
+   "role": "the vault of Hari Kota's stack as a graph"
+  },
+  {
+   "id": "regulation-graph-vault",
+   "role": "the Act parsed into a graph from the official text, article by article"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "ai-governance",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "one-agent-one-deployment",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://oecd.ai/en/classification",
+   "title": "OECD Framework for the Classification of AI Systems",
+   "by": "OECD",
+   "date": "2022-02",
+   "kind": "standard"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "title": "NIST AI Risk Management Framework",
+   "by": "NIST",
+   "date": "2023-01",
+   "kind": "standard"
+  },
+  {
+   "id": "r03",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+   "title": "Regulation (EU) 2024/1689, the AI Act",
+   "by": "European Union",
+   "date": "2024",
+   "kind": "law"
+  },
+  {
+   "id": "r04",
+   "url": "https://artificialintelligenceact.eu/article/9/",
+   "title": "Article 9 of the AI Act",
+   "by": "artificialintelligenceact.eu",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+   "title": "How we built Claude Code auto mode",
+   "by": "Anthropic",
+   "date": "2026-03-25",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://sgit.ai/demos/vaults/risk-acceptance/index.html",
+   "title": "The Risk Acceptance Office business plan",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "vault"
+  },
+  {
+   "id": "r07",
+   "url": "https://sgit.ai/demos/vaults/regulation-graph/index.html",
+   "title": "Regulation Graph",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "vault"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2025-11",
+   "what": "iason's paper, issue 81, dated"
+  },
+  {
+   "date": "2026-10-13",
+   "what": "The owner's message with the paper; the article assembled; the mapping file written"
+  },
+  {
+   "date": "2026-07-27",
+   "what": "Regulation (EU) 2026/1744 amending the AI Act in force"
+  },
+  {
+   "date": "2027-12-02",
+   "what": "Annex III high-risk obligations apply"
+  },
+  {
+   "date": "2028-08-02",
+   "what": "Annex I obligations apply"
+  },
+  {
+   "date": "2026-12-09",
+   "what": "Software including AI systems becomes a product under the EU's liability rules"
+  },
+  {
+   "date": "2026-10-02",
+   "what": "Jan van Dijke published the AI Baseline Control Framework"
+  },
+  {
+   "date": "2026-10-09",
+   "what": "The AI governance stack as a graph recorded the Act's amendment"
+  }
+ ]
+}

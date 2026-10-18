@@ -1,0 +1,829 @@
+{
+ "slug": "the-investigation-github-owes-its-customers",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "At 19:11 UTC on 5 October 2026 GitHub's status page said it was investigating degraded performance for Actions; by 19:15 it was delays assigning hosted runners.",
+   "section": "top",
+   "quote": "At 19:11 GitHub was \"investigating reports of degraded performance for Actions\".",
+   "about": [
+    "entity:github",
+    "entity:github-actions",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "At 20:47 the page turned red with degraded availability, at 21:09 some customers could not reach repository lists or billing, and at 21:22 Pages was degraded too.",
+   "section": "top",
+   "quote": "At 20:47 the page turned red: \"Actions is experiencing degraded availability.\"",
+   "about": [
+    "entity:github",
+    "entity:github-pages",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The status page's words undersell it: a condition in which no customer on hosted runners could rely on a workflow starting, and a workflow that does not start is a release that does not ship.",
+   "section": "top",
+   "quote": "a workflow that does not start is a release that does not ship",
+   "about": [
+    "entity:github-actions",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "This site's own release was pushed at 19:23, its tag job waited for a runner from 19:55, was cancelled at 20:10, and went live two hours late on a retry at 21:26.",
+   "section": "top",
+   "quote": "The release went live two hours late and I found out by waiting",
+   "about": [
+    "entity:github-actions",
+    "entity:sgit-ai",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "GitHub's own figures put the dependence at more than 180 million developers, 630 million repositories and 71 million Actions jobs a day.",
+   "section": "top",
+   "quote": "more than 180 million developers, 630 million repositories and 71 million Actions jobs a day",
+   "about": [
+    "entity:github",
+    "concept:blast-radius"
+   ],
+   "value": {
+    "n": 71,
+    "unit": "million Actions jobs a day",
+    "as_of": "2026"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "A 2025 survey of 805 organisations found 59 percent running a single CI/CD tool, with GitHub Actions the most used.",
+   "section": "top",
+   "quote": "a 2025 survey of 805 organisations found 59 percent running a single CI/CD tool",
+   "about": [
+    "entity:github-actions",
+    "concept:blast-radius"
+   ],
+   "value": {
+    "n": 59,
+    "unit": "percent of 805 organisations running a single CI/CD tool",
+    "as_of": "2025"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "A fault that reaches one customer is an incident; a fault that reaches every hosted-runner customer in every region at once is a statement about how the system is built.",
+   "section": "top",
+   "quote": "A fault that reaches every hosted-runner customer in every region at once is a statement about how the system is built",
+   "about": [
+    "concept:blast-radius",
+    "concept:incidents",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The shape a service at this scale should have is regional faults, for some customers, some of the time; a global shape is a signal about isolation, change control and resilience.",
+   "section": "top",
+   "quote": "The shape a service at this scale should have is regional faults, for some customers, some of the time.",
+   "about": [
+    "concept:incidents",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "ICAO Annex 13 says the sole objective of investigating an accident or incident is prevention, not to apportion blame or liability, and requires an independent investigation authority.",
+   "section": "top",
+   "quote": "The sole objective of the investigation of an accident or incident shall be the prevention of accidents and incidents.",
+   "about": [
+    "entity:icao",
+    "concept:second-story",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "The United States re-established the NTSB in 1974 as a body outside the Department of Transportation; it has since issued more than 15,500 safety recommendations and tracks every one.",
+   "section": "top",
+   "quote": "it has since issued more than 15,500 safety recommendations and tracks the acceptance of every one",
+   "about": [
+    "entity:ntsb",
+    "entity:united-states",
+    "concept:incidents"
+   ],
+   "value": {
+    "n": 15500,
+    "unit": "NTSB safety recommendations issued since 1974"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "After the Boeing 737 door plug blew out in January 2024 the NTSB published a preliminary report within a month and a final one seventeen months later, with the docket open to anyone.",
+   "section": "top",
+   "quote": "the NTSB published a preliminary report within a month and a final one seventeen months later",
+   "about": [
+    "entity:ntsb",
+    "entity:boeing",
+    "concept:second-story"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "NASA's Aviation Safety Reporting System has taken more than two million confidential reports since 1976, around a hundred thousand a year, and no reporter's identity has ever been breached.",
+   "section": "top",
+   "quote": "more than two million of them, around a hundred thousand a year and rising",
+   "about": [
+    "entity:nasa",
+    "concept:near-miss"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "million confidential safety reports since 1976"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "European law since 2014 defines the just culture this depends on: people are not punished for actions commensurate with their experience and training, while gross negligence is not tolerated.",
+   "section": "top",
+   "quote": "are not punished for actions, omissions or decisions taken by them that are commensurate with their experience and training",
+   "about": [
+    "entity:european-union",
+    "concept:near-miss",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "In September 2026 Sam Altman said accidents with any new technology are unavoidable and we should have a great culture of transparent reporting, pointing at the FAA and NTSB.",
+   "section": "top",
+   "quote": "we should have a great culture of transparent reporting about them",
+   "about": [
+    "entity:sam-altman",
+    "entity:openai",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The nearest thing to an NTSB for computing, the US Cyber Safety Review Board, published three reports and was disbanded in January 2025 in the middle of its fourth review.",
+   "section": "top",
+   "quote": "was disbanded in January 2025 in the middle of its fourth review",
+   "about": [
+    "entity:cyber-safety-review-board",
+    "entity:united-states",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "A near miss gets the same investigation as a crash in aviation because the systemic causes are the same and the only difference is luck; you do not build safety on luck.",
+   "section": "top",
+   "quote": "A near miss, a plane that almost had an incident but didn't, gets the same level of investigation as an actual crash.",
+   "about": [
+    "concept:near-miss",
+    "concept:incidents"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Usually the actual damage of an incident is around 10% of what was possible, and often 1%; companies celebrate containment when they should be terrified by the paths not taken.",
+   "section": "top",
+   "quote": "Usually the actual damage is around 10% of what was possible. Often it's 1%.",
+   "about": [
+    "concept:near-miss",
+    "concept:blast-radius"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "percent of possible damage usually realised"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Nobody outside knows how many times runner assignment has wobbled in the last year without reaching the status page; GitHub does, and that asymmetry is the whole problem.",
+   "section": "top",
+   "quote": "We do not know how many times runner assignment has wobbled in the last year without reaching the status page. GitHub does.",
+   "about": [
+    "entity:github",
+    "concept:near-miss",
+    "concept:provenance"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "definition",
+   "text": "The first story is what happened, the second is why the system allowed it, and the third is why the fix was not paid for when the second story was already known.",
+   "section": "top",
+   "quote": "The first story is what happened: the operator did this, the valve stuck, the file was malformed.",
+   "about": [
+    "concept:second-story",
+    "concept:incidents"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "The UK air traffic control failure of 28 August 2023 affected over 700,000 passengers at a cost of 75 to 100 million pounds, and the independent review made thirty-four recommendations.",
+   "section": "top",
+   "quote": "Over 700,000 passengers were affected and the cost was put at between 75 and 100 million pounds.",
+   "about": [
+    "entity:united-kingdom",
+    "concept:second-story",
+    "concept:incidents"
+   ],
+   "value": {
+    "n": 700000,
+    "unit": "passengers affected",
+    "as_of": "2023-08-28"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The security vendor's update of July 2024 carried a file with twenty-one fields where the sensor expected twenty, and the out-of-bounds read crashed about 8.5 million machines.",
+   "section": "top",
+   "quote": "the out-of-bounds read crashed about 8.5 million machines",
+   "about": [
+    "concept:incidents",
+    "concept:blast-radius"
+   ],
+   "value": {
+    "n": 8.5,
+    "unit": "million machines crashed",
+    "as_of": "2024-07"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "That investigation was done by the company with two unnamed outside reviewers it hired; there was no independent board, because there is none to do it.",
+   "section": "top",
+   "quote": "The investigation was done by the company, with two unnamed outside reviewers it hired; there was no independent board, because there is none to do it.",
+   "about": [
+    "concept:second-story",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Tonight's third story is about trade-offs: a system too complicated to understand and too fragile to change is not a reason to leave it alone, it is the single point of failure, named.",
+   "section": "top",
+   "quote": "A system too complicated to understand and too fragile to change is not a reason to leave it alone. It is the single point of failure, named.",
+   "about": [
+    "concept:second-story",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "question",
+   "text": "What if GitHub were down for a day, a week, corrupted beyond restoring, or withdrawn by decision; each is a question about a dependency most software has, and nobody has published the blast radius.",
+   "section": "top",
+   "quote": "What if GitHub were down for a day?",
+   "about": [
+    "entity:github",
+    "concept:blast-radius",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "GitHub is mission-critical to governments that do not control it, a sovereignty question somebody has implicitly accepted on their behalf.",
+   "section": "top",
+   "quote": "GitHub is mission-critical to governments that do not control it, which is a sovereignty question that somebody, somewhere, has implicitly accepted on their behalf.",
+   "about": [
+    "entity:github",
+    "concept:privacy",
+    "concept:risk-acceptance"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The market does not fix this because customers cannot see how close to the wind the platform flies; uptime for a platform with this barrier to exit is mostly a marketing function.",
+   "section": "top",
+   "quote": "The reason nothing pushes back is that the market economics do not work, and they do not work because customers cannot see.",
+   "about": [
+    "concept:the-market",
+    "concept:risk-acceptance",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The objection to independent investigation was never the principle but that the evidence is confidential, enormous and expensive to gather; that is not true any more.",
+   "section": "top",
+   "quote": "It is not true any more, and the reason is the same set of pieces the articles before this one are about.",
+   "about": [
+    "concept:vault",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "A provider captures the incident record into a signed, versioned vault, an independent investigator holds a read key to only what the inquiry needs, each customer gets its own derived vault, and the findings are a graph linked to evidence hashes.",
+   "section": "top",
+   "quote": "An independent investigator holds a read key to the files the inquiry needs and nothing else",
+   "about": [
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "concept:fractal-semantic-graphs",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "Every piece of that runs on this site: the vault as a footprint recorder, each party signing with its own key; what is missing is not the technology but the requirement and the habit.",
+   "section": "top",
+   "quote": "What is missing is not the technology. It is the requirement, and the habit.",
+   "about": [
+    "concept:footprint",
+    "entity:sgit",
+    "concept:vault"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "data-point",
+   "text": "In November 2025 the European supervisory authorities designated nineteen critical ICT third-party providers under DORA, Microsoft, AWS, Google Cloud, Oracle and IBM among them; GitHub is not named, its parent is.",
+   "section": "top",
+   "quote": "designated nineteen critical ICT third-party providers for direct oversight",
+   "about": [
+    "entity:dora",
+    "entity:european-union",
+    "entity:microsoft",
+    "entity:aws",
+    "entity:google",
+    "concept:regulation"
+   ],
+   "value": {
+    "n": 19,
+    "unit": "critical ICT third-party providers designated",
+    "as_of": "2025-11"
+   }
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "None of DORA, the UK's critical third parties regime, NIS2 or the SEC's four-day filing produces the second story; they produce notifications and oversight of a few hyperscalers for financial firms.",
+   "section": "top",
+   "quote": "What none of this does is produce the second story.",
+   "about": [
+    "entity:dora",
+    "entity:nis2",
+    "entity:sec",
+    "entity:bank-of-england",
+    "concept:regulation",
+    "concept:second-story"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "data-point",
+   "text": "Independent trackers counted 257 GitHub incidents in the twelve months to April 2026, a fifth of them in Actions, and GitHub's CTO wrote that the priority was availability first.",
+   "section": "top",
+   "quote": "independent trackers counted 257 incidents in the twelve months to that month, a fifth of them in Actions",
+   "about": [
+    "entity:github",
+    "entity:github-actions",
+    "concept:incidents"
+   ],
+   "value": {
+    "n": 257,
+    "unit": "GitHub incidents in twelve months",
+    "as_of": "2026-04"
+   }
+  },
+  {
+   "id": "c33",
+   "kind": "proposal",
+   "text": "Four asks, in order of cost: the second story within thirty days for every status-page incident, near misses counted in aggregate, evidence captured into a signed record, and an independent reader for incidents that reach everyone.",
+   "section": "top",
+   "quote": "publish, for every incident that reaches their status page, the second story within thirty days",
+   "about": [
+    "concept:second-story",
+    "concept:near-miss",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "Where the article argues from one evening's incident it says so; the argument does not depend on what GitHub's cause turns out to be.",
+   "section": "top",
+   "quote": "Where this article argues from one evening's incident it says so; the argument does not depend on what GitHub's cause turns out to be.",
+   "about": [
+    "concept:incidents",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "What is open: the cause, the count of organisations with a second path to production, a model of a week without GitHub, and the incident vault, which exists in pieces and has not been assembled for a real incident.",
+   "section": "top",
+   "quote": "The incident vault described above, which exists in pieces on this site and has not been assembled for a real incident.",
+   "about": [
+    "concept:vault",
+    "concept:incidents",
+    "entity:sgit"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c26",
+   "verb": "gives_rise_to",
+   "to": "c33"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c28"
+  },
+  {
+   "from": "c29",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c30"
+  },
+  {
+   "from": "c31",
+   "verb": "gives_rise_to",
+   "to": "c33"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c28"
+  }
+ ],
+ "entities": [
+  {
+   "id": "github",
+   "role": "the platform whose Actions incident on 5 October 2026 is the case, and whose record will say only delays, degraded, resolved"
+  },
+  {
+   "id": "github-actions",
+   "role": "the component through which every customer deploys, degraded for two hours"
+  },
+  {
+   "id": "github-pages",
+   "role": "degraded at 21:22 the same evening"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "whose release sat in the queue, was cancelled and went live two hours late"
+  },
+  {
+   "id": "icao",
+   "role": "whose Annex 13 sets prevention as the sole objective of investigation"
+  },
+  {
+   "id": "ntsb",
+   "role": "the independent US investigator with 15,500 recommendations and public dockets"
+  },
+  {
+   "id": "united-states",
+   "role": "re-established the NTSB in 1974; disbanded the Cyber Safety Review Board in 2025"
+  },
+  {
+   "id": "boeing",
+   "role": "whose 737 door plug blow-out got a preliminary report within a month"
+  },
+  {
+   "id": "nasa",
+   "role": "runs the Aviation Safety Reporting System, two million confidential reports since 1976"
+  },
+  {
+   "id": "european-union",
+   "role": "defined just culture in law in 2014; DORA and NIS2"
+  },
+  {
+   "id": "sam-altman",
+   "role": "called for a culture of transparent accident reporting in September 2026"
+  },
+  {
+   "id": "openai",
+   "role": "published principles including independent investigation of incidents"
+  },
+  {
+   "id": "cyber-safety-review-board",
+   "role": "the nearest thing to an NTSB for computing, disbanded in January 2025"
+  },
+  {
+   "id": "united-kingdom",
+   "role": "the air traffic control failure of August 2023 and the independent review that followed"
+  },
+  {
+   "id": "dora",
+   "role": "under which nineteen critical ICT providers were designated"
+  },
+  {
+   "id": "nis2",
+   "role": "requires early warning within 24 hours and a final report within a month"
+  },
+  {
+   "id": "sec",
+   "role": "requires a public filing within four business days of a material cyber incident"
+  },
+  {
+   "id": "bank-of-england",
+   "role": "warned in 2022 of systemic concentration risk in dominant outsourced arrangements"
+  },
+  {
+   "id": "microsoft",
+   "role": "GitHub's parent, named as a critical ICT provider"
+  },
+  {
+   "id": "aws",
+   "role": "named as a critical ICT provider"
+  },
+  {
+   "id": "google",
+   "role": "Google Cloud, named as a critical ICT provider"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault as footprint recorder, with signed commits, append lanes and read keys"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "incidents",
+   "defined_here": true
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "near-miss",
+   "defined_here": true
+  },
+  {
+   "id": "second-story",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/02/13/incident-response/v0.2.23__briefs__incident-philosophy-p3-as-p1.md",
+   "title": "Incident philosophy: P3 as P1, why near misses matter more than incidents",
+   "by": "Dinis Cruz",
+   "date": "2026-02-13",
+   "kind": "repository"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/07/02/root-cause-and-accountability/v0.33.40__strategy-brief__near-misses-normalization-of-deviance-rolling-the-dice-predictable-statistic-measurable-pre-incident.md",
+   "title": "Near misses, normalisation of deviance, rolling the dice",
+   "by": "Dinis Cruz",
+   "date": "2026-07-02",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://diniscruz.ai/2025/02/10/second-stories__from-three-mile-island-to-cybersecurity.md",
+   "title": "Second stories: from Three Mile Island to cybersecurity",
+   "by": "Dinis Cruz",
+   "date": "2025-02-10",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://diniscruz.ai/2025/04/29/fail-safe-not-fail-big__cyber-security-inspired-strategies-to-prevent-the-next-iberian-grid-crisis.md",
+   "title": "Fail safe, not fail big",
+   "by": "Dinis Cruz",
+   "date": "2025-04-29",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://sgit.ai/docs/pki.md",
+   "title": "sgit pki",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-05",
+   "what": "The GitHub Actions incident from 19:11 UTC; this site's release cancelled and retried; the article written while it was open"
+  },
+  {
+   "date": "2023-08-28",
+   "what": "The UK air traffic control failure"
+  },
+  {
+   "date": "2024-07",
+   "what": "The security vendor's update that crashed about 8.5 million machines"
+  },
+  {
+   "date": "2024-01",
+   "what": "The Boeing 737 door plug blow-out"
+  },
+  {
+   "date": "2025-01",
+   "what": "The US Cyber Safety Review Board disbanded"
+  },
+  {
+   "date": "2025-11",
+   "what": "Nineteen critical ICT third-party providers designated under DORA"
+  },
+  {
+   "date": "2026-07",
+   "what": "The UK designates its first four critical third parties"
+  }
+ ]
+}

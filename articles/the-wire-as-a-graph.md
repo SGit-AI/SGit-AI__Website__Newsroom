@@ -127,6 +127,7 @@ News & evidenceGraphs & knowledge[This article as a graph →](graphs.md#the-wir
 
 ### Continued by
 
+- [The graph of meaning, drawn: 5,664 claims from 188 articles, a frame of 26 ideas, eight clusters, one cut, and ten predictions scored](the-graph-of-meaning-drawn.md) 188 articles read as 5,664 anchored claims and joined: a frame of 26 ideas, eight clusters, one cut, the peaks, and ten predictions scored, two held, four missed.
 - [The graph of meaning: a brief for reading every article a second time, from the bottom up, and ten predictions about what will emerge](the-graph-of-meaning-a-brief.md) Every article read a second time as facts, names and sources, joined under one grammar; the brief, the method and ten predictions, before the run.
 - [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](search-as-navigation.md) Search as a walk through the newsroom's graph: chips, exact suggestions, five views and a pane that shows the working, with no model yet.
 - [Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit](books-from-articles.md) My books stall at 60 to 95%; these articles do not. The hypothesis: a book is an ordered set of finished articles, tested by Web Summit in November.

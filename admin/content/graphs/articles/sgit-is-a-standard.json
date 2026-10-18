@@ -1,0 +1,609 @@
+{
+ "slug": "sgit-is-a-standard",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Git is not GitHub; it is a format of blobs, trees, commits and refs named by their hashes, which GitHub, GitLab, a bare repository and a folder on a laptop all implement.",
+   "section": "git",
+   "quote": "Git is not GitHub. It is a format: blobs, trees, commits and refs, named by their hashes, laid out in a way any tool can read.",
+   "about": [
+    "entity:git",
+    "entity:github",
+    "concept:standard-not-server"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "hypothesis",
+   "text": "sgit is the same kind of thing as git, a standard rather than a server, and the owner thinks that is the most important thing to understand about it.",
+   "section": "top",
+   "quote": "sgit is the same kind of thing, and I think that is the most important thing to understand about it.",
+   "about": [
+    "entity:sgit",
+    "concept:standard-not-server",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "People read encrypted git and picture a product with a server in the middle; there is a server, and it is the least interesting part.",
+   "section": "git",
+   "quote": "There is a server, and it is the least interesting part.",
+   "about": [
+    "concept:standard-not-server",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "A vault is a set of files laid out by a convention: four kinds of object, all ciphertext, blobs, trees, commits and one mutable pointer per branch.",
+   "section": "vault",
+   "quote": "A vault is a set of files laid out by a convention. Four kinds of object, all ciphertext: blobs, the file contents; trees, a folder's encrypted names pointing at blob and tree ids",
+   "about": [
+    "concept:vault",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Every object except the ref and the branch index is named by the SHA-256 of its own ciphertext, so a name can never point at different bytes and anyone can keep an object for ever.",
+   "section": "vault",
+   "quote": "Every object except the ref and the branch index is named by the SHA-256 of its own ciphertext, so a name can never point at different bytes",
+   "about": [
+    "entity:sha-256",
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The name says which is which: an immutable object's id is obj-cas-imm- and a hash, the mutable pointers are ref-pid-muw- and a hash, so a cache can keep an object without reading it or a header.",
+   "section": "vault",
+   "quote": "An immutable object's id is obj-cas-imm- and a hash; the mutable pointers are ref-pid-muw- and a hash.",
+   "about": [
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "sgit.ai's documentation pages, a vault read in the browser, fetch 18 objects on a cold load, one 69-byte ref on the next, and nothing inside the two-minute freshness window.",
+   "section": "vault",
+   "quote": "a cold load fetches 18 objects, the next load one 69-byte ref, and a load inside the two-minute freshness window nothing at all.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:client-side"
+   ],
+   "value": {
+    "n": 18,
+    "unit": "objects fetched on a cold load",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "sgit keeps no deltas between versions of a file; a changed file is a new object, a trade made so anyone can cache without asking.",
+   "section": "vault",
+   "quote": "sgit keeps no deltas between versions of a file; a changed file is a new object.",
+   "about": [
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The vault key gives the vault id and, one way, the read key; the read key cannot be turned back into the write key, so it can be published.",
+   "section": "one-hash",
+   "quote": "The read key cannot be turned back into the write key, so it can be published.",
+   "about": [
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The read key gives the ref's name: the first twelve hex characters of an HMAC of the read key over sg-vault-v1:file-id:ref: and the vault id, so the server never told you where the head is.",
+   "section": "one-hash",
+   "quote": "In the CLI's code it is the first twelve hex characters of an HMAC of the read key over sg-vault-v1:file-id:ref: and the vault id.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault-design"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "A file is four kinds of request from its read key, ref, commit, the trees on the path and the blob, and every one is a plain GET of a fixed path.",
+   "section": "one-hash",
+   "quote": "a file is four kinds of request from its read key, and every one is a plain GET of a fixed path.",
+   "about": [
+    "concept:vault-design",
+    "concept:standard-not-server"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "GETs from read key to file",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Writing is the same objects PUT in batches, plus one compare-and-swap on the ref and the branch index.",
+   "section": "one-hash",
+   "quote": "Writing is the same objects, PUT in batches, and one compare-and-swap on the ref and the branch index.",
+   "about": [
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Two independent implementations speak the format, the CLI and the browser vault app, and each verifies the other's changes.",
+   "section": "one-hash",
+   "quote": "Two independent implementations speak this format: the CLI, and the browser vault app",
+   "about": [
+    "entity:sgit",
+    "concept:standard-not-server",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "definition",
+   "text": "A standard is a format with more than one implementation that agree.",
+   "section": "one-hash",
+   "quote": "That is what a standard is: a format with more than one implementation that agree.",
+   "about": [
+    "concept:standard-not-server"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Any storage that answers a GET implements the read half of the convention: an S3 bucket, a CDN, GitHub Pages, a folder, Python's one-line file server.",
+   "section": "storage",
+   "quote": "any storage that answers a GET implements the read half of the convention: an S3 bucket, a CDN, GitHub Pages, a folder, Python's one-line file server.",
+   "about": [
+    "entity:aws",
+    "entity:github-pages",
+    "entity:python",
+    "concept:deployment",
+    "concept:standard-not-server"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "This site measured 317 milliseconds a request through the vault API against 44 for a small file from GitHub Pages.",
+   "section": "storage",
+   "quote": "317 milliseconds a request through the vault API, against 44 for a small file from GitHub Pages.",
+   "about": [
+    "entity:github-pages",
+    "concept:deployment",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 317,
+    "unit": "milliseconds a request through the vault API, against 44 from GitHub Pages",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Stripped down, the API has two jobs: protect writes with an access token and the compare-and-swap, and shorten reads a little with batches of fifty objects and a listing.",
+   "section": "storage",
+   "quote": "the API has two jobs: protect writes, with an access token and the compare-and-swap, and shorten reads a little, with batches of fifty objects",
+   "about": [
+    "concept:standard-not-server",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Every deployment option is shipped: a folder, a laptop running the hosted image with sgit serve in Docker, Podman or Python, your own server, a static host, or the hosted service, a Lambda in front of S3 behind CloudFront.",
+   "section": "storage",
+   "quote": "a laptop, with sgit serve running the hosted service's own image in Docker, Podman or a plain Python process",
+   "about": [
+    "entity:docker",
+    "entity:aws",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "How fast sgit is depends on how close the storage is: on the vault behind this newsroom a one-folder clone is 13 seconds hosted and 0.8 seconds from a local server.",
+   "section": "storage",
+   "quote": "a one-folder clone is 13 seconds hosted and 0.8 seconds from a local server",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:deployment"
+   ],
+   "value": {
+    "n": 13,
+    "unit": "seconds for a one-folder clone hosted, against 0.8 locally",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "On ruv.sgit.ai's hive runs, on a local server, every operation takes between 0.4 and 1.5 seconds, most of it starting Python and deriving the key.",
+   "section": "storage",
+   "quote": "every operation takes between 0.4 and 1.5 seconds, most of it starting Python and deriving the key.",
+   "about": [
+    "entity:ruv-sgit-ai",
+    "concept:deployment",
+    "entity:python"
+   ],
+   "value": {
+    "n": 1.5,
+    "unit": "seconds, upper bound per operation on ruv.sgit.ai's local server",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The cache layer is shipped: sgit cache add declares a path, and every push keeps an encrypted cache object for it at a location derived from the read key and the path, so a reader needs no walk.",
+   "section": "cache",
+   "quote": "every push keeps an encrypted cache object for it at a location derived from the read key and the path.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "A miss or a stale cache entry falls back to the ordinary walk, so correctness never depends on the cache; losing one is a performance problem, never a correctness one.",
+   "section": "cache",
+   "quote": "A miss or a stale entry falls back to the ordinary walk, so correctness never depends on the cache",
+   "about": [
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The cache layer is Scion's derived data, built by the writer instead of a server and named by the key instead of indexed by it.",
+   "section": "cache",
+   "quote": "This is Scion's \"derived data\", built by the writer instead of a server, and named by the key instead of indexed by it.",
+   "about": [
+    "entity:scion",
+    "entity:anthropic",
+    "concept:vault-design"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "sgit keeps history, blame and merges on the client, and would even if the server could read, because a merge is a workflow step that needs the context, the history and the policy on who may merge.",
+   "section": "client",
+   "quote": "a merge is a workflow step that needs the context of the change, the history and the policy that says who may merge what.",
+   "about": [
+    "concept:client-side",
+    "concept:multi-agent",
+    "entity:scion"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "Scion's post concedes the point from the other side: it could not keep a merge queue at its rate, so concurrent changes can conflict and Claude typically fixes them.",
+   "section": "client",
+   "quote": "concurrent changes can conflict, but Claude can typically fix these conflicts",
+   "about": [
+    "entity:claude",
+    "entity:scion",
+    "concept:multi-agent"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "sgit keeps the property that made git git, a full clone as a complete verifiable copy, but the full clone became optional through folder scope, history depth, sparse clones and the cache layer.",
+   "section": "client",
+   "quote": "What changed is that the full clone became optional.",
+   "about": [
+    "concept:vault-design",
+    "entity:git"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "None of this was a plan to be minimal: because the server cannot read a byte, every feature had to be expressible as objects a writer produces and a reader derives, which is why the designs are small enough to be a standard.",
+   "section": "constraint",
+   "quote": "None of this was a plan to be minimal. The server cannot read a byte, so \"just do it on the server\" was never available",
+   "about": [
+    "concept:minimal-code",
+    "concept:encryption-and-keys",
+    "concept:standard-not-server"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "sgit is not a formal standard: no standards body, a documented format with two implementations.",
+   "section": "limits",
+   "quote": "Not a formal standard. No standards body; a documented format with two implementations.",
+   "about": [
+    "concept:standard-not-server"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "It is not proven at Scion's scale; the largest vault in daily use is about 35,000 objects and ten agents.",
+   "section": "limits",
+   "quote": "Not proven at Scion's scale. The largest vault in daily use is about 35,000 objects and ten agents.",
+   "about": [
+    "entity:scion",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "There is no blame or bisect yet, and a partial clone of a long history walks the commits one at a time until a commit-chain object ships; a depth avoids it today.",
+   "section": "limits",
+   "quote": "No blame or bisect yet. And a partial clone of a long history walks the commits one at a time until a commit-chain object ships",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The CDN in front of the hosted API does not cache object reads yet; browsers, clients and static hosts do.",
+   "section": "limits",
+   "quote": "The CDN in front of the hosted API does not cache object reads yet. Browsers, clients and static hosts do.",
+   "about": [
+    "concept:deployment"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c26"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c15"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "the format and command line argued to be a standard"
+  },
+  {
+   "id": "git",
+   "role": "the standard sgit copied, and the reason it won"
+  },
+  {
+   "id": "github",
+   "role": "one implementation of git, not git itself"
+  },
+  {
+   "id": "github-pages",
+   "role": "a static host that implements the read half"
+  },
+  {
+   "id": "sha-256",
+   "role": "names every immutable object by the hash of its ciphertext"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "its documentation pages are a vault read in the browser"
+  },
+  {
+   "id": "aws",
+   "role": "S3, Lambda and CloudFront, the hosted service"
+  },
+  {
+   "id": "python",
+   "role": "its one-line file server implements the read half; starting it is most of a local operation's time"
+  },
+  {
+   "id": "docker",
+   "role": "one way to run the hosted image on a laptop"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the vault behind it was measured hosted and locally"
+  },
+  {
+   "id": "ruv-sgit-ai",
+   "role": "its hive runs give the local operation timings"
+  },
+  {
+   "id": "scion",
+   "role": "Anthropic's server-side source control, whose derived data and merge concession are compared"
+  },
+  {
+   "id": "anthropic",
+   "role": "published the Scion post"
+  },
+  {
+   "id": "claude",
+   "role": "fixes the merge conflicts in Scion"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose memo the article is written from"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "standard-not-server",
+   "defined_here": true
+  },
+  {
+   "id": "vault",
+   "defined_here": true
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://sgit.ai/case-studies/live-vault-docs.html",
+   "title": "Live-vault docs case study",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/SGit-AI/SGit-AI__CLI",
+   "title": "SGit-AI__CLI",
+   "by": "SGit-AI",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+   "title": "Redesigning source control at Anthropic",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-16",
+   "what": "The voice memo; the derivation and cache layer checked in the CLI code; ruv.sgit.ai's ledger of that day"
+  }
+ ]
+}

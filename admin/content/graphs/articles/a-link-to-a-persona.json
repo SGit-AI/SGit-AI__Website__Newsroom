@@ -1,0 +1,630 @@
+{
+ "slug": "a-link-to-a-persona",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "Send a CISO to the newsroom as a CISO, a data protection officer as a DPO, and one particular person as a persona made for them, with nothing but a link.",
+   "section": "top",
+   "quote": "This is the brief for doing that with nothing but a link.",
+   "about": [
+    "concept:personas",
+    "entity:newsroom-sgit-ai",
+    "entity:ciso",
+    "entity:dpo",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "Personas move out of the site's code into an encrypted vault opened in the reader's browser with a published read key, so the newsroom's agents can add or update one without a change to the site.",
+   "section": "top",
+   "quote": "Personas move out of the site's code into an encrypted vault",
+   "about": [
+    "concept:vault",
+    "concept:personas",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "There are three kinds of link: a page of its own for the few personas everyone uses, a fragment for any number more, and a private persona in its own vault.",
+   "section": "top",
+   "quote": "A page of its own for the few personas everyone uses",
+   "about": [
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The site is static pages on GitHub Pages, so no server can answer an arbitrary persona path; the fragment after the hash solves it.",
+   "section": "top",
+   "quote": "The site is static pages on GitHub Pages, so there is no server to answer",
+   "about": [
+    "entity:github-pages",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "RFC 3986 says the fragment is separated before dereference and dereferenced solely by the user agent, so the browser keeps it and GitHub Pages never sees it.",
+   "section": "top",
+   "quote": "the browser keeps it, and GitHub Pages never sees it",
+   "about": [
+    "entity:rfc-3986",
+    "entity:github-pages",
+    "concept:privacy"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A private persona lives in a vault of its own and the link carries the vault id and read key: whoever has the link can open it, whoever does not cannot find out it exists.",
+   "section": "top",
+   "quote": "Whoever has the link can open the persona; whoever does not, cannot, and cannot find out it exists.",
+   "about": [
+    "concept:privacy",
+    "concept:vault",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "When the link opens, the page shows who you are reading as, the newsroom opens as that persona, and the persona is added to the reader's personas straight away as a visitor.",
+   "section": "top",
+   "quote": "The persona is added to the reader's personas straight away, as a visitor",
+   "about": [
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "definition",
+   "text": "Follow keeps the persona linked to the vault and Make it mine forks it; the two halves come straight from git, tracking the upstream or branching from it.",
+   "section": "top",
+   "quote": "Follow and fork are the two halves of the design, and they come straight from git",
+   "about": [
+    "concept:follow-or-fork",
+    "entity:git",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "The site already opens thirty-odd vaults in the browser with nothing but an endpoint, a vault id and a read key, so a persona vault is one more.",
+   "section": "top",
+   "quote": "This site already opens thirty-odd vaults that way",
+   "about": [
+    "concept:vault",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 30,
+    "unit": "vaults the site already opens in the browser",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The newsroom's agents keep the personas: every published article is added to the personas it belongs to, every newsletter is a review, and each change is a vault commit with a line in changes.jsonl.",
+   "section": "top",
+   "quote": "Keeping personas is one more job on the desk.",
+   "about": [
+    "concept:the-newsroom",
+    "concept:multi-agent",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Adding or changing a persona is an sgit commit and push to the vault, without a release of the website, a build or a deploy.",
+   "section": "top",
+   "quote": "without a release of the website, a build, or a deploy",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "A persona can later carry outside reading with sources, which is how a newsroom with sixty articles can serve a dozen audiences well.",
+   "section": "top",
+   "quote": "That is how a newsroom with sixty articles can serve a dozen audiences well",
+   "about": [
+    "concept:the-reading-list",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Netflix launched Profiles on 1 August 2013, up to five per account, so each person in a household got their own suggestions.",
+   "section": "top",
+   "quote": "Netflix launched Profiles on 1 August 2013, up to five per account",
+   "about": [
+    "entity:netflix",
+    "concept:personas"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "profiles per Netflix account",
+    "as_of": "2013-08-01"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Bluesky's starter packs, launched 26 June 2024, each hold up to 150 people and three custom feeds and have their own link.",
+   "section": "top",
+   "quote": "Each holds up to 150 people and three custom feeds, has its own link",
+   "about": [
+    "entity:bluesky",
+    "concept:personas"
+   ],
+   "value": {
+    "n": 150,
+    "unit": "people per starter pack",
+    "as_of": "2024-06-26"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Starter packs are the closest thing to a link to a persona shipped at scale: the link is the onboarding, and what it sets up belongs to the newcomer afterwards.",
+   "section": "top",
+   "quote": "the link is the onboarding, and what the link sets up belongs to the newcomer afterwards",
+   "about": [
+    "entity:bluesky",
+    "concept:follow-or-fork"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "Mastodon's community follow packs were CSV files of up to 35 accounts, and the project has announced a native version whose people can opt out.",
+   "section": "top",
+   "quote": "were CSV files of up to 35 accounts that a user downloaded and imported",
+   "about": [
+    "entity:mastodon",
+    "concept:personas"
+   ],
+   "value": {
+    "n": 35,
+    "unit": "accounts per Mastodon follow pack"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "A persona about a person goes in a private vault and is sent only to them; a public persona describes a role, never a named individual unless they have agreed.",
+   "section": "top",
+   "quote": "a public persona describes a role, never a named individual, unless they have agreed",
+   "about": [
+    "concept:privacy",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Apple News and Brave News personalise on the device but still run servers; here the content is static files and the personas ciphertext, and the difference is who holds the copy that travels.",
+   "section": "top",
+   "quote": "the difference is who holds the copy that travels between devices",
+   "about": [
+    "entity:apple",
+    "entity:brave",
+    "concept:client-side"
+   ],
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "definition",
+   "text": "A persona here is not a fictional user a team designs for; it is a reading list the reader wears and can change.",
+   "section": "top",
+   "quote": "it is a reading list the reader wears, and can change",
+   "about": [
+    "concept:personas",
+    "concept:the-reading-list"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "Anyone with a private persona link can open it, the same as a forwarded email; the persona holds reading suggestions, not secrets.",
+   "section": "top",
+   "quote": "the persona holds reading suggestions, not secrets",
+   "about": [
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The page says where a persona came from and marks any vault that is not the newsroom's own, so a forged persona cannot pass itself off as ours.",
+   "section": "top",
+   "quote": "so a forged persona cannot pass itself off as ours",
+   "about": [
+    "concept:provenance",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "There is no analytics, by design; what the newsroom will know is what readers send through the share page and whether people write back.",
+   "section": "top",
+   "quote": "There is no analytics, by design.",
+   "about": [
+    "concept:privacy",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "To build: the vault with a published read key, the pages, follow and fork and remove in the next SG Meter, a keeper role with a behaviour policy, private personas, and outside reading.",
+   "section": "top",
+   "quote": "A newsroom role with a behaviour policy: what it may change, how it records each change",
+   "about": [
+    "entity:sg-meter",
+    "concept:behaviour-policy",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "It should be built at newsroom.sgit.ai after the reader account has moved; the vault and the schema can be made first.",
+   "section": "top",
+   "quote": "The vault and the schema can be made first, because they do not depend on which site reads them.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "It demonstrates what the site is about: content that changes without a deploy, shared with those who hold the key, decrypted in the browser, kept by agents whose every change is a commit.",
+   "section": "top",
+   "quote": "Content that changes without a deploy, shared with exactly the people who hold the key",
+   "about": [
+    "concept:client-side",
+    "concept:encryption-and-keys",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The article was written from a voice note by Dinis Cruz by a Claude Code session working as the newsroom on 10 October 2026.",
+   "section": "top",
+   "quote": "by a Claude Code session working as the sgit.ai newsroom, on 10 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "entity:claude-code",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Apple's and Brave's descriptions of their own products are their claims, not independent audits.",
+   "section": "top",
+   "quote": "are their claims, not independent audits",
+   "about": [
+    "entity:apple",
+    "entity:brave"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "A link to the front page lands a reader on a page made for nobody: sixty-odd pieces across six topics, with no way to know which they would want.",
+   "section": "top",
+   "quote": "they land on a page made for nobody in particular",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:personas"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c28",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c24",
+   "verb": "specifies",
+   "to": "c23"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c18"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site a persona link opens as someone"
+  },
+  {
+   "id": "ciso",
+   "role": "the role a sender would send to the newsroom as a CISO"
+  },
+  {
+   "id": "dpo",
+   "role": "the role a sender would send to the newsroom as a DPO"
+  },
+  {
+   "id": "github-pages",
+   "role": "serves the static pages and never sees the fragment"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault the personas live in, committed and pushed by agents"
+  },
+  {
+   "id": "git",
+   "role": "where follow and fork come from"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the next version carries follow, fork and remove"
+  },
+  {
+   "id": "apple",
+   "role": "Apple News personalises on the device and syncs through iCloud"
+  },
+  {
+   "id": "claude-code",
+   "role": "the session that wrote the article as the newsroom"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the idea, with editorial responsibility"
+  },
+  {
+   "id": "rfc-3986",
+   "role": "defines the fragment as dereferenced solely by the user agent"
+  },
+  {
+   "id": "netflix",
+   "role": "launched Profiles in 2013, up to five per account"
+  },
+  {
+   "id": "bluesky",
+   "role": "starter packs, the closest thing to a link to a persona shipped at scale"
+  },
+  {
+   "id": "mastodon",
+   "role": "follow packs and the consent question"
+  },
+  {
+   "id": "brave",
+   "role": "Brave News personalises exclusively in the browser"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "personas",
+   "defined_here": true
+  },
+  {
+   "id": "follow-or-fork",
+   "defined_here": true
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "the-reading-list",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.rfc-editor.org/rfc/rfc3986",
+   "title": "RFC 3986, section 3.5",
+   "by": "IETF",
+   "date": "undated",
+   "kind": "standard"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.csmonitor.com/",
+   "title": "The Christian Science Monitor on Netflix Profiles",
+   "by": "The Christian Science Monitor",
+   "date": "2013-08-01",
+   "kind": "news"
+  },
+  {
+   "id": "r03",
+   "url": "https://bsky.social/about/blog/06-26-2024-starter-packs",
+   "title": "Bluesky's announcement of starter packs, and its FAQ",
+   "by": "Bluesky",
+   "date": "2024-06-26",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://mastodonmigration.wordpress.com/",
+   "title": "Follow packs, and coverage of Mastodon's announced Packs",
+   "by": "Mastodon Migration blog",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.apple.com/legal/privacy/data/en/apple-news/",
+   "title": "Apple's privacy page for Apple News",
+   "by": "Apple",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r06",
+   "url": "https://brave.com/brave-news/",
+   "title": "Brave's page for Brave News",
+   "by": "Brave",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The voice note, the article, and the day the starting personas went live"
+  },
+  {
+   "date": "2013-08-01",
+   "what": "Netflix launches Profiles, up to five per account"
+  },
+  {
+   "date": "2024-06-26",
+   "what": "Bluesky launches starter packs"
+  }
+ ]
+}

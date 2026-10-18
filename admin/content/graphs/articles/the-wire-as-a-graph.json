@@ -1,0 +1,635 @@
+{
+ "slug": "the-wire-as-a-graph",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "Four wires run, each an encrypted vault a desk writes on a schedule: the Industry, AWS and Portugal wires daily, the OWASP Wire weekly.",
+   "section": "ux",
+   "quote": "the Industry Wire, the AWS Wire and the Portugal Wire daily, the OWASP Wire weekly",
+   "about": [
+    "entity:industry-wire",
+    "concept:the-wire",
+    "concept:vault"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "wires",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "The way to design the graph is backwards: start with the user experience and reverse engineer the data sets, the structure and the runs that produce them.",
+   "section": "ux",
+   "quote": "start with the user experience, and reverse engineer the data sets, the structure and the runs that produce them",
+   "about": [
+    "concept:the-wire",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "proposal",
+   "text": "What the reader should see is a story as a short narrative in which every name is a link to something with an ID and a type.",
+   "section": "ux",
+   "quote": "What the reader should see is a story as a short narrative in which every name is a link.",
+   "about": [
+    "concept:the-wire",
+    "concept:long-lived-ids",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "proposal",
+   "text": "Under the narrative, every sentence is a claim with its evidence: a fact, a claim by a party, a statement, or the desk's analysis.",
+   "section": "ux",
+   "quote": "Under the narrative, every sentence is a claim with its evidence",
+   "about": [
+    "concept:the-wire",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The public read-only vaults of the four wires held 202 stories when read on 14 October 2026.",
+   "section": "today",
+   "quote": "I read all of them today: 202 stories.",
+   "about": [
+    "entity:industry-wire",
+    "concept:the-wire"
+   ],
+   "value": {
+    "n": 202,
+    "unit": "stories",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Across the four wires there are 1,358 distinct names, a median of nine per story.",
+   "section": "today",
+   "quote": "1,358 distinct names, median nine per story.",
+   "about": [
+    "concept:the-wire",
+    "concept:gravity"
+   ],
+   "value": {
+    "n": 1358,
+    "unit": "distinct names",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "171 names appear in two or more stories and 48 in two or more wires, among them Anthropic, OpenAI, Microsoft and GitHub; those are the joins between wires.",
+   "section": "today",
+   "quote": "171 appear in two or more stories, and 48 in two or more wires",
+   "about": [
+    "concept:gravity",
+    "entity:anthropic",
+    "entity:openai",
+    "entity:microsoft",
+    "entity:github"
+   ],
+   "value": {
+    "n": 171,
+    "of": 1358,
+    "unit": "names in two or more stories",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Only 44% of the names a story lists appear in its headline or summary; the tags describe the story and do not anchor to its text.",
+   "section": "today",
+   "quote": "Only 44% of the names a story lists appear in its headline or summary.",
+   "about": [
+    "concept:the-wire",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 44,
+    "unit": "percent of listed names found in the story's text",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "In the Asos story the one person listed does not appear in its text, and the NCSC, whose notice is the primary source, is not listed although it is named in the summary and tagged elsewhere.",
+   "section": "today",
+   "quote": "the NCSC, whose notice is the primary source, is not listed at all, although it is named in the summary and tagged in another story",
+   "about": [
+    "entity:ncsc",
+    "entity:asos",
+    "concept:the-wire"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "The same thing is sometimes two names: aws and amazon web services are separate entries, and eleven names are filed under two kinds, Snowflake as both an organisation and a product.",
+   "section": "today",
+   "quote": "eleven names are filed under two kinds, Snowflake as both an organisation and a product",
+   "about": [
+    "entity:aws",
+    "entity:snowflake",
+    "concept:gravity"
+   ],
+   "value": {
+    "n": 11,
+    "of": 1358,
+    "unit": "names filed under two kinds",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Some tags are words rather than names: release is tagged as a technology 34 times.",
+   "section": "today",
+   "quote": "\"release\" is tagged as a technology 34 times.",
+   "about": [
+    "concept:the-wire",
+    "concept:taxonomy-debt"
+   ],
+   "value": {
+    "n": 34,
+    "unit": "stories tagging release as a technology",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "None of this is a mistake by the desks; it is what tags are, and it is why the next step is IDs.",
+   "section": "today",
+   "quote": "None of this is a mistake by the desks; it is what tags are. It is why the next step is IDs.",
+   "about": [
+    "concept:taxonomy-debt",
+    "concept:long-lived-ids"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "definition",
+   "text": "The primitives the data needs are the run, the capture, the claim, the story, the story of stories and the name, each with its own long-lived random ID.",
+   "section": "primitives",
+   "quote": "Working back from the reader, these are the objects the data needs.",
+   "about": [
+    "concept:the-wire",
+    "concept:long-lived-ids",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "definition",
+   "text": "A story of stories is a thread or topic whose parts are stories, and another outlet's article is a story too; the same schema at every size is the fractal part.",
+   "section": "primitives",
+   "quote": "A thread or a topic is a story whose parts are stories.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:the-wire"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Days, topics and names are views drawn from the store, not separate data; the wire pages already draw graphs from each edition since v0.12.42.",
+   "section": "primitives",
+   "quote": "the days, topics and names are views, not separate data",
+   "about": [
+    "concept:the-wire",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "Every object gets a random 128-bit identifier minted once at creation, never reused and never derived from its title, with slugs and old IDs kept as aliases.",
+   "section": "ids",
+   "quote": "a 128-bit identifier minted once when the object is first created, never reused and never derived from its title",
+   "about": [
+    "concept:long-lived-ids"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "With IDs a graph can be cleaned: duplicates merged, a type fixed, and every story that used a name seen, without editing text.",
+   "section": "ids",
+   "quote": "With IDs you can merge duplicates, fix a type, and see every story that used a name, without editing text.",
+   "about": [
+    "concept:long-lived-ids",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Earlier experiments that linked every word of a long text were the right thing done too much: more graph than text.",
+   "section": "size",
+   "quote": "That was the right thing done too much. Linking every word of a long article produces more graph than text.",
+   "about": [
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "One of the five catalogues of one article came out at 2.8 times the size of the articles it catalogues.",
+   "section": "size",
+   "quote": "2.8 times the size of the articles it catalogues",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:agent-readable-web"
+   ],
+   "value": {
+    "n": 2.8,
+    "unit": "times the size of the source articles"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "The top-level narrative of a wire story is about 55 words at the median across the four wires, small enough to link every name and claim in it.",
+   "section": "size",
+   "quote": "about 55 words at the median across the four wires",
+   "about": [
+    "concept:the-wire",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 55,
+    "unit": "words, median narrative length",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "A name that appears once lives inside its story; a name with gravity, in two or more stories or wires, gets its own folder with its aliases, type and stories.",
+   "section": "tree",
+   "quote": "a name with gravity gets its own folder, with its aliases, its type and the list of stories that cite it",
+   "about": [
+    "concept:gravity",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "Smaller, cheaper models such as Sonnet and Haiku do the extraction and linking, a more capable model checks, and the validator, which is code, checks both.",
+   "section": "models",
+   "quote": "the cheap model proposes, the capable model disposes, and the validator, which is code, checks what both produce",
+   "about": [
+    "entity:claude",
+    "concept:multi-agent",
+    "concept:the-wire"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The wire charter already asks for a verifier that is an independent agent, on a different model where possible.",
+   "section": "models",
+   "quote": "an independent agent, on a different model where possible",
+   "about": [
+    "concept:the-wire",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "The article is also the brief for the wire desks and the wire agent, written on 14 October 2026 on top of v0.12.45, in eight numbered steps.",
+   "section": "brief",
+   "quote": "Written by @newsroom.writer for Dinis Cruz, 14 October 2026, on top of v0.12.45 and the four wires' public vaults as read that day.",
+   "about": [
+    "concept:the-brief",
+    "entity:dinis-cruz",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "Start with the reader: a story page drawn from fixtures first, agreed before any data is changed.",
+   "section": "brief",
+   "quote": "Agree it before changing any data.",
+   "about": [
+    "concept:the-brief",
+    "concept:the-wire"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Mint a random 128-bit ID for every story, keep today's slugs as aliases and write an ids.json per vault; nothing is renamed and links keep working.",
+   "section": "brief",
+   "quote": "Nothing is renamed; links keep working.",
+   "about": [
+    "concept:long-lived-ids",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "Record the character ranges where each name appears in the summary and measure the share of listed names found in the text, 44% today.",
+   "section": "brief",
+   "quote": "Measure the share of listed names found in the text; today it is 44%.",
+   "about": [
+    "concept:the-brief",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The counts are from the public vaults read on 14 October 2026; the desks' working vaults may hold more.",
+   "section": "limits",
+   "quote": "The counts are from the public vaults.",
+   "about": [
+    "concept:the-wire",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Name matching was by exact text ignoring case, so found in the text and in two or more stories are lower bounds.",
+   "section": "limits",
+   "quote": "Name matching was by exact text, ignoring case.",
+   "about": [
+    "concept:gravity"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The reader view and the IDs are proposed; nothing in the brief is built.",
+   "section": "limits",
+   "quote": "The reader view and IDs are proposed. Nothing in the brief is built.",
+   "about": [
+    "concept:long-lived-ids",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The NCSC ID in the figure is an example minted for the illustration.",
+   "section": "limits",
+   "quote": "The NCSC ID in the figure is an example, minted for the illustration.",
+   "about": [
+    "entity:ncsc",
+    "concept:long-lived-ids"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 14 October 2026, written up by the site's writer agent, with the numbers measured from read-only clones of the four wires' public vaults.",
+   "section": "sources",
+   "quote": "The numbers were measured for this article from read-only clones of the four wires' public vaults",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "Readers who run a news or research desk and want their stories as a graph are invited to write to agent@riskmandate.ai.",
+   "section": "limits",
+   "quote": "If you run a news or research desk and want your stories as a graph",
+   "about": [
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c25",
+   "verb": "specifies",
+   "to": "c24"
+  },
+  {
+   "from": "c26",
+   "verb": "specifies",
+   "to": "c24"
+  },
+  {
+   "from": "c27",
+   "verb": "specifies",
+   "to": "c24"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c24"
+  }
+ ],
+ "entities": [
+  {
+   "id": "industry-wire",
+   "role": "the four wires whose public vaults were measured and which the brief is for"
+  },
+  {
+   "id": "ncsc",
+   "role": "named in the Asos story's text but not its tags; its ID in the figure is an example"
+  },
+  {
+   "id": "asos",
+   "role": "the company in the example story"
+  },
+  {
+   "id": "snowflake",
+   "role": "the platform in the example story, filed as both an organisation and a product"
+  },
+  {
+   "id": "anthropic",
+   "role": "one of the names in two or more wires"
+  },
+  {
+   "id": "openai",
+   "role": "one of the names in two or more wires"
+  },
+  {
+   "id": "microsoft",
+   "role": "one of the names in two or more wires"
+  },
+  {
+   "id": "github",
+   "role": "one of the names in two or more wires"
+  },
+  {
+   "id": "aws",
+   "role": "filed under two names, aws and amazon web services"
+  },
+  {
+   "id": "claude",
+   "role": "Sonnet and Haiku as the cheaper models for extraction and linking"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author of the memo and the brief"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address for desks that want their stories as a graph"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-wire",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "taxonomy-debt",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "long-lived-ids",
+   "defined_here": true
+  },
+  {
+   "id": "gravity",
+   "defined_here": true
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo, the count of the four wires' public vaults (202 stories, 1,358 names) and the brief for the desks"
+  }
+ ]
+}

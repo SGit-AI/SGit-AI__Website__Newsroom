@@ -1,0 +1,546 @@
+{
+ "slug": "our-first-pr-in-ruflo",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "rUv merged pull request #4239 into Ruflo's main branch on 17 October at 14:59 London time; Mondweep Chakravorty opened it at 23:02 the night before.",
+   "section": "in-short",
+   "quote": "into Ruflo's main branch on 17 October at 14:59 London time",
+   "about": [
+    "entity:ruv",
+    "entity:mondweep-chakravorty",
+    "entity:ruflo"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The pull request adds one file, docs/integrations/sgit-memory-checkpoints.md, which documents how an Agent Behaviour Policy can govern Ruflo's memory and keep its checkpoints in an encrypted SGit vault.",
+   "section": "what",
+   "quote": "which documents how an Agent Behaviour Policy can govern Ruflo's memory and keep its checkpoints in an encrypted SGit vault",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-memory",
+    "concept:vault",
+    "entity:ruflo",
+    "entity:sgit"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Of the 9,625 commits on Ruflo's main branch, this is the first to mention SGit or an ABP, and Mondweep's first commit there.",
+   "section": "what",
+   "quote": "of the 9,625 commits on its main branch, this is the first to mention SGit or an ABP",
+   "about": [
+    "entity:ruflo",
+    "entity:sgit",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 1,
+    "of": 9625,
+    "unit": "commits on Ruflo's main branch mentioning SGit or an ABP",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Two days earlier, at Agentic Engineering Live, the owner said the team was ready to sell this; now the method has a page inside the project it governs, written by someone outside the team.",
+   "section": "what",
+   "quote": "Two days earlier, at Agentic Engineering Live, I said we were ready to sell this.",
+   "about": [
+    "entity:agentic-engineering-live",
+    "entity:dinis-cruz",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "mondweep/sgit-ruv-memory is a small MCP server, MIT-licensed, with five commits on 16 October, the last at 23:58.",
+   "section": "poc",
+   "quote": "is a small MCP server, MIT-licensed, with five commits on 16 October",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "entity:mcp",
+    "concept:open-source"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The adapter compiles an ABP into Ruflo's rule format, asks a pinned copy of Ruflo's own policy evaluator for a decision in enforce mode before each of its tools runs, and keeps each memory checkpoint in its own encrypted SGit vault.",
+   "section": "poc",
+   "quote": "asks a pinned copy of Ruflo's own policy evaluator for a decision in enforce mode before each of its tools runs",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "concept:behaviour-policy",
+    "concept:vault",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Sixteen tests pass, by the author's own evidence.",
+   "section": "poc",
+   "quote": "Sixteen tests pass, by the author's own evidence.",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 16,
+    "unit": "passing tests",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The pull request changed one new file, 83 lines added and none removed, in three commits over one hour on the evening of 16 October.",
+   "section": "pr",
+   "quote": "one new file, docs/integrations/sgit-memory-checkpoints.md, 83 lines added, none removed",
+   "about": [
+    "entity:ruflo",
+    "entity:mondweep-chakravorty"
+   ],
+   "value": {
+    "n": 83,
+    "unit": "lines added",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The second commit is the one that matters most to the owner: the first version documented the adapter; the second documents the ABP compiled into Ruflo's rules and enforced on every operation.",
+   "section": "pr",
+   "quote": "the second documents the ABP compiled into Ruflo's rules and enforced on every operation",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The description lists the evidence and the gaps in the same breath: semantic quality is not validated, and the change is documentation only with no runtime defaults or dependencies changed.",
+   "section": "pr",
+   "quote": "Semantic quality is NOT validated; the semantic report is partial.",
+   "about": [
+    "concept:provenance",
+    "entity:mondweep-chakravorty"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "There was no formal approving review and no checks ran; the maintainer read the page and merged it, squashed into one commit, 332f22e, authored by Mondweep.",
+   "section": "accepted",
+   "quote": "There was no formal approving review: the review requested from rUv still shows as pending on the page.",
+   "about": [
+    "entity:ruv",
+    "entity:github"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "hypothesis",
+   "text": "The main reason the page was merged in under a day is that it does not oversell: with no automated gate, what got it in was the page being specific about what it claims.",
+   "section": "careful",
+   "quote": "I think this is the main reason it was merged in under a day. The page does not oversell.",
+   "about": [
+    "concept:provenance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The page is the only file in a new docs/integrations folder on Ruflo's main branch and is not yet linked from Ruflo's docs index or its README.",
+   "section": "live",
+   "quote": "It is not yet linked from Ruflo's docs index or its README",
+   "about": [
+    "entity:ruflo"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The page pins everything it depends on: the code at 7607d72, SGit at source commit 5597526, and Ruflo's evaluator at 1882006, so anyone can reproduce it at those exact versions.",
+   "section": "live",
+   "quote": "Anyone can reproduce what it describes, at those exact versions.",
+   "about": [
+    "concept:provenance",
+    "entity:sgit",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Three capabilities on the page are proposed vocabulary extensions, not claims of existing upstream support; the fourth, read.record.history, already exists in the ABP.",
+   "section": "careful",
+   "quote": "Three capabilities below are proposed vocabulary extensions, not claims of existing upstream support.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The page says the adapter policy does not restrict other shell or MCP tools, which is the gap the policy guards the door describes.",
+   "section": "careful",
+   "quote": "Adapter policy does not restrict other shell or MCP tools",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:mcp"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The three proposed capabilities are the first memory vocabulary the owner has seen proposed from outside the team, from a real integration, and the kind of feedback the ABP needs.",
+   "section": "careful",
+   "quote": "They are the first memory vocabulary I have seen proposed from outside our team, from a real integration",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The companion pull request in our own organisation adds the runnable example to ruv.sgit.ai, 3 commits, 35 files and 3,081 lines, and is still open with no reviews.",
+   "section": "ours",
+   "quote": "3 commits, 35 files, 3,081 lines. It is still open, with no reviews.",
+   "about": [
+    "entity:sgit-ai-website-ruv",
+    "entity:ruv-sgit-ai"
+   ],
+   "value": {
+    "n": 3081,
+    "unit": "lines added in the companion pull request",
+    "as_of": "2026-10-17"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "The order came out the other way round: Ruflo merged first, and the next merge is ours to make, after a review.",
+   "section": "ours",
+   "quote": "The next merge is ours to make, after a review.",
+   "about": [
+    "entity:sgit-ai-website-ruv",
+    "entity:ruv-sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "It is the first integration of the ABP and SGit into an agent framework that the owner knows of by someone outside the team, documented in that framework's own repository.",
+   "section": "why",
+   "quote": "It is the first integration of the ABP and SGit into an agent framework that I know of by someone outside our team",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:sgit",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The page carries its evidence: pinned commits, tests, a reproducible run and its own limits, which is the evidence-first position in practice in someone else's repository.",
+   "section": "why",
+   "quote": "Pinned commits, tests, a reproducible run, and its own limits.",
+   "about": [
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "Not a code change to Ruflo: the merge adds documentation and Ruflo's runtime is unchanged, as the pull request says.",
+   "section": "limits",
+   "quote": "The merge adds documentation; Ruflo's runtime is unchanged, as the pull request says.",
+   "about": [
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "Not a formal review: the maintainer merged it, and no approving review or check is recorded.",
+   "section": "limits",
+   "quote": "The maintainer merged it; no approving review or check is recorded.",
+   "about": [
+    "entity:ruv",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Not an endorsement of every detail: a merged page in a project's docs is not a statement by its maintainer about every claim in it.",
+   "section": "limits",
+   "quote": "A merged page in a project's docs is not a statement by its maintainer about every claim in it.",
+   "about": [
+    "entity:ruv",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "First is from the commit history: no commit on Ruflo's main branch before it mentions SGit or an ABP; other discussions elsewhere are not counted.",
+   "section": "limits",
+   "quote": "No commit on Ruflo's main branch before it mentions SGit or an ABP; other discussions elsewhere are not counted.",
+   "about": [
+    "entity:ruflo",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The code was read, not run, here; its tests and evidence are the author's.",
+   "section": "limits",
+   "quote": "Its tests and evidence are the author's.",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The video, SGit x Ruflo Working Proof of Concept by Mondweep Chakravorty, was analysed the same day and is published here with his agreement.",
+   "section": "sources",
+   "quote": "published here with his agreement",
+   "about": [
+    "entity:mondweep-chakravorty"
+   ],
+   "refs": [
+    "r05"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c11",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c02"
+  }
+ ],
+ "entities": [
+  {
+   "id": "ruv",
+   "role": "Ruflo's maintainer and code owner, who merged the pull request"
+  },
+  {
+   "id": "mondweep-chakravorty",
+   "role": "wrote the adapter, the page and the pull request; made the video"
+  },
+  {
+   "id": "ruflo",
+   "role": "the agent framework, ruvnet/ruflo, whose main branch now carries the page"
+  },
+  {
+   "id": "sgit",
+   "role": "the encrypted vault the checkpoints are kept in, pinned at source commit 5597526"
+  },
+  {
+   "id": "github",
+   "role": "where the pull request, its timeline and the merged page are read"
+  },
+  {
+   "id": "mcp",
+   "role": "the adapter is an MCP server; the policy does not restrict other MCP tools"
+  },
+  {
+   "id": "agentic-engineering-live",
+   "role": "where two days earlier the owner said the team was ready to sell this"
+  },
+  {
+   "id": "ruv-sgit-ai",
+   "role": "the site the companion pull request adds the runnable example to"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, who checked Ruflo's history and holds editorial responsibility"
+  },
+  {
+   "id": "sgit-ruv-memory",
+   "role": "the proof of concept: an MIT-licensed MCP server, sixteen tests, five commits"
+  },
+  {
+   "id": "sgit-ai-website-ruv",
+   "role": "our organisation's repository for ruv.sgit.ai, where pull request #1 is still open"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/ruvnet/ruflo/pull/4239",
+   "title": "docs: ABP-governed SGit memory checkpoints and Ruflo CLI recovery validation (pull request #4239)",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md",
+   "title": "External SGit memory checkpoints governed by an ABP",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/mondweep/sgit-ruv-memory",
+   "title": "mondweep/sgit-ruv-memory",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-16",
+   "kind": "repository"
+  },
+  {
+   "id": "r04",
+   "url": "https://github.com/SGit-AI/SGit-AI__Website__Ruv/pull/1",
+   "title": "Add local MCP example for policy-gated SQLite checkpoints and restore (pull request #1)",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://youtu.be/rkh6BJiaIrQ",
+   "title": "SGit x Ruflo | Working Proof of Concept",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "video"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-15",
+   "what": "The talk at Agentic Engineering Live and ruv.sgit.ai"
+  },
+  {
+   "date": "2026-10-16",
+   "what": "The proof of concept's five commits; pull request #4239 opened at 23:02 London time with three commits in the next hour"
+  },
+  {
+   "date": "2026-10-17",
+   "what": "rUv merges pull request #4239 at 14:59 London time as commit 332f22e"
+  }
+ ]
+}

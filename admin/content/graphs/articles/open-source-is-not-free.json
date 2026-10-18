@@ -1,0 +1,721 @@
+{
+ "slug": "open-source-is-not-free",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Open source is not free; somebody is paying for it, even if what they pay with is only their time.",
+   "section": "top",
+   "quote": "Open source is not free. Somebody is paying for it, even if what they pay with is only their time.",
+   "about": [
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Everything built at RiskMandate and sgit is open source, and what is sold is not the code but a build for that customer, tested so that it works.",
+   "section": "top",
+   "quote": "What we sell is not the code. It is a build for that customer",
+   "about": [
+    "entity:riskmandate",
+    "entity:sgit",
+    "concept:open-source",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "question",
+   "text": "Could a project earn money from individuals and companies for supported, customised builds at prices from pence to pounds rather than thousands?",
+   "section": "top",
+   "quote": "Could a project earn money from people like me, and from companies, for supported, customised builds, at prices from pence to pounds rather than thousands?",
+   "about": [
+    "concept:pricing",
+    "concept:the-long-tail"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The agents' Intel iMac, clean-installed with macOS 13 Ventura, could not install Homebrew or Docker Desktop, and getting sgit on it meant downloading Python by hand.",
+   "section": "imac",
+   "quote": "Homebrew would not install. Docker Desktop would not install. Getting sgit on it meant downloading Python by hand.",
+   "about": [
+    "entity:homebrew",
+    "entity:docker",
+    "entity:python",
+    "entity:apple",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The owner's story was mostly right and a little unfair: only the 2017 iMacs stop at Ventura, and a 2019 model could be put back in support with a clean install of Sequoia.",
+   "section": "imac",
+   "quote": "Only the 2017 iMacs stop at Ventura.",
+   "about": [
+    "entity:apple",
+    "concept:the-long-tail"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Since September 2026 Homebrew's official installer refuses any Intel Mac whatever macOS it runs, because Apple and GitHub no longer support macOS Intel.",
+   "section": "imac",
+   "quote": "the official installer stops on any Intel Mac",
+   "about": [
+    "entity:homebrew",
+    "entity:github",
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "OpenCore Legacy Patcher raised about $96,000 from over 4,000 contributors and in March 2026 stopped taking donations because developers had left and progress had slowed.",
+   "section": "imac",
+   "quote": "raised about $96,000 from over 4,000 contributors",
+   "about": [
+    "entity:opencore-legacy-patcher",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 96000,
+    "unit": "USD raised",
+    "as_of": "2026-03"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Every project that dropped the machine did so for the same reason: supporting it costs money in CI hardware and maintainer time, and the people who need the support are not the ones paying for it.",
+   "section": "imac",
+   "quote": "supporting it costs money, in CI hardware and in maintainer time, and the people who still need the support are not the ones paying for it",
+   "about": [
+    "concept:the-long-tail",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "In Homebrew's install analytics 6.99% of macOS install events in the last 30 days, and 16.66% over a year, came from versions older than the newest three.",
+   "section": "measured",
+   "quote": "6.99% of macOS install events in the last 30 days, and 16.66% over a year, came from versions older than the newest three",
+   "about": [
+    "entity:homebrew",
+    "concept:the-long-tail"
+   ],
+   "value": {
+    "n": 16.66,
+    "unit": "percent of macOS install events over 365 days",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "Over the last 30 days 18.55% of pip downloads and 10.45% of requests downloads came from Python 3.9 or older, all past end of life.",
+   "section": "measured",
+   "quote": "18.55% of pip downloads and 10.45% of requests downloads came from Python 3.9 or older",
+   "about": [
+    "entity:pypi",
+    "entity:python",
+    "concept:the-long-tail"
+   ],
+   "value": {
+    "n": 18.55,
+    "unit": "percent of pip downloads on end-of-life Python",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The Harvard Business School study put the demand-side value of open source at $8.8 trillion; the Linux Foundation estimates about $7.7 billion a year is invested, about 0.09% of the value.",
+   "section": "money",
+   "quote": "That is about 0.09% of the value.",
+   "about": [
+    "entity:harvard-business-school",
+    "entity:linux-foundation",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 0.09,
+    "unit": "percent of estimated value invested"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "In Tidelift's 2024 survey 60% of maintainers describe themselves as unpaid hobbyists, and 60% have quit or considered quitting a project.",
+   "section": "money",
+   "quote": "60% of maintainers describe themselves as unpaid hobbyists",
+   "about": [
+    "entity:tidelift",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 60,
+    "unit": "percent of maintainers",
+    "as_of": "2024"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Oracle's software support brought in $19.8 billion in the year to May 2026, 29.4% of revenue, and substantially all support customers renew.",
+   "section": "money",
+   "quote": "Software support brought in $19.8 billion in the year to May 2026",
+   "about": [
+    "entity:oracle",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 19.8,
+    "unit": "billion USD of support revenue",
+    "as_of": "2026-05"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Red Hat, in its last year as a standalone company, earned 87.7% of its revenue from subscriptions at a gross margin of about 93%, selling support for code anyone can download.",
+   "section": "money",
+   "quote": "earned 87.7% of its revenue from subscriptions, at a gross margin of about 93%",
+   "about": [
+    "entity:red-hat",
+    "concept:open-source",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 93,
+    "unit": "percent gross margin on subscriptions"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Rimini Street earned $421.5 million from 3,102 clients in 2025, about $136,000 each, at a 60% gross margin: the satellite market exists where the money flows.",
+   "section": "money",
+   "quote": "earned $421.5 million from 3,102 clients in 2025, about $136,000 each",
+   "about": [
+    "entity:rimini-street",
+    "concept:the-market"
+   ],
+   "value": {
+    "n": 136000,
+    "unit": "USD per client per year",
+    "as_of": "2025"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The same need, keeping the version you have working and safe, is a multi-billion-pound business when a vendor owns the code and a donation jar when a community does.",
+   "section": "money",
+   "quote": "is a multi-billion-pound business when a vendor owns the code, and a donation jar when a community does",
+   "about": [
+    "concept:open-source",
+    "concept:pricing",
+    "concept:the-long-tail"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "After Docker Desktop became paid for large companies in August 2021, OrbStack, Colima, Podman Desktop and Rancher Desktop together grew to about 47% of container-tool installs through Homebrew over the past year.",
+   "section": "charge",
+   "quote": "together make up about 47% of container-tool installs over the past year",
+   "about": [
+    "entity:docker",
+    "entity:homebrew",
+    "concept:the-market"
+   ],
+   "value": {
+    "n": 47,
+    "unit": "percent of container-tool installs through Homebrew over 365 days",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Dual licensing changes what the free version is for: once a project sells a paid edition it has a reason not to make the free one too good, which is why open core is not the answer to the long tail.",
+   "section": "charge",
+   "quote": "Once a project sells a paid edition, it has a reason not to make the free one too good.",
+   "about": [
+    "concept:open-source",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Per-install rewards get gamed: when tea.xyz rewarded package popularity with tokens, one developer published nearly 14,000 packages, so payment has to be tied to a verified user who receives something.",
+   "section": "charge",
+   "quote": "Payment has to be tied to a verified user who receives something, not to a count.",
+   "about": [
+    "concept:micropayments",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "Stripe's standard UK rate of 1.5% plus 20p is 5.5% of a £5 payment, 41.5% of 50p, and more than the payment on 10p; below about £5 the fixed fee is the price.",
+   "section": "pence",
+   "quote": "On £5 it is 5.5%. On 50p it is 41.5%, and on 10p it is more than the payment.",
+   "about": [
+    "entity:stripe",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 41.5,
+    "unit": "percent fee on a 50p card payment"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Pence payments only work aggregated: one charge a year that covers many projects, or a platform that already holds a balance and settles in bulk.",
+   "section": "pence",
+   "quote": "So pence payments only work aggregated",
+   "about": [
+    "concept:micropayments",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "The model puts the cost of keeping one long-tail target alive for a project at Homebrew's scale at a median of about £27,000 a year, from £18,000 to £39,000, with about 631,000 machines on the long tail.",
+   "section": "models",
+   "quote": "The model puts it at a median of about £27,000 a year, from £18,000 to £39,000.",
+   "about": [
+    "entity:long-tail-ledger-vault",
+    "concept:the-long-tail"
+   ],
+   "value": {
+    "n": 27000,
+    "unit": "GBP per year, median long-tail cost"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "Donations do not pay for the long tail: even at a popular project's scale they cover the cost in about one draw in four, which matches what happened to OpenCore Legacy Patcher.",
+   "section": "models",
+   "quote": "they cover the cost in about one draw in four",
+   "about": [
+    "entity:long-tail-ledger-vault",
+    "entity:opencore-legacy-patcher",
+    "concept:the-long-tail"
+   ],
+   "value": {
+    "n": 24,
+    "unit": "percent of draws in which donations cover the cost"
+   }
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "Customised builds for the companies that keep old machines for a job cover the long-tail cost in more than nine draws in ten, with money to spare.",
+   "section": "models",
+   "quote": "cover it in more than nine in ten, with money to spare",
+   "about": [
+    "entity:long-tail-ledger-vault",
+    "concept:pricing",
+    "concept:the-market"
+   ],
+   "value": {
+    "n": 94,
+    "unit": "percent of draws in which company builds cover the cost"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "With typical conversion about £2 a machine a year is enough to cover the long tail more often than not, and with great conversion under £1; the exact figures are £1.80 and 70p aggregated.",
+   "section": "break-even",
+   "quote": "about £2 a machine a year is enough to cover the long tail more often than not, and with great conversion, under £1",
+   "about": [
+    "concept:micropayments",
+    "concept:the-long-tail",
+    "entity:long-tail-ledger-vault"
+   ],
+   "value": {
+    "n": 1.8,
+    "unit": "GBP per machine per year to cover half the draws, typical conversion"
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "No price reaches nine draws in ten, because conversion caps the number of payers and raising the price loses more payers than it gains in revenue.",
+   "section": "break-even",
+   "quote": "conversion caps the number of payers, and raising the price loses more payers than it gains in revenue",
+   "about": [
+    "concept:micropayments",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "data-point",
+   "text": "The assumption that moves the result most is how many machines are really out there, a swing of about £90,000 in the median margin; conversion matters less than expected.",
+   "section": "sensitivity",
+   "quote": "a swing of about £90,000 in the median margin",
+   "about": [
+    "entity:long-tail-ledger-vault",
+    "concept:the-long-tail"
+   ],
+   "value": {
+    "n": 90000,
+    "unit": "GBP swing in median margin from install events per machine"
+   }
+  },
+  {
+   "id": "c28",
+   "kind": "data-point",
+   "text": "The money from micro-paid and company builds could sustain a median of about 18 small support firms worldwide, from 2.4 to 85, and about one per country.",
+   "section": "satellites",
+   "quote": "The median is about 18 such firms worldwide, from 2.4 to 85",
+   "about": [
+    "concept:the-market",
+    "entity:long-tail-ledger-vault"
+   ],
+   "value": {
+    "n": 18,
+    "unit": "small support firms worldwide, median"
+   }
+  },
+  {
+   "id": "c29",
+   "kind": "hypothesis",
+   "text": "The reliable money comes from companies paying for a customised build at a price well below what it costs them to keep the tool working themselves, which is how RiskMandate and sgit already work.",
+   "section": "says",
+   "quote": "The reliable money comes from companies, paying for a customised build at a price well below what it costs them to keep the tool working themselves.",
+   "about": [
+    "concept:pricing",
+    "concept:the-market",
+    "entity:riskmandate",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "What is missing is the plumbing: one annual charge that covers many projects, payment tied to a verified build rather than a count of installs, and a split of the money between maintainers and local support firms.",
+   "section": "says",
+   "quote": "one annual charge that covers many projects, payment tied to a verified build rather than a count of installs",
+   "about": [
+    "concept:micropayments",
+    "concept:open-source",
+    "concept:the-market"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "data-point",
+   "text": "The Long Tail Ledger vault holds the 175 sourced facts with quotes and verified flags, the 26 case facts, the 36 assumptions with ranges, the model in Python and in the browser, checked equal on 77 grids of inputs.",
+   "section": "check",
+   "quote": "the 175 sourced facts with their quotes and verified flags, the 26 case facts, the 36 assumptions",
+   "about": [
+    "entity:long-tail-ledger-vault",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 175,
+    "unit": "sourced facts in the vault",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The model does not forecast anyone's revenue or measure willingness to pay, the installed base, the Intel share or company behaviour; those are assumptions.",
+   "section": "check",
+   "quote": "forecast anyone's revenue, or measure willingness to pay, the installed base, the Intel share or company behaviour",
+   "about": [
+    "entity:long-tail-ledger-vault",
+    "concept:the-long-tail"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "The claim that organisations ban Docker Desktop rather than buy seats is the owner's observation, not in the data; no survey measures how many.",
+   "section": "check",
+   "quote": "I found no survey that measures how many.",
+   "about": [
+    "entity:docker",
+    "concept:the-market"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c25",
+   "verb": "answers",
+   "to": "c03"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c29",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "one of the two open-source businesses whose model the article tests at small scale"
+  },
+  {
+   "id": "sgit",
+   "role": "open source, sold as customised builds; the tool that needed Python by hand"
+  },
+  {
+   "id": "apple",
+   "role": "whose Ventura is unpatched and whose Intel retreat Homebrew followed"
+  },
+  {
+   "id": "github",
+   "role": "retiring its last Intel macOS runner, one reason projects dropped Intel"
+  },
+  {
+   "id": "docker",
+   "role": "Docker Desktop, which needs macOS 14 and went paid for large companies in 2021"
+  },
+  {
+   "id": "python",
+   "role": "installed by hand on Ventura; its end-of-life versions measure a long tail on PyPI"
+  },
+  {
+   "id": "stripe",
+   "role": "whose UK card fee makes payments under about £5 unviable alone"
+  },
+  {
+   "id": "homebrew",
+   "role": "the macOS package manager whose install analytics measure the long tail and which dropped Intel"
+  },
+  {
+   "id": "pypi",
+   "role": "whose download statistics show pip running on end-of-life Python"
+  },
+  {
+   "id": "oracle",
+   "role": "charges for support of every version for as long as you run it"
+  },
+  {
+   "id": "red-hat",
+   "role": "an open source company earning most of its revenue from subscriptions at high margin"
+  },
+  {
+   "id": "rimini-street",
+   "role": "the existence proof of a third-party support market"
+  },
+  {
+   "id": "linux-foundation",
+   "role": "source of the estimate of what is invested in open source each year"
+  },
+  {
+   "id": "tidelift",
+   "role": "whose 2024 maintainer survey gives the unpaid-hobbyist figure"
+  },
+  {
+   "id": "harvard-business-school",
+   "role": "whose working paper put the demand-side value of open source at $8.8 trillion"
+  },
+  {
+   "id": "opencore-legacy-patcher",
+   "role": "the volunteer project that kept old Macs alive and stopped taking donations"
+  },
+  {
+   "id": "long-tail-ledger-vault",
+   "role": "holds every sourced fact, assumption and the simulation behind the article"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "the-long-tail",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://sgit.ai/demos/vaults/long-tail-ledger/index.md",
+   "title": "Long Tail Ledger",
+   "by": "sgit.ai",
+   "date": "2026-10-10",
+   "kind": "vault"
+  },
+  {
+   "id": "r02",
+   "url": "https://open-source.sgit.ai/views/open-core.html",
+   "title": "Open core, or packaging?",
+   "by": "Dinis Cruz",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://open-source.sgit.ai/views/villagers.html",
+   "title": "Somebody has to be the villagers",
+   "by": "Dinis Cruz",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://diniscruz.ai/2025/04/02/the-future-of-news-monetization__embracing-micro-and-nano-payments.html",
+   "title": "The future of news monetisation: embracing micro and nano payments",
+   "by": "Dinis Cruz",
+   "date": "2025-04-02",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://diniscruz.ai/2025/07/04/usage-based-billable-entities-aligning-saas-pricing-with-customer-usage.html",
+   "title": "Usage-based billable entities",
+   "by": "Dinis Cruz",
+   "date": "2025-07-04",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://diniscruz.ai/2025/06/07/genai-legacy-code-refactoring-business-plan.html",
+   "title": "GenAI legacy code refactoring business plan",
+   "by": "Dinis Cruz",
+   "date": "2025-06-07",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The sources read and the analytics fetched; the article published"
+  },
+  {
+   "date": "2026-09",
+   "what": "Homebrew's installer begins refusing Intel Macs"
+  },
+  {
+   "date": "2026-03",
+   "what": "OpenCore Legacy Patcher stops taking donations"
+  },
+  {
+   "date": "2025-08-20",
+   "what": "Ventura's last security update, 13.7.8"
+  },
+  {
+   "date": "2021-08",
+   "what": "Docker Desktop becomes paid for large companies"
+  }
+ ]
+}

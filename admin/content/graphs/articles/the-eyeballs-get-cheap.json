@@ -1,0 +1,701 @@
+{
+ "slug": "the-eyeballs-get-cheap",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The argument for open source security has always been Raymond's: given enough eyeballs, all bugs are shallow; the argument against is that the eyeballs were not there.",
+   "section": "balance",
+   "quote": "Given enough eyeballs, all bugs are shallow.",
+   "about": [
+    "entity:eric-raymond",
+    "concept:open-source",
+    "concept:eyeballs-get-cheap"
+   ],
+   "refs": [
+    "r12"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "In Tidelift's 2024 survey the portion of maintainers who are unpaid hobbyists remains at 60 percent.",
+   "section": "balance",
+   "quote": "The portion of respondents who reported they are unpaid hobbyists remains at 60 percent",
+   "about": [
+    "entity:tidelift",
+    "entity:the-register",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 60,
+    "unit": "percent of maintainers who are unpaid hobbyists",
+    "as_of": "2024"
+   },
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Proprietary software had budget for security teams and the cover of code nobody outside could read, and a lot of it got away with things that would not have survived being public.",
+   "section": "balance",
+   "quote": "It also had cover: code nobody outside could read, fewer attackers looking, products hidden behind other environments.",
+   "about": [
+    "concept:open-source",
+    "concept:eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Open source had efficiency: when a serious bug is reported publicly the fix rarely stops at one bug, the variations get hunted down too.",
+   "section": "balance",
+   "quote": "the fix rarely stops at the one bug: the variations get hunted down too",
+   "about": [
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The owner now runs security reviews with models on the products he works on; what took a specialist weeks takes an afternoon and can run again on the next change.",
+   "section": "cheap",
+   "quote": "That used to take a specialist weeks. It now takes an afternoon, and it can run again on the next change.",
+   "about": [
+    "concept:eyeballs-get-cheap",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The thing open source lacked was paid attention, and that is the thing that just became abundant; being hidden is worth less every month.",
+   "section": "cheap",
+   "quote": "The thing open source lacked was paid attention, and that is the thing that just became abundant.",
+   "about": [
+    "concept:eyeballs-get-cheap",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Anthropic's Project Glasswing update in May reported scanning more than 1,000 open-source projects and estimated 6,202 high- or critical-severity vulnerabilities among the findings.",
+   "section": "cheap",
+   "quote": "6,202 high- or critical-severity vulnerabilities",
+   "about": [
+    "entity:anthropic",
+    "entity:project-glasswing",
+    "concept:eyeballs-get-cheap"
+   ],
+   "value": {
+    "n": 6202,
+    "unit": "high- or critical-severity vulnerabilities estimated",
+    "as_of": "2026-05"
+   },
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Chainguard's Athena coalition reported 2,000 patches across 500 projects at its launch in June, and its harness has validated over 680 findings in over 65 projects.",
+   "section": "cheap",
+   "quote": "2,000 patches across 500 projects",
+   "about": [
+    "entity:chainguard",
+    "entity:athena-coalition",
+    "concept:eyeballs-get-cheap"
+   ],
+   "value": {
+    "n": 2000,
+    "of": 500,
+    "unit": "patches across projects",
+    "as_of": "2026-06"
+   },
+   "refs": [
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "In DARPA's AI Cyber Challenge final in 2025 the systems discovered 54 unique synthetic vulnerabilities and also found 18 real ones.",
+   "section": "cheap",
+   "quote": "the systems \"discovered 54 unique synthetic vulnerabilities\" and also found \"18 real, non-synthetic vulnerabilities\"",
+   "about": [
+    "entity:darpa",
+    "concept:eyeballs-get-cheap"
+   ],
+   "value": {
+    "n": 18,
+    "unit": "real vulnerabilities found",
+    "as_of": "2025"
+   },
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "limit",
+   "text": "The owner thought Chainguard had published the projects where its AI found nothing, with curl among them, and could not find it from Chainguard or anyone else.",
+   "section": "curl",
+   "quote": "I could not find it, from Chainguard or anyone else.",
+   "about": [
+    "entity:chainguard",
+    "entity:curl"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "curl ended its bug bounty on 31 January 2026; over its life it found 87 confirmed vulnerabilities, but by 2025 not even one in twenty reports was real.",
+   "section": "curl",
+   "quote": "Over its life it had found \"87 confirmed vulnerabilities\", but by 2025 \"Not even one in twenty was real.\"",
+   "about": [
+    "entity:curl",
+    "entity:daniel-stenberg"
+   ],
+   "value": {
+    "n": 87,
+    "unit": "confirmed vulnerabilities over the bounty's life",
+    "as_of": "2026-01-31"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "In the autumn of 2025 AI-assisted reports started landing real bugs, and by May Stenberg counted that earlier tools had triggered between two and three hundred bugfixes.",
+   "section": "curl",
+   "quote": "triggered somewhere between two and three hundred bugfixes",
+   "about": [
+    "entity:curl",
+    "entity:daniel-stenberg",
+    "concept:eyeballs-get-cheap"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "In May a frontier model's scan of curl found one vulnerability, of low severity, and reported zero memory-safety vulnerabilities.",
+   "section": "curl",
+   "quote": "a frontier model's scan of curl found one vulnerability, \"yes, as in singular one\", of low severity",
+   "about": [
+    "entity:curl",
+    "concept:eyeballs-get-cheap"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Today an AI-tooled audit produced no less than thirty-five published curl vulnerabilities, Anthropic found a high-severity bug with its OSS Scanner, and curl 8.23.0 shipped 24 security fixes.",
+   "section": "curl",
+   "quote": "no less than thirty-five published curl vulnerabilities",
+   "about": [
+    "entity:curl",
+    "entity:anthropic"
+   ],
+   "value": {
+    "n": 35,
+    "unit": "curl vulnerabilities published from one audit",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r04",
+    "r05"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "That is not a project failing; it is a project getting harder to break, wave by wave, with each better tool finding what the last could not.",
+   "section": "curl",
+   "quote": "It is a project getting harder to break, wave by wave, with each better tool finding what the last one could not",
+   "about": [
+    "concept:eyeballs-get-cheap",
+    "entity:curl"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The maintainers' time is now the bottleneck, so curl's contribution rules require anyone who used an AI tool to find problems to reveal it in the report.",
+   "section": "curl",
+   "quote": "If you asked an AI tool to find problems in curl, you must make sure to reveal this fact in your report.",
+   "about": [
+    "entity:curl",
+    "concept:provenance"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "The bar will rise everywhere: more findings with more proof, contributions held to a higher standard, and fewer, better projects as the long tail of tiny packages shrinks.",
+   "section": "changes",
+   "quote": "So I expect the bar to rise everywhere.",
+   "about": [
+    "concept:open-source",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Provenance will matter more: where a piece of code came from, who wrote it, who reviewed it.",
+   "section": "changes",
+   "quote": "And provenance will matter more: where a piece of code came from, who wrote it, who reviewed it.",
+   "about": [
+    "concept:provenance",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "In Wardley's terms mission-critical code should be industrialised, not written at explorer speed; town planners are the people who take something and industrialise it.",
+   "section": "changes",
+   "quote": "Town Planners are brilliant people. They are able to take something and industrialise it",
+   "about": [
+    "entity:simon-wardley",
+    "concept:explorer-villager-town-planner",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "You cannot have sovereignty without open source and open schemas, because you can only move what you can read and run elsewhere.",
+   "section": "forces",
+   "quote": "You cannot have sovereignty without open source and open schemas.",
+   "about": [
+    "concept:privacy",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The business model the owner already runs: the customer gets a private repository with their deployment, their configuration and only the features they use, and pays for it to be maintained.",
+   "section": "forces",
+   "quote": "the customer gets a private repository with their deployment, their configuration and only the features they actually use, and pays for it to be maintained",
+   "about": [
+    "concept:maintenance-as-the-product",
+    "entity:sgit",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The customer, the maintainer and security all end up aligned on running the least amount of code in production.",
+   "section": "least-code",
+   "quote": "Everyone ends up aligned on running the least amount of code in production",
+   "about": [
+    "concept:minimal-code",
+    "concept:maintenance-as-the-product"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "In The minimum code below, removing what a use case never runs took one real tool from 1,500 files to 428.",
+   "section": "least-code",
+   "quote": "took one real tool from 1,500 files to 428",
+   "about": [
+    "concept:minimal-code",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 428,
+    "of": 1500,
+    "unit": "files kept",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c24",
+   "kind": "hypothesis",
+   "text": "For the first time the incentives of those who write, sell and secure open source point the same way: secure because the eyeballs got cheap, required for sovereignty, paid for as maintenance.",
+   "section": "least-code",
+   "quote": "That is the intersection I think we are at",
+   "about": [
+    "concept:eyeballs-get-cheap",
+    "concept:maintenance-as-the-product",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "There is no list of clean projects; curl's story is the evidence instead.",
+   "section": "limits",
+   "quote": "No list of clean projects.",
+   "about": [
+    "entity:chainguard",
+    "entity:curl"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "curl is not clean: it is a well-run project being found harder to break and still having bugs found, as of today.",
+   "section": "limits",
+   "quote": "It is a well-run project being found harder to break, and still having bugs found, as of today.",
+   "about": [
+    "entity:curl"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The counts are the reporters' own: Anthropic's, Chainguard's and DARPA's figures are as they published them.",
+   "section": "limits",
+   "quote": "The counts are the reporters' own.",
+   "about": [
+    "entity:anthropic",
+    "entity:chainguard",
+    "entity:darpa"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The cost and depth of model review are the owner's experience on the products he works on; others will see different results.",
+   "section": "limits",
+   "quote": "The cost and depth of model review are my experience.",
+   "about": [
+    "concept:eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The future part is an argument: fewer and better projects, a shrinking long tail and maintenance as the business are predictions.",
+   "section": "limits",
+   "quote": "The future part is an argument.",
+   "about": [
+    "concept:maintenance-as-the-product",
+    "concept:supply-chains"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c15",
+   "verb": "answers",
+   "to": "c10"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c17"
+  }
+ ],
+ "entities": [
+  {
+   "id": "eric-raymond",
+   "role": "author of The Cathedral and the Bazaar and the eyeballs line"
+  },
+  {
+   "id": "tidelift",
+   "role": "whose 2024 survey found 60 percent of maintainers unpaid"
+  },
+  {
+   "id": "the-register",
+   "role": "reported the Tidelift survey"
+  },
+  {
+   "id": "anthropic",
+   "role": "Project Glasswing's scan of more than 1,000 projects; found a high-severity curl bug with its OSS Scanner"
+  },
+  {
+   "id": "project-glasswing",
+   "role": "Anthropic's open-source scanning project, reporting 6,202 estimated vulnerabilities"
+  },
+  {
+   "id": "chainguard",
+   "role": "whose Athena coalition and harness patch open source, and who the owner thought had published a clean list"
+  },
+  {
+   "id": "athena-coalition",
+   "role": "reported 2,000 patches across 500 projects at its June launch"
+  },
+  {
+   "id": "darpa",
+   "role": "whose AI Cyber Challenge systems found 54 synthetic and 18 real vulnerabilities"
+  },
+  {
+   "id": "curl",
+   "role": "the project whose year of machine eyeballs is the evidence"
+  },
+  {
+   "id": "daniel-stenberg",
+   "role": "curl's maintainer, whose posts tell the story"
+  },
+  {
+   "id": "simon-wardley",
+   "role": "whose town planners industrialise mission-critical code"
+  },
+  {
+   "id": "sgit",
+   "role": "the owner's environments where maintenance is the product, and the tool cut from 1,500 files to 428"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where the owner runs the maintenance business model"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "eyeballs-get-cheap",
+   "defined_here": true
+  },
+  {
+   "id": "maintenance-as-the-product",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://daniel.haxx.se/blog/",
+   "title": "Daniel Stenberg's blog",
+   "by": "Daniel Stenberg",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://daniel.haxx.se/blog/2026/01/26/the-end-of-the-curl-bug-bounty/",
+   "title": "The end of the curl bug bounty",
+   "by": "Daniel Stenberg",
+   "date": "2026-01-26",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://daniel.haxx.se/blog/2026/05/11/",
+   "title": "The May scan",
+   "by": "Daniel Stenberg",
+   "date": "2026-05-11",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://daniel.haxx.se/blog/2026/10/14/a-uaf-turned-rce/",
+   "title": "A UAF turned RCE",
+   "by": "Daniel Stenberg",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://daniel.haxx.se/blog/2026/10/14/a-curl-audit-by-aisle/",
+   "title": "A curl audit by Aisle",
+   "by": "Daniel Stenberg",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://github.com/curl/curl/blob/master/docs/CONTRIBUTE.md",
+   "title": "curl contribution rules",
+   "by": "curl",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.anthropic.com/news/glasswing-initial-update",
+   "title": "Project Glasswing: an initial update",
+   "by": "Anthropic",
+   "date": "2026-05",
+   "kind": "post"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.chainguard.dev/unchained/the-first-disclosure-from-our-mythos-harness",
+   "title": "The first disclosure from our Mythos harness",
+   "by": "Chainguard",
+   "date": "2026",
+   "kind": "post"
+  },
+  {
+   "id": "r09",
+   "url": "https://helpnetsecurity.com/2026/06/17/chainguard-athena-coalition-fix-open-source-vulnerabilities/",
+   "title": "Chainguard's Athena coalition",
+   "by": "Help Net Security",
+   "date": "2026-06-17",
+   "kind": "news"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.darpa.mil/news/2025/aixcc-results",
+   "title": "AIxCC results",
+   "by": "DARPA",
+   "date": "2025",
+   "kind": "news"
+  },
+  {
+   "id": "r11",
+   "url": "https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/",
+   "title": "Open source maintainers underpaid",
+   "by": "The Register",
+   "date": "2024-09-18",
+   "kind": "news"
+  },
+  {
+   "id": "r12",
+   "url": "http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/ar01s04.html",
+   "title": "The Cathedral and the Bazaar",
+   "by": "Eric S. Raymond",
+   "date": "undated",
+   "kind": "book"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo; the Aisle audit and the UAF turned RCE published; The minimum code below"
+  },
+  {
+   "date": "2026-01-31",
+   "what": "curl ends its bug bounty"
+  },
+  {
+   "date": "2026-05",
+   "what": "A frontier model's scan of curl finds one low-severity bug; Project Glasswing's initial update"
+  },
+  {
+   "date": "2026-06",
+   "what": "Chainguard's Athena coalition launches with 2,000 patches across 500 projects"
+  }
+ ]
+}

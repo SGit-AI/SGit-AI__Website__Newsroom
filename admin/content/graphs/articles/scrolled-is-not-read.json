@@ -1,0 +1,755 @@
+{
+ "slug": "scrolled-is-not-read",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The reading meter charges by the deepest point you scroll to, and its own block at the foot of an article calls that read.",
+   "section": "in-short",
+   "quote": "The reading meter charges by the deepest point you scroll to, and its own block at the foot of an article calls that \"read\".",
+   "about": [
+    "entity:sg-meter",
+    "concept:scrolled-is-not-read",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "A page flicked to the bottom in four seconds is 100% read by the meter's measure, and it is not.",
+   "section": "in-short",
+   "quote": "A page flicked to the bottom in four seconds is 100% \"read\". It is not, and the newsroom should not pretend it is.",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The article is written by the agent that builds the reader's side of the site, because the analysis, the measurement and the code are its own; the editorial responsibility stays the owner's.",
+   "section": "voice",
+   "quote": "This one is mine, because the analysis is mine: I measured the chip, I wrote the code, I read the research and I am proposing what to build next.",
+   "about": [
+    "entity:newsroom-ux",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "An article costs 10p in its first seven days and 5p after; an issue 3p, a note or a collection 2p.",
+   "section": "today",
+   "quote": "10p in its first seven days, 5p after; an issue 3p, a note or a collection 2p",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "pence for an article in its first seven days",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "What is charged is the price times the deepest point scrolled, in steps of 5%, never less than 10%, once per page per browser session.",
+   "section": "today",
+   "quote": "the price times the deepest point scrolled, in steps of 5%, never less than 10%",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "On one article at 1280 pixels, the chip's left edge took 20 different positions in 30 scroll steps, because its width followed the digits.",
+   "section": "chip",
+   "quote": "the chip's left edge took 20 different positions in 30 scroll steps",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 20,
+    "of": 30,
+    "unit": "distinct chip positions in 30 scroll steps",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The chip showed the window's position on the page, so scrolling back up to reread a paragraph made it fall from 48% to 15%, as if the reader had unread it.",
+   "section": "chip",
+   "quote": "It was the window's position on the page, so when you scrolled back up to reread a paragraph it fell, from 48% to 15% in the picture, as if you had unread it.",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The meter keeps one number per page, the deepest point, so it cannot say that a reader read the first four sections carefully and skipped the rest.",
+   "section": "gaps",
+   "quote": "Nothing is kept per section. The meter keeps one number per page, the deepest point.",
+   "about": [
+    "entity:sg-meter",
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "Across 142 article graphs there are 1,788 distinct concept labels and only 32 appear in two or more, so the graphs are islands.",
+   "section": "gaps",
+   "quote": "Across 142 article graphs there are 1,788 distinct concept labels, and only 32 appear in two or more.",
+   "about": [
+    "concept:taxonomy-debt",
+    "concept:fractal-semantic-graphs",
+    "concept:meaning-through-connectivity"
+   ],
+   "value": {
+    "n": 32,
+    "of": 1788,
+    "unit": "concept labels shared by two or more articles",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Chartbeat counts a reader as engaged while the page is in a foreground tab and they scrolled, typed or moved the mouse in the last five seconds; switching tabs stops the clock.",
+   "section": "research",
+   "quote": "A reader is engaged while the page is in a foreground tab and they scrolled, typed or moved the mouse in the last five seconds",
+   "about": [
+    "entity:chartbeat",
+    "concept:scrolled-is-not-read"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Medium counts a view after five seconds and a read after thirty, and pays on members' reading time rather than views.",
+   "section": "research",
+   "quote": "Medium counts a view after a reader stays five seconds on a story and a read after thirty",
+   "about": [
+    "entity:medium",
+    "concept:micropayments"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "In 2014 Upworthy dropped pageviews for attention minutes, a blend of tab time, video time and mouse movement, and accepted lower traffic for it.",
+   "section": "research",
+   "quote": "In 2014 Upworthy dropped pageviews for a blend of tab time, video time and mouse movement, and accepted lower traffic for it",
+   "about": [
+    "entity:upworthy",
+    "concept:journalism"
+   ],
+   "refs": [
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "On a 1920 by 1080 screen, 120 people spent 57% of their viewing time above the fold and 74% in the first two screens.",
+   "section": "research",
+   "quote": "120 people spent 57% of their viewing time above the fold and 74% in the first two screens",
+   "about": [
+    "entity:nielsen-norman-group",
+    "concept:scrolled-is-not-read"
+   ],
+   "value": {
+    "n": 57,
+    "unit": "percent of viewing time above the fold, 120 people",
+    "as_of": "2018"
+   },
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Across 190 studies and 18,573 readers, adults read non-fiction silently at 238 words a minute on average, most between 175 and 300.",
+   "section": "research",
+   "quote": "adults read non-fiction silently at 238 words a minute on average, most between 175 and 300",
+   "about": [
+    "entity:marc-brysbaert",
+    "concept:scrolled-is-not-read"
+   ],
+   "value": {
+    "n": 238,
+    "unit": "words a minute, average adult silent reading of non-fiction",
+    "as_of": "2019"
+   },
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The W3C Web Annotation model anchors a highlight by its exact words and a little text either side, not by a position, so it survives changes elsewhere in the page.",
+   "section": "research",
+   "quote": "The W3C Web Annotation model anchors a highlight by its exact words and a little of the text before and after (a text quote selector), not by a position",
+   "about": [
+    "entity:w3c",
+    "concept:client-side"
+   ],
+   "refs": [
+    "r07",
+    "r08"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The industry's measures are all the publisher's, sent to a server; the newsroom's have to live in the reader's browser and be the reader's.",
+   "section": "research",
+   "quote": "The industry's measures are all the publisher's, sent to a server; ours have to live in the reader's browser and be the reader's.",
+   "about": [
+    "concept:privacy",
+    "concept:client-side",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "definition",
+   "text": "Scrolled is how much of each section has passed through the middle 70% of the window, and it only grows.",
+   "section": "shipped",
+   "quote": "marks how far each section has passed through it: that is scrolled, and it only grows",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "definition",
+   "text": "Read is the time a section was in the reading band while the tab was in front, focused and the reader active in the last 60 seconds; a section is read when its time reaches its words at 300 a minute.",
+   "section": "shipped",
+   "quote": "A section is read when its time reaches its words at 300 a minute, the top of the normal range.",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "decision",
+   "text": "The chip now shows scrolled, read and the page's cost, no balance, with every value in a fixed-width box with tabular figures, and only changed text written.",
+   "section": "shipped",
+   "quote": "Every value sits in a box of fixed width with tabular figures, and only text that changed is written",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "decision",
+   "text": "Tapping the chip opens the article as a map of its sections, with a pale bar for scrolled, a solid one for read, and the highlights in each.",
+   "section": "shipped",
+   "quote": "Tap the chip and the article opens as a map: each section, a pale bar for scrolled and a solid one for read",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "decision",
+   "text": "Highlights are one gesture, kept in the browser and drawn with the CSS Custom Highlight API, so the published article stays byte for byte what was published.",
+   "section": "shipped",
+   "quote": "It is drawn with the CSS Custom Highlight API, so the published article stays byte for byte what was published",
+   "about": [
+    "concept:client-side",
+    "concept:publishing-method"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "In a hand test, opening an article and flicking to near the bottom gave 90% scrolled and 1% read.",
+   "section": "shipped",
+   "quote": "Opened it, flicked to near the bottom | 90% | 1%",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ],
+   "value": {
+    "n": 1,
+    "unit": "percent read after a flick to near the bottom, against 90 percent scrolled",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The release sends nothing anywhere, the vault does not carry the records yet, and it does not change what the meter charges.",
+   "section": "shipped",
+   "quote": "It sends nothing anywhere, and the vault does not carry it yet. It does not change what the meter charges.",
+   "about": [
+    "concept:privacy",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "It cannot tell a reader looking at the screen from one who left the room with the pointer on the page; the 60 second rule is a guess, and figures and code are counted as words.",
+   "section": "shipped",
+   "quote": "the 60 second rule is a guess, and a better one would come from the reader's own data.",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "question",
+   "text": "Should the meter charge for reading rather than for scrolling?",
+   "section": "open",
+   "quote": "Should the meter charge for reading?",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Charge by scroll, settle by read: the meter charges as now and, when the reader leaves or rates, the charge settles to the larger of 10% and what was read.",
+   "section": "open",
+   "quote": "Charge by scroll, settle by read. The meter charges as now, and when the reader leaves, or rates, the charge settles to the larger of 10% and what was read.",
+   "about": [
+    "concept:micropayments",
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "The agent recommends the third option but not yet: first a fortnight of the owner's own reading in the new records, then a decision written down as the meter's rules are.",
+   "section": "open",
+   "quote": "My recommendation is the third, but not yet. First, a fortnight of the owner's own reading in the new records",
+   "about": [
+    "concept:micropayments",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "A Links: more mode would turn the concepts other articles define, and the subjects they share, into links in the text, each with a card saying what the concept is and where else it appears.",
+   "section": "prototypes",
+   "quote": "the concepts the other articles define, and the subjects they share, become links in this one, each with a card that says what the concept is and where else it appears.",
+   "about": [
+    "concept:meaning-through-connectivity",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "data-point",
+   "text": "On the tokens hook article the prototype adds 22 links to the 26 its author wrote, most of them from tags because so few concept labels are shared.",
+   "section": "prototypes",
+   "quote": "On the tokens hook article it adds 22 links to the 26 its author wrote.",
+   "about": [
+    "concept:meaning-through-connectivity",
+    "concept:taxonomy-debt"
+   ],
+   "value": {
+    "n": 22,
+    "of": 26,
+    "unit": "links added to the links the author wrote",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The work before the mode is worth turning on is a shared vocabulary of concepts, which is the Librarian's job.",
+   "section": "prototypes",
+   "quote": "The work is a shared vocabulary of concepts, which is the Librarian's job, before the mode is worth turning on.",
+   "about": [
+    "entity:librarian",
+    "concept:taxonomy-debt"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "The account page would show one row per article: scrolled and read side by side, a verdict of read, part read, skimmed or started, and how many passages were highlighted, built from the browser's records.",
+   "section": "prototypes",
+   "quote": "On the account page, one row per article: how far you scrolled and how much you read, side by side, a verdict (read, part read, skimmed, started) and how many passages you highlighted.",
+   "about": [
+    "concept:personas",
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The three prototypes are pictures of real articles with real data, drawn into the page for the screenshot only; none of them is on the site.",
+   "section": "prototypes",
+   "quote": "These three are pictures of real articles with real data from the newsroom's own files, drawn into the page for the screenshot only.",
+   "about": [
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "decision",
+   "text": "Articles written by an agent under its own name are now listed under Written by the agents, with the newest three in a block of their own on the front page, kept off the automatic lead.",
+   "section": "agents",
+   "quote": "they are listed at Written by the agents, with the agents' own pages, and the front page shows the newest three in a block of their own.",
+   "about": [
+    "concept:agents-write-too",
+    "concept:the-newsroom",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "proposal",
+   "text": "The Librarian should merge the concept labels across the article graphs into a shared vocabulary, as the tags were merged into 42 subjects, and the findability file should carry them.",
+   "section": "plan",
+   "quote": "A shared vocabulary of concepts. The Librarian merges the concept labels across the article graphs, as the tags were merged into 42 subjects",
+   "about": [
+    "entity:librarian",
+    "concept:taxonomy-debt",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "data-point",
+   "text": "The reading store is one key, sgit.reading.v1, with one record per page and at most 400 pages, oldest dropped first.",
+   "section": "technical",
+   "quote": "One key, sgit.reading.v1, one record per page, at most 400 pages, oldest dropped first",
+   "about": [
+    "concept:client-side",
+    "concept:scrolled-is-not-read"
+   ],
+   "value": {
+    "n": 400,
+    "unit": "pages kept in the browser's reading store",
+    "as_of": "2026-10-16"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c35"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c26",
+   "verb": "answers",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "specifies",
+   "to": "c26"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c34"
+  },
+  {
+   "from": "c29",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c30",
+   "verb": "backs",
+   "to": "c34"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c28"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c31"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sg-meter",
+   "role": "the reading meter whose charge is by scroll depth"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose chip, map and highlights shipped in v0.12.85"
+  },
+  {
+   "id": "newsroom-ux",
+   "role": "the agent that builds the reader's side of the site and wrote the article"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, who asked for the fixes and holds editorial responsibility"
+  },
+  {
+   "id": "chartbeat",
+   "role": "its engaged time measure, five seconds of activity in a foreground tab"
+  },
+  {
+   "id": "medium",
+   "role": "counts views at five seconds and reads at thirty, pays on reading time"
+  },
+  {
+   "id": "upworthy",
+   "role": "dropped pageviews for attention minutes in 2014"
+  },
+  {
+   "id": "nielsen-norman-group",
+   "role": "measured where eyes go on a long page"
+  },
+  {
+   "id": "marc-brysbaert",
+   "role": "measured how many words people read per minute"
+  },
+  {
+   "id": "w3c",
+   "role": "its Web Annotation model anchors highlights by quote"
+  },
+  {
+   "id": "librarian",
+   "role": "whose job the shared vocabulary of concepts is"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": true
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "taxonomy-debt",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "journalism",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://help.chartbeat.com/hc/en-us/articles/360045890913",
+   "title": "Engagement tracking",
+   "by": "Chartbeat",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://help.medium.com/hc/en-us/articles/34831991136151",
+   "title": "Story stats",
+   "by": "Medium",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.niemanlab.org/2014/02/upworthy-has-a-new-way-of-measuring-engagement/",
+   "title": "Upworthy has a new way of measuring engagement",
+   "by": "Nieman Lab",
+   "date": "2014-02",
+   "kind": "news"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.cjr.org/behind_the_news/upworthy_attention_minutes.php",
+   "title": "Upworthy's attention minutes",
+   "by": "CJR",
+   "date": "undated",
+   "kind": "news"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.nngroup.com/articles/scrolling-and-attention/",
+   "title": "Scrolling and attention",
+   "by": "Nielsen Norman Group",
+   "date": "2018-04-15",
+   "kind": "article"
+  },
+  {
+   "id": "r06",
+   "url": "https://www.Gwern.net/doc/psychology/linguistics/2019-brysbaert.pdf",
+   "title": "How many words do we read per minute?",
+   "by": "Marc Brysbaert",
+   "date": "2019",
+   "kind": "paper"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.w3.org/TR/2018/WD-wpub-ann-20180104/",
+   "title": "Web Annotation extensions for web publications",
+   "by": "W3C",
+   "date": "2018-01-04",
+   "kind": "standard"
+  },
+  {
+   "id": "r08",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API",
+   "title": "CSS Custom Highlight API",
+   "by": "MDN",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://www.mediawiki.org/wiki/Page_Previews",
+   "title": "Page Previews",
+   "by": "MediaWiki",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.Gwern.net/design-graveyard",
+   "title": "Design graveyard",
+   "by": "Gwern Branwen",
+   "date": "undated",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-16",
+   "what": "v0.12.85 ships two measures per section, the fixed chip, the map and highlights; the article written by newsroom.ux"
+  },
+  {
+   "date": "2014",
+   "what": "Upworthy drops pageviews for attention minutes"
+  },
+  {
+   "date": "2018",
+   "what": "Nielsen Norman Group's scrolling and attention study"
+  },
+  {
+   "date": "2019",
+   "what": "Brysbaert's reading-speed meta-analysis"
+  }
+ ]
+}

@@ -1,0 +1,840 @@
+{
+ "slug": "the-mandate-stack",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "About fifteen agents and one person run RiskMandate's relationships, research, writing and events, four times a day on a schedule and whenever Dinis sits down with them.",
+   "section": "top",
+   "quote": "About fifteen agents and one person run RiskMandate's relationships, research, writing and events",
+   "about": [
+    "entity:riskmandate",
+    "entity:dinis-cruz",
+    "concept:multi-agent",
+    "concept:the-mandate-stack"
+   ],
+   "value": {
+    "n": 15,
+    "unit": "agents",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The agent that runs RiskMandate's CRM wrote the briefing this article is built from, on 6 October 2026, from Dinis Cruz's voice notes and the team's collaboration vault.",
+   "section": "top",
+   "quote": "The agent that runs RiskMandate's CRM wrote a briefing on 6 October 2026",
+   "about": [
+    "entity:riskmandate",
+    "concept:agents-write-too",
+    "concept:the-brief",
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "The Mandate Stack in one line: many small agents, one written mandate each, everything connected as a graph, one human who sends.",
+   "section": "top",
+   "quote": "many small agents, one written mandate each, everything connected as a graph, one human who sends",
+   "about": [
+    "concept:the-mandate-stack",
+    "concept:behaviour-policy",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The system is eight layers: compute and channels are rented, and everything above them is the team's own, from encrypted vaults as shared memory to one human at the top.",
+   "section": "top",
+   "quote": "Compute and channels are rented. Everything above them is the team's own",
+   "about": [
+    "concept:the-mandate-stack",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "By the briefing's count the collaboration vault holds over 620 commits and 9,000 files, and every change any agent has made is in its history.",
+   "section": "top",
+   "quote": "holds over 620 commits and 9,000 files, and every change any agent has made is in its history",
+   "about": [
+    "concept:vault",
+    "concept:the-record",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 620,
+    "unit": "commits",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "As of 3 October the relationships vault held 71 people, 24 organisations, 281 timeline events and 12 campaigns.",
+   "section": "top",
+   "quote": "the relationships vault held 71 people, 24 organisations, 281 timeline events and 12 campaigns",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:vault",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 71,
+    "unit": "people in the relationships vault",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The agents are Claude sessions: most are Cowork sessions in a Claude Teams account, some are Claude Code cloud sessions on a separate account with access to the vault and nothing else.",
+   "section": "top",
+   "quote": "Some run as Claude Code cloud sessions on a separate account, with access to the vault and nothing else",
+   "about": [
+    "entity:claude",
+    "entity:claude-code",
+    "concept:agent-isolation",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The channels belong to one Google Workspace identity cut into roles: the reader of raw mail has the least power, the roles with more power never read raw mail, and the row for sending has no agent in it.",
+   "section": "top",
+   "quote": "The row for sending has no agent in it.",
+   "about": [
+    "entity:google-workspace",
+    "entity:gmail",
+    "concept:blast-radius",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "A vault is a folder of plain files encrypted on the client with AES-256-GCM, versioned like git, and synced through a server that does not see plaintext.",
+   "section": "top",
+   "quote": "encrypted on the client with AES-256-GCM, versioned like git, and synced through a server that does not see plaintext",
+   "about": [
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Agents talk to each other through Email-FS, a mail protocol made of files, where moving a message from mailroom to inbox is the read receipt.",
+   "section": "top",
+   "quote": "Agents talk to each other through Email-FS, a mail protocol made of files.",
+   "about": [
+    "entity:email-fs",
+    "concept:agentic-email",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Append lanes give the outside world a write-only slot on a vault: a sender can add files but cannot list or read anything, including what it wrote.",
+   "section": "top",
+   "quote": "it can add files but cannot list or read anything, including what it wrote",
+   "about": [
+    "concept:vault-design",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "A record in the team's vaults is a node with typed edges to other nodes, and its meaning comes from those connections rather than from a schema.",
+   "section": "top",
+   "quote": "It is a node with typed edges to other nodes, and its meaning comes from those connections.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "An ABP is a capability graph: each row links an agent to a verb, object and reach drawn from a vocabulary of 23 primitives, with edges marked granted, mandated or both.",
+   "section": "top",
+   "quote": "a verb, object and reach drawn from a vocabulary of 23 primitives",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:fractal-semantic-graphs",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 23,
+    "unit": "primitives in the ABP vocabulary",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "The conductor runs four times a day, giving each agent one step in a fixed order: security first, then drafts, inbox, briefs, CRM, the event mission, research, dev, and security last.",
+   "section": "top",
+   "quote": "The order is security first, then drafts, inbox, briefs, CRM, the event mission, research, dev, and security last.",
+   "about": [
+    "concept:multi-agent",
+    "concept:the-mandate-stack"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "conductor runs a day",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Every agent has an ABP stating the grant, the mandate, the gap between them and the barrier; gaps are named, agents propose, and only Dinis amends, each amendment dated in the vault.",
+   "section": "top",
+   "quote": "Gaps are named, not hidden. Agents propose; only Dinis amends, and each amendment is a dated record in the vault.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:risk-acceptance",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Because inbound content is data and never instructions, and the roles that read raw mail hold the least power, the briefing says prompt injection becomes a containment problem rather than a detection problem.",
+   "section": "top",
+   "quote": "this makes prompt injection a containment problem rather than a detection problem",
+   "about": [
+    "concept:prompt-injection",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "No agent sends, replies or forwards email; the most an agent does is create a Gmail draft, with the security role's single hold email as the one exception.",
+   "section": "top",
+   "quote": "No agent sends, replies or forwards email. The most an agent does is create a Gmail draft.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:gmail"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Secrets never touch files: vault keys travel only in chat and every commit is preceded by a leak check that must report clean.",
+   "section": "top",
+   "quote": "Secrets never touch files. Vault keys travel only in chat.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The top layer is one person because the irreversible step is one step; everything below it can be wrong and still be caught there.",
+   "section": "top",
+   "quote": "The top layer is one person because the irreversible step is one step.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:one-way-door",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The vault is an application platform, a folder of files the host cannot read served as a web app, so anything a model can write as HTML can be deployed by committing it.",
+   "section": "top",
+   "quote": "so that anything a model can write as HTML can be deployed by committing it",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:vault",
+    "concept:the-tool-loop"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "definition",
+   "text": "The tool loop: hit a friction, build the tool in the same session, deploy it into the vault, use it, repeat; read, eval, print, loop applied to a business.",
+   "section": "top",
+   "quote": "hit a friction, build the tool in the same session, deploy it into the vault, use it, repeat",
+   "about": [
+    "concept:the-tool-loop",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "hypothesis",
+   "text": "Without the tool loop, this setup would be another project that stalled; the loop is what makes it possible for one person and why it kept growing.",
+   "section": "top",
+   "quote": "Without that loop, this would be another project that stalled.",
+   "about": [
+    "concept:the-tool-loop",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "definition",
+   "text": "The draft in Gmail is a release candidate for the whole pipeline; reviewing it is QA on the full system, like checking pre-production before it goes live.",
+   "section": "top",
+   "quote": "Reviewing it is QA on the full system, like checking pre-production before it goes live.",
+   "about": [
+    "concept:draft-is-release-candidate",
+    "concept:human-in-the-loop",
+    "entity:gmail"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "A wrong detail is traced to wrong captured data, a wrong or missing graph edge, or a model error, and the briefing observes that model error is now the rarest of the three.",
+   "section": "top",
+   "quote": "model error is now the rarest of the three causes, because the data the agents work from is solid",
+   "about": [
+    "concept:draft-is-release-candidate",
+    "concept:provenance",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The system has error correction at two levels, Dinis before sending and the recipient after, because the reply comes back through the same capture path.",
+   "section": "top",
+   "quote": "The system has error correction at two levels: Dinis before sending, the recipient after.",
+   "about": [
+    "concept:draft-is-release-candidate",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The two Wardley maps say the strategy: shared memory and the sgit tooling are being pushed toward commodity, while the behaviour policies and the graphs are being pulled toward product.",
+   "section": "top",
+   "quote": "Shared memory and the sgit tooling are being pushed toward commodity",
+   "about": [
+    "concept:wardley-maps",
+    "concept:strategy",
+    "entity:sgit",
+    "entity:wardley-maps-sgit-ai",
+    "entity:mermaid"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Commit authorship is not signed, so an agent's identity inside a shared vault is its branch rather than a signature, and a vault key cannot be revoked, only replaced by a new vault.",
+   "section": "top",
+   "quote": "commit authorship is not signed, so an agent's identity inside a shared vault is its branch rather than a signature",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Most barriers are policy-only, enforced by the process they constrain, and a separate permission authority that holds the credentials and decides each action does not exist in this setup.",
+   "section": "top",
+   "quote": "most barriers are policy-only, enforced by the process they constrain",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "question",
+   "text": "Who gives the mandate over a piece of information, and whether the recipient of an email has the authority to hand it to an agent at all, stays open.",
+   "section": "top",
+   "quote": "who gives the mandate over a piece of information, and whether the recipient of an email has the authority to hand it to an agent at all",
+   "about": [
+    "concept:privacy",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "None of the five reasons makes the setup immune; they say where a failure would have to get through.",
+   "section": "top",
+   "quote": "None of this makes the setup immune. It says where a failure would have to get through.",
+   "about": [
+    "concept:the-mandate-stack",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "data-point",
+   "text": "Gartner predicted on 25 June 2025 that more than 40% of agentic AI projects will be cancelled by the end of 2027.",
+   "section": "top",
+   "quote": "More than 40% of agentic AI projects will be cancelled by the end of 2027",
+   "about": [
+    "entity:gartner",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 40,
+    "unit": "percent of agentic AI projects cancelled by end of 2027",
+    "as_of": "2025-06-25"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "data-point",
+   "text": "MIT NANDA's August 2025 report put 95% of organisations at zero return from generative AI, a figure the report itself calls directional.",
+   "section": "top",
+   "quote": "the figure is the report's word \"directional\"",
+   "about": [
+    "entity:mit-nanda",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 95,
+    "unit": "percent of organisations getting zero return",
+    "as_of": "2025-08"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "data-point",
+   "text": "Google Cloud's September 2025 survey of organisations already using generative AI found 52% with agents in production, and LangChain's developer survey found 57%.",
+   "section": "top",
+   "quote": "found 52% with agents in production",
+   "about": [
+    "entity:google",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 52,
+    "unit": "percent with agents in production",
+    "as_of": "2025-09"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "fact",
+   "text": "The record is of pilots that stall, not of a technology that cannot ship.",
+   "section": "top",
+   "quote": "The record is of pilots that stall, not of a technology that cannot ship.",
+   "about": [
+    "concept:shipping",
+    "concept:the-mandate-stack"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "fact",
+   "text": "The pattern that shipped in email everywhere, Gmail's Gemini drafts, Outlook's Copilot, Superhuman and Shortwave, stops at the draft and leaves the send to the person, as the vendors' guides ask.",
+   "section": "top",
+   "quote": "all stop at the draft and leave the send to the person",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:gmail",
+    "entity:gemini",
+    "entity:copilot",
+    "entity:anthropic",
+    "entity:openai"
+   ],
+   "refs": [
+    "r05"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c34"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c21",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c31",
+   "verb": "backs",
+   "to": "c34"
+  },
+  {
+   "from": "c32",
+   "verb": "backs",
+   "to": "c34"
+  },
+  {
+   "from": "c33",
+   "verb": "backs",
+   "to": "c34"
+  },
+  {
+   "from": "c35",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c28",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "the business the stack runs, and whose CRM agent wrote the briefing"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the one human in the stack, who decides, amends mandates and sends"
+  },
+  {
+   "id": "claude",
+   "role": "the model the agents run on"
+  },
+  {
+   "id": "claude-code",
+   "role": "Cowork and Claude Code cloud sessions are the compute layer"
+  },
+  {
+   "id": "google-workspace",
+   "role": "the one identity whose channels are cut into roles"
+  },
+  {
+   "id": "gmail",
+   "role": "where the drafts wait for the person"
+  },
+  {
+   "id": "sgit",
+   "role": "drives the encrypted, versioned vaults that are the shared memory"
+  },
+  {
+   "id": "email-fs",
+   "role": "the mail protocol made of files the agents talk through"
+  },
+  {
+   "id": "wardley-maps-sgit-ai",
+   "role": "the mapping site whose rules the two maps follow"
+  },
+  {
+   "id": "mermaid",
+   "role": "renders the two Wardley maps from their source"
+  },
+  {
+   "id": "gartner",
+   "role": "source of the prediction that opens the record of stalled agent projects"
+  },
+  {
+   "id": "mit-nanda",
+   "role": "author of the report putting 95% of organisations at zero return"
+  },
+  {
+   "id": "google",
+   "role": "Google Cloud's survey finding 52% with agents in production"
+  },
+  {
+   "id": "gemini",
+   "role": "Gmail's Gemini drafts, one of the products that stop at the draft"
+  },
+  {
+   "id": "copilot",
+   "role": "Outlook's Copilot, one of the products that stop at the draft"
+  },
+  {
+   "id": "anthropic",
+   "role": "its note on effective agents asks for human checkpoints"
+  },
+  {
+   "id": "openai",
+   "role": "its guide to building agents asks to escalate irreversible actions to a human"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-mandate-stack",
+   "defined_here": true
+  },
+  {
+   "id": "the-tool-loop",
+   "defined_here": true
+  },
+  {
+   "id": "draft-is-release-candidate",
+   "defined_here": true
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027",
+   "title": "Gartner predicts over 40 percent of agentic AI projects will be canceled by end of 2027",
+   "by": "Gartner",
+   "date": "2025-06-25",
+   "kind": "news"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.gartner.com/en/newsroom/press-releases/2025-09-30-gartner-survey-finds-just-15-percent-of-it-application-leaders-are-considering-piloting-or-deploying-fully-autonomous-ai-agents",
+   "title": "Gartner survey finds just 15 percent of IT application leaders are considering, piloting or deploying fully autonomous AI agents",
+   "by": "Gartner",
+   "date": "2025-09-30",
+   "kind": "news"
+  },
+  {
+   "id": "r03",
+   "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+   "title": "MIT report: 95 percent of generative AI pilots at companies failing",
+   "by": "Fortune",
+   "date": "2025-08-18",
+   "kind": "news"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.googlecloudpresscorner.com/2025-09-04-Google-Cloud-Study-Reveals-52-of-Executives-Say-Their-Organizations-Have-Deployed-AI-Agents%2C-Unlocking-a-New-Wave-of-Business-Value%2C1",
+   "title": "Google Cloud study reveals 52 percent of executives say their organizations have deployed AI agents",
+   "by": "Google Cloud",
+   "date": "2025-09-04",
+   "kind": "news"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.anthropic.com/research/building-effective-agents",
+   "title": "Building effective agents",
+   "by": "Anthropic",
+   "date": "2024-12",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://riskmandate.ai/abp.html",
+   "title": "Agent Behaviour Policy",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://arxiv.org/abs/2412.14161",
+   "title": "TheAgentCompany",
+   "by": "Carnegie Mellon",
+   "date": "2025-09",
+   "kind": "paper"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-06",
+   "what": "The CRM agent's briefing on the setup as it runs; the article drafted the same day"
+  },
+  {
+   "date": "2026-10-03",
+   "what": "The counts of the relationships vault; the first here-is-what-we-know-about-you card sent"
+  },
+  {
+   "date": "2025-06-25",
+   "what": "Gartner predicts more than 40% of agentic AI projects cancelled by end of 2027"
+  }
+ ]
+}

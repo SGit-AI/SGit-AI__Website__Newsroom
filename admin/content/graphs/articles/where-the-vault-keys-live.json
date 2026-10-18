@@ -1,0 +1,648 @@
+{
+ "slug": "where-the-vault-keys-live",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Every vault on the site is encrypted in the client, so the server never sees a key and the key is the whole question.",
+   "section": "top",
+   "quote": "the server never sees a key and the key is the whole question",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The owner's agents now create vaults several a day, and keeping track of the keys has become a real problem.",
+   "section": "top",
+   "quote": "Now my agents create vaults all the time, several a day, and keeping track of the keys has become a real problem.",
+   "about": [
+    "concept:vault",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "All vault data is stored in S3 as encrypted objects, served by an SG/Send API server on Lambda behind CloudFront.",
+   "section": "architecture",
+   "quote": "All the data is stored in S3 as encrypted objects: commits, trees and files.",
+   "about": [
+    "entity:aws",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "In the browser the vault key sits after the hash in the URL, which browsers do not send to the server, so decryption happens on the reader's machine.",
+   "section": "architecture",
+   "quote": "browsers do not send that part of a URL to the server",
+   "about": [
+    "concept:client-side",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "A vault key is the one secret and carries read and write; a read key and a write key are derived from it one way.",
+   "section": "keys",
+   "quote": "It is the one secret, and it carries read and write.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The read key is the site's whole publishing model: read keys are published on purpose and vault keys never are.",
+   "section": "keys",
+   "quote": "The rule is short: read keys yes, on purpose; vault keys never.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Append tokens and PKI key pairs are separate credentials that each do one job, so a sender never needs the vault key.",
+   "section": "keys",
+   "quote": "Both exist so that a sender never needs the vault key at all.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "decision",
+   "text": "Vault keys live in two places today: a password manager for keys a person holds, and a registry vault run by its own isolated Claude session.",
+   "section": "today",
+   "quote": "The registry is a private vault, run by its own Claude session that I keep isolated from everything else",
+   "about": [
+    "concept:vault-of-vaults",
+    "concept:identity-and-secrets",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "limit",
+   "text": "The password manager integration does not exist yet, so today a key is copied and pasted into an entry by hand.",
+   "section": "today",
+   "quote": "The integration does not exist yet (more on that below), so today this is a careful copy and paste into an entry of the right kind.",
+   "about": [
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The agent that made a vault seals its key to the registry's public key and sends it with one POST to an append lane, using a write-only token issued to that sender alone.",
+   "section": "handover",
+   "quote": "It sends it with one POST to the registry's append lane, using a write-only token that was issued to that sender alone.",
+   "about": [
+    "concept:vault-design",
+    "concept:vault-of-vaults",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "A key that disagrees with one the registry already holds is set aside for review and never applied over the old one.",
+   "section": "handover",
+   "quote": "A key that disagrees with one it already holds is set aside for review, never applied over the old one.",
+   "about": [
+    "concept:vault-of-vaults"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "Two keys in this estate have already been rotated because they were displayed in a chat and the display was captured.",
+   "section": "handover",
+   "quote": "Two keys in this estate have already been rotated for exactly that reason",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "keys rotated after being displayed",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The handover prompt gives the reason before the instruction and gives the agent a way out: seal the key and hand over the file, or hand over the key to be relayed.",
+   "section": "handover",
+   "quote": "It also gives the agent a way out: seal the key and hand me the file, or hand me the key, and I relay it.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The sealed handover is safer than what it replaced, a vault key pasted into a chat whose transcript is a durable record held by someone else.",
+   "section": "handover",
+   "quote": "A chat transcript is a durable record held by someone else, for as long as the conversation is kept.",
+   "about": [
+    "concept:the-record",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "limit",
+   "text": "The weakest step is getting a key into an agent session safely, because the agent platforms do not have secrets per session.",
+   "section": "agents",
+   "quote": "The hard part is getting the key into the session safely, because the platforms do not have secrets per session.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:agent-isolation",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "On Claude Code on the web configuration lives on the environment, so the SG/Send access token sits in a variable every session in that environment can read.",
+   "section": "agents",
+   "quote": "configuration lives on the environment, not the session",
+   "about": [
+    "entity:claude-code",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "A network secret keeps a server key outside the VM but is per environment and cannot help with a vault key, because decryption happens inside the session.",
+   "section": "agents",
+   "quote": "it cannot help with a vault key at all, because a vault key is not sent to a server",
+   "about": [
+    "entity:claude-code",
+    "concept:encryption-and-keys"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Codex's secrets are removed before the agent phase starts, which protects them from the agent and for the same reason cannot give the agent a key to use.",
+   "section": "agents",
+   "quote": "which protects them from the agent and, for the same reason, cannot give the agent a key to use",
+   "about": [
+    "entity:codex",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "decision",
+   "text": "A key for another agent travels in one of three imperfect ways, and the pattern used most is the agent making its own vault and sending the key back on a lane.",
+   "section": "agents",
+   "quote": "which is why that last pattern is the one I use most",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "definition",
+   "text": "A lane is a write-only channel attached to a vault: one POST from anywhere, readable only by the vault's owner, with the server keeping only hashes of tokens and keys.",
+   "section": "lanes",
+   "quote": "A lane is a write-only channel attached to a vault.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Lanes are used for key handover, logging and observation, data from websites, and messages between agents that have no other path.",
+   "section": "lanes",
+   "quote": "Messages between agents that have no other path",
+   "about": [
+    "concept:vault-design",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "When two or three agents need to work together the owner creates a communication vault just for them, where they use EmailFS and IssuesFS.",
+   "section": "small-vaults",
+   "quote": "If two or three agents need to work together, I create a vault just for them.",
+   "about": [
+    "entity:email-fs",
+    "entity:issues-fs",
+    "concept:multi-agent",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Small vaults are the right shape for security because a leaked key exposes one conversation, and that is exactly why the number of keys outgrew hand management.",
+   "section": "small-vaults",
+   "quote": "A leaked key exposes one small vault and one conversation, not an inbox, a drive or an account",
+   "about": [
+    "concept:blast-radius",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "proposal",
+   "text": "Password manager integrations are the answer wanted for keys people hold; an open call was published and has not yet been followed up.",
+   "section": "next",
+   "quote": "I have not followed it up yet, so the silence so far is mine, not theirs.",
+   "about": [
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "secrets.sgit.ai is a secrets manager that runs entirely in the browser and is unlocked by a passkey, whose PRF output derives the wrapping key for the keyring.",
+   "section": "next",
+   "quote": "a secrets manager that runs entirely in the browser and is unlocked by a passkey",
+   "about": [
+    "entity:secrets-sgit-ai",
+    "entity:webauthn",
+    "entity:bitwarden",
+    "concept:client-side"
+   ],
+   "refs": [
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "One of the WebAuthn spec's editors warns that people lose passkeys and losing the passkey must not mean losing the data.",
+   "section": "next",
+   "quote": "people lose passkeys, and losing the passkey must not mean losing the data",
+   "about": [
+    "entity:webauthn",
+    "entity:tim-cappalli",
+    "entity:secrets-sgit-ai"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "data-point",
+   "text": "The design has a second root, a 128-bit recovery code shown once, and a wrap per passkey so a second device can unlock the same keyring.",
+   "section": "next",
+   "quote": "a 128-bit recovery code shown once",
+   "about": [
+    "entity:secrets-sgit-ai",
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 128,
+    "unit": "bits in the recovery code",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "At v0.1.13 secrets.sgit.ai has shipped the site, the design documents, the mockups and a passkey lab; the app itself is proposed.",
+   "section": "next",
+   "quote": "the app itself is proposed, and the site is careful to say so",
+   "about": [
+    "entity:secrets-sgit-ai"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "hypothesis",
+   "text": "The best long-term answer is public and private keys for every party, so a key is shared by sealing it to the recipient's public key.",
+   "section": "next",
+   "quote": "For me the best long-term answer is public and private keys for every party",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "question",
+   "text": "PKI raises the question of how an agent gets its private key in the first place; the workaround today is a fresh signing key per session pinned by the recipient.",
+   "section": "next",
+   "quote": "how does an agent get its private key in the first place?",
+   "about": [
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "Decryption out of band, where you send ciphertext and get plaintext back after proving who you are, is an idea and not yet a design.",
+   "section": "next",
+   "quote": "That is an idea, not a design yet",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "question",
+   "text": "The owner asks how other people manage their vault keys, or the keys of whatever encrypted system they use with agents.",
+   "section": "yours",
+   "quote": "I would be very interested in how other people manage their vault keys",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "On 10 October the production host still served the older inbox routes while the dev host served the renamed append routes, and the lane address derivation is still proposed at sgit-ai v0.20.0.",
+   "section": "docs",
+   "quote": "It also confirms that the lane address derivation is still proposed at sgit-ai v0.20.0.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "fact",
+   "text": "The article was checked against sgit-ai v0.20.0, the live OpenAPI documents of both API hosts and the site's own pages, all read on 10 October 2026.",
+   "section": "sources",
+   "quote": "Checked against sgit-ai v0.20.0 on this machine",
+   "about": [
+    "entity:sgit",
+    "concept:the-record"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c09",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "specifies",
+   "to": "c10"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c26",
+   "verb": "gives_rise_to",
+   "to": "c27"
+  },
+  {
+   "from": "c27",
+   "verb": "specifies",
+   "to": "c25"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c29",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c20"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit-ai",
+   "role": "the site whose vaults are encrypted in the client and whose docs had the gap"
+  },
+  {
+   "id": "sgit",
+   "role": "the CLI and vault system whose keys, lanes and PKI are described"
+  },
+  {
+   "id": "aws",
+   "role": "S3, Lambda and CloudFront, where the ciphertext is stored and served"
+  },
+  {
+   "id": "claude",
+   "role": "the isolated session that runs the registry vault and the sessions that create vaults"
+  },
+  {
+   "id": "claude-code",
+   "role": "the agent platform whose environment variables and network secrets are per environment, not per session"
+  },
+  {
+   "id": "codex",
+   "role": "OpenAI's agent platform, whose secrets are removed before the agent phase"
+  },
+  {
+   "id": "email-fs",
+   "role": "the file-based email protocol agents use inside communication vaults"
+  },
+  {
+   "id": "issues-fs",
+   "role": "the file-based issues protocol agents use inside communication vaults"
+  },
+  {
+   "id": "secrets-sgit-ai",
+   "role": "the passkey-unlocked browser keyring, one of the four tracks that come next"
+  },
+  {
+   "id": "webauthn",
+   "role": "the passkey standard whose PRF extension derives the keyring's wrapping key"
+  },
+  {
+   "id": "bitwarden",
+   "role": "a password manager already unlocking its vault with a PRF-capable passkey"
+  },
+  {
+   "id": "tim-cappalli",
+   "role": "a WebAuthn spec editor who warns that people lose passkeys"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address readers write to with how they manage their own keys"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "vault-of-vaults",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://code.claude.com/docs/en/cloud-environments",
+   "title": "Cloud environments",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://learn.chatgpt.com/docs/environments/cloud-environment",
+   "title": "Codex cloud environments",
+   "by": "OpenAI",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.w3.org/TR/webauthn-3/#prf-extension",
+   "title": "WebAuthn Level 3, the PRF extension",
+   "by": "W3C",
+   "date": "undated",
+   "kind": "standard"
+  },
+  {
+   "id": "r04",
+   "url": "https://bitwarden.com/help/login-with-passkeys/",
+   "title": "Log in with passkeys",
+   "by": "Bitwarden",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://blog.timcappalli.me/p/passkeys-prf-warning/",
+   "title": "Passkeys PRF warning",
+   "by": "Tim Cappalli",
+   "date": "undated",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The state of vault key management at sgit-ai v0.20.0 and secrets.sgit.ai v0.1.13; the two API hosts' routes checked; the docs updated"
+  },
+  {
+   "date": "2026-10",
+   "what": "A reader's question this week about where the keys of temporary agent sessions are managed"
+  }
+ ]
+}

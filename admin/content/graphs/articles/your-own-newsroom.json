@@ -1,0 +1,646 @@
+{
+ "slug": "your-own-newsroom",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "For the authentic founders who come from the field they build for, the brand is the founder and their authenticity is the proof, so it needs a medium that keeps it.",
+   "section": "why",
+   "quote": "For them, the brand is the founder: their authenticity is the proof.",
+   "about": [
+    "entity:founder",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "A site written from voice memos keeps a founder's history with dates, and because every claim is checked before publication it is a record others can trust.",
+   "section": "why",
+   "quote": "A site written from voice memos keeps it, with dates, and because every claim is checked before it is published, it is a record that others can trust.",
+   "about": [
+    "concept:voice-memo",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Building one teaches what a pure client-side site is: static files on a host, code in the reader's browser, and no server holding anyone's data.",
+   "section": "why",
+   "quote": "Building one teaches what a pure client-side site is: static files on a host, code that runs in the reader's browser, and no server that holds anyone's data.",
+   "about": [
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "GitHub Pages is free with one condition that matters: on GitHub Free the repository must be public.",
+   "section": "need",
+   "quote": "the repository must be public",
+   "about": [
+    "entity:github-pages",
+    "concept:privacy"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Published GitHub Pages sites may be no larger than 1 GB, with a soft bandwidth limit of 100 GB per month.",
+   "section": "need",
+   "quote": "Published GitHub Pages sites may be no larger than 1 GB",
+   "about": [
+    "entity:github-pages"
+   ],
+   "value": {
+    "n": 1,
+    "unit": "GB site size limit"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Claude cloud sessions are available on Pro, Max and Team plans, run from the browser or the Claude app on a phone, and reach repositories through the Claude GitHub App.",
+   "section": "need",
+   "quote": "run from the browser at claude.ai/code or from the Code tab of the Claude app on a phone",
+   "about": [
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The owner records with Otter; the order things were said in and the words reached for are the raw material for the founder's voice.",
+   "section": "need",
+   "quote": "I use Otter; the order you said things in, and the words you reached for, are the raw material for your voice.",
+   "about": [
+    "entity:otter",
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "A Stripe Payment Link takes the top-up; the site never sees card details.",
+   "section": "need",
+   "quote": "The top-up page sends the reader to it; your site never sees card details.",
+   "about": [
+    "entity:stripe",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "The recipe is eight steps, with a GitHub Actions workflow that validates, tags and deploys, where the rule that matters is that a failed check stops the release.",
+   "section": "steps",
+   "quote": "The rule that matters is that a failed check stops the release.",
+   "about": [
+    "entity:github-actions",
+    "concept:publishing-method",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "proposal",
+   "text": "A correction is a new version of the article with its diff, not a note about the old one, and every release gets a version and a one-line note.",
+   "section": "steps",
+   "quote": "a correction is a new version of the article, with its diff, not a note about the old one",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "definition",
+   "text": "The house rules are one file at the root, CLAUDE.md, read at the start of every session, holding the voice, the verification rules and the release steps, growing by a line with every correction.",
+   "section": "rules",
+   "quote": "This is where your voice, your verification rules and your release steps live, and it grows by one line every time you correct the agent.",
+   "about": [
+    "concept:house-rules",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "api.newsroom.sgit.ai is a client-side API: versioned files a site loads and pins, running in the reader's browser with no server.",
+   "section": "meter",
+   "quote": "It is a client-side API: versioned files a site loads and pins",
+   "about": [
+    "entity:api-newsroom-sgit-ai",
+    "entity:sg-meter",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "The meter's defaults are £5 of credit to begin, 5p an article and 10p when new, with top-ups through a Stripe Payment Link the publisher owns.",
+   "section": "meter",
+   "quote": "the defaults are \"£5 of credit to begin\", 5p an article and 10p when new",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "pence per article by default",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The meter is an honesty box, not a paywall: it never blocks a page, and because the balance is in the reader's browser a reader can change it.",
+   "section": "meter",
+   "quote": "It is an honesty box, not a paywall: it never blocks a page, and because the balance is in the reader's browser, a reader can change it.",
+   "about": [
+    "concept:micropayments",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "limit",
+   "text": "GitHub says Pages is not for running an online business; a writing site with an optional meter is primarily writing, and if it becomes a shop it should move.",
+   "section": "meter",
+   "quote": "A writing site with an optional meter is primarily writing; if yours becomes primarily a shop, move it to a host that allows that.",
+   "about": [
+    "entity:github-pages",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "The next step is to write the house rules as an Agent Behaviour Policy: a versioned file saying what the agent is given, what it is for and what it must not do, each rule marked by what keeps it.",
+   "section": "policy",
+   "quote": "a versioned file that says what the agent is given, what it is for, and what it must not do, with each rule marked by what keeps it",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:abp-sgit-ai",
+    "concept:house-rules"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "An agent that publishes needs real privileges: it can push to the repository, which means it can publish anything to the site.",
+   "section": "policy",
+   "quote": "it can push to your repository, which means it can publish anything to your site",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "A behaviour policy is not only a security control; it goes down to the business logic, how many posts a day, the tone, no Sunday publishing.",
+   "section": "policy",
+   "quote": "A behaviour policy is not only a security control; it goes all the way down to how you want the work done.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "Split the work across a writer, an editor and a publisher with separate grants, so the agent that writes cannot publish and the one that publishes cannot invent.",
+   "section": "policy",
+   "quote": "so the agent that writes cannot publish on its own, and the one that publishes cannot invent",
+   "about": [
+    "concept:multi-agent",
+    "concept:behaviour-policy",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "A policy enforced by the prompt keeps the rules in view but it is still the agent keeping them; a hook blocks the action whatever the agent intended.",
+   "section": "policy",
+   "quote": "That keeps the rules in view, but it is still the agent keeping them.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "This site's own writing session runs under a policy of eleven rules, re-read after every summary, reporting its status every few answers; more than half of its rules could move to hooks.",
+   "section": "policy",
+   "quote": "under a policy of eleven rules that is re-read after every summary and reports its status every few answers",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:newsroom-sgit-ai",
+    "concept:agent-memory"
+   ],
+   "value": {
+    "n": 11,
+    "unit": "rules in the site's policy",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "A more advanced setup keeps a private sgit vault beside the public repository for drafts, transcripts, data, client notes, voice guidance and the agent's working files.",
+   "section": "vault",
+   "quote": "The repository holds what is published. Beside it, an sgit vault holds the rest",
+   "about": [
+    "concept:vault",
+    "entity:sgit",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The agent clones the vault with a key given through the environment, never in a file in the repository, and only the publisher copies approved text to the public repository, so nothing private touches the public history.",
+   "section": "vault",
+   "quote": "Nothing private ever touches the public history.",
+   "about": [
+    "concept:vault",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "On this site, in three days, 54 messages from the owner, ten of them voice memos, became 40 releases, each with figures, sources and a section on what it does not claim.",
+   "section": "running",
+   "quote": "in three days, 54 messages from me, ten of them voice memos, became 40 releases",
+   "about": [
+    "concept:the-newsroom",
+    "entity:newsroom-sgit-ai",
+    "concept:voice-memo"
+   ],
+   "value": {
+    "n": 40,
+    "unit": "releases from 54 messages in three days",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "Ask the agent to interview you when a story is thin, as a journalist challenging every answer; and let the record build on itself, every article linking to the ones before.",
+   "section": "running",
+   "quote": "Ask the agent to interview you when a story is thin",
+   "about": [
+    "concept:voice-memo",
+    "entity:riskmandate",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The writing pipeline is not a kit yet; the site's generator and release steps are published as a pattern and the brief has the agent build a smaller one.",
+   "section": "limits",
+   "quote": "The writing pipeline is not a kit yet.",
+   "about": [
+    "concept:publishing-method",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The meter trusts the reader: balances can be edited and the return page does not verify a payment, both by design.",
+   "section": "limits",
+   "quote": "Balances can be edited, and the return page does not verify a payment, both by design.",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Costs vary: GitHub Pages is free within its limits; a Claude plan, a domain and Stripe's fees are not.",
+   "section": "limits",
+   "quote": "GitHub Pages is free within its limits; a Claude plan, a domain and Stripe's fees are not.",
+   "about": [
+    "entity:github-pages",
+    "entity:stripe",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "A public repository is public; on a free plan Pages needs it, and nothing confidential belongs in it.",
+   "section": "limits",
+   "quote": "On a free plan, Pages needs it; nothing confidential belongs in it.",
+   "about": [
+    "entity:github-pages",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "A rule in a prompt is a hope; only the rules a hook or CI keeps are enforced, so mark which is which.",
+   "section": "limits",
+   "quote": "Only the rules a hook or CI keeps are enforced; mark which is which.",
+   "about": [
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "decision",
+   "text": "The article was updated on 15 October to add the behaviour policy and the private vault.",
+   "section": "limits",
+   "quote": "Added the behaviour policy and the private vault.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 15 October 2026, written by the site's agent in the voice of the site, with the recipe being the site's own and the sources read that day.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 15 October 2026, written by this site's agent in the voice of this site",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c15",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c19",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c30"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c22"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  }
+ ],
+ "entities": [
+  {
+   "id": "founder",
+   "role": "the authentic founder whose brand is their story"
+  },
+  {
+   "id": "github-pages",
+   "role": "the free static host, public repository required on a free plan"
+  },
+  {
+   "id": "github-actions",
+   "role": "validates and publishes the site on each push"
+  },
+  {
+   "id": "claude-code",
+   "role": "cloud sessions connected to one repository that research, write, check and publish"
+  },
+  {
+   "id": "otter",
+   "role": "the recorder that transcribes the owner's voice memos"
+  },
+  {
+   "id": "stripe",
+   "role": "the Payment Link the publisher owns for top-ups"
+  },
+  {
+   "id": "api-newsroom-sgit-ai",
+   "role": "the client-side API that packages the reader meter, pinned to a release"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reader meter added when there is something worth paying for"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "the Agent Behaviour Policy the house rules grow into"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose own recipe this is: eleven rules, 40 releases in three days"
+  },
+  {
+   "id": "sgit",
+   "role": "the private vault beside the public site"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the interview method that wrote Ten hard questions for RiskMandate; the address for help"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose voice memo and editorial responsibility it is"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "house-rules",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+   "title": "GitHub Pages limits",
+   "by": "GitHub Docs",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+   "title": "Creating a GitHub Pages site",
+   "by": "GitHub Docs",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://code.claude.com/docs/en/claude-code-on-the-web",
+   "title": "Use Claude Code in the cloud",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-15",
+   "what": "The voice memo, the article, the update adding the policy and the private vault; the sources read; api.newsroom.sgit.ai at release v0.2.5"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "slug": "how-cheap-is-it-to-undo",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {"id": "c01", "kind": "data-point", "text": "On 13 October the newsroom released fourteen times, every commit made by an agent, with nobody approving a release before it went live.", "section": "noticed", "quote": "On 13 October it released fourteen times, every commit made by an agent", "about": ["concept:shipping", "concept:human-in-the-loop", "entity:newsroom-sgit-ai"], "value": {"n": 14, "unit": "releases in one day", "as_of": "2026-10-13"}},
+  {"id": "c02", "kind": "fact", "text": "The owner's email works the opposite way: the agents draft every message and he sends every one.", "section": "noticed", "quote": "the agents draft every message and I send every one", "about": ["concept:agentic-email", "concept:human-in-the-loop", "entity:dinis-cruz"]},
+  {"id": "c03", "kind": "hypothesis", "text": "The contrast goes to the heart of the human in the loop question, which is a spectrum, not a switch between trust and control.", "section": "noticed", "quote": "I think it goes to the heart of the human in the loop question", "about": ["concept:human-in-the-loop", "concept:one-way-door"]},
+  {"id": "c04", "kind": "definition", "text": "The test for how much to let go is how easy and how cheap it would be to undo.", "section": "test", "quote": "What he worried about was how easy, and how cheap, it would be to undo.", "about": ["concept:one-way-door", "entity:google"]},
+  {"id": "c05", "kind": "fact", "text": "Bezos's 2015 letter separated one-way doors, consequential and irreversible, from two-way doors, and warned that large organisations use the heavy process for both.", "section": "test", "quote": "His warning was that large organisations tend to use the heavy process for both.", "about": ["concept:one-way-door", "entity:jeff-bezos", "entity:amazon"], "refs": ["r01"]},
+  {"id": "c06", "kind": "data-point", "text": "Google's Site Reliability Engineering book says roughly 70% of outages are due to changes in a live system.", "section": "test", "quote": "roughly 70% of outages are due to changes in a live system", "about": ["concept:shipping", "entity:google"], "value": {"n": 70, "unit": "% of outages due to changes in a live system", "as_of": "undated"}, "refs": ["r02"]},
+  {"id": "c07", "kind": "fact", "text": "A change you can roll back is a two-way door, and the work of a release pipeline is to keep it one.", "section": "test", "quote": "A change you can roll back is a two-way door; the work of a release pipeline is to keep it one.", "about": ["concept:one-way-door", "concept:shipping"]},
+  {"id": "c08", "kind": "proposal", "text": "The question to ask of every agent output is not whether you trust the agent but, if this is wrong, how cheap it is to undo and what it breaks first.", "section": "test", "quote": "if this is wrong, how cheap is it to undo, and what does it break before I do?", "about": ["concept:one-way-door", "concept:human-in-the-loop"]},
+  {"id": "c09", "kind": "fact", "text": "An email is a one-way door: once it goes you cannot claim it back and the damage is done the moment it lands.", "section": "email", "quote": "An email is a one-way door. When it goes, that is it; you cannot claim it back.", "about": ["concept:agentic-email", "concept:one-way-door"]},
+  {"id": "c10", "kind": "fact", "text": "The email workflow is still in the explorer phase, with nascent controls.", "section": "email", "quote": "it is still in the explorer phase. The controls are nascent", "about": ["concept:explorer-villager-town-planner", "concept:agentic-email"]},
+  {"id": "c11", "kind": "fact", "text": "The second reader that checks every draft was built after two emails went out wrong.", "section": "email", "quote": "but it was built after two emails went out wrong", "about": ["concept:human-in-the-loop", "concept:agentic-email"]},
+  {"id": "c12", "kind": "fact", "text": "An article can be corrected: a correction is a new version with a page showing what changed, and anyone arriving after the fix gets the fixed page.", "section": "newsroom", "quote": "a correction is a new version, with a page that shows what changed", "about": ["concept:corrections-propagate", "concept:one-way-door", "entity:newsroom-sgit-ai"]},
+  {"id": "c13", "kind": "fact", "text": "A new article lands in the latest list, but the front page's lead and highlights are placed by the Editor and are still the edition of 8 October.", "section": "newsroom", "quote": "a new article lands in the latest list, but the front page's lead and highlights are placed by the Editor", "about": ["concept:the-newsroom", "entity:newsroom-sgit-ai"]},
+  {"id": "c14", "kind": "fact", "text": "Every release goes through a validator, browser tests, a leak scan and versions that are never reused, and work moves between sites with briefing packs.", "section": "newsroom", "quote": "Every release goes through a validator that fails on a broken link", "about": ["concept:publishing-method", "concept:shipping", "entity:sgit-ai"]},
+  {"id": "c15", "kind": "fact", "text": "When the owner reads an article he is either very happy with it or makes small changes; he has not yet read one and thought he did not want it live.", "section": "newsroom", "quote": "I have not yet read one and thought, I do not want that live.", "about": ["concept:the-record", "concept:human-in-the-loop", "entity:dinis-cruz"]},
+  {"id": "c16", "kind": "definition", "text": "The spectrum has two axes: across, the cost of undoing; up, the maturity of the controls and of the record, from explorer to town planner.", "section": "axes", "quote": "So the spectrum has two axes.", "about": ["concept:one-way-door", "concept:explorer-villager-town-planner", "concept:human-in-the-loop"]},
+  {"id": "c17", "kind": "hypothesis", "text": "Both axes move: the newsroom's side effects grow with readership, and email moves the other way as its controls mature.", "section": "axes", "quote": "The important part is that both axes move.", "about": ["concept:one-way-door", "concept:explorer-villager-town-planner"]},
+  {"id": "c18", "kind": "proposal", "text": "The unplaced latest list is a stage before promotion that can become a proper canary as readership grows.", "section": "axes", "quote": "a stage before promotion that can become a proper canary", "about": ["concept:shipping", "concept:the-newsroom"]},
+  {"id": "c19", "kind": "proposal", "text": "When the record of unchanged drafts is long enough for one kind of message, that kind can leave the owner's hands by a decision written into the policy, with an owner and a date.", "section": "axes", "quote": "that kind is a candidate to leave my hands, by a decision written into the policy, with an owner and a date", "about": ["concept:behaviour-policy", "concept:agentic-email", "concept:the-record"]},
+  {"id": "c20", "kind": "proposal", "text": "A business should decide where to let go by output, not by department or by how much it trusts the model.", "section": "axes", "quote": "Not by department, and not by how much it trusts the model. By output", "about": ["concept:human-in-the-loop", "concept:one-way-door"]},
+  {"id": "c21", "kind": "limit", "text": "The readership is small and that is part of the argument; at a larger scale the same release process would need a canary stage.", "section": "limits", "quote": "The readership is small, and that is part of the argument.", "about": ["concept:shipping", "entity:newsroom-sgit-ai"]},
+  {"id": "c22", "kind": "limit", "text": "Never having pulled an article is one reader's record over a few weeks, not a measurement.", "section": "limits", "quote": "\"Never pulled an article\" is one reader's record.", "about": ["concept:the-record"]},
+  {"id": "c23", "kind": "limit", "text": "Not everything on a site is a two-way door: a leaked key in a published page is a one-way door, which is why the leak scan runs before the commit.", "section": "limits", "quote": "A leaked key in a published page is a one-way door", "about": ["concept:one-way-door", "concept:publishing-method"]},
+  {"id": "c24", "kind": "limit", "text": "The Google executive is a memory, not a source; the idea is attributed to the owner's memory and to what Bezos wrote down.", "section": "limits", "quote": "The Google executive is a memory, not a source.", "about": ["entity:google", "entity:jeff-bezos"]},
+  {"id": "c25", "kind": "limit", "text": "Email can still move: the explorer phase is where it is today, not where it has to stay.", "section": "limits", "quote": "The explorer phase is where it is today, not where it has to stay.", "about": ["concept:explorer-villager-town-planner", "concept:agentic-email"]},
+  {"id": "c26", "kind": "fact", "text": "The release counts are from the repository's git log for 13 October 2026 and the front page's placement from its edition file dated 8 October.", "section": "sources", "quote": "The release counts are from this repository's git log for 13 October 2026", "about": ["concept:the-record", "entity:newsroom-sgit-ai"]}
+ ],
+ "edges": [
+  {"from": "c01", "verb": "backs", "to": "c03"},
+  {"from": "c02", "verb": "backs", "to": "c03"},
+  {"from": "c05", "verb": "backs", "to": "c04"},
+  {"from": "c06", "verb": "backs", "to": "c07"},
+  {"from": "c04", "verb": "gives_rise_to", "to": "c08"},
+  {"from": "c04", "verb": "gives_rise_to", "to": "c20"},
+  {"from": "c11", "verb": "backs", "to": "c10"},
+  {"from": "c15", "verb": "backs", "to": "c12"},
+  {"from": "c16", "verb": "gives_rise_to", "to": "c17"},
+  {"from": "c17", "verb": "gives_rise_to", "to": "c18"},
+  {"from": "c17", "verb": "gives_rise_to", "to": "c19"},
+  {"from": "c21", "verb": "limits", "to": "c12"},
+  {"from": "c22", "verb": "limits", "to": "c15"},
+  {"from": "c23", "verb": "limits", "to": "c12"},
+  {"from": "c24", "verb": "limits", "to": "c04"},
+  {"from": "c25", "verb": "limits", "to": "c10"},
+  {"from": "c26", "verb": "backs", "to": "c01"}
+ ],
+ "entities": [
+  {"id": "dinis-cruz", "role": "the owner whose email waits for him and who reads every article"},
+  {"id": "newsroom-sgit-ai", "role": "the site that released fourteen times in a day on its own"},
+  {"id": "sgit-ai", "role": "the sibling site whose agent briefed this one on its moved banner"},
+  {"id": "jeff-bezos", "role": "named one-way and two-way doors in the 2015 shareholder letter"},
+  {"id": "amazon", "role": "the company whose version of the undo test is documented"},
+  {"id": "google", "role": "the remembered executive's company, and the SRE book's publisher"}
+ ],
+ "concepts": [
+  {"id": "one-way-door", "defined_here": true},
+  {"id": "human-in-the-loop", "defined_here": false},
+  {"id": "explorer-villager-town-planner", "defined_here": false},
+  {"id": "agentic-email", "defined_here": false},
+  {"id": "corrections-propagate", "defined_here": false},
+  {"id": "publishing-method", "defined_here": false},
+  {"id": "shipping", "defined_here": false},
+  {"id": "the-record", "defined_here": false},
+  {"id": "the-newsroom", "defined_here": false},
+  {"id": "behaviour-policy", "defined_here": false}
+ ],
+ "references": [
+  {"id": "r01", "url": "https://s2.q4cdn.com/299287126/files/doc_financials/annual/2015-Letter-to-Shareholders.PDF", "title": "2015 Letter to Shareholders", "by": "Jeff Bezos, Amazon", "date": "2016-04", "kind": "page"},
+  {"id": "r02", "url": "https://sre.google/sre-book/introduction/", "title": "Site Reliability Engineering, introduction", "by": "Google", "date": "undated", "kind": "book"}
+ ],
+ "dates": [
+  {"date": "2026-10-13", "what": "Fourteen releases of the newsroom in one day; the voice memo"},
+  {"date": "2026-10-08", "what": "The front page's edition, still the one placed by the Editor"},
+  {"date": "2016-04", "what": "Bezos's 2015 letter to shareholders on one-way and two-way doors"}
+ ]
+}

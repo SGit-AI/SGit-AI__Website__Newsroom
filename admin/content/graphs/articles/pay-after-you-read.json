@@ -1,0 +1,749 @@
+{
+ "slug": "pay-after-you-read",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "On 10 October seven releases in 3 hours 40 minutes, alongside seven other pieces of work, took the reading meter from an experiment to a working pay-on-demand publication.",
+   "section": "top",
+   "quote": "Seven releases in 3 hours 40 minutes",
+   "about": [
+    "entity:sg-meter",
+    "concept:shipping",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "releases of the meter in one afternoon",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "As soon as a Stripe link is wired in, sgit.ai is a fully working pay-on-demand publication, and the only question left is whether people will pay for it.",
+   "section": "top",
+   "quote": "The only question left is whether people will pay for it.",
+   "about": [
+    "entity:stripe",
+    "concept:micropayments",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "A new article costs 10p and an older one 5p, read to the end; the meter charges the share actually scrolled through, rounded to 5% and never less than a tenth, once per page per session.",
+   "section": "features",
+   "quote": "A new article costs 10p and an older one 5p, read to the end.",
+   "about": [
+    "entity:sg-meter",
+    "concept:scrolled-is-not-read",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "pence for a new article read to the end"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Everyone starts with £5.00 of credit, and when it runs out nothing happens: no wall, no bar, no nag, only a balance that turns a warmer colour below zero.",
+   "section": "features",
+   "quote": "no wall, no bar, no nag, only a small balance in the top bar that turns a warmer colour below zero",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "GBP of starting credit"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The usefulness rating on the card at the foot of every article sets the price: 1 is free, 2 is half, 3 is the price, 4 is one and a half times, 5 is double.",
+   "section": "features",
+   "quote": "1 is free, 2 is half, 3 is the price, 4 is one and a half times, 5 is double",
+   "about": [
+    "concept:pricing",
+    "concept:micropayments",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A reader's default persona is built from everything they read, weighted by how much of each page they read, and named from their top topics; five presets and any number of their own can be added.",
+   "section": "features",
+   "quote": "Your default persona is built from everything you read, weighted by how much of each page you read",
+   "about": [
+    "concept:personas",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The balance, history, spending and graph are all in the reader's browser storage and nowhere else; the reading reaches the site only if the reader sends it, encrypted.",
+   "section": "features",
+   "quote": "All of it is in your browser's storage and nowhere else.",
+   "about": [
+    "concept:client-side",
+    "concept:privacy",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Topping up is one £5 Stripe Payment Link with nothing that renews; Stripe's fee is about 27.5p of the £5, so one top-up spreads one card fee over dozens of pages.",
+   "section": "features",
+   "quote": "Stripe's fee is about 27.5p of the £5",
+   "about": [
+    "entity:stripe",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 27.5,
+    "unit": "pence of fee on a £5 top-up"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Leanpub lets the reader choose the price with a slider before buying; the odd thing is that the price is chosen before the value is seen, and the reader card turns that round.",
+   "section": "after",
+   "quote": "The one thing that always felt odd to me is that you choose the price before you have seen the value.",
+   "about": [
+    "entity:leanpub",
+    "concept:pricing"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "In a field experiment with 113,047 people buying souvenir photos, 0.5% bought at a fixed $12.95 while 8.39% bought when they could pay what they wanted, at an average of $0.92.",
+   "section": "after",
+   "quote": "0.5% bought at a fixed $12.95, while 8.39% bought when they could pay what they wanted, at an average of $0.92",
+   "about": [
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 8.39,
+    "unit": "percent who bought when they could pay what they wanted",
+    "as_of": "2010"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Blendle gave an instant refund within 24 hours; refunds ran at about 3% of articles at first, about 10% on average by 2016, and as high as 50% for gossip and lists.",
+   "section": "after",
+   "quote": "Refunds ran at about 3% of articles at first, about 10% on average by 2016",
+   "about": [
+    "entity:blendle",
+    "concept:journalism"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "percent of articles refunded on average",
+    "as_of": "2016"
+   },
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Pay-per-article on its own did not last: Blendle stopped selling single articles in the Netherlands in 2019 and closed its German and US service in September 2023 because the user bases were very limited.",
+   "section": "after",
+   "quote": "Blendle stopped selling single articles in the Netherlands in 2019 to focus on a monthly subscription",
+   "about": [
+    "entity:blendle",
+    "concept:journalism",
+    "concept:micropayments"
+   ],
+   "refs": [
+    "r07",
+    "r08"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Across 20 countries 17% of people paid for online news in 2026, and in the UK about one in ten; the subscription has a ceiling.",
+   "section": "after",
+   "quote": "Across 20 countries, 17% of people paid for online news in 2026, and in the UK it is about one in ten",
+   "about": [
+    "entity:reuters-institute",
+    "concept:journalism"
+   ],
+   "value": {
+    "n": 17,
+    "unit": "percent paying for online news across 20 countries",
+    "as_of": "2026"
+   },
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "hypothesis",
+   "text": "You never want to charge a customer the maximum they can pay, because by definition they end up feeling it was expensive, and a customer who feels that is not happy.",
+   "section": "reader-first",
+   "quote": "You never want to charge a customer the maximum they can pay, because by definition they end up feeling it was expensive",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "definition",
+   "text": "Something becomes expensive when its value drops below its price, not when it costs a lot; the sweet spot is value for money.",
+   "section": "reader-first",
+   "quote": "Something becomes expensive when its value drops below its price.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "decision",
+   "text": "The first version's Don't charge me button worked but felt draconian, so the rating replaced it as the main path, with the button kept as the exception.",
+   "section": "reader-first",
+   "quote": "The rating that replaced it as the main path says the same thing the other way round",
+   "about": [
+    "entity:sg-meter",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "A reader who did not value a page is the last one who should pay for it; a rating after reading puts that feeling on the record page by page and is a measure of the journalism.",
+   "section": "reader-first",
+   "quote": "A rating after reading puts that feeling on the record, page by page",
+   "about": [
+    "concept:journalism",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The experiment began two weeks earlier on the Portuguese newsroom, with a wallet in which every page costs a cent to open, kept in the reader's browser.",
+   "section": "how",
+   "quote": "The first version of browser-based consumption was on pt.newsroom.sgit.ai, the Portuguese newsroom",
+   "about": [
+    "entity:pt-newsroom-sgit-ai",
+    "concept:micropayments"
+   ],
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "decision",
+   "text": "At 13:40 the meter went live with pay by depth, a real Stripe link and the step that made it commercial: below zero with no cut-off, so readers can pay if they want.",
+   "section": "how",
+   "quote": "below zero, with no cut-off. From that moment the offer is simply that readers can pay if they want.",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments",
+    "entity:stripe"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "hypothesis",
+   "text": "Had the end state been designed up front it would have been over-engineered: a big project with too much attempted at once and untested features shaping other untested features.",
+   "section": "how",
+   "quote": "if I had designed the end state we arrived at, I think we would have over-engineered it",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "On the Wardley map every new component sits at the genesis end and is built on components further right that were already there and boring; the afternoon was cheap because the right-hand side was already built.",
+   "section": "how",
+   "quote": "The afternoon was cheap because the right-hand side of the map was already built.",
+   "about": [
+    "concept:wardley-maps",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "definition",
+   "text": "Simon Wardley's ILC, innovate, leverage, commoditise: turn a commonplace product into an industrialised utility, let others build on it, and repeat; here a thing is commoditised when it becomes invisible.",
+   "section": "ilc",
+   "quote": "take an existing product that is relatively well defined and commonplace and turn it into an industrialised utility",
+   "about": [
+    "entity:simon-wardley",
+    "concept:innovate-leverage-commoditise",
+    "concept:wardley-maps"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "sgit's first release was on 4 March 2026 as sg-send-cli 0.3.0, and after 88 releases it is sgit-ai 0.20.0.",
+   "section": "ilc",
+   "quote": "after 88 releases it is sgit-ai 0.20.0",
+   "about": [
+    "entity:sgit",
+    "concept:innovate-leverage-commoditise"
+   ],
+   "value": {
+    "n": 88,
+    "unit": "releases of sgit",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "The first vault that opens as an app was published on this site on 16 August; there are 53 now.",
+   "section": "ilc",
+   "quote": "The first on this site was published on 16 August; there are 53 now.",
+   "about": [
+    "concept:vault",
+    "concept:custom-interfaces"
+   ],
+   "value": {
+    "n": 53,
+    "unit": "vaults that open as apps",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "Claude sessions with a repository and a vault are the layer the team did not build; when that became ordinary, building a website became a conversation.",
+   "section": "ilc",
+   "quote": "which is the layer we did not build",
+   "about": [
+    "entity:claude-code",
+    "concept:innovate-leverage-commoditise"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The reasons the afternoon could go so fast are non-functional requirements: a build with gates, versioned immutable paths, a browser test, git as the history, things built for something else, and sessions that release on their own.",
+   "section": "fast",
+   "quote": "These are all non-functional requirements: the work that never appears in a feature list.",
+   "about": [
+    "concept:shipping",
+    "entity:git"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Several Claude sessions worked on the one repository in parallel, each fetching, rebuilding and releasing in minutes, which is why seven other pieces of work shipped in the same four hours.",
+   "section": "fast",
+   "quote": "Several Claude sessions worked on this one repository in parallel, each fetching, rebuilding and releasing in minutes",
+   "about": [
+    "entity:claude-code",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Payment verification does not exist: a static site cannot receive Stripe's confirmation, so the return page credits without checking it and says so; the cost of a faked top-up is reading more articles.",
+   "section": "pieces",
+   "quote": "A static site cannot receive Stripe's confirmation, so the return page credits without checking it, and says so.",
+   "about": [
+    "entity:stripe",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Everything lives in one browser; a new device starts again unless the reader exports.",
+   "section": "pieces",
+   "quote": "Everything lives in one browser; a new device starts again unless you export.",
+   "about": [
+    "concept:personas",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "The answer to the one-device limit is a persona in the reader's own encrypted vault, which follows them and their agent and which the site cannot read; that is the next step.",
+   "section": "pieces",
+   "quote": "The answer is a persona in your own encrypted vault, which follows you and your agent, and which we cannot read.",
+   "about": [
+    "concept:vault",
+    "concept:personas",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "This site does not have the traffic to say whether people pay.",
+   "section": "pieces",
+   "quote": "This site does not have the traffic to say whether people pay.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "decision",
+   "text": "Update, 11 October 2026: the Stripe link is set and payments are live on newsroom.sgit.ai, so the eight-week clock has started.",
+   "section": "pieces",
+   "quote": "the link is set and payments are live on newsroom.sgit.ai, so the clock has started",
+   "about": [
+    "entity:stripe",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "hypothesis",
+   "text": "The real test is not the payment but whether a reader prefers the front page personalised for them, or for one of their personas, over the front page everybody gets.",
+   "section": "pieces",
+   "quote": "It is whether a reader prefers the front page personalised for them, or for one of their personas, over the front page everybody gets.",
+   "about": [
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "proposal",
+   "text": "SG Meter is ready for other sites, five files on versioned paths and a Stripe link; a site with loyal readers and little revenue from them, such as a blogger, should test it with us.",
+   "section": "others",
+   "quote": "A blogger with a loyal readership would be a great fit.",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c14",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c26",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c29",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c32",
+   "verb": "supersedes",
+   "to": "c02"
+  },
+  {
+   "from": "c31",
+   "verb": "gives_rise_to",
+   "to": "c34"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sg-meter",
+   "role": "the reading meter, from v1.0 at 12:09 to v1.3 at 15:49, now a component other sites can install"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site that became a pay-on-demand publication in one afternoon"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "where the Stripe link went live on 11 October"
+  },
+  {
+   "id": "stripe",
+   "role": "the £5 Payment Link, its fee, and the confirmation a static site cannot receive"
+  },
+  {
+   "id": "simon-wardley",
+   "role": "whose ILC, innovate, leverage, commoditise, names the pattern"
+  },
+  {
+   "id": "sgit",
+   "role": "the bottom layer of the zigzag, 88 releases since 4 March"
+  },
+  {
+   "id": "claude-code",
+   "role": "the sessions that built and released the features in parallel"
+  },
+  {
+   "id": "git",
+   "role": "the history that made article versions a feature rather than a project"
+  },
+  {
+   "id": "leanpub",
+   "role": "the variable-pricing model the owner liked, where the price is chosen before the value is seen"
+  },
+  {
+   "id": "blendle",
+   "role": "the Dutch pay-per-article service whose refunds measured quality and which did not last"
+  },
+  {
+   "id": "reuters-institute",
+   "role": "whose Digital News Report gives the share paying for online news"
+  },
+  {
+   "id": "pt-newsroom-sgit-ai",
+   "role": "the Portuguese newsroom where the one-cent wallet was first tried"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "journalism",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "innovate-leverage-commoditise",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://leanpub.com/blog/lean-publishing-tip-of-the-day-leanpubs-variable-pricing-model/",
+   "title": "Leanpub's variable pricing model",
+   "by": "Leanpub",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/20647467/",
+   "title": "Shared social responsibility: a field experiment in pay-what-you-want pricing and charitable giving",
+   "by": "Gneezy and others, Science",
+   "date": "2010",
+   "kind": "paper"
+  },
+  {
+   "id": "r03",
+   "url": "https://doi.org/10.1509/jmkg.73.1.044",
+   "title": "Pay what you want: a new participative pricing mechanism",
+   "by": "Kim, Natter and Spann",
+   "date": "2009",
+   "kind": "paper"
+  },
+  {
+   "id": "r04",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3358869",
+   "title": "Pay-what-you-want, identity, and self-signaling in markets",
+   "by": "Gneezy and others, PNAS",
+   "date": "2012",
+   "kind": "paper"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.journalism.co.uk/how-the-itunes-of-journalism-reached-100k-users-in-4-months/",
+   "title": "How the iTunes of journalism reached 100k users in 4 months",
+   "by": "journalism.co.uk",
+   "date": "2014",
+   "kind": "news"
+  },
+  {
+   "id": "r06",
+   "url": "https://techcrunch.com/2016/03/23/blendle-us-launch/",
+   "title": "Blendle US launch",
+   "by": "TechCrunch",
+   "date": "2016-03-23",
+   "kind": "news"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.dutchnews.nl/2019/06/dutch-news-aggregate-website-blendle-ditches-pay-per-article-service/",
+   "title": "Blendle ditches pay-per-article service",
+   "by": "DutchNews",
+   "date": "2019-06",
+   "kind": "news"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.journalism.co.uk/blendle-shuts-down-micropayment-model-due-to-very-limited-user-base/",
+   "title": "Blendle shuts down micropayment model due to very limited user base",
+   "by": "journalism.co.uk",
+   "date": "2023",
+   "kind": "news"
+  },
+  {
+   "id": "r09",
+   "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary",
+   "title": "Digital News Report 2026, executive summary",
+   "by": "Reuters Institute",
+   "date": "2026",
+   "kind": "dataset"
+  },
+  {
+   "id": "r10",
+   "url": "https://blog.gardeviance.org/2016/08/the-play-and-decision-to-act.html",
+   "title": "The play and a decision to act",
+   "by": "Simon Wardley",
+   "date": "2016-08",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://pt.newsroom.sgit.ai/carteira/index.html",
+   "title": "Carteira (the one-cent wallet)",
+   "by": "pt.newsroom.sgit.ai",
+   "date": "2026-09",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "Seven releases of the meter between 12:09 and 15:49, from a meter in the browser to the reader card"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The Stripe link set and payments live on newsroom.sgit.ai"
+  },
+  {
+   "date": "2026-03-04",
+   "what": "sgit's first release, as sg-send-cli 0.3.0"
+  },
+  {
+   "date": "2026-08-16",
+   "what": "The first vault that opens as an app published on this site"
+  },
+  {
+   "date": "2026-09-27",
+   "what": "The one-cent wallet on the Portuguese newsroom"
+  }
+ ]
+}

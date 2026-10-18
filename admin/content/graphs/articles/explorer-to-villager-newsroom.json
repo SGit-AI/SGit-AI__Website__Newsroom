@@ -1,0 +1,594 @@
+{
+ "slug": "explorer-to-villager-newsroom",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The newsroom is now a villager project: it is live, it charges, and changes land on real readers.",
+   "section": "short",
+   "quote": "The newsroom is now a villager project.",
+   "about": [
+    "concept:explorer-villager-town-planner",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "How carefully code is read depends on where it sits on the map: explorer code is read for intent, villager code line by line, town planner code by deterministic checks.",
+   "section": "why",
+   "quote": "Explorer code is read for intent, mostly by agents. Villager code is read line by line",
+   "about": [
+    "concept:code-review",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Today a reader can pay £5 by card and the meter decides what they spend, so a mistake in the meter is a mistake with someone's money.",
+   "section": "why",
+   "quote": "Today a reader can pay £5 by card, and the meter decides what they spend.",
+   "about": [
+    "concept:micropayments",
+    "entity:sg-meter",
+    "concept:blast-radius"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "pounds a reader can pay by card"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The sgit command line went through the same transition in March 2026 with a brief that set out the phases, and has shipped release after release since with the safety net under it.",
+   "section": "why",
+   "quote": "In March, the sgit command line went through the same transition",
+   "about": [
+    "entity:sgit",
+    "concept:the-brief"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Measured on newsroom v0.8.0 on 11 October 2026, the live reader code is about 2,700 lines and the tests that cover it are 433 lines the one workflow never runs.",
+   "section": "short",
+   "quote": "About 2,700 lines of live reader code, 433 lines of tests that the one workflow never runs",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:sg-meter"
+   ],
+   "value": {
+    "n": 2700,
+    "unit": "lines of live reader code",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "The one GitHub workflow runs the site validator on every push and pull request and does not run the 433 lines of reader tests.",
+   "section": "measured",
+   "quote": "it does not run the 433 lines of reader tests",
+   "about": [
+    "entity:github-actions",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 433,
+    "unit": "lines of tests the workflow never runs",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "The 5,016 lines of earlier meter versions on their versioned paths are published artefacts, not code to maintain; they move frozen and are only tested as still served byte for byte.",
+   "section": "phases",
+   "quote": "The 5,016 lines of earlier meter versions are published artefacts, not code to maintain",
+   "about": [
+    "entity:sg-meter",
+    "concept:same-bytes-served"
+   ],
+   "value": {
+    "n": 5016,
+    "unit": "lines of earlier meter versions in 10 files",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The reader code has two upstreams: sgit.ai's pages carry the meter to v1.3.1 and the newsroom rewrites them to load its fork v1.4.0, so two repositories hold two diverging copies.",
+   "section": "measured",
+   "quote": "Two repositories hold two diverging copies of the same application.",
+   "about": [
+    "entity:sgit-ai",
+    "entity:sg-meter"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "diverging copies of the meter",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "No page of the newsroom sets a Content-Security-Policy.",
+   "section": "short",
+   "quote": "and no Content-Security-Policy on any page",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:client-side"
+   ],
+   "value": {
+    "n": 0,
+    "unit": "pages with a Content-Security-Policy",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "On sgit.ai the page builder is a single file of 7,844 lines, about 240 of which touch the meter, personas or the account.",
+   "section": "measured",
+   "quote": "the page builder is a single file of 7,844 lines, about 240 of which touch the meter, personas or the account",
+   "about": [
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 7844,
+    "unit": "lines in sgit.ai's page builder",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The application that bills, remembers and personalises lives in the same repository as 74 articles, their graphs, images and archive, because that is where it was fastest to build.",
+   "section": "top",
+   "quote": "lives in the same repository as 74 articles, their graphs, their images",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:explorer-villager-town-planner"
+   ],
+   "value": {
+    "n": 74,
+    "unit": "articles in the repository",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "Phase zero maps everything before anything moves: every file, capability, web control, input, place data leaves the browser, external call and secret, as a table and a graph regenerated nightly.",
+   "section": "phases",
+   "quote": "Before anything moves, map all of it",
+   "about": [
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "Phase one moves the reader code unchanged to its own repository, released as versioned files both sites pin, proved by hashing every reader file the live site serves before and after.",
+   "section": "phases",
+   "quote": "If one hash differs, the move is not finished.",
+   "about": [
+    "concept:same-bytes-served",
+    "entity:sgit-ai-newsroom-api"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "Phase two writes only tests, with no mocks, and bugs and vulnerabilities are written as tests that pass, vulnerability tests living in a private vault until the fix lands.",
+   "section": "phases",
+   "quote": "Bugs and vulnerabilities are written as tests that pass",
+   "about": [
+    "concept:shipping",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "Phase three is security and quality review by people and agent reviewers against the map, with every finding a labelled GitHub issue and the test that shows it.",
+   "section": "phases",
+   "quote": "every finding is a GitHub issue, labelled, with the test that shows it",
+   "about": [
+    "concept:code-review",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "Phase four refactors with every test passing and runs the adversarial exercise: every change to what a reader sees or pays that slips through is a missing test.",
+   "section": "phases",
+   "quote": "Every change that slips through is a missing test.",
+   "about": [
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "Only in phase five does the explorer return, with the fixes and then the waiting features: the reader's vault, the passkey that opens it, and the pack for the reader's agent.",
+   "section": "phases",
+   "quote": "Then the features that are waiting: the reader's vault, the passkey that opens it, and the pack for the reader's agent.",
+   "about": [
+    "concept:vault",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The target for every commit is under two minutes: lint, unit tests, three browser engines, and a build that produces the same bytes twice.",
+   "section": "pipeline",
+   "quote": "under two minutes, lint, unit tests, three browser engines, and a build that produces the same bytes twice",
+   "about": [
+    "concept:shipping",
+    "entity:chrome",
+    "entity:firefox"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "minutes, the target for the commit pipeline"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "On every merge a pre-production copy on its own host name runs with a Stripe link in test mode that can never charge anyone, smoke tests and a short synthetic reader run.",
+   "section": "pipeline",
+   "quote": "a Stripe link in test mode that can never charge anyone",
+   "about": [
+    "entity:stripe",
+    "entity:github-pages",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "Every release publishes the versioned files, pins them in one commit and asks the live site for its version and hashes, because green does not mean live; rolling back is pinning the previous version.",
+   "section": "pipeline",
+   "quote": "Rolling back is pinning the previous version.",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "A pull request needs one person and one agent reviewer before it merges, the agent's review posted as a required status check.",
+   "section": "pipeline",
+   "quote": "a pull request needs one person and one agent reviewer before it merges",
+   "about": [
+    "concept:code-review",
+    "concept:human-in-the-loop",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "decision",
+   "text": "The new repository is named following the organisation's convention, and API is the honest word for what it owns: the contracts other sites and agents program against, with no server.",
+   "section": "brief",
+   "quote": "\"API\" is the honest word for what it owns",
+   "about": [
+    "entity:sgit-ai-newsroom-api"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Since sgit.ai will pin the released files, sgit.ai becomes a consumer of the newsroom's API, which reverses today's flow on purpose.",
+   "section": "brief",
+   "quote": "sgit.ai becomes a consumer of the newsroom's API, which reverses today's flow on purpose",
+   "about": [
+    "entity:sgit-ai",
+    "entity:sgit-ai-newsroom-api"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "A policy in a meta tag can limit scripts and connections but cannot set frame-ancestors, so protection against framing would need headers GitHub Pages does not let the site set.",
+   "section": "brief",
+   "quote": "it cannot set frame-ancestors, so protection against framing would need headers that GitHub Pages does not let us set",
+   "about": [
+    "entity:github-pages",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The reading list fragment, persona links and the topped-up page's payment reference all come from a link, so each parser needs testing against malformed and hostile input.",
+   "section": "brief",
+   "quote": "The reading list fragment, persona links and the topped-up page's payment reference all come from a link.",
+   "about": [
+    "concept:the-reading-list",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The reader pages load no third-party code today, and the build should fail if one appears.",
+   "section": "brief",
+   "quote": "Today the reader pages load none.",
+   "about": [
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The article is not a verdict on the code; the explorer work is why the newsroom exists, and this is the next phase of the same work.",
+   "section": "limits",
+   "quote": "It is not a verdict on the code.",
+   "about": [
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The numbers are lines, not quality; 433 lines of tests could cover a lot or a little, and phase two is where that is found out.",
+   "section": "limits",
+   "quote": "The numbers are lines, not quality.",
+   "about": [
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The timings are targets: under two minutes per commit is what the shape of the code allows, and the pipeline has to prove it.",
+   "section": "limits",
+   "quote": "Under two minutes per commit is what the shape of the code allows; the pipeline has to prove it.",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 11 October 2026 asking for an article, a brief and then the execution of the move, written by the site's agent.",
+   "section": "sources",
+   "quote": "A voice memo of mine, recorded on 11 October 2026, asking for an article, a brief and then the execution of the move",
+   "about": [
+    "concept:voice-memo",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "decision",
+   "text": "Content and application get separate repositories: everything the reader does moves to its own repository released as versioned files, and the content stays.",
+   "section": "short",
+   "quote": "Content and application get separate repositories.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:sgit-ai-newsroom-api"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c31"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c31"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c31"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c31"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c31"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c13"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c15"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose reader application moves out of its content repository"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the second upstream of the reader code, which becomes a consumer of the newsroom's API"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reading meter, the largest piece of the reader code, at v1.4.0 and v1.3.1"
+  },
+  {
+   "id": "sgit",
+   "role": "the command line that went through the same explorer-to-villager transition in March"
+  },
+  {
+   "id": "stripe",
+   "role": "the payments, with a test-mode link for pre-production"
+  },
+  {
+   "id": "github",
+   "role": "the issues every finding becomes, and the review rules that count only write-access accounts"
+  },
+  {
+   "id": "github-pages",
+   "role": "serves one site per repository and does not let the site set headers"
+  },
+  {
+   "id": "github-actions",
+   "role": "the one workflow, which validates, tags and deploys but does not run the reader tests"
+  },
+  {
+   "id": "chrome",
+   "role": "Chromium, one of the three browser engines in the pipeline"
+  },
+  {
+   "id": "firefox",
+   "role": "one of the three browser engines in the pipeline"
+  },
+  {
+   "id": "sgit-ai-newsroom-api",
+   "role": "the new repository that owns the reader code and the contracts other sites program against"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "the-reading-list",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "same-bytes-served",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/SGit-AI/SGit-AI__CLI/blob/main/team/humans/dinis_cruz/briefs/03/12/v0.13.30__brief__code-quality-explorer-villager.md",
+   "title": "Code quality: explorer to villager, the brief for the sgit command line",
+   "by": "Dinis Cruz",
+   "date": "2026-03-12",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The measurements on newsroom v0.8.0; the voice memo; the brief written"
+  },
+  {
+   "date": "2026-03-12",
+   "what": "The explorer-to-villager brief for the sgit command line, which the phases adapt"
+  }
+ ]
+}

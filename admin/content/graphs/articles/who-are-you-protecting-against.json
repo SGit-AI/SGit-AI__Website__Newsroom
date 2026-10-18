@@ -1,0 +1,628 @@
+{
+ "slug": "who-are-you-protecting-against",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "A founder bought a Mac mini that would never touch the internet, installed nothing on it, and wrote the application in the Perl that ships with macOS, with files carried on a USB stick.",
+   "section": "top",
+   "quote": "So the application is written in the one language that is already there: the Perl that ships with macOS.",
+   "about": [
+    "concept:attacker-tiers",
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Apple ships Perl for compatibility with legacy software and said in 2019 that future versions might not include it.",
+   "section": "top",
+   "quote": "Apple said in 2019 that future versions might not include it",
+   "about": [
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "hypothesis",
+   "text": "Perl as shipped is probably one of the worst choices for an AI assistant today, for the language and for the missing libraries and tooling around it.",
+   "section": "top",
+   "quote": "it is probably one of the worst choices you could make today for an application like this",
+   "about": [
+    "concept:supply-chains",
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "Security starts with three questions: who is the threat agent, what is the attack vector, and how sophisticated are they.",
+   "section": "top",
+   "quote": "Security starts with three questions, and most over-engineering comes from skipping them:",
+   "about": [
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The UK government's AI Risk Management Toolkit asks who the new threat actors are and does not define them.",
+   "section": "top",
+   "quote": "It does not define them.",
+   "about": [
+    "entity:uk-ai-risk-management-toolkit",
+    "concept:ai-governance"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "NIST SP 800-30 separates adversarial, accidental, structural and environmental threat sources and rates an adversary's capability on five levels.",
+   "section": "top",
+   "quote": "rates an adversary's capability on five levels from very low to very high",
+   "about": [
+    "entity:nist-sp-800-30",
+    "entity:nist"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "capability levels"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The NCSC separates un-targeted from targeted attacks, commodity from bespoke capability, and commodity from elevated threats.",
+   "section": "top",
+   "quote": "which separates un-targeted from targeted attacks, commodity from bespoke capability, and commodity from elevated threats",
+   "about": [
+    "entity:ncsc",
+    "concept:threat-modelling"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "definition",
+   "text": "The vault turns the well-known sequence of attackers into six tiers, T0 to T5, each with a NIST type, a motive, a way of choosing targets, ATT&CK techniques and the controls that stop it.",
+   "section": "top",
+   "quote": "There is a well-known sequence, and the vault turns it into six tiers.",
+   "about": [
+    "concept:attacker-tiers",
+    "entity:threat-sized-security-vault",
+    "entity:mitre-attack"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Your own mistakes, T0, are the most common loss and nothing about them is sophisticated.",
+   "section": "top",
+   "quote": "They are the most common loss, and nothing about them is sophisticated.",
+   "about": [
+    "concept:attacker-tiers",
+    "entity:nist"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The NCSC says every organisation connected to the Internet should assume it will be a victim of un-targeted attacks.",
+   "section": "top",
+   "quote": "every organisation connected to the Internet should assume they will be a victim",
+   "about": [
+    "entity:ncsc",
+    "concept:attacker-tiers"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Organised crime for money, T3, is the realistic ceiling for most startups that hold anything of value.",
+   "section": "top",
+   "quote": "This is the realistic ceiling for most startups that hold anything of value.",
+   "about": [
+    "concept:attacker-tiers",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Elevated threats, T5, can only be realised by large, well-funded groups such as high-end organised crime and states.",
+   "section": "top",
+   "quote": "can only be realised by large, well-funded groups (such as high-end organised crime and state sponsored groups)",
+   "about": [
+    "entity:ncsc",
+    "concept:attacker-tiers"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Very few commercial organisations can withstand a determined state attacker, and almost none at the investment a startup's technology team can make.",
+   "section": "top",
+   "quote": "Very few commercial organisations can withstand a determined state attacker",
+   "about": [
+    "concept:attacker-tiers"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The NCSC's encouraging point is that organisations that defend effectively against commodity threats present a very hard target for all attackers.",
+   "section": "top",
+   "quote": "Organisations that defend effectively against commodity threats present a very hard target for all attackers.",
+   "about": [
+    "entity:ncsc",
+    "concept:attacker-tiers"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Against your own mistakes the air gap is worse: no automated backups, no monitoring and code few can maintain make accidents more likely and harder to undo.",
+   "section": "top",
+   "quote": "A design with no automated backups, no monitoring and code few people can maintain makes those more likely and harder to undo.",
+   "about": [
+    "concept:attacker-tiers",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Against opportunistic automation the air gap works, but a machine with no inbound ports, an outbound allowlist and automatic updates stops the bots as well.",
+   "section": "top",
+   "quote": "stops them as well as a cable that is never plugged in",
+   "about": [
+    "concept:attacker-tiers"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Against organised crime the air gap mostly misses, because ransomware arrives through staff laptops and the USB stick becomes the path, as ATT&CK T1091 records.",
+   "section": "top",
+   "quote": "removable media is how air gaps have been crossed before (ATT&CK T1091)",
+   "about": [
+    "entity:mitre-attack",
+    "concept:attacker-tiers"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "The better design is isolated, not disconnected: no inbound ports, outbound only to an allowlist, pinned and scanned software in containers, disk encryption, automatic updates and logs someone reads.",
+   "section": "top",
+   "quote": "The better design is isolated, not disconnected: no inbound ports; outbound only to an allowlist of updates, backups and the model provider",
+   "about": [
+    "concept:agent-isolation",
+    "entity:docker",
+    "entity:kubernetes"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "hypothesis",
+   "text": "Keeping systems on premises for security often results in more vulnerabilities inside the company, because a small team cannot match the people who run the major platforms.",
+   "section": "top",
+   "quote": "In my experience the result is often more vulnerabilities inside the company, not fewer.",
+   "about": [
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The customer's baseline today matters more than any control; a solution clearly better than it is already an improvement in security.",
+   "section": "top",
+   "quote": "One primitive matters more than any control: what is the customer's baseline today?",
+   "about": [
+    "concept:attacker-tiers",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Drawing the line too high is a disservice to both sides: it protects against an absent attacker, slows everything, creates new problems and can stop the technology being used.",
+   "section": "top",
+   "quote": "Draw it too high and you do a disservice to both sides.",
+   "about": [
+    "concept:attacker-tiers",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Most startup teams, especially with vibe-coded applications, are not ready to deploy into the most sensitive environments without the customer's own controls around them.",
+   "section": "top",
+   "quote": "are not ready to deploy into the most sensitive accounts and environments without the customer's own controls around them",
+   "about": [
+    "concept:citizen-developer",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "The vault maps eight fictional startups against the six tiers, because the line moves with the business rather than with the founder's care.",
+   "section": "top",
+   "quote": "The vault maps this out for eight fictional startups, because the line moves with the business, not with how careful the founder is.",
+   "about": [
+    "entity:threat-sized-security-vault",
+    "concept:attacker-tiers"
+   ],
+   "value": {
+    "n": 8,
+    "unit": "fictional startups",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Each scenario has an attack tree in the form Bruce Schneier described in 1999, with an ATT&CK technique, a tier and a rough cost on every branch.",
+   "section": "top",
+   "quote": "Every branch carries the ATT&CK technique it uses, the tier of attacker who would use it, and a rough cost.",
+   "about": [
+    "entity:bruce-schneier",
+    "entity:mitre-attack",
+    "concept:threat-modelling"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "Two of the eight startups have a ceiling at the top tier: a two-person open-source library and an AI drafting tool for a government department.",
+   "section": "top",
+   "quote": "Two startups have a ceiling at the top tier, and the reasons are instructive.",
+   "about": [
+    "concept:attacker-tiers",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 2,
+    "of": 8,
+    "unit": "startups with a T5 ceiling"
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "data-point",
+   "text": "The vault ends with five questions about what you hold, who would pay to attack you, who you sell to, how far one breach reaches and what your customers use today.",
+   "section": "top",
+   "quote": "The vault ends with five questions",
+   "about": [
+    "entity:threat-sized-security-vault",
+    "concept:threat-modelling"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "questions"
+   }
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The highest tier any answer points to is the ceiling; above it is a risk you accept and write down, which is a decision and not a failure.",
+   "section": "top",
+   "quote": "Above it is a risk you accept and write down, which is a decision, not a failure",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:attacker-tiers"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "Write the threat model down on one page, publish it, and ask the community whether the compromises are right.",
+   "section": "top",
+   "quote": "write the threat model down, on one page, publish it, and ask the community whether you are making the right compromises",
+   "about": [
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The entrepreneur is not named and the project is not described beyond the design choice the memo is about.",
+   "section": "top",
+   "quote": "They are not named and their project is not described beyond the design choice the memo is about.",
+   "about": [
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The eight startups in the vault are fictional; the precedents they cite are real.",
+   "section": "top",
+   "quote": "The eight startups in the vault are fictional; the precedents they cite are real.",
+   "about": [
+    "entity:threat-sized-security-vault"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The article was drafted from a voice memo by Dinis Cruz by agent@riskmandate.ai, running Claude Opus 5.5, on 8 October 2026.",
+   "section": "top",
+   "quote": "Drafted from a voice memo by Dinis Cruz, who is the author of the argument and the person with editorial responsibility",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:riskmandate",
+    "entity:claude",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "If you sell into an environment where the top tier is real, the customer already owns the controls and your job is to run inside their accredited environment.",
+   "section": "top",
+   "quote": "the customer already owns the controls for it, and your job is to run well inside their accredited environment, not to build a parallel fortress",
+   "about": [
+    "concept:attacker-tiers",
+    "concept:risk-acceptance"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c32"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c25",
+   "verb": "specifies",
+   "to": "c23"
+  },
+  {
+   "from": "c26",
+   "verb": "gives_rise_to",
+   "to": "c28"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c03"
+  }
+ ],
+ "entities": [
+  {
+   "id": "apple",
+   "role": "ships the Perl the application was written in and warned in 2019 it might go"
+  },
+  {
+   "id": "nist",
+   "role": "author of SP 800-30, the guide most risk assessments are built on"
+  },
+  {
+   "id": "nist-sp-800-30",
+   "role": "the taxonomy of threat sources and the five capability levels behind the tiers"
+  },
+  {
+   "id": "ncsc",
+   "role": "source of the commodity, targeted and elevated threat vocabulary and the quotations"
+  },
+  {
+   "id": "mitre-attack",
+   "role": "names the techniques on every branch of the attack trees"
+  },
+  {
+   "id": "uk-ai-risk-management-toolkit",
+   "role": "asks who the new threat actors are without defining them"
+  },
+  {
+   "id": "bruce-schneier",
+   "role": "described attack trees in 1999, the form each scenario uses"
+  },
+  {
+   "id": "threat-sized-security-vault",
+   "role": "the vault published with the article: the tiers, eight scenarios and the questionnaire"
+  },
+  {
+   "id": "docker",
+   "role": "containers, enough to start the isolated-not-disconnected design"
+  },
+  {
+   "id": "kubernetes",
+   "role": "later, if it is needed"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the argument, with editorial responsibility"
+  },
+  {
+   "id": "riskmandate",
+   "role": "agent@riskmandate.ai drafted the article from the memo"
+  },
+  {
+   "id": "claude",
+   "role": "Claude Opus 5.5, the model that drafted the article"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "attacker-tiers",
+   "defined_here": true
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "citizen-developer",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "ai-governance",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.gov.uk/government/publications/ai-risk-management-toolkit/ai-risk-management-toolkit-guidance",
+   "title": "AI Risk Management Toolkit guidance",
+   "by": "DSIT, UK government",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://csrc.nist.gov/pubs/sp/800/30/r1/final",
+   "title": "SP 800-30 Rev. 1, Guide for Conducting Risk Assessments",
+   "by": "NIST",
+   "date": "undated",
+   "kind": "standard"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.ncsc.gov.uk/guidance/white-papers/common-cyber-attacks-reducing-impact",
+   "title": "Common Cyber Attacks: Reducing the Impact",
+   "by": "NCSC",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.schneier.com/academic/archives/1999/12/attack_trees.html",
+   "title": "Attack Trees",
+   "by": "Bruce Schneier",
+   "date": "1999-12",
+   "kind": "paper"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-08",
+   "what": "The voice memo, the drafting, and the sources read; the Threat-sized security vault published"
+  },
+  {
+   "date": "2019",
+   "what": "Apple says future macOS versions might not include scripting language runtimes"
+  },
+  {
+   "date": "1999",
+   "what": "Bruce Schneier describes attack trees"
+  }
+ ]
+}

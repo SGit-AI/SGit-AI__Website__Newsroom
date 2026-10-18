@@ -1,0 +1,820 @@
+{
+ "slug": "why-my-agents-do-not-run-on-my-laptop",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "The owner runs no model or agent on his laptop, because a process there runs as him and no desktop agent he has seen runs as anyone else.",
+   "section": "top",
+   "quote": "I do not run any model or agent on my laptop",
+   "about": [
+    "concept:agent-isolation",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "An operating system has two hard walls, the kernel and the user account; within one account there is no third wall between an agent and the user's keys, credentials, sessions and files.",
+   "section": "top",
+   "quote": "A general-purpose operating system separates two things by force.",
+   "about": [
+    "concept:two-walls"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The desktop agents' approval prompts, allow lists and sandboxes are real and reduce accidents, but they are inside the wall marked me, enforced by the process they constrain.",
+   "section": "top",
+   "quote": "These are real, they reduce accidents, and they are all inside the wall marked \"me\", enforced by the process they constrain.",
+   "about": [
+    "concept:two-walls",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Anthropic's documentation says the local sandbox is off by default and its default read scope is most of the machine, including credential files such as ~/.ssh and ~/.aws/credentials.",
+   "section": "top",
+   "quote": "the default read scope is \"most of the machine, including credential files such as ~/.ssh and ~/.aws/credentials\"",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:two-walls"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Claude Code's security page says the boundary is a permission prompt, so an approved Bash command can still write anywhere the user account can.",
+   "section": "top",
+   "quote": "The boundary is a permission prompt, so a Bash command you approve can still write anywhere your user account can.",
+   "about": [
+    "entity:claude-code",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "As far as the owner could find, none of the mainstream desktop agents runs as a separate operating-system user by default; the fix remains community advice.",
+   "section": "top",
+   "quote": "none of the mainstream desktop agents runs as a separate user by default",
+   "about": [
+    "concept:two-walls",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "When a local agent deletes a directory the account that matters is that nothing stood between the mistake and the account's reach: a mistake inside a boundary is a bad afternoon, inside me it is an incident.",
+   "section": "top",
+   "quote": "A mistake inside a boundary is a bad afternoon.",
+   "about": [
+    "concept:blast-radius",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The evidence is fifteen months of agents reaching what they were given, July 2025 to September 2026, every flaw fixed, the pattern staying.",
+   "section": "top",
+   "quote": "Fifteen months of agents reaching what they were given, July 2025 to September 2026.",
+   "about": [
+    "concept:incidents"
+   ],
+   "value": {
+    "n": 15,
+    "unit": "months of incidents",
+    "as_of": "2026-09"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "In December 2025 a Claude Code command with prompts skipped ended in ~/ and removed a user's home directory, and Google's Antigravity in its fastest mode wiped a photographer's drive.",
+   "section": "top",
+   "quote": "the command ended in ~/ and removed the home directory, keychain data reportedly among the losses",
+   "about": [
+    "entity:claude-code",
+    "entity:antigravity",
+    "concept:incidents"
+   ],
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "OpenClaw was found exposed in tens of thousands of instances with keys in the clear, and a supply-chain campaign placed 341 malicious skills in its marketplace.",
+   "section": "top",
+   "quote": "A supply-chain campaign placed 341 malicious skills in its marketplace",
+   "about": [
+    "entity:openclaw",
+    "concept:supply-chains",
+    "concept:incidents"
+   ],
+   "value": {
+    "n": 341,
+    "unit": "malicious skills",
+    "as_of": "2026-02"
+   },
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "In July 2026 untrusted content in a local Cowork session could escape its virtual machine through a kernel bug; cloud execution had become the default two weeks earlier and the cloud path did not appear affected.",
+   "section": "top",
+   "quote": "Cloud execution had become Cowork's default two weeks earlier, and the report notes the cloud path did not appear to be affected.",
+   "about": [
+    "entity:claude-code",
+    "concept:incidents",
+    "concept:agent-isolation"
+   ],
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "GitGuardian's 2026 report counted 24,008 unique secrets in agent tool-configuration files on public GitHub, 2,117 of them still valid.",
+   "section": "top",
+   "quote": "counted 24,008 unique secrets in agent tool-configuration files on public GitHub, 2,117 of them still valid",
+   "about": [
+    "entity:gitguardian",
+    "entity:github",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 24008,
+    "unit": "unique secrets in agent tool-configuration files",
+    "as_of": "2026"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "GitGuardian's June 2026 note found an average of 150 secrets per developer laptop, 38 per cent of them private keys, with 40 per cent in directories and logs left by AI tooling.",
+   "section": "top",
+   "quote": "an average of 150 secrets per machine in its beta programme, 38 per cent of them private keys",
+   "about": [
+    "entity:gitguardian",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 150,
+    "unit": "secrets per developer machine",
+    "as_of": "2026-06"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "limit",
+   "text": "GitGuardian's sample is not random and the vendor sells the scanner; the order of magnitude is the point.",
+   "section": "top",
+   "quote": "The sample is not random and the vendor sells the scanner; the order of magnitude is the point.",
+   "about": [
+    "entity:gitguardian"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The mechanism in most incidents is Simon Willison's lethal trifecta, and on a laptop all three legs are present by default: the account, every file read, the user's network.",
+   "section": "top",
+   "quote": "On a laptop all three legs are present by default",
+   "about": [
+    "concept:lethal-trifecta",
+    "entity:simon-willison",
+    "concept:prompt-injection"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "decision",
+   "text": "Claude chat is used for thinking with nothing connected, and the feature that searches past chats is switched off because it would let any conversation reach every other.",
+   "section": "top",
+   "quote": "I have switched it off, which Anthropic's help pages describe under memory settings.",
+   "about": [
+    "entity:claude",
+    "concept:agent-memory",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "Claude Cowork in the cloud does most of the agentic work, with no GitHub connector and no repository; its one persistent asset is the vault it is handed.",
+   "section": "top",
+   "quote": "It has no GitHub connector and reaches no repository.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-isolation",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "limit",
+   "text": "Cowork has no per-session secrets, so a key given to one agent is available to the surface; the workaround is one vault per scope.",
+   "section": "top",
+   "quote": "Cowork has no per-session secrets; a key given to one agent is available to the surface",
+   "about": [
+    "entity:claude-code",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "decision",
+   "text": "Claude Code on the web is used only when a repository has to change, with one repository, a network allowlist and per-environment variables.",
+   "section": "top",
+   "quote": "I use it only when a repository has to change, and I give it that repository and nothing else.",
+   "about": [
+    "entity:claude-code",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "decision",
+   "text": "ChatGPT is a second model with no connectors and no assets apart from a vault read key when one is handed to it.",
+   "section": "top",
+   "quote": "It has no connectors to any of my accounts and no assets at all, apart from a vault read key when I choose to hand it one.",
+   "about": [
+    "entity:chatgpt",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The vault is the shared drive between agents: encrypted on the agent's side, the host holding ciphertext, a key handed to a session out of band and never written to a file.",
+   "section": "top",
+   "quote": "A session is handed a key out of band, in the session, never written to a file.",
+   "about": [
+    "concept:vault",
+    "entity:sgit",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Two sessions cannot overwrite each other's unpushed work, because each clone has its own branch and key and pushes are compare-and-swap.",
+   "section": "top",
+   "quote": "because each clone has its own branch and key and pushes are compare-and-swap",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Keys have three reaches: a vault key that writes, a read key derived one way that only reads, and a lane token that only appends.",
+   "section": "top",
+   "quote": "a vault key that writes, a read key derived one way that only reads, and a lane token that only appends",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Prompt injection is not prevented by moving to the cloud; what changes is what a followed instruction can reach, one repository and one vault instead of the account.",
+   "section": "top",
+   "quote": "Prompt injection is not prevented by moving to the cloud.",
+   "about": [
+    "concept:prompt-injection",
+    "concept:blast-radius",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "In RiskMandate's vocabulary a laptop agent's grant is the whole account, the mandate is help me with this document, and nearly every barrier is an expectation.",
+   "section": "top",
+   "quote": "the grant is my whole account, the mandate is \"help me with this document\", and nearly every row of the gap has an expectation in front of it",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:riskmandate",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The costs accepted: no agents without a connection, a key per session by hand, more vaults than wanted, a chat that does not remember across chats, and two products with two flows.",
+   "section": "top",
+   "quote": "No agents without a connection.",
+   "about": [
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "Three things the platforms do not yet give: an identity per agent, secrets per agent and a key pair per agent, which the cloud surfaces are one step from.",
+   "section": "top",
+   "quote": "an identity per agent, secrets per agent, and a key pair per agent",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The nearest thing to an identity per agent today is a dedicated Workspace and Claude seat per agent, which the RiskMandate team buys at a human's seat each.",
+   "section": "top",
+   "quote": "which the RiskMandate team buys and which costs a human's seat each",
+   "about": [
+    "entity:riskmandate",
+    "entity:google-workspace",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "data-point",
+   "text": "The setup runs; the RiskMandate team runs the twelve-agent version of it with three vaults.",
+   "section": "top",
+   "quote": "The RiskMandate team runs the twelve-agent version of it.",
+   "about": [
+    "entity:riskmandate",
+    "concept:multi-agent"
+   ],
+   "value": {
+    "n": 12,
+    "unit": "agents in the RiskMandate team",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "Everything in the article is about a laptop that holds the main account; a dedicated machine with separate accounts is a different model the owner has not run and does not report on.",
+   "section": "top",
+   "quote": "I have not run it, so I am not reporting on it.",
+   "about": [
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "What does not exist: the three wishes as platform features, a desktop agent that runs as a separate operating-system user by default, and the dedicated-machine report.",
+   "section": "top",
+   "quote": "What does not exist: the three wishes, as platform features; a desktop agent that runs as a separate operating-system user by default",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:two-walls"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The argument about agents inheriting their user's permissions goes back to a note on MCP from June 2025, a talk on agents' blast radius in July 2025 and a LinkedIn article in June 2026.",
+   "section": "top",
+   "quote": "the argument about agents inheriting their user's permissions goes back to a note on MCP from June 2025 and a talk on agents' blast radius in July 2025",
+   "about": [
+    "entity:mcp",
+    "entity:diniscruz-ai",
+    "concept:blast-radius"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "LinkedIn does not allow its pages to be fetched by tools, so the June 2026 article is cited by title and date.",
+   "section": "top",
+   "quote": "LinkedIn does not allow its pages to be fetched by tools, so the June 2026 article is cited by title and date.",
+   "about": [
+    "entity:linkedin"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "fact",
+   "text": "In 2025 Cursor shipped two flaws, hidden comments in a pull request made GitHub Copilot Chat exfiltrate secrets from private repositories, and Gemini CLI lost a user's files moving them.",
+   "section": "top",
+   "quote": "Hidden comments in a pull request made GitHub Copilot Chat search a victim's private repositories for secrets",
+   "about": [
+    "entity:copilot",
+    "entity:cursor",
+    "entity:gemini",
+    "concept:incidents"
+   ],
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "fact",
+   "text": "In September 2026 Meta's Muse desktop app had an undocumented setting any unprivileged local process could write that redirected dictation to an attacker; Meta fixed it within a day.",
+   "section": "top",
+   "quote": "Meta fixed it within a day and called it a local privilege escalation",
+   "about": [
+    "entity:meta",
+    "entity:muse",
+    "concept:incidents"
+   ],
+   "refs": [
+    "r12"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c14",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c27"
+  },
+  {
+   "from": "c28",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c27"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c21"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "whose laptop holds the main account and who runs no agent on it"
+  },
+  {
+   "id": "anthropic",
+   "role": "its documentation is candid about the local sandbox's read scope; its servers run Cowork"
+  },
+  {
+   "id": "claude-code",
+   "role": "Claude Code on the web for repositories and Cowork in the cloud for the team; the local versions in the incidents"
+  },
+  {
+   "id": "claude",
+   "role": "Claude chat, the most isolated surface, for thinking"
+  },
+  {
+   "id": "chatgpt",
+   "role": "the second model, with no assets"
+  },
+  {
+   "id": "simon-willison",
+   "role": "named the lethal trifecta in June 2025"
+  },
+  {
+   "id": "github",
+   "role": "where GitGuardian counted secrets in agent configuration files"
+  },
+  {
+   "id": "gitguardian",
+   "role": "source of the secrets counts for public GitHub and developer laptops"
+  },
+  {
+   "id": "openclaw",
+   "role": "the self-hosted personal agent found exposed in the tens of thousands, with 341 malicious skills"
+  },
+  {
+   "id": "antigravity",
+   "role": "Google's agent that wiped a drive in its fastest mode"
+  },
+  {
+   "id": "muse",
+   "role": "Meta's desktop app with the writable dictation endpoint"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault that is the shared drive between the surfaces"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the vocabulary of grant and mandate; its team runs the twelve-agent version"
+  },
+  {
+   "id": "google-workspace",
+   "role": "a dedicated Workspace account per agent is the nearest thing to an identity"
+  },
+  {
+   "id": "mcp",
+   "role": "the June 2025 note on its security implications where the argument began"
+  },
+  {
+   "id": "diniscruz-ai",
+   "role": "where the June 2025 MCP note is published"
+  },
+  {
+   "id": "linkedin",
+   "role": "where the June 2026 article was published, uncited because it cannot be fetched"
+  },
+  {
+   "id": "copilot",
+   "role": "GitHub Copilot Chat's CamoLeak exfiltration"
+  },
+  {
+   "id": "cursor",
+   "role": "two flaws in August 2025"
+  },
+  {
+   "id": "gemini",
+   "role": "Gemini CLI lost a user's files in July 2025"
+  },
+  {
+   "id": "meta",
+   "role": "fixed the Muse setting within a day"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "two-walls",
+   "defined_here": true
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://code.claude.com/docs/en/sandboxing",
+   "title": "Claude Code sandboxing",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://code.claude.com/docs/en/security",
+   "title": "Claude Code security",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://blog.gitguardian.com/the-state-of-secrets-sprawl-2026/",
+   "title": "State of Secrets Sprawl 2026",
+   "by": "GitGuardian",
+   "date": "2026",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://blog.gitguardian.com/developer-laptops-are-the-credential-store-attackers-are-picking-through-in-2026/",
+   "title": "Developer laptops are the credential store",
+   "by": "GitGuardian",
+   "date": "2026-06",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://old.reddit.com/r/ClaudeAI/comments/1pgxckk/claude_cli_deleted_my_entire_home_directory_wiped/",
+   "title": "Claude CLI deleted my entire home directory",
+   "by": "a Reddit user",
+   "date": "2025-12",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/",
+   "title": "Google Antigravity wipes D drive",
+   "by": "The Register",
+   "date": "2025-12-01",
+   "kind": "news"
+  },
+  {
+   "id": "r07",
+   "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+   "title": "The lethal trifecta for AI agents",
+   "by": "Simon Willison",
+   "date": "2025-06-16",
+   "kind": "post"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting",
+   "title": "ClawHavoc: 341 malicious skills",
+   "by": "Koi",
+   "date": "2026",
+   "kind": "post"
+  },
+  {
+   "id": "r09",
+   "url": "https://accomplish.ai/blog/sharedroot-escaping-claude-cowork-sandbox/",
+   "title": "SharedRoot: escaping the Claude Cowork sandbox",
+   "by": "Accomplish",
+   "date": "2026-07",
+   "kind": "post"
+  },
+  {
+   "id": "r10",
+   "url": "https://docs.diniscruz.ai/2025/06/10/security-implications-of-the-model-context-protocol-mcp-and-the-need-for-robust-infrastructure.html",
+   "title": "Security implications of the Model Context Protocol",
+   "by": "Dinis Cruz",
+   "date": "2025-06-10",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://assets.theregister.com/2025/10/09/github_copilot_chat_vulnerability/",
+   "title": "CamoLeak, the GitHub Copilot Chat vulnerability",
+   "by": "The Register",
+   "date": "2025-10-09",
+   "kind": "news"
+  },
+  {
+   "id": "r12",
+   "url": "https://forkast.news/meta-patched-its-muse-macos-zero-day-just-before-connect-the-dispute-over-who-could-exploit-it-remains-open/",
+   "title": "Meta patched its Muse macOS zero-day just before Connect",
+   "by": "Forkast",
+   "date": "2026-09",
+   "kind": "news"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-06",
+   "what": "The voice memo, the setup as configured, and the day Cowork's cloud became the only option on individual plans"
+  },
+  {
+   "date": "2026-07",
+   "what": "The Cowork SharedRoot escape; cloud execution had become the default two weeks earlier"
+  },
+  {
+   "date": "2025-12",
+   "what": "A Claude Code command removes a home directory; Antigravity wipes a drive"
+  },
+  {
+   "date": "2025-06-16",
+   "what": "Simon Willison names the lethal trifecta"
+  },
+  {
+   "date": "2025-06-10",
+   "what": "The owner's note on the security implications of MCP"
+  }
+ ]
+}

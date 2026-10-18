@@ -1,0 +1,535 @@
+{
+ "slug": "when-is-the-vault-actually-used",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "In Mondweep Chakravorty's run the vault is written or read in three steps of twelve: written in step 5, read in step 8, read and rejected in step 11.",
+   "section": "in-short",
+   "quote": "The vault is written in 5, read in 8, read and rejected in 11.",
+   "about": [
+    "concept:vault",
+    "entity:mondweep-chakravorty",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 3,
+    "of": 12,
+    "unit": "steps in which the vault is written or read",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "In step 6 the vault is what the policy guards, and in step 7 it outlives the deletion of the project.",
+   "section": "in-short",
+   "quote": "In 6 it is what the policy guards; in 7 it outlives the deletion.",
+   "about": [
+    "concept:vault",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The vault is a recovery copy of Ruflo's memory database, sealed with fingerprints of the data, the ABP and the compiled policy.",
+   "section": "answers",
+   "quote": "A recovery copy of Ruflo's memory database, sealed with fingerprints of the data, the ABP and the compiled policy.",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "It is stored in a checkpoint folder on the same machine as encrypted SGit objects, with the keys in a separate private folder.",
+   "section": "answers",
+   "quote": "A checkpoint folder on the same machine, as encrypted SGit objects, with the keys in a separate private folder.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "It is implemented inside the adapter, a local MCP server at version 0.2 calling the SGit library at a pinned commit; each checkpoint gets its own vault, and Ruflo knows nothing about it.",
+   "section": "answers",
+   "quote": "Each checkpoint gets its own SGit vault, and only its encrypted bare store leaves the adapter's private staging.",
+   "about": [
+    "entity:mcp",
+    "entity:sgit",
+    "entity:ruflo",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The ABP applies to the adapter's tools in steps 4, 5, 6, 8 and 11; Ruflo's own command line, in steps 3, 9 and 10, does not pass through it.",
+   "section": "answers",
+   "quote": "Ruflo's own command line, in steps 3, 9 and 10, does not pass through it",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Of Ruflo, the memory store and retrieve commands, the SQLite file, the bundled embedding model and a pinned evaluator ran; not its hive-mind, its running policy state or vector search.",
+   "section": "answers",
+   "quote": "Not its hive-mind, not its running policy state, not vector search.",
+   "about": [
+    "entity:ruflo",
+    "entity:sqlite",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The analysis keeps apart what is shown on screen and what is inferred, and says where Mondweep's published code settles an inference; solid arrows are on screen or confirmed, dashed ones inferred.",
+   "section": "answers",
+   "quote": "solid arrows are on screen or confirmed by the code, and dashed ones are inferred",
+   "about": [
+    "concept:provenance",
+    "entity:sgit-ruv-memory"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Two lines run from the test script: Ruflo's command line writes the memory file directly, and the adapter's tools each pass a policy gate, Ruflo's evaluator in enforce mode failing closed, before reaching the SGit library.",
+   "section": "map",
+   "quote": "Each passes a policy gate, a pinned copy of Ruflo's evaluator running the compiled ABP rules in enforce mode, which fails closed",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "In step 5 the checkpoint for the project namespace is allowed; the adapter takes a consistent copy of Ruflo's memory file with a SQLite backup, fingerprints it, and SGit stores it encrypted.",
+   "section": "step-5",
+   "quote": "The adapter takes a consistent copy of Ruflo's memory file with a SQLite backup, fingerprints it, and SGit stores it encrypted",
+   "about": [
+    "entity:sqlite",
+    "entity:sha-256",
+    "concept:vault",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The code confirms the order: a policy check, a consistent SQLite backup, an integrity check, a new SGit vault and a commit, then only the encrypted bare store copied out of staging; no remote push is performed.",
+   "section": "step-5",
+   "quote": "No remote push is performed.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit-ruv-memory"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The README is precise that the hashes bind evidence to a mandate and are not digital signatures or immutable audit receipts.",
+   "section": "step-5",
+   "quote": "These hashes bind evidence to a mandate; they are not digital signatures or immutable audit receipts.",
+   "about": [
+    "concept:provenance",
+    "entity:sgit-ruv-memory"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The checkpoint records which policy was in force when it was taken, so a restore can be tied to the rules that governed the data; this is the part to point every architect at.",
+   "section": "step-5",
+   "quote": "the checkpoint records which policy was in force when it was taken, so a restore can be tied to the rules that governed the data",
+   "about": [
+    "concept:provenance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "In step 8 a brand-new adapter process restores the checkpoint into fresh-runner, and the restored database is byte for byte the one saved in step 5.",
+   "section": "step-8",
+   "quote": "The restored database is byte for byte the one saved in step 5.",
+   "about": [
+    "concept:agent-memory",
+    "entity:sha-256",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The code confirms the restore checks the ciphertext digest, decrypts with the private key record, checks the manifest and database digest and the SQLite file, then promotes it to a new workspace; it never overwrites an existing one.",
+   "section": "step-8",
+   "quote": "It never overwrites an existing workspace.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit-ruv-memory"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "In step 11 one encrypted object is altered and a restore is tried; the ABP allows the restore, and the adapter's check of the stored ciphertext is what refuses it.",
+   "section": "step-11",
+   "quote": "The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Before anything is decrypted the adapter compares the ciphertext digest with the one recorded and refuses with a mismatch error; SGit is never asked to decrypt the altered copy.",
+   "section": "step-11",
+   "quote": "SGit is never asked to decrypt the altered copy.",
+   "about": [
+    "entity:sgit",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "In step 6 the vault is what the policy protects and is not touched; in step 7 the vault and its keys survive the deletion because they live in folders outside the project.",
+   "section": "step-6",
+   "quote": "the vault and its keys survive because they live in folders outside the project",
+   "about": [
+    "concept:vault",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "limit",
+   "text": "Encryption happens on the machine and the ciphertext stays there; the README lists remote sync as a follow-up, so the vault survives the project being deleted but would not survive the machine being lost.",
+   "section": "where",
+   "quote": "It would not survive the machine being lost, which the video does not claim.",
+   "about": [
+    "concept:vault",
+    "concept:incidents",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "The step to see next: push the same objects to a vault server that holds only ciphertext and restore on another machine, showing the server holding nothing readable.",
+   "section": "where",
+   "quote": "A second run that restores on a different machine, and shows the server holding nothing readable, would close the loop.",
+   "about": [
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Three steps of twelve is not a weakness: a recovery copy should be touched when you save and when you restore, and otherwise left alone, or it would be working memory, not a backup.",
+   "section": "three",
+   "quote": "A recovery copy should be touched when you save and when you restore, and otherwise left alone.",
+   "about": [
+    "concept:vault",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Because the adapter wraps Ruflo's memory file from outside through MCP, the same pattern could wrap any agent tool that keeps its memory in a file, and the vault is only as complete as the adapter's reach.",
+   "section": "three",
+   "quote": "the same adapter pattern could wrap any agent tool that keeps its memory in a file, without changing the tool",
+   "about": [
+    "entity:mcp",
+    "concept:agent-memory",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The account is from the screen and the code; where a diagram goes beyond both, the arrow is dashed and the text says inferred.",
+   "section": "limits",
+   "quote": "Where a diagram goes beyond both, the arrow is dashed and the text says inferred.",
+   "about": [
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "It is not a review of SGit's cryptography; the tampered object is caught by the adapter's digest check, before decryption.",
+   "section": "limits",
+   "quote": "Not a review of SGit's cryptography.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "It is not a criticism of the run; one machine is what a proof of concept on a laptop looks like.",
+   "section": "limits",
+   "quote": "One machine is what a proof of concept on a laptop looks like.",
+   "about": [
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Ruflo's unused parts are not judged; they were outside this test's scope.",
+   "section": "limits",
+   "quote": "They were outside this test's scope.",
+   "about": [
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The architecture is an addendum to the analysis made for the author by Claude on 17 October 2026 from on-screen content, corrected where the code shows otherwise, and checked by the site's agent.",
+   "section": "sources",
+   "quote": "an addendum to the analysis made for me by Claude (Anthropic) on 17 October 2026 from on-screen content",
+   "about": [
+    "entity:claude",
+    "entity:anthropic",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ],
+   "refs": [
+    "r01",
+    "r02",
+    "r03"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c06",
+   "verb": "limits",
+   "to": "c22"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "mondweep-chakravorty",
+   "role": "made the video and the code the architecture is read from"
+  },
+  {
+   "id": "ruflo",
+   "role": "the agent framework whose memory file is checkpointed and whose evaluator gates the adapter"
+  },
+  {
+   "id": "sgit",
+   "role": "the library that encrypts and stores the checkpoint as a vault"
+  },
+  {
+   "id": "sgit-ruv-memory",
+   "role": "the published code that settles the inferences"
+  },
+  {
+   "id": "mcp",
+   "role": "the adapter is a local MCP server"
+  },
+  {
+   "id": "sqlite",
+   "role": "Ruflo's memory file and the consistent backup"
+  },
+  {
+   "id": "sha-256",
+   "role": "the fingerprints of database, ABP and policy"
+  },
+  {
+   "id": "claude",
+   "role": "made the analysis and the architecture addendum"
+  },
+  {
+   "id": "anthropic",
+   "role": "the maker of Claude, named in the sources"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author with editorial responsibility"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://youtu.be/rkh6BJiaIrQ",
+   "title": "SGit x Ruflo | Working Proof of Concept",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "video"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/mondweep/sgit-ruv-memory",
+   "title": "mondweep/sgit-ruv-memory",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-16",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/ruvnet/ruflo",
+   "title": "ruvnet/ruflo",
+   "by": "rUv",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The video published; the analysis and architecture addendum by Claude; the article"
+  },
+  {
+   "date": "2026-10-16",
+   "what": "The commit of sgit-ruv-memory the code was read at"
+  }
+ ]
+}

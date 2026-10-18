@@ -1,0 +1,772 @@
+{
+ "slug": "the-tokens-hook",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "The author asked for a small, focused agent behaviour policy about tokens, in observe mode first: show the user what the session reads, caches, writes and costs, in a box under each answer.",
+   "section": "in-short",
+   "quote": "Observe first: show the user what the session reads, caches, writes and costs.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:pricing",
+    "concept:agent-tooling",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Every model call re-sends the system prompt, the tool definitions and the whole conversation, and the only thing that makes that affordable is the prompt cache.",
+   "section": "why",
+   "quote": "the only thing that makes that affordable is the prompt cache",
+   "about": [
+    "concept:prompt-caching",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Anthropic's Claude Code team runs alerts on its prompt cache hit rate and declares SEVs if they are too low, because a few points of cache miss rate dramatically affect cost and latency.",
+   "section": "why",
+   "quote": "we run alerts on our prompt cache hit rate and declare SEVs if they're too low",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:prompt-caching"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Asked by a system prompt to report its own usage, the model said twice, correctly, that it could not see the numbers; they existed, 37,019 tokens of input in the first turn, $0.05 and then $0.09, but nowhere it could read.",
+   "section": "prompt",
+   "quote": "37,019 tokens of input in the first turn, $0.05 and then $0.09",
+   "about": [
+    "entity:claude",
+    "concept:hope-or-enforcement",
+    "entity:claude-code"
+   ],
+   "value": {
+    "n": 37019,
+    "unit": "input tokens in the first turn of the prompt test",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "With the tokens hook the model reported a context of 37,087 tokens, 353 output tokens and about $0.05, exactly the first turn's figures, one turn behind because a hook that runs before the answer cannot count it.",
+   "section": "prompt",
+   "quote": "They are one turn behind, because a hook that runs before the answer cannot count it.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:hooks-are-kernel-code",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A prompt can ask for behaviour; only a hook can supply data, which is why hooks are the sweet spot for anything that has to be true rather than hoped for.",
+   "section": "prompt",
+   "quote": "A prompt can ask for behaviour; only a hook can supply data",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:agent-tooling",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "No Claude Code hook event carries token usage in general; the only token fields are on a resumed or forked session's start, so everything else must come from the transcript, a JSON file with one line per event.",
+   "section": "see",
+   "quote": "No event carries token usage in general",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Each response is written to the transcript several times, each line repeating the full usage: 2,621 lines carried usage for 1,165 responses, and 849 responses appeared more than once with identical figures.",
+   "section": "see",
+   "quote": "2,621 lines carried usage, for 1,165 responses; 849 responses appeared more than once, always with identical figures",
+   "about": [
+    "entity:claude-code",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 2621,
+    "unit": "transcript lines carrying usage, for 1,165 responses",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "Counting lines gave 1.06 billion cache-read tokens and counting responses gave 459 million; the site's own status report had been counting lines since it was written.",
+   "section": "see",
+   "quote": "Counting lines gave 1.06 billion cache-read tokens; counting responses gave 459 million.",
+   "about": [
+    "concept:provenance",
+    "concept:the-newsroom"
+   ],
+   "value": {
+    "n": 459000000,
+    "of": 1060000000,
+    "unit": "cache-read tokens counted by response, against the line count",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "decision",
+   "text": "The session's status report, which had said 2.9M out and 1.0B cached when the truth was 1.1 million and 460 million, now counts each message id once.",
+   "section": "see",
+   "quote": "It now counts each message id once.",
+   "about": [
+    "concept:provenance",
+    "concept:the-newsroom",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "In Claude Code 2.1.300 the transcript carries the request, not only the conversation: prompt_snapshot records hold the system prompt in 13 parts and all 49 tool definitions, about 34,000 and 198,000 characters, though the documentation does not say so.",
+   "section": "see",
+   "quote": "the system prompt, in 13 parts, and all 49 tool definitions, about 34,000 and 198,000 characters",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ],
+   "value": {
+    "n": 49,
+    "unit": "tool definitions in the transcript's prompt snapshot",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "At about four characters a token, the tool definitions alone are around 50,000 tokens, six times the system prompt, so a token hook can see the fixed cost of every call.",
+   "section": "see",
+   "quote": "the tool definitions alone are around 50,000 tokens, six times the system prompt",
+   "about": [
+    "concept:pricing",
+    "entity:claude-code"
+   ],
+   "value": {
+    "n": 50000,
+    "unit": "tokens of tool definitions per call, estimated",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Anything that can read the transcript can read everything the model was told, so a token hook should handle numbers only and never send text anywhere; the format is undocumented and may change.",
+   "section": "see",
+   "quote": "a token hook should handle numbers only and never send text anywhere",
+   "about": [
+    "concept:privacy",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "The hook is one Python file of 132 lines and a policy file; each run seeks to where it stopped, reads only the new lines, counts each response once, prices it by model and saves the totals.",
+   "section": "hook",
+   "quote": "The hook is one Python file of 132 lines and a policy file.",
+   "about": [
+    "entity:python",
+    "concept:agent-tooling",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 132,
+    "unit": "lines of Python in the hook",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "The first run on the session's 66 MB transcript took 252 milliseconds; every run after it took about one millisecond inside the hook and about 31 milliseconds including starting Python.",
+   "section": "hook",
+   "quote": "every run after it took about one millisecond inside the hook, and about 31 milliseconds including starting Python",
+   "about": [
+    "entity:python",
+    "concept:agent-tooling"
+   ],
+   "value": {
+    "n": 1,
+    "unit": "millisecond per warm run inside the hook",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The policy carries the version, the mode, the limits and the prices with their source, and the modes are observe, which shows and logs, warn, and enforce, which blocks the next prompt once the session's budget is spent.",
+   "section": "hook",
+   "quote": "observe shows and logs; warn also warns when a limit is crossed; enforce blocks the next prompt once the session's budget is spent",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Where the output goes decides who sees it: a systemMessage on Stop is shown to the user, additional context on UserPromptSubmit goes to the model so it can be frugal, and a log line stays on the machine.",
+   "section": "hook",
+   "quote": "Where the output goes decides who sees it.",
+   "about": [
+    "concept:agent-tooling",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "This session read 99% of its input from the cache: about $171.68 at policy prices, and reading the 467 million cached tokens fresh would have cost about $1,780 more.",
+   "section": "hook",
+   "quote": "reading those 467 million tokens fresh instead of from the cache would have cost about $1,780 more",
+   "about": [
+    "concept:prompt-caching",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 99,
+    "unit": "percent of input read from the cache in this session",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Claude Code already shows a lot without a hook: the status line, /usage and /context, and for a team the OpenTelemetry export sends a token usage metric and an event per API request, the central collector already built.",
+   "section": "elsewhere",
+   "quote": "That is the central telemetry collector, already built.",
+   "about": [
+    "entity:claude-code",
+    "entity:opentelemetry"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The hook still earns its place because it is a policy: it carries limits and modes, can tell the model, can block, and is the same small file wherever it runs; it can also send numbers to an sgit append lane.",
+   "section": "elsewhere",
+   "quote": "it carries limits and modes, it can tell the model, it can block, and it is the same small file wherever it runs",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "Sending to the append lane took the hook from about 31 to about 96 milliseconds a call, and all 20 test events arrived with nine fields each and no text.",
+   "section": "elsewhere",
+   "quote": "all 20 test events arrived, with nine fields each and no text",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit",
+    "concept:privacy"
+   ],
+   "value": {
+    "n": 20,
+    "unit": "test events delivered to the append lane",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The coding agents are converging: Codex CLI has hooks, a /status command and OpenTelemetry; Gemini CLI has hooks around each model call and /stats; Cursor added hooks in version 1.7 on 29 September 2025.",
+   "section": "tools",
+   "quote": "The coding agents are converging on the same shape.",
+   "about": [
+    "entity:codex",
+    "entity:gemini",
+    "entity:cursor",
+    "concept:agent-tooling",
+    "entity:opentelemetry"
+   ],
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "GitHub Copilot moved to usage-based billing on 1 June 2026, Cline shows every token count and cost per task, and the chat apps show least: no token count per conversation was found in Claude.ai or ChatGPT.",
+   "section": "tools",
+   "quote": "I found no token count per conversation in Claude.ai or ChatGPT",
+   "about": [
+    "entity:copilot",
+    "entity:cline",
+    "entity:chatgpt",
+    "entity:claude",
+    "concept:pricing"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Caching differs by provider, OpenAI's on by default with discounts up to 95% and Gemini's implicit caching on by default, so the policy file is where the differences belong: one hook, one price table per provider.",
+   "section": "tools",
+   "quote": "one hook, one price table per provider",
+   "about": [
+    "concept:prompt-caching",
+    "entity:openai",
+    "entity:google",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "tokens.hook.sgit.ai is proposed as the example of how a mission-critical hook should be run: a small code base, mapped completely as a graph, measured, tested on real transcripts and released like any other software.",
+   "section": "site",
+   "quote": "a small code base, mapped completely, measured, and released like any other software",
+   "about": [
+    "entity:tokens-hook-sgit-ai",
+    "concept:hooks-are-kernel-code",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Install and distribute: a few lines of settings for one user, managed settings or a plugin for an organisation, and for sgit users a vault with the hook, its policy and its releases, with an append lane beside it.",
+   "section": "site",
+   "quote": "for sgit users, a vault with the hook, its policy and its releases, and an append lane beside it",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:vault-design",
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "One tool, one version: the hook ran in Claude Code 2.1.300, and the transcript format is internal and may change.",
+   "section": "limits",
+   "quote": "The hook ran in Claude Code 2.1.300; the transcript format is internal and may change.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The prompt test was small: two turns each, one model; other models may guess where this one refused.",
+   "section": "limits",
+   "quote": "Two turns each, one model; other models may guess where this one refused.",
+   "about": [
+    "entity:claude",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Costs are at list prices; subscriptions, discounts and regional pricing change the bill.",
+   "section": "limits",
+   "quote": "Subscriptions, discounts and regional pricing change the bill.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The token estimate for tool definitions is rough: characters divided by four.",
+   "section": "limits",
+   "quote": "The token estimate for tool definitions is rough. Characters divided by four.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The other tools are described from their documentation, not run for this article.",
+   "section": "limits",
+   "quote": "The other tools are from their documentation. Not run for this article.",
+   "about": [
+    "entity:codex",
+    "entity:gemini",
+    "entity:cursor"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "tokens.hook.sgit.ai does not exist yet; it is the proposal.",
+   "section": "limits",
+   "quote": "tokens.hook.sgit.ai does not exist yet. It is the proposal.",
+   "about": [
+    "entity:tokens-hook-sgit-ai"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 15 October 2026; the hook, experiments and measurements were made by the site's agent the same day, two research agents read the documentation, and the quotes were checked.",
+   "section": "sources",
+   "quote": "two research agents read the documentation, and the quotes were checked",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "concept:multi-agent",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "gives_rise_to",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c26",
+   "verb": "specifies",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c22"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c25"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "asked for the tokens policy and wrote the memo"
+  },
+  {
+   "id": "claude-code",
+   "role": "the tool the hook runs in, version 2.1.300, whose transcript the hook reads"
+  },
+  {
+   "id": "claude",
+   "role": "the model that could not see its own usage, and the Claude.ai app that shows only limit bars"
+  },
+  {
+   "id": "anthropic",
+   "role": "its Claude Code team's post on prompt caching, and its pricing page"
+  },
+  {
+   "id": "python",
+   "role": "the language of the 132-line hook"
+  },
+  {
+   "id": "opentelemetry",
+   "role": "the export Claude Code and Codex use for team telemetry"
+  },
+  {
+   "id": "sgit",
+   "role": "its append lane receives the hook's numbers, never text"
+  },
+  {
+   "id": "codex",
+   "role": "OpenAI's CLI with hooks, /status and OpenTelemetry"
+  },
+  {
+   "id": "gemini",
+   "role": "Gemini CLI, with hooks around each model call and /stats"
+  },
+  {
+   "id": "cursor",
+   "role": "added hooks in version 1.7 on 29 September 2025"
+  },
+  {
+   "id": "copilot",
+   "role": "moved to usage-based billing on 1 June 2026"
+  },
+  {
+   "id": "cline",
+   "role": "shows prompt, completion, cache and cost on every task"
+  },
+  {
+   "id": "chatgpt",
+   "role": "a chat app with no token count per conversation found"
+  },
+  {
+   "id": "openai",
+   "role": "its caching is on by default with discounts up to 95%"
+  },
+  {
+   "id": "google",
+   "role": "Gemini's implicit caching is on by default"
+  },
+  {
+   "id": "tokens-hook-sgit-ai",
+   "role": "the proposed site for one small hook: code, policy, graph, tests, releases"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "prompt-caching",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://claude.dev/blog/lessons-from-building-claude-code-prompt-caching-is-everything/",
+   "title": "Lessons from building Claude Code: prompt caching is everything",
+   "by": "Anthropic",
+   "date": "2026-04-30",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://code.claude.com/docs/en/hooks.md",
+   "title": "Claude Code hooks reference",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "title": "Pricing",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://code.claude.com/docs/en/monitoring-usage.md",
+   "title": "Monitoring usage",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://learn.chatgpt.com/docs/hooks",
+   "title": "Codex hooks",
+   "by": "OpenAI",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://cursor.com/changelog/1-7",
+   "title": "Cursor 1.7 changelog",
+   "by": "Cursor",
+   "date": "2025-09-29",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://docs.github.com/en/copilot/reference/copilot-billing/request-based-billing-legacy/what-changed-with-billing",
+   "title": "What changed with Copilot billing",
+   "by": "GitHub",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://code.claude.com/docs/en/managed-settings.md",
+   "title": "Managed settings",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-15",
+   "what": "The voice memo; the hook built, measured and tested by the site's agent"
+  },
+  {
+   "date": "2026-04-30",
+   "what": "Anthropic's Claude Code team publishes Prompt caching is everything"
+  },
+  {
+   "date": "2025-09-29",
+   "what": "Cursor 1.7 adds hooks"
+  },
+  {
+   "date": "2026-06-01",
+   "what": "GitHub Copilot moves to usage-based billing"
+  }
+ ]
+}

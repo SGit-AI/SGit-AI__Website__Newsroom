@@ -1,0 +1,635 @@
+{
+ "slug": "the-wall-under-the-reply",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "When a reply is sent, the mail client pastes every previous message under the new lines, for a reader who already has those messages.",
+   "section": "top",
+   "quote": "When I reply, the client pastes every previous message under my two lines. The reader already has those messages.",
+   "about": [
+    "concept:agentic-email",
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Gmail and Apple Mail hide the quoted wall behind a show trimmed content or see more link, which is the clearest sign it is the wrong thing to ship.",
+   "section": "top",
+   "quote": "The wall is shipped with every message and hidden on arrival, which is the clearest possible sign that it is the wrong thing to ship.",
+   "about": [
+    "entity:gmail",
+    "entity:apple",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Microsoft's 2025 Work Trend Index found the average worker receives 117 emails a day, most skimmed in under 60 seconds, and is interrupted every two minutes.",
+   "section": "top",
+   "quote": "the average worker now receives 117 emails a day",
+   "about": [
+    "entity:microsoft",
+    "concept:agentic-email"
+   ],
+   "value": {
+    "n": 117,
+    "unit": "emails a day per worker",
+    "as_of": "2025"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The space under the reply is where the reader asks where we are, what was decided, what is open, what is next and who is on the thread, and the wall answers none of those.",
+   "section": "top",
+   "quote": "The wall answers none of those; it makes the reader reconstruct them.",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "proposal",
+   "text": "End the reply with a short account of where the thread is, written for the person it is sent to, and let the history stay where it already is.",
+   "section": "top",
+   "quote": "End the reply with a short account of where the thread is, written for the person you are sending it to, and let the history stay where it already is.",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "The rows of the tail are the reader's questions: where we are, decided, open, next, on copy, and sources.",
+   "section": "top",
+   "quote": "The rows are the reader's questions.",
+   "about": [
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The Sources row makes the tail honest: it is derived from the record and points back at the record instead of repeating it.",
+   "section": "top",
+   "quote": "It is derived from the record, and it points back at the record instead of repeating it.",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The same four messages condense three different ways for three readers, where the wall gives all three the same 1,900 words.",
+   "section": "top",
+   "quote": "The wall gives all three the same 1,900 words.",
+   "about": [
+    "concept:state-of-the-thread"
+   ],
+   "value": {
+    "n": 1900,
+    "unit": "words of quoted wall in the mock-up"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "hypothesis",
+   "text": "What makes the tail different from a summary is that the question is what this person needs to know, in this context, now, the same question asked of agentic memory.",
+   "section": "top",
+   "quote": "I think it is the part that makes this different from a summary",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The netiquette guidelines of October 1995, RFC 1855, already recommended a summary in place of the full quote, and the clients went the other way.",
+   "section": "top",
+   "quote": "The netiquette guidelines of October 1995, RFC 1855, already said it.",
+   "about": [
+    "entity:rfc-1855",
+    "concept:state-of-the-thread"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Chris Anderson's Email Charter of 2011 had a rule called Tighten the Thread, saying a thread should rarely extend to more than three emails.",
+   "section": "top",
+   "quote": "it's rare that a thread should extend to more than 3 emails.",
+   "about": [
+    "entity:chris-anderson",
+    "concept:state-of-the-thread"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The military had the shape first in bottom line up front; Barbara Minto's Pyramid Principle and Michael Nygard's architecture decision records are the same discipline.",
+   "section": "top",
+   "quote": "The military had the shape before any of us.",
+   "about": [
+    "entity:us-army",
+    "entity:barbara-minto",
+    "entity:michael-nygard",
+    "concept:state-of-the-thread"
+   ],
+   "refs": [
+    "r04",
+    "r05"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Mail clients now compute a reader-side summary at the top of a thread: Superhuman in November 2023, Shortwave in February 2024, Copilot in Outlook, Apple Intelligence in October 2024 and Gmail from 29 May 2025.",
+   "section": "top",
+   "quote": "The mail clients have now done the reading-side version with models.",
+   "about": [
+    "entity:superhuman",
+    "entity:shortwave",
+    "entity:copilot",
+    "entity:apple",
+    "entity:gmail",
+    "entity:gemini"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "A reader-side summary belongs to one reader and nobody stands behind it; the tail is the sender's statement, reviewed before it goes, the same for everyone on copy and in the record.",
+   "section": "top",
+   "quote": "A reader-side summary belongs to one reader and nobody stands behind it.",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:the-record",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "A small open-source mail project opened an issue in August 2026 describing a ThreadState block, taken as a sign the idea is in the air rather than as prior art.",
+   "section": "top",
+   "quote": "I take it as a sign the idea is in the air rather than as prior art.",
+   "about": [
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "question",
+   "text": "Whether a published convention exists for a sender-written, recipient-specific state block at the end of a reply with the Cc changes included is open; the research did not find one.",
+   "section": "top",
+   "quote": "If one exists I would like to be pointed at it.",
+   "about": [
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The inbox role captures typed blocks in Email-FS, the drafts role renders the rows and logs a hash, the person reads, edits and sends, and no agent sends.",
+   "section": "top",
+   "quote": "The rule that never changes still holds: no agent sends.",
+   "about": [
+    "entity:email-fs",
+    "concept:multi-agent",
+    "concept:human-in-the-loop",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Three properties make the idea safe to try: the tail is derived so it is correctable, personal so it is configurable, and text first so it renders in every client.",
+   "section": "top",
+   "quote": "Three properties fall out of that pipeline, and I think they are the properties that make the idea safe to try.",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Who is on copy is part of the state: threads accrete people, and none of that is visible in a quoted wall.",
+   "section": "top",
+   "quote": "None of that is visible in a quoted wall, and all of it is state.",
+   "about": [
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "decision",
+   "text": "Rather than publish a format, the author runs an experiment on his own correspondence through the agent@riskmandate.ai agentic team.",
+   "section": "top",
+   "quote": "I am going to run it on my own correspondence via the agent@riskmandate.ai agentic team",
+   "about": [
+    "entity:riskmandate",
+    "entity:dinis-cruz",
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "Four variants run for a month, rotating by thread: three sentences of prose, labelled rows, an ASCII timeline, and an HTML card with a text fallback.",
+   "section": "top",
+   "quote": "Every reply for a month carries one, the variant rotates by thread, and the person edits before sending as they always do.",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:human-in-the-loop"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "variants",
+    "as_of": "2026-10-04"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Because the record is files, it can measure whether readers opened the quoted messages, whether where-are-we questions followed, what the person edited, time to reply, and who asked for the wall back.",
+   "section": "top",
+   "quote": "What the record can measure, because the record is files",
+   "about": [
+    "concept:the-record",
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "If readers skip the tail and scroll to the quotes anyway, the tail is noise.",
+   "section": "top",
+   "quote": "If readers skip the tail and scroll to the quotes anyway, the tail is noise.",
+   "about": [
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "If the agent's condensation has to be corrected in more than a few replies out of ten, the record is not good enough to derive from and the fix is upstream in the inbox role.",
+   "section": "top",
+   "quote": "the fix is upstream in how the inbox role captures blocks, not in the tail",
+   "about": [
+    "concept:state-of-the-thread",
+    "entity:email-fs"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "If recipients' clients mangle the labelled rows, the default moves to prose.",
+   "section": "top",
+   "quote": "If recipients' clients mangle the labelled rows, the default moves to prose.",
+   "about": [
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The author does not know what the tail should look like, because the format is personal, the readers differ and the clients differ.",
+   "section": "top",
+   "quote": "I do not know what the tail should look like, because the format is personal, the readers differ, and the clients differ.",
+   "about": [
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The drafts role writing the tail automatically, the preference row in the CRM, the four templates, the measurements and the month of data do not exist yet; the first three are a week of work.",
+   "section": "top",
+   "quote": "All of it is small, and the first three are a week of the agent team's work.",
+   "about": [
+    "concept:state-of-the-thread",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "A few hours after publication, ChatGPT made a one-page state of the article for a reader, with nothing invented, which is the thing the article proposes done to the article.",
+   "section": "top",
+   "quote": "It is the thing the article proposes, done to the article.",
+   "about": [
+    "entity:chatgpt",
+    "concept:provenance",
+    "concept:state-of-the-thread"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "Dinis posted the article on LinkedIn on the same day, 4 October 2026.",
+   "section": "top",
+   "quote": "Dinis also posted the article on LinkedIn the same day.",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:linkedin"
+   ],
+   "refs": [
+    "r07"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c06",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c14"
+  },
+  {
+   "from": "c15",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c26",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c20"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c28",
+   "verb": "backs",
+   "to": "c05"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "the author, whose correspondence is the experiment"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the agentic team at agent@riskmandate.ai that will run the experiment"
+  },
+  {
+   "id": "email-fs",
+   "role": "where the inbox role keeps the typed blocks the tail is drafted from"
+  },
+  {
+   "id": "gmail",
+   "role": "hides the wall behind show trimmed content and shows Gemini summary cards"
+  },
+  {
+   "id": "gemini",
+   "role": "the model behind Gmail's summary cards"
+  },
+  {
+   "id": "apple",
+   "role": "Apple Mail hides the wall; Apple Intelligence added thread summaries"
+  },
+  {
+   "id": "microsoft",
+   "role": "its 2025 Work Trend Index gives the 117 emails a day"
+  },
+  {
+   "id": "copilot",
+   "role": "Summary by Copilot in Outlook, a reader-side summary with citations"
+  },
+  {
+   "id": "chatgpt",
+   "role": "produced the one-page state of the article"
+  },
+  {
+   "id": "linkedin",
+   "role": "where the article was also posted"
+  },
+  {
+   "id": "superhuman",
+   "role": "put a one-line summary above every conversation in November 2023"
+  },
+  {
+   "id": "shortwave",
+   "role": "added thread summaries at the top in February 2024"
+  },
+  {
+   "id": "rfc-1855",
+   "role": "the 1995 guidance that asked for a summary instead of the full quote"
+  },
+  {
+   "id": "chris-anderson",
+   "role": "author of the 2011 Email Charter"
+  },
+  {
+   "id": "barbara-minto",
+   "role": "author of the Pyramid Principle"
+  },
+  {
+   "id": "michael-nygard",
+   "role": "author of architecture decision records"
+  },
+  {
+   "id": "us-army",
+   "role": "its regulation AR 25-50 names bottom line up front"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "state-of-the-thread",
+   "defined_here": true
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/",
+   "title": "Work Trend Index 2025",
+   "by": "Microsoft",
+   "date": "2025",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.rfc-editor.org/rfc/rfc1855",
+   "title": "RFC 1855: Netiquette Guidelines",
+   "by": "S. Hambridge, IETF",
+   "date": "1995-10",
+   "kind": "standard"
+  },
+  {
+   "id": "r03",
+   "url": "http://emailcharter.org/",
+   "title": "The Email Charter",
+   "by": "Chris Anderson",
+   "date": "2011",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://armypubs.army.mil/ProductMaps/PubForm/Details.aspx?PUB_ID=1004379",
+   "title": "AR 25-50: Preparing and Managing Correspondence",
+   "by": "US Army",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+   "title": "Documenting Architecture Decisions",
+   "by": "Michael Nygard",
+   "date": "2011",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://workspaceupdates.googleblog.com/2025/05/gemini-summary-cards-in-gmail.html",
+   "title": "Gemini summary cards in Gmail",
+   "by": "Google Workspace",
+   "date": "2025-05-29",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.linkedin.com/pulse/wall-under-reply-end-email-state-thread-dinis-cruz-fpc0e/",
+   "title": "The wall under the reply: end an email with the state of the thread",
+   "by": "Dinis Cruz",
+   "date": "2026-10-04",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-04",
+   "what": "The voice memo, the research into the history and the tools, the article and its LinkedIn post"
+  },
+  {
+   "date": "1995-10",
+   "what": "RFC 1855 asks for a summary in place of the full quote"
+  },
+  {
+   "date": "2011",
+   "what": "The Email Charter and the first architecture decision records"
+  },
+  {
+   "date": "2025-05-29",
+   "what": "Gmail starts showing Gemini summary cards at the top of long threads"
+  },
+  {
+   "date": "2026-08",
+   "what": "A small open-source mail project opens an issue describing a ThreadState block"
+  }
+ ]
+}

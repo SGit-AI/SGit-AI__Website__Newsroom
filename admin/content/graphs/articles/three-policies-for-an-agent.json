@@ -1,0 +1,605 @@
+{
+ "slug": "three-policies-for-an-agent",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "When something goes wrong with an agent, the logs say what happened and the behaviour policy says what was allowed, but neither says how it decided.",
+   "section": "question",
+   "quote": "Neither says how it decided.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The ABP the site publishes is a behaviour policy: its rows are capabilities with a reach and a mandate of yes, no or approval.",
+   "section": "question",
+   "quote": "Its rows are capabilities with a reach and a mandate: yes, no, or approval.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "hypothesis",
+   "text": "Who chooses between two allowed actions, on what evidence, within what budget, and who to call when the case is outside all of them are decisions that need their own policy.",
+   "section": "question",
+   "quote": "Those are decisions, and I think they need their own policy.",
+   "about": [
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "An Agent Decision Policy says, at a branch point, who chooses, on what evidence, within what limits, and who is called when out of bounds; it holds the decider, evidence, envelope, escalation, kill switch, sign-off and record.",
+   "section": "three",
+   "quote": "The decider, the evidence, the envelope (budget, blast radius, reversibility), escalation, a kill switch, the sign-off and the record",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "An Agent Workflow Policy says which steps run in what order, and holds states, transitions and the gates between them.",
+   "section": "three",
+   "quote": "States, transitions, and the gates between them",
+   "about": [
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The three policies are three views of the same work that meet at fixed points: a workflow transition is gated by a decision, and the decision's outcome is carried out by behaviours the ABP permits.",
+   "section": "three",
+   "quote": "A workflow transition is gated by a decision. The decision's outcome is carried out by behaviours the ABP permits.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "A workflow with no decisions is a script; a decision with no behaviour policy under it has no limits; a behaviour policy with no workflow is permissions waiting to be used in the wrong order.",
+   "section": "three",
+   "quote": "A workflow with no decisions in it needs little governance: it is a script.",
+   "about": [
+    "concept:agent-workflow-policy",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "In Mondweep Chakravorty's ABP for SGit memory checkpoints, merged into Ruflo's docs, the row delete.memory.project with mandate approval is a decision in one cell.",
+   "section": "zoom",
+   "quote": "That word \"approval\" is a decision in one cell.",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:ruflo",
+    "entity:sgit",
+    "concept:behaviour-policy",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Today the row's barrier says human approval is required and nothing exists to give approval with, so approval means stop.",
+   "section": "zoom",
+   "quote": "nothing yet exists to give approval with, so approval means stop",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "proposal",
+   "text": "Zoomed in, the cell opens into a decision policy (who approves, on what evidence, within what envelope, recorded where) and a workflow (request, verify the checkpoint, approve or refuse, delete, record).",
+   "section": "zoom",
+   "quote": "Zoom in and the cell opens into two policies of its own",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "This is the fractal shape the site uses for code and for hooks: the same kind of graph at every level, with more detail as you go in.",
+   "section": "zoom",
+   "quote": "the same kind of graph at every level, with more detail as you go in",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Most rows never need zooming; a row earns its own decision policy when the choice carries money, people, irreversibility or a business risk.",
+   "section": "light",
+   "quote": "A row earns its own decision policy when the choice carries one of four things",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:one-way-door",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "A behaviour policy with a hundred rows might need decision policies for five of them.",
+   "section": "light",
+   "quote": "A behaviour policy with a hundred rows might need decision policies for five of them.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 5,
+    "of": 100,
+    "unit": "rows needing a decision policy"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "definition",
+   "text": "Every element of all three policies carries five states, kept separately: defined, implemented, enforced, observed and verified.",
+   "section": "states",
+   "quote": "So I would give every element five states, kept separately",
+   "about": [
+    "concept:five-states"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Observed and verified are different: a complete log of a wrong refund is observed and not verified, which is Ashish Rajan's Northstar example.",
+   "section": "states",
+   "quote": "a complete log of a wrong refund is observed and not verified",
+   "about": [
+    "concept:five-states",
+    "entity:ashish-rajan",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Where an element is enforced matters as much as whether: the site's scale runs from the prompt (L0) to off the machine (L4), and the ABP's barrier column records expectation, setting or boundary.",
+   "section": "states",
+   "quote": "an expectation the agent keeps, a setting the platform keeps, or a boundary out of the agent's reach",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The business signs off decisions, not workflows: finance runs a delegation-of-authority matrix for people and boards keep a schedule of matters reserved for their own decision.",
+   "section": "why-decision",
+   "quote": "The business does not sign off workflows. It signs off decisions",
+   "about": [
+    "concept:agent-decision-policy",
+    "entity:the-board",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The UK Corporate Governance Code asks boards to determine the nature and extent of the principal risks the company is willing to take.",
+   "section": "why-decision",
+   "quote": "the nature and extent of the principal risks the company is willing to take",
+   "about": [
+    "entity:uk-corporate-governance-code",
+    "entity:the-board",
+    "concept:risk-acceptance"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "OMG's Decision Model and Notation, first adopted in 2015, is designed to be used alongside BPMN; the split between a decision policy and a workflow policy is the same split applied to agents.",
+   "section": "why-decision",
+   "quote": "The split between a decision policy and a workflow policy is the same split, applied to agents.",
+   "about": [
+    "entity:dmn",
+    "entity:omg",
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "In reinforcement learning a policy is the agent's own way of behaving; a decision policy here is the opposite, written by people, outside the agent and binding on it.",
+   "section": "why-decision",
+   "quote": "written by people, outside the agent, and binding on it",
+   "about": [
+    "concept:agent-decision-policy",
+    "entity:richard-sutton",
+    "entity:andrew-barto"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "decision",
+   "text": "This is the first of four articles: three policies, approve at altitude, case law for agents, and three decisions mapped.",
+   "section": "next",
+   "quote": "This is the first of four:",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:approve-at-altitude",
+    "concept:case-law-for-agents"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "It is a proposal: there is no Agent Decision Policy or Agent Workflow Policy format yet, and the ABP is the only one of the three that exists.",
+   "section": "limits",
+   "quote": "There is no Agent Decision Policy or Agent Workflow Policy format yet; the ABP is the only one of the three that exists.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The zoomed-in policy is the author's illustration; Mondweep's row says only that a human must approve.",
+   "section": "limits",
+   "quote": "the decider, evidence and envelope above are my illustration",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The five states are a suggestion; other cuts are possible.",
+   "section": "limits",
+   "quote": "They are how I would map it; other cuts are possible.",
+   "about": [
+    "concept:five-states"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "DMN is named, not adopted; whether its format suits agents is untested here.",
+   "section": "limits",
+   "quote": "whether its format suits agents is untested here",
+   "about": [
+    "entity:dmn"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 17 October 2026 and the discussion with the site's agent, which wrote it up; the ABP row was merged into ruvnet/ruflo the same day.",
+   "section": "sources",
+   "quote": "A voice memo from me on 17 October 2026, and the discussion that followed it with this site's agent",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:sgit-ruv-memory"
+   ],
+   "refs": [
+    "r01",
+    "r05"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Readers who have built decision policies for agents, or think three is the wrong number, are invited to write to agent@riskmandate.ai.",
+   "section": "limits",
+   "quote": "or think three is the wrong number",
+   "about": [
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "abp-sgit-ai",
+   "role": "the published ABP, the only one of the three policies that exists"
+  },
+  {
+   "id": "ruflo",
+   "role": "the framework whose docs carry the ABP row delete.memory.project"
+  },
+  {
+   "id": "mondweep-chakravorty",
+   "role": "author of the ABP for SGit memory checkpoints"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults the memory checkpoints live in"
+  },
+  {
+   "id": "sgit-ruv-memory",
+   "role": "the source of the ABP row"
+  },
+  {
+   "id": "northstar-twin",
+   "role": "the wrong-refund example that separates observed from verified"
+  },
+  {
+   "id": "ashish-rajan",
+   "role": "his Northstar example separates observed from verified"
+  },
+  {
+   "id": "the-board",
+   "role": "keeps matters reserved and determines the risks the company will take"
+  },
+  {
+   "id": "uk-corporate-governance-code",
+   "role": "asks boards to determine the principal risks they are willing to take"
+  },
+  {
+   "id": "omg",
+   "role": "publishes DMN"
+  },
+  {
+   "id": "dmn",
+   "role": "the enterprise architecture split between decisions and process, named not adopted"
+  },
+  {
+   "id": "richard-sutton",
+   "role": "co-author of the reinforcement learning sense of policy"
+  },
+  {
+   "id": "andrew-barto",
+   "role": "co-author of the reinforcement learning sense of policy"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address for readers who have built decision policies"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-decision-policy",
+   "defined_here": true
+  },
+  {
+   "id": "agent-workflow-policy",
+   "defined_here": true
+  },
+  {
+   "id": "five-states",
+   "defined_here": true
+  },
+  {
+   "id": "case-law-for-agents",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "approve-at-altitude",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md",
+   "title": "SGit memory checkpoints, in ruvnet/ruflo",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.omg.org/spec/DMN/",
+   "title": "Decision Model and Notation",
+   "by": "Object Management Group",
+   "date": "2015-09",
+   "kind": "standard"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.frc.org.uk/documents/6709/UK_Corporate_Governance_Code_2024_a2hmQmY.pdf",
+   "title": "UK Corporate Governance Code, 2024 edition, Principle O",
+   "by": "Financial Reporting Council",
+   "date": "2024",
+   "kind": "standard"
+  },
+  {
+   "id": "r04",
+   "url": "http://incompleteideas.net/book/the-book-2nd.html",
+   "title": "Reinforcement Learning: An Introduction, second edition, section 1.3",
+   "by": "Richard Sutton and Andrew Barto",
+   "date": "2018",
+   "kind": "book"
+  },
+  {
+   "id": "r05",
+   "url": "https://github.com/mondweep/sgit-ruv-memory",
+   "title": "mondweep/sgit-ruv-memory",
+   "by": "Mondweep Chakravorty",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The voice memo and the article; the ABP row merged into Ruflo's docs"
+  },
+  {
+   "date": "2015-09",
+   "what": "DMN version 1.0 adopted by the OMG"
+  }
+ ]
+}

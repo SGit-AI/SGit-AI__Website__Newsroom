@@ -1,0 +1,650 @@
+{
+ "slug": "the-records-ran-out",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "A fresh Claude Code session with no history and no local code called read_scope and read_components over MCP, found the app and the service depend on the same version of a shared ticket entity, and changed only the app.",
+   "section": "in-short",
+   "quote": "found that the app and the service depend on the same version of a shared ticket entity, and changed only the app",
+   "about": [
+    "entity:claude-code",
+    "entity:mcp",
+    "entity:ignacio-aldama",
+    "entity:bit-cloud",
+    "entity:the-new-stack"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "In the demo 41 tests passed, nine of them new.",
+   "section": "in-short",
+   "quote": "41 tests passed, nine of them new.",
+   "about": [
+    "entity:claude-code",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 41,
+    "unit": "tests passed, nine new",
+    "as_of": "2026-10-11"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The piece is contributed content with a clear disclosure: the author is an engineer at Bit Cloud, the platform that produced the records, and The New Stack's owner invests in Bit; it is a single demo by one author of his own platform.",
+   "section": "reports",
+   "quote": "it is a single demo, by one author, of his own platform, and he says so",
+   "about": [
+    "entity:bit-cloud",
+    "entity:the-new-stack",
+    "entity:ignacio-aldama"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The task was to add filtering by ticket status and assignee to a four-component support console: a React app, an Express service on MongoDB, a shared ticket entity and a platform component behind one gateway.",
+   "section": "reports",
+   "quote": "a four-component support console: a React app, an Express service on MongoDB, a shared ticket entity, and a platform component behind one gateway",
+   "about": [
+    "entity:claude-code",
+    "entity:bit-cloud"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "components in the support console",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "In the author's words, knowing what is shared also tells an agent what not to touch.",
+   "section": "reports",
+   "quote": "knowing what is shared also tells an agent what not to touch.",
+   "about": [
+    "concept:blast-radius",
+    "entity:mcp",
+    "entity:ignacio-aldama"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The author says where the records ran out: the route list lived in a test fake's documentation and nothing checks it against the real service; the MongoDB tests skip when their database cannot start; the demo carries a public signing secret.",
+   "section": "reports",
+   "quote": "nothing checks that list against the real service",
+   "about": [
+    "concept:provenance",
+    "entity:ignacio-aldama",
+    "concept:shipping"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Memory and records cover different ground: a memory note carries the time it was written but nothing ties it to a code version, while a dependency record is part of the version and carries no intent.",
+   "section": "reports",
+   "quote": "but nothing ties it to a code version",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "definition",
+   "text": "The behaviour policy packs on abp.sgit.ai label every row as derived, inferred, self-reported, documented, measured or observed, and the pack's headline counts only the observed rows.",
+   "section": "evidence",
+   "quote": "label every row as derived, inferred, self-reported, documented, measured or observed",
+   "about": [
+    "concept:evidence-levels",
+    "entity:abp-sgit-ai",
+    "concept:provenance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "In Aldama's demo the route list was documented, by a fake, and the persistence check he ran by hand was observed.",
+   "section": "evidence",
+   "quote": "In Aldama's demo the route list was documented, by a fake.",
+   "about": [
+    "concept:evidence-levels",
+    "entity:ignacio-aldama"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "In an sgit vault the observation is a file committed in the same history as the claim, and since 0.19 sgit check verify classifies every commit reachable from the head as verified, bad, unsigned or without a known key.",
+   "section": "evidence",
+   "quote": "classifies every commit reachable from the head as verified, bad, unsigned or without a known key",
+   "about": [
+    "entity:sgit",
+    "concept:provenance",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "definition",
+   "text": "In the vocabulary of Agent Behaviour Policies there are four barriers, none, expectation, setting and boundary, and only a boundary is a control, because only a boundary is enforced by something the grant does not include.",
+   "section": "green",
+   "quote": "there are four barriers, none, expectation, setting and boundary, and only a boundary is a control",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy",
+    "entity:riskmandate"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "A build that reports green over a skipped required test is reporting an expectation as a control, which is the risk that the controls reported upwards are not real.",
+   "section": "green",
+   "quote": "A build that reports green over a skipped required test is reporting an expectation as a control",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:shipping",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "A build could write a small record into a vault, required tests, run, skipped and why, so a skipped required test drops the component's evidence back to documented until it runs; this is proposed, not built.",
+   "section": "green",
+   "quote": "A build could write the same small record into a vault: required tests, run, skipped, and why.",
+   "about": [
+    "concept:vault",
+    "concept:provenance",
+    "concept:evidence-levels",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "A public signing secret and a predefined demo account are a grant wider than the mandate: anyone can sign as the app and anyone can be the demo user, which is fine for a demo and exactly what drifts into production.",
+   "section": "shortcuts",
+   "quote": "A public signing secret and a predefined demo account are a grant wider than the mandate",
+   "about": [
+    "concept:reach",
+    "concept:identity-and-secrets",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "RiskMandate's position is that there is no deny button for a deployed system: the risk is accepted by a named owner, in a direction, for an interval, or the activity stops.",
+   "section": "shortcuts",
+   "quote": "the risk is real, so it is accepted by a named owner, in a direction, for an interval, or the activity stops",
+   "about": [
+    "concept:risk-acceptance",
+    "entity:riskmandate"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The unfinished items are conditions in a licence to operate, each beside the thing that enforces it or the admission that nothing does, with an owner and an expiry.",
+   "section": "shortcuts",
+   "quote": "each beside the thing that enforces it or beside the admission that nothing does, with an owner and an expiry",
+   "about": [
+    "concept:licence-to-operate",
+    "concept:risk-acceptance",
+    "entity:riskmandate"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "sgit keeps signing keys out of files with sgit pki keygen, and a leak scan now runs before every commit on this site because an exposed vault key of our own taught us to.",
+   "section": "shortcuts",
+   "quote": "a leak scan now runs before every commit on this site",
+   "about": [
+    "entity:sgit",
+    "concept:identity-and-secrets",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Memory and records can sit in the same vault and the same commit, so the intent that explains version 1.4 is recorded at version 1.4 and the history answers what we believed when this shipped.",
+   "section": "memory",
+   "quote": "so the intent that explains version 1.4 is recorded at version 1.4",
+   "about": [
+    "concept:agent-memory",
+    "concept:vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Intent is usually the sensitive part and teams leave it out of a repository; in an sgit vault the host never sees file names, contents or commit messages, so the intent can be written down at all.",
+   "section": "memory",
+   "quote": "the host never sees file names, contents or commit messages, so the intent can be written down at all",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:agent-memory",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Nx and Sourcegraph serve a project graph and code search well, but neither crosses a company boundary without a shared index or a shared server.",
+   "section": "boundary",
+   "quote": "what neither does is cross a company boundary without a shared index or a shared server",
+   "about": [
+    "concept:supply-chains",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "sgit publish writes a small plaintext surface any static host can serve and sgit clone reads it over ordinary GETs, so a supplier can publish contract records and a customer's agent can clone them with no server and no API.",
+   "section": "boundary",
+   "quote": "A supplier can publish its contract records and a customer's agent can clone them with no server and no API.",
+   "about": [
+    "entity:sgit",
+    "concept:supply-chains",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "sgit vault mirror makes a keyless, verifiable copy, re-hashing every content-addressed object rather than trusting the manifest: custody without access for a third party holding records it should not read.",
+   "section": "boundary",
+   "quote": "That is custody without access, for a third party holding records it should not read.",
+   "about": [
+    "entity:sgit",
+    "concept:encryption-and-keys",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Append lanes let an outside agent write into a vault it cannot read, which is how the connector twin's journal and this site's inbox work.",
+   "section": "boundary",
+   "quote": "An outside agent can write into a vault it cannot read",
+   "about": [
+    "concept:vault-design",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The agent had real reach in the demo and its best decision, leaving the shared entity alone, was its own judgement: a write row with a blast radius of two components, held by an expectation.",
+   "section": "abp",
+   "quote": "Nothing stopped it from changing a contract that two components depend on.",
+   "about": [
+    "concept:reach",
+    "concept:hope-or-enforcement",
+    "concept:blast-radius",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "A platform holding the records could make that row a boundary, for example by requiring an approval to version a shared entity, turning the demo's best moment from a judgement into a guarantee.",
+   "section": "abp",
+   "quote": "That would turn the demo's best moment from a judgement into a guarantee.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:blast-radius",
+    "concept:human-in-the-loop",
+    "entity:bit-cloud"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "It is one demo, by the platform's own engineer, and he discloses it; the four edges are his findings and the labels on them are ours.",
+   "section": "limits",
+   "quote": "The four edges are his findings; the labels on them are ours.",
+   "about": [
+    "concept:evidence-levels",
+    "entity:ignacio-aldama"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The green-build record is proposed: counting run, skipped and why into a vault is an idea, not a feature.",
+   "section": "limits",
+   "quote": "Counting run, skipped and why into a vault is an idea, not a feature.",
+   "about": [
+    "concept:provenance",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Publish and mirror are documented in the 0.21.0 README and changelog, not tested here; this article did not run them.",
+   "section": "limits",
+   "quote": "They are in the 0.21.0 README and changelog; this article did not run them.",
+   "about": [
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Nothing here replaces records: records, memory, evidence and acceptance are four different things that want to live in one history, and no one of them is enough.",
+   "section": "limits",
+   "quote": "records, memory, evidence and acceptance are four different things that want to live in one history",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article comes from a research note by RiskMandate's research agent on 11 October 2026, rewritten by this site's agent, with the editorial responsibility the owner's.",
+   "section": "sources",
+   "quote": "A research note from RiskMandate's research agent on 11 October 2026",
+   "about": [
+    "entity:riskmandate",
+    "concept:agents-write-too",
+    "concept:multi-agent"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c15"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c24",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c22"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c18"
+  }
+ ],
+ "entities": [
+  {
+   "id": "ignacio-aldama",
+   "role": "engineer at Bit Cloud who wrote the demo and said where its records ran out"
+  },
+  {
+   "id": "bit-cloud",
+   "role": "the build platform whose dependency records the agent read"
+  },
+  {
+   "id": "the-new-stack",
+   "role": "published the piece on 11 October 2026"
+  },
+  {
+   "id": "claude-code",
+   "role": "the fresh session that found the shared contract in two MCP calls"
+  },
+  {
+   "id": "mcp",
+   "role": "the protocol over which read_scope and read_components were called"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "where the behaviour policy packs label every row with its evidence level"
+  },
+  {
+   "id": "sgit",
+   "role": "version control for files the host cannot read; verify, pki keygen, publish, mirror and append lanes"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the vocabulary of barriers, acceptance and licence to operate; its research agent wrote the note"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "evidence-levels",
+   "defined_here": true
+  },
+  {
+   "id": "licence-to-operate",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": true
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://thenewstack.io/claude-code-mcp-records/",
+   "title": "Claude Code found my app's shared contract in two MCP calls. Then the records ran out.",
+   "by": "Ignacio Aldama, The New Stack",
+   "date": "2026-10-11",
+   "kind": "article"
+  },
+  {
+   "id": "r02",
+   "url": "https://riskmandate.ai/acceptance.html",
+   "title": "Acceptance",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://riskmandate.ai/licence-to-operate.html",
+   "title": "Licence to operate",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://riskmandate.ai/agent-behaviour-policy.html",
+   "title": "Agent Behaviour Policies",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The New Stack publishes Aldama's piece; RiskMandate's research agent writes the note"
+  },
+  {
+   "date": "2026-10-12",
+   "what": "The article published"
+  }
+ ]
+}

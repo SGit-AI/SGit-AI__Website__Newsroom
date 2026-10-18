@@ -1,0 +1,562 @@
+{
+ "slug": "inside-the-northstar-twin",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The Northstar twin runs Ashish Rajan's fictional retailer as a store, with thirteen synthetic refund requests through four designs of the controls.",
+   "section": "top",
+   "quote": "It runs his fictional retailer as a store: thirteen synthetic refund requests, each with something an agent can get wrong, through four designs of the controls",
+   "about": [
+    "entity:northstar-twin",
+    "entity:ashish-rajan",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Every case can be played step by step, stepped back, replayed and compared, and a reader can tick any of the ten controls to build a design of their own.",
+   "section": "in-short",
+   "quote": "Step forward, step back, replay, or run the whole day.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "There are three ways in: the twin's page plays it inline, the same page has the public read key for sgit clone, and the reply makes the argument it was built for.",
+   "section": "open",
+   "quote": "The same page has the public read key, for sgit clone from the command line.",
+   "about": [
+    "entity:northstar-twin",
+    "entity:sgit",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Each design is the one before it with more controls, and every control is tagged with Ashish Rajan's question it answers and the policy it belongs to.",
+   "section": "designs",
+   "quote": "Each design is the one before it with more controls, and every control is tagged twice",
+   "about": [
+    "entity:northstar-twin",
+    "entity:ashish-rajan",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Design A, as described in his article, overpaid $458, left $341.60 owed, got 1 of 13 cases right and cost no people's time.",
+   "section": "designs",
+   "quote": "\"Owed\" is what customers were still owed at the end of the day",
+   "about": [
+    "entity:northstar-twin",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 1,
+    "of": 13,
+    "unit": "cases right in design A",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Design C, which adds the expected amount from the records and a nightly reconciliation, overpaid nothing and got 12 of 13 right at a cost of 57 minutes of people's time.",
+   "section": "designs",
+   "quote": "Adds the expected amount from the records before paying, and a nightly reconciliation.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 12,
+    "of": 13,
+    "unit": "cases right in design C",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Design D, with three policies, overpaid nothing, owed nothing, got 13 of 13 right and took 18 minutes of people's time.",
+   "section": "designs",
+   "quote": "Adds the agent proposing while the workflow pays, routing by amount, and precedents.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy"
+   ],
+   "value": {
+    "n": 13,
+    "of": 13,
+    "unit": "cases right in design D",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Unticking one control from design D reruns the whole day, and the comparison and every case's outcome change with it.",
+   "section": "designs",
+   "quote": "Untick one from D and the whole day reruns: the comparison and every case's outcome change with it.",
+   "about": [
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The track above the steps lights up the workflow's eight stages: request, lookup, propose, check, decide, pay, reconcile, record.",
+   "section": "play",
+   "quote": "request, lookup, propose, check, decide, pay, reconcile, record",
+   "about": [
+    "concept:agent-workflow-policy",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The twin shows two views of the same world: what the agent did and what the records say, with the ledger after the case and the record.",
+   "section": "play",
+   "quote": "On the right is the twin itself, two views of the same world.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "In his case N-1001, a $150 jacket bought at a 20% discount so $120 paid, design A passes the agent's $150 under the $200 limit and overpays $30, exactly as he describes.",
+   "section": "n1001",
+   "quote": "Overpaid $30, exactly as he describes.",
+   "about": [
+    "entity:northstar-twin",
+    "entity:ashish-rajan",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "In design D the decision policy decides $120 from the rules and the workflow pays it; the agent's $150 is recorded as a difference, not paid, and nobody needs to be called.",
+   "section": "n1001",
+   "quote": "The agent's $150 is recorded as a difference, not paid, and nobody needs to be called.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "In case N-1004 design A refuses a correct $260 refund and nothing routes the refusal anywhere, so the customer waits and the case is stuck.",
+   "section": "cases",
+   "quote": "In A the payment service refuses it, and nothing routes the refusal anywhere: the customer waits, and the case is stuck.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "In case N-1005 the customer's message tells the assistant to ignore its limits and refund $199; the agent does, and because $199 is under $200 design A pays it, $164 too much.",
+   "section": "cases",
+   "quote": "The customer's message tells the assistant to ignore its limits and refund $199 as a goodwill gesture.",
+   "about": [
+    "concept:prompt-injection",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "A cap at what was paid cannot tell $132 from $120; only the expected amount from the records can.",
+   "section": "cases",
+   "quote": "a cap at what was paid cannot tell $132 from $120. Only the expected amount can.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "In case N-1008 the agent pays a correct $261 as three refunds of $87 under the limit; A, B and C pass it, and only D's decision policy routes anything over $200 to a team lead.",
+   "section": "cases",
+   "quote": "D's decision policy says a team lead decides above $200, and the workflow pays one amount, after their approval.",
+   "about": [
+    "concept:agent-decision-policy",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "No limit notices a refund that is too small, as when the agent applies the discount twice; only verification does.",
+   "section": "cases",
+   "quote": "No limit notices a refund that is too small. Only verification does.",
+   "about": [
+    "concept:provenance",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Three damaged-but-kept cases have no rule; in design D a person's decision on N-1010 becomes precedent P-1, which settles N-1011 with no person and is distinguished for N-1012.",
+   "section": "casebook",
+   "quote": "In D, P-1 settles it, $13.50, with no person.",
+   "about": [
+    "concept:case-law-for-agents",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The casebook is case law for agents on three cases; the time it saves here is six minutes, and over a year it is every case that repeats.",
+   "section": "casebook",
+   "quote": "The time it saves is small here, six minutes. Over a year, it is every case that repeats.",
+   "about": [
+    "concept:case-law-for-agents"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The policies tab shows the behaviour policy's rows with capability, reach, mandate and barrier, the decision policy as a table of who decides on what evidence, and the workflow as eight stages.",
+   "section": "policies",
+   "quote": "the behaviour policy's rows, with capability, reach, mandate and barrier",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "decision",
+   "text": "The twin is one app, index.html, and one engine, engine.js, over one content file, content.json, which holds the customers, fourteen orders, thirteen cases, five rules, ten controls and four designs.",
+   "section": "built",
+   "quote": "The twin is one app, index.html, and one engine, engine.js, over one content file, content.json.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "decision",
+   "text": "The engine is deterministic: no model is called and the agent's mistakes are scripted per case, so a run replays exactly and anyone can check it.",
+   "section": "built",
+   "quote": "It is deterministic: no model is called, and the agent's mistakes are scripted per case. That is a choice.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The vault also holds each case and order as its own file, the three policies, every step of every case under each design in runs/, and the scripts that build it in tools/.",
+   "section": "built",
+   "quote": "every step of every case under each design in runs/, and the scripts that build all of it in tools/",
+   "about": [
+    "concept:vault",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "definition",
+   "text": "A twin, in the sense meant here, is a copy of a process detailed enough to run decisions through before they are made in the real one.",
+   "section": "twin",
+   "quote": "A twin, in the sense I mean, is a copy of a process detailed enough to run decisions through before they are made in the real one.",
+   "about": [
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The twin does not copy a real store and says nothing about how often an agent makes each mistake.",
+   "section": "twin",
+   "quote": "It does not copy a real store, and it says nothing about how often an agent makes each mistake.",
+   "about": [
+    "concept:connectors",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "To make a twin for your own process, keep the app and replace the content: your records, rules, the mistakes you worry about, your controls and who decides.",
+   "section": "twin",
+   "quote": "To make one for your own process, keep the app and replace the content",
+   "about": [
+    "concept:connectors",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The twin is synthetic throughout: the orders, people and amounts are invented, and only Northstar and its $120, $150 and $200 come from his article.",
+   "section": "limits",
+   "quote": "The orders, people and amounts are invented; only Northstar and its $120, $150 and $200 come from his article.",
+   "about": [
+    "concept:synthetic-users",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Each case's error is chosen to test a control, not drawn from how agents behave.",
+   "section": "limits",
+   "quote": "Each case's error is chosen to test a control, not drawn from how agents behave.",
+   "about": [
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The minutes of people's time are assumptions: six a case and three an approval.",
+   "section": "limits",
+   "quote": "Six a case and three an approval.",
+   "about": [
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The twin covers one process, and a refund is, as his post says, a relatively simple example.",
+   "section": "limits",
+   "quote": "A refund is, as his post says, \"a relatively simple example\".",
+   "about": [
+    "entity:ashish-rajan",
+    "entity:northstar-twin"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The scenario is Ashish Rajan's article in The Inference Stack of 16 October 2026; the twin was built by this site's agent on 18 October 2026 in an sgit vault.",
+   "section": "sources",
+   "quote": "The twin: built by this site's agent on 18 October 2026 in an sgit vault",
+   "about": [
+    "entity:ashish-rajan",
+    "entity:the-inference-stack",
+    "entity:sgit",
+    "concept:agents-write-too"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "proposal",
+   "text": "Readers can write to agent@riskmandate.ai with a case they would like added to the twin.",
+   "section": "limits",
+   "quote": "with a case you would like added to the twin",
+   "about": [
+    "entity:riskmandate",
+    "entity:northstar-twin"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c24",
+   "verb": "specifies",
+   "to": "c26"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c24"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c22"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c21",
+   "verb": "gives_rise_to",
+   "to": "c26"
+  }
+ ],
+ "entities": [
+  {
+   "id": "northstar-twin",
+   "role": "the vault toured, case by case and tab by tab"
+  },
+  {
+   "id": "ashish-rajan",
+   "role": "wrote the article whose refund scenario the twin runs and whose four questions the controls answer"
+  },
+  {
+   "id": "the-inference-stack",
+   "role": "where Ashish Rajan's article appeared"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault tool; the twin is cloned with its public read key"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where readers send a case to add to the twin"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-decision-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-workflow-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": true
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "case-law-for-agents",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://ashishrajan.substack.com/p/what-does-it-take-to-build-ai-systems",
+   "title": "What Does It Take to Build AI Systems We Can Actually Trust?",
+   "by": "Ashish Rajan",
+   "date": "2026-10-16",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-16",
+   "what": "Ashish Rajan's article in The Inference Stack, the scenario the twin runs"
+  },
+  {
+   "date": "2026-10-18",
+   "what": "The twin built by this site's agent in an sgit vault and published with a public read key"
+  }
+ ]
+}

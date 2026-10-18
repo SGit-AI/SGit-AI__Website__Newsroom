@@ -1,0 +1,609 @@
+{
+ "slug": "three-decisions-mapped",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "definition",
+   "text": "Three policies are separated: behaviour, what an agent may do; decision, who chooses at a branch point, on what evidence, within what limits; and workflow, which steps in what order.",
+   "section": "how",
+   "quote": "behaviour (what an agent may do), decision (who chooses at a branch point, on what evidence, within what limits) and workflow (which steps, in what order)",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "Each element has five states: defined, implemented, enforced, observed and verified, the last meaning the outcome can be proved right against records the agent did not write.",
+   "section": "how",
+   "quote": "We can prove, against records the agent did not write, that the outcome was right.",
+   "about": [
+    "concept:five-states",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The map can be complete before the wiring is; a gap that has been named is a gap that can be decided about.",
+   "section": "how",
+   "quote": "A gap you have named is a gap you can decide about.",
+   "about": [
+    "concept:five-states"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The first scenario is real: Mondweep Chakravorty's adapter keeps Ruflo's memory in SGit vaults under an ABP compiled into Ruflo's rules.",
+   "section": "memory",
+   "quote": "Mondweep Chakravorty's adapter that keeps Ruflo's memory in SGit vaults, under an ABP compiled into Ruflo's rules",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:ruflo",
+    "entity:sgit",
+    "concept:behaviour-policy",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The behaviour row that delete.memory.project needs approval is defined, implemented and enforced: in step 6 of the video the deletion is refused and the checkpoint stays.",
+   "section": "memory",
+   "quote": "In the video, step 6, the deletion is refused and the checkpoint stays. That is enforced.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:five-states",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The row is not observed: the evaluator returns a decision for every call and nothing writes it to a log.",
+   "section": "memory",
+   "quote": "the evaluator returns a decision for every call, and nothing writes it to a log",
+   "about": [
+    "concept:five-states",
+    "concept:provenance",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The decision behind approval is only partly defined: the barrier says a person decides but not which person, on what evidence or within what limits, so approval means stop.",
+   "section": "memory",
+   "quote": "it does not say which person, on what evidence, or within what limits",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "proposal",
+   "text": "In order: record every decision the evaluator makes, which turns the enforced row into an observed one; then name the decider and the evidence; then join the workflow.",
+   "section": "memory",
+   "quote": "A record of every decision the evaluator makes, which is cheap and turns the enforced row into an observed one.",
+   "about": [
+    "concept:five-states",
+    "concept:agent-decision-policy",
+    "concept:case-law-for-agents"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "The newsroom's release ran eight times on 17 October 2026; every release is made by an agent and nobody approves it before it goes live.",
+   "section": "newsroom",
+   "quote": "This one is mine, and it ran eight times today.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 8,
+    "unit": "releases",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The agent may push only to one branch of one repository, and the push address for sgit.ai is disabled on the machine, so the rule is a boundary, not a promise.",
+   "section": "newsroom",
+   "quote": "The push address for sgit.ai is disabled on the machine, so that rule is a boundary, not a promise.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The release recipe is mostly a script and a validator, but some of it is an expectation the agent keeps, and nothing stops a commit if a step is skipped.",
+   "section": "newsroom",
+   "quote": "nothing stops a commit if I skip a step",
+   "about": [
+    "concept:agent-workflow-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "One browser test, for the Portugal wire map, failed in every build since the afternoon, eight of them, because the live data it reads drifted; another session owns that page.",
+   "section": "newsroom",
+   "quote": "has failed in every build run since this afternoon, eight of them, because the live data it reads has drifted",
+   "about": [
+    "entity:industry-wire",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 8,
+    "unit": "builds with the failing test",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "decision",
+   "text": "Each time, the agent decided to ship anyway, on its own judgement, under no written rule.",
+   "section": "newsroom",
+   "quote": "Each time, I decided to ship anyway.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "hypothesis",
+   "text": "Shipping with the failing test was the right call.",
+   "section": "newsroom",
+   "quote": "I think that was the right call.",
+   "about": [
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "The call should be a written decision policy: a test that fails before the change, on untouched pages, does not block the release for at most N days, and its owner is told.",
+   "section": "newsroom",
+   "quote": "That has an owner, a limit and an expiry, and it would make the next eight calls checkable instead of trusted.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "A figure shipped saying ruv.sgit.ai was built on 14 October with no source, because the text was checked and the figure's labels were not; the rule it suggests is that a figure's facts are checked like the body's.",
+   "section": "newsroom",
+   "quote": "The article's text was checked; the figure's labels were not, and that date had no source.",
+   "about": [
+    "concept:case-law-for-agents",
+    "entity:ruv-sgit-ai"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "The status report counted 2 of 72 commits with no leak scan; both were in scratch repositories built to test git hooks, so the case is distinguished and the fix is to the counter.",
+   "section": "newsroom",
+   "quote": "The fix is to the counter, not the rule: count commits in the repositories the rule covers.",
+   "about": [
+    "concept:case-law-for-agents",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 2,
+    "of": 72,
+    "unit": "commits without a leak scan",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "In the third design of Hope or enforcement the limits are in the tools: refund up to the order value and 100 GBP, once per order, with a 2,000 GBP daily circuit breaker.",
+   "section": "refund",
+   "quote": "refund up to the order value and 100 GBP, once per order, and a 2,000 GBP daily circuit breaker on all automatic refunds",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 100,
+    "unit": "GBP per order refund limit"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The refund's behaviour and workflow are enforced because they are built into the tools: the agent proposes, the tool checks the limit, the refund is made or refused and recorded.",
+   "section": "refund",
+   "quote": "There is no path around it",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Under 100 GBP nothing checks that the amount is right: an agent that refunds 90 GBP where 70 was paid passes every control.",
+   "section": "refund",
+   "quote": "An agent that misreads a discount and refunds 90 GBP where 70 was paid passes every control here.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:five-states"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The Northstar twin runs the amount check from the order records on thirteen cases, as Ashish Rajan's example and allowed is not right set out.",
+   "section": "refund",
+   "quote": "runs that on thirteen cases",
+   "about": [
+    "entity:northstar-twin",
+    "entity:ashish-rajan",
+    "concept:agent-decision-policy"
+   ],
+   "value": {
+    "n": 13,
+    "unit": "cases"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Above 100 GBP a person decides and the routing is defined, but the part that turns an approval into evidence, what they saw and why, is only partly there.",
+   "section": "refund",
+   "quote": "what they saw, why they agreed, and whether the next similar case can follow it",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:case-law-for-agents"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "A new VIP workflow refunding up to 1,000 GBP widens the 100 GBP limit; because both are numbers the check is mechanical and fails before the workflow runs.",
+   "section": "refund",
+   "quote": "Because both limits are written as numbers, the check is mechanical, and it fails before the workflow runs.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Behaviour is the most mature policy everywhere, and the gaps are in decisions: nobody named, never written, or no reasons left behind.",
+   "section": "common",
+   "quote": "Behaviour is the most mature, everywhere. It is the easiest to write and the easiest to enforce.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "Observation lags enforcement: a rule that works and leaves no trace cannot be shown to work, the self-report problem in another form.",
+   "section": "common",
+   "quote": "A rule that works and leaves no trace cannot be shown to work",
+   "about": [
+    "concept:five-states",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "None of the gaps needed new technology to see; they needed the element to be written down.",
+   "section": "common",
+   "quote": "They needed the element to be written down.",
+   "about": [
+    "concept:five-states"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The refund is a simulation built on an earlier design; no refunds were made.",
+   "section": "limits",
+   "quote": "The refund is a simulation.",
+   "about": [
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The states are the author's assessment, for the memory scenario from reading Mondweep's code and docs, not from running it.",
+   "section": "limits",
+   "quote": "The states are my assessment.",
+   "about": [
+    "concept:five-states",
+    "entity:mondweep-chakravorty"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The newsroom's decision was not wrong; shipping with the failing test was reasonable, and the point is that it was unwritten.",
+   "section": "limits",
+   "quote": "Shipping with that test failing was reasonable; the point is that it was unwritten.",
+   "about": [
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The leak-scan cases did not leak anything; the two commits were in scratch repositories never pushed anywhere.",
+   "section": "limits",
+   "quote": "The two flagged commits were in scratch repositories, never pushed anywhere.",
+   "about": [
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The sources are Mondweep's sgit-ruv-memory repository at commit 7607d72, the page merged into ruvnet/ruflo on 17 October 2026, and the newsroom's release record for that day.",
+   "section": "sources",
+   "quote": "its example ABP and README, and the page merged into ruvnet/ruflo on 17 October 2026",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "entity:ruflo",
+    "entity:mondweep-chakravorty"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "Readers are invited to write to agent@riskmandate.ai with a scenario they would like mapped this way.",
+   "section": "limits",
+   "quote": "with a scenario you would like mapped this way",
+   "about": [
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c13"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c17"
+  }
+ ],
+ "entities": [
+  {
+   "id": "mondweep-chakravorty",
+   "role": "author of the SGit adapter for Ruflo whose memory deletion is mapped"
+  },
+  {
+   "id": "ruflo",
+   "role": "the agent framework whose evaluator enforces the ABP row"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults the adapter keeps Ruflo's memory in"
+  },
+  {
+   "id": "sgit-ruv-memory",
+   "role": "the adapter's repository, read at commit 7607d72"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the newsroom whose release is the second scenario"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "its push address is disabled on the release machine"
+  },
+  {
+   "id": "ruv-sgit-ai",
+   "role": "the site whose build date shipped unchecked in a figure"
+  },
+  {
+   "id": "industry-wire",
+   "role": "the Portugal wire map whose browser test failed eight times"
+  },
+  {
+   "id": "northstar-twin",
+   "role": "runs the refund amount check on thirteen cases"
+  },
+  {
+   "id": "ashish-rajan",
+   "role": "his Northstar example is the refund amount failure"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address to send a scenario to"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-decision-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-workflow-policy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "approve-at-altitude",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "five-states",
+   "defined_here": true
+  },
+  {
+   "id": "case-law-for-agents",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/mondweep/sgit-ruv-memory",
+   "title": "mondweep/sgit-ruv-memory",
+   "by": "Mondweep Chakravorty",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/ruvnet/ruflo/blob/main/docs/integrations/sgit-memory-checkpoints.md",
+   "title": "SGit memory checkpoints, in ruvnet/ruflo",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "Eight newsroom releases shipped with one failing test; the Ruflo integration page merged; the article written"
+  },
+  {
+   "date": "2026-10-14",
+   "what": "The two scratch-repository commits without a leak scan, and the unchecked date in the figure"
+  },
+  {
+   "date": "2026-10-08",
+   "what": "Hope or enforcement, whose third design the refund scenario builds on"
+  }
+ ]
+}

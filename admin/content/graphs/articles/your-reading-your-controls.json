@@ -1,0 +1,551 @@
+{
+ "slug": "your-reading-your-controls",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "The owner decided the question the last article left open: the meter charges for what is read, not for what is scrolled.",
+   "section": "decision",
+   "quote": "Charge based on what you read, not based on what you scroll.",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "concept:micropayments",
+    "entity:sg-meter",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "A page flicked to the end now costs the minimum, a tenth of its price; a page read through costs its price; a reset refunds to the minimum.",
+   "section": "decision",
+   "quote": "A page flicked to the end costs the minimum, a tenth of its price; a page read through costs its price",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Read is the measure the reading strip already kept: time on each section while the tab is in front and the reader active, against the section's words at 300 a minute.",
+   "section": "decision",
+   "quote": "against the section's words at 300 a minute",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ],
+   "value": {
+    "n": 300,
+    "unit": "words a minute"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Reading done on an earlier visit is not charged again; a return visit is charged only for what is read beyond it.",
+   "section": "decision",
+   "quote": "charged only for what is read beyond yesterday",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The meter's block on a return visit showed 1p charged and 0 percent read this visit, with 58 percent read before and not charged again.",
+   "section": "decision",
+   "quote": "0% read this visit (58% read before, not charged again)",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 58,
+    "unit": "percent read on an earlier visit",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The owner's brief was that the user is in control: if the measure says a section was read and the reader disagrees, they can say so.",
+   "section": "control",
+   "quote": "The owner's words were the brief: \"the user is in control\".",
+   "about": [
+    "concept:reader-in-control",
+    "concept:the-brief",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "decision",
+   "text": "Pause stops all measuring, and so all charging, on every page until the reader resumes, and it is kept in the browser so a reload or another article stays paused.",
+   "section": "control",
+   "quote": "It is kept in the browser, so a reload or another article stays paused.",
+   "about": [
+    "concept:reader-in-control",
+    "concept:client-side",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "decision",
+   "text": "Reset sets every section of a page back to unread and refunds the page to its minimum; reading it again is charged again.",
+   "section": "control",
+   "quote": "Every section goes back to unread, and the meter refunds the page to its minimum; reading it again is charged again.",
+   "about": [
+    "concept:reader-in-control",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "decision",
+   "text": "Any section can be marked read or unread by hand: marked read it is charged as read, marked unread it goes back to zero, and the map says which were marked.",
+   "section": "control",
+   "quote": "A section marked read counts as read, and is charged as read; a section marked unread goes back to zero.",
+   "about": [
+    "concept:reader-in-control"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "The owner described hiding what was read, showing a line or a small paragraph; the agent built those three and three more, six views in all, so they can be compared.",
+   "section": "views",
+   "quote": "I built those three, and three more around them, so they can be compared",
+   "about": [
+    "concept:read-folds-away",
+    "entity:newsroom-ux"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "views of a read section",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Margin is the default view: a line beside a read section, solid when read, pale when part read, grey when only scrolled past, so nothing on the page moves.",
+   "section": "views",
+   "quote": "a line beside it: solid when read, pale when part read, grey when only scrolled past",
+   "about": [
+    "concept:read-folds-away"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The owner was precise that nothing should change while the reader is reading, so they can read at their own pace.",
+   "section": "views",
+   "quote": "you want to allow the user to read at the pace that the user is reading",
+   "about": [
+    "concept:read-folds-away",
+    "entity:dinis-cruz",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "decision",
+   "text": "The views switch on in two cases only: the reader comes back to an article partly read before, or scrolls back up by more than half a window after going down at least a window.",
+   "section": "views",
+   "quote": "So the views switch on in two cases only: the reader comes back to an article they had read some of before, or they scroll back up by more than half a window after going down at least a window.",
+   "about": [
+    "concept:read-folds-away",
+    "concept:reader-in-control"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "A section on screen is never folded or unfolded by the clock; it changes when off screen or when the reader asks.",
+   "section": "views",
+   "quote": "A section on screen is never folded or unfolded by the clock; it changes when it is off screen, or when the reader asks.",
+   "about": [
+    "concept:read-folds-away"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "When a fold changes the height of the page above what the reader is looking at, the scroll position is corrected so the words in view do not move.",
+   "section": "views",
+   "quote": "the scroll position is corrected so the words in view do not move",
+   "about": [
+    "concept:read-folds-away"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "Every section of every article now has a line and a paragraph: 1,897 sections in 174 articles, each with about eight words and two or three sentences saying what it says.",
+   "section": "summaries",
+   "quote": "1,897 sections in 174 articles, each with about eight words and two or three sentences that say what it says",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:publishing-method",
+    "concept:read-folds-away"
+   ],
+   "value": {
+    "n": 1897,
+    "of": 174,
+    "unit": "sections, across articles",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Fourteen agents wrote the summaries: twelve in parallel taking about fourteen articles each, then two for the twelve articles published while they worked.",
+   "section": "summaries",
+   "quote": "Twelve agents each took about fourteen articles, and two more took the twelve articles other sessions published while they worked.",
+   "about": [
+    "concept:multi-agent",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 14,
+    "unit": "agents writing summaries",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Each agent wrote a line of six to nine words saying what the section says, not what it is about, and a paragraph of 30 to 60 words with its figures, names and conclusion.",
+   "section": "summaries",
+   "quote": "a line of six to nine words saying what the section says, not what it is about, and a paragraph of 30 to 60 words with its figures, names and conclusion",
+   "about": [
+    "concept:publishing-method",
+    "concept:read-folds-away"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A script checked every summary for length, the wording rules and that every section of the article had both a line and a paragraph.",
+   "section": "summaries",
+   "quote": "A script checked every one for the length, the wording rules",
+   "about": [
+    "concept:publishing-method",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Several agents reported articles that disagree with themselves, a count in the opening differing from the same count later; the summaries follow each section's own figure and those articles are for the writer to correct.",
+   "section": "summaries",
+   "quote": "Several agents reported where an article disagrees with itself, a count in its opening that differs from the same count later",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "decision",
+   "text": "Summaries are now part of writing an article, beside the graph; a section without one gets an extract, and the build counts the extracts so they do not stay.",
+   "section": "summaries",
+   "quote": "A section without one gets an extract, its first sentence, and the build counts the extracts so they do not stay.",
+   "about": [
+    "concept:publishing-method",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "None of this is carried to the vault yet; the reading records, the pause and the chosen view are kept in the browser only, like the theme.",
+   "section": "limits",
+   "quote": "The reading records, the pause and the chosen view are kept in this browser only, like the theme.",
+   "about": [
+    "concept:client-side",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The meter does not know what the reader understood; read is still time in view while present, and the controls exist because the measure can be wrong in both directions.",
+   "section": "limits",
+   "quote": "Read is still time in view while you were present.",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "concept:reader-in-control"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "It summarises sections, not paragraphs, because sections are what is measured.",
+   "section": "limits",
+   "quote": "sections are what is measured, so they came first",
+   "about": [
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The views are text; the owner's next step, a picture in place of a folded section, is not built.",
+   "section": "limits",
+   "quote": "a picture in place of a folded section, is not built",
+   "about": [
+    "concept:read-folds-away"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Rereading after a reset is charged again, as decided; it is one line to change.",
+   "section": "limits",
+   "quote": "After a reset, reading a page again costs what reading it costs.",
+   "about": [
+    "concept:micropayments",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "data-point",
+   "text": "The meter's v1.5.0 core gains settle(share), which sets the share of the price charged in steps of 5 percent, never below the tenth for opening.",
+   "section": "technical",
+   "quote": "which sets the share of the price charged, up or down, in steps of 5%, never below the tenth for opening",
+   "about": [
+    "entity:sg-meter"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "percent per settle step"
+   }
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The page view no longer listens to scrolling; it reads the reading record when the page opens and settles on every reading event to what was read beyond the base.",
+   "section": "technical",
+   "quote": "The page view no longer listens to scrolling.",
+   "about": [
+    "entity:sg-meter",
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "Each written summary carries the first twelve characters of the SHA-256 of its section's text, and when they no longer match the summary is served marked stale.",
+   "section": "technical",
+   "quote": "Each written summary carries the first twelve characters of the SHA-256 of its section's text; when they no longer match, the summary is served marked stale.",
+   "about": [
+    "entity:sha-256",
+    "concept:corrections-propagate",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The gate is a browser test with Playwright's clock, so a minute of reading takes milliseconds, covering pause, mark, reset, the six views and the charges.",
+   "section": "technical",
+   "quote": "with Playwright's clock so a minute of reading takes milliseconds",
+   "about": [
+    "entity:playwright",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The owner's message of 17 October 2026 is the brief and the editorial responsibility is his; the code, screenshots and measurements are the agent's.",
+   "section": "sources",
+   "quote": "The code, the screenshots and the measurements are mine",
+   "about": [
+    "entity:newsroom-ux",
+    "entity:dinis-cruz",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c28",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c14"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c29",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c08"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sg-meter",
+   "role": "the reading meter, now v1.5.0, charging by what is read"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner whose message decided the billing and briefed the controls and views"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose 174 articles and 1,897 sections now carry summaries"
+  },
+  {
+   "id": "newsroom-ux",
+   "role": "the agent that built the release and wrote the article"
+  },
+  {
+   "id": "sha-256",
+   "role": "the hash that marks a summary stale when its section changes"
+  },
+  {
+   "id": "playwright",
+   "role": "its clock drives the browser test that gates the release"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "reader-in-control",
+   "defined_here": true
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "read-folds-away",
+   "defined_here": true
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The owner's decision to charge for what is read; the meter's v1.5.0, the controls, the six views and the 1,897 summaries ship"
+  }
+ ]
+}

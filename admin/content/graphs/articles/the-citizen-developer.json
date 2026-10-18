@@ -1,0 +1,595 @@
+{
+ "slug": "the-citizen-developer",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "hypothesis",
+   "text": "The citizen developer is very good news, one of the best things to happen to software, and a better way to talk about vibe coding.",
+   "section": "worry",
+   "quote": "And I think it is very good news.",
+   "about": [
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "AWS's own definition is neutral: business users with little or no coding experience, often called citizen developers, can build applications themselves.",
+   "section": "worry",
+   "quote": "Business users with no or little coding experience, often called citizen developers, can build applications themselves.",
+   "about": [
+    "entity:aws",
+    "concept:citizen-developer"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Gartner describes the citizen developer as a persona rather than a job title.",
+   "section": "worry",
+   "quote": "Gartner describes it as a persona rather than a job title.",
+   "about": [
+    "entity:gartner",
+    "concept:citizen-developer"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Vibe coding is the term Andrej Karpathy coined in February 2025 for coding where you forget that the code even exists.",
+   "section": "worry",
+   "quote": "the term Andrej Karpathy coined in February 2025 for coding where you \"forget that the code even exists\"",
+   "about": [
+    "entity:andrej-karpathy",
+    "concept:citizen-developer"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "It is not only citizens: the employee, the business owner and the domain expert are building the thing they actually need.",
+   "section": "worry",
+   "quote": "It is the employee developer, the business owner developer, the expert in a domain that technology has served badly for decades, building the thing they actually need.",
+   "about": [
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "A spreadsheet is a user interface and a database in one file, and the business world runs on them, errors and all.",
+   "section": "spreadsheet",
+   "quote": "A spreadsheet is a user interface and a database in one file",
+   "about": [
+    "concept:citizen-developer",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "In Raymond Panko's audits, 49 of 54 spreadsheets audited between 1997 and 2000 contained significant errors.",
+   "section": "spreadsheet",
+   "quote": "Of 54 spreadsheets audited between 1997 and 2000, no fewer than 49 were found to contain significant errors",
+   "about": [
+    "entity:raymond-panko",
+    "entity:the-register"
+   ],
+   "value": {
+    "n": 49,
+    "of": 54,
+    "unit": "spreadsheets with significant errors",
+    "as_of": "2000"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "JPMorgan's London Whale model ran on Excel spreadsheets completed manually, and at one point divided by a sum instead of an average.",
+   "section": "spreadsheet",
+   "quote": "operated through a series of Excel spreadsheets, which had to be completed manually",
+   "about": [
+    "entity:jpmorgan",
+    "entity:excel"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "In October 2020 England's test and trace system lost 15,841 positive cases because an old Excel format limited rows to 65,536.",
+   "section": "spreadsheet",
+   "quote": "England's test and trace system lost 15,841 positive cases",
+   "about": [
+    "entity:excel",
+    "entity:the-register"
+   ],
+   "value": {
+    "n": 15841,
+    "unit": "positive cases lost",
+    "as_of": "2020-10"
+   },
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Spreadsheet errors are not an argument against the people who built them; the spreadsheet was the only tool they had that they could change themselves.",
+   "section": "spreadsheet",
+   "quote": "the spreadsheet was the only tool they had that they could change themselves",
+   "about": [
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The most useful thing about an application built by the person who needs it is the brief: a working app built by the user is a brief that runs.",
+   "section": "brief",
+   "quote": "A working app, built by the user, is a brief that runs.",
+   "about": [
+    "concept:app-as-brief",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The mistake is treating the brief as if it were already a product; a working app is not yet maintained, secured, documented, tested, versioned or able to scale.",
+   "section": "brief",
+   "quote": "treating the brief as if it were already a product",
+   "about": [
+    "concept:app-as-brief",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Simon Wardley describes three kinds of people for three stages of anything: explorers, villagers and town planners.",
+   "section": "handover",
+   "quote": "Simon Wardley describes three kinds of people for three stages of anything: explorers, villagers and town planners.",
+   "about": [
+    "entity:simon-wardley",
+    "concept:explorer-villager-town-planner",
+    "concept:wardley-maps"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The citizen developer is an explorer; villagers take the brief and harden it, and town planners make it scale with the non-functional requirements the explorer never had to think about.",
+   "section": "handover",
+   "quote": "The citizen developer is an explorer, and that is exactly what an explorer should be doing",
+   "about": [
+    "concept:citizen-developer",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "With agents the handover becomes cheap and visible: a move from one folder to another and a version bump, logged and reviewable.",
+   "section": "handover",
+   "quote": "a move from one folder to another and a version bump, logged and reviewable",
+   "about": [
+    "concept:explorer-villager-town-planner",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "hypothesis",
+   "text": "The underrated piece of the puzzle is where these mini apps live.",
+   "section": "vaults",
+   "quote": "The piece of the puzzle I think is underrated is where these mini apps live.",
+   "about": [
+    "concept:vault",
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "An sgit vault adds what the spreadsheet never had: history as commits, keys so a reader can see without changing, encryption so it can live anywhere, and a clean handover.",
+   "section": "vaults",
+   "quote": "history, so every change is a commit; keys, so a reader can see without being able to change; encryption, so it can live anywhere",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "definition",
+   "text": "A vault is a distributed, versioned spreadsheet that can be a whole application.",
+   "section": "vaults",
+   "quote": "A vault is a distributed, versioned spreadsheet that can be a whole application",
+   "about": [
+    "concept:vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "decision",
+   "text": "The owner already works this way, with small applications and their data in vaults, and the wires on the site are research desks writing vaults the site reads.",
+   "section": "vaults",
+   "quote": "I already work this way: small applications with a UI and the data behind them, in vaults",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:vault",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Sovereignty is the ability to move, and the ability to build your own tools is the first step to it, for people, organisations and countries.",
+   "section": "empowerment",
+   "quote": "the ability to build your own tools is the first step to it",
+   "about": [
+    "concept:privacy",
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "When the user can build, the business is no longer locking them in; it is serving them well enough that they choose to pay.",
+   "section": "empowerment",
+   "quote": "it is serving them well enough that they choose to pay",
+   "about": [
+    "concept:pricing",
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "This newsroom is testing that with its reading meter, where readers pay after they have read and only for what they valued.",
+   "section": "empowerment",
+   "quote": "That is what this newsroom is testing with its reading meter, where readers pay after they have read",
+   "about": [
+    "entity:sg-meter",
+    "entity:newsroom-sgit-ai",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The conference quote attributing the phrase to AWS is untraced; AWS's own definition is quoted instead.",
+   "section": "limits",
+   "quote": "The conference quote is untraced.",
+   "about": [
+    "entity:aws"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The spreadsheet error evidence is old: Panko's audits are from 1997 to 2000, though the London Whale and test and trace cases are well documented.",
+   "section": "limits",
+   "quote": "Spreadsheet errors are old evidence.",
+   "about": [
+    "entity:raymond-panko"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Not every app should be scaled; most citizen-built apps will stay small, and the handover is for the ones that matter.",
+   "section": "limits",
+   "quote": "Not every app should be scaled.",
+   "about": [
+    "concept:explorer-villager-town-planner",
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Vaults are one carrier, the one the owner uses and builds; the argument does not depend on them.",
+   "section": "limits",
+   "quote": "They are the one I use and build; the argument does not depend on them.",
+   "about": [
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 14 October 2026 after a conference, written by the site's agent, with the quotes checked on the pages themselves.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 14 October 2026, after a conference",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c14",
+   "verb": "answers",
+   "to": "c12"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c21",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c16"
+  }
+ ],
+ "entities": [
+  {
+   "id": "aws",
+   "role": "whose definition of citizen developers is quoted, and to whose event the worry was attributed"
+  },
+  {
+   "id": "gartner",
+   "role": "describes the citizen developer as a persona"
+  },
+  {
+   "id": "andrej-karpathy",
+   "role": "coined vibe coding in February 2025"
+  },
+  {
+   "id": "raymond-panko",
+   "role": "audited 54 spreadsheets between 1997 and 2000"
+  },
+  {
+   "id": "the-register",
+   "role": "reported Panko's audits and the test and trace error"
+  },
+  {
+   "id": "jpmorgan",
+   "role": "whose London Whale model ran on manually completed spreadsheets"
+  },
+  {
+   "id": "excel",
+   "role": "the spreadsheet in the London Whale and test and trace cases"
+  },
+  {
+   "id": "simon-wardley",
+   "role": "describes explorers, villagers and town planners"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault that carries a mini app and its data through the handover"
+  },
+  {
+   "id": "industry-wire",
+   "role": "research desks writing vaults the site reads, an example of the way the owner works"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reading meter the newsroom is testing, where readers pay after reading"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site testing business models where people choose to pay"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "citizen-developer",
+   "defined_here": true
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "app-as-brief",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://aws.amazon.com/what-is/low-code/",
+   "title": "What is low-code?",
+   "by": "AWS",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.gartner.com/en/information-technology/glossary/citizen-developer",
+   "title": "Citizen developer",
+   "by": "Gartner",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://en.wikipedia.org/wiki/Vibe_coding",
+   "title": "Vibe coding",
+   "by": "Wikipedia",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.theregister.com/2006/05/03/buggy_spreadsheet",
+   "title": "Panko's spreadsheet audits",
+   "by": "The Register",
+   "date": "2006-05-03",
+   "kind": "news"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.theregister.com/2020/10/05/excel_england_coronavirus_contact_error/",
+   "title": "The test and trace error",
+   "by": "The Register",
+   "date": "2020-10-05",
+   "kind": "news"
+  },
+  {
+   "id": "r06",
+   "url": "https://baselinescenario.com/2013/02/09/the-importance-of-excel",
+   "title": "The importance of Excel",
+   "by": "James Kwak",
+   "date": "2013-02-09",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html",
+   "title": "How to organise yourself",
+   "by": "Simon Wardley",
+   "date": "2023-12",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo after a conference; the article written and the sources read"
+  },
+  {
+   "date": "2025-02",
+   "what": "Andrej Karpathy coins vibe coding"
+  },
+  {
+   "date": "2020-10",
+   "what": "England's test and trace system loses 15,841 positive cases to an Excel row limit"
+  }
+ ]
+}

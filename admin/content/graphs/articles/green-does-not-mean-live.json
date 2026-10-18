@@ -1,0 +1,60 @@
+{
+ "slug": "green-does-not-mean-live",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {"id": "c01", "kind": "fact", "text": "Two consecutive releases of the site pushed cleanly, verified themselves against both remotes, and never reached anybody.", "section": "top", "quote": "Two consecutive releases of this site pushed cleanly, verified themselves against both remotes", "about": ["concept:shipping", "entity:sgit-ai"]},
+  {"id": "c02", "kind": "data-point", "text": "The site served a two-release-old page for forty minutes.", "section": "top", "quote": "The site served a two-release-old page for forty minutes.", "about": ["concept:shipping", "entity:sgit-ai"], "value": {"n": 40, "unit": "minutes serving a stale page", "as_of": "2026-08-17"}},
+  {"id": "c03", "kind": "fact", "text": "The failure was noticed by a human on a phone who looked at the version badge.", "section": "top", "quote": "It was noticed by a human on a phone, who looked at the version badge", "about": ["concept:shipping"]},
+  {"id": "c04", "kind": "fact", "text": "The checks were not weak; they were checking the wrong boundary.", "section": "top", "quote": "The checks were not weak. They were checking the wrong boundary.", "about": ["concept:shipping"]},
+  {"id": "c05", "kind": "fact", "text": "The release script does five things and four of them are good: build, validate, push the encrypted vault, push the git mirror and confirm it is in sync.", "section": "top", "quote": "The release script does five things, and four of them are good", "about": ["concept:publishing-method", "entity:sgit"]},
+  {"id": "c06", "kind": "fact", "text": "Confirming HEAD equals origin/dev compares hashes and means the bytes arrived at GitHub; it does not mean anybody can read them.", "section": "top", "quote": "It means the bytes arrived at GitHub. It does not mean anybody can read them.", "about": ["concept:shipping", "entity:github"]},
+  {"id": "c07", "kind": "fact", "text": "Publishing the site has three boundaries, source to git remote to Pages deploy to the reader, and only two were verified.", "section": "top", "quote": "Publishing this site has three boundaries, and we were verifying two", "about": ["concept:deployment", "entity:github-pages"]},
+  {"id": "c08", "kind": "fact", "text": "The deploy job died in Set up job because codeload.github.com rate-limited the download of a third-party action with a 429.", "section": "top", "quote": "rate-limited the download of a third-party action", "about": ["concept:deployment", "entity:github-actions", "entity:github"]},
+  {"id": "c09", "kind": "fact", "text": "The validate and tag-release jobs passed; the one job that puts bytes in front of readers could not fetch its own dependency.", "section": "top", "quote": "The one job that puts bytes in front of readers could not fetch its own dependency.", "about": ["concept:deployment", "entity:github-actions"]},
+  {"id": "c10", "kind": "fact", "text": "The most likely thing to break in a deploy is not your code but shared infrastructure you do not run.", "section": "top", "quote": "the most likely thing to break in a deploy is not your code.", "about": ["concept:deployment", "concept:shipping"]},
+  {"id": "c11", "kind": "decision", "text": "A release now finishes by asking the live site what version it is serving, polling with a cache-buster for up to eight minutes.", "section": "top", "quote": "A release now finishes by asking the live site what version it is serving", "about": ["concept:shipping", "concept:publishing-method", "entity:sgit-ai"]},
+  {"id": "c12", "kind": "decision", "text": "If the version never appears the release aborts loudly, names the Actions page, and says a 429 on the action download is transient and needs a re-run.", "section": "top", "quote": "If the version never appears it aborts loudly, names the Actions page", "about": ["concept:shipping", "entity:github-actions"]},
+  {"id": "c13", "kind": "data-point", "text": "The cost of the check is up to eight minutes of waiting on every release.", "section": "top", "quote": "The cost is real: up to eight minutes of waiting on every release.", "about": ["concept:shipping"], "value": {"n": 8, "unit": "minutes of waiting per release", "as_of": "2026-08-17"}},
+  {"id": "c14", "kind": "fact", "text": "The site has three rules of one shape: a page nothing links to, a page the machine index omits, and a page the deploy never served are all unpublished.", "section": "top", "quote": "A page the deploy never served is unpublished.", "about": ["concept:shipping", "concept:publishing-method"]},
+  {"id": "c15", "kind": "definition", "text": "Shipped is a fact about the reader, not about your repository.", "section": "top", "quote": "shipped is a fact about the reader, not about your repository.", "about": ["concept:shipping"]},
+  {"id": "c16", "kind": "fact", "text": "Each of the three rules was learned by getting it wrong first, which is why the list is short and specific.", "section": "top", "quote": "Every one of them was learned by getting it wrong first", "about": ["concept:shipping", "concept:the-record"]},
+  {"id": "c17", "kind": "limit", "text": "The check detects a failed deploy; it does not repair one, and a 429 still needs a human or a re-run.", "section": "top", "quote": "It detects a failed deploy; it does not repair one.", "about": ["concept:shipping"]},
+  {"id": "c18", "kind": "limit", "text": "The check reads the home page's version badge, not every page, so a partial deploy that published some files would pass.", "section": "top", "quote": "It checks the home page's version badge, not every page.", "about": ["concept:shipping"]},
+  {"id": "c19", "kind": "limit", "text": "The check adds up to eight minutes to a release, a real tax on small fixes.", "section": "top", "quote": "It adds up to eight minutes to a release, which is a real tax on small fixes.", "about": ["concept:shipping"]},
+  {"id": "c20", "kind": "fact", "text": "The release script is in the SGit-AI__CLI repository and the releases described are v0.2.31 to v0.2.33.", "section": "top", "quote": "the releases described here are v0.2.31 to v0.2.33", "about": ["entity:sgit", "entity:sgit-ai"], "refs": ["r01"]}
+ ],
+ "edges": [
+  {"from": "c02", "verb": "backs", "to": "c01"},
+  {"from": "c03", "verb": "backs", "to": "c01"},
+  {"from": "c06", "verb": "backs", "to": "c04"},
+  {"from": "c08", "verb": "backs", "to": "c04"},
+  {"from": "c08", "verb": "backs", "to": "c10"},
+  {"from": "c07", "verb": "gives_rise_to", "to": "c11"},
+  {"from": "c12", "verb": "specifies", "to": "c11"},
+  {"from": "c13", "verb": "limits", "to": "c11"},
+  {"from": "c14", "verb": "backs", "to": "c15"},
+  {"from": "c17", "verb": "limits", "to": "c11"},
+  {"from": "c18", "verb": "limits", "to": "c11"},
+  {"from": "c19", "verb": "limits", "to": "c11"}
+ ],
+ "entities": [
+  {"id": "sgit-ai", "role": "the site whose two releases never reached readers"},
+  {"id": "sgit", "role": "the release script and vault push live in its repository"},
+  {"id": "github", "role": "the git remote the bytes arrived at"},
+  {"id": "github-pages", "role": "the deploy that puts bytes in front of readers"},
+  {"id": "github-actions", "role": "the job that died in Set up job on a 429"}
+ ],
+ "concepts": [
+  {"id": "shipping", "defined_here": true},
+  {"id": "deployment", "defined_here": false},
+  {"id": "publishing-method", "defined_here": false},
+  {"id": "the-record", "defined_here": false}
+ ],
+ "references": [
+  {"id": "r01", "url": "https://github.com/SGit-AI/SGit-AI__CLI", "title": "SGit-AI__CLI, the repository holding the release script", "by": "SGit-AI", "date": "undated", "kind": "repository"}
+ ],
+ "dates": [
+  {"date": "2026-08-17", "what": "Two releases reported success and never reached the site; the live check was added"}
+ ]
+}

@@ -1,0 +1,616 @@
+{
+ "slug": "the-human-in-the-loop",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "question",
+   "text": "Someone shaping a roundtable in London asked whether the human in the loop is a safety net or a bottleneck.",
+   "section": "question",
+   "quote": "is the human in the loop a safety net or a bottleneck?",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:london"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "A person checking every output is a bottleneck: if every piece of the agent's work waits for a person, the agent runs at the speed of the person.",
+   "section": "both",
+   "quote": "if every piece of that work waits for a person, the agent runs at the speed of the person",
+   "about": [
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Anthropic, writing about its coding agent in March 2026, opened with the number: Claude Code users approve 93% of permission prompts.",
+   "section": "both",
+   "quote": "Claude Code users approve 93% of permission prompts",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:approval-fatigue"
+   ],
+   "value": {
+    "n": 93,
+    "unit": "percent of permission prompts approved",
+    "as_of": "2026-03-25"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "In October 2025 Anthropic named approval fatigue and reported that sandboxing safely reduces permission prompts by 84%.",
+   "section": "both",
+   "quote": "safely reduces permission prompts by 84%",
+   "about": [
+    "entity:anthropic",
+    "concept:approval-fatigue",
+    "concept:agent-isolation"
+   ],
+   "value": {
+    "n": 84,
+    "unit": "percent reduction in permission prompts from sandboxing",
+    "as_of": "2025-10-20"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The fix the vendor reached for was fewer prompts, not more attentive people, and the owner thinks that is right.",
+   "section": "both",
+   "quote": "The fix the vendor reached for was fewer prompts, not more attentive people, and I think that is right.",
+   "about": [
+    "concept:approval-fatigue",
+    "entity:anthropic"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Below a certain level on the agency scale the person is not a safety net; they are where the liability lands for a decision the system made.",
+   "section": "both",
+   "quote": "They are where the liability lands for a decision the system made",
+   "about": [
+    "concept:agency-scale",
+    "concept:liability-line",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Checking every output gives you the cost of a bottleneck and the protection of a rubber stamp.",
+   "section": "both",
+   "quote": "checking every output gives you the cost of a bottleneck and the protection of a rubber stamp",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:approval-fatigue"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Two questions place every output: can it be undone, and how much would it cost if it were wrong; the person goes where the answers are no and a lot.",
+   "section": "where",
+   "quote": "can it be undone, and how much would it cost if it were wrong?",
+   "about": [
+    "concept:one-way-door",
+    "concept:blast-radius",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "decision",
+   "text": "In the owner's setup the person is at sending: the agents write drafts, and he reads, changes and presses send, because an email in his name cannot be recalled.",
+   "section": "where",
+   "quote": "the agents write drafts, and I read, change and press send",
+   "about": [
+    "concept:agentic-email",
+    "concept:one-way-door",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "An article can be undone, so nobody approves it before it goes live; validators fail the build on a broken link, a quote not word for word, a banned word or a missing figure.",
+   "section": "controls",
+   "quote": "a validator that fails the build on a broken link, a quote that is not word for word in its source, a banned word or a missing figure",
+   "about": [
+    "concept:publishing-method",
+    "entity:newsroom-sgit-ai",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "decision",
+   "text": "The owner reads every article after it is live, and what he finds becomes a new version and, if it is about wording, a rule.",
+   "section": "controls",
+   "quote": "I read every article, but I read it after it is live",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "decision",
+   "text": "After two emails went out that should not have, every draft now passes a second reader, a separate model call that sees only the rules, the sources and the draft.",
+   "section": "controls",
+   "quote": "every draft passes a separate model call that sees only the rules, the sources and the draft, and anything but an explicit pass stops it",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:agentic-email",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Redesigning one customer service agent three times cut the share of its policy kept only by the model's good behaviour from 97% to 23%, and its reach from 38,000 records to one.",
+   "section": "controls",
+   "quote": "fell from 97% to 23%, and the reach of one run fell from 38,000 customer records to one customer",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:reach",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 23,
+    "of": 97,
+    "unit": "percent of policy rows kept by hope, after against before"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "At the higher levels of the scale a review stops being a sign-off and becomes a quality step: each draft is a chance to fix the rule, the prompt or the data rather than the draft.",
+   "section": "source",
+   "quote": "each draft is a chance to fix whatever produced it, the rule, the prompt, the data, rather than the draft itself",
+   "about": [
+    "concept:agency-scale",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "A human in the loop who fixes the source makes the loop need them less every week; one who approves outputs makes it need them exactly as much forever.",
+   "section": "source",
+   "quote": "A human in the loop who fixes the source makes the loop need them less every week.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Trust in the owner's email agents is a record of drafts he did not have to change, the draft's hash beside the email that went out, read whenever he wants.",
+   "section": "record",
+   "quote": "Trust in my email agents is not a feeling; it is a record of drafts I did not have to change",
+   "about": [
+    "concept:the-record",
+    "concept:agentic-email",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The agent team has one exception written into its policy: a security agent may send one email, to one address, to put the team on hold.",
+   "section": "record",
+   "quote": "a security agent may send one email, to one address, to put the team on hold",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:multi-agent",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Reading the footprint afterwards against the mandate finds the near misses no approval prompt would have shown.",
+   "section": "record",
+   "quote": "Reading the footprint afterwards against the mandate finds the near misses",
+   "about": [
+    "concept:footprint",
+    "concept:behaviour-policy",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "On 13 October 2026 the newsroom shipped fourteen releases, v0.12.5 to v0.12.18, every commit made by an agent session, none approved by a person before going live.",
+   "section": "production",
+   "quote": "the newsroom shipped fourteen releases, v0.12.5 to v0.12.18",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:shipping",
+    "concept:agents-write-too"
+   ],
+   "value": {
+    "n": 14,
+    "unit": "releases in one day",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "Five articles were written and published in the repository that day, four by this session, each researched, checked, built, validated, tested and leak-scanned by an agent.",
+   "section": "production",
+   "quote": "Five articles were written and published in this repository.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:agents-write-too"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "articles published in one day",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The twelve agents that run the owner's correspondence draft every email and send none, the one exception being the security agent's hold email.",
+   "section": "production",
+   "quote": "the twelve agents that run my correspondence",
+   "about": [
+    "concept:multi-agent",
+    "concept:agentic-email"
+   ],
+   "value": {
+    "n": 12,
+    "unit": "agents in the correspondence team",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Shipping on its own and drafting without sending is not a contradiction but the same rule applied to two blast radii: an article can be corrected tomorrow, an email cannot.",
+   "section": "production",
+   "quote": "An article can be corrected tomorrow. An email cannot.",
+   "about": [
+    "concept:blast-radius",
+    "concept:one-way-door"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "question",
+   "text": "For the roundtable: which of your agent's outputs can be undone, and which cannot, and is the person only on the second kind?",
+   "section": "roundtable",
+   "quote": "Which of your agent's outputs can be undone, and which cannot?",
+   "about": [
+    "concept:one-way-door",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "question",
+   "text": "What share of your approvals are yes, and if it is above ninety per cent, what is the check for?",
+   "section": "roundtable",
+   "quote": "What share of your approvals are yes? If it is above ninety per cent, what is the check for?",
+   "about": [
+    "concept:approval-fatigue"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "question",
+   "text": "What record would let you remove a human check next quarter, and who decides?",
+   "section": "roundtable",
+   "quote": "What record would let you remove a human check next quarter, and who decides?",
+   "about": [
+    "concept:the-record",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The 93% is one vendor's figure for one product, about permission prompts in a coding agent; other approval flows may differ.",
+   "section": "limits",
+   "quote": "The 93% is one vendor's figure for one product.",
+   "about": [
+    "entity:anthropic",
+    "concept:approval-fatigue"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The owner's production is small: one person, one newsroom, one agent team; the pattern is what he would defend, not the scale.",
+   "section": "limits",
+   "quote": "One person, one newsroom, one agent team.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Some outputs need a person by law or by their nature; medicine, law and money moved on someone else's behalf have rules of their own.",
+   "section": "limits",
+   "quote": "Some outputs need a person by law or by their nature.",
+   "about": [
+    "concept:regulation",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Nobody approving each release is not nobody being responsible: the owner owns what the agents publish, and the controls are his.",
+   "section": "limits",
+   "quote": "I own what the agents publish, and the controls are mine; I chose where to put myself.",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The roundtable question is paraphrased; it came in a private message and its author is not named.",
+   "section": "limits",
+   "quote": "The roundtable question is paraphrased.",
+   "about": [
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "There was no voice memo; the article was assembled by the site's agent from the owner's published positions, and the production counts are from the git log for 13 October 2026.",
+   "section": "sources",
+   "quote": "There was no voice memo: this article was assembled by this site's agent from my published positions",
+   "about": [
+    "concept:agents-write-too",
+    "concept:the-record"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "answers",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c07",
+   "verb": "answers",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c08"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c22",
+   "verb": "answers",
+   "to": "c01"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "london",
+   "role": "where the roundtable is being shaped"
+  },
+  {
+   "id": "anthropic",
+   "role": "measured 93% of permission prompts approved and an 84% reduction from sandboxing"
+  },
+  {
+   "id": "claude-code",
+   "role": "the coding agent whose users approve 93% of prompts"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "shipped fourteen releases in one day with no per-release approval"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "human-in-the-loop",
+   "defined_here": true
+  },
+  {
+   "id": "approval-fatigue",
+   "defined_here": false
+  },
+  {
+   "id": "agency-scale",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+   "title": "How we built Claude Code auto mode",
+   "by": "Anthropic",
+   "date": "2026-03-25",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
+   "title": "Beyond permission prompts",
+   "by": "Anthropic",
+   "date": "2025-10-20",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-13",
+   "what": "The roundtable question arrives; fourteen releases and five articles shipped; the article written"
+  },
+  {
+   "date": "2026-03-25",
+   "what": "Anthropic reports 93% of permission prompts approved"
+  },
+  {
+   "date": "2025-10-20",
+   "what": "Anthropic names approval fatigue and reports sandboxing cuts prompts by 84%"
+  }
+ ]
+}

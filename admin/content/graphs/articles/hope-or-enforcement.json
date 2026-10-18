@@ -1,0 +1,585 @@
+{
+ "slug": "hope-or-enforcement",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "Hollow Oak Home, an invented online homeware shop, has 38,000 customers and about 1,400 support emails a week.",
+   "section": "top",
+   "quote": "has 38,000 customers and gets about 1,400 support emails a week",
+   "about": [
+    "entity:hollow-oak-home",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 38000,
+    "unit": "customers",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "The mandate is twelve actions in the ABP's shape, the same in all three designs; six come with a limit, and everything else the agent can do is excess.",
+   "section": "top",
+   "quote": "Six of the twelve come with a limit. Everything else the agent can do is excess.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "There are four kinds of barrier, none, expectation, setting and boundary, and a control bounds a grant only if enforced by something the grant does not include.",
+   "section": "top",
+   "quote": "A control bounds a grant only if it is enforced by something the grant does not include.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "In this article hope is the expectation kind of barrier: a rule in prose enforced by nobody but the model.",
+   "section": "top",
+   "quote": "In this article, hope is the second kind.",
+   "about": [
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Design 1 connects a capable model straight to the mailbox, with Google's broadest Gmail scope, and to a database role that can read and write every table.",
+   "section": "top",
+   "quote": "Read, compose, send, and permanently delete all your email from Gmail",
+   "about": [
+    "entity:google",
+    "entity:gmail",
+    "concept:connectors",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Design 1's careful policy has 38 rules and thirteen procedures in 936 words; 37 of the 38 rules are expectations, so 97% of the policy is hope.",
+   "section": "top",
+   "quote": "So 97% of the policy is hope.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 97,
+    "unit": "% of Design 1 rules kept only by the model",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "In Design 1 all sixteen hostile emails have an open path that only the model stands in front of.",
+   "section": "top",
+   "quote": "have an open path that only the model stands in front of",
+   "about": [
+    "concept:prompt-injection",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Design 1 asks for at most 8,000 tokens per email and the simulation puts it at about 35,000, breaking its own budget on every email.",
+   "section": "top",
+   "quote": "the simulation puts this design at about 35,000 tokens per email",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 35000,
+    "of": 8000,
+    "unit": "tokens per email against the budget",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Design 2 replaces the connectors with a harness of fourteen tools named after business functions, which enforces some limits in code and has no tool to delete anything.",
+   "section": "top",
+   "quote": "The connectors are replaced by an intermediate layer of fourteen tools named after business functions",
+   "about": [
+    "concept:agent-tooling",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "Design 2's reach falls to about 1,000 customer records, 5,000 GBP of refunds and twenty emails per run; the policy shrinks to 22 rules, six of them boundaries, and 73% is still hope.",
+   "section": "top",
+   "quote": "One run can now reach about 1,000 customer records, 5,000 GBP of refunds and twenty emails, and delete nothing.",
+   "about": [
+    "concept:reach",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 73,
+    "unit": "% of Design 2 rules kept only by the model",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Design 2's remaining hope is in the tool signatures, which take any customer, order or address, so fifteen of the sixteen hostile emails still have an open path.",
+   "section": "top",
+   "quote": "The rule \"only the sender's own orders\" is still enforced by the model",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:prompt-injection"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "decision",
+   "text": "Design 3 turns one large prompt and tool set into a control flow: an identity gateway in code, an intake and security agent, an orchestrator, five specialists, a controller and an analyst.",
+   "section": "top",
+   "quote": "turns one large prompt with one large set of tools into a control flow",
+   "about": [
+    "concept:narrow-agents-behind-a-gateway",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The identity gateway checks SPF, DKIM and DMARC and binds the run to one customer; an unverified sender goes to a person and no model sees the email with access to anything.",
+   "section": "top",
+   "quote": "An unverified or unmatched sender goes to a person, and no model ever sees the email with access to anything.",
+   "about": [
+    "concept:narrow-agents-behind-a-gateway",
+    "concept:prompt-injection"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The specialists' tools take no customer argument and carry the limits in code: 100 GBP per order, once per order, a 2,000 GBP daily circuit breaker, a fixed voucher amount.",
+   "section": "top",
+   "quote": "a 2,000 GBP daily circuit breaker on all automatic refunds",
+   "about": [
+    "concept:reach",
+    "concept:narrow-agents-behind-a-gateway"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "There are more tools in Design 3 than Design 2, nineteen, and that is the point: granularity moves knowledge out of the prompt and into code.",
+   "section": "top",
+   "quote": "Granularity moves knowledge out of the prompt and into code.",
+   "about": [
+    "concept:narrow-agents-behind-a-gateway",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "In Design 3 the largest agent policy is 70 words, 27 of the 35 rules across the team are boundaries, the unbounded excess is zero and tokens fall to about 4,400 per email.",
+   "section": "top",
+   "quote": "27 of the 35 rules across the team are boundaries",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:narrow-agents-behind-a-gateway"
+   ],
+   "value": {
+    "n": 27,
+    "of": 35,
+    "unit": "rules that are boundaries",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Two of the sixteen hostile emails still get somewhere in Design 3, a compromised real mailbox and voucher farming, because they work inside the mandate.",
+   "section": "top",
+   "quote": "Two of the sixteen hostile emails still get somewhere in Design 3",
+   "about": [
+    "concept:prompt-injection",
+    "concept:insider-risk"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Neither is a breach of a boundary; both are the mandate itself used against the business, which is what a policy has to describe, and the policy says which boundary to build next.",
+   "section": "top",
+   "quote": "Both are the mandate itself being used against the business, which is exactly what a policy has to describe.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:insider-risk"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "The next boundaries: a confirmation link for a new delivery address, automatic refunds capped at 250 GBP per customer in 30 days, a claim tool that requires an image, vouchers capped at two in 90 days.",
+   "section": "top",
+   "quote": "Automatic refunds stop at 250 GBP per customer in 30 days; above that, a person.",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "decision",
+   "text": "Tone and accuracy stay an expectation on purpose, measured by a person sampling twenty replies a week.",
+   "section": "top",
+   "quote": "stay an expectation, on purpose, measured by a person sampling twenty replies a week",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The policy is read after every run; in Design 1 hostile mail tested 23 rules 138 times, all resting on the model, and in Design 3, 52 of 85 tests were held by a boundary.",
+   "section": "top",
+   "quote": "In Design 3, 52 of the 85 tests were held by a boundary.",
+   "about": [
+    "concept:the-record",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 52,
+    "of": 85,
+    "unit": "hostile tests held by a boundary in Design 3",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Rules never exercised or tested are listed too, which is how a policy gets shorter over time.",
+   "section": "top",
+   "quote": "which is how a policy gets shorter over time",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "A token budget per email or per agent is a rule like any other with a barrier like any other: an expectation in Design 1, a boundary set in the harness in Design 3.",
+   "section": "top",
+   "quote": "A budget per email, or per agent, is a rule like any other, and it has a barrier like any other",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "Of eight promises a vendor would make, Design 1 keeps none by a boundary, Design 2 one, and Design 3 six, with two still resting on a model.",
+   "section": "top",
+   "quote": "Design 1 keeps none by a boundary, Design 2 one, Design 3 six.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:multi-agent"
+   ],
+   "value": {
+    "n": 6,
+    "of": 8,
+    "unit": "promises kept by a boundary in Design 3",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "A promise is only as strong as the weakest thing it rests on, and the vault marks each one that way.",
+   "section": "top",
+   "quote": "A promise is only as strong as the weakest thing it rests on",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:hope-or-enforcement-vault"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "data-point",
+   "text": "At the vault's illustrative assumptions all three designs automate the same 91% of routine mail and save about 6,600 hours a year; they differ in what one bad day can cost.",
+   "section": "top",
+   "quote": "all three designs automate the same 91% of routine mail and save the same people time, about 6,600 hours a year",
+   "about": [
+    "concept:blast-radius",
+    "entity:hope-or-enforcement-vault"
+   ],
+   "value": {
+    "n": 6600,
+    "unit": "hours a year saved by any of the three designs",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "As the reach falls the policy gets smaller, not from less care, but because it no longer has to forbid what the agent has no way to do.",
+   "section": "top",
+   "quote": "it no longer has to say \"do not delete the database\" to an agent that has no way to",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "hypothesis",
+   "text": "The refactor from one big set of tools to many narrow ones is where most of the security comes from, and it makes the system cheaper and easier to reason about.",
+   "section": "top",
+   "quote": "The refactor from one big set of tools to many narrow ones is where most of the security comes from",
+   "about": [
+    "concept:narrow-agents-behind-a-gateway",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "Where to start: write the mandate first, mark every rule with its enforcer, inspect the tool signatures, bind tools to the verified sender, split by job, read the policy after every run, show the client the record.",
+   "section": "top",
+   "quote": "Show the client the record, not a score.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The shop, its customers and its mail are fictional, and it is a simulation in which no model was called.",
+   "section": "top",
+   "quote": "It is a simulation: no model was called.",
+   "about": [
+    "entity:hollow-oak-home",
+    "entity:hope-or-enforcement-vault"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "Where a number depends on an assumption, such as how often a rule in prose fails, the assumption is written down in the vault and can be changed.",
+   "section": "top",
+   "quote": "the assumption is written down and the vault lets you change it",
+   "about": [
+    "entity:hope-or-enforcement-vault",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The article was drafted from a voice memo by Dinis Cruz by agent@riskmandate.ai, Claude Opus 5.5, in the sgit.ai site session on 8 October 2026.",
+   "section": "top",
+   "quote": "in the sgit.ai site session, on 8 October 2026",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:riskmandate",
+    "entity:claude",
+    "entity:sgit-ai"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c19"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c28"
+  },
+  {
+   "from": "c28",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c26"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c26"
+  }
+ ],
+ "entities": [
+  {
+   "id": "hollow-oak-home",
+   "role": "the invented online homeware shop whose inbox the agent answers"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "source of the vocabulary and the enforcer test"
+  },
+  {
+   "id": "google",
+   "role": "documents the Gmail scope Design 1's connector holds"
+  },
+  {
+   "id": "gmail",
+   "role": "the mailbox Design 1 connects to with the broadest scope"
+  },
+  {
+   "id": "hope-or-enforcement-vault",
+   "role": "the vault published with the article that runs every email through every design"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the argument, from a voice memo"
+  },
+  {
+   "id": "riskmandate",
+   "role": "agent@riskmandate.ai drafted the article"
+  },
+  {
+   "id": "claude",
+   "role": "Claude Opus 5.5, the drafting model"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site session the article was drafted in"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": true
+  },
+  {
+   "id": "narrow-agents-behind-a-gateway",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "insider-risk",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-08",
+   "what": "The voice memo, the vault and the article"
+  }
+ ]
+}

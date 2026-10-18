@@ -1,0 +1,541 @@
+{
+ "slug": "a-policy-for-every-skill",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Sean Turner built a natural-language control policy for agent skills and a CI pipeline that checks every skill contributed to an organisation-wide repository against it before hundreds of developers pull it down.",
+   "section": "top",
+   "quote": "a natural-language control policy for agent skills",
+   "about": [
+    "entity:sean-turner",
+    "concept:behaviour-policy",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The control asks whether a contributed skill is safe, secure, well documented, usable, understandable by the model that loads it and by the people who review it.",
+   "section": "built",
+   "quote": "is it safe, is it secure, is it well documented, is it usable",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:sean-turner"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "What makes it more than a linter is that it reads the skill in its context: a LinkedIn skill working from internal documents has no prompt injection risk, a skill that pulls content off the internet reads untrusted text.",
+   "section": "built",
+   "quote": "What makes it more than a linter is that it reads the skill in its context.",
+   "about": [
+    "concept:prompt-injection",
+    "entity:linkedin",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The control is complementary to a security scan, not a replacement: a scanner asks whether a skill is malicious, the control asks whether this is the right way to give the skill to the workforce.",
+   "section": "built",
+   "quote": "it is complementary to a security scan, not a replacement for one",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The owner describes the tool as Sean described it; he has not seen the code and could not find it published.",
+   "section": "built",
+   "quote": "I have not seen the code, and I could not find it published.",
+   "about": [
+    "entity:sean-turner",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A skill is code nobody compiles: when an agent loads it, its instructions become part of what the agent does, with whatever the agent can reach.",
+   "section": "dependency",
+   "quote": "a skill is code that nobody compiles",
+   "about": [
+    "concept:agent-tooling",
+    "concept:reach",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Chainguard now publishes hardened agent skills with a record of the upstream commit, which makes a skill a trustworthy input but does not say what an agent running it should be allowed to do.",
+   "section": "dependency",
+   "quote": "It does not say what an agent running it should be allowed to do.",
+   "about": [
+    "entity:chainguard",
+    "concept:supply-chains",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "MongoDB's guide to reviewing a skill describes a structural validator in CI and an LLM judge on quality dimensions, none of which asks where a skill's inputs come from, and says no automated tool reasons across skill boundaries.",
+   "section": "dependency",
+   "quote": "No automated tool currently reasons across skill boundaries.",
+   "about": [
+    "entity:mongodb",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "A skill described as an agent behaviour policy has a mandate, what it is for; a reach, everything it touches; a gap, which is the risk; and a barrier in front of each row of the gap.",
+   "section": "abp",
+   "quote": "Describe a skill that way and the context question answers itself.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The LinkedIn skill's barrier is a person pressing publish; the web research skill's gap is following an instruction found inside a page, and its barrier has to be treating fetched text as data.",
+   "section": "abp",
+   "quote": "the barrier has to be treating fetched text as data",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:prompt-injection",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "A skill with untrusted inputs is one leg of Simon Willison's lethal trifecta; whether the agent loading it has the other two is a property of where it runs.",
+   "section": "abp",
+   "quote": "A skill with untrusted inputs is one leg.",
+   "about": [
+    "concept:lethal-trifecta",
+    "entity:simon-willison",
+    "concept:behaviour-policy"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "definition",
+   "text": "A control written in natural language and checked by a model is hope-based security: you give the model the rule and hope it follows it.",
+   "section": "hope",
+   "quote": "A control written in natural language, checked by a model, is what I call hope-based security.",
+   "about": [
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Hope or enforcement measured the cost for one customer service agent: built the obvious way, 97% of its rules were kept only by the model's good behaviour.",
+   "section": "hope",
+   "quote": "97% of its rules were kept only by the model's good behaviour",
+   "about": [
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 97,
+    "unit": "percent of one agent's rules kept only by the model"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "A written control is still far better than none: it is the only place the intent exists, what a reviewer reads, what a model checks against, and what the deterministic rules are written from.",
+   "section": "hope",
+   "quote": "A written control is the only place the intent exists.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "Sean's next step: use an agent to write deterministic rules that follow the natural-language control; the model reads the control once and writes code that then runs the same way every time at no model cost per run.",
+   "section": "codify",
+   "quote": "Use an agent to write deterministic rules that follow the natural-language control.",
+   "about": [
+    "concept:models-to-need-them-less",
+    "entity:sean-turner",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "decision",
+   "text": "The description stays the canonical version, not the code: if the control changes, change the description and regenerate the code.",
+   "section": "codify",
+   "quote": "the description stays the canonical version, not the code",
+   "about": [
+    "concept:models-to-need-them-less"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The same round trip ran this week with Open Policy Agent, policy rows generated into Rego and parsed back, and AWS's agent policy service generates Cedar from plain English and checks it; intent stays the source.",
+   "section": "codify",
+   "quote": "people write intent, models write enforcement, and the intent stays the source",
+   "about": [
+    "entity:open-policy-agent",
+    "entity:aws",
+    "entity:cedar",
+    "concept:models-to-need-them-less"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "Bring hundreds of skills to a common ontology, as fractal semantic graphs do, so that which skills read untrusted content, reach private data and can send it out becomes a query rather than a review.",
+   "section": "graph",
+   "quote": "Then the questions that matter across a catalogue are queries, not reviews.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:lethal-trifecta",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "All of this is open source on our side and follows RiskMandate's line: a policy, a licence to operate that can be checked and revoked, and from a policy with a record, an insurable agent; we make agents insurable, we do not insure them.",
+   "section": "licence",
+   "quote": "we make agents insurable. We do not insure them.",
+   "about": [
+    "entity:riskmandate",
+    "concept:behaviour-policy",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "A skill with a policy, checked at contribution and enforced where it runs, is the smallest version of that whole chain, and Sean has built the first link.",
+   "section": "licence",
+   "quote": "Sean has built the first link.",
+   "about": [
+    "entity:sean-turner",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "limit",
+   "text": "Sean's tool is described from a conversation; the details are his as he told them, and any errors are the owner's.",
+   "section": "limits",
+   "quote": "Sean's tool is described from a conversation.",
+   "about": [
+    "entity:sean-turner"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The two skills in the figure are illustrations following his examples, not skills from his repository.",
+   "section": "limits",
+   "quote": "The two skills in the figure are illustrations.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "Generated rules are only as good as the control; a model can write a rule that checks the wrong thing, so the rules need tests and review like any code.",
+   "section": "limits",
+   "quote": "Generated rules are only as good as the control.",
+   "about": [
+    "concept:models-to-need-them-less"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "A barrier written as treat it as data is still an expectation until something outside the skill enforces it.",
+   "section": "limits",
+   "quote": "until something outside the skill enforces it",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:prompt-injection"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Licence to operate and insurability are designs, not products a customer runs today.",
+   "section": "limits",
+   "quote": "not products a customer runs today",
+   "about": [
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The article comes from a conversation with Sean Turner on 14 October 2026, recorded as a voice memo and written up by the site's agent; Sean read it that day and agreed to be named.",
+   "section": "sources",
+   "quote": "Sean read the article on 14 October 2026 and agreed to be named.",
+   "about": [
+    "entity:sean-turner",
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c15"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sean-turner",
+   "role": "built the natural-language control and the CI pipeline for skills"
+  },
+  {
+   "id": "chainguard",
+   "role": "publishes hardened agent skills with a record of the upstream commit"
+  },
+  {
+   "id": "simon-willison",
+   "role": "named the lethal trifecta"
+  },
+  {
+   "id": "aws",
+   "role": "its agent policy service generates Cedar from plain English"
+  },
+  {
+   "id": "open-policy-agent",
+   "role": "the round trip from policy rows to Rego and back, run this week"
+  },
+  {
+   "id": "cedar",
+   "role": "the policy language AWS generates from plain English"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the line from policy to licence to insurability, and where to write"
+  },
+  {
+   "id": "linkedin",
+   "role": "the destination of the illustrative skill with trusted inputs"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, who heard Sean describe the tool and carries the editorial responsibility"
+  },
+  {
+   "id": "mongodb",
+   "role": "its guide to reviewing an agent skill shows where the quality bar stops"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": true
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "models-to-need-them-less",
+   "defined_here": true
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.mongodb.com/docs/meta/tutorials/review-agent-skill/",
+   "title": "How to Review an Agent Skill",
+   "by": "MongoDB",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+   "title": "Policy in Amazon Bedrock AgentCore",
+   "by": "AWS",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+   "title": "The lethal trifecta for AI agents",
+   "by": "Simon Willison",
+   "date": "2025-06-16",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The conversation with Sean Turner, the voice memo, the sources read, and Sean's agreement to be named"
+  }
+ ]
+}

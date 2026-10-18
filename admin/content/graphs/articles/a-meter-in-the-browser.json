@@ -1,0 +1,460 @@
+{
+ "slug": "a-meter-in-the-browser",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Every page on sgit.ai now has a price of a few pence, and a meter in the corner of the screen debits it from five pounds of starting credit.",
+   "section": "top",
+   "quote": "Every page on sgit.ai now has a price, a few pence",
+   "about": [
+    "entity:sg-meter",
+    "entity:sgit-ai",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "All of it lives in the reader's browser and nowhere else: no account, no server, no card, nothing sent.",
+   "section": "top",
+   "quote": "no account, no server, no card, nothing sent",
+   "about": [
+    "concept:client-side",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "A private window restarts the meter at five pounds, but also with no history, and the history is what the site uses to pick articles for the reader.",
+   "section": "top",
+   "quote": "it also starts again with no history, and the history is what the site uses to pick articles for you",
+   "about": [
+    "concept:micropayments",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "question",
+   "text": "Whether people would make the trade, pay a little, keep the record on their own machine and get a site that knows them back, is the question worth testing.",
+   "section": "top",
+   "quote": "Whether people would make that trade is the question worth testing",
+   "about": [
+    "concept:micropayments",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "decision",
+   "text": "The meter has since gone live: it charges by how much of a page you read, the balance can go below zero with nothing blocked, a page can be declined with a reason, and topping up is a £5 Stripe payment.",
+   "section": "top",
+   "quote": "it charges by how much of a page you read, your balance can go below zero with nothing blocked",
+   "about": [
+    "entity:sg-meter",
+    "entity:stripe",
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "In the live version prices rose to 10p and 5p for articles.",
+   "section": "top",
+   "quote": "Prices rose to 10p and 5p for articles.",
+   "about": [
+    "concept:pricing",
+    "entity:sg-meter"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "pence for a recent article in the live meter",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "In the first version an article published in the last seven days costs 5p, an older one 3p, a newsletter issue, desk note or collection 2p, any other page 1p, and the homepage is free.",
+   "section": "top",
+   "quote": "An article published in the last seven days costs 5p, an older one 3p",
+   "about": [
+    "concept:pricing",
+    "entity:sg-meter"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "pence for an article published in the last seven days",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The reader starts with £5.00 of credit, each page is debited once per visit, and going back to a page in the same session costs nothing.",
+   "section": "top",
+   "quote": "and each page you open is debited once per visit",
+   "about": [
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "GBP of starting credit"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Out of credit nothing is blocked: the page is shown, the read is recorded as unpaid, and a bar offers a top-up.",
+   "section": "top",
+   "quote": "The page is shown, the read is recorded as unpaid, and a bar offers a top-up.",
+   "about": [
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Topping up has every step of a real shop except the payment: four packs, a cart, a review step, a confirm button and a receipt.",
+   "section": "top",
+   "quote": "has every step of a real shop except the payment",
+   "about": [
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The list of what you read, with topics, is enough to personalise the site: the account and the front page pick unread articles from the topics read most, in a Picked for you band.",
+   "section": "top",
+   "quote": "That list is enough to personalise the site.",
+   "about": [
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The browser does the arithmetic from the published articles/graphs.json, and the history never leaves the machine it was made on.",
+   "section": "top",
+   "quote": "The history never leaves the machine it was made on.",
+   "about": [
+    "concept:client-side",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "hypothesis",
+   "text": "The meter can be escaped but the personalisation cannot be copied; the experiment is whether a site that knows what you read makes a few pence a page feel fair.",
+   "section": "top",
+   "quote": "The meter can be escaped; the personalisation cannot be copied.",
+   "about": [
+    "concept:micropayments",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "A meter that charges nothing is the cheapest honest way to ask the question: price it, show the price, and give it away to people who know you.",
+   "section": "top",
+   "quote": "Because it is the cheapest honest way to ask the question.",
+   "about": [
+    "concept:startups",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The idea is old, 402 Payment Required was reserved in 1997; this meter asks whether the interesting part is the payment at all or what the reader gets back for the record of having paid.",
+   "section": "top",
+   "quote": "whether the interesting part is the payment at all, or what the reader gets back for the record of having paid",
+   "about": [
+    "concept:micropayments",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The first version was on the Portuguese newsroom: one cent a page, a five-euro wallet that refills itself, and a ledger page of its own.",
+   "section": "top",
+   "quote": "one cent a page, a five-euro wallet that refills itself when it empties",
+   "about": [
+    "entity:pt-newsroom-sgit-ai",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "The Portuguese rules are kept: say it is a demonstration, never block a page, charge once per page per visit, and work if the browser refuses to store anything.",
+   "section": "top",
+   "quote": "never block a page, charge once per page per visit so the back button is not a purchase",
+   "about": [
+    "concept:micropayments",
+    "entity:pt-newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "decision",
+   "text": "Prices depend on what a page is and how new it is, set in one place in the site's build so the published table and the meter cannot disagree.",
+   "section": "top",
+   "quote": "set in one place in the site's build so the published table and the meter cannot disagree",
+   "about": [
+    "concept:publishing-method",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "limit",
+   "text": "The meter holds no money; anybody can edit their balance in developer tools, and real money would need a server or receipts signed by one.",
+   "section": "top",
+   "quote": "Anybody can edit their own balance in the browser's developer tools.",
+   "about": [
+    "concept:micropayments",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "It does not follow the reader between devices; the history stays where it was made.",
+   "section": "top",
+   "quote": "The history stays where it was made.",
+   "about": [
+    "concept:privacy",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "A version that syncs could keep the ledger in an encrypted vault only the reader holds the key to; that is a proposal, not something built.",
+   "section": "top",
+   "quote": "that is a proposal, not something built",
+   "about": [
+    "concept:vault",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "It does not meter agents: reading a page's markdown twin or the newsroom's wire costs nothing.",
+   "section": "top",
+   "quote": "It does not meter agents.",
+   "about": [
+    "concept:agent-readable-web",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "It charges the same for every reader; the obvious next prices are per question rather than per page.",
+   "section": "top",
+   "quote": "The obvious next prices are not per page but per question",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The article was drafted from a voice note by Dinis Cruz by a Claude Code session working as the newsroom on 10 October 2026; the meter is assets/meter.js.",
+   "section": "top",
+   "quote": "by a Claude Code session working as the sgit.ai newsroom, on 10 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:claude-code",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "supersedes",
+   "to": "c09"
+  },
+  {
+   "from": "c06",
+   "verb": "supersedes",
+   "to": "c07"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c20",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c21",
+   "verb": "answers",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c07"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sg-meter",
+   "role": "the reading meter this article describes in its first version"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site every page of which now has a price"
+  },
+  {
+   "id": "stripe",
+   "role": "the £5 top-up payment in the live version"
+  },
+  {
+   "id": "industry-wire",
+   "role": "reading it costs nothing; agents are not metered"
+  },
+  {
+   "id": "claude-code",
+   "role": "the session that drafted the article as the newsroom"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the idea, with editorial responsibility"
+  },
+  {
+   "id": "pt-newsroom-sgit-ai",
+   "role": "the Portuguese newsroom where the first meter ran, one cent a page"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "micropayments",
+   "defined_here": true
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "journalism",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The first version of the meter described, and the same-day update when it went live"
+  },
+  {
+   "date": "1997",
+   "what": "402 Payment Required reserved in the web's protocol"
+  }
+ ]
+}

@@ -1,0 +1,529 @@
+{
+ "slug": "agent-workflows-on-ephemeral-vaults",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "definition",
+   "text": "The pattern: give agents that work together an encrypted vault as their shared memory and their way of talking, and let it exist only for as long as the work does.",
+   "section": "top",
+   "quote": "give them an encrypted vault as their shared memory and their way of talking, and let it exist only for as long as the work does",
+   "about": [
+    "concept:ephemeral-vault",
+    "concept:multi-agent",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "Capture the pattern as a series of architectures from simple to complex, each in a repository of its own with its agents, keys, fixtures and a CI job that proves it works, forkable as templates, recipes and skills.",
+   "section": "top",
+   "quote": "each in a repository of its own with its agents, its keys, its fixtures and a CI job that proves it works",
+   "about": [
+    "concept:ephemeral-vault",
+    "concept:shipping",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "proposal",
+   "text": "The repository should run as one of the checks before anything reaches sgit's main branch.",
+   "section": "top",
+   "quote": "The repository should run as one of the checks before anything reaches sgit's main branch.",
+   "about": [
+    "entity:sgit",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Every architecture answers four questions, memory, communication, asynchrony and visibility, and the answer depends on who holds which key.",
+   "section": "questions",
+   "quote": "The answer depends on who holds which key.",
+   "about": [
+    "concept:ephemeral-vault",
+    "concept:encryption-and-keys",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Because the only thing that leaves the environment is ciphertext, logs and data can be stored where you would not normally trust them; it is all about the decryption keys and whether the vault is ephemeral.",
+   "section": "top",
+   "quote": "Because the only thing that ever leaves the environment is ciphertext",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:ephemeral-vault"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Most agents on this site already work this way: the wire agent reads vaults research desks write holding only the read key, isolated agents keep memory in a vault, and a vault is the shared file system, channel and record.",
+   "section": "pattern",
+   "quote": "a vault is the shared file system, the message channel and the record, and its keys decide who can do what",
+   "about": [
+    "entity:industry-wire",
+    "concept:vault",
+    "concept:agent-memory",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Many of these vaults are ephemeral: when the work is done they can be deleted from the server or left as ciphertext nobody holds the key to.",
+   "section": "pattern",
+   "quote": "or simply left as ciphertext nobody holds the key to",
+   "about": [
+    "concept:ephemeral-vault"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The seven architectures run from one agent with one ephemeral vault, through writer and readers, fan-out by folder, append-only workers, no network, and watched, to a swarm of a hundred; a scoped clone is a speed setting, the boundary is the key.",
+   "section": "architectures",
+   "quote": "a scoped clone is a speed setting, not a boundary: the boundary is the key",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys",
+    "concept:ephemeral-vault"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "In the no-network architecture sgit reads a vault from a folder read-only with its local transport, and a courier outside the sandbox moves the encrypted files in and out and holds no keys at all.",
+   "section": "architectures",
+   "quote": "a courier outside the sandbox moves the encrypted files in and out and holds no keys at all",
+   "about": [
+    "concept:agent-isolation",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Each architecture should be shown in three environments, and since Claude Code can run background subagents concurrently, a single session can exercise them rather than a fleet.",
+   "section": "architectures",
+   "quote": "Background subagents run concurrently while you continue working.",
+   "about": [
+    "entity:claude-code",
+    "concept:multi-agent"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "A vault app gives the visual representation people ask for: a page that lives in the vault draws its contents, a screenshot is stored back in the vault, and the vault's key stays in the host.",
+   "section": "watched",
+   "quote": "open the vault, the app draws its contents, take a screenshot, store it in the vault, and carry on",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "A vault server runs as a Docker image and sgit can serve a vault's published folder locally, so the viewer can run wherever the agents do.",
+   "section": "watched",
+   "quote": "A vault server runs as a Docker image",
+   "about": [
+    "entity:docker",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "With in-memory storage, a hundred writers posting ten entries each landed all 1,000 entries in an append lane in 4.9 seconds, about 205 a second, and every accepted entry was listed afterwards.",
+   "section": "swarm",
+   "quote": "A hundred writers posting ten entries each landed all 1,000 in 4.9 seconds, about 205 a second.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 1000,
+    "unit": "entries landed in 4.9 seconds by a hundred writers",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Measured with sgit 0.21.0 and vault server 0.34.0 as one process on four cores, 1, 10, 50 and 100 writers each posting one 2 KB entry took 0.004, 0.03, 0.12 and 0.27 seconds.",
+   "section": "swarm",
+   "quote": "took 0.004, 0.03, 0.12 and 0.27 seconds",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 0.27,
+    "unit": "seconds for 100 writers posting one entry each",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "A hundred writers sharing one token sent 1,200 entries; exactly 1,000 were accepted and 200 refused at the server's cap of 1,000 waiting entries per inbox, the case for one token per worker.",
+   "section": "swarm",
+   "quote": "exactly 1,000 were accepted and 200 refused at the server's cap of 1,000 waiting entries per inbox",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 200,
+    "of": 1200,
+    "unit": "entries refused at the inbox cap",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "Ten scoped clones of one folder of a 2,000-file vault at once took 1.9 seconds with the server mostly idle; ten full clones of a 500-file vault took 21.1, on one core of a single process.",
+   "section": "swarm",
+   "quote": "Ten full clones of a 500-file vault took 21.1",
+   "about": [
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 21.1,
+    "unit": "seconds for ten full clones, against 1.9 for ten scoped clones",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "A scoped clone barely grows with the vault, 0.59 seconds at 100 files and 0.77 at 2,000, while a full clone went from 0.95 to 5.55.",
+   "section": "swarm",
+   "quote": "0.59 seconds at 100 files, 0.77 at 2,000, while a full clone went from 0.95 to 5.55",
+   "about": [
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 0.77,
+    "unit": "seconds for a scoped clone at 2,000 files",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The same run found four defects no demo would show: disk storage scans the whole store on every append, files over 4 MB fail on local disk, a headless clone could not fetch one file, and full clones queue on one process.",
+   "section": "gate",
+   "quote": "The same run found four problems, none of which a demo would have shown",
+   "about": [
+    "entity:sgit",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "That is the argument for the repository as a release gate: the architectures get complex fast and exercise exactly the features that change between releases.",
+   "section": "gate",
+   "quote": "That is the argument for the repository as a release gate.",
+   "about": [
+    "concept:shipping",
+    "concept:ephemeral-vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "The brief in eight items: a folder per architecture, a CI job each, three environments, a vault app each, the swarm test as a repeatable job, the defects as issues, the gate before sgit's main branch, and templates.",
+   "section": "brief",
+   "quote": "The repository runs before a release reaches sgit's main branch; a failure blocks it.",
+   "about": [
+    "concept:the-brief",
+    "entity:sgit",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "decision",
+   "text": "What to be careful about: no key in a repository, a log or a screenshot; ephemeral means deleted, each run cleans up its vaults; and the swarm test is for a server we run.",
+   "section": "brief",
+   "quote": "Ephemeral means deleted: each run cleans up its vaults.",
+   "about": [
+    "concept:ephemeral-vault",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The numbers are local: one four-core machine and one server process, and the append-lane and concurrency rows ran once.",
+   "section": "limits",
+   "quote": "One four-core machine and one server process; the append-lane and concurrency rows ran once.",
+   "about": [
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The disk numbers show a defect, not the design; the in-memory figures are closer to it and slow down as the store grows.",
+   "section": "limits",
+   "quote": "The disk numbers show a defect, not the design.",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Architectures 5, 6 and 7 are proposed; 2 and 4 build on what the site runs, and the rest are untested here.",
+   "section": "limits",
+   "quote": "2 and 4 build on what this site runs; the rest are untested here.",
+   "about": [
+    "concept:ephemeral-vault"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Nothing in the brief is built.",
+   "section": "limits",
+   "quote": "Nothing in the brief is built.",
+   "about": [
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 14 October 2026 written by the site's writer agent; the measurements were run by a research agent on one machine against a local vault server with throwaway vaults.",
+   "section": "sources",
+   "quote": "The measurements were run for this article by a research agent on one machine",
+   "about": [
+    "concept:agents-write-too",
+    "concept:voice-memo",
+    "entity:dinis-cruz",
+    "concept:multi-agent",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c20"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "the vault, its append lanes and scoped clones, measured at 0.21.0, and the main branch the gate protects"
+  },
+  {
+   "id": "claude-code",
+   "role": "can run background subagents concurrently, so one session can exercise the architectures"
+  },
+  {
+   "id": "docker",
+   "role": "the image the vault server runs as"
+  },
+  {
+   "id": "industry-wire",
+   "role": "the wire agent that reads research desks' vaults with only the read key"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where to write if your agents must work together without trusting where they run"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose memo and editorial responsibility this is"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "ephemeral-vault",
+   "defined_here": true
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://code.claude.com/docs/en/sub-agents",
+   "title": "Claude Code subagents",
+   "by": "Anthropic",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo, the brief written on v0.12.49, and the swarm measured on one machine"
+  }
+ ]
+}

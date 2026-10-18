@@ -1,0 +1,425 @@
+{
+ "slug": "chat-on-a-static-site",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "The network directory now has a chat box that answers one question, which of the nineteen sites is mine, with no key, no account and no network call.",
+   "section": "top",
+   "quote": "and it works with no key, no account and no network call.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:client-side",
+    "concept:search-as-navigation"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "Nineteen sibling sites is too many to browse, so the directory answers questions.",
+   "section": "top",
+   "quote": "Nineteen sibling sites is too many to browse, so the directory now answers questions.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:search-as-navigation"
+   ],
+   "value": {
+    "n": 19,
+    "unit": "sibling sites in the directory",
+    "as_of": "2026-08-27"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "sgit.ai is a static site on GitHub Pages with no server, no session and no place to keep a secret, and every sibling site is the same, so there is no backend to hold an API key.",
+   "section": "top",
+   "quote": "There is no server, no session, no place to keep a secret.",
+   "about": [
+    "entity:sgit-ai",
+    "entity:github-pages",
+    "concept:client-side",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The honest options are three: a local matcher, a key in the reader's browser, or moving the page into a vault, and only one of those is free.",
+   "section": "top",
+   "quote": "the honest options are a local matcher, a key in your browser, or moving the page into a vault, and only one of those is free.",
+   "about": [
+    "concept:client-side",
+    "concept:vault",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "decision",
+   "text": "Tier 0, match, shipped and on by default: a deterministic scorer runs in the browser against the catalogue of all nineteen sites, emitted at build time from the same data as the cards and the table.",
+   "section": "top",
+   "quote": "A deterministic scorer runs in the browser against the catalogue of all nineteen sites, emitted at build time",
+   "about": [
+    "concept:client-side",
+    "concept:search-as-navigation",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The matcher is not clever but is instant, free, private, works offline and tells you why it chose, which an LLM answer does not; it weights a hit in a site's thesis or domain above one in its summary.",
+   "section": "top",
+   "quote": "It is instant, free, private, works offline, and, the part that made it the default, it tells you why it chose.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "definition",
+   "text": "The important property: a reader should never have to hold a credential to use an index.",
+   "section": "top",
+   "quote": "a reader should never have to hold a credential to use an index.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:search-as-navigation"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "decision",
+   "text": "Tier 1, bring your own key, shipped and opt-in: paste an OpenRouter key and the browser calls its chat completions endpoint directly, streaming, with the catalogue as the system prompt, reusing the workbench vault's proven client.",
+   "section": "top",
+   "quote": "so this reuses a proven client rather than inventing one.",
+   "about": [
+    "entity:openrouter",
+    "concept:client-side",
+    "concept:bring-your-own-key"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "limit",
+   "text": "The cost of Tier 1 is real and stated: with no host there is no permission floor, so the key lives in the page's origin, never sent to sgit.ai but not protected as a vault app can protect it.",
+   "section": "top",
+   "quote": "with no host, there is no permission floor, so the key lives in this page's origin.",
+   "about": [
+    "concept:bring-your-own-key",
+    "concept:identity-and-secrets",
+    "entity:openrouter"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The key decision is a trust decision that belongs to the reader, so it is presented as one, and when the model call fails the panel falls back to Tier 0 and says so.",
+   "section": "top",
+   "quote": "Degrading to something that works beats an error message.",
+   "about": [
+    "concept:bring-your-own-key",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "Tier 2, the bridge, not built, removes the trade: serve the directory as a vault app, where the key lives below the permission floor, the host makes the call and the app never sees the credential.",
+   "section": "top",
+   "quote": "the host makes the call, and the app never sees the credential.",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:vault",
+    "concept:bring-your-own-key",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "llms.sgit.ai documents three chat surfaces, two of which need no application code, the vault chat panel and the same panel beside any running app, so every existing vault app gets this without being changed.",
+   "section": "top",
+   "quote": "Every existing vault app gets this without being changed.",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "limit",
+   "text": "The qualification travels with the claim, in llms.sgit.ai's own words: the bridge protects your key, and it is not yet a boundary that prevents all egress; it does not stop a malicious app calling a provider with its own credential.",
+   "section": "top",
+   "quote": "The bridge protects your key; it is not yet a boundary that prevents all egress.",
+   "about": [
+    "concept:bring-your-own-key",
+    "concept:agent-isolation",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Honestly scoped, the catalogue, the Tier 0 matcher and the BYOK client are done; a vault build of the directory and sg.llm detection are not started; a shared component is partly done since 7 September.",
+   "section": "top",
+   "quote": "The generator already emits a .md twin of every page; a vault app is a different target, not a different site",
+   "about": [
+    "concept:publishing-method",
+    "concept:custom-interfaces",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "hypothesis",
+   "text": "A chat box on one site is a feature; the same panel on all nineteen, reading each site's own catalogue, is what makes a network of nineteen sites navigable, which is why the catalogue is generated rather than written.",
+   "section": "top",
+   "quote": "A chat box on one site is a feature.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:publishing-method",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "By 7 September every page carries a pane, Ask this site, whose model is given seven tools as function definitions that run in the page over an index the build emits, and the pane shows every call it made.",
+   "section": "top",
+   "quote": "Each call runs in the page, over an index the build emits from the same data as",
+   "about": [
+    "concept:client-side",
+    "concept:search-as-navigation",
+    "entity:llms-txt",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "tools given to the pane's model",
+    "as_of": "2026-09-07"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "With no key the same seven tools run directly from typed words or slash commands; the three tiers are unchanged, and Tier 2 is still not wired and is on the board as T11.",
+   "section": "top",
+   "quote": "The three tiers are unchanged; Tier 2 is still not wired, and is now on the board as T11.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "limit",
+   "text": "It does not answer questions about the subjects: ask how to threat-model a payment gateway and it points at a site, because the sites hold the arguments and a summary that drifts from them is worse than a link.",
+   "section": "top",
+   "quote": "the sites already contain the arguments, and a summary that drifts from them is worse than a link that does not.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "limit",
+   "text": "It knows nothing not in the catalogue: nineteen theses, summaries and categories, quoted from each site's own words rather than paraphrased, the same rule the directory follows.",
+   "section": "top",
+   "quote": "all quoted from each site's own words rather than paraphrased, which is the same rule the directory follows.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:provenance",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The article was written by Dinis Cruz and the agentic team working with him, and is licensed CC BY 4.0.",
+   "section": "top",
+   "quote": "Written by Dinis Cruz and the agentic team working with him. Licensed CC BY 4.0.",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:creative-commons",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c09",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c16",
+   "verb": "supersedes",
+   "to": "c05"
+  },
+  {
+   "from": "c17",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c01"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit-ai",
+   "role": "the static site whose network directory got the chat box"
+  },
+  {
+   "id": "github-pages",
+   "role": "where sgit.ai is hosted, with no server"
+  },
+  {
+   "id": "openrouter",
+   "role": "the provider the bring-your-own-key tier calls directly from the browser"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault whose app host would hold the key below the permission floor in Tier 2"
+  },
+  {
+   "id": "llms-txt",
+   "role": "the pane's index is emitted from the same data as llms.txt"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "wrote the article with the agentic team"
+  },
+  {
+   "id": "creative-commons",
+   "role": "the CC BY 4.0 licence on the article"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "search-as-navigation",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "bring-your-own-key",
+   "defined_here": true
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-08-27",
+   "what": "The chat box shipped on the network directory with Tier 0 and Tier 1"
+  },
+  {
+   "date": "2026-09-07",
+   "what": "The addendum: every page carries a pane with seven tools, in v0.2.63"
+  }
+ ]
+}

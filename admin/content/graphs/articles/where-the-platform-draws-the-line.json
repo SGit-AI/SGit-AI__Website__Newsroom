@@ -1,0 +1,780 @@
+{
+ "slug": "where-the-platform-draws-the-line",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "On 7 October Microsoft made Microsoft Execution Containers generally available, a containment layer for agents declared in JSON and enforced by the operating system; with ACS it is the most complete platform control for agents the author has seen.",
+   "section": "top",
+   "quote": "it is the most complete platform control for agents I have seen",
+   "about": [
+    "entity:mxc",
+    "entity:acs",
+    "entity:microsoft",
+    "concept:agent-isolation"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "hypothesis",
+   "text": "If the platform now does containment, what is left for RiskMandate is the shared responsibility model again, and that is good news.",
+   "section": "top",
+   "quote": "My answer is that this is the shared responsibility model again, and that it is good news.",
+   "about": [
+    "concept:shared-responsibility",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "decision",
+   "text": "The article is a briefing built from the announcement, the MXC repository and the ACS announcement; where the voice memo guessed and the documents disagreed, the documents win.",
+   "section": "top",
+   "quote": "Where my memo guessed and the documents disagreed, the documents win, and I say so.",
+   "about": [
+    "concept:voice-memo",
+    "concept:provenance",
+    "entity:satya-nadella"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Eight scenarios run three ways: a plain agent has an open path in all eight; a behaviour policy names all eight and bounds none; on MXC and ACS three become OS boundaries, four need the business's rule, one stays for a named person.",
+   "section": "top",
+   "quote": "three become operating-system boundaries, four become boundaries if the business writes the rule into ACS or the tool, and one stays where only a named person can accept it",
+   "about": [
+    "concept:shared-responsibility",
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 3,
+    "of": 8,
+    "unit": "scenarios that become operating-system boundaries"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Microsoft frames three platform capabilities: containment, which MXC delivers now, and identity through Entra and manageability through Agent 365, both announced as coming.",
+   "section": "briefing",
+   "quote": "The other two are announced as coming",
+   "about": [
+    "entity:mxc",
+    "entity:microsoft-entra",
+    "entity:microsoft"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The sentence that matters most in Microsoft's announcement is that an agent cannot be its own security authority; its website example is a row of the gap made into a boundary.",
+   "section": "briefing",
+   "quote": "An agent cannot be its own security authority.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement",
+    "entity:microsoft"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "definition",
+   "text": "MXC is an SDK the host builds in: a JSON request names the container type, the rules and the command; MXC validates it, picks a backend and launches the workload in a container, with the policy held outside the workload.",
+   "section": "briefing",
+   "quote": "The policy is held outside the workload, so the agent, or code it generated, cannot grant itself more.",
+   "about": [
+    "entity:mxc",
+    "concept:agent-isolation",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The request is validated against a versioned schema, 1.0.0 stable and a 1.1.0 preview, across five policy areas: containment, process, file system, network and user interface.",
+   "section": "briefing",
+   "quote": "the stable schema is 1.0.0, and a 1.1.0 preview version carries experimental features",
+   "about": [
+    "entity:mxc"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Containers are deny by default and the network rules are numeric, an address range, a protocol and a port; filtering by host name is left to a proxy, and MXC does not see what the traffic says.",
+   "section": "briefing",
+   "quote": "MXC itself does not see what the traffic says.",
+   "about": [
+    "entity:mxc",
+    "concept:agent-isolation",
+    "concept:shared-responsibility"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The day before, the synthetic users run wrote exactly that proxy at the request level; MXC would have given the sandbox, and the rule that mattered, read this one site and change nothing, was ours to write.",
+   "section": "briefing",
+   "quote": "The rule that mattered, \"read this one site, change nothing\", was ours to write.",
+   "about": [
+    "concept:synthetic-users",
+    "concept:shared-responsibility",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Four sandboxes share one schema: the process container runs on Windows, macOS and Linux; the session container and WSL are Windows only; the microVM is experimental; the code is MIT, and the schema is Microsoft's own, not a standard.",
+   "section": "briefing",
+   "quote": "the schema is Microsoft's own rather than a standards body's",
+   "about": [
+    "entity:mxc",
+    "concept:open-source",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "MXC has three modes, enforcement, learning and permissive; permissive mode answers on the machine the question an ABP's reach answers on paper, and learning mode is calibration against reality.",
+   "section": "briefing",
+   "quote": "Permissive mode answers, on the machine, the question an Agent Behaviour Policy's reach answers on paper",
+   "about": [
+    "entity:mxc",
+    "concept:reach",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "A developer declares what the workload needs and the organisation narrows it through Intune, coming; GitHub Copilot, OpenAI Codex, Replit and others support MXC now, and Claude Code is listed as releasing support.",
+   "section": "briefing",
+   "quote": "GitHub Copilot, OpenAI Codex, Replit and others support MXC now; Anthropic's Claude Code is listed among those releasing support.",
+   "about": [
+    "entity:copilot",
+    "entity:codex",
+    "entity:replit",
+    "entity:claude-code",
+    "entity:mxc"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "definition",
+   "text": "The Agent Control Specification is a portable manifest that evaluates a policy, usually Rego, at eight interception points in the agent loop with a session snapshot, returning allow, warn, deny or escalate and failing closed.",
+   "section": "briefing",
+   "quote": "runs a policy engine (usually Rego), and returns allow, warn, deny or escalate, failing closed if anything breaks",
+   "about": [
+    "entity:acs",
+    "entity:open-policy-agent",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "ACS's statement of the problem: traditional access control cannot ask, given everything this agent has touched in this conversation, whether this call is still safe.",
+   "section": "briefing",
+   "quote": "given everything this agent has touched in this conversation, is this call still safe?",
+   "about": [
+    "entity:acs",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Whether ACS is a boundary depends on who owns the installation: if the agent can edit the manifest or the host, it is a setting; same code, different owner.",
+   "section": "briefing",
+   "quote": "If the agent can edit the manifest, or the host, it is a setting. Same code, different owner.",
+   "about": [
+    "entity:acs",
+    "concept:hope-or-enforcement",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "ACS owns where, when and how a policy is evaluated; the rules themselves come from whoever authors them.",
+   "section": "briefing",
+   "quote": "The rules themselves, it says, come from whoever authors them.",
+   "about": [
+    "entity:acs",
+    "concept:shared-responsibility"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "definition",
+   "text": "Cloud providers drew a line where their control ended, security of the cloud theirs and security in the cloud yours; platforms for agents draw the same line at the granularity they can touch, not out of bad faith.",
+   "section": "shared",
+   "quote": "A company draws its responsibility around what it can touch. That is not bad faith.",
+   "about": [
+    "concept:shared-responsibility",
+    "entity:aws"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "RiskMandate's Lab 01 found the same shape in connectors: the narrowest Gmail scope that reads one message reads every message; the unit of restriction is the application and the tool, not the data or the business.",
+   "section": "shared",
+   "quote": "The unit of restriction is the application and the tool. It is not the data, and it is not the business.",
+   "about": [
+    "entity:riskmandate",
+    "entity:gmail",
+    "concept:connectors",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "For decades business rules lived in software, enforced by the screen that did not show the button; an agent calls the API the button would have called, and the rule is gone unless somebody writes it down and something enforces it.",
+   "section": "shared",
+   "quote": "An agent calls the API the button would have called, and the rule is gone, unless somebody writes it down and something enforces it.",
+   "about": [
+    "concept:shared-responsibility",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "A label is a decision: remove an invoices-to-pay label from forty messages and the bills go unpaid; the connector twin can restore the labels but not the missed payments, and only the business knows what a label means.",
+   "section": "shared",
+   "quote": "That is business knowledge, and only the business has it.",
+   "about": [
+    "concept:connectors",
+    "entity:gmail",
+    "concept:shared-responsibility"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Sending depends on who, from whom and in whose voice: two emails went out in the author's voice to a legitimate external contact, which an external-recipient rule would not have stopped; the rule that mattered was agents draft, a person sends.",
+   "section": "shared",
+   "quote": "The rule that mattered was ours: agents draft, a person sends.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:agentic-email",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Quantity is context: MXC cannot count, ACS can if given the history, but what number is normal for this agent, customer and day is not something a platform can know; the limits in Hope or enforcement were the business's.",
+   "section": "shared",
+   "quote": "But what number is normal for this agent, this customer, this day, is not something a platform can know.",
+   "about": [
+    "concept:shared-responsibility",
+    "concept:hope-or-enforcement",
+    "entity:mxc",
+    "entity:acs"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Rows 1 to 3 are the platform's and MXC handles them by construction; rows 4 to 7 have a hook in ACS or the tool but the rule's content comes from the mandate; row 8 is inside the mandate, beyond any platform rule.",
+   "section": "scenarios",
+   "quote": "No platform rule can refuse a genuine customer's account asking for something the agent is authorised to do.",
+   "about": [
+    "concept:shared-responsibility",
+    "concept:risk-acceptance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The scenarios are reasoned from the published behaviour of MXC and ACS and from the site's own policies and vaults; they are not a test run.",
+   "section": "scenarios",
+   "quote": "the scenarios are reasoned from the published behaviour of MXC and ACS and from our own policies and vaults; they are not a test run",
+   "about": [
+    "entity:mxc",
+    "entity:acs",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "The next step is to publish the eight rows as a vault with every row computed, the way Hope or enforcement was.",
+   "section": "scenarios",
+   "quote": "The next step is to publish them as a vault with every row computed, the way Hope or enforcement was.",
+   "about": [
+    "concept:vault",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Mapped to an ABP, permissive mode's report is reach, learning mode is calibration, MXC's paths and ports are boundaries when outside the workload; neither MXC nor ACS expresses the mandate, so the gap is derived only if a mandate exists.",
+   "section": "map",
+   "quote": "Not expressed. A policy says what the workload may touch, not what it is for",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "entity:mxc",
+    "entity:acs"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "MXC and ACS are barrier sources, but an MXC policy file inside the agent's own read-write path is a setting, not a boundary; the site has lived that with its synthetic users' browser rule, so the policy file must live where the workload cannot write.",
+   "section": "map",
+   "quote": "The policy file must live where the workload cannot write.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:mxc",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "Permissive and learning-mode activity reports are footprint, what the agent actually did read afterwards with nobody inline, and against a mandate they produce a near miss and a dormant mandate.",
+   "section": "map",
+   "quote": "Read against a mandate, they produce the two findings that matter: a near miss, and a dormant mandate.",
+   "about": [
+    "concept:footprint",
+    "entity:mxc"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "The policy is what writes the rules: an ABP row compiles down into an MXC path, an ACS policy and a tool limit; generating MXC JSON and ACS policies from an ABP is a design today, not a product.",
+   "section": "map",
+   "quote": "Generating MXC JSON and ACS policies from an ABP is a design today, not a product.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:riskmandate",
+    "entity:mxc",
+    "entity:acs"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "data-point",
+   "text": "Hope or enforcement measured the move from 97% hope to 23%; with MXC and ACS it arrives as platform features rather than custom code, which is a big deal.",
+   "section": "summit",
+   "quote": "from 97% hope to 23%",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:mxc",
+    "entity:acs"
+   ],
+   "value": {
+    "n": 23,
+    "of": 97,
+    "unit": "percent of rows still hope, after against before"
+   }
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The platform is a stage of the climb, not the top: above its line sit the function, the process, the client and the company's purpose, each with its own owner, and where the platform draws its line the business's work starts.",
+   "section": "summit",
+   "quote": "Where the platform draws its line, the business's work starts.",
+   "about": [
+    "concept:shared-responsibility",
+    "concept:approve-at-altitude",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "proposal",
+   "text": "Turn on MXC for coding agents now, deny by default, with the policy file outside every writable path; run new agents in permissive mode first; put external-facing tool calls behind ACS installed by someone other than the agent's owner.",
+   "section": "start",
+   "quote": "Turn on MXC for coding agents now, deny by default, and keep the policy file outside every path the agent can write.",
+   "about": [
+    "entity:mxc",
+    "entity:acs",
+    "concept:deployment",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "proposal",
+   "text": "Write the business rules down layer by layer, mark each with what enforces it, count what is still hope, and name the owner of what is left and the date it is next accepted.",
+   "section": "start",
+   "quote": "That count is what the platform has not covered yet.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:risk-acceptance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "Microsoft's material is paraphrased and quoted twice; the JSON example uses the schema's field names with illustrative paths; the eight scenarios are reasoned, not run.",
+   "section": "sources",
+   "quote": "The eight scenarios are reasoned, not run.",
+   "about": [
+    "entity:mxc",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c36",
+   "kind": "fact",
+   "text": "The article began as a voice memo; an agent in a separate Claude session checked it against Microsoft's material and drafted it, and the site's agent rewrote it in the voice of the site.",
+   "section": "sources",
+   "quote": "I asked an agent in a separate Claude session to check the memo against Microsoft's own material",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:claude",
+    "entity:dinis-cruz"
+   ],
+   "refs": [
+    "r01",
+    "r02",
+    "r03",
+    "r05"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c24",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c26"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c27"
+  },
+  {
+   "from": "c30",
+   "verb": "answers",
+   "to": "c02"
+  },
+  {
+   "from": "c31",
+   "verb": "backs",
+   "to": "c32"
+  },
+  {
+   "from": "c33",
+   "verb": "specifies",
+   "to": "c32"
+  },
+  {
+   "from": "c34",
+   "verb": "specifies",
+   "to": "c32"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c24"
+  }
+ ],
+ "entities": [
+  {
+   "id": "microsoft",
+   "role": "shipped MXC and ACS; its announcement states the principle"
+  },
+  {
+   "id": "mxc",
+   "role": "the containment layer, generally available on 7 October 2026"
+  },
+  {
+   "id": "acs",
+   "role": "the tool-call policy layer above MXC, published in June"
+  },
+  {
+   "id": "microsoft-entra",
+   "role": "agent identity, announced as coming"
+  },
+  {
+   "id": "satya-nadella",
+   "role": "his post on models as insider risks preceded the announcement"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the Agent Behaviour Policy the two are mapped to; not inline, the customer's stack enforces"
+  },
+  {
+   "id": "aws",
+   "role": "the shared responsibility model page everyone has seen"
+  },
+  {
+   "id": "github",
+   "role": "where the MXC repository is published under MIT"
+  },
+  {
+   "id": "copilot",
+   "role": "supports MXC now"
+  },
+  {
+   "id": "codex",
+   "role": "supports MXC now"
+  },
+  {
+   "id": "replit",
+   "role": "supports MXC now"
+  },
+  {
+   "id": "claude-code",
+   "role": "listed as releasing MXC support"
+  },
+  {
+   "id": "claude",
+   "role": "a separate Claude session checked the memo and drafted the article"
+  },
+  {
+   "id": "open-policy-agent",
+   "role": "Rego, the policy language ACS usually evaluates"
+  },
+  {
+   "id": "gmail",
+   "role": "labels as the business's filing system; the user-shaped scope"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site the synthetic users were run against behind a request-level proxy"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author of the memo and the argument"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "shared-responsibility",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "approve-at-altitude",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+   "title": "Microsoft Execution Containers: policy-driven containment for AI agents",
+   "by": "Microsoft, Windows Developer Blog",
+   "date": "2026-10-07",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/microsoft/mxc",
+   "title": "microsoft/mxc",
+   "by": "Microsoft",
+   "date": "2026-10-11",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://commandline.microsoft.com/agent-control-specification-runtime-governance/",
+   "title": "Agent Control Specification: runtime governance",
+   "by": "Microsoft, Command Line",
+   "date": "2026-06-02",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://aws.amazon.com/compliance/shared-responsibility-model/",
+   "title": "Shared Responsibility Model",
+   "by": "Amazon Web Services",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://github.com/microsoft/agent-governance-toolkit",
+   "title": "microsoft/agent-governance-toolkit",
+   "by": "Microsoft",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-07",
+   "what": "Microsoft Execution Containers generally available"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The MXC repository read; the article"
+  },
+  {
+   "date": "2026-06-02",
+   "what": "The Agent Control Specification announced"
+  }
+ ]
+}

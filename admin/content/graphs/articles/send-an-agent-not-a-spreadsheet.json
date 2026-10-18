@@ -1,0 +1,988 @@
+{
+ "slug": "send-an-agent-not-a-spreadsheet",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Due diligence was a questionnaire: a spreadsheet of questions answered by the people being asked, disconnected from the code, too expensive to do properly and out of date on arrival.",
+   "section": "top",
+   "quote": "a spreadsheet of questions answered by the people being asked, disconnected from the code, too expensive to do properly and out of date on arrival.",
+   "about": [
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "The 2025 Shared Assessments SIG has 627 questions in its core form and 128 in its lite one.",
+   "section": "top",
+   "quote": "The 2025 edition of the standard one, the Shared Assessments SIG, has 627 questions in its core form and 128 in its lite one.",
+   "about": [
+    "entity:shared-assessments",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 627,
+    "unit": "questions in the SIG core form",
+    "as_of": "2025"
+   },
+   "refs": [
+    "r14"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Whistic's 2025 survey found the average vendor answering 37.3 assessment requests a month and spending 179 hours a month on them, with 84 percent needing a follow-up.",
+   "section": "top",
+   "quote": "the average vendor answering 37.3 assessment requests a month and spending 179 hours a month on them, with 84 percent needing a follow-up.",
+   "about": [
+    "entity:whistic",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 179,
+    "unit": "hours a month the average vendor spends on assessment requests",
+    "as_of": "2025"
+   },
+   "refs": [
+    "r15"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Companies are good at answers that are true in a way that leaves room, and the room is where the risk lives; what they will not do is lie on a record.",
+   "section": "top",
+   "quote": "What they are not good at, and will not do, is lie on a record.",
+   "about": [
+    "concept:the-record",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "proposal",
+   "text": "A buyer can now send a prompt, or a small agent under a behaviour policy, to run inside the vendor's environment and come back with a graph of what is actually there.",
+   "section": "top",
+   "quote": "Picture the due diligence request not as a spreadsheet but as a prompt and a small agent, delivered to the vendor, run by the vendor inside its own environment",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:fractal-semantic-graphs",
+    "concept:code-review",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The answer is derived, not composed: the vendor can redact but not rewrite, because a false map read from the repository is a false statement on a record.",
+   "section": "top",
+   "quote": "The questionnaire gave the vendor the pen. The agent takes the pen away and leaves the vendor the redaction marker, and that is the whole change.",
+   "about": [
+    "concept:provenance",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The questionnaire costs days of a compliance team per buyer per year; the agent costs compute once and a delta per release, so a mid-sized buyer, a seed investor or an acquirer can ask.",
+   "section": "top",
+   "quote": "The agent costs compute, once, and a delta per release after that.",
+   "about": [
+    "concept:pricing",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "A buyer asking costs nothing, and a supplier not answering looks worse than a supplier answering badly.",
+   "section": "top",
+   "quote": "A buyer asking costs nothing. A supplier not answering looks worse than a supplier answering badly.",
+   "about": [
+    "concept:code-review",
+    "concept:the-market"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "The vendor should run the agent on itself first, because the questions the buyer is about to ask are the ones the vendor should have wanted answered.",
+   "section": "top",
+   "quote": "the vendor should run it on itself first, because the questions the buyer is about to ask are the ones the vendor should have wanted answered.",
+   "about": [
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Yes, code reaches production unreviewed, with the map and the checks that hold it, is a good answer; not knowing is the finding.",
+   "section": "top",
+   "quote": "What is not fine is not knowing, because a vendor that does not know what reaches production unreviewed does not know what reaches production.",
+   "about": [
+    "concept:code-review",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "A threat model is the fastest read of a team's understanding there is: thin means the team does not know what it protects; gaps seen and decided on mean a team that knows what it is doing.",
+   "section": "top",
+   "quote": "a threat model is the fastest read of a team's understanding there is.",
+   "about": [
+    "concept:threat-modelling",
+    "entity:dinis-cruz"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "In May 2025 the owner argued that threat models should be mandatory disclosures, because the software market shows the failures once seen in finance and food: security quality is largely unverifiable.",
+   "section": "top",
+   "quote": "the software market exhibits the same failures once seen in finance and food: security quality is largely unverifiable",
+   "about": [
+    "concept:threat-modelling",
+    "entity:diniscruz-ai"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The result has to be a graph and not a report, because a PDF of findings loses 99.9 percent of what was created and the next assessment starts from nothing.",
+   "section": "top",
+   "quote": "in the end you produce a PDF, a flat file, a bunch of findings. You lose 99.9 percent of what you created.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:provenance"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Where the vendor has nothing to show, lack of evidence is evidence and lack of fact is a fact.",
+   "section": "top",
+   "quote": "lack of evidence is evidence, lack of fact is a fact.",
+   "about": [
+    "concept:provenance"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The test is risk-based, not pure: what counts as enough rises with what the software can do to the buyer, and a startup on a prototype passes by saying so.",
+   "section": "top",
+   "quote": "The point of the agent is visibility, and what counts as enough depends on what the software is for.",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:code-review",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The agent behaviour policy, the one artefact of agentic engineering written to be read by somebody else, is exactly the due diligence document a buyer needs.",
+   "section": "top",
+   "quote": "The one artefact of agentic engineering that was written to be read by somebody else is the agent behaviour policy, and it turns out to be exactly what a buyer needs.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:riskmandate"
+   ],
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "A deploy agent whose identity has no merge right and no production credential has a worst case of a broken staging environment, a fact about the account rather than a promise in a prompt.",
+   "section": "top",
+   "quote": "A deploy agent whose identity has no merge right and no production credential has a worst case of a broken staging environment",
+   "about": [
+    "concept:blast-radius",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The moment of authorisation is not when you allow the agent to do something; it is the moment you give it the permissions, so a buyer reads the permissions, not the promises.",
+   "section": "top",
+   "quote": "the moment of authorisation is not when you allow the agent to do something, it is the moment you give them the permissions.",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:blast-radius"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A vendor with agents in its pipeline and no policy to show has agents whose blast radius nobody has written down, which is a finding before any code is read.",
+   "section": "top",
+   "quote": "A vendor with agents in its pipeline and no policy to show has agents whose blast radius nobody has written down, which is a finding before any code is read.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "hypothesis",
+   "text": "Buyers asking for behaviour policies is what starts the market for them in earnest, because the policy is the visibility companies lack when they pull the plug on agents.",
+   "section": "top",
+   "quote": "I think this is also what starts the market for behaviour policies in earnest.",
+   "about": [
+    "concept:the-market",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The evidence that review is being skipped is not anecdotal any more, and the dates are recent.",
+   "section": "top",
+   "quote": "The evidence that review is being skipped is not anecdotal any more, and the dates are recent.",
+   "about": [
+    "concept:code-review",
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "Sonar's January 2026 survey found AI accounts for 42% of committed code, 96% of developers do not fully trust it, and only 48% always verify it before committing.",
+   "section": "top",
+   "quote": "accounts for 42% of committed code today",
+   "about": [
+    "entity:sonar",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 42,
+    "unit": "percent of committed code written by AI",
+    "as_of": "2026-01"
+   },
+   "refs": [
+    "r17"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "Qodo's 2025 survey found developers 2.5 times more likely to merge generated code without reviewing it, and 80% of PRs with no human comment when an AI-review tool is enabled.",
+   "section": "top",
+   "quote": "2.5x more likely to merge code without reviewing it",
+   "about": [
+    "entity:qodo",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 2.5,
+    "unit": "times more likely to merge generated code unreviewed",
+    "as_of": "2025"
+   },
+   "refs": [
+    "r18"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "Veracode's July 2025 report found that in 45 percent of test cases LLMs produced code with vulnerabilities aligned with the OWASP Top 10.",
+   "section": "top",
+   "quote": "in 45 percent of all test cases, LLMs produced code containing vulnerabilities aligned with the OWASP Top 10",
+   "about": [
+    "entity:veracode",
+    "entity:owasp",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 45,
+    "unit": "percent of test cases with OWASP Top 10 vulnerabilities",
+    "as_of": "2025-07"
+   },
+   "refs": [
+    "r19"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "GitClear's January 2026 analysis of 623 million changes found block duplication up 81 percent since 2023 and moved code, the signature of refactoring, freefalling to 3.8%.",
+   "section": "top",
+   "quote": "block duplication up 81 percent since 2023 and moved code, the signature of refactoring, \"freefalling to 3.8%\".",
+   "about": [
+    "entity:gitclear",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 81,
+    "unit": "percent increase in block duplication since 2023",
+    "as_of": "2026-01"
+   },
+   "refs": [
+    "r20"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Google's DORA report of September 2025 said AI adoption continues to have a negative relationship with software delivery stability, and that AI amplifies what is already there.",
+   "section": "top",
+   "quote": "AI adoption does continue to have a negative relationship with software delivery stability",
+   "about": [
+    "entity:google",
+    "concept:shipping"
+   ],
+   "refs": [
+    "r22"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Salesforce's chief executive said in February 2025 the company would hire no new engineers that year, citing a 30 percent productivity increase, and in May 2026 that headcount had stayed flat.",
+   "section": "top",
+   "quote": "We're not going to hire any new engineers this year. We're seeing 30 percent productivity increase on engineering",
+   "about": [
+    "entity:salesforce",
+    "concept:the-market"
+   ],
+   "refs": [
+    "r23"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "In July 2025 Replit's chief executive wrote that an agent in development deleted data from the production database, which he called unacceptable and should never be possible.",
+   "section": "top",
+   "quote": "in development deleted data from the production database. Unacceptable and should never be possible.",
+   "about": [
+    "entity:replit",
+    "concept:incidents",
+    "concept:blast-radius"
+   ],
+   "refs": [
+    "r24"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "data-point",
+   "text": "Black Duck's 2026 M&A audit data found unpatched vulnerable open source in 97 percent of transactions and licence conflicts in 94 percent, from a one-time snapshot that finds neither practice nor understanding.",
+   "section": "top",
+   "quote": "unpatched vulnerable open source in 97 percent of transactions and licence conflicts in 94 percent",
+   "about": [
+    "entity:black-duck",
+    "concept:supply-chains",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 97,
+    "unit": "percent of M&A transactions with unpatched vulnerable open source",
+    "as_of": "2026"
+   },
+   "refs": [
+    "r16"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "hypothesis",
+   "text": "A startup should double down on understandability, because it can play the same game as the biggest buyer with the same open-source tools, and it has less code to understand.",
+   "section": "top",
+   "quote": "So if I were a startup I would double down on understandability, and I would do it for two reasons.",
+   "about": [
+    "concept:startups",
+    "concept:code-review",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The Cyber Resilience Act's reporting obligations for actively exploited vulnerabilities apply from 11 September 2026 and the rest from 11 December 2027, with fines up to fifteen million euros or 2.5 percent of turnover.",
+   "section": "top",
+   "quote": "Its reporting obligations for actively exploited vulnerabilities apply from 11 September 2026, the rest from 11 December 2027.",
+   "about": [
+    "entity:cyber-resilience-act",
+    "entity:european-union",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "Under the revised Product Liability Directive, a vendor that cannot produce the record of how its software was made will, from December 2026, be presumed to have made it badly.",
+   "section": "top",
+   "quote": "A vendor that cannot produce the record of how its software was made will, from December 2026, be presumed to have made it badly.",
+   "about": [
+    "entity:product-liability-directive",
+    "entity:european-union",
+    "concept:liability-line",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "No field of a software bill of materials, in any version, says who reviewed a change, what it reached, or whether the people shipping it understand it.",
+   "section": "top",
+   "quote": "None of the fields, in any version, says who reviewed a change, what it reached, or whether the people shipping it understand it.",
+   "about": [
+    "entity:sbom",
+    "concept:supply-chains",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r12",
+    "r13"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "decision",
+   "text": "Writing this article changed the owner's mind about who to sell the code review company to: the people who buy, invest in and acquire software, not developers who were told they do not need review.",
+   "section": "top",
+   "quote": "But writing this one changed my mind about who to sell it to.",
+   "about": [
+    "concept:strategy",
+    "concept:code-review",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "The due diligence agent does not exist; the pieces do, and assembling them into a prompt and a policy a vendor would accept is the next build, first run against this site's own repository.",
+   "section": "top",
+   "quote": "The agent does not exist. The pieces do: the graphs of a repository, the behaviour policies, the vaults with read keys that let a vendor publish exactly what it chooses and no more",
+   "about": [
+    "concept:code-review",
+    "concept:vault",
+    "concept:behaviour-policy"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c15",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c28",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c21",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c31"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c34"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c05"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose memo, threat-model argument and change of mind the article records"
+  },
+  {
+   "id": "diniscruz-ai",
+   "role": "where the May 2025 argument for threat models as mandatory disclosures was published"
+  },
+  {
+   "id": "riskmandate",
+   "role": "publishes the agent behaviour policy the article reads as a due diligence document"
+  },
+  {
+   "id": "shared-assessments",
+   "role": "publishes the SIG questionnaire"
+  },
+  {
+   "id": "whistic",
+   "role": "its 2025 survey of assessment requests"
+  },
+  {
+   "id": "sonar",
+   "role": "its January 2026 developer survey on AI-written code"
+  },
+  {
+   "id": "qodo",
+   "role": "its 2025 survey on merging generated code unreviewed"
+  },
+  {
+   "id": "veracode",
+   "role": "its July 2025 report on vulnerabilities in LLM code"
+  },
+  {
+   "id": "owasp",
+   "role": "the Top 10 the Veracode vulnerabilities align with"
+  },
+  {
+   "id": "gitclear",
+   "role": "its analysis of 623 million changes"
+  },
+  {
+   "id": "google",
+   "role": "its DORA report on AI and delivery stability"
+  },
+  {
+   "id": "salesforce",
+   "role": "its chief executive's hiring statements"
+  },
+  {
+   "id": "replit",
+   "role": "its agent deleted production data in July 2025"
+  },
+  {
+   "id": "black-duck",
+   "role": "its M&A audit data on open source in transactions"
+  },
+  {
+   "id": "european-union",
+   "role": "legislator of the Cyber Resilience Act and the Product Liability Directive"
+  },
+  {
+   "id": "cyber-resilience-act",
+   "role": "its bill of materials, due diligence and reporting duties"
+  },
+  {
+   "id": "product-liability-directive",
+   "role": "Directive 2024/2853, software as a product, disclosure and presumed defect from December 2026"
+  },
+  {
+   "id": "sbom",
+   "role": "the component list whose fields say nothing about review or understanding"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "citizen-developer",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://diniscruz.ai/2025/05/29/threat-models-as-mandatory-disclosures__a-vision-for-security-transparency.md",
+   "title": "Threat models as mandatory disclosures: a vision for security transparency",
+   "by": "Dinis Cruz",
+   "date": "2025-05-29",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://diniscruz.blogspot.com/2016/11/risk-accepting-threat-model.html",
+   "title": "Risk accepting threat model",
+   "by": "Dinis Cruz",
+   "date": "2016-11-01",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/07/31/the-act-as-a-measure/v0.33.54__strategy-brief__sg-send-decouple-in-scope-from-in-breach-the-act-as-a-universal-rating-buyer-driven-adoption.md",
+   "title": "The Act as a universal rating, buyer-driven adoption",
+   "by": "SG/Send team",
+   "date": "2026-07-31",
+   "kind": "repository"
+  },
+  {
+   "id": "r04",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/06/18/agentic-permissions/v0.33.40__arch-brief__permissions-bill-of-materials-augmenting-sbom-permissions-gate-exploitability.md",
+   "title": "A permissions bill of materials",
+   "by": "SG/Send team",
+   "date": "2026-06-18",
+   "kind": "repository"
+  },
+  {
+   "id": "r05",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/06/18/agentic-permissions/v0.33.40__strategy-brief__sg-send-agent-authorisation-blast-radius-what-an-agent-can-do-risk-acceptance.md",
+   "title": "Agent authorisation and blast radius",
+   "by": "SG/Send team",
+   "date": "2026-06-18",
+   "kind": "repository"
+  },
+  {
+   "id": "r06",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/06/16/theses-and-reflections/v0.33.38__strategy-brief__confidence-through-evidence-blast-radius-graphs-mapping-the-gaps.md",
+   "title": "Confidence through evidence",
+   "by": "SG/Send team",
+   "date": "2026-06-16",
+   "kind": "repository"
+  },
+  {
+   "id": "r07",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/06/10/security-assessments/v0.33.16__strategy-brief__sg-send-artefact-driven-security-assessments-delta-scanning-vaults.md",
+   "title": "Artefact-driven security assessments",
+   "by": "SG/Send team",
+   "date": "2026-06-10",
+   "kind": "repository"
+  },
+  {
+   "id": "r08",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/06/23/risk-mandate-product-and-workflow/v0.33.33__strategy-brief__adding-ai-to-a-product-is-a-risk-not-a-debate-acceptance-workflow-graph-third-party-risk.md",
+   "title": "Adding AI to a product is a risk, not a debate",
+   "by": "SG/Send team",
+   "date": "2026-06-23",
+   "kind": "repository"
+  },
+  {
+   "id": "r09",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/05/11/v0.27.32__article__explorer-villager-town-planner-vibe-coding-workflow.md",
+   "title": "How vibe coded apps actually ship to production",
+   "by": "SG/Send team",
+   "date": "2026-05",
+   "kind": "repository"
+  },
+  {
+   "id": "r10",
+   "url": "https://digital-strategy.ec.europa.eu/en/policies/cra-summary",
+   "title": "Cyber Resilience Act summary",
+   "by": "European Commission",
+   "date": "2024-11-20",
+   "kind": "law"
+  },
+  {
+   "id": "r11",
+   "url": "https://www.reedsmith.com/articles/eu-product-liability-directive-software-digital-products-cybersecurity/",
+   "title": "EU Product Liability Directive: software, digital products, cybersecurity",
+   "by": "Reed Smith",
+   "date": "2025-07-02",
+   "kind": "article"
+  },
+  {
+   "id": "r12",
+   "url": "https://www.presidency.ucsb.edu/documents/executive-order-14028-improving-the-nations-cybersecurity",
+   "title": "Executive Order 14028: Improving the Nation's Cybersecurity",
+   "by": "The White House",
+   "date": "2021-05-12",
+   "kind": "law"
+  },
+  {
+   "id": "r13",
+   "url": "https://www.ntia.gov/files/ntia/publications/sbom_minimum_elements_report.pdf",
+   "title": "The Minimum Elements for a Software Bill of Materials",
+   "by": "NTIA",
+   "date": "2021-07-12",
+   "kind": "documentation"
+  },
+  {
+   "id": "r14",
+   "url": "https://mitratech.com/resource-hub/blog/sig-2025-key-updates-and-considerations/",
+   "title": "SIG 2025: key updates and considerations",
+   "by": "Mitratech",
+   "date": "2024-12-16",
+   "kind": "post"
+  },
+  {
+   "id": "r15",
+   "url": "https://www.whistic.com/resources/blog/2025-impact-report-takeaways",
+   "title": "2025 TPRM Impact Report",
+   "by": "Whistic",
+   "date": "2025-04-14",
+   "kind": "post"
+  },
+  {
+   "id": "r16",
+   "url": "https://assets.blackduck.com/image/upload/wp-risk-ma-numbers.pdf",
+   "title": "Open Source Risk in M&A by the Numbers",
+   "by": "Black Duck",
+   "date": "2026",
+   "kind": "paper"
+  },
+  {
+   "id": "r17",
+   "url": "https://www.sonarsource.com/blog/state-of-code-developer-survey-report-the-current-reality-of-ai-coding/",
+   "title": "State of Code developer survey",
+   "by": "Sonar",
+   "date": "2026-01-08",
+   "kind": "post"
+  },
+  {
+   "id": "r18",
+   "url": "https://www.qodo.ai/reports/state-of-ai-code-quality/",
+   "title": "State of AI code quality",
+   "by": "Qodo",
+   "date": "2025",
+   "kind": "paper"
+  },
+  {
+   "id": "r19",
+   "url": "https://www.businesswire.com/news/home/20250730694951/en/",
+   "title": "2025 GenAI Code Security Report",
+   "by": "Veracode",
+   "date": "2025-07-30",
+   "kind": "news"
+  },
+  {
+   "id": "r20",
+   "url": "https://www.gitclear.com/the_ai_code_quality_maintainability_gap",
+   "title": "The AI code quality maintainability gap",
+   "by": "GitClear",
+   "date": "2026-01",
+   "kind": "paper"
+  },
+  {
+   "id": "r21",
+   "url": "https://apiiro.com/blog/4x-velocity-10x-vulnerabilities-ai-coding-assistants-are-shipping-more-risks/",
+   "title": "4x velocity, 10x vulnerabilities",
+   "by": "Apiiro",
+   "date": "2025-09",
+   "kind": "post"
+  },
+  {
+   "id": "r22",
+   "url": "https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report",
+   "title": "The 2025 DORA report",
+   "by": "Google Cloud",
+   "date": "2025-09-23",
+   "kind": "post"
+  },
+  {
+   "id": "r23",
+   "url": "https://www.theregister.com/2025/02/27/salesforce_misses_revenue_guidance/",
+   "title": "Salesforce misses revenue guidance",
+   "by": "The Register",
+   "date": "2025-02-27",
+   "kind": "news"
+  },
+  {
+   "id": "r24",
+   "url": "https://x.com/amasad/status/1946986468586721478",
+   "title": "Replit chief executive on the production database deletion",
+   "by": "Amjad Masad",
+   "date": "2025-07",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-05",
+   "what": "The voice memo, recorded straight after the code review company article"
+  },
+  {
+   "date": "2025-05-29",
+   "what": "The owner argues threat models should be mandatory disclosures"
+  },
+  {
+   "date": "2024-12-10",
+   "what": "The Cyber Resilience Act enters into force"
+  },
+  {
+   "date": "2026-09-11",
+   "what": "CRA reporting obligations for actively exploited vulnerabilities apply"
+  },
+  {
+   "date": "2027-12-11",
+   "what": "The rest of the CRA applies"
+  },
+  {
+   "date": "2024-12-08",
+   "what": "The revised Product Liability Directive enters into force"
+  },
+  {
+   "date": "2026-12-09",
+   "what": "The Product Liability Directive applies to products placed on the market"
+  },
+  {
+   "date": "2025-07",
+   "what": "Replit's agent deletes production data; Veracode's GenAI code security report"
+  }
+ ]
+}

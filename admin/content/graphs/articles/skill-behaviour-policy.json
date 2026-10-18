@@ -1,0 +1,718 @@
+{
+ "slug": "skill-behaviour-policy",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The video's claim that 1 in 20 Claude skills are built to hack your computer is an overstatement of a real study of marketplace skills.",
+   "section": "claim",
+   "quote": "It is an overstatement of a real study",
+   "about": [
+    "concept:agent-tooling",
+    "entity:agent-skills-in-the-wild"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "The study analysed 31,132 of 42,447 skills collected from two marketplaces, and found 5.2% showed high-severity patterns strongly suggesting malicious intent.",
+   "section": "claim",
+   "quote": "5.2% of skills exhibit high-severity patterns strongly suggesting malicious intent",
+   "about": [
+    "entity:agent-skills-in-the-wild",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 5.2,
+    "of": 31132,
+    "unit": "percent of skills analysed",
+    "as_of": "2026-01"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The same study found 26.1% of skills contain at least one vulnerability.",
+   "section": "claim",
+   "quote": "26.1% of skills contain at least one vulnerability",
+   "about": [
+    "entity:agent-skills-in-the-wild",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 26.1,
+    "of": 31132,
+    "unit": "percent of skills analysed",
+    "as_of": "2026-01"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The scanner in the video, NVIDIA's SkillSpector, is a different tool from the study's SkillScan, and NVIDIA did not produce the number.",
+   "section": "claim",
+   "quote": "NVIDIA did not produce that number",
+   "about": [
+    "entity:skillspector",
+    "entity:nvidia"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "A skill behaviour policy looks at three mandates: the described mandate the description promises, the actual mandate from what the files can do, and the grant the environment gives.",
+   "section": "three",
+   "quote": "three mandates for every skill",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Actual minus described is the suspicious part; grant minus actual is the reach nobody asked for, and the difference between mandate and reach is the risk.",
+   "section": "three",
+   "quote": "Actual minus described is the part to look at: features the description never mentions.",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "concept:reach",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The grant differs by environment: on Claude Code a skill has the network of any program, through the API it runs in a sandboxed container with no network access.",
+   "section": "three",
+   "quote": "Skills have the same network access as any other program on the user's computer",
+   "about": [
+    "entity:claude-code",
+    "entity:anthropic",
+    "concept:agent-isolation"
+   ],
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The allowed-tools field in a skill pre-approves tools rather than restricting them, so a skill can widen its own grant.",
+   "section": "three",
+   "quote": "A skill can widen its own grant.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling",
+    "concept:reach"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "decision",
+   "text": "Every finding is recorded as a feature, not a verdict, because an upload can be exfiltration or a login and only the context decides.",
+   "section": "features",
+   "quote": "The important design choice is that every finding is a feature, not a verdict.",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "decision",
+   "text": "The owner built a static calculator that reads a skill folder as text, never runs anything, and reports the features the description does not declare.",
+   "section": "measured",
+   "quote": "It reads a skill folder as text, never runs anything",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The calculator ran on 899 skills from three public sources read on 14 October: Anthropic's skills repository with 20, obra/superpowers with 15 and ComposioHQ/awesome-claude-skills with 864.",
+   "section": "measured",
+   "quote": "I ran it on three public sources, read on 14 October",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "entity:anthropic",
+    "entity:github"
+   ],
+   "value": {
+    "n": 899,
+    "unit": "skills read",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r07",
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "812 of the 899 skills can reach something beyond their own scripts: network, installs, credentials, files outside the workspace or a remote tool server.",
+   "section": "measured",
+   "quote": "812 of 899 can reach something beyond their own scripts.",
+   "about": [
+    "concept:reach",
+    "concept:skill-behaviour-policy"
+   ],
+   "value": {
+    "n": 812,
+    "of": 899,
+    "unit": "skills reaching beyond their scripts",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "782 of the skills reach through one third-party tool server, so their reach is whatever accounts the user has connected to that server, not the skill itself.",
+   "section": "measured",
+   "quote": "782 do it through one third-party tool server.",
+   "about": [
+    "concept:reach",
+    "entity:mcp",
+    "concept:connectors"
+   ],
+   "value": {
+    "n": 782,
+    "of": 899,
+    "unit": "skills reaching through one tool server",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "850 of the community catalogue's 864 skills ship no code, and 778 declare that they need the same remote MCP server.",
+   "section": "measured",
+   "quote": "850 of its 864 skills ship no code, and 778 declare that they need the same remote MCP server",
+   "about": [
+    "entity:mcp",
+    "concept:skill-behaviour-policy"
+   ],
+   "value": {
+    "n": 850,
+    "of": 864,
+    "unit": "catalogue skills with no code",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "39 skills have a feature their description does not mention, mostly installs, paths outside the workspace and example credentials; none was obfuscated and none sets allowed-tools.",
+   "section": "measured",
+   "quote": "39 have a feature their description does not mention.",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 39,
+    "of": 899,
+    "unit": "skills with an undescribed feature",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The clearest case was honest: developer-growth-analysis reads Claude Code chat history, searches HackerNews and posts to Slack, the whole lethal trifecta, and says so.",
+   "section": "example",
+   "quote": "The clearest case in the set was an honest one.",
+   "about": [
+    "concept:lethal-trifecta",
+    "concept:skill-behaviour-policy",
+    "entity:simon-willison"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "From four policy rows the owner generated a hook and tested it on nine fixed inputs: it allowed the history file, the search and workspace writes, denied SSH keys, .env, other ~/.claude files and shell startup files, and asked before the tool server's execute call.",
+   "section": "example",
+   "quote": "From those rows I generated a hook and tested it on nine fixed inputs, the JSON the harness would send.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:agent-tooling",
+    "concept:skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "limit",
+   "text": "A hook sees the tool call, not what a script does once it runs, so the network of scripts belongs to the sandbox, and the tool server runs outside the sandbox so its calls can only be asked about.",
+   "section": "example",
+   "quote": "A hook sees the tool call, not what a script does once it runs",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:agent-isolation",
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "limit",
+   "text": "The row that treats HackerNews text as data stays an expectation, because nothing outside the model can see whether it obeyed a page.",
+   "section": "example",
+   "quote": "nothing outside the model can see whether it obeyed a page",
+   "about": [
+    "concept:prompt-injection",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "SkillSpector 2.12.0, run static only on five of the skills, rated developer-growth-analysis SAFE with score 8, where the policy finds the whole trifecta and a third-party server.",
+   "section": "scanner",
+   "quote": "The policy finds the whole trifecta and a third-party server.",
+   "about": [
+    "entity:skillspector",
+    "entity:nvidia",
+    "concept:lethal-trifecta"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "On langsmith-fetch both tools found the same line, appending an API key to ~/.bashrc; the scanner called it backdoor persistence, the policy a write to a shell startup file and a secret in plain text.",
+   "section": "scanner",
+   "quote": "Same line, different words; the policy's are the more accurate here",
+   "about": [
+    "entity:skillspector",
+    "concept:identity-and-secrets",
+    "concept:skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "A scanner asks whether a skill looks malicious; a policy asks what the skill needs, what it gets in this environment, and what control makes the two meet.",
+   "section": "scanner",
+   "quote": "A scanner asks whether a skill looks malicious, and for these skills the right answer is mostly no.",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "concept:behaviour-policy",
+    "entity:skillspector"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "This is a service to offer and an open format to publish: for any skill, the three mandates, the minimal grant, the reach per environment, and the generated and tested hook and sandbox settings.",
+   "section": "service",
+   "quote": "Put together, this is a service we can offer and an open format we can publish.",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "entity:riskmandate",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Chainguard's agent skills product plans to let organisations define and enforce their own skill security policies, which is the same policy written down.",
+   "section": "service",
+   "quote": "define and enforce their own skill security policies",
+   "about": [
+    "entity:chainguard",
+    "concept:skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Pattern matching gives lower bounds: the calculator misses what it has no pattern for, and some matches are examples in documentation.",
+   "section": "limits",
+   "quote": "Pattern matching gives lower bounds.",
+   "about": [
+    "concept:skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The 899 are three curated public collections read on 14 October 2026, not a marketplace sample, so marketplace rates will differ.",
+   "section": "limits",
+   "quote": "Three curated sources, not a marketplace.",
+   "about": [
+    "concept:skill-behaviour-policy",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The policy and the hook are for one skill, with rows written for this article and the hook tested on fixed inputs, not in a live session.",
+   "section": "limits",
+   "quote": "The policy and the hook are for one skill.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "SkillSpector ran without its model stage on five skills; its full mode may find more.",
+   "section": "limits",
+   "quote": "SkillSpector ran without its model stage.",
+   "about": [
+    "entity:skillspector"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "No skill in the article is called malicious; a feature is a feature until the context says otherwise.",
+   "section": "limits",
+   "quote": "No skill here is called malicious.",
+   "about": [
+    "concept:skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 14 October 2026; the skills were downloaded into an isolated folder and read as text, never run, and a research agent verified the study and the quotes.",
+   "section": "sources",
+   "quote": "the skills were downloaded into an isolated folder and read as text, never run",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c18",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c20"
+  }
+ ],
+ "entities": [
+  {
+   "id": "agent-skills-in-the-wild",
+   "role": "the January 2026 study whose 5.2% figure the video overstated"
+  },
+  {
+   "id": "skillspector",
+   "role": "NVIDIA's scanner, run on five of the skills without its model stage"
+  },
+  {
+   "id": "nvidia",
+   "role": "publisher of SkillSpector and the verified agent skills framing"
+  },
+  {
+   "id": "anthropic",
+   "role": "publisher of the skills documentation and one of the three skill sources"
+  },
+  {
+   "id": "claude-code",
+   "role": "the environment where a skill has the network of any program and allowed-tools pre-approves"
+  },
+  {
+   "id": "github",
+   "role": "where the three skill sources are hosted"
+  },
+  {
+   "id": "mcp",
+   "role": "the remote tool server protocol 778 catalogue skills declare they need"
+  },
+  {
+   "id": "simon-willison",
+   "role": "named the lethal trifecta"
+  },
+  {
+   "id": "chainguard",
+   "role": "whose agent skills product plans to let organisations enforce skill security policies"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address for anyone who wants a policy and a control for the skills they run"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "skill-behaviour-policy",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://arxiv.org/abs/2601.10338",
+   "title": "Agent Skills in the Wild",
+   "by": "Liu et al.",
+   "date": "2026-01",
+   "kind": "paper"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/NVIDIA/SkillSpector",
+   "title": "SkillSpector",
+   "by": "NVIDIA",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/",
+   "title": "NVIDIA verified agent skills provide capability governance for AI agents",
+   "by": "NVIDIA",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+   "title": "The lethal trifecta",
+   "by": "Simon Willison",
+   "date": "2025-06-16",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://code.claude.com/docs/en/skills",
+   "title": "Claude Code skills",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://code.claude.com/docs/en/sandboxing",
+   "title": "Claude Code sandboxing",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://github.com/anthropics/skills",
+   "title": "Anthropic skills repository",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r08",
+   "url": "https://github.com/obra/superpowers",
+   "title": "obra/superpowers",
+   "by": "obra",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r09",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+   "title": "ComposioHQ/awesome-claude-skills",
+   "by": "ComposioHQ",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r10",
+   "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+   "title": "Agent Skills overview",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo; the 899 skills read; the documentation and scanner checked"
+  },
+  {
+   "date": "2026-01",
+   "what": "Agent Skills in the Wild published with the 5.2% finding"
+  }
+ ]
+}

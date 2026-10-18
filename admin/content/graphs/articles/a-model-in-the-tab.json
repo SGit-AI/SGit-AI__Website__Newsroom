@@ -1,0 +1,758 @@
+{
+ "slug": "a-model-in-the-tab",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Since Chrome 148 on 5 May 2026, any web page can talk to Gemini Nano through the Prompt API on the reader's own machine, with no network once the model is downloaded.",
+   "section": "top",
+   "quote": "Since Chrome 148, released on 5 May 2026, any web page can talk to a language model that runs on the reader's own machine.",
+   "about": [
+    "entity:chrome",
+    "entity:gemini",
+    "entity:prompt-api",
+    "concept:client-side"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "For the client-side pattern this is the most important piece so far and the hardest, because intelligence was the piece that kept a back end in the picture.",
+   "section": "top",
+   "quote": "Intelligence was the piece that kept a back end in the picture.",
+   "about": [
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "As of today the newsroom's payments are live, on a Stripe link and nothing of the newsroom's own.",
+   "section": "top",
+   "quote": "the newsroom's payments are live, on a Stripe link and nothing of ours",
+   "about": [
+    "entity:stripe",
+    "entity:newsroom-sgit-ai",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The Summarizer, Translator and Language Detector APIs have been stable since Chrome 138; Writer, Rewriter and Proofreader are still developer trials.",
+   "section": "short",
+   "quote": "The Summarizer, Translator and Language Detector APIs have been stable since 138.",
+   "about": [
+    "entity:chrome",
+    "entity:prompt-api"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The Prompt API accepts text, images and audio, returns text optionally constrained by a JSON schema, keeps and clones sessions, and supports five languages: English, Japanese, Spanish, German and French.",
+   "section": "short",
+   "quote": "Five languages so far: English, Japanese, Spanish, German and French.",
+   "about": [
+    "entity:prompt-api",
+    "entity:gemini"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "languages the Prompt API supports",
+    "as_of": "2026-10"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Native tool use in the Prompt API is experimental and behind a flag; what works is structured output, and WebMCP, which lets a site describe its tools to the reader's agent, is a separate API in origin trial.",
+   "section": "short",
+   "quote": "Native tool use in the Prompt API is experimental and behind a flag.",
+   "about": [
+    "entity:prompt-api",
+    "entity:webmcp",
+    "concept:connectors"
+   ],
+   "refs": [
+    "r05",
+    "r09"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Gemini Nano is a model in the 2 to 4 billion parameter range that Chrome downloads once per device, not once per site.",
+   "section": "ships",
+   "quote": "a model in the 2 to 4 billion parameter range that Chrome downloads once per device, not once per site",
+   "about": [
+    "entity:gemini",
+    "entity:chrome"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The model needs a desktop with at least 22 GB free on the disk with the Chrome profile, and either a GPU with more than 4 GB of video memory or 16 GB of RAM and four cores.",
+   "section": "ships",
+   "quote": "At least 22 GB free on the disk with the Chrome profile.",
+   "about": [
+    "entity:chrome",
+    "entity:gemini"
+   ],
+   "value": {
+    "n": 22,
+    "unit": "GB of free disk required",
+    "as_of": "2026-10"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The owner's first download had a banner with no sense of time, vanished on refresh, and the model turned up by the morning, with network traffic the only sign of life.",
+   "section": "download",
+   "quote": "I left the laptop open overnight, and by the morning the model was there.",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:gemini"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The download did not stop: it continues in the background after a refresh or close and resumes after a restart; the progress bar is the page's job, and the demo pages did not ask again.",
+   "section": "download",
+   "quote": "The progress bar is the page's job.",
+   "about": [
+    "entity:chrome",
+    "entity:prompt-api"
+   ],
+   "refs": [
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The model is roughly 4 GB, downloaded once per device and shared by every site; Chrome deletes it if free disk space falls below about 10 GB.",
+   "section": "download",
+   "quote": "It is roughly 4 GB, downloaded once per device.",
+   "about": [
+    "entity:gemini",
+    "entity:chrome"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "GB downloaded once per device",
+    "as_of": "2026-10"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "The first thing worth shipping is a small honest component that shows bytes, rate and time remaining, survives a refresh, says it is safe to close the tab, and lists likely reasons when a device is unavailable.",
+   "section": "download",
+   "quote": "That is the first thing worth shipping.",
+   "about": [
+    "concept:client-side",
+    "entity:chrome"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "There are surprisingly few good examples of the Prompt API in action: Chrome's case studies are real but narrow and mostly use the task APIs.",
+   "section": "examples",
+   "quote": "I looked for good examples of the Prompt API in action, and found surprisingly few.",
+   "about": [
+    "entity:prompt-api",
+    "entity:chrome"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The reasons are real: five months on the open web, a gated desktop audience, a 4 GB first run, a small model, five languages, tool calling not ready, and the standards fight.",
+   "section": "examples",
+   "quote": "Teams that try it as a chatbot are disappointed; teams that try it as a function are not.",
+   "about": [
+    "concept:model-as-a-function",
+    "entity:gemini"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Chrome shipped the Prompt API over formal opposition from Mozilla, Apple's WebKit team, the W3C Technical Architecture Group and Microsoft.",
+   "section": "against",
+   "quote": "Chrome shipped the Prompt API over formal opposition.",
+   "about": [
+    "entity:chrome",
+    "entity:mozilla",
+    "entity:webkit",
+    "entity:w3c",
+    "entity:microsoft"
+   ],
+   "refs": [
+    "r07",
+    "r08"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Mozilla's position is that the API has severe negative consequences to the interoperability, updatability and neutrality of the web platform.",
+   "section": "against",
+   "quote": "severe negative consequences to the interoperability, updatability, and neutrality of the web platform",
+   "about": [
+    "entity:mozilla",
+    "entity:prompt-api"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The objections come down to three things: prompts do not travel between browsers' models, a vendor's usage policy sits in front of a web API, and the browser decides which model and version.",
+   "section": "against",
+   "quote": "A vendor policy sits in front of a web API.",
+   "about": [
+    "entity:google",
+    "entity:prompt-api",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "hypothesis",
+   "text": "The owner agrees with most of the objections, since a model he cannot pin, version or inspect is not sovereign infrastructure, but does not think the answer is to wait.",
+   "section": "against",
+   "quote": "But I do not think the answer is to wait.",
+   "about": [
+    "concept:privacy",
+    "concept:model-as-a-function",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Edge already offers the same API shape on its own models, Phi-4-mini and Aion, so the interface is not Chrome's alone even if the standards process is unfinished.",
+   "section": "against",
+   "quote": "so the interface is not Chrome's alone, even if the standards process is unfinished",
+   "about": [
+    "entity:microsoft",
+    "entity:prompt-api"
+   ],
+   "refs": [
+    "r10",
+    "r11"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "definition",
+   "text": "The discipline that limits the damage: keep the meaning in the data not the prompt, use the model as a function not an oracle, and always have a path without it.",
+   "section": "against",
+   "quote": "Keep the meaning in the data, not in the prompt.",
+   "about": [
+    "concept:model-as-a-function",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The five readers' graph answered a question about any of 45 concepts in a median of 2,579 tokens, every statement anchored, against 25,698 tokens to read the five articles.",
+   "section": "fit",
+   "quote": "a median of 2,579 tokens, with every statement anchored to its sentence, against 25,698 tokens to read the five articles",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:agent-readable-web"
+   ],
+   "value": {
+    "n": 2579,
+    "of": 25698,
+    "unit": "median tokens for a graph answer against reading the five articles"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "A context window measured in thousands of tokens cannot hold the five articles but can hold the graph's answer, and the anchors mean every answer can show its sources.",
+   "section": "fit",
+   "quote": "It can hold the graph's answer, with room left for the question.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:model-as-a-function"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "A local model can infer personas from the text a reader reads without anything leaving the browser, and transcribe and structure a voice memo on the device before it is encrypted into a vault lane.",
+   "section": "fit",
+   "quote": "a memo could be transcribed and structured on the device before it is encrypted into a vault lane",
+   "about": [
+    "concept:personas",
+    "concept:voice-memo",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "The synthetic readers found 51 missing figures out of 527; a local model can describe what each figure shows and say when it differs from its caption.",
+   "section": "fit",
+   "quote": "found 51 missing figures out of 527",
+   "about": [
+    "concept:synthetic-users"
+   ],
+   "value": {
+    "n": 51,
+    "of": 527,
+    "unit": "figures missing"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The first four opportunities share one property: the model never decides anything important on its own; it answers from anchors, labels into a fixed set or transcribes, and the page or the person checks.",
+   "section": "opportunities",
+   "quote": "the model never decides anything important on its own",
+   "about": [
+    "concept:model-as-a-function",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "A behaviour-policy helper for RiskMandate could classify each rule a user writes as boundary, setting, expectation or none, privately, as a draft for a person to check.",
+   "section": "opportunities",
+   "quote": "Classifies each rule a user writes as boundary, setting, expectation or none, privately",
+   "about": [
+    "entity:riskmandate",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "A local second reader that checks a draft against rules and sources is only partly ready: the model is too small to be the only check.",
+   "section": "opportunities",
+   "quote": "Partly: too small to be the only check",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:gemini"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "decision",
+   "text": "A vault is being built alongside the article with a test page per capability, measured on real machines, with the numbers published.",
+   "section": "next",
+   "quote": "A vault is being built alongside this article to explore all of this properly",
+   "about": [
+    "concept:vault",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "The model status panel is an open component in the spirit of SG Meter: it checks eligibility, shows progress with bytes, rate and time, survives a refresh, and explains in plain words why a device cannot run the model.",
+   "section": "next",
+   "quote": "An open component, in the spirit of SG Meter",
+   "about": [
+    "entity:sg-meter",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "No measurements of speed or quality are claimed here; those are what the vault is for.",
+   "section": "sources",
+   "quote": "No measurements of speed or quality are claimed here; those are what the vault is for.",
+   "about": [
+    "entity:gemini",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "The measurements to publish: download time, time to first token, tokens per second, context window, and accuracy against the anchors, on the machines the newsroom has.",
+   "section": "next",
+   "quote": "These are the numbers missing from almost every piece about Gemini Nano, including this one.",
+   "about": [
+    "entity:gemini",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The article comes from a voice memo after the owner first tried Gemini Nano; an agent in a separate Claude session researched and drafted it, and where impressions and documentation disagreed the article follows the documentation.",
+   "section": "sources",
+   "quote": "the article follows the documentation and says so",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:claude",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "The site's agent gave the draft a last pass with plainer wording and a correction to the claim that renting was the only way to put a model behind a page.",
+   "section": "sources",
+   "quote": "a correction to the claim that renting was the only way to put a model behind a page",
+   "about": [
+    "concept:client-side",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c10",
+   "verb": "supersedes",
+   "to": "c09"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c15"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c24",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c25",
+   "verb": "specifies",
+   "to": "c20"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c29",
+   "verb": "answers",
+   "to": "c12"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c28"
+  },
+  {
+   "from": "c31",
+   "verb": "specifies",
+   "to": "c28"
+  }
+ ],
+ "entities": [
+  {
+   "id": "chrome",
+   "role": "ships Gemini Nano and the Prompt API to capable desktops"
+  },
+  {
+   "id": "google",
+   "role": "whose Generative AI Prohibited Uses Policy sits in front of the API"
+  },
+  {
+   "id": "gemini",
+   "role": "Gemini Nano, the model in the tab"
+  },
+  {
+   "id": "mozilla",
+   "role": "filed a standards position against the Prompt API"
+  },
+  {
+   "id": "microsoft",
+   "role": "objected, and ships the same API shape in Edge on its own models"
+  },
+  {
+   "id": "stripe",
+   "role": "the link the newsroom's payments run on"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the spirit the model status panel is built in; its history feeds persona inference"
+  },
+  {
+   "id": "riskmandate",
+   "role": "a behaviour-policy helper could classify its users' rules locally"
+  },
+  {
+   "id": "claude",
+   "role": "the separate session that researched and drafted the article"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose first impressions and editorial responsibility these are"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "whose payments are live and beside which the vault is being built"
+  },
+  {
+   "id": "prompt-api",
+   "role": "the JavaScript interface to the browser's built-in model"
+  },
+  {
+   "id": "webmcp",
+   "role": "lets a site describe its tools to the reader's agent; in origin trial"
+  },
+  {
+   "id": "webkit",
+   "role": "Apple's engine team, which filed an opposing position"
+  },
+  {
+   "id": "w3c",
+   "role": "its Technical Architecture Group recorded concerns about the Prompt API"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "model-as-a-function",
+   "defined_here": true
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://developer.chrome.com/docs/ai/built-in-apis",
+   "title": "Built-in AI APIs",
+   "by": "Chrome for Developers",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://developer.chrome.com/docs/ai/prompt-api",
+   "title": "The Prompt API",
+   "by": "Chrome for Developers",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://developer.chrome.com/docs/ai/understand-built-in-model-management",
+   "title": "Understand built-in model management",
+   "by": "Chrome for Developers",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://developer.chrome.com/docs/ai/inform-users-of-model-download",
+   "title": "Inform users of model download",
+   "by": "Chrome for Developers",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://developer.chrome.com/docs/ai/agents",
+   "title": "WebMCP and agents",
+   "by": "Chrome for Developers",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://chrome.dev/web-ai-demos/",
+   "title": "Web AI demos",
+   "by": "Chrome",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.techtimes.com/articles/316729/20260516/google-ships-chrome-prompt-api-over-objections-mozilla-apple-w3c-microsoft.htm",
+   "title": "Google ships Chrome Prompt API over objections from Mozilla, Apple, W3C, Microsoft",
+   "by": "Tech Times",
+   "date": "2026-05-16",
+   "kind": "news"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.gigazine.net/gsc_news/en/20260501-google-chrome-prompt-api/",
+   "title": "Google Chrome Prompt API",
+   "by": "Gigazine",
+   "date": "2026-05-01",
+   "kind": "news"
+  },
+  {
+   "id": "r09",
+   "url": "https://pub.dev/packages/flutter_gemma_builtin_ai/versions/0.2.0",
+   "title": "flutter_gemma_builtin_ai 0.2.0",
+   "by": "pub.dev",
+   "date": "2026-08",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://blogs.windows.com/msedgedev/2025/05/19/introducing-the-prompt-and-writing-assistance-apis/",
+   "title": "Introducing the Prompt and Writing Assistance APIs",
+   "by": "Microsoft",
+   "date": "2025-05-19",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://www.thurrott.com/?p=336953",
+   "title": "Coverage of Build 2026",
+   "by": "Thurrott",
+   "date": "2026",
+   "kind": "news"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-05-05",
+   "what": "Chrome 148 ships the Prompt API to all web pages"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The article, after the owner's first try of Gemini Nano that week"
+  },
+  {
+   "date": "2026-08",
+   "what": "Native tool calling tested on Chrome 151 and found behind a flag"
+  }
+ ]
+}

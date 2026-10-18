@@ -1,0 +1,688 @@
+{
+ "slug": "memory-is-not-a-spectator-sport",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "hypothesis",
+   "text": "The industry's picture of agentic memory is one store that everything is pumped into and retrieved from by similarity; the owner's is the opposite, and that picture is wrong in three related ways.",
+   "section": "top",
+   "quote": "I think that picture is wrong in three ways, and the three are related.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "Memory is context management: the question is never what do we remember but what does this agent need in its window right now, which the industry now calls context engineering.",
+   "section": "top",
+   "quote": "The question is never \"what do we remember\" but \"what does this agent need in its window right now\".",
+   "about": [
+    "concept:agent-memory",
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "hypothesis",
+   "text": "It is many memories, not one, because context is specific; by now the memories across the estate are inconsistent in places, and that is the point, since a memory forced to agree with all the others would be wrong for every one of them.",
+   "section": "top",
+   "quote": "I used to think that was a problem to solve. I now think it is the point",
+   "about": [
+    "concept:agent-memory",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The estate now has twenty-seven sibling sites, forty published vaults, a CRM and an inbox, each a memory with its own ontology.",
+   "section": "top",
+   "quote": "with twenty-seven sibling sites, forty published vaults, a CRM and an inbox",
+   "about": [
+    "concept:agent-memory",
+    "concept:vault",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 27,
+    "unit": "sibling sites",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Memory has a cost in two currencies, the finite context window that degrades as it fills and the prompt billed by the token; Anthropic's guidance of September 2025 says context must be treated as a finite resource with diminishing marginal returns.",
+   "section": "top",
+   "quote": "Context, therefore, must be treated as a finite resource with diminishing marginal returns",
+   "about": [
+    "entity:anthropic",
+    "concept:agent-memory",
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Memory is made, not passive: somebody, a person or an agent, decides a thing is worth keeping, puts it where the next reader will find it, says where it came from and links it to what it relates to.",
+   "section": "top",
+   "quote": "Memory is made. Somebody, a person or an agent, decides that a thing is worth keeping",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "ChatGPT's Memory launched in February 2024 and in April 2025 was extended to all past chats; Claude's memory from September 2025 is scoped per project with an editable summary; Gemini's personal context arrived in August 2025, on by default.",
+   "section": "top",
+   "quote": "Claude creates a separate memory for each project",
+   "about": [
+    "entity:chatgpt",
+    "entity:claude",
+    "entity:gemini",
+    "concept:agent-memory"
+   ],
+   "refs": [
+    "r02",
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "MemGPT in October 2023 paged information in and out of a limited window like an operating system; its successor Letta gives agents editable memory blocks; Mem0 and Zep store extracted facts, Zep as a temporal knowledge graph.",
+   "section": "top",
+   "quote": "Its successor Letta gives agents editable memory blocks that live in the context itself.",
+   "about": [
+    "entity:letta",
+    "entity:mem0",
+    "entity:zep",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "In Letta's August 2025 benchmark a plain filesystem, with the agent reading and writing files, scored 74.0 percent on LoCoMo against 68.5 percent for Mem0's graph variant; files won.",
+   "section": "top",
+   "quote": "scored 74.0 percent on the LoCoMo memory benchmark against 68.5 percent for Mem0's graph variant",
+   "about": [
+    "entity:letta",
+    "entity:mem0",
+    "concept:agent-memory"
+   ],
+   "value": {
+    "n": 74.0,
+    "unit": "percent on LoCoMo for a plain filesystem",
+    "as_of": "2025-08"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Manus treats the file system as the ultimate context, Anthropic's memory tool is a directory told to assume interruption, Claude Code loads a markdown index of 200 lines or 25 kilobytes, and since Karpathy in June 2025 the word is context engineering.",
+   "section": "top",
+   "quote": "we treat the file system as the ultimate context",
+   "about": [
+    "entity:manus",
+    "entity:anthropic",
+    "entity:claude-code",
+    "entity:andrej-karpathy",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The field has arrived at files, budgets, loading on demand and the context window as the scarce thing; where the owner differs is in what the files are, who can read them and how far the altitudes go.",
+   "section": "top",
+   "quote": "Where I differ is in what the files are, who can read them, and how far the ladder goes.",
+   "about": [
+    "concept:agent-memory",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "An agent meets memory two ways, the agentic session managing its own context across compaction, and the one-shot call where the bundle must be right the first time; both are served by the same memory if it has altitudes.",
+   "section": "top",
+   "quote": "Both modes are served by the same memory if the memory has altitudes.",
+   "about": [
+    "concept:agent-memory",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "On this site llms.txt is 350 lines and about 106 kilobytes, the graphs of all twenty-three articles one file of 234 kilobytes, one article's graph eight kilobytes against sixty for the article, the code review vault's bundle a megabyte and the vault with history four.",
+   "section": "top",
+   "quote": "The graphs of all twenty-three articles are one file of 234 kilobytes",
+   "about": [
+    "entity:llms-txt",
+    "entity:code-review-graphs-vault",
+    "concept:agent-readable-web",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 234,
+    "unit": "kilobytes for the file of all article graphs",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "The release log holds 211 entries from the first release to this one, each stamped with a commit, written for the next agent rather than a changelog reader; the forty vaults total 328 megabytes.",
+   "section": "top",
+   "quote": "211 entries from the first release to this one, each stamped with a commit",
+   "about": [
+    "concept:the-record",
+    "concept:agent-memory",
+    "entity:historian"
+   ],
+   "value": {
+    "n": 211,
+    "unit": "release log entries",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The inbox agents keep their conversation in Email-FS as files, the CRM holds one folder per contact with its own graph, and none of these memories is forced to agree; what joins them is links and the index that keeps them.",
+   "section": "top",
+   "quote": "What joins them is not a schema but links, and the index that keeps the links.",
+   "about": [
+    "entity:email-fs",
+    "concept:agentic-email",
+    "concept:agent-memory",
+    "entity:librarian"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "hypothesis",
+   "text": "Being open matters more than people expect: open source and Creative Commons let an agent fetch, quote, link and clone the memory, and the more is published the less the next session has to be told.",
+   "section": "top",
+   "quote": "The more I publish, the more there is for the next session to stand on, and the less it has to be told.",
+   "about": [
+    "concept:open-source",
+    "concept:agent-memory",
+    "entity:creative-commons"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "A shared memory must say where each thing came from or become a rumour mill; here that is habits: a URL for every quote, a commit for every release, a read key for every vault, a byline on every page.",
+   "section": "top",
+   "quote": "The answer to a memory that cannot be trusted is not to trust it less. It is to make every item in it carry its source.",
+   "about": [
+    "concept:provenance",
+    "concept:agent-memory",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Provenance is what lets memory be shared without being trusted, and it is the part a vector store cannot give, because a similarity score is not a source.",
+   "section": "top",
+   "quote": "a similarity score is not a source",
+   "about": [
+    "concept:provenance",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The session that wrote the article ran across several context resets with no memory system, carrying only a summary of itself; everything else it read from the repository's conventions, the published sites and a review vault from another team.",
+   "section": "top",
+   "quote": "That summary is memory as a hand-off note, and it is the one thing the model carried itself.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-memory",
+    "concept:multi-agent",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "It worked by altitude, index then graph then article then code and the four-megabyte vault only when the question was about the evidence; when the memo and the record disagreed, the record won and the article said so.",
+   "section": "top",
+   "quote": "When the memo and the record disagreed, the record won and the article said so.",
+   "about": [
+    "concept:the-record",
+    "concept:voice-memo",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The day's output was a revised article, two new ones, a vault and six releases, each consistent with the ones before, from a model that remembered nothing between resets except what the files remembered for it.",
+   "section": "top",
+   "quote": "The day's output was a revised article, two new ones, a vault and six releases",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-memory",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "releases shipped in the day",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "definition",
+   "text": "The loop is publish, index, load by altitude, act and check, write back, and the next session starts from the published material; the conventions along the bottom are what let agents share a memory without sharing a session.",
+   "section": "top",
+   "quote": "Memory is context management as a loop: publish, index, load by altitude, act, write back, and the next session starts from the published material.",
+   "about": [
+    "concept:agent-memory",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Email-FS lite gives every agent a mailroom, inbox, done folder and outbox with each agent writing only its own folders, Issues-FS makes an issue a folder whose history is the vault's, and read keys let a memory be shared without being handed over.",
+   "section": "top",
+   "quote": "a published key reads everything and writes nothing, which is what makes it safe to put on a web page",
+   "about": [
+    "entity:email-fs",
+    "entity:issues-fs",
+    "concept:encryption-and-keys",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "Stale pages become false memories: the session found four, among them a page saying 617 nodes where the count is 1,051; two are fixed in this release and two are left standing and named.",
+   "section": "top",
+   "quote": "the session that wrote this article found four more while researching it",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:agent-memory",
+    "entity:nfrs-sgit-ai"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "stale pages found by the session, two fixed",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The memory is opinionated: one person's estate with one person's vocabulary at the top of every altitude, and an agent that loads it loads the opinions with the facts, which is what the bylines are for.",
+   "section": "top",
+   "quote": "The memory is opinionated. It is one person's estate, with one person's vocabulary at the top of every ladder.",
+   "about": [
+    "concept:agent-memory",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Discovery is hard at scale: twenty-seven sites, forty vaults, 211 releases and a growing CRM are more than one index holds, and the memory answers where is the thing I need well only for agents that know its shape.",
+   "section": "top",
+   "quote": "Discovery is hard at scale.",
+   "about": [
+    "concept:agent-memory",
+    "concept:search-as-navigation",
+    "entity:librarian"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "It is so far the owner's alone; the thesis would be properly tested when a second person's estate with a different vocabulary is read by the same agents alongside this one, and that has not happened yet.",
+   "section": "top",
+   "quote": "That has not happened yet.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "Not yet built: a second estate read alongside this one, a freshness check that fails the build on a stale claim, a published shape for the hand-off summary, the one-shot bundle as a vault, and the librarian as a role on this site.",
+   "section": "top",
+   "quote": "a freshness check in the build that fails on a stale claim the way the leak scan fails on a key",
+   "about": [
+    "concept:agent-memory",
+    "concept:publishing-method",
+    "entity:librarian"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The article came from a voice memo on 3 October 2026 answering a question the owner is often asked, behind which is the memory thesis on nfrs.sgit.ai; the industry references were read that day at the URLs in the sources.",
+   "section": "top",
+   "quote": "A voice memo on 3 October 2026, answering a question I get asked a lot.",
+   "about": [
+    "concept:voice-memo",
+    "entity:nfrs-sgit-ai",
+    "entity:dinis-cruz"
+   ],
+   "refs": [
+    "r01"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c28"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose estate and vocabulary the memory is"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site and its twenty-seven siblings that are the published memory"
+  },
+  {
+   "id": "nfrs-sgit-ai",
+   "role": "holds the memory thesis the article stands behind"
+  },
+  {
+   "id": "anthropic",
+   "role": "its September 2025 guidance on context as a finite resource and its memory tool"
+  },
+  {
+   "id": "chatgpt",
+   "role": "its Memory feature, launched February 2024 and extended April 2025"
+  },
+  {
+   "id": "claude",
+   "role": "its per-project memory with an editable summary from September 2025"
+  },
+  {
+   "id": "claude-code",
+   "role": "the session that wrote the article across context resets; its markdown memory index"
+  },
+  {
+   "id": "gemini",
+   "role": "its personal context from August 2025, on by default"
+  },
+  {
+   "id": "letta",
+   "role": "MemGPT's successor with editable memory blocks; ran the filesystem benchmark"
+  },
+  {
+   "id": "mem0",
+   "role": "stores extracted facts; its graph variant scored 68.5 percent"
+  },
+  {
+   "id": "zep",
+   "role": "stores extracted facts as a temporal knowledge graph"
+  },
+  {
+   "id": "manus",
+   "role": "treats the file system as the ultimate context"
+  },
+  {
+   "id": "andrej-karpathy",
+   "role": "used the term context engineering in June 2025"
+  },
+  {
+   "id": "llms-txt",
+   "role": "the site's index, 350 lines and about 106 kilobytes"
+  },
+  {
+   "id": "code-review-graphs-vault",
+   "role": "the vault whose bundle is a megabyte and whose history is four"
+  },
+  {
+   "id": "email-fs",
+   "role": "the inbox agents' memory as files"
+  },
+  {
+   "id": "issues-fs",
+   "role": "an issue as a folder whose history is the vault's"
+  },
+  {
+   "id": "creative-commons",
+   "role": "with open source, what lets an agent fetch, quote and cite the memory"
+  },
+  {
+   "id": "historian",
+   "role": "the role that describes the release log as the site's memory"
+  },
+  {
+   "id": "librarian",
+   "role": "the role that indexes everything in the SG/Send team, not yet on this site"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-memory",
+   "defined_here": true
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "search-as-navigation",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://nfrs.sgit.ai/memory/index.html",
+   "title": "The memory thesis",
+   "by": "nfrs.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://openai.com/",
+   "title": "ChatGPT Memory",
+   "by": "OpenAI",
+   "date": "2024-02",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.anthropic.com/",
+   "title": "Claude memory",
+   "by": "Anthropic",
+   "date": "2025-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://gemini.google/",
+   "title": "Gemini personal context",
+   "by": "Google",
+   "date": "2025-08",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-03",
+   "what": "The voice memo, the counts from the live site, and the session that wrote the article across resets"
+  },
+  {
+   "date": "2025-09",
+   "what": "Anthropic's context engineering guidance, memory tool and Claude's per-project memory"
+  },
+  {
+   "date": "2025-08",
+   "what": "Letta's benchmark where a plain filesystem beat Mem0's graph variant; Gemini's personal context"
+  },
+  {
+   "date": "2025-06",
+   "what": "Andrej Karpathy uses the term context engineering"
+  },
+  {
+   "date": "2024-02",
+   "what": "ChatGPT's Memory launched"
+  },
+  {
+   "date": "2023-10",
+   "what": "MemGPT pages information in and out of a limited window"
+  },
+  {
+   "date": "2026-09-21",
+   "what": "Where the stale updates feed stopped"
+  }
+ ]
+}

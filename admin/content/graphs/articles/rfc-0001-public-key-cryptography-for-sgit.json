@@ -1,0 +1,728 @@
+{
+ "slug": "rfc-0001-public-key-cryptography-for-sgit",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Today an sgit vault is protected by one symmetric read key and a write key that only the server checks.",
+   "section": "top",
+   "quote": "Today an sgit vault is protected by one symmetric read key and a write key that only the server checks",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Because the read key is symmetric, whoever can read can also produce data every client accepts, so a read-key holder who can write to the store can author history.",
+   "section": "top",
+   "quote": "An sgit vault's read key is symmetric, so whoever can read can also produce data every client accepts.",
+   "about": [
+    "concept:threat-modelling",
+    "concept:encryption-and-keys",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "From the passphrase, PBKDF2-SHA256 with 600,000 iterations derives the read key and the write key.",
+   "section": "top",
+   "quote": "From the passphrase, PBKDF2-SHA256 with 600,000 iterations derives two keys.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sha-256"
+   ],
+   "value": {
+    "n": 600000,
+    "unit": "PBKDF2 iterations",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Every stored object is named by the hash of its ciphertext, so a client can check the server returned exactly what was stored, with no key and no trust.",
+   "section": "top",
+   "quote": "Every stored object is named by the hash of its ciphertext, so a client can check that the server returned exactly what was stored, with no key and no trust.",
+   "about": [
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Commits are signed with ECDSA P-256 by the key of the clone that made them.",
+   "section": "top",
+   "quote": "Commits are also signed, with ECDSA P-256, by the key of the clone that made them.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Commit signatures do not close the gap, because a signing key is trusted when its file decrypts under the read key, and a read-key holder can make such a file.",
+   "section": "top",
+   "quote": "Commit signatures do not save the day, because a signing key is trusted when its file decrypts under the read key, and a read-key holder can make such a file.",
+   "about": [
+    "concept:threat-modelling",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "sgit's threat model lists the forgery as a by-design risk and carries a test that performs it and asserts it still succeeds, so the gap cannot be quietly forgotten.",
+   "section": "top",
+   "quote": "It carries a test that performs the forgery against an in-memory host and asserts that it still succeeds, so the gap cannot be quietly forgotten",
+   "about": [
+    "concept:threat-modelling",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Making the read key public and the write key private fails, because whatever decrypts must be secret and the public half can always be derived from the private half.",
+   "section": "top",
+   "quote": "fails, because whatever decrypts must be secret, and the public half can always be derived from the private half.",
+   "about": [
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "Both designs share a first step: a vault signing key, an Ed25519 key derived from the passphrase along a third path, with writers signing branch pointers and the index.",
+   "section": "top",
+   "quote": "today's vaults can get a vault signing key: an Ed25519 key derived from the passphrase along a third path",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Ed25519 is chosen because its signatures are deterministic, so the browser and the command line can share byte-for-byte test vectors.",
+   "section": "top",
+   "quote": "Ed25519 is chosen because its signatures are deterministic, so the browser and the command line can share byte-for-byte test vectors.",
+   "about": [
+    "concept:client-side",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The writer signature is estimated at one and a half to two weeks for the command line, with the same work in the web UI.",
+   "section": "top",
+   "quote": "The analysis estimates one and a half to two weeks for the command line, with the same work in the web UI.",
+   "about": [
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "weeks for the command line, upper estimate",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "Design 1, native PKI vault mode: two key pairs, neither derivable from the other, X25519 for reading and Ed25519 for writing, so a reader cannot write and a host cannot forge.",
+   "section": "top",
+   "quote": "Two key pairs, neither derivable from the other: one for reading, one for writing.",
+   "about": [
+    "concept:native-pki-vault-mode",
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "A random data key is sealed to the read public key rather than encrypting each object to it, because public-key encryption is randomised and sgit depends on deterministic tree encryption.",
+   "section": "top",
+   "quote": "Public-key encryption is randomised: the same tree encrypted twice gives different bytes.",
+   "about": [
+    "concept:vault-design",
+    "concept:native-pki-vault-mode"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The object store, content addressing, trees, sync, merge, partial clones and the command line do not change; only key creation, how the data key reaches a reader, and what authorises a write.",
+   "section": "top",
+   "quote": "What does not change: the object store, content addressing, trees, sync, merge, partial clones and the command line.",
+   "about": [
+    "concept:vault-design",
+    "concept:native-pki-vault-mode"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "The write-only depositor is the capability today's design cannot express: it can encrypt but not read, so write-only means append to its own inbox branch.",
+   "section": "top",
+   "quote": "A depositor can encrypt but not read, so it cannot read the current tree to change it: write-only means append.",
+   "about": [
+    "concept:native-pki-vault-mode",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "A self-certifying vault id means a new write key is a new vault; the cleaner design derives the id from an owner root key that signs a writer set.",
+   "section": "top",
+   "quote": "A self-certifying vault id means a new write key is a new vault.",
+   "about": [
+    "concept:native-pki-vault-mode",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The algorithms, Ed25519, X25519, HKDF-SHA256 and AES-256-GCM, are all available in the Python cryptography library and in current browsers' Web Crypto.",
+   "section": "top",
+   "quote": "Ed25519, X25519, HKDF-SHA256 and AES-256-GCM, all available in the Python cryptography library and in current browsers' Web Crypto.",
+   "about": [
+    "entity:python",
+    "entity:web-crypto",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "Design 2, sealed files: an inner envelope sealed to named people's public keys inside the vault's own encryption, on either vault mode, with the private key anywhere.",
+   "section": "top",
+   "quote": "An inner envelope, sealed to named people's public keys, inside the vault's own encryption.",
+   "about": [
+    "concept:sealed-files",
+    "concept:encryption-and-keys",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Any vault writer can replace a sealed file without being able to read it, because sealing needs only public keys; signed envelopes and per-path author rules answer that.",
+   "section": "top",
+   "quote": "any vault writer can replace a sealed file without being able to read it, because sealing needs only public keys.",
+   "about": [
+    "concept:sealed-files",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "The proposed format is age v1: specified, small and audited, openable with the stock age tool, with a plugin protocol for keys that live elsewhere.",
+   "section": "top",
+   "quote": "It is specified, small and audited; a sealed file can be opened with the stock age tool without sgit",
+   "about": [
+    "concept:sealed-files",
+    "entity:age"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "age's payload cipher, ChaCha20-Poly1305, is not in Web Crypto, so the browser would use the reference TypeScript implementation.",
+   "section": "top",
+   "quote": "age's payload cipher, ChaCha20-Poly1305, is not in Web Crypto, so the browser would use the reference TypeScript implementation.",
+   "about": [
+    "entity:age",
+    "entity:web-crypto",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "Thirty services and tools were checked on 9 October 2026, from their own documentation, as places a private key could live.",
+   "section": "top",
+   "quote": "we checked thirty services and tools on 9 October 2026, from their own documentation.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:sealed-files"
+   ],
+   "value": {
+    "n": 30,
+    "unit": "services and tools checked",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The format the remote key services share is RSA-OAEP-256, not X25519, so sealed files would also need an rsa-oaep-256 recipient type.",
+   "section": "top",
+   "quote": "The format the remote services share is RSA-OAEP-256, not X25519.",
+   "about": [
+    "entity:aws",
+    "entity:google",
+    "entity:microsoft",
+    "concept:sealed-files"
+   ],
+   "refs": [
+    "r05",
+    "r06",
+    "r07"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The three large cloud key services do not offer X25519 decryption; AWS offers key agreement on NIST curves only and Google uses X25519 only inside X-Wing.",
+   "section": "top",
+   "quote": "The three large cloud key services do not offer X25519 decryption",
+   "about": [
+    "entity:aws",
+    "entity:google",
+    "entity:microsoft"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "Approval of each decryption by a person is rare: Fortanix's quorum policy and Vault's control groups provide it; cloud key services give logs and access rules, not a step that asks someone.",
+   "section": "top",
+   "quote": "Approval of each decryption by a person is rare. Fortanix's quorum policy and Vault's control groups provide it",
+   "about": [
+    "entity:fortanix",
+    "entity:hashicorp",
+    "concept:human-in-the-loop"
+   ],
+   "refs": [
+    "r08",
+    "r10"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "No age plugin backed by a cloud key service was found, although age's plugin design names cloud key services as a purpose.",
+   "section": "top",
+   "quote": "We found no age plugin backed by a cloud key service",
+   "about": [
+    "entity:age"
+   ],
+   "refs": [
+    "r11",
+    "r12"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Sealed files do not hide file names, paths, sizes or history from vault members, a removed recipient keeps what was sealed to them, and it is only as strong as the provider.",
+   "section": "top",
+   "quote": "It does not hide file names, paths, sizes or history from vault members; a recipient removed later keeps what was sealed to them before",
+   "about": [
+    "concept:sealed-files"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Limits stay in both designs: a host can still withhold data or serve an older signed state, and a reader you remove keeps what they already read.",
+   "section": "top",
+   "quote": "a host can still withhold data or serve an older signed state; a reader you remove keeps what they already read",
+   "about": [
+    "concept:native-pki-vault-mode",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Nothing described is implemented; there is no code and no release date, and the effort figures are the designers' estimates.",
+   "section": "top",
+   "quote": "Nothing described here is implemented. Effort figures are the designers' estimates.",
+   "about": [
+    "concept:native-pki-vault-mode",
+    "concept:sealed-files"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "None of this is new: Tahoe-LAFS separates read and write capabilities, Hypercore and Dat use a key pair as a feed's identity, git-crypt and SOPS seal files, age puts decryption where the key lives.",
+   "section": "top",
+   "quote": "Tahoe-LAFS separates read and write capabilities for mutable files in nearly this shape.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:age"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "question",
+   "text": "Is there a simpler construction than two key pairs that gives readers no write power and writers no derivable read power, and still works in browsers?",
+   "section": "questions",
+   "quote": "Is there a simpler construction that gives readers no write power and writers no derivable read power, and still works in browsers?",
+   "about": [
+    "concept:native-pki-vault-mode"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "question",
+   "text": "Should sealed files use age v1 or a custom HPKE envelope that stays pure Web Crypto and gives up the ecosystem?",
+   "section": "questions",
+   "quote": "age v1 or a custom HPKE envelope?",
+   "about": [
+    "concept:sealed-files",
+    "entity:age",
+    "entity:web-crypto"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "question",
+   "text": "Is a transparency log or a witness worth the complexity, given a host can still serve an old signed state to someone who never saw a newer one?",
+   "section": "questions",
+   "quote": "Is a transparency log or a witness worth the complexity?",
+   "about": [
+    "concept:native-pki-vault-mode",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "question",
+   "text": "Is running two vault modes side by side worth the extra surface, or should the PKI mode eventually replace the symmetric one?",
+   "section": "questions",
+   "quote": "Is the extra surface worth it, or should the PKI mode eventually replace the symmetric one?",
+   "about": [
+    "concept:native-pki-vault-mode",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "proposal",
+   "text": "The same envelope can carry a vault capability to a person: sgit share --to dinis would seal it to Dinis's published key, so no passphrase passes through chat or shell history.",
+   "section": "top",
+   "quote": "sgit share --to dinis would seal it to Dinis's published key, so no passphrase passes through chat, the command line or shell history.",
+   "about": [
+    "concept:sealed-files",
+    "concept:identity-and-secrets",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c09"
+  },
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c18"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c32"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c31"
+  },
+  {
+   "from": "c28",
+   "verb": "gives_rise_to",
+   "to": "c33"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "the vault format and command line the two designs would extend"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "has editorial responsibility for the proposals; the example recipient of sgit share"
+  },
+  {
+   "id": "sha-256",
+   "role": "PBKDF2-SHA256 derives today's keys"
+  },
+  {
+   "id": "python",
+   "role": "its cryptography library has the proposed algorithms"
+  },
+  {
+   "id": "web-crypto",
+   "role": "the browser's crypto, which lacks age's payload cipher"
+  },
+  {
+   "id": "age",
+   "role": "the proposed envelope format and plugin protocol for sealed files"
+  },
+  {
+   "id": "aws",
+   "role": "AWS KMS, an RSA-OAEP-256 remote key service with no X25519 decryption"
+  },
+  {
+   "id": "google",
+   "role": "Google Cloud KMS, X25519 only inside X-Wing"
+  },
+  {
+   "id": "microsoft",
+   "role": "Azure Key Vault, logs each KeyUnwrap"
+  },
+  {
+   "id": "hashicorp",
+   "role": "Vault Transit, with control groups for approval in Enterprise"
+  },
+  {
+   "id": "fortanix",
+   "role": "DSM, quorum approval on every private-key operation"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "native-pki-vault-mode",
+   "defined_here": true
+  },
+  {
+   "id": "sealed-files",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/SGit-AI/SGit-AI__CLI/blob/48a608f/team/humans/dinis_cruz/claude-code-web/10/09/design__native-pki-vault-mode.md",
+   "title": "Design: native PKI vault mode",
+   "by": "the sgit CLI agent",
+   "date": "2026-10-09",
+   "kind": "repository"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/SGit-AI/SGit-AI__CLI/blob/48a608f/team/humans/dinis_cruz/claude-code-web/10/09/design__sealed-files-layer.md",
+   "title": "Design: sealed files layer",
+   "by": "the sgit CLI agent",
+   "date": "2026-10-09",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/SGit-AI/SGit-AI__CLI/blob/dev/team/humans/dinis_cruz/claude-code-web/10/09/design-analysis__read-write-keys-as-pki.md",
+   "title": "Design analysis: read and write keys as PKI",
+   "by": "the sgit CLI agent",
+   "date": "2026-10-09",
+   "kind": "repository"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.rfc-editor.org/rfc/rfc9180",
+   "title": "RFC 9180: Hybrid Public Key Encryption",
+   "by": "IETF",
+   "date": "undated",
+   "kind": "standard"
+  },
+  {
+   "id": "r05",
+   "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html",
+   "title": "AWS KMS Decrypt",
+   "by": "AWS",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://docs.cloud.google.com/kms/docs/encrypt-decrypt-rsa",
+   "title": "Google Cloud KMS: encrypt and decrypt with RSA",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://learn.microsoft.com/en-us/rest/api/keyvault/keys/unwrap-key/unwrap-key",
+   "title": "Azure Key Vault: unwrap key",
+   "by": "Microsoft",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://developer.hashicorp.com/vault/docs/secrets/transit",
+   "title": "Vault Transit secrets engine",
+   "by": "HashiCorp",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://openbao.org/docs/secrets/transit/",
+   "title": "OpenBao Transit",
+   "by": "OpenBao",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://support.fortanix.com/docs/fortanix-dsm-group-quorum-policy",
+   "title": "Fortanix DSM group quorum policy",
+   "by": "Fortanix",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r11",
+   "url": "https://github.com/FiloSottile/awesome-age",
+   "title": "awesome-age",
+   "by": "Filippo Valsorda",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r12",
+   "url": "https://github.com/FiloSottile/age/releases/tag/v1.1.0",
+   "title": "age v1.1.0 release",
+   "by": "Filippo Valsorda",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r13",
+   "url": "https://sgit.ai/docs/credentials.md",
+   "title": "sgit credentials",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r14",
+   "url": "https://sgit.ai/docs/partial-clones.md",
+   "title": "Partial clones",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-09",
+   "what": "The design session; the two design documents and the analysis written; thirty key services checked"
+  }
+ ]
+}

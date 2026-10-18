@@ -1,0 +1,1135 @@
+{
+ "slug": "a-minimal-viable-browser",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The browser is the biggest program most of us run, the largest attack surface on the machine, and the place we now want to put agents.",
+   "section": "top",
+   "quote": "The browser is the biggest program most of us run, the largest attack surface on the machine",
+   "about": [
+    "concept:minimal-viable-browser",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "A minimal viable browser has a small kernel, reviewed hardest and changed least, and loads components only when a page or an agent needs them, so its attack surface grows only as it is used.",
+   "section": "top",
+   "quote": "A minimal viable browser has a small kernel, reviewed hardest and changed least",
+   "about": [
+    "concept:minimal-viable-browser",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Mozilla fixed 423 security bugs in Firefox in April 2026, against roughly 20 to 30 a month through 2025.",
+   "section": "biggest",
+   "quote": "fixed 423 security bugs in Firefox in April 2026",
+   "about": [
+    "entity:mozilla",
+    "entity:firefox"
+   ],
+   "value": {
+    "n": 423,
+    "unit": "security bugs fixed in Firefox",
+    "as_of": "2026-04"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "271 of those bugs were found with an Anthropic model and fixed in Firefox 150: 180 rated high, 80 moderate, 11 low, a number of them sandbox escapes.",
+   "section": "biggest",
+   "quote": "271 of them were found with an Anthropic model and fixed in Firefox 150",
+   "about": [
+    "entity:anthropic",
+    "entity:firefox",
+    "concept:minimal-code"
+   ],
+   "value": {
+    "n": 271,
+    "of": 423,
+    "unit": "security bugs found with an Anthropic model",
+    "as_of": "2026-04"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Counted from NVD by filing organisation, Google's Chrome team filed 202 CVEs in 2025 and 3,246 in 2026 up to 17 October; Mozilla's filed 213 and 675.",
+   "section": "biggest",
+   "quote": "Google's Chrome team filed 202 CVEs in 2025 and 3,246 in 2026 up to 17 October",
+   "about": [
+    "entity:google",
+    "entity:chrome",
+    "entity:mozilla"
+   ],
+   "value": {
+    "n": 3246,
+    "unit": "CVEs filed by Google's Chrome team in 2026",
+    "as_of": "2026-10-17"
+   },
+   "refs": [
+    "r37"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Vendors already ship less code as a mode: Edge's enhanced security mode turns off the V8 just-in-time compiler, after Microsoft said 45% of V8 CVEs in 2019 were JIT-related.",
+   "section": "biggest",
+   "quote": "45% of V8 CVEs in 2019 were JIT-related",
+   "about": [
+    "entity:microsoft",
+    "concept:minimal-code"
+   ],
+   "value": {
+    "n": 45,
+    "unit": "percent of V8 CVEs that were JIT-related",
+    "as_of": "2019"
+   },
+   "refs": [
+    "r11",
+    "r12"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Edge's mode, Vanadium, Apple's Lockdown Mode and Tor Browser's Safest level are each a minimal browser for one threat, switched on by hand; the general version does not exist.",
+   "section": "biggest",
+   "quote": "What does not exist is the general version: a browser that starts small and only grows when it has to.",
+   "about": [
+    "concept:minimal-viable-browser",
+    "entity:apple",
+    "entity:tor-browser"
+   ],
+   "refs": [
+    "r13",
+    "r14"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Three browsers come out of the same engine: one for an application with no extensions, media or downloads; one for an agent with no accounts or file access either; and the reader's own, loading what they use.",
+   "section": "shape",
+   "quote": "Three browsers come out of the same engine.",
+   "about": [
+    "concept:minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Firefox has had pieces of this and dropped some: a site-specific browser removed in Firefox 86, a kiosk mode, site isolation since Firefox 95, and Servo now an embeddable library at 0.1.0.",
+   "section": "shape",
+   "quote": "Firefox has had pieces of this, and dropped some of them.",
+   "about": [
+    "entity:firefox",
+    "entity:servo",
+    "entity:mozilla"
+   ],
+   "refs": [
+    "r07",
+    "r10",
+    "r32"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The vendors say plainly that prompt injection will not be fixed: OpenAI says it is unlikely ever to be fully solved, Google calls indirect prompt injection the primary new threat, and Gartner says block AI browsers for now.",
+   "section": "agent",
+   "quote": "The vendors say plainly that this will not be fixed.",
+   "about": [
+    "concept:prompt-injection",
+    "entity:openai",
+    "entity:google",
+    "entity:gartner"
+   ],
+   "refs": [
+    "r15",
+    "r16",
+    "r21"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "In March 2026 Zenity Labs disclosed PleaseFix, a zero-click hijack of Perplexity's Comet through a calendar invite that reached local files; the fix was to restrict file access, a smaller browser.",
+   "section": "agent",
+   "quote": "The fix was to restrict file:// access: not a smarter model, a smaller browser.",
+   "about": [
+    "entity:zenity-labs",
+    "concept:prompt-injection",
+    "concept:reach"
+   ],
+   "refs": [
+    "r19",
+    "r20"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The better defences already point the same way: Atlas has a logged-out mode, Brave runs AI browsing in an isolated profile, and Chrome adds Agent Origin Sets that limit the sites a task can touch.",
+   "section": "agent",
+   "quote": "The better defences already point the same way.",
+   "about": [
+    "entity:chatgpt",
+    "entity:brave",
+    "entity:chrome",
+    "concept:agent-isolation"
+   ],
+   "refs": [
+    "r17"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "hypothesis",
+   "text": "A browser for one agent is a practical prompt-injection defence: an agent cannot leak what its browser cannot reach, and the grant shrinks to the mandate.",
+   "section": "agent",
+   "quote": "An agent cannot leak what its browser cannot reach.",
+   "about": [
+    "concept:prompt-injection",
+    "concept:reach",
+    "concept:blast-radius",
+    "concept:minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "LayerX's 2025 report found 99% of enterprise users have an extension installed and 53% have at least one with high or critical permissions.",
+   "section": "extensions",
+   "quote": "have an extension installed, and 53% have at least one with high or critical permissions",
+   "about": [
+    "concept:minimal-viable-browser"
+   ],
+   "value": {
+    "n": 53,
+    "unit": "percent of enterprise users with a high or critical permission extension",
+    "as_of": "2025"
+   },
+   "refs": [
+    "r23"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Koi's ShadyPanda report covers about 4.3 million installs across 145 extensions, legitimate for years and then weaponised through auto-update; Urban VPN Proxy began harvesting every prompt on ChatGPT, Claude, Gemini and Copilot.",
+   "section": "extensions",
+   "quote": "covers about 4.3 million installs across 145 extensions",
+   "about": [
+    "entity:chrome",
+    "entity:microsoft",
+    "entity:chatgpt",
+    "entity:claude",
+    "entity:gemini",
+    "entity:copilot"
+   ],
+   "value": {
+    "n": 4300000,
+    "unit": "installs across 145 extensions in ShadyPanda",
+    "as_of": "2025-12"
+   },
+   "refs": [
+    "r24",
+    "r22",
+    "r25"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "Every extension in its own box gets only the sites and the powers its job needs, a change is a new request not a silent update, and the permission model is an Agent Behaviour Policy in all but name.",
+   "section": "extensions",
+   "quote": "An extension in its own box gets only the sites and the powers its job needs",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Firefox made host permissions opt-in per site in Manifest V3, requires new extensions to declare data collection, and kept the blocking webRequest API that Chrome removed, so full uBlock Origin still runs.",
+   "section": "extensions",
+   "quote": "which is why full uBlock Origin still runs on Firefox",
+   "about": [
+    "entity:firefox",
+    "entity:mozilla",
+    "entity:chrome"
+   ],
+   "refs": [
+    "r05",
+    "r06",
+    "r36"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Much of this ships today in pieces: hardened forks such as LibreWolf, Mullvad, Tor and Waterfox, Zen and Floorp, Brave Origin, ungoogled-chromium, Ladybird and Servo, Lightpanda and Chrome's headless shell, Tauri.",
+   "section": "exists",
+   "quote": "None of this is new as an idea, and much of it ships today, in pieces.",
+   "about": [
+    "entity:librewolf",
+    "entity:waterfox",
+    "entity:tor-browser",
+    "entity:lightpanda",
+    "entity:servo",
+    "entity:cloudflare"
+   ],
+   "refs": [
+    "r29",
+    "r30",
+    "r31",
+    "r33",
+    "r34",
+    "r35"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "Brave Origin, launched in June 2026 for about $60 one-time, removes the AI assistant, news, rewards, wallet, VPN, Tor and playlist and keeps the blocker; people will pay for less.",
+   "section": "exists",
+   "quote": "launched in June 2026 for about $60 one-time",
+   "about": [
+    "entity:brave",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 60,
+    "unit": "USD one-time for Brave Origin",
+    "as_of": "2026-06"
+   },
+   "refs": [
+    "r26"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "What is missing is the same engine, from the same vendor, in all three shapes, with the components as the unit.",
+   "section": "exists",
+   "quote": "What is missing is the same engine, from the same vendor, in all three shapes, with the components as the unit.",
+   "about": [
+    "concept:minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "hypothesis",
+   "text": "Mozilla is better placed than anyone to build this: it has its own engine, privacy is its brand, it runs on the client, and its money does not come from knowing more about its users.",
+   "section": "why-mozilla",
+   "quote": "I think Mozilla is better placed than anyone to build this, for four reasons.",
+   "about": [
+    "entity:mozilla",
+    "concept:strategy",
+    "concept:privacy",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "Mozilla's state of Mozilla report puts Firefox at about 200 million monthly users, and Firefox 148 added a switch that turns off current and future generative AI features.",
+   "section": "why-mozilla",
+   "quote": "puts Firefox at about 200 million monthly users",
+   "about": [
+    "entity:firefox",
+    "entity:mozilla"
+   ],
+   "value": {
+    "n": 200000000,
+    "unit": "monthly Firefox users",
+    "as_of": "2026-01-27"
+   },
+   "refs": [
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "A correction to the memo: Mozilla's revenue is not independent; Mark Surman said search was until recently about 95 to 98% of revenue, with privacy-preserving ads now 10 to 12%, most of the search money from Google.",
+   "section": "why-mozilla",
+   "quote": "about 95 to 98% of revenue",
+   "about": [
+    "entity:mozilla",
+    "entity:mark-surman",
+    "entity:google"
+   ],
+   "value": {
+    "n": 95,
+    "unit": "percent of Mozilla revenue from search, lower bound",
+    "as_of": "2026-04-04"
+   },
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "Firefox stood at 2.8% of the browser market in September 2026, and security has rarely been enough to make people switch browsers.",
+   "section": "speed",
+   "quote": "Firefox at 2.8% of the market in September 2026 knows it.",
+   "about": [
+    "entity:firefox",
+    "concept:strategy"
+   ],
+   "value": {
+    "n": 2.8,
+    "unit": "percent of the browser market",
+    "as_of": "2026-09"
+   },
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "The pitch to Mozilla should be speed, not security: a browser with only the code it needs starts at once, uses a fraction of the memory, and an agent can run many of them.",
+   "section": "speed",
+   "quote": "The pitch to Mozilla should not be security.",
+   "about": [
+    "concept:strategy",
+    "entity:mozilla",
+    "concept:minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "data-point",
+   "text": "Lightpanda's own benchmark claims 123MB against 2GB of peak memory for 100 pages, and 5 seconds against 46.",
+   "section": "speed",
+   "quote": "claims 123MB against 2GB of peak memory for 100 pages, and 5 seconds against 46",
+   "about": [
+    "entity:lightpanda"
+   ],
+   "value": {
+    "n": 123,
+    "of": 2000,
+    "unit": "MB peak memory for 100 pages, against Chrome's 2GB"
+   },
+   "refs": [
+    "r29"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "No minimal viable browser exists in this form; the pieces do, and the design is a proposal.",
+   "section": "limits",
+   "quote": "The pieces do; the design is a proposal.",
+   "about": [
+    "concept:minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Mozilla has not said it will build it; nothing here is from Mozilla beyond what is linked.",
+   "section": "limits",
+   "quote": "Mozilla has not said it will build it.",
+   "about": [
+    "entity:mozilla"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Smaller is not safe: a kernel still has bugs, and an agent with no file access can still be talked into a bad form submission.",
+   "section": "limits",
+   "quote": "A kernel still has bugs, and an agent with no file access can still be talked into a bad form submission.",
+   "about": [
+    "concept:prompt-injection",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The CVE counts are the newsroom's own, counted from NVD by filing organisation on 18 October 2026, and the 2026 rise reflects AI-assisted bug finding as much as new bugs.",
+   "section": "limits",
+   "quote": "the 2026 rise reflects AI-assisted bug finding as much as new bugs",
+   "about": [
+    "entity:google",
+    "entity:mozilla"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "Some figures are the vendor's own: Lightpanda's benchmark, Brave's and Mozilla's user counts, LayerX's survey.",
+   "section": "limits",
+   "quote": "Some figures are the vendor's own.",
+   "about": [
+    "entity:lightpanda",
+    "entity:brave",
+    "entity:mozilla"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "Mozilla's 2024 and 2025 revenue split is from interviews and its ledger page, which links its 2024 audited statements.",
+   "section": "limits",
+   "quote": "Mozilla's 2024 and 2025 revenue split is from interviews and its ledger page.",
+   "about": [
+    "entity:mozilla",
+    "entity:mark-surman"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "Loading components on demand has costs, fingerprinting among them: a browser that loads different parts for different sites can look different to each.",
+   "section": "limits",
+   "quote": "Fingerprinting is one: a browser that loads different parts for different sites can look different to each",
+   "about": [
+    "concept:minimal-viable-browser",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of the owner on 18 October 2026, with research read the same day, written up and checked by the site's agent; the editorial responsibility is the owner's.",
+   "section": "sources",
+   "quote": "Written up and checked by this site's agent; the editorial responsibility is mine.",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c13"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c24",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c26"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c02"
+  }
+ ],
+ "entities": [
+  {
+   "id": "firefox",
+   "role": "the browser the argument is about, with pieces of the design already in it"
+  },
+  {
+   "id": "mozilla",
+   "role": "the vendor the owner thinks is uniquely placed to build the minimal viable browser"
+  },
+  {
+   "id": "chrome",
+   "role": "the other engine, its CVE counts, Agent Origin Sets and headless shell"
+  },
+  {
+   "id": "google",
+   "role": "files Chrome's CVEs and pays most of Mozilla's search revenue"
+  },
+  {
+   "id": "anthropic",
+   "role": "its model found 271 of the Firefox bugs fixed in April 2026"
+  },
+  {
+   "id": "microsoft",
+   "role": "Edge's enhanced security mode and the 2021 JIT figure"
+  },
+  {
+   "id": "apple",
+   "role": "Lockdown Mode, and WebKit as one of the two other engines"
+  },
+  {
+   "id": "openai",
+   "role": "said prompt injection is unlikely ever to be fully solved"
+  },
+  {
+   "id": "gartner",
+   "role": "told organisations to block AI browsers for now"
+  },
+  {
+   "id": "cloudflare",
+   "role": "hosts browsers through Browser Rendering"
+  },
+  {
+   "id": "chatgpt",
+   "role": "ChatGPT Atlas, with a logged-out mode for its agent"
+  },
+  {
+   "id": "claude",
+   "role": "one of the chat sites whose prompts Urban VPN Proxy harvested"
+  },
+  {
+   "id": "gemini",
+   "role": "one of the chat sites whose prompts Urban VPN Proxy harvested"
+  },
+  {
+   "id": "copilot",
+   "role": "one of the chat sites whose prompts Urban VPN Proxy harvested"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where to write to try a component model for agents"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose voice memo and editorial responsibility this is"
+  },
+  {
+   "id": "brave",
+   "role": "isolated AI browsing profile, and Brave Origin, the paid minimal browser"
+  },
+  {
+   "id": "librewolf",
+   "role": "a hardened Firefox build with less telemetry"
+  },
+  {
+   "id": "waterfox",
+   "role": "a Firefox fork that ships with no AI"
+  },
+  {
+   "id": "tor-browser",
+   "role": "its Safest level turns off JavaScript altogether"
+  },
+  {
+   "id": "servo",
+   "role": "the Rust engine Mozilla started, now an embeddable library at 0.1.0"
+  },
+  {
+   "id": "lightpanda",
+   "role": "a browser written from scratch for agents, with its own memory benchmark"
+  },
+  {
+   "id": "zenity-labs",
+   "role": "disclosed PleaseFix and the zero-click chains against agentic browsers"
+  },
+  {
+   "id": "mark-surman",
+   "role": "Mozilla's head, on search as 95 to 98% of revenue"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "minimal-viable-browser",
+   "defined_here": true
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
+   "title": "Behind the scenes: hardening Firefox",
+   "by": "Mozilla",
+   "date": "2026-05-07",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://stateof.mozilla.org/ledger",
+   "title": "State of Mozilla 2025/26, the ledger",
+   "by": "Mozilla",
+   "date": "2026-01-27",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://blog.mozilla.org/en/firefox/ai-controls/",
+   "title": "AI controls in Firefox",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://blog.mozilla.org/en/firefox/firefox-smart-window/",
+   "title": "Firefox Smart Window",
+   "by": "Mozilla",
+   "date": "2026-08-18",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://blog.mozilla.org/addons/2024/03/13/manifest-v3-manifest-v2-march-2024-update/",
+   "title": "Manifest V3 and Manifest V2, March 2024 update",
+   "by": "Mozilla",
+   "date": "2024-03-13",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://blog.mozilla.org/addons/2025/10/23/data-collection-consent-changes-for-new-firefox-extensions/",
+   "title": "Data collection consent changes for new Firefox extensions",
+   "by": "Mozilla",
+   "date": "2025-10-23",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://wiki.mozilla.org/Project_Fission",
+   "title": "Project Fission",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.medianama.com/2026/04/223-mozilla-ai-search-future-revenue-diversification-mark-surman/",
+   "title": "Interview with Mark Surman",
+   "by": "MediaNama",
+   "date": "2026-04-04",
+   "kind": "news"
+  },
+  {
+   "id": "r09",
+   "url": "https://gs.statcounter.com/browser-market-share/monthly/worldwide",
+   "title": "Browser market share, worldwide",
+   "by": "StatCounter",
+   "date": "2026-09",
+   "kind": "dataset"
+  },
+  {
+   "id": "r10",
+   "url": "https://servo.org/blog/2026/04/13/servo-0.1.0-release/",
+   "title": "Servo 0.1.0",
+   "by": "Servo",
+   "date": "2026-04-13",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://learn.microsoft.com/deployedge/microsoft-edge-security-browse-safer",
+   "title": "Browse safer with Microsoft Edge",
+   "by": "Microsoft",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r12",
+   "url": "https://therecord.media/microsoft-announces-new-super-duper-secure-mode-for-edge/",
+   "title": "Microsoft announces new Super Duper Secure Mode for Edge",
+   "by": "The Record",
+   "date": "2021",
+   "kind": "news"
+  },
+  {
+   "id": "r13",
+   "url": "https://grapheneos.org/features",
+   "title": "GrapheneOS features",
+   "by": "GrapheneOS",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r14",
+   "url": "https://support.apple.com/en-us/105120",
+   "title": "Lockdown Mode",
+   "by": "Apple",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r15",
+   "url": "https://techcrunch.com/2025/12/22/openai-says-ai-browsers-may-always-be-vulnerable-to-prompt-injection-attacks/",
+   "title": "OpenAI says AI browsers may always be vulnerable to prompt injection attacks",
+   "by": "TechCrunch",
+   "date": "2025-12-22",
+   "kind": "news"
+  },
+  {
+   "id": "r16",
+   "url": "https://blog.google/security/architecting-security-for-agentic/",
+   "title": "Architecting security for agentic capabilities in Chrome",
+   "by": "Google",
+   "date": "2025-12-08",
+   "kind": "post"
+  },
+  {
+   "id": "r17",
+   "url": "https://brave.com/blog/ai-browsing/",
+   "title": "AI browsing",
+   "by": "Brave",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r18",
+   "url": "https://brave.com/blog/unseeable-prompt-injections/",
+   "title": "Unseeable prompt injections",
+   "by": "Brave",
+   "date": "2025-10-21",
+   "kind": "post"
+  },
+  {
+   "id": "r19",
+   "url": "https://www.businesswire.com/news/home/20260303909038/en/Zenity-Labs-Discloses-PleaseFix-Vulnerability-Family-in-Perplexity-Comet-and-Other-Agentic-Browsers",
+   "title": "Zenity Labs discloses PleaseFix vulnerability family",
+   "by": "Zenity Labs",
+   "date": "2026-03-03",
+   "kind": "news"
+  },
+  {
+   "id": "r20",
+   "url": "https://www.darkreading.com/cyber-risk/ai-browsers-zero-click-agent-hijacking",
+   "title": "AI browsers: zero-click agent hijacking",
+   "by": "Dark Reading",
+   "date": "2026-08",
+   "kind": "news"
+  },
+  {
+   "id": "r21",
+   "url": "https://www.theregister.com/2025/12/08/gartner_recommends_ai_browser_ban/",
+   "title": "Gartner recommends AI browser ban",
+   "by": "The Register",
+   "date": "2025-12-08",
+   "kind": "news"
+  },
+  {
+   "id": "r22",
+   "url": "https://www.theregister.com/2025/12/16/chrome_edge_privacy_extensions_quietly/",
+   "title": "Urban VPN extension quietly harvesting AI chats",
+   "by": "The Register",
+   "date": "2025-12-16",
+   "kind": "news"
+  },
+  {
+   "id": "r23",
+   "url": "https://go.layerxsecurity.com/hubfs/LayerX_Enterprise_Browser_Extension_Security_Report_2025.pdf",
+   "title": "Enterprise Browser Extension Security Report 2025",
+   "by": "LayerX",
+   "date": "2025",
+   "kind": "paper"
+  },
+  {
+   "id": "r24",
+   "url": "https://thehackernews.com/2025/12/shadypanda-turns-popular-browser.html",
+   "title": "ShadyPanda turns popular browser extensions into spyware",
+   "by": "The Hacker News, on Koi's report",
+   "date": "2025-12",
+   "kind": "news"
+  },
+  {
+   "id": "r25",
+   "url": "https://cybernews.com/security/darkspectre-malicious-browser-extension-campaign/",
+   "title": "DarkSpectre malicious browser extension campaign",
+   "by": "Cybernews",
+   "date": "undated",
+   "kind": "news"
+  },
+  {
+   "id": "r26",
+   "url": "https://www.privacyguides.org/news/2026/06/07/brave-launches-paid-minimalist-brave-origin-browser/",
+   "title": "Brave launches paid minimalist Brave Origin browser",
+   "by": "Privacy Guides",
+   "date": "2026-06-07",
+   "kind": "news"
+  },
+  {
+   "id": "r27",
+   "url": "https://www.malwarebytes.com/blog/bugs/2026/10/update-chrome-and-chromeos-to-fix-critical-security-issues",
+   "title": "Update Chrome and ChromeOS to fix critical security issues",
+   "by": "Malwarebytes",
+   "date": "2026-10",
+   "kind": "news"
+  },
+  {
+   "id": "r28",
+   "url": "https://www.thurrott.com/dev/246716/firefox-85-is-here-but-mozilla-is-killing-pwa-features",
+   "title": "Firefox 85 is here, but Mozilla is killing PWA features",
+   "by": "Thurrott",
+   "date": "undated",
+   "kind": "news"
+  },
+  {
+   "id": "r29",
+   "url": "https://github.com/lightpanda-io/browser",
+   "title": "Lightpanda browser",
+   "by": "Lightpanda",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r30",
+   "url": "https://developer.chrome.com/blog/chrome-headless-shell",
+   "title": "Chrome headless shell",
+   "by": "Chrome",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r31",
+   "url": "https://v2.tauri.app/start/",
+   "title": "Tauri: start",
+   "by": "Tauri",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r32",
+   "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1682593",
+   "title": "Bug 1682593: remove the site-specific browser",
+   "by": "Mozilla",
+   "date": "2021",
+   "kind": "page"
+  },
+  {
+   "id": "r33",
+   "url": "https://developers.cloudflare.com/changelog/post/2026-04-10-browser-rendering-cdp-endpoint/",
+   "title": "Browser Rendering CDP endpoint",
+   "by": "Cloudflare",
+   "date": "2026-04-10",
+   "kind": "documentation"
+  },
+  {
+   "id": "r34",
+   "url": "https://github.com/ungoogled-software/ungoogled-chromium",
+   "title": "ungoogled-chromium",
+   "by": "ungoogled-software",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r35",
+   "url": "https://ladybird.org/",
+   "title": "Ladybird",
+   "by": "Ladybird",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r36",
+   "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/optional_host_permissions",
+   "title": "optional_host_permissions",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r37",
+   "url": "https://nvd.nist.gov/",
+   "title": "NVD, CVE counts by source identifier",
+   "by": "NIST",
+   "date": "2026-10-18",
+   "kind": "dataset"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "The voice memo, the research read, and the CVE counts from NVD"
+  },
+  {
+   "date": "2026-04",
+   "what": "Mozilla fixes 423 security bugs in Firefox, 271 found with an Anthropic model"
+  },
+  {
+   "date": "2026-10-06",
+   "what": "A Chrome update fixes 247 vulnerabilities"
+  },
+  {
+   "date": "2026-03-03",
+   "what": "Zenity Labs discloses PleaseFix"
+  },
+  {
+   "date": "2026-06",
+   "what": "Brave Origin launches at about $60 one-time"
+  },
+  {
+   "date": "2026-04-13",
+   "what": "Servo 0.1.0 published as an embeddable library"
+  },
+  {
+   "date": "2026-09",
+   "what": "Firefox at 2.8% of the browser market"
+  },
+  {
+   "date": "2025-12",
+   "what": "OpenAI, Google and Gartner on prompt injection in agentic browsers; ShadyPanda and Urban VPN"
+  }
+ ]
+}

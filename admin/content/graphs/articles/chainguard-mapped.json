@@ -1,0 +1,760 @@
+{
+ "slug": "chainguard-mapped",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Chainguard was founded in October 2021 by people who, according to Contrary Research, worked together on securing Google's software supply chain, including SLSA, Sigstore and one of the original distroless images.",
+   "section": "company",
+   "quote": "Chainguard was founded in October 2021.",
+   "about": [
+    "entity:chainguard",
+    "entity:google",
+    "concept:supply-chains"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "In April 2025 Chainguard raised a $356 million Series D at a $3.5 billion valuation, as SecurityWeek reported.",
+   "section": "company",
+   "quote": "In April 2025 it raised a $356 million Series D at a $3.5 billion valuation",
+   "about": [
+    "entity:chainguard",
+    "concept:startups"
+   ],
+   "value": {
+    "n": 356000000,
+    "unit": "USD raised in the Series D",
+    "as_of": "2025-04"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Its open-source lineage is in the products: Wolfi publishes its build recipes under the Apache License, Chainguard maintains apko, melange and gitsign, and runs EmeritOSS and the Athena coalition.",
+   "section": "company",
+   "quote": "Wolfi, the distribution its images are built from, publishes its build recipes under the Apache License",
+   "about": [
+    "entity:chainguard",
+    "entity:wolfi",
+    "entity:apache-2",
+    "concept:open-source"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "From the bottom up it builds Wolfi and Chainguard OS, hardened container images with a free Catalog Starter tier of five images, libraries rebuilt from source with Go and .NET announced on 14 October, and Chainguard Actions.",
+   "section": "builds",
+   "quote": "the Chainguard Actions catalog now spans over 1,000 continuously verified and hardened actions",
+   "about": [
+    "entity:chainguard",
+    "entity:github-actions",
+    "concept:supply-chains"
+   ],
+   "refs": [
+    "r04",
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The new part is agents: Agent Skills in beta since March, and four products announced on 14 October, MCP servers reached by OAuth, Workspaces with an egress policy, Checks in hardware-isolated microVMs with signed attestations, and Harness, which hunts vulnerabilities.",
+   "section": "builds",
+   "quote": "the proxy blocks and logs any outbound request to an endpoint you haven't explicitly allowed",
+   "about": [
+    "entity:chainguard",
+    "entity:mcp",
+    "entity:anthropic",
+    "concept:agent-isolation",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r07",
+    "r08",
+    "r09",
+    "r10",
+    "r11"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "hypothesis",
+   "text": "That last group is a company moving from securing what agents install to governing what agents do, and the Agent Skills announcement names the next step: organisations defining and enforcing their own skill security policies.",
+   "section": "builds",
+   "quote": "That last group is a company moving from securing what agents install to governing what agents do.",
+   "about": [
+    "entity:chainguard",
+    "concept:behaviour-policy",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Chainguard's OSV-format advisory index, read on 14 October 2026, lists 12,480 advisories covering 12,125 distinct CVEs, and a second index lists 1,224,077 records, one per advisory and package.",
+   "section": "publishes",
+   "quote": "The index lists 12,480 advisories, covering 12,125 distinct CVEs.",
+   "about": [
+    "entity:chainguard",
+    "entity:osv",
+    "concept:supply-chains",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 12480,
+    "unit": "advisories",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r12"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "In a random sample of 300 records holding 377 components, 71% were fixed, 19% marked as false positives, 6% waiting for an upstream fix and 4% marked as fix not planned.",
+   "section": "publishes",
+   "quote": "71% were fixed, 19% marked as false positives, 6% waiting for an upstream fix and 4% marked as fix not planned.",
+   "about": [
+    "entity:chainguard",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 71,
+    "unit": "percent of sampled components fixed",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "An OpenVEX index for libraries holds 732 documents: 675 for Maven, 42 for PyPI, 9 for npm and 6 for Go.",
+   "section": "publishes",
+   "quote": "An OpenVEX index of 732 documents: 675 for Maven, 42 for PyPI, 9 for npm and 6 for Go.",
+   "about": [
+    "entity:chainguard",
+    "entity:openvex",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 732,
+    "unit": "OpenVEX documents",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The Wolfi advisories were kept in a public repository with a reason for each decision until January 2026; it is now archived, and in the current feed a false positive carries no reason.",
+   "section": "publishes",
+   "quote": "In the current feed, a \"false positive\" carries no reason.",
+   "about": [
+    "entity:wolfi",
+    "entity:chainguard",
+    "concept:provenance"
+   ],
+   "refs": [
+    "r14"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The archive holds 30,030 advisories across 1,616 packages and 2,850 decisions that a vulnerability did not apply.",
+   "section": "depth",
+   "quote": "The archive holds 30,030 advisories across 1,616 packages, and 2,850 decisions that a vulnerability did not apply.",
+   "about": [
+    "entity:wolfi",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 2850,
+    "of": 30030,
+    "unit": "decisions that a vulnerability did not apply",
+    "as_of": "2026-01"
+   },
+   "refs": [
+    "r14"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "Of the 2,850 reasons, 1,462 say the vulnerable code is not included, 546 the vulnerable version is not used, 542 the record does not match, 123 the record is contested, 80 not in the execution path, 77 not adversary-controlled, 20 mitigated inline.",
+   "section": "depth",
+   "quote": "So 177 of the 2,850, about 6%, are reasons about context, and the analysis behind them can be good.",
+   "about": [
+    "entity:wolfi",
+    "concept:context-layer",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 177,
+    "of": 2850,
+    "unit": "decisions with a reason about context",
+    "as_of": "2026-01"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The context in those reasons is about how the package was built, not about the application that runs on it: the graph stops at the package.",
+   "section": "depth",
+   "quote": "But that context is about how the package was built, not about the application that runs on it. The graph stops at the package.",
+   "about": [
+    "concept:context-layer",
+    "entity:chainguard"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "hypothesis",
+   "text": "What matters is exploit paths: an application on a container with many vulnerabilities its exposed ports and code never reach is acceptable, and one reachable flaw in an otherwise clean image is not.",
+   "section": "depth",
+   "quote": "The reverse is also true: one reachable flaw in an otherwise clean image is not.",
+   "about": [
+    "concept:context-layer",
+    "concept:reach",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Updating is not free: a new version, even a fix, can change the application's behaviour, which means code changes, CI, tests and people, so the real decision is which images must be fixed before they ship and which can deploy today.",
+   "section": "depth",
+   "quote": "A new version, even a fix, can change the behaviour of the application, which means code changes upstream, which means CI and tests and people.",
+   "about": [
+    "concept:context-layer",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "The decision needs a graph from the user story to the exposed surface, the code paths, the library functions and the components in the image, sorting every finding into must fix, ship now with a reason, or ship now and watch.",
+   "section": "context",
+   "quote": "must fix before it ships, because it is reachable and not mitigated; ship now with a reason, because it is present and unreachable or mitigated; and ship now and watch",
+   "about": [
+    "concept:context-layer",
+    "concept:fractal-semantic-graphs",
+    "concept:code-review",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "It is a behaviour policy used as controls for an image: the mandate is what the service is for, the reach is what is exposed and callable, the gap is the vulnerabilities inside that reach, and the barrier is what stands in front of each.",
+   "section": "context",
+   "quote": "One row per image and finding, with its evidence, and its answer.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:context-layer",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The format to carry the answer exists: a VEX statement can say not affected with a justification, and Chainguard already publishes VEX; what is missing is the application-level justification only the application's owner can write.",
+   "section": "context",
+   "quote": "What is missing is the application-level justification, which only the application's owner can write, and the evidence behind it.",
+   "about": [
+    "entity:openvex",
+    "concept:context-layer",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "An open behaviour policy is a natural source for the policies Chainguard's agent products enforce, Agent Skills, the MCP servers and Workspaces, and the signed attestations from Checks are the footprint to compare with it.",
+   "section": "plug-in",
+   "quote": "An open behaviour policy is a natural source for the policies these products enforce",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:footprint",
+    "entity:chainguard",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "Vaults for the data between stages: advisories, VEX, attestations and context decisions are sensitive, and sgit in a CI pipeline showed vaults carrying data through GitHub Actions scoped per stage and encrypted per key.",
+   "section": "plug-in",
+   "quote": "Hardened actions carrying encrypted vaults is a good combination.",
+   "about": [
+    "entity:sgit",
+    "entity:github-actions",
+    "concept:vault",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "An open format for deployment decisions: the three answers with their evidence as a signed file per image and release, published as VEX where it can be, with the reasons published with every status as Wolfi used to.",
+   "section": "plug-in",
+   "quote": "a status without a reason is a decision nobody can check.",
+   "about": [
+    "concept:context-layer",
+    "concept:provenance",
+    "entity:openvex"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "No dedicated programme for open-source maintainers was found; when Chainguard changed its free developer tier in 2024 it offered to discuss support, and Catalog Starter gives five free images today.",
+   "section": "plug-in",
+   "quote": "I could not find a dedicated programme for open-source maintainers.",
+   "about": [
+    "entity:chainguard",
+    "concept:open-source",
+    "entity:sgit"
+   ],
+   "refs": [
+    "r15"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The counts are from public data read on 14 October 2026; the security site and customer data may hold more, including reasons the public feed does not carry.",
+   "section": "limits",
+   "quote": "the security site and customer data may hold more, including reasons the public feed does not carry.",
+   "about": [
+    "entity:chainguard",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The status shares are from a sample of 300 random records of the 1.22 million, and the reason counts are from an archive last changed in January 2026, so current practice may differ.",
+   "section": "limits",
+   "quote": "300 random records of the 1.22 million.",
+   "about": [
+    "entity:wolfi",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The context layer is a proposal: Chainguard may be building something like it, and nothing public was found that reaches the application.",
+   "section": "limits",
+   "quote": "Chainguard may be building something like it; I found nothing public that reaches the application.",
+   "about": [
+    "concept:context-layer",
+    "entity:chainguard"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Products are as announced, several in beta and none used; company history, founders and funding are from Contrary Research and SecurityWeek.",
+   "section": "limits",
+   "quote": "Several are in beta; I have not used them.",
+   "about": [
+    "entity:chainguard",
+    "entity:contrary-research",
+    "entity:securityweek"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The feeds were downloaded and counted for the article on 14 October 2026 from two voice memos: the OSV indexes, a random sample of 300 records, the libraries' OpenVEX index and a shallow clone of the archived advisories repository.",
+   "section": "sources",
+   "quote": "the OSV indexes and a random sample of 300 records, the libraries' OpenVEX index, and a shallow clone of the archived wolfi-dev/advisories repository.",
+   "about": [
+    "concept:voice-memo",
+    "entity:dinis-cruz",
+    "entity:osv",
+    "entity:openvex"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c07"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c14"
+  },
+  {
+   "from": "c14",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c05"
+  }
+ ],
+ "entities": [
+  {
+   "id": "chainguard",
+   "role": "the company mapped: its products, its public data, and where a policy and a vault plug in"
+  },
+  {
+   "id": "google",
+   "role": "where the founders worked on SLSA, Sigstore and distroless images"
+  },
+  {
+   "id": "apache-2",
+   "role": "the licence of Wolfi's build recipes"
+  },
+  {
+   "id": "github-actions",
+   "role": "Chainguard Actions hardens over 1,000 of them; vaults carry data through them"
+  },
+  {
+   "id": "mcp",
+   "role": "the protocol of Chainguard's new servers"
+  },
+  {
+   "id": "anthropic",
+   "role": "one of its frontier models powers Harness"
+  },
+  {
+   "id": "sgit",
+   "role": "ships containers that would run on hardened images; its vaults carry pipeline data"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "the open behaviour policy proposed as a source for the agent products' policies"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memos and holds editorial responsibility"
+  },
+  {
+   "id": "wolfi",
+   "role": "the distribution Chainguard's images are built from, whose archived advisories carried the reasons"
+  },
+  {
+   "id": "osv",
+   "role": "the format of Chainguard's advisory feed"
+  },
+  {
+   "id": "openvex",
+   "role": "the VEX format Chainguard publishes for libraries and the proposed carrier for deployment decisions"
+  },
+  {
+   "id": "contrary-research",
+   "role": "source for the founders' history"
+  },
+  {
+   "id": "securityweek",
+   "role": "reported the $356 million Series D"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "context-layer",
+   "defined_here": true
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://research.contrary.com/company/chainguard",
+   "title": "Chainguard",
+   "by": "Contrary Research",
+   "date": "undated",
+   "kind": "article"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.securityweek.com/chainguard-raises-hefty-356m-series-d-at-3-5-billion-valuation/",
+   "title": "Chainguard raises hefty $356m Series D at $3.5 billion valuation",
+   "by": "SecurityWeek",
+   "date": "2025-04",
+   "kind": "news"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-emeritoss",
+   "title": "Introducing EmeritOSS",
+   "by": "Chainguard",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-catalog-starter",
+   "title": "Introducing Chainguard Catalog Starter",
+   "by": "Chainguard",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.chainguard.dev/unchained/chainguard-libraries-expands-to-go-and-dotnet",
+   "title": "Chainguard Libraries expands to Go and .NET",
+   "by": "Chainguard",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://www.chainguard.dev/unchained/chainguard-actions-is-generally-available-hardening-1-000-github-actions-and-removing-transitive-ci-cd-risks",
+   "title": "Chainguard Actions is generally available",
+   "by": "Chainguard",
+   "date": "2026-10-06",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-agent-skills",
+   "title": "Introducing Chainguard Agent Skills",
+   "by": "Chainguard",
+   "date": "2026-03",
+   "kind": "post"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-mcp-for-secure-agentic-development",
+   "title": "Introducing Chainguard MCP",
+   "by": "Chainguard",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r09",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-workspaces",
+   "title": "Introducing Chainguard Workspaces",
+   "by": "Chainguard",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-checks",
+   "title": "Introducing Chainguard Checks",
+   "by": "Chainguard",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://www.chainguard.dev/unchained/introducing-chainguard-harness",
+   "title": "Introducing Chainguard Harness",
+   "by": "Chainguard",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r12",
+   "url": "https://advisories.cgr.dev/chainguard/v2/osv/all.json",
+   "title": "Chainguard OSV advisory index",
+   "by": "Chainguard",
+   "date": "2026-10-14",
+   "kind": "dataset"
+  },
+  {
+   "id": "r13",
+   "url": "https://libraries.cgr.dev/openvex/v1/all.json",
+   "title": "Chainguard Libraries OpenVEX index",
+   "by": "Chainguard",
+   "date": "2026-10-14",
+   "kind": "dataset"
+  },
+  {
+   "id": "r14",
+   "url": "https://github.com/wolfi-dev/advisories",
+   "title": "wolfi-dev/advisories",
+   "by": "Wolfi",
+   "date": "2026-01",
+   "kind": "repository"
+  },
+  {
+   "id": "r15",
+   "url": "https://chainguard.dev/unchained/changes-to-chainguard-images-developer-tier",
+   "title": "Changes to Chainguard Images developer tier",
+   "by": "Chainguard",
+   "date": "2024",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The feeds read and counted, four agent products and Go and .NET libraries announced, the memos recorded"
+  },
+  {
+   "date": "2021-10",
+   "what": "Chainguard founded"
+  },
+  {
+   "date": "2025-04",
+   "what": "The $356 million Series D at a $3.5 billion valuation"
+  },
+  {
+   "date": "2026-01",
+   "what": "Last change to the Wolfi advisories repository before it was archived"
+  },
+  {
+   "date": "2026-10-06",
+   "what": "Chainguard Actions generally available"
+  }
+ ]
+}

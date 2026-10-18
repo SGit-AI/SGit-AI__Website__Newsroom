@@ -1,0 +1,859 @@
+{
+ "slug": "where-is-the-why",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "On 7 October 2026 a prompt asked to add a repository to a Claude Code session while several sessions were running, one of them working on a vault holding confidential data.",
+   "section": "top",
+   "quote": "I had several sessions running, and one of them was working on a vault that handles confidential data.",
+   "about": [
+    "entity:claude-code",
+    "entity:dinis-cruz",
+    "concept:multi-agent",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The prompt showed owner, repository, access and two buttons, and did not say which session asked, which step, the instruction it served, what would change, or what a no would cost.",
+   "section": "top",
+   "quote": "Not which session, not which step, not the instruction it served, not what changes, not what a no would cost.",
+   "about": [
+    "concept:why-card",
+    "entity:claude-code",
+    "entity:sgit-ai-website"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The tool the agent calls takes owner, repository and access and nothing else; there is no field for a reason, so there is no reason to show.",
+   "section": "top",
+   "quote": "There is no field for a reason, so there is no reason to show.",
+   "about": [
+    "concept:why-card",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The prompt did three things right: it asked for read rather than write, it is enforced by the host rather than the model, and it offered Allow once; none of them is visible to the person as a control.",
+   "section": "top",
+   "quote": "Each of those is a control. None of them is visible to the person as a control",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Both buttons had a hidden price: Decline breaks a task the person started with no account of what breaks, and Allow makes the person the author of a decision whose basis they could not see.",
+   "section": "top",
+   "quote": "It is a choice between two costs that the prompt does not state.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:why-card"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "Read through the Agent Behaviour Policy, a permission prompt is a request to change the grant in the middle of a session, and the question is what the session becomes once it holds this as well as what it already holds.",
+   "section": "top",
+   "quote": "A permission prompt is a request to change the grant in the middle of a session.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "concept:why-card"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "For read access to a public repository the answer is very little: the blast radius is low and reversible, and the right record is a line in the session card.",
+   "section": "top",
+   "quote": "For read access to a public repository the answer is: very little.",
+   "about": [
+    "concept:blast-radius",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "For write access, a session that already holds a vault key for confidential data gains an exfiltration path: confidential data in, a public commit out, copied, cached and indexed within minutes.",
+   "section": "top",
+   "quote": "confidential data in, a public commit out, copied, cached and indexed within minutes",
+   "about": [
+    "concept:blast-radius",
+    "concept:lethal-trifecta",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Under the policy a change that raises the blast radius of the session as a whole is a decision to accept a risk, which should name who accepts it, for how long and what would end it.",
+   "section": "top",
+   "quote": "under the policy a change that raises the blast radius of the session as a whole is a decision to accept a risk",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The prompt is a real barrier, enforced outside the model, so a boundary rather than an expectation; but a boundary enforced by human judgement is exactly as strong as the information the human is given.",
+   "section": "top",
+   "quote": "Withhold the why, and the boundary becomes a habit.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:approval-fatigue",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "In October 2025 Anthropic wrote that sandboxing safely reduces permission prompts by 84% in its internal use, and that constant approving can lead to approval fatigue.",
+   "section": "top",
+   "quote": "safely reduces permission prompts by 84%",
+   "about": [
+    "entity:anthropic",
+    "concept:approval-fatigue",
+    "concept:agent-isolation"
+   ],
+   "value": {
+    "n": 84,
+    "unit": "percent reduction in permission prompts from sandboxing",
+    "as_of": "2025-10"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "In March 2026, introducing auto mode, Anthropic wrote that Claude Code users approve 93% of permission prompts.",
+   "section": "top",
+   "quote": "Claude Code users approve 93% of permission prompts",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:approval-fatigue"
+   ],
+   "value": {
+    "n": 93,
+    "unit": "percent of permission prompts approved",
+    "as_of": "2026-03"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "In August 2026 Anthropic reported a study of 1,053 paid testers in which a swapped-in dangerous command was caught 13.6% of the time, about 17% early in a session and about 5% after fifty or more prompts.",
+   "section": "top",
+   "quote": "The testers caught the dangerous command just 13.6% of the time",
+   "about": [
+    "entity:anthropic",
+    "concept:approval-fatigue"
+   ],
+   "value": {
+    "n": 13.6,
+    "unit": "percent of testers catching the dangerous command",
+    "as_of": "2026-08"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "limit",
+   "text": "Anthropic's figures are vendor-run studies and have not been independently replicated.",
+   "section": "top",
+   "quote": "These are vendor-run studies and have not been independently replicated.",
+   "about": [
+    "entity:anthropic",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Anthropic's answer is fewer prompts decided by a classifier, so the prompts that remain are the ones it could not settle, where a person most needs the reason; its own misses are about whether consent covers the blast radius.",
+   "section": "top",
+   "quote": "finds approval-shaped evidence and stops short of checking whether it's consent for the blast radius of the action",
+   "about": [
+    "entity:anthropic",
+    "concept:approval-fatigue",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "In August 2025 Checkmarx showed a malicious command hidden in a long Claude Code permission prompt; Anthropic's reply said users are responsible for carefully reviewing all permission prompts.",
+   "section": "top",
+   "quote": "Users are responsible for carefully reviewing all permission prompts (including scrolling up to see the entire prompt) before accepting them.",
+   "about": [
+    "entity:checkmarx",
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:liability-line"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "In 2026 preprints on agent permissions, 13 of 16 participants used Always Allow to dismiss prompts, and 133 of 148 overreach actions under user-written policies went through after a person approved them.",
+   "section": "top",
+   "quote": "of 148 overreach actions executed under user-written policies, 133 went through after a person approved them",
+   "about": [
+    "concept:approval-fatigue",
+    "concept:human-in-the-loop"
+   ],
+   "value": {
+    "n": 133,
+    "of": 148,
+    "unit": "overreach actions approved by a person",
+    "as_of": "2026"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The record puts the duty to disclose usable information on the one who asks: Montgomery, the red hand rule, Interfoto, Berman, Nguyen, the Consumer Rights Act, GDPR Article 7(1) and the EDPB's guidelines.",
+   "section": "top",
+   "quote": "The one who asks, and holds the information, has to disclose it in a usable form.",
+   "about": [
+    "entity:montgomery-v-lanarkshire",
+    "entity:gdpr",
+    "concept:liability-line",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A token sign-off is not a human decision: the Article 29 Working Party, SCHUFA in 2023, and the EU AI Act's Article 14 on oversight, whose duties apply from December 2027.",
+   "section": "top",
+   "quote": "A token sign-off is not a human decision.",
+   "about": [
+    "entity:eu-ai-act",
+    "entity:gdpr",
+    "concept:human-in-the-loop",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The decider is not excused when they could have asked, as in Smith v Van Gorkom and the UK senior managers regime; a prompt that offers no way to ask removes most of what they could have done.",
+   "section": "top",
+   "quote": "A prompt that offers no way to ask removes most of what they could have done.",
+   "about": [
+    "concept:liability-line",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "In practice the blame lands on the nearest person: Madeleine Clare Elish's moral crumple zone, and the Post Office Horizon cases at scale.",
+   "section": "top",
+   "quote": "In practice, the blame lands on the nearest person.",
+   "about": [
+    "entity:madeleine-clare-elish",
+    "entity:post-office-horizon",
+    "concept:liability-line"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "For a permission prompt the asker is the agent and the product, which hold the context, and the decider is the person; the click is the record with the person's name, and which duty wins is decided by the design of the prompt.",
+   "section": "top",
+   "quote": "Which of the two wins is decided by the design of the prompt.",
+   "about": [
+    "concept:liability-line",
+    "concept:why-card",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Fixes that worked put the why into the prompt: Apple's required purpose strings, without which camera or location access fails, and Android's advice to explain before asking.",
+   "section": "top",
+   "quote": "The why is a required field, checked before the prompt can be shown.",
+   "about": [
+    "entity:apple",
+    "entity:google",
+    "concept:why-card"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "After an attacker at Uber in 2022 triggered approval pushes until the contractor accepted one, Microsoft put context only the real requester has into the prompt: number matching, enforced from 8 May 2023, with the app name and location.",
+   "section": "top",
+   "quote": "put context into the prompt that only the real requester has",
+   "about": [
+    "entity:uber",
+    "entity:microsoft",
+    "concept:identity-and-secrets",
+    "concept:why-card"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "In January 2022 the CNIL fined Google 150 million euros and Facebook 60 million because refusing all cookies took several clicks against one to accept, and ordered refusing to be as simple as accepting.",
+   "section": "top",
+   "quote": "several clicks are required to refuse all cookies, in contrast to a single one to accept them",
+   "about": [
+    "entity:cnil",
+    "entity:google",
+    "entity:meta",
+    "concept:regulation"
+   ],
+   "value": {
+    "n": 150,
+    "unit": "million euros, the CNIL fine on Google",
+    "as_of": "2022-01"
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Still open: Google's OAuth scope justifications go to its reviewers not the user; GitHub's justification is an optional field; the Model Context Protocol's tool annotations carry no reason and should be considered untrusted.",
+   "section": "top",
+   "quote": "carry no reason, and \"should be considered untrusted\"",
+   "about": [
+    "entity:google",
+    "entity:github",
+    "entity:mcp",
+    "concept:why-card"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "data-point",
+   "text": "The research on warnings: 70.2% of Chrome's certificate warnings clicked through across more than 25 million impressions in 2013; 51 seconds spent on terms that take fifteen minutes; 85 to 99% of hospital alarms needing no action.",
+   "section": "top",
+   "quote": "70.2% of Chrome's certificate warnings clicked through across more than 25 million impressions",
+   "about": [
+    "entity:chrome",
+    "concept:approval-fatigue"
+   ],
+   "value": {
+    "n": 70.2,
+    "unit": "percent of Chrome certificate warnings clicked through",
+    "as_of": "2013"
+   }
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "Herley's 2009 paper found users' rejection of security advice rational, and Böhme and Grossklags called attention a scarce resource; a prompt that cannot be judged will be clicked.",
+   "section": "top",
+   "quote": "A prompt that cannot be judged will be clicked.",
+   "about": [
+    "entity:cormac-herley",
+    "concept:approval-fatigue"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "The why card: who is asking, why with the instruction quoted, what changes in reach, what it could cost, what happens on decline, scope and record, and buttons to allow, decline, ask a question or park it; every field is something the agent already knows.",
+   "section": "top",
+   "quote": "Every field on the card is something the agent already knows at the moment it asks.",
+   "about": [
+    "concept:why-card",
+    "concept:reach",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "The why should be required: no reason, no prompt, the way a phone app with no purpose string gets no camera.",
+   "section": "top",
+   "quote": "no reason, no prompt, the way a phone app with no purpose string gets no camera",
+   "about": [
+    "concept:why-card",
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "Declining must not cost more than allowing, the CNIL's rule applied to agents; the record pairs the reason given with the footprint, and a reason that does not match the footprint is a finding.",
+   "section": "top",
+   "quote": "a reason that does not match the footprint is a finding",
+   "about": [
+    "concept:why-card",
+    "concept:footprint",
+    "entity:cnil"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "proposal",
+   "text": "When the change raises the blast radius of the session as a whole, the card should stop being a prompt and become a risk acceptance: who accepts it, for how long, what would end it, recorded.",
+   "section": "top",
+   "quote": "the card should stop being a prompt and become a risk acceptance",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:why-card",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "This site's own agent team asks its person for decisions as a draft in the email thread with lettered options, and its session cards count tools, files and network calls; it lacks a required reason on a mid-session grant change.",
+   "section": "top",
+   "quote": "What it does not have is a required reason on a mid-session grant change",
+   "about": [
+    "concept:multi-agent",
+    "concept:footprint",
+    "concept:why-card"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "Which session made the request in the screenshot, and why, is not known; the prompt did not say and nothing recorded it where the person could see.",
+   "section": "top",
+   "quote": "Which session made the request in the screenshot, and why.",
+   "about": [
+    "concept:multi-agent",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "Whether the fields of the prompt can be configured by the person or an administrator is not known; the documentation consulted does not describe a reason field.",
+   "section": "top",
+   "quote": "The documentation consulted for this article does not describe a reason field.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c36",
+   "kind": "limit",
+   "text": "How well Anthropic's figures generalise is not known; the one independent comment found asked for independent confirmation.",
+   "section": "top",
+   "quote": "How well Anthropic's figures generalise.",
+   "about": [
+    "entity:anthropic",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c37",
+   "kind": "limit",
+   "text": "The cases and rules are cited for the shape of the reasoning across several jurisdictions; none has been applied to an agent permission prompt by a court this research found, and this is not legal advice.",
+   "section": "top",
+   "quote": "none of them has been applied to an agent permission prompt by a court that this research found",
+   "about": [
+    "concept:liability-line",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c38",
+   "kind": "fact",
+   "text": "The article is written by an agent running on Claude about a prompt in a Claude product, from a screenshot and a voice note, and it says so because the question applies to the session writing it.",
+   "section": "top",
+   "quote": "The article is written by an agent running on Claude about a prompt in a Claude product",
+   "about": [
+    "entity:claude",
+    "concept:agents-write-too",
+    "concept:voice-memo"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c14",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  },
+  {
+   "from": "c25",
+   "verb": "gives_rise_to",
+   "to": "c31"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c30",
+   "verb": "specifies",
+   "to": "c29"
+  },
+  {
+   "from": "c31",
+   "verb": "specifies",
+   "to": "c29"
+  },
+  {
+   "from": "c32",
+   "verb": "specifies",
+   "to": "c29"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c32"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c36",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c37",
+   "verb": "limits",
+   "to": "c18"
+  }
+ ],
+ "entities": [
+  {
+   "id": "claude-code",
+   "role": "the product whose permission prompt is read; its auto mode figures"
+  },
+  {
+   "id": "claude",
+   "role": "the model the writing agent runs on"
+  },
+  {
+   "id": "anthropic",
+   "role": "the vendor; its prompt-approval figures and its reply to Checkmarx"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the person the prompt asked, whose voice note the article is built from"
+  },
+  {
+   "id": "riskmandate",
+   "role": "its acceptable-risk page is the product end of the risk acceptance"
+  },
+  {
+   "id": "sgit-ai-website",
+   "role": "the public repository the prompt asked to add"
+  },
+  {
+   "id": "checkmarx",
+   "role": "showed a malicious command hidden in a long permission prompt"
+  },
+  {
+   "id": "montgomery-v-lanarkshire",
+   "role": "the 2015 UK Supreme Court case on material risks and consent forms"
+  },
+  {
+   "id": "gdpr",
+   "role": "Article 7(1) puts the burden of demonstrating consent on the controller"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "Article 14 on human oversight, applying from December 2027"
+  },
+  {
+   "id": "madeleine-clare-elish",
+   "role": "named the moral crumple zone"
+  },
+  {
+   "id": "post-office-horizon",
+   "role": "the British example of blame landing on the nearest person"
+  },
+  {
+   "id": "apple",
+   "role": "requires purpose strings before a permission prompt can be shown"
+  },
+  {
+   "id": "google",
+   "role": "Android's dialog says what but not why; OAuth justifications go to reviewers; fined by the CNIL"
+  },
+  {
+   "id": "microsoft",
+   "role": "number matching and sign-in context in Authenticator"
+  },
+  {
+   "id": "uber",
+   "role": "the 2022 approval-push attack on a contractor"
+  },
+  {
+   "id": "cnil",
+   "role": "fined Google and Facebook because refusing cost more than accepting"
+  },
+  {
+   "id": "meta",
+   "role": "Facebook, fined 60 million euros by the CNIL"
+  },
+  {
+   "id": "github",
+   "role": "its fine-grained token flow carries an optional justification"
+  },
+  {
+   "id": "mcp",
+   "role": "its tool annotations carry no reason and should be considered untrusted"
+  },
+  {
+   "id": "chrome",
+   "role": "70.2% of its certificate warnings clicked through in 2013"
+  },
+  {
+   "id": "cormac-herley",
+   "role": "the 2009 paper on the rational rejection of security advice"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "why-card",
+   "defined_here": true
+  },
+  {
+   "id": "approval-fatigue",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.supremecourt.uk/cases/uksc-2013-0136.html",
+   "title": "Montgomery v Lanarkshire Health Board",
+   "by": "UK Supreme Court",
+   "date": "2015",
+   "kind": "law"
+  },
+  {
+   "id": "r02",
+   "url": "https://gdpr-info.eu/art-7-gdpr/",
+   "title": "GDPR Article 7: Conditions for consent",
+   "by": "European Union",
+   "date": "2016",
+   "kind": "law"
+  },
+  {
+   "id": "r03",
+   "url": "https://artificialintelligenceact.eu/article/14/",
+   "title": "EU AI Act Article 14: Human oversight",
+   "by": "European Union",
+   "date": "2024",
+   "kind": "law"
+  },
+  {
+   "id": "r04",
+   "url": "https://estsjournal.org/index.php/ests/article/view/260",
+   "title": "Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction",
+   "by": "Madeleine Clare Elish",
+   "date": "2019",
+   "kind": "paper"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.microsoft.com/en-us/research/publication/so-long-and-no-thanks-for-the-externalities-the-rational-rejection-of-security-advice-by-users/",
+   "title": "So Long, and No Thanks for the Externalities: the Rational Rejection of Security Advice by Users",
+   "by": "Cormac Herley",
+   "date": "2009",
+   "kind": "paper"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-07",
+   "what": "The permission prompt appears; the screenshot and the voice note; the article"
+  },
+  {
+   "date": "2025-10",
+   "what": "Anthropic: sandboxing reduces permission prompts by 84%"
+  },
+  {
+   "date": "2026-03",
+   "what": "Anthropic introduces auto mode: users approve 93% of prompts"
+  },
+  {
+   "date": "2026-08-14",
+   "what": "Auto mode becomes the default; the 1,053-tester study reports 13.6%"
+  },
+  {
+   "date": "2023-05-08",
+   "what": "Microsoft enforces number matching for Authenticator push notifications"
+  },
+  {
+   "date": "2022-01",
+   "what": "The CNIL fines Google and Facebook over cookie refusal"
+  }
+ ]
+}

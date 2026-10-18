@@ -1,0 +1,570 @@
+{
+ "slug": "i-just-want-to-buy-the-article",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The owner saw Olivier Laplace's LinkedIn post about the Harvard Business Review article he wrote with José Parra Moyano, Karl Schmedders and Benjamin Torben-Nielsen, and wanted to answer it.",
+   "section": "what-happened",
+   "quote": "the Harvard Business Review article he wrote with José Parra Moyano, Karl Schmedders and Benjamin Torben-Nielsen",
+   "about": [
+    "entity:olivier-laplace",
+    "entity:jose-parra-moyano",
+    "entity:karl-schmedders",
+    "entity:benjamin-torben-nielsen",
+    "entity:harvard-business-review",
+    "entity:linkedin"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "hypothesis",
+   "text": "Simon Wardley's explorers, villagers and town planners explain the problem the HBR article describes, which is the owner's answer in Who will fix your mess.",
+   "section": "what-happened",
+   "quote": "I think Simon Wardley's explorers, villagers and town planners explain the problem it describes",
+   "about": [
+    "entity:simon-wardley",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Clicking the link from LinkedIn gave a modal saying that reading HBR only on LinkedIn gets part of the story, then three subscription plans and no article.",
+   "section": "what-happened",
+   "quote": "If you only read HBR on Linkedin, you're only getting part of the story.",
+   "about": [
+    "entity:harvard-business-review",
+    "entity:linkedin",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "HBR offered a UK reader Digital at £8.75 a month billed yearly or £11 monthly, Digital and Print at £10 or £13, and Premium at £15 or £18, every one a subscription.",
+   "section": "what-happened",
+   "quote": "Digital at £8.75 a month billed yearly, or £11 monthly.",
+   "about": [
+    "concept:pricing",
+    "entity:harvard-business-review",
+    "entity:united-kingdom"
+   ],
+   "value": {
+    "n": 11,
+    "unit": "GBP a month for the digital plan",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The only other door is a reprint from HBR's store at $11.95, or $9.75 a copy for five to ten, a document priced for a team.",
+   "section": "what-happened",
+   "quote": "the article is sold as a reprint for $11.95, or $9.75 a copy if you buy five to ten",
+   "about": [
+    "concept:pricing",
+    "entity:harvard-business-review"
+   ],
+   "value": {
+    "n": 11.95,
+    "unit": "USD for one reprint",
+    "as_of": "2026-10-17"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The owner wants to pay HBR but not subscribe, because he knows how subscriptions end: paying for months not read, one article costing a hundred pounds.",
+   "section": "what-happened",
+   "quote": "I want to pay for it. I do not want to subscribe to it, because I know how subscriptions end",
+   "about": [
+    "entity:dinis-cruz",
+    "concept:micropayments",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "HBR.org's own feed lists 45 articles published in September 2026, not counting podcasts, sponsored pieces or the magazine.",
+   "section": "arithmetic",
+   "quote": "lists 45 articles published in September 2026, not counting podcasts, sponsored pieces or the magazine",
+   "about": [
+    "entity:harvard-business-review",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 45,
+    "unit": "articles in HBR.org's feed for September 2026",
+    "as_of": "2026-09"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "At £11 a month, reading all 45 is about 24p an article, twenty is about 55p, and ten is £1.10.",
+   "section": "arithmetic",
+   "quote": "If I read every one of those 45, I am paying about 24p an article. If I read twenty, about 55p.",
+   "about": [
+    "concept:pricing",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 24,
+    "unit": "pence an article at 45 a month",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The smallest thing a reader like the owner is allowed to buy is between ten and forty-five times bigger than what he wants, and that gap is the whole problem.",
+   "section": "arithmetic",
+   "quote": "the smallest thing we are allowed to buy is between ten and forty-five times bigger than what we want",
+   "about": [
+    "concept:pricing",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "On the newsroom every page has a price of a few pence, 10p for a new article and 5p for an older one, paid for the share read, after reading, from a balance in the browser.",
+   "section": "here",
+   "quote": "10p for a new article and 5p for an older one",
+   "about": [
+    "concept:micropayments",
+    "concept:scrolled-is-not-read",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "pence for a new article read to the end",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The newsroom has run with real payments since 11 October; the balance can go below zero, nothing is blocked, and the reader's rating sets what they pay from nothing to double.",
+   "section": "here",
+   "quote": "At the foot of each article you say how useful it was, and that sets what you pay, from nothing to double.",
+   "about": [
+    "concept:micropayments",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "Ten things a reader would buy from one article, each a billable unit: eight run on the newsroom today and two are proposed.",
+   "section": "units",
+   "quote": "Eight run on newsroom.sgit.ai today; two are proposed.",
+   "about": [
+    "concept:story-vault",
+    "concept:micropayments",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "A reading record of what was read and how much, with highlights, kept by the reader in an encrypted vault, and a persona for reading as a board member or security lead.",
+   "section": "units",
+   "quote": "kept by me, not by the publisher",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "concept:vault",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "The argument as a graph the reader can take into a company, and HBR's ontologies and taxonomies as a product kept in their own vocabulary.",
+   "section": "units",
+   "quote": "Its ontologies and taxonomies, verified by its editors, are a product.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "entity:harvard-business-review"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "The evidence as a graph of references the reader can follow, each step a page paid a little for, newer material costing more than the archive.",
+   "section": "units",
+   "quote": "the references as a graph I can follow, where each step I take is a page I pay a little for",
+   "about": [
+    "concept:provenance",
+    "concept:story-vault"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "A licence to quote with a share: the reader charges a little more for a page that answers HBR and passes it on, so the answer makes HBR money instead of competing with it.",
+   "section": "units",
+   "quote": "I should be able to charge my readers a little more for that page and pass it on to HBR",
+   "about": [
+    "concept:licence-to-quote",
+    "entity:harvard-business-review"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "A check of use: an agent that checks a quote or an application of the article's advice was done correctly, worth paying for by the reader and by HBR.",
+   "section": "units",
+   "quote": "an agent that checks I did it correctly would be worth paying for",
+   "about": [
+    "concept:licence-to-quote",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "hypothesis",
+   "text": "LinkedIn is not a leak but HBR's best market: the people discussing its articles there are the readers it wants.",
+   "section": "loop",
+   "quote": "I think it is HBR's best market.",
+   "about": [
+    "entity:linkedin",
+    "entity:harvard-business-review",
+    "concept:the-market"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "A post like Olivier's, with fifty reactions and twenty-one comments, is a room full of people HBR has no way to sell to.",
+   "section": "loop",
+   "quote": "A post like Olivier's, with fifty reactions and twenty-one comments, is a room full of people HBR has no way to sell to.",
+   "about": [
+    "entity:linkedin",
+    "entity:olivier-laplace",
+    "concept:the-market"
+   ],
+   "value": {
+    "n": 50,
+    "unit": "reactions on the LinkedIn post",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "Five things for HBR: sell the article after reading, sell what is behind it, license quotes and share in what they earn, let readers keep their reading, treat LinkedIn as a storefront.",
+   "section": "ask",
+   "quote": "Treat LinkedIn as a storefront.",
+   "about": [
+    "entity:harvard-business-review",
+    "entity:linkedin",
+    "entity:publisher"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "None of this needs inventing: it runs on newsroom.sgit.ai, and the reader's side is open source at api.newsroom.sgit.ai for any publisher to run.",
+   "section": "ask",
+   "quote": "the reader's side of it is open source at api.newsroom.sgit.ai, for any publisher to run on its own pages",
+   "about": [
+    "concept:open-source",
+    "entity:newsroom-sgit-ai",
+    "entity:publisher"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "HBR's prices are as shown to a UK reader on 17 October 2026; other countries and offers will differ.",
+   "section": "limits",
+   "quote": "HBR's prices are as I saw them.",
+   "about": [
+    "entity:united-kingdom",
+    "entity:harvard-business-review"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The 45 is a lower bound, from HBR.org's feed without the magazine, podcasts or sponsored pieces.",
+   "section": "limits",
+   "quote": "The 45 is a lower bound.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The newsroom's numbers are small; it shows the model works, not that it scales.",
+   "section": "limits",
+   "quote": "it shows the model works, not that it scales",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Two of the ten units, the licence to quote with a share and the check of use, are proposals not built here.",
+   "section": "limits",
+   "quote": "Two of the ten units are proposals.",
+   "about": [
+    "concept:licence-to-quote"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The owner has a stake: he builds the newsroom and its reader code and would like publishers to use it.",
+   "section": "limits",
+   "quote": "I build this newsroom and its reader code, and I would like publishers to use it.",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:publisher"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c20"
+  }
+ ],
+ "entities": [
+  {
+   "id": "harvard-business-review",
+   "role": "the publisher the owner tried to pay for one article"
+  },
+  {
+   "id": "linkedin",
+   "role": "where the article was found and where HBR's readers discuss it"
+  },
+  {
+   "id": "olivier-laplace",
+   "role": "posted about the HBR article he co-wrote"
+  },
+  {
+   "id": "jose-parra-moyano",
+   "role": "co-author of the HBR article"
+  },
+  {
+   "id": "karl-schmedders",
+   "role": "co-author of the HBR article"
+  },
+  {
+   "id": "benjamin-torben-nielsen",
+   "role": "co-author of the HBR article"
+  },
+  {
+   "id": "simon-wardley",
+   "role": "his explorers, villagers and town planners frame the owner's answer"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the reader who wanted to pay, and who builds the newsroom"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the small publication where eight of the ten units already run"
+  },
+  {
+   "id": "united-kingdom",
+   "role": "the market whose HBR prices were seen"
+  },
+  {
+   "id": "publisher",
+   "role": "the audience of the five asks and of the open reader code"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "journalism",
+   "defined_here": false
+  },
+  {
+   "id": "story-vault",
+   "defined_here": false
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "licence-to-quote",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://hbr.org/2026/10/turn-vibe-coded-prototypes-into-tools-your-company-can-actually-use",
+   "title": "Turn Vibe-Coded Prototypes Into Tools Your Company Can Actually Use",
+   "by": "Olivier Laplace, José Parra Moyano, Karl Schmedders and Benjamin Torben-Nielsen, Harvard Business Review",
+   "date": "2026-10",
+   "kind": "article"
+  },
+  {
+   "id": "r02",
+   "url": "https://store.hbr.org/product/turn-vibe-coded-prototypes-into-tools-your-company-can-actually-use/H09C96",
+   "title": "The article as a reprint in HBR's store",
+   "by": "Harvard Business Review",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The owner tried to buy one HBR article and saw the subscription offer; the memo"
+  },
+  {
+   "date": "2026-09",
+   "what": "The month whose 45 HBR.org articles set the arithmetic"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The newsroom began charging with real payments"
+  }
+ ]
+}

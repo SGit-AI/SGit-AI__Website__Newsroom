@@ -1,0 +1,548 @@
+{
+ "slug": "sgit-actions-side-by-side",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "sgit in GitHub Actions needs its own repository and website, not a corner of another project: its own issues, its own CI pipeline, and a site that publishes what each run found.",
+   "section": "why",
+   "quote": "That needs its own repository and its own website, not a corner of another project.",
+   "about": [
+    "concept:the-brief",
+    "entity:github-actions",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The CI article tested the pieces locally, and its workflow file was a sketch that said so; the next step is to run it on GitHub Actions for real and keep running it.",
+   "section": "why",
+   "quote": "Its workflow file was a sketch; it said so.",
+   "about": [
+    "concept:vault",
+    "entity:github-actions"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "proposal",
+   "text": "On every run the same small build output travels from a build job to a test job and a release job four ways, in parallel.",
+   "section": "lanes",
+   "quote": "the same small build output travels from a build job to a test job and a release job, four ways, in parallel",
+   "about": [
+    "concept:vault-design",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "proposal",
+   "text": "Lane one, a vault server: the keys are in the repository's secrets, each job clones only the folders it needs with --path, and pushes back.",
+   "section": "lanes",
+   "quote": "The keys are in the repository's secrets, each job clones only the folders it needs with --path, and pushes back.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "GitHub's artefacts are immutable since upload-artifact v4 and persist data after a job has completed to share with another job in the same workflow.",
+   "section": "lanes",
+   "quote": "Artifacts created by upload-artifact@v4 are immutable",
+   "about": [
+    "entity:github-actions",
+    "entity:github"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "GitHub artefacts are retained for 90 days by default.",
+   "section": "lanes",
+   "quote": "are retained for 90 days by default",
+   "about": [
+    "entity:github-actions"
+   ],
+   "value": {
+    "n": 90,
+    "unit": "days of default artefact retention",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Because the zipped vault holds only ciphertext, it can be published as a file and downloaded anywhere without the key leaving the secrets.",
+   "section": "lanes",
+   "quote": "Because the zip holds only ciphertext, it can be published as a file and downloaded anywhere without the key leaving the secrets.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "proposal",
+   "text": "Lane three, published as files: the encrypted objects on any web host, cloned read-only with sgit's static transport, which reaches any GET host; no server and no write path.",
+   "section": "lanes",
+   "quote": "cloned read-only with sgit's static transport, which reaches \"any GET host, read-only\".",
+   "about": [
+    "concept:deployment",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Append lanes fill a gap in artefacts: the current upload action does not support several jobs uploading to the same artefact, and a lane takes them all.",
+   "section": "lanes",
+   "quote": "the current version of the upload action does not support several jobs uploading to the same artefact. A lane takes them all.",
+   "about": [
+    "concept:vault-design",
+    "entity:github-actions"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "proposal",
+   "text": "Each lane reports the wall time per job and run, the bytes downloaded and on disk, which keys each job held and therefore what it could have read, and a screenshot of the result.",
+   "section": "report",
+   "quote": "which keys each job held, and therefore what it could have read; and a screenshot of the result.",
+   "about": [
+    "concept:footprint",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The outputs differ on purpose: a job that cloned one folder should hold one folder.",
+   "section": "report",
+   "quote": "a job that cloned one folder should hold one folder.",
+   "about": [
+    "concept:vault-design",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "A clone of one folder barely grows with the vault: 0.59 seconds at 100 files, 0.64 at 500, 0.77 at 2,000.",
+   "section": "measured",
+   "quote": "0.59 seconds for a 100-file vault, 0.64 at 500, 0.77 at 2,000.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 0.77,
+    "unit": "seconds for a one-folder clone of a 2,000-file vault",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "A full clone grows with the vault: 0.95, 1.98 and 5.55 seconds for the same three vaults.",
+   "section": "measured",
+   "quote": "A full clone grows with the vault. 0.95, 1.98 and 5.55 seconds for the same three vaults.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 5.55,
+    "unit": "seconds for a full clone of a 2,000-file vault",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "The one-folder clone downloads only that folder: 4.1 MB on disk out of 82.7 MB for the full clone of the largest vault.",
+   "section": "measured",
+   "quote": "4.1 MB on disk out of 82.7 MB for the full clone of the largest.",
+   "about": [
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 4.1,
+    "of": 82.7,
+    "unit": "MB on disk for one folder against the full clone",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "For 40 files of 3 MB each a full sgit clone took 4.4 seconds and a full git clone from local disk 16.1, most likely because git tries to compress incompressible data.",
+   "section": "measured",
+   "quote": "For 40 files of 3 MB each, a full sgit clone took 4.4 seconds; a full git clone of the same files from local disk took 16.1",
+   "about": [
+    "entity:git",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 4.4,
+    "unit": "seconds for a full sgit clone of 40 files of 3 MB",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "A push of a file over 4 MB failed against a server using local disk storage, because sgit sends large files through cloud storage uploads; a headless clone then could not fetch a single file.",
+   "section": "measured",
+   "quote": "A push of a file over 4 MB failed against a server using local disk storage, because sgit sends large files through cloud storage uploads.",
+   "about": [
+    "concept:shipping",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Ten full clones at once took 21.1 seconds on a single server process, while ten one-folder clones took 1.9.",
+   "section": "measured",
+   "quote": "ten full clones at once took 21.1 seconds on a single server process, while ten one-folder clones took 1.9.",
+   "about": [
+    "concept:deployment",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 21.1,
+    "unit": "seconds for ten concurrent full clones on one server process",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "The repository should have a budget, with every token spent by a model step counted against it per run and per provider, and the same step run on more than one provider.",
+   "section": "budget",
+   "quote": "the repository should have a budget, and every token spent should be counted against it, per run and per provider.",
+   "about": [
+    "concept:token-budget",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A model call can happen in the job with a provider key in secrets, or in the browser inside a vault app, where the vault's key stays in the host and the frame never sees it.",
+   "section": "budget",
+   "quote": "the vault's key stays in the HOST; your frame never sees it",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:token-budget",
+    "entity:sgit-ai"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "question",
+   "text": "Which of the two places for a model call works best in a CI run is one of the things the showcase should find out.",
+   "section": "budget",
+   "quote": "Which of the two works best in a CI run is one of the things the showcase should find out.",
+   "about": [
+    "concept:token-budget"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "The failures become issues: large files without cloud storage, a headless clone fetching a file, concurrent full clones, each with a reproduction checked on every release.",
+   "section": "brief",
+   "quote": "The failures as issues. Large files without cloud storage, a headless clone fetching a file, concurrent full clones: each an issue with a reproduction, checked on every release.",
+   "about": [
+    "concept:shipping",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "Keys only in secrets, never in a workflow file, a log or an artefact's name; every artefact and published file is ciphertext; read keys may be published, write keys never.",
+   "section": "brief",
+   "quote": "Keys only in secrets, never in a workflow file, a log or an artefact's name.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "The budget is a hard limit, not a report after the fact.",
+   "section": "brief",
+   "quote": "And the budget is a hard limit, not a report after the fact.",
+   "about": [
+    "concept:token-budget"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The numbers are local: one four-core machine, a local server over HTTP, three runs each; GitHub's runners and a real network will differ.",
+   "section": "limits",
+   "quote": "The numbers are local. One four-core machine, a local server over HTTP, three runs each; GitHub's runners and a real network will differ.",
+   "about": [
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Git is not a like-for-like baseline; it read local disk with no encryption and no HTTP.",
+   "section": "limits",
+   "quote": "Git is not a like-for-like baseline. It read local disk with no encryption and no HTTP.",
+   "about": [
+    "entity:git"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Lanes 2 and 3, the artefact and static lanes, are untested and built from the documentation; lanes 1 and 4 were tested locally for the CI article.",
+   "section": "limits",
+   "quote": "Lanes 2 and 3 are untested. The artefact and static lanes are built from the documentation; lanes 1 and 4 were tested locally for the CI article.",
+   "about": [
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Nothing in the brief is built.",
+   "section": "limits",
+   "quote": "Nothing in the brief is built.",
+   "about": [
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The measurements were run by a research agent on one machine with sgit 0.21.0, version 0.34.0 of the vault server and git 2.43.0; the brief was written by the writer agent for the owner.",
+   "section": "sources",
+   "quote": "The measurements were run for this article by a research agent on one machine, with sgit 0.21.0, version 0.34.0 of the vault server and git 2.43.0.",
+   "about": [
+    "entity:sgit",
+    "entity:git",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c18"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c01"
+  }
+ ],
+ "entities": [
+  {
+   "id": "github-actions",
+   "role": "the CI system the showcase runs in, with its artefacts and secrets"
+  },
+  {
+   "id": "github",
+   "role": "host of the upload-artifact action and the showcase repository"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults, transports and CLI measured, at 0.21.0"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "its skills pages document the vault app runtime"
+  },
+  {
+   "id": "git",
+   "role": "shown for scale in the large-file measurement, not as a race"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose memo the brief is written from"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "token-budget",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts",
+   "title": "Workflow artifacts",
+   "by": "GitHub",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/actions/upload-artifact",
+   "title": "upload-artifact",
+   "by": "GitHub",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://sgit.ai/skills/index.html",
+   "title": "Skills",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo; the clone measurements run; the brief written on top of v0.12.49"
+  }
+ ]
+}

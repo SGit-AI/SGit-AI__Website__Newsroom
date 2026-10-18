@@ -112,7 +112,11 @@ Articles on this site are not references, they are `builds_on` edges the build d
 
 ## The rules of the file
 
-- Word for word. A quote is copied, with its punctuation; the validator normalises only quote marks and spaces.
+- Word for word. A quote is copied, with its punctuation; the validator normalises only quote marks and spaces. It
+  compares against the twin with its markdown marks stripped, so a quote carries no backticks, asterisks or hash signs
+  (`#4239` reads as `4239`): quote the words, not the marks.
+- The section anchor is the page's. Some imported pages carry h2 headings without ids; a claim from such a page sits on
+  `top`, and the build says how many pages that is. Do not invent an anchor.
 - Nothing the article does not say. A claim is the article's, in its words; the Cartographer adds no claim of its own.
 - Plain words, British spelling, no em-dash, and the ladder word (a step of a ladder) is banned here as everywhere:
   say layer, level, altitude or tier. The validator refuses both.

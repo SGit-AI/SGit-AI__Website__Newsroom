@@ -1,0 +1,674 @@
+{
+ "slug": "system-prompts-as-behaviour-policies",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "hypothesis",
+   "text": "A system prompt is a behaviour policy written as paragraphs, and it can be written as rows and as a JSON file a harness can check, with stronger controls in more places than the prompt.",
+   "section": "hypothesis",
+   "quote": "Can it be represented as a behaviour policy?",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Anthropic publishes the system prompts for Claude's apps on a release notes page, with the note that they do not apply to the API; Claude Haiku 5.5's of 7 October 2026 was the one used.",
+   "section": "prompts",
+   "quote": "These system prompt updates do not apply to the Claude API.",
+   "about": [
+    "entity:anthropic",
+    "entity:claude"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "OpenAI does not publish ChatGPT's prompt; the leaked file in the system_prompts_leaks collection, dated 22 August 2026, is unverified and used only as an illustration of shape.",
+   "section": "prompts",
+   "quote": "I have no way to verify it, and I treat it as an illustration of shape, not as OpenAI's text.",
+   "about": [
+    "entity:openai",
+    "entity:chatgpt",
+    "entity:system-prompts-leaks"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Haiku 5.5's prompt is 4,255 words and 181 sentences, of which 87 read as rules and 82 remain once five explanations are set aside.",
+   "section": "claude",
+   "quote": "I split it into 181 sentences and kept the 87 that read as rules",
+   "about": [
+    "entity:claude",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 82,
+    "of": 181,
+    "unit": "rules among sentences",
+    "as_of": "2026-10-07"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The 82 rules sort into eight kinds: harm restriction 21, judgement 17, referral 13, conversation state 11, presentation 8, tool use 5, knowledge 5 and input trust 2.",
+   "section": "claude",
+   "quote": "Then I sorted the 82 by what kind of rule each is.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:claude"
+   ],
+   "value": {
+    "n": 21,
+    "of": 82,
+    "unit": "harm restriction rules",
+    "as_of": "2026-10-07"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The phrase for the rest of the conversation appears five times, and a refusal once made stands for the rest of the conversation.",
+   "section": "claude",
+   "quote": "stands for the rest of the conversation",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The prompt reads well as a policy, many rules carrying their reason, which is the why column, so the hypothesis holds: the prompt can be represented as rows.",
+   "section": "claude",
+   "quote": "The hypothesis holds: the prompt can be represented as rows.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Five kinds, tool use, conversation state, referral, knowledge and input trust, could be held by the harness as a setting; together those are 36 of the 82 rules.",
+   "section": "leave",
+   "quote": "Together those are 36 of the 82 rules.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:hooks-are-kernel-code",
+    "concept:agent-tooling"
+   ],
+   "value": {
+    "n": 36,
+    "of": 82,
+    "unit": "rules the harness could hold",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Input trust is the strongest case: a sentence asking the model to doubt messages that claim to come from the vendor is exactly what a signature does better.",
+   "section": "leave",
+   "quote": "is exactly what a signature does better",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:prompt-injection",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "The 21 harm restrictions could be held in part by classifiers outside the model, as Anthropic's Constitutional Classifiers already do; the other 25, judgement and presentation, stay with the model.",
+   "section": "leave",
+   "quote": "That is a barrier around the model, not a sentence inside it.",
+   "about": [
+    "entity:anthropic",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 25,
+    "of": 82,
+    "unit": "rules that stay with the model",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "None of this says the prompt is wrong; a prompt cannot tell you which of its rules are kept only by the model, and a policy can.",
+   "section": "leave",
+   "quote": "a prompt cannot tell you which of its rules are only kept by the model, and a policy can",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "The leaked ChatGPT prompt is about 18,000 words, and about six words in seven sit under its tool sections: its rules are mostly about reach.",
+   "section": "chatgpt",
+   "quote": "about six words in seven sit under its tools",
+   "about": [
+    "entity:chatgpt",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 6,
+    "of": 7,
+    "unit": "words under tool sections",
+    "as_of": "2026-08-22"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "A disabled tool and a sandbox without network are things the harness enforces; writing them into the prompt tells the model what the harness already does, but the rule's real home is not the text.",
+   "section": "chatgpt",
+   "quote": "the rule's real home is not the text",
+   "about": [
+    "concept:reach",
+    "concept:hope-or-enforcement",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The two prompts are two halves of a behaviour policy, rules and reach; neither has a mandate, an authority order a harness can check, or a record of what keeps each rule.",
+   "section": "chatgpt",
+   "quote": "So the two prompts are two halves of a behaviour policy.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "OpenAI's Model Spec has the best public answer to authority, a chain of command from root to guideline, and Anthropic's constitution separates hard constraints from defaults, but neither links a rule to its enforcement.",
+   "section": "authority",
+   "quote": "a root rule that is kept only by the model is still an expectation, however high its authority",
+   "about": [
+    "entity:openai",
+    "entity:anthropic",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r02",
+    "r05"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "An ontology: one policy per layer, vendor, deployer and user, each with a mandate, a reach, its inputs and their trust, the state that changes rules mid-conversation, and rules with kind, trigger, decision, reason, authority, barrier, enforcement, tests and source text.",
+   "section": "ontology",
+   "quote": "So here is the shape I propose, building on the columns this site's policies already use: mandate, reach, gap and barriers",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:footprint",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "The taxonomy is the eight kinds, each with a natural home; the kind says where a rule could be kept, the barrier says where it is kept today, and the difference is the gap.",
+   "section": "ontology",
+   "quote": "The kind says where a rule could be kept; the barrier says where it is kept today; the difference is the gap.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "The could_be field turns the policy into a plan for moving rules to a hook, a flag, a signature or a classifier, and a signed, versioned file makes a change to a vendor's rules a diff.",
+   "section": "ontology",
+   "quote": "a change to a vendor's rules is a diff, not a re-read of four thousand words",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The formats are arriving: AGENTS.md, Claude Code's managed settings, AWS AgentCore Policy in Cedar, Microsoft's Agent Governance Toolkit, and OWASP's Agent Control Standard through hooks.",
+   "section": "real",
+   "quote": "put allow, ask and deny rules in JSON that a user cannot override",
+   "about": [
+    "concept:agent-tooling",
+    "entity:aws",
+    "entity:microsoft",
+    "entity:cedar",
+    "entity:owasp",
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r06",
+    "r07"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "OWASP's list of risks for language model applications says the system prompt should not be considered a secret nor used as a security control.",
+   "section": "real",
+   "quote": "the system prompt should not be considered a secret, nor should it be used as a security control",
+   "about": [
+    "entity:owasp",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "No organisation was found publishing a written behaviour policy for an agent it runs; the closest is advice in Bloomberg Law that every consequential agent should operate under a written authority charter.",
+   "section": "real",
+   "quote": "What I could not find is an organisation publishing a written behaviour policy for an agent it runs.",
+   "about": [
+    "entity:bloomberg-law",
+    "concept:behaviour-policy"
+   ],
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The working examples known are on this site: the eleven-rule policy the session runs under, re-anchored after every summary, and the RiskMandate inbox team's.",
+   "section": "real",
+   "quote": "the eleven-rule policy this session runs under",
+   "about": [
+    "entity:riskmandate",
+    "concept:the-newsroom",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The classification is the owner's, one reading of one prompt sentence by sentence; another reader would draw some lines differently.",
+   "section": "limits",
+   "quote": "One reading of one prompt, sentence by sentence; another reader would draw some lines differently.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Could be kept is not is kept; what the harness or a classifier does today for each rule is not public beyond what Anthropic has published.",
+   "section": "limits",
+   "quote": "What the harness or a classifier does today for each rule is not public, beyond what Anthropic has published.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:anthropic"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The ChatGPT prompt is unverified, a leaked file used for its shape, and the six-in-seven figure is a count of words under its tool headings.",
+   "section": "limits",
+   "quote": "The ChatGPT prompt is unverified.",
+   "about": [
+    "entity:chatgpt",
+    "entity:system-prompts-leaks"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The JSON shape is a proposal, not a standard, and not tested against a harness.",
+   "section": "limits",
+   "quote": "Not a standard, and not tested against a harness.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The published prompts are for the apps; Anthropic says they do not apply to the API.",
+   "section": "limits",
+   "quote": "The published prompts are for the apps.",
+   "about": [
+    "entity:anthropic",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 14 October 2026; the analysis was done on the published Haiku 5.5 prompt fetched the same day, and a research agent gathered the formats and checked the quotes.",
+   "section": "sources",
+   "quote": "A research agent gathered the formats and examples, and the quotes were checked on the pages themselves.",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c07",
+   "verb": "answers",
+   "to": "c01"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c14",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c02"
+  }
+ ],
+ "entities": [
+  {
+   "id": "anthropic",
+   "role": "publishes Claude's app system prompts, the constitution and the Constitutional Classifiers"
+  },
+  {
+   "id": "claude",
+   "role": "Claude Haiku 5.5, whose published prompt of 7 October 2026 was mapped into rows"
+  },
+  {
+   "id": "openai",
+   "role": "does not publish ChatGPT's prompt but publishes the Model Spec with its chain of command"
+  },
+  {
+   "id": "chatgpt",
+   "role": "whose leaked, unverified prompt is the other half, the reach"
+  },
+  {
+   "id": "system-prompts-leaks",
+   "role": "the public collection holding the leaked ChatGPT prompt"
+  },
+  {
+   "id": "aws",
+   "role": "whose AgentCore Policy writes rules in Cedar"
+  },
+  {
+   "id": "microsoft",
+   "role": "whose Agent Governance Toolkit puts a policy engine in front of agents"
+  },
+  {
+   "id": "cedar",
+   "role": "the policy language AgentCore Policy uses"
+  },
+  {
+   "id": "owasp",
+   "role": "whose Agent Control Standard and system prompt leakage risk bear on the prompt as a control"
+  },
+  {
+   "id": "claude-code",
+   "role": "whose managed settings put allow, ask and deny rules in JSON"
+  },
+  {
+   "id": "bloomberg-law",
+   "role": "where lawyers recommended a written authority charter for every consequential agent"
+  },
+  {
+   "id": "riskmandate",
+   "role": "whose inbox team runs one of the known written behaviour policies"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": true
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://platform.claude.com/docs/en/release-notes/system-prompts",
+   "title": "System prompts release notes",
+   "by": "Anthropic",
+   "date": "2026-10-07",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://model-spec.openai.com/2026-08-18.html",
+   "title": "Model Spec",
+   "by": "OpenAI",
+   "date": "2026-08-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/asgeirtj/system_prompts_leaks",
+   "title": "system_prompts_leaks",
+   "by": "asgeirtj",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.anthropic.com/news/constitutional-classifiers",
+   "title": "Constitutional Classifiers",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.anthropic.com/constitution",
+   "title": "Claude's constitution",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r06",
+   "url": "https://agents.md",
+   "title": "AGENTS.md",
+   "by": "AGENTS.md",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://github.com/microsoft/agent-governance-toolkit",
+   "title": "Agent Governance Toolkit",
+   "by": "Microsoft",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r08",
+   "url": "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/",
+   "title": "LLM07:2025 System Prompt Leakage",
+   "by": "OWASP GenAI Security Project",
+   "date": "2025",
+   "kind": "page"
+  },
+  {
+   "id": "r09",
+   "url": "https://news.bloomberglaw.com/legal-exchange-insights-and-commentary/rogue-ai-agents-are-here-companies-must-rethink-governance",
+   "title": "Rogue AI agents are here, companies must rethink governance",
+   "by": "Bloomberg Law",
+   "date": "2026-09-17",
+   "kind": "article"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo; the prompt fetched and mapped; the sources read"
+  },
+  {
+   "date": "2026-10-07",
+   "what": "Claude Haiku 5.5's system prompt published"
+  },
+  {
+   "date": "2026-08-22",
+   "what": "Date of the leaked ChatGPT prompt file"
+  },
+  {
+   "date": "2026-09-17",
+   "what": "Bloomberg Law recommends a written authority charter for every consequential agent"
+  }
+ ]
+}

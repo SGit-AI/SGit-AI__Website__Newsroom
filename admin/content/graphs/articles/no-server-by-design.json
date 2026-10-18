@@ -1,0 +1,749 @@
+{
+ "slug": "no-server-by-design",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "The owner's long-standing rule is not to use a database: the file system is the database, and loading files, working on them and saving them back is simpler, cheaper and easier to reason about than a database server.",
+   "section": "top",
+   "quote": "The file system is a powerful database, and loading files, working on them and saving them back is simpler, cheaper and easier to reason about than running a database server.",
+   "about": [
+    "concept:lets-pipeline",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "hypothesis",
+   "text": "The next major pattern of the owner's architecture is retiring the back end: the application is files a browser downloads, the state lives in the browser or an encrypted vault, and the servers are products rented, not run.",
+   "section": "top",
+   "quote": "First I retired the database. Now I am retiring the back end.",
+   "about": [
+    "concept:client-side",
+    "concept:minimal-code",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "LETS, Load, Extract, Transform, Save, is a deliberate change to ETL from a May 2025 paper: every stage reads and writes files, every intermediate state is kept, and the file system or object store is a first-class database.",
+   "section": "files",
+   "quote": "every stage reads files and writes files, every intermediate state is kept, and the file system, or an object store, is treated as a first-class database",
+   "about": [
+    "concept:lets-pipeline",
+    "entity:memory-fs",
+    "entity:myfeeds",
+    "entity:the-cyber-boardroom"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "A database server is a large, stateful, always-on thing to provision, secure, back up, migrate and pay for whether or not anyone uses it, and most of what it holds would be happy as files; Issues-FS applies the same idea to an issue tracker.",
+   "section": "files",
+   "quote": "Load the state, work on it in memory, save it back: that is a cache, a database and an audit trail in one, and git gives it history for free.",
+   "about": [
+    "concept:lets-pipeline",
+    "entity:issues-fs",
+    "entity:git"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "In September the newsroom ran two real database engines, SQLite and a SPARQL store, compiled to WebAssembly in the reader's browser over the Portugal section's JSON files; the build runs every example query and fails if one returns nothing.",
+   "section": "files",
+   "quote": "The database is the files; the engines are just readers.",
+   "about": [
+    "concept:client-side",
+    "entity:sqlite",
+    "entity:oxigraph",
+    "entity:webassembly",
+    "entity:newsroom-sgit-ai"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A vault is encrypted in the client before it leaves, the server stores ciphertext in S3 and never sees a key, read keys are derived one way and can be published, and append lanes let anything write an entry readable only by the owner.",
+   "section": "backend",
+   "quote": "by design, the server side cannot see anything",
+   "about": [
+    "concept:vault",
+    "concept:vault-design",
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The client-side architecture was not chosen and then given encryption; encryption came first and the architecture followed, because a feature that reads the reader's data has to run where the key is, in the browser.",
+   "section": "backend",
+   "quote": "Encryption came first, and the client-side architecture followed, because there was nowhere else for the logic to go.",
+   "about": [
+    "concept:client-side",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The newsroom today lands a reader as a persona, builds personas from reading, charges by the share of a page read, takes a £5 Stripe payment, keeps a reading history, shows versions and runs SQL and SPARQL, all in the browser or built in CI.",
+   "section": "newsroom",
+   "quote": "There is no account database, no session store, no API server and no back end to deploy.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:sg-meter",
+    "entity:stripe",
+    "concept:personas",
+    "concept:micropayments",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The £5 Stripe payment link, with no account and nothing renewing, went live on 11 October, a few hours after this article first said it was not set yet.",
+   "section": "newsroom",
+   "quote": "live since 11 October, a few hours after this article first said it was not set yet",
+   "about": [
+    "entity:stripe",
+    "concept:micropayments",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "This is not no servers: GitHub Pages serves the files, a vault server stores ciphertext, a payment provider takes the money, DNS points at it and GitHub Actions builds it; none is a server of ours with application logic.",
+   "section": "commodity",
+   "quote": "What there is not is a server of mine with application logic in it.",
+   "about": [
+    "concept:client-side",
+    "entity:github-pages",
+    "entity:github-actions",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "On a Wardley map complexity is a blob of custom-built components where the world already has products and commodities; a back end is that blob, and moving the application into the browser leaves the custom code in one place.",
+   "section": "commodity",
+   "quote": "A back end is exactly that blob.",
+   "about": [
+    "concept:wardley-maps",
+    "concept:client-side",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "A hundred thousand readers mean a hundred thousand browsers each doing their own work against a server side serving cached static files and ciphertext; the server's work grows with bandwidth and its complexity does not grow at all.",
+   "section": "scale",
+   "quote": "The server side's work grows with bandwidth, which is the cheapest thing on the internet to buy. Its complexity does not grow at all.",
+   "about": [
+    "concept:client-side",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "SG Meter's security model lists the gaps a client-side design leaves, and every gap is accepted: a reader can edit their balance, start again in a private window, credit themselves through an unprotected page, or clear a negative balance; agents read the twins unmetered.",
+   "section": "security",
+   "quote": "A design with no server has security gaps, and the honest thing is to list them.",
+   "about": [
+    "entity:sg-meter",
+    "concept:risk-acceptance",
+    "concept:threat-modelling",
+    "concept:micropayments"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Each gap would be closed by a server, accounts and a payment webhook, bringing back a database of accounts, a deployment, personal data to protect and a sign-up wall, to protect a number on the reader's screen that unlocks nothing.",
+   "section": "security",
+   "quote": "the one thing that server would protect is a number on the reader's own screen that unlocks nothing",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:client-side",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "decision",
+   "text": "The owner's security experience is what lets him deploy a system with gaps, because the gaps do not match the audience; what is protected is the reader's own history, which never leaves their browser unless they send it encrypted.",
+   "section": "security",
+   "quote": "the gaps do not match our audience",
+   "about": [
+    "concept:threat-modelling",
+    "concept:risk-acceptance",
+    "concept:privacy",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "limit",
+   "text": "The meter's model says what would change the call: if the balance ever unlocked something, the gaps would stop being acceptable and that feature would get a signed receipt or a server, and not before.",
+   "section": "security",
+   "quote": "if the balance ever unlocked something, the gaps would stop being acceptable",
+   "about": [
+    "concept:risk-acceptance",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Five synthetic readers found no security problem but found the design from the reader's side: credit below zero reads as a debt, and a top-up page that says the cart is simulated while asking for money leaves a careful reader unsure.",
+   "section": "security",
+   "quote": "none of them found a security problem",
+   "about": [
+    "concept:synthetic-users",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Because everything the owner builds is open source there is no moat to keep using, so every component is asked whether it still earns its place, and open source removes the one bad reason to say yes: that he built it.",
+   "section": "openness",
+   "quote": "open source removes the one bad reason to say yes: that I built it",
+   "about": [
+    "concept:open-source",
+    "concept:minimal-code",
+    "entity:memory-fs"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "Between 1 and 11 October this site shipped 114 releases, 18 or 19 on the busiest days, alongside the newsroom moving to its own domain.",
+   "section": "speed",
+   "quote": "Between 1 and 11 October, this site shipped 114 releases",
+   "about": [
+    "concept:shipping",
+    "entity:sgit-ai",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 114,
+    "unit": "releases in eleven days",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "The reading meter went from an experiment to a working pay-on-demand design in seven releases in three hours and forty minutes, alongside seven other pieces of work.",
+   "section": "speed",
+   "quote": "The reading meter went from an experiment to a working pay-on-demand design",
+   "about": [
+    "entity:sg-meter",
+    "concept:shipping",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "releases to a working pay-on-demand meter",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "A release is a set of files: no schema migration, no server to deploy, no compatibility window between an old back end and a new front end, and rolling back is a commit.",
+   "section": "speed",
+   "quote": "There is no schema migration, no server to deploy, no compatibility window between an old back end and a new front end, and rolling back is a commit.",
+   "about": [
+    "concept:shipping",
+    "concept:client-side",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "Speed has a cost: when the newsroom moved to its own domain, 51 of the 527 figures in its articles did not come with it, nothing failed in a way a server would notice, and a synthetic reader found it.",
+   "section": "speed",
+   "quote": "51 of the 527 figures in its articles did not come with it",
+   "about": [
+    "concept:shipping",
+    "concept:synthetic-users",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 51,
+    "of": 527,
+    "unit": "figures missing after the domain move",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The pattern ties in with sovereignty, the reader holds the data and keys; privacy, the server cannot read what it does not have; explainability, the whole application is files; and determinism, the same files give the same result.",
+   "section": "principles",
+   "quote": "Not as a policy, but as a property: the server cannot read what it does not have, and the vault server cannot read what it stores.",
+   "about": [
+    "concept:privacy",
+    "concept:client-side",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "This is close to what the local-first software movement argued in 2019; what vaults add is shared, persistent storage the operator cannot read, so client-side does not have to mean single-device.",
+   "section": "principles",
+   "quote": "so that \"client-side\" does not have to mean \"single-device\"",
+   "about": [
+    "concept:client-side",
+    "concept:vault",
+    "entity:ink-and-switch",
+    "entity:martin-kleppmann"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "question",
+   "text": "How far can the pattern be pushed: payments need a signed receipt verified in the browser, identity client-side OAuth or passkeys unlocking a vault key, cross-device personas a vault, readers writing to us append lanes, models in the client, search a static index.",
+   "section": "push",
+   "quote": "Here is my current list of what still seems to need a server, and what covers each without one of mine.",
+   "about": [
+    "concept:client-side",
+    "concept:identity-and-secrets",
+    "entity:webauthn",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The one real limit is anything the reader must not hold: a shared API key or a price that must not be editable because it unlocks something cannot live in the browser, and needs a signed artefact or a small commodity function.",
+   "section": "push",
+   "quote": "The one real limit: anything the reader must not hold cannot live in the reader's browser",
+   "about": [
+    "concept:client-side",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Not that servers are bad: some applications, a trading system, a multiplayer game, a bank's ledger, need shared, live, authoritative state; this pattern is for applications where each user's state is theirs.",
+   "section": "limits",
+   "quote": "This pattern is for applications where each user's state is theirs.",
+   "about": [
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Not that the gaps are free: they are accepted because of who reads this site and what the meter protects, and a different site with a different threat would make a different call.",
+   "section": "limits",
+   "quote": "A different site, with a different threat, would make a different call, and the security model says what would change ours.",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Not that it is finished: sign-in, cross-device personas, a model in the client and signed receipts are next, not done.",
+   "section": "limits",
+   "quote": "Sign-in, cross-device personas, a model in the client and signed receipts are next, not done.",
+   "about": [
+    "concept:client-side",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "Next: a model in the client with the reader's own key, personas that follow the reader to every device and agent through a vault, a signed receipt for payments, and the newsroom's architecture packaged as a template for any content site.",
+   "section": "next",
+   "quote": "the newsroom's architecture packaged so that another publication, or any content site, can start from it",
+   "about": [
+    "concept:client-side",
+    "concept:personas",
+    "concept:vault",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "Two voice memos were turned into the article by an agent in a separate Claude session, then rewritten by this site's agent, which corrected two things: the payment link was not yet set, and client-side sign-in is next, not shipped.",
+   "section": "sources",
+   "quote": "checked two things the draft could not confirm, and corrected them",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:claude-code",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c09",
+   "verb": "supersedes",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c25",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose architecture is drawn and whose features are listed"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site whose 114 releases in eleven days are counted"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults whose server cannot see anything, the constraint that designed the pattern"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reading meter whose security model lists the accepted gaps"
+  },
+  {
+   "id": "stripe",
+   "role": "the £5 payment link, live since 11 October"
+  },
+  {
+   "id": "github-pages",
+   "role": "the commodity that serves the files"
+  },
+  {
+   "id": "github-actions",
+   "role": "the commodity that builds the site"
+  },
+  {
+   "id": "sqlite",
+   "role": "one of the two database engines run in the browser"
+  },
+  {
+   "id": "oxigraph",
+   "role": "the SPARQL store compiled to WebAssembly in the browser"
+  },
+  {
+   "id": "webassembly",
+   "role": "what the database engines are compiled to"
+  },
+  {
+   "id": "issues-fs",
+   "role": "issues as JSON files in git, the file-system idea applied to a tracker"
+  },
+  {
+   "id": "memory-fs",
+   "role": "the owner's library built on the file-system-as-database idea, replaceable if the browser and a vault do its job"
+  },
+  {
+   "id": "myfeeds",
+   "role": "one of the projects behind LETS"
+  },
+  {
+   "id": "the-cyber-boardroom",
+   "role": "one of the projects behind LETS"
+  },
+  {
+   "id": "git",
+   "role": "gives the file-system database its history for free"
+  },
+  {
+   "id": "webauthn",
+   "role": "passkeys unlocking a vault key, the client-side answer to identity"
+  },
+  {
+   "id": "ink-and-switch",
+   "role": "published the 2019 local-first software essay"
+  },
+  {
+   "id": "martin-kleppmann",
+   "role": "first author of the local-first software essay, with Adam Wiggins, Peter van Hardenberg and Mark McGranaghan"
+  },
+  {
+   "id": "claude-code",
+   "role": "the separate Claude session that turned the memos into the first draft"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose rule and security judgement the article records"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where readers write to see how far the pattern goes"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "client-side",
+   "defined_here": true
+  },
+  {
+   "id": "lets-pipeline",
+   "defined_here": true
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://docs.diniscruz.ai/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.html",
+   "title": "LETS (Load, Extract, Transform, Save): a deterministic and debuggable data pipeline architecture",
+   "by": "Dinis Cruz",
+   "date": "2025-05-27",
+   "kind": "paper"
+  },
+  {
+   "id": "r02",
+   "url": "https://pypi.org/project/issues-fs/",
+   "title": "Issues-FS",
+   "by": "Dinis Cruz",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://newsroom.sgit.ai/databases/index.html",
+   "title": "Databases with no server",
+   "by": "The SGit Newsroom",
+   "date": "2026-09",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://newsroom.sgit.ai/meter/security.html",
+   "title": "SG Meter's security model",
+   "by": "The SGit Newsroom",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.inkandswitch.com/local-first/",
+   "title": "Local-first software: you own your data, in spite of the cloud",
+   "by": "Martin Kleppmann, Adam Wiggins, Peter van Hardenberg and Mark McGranaghan, Ink & Switch",
+   "date": "2019",
+   "kind": "paper"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The article; the Stripe payment link goes live; release counts from the git log"
+  },
+  {
+   "date": "2026-10-01",
+   "what": "Start of the eleven days in which 114 releases shipped"
+  },
+  {
+   "date": "2026-09",
+   "what": "Databases with no server runs SQLite and SPARQL in the browser"
+  },
+  {
+   "date": "2025-05",
+   "what": "The LETS paper"
+  },
+  {
+   "date": "2019",
+   "what": "The local-first software essay"
+  }
+ ]
+}

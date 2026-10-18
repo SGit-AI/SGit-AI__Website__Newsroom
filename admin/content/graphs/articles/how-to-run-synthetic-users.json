@@ -1,0 +1,560 @@
+{
+ "slug": "how-to-run-synthetic-users",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The method has been run three times, on store.sgit.ai in September, riskmandate.ai the day after, and newsroom.sgit.ai on 10 October, and each time it found something that mattered.",
+   "section": "top",
+   "quote": "We have done this three times, and each time it found something that mattered.",
+   "about": [
+    "concept:synthetic-users",
+    "entity:store-sgit-ai",
+    "entity:riskmandate",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "On riskmandate.ai the method caught two JavaScript errors that had shipped and that every test had passed over because the HTML still rendered.",
+   "section": "top",
+   "quote": "caught two JavaScript errors that had shipped and that every test had passed over",
+   "about": [
+    "concept:synthetic-users",
+    "entity:riskmandate",
+    "entity:javascript"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Five invented readers went through the newly launched newsroom and four of them left.",
+   "section": "top",
+   "quote": "five invented readers went through our newly launched newsroom.sgit.ai, and four of them left",
+   "about": [
+    "concept:synthetic-users",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 4,
+    "of": 5,
+    "unit": "invented readers who left",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "A synthetic user is a record, not a character: a situation, a question they arrive with, what they know and do not know, what makes them leave, their patience and their screen size.",
+   "section": "top",
+   "quote": "A synthetic user is a record, not a character.",
+   "about": [
+    "concept:synthetic-users",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "proposal",
+   "text": "Give the agent the screenshot, not the page's code, because an agent that reads the code finds every link every time and so finds no confusion.",
+   "section": "top",
+   "quote": "An agent that reads the code finds every link every time, and so finds no confusion",
+   "about": [
+    "concept:screenshot-not-code",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Claude Sonnet is good enough to play each user, one agent per persona in parallel; Opus wrote the personas and the helper and checked the findings.",
+   "section": "pieces",
+   "quote": "Claude Sonnet is good enough.",
+   "about": [
+    "entity:claude",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "The browser helper is a 58-line Playwright script with Chromium that takes one action per call and writes the browser's own record of each step.",
+   "section": "pieces",
+   "quote": "We use a small Playwright helper with Chromium, 58 lines",
+   "about": [
+    "entity:playwright",
+    "entity:chrome"
+   ],
+   "value": {
+    "n": 58,
+    "unit": "lines in the browser helper",
+    "as_of": "2026-10-10"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "A study can live in a GitHub repository or an sgit vault; all three studies are vaults, so each opens as the same small app.",
+   "section": "pieces",
+   "quote": "All three of our studies are vaults, so each one opens as the same small app",
+   "about": [
+    "concept:vault",
+    "entity:github",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "Choose five to ten users of about five types, for who the site is for and who it has to convince, including somebody who will never buy and at least one on a phone.",
+   "section": "method",
+   "quote": "Include somebody who will never buy.",
+   "about": [
+    "concept:synthetic-users",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "In the store study the person carrying the largest decision did the whole thing on a phone and produced the most questions and the most confusion of anyone.",
+   "section": "method",
+   "quote": "did the whole thing on a phone, and produced the most questions and the most confusion of anyone",
+   "about": [
+    "concept:synthetic-users",
+    "entity:store-sgit-ai"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "Every person is invented: do not model real people or composites, and do not use protected traits as stand-ins for behaviour.",
+   "section": "method",
+   "quote": "Do not model real people or composites of them, and do not use protected traits as stand-ins for behaviour.",
+   "about": [
+    "concept:personas",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "Write the expected journey before any run, so the difference between expected and actual is visible and nobody decides afterwards that whatever happened was expected.",
+   "section": "method",
+   "quote": "Writing the journey first also stops you from deciding afterwards that whatever happened was what you expected.",
+   "about": [
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The editor did not find who to talk to about a pilot, the first blocking finding of the newsroom study.",
+   "section": "method",
+   "quote": "That is the first blocking finding of the study",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Each run was capped at 14 actions; three of the five readers left before the cap and two reached it.",
+   "section": "method",
+   "quote": "We capped each run at 14 actions; three of the five readers left before the cap, and two reached it.",
+   "about": [
+    "concept:synthetic-users"
+   ],
+   "value": {
+    "n": 14,
+    "unit": "actions per run at most",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "On the commuter's phone the first screen says nothing about what the site is, and he read the £5.00 next to the name as a price.",
+   "section": "method",
+   "quote": "He read the £5.00 as a price.",
+   "about": [
+    "concept:micropayments",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "decision",
+   "text": "The helper answered every request to the newsroom from a local copy checked byte-identical to the live site by sha256, refused every other request, and nothing reached the live site.",
+   "section": "method",
+   "quote": "which we had first checked were byte-identical to the live site by sha256",
+   "about": [
+    "entity:sha-256",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "Interview each user at the end with the same ten questions, and ask for a rating from 1 to 5, so answers can be read down a column as well as across a run.",
+   "section": "method",
+   "quote": "each user answers the same ten questions",
+   "about": [
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The five newsroom readers rated the experience 2, 2, 3, 3 and 2.",
+   "section": "method",
+   "quote": "The ratings were 2, 2, 3, 3 and 2.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:synthetic-users"
+   ],
+   "value": {
+    "n": 2,
+    "of": 5,
+    "unit": "the rating three of five readers gave, out of 5",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The editor trusted the honesty and doubted the engineering, because the balance showed £4.97 in the top bar and £4.49 on the reader card on the same screen.",
+   "section": "method",
+   "quote": "the balance showed £4.97 in the top bar and £4.49 on the reader card on the same screen",
+   "about": [
+    "concept:micropayments",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "The newsroom produced 31 findings: six blocking, 19 worth fixing, four minor, and two that were not about the site.",
+   "section": "method",
+   "quote": "The newsroom produced 31 findings: six blocking, 19 worth fixing, four minor",
+   "about": [
+    "concept:synthetic-users",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 31,
+    "unit": "findings",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Two findings that looked like bugs were the helper's: it restored the scroll position before the images loaded, when the page was 13,562 pixels against 15,728 once loaded.",
+   "section": "method",
+   "quote": "Both looked like real bugs, and both were ours",
+   "about": [
+    "concept:synthetic-users",
+    "entity:playwright"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "51 of the 527 figure references in the newsroom's articles point at vault images the move from sgit.ai did not copy, so 10 articles show the same gap.",
+   "section": "method",
+   "quote": "51 of the 527 figure references in the newsroom's articles point at vault images that the move from sgit.ai did not copy",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:sgit-ai",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 51,
+    "of": 527,
+    "unit": "figure references pointing at missing images",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The findings that pay for the exercise are the ones the method finds because it drives a real browser, not because the persona is clever.",
+   "section": "method",
+   "quote": "The findings that pay for the whole exercise tend to be the ones the method finds because it drives a real browser",
+   "about": [
+    "concept:synthetic-users",
+    "concept:screenshot-not-code"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "proposal",
+   "text": "Publish the study with the protocol inside it, say above the fold that everybody is invented, then fix things and run the same five again.",
+   "section": "method",
+   "quote": "Then fix things, and run the same five again.",
+   "about": [
+    "concept:synthetic-users",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "The newsroom study took a little over two hours from the first persona starting to the vault being published, most of it on the team's own mistakes.",
+   "section": "wrong",
+   "quote": "took a little over two hours from the first persona starting to the vault being published",
+   "about": [
+    "concept:synthetic-users",
+    "concept:vault"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "hours for the study",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The helper reloaded the page on every step, so the reading meter charged again each time; the fix was to carry the tab's session over between steps.",
+   "section": "wrong",
+   "quote": "which meant the reading meter charged again each time",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Claude Code's automatic permission mode blocked the persona agents from driving the live site; the team served a verified local copy and Dinis approved one narrow rule for that helper.",
+   "section": "wrong",
+   "quote": "Claude Code's automatic permission mode blocked the persona agents when they tried to drive the live site through a browser.",
+   "about": [
+    "entity:claude-code",
+    "entity:dinis-cruz",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "Every site gets five users before it is called done, and the same five again after the fixes; personas can be shared between sites.",
+   "section": "next",
+   "quote": "every site gets five users before it is called done, and the same five again after the fixes",
+   "about": [
+    "concept:synthetic-users",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "It is not user research, and the study says so above the fold; what is evidence is what the browser captured.",
+   "section": "top",
+   "quote": "It is not user research.",
+   "about": [
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "Every number is counted from the run records in the three vaults; the persona agents were Claude Sonnet and the article and study were put together by Claude Opus.",
+   "section": "sources",
+   "quote": "Every number is counted from the run records in those vaults.",
+   "about": [
+    "entity:claude",
+    "concept:vault",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c28"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c05"
+  }
+ ],
+ "entities": [
+  {
+   "id": "claude",
+   "role": "Sonnet plays each user; Opus writes the personas and checks the findings"
+  },
+  {
+   "id": "claude-code",
+   "role": "its permission mode blocked the agents from driving the live site"
+  },
+  {
+   "id": "playwright",
+   "role": "the browser automation the 58-line helper is built on"
+  },
+  {
+   "id": "chrome",
+   "role": "Chromium, the browser the helper drives"
+  },
+  {
+   "id": "github",
+   "role": "one of two places a study can live"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults the three studies live in"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site the newsroom moved from, whose images were not copied"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site five invented readers walked through on 10 October"
+  },
+  {
+   "id": "store-sgit-ai",
+   "role": "the site of the first study, in September"
+  },
+  {
+   "id": "riskmandate",
+   "role": "riskmandate.ai, the site of the second study"
+  },
+  {
+   "id": "javascript",
+   "role": "the two errors the second study caught"
+  },
+  {
+   "id": "sha-256",
+   "role": "checked the local copy against the live site"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reading meter that charged again on every reload"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "approved the one narrow permission rule and recorded the memo"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "synthetic-users",
+   "defined_here": true
+  },
+  {
+   "id": "screenshot-not-code",
+   "defined_here": true
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://playwright.dev/",
+   "title": "Playwright",
+   "by": "Microsoft",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-09-15",
+   "what": "Synthetic users on store.sgit.ai"
+  },
+  {
+   "date": "2026-09-16",
+   "what": "Synthetic users on riskmandate.ai"
+  },
+  {
+   "date": "2026-10-10",
+   "what": "Five invented readers on newsroom.sgit.ai v0.6.1, run for the article"
+  }
+ ]
+}

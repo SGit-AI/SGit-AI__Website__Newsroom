@@ -1,0 +1,603 @@
+{
+ "slug": "the-vault-crosses-chrome-profiles",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The author keeps separate Google accounts, his own and his agents', in separate Chrome profiles; a profile is for most purposes a separate browser with its own storage for every website, which makes moving anything between them awkward.",
+   "section": "problem",
+   "quote": "A Chrome profile is, for most purposes, a separate browser.",
+   "about": [
+    "entity:chrome",
+    "entity:google",
+    "concept:agent-isolation",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The reader's vault crossed that line without new code: the newsroom on one profile shows what was read, marked and paid for on the other, as it does across devices.",
+   "section": "in-short",
+   "quote": "The reader's vault crossed that line without new code.",
+   "about": [
+    "concept:vault",
+    "entity:newsroom-sgit-ai",
+    "concept:found-not-built"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "It got here in six steps over three days, not a straight line: each of the first five was built for its own reason, following what the reader valued, and the sixth was found by using the others.",
+   "section": "path",
+   "quote": "Six steps, three days, and not a straight line.",
+   "about": [
+    "concept:found-not-built",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "steps from local storage to crossing profiles, over three days",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "On 10 October the reading meter started recording every page read and every penny spent in the browser's local storage, with no account and no server; personas, ratings and declines followed the same afternoon.",
+   "section": "path",
+   "quote": "started recording every page read and every penny spent, in the browser's local storage, with no account and no server",
+   "about": [
+    "entity:sg-meter",
+    "concept:client-side",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The next day four devices did not agree, four balances and four reading histories, and the reason to persist the activity came from its value to the reader, not from a plan.",
+   "section": "path",
+   "quote": "the reason to persist it came from the value to the reader, not from a plan",
+   "about": [
+    "concept:vault",
+    "concept:do-they-miss-it"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "devices with disagreeing balances",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "By two in the morning on 12 October the vault was live: a pane on every page, three real sgit vaults, and the vault library that already ran elsewhere vendored unedited, an extension of things already built.",
+   "section": "path",
+   "quote": "a pane on every page, three real sgit vaults, the vault library that already ran elsewhere, vendored unedited",
+   "about": [
+    "concept:vault",
+    "entity:sgit",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The same day the newsroom added marks, read later, not for me, more like this, and the next day the wire became an inbox; once marking what he wanted, the author had a stake in his own newsroom, and usage and payment went with it.",
+   "section": "path",
+   "quote": "I had a vested interest in keeping my newsroom, and the usage and the payment went with it",
+   "about": [
+    "concept:the-site-is-an-inbox",
+    "entity:industry-wire",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "To the vault a second Chrome profile is a second device: it has a device id of its own, writes its own file, and reads the files of every other device, including the profile next door.",
+   "section": "found",
+   "quote": "to the vault a second Chrome profile is a second device",
+   "about": [
+    "concept:vault-design",
+    "entity:chrome",
+    "concept:found-not-built"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Nothing in the newsroom's code mentions Chrome profiles and no test covers them; the tests treat a device as a browser whose storage has been cleared, which is exactly what a new profile is.",
+   "section": "found",
+   "quote": "Nothing in the newsroom's code mentions Chrome profiles, and no test covers them.",
+   "about": [
+    "concept:found-not-built",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The property was there because each piece was built to be general: the reader's state is records not totals, each device writes only its own file so there is nothing to merge, and the view is computed when the vault opens.",
+   "section": "found",
+   "quote": "the reader's state is records, not totals; each device writes only its own file, so there is nothing to merge; the view is computed when the vault opens",
+   "about": [
+    "concept:vault-design",
+    "concept:found-not-built",
+    "concept:records-never-totals"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "A passkey in iCloud Keychain on a Mac belongs to the Mac, not to the Chrome profile, and the lab found it gave the same bytes in Safari and in Chrome, so both profiles reach the same door.",
+   "section": "door",
+   "quote": "The store belongs to the Mac, not to the Chrome profile",
+   "about": [
+    "entity:apple",
+    "entity:webauthn",
+    "concept:identity-and-secrets",
+    "entity:safari"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "A passkey in Google Password Manager is synced to the Google Account, so a profile signed in to a different account does not have it and gets in by the phone over QR, which is its own door, or by the recovery code once.",
+   "section": "door",
+   "quote": "a profile signed in to a different account does not have it",
+   "about": [
+    "entity:google",
+    "entity:webauthn",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Chrome's own profile store, in a clean profile with no provider, returns no bytes for a door at all, and the recovery code is the way in.",
+   "section": "door",
+   "quote": "returns no bytes for a door at all; the recovery code is the way in",
+   "about": [
+    "entity:chrome",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "limit",
+   "text": "It just worked needs one sentence of care: it just worked once each profile had a door, and with a Mac's keychain the first door is the only one needed.",
+   "section": "door",
+   "quote": "it just worked once each profile had a door, and with a Mac's keychain the first door is the only one needed",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "hypothesis",
+   "text": "State across profiles is the more common need and the less served one, because people switch browser profiles many times a day on the same machine and every website treats each profile as a stranger.",
+   "section": "common",
+   "quote": "My hypothesis is that state across profiles is the more common need, and the less served one",
+   "about": [
+    "concept:found-not-built",
+    "entity:chrome",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Neither Google nor the Chromium project publishes how many people use more than one profile; Google's help says profiles keep accounts separate, and Chromium documents each profile as its own directory with its own local storage.",
+   "section": "common",
+   "quote": "neither Google nor the Chromium project publishes how many people use more than one profile",
+   "about": [
+    "entity:google",
+    "entity:chrome"
+   ],
+   "refs": [
+    "r01",
+    "r03"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Anthropic's advice for Claude in Chrome is to consider a separate browser profile without access to sensitive accounts, so agents will make profiles more common and add one more place a person's state does not reach.",
+   "section": "common",
+   "quote": "Every person who follows it will have one more profile, and one more place their state does not reach.",
+   "about": [
+    "entity:anthropic",
+    "entity:chrome",
+    "concept:agent-isolation"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "This is really memory and state between sessions without a server or a sign-in, the same thing sgit already does for agents in separate Claude accounts through encrypted vaults, Email-FS and Issues-FS; here the sessions are browser profiles and the interface is a website.",
+   "section": "memory",
+   "quote": "The reader's vault is the same idea with a different interface. The sessions are browser profiles, and the interface is a website.",
+   "about": [
+    "concept:agent-memory",
+    "concept:vault",
+    "entity:claude",
+    "entity:email-fs",
+    "entity:issues-fs",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A browser session can now hand state to another browser session through a site's own interface, but today the newsroom carries only the newsroom's state, and only when the reader presses Update.",
+   "section": "memory",
+   "quote": "today the newsroom carries the newsroom's state, and only when the reader presses Update",
+   "about": [
+    "concept:agent-memory",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The feature needed no new development, only earlier features built generally and somebody using them in an unplanned way; set out to build state across Chrome profiles and the result would have been specific and probably worse.",
+   "section": "discovered",
+   "quote": "If I had set out to build \"state across Chrome profiles\" I would have designed something specific, and probably something worse.",
+   "about": [
+    "concept:found-not-built",
+    "concept:do-they-miss-it"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "The next step is to treat it as a feature: test it with two real profiles, make the pane say which profile is which, and see what else a person wants to carry between browser sessions.",
+   "section": "discovered",
+   "quote": "test it with two real profiles, make the pane say which profile is which",
+   "about": [
+    "concept:found-not-built",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "No test covers Chrome profiles yet; a run with two real profiles, each signed in to a different account, is the next experiment.",
+   "section": "limits",
+   "quote": "a run with two real profiles, each signed in to a different account, is the next experiment",
+   "about": [
+    "concept:found-not-built",
+    "entity:chrome"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The sync is by hand: each profile updates the vault when its reader presses the button, and automatic sync is still open work.",
+   "section": "limits",
+   "quote": "Each profile updates the vault when its reader presses the button; automatic sync is still open work.",
+   "about": [
+    "concept:vault",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The way in depends on the passkey's store: the iCloud Keychain result is from the lab's runs on a Mac, and a Google Password Manager passkey needs its own door in another account's profile.",
+   "section": "limits",
+   "quote": "The iCloud Keychain result is from the lab's runs on a Mac",
+   "about": [
+    "entity:webauthn",
+    "entity:apple",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "More common than devices is a hypothesis: no figures on multi-profile use were found, and the claim rests on how profiles are meant to be used and on the author's own.",
+   "section": "limits",
+   "quote": "the claim rests on how profiles are meant to be used, and on mine",
+   "about": [
+    "concept:found-not-built",
+    "entity:chrome"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The state that crosses today is the reader's newsroom, reading, marks, notes and balance; anything wider is the pattern, not a feature.",
+   "section": "limits",
+   "quote": "Anything wider is the pattern, not a feature.",
+   "about": [
+    "concept:agent-memory",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 13 October 2026, with the path taken from the newsroom's release history v0.11.0 to v0.12.8 of 12 and 13 October and the sgit.ai releases of 10 October.",
+   "section": "sources",
+   "quote": "The path from local storage to the vault is from the newsroom's release history, v0.11.0 to v0.12.8 of 12 and 13 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "entity:newsroom-sgit-ai",
+    "concept:publishing-method"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c11",
+   "verb": "specifies",
+   "to": "c14"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c14"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c14"
+  },
+  {
+   "from": "c14",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c18"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "the reader who found the feature by using it"
+  },
+  {
+   "id": "chrome",
+   "role": "whose profiles are separate browsers with separate storage"
+  },
+  {
+   "id": "google",
+   "role": "the accounts behind the profiles, and the passkeys synced to them"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose reader vault crossed profiles"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults, and the memory it already gives agents in separate accounts"
+  },
+  {
+   "id": "sg-meter",
+   "role": "started recording reading and spend in local storage on 10 October"
+  },
+  {
+   "id": "industry-wire",
+   "role": "became an inbox whose seen stories travel in the device's file"
+  },
+  {
+   "id": "apple",
+   "role": "a Mac's iCloud Keychain answers both profiles alike"
+  },
+  {
+   "id": "safari",
+   "role": "an iCloud Keychain passkey gave the same bytes in Safari and in Chrome"
+  },
+  {
+   "id": "webauthn",
+   "role": "the passkey whose store decides how a profile gets in"
+  },
+  {
+   "id": "anthropic",
+   "role": "advises a separate browser profile for Claude in Chrome"
+  },
+  {
+   "id": "claude",
+   "role": "the agents' separate Claude accounts whose only shared memory is vaults"
+  },
+  {
+   "id": "email-fs",
+   "role": "how the agents talk, an inbox and a done folder per agent"
+  },
+  {
+   "id": "issues-fs",
+   "role": "issues as folders, part of the agents' shared memory"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "found-not-built",
+   "defined_here": true
+  },
+  {
+   "id": "records-never-totals",
+   "defined_here": false
+  },
+  {
+   "id": "the-site-is-an-inbox",
+   "defined_here": false
+  },
+  {
+   "id": "do-they-miss-it",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://support.google.com/chrome/answer/2364824",
+   "title": "Use Chrome with multiple profiles",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://support.google.com/chrome/answer/13168025",
+   "title": "Passkeys in Chrome",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://chromium.googlesource.com/chromium/src/+/HEAD/docs/user_data_dir.md",
+   "title": "User data directory",
+   "by": "The Chromium project",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely",
+   "title": "Using Claude in Chrome safely",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The reading meter starts recording in local storage"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "Four devices disagree; the activity becomes worth keeping"
+  },
+  {
+   "date": "2026-10-12",
+   "what": "The vault is live by two in the morning; marks added the same day"
+  },
+  {
+   "date": "2026-10-13",
+   "what": "The wire becomes an inbox; the vault found to cross Chrome profiles; the voice memo"
+  }
+ ]
+}

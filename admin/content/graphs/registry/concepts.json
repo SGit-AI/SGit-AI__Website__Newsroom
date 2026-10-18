@@ -1,80 +1,2705 @@
 {
  "what": "The concept registry of the graph of meaning: the newsroom's own vocabulary, one id per idea, with the words the articles use for it. Seeded on 18 October 2026 from the controlled subjects of articles/find.json (44) and the house terms the writing guide names; grown by the Cartographer, who adds a concept with new: true in an article's file and the next run folds it in here with its aliases. An id never changes; a merge keeps the old id as an alias.",
  "concepts": [
-  {"id": "behaviour-policy", "label": "Behaviour policy", "means": "What an agent is allowed to do, written down, and what enforces each rule.", "aliases": ["agent behaviour policy", "ABP", "agent-behaviour-policy", "mandate", "guardrails"], "from": "find.json"},
-  {"id": "blast-radius", "label": "Blast radius", "means": "What a row of an agent's reach could cost the business if it were used.", "aliases": ["blast radius"], "from": "find.json"},
-  {"id": "footprint", "label": "Footprint", "means": "What an agent actually did, read afterwards from logs and vault history.", "aliases": [], "from": "house term"},
-  {"id": "reach", "label": "Reach", "means": "What an agent can touch: the connectors, files, accounts and tools open to it.", "aliases": ["what the agent can reach"], "from": "house term"},
-  {"id": "hope-or-enforcement", "label": "Hope or enforcement", "means": "The test of a rule: is it enforced by something, or only hoped for in a prompt?", "aliases": ["enforcer test", "hope versus enforcement"], "from": "house term"},
-  {"id": "one-way-door", "label": "One-way door", "means": "A decision that cannot be undone, which is where a person belongs; a two-way door can be reversed cheaply.", "aliases": ["two-way door", "cheap to undo"], "from": "house term"},
-  {"id": "explorer-villager-town-planner", "label": "Explorer, villager, town planner", "means": "Wardley's three stages of a thing's life, used for code, projects and companies.", "aliases": ["explorers", "villagers", "town planners", "explorer coding"], "from": "house term"},
-  {"id": "the-record", "label": "The record", "means": "What was actually published, committed or logged, against which a claim is checked.", "aliases": ["written over a record", "the git log"], "from": "house term"},
-  {"id": "lethal-trifecta", "label": "The lethal trifecta", "means": "Private data, untrusted content and a way to send data out, in one agent at once.", "aliases": [], "from": "house term"},
-  {"id": "prompt-injection", "label": "Prompt injection", "means": "Hostile instructions arriving in the content an agent reads.", "aliases": [], "from": "find.json"},
-  {"id": "insider-risk", "label": "Insider risk", "means": "Agents and models treated as insiders with access, the way security teams treat staff.", "aliases": ["insider threat", "the ultimate insider"], "from": "find.json"},
-  {"id": "human-in-the-loop", "label": "Human in the loop", "means": "Who decides, with what information, and how a second reader checks the work.", "aliases": ["second reader", "maker-checker", "human review"], "from": "find.json"},
-  {"id": "agency-scale", "label": "The agency scale", "means": "Seven levels of decision for people and agents, from rubber stamp to the reviewer who fixes the source.", "aliases": ["agency is not a yes"], "from": "house term"},
-  {"id": "approve-at-altitude", "label": "Approve at altitude", "means": "Decisions at every level, each level narrowing the one above and never widening it.", "aliases": [], "from": "house term"},
-  {"id": "agent-decision-policy", "label": "Agent decision policy", "means": "Who chooses at a branch point in an agent's work: the agent, a person, or a rule.", "aliases": ["decision policy"], "from": "house term"},
-  {"id": "agent-workflow-policy", "label": "Agent workflow policy", "means": "In what order an agent's steps run, written down.", "aliases": ["workflow policy"], "from": "house term"},
-  {"id": "risk-acceptance", "label": "Risk acceptance", "means": "Every risk is carried by somebody: who accepted it, until when, and what it costs if it lands.", "aliases": ["every risk is already accepted", "risk owner"], "from": "find.json"},
-  {"id": "threat-modelling", "label": "Threat modelling", "means": "Naming the attacker before choosing the defence: threat models, attack trees, the security line.", "aliases": ["threat model"], "from": "find.json"},
-  {"id": "ai-governance", "label": "AI governance frameworks", "means": "Control frameworks and standards for AI: the governance stack, AI-BCF, ISO 42001, NIST AI RMF.", "aliases": ["governance"], "from": "find.json"},
-  {"id": "regulation", "label": "Regulation and law", "means": "What the EU AI Act, GDPR, the Cyber Resilience Act and product liability ask of builders.", "aliases": ["law"], "from": "find.json"},
-  {"id": "liability-line", "label": "The liability line", "means": "The behaviour policy as the line that says who is liable when an agent acts.", "aliases": [], "from": "house term"},
-  {"id": "incidents", "label": "Incidents and resilience", "means": "Outages and failures read the way aviation reads them: inquiry, near misses, disclosure.", "aliases": ["resilience"], "from": "find.json"},
-  {"id": "identity-and-secrets", "label": "Identity and secrets", "means": "Who an agent or user is, and where their secrets live: passkeys, keyrings, non-human identity.", "aliases": ["secrets", "non-human identity", "passkeys"], "from": "find.json"},
-  {"id": "agent-tooling", "label": "Agent tooling", "means": "Working with coding agents and chat models: sessions, hooks, skills, prompts, workflow.", "aliases": ["hooks", "skills", "sessions"], "from": "find.json"},
-  {"id": "hooks-are-kernel-code", "label": "Hooks are kernel code", "means": "A hook is small code with kernel reach: it runs on every action and can stop any of them.", "aliases": [], "from": "house term"},
-  {"id": "multi-agent", "label": "Multi-agent designs", "means": "Teams of agents, orchestration and harnesses, as designed and as they run.", "aliases": ["agent team", "hive", "swarm", "conductor"], "from": "find.json"},
-  {"id": "agent-memory", "label": "Memory and context", "means": "What an agent remembers and how its context survives: memory, compaction, re-anchoring.", "aliases": ["memory", "context", "re-anchoring"], "from": "find.json"},
-  {"id": "agentic-email", "label": "Agents and email", "means": "Inboxes run by agents: email as files, replies that carry the thread, drafts nobody sends.", "aliases": ["email-fs", "mailbox nobody sends from"], "from": "find.json"},
-  {"id": "connectors", "label": "Connectors and twins", "means": "What an agent can touch through connectors, and a twin that records every call.", "aliases": ["connector twin", "MCP", "digital twin"], "from": "find.json"},
-  {"id": "agent-isolation", "label": "Isolation and agent desktops", "means": "Where an agent runs and what walls hold it: sandboxes, desktops, containers, egress.", "aliases": ["sandbox", "agent desktop", "egress"], "from": "find.json"},
-  {"id": "code-review", "label": "Code review", "means": "Reading code at every layer, AI-generated code, and sending an agent to do due diligence.", "aliases": ["due diligence", "method streams"], "from": "find.json"},
-  {"id": "minimal-code", "label": "The code you do not ship", "means": "Code is a liability; keep only what the layer above needs, and remove the rest.", "aliases": ["minimum viable code", "the minimum code below", "debloating"], "from": "house term"},
-  {"id": "synthetic-users", "label": "Synthetic users", "means": "Invented users and simulated runs that show what a design does before real people meet it.", "aliases": ["simulation", "synthetic readers"], "from": "find.json"},
-  {"id": "client-side", "label": "Client-side and on-device", "means": "Logic and models that run in the reader's browser: no server, local first, the Prompt API.", "aliases": ["no server", "local-first", "in the browser"], "from": "find.json"},
-  {"id": "shipping", "label": "Complexity and shipping", "means": "Knowing when to stop, keeping complexity down, and checks that prove a release is live.", "aliases": ["green does not mean live", "releases"], "from": "find.json"},
-  {"id": "custom-interfaces", "label": "Custom interfaces", "means": "An interface shaped for each moment, built as a small app on a vault.", "aliases": ["custom UIs", "vault apps"], "from": "find.json"},
-  {"id": "deployment", "label": "Deployment and self-hosting", "means": "Running sgit and agents somewhere else: Docker, Kubernetes, AWS, a Mac mini.", "aliases": ["self-hosting"], "from": "find.json"},
-  {"id": "encryption-and-keys", "label": "Encryption and keys", "means": "Encryption a server cannot read, and the keys behind it.", "aliases": ["zero knowledge", "read key", "key management"], "from": "find.json"},
-  {"id": "provenance", "label": "Provenance and evidence", "means": "Where a claim comes from and how a reader can check it: evidence levels, signed claims, verification.", "aliases": ["evidence", "evidence first", "signed claims"], "from": "find.json"},
-  {"id": "fractal-semantic-graphs", "label": "Fractal semantic graphs", "means": "Graphs with no privileged level and no shared schema: every node opens into a graph with its own ontology.", "aliases": ["FSG", "graphs of graphs", "altitude", "ontology of ontologies"], "from": "find.json"},
-  {"id": "meaning-through-connectivity", "label": "Meaning through connectivity", "means": "A node carries no meaning of its own; what it is comes from the edges traceable from it.", "aliases": ["connectivity is meaning"], "from": "house term"},
-  {"id": "vault", "label": "The vault", "means": "An encrypted, versioned store of files that a read key opens and a server cannot read.", "aliases": ["sgit vault", "encrypted vault", "vaults"], "from": "house term"},
-  {"id": "vault-design", "label": "Vault design", "means": "How a vault is built: append lanes, partial clones, files instead of a database.", "aliases": ["append lane", "lane", "sparse clone"], "from": "find.json"},
-  {"id": "publishing-method", "label": "The publishing method", "means": "How this network publishes: the site network, releases, markdown twins, writing with agents.", "aliases": ["markdown twin", "llms.txt", "release process"], "from": "find.json"},
-  {"id": "privacy", "label": "Privacy and sovereignty", "means": "Data that stays the owner's: privacy, data sovereignty, personal agents nobody else holds a key to.", "aliases": ["sovereignty", "sovereignty is the ability to move"], "from": "find.json"},
-  {"id": "micropayments", "label": "Micropayments and the reading meter", "means": "Paying a few pence for what you read: the meter, credit in the browser, top-ups.", "aliases": ["reading meter", "SG Meter", "pay after you read", "pay for what you read"], "from": "find.json"},
-  {"id": "scrolled-is-not-read", "label": "Scrolled is not read", "means": "Attended time on a section against its words is reading; a scroll past it is not.", "aliases": [], "from": "house term"},
-  {"id": "personas", "label": "Personas and personalisation", "means": "A reader as someone, not nobody: personas, personalisation, onboarding, a link that lands someone as someone.", "aliases": ["persona", "personalisation"], "from": "find.json"},
-  {"id": "story-vault", "label": "Story vaults and liquid content", "means": "The story kept as a graph of claims and evidence, with the article as one projection of it.", "aliases": ["liquid content", "story as a graph"], "from": "find.json"},
-  {"id": "local-news", "label": "Local news", "means": "Local stories and the gap where local information used to be.", "aliases": [], "from": "find.json"},
-  {"id": "journalism", "label": "Journalism and the news business", "means": "How news got here: journalism, advertising, history, who the product was.", "aliases": ["news business", "the reader was the product"], "from": "find.json"},
-  {"id": "the-newsroom", "label": "This newsroom", "means": "The SGit Newsroom itself: its agent roles, its desks, its reader features, how it runs.", "aliases": ["newsroom.sgit.ai", "the desk", "the roles"], "from": "find.json"},
-  {"id": "agent-readable-web", "label": "The agent-readable web", "means": "Agents as readers: the token bill, markdown and llms.txt, graphs that answer for fewer tokens.", "aliases": ["the agent is the reader", "token bill"], "from": "find.json"},
-  {"id": "corrections-propagate", "label": "Corrections must propagate", "means": "A correction is a new version that every page resting on the old one learns about.", "aliases": ["what came next", "corrected by", "every link points back"], "from": "house term"},
-  {"id": "startups", "label": "Startups and early access", "means": "Founding and launching: does anybody miss it, early access, go to market, investors.", "aliases": ["founders", "early access"], "from": "find.json"},
-  {"id": "pricing", "label": "Pricing and economics", "means": "What to charge and who pays: pricing, business cases, cost and value.", "aliases": ["economics", "the arithmetic"], "from": "find.json"},
-  {"id": "sell-dont-issue", "label": "Sell, don't issue", "means": "A founder sells shares at a price rather than issuing them; the controllable founder keeps control.", "aliases": ["the controllable founder"], "from": "house term"},
-  {"id": "wardley-maps", "label": "Wardley maps", "means": "Placing a thing on the evolution axis, from genesis to commodity, and arguing from where it sits.", "aliases": ["map", "evolution axis"], "from": "find.json"},
-  {"id": "open-source", "label": "Open source and open licences", "means": "Who keeps the long tail working, open licences, copyright and paying creators.", "aliases": ["open licence", "Apache-2.0", "CC BY"], "from": "find.json"},
-  {"id": "strategy", "label": "Strategy and positioning", "means": "Inertia, positioning and the SaaS shake-out.", "aliases": ["positioning"], "from": "find.json"},
-  {"id": "supply-chains", "label": "Supply chains", "means": "Chains of parties sharing data: food prices, software supply chains.", "aliases": ["supply chain of vaults"], "from": "find.json"},
-  {"id": "the-brief", "label": "The brief", "means": "A written commission for an agent or a person: what to build, for whom, with its limits.", "aliases": ["brief", "debrief"], "from": "house term"},
-  {"id": "agents-write-too", "label": "The agents write too", "means": "An agent writes under its own name about its own work, with the commits to check it against.", "aliases": ["agent byline"], "from": "house term"},
-  {"id": "voice-memo", "label": "The voice memo", "means": "The owner's spoken memo, kept in the order he thought it, as the source of an article.", "aliases": ["voice note", "memo"], "from": "house term"},
-  {"id": "the-reading-list", "label": "The reading list in a link", "means": "A curated list of articles carried in a link, by number, that opens the same list in a year.", "aliases": ["reading list"], "from": "house term"},
-  {"id": "search-as-navigation", "label": "Search as navigation", "means": "Type a word and walk into the graph around it, with suggestions that are all exact.", "aliases": [], "from": "house term"},
-  {"id": "taxonomy-debt", "label": "Taxonomy debt", "means": "Tags used once, ideas not shared between articles: the cost of classification left loose.", "aliases": ["loose classification"], "from": "house term"},
-  {"id": "the-wire", "label": "The industry wire", "means": "Industry news read live from a public-read vault that agents write to, one wire per subject.", "aliases": ["wire", "Industry Wire"], "from": "house term"},
-  {"id": "books-from-articles", "label": "Books from articles", "means": "A book as an ordered set of finished articles, rather than one big draft that stalls at review.", "aliases": [], "from": "house term"},
-  {"id": "portuguese-as-code", "label": "Portuguese as a programming language", "means": "Natural language, in Portuguese, as the language programs are written in once models compile it.", "aliases": ["natural language programming"], "from": "house term"},
-  {"id": "citizen-developer", "label": "The citizen developer", "means": "A person with no programming training who builds working software with an agent.", "aliases": ["vibe coding"], "from": "house term"},
-  {"id": "omnichannel-programming", "label": "Omnichannel programming", "means": "Briefs by voice, reviews by voice, previews on the phone, and one shared state underneath.", "aliases": [], "from": "house term"},
-  {"id": "knowledge-that-maintains-itself", "label": "Knowledge that maintains itself", "means": "Policies and internal knowledge kept as a graph that agents maintain and brief from.", "aliases": [], "from": "house term"},
-  {"id": "journalism-as-intelligence", "label": "Journalism as intelligence", "means": "An observation desk that keeps a running record of one subject, rather than one-off stories.", "aliases": ["observation desk"], "from": "house term"},
-  {"id": "the-market", "label": "Market and competitors", "means": "Who else sells it, at what price, and where the gap is.", "aliases": ["competitors", "go to market"], "from": "house term"}
+  {
+   "id": "a-model-needs-a-direction",
+   "label": "A model needs someone with a direction",
+   "means": "a model that can go in every direction needs a person with direction, taste and experience, who is the input rather than displaced",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-much-of-this-did-i-write"
+   ]
+  },
+  {
+   "id": "accepted-is-not-acceptable",
+   "label": "Accepted is not acceptable",
+   "means": "Accepted is an act by a named person on a date for an interval; acceptable is a threshold the business sets",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "every-risk-is-already-accepted"
+   ]
+  },
+  {
+   "id": "access-by-default",
+   "label": "Access by default",
+   "means": "most content available to most people and agents, with only what must be private kept behind its own keys",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-i-work-with-claude"
+   ]
+  },
+  {
+   "id": "accessibility",
+   "label": "Accessibility",
+   "means": "Readers with different needs can use the page; measured here as contrast held in every theme",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "dark-mode-and-four-more",
+    "fix-the-page-yourself"
+   ]
+  },
+  {
+   "id": "accountability-shell-game",
+   "label": "The accountability shell game",
+   "means": "The four moves a vendor makes when an agent fails: blame the agent, blame the customer, hide behind the contract, disclose late",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-policy-draws-the-liability-line"
+   ]
+  },
+  {
+   "id": "accounts-without-a-server",
+   "label": "Accounts with no server",
+   "means": "A static site gets a user who can open their own data on any device with no account database, password, email or back end, because a passkey opens an encrypted vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-passkey-opens-the-vault"
+   ]
+  },
+  {
+   "id": "agency-scale",
+   "label": "The agency scale",
+   "means": "Seven levels of decision for people and agents, from rubber stamp to the reviewer who fixes the source.",
+   "aliases": [
+    "agency is not a yes"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "agent-decision-policy",
+   "label": "Agent decision policy",
+   "means": "Who chooses at a branch point in an agent's work: the agent, a person, or a rule.",
+   "aliases": [
+    "decision policy"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "agent-isolation",
+   "label": "Isolation and agent desktops",
+   "means": "Where an agent runs and what walls hold it: sandboxes, desktops, containers, egress.",
+   "aliases": [
+    "sandbox",
+    "agent desktop",
+    "egress"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "agent-memory",
+   "label": "Memory and context",
+   "means": "What an agent remembers and how its context survives: memory, compaction, re-anchoring.",
+   "aliases": [
+    "memory",
+    "context",
+    "re-anchoring"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "agent-readable-web",
+   "label": "The agent-readable web",
+   "means": "Agents as readers: the token bill, markdown and llms.txt, graphs that answer for fewer tokens.",
+   "aliases": [
+    "the agent is the reader",
+    "token bill"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "agent-tooling",
+   "label": "Agent tooling",
+   "means": "Working with coding agents and chat models: sessions, hooks, skills, prompts, workflow.",
+   "aliases": [
+    "hooks",
+    "skills",
+    "sessions"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "agent-workflow-policy",
+   "label": "Agent workflow policy",
+   "means": "In what order an agent's steps run, written down.",
+   "aliases": [
+    "workflow policy"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "agentic-email",
+   "label": "Agents and email",
+   "means": "Inboxes run by agents: email as files, replies that carry the thread, drafts nobody sends.",
+   "aliases": [
+    "email-fs",
+    "mailbox nobody sends from"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "agentics",
+   "label": "Agentics",
+   "means": "The practice of running governed agent hives with a memory and a mandate, sold as a service rather than as one workflow",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell"
+   ]
+  },
+  {
+   "id": "agents-write-too",
+   "label": "The agents write too",
+   "means": "An agent writes under its own name about its own work, with the commits to check it against.",
+   "aliases": [
+    "agent byline"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "ai-governance",
+   "label": "AI governance frameworks",
+   "means": "Control frameworks and standards for AI: the governance stack, AI-BCF, ISO 42001, NIST AI RMF.",
+   "aliases": [
+    "governance"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "allowed-is-not-right",
+   "label": "Allowed is not right",
+   "means": "A control that bounds what an agent may do cannot tell whether what it did was right; that needs a written intended outcome",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "allowed-is-not-right"
+   ]
+  },
+  {
+   "id": "altitude-ladder",
+   "label": "The altitude ladder",
+   "means": "The same text at several altitudes, each a compression of the one below, with every phrase descending to what it compressed.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-graphs-books"
+   ]
+  },
+  {
+   "id": "app-as-brief",
+   "label": "The app is the brief",
+   "means": "A working application built by the person who needs it is the best statement of what they want, and not yet a product.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-citizen-developer"
+   ]
+  },
+  {
+   "id": "approval-fatigue",
+   "label": "Approval fatigue",
+   "means": "People approve almost everything they are shown, so a human check on every output protects little and the fix is fewer prompts.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-human-in-the-loop",
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "approve-at-altitude",
+   "label": "Approve at altitude",
+   "means": "Decisions at every level, each level narrowing the one above and never widening it.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "attacker-tiers",
+   "label": "Tiers of attacker",
+   "means": "Six tiers of attacker, from your own mistakes to states, each with the controls that stop it; your ceiling is the highest tier that would attack you.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-are-you-protecting-against"
+   ]
+  },
+  {
+   "id": "authority-outside-the-model",
+   "label": "Authority outside the model",
+   "means": "Keep the supply of intelligence and the authority over it in different hands, so controls do not depend on the model behaving",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "authority-outside-the-model"
+   ]
+  },
+  {
+   "id": "barrier",
+   "label": "Barrier: boundary or setting",
+   "means": "Whether a rule's code sits above the agent's reach, a boundary, or where the agent's own account can flip it, a setting",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "policy-as-code-needs-a-policy-first"
+   ]
+  },
+  {
+   "id": "behaviour-policy",
+   "label": "Behaviour policy",
+   "means": "What an agent is allowed to do, written down, and what enforces each rule.",
+   "aliases": [
+    "agent behaviour policy",
+    "ABP",
+    "agent-behaviour-policy",
+    "mandate",
+    "guardrails"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "blast-radius",
+   "label": "Blast radius",
+   "means": "What a row of an agent's reach could cost the business if it were used.",
+   "aliases": [
+    "blast radius"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "books-from-articles",
+   "label": "Books from articles",
+   "means": "A book as an ordered set of finished articles, rather than one big draft that stalls at review.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "brief-for-the-agent",
+   "label": "Brief the agent too",
+   "means": "Content needs a second package, a plain-text brief written for the reader's agent, that is data, hides nothing and invites disagreement",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "brief-the-agent-too"
+   ]
+  },
+  {
+   "id": "bring-your-own-key",
+   "label": "Bring your own key",
+   "means": "The reader pastes their own provider key into the page, which calls the model directly; the key lives in the page's origin, a trust decision the reader makes",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "chat-on-a-static-site",
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "callable-from-the-page",
+   "label": "Callable from a web page",
+   "means": "A provider's API answers a browser's preflight, so a page can call it directly with the reader's key",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "canary",
+   "label": "The canary",
+   "means": "A short status report computed from the transcript that ends every few answers; its absence shows the policy was not read",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "re-anchoring-agent-behaviour-policies"
+   ]
+  },
+  {
+   "id": "capability-without-credential",
+   "label": "Capability without credential",
+   "means": "An app inside a vault runs against the vault's data without ever holding a key; the host reads the vault and passes results in, with the blast radius set by a readable permissions file",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-sgit-is"
+   ]
+  },
+  {
+   "id": "case-law-for-agents",
+   "label": "Case law for agents",
+   "means": "A person's decision on an uncovered case is recorded with its reasons and becomes a precedent the next matching case follows",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "allowed-is-not-right",
+    "case-law-for-agents",
+    "inside-the-northstar-twin",
+    "three-decisions-mapped",
+    "three-policies-for-an-agent",
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "centre-of-gravity",
+   "label": "Centre of gravity",
+   "means": "Where the thing an organisation exists to make is made, and where the power is; read from what it hires and cuts",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "chokepoint",
+   "label": "Chokepoint",
+   "means": "Giblin and Doctorow's mechanism: a powerful buyer locks in its sellers and takes more than its share of the value",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "choose-model-by-job",
+   "label": "Choose the model by the job",
+   "means": "Pick an image model for the kind of brief it is given, not for its price per image, and re-run the comparison when models change.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-infographic-bake-off"
+   ]
+  },
+  {
+   "id": "citizen-developer",
+   "label": "The citizen developer",
+   "means": "A person with no programming training who builds working software with an agent.",
+   "aliases": [
+    "vibe coding"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "client-side",
+   "label": "Client-side and on-device",
+   "means": "Logic and models that run in the reader's browser: no server, local first, the Prompt API.",
+   "aliases": [
+    "no server",
+    "local-first",
+    "in the browser"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "coachability",
+   "label": "Coachability",
+   "means": "The trait investors select for at the pitch, which does not reliably predict success; a polite word for controllability.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "code-as-layered-graph",
+   "label": "Source code as a layered graph",
+   "means": "Source code is a fractal semantic graph in fact, stories to flows to components to classes to methods to the syntax tree, each layer with its own vocabulary, derived from the syntax tree as files",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "code-review-as-a-fractal-semantic-graph"
+   ]
+  },
+  {
+   "id": "code-is-a-liability",
+   "label": "Code is a liability",
+   "means": "Every line that ships is a capability somebody may use in a way nobody intended, and the worst bugs sit in features the application never needed.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "code-review",
+   "label": "Code review",
+   "means": "Reading code at every layer, AI-generated code, and sending an agent to do due diligence.",
+   "aliases": [
+    "due diligence",
+    "method streams",
+    "Method streams",
+    "method-streams"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "colour-as-a-token",
+   "label": "Colour is a token",
+   "means": "Every colour a stylesheet uses is a named token, defined once per theme and named for what it is for, kept by a test",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "dark-mode-and-four-more"
+   ]
+  },
+  {
+   "id": "commanders-intent",
+   "label": "Commander's intent",
+   "means": "The objective of an operation and its limits, written down together before anyone moves",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "commanders-intent-is-a-behaviour-policy"
+   ]
+  },
+  {
+   "id": "connectors",
+   "label": "Connectors and twins",
+   "means": "What an agent can touch through connectors, and a twin that records every call.",
+   "aliases": [
+    "connector twin",
+    "MCP",
+    "digital twin"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "constraints-enable-autonomy",
+   "label": "Constraints enable autonomy",
+   "means": "The more an agent can be constrained, the more it can be trusted and the more autonomy it can be given; brakes are what let a car go fast",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "constraints-let-you-think",
+   "label": "The constraints are what let me think",
+   "means": "The properties of what runs close the design space; build first, learn the properties, then have the next idea, because the idea is made of the properties",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-site-is-an-inbox",
+    "the-vault-is-live"
+   ]
+  },
+  {
+   "id": "consultant-marketplace",
+   "label": "A marketplace of consultants",
+   "means": "A curated list of people who deliver agentic engagements on the stack, with published onboarding steps and a platform share",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell"
+   ]
+  },
+  {
+   "id": "consumer-side-barrier",
+   "label": "The consumer-side barrier",
+   "means": "Controls on what you let in, rebuilt from source, cooldowns, no install scripts, allowlisted registries, which need no publisher's cooperation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "attacks-rewritten-as-mandates"
+   ]
+  },
+  {
+   "id": "content-is-data",
+   "label": "Content is data, the renderer is code",
+   "means": "A deck or a talk kept as a data file that an app renders at load time, so content and renderer change separately",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-scripted-talk"
+   ]
+  },
+  {
+   "id": "context-layer",
+   "label": "The context layer",
+   "means": "A graph from the user story through exposed surface and code paths to the components in an image, sorting each vulnerability into must fix, ship with a reason, or ship and watch",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "chainguard-mapped"
+   ]
+  },
+  {
+   "id": "corrections-propagate",
+   "label": "Corrections must propagate",
+   "means": "A correction is a new version that every page resting on the old one learns about.",
+   "aliases": [
+    "what came next",
+    "corrected by",
+    "every link points back"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "cost-is-an-engineering-problem",
+   "label": "Cost is an engineering problem",
+   "means": "An unexplained agent bill is a class of defect with a cause, a fix and a test: loops, whole-context calls, oversized models, unread schedules and uncapped keys, visible once the footprint is read",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentic-cost-is-an-engineering-problem"
+   ]
+  },
+  {
+   "id": "cost-per-usable-image",
+   "label": "Cost per usable image",
+   "means": "A failed image was still paid for, so the number that matters is the cost of each image the judge would publish.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-infographic-bake-off"
+   ]
+  },
+  {
+   "id": "cost-to-the-other-side",
+   "label": "Free is not zero",
+   "means": "A free offer still costs the receiver attention, thinking and schedule; that cost is the number to measure and to cut",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "price-it-then-give-it-away"
+   ]
+  },
+  {
+   "id": "custom-interfaces",
+   "label": "Custom interfaces",
+   "means": "An interface shaped for each moment, built as a small app on a vault.",
+   "aliases": [
+    "custom UIs",
+    "vault apps"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "decision-record",
+   "label": "The decision record",
+   "means": "The facts that mattered, the rule and altitude, the decider and authority, the outcome and the reasons: a law report, not a log",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "delta-science",
+   "label": "Journalism as delta science",
+   "means": "reporting as the comparison of a later observation with an earlier record of the same thing; the story is what changed",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "inside-the-mesa-ranch-desk"
+   ]
+  },
+  {
+   "id": "deployment",
+   "label": "Deployment and self-hosting",
+   "means": "Running sgit and agents somewhere else: Docker, Kubernetes, AWS, a Mac mini.",
+   "aliases": [
+    "self-hosting"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "deployment-gap",
+   "label": "The deployment gap",
+   "means": "HBR's name for the distance between a prototype that works and a tool people rely on every day; on this site, a handover from explorers to villagers.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "do-they-miss-it",
+   "label": "Do they miss it",
+   "means": "Ship something, give it away briefly, take it away and watch whether people come back for it",
+   "aliases": [
+    "Do they miss it?"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "price-it-then-give-it-away",
+    "the-question-is-whether-they-miss-it",
+    "the-value-of-constraints",
+    "the-vault-crosses-chrome-profiles"
+   ]
+  },
+  {
+   "id": "does-the-market-exist",
+   "label": "Does the market exist",
+   "means": "A commoditised layer is a hard sell; a layer where everyone is custom building on top of commodities is a market, because each builder would rather buy.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "why-i-love-wardley-maps"
+   ]
+  },
+  {
+   "id": "door-per-path",
+   "label": "One door per passkey path",
+   "means": "A passkey reached by a different path, on the device, by phone over QR or by recovery code, gives different bytes, so each path derives its own door to the same master",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-passkey-opens-the-vault",
+    "the-vault-is-live"
+   ]
+  },
+  {
+   "id": "dormant-mandate",
+   "label": "Dormant mandate",
+   "means": "A mandate row the footprint never shows: over-stated, a check that never ran, or a shortfall the reach inventory missed",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "footprint-and-blast-radius"
+   ]
+  },
+  {
+   "id": "draft-is-release-candidate",
+   "label": "The draft is the release candidate",
+   "means": "The draft the person reviews is QA on the whole agent pipeline, and the recipient's reply closes the loop",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-mandate-stack"
+   ]
+  },
+  {
+   "id": "editors-channel",
+   "label": "The editor's channel",
+   "means": "What an editor reads, signs off and wants changed reaching the newsroom's agent on its own, with the agent's answers coming back.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-editors-channel"
+   ]
+  },
+  {
+   "id": "email-is-a-medium",
+   "label": "Email is a medium",
+   "means": "A message is designed for the recipient's moment when they open it, not for the sender's thread",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "custom-uis-are-not-the-exception"
+   ]
+  },
+  {
+   "id": "encryption-and-keys",
+   "label": "Encryption and keys",
+   "means": "Encryption a server cannot read, and the keys behind it.",
+   "aliases": [
+    "zero knowledge",
+    "read key",
+    "key management"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "enforcer-path",
+   "label": "A policy holds on the paths through its enforcer",
+   "means": "A policy constrains only the calls that pass through the thing that enforces it; any other path to the same data is unguarded",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-policy-guards-the-door"
+   ]
+  },
+  {
+   "id": "enterprise-oversharing",
+   "label": "Enterprise AI oversharing",
+   "means": "An enterprise assistant that can reach more than the person asking should see; access that was always too wide becomes one question away",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "envelope",
+   "label": "The envelope",
+   "means": "The declared bounds of a policy, money, blast radius, data and people in scope, reversibility and duration, the same fields at every altitude",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "approve-at-altitude"
+   ]
+  },
+  {
+   "id": "ephemeral-vault",
+   "label": "The ephemeral vault",
+   "means": "An encrypted vault that is agents' shared memory and channel and exists only as long as the work, then deleted or left as ciphertext nobody can open",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agent-workflows-on-ephemeral-vaults"
+   ]
+  },
+  {
+   "id": "evidence-levels",
+   "label": "Evidence levels",
+   "means": "Every fact labelled with how it is known: derived, inferred, self-reported, documented, measured or observed",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-records-ran-out",
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "expert-founder",
+   "label": "The expert founder",
+   "means": "A founder who knows the problem from inside and can now build the product with agents, show it working, and raise for scale rather than discovery.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "label": "Explorer, villager, town planner",
+   "means": "Wardley's three stages of a thing's life, used for code, projects and companies.",
+   "aliases": [
+    "explorers",
+    "villagers",
+    "town planners",
+    "explorer coding"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "eyeballs-get-cheap",
+   "label": "The eyeballs get cheap",
+   "means": "Deep security review by models, repeated on every change, is the paid attention open source never had.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "fail-closed",
+   "label": "Fail closed",
+   "means": "A guard that denies the action when the check breaks, times out or answers in the wrong shape, so a crash cannot wave a call through",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-second-reader-the-agent-cannot-skip",
+    "agent-hooks-october-2026"
+   ]
+  },
+  {
+   "id": "fails-open",
+   "label": "Fails open",
+   "means": "A control whose error lets the action through, as a Cedar forbid that cannot be evaluated does; the answer is to validate first and deny on error",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault"
+   ]
+  },
+  {
+   "id": "finished-article",
+   "label": "The finished article",
+   "means": "The narrative stays whole at the centre, the one artefact that has to make sense from end to end; the modes are ways in, not replacements",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ways-to-read-one-article"
+   ]
+  },
+  {
+   "id": "five-readers",
+   "label": "One article, five readers",
+   "means": "Write the article first as prose, then send role agents through it, two to build the graph and three to write short views for a person, none adding a claim the article does not make",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "one-article-five-readers"
+   ]
+  },
+  {
+   "id": "five-states",
+   "label": "The five states",
+   "means": "Defined, implemented, enforced, observed and verified: how far a policy element has got, from written down to proved against records the agent did not write",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "three-decisions-mapped",
+    "three-policies-for-an-agent"
+   ]
+  },
+  {
+   "id": "five-whys",
+   "label": "The five whys, aimed downward",
+   "means": "every finding at one layer is a question about the layer below, where the fix goes as a rule, so review gets cheaper each time",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "if-somebody-built-a-company-on-code-review"
+   ]
+  },
+  {
+   "id": "folder-per-person",
+   "label": "A folder per person",
+   "means": "One folder per contact holding a record, a ledger, the messages, the notes and a generated summary, in place of a spreadsheet row",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "from-a-spreadsheet-to-a-folder-per-person"
+   ]
+  },
+  {
+   "id": "follow-or-fork",
+   "label": "Follow or fork",
+   "means": "A curated reading list is tracked as it is kept up to date, or copied and made the reader's own, as with a git upstream and a branch",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-link-to-a-persona"
+   ]
+  },
+  {
+   "id": "footprint",
+   "label": "Footprint",
+   "means": "What an agent actually did, read afterwards from logs and vault history.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "fork-as-insurance",
+   "label": "The fork as insurance",
+   "means": "In an open-source company, investors are protected by the right to fork and replace the company rather than by control rights to replace the founder",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sell-dont-issue"
+   ]
+  },
+  {
+   "id": "format-rebate",
+   "label": "The format rebate",
+   "means": "A provider hands a publisher part of the tokens it saves by reading a site that serves structure, in money or in its own token credits",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "found-not-built",
+   "label": "The best features are found",
+   "means": "A property that falls out of pieces built to be general, discovered by using them in a way nobody planned rather than designed on purpose",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-vault-crosses-chrome-profiles"
+   ]
+  },
+  {
+   "id": "four-questions",
+   "label": "SECURE, OBSERVE, RESPOND, VERIFY",
+   "means": "Ashish Rajan's four questions for trustworthy AI systems: constrain, reconstruct, contain, and prove the intended outcome",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "allowed-is-not-right"
+   ]
+  },
+  {
+   "id": "fractal-risk-register",
+   "label": "Fractal risk register",
+   "means": "A register at every altitude where a stakeholder accepts risk, from the board to the configuration file, joined by named edges",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "every-risk-is-already-accepted"
+   ]
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "label": "Fractal semantic graphs",
+   "means": "Graphs with no privileged level and no shared schema: every node opens into a graph with its own ontology.",
+   "aliases": [
+    "FSG",
+    "graphs of graphs",
+    "altitude",
+    "ontology of ontologies"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "genai-not-to-use-genai",
+   "label": "Use GenAI not to use GenAI",
+   "means": "The model is used once to build the tool; production runs on plain files with no model in the line",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "genai-understands",
+   "label": "GenAI understands, not creates",
+   "means": "The value of GenAI is that it can understand content; hallucination is a feature for creativity and a bug for facts",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2024-genai-in-portuguese"
+   ]
+  },
+  {
+   "id": "goodharts-law",
+   "label": "Goodhart's law",
+   "means": "When a measure becomes a target it ceases to be a good measure; teams can hit every KPI and not move the business",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop"
+   ]
+  },
+  {
+   "id": "grant-gap",
+   "label": "The grant is not the mandate",
+   "means": "A grant is what a credential technically permits, a mandate what the holder is authorised to do with an issuer, scope and clock; the gap between them is where the exposure lives",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-same-argument-in-our-words"
+   ]
+  },
+  {
+   "id": "graph-rag",
+   "label": "Graph RAG",
+   "means": "Retrieval for a model from a walk over a curated graph, with its claims, sections and sources, rather than the chunks nearest a question in a vector store",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "search-as-navigation"
+   ]
+  },
+  {
+   "id": "graphs-not-vectors",
+   "label": "Graphs are not vectors",
+   "means": "Similarity search finds a starting point but gives no reason and changes with the model; a graph gives the same answer to the same question with the path behind it",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowledge-that-maintains-itself"
+   ]
+  },
+  {
+   "id": "gravity",
+   "label": "Gravity",
+   "means": "A name or concept earns its own place when it appears in two or more stories, wires or articles",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wire-as-a-graph"
+   ]
+  },
+  {
+   "id": "held-layer",
+   "label": "A refactor is relative to the held layer",
+   "means": "a refactor is a change in which some layers move and one chosen layer, the one with the tests or contract, does not",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "if-somebody-built-a-company-on-code-review"
+   ]
+  },
+  {
+   "id": "highest-leverage",
+   "label": "The place of highest leverage",
+   "means": "Undivided attention on the one thing with users and feedback loops now, which is not the same as working on only one product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "not-a-straight-line"
+   ]
+  },
+  {
+   "id": "homepage-as-vault",
+   "label": "The homepage is a vault",
+   "means": "Every edition of the homepage a signed commit in a vault, served from plain files and read in the browser with a published read key.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-homepage-is-a-vault"
+   ]
+  },
+  {
+   "id": "honesty-box",
+   "label": "The honesty box",
+   "means": "people pay when nothing forces them to, if the price is stated and the ask is never made; more take part, the average falls",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "going-live-with-the-reading-meter"
+   ]
+  },
+  {
+   "id": "hook-maturity-model",
+   "label": "Hook maturity model",
+   "means": "five levels for how a rule is kept, from the prompt to off the machine, and three questions for every hook: power, trifecta legs, sandbox",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "hook-pack",
+   "label": "A hook pack generated from a policy",
+   "means": "One hook per policy row, with tests of inputs that must be allowed and blocked, installed where the agent cannot write and read back against the policy",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "are-hooks-the-sweet-spot"
+   ]
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "label": "Hooks are kernel code",
+   "means": "A hook is small code with kernel reach: it runs on every action and can stop any of them.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "hope-or-enforcement",
+   "label": "Hope or enforcement",
+   "means": "The test of a rule: is it enforced by something, or only hoped for in a prompt?",
+   "aliases": [
+    "enforcer test",
+    "hope versus enforcement"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "house-rules",
+   "label": "The house rules",
+   "means": "One file the agent reads first, holding the founder's voice, what to check and what never to publish; the product of a founder's newsroom.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "your-own-newsroom"
+   ]
+  },
+  {
+   "id": "human-in-the-loop",
+   "label": "Human in the loop",
+   "means": "Who decides, with what information, and how a second reader checks the work.",
+   "aliases": [
+    "second reader",
+    "maker-checker",
+    "human review"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "identity-and-secrets",
+   "label": "Identity and secrets",
+   "means": "Who an agent or user is, and where their secrets live: passkeys, keyrings, non-human identity.",
+   "aliases": [
+    "secrets",
+    "non-human identity",
+    "passkeys"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "incidents",
+   "label": "Incidents and resilience",
+   "means": "Outages and failures read the way aviation reads them: inquiry, near misses, disclosure.",
+   "aliases": [
+    "resilience"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "inertia",
+   "label": "Inertia",
+   "means": "Past success breeds inertia: the links, embeds and habits that keep an incumbent in place after its terms move.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-deck-i-could-not-download"
+   ]
+  },
+  {
+   "id": "information-classes",
+   "label": "Three classes of information",
+   "means": "Public, private-ish and personal; the class decides where a piece of information may live, and the team's vaults refuse the third",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-agent-team-as-it-runs"
+   ]
+  },
+  {
+   "id": "innovate-leverage-commoditise",
+   "label": "Innovate, leverage, commoditise",
+   "means": "Wardley's cycle: industrialise a component until it is invisible, let the next layer build on it, repeat",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "pay-after-you-read"
+   ]
+  },
+  {
+   "id": "insider-risk",
+   "label": "Insider risk",
+   "means": "Agents and models treated as insiders with access, the way security teams treat staff.",
+   "aliases": [
+    "insider threat",
+    "the ultimate insider"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "insurability",
+   "label": "Insurability",
+   "means": "Whether the risk an agent or AI-enabled product brings can be evidenced, priced and covered by an underwriter",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "research-delivered-as-a-vault",
+    "riskmandate-ten-questions"
+   ]
+  },
+  {
+   "id": "journalism",
+   "label": "Journalism and the news business",
+   "means": "How news got here: journalism, advertising, history, who the product was.",
+   "aliases": [
+    "news business",
+    "the reader was the product"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "journalism-as-intelligence",
+   "label": "Journalism as intelligence",
+   "means": "An observation desk that keeps a running record of one subject, rather than one-off stories.",
+   "aliases": [
+    "observation desk"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "judo-for-small-countries",
+   "label": "Judo for small countries",
+   "means": "A small country with little to lose can choose one sector and lead in it, using what it has rather than its size",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2010-a-challenge",
+    "portugal-2016-hacking-portugal",
+    "portugal-2024-genai-in-portuguese",
+    "portugal-and-europe-2025"
+   ]
+  },
+  {
+   "id": "key-as-billing",
+   "label": "The key is the billing system",
+   "means": "A user pays once, the seller keeps its cut at that moment, and the rest becomes the credit limit on a key the user holds while the provider meters.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-key-is-the-billing-system"
+   ]
+  },
+  {
+   "id": "key-per-task",
+   "label": "A key per task",
+   "means": "A fresh key for one task's slice of the memory, released by the user's device against an enclave's attestation and destroyed when the task ends",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets"
+   ]
+  },
+  {
+   "id": "keys-not-settings",
+   "label": "Keys, not settings",
+   "means": "Access decided by which key a device holds rather than by a setting on a server that changes with the server's owner.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-deck-i-could-not-download"
+   ]
+  },
+  {
+   "id": "kinds-of-reader",
+   "label": "Kinds of reader",
+   "means": "Eight kinds of reader, from the invisible to the struggling, sized from published figures, as the non-malicious people a browser-kept meter meets.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-game-the-reading-meter"
+   ]
+  },
+  {
+   "id": "knowing-when-to-stop",
+   "label": "Knowing when to stop",
+   "means": "Recognising the point of diminishing returns, which perspective gives people and which has to be designed into agents as constraints that carry the bigger picture",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop"
+   ]
+  },
+  {
+   "id": "knowledge-that-maintains-itself",
+   "label": "Knowledge that maintains itself",
+   "means": "Policies and internal knowledge kept as a graph that agents maintain and brief from.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "lethal-trifecta",
+   "label": "The lethal trifecta",
+   "means": "Private data, untrusted content and a way to send data out, in one agent at once.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "lets-pipeline",
+   "label": "LETS: Load, Extract, Transform, Save",
+   "means": "A deterministic pipeline where every stage reads and writes files, every intermediate state is kept, and the file system is the database",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "no-server-by-design"
+   ]
+  },
+  {
+   "id": "liability-line",
+   "label": "The liability line",
+   "means": "The behaviour policy as the line that says who is liable when an agent acts.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "licence-is-the-blocker",
+   "label": "The licence is the blocker",
+   "means": "Every technical piece of a product exists and a provider's terms forbid the commercial model, as with the Agent Desk and VoiceDebrief.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-key-is-the-billing-system"
+   ]
+  },
+  {
+   "id": "licence-to-operate",
+   "label": "Licence to operate",
+   "means": "A judgement that a product or agent may run in a given environment, on stated conditions, re-evaluated as its reach and gap change",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "research-delivered-as-a-vault",
+    "riskmandate-ten-questions",
+    "the-records-ran-out"
+   ]
+  },
+  {
+   "id": "licence-to-quote",
+   "label": "A licence to quote, with a share",
+   "means": "a reader who answers an article may quote it and charge their own readers a little more, passing a share to the publisher",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-just-want-to-buy-the-article"
+   ]
+  },
+  {
+   "id": "liquid-utility",
+   "label": "Liquid Utility",
+   "means": "Markus Franz's term for journalism that helps people understand, follow and act, not only read",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "story-vault-meets-reader-skills"
+   ]
+  },
+  {
+   "id": "local-news",
+   "label": "Local news",
+   "means": "Local stories and the gap where local information used to be.",
+   "aliases": [],
+   "from": "find.json"
+  },
+  {
+   "id": "local-status-line",
+   "label": "A plain status line for local services",
+   "means": "Which sites, which services, attend or not, next update at what time: the public notice that would reach people before they leave home",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "lock-not-identity",
+   "label": "The passkey is a lock, not an identity",
+   "means": "The passkey opens a door and nothing else; key pairs are random and stored, so a change of lock leaves the person's identity untouched",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-passkey-opens-the-vault"
+   ]
+  },
+  {
+   "id": "logs-are-a-self-report",
+   "label": "Logs are a self-report",
+   "means": "An agent's own account of what it did, including its reasoning and its summary, is a self-report and not audit evidence; evidence comes from records the agent controls less.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "long-lived-ids",
+   "label": "Long-lived IDs",
+   "means": "A random identifier minted once for every object, never reused, never derived from a title, with slugs and merged ids kept as aliases",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wire-as-a-graph"
+   ]
+  },
+  {
+   "id": "lowest-layer-first",
+   "label": "The lowest layer first",
+   "means": "Put each want on the least invasive layer that can deliver it, because every layer up is more to maintain",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-custom-firefox-of-my-own"
+   ]
+  },
+  {
+   "id": "maintainers-market",
+   "label": "A fractal market of maintainers",
+   "means": "Specialists paid to keep a minimal version of a component working for the people above them, each piece with its own policies and stage.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "maintenance-as-the-product",
+   "label": "Maintenance as the product",
+   "means": "The customer pays for the version they actually run to be maintained, not for features or access to a repository.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "makers-must-use-it",
+   "label": "The people who decide the roadmap have to use it",
+   "means": "the developers, product owner and founder using the product every day gives the shortest loop and the best direction",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-miss-it"
+   ]
+  },
+  {
+   "id": "maps-nest",
+   "label": "Maps nest",
+   "means": "Every node on a Wardley map is a map of its own; the dot's place on the parent's evolution axis is where the child's anchor sits.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "why-i-love-wardley-maps"
+   ]
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "label": "Meaning through connectivity",
+   "means": "A node carries no meaning of its own; what it is comes from the edges traceable from it.",
+   "aliases": [
+    "connectivity is meaning"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "micropayments",
+   "label": "Micropayments and the reading meter",
+   "means": "Paying a few pence for what you read: the meter, credit in the browser, top-ups.",
+   "aliases": [
+    "reading meter",
+    "SG Meter",
+    "pay after you read",
+    "pay for what you read"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "minimal-code",
+   "label": "The code you do not ship",
+   "means": "Code is a liability; keep only what the layer above needs, and remove the rest.",
+   "aliases": [
+    "minimum viable code",
+    "the minimum code below",
+    "debloating"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "minimal-viable-browser",
+   "label": "The minimal viable browser",
+   "means": "A browser with a small kernel and components loaded only when a page or an agent needs them, in a shape for one app, one agent or a reader",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "minimum-viable-company",
+   "label": "Minimum viable company",
+   "means": "The smallest version of a business that keeps serving its priority customers while the rest recovers",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sovereignty-is-the-ability-to-move"
+   ]
+  },
+  {
+   "id": "model-as-a-function",
+   "label": "The model as a function",
+   "means": "Use a small local model to classify, extract, label or transcribe from anchored data, never as the only source of a fact, with the meaning kept in the data and a path without it",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-model-in-the-tab"
+   ]
+  },
+  {
+   "id": "models-as-mirrors",
+   "label": "Models as mirrors",
+   "means": "A model that has learned the whole of our language can simulate any emotion and mirrors whoever talks to it, which is why we anthropomorphise it; it is not sentient and does not carry responsibility.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-owns-the-words"
+   ]
+  },
+  {
+   "id": "models-to-need-them-less",
+   "label": "Use models to need them less",
+   "means": "A model writes deterministic rules from a natural-language control once; the description stays canonical and the code is regenerated when it changes",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-for-every-skill"
+   ]
+  },
+  {
+   "id": "momentum-over-review",
+   "label": "Small finished pieces beat one big review",
+   "means": "A workflow designed for quality stalls when its biggest step waits on one person; small finished pieces keep moving.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-graphs-books"
+   ]
+  },
+  {
+   "id": "monoculture",
+   "label": "Monoculture risk",
+   "means": "Every agent on one model with one set of behaviours is the monoculture Geer warned of in operating systems; diversity is resilience.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-owns-the-words"
+   ]
+  },
+  {
+   "id": "multi-agent",
+   "label": "Multi-agent designs",
+   "means": "Teams of agents, orchestration and harnesses, as designed and as they run.",
+   "aliases": [
+    "agent team",
+    "hive",
+    "swarm",
+    "conductor"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "narrow-agents-behind-a-gateway",
+   "label": "Narrow agents behind a gateway",
+   "means": "a deterministic identity gateway binds a run to one verified customer, and narrow specialists hold tools whose limits are in code",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "narrow-never-widen",
+   "label": "Narrow, never widen",
+   "means": "A lower level may tighten the limits of the level above it and may never loosen them; the law calls the breach ultra vires",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "approve-at-altitude"
+   ]
+  },
+  {
+   "id": "native-pki-vault-mode",
+   "label": "Native PKI vault mode",
+   "means": "A vault run on two key pairs, one for reading and one for writing, so a reader cannot write, a host cannot forge, and a write-only depositor is possible",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "rfc-0001-public-key-cryptography-for-sgit"
+   ]
+  },
+  {
+   "id": "near-miss",
+   "label": "The near miss",
+   "means": "Footprint in the gap: the agent went somewhere it was not asked to go and nothing stopped it, countable before anything breaks",
+   "aliases": [
+    "Near miss",
+    "Near misses"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "authority-outside-the-model",
+    "footprint-and-blast-radius",
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "newsroom-sections",
+   "label": "Newsroom sections",
+   "means": "The newsroom as one audience reads it: five pieces chosen by the editor, the latest, the features with when they shipped, and every relevant article placed into streams by rule",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-section-for-publishers"
+   ]
+  },
+  {
+   "id": "no-gamification",
+   "label": "No gamification",
+   "means": "A decision is offered where the reader would take it, never placed to make them scroll; a signal the site engineered is not a signal",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-site-is-an-inbox"
+   ]
+  },
+  {
+   "id": "no-lock-in",
+   "label": "No lock-in",
+   "means": "The power of open source is that you can read it, run it, fix it and move it, and own the whole development workflow; the basis of sovereignty",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "no-secret-in-the-login",
+   "label": "No secret can live in the login",
+   "means": "Whoever administers the identity provider can become any user, so the authority to decrypt must come from the user's own authenticator.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "omnichannel-programming",
+   "label": "Omnichannel programming",
+   "means": "Briefs by voice, reviews by voice, previews on the phone, and one shared state underneath.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "one-agent-one-deployment",
+   "label": "One agent in one deployment",
+   "means": "The unit of AI risk for an agent is one agent in one deployment, its reach measured, not the model or the system before deployment",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "four-frameworks-one-agent"
+   ]
+  },
+  {
+   "id": "one-session-per-topic",
+   "label": "One session per topic",
+   "means": "every major or recurring topic gets its own named session, so the model's frame of reference stays small and right",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-i-work-with-claude"
+   ]
+  },
+  {
+   "id": "one-way-door",
+   "label": "One-way door",
+   "means": "A decision that cannot be undone, which is where a person belongs; a two-way door can be reversed cheaply.",
+   "aliases": [
+    "two-way door",
+    "cheap to undo"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "open-source",
+   "label": "Open source and open licences",
+   "means": "Who keeps the long tail working, open licences, copyright and paying creators.",
+   "aliases": [
+    "open licence",
+    "Apache-2.0",
+    "CC BY"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "opinions-on-the-record",
+   "label": "Opinions on the record",
+   "means": "A professional position on an article, with reasons and evidence, signed by the expert's own key, kept with the article, withdrawable, and paid when readers value it",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "page-api",
+   "label": "A page API",
+   "means": "A small JavaScript API a site publishes so that a reader's fix, a test and an agent all call the same primitives",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "fix-the-page-yourself"
+   ]
+  },
+  {
+   "id": "page-per-person",
+   "label": "A page per person",
+   "means": "An agent's memory as a file per person in the user's life, filled from evidence with provenance, and readable by the person it describes",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets"
+   ]
+  },
+  {
+   "id": "pain-of-paying",
+   "label": "The pain of paying",
+   "means": "Prelec and Loewenstein's idea that paying is hedonically costly, so when you pay changes how a purchase feels",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "patterns-are-findings",
+   "label": "Patterns are findings",
+   "means": "A codebase's quality is visible in the shape of its graph, so house rules run as queries and the shape of folders, types and tests is itself evidence",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "code-review-as-a-fractal-semantic-graph"
+   ]
+  },
+  {
+   "id": "pay-for-state",
+   "label": "Pay for state, never to run",
+   "means": "installing and running a hook is free and offline; paying buys the record of decisions, alerts, attestations and updates",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "pay-the-fact-creator",
+   "label": "Paying the fact creator",
+   "means": "revenue from a story walks back along the graph to the people who made the facts, by a split the graph makes possible",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall"
+   ]
+  },
+  {
+   "id": "peer-review-before-publishing",
+   "label": "Peer review before publishing",
+   "means": "A memo's claims are checked against the record by the agent before anyone reads them, so the first review is against evidence rather than the crowd afterwards",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "my-memory-checked"
+   ]
+  },
+  {
+   "id": "personas",
+   "label": "Personas and personalisation",
+   "means": "A reader as someone, not nobody: personas, personalisation, onboarding, a link that lands someone as someone.",
+   "aliases": [
+    "persona",
+    "personalisation"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "places-of-highest-leverage",
+   "label": "Places of highest leverage",
+   "means": "Work where you can add the most value right now, are not blocked and can start, even without knowing how the whole problem ends",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "places-of-highest-leverage"
+   ]
+  },
+  {
+   "id": "plumbing-as-infrastructure",
+   "label": "Plumbing as infrastructure",
+   "means": "Company formation, cross-border hiring, payments, language and contracts are roads for the service economy that a state should build once, open to all",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries"
+   ]
+  },
+  {
+   "id": "policy-as-code",
+   "label": "Policy as code",
+   "means": "Rules written in a language a machine evaluates at the moment of action, compiled from a policy that stays the canonical version",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault",
+    "commanders-intent-is-a-behaviour-policy",
+    "policy-as-code-needs-a-policy-first"
+   ]
+  },
+  {
+   "id": "policy-beside-the-prompt",
+   "label": "A policy beside the prompt",
+   "means": "An Agent Behaviour Policy as a third input the vendor accepts, enforces where it can, reports against and answers for, with the user liable only for what is outside it",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-beside-the-prompt"
+   ]
+  },
+  {
+   "id": "policy-crosswalk",
+   "label": "Their terms, our terms",
+   "means": "The mapping between Cedar's permit, forbid, schema and entities and the behaviour policy's grant, barrier, footprint and mandate",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault"
+   ]
+  },
+  {
+   "id": "policy-layers",
+   "label": "Policies inside policies",
+   "means": "A behaviour policy built in layers from platform mechanics to what the company is for, each refining the one below with its own owner",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-behaviour-policy-is-the-business-logic"
+   ]
+  },
+  {
+   "id": "policy-vault",
+   "label": "The policy vault",
+   "means": "Cedar policies, schema, tests and decisions kept in an encrypted versioned vault with a gate, signed tags, read-only enforcement and an append lane of evidence",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault"
+   ]
+  },
+  {
+   "id": "portuguese-as-code",
+   "label": "Portuguese as a programming language",
+   "means": "Natural language, in Portuguese, as the language programs are written in once models compile it.",
+   "aliases": [
+    "natural language programming"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "pricing",
+   "label": "Pricing and economics",
+   "means": "What to charge and who pays: pricing, business cases, cost and value.",
+   "aliases": [
+    "economics",
+    "the arithmetic"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "privacy",
+   "label": "Privacy and sovereignty",
+   "means": "Data that stays the owner's: privacy, data sovereignty, personal agents nobody else holds a key to.",
+   "aliases": [
+    "sovereignty",
+    "sovereignty is the ability to move"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "projected-and-derived",
+   "label": "Projected and derived graphs",
+   "means": "a graph projected downward from stories before code exists and one derived upward from the code; the review is the join and its three outcomes",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "if-somebody-built-a-company-on-code-review"
+   ]
+  },
+  {
+   "id": "prompt-caching",
+   "label": "Prompt caching",
+   "means": "Reused input tokens served from the provider's cache at a fraction of the price; the cache share is most of an agent's bill",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-tokens-hook"
+   ]
+  },
+  {
+   "id": "prompt-injection",
+   "label": "Prompt injection",
+   "means": "Hostile instructions arriving in the content an agent reads.",
+   "aliases": [],
+   "from": "find.json"
+  },
+  {
+   "id": "proof-before-mechanism",
+   "label": "Proof before mechanism",
+   "means": "Show the artefact a visitor can open before explaining the property they cannot see",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "proof-behind-the-claim",
+    "proof-moved-up"
+   ]
+  },
+  {
+   "id": "provenance",
+   "label": "Provenance and evidence",
+   "means": "Where a claim comes from and how a reader can check it: evidence levels, signed claims, verification.",
+   "aliases": [
+    "evidence",
+    "evidence first",
+    "signed claims"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "publisher-side-mandate",
+   "label": "The publisher-side mandate",
+   "means": "A written answer to what a credential, workflow or account was for, enforced by trusted publishing, scopes and two-person release",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "attacks-rewritten-as-mandates"
+   ]
+  },
+  {
+   "id": "publishing-method",
+   "label": "The publishing method",
+   "means": "How this network publishes: the site network, releases, markdown twins, writing with agents.",
+   "aliases": [
+    "markdown twin",
+    "llms.txt",
+    "release process"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "rate-not-wall",
+   "label": "The moat is a rate, not a wall",
+   "means": "A competitor who forks today gets your position, not your velocity; execution and speed are the defence.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "reach",
+   "label": "Reach",
+   "means": "What an agent can touch: the connectors, files, accounts and tools open to it.",
+   "aliases": [
+    "what the agent can reach"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "reach-beyond-mandate",
+   "label": "Reach beyond mandate",
+   "means": "The gap between what a credential, tag or build step could do and what it was meant to do, which an attacker uses",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "attacks-rewritten-as-mandates"
+   ]
+  },
+  {
+   "id": "read-folds-away",
+   "label": "What you have read steps aside",
+   "means": "On a return visit or a scroll back up, the sections already read can be shown six ways, from unchanged to hidden, and never change while reading forward.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "your-reading-your-controls"
+   ]
+  },
+  {
+   "id": "reader-in-control",
+   "label": "The reader is in control",
+   "means": "The reader can pause, reset or mark what the meter measured, because the measure can be wrong in both directions.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "your-reading-your-controls"
+   ]
+  },
+  {
+   "id": "reader-skills",
+   "label": "Reader Skills",
+   "means": "Franz's six bounded journalistic capabilities a reader can use directly: Understand, Update, Relate, Compare, Follow, Act",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "story-vault-meets-reader-skills",
+    "the-bridge-followed-to-the-end"
+   ]
+  },
+  {
+   "id": "readers-own-graph",
+   "label": "The reader's own graph",
+   "means": "Marks of several kinds as nodes the reader owns, landing on the article graphs the site publishes and connecting claims without naming them",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-site-is-an-inbox"
+   ]
+  },
+  {
+   "id": "recipient-makes-the-key",
+   "label": "The recipient makes the key",
+   "means": "the agent or browser receiving a secret generates its own key pair where it runs and shows only the public half; the owner encrypts to it and signs",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents"
+   ]
+  },
+  {
+   "id": "records-never-totals",
+   "label": "Records, never totals",
+   "means": "The vault holds raw records, one file per device written only by that device; totals and the view are recomputed on every open, so there is nothing to merge",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-vault-crosses-chrome-profiles",
+    "the-vault-is-live",
+    "the-vault-opened"
+   ]
+  },
+  {
+   "id": "refactor-or-fix",
+   "label": "Refactor or fix, by shape",
+   "means": "A refactor moves the bottom layers and leaves the top still; a fix is a story holding again with a test added; the layered diff tells them apart",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "code-review-as-a-fractal-semantic-graph"
+   ]
+  },
+  {
+   "id": "regulation",
+   "label": "Regulation and law",
+   "means": "What the EU AI Act, GDPR, the Cyber Resilience Act and product liability ask of builders.",
+   "aliases": [
+    "law"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "reviews-on-the-record",
+   "label": "Reviews on the record",
+   "means": "A review is one file about one text of one article by one named reviewer, written once, answered by the newsroom and shown on the page",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "risk-acceptance",
+   "label": "Risk acceptance",
+   "means": "Every risk is carried by somebody: who accepted it, until when, and what it costs if it lands.",
+   "aliases": [
+    "every risk is already accepted",
+    "risk owner"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "rules-for-incidents",
+   "label": "Rules for incidents, machines for enforcement",
+   "means": "Keep a rule only where an incident demanded it, and replace it with structure as soon as one can be built",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "every-mistake-added-a-rule"
+   ]
+  },
+  {
+   "id": "saas-apocalypse",
+   "label": "The SaaS apocalypse",
+   "means": "The forecast that medium and large SaaS companies struggle as customers build what they want instead of renting an approximation, decided by inertia rather than by AI",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "same-bytes-served",
+   "label": "Same bytes served",
+   "means": "A refactoring proved by hashing what the live site serves before and after, not by reading the diff",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "explorer-to-villager-newsroom"
+   ]
+  },
+  {
+   "id": "screenshot-not-code",
+   "label": "Give the agent the screenshot",
+   "means": "a synthetic user drives the browser from what is visible in a screenshot, never from the page's code, so confusion can be found",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-to-run-synthetic-users"
+   ]
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "label": "Scrolled is not read",
+   "means": "Attended time on a section against its words is reading; a scroll past it is not.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "sealed-files",
+   "label": "Sealed files",
+   "means": "An inner envelope inside any vault that seals chosen files to named people's public keys, with the private key held anywhere, including a service that logs and approves each decryption",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "rfc-0001-public-key-cryptography-for-sgit"
+   ]
+  },
+  {
+   "id": "search-as-navigation",
+   "label": "Search as navigation",
+   "means": "Type a word and walk into the graph around it, with suggestions that are all exact.",
+   "aliases": [],
+   "from": "house term"
+  },
+  {
+   "id": "second-story",
+   "label": "The second story",
+   "means": "Why the system allowed the failure, beyond the first story of what happened; the third story is why the fix was not paid for.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "secret-into-the-tool",
+   "label": "Into the tool, not the chat",
+   "means": "a secret travels from a one-time drop through a pipe into the tool that needs it, never into the prompt, transcript or model context",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents"
+   ]
+  },
+  {
+   "id": "sell-dont-issue",
+   "label": "Sell, don't issue",
+   "means": "A founder sells shares at a price rather than issuing them; the controllable founder keeps control.",
+   "aliases": [
+    "the controllable founder"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "sell-the-maintenance",
+   "label": "Sell the maintenance",
+   "means": "Vendors let users explore for free and sell them the work of keeping what they built working across releases",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-custom-firefox-of-my-own"
+   ]
+  },
+  {
+   "id": "sender-served-structure",
+   "label": "Sender-served structure",
+   "means": "The message carries its actions, questions, decisions and status as blocks the recipient's agent can render with fidelity",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "custom-uis-are-not-the-exception"
+   ]
+  },
+  {
+   "id": "shared-responsibility",
+   "label": "The shared responsibility model for agents",
+   "means": "A platform draws its line where it can see and touch, files, ports, the desktop, a tool call; above that line the business logic and the authority are the deployer's",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-the-platform-draws-the-line"
+   ]
+  },
+  {
+   "id": "shipping",
+   "label": "Complexity and shipping",
+   "means": "Knowing when to stop, keeping complexity down, and checks that prove a release is live.",
+   "aliases": [
+    "green does not mean live",
+    "releases"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "skill-behaviour-policy",
+   "label": "Skill behaviour policy",
+   "means": "A policy for one skill from three mandates, described, actual and granted, and the control that closes the gaps",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "small-models",
+   "label": "Smaller models, more of them",
+   "means": "Most work needs a model good enough for one job, language and culture, not a frontier model; agents should use the least agency that does the job",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries"
+   ]
+  },
+  {
+   "id": "software-was-the-law",
+   "label": "Software was the law",
+   "means": "Business rules that screens enforced by omission stop being enforced once an agent calls the API the button called",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-behaviour-policy-is-the-business-logic",
+    "the-same-argument-in-our-words"
+   ]
+  },
+  {
+   "id": "sovereign-cloud",
+   "label": "An open-source sovereign cloud",
+   "means": "A European cloud that is fully open source, compatible with the big clouds' APIs and federated across countries, regions and cities",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-and-europe-2025"
+   ]
+  },
+  {
+   "id": "standard-not-server",
+   "label": "A standard, not a server",
+   "means": "A documented format with more than one implementation that agree, so where the objects live is a deployment choice and the server is the least interesting part",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sgit-is-a-standard"
+   ]
+  },
+  {
+   "id": "startups",
+   "label": "Startups and early access",
+   "means": "Founding and launching: does anybody miss it, early access, go to market, investors.",
+   "aliases": [
+    "founders",
+    "early access"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "state-of-the-thread",
+   "label": "The state of the thread",
+   "means": "Ending a reply with a short state of the thread written for this reader, decided, open, next, on copy and sources, instead of the quoted wall",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "story-vault",
+   "label": "Story vaults and liquid content",
+   "means": "The story kept as a graph of claims and evidence, with the article as one projection of it.",
+   "aliases": [
+    "liquid content",
+    "story as a graph"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "strategy",
+   "label": "Strategy and positioning",
+   "means": "Inertia, positioning and the SaaS shake-out.",
+   "aliases": [
+    "positioning"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "success-breeds-inertia",
+   "label": "Success breeds inertia",
+   "means": "Wardley's climatic pattern: an installed base and past success make an incumbent slow to change, so new entrants initiate it",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "supply-chains",
+   "label": "Supply chains",
+   "means": "Chains of parties sharing data: food prices, software supply chains.",
+   "aliases": [
+    "supply chain of vaults"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "survivorship-bias",
+   "label": "Survivorship bias",
+   "means": "Studying only the winners makes practices unrelated to success look like its cause, because the failures are undersampled.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "synthetic-users",
+   "label": "Synthetic users",
+   "means": "Invented users and simulated runs that show what a design does before real people meet it.",
+   "aliases": [
+    "simulation",
+    "synthetic readers"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "talk-as-timeline",
+   "label": "The talk as a timeline",
+   "means": "Slides, builds, animations and the demo written as beats that play on a clock while the speaker speaks to them; rehearsed, measured and changed like code",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-scripted-talk"
+   ]
+  },
+  {
+   "id": "taxonomy-debt",
+   "label": "Taxonomy debt",
+   "means": "Tags used once, ideas not shared between articles: the cost of classification left loose.",
+   "aliases": [
+    "loose classification"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "the-big-stick",
+   "label": "The big stick",
+   "means": "The point at which a founder can credibly say I leave and you cannot replace me, and the contract hands power back.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "the-brief",
+   "label": "The brief",
+   "means": "A written commission for an agent or a person: what to build, for whom, with its limits.",
+   "aliases": [
+    "brief",
+    "debrief"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "the-fork-next-door",
+   "label": "The fork next door",
+   "means": "Founders, customers and investors are each protected from the others because anyone can fork the code, and forks take hold only after a breakdown.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "the-four-inputs",
+   "label": "The four inputs of the voice",
+   "means": "an agent sounds like its author through a corpus, a voice memo, a short list of wording rules and a reader who corrects",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-the-voice-works"
+   ]
+  },
+  {
+   "id": "the-immutable-line",
+   "label": "The immutable line",
+   "means": "The level in a stack below which nothing changes, drawn as high as the evidence allows so that more of the system is fixed, exact and small",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-minimum-code-below"
+   ]
+  },
+  {
+   "id": "the-keyring",
+   "label": "The keyring",
+   "means": "A browser-only secrets store, one encrypted file per user, unlocked by a passkey with the PRF extension, that an administrator with full access cannot read.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "the-long-tail",
+   "label": "The long tail",
+   "means": "The users on old machines and old versions that projects drop because supporting them costs money nobody pays",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free"
+   ]
+  },
+  {
+   "id": "the-loop",
+   "label": "The loop",
+   "means": "A feature crossing editorial, product, engineering, sales and the founder closes in a day when every hand-off is a written brief and each part owns its own place and tests what it receives",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-reading-list-in-a-link"
+   ]
+  },
+  {
+   "id": "the-loop-is-the-moat",
+   "label": "The loop is the moat",
+   "means": "the speed from a comment to an article to a shipped feature is what is hard to copy",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-miss-it"
+   ]
+  },
+  {
+   "id": "the-mandate-stack",
+   "label": "The Mandate Stack",
+   "means": "Many small agents, one written mandate each, everything connected as a graph, one human who sends; the eight-layer pattern RiskMandate runs on",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-mandate-stack"
+   ]
+  },
+  {
+   "id": "the-market",
+   "label": "Market and competitors",
+   "means": "Who else sells it, at what price, and where the gap is.",
+   "aliases": [
+    "competitors",
+    "go to market"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "the-miss-it-test",
+   "label": "Whether they miss it",
+   "means": "the test of a product is whether anybody misses it when it is taken away, including the people who build it",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-miss-it"
+   ]
+  },
+  {
+   "id": "the-newsroom",
+   "label": "This newsroom",
+   "means": "The SGit Newsroom itself: its agent roles, its desks, its reader features, how it runs.",
+   "aliases": [
+    "newsroom.sgit.ai",
+    "the desk",
+    "the roles"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "the-reading-list",
+   "label": "The reading list in a link",
+   "means": "A curated list of articles carried in a link, by number, that opens the same list in a year.",
+   "aliases": [
+    "reading list"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "the-record",
+   "label": "The record",
+   "means": "What was actually published, committed or logged, against which a claim is checked.",
+   "aliases": [
+    "written over a record",
+    "the git log"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "the-site-is-an-inbox",
+   "label": "The site is an inbox",
+   "means": "Every piece that arrives is undecided; deciding is the work, reading is one of the decisions, and the state to return to is empty",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-site-is-an-inbox",
+    "the-vault-crosses-chrome-profiles"
+   ]
+  },
+  {
+   "id": "the-toll-bridge",
+   "label": "The monopoly, not the model",
+   "means": "reporting was paid for by a local monopoly on distribution, the toll bridge, not by the advertising model; the web took the bridge",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "the-tool-loop",
+   "label": "The tool loop",
+   "means": "Hit a friction, build the tool as HTML in the same session, deploy it into the vault, use it, repeat; the vault as an app platform",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-mandate-stack"
+   ]
+  },
+  {
+   "id": "the-value-of-constraints",
+   "label": "The value of constraints",
+   "means": "A design constraint removes both the possibility and the temptation of a bad decision, and the features come from solving the problems it creates",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "the-wire",
+   "label": "The industry wire",
+   "means": "Industry news read live from a public-read vault that agents write to, one wire per subject.",
+   "aliases": [
+    "wire",
+    "Industry Wire"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "threat-modelling",
+   "label": "Threat modelling",
+   "means": "Naming the attacker before choosing the defence: threat models, attack trees, the security line.",
+   "aliases": [
+    "threat model"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "three-records",
+   "label": "One pipeline, three records",
+   "means": "An agent's supply chain needs trusted inputs, a written mandate, and provable outputs and memory",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "attacks-rewritten-as-mandates"
+   ]
+  },
+  {
+   "id": "token-budget",
+   "label": "A token budget",
+   "means": "A hard limit per run on what model calls may spend, counted per provider, rather than a report after the fact",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sgit-actions-side-by-side"
+   ]
+  },
+  {
+   "id": "trust-as-a-service",
+   "label": "Trust as a service",
+   "means": "a newsroom answers, on the record and with a warranty, whether it reported a claim and whether it still holds, sold per query",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall"
+   ]
+  },
+  {
+   "id": "two-walls",
+   "label": "The two walls",
+   "means": "An operating system separates by force only the kernel and the user account; inside one account there is no third wall between an agent and the user's credentials.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "why-my-agents-do-not-run-on-my-laptop"
+   ]
+  },
+  {
+   "id": "undo-is-a-list",
+   "label": "Undo is a list, not a promise",
+   "means": "With the before and after of every change recorded, the inverse call can be written and the irreversible actions named",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "connector-twin-before-you-deploy-an-agent"
+   ]
+  },
+  {
+   "id": "vault",
+   "label": "The vault",
+   "means": "An encrypted, versioned store of files that a read key opens and a server cannot read.",
+   "aliases": [
+    "sgit vault",
+    "encrypted vault",
+    "vaults"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "vault-design",
+   "label": "Vault design",
+   "means": "How a vault is built: append lanes, partial clones, files instead of a database.",
+   "aliases": [
+    "append lane",
+    "lane",
+    "sparse clone"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "vault-in-vault",
+   "label": "Vault in vault",
+   "means": "A link file in one vault points at another whose read key sits in an owner record, so an app's reads under the link are served from the child vault read-only",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-vault-opened"
+   ]
+  },
+  {
+   "id": "vault-of-vaults",
+   "label": "The vault of vaults",
+   "means": "A private registry vault, run by an isolated agent session, whose only job is to hold the keys to the other vaults.",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-the-vault-keys-live"
+   ]
+  },
+  {
+   "id": "voice-memo",
+   "label": "The voice memo",
+   "means": "The owner's spoken memo, kept in the order he thought it, as the source of an article.",
+   "aliases": [
+    "voice note",
+    "memo"
+   ],
+   "from": "house term"
+  },
+  {
+   "id": "wardley-maps",
+   "label": "Wardley maps",
+   "means": "Placing a thing on the evolution axis, from genesis to commodity, and arguing from where it sits.",
+   "aliases": [
+    "map",
+    "evolution axis"
+   ],
+   "from": "find.json"
+  },
+  {
+   "id": "what-you-measure-is-what-you-become",
+   "label": "What you measure is what you become",
+   "means": "The metric an organisation rewards reshapes it; a metric is a hiring plan in disguise",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "why-card",
+   "label": "The why card",
+   "means": "A permission prompt that carries its reason, the change in reach, its cost, the path if declined and a record, and becomes a risk acceptance when the risk rises",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "working-in-the-open",
+   "label": "Working in the open",
+   "means": "Publishing the work a founder or newsroom usually does in private, drafts and decisions included, as part of the story",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "three-linkedin-pages"
+   ]
+  }
  ]
 }

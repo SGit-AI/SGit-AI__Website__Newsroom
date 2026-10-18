@@ -1,0 +1,665 @@
+{
+ "slug": "scion-and-sgit",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "Merges to Anthropic's monorepo went from about 2,500 a day in May 2026 to over 30,000 in September, most of them by Claude.",
+   "section": "scion",
+   "quote": "Merges to its monorepo went from about 2,500 a day in May 2026 to over 30,000 in September.",
+   "about": [
+    "entity:anthropic",
+    "entity:scion",
+    "entity:claude"
+   ],
+   "value": {
+    "n": 30000,
+    "unit": "merges a day",
+    "as_of": "2026-09"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "Anthropic has about 25 million CI checkouts a day, which fetched naively would be over 600 PB of Git traffic a day.",
+   "section": "scion",
+   "quote": "there are about 25 million CI checkouts a day",
+   "about": [
+    "entity:anthropic",
+    "entity:git"
+   ],
+   "value": {
+    "n": 25000000,
+    "unit": "CI checkouts a day",
+    "as_of": "2026-10-13"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Anthropic's post says Git's offline, full-clone design was actively undermining its ability to scale, because nearly all its clients are now always-online agents and jobs.",
+   "section": "scion",
+   "quote": "was actively undermining our ability to scale as the repo grew",
+   "about": [
+    "entity:git",
+    "entity:anthropic",
+    "concept:multi-agent"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Scion inverts Git: the server keeps history and does blame, commits, merges and rebases, refs move by a compare-and-swap on one row, and clients fetch only the trees and blobs they need.",
+   "section": "scion",
+   "quote": "The server keeps history and does blame, commits, merges and rebases; refs move by a compare-and-swap on one database row",
+   "about": [
+    "entity:scion",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Because Scion's objects are immutable, three tiers of cache each serve more than 99% of reads.",
+   "section": "scion",
+   "quote": "Objects are immutable, so three tiers of cache each serve more than 99% of reads.",
+   "about": [
+    "entity:scion"
+   ],
+   "value": {
+    "n": 99,
+    "unit": "percent of reads served by each cache tier",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "By Anthropic's figures Scion uses about 200 times less CPU and memory than the Git mirrors it replaced, and the migration took five months and seven engineers.",
+   "section": "scion",
+   "quote": "about 200 times less CPU and memory than the Git mirrors it replaced",
+   "about": [
+    "entity:scion",
+    "entity:anthropic"
+   ],
+   "value": {
+    "n": 200,
+    "unit": "times less CPU and memory than the Git mirrors",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Anthropic says Scion is by no means a suitable replacement for git for general use.",
+   "section": "scion",
+   "quote": "by no means a suitable replacement for git for general use",
+   "about": [
+    "entity:scion",
+    "entity:anthropic"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "sgit started from the same instruction Anthropic arrived at: Git solved most of the hard problems, so copy Git, with encryption underneath and a dumb server.",
+   "section": "recognised",
+   "quote": "Git solved most of the hard problems, so copy Git.",
+   "about": [
+    "entity:sgit",
+    "entity:git",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "In the words of the March brief, sgit's server is a dumb key-value blob store and all intelligence lives in the client.",
+   "section": "recognised",
+   "quote": "a dumb key-value blob store",
+   "about": [
+    "entity:sgit",
+    "concept:client-side",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "sgit's clone and pull walk fetches only what is needed, level by level over the trees, then the blobs in batches of 50 with 16 requests in flight.",
+   "section": "recognised",
+   "quote": "level by level over the trees, then the blobs in batches of 50 with 16 requests in flight.",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Every sgit object is named by the SHA-256 of its ciphertext and checked against its name, and the name says whether it is immutable, so anything between storage and reader can keep it for ever.",
+   "section": "recognised",
+   "quote": "Every sgit object is named by the SHA-256 of its ciphertext, and the client checks each one against its name.",
+   "about": [
+    "entity:sha-256",
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "sgit.ai's documentation pages, a vault read in the browser, load 18 objects cold, then one 69-byte ref, then nothing inside a two-minute window.",
+   "section": "recognised",
+   "quote": "18 objects cold, then one 69-byte ref, then nothing inside a two-minute window.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:client-side"
+   ],
+   "value": {
+    "n": 18,
+    "unit": "objects fetched on a cold load",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The server sends a one-year immutable cache header, but the CDN in front of the hosted API does not yet serve object reads from its cache; browsers, clients and static hosts do.",
+   "section": "recognised",
+   "quote": "the CDN in front of the hosted API does not yet serve object reads from its cache; browsers, clients and static hosts do.",
+   "about": [
+    "concept:deployment",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Neither Scion nor sgit packs objects on the server, and both treat having no packfiles and no maintenance as a feature.",
+   "section": "recognised",
+   "quote": "Neither system packs objects on the server, and both treat that as a feature.",
+   "about": [
+    "entity:scion",
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Scion protects directories with permissions on a server that holds plaintext; sgit protects them with keys, one vault per trust domain, so the server has nothing to protect and can be anyone's.",
+   "section": "recognised",
+   "quote": "Scion protects directories with permissions on a server that holds plaintext. sgit protects them with keys",
+   "about": [
+    "entity:scion",
+    "entity:sgit",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "On 16 October the vault the newsroom's agents share had 1,295 commits, 5,281 files and about 35,000 encrypted objects, 527 MB with all its history.",
+   "section": "measured",
+   "quote": "On 16 October it had 1,295 commits, 5,281 files and about 35,000 encrypted objects, 527 MB with all its history",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:vault",
+    "concept:multi-agent"
+   ],
+   "value": {
+    "n": 35000,
+    "unit": "encrypted objects in the newsroom's shared vault",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "A full clone of the shared vault is the worst case: three and a half minutes for 35,423 objects, but no agent takes one.",
+   "section": "measured",
+   "quote": "A full clone is the worst case: three and a half minutes for 35,423 objects.",
+   "about": [
+    "concept:vault",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 3.5,
+    "of": 35423,
+    "unit": "minutes for a full clone",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "One 130-file folder with one commit of history clones in 13 seconds and 3 MB, 137 objects, however large the vault is.",
+   "section": "measured",
+   "quote": "one 130-file folder with one commit is 13 seconds and 3 MB, 137 objects, however large the vault is.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 13,
+    "unit": "seconds for a one-folder, one-commit clone",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "An 83-file vault took 59 seconds to clone with sgit 0.22.0 because two batches exceeded the Lambda's size limit; the development branch splits a refused batch and takes about 11 seconds.",
+   "section": "measured",
+   "quote": "an 83-file vault took 59 seconds to clone with sgit 0.22.0, because two batches of objects were over the size limit of the Lambda",
+   "about": [
+    "entity:sgit",
+    "entity:aws",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 59,
+    "unit": "seconds to clone an 83-file vault with sgit 0.22.0",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The time is the distance to the storage, not sgit: the same one-folder clone takes 0.8 seconds against a local API server, and the small vault cloned in 1.6 seconds from a plain file server.",
+   "section": "measured",
+   "quote": "And the time is the distance to the storage, not sgit.",
+   "about": [
+    "concept:deployment",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "Against a local API server the one-folder clone takes 0.8 seconds and the full clone 69.",
+   "section": "measured",
+   "quote": "the one-folder clone takes 0.8 seconds against a local API server, the full clone 69.",
+   "about": [
+    "concept:deployment"
+   ],
+   "value": {
+    "n": 0.8,
+    "unit": "seconds for a one-folder clone from a local server",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "sgit has path history, signed authorship, signed tags and verification, but no blame and no bisect, because its server cannot read a commit.",
+   "section": "gaps",
+   "quote": "Today sgit has path history, signed authorship, signed tags and verification, but no blame and no bisect.",
+   "about": [
+    "entity:sgit",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "A partial clone of a long history still walks the commits one request at a time, so a folder with all 1,295 commits takes nearly four minutes unless a depth is given.",
+   "section": "gaps",
+   "quote": "a partial clone of a long history still walks the commits one request at a time, so a folder with all 1,295 commits takes nearly four minutes, and a depth avoids it",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Git and sgit live side by side rather than in sync: there is no bridge that turns Git history into sgit history or back.",
+   "section": "gaps",
+   "quote": "there is no bridge that turns Git history into sgit history or back.",
+   "about": [
+    "entity:git",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "Agents change what source control is for: the clients are always online, the volume is machine-scale, and the expensive thing is moving bytes nobody needs.",
+   "section": "means",
+   "quote": "Agents change what source control is for: the clients are always online, the volume is machine-scale, and the expensive thing is moving bytes nobody needs.",
+   "about": [
+    "concept:multi-agent",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The two designs meet in the middle on immutable objects, fetching only what is needed, no packfiles and compare-and-swap.",
+   "section": "means",
+   "quote": "The two designs meet in the middle on immutable objects, fetching only what is needed, no packfiles and compare-and-swap.",
+   "about": [
+    "entity:scion",
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Scion could not keep a merge queue at its rate, so concurrent changes can conflict and Claude typically fixes them; the merge went back to the agent, which is where sgit keeps it.",
+   "section": "means",
+   "quote": "concurrent changes can conflict, but Claude can typically fix these conflicts",
+   "about": [
+    "entity:claude",
+    "entity:scion",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The practical difference is availability: Scion is a blog post, and sgit is pip install sgit-ai today, with its code in the open.",
+   "section": "means",
+   "quote": "sgit is pip install sgit-ai today, with its code in the open",
+   "about": [
+    "entity:sgit",
+    "concept:open-source"
+   ],
+   "refs": [
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "The useful next steps are on the client: a small encrypted record of the commit chain, blame as a fold over path history, and testing at a much larger scale.",
+   "section": "means",
+   "quote": "a small encrypted record of the commit chain so a partial clone does not walk history, blame as a fold over path history, and testing at a much larger scale.",
+   "about": [
+    "entity:sgit",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "sgit is not proven at Scion's scale; its largest vault in daily use is about 35,000 objects and ten agents.",
+   "section": "limits",
+   "quote": "sgit is not proven at Scion's scale. Its largest vault in daily use is about 35,000 objects and ten agents.",
+   "about": [
+    "entity:sgit",
+    "entity:scion"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The measurements are one run each, from cloud sandboxes; a plain connection does better.",
+   "section": "limits",
+   "quote": "The measurements are one run each, from cloud sandboxes. A plain connection does better.",
+   "about": [
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The fix for the small vault's slow clone is not released yet; it is on the CLI's development branch.",
+   "section": "limits",
+   "quote": "The fix for the small vault is not released yet. It is on the CLI's development branch.",
+   "about": [
+    "entity:sgit",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "Scion's figures are Anthropic's, from its post, and not independently verified.",
+   "section": "limits",
+   "quote": "Scion's figures are Anthropic's. From its post; not independently verified.",
+   "about": [
+    "entity:anthropic",
+    "entity:scion"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "The owner has a stake: sgit is ours.",
+   "section": "limits",
+   "quote": "I have a stake. sgit is ours.",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:sgit"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c32"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c26"
+  }
+ ],
+ "entities": [
+  {
+   "id": "anthropic",
+   "role": "built Scion and published the post the figures come from"
+  },
+  {
+   "id": "scion",
+   "role": "Anthropic's internal replacement for Git, server-side history and three cache tiers"
+  },
+  {
+   "id": "claude",
+   "role": "makes most of the merges, and fixes the conflicts"
+  },
+  {
+   "id": "git",
+   "role": "the design both systems started from and departed from"
+  },
+  {
+   "id": "sgit",
+   "role": "the open-source encrypted version control compared with Scion"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "its documentation pages are a vault read in the browser"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "its agents share the 35,000-object vault that was measured"
+  },
+  {
+   "id": "sha-256",
+   "role": "names every sgit object by the hash of its ciphertext"
+  },
+  {
+   "id": "aws",
+   "role": "the Lambda that serves the hosted API, whose size limit slowed the small clone"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, who has a stake"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+   "title": "Redesigning source control at Anthropic",
+   "by": "Anthropic",
+   "date": "2026-10-13",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://pypi.org/project/sgit-ai/",
+   "title": "sgit-ai on PyPI",
+   "by": "SGit-AI",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/SGit-AI/SGit-AI__CLI",
+   "title": "SGit-AI__CLI",
+   "by": "SGit-AI",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-13",
+   "what": "Anthropic publishes Redesigning source control at Anthropic"
+  },
+  {
+   "date": "2026-10-16",
+   "what": "The voice memo; the newsroom's shared vault measured at 35,000 objects"
+  },
+  {
+   "date": "2026-05",
+   "what": "About 2,500 merges a day to Anthropic's monorepo"
+  },
+  {
+   "date": "2026-09",
+   "what": "Over 30,000 merges a day"
+  }
+ ]
+}

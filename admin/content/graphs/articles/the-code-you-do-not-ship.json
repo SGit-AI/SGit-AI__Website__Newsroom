@@ -1,0 +1,868 @@
+{
+ "slug": "the-code-you-do-not-ship",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Every line of code that ships is a capability, and some capabilities are used by somebody else, for something else, years later.",
+   "section": "liability",
+   "quote": "Every line of code that ships is a capability.",
+   "about": [
+    "concept:code-is-a-liability",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Code has the shape of the Agent Behaviour Policy's grant and mandate: a library that parses a hundred formats in an application that reads one has a grant of a hundred and a mandate of one.",
+   "section": "liability",
+   "quote": "A library that can parse a hundred formats, in an application that reads one, has a grant of a hundred and a mandate of one.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:code-is-a-liability"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Apache's fix for Log4Shell was the feature's removal: version 2.16.0 completely removed support for message lookups.",
+   "section": "liability",
+   "quote": "Completely remove support for Message Lookups",
+   "about": [
+    "entity:log4j",
+    "entity:apache-software-foundation",
+    "concept:code-is-a-liability"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "ImageTragick, Heartbleed and Text4Shell were each fixed by disabling or compiling out a feature most users never needed.",
+   "section": "liability",
+   "quote": "the published mitigation was to \"use a policy file to disable the vulnerable ImageMagick coders.\"",
+   "about": [
+    "entity:openssl",
+    "concept:code-is-a-liability"
+   ],
+   "refs": [
+    "r03",
+    "r04",
+    "r05"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Of curl's 239 published vulnerabilities, 49 were in protocols other than HTTP, including both rated critical, and every one of those can be compiled out.",
+   "section": "liability",
+   "quote": "Of its 239, we counted 49, about one in five, in protocols other than HTTP",
+   "about": [
+    "entity:curl",
+    "concept:code-is-a-liability"
+   ],
+   "value": {
+    "n": 49,
+    "of": 239,
+    "unit": "curl vulnerabilities in non-HTTP protocols",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Removing code never caught on for two reasons: it needed a map of what each piece is for and tests to prove nothing broke, and vendors were paid for features, not for less.",
+   "section": "why-not",
+   "quote": "I have argued for removing code for years, and it never caught on, for two reasons.",
+   "about": [
+    "concept:minimal-code",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Pendo's 2019 analysis found that 80 percent of features in the average software product are rarely or never used, and 12% of features generate 80% of daily usage.",
+   "section": "why-not",
+   "quote": "80 percent of features in the average software product are rarely or never used",
+   "about": [
+    "entity:pendo",
+    "concept:minimal-code"
+   ],
+   "value": {
+    "n": 80,
+    "unit": "percent of features rarely or never used",
+    "as_of": "2019"
+   },
+   "refs": [
+    "r16"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Pendo estimated that publicly traded cloud software companies had spent up to $29.5 billion building rarely used features.",
+   "section": "why-not",
+   "quote": "spent up to $29.5 billion building those rarely used features",
+   "about": [
+    "entity:pendo",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 29.5,
+    "unit": "billion USD",
+    "as_of": "2019"
+   },
+   "refs": [
+    "r16"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "Tidelift's 2024 survey found about 60% of open source maintainers unpaid.",
+   "section": "why-not",
+   "quote": "Tidelift's 2024 survey found about 60% of maintainers unpaid",
+   "about": [
+    "entity:tidelift",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 60,
+    "unit": "percent of maintainers unpaid",
+    "as_of": "2024"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Models make the scaffolding cheap, the harness, fixtures and checks, and when that is cheap removing code is safe because you can prove what still works.",
+   "section": "changed",
+   "quote": "When that is cheap, removing code is safe, because you can prove what still works.",
+   "about": [
+    "concept:minimal-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Of 1,500 files in sgit and its dependencies, 428 ran for one real use case, pushing a vault from CI, and a tree holding only those passed it.",
+   "section": "changed",
+   "quote": "Of 1,500 files in the tool and its dependencies, 428 were kept, and the use case passed.",
+   "about": [
+    "entity:sgit",
+    "concept:minimal-code"
+   ],
+   "value": {
+    "n": 428,
+    "of": 1500,
+    "unit": "files kept",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "limit",
+   "text": "The measurement showed its limits: a compiled binary held three quarters of the bytes and no coverage tool could see inside it.",
+   "section": "changed",
+   "quote": "a compiled binary held three quarters of the bytes, and no coverage tool could see inside it",
+   "about": [
+    "concept:minimal-code",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Azad, Laperdrix and Nikiforakis debloated four PHP applications to the features real users exercised: 46% smaller, half the complexity, up to 60% of known CVEs removed.",
+   "section": "changed",
+   "quote": "The applications were 46% smaller with half their original cyclomatic complexity, and up to 60% of known CVEs were removed in the best case",
+   "about": [
+    "concept:minimal-code",
+    "concept:code-is-a-liability"
+   ],
+   "value": {
+    "n": 46,
+    "unit": "percent smaller",
+    "as_of": "2019"
+   },
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "In the Maven ecosystem 75.1% of analysed dependency relationships are bloated, and in PyPI more than half of dependencies are.",
+   "section": "changed",
+   "quote": "75.1% of the analyzed dependency relationships are bloated.",
+   "about": [
+    "concept:minimal-code",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 75.1,
+    "unit": "percent of Maven dependency relationships bloated"
+   },
+   "refs": [
+    "r11",
+    "r12"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Across about three million Maven packages, less than 1% have a reachable call path to vulnerable code in their dependencies.",
+   "section": "changed",
+   "quote": "less than 1% of packages have a reachable call path to vulnerable code in their dependencies.",
+   "about": [
+    "concept:minimal-code",
+    "concept:supply-chains"
+   ],
+   "value": {
+    "n": 1,
+    "unit": "percent of packages with a reachable path to vulnerable code"
+   },
+   "refs": [
+    "r13",
+    "r14"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Brown and Pande showed that blindly cutting a binary can create new exploitable gadgets, so removing features at the source, from the use case down, is the stronger form.",
+   "section": "changed",
+   "quote": "blindly cutting a binary can create new exploitable gadgets while removing old ones",
+   "about": [
+    "concept:minimal-code"
+   ],
+   "refs": [
+    "r15"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "The direction of travel is the minimal viable code path, and it applies at every level: company, product, feature and code.",
+   "section": "path",
+   "quote": "So I think the direction of travel is clear, and it applies at every level.",
+   "about": [
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "definition",
+   "text": "A minimal viable code path is the smallest amount of code that does exactly the job.",
+   "section": "path",
+   "quote": "the smallest amount of code that does exactly the job",
+   "about": [
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The way to make the shipping organisation's accountability real is to make the thing small enough to check, by people, by agents and where possible by proof.",
+   "section": "path",
+   "quote": "make the thing small enough to check, by people, by agents, and where possible by proof",
+   "about": [
+    "concept:minimal-code",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Every behaviour, decision and workflow policy runs some code whose own grant is usually far larger than the policy above it; the minimal code path is how the boundary reaches down.",
+   "section": "path",
+   "quote": "That code has its own grant, and it is usually far larger than the policy above it.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "The specialists who know a component best maintain a minimal version of it for the people who use it, and get paid for that rather than for new features.",
+   "section": "market",
+   "quote": "maintain a minimal version of it for the people who use it, and get paid for that, not for new features",
+   "about": [
+    "concept:maintainers-market",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "In the fractal market each piece ships with its own behaviour, decision and workflow policies and its Wardley stage, explorer, villager or town planner, so a buyer can choose by risk.",
+   "section": "market",
+   "quote": "Each piece ships with its own behaviour policy, what the code can reach; its own decision policy, where it decides; and its own workflow policy, the flows it runs.",
+   "about": [
+    "concept:maintainers-market",
+    "concept:behaviour-policy",
+    "concept:explorer-villager-town-planner",
+    "entity:simon-wardley"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "Jerry Gamblin counted 48,185 published CVEs for 2025, up 20.6% on 2024, and 72,812 for 2026 by the end of September.",
+   "section": "now",
+   "quote": "48,185 for 2025, up 20.6% on 2024, and 72,812 for 2026 by the end of September alone",
+   "about": [
+    "entity:jerry-gamblin",
+    "concept:code-is-a-liability"
+   ],
+   "value": {
+    "n": 72812,
+    "unit": "CVEs published in 2026",
+    "as_of": "2026-09-30"
+   },
+   "refs": [
+    "r18",
+    "r19"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "Anthropic reported in February that its models had found and validated more than 500 high-severity vulnerabilities.",
+   "section": "now",
+   "quote": "found and validated more than 500 high-severity vulnerabilities.",
+   "about": [
+    "entity:anthropic",
+    "concept:code-is-a-liability"
+   ],
+   "value": {
+    "n": 500,
+    "unit": "high-severity vulnerabilities",
+    "as_of": "2026-02"
+   },
+   "refs": [
+    "r20"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "curl, which had never had more than 24 CVEs in a year, has 69 in 2026 so far, 35 of them from one AI-assisted audit.",
+   "section": "now",
+   "quote": "has 69 in 2026 so far, 35 of them from one AI-assisted audit, most of them low severity",
+   "about": [
+    "entity:curl",
+    "entity:daniel-stenberg"
+   ],
+   "value": {
+    "n": 69,
+    "unit": "curl CVEs in 2026",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r22"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "data-point",
+   "text": "Google's Android team found memory-safety issues fell from 76% of Android vulnerabilities in 2019 to 24% in 2024, because the problem is overwhelmingly with new code.",
+   "section": "now",
+   "quote": "memory-safety issues fell from 76% of Android vulnerabilities in 2019 to 24% in 2024",
+   "about": [
+    "entity:google",
+    "concept:code-is-a-liability"
+   ],
+   "value": {
+    "n": 24,
+    "unit": "percent of Android vulnerabilities that were memory-safety issues",
+    "as_of": "2024"
+   },
+   "refs": [
+    "r23"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "hypothesis",
+   "text": "None of this will happen because it is more secure; minimal code has to win on what people feel: faster, lighter, simpler software.",
+   "section": "driver",
+   "quote": "None of this will happen because it is more secure.",
+   "about": [
+    "concept:minimal-code",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "It is the lesson of sgit: nobody will choose it for its encryption, but encryption as a constraint pushed it towards better features and simpler workflows.",
+   "section": "driver",
+   "quote": "nobody will choose sgit for its encryption; if it succeeds, it will be because encryption, as a constraint, pushed it towards better features and simpler workflows",
+   "about": [
+    "entity:sgit",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The measurement is one tool and one use case; it shows the method works, not how much any other codebase would shrink.",
+   "section": "limits",
+   "quote": "The measurement is one tool and one use case.",
+   "about": [
+    "concept:minimal-code",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "Removing code can remove things people need, which is why the map and the tests come first.",
+   "section": "limits",
+   "quote": "Removing code can remove things people need.",
+   "about": [
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The market is a proposal: maintainers paid for minimal versions exist in places, a fractal market of them does not yet.",
+   "section": "limits",
+   "quote": "The market is a proposal.",
+   "about": [
+    "concept:maintainers-market"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "Some figures are vendors' own or vary by method: Pendo's and Endor Labs' come from their own data, CVE totals differ by tracker, and the Standish figure is not relied on.",
+   "section": "limits",
+   "quote": "Some figures are vendors' or vary by method.",
+   "about": [
+    "entity:pendo",
+    "entity:endor-labs"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c10",
+   "verb": "answers",
+   "to": "c06"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c28",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c07"
+  }
+ ],
+ "entities": [
+  {
+   "id": "log4j",
+   "role": "whose message lookups feature was Log4Shell, and was removed"
+  },
+  {
+   "id": "apache-software-foundation",
+   "role": "removed message lookups from Log4j rather than patching them"
+  },
+  {
+   "id": "openssl",
+   "role": "whose little-used heartbeat extension held Heartbleed"
+  },
+  {
+   "id": "curl",
+   "role": "publishes every vulnerability with its code area; 49 of 239 in protocols other than HTTP"
+  },
+  {
+   "id": "daniel-stenberg",
+   "role": "curl's maintainer, who wrote up the AI-assisted audit"
+  },
+  {
+   "id": "pendo",
+   "role": "whose 2019 report put rarely used features at 80 percent"
+  },
+  {
+   "id": "tidelift",
+   "role": "whose 2024 survey found about 60% of maintainers unpaid"
+  },
+  {
+   "id": "endor-labs",
+   "role": "says fewer than 9.5% of vulnerabilities are exploitable at function level"
+  },
+  {
+   "id": "jerry-gamblin",
+   "role": "counts published CVEs by year and month"
+  },
+  {
+   "id": "anthropic",
+   "role": "reported more than 500 high-severity vulnerabilities found and validated by its models"
+  },
+  {
+   "id": "google",
+   "role": "whose Android team measured the fall in memory-safety vulnerabilities"
+  },
+  {
+   "id": "sgit",
+   "role": "the tool measured: 428 of 1,500 files ran for one use case; the lesson of encryption as a constraint"
+  },
+  {
+   "id": "simon-wardley",
+   "role": "whose stages, explorer, villager and town planner, each piece would carry"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "minimal-code",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-decision-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-workflow-policy",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "code-is-a-liability",
+   "defined_here": true
+  },
+  {
+   "id": "maintainers-market",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://logging.apache.org/log4j/2.x/release-notes.html",
+   "title": "Apache Log4j release notes",
+   "by": "Apache Software Foundation",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://issues.apache.org/jira/browse/LOG4J2-313",
+   "title": "LOG4J2-313: JNDI resource lookup in the configuration",
+   "by": "Apache Software Foundation",
+   "date": "2013",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://imagetragick.com",
+   "title": "ImageTragick",
+   "by": "ImageTragick",
+   "date": "2016",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://openssl-library.org/news/secadv/20140407.txt",
+   "title": "OpenSSL security advisory, Heartbleed",
+   "by": "OpenSSL",
+   "date": "2014-04-07",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://commons.apache.org/proper/commons-text/security.html",
+   "title": "Apache Commons Text security",
+   "by": "Apache Software Foundation",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://github.com/OWASP/Top10/blob/master/2021/docs/en/A10_2021-Server-Side_Request_Forgery_(SSRF).md",
+   "title": "OWASP Top 10 2021, A10 Server-Side Request Forgery",
+   "by": "OWASP",
+   "date": "2021",
+   "kind": "standard"
+  },
+  {
+   "id": "r07",
+   "url": "https://portswigger.net/research/server-side-template-injection",
+   "title": "Server-side template injection",
+   "by": "James Kettle",
+   "date": "2015",
+   "kind": "paper"
+  },
+  {
+   "id": "r08",
+   "url": "https://curl.se/docs/vuln.pm",
+   "title": "curl vulnerability data",
+   "by": "curl",
+   "date": "undated",
+   "kind": "dataset"
+  },
+  {
+   "id": "r09",
+   "url": "https://github.com/curl/curl/blob/master/docs/INSTALL.md",
+   "title": "curl install guide",
+   "by": "curl",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.usenix.org/conference/usenixsecurity19/presentation/azad",
+   "title": "Less is More: Quantifying the Security Benefits of Debloating Web Applications",
+   "by": "Azad, Laperdrix and Nikiforakis",
+   "date": "2019",
+   "kind": "paper"
+  },
+  {
+   "id": "r11",
+   "url": "https://arxiv.org/abs/2001.07808",
+   "title": "Bloated dependencies in Maven",
+   "by": "Soto-Valero and others",
+   "date": "2020",
+   "kind": "paper"
+  },
+  {
+   "id": "r12",
+   "url": "https://2024.esec-fse.org/details/fse-2024-research-papers/104/Bloat-beneath-Python-s-Scales-A-Fine-Grained-Inter-Project-Dependency-Analysis",
+   "title": "Bloat beneath Python's Scales",
+   "by": "Drosos and others",
+   "date": "2024",
+   "kind": "paper"
+  },
+  {
+   "id": "r13",
+   "url": "https://arxiv.org/abs/2301.07972",
+   "title": "Reachability of vulnerable code in Maven",
+   "by": "Mir, Keshani and Proksch",
+   "date": "2023",
+   "kind": "paper"
+  },
+  {
+   "id": "r14",
+   "url": "https://www.endorlabs.com/learn/2024-dependency-management-report",
+   "title": "2024 dependency management report",
+   "by": "Endor Labs",
+   "date": "2024",
+   "kind": "page"
+  },
+  {
+   "id": "r15",
+   "url": "https://www.usenix.org/conference/cset19/presentation/brown",
+   "title": "Is Less Really More?",
+   "by": "Brown and Pande",
+   "date": "2019",
+   "kind": "paper"
+  },
+  {
+   "id": "r16",
+   "url": "https://go.pendo.io/rs/185-LQW-370/images/2019%20Feature%20Adoption%20Report%20Digital.pdf",
+   "title": "2019 feature adoption report",
+   "by": "Pendo",
+   "date": "2019",
+   "kind": "page"
+  },
+  {
+   "id": "r17",
+   "url": "https://www.mountaingoatsoftware.com/blog/are-64-of-features-really-rarely-or-never-used",
+   "title": "Are 64% of features really rarely or never used?",
+   "by": "Mike Cohn",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r18",
+   "url": "https://jerrygamblin.com/2026/01/01/2025-cve-data-review/",
+   "title": "2025 CVE data review",
+   "by": "Jerry Gamblin",
+   "date": "2026-01-01",
+   "kind": "post"
+  },
+  {
+   "id": "r19",
+   "url": "https://github.com/jgamblin/monthlyCVEStats",
+   "title": "Monthly CVE stats",
+   "by": "Jerry Gamblin",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r20",
+   "url": "https://www.anthropic.com/research/zero-days",
+   "title": "Zero-days",
+   "by": "Anthropic",
+   "date": "2026-02",
+   "kind": "post"
+  },
+  {
+   "id": "r21",
+   "url": "https://www.darpa.mil/news/2025/aixcc-results",
+   "title": "AIxCC results",
+   "by": "DARPA",
+   "date": "2025",
+   "kind": "news"
+  },
+  {
+   "id": "r22",
+   "url": "https://daniel.haxx.se/blog/2026/10/14/a-curl-audit-by-aisle/",
+   "title": "A curl audit by Aisle",
+   "by": "Daniel Stenberg",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r23",
+   "url": "https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html",
+   "title": "Eliminating memory safety vulnerabilities in Android",
+   "by": "Google",
+   "date": "2024-09",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "The voice memo and the research read"
+  },
+  {
+   "date": "2026-10-14",
+   "what": "The minimum code below: 428 of 1,500 files ran for one use case of sgit"
+  },
+  {
+   "date": "2013",
+   "what": "Someone asks for JNDI lookup in Log4j's configuration, the convenience that became Log4Shell"
+  },
+  {
+   "date": "2026-02",
+   "what": "Anthropic reports more than 500 high-severity vulnerabilities found and validated"
+  }
+ ]
+}

@@ -1,0 +1,738 @@
+{
+ "slug": "the-agent-is-the-reader",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The readers of the site are increasingly agents sent by people, and an agent that reads the web today pays to process all of it and then guesses at what it means.",
+   "section": "top",
+   "quote": "The readers of this site are increasingly not people. They are agents, sent by people.",
+   "about": [
+    "concept:agent-readable-web",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "The Librarian's catalogue of five articles is 72,152 tokens against 25,698 for the articles, 2.8 times larger, because every one of its 662 items carries the sentence it came from.",
+   "section": "layers",
+   "quote": "The Librarian's catalogue of five articles is 72,000 tokens against 25,700 for the articles",
+   "about": [
+    "entity:librarian",
+    "concept:fractal-semantic-graphs",
+    "concept:provenance",
+    "entity:article-views-vault"
+   ],
+   "value": {
+    "n": 72152,
+    "of": 25698,
+    "unit": "tokens of catalogue against tokens of articles",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The concept index that tells an agent what the five articles are about is 7% of their size, and the edge list is 3%.",
+   "section": "layers",
+   "quote": "The concept index that tells an agent what the five articles are about is 7% of them.",
+   "about": [
+    "entity:cartographer",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "percent of the articles' tokens",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "For each of the 45 concepts the graph's answer is a median of 2,579 tokens against 25,698 to read all five articles, a saving of 84% to 92% with a median of 90%.",
+   "section": "layers",
+   "quote": "the graph saves between 84% and 92% on every one of the 45 concepts, with a median of 90%",
+   "about": [
+    "concept:agent-readable-web",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 2579,
+    "of": 25698,
+    "unit": "tokens per question, graph against prose",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The graph's answer is better as well as cheaper, because every statement arrives with its anchor so the agent can quote and cite without a second pass.",
+   "section": "layers",
+   "quote": "every statement arrives with its anchor, so the agent can quote and cite without a second pass",
+   "about": [
+    "concept:provenance",
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "The Librarian found 32 flags in published articles at about 12,600 tokens each, the Cartographer sent 37 corrections at 7,100 each, and the Historian found one systematic error for 154,000.",
+   "section": "loop",
+   "quote": "12,600 tokens per flag for the Librarian, 7,100 per correction for the Cartographer, 154,000 for the Historian's one systematic catch",
+   "about": [
+    "entity:librarian",
+    "entity:cartographer",
+    "entity:historian",
+    "concept:multi-agent"
+   ],
+   "value": {
+    "n": 32,
+    "unit": "flags found by the Librarian",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Making the map turned out to be the verification, and the yield falls with each pass, which is why every role has a failure sentence, a word limit and a stopping rule.",
+   "section": "loop",
+   "quote": "Making the map turned out to be the verification.",
+   "about": [
+    "concept:multi-agent",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "proposal",
+   "text": "Make the stopping rule a number: stop a pass when it costs more per finding than the finding is worth.",
+   "section": "loop",
+   "quote": "stop a pass when it costs more per finding than the finding is worth",
+   "about": [
+    "concept:multi-agent",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "decision",
+   "text": "The loop caught an error in One article, five readers about which reader used most tokens; the sentence is corrected and the correction is in the article's version history.",
+   "section": "loop",
+   "quote": "That sentence is now corrected, and the correction is in the article's version history.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "The more content there is, the more it compresses, because the graphs reuse each other and each new article adds fewer new concepts and more connections.",
+   "section": "compress",
+   "quote": "the more content there is, the more it compresses, because the graphs reuse each other",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The 70 uncurated per-article graphs have 928 node labels of which 908 are unique, and 672 tag uses over 320 tags with new tags per article not falling, so the uncurated index grows as fast as the corpus.",
+   "section": "compress",
+   "quote": "they have 928 node labels, and after lower-casing and stripping punctuation, 908 are unique",
+   "about": [
+    "concept:taxonomy-debt",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 908,
+    "of": 928,
+    "unit": "unique node labels",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "The Cartographer's topic ontology has 114 concept mentions over 45 concepts, and new concepts per article fell 17, 11, 5, 11, 1, with the last article reusing 25 and adding one.",
+   "section": "compress",
+   "quote": "New concepts per article, in date order, fell 17, 11, 5, 11, 1",
+   "about": [
+    "entity:cartographer",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 45,
+    "of": 114,
+    "unit": "concepts over concept mentions",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Compression with scale is a property of curation, not of graphs, which strengthens the economic argument because curation is work that can be paid for.",
+   "section": "compress",
+   "quote": "Compression with scale is not a property of graphs. It is a property of curation.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Projected to 100,000 articles, a curated index is 150 to 2,660 times smaller than the corpus, a question costs about 12,900 tokens, and search reads 59,100 while seeing 2% of the articles that mention the concept.",
+   "section": "compress",
+   "quote": "As the corpus grows, the curated index falls further behind it, the cost of a question in the graph stops growing",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:agent-readable-web"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "percent of mentioning articles search sees at 100,000 articles"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "A textbook PageRank over the site's links puts two articles that only cite each other at the top; the Cartographer's 24 typed verbs, each with an inverse and citing its items, say what the link means.",
+   "section": "meaning",
+   "quote": "That is the difference between a web of links and a web of meaning.",
+   "about": [
+    "concept:meaning-through-connectivity",
+    "entity:google",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "An agent is a reader with a persona too, usually a sharper one because it arrives with an objective, and the persona is worth a smaller, better context.",
+   "section": "personas",
+   "quote": "An agent is a reader with a persona too, and usually with a sharper one, because it arrives with an objective.",
+   "about": [
+    "concept:personas",
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "A session summarising its own context is compression without knowing what matters, free and lossy; the readers do the same operation curated, checked and with provenance.",
+   "section": "personas",
+   "quote": "The first is free and lossy. The second is worth paying for.",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "An agent pays a fee if it is less than the token price times the tokens saved plus the value of the better answer; for the five articles the saving is about 23,000 tokens a question, 2 to 5 cents at list prices.",
+   "section": "economics",
+   "quote": "that is $0.02 to $0.05 a question",
+   "about": [
+    "concept:micropayments",
+    "concept:pricing",
+    "concept:agent-readable-web"
+   ],
+   "value": {
+    "n": 23000,
+    "unit": "tokens saved per question",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "Building the graph cost about 220,000 tokens an article, so an article's graph pays for itself after about ten questions, whatever the token price, because both sides are in tokens.",
+   "section": "economics",
+   "quote": "an article's graph pays for itself after about ten questions about it",
+   "about": [
+    "concept:micropayments",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "questions to break even per article"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "At 100,000 articles a question saves about 46,000 tokens; per thousand questions that is 46 to 93 dollars not spent, and a 30% share is 14 to 28 dollars to the publisher.",
+   "section": "economics",
+   "quote": "a 30% share of it is $14 to $28 to the publisher",
+   "about": [
+    "concept:micropayments",
+    "concept:pricing",
+    "entity:publisher"
+   ],
+   "value": {
+    "n": 46000,
+    "unit": "tokens saved per question at 100,000 articles"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The payment rails exist: x402 moved by Coinbase into a Linux Foundation project in April 2026, Stripe's per-request charging previewed in February, Cloudflare's pay per crawl, and the site's reading meter; what is missing is demand.",
+   "section": "economics",
+   "quote": "The payment rails are no longer the obstacle.",
+   "about": [
+    "entity:x402",
+    "entity:stripe",
+    "entity:cloudflare",
+    "entity:coinbase",
+    "entity:linux-foundation",
+    "entity:sg-meter",
+    "concept:micropayments"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The fee passes through to whoever the agent works for and follows the source's value: a graph from the Financial Times costs more than one from a blog, and a narrow expert can charge a great deal.",
+   "section": "economics",
+   "quote": "Price follows value, and value is measured in what the agent would otherwise spend",
+   "about": [
+    "concept:pricing",
+    "entity:financial-times",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "A signed claim: the publisher's agent re-checks a claim against its anchor and sources and returns a statement signed with the publisher's key, true as of a date and vouched for until an expiry, renewed for a fee.",
+   "section": "claims",
+   "quote": "true as we understand it on 11 October 2026, and we vouch for it until 11 April 2027",
+   "about": [
+    "concept:provenance",
+    "concept:encryption-and-keys",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The expiry is what makes a signed claim an economic product rather than a badge, and it is the same idea as RiskMandate's acceptance with an interval.",
+   "section": "claims",
+   "quote": "The expiry is what makes it an economic product rather than a badge.",
+   "about": [
+    "entity:riskmandate",
+    "concept:risk-acceptance",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "Wikipedia is the organisation best placed to test this: selling the meaning per question to every agent would turn a cost carried by donors into revenue that grows with reading.",
+   "section": "wikipedia",
+   "quote": "the organisation best placed to test this is Wikipedia",
+   "about": [
+    "entity:wikipedia",
+    "concept:micropayments"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Tokens are estimated at four characters each for every layer; the ratios are fair, the absolute numbers would move a little with a real tokenizer.",
+   "section": "limits",
+   "quote": "Four characters per token, the same rule for every layer.",
+   "about": [
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The projection rests on five articles, with the growth rate fitted on five points and shown as a band, and the topic was unusually tight.",
+   "section": "limits",
+   "quote": "The projection rests on five articles.",
+   "about": [
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The query model is a model: the persona slice of 250 concepts, the cap of 40 items and search reading the top ten are assumptions in the data file.",
+   "section": "limits",
+   "quote": "The query model is a model.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The saving is measured on the publisher's side; what an answer engine spends on these pages is in its logs, and the provider's half of the experiment is not running.",
+   "section": "limits",
+   "quote": "The saving is measured on our side.",
+   "about": [
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "No agent has paid yet; the rails exist and the arithmetic works on paper, but demand is the open question.",
+   "section": "limits",
+   "quote": "No agent has paid yet.",
+   "about": [
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "Signed claims are a design; the key infrastructure is an RFC, not a release.",
+   "section": "limits",
+   "quote": "Signed claims are a design.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "proposal",
+   "text": "Next: build one ontology across all 70 articles, publish an agent's door per persona, put a graph answer behind a 402 at a fraction of a cent, sign ten claims with an expiry, and measure the stopping rule.",
+   "section": "next",
+   "quote": "Put a graph answer behind a 402 response at a fraction of a cent, and count how many agents pay rather than read.",
+   "about": [
+    "concept:agent-readable-web",
+    "entity:x402",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "An agent in a separate Claude session ran the numbers and drafted the article; the site's agent rewrote it in the site's voice, and the data comes from the Article Views vault as of 11 October 2026.",
+   "section": "sources",
+   "quote": "I asked an agent in a separate Claude session to run the numbers and draft this article with its figures and data",
+   "about": [
+    "concept:agents-write-too",
+    "concept:voice-memo",
+    "entity:article-views-vault",
+    "entity:claude"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "contradicts",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c32"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c23"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose readers are increasingly agents and whose 70 articles were measured"
+  },
+  {
+   "id": "article-views-vault",
+   "role": "the vault from which the layer, query and reuse measurements were computed"
+  },
+  {
+   "id": "librarian",
+   "role": "the reader whose catalogue is 2.8 times the articles and who found 32 flags"
+  },
+  {
+   "id": "cartographer",
+   "role": "the reader whose curated topic ontology compresses and whose 24 verbs carry meaning"
+  },
+  {
+   "id": "historian",
+   "role": "the reader who found one systematic error for 154,000 tokens"
+  },
+  {
+   "id": "google",
+   "role": "whose PageRank is the crude signal of meaning the typed edges improve on"
+  },
+  {
+   "id": "publisher",
+   "role": "who would receive a share of what the agent saves"
+  },
+  {
+   "id": "x402",
+   "role": "HTTP 402 payments in stablecoins, now a Linux Foundation project"
+  },
+  {
+   "id": "stripe",
+   "role": "previewed charging agents per request in February 2026"
+  },
+  {
+   "id": "cloudflare",
+   "role": "whose pay per crawl prices the fetch"
+  },
+  {
+   "id": "coinbase",
+   "role": "moved x402 into a Linux Foundation project in April 2026"
+  },
+  {
+   "id": "linux-foundation",
+   "role": "the home of the x402 project since April 2026"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reading meter that charges people by the share of a page read"
+  },
+  {
+   "id": "financial-times",
+   "role": "the example of a source whose graph would cost more than a blog's"
+  },
+  {
+   "id": "riskmandate",
+   "role": "whose acceptance with an interval is the same idea as a signed claim's expiry"
+  },
+  {
+   "id": "wikipedia",
+   "role": "the organisation best placed to test selling meaning to agents"
+  },
+  {
+   "id": "claude",
+   "role": "the separate session that ran the numbers and drafted"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-readable-web",
+   "defined_here": true
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "taxonomy-debt",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "search-as-navigation",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://eco.com/support/en/articles/14839402-x402-protocol-explained",
+   "title": "x402 protocol explained",
+   "by": "Eco",
+   "date": "2026-04",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://forklog.com/en/stripe-unveils-payments-for-ai-agents-using-usdc-and-x402-protocol/",
+   "title": "Stripe unveils payments for AI agents using USDC and x402 protocol",
+   "by": "ForkLog",
+   "date": "2026-02",
+   "kind": "news"
+  },
+  {
+   "id": "r03",
+   "url": "https://enterprise.wikimedia.com/",
+   "title": "Wikimedia Enterprise",
+   "by": "Wikimedia Foundation",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The measurements over the Article Views vault and the 70 articles; the article published"
+  },
+  {
+   "date": "2026-04",
+   "what": "Coinbase moves x402 into a Linux Foundation project"
+  },
+  {
+   "date": "2026-02",
+   "what": "Stripe previews charging agents per request over x402"
+  },
+  {
+   "date": "2026-08-17",
+   "what": "The first of the 70 articles measured"
+  }
+ ]
+}

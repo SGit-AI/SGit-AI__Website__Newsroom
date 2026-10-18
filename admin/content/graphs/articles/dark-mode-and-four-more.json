@@ -1,0 +1,555 @@
+{
+ "slug": "dark-mode-and-four-more",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The first reaction to the Industry Wire from outside was two words on WhatsApp, Dark mode!, and the owner asked for the five colour schemes VoiceDebrief ships.",
+   "section": "top",
+   "quote": "The first reaction to the Industry Wire from outside was two words on WhatsApp, \"Dark mode!\"",
+   "about": [
+    "entity:industry-wire",
+    "entity:whatsapp",
+    "entity:voicedebrief",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "Five themes shipped in v0.12.12, Newsprint, Night, Paper, Blueprint and Ember, behind one pill in the bar.",
+   "section": "in-short",
+   "quote": "Five shipped in v0.12.12: Newsprint, Night, Paper, Blueprint and Ember, behind one pill in the bar.",
+   "about": [
+    "concept:the-newsroom",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "themes",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Nothing changes unless the reader asks: Newsprint, the look since v0.6.0, renders pixel for pixel as before, and a system set to dark opens in Night only until a choice is made.",
+   "section": "in-short",
+   "quote": "Newsprint is the look the site has had since v0.6.0 and it renders pixel for pixel as before.",
+   "about": [
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "decision",
+   "text": "The choice is one key in local storage, next to the reading meter's, and never leaves the device.",
+   "section": "in-short",
+   "quote": "It is one key in local storage, next to the reading meter's, and it never leaves the device.",
+   "about": [
+    "concept:client-side",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "decision",
+   "text": "The theme is not carried by the vault between devices, on the view that a theme belongs to the screen in front of the reader.",
+   "section": "in-short",
+   "quote": "a theme belongs to the screen in front of you",
+   "about": [
+    "concept:client-side",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "In Night the teal is lifted two steps from Newsprint's so it holds 4.5:1 on the dark page, and links take the lighter teal.",
+   "section": "what",
+   "quote": "The teal is lifted two steps from Newsprint's so it holds 4.5:1 on the dark page",
+   "about": [
+    "concept:accessibility"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "The bar was cleaned up on the way: nine groups became eight, the tools became one cluster on the right, and the part of sgit.ai pill went.",
+   "section": "choices",
+   "quote": "Nine groups became eight, the tools became one cluster on the right",
+   "about": [
+    "concept:the-newsroom"
+   ],
+   "value": {
+    "n": 8,
+    "of": 9,
+    "unit": "groups in the bar after the change",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Eight groups plus the tools fit on one row at 1200 pixels on the build machine but broke at 1200 on the CI runner's wider fonts, so the collapse is at 1279 with the difference as slack.",
+   "section": "choices",
+   "quote": "A limit measured on one machine's fonts is not a limit, so the collapse is at 1279",
+   "about": [
+    "concept:shipping",
+    "concept:the-newsroom"
+   ],
+   "value": {
+    "n": 1279,
+    "unit": "pixels, the width below which the bar collapses"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "On a phone the bar is two rows by design, because the controls measure 467 pixels against a 390 pixel screen.",
+   "section": "choices",
+   "quote": "because the controls measure 467 pixels against a 390 pixel screen",
+   "about": [
+    "concept:the-newsroom"
+   ],
+   "value": {
+    "n": 467,
+    "of": 390,
+    "unit": "pixels of controls against screen width"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The newsroom's look is sgit.ai's stylesheet, imported on every sync, and the site's gate hashes every imported file and fails the build if one has been edited here.",
+   "section": "how",
+   "quote": "hashes every imported file and fails the build if one has been edited here",
+   "about": [
+    "concept:publishing-method",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "The imported stylesheet defines fifteen colour tokens and then writes its rules with literal colours, forty-odd rules in all, so redefining the tokens alone would not have worked.",
+   "section": "how",
+   "quote": "defines fifteen colour tokens in :root and then writes its rules with literals",
+   "about": [
+    "concept:colour-as-a-token",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 15,
+    "unit": "colour tokens in the imported stylesheet"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The themes file has three sections in a deliberate order: the tokens per theme, the override map, and the picker.",
+   "section": "how",
+   "quote": "assets/themes/themes.css has three sections, and the order is the design.",
+   "about": [
+    "concept:colour-as-a-token"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The override map restates every literal rule with the token whose Newsprint value is that literal, at the same selector and specificity but later in the cascade, so it wins and in Newsprint nothing moves.",
+   "section": "how",
+   "quote": "Same selector, same specificity, later in the cascade, so it wins; and in Newsprint it wins with the same value, so nothing moves.",
+   "about": [
+    "concept:colour-as-a-token"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The map was generated by a twenty-line script that parses the stylesheet, so when sgit.ai's stylesheet changes, checking the map is a diff and not a hunt.",
+   "section": "how",
+   "quote": "The list was generated, not typed from memory",
+   "about": [
+    "concept:publishing-method",
+    "concept:colour-as-a-token"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The theme script is a classic script that runs before the first paint, and the stored value is treated as untrusted because local storage is writable by anything on the origin.",
+   "section": "how",
+   "quote": "The stored value is treated as untrusted, because local storage is writable by anything that runs on this origin",
+   "about": [
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "definition",
+   "text": "A token is named for what it is for, a heading, the ink on an accent, a warning's border, and never for what it looks like in one theme.",
+   "section": "how",
+   "quote": "So a token's name says what the colour is for, a heading, the ink on an accent, a warning's border, and never what it looks like in one theme.",
+   "about": [
+    "concept:colour-as-a-token"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The reading meter's last literals became tokens in v1.4.1 of the component; a component path on this site is immutable, so the change is a new path and the sync points every page at it.",
+   "section": "how",
+   "quote": "A component path on this site is immutable, so the change is a new path, and the sync points every page at it.",
+   "about": [
+    "concept:publishing-method",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The first screenshot found a bug: the wire's button was white on white because the map's ink won at equal specificity, and the fix is specificity in the wire's own stylesheet.",
+   "section": "how",
+   "quote": "The fix is specificity, body .btn in the wire's stylesheet, and the same for its .chip.",
+   "about": [
+    "concept:colour-as-a-token",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The themes test is the twelfth browser test CI runs before it tags a release, and it checks four things: every token in every theme, no literal outside the themes file, the picker and contrast, and the bar on one row.",
+   "section": "how",
+   "quote": "is the twelfth browser test CI runs before it tags a release, and it checks four things, each for a reason",
+   "about": [
+    "concept:publishing-method",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "In each theme the test measures the contrast of the page's ink, a paragraph, a heading and a link against the page, and fails below 4.5:1, which is WCAG AA for text.",
+   "section": "how",
+   "quote": "and fails below 4.5:1, which is WCAG AA for text",
+   "about": [
+    "concept:accessibility",
+    "entity:wcag"
+   ],
+   "value": {
+    "n": 4.5,
+    "unit": "minimum contrast ratio"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The first run of the test failed its own selector, not a theme: the first paragraph it measured was the breadcrumb, secondary text on purpose, at 3.2:1.",
+   "section": "how",
+   "quote": "the first paragraph it measured was the breadcrumb, which is secondary text on purpose, at 3.2:1",
+   "about": [
+    "concept:accessibility"
+   ],
+   "value": {
+    "n": 3.2,
+    "unit": "contrast ratio of the breadcrumb"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The screenshots were taken by a script that serves the tree locally, stores each theme as the picker does, opens the wire, an article and a legacy page in Chromium, and writes the images.",
+   "section": "how",
+   "quote": "opens the wire, an article and a legacy page in Chromium, and writes the PNGs for the cards",
+   "about": [
+    "concept:publishing-method",
+    "entity:chrome"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The imported stylesheet still carries its literals; the map shadows them, and the honest fix is upstream in sgit.ai's stylesheet.",
+   "section": "limits",
+   "quote": "The imported stylesheet still carries its literals.",
+   "about": [
+    "concept:colour-as-a-token",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The theme is not carried between devices; a reader who wants it in the vault's device file can say so through the pane.",
+   "section": "limits",
+   "quote": "The theme is not carried between devices.",
+   "about": [
+    "concept:client-side",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Contrast is measured on three pages, not every page; a component the test does not open may not hold 4.5:1.",
+   "section": "limits",
+   "quote": "Contrast is measured on three pages, not every page.",
+   "about": [
+    "concept:accessibility"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "There is no theme per persona; the meter's persona colour exists as a token and could become a sixth entry, but is not one.",
+   "section": "limits",
+   "quote": "The meter's persona colour exists as a token and could become a sixth entry; it is not one.",
+   "about": [
+    "concept:personas",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The screenshots are of the build at v0.12.13, taken by the script on 13 October 2026, not of the live site at the moment of reading.",
+   "section": "limits",
+   "quote": "The screenshots are of the build at v0.12.13, taken by the script on 13 October 2026",
+   "about": [
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The article was written by newsroom.ux, the agent that made the change, on 13 October 2026, from the commits, the cards, the test's output and the screenshots.",
+   "section": "sources",
+   "quote": "Written by newsroom.ux, the agent that made the change, on 13 October 2026",
+   "about": [
+    "concept:agents-write-too",
+    "entity:newsroom-ux"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "VoiceDebrief's implementation, its tokens file and theme script, was read before this one was designed.",
+   "section": "sources",
+   "quote": "VoiceDebrief's implementation, read before this one was designed",
+   "about": [
+    "entity:voicedebrief"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The moods are VoiceDebrief's five but the colours are not copied; the newsroom's tokens are the ones sgit.ai's stylesheet already had, extended.",
+   "section": "choices",
+   "quote": "The colours are not copied.",
+   "about": [
+    "entity:voicedebrief",
+    "concept:colour-as-a-token"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "A stored value that is not one of the five themes is treated as Newsprint, and the test writes a script URL into the key to check exactly that.",
+   "section": "how",
+   "quote": "The test writes javascript:alert(1) into the key and checks exactly that.",
+   "about": [
+    "concept:client-side"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c18",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c31",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c29"
+  }
+ ],
+ "entities": [
+  {
+   "id": "industry-wire",
+   "role": "the page whose first outside reaction asked for dark mode, and where the first bug was found"
+  },
+  {
+   "id": "voicedebrief",
+   "role": "ships the five colour schemes the owner asked for, and whose implementation was read first"
+  },
+  {
+   "id": "whatsapp",
+   "role": "where the two-word reaction arrived"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, who asked for five themes, a cleaner bar and better guidance"
+  },
+  {
+   "id": "newsroom-ux",
+   "role": "the agent that made the change and wrote the article"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reading meter, whose last literals became tokens in v1.4.1 and whose key sits beside the theme's"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site whose stylesheet the newsroom imports and cannot edit"
+  },
+  {
+   "id": "chrome",
+   "role": "Chromium, in which the screenshot script opens the pages"
+  },
+  {
+   "id": "wcag",
+   "role": "the source of the 4.5:1 contrast threshold, success criterion 1.4.3"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "accessibility",
+   "defined_here": false
+  },
+  {
+   "id": "colour-as-a-token",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://voicedebrief.ai/vd-tokens.css",
+   "title": "vd-tokens.css",
+   "by": "VoiceDebrief",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://voicedebrief.ai/vd-theme.js",
+   "title": "vd-theme.js",
+   "by": "VoiceDebrief",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-13",
+   "what": "Five themes and the cleaned-up bar shipped in v0.12.12; the screenshots taken at v0.12.13; the article written"
+  }
+ ]
+}

@@ -1,0 +1,578 @@
+{
+ "slug": "who-will-game-the-reading-meter",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The reading meter keeps everything in the reader's browser, so the reader can change anything.",
+   "section": "top",
+   "quote": "Everything is in the reader's browser, so the reader can change anything.",
+   "about": [
+    "entity:sg-meter",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "None of the people who could cheat the meter are attackers; the question is who are you protecting against taken one level down, to kinds of reader.",
+   "section": "top",
+   "quote": "None of the people who could cheat are attackers.",
+   "about": [
+    "concept:kinds-of-reader",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The meter charges by depth, allows a balance below zero, never blocks, refuses with a reason, and credits a £5 Stripe top-up from a page that cannot check the payment.",
+   "section": "top",
+   "quote": "a £5 Stripe top-up credited by a page that cannot check the payment",
+   "about": [
+    "entity:sg-meter",
+    "entity:stripe",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "pounds per top-up",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "limit",
+   "text": "The figures for the kinds of reader come from different surveys with different methods and overlap; they are for sizing, not for adding up.",
+   "section": "top",
+   "quote": "They are for sizing, not for adding up.",
+   "about": [
+    "concept:kinds-of-reader"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Professional developers are about 0.6 percent of internet users.",
+   "section": "top",
+   "quote": "Professional developers are about 0.6% of internet users",
+   "about": [
+    "concept:kinds-of-reader",
+    "entity:slashdata",
+    "entity:itu"
+   ],
+   "value": {
+    "n": 0.6,
+    "unit": "percent of internet users",
+    "as_of": "2025"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Tor has about 3.1 to 3.3 million direct users a day.",
+   "section": "top",
+   "quote": "Tor has about 3.1 to 3.3 million direct users a day",
+   "about": [
+    "entity:tor",
+    "concept:kinds-of-reader"
+   ],
+   "value": {
+    "n": 3.1,
+    "unit": "million direct users a day",
+    "as_of": "2026-10"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "About 23 percent of internet users use a VPN and about 29 percent an ad blocker.",
+   "section": "top",
+   "quote": "VPN users, about 23% of internet users; ad blockers, about 29%",
+   "about": [
+    "concept:kinds-of-reader",
+    "concept:privacy"
+   ],
+   "value": {
+    "n": 23,
+    "unit": "percent of internet users using a VPN",
+    "as_of": "2025"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "About 12 percent of people in the UK used private browsing daily in 2023.",
+   "section": "top",
+   "quote": "Private browsing used daily by about 12% in the UK (2023)",
+   "about": [
+    "concept:kinds-of-reader",
+    "entity:united-kingdom"
+   ],
+   "value": {
+    "n": 12,
+    "unit": "percent using private browsing daily",
+    "as_of": "2023"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "In the OECD's tests across 33 rich countries, 26 percent of adults could not use a computer and 14 percent were below the lowest level.",
+   "section": "top",
+   "quote": "26% of adults could not use a computer and 14% were below the lowest level",
+   "about": [
+    "entity:oecd",
+    "entity:nielsen-norman-group",
+    "concept:kinds-of-reader"
+   ],
+   "value": {
+    "n": 26,
+    "unit": "percent of adults who could not use a computer"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "Only 5 percent of adults were at Level 3, the level of a skilled user.",
+   "section": "top",
+   "quote": "only 5% at Level 3, the level of a skilled user",
+   "about": [
+    "entity:oecd",
+    "concept:kinds-of-reader"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "percent of adults at Level 3"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "SlashData counted 36.5 million professional developers in early 2025 and the ITU estimated about 6.0 billion internet users in November 2025, the two figures behind the 0.6 percent.",
+   "section": "top",
+   "quote": "SlashData counted 36.5 million professional developers in early 2025, and the ITU estimated about 6.0 billion internet users in November 2025",
+   "about": [
+    "entity:slashdata",
+    "entity:itu"
+   ],
+   "value": {
+    "n": 36.5,
+    "unit": "million professional developers",
+    "as_of": "2025"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The people who could cheat the meter with no effort are a sliver of one step; the people who could be confused by it are most of the bottom three.",
+   "section": "top",
+   "quote": "The people who could cheat this meter with no effort are a sliver of one step; the people who could be confused by it are most of the bottom three.",
+   "about": [
+    "concept:kinds-of-reader"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "An agent is not a step but a lift: it can fetch the markdown twin unmetered, drive a browser that runs the meter, and reset storage between tasks.",
+   "section": "top",
+   "quote": "An agent is not a step; it is a lift.",
+   "about": [
+    "concept:agent-readable-web",
+    "concept:kinds-of-reader"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "Agents are outside the meter on purpose; metering them properly would be a different design, priced per question and paid by whoever runs the agent.",
+   "section": "top",
+   "quote": "Metering agents properly would be a different design: priced per question rather than per page, paid by whoever runs the agent",
+   "about": [
+    "concept:agent-readable-web",
+    "concept:publishing-method",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Nine ways to cheat or leak are listed, all documented and accepted; rows one to six are the cheating.",
+   "section": "top",
+   "quote": "Nine ways to cheat or leak are listed below.",
+   "about": [
+    "concept:kinds-of-reader",
+    "entity:sg-meter",
+    "concept:risk-acceptance"
+   ],
+   "value": {
+    "n": 9,
+    "unit": "ways to cheat or leak"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Every way of cheating changes a number only the cheater sees, which unlocks nothing; the site loses only a payment the person was already not going to make.",
+   "section": "top",
+   "quote": "The site loses only a payment that the person was, by doing it, already not going to make.",
+   "about": [
+    "concept:micropayments",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "The payment return page is deliberately unprotected, because protecting it would need a server that would only protect a number on the cheater's own screen.",
+   "section": "top",
+   "quote": "protecting it would need a server, and the only thing the server would protect is a number on the cheater's own screen",
+   "about": [
+    "concept:client-side",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "decision",
+   "text": "The payment is the default route everywhere and no button leads to the free one.",
+   "section": "top",
+   "quote": "What we did do is make the payment the default route everywhere. No button leads to the free one.",
+   "about": [
+    "concept:micropayments",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The most likely problem is confusion at the bottom of the ladder, a usability problem, which is why the balance is small, links to an explanation and never pops up.",
+   "section": "top",
+   "quote": "This is the most likely problem, and it is a usability problem.",
+   "about": [
+    "concept:kinds-of-reader",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "A shared computer showing what someone read is the only risk that harms a reader, and the mitigations, Start again or a private window, are the reader's.",
+   "section": "top",
+   "quote": "It is the only risk here that harms a reader, and the mitigations are theirs",
+   "about": [
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Card fraud on the payment link is the one risk that costs real money and the one that is not ours to solve; Stripe's controls handle it.",
+   "section": "top",
+   "quote": "It is the one risk that costs real money, and it is the one that is not ours to solve",
+   "about": [
+    "entity:stripe",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Cheating is last on the list because it is least worth worrying about, not because it is least likely.",
+   "section": "top",
+   "quote": "It is last on this list because it is least worth worrying about, not because it is least likely.",
+   "about": [
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "A script reading the history needs a hole in the site first; the meter sets everything it shows as text, never as markup, and the only third-party code is the pinned in-browser Python on the try page.",
+   "section": "top",
+   "quote": "The meter sets everything it shows as text, never as markup",
+   "about": [
+    "entity:sg-meter",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Building for the invisible reader, a server, an account and a sign-in, would stop nobody on step one and would make the meter worse for the readers who might pay or must not be frightened.",
+   "section": "top",
+   "quote": "Every one of those would stop nobody on step 1, who can still not pay and still read",
+   "about": [
+    "concept:kinds-of-reader",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "decision",
+   "text": "The line is drawn where the readers are: honest and one click for the pragmatic payer, the gap published for the instruction follower, quiet for the struggling.",
+   "section": "top",
+   "quote": "So the line is drawn where the readers are.",
+   "about": [
+    "concept:kinds-of-reader",
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "hypothesis",
+   "text": "If the balance unlocked anything, cheating would stop being free and three of the rows would need a server or a signed receipt, which is a different meter.",
+   "section": "top",
+   "quote": "cheating would stop being free, and rows 1, 3 and 5 would need a server or a signed receipt",
+   "about": [
+    "concept:micropayments",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "If the history synced between devices it would be kept in an encrypted vault whose key only the reader holds, so the site still could not read it.",
+   "section": "top",
+   "quote": "it would be kept in an encrypted vault whose key only the reader holds, so the site still could not read it",
+   "about": [
+    "concept:vault",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The ratio of developers to internet users is the site's own arithmetic from two sources; the VPN and ad-blocker figures come through a secondary source.",
+   "section": "top",
+   "quote": "The ratio of developers to internet users is our own arithmetic from the first two.",
+   "about": [
+    "concept:kinds-of-reader"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The piece was written from a voice note by Dinis Cruz by a Claude Code session working as the sgit.ai newsroom on 10 October 2026.",
+   "section": "top",
+   "quote": "by a Claude Code session working as the sgit.ai newsroom, on 10 October 2026",
+   "about": [
+    "entity:claude-code",
+    "entity:dinis-cruz",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c04",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c16"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sg-meter",
+   "role": "the reading meter kept in the browser, the thing that could be gamed"
+  },
+  {
+   "id": "stripe",
+   "role": "the £5 top-up link, and the card fraud its controls handle"
+  },
+  {
+   "id": "industry-wire",
+   "role": "the newsroom's wire, which agents read unmetered"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site the meter runs on; its try page carries the only third-party code"
+  },
+  {
+   "id": "united-kingdom",
+   "role": "where 12 percent used private browsing daily in 2023"
+  },
+  {
+   "id": "slashdata",
+   "role": "counted 36.5 million professional developers in early 2025"
+  },
+  {
+   "id": "itu",
+   "role": "estimated about 6.0 billion internet users in November 2025"
+  },
+  {
+   "id": "oecd",
+   "role": "its Survey of Adult Skills sizes the readers who struggle with a computer"
+  },
+  {
+   "id": "nielsen-norman-group",
+   "role": "summarised the OECD computer skill levels"
+  },
+  {
+   "id": "tor",
+   "role": "about 3.1 to 3.3 million direct users a day, the invisible readers"
+  },
+  {
+   "id": "claude-code",
+   "role": "the session that wrote the piece as the sgit.ai newsroom"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "set out the kinds of reader by voice note; editorial responsibility"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "kinds-of-reader",
+   "defined_here": true
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.nngroup.com/articles/computer-skill-levels/",
+   "title": "The Distribution of Users' Computer Skills",
+   "by": "Nielsen Norman Group, summarising the OECD Survey of Adult Skills",
+   "date": "undated",
+   "kind": "article"
+  },
+  {
+   "id": "r02",
+   "url": "https://metrics.torproject.org/",
+   "title": "Tor Metrics",
+   "by": "The Tor Project",
+   "date": "2026-10",
+   "kind": "dataset"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The voice note and the writing; the meter as it went live"
+  },
+  {
+   "date": "2025-11",
+   "what": "The ITU estimate of about 6.0 billion internet users"
+  },
+  {
+   "date": "2025",
+   "what": "SlashData's count of 36.5 million professional developers, early in the year"
+  },
+  {
+   "date": "2023",
+   "what": "The UK private browsing figure"
+  }
+ ]
+}

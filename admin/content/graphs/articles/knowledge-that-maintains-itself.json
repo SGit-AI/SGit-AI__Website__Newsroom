@@ -1,0 +1,546 @@
+{
+ "slug": "knowledge-that-maintains-itself",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Asked in a conversation what all the graph work on this site is for, the owner's answer came out as knowledge management.",
+   "section": "idea",
+   "quote": "In a conversation today I tried to say in a few sentences what all the graph work on this site is for, and it came out as knowledge management.",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "Build a fractal semantic graph of an organisation's policies and internal knowledge: an ontology and a taxonomy for every element, each part in the vocabulary of whoever owns it, with named edges whose verbs read both ways.",
+   "section": "idea",
+   "quote": "each part kept in the vocabulary of whoever owns it, and named edges between them, with verbs that read both ways",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "proposal",
+   "text": "Brief people and agents from the graph, not the pile of documents: a person joining a team or an agent starting a task needs the part of the graph around what they are about to do and what changed since they last looked.",
+   "section": "idea",
+   "quote": "They need the part of the graph around what they are about to do, and what changed since they last looked.",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "concept:the-brief",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Every article on this site has a graph of 8 to 18 nodes with typed edges, a teaser and a core idea, checked by the validator on every release; across the 112 articles there are 1,435 nodes and 1,538 edges.",
+   "section": "briefing",
+   "quote": "Across the 112 articles there are 1,435 nodes and 1,538 edges.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:publishing-method",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 1435,
+    "unit": "nodes across the 112 article graphs",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The articles' text is about 704,000 tokens at four characters a token, the graphs as JSON about 199,000, and the graphs' own words about 87,000: 12.4% of the text, an eighth, with the median article's graph 12.8% of the article.",
+   "section": "briefing",
+   "quote": "That is 12.4% of the text, an eighth, and the median article's graph is 12.8% of the article.",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "concept:agent-readable-web",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 87000,
+    "of": 704000,
+    "unit": "tokens of graph text against article text",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "An agent can read every graph in a topic, follow edges to the articles that matter, then read those in full; the site publishes every graph in one file, a page drawing them, llms.txt and markdown twins.",
+   "section": "briefing",
+   "quote": "follow the edges to the articles that matter, and only then read those in full",
+   "about": [
+    "concept:agent-readable-web",
+    "concept:publishing-method",
+    "entity:llms-txt",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The other half of a brief is the diff; in a graph that is cheap, a node superseded, an edge added, a claim marked out of date, so what changed since you last read this becomes a list of nodes, not a re-read.",
+   "section": "briefing",
+   "quote": "\"What changed since you last read this?\" becomes a list of nodes, not a re-read.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:knowledge-that-maintains-itself"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Embedding search is good at finding a starting point when you do not know the organisation's words, but it gives similarity, not a reason; the result depends on the model, the index and its settings, and re-indexing moves the neighbours.",
+   "section": "vectors",
+   "quote": "But it gives you similarity, not a reason.",
+   "about": [
+    "concept:graphs-not-vectors"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "A graph gives the same answer to the same question because it is a walk over named edges, and the answer comes with its path; for policies, the path is the answer.",
+   "section": "vectors",
+   "quote": "The same question gives the same answer, because it is a walk over named edges.",
+   "about": [
+    "concept:graphs-not-vectors",
+    "concept:meaning-through-connectivity",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "Nobody builds a correct graph of an organisation on the first try, and projects that try spend a year on the ontology and never ship; the graph does not have to be right, it has to be maintained, and the loop maintains it.",
+   "section": "maintain",
+   "quote": "The graph does not have to be right. It has to be maintained, and the loop maintains it.",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Agents are very good at maintaining graphs: they read a new document and propose its nodes and edges, notice a policy changed and mark what rested on it, and keep the graph's own rules, while something that is not an agent checks those rules.",
+   "section": "maintain",
+   "quote": "The maintenance is done by models and verified by code.",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "concept:agents-write-too",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "On this site every article's graph is checked on every release: its quotes must be word for word in the article, its links must be links the article makes, its sizes within limits.",
+   "section": "maintain",
+   "quote": "its quotes must be word for word in the article, its links must be links the article makes, its sizes within limits",
+   "about": [
+    "concept:publishing-method",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "When something in the graph looks wrong you ask why is this happening, and the answer is a fix at the right altitude, in the source or in the graph, which the next brief carries.",
+   "section": "maintain",
+   "quote": "The answer is a fix at the right altitude, in the source or in the graph, and the next brief carries it.",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Walking the links between articles found that 551 of 566 point back in time, and that an earlier article described a plan a later one said had not happened; that became Every link points back and the What came next notes.",
+   "section": "maintain",
+   "quote": "Walking the links between articles found that 551 of 566 point back in time",
+   "about": [
+    "concept:corrections-propagate",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 551,
+    "of": 566,
+    "unit": "links pointing back in time",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Turning the AI Baseline Control Framework's CSV into a graph joined to the EU AI Act surfaced six things the CSV does not say, and the governance stack graph made every cell of a ten-layer table a node, 329 edges, 119 added.",
+   "section": "maintain",
+   "quote": "the graph surfaced \"the six things the graph found that the CSV does not say\"",
+   "about": [
+    "entity:ai-bcf",
+    "entity:eu-ai-act",
+    "entity:ai-governance-graph-vault",
+    "concept:ai-governance",
+    "concept:knowledge-that-maintains-itself"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Comparing a behaviour policy with the code that enforces it found a rule with no code and code with no rule, and in the code review vault a change is read at every layer from the method to the story.",
+   "section": "maintain",
+   "quote": "comparing a behaviour policy with the code that enforces it found a rule with no code and code with no rule",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:code-review",
+    "entity:code-review-graphs-vault",
+    "entity:regulation-graph-vault"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "sgit is an encrypted git: the files are encrypted before they leave and the server holds only ciphertext; to brief an agent the owner gives it the key to a vault, and every change is a commit, so the history is the diff.",
+   "section": "vaults",
+   "quote": "To brief an agent, I give it the key to a vault.",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "A scoped clone takes one folder so an agent holds only its slice, a key pair per agent lets a brief be encrypted to the one agent that should read it, and an append lane sends findings back without reading anything.",
+   "section": "vaults",
+   "quote": "A key pair per agent means a brief can be encrypted to the one agent that should read it.",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "This site's agents already work this way: two agents share one vault with only the read key on the public side, agents running elsewhere keep their memory in one, and the site's own agent's policy is a brief restored after every summary.",
+   "section": "vaults",
+   "quote": "the policy this site's own agent works under is a brief, restored after every summary",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy",
+    "concept:multi-agent",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "Tokens are estimated: characters divided by four, on this site's 112 articles and their graphs at v0.12.39.",
+   "section": "limits",
+   "quote": "Characters divided by four, on this site's 112 articles and their graphs at v0.12.39.",
+   "about": [
+    "concept:agent-readable-web",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "limit",
+   "text": "A graph is a map, not the territory: an eighth of the text is enough to choose what to read, not a replacement for reading it.",
+   "section": "limits",
+   "quote": "An eighth of the text is enough to choose what to read, not a replacement for reading it.",
+   "about": [
+    "concept:knowledge-that-maintains-itself"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "Vectors still help: for finding a starting point in unfamiliar words similarity search is useful; the graph is what makes the answer repeatable and explainable.",
+   "section": "limits",
+   "quote": "the graph is what makes the answer repeatable and explainable",
+   "about": [
+    "concept:graphs-not-vectors"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "This site's graphs have a contract; their size and checks are why they compress well, and an organisation's graph needs the same discipline.",
+   "section": "limits",
+   "quote": "Their size and checks are why they compress well; an organisation's graph needs the same discipline.",
+   "about": [
+    "concept:publishing-method",
+    "concept:knowledge-that-maintains-itself"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Maintenance is still work: agents do most of it and a validator checks it, but someone has to own the ontology at each altitude.",
+   "section": "limits",
+   "quote": "Agents do most of it and a validator checks it, but someone has to own the ontology at each altitude.",
+   "about": [
+    "concept:knowledge-that-maintains-itself",
+    "concept:taxonomy-debt"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The article came from a voice memo of the owner's on 14 October 2026, written by this site's agent; the briefing figures were counted from the site's article markdown and graph files at v0.12.39.",
+   "section": "sources",
+   "quote": "The briefing figures were counted for this article from this site's article markdown and its graph files at v0.12.39.",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Anyone drowning in policies and internal documents who wants to see them as a graph, or brief their agents from one, can write to agent@riskmandate.ai.",
+   "section": "limits",
+   "quote": "If you are drowning in policies and internal documents and want to see them as a graph",
+   "about": [
+    "entity:riskmandate",
+    "concept:knowledge-that-maintains-itself"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "contradicts",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c10"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose 112 article graphs were measured as the brief"
+  },
+  {
+   "id": "sgit",
+   "role": "the encrypted git that carries the brief to the agent that needs it"
+  },
+  {
+   "id": "llms-txt",
+   "role": "the index the site publishes for agents"
+  },
+  {
+   "id": "ai-bcf",
+   "role": "the control framework whose CSV became a graph joined to the EU AI Act"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "the law whose text the control framework graph was joined to"
+  },
+  {
+   "id": "ai-governance-graph-vault",
+   "role": "the ten-layer governance table made a graph of 329 edges"
+  },
+  {
+   "id": "code-review-graphs-vault",
+   "role": "where a change is read at every layer from the method to the story"
+  },
+  {
+   "id": "regulation-graph-vault",
+   "role": "an open example to start from"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose voice memo and conversation the article came from"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where readers write to see their policies as a graph"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "knowledge-that-maintains-itself",
+   "defined_here": true
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "ai-governance",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "taxonomy-debt",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "graphs-not-vectors",
+   "defined_here": true
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The conversation about knowledge management, the owner's voice memo, and the briefing figures counted at v0.12.39"
+  },
+  {
+   "date": "2026-10-13",
+   "what": "The link walk that found 551 of 566 links point back in time"
+  }
+ ]
+}

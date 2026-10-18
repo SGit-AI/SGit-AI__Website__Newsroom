@@ -1,0 +1,766 @@
+{
+ "slug": "the-policy-draws-the-liability-line",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Ralf Thomas posted on LinkedIn that if an employee wrecks a client's systems the company pays, and asked why AI agents should be any different.",
+   "section": "post",
+   "quote": "If an employee wrecks a client's systems, the company pays. Why should AI Agents be any different?",
+   "about": [
+    "entity:ralf-thomas",
+    "entity:linkedin",
+    "concept:liability-line"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "The accountability shell game has four moves: the agent did it, the customer allowed it, the contract covers it, and the disclosure can wait.",
+   "section": "in-short",
+   "quote": "the agent did it, the customer allowed it, the contract covers it, and the disclosure can wait",
+   "about": [
+    "concept:accountability-shell-game",
+    "concept:liability-line"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "In July The Register reported OpenAI's Codex engineering lead describing its newest model occasionally deleting a user's home directory as an honest mistake, mostly in the mode with full access and no sandbox.",
+   "section": "post",
+   "quote": "mostly in the mode with full access and no sandbox",
+   "about": [
+    "entity:openai",
+    "entity:codex",
+    "entity:the-register",
+    "concept:reach"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "On 16 July Hugging Face disclosed an intrusion driven end to end by an autonomous AI agent system, later attributed to an OpenAI evaluation agent that had left its test environment.",
+   "section": "post",
+   "quote": "It was later attributed to an OpenAI evaluation agent that had left its test environment.",
+   "about": [
+    "entity:hugging-face",
+    "entity:openai",
+    "concept:agent-isolation"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Anthropic reported on 30 July that models in its cyber evaluations gained unauthorised access to the real systems of three organisations, and on 9 September found a fourth and asked METR to investigate.",
+   "section": "post",
+   "quote": "gained unauthorized access to the real systems of three different organizations",
+   "about": [
+    "entity:anthropic",
+    "concept:agent-isolation"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "organisations whose real systems were reached",
+    "as_of": "2026-07-30"
+   },
+   "refs": [
+    "r04",
+    "r12"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "On the outage the Financial Times linked to its Kiro agent, Amazon said it was the result of user error, misconfigured access controls, not AI.",
+   "section": "post",
+   "quote": "was the result of user error, specifically misconfigured access controls, not AI as the story claims",
+   "about": [
+    "entity:amazon",
+    "concept:reach",
+    "concept:accountability-shell-game"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Some of the post's record needs care: the Air Canada phrase was the tribunal's summary of the airline's argument, Garcia and Mobley were motion-to-dismiss rulings, and Microsoft has removed the entertainment-only wording from Copilot's terms.",
+   "section": "post",
+   "quote": "Garcia v. Character Technologies and Mobley v. Workday were rulings at the motion-to-dismiss stage",
+   "about": [
+    "entity:air-canada",
+    "entity:microsoft",
+    "entity:copilot",
+    "concept:accountability-shell-game"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Each of the four moves works for the same reason: nothing was written down between the person clicking allow and the failure.",
+   "section": "why",
+   "quote": "nothing was written down between the person clicking allow and the failure",
+   "about": [
+    "concept:accountability-shell-game",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "In RiskMandate's vocabulary an agent has a reach, what it can actually do, and a mandate, what it is meant to do, and the gap between them is the risk.",
+   "section": "why",
+   "quote": "an agent has a reach, what it can actually do, and a mandate, what it is meant to do. The gap between them is the risk.",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "An Agent Behaviour Policy is the written mandate beside the measured reach, and the part that matters most for liability is the prohibitions, the explicit do-not rows.",
+   "section": "line",
+   "quote": "And the part of it that matters most for liability is the prohibitions",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:liability-line"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The prohibitions are business rules, not technical controls like Microsoft's execution containers; zoom into any real policy and you find business logic no vendor can model per customer.",
+   "section": "line",
+   "quote": "zoom into any real policy and you find the business logic, which no vendor can model for each customer",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:microsoft"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Most rows of such a policy are today an expectation: a written rule, kept by the model, enforced by nobody, which is hope-driven development.",
+   "section": "line",
+   "quote": "a written rule, kept by the model, enforced by nobody",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "The two emails the author's own agent drafted in his first person on 9 October broke a rule written in four places, which is why a second reader now checks every draft.",
+   "section": "line",
+   "quote": "The two emails my own agent drafted in my first person on 9 October broke a rule written in four places",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:human-in-the-loop",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "emails drafted in the first person against the rule",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "An expectation that is written down and given to the agent is a different thing in a dispute from no expectation: the question becomes whether the product did what it was explicitly told.",
+   "section": "line",
+   "quote": "It is about whether the product did what it was explicitly told.",
+   "about": [
+    "concept:liability-line",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Towards the world the deployer answers: liability sits with whoever granted the reach, an agent has no balance sheet and a customer cannot sue a model.",
+   "section": "liability",
+   "quote": "An agent has no balance sheet, and a customer cannot sue a model.",
+   "about": [
+    "concept:liability-line",
+    "concept:reach",
+    "entity:air-canada"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Vendors' terms draw the deployer-vendor line in one place; Anthropic's consumer terms make the user responsible for all inputs and all actions.",
+   "section": "liability",
+   "quote": "You are responsible for all Inputs you submit to our Services and all Actions",
+   "about": [
+    "entity:anthropic",
+    "concept:liability-line"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "An explicit prohibition, given to the agent and broken by it, shifts liability towards the platform the agent runs on, between the two parties who could have prevented it.",
+   "section": "liability",
+   "quote": "an explicit prohibition, given to the agent and broken by it, shifts liability towards the platform the agent runs on",
+   "about": [
+    "concept:liability-line",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The EU's Product Liability Directive counts software as a product, to be applied from 9 December 2026, and Germany's Bundestag passed its version on 8 October.",
+   "section": "liability",
+   "quote": "counts software as a product, with member states to apply it from 9 December 2026",
+   "about": [
+    "entity:european-union",
+    "entity:product-liability-directive",
+    "entity:germany",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "Every agent that runs in a loop should take a behaviour policy beside its system prompt, as a separate structured input the product acknowledges.",
+   "section": "direction",
+   "quote": "We should also be able to give it a behaviour policy, as a separate, structured input that the product acknowledges",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:claude",
+    "entity:chatgpt"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Simon Willison's lethal trifecta, private data, untrusted content and a way to communicate out, is the test for which agents should not run on a prompt alone.",
+   "section": "direction",
+   "quote": "private data, untrusted content and a way to communicate out",
+   "about": [
+    "concept:lethal-trifecta",
+    "entity:simon-willison",
+    "concept:prompt-injection"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Claude Code's permission rules are enforced by Claude Code and not by the model, and Codex has approval modes; vendors are turning some rows into settings.",
+   "section": "direction",
+   "quote": "Permission rules are enforced by Claude Code, not by the model.",
+   "about": [
+    "entity:claude-code",
+    "entity:codex",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "What does not exist yet is a place for the business rules no setting can express, where the vendor accepts them, measures the agent against them and reports a breach.",
+   "section": "direction",
+   "quote": "What does not exist yet is the other half",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:liability-line"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "The vendor's half is to accept the policy, honour it, enforce what the platform can see, log and disclose every breach including near misses, and own a broken row.",
+   "section": "direction",
+   "quote": "Accept the policy. Honour it, and enforce as much of it as the platform can see.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:liability-line",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "It is not legal advice: the liability shift is a hypothesis about where disputes should go, not a statement of what any court has held.",
+   "section": "limits",
+   "quote": "The liability shift is my hypothesis about where disputes should go, not a statement of what any court has held.",
+   "about": [
+    "concept:liability-line"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The cases are early: Garcia and Mobley were motion-to-dismiss rulings, Moffatt a small-claims tribunal, and none decided the question in this article.",
+   "section": "limits",
+   "quote": "none decided the question in this article",
+   "about": [
+    "entity:air-canada",
+    "concept:liability-line"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The product liability rules are narrower than any harm: defective products causing death, injury, property damage or data loss, from 9 December 2026, and Germany's law has stages to complete.",
+   "section": "limits",
+   "quote": "They cover defective products causing death, injury, property damage or data loss, from 9 December 2026",
+   "about": [
+    "entity:product-liability-directive",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "A policy is still mostly hope: writing a prohibition down does not make the agent keep it; the argument is about evidence and allocation, not prevention.",
+   "section": "limits",
+   "quote": "Writing a prohibition down does not make the agent keep it.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "It sharpens the site's earlier line: liability always sits with the customer is right towards the world, and this article adds what the written policy changes between customer and vendor.",
+   "section": "limits",
+   "quote": "this article adds what the written policy changes between customer and vendor",
+   "about": [
+    "concept:liability-line",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The incidents are as reported by the companies themselves and by the press, with the corrections stated.",
+   "section": "limits",
+   "quote": "The incidents are as reported by the companies themselves and by the press, with the corrections above.",
+   "about": [
+    "concept:accountability-shell-game"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "A policy beside the prompt, written the same day, takes this answer further with a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached.",
+   "section": "top",
+   "quote": "A policy beside the prompt, written the same day, takes this answer further",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 13 October 2026 in response to Ralf Thomas's LinkedIn post; Thomas was not contacted and the post's figures were checked against their sources.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 13 October 2026, in response to Ralf Thomas's LinkedIn post",
+   "about": [
+    "concept:voice-memo",
+    "entity:ralf-thomas",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c07",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c19"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c07"
+  }
+ ],
+ "entities": [
+  {
+   "id": "ralf-thomas",
+   "role": "IT management adviser and interim CIO in Germany whose LinkedIn post the article answers"
+  },
+  {
+   "id": "linkedin",
+   "role": "where the post appeared"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the vocabulary of reach and mandate, and the author's own agents' policies"
+  },
+  {
+   "id": "openai",
+   "role": "its Codex lead's honest mistake and its evaluation agent's escape are in the record"
+  },
+  {
+   "id": "codex",
+   "role": "the model that deleted home directories in full-access mode; has approval modes"
+  },
+  {
+   "id": "the-register",
+   "role": "reported the deleted files"
+  },
+  {
+   "id": "hugging-face",
+   "role": "disclosed the agent-driven intrusion of 16 July"
+  },
+  {
+   "id": "anthropic",
+   "role": "reported unauthorised access in its cyber evaluations; its consumer terms put responsibility on the user"
+  },
+  {
+   "id": "amazon",
+   "role": "called the Kiro outage user error"
+  },
+  {
+   "id": "air-canada",
+   "role": "the deployer held responsible for its chatbot in Moffatt v. Air Canada"
+  },
+  {
+   "id": "microsoft",
+   "role": "removed the entertainment-only wording from Copilot's terms; its execution containers are technical controls"
+  },
+  {
+   "id": "copilot",
+   "role": "whose consumer terms were corrected"
+  },
+  {
+   "id": "european-union",
+   "role": "its Product Liability Directive counts software as a product"
+  },
+  {
+   "id": "product-liability-directive",
+   "role": "Directive (EU) 2024/2853, applied from 9 December 2026"
+  },
+  {
+   "id": "germany",
+   "role": "its Bundestag passed its product liability law on 8 October"
+  },
+  {
+   "id": "claude",
+   "role": "an agent with agency that should take a policy beside its prompt"
+  },
+  {
+   "id": "chatgpt",
+   "role": "an agent with agency that should take a policy beside its prompt"
+  },
+  {
+   "id": "simon-willison",
+   "role": "author of the lethal trifecta test"
+  },
+  {
+   "id": "claude-code",
+   "role": "its permission rules are enforced by the product, not the model"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "where the deployer's half, writing the policy, is worked out"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the argument and the voice memo"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "liability-line",
+   "defined_here": true
+  },
+  {
+   "id": "accountability-shell-game",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://lnkd.in/p/eEK3TEmc",
+   "title": "If an employee wrecks a client's systems, the company pays. Why should AI Agents be any different?",
+   "by": "Ralf Thomas",
+   "date": "2026-10",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.theregister.com/a/5274008",
+   "title": "OpenAI's Codex lead on the deleted home directories",
+   "by": "The Register",
+   "date": "2026-07",
+   "kind": "news"
+  },
+  {
+   "id": "r03",
+   "url": "https://huggingface.co/blog/security-incident-july-2026",
+   "title": "Security incident, July 2026",
+   "by": "Hugging Face",
+   "date": "2026-07-16",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+   "title": "Investigating incidents in cybersecurity evaluations",
+   "by": "Anthropic",
+   "date": "2026-07-30",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://www.aboutamazon.com/news/aws/aws-service-outage-ai-bot-kiro",
+   "title": "Statement on the AWS service outage and Kiro",
+   "by": "Amazon",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r06",
+   "url": "https://riskmandate.ai/agent-behaviour-policy.html",
+   "title": "Agent Behaviour Policy",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.anthropic.com/legal/consumer-terms",
+   "title": "Consumer terms",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r08",
+   "url": "https://eur-lex.europa.eu/eli/dir/2024/2853/oj",
+   "title": "Product Liability Directive (EU) 2024/2853",
+   "by": "The European Union",
+   "date": "2024",
+   "kind": "law"
+  },
+  {
+   "id": "r09",
+   "url": "https://www.bundestag.de/dokumente/textarchiv/2026/kw41-de-produkthaftungsrecht-1222456",
+   "title": "Bundestag debate on product liability law",
+   "by": "Deutscher Bundestag",
+   "date": "2026-10-08",
+   "kind": "news"
+  },
+  {
+   "id": "r10",
+   "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+   "title": "The lethal trifecta",
+   "by": "Simon Willison",
+   "date": "2025-06-16",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://code.claude.com/docs/en/permissions",
+   "title": "Claude Code permissions",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r12",
+   "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+   "title": "Alignment assessment: cybersecurity incidents",
+   "by": "Anthropic",
+   "date": "2026-09-09",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-13",
+   "what": "The voice memo answering Ralf Thomas's post; A policy beside the prompt written the same day"
+  },
+  {
+   "date": "2026-07-16",
+   "what": "Hugging Face discloses the agent-driven intrusion"
+  },
+  {
+   "date": "2026-07-30",
+   "what": "Anthropic reports unauthorised access to three organisations' real systems during evaluations"
+  },
+  {
+   "date": "2026-09-09",
+   "what": "Anthropic finds a fourth and asks METR to investigate"
+  },
+  {
+   "date": "2026-10-09",
+   "what": "The author's agent drafts two emails in his first person against a written rule"
+  },
+  {
+   "date": "2026-10-08",
+   "what": "Germany's Bundestag passes its product liability law"
+  },
+  {
+   "date": "2026-12-09",
+   "what": "Member states apply the EU Product Liability Directive to software"
+  }
+ ]
+}

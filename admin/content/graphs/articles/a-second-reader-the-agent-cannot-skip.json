@@ -1,0 +1,855 @@
+{
+ "slug": "a-second-reader-the-agent-cannot-skip",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "On 9 October two emails drafted by the owner's agent went out in his voice and signed with his name.",
+   "section": "top",
+   "quote": "On 9 October two emails drafted by my agent went out in my voice and signed with my name.",
+   "about": [
+    "concept:incidents",
+    "concept:agentic-email",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The rule against it existed in four places and failed because only the agent's memory enforced it, the agent was the only reader of its draft, and the rule fell out of context when the conversation was summarised.",
+   "section": "top",
+   "quote": "the only thing enforcing it was the agent's memory, the agent was the only reader of its own draft, and the rule fell out of context when the conversation was summarised",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "decision",
+   "text": "The fix, built the same day by the agent itself, is a hook on the draft tool: code checks first, then a fresh model call with only the rules, the sources and the draft, failing closed and logging every verdict.",
+   "section": "top",
+   "quote": "a hook on the draft tool: code checks first, then a fresh model call with only the rules, the sources and the draft, failing closed and logging every verdict",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:agent-tooling",
+    "concept:fail-closed",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "A rule kept by the agent it governs is hope, the general weakness of any behaviour policy held by the agent it governs.",
+   "section": "top",
+   "quote": "This is the general weakness of any behaviour policy that is held by the agent it governs.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "A self-held rule fails in three ways, forget, not see, or decide an exception applies; a reminder fixes only the first, a fresh second reader the other two, and a gate the agent cannot skip makes the fix hold.",
+   "section": "top",
+   "quote": "There are three separate ways a self-held rule fails, and they need different fixes.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The research agrees: models struggle to self-correct without external feedback, and LLM judges show self-preference for their own outputs.",
+   "section": "top",
+   "quote": "struggle to self-correct their responses without external feedback",
+   "about": [
+    "concept:human-in-the-loop"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Claude Code raises an event before every tool call, including MCP tools and sub-agent calls; the guard registers on the Gmail draft tools, so a sub-agent cannot route around the gate.",
+   "section": "top",
+   "quote": "Since the event fires for sub-agents too, a sub-agent cannot route around the gate.",
+   "about": [
+    "entity:claude-code",
+    "entity:gmail",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Stage one is code with no model: the signature line, the branded HTML body, no em or en dashes, no string shaped like a key or token, the owner's addresses in the right place; a failure stops the call.",
+   "section": "top",
+   "quote": "Some rules are certain and cheap.",
+   "about": [
+    "concept:fail-closed",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Stage two builds one prompt from ten numbered rules, sources written in the last 60 minutes, and the draft, sent as a single call with no conversation history and no tools.",
+   "section": "top",
+   "quote": "It does not see the drafting agent's reasoning, its excuses, or the earlier messages that persuaded it an exception applied",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The drafter runs on Opus and the checker on Sonnet, so the two do not share every blind spot and a model is not grading its own work.",
+   "section": "top",
+   "quote": "The drafter runs on Opus; the checker on Sonnet.",
+   "about": [
+    "entity:claude",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Hooks fail open by default; the guard closes every door, denying when the checker is overloaded, errors, times out, returns nothing, throws, or answers in the wrong shape.",
+   "section": "top",
+   "quote": "The guard closes every one of those doors.",
+   "about": [
+    "concept:fail-closed",
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r03",
+    "r05"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "An email that is late is a small cost; an email that goes out wrong cannot be taken back.",
+   "section": "top",
+   "quote": "An email that is late is a small cost. An email that goes out wrong cannot be taken back.",
+   "about": [
+    "concept:one-way-door",
+    "concept:fail-closed",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Every check appends one line to a log that never decides the outcome: what was checked, by which model, against which sources, and why it failed.",
+   "section": "top",
+   "quote": "That is the audit trail: what was checked, by which model, against which sources, and why it failed.",
+   "about": [
+    "concept:provenance",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "The first run, with Haiku as the checker, caught four real invented claims presented as the owner's view, decision or promise, and also flagged correct facts it had no source for.",
+   "section": "top",
+   "quote": "It caught four real invented claims",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:claude"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "invented claims caught on the first run",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "decision",
+   "text": "Both results are the design working; the fix for a false FAIL is to add the missing source, never remove the rule, and the default checker became Sonnet because Haiku over-flagged on the claims rule.",
+   "section": "top",
+   "quote": "add the missing source, never remove the rule",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "At list prices on 9 October 2026, Sonnet 5.5 at $2 per million input tokens and $10 per million output, thirty drafts a day of 5,000 to 10,000 tokens costs roughly $12 to $21 a month; Haiku about a dollar.",
+   "section": "top",
+   "quote": "that is roughly $12 to $21 a month",
+   "about": [
+    "concept:pricing",
+    "entity:anthropic",
+    "entity:claude"
+   ],
+   "value": {
+    "n": 21,
+    "unit": "USD a month for the Sonnet checker, upper bound",
+    "as_of": "2026-10-09"
+   },
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "definition",
+   "text": "A second reader is only as independent as the things it does not share with the author, and there are six: three about what it sees, two about who decides whether it runs, one about who wrote the evidence.",
+   "section": "top",
+   "quote": "A second reader is only as independent as the things it does not share with the author",
+   "about": [
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "limit",
+   "text": "The checker compares claims with the sources it is given, and today the drafting agent writes the sources; the full fix is sources from somewhere else.",
+   "section": "top",
+   "quote": "the checker compares claims with the sources it is given, and today the drafting agent writes the sources",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The guard was loaded by one click on a prompt saying a mod is code Claude wrote running with the user's permissions; the agent gated by the hook can edit the hook, which in ABP terms is a setting.",
+   "section": "top",
+   "quote": "It also means the agent that is gated by the hook can edit the hook.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:behaviour-policy",
+    "entity:claude-code"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "A plugin installed from a repository still counts as a user's and its block is not final; only managed placement is final, and nothing in the hook changes, only who can change the hook.",
+   "section": "top",
+   "quote": "Nothing in the hook changes, only who can change the hook.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r08",
+    "r03"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "A fresh scheduled run starts in a fresh container, so a session mod is not there at all; a managed hook is there in every session.",
+   "section": "top",
+   "quote": "A managed hook is there in every session, scheduled or not.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Three documented ways build the same guard, a mod, a command hook on PreToolUse, and a prompt hook; the command hook with onFailure block and exit code 2 is the one for managed settings.",
+   "section": "top",
+   "quote": "The command hook is the one I would put under managed settings.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling",
+    "concept:fail-closed"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Anthropic ships the same shape in auto mode, a classifier on a different model with less context that denies when its answer does not parse, and its documentation warns a boundary stated in conversation can be lost to compaction.",
+   "section": "top",
+   "quote": "That is the 9 October failure, described by the vendor.",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:agent-memory"
+   ],
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The pattern is maker-checker, the oldest control in finance: the Basel Committee's segregation of duties, NIST's separation of duty, ISO/IEC 27001 control A.5.3, and the pharmacies' independent double check.",
+   "section": "top",
+   "quote": "What the inbox agent built is maker-checker, the oldest control in finance.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:basel-committee",
+    "entity:nist",
+    "entity:iso"
+   ],
+   "refs": [
+    "r10",
+    "r11",
+    "r12"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The AI versions are recent: Redwood Research's AI Control, Simon Willison's Dual LLM pattern, DeepMind's CaMeL, Meta's Agents Rule of Two and OWASP's LLM06 Excessive Agency.",
+   "section": "top",
+   "quote": "The AI versions of the idea are recent and well described.",
+   "about": [
+    "entity:redwood-research",
+    "entity:simon-willison",
+    "entity:google",
+    "entity:meta",
+    "entity:owasp",
+    "concept:prompt-injection",
+    "concept:lethal-trifecta"
+   ],
+   "refs": [
+    "r13",
+    "r14",
+    "r15",
+    "r16",
+    "r17"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "What the draft guard adds is not a new idea but the idea placed where it bites: on the one consequential tool call, with business rules, sources, a different model, and an explicit statement of which barrier it is.",
+   "section": "top",
+   "quote": "What the draft guard adds is not a new idea.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "The reusable pattern in six steps: pick the consequential tool call, write the rules as a checklist, put everything certain in code, give the checker only what it needs, deny on anything but an explicit PASS, log every verdict.",
+   "section": "top",
+   "quote": "Deny on anything other than an explicit PASS.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:fail-closed"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "The next candidates are the CRM agent's writes, the newsroom's page promotions, Slack posts, and the leak check before any vault push, which is still a script the owner runs.",
+   "section": "top",
+   "quote": "which on this site is still a script I run rather than a gate I cannot skip",
+   "about": [
+    "entity:riskmandate",
+    "concept:vault",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The guard is only as independent as its installation; today it is a setting.",
+   "section": "top",
+   "quote": "It is only as independent as its installation",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The claims rule is only as good as the sources, and the drafter writes them.",
+   "section": "top",
+   "quote": "R7 is only as good as the sources",
+   "about": [
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The checker can be wrong in both directions; false FAILs are expected and cost a retry.",
+   "section": "top",
+   "quote": "The checker can be wrong in both directions.",
+   "about": [
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "It checks drafts, not sending; the owner sends, and the rule that agents never send is a separate barrier question.",
+   "section": "top",
+   "quote": "It checks drafts, not sending.",
+   "about": [
+    "concept:agentic-email",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "It does not replace reading: a PASS means ten rules held, not that the email is good.",
+   "section": "top",
+   "quote": "A PASS means ten rules held, not that the email is good.",
+   "about": [
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "data-point",
+   "text": "The article comes from the inbox agent's design document of 9 October 2026, which built and tested the guard with 11 of 11 tests passing, written up by agent@riskmandate.ai on Claude Opus 5.5 for Dinis Cruz.",
+   "section": "top",
+   "quote": "which built and tested the guard (11 of 11 tests passing)",
+   "about": [
+    "entity:riskmandate",
+    "concept:agents-write-too",
+    "entity:claude",
+    "entity:dinis-cruz"
+   ],
+   "value": {
+    "n": 11,
+    "of": 11,
+    "unit": "tests passing",
+    "as_of": "2026-10-09"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c28",
+   "verb": "specifies",
+   "to": "c27"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c03"
+  }
+ ],
+ "entities": [
+  {
+   "id": "anthropic",
+   "role": "the vendor whose hooks, mods and auto mode are quoted, and whose prices are counted"
+  },
+  {
+   "id": "claude",
+   "role": "Opus drafts, Sonnet checks, Haiku over-flagged"
+  },
+  {
+   "id": "claude-code",
+   "role": "the harness whose tool.call event the guard hooks"
+  },
+  {
+   "id": "gmail",
+   "role": "the connector whose draft tools the guard gates"
+  },
+  {
+   "id": "riskmandate",
+   "role": "its inbox agent built the guard and wrote the design document"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner whose name the two emails carried, who sends, and who has editorial responsibility"
+  },
+  {
+   "id": "simon-willison",
+   "role": "the Dual LLM pattern"
+  },
+  {
+   "id": "google",
+   "role": "DeepMind's CaMeL"
+  },
+  {
+   "id": "meta",
+   "role": "the Agents Rule of Two"
+  },
+  {
+   "id": "owasp",
+   "role": "LLM06 Excessive Agency"
+  },
+  {
+   "id": "nist",
+   "role": "defines separation of duty"
+  },
+  {
+   "id": "iso",
+   "role": "ISO/IEC 27001:2022 control A.5.3, segregation of duties"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "its page promotions are a next candidate for the guard"
+  },
+  {
+   "id": "basel-committee",
+   "role": "its 1998 framework's Principle 6 on segregation of duties"
+  },
+  {
+   "id": "redwood-research",
+   "role": "AI Control: a trusted model watching an untrusted one"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "human-in-the-loop",
+   "defined_here": true
+  },
+  {
+   "id": "fail-closed",
+   "defined_here": true
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://arxiv.org/abs/2310.01798",
+   "title": "Large language models cannot self-correct reasoning yet",
+   "by": "Huang et al., ICLR 2024",
+   "date": "2024",
+   "kind": "paper"
+  },
+  {
+   "id": "r02",
+   "url": "https://arxiv.org/abs/2404.13076",
+   "title": "LLM evaluators recognize and favor their own generations",
+   "by": "Panickssery et al., NeurIPS 2024",
+   "date": "2024",
+   "kind": "paper"
+  },
+  {
+   "id": "r03",
+   "url": "https://code.claude.com/docs/en/plugins/mods/events",
+   "title": "Mods: events",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://code.claude.com/docs/en/plugins/mods/api",
+   "title": "Mods: API",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://code.claude.com/docs/en/hooks",
+   "title": "Hooks",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+   "title": "Pricing",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://code.claude.com/docs/en/plugins/mods/create",
+   "title": "Create a mod",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://code.claude.com/docs/en/plugins/mods/admin",
+   "title": "Mods for administrators",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://code.claude.com/docs/en/permission-modes",
+   "title": "Permission modes",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.bis.org/publ/bcbs40.pdf",
+   "title": "Framework for internal control systems in banking organisations (BCBS 40)",
+   "by": "Basel Committee on Banking Supervision",
+   "date": "1998",
+   "kind": "standard"
+  },
+  {
+   "id": "r11",
+   "url": "https://csrc.nist.gov/glossary/term/separation_of_duty",
+   "title": "Separation of duty",
+   "by": "NIST CSRC",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r12",
+   "url": "https://home.ecri.org/blogs/ismp-alerts-and-articles-library/independent-double-checks-worth-the-effort-if-used-judiciously-and-properly",
+   "title": "Independent double checks: worth the effort if used judiciously and properly",
+   "by": "ISMP",
+   "date": "undated",
+   "kind": "article"
+  },
+  {
+   "id": "r13",
+   "url": "https://arxiv.org/abs/2312.06942",
+   "title": "AI Control",
+   "by": "Redwood Research, ICML 2024",
+   "date": "2024",
+   "kind": "paper"
+  },
+  {
+   "id": "r14",
+   "url": "https://simonwillison.net/2023/Apr/25/dual-llm-pattern/",
+   "title": "The Dual LLM pattern",
+   "by": "Simon Willison",
+   "date": "2023-04-25",
+   "kind": "post"
+  },
+  {
+   "id": "r15",
+   "url": "https://arxiv.org/abs/2503.18813",
+   "title": "CaMeL",
+   "by": "Google DeepMind",
+   "date": "2025",
+   "kind": "paper"
+  },
+  {
+   "id": "r16",
+   "url": "https://ai.meta.com/blog/practical-ai-agent-security/",
+   "title": "Agents Rule of Two",
+   "by": "Meta",
+   "date": "2025",
+   "kind": "post"
+  },
+  {
+   "id": "r17",
+   "url": "https://genai.owasp.org/llmrisk/llm062025-excessive-agency/",
+   "title": "LLM06: Excessive Agency",
+   "by": "OWASP",
+   "date": "2025",
+   "kind": "standard"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-09",
+   "what": "Two emails go out in the owner's voice; the guard is built and tested the same day; prices and documentation read"
+  },
+  {
+   "date": "1998",
+   "what": "The Basel Committee's framework names segregation of duties as Principle 6"
+  }
+ ]
+}

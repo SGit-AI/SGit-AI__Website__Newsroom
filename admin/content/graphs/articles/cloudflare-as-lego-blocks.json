@@ -1,0 +1,718 @@
+{
+ "slug": "cloudflare-as-lego-blocks",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "The owner keeps domains at Cloudflare and does not want to learn it: the aim is a non-specialist, or an agent on their behalf, putting the smallest blocks together once, with the least code and configuration that does the job.",
+   "section": "want",
+   "quote": "I am technical, and I could learn Cloudflare. I do not want to.",
+   "about": [
+    "entity:cloudflare",
+    "concept:minimal-code",
+    "concept:deployment",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "The way there is not a course but a set of skills and prompts an agent can follow and a few short code examples, so setup happens once, correctly, and the result is something the person owns.",
+   "section": "want",
+   "quote": "It is a set of skills and prompts an agent can follow, and a few short code examples",
+   "about": [
+    "concept:agent-tooling",
+    "concept:deployment",
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Static assets are free and unlimited on every plan; Workers give 100,000 requests a day free with 10 ms of CPU, or $5 a month for 10 million requests; domains are sold at the registry's price.",
+   "section": "blocks",
+   "quote": "Code at the edge: 100,000 requests a day free, 10 ms of CPU per request",
+   "about": [
+    "entity:cloudflare",
+    "entity:cloudflare-workers",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 100000,
+    "unit": "Worker requests a day free",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "R2 object storage gives 10 GB, a million writes and ten million reads a month free with no egress fees, and buckets can be pinned to the EU or the US; D1, KV and Durable Objects have free tiers too.",
+   "section": "blocks",
+   "quote": "10 GB, a million writes and ten million reads a month free, and no egress fees.",
+   "about": [
+    "entity:cloudflare",
+    "entity:cloudflare-r2",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "GB of R2 storage free",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Workers AI gives 10,000 neurons a day free, then $0.011 per 1,000; its catalogue lists 71 models, all Cloudflare-hosted, running on GPUs on Cloudflare's network, including Llama 4 Scout, gpt-oss-120b, Qwen 3 and Whisper.",
+   "section": "blocks",
+   "quote": "Its catalogue lists 71 models, all marked Cloudflare-hosted",
+   "about": [
+    "entity:cloudflare",
+    "entity:workers-ai",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 71,
+    "unit": "models in the Workers AI catalogue",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The other blocks: AI Gateway, Vectorize and AI Search, cron triggers, queues and workflows, Browser Run, containers on the paid plan, inbound Email Routing free and unlimited, Email Sending in beta on the paid plan, Access free to 50 users, Turnstile and Tunnel.",
+   "section": "blocks",
+   "quote": "Inbound mail to your domains, free and unlimited; Email Workers process it in code.",
+   "about": [
+    "entity:cloudflare",
+    "concept:agentic-email",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r07",
+    "r08"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Cloudflare does not use customer content processed by Workers AI to train models, and its models run on Cloudflare's own GPUs, so a Worker calling a cf model on data in your own R2 bucket keeps the whole loop inside your account.",
+   "section": "models",
+   "quote": "Cloudflare does not use Customer Content processed by Workers AI to train AI models",
+   "about": [
+    "entity:workers-ai",
+    "entity:cloudflare",
+    "concept:privacy",
+    "concept:deployment"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "limit",
+   "text": "Since 2026 the same call can also reach OpenAI's or Anthropic's models through AI Gateway, which do not run on Cloudflare's GPUs; if staying inside is the point, the model name is the control.",
+   "section": "models",
+   "quote": "If staying inside is the point, the model name is the control",
+   "about": [
+    "entity:workers-ai",
+    "entity:openai",
+    "entity:anthropic",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "This answers a gap from free models, your own key: Cloudflare had the most generous free allowance but a web page cannot call its API directly, and a Worker in the reader's own account is exactly the small server that article said would be needed.",
+   "section": "models",
+   "quote": "A Worker in the reader's own account can, which is exactly the small server that article said would be needed.",
+   "about": [
+    "entity:cloudflare-workers",
+    "concept:client-side",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The sgit server never sees a key or a plaintext byte: it stores encrypted objects under ids and checks one thing on writes, the vault's write key, so because it can read nothing it has almost nothing to do.",
+   "section": "vault",
+   "quote": "because the server can read nothing, it has almost nothing to do.",
+   "about": [
+    "entity:sgit",
+    "concept:encryption-and-keys",
+    "concept:minimal-code",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "A read-only vault needs no code: sgit publish writes a folder with a plaintext cover, a manifest and the encrypted objects; a test vault of 39 files and 220 KB was served from a plain file server and cloned back identically with the read key.",
+   "section": "vault",
+   "quote": "We published a test vault, 39 files and 220 KB, served the folder from a plain file server, and cloned it with the read key",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:deployment"
+   ],
+   "value": {
+    "n": 39,
+    "unit": "files in the published test vault",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "A read-write vault needs one Worker of 83 lines, one R2 bucket and one Durable Object per vault, all on the free plan, covering the vault API's seven endpoints: info, read, list, batch, write, delete and destroy.",
+   "section": "vault",
+   "quote": "The vault API sgit talks to has seven endpoints: info, read, list, batch, write, delete and destroy",
+   "about": [
+    "entity:sgit",
+    "entity:cloudflare-workers",
+    "entity:cloudflare-r2",
+    "concept:minimal-code",
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 83,
+    "unit": "lines in the Worker",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Reads go straight to R2; every write goes through that vault's Durable Object, which runs one request at a time, so the compare-and-swap that stops two pushes overwriting each other is atomic, and the first write binds the write key by its SHA-256.",
+   "section": "vault",
+   "quote": "so the compare-and-swap that stops two pushes overwriting each other is atomic.",
+   "about": [
+    "entity:cloudflare-r2",
+    "entity:sha-256",
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "The Worker ran in Cloudflare's own runtime, workerd, locally through Miniflare 4, with the real sgit client: clone identical, a stale push merged, two pushes at once with nothing overwritten, a read-only clone refused to write, a wrong write key got 403.",
+   "section": "vault",
+   "quote": "We ran it in Cloudflare's own runtime, workerd, locally through Miniflare 4, and pointed the real sgit client at it",
+   "about": [
+    "entity:sgit",
+    "entity:cloudflare-workers",
+    "concept:vault-design",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Every file the server stored was searched for the plaintext, and none of it was there.",
+   "section": "vault",
+   "quote": "We searched every file the server stored for the plaintext; none of it was there.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "limit",
+   "text": "What the Worker does not do: files over 4 MB that use presigned uploads, one access token per user, large batch reads within 10 ms of CPU, and it has not yet run on a real Cloudflare account.",
+   "section": "vault",
+   "quote": "Files over 4 MB use presigned uploads in sgit, which this Worker does not implement.",
+   "about": [
+    "entity:cloudflare-workers",
+    "entity:sgit",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Cloudflare's API does not answer the preflight a web page needs, so a page cannot call it directly even with the user's own token, and setup cannot happen purely in a browser tab.",
+   "section": "setup",
+   "quote": "it does not answer the preflight a web page needs, so a page cannot call it directly, even with the user's own token.",
+   "about": [
+    "entity:cloudflare",
+    "concept:client-side",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Four ways to set up: a Deploy to Cloudflare button that clones a repository into the user's account; a temporary account live for an hour; an agent with the command line or Cloudflare's MCP server; and the dashboard's assistant, which cannot deploy.",
+   "section": "setup",
+   "quote": "For a vault host, that is one click and a sign-in. It works for Workers, not Pages.",
+   "about": [
+    "entity:cloudflare",
+    "entity:wrangler",
+    "entity:claude-code",
+    "entity:mcp",
+    "concept:deployment"
+   ],
+   "refs": [
+    "r09",
+    "r10",
+    "r11"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A new command-line tool, cf, entered open beta on 28 September and will replace Wrangler, which Cloudflare will maintain for 18 months after the beta ends, so a skill written today should say which it uses.",
+   "section": "setup",
+   "quote": "a skill written today should say which it uses.",
+   "about": [
+    "entity:wrangler",
+    "entity:cloudflare",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "The pattern wanted is a published repository per package with a button for people and a skill for agents, so host my vault on my Cloudflare account is one sentence to an agent, done once, with a scoped token that can be revoked.",
+   "section": "setup",
+   "quote": "a published repository per package, with a button for people and a skill for agents",
+   "about": [
+    "concept:deployment",
+    "concept:agent-tooling",
+    "concept:citizen-developer",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "Five packages, each the smallest set of blocks for one job and each on the free plan: a site on my domain, my vault hosted, an assistant over my documents, an inbox that does things, and a form or small API.",
+   "section": "packages",
+   "quote": "Each one is a repository with a button, a skill and a page saying exactly what it can reach, which is its behaviour policy.",
+   "about": [
+    "concept:deployment",
+    "concept:behaviour-policy",
+    "concept:minimal-code",
+    "entity:cloudflare"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "To watch: the command line is changing, AI Search starts billing on 1 November 2026 after 5 million ingestion tokens and 1,000 queries a month, data residency on the free plan is partial, and the free limits move.",
+   "section": "watch",
+   "quote": "AI Search starts billing on 1 November 2026.",
+   "about": [
+    "entity:cloudflare",
+    "concept:pricing",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The Worker has not run on a real account: it ran in Cloudflare's runtime, locally, with the real sgit client.",
+   "section": "limits",
+   "quote": "It ran in Cloudflare's runtime, locally, with the real sgit client.",
+   "about": [
+    "entity:cloudflare-workers",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "It is a prototype: no large files, one shared access token, no rate limits.",
+   "section": "limits",
+   "quote": "No large files, one shared access token, no rate limits.",
+   "about": [
+    "entity:cloudflare-workers",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The hosted sgit server may check write keys differently; the Worker binds the key on first write, which is the article's choice.",
+   "section": "limits",
+   "quote": "Ours binds the key on first write; that is our choice.",
+   "about": [
+    "entity:sgit",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Limits change: every number is as Cloudflare's pages gave it on 18 October 2026.",
+   "section": "limits",
+   "quote": "Every number is as Cloudflare's pages gave it on 18 October 2026.",
+   "about": [
+    "entity:cloudflare",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 18 October 2026, Cloudflare's documentation read that day by a research agent, the API's lack of CORS tested from this machine, and vault tests with sgit 0.21.0 against the Worker in workerd through Miniflare 4.",
+   "section": "sources",
+   "quote": "The vault tests: sgit 0.21.0 against the Worker above in workerd through Miniflare 4, and against a plain static file server, on 18 October 2026.",
+   "about": [
+    "concept:voice-memo",
+    "entity:dinis-cruz",
+    "entity:sgit"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c08",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c03"
+  }
+ ],
+ "entities": [
+  {
+   "id": "cloudflare",
+   "role": "the platform mapped as blocks, where the owner keeps domains"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault tool whose read-only and read-write hosting on Cloudflare was tested, version 0.21.0"
+  },
+  {
+   "id": "sha-256",
+   "role": "the hash of the write key the Worker keeps on first write"
+  },
+  {
+   "id": "openai",
+   "role": "its models can be reached through AI Gateway but do not run on Cloudflare's GPUs"
+  },
+  {
+   "id": "anthropic",
+   "role": "its models can be reached through AI Gateway but do not run on Cloudflare's GPUs"
+  },
+  {
+   "id": "claude-code",
+   "role": "an agent with a terminal that can run the one-time setup"
+  },
+  {
+   "id": "mcp",
+   "role": "Cloudflare runs an MCP server for its whole API"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memo and holds editorial responsibility"
+  },
+  {
+   "id": "cloudflare-workers",
+   "role": "code at the edge, 100,000 requests a day free; the 83-line vault server is one Worker"
+  },
+  {
+   "id": "cloudflare-r2",
+   "role": "object storage with no egress fees that holds the vault's ciphertext"
+  },
+  {
+   "id": "workers-ai",
+   "role": "71 models on Cloudflare's own GPUs, 10,000 neurons a day free, no training on customer content"
+  },
+  {
+   "id": "wrangler",
+   "role": "Cloudflare's command-line tool, to be replaced by cf and maintained 18 months after cf's beta"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": true
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "citizen-developer",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://developers.cloudflare.com/workers/platform/limits/",
+   "title": "Workers limits",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+   "title": "Workers pricing",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://developers.cloudflare.com/r2/pricing/",
+   "title": "R2 pricing",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://developers.cloudflare.com/durable-objects/platform/pricing/",
+   "title": "Durable Objects pricing",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+   "title": "Workers AI pricing",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://developers.cloudflare.com/workers-ai/platform/privacy/",
+   "title": "Workers AI privacy",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://developers.cloudflare.com/email-service/platform/pricing/",
+   "title": "Email Service pricing",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://developers.cloudflare.com/browser-rendering/platform/limits/",
+   "title": "Browser Run limits",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://developers.cloudflare.com/workers/platform/deploy-buttons/",
+   "title": "Deploy to Cloudflare buttons",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+   "title": "Temporary accounts for agents",
+   "by": "Cloudflare",
+   "date": "2026-06-19",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/",
+   "title": "MCP servers for Cloudflare",
+   "by": "Cloudflare",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r12",
+   "url": "https://blog.cloudflare.com/python-workers-ga/",
+   "title": "Python Workers generally available",
+   "by": "Cloudflare",
+   "date": "2026-09-21",
+   "kind": "post"
+  },
+  {
+   "id": "r13",
+   "url": "https://blog.cloudflare.com/cloudflare-cf-cli-launch/",
+   "title": "The cf command line",
+   "by": "Cloudflare",
+   "date": "2026-09-28",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "The voice memo, Cloudflare's pages read, and the Worker tested with the real sgit client"
+  },
+  {
+   "date": "2026-09-28",
+   "what": "The cf command-line tool entered open beta"
+  },
+  {
+   "date": "2026-09-21",
+   "what": "Python Workers became generally available"
+  },
+  {
+   "date": "2026-11-01",
+   "what": "AI Search starts billing after its free allowance"
+  }
+ ]
+}

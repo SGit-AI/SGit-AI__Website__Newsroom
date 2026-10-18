@@ -1,0 +1,613 @@
+{
+ "slug": "fix-the-page-yourself",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "definition",
+   "text": "A bookmarklet is a bookmark whose address is a line of JavaScript instead of a web page; click it and it runs on whatever page you are on, with nothing to install.",
+   "section": "story",
+   "quote": "a bookmark whose address is a line of JavaScript instead of a web page",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:page-api"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The business owner shown an injection flaw wrapped in a bookmarklet was far more excited about the Bootstrap interface than about the vulnerability, and asked whether they could have it.",
+   "section": "story",
+   "quote": "She was far more excited about the interface than about the vulnerability.",
+   "about": [
+    "concept:custom-interfaces",
+    "entity:bootstrap"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "LinkedIn is designed to show ads and drive engagement, YouTube gives fifty things competing for attention, and newspapers wrap the article in everything except the article.",
+   "section": "problems",
+   "quote": "LinkedIn is designed to show ads and drive engagement",
+   "about": [
+    "concept:custom-interfaces",
+    "entity:linkedin",
+    "entity:youtube"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The default experience is built for the average user and the business model, and nobody's experience is the average.",
+   "section": "problems",
+   "quote": "Nobody's experience is the average.",
+   "about": [
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "hypothesis",
+   "text": "The next generation of user experience is the one the user customises, and then the one they pay for so somebody else keeps the customisation working through every release.",
+   "section": "customised",
+   "quote": "The next generation of user experience is the one the user customises",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Bookmarklets, userscript managers, Stylus, Arc's Boosts and reader modes all share one thing: the site is not involved, so they guess at its structure and break when it changes.",
+   "section": "customised",
+   "quote": "What all of them have in common is that the site is not involved.",
+   "about": [
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "proposal",
+   "text": "If a page publishes a small JavaScript API, the primitives a fix needs, then a fix is one line, does not break when the markup changes, and does not need to guess.",
+   "section": "primitives",
+   "quote": "If a page publishes a small JavaScript API, the primitives a fix needs, then a fix is one line",
+   "about": [
+    "concept:page-api"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The SGraph tools already follow the convention, putting each tool's API on the page and describing it in an api.json, on the principle that the API is the tool and the UI is a consumer.",
+   "section": "primitives",
+   "quote": "API is the tool, UI is a consumer",
+   "about": [
+    "concept:page-api",
+    "entity:sgraph-ai-tools"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The same surface a user's fix calls is the one Playwright tests and agents driving a browser call, so a page with an API can be automated, tested and fixed with the least code.",
+   "section": "primitives",
+   "quote": "A page with an API is a page that can be automated, tested and fixed with the least code, by people and by agents alike.",
+   "about": [
+    "concept:page-api",
+    "concept:agent-readable-web",
+    "entity:playwright"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "A fix a user writes and keeps is a better brief than any the site could write itself: what a real person needed, in a form that runs, explorer coding applied to the page.",
+   "section": "primitives",
+   "quote": "A fix a user writes, and keeps, is a better brief than any the site could write itself",
+   "about": [
+    "concept:the-brief",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The newsroom has done this once already: the first outside reaction to its Industry Wire was two words on WhatsApp, Dark mode!, and five themes shipped soon after.",
+   "section": "primitives",
+   "quote": "the first outside reaction to its Industry Wire was two words on WhatsApp, \"Dark mode!\"",
+   "about": [
+    "concept:the-brief",
+    "entity:industry-wire",
+    "entity:whatsapp"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "hypothesis",
+   "text": "The accessibility angle is where the money is for companies: a site that publishes the primitives and lets each reader build what they need serves more people for less.",
+   "section": "accessibility",
+   "quote": "There is a large accessibility angle here, and I think it is where the money is for companies.",
+   "about": [
+    "concept:accessibility",
+    "concept:page-api"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "WCAG's success criterion 1.4.12, Text Spacing, asks that content survive a user changing line, paragraph, letter and word spacing, which assumes users will.",
+   "section": "accessibility",
+   "quote": "asks that content survive a user changing line, paragraph, letter and word spacing, which assumes users will",
+   "about": [
+    "concept:accessibility",
+    "entity:wcag"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "In the European Union the European Accessibility Act has applied to many consumer services since 28 June 2025, a reason to care beyond good intentions.",
+   "section": "accessibility",
+   "quote": "the European Accessibility Act has applied to many consumer services since 28 June 2025",
+   "about": [
+    "concept:accessibility",
+    "concept:regulation",
+    "entity:european-accessibility-act",
+    "entity:european-union"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "There are three ways to deliver a fix, a bookmarklet, a per-site extension with activeTab, and a userscript manager, and the order matters.",
+   "section": "delivery",
+   "quote": "There are three ways to deliver a fix, and the order matters.",
+   "about": [
+    "concept:page-api",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Chrome's activeTab grants temporary access to the currently active tab when the user invokes the extension, with no install warning.",
+   "section": "delivery",
+   "quote": "temporary access to the currently active tab when the user invokes the extension",
+   "about": [
+    "entity:chrome",
+    "concept:privacy"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "The owner prefers the first two ways, because the reader clicks; one small extension per site that only touches the tab it is clicked on is a much smaller thing to trust than one with access to every site.",
+   "section": "delivery",
+   "quote": "one small extension per site, that only touches the tab I click it on, is a much smaller thing to trust",
+   "about": [
+    "concept:privacy",
+    "entity:chrome"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Fix the page is a page on this newsroom with six fixes, each a button to try, a bookmarklet to drag to the bookmarks bar, and a call on a page API.",
+   "section": "here",
+   "quote": "is a page with six fixes, each one a button to try, a bookmarklet to drag to your bookmarks bar, and a call on a page API",
+   "about": [
+    "concept:page-api",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "fixes on the newsroom",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Underneath is one small versioned file, immutable at its path, that puts an API on the page with list, apply, toggle and reset, and a bookmarklet is one line that loads it if needed and calls toggle.",
+   "section": "here",
+   "quote": "A bookmarklet is one line that loads the file if needed and calls toggle.",
+   "about": [
+    "concept:page-api",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "What a reader turns on is remembered for this site in their browser, and nothing leaves it.",
+   "section": "here",
+   "quote": "What a reader turns on is remembered for this site, in their browser, and nothing leaves it.",
+   "about": [
+    "concept:client-side",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "A generic reading mode for any site shows the limit of fixing from the outside: it hides the usual tags and gets the rest wrong because it has to guess, where the newsroom's own does not.",
+   "section": "here",
+   "quote": "It hides the usual tags, and it gets the rest wrong, because it has to guess.",
+   "about": [
+    "concept:page-api"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "Load the page API on every page of the newsroom, so a fix never needs the loader, and name the parts of each page in it, not only the chrome.",
+   "section": "brief",
+   "quote": "Load the page API on every page of the newsroom, so a fix never needs the loader",
+   "about": [
+    "concept:page-api",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "Build a community library of fixes, one file per fix on versioned paths, a per-site extension from it, and the same API on sgit.ai and ruv.sgit.ai so the fixes are a family.",
+   "section": "brief",
+   "quote": "The same API on sgit.ai and ruv.sgit.ai, so the fixes are a family, not a one-off.",
+   "about": [
+    "concept:page-api",
+    "entity:sgit-ai",
+    "entity:ruv-sgit-ai"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "proposal",
+   "text": "Count which fixes are kept, in the reader's own record and sent only if they choose, treat the list as the roadmap, and adopt the popular ones into settings and themes.",
+   "section": "brief",
+   "quote": "Count which fixes are kept, in the reader's own record, sent only if they choose, and treat the list as the roadmap.",
+   "about": [
+    "concept:the-brief",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "Let a model write the fix: Chrome now ships a model in the tab, so a reader should be able to say what they want changed and get a one-line fix on the page API.",
+   "section": "brief",
+   "quote": "a reader should be able to say what they want changed and get a one-line fix on the page API",
+   "about": [
+    "concept:page-api",
+    "entity:chrome"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Pay to keep it: personal fixes maintained across releases are a product, as the villagers argument says.",
+   "section": "brief",
+   "quote": "Personal fixes, maintained across releases, are a product",
+   "about": [
+    "concept:explorer-villager-town-planner",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Other sites can refuse it: a strict Content Security Policy can block a bookmarklet or the script it loads.",
+   "section": "limits",
+   "quote": "A strict Content Security Policy can block a bookmarklet or the script it loads.",
+   "about": [
+    "concept:page-api"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Six fixes on one site is a start, not a library.",
+   "section": "limits",
+   "quote": "A start, not a library.",
+   "about": [
+    "concept:page-api"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "There is no extension yet; the per-site extension is designed here, not built.",
+   "section": "limits",
+   "quote": "The per-site extension is designed here, not built.",
+   "about": [
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The security story is from memory; the details of that assessment are years old and deliberately left out.",
+   "section": "limits",
+   "quote": "The details of that assessment are years old and deliberately left out.",
+   "about": [
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "Customisation is not a substitute for good defaults; it is what a good default makes room for.",
+   "section": "limits",
+   "quote": "Customisation is not a substitute for good defaults.",
+   "about": [
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 17 October 2026, and the fixes, the page API and the page were built and tested by the site's agent the same day.",
+   "section": "sources",
+   "quote": "The fixes, the page API and the page were built and tested by this site's agent the same day",
+   "about": [
+    "concept:voice-memo",
+    "entity:newsroom-sgit-ai"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c07"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c07"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c05"
+  }
+ ],
+ "entities": [
+  {
+   "id": "linkedin",
+   "role": "a site designed for ads and engagement rather than reading"
+  },
+  {
+   "id": "youtube",
+   "role": "a site that gives fifty things competing for attention when you want one video"
+  },
+  {
+   "id": "bootstrap",
+   "role": "what the security consultant's afternoon interface was thrown together with"
+  },
+  {
+   "id": "chrome",
+   "role": "its activeTab permission, its userScripts toggle, and the model it now ships in the tab"
+  },
+  {
+   "id": "playwright",
+   "role": "the test runner that calls the same page API a fix does"
+  },
+  {
+   "id": "wcag",
+   "role": "success criterion 1.4.12, Text Spacing, which one of the six fixes applies"
+  },
+  {
+   "id": "european-accessibility-act",
+   "role": "applies to many consumer services since 28 June 2025"
+  },
+  {
+   "id": "european-union",
+   "role": "where the Accessibility Act applies"
+  },
+  {
+   "id": "sgraph-ai-tools",
+   "role": "where the page API convention, the JS API primitive, comes from"
+  },
+  {
+   "id": "industry-wire",
+   "role": "whose first outside reaction became five themes"
+  },
+  {
+   "id": "whatsapp",
+   "role": "where the two-word reaction arrived"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site where the six fixes and the page API run"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "a neighbour that should get the same API"
+  },
+  {
+   "id": "ruv-sgit-ai",
+   "role": "a neighbour that should get the same API"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "accessibility",
+   "defined_here": true
+  },
+  {
+   "id": "page-api",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__Tools",
+   "title": "SGraph-AI Tools",
+   "by": "the-cyber-boardroom",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r02",
+   "url": "https://developer.chrome.com/docs/extensions/develop/concepts/activeTab",
+   "title": "The activeTab permission",
+   "by": "Chrome for Developers",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://developer.chrome.com/docs/extensions/reference/api/userScripts",
+   "title": "The userScripts API",
+   "by": "Chrome for Developers",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.w3.org/TR/WCAG22/#text-spacing",
+   "title": "WCAG 2.2, success criterion 1.4.12, Text Spacing",
+   "by": "W3C",
+   "date": "undated",
+   "kind": "standard"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The voice memo; the six fixes, the page API and the page built and tested"
+  },
+  {
+   "date": "2025-06-28",
+   "what": "The European Accessibility Act began applying to many consumer services"
+  },
+  {
+   "date": "2026-04-09",
+   "what": "The architect's review of the SGraph tools that states the page API principle"
+  }
+ ]
+}

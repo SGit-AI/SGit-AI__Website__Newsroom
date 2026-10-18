@@ -1,0 +1,785 @@
+{
+ "slug": "the-passkey-opens-the-vault",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The missing piece of the client-side puzzle is a user who can open their own vaults on any device in seconds with nothing to remember or sign up for; this is the design's third version and the first with a test behind it.",
+   "section": "top",
+   "quote": "It is the third version, and the first with a test behind it.",
+   "about": [
+    "concept:accounts-without-a-server",
+    "concept:identity-and-secrets",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "With the WebAuthn PRF extension a passkey returns 32 bytes that only your authenticator can produce for this site, and the same bytes on every device it syncs to, through the same kind of path.",
+   "section": "short",
+   "quote": "a passkey returns 32 bytes that only your authenticator can produce for this site",
+   "about": [
+    "entity:webauthn",
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 32,
+    "unit": "bytes returned by the PRF extension"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The site does not need you to sign in to it: you are already signed in to Apple, Google or Microsoft, which is where your passkeys live, and the vault goes wherever that store goes.",
+   "section": "short",
+   "quote": "The site does not need you to sign in to it.",
+   "about": [
+    "concept:accounts-without-a-server",
+    "entity:apple",
+    "entity:google",
+    "entity:microsoft"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The door key is stored nowhere: because sgit vault keys are made in the client, the browser computes the door's key and address from the PRF bytes, opens it, and finds the master vault's key inside.",
+   "section": "short",
+   "quote": "So the browser computes the door's key and address from the PRF bytes, opens it, and finds the master vault's key inside.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:door-per-path",
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The newsroom's lab has seven cards, from what the browser can do to creating, reopening and deleting a door on a vault server, and was run on 11 and 12 October with one Google Password Manager passkey and one iCloud Keychain passkey.",
+   "section": "design",
+   "quote": "The lab has seven cards: what the browser can do",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:webauthn",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "cards in the passkey lab",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "From the bytes to a door address and passphrase and on to sgit's read and write keys, the browser and sgit's own Python agreed on every value, from a fixed test vector and from the live bytes.",
+   "section": "design",
+   "quote": "the browser and sgit's own Python agreed on every value, from a fixed test vector and from the live bytes",
+   "about": [
+    "entity:sgit",
+    "entity:python",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "With an access key the page created the door at its derived address on the vault server, wrote its one file, opened it again the way a new device would, and deleted the file.",
+   "section": "design",
+   "quote": "opened it again the way a new device would, and deleted the file",
+   "about": [
+    "concept:vault",
+    "concept:door-per-path",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Four runs with the same credential: the platform path on a Mac and an iPhone gave bytes A, the hybrid path over a QR code from an iPad and from that same Mac gave bytes B; each path was deterministic and the two disagreed.",
+   "section": "design",
+   "quote": "Each path was deterministic; the two paths disagreed.",
+   "about": [
+    "concept:door-per-path",
+    "entity:webauthn",
+    "entity:google",
+    "entity:apple",
+    "entity:chrome",
+    "entity:safari"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "runs of one passkey across two paths",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Apple's developer forums report the same symptom for iCloud Keychain passkeys since late 2024; an Apple engineer called it a bug, pointed at the extension's two seeds, and said a fix was in the 18.4 betas, which a later tester reported persisting.",
+   "section": "design",
+   "quote": "An Apple engineer called it a bug, pointed at the extension's two seeds, one for when the user was verified and one for when not",
+   "about": [
+    "entity:apple",
+    "entity:webauthn"
+   ],
+   "refs": [
+    "r01",
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "A defect in the one property that makes PRF useful for encryption would not survive long under real load, so the reasonable inference is that few people derive encryption keys from passkeys across the hybrid path in production.",
+   "section": "design",
+   "quote": "The reasonable inference is that few people derive encryption keys from passkeys across the hybrid path in production.",
+   "about": [
+    "entity:webauthn",
+    "concept:door-per-path",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The passkey is for this site, not the one used to sign in to Google; the site learns a credential id, a public key and 32 bytes after the gesture, not your email, your name or which account syncs it.",
+   "section": "design",
+   "quote": "Not your email, not your name, not which account syncs it.",
+   "about": [
+    "concept:privacy",
+    "concept:accounts-without-a-server",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The review on 11 October removed the door as a layer too many; the test is the requirement, because a master derived from the bytes would split into two masters across paths, and the door costs one vault per path and buys independence from providers.",
+   "section": "design",
+   "quote": "The layer costs one vault per path and one derivation on unlock, and buys independence from how any provider computes its bytes on any day.",
+   "about": [
+    "concept:door-per-path",
+    "concept:vault-design",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "The derivation runs from a fixed public PRF input through HKDF-SHA256 to a passphrase and an 8-character vault id, then sgit's own PBKDF2-HMAC-SHA256 at 600,000 iterations, once for the read key and once for the write key.",
+   "section": "design",
+   "quote": "PBKDF2-HMAC-SHA256 at 600,000 iterations, once for the read key and once for the write key",
+   "about": [
+    "entity:sgit",
+    "entity:sha-256",
+    "concept:encryption-and-keys",
+    "entity:web-crypto"
+   ],
+   "value": {
+    "n": 600000,
+    "unit": "PBKDF2 iterations per key"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Measured in headless Chromium on a four-core machine one derivation takes about 105 ms and six about 640 ms; a phone is several times slower, so a cold unlock can spend two to four seconds deriving keys.",
+   "section": "design",
+   "quote": "one takes about 105 ms and six run together about 640 ms, and a phone is several times slower",
+   "about": [
+    "entity:web-crypto",
+    "entity:chrome",
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 105,
+    "unit": "milliseconds per key derivation in headless Chromium",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The master vault is the keyring: the keys of the vaults below it, read keys the reader has been given, the access key, the key pairs, and the list of doors each with its own key so any open door can retire every other.",
+   "section": "design",
+   "quote": "the list of doors, each with its own vault key, so that from any open door the page can read, rewrite or delete every other door",
+   "about": [
+    "concept:vault-design",
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "definition",
+   "text": "The passkey is a lock, not an identity: the key pairs are generated at random and stored, never derived from the passkey, so everything that represents the person survives any change of lock, path, provider fix or recovery.",
+   "section": "design",
+   "quote": "The passkey is a lock, not an identity. It opens a door and does nothing else.",
+   "about": [
+    "concept:lock-not-identity",
+    "concept:identity-and-secrets",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Adding a door moves no key through a person: while unlocked the page asks for the bytes by the other path, derives the new door, encrypts the master's key under it and writes the file; nothing is typed, pasted or carried in public.",
+   "section": "design",
+   "quote": "Nothing is typed, nothing is pasted, nothing public carries a key.",
+   "about": [
+    "concept:door-per-path",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "An unknown door address is not an error but a path with no door yet, because a provider's fix can move a path's bytes at any time; the design never guesses which output was correct and only keeps every door replaceable.",
+   "section": "design",
+   "quote": "The design never has to guess which output was correct. It only has to keep every door replaceable.",
+   "about": [
+    "concept:door-per-path"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Several passkeys for several roles are several masters, each with its own doors; stores dedupe by user handle, so coexisting passkeys need two user ids and names, and the store's own picker is the switch.",
+   "section": "design",
+   "quote": "A second passkey for a different role is a second master, with its own doors.",
+   "about": [
+    "concept:vault-design",
+    "concept:personas",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "A door is retired by deleting its one file, never by destroying its address, because a destroyed vault id can never be reused and a door's address is derived from the passkey and the path.",
+   "section": "design",
+   "quote": "destroy it and that passkey can never open a door by that path again",
+   "about": [
+    "concept:door-per-path",
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The whole origin loads no third-party scripts on any page, because browser storage is per origin and a script on one page can read what another kept; the vault code is vendored into the reader repository.",
+   "section": "design",
+   "quote": "The origin loads no third-party scripts, on any page.",
+   "about": [
+    "concept:client-side",
+    "concept:privacy",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Losing everything is final: every door's passkey and the recovery code gone means no one can open the vaults, which is the property that makes the design worth having, and the first run says so before showing the code.",
+   "section": "design",
+   "quote": "Every door's passkey and the recovery code gone means no one can open the vaults.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "As of October 2026 PRF works in Google Password Manager, iCloud Keychain, Windows Hello since February 2026, Firefox from version 139 on macOS and 148 on Windows, and hardware keys through hmac-secret, but not in Chrome's own profile authenticator.",
+   "section": "design",
+   "quote": "Yes, on macOS from version 139 and Windows from version 148",
+   "about": [
+    "entity:firefox",
+    "entity:google",
+    "entity:apple",
+    "entity:microsoft",
+    "entity:chrome",
+    "entity:webauthn",
+    "entity:yubico"
+   ],
+   "refs": [
+    "r04",
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The rule in one line: the same newsroom on every device needs a synced store or a hardware key in your pocket, and a door for each way your devices reach it; a clean browser gives this device plus the recovery code.",
+   "section": "design",
+   "quote": "the same newsroom on every device needs a synced store or a hardware key in your pocket, and a door for each way your devices reach it",
+   "about": [
+    "concept:accounts-without-a-server",
+    "concept:door-per-path",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "The brief for the MVP: the passkey with rp.id newsroom.sgit.ai and the fixed PRF input, the four vaults, random key pairs, add a door, no door here yet, the move, and end-to-end tests with a virtual authenticator and a synthetic reader.",
+   "section": "design",
+   "quote": "The acceptance test is the experience in the fourth paragraph of this article",
+   "about": [
+    "concept:the-brief",
+    "entity:newsroom-sgit-ai",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Report the mismatch, reproducible with the lab in a few minutes, to Apple through Feedback Assistant with logs from both devices, and to Google against Password Manager's PRF handling on iOS.",
+   "section": "design",
+   "quote": "File it with Apple through Feedback Assistant, with logs from both devices as their engineers asked",
+   "about": [
+    "entity:apple",
+    "entity:google",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "definition",
+   "text": "Accounts with no server and no identity: a static site gets a user who can open their own data on any device and keep it private from the operator, with no account database, password, email or back end.",
+   "section": "enables",
+   "quote": "No account database, no password, no email, no back end.",
+   "about": [
+    "concept:accounts-without-a-server",
+    "concept:client-side",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "Later, one account across sites, through a key hub like secrets.sgit.ai or WebAuthn's Related Origin Requests, and the whole pattern as a small open component the way SG Meter is for reading.",
+   "section": "enables",
+   "quote": "I would like it to become a small, open component, the way SG Meter is for reading, and the lab is the start of it.",
+   "about": [
+    "entity:secrets-sgit-ai",
+    "entity:sg-meter",
+    "concept:open-source",
+    "concept:accounts-without-a-server"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "hypothesis",
+   "text": "This matters more than a login feature: it is the moment the client-side pattern stops needing anyone's server for identity and storage and becomes something other sites can use.",
+   "section": "enables",
+   "quote": "It is the moment the client-side pattern stops needing anyone's server for identity and storage, and becomes something other sites can use.",
+   "about": [
+    "concept:client-side",
+    "concept:accounts-without-a-server"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The lab is a lab: it created, opened and deleted one door on a real server, and the master vault, its door list, adding a door, the reading vault and the move are not built.",
+   "section": "limits",
+   "quote": "The master vault, its door list, adding a door, the reading vault and the move are not built.",
+   "about": [
+    "concept:door-per-path",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The support table and the test are snapshots: the vendor rows are from 2026 documentation and the site's own rows are two passkeys, three devices and two days; a provider's fix could change the QR path's bytes tomorrow.",
+   "section": "limits",
+   "quote": "Our own rows are two passkeys, three devices and two days.",
+   "about": [
+    "entity:webauthn",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The lab cannot say which path is right, because both outputs need the credential's secret to check against the specification; it can say each path was deterministic and the two disagreed.",
+   "section": "limits",
+   "quote": "It can say that each path was deterministic and that the two disagreed.",
+   "about": [
+    "concept:door-per-path",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "Computing the door is a choice with a cost: a door is lost with its passkey or with its path, and the other doors and the recovery code are what cover it.",
+   "section": "limits",
+   "quote": "A door is lost with its passkey, or with its path; the other doors and the recovery code are what cover it.",
+   "about": [
+    "concept:door-per-path",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "decision",
+   "text": "What changed in this version: the door is back as a door per path that records where it came from, the synced-passkey claim is narrowed to the same kind of path, the recovery door is back, key pairs stay random and sign-in stays out.",
+   "section": "limits",
+   "quote": "The claim about synced passkeys is narrowed to the same kind of path.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:door-per-path",
+    "concept:lock-not-identity"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 11 October 2026, a review the same day that removed the door and the sign-in, and the newsroom's test on 11 and 12 October that put the door back.",
+   "section": "sources",
+   "quote": "the unlock cost was measured with WebCrypto PBKDF2 in headless Chromium on 11 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "entity:web-crypto",
+    "entity:newsroom-sgit-ai",
+    "entity:dinis-cruz"
+   ],
+   "refs": [
+    "r08"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "specifies",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c28"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c34",
+   "verb": "supersedes",
+   "to": "c02"
+  }
+ ],
+ "entities": [
+  {
+   "id": "webauthn",
+   "role": "the passkey and its PRF extension, whose 32 bytes derive the door"
+  },
+  {
+   "id": "apple",
+   "role": "iCloud Keychain, the iPhone, iPad and Mac of the test, and the forums reporting the PRF mismatch"
+  },
+  {
+   "id": "google",
+   "role": "Google Password Manager, the passkey that gave different bytes by two paths"
+  },
+  {
+   "id": "microsoft",
+   "role": "Windows Hello, where PRF works since February 2026"
+  },
+  {
+   "id": "chrome",
+   "role": "Chrome on the Mac in runs 1 and 4; its own profile store returns no PRF bytes"
+  },
+  {
+   "id": "safari",
+   "role": "the browser on the iPhone and iPad in the runs"
+  },
+  {
+   "id": "firefox",
+   "role": "supports PRF from version 139 on macOS and 148 on Windows"
+  },
+  {
+   "id": "sgit",
+   "role": "vault keys made in the client, so the door's key can be computed; its Python derivation agreed byte for byte"
+  },
+  {
+   "id": "python",
+   "role": "sgit's own implementation the browser derivation was checked against"
+  },
+  {
+   "id": "sha-256",
+   "role": "the PRF input and the HKDF salt are SHA-256 hashes of fixed strings"
+  },
+  {
+   "id": "web-crypto",
+   "role": "WebCrypto PBKDF2, where the unlock cost was measured"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose lab ran the test, and the relying party ID"
+  },
+  {
+   "id": "secrets-sgit-ai",
+   "role": "whose keyring design the recovery code and the key hub idea build on"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the small open component the pattern should become like"
+  },
+  {
+   "id": "yubico",
+   "role": "hardware keys with hmac-secret; its developer's guide to PRF"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the memo and the design, and the first user"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "door-per-path",
+   "defined_here": true
+  },
+  {
+   "id": "accounts-without-a-server",
+   "defined_here": true
+  },
+  {
+   "id": "lock-not-identity",
+   "defined_here": true
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://developer.apple.com/forums/thread/764730",
+   "title": "Different PRF output when using platform or cross-platform authentication attachment",
+   "by": "Apple Developer Forums",
+   "date": "2024",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://developer.apple.com/forums/thread/774111",
+   "title": "Passkey PRF inconsistency between Apple devices",
+   "by": "Apple Developer Forums",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://developer.apple.com/forums/thread/774112",
+   "title": "PRF extension not supported in Safari's cross-device WebAuthn flow",
+   "by": "Apple Developer Forums",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.corbado.com/blog/passkeys-prf-webauthn",
+   "title": "Passkeys and WebAuthn PRF for end-to-end encryption",
+   "by": "Corbado",
+   "date": "2026",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://developers.yubico.com/WebAuthn/Concepts/PRF_Extension/Developers_Guide_to_PRF.html",
+   "title": "Developer's guide to PRF",
+   "by": "Yubico",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=1863819",
+   "title": "Support for the WebAuthn PRF extension",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://web.dev/articles/webauthn-related-origin-requests",
+   "title": "Passkey reuse across sites with Related Origin Requests",
+   "by": "web.dev",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://groups.google.com/a/chromium.org/g/blink-dev/c/iTNOgLwD2bI",
+   "title": "Intent to ship the PRF extension",
+   "by": "Chromium",
+   "date": "undated",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The voice memo; the design v1.0.0; the review that removed the door; the lab begun; the unlock cost measured"
+  },
+  {
+   "date": "2026-10-12",
+   "what": "The four runs across two paths; the door put back as a door per path; the design revised to v1.4.0"
+  },
+  {
+   "date": "2024",
+   "what": "Apple's forums first report different PRF output by platform and cross-platform paths"
+  },
+  {
+   "date": "2026-02",
+   "what": "Windows Hello gains PRF with the Windows 11 update"
+  }
+ ]
+}

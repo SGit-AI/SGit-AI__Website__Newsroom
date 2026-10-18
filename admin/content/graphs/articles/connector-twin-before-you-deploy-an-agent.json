@@ -1,0 +1,673 @@
+{
+ "slug": "connector-twin-before-you-deploy-an-agent",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "If you cannot say what your agent did, what it saw when it did it, and which of its actions you can undo, you are not ready to give it a connector.",
+   "section": "top",
+   "quote": "If you cannot say what your agent did, what it saw when it did it, and which of its actions you can undo, you are not ready to give it a connector.",
+   "about": [
+    "concept:connectors",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "A connector is a grant of action, not just of access: an agent with Gmail and Calendar connectors can send, trash, permanently delete, move events and cancel meetings at machine speed.",
+   "section": "top",
+   "quote": "A connector is a grant of action, not just of access.",
+   "about": [
+    "concept:connectors",
+    "concept:reach",
+    "entity:gmail",
+    "entity:google-workspace"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The Gmail API documents its delete as immediate and permanent: this operation cannot be undone, prefer messages.trash instead.",
+   "section": "top",
+   "quote": "Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer messages.trash instead.",
+   "about": [
+    "concept:one-way-door",
+    "entity:gmail"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "A message moved to trash is kept for 30 days and then permanently deleted with no recovery.",
+   "section": "top",
+   "quote": "After 30 days: The message is permanently deleted. You can't recover the message.",
+   "about": [
+    "concept:one-way-door",
+    "entity:gmail"
+   ],
+   "value": {
+    "n": 30,
+    "unit": "days in trash",
+    "as_of": "2026-09-24"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "An administrator can restore permanently deleted email for a date range within 25 days, in bulk.",
+   "section": "top",
+   "quote": "An administrator can restore a date range within 25 days, in bulk.",
+   "about": [
+    "concept:one-way-door",
+    "entity:google-workspace"
+   ],
+   "value": {
+    "n": 25,
+    "unit": "days for an administrator's restore",
+    "as_of": "2026-09-24"
+   },
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Unsend in Gmail is a cancellation period of 5 to 30 seconds set in the interface; an API send has no such window.",
+   "section": "top",
+   "quote": "A cancellation period of 5 to 30 seconds, set in Gmail's settings. An API send has no such window.",
+   "about": [
+    "concept:one-way-door",
+    "entity:gmail"
+   ],
+   "value": {
+    "n": 30,
+    "unit": "seconds, the longest unsend window",
+    "as_of": "2026-09-24"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "An edited calendar event has no version history a user can open; administrators have an audit log with some earlier values.",
+   "section": "top",
+   "quote": "No version history a user can open.",
+   "about": [
+    "concept:one-way-door",
+    "entity:google-workspace"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Google Vault searches Calendar since November 2023 but says it is not designed to be a backup or archive tool and has no automated recovery tools.",
+   "section": "top",
+   "quote": "Vault isn't designed to be a backup or archive tool",
+   "about": [
+    "entity:google-vault",
+    "entity:google"
+   ],
+   "refs": [
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "None of the platform's records holds what the agent was looking at when it acted or the instruction it was following.",
+   "section": "top",
+   "quote": "None of these records holds what the agent was looking at when it acted, or the instruction it was following.",
+   "about": [
+    "concept:provenance",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "definition",
+   "text": "A twin, in the sense twins.sgit.ai uses, is an interface to reality rather than a simulation of it; a connector twin narrows that to the boundary between an agent and the system it may act on.",
+   "section": "top",
+   "quote": "a digital twin is an interface to reality, not a simulation of it",
+   "about": [
+    "concept:connectors",
+    "entity:twins-sgit-ai"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Capture copies the tool call, the request and the response of every connector call, and the instruction behind it when possible, but never the Authorization header or any token.",
+   "section": "top",
+   "quote": "Never capture the Authorization header or any token.",
+   "about": [
+    "concept:connectors",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Each entry is appended to a vault append lane, a write-only channel gated by a token, whose write response is exactly ok true so the capture point learns nothing.",
+   "section": "top",
+   "quote": "An append lane is a write-only channel gated by a token the writer holds and nothing else",
+   "about": [
+    "concept:vault-design"
+   ],
+   "refs": [
+    "r12"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Each journal entry carries the hash of the one before it, so a missing, edited or reordered entry shows to anyone holding the read key.",
+   "section": "top",
+   "quote": "Each entry carries the hash of the one before it",
+   "about": [
+    "concept:provenance",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "question",
+   "text": "When the journal gets processed, on a timer, a threshold, on demand or at session end, is the one step that needs more thought, and the default will come from real users.",
+   "section": "top",
+   "quote": "This is the one step I think needs more thought.",
+   "about": [
+    "concept:connectors",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "The lane's limits, five megabytes per write and a thousand pending entries per token, are the constraints to design around.",
+   "section": "top",
+   "quote": "five megabytes per write and a thousand pending entries per token",
+   "about": [
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 1000,
+    "unit": "pending entries per token"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The twin is not a copy of the mailbox; it holds only what passed through the connector, so it scales with the agent's activity rather than the mailbox's size.",
+   "section": "top",
+   "quote": "The twin is not a copy of the mailbox.",
+   "about": [
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "In the invented session a scheduling assistant makes seventeen calls in under three minutes and writes a tidy summary.",
+   "section": "top",
+   "quote": "It makes seventeen calls in under three minutes, and writes this summary",
+   "about": [
+    "entity:connector-twin-vault",
+    "concept:connectors"
+   ],
+   "value": {
+    "n": 17,
+    "unit": "connector calls in the invented session"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Removed the supplier call was a delete with notifications on, so the supplier received a cancellation, and the deleted old reminder was the unpaid invoice's payment reminder, permanently deleted.",
+   "section": "top",
+   "quote": "so the supplier received a cancellation",
+   "about": [
+    "entity:connector-twin-vault",
+    "concept:one-way-door"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "With the journal every change gets a grade, and the value of the list is that the red rows, the irreversible actions, are named.",
+   "section": "top",
+   "quote": "The value of the list is not that most of it is green. It is that the red rows are named.",
+   "about": [
+    "concept:undo-is-a-list",
+    "concept:one-way-door"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "For every change the twin holds the before and the after, so it can write the inverse call and name plainly what nobody can undo, such as a delivered email.",
+   "section": "top",
+   "quote": "and name plainly the things nobody can undo, such as an email that has been delivered",
+   "about": [
+    "concept:undo-is-a-list"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Ideally capture runs in a broker holding the credentials, which makes the journal complete by construction and the broker the most valuable target in the estate.",
+   "section": "top",
+   "quote": "The price is that the broker holds credentials, which makes it the most valuable target in the estate.",
+   "about": [
+    "concept:connectors",
+    "concept:identity-and-secrets",
+    "entity:twins-sgit-ai"
+   ],
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Making capture a requirement of the agent is the weakest mode, because a skipped entry leaves a gap the chain cannot show, so the evidence should say self-reported on its first line.",
+   "section": "top",
+   "quote": "the evidence should say self-reported on its first line",
+   "about": [
+    "concept:provenance",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "definition",
+   "text": "RiskMandate writes an agent behaviour policy as the record of what an agent can reach, what it was authorised to do, the gap between the two, and who accepts the residual risk.",
+   "section": "top",
+   "quote": "the record of what an agent can reach, what it was authorised to do, the gap between the two, and who accepts the residual risk",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:risk-acceptance",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "With the list of irreversible actions the mandate can let the agent archive freely, require asking before a permanent delete or an outside cancellation, and forbid sending to a new recipient without approval.",
+   "section": "top",
+   "quote": "may never send to a new recipient without approval",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "Append lanes, client-side encryption, vault apps and the replay in the Connector Twin vault exist and run today.",
+   "section": "top",
+   "quote": "Exists and runs: vault append lanes, write-only and blind to the sender",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:connector-twin-vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "A gateway or broker capturing real Gmail and Calendar traffic, the processor and its schedule, revert execution and any customer do not exist yet.",
+   "section": "top",
+   "quote": "Does not exist yet: a gateway or broker capturing real Gmail and Calendar traffic; the processor and its schedule; revert execution; any customer.",
+   "about": [
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "A twin holds sensitive content, so who holds its keys is the first question a security team will ask, which is part of why a call for collaboration on key management was published.",
+   "section": "top",
+   "quote": "so who holds its keys is the first question a security team will ask",
+   "about": [
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "The service should be a business, written up in the Connector Twin vault with capture modes, prices as hypotheses, go-to-market through managed service providers and insurers, and the first ninety days.",
+   "section": "top",
+   "quote": "I think this should be a business, and I have written it up as one",
+   "about": [
+    "concept:startups",
+    "entity:connector-twin-vault"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The replayed session is invented, with invented people at invented .example addresses, though every call follows the real Gmail and Calendar APIs.",
+   "section": "top",
+   "quote": "The session is invented, with invented people at invented .example addresses",
+   "about": [
+    "entity:connector-twin-vault"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "Connectors built on the Model Context Protocol exchange JSON-RPC messages, so every call and result is already a JSON document that can be copied as it passes.",
+   "section": "top",
+   "quote": "Connectors built on the Model Context Protocol exchange JSON-RPC messages",
+   "about": [
+    "concept:connectors",
+    "entity:mcp"
+   ],
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "Every claim about Gmail and Calendar is taken from Google's own documentation, checked on 24 September 2026.",
+   "section": "top",
+   "quote": "This is what Google documents for Gmail and Calendar, checked on 24 September 2026.",
+   "about": [
+    "concept:provenance",
+    "entity:google"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c14"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c28"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c31",
+   "verb": "backs",
+   "to": "c03"
+  }
+ ],
+ "entities": [
+  {
+   "id": "gmail",
+   "role": "the mail connector whose API and help pages are quoted"
+  },
+  {
+   "id": "google-workspace",
+   "role": "Google Calendar and the Workspace admin restore and audit log"
+  },
+  {
+   "id": "google",
+   "role": "whose own documentation every platform claim is taken from"
+  },
+  {
+   "id": "google-vault",
+   "role": "the search tool that says it is not a backup"
+  },
+  {
+   "id": "mcp",
+   "role": "the protocol whose JSON-RPC messages make capture a copy"
+  },
+  {
+   "id": "twins-sgit-ai",
+   "role": "the site whose sense of twin and whose execution broker the article uses"
+  },
+  {
+   "id": "riskmandate",
+   "role": "writes the agent behaviour policy the twin changes"
+  },
+  {
+   "id": "connector-twin-vault",
+   "role": "the vault with the working replay and the business plan"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault, its append lanes and client-side encryption the twin is built on"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "connectors",
+   "defined_here": true
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "undo-is-a-list",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/delete",
+   "title": "Gmail API, users.messages.delete",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert",
+   "title": "Gmail API, users.messages.insert",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://support.google.com/mail/answer/7401",
+   "title": "Gmail Help, delete or recover deleted messages",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://support.google.com/mail/answer/2819488",
+   "title": "Gmail Help, send or unsend messages",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://knowledge.workspace.google.com/admin/support/troubleshooting/restore-a-users-permanently-deleted-email",
+   "title": "Workspace Admin Help, restore a user's permanently deleted email",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://support.google.com/calendar/answer/37113",
+   "title": "Calendar Help, delete an event",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://knowledge.workspace.google.com/admin/reports/calendar-log-events",
+   "title": "Workspace Admin Help, Calendar log events",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://knowledge.workspace.google.com/vault/search/use-vault-to-search-google-calendar",
+   "title": "Vault Help, search Google Calendar",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://knowledge.workspace.google.com/vault/getting-started/google-vault-faq",
+   "title": "Vault FAQ",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://workspaceupdates.googleblog.com/2023/11/Google-Vault-Now-Supports-Google-Calendar.html",
+   "title": "Google Vault now supports Google Calendar",
+   "by": "Google Workspace Updates",
+   "date": "2023-11",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://modelcontextprotocol.io/specification",
+   "title": "Model Context Protocol specification",
+   "by": "Model Context Protocol",
+   "date": "undated",
+   "kind": "standard"
+  },
+  {
+   "id": "r12",
+   "url": "https://sgit.ai/api/append-lanes.html",
+   "title": "Append lanes",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r13",
+   "url": "https://twins.sgit.ai/broker/index.html",
+   "title": "The execution broker",
+   "by": "twins.sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-09-24",
+   "what": "Google's documentation for Gmail and Calendar checked; the article published with the Connector Twin vault"
+  },
+  {
+   "date": "2023-11",
+   "what": "Google Vault began searching Calendar"
+  }
+ ]
+}

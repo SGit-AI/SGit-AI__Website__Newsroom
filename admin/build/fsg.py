@@ -345,6 +345,7 @@ def main():
     ap.add_argument("--registry", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--baseline", action="store_true")
+    ap.add_argument("--draft", action="store_true", help="build the pages from the files that pass, without merging the registries")
     a = ap.parse_args()
     if a.baseline:
         return cmd_baseline()
@@ -358,7 +359,7 @@ def main():
         from fsg_build import build  # noqa: E402  (the derivation, in its own file)
     except ImportError:
         sys.exit("fsg: the derivation (admin/build/fsg_build.py) is not here yet; --check, --sections and --registry work")
-    return build(report_only=a.report)
+    return build(report_only=a.report, draft=a.draft)
 
 
 if __name__ == "__main__":

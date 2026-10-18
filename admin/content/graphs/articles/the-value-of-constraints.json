@@ -1,0 +1,649 @@
+{
+ "slug": "the-value-of-constraints",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "hypothesis",
+   "text": "Nobody will buy sgit because it is encrypted; if it succeeds it will be for better features, better workflows and a better solution, and leading with encryption was the author's own mistake.",
+   "section": "mistake",
+   "quote": "I do not think anyone will buy sgit because it is encrypted.",
+   "about": [
+    "entity:sgit",
+    "concept:encryption-and-keys",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Innovation needs constraints and the loop of trying, failing and shipping, and the constraint that shaped sgit most was the encryption.",
+   "section": "mistake",
+   "quote": "the constraint that shaped sgit most was the encryption",
+   "about": [
+    "concept:the-value-of-constraints",
+    "concept:encryption-and-keys",
+    "concept:shipping",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The research is more careful than the slogan: a review by Acar, Tarakci and van Knippenberg found an inverted U-shaped effect of constraints on creativity and innovation, so some constraint helps and too much hurts.",
+   "section": "mistake",
+   "quote": "an inverted U-shaped effect of constraints on creativity and innovation",
+   "about": [
+    "concept:the-value-of-constraints"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Encryption on the client moves the security problem from protecting all the data, every copy, backup, log and replica, to protecting the keys, which is a much smaller problem.",
+   "section": "keys",
+   "quote": "the problem moves to protecting the keys, which is a much smaller problem",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The sovereignty line stops being where the data is stored and becomes who holds the keys, so data can sit with a provider or in a country with sovereignty gaps and you can still move it.",
+   "section": "keys",
+   "quote": "The sovereignty line stops being where the data is stored and becomes who holds the keys.",
+   "about": [
+    "concept:privacy",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The European Data Protection Board's recommendations on transfers take exactly this case and conclude that strong encryption with keys retained solely under the exporter's control is an effective supplementary measure.",
+   "section": "keys",
+   "quote": "the EDPB considers that the encryption performed provides an effective supplementary measure.",
+   "about": [
+    "entity:edpb",
+    "concept:regulation",
+    "entity:european-union",
+    "concept:privacy"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The memo said that with the data encrypted you do not have to worry about GDPR; that is too strong, and the article corrects it.",
+   "section": "gdpr",
+   "quote": "That is too strong, and the article should say so.",
+   "about": [
+    "entity:gdpr",
+    "concept:regulation",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "For whoever holds the keys, encrypted personal data is still personal data: the UK regulator says not to think encrypted data is not subject to the UK GDPR, storing it is processing, and the controller's duties stay.",
+   "section": "gdpr",
+   "quote": "and that storing it is still processing. The controller's duties stay.",
+   "about": [
+    "entity:ico",
+    "entity:gdpr",
+    "entity:united-kingdom"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "The GDPR lists encryption as a security measure in Article 32, and under Article 34(3)(a) a breach need not be communicated to the people affected if the data was made unintelligible, provided the key was not lost with it.",
+   "section": "gdpr",
+   "quote": "provided the key was not lost with it",
+   "about": [
+    "entity:gdpr",
+    "concept:encryption-and-keys",
+    "concept:regulation"
+   ],
+   "value": {
+    "n": 34,
+    "unit": "GDPR article whose paragraph 3(a) lifts the duty to notify people when the data was unintelligible"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The European Court of Justice held in September 2025 that pseudonymised data is not personal data in all cases and for every person, which may help a store that never has the keys, but that store still processes data under a contract.",
+   "section": "gdpr",
+   "quote": "but that store still processes data on someone's behalf, under a contract",
+   "about": [
+    "entity:cjeu",
+    "entity:gdpr",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The biggest gain is engineering: a server that cannot read the data removes both the possibility and the temptation of processing on it, so there is no server code, no complexity, no deployment, nothing to patch.",
+   "section": "server",
+   "quote": "once nothing can run on the server, there is no server code: no complexity there, no deployment, nothing to patch",
+   "about": [
+    "concept:the-value-of-constraints",
+    "concept:client-side",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "sgit's server is, in the words of the first brief, a dumb key-value blob store, and the deployment is the client.",
+   "section": "server",
+   "quote": "a dumb key-value blob store",
+   "about": [
+    "entity:sgit",
+    "concept:client-side",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The author knows the temptation because he has fallen for it: a developer makes a change in the cheapest place, which looks like the server, until it has to be maintained.",
+   "section": "server",
+   "quote": "I know the temptation well, because I have fallen for it.",
+   "about": [
+    "concept:the-value-of-constraints",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Some of sgit's most powerful features exist because the constraint had to be solved in version control: clone --path holds only the folders asked for, and with immutable encrypted objects a read is a plain GET any static host can serve.",
+   "section": "server",
+   "quote": "With the objects immutable and encrypted, a read is a plain GET, so any static host can serve a vault.",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design",
+    "concept:deployment",
+    "concept:the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "definition",
+   "text": "Open source is the second constraint: there is no private code, so the code is available everywhere and easy to deploy, run and change, including by the customer, which solves many sovereignty problems on its own.",
+   "section": "open",
+   "quote": "The constraint is that there is no private code.",
+   "about": [
+    "concept:open-source",
+    "concept:the-value-of-constraints",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Open source removes the temptation to lock the customer in; the best product is not the one you use because you have to but the one that hurts when you stop.",
+   "section": "open",
+   "quote": "The best product is not the one you use because you have to; it is the one that hurts when you stop.",
+   "about": [
+    "concept:open-source",
+    "concept:do-they-miss-it"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The same is true of design: take things away until it hurts and stop there, because past that point it gets worse; sometimes that is one button and sometimes fifty.",
+   "section": "open",
+   "quote": "take things away until it hurts, and stop there, because past that point it gets worse",
+   "about": [
+    "concept:the-value-of-constraints",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "hypothesis",
+   "text": "The curse of most startups is customers getting them to build features and integrations only they need until the roadmap belongs to everyone else; open source answers with the code, integrate it yourself or pay us for that thing.",
+   "section": "open",
+   "quote": "here is the code; integrate it yourself, or pay us to do that specific thing",
+   "about": [
+    "concept:startups",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "You cannot open source half of it: a community edition that turns proprietary as soon as you use it for real is an evaluation version with a better name, and brings back every dependency open source was meant to remove.",
+   "section": "all",
+   "quote": "A community edition that turns proprietary as soon as you use it for real is an evaluation version with a better name.",
+   "about": [
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Elastic, HashiCorp and Redis each moved to a licence that is not open source and each produced a well-funded fork, OpenSearch, OpenTofu and Valkey; Elastic and Redis have since added an open licence back.",
+   "section": "all",
+   "quote": "Elastic, HashiCorp and Redis each moved to a licence that is not open source",
+   "about": [
+    "entity:elastic",
+    "entity:hashicorp",
+    "entity:redis",
+    "concept:open-source",
+    "entity:open-source-initiative"
+   ],
+   "refs": [
+    "r06",
+    "r07",
+    "r08"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "hypothesis",
+   "text": "Working in the open with no private code to protect and no lock-in to defend is more efficient, and is part of how very small teams can now build and maintain software that companies with billions cannot.",
+   "section": "all",
+   "quote": "Working in the open, with no private code to protect and no lock-in to defend, is simply more efficient",
+   "about": [
+    "concept:open-source",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "With the code open and the server holding nothing you cannot sell access to the code or rent the data back; what you can sell is customisation and keeping it working, which is the part worth paying for.",
+   "section": "business",
+   "quote": "What you can sell is what the previous articles argued for: customisation, and keeping it working.",
+   "about": [
+    "concept:pricing",
+    "concept:explorer-villager-town-planner",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "Not that encryption removes GDPR: it reduces exposure, and the controller's duties remain.",
+   "section": "limits",
+   "quote": "It reduces exposure; the controller's duties remain.",
+   "about": [
+    "entity:gdpr",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Not that constraints always help: the research says a moderate amount does.",
+   "section": "limits",
+   "quote": "The research says a moderate amount does.",
+   "about": [
+    "concept:the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Not that small teams always win: it is the author's view from what he sees, not a study.",
+   "section": "limits",
+   "quote": "It is my view, from what I see, not a study.",
+   "about": [
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "sgit's success is not shown here; the features are real and the market will decide.",
+   "section": "limits",
+   "quote": "The features are real; the market will decide.",
+   "about": [
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The author has a stake: sgit is ours.",
+   "section": "limits",
+   "quote": "I have a stake. sgit is ours.",
+   "about": [
+    "entity:sgit",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 16 October 2026 whose GDPR claim is corrected here; sgit's facts are from the sgit-ai 0.22.0 code and changelog.",
+   "section": "sources",
+   "quote": "the GDPR claim in the memo is corrected here",
+   "about": [
+    "concept:voice-memo",
+    "concept:corrections-propagate",
+    "entity:sgit"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c15",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c11",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c15",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c01"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "the tool whose two design constraints, client-side encryption and open source, the article is about"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author, who made the mistake first and has a stake"
+  },
+  {
+   "id": "european-union",
+   "role": "whose data protection board and court the GDPR points are drawn from"
+  },
+  {
+   "id": "edpb",
+   "role": "its transfer recommendations treat client-held keys as an effective supplementary measure"
+  },
+  {
+   "id": "gdpr",
+   "role": "Articles 32 and 34; encryption reduces exposure but does not remove the controller's duties"
+  },
+  {
+   "id": "ico",
+   "role": "the UK regulator whose encryption guidance says encrypted data is still subject to the UK GDPR"
+  },
+  {
+   "id": "united-kingdom",
+   "role": "the UK GDPR and its regulator"
+  },
+  {
+   "id": "cjeu",
+   "role": "held in September 2025 that pseudonymised data is not personal data in all cases"
+  },
+  {
+   "id": "elastic",
+   "role": "closed its licence, saw OpenSearch forked, and reopened"
+  },
+  {
+   "id": "hashicorp",
+   "role": "closed its licence and saw OpenTofu forked"
+  },
+  {
+   "id": "redis",
+   "role": "closed its licence, saw Valkey forked, and added AGPLv3 back"
+  },
+  {
+   "id": "open-source-initiative",
+   "role": "ruled that the SSPL is not an open source licence"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-value-of-constraints",
+   "defined_here": true
+  },
+  {
+   "id": "do-they-miss-it",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": true
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://openaccess.city.ac.uk/id/eprint/20459/",
+   "title": "Creativity and innovation under constraints",
+   "by": "Acar, Tarakci and van Knippenberg, Journal of Management",
+   "date": "2019",
+   "kind": "paper"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en",
+   "title": "Recommendations 01/2020 on measures that supplement transfer tools, version 2.0",
+   "by": "European Data Protection Board",
+   "date": "2021-06-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://ico.org.uk/media2/bi0bcdxr/encryption-guidance.pdf",
+   "title": "Encryption guidance",
+   "by": "ICO",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+   "title": "General Data Protection Regulation (EU) 2016/679",
+   "by": "The European Union",
+   "date": "2016",
+   "kind": "law"
+  },
+  {
+   "id": "r05",
+   "url": "https://curia.europa.eu/jcms/upload/docs/application/pdf/2025-09/cp250107en.pdf",
+   "title": "Case C-413/23 P, press release 107/25",
+   "by": "Court of Justice of the European Union",
+   "date": "2025-09-04",
+   "kind": "news"
+  },
+  {
+   "id": "r06",
+   "url": "https://opensource.org/blog/the-sspl-is-not-an-open-source-license",
+   "title": "The SSPL is not an open source license",
+   "by": "Open Source Initiative",
+   "date": "2021-01-19",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.elastic.co/blog/elasticsearch-is-open-source-again",
+   "title": "Elasticsearch is open source, again",
+   "by": "Elastic",
+   "date": "2024-08-29",
+   "kind": "post"
+  },
+  {
+   "id": "r08",
+   "url": "https://redis.io/blog/agplv3/",
+   "title": "AGPLv3",
+   "by": "Redis",
+   "date": "2025-05-01",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-16",
+   "what": "The voice memo and the article, with the GDPR claim corrected"
+  },
+  {
+   "date": "2025-09-04",
+   "what": "The Court of Justice rules on pseudonymised data in case C-413/23 P"
+  },
+  {
+   "date": "2021-06-18",
+   "what": "EDPB Recommendations 01/2020 version 2.0 on supplementary measures for transfers"
+  },
+  {
+   "date": "2024-08-29",
+   "what": "Elastic adds an open source licence back"
+  }
+ ]
+}

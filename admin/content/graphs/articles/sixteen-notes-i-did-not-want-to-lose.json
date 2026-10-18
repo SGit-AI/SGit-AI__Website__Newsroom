@@ -1,0 +1,620 @@
+{
+ "slug": "sixteen-notes-i-did-not-want-to-lose",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "On an iPhone, in a browser that could not reach the owner's passkeys, the vault button said sixteen changes existed only in that browser.",
+   "section": "happened",
+   "quote": "sixteen changes only in this browser, reads, notes and stories seen, that my vault did not have",
+   "about": [
+    "concept:vault",
+    "entity:webauthn",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 16,
+    "unit": "pending changes in one browser",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "hypothesis",
+   "text": "The likely reason is an in-app web view on iOS, which Apple does not allow to use passkeys for services outside the app's associated domains.",
+   "section": "happened",
+   "quote": "The likely reason is less mysterious than it felt.",
+   "about": [
+    "entity:apple",
+    "entity:webauthn",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The owner wanted the sixteen changes back because they had become pieces of intelligence, not page views, and that is the nudge working for the right reason.",
+   "section": "nudge",
+   "quote": "They were not page views any more.",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The count on the vault button is not gamification: it tells the reader what is theirs and where it is at risk, and the reason to act is real.",
+   "section": "nudge",
+   "quote": "It does not invent a reason to click.",
+   "about": [
+    "concept:vault",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Today the only way into the vault without the passkey is the recovery code, which is too much power to type into an untrusted browser for a job that only adds things.",
+   "section": "request",
+   "quote": "That is too much power to type into a browser I do not trust, for a job that only needs to add things.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "proposal",
+   "text": "Every reader vault should have an append lane that any browser can write to and none can read, offered as a URL, as text and as a QR code carrying only the lane address and the public key.",
+   "section": "request",
+   "quote": "So the vault pane should offer it three ways: a URL I can open, the text I can copy and paste, and a QR code I can scan from the other device.",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The newsroom already does this pointed at sgit.ai: the meter encrypts a reading summary in the browser to sgit.ai's published key and posts it to an append lane with no vault and no passkey.",
+   "section": "request",
+   "quote": "The newsroom already does this, pointed somewhere else.",
+   "about": [
+    "entity:sg-meter",
+    "entity:sgit-ai",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Once the lane exists it works in any browser: one not signed in, one with no passkey provider, an old iPad, or a link sent to oneself on WhatsApp.",
+   "section": "request",
+   "quote": "Once it exists, it solves far more than my iPhone.",
+   "about": [
+    "concept:vault-design",
+    "entity:whatsapp"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "The brief has six steps: a reader key pair, an append lane on the reader vault, the link three ways, the sender's side, the drain on unlock, and tests.",
+   "section": "brief",
+   "quote": "Only the reader's key pair and the pane's link are new.",
+   "about": [
+    "concept:the-brief",
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "proposal",
+   "text": "Because anyone holding the link can write to the lane, the token should be rotatable, the drain should show what arrived before merging, and a link should be able to expire.",
+   "section": "brief",
+   "quote": "anyone holding the link can write to the lane, so the token should be rotatable from the pane",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Identity is still a mess: passkeys work in some browsers and not others, on some paths and not others, and the user is not told which, which is why good ideas do not get adopted.",
+   "section": "hard",
+   "quote": "Things like this are why good ideas do not get mainstream adoption.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "hypothesis",
+   "text": "Users tolerate complex workflows once, when they can see the value and the steps are not repeated; WhatsApp's linked devices and Midjourney's Discord bot are the examples.",
+   "section": "hard",
+   "quote": "Users have a lot of tolerance for complex workflows when they can see the value, when the steps are not repeated, and when they are connected to the value.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:whatsapp",
+    "entity:midjourney"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Discord says the Midjourney server hit the prior server cap of one million users, with the slash command workflow as the price of the value.",
+   "section": "hard",
+   "quote": "the prior server cap of an astonishing one million users",
+   "about": [
+    "entity:midjourney",
+    "entity:discord"
+   ],
+   "value": {
+    "n": 1000000,
+    "unit": "users on the Midjourney Discord server"
+   },
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "Whether readers accept the one-off step is something to test, not assume: A/B test the link against a pairing flow and see which readers finish.",
+   "section": "hard",
+   "quote": "We can A/B test the link against a pairing flow and see which readers finish.",
+   "about": [
+    "concept:synthetic-users",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Sending email through Claude connected to Gmail works for basic mail, but the agent had to shrink a 1.4 MB PDF to 17 KB for an attachment, and inline images and clean replies in a thread are not possible.",
+   "section": "email",
+   "quote": "Inline images, which make a message far more powerful, I cannot send at all.",
+   "about": [
+    "concept:agentic-email",
+    "concept:connectors",
+    "entity:gmail",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "None of the email limits are Gmail's own, since its API allows uploads to drafts, drafts in a thread and whole replacements; the constraint is the connector's.",
+   "section": "email",
+   "quote": "None of these are limits of Gmail itself.",
+   "about": [
+    "concept:connectors",
+    "entity:gmail",
+    "entity:google"
+   ],
+   "refs": [
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "If the connector's limit is for security it buys little, because an agent that wants to leak can share a Drive folder or send fifty small emails, and it pushes people to other tools, which is the bigger risk.",
+   "section": "email",
+   "quote": "If it is security, I do not think it buys much",
+   "about": [
+    "concept:connectors",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "decision",
+   "text": "On 13 October the agent that runs the wire added an OWASP Wire and an AWS Wire on the Industry Wire's pipeline, each from a configuration file of seventeen lines.",
+   "section": "wire",
+   "quote": "two configuration files of seventeen lines each, and one builder that now serves every wire",
+   "about": [
+    "entity:industry-wire",
+    "entity:owasp",
+    "entity:aws",
+    "concept:the-wire"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "The three wires run on one pipeline, and each new wire costs one config of seventeen lines.",
+   "section": "wire",
+   "quote": "One pipeline, three wires. A wire is a vault plus a config",
+   "about": [
+    "entity:industry-wire",
+    "concept:the-wire"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "wires on one pipeline",
+    "as_of": "2026-10-13"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "definition",
+   "text": "A wire is a vault plus a config, in the release's own words.",
+   "section": "wire",
+   "quote": "a wire is a vault plus a config",
+   "about": [
+    "concept:the-wire",
+    "concept:vault",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "hypothesis",
+   "text": "A wire for one community or for the customers of one platform is a product of its own, and the value proposition comes from almost no new code.",
+   "section": "wire",
+   "quote": "If we can add value there, that is a very good value proposition, from almost no new code.",
+   "about": [
+    "concept:the-wire",
+    "concept:minimal-code",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The iPhone browser explanation is the owner's best explanation, not a diagnosis; it could have been another browser mode.",
+   "section": "limits",
+   "quote": "An in-app web view fits what I saw; it could also have been another browser mode.",
+   "about": [
+    "entity:apple",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The lane is a request, not a feature; nothing in the brief is built, though the append lanes, the browser-side encryption and the recovery code are.",
+   "section": "limits",
+   "quote": "Nothing in this brief is built; the append lanes, the browser-side encryption and the recovery code are.",
+   "about": [
+    "concept:vault-design",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The email limits are the ones the owner and the agents have met; the connector may handle more than its help page says.",
+   "section": "limits",
+   "quote": "The connector may handle more than its help page says; the attachment route works, at a size.",
+   "about": [
+    "concept:connectors",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Users accept friction once is a hypothesis to test; WhatsApp and Midjourney are examples, not evidence that newsroom readers will.",
+   "section": "limits",
+   "quote": "WhatsApp and Midjourney are examples, not evidence that readers of a newsroom will.",
+   "about": [
+    "entity:whatsapp",
+    "entity:midjourney"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The wires are new, and whether OWASP or AWS readers want a wire has not been tested.",
+   "section": "limits",
+   "quote": "Whether OWASP or AWS readers want a wire is exactly what has not been tested yet.",
+   "about": [
+    "concept:the-wire",
+    "entity:owasp",
+    "entity:aws"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 13 October 2026, written by the site's agent, with the argument and editorial responsibility the owner's.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 13 October 2026, written by this site's agent in the voice of this site.",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c12",
+   "verb": "gives_rise_to",
+   "to": "c14"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c21"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose vault pane showed the count and would carry the lane"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site whose published key already receives the reading summary over an append lane"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the meter that encrypts the reading summary in the browser"
+  },
+  {
+   "id": "webauthn",
+   "role": "the passkeys that work in one browser and not in the in-app view"
+  },
+  {
+   "id": "apple",
+   "role": "whose rule keeps passkeys from in-app web views outside associated domains"
+  },
+  {
+   "id": "whatsapp",
+   "role": "the example of a one-off linking step, and a way to send the link to oneself"
+  },
+  {
+   "id": "midjourney",
+   "role": "the image generator that grew on a Discord slash command"
+  },
+  {
+   "id": "discord",
+   "role": "the chat platform whose case study gives the one million users figure"
+  },
+  {
+   "id": "gmail",
+   "role": "the mail service whose API allows what the connector does not"
+  },
+  {
+   "id": "google",
+   "role": "publishes the Gmail API guides on uploads and threads"
+  },
+  {
+   "id": "claude",
+   "role": "the agent connected to Gmail through the connector"
+  },
+  {
+   "id": "industry-wire",
+   "role": "the first wire, whose pipeline now serves the OWASP and AWS wires"
+  },
+  {
+   "id": "owasp",
+   "role": "the community the OWASP Wire covers"
+  },
+  {
+   "id": "aws",
+   "role": "the platform the AWS Wire covers"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "the-wire",
+   "defined_here": true
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://developer.apple.com/documentation/authenticationservices/supporting-passkeys",
+   "title": "Supporting passkeys",
+   "by": "Apple",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://developer.chrome.com/blog/passkeys-gpm-ios",
+   "title": "Passkeys in Google Password Manager on iOS",
+   "by": "Google",
+   "date": "2025-01-16",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://developers.google.com/workspace/gmail/api/guides/uploads",
+   "title": "Gmail API guide: uploads",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://developers.google.com/workspace/gmail/api/guides/threads",
+   "title": "Gmail API guide: threads",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://discord.com/build-case-studies/midjourney",
+   "title": "Midjourney case study",
+   "by": "Discord",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r06",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "title": "Use Google Workspace connectors",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-13",
+   "what": "The sixteen changes seen on the iPhone; the voice memo; the OWASP and AWS wires added"
+  },
+  {
+   "date": "2025-01-16",
+   "what": "Google's post on passkeys from Google Password Manager in Chrome on iOS"
+  }
+ ]
+}

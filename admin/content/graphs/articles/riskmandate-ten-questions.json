@@ -1,0 +1,675 @@
+{
+ "slug": "riskmandate-ten-questions",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The owner's co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate.",
+   "section": "top",
+   "quote": "My co-founder came back from a conference with ten hard questions, the ones people actually ask about a product like RiskMandate.",
+   "about": [
+    "entity:riskmandate",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "RiskMandate defines the risk that comes with the mandate a business gives an agent.",
+   "section": "top",
+   "quote": "RiskMandate defines the risk that comes with the mandate a business gives an agent.",
+   "about": [
+    "entity:riskmandate",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "An Agent Behaviour Policy is a written description, for one agent in one deployment, of four things: mandate, grant, delta and barriers.",
+   "section": "top",
+   "quote": "a written description, for one agent in one deployment, of four things.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "The delta, or gap, is reach minus mandate: excess, unbounded excess, shortfall; it is derived, never authored.",
+   "section": "top",
+   "quote": "Reach minus mandate: excess, unbounded excess, shortfall",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "Barriers are recorded as none, expectation, setting or boundary, and only a boundary is a control.",
+   "section": "top",
+   "quote": "Recorded as none, expectation, setting or boundary; only a boundary is a control",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The goal of every engagement is the smallest mandate, the smallest reach, the smallest gap, and the smallest residual where the agent has to police itself.",
+   "section": "top",
+   "quote": "The goal of every engagement is the smallest mandate, the smallest reach, the smallest gap, and the smallest residual where the agent has to police itself.",
+   "about": [
+    "concept:reach",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "decision",
+   "text": "RiskMandate is not in the request path, by design; being inline would make it a competitor to everyone and put liability on it.",
+   "section": "top",
+   "quote": "RiskMandate is not in the request path, by design.",
+   "about": [
+    "entity:riskmandate",
+    "concept:liability-line",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "A $75k order is only possible if the reach allowed it on day one; the policy surfaces that as unbounded excess before any action.",
+   "section": "top",
+   "quote": "A $75k order is only possible if the reach allowed it on day one",
+   "about": [
+    "concept:reach",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "An agent permitted £10k per action that can perform a thousand actions carries a £10m exposure, so unbounded includes volume, not just size.",
+   "section": "top",
+   "quote": "An agent permitted £10k per action that can perform a thousand actions carries a £10m exposure.",
+   "about": [
+    "concept:blast-radius",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "million GBP exposure from £10k per action over a thousand actions",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Self-policing is not the goal but the fallback; the value is in creating the policy, which discovers what is possible and where the gaps are.",
+   "section": "top",
+   "quote": "Self-policing is not the goal; it is the fallback.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Claude has flagged its own actions as outside the policy, which improves the policy, but that is the agent checking itself, not RiskMandate watching.",
+   "section": "top",
+   "quote": "Claude has flagged its own actions as outside the policy, and that improves the policy.",
+   "about": [
+    "entity:claude",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Reach is a computed value, and new capability can only ever land in the reach as excess, never as new authority, because the mandate is locked business logic.",
+   "section": "top",
+   "quote": "so new capability can only ever land as excess, never as new authority.",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "When the reach calculation is wired to the pipeline, a change recomputes the delta, triggers a re-review, re-evaluates the licence to operate and escalates up to pulling the plug.",
+   "section": "top",
+   "quote": "escalation follows, up to automatic loss of the licence, which means pulling the plug.",
+   "about": [
+    "concept:licence-to-operate",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Connect Gmail to several agents and every agent inherits everything the connection allows; in the owner's own setup, an inbox agent and a briefing agent can both send email.",
+   "section": "top",
+   "quote": "Connect Gmail to several agents and every agent inherits everything the connection allows.",
+   "about": [
+    "entity:gmail",
+    "concept:connectors",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "decision",
+   "text": "Everything RiskMandate builds is open source, policies, code, vaults and backend, with no proprietary layer; the customer buys time, maintenance and de-risking of change.",
+   "section": "top",
+   "quote": "Everything we build is open source: policies, code, vaults, backend. There is no proprietary layer.",
+   "about": [
+    "concept:open-source",
+    "concept:pricing",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "The four one-off levels, pack, vault, corrected and signed, are currently £10, £50, £500 and £1,500 per agent per deployment.",
+   "section": "top",
+   "quote": "currently £10, £50, £500 and £1,500 per agent per deployment",
+   "about": [
+    "concept:pricing",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 1500,
+    "unit": "GBP, the top one-off level per agent per deployment",
+    "as_of": "2026-10-09"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Above the levels sit £5k, £50k and £100k engagements, sized by resources consumed, customisation and support.",
+   "section": "top",
+   "quote": "Above them sit £5k, £50k and £100k engagements, sized by resources consumed, customisation and support.",
+   "about": [
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 100000,
+    "unit": "GBP, the largest engagement size",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The four levels exist, two have never sold, payment rails are incomplete, and design partners are currently free.",
+   "section": "top",
+   "quote": "The four levels exist, two have never sold, payment rails are incomplete, and design partners are currently free",
+   "about": [
+    "concept:startups",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Liability always sits with the customer; the moment of authorisation is the grant, not the mandate, and exposure exists the instant the grant exists.",
+   "section": "top",
+   "quote": "Liability always sits with the customer. The moment of authorisation is the grant, not the mandate.",
+   "about": [
+    "concept:liability-line",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "No risk transfer exists today; the honest claim is that RiskMandate makes agents insurable, it does not insure them.",
+   "section": "top",
+   "quote": "No risk transfer exists today. The honest claim: we make agents insurable.",
+   "about": [
+    "concept:insurability",
+    "entity:riskmandate"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "decision",
+   "text": "RiskMandate is not an insurer: it carries no risk and places no cover.",
+   "section": "top",
+   "quote": "Not an insurer. We carry no risk and place no cover.",
+   "about": [
+    "concept:insurability",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "decision",
+   "text": "RiskMandate is not a one-button solution, because what can stop an agent depends on what exists in each deployment.",
+   "section": "top",
+   "quote": "Not a one-button solution. What can actually stop an agent depends on what exists in each deployment.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "RiskMandate is an enabler of the other vendors, not a competitor; every written rule gives an existing product something to enforce and a number to move.",
+   "section": "top",
+   "quote": "RiskMandate is an enabler of the other vendors, not a competitor.",
+   "about": [
+    "concept:the-market",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The moat is method, trust and maintenance on an open-source base: a services-and-expertise moat rather than a product artefact.",
+   "section": "top",
+   "quote": "The moat is method, trust and maintenance on an open-source base: a services-and-expertise moat rather than a product artefact.",
+   "about": [
+    "concept:strategy",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "RiskMandate has proposed Agent Behaviour Policies as an OWASP project, because platforms adopting them makes the approach the standard.",
+   "section": "top",
+   "quote": "which is why we have proposed Agent Behaviour Policies as an OWASP project.",
+   "about": [
+    "entity:owasp",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The supply chain is just a bigger agent: a compromised dependency is a grant that exploded or a boundary that vanished, which recomputes the delta like any other change.",
+   "section": "top",
+   "quote": "The supply chain is just a bigger agent.",
+   "about": [
+    "concept:supply-chains",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Trust travels through connectivity in the graph: trust in a situation grows with independent, corroborating signals.",
+   "section": "top",
+   "quote": "Trust in a situation grows with independent, corroborating signals.",
+   "about": [
+    "concept:meaning-through-connectivity",
+    "concept:fractal-semantic-graphs",
+    "entity:graphs-sgit-ai"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "RiskMandate authors the policy, shares the decision as a design-time pre-commitment, and never enforces; monitoring is the customer's.",
+   "section": "top",
+   "quote": "RiskMandate authors, shares the decision as a design-time pre-commitment, and never enforces.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "Reversal is the next evolution of the policy, built on digital twins, replay and version control, and bounded by one-way doors.",
+   "section": "top",
+   "quote": "Reversal is the next evolution, built on digital twins, replay and version control, and bounded by one-way doors.",
+   "about": [
+    "concept:connectors",
+    "concept:one-way-door",
+    "entity:twins-sgit-ai"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "Attenuating delegated authority between agents needs PKI on top of the policy: authorisation by encryption, not by privilege.",
+   "section": "top",
+   "quote": "Attenuating delegated authority needs PKI on top: authorisation by encryption, not by privilege.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:pki-sgit-ai",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The headline metric is reduction in the risk the business has to accept; every time a grant shrinks, the gap and the risk shrink.",
+   "section": "top",
+   "quote": "The headline metric is reduction in accepted risk.",
+   "about": [
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "RiskMandate owns the risk and coverage metrics and explicitly does not own runtime metrics such as latency, false positives or time to recover.",
+   "section": "top",
+   "quote": "RiskMandate owns the risk and coverage metrics, and explicitly does not own runtime metrics such as latency or time to recover.",
+   "about": [
+    "concept:risk-acceptance",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "Three things on riskmandate.ai contradict the position above and were still there when the page was written on 9 October 2026.",
+   "section": "top",
+   "quote": "Three things on riskmandate.ai contradict the position above, and were still there when this page was written on 9 October 2026",
+   "about": [
+    "concept:corrections-propagate",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "data-point",
+   "text": "The Level 1 price is £10 on the home and pricing pages and £5 on the Licence to Operate page; one of them is wrong.",
+   "section": "top",
+   "quote": "£10 on the home and pricing pages, £5 on the Licence to Operate page. One of them is wrong.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "GBP, Level 1 price on the home page, against £5 elsewhere",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "The 0.388 reproduction precision figure is quoted from the interview; its source page was not located while preparing the article.",
+   "section": "top",
+   "quote": "The 0.388 figure is quoted from the interview; its source page was not located while preparing this one.",
+   "about": [
+    "concept:risk-acceptance"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c15"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c20"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c31"
+  },
+  {
+   "from": "c34",
+   "verb": "backs",
+   "to": "c33"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c31"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "the company whose ten questions are answered"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "answered the questions in a two-hour interview; author of the answers"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "defines the Agent Behaviour Policy model the answers rest on"
+  },
+  {
+   "id": "claude",
+   "role": "acted as the journalist; has flagged its own actions as outside a policy"
+  },
+  {
+   "id": "gmail",
+   "role": "the connector whose broad grant every agent inherits"
+  },
+  {
+   "id": "owasp",
+   "role": "Agent Behaviour Policies proposed as one of its projects"
+  },
+  {
+   "id": "graphs-sgit-ai",
+   "role": "where the trust-through-connectivity graph work lives"
+  },
+  {
+   "id": "twins-sgit-ai",
+   "role": "the digital twins that reversal would be built on"
+  },
+  {
+   "id": "pki-sgit-ai",
+   "role": "the PKI that would enforce delegated authority"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": true
+  },
+  {
+   "id": "reach",
+   "defined_here": true
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "licence-to-operate",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "insurability",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://abp.sgit.ai/model/delta/index.html",
+   "title": "The delta",
+   "by": "abp.sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://riskmandate.ai/pricing.html",
+   "title": "Pricing",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://riskmandate.ai/insurance.html",
+   "title": "Insurability Index",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://riskmandate.ai/licence-to-operate.html",
+   "title": "Licence to Operate",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-09",
+   "what": "The two-hour interview with Claude as journalist; the three site contradictions checked and still present"
+  }
+ ]
+}

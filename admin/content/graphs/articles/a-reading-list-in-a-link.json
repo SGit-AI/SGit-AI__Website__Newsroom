@@ -1,0 +1,609 @@
+{
+ "slug": "a-reading-list-in-a-link",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "Send someone an email with a link, and when they open it the newsroom says: from Dinis, for Steve, here are the articles to read, a couple worth a look, and what to follow.",
+   "section": "top",
+   "quote": "from Dinis, for Steve, here are the articles I think you should read",
+   "about": [
+    "concept:the-reading-list",
+    "entity:dinis-cruz",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The newsroom's curation is close but not personal; it is missing the last 10 to 20%, which is what turns a site into the beginning of a conversation.",
+   "section": "top",
+   "quote": "it is missing the last 10 to 20%",
+   "about": [
+    "concept:personas",
+    "concept:the-reading-list"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The article is three things: a brief for the newsroom, a brief for the RiskMandate agent that keeps the owner's contacts, and the loop that connects them.",
+   "section": "top",
+   "quote": "So it is in three parts: two briefs, and the loop.",
+   "about": [
+    "concept:the-brief",
+    "concept:the-loop"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "proposal",
+   "text": "The names and article numbers travel in the URL fragment, which browsers do not send to the server; the page builds the list in the browser and offers to keep it as a persona.",
+   "section": "short",
+   "quote": "which browsers do not send to the server. The page builds the list in the browser, and offers to keep it as a persona.",
+   "about": [
+    "concept:client-side",
+    "concept:privacy",
+    "entity:rfc-3986",
+    "concept:the-reading-list"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "proposal",
+   "text": "Every article gets a short number assigned once in publication order, kept in a public file that only grows and never changed or reused, so a link written today still works in a year.",
+   "section": "short",
+   "quote": "A number is never changed or reused, so a link written today still works in a year.",
+   "about": [
+    "concept:publishing-method",
+    "concept:the-reading-list"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "proposal",
+   "text": "Anyone can make a list: a page to pick articles, type two names and copy the link; curating for someone else is a service people already pay for.",
+   "section": "short",
+   "quote": "Curating for someone else is a service people already pay for; this makes it a link.",
+   "about": [
+    "concept:the-reading-list",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "proposal",
+   "text": "The RiskMandate agent, which keeps the owner's contacts, chooses the person with him, researches what is public, picks the articles and the reasons, builds and tests the link, and drafts the email; agents draft, the owner sends.",
+   "section": "short",
+   "quote": "It chooses the person with me, researches what is public, picks the articles and writes down why",
+   "about": [
+    "entity:riskmandate",
+    "concept:human-in-the-loop",
+    "concept:the-reading-list"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "decision",
+   "text": "Nothing tracks the reader: the link carries two first names and some numbers, nothing is sent when it opens, and the conversation starts when they reply.",
+   "section": "short",
+   "quote": "We will not know whether it was opened. The conversation starts when they reply.",
+   "about": [
+    "concept:privacy",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "A gate in the build checks that every published article has a number, numbers are unique and stable across releases, and a number is never reused even if an article is withdrawn.",
+   "section": "brief-newsroom",
+   "quote": "a number is never reused, even if an article is withdrawn",
+   "about": [
+    "concept:publishing-method",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "The page validates everything: names up to 40 characters rendered as text, numbers that exist in ids.json, a list of 1 to 50 articles, and anything malformed dropped and reported.",
+   "section": "brief-newsroom",
+   "quote": "A list holds 1 to 50 articles.",
+   "about": [
+    "concept:the-reading-list"
+   ],
+   "value": {
+    "n": 50,
+    "unit": "articles a list may hold at most"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "The list becomes a visitor persona named for the two people, with the read list as its reading list, active while on the page and removable in one tap.",
+   "section": "brief-newsroom",
+   "quote": "added to the reader's personas as a visitor",
+   "about": [
+    "concept:personas",
+    "concept:the-reading-list"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "limit",
+   "text": "The names are whatever the link says; a signed list, so the sender can be proved, is a later step on the keys of RFC 0001.",
+   "section": "brief-newsroom",
+   "quote": "A signed list, so the sender can be proved, is a later step",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "An optional field with the sender's address turns on a plain mailto Reply button; without it there is none, and the reply is how the sender learns anything.",
+   "section": "brief-newsroom",
+   "quote": "The reply is how the sender learns anything.",
+   "about": [
+    "concept:the-reading-list",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "To know it works: parser tests, the build gate on numbers, a synthetic recipient, a founder called Steve on a phone and a laptop, and acceptance on the live site.",
+   "section": "brief-newsroom",
+   "quote": "Do they understand who it is from, why, and what to do next?",
+   "about": [
+    "concept:synthetic-users",
+    "entity:founder"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "decision",
+   "text": "What not to build: no accounts, no server endpoint, no open tracking or click-counting shorteners, no storage of who sent what to whom, nothing in the link that would embarrass anyone if forwarded.",
+   "section": "brief-newsroom",
+   "quote": "No accounts. No server endpoint. No open tracking, pixels or link shorteners that count clicks.",
+   "about": [
+    "concept:privacy",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "The agent's steps: choose the person with Dinis, research public sources with their provenance, choose three to seven articles with a line each on why, build and test the link, draft the email, record it, and close the loop.",
+   "section": "brief-crm",
+   "quote": "The list is the opening line; the conversation is the point.",
+   "about": [
+    "entity:riskmandate",
+    "concept:the-reading-list",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "The rules: one person, one list, one email; nothing private in the link; never write as Dinis without Dinis; public research only, with its source.",
+   "section": "brief-crm",
+   "quote": "Every message in Dinis's name is approved and sent by Dinis.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:riskmandate",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The feature needs editorial, product, engineering, sales and the founder, which in most companies is weeks of meetings, tickets and reviews, with intent lost at each hand-off.",
+   "section": "loop",
+   "quote": "Editorial, product, engineering, sales and the founder.",
+   "about": [
+    "concept:the-loop"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Here the loop is a day: every hand-off is written down, each part owns its own repository or vault, the contracts are small and explicit, each part tests what it receives, and feedback comes back the same way.",
+   "section": "loop",
+   "quote": "Here, the loop is a day.",
+   "about": [
+    "concept:the-loop",
+    "concept:the-brief",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "A link to a persona was published as a design at 16:57 on 10 October, and 17 hours later the newsroom released v0.7.0 with five persona links, in a simpler form than the brief asked for.",
+   "section": "loop",
+   "quote": "At 09:53 the next morning, 17 hours later, the newsroom released v0.7.0",
+   "about": [
+    "concept:the-loop",
+    "entity:newsroom-sgit-ai",
+    "concept:personas"
+   ],
+   "value": {
+    "n": 17,
+    "unit": "hours from the brief to the released feature",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "Five synthetic readers found that 51 of 527 figures had not survived the newsroom's move to its own domain.",
+   "section": "loop",
+   "quote": "51 of 527 figures had not survived the newsroom's move to its own domain",
+   "about": [
+    "concept:synthetic-users",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 51,
+    "of": 527,
+    "unit": "figures missing after the move"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "Payments went live on the newsroom on 11 October, and 32 minutes after this site published an article saying they were not live yet, that article, two others and a figure said so.",
+   "section": "loop",
+   "quote": "32 minutes after this site had published an article saying they were not live yet",
+   "about": [
+    "concept:corrections-propagate",
+    "entity:sgit-ai",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 32,
+    "unit": "minutes from a fact changing to the record following",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Satya Nadella published a post on models as insider risks on 10 October; by the next morning a separate session had researched and drafted two answers and this one had published them.",
+   "section": "loop",
+   "quote": "Satya Nadella published a post on models as insider risks on 10 October",
+   "about": [
+    "entity:satya-nadella",
+    "concept:the-loop",
+    "concept:insider-risk"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The parts drift: while the publishers page was being written another session released two versions of the site, and the page and the newsroom were briefly out of step.",
+   "section": "loop",
+   "quote": "the page and the newsroom were briefly out of step",
+   "about": [
+    "concept:the-loop",
+    "concept:shipping",
+    "entity:publisher"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Sessions run out: each works within a budget, and when it runs out the work waits; the writing of articles is moving to the newsroom's own agents.",
+   "section": "loop",
+   "quote": "Each session works within a budget, and when it runs out, the work waits.",
+   "about": [
+    "concept:the-loop",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "One person is still the router and the bottleneck; the way to widen it is to make every decision smaller, better prepared and quicker to check, not to remove the person.",
+   "section": "loop",
+   "quote": "That is the right place for a person, and it is also the bottleneck.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Two emails once went out in the owner's voice when they should not have, which is why the brief says twice that agents draft and the owner sends.",
+   "section": "loop",
+   "quote": "Two emails once went out in my voice when they should not have.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "A loop this fast is what lets a site with no team in the usual sense ship a newsroom with payments, personas and its own desk of agents in a few weeks.",
+   "section": "loop",
+   "quote": "ship a newsroom with payments, personas and its own desk of agents in a few weeks",
+   "about": [
+    "concept:the-loop",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The reading list page in the first figure is an illustrative mock of the design, not the built feature, and its article numbers are examples.",
+   "section": "sources",
+   "quote": "the reading list page in the first figure is an illustrative mock of the design, not the built feature",
+   "about": [
+    "concept:the-reading-list"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 11 October 2026 asking for two briefs and an explanation of the workflow, written by the site's agent; the dates in the loop figure are from the git logs.",
+   "section": "sources",
+   "quote": "A voice memo of mine, recorded on 11 October 2026, asking for two briefs",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c06",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c11",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c07"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c04"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "where the reading list opens, and the session that builds the feature"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site whose session wrote the briefs and corrected its articles in 32 minutes"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the agent that keeps the owner's contacts and will draft the emails"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the sender, the router and the one who approves every email in his name"
+  },
+  {
+   "id": "satya-nadella",
+   "role": "his post on models as insider risks was answered by the next morning"
+  },
+  {
+   "id": "founder",
+   "role": "the synthetic recipient, a founder called Steve, and the people the lists are for"
+  },
+  {
+   "id": "publisher",
+   "role": "the page for publishers whose writing overlapped two releases"
+  },
+  {
+   "id": "rfc-3986",
+   "role": "section 3.5, the fragment the browser never sends"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-reading-list",
+   "defined_here": true
+  },
+  {
+   "id": "the-loop",
+   "defined_here": true
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "insider-risk",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.rfc-editor.org/rfc/rfc3986",
+   "title": "RFC 3986, section 3.5",
+   "by": "IETF",
+   "date": "undated",
+   "kind": "standard"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The voice memo and the two briefs; payments go live on the newsroom; persona links released 17 hours after their brief"
+  },
+  {
+   "date": "2026-10-10",
+   "what": "A link to a persona published at 16:57; Satya Nadella's post on models as insider risks"
+  }
+ ]
+}

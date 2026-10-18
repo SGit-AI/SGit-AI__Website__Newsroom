@@ -1,0 +1,828 @@
+{
+ "slug": "a-custom-firefox-of-my-own",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "A plan to make a custom Firefox with a Ruflo hive of Claude Code workers, an sgit vault as its memory and a behaviour policy as its mandate, for the laptop and the iPad.",
+   "section": "top",
+   "quote": "a plan to make a custom Firefox with the workflow we showed at the agentics talk",
+   "about": [
+    "entity:firefox",
+    "entity:ruflo",
+    "entity:claude-code",
+    "entity:sgit",
+    "concept:behaviour-policy",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The workflow is a hive, a memory and a mandate: Ruflo gives the hands, an sgit vault the memory, and an Agent Behaviour Policy gives each role its mandate.",
+   "section": "want",
+   "quote": "a hive, a memory and a mandate",
+   "about": [
+    "concept:multi-agent",
+    "concept:vault",
+    "concept:behaviour-policy",
+    "entity:ruflo",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "limit",
+   "text": "The plan is a proposal that the owner has not run yet, and it says so where it matters.",
+   "section": "want",
+   "quote": "The plan below is a proposal: I have not run it yet",
+   "about": [
+    "entity:firefox",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The plan starts as explorer coding: the owner writes the wants in his own words, the list goes into the vault, and it is the brief.",
+   "section": "brief",
+   "quote": "That list goes into the vault, and it is the brief.",
+   "about": [
+    "concept:explorer-villager-town-planner",
+    "concept:the-brief",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "decision",
+   "text": "For each want the first worker finds the lowest layer that delivers it, because every layer up is more to maintain.",
+   "section": "brief",
+   "quote": "for each want, find the lowest layer that delivers it, because every layer up is more to maintain",
+   "about": [
+    "concept:lowest-layer-first"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Firefox reads a policies.json from a distribution folder; policies cover menus, home page, search, extensions and the AI sidebar, survive updates and need almost no maintenance.",
+   "section": "layers",
+   "quote": "They survive updates and need almost no maintenance.",
+   "about": [
+    "entity:firefox",
+    "concept:lowest-layer-first"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "A userChrome.css in the profile can restyle or hide any part of the browser's interface; it is the most powerful layer without code and the least stable, because it is unsupported.",
+   "section": "layers",
+   "quote": "It is the most powerful layer without code, and the least stable",
+   "about": [
+    "entity:firefox",
+    "concept:lowest-layer-first"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Extensions need to be signed by Mozilla, an unlisted one is signed and then distributed by the owner, and extensions cannot restructure the browser.",
+   "section": "layers",
+   "quote": "They cannot restructure the browser.",
+   "about": [
+    "entity:firefox",
+    "entity:mozilla",
+    "concept:lowest-layer-first"
+   ],
+   "refs": [
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "A personal fork is a small patch set on top of the release, the way LibreWolf carries 63 patches and Debian 17, applied to each new version.",
+   "section": "fork",
+   "quote": "carries 63 patches and Debian 17, applied to each new version",
+   "about": [
+    "entity:librewolf",
+    "entity:firefox"
+   ],
+   "value": {
+    "n": 63,
+    "unit": "patches LibreWolf carries on Firefox",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Firefox's artifact mode downloads pre-built C++ components, so a change to the interface does not need the full compile.",
+   "section": "fork",
+   "quote": "downloads pre-built C++ components rather than building them locally",
+   "about": [
+    "entity:firefox"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "A full Firefox build is within reach on a laptop: Mozilla asks for 8 GB of memory and 30 GB of disk.",
+   "section": "fork",
+   "quote": "8 GB of memory and 30 GB of disk",
+   "about": [
+    "entity:firefox",
+    "entity:mozilla"
+   ],
+   "value": {
+    "n": 8,
+    "unit": "GB of memory for a full build, with 30 GB of disk"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Mozilla's trademark policy forbids distributing a modified Firefox under that name, so a personal fork has to be renamed; only Mozilla can ship a custom build called Firefox.",
+   "section": "fork",
+   "quote": "you may not distribute a modified form of Firefox and continue to call it Firefox",
+   "about": [
+    "entity:mozilla",
+    "entity:firefox"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Apple's App Review Guideline 2.5.6 requires apps that browse the web to use WebKit, with exceptions only in the EU and Japan.",
+   "section": "ipad",
+   "quote": "Apps that browse the web must use the appropriate WebKit framework",
+   "about": [
+    "entity:apple",
+    "entity:webkit",
+    "entity:european-union"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Mozilla has decided not to build Gecko for iOS because a separate build would mean doubling the size of its iOS team.",
+   "section": "ipad",
+   "quote": "would mean we would basically have to double the size of our iOS team",
+   "about": [
+    "entity:mozilla"
+   ],
+   "refs": [
+    "r12"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Firefox for iOS is a separate Swift codebase on WebKit, none of the desktop layers exist there, and the only route is a fork built in Xcode and installed on the owner's iPad.",
+   "section": "ipad",
+   "quote": "The only route is a fork of that codebase, changed by the hive, built in Xcode and installed on my own iPad.",
+   "about": [
+    "entity:firefox",
+    "entity:webkit",
+    "entity:apple"
+   ],
+   "refs": [
+    "r19"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "With a free Apple account the install lasts 7 days on up to 3 devices; a paid developer account gives a year and TestFlight.",
+   "section": "ipad",
+   "quote": "the install lasts 7 days",
+   "about": [
+    "entity:apple"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "days an install lasts with a free Apple account"
+   },
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "The maintenance loop: each Firefox release starts a run in which the hive rebases the patches, rebuilds, tests each want, compares screenshots and reports, and the owner approves or refuses.",
+   "section": "loop",
+   "quote": "the hive rebases the patches, rebuilds, tests each want, compares screenshots and reports",
+   "about": [
+    "concept:multi-agent",
+    "concept:human-in-the-loop",
+    "concept:vault",
+    "entity:firefox"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Since Firefox 155 on 1 September a new major release is made every two weeks, so a fork has 26 releases a year to follow, on each of two codebases.",
+   "section": "loop",
+   "quote": "so a fork has 26 releases a year to follow, on each of two codebases",
+   "about": [
+    "entity:firefox",
+    "concept:sell-the-maintenance"
+   ],
+   "value": {
+    "n": 26,
+    "unit": "Firefox releases a year",
+    "as_of": "2026-09-01"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "LibreWolf, with a team, ships within three days of each upstream release; Waterfox's maintainer describes a project often run by one person and a few months in the red.",
+   "section": "loop",
+   "quote": "a few months in the red recently",
+   "about": [
+    "entity:librewolf",
+    "entity:waterfox",
+    "concept:sell-the-maintenance"
+   ],
+   "refs": [
+    "r13",
+    "r14"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The behaviour policy says what no worker may do: change anything but the front end, weaken security, updates or signing, use Mozilla's trademarks, or ship without the owner's approval.",
+   "section": "loop",
+   "quote": "change anything but the front end, weaken security, updates or signing, use Mozilla's trademarks, or ship without my approval",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:mozilla"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "PortGPT, a research system for porting Linux patches to older versions, reported an 89.15% success rate on 1,815 cases.",
+   "section": "loop",
+   "quote": "a research system for porting Linux patches to older versions, reported",
+   "about": [
+    "concept:multi-agent"
+   ],
+   "value": {
+    "n": 89.15,
+    "of": 1815,
+    "unit": "percent of patch-porting cases",
+    "as_of": "2025"
+   },
+   "refs": [
+    "r15"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The owner found no browser fork maintained without people checking the result, so the plan has him read the report and approve every release.",
+   "section": "loop",
+   "quote": "I read the report and approve every release",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "hypothesis",
+   "text": "Mozilla should sell to one person what it sells to organisations: explore for free, keep it working for about 50p a release, a change built properly for £50 to £500.",
+   "section": "top",
+   "quote": "I think it should sell the same to one person",
+   "about": [
+    "entity:mozilla",
+    "concept:sell-the-maintenance",
+    "concept:pricing",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "On 12 October Mozilla introduced Firefox Enterprise, with its own branding and a management console, and its paid support offers custom development options.",
+   "section": "business",
+   "quote": "On 12 October it introduced",
+   "about": [
+    "entity:mozilla",
+    "entity:firefox-enterprise"
+   ],
+   "refs": [
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "Keeping a customisation tested against each release at about 50p a release comes to £13 a year.",
+   "section": "business",
+   "quote": "That is £13 a year.",
+   "about": [
+    "concept:pricing",
+    "concept:sell-the-maintenance"
+   ],
+   "value": {
+    "n": 13,
+    "unit": "GBP a year at about 50p a release"
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Mozilla is better placed than the owner to keep a custom Firefox working: it alone can ship a modified build called Firefox, it signs extensions, it builds the next release and it maintains both codebases.",
+   "section": "business",
+   "quote": "Mozilla is better placed than I am",
+   "about": [
+    "entity:mozilla",
+    "concept:sell-the-maintenance"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Mozilla depends on royalties for about three quarters of its revenue, and charging per version or per change is the income its chief executive meant by diversifying beyond search.",
+   "section": "business",
+   "quote": "the kind of income its chief executive meant by",
+   "about": [
+    "entity:mozilla",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The plan has not been run; every step is checked against the documentation, not tried end to end.",
+   "section": "limits",
+   "quote": "It is a plan; every step is checked against the documentation, not tried end to end.",
+   "about": [
+    "concept:lowest-layer-first"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The prices are illustrative, the owner's and not Mozilla's.",
+   "section": "limits",
+   "quote": "The prices are illustrative. Mine, not Mozilla's.",
+   "about": [
+    "concept:pricing",
+    "entity:mozilla"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "Mozilla's consumer offer does not exist; its enterprise build and support do, and their prices are not public.",
+   "section": "limits",
+   "quote": "Its enterprise build and support do; their prices are not public.",
+   "about": [
+    "entity:mozilla",
+    "entity:firefox-enterprise"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "No agent maintains a browser fork alone; the plan keeps a person approving every release.",
+   "section": "limits",
+   "quote": "No agent maintains a browser fork alone.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The iPad route needs a developer account and only changes what Firefox for iOS can change on WebKit.",
+   "section": "limits",
+   "quote": "The iPad route needs a developer account.",
+   "about": [
+    "entity:apple",
+    "entity:webkit"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of the owner on 16 October 2026, written by the site's agent in the voice of the site.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 16 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c25",
+   "verb": "specifies",
+   "to": "c23"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c24"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c15"
+  }
+ ],
+ "entities": [
+  {
+   "id": "firefox",
+   "role": "the browser the plan customises, on the laptop and the iPad"
+  },
+  {
+   "id": "mozilla",
+   "role": "maker of Firefox, which the owner would pay to keep the customisation working"
+  },
+  {
+   "id": "apple",
+   "role": "requires WebKit for browsers on the iPad and controls installs"
+  },
+  {
+   "id": "ruflo",
+   "role": "the hive that gives the Claude Code workers their roles"
+  },
+  {
+   "id": "claude-code",
+   "role": "the workers in the hive"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault that is the hive's memory"
+  },
+  {
+   "id": "european-union",
+   "role": "one of two places where Apple allows non-WebKit browsers"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, who wrote the plan and approves every release"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where to write for a customised build kept working"
+  },
+  {
+   "id": "librewolf",
+   "role": "a Firefox fork carrying 63 patches, shipping within three days of upstream"
+  },
+  {
+   "id": "waterfox",
+   "role": "a Firefox fork whose maintainer wrote about 15 years of forking"
+  },
+  {
+   "id": "webkit",
+   "role": "the engine Apple requires for browsers on iOS and the iPad"
+  },
+  {
+   "id": "firefox-enterprise",
+   "role": "Mozilla's branded build and management console for organisations, introduced 12 October 2026"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "lowest-layer-first",
+   "defined_here": true
+  },
+  {
+   "id": "sell-the-maintenance",
+   "defined_here": true
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://firefox-admin-docs.mozilla.org/guides/firefox-channels/",
+   "title": "Firefox channels",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://firefox-admin-docs.mozilla.org/reference/policies/",
+   "title": "Policy reference",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html",
+   "title": "Artifact builds",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://firefox-source-docs.mozilla.org/setup/linux_build.html",
+   "title": "Building Firefox on Linux",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface",
+   "title": "Extension user interfaces",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://extensionworkshop.com/documentation/publish/signing-and-distribution-overview/",
+   "title": "Signing and distribution overview",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.mozilla.org/en-US/foundation/trademarks/distribution-policy/",
+   "title": "Distribution policy",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r08",
+   "url": "https://blog.mozilla.org/en/firefox/introducing-firefox-enterprise/",
+   "title": "Introducing Firefox Enterprise",
+   "by": "Mozilla",
+   "date": "2026-10-12",
+   "kind": "post"
+  },
+  {
+   "id": "r09",
+   "url": "https://blog.mozilla.org/en/firefox/firefox-support-for-organizations/",
+   "title": "Firefox Support for Organizations",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r10",
+   "url": "https://developer.apple.com/app-store/review/guidelines/",
+   "title": "App Review Guidelines",
+   "by": "Apple",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r11",
+   "url": "https://developer.apple.com/support/compare-memberships/",
+   "title": "Membership comparison",
+   "by": "Apple",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r12",
+   "url": "https://piunikaweb.com/2026/09/30/mozilla-gecko-ios-apple-eu-rules/",
+   "title": "Mozilla on Gecko for iOS and Apple's EU rules",
+   "by": "PiunikaWeb, relaying Ars Technica",
+   "date": "2026-09-30",
+   "kind": "news"
+  },
+  {
+   "id": "r13",
+   "url": "https://librewolf.net/docs/faq/",
+   "title": "LibreWolf FAQ",
+   "by": "LibreWolf",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r14",
+   "url": "https://waterfox.com/blog/15-years-of-forking",
+   "title": "15 years of forking",
+   "by": "Waterfox",
+   "date": "2026-03-27",
+   "kind": "post"
+  },
+  {
+   "id": "r15",
+   "url": "https://arxiv.org/abs/2510.22396",
+   "title": "PortGPT",
+   "by": "Li and others",
+   "date": "2025",
+   "kind": "paper"
+  },
+  {
+   "id": "r16",
+   "url": "https://ruv.sgit.ai/articles/how-it-was-made.html",
+   "title": "How it was made",
+   "by": "ruv.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r17",
+   "url": "https://abp.sgit.ai/what-is-an-abp/index.html",
+   "title": "What is an ABP",
+   "by": "abp.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r18",
+   "url": "https://github.com/mozilla-firefox/firefox",
+   "title": "Firefox source",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r19",
+   "url": "https://github.com/mozilla-mobile/firefox-ios",
+   "title": "Firefox for iOS",
+   "by": "Mozilla",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-16",
+   "what": "The voice memo and the plan; the sources read"
+  },
+  {
+   "date": "2026-09-01",
+   "what": "Firefox 155, the start of a new major release every two weeks"
+  },
+  {
+   "date": "2026-10-12",
+   "what": "Mozilla introduces Firefox Enterprise"
+  },
+  {
+   "date": "2026-09-30",
+   "what": "Mozilla's head of Firefox on not building Gecko for iOS"
+  },
+  {
+   "date": "2026-03-27",
+   "what": "Waterfox's maintainer writes about 15 years of forking"
+  }
+ ]
+}

@@ -1,142 +1,6479 @@
 {
  "what": "The entity registry of the graph of meaning: the people, organisations, products, models, standards, laws, places, events, sites, publications, repositories and vaults the articles name, one id each, with the names the articles use. Seeded on 18 October 2026 from a scan of proper nouns in three or more articles and the outside sites the article graphs cite; grown by the Cartographer, who adds an entity with new: true in an article's file and the next run folds it in here with its aliases. A private person is never an entity: the articles do not name them, and neither does this file.",
  "entities": [
-  {"id": "dinis-cruz", "name": "Dinis Cruz", "type": "person", "aliases": ["Dinis", "the owner"], "note": "The author of the arguments and the person with editorial responsibility."},
-  {"id": "simon-wardley", "name": "Simon Wardley", "type": "person", "aliases": ["Wardley"]},
-  {"id": "mondweep-chakravorty", "name": "Mondweep Chakravorty", "type": "person", "aliases": ["Mondweep"]},
-  {"id": "ruv", "name": "rUv (Reuven Cohen)", "type": "person", "aliases": ["rUv", "Reuven Cohen", "ruvnet"]},
-  {"id": "simon-willison", "name": "Simon Willison", "type": "person", "aliases": []},
-  {"id": "simon-brown", "name": "Simon Brown", "type": "person", "aliases": []},
-  {"id": "jeff-bezos", "name": "Jeff Bezos", "type": "person", "aliases": ["Bezos"]},
-  {"id": "satya-nadella", "name": "Satya Nadella", "type": "person", "aliases": ["Nadella"]},
-  {"id": "hari-kota", "name": "Hari Kota", "type": "person", "aliases": []},
-  {"id": "sean-turner", "name": "Sean Turner", "type": "person", "aliases": []},
-  {"id": "francesco-marconi", "name": "Francesco Marconi", "type": "person", "aliases": ["Marconi"]},
-  {"id": "anthropic", "name": "Anthropic", "type": "organisation", "aliases": []},
-  {"id": "openai", "name": "OpenAI", "type": "organisation", "aliases": []},
-  {"id": "google", "name": "Google", "type": "organisation", "aliases": ["Alphabet"]},
-  {"id": "microsoft", "name": "Microsoft", "type": "organisation", "aliases": []},
-  {"id": "apple", "name": "Apple", "type": "organisation", "aliases": []},
-  {"id": "amazon", "name": "Amazon", "type": "organisation", "aliases": []},
-  {"id": "aws", "name": "Amazon Web Services", "type": "organisation", "aliases": ["AWS"]},
-  {"id": "meta", "name": "Meta", "type": "organisation", "aliases": ["Facebook"]},
-  {"id": "cloudflare", "name": "Cloudflare", "type": "organisation", "aliases": []},
-  {"id": "github", "name": "GitHub", "type": "organisation", "aliases": []},
-  {"id": "stripe", "name": "Stripe", "type": "organisation", "aliases": []},
-  {"id": "mozilla", "name": "Mozilla", "type": "organisation", "aliases": []},
-  {"id": "chainguard", "name": "Chainguard", "type": "organisation", "aliases": []},
-  {"id": "owasp", "name": "OWASP", "type": "organisation", "aliases": ["the Open Worldwide Application Security Project"]},
-  {"id": "agentics-foundation", "name": "Agentics Foundation", "type": "organisation", "aliases": ["Agentics", "the Agentics Foundation's London chapter"]},
-  {"id": "cognitum", "name": "Cognitum", "type": "organisation", "aliases": []},
-  {"id": "gartner", "name": "Gartner", "type": "organisation", "aliases": []},
-  {"id": "nist", "name": "NIST", "type": "organisation", "aliases": ["National Institute of Standards and Technology"]},
-  {"id": "iso", "name": "ISO", "type": "organisation", "aliases": ["ISO/IEC"]},
-  {"id": "european-union", "name": "The European Union", "type": "organisation", "aliases": ["EU", "the European Commission", "Europe"]},
-  {"id": "ncsc", "name": "NCSC", "type": "organisation", "aliases": ["the UK National Cyber Security Centre"]},
-  {"id": "ft-strategies", "name": "FT Strategies", "type": "organisation", "aliases": []},
-  {"id": "harvard-business-review", "name": "Harvard Business Review", "type": "publication", "aliases": ["HBR"]},
-  {"id": "the-register", "name": "The Register", "type": "publication", "aliases": []},
-  {"id": "techcrunch", "name": "TechCrunch", "type": "publication", "aliases": []},
-  {"id": "wikipedia", "name": "Wikipedia", "type": "publication", "aliases": []},
-  {"id": "linkedin", "name": "LinkedIn", "type": "product", "aliases": []},
-  {"id": "whatsapp", "name": "WhatsApp", "type": "product", "aliases": []},
-  {"id": "gmail", "name": "Gmail", "type": "product", "aliases": []},
-  {"id": "google-workspace", "name": "Google Workspace", "type": "product", "aliases": ["Workspace", "Google Drive", "Google Calendar"]},
-  {"id": "claude", "name": "Claude", "type": "model", "aliases": ["Claude Opus", "Claude Sonnet", "Claude Haiku", "Anthropic's model"]},
-  {"id": "claude-code", "name": "Claude Code", "type": "product", "aliases": ["Cowork", "Claude Code session"]},
-  {"id": "chatgpt", "name": "ChatGPT", "type": "product", "aliases": ["GPT"]},
-  {"id": "gemini", "name": "Gemini", "type": "model", "aliases": ["Gemini CLI"]},
-  {"id": "copilot", "name": "GitHub Copilot", "type": "product", "aliases": ["Copilot"]},
-  {"id": "cursor", "name": "Cursor", "type": "product", "aliases": []},
-  {"id": "codex", "name": "Codex", "type": "product", "aliases": ["OpenAI Codex"]},
-  {"id": "mistral", "name": "Mistral", "type": "model", "aliases": []},
-  {"id": "openrouter", "name": "OpenRouter", "type": "product", "aliases": ["openrouter.ai"]},
-  {"id": "groq", "name": "Groq", "type": "organisation", "aliases": []},
-  {"id": "elevenlabs", "name": "ElevenLabs", "type": "product", "aliases": []},
-  {"id": "chrome", "name": "Google Chrome", "type": "product", "aliases": ["Chrome", "Chromium"]},
-  {"id": "firefox", "name": "Firefox", "type": "product", "aliases": []},
-  {"id": "github-pages", "name": "GitHub Pages", "type": "product", "aliases": []},
-  {"id": "github-actions", "name": "GitHub Actions", "type": "product", "aliases": []},
-  {"id": "docker", "name": "Docker", "type": "product", "aliases": []},
-  {"id": "kubernetes", "name": "Kubernetes", "type": "product", "aliases": []},
-  {"id": "sqlite", "name": "SQLite", "type": "product", "aliases": []},
-  {"id": "mermaid", "name": "Mermaid", "type": "product", "aliases": []},
-  {"id": "python", "name": "Python", "type": "product", "aliases": []},
-  {"id": "javascript", "name": "JavaScript", "type": "product", "aliases": []},
-  {"id": "git", "name": "Git", "type": "product", "aliases": []},
-  {"id": "cedar", "name": "Cedar", "type": "product", "aliases": ["the Cedar policy language"]},
-  {"id": "open-policy-agent", "name": "Open Policy Agent", "type": "product", "aliases": ["OPA", "Rego"]},
-  {"id": "mcp", "name": "Model Context Protocol", "type": "standard", "aliases": ["MCP"]},
-  {"id": "sgit", "name": "sgit", "type": "product", "aliases": ["SGit", "sgit CLI", "SG/Send", "SGraph Send", "sg-send"]},
-  {"id": "sgit-ai", "name": "sgit.ai", "type": "site", "aliases": ["the sgit.ai site"]},
-  {"id": "newsroom-sgit-ai", "name": "The SGit Newsroom", "type": "site", "aliases": ["newsroom.sgit.ai", "the newsroom", "this newsroom"]},
-  {"id": "graphs-sgit-ai", "name": "graphs.sgit.ai", "type": "site", "aliases": ["Meaning Through Connectivity"]},
-  {"id": "abp-sgit-ai", "name": "abp.sgit.ai", "type": "site", "aliases": ["the Agent Behaviour Policy site"]},
-  {"id": "ruv-sgit-ai", "name": "ruv.sgit.ai", "type": "site", "aliases": []},
-  {"id": "coding-sgit-ai", "name": "coding.sgit.ai", "type": "site", "aliases": []},
-  {"id": "nfrs-sgit-ai", "name": "nfrs.sgit.ai", "type": "site", "aliases": []},
-  {"id": "wardley-maps-sgit-ai", "name": "wardley-maps.sgit.ai", "type": "site", "aliases": []},
-  {"id": "open-source-sgit-ai", "name": "open-source.sgit.ai", "type": "site", "aliases": []},
-  {"id": "secrets-sgit-ai", "name": "secrets.sgit.ai", "type": "site", "aliases": []},
-  {"id": "twins-sgit-ai", "name": "twins.sgit.ai", "type": "site", "aliases": []},
-  {"id": "standards-sgit-ai", "name": "standards.sgit.ai", "type": "site", "aliases": []},
-  {"id": "pki-sgit-ai", "name": "pki.sgit.ai", "type": "site", "aliases": []},
-  {"id": "diniscruz-ai", "name": "diniscruz.ai", "type": "site", "aliases": ["docs.diniscruz.ai", "Dinis Cruz's blog"]},
-  {"id": "riskmandate", "name": "RiskMandate", "type": "organisation", "aliases": ["riskmandate.ai", "agent@riskmandate.ai"]},
-  {"id": "the-cyber-boardroom", "name": "The Cyber Boardroom", "type": "product", "aliases": ["Cyber Boardroom"]},
-  {"id": "voicedebrief", "name": "VoiceDebrief", "type": "product", "aliases": ["voicedebrief.ai"]},
-  {"id": "sg-meter", "name": "SG Meter", "type": "product", "aliases": ["the reading meter", "sg-meter"]},
-  {"id": "ruflo", "name": "Ruflo", "type": "product", "aliases": ["claude-flow"]},
-  {"id": "o2-platform", "name": "The OWASP O2 Platform", "type": "product", "aliases": ["O2 Platform", "O2"]},
-  {"id": "mgraph-ai", "name": "MGraph-AI", "type": "repository", "aliases": ["MGraph-DB"]},
-  {"id": "issues-fs", "name": "Issues-FS", "type": "product", "aliases": ["issues-fs.sgit.ai"]},
-  {"id": "email-fs", "name": "Email-FS", "type": "product", "aliases": []},
-  {"id": "eu-ai-act", "name": "The EU AI Act", "type": "law", "aliases": ["Regulation (EU) 2024/1689", "AI Act"]},
-  {"id": "gdpr", "name": "GDPR", "type": "law", "aliases": ["the General Data Protection Regulation"]},
-  {"id": "cyber-resilience-act", "name": "The Cyber Resilience Act", "type": "law", "aliases": ["CRA"]},
-  {"id": "nist-ai-rmf", "name": "NIST AI RMF", "type": "standard", "aliases": ["the NIST AI Risk Management Framework"]},
-  {"id": "iso-42001", "name": "ISO/IEC 42001", "type": "standard", "aliases": ["ISO 42001"]},
-  {"id": "aiuc-1", "name": "AIUC-1", "type": "standard", "aliases": []},
-  {"id": "ai-bcf", "name": "AI Baseline Control Framework", "type": "standard", "aliases": ["AI-BCF"]},
-  {"id": "c4-model", "name": "The C4 model", "type": "standard", "aliases": ["C4"]},
-  {"id": "gherkin", "name": "Gherkin", "type": "standard", "aliases": ["Cucumber"]},
-  {"id": "creative-commons", "name": "Creative Commons", "type": "organisation", "aliases": ["CC BY 4.0", "CC0", "CC BY-SA"]},
-  {"id": "apache-2", "name": "The Apache License 2.0", "type": "standard", "aliases": ["Apache-2.0", "Apache 2.0"]},
-  {"id": "x402", "name": "x402", "type": "standard", "aliases": []},
-  {"id": "webauthn", "name": "WebAuthn and passkeys", "type": "standard", "aliases": ["passkey", "PRF extension"]},
-  {"id": "web-crypto", "name": "Web Crypto API", "type": "standard", "aliases": ["Web Crypto"]},
-  {"id": "sha-256", "name": "SHA-256", "type": "standard", "aliases": []},
-  {"id": "llms-txt", "name": "llms.txt", "type": "standard", "aliases": []},
-  {"id": "london", "name": "London", "type": "place", "aliases": []},
-  {"id": "lisbon", "name": "Lisbon", "type": "place", "aliases": []},
-  {"id": "portugal", "name": "Portugal", "type": "place", "aliases": []},
-  {"id": "europe", "name": "Europe", "type": "place", "aliases": []},
-  {"id": "united-kingdom", "name": "The United Kingdom", "type": "place", "aliases": ["UK", "Britain"]},
-  {"id": "united-states", "name": "The United States", "type": "place", "aliases": ["US", "America"]},
-  {"id": "estonia", "name": "Estonia", "type": "place", "aliases": []},
-  {"id": "romania", "name": "Romania", "type": "place", "aliases": []},
-  {"id": "web-summit", "name": "Web Summit", "type": "event", "aliases": []},
-  {"id": "agentic-engineering-live", "name": "Agentic Engineering Live", "type": "event", "aliases": []},
-  {"id": "owasp-global-appsec", "name": "OWASP Global AppSec", "type": "event", "aliases": []},
-  {"id": "bsides-lisbon", "name": "BSides Lisbon", "type": "event", "aliases": []},
-  {"id": "threatmodcon", "name": "ThreatModCon", "type": "event", "aliases": []},
-  {"id": "the-ai-conference", "name": "The AI Conference", "type": "event", "aliases": []},
-  {"id": "world-news-day", "name": "World News Day", "type": "event", "aliases": []},
-  {"id": "black-hat-europe", "name": "Black Hat Europe", "type": "event", "aliases": []},
-  {"id": "industry-wire", "name": "The Industry Wire", "type": "product", "aliases": ["the wire", "OWASP Wire", "AWS Wire", "Portugal Wire"]},
-  {"id": "mesa-ranch-vault", "name": "The Mesa Ranch vault", "type": "vault", "aliases": ["Mesa Ranch"]},
-  {"id": "northstar-twin", "name": "The Northstar twin", "type": "vault", "aliases": ["Northstar"]},
-  {"id": "code-review-graphs-vault", "name": "Code Review Graphs", "type": "vault", "aliases": []},
-  {"id": "article-views-vault", "name": "Article Views", "type": "vault", "aliases": []},
-  {"id": "regulation-graph-vault", "name": "Regulation Graph", "type": "vault", "aliases": []},
-  {"id": "ai-governance-graph-vault", "name": "AI Governance Graph", "type": "vault", "aliases": []},
-  {"id": "ciso", "name": "CISO", "type": "role", "aliases": ["chief information security officer", "security lead"]},
-  {"id": "dpo", "name": "Data protection officer", "type": "role", "aliases": ["DPO"]},
-  {"id": "the-board", "name": "The board", "type": "role", "aliases": ["board member"]},
-  {"id": "publisher", "name": "Publisher", "type": "role", "aliases": ["publishers", "editor", "journalist"]},
-  {"id": "founder", "name": "Founder", "type": "role", "aliases": ["founders"]},
-  {"id": "librarian", "name": "The Librarian", "type": "role", "aliases": []},
-  {"id": "cartographer", "name": "The Cartographer", "type": "role", "aliases": []},
-  {"id": "historian", "name": "The Historian", "type": "role", "aliases": []}
+  {
+   "id": "1password",
+   "name": "1Password",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents"
+   ]
+  },
+  {
+   "id": "abp-sgit-ai",
+   "name": "abp.sgit.ai",
+   "type": "site",
+   "aliases": [
+    "the Agent Behaviour Policy site"
+   ]
+  },
+  {
+   "id": "acs",
+   "name": "Agent Control Specification",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-the-platform-draws-the-line"
+   ]
+  },
+  {
+   "id": "adobe",
+   "name": "Adobe",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "software-vendors-as-villagers",
+    "stop-the-bleeding-then-ask-for-it-back"
+   ]
+  },
+  {
+   "id": "adrian-cockcroft",
+   "name": "Adrian Cockcroft",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "age",
+   "name": "age",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents",
+    "rfc-0001-public-key-cryptography-for-sgit"
+   ]
+  },
+  {
+   "id": "agency-scale-vault",
+   "name": "The agency scale",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agency-is-not-a-yes"
+   ]
+  },
+  {
+   "id": "agent-control-standard",
+   "name": "Agent Control Standard",
+   "type": "standard",
+   "aliases": [
+    "OWASP Agent Control Standard"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agent-hooks-october-2026",
+    "are-hooks-the-sweet-spot"
+   ]
+  },
+  {
+   "id": "agent-desk-vault",
+   "name": "The Agent Desk vault",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-mac-of-the-agents-own"
+   ]
+  },
+  {
+   "id": "agent-skills-in-the-wild",
+   "name": "Agent Skills in the Wild",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "agentcore-policy",
+   "name": "Amazon Bedrock AgentCore Policy",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault"
+   ]
+  },
+  {
+   "id": "agentic-engineering-live",
+   "name": "Agentic Engineering Live",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "agentics-foundation",
+   "name": "Agentics Foundation",
+   "type": "organisation",
+   "aliases": [
+    "Agentics",
+    "the Agentics Foundation's London chapter"
+   ]
+  },
+  {
+   "id": "ai-bcf",
+   "name": "AI Baseline Control Framework",
+   "type": "standard",
+   "aliases": [
+    "AI-BCF"
+   ]
+  },
+  {
+   "id": "ai-governance-graph-vault",
+   "name": "AI Governance Graph",
+   "type": "vault",
+   "aliases": []
+  },
+  {
+   "id": "aibcf-graph-vault",
+   "name": "AI BCF as a graph",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ai-baseline-control-framework"
+   ]
+  },
+  {
+   "id": "aigist24",
+   "name": "AIGist24",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell"
+   ]
+  },
+  {
+   "id": "air-canada",
+   "name": "Air Canada",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-policy-draws-the-liability-line"
+   ]
+  },
+  {
+   "id": "aiuc-1",
+   "name": "AIUC-1",
+   "type": "standard",
+   "aliases": []
+  },
+  {
+   "id": "alibaba",
+   "name": "Alibaba",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "alibaba-cloud",
+   "name": "Alibaba Cloud",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "amalia",
+   "name": "Amalia",
+   "type": "model",
+   "aliases": [
+    "Amália"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries",
+    "portugal-2016-hacking-portugal",
+    "portugal-2024-genai-in-portuguese",
+    "portugal-and-europe-2025"
+   ]
+  },
+  {
+   "id": "amazon",
+   "name": "Amazon",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "amazon-cognito",
+   "name": "Amazon Cognito",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "amazon-kdp",
+   "name": "Amazon KDP",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "books-from-articles"
+   ]
+  },
+  {
+   "id": "amazon-s3",
+   "name": "Amazon S3",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "move-the-cloud-not-the-code"
+   ]
+  },
+  {
+   "id": "amazon-verified-permissions",
+   "name": "Amazon Verified Permissions",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault"
+   ]
+  },
+  {
+   "id": "andrej-karpathy",
+   "name": "Andrej Karpathy",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "explorer-coding",
+    "memory-is-not-a-spectator-sport",
+    "saas-apocalypse-decided-by-inertia-not-by-ai",
+    "the-citizen-developer"
+   ]
+  },
+  {
+   "id": "andrew-barto",
+   "name": "Andrew Barto",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "three-policies-for-an-agent"
+   ]
+  },
+  {
+   "id": "andrew-ng",
+   "name": "Andrew Ng",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "explorer-coding"
+   ]
+  },
+  {
+   "id": "angela-polania",
+   "name": "Angela Polania",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance",
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "antigravity",
+   "name": "Antigravity",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "why-my-agents-do-not-run-on-my-laptop"
+   ]
+  },
+  {
+   "id": "apache-2",
+   "name": "The Apache License 2.0",
+   "type": "standard",
+   "aliases": [
+    "Apache-2.0",
+    "Apache 2.0"
+   ]
+  },
+  {
+   "id": "apache-software-foundation",
+   "name": "The Apache Software Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "apertus",
+   "name": "Apertus",
+   "type": "model",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "api-newsroom-sgit-ai",
+   "name": "api.newsroom.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "your-own-newsroom"
+   ]
+  },
+  {
+   "id": "apple",
+   "name": "Apple",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "appliedxl",
+   "name": "AppliedXL",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "journalism-becomes-intelligence"
+   ]
+  },
+  {
+   "id": "article-views-vault",
+   "name": "Article Views",
+   "type": "vault",
+   "aliases": []
+  },
+  {
+   "id": "ashish-rajan",
+   "name": "Ashish Rajan",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "allowed-is-not-right",
+    "inside-the-northstar-twin",
+    "three-decisions-mapped",
+    "three-policies-for-an-agent"
+   ]
+  },
+  {
+   "id": "aslak-hellesoy",
+   "name": "Aslak Hellesøy",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "code-review-as-a-fractal-semantic-graph"
+   ]
+  },
+  {
+   "id": "asos",
+   "name": "Asos",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wire-as-a-graph"
+   ]
+  },
+  {
+   "id": "assemblyai",
+   "name": "AssemblyAI",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-key-is-the-billing-system"
+   ]
+  },
+  {
+   "id": "athena-coalition",
+   "name": "The Athena coalition",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "atlassian",
+   "name": "Atlassian",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "atomico",
+   "name": "Atomico",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "audio-genius",
+   "name": "Audio Genius",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "aviation-safety-network",
+   "name": "Aviation Safety Network",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-beside-the-prompt"
+   ]
+  },
+  {
+   "id": "aws",
+   "name": "Amazon Web Services",
+   "type": "organisation",
+   "aliases": [
+    "AWS"
+   ]
+  },
+  {
+   "id": "aws-european-sovereign-cloud",
+   "name": "AWS European Sovereign Cloud",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "move-the-cloud-not-the-code"
+   ]
+  },
+  {
+   "id": "aws-lambda",
+   "name": "AWS Lambda",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-homepage-is-a-vault"
+   ]
+  },
+  {
+   "id": "axate",
+   "name": "Axate",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall"
+   ]
+  },
+  {
+   "id": "bain",
+   "name": "Bain & Company",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "balderton",
+   "name": "Balderton",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sell-dont-issue"
+   ]
+  },
+  {
+   "id": "bank-of-england",
+   "name": "Bank of England",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "barbara-minto",
+   "name": "Barbara Minto",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "basel-committee",
+   "name": "Basel Committee on Banking Supervision",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-second-reader-the-agent-cannot-skip"
+   ]
+  },
+  {
+   "id": "bbc",
+   "name": "BBC",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists",
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "benedict-evans",
+   "name": "Benedict Evans",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "benjamin-torben-nielsen",
+   "name": "Benjamin Torben-Nielsen",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-just-want-to-buy-the-article",
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "bessemer",
+   "name": "Bessemer Venture Partners",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "big-bend-sentinel",
+   "name": "Big Bend Sentinel",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "journalism-becomes-intelligence"
+   ]
+  },
+  {
+   "id": "biology-open",
+   "name": "Biology Open",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "bis",
+   "name": "The Bank for International Settlements",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "bit-cloud",
+   "name": "Bit Cloud",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-records-ran-out"
+   ]
+  },
+  {
+   "id": "bitwarden",
+   "name": "Bitwarden Send",
+   "type": "product",
+   "aliases": [
+    "Bitwarden"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents",
+    "secrets-on-public-keys",
+    "the-identity-we-wanted-to-give-the-agents",
+    "where-the-vault-keys-live"
+   ]
+  },
+  {
+   "id": "black-duck",
+   "name": "Black Duck",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "send-an-agent-not-a-spreadsheet",
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "black-hat-europe",
+   "name": "Black Hat Europe",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "blendle",
+   "name": "Blendle",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall",
+    "pay-after-you-read"
+   ]
+  },
+  {
+   "id": "bloomberg-law",
+   "name": "Bloomberg Law",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "system-prompts-as-behaviour-policies"
+   ]
+  },
+  {
+   "id": "bluesky",
+   "name": "Bluesky",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-link-to-a-persona",
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "boeing",
+   "name": "Boeing",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "bootstrap",
+   "name": "Bootstrap",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "fix-the-page-yourself"
+   ]
+  },
+  {
+   "id": "brave",
+   "name": "Brave",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-link-to-a-persona",
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "bridge-simulation-vault",
+   "name": "The Mill Street Bridge vault",
+   "type": "vault",
+   "aliases": [
+    "The Mill Street Bridge"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-bridge-followed-to-the-end"
+   ]
+  },
+  {
+   "id": "bruce-perens",
+   "name": "Bruce Perens",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "bruce-schneier",
+   "name": "Bruce Schneier",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop",
+    "who-are-you-protecting-against"
+   ]
+  },
+  {
+   "id": "bsides-lisbon",
+   "name": "BSides Lisbon",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "c-northcote-parkinson",
+   "name": "C. Northcote Parkinson",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop"
+   ]
+  },
+  {
+   "id": "c4-model",
+   "name": "The C4 model",
+   "type": "standard",
+   "aliases": [
+    "C4"
+   ]
+  },
+  {
+   "id": "canadian-journalism-foundation",
+   "name": "Canadian Journalism Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-article-remains-a-product"
+   ]
+  },
+  {
+   "id": "carta",
+   "name": "Carta",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "cartographer",
+   "name": "The Cartographer",
+   "type": "role",
+   "aliases": []
+  },
+  {
+   "id": "cedar",
+   "name": "Cedar",
+   "type": "product",
+   "aliases": [
+    "the Cedar policy language"
+   ]
+  },
+  {
+   "id": "cerebras",
+   "name": "Cerebras",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "chainguard",
+   "name": "Chainguard",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "chainguard-assemble-london",
+   "name": "Chainguard Assemble London",
+   "type": "event",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "attacks-rewritten-as-mandates"
+   ]
+  },
+  {
+   "id": "chartbeat",
+   "name": "Chartbeat",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "chatgpt",
+   "name": "ChatGPT",
+   "type": "product",
+   "aliases": [
+    "GPT"
+   ]
+  },
+  {
+   "id": "check-point-research",
+   "name": "Check Point Research",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agent-hooks-october-2026"
+   ]
+  },
+  {
+   "id": "checkmarx",
+   "name": "Checkmarx",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "china",
+   "name": "China",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "chinmay-gupte",
+   "name": "Chinmay Gupte",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "chris-anderson",
+   "name": "Chris Anderson",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "christine-peterson",
+   "name": "Christine Peterson",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "chrome",
+   "name": "Google Chrome",
+   "type": "product",
+   "aliases": [
+    "Chrome",
+    "Chromium"
+   ]
+  },
+  {
+   "id": "circia",
+   "name": "CIRCIA",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "ciso",
+   "name": "CISO",
+   "type": "role",
+   "aliases": [
+    "chief information security officer",
+    "security lead"
+   ]
+  },
+  {
+   "id": "citizens-advice",
+   "name": "Citizens Advice",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "stop-the-bleeding-then-ask-for-it-back"
+   ]
+  },
+  {
+   "id": "civil-contingencies-act",
+   "name": "The Civil Contingencies Act",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "cjeu",
+   "name": "Court of Justice of the European Union",
+   "type": "organisation",
+   "aliases": [
+    "court-of-justice-eu"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "claude",
+   "name": "Claude",
+   "type": "model",
+   "aliases": [
+    "Claude Opus",
+    "Claude Sonnet",
+    "Claude Haiku",
+    "Anthropic's model"
+   ]
+  },
+  {
+   "id": "claude-code",
+   "name": "Claude Code",
+   "type": "product",
+   "aliases": [
+    "Cowork",
+    "Claude Code session"
+   ]
+  },
+  {
+   "id": "claude-motion",
+   "name": "Claude Motion",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-scripted-talk"
+   ]
+  },
+  {
+   "id": "clay-shirky",
+   "name": "Clay Shirky",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "clayton-christensen",
+   "name": "Clayton Christensen",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "cline",
+   "name": "Cline",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-tokens-hook"
+   ]
+  },
+  {
+   "id": "cloudflare",
+   "name": "Cloudflare",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "cloudflare-r2",
+   "name": "Cloudflare R2",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cloudflare-as-lego-blocks"
+   ]
+  },
+  {
+   "id": "cloudflare-workers",
+   "name": "Cloudflare Workers",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cloudflare-as-lego-blocks"
+   ]
+  },
+  {
+   "id": "cloudfront",
+   "name": "Amazon CloudFront",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-homepage-is-a-vault"
+   ]
+  },
+  {
+   "id": "cncf",
+   "name": "Cloud Native Computing Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault",
+    "my-memory-checked",
+    "policy-as-code-needs-a-policy-first",
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "cnil",
+   "name": "CNIL",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets",
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "code-review-graphs-vault",
+   "name": "Code Review Graphs",
+   "type": "vault",
+   "aliases": []
+  },
+  {
+   "id": "codex",
+   "name": "Codex",
+   "type": "product",
+   "aliases": [
+    "OpenAI Codex"
+   ]
+  },
+  {
+   "id": "coding-sgit-ai",
+   "name": "coding.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "cognitum",
+   "name": "Cognitum",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "cohere",
+   "name": "Cohere",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "coinbase",
+   "name": "Coinbase",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-agent-is-the-reader"
+   ]
+  },
+  {
+   "id": "columbia-journalism-review",
+   "name": "Columbia Journalism Review",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall"
+   ]
+  },
+  {
+   "id": "community-notes",
+   "name": "Community Notes",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "comscore",
+   "name": "comScore",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "going-live-with-the-reading-meter"
+   ]
+  },
+  {
+   "id": "connector-twin-vault",
+   "name": "Connector Twin",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "connector-twin-before-you-deploy-an-agent",
+    "footprint-and-blast-radius"
+   ]
+  },
+  {
+   "id": "contrary-research",
+   "name": "Contrary Research",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "chainguard-mapped"
+   ]
+  },
+  {
+   "id": "copilot",
+   "name": "GitHub Copilot",
+   "type": "product",
+   "aliases": [
+    "Copilot"
+   ]
+  },
+  {
+   "id": "copyright-directive",
+   "name": "The 2019 Copyright Directive",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-deck-i-could-not-download"
+   ]
+  },
+  {
+   "id": "cormac-herley",
+   "name": "Cormac Herley",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "corvane-research-vault",
+   "name": "The Corvane Research vault",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "research-delivered-as-a-vault"
+   ]
+  },
+  {
+   "id": "cory-doctorow",
+   "name": "Cory Doctorow",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "craigslist",
+   "name": "Craigslist",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "creative-commons",
+   "name": "Creative Commons",
+   "type": "organisation",
+   "aliases": [
+    "CC BY 4.0",
+    "CC0",
+    "CC BY-SA"
+   ]
+  },
+  {
+   "id": "critical-care-medicine",
+   "name": "Critical Care Medicine",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "curl",
+   "name": "curl",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship",
+    "the-eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "cursor",
+   "name": "Cursor",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "cyber-resilience-act",
+   "name": "The Cyber Resilience Act",
+   "type": "law",
+   "aliases": [
+    "CRA"
+   ]
+  },
+  {
+   "id": "cyber-risk-institute",
+   "name": "Cyber Risk Institute",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "cyber-safety-review-board",
+   "name": "US Cyber Safety Review Board",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "cyberark",
+   "name": "CyberArk",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "dan-geer",
+   "name": "Dan Geer",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-owns-the-words"
+   ]
+  },
+  {
+   "id": "dan-ward",
+   "name": "Dan Ward",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop",
+    "places-of-highest-leverage"
+   ]
+  },
+  {
+   "id": "daniel-kahneman",
+   "name": "Daniel Kahneman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-site-is-an-inbox"
+   ]
+  },
+  {
+   "id": "daniel-stenberg",
+   "name": "Daniel Stenberg",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship",
+    "the-eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "darpa",
+   "name": "DARPA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "darrell-rigby",
+   "name": "Darrell Rigby",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "omnichannel-programming"
+   ]
+  },
+  {
+   "id": "dashlane",
+   "name": "Dashlane",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "daytona",
+   "name": "Daytona",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "an-agent-desktop-by-the-minute"
+   ]
+  },
+  {
+   "id": "debian",
+   "name": "Debian",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "deck-vault",
+   "name": "Deck Vault",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-deck-i-could-not-download"
+   ]
+  },
+  {
+   "id": "decreto-lei-125-2025",
+   "name": "Decreto-Lei 125/2025",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2010-a-challenge",
+    "portugal-2016-hacking-portugal"
+   ]
+  },
+  {
+   "id": "deepgram",
+   "name": "Deepgram",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-key-is-the-billing-system"
+   ]
+  },
+  {
+   "id": "deepseek",
+   "name": "DeepSeek",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries",
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "delinea",
+   "name": "Delinea",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance",
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "deloitte",
+   "name": "Deloitte",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "denso-wave",
+   "name": "DENSO WAVE",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents"
+   ]
+  },
+  {
+   "id": "deterministic-genai",
+   "name": "Deterministic GenAI",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "three-linkedin-pages"
+   ]
+  },
+  {
+   "id": "did-web",
+   "name": "did:web",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "digicash",
+   "name": "DigiCash",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "digiday",
+   "name": "Digiday",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "liquid-content-needs-water"
+   ]
+  },
+  {
+   "id": "dilip-soman",
+   "name": "Dilip Soman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "dinis-cruz",
+   "name": "Dinis Cruz",
+   "type": "person",
+   "aliases": [
+    "Dinis",
+    "the owner"
+   ],
+   "note": "The author of the arguments and the person with editorial responsibility."
+  },
+  {
+   "id": "diniscruz-ai",
+   "name": "diniscruz.ai",
+   "type": "site",
+   "aliases": [
+    "docs.diniscruz.ai",
+    "Dinis Cruz's blog"
+   ]
+  },
+  {
+   "id": "discord",
+   "name": "Discord",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sixteen-notes-i-did-not-want-to-lose",
+    "the-agent-team-as-it-runs"
+   ]
+  },
+  {
+   "id": "dmcc-act",
+   "name": "The Digital Markets, Competition and Consumers Act",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall"
+   ]
+  },
+  {
+   "id": "dmcc-act-2024",
+   "name": "The Digital Markets, Competition and Consumers Act 2024",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "stop-the-bleeding-then-ask-for-it-back"
+   ]
+  },
+  {
+   "id": "dmn",
+   "name": "Decision Model and Notation",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "three-policies-for-an-agent"
+   ]
+  },
+  {
+   "id": "docker",
+   "name": "Docker",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "dogwood",
+   "name": "Dogwood",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault"
+   ]
+  },
+  {
+   "id": "dominic-young",
+   "name": "Dominic Young",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall"
+   ]
+  },
+  {
+   "id": "dora",
+   "name": "The Digital Operational Resilience Act",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "dpo",
+   "name": "Data protection officer",
+   "type": "role",
+   "aliases": [
+    "DPO"
+   ]
+  },
+  {
+   "id": "drazen-prelec",
+   "name": "Drazen Prelec",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "dropbox",
+   "name": "Dropbox",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance",
+    "what-can-your-agent-reach",
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "e-residency",
+   "name": "Estonian e-Residency",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries"
+   ]
+  },
+  {
+   "id": "e2b",
+   "name": "E2B",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "an-agent-desktop-by-the-minute"
+   ]
+  },
+  {
+   "id": "edpb",
+   "name": "European Data Protection Board",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-deck-i-could-not-download",
+    "the-identity-we-wanted-to-give-the-agents",
+    "the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "eis",
+   "name": "The Enterprise Investment Scheme",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sell-dont-issue"
+   ]
+  },
+  {
+   "id": "elastic",
+   "name": "Elastic",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door",
+    "the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "elevate-consult",
+   "name": "Elevate Consult",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance",
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "elevenlabs",
+   "name": "ElevenLabs",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "elife",
+   "name": "eLife",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "eliza",
+   "name": "ELIZA",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-owns-the-words"
+   ]
+  },
+  {
+   "id": "email-fs",
+   "name": "Email-FS",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "emmanuel-ameisen",
+   "name": "Emmanuel Ameisen",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance",
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "endor-labs",
+   "name": "Endor Labs",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "england-and-wales",
+   "name": "England and Wales",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "enisa",
+   "name": "ENISA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2010-a-challenge"
+   ]
+  },
+  {
+   "id": "enrico-moretti",
+   "name": "Enrico Moretti",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "equidam",
+   "name": "Equidam",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "eric-raymond",
+   "name": "Eric S. Raymond",
+   "type": "person",
+   "aliases": [
+    "Eric Raymond"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-eyeballs-get-cheap",
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "estonia",
+   "name": "Estonia",
+   "type": "place",
+   "aliases": []
+  },
+  {
+   "id": "eth-zurich",
+   "name": "ETH Zurich",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "ethan-zuckerman",
+   "name": "Ethan Zuckerman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "eu-ai-act",
+   "name": "The EU AI Act",
+   "type": "law",
+   "aliases": [
+    "Regulation (EU) 2024/1689",
+    "AI Act"
+   ]
+  },
+  {
+   "id": "eurollm",
+   "name": "EuroLLM",
+   "type": "model",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2016-hacking-portugal",
+    "portugal-2024-genai-in-portuguese",
+    "portugal-and-europe-2025"
+   ]
+  },
+  {
+   "id": "europe",
+   "name": "Europe",
+   "type": "place",
+   "aliases": []
+  },
+  {
+   "id": "european-accessibility-act",
+   "name": "The European Accessibility Act",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "fix-the-page-yourself"
+   ]
+  },
+  {
+   "id": "european-union",
+   "name": "The European Union",
+   "type": "organisation",
+   "aliases": [
+    "EU",
+    "the European Commission",
+    "Europe"
+   ]
+  },
+  {
+   "id": "eurostat",
+   "name": "Eurostat",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries"
+   ]
+  },
+  {
+   "id": "euvd",
+   "name": "European Vulnerability Database",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2010-a-challenge"
+   ]
+  },
+  {
+   "id": "evidence-dispatch-vault",
+   "name": "The Evidence Dispatch",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "excel",
+   "name": "Microsoft Excel",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-citizen-developer"
+   ]
+  },
+  {
+   "id": "explainer",
+   "name": "The Explainer",
+   "type": "role",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "one-article-five-readers",
+    "ways-to-read-one-article"
+   ]
+  },
+  {
+   "id": "ey",
+   "name": "EY",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sell-dont-issue"
+   ]
+  },
+  {
+   "id": "f1000research",
+   "name": "F1000Research",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "fao",
+   "name": "FAO",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "fedora",
+   "name": "Fedora",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "explorer-coding"
+   ]
+  },
+  {
+   "id": "financial-times",
+   "name": "Financial Times",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "liquid-content-needs-water",
+    "the-agent-is-the-reader"
+   ]
+  },
+  {
+   "id": "firebase",
+   "name": "Firebase",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "firefox",
+   "name": "Firefox",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "firefox-enterprise",
+   "name": "Firefox Enterprise",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-custom-firefox-of-my-own"
+   ]
+  },
+  {
+   "id": "forrester",
+   "name": "Forrester",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "research-delivered-as-a-vault",
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "fortanix",
+   "name": "Fortanix",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "rfc-0001-public-key-cryptography-for-sgit"
+   ]
+  },
+  {
+   "id": "founder",
+   "name": "Founder",
+   "type": "role",
+   "aliases": [
+    "founders"
+   ]
+  },
+  {
+   "id": "founder-institute",
+   "name": "Founder Institute",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-scripted-talk"
+   ]
+  },
+  {
+   "id": "francesco-marconi",
+   "name": "Francesco Marconi",
+   "type": "person",
+   "aliases": [
+    "Marconi"
+   ]
+  },
+  {
+   "id": "frank-karlitschek",
+   "name": "Frank Karlitschek",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "frc",
+   "name": "Financial Reporting Council",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "approve-at-altitude"
+   ]
+  },
+  {
+   "id": "fred-brooks",
+   "name": "Fred Brooks",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "free-software-foundation",
+   "name": "Free Software Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "freshworks",
+   "name": "Freshworks",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "ft-strategies",
+   "name": "FT Strategies",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "ftc",
+   "name": "FTC",
+   "type": "organisation",
+   "aliases": [
+    "The Federal Trade Commission",
+    "US Federal Trade Commission"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets",
+    "paying-after-the-value",
+    "stop-the-bleeding-then-ask-for-it-back"
+   ]
+  },
+  {
+   "id": "g2",
+   "name": "G2",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "research-delivered-as-a-vault"
+   ]
+  },
+  {
+   "id": "gartner",
+   "name": "Gartner",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "gdpr",
+   "name": "GDPR",
+   "type": "law",
+   "aliases": [
+    "the General Data Protection Regulation"
+   ]
+  },
+  {
+   "id": "gemini",
+   "name": "Gemini",
+   "type": "model",
+   "aliases": [
+    "Gemini CLI"
+   ]
+  },
+  {
+   "id": "george-loewenstein",
+   "name": "George Loewenstein",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "germany",
+   "name": "Germany",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sell-dont-issue",
+    "the-policy-draws-the-liability-line"
+   ]
+  },
+  {
+   "id": "gherkin",
+   "name": "Gherkin",
+   "type": "standard",
+   "aliases": [
+    "Cucumber"
+   ]
+  },
+  {
+   "id": "git",
+   "name": "Git",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "gitclear",
+   "name": "GitClear",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "code-review-as-a-fractal-semantic-graph",
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "gitguardian",
+   "name": "GitGuardian",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "why-my-agents-do-not-run-on-my-laptop"
+   ]
+  },
+  {
+   "id": "github",
+   "name": "GitHub",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "github-actions",
+   "name": "GitHub Actions",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "github-pages",
+   "name": "GitHub Pages",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "glean",
+   "name": "Glean",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "gmail",
+   "name": "Gmail",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "gneezy",
+   "name": "Gneezy",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "going-live-with-the-reading-meter"
+   ]
+  },
+  {
+   "id": "google",
+   "name": "Google",
+   "type": "organisation",
+   "aliases": [
+    "Alphabet"
+   ]
+  },
+  {
+   "id": "google-identity-platform",
+   "name": "Google Identity Platform",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "google-vault",
+   "name": "Google Vault",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "connector-twin-before-you-deploy-an-agent"
+   ]
+  },
+  {
+   "id": "google-workspace",
+   "name": "Google Workspace",
+   "type": "product",
+   "aliases": [
+    "Workspace",
+    "Google Drive",
+    "Google Calendar"
+   ]
+  },
+  {
+   "id": "gpl",
+   "name": "GNU General Public License",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "gpt-5-4-image-2",
+   "name": "GPT-5.4 Image 2",
+   "type": "model",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-infographic-bake-off"
+   ]
+  },
+  {
+   "id": "graphs-sgit-ai",
+   "name": "graphs.sgit.ai",
+   "type": "site",
+   "aliases": [
+    "Meaning Through Connectivity"
+   ]
+  },
+  {
+   "id": "groceries-code-adjudicator",
+   "name": "The Groceries Code Adjudicator",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "groq",
+   "name": "Groq",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "hacking-portugal",
+   "name": "Hacking Portugal",
+   "type": "publication",
+   "aliases": [
+    "hacking-portugal-book"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "books-from-articles"
+   ]
+  },
+  {
+   "id": "hari-kota",
+   "name": "Hari Kota",
+   "type": "person",
+   "aliases": []
+  },
+  {
+   "id": "harvard-business-review",
+   "name": "Harvard Business Review",
+   "type": "publication",
+   "aliases": [
+    "HBR"
+   ]
+  },
+  {
+   "id": "harvard-business-school",
+   "name": "Harvard Business School",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free"
+   ]
+  },
+  {
+   "id": "hashicorp",
+   "name": "HashiCorp",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "rfc-0001-public-key-cryptography-for-sgit",
+    "the-fork-next-door",
+    "the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "hedera",
+   "name": "Hedera",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance"
+   ]
+  },
+  {
+   "id": "historian",
+   "name": "The Historian",
+   "type": "role",
+   "aliases": []
+  },
+  {
+   "id": "hmrc",
+   "name": "HMRC",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sell-dont-issue"
+   ]
+  },
+  {
+   "id": "hollow-oak-home",
+   "name": "Hollow Oak Home",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "homebrew",
+   "name": "Homebrew",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free"
+   ]
+  },
+  {
+   "id": "hope-or-enforcement-vault",
+   "name": "Hope or enforcement",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "how-much-evidence-vault",
+   "name": "How much evidence",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-much-of-this-did-i-write"
+   ]
+  },
+  {
+   "id": "http-402",
+   "name": "HTTP 402 Payment Required",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "hugging-face",
+   "name": "Hugging Face",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key",
+    "the-policy-draws-the-liability-line"
+   ]
+  },
+  {
+   "id": "iab-tech-lab",
+   "name": "IAB Tech Lab",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "iason",
+   "name": "iason",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "four-frameworks-one-agent"
+   ]
+  },
+  {
+   "id": "iata",
+   "name": "IATA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-beside-the-prompt"
+   ]
+  },
+  {
+   "id": "ibwas",
+   "name": "IBWAS",
+   "type": "event",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2010-a-challenge"
+   ]
+  },
+  {
+   "id": "icao",
+   "name": "ICAO",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "ico",
+   "name": "ICO",
+   "type": "organisation",
+   "aliases": [
+    "The Information Commissioner's Office"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets",
+    "stop-the-bleeding-then-ask-for-it-back",
+    "the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "idaho-statesman",
+   "name": "Idaho Statesman",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "ignacio-aldama",
+   "name": "Ignacio Aldama",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-records-ran-out"
+   ]
+  },
+  {
+   "id": "imd",
+   "name": "IMD",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "imperial-college-healthcare",
+   "name": "Imperial College Healthcare NHS Trust",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "industry-wire",
+   "name": "The Industry Wire",
+   "type": "product",
+   "aliases": [
+    "the wire",
+    "OWASP Wire",
+    "AWS Wire",
+    "Portugal Wire"
+   ]
+  },
+  {
+   "id": "infographic-bakeoff-vault",
+   "name": "The Infographic bake-off vault",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-infographic-bake-off"
+   ]
+  },
+  {
+   "id": "ink-and-switch",
+   "name": "Ink & Switch",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "no-server-by-design",
+    "software-vendors-as-villagers"
+   ]
+  },
+  {
+   "id": "inma",
+   "name": "INMA",
+   "type": "organisation",
+   "aliases": [
+    "International News Media Association"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "inside-the-mesa-ranch-desk",
+    "journalism-becomes-intelligence"
+   ]
+  },
+  {
+   "id": "ion-stoica",
+   "name": "Ion Stoica",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance"
+   ]
+  },
+  {
+   "id": "iso",
+   "name": "ISO",
+   "type": "organisation",
+   "aliases": [
+    "ISO/IEC"
+   ]
+  },
+  {
+   "id": "iso-42001",
+   "name": "ISO/IEC 42001",
+   "type": "standard",
+   "aliases": [
+    "ISO 42001"
+   ]
+  },
+  {
+   "id": "issues-fs",
+   "name": "Issues-FS",
+   "type": "product",
+   "aliases": [
+    "issues-fs.sgit.ai"
+   ]
+  },
+  {
+   "id": "itu",
+   "name": "ITU",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-game-the-reading-meter"
+   ]
+  },
+  {
+   "id": "james-ball",
+   "name": "James Ball",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall"
+   ]
+  },
+  {
+   "id": "jan-van-dijke",
+   "name": "Jan van Dijke",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ai-baseline-control-framework",
+    "four-frameworks-one-agent",
+    "policy-as-code-needs-a-policy-first"
+   ]
+  },
+  {
+   "id": "japan-ai-guidelines",
+   "name": "Japan's AI Guidelines for Business",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "four-frameworks-one-agent"
+   ]
+  },
+  {
+   "id": "jared-friedman",
+   "name": "Jared Friedman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "omnichannel-programming"
+   ]
+  },
+  {
+   "id": "javascript",
+   "name": "JavaScript",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "jeff-bezos",
+   "name": "Jeff Bezos",
+   "type": "person",
+   "aliases": [
+    "Bezos"
+   ]
+  },
+  {
+   "id": "jefferies",
+   "name": "Jefferies",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "jeffrey-favuzza",
+   "name": "Jeffrey Favuzza",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "jeremy-howard",
+   "name": "Jeremy Howard",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "jerker-denrell",
+   "name": "Jerker Denrell",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "jerry-gamblin",
+   "name": "Jerry Gamblin",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "john-gourville",
+   "name": "John Gourville",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "john-mueller",
+   "name": "John Mueller",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "jonathan-palmer",
+   "name": "Jonathan Palmer",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists",
+    "the-article-remains-a-product"
+   ]
+  },
+  {
+   "id": "jose-parra-moyano",
+   "name": "José Parra Moyano",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-just-want-to-buy-the-article",
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "joseph-weizenbaum",
+   "name": "Joseph Weizenbaum",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-owns-the-words"
+   ]
+  },
+  {
+   "id": "josh-devon",
+   "name": "Josh Devon",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "commanders-intent-is-a-behaviour-policy"
+   ]
+  },
+  {
+   "id": "jp-morgan",
+   "name": "J.P. Morgan",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "jpmorgan",
+   "name": "JPMorgan",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-citizen-developer"
+   ]
+  },
+  {
+   "id": "karl-schmedders",
+   "name": "Karl Schmedders",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-just-want-to-buy-the-article",
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "kate-curtis-evans",
+   "name": "Kate Curtis-Evans",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "kevin-kelly",
+   "name": "Kevin Kelly",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-owns-the-words"
+   ]
+  },
+  {
+   "id": "keybase",
+   "name": "Keybase",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "kit-bag-vault",
+   "name": "Kit Bag",
+   "type": "vault",
+   "aliases": [
+    "The Kit Bag"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "custom-uis-are-not-the-exception",
+    "footprint-and-blast-radius",
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "kubernetes",
+   "name": "Kubernetes",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "lasso-security",
+   "name": "Lasso Security",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "are-hooks-the-sweet-spot"
+   ]
+  },
+  {
+   "id": "lastpass",
+   "name": "LastPass",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "secrets-on-public-keys"
+   ]
+  },
+  {
+   "id": "lean",
+   "name": "Lean",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault"
+   ]
+  },
+  {
+   "id": "leanpub",
+   "name": "Leanpub",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "books-from-articles",
+    "pay-after-you-read",
+    "portugal-2016-hacking-portugal",
+    "the-graphs-books",
+    "three-linkedin-pages"
+   ]
+  },
+  {
+   "id": "letta",
+   "name": "Letta",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "memory-is-not-a-spectator-sport"
+   ]
+  },
+  {
+   "id": "librarian",
+   "name": "The Librarian",
+   "type": "role",
+   "aliases": []
+  },
+  {
+   "id": "libreoffice",
+   "name": "LibreOffice",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "librewolf",
+   "name": "LibreWolf",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-custom-firefox-of-my-own",
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "lightpanda",
+   "name": "Lightpanda",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "linkedin",
+   "name": "LinkedIn",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "linus-torvalds",
+   "name": "Linus Torvalds",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "linux",
+   "name": "Linux",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "linux-foundation",
+   "name": "The Linux Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall",
+    "open-source-is-not-free",
+    "the-agent-is-the-reader",
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "linux-kernel",
+   "name": "The Linux kernel",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "explorer-coding",
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "lisanne-bainbridge",
+   "name": "Lisanne Bainbridge",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agency-is-not-a-yes"
+   ]
+  },
+  {
+   "id": "lisbon",
+   "name": "Lisbon",
+   "type": "place",
+   "aliases": []
+  },
+  {
+   "id": "lithuania",
+   "name": "Lithuania",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "not-a-straight-line"
+   ]
+  },
+  {
+   "id": "llms-sgit-ai",
+   "name": "llms.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "custom-uis-are-not-the-exception",
+    "nineteen-sites",
+    "what-sgit-is"
+   ]
+  },
+  {
+   "id": "llms-txt",
+   "name": "llms.txt",
+   "type": "standard",
+   "aliases": []
+  },
+  {
+   "id": "lloyds",
+   "name": "Lloyd's",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "research-delivered-as-a-vault"
+   ]
+  },
+  {
+   "id": "local-evidence-log-vault",
+   "name": "The Local evidence log",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "log4j",
+   "name": "Apache Log4j",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "london",
+   "name": "London",
+   "type": "place",
+   "aliases": []
+  },
+  {
+   "id": "long-tail-ledger-vault",
+   "name": "The Long Tail Ledger vault",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free"
+   ]
+  },
+  {
+   "id": "lovable",
+   "name": "Lovable",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "custom-uis-are-not-the-exception"
+   ]
+  },
+  {
+   "id": "mac-mini",
+   "name": "Mac mini",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "encrypted-memory-for-isolated-agents"
+   ]
+  },
+  {
+   "id": "macos",
+   "name": "macOS",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-mac-of-the-agents-own",
+    "an-agent-desktop-by-the-minute"
+   ]
+  },
+  {
+   "id": "madeleine-clare-elish",
+   "name": "Madeleine Clare Elish",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "magic-wormhole",
+   "name": "Magic Wormhole",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents"
+   ]
+  },
+  {
+   "id": "malt",
+   "name": "Malt",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell"
+   ]
+  },
+  {
+   "id": "manim",
+   "name": "Manim",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-scripted-talk"
+   ]
+  },
+  {
+   "id": "manus",
+   "name": "Manus",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "memory-is-not-a-spectator-sport"
+   ]
+  },
+  {
+   "id": "marc-brysbaert",
+   "name": "Marc Brysbaert",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "margherita-ranieri",
+   "name": "Margherita Ranieri",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "four-frameworks-one-agent"
+   ]
+  },
+  {
+   "id": "mariadb",
+   "name": "MariaDB",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "marilyn-strathern",
+   "name": "Marilyn Strathern",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop"
+   ]
+  },
+  {
+   "id": "mark-murphy",
+   "name": "Mark Murphy",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "mark-surman",
+   "name": "Mark Surman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "mark-zuckerberg",
+   "name": "Mark Zuckerberg",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets",
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "markus-franz",
+   "name": "Markus Franz",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "story-vault-meets-reader-skills",
+    "the-bridge-followed-to-the-end"
+   ]
+  },
+  {
+   "id": "martin-kleppmann",
+   "name": "Martin Kleppmann",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "no-server-by-design"
+   ]
+  },
+  {
+   "id": "mastodon",
+   "name": "Mastodon",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-link-to-a-persona",
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "matt-wynne",
+   "name": "Matt Wynne",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "if-somebody-built-a-company-on-code-review"
+   ]
+  },
+  {
+   "id": "maxime-greau",
+   "name": "Maxime Gréau",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "attacks-rewritten-as-mandates"
+   ]
+  },
+  {
+   "id": "mcclatchy",
+   "name": "McClatchy",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "mckinsey",
+   "name": "McKinsey",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults",
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "mcp",
+   "name": "Model Context Protocol",
+   "type": "standard",
+   "aliases": [
+    "MCP"
+   ]
+  },
+  {
+   "id": "medium",
+   "name": "Medium",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record",
+    "scrolled-is-not-read",
+    "the-site-is-an-inbox"
+   ]
+  },
+  {
+   "id": "mem0",
+   "name": "Mem0",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "memory-is-not-a-spectator-sport"
+   ]
+  },
+  {
+   "id": "memory-fs",
+   "name": "Memory-FS",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "no-server-by-design"
+   ]
+  },
+  {
+   "id": "mermaid",
+   "name": "Mermaid",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "mesa-ranch-vault",
+   "name": "The Mesa Ranch vault",
+   "type": "vault",
+   "aliases": [
+    "Mesa Ranch"
+   ]
+  },
+  {
+   "id": "meta",
+   "name": "Meta",
+   "type": "organisation",
+   "aliases": [
+    "Facebook"
+   ]
+  },
+  {
+   "id": "metasploit",
+   "name": "Metasploit",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "metr",
+   "name": "METR",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "your-agents-logs-are-a-self-report"
+   ]
+  },
+  {
+   "id": "mgraph-ai",
+   "name": "MGraph-AI",
+   "type": "repository",
+   "aliases": [
+    "MGraph-DB"
+   ]
+  },
+  {
+   "id": "michael-ewens",
+   "name": "Michael Ewens",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "michael-nygard",
+   "name": "Michael Nygard",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "microsoft",
+   "name": "Microsoft",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "microsoft-entra",
+   "name": "Microsoft Entra",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-the-platform-draws-the-line"
+   ]
+  },
+  {
+   "id": "midjourney",
+   "name": "Midjourney",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sixteen-notes-i-did-not-want-to-lose"
+   ]
+  },
+  {
+   "id": "mike-chambers",
+   "name": "Mike Chambers",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance"
+   ]
+  },
+  {
+   "id": "mike-cohn",
+   "name": "Mike Cohn",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "mistral",
+   "name": "Mistral",
+   "type": "model",
+   "aliases": []
+  },
+  {
+   "id": "mit",
+   "name": "MIT",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "mit-nanda",
+   "name": "MIT NANDA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-mandate-stack"
+   ]
+  },
+  {
+   "id": "mitre-attack",
+   "name": "MITRE ATT&CK",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-are-you-protecting-against"
+   ]
+  },
+  {
+   "id": "monday-com",
+   "name": "Monday.com",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance"
+   ]
+  },
+  {
+   "id": "mondweep-chakravorty",
+   "name": "Mondweep Chakravorty",
+   "type": "person",
+   "aliases": [
+    "Mondweep"
+   ]
+  },
+  {
+   "id": "mongodb",
+   "name": "MongoDB",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-for-every-skill"
+   ]
+  },
+  {
+   "id": "montgomery-v-lanarkshire",
+   "name": "Montgomery v Lanarkshire Health Board",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "mozilla",
+   "name": "Mozilla",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "muse",
+   "name": "Meta Muse",
+   "type": "product",
+   "aliases": [
+    "Muse"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets",
+    "why-my-agents-do-not-run-on-my-laptop"
+   ]
+  },
+  {
+   "id": "mxc",
+   "name": "Microsoft Execution Containers",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-the-platform-draws-the-line"
+   ]
+  },
+  {
+   "id": "myfeeds",
+   "name": "MyFeeds",
+   "type": "product",
+   "aliases": [
+    "MyFeeds.ai"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-miss-it",
+    "no-server-by-design",
+    "not-a-straight-line"
+   ]
+  },
+  {
+   "id": "mysql",
+   "name": "MySQL",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "n8n",
+   "name": "n8n",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-key-is-the-billing-system",
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "nano-banana",
+   "name": "Nano Banana 2.1",
+   "type": "model",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-infographic-bake-off"
+   ]
+  },
+  {
+   "id": "nasa",
+   "name": "NASA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers",
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "nat-friedman",
+   "name": "Nat Friedman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets"
+   ]
+  },
+  {
+   "id": "ncsc",
+   "name": "NCSC",
+   "type": "organisation",
+   "aliases": [
+    "the UK National Cyber Security Centre"
+   ]
+  },
+  {
+   "id": "netflix",
+   "name": "Netflix",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-link-to-a-persona",
+    "stop-the-bleeding-then-ask-for-it-back",
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "netscape",
+   "name": "Netscape",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "news-corp",
+   "name": "News Corp",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "name": "The SGit Newsroom",
+   "type": "site",
+   "aliases": [
+    "newsroom.sgit.ai",
+    "the newsroom",
+    "this newsroom"
+   ]
+  },
+  {
+   "id": "newsroom-ux",
+   "name": "newsroom.ux",
+   "type": "role",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "dark-mode-and-four-more",
+    "scrolled-is-not-read",
+    "your-reading-your-controls"
+   ]
+  },
+  {
+   "id": "newsroom-vault",
+   "name": "newsroom.vault",
+   "type": "role",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-vault-opened"
+   ]
+  },
+  {
+   "id": "nextcloud",
+   "name": "Nextcloud",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "nfrs-sgit-ai",
+   "name": "nfrs.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "nhi-sgit-ai",
+   "name": "nhi.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "six-agents-one-inbox",
+    "the-same-argument-in-our-words",
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "nhs",
+   "name": "NHS",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "nicholas-lemann",
+   "name": "Nicholas Lemann",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "nick-szabo",
+   "name": "Nick Szabo",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "nielsen-norman-group",
+   "name": "Nielsen Norman Group",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "scrolled-is-not-read",
+    "who-will-game-the-reading-meter"
+   ]
+  },
+  {
+   "id": "nis2",
+   "name": "NIS2",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2010-a-challenge",
+    "portugal-and-europe-2025",
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "nist",
+   "name": "NIST",
+   "type": "organisation",
+   "aliases": [
+    "National Institute of Standards and Technology"
+   ]
+  },
+  {
+   "id": "nist-ai-rmf",
+   "name": "NIST AI RMF",
+   "type": "standard",
+   "aliases": [
+    "the NIST AI Risk Management Framework"
+   ]
+  },
+  {
+   "id": "nist-sp-800-30",
+   "name": "NIST SP 800-30",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-are-you-protecting-against"
+   ]
+  },
+  {
+   "id": "noam-wasserman",
+   "name": "Noam Wasserman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "nodejs",
+   "name": "Node.js",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "nokia",
+   "name": "Nokia",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  },
+  {
+   "id": "northern-ireland",
+   "name": "Northern Ireland",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "northstar-twin",
+   "name": "The Northstar twin",
+   "type": "vault",
+   "aliases": [
+    "Northstar"
+   ]
+  },
+  {
+   "id": "npr",
+   "name": "NPR",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record",
+    "re-anchoring-agent-behaviour-policies"
+   ]
+  },
+  {
+   "id": "ntsb",
+   "name": "NTSB",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "nvca",
+   "name": "NVCA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "nvidia",
+   "name": "NVIDIA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key",
+    "skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "o2-platform",
+   "name": "The OWASP O2 Platform",
+   "type": "product",
+   "aliases": [
+    "O2 Platform",
+    "O2"
+   ]
+  },
+  {
+   "id": "obsidian",
+   "name": "Obsidian",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-site-is-an-inbox"
+   ]
+  },
+  {
+   "id": "oecd",
+   "name": "OECD",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-game-the-reading-meter"
+   ]
+  },
+  {
+   "id": "oecd-ai-classification",
+   "name": "OECD Framework for the Classification of AI Systems",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "four-frameworks-one-agent"
+   ]
+  },
+  {
+   "id": "okta",
+   "name": "Okta",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "olivier-laplace",
+   "name": "Olivier Laplace",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "i-just-want-to-buy-the-article",
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "omg",
+   "name": "Object Management Group",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "three-policies-for-an-agent"
+   ]
+  },
+  {
+   "id": "omkneehealth",
+   "name": "OmKneeHealth",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "ons",
+   "name": "The Office for National Statistics",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "open-policy-agent",
+   "name": "Open Policy Agent",
+   "type": "product",
+   "aliases": [
+    "OPA",
+    "Rego"
+   ]
+  },
+  {
+   "id": "open-security-summit",
+   "name": "Open Security Summit",
+   "type": "event",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "why-i-love-wardley-maps"
+   ]
+  },
+  {
+   "id": "open-source-initiative",
+   "name": "Open Source Initiative",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-value-of-constraints",
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "open-source-sgit-ai",
+   "name": "open-source.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "open-university",
+   "name": "The Open University",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "openclaw",
+   "name": "OpenClaw",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets",
+    "why-my-agents-do-not-run-on-my-laptop"
+   ]
+  },
+  {
+   "id": "opencore-legacy-patcher",
+   "name": "OpenCore Legacy Patcher",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free"
+   ]
+  },
+  {
+   "id": "openrouter",
+   "name": "OpenRouter",
+   "type": "product",
+   "aliases": [
+    "openrouter.ai"
+   ]
+  },
+  {
+   "id": "openssl",
+   "name": "OpenSSL",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "opentelemetry",
+   "name": "OpenTelemetry",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-tokens-hook"
+   ]
+  },
+  {
+   "id": "opentofu",
+   "name": "OpenTofu",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "openvex",
+   "name": "OpenVEX",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "chainguard-mapped"
+   ]
+  },
+  {
+   "id": "oracle",
+   "name": "Oracle",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free",
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "osv",
+   "name": "Open Source Vulnerabilities (OSV)",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "chainguard-mapped"
+   ]
+  },
+  {
+   "id": "otter",
+   "name": "Otter",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-the-voice-works",
+    "omnichannel-programming",
+    "your-own-newsroom"
+   ]
+  },
+  {
+   "id": "owasp",
+   "name": "OWASP",
+   "type": "organisation",
+   "aliases": [
+    "the Open Worldwide Application Security Project"
+   ]
+  },
+  {
+   "id": "owasp-global-appsec",
+   "name": "OWASP Global AppSec",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "owncloud",
+   "name": "ownCloud",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "oxigraph",
+   "name": "Oxigraph",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "no-server-by-design"
+   ]
+  },
+  {
+   "id": "pacifico-energy",
+   "name": "Pacifico Energy",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "journalism-becomes-intelligence"
+   ]
+  },
+  {
+   "id": "panaseer",
+   "name": "Panaseer",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "paul-feldman",
+   "name": "Paul Feldman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "going-live-with-the-reading-meter"
+   ]
+  },
+  {
+   "id": "paypal",
+   "name": "PayPal",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-conference-read-for-governance"
+   ]
+  },
+  {
+   "id": "pci-ssc",
+   "name": "PCI Security Standards Council",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-beside-the-prompt"
+   ]
+  },
+  {
+   "id": "peerj",
+   "name": "PeerJ",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "pendo",
+   "name": "Pendo",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai",
+    "the-code-you-do-not-ship"
+   ]
+  },
+  {
+   "id": "pepper-v-hart",
+   "name": "Pepper v Hart",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "perplexity",
+   "name": "Perplexity",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here",
+    "on-the-record",
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "peter-steinberger",
+   "name": "Peter Steinberger",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets"
+   ]
+  },
+  {
+   "id": "pew-research-center",
+   "name": "Pew Research Center",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists",
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "photocraft",
+   "name": "photocraft",
+   "type": "repository",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "software-vendors-as-villagers"
+   ]
+  },
+  {
+   "id": "pki-sgit-ai",
+   "name": "pki.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "playwright",
+   "name": "Playwright",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "fix-the-page-yourself",
+    "how-to-run-synthetic-users",
+    "your-reading-your-controls"
+   ]
+  },
+  {
+   "id": "pollinations",
+   "name": "Pollinations",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "ponemon-institute",
+   "name": "Ponemon Institute",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "portkey",
+   "name": "Portkey",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-key-is-the-billing-system"
+   ]
+  },
+  {
+   "id": "portugal",
+   "name": "Portugal",
+   "type": "place",
+   "aliases": []
+  },
+  {
+   "id": "post-office",
+   "name": "The Post Office",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agency-is-not-a-yes"
+   ]
+  },
+  {
+   "id": "post-office-horizon",
+   "name": "The Post Office Horizon cases",
+   "type": "event",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "practice-statement-1966",
+   "name": "Practice Statement (Judicial Precedent) 1966",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "pragma-code",
+   "name": "Pragma-Code",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell"
+   ]
+  },
+  {
+   "id": "press-democrat",
+   "name": "The Press Democrat",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "press-gazette",
+   "name": "Press Gazette",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists",
+    "future-of-news-story-vault-not-paywall",
+    "going-live-with-the-reading-meter",
+    "how-news-got-here",
+    "pay-to-keep-your-persona",
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "product-liability-directive",
+   "name": "The EU Product Liability Directive",
+   "type": "law",
+   "aliases": [
+    "The revised Product Liability Directive"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "portugal-2010-a-challenge",
+    "portugal-2016-hacking-portugal",
+    "portugal-and-europe-2025",
+    "send-an-agent-not-a-spreadsheet",
+    "the-policy-draws-the-liability-line"
+   ]
+  },
+  {
+   "id": "project-glasswing",
+   "name": "Project Glasswing",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-eyeballs-get-cheap"
+   ]
+  },
+  {
+   "id": "prompt-api",
+   "name": "The Prompt API",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-model-in-the-tab"
+   ]
+  },
+  {
+   "id": "promptarmor",
+   "name": "PromptArmor",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "prorata",
+   "name": "ProRata",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "prosus",
+   "name": "Prosus",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sovereignty-is-the-ability-to-move"
+   ]
+  },
+  {
+   "id": "psr",
+   "name": "Payment Systems Regulator",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-beside-the-prompt"
+   ]
+  },
+  {
+   "id": "pt-newsroom-sgit-ai",
+   "name": "pt.newsroom.sgit.ai",
+   "type": "site",
+   "aliases": [
+    "The Portuguese newsroom"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-meter-in-the-browser",
+    "future-of-news-story-vault-not-paywall",
+    "pay-after-you-read"
+   ]
+  },
+  {
+   "id": "public-interest-news-foundation",
+   "name": "Public Interest News Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "publisher",
+   "name": "Publisher",
+   "type": "role",
+   "aliases": [
+    "publishers",
+    "editor",
+    "journalist"
+   ]
+  },
+  {
+   "id": "pypi",
+   "name": "PyPI",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "from-send-to-sgit",
+    "open-source-is-not-free",
+    "portugal-2024-genai-in-portuguese"
+   ]
+  },
+  {
+   "id": "python",
+   "name": "Python",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "qodo",
+   "name": "Qodo",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "radiohead",
+   "name": "Radiohead",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "going-live-with-the-reading-meter"
+   ]
+  },
+  {
+   "id": "ralf-thomas",
+   "name": "Ralf Thomas",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-beside-the-prompt",
+    "the-policy-draws-the-liability-line"
+   ]
+  },
+  {
+   "id": "rapidfort",
+   "name": "RapidFort",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-minimum-code-below"
+   ]
+  },
+  {
+   "id": "raymond-panko",
+   "name": "Raymond Panko",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-citizen-developer"
+   ]
+  },
+  {
+   "id": "reach",
+   "name": "Reach",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "rebecca-giblin",
+   "name": "Rebecca Giblin",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "red-hat",
+   "name": "Red Hat",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free"
+   ]
+  },
+  {
+   "id": "redis",
+   "name": "Redis",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door",
+    "the-value-of-constraints"
+   ]
+  },
+  {
+   "id": "redwood-research",
+   "name": "Redwood Research",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-second-reader-the-agent-cannot-skip"
+   ]
+  },
+  {
+   "id": "regulation-graph-vault",
+   "name": "Regulation Graph",
+   "type": "vault",
+   "aliases": []
+  },
+  {
+   "id": "remotion",
+   "name": "Remotion",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-scripted-talk"
+   ]
+  },
+  {
+   "id": "replit",
+   "name": "Replit",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "send-an-agent-not-a-spreadsheet",
+    "ultimate-insider-three-collisions",
+    "where-the-platform-draws-the-line"
+   ]
+  },
+  {
+   "id": "reuters",
+   "name": "Reuters",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "reuters-institute",
+   "name": "Reuters Institute for the Study of Journalism",
+   "type": "organisation",
+   "aliases": [
+    "Reuters Institute"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "future-of-news-story-vault-not-paywall",
+    "pay-after-you-read",
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "rfc-1855",
+   "name": "RFC 1855, Netiquette Guidelines",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "rfc-3986",
+   "name": "RFC 3986",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-link-to-a-persona",
+    "a-reading-list-in-a-link"
+   ]
+  },
+  {
+   "id": "rfc-9562",
+   "name": "RFC 9562",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop"
+   ]
+  },
+  {
+   "id": "richard-stallman",
+   "name": "Richard Stallman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "richard-sutton",
+   "name": "Richard Sutton",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "three-policies-for-an-agent"
+   ]
+  },
+  {
+   "id": "rimini-street",
+   "name": "Rimini Street",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free"
+   ]
+  },
+  {
+   "id": "risk-acceptance-office-vault",
+   "name": "Risk Acceptance Office",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "every-risk-is-already-accepted"
+   ]
+  },
+  {
+   "id": "risk-graph-explorer-vault",
+   "name": "Risk Graph Explorer",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "every-risk-is-already-accepted",
+    "seven-vaults-one-method"
+   ]
+  },
+  {
+   "id": "riskmandate",
+   "name": "RiskMandate",
+   "type": "organisation",
+   "aliases": [
+    "riskmandate.ai",
+    "agent@riskmandate.ai"
+   ]
+  },
+  {
+   "id": "risks-sgit-ai",
+   "name": "risks.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "every-risk-is-already-accepted",
+    "nineteen-sites",
+    "the-same-argument-in-our-words",
+    "what-sgit-is"
+   ]
+  },
+  {
+   "id": "roche",
+   "name": "Roche",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "rocket-money",
+   "name": "Rocket Money",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "stop-the-bleeding-then-ask-for-it-back"
+   ]
+  },
+  {
+   "id": "romania",
+   "name": "Romania",
+   "type": "place",
+   "aliases": []
+  },
+  {
+   "id": "rovo",
+   "name": "Atlassian Rovo",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "rsl",
+   "name": "Really Simple Licensing",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "ruflo",
+   "name": "Ruflo",
+   "type": "product",
+   "aliases": [
+    "claude-flow"
+   ]
+  },
+  {
+   "id": "ruv",
+   "name": "rUv (Reuven Cohen)",
+   "type": "person",
+   "aliases": [
+    "rUv",
+    "Reuven Cohen",
+    "ruvnet"
+   ]
+  },
+  {
+   "id": "ruv-sgit-ai",
+   "name": "ruv.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "safari",
+   "name": "Safari",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-passkey-opens-the-vault",
+    "the-vault-crosses-chrome-profiles"
+   ]
+  },
+  {
+   "id": "salesforce",
+   "name": "Salesforce",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "research-delivered-as-a-vault",
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "sam-altman",
+   "name": "Sam Altman",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "sambanova",
+   "name": "SambaNova",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "sara-martucci",
+   "name": "Sara Martucci",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "four-frameworks-one-agent"
+   ]
+  },
+  {
+   "id": "satya-nadella",
+   "name": "Satya Nadella",
+   "type": "person",
+   "aliases": [
+    "Nadella"
+   ]
+  },
+  {
+   "id": "sbom",
+   "name": "Software bill of materials",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "scaleway",
+   "name": "Scaleway",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "an-agent-desktop-by-the-minute"
+   ]
+  },
+  {
+   "id": "scion",
+   "name": "Scion",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "one-vault-ten-agents",
+    "scion-and-sgit",
+    "sgit-is-a-standard"
+   ]
+  },
+  {
+   "id": "scotland",
+   "name": "Scotland",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "scribd",
+   "name": "Scribd",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-deck-i-could-not-download"
+   ]
+  },
+  {
+   "id": "scripps",
+   "name": "Scripps",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "sealdrop",
+   "name": "SealDrop",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "handing-secrets-to-agents"
+   ]
+  },
+  {
+   "id": "sean-turner",
+   "name": "Sean Turner",
+   "type": "person",
+   "aliases": []
+  },
+  {
+   "id": "sec",
+   "name": "US Securities and Exchange Commission",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-investigation-github-owes-its-customers"
+   ]
+  },
+  {
+   "id": "secrets-sgit-ai",
+   "name": "secrets.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "securityweek",
+   "name": "SecurityWeek",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "chainguard-mapped"
+   ]
+  },
+  {
+   "id": "send-sgraph-ai",
+   "name": "send.sgraph.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "from-send-to-sgit"
+   ]
+  },
+  {
+   "id": "servo",
+   "name": "Servo",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "sg-meter",
+   "name": "SG Meter",
+   "type": "product",
+   "aliases": [
+    "the reading meter",
+    "sg-meter"
+   ]
+  },
+  {
+   "id": "sg-sentinel-sgit-ai",
+   "name": "sg-sentinel.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "nineteen-sites",
+    "what-sgit-is"
+   ]
+  },
+  {
+   "id": "sg-vault",
+   "name": "SG/Vault app",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-vault-is-live",
+    "the-vault-opened"
+   ]
+  },
+  {
+   "id": "sgit",
+   "name": "sgit",
+   "type": "product",
+   "aliases": [
+    "SGit",
+    "sgit CLI",
+    "SG/Send",
+    "SGraph Send",
+    "sg-send"
+   ]
+  },
+  {
+   "id": "sgit-ai",
+   "name": "sgit.ai",
+   "type": "site",
+   "aliases": [
+    "the sgit.ai site"
+   ]
+  },
+  {
+   "id": "sgit-ai-newsroom-api",
+   "name": "SGit-AI Newsroom API",
+   "type": "repository",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "explorer-to-villager-newsroom"
+   ]
+  },
+  {
+   "id": "sgit-ai-website",
+   "name": "SGit-AI/SGit-AI__Website",
+   "type": "repository",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "sgit-ai-website-ruv",
+   "name": "SGit-AI/SGit-AI__Website__Ruv",
+   "type": "repository",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "our-first-pr-in-ruflo"
+   ]
+  },
+  {
+   "id": "sgit-ruv-memory",
+   "name": "mondweep/sgit-ruv-memory",
+   "type": "repository",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "our-first-pr-in-ruflo",
+    "the-policy-guards-the-door",
+    "three-decisions-mapped",
+    "three-policies-for-an-agent",
+    "what-if-an-agent-loses-its-workspace",
+    "when-is-the-vault-actually-used"
+   ]
+  },
+  {
+   "id": "sgraph-ai-tools",
+   "name": "SGraph-AI Tools",
+   "type": "repository",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "fix-the-page-yourself"
+   ]
+  },
+  {
+   "id": "sha-256",
+   "name": "SHA-256",
+   "type": "standard",
+   "aliases": []
+  },
+  {
+   "id": "shared-assessments",
+   "name": "Shared Assessments",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "shortwave",
+   "name": "Shortwave",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "simon-brown",
+   "name": "Simon Brown",
+   "type": "person",
+   "aliases": []
+  },
+  {
+   "id": "simon-wardley",
+   "name": "Simon Wardley",
+   "type": "person",
+   "aliases": [
+    "Wardley"
+   ]
+  },
+  {
+   "id": "simon-willison",
+   "name": "Simon Willison",
+   "type": "person",
+   "aliases": []
+  },
+  {
+   "id": "singapore",
+   "name": "Singapore",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-ai-governance-stack-as-a-graph"
+   ]
+  },
+  {
+   "id": "skills-sgit-ai",
+   "name": "skills.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "nineteen-sites"
+   ]
+  },
+  {
+   "id": "skillspector",
+   "name": "SkillSpector",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "skill-behaviour-policy"
+   ]
+  },
+  {
+   "id": "slashdata",
+   "name": "SlashData",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-game-the-reading-meter"
+   ]
+  },
+  {
+   "id": "slideshare",
+   "name": "SlideShare",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-deck-i-could-not-download"
+   ]
+  },
+  {
+   "id": "slimtoolkit",
+   "name": "SlimToolkit",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-minimum-code-below"
+   ]
+  },
+  {
+   "id": "snopes",
+   "name": "Snopes",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "re-anchoring-agent-behaviour-policies"
+   ]
+  },
+  {
+   "id": "snowflake",
+   "name": "Snowflake",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wire-as-a-graph"
+   ]
+  },
+  {
+   "id": "sofia-giannuzzi",
+   "name": "Sofia Giannuzzi",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "liquid-content-needs-water"
+   ]
+  },
+  {
+   "id": "sonar",
+   "name": "Sonar",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "sondera",
+   "name": "Sondera",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cedar-and-the-policy-vault",
+    "commanders-intent-is-a-behaviour-policy"
+   ]
+  },
+  {
+   "id": "south-korea",
+   "name": "South Korea",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "sparql",
+   "name": "SPARQL",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "search-as-navigation"
+   ]
+  },
+  {
+   "id": "spiffe",
+   "name": "SPIFFE",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "sqlite",
+   "name": "SQLite",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "stack-overflow",
+   "name": "Stack Overflow",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "omnichannel-programming"
+   ]
+  },
+  {
+   "id": "standards-sgit-ai",
+   "name": "standards.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "startup-genome",
+   "name": "Startup Genome",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "sell-dont-issue",
+    "the-expert-founders"
+   ]
+  },
+  {
+   "id": "stefano-dellavigna",
+   "name": "Stefano DellaVigna",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "steve-jobs",
+   "name": "Steve Jobs",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here",
+    "places-of-highest-leverage"
+   ]
+  },
+  {
+   "id": "steve-krein",
+   "name": "Steve Krein",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "steven-mcgeady",
+   "name": "Steven McGeady",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "my-memory-checked"
+   ]
+  },
+  {
+   "id": "store-sgit-ai",
+   "name": "store.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-to-run-synthetic-users",
+    "price-it-then-give-it-away"
+   ]
+  },
+  {
+   "id": "storyteller",
+   "name": "The Storyteller",
+   "type": "role",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "one-article-five-readers",
+    "ways-to-read-one-article"
+   ]
+  },
+  {
+   "id": "strategy-maps-vault",
+   "name": "Strategy Maps",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "why-i-love-wardley-maps"
+   ]
+  },
+  {
+   "id": "stripe",
+   "name": "Stripe",
+   "type": "organisation",
+   "aliases": []
+  },
+  {
+   "id": "subscriptions-sgit-ai",
+   "name": "subscriptions.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "stop-the-bleeding-then-ask-for-it-back",
+    "the-question-is-whether-they-miss-it"
+   ]
+  },
+  {
+   "id": "substack",
+   "name": "Substack",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "superhuman",
+   "name": "Superhuman",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "sustain",
+   "name": "Sustain",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "supply-chain-of-vaults"
+   ]
+  },
+  {
+   "id": "system-prompts-leaks",
+   "name": "system_prompts_leaks",
+   "type": "repository",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "system-prompts-as-behaviour-policies"
+   ]
+  },
+  {
+   "id": "target",
+   "name": "Target",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-policy-beside-the-prompt"
+   ]
+  },
+  {
+   "id": "tech-policy-press",
+   "name": "Tech Policy Press",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "techcrunch",
+   "name": "TechCrunch",
+   "type": "publication",
+   "aliases": []
+  },
+  {
+   "id": "templab",
+   "name": "Templab",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell"
+   ]
+  },
+  {
+   "id": "the-ai-conference",
+   "name": "The AI Conference",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "the-board",
+   "name": "The board",
+   "type": "role",
+   "aliases": [
+    "board member"
+   ]
+  },
+  {
+   "id": "the-cyber-boardroom",
+   "name": "The Cyber Boardroom",
+   "type": "product",
+   "aliases": [
+    "Cyber Boardroom"
+   ]
+  },
+  {
+   "id": "the-document-foundation",
+   "name": "The Document Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "the-economist",
+   "name": "The Economist",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "knowing-when-to-stop",
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "the-guardian",
+   "name": "The Guardian",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "going-live-with-the-reading-meter",
+    "pay-to-keep-your-persona"
+   ]
+  },
+  {
+   "id": "the-inference-stack",
+   "name": "The Inference Stack",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "inside-the-northstar-twin"
+   ]
+  },
+  {
+   "id": "the-new-stack",
+   "name": "The New Stack",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-records-ran-out"
+   ]
+  },
+  {
+   "id": "the-pudding",
+   "name": "The Pudding",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "the-register",
+   "name": "The Register",
+   "type": "publication",
+   "aliases": []
+  },
+  {
+   "id": "the-unjournal",
+   "name": "The Unjournal",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record"
+   ]
+  },
+  {
+   "id": "thomas-baekdal",
+   "name": "Thomas Baekdal",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "threat-sized-security-vault",
+   "name": "Threat-sized security",
+   "type": "vault",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-are-you-protecting-against"
+   ]
+  },
+  {
+   "id": "threatmodcon",
+   "name": "ThreatModCon",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "tidelift",
+   "name": "Tidelift",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "open-source-is-not-free",
+    "the-code-you-do-not-ship",
+    "the-eyeballs-get-cheap",
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "tim-cappalli",
+   "name": "Tim Cappalli",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-the-vault-keys-live"
+   ]
+  },
+  {
+   "id": "tokens-hook-sgit-ai",
+   "name": "tokens.hook.sgit.ai",
+   "type": "site",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-tokens-hook"
+   ]
+  },
+  {
+   "id": "tollbit",
+   "name": "TollBit",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "toptal",
+   "name": "Toptal",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell"
+   ]
+  },
+  {
+   "id": "tor",
+   "name": "Tor",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-game-the-reading-meter"
+   ]
+  },
+  {
+   "id": "tor-browser",
+   "name": "Tor Browser",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "trail-of-bits",
+   "name": "Trail of Bits",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agent-hooks-october-2026",
+    "are-hooks-the-sweet-spot"
+   ]
+  },
+  {
+   "id": "tree-sitter",
+   "name": "Tree-sitter",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "code-review-as-a-fractal-semantic-graph"
+   ]
+  },
+  {
+   "id": "tvxq",
+   "name": "TVXQ",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-controllable-founder"
+   ]
+  },
+  {
+   "id": "twilio",
+   "name": "Twilio",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "replicating-the-agentic-inbox"
+   ]
+  },
+  {
+   "id": "twins-sgit-ai",
+   "name": "twins.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "twitter",
+   "name": "Twitter",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here",
+    "my-memory-checked"
+   ]
+  },
+  {
+   "id": "uber",
+   "name": "Uber",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "where-is-the-why"
+   ]
+  },
+  {
+   "id": "uipath",
+   "name": "UiPath",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries"
+   ]
+  },
+  {
+   "id": "uk-ai-risk-management-toolkit",
+   "name": "The UK AI Risk Management Toolkit",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-are-you-protecting-against"
+   ]
+  },
+  {
+   "id": "uk-ai-security-institute",
+   "name": "UK AI Security Institute",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "commanders-intent-is-a-behaviour-policy"
+   ]
+  },
+  {
+   "id": "uk-corporate-governance-code",
+   "name": "The UK Corporate Governance Code",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "approve-at-altitude",
+    "three-policies-for-an-agent",
+    "what-can-your-agent-reach"
+   ]
+  },
+  {
+   "id": "uk-supreme-court",
+   "name": "The UK Supreme Court",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "approve-at-altitude",
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "ulrike-malmendier",
+   "name": "Ulrike Malmendier",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "paying-after-the-value"
+   ]
+  },
+  {
+   "id": "unison-v-lord-chancellor",
+   "name": "R (UNISON) v Lord Chancellor",
+   "type": "law",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "approve-at-altitude",
+    "case-law-for-agents"
+   ]
+  },
+  {
+   "id": "united-kingdom",
+   "name": "The United Kingdom",
+   "type": "place",
+   "aliases": [
+    "UK",
+    "Britain"
+   ]
+  },
+  {
+   "id": "united-states",
+   "name": "The United States",
+   "type": "place",
+   "aliases": [
+    "US",
+    "America"
+   ]
+  },
+  {
+   "id": "upwork",
+   "name": "Upwork",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "agentics-ready-to-sell",
+    "judo-for-small-countries"
+   ]
+  },
+  {
+   "id": "upworthy",
+   "name": "Upworthy",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "us-army",
+   "name": "US Army",
+   "type": "organisation",
+   "aliases": [
+    "The US Army"
+   ],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "commanders-intent-is-a-behaviour-policy",
+    "the-wall-under-the-reply"
+   ]
+  },
+  {
+   "id": "valkey",
+   "name": "Valkey",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-fork-next-door"
+   ]
+  },
+  {
+   "id": "van-halen",
+   "name": "Van Halen",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "re-anchoring-agent-behaviour-policies"
+   ]
+  },
+  {
+   "id": "veracode",
+   "name": "Veracode",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "code-review-as-a-fractal-semantic-graph",
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "verizon",
+   "name": "Verizon",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "ultimate-insider-three-collisions"
+   ]
+  },
+  {
+   "id": "vi-partners",
+   "name": "Vi Partners",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "who-will-fix-your-mess"
+   ]
+  },
+  {
+   "id": "voicedebrief",
+   "name": "VoiceDebrief",
+   "type": "product",
+   "aliases": [
+    "voicedebrief.ai"
+   ]
+  },
+  {
+   "id": "w3c",
+   "name": "W3C",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-model-in-the-tab",
+    "handing-secrets-to-agents",
+    "scrolled-is-not-read",
+    "secrets-on-public-keys",
+    "the-identity-we-wanted-to-give-the-agents"
+   ]
+  },
+  {
+   "id": "wales",
+   "name": "Wales",
+   "type": "place",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-waiting-room-knew-first"
+   ]
+  },
+  {
+   "id": "wan-ifra",
+   "name": "WAN-IFRA",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-article-remains-a-product"
+   ]
+  },
+  {
+   "id": "ward-cunningham",
+   "name": "Ward Cunningham",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "my-memory-checked"
+   ]
+  },
+  {
+   "id": "wardley-maps-sgit-ai",
+   "name": "wardley-maps.sgit.ai",
+   "type": "site",
+   "aliases": []
+  },
+  {
+   "id": "warren-buffett",
+   "name": "Warren Buffett",
+   "type": "person",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "how-news-got-here"
+   ]
+  },
+  {
+   "id": "washington-post",
+   "name": "The Washington Post",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "firing-journalists"
+   ]
+  },
+  {
+   "id": "waterfox",
+   "name": "Waterfox",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-custom-firefox-of-my-own",
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "wcag",
+   "name": "WCAG",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "dark-mode-and-four-more",
+    "fix-the-page-yourself"
+   ]
+  },
+  {
+   "id": "web-crypto",
+   "name": "Web Crypto API",
+   "type": "standard",
+   "aliases": [
+    "Web Crypto"
+   ]
+  },
+  {
+   "id": "web-summit",
+   "name": "Web Summit",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "webassembly",
+   "name": "WebAssembly",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "no-server-by-design"
+   ]
+  },
+  {
+   "id": "webauthn",
+   "name": "WebAuthn and passkeys",
+   "type": "standard",
+   "aliases": [
+    "passkey",
+    "PRF extension"
+   ]
+  },
+  {
+   "id": "webkit",
+   "name": "WebKit",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-custom-firefox-of-my-own",
+    "a-model-in-the-tab"
+   ]
+  },
+  {
+   "id": "webmcp",
+   "name": "WebMCP",
+   "type": "standard",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-model-in-the-tab"
+   ]
+  },
+  {
+   "id": "whatsapp",
+   "name": "WhatsApp",
+   "type": "product",
+   "aliases": []
+  },
+  {
+   "id": "whistic",
+   "name": "Whistic",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "send-an-agent-not-a-spreadsheet"
+   ]
+  },
+  {
+   "id": "wikimedia-foundation",
+   "name": "Wikimedia Foundation",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "pay-to-keep-your-persona",
+    "paying-after-the-value",
+    "token-bill-nobody-is-sending"
+   ]
+  },
+  {
+   "id": "wikipedia",
+   "name": "Wikipedia",
+   "type": "publication",
+   "aliases": []
+  },
+  {
+   "id": "windows-365-for-agents",
+   "name": "Windows 365 for Agents",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "an-agent-desktop-by-the-minute"
+   ]
+  },
+  {
+   "id": "wired",
+   "name": "Wired",
+   "type": "publication",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-personal-agent-that-keeps-your-secrets"
+   ]
+  },
+  {
+   "id": "wolfi",
+   "name": "Wolfi",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "chainguard-mapped"
+   ]
+  },
+  {
+   "id": "workers-ai",
+   "name": "Workers AI",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cloudflare-as-lego-blocks"
+   ]
+  },
+  {
+   "id": "world-news-day",
+   "name": "World News Day",
+   "type": "event",
+   "aliases": []
+  },
+  {
+   "id": "wrangler",
+   "name": "Wrangler",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "cloudflare-as-lego-blocks"
+   ]
+  },
+  {
+   "id": "x-road",
+   "name": "X-Road",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "judo-for-small-countries"
+   ]
+  },
+  {
+   "id": "x402",
+   "name": "x402",
+   "type": "standard",
+   "aliases": []
+  },
+  {
+   "id": "xz-utils-backdoor",
+   "name": "The xz utils backdoor",
+   "type": "event",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "what-open-source-is-and-is-not"
+   ]
+  },
+  {
+   "id": "y-combinator",
+   "name": "Y Combinator",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "omnichannel-programming"
+   ]
+  },
+  {
+   "id": "youtube",
+   "name": "YouTube",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "fix-the-page-yourself",
+    "what-if-an-agent-loses-its-workspace"
+   ]
+  },
+  {
+   "id": "yubico",
+   "name": "Yubico",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "the-passkey-opens-the-vault"
+   ]
+  },
+  {
+   "id": "z-ai",
+   "name": "Z.ai",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "free-models-your-own-key"
+   ]
+  },
+  {
+   "id": "zapier",
+   "name": "Zapier",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "replicating-the-agentic-inbox",
+    "the-agent-team-as-it-runs"
+   ]
+  },
+  {
+   "id": "zenity-labs",
+   "name": "Zenity Labs",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "a-minimal-viable-browser"
+   ]
+  },
+  {
+   "id": "zep",
+   "name": "Zep",
+   "type": "product",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "memory-is-not-a-spectator-sport"
+   ]
+  },
+  {
+   "id": "zoom",
+   "name": "Zoom",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "on-the-record",
+    "stop-the-bleeding-then-ask-for-it-back"
+   ]
+  },
+  {
+   "id": "zylo",
+   "name": "Zylo",
+   "type": "organisation",
+   "aliases": [],
+   "from": "run 2026-10-18",
+   "first_seen": [
+    "saas-apocalypse-decided-by-inertia-not-by-ai"
+   ]
+  }
  ]
 }

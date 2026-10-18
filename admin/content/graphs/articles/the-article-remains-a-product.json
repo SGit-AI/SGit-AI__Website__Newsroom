@@ -1,0 +1,659 @@
+{
+ "slug": "the-article-remains-a-product",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "On 10 October Jonathan Palmer asked on LinkedIn what a news business would look like with no human readers tomorrow, said every publisher should model that scenario, and asked what assets would have value, who would pay and what must be produced differently.",
+   "section": "top",
+   "quote": "What would a news business look like if it had no human readers tomorrow?",
+   "about": [
+    "entity:jonathan-palmer",
+    "concept:journalism",
+    "entity:linkedin"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The newsroom has been modelling exactly that scenario in public since August: the story vault design of 22 September runs on 74 articles with a page that says what runs and what does not.",
+   "section": "top",
+   "quote": "we have been modelling exactly that scenario, in public, since August",
+   "about": [
+    "concept:the-newsroom",
+    "concept:story-vault",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "As with Satya Nadella's post, this is convergence not priority: two starting points landing on the same four outputs is the interesting part.",
+   "section": "top",
+   "quote": "this is convergence, not priority",
+   "about": [
+    "entity:satya-nadella",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Five synthetic readers went through the newsroom with a real browser: 62 steps, 51 questions the site did not answer, 31 findings, and four of the five left.",
+   "section": "scenario",
+   "quote": "62 steps, 51 questions the site did not answer, 31 findings, four of the five left",
+   "about": [
+    "concept:synthetic-users",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 4,
+    "of": 5,
+    "unit": "synthetic readers who left"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "An agent answering a question from five articles pays a median of 2,579 tokens from their graph against 25,698 from the prose, which is the whole economic case for Palmer's four outputs.",
+   "section": "scenario",
+   "quote": "a median of 2,579 tokens from their graph, against 25,698 from the prose",
+   "about": [
+    "concept:agent-readable-web",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 2579,
+    "of": 25698,
+    "unit": "tokens per question, graph against prose",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Structured intelligence runs: 74 of 74 articles have a graph as JSON, one file per article and all in one with links resolved, 349 links between articles and 10 amber links pointing forward.",
+   "section": "structured",
+   "quote": "74 of 74 articles have a graph",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "entity:newsroom-sgit-ai",
+    "concept:publishing-method"
+   ],
+   "value": {
+    "n": 74,
+    "of": 74,
+    "unit": "articles with a graph",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The story is a graph in which meaning comes from connectivity and every claim walks down to hashed evidence, and the article is one projection of it; Palmer's list is that graph named from the outside.",
+   "section": "structured",
+   "quote": "the story is a graph, a fractal semantic graph in which meaning comes from connectivity",
+   "about": [
+    "concept:story-vault",
+    "concept:fractal-semantic-graphs",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "For World News Day the newsroom fetched the 21 op-eds WAN-IFRA and the Canadian Journalism Foundation published, froze the bytes and built a graph of 160 nodes and 427 edges with its data to download.",
+   "section": "structured",
+   "quote": "160 nodes and 427 edges, the authors, the organisations they name, the themes, the sources they point at and the terms they are published under",
+   "about": [
+    "entity:world-news-day",
+    "entity:wan-ifra",
+    "entity:canadian-journalism-foundation",
+    "concept:provenance",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 427,
+    "unit": "edges in the World News Day graph",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The densest layer is the five readers': a Librarian catalogued 662 items with the sentence each came from and a Cartographer made one ontology, all in the Article Views vault anyone can open with its read key.",
+   "section": "structured",
+   "quote": "a Librarian catalogued every fact, claim, number, question and source in five articles with the sentence it came from, 662 items",
+   "about": [
+    "entity:librarian",
+    "entity:cartographer",
+    "entity:article-views-vault",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "limit",
+   "text": "Selling any of the graphs does not run; they are free, and the newsroom's own ledger says nothing sells one.",
+   "section": "structured",
+   "quote": "What does not run: selling any of it.",
+   "about": [
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Continuous intelligence half runs: every article has a version history read from git at every build, a text change is the next minor version, and a diff page shows what changed paragraph by paragraph.",
+   "section": "continuous",
+   "quote": "The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out.",
+   "about": [
+    "concept:publishing-method",
+    "entity:git",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "limit",
+   "text": "The newsroom does not yet carry a correction to the pages that cited the corrected claim; that is designed, not built, and there is no published way to tell the newsroom an article is wrong.",
+   "section": "continuous",
+   "quote": "There is no published way yet to tell the newsroom an article is wrong.",
+   "about": [
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Provenance is explicit and traceable by the World News Day method: fetch once, freeze the bytes, hash them with SHA-256, re-derive by a second program, and refuse to ship if anything stops re-deriving or twelve consecutive words of a piece appear.",
+   "section": "provenance",
+   "quote": "Fetch once, freeze the bytes, hash them, extract structure, derive what can be derived by a published formula, and refuse to ship if any of it stops re-deriving.",
+   "about": [
+    "concept:provenance",
+    "entity:sha-256",
+    "entity:world-news-day"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "The whole corpus, the frozen pages, every derived dataset, the build code and the gate, was put in an encrypted vault and the read key printed on the page, so provenance can be checked by someone else.",
+   "section": "provenance",
+   "quote": "and the read key was printed on the page",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Editorial validation is explicit: six roles with written behaviour policies, a board and a log of every run, with the rule that publishing is adding a file and the exception that placement belongs to the Editor.",
+   "section": "provenance",
+   "quote": "six roles with written behaviour policies",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "The economics design bills whether a use of a claim is sound, splitting value 60 to the researcher, 25 to the data organisation, 10 to the journalist and 5 to the outlet; today all is captured at the 5% layer.",
+   "section": "provenance",
+   "quote": "essentially all of that revenue is captured at the 5% layer",
+   "about": [
+    "concept:micropayments",
+    "concept:pricing",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 60,
+    "unit": "percent of value to the original researcher, in the design"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "limit",
+   "text": "Commercially accessible is where the newsroom is a design: nothing is paid to the people whose facts an article uses, and trust as a service is argued, not built.",
+   "section": "provenance",
+   "quote": "Nothing is paid to the people whose facts an article uses.",
+   "about": [
+    "concept:micropayments",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Embedded distribution runs in the plainest form: an llms.txt that says what runs, a markdown twin of every page, a feed, the graphs as data, and a block for agents at the foot of every page.",
+   "section": "embedded",
+   "quote": "And every page the newsroom writes ends with a block addressed to an agent.",
+   "about": [
+    "concept:agent-readable-web",
+    "entity:llms-txt",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A reading list in a link and a persona in a link carry their content after the # which the browser keeps to itself, and both went from a brief to live in hours.",
+   "section": "embedded",
+   "quote": "Both went from a brief to live in hours",
+   "about": [
+    "concept:the-reading-list",
+    "concept:personas",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The answer to who would pay is that the agent pays not to pay: a publisher serving meaning fitted to the agent's persona and claims signed with an expiry saves the agent more than it charges.",
+   "section": "pay",
+   "quote": "the agent pays not to pay",
+   "about": [
+    "concept:micropayments",
+    "concept:agent-readable-web",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Where the newsroom differs from Palmer is the word proprietary: it publishes the graphs free and prints the read key, because provenance only the publisher can check is a promise, and sells the projection, the delta and the signed claim.",
+   "section": "pay",
+   "quote": "provenance that only the publisher can check is a promise, not provenance",
+   "about": [
+    "concept:provenance",
+    "concept:micropayments",
+    "concept:encryption-and-keys",
+    "entity:jonathan-palmer"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "The human reader has not gone anywhere: the newsroom charges pence per page by how far you read, from a balance in the browser, with a five pound top-up by card, an honesty box rather than a paywall.",
+   "section": "pay",
+   "quote": "It is an honesty box, not a paywall",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments",
+    "concept:scrolled-is-not-read"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "pounds per card top-up"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The story is a graph and the article a projection, but the article is still written first as prose because writing is how the argument is found; it is no longer the unit the newsroom is organised around.",
+   "section": "article",
+   "quote": "The projection people pay to read is still the article, written first, as prose, because writing is how the argument is found.",
+   "about": [
+    "concept:story-vault",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The technical transformation on this evidence is cheap: one person, a desk of agents and eight weeks produced 74 articles with graphs, versions, a hashed corpus, a vault and agent surfaces on static files with no server; the cultural one cannot be shown here.",
+   "section": "cultural",
+   "quote": "The technical transformation, on this evidence, is cheap",
+   "about": [
+    "concept:client-side",
+    "concept:the-newsroom",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "If the transformation is cultural, the cheapest way to start it may be to run the scenario on one desk in public, and local journalism has the most to gain.",
+   "section": "cultural",
+   "quote": "the cheapest way to start it may be to run the scenario on one desk, in public, and let the pages say what runs",
+   "about": [
+    "concept:local-news",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Nothing is sold: the graphs are free, the vault is open, and the only money that moves is a five pound top-up a reader can choose to make; the economics are a design with a page.",
+   "section": "limits",
+   "quote": "The graphs are free, the vault is open, and the only money that moves is a five pound top-up a reader can choose to make.",
+   "about": [
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "This is one small newsroom, not the industry: 74 articles by one author written from voice memos by agents is a model of the scenario, not evidence that a legacy newsroom can follow it.",
+   "section": "limits",
+   "quote": "This is one small newsroom, not the industry.",
+   "about": [
+    "concept:the-newsroom",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The right-hand column is real: selling the graph, paying the fact creator, corrections that propagate, articles as vaults and packs for agents are designed, not running, and the dated page of what runs is the authority.",
+   "section": "limits",
+   "quote": "The right-hand column is real.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The post is quoted, not summarised: every line of Palmer's is verbatim from the post as published, and the reading of it is the owner's.",
+   "section": "limits",
+   "quote": "The post is quoted, not summarised.",
+   "about": [
+    "entity:jonathan-palmer",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 11 October 2026 after reading the post; the screenshots are of newsroom.sgit.ai at v0.8.0 that day, and the counts in them are the site's own.",
+   "section": "sources",
+   "quote": "taken on 11 October 2026; the counts in them, 74 articles, 349 links, 160 nodes and 427 edges, 21 op-eds, are the site's own",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:newsroom-sgit-ai"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c10",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c17",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c24",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c24"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c01"
+  }
+ ],
+ "entities": [
+  {
+   "id": "jonathan-palmer",
+   "role": "whose LinkedIn post on a newsroom with no human readers the article answers line by line"
+  },
+  {
+   "id": "linkedin",
+   "role": "where the post was published"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the newsroom checked against the post, at v0.8.0 on 11 October 2026"
+  },
+  {
+   "id": "satya-nadella",
+   "role": "whose post on models as insiders was the earlier case of convergence"
+  },
+  {
+   "id": "world-news-day",
+   "role": "whose 21 op-eds were frozen, hashed and graphed"
+  },
+  {
+   "id": "wan-ifra",
+   "role": "co-publisher of the 21 World News Day op-eds"
+  },
+  {
+   "id": "canadian-journalism-foundation",
+   "role": "co-publisher of the 21 World News Day op-eds"
+  },
+  {
+   "id": "librarian",
+   "role": "the reader that catalogued 662 items with their sentences"
+  },
+  {
+   "id": "cartographer",
+   "role": "the reader that turned the catalogues into one ontology"
+  },
+  {
+   "id": "article-views-vault",
+   "role": "the vault holding the five readers' run, open with its read key"
+  },
+  {
+   "id": "git",
+   "role": "the history every article's version list is read from"
+  },
+  {
+   "id": "sha-256",
+   "role": "the hash of every frozen page and every synced file"
+  },
+  {
+   "id": "llms-txt",
+   "role": "the first thing an arriving agent gets"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the honesty box that charges pence per page by how far you read"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "journalism",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "story-vault",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": true
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "the-reading-list",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "local-news",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.linkedin.com/posts/jonathanjpalmer1_futureofnews-ai-publishing-share-7514686042193637377-Zs1Z/",
+   "title": "What would a news business look like if it had no human readers tomorrow?",
+   "by": "Jonathan Palmer",
+   "date": "2026-10-10",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "Jonathan Palmer's post; the newsroom's ledger of what runs as of this date"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The voice memo, the screenshots at v0.8.0 and the article"
+  },
+  {
+   "date": "2026-09-22",
+   "what": "The story vault design published"
+  }
+ ]
+}

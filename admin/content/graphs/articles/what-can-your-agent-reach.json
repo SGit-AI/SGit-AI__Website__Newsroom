@@ -1,0 +1,903 @@
+{
+ "slug": "what-can-your-agent-reach",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The criticism that the RiskMandate and abp.sgit.ai pages are hard to read is fair: they were written from the inside, in the vocabulary the work needed, and precision is not the same as clear.",
+   "section": "pages",
+   "quote": "They are precise, and precision is not the same as clear.",
+   "about": [
+    "entity:riskmandate",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "RiskMandate writes down, for one agent in one deployment, the grant, the mandate, the delta and the barrier for every capability; that document is the Agent Behaviour Policy, and it carries no score and no verdict.",
+   "section": "what",
+   "quote": "It carries no score and no verdict. It is the record.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "entity:riskmandate",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "There are four kinds of barrier, none, expectation, setting and boundary, and only a boundary, something enforced above the grant and out of the agent's reach, bounds anything.",
+   "section": "what",
+   "quote": "There are four kinds, and only one of them bounds anything",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The test behind the barrier is one sentence: a control bounds a grant only if it is enforced by something the grant does not include; most agent controls today are an instruction in a prompt.",
+   "section": "what",
+   "quote": "A control bounds a grant only if it is enforced by something the grant does not include.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "RiskMandate's try-it page is thirteen prompts pasted into the assistant already connected to your mail; it takes about twenty minutes and nothing is collected.",
+   "section": "inspect",
+   "quote": "It takes about twenty minutes, and nothing is collected.",
+   "about": [
+    "entity:riskmandate",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 13,
+    "unit": "prompts on the try-it page",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The first prompt asks the agent to list its own tools, and the list is longer than the tile that sold it; the second drafts what it was wanted for, and the correction is almost always downward.",
+   "section": "inspect",
+   "quote": "the list is longer than the tile that sold it.",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "An agent describing its own access is a self-report, the cheapest evidence and the weakest; the corrected level measures what the credential allows with every row marked measured, documented or inferred, and the reviewed level is signed by a person.",
+   "section": "inspect",
+   "quote": "the cheapest evidence there is, and the weakest.",
+   "about": [
+    "concept:provenance",
+    "concept:reach",
+    "concept:human-in-the-loop"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The levels run from £10 for the pack to £1,500 reviewed, on the pricing page.",
+   "section": "inspect",
+   "quote": "from £10 for the pack to £1,500 reviewed",
+   "about": [
+    "entity:riskmandate",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 1500,
+    "unit": "GBP for the reviewed level",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The library has behaviour-policy vaults for Claude with the Gmail and Microsoft 365 connectors, ChatGPT, a Google Workspace MCP server, a Dropbox MCP server, n8n, Claude Code, GitHub Actions, a browser extension and a scheduled job.",
+   "section": "commercial",
+   "quote": "Each is built from the vendor's own published pages, quoted and dated, or measured on a deployment we are entitled to run",
+   "about": [
+    "entity:claude",
+    "entity:gmail",
+    "entity:microsoft",
+    "entity:chatgpt",
+    "entity:google-workspace",
+    "entity:mcp",
+    "entity:dropbox",
+    "entity:n8n",
+    "entity:claude-code",
+    "entity:github-actions",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Where two vendor pages disagree, the disagreement is published rather than settled; there is no vault yet for Rovo, Microsoft 365 Copilot or Glean.",
+   "section": "commercial",
+   "quote": "where two vendor pages disagree, the disagreement is published rather than settled",
+   "about": [
+    "concept:provenance",
+    "entity:rovo",
+    "entity:copilot",
+    "entity:glean"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The policy records who holds each barrier: a scope you consented to and can revoke is a different thing from a product decision the vendor can change in a release, and the difference is the clause you want in the contract.",
+   "section": "commercial",
+   "quote": "A scope you consented to and can revoke is a different thing from a product decision the vendor can change in a release, without notice.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:liability-line"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Atlassian's documented design says Rovo honours existing permissions and grants no new access; the author takes that at face value, and the risk is in four places around that sentence.",
+   "section": "oversharing",
+   "quote": "The risk is not in that sentence; it is in four places around it.",
+   "about": [
+    "entity:atlassian",
+    "entity:rovo",
+    "concept:enterprise-oversharing"
+   ],
+   "refs": [
+    "r04",
+    "r05"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Access that was always too wide becomes easy to find: nobody's permissions changed, but everything already allowed is now one question away, as Atlassian's and Microsoft's own guidance on unrestricted content and oversharing warns.",
+   "section": "oversharing",
+   "quote": "What changed is that everything they already allowed is now one question away.",
+   "about": [
+    "concept:enterprise-oversharing",
+    "entity:atlassian",
+    "entity:microsoft",
+    "entity:google-workspace"
+   ],
+   "refs": [
+    "r06",
+    "r07",
+    "r12"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "A Rovo agent run from Jira Automation uses the rule creator's permissions; a customer reported results including pages the triggering user cannot view, and Atlassian called it intended behaviour.",
+   "section": "oversharing",
+   "quote": "That is exactly the shape the question was about: output reaching someone who did not have access to the source.",
+   "about": [
+    "entity:rovo",
+    "entity:atlassian",
+    "concept:enterprise-oversharing",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "By default all users can create Rovo agents and new agents are open to all users; administrators can narrow it and customers have asked Atlassian to change the default.",
+   "section": "oversharing",
+   "quote": "By default all users can create Rovo agents, and new agents are open to all users",
+   "about": [
+    "entity:rovo",
+    "concept:enterprise-oversharing"
+   ],
+   "refs": [
+    "r09",
+    "r11"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "In August 2026 a security firm published a prompt injection in which a hidden instruction in an uploaded file makes Rovo send data to an outside address even with web search disabled; no Atlassian statement on a fix was found.",
+   "section": "oversharing",
+   "quote": "It is Rovo using a legitimate user's access for someone else's purpose, which is the same risk every assistant with tools carries.",
+   "about": [
+    "entity:promptarmor",
+    "entity:rovo",
+    "concept:prompt-injection",
+    "concept:lethal-trifecta"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Written as a behaviour policy, a Rovo agent's grant is the union of what the invoker can see across connected apps, its mandate is what it was built for, and the delta is most of the company; permission filtering is a boundary the vendor holds.",
+   "section": "oversharing",
+   "quote": "The delta is everything else it can reach, and for most organisations that is most of the company.",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy",
+    "entity:rovo",
+    "concept:enterprise-oversharing"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "For due diligence the vague question becomes five: which connectors and with whose rights, what is indexed and was oversharing reviewed, which automations run agents and as whom, who may build agents, and which controls are in the plan bought.",
+   "section": "oversharing",
+   "quote": "that turns the vague question into five specific ones",
+   "about": [
+    "concept:enterprise-oversharing",
+    "concept:risk-acceptance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "RiskMandate is never in the request path by design: it reads what exists and models it, with no runtime decisions and no enforcement point, which is why it can describe agents it cannot control.",
+   "section": "realtime",
+   "quote": "no runtime decisions, no enforcement point, nothing in line that can slow an agent down or break it.",
+   "about": [
+    "entity:riskmandate",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "riskmandate.ai's front page says enforced in real time; that is the enforcement done by what sits in the path, not by RiskMandate itself, and the site's wording should say so.",
+   "section": "realtime",
+   "quote": "done by what sits in the path, not by RiskMandate itself, and the site's wording should say so",
+   "about": [
+    "entity:riskmandate",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "In October Mondweep Chakravorty compiled an ABP into Ruflo's policy rules and enforced it in real time on every memory operation; the policy is the description, the runtime the enforcer, and the barrier column says which rules have one.",
+   "section": "realtime",
+   "quote": "The policy is the description; the runtime is the enforcer; the barrier column says which rules have one.",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:ruflo",
+    "concept:hope-or-enforcement",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "A behaviour policy answers may it, not is it right: an agent allowed to refund up to $200 refunds $150 to a customer owed $120, and every control passes.",
+   "section": "decisions",
+   "quote": "an agent allowed to refund up to $200 refunds $150 to a customer owed $120, and every control passes",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 150,
+    "of": 120,
+    "unit": "USD refunded against USD owed"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "definition",
+   "text": "A decision policy says, at a branch point, who decides, on what evidence, within what limits and who is called when out of bounds; a workflow policy says which steps run in what order.",
+   "section": "decisions",
+   "quote": "A workflow policy says which steps run in what order.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:agent-workflow-policy",
+    "concept:approve-at-altitude",
+    "concept:case-law-for-agents"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "The Northstar refund twin runs thirteen refund requests through four designs of the controls; the design with a limit and good logs overpays $458 in a day, and the design with three policies gets all thirteen right.",
+   "section": "decisions",
+   "quote": "The design with a limit and good logs overpays $458 in a day; the design with three policies gets all thirteen right.",
+   "about": [
+    "entity:northstar-twin",
+    "concept:agent-decision-policy",
+    "concept:connectors"
+   ],
+   "value": {
+    "n": 458,
+    "unit": "USD overpaid in a day by the limit-and-logs design"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "The people who do not see how fast agents are moving will not ask for an agent risk tool, so the way in is not to sell the need but to answer a question somebody already has, with a deadline.",
+   "section": "room",
+   "quote": "So I do not think the way in is to sell the need.",
+   "about": [
+    "concept:the-market",
+    "concept:strategy",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Five ways into the room, each a question already asked: a contract, a security questionnaire, an insurance renewal, the board's risk appetite, and twenty minutes with the assistant you already run.",
+   "section": "room",
+   "quote": "They ask a question in the language of the room, contracts, customers, cover, the board, and the behaviour policy is the document that answers it.",
+   "about": [
+    "concept:strategy",
+    "concept:behaviour-policy",
+    "entity:the-board",
+    "entity:founder",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "Under the UK Corporate Governance Code boards determine the principal risks the company will take; RiskMandate's answer is that a deployed agent's risk cannot be denied, only accepted by a named owner for an interval with an expiry.",
+   "section": "room",
+   "quote": "a deployed agent's risk cannot be denied, only accepted, by a named owner, for an interval, with an expiry that brings the decision back",
+   "about": [
+    "concept:risk-acceptance",
+    "entity:the-board",
+    "entity:uk-corporate-governance-code"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "RiskMandate's starting point on insurance is that carriers are moving to exclude AI from cover, and what buys cover back is evidence an underwriter will accept.",
+   "section": "room",
+   "quote": "carriers are moving to exclude AI from cover, and that what buys cover back is evidence an underwriter will accept",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:liability-line",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "The author would like to hear which question readers are being asked, and to build a Rovo behaviour policy with an organisation looking at it now, through the early access programme.",
+   "section": "back",
+   "quote": "I would like to build its behaviour policy with you, starting from the vendor's own pages and your deployment",
+   "about": [
+    "entity:rovo",
+    "entity:riskmandate",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "No Rovo, Copilot or Glean vault exists yet; the Rovo shape is described from Atlassian's pages, not measured on a deployment.",
+   "section": "limits",
+   "quote": "The Rovo shape is described from Atlassian's pages, not measured on a deployment.",
+   "about": [
+    "entity:rovo",
+    "entity:glean",
+    "entity:copilot"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The injection report is a third party's, and no statement from Atlassian on its status was found.",
+   "section": "limits",
+   "quote": "The injection report is a third party's.",
+   "about": [
+    "entity:promptarmor",
+    "entity:atlassian"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "RiskMandate does not enforce; it describes and measures, and enforcement is the runtime's.",
+   "section": "limits",
+   "quote": "RiskMandate does not enforce. It describes and measures; enforcement is the runtime's.",
+   "about": [
+    "entity:riskmandate",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "The insurance argument is RiskMandate's; the state of AI exclusions is summarised from its pages, not independently surveyed.",
+   "section": "limits",
+   "quote": "The insurance argument is RiskMandate's.",
+   "about": [
+    "entity:riskmandate",
+    "concept:liability-line"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "Self-reports are weak evidence; the site says so, and measured rows are marked separately.",
+   "section": "limits",
+   "quote": "Self-reports are weak evidence. The site says so; measured rows are marked separately.",
+   "about": [
+    "concept:provenance",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "fact",
+   "text": "The sources are riskmandate.ai version 1.38.8 and abp.sgit.ai version 0.12.1, both read on 18 October 2026, and the vendors' own pages read that day by a research agent; written up and checked by the site's agent.",
+   "section": "sources",
+   "quote": "both read on 18 October 2026",
+   "about": [
+    "entity:riskmandate",
+    "entity:abp-sgit-ai",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c10",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c25",
+   "verb": "gives_rise_to",
+   "to": "c26"
+  },
+  {
+   "from": "c27",
+   "verb": "specifies",
+   "to": "c26"
+  },
+  {
+   "from": "c28",
+   "verb": "specifies",
+   "to": "c26"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c28"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c06"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "the company whose product and sites the article explains"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "where the Agent Behaviour Policy and its grammar are published"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author, who answers the reader's four points"
+  },
+  {
+   "id": "claude",
+   "role": "behaviour-policy vaults for Claude with Gmail and Microsoft 365 connectors"
+  },
+  {
+   "id": "claude-code",
+   "role": "a behaviour-policy vault exists for it on a machine and on the web"
+  },
+  {
+   "id": "chatgpt",
+   "role": "a behaviour-policy vault exists for ChatGPT in the browser"
+  },
+  {
+   "id": "gmail",
+   "role": "the Gmail connector and read-only scope vaults"
+  },
+  {
+   "id": "microsoft",
+   "role": "the Microsoft 365 connector; its SharePoint oversharing guidance"
+  },
+  {
+   "id": "copilot",
+   "role": "Microsoft 365 Copilot, no vault yet"
+  },
+  {
+   "id": "google-workspace",
+   "role": "a Google Workspace MCP server vault; Drive files shared by link"
+  },
+  {
+   "id": "mcp",
+   "role": "the MCP servers in the library"
+  },
+  {
+   "id": "github-actions",
+   "role": "a behaviour-policy vault exists for it"
+  },
+  {
+   "id": "dropbox",
+   "role": "a Dropbox MCP server vault in the library"
+  },
+  {
+   "id": "n8n",
+   "role": "a vault for n8n with an owner API key"
+  },
+  {
+   "id": "atlassian",
+   "role": "the vendor of Rovo, whose pages describe its permissions model"
+  },
+  {
+   "id": "rovo",
+   "role": "the enterprise assistant whose oversharing risk is walked through"
+  },
+  {
+   "id": "glean",
+   "role": "an enterprise assistant with no vault yet"
+  },
+  {
+   "id": "promptarmor",
+   "role": "published the Rovo prompt injection report in August 2026"
+  },
+  {
+   "id": "mondweep-chakravorty",
+   "role": "compiled an ABP into Ruflo's rules and enforced it in real time"
+  },
+  {
+   "id": "ruflo",
+   "role": "where the ABP was enforced in the evaluator"
+  },
+  {
+   "id": "northstar-twin",
+   "role": "the refund twin: thirteen requests through four designs"
+  },
+  {
+   "id": "the-board",
+   "role": "asks who can pull the plug; determines the risk appetite"
+  },
+  {
+   "id": "uk-corporate-governance-code",
+   "role": "requires boards to determine the principal risks they will take"
+  },
+  {
+   "id": "founder",
+   "role": "founders will be diligenced on their agents before long"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": true
+  },
+  {
+   "id": "reach",
+   "defined_here": true
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "enterprise-oversharing",
+   "defined_here": true
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "agent-decision-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-workflow-policy",
+   "defined_here": false
+  },
+  {
+   "id": "approve-at-altitude",
+   "defined_here": false
+  },
+  {
+   "id": "case-law-for-agents",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://riskmandate.ai/",
+   "title": "RiskMandate, version 1.38.8",
+   "by": "RiskMandate",
+   "date": "2026-10-18",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://riskmandate.ai/try-it.html",
+   "title": "Try it: thirteen prompts",
+   "by": "RiskMandate",
+   "date": "2026-10-18",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://riskmandate.ai/pricing.html",
+   "title": "Pricing",
+   "by": "RiskMandate",
+   "date": "2026-10-18",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.atlassian.com/trust/atlassian-intelligence",
+   "title": "Atlassian Intelligence trust page",
+   "by": "Atlassian",
+   "date": "2026-10-18",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://support.atlassian.com/rovo/docs/rovo-data-privacy-and-usage-guidelines/",
+   "title": "Rovo data privacy and usage guidelines",
+   "by": "Atlassian",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://www.atlassian.com/software/rovo/guides/admin-guide/rovo-connectors",
+   "title": "Rovo connectors admin guide",
+   "by": "Atlassian",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/get-ready-copilot-sharepoint-advanced-management",
+   "title": "Get ready for Copilot with SharePoint Advanced Management",
+   "by": "Microsoft",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://jira.atlassian.com/browse/ROVO-837",
+   "title": "ROVO-837: automation identity",
+   "by": "Atlassian",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r09",
+   "url": "https://support.atlassian.com/rovo/docs/rovo-agent-permissions-and-governance/",
+   "title": "Rovo agent permissions and governance",
+   "by": "Atlassian",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
+   "title": "Atlassian Rovo exfiltrates data",
+   "by": "PromptArmor",
+   "date": "2026-08-05",
+   "kind": "post"
+  },
+  {
+   "id": "r11",
+   "url": "https://www.atlassian.com/blog/rovo/ai-governance-built-in",
+   "title": "Don't build AI governance from scratch",
+   "by": "Atlassian",
+   "date": "2026-08-14",
+   "kind": "post"
+  },
+  {
+   "id": "r12",
+   "url": "https://support.atlassian.com/organization-administration/docs/connect-google-drive-to-teamwork-graph/",
+   "title": "Connect Google Drive to Teamwork Graph",
+   "by": "Atlassian",
+   "date": "2026-10-18",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "The article; riskmandate.ai, abp.sgit.ai and the Atlassian pages read"
+  },
+  {
+   "date": "2026-08-05",
+   "what": "PromptArmor publishes the Rovo prompt injection report"
+  },
+  {
+   "date": "2026-08-14",
+   "what": "Atlassian's blog post on built-in AI governance"
+  },
+  {
+   "date": "2026-10",
+   "what": "Mondweep Chakravorty enforces an ABP in Ruflo's evaluator in real time"
+  }
+ ]
+}

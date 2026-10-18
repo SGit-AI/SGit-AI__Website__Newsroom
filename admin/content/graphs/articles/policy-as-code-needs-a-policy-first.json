@@ -1,0 +1,559 @@
+{
+ "slug": "policy-as-code-needs-a-policy-first",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "At an event this week a speaker described policy as code as the way to scale governance and AI innovation at the same time, and the owner agrees it is where agent governance has to end up.",
+   "section": "question",
+   "quote": "described policy as code as the way to scale governance and AI innovation at the same time",
+   "about": [
+    "concept:policy-as-code",
+    "concept:ai-governance"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "Policy as code means rules that are versioned, tested, reviewed like code and enforced by something other than the model's good behaviour.",
+   "section": "question",
+   "quote": "rules that are versioned, tested, reviewed like code and enforced by something other than the model's good behaviour",
+   "about": [
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Open Policy Agent, a CNCF graduated project, lets a service decouple policy from the software, offload decisions by executing queries, and return arbitrary structured data, not only allow or deny.",
+   "section": "question",
+   "quote": "decouple policy from that software service",
+   "about": [
+    "entity:open-policy-agent",
+    "entity:cncf",
+    "concept:policy-as-code"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "A policy engine answers one question, is this request allowed, and when something goes wrong with an agent that is rarely the question anyone asks first.",
+   "section": "question",
+   "quote": "But it answers one question, is this request allowed",
+   "about": [
+    "concept:policy-as-code",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "An Agent Behaviour Policy holds the columns around the decision: the reach measured from connectors and accounts, the mandate with its reason, the gap, the rules no engine can see, the owner, and who can change each rule's code.",
+   "section": "adds",
+   "quote": "What the agent can actually do, from its connectors and accounts.",
+   "about": [
+    "concept:reach",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "A boundary is enforced above the agent's reach, so it cannot flip it; a setting is a switch the agent's own account could flip.",
+   "section": "adds",
+   "quote": "A boundary is enforced above the agent's reach, so it cannot flip it. A setting is a switch the agent's own account could flip.",
+   "about": [
+    "concept:barrier",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The owner column, who answers for each row, is what decides where liability lands.",
+   "section": "adds",
+   "quote": "Who answers for each row",
+   "about": [
+    "concept:liability-line",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Of the eleven rules in this session's policy, eight have some code behind them: the leak scan, the validator's checks and the hooks.",
+   "section": "session",
+   "quote": "Eight of the eleven have some code behind them.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:policy-as-code",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 8,
+    "of": 11,
+    "unit": "rules with some code behind them",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Three rules have no code at all: masking keys in output, not using anyone else's credential, and answering when asked for the policy's status.",
+   "section": "session",
+   "quote": "Three rules have no code at all: masking keys in output, not using anyone else's credential, and answering when asked for the policy's status.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Nearly all of that code is code the agent can change: the leak scan and hooks are in its own home directory, the validators in the repository it pushes to; by the policy's definitions those rules are settings.",
+   "section": "session",
+   "quote": "Nearly all of that code is code the agent can change.",
+   "about": [
+    "concept:barrier",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Only one rule in eleven, never pushing to sgit.ai, is a boundary, and what makes it one is that the session's GitHub access is scoped to the newsroom's repository by the platform it runs on.",
+   "section": "session",
+   "quote": "this session's access to GitHub is scoped to the newsroom's repository by the platform it runs on",
+   "about": [
+    "concept:barrier",
+    "entity:github",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 1,
+    "of": 11,
+    "unit": "rules with code the agent cannot change",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "hypothesis",
+   "text": "None of that is a failure; it is the session's real state, and most organisations' agents would look the same if anyone drew the table.",
+   "section": "session",
+   "quote": "most organisations' agents would look the same if anyone drew the table",
+   "about": [
+    "concept:barrier",
+    "concept:ai-governance"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Policy as code alone would have scored this session as well governed, because most of its rules are code; the ABP is what shows that the code is the agent's own.",
+   "section": "session",
+   "quote": "The ABP is what shows that the code is the agent's own.",
+   "about": [
+    "concept:policy-as-code",
+    "concept:behaviour-policy",
+    "concept:barrier"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Reverse engineering finds the reasons where they hide: the validator's em-dash rule carries its reason in a comment, and walking up from the code collects the scattered paper policy into rows.",
+   "section": "session",
+   "quote": "That is the paper policy, scattered through the code.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Five ABP rows became a 35-line Rego policy, and Open Policy Agent decided seven requests: three denied, one asked, three allowed.",
+   "section": "in-short",
+   "quote": "Five ABP rows became a 35-line Rego policy; Open Policy Agent decided seven requests: three denied, one asked, three allowed.",
+   "about": [
+    "entity:open-policy-agent",
+    "concept:policy-as-code",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "requests decided by OPA",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Each generated Rego rule carries its row's id and reason as a comment and as the value it returns, so every decision names the row it came from.",
+   "section": "generate",
+   "quote": "each rule carrying its row's id and reason as a comment and as the value it returns",
+   "about": [
+    "concept:policy-as-code",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Publishing a sentence that says a perfect result was allowed, because the row that forbids it has no condition any engine can check, and the generator wrote that down as a comment instead of pretending.",
+   "section": "generate",
+   "quote": "because the row that forbids it has no condition any engine can check, and the generator wrote that down as a comment instead of pretending",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Parsing the Rego back with OPA's own parser and comparing it with the ABP found a row with no code, the wording rule, and code with no row, a hurried rule against Friday releases that nobody had written a reason for.",
+   "section": "generate",
+   "quote": "the comparison flagged no-friday-releases as enforcement nobody had written a reason for",
+   "about": [
+    "entity:open-policy-agent",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "From a spreadsheet: Jan van Dijke's AI Baseline Control Framework, twenty controls mapped to the NIST AI RMF, ISO/IEC 42001 and the EU AI Act, became a semantic graph joined to the Act's own text on the day.",
+   "section": "paper",
+   "quote": "twenty controls mapped to the NIST AI RMF, ISO/IEC 42001 and the EU AI Act",
+   "about": [
+    "entity:ai-bcf",
+    "entity:jan-van-dijke",
+    "entity:nist-ai-rmf",
+    "entity:iso-42001",
+    "entity:eu-ai-act",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "From paper, in both directions: sgit.ai's newsroom roles are files, and the check that gates a release reads the same files the policies table is generated from.",
+   "section": "paper",
+   "quote": "One source, rendered as a page people read and as a check a release must pass.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "The pattern for every agent: the ABP is the source, the table and the code are renderings, and neither can drift from the other because neither is edited by hand.",
+   "section": "paper",
+   "quote": "the ABP is the source, the table and the code are renderings, and neither can drift from the other because neither is edited by hand",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "A round trip breaks if every format must share one schema; fractal semantic graphs let each altitude keep its own vocabulary, with edges between them as verbs with inverses.",
+   "section": "fsg",
+   "quote": "Each altitude keeps its own vocabulary; the edges between them are verbs with inverses",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "With the graph the questions that matter, which rows have no code, which code has no row, which rows rest only on code the agent can change, are walks, not workshops.",
+   "section": "fsg",
+   "quote": "Then the questions that matter are walks, not workshops.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:barrier"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "Hope or enforcement measured what the enforcer job is worth: one agent's rules kept only by good behaviour fell from 97% to 23% as they moved into the platform.",
+   "section": "jobs",
+   "quote": "fell from 97% to 23% as they moved into the platform",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 23,
+    "unit": "percent of rules kept only by good behaviour, after",
+    "as_of": "2026-10"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "As decision-maker, every decision returns the row it came from, allow, deny or ask, and every ask goes to a named person, with the record of decisions moving the line over time.",
+   "section": "jobs",
+   "quote": "every ask goes to a named person",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The round trip is a demonstration of five rows, a short generator and seven requests; it is not a product, and real agents need their requests routed through the engine for any of it to bind.",
+   "section": "limits",
+   "quote": "it is not a product, and real agents need their requests routed through the engine for any of it to bind",
+   "about": [
+    "entity:open-policy-agent",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The session table is one agent's, counted on 14 October 2026; other agents will look different, and the owner expects most to look similar.",
+   "section": "limits",
+   "quote": "other agents will look different, and I expect most to look similar",
+   "about": [
+    "concept:barrier"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The GitHub scope was not tested by trying: pushing to sgit.ai to prove it is exactly what the policy forbids.",
+   "section": "limits",
+   "quote": "pushing to sgit.ai to prove it is exactly what the policy forbids",
+   "about": [
+    "entity:github",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Some rows will never be code; that is a feature of the method, because an ABP says which rows rely on a person.",
+   "section": "limits",
+   "quote": "an ABP says which rows rely on a person",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The speaker is not named; the owner took the idea from a talk and has not checked how they would put it.",
+   "section": "limits",
+   "quote": "I took the idea from a talk and have not checked how they would put it.",
+   "about": [
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The round trip was run with Open Policy Agent 1.21.2, using opa check, opa eval on seven requests and opa parse to read the Rego back.",
+   "section": "generate",
+   "quote": "OPA 1.21.2 checked the policy and evaluated seven requests.",
+   "about": [
+    "entity:open-policy-agent"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c06"
+  }
+ ],
+ "entities": [
+  {
+   "id": "open-policy-agent",
+   "role": "the engine, version 1.21.2, that ran the round trip and whose Rego the rows became"
+  },
+  {
+   "id": "github",
+   "role": "the platform scope that makes the one boundary rule a boundary"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the repository the session must never push to; its roles are files read by a check"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the repository this session is scoped to and whose agent's policy was reverse engineered"
+  },
+  {
+   "id": "ai-bcf",
+   "role": "the control spreadsheet that became a graph joined to the law"
+  },
+  {
+   "id": "nist-ai-rmf",
+   "role": "one of the three frameworks AI-BCF maps to"
+  },
+  {
+   "id": "iso-42001",
+   "role": "one of the three frameworks AI-BCF maps to"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "the law whose text the AI-BCF graph was joined to"
+  },
+  {
+   "id": "jan-van-dijke",
+   "role": "published the AI Baseline Control Framework"
+  },
+  {
+   "id": "cncf",
+   "role": "the foundation of which Open Policy Agent is a graduated project"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "ai-governance",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "policy-as-code",
+   "defined_here": true
+  },
+  {
+   "id": "barrier",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.openpolicyagent.org/docs/philosophy",
+   "title": "Open Policy Agent: philosophy",
+   "by": "Open Policy Agent",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The event and the voice memo; the session's policy reverse engineered and the OPA round trip run"
+  }
+ ]
+}

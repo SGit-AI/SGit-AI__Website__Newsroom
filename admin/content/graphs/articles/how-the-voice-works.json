@@ -1,0 +1,452 @@
+{
+ "slug": "how-the-voice-works",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The person the walkthrough was written for asked how the owner makes his AI sound so human.",
+   "section": "top",
+   "quote": "how do you make your AI sound so human?",
+   "about": [
+    "concept:agents-write-too",
+    "concept:the-four-inputs"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "The voice is not a setting; it is a corpus, a memo, a short list of rules and a reader who corrects, and it stops working if any one is removed.",
+   "section": "short",
+   "quote": "It is a corpus, a memo, a short list of rules, and a reader who corrects.",
+   "about": [
+    "concept:the-four-inputs",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The corpus is 86 articles on the site, about 347,000 words, each citing the ones before it.",
+   "section": "short",
+   "quote": "86 articles on this site, about 347,000 words, 51 of them starting as a voice memo",
+   "about": [
+    "concept:the-record",
+    "concept:the-four-inputs",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 86,
+    "unit": "articles in the corpus",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "51 of the 86 articles began as a voice memo and say so.",
+   "section": "short",
+   "quote": "51 of them starting as a voice memo and saying so",
+   "about": [
+    "concept:voice-memo",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 51,
+    "of": 86,
+    "unit": "articles from a voice memo",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "hypothesis",
+   "text": "The memo is the biggest of the four inputs and where most of the voice comes from.",
+   "section": "inputs",
+   "quote": "This is my hypothesis, and I think it is the biggest of the four.",
+   "about": [
+    "concept:voice-memo",
+    "concept:the-four-inputs"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A typed brief is already edited into someone else's register; a memo is how the owner thinks, in the order he thinks it, with the phrases he would use.",
+   "section": "inputs",
+   "quote": "A typed brief is already edited into someone else's register.",
+   "about": [
+    "concept:voice-memo",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "There are seven wording rules, each a correction made once, now a line in the session's behaviour policy restored after every summary.",
+   "section": "inputs",
+   "quote": "Seven of them, and each one was a correction I made once.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-memory",
+    "concept:the-four-inputs"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "wording rules",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The site's validator checks some of the rules at build time, so a banned word cannot reach the page.",
+   "section": "inputs",
+   "quote": "the site's validator checks some of them at build time, so a word I have banned cannot reach the page",
+   "about": [
+    "concept:publishing-method",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The owner reads every article, usually twice, before it goes live and once on the site; a jarring word becomes a rule and a wrong point a new version.",
+   "section": "inputs",
+   "quote": "I read every article, usually twice: once before it goes live and once on the site.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:the-four-inputs",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The model never decides whether something sounds like the owner; the owner does.",
+   "section": "inputs",
+   "quote": "The model never decides whether something sounds like me. I do.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:dinis-cruz",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Since the session's last summary the owner sent 98 messages, 25 of them over 300 words, five of them Otter transcripts of about 4,900 words.",
+   "section": "corrections",
+   "quote": "there have been 98 messages from me, 25 of them over 300 words",
+   "about": [
+    "concept:the-record",
+    "entity:otter"
+   ],
+   "value": {
+    "n": 98,
+    "unit": "messages since the last summary",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "Of the corrections in the last two days, one was about a word; the rest were about content and direction.",
+   "section": "corrections",
+   "quote": "one in the last two days was about a word: \"prose\".",
+   "about": [
+    "concept:the-four-inputs",
+    "concept:human-in-the-loop"
+   ],
+   "value": {
+    "n": 1,
+    "unit": "language corrections in two days",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "In the earlier weeks the balance was the other way: em-dashes, perfect, the ladder word and massively were each caught and turned into a rule.",
+   "section": "corrections",
+   "quote": "In the earlier weeks the balance was the other way.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "A language correction is made once and then enforced; a content correction is about this article and has to be made again, because it is new thinking.",
+   "section": "corrections",
+   "quote": "a language correction is made once and then enforced; a content correction is about this article and has to be made again next time",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:the-four-inputs"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "What the model does when it writes as the owner is not imitation; the difference from writing like X is the context.",
+   "section": "claude",
+   "quote": "What I am doing is not imitation.",
+   "about": [
+    "concept:agents-write-too",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "A model given only a style sample produces surface resemblance, which is why it usually sounds like a parody.",
+   "section": "claude",
+   "quote": "That is a thin thing, and it is why it usually sounds like a parody.",
+   "about": [
+    "concept:agents-write-too",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "A typed brief tells the model what to write; a memo tells it how the owner got there, so the tangent is the connection he made, not noise.",
+   "section": "claude",
+   "quote": "A typed brief tells me what to write. A memo tells me how he got there.",
+   "about": [
+    "concept:voice-memo",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The corrections are specific, and the policy file means the model does not have to remember them across a summary; the harness prints them back.",
+   "section": "claude",
+   "quote": "the policy file means I do not have to remember them across a summary, which I cannot reliably do; the harness prints them back",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Nothing has been trained; the model is the one anyone else uses and what differs is one session's context.",
+   "section": "claude",
+   "quote": "Nothing has been trained. I am the same model anyone else uses.",
+   "about": [
+    "concept:agent-memory",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The voice cannot be given to another author without their articles, their memos, their banned words and their reading, which takes weeks that are mostly theirs.",
+   "section": "claude",
+   "quote": "That takes weeks, and most of the weeks are theirs, not mine.",
+   "about": [
+    "concept:the-four-inputs",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "limit",
+   "text": "The counts are one session's, after its last summary; earlier sessions are summarised, not counted.",
+   "section": "limits",
+   "quote": "The counts are one session's, after its last summary.",
+   "about": [
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The model's account of itself is an account, not a measurement; it cannot see why the context works inside the model.",
+   "section": "limits",
+   "quote": "The model's account of itself is an account, not a measurement.",
+   "about": [
+    "entity:claude",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "Whether the articles sound like the owner is judged by the owner alone; nobody else has been asked.",
+   "section": "limits",
+   "quote": "\"Sounds like me\" is judged by me.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Nothing is trained: the voice is context and ends with the session, which is why the rules live in a file and the articles on a site.",
+   "section": "limits",
+   "quote": "The voice is context, and it ends with the session",
+   "about": [
+    "concept:agent-memory",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 12 October 2026 after showing the walkthrough to the person it was written for, who is not named.",
+   "section": "sources",
+   "quote": "after showing the walkthrough to the person it was written for; she is not named",
+   "about": [
+    "concept:voice-memo",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c20"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "the author whose voice the articles carry and who reads every one"
+  },
+  {
+   "id": "claude",
+   "role": "the model that writes the articles and speaks for itself in one section"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site whose 86 articles are the corpus"
+  },
+  {
+   "id": "otter",
+   "role": "transcribes the voice memos into the session"
+  },
+  {
+   "id": "riskmandate",
+   "role": "agent@riskmandate.ai answers in a voice that is mostly the owner's"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-four-inputs",
+   "defined_here": true
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-12",
+   "what": "The walkthrough shown, the question asked, the memo recorded and the session counted"
+  }
+ ]
+}

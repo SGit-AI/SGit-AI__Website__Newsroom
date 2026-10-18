@@ -1,0 +1,591 @@
+{
+ "slug": "the-scripted-talk",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "For a short slot the author wants to try the opposite of reading a talk with slides behind him: a talk that is completely scripted, where slides, builds, animations and the demo play on a clock and he speaks to them.",
+   "section": "why",
+   "quote": "I want to try the opposite: a talk that is completely scripted.",
+   "about": [
+    "concept:talk-as-timeline",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "With the talk as a timeline the pace is set before walking on, the demo cannot fail live, and the whole thing can be rehearsed, measured and changed like code.",
+   "section": "why",
+   "quote": "the demo cannot fail live, and the whole thing can be rehearsed, measured and changed like code",
+   "about": [
+    "concept:talk-as-timeline",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The Black Hat Europe 2025 keynote, AI vs. AI on 9 December 2025, made the slides data: its 26 slides in seven layouts are one JSON file the app reads at load time.",
+   "section": "lineage",
+   "quote": "Its 26 slides, in seven layouts, are one JSON file",
+   "about": [
+    "entity:black-hat-europe",
+    "entity:sgit-ai",
+    "concept:content-is-data",
+    "concept:vault"
+   ],
+   "value": {
+    "n": 26,
+    "unit": "slides in one JSON file",
+    "as_of": "2025-12-09"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "The lesson from the Black Hat deck: content is data, the renderer is code, and they change separately.",
+   "section": "lineage",
+   "quote": "content is data, the renderer is code, and they change separately",
+   "about": [
+    "concept:content-is-data",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The Black Hat vault also carries the slide system at ten versions, six PDF exports and the eight research papers the talk was built from.",
+   "section": "lineage",
+   "quote": "the slide system itself at ten versions, six PDF exports, and the eight research papers the talk was built from",
+   "about": [
+    "concept:vault",
+    "entity:black-hat-europe"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "versions of the slide system in the vault",
+    "as_of": "2025-12-09"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The VoiceDebrief pitch to Founder Institute on 2 September 2026 added time to the slides: a presenter app with per-slide target timings, a three-minute countdown and speaker notes, built from a template by a script.",
+   "section": "lineage",
+   "quote": "a presenter app with per-slide target timings, a three-minute countdown and speaker notes",
+   "about": [
+    "entity:voicedebrief",
+    "entity:founder-institute",
+    "concept:content-is-data"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "proposal",
+   "text": "The next step is to let the clock drive: instead of a deck with timings beside it, a timeline with slides on it.",
+   "section": "lineage",
+   "quote": "Instead of a deck with timings beside it, a timeline with slides on it.",
+   "about": [
+    "concept:talk-as-timeline"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "decision",
+   "text": "This site's agent built a first version of the player, deliberately small: one HTML file and one JSON file, no build, a page made for one moment.",
+   "section": "player",
+   "quote": "one HTML file and one JSON file, no build",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:agents-write-too",
+    "concept:talk-as-timeline"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "The talk is a list of beats; each beat has a start in seconds, a duration, a title, the words to say, and a slide with a layout: statement, terminal, table, bullets, video or iframe.",
+   "section": "player",
+   "quote": "Each beat has a start in seconds, a duration, a title, the words to say, and a slide with a layout",
+   "about": [
+    "concept:talk-as-timeline",
+    "concept:content-is-data"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "A clock drives everything: Space plays, the arrows jump between beats, P opens the presenter view, and R starts a rehearsal that saves a file of planned against actual times.",
+   "section": "player",
+   "quote": "when it stops, it saves a file of planned against actual times, the evidence of whether the script fits the slot",
+   "about": [
+    "concept:talk-as-timeline",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The player was tested in Chromium: every beat came on at its second, builds and rows appeared on schedule, it stopped at 5:00 with no errors, and a version with the talk inlined opens from a file with no server.",
+   "section": "player",
+   "quote": "It was tested in Chromium: every beat came on at its second",
+   "about": [
+    "entity:chrome",
+    "concept:talk-as-timeline",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "In a scripted talk the terminal types the command on the timeline and prints the output the real run produced, captured beforehand and kept with the talk.",
+   "section": "demo",
+   "quote": "the output is the one the real run produced, captured beforehand and kept with the talk",
+   "about": [
+    "concept:provenance",
+    "concept:talk-as-timeline"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "That is not faking the demo: as in every vault on sgit.ai the evidence is recorded, versioned and inspectable, and anyone can run the command again from the vault and compare.",
+   "section": "demo",
+   "quote": "That is not faking the demo.",
+   "about": [
+    "concept:provenance",
+    "concept:vault",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Claude Motion, released by Anthropic in beta on 8 October 2026 for Team and Enterprise plans, writes code that animates text, charts, shapes and images, uses no video generation model, and downloads as MP4.",
+   "section": "motion",
+   "quote": "Claude writes code that animates your text, charts, shapes, and images, so you can change any word, number, or timing.",
+   "about": [
+    "entity:claude-motion",
+    "entity:anthropic",
+    "entity:claude"
+   ],
+   "refs": [
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "hypothesis",
+   "text": "The memo's second garbled name most likely refers to Manim, the Python library for mathematical animation, or Remotion, which makes video from React components, both used with Claude Code through community skills.",
+   "section": "motion",
+   "quote": "the code-based animation tools it most likely refers to are Manim, the Python library for mathematical animation, and Remotion",
+   "about": [
+    "entity:manim",
+    "entity:remotion",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "An animation made as code can be edited a word or a number at a time, versioned beside the talk, exported as MP4 and placed on a beat, so the talk stays data from end to end.",
+   "section": "motion",
+   "quote": "The talk stays data from end to end",
+   "about": [
+    "concept:content-is-data",
+    "concept:talk-as-timeline"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "ruv.sgit.ai, built on 14 October for Agentic Engineering Live with rUv in London on 15 October, shows sgit vaults and agent behaviour policies running inside his stack as six proofs of concept.",
+   "section": "ruv",
+   "quote": "as six proofs of concept, and it already has a five-minute demo written in five beats",
+   "about": [
+    "entity:ruv-sgit-ai",
+    "entity:ruv",
+    "entity:ruflo",
+    "entity:agentic-engineering-live",
+    "entity:london",
+    "concept:behaviour-policy",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "proofs of concept on ruv.sgit.ai",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The agent turned the five-minute demo's five beats into the first talk.json, and a ten-minute version is the same file with more beats.",
+   "section": "ruv",
+   "quote": "A ten-minute version is the same file with more beats.",
+   "about": [
+    "concept:talk-as-timeline",
+    "entity:ruv-sgit-ai"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "The brief asks for a talk vault: talk.json, the player, the assets and every rehearsal file in one vault, with a published read key once the talk is given.",
+   "section": "brief",
+   "quote": "the player, the assets and every rehearsal file in one vault, with a published read key once the talk is given",
+   "about": [
+    "concept:vault",
+    "concept:the-brief",
+    "concept:talk-as-timeline"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "Rehearsal as a test: a rehearsal file committed after each run-through, and a check that fails if any beat runs more than ten seconds over.",
+   "section": "brief",
+   "quote": "a check that fails if any beat runs more than ten seconds over",
+   "about": [
+    "concept:talk-as-timeline",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "A vault app: the player served from the vault itself, as the Black Hat deck is, so the talk and its evidence travel as one object.",
+   "section": "brief",
+   "quote": "so the talk and its evidence travel as one object",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The talk has not been given yet; the player was tested in a browser, not in a room.",
+   "section": "limits",
+   "quote": "The player was tested in a browser, not in a room.",
+   "about": [
+    "concept:talk-as-timeline"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "Scripted is not read: the words are in the presenter view, and whether to read them is the speaker's choice.",
+   "section": "limits",
+   "quote": "whether to read them is the speaker's choice",
+   "about": [
+    "concept:talk-as-timeline"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The second animation tool is a guess, because the transcription was unclear.",
+   "section": "limits",
+   "quote": "The second animation tool is a guess.",
+   "about": [
+    "entity:manim",
+    "entity:remotion",
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Claude Motion was not used here; its details are from Anthropic's pages, and it is in beta on Team and Enterprise plans.",
+   "section": "limits",
+   "quote": "Its details are from Anthropic's pages; it is in beta on Team and Enterprise plans.",
+   "about": [
+    "entity:claude-motion",
+    "entity:anthropic"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The exports and the talk vault are proposed; the player, the timeline and the tests exist.",
+   "section": "limits",
+   "quote": "The player, the timeline and the tests exist.",
+   "about": [
+    "concept:talk-as-timeline",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 14 October 2026; the player was built and tested by the site's agent on 15 October from the two published vaults, cloned with their read keys, and ruv.sgit.ai's demo script and data.",
+   "section": "sources",
+   "quote": "The player was built and tested by this site's agent on 15 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "the speaker, whose memo and talk this is"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "where the two earlier talks are published as vaults"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults and the tool whose proofs of concept the demo shows"
+  },
+  {
+   "id": "black-hat-europe",
+   "role": "the 2025 keynote whose deck made the slides data"
+  },
+  {
+   "id": "voicedebrief",
+   "role": "whose pitch added timings and a presenter"
+  },
+  {
+   "id": "founder-institute",
+   "role": "to whom the VoiceDebrief pitch was given on 2 September 2026"
+  },
+  {
+   "id": "chrome",
+   "role": "Chromium, where the player was tested"
+  },
+  {
+   "id": "claude-motion",
+   "role": "Anthropic's beta that makes animations as code, exported as MP4"
+  },
+  {
+   "id": "anthropic",
+   "role": "released Claude Motion in beta on 8 October 2026"
+  },
+  {
+   "id": "claude",
+   "role": "writes the animation code in Claude Motion"
+  },
+  {
+   "id": "manim",
+   "role": "Python library for mathematical animation, a likely second tool"
+  },
+  {
+   "id": "remotion",
+   "role": "makes video from React components, a likely second tool"
+  },
+  {
+   "id": "claude-code",
+   "role": "uses Manim and Remotion through community skills"
+  },
+  {
+   "id": "ruv-sgit-ai",
+   "role": "the newest site in the sgit family, whose demo is the first timeline"
+  },
+  {
+   "id": "ruv",
+   "role": "Reuven Cohen, host of Agentic Engineering Live, whose stack the proofs of concept run in"
+  },
+  {
+   "id": "ruflo",
+   "role": "part of rUv's stack the six proofs of concept run inside"
+  },
+  {
+   "id": "agentic-engineering-live",
+   "role": "the event in London on 15 October where the talk is first given"
+  },
+  {
+   "id": "london",
+   "role": "where Agentic Engineering Live takes place"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "talk-as-timeline",
+   "defined_here": true
+  },
+  {
+   "id": "content-is-data",
+   "defined_here": true
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://sgit.ai/demos/vaults/blackhat-eu-2025/index.html",
+   "title": "AI vs. AI, Black Hat Europe 2025",
+   "by": "Dinis Cruz",
+   "date": "2025-12-09",
+   "kind": "vault"
+  },
+  {
+   "id": "r02",
+   "url": "https://sgit.ai/demos/vaults/voicedebrief-pitch/index.html",
+   "title": "A three-minute pitch",
+   "by": "Dinis Cruz",
+   "date": "2026-09-02",
+   "kind": "vault"
+  },
+  {
+   "id": "r03",
+   "url": "https://claude.com/resources/articles/dashboards-and-motion",
+   "title": "Build live dashboards and animate explainers with Claude",
+   "by": "Anthropic",
+   "date": "2026-10-08",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion",
+   "title": "Get started with Claude Motion",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2025-12-09",
+   "what": "AI vs. AI keynote at the AI Security Summit, Black Hat Europe"
+  },
+  {
+   "date": "2026-09-02",
+   "what": "The VoiceDebrief pitch to Founder Institute"
+  },
+  {
+   "date": "2026-10-08",
+   "what": "Anthropic releases Claude Motion in beta"
+  },
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo; ruv.sgit.ai built"
+  },
+  {
+   "date": "2026-10-15",
+   "what": "The player built and tested; Agentic Engineering Live with rUv in London"
+  }
+ ]
+}

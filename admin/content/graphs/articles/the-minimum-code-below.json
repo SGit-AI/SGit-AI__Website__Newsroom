@@ -1,0 +1,563 @@
+{
+ "slug": "the-minimum-code-below",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Chainguard secures from the bottom up: rebuilt from source, minimal images, a managed process, and it stops where the application starts.",
+   "section": "in-short",
+   "quote": "Rebuilt from source, minimal images, a managed process, and it stops where the application starts.",
+   "about": [
+    "entity:chainguard",
+    "concept:supply-chains",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Bottom up has three gaps: code the application never runs, assurance that depends on testing, and the loop of granting more when something breaks.",
+   "section": "bottom-up",
+   "quote": "But bottom up has three gaps, and the conversation today made them clearer.",
+   "about": [
+    "concept:minimal-code",
+    "entity:chainguard"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "hypothesis",
+   "text": "In most images the code the application never runs is the large majority, and every one of those files is attack surface.",
+   "section": "bottom-up",
+   "quote": "My estimate is that in most images it is the large majority",
+   "about": [
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The one case measured found about 70% of the files in the dependency tree never ran.",
+   "section": "bottom-up",
+   "quote": "found about 70% of the files in the dependency tree never ran",
+   "about": [
+    "concept:minimal-code",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 70,
+    "unit": "percent of files that never ran",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Chainguard's Custom Assembly only allows adding packages to an image; its documentation says packages in the source image cannot be removed by default.",
+   "section": "bottom-up",
+   "quote": "only allows you to add packages into a given container image",
+   "about": [
+    "entity:chainguard",
+    "concept:minimal-code"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "proposal",
+   "text": "Come from the other end and ask one question at every layer: what is the minimum code below this that the layer above needs; keep that and remove everything else.",
+   "section": "top-down",
+   "quote": "what is the minimum code below this that the layer above needs?",
+   "about": [
+    "concept:minimal-code",
+    "concept:the-immutable-line"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "definition",
+   "text": "The immutable line is the level below which nothing changes; the higher it is drawn, the more of the system is fixed, exact and small.",
+   "section": "top-down",
+   "quote": "The higher you can draw the line below which nothing changes, the immutable line, the more of the system is fixed, exact and small.",
+   "about": [
+    "concept:the-immutable-line"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The method has the same shape as the code review model: a node the code has and no story asked for is a question for the author in a review, and code to remove in an image.",
+   "section": "top-down",
+   "quote": "In a code review that is a question for the author. In an image, it is code to remove.",
+   "about": [
+    "concept:code-review",
+    "concept:fractal-semantic-graphs",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Keeping only the code the use case runs kills living off the land, because an attacker inside a process has very little left to use.",
+   "section": "top-down",
+   "quote": "If the only code on the box is the code the use case runs, there is very little to live off.",
+   "about": [
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "For sgit 0.21.0 and its four dependencies, one CI-style use case under coverage cut the tree from 1,500 files to 428.",
+   "section": "measured",
+   "quote": "The tree was much smaller. 1,500 files became 428.",
+   "about": [
+    "entity:sgit",
+    "entity:python",
+    "concept:minimal-code"
+   ],
+   "value": {
+    "n": 428,
+    "of": 1500,
+    "unit": "files kept",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Of 1,416 Python files, 418 had run, and the Python source went from 4.72 MB to 1.98 MB.",
+   "section": "measured",
+   "quote": "Of 1,416 Python files, 418 had run, and the Python source went from 4.72 MB to 1.98 MB.",
+   "about": [
+    "entity:python",
+    "concept:minimal-code"
+   ],
+   "value": {
+    "n": 418,
+    "of": 1416,
+    "unit": "Python files that ran",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The use case passed from the minimal tree: the manifest came back from the scoped clone and the decrypted file read secret.",
+   "section": "measured",
+   "quote": "The use case passed from the minimal tree",
+   "about": [
+    "entity:sgit",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Commands outside the use case, sgit history log and sgit vault backup, failed with ModuleNotFoundError because the code they needed had been removed.",
+   "section": "measured",
+   "quote": "because the code they needed had been removed",
+   "about": [
+    "entity:sgit",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Years ago the same method by hand shrank Python deployments for Lambda functions by, as remembered, close to 90% of the dependency code.",
+   "section": "measured",
+   "quote": "the cut, as I remember it, was close to 90% of the dependency code",
+   "about": [
+    "concept:minimal-code",
+    "entity:python",
+    "entity:aws"
+   ],
+   "value": {
+    "n": 90,
+    "unit": "percent of dependency code removed, from memory"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "14.78 MB of the dependencies is compiled, three quarters of the whole, almost all of it the 14.4 MB Rust binary inside cryptography, which coverage cannot see inside.",
+   "section": "limits-measured",
+   "quote": "almost all of it is one file: the 14.4 MB Rust binary inside cryptography",
+   "about": [
+    "concept:minimal-code",
+    "entity:python"
+   ],
+   "value": {
+    "n": 14.4,
+    "of": 14.78,
+    "unit": "MB in one compiled binary",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Coverage was not enough: cffi ran no Python code but removing its compiled backend broke the use case, and the tests caught what the coverage missed.",
+   "section": "limits-measured",
+   "quote": "The tests caught what the coverage missed, which is the point of the method.",
+   "about": [
+    "concept:provenance",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Inside the 418 files that ran, only 38% of the statements executed, so files are a coarse unit of removal.",
+   "section": "limits-measured",
+   "quote": "only 38% of the statements executed",
+   "about": [
+    "concept:minimal-code"
+   ],
+   "value": {
+    "n": 38,
+    "unit": "percent of statements executed in kept files",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "Function-level removal would cut much more than file-level, and that is where a semantic graph of the code, function by function, earns its place.",
+   "section": "limits-measured",
+   "quote": "Function-level removal would cut much more than file-level",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "What changed is that understanding what each layer is for is now the part models are good at, and the result can be held as a fractal semantic graph from story to operating system.",
+   "section": "scale",
+   "quote": "is now the part models are good at",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The build is deterministic where it matters: the graph says what to keep, the build keeps exactly that, and the tests prove the use case still works.",
+   "section": "scale",
+   "quote": "The graph says what should be kept; the build keeps exactly that; the tests prove the use case still works.",
+   "about": [
+    "concept:provenance",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Minimising containers is a real field already: SlimToolkit and RapidFort watch what a container touches at run time and build a smaller image.",
+   "section": "landscape",
+   "quote": "minimising containers is a real field already",
+   "about": [
+    "entity:slimtoolkit",
+    "entity:rapidfort",
+    "concept:minimal-code"
+   ],
+   "refs": [
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "SlimToolkit, formerly DockerSlim and now a CNCF Sandbox project, builds a smaller image by up to 30 times in its own words.",
+   "section": "landscape",
+   "quote": "by up to 30 times in its own words",
+   "about": [
+    "entity:slimtoolkit"
+   ],
+   "value": {
+    "n": 30,
+    "unit": "times smaller, by SlimToolkit's own figure"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The proposal starts from what the application is for rather than from what a container did; runtime observation is one input to it, not the whole of it.",
+   "section": "landscape",
+   "quote": "Runtime observation is one input to that, not the whole of it.",
+   "about": [
+    "concept:minimal-code",
+    "concept:the-immutable-line"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "proposal",
+   "text": "In a build that keeps only the code a use case needs, a vulnerability in removed code is a line in the record saying the code is absent, which a third party can certify.",
+   "section": "certify",
+   "quote": "it is a line in the record saying the code is absent",
+   "about": [
+    "concept:minimal-code",
+    "concept:provenance",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "Chainguard is unusually well placed to offer the certified top-down build and should build it or partner with whoever does, since built on top of their platform it could eventually deploy without the base images.",
+   "section": "certify",
+   "quote": "which is why I think they should build it, or partner with whoever does",
+   "about": [
+    "entity:chainguard",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "One tool, one use case: sgit and four dependencies, measured once; the Python runtime and the operating system were not measured.",
+   "section": "limits",
+   "quote": "sgit and four dependencies, measured once",
+   "about": [
+    "concept:minimal-code",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The 70% to 90% figures are estimates and memory: the Lambda result is from memory and the 70% is this measurement's share of files that never ran.",
+   "section": "limits",
+   "quote": "My Lambda result is from memory",
+   "about": [
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Chainguard's plans are not public to the author; that they do not do this comes from their public pages and one conversation, and they may be working on it.",
+   "section": "limits",
+   "quote": "they may be working on it",
+   "about": [
+    "entity:chainguard"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "SlimToolkit's and RapidFort's figures are their own and were not tested here.",
+   "section": "limits",
+   "quote": "I have not tested them here.",
+   "about": [
+    "entity:slimtoolkit",
+    "entity:rapidfort"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "A use case is only as complete as its tests: anything the tests do not exercise is removed, so the test suite becomes the definition of the application.",
+   "section": "limits",
+   "quote": "the test suite becomes the definition of the application",
+   "about": [
+    "concept:provenance",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 14 October 2026 after a conversation at Chainguard's event, and the measurement was run for it under coverage 7 across the whole dependency tree.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 14 October 2026, after a conversation at Chainguard's event",
+   "about": [
+    "concept:voice-memo",
+    "entity:chainguard",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c24",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c06"
+  }
+ ],
+ "entities": [
+  {
+   "id": "chainguard",
+   "role": "the bottom-up security company whose event prompted the article and who could build the top-down version"
+  },
+  {
+   "id": "sgit",
+   "role": "the tool measured: sgit 0.21.0 and its four dependencies under coverage"
+  },
+  {
+   "id": "python",
+   "role": "the language of the measured tree; Python source shrank, compiled code did not"
+  },
+  {
+   "id": "aws",
+   "role": "Lambda functions were the earlier deployments shrunk by hand"
+  },
+  {
+   "id": "slimtoolkit",
+   "role": "runtime container minimiser, formerly DockerSlim"
+  },
+  {
+   "id": "rapidfort",
+   "role": "profiles applications at run time and removes components that never run"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the argument and the measurement"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "minimal-code",
+   "defined_here": true
+  },
+  {
+   "id": "the-immutable-line",
+   "defined_here": true
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://edu.chainguard.dev/chainguard/containers/custom-assembly/overview/",
+   "title": "Custom Assembly overview",
+   "by": "Chainguard",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/slimtoolkit/slim",
+   "title": "SlimToolkit",
+   "by": "SlimToolkit",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.rapidfort.com/",
+   "title": "RapidFort",
+   "by": "RapidFort",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The conversation at Chainguard's event, the voice memo, and the measurement of sgit 0.21.0 under coverage"
+  }
+ ]
+}

@@ -1,0 +1,494 @@
+{
+ "slug": "from-a-spreadsheet-to-a-folder-per-person",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "A spreadsheet holds one row per person, a stage, a date and a next step, but cannot hold what happened: the emails word for word, the call, what was promised and what they care about.",
+   "section": "top",
+   "quote": "What it cannot hold is what happened: the emails, word for word, the call last Tuesday, what was promised",
+   "about": [
+    "concept:agent-memory",
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The jump from the spreadsheet to what the agents run is too high in one step, and almost all of it can be done today with a Google Workspace account and a Claude seat.",
+   "section": "top",
+   "quote": "almost all of it can be done, today, with a Google Workspace account and a Claude seat",
+   "about": [
+    "concept:folder-per-person",
+    "entity:google-workspace",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The behaviour policies written for the owner's agents apply without change, because they are about what an agent may do with your mail and your files, the same in anyone's environment.",
+   "section": "top",
+   "quote": "the behaviour policies we wrote for our agents apply without change",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "The difference is what counts as the record: in a spreadsheet the record is the row, a summary you typed; in a folder the record is everything that happened, and the summary is derived from it.",
+   "section": "why",
+   "quote": "In a spreadsheet the record is the row, and the row is a summary you typed.",
+   "about": [
+    "concept:the-record",
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Each person's folder holds five documents with fixed names, so that the agent and the person mean the same thing: Record, Ledger, Messages, Notes and Summary.",
+   "section": "folder",
+   "quote": "Inside each, five documents, with these names so that the agent and you mean the same thing",
+   "about": [
+    "concept:folder-per-person"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "documents per person's folder"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Every fact in the Record says where it came from, in brackets; it is the row, promoted.",
+   "section": "folder",
+   "quote": "Every fact in it says where it came from, in brackets",
+   "about": [
+    "concept:provenance",
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The Ledger is a sheet with one line per event that is only ever added to; a correction is a new line, tasks are lines, and the latest line about a task wins.",
+   "section": "folder",
+   "quote": "It is only ever added to. A correction is a new line that says \"correction to 3 Oct:\".",
+   "about": [
+    "concept:the-record",
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Notes hold calls and meetings, including what is said into a phone afterwards, which VoiceDebrief turns into text in the browser.",
+   "section": "folder",
+   "quote": "VoiceDebrief turns that into text in your browser, and the text goes here.",
+   "about": [
+    "entity:voicedebrief",
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The Summary is written by the agent from the other four, never edited by hand; if it is wrong the fix goes in the record or the ledger and the summary is regenerated.",
+   "section": "folder",
+   "quote": "If it is wrong, the fix goes in the record or the ledger, and the summary is regenerated.",
+   "about": [
+    "concept:folder-per-person",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The folder is the same structure the owner's agents run, minus the hashes and the graph, which come with the vault.",
+   "section": "folder",
+   "quote": "It is the same structure as ours, minus the hashes and the graph, which come with the vault.",
+   "about": [
+    "concept:vault",
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "In the Claude app, connect Drive and Gmail, make one Project called Contacts, and put the behaviour policy in its instructions.",
+   "section": "agent",
+   "quote": "Then make one Project, called Contacts, and put the behaviour policy in its instructions.",
+   "about": [
+    "entity:claude",
+    "entity:gmail",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "The policy is six lines, and three of them are the owner's agents': draft and never send, append and never rewrite, stay in the folder.",
+   "section": "short",
+   "quote": "Six lines, and three of them are ours: draft and never send; append and never rewrite; stay in the folder.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:human-in-the-loop"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "lines in the behaviour policy"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "In the Claude app today draft, never send is enforced as far as Gmail drafting goes and the rest is told, which is why the one-line report at the end of each task exists.",
+   "section": "agent",
+   "quote": "\"draft, never send\" is enforced as far as Gmail drafting goes, and the rest is told",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:gmail",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "If the agent has its own Google account, give it its own account on the Workspace and restrict what that account can do, the control that covers mail, files and connectors at once.",
+   "section": "agent",
+   "quote": "give it its own account on your Workspace and restrict what that account can do",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:google-workspace"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "The migration is one afternoon in four steps: export the sheet, make the folders, fill the records from the mail, and generate the summaries.",
+   "section": "migration",
+   "quote": "One afternoon, in four steps.",
+   "about": [
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "From then on nothing is retyped: an email adds a Ledger line and goes into Messages, a voice note goes into Notes, the sheet is closed and the Summary is what you open.",
+   "section": "migration",
+   "quote": "From then on, the rule is that nothing is retyped.",
+   "about": [
+    "concept:folder-per-person",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Five exercises over the first week make the habit: ask, prepare, draft, debrief and campaign, each one message to the agent and each safe because the policy makes it safe.",
+   "section": "short",
+   "quote": "Five exercises make the habit: ask, prepare, draft, debrief, campaign.",
+   "about": [
+    "concept:folder-per-person",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "exercises in the first week"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The campaign exercise is how the owner's agents run outreach; with vaults it took eight days to get there, and with folders it is one message.",
+   "section": "exercises",
+   "quote": "with folders it is one message",
+   "about": [
+    "concept:multi-agent",
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The agent will get two predictable things wrong, a fact without a source and a summary that drops something, and both are fixed by a line in the policy, which is how the owner's policies grew.",
+   "section": "wrong",
+   "quote": "Two things, both predictable, both fixed by a line in the policy",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The Summary is a view and the Record is the truth, so the fix for a bad summary is to put the thing in the Record and regenerate.",
+   "section": "wrong",
+   "quote": "The Summary is a view; the Record is the truth.",
+   "about": [
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Three signals say it is time to move the folders into a vault: a second agent needs to read them, the files should not be readable by the operator, or the record has to carry between tools.",
+   "section": "vault",
+   "quote": "Three signals say it is time, and until one appears, the folders are enough.",
+   "about": [
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "A Drive folder is readable by Google and by anyone with admin rights on the Workspace; a vault is ciphertext to everyone but the key holders.",
+   "section": "vault",
+   "quote": "A Drive folder is readable by Google and by anyone with admin rights on the Workspace.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:google-workspace",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The reason to start with folders is that the shape is the same, so when the day comes the move is a copy and the policy does not change at all.",
+   "section": "vault",
+   "quote": "when the day comes, the move is a copy, and the policy does not change at all",
+   "about": [
+    "concept:vault",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "The article is written to be sent: the RiskMandate agent sends it with four substitutions, the person's names, their plans, three real contacts and the topic they sell, and the policy must not change.",
+   "section": "send",
+   "quote": "the RiskMandate agent should send it with four substitutions",
+   "about": [
+    "entity:riskmandate",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The Claude app's connectors move: what Drive and Gmail let the agent do is as of October 2026 and varies by plan and settings, and the walkthrough works with reading and drafting alone.",
+   "section": "limits",
+   "quote": "The Claude app's connectors move.",
+   "about": [
+    "entity:claude",
+    "entity:google-workspace"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Most of the policy is told, not enforced, in the app as in the owner's own setup; the one-line report is how you check and the seat per agent is the control that makes the rest settings.",
+   "section": "limits",
+   "quote": "Most of the policy is told, not enforced, in the app as in ours.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "One afternoon is for twenty to fifty contacts; hundreds is the same method in batches, and where the vault signals start to appear.",
+   "section": "limits",
+   "quote": "One afternoon is for twenty to fifty contacts.",
+   "about": [
+    "concept:folder-per-person"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 12 October 2026 during a conversation with someone who runs their relationships in a customised spreadsheet; they are not named.",
+   "section": "sources",
+   "quote": "they are not named and no detail of their business is here",
+   "about": [
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "Every mistake added a rule argues that the better fix is a component, and in the Claude app the component you have is the Project's instructions.",
+   "section": "wrong",
+   "quote": "in the Claude app the component you have is the Project's instructions",
+   "about": [
+    "entity:claude",
+    "concept:behaviour-policy"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c14"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c24"
+  }
+ ],
+ "entities": [
+  {
+   "id": "google-workspace",
+   "role": "Drive, Docs and Sheets, where the folder per person lives before the vault"
+  },
+  {
+   "id": "gmail",
+   "role": "what the agent reads and drafts into, never sends from"
+  },
+  {
+   "id": "claude",
+   "role": "the app whose Project instructions hold the policy, connected to Drive and Gmail"
+  },
+  {
+   "id": "voicedebrief",
+   "role": "turns the voice note after a call into text for the Notes document"
+  },
+  {
+   "id": "riskmandate",
+   "role": "whose agent sends this article with four substitutions"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "folder-per-person",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://voicedebrief.ai/",
+   "title": "VoiceDebrief",
+   "by": "VoiceDebrief",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-12",
+   "what": "The conversation with the spreadsheet's owner and the voice memo"
+  }
+ ]
+}

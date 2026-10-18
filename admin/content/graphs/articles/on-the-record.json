@@ -1,0 +1,919 @@
+{
+ "slug": "on-the-record",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "News sites have been closing comment sections for more than a decade: Reuters in 2014, NPR in 2016 with about 19,400 active commenters against millions of readers on social media, and the Press Democrat's group on 4 September 2025.",
+   "section": "not-comments",
+   "quote": "News sites have been closing comment sections for more than a decade.",
+   "about": [
+    "entity:reuters",
+    "entity:npr",
+    "entity:press-democrat",
+    "concept:journalism"
+   ],
+   "value": {
+    "n": 19400,
+    "unit": "active NPR commenters when it closed comments",
+    "as_of": "2016"
+   },
+   "refs": [
+    "r16",
+    "r17"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "The next step after reviews on the record is to open the record to people who know the subject, not to comment but to go on the record with a professional opinion.",
+   "section": "not-comments",
+   "quote": "Not to comment, but to go on the record with a professional opinion.",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:human-in-the-loop",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "An opinion on the record is a position, the reasons and evidence, which text of the article it is about, and a signature by the expert's own key, so the record says who holds it and nobody else can change it.",
+   "section": "record",
+   "quote": "A signature, by the expert's own key, so that the record says who holds this opinion and nobody else can change it.",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "proposal",
+   "text": "An opinion is the expert's to withdraw: the page stops showing it, and the record keeps a signed note that there was one and its author withdrew it, so nobody can claim it was never there or still stands.",
+   "section": "record",
+   "quote": "the record keeps a signed note that there was one and that its author withdrew it",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "hypothesis",
+   "text": "Experts should not agree: an expert who agrees with everything adds a name, not a view, and sometimes the challenge is as interesting as the article, because that is when everyone zooms in on the facts.",
+   "section": "record",
+   "quote": "An expert who agrees with everything adds a name, not a view.",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "Identity comes in five levels: anonymous, an account with a passkey and vault, a key pair the reader signs with, a key bound to a name people know, and a key with a track record of opinions that turned out right or wrong.",
+   "section": "levels",
+   "quote": "I think of identity here in levels, each allowing more",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:opinions-on-the-record",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Bluesky lets anyone use their own domain as their handle through a DNS TXT record and said in April 2025 that more than 270,000 accounts had done so.",
+   "section": "levels",
+   "quote": "and said in April 2025 that more than 270,000 accounts had done so",
+   "about": [
+    "entity:bluesky",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 270000,
+    "unit": "Bluesky accounts using a domain handle",
+    "as_of": "2025-04-21"
+   },
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Mastodon shows a green check when your website links back to your profile, did:web resolves an identifier to a document on your domain and is a community draft not a W3C standard, and GitHub keeps signed commits verified after a key is rotated.",
+   "section": "levels",
+   "quote": "All of these prove that one key or account controls one domain or account. None of them proves who the person is",
+   "about": [
+    "entity:mastodon",
+    "entity:did-web",
+    "entity:github",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r03",
+    "r04",
+    "r05"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Keybase did signed proofs across accounts and domains and joined Zoom in May 2020 with no specific plans for the app; an identity layer owned by one company lasts as long as that company wants, so proofs should live where the person controls them.",
+   "section": "levels",
+   "quote": "An identity layer owned by one company lasts as long as that company wants it to.",
+   "about": [
+    "entity:keybase",
+    "entity:zoom",
+    "concept:identity-and-secrets",
+    "concept:privacy"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Scientific publishing already publishes signed reviews: F1000Research publishes reviewer names and full reports, eLife publishes every reviewed paper with public reviews and an assessment, and PeerJ made review history mandatory from February 2023.",
+   "section": "science",
+   "quote": "Scientific publishing has been working on signed, public, sometimes paid reviews for years, and it is the closest precedent I know of.",
+   "about": [
+    "entity:f1000research",
+    "entity:elife",
+    "entity:peerj",
+    "concept:opinions-on-the-record"
+   ],
+   "refs": [
+    "r07",
+    "r08",
+    "r09"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Biology Open pays reviewers £220 a manuscript; in its pilot, time to a first decision fell from 37.7 to 5.5 working days and the share of invitations accepted rose from 23% to 67%; The Unjournal pays evaluators about $350.",
+   "section": "science",
+   "quote": "Biology Open, from the Company of Biologists, pays reviewers £220 a manuscript",
+   "about": [
+    "entity:biology-open",
+    "entity:the-unjournal",
+    "concept:micropayments",
+    "concept:opinions-on-the-record"
+   ],
+   "value": {
+    "n": 5.5,
+    "of": 37.7,
+    "unit": "working days to a first decision, after against before paying",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r10",
+    "r11"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "Critical Care Medicine offered $250 a review in a trial: acceptance rose a little, reviews came about a day faster, editors saw no difference in quality, and the journal could not afford to continue; paying makes reviews faster and more willing, not better.",
+   "section": "science",
+   "quote": "Paying makes reviews faster and more willing; it does not by itself make them better.",
+   "about": [
+    "entity:critical-care-medicine",
+    "concept:micropayments",
+    "concept:opinions-on-the-record"
+   ],
+   "value": {
+    "n": 250,
+    "unit": "dollars per review in the Critical Care Medicine trial",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r12"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "X's Community Notes shows a note only when raters who usually disagree both find it helpful, a good idea for deciding what to show; its note writers are not paid.",
+   "section": "science",
+   "quote": "Its note writers are not paid.",
+   "about": [
+    "entity:community-notes",
+    "concept:opinions-on-the-record"
+   ],
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "The reading meter already lets the reader decide what a page was worth; a reader who marks an expert's opinion as insightful pays a little for it and most of that goes to the expert, rewarding a careful disagreement more than a quick agreement.",
+   "section": "paying",
+   "quote": "The expert is paid to review properly, and only when readers find it worth paying for, which rewards a careful disagreement more than a quick agreement.",
+   "about": [
+    "concept:micropayments",
+    "entity:sg-meter",
+    "concept:opinions-on-the-record"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The owner could not find a news platform that pays experts for opinions on its articles today; the nearest are Medium, which counts replies and highlights in what it pays authors, and the paid reviewers in science.",
+   "section": "paying",
+   "quote": "I could not find a news platform that pays experts for opinions on its articles today",
+   "about": [
+    "entity:medium",
+    "concept:micropayments",
+    "concept:journalism"
+   ],
+   "refs": [
+    "r14"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "If an article earns money and a good part of it came from someone else's opinion or idea on the record, they should get a share of what it earns; the graph of sources, the signed opinions and the release history make that workable.",
+   "section": "share",
+   "quote": "It is their idea we are writing about.",
+   "about": [
+    "concept:micropayments",
+    "concept:provenance",
+    "concept:opinions-on-the-record",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "The AI industry is starting to agree at the level of publishers: Perplexity's Comet Plus sends 80% of its revenue to publishers, and ProRata's Gist splits ad revenue 50/50 with the publishers whose content an answer used.",
+   "section": "share",
+   "quote": "Perplexity's Comet Plus sends 80% of its revenue to publishers",
+   "about": [
+    "entity:perplexity",
+    "entity:prorata",
+    "concept:micropayments",
+    "entity:publisher"
+   ],
+   "value": {
+    "n": 80,
+    "unit": "percent of Comet Plus revenue sent to publishers",
+    "as_of": "2025-08-26"
+   },
+   "refs": [
+    "r15"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The research on signed comments is mixed: Santana's 2014 study found anonymous comments less civil, but Rost, Stahel and Frey, over 532,197 comments on German petitions, found non-anonymous commenters more aggressive, not less.",
+   "section": "evidence",
+   "quote": "found non-anonymous commenters were more aggressive",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 532197,
+    "unit": "comments on German petitions studied in 2016",
+    "as_of": "2016"
+   },
+   "refs": [
+    "r18",
+    "r19"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "Across 45 million HuffPost comments, Moore and colleagues found argument quality rose when stable, authenticated pseudonyms were required and fell after the switch to Facebook real names; South Korea's real-name law cut malicious comments only from 13.9% to about 13%.",
+   "section": "evidence",
+   "quote": "rose when stable, authenticated pseudonyms were required",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:identity-and-secrets",
+    "entity:south-korea",
+    "entity:meta"
+   ],
+   "value": {
+    "n": 13.9,
+    "unit": "percent malicious comments before South Korea's real-name law, about 13 after",
+    "as_of": "2012"
+   },
+   "refs": [
+    "r20",
+    "r21"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "hypothesis",
+   "text": "The case for signing is not that it makes people polite but that a signed opinion is accountable, can be paid and builds a track record; a stable key may matter more than a name, which it can be bound to when the person wants.",
+   "section": "evidence",
+   "quote": "It is that a signed opinion is accountable, it can be paid, and it builds a track record over time.",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "What this site already has: reviews on the record with a reader kind, the reader's passkey and vault, an inbox that seals messages to a reader's public key, the reading meter with ratings and payment, and every article's text identified by a hash.",
+   "section": "build",
+   "quote": "and every article's text identified by a hash",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:sg-meter",
+    "entity:webauthn",
+    "concept:encryption-and-keys",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "What it would take: a reader key pair made in the browser and kept in their vault, a proof page on a domain they control, an opinion record with a signed withdrawal, opinions beside the reviews, and payment from the reader's balance to the expert.",
+   "section": "build",
+   "quote": "A reader key pair, made in the reader's browser, kept in their vault, used to sign what they send.",
+   "about": [
+    "concept:opinions-on-the-record",
+    "concept:encryption-and-keys",
+    "concept:micropayments",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "None of the opinion records, proofs or payments to experts is built; the reviews, the passkey vault, the inbox and the meter are.",
+   "section": "limits",
+   "quote": "None of the opinion records, proofs or payments to experts is built.",
+   "about": [
+    "concept:opinions-on-the-record",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "A domain proves control, not identity; level 4 is a name people already associate with a domain, and more than one proof agreeing.",
+   "section": "limits",
+   "quote": "A domain proves control, not identity.",
+   "about": [
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Paying does not make opinions better: in science it made reviews faster and more willing, and quality is the job of the criteria and the readers.",
+   "section": "limits",
+   "quote": "Paying does not make opinions better.",
+   "about": [
+    "concept:micropayments",
+    "concept:opinions-on-the-record"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Revenue shares for ideas are a proposal, and how to measure how much of an article came from whose idea is an open question.",
+   "section": "limits",
+   "quote": "How to measure how much of an article came from whose idea is an open question.",
+   "about": [
+    "concept:micropayments",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The research on identity and civility is mixed, and most of it is about comments, not expert opinions.",
+   "section": "limits",
+   "quote": "and most of it is about comments, not expert opinions",
+   "about": [
+    "concept:opinions-on-the-record"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Some figures are the organisations' own: Bluesky's count, Biology Open's pilot, Perplexity's and ProRata's shares.",
+   "section": "limits",
+   "quote": "Bluesky's count, Biology Open's pilot, Perplexity's and ProRata's shares.",
+   "about": [
+    "entity:bluesky",
+    "entity:biology-open",
+    "entity:perplexity",
+    "entity:prorata"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The article came from a voice memo on 18 October 2026, with the research read that day by a research agent, written up and checked by this site's agent; the editorial responsibility is the owner's.",
+   "section": "sources",
+   "quote": "A voice memo from me on 18 October 2026. The research, read on 18 October 2026 by a research agent",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "Experts who would like to be among the first to go on the record on an article here can write to agent@riskmandate.ai.",
+   "section": "limits",
+   "quote": "If you are an expert and would like to be among the first to go on the record on an article here",
+   "about": [
+    "entity:riskmandate",
+    "concept:opinions-on-the-record"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "contradicts",
+   "to": "c05"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c22"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c20"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose reviews on the record would open to signed expert opinions"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the reading meter whose ratings and payments would pay for an opinion"
+  },
+  {
+   "id": "webauthn",
+   "role": "the reader's passkey, level two of identity"
+  },
+  {
+   "id": "github",
+   "role": "marks signed commits verified and keeps them so after a key is rotated"
+  },
+  {
+   "id": "meta",
+   "role": "Facebook real names, after whose adoption HuffPost argument quality fell"
+  },
+  {
+   "id": "publisher",
+   "role": "the publishers who receive Perplexity's and ProRata's revenue shares"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "whose voice memo the article is and who holds editorial responsibility"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where experts write to go on the record first"
+  },
+  {
+   "id": "reuters",
+   "role": "closed its comments in 2014"
+  },
+  {
+   "id": "npr",
+   "role": "closed its comments in 2016 with about 19,400 active commenters"
+  },
+  {
+   "id": "press-democrat",
+   "role": "its group disabled comments on 4 September 2025"
+  },
+  {
+   "id": "bluesky",
+   "role": "domain handles through a DNS TXT record; 270,000 accounts by April 2025"
+  },
+  {
+   "id": "mastodon",
+   "role": "shows a green check when a website links back to the profile"
+  },
+  {
+   "id": "did-web",
+   "role": "resolves an identifier to a document on your domain; a community draft, not a W3C standard"
+  },
+  {
+   "id": "keybase",
+   "role": "signed proofs across accounts and domains; joined Zoom in May 2020"
+  },
+  {
+   "id": "zoom",
+   "role": "acquired Keybase in May 2020"
+  },
+  {
+   "id": "f1000research",
+   "role": "publishes reviewer names and full reports with the article"
+  },
+  {
+   "id": "elife",
+   "role": "publishes every reviewed paper with public reviews and an assessment"
+  },
+  {
+   "id": "peerj",
+   "role": "made review history mandatory from February 2023"
+  },
+  {
+   "id": "biology-open",
+   "role": "pays reviewers £220 and cut time to first decision from 37.7 to 5.5 working days"
+  },
+  {
+   "id": "the-unjournal",
+   "role": "pays evaluators about $350 and publishes the evaluations"
+  },
+  {
+   "id": "critical-care-medicine",
+   "role": "trialled $250 a review and saw no difference in quality"
+  },
+  {
+   "id": "community-notes",
+   "role": "X's notes shown only when raters who usually disagree both find them helpful"
+  },
+  {
+   "id": "medium",
+   "role": "counts replies and highlights in what it pays authors"
+  },
+  {
+   "id": "perplexity",
+   "role": "its Comet Plus sends 80% of revenue to publishers"
+  },
+  {
+   "id": "prorata",
+   "role": "its Gist splits ad revenue 50/50 with publishers"
+  },
+  {
+   "id": "south-korea",
+   "role": "its real-name law cut malicious comments from 13.9% to about 13% and was struck down in 2012"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "opinions-on-the-record",
+   "defined_here": true
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "journalism",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://bsky.social/about/blog/4-28-2023-domain-handle-tutorial",
+   "title": "Domain handle tutorial",
+   "by": "Bluesky",
+   "date": "2023-04-28",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://bsky.social/about/blog/04-21-2025-verification",
+   "title": "Verification",
+   "by": "Bluesky",
+   "date": "2025-04-21",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://community.hachyderm.io/docs/mastodon/user/verification/",
+   "title": "Mastodon verification",
+   "by": "Hachyderm",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://github.com/w3c-ccg/did-method-web",
+   "title": "did:web method",
+   "by": "W3C CCG",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r05",
+   "url": "https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification",
+   "title": "About commit signature verification",
+   "by": "GitHub",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://keybase.io/blog/keybase-joins-zoom",
+   "title": "Keybase joins Zoom",
+   "by": "Keybase",
+   "date": "2020-05",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://f1000research.com/about",
+   "title": "About F1000Research",
+   "by": "F1000Research",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r08",
+   "url": "https://elifesciences.org/inside-elife/66d43597/elife-s-new-model-one-year-on",
+   "title": "eLife's new model: one year on",
+   "by": "eLife",
+   "date": "undated",
+   "kind": "post"
+  },
+  {
+   "id": "r09",
+   "url": "https://peerj.com/benefits/review-history-and-peer-review/",
+   "title": "Review history and peer review",
+   "by": "PeerJ",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.researchinformation.info/news/biology-open-paid-peer-review-model-cuts-times-to-five-working-days/",
+   "title": "Biology Open paid peer review model cuts times to five working days",
+   "by": "Research Information",
+   "date": "undated",
+   "kind": "news"
+  },
+  {
+   "id": "r11",
+   "url": "https://globalimpact.gitbook.io/the-unjournal-project-and-communication-space/readme-1/call-for-participants-research",
+   "title": "Call for participants",
+   "by": "The Unjournal",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r12",
+   "url": "https://peerreviewcongress.org/abstract/monetary-incentives-for-peer-review-at-a-medical-journal-a-quasi-randomized-experimental-study/",
+   "title": "Monetary incentives for peer review at a medical journal: a quasi-randomized experimental study",
+   "by": "Peer Review Congress",
+   "date": "undated",
+   "kind": "paper"
+  },
+  {
+   "id": "r13",
+   "url": "https://github.com/twitter/communitynotes/blob/main/documentation/under-the-hood/ranking-notes.md",
+   "title": "Community Notes: ranking notes",
+   "by": "X",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r14",
+   "url": "https://help.medium.com/hc/en-us/articles/360036691193",
+   "title": "Medium Partner Program",
+   "by": "Medium",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r15",
+   "url": "https://www.axios.com/2025/08/26/perplexity-comet-plus-subscription",
+   "title": "Perplexity Comet Plus subscription",
+   "by": "Axios",
+   "date": "2025-08-26",
+   "kind": "news"
+  },
+  {
+   "id": "r16",
+   "url": "https://talkingpointsmemo.com/news/npr-ending-online-comments",
+   "title": "NPR ending online comments",
+   "by": "Talking Points Memo",
+   "date": "2016",
+   "kind": "news"
+  },
+  {
+   "id": "r17",
+   "url": "https://www.sonomanews.com/2025/08/28/press-democrat-news-group-comments-section-to-be-disabled-starting-sept-4",
+   "title": "Press Democrat news group comments section to be disabled starting Sept 4",
+   "by": "Sonoma News",
+   "date": "2025-08-28",
+   "kind": "news"
+  },
+  {
+   "id": "r18",
+   "url": "https://www.uh.edu/news-events/stories/2014/january/12114santana.xml",
+   "title": "Santana study on anonymity and civility",
+   "by": "University of Houston",
+   "date": "2014-01",
+   "kind": "news"
+  },
+  {
+   "id": "r19",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4912099/",
+   "title": "Digital social norm enforcement: online firestorms in social media",
+   "by": "Rost, Stahel and Frey, PLOS ONE",
+   "date": "2016",
+   "kind": "paper"
+  },
+  {
+   "id": "r20",
+   "url": "https://journals.sagepub.com/doi/10.1177/0032321719891385",
+   "title": "Moore and others on comment quality and identity",
+   "by": "Political Studies",
+   "date": "undated",
+   "kind": "paper"
+  },
+  {
+   "id": "r21",
+   "url": "https://advox.globalvoices.org/2012/08/28/south-korea-internet-real-name-law-violates-the-constitution/",
+   "title": "South Korea: internet real-name law violates the constitution",
+   "by": "Global Voices",
+   "date": "2012-08-28",
+   "kind": "news"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "The voice memo and the research agent's reading"
+  },
+  {
+   "date": "2025-09-04",
+   "what": "The Press Democrat's group disables comments"
+  },
+  {
+   "date": "2025-08-26",
+   "what": "Axios reports Perplexity's Comet Plus revenue share"
+  },
+  {
+   "date": "2025-04-21",
+   "what": "Bluesky reports 270,000 accounts using domain handles"
+  },
+  {
+   "date": "2023-02",
+   "what": "PeerJ makes review history mandatory"
+  },
+  {
+   "date": "2020-05",
+   "what": "Keybase joins Zoom"
+  },
+  {
+   "date": "2016",
+   "what": "NPR closes its comments; the Rost, Stahel and Frey study"
+  },
+  {
+   "date": "2014",
+   "what": "Reuters closes its comments; Santana's study"
+  },
+  {
+   "date": "2012",
+   "what": "South Korea's Constitutional Court strikes down the real-name law"
+  }
+ ]
+}

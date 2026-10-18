@@ -1,0 +1,560 @@
+{
+ "slug": "encrypted-memory-for-isolated-agents",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Isolation takes away the shared drive and ephemeral compute takes away the disk, so whatever an isolated agent learned has to be written somewhere that outlives it.",
+   "section": "top",
+   "quote": "Isolation takes away the shared drive, and ephemeral compute takes away the disk.",
+   "about": [
+    "concept:agent-isolation",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "hypothesis",
+   "text": "The owner thinks sgit and a self-run vault server are a great solution for isolated agents' memory, and gives the reasons with evidence.",
+   "section": "top",
+   "quote": "I think it is a great solution for this, and the reasons are below, with the evidence.",
+   "about": [
+    "concept:agent-memory",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The memory has to meet three conditions: the owner controls it, the agent can reach it with a credential that can be scoped and revoked, and a breach of where it is stored exposes nothing.",
+   "section": "top",
+   "quote": "A breach of the place it is stored exposes nothing, because that place is the one most likely to be shared",
+   "about": [
+    "concept:agent-memory",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The server is SG/Send, published as a Docker image for amd64 and arm64, about 90 MB to download, at version v0.33.0 when the article was written.",
+   "section": "top",
+   "quote": "about 90 MB to download, version v0.33.0 at the time of writing",
+   "about": [
+    "entity:sgit",
+    "entity:docker",
+    "concept:deployment"
+   ],
+   "value": {
+    "n": 90,
+    "unit": "MB to download",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The access token gates every route, reads included, through a header, and without it the server answers 401; storage is disk, s3 or memory.",
+   "section": "top",
+   "quote": "Without it the server answers 401.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The deployment docs still say an endpoint flag in three places; sgit 0.20.0 rejects it, so the base-url flag is the one to use.",
+   "section": "top",
+   "quote": "sgit 0.20.0 rejects that flag, so use --base-url.",
+   "about": [
+    "entity:sgit",
+    "entity:sgit-ai"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The newest mcp package, 2.3.0, breaks the server at start-up when installed from pip, and pinning mcp below 2 fixes it.",
+   "section": "top",
+   "quote": "The newest mcp package, 2.3.0, breaks the server at start-up",
+   "about": [
+    "entity:sgit",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "proposal",
+   "text": "Start with a Mac mini: the vault container next to the agent containers, its storage in a local folder, no cloud account and no public address.",
+   "section": "top",
+   "quote": "This is where I would start, and where I suggest you start.",
+   "about": [
+    "entity:mac-mini",
+    "entity:docker",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The agent entry-point script, run outside a container against the local server, cloned a scoped folder, appended to the agent's notes, committed and pushed, and a full clone elsewhere pulled the change.",
+   "section": "top",
+   "quote": "it cloned, appended to the agent's notes, committed and pushed",
+   "about": [
+    "entity:sgit",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "limit",
+   "text": "The Compose file itself could not be run for the article because the session had no Docker daemon; it uses only the settings described and the image's defaults.",
+   "section": "top",
+   "quote": "The Compose file itself I could not run here, because there was no Docker daemon",
+   "about": [
+    "entity:docker",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The backup of every agent's memory is a copy of one folder, and what is copied is ciphertext, so the backup does not have to be trusted with the contents.",
+   "section": "top",
+   "quote": "what you are copying is ciphertext, so the backup does not have to be trusted with the contents",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "On the shared CRM vault of about 600 commits and 9,400 files a full clone takes 80 s and 173 MB, and one folder with one commit of history takes 14 s and 3.2 MB.",
+   "section": "top",
+   "quote": "a full clone takes 80 s and 173 MB, and one folder takes 14 s and 3.2 MB",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 14,
+    "of": 80,
+    "unit": "seconds for a scoped clone against a full clone"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "A scoped clone is not an access boundary: the clone of one agent's folder fetched another's a moment later, because the vault key opens the whole vault and the path flag decides only what is downloaded.",
+   "section": "top",
+   "quote": "--path decides what is downloaded, not what can be read.",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "If an agent must not read another agent's memory, give each agent its own vault, and read keys, which cannot write, for anything it only needs to read.",
+   "section": "top",
+   "quote": "If an agent must not read another agent's memory, give each agent its own vault",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "On Kubernetes the server is a Deployment with one replica, a PersistentVolumeClaim, a ClusterIP Service and a Secret, and the agents are Jobs that clone, work, commit and push behind a NetworkPolicy.",
+   "section": "top",
+   "quote": "The vault server is a Deployment with one replica, a PersistentVolumeClaim mounted at /data",
+   "about": [
+    "entity:kubernetes",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "limit",
+   "text": "Kubernetes is the pattern tested least: the manifests are a starting point written from the image's settings, not something run on a cluster for the article.",
+   "section": "top",
+   "quote": "this is the pattern I have tested least",
+   "about": [
+    "entity:kubernetes",
+    "concept:deployment"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "In the cloud the server sits inside the VPC behind an internal load balancer with a private address, storage in S3 through a VPC endpoint, the Mac mini joining over a VPN and CloudFront for a stable name.",
+   "section": "top",
+   "quote": "an internal load balancer with a private address only, the vault server behind it, storage in S3 through a VPC endpoint",
+   "about": [
+    "entity:aws",
+    "concept:deployment",
+    "entity:mac-mini"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "limit",
+   "text": "The CloudFormation templates are written and lint-clean with live validation in progress and put a public endpoint in front; the private shape is how the owner would adapt them, not a template to deploy today.",
+   "section": "top",
+   "quote": "The private shape above, with either server inside the VPC, is how I would adapt them, not a template you can deploy today.",
+   "about": [
+    "entity:aws",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "A vault is not tied to the server it was created on: it is a set of encrypted objects addressed by hash, any clone holds them, and the same vault can live on two servers.",
+   "section": "top",
+   "quote": "A vault is not tied to the server it was created on.",
+   "about": [
+    "concept:incidents",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "In the test a push to a second remote gave a clone with every file; after a restart emptied the memory-mode server, one more push re-synced it and a fresh clone came back at the same commit.",
+   "section": "top",
+   "quote": "One more sgit push --remote backup from any clone re-synced the vault",
+   "about": [
+    "concept:incidents",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The servers do not replicate to each other; the copies are as fresh as the last push to each, so a push to the backup remote has to be scheduled or done by the agents.",
+   "section": "top",
+   "quote": "The servers do not replicate to each other.",
+   "about": [
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "After the tests the server's storage held 26 files for the test vault, 228 KB, and a search for the agents' text, a marker string and the file and folder names found zero matches.",
+   "section": "top",
+   "quote": "the server's storage held 26 files for the test vault, 228 KB",
+   "about": [
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 26,
+    "unit": "files on the server for the test vault",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The stored files are encrypted objects named by hash, encrypted keys for the clone branches, refs, and a manifest with the vault id, a hash of the write key and the creation time.",
+   "section": "top",
+   "quote": "zero matches for any of them",
+   "about": [
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "An attacker who takes the storage, the instance, the bucket or the backup gets vault ids, object counts, sizes and timing, not the contents, the names or the keys, but can still delete things.",
+   "section": "top",
+   "quote": "Not the contents, not the names, not the keys.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The trust sits with the agents: an agent that can write holds the vault key and the access token on its disk, so the environment the agent runs in is the boundary that matters.",
+   "section": "top",
+   "quote": "So the environment the agent runs in is the boundary that matters",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "sgit warns when a private key is used against a plain http URL; on one host that is the Docker network, and beyond it TLS goes in front.",
+   "section": "top",
+   "quote": "sgit also warns when a private key is used against a plain http:// URL",
+   "about": [
+    "entity:sgit",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The commands were run on 8 October 2026 with sgit-ai 0.20.0 and sgraph-ai-app-send 0.33.0 from PyPI against a local server; the Compose file, the Kubernetes design and the cloud variant were not run.",
+   "section": "top",
+   "quote": "The commands were run on 8 October 2026 with sgit-ai 0.20.0 and sgraph-ai-app-send 0.33.0 from PyPI against a local server",
+   "about": [
+    "entity:sgit",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on how people actually deploy agents and covers the part two earlier articles on isolation leave open: where the memory goes.",
+   "section": "top",
+   "quote": "This article is about the part those two leave open: where the memory goes.",
+   "about": [
+    "concept:voice-memo",
+    "concept:agent-memory",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "Add a second remote once the memory matters and push to it on a schedule; treat the cloud templates as in progress and the Docker image as the part that is ready.",
+   "section": "top",
+   "quote": "Add a second remote once the memory matters, and push to it on a schedule.",
+   "about": [
+    "concept:incidents",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The five patterns are each drawn as a diagram with its Mermaid source: a Mac mini, one ephemeral run, Kubernetes, a private VPC, and two servers holding one vault.",
+   "section": "top",
+   "quote": "Five patterns, each drawn as a diagram with its Mermaid source",
+   "about": [
+    "entity:mermaid",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "Fast scoped access, cloning one folder with one commit of history, arrived in sgit 0.18.0 and the owner's agents already use it in production.",
+   "section": "top",
+   "quote": "this is the fast scoped access that arrived in sgit 0.18.0, which my own agents already use in production",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design"
+   ],
+   "refs": [
+    "r02"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c31"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c14"
+  },
+  {
+   "from": "c10",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c24"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c21",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "the command line and the SG/Send vault server that give isolated agents encrypted memory"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "renders the deployment docs live from an encrypted vault"
+  },
+  {
+   "id": "docker",
+   "role": "the image the server is published as, and the Compose file for the Mac mini pattern"
+  },
+  {
+   "id": "kubernetes",
+   "role": "the pattern with a Deployment, Jobs and a NetworkPolicy, tested least"
+  },
+  {
+   "id": "aws",
+   "role": "the cloud pattern: VPC, S3, Lambda, Fargate, EC2 and CloudFront"
+  },
+  {
+   "id": "mac-mini",
+   "role": "the one machine you own where the owner suggests starting"
+  },
+  {
+   "id": "mermaid",
+   "role": "the diagram source published with each pattern"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": true
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://sgit.ai/deploy/index.md",
+   "title": "SG/Send deployment docs",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://sgit.ai/docs/agents-sharing-one-vault.md",
+   "title": "Agents sharing one vault",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://sgit.ai/docs/partial-clones.md",
+   "title": "Partial clones",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://sgit.ai/docs/self-host-for-agents.md",
+   "title": "Self-hosting guide for agents",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-08",
+   "what": "Every command run against a local server with sgit-ai 0.20.0 and sgraph-ai-app-send 0.33.0; the article drafted"
+  }
+ ]
+}

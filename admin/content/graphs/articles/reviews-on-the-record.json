@@ -1,0 +1,542 @@
+{
+ "slug": "reviews-on-the-record",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "An article has become the way the owner answers people: a page with the sources that stays answered for the next person.",
+   "section": "why",
+   "quote": "an article has become the way I answer people.",
+   "about": [
+    "concept:the-newsroom",
+    "concept:publishing-method",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Almost every article is written by one model, and a model with a lot of context does more and misses more.",
+   "section": "why",
+   "quote": "almost every article here is written by one model, and a model with a lot of context does more and misses more.",
+   "about": [
+    "concept:the-newsroom",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "proposal",
+   "text": "Every article should get a second pass by readers that are not the writer: other models first, then the owner, then the journalists on the desk.",
+   "section": "why",
+   "quote": "So I want a second pass on every article, by readers that are not the writer.",
+   "about": [
+    "concept:reviews-on-the-record",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The published criteria are six questions, each answered pass, issues or not checked: facts, voice, claims and limits, conversions, health, people.",
+   "section": "criteria",
+   "quote": "Six questions, each answered pass, issues or not checked",
+   "about": [
+    "concept:reviews-on-the-record"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "review questions",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Not checked is allowed and asked for: a review that checked three things properly is worth more than one that skimmed six.",
+   "section": "criteria",
+   "quote": "a review that checked three things properly is worth more than one that skimmed six.",
+   "about": [
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "A review is one file in the article's own folder, named by its date and reviewer, written once and never edited, about one text of the article identified by a hash.",
+   "section": "record",
+   "quote": "A review is one file, in the article's own folder of reviews, named by its date and its reviewer. It is written once by its reviewer and never edited.",
+   "about": [
+    "concept:reviews-on-the-record",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The unit of work is the reviewer, the article and the hash of its text, so a reviewer never gets the same article at the same text twice.",
+   "section": "record",
+   "quote": "The unit of work is the reviewer, the article and that hash. A reviewer never gets the same article at the same text twice.",
+   "about": [
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "A reviewer takes its next five articles, newest first, from a status file listing every article's current hash and the reviews it already has.",
+   "section": "record",
+   "quote": "it takes its next five, newest first, from a status file that lists every article's current hash and the reviews it already has.",
+   "about": [
+    "concept:reviews-on-the-record"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "articles per reviewer batch",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Before it starts, a reviewer reads its own past reviews and the newsroom's answers, so it does not raise again what was already answered.",
+   "section": "record",
+   "quote": "Before it starts, it reads its own past reviews and the newsroom's answers to them, so it does not raise again what has already been answered.",
+   "about": [
+    "concept:agent-memory",
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "A pull request touching only review files is the best fit today for an agent from another vendor: attributable, reviewable and checkable before merge.",
+   "section": "arrives",
+   "quote": "For an agent from another vendor this is the best fit today: it is attributable, it is reviewable",
+   "about": [
+    "concept:publishing-method",
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "Later, a review can arrive by the editor's channel's append lane, sent without an account and sealed so only the newsroom can read it.",
+   "section": "arrives",
+   "quote": "a reviewer can send without an account, sealed so that only the newsroom can read it.",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Every finding gets an answer in a status file only the newsroom writes: fixed with the version, declined with the reason, or open.",
+   "section": "answers",
+   "quote": "A finding with no answer is just a complaint.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Findings are worked through in the daily pass with the usual rule: what is cheap to undo is fixed and released, and anything that changes an argument goes to the owner.",
+   "section": "answers",
+   "quote": "what is cheap to undo is fixed and released, and anything that changes an argument goes to me.",
+   "about": [
+    "concept:one-way-door",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "Every article page now has a Reviews section after the threads: who reviewed it, when, at which version, the verdict, and how many findings were fixed, declined or open.",
+   "section": "answers",
+   "quote": "Every article page now has a Reviews section, after the threads",
+   "about": [
+    "concept:publishing-method",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "This is not a comments section; it is comments on the record, by someone who said who they are, against criteria everyone can read, kept with the article.",
+   "section": "people",
+   "quote": "This is comments on the record: a review by someone who said who they are, against criteria everyone can read, kept with the article.",
+   "about": [
+    "concept:the-record",
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The owner's own reading uses the same file: an approval by the editor at that version is the sign-off the editor's channel proposed.",
+   "section": "people",
+   "quote": "When I have read an article and it is right, that is a review: an approval, by the editor, at that version",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:publisher",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "The most interesting part is that it works backwards in time: a note on the record a year later saying I got this wrong, or this came true.",
+   "section": "people",
+   "quote": "And it works backwards in time, which I think is the most interesting part.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "The next step is signed readers with a key of their own, who confirm or dispute an article and whose reviews count because they are signed.",
+   "section": "people",
+   "quote": "signed readers, with a key of their own, who confirm or dispute an article, agree or disagree with it, and whose reviews count because they are signed.",
+   "about": [
+    "concept:provenance",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The first reviewer was another model from the same vendor as the writer, given the criteria and the five newest articles.",
+   "section": "first-run",
+   "quote": "The first reviewer was another model, from the same vendor as the one that writes the articles",
+   "about": [
+    "concept:reviews-on-the-record",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "The first run took about nineteen minutes and wrote five records.",
+   "section": "first-run",
+   "quote": "It took about nineteen minutes and wrote five records.",
+   "about": [
+    "concept:reviews-on-the-record"
+   ],
+   "value": {
+    "n": 19,
+    "unit": "minutes for five records",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "One article had no findings; the other four had 18 between them, 4 medium and 14 low, none high.",
+   "section": "first-run",
+   "quote": "The other four had 18 between them: 4 medium and 14 low, none high.",
+   "about": [
+    "concept:reviews-on-the-record"
+   ],
+   "value": {
+    "n": 18,
+    "of": 4,
+    "unit": "findings across four articles",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The medium findings were real: a quote attributed to Google linked to coverage that did not carry it, and Mozilla's latest audited statements are for 2024, not 2023.",
+   "section": "first-run",
+   "quote": "A quote attributed to Google linked to coverage that did not carry it; Mozilla's latest audited statements are for 2024, not 2023",
+   "about": [
+    "entity:google",
+    "entity:mozilla",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "riskmandate.ai's front page says Enforced in real time while an article says RiskMandate is never in the request path, without saying how the two fit.",
+   "section": "first-run",
+   "quote": "says RiskMandate is never in the request path, without saying how the two fit.",
+   "about": [
+    "entity:riskmandate",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "The reviewer counted curl's 239 vulnerabilities again and got the same 49, and reproduced the CVE counts from NVD's API exactly.",
+   "section": "first-run",
+   "quote": "It counted curl's 239 vulnerabilities again and got the same 49",
+   "about": [
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 49,
+    "of": 239,
+    "unit": "curl vulnerabilities, recounted and matched",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "decision",
+   "text": "Every finding was checked and fixed in the same release that published the article, so those reviews now show as reviews of an earlier text.",
+   "section": "first-run",
+   "quote": "Every finding was checked and fixed in the same release that published this article",
+   "about": [
+    "concept:corrections-propagate",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The reviewer also reviewed the criteria unasked, and its points went into version 1.1.",
+   "section": "first-run",
+   "quote": "It also reviewed the criteria, unasked, and its points went straight into version 1.1",
+   "about": [
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Review does not make an article right; it makes what was checked and what was found visible.",
+   "section": "limits",
+   "quote": "Review does not make an article right. It makes what was checked, and what was found, visible.",
+   "about": [
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "One reviewer, one batch so far: five articles by one model, with criteria at version 1.1 that will keep changing.",
+   "section": "limits",
+   "quote": "One reviewer, one batch so far. Five articles, by one model",
+   "about": [
+    "concept:reviews-on-the-record"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Reviewers are models and models make mistakes; a finding is a claim for the newsroom to check, not a verdict.",
+   "section": "limits",
+   "quote": "Reviewers are models, and models make mistakes. A finding is a claim for the newsroom to check, not a verdict.",
+   "about": [
+    "concept:agents-write-too",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "A hash is not a signature: it says which text was reviewed, not who reviewed it, so records are attributed by who sent them until reviewers sign.",
+   "section": "limits",
+   "quote": "A hash is not a signature. It says which text was reviewed, not who reviewed it",
+   "about": [
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "Nothing reviews the reviewers yet; if two disagree the newsroom answers both and the owner decides.",
+   "section": "limits",
+   "quote": "Nothing reviews the reviewers yet. If two reviewers disagree, the newsroom answers both, and I decide.",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "Signed readers are a proposal, not built.",
+   "section": "limits",
+   "quote": "Signed readers are a proposal.",
+   "about": [
+    "concept:provenance"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c06",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c18"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "the owner and editor, whose reviews and sign-offs use the same record"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site that answers every finding and shows the reviews on each article"
+  },
+  {
+   "id": "google",
+   "role": "a quote attributed to it linked to coverage that did not carry it"
+  },
+  {
+   "id": "mozilla",
+   "role": "its latest audited statements are for 2024, not 2023"
+  },
+  {
+   "id": "riskmandate",
+   "role": "its front page wording contradicts an article on the request path"
+  },
+  {
+   "id": "publisher",
+   "role": "the editor and the journalists on the desk who review the same way"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "reviews-on-the-record",
+   "defined_here": true
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "The voice memo; the criteria published; the first reviewer's batch of five, fixed in the same release"
+  }
+ ]
+}

@@ -1,0 +1,878 @@
+{
+ "slug": "the-key-is-the-billing-system",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "VoiceDebrief turns a voice note or audio file into a transcript, a translation and a debrief in one pass, in the browser, with no account, no upload and nothing to install.",
+   "section": "what",
+   "quote": "Drop a voice note or an audio file. Get the debrief. One pass, in your browser. No account, no upload to us, nothing to install.",
+   "about": [
+    "entity:voicedebrief",
+    "concept:client-side"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "A 42-second note costs about a third of a penny on the user's own OpenRouter key.",
+   "section": "short",
+   "quote": "A 42-second note costs about a third of a penny.",
+   "about": [
+    "entity:voicedebrief",
+    "entity:openrouter",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 42,
+    "unit": "seconds of audio for about a third of a penny",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The WhatsApp number runs through an n8n workflow behind a Cloudflare Worker, the one part of the product with a server, and not the part the article is about.",
+   "section": "what",
+   "quote": "through an n8n workflow behind a Cloudflare Worker, which is the one part of the product with a server",
+   "about": [
+    "entity:whatsapp",
+    "entity:n8n",
+    "entity:cloudflare",
+    "entity:voicedebrief"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The first commit is on 28 July 2026; the week of 3 August has 127 commits and 10 releases, the week of 10 August 64 commits and 3 releases.",
+   "section": "what",
+   "quote": "the week of 3 August, 127 commits and 10 releases",
+   "about": [
+    "entity:voicedebrief",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 127,
+    "unit": "commits in the week of 3 August 2026",
+    "as_of": "2026-08-09"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The week of 17 August has no commits at all, the week after eleven, then three, and the last commit is on 7 September, a release record.",
+   "section": "what",
+   "quote": "Then the week of 17 August has no commits at all. The week after, eleven. Then three.",
+   "about": [
+    "entity:voicedebrief",
+    "concept:shipping"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "The repository holds two hundred and fifty-seven commits and thirty-two tags, and a handbrake you can see from across the room.",
+   "section": "what",
+   "quote": "Two hundred and fifty-seven commits and thirty-two tags, and a handbrake you can see from across the room.",
+   "about": [
+    "entity:voicedebrief",
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 257,
+    "unit": "commits in the repository",
+    "as_of": "2026-10-12"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "No server is neither a preference nor laziness; it is the product.",
+   "section": "noserver",
+   "quote": "It is neither. It is the product.",
+   "about": [
+    "concept:client-side",
+    "entity:voicedebrief"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "With no server VoiceDebrief never sees the audio, which removes data custody, a breach site, a shared key, key management, billing, a user database, scaling, a single point of failure and on-call.",
+   "section": "noserver",
+   "quote": "With no server, we never see the audio.",
+   "about": [
+    "concept:client-side",
+    "concept:privacy",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Add a server and every item on that list comes back at once, not gradually; it is a different company with a different cost base and risk register.",
+   "section": "noserver",
+   "quote": "Add a server, and every item on that list comes back at once.",
+   "about": [
+    "concept:client-side",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "What stopped the project was not a server; it was the lack of one, because the commercial model needed something the terms would not allow without a backend.",
+   "section": "noserver",
+   "quote": "What stopped it was not a server. It was the lack of one.",
+   "about": [
+    "concept:key-as-billing",
+    "concept:licence-is-the-blocker"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "decision",
+   "text": "The model was written down on 28 July in a brief headed Billing by not building billing: a payment, a cut kept at that moment, and a key whose credit limit is the user's share.",
+   "section": "model",
+   "quote": "Billing by not building billing.",
+   "about": [
+    "concept:key-as-billing",
+    "entity:stripe",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "The minimum top-up is five pounds, because a card fee with a fixed component makes a one-pound purchase return about 59 pence of inference.",
+   "section": "model",
+   "quote": "a card fee with a fixed component makes a one-pound purchase return about 59 pence of inference",
+   "about": [
+    "concept:pricing",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 59,
+    "of": 100,
+    "unit": "pence of inference returned on a one-pound purchase"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The key model is simpler to build and more profitable per pound than a billing system, because the margin is taken once, up front, and never has to be collected.",
+   "section": "model",
+   "quote": "the margin is taken once, up front, and never has to be collected",
+   "about": [
+    "concept:key-as-billing",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "OpenRouter's Management API creates keys with a credit limit and lists the use case: SaaS applications that automatically create unique API keys for each customer instance.",
+   "section": "model",
+   "quote": "Automatically create unique API keys for each customer instance",
+   "about": [
+    "entity:openrouter",
+    "concept:key-as-billing"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "OpenRouter's terms of 31 August 2026 forbid using the service for reselling API access to models, make credits non-transferable, and bar selling or transferring access.",
+   "section": "model",
+   "quote": "access the Site or Service for purposes of reselling API access to Models or otherwise developing a competing service",
+   "about": [
+    "entity:openrouter",
+    "concept:licence-is-the-blocker",
+    "concept:regulation"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "OpenRouter's enterprise agreement separately licenses making the service available to a customer's own end customers, a door an agreement could open and the standard terms keep shut.",
+   "section": "model",
+   "quote": "which reads as a door that an agreement could open and the standard terms keep shut",
+   "about": [
+    "entity:openrouter",
+    "concept:licence-is-the-blocker"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Two things matter per provider: can a single key carry a spend ceiling, and may that key be handed to a user who paid VoiceDebrief.",
+   "section": "map",
+   "quote": "can a single key carry a spend ceiling, and may that key be handed to a user who paid us",
+   "about": [
+    "concept:key-as-billing",
+    "concept:licence-is-the-blocker"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "ElevenLabs keys carry three restrictions, scope, a credit quota as a custom credit limit, and IP allowlisting, and a key stops at its own limit while the account still has credit.",
+   "section": "map",
+   "quote": "Credit quota: set a custom credit limit to control usage",
+   "about": [
+    "entity:elevenlabs",
+    "concept:key-as-billing"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "ElevenLabs' Scribe v2 costs $0.22 an hour batch and $0.39 realtime, with four and a half hours free, billed in dollars not credits.",
+   "section": "map",
+   "quote": "Scribe v2 at $0.22 an hour batch and $0.39 realtime",
+   "about": [
+    "entity:elevenlabs",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 0.22,
+    "unit": "USD per hour of batch transcription",
+    "as_of": "2026-10-12"
+   },
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "ElevenLabs' OEM terms let a business on Scale or above make the service available to its own end users and independently set the subscription price, the closest any provider comes in writing.",
+   "section": "map",
+   "quote": "Customer will independently establish the subscription price of the Bundled Service for its End Users.",
+   "about": [
+    "entity:elevenlabs",
+    "concept:licence-is-the-blocker"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "ElevenLabs Grants gives twelve months and 33 million characters to companies under 25 people with a monetised use case; characters cannot be exchanged or resold.",
+   "section": "map",
+   "quote": "Grants, twelve months, 33 million characters, for companies under 25 people with a monetised use case",
+   "about": [
+    "entity:elevenlabs",
+    "concept:startups"
+   ],
+   "value": {
+    "n": 12,
+    "unit": "months of the Grants programme"
+   },
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "Groq's Whisper large v3 turbo at $0.04 an hour is the cheapest transcription on the list, but its spend limit applies organisation-wide, so there is no cap on a key.",
+   "section": "map",
+   "quote": "Whisper large v3 turbo at $0.04 an hour, the cheapest transcription on the list",
+   "about": [
+    "entity:groq",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 0.04,
+    "unit": "USD per hour of transcription",
+    "as_of": "2026-10-12"
+   },
+   "refs": [
+    "r13",
+    "r14"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Mistral caps spend per workspace, OpenAI per organisation, Deepgram's keys expire but do not meter, and AWS budgets act after the fact; none has a prepaid key with a cap.",
+   "section": "map",
+   "quote": "Groq, Mistral and OpenAI cap the organisation or the workspace; Deepgram's keys expire but do not meter; AWS budgets act after the fact.",
+   "about": [
+    "entity:mistral",
+    "entity:openai",
+    "entity:deepgram",
+    "entity:aws",
+    "entity:groq"
+   ],
+   "refs": [
+    "r11",
+    "r15",
+    "r16",
+    "r19"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "A gateway like Portkey is a per-key meter someone else runs, and also a server the audio passes through, which changes the privacy story to a third party we chose sees it.",
+   "section": "map",
+   "quote": "A gateway is a per-key meter that someone else runs.",
+   "about": [
+    "entity:portkey",
+    "concept:privacy",
+    "concept:client-side"
+   ],
+   "refs": [
+    "r20"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The two providers whose keys carry a ceiling, OpenRouter and ElevenLabs, are the two whose terms say most about resale, because a capped key is what makes resale easy.",
+   "section": "map",
+   "quote": "The two providers whose keys carry a ceiling, OpenRouter and ElevenLabs, are the two whose terms say the most about resale",
+   "about": [
+    "entity:openrouter",
+    "entity:elevenlabs",
+    "concept:licence-is-the-blocker"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Four routes remain: the forbidden capped OpenRouter key, a provider that lets a capped key be issued under its terms, bring your own key as today, and a metering proxy.",
+   "section": "routes",
+   "quote": "What we can do without anyone's permission, today, is keep route 3 and make the key page shorter.",
+   "about": [
+    "concept:key-as-billing",
+    "entity:voicedebrief"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "A metering proxy is the smallest possible backend and still a backend; it is the last resort and the only route that needs nobody's permission.",
+   "section": "routes",
+   "quote": "It is the last resort, and it is also the only route that needs nobody's permission.",
+   "about": [
+    "concept:client-side",
+    "concept:key-as-billing"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "The ask to every provider is one sentence: let the credit limit be a property of a key that a user can buy through us, so that we never hold the audio and never run the meter.",
+   "section": "brief",
+   "quote": "let the credit limit be a property of a key that a user can buy through us, so that we never hold the audio and never run the meter",
+   "about": [
+    "concept:key-as-billing",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "For ElevenLabs, apply to Grants with the monetised use case and ask whether a capped key issued under the OEM terms may be given to a paying end user for Scribe only.",
+   "section": "brief",
+   "quote": "Apply to Grants with the monetised use case.",
+   "about": [
+    "entity:elevenlabs",
+    "concept:the-brief",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "Every answer is recorded in the VoiceDebrief repository as an issue with the date, so the map can be updated as a new version rather than a new article.",
+   "section": "brief",
+   "quote": "every answer in the VoiceDebrief repository, as an issue, with the date",
+   "about": [
+    "concept:the-record",
+    "concept:corrections-propagate",
+    "entity:voicedebrief"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The terms are read, not interpreted: every clause is quoted from the provider's page on 12 October 2026, none of it is legal advice, and OEM and enterprise terms are to be negotiated.",
+   "section": "limits",
+   "quote": "The terms are read, not interpreted.",
+   "about": [
+    "concept:licence-is-the-blocker",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The owner does not know when OpenRouter's reselling clause arrived; it is in the terms of 31 August 2026 and in a forum thread about six months earlier.",
+   "section": "limits",
+   "quote": "I do not know when OpenRouter's clause arrived.",
+   "about": [
+    "entity:openrouter"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "Three providers' terms were not read, AssemblyAI, Groq and Mistral, because their keys cannot be capped; the agents should read them before writing.",
+   "section": "limits",
+   "quote": "Three providers' terms were not read",
+   "about": [
+    "entity:assemblyai",
+    "entity:groq",
+    "entity:mistral"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "The commit counts show when the work stopped, not why; the why is the owner's account, as someone involved.",
+   "section": "limits",
+   "quote": "They show when the work stopped, not why; the why is my account, as someone involved.",
+   "about": [
+    "entity:voicedebrief",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "Route 2 may not exist: ElevenLabs' OEM terms were written for bundling, not for a key a user buys, and the answer may be no, in which case route 4 follows with the privacy sentence changed.",
+   "section": "limits",
+   "quote": "Route 2 may not exist.",
+   "about": [
+    "entity:elevenlabs",
+    "concept:key-as-billing"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c15",
+   "verb": "contradicts",
+   "to": "c14"
+  },
+  {
+   "from": "c15",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c28"
+  },
+  {
+   "from": "c29",
+   "verb": "specifies",
+   "to": "c28"
+  },
+  {
+   "from": "c30",
+   "verb": "specifies",
+   "to": "c28"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c15"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c29"
+  }
+ ],
+ "entities": [
+  {
+   "id": "voicedebrief",
+   "role": "the product with no server whose commercial model the terms forbid"
+  },
+  {
+   "id": "openrouter",
+   "role": "the router whose key the product runs on, whose Management API describes the model and whose terms forbid it"
+  },
+  {
+   "id": "whatsapp",
+   "role": "the number that returns a transcription for a forwarded voice message"
+  },
+  {
+   "id": "n8n",
+   "role": "the workflow behind the WhatsApp number, the one server in the product"
+  },
+  {
+   "id": "cloudflare",
+   "role": "the Worker in front of the WhatsApp workflow"
+  },
+  {
+   "id": "stripe",
+   "role": "the payment link a user buys credit through"
+  },
+  {
+   "id": "elevenlabs",
+   "role": "the nearest fit: per-key credit limits, OEM terms and a grants programme"
+  },
+  {
+   "id": "groq",
+   "role": "the cheapest transcription, with an organisation-wide spend limit"
+  },
+  {
+   "id": "mistral",
+   "role": "Voxtral, with spend limits per workspace"
+  },
+  {
+   "id": "openai",
+   "role": "caps the organisation; key sharing is against its terms"
+  },
+  {
+   "id": "deepgram",
+   "role": "keys expire but do not meter; terms allow integration that adds meaningful functionality"
+  },
+  {
+   "id": "assemblyai",
+   "role": "no spend cap on a key; a startup programme; terms not read"
+  },
+  {
+   "id": "aws",
+   "role": "budgets that act after a threshold, a cost control not a ceiling"
+  },
+  {
+   "id": "portkey",
+   "role": "a gateway with budget limits per key, a server the audio passes through"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the RiskMandate agent that will draft the messages to providers"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "key-as-billing",
+   "defined_here": true
+  },
+  {
+   "id": "licence-is-the-blocker",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://voicedebrief.ai/",
+   "title": "VoiceDebrief",
+   "by": "VoiceDebrief",
+   "date": "2026-10-12",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://voicedebrief.ai/openrouter-key/",
+   "title": "The VoiceDebrief key page",
+   "by": "VoiceDebrief",
+   "date": "2026-10-12",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/sgraph-ai/SGraph-AI__SaaS__WhatsApp__Audio__Transcription",
+   "title": "VoiceDebrief repository",
+   "by": "SGraph AI",
+   "date": "2026-10-12",
+   "kind": "repository"
+  },
+  {
+   "id": "r04",
+   "url": "https://openrouter.ai/terms",
+   "title": "OpenRouter terms of service",
+   "by": "OpenRouter",
+   "date": "2026-08-31",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://openrouter.ai/docs/features/provisioning-api-keys",
+   "title": "OpenRouter Management API",
+   "by": "OpenRouter",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://elevenlabs.io/terms-of-use",
+   "title": "ElevenLabs terms of use",
+   "by": "ElevenLabs",
+   "date": "2026-10-09",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://elevenlabs.io/oem-terms",
+   "title": "ElevenLabs OEM terms",
+   "by": "ElevenLabs",
+   "date": "2025-02-28",
+   "kind": "page"
+  },
+  {
+   "id": "r08",
+   "url": "https://elevenlabs.io/docs/overview/administration/workspaces/api-keys",
+   "title": "ElevenLabs API keys",
+   "by": "ElevenLabs",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://elevenlabs.io/pricing/api",
+   "title": "ElevenLabs API pricing",
+   "by": "ElevenLabs",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r10",
+   "url": "https://elevenlabs.io/grants",
+   "title": "ElevenLabs Grants",
+   "by": "ElevenLabs",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r11",
+   "url": "https://deepgram.com/terms",
+   "title": "Deepgram terms",
+   "by": "Deepgram",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r12",
+   "url": "https://developers.deepgram.com/docs/create-additional-api-keys",
+   "title": "Deepgram key docs",
+   "by": "Deepgram",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r13",
+   "url": "https://console.groq.com/docs/spend-limits",
+   "title": "Groq spend limits",
+   "by": "Groq",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r14",
+   "url": "https://console.groq.com/docs/model/whisper-large-v3-turbo",
+   "title": "Groq Whisper large v3 turbo pricing",
+   "by": "Groq",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r15",
+   "url": "https://docs.mistral.ai/admin/quickstarts/manage-workspaces",
+   "title": "Mistral workspaces",
+   "by": "Mistral AI",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r16",
+   "url": "https://developers.openai.com/api/docs/guides/admin-apis",
+   "title": "OpenAI Admin APIs",
+   "by": "OpenAI",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r17",
+   "url": "https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety",
+   "title": "Best practices for API key safety",
+   "by": "OpenAI",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r18",
+   "url": "https://www.assemblyai.com/contact/startup-program",
+   "title": "AssemblyAI startup programme",
+   "by": "AssemblyAI",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r19",
+   "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-controls.html",
+   "title": "AWS Budgets actions",
+   "by": "AWS",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r20",
+   "url": "https://portkey.ai/docs/product/ai-gateway/virtual-keys/budget-limits",
+   "title": "Portkey budget limits",
+   "by": "Portkey",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r21",
+   "url": "https://developer.puter.com/ai/",
+   "title": "Puter's AI gateway",
+   "by": "Puter",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-12",
+   "what": "The voice memo; the providers' pages read and the commits counted; the article written"
+  },
+  {
+   "date": "2026-07-28",
+   "what": "VoiceDebrief's first commit and the brief Billing by not building billing"
+  },
+  {
+   "date": "2026-09-07",
+   "what": "The last commit, a release record"
+  },
+  {
+   "date": "2026-08-31",
+   "what": "OpenRouter's terms last updated, with the reselling clause"
+  }
+ ]
+}

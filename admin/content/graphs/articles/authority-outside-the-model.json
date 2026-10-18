@@ -1,0 +1,746 @@
+{
+ "slug": "authority-outside-the-model",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "On 10 October Satya Nadella published Models as Insider Risks in the Super Intelligence Era, which reads like a summary of what this site has argued since The ultimate insider on 30 September.",
+   "section": "top",
+   "quote": "written by the CEO of the company that ships Copilot.",
+   "about": [
+    "entity:satya-nadella",
+    "entity:microsoft",
+    "entity:copilot",
+    "concept:insider-risk"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "His argument: we cannot trace a frontier model's behaviour back to a code path as we traced software, so treat models as insiders, with identity, least privilege, logs and containment, and separate the supply of intelligence from the authority over it.",
+   "section": "argument",
+   "quote": "separate the supply of intelligence from the authority over it.",
+   "about": [
+    "entity:satya-nadella",
+    "concept:insider-risk",
+    "concept:authority-outside-the-model"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "He proposes seven principles: model diversity, observe everything, verifiability, independent controls, independent auditability, containment and incident disclosure.",
+   "section": "argument",
+   "quote": "His seven principles follow from that.",
+   "about": [
+    "entity:satya-nadella",
+    "concept:authority-outside-the-model"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "His core move is the enforcer test in one sentence: a control bounds a grant only if it is enforced by something the grant does not include.",
+   "section": "top",
+   "quote": "a control bounds a grant only if it is enforced by something the grant does not include.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:abp-sgit-ai",
+    "concept:authority-outside-the-model"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "On 9 October two emails drafted by an agent went out in the owner's voice; the fix, built the same day, is a second reader the agent cannot skip, code checks first, then a fresh model call that fails closed.",
+   "section": "seven",
+   "quote": "On 9 October, two emails drafted by one of my agents went out in my voice.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:incidents",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The second reader is a different model from the author: the drafter runs on Opus and the checker on Sonnet, so they do not share every blind spot.",
+   "section": "seven",
+   "quote": "the drafter runs on Opus and the checker on Sonnet, so they do not share every blind spot.",
+   "about": [
+    "entity:claude",
+    "concept:human-in-the-loop",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "hypothesis",
+   "text": "Diversity of models is half of it; the other half is diversity of context, because a second model that has read the same poisoned email as the first is not independent however different its weights.",
+   "section": "seven",
+   "quote": "A second model that has read the same poisoned email as the first is not independent, however different its weights are.",
+   "about": [
+    "concept:prompt-injection",
+    "concept:human-in-the-loop",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The agent team keeps its memory in encrypted vaults whose history is the record, append lanes let an agent write what it cannot read back, and re-anchoring adds a canary status report computed from the transcript.",
+   "section": "seven",
+   "quote": "the writer cannot edit what it wrote.",
+   "about": [
+    "concept:vault-design",
+    "concept:the-record",
+    "concept:agent-memory",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Evidence should not be held by the party being observed, which is why the record sits in vaults whose host stores ciphertext and never holds a key.",
+   "section": "seven",
+   "quote": "Evidence should not be held by the party being observed",
+   "about": [
+    "concept:provenance",
+    "concept:encryption-and-keys",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "Hope or enforcement runs the same 62 emails, sixteen hostile, through three designs of one agent: in the first design all 138 hostile tests rested on the model; in the third, 52 of 85 were held by a boundary.",
+   "section": "seven",
+   "quote": "in the first design, all 138 hostile tests rested on the model; in the third, 52 of 85 were held by a boundary.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 52,
+    "of": 85,
+    "unit": "hostile tests held by a boundary in the third design",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Synthetic users driving a real browser found bugs every test had passed over: two shipped JavaScript errors on riskmandate.ai, and on newsroom.sgit.ai a missing image that led to 51 of 527 figures across 10 articles not surviving the move.",
+   "section": "seven",
+   "quote": "checking it showed 51 of the 527 figures across 10 articles had not survived the move.",
+   "about": [
+    "concept:synthetic-users",
+    "entity:newsroom-sgit-ai",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 51,
+    "of": 527,
+    "unit": "figures that had not survived the move",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "limit",
+   "text": "Hope or enforcement is a deterministic simulation with no model called; the second reader and the canary are tested in production on a small system; synthetic users are invented people and say nothing about how many real people a page loses.",
+   "section": "seven",
+   "quote": "Hope or enforcement is a deterministic simulation; no model was called. It tests the design, not a running agent.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "definition",
+   "text": "An Agent Behaviour Policy writes down four things for one agent in one deployment: the reach, measured; the mandate; the gap, derived and never written by hand; and the barriers, typed as boundary, setting, expectation or nothing, and only a boundary is a control.",
+   "section": "seven",
+   "quote": "Only a boundary is a control. The home page puts it in six words: a prompt asks, a policy enforces.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "entity:riskmandate",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "In the published policy for Claude Code on the web with one repository attached, the agent can reach fifteen capabilities; six were asked for, and seven of the other nine have nothing real in the way.",
+   "section": "seven",
+   "quote": "the agent can reach fifteen capabilities; six of them were asked for, and seven of the other nine have nothing real in the way.",
+   "about": [
+    "entity:claude-code",
+    "concept:reach",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 7,
+    "of": 9,
+    "unit": "unrequested capabilities with nothing real in the way",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Claude Code's own safety check stopped the persona agents from driving the live site; the agent served a copy and asked, and the one narrow rule the owner approved lives in a settings file the agent can write, a setting, not a boundary.",
+   "section": "seven",
+   "quote": "so it is a setting with a person's approval on record, not a boundary. Same code, different owner.",
+   "about": [
+    "entity:claude-code",
+    "concept:synthetic-users",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "The session that runs this site works under a ten-rule policy labelling each rule by what enforces it: nine are expectations, one is a setting, and none is a boundary.",
+   "section": "seven",
+   "quote": "nine are expectations, one is a setting, and none is a boundary.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 9,
+    "of": 10,
+    "unit": "rules kept by expectation",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "RiskMandate is deliberately not inline: it authors the policy and pre-commits what should happen, and the customer's own gateways, proxies, identity and scoped credentials enforce it.",
+   "section": "seven",
+   "quote": "An independent control should not be one more vendor in the request path.",
+   "about": [
+    "entity:riskmandate",
+    "concept:behaviour-policy",
+    "concept:strategy"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The policy and its evidence live in a vault the customer holds the keys to, a read key is derived one way from the vault key, and every vault on this site is published with its read key so claims can be checked by others.",
+   "section": "seven",
+   "quote": "Every vault on this site is published with its read key, on purpose",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:provenance",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "The mandate should be locked under change control before the agent runs, so an auditor compares the footprint with a commitment, not a story, and the second reader's sources should come from somewhere the drafter cannot write.",
+   "section": "seven",
+   "quote": "so that an auditor compares the footprint with a commitment, not with a story.",
+   "about": [
+    "concept:footprint",
+    "concept:provenance",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Every agent in the team is a session on a dedicated account, so the account is the blast radius; no agent sends, except the security agent, which may send one email to one address to put the whole team on hold.",
+   "section": "seven",
+   "quote": "the security agent may send one email, to one address, to put the whole team on hold.",
+   "about": [
+    "concept:blast-radius",
+    "concept:multi-agent",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "In the third design of Hope or enforcement, refunds stop at 100 GBP per order and a 2,000 GBP daily circuit breaker covers every automatic refund, so one bad day is bounded before it starts.",
+   "section": "seven",
+   "quote": "refunds stop at 100 GBP per order, and a 2,000 GBP daily circuit breaker covers every automatic refund",
+   "about": [
+    "concept:blast-radius",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 2000,
+    "unit": "GBP daily circuit breaker",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "hypothesis",
+   "text": "A brake is only as good as the answers to who holds it, how long it takes, what it breaks and what it cannot reverse; containment without recoverability is a brake on a car with no reverse gear.",
+   "section": "seven",
+   "quote": "Containment without recoverability is a brake on a car with no reverse gear.",
+   "about": [
+    "concept:incidents",
+    "concept:one-way-door"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The newsroom discloses its own incidents the day they happen: the two wrong emails, a release failure in Green does not mean live, and the GitHub Actions outage of 5 October that took its release down.",
+   "section": "seven",
+   "quote": "We disclose our own. The second reader article opens with the two emails that went out wrongly in my voice",
+   "about": [
+    "concept:incidents",
+    "entity:github-actions",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "proposal",
+   "text": "Disclose near misses, not only incidents: a near miss is footprint in the gap, the agent went somewhere it was not asked to go and nothing stopped it, and it is countable long before anything breaks.",
+   "section": "seven",
+   "quote": "The agent went somewhere it was not asked to go, and nothing stopped it.",
+   "about": [
+    "concept:footprint",
+    "concept:incidents",
+    "concept:near-miss"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "Five things his list leaves out decide whether the principles work: the mandate, the deployment rather than the model, a named owner and an expiry, recoverability, and speed.",
+   "section": "gaps",
+   "quote": "Read against our work, five things are missing, and each of them decides whether the seven work in practice.",
+   "about": [
+    "concept:authority-outside-the-model",
+    "concept:behaviour-policy",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Observation tells you what an agent did and cannot tell you whether it was allowed to, unless somebody wrote down what it was for before it ran; compared with the footprint the mandate yields a near miss or a dormant mandate.",
+   "section": "gaps",
+   "quote": "Observation tells you what an agent did. It cannot tell you whether the agent was allowed to",
+   "about": [
+    "concept:footprint",
+    "concept:behaviour-policy",
+    "concept:near-miss"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "data-point",
+   "text": "Risk is a property of one agent in one deployment, not of the model: in Hope or enforcement the difference between a read-only tool bound to one customer and the broadest scopes is one customer against 38,000.",
+   "section": "gaps",
+   "quote": "in Hope or enforcement, that difference is one customer against 38,000.",
+   "about": [
+    "concept:blast-radius",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 38000,
+    "of": 1,
+    "unit": "customers reachable with the broadest scope against one",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "His post has three things we do not: chain-of-thought transparency, which we have not worked on; standards, where our vocabulary is open under CC BY 4.0 but needs more than one small company; and continuous adversarial testing in production at scale.",
+   "section": "his",
+   "quote": "But a standard needs more than one small company behind it.",
+   "about": [
+    "entity:abp-sgit-ai",
+    "entity:creative-commons",
+    "concept:ai-governance"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The maturity table separates what runs today, what is published as design and what is only argued; the pattern is proven on a small real system and the products around it are early.",
+   "section": "top",
+   "quote": "the pattern is proven on a small, real system; the products around it are early.",
+   "about": [
+    "concept:authority-outside-the-model",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "Where to start: write the mandate before the agent runs, measure the reach, mark every rule with what enforces it and count the expectations, put a second reader on irreversible actions, journal every connector call, name the owner and expiry, and publish near misses.",
+   "section": "start",
+   "quote": "Count the expectations. That count is how much of your policy is hope.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement",
+    "concept:near-miss",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "hypothesis",
+   "text": "His last line is that the most trustworthy system lets us trust the model least; the other half is that once you know how little you have to trust it, you can let it do a great deal more.",
+   "section": "start",
+   "quote": "once you know exactly how little you have to trust it, you can let it do a great deal more.",
+   "about": [
+    "concept:authority-outside-the-model",
+    "concept:agency-scale"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "An agent in a separate Claude session read his post alongside this network's pages and drafted the answer, which this site's agent rewrote and added the week's events to; every claim about what runs links to the page that owns it.",
+   "section": "sources",
+   "quote": "Every claim about what runs links to the page that owns it; where something is design or only argued, it says so.",
+   "about": [
+    "concept:agents-write-too",
+    "entity:claude",
+    "entity:dinis-cruz",
+    "concept:provenance"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "specifies",
+   "to": "c25"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c24",
+   "verb": "specifies",
+   "to": "c30"
+  },
+  {
+   "from": "c26",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c30",
+   "verb": "answers",
+   "to": "c25"
+  }
+ ],
+ "entities": [
+  {
+   "id": "satya-nadella",
+   "role": "author of the post the article answers principle by principle"
+  },
+  {
+   "id": "microsoft",
+   "role": "the company he leads, which ships Copilot"
+  },
+  {
+   "id": "copilot",
+   "role": "the product that makes his insider-risk argument notable"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "publishes the enforcer test, the model and sixteen example policies under CC BY 4.0"
+  },
+  {
+   "id": "riskmandate",
+   "role": "ships the Agent Behaviour Policy, deliberately not inline, and its site had two shipped JavaScript errors"
+  },
+  {
+   "id": "claude",
+   "role": "Opus drafts and Sonnet checks in the second-reader pattern; a separate session drafted the answer"
+  },
+  {
+   "id": "claude-code",
+   "role": "its published policy reaches fifteen capabilities; its safety check stopped the persona agents"
+  },
+  {
+   "id": "sgit",
+   "role": "the encrypted vaults whose history is the agent team's record"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "lost 51 of 527 figures in the move; its session runs under a ten-rule policy"
+  },
+  {
+   "id": "github-actions",
+   "role": "its outage on 5 October took the newsroom's release down"
+  },
+  {
+   "id": "creative-commons",
+   "role": "the CC BY 4.0 licence the vocabulary is pinned under"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the argument and holder of editorial responsibility"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "insider-risk",
+   "defined_here": false
+  },
+  {
+   "id": "authority-outside-the-model",
+   "defined_here": true
+  },
+  {
+   "id": "near-miss",
+   "defined_here": true
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "ai-governance",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "agency-scale",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://snscratchpad.com/posts/models-as-insider-risks/",
+   "title": "Models as Insider Risks in the Super Intelligence Era",
+   "by": "Satya Nadella",
+   "date": "2026-10-10",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://riskmandate.ai/insurance.html",
+   "title": "Insurability",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://riskmandate.ai/grant-gap.html",
+   "title": "Grant and gap",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://en.wikipedia.org/wiki/Aviation_Safety_Reporting_System",
+   "title": "Aviation Safety Reporting System",
+   "by": "Wikipedia",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "Satya Nadella published Models as Insider Risks in the Super Intelligence Era"
+  },
+  {
+   "date": "2026-09-30",
+   "what": "The ultimate insider, where this site began making the same case"
+  },
+  {
+   "date": "2026-10-09",
+   "what": "Two emails drafted by an agent went out in the owner's voice; the second reader was built the same day"
+  },
+  {
+   "date": "2026-10-05",
+   "what": "The GitHub Actions outage that took the newsroom's release down"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The article, with the week's events added by the site's agent"
+  }
+ ]
+}

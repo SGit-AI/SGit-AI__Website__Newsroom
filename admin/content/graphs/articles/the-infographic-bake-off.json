@@ -1,0 +1,616 @@
+{
+ "slug": "the-infographic-bake-off",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "To make image-model infographics part of the newsroom's workflow, the team ran a bake-off on 10 October to answer which model, for which job, at what cost.",
+   "section": "top",
+   "quote": "So on 10 October we ran a bake-off, and this is what it found.",
+   "about": [
+    "concept:choose-model-by-job",
+    "concept:the-newsroom",
+    "entity:openrouter"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The field was every image-output model OpenRouter offered that day, five from Google, three from OpenAI, its auto-router, and the newsroom's code-drawn renderer as a $0 control.",
+   "section": "top",
+   "quote": "five from Google, three from OpenAI, its auto-router, and our code-drawn renderer as a $0 control",
+   "about": [
+    "entity:openrouter",
+    "entity:google",
+    "entity:openai"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Eleven briefs, all from one article, from an 18-word stat card to the whole 2,800-word article, plus an edit, a UI component, a brand slide and a three-slide deck.",
+   "section": "top",
+   "quote": "Eleven, all from one article",
+   "about": [
+    "concept:choose-model-by-job"
+   ],
+   "value": {
+    "n": 11,
+    "unit": "briefs",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Every image was judged blind by a Designer agent under a random id, with a fact check of every required string, anything invented, six criteria and an overall score.",
+   "section": "top",
+   "quote": "Every image judged blind by a Designer agent",
+   "about": [
+    "concept:multi-agent",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The bill was 101 images for $10.44, half of it paid for images the judge would not use.",
+   "section": "top",
+   "quote": "The bill. 101 images, $10.44. Half of it paid for images the judge would not use.",
+   "about": [
+    "concept:cost-per-usable-image",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 10.44,
+    "unit": "USD for 101 images",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "decision",
+   "text": "The Accountant's rule is that a failed image was still paid for, so the number that matters is cost per usable image, not price per image.",
+   "section": "top",
+   "quote": "the number that matters is cost per usable image, not price per image",
+   "about": [
+    "concept:cost-per-usable-image",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The Data Scientist makes the cut after each round and must not promote or drop a model on a difference smaller than the noise.",
+   "section": "top",
+   "quote": "must not promote or drop a model on a difference smaller than the noise",
+   "about": [
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Spelling turned out to be mostly solved; only Gemini 2.5 Flash Image misspelled labels, and the faults were obedience and format.",
+   "section": "top",
+   "quote": "Spelling turned out to be mostly solved: only one model, Gemini 2.5 Flash Image, misspelled labels.",
+   "about": [
+    "entity:gemini",
+    "concept:choose-model-by-job"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "GPT-5 Image and GPT-5 Image Mini ignore the requested aspect ratio and always return a 1024 square.",
+   "section": "top",
+   "quote": "GPT-5 Image and GPT-5 Image Mini ignore the requested aspect ratio and always return a 1024 square.",
+   "about": [
+    "entity:openai",
+    "entity:chatgpt"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "On the chart with fourteen exact values, five of six models drew every bar right, sorted and in proportion.",
+   "section": "top",
+   "quote": "Five of six models drew every bar right, sorted and in proportion",
+   "about": [
+    "concept:choose-model-by-job"
+   ],
+   "value": {
+    "n": 5,
+    "of": 6,
+    "unit": "models with every chart value right"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "On the document and whole-article briefs GPT-5.4 Image 2 scored 9 on both, the only model with every number right and the whole argument told.",
+   "section": "top",
+   "quote": "GPT-5.4 Image 2 scored 9 on both",
+   "about": [
+    "entity:gpt-5-4-image-2",
+    "concept:choose-model-by-job"
+   ],
+   "value": {
+    "n": 9,
+    "unit": "blind score out of 10 on the document briefs"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Give the newest model the document, not a description of the picture; the older GPT-5 Image got worse with more text, and the Google models dropped caveats and invented sample values.",
+   "section": "top",
+   "quote": "Give it the document, not a description of the picture.",
+   "about": [
+    "entity:gpt-5-4-image-2",
+    "concept:choose-model-by-job"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Running the diagram brief twice unchanged measured the noise: scores moved by up to two points between identical runs, so one image per cell separates tiers, not neighbours.",
+   "section": "top",
+   "quote": "scores moved by up to two points between identical runs",
+   "about": [
+    "concept:cost-per-usable-image"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "points of score between identical runs"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "On the edit, only GPT-5.4 Image 2 made all three changes without breaking anything; every Google model treated the edit as a redraw and something else moved.",
+   "section": "top",
+   "quote": "Only GPT-5.4 Image 2 made all three changes without breaking anything (9).",
+   "about": [
+    "entity:gpt-5-4-image-2",
+    "entity:gemini"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Nano Banana 2.1, the best value of the first two rounds, had no usable image in round 3: the briefs where every character is specified are the ones it loosens.",
+   "section": "top",
+   "quote": "the briefs where every character is specified are the ones it loosens",
+   "about": [
+    "entity:nano-banana",
+    "concept:choose-model-by-job"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "In the deck round no model carried the cover's top bar or footer to the other slides, because nothing in a separate call knows what the last slide looked like.",
+   "section": "top",
+   "quote": "nothing in a separate call knows what the last slide looked like",
+   "about": [
+    "concept:choose-model-by-job",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Sending slide 1 with every later slide fixed consistency: judged blind in pairs, every model's referenced set was the more consistent one, from 1 or 2 out of 5 to 4 or 5.",
+   "section": "top",
+   "quote": "every model's referenced set was the more consistent one",
+   "about": [
+    "concept:choose-model-by-job",
+    "entity:nano-banana"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Nano Banana 2.1 is the pick for concept slides, charts and decks at about $0.04 an image.",
+   "section": "top",
+   "quote": "Nano Banana 2.1 for concept slides, charts and decks (about $0.04 an image)",
+   "about": [
+    "entity:nano-banana",
+    "concept:pricing",
+    "concept:choose-model-by-job"
+   ],
+   "value": {
+    "n": 0.04,
+    "unit": "USD per image",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "GPT-5.4 Image 2 is the pick for documents, whole articles, edits, components and brand slides, at about $0.17 to $0.23 and 60 to 120 seconds.",
+   "section": "top",
+   "quote": "GPT-5.4 Image 2 for documents, whole articles, edits, components and brand slides (about $0.17 to $0.23, 60 to 120 seconds)",
+   "about": [
+    "entity:gpt-5-4-image-2",
+    "concept:pricing",
+    "concept:choose-model-by-job"
+   ],
+   "value": {
+    "n": 0.17,
+    "unit": "USD per image, lower bound",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "Half the money, $4.43 of the first $8.80, bought images nobody would use; price per image flatters a model that fails often, cost per usable image does not.",
+   "section": "top",
+   "quote": "Half the money bought images nobody would use ($4.43 of the first $8.80).",
+   "about": [
+    "concept:cost-per-usable-image",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 4.43,
+    "of": 8.8,
+    "unit": "USD spent on unusable images"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Gemini 3 Pro Image is not cheaper than GPT-5.4 Image 2 per usable image, but it is four times faster, and the guidance uses it only where waiting matters.",
+   "section": "top",
+   "quote": "It is four times faster. That is its case",
+   "about": [
+    "entity:gemini",
+    "entity:gpt-5-4-image-2",
+    "concept:cost-per-usable-image"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "A newsroom month of twelve images a day on the recommended mix costs about $40, a cost per article of about $1.34 the owner is happy to pay and to show.",
+   "section": "top",
+   "quote": "A cost per article of about $1.34 is one I am happy to pay, and to show.",
+   "about": [
+    "concept:pricing",
+    "concept:the-newsroom"
+   ],
+   "value": {
+    "n": 1.34,
+    "unit": "USD per article on the recommended mix",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "The prompt rules the faults taught: never name the platform, because suitable for LinkedIn put LinkedIn logos on the image; end with no other text; say no numbers other than those given.",
+   "section": "top",
+   "quote": "\"Suitable for LinkedIn\" put LinkedIn logos on the image.",
+   "about": [
+    "concept:choose-model-by-job",
+    "entity:linkedin"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "data-point",
+   "text": "OCR and the judge agreed on 76% of images: OCR is a cheap alarm, not a judge, so every image must be checked.",
+   "section": "top",
+   "quote": "OCR and the judge agreed on 76% of images: OCR is a cheap alarm, not a judge.",
+   "about": [
+    "concept:cost-per-usable-image",
+    "concept:human-in-the-loop"
+   ],
+   "value": {
+    "n": 76,
+    "unit": "percent of images where OCR and the judge agreed"
+   }
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The samples are small: most cells hold one or two images and identical runs moved by up to two points, so the tiers hold but a one-point gap means little.",
+   "section": "top",
+   "quote": "Most cells hold one or two images, and identical runs moved by up to two points.",
+   "about": [
+    "concept:cost-per-usable-image"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "There is one judge and one rubric, an agent judging blind; a person would weigh craft differently, though the fact checks would not change.",
+   "section": "top",
+   "quote": "A person would weigh craft differently; the fact checks would not change.",
+   "about": [
+    "concept:multi-agent",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Prices, models and behaviour are OpenRouter's on 10 October 2026, one day; the runner, scorer and briefs are in the vault so it can be run again.",
+   "section": "top",
+   "quote": "Prices, models and their behaviour are OpenRouter's on 10 October 2026.",
+   "about": [
+    "entity:openrouter",
+    "entity:infographic-bakeoff-vault"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Only what OpenRouter offers was tested; other image models exist outside it, and this is the set one key could reach.",
+   "section": "top",
+   "quote": "Other image models exist outside it; this is the set one key could reach.",
+   "about": [
+    "entity:openrouter"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "The guidance becomes the Storyteller's, and the bake-off runs again whenever a new model appears, because the answer to which model has a date on it.",
+   "section": "top",
+   "quote": "the bake-off runs again whenever a new model appears, because the answer to \"which model\" has a date on it",
+   "about": [
+    "concept:choose-model-by-job",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article was written by agent@riskmandate.ai on Claude Opus 5.5 from a voice memo, and is disclosed as AI-generated as Article 50 of the EU AI Act asks.",
+   "section": "top",
+   "quote": "AI-generated, disclosed as Article 50 of the EU AI Act asks.",
+   "about": [
+    "entity:riskmandate",
+    "entity:claude",
+    "entity:eu-ai-act",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "Everything is in a vault as an app: the briefs, all 101 images, every score and reason, the ledger, the analysis and the guidance.",
+   "section": "top",
+   "quote": "the briefs, all 101 images, every score and reason, the ledger, the analysis and the guidance, as an app",
+   "about": [
+    "entity:infographic-bakeoff-vault",
+    "concept:custom-interfaces",
+    "concept:provenance"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The Designer role is adapted from the SG/Send team's Designer, whose first principle is that an infographic that is beautiful and wrong has failed.",
+   "section": "top",
+   "quote": "an infographic that is beautiful and wrong has failed",
+   "about": [
+    "entity:sgit",
+    "concept:multi-agent"
+   ],
+   "refs": [
+    "r01"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c15",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c13",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c29"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  }
+ ],
+ "entities": [
+  {
+   "id": "openrouter",
+   "role": "the router whose image models, auto-router and accounting the bake-off used"
+  },
+  {
+   "id": "google",
+   "role": "five of the image models on the day"
+  },
+  {
+   "id": "openai",
+   "role": "three of the image models on the day"
+  },
+  {
+   "id": "gemini",
+   "role": "Gemini 3 Pro Image, the pick when speed matters; Gemini 2.5 Flash Image misspelled labels"
+  },
+  {
+   "id": "chatgpt",
+   "role": "GPT-5 Image and GPT-5 Image Mini, which return a 1024 square"
+  },
+  {
+   "id": "nano-banana",
+   "role": "the pick for concept slides, charts and decks at about $0.04 an image"
+  },
+  {
+   "id": "gpt-5-4-image-2",
+   "role": "the pick for documents, edits, components and brand slides"
+  },
+  {
+   "id": "claude",
+   "role": "the Designer, Accountant and Data Scientist agents, and the model that wrote the article"
+  },
+  {
+   "id": "linkedin",
+   "role": "naming it in a prompt put its logos on the image"
+  },
+  {
+   "id": "riskmandate",
+   "role": "agent@riskmandate.ai wrote the article from a voice memo"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "Article 50, under which the AI-generated article is disclosed"
+  },
+  {
+   "id": "sgit",
+   "role": "the SG/Send team whose Designer role was adapted"
+  },
+  {
+   "id": "infographic-bakeoff-vault",
+   "role": "holds the briefs, images, scores, ledger, analysis and guidance as an app"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "choose-model-by-job",
+   "defined_here": true
+  },
+  {
+   "id": "cost-per-usable-image",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/tree/HEAD/team/roles",
+   "title": "SG/Send team roles",
+   "by": "SGraph AI",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r02",
+   "url": "https://sgit.ai/demos/vaults/infographic-bakeoff/index.md",
+   "title": "Infographic bake-off vault",
+   "by": "sgit.ai",
+   "date": "2026-10-10",
+   "kind": "vault"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The bake-off run, judged and written up; prices and models as OpenRouter offered them that day"
+  }
+ ]
+}

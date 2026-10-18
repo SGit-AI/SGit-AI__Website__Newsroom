@@ -1,0 +1,471 @@
+{
+ "slug": "how-i-work-with-claude",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "The guide comes from about a year of using Claude every day, written for the people joining the team.",
+   "section": "top",
+   "quote": "It comes from about a year of doing this every day.",
+   "about": [
+    "entity:claude",
+    "entity:dinis-cruz"
+   ],
+   "value": {
+    "n": 1,
+    "unit": "year of daily use",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "Keep sessions separate: every major or recurring topic gets its own Claude session, sometimes its own tab or window, and no thread mixes topics.",
+   "section": "top",
+   "quote": "Every major topic, and every topic that comes back regularly, gets its own session.",
+   "about": [
+    "concept:one-session-per-topic",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "A thread is the model's frame of reference; put three projects in one and the model mixes them, doing exactly what it was asked with everything in front of it.",
+   "section": "top",
+   "quote": "Put three projects in one thread and the model starts to mix them",
+   "about": [
+    "concept:agent-memory",
+    "concept:one-session-per-topic"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "proposal",
+   "text": "Name every session as project, a pipe, and what is being worked on; agent sessions get an @ in front of the role.",
+   "section": "top",
+   "quote": "A session you cannot find is a session you will recreate, badly.",
+   "about": [
+    "concept:one-session-per-topic",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "An agent is a Claude session with a particular focus: a few documents explaining the project, a role.md, and a session named for the role that reads them first.",
+   "section": "top",
+   "quote": "An agent is a Claude session with a particular focus.",
+   "about": [
+    "concept:multi-agent",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "The memory of a session is what it has read: its frame of reference and its whole universe for the project.",
+   "section": "top",
+   "quote": "The memory of a session is what it has read",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The owner's memory is a collection of websites, graphs and vaults wired together: this site and its llms.txt, the behaviour policy, coding, NFR, Wardley maps and graphs sites, and the vaults behind them.",
+   "section": "top",
+   "quote": "It is a collection of websites, graphs, vaults, references and materials, wired together",
+   "about": [
+    "concept:agent-memory",
+    "entity:abp-sgit-ai",
+    "entity:coding-sgit-ai",
+    "entity:nfrs-sgit-ai",
+    "entity:wardley-maps-sgit-ai",
+    "entity:graphs-sgit-ai",
+    "entity:llms-txt"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "hypothesis",
+   "text": "The more time spent curating and maintaining those files, the more relevant and accurate the agents are.",
+   "section": "top",
+   "quote": "The more time I spend curating and maintaining those files, the more relevant and accurate the agents are.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "When the owner finds a mistake he can usually trace it to a brief that needed to be better or a file that was missing or wrong, and fixes it there.",
+   "section": "top",
+   "quote": "I can usually trace it back to a brief that needed to be better, or a file that was missing or wrong",
+   "about": [
+    "concept:the-brief",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The review stops being a sign-off and becomes a QA step on the whole setup.",
+   "section": "top",
+   "quote": "The review stops being a sign-off and becomes a QA step on the whole setup",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "Ask Claude to check what it is not sure of against a source rather than relying on what it learned in training.",
+   "section": "top",
+   "quote": "do not let it rely only on what it learned in training, ask it to check against a source",
+   "about": [
+    "entity:claude",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "definition",
+   "text": "The idea is access by default, not public by default: inside a company most content can be available to most people, which gives agents most of the benefit.",
+   "section": "top",
+   "quote": "The idea underneath is access by default, not public by default.",
+   "about": [
+    "concept:access-by-default"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Almost everything the owner does is published, mainly for efficiency: nothing needs to be sent, attached or explained twice.",
+   "section": "top",
+   "quote": "Nothing needs to be sent, attached or explained twice.",
+   "about": [
+    "concept:access-by-default",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Vaults are how information moves between agents and people: because a vault is easy to edit it becomes a communication platform.",
+   "section": "top",
+   "quote": "Because a vault is easy to edit, it becomes a communication platform",
+   "about": [
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "To share a vault with an agent the owner hands over the vault key, and soon a key pair, not broad permissions; read-only access is a read key.",
+   "section": "top",
+   "quote": "I hand over the vault key, and soon a public and private key pair, not broad permissions on an account or a drive",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "Four starter prompts, used in some form all the time: starting a project session, starting an agent session, handing over a vault, and ending a session.",
+   "section": "top",
+   "quote": "Four prompts I use, in some form, all the time.",
+   "about": [
+    "concept:the-brief",
+    "concept:one-session-per-topic"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "Ask for documents and read the rendered preview; ask for a small proof of concept, because a page you can click is the fastest way to test an idea.",
+   "section": "top",
+   "quote": "A page you can click is often the fastest way to find out whether an idea holds.",
+   "about": [
+    "entity:claude",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "Use skills with care: they are loaded into the agent's context and permissions, so read them before turning them on and prefer ones you or your team wrote.",
+   "section": "top",
+   "quote": "Read them before you turn them on, and prefer ones you or your team wrote.",
+   "about": [
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "Write the Agent Behaviour Policy before adding a connector, because every connector makes Claude more useful and more dangerous by extending what the session can reach.",
+   "section": "top",
+   "quote": "Every connector makes Claude more useful and more dangerous, because it extends what the session can reach.",
+   "about": [
+    "concept:connectors",
+    "concept:behaviour-policy",
+    "concept:reach",
+    "entity:abp-sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "With the policies in place the owner is comfortable connecting Claude to much more than he was.",
+   "section": "top",
+   "quote": "With the policies in place I am now comfortable connecting Claude to much more than I was.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:connectors",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "For the more agentic workflows, one Cowork session per agent at work, each with its own name, role and policy.",
+   "section": "top",
+   "quote": "For the more agentic workflows I create a separate Cowork session for each agent.",
+   "about": [
+    "entity:claude-code",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Projects in Claude and ChatGPT are fine, but the owner moved past them because this workflow makes him pay attention to the memory directly.",
+   "section": "top",
+   "quote": "I find this workflow better because it makes me pay attention to the memory directly",
+   "about": [
+    "entity:claude",
+    "entity:chatgpt",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "Where to start: close the long mixed thread today, write one role.md this week, make the memory findable with an llms.txt, share through a vault, write the policy before every connector.",
+   "section": "top",
+   "quote": "Open one session per topic and name it \"project | work\".",
+   "about": [
+    "concept:one-session-per-topic",
+    "entity:llms-txt"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The statement that chat and Cowork have come together in Claude is the author's observation of the product he uses, not checked against a product announcement.",
+   "section": "top",
+   "quote": "not a claim checked against a product announcement",
+   "about": [
+    "entity:claude-code",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The prompts are examples to adapt, not a specification.",
+   "section": "top",
+   "quote": "The prompts are examples to adapt, not a specification.",
+   "about": [
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The guide was drafted from a voice memo by agent@riskmandate.ai on 9 October 2026; it works with ChatGPT too, since the tools differ and the habits do not.",
+   "section": "top",
+   "quote": "It works with ChatGPT too; the tools differ, the habits do not.",
+   "about": [
+    "entity:chatgpt",
+    "entity:riskmandate",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c16"
+  }
+ ],
+ "entities": [
+  {
+   "id": "claude",
+   "role": "the model the sessions, agents and prompts are for"
+  },
+  {
+   "id": "claude-code",
+   "role": "Cowork, one session per agent at work"
+  },
+  {
+   "id": "chatgpt",
+   "role": "the habits work with it too; its projects were tried and left"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author of the practice after a year of daily use"
+  },
+  {
+   "id": "riskmandate",
+   "role": "agent@riskmandate.ai drafted the guide; a session is named for its content"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults and keys agents receive instead of broad permissions"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "the behaviour policies that make connectors safe to add"
+  },
+  {
+   "id": "coding-sgit-ai",
+   "role": "part of the memory the sessions read"
+  },
+  {
+   "id": "nfrs-sgit-ai",
+   "role": "part of the memory the sessions read"
+  },
+  {
+   "id": "wardley-maps-sgit-ai",
+   "role": "part of the memory the sessions read"
+  },
+  {
+   "id": "graphs-sgit-ai",
+   "role": "part of the memory the sessions read"
+  },
+  {
+   "id": "llms-txt",
+   "role": "the index a session reads first to find the rest"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "one-session-per-topic",
+   "defined_here": true
+  },
+  {
+   "id": "access-by-default",
+   "defined_here": true
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-09",
+   "what": "The voice memo and the guide, after about a year of daily use"
+  }
+ ]
+}

@@ -1,0 +1,715 @@
+{
+ "slug": "two-agents-one-vault",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Opening the wire under the Dinis lens gives a week of industry news read as the author: forty stories across five beats, twenty-five reaching him through a named concern and fourteen withheld with the reason.",
+   "section": "top",
+   "quote": "Twenty-five of them reach me through a concern the vault knows I have; fourteen are withheld, each with the reason.",
+   "about": [
+    "entity:industry-wire",
+    "concept:personas",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The newsroom did not write any of the news, does not store it, and could not change a word of it; the news is in an encrypted vault a different agent keeps.",
+   "section": "top",
+   "quote": "the newsroom did not write any of it, does not store any of it, and could not change a word of it if it wanted to",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:vault",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The vault u9i9jp0l was written by a wire desk agent on 11 October at 16:16 UTC: 40 stories, 55 sources, 7 personas, a join of 280 rows, five design documents and a runbook, in one commit of 24 files.",
+   "section": "short",
+   "quote": "40 stories, 55 sources, 7 personas, a join of 280 rows, five design documents and a runbook, in one commit of 24 files",
+   "about": [
+    "entity:industry-wire",
+    "concept:vault",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 40,
+    "unit": "stories in the vault",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "newsroom.sgit.ai holds the read key in a config file, published on purpose, and three pages open the vault in the reader's browser, decrypt it with Web Crypto and draw it as text; the write key is with the desk.",
+   "section": "short",
+   "quote": "The write key is with the desk; the site has never seen it.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:web-crypto",
+    "concept:encryption-and-keys",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "A commit to the vault is on the page within two minutes: the page re-checks the head pointer every two minutes and caches for good the objects that cannot change, with no release of the site.",
+   "section": "short",
+   "quote": "The page re-checks the vault's head pointer every two minutes and caches for good the objects that cannot change.",
+   "about": [
+    "concept:client-side",
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "minutes between head pointer checks"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The lens is the vault's own join: six public personas and one named reader, and under a lens the page shows what reached that reader, through which concern, and what was withheld and why.",
+   "section": "short",
+   "quote": "The lens is the vault's own join.",
+   "about": [
+    "concept:personas",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Each story has the same shape: headline, date, primary source and kind, confidence, summary, one exact quote with its source, why it matters, who else covered it, entities and personas.",
+   "section": "reader",
+   "quote": "Each story is the same shape.",
+   "about": [
+    "entity:industry-wire",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The personal brief under the author's lens is allowed because he is a named reader by his own agreement while the wire is a beta, and like everything in the vault the brief is public.",
+   "section": "reader",
+   "quote": "A named reader, by their own agreement while the wire is a beta. Like everything in the vault, this brief is public.",
+   "about": [
+    "concept:personas",
+    "concept:privacy",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The vault was made in a session the author was not in, by an agent working from a voice brief, and its README says it is a first pass, 11 October 2026, not yet reviewed by a person.",
+   "section": "vault",
+   "quote": "a first pass, 11 October 2026, built by research agents, not yet reviewed by a person",
+   "about": [
+    "concept:agents-write-too",
+    "concept:voice-memo",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "127 publishers were seen and 176 coverage links checked to get to the 40 stories, 8 per beat except 10 for cybersecurity and 6 for governance.",
+   "section": "vault",
+   "quote": "127 publishers were seen and 176 coverage links checked to get there.",
+   "about": [
+    "entity:industry-wire",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 127,
+    "unit": "publishers seen",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "definition",
+   "text": "Sources carry a tier: A is an open licence and may be kept and shown; B is a primary source not openly licensed, a quote of 25 words or fewer and a link; C is commercial press, headline, link and date, never the text.",
+   "section": "vault",
+   "quote": "Tier C is commercial press and paywalls: headline, link and date, never the text.",
+   "about": [
+    "concept:provenance",
+    "concept:open-source",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "The join in deliveries.json has 280 rows, one per story and persona, and the rule is a short Python file whose first line says this is code, not a model; entity match counts 3, a desk tag 2, a keyword 2, the right beat 1.",
+   "section": "vault",
+   "quote": "Entity match counts 3, a tag by the research desk 2, a keyword 2, the right beat 1, and each concern counts once at its strongest match.",
+   "about": [
+    "concept:personas",
+    "entity:python",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 280,
+    "unit": "delivery rows",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "An independent fact check of 10 stories found 3 to correct, and the corrections were made.",
+   "section": "vault",
+   "quote": "An independent check of 10 stories, which found 3 to correct, and the corrections made.",
+   "about": [
+    "concept:provenance",
+    "concept:corrections-propagate"
+   ],
+   "value": {
+    "n": 3,
+    "of": 10,
+    "unit": "stories corrected",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The desk is four roles writing only in their own folders: a Poller that never judges importance, a Clusterer that never writes prose, an Extractor that never invents an entity, a Writer that never invents a quote; the Editor places.",
+   "section": "vault",
+   "quote": "The Editor, a person or the newsroom's Editor role, places stories on the front; the desk only proposes.",
+   "about": [
+    "concept:multi-agent",
+    "concept:the-newsroom",
+    "entity:publisher"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Before a commit a gate fails the run on a quote not found in frozen bytes, a tier-C quote, a missing date or licence line, or a story marked confirmed with fewer than two independent sources; stop conditions end the run instead of publishing.",
+   "section": "vault",
+   "quote": "the gate failing twice, more than 30 per cent of sources degraded, a story about a named private individual",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:provenance",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "What is new is that the desk is a different agent from the one that runs the site, and the only thing between them is the vault.",
+   "section": "vault",
+   "quote": "What is new is that the desk is a different agent from the one that runs the site, and the only thing between them is the vault.",
+   "about": [
+    "concept:multi-agent",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The newsroom's agent found the vault on the afternoon of 11 October and released the wire at 23:51 UTC as v0.9.0, with the commit message as the design.",
+   "section": "site",
+   "quote": "released the wire at 23:51 UTC as v0.9.0",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:the-record",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The site reads the vault in five steps in the browser, with sgit.ai's vault reader cut down to 182 lines and a drawing file of 214 lines that makes a link only from a value starting with http; nothing from the vault is run.",
+   "section": "site",
+   "quote": "Nothing from the vault is run.",
+   "about": [
+    "concept:client-side",
+    "concept:minimal-code",
+    "entity:sgit-ai",
+    "entity:javascript"
+   ],
+   "value": {
+    "n": 182,
+    "unit": "lines of the vendored vault reader",
+    "as_of": "2026-10-11"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The read key is public on purpose: it can read every file and commit and cannot write, so everything in the vault is public for ever, because a published read key cannot be withdrawn from anyone who has fetched the objects.",
+   "section": "site",
+   "quote": "a published read key cannot be withdrawn from anyone who has fetched the objects",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:privacy",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The contract between vault and site is written on the how page in words a person can read and a test can check: bundle shape, sixteen named story fields, five delivery fields, status shown as written, and nothing private in the vault.",
+   "section": "site",
+   "quote": "in words a person can read and a test can check",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:vault-design",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "A file of checks runs in Chromium against the real vault in CI: twenty-three checks at v0.9.0, twenty-eight by v0.9.3.",
+   "section": "site",
+   "quote": "Twenty-three checks at v0.9.0, twenty-eight by v0.9.3.",
+   "about": [
+    "entity:chrome",
+    "concept:shipping",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 28,
+    "unit": "checks against the live vault",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "decision",
+   "text": "The newsroom's agent cloned the vault and read it in full before it published the read key, and found no key, token or credential in it.",
+   "section": "site",
+   "quote": "Publishing a read key is publishing everything the key opens, for good, and you do not do that on trust.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "decision",
+   "text": "The agent flagged two things for the vault's keeper rather than fix them itself: a persona and note aimed at one named reader about to become public, and the plan to keep tier-B bytes and feedback, which needs a vault of its own.",
+   "section": "site",
+   "quote": "it found two things it would not fix itself but flagged for the vault's keeper",
+   "about": [
+    "concept:privacy",
+    "concept:multi-agent",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "The named-reader flag was resolved at 00:54 UTC on 12 October in v0.9.3: the author agreed in writing to be the wire's named reader while it is a beta, and the dated record in the config file is what offers the lens.",
+   "section": "site",
+   "quote": "No other named person gets one without a recorded agreement, and the how page's contract now says so.",
+   "about": [
+    "entity:dinis-cruz",
+    "concept:privacy",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The three ordinary ways to get one agent's work in front of another's readers, pushing pages, calling an API, or sharing a session, each cost something; a vault is the fourth way.",
+   "section": "interface",
+   "quote": "A vault is the fourth way, and it has properties the others do not.",
+   "about": [
+    "concept:multi-agent",
+    "concept:vault",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "The site owns the presentation and the vault owns the news; neither can do the other's job because neither has the other's key, and updating is a commit, not a release.",
+   "section": "interface",
+   "quote": "Neither can do the other's job, because neither has the other's key.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault-design",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The server sees only ciphertext, sizes, times and random-looking ids; it cannot read a story or tell who reads, so the newsroom adds a daily feed without a server.",
+   "section": "interface",
+   "quote": "It cannot read a story, and it cannot tell who reads.",
+   "about": [
+    "concept:client-side",
+    "concept:encryption-and-keys",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "The history is the audit trail: every edition is a commit, the head commit's message is on every page, a correction is a new file and nothing is deleted.",
+   "section": "interface",
+   "quote": "so the history doubles as the audit trail.",
+   "about": [
+    "concept:the-record",
+    "concept:provenance",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "This is how sgit.ai reads its own documents; the newsroom applied the arrangement to a feed written by someone else, the harder case, so the contract between writer and reader had to be written down.",
+   "section": "interface",
+   "quote": "the harder case, because now the contract between writer and reader has to be written down",
+   "about": [
+    "entity:sgit-ai",
+    "concept:vault",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The vault's README calls itself the first step in carrying out the MyFeeds plan, a good idea the author did not use; the morning read is MyFeeds running with him as the first user.",
+   "section": "loop",
+   "quote": "That is MyFeeds, running, with me as the first user.",
+   "about": [
+    "concept:personas",
+    "entity:dinis-cruz",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "The next turns are written down: a pitched wire story becomes an article inheriting its frozen sources, the Editor places up to three wire stories on the front, a weekly newsletter is cut from the briefs, and feedback needs its own vault.",
+   "section": "loop",
+   "quote": "The next turns of the loop are already written down.",
+   "about": [
+    "concept:the-newsroom",
+    "concept:provenance",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "It is a first pass, unreviewed: every story carries ai-generated, unreviewed; 22 of the 40 primary sources were not fetched by the research agent; 10 stories were checked and the other 30 have not been.",
+   "section": "limits",
+   "quote": "22 of the 40 primary sources were not fetched by the research agent, and the page says so on each.",
+   "about": [
+    "concept:provenance",
+    "entity:industry-wire"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "The join is matching, not understanding: entities, tags, keywords and beats with four weights; it will withhold a story the author wanted and reach him with one he would not.",
+   "section": "limits",
+   "quote": "The join is matching, not understanding.",
+   "about": [
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "The personas are the desk's draft of the author: ten concerns and their terms, written by an agent from what he publishes; the morning read that corrects them has not run yet.",
+   "section": "limits",
+   "quote": "The personas are the desk's draft of me.",
+   "about": [
+    "concept:personas",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "The vault is on a development server and its read key is public, so everything in it is; the contract keeps that safe and one of its two flags is still open.",
+   "section": "limits",
+   "quote": "The contract is what keeps that safe, and one of its two flags is still open.",
+   "about": [
+    "concept:privacy",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c36",
+   "kind": "limit",
+   "text": "Nothing here is a product: a beta with one named reader, by agreement, on a site with few readers.",
+   "section": "limits",
+   "quote": "A beta with one named reader, by agreement, on a site with few readers.",
+   "about": [
+    "entity:industry-wire",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c37",
+   "kind": "fact",
+   "text": "The facts come from the two records: the newsroom's commits v0.9.0 and v0.9.3 of 11 and 12 October 2026, and the wire's vault cloned read-only with its published key on 12 October; the counts are the vault's own.",
+   "section": "sources",
+   "quote": "The facts are from the two records",
+   "about": [
+    "concept:the-record",
+    "entity:newsroom-sgit-ai",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c32"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c25",
+   "verb": "gives_rise_to",
+   "to": "c26"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c30",
+   "verb": "gives_rise_to",
+   "to": "c31"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c36",
+   "verb": "limits",
+   "to": "c30"
+  }
+ ],
+ "entities": [
+  {
+   "id": "industry-wire",
+   "role": "the wire whose vault one agent writes and the newsroom draws"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site that holds the read key and draws the vault in the browser"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "its vault reader was vendored, and it reads its own documents the same way"
+  },
+  {
+   "id": "sgit",
+   "role": "the encrypted vault u9i9jp0l and its clone command"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the wire's one named reader, by written agreement"
+  },
+  {
+   "id": "web-crypto",
+   "role": "decrypts the vault in the reader's browser"
+  },
+  {
+   "id": "javascript",
+   "role": "the vault reader and drawing file, 182 and 214 lines"
+  },
+  {
+   "id": "python",
+   "role": "the join rule, a short file that says it is code, not a model"
+  },
+  {
+   "id": "chrome",
+   "role": "Chromium, where the checks run against the real vault in CI"
+  },
+  {
+   "id": "publisher",
+   "role": "the Editor, the one role that places stories on the front"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address for desks that want a feed one agent writes and another reads"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": true
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The vault's first commit at 16:16 UTC; the newsroom releases the wire at 23:51 UTC as v0.9.0"
+  },
+  {
+   "date": "2026-10-12",
+   "what": "The named reader agreed in writing at 00:54 UTC, v0.9.3; the article"
+  }
+ ]
+}

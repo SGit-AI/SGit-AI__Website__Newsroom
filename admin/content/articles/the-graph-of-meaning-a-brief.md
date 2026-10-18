@@ -12,6 +12,8 @@ status: published
 
 !shot gm-layers.webp | images/ | The layers the brief asks for, from the article as written up to the peaks, with the editor's own layers beside them. Each level is a graph with its own types and verbs; where the words change, the brief calls it a new dimension, and where they do not, it is the same dimension at less resolution. The two amber layers were drawn by hand before this run, and the run measures its clusters and peaks against them. | architecture
 
+> **What came next.** [The graph of meaning, drawn](/articles/the-graph-of-meaning-drawn.html) scores these ten predictions against the run: two held, four in part, four missed, and the frame of 26 ideas that no prediction named.
+
 ## In short {#in-short}
 
 - **The newsroom's graphs do not touch.** 187 articles, 2,348 nodes, 48 labels shared between two or more articles; 401 of 672 tags used once.

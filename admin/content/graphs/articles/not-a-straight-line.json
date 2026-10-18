@@ -1,0 +1,660 @@
+{
+ "slug": "not-a-straight-line",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "hypothesis",
+   "text": "Progress does not go in a straight line, so focus on one thing only is good advice that assumes something false: that the shortest path to a goal runs through that goal.",
+   "section": "in-short",
+   "quote": "\"Focus on one thing only\" is good advice that assumes the shortest path to a goal runs through that goal. It often does not.",
+   "about": [
+    "concept:highest-leverage",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The owner does focus, with undivided attention, on whichever thing has the highest leverage, chosen because it has users and feedback loops now.",
+   "section": "in-short",
+   "quote": "Undivided attention, on one thing at a time, chosen because it has users and feedback loops now.",
+   "about": [
+    "concept:highest-leverage",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The owner's measure is always whether he is getting better, discovering new capabilities at the right altitude; the commit log says the newsroom, he says RiskMandate, and the commit log is the more interesting half.",
+   "section": "better",
+   "quote": "Someone looking at the commit log would say I am focused on the newsroom. I would say I am focused on RiskMandate",
+   "about": [
+    "entity:riskmandate",
+    "entity:newsroom-sgit-ai",
+    "concept:highest-leverage"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "RiskMandate is where most of the commercial opportunity is and where engagement is starting; it has technical problems to solve to work at scale, and the obvious advice is to focus on it alone.",
+   "section": "better",
+   "quote": "RiskMandate is where most of the commercial opportunity is.",
+   "about": [
+    "entity:riskmandate",
+    "concept:startups",
+    "concept:the-market"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Where the master vault's key lives, so a user can open their vault on any device without us holding it, had been a problem for about six months, with proofs of concept abandoned for failing the simplicity test.",
+   "section": "vault",
+   "quote": "has been a problem for about six months",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "months the master vault key problem resisted",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Each earlier attempt was getting too complicated, and complicated is how security designs fail.",
+   "section": "vault",
+   "quote": "Each one was getting too complicated, and complicated is how security designs fail.",
+   "about": [
+    "concept:minimal-code",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "decision",
+   "text": "It was solved in two days: a passkey's PRF output computes a door, the door holds the master vault's key, there is a door per path, and no server of ours is in the chain; built for the newsroom, it applies everywhere.",
+   "section": "vault",
+   "quote": "A passkey's PRF output computes a door; the door holds the master vault's key; there is a door per path",
+   "about": [
+    "entity:webauthn",
+    "concept:encryption-and-keys",
+    "concept:identity-and-secrets",
+    "entity:newsroom-sgit-ai",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The rule is to follow the users, even when the user is the owner, and the feedback loops: do the thing that gets a reaction straight away.",
+   "section": "momentum",
+   "quote": "The rule I follow is to always follow the users, even when the user is me, and to follow the feedback loops",
+   "about": [
+    "concept:highest-leverage",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "RiskMandate's traction is real but close to forward-deployed engineering, so handing users their vault keys works at today's volumes; there is not enough momentum to solve per-user vaults, and the owner's instinct then is not to solve it.",
+   "section": "momentum",
+   "quote": "There is not enough momentum to solve that problem, and my instinct when there is not enough momentum is: do not solve it.",
+   "about": [
+    "entity:riskmandate",
+    "concept:highest-leverage",
+    "concept:minimal-code"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "A problem solved before anybody needs it is solved in the abstract, and abstract solutions are where the complexity creeps in.",
+   "section": "momentum",
+   "quote": "A problem solved before anybody needs it is solved in the abstract, and abstract solutions are where the complexity creeps in.",
+   "about": [
+    "concept:minimal-code",
+    "concept:highest-leverage"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The newsroom is the opposite: readers on every device, a reading meter, personas, an encrypted share and pay-after-you-read that only work if every reader has a vault that follows them; that momentum makes a hard problem solvable in two days.",
+   "section": "momentum",
+   "quote": "momentum is what makes a hard problem solvable in two days, because every attempt gets tested by somebody who wants it to work",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:micropayments",
+    "concept:personas",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The newsroom has forced the agentic workflow to mature, agents that follow up people and threads, draft, publish and keep a record; a very effective newsroom is underneath a very effective CRM and publishing workflow, which RiskMandate needs.",
+   "section": "workflow",
+   "quote": "A very effective newsroom is, underneath, a very effective CRM and a very effective publishing workflow, which is exactly what RiskMandate needs.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:riskmandate",
+    "concept:agents-write-too",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "RiskMandate sells Agent Behaviour Policies and licences to operate, and the hardest part of selling them is showing them in action, because customer examples cannot be shared; the newsroom's agents, their policy, status reports, leak scans and release logs are the best public example.",
+   "section": "workflow",
+   "quote": "is the best public example we have of a behaviour policy running in practice",
+   "about": [
+    "entity:riskmandate",
+    "concept:behaviour-policy",
+    "entity:newsroom-sgit-ai"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The Cyber Boardroom came first, a GenAI platform for boards with an advisor called Athena, where the owner discovered the value of personas and shaping output to the reader; what it lacked was somewhere to store confidential data, which is what sgit became.",
+   "section": "history",
+   "quote": "Ironically, what The Cyber Boardroom needed is what I eventually built as sgit.",
+   "about": [
+    "entity:the-cyber-boardroom",
+    "entity:sgit",
+    "concept:personas",
+    "entity:the-board"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "MyFeeds built personalised feeds on semantic graphs of the news, from the article to the reader's persona, and found the industry silent; it needed micropayments the industry was not ready for, and it was paused.",
+   "section": "history",
+   "quote": "Then I took it to the industry and there was silence.",
+   "about": [
+    "entity:myfeeds",
+    "concept:fractal-semantic-graphs",
+    "concept:micropayments",
+    "concept:personas",
+    "concept:journalism"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The 2025 pieces on monetising trust and knowledge, fact provenance and micro and nano payments are the foundations the newsroom stands on; the story vault and pay after you read are those pieces, built.",
+   "section": "history",
+   "quote": "are the foundations the newsroom now stands on",
+   "about": [
+    "concept:story-vault",
+    "concept:micropayments",
+    "concept:provenance",
+    "entity:diniscruz-ai"
+   ],
+   "refs": [
+    "r04",
+    "r05",
+    "r06"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The company created in Portugal for MyFeeds is being closed, because running a company with little revenue in Portugal is expensive in a way it is not in England, and Lithuania is being looked at for the next one.",
+   "section": "history",
+   "quote": "running a company with little revenue in Portugal is expensive in a way it is not in England",
+   "about": [
+    "entity:portugal",
+    "entity:lithuania",
+    "entity:united-kingdom",
+    "entity:myfeeds",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "The owner is about to do a larger round of outreach to publishers with an end-to-end example that now exists: content, semantic graphs, a reading meter, personas, micropayments, a vault per reader, all running and open source.",
+   "section": "back",
+   "quote": "I am about to do another, larger round of outreach to publishers and to people in the news industry.",
+   "about": [
+    "entity:publisher",
+    "concept:journalism",
+    "concept:open-source",
+    "concept:the-market"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "If the outreach does not land in 2026 the owner will try again in 2027; he does not need it to work in the news industry for the work to have been worth it, because the newsroom is already making RiskMandate better.",
+   "section": "back",
+   "quote": "If it works, good. If it does not, I will try again in 2027.",
+   "about": [
+    "entity:riskmandate",
+    "concept:highest-leverage",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "The newsroom has already benefited from five or ten articles written a year ago, when there was no way to build what they described; the thinking survives because it is written down and open.",
+   "section": "thinking",
+   "quote": "The newsroom has already benefited from five or ten articles I wrote a year ago",
+   "about": [
+    "concept:the-record",
+    "concept:open-source",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "to ten articles from a year ago the newsroom stands on",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "definition",
+   "text": "Focus, for the owner, is undivided attention on the place of highest leverage; it is not the same thing as working on only one product, and the difference is the whole of the article.",
+   "section": "thinking",
+   "quote": "Focus, for me, is undivided attention on the place of highest leverage.",
+   "about": [
+    "concept:highest-leverage",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The six months and the two days are the owner's account; the design, the lab and the evening it went live are in linked articles, and the earlier attempts are not published.",
+   "section": "limits",
+   "quote": "The six months and the two days are my account.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "RiskMandate's traction is described, not measured here: engagements, volumes and the move to self-service are the owner's reading of where it is.",
+   "section": "limits",
+   "quote": "RiskMandate's traction is described, not measured here.",
+   "about": [
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The Cyber Boardroom and MyFeeds are summarised from memory; the links are to what is public and the proofs of concept are not all published.",
+   "section": "limits",
+   "quote": "The Cyber Boardroom and MyFeeds are summarised from memory.",
+   "about": [
+    "entity:the-cyber-boardroom",
+    "entity:myfeeds"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The company move is a consideration, not a decision: Lithuania is being looked at and nothing has been registered.",
+   "section": "limits",
+   "quote": "Lithuania is being looked at; nothing has been registered.",
+   "about": [
+    "entity:lithuania",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "This is one person's method; it works because the owner writes things down and works in the open, and may not transfer to a team that does neither.",
+   "section": "limits",
+   "quote": "it may not transfer to a team that does neither",
+   "about": [
+    "concept:highest-leverage",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The article came from a voice memo on 12 October 2026 at the end of a day spent mostly on voice memos, written by this site's agent in the voice of this site.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 12 October 2026, at the end of a day spent mostly on voice memos",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c21"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "where the commercial opportunity is, and whose problems the newsroom is solving"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "where the energy is, and which solved the master vault in two days"
+  },
+  {
+   "id": "the-cyber-boardroom",
+   "role": "the earlier project that taught the value of personas and paused for want of a data store"
+  },
+  {
+   "id": "myfeeds",
+   "role": "personalised feeds on semantic graphs, paused when the industry was silent; its Portuguese company is being closed"
+  },
+  {
+   "id": "sgit",
+   "role": "what The Cyber Boardroom needed and the owner eventually built"
+  },
+  {
+   "id": "webauthn",
+   "role": "the passkey whose PRF output computes the door to the master vault's key"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose method and account the article is"
+  },
+  {
+   "id": "the-board",
+   "role": "the audience The Cyber Boardroom served"
+  },
+  {
+   "id": "publisher",
+   "role": "the publishers and news industry people the next outreach goes to"
+  },
+  {
+   "id": "diniscruz-ai",
+   "role": "docs.diniscruz.ai, where the 2025 writing on news lives"
+  },
+  {
+   "id": "portugal",
+   "role": "where the MyFeeds company was created and is being closed"
+  },
+  {
+   "id": "united-kingdom",
+   "role": "England, where running a small company is cheaper"
+  },
+  {
+   "id": "lithuania",
+   "role": "being looked at for the next company, for its digital advantages"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "highest-leverage",
+   "defined_here": true
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "minimal-code",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "journalism",
+   "defined_here": false
+  },
+  {
+   "id": "story-vault",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://riskmandate.ai/agent-behaviour-policy.html",
+   "title": "Agent Behaviour Policies",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://riskmandate.ai/licence-to-operate.html",
+   "title": "Licence to operate",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://thecyberboardroom.com",
+   "title": "The Cyber Boardroom",
+   "by": "Dinis Cruz",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://docs.diniscruz.ai/2025/02/02/monetising-trust-and-knowledge-for-news-providers.html",
+   "title": "Monetising trust and knowledge for news providers",
+   "by": "Dinis Cruz",
+   "date": "2025-02-02",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://docs.diniscruz.ai/2025/02/05/the-future-of-news-building-trust-through-fact-provenance.html",
+   "title": "The future of news: building trust through fact provenance",
+   "by": "Dinis Cruz",
+   "date": "2025-02-05",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://docs.diniscruz.ai/2025/04/02/the-future-of-news-monetization__embracing-micro-and-nano-payments.html",
+   "title": "The future of news monetization: embracing micro and nano payments",
+   "by": "Dinis Cruz",
+   "date": "2025-04-02",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://leanpub.com/secdevops",
+   "title": "SecDevOps",
+   "by": "Dinis Cruz",
+   "date": "undated",
+   "kind": "book"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-12",
+   "what": "The voice memo at the end of a day of voice memos"
+  },
+  {
+   "date": "2025-02-02",
+   "what": "Monetising trust and knowledge for news providers"
+  },
+  {
+   "date": "2025-04-02",
+   "what": "The future of news monetization: micro and nano payments"
+  },
+  {
+   "date": "2027",
+   "what": "When the owner will try the publishers again if 2026 does not land"
+  }
+ ]
+}

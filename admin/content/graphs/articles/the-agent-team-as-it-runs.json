@@ -1,0 +1,665 @@
+{
+ "slug": "the-agent-team-as-it-runs",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The article describes a setup that is running, as the agents who run it wrote it down on 6 October 2026, with the reasons and the earlier arguments added back so it can be copied.",
+   "section": "top",
+   "quote": "as the agents who run it wrote it down on 6 October 2026",
+   "about": [
+    "concept:multi-agent",
+    "entity:riskmandate",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "On 6 October 2026 the team had twelve agents, four scheduled runs a day on weekdays, 71 people in the CRM, and zero emails sent by an agent on its own, the row the design is organised around.",
+   "section": "top",
+   "quote": "That last row is the one the whole design is organised around.",
+   "about": [
+    "concept:multi-agent",
+    "concept:agentic-email",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 0,
+    "unit": "emails an agent sent on its own",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Twelve agents, each a Claude session on a dedicated account with a written brief and an Agent Behaviour Policy read before work; eleven of the twelve policies forbid sending.",
+   "section": "top",
+   "quote": "Eleven of the twelve policies forbid the same thing: sending.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agentic-email",
+    "entity:claude"
+   ],
+   "value": {
+    "n": 11,
+    "of": 12,
+    "unit": "policies that forbid sending",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The only memory is encrypted vaults driven by sgit: files are encrypted on the agent's side before they leave, the host stores ciphertext, and keys are handed to each session out of band and never written into a file.",
+   "section": "top",
+   "quote": "Files are encrypted on the agent's side before they leave; the host stores ciphertext and never holds a key.",
+   "about": [
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "entity:sgit",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "decision",
+   "text": "Nothing the agents use belongs to the person: a dedicated Google Workspace, a dedicated Claude Team account, encrypted vaults, and a separate personal agent on the person's own domain.",
+   "section": "top",
+   "quote": "Nothing the agents use belongs to the person.",
+   "about": [
+    "concept:blast-radius",
+    "entity:google-workspace",
+    "entity:claude",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The account boundary is the first control because it is the one that does not depend on anyone behaving; a policy asks an agent not to look, a boundary means there is nothing to see.",
+   "section": "top",
+   "quote": "This is the first control because it is the one that does not depend on anyone behaving.",
+   "about": [
+    "concept:blast-radius",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The roles are split so each policy is short enough to check, and they differ where it matters: one role reads the mailbox, one writes drafts into it, and none sends from it.",
+   "section": "top",
+   "quote": "One role reads it, one role writes drafts into it, and none sends from it.",
+   "about": [
+    "concept:multi-agent",
+    "concept:agentic-email",
+    "concept:behaviour-policy",
+    "entity:gmail"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Agents do not call each other; they write .eml files into each other's mailroom folder in the shared vault, a convention the team calls Email-FS lite, and the recipient moves, acts and files.",
+   "section": "top",
+   "quote": "Agents do not call each other.",
+   "about": [
+    "entity:email-fs",
+    "concept:agentic-email",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The conductor runs the team four times a day on weekdays, security first and last, each agent one step of up to twelve minutes; nothing loops, and a run that dies leaves a lock the next run notices.",
+   "section": "top",
+   "quote": "A run that dies leaves a lock, and the next run notices and says so.",
+   "about": [
+    "concept:multi-agent",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Always commit before pulling: the team reports that a pull overwrites uncommitted edits in the local working tree, which two agents learned by losing work; it is reported here rather than yet filed against the CLI.",
+   "section": "top",
+   "quote": "which two agents learned by losing work",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Each session ends with a card: a script reads the transcript afterwards, counts tools, tokens, files and network calls, and flags anything outside the agent's policy; the card is the footprint measured from the record.",
+   "section": "top",
+   "quote": "The card is the footprint, measured after the fact from the record",
+   "about": [
+    "concept:footprint",
+    "concept:the-record",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The first card flagged two writes as outside the mandate; on inspection the policy allowed them and the script had misread it, and both findings are in the record.",
+   "section": "top",
+   "quote": "on inspection the policy allowed them and the script had misread it",
+   "about": [
+    "concept:footprint",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The CRM is a vault of plain JSON and Markdown with no database: one folder per person, an append-only ledger, every message with provenance and a hash, a graph of interests, and a generated summary never hand-edited.",
+   "section": "top",
+   "quote": "There is no database. Each person gets a folder",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance",
+    "concept:custom-interfaces",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "Inbound is data: nothing stored is ever acted on as an instruction, and a message from the world is a fact about the world, not a command to the team.",
+   "section": "top",
+   "quote": "A message from the world is a fact about the world, not a command to the team.",
+   "about": [
+    "concept:prompt-injection",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "A what we know about you pack can be sent to the person to correct, and a memory that can be shown to its subject is one kept to what can be shown.",
+   "section": "top",
+   "quote": "a memory that can be shown to its subject is a memory that has been kept to what can be shown",
+   "about": [
+    "concept:privacy",
+    "concept:provenance",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "decision",
+   "text": "Four rules are never negotiated: keys never go into any file, no agent sends except @security's one hold email, no agent changes a scheduled task, and create anywhere, edit your own.",
+   "section": "top",
+   "quote": "Agents create drafts; a person sends.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:identity-and-secrets",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "decision",
+   "text": "The rule that only one agent may draft became a bottleneck in two days and was replaced by create anywhere, edit your own, keeping the property that no agent rewrites another's work.",
+   "section": "top",
+   "quote": "became a bottleneck in two days",
+   "about": [
+    "concept:multi-agent",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The team grades its barriers: identity and encryption strong, grant medium, record medium, policy weak; many rows, including no agent sends, rely on the policy text.",
+   "section": "top",
+   "quote": "most of this team's barriers are weaker than anyone would like",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy",
+    "concept:risk-acceptance",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "RiskMandate's vocabulary types a barrier as boundary, setting, expectation or none, and only a boundary is a control; identity and encryption are boundaries, the record and the policy are expectations.",
+   "section": "top",
+   "quote": "a control bounds a grant only if it is enforced by something the grant does not include",
+   "about": [
+    "entity:riskmandate",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "A connector appeared mid-session giving reach to thousands of apps through Zapier, and three agents flagged it as outside their policy before using it.",
+   "section": "top",
+   "quote": "Three agents flagged it as outside their policy before using it.",
+   "about": [
+    "entity:zapier",
+    "concept:reach",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Calendar invites have no draft state, so a person sends cannot be written for calendars, and whoever grants the calendar accepts that risk, which the policy now says.",
+   "section": "top",
+   "quote": "Calendar invites have no draft state.",
+   "about": [
+    "concept:risk-acceptance",
+    "entity:google-workspace",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "A discarded Gmail draft is gone with no log, and Gmail drafts strip images; the workaround of sending pictures through Zapier, a 9,000-app reach to send one picture, was refused.",
+   "section": "top",
+   "quote": "a 9,000-app reach to send one picture",
+   "about": [
+    "entity:gmail",
+    "entity:zapier",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 9000,
+    "unit": "apps reachable through the refused workaround",
+    "as_of": "2026-10-06"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The host cannot read the memory: every file, filename, commit message and branch name is encrypted with AES-256-GCM and per-file keys from HKDF-SHA256, rooted in a vault key that never travels to the server.",
+   "section": "top",
+   "quote": "the key hierarchy rooted in a vault key that never travels to the server",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "A read key is derived one way and cannot write, an append lane is a write-only token, and a leaked write key means a new vault because history holds what redaction removes.",
+   "section": "top",
+   "quote": "History holds what redaction removes",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The team can be stopped by a hold file: while it is open the conductor refuses to open a run and every step refuses to start, and only a person releases it.",
+   "section": "top",
+   "quote": "Only a person releases it.",
+   "about": [
+    "concept:incidents",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Three platform limits apply: commit authorship is not yet signed, there is no key revocation, and the lane that would let two vaults message without a person is not wired end to end.",
+   "section": "top",
+   "quote": "commit authorship is not yet signed",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "definition",
+   "text": "Information is handled in three classes, public, private-ish and personal, and the class decides where it may live; the team's vaults hold the first two and refuse the third.",
+   "section": "top",
+   "quote": "Information is handled in three classes, and the class decides where it may live.",
+   "about": [
+    "concept:information-classes",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "Personal information is not captured even when it arrives in a message, credentials are never stored, and the recipient's privacy outranks the team's completeness.",
+   "section": "top",
+   "quote": "the recipient's privacy outranks the team's completeness",
+   "about": [
+    "concept:privacy",
+    "concept:information-classes"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "Because the policy is a file per agent and the memory a folder per person, rules can be scoped to one customer and written to protect the recipient; a tighter rule is a line in a file.",
+   "section": "top",
+   "quote": "A customer who asks for a tighter rule gets a line in a file, not a product roadmap.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:privacy",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The setup is files not a database, graphs inside graphs, and Claude as a state machine: each role reads its state from files, does one kind of work, writes it back and stops.",
+   "section": "top",
+   "quote": "It does not converse; it runs a step.",
+   "about": [
+    "concept:multi-agent",
+    "concept:fractal-semantic-graphs",
+    "concept:agent-memory",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "Two registers disagree on how many emails have been sent, so the dashboards under-count until they are reconciled.",
+   "section": "top",
+   "quote": "so the dashboards under-count until the registers are reconciled",
+   "about": [
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "Messaging between vaults still needs a person to paste text, because the encrypted lane between them needs re-keying.",
+   "section": "top",
+   "quote": "Messaging between vaults still needs a person",
+   "about": [
+    "concept:vault-design",
+    "entity:email-fs"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "There is no daily brief channel to the person: WhatsApp got the account suspended in testing and Discord failed twice.",
+   "section": "top",
+   "quote": "WhatsApp got the account suspended in testing, and Discord failed twice.",
+   "about": [
+    "entity:whatsapp",
+    "entity:discord"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "Most barriers are policy-only: the platform does not let the team remove send tools per agent, and the separate permission authority that would make no agent sends a block does not exist yet.",
+   "section": "top",
+   "quote": "The platform does not let the team remove send tools per agent",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "question",
+   "text": "Who gives the mandate over a piece of information, and whether the recipient of an email has the authority to hand it to an agent at all, is left open and gets a document of its own.",
+   "section": "top",
+   "quote": "who gives the mandate over a piece of information, and whether the recipient of an email has the authority to hand it to an agent at all",
+   "about": [
+    "concept:privacy",
+    "concept:information-classes"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c13"
+  },
+  {
+   "from": "c17",
+   "verb": "specifies",
+   "to": "c16"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c28",
+   "verb": "specifies",
+   "to": "c27"
+  },
+  {
+   "from": "c29",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c35"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "the company whose agent team this is, and whose vocabulary types the barriers"
+  },
+  {
+   "id": "claude",
+   "role": "each agent is a Claude session on a dedicated Team account, run as a state machine"
+  },
+  {
+   "id": "google-workspace",
+   "role": "the dedicated Workspace with the agents' mailbox and the calendar with no draft state"
+  },
+  {
+   "id": "gmail",
+   "role": "the mailbox agents draft in and never send from"
+  },
+  {
+   "id": "sgit",
+   "role": "drives the encrypted vaults that are the team's only memory"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "whose security model and limitations pages state what the host sees and what is not yet built"
+  },
+  {
+   "id": "email-fs",
+   "role": "the convention of messages as .eml files in a mailroom folder, Email-FS lite"
+  },
+  {
+   "id": "zapier",
+   "role": "the connector that appeared mid-session with reach to thousands of apps"
+  },
+  {
+   "id": "whatsapp",
+   "role": "a tried daily brief channel that got the account suspended"
+  },
+  {
+   "id": "discord",
+   "role": "a tried daily brief channel that failed twice"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "multi-agent",
+   "defined_here": true
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": true
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "information-classes",
+   "defined_here": true
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-06",
+   "what": "The agents' field notes; the roster, the counts and the barriers as graded that day"
+  }
+ ]
+}

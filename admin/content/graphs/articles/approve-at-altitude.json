@@ -1,0 +1,555 @@
+{
+ "slug": "approve-at-altitude",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Language models make it cheap to write decision policies, five, a hundred, two hundred, and that moves the bottleneck to sign-off, because no head of support can read and approve two hundred properly.",
+   "section": "problem",
+   "quote": "That is new, and useful, and it moves the bottleneck. The bottleneck is now sign-off.",
+   "about": [
+    "concept:agent-decision-policy",
+    "concept:approve-at-altitude",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "A sign-off without the time to read is the rubber stamp this site describes in agency is not a yes: liability, not agency.",
+   "section": "problem",
+   "quote": "a sign-off without the time to read is the rubber stamp",
+   "about": [
+    "concept:agency-scale",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "question",
+   "text": "How can a large number of decisions be approved without anyone reading most of them?",
+   "section": "problem",
+   "quote": "So the question is how to approve a large number of decisions without anyone reading most of them.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "Decisions sit at altitudes, strategic, business, product, technical and the single run, each with its own decisions and workflows, and each level bounded by the one above; the shape is a fractal semantic graph.",
+   "section": "altitudes",
+   "quote": "What matters is that each level is bounded by the one above it.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:fractal-semantic-graphs",
+    "concept:agent-workflow-policy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "The scaling rule: you sign off at an altitude, and everything below inherits it; the board approves a risk appetite, not the refund tool.",
+   "section": "approve",
+   "quote": "You sign off at an altitude, and everything below inherits it.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:risk-acceptance",
+    "entity:the-board"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The UK Corporate Governance Code's Principle O asks the board to determine the nature and extent of the principal risks it is willing to take, and ISO Guide 73 calls that risk appetite.",
+   "section": "approve",
+   "quote": "determine the nature and extent of the principal risks the company is willing to take in order to achieve its long-term strategic objectives",
+   "about": [
+    "entity:uk-corporate-governance-code",
+    "entity:iso",
+    "entity:the-board",
+    "concept:risk-acceptance"
+   ],
+   "refs": [
+    "r02",
+    "r03"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The FRC's guidance asks boards for a formal schedule of matters reserved for their decision, to give clarity over where responsibility for decision-making lies; approving at altitude is that, carried down to agents.",
+   "section": "approve",
+   "quote": "Approving at altitude is that, carried down to agents.",
+   "about": [
+    "entity:frc",
+    "entity:the-board",
+    "concept:approve-at-altitude"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Each sign-off is small because each level only reads its own level; two hundred decision policies at the bottom are fine if every one fits inside the few read and approved above it.",
+   "section": "approve",
+   "quote": "Each sign-off is small, because each level only has to read its own level.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "The rule that makes inheritance safe: a lower level may narrow the level above it, and it may never widen it.",
+   "section": "narrow",
+   "quote": "A lower level may narrow the level above it. It may never widen it.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:narrow-never-widen"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "English law has a name for widening: a statutory instrument that goes beyond the power its Act gave is ultra vires, and a court can quash it.",
+   "section": "narrow",
+   "quote": "A rule that goes beyond it is ultra vires, outside the powers, and a court can quash it.",
+   "about": [
+    "concept:narrow-never-widen",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "On 26 July 2017 the Supreme Court quashed the employment tribunal fees order in R (UNISON) v Lord Chancellor, holding it unlawful ab initio because the Act gave power to set fees but not fees that prevented access to justice.",
+   "section": "narrow",
+   "quote": "the court held the order \"unlawful ab initio\", from the start, and said it \"must be quashed\".",
+   "about": [
+    "entity:uk-supreme-court",
+    "entity:unison-v-lord-chancellor",
+    "concept:narrow-never-widen"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "Every policy declares an envelope with the same fields at every altitude: money, blast radius, data in scope, people in scope, reversibility and duration, which is what makes the levels comparable.",
+   "section": "envelope",
+   "quote": "The point is that the fields are the same at every level. That is what makes the levels comparable",
+   "about": [
+    "concept:envelope",
+    "concept:blast-radius",
+    "concept:one-way-door",
+    "concept:approve-at-altitude"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Where the envelope is numbers and lists, the check that a child fits inside its parent is mechanical, needs no model, and can run in CI on every change to a policy.",
+   "section": "check",
+   "quote": "That check is deterministic, needs no model, and can run in CI on every change to a policy",
+   "about": [
+    "concept:envelope",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Where the envelope is words, a model can flag likely conflicts for a person to decide; it widens what a person can review and does not replace the review.",
+   "section": "check",
+   "quote": "it widens what a person can review, it does not replace the review.",
+   "about": [
+    "concept:envelope",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "The illustrative case is a VIP workflow refunding up to 1,000 GBP without a person, wider than the business limit of 100 GBP an order, so it is flagged as out of its powers before it runs.",
+   "section": "check",
+   "quote": "The illustrative case in the figure is a \"VIP\" workflow that refunds up to 1,000 GBP without a person.",
+   "about": [
+    "concept:envelope",
+    "concept:narrow-never-widen"
+   ],
+   "value": {
+    "n": 1000,
+    "of": 100,
+    "unit": "GBP automatic refund limit proposed against the business limit",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "A decision far outside the risk appetite shows up as an envelope that does not fit inside its parent's, whoever wrote it, which is how a business finds what nobody predicted.",
+   "section": "check",
+   "quote": "A decision far outside its risk appetite shows up as an envelope that does not fit inside its parent's",
+   "about": [
+    "concept:envelope",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "A kill switch sits at the altitude whose envelope it protects, escalation goes up one altitude, and a licence to operate is an envelope with a name.",
+   "section": "kill",
+   "quote": "A kill switch sits at the altitude whose envelope it protects.",
+   "about": [
+    "concept:approve-at-altitude",
+    "concept:envelope",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The 2,000 GBP daily circuit breaker belongs to the business level: it stops all automatic refunds, not one agent.",
+   "section": "kill",
+   "quote": "The 2,000 GBP daily circuit breaker belongs to the business level: it stops all automatic refunds, not one agent.",
+   "about": [
+    "concept:envelope",
+    "concept:incidents"
+   ],
+   "value": {
+    "n": 2000,
+    "unit": "GBP a day of automatic refunds",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "limit",
+   "text": "Somebody still has to write the top: a risk appetite that says nothing measurable cannot be checked against, and the mechanical check is only as good as the numbers at the top.",
+   "section": "not",
+   "quote": "The mechanical check is only as good as the numbers at the top.",
+   "about": [
+    "concept:envelope",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "Envelopes can be gamed: a team can split one large refund into several small ones, so the envelope needs aggregate limits like the daily breaker, not only per-case ones.",
+   "section": "not",
+   "quote": "A team can split one large refund into several small ones.",
+   "about": [
+    "concept:envelope"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "limit",
+   "text": "Altitude is not hierarchy: the levels follow what is decided, not the org chart, and the person who owns a limit may not be the most senior.",
+   "section": "not",
+   "quote": "The levels follow what is decided, not the org chart; the person who owns a limit may not be the most senior.",
+   "about": [
+    "concept:approve-at-altitude"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "Words stay hard: the model's flags are suggestions, and the decision is a person's.",
+   "section": "not",
+   "quote": "The model's flags are suggestions; the decision is a person's.",
+   "about": [
+    "concept:envelope",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "It is a proposal: no decision-policy format with envelopes exists yet, and the fields are the owner's.",
+   "section": "limits",
+   "quote": "No decision-policy format with envelopes exists yet; the fields above are mine.",
+   "about": [
+    "concept:envelope",
+    "concept:agent-decision-policy"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The numbers are illustrative: the tool's limits come from the third design in Hope or enforcement, and the levels above them are made up for the example.",
+   "section": "limits",
+   "quote": "the levels above them are made up for the example.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:envelope"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The legal parallel is an analogy: courts and CI are different things, and the article borrows the shape, not the authority.",
+   "section": "limits",
+   "quote": "Courts and CI are different things; the article borrows the shape, not the authority.",
+   "about": [
+    "concept:narrow-never-widen",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "This is the second of four articles on agent decision policies, written from a voice memo of 17 October 2026 and checked by the site's agent, with editorial responsibility the owner's.",
+   "section": "sources",
+   "quote": "A voice memo from me on 17 October 2026, written up and checked by this site's agent; the editorial responsibility is mine.",
+   "about": [
+    "concept:voice-memo",
+    "entity:dinis-cruz",
+    "concept:agent-decision-policy"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "answers",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c20",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c10"
+  }
+ ],
+ "entities": [
+  {
+   "id": "the-board",
+   "role": "signs off the risk appetite at the strategic altitude"
+  },
+  {
+   "id": "iso",
+   "role": "ISO Guide 73 defines risk appetite"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memo and holds editorial responsibility"
+  },
+  {
+   "id": "uk-corporate-governance-code",
+   "role": "Principle O puts the determination of risk appetite with the board"
+  },
+  {
+   "id": "frc",
+   "role": "its Guidance on Board Effectiveness asks for a schedule of matters reserved for the board"
+  },
+  {
+   "id": "uk-supreme-court",
+   "role": "quashed the employment tribunal fees order in 2017"
+  },
+  {
+   "id": "unison-v-lord-chancellor",
+   "role": "the 2017 judgment that held delegated fees ultra vires, the model for narrow-never-widen"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "approve-at-altitude",
+   "defined_here": true
+  },
+  {
+   "id": "narrow-never-widen",
+   "defined_here": true
+  },
+  {
+   "id": "envelope",
+   "defined_here": true
+  },
+  {
+   "id": "agent-decision-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-workflow-policy",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "agency-scale",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://caselaw.nationalarchives.gov.uk/uksc/2017/51",
+   "title": "R (UNISON) v Lord Chancellor [2017] UKSC 51",
+   "by": "The UK Supreme Court",
+   "date": "2017-07-26",
+   "kind": "law"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.frc.org.uk/documents/6709/UK_Corporate_Governance_Code_2024_a2hmQmY.pdf",
+   "title": "The UK Corporate Governance Code, 2024 edition",
+   "by": "Financial Reporting Council",
+   "date": "2024",
+   "kind": "standard"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.iso.org/standard/44651.html",
+   "title": "ISO Guide 73:2009, Risk management: Vocabulary",
+   "by": "ISO",
+   "date": "2009",
+   "kind": "standard"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.frc.org.uk/documents/4722/Guidance_on_Board_Effectiveness_MmfcOrz.pdf",
+   "title": "Guidance on Board Effectiveness",
+   "by": "Financial Reporting Council",
+   "date": "2018-07",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The voice memo and the article, second in the series on agent decision policies"
+  },
+  {
+   "date": "2017-07-26",
+   "what": "The Supreme Court quashed the employment tribunal fees order in R (UNISON) v Lord Chancellor"
+  },
+  {
+   "date": "2026-10-08",
+   "what": "Hope or enforcement, the source of the refund tool's limits"
+  }
+ ]
+}

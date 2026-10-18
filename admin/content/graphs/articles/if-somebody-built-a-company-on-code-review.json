@@ -1,0 +1,754 @@
+{
+ "slug": "if-somebody-built-a-company-on-code-review",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "A reader of the code review article replied with seven good questions, and a voice memo of 5 October 2026 answered them with a change of frame: what you would build if the graph were the company.",
+   "section": "top",
+   "quote": "A reader of the code review article replied with seven good questions",
+   "about": [
+    "concept:code-review",
+    "concept:voice-memo",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "One technology can now read every layer, from a board objective to a syntax tree and the bytecode, in one path or delegated to sub-agents, which makes a graph at every layer buildable.",
+   "section": "top",
+   "quote": "One technology can now read a board objective, a user story, an architecture diagram, a class, a method body, a syntax tree and, if you want, the bytecode",
+   "about": [
+    "concept:code-review",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Earlier attempts to connect requirements to code failed because they needed a different tool and team at each layer, and the hand-maintained joins between them died.",
+   "section": "top",
+   "quote": "The attempts failed because they needed a different tool and a different team at each layer, and the joins between them were hand-maintained and died.",
+   "about": [
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Code review has mostly been an art of opinion, taste and power, because there was no fact base to go back to; the map and the graph give one.",
+   "section": "top",
+   "quote": "the reason so much of it was politics is that there was no fact base to go back to",
+   "about": [
+    "concept:code-review",
+    "concept:wardley-maps"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "proposal",
+   "text": "Use the models to build, prune and maintain the graphs against reality and then take them out of the line, so what runs on every change is graphs, deterministic checks and formulas.",
+   "section": "top",
+   "quote": "A model in the line on every change is the art again with a different reviewer.",
+   "about": [
+    "concept:code-review",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A budget per altitude is an objective good enough, and the five whys are how the good enough moves, one rule at a time, in the right direction.",
+   "section": "top",
+   "quote": "A budget per altitude is an objective good enough, and the five whys are how the good enough moves, one rule at a time, in the right direction.",
+   "about": [
+    "concept:five-whys",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "definition",
+   "text": "Fractal is a precise claim, self-similarity, scale invariance, composition and recursion, and what is fractal is the grammar: nodes, edges with a verb and inverse, an ontology, a taxonomy and the move between altitudes.",
+   "section": "top",
+   "quote": "The grammar is in it: nodes with a type and a name, edges with a verb and a named inverse",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "entity:sgit"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The first article's seven altitudes were one Python repository's layers, not the layers; which layers exist is a property of the company, its culture, languages, stack and objectives.",
+   "section": "top",
+   "quote": "Those were that repository's layers.",
+   "about": [
+    "concept:code-review",
+    "entity:python",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "A review company should embrace the differences between teams: the generic parts are the grammar, the tools that work on any graph in it, and a few workflows; the layers are the customer's.",
+   "section": "top",
+   "quote": "A code review product that tries to standardise the layers away loses the thing it was meant to review.",
+   "about": [
+    "concept:code-review",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "proposal",
+   "text": "Project a graph downward from the stories before the code exists and derive one upward from the syntax tree when it does; the review is the join, with three outcomes: match, derived not projected, projected not derived.",
+   "section": "top",
+   "quote": "The review is the join between those two graphs, and the join has exactly three outcomes",
+   "about": [
+    "concept:projected-and-derived",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Progress on a big feature is the count of projected nodes that now have a derived match, which moves before any customer sees anything.",
+   "section": "top",
+   "quote": "Progress on a big feature is the count of projected nodes that now have a derived match",
+   "about": [
+    "concept:projected-and-derived"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The Librarian's reality files reconcile the projected graph with the code by hand, under the rule that if it is not in a domain index, it does not exist.",
+   "section": "top",
+   "quote": "If it's not in a domain index, it does not exist.",
+   "about": [
+    "entity:librarian",
+    "entity:sgit",
+    "entity:github",
+    "concept:projected-and-derived"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "The worked example's delta had the commands and modules layers and the text did not visit them, a writing fault this article fixes.",
+   "section": "top",
+   "quote": "The honest answer is that the delta had them and the prose did not visit them.",
+   "about": [
+    "concept:code-review",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Climbing the call graph from the seven changed methods in the vault's commit reached nine of the seventy-two commands and six of the eleven stories.",
+   "section": "top",
+   "quote": "reached nine of the seventy-two commands and six of the eleven stories",
+   "about": [
+    "concept:blast-radius",
+    "concept:reach"
+   ],
+   "value": {
+    "n": 9,
+    "of": 72,
+    "unit": "commands reached by one commit's change",
+    "as_of": "2026-10-05"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "Stories should be rules and examples, after Example Mapping: a story is a small tree whose leaves a test or a run can satisfy, and the question cards are the join's findings before code exists.",
+   "section": "top",
+   "quote": "a leaf is a thing a test or a run can satisfy",
+   "about": [
+    "entity:matt-wynne",
+    "concept:projected-and-derived"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "definition",
+   "text": "A refactor is any change in which some layers move and one chosen layer, the one with the tests or the contract, does not; the review checks that the held layer actually held.",
+   "section": "top",
+   "quote": "a refactor is any change in which some layers move and one chosen layer does not, and the chosen layer is the one with the tests or the contract",
+   "about": [
+    "concept:held-layer",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The first article said a refactor should change the method and syntax layers and leave the class shapes, commands and stories untouched, which was one refactor at one altitude stated as the rule.",
+   "section": "top",
+   "quote": "a refactor should change the method and syntax layers and leave the class shapes, the commands and the stories untouched",
+   "about": [
+    "concept:held-layer",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The deploy is a layer: pipelines, environments, services and secrets are a graph with its own vocabulary, and a change's blast radius continues through it to what is running where.",
+   "section": "top",
+   "quote": "A change's blast radius does not stop at the command that can reach it.",
+   "about": [
+    "concept:blast-radius",
+    "concept:deployment",
+    "entity:nfrs-sgit-ai"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Who reads the code depends on where it is on the map: explorer code for intent, mostly by agents; villager code line by line; town planner code by deterministic checks at the boundary.",
+   "section": "top",
+   "quote": "Explorer code is read for intent, mostly by agents.",
+   "about": [
+    "concept:explorer-villager-town-planner",
+    "entity:simon-wardley",
+    "entity:wardley-maps-sgit-ai"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Wardley renamed pioneers, settlers and town planners to explorers, villagers and town planners in 2023 because of the colonialist overtone of the old terms.",
+   "section": "top",
+   "quote": "the colonialist overtone of those terms made it problematic for many and with good reason",
+   "about": [
+    "entity:simon-wardley",
+    "concept:explorer-villager-town-planner"
+   ],
+   "refs": [
+    "r04",
+    "r05"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "hypothesis",
+   "text": "The company sits in the two moves on the map: from explorer to villager, when a guess becomes a product, and from villager to town planner, when review becomes checks that run without anyone.",
+   "section": "top",
+   "quote": "This is where the company sits. In the two moves.",
+   "about": [
+    "concept:startups",
+    "concept:explorer-villager-town-planner",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "Review is not saying no, it is sorting: split a change by what it can reach, merge what provably reaches no behaviour by a deterministic check, and give the fifty lines on a critical path to people with context.",
+   "section": "top",
+   "quote": "Review is sorting what can go fast from what must go slow",
+   "about": [
+    "concept:reach",
+    "concept:blast-radius",
+    "concept:code-review",
+    "entity:o2-platform"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "A bug in which a model invented an API call would not have been caught by tests alone, because the tests would have been written against the same hallucinated API; a person reading caught it.",
+   "section": "top",
+   "quote": "would not have been caught by tests alone, because the tests would have been written against the same hallucinated API",
+   "about": [
+    "concept:code-review",
+    "concept:explorer-villager-town-planner"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "proposal",
+   "text": "Replicate reality first: derive from the code deterministically, mark every model proposal as proposed, then confront the graph with users, experts and tests, so the conversation is about facts.",
+   "section": "top",
+   "quote": "replicate reality first, then have a fact-based conversation",
+   "about": [
+    "concept:code-review",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "data-point",
+   "text": "This site ran synthetic users against itself in September and recorded forty-three steps, fifteen questions the site did not answer and ten confusions.",
+   "section": "top",
+   "quote": "recorded forty-three steps, fifteen questions the site did not answer and ten confusions",
+   "about": [
+    "concept:synthetic-users",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 43,
+    "unit": "steps in the September synthetic user run",
+    "as_of": "2026-09"
+   }
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "A budget per altitude and per change, declared in advance; work handed from agent to agent carries its budget with it and never widens it.",
+   "section": "top",
+   "quote": "Work handed from agent to agent carries its budget with it and never widens it",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:five-whys"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "Every agent doing the work runs under an Agent Behaviour Policy written before its first run, the control on the reviewers' own blast radius; review of the code and control of the reviewers are the same shape.",
+   "section": "top",
+   "quote": "runs under an Agent Behaviour Policy written before its first run",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "Onboard a repository opportunistically: start at one point, the change in front of you, derive what it touches and reaches, and stop; the graph grows along the paths people actually walk.",
+   "section": "top",
+   "quote": "Do not analyse the repository. Start at one point",
+   "about": [
+    "concept:code-review",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "Every finding at one layer is a question about the layer below, and the fix goes there as a rule or a graph query, so the next change like it is caught for the price of a query.",
+   "section": "top",
+   "quote": "Every finding at one layer is a question about the layer below.",
+   "about": [
+    "concept:five-whys",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "Compare the blast radius to the intent, the projected graph, the commit message and the stories, not to the old code, and report one line per layer that moved.",
+   "section": "top",
+   "quote": "Compare the blast radius to the intent, not to the old code.",
+   "about": [
+    "concept:blast-radius",
+    "concept:projected-and-derived"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "Open source is the only model that fits: the layers are the customer's, so sell the customised deployment, the running of the loop and the record, and give away the grammar.",
+   "section": "top",
+   "quote": "Open source is the only model that fits.",
+   "about": [
+    "concept:open-source",
+    "concept:strategy",
+    "entity:open-source-sgit-ai"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "Open source removes technology as the moat and relocates the lock-in to the quality, the services, the new versions, the maintainability and the certification.",
+   "section": "top",
+   "quote": "the lock-in is in the quality and the services and the new versions and the maintainability and the certification",
+   "about": [
+    "concept:open-source",
+    "entity:open-source-sgit-ai"
+   ],
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "The projected graph has not been built for a real project, the deploy layer has not been derived for any repository, and the review that sits on a change and shows it at every altitude does not exist yet.",
+   "section": "top",
+   "quote": "the review itself, the thing that sits on a change and shows it at every altitude, does not exist yet",
+   "about": [
+    "concept:code-review",
+    "concept:projected-and-derived"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "The reader is not named because the questions, not the questioner, are the subject.",
+   "section": "top",
+   "quote": "The reader is not named here because the questions, not the questioner, are the subject",
+   "about": [
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "fact",
+   "text": "ChatGPT's one-page infographic was checked against the article; two lines in quotation marks are the other model's condensations rather than sentences from the article.",
+   "section": "top",
+   "quote": "are the other model's condensations of sentences here rather than sentences from here",
+   "about": [
+    "entity:chatgpt"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c09"
+  },
+  {
+   "from": "c11",
+   "verb": "specifies",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c10"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c16",
+   "verb": "supersedes",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c22"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c32",
+   "verb": "backs",
+   "to": "c31"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c31"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c18"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "author of the memo and of the fifteen years of writing it stands on"
+  },
+  {
+   "id": "simon-wardley",
+   "role": "the map, and the explorer, villager and town planner names"
+  },
+  {
+   "id": "matt-wynne",
+   "role": "described Example Mapping in 2015"
+  },
+  {
+   "id": "librarian",
+   "role": "keeps the reality files that reconcile briefs with code by hand"
+  },
+  {
+   "id": "python",
+   "role": "the language of the repository whose seven altitudes the first article drew"
+  },
+  {
+   "id": "sgit",
+   "role": "the SG/Send platform whose team record and architecture brief are quoted"
+  },
+  {
+   "id": "github",
+   "role": "where the public SG/Send team record lives as markdown"
+  },
+  {
+   "id": "nfrs-sgit-ai",
+   "role": "holds this site's non-functional requirements as measured claims"
+  },
+  {
+   "id": "wardley-maps-sgit-ai",
+   "role": "the map that gives the first fact about where code is"
+  },
+  {
+   "id": "open-source-sgit-ai",
+   "role": "says where the lock-in is when the code is open"
+  },
+  {
+   "id": "o2-platform",
+   "role": "the method stream slice the graph hands a reviewer"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "ran synthetic users against itself in September"
+  },
+  {
+   "id": "chatgpt",
+   "role": "made the one-page infographic, checked against the article"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "projected-and-derived",
+   "defined_here": true
+  },
+  {
+   "id": "held-layer",
+   "defined_here": true
+  },
+  {
+   "id": "five-whys",
+   "defined_here": true
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/07/12/architecture/v0.33.48__arch-brief__sg-send-fractal-semantic-graphs-agentic-operating-layer-deterministic-sovereign-open-source.md",
+   "title": "Architecture brief: fractal semantic graphs as the agentic operating layer",
+   "by": "Dinis Cruz, SG/Send team record",
+   "date": "2026-07",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/roles/librarian/reality/README.md",
+   "title": "Librarian reality files, README",
+   "by": "SG/Send team record",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://cucumber.io/blog/bdd/example-mapping-introduction/",
+   "title": "Introducing Example Mapping",
+   "by": "Matt Wynne, Cucumber",
+   "date": "2015-12",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html",
+   "title": "On pioneers, settlers, town planners and theft",
+   "by": "Simon Wardley",
+   "date": "2015-03",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html",
+   "title": "How to organise yourself: a dangerous path",
+   "by": "Simon Wardley",
+   "date": "2023-12",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/22/v0.16.38__article__villager-phase-refactoring.md",
+   "title": "The Villager phase: refactoring",
+   "by": "Dinis Cruz, SG/Send team record",
+   "date": "2026-03",
+   "kind": "post"
+  },
+  {
+   "id": "r07",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/08/06/voice-debrief/v0.33.56__dev-brief__sg-send-workflows-as-state-machines-budget-on-the-step-disagreement-is-the-product.md",
+   "title": "Workflows as state machines, budget on the step",
+   "by": "Dinis Cruz, SG/Send team record",
+   "date": "2026-08",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/06/18/agentic-permissions/v0.33.40__strategy-brief__open-source-strategy-everything-open-line-at-the-customer-compete-on-value.md",
+   "title": "Open source strategy: everything open, the line at the customer",
+   "by": "Dinis Cruz, SG/Send team record",
+   "date": "2026-06",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/07/17/open-source-strategy/v0.33.49__strategy-brief__sg-send-open-source-as-strategy-not-charity-gen-ai-startups-no-tech-moat-lock-in-in-quality-and-certification-share-across-companies.md",
+   "title": "Open source as strategy, not charity",
+   "by": "Dinis Cruz, SG/Send team record",
+   "date": "2026-07",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/21/v0.16.26__article__who-should-read-the-code.md",
+   "title": "Who should be reading the code",
+   "by": "Dinis Cruz, SG/Send team record",
+   "date": "2026-03",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-05",
+   "what": "The reader's seven questions answered by a voice memo; the article published"
+  },
+  {
+   "date": "2026-10-06",
+   "what": "The article updated, and the build brief for code review graphs in the repository written"
+  },
+  {
+   "date": "2023-01",
+   "what": "Wardley asks people to use explorers, villagers and town planners"
+  },
+  {
+   "date": "2015-12",
+   "what": "Matt Wynne describes Example Mapping"
+  }
+ ]
+}

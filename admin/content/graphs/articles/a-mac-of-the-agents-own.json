@@ -1,0 +1,637 @@
+{
+ "slug": "a-mac-of-the-agents-own",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Our agents already have dedicated resources with a small blast radius: their own mailbox, their own code-host account, their own Claude account.",
+   "section": "top",
+   "quote": "Our agents already have dedicated resources with a small blast radius",
+   "about": [
+    "concept:blast-radius",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "The next dedicated resource is a desktop of the agent's own, and it should be a Mac, because that is where most agent desktop apps arrive first.",
+   "section": "top",
+   "quote": "The next one is a desktop of their own, and it should be a Mac",
+   "about": [
+    "concept:agent-isolation",
+    "entity:macos"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "This is a business plan for somebody else to build; it names no provider, and the whole plan with numbers, policies and a calculator is in the Agent Desk vault.",
+   "section": "top",
+   "quote": "This is a business plan for somebody else to build",
+   "about": [
+    "entity:agent-desk-vault",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "decision",
+   "text": "The owner does not run agents on his own laptop because everything he has is on it.",
+   "section": "top",
+   "quote": "because everything I have is on it",
+   "about": [
+    "concept:blast-radius",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Windows and Linux run as virtual machines by the hour from many places and a Mac never has; that gap is the business.",
+   "section": "top",
+   "quote": "a Mac never has been. That gap is the business.",
+   "about": [
+    "entity:macos",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Apple's licence allows leasing a Mac only for the sole purpose of providing Permitted Developer Services, such as continuous integration and building software.",
+   "section": "top",
+   "quote": "for the sole purpose of providing Permitted Developer Services",
+   "about": [
+    "entity:apple",
+    "entity:macos"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Each lease period must be at least twenty-four consecutive hours, to one customer with sole and exclusive use and control.",
+   "section": "top",
+   "quote": "Each lease period must be for a minimum period of twenty-four (24) consecutive hours",
+   "about": [
+    "entity:apple",
+    "entity:macos"
+   ],
+   "value": {
+    "n": 24,
+    "unit": "hours minimum per Mac lease"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Up to two additional virtual copies of macOS are allowed on a Mac you own or control, and not for time-sharing or service bureau use.",
+   "section": "top",
+   "quote": "Up to two additional copies in virtual machines on a Mac you own or control",
+   "about": [
+    "entity:apple",
+    "entity:macos"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "additional virtual copies of macOS per Mac"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "A shared pool of Macs whose desktops are rented by the minute to many customers for general agent work is not allowed.",
+   "section": "top",
+   "quote": "So a shared pool of Macs whose desktops are rented by the minute to many customers, for general agent work, is out.",
+   "about": [
+    "entity:apple",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The macOS 27 licence opens its virtualisation and leasing clauses with an exception for terms provided in writing by Apple, a route to written terms.",
+   "section": "top",
+   "quote": "which is a route to written terms for a use Apple wants to support",
+   "about": [
+    "entity:apple",
+    "entity:macos"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "decision",
+   "text": "The plan recommends building a dedicated Mac run for the customer and developer agents, giving away the software, asking Apple for terms, and not building the pool.",
+   "section": "top",
+   "quote": "build A and C, give away E, ask for D, and do not build the pool",
+   "about": [
+    "entity:agent-desk-vault",
+    "concept:pricing",
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Per-minute pricing survives as a meter on a Mac one customer holds, never as a share of a Mac that others use.",
+   "section": "top",
+   "quote": "Per-minute pricing survives, as a meter on a Mac one customer holds, never as a share of a Mac that others use.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "Each run boots a clean macOS, installs sgit, is given one key and clones one set-up vault; a small signed program in it does the rest.",
+   "section": "top",
+   "quote": "Boot a clean macOS, install sgit, give it one key, and clone one set-up vault.",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "entity:macos"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The vaults divide the work like a supply chain, each party holding only its slice: set-up, code and data, a mandate vault, keys by PKI, and an audit vault.",
+   "section": "top",
+   "quote": "The vaults divide the work, the way a supply chain should, with each party holding only its slice",
+   "about": [
+    "concept:supply-chains",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Each desktop has its own key pair and the vault keys it needs are encrypted to its public key, which is authorisation by encryption rather than by privilege.",
+   "section": "top",
+   "quote": "Each desktop has its own key pair; the vault keys it needs are encrypted to its public key",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "limit",
+   "text": "The bootstrap's key-handling steps were run with sgit 0.20.0 on Linux; nothing has run on a Mac yet.",
+   "section": "top",
+   "quote": "Nothing has run on a Mac yet; the plan says so.",
+   "about": [
+    "entity:sgit",
+    "entity:macos"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "For the same customer service agent, the excess over the mandate that nothing bounds is 23 rows of a 33-row grant on your own Mac, 11 on a dedicated Mac and 3 on a hardened one.",
+   "section": "top",
+   "quote": "the excess nothing bounds falls from 23 rows to 11 to 3",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 23,
+    "of": 33,
+    "unit": "unbounded rows of the grant on your own Mac"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Of 22 hostile inputs, a boundary or an empty grant stops none on your own Mac, 2 on a dedicated Mac and 12 on a hardened one.",
+   "section": "top",
+   "quote": "Hostile inputs stopped by a boundary or an empty grant, of 22",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:prompt-injection"
+   ],
+   "value": {
+    "n": 12,
+    "of": 22,
+    "unit": "hostile inputs stopped on the hardened Mac"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "On your own Mac the behaviour policy is enormous because the grant is everything you have, and nothing is held by a boundary.",
+   "section": "top",
+   "quote": "because the grant is everything you have: your mail, your files, your browser sessions, your keychain, your messages",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "On a hardened Mac third-party controls do the rest: a supervised standard account, an egress proxy for the mandate's hosts, a binary allowlist, a mail gateway and every event streamed to the audit vault.",
+   "section": "top",
+   "quote": "an egress proxy that allows only the mandate's hosts, a binary allowlist",
+   "about": [
+    "concept:agent-isolation",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "What is left on the hardened Mac is mostly the shop's admin screen, a finding about the shop's software, and screen recording, which a profile cannot grant.",
+   "section": "top",
+   "quote": "That is a finding about the shop's software, not about the desktop",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:macos"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "For about 104 desktop hours a month, a dedicated Mac with the meter costs about £211 a month, a Mac mini run yourself about £119, and daily leases about £390.",
+   "section": "top",
+   "quote": "a dedicated Mac with the meter costs about £211 a month",
+   "about": [
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 211,
+    "unit": "GBP a month for a dedicated Mac with the meter",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The dedicated Mac wins once looking after your own takes more than about four hours a month, and beats daily leases once you need a Mac on more than about twelve days a month.",
+   "section": "top",
+   "quote": "The dedicated Mac wins once looking after your own takes more than about four hours a month",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "On the map, the agent's desktop moves from custom-built to product on parts that are already products or commodities: Apple silicon, the macOS virtual machine, the models, the desktop agent apps.",
+   "section": "top",
+   "quote": "The agent's desktop moves from custom-built to product, on parts that are already products or commodities",
+   "about": [
+    "concept:wardley-maps"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "The plan asks a Mac host for dedicated Macs per customer with an erase API, a meter inside, a developer-agent offer, a joint approach to Apple for written terms, and an open stack.",
+   "section": "top",
+   "quote": "A joint approach to Apple for written terms covering agent desktops",
+   "about": [
+    "entity:apple",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Write the behaviour policy before the product: it is the argument, and it tells you which controls matter.",
+   "section": "top",
+   "quote": "Write the behaviour policy before the product: it is the argument, and it tells you which controls matter.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The plan assumes about five minutes from request to a working desktop, and the boot has not been timed yet.",
+   "section": "top",
+   "quote": "it has not been timed yet",
+   "about": [
+    "entity:agent-desk-vault"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "Queueing many agents on one Mac satisfies one user at a time; the purpose of the lease and who the user is decide the rest.",
+   "section": "top",
+   "quote": "Queueing satisfies \"one user at a time\"; the purpose of a lease, and who the user is, decide the rest.",
+   "about": [
+    "entity:apple",
+    "entity:macos"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "A queue of coding agents on a leased Mac fits the licence like a continuous integration runner; a queue of office agents is outside the lease however carefully scheduled.",
+   "section": "top",
+   "quote": "A queue of office agents, working in mail, a browser and desktop apps, is outside the lease however carefully it is scheduled.",
+   "about": [
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "If customers' own agents get slots on the operator's Mac, that is the time-sharing the licence excludes, and each customer would need a lease of at least 24 hours.",
+   "section": "top",
+   "quote": "each of them would need a lease of their own of at least 24 hours",
+   "about": [
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The refinement: a dedicated Mac per customer is needed when the agents are the customer's; when the agents are the operator's, one Mac can serve many of them in turn.",
+   "section": "top",
+   "quote": "When the agents are the operator's, doing work the customer buys, one Mac can serve many of them in turn",
+   "about": [
+    "entity:macos",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The licence quotes are from Apple's macOS 15, 26 and 27 licences; the reading of them is ours and is not legal advice.",
+   "section": "top",
+   "quote": "the reading of them is ours and is not legal advice",
+   "about": [
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "Mac prices are from Apple's UK store on 9 October 2026; every other number is an assumption, labelled in the vault.",
+   "section": "top",
+   "quote": "every other number is an assumption, labelled in the vault",
+   "about": [
+    "concept:pricing",
+    "entity:agent-desk-vault"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "fact",
+   "text": "The article was drafted from a voice memo by Dinis Cruz by agent@riskmandate.ai, running Claude Opus 5.5, on 9 October 2026.",
+   "section": "top",
+   "quote": "by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 9 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:riskmandate",
+    "entity:claude",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "fact",
+   "text": "Claude's desktop app and Cowork are very capable on a desktop, and Claude can drive desktop applications well: mail, messages, a browser, creative and video tools.",
+   "section": "top",
+   "quote": "Claude's desktop app and Cowork are very capable on a desktop",
+   "about": [
+    "entity:claude",
+    "entity:claude-code"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c35",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c09"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c13"
+  },
+  {
+   "from": "c16",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c31",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c22"
+  }
+ ],
+ "entities": [
+  {
+   "id": "apple",
+   "role": "whose macOS licence decides the shape of the business"
+  },
+  {
+   "id": "claude",
+   "role": "the model the agent runs; also the agents' own Claude account"
+  },
+  {
+   "id": "claude-code",
+   "role": "Claude's desktop app and Cowork, the agent desktop apps"
+  },
+  {
+   "id": "sgit",
+   "role": "installed on the clean Mac to clone the vaults and handle the keys"
+  },
+  {
+   "id": "riskmandate",
+   "role": "writes the behaviour policy for each customer and drafted the article"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the idea, with editorial responsibility"
+  },
+  {
+   "id": "macos",
+   "role": "the desktop the agent gets, under Apple's licence"
+  },
+  {
+   "id": "agent-desk-vault",
+   "role": "holds the whole plan, the numbers, the policies and the calculator"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.apple.com/legal/sla/",
+   "title": "Apple's macOS 15, 26 and 27 software licence agreements",
+   "by": "Apple",
+   "date": "undated",
+   "kind": "law"
+  },
+  {
+   "id": "r02",
+   "url": "https://abp.sgit.ai/",
+   "title": "Agent Behaviour Policy",
+   "by": "abp.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://riskmandate.ai/business-cases.html",
+   "title": "Business cases",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-09",
+   "what": "The voice memo, the plan, and the Mac prices from Apple's UK store"
+  },
+  {
+   "date": "2026-10-10",
+   "what": "The section on queueing many agents on one Mac is added"
+  }
+ ]
+}

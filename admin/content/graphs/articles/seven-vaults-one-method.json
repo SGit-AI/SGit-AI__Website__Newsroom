@@ -1,0 +1,411 @@
+{
+ "slug": "seven-vaults-one-method",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "Between 14 and 18 August the site published seven vaults, each a real encrypted vault openable in a browser from a read key printed on its page.",
+   "section": "top",
+   "quote": "Between 14 and 18 August this site published seven vaults.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:vault",
+    "concept:publishing-method"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "vaults published",
+    "as_of": "2026-08-18"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "By the seventh vault there was a method, and every rule in it exists because something went wrong first.",
+   "section": "top",
+   "quote": "By the seventh there was a method, and every rule in it exists because something went wrong first.",
+   "about": [
+    "concept:publishing-method",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "decision",
+   "text": "The rule that matters most: classify the credential before it touches anything.",
+   "section": "top",
+   "quote": "Classify the credential before it touches anything.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Three of the seven vaults arrived as a vault key described as a read key, and a vault key is write access.",
+   "section": "top",
+   "quote": "Three of the seven vaults arrived as a vault key described as a read key. A vault key is write access.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 3,
+    "of": 7,
+    "unit": "vaults submitted with a write credential described as a read key",
+    "as_of": "2026-08-18"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "limit",
+   "text": "Because a vault key is also the address and the encryption root, publishing one would be unrecoverable: no revocation, no rotation, and no undo.",
+   "section": "top",
+   "quote": "because a vault key is also the address and the encryption root, there is no revocation, no rotation, and no undo.",
+   "about": [
+    "concept:one-way-door",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The write credentials were caught by shape: a read key is 64 hex characters, a vault key is a generated passphrase of 24 lowercase alphanumerics.",
+   "section": "top",
+   "quote": "A read key is 64 hex characters; a vault key is a generated passphrase, which is 24 lowercase alphanumerics.",
+   "about": [
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "decision",
+   "text": "A catch that depended on somebody looking is not a control, so it became a script that exits 0 for publishable and 1 for stop, and never echoes what it was given.",
+   "section": "top",
+   "quote": "That catch depended on somebody looking, which is not a control.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:identity-and-secrets"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Behind the script the release validator scans every tracked file for any key-shaped string and for the actual passphrases, read at build time from a gitignored tier.",
+   "section": "top",
+   "quote": "the release validator scans every tracked file for any key-shaped string and for the actual passphrases, read at build time from a gitignored tier.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "The tripwire has caught its own author three times, each time writing the prefix in prose; a rule that only catches other people is not a rule.",
+   "section": "top",
+   "quote": "That tripwire has caught its own author three times, each time writing the prefix in prose",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "times the tripwire caught its own author",
+    "as_of": "2026-08-19"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "A read key is derived one-way from a vault key, so a submission that cannot be published can still become one that can; the vault key goes to the gitignored tier and the derived read key is published.",
+   "section": "top",
+   "quote": "A read key is derived one-way from a vault key, so a submission that cannot be published can still become one that can",
+   "about": [
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "definition",
+   "text": "The whole shape of the project is a capability you can hand over that is strictly less than the one you hold, with the reduction enforced by mathematics rather than by policy.",
+   "section": "top",
+   "quote": "a capability you can hand over that is strictly less than the one you hold, with the reduction enforced by mathematics rather than by policy.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:hope-or-enforcement",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "decision",
+   "text": "Audit with exactly the credential a reader will have, across every file, not with the vault key.",
+   "section": "top",
+   "quote": "With exactly the credential a reader will have, across every file.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "One vault carried a sealed LLM credential; the published read key was used to attempt to open it, AES-GCM refused with InvalidTag, so no budget was exposed.",
+   "section": "top",
+   "quote": "AES-GCM refused, InvalidTag, so no budget was exposed.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "decision",
+   "text": "The rule of no metered capability behind a published read key came from the sixth vault, Risk Graph Explorer, the first public by design, and was adopted into the guidance.",
+   "section": "top",
+   "quote": "the third, no metered capability behind a published read key, was not in our guidance. It is now.",
+   "about": [
+    "entity:risk-graph-explorer-vault",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "decision",
+   "text": "Every screenshot on a vault page is taken by opening the actual vault in a real browser with the published read key, performing the navigation and cropping; no mock-ups.",
+   "section": "top",
+   "quote": "Every screenshot on a vault page is taken by opening the actual vault in a real browser with the published read key, performing the navigation, and cropping the result. No mock-ups.",
+   "about": [
+    "concept:provenance",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "decision",
+   "text": "Every vault page ends with what the vault does not do, as a section with the same weight as the features; an argument that omits its own edges is a brochure.",
+   "section": "top",
+   "quote": "an argument that omits its own edges is a brochure.",
+   "about": [
+    "concept:publishing-method"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Seven vaults took roughly four days of work, and the method is written down as a playbook aimed at another site's agent.",
+   "section": "top",
+   "quote": "Seven vaults, roughly four days of work",
+   "about": [
+    "concept:publishing-method",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "days of work for seven vaults",
+    "as_of": "2026-08-18"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Three bugs were found by testing rather than assumption on a single page, a malformed selector, leaking escape sequences and an unloaded component, and all three would have shipped.",
+   "section": "top",
+   "quote": "Three bugs found by testing rather than assumption on a single page",
+   "about": [
+    "concept:shipping",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "bugs found by testing on one page",
+    "as_of": "2026-08-18"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The seven vaults span the range deliberately, from one that requests no permissions at all to one that can write a single folder.",
+   "section": "top",
+   "quote": "The seven vaults span the range deliberately, from one that requests no permissions at all to one that can write a single folder.",
+   "about": [
+    "concept:vault",
+    "entity:sgit"
+   ],
+   "refs": [
+    "r02"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c02"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit-ai",
+   "role": "the site that published the seven vaults and the playbook"
+  },
+  {
+   "id": "sgit",
+   "role": "the encrypted vaults and their read and vault keys"
+  },
+  {
+   "id": "risk-graph-explorer-vault",
+   "role": "the sixth vault, public by design, whose rule on metered capabilities was adopted"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": true
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://sgit.ai/demos/vaults/publishing.md",
+   "title": "The publishing playbook",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://sgit.ai/catalogue/index.md",
+   "title": "The catalogue",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "vault"
+  },
+  {
+   "id": "r03",
+   "url": "https://sgit.ai/docs/limitations.md",
+   "title": "Limitations",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://sgit.ai/demos/vaults/risk-graph-explorer/index.md",
+   "title": "Risk Graph Explorer",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "vault"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-08-14",
+   "what": "The first of the seven vaults published"
+  },
+  {
+   "date": "2026-08-18",
+   "what": "The seventh vault published; the method written down"
+  },
+  {
+   "date": "2026-08-19",
+   "what": "The article published"
+  }
+ ]
+}

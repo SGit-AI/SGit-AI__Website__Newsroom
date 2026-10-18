@@ -1,0 +1,554 @@
+{
+ "slug": "what-sgit-is",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "There is a category of file with nowhere good to live: a risk register with real system names, a regulatory analysis still being argued, an agent's working memory, client material under NDA.",
+   "section": "top",
+   "quote": "There is a category of file that has nowhere good to live.",
+   "about": [
+    "concept:vault",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "All of it wants what git gives, history, branches, diffs and a link, and all of it is why people say we can't put that in GitHub, so it ends up where nobody can diff it.",
+   "section": "top",
+   "quote": "So it ends up in a shared drive, an email thread, or a Notion page nobody can diff, and the version history that mattered is gone.",
+   "about": [
+    "entity:github",
+    "entity:git",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "sgit is git for those files: encrypted before they leave your machine, versioned exactly like git, stored on a server that cannot read a single byte.",
+   "section": "top",
+   "quote": "Encrypted before they leave your machine, versioned exactly like git, stored on a server that cannot read a single byte.",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "sgit installs with pip install sgit-ai; it is pure Python with two runtime dependencies, under Apache-2.0.",
+   "section": "top",
+   "quote": "Pure Python, two runtime dependencies, Apache-2.0.",
+   "about": [
+    "entity:sgit",
+    "entity:python",
+    "entity:apache-2",
+    "concept:open-source"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "runtime dependencies",
+    "as_of": "2026-08-25"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "Zero knowledge, precisely: the server holds ciphertext and nothing else, not filenames, directory structure or commit messages; there is no key escrow, no admin override and no support engineer who can recover it.",
+   "section": "top",
+   "quote": "the server holds ciphertext and nothing else.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "limit",
+   "text": "No key escrow and no admin override is a feature with a real cost: lose the vault key and the data is gone.",
+   "section": "top",
+   "quote": "that last part is a feature with a real cost, which is worth being honest about up front",
+   "about": [
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "definition",
+   "text": "The vault key, a 24-character passphrase and a vault id, is three things at once: the address of the vault, the authorisation to write to it, and the key that decrypts it.",
+   "section": "top",
+   "quote": "the address of the vault, the authorisation to write to it, and the key that decrypts it",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "A read key derives one way from the vault key, same vault, read-only, safe to publish; every vault linked from sgit.ai is published as a read key and no vault key has ever been published, enforced by a tripwire in the release pipeline.",
+   "section": "top",
+   "quote": "a rule enforced by a tripwire in the release pipeline that scans every file before either remote is touched",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit-ai",
+    "concept:shipping",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "A real clone of the published EU AI Act vault yields 273 objects and 207 files, with the read key as the entire credential and no account or login.",
+   "section": "top",
+   "quote": "A real clone of the published EU AI Act vault. 273 objects, 207 files.",
+   "about": [
+    "entity:eu-ai-act",
+    "entity:regulation-graph-vault",
+    "concept:vault"
+   ],
+   "value": {
+    "n": 207,
+    "unit": "files in the EU AI Act vault",
+    "as_of": "2026-08-25"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "As the machine storing it sees the same vault: 786 bytes of AES-256-GCM ciphertext, named by a SHA-256 of the encrypted bytes.",
+   "section": "top",
+   "quote": "786 bytes of AES-256-GCM ciphertext.",
+   "about": [
+    "entity:sha-256",
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 786,
+    "unit": "bytes of ciphertext in one object"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Because objects are content-addressed over their ciphertext, the host can deduplicate, cache for a year and serve from a CDN while unable to tell what they are.",
+   "section": "top",
+   "quote": "the host can deduplicate it, cache it for a year, and serve it from a CDN, while remaining unable to tell you what it is",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Underneath it is a real version control system: multi-parent commits, a tree per directory, deterministic refs derived by HMAC, merge-base computation and three-way merge, on content the server cannot interpret.",
+   "section": "top",
+   "quote": "multi-parent commits, a tree per directory, deterministic refs derived by HMAC, a genuine merge-base computation across all parents, and three-way merge",
+   "about": [
+    "concept:vault-design",
+    "entity:git",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Nineteen published vaults are live, from a photo library to Regulation (EU) 2024/1689 parsed from official Formex XML into 1,523 nodes and 1,944 edges.",
+   "section": "top",
+   "quote": "parsed from official Formex XML into 1,523 nodes and 1,944 edges",
+   "about": [
+    "entity:regulation-graph-vault",
+    "entity:eu-ai-act",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 1523,
+    "unit": "nodes in the EU AI Act graph",
+    "as_of": "2026-08-25"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "Before writing, all nineteen vaults were cloned from their published keys: 1,389 files, no failures.",
+   "section": "top",
+   "quote": "Before writing this I cloned all nineteen from their published keys: 1,389 files, no failures.",
+   "about": [
+    "entity:sgit-ai",
+    "concept:vault",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 1389,
+    "unit": "files cloned from nineteen vaults",
+    "as_of": "2026-08-25"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "A vault can contain an application that runs against the vault without being handed a credential: with permissions set to nothing, the app renders the whole risk graph because the host reads the vault and passes results in.",
+   "section": "top",
+   "quote": "The app never sees a key.",
+   "about": [
+    "concept:capability-without-credential",
+    "concept:custom-interfaces",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "definition",
+   "text": "Capability without credential means you can run code you did not write against data you care about, with the blast radius set by a config file you can read in one screen.",
+   "section": "top",
+   "quote": "with the blast radius set by a config file you can read in one screen",
+   "about": [
+    "concept:capability-without-credential",
+    "concept:blast-radius"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "sgit.ai is one of nineteen sites on *.sgit.ai, each taking one question further than a section could; most of the thinking behind sgit lives out there.",
+   "section": "top",
+   "quote": "each taking one question further than a section could",
+   "about": [
+    "entity:sgit-ai",
+    "concept:publishing-method"
+   ],
+   "value": {
+    "n": 19,
+    "unit": "sites on *.sgit.ai",
+    "as_of": "2026-08-25"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The network includes graphs.sgit.ai, where meaning lives in the edges; risks.sgit.ai, where a risk cannot be denied, only accepted for a time; llms.sgit.ai, where an app calls a model without an API key; issues-fs; and open-source.sgit.ai.",
+   "section": "top",
+   "quote": "A node is just a node. Meaning lives in the edges.",
+   "about": [
+    "entity:graphs-sgit-ai",
+    "entity:risks-sgit-ai",
+    "entity:llms-sgit-ai",
+    "entity:issues-fs",
+    "entity:open-source-sgit-ai",
+    "concept:meaning-through-connectivity",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The house style: each site publishes its argument before the thing exists and states what has shipped and what has not; sg-sentinel.sgit.ai says NOT BUILT at the top of every page.",
+   "section": "top",
+   "quote": "We would rather be checkable than impressive.",
+   "about": [
+    "entity:sg-sentinel-sgit-ai",
+    "concept:publishing-method",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "To try it, pip install and clone the EU AI Act vault: 207 files on disk in under a minute, from a key printed on a public web page, with no account anywhere; every vault also opens in the browser.",
+   "section": "top",
+   "quote": "from a key printed on a public web page, with no account anywhere",
+   "about": [
+    "entity:sgit",
+    "concept:client-side",
+    "entity:eu-ai-act"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "limit",
+   "text": "sgit is beta and says so on every page.",
+   "section": "top",
+   "quote": "sgit is beta and says so on every page",
+   "about": [
+    "entity:sgit",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "The sgit.ai site is itself served from a vault, released 59 times, each release logged in full including the ones that broke something.",
+   "section": "top",
+   "quote": "released 59 times, and each release is logged in full, including the ones that broke something",
+   "about": [
+    "entity:sgit-ai",
+    "concept:shipping",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 59,
+    "unit": "releases of sgit.ai",
+    "as_of": "2026-08-25"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The article is also published as a LinkedIn newsletter post with the same argument and screenshots; it was written by Dinis Cruz and the agentic team working with him, under CC BY 4.0.",
+   "section": "top",
+   "quote": "Written by Dinis Cruz and the agentic team working with him.",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:linkedin",
+    "entity:creative-commons",
+    "concept:agents-write-too"
+   ],
+   "refs": [
+    "r01"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c06",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c07"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c03"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "the product the article introduces: git for files you cannot put on GitHub"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site, one of nineteen, itself served from a vault and released 59 times"
+  },
+  {
+   "id": "github",
+   "role": "where these files cannot go"
+  },
+  {
+   "id": "git",
+   "role": "the model sgit rebuilds: history, branches, diffs, merges"
+  },
+  {
+   "id": "python",
+   "role": "sgit is pure Python"
+  },
+  {
+   "id": "apache-2",
+   "role": "the licence of the sgit CLI"
+  },
+  {
+   "id": "creative-commons",
+   "role": "CC BY 4.0, the licence of the article"
+  },
+  {
+   "id": "sha-256",
+   "role": "names each encrypted object by its ciphertext"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "Regulation (EU) 2024/1689, parsed into the published vault used as the proof"
+  },
+  {
+   "id": "regulation-graph-vault",
+   "role": "the EU AI Act vault: 207 files, 1,523 nodes, 1,944 edges"
+  },
+  {
+   "id": "graphs-sgit-ai",
+   "role": "a sibling site: meaning lives in the edges"
+  },
+  {
+   "id": "open-source-sgit-ai",
+   "role": "a sibling site: open source is a strategy"
+  },
+  {
+   "id": "issues-fs",
+   "role": "a sibling site: the issues are files and the files are a graph"
+  },
+  {
+   "id": "risks-sgit-ai",
+   "role": "a sibling site: you cannot deny a risk, only say how long you accept it"
+  },
+  {
+   "id": "llms-sgit-ai",
+   "role": "a sibling site: an app calls a model without holding an API key"
+  },
+  {
+   "id": "sg-sentinel-sgit-ai",
+   "role": "an edge guard design that says NOT BUILT on every page"
+  },
+  {
+   "id": "linkedin",
+   "role": "where the article is also published as a newsletter post"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author, with the agentic team working with him"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "vault",
+   "defined_here": true
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": true
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "capability-without-credential",
+   "defined_here": true
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://www.linkedin.com/pulse/git-things-you-cannot-put-github-dinis-cruz-qwrte/",
+   "title": "Git for things you cannot put on GitHub",
+   "by": "Dinis Cruz",
+   "date": "2026-08",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-08-25",
+   "what": "The article; nineteen vaults cloned, 1,389 files, no failures; sgit.ai at 59 releases"
+  }
+ ]
+}

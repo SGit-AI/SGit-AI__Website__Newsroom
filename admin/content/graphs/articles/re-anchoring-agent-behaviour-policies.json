@@ -1,0 +1,676 @@
+{
+ "slug": "re-anchoring-agent-behaviour-policies",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Claude Code's documentation says that if an instruction disappeared after compaction, it was given only in conversation, lives in a nested CLAUDE.md not yet reloaded, or is a path-scoped rule that has not matched.",
+   "section": "top",
+   "quote": "If an instruction disappeared after compaction, it was given only in conversation",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-memory"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Anthropic's own permission classifier has the same weakness: a boundary can be lost if context compaction removes the message that stated it.",
+   "section": "top",
+   "quote": "can be lost if context compaction removes the message that stated it",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "concept:agent-memory"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "On 9 October two emails drafted by one of the owner's agents went out in his voice against a rule written down four times; one reason was that the rule fell out of the agent's context when the conversation was summarised.",
+   "section": "top",
+   "quote": "one of the reasons was that the rule fell out of the agent's context when the conversation was summarised",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Between 9 September and 9 October the session that runs this site was compacted eighteen times, all automatically.",
+   "section": "top",
+   "quote": "Between 9 September and 9 October there were eighteen compactions, all automatic.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-memory"
+   ],
+   "value": {
+    "n": 18,
+    "unit": "compactions in a month",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Each compaction started from about 780,000 to 800,000 tokens and replaced them with 9,000 to 19,000: on average 1.7% kept.",
+   "section": "top",
+   "quote": "replaced it with 9,000 to 19,000: on average 1.7% kept",
+   "about": [
+    "concept:agent-memory",
+    "entity:claude-code"
+   ],
+   "value": {
+    "n": 1.7,
+    "unit": "percent of context kept per compaction",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "In total 17.8 million tokens of conversation have been summarised away, and each summary took between 1.2 and 3.4 minutes to write.",
+   "section": "top",
+   "quote": "In total, 17.8 million tokens of conversation have been summarised away.",
+   "about": [
+    "concept:agent-memory"
+   ],
+   "value": {
+    "n": 17.8,
+    "unit": "million tokens summarised away",
+    "as_of": "2026-10-09"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "A summary is what makes a month-long session possible, but every time one is written a conversational rule has to be judged important enough to keep, in words the summariser chooses, and you are not told when it fails.",
+   "section": "top",
+   "quote": "Every time a summary is written, the rule has to be judged important enough to keep, in words the summariser chooses.",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The platform already has a pattern: project-root CLAUDE.md is re-read from disk after compaction, skills are re-injected but capped, and context hooks added earlier is summarised with the rest; what comes back from disk survives, what lived only in conversation competes.",
+   "section": "top",
+   "quote": "what comes back from disk survives; what lived only in the conversation competes",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-memory"
+   ],
+   "refs": [
+    "r01",
+    "r03"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "A rule held by the agent it governs fails in three ways needing different fixes: re-anchoring fixes forgetting, a second reader fixes the violation the author cannot see, a gate fixes the exception the agent argues itself into.",
+   "section": "top",
+   "quote": "Re-anchoring fixes forgetting. A second reader fixes the violation the author cannot see. A gate fixes the exception the agent argues itself into.",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:hope-or-enforcement",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "definition",
+   "text": "Re-anchoring: the rules live in an Agent Behaviour Policy file and a hook prints the file back into the context after every summary, verbatim, so the rules are restored, not remembered.",
+   "section": "top",
+   "quote": "The rules are restored, not remembered.",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "limit",
+   "text": "Re-anchoring does not change a rule's barrier: an expectation stays a rule in prose enforced by nobody; what changes is that it is reliably in view, the precondition for everything else.",
+   "section": "top",
+   "quote": "What changes is that the expectation is reliably in view, which is the precondition for everything else.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement",
+    "entity:abp-sgit-ai"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Claude Code has four documented hooks for re-anchoring: SessionStart with the compact matcher, UserPromptSubmit, PreCompact and Stop.",
+   "section": "top",
+   "quote": "Claude Code has four documented places to do it",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "decision",
+   "text": "This session runs a SessionStart compact hook, a UserPromptSubmit hook and a Stop hook, each calling abp.py; the reanchor step prints a header naming the policy version and hash, then the policy, and logs that it ran.",
+   "section": "top",
+   "quote": "then the policy, and logs that it ran",
+   "about": [
+    "concept:agent-tooling",
+    "concept:behaviour-policy",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The cheapest version is a line in the project-root CLAUDE.md and the bluntest is the person typing read your instructions again; the point of the hooks is that neither depends on someone remembering.",
+   "section": "top",
+   "quote": "The point of the hooks is that neither depends on someone remembering.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Here the Agent Behaviour Policy stops being a document and becomes infrastructure: one file does three jobs, memory, the checker's rulebook and the enforcement list.",
+   "section": "top",
+   "quote": "This is where the Agent Behaviour Policy stops being a document and becomes infrastructure.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "definition",
+   "text": "The canary is the second half of the technique: a short status report, computed from the transcript, at the end of every few answers; if it stops appearing, something in the policy has not been read.",
+   "section": "top",
+   "quote": "So the second half of the technique is a canary.",
+   "about": [
+    "concept:canary",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Van Halen's touring contract asked for M&M's with the brown ones removed as a quick way to tell whether the venue had read the whole contract, including the safety parts.",
+   "section": "top",
+   "quote": "it was a quick way to tell whether the venue had read the whole contract",
+   "about": [
+    "entity:van-halen",
+    "entity:snopes",
+    "entity:npr",
+    "concept:canary"
+   ],
+   "refs": [
+    "r06",
+    "r07"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "decision",
+   "text": "The model does not write the numbers: the UserPromptSubmit hook computes the report from the transcript and the harness's cost record, because a report the model wrote from memory would be one more thing to verify.",
+   "section": "top",
+   "quote": "A report the model wrote from memory would be one more thing to verify.",
+   "about": [
+    "concept:canary",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "decision",
+   "text": "The harness checks the report was shown: when one was due the Stop hook reads the end of the answer and, if it is missing, sends the agent back once, then lets the turn end and logs the miss.",
+   "section": "top",
+   "quote": "If the report is missing it sends the agent back, once, with the block to add",
+   "about": [
+    "concept:canary",
+    "concept:agent-tooling",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The commits line counts commits not preceded by a leak scan, rule 2 of the policy, from the transcript rather than asking the agent; a policy row with a number next to it is a different thing from a row on its own.",
+   "section": "top",
+   "quote": "A policy row with a number next to it is a different thing from a policy row on its own.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:canary",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "Updated 10 October: at 12:03:36 UTC the session was summarised for the nineteenth time, from 789,144 tokens to 12,092, and the SessionStart hook fired in the same second and printed the policy back from disk.",
+   "section": "top",
+   "quote": "The SessionStart hook fired in the same second, printed the policy back from disk, and logged the event",
+   "about": [
+    "concept:agent-memory",
+    "entity:claude-code"
+   ],
+   "value": {
+    "n": 12092,
+    "of": 789144,
+    "unit": "tokens kept in the nineteenth compaction",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "At about 15:16 UTC the session's container was restarted and the policy file, the script and the hooks went with it; the next prompt arrived with no anchor line, which confirmed the hooks had gone.",
+   "section": "top",
+   "quote": "The next prompt arrived with no anchor line.",
+   "about": [
+    "concept:canary",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The policy was restored from the copy the last re-anchor had printed into the conversation, with the same hash byte for byte; a policy on an ephemeral machine needs a copy somewhere that survives it.",
+   "section": "top",
+   "quote": "a policy that lives on an ephemeral machine needs a copy somewhere that survives it",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The leak scan counter was undercounting scans because it recognised only one way of writing the scan; the scan is now one script every commit runs, and the counter looks for that script.",
+   "section": "top",
+   "quote": "The leak scan counter was undercounting scans.",
+   "about": [
+    "concept:canary",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "question",
+   "text": "Open: how often to show the report, every three answers today, which lines people actually read, and what else belongs there.",
+   "section": "top",
+   "quote": "how often to show it (every three answers today), which lines people actually read, and what else belongs there",
+   "about": [
+    "concept:canary"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Everything depends on recent features: mods arrived in Claude Code v2.1.287, onFailure block in v2.1.295, prompt hooks changed in v2.1.210; six months ago the best way to re-anchor was different and will be again.",
+   "section": "top",
+   "quote": "Six months ago the best way to re-anchor a policy was different, and six months from now it will be different again",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "definition",
+   "text": "A behaviour policy row is not only a rule and its barrier but a rule, its barrier and the current recipe for keeping it, on this platform at this version.",
+   "section": "top",
+   "quote": "It is a rule, its barrier, and the current recipe for keeping it",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "decision",
+   "text": "A recipe that uses mods means running code the agent wrote, unsandboxed, with your permissions, itself a policy row; that is why this session's report runs on settings hooks rather than a mod.",
+   "section": "top",
+   "quote": "That is why this session's report runs on settings hooks rather than a mod.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "hypothesis",
+   "text": "A maintained, version-aware library of recipes, the current best way to make each row hold on the tools people use, is what people will pay for, not the policy itself.",
+   "section": "top",
+   "quote": "That maintained, version-aware library of recipes is what I think people will pay for",
+   "about": [
+    "concept:pricing",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "Re-anchoring does not enforce anything; it keeps rules in view, and a rule in view is still an expectation.",
+   "section": "top",
+   "quote": "Re-anchoring does not enforce anything.",
+   "about": [
+    "concept:agent-memory",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The canary is a setting, not a boundary: it lives in a settings file the session could edit, and it cannot stop an agent that decides to ignore the policy.",
+   "section": "top",
+   "quote": "The canary is a setting, not a boundary.",
+   "about": [
+    "concept:canary",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "A report can be pasted without the rules being followed; it shows the hooks fired and measures what the transcript can measure, and for the rest you need a reader or a gate.",
+   "section": "top",
+   "quote": "A report can be pasted without the rules being followed.",
+   "about": [
+    "concept:canary",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "The summaries stay a black box: re-anchoring does not show what a summary kept, it makes what matters independent of it.",
+   "section": "top",
+   "quote": "The summaries stay a black box.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "proposal",
+   "text": "Build your own: write the rules as a short ABP file with barriers, re-anchor after every compaction, add a canary with a Stop hook, give the person two commands, measure one rule, and move the rules that matter most to a reader or gate.",
+   "section": "top",
+   "quote": "Write the rules down as an ABP file, short enough to re-read (a few hundred words), each rule with its barrier.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-tooling",
+    "concept:canary"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "fact",
+   "text": "The article was written from a conversation between Dinis Cruz and agent@riskmandate.ai, Claude Opus 5.5, in the sgit.ai site session, which built the hooks and runs under them, on 9 and 10 October 2026.",
+   "section": "top",
+   "quote": "which built and installed the re-anchoring hooks and the status report described here, on 9 and 10 October 2026, and runs under them",
+   "about": [
+    "entity:dinis-cruz",
+    "entity:claude",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c26",
+   "verb": "gives_rise_to",
+   "to": "c27"
+  },
+  {
+   "from": "c27",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c34",
+   "verb": "specifies",
+   "to": "c10"
+  }
+ ],
+ "entities": [
+  {
+   "id": "claude-code",
+   "role": "the harness whose compaction loses rules and whose hooks restore them"
+  },
+  {
+   "id": "anthropic",
+   "role": "whose permission classifier documentation admits the same weakness"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "the Agent Behaviour Policy site whose vocabulary of barriers the article uses"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose agent's emails went out against a rule and who runs the session"
+  },
+  {
+   "id": "claude",
+   "role": "Claude Opus 5.5, the model in the session that built the hooks and wrote the article"
+  },
+  {
+   "id": "van-halen",
+   "role": "whose brown M&M clause is the original canary"
+  },
+  {
+   "id": "snopes",
+   "role": "fact-checked the brown M&M story"
+  },
+  {
+   "id": "npr",
+   "role": "reported the truth about the brown M&M clause"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-memory",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "canary",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://code.claude.com/docs/en/memory",
+   "title": "Claude Code documentation: memory",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://code.claude.com/docs/en/permission-modes",
+   "title": "Claude Code documentation: permission modes",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://code.claude.com/docs/en/context-window#what-survives-compaction",
+   "title": "Claude Code documentation: context window, what survives compaction",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://code.claude.com/docs/en/hooks",
+   "title": "Claude Code documentation: hooks",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://abp.sgit.ai/",
+   "title": "Agent Behaviour Policy",
+   "by": "abp.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r06",
+   "url": "https://www.snopes.com/fact-check/brown-out/",
+   "title": "Brown out: Van Halen and the brown M&M's",
+   "by": "Snopes",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://www.npr.org/sections/therecord/2012/02/14/146880432/the-truth-about-van-halen-and-those-brown-m-ms",
+   "title": "The truth about Van Halen and those brown M&M's",
+   "by": "NPR",
+   "date": "2012-02-14",
+   "kind": "news"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-09-09",
+   "what": "The first of the eighteen compactions counted"
+  },
+  {
+   "date": "2026-10-09",
+   "what": "Two emails go out against a rule; the compactions counted; the documentation read; the hooks installed"
+  },
+  {
+   "date": "2026-10-10",
+   "what": "The nineteenth compaction at 12:03:36 UTC with the re-anchor observed; the container restart at about 15:16 UTC"
+  }
+ ]
+}

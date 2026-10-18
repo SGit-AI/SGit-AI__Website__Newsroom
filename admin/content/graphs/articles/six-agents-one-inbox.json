@@ -1,0 +1,634 @@
+{
+ "slug": "six-agents-one-inbox",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "An access policy for an agent is only as real as its worst row, the one whose enforcement is that the agent has been told.",
+   "section": "top",
+   "quote": "An access policy for an agent is only as real as its worst row.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The account, not the session, is the blast radius, because every session an agent opens through a connector runs as the account that authorised it.",
+   "section": "top",
+   "quote": "Every session an agent opens through a connector runs as the account that authorised it",
+   "about": [
+    "concept:blast-radius",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "decision",
+   "text": "Each agent identity runs on a dedicated Google Workspace account, a seat on a Claude Team plan and a GitHub account of its own, so nothing the agent does runs as the owner.",
+   "section": "top",
+   "quote": "Nothing the agent does runs as me.",
+   "about": [
+    "concept:blast-radius",
+    "entity:google-workspace",
+    "entity:claude",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "A Google Workspace seat per agent costs about 7 pounds a month.",
+   "section": "top",
+   "quote": "A Workspace seat per agent is £7 a month.",
+   "about": [
+    "entity:google-workspace",
+    "concept:blast-radius"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "pounds per month per seat",
+    "as_of": "2026-09-29"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Six roles share the two identities, the agent for RiskMandate and the agent for the owner's own domain, split by what each is allowed to touch.",
+   "section": "top",
+   "quote": "Six roles share those two identities, and the split follows what each one is allowed to touch",
+   "about": [
+    "concept:multi-agent",
+    "entity:riskmandate"
+   ],
+   "value": {
+    "n": 6,
+    "of": 2,
+    "unit": "roles over identities",
+    "as_of": "2026-09-29"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "A dedicated account puts each agent in its own organisational unit, and Google Workspace applies its Gmail compliance rules per unit, so they become per-agent enforcement.",
+   "section": "top",
+   "quote": "Google Workspace applies its Gmail compliance rules per unit.",
+   "about": [
+    "entity:google-workspace",
+    "entity:gmail",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Three Workspace settings matter, all applied per unit: restrict delivery, attachment compliance and scope limits on third-party apps.",
+   "section": "top",
+   "quote": "Three settings turned out to matter, all under Apps, Google Workspace, Gmail, Compliance in the Admin console",
+   "about": [
+    "entity:google-workspace",
+    "entity:gmail",
+    "entity:google"
+   ],
+   "refs": [
+    "r02",
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "With the Claude GitHub App installed per repository or a fine-grained token, the site editor's GitHub account sees the website repository and nothing else.",
+   "section": "top",
+   "quote": "The site editor's account sees the website repository and nothing else.",
+   "about": [
+    "entity:github",
+    "concept:reach"
+   ],
+   "refs": [
+    "r09",
+    "r10"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The reader's rule of never sending became never reply unless the message came from the owner, and it changed on the first scheduled run.",
+   "section": "top",
+   "quote": "never reply, unless the message came from me, in which case act on it",
+   "about": [
+    "concept:agentic-email",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Policies get written from the workflow one exception at a time, and the list of exceptions is the policy, complete only after the workflow has run for a while.",
+   "section": "top",
+   "quote": "this is how policies actually get written: from the workflow, one exception at a time",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The reply-to-me exception is an authentication problem, not a permissions one, and needs a signature check against the append-lane registry with the owner's key added.",
+   "section": "top",
+   "quote": "Anyone can put my address in a From header.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:vault-design",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "On 27 September an agent working in Cowork found that create_draft and update_draft accept an attachments array and proved it with a signed PDF that arrived intact.",
+   "section": "top",
+   "quote": "On 27 September an agent working in Cowork needed to send a signed letter and found the way.",
+   "about": [
+    "entity:gmail",
+    "entity:claude-code",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "The agent shrank a 1.4 MB scanned PDF to 17 KB before base64-encoding it into the draft.",
+   "section": "top",
+   "quote": "It shrank a 1.4 MB scanned PDF to 17 KB",
+   "about": [
+    "entity:gmail",
+    "concept:connectors"
+   ],
+   "value": {
+    "n": 17,
+    "unit": "KB",
+    "as_of": "2026-09-27"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Anthropic's two documentation pages disagree: one says the Gmail connector only reads and searches, the other says it can send, reply and forward.",
+   "section": "top",
+   "quote": "the vendor's documentation disagrees with itself",
+   "about": [
+    "entity:anthropic",
+    "entity:gmail",
+    "concept:connectors"
+   ],
+   "refs": [
+    "r06",
+    "r07"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The Gmail API puts drafting and sending in the same scope, so the admin's scope limit cannot express the rule drafts only.",
+   "section": "top",
+   "quote": "There is no scope that allows drafts and forbids sending.",
+   "about": [
+    "entity:gmail",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "In this setup the Cowork agent has no GitHub connector and cannot open the repository, while the Claude Code agent on the same seat edits the site.",
+   "section": "top",
+   "quote": "The Cowork agent, in this setup, has no GitHub connector and cannot open the repository at all",
+   "about": [
+    "entity:claude-code",
+    "entity:github",
+    "concept:reach"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "On a Team plan an Owner enables or disables a connector for the whole organisation; per-tool control to block an action exists only on the Enterprise plan.",
+   "section": "top",
+   "quote": "On a Team plan an Owner enables or disables a connector for the whole organisation",
+   "about": [
+    "entity:anthropic",
+    "concept:hope-or-enforcement"
+   ],
+   "refs": [
+    "r08",
+    "r11"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The rows that touch identity, code and vaults are enforced by accounts, repositories and keys; the rows that touch mail are admin rules and approvals; two rows are only told.",
+   "section": "top",
+   "quote": "The rows that touch identity, code and vaults are enforced, because accounts, repositories and keys are boundaries the platform or the mathematics maintains.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The row acts outside its role is shared by every agent policy in the world and no setting anywhere enforces it.",
+   "section": "top",
+   "quote": "is the row every agent policy in the world shares, and no setting anywhere enforces it",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "Write the policy as a table with an enforcement column, fill it honestly, and have an agent try the things the policy assumes it cannot do before writing it.",
+   "section": "top",
+   "quote": "Have an agent try the things the policy assumes it cannot do.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "limit",
+   "text": "The owner's own key is not yet in the signature registry, so the reader's exception is still enforced by instruction.",
+   "section": "top",
+   "quote": "my own key in that registry, so the reader's exception is still enforced by instruction",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The policy table is the honest state of a real setup on 29 September 2026, published with its two told rows rather than pretending they are something else.",
+   "section": "top",
+   "quote": "The policy table above is the honest state of a real setup on 29 September 2026",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The attachment finding is not a bypass: the agent used a documented field of a documented call, and the policy was wrong about capability.",
+   "section": "top",
+   "quote": "It is not a bypass. The agent used a documented field of a documented call.",
+   "about": [
+    "concept:connectors",
+    "entity:gmail"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The connector twin argument holds: replay what an agent can do before writing down what it may do.",
+   "section": "top",
+   "quote": "before you write down what an agent may do, replay what it can do",
+   "about": [
+    "concept:connectors",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "nhi.sgit.ai's August scoring of shared drives found that everything runs on your identity, segregation is the only granularity and nothing supports per-agent keys.",
+   "section": "top",
+   "quote": "the only granularity is segregation rather than scoping, and nothing supports per-agent keys",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:nhi-sgit-ai"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "decision",
+   "text": "Putting the reader in a unit whose delivery is restricted to the owner's domain bounds the failure of a spoofed instruction, because the reply can only reach the owner.",
+   "section": "top",
+   "quote": "It makes the worst row bounded.",
+   "about": [
+    "concept:blast-radius",
+    "concept:agentic-email",
+    "entity:google-workspace"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "No broker yet exists that would make drafts only a block rather than a prompt on a Team plan, and there is no way to enforce acts outside its role.",
+   "section": "top",
+   "quote": "a broker that would let",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c15",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c01"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "one of the two identities the agents run for"
+  },
+  {
+   "id": "google-workspace",
+   "role": "the dedicated seat and organisational unit per agent, whose compliance rules enforce the mail rows"
+  },
+  {
+   "id": "gmail",
+   "role": "the mailbox the reader, mailbox and inbox agents work on, through the connector"
+  },
+  {
+   "id": "github",
+   "role": "a dedicated account per agent, with the app installed per repository"
+  },
+  {
+   "id": "anthropic",
+   "role": "the vendor whose two documentation pages disagree about the Gmail connector"
+  },
+  {
+   "id": "claude",
+   "role": "the Claude Team seat each agent runs on"
+  },
+  {
+   "id": "claude-code",
+   "role": "the two products on the same seat, Cowork and Claude Code, with different reach"
+  },
+  {
+   "id": "google",
+   "role": "enforces the compliance rules, not the agent"
+  },
+  {
+   "id": "sgit",
+   "role": "the vaults whose read and write keys enforce the vault rows"
+  },
+  {
+   "id": "nhi-sgit-ai",
+   "role": "the research site that scored shared-drive options for agents in August"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": true
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": true
+  },
+  {
+   "id": "connectors",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://nhi.sgit.ai/research/shared-drives.html",
+   "title": "Shared drives for agents, scored",
+   "by": "nhi.sgit.ai",
+   "date": "2026-08-16",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://knowledge.workspace.google.com/admin/gmail/advanced/restrict-email-messages-to-authorized-addresses-or-domains-only",
+   "title": "Restrict email messages to authorized addresses or domains only",
+   "by": "Google Workspace Admin Help",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://knowledge.workspace.google.com/admin/gmail/advanced/filter-messages-with-attachments",
+   "title": "Filter messages with attachments (attachment compliance)",
+   "by": "Google Workspace Admin Help",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://workspaceupdates.googleblog.com/2024/12/configure-third-party-apps-by-select-api-scopes-general-availability.html",
+   "title": "Configure third-party apps by select API scopes, general availability",
+   "by": "Google Workspace Updates",
+   "date": "2024-12-03",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://developers.google.com/workspace/gmail/api/auth/scopes",
+   "title": "Choose Gmail API scopes",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://claude.com/docs/connectors/google/gmail",
+   "title": "Gmail connector documentation",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+   "title": "Use Google Workspace connectors",
+   "by": "Anthropic Help Center",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans",
+   "title": "Set up role-based permissions on Enterprise plans",
+   "by": "Anthropic Help Center",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://claude.com/docs/connectors/github",
+   "title": "GitHub integration documentation",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+   "title": "Managing your personal access tokens",
+   "by": "GitHub Docs",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r11",
+   "url": "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans",
+   "title": "Use Claude Cowork on Team and Enterprise plans",
+   "by": "Anthropic Help Center",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-09-27",
+   "what": "An agent in Cowork finds the attachments field and proves it with a signed PDF"
+  },
+  {
+   "date": "2026-09-29",
+   "what": "The policy table published as the honest state of the setup; the two Anthropic pages read"
+  },
+  {
+   "date": "2026-10-02",
+   "what": "Follow-up: the step-by-step walkthrough becomes its own article"
+  },
+  {
+   "date": "2026-08-16",
+   "what": "nhi.sgit.ai scores the shared-drive options for agents"
+  },
+  {
+   "date": "2024-12-03",
+   "what": "Google Workspace scope limits on third-party apps reach general availability"
+  }
+ ]
+}

@@ -1,0 +1,725 @@
+{
+ "slug": "are-hooks-the-sweet-spot",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "definition",
+   "text": "Most of the rules given to agents today are hope-based security: in the prompt or a policy it points to, holding only because the model follows them.",
+   "section": "question",
+   "quote": "Most of the rules we give agents today are what I call hope-based security.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "Hope or enforcement measured one customer service agent built the obvious way: 97% of its rules were kept only by the model's good behaviour.",
+   "section": "question",
+   "quote": "built the obvious way, 97% of its rules were kept only by the model's good behaviour.",
+   "about": [
+    "concept:hope-or-enforcement"
+   ],
+   "value": {
+    "n": 97,
+    "unit": "percent of rules kept only by the model",
+    "as_of": "2026-10-08"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "question",
+   "text": "In October 2026, are hooks the sweet spot between the prompt and real enforcement outside the agent, and how much of an agent's policy can move from the prompt into a hook now?",
+   "section": "question",
+   "quote": "How much of an agent's policy can move from the prompt into a hook now?",
+   "about": [
+    "concept:agent-tooling",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The agent writing this site works under a behaviour policy of eleven rules; ten say expectation, one is kept by a hook that supplies the status report, and one more is kept in part by a disabled push URL.",
+   "section": "own",
+   "quote": "Ten of the eleven say expectation.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-tooling",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 10,
+    "of": 11,
+    "unit": "rules kept by expectation",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The commit that published the first hooks article carried the wrong model name in its trailer: the leak scan looks for model ids, not names, and nothing compared the two, exactly the slip a hook exists to catch.",
+   "section": "own",
+   "quote": "It is a small slip, and exactly the kind a hook exists to catch.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:hope-or-enforcement",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "decision",
+   "text": "In a throwaway repository with two bare remotes, one hook was written per rule and fed fixed JSON inputs a harness would send, without changing the session's own settings.",
+   "section": "sandbox",
+   "quote": "I wrote one small hook per rule and fed each one fixed inputs, the JSON a harness would send.",
+   "about": [
+    "concept:agent-tooling",
+    "entity:git"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Moved into hooks and tested: four rules fully, two mostly, three partly, two not at all.",
+   "section": "in-short",
+   "quote": "Four fully, two mostly, three partly, two not at all.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 4,
+    "of": 11,
+    "unit": "rules moved fully into hooks",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The leak-scan hook let a clean change through and blocked AWS's documented example key, but let a GitHub token shape through because the scan's patterns do not know that shape; a hook is only as good as the check it runs.",
+   "section": "sandbox",
+   "quote": "A hook is only as good as the check it runs.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:agent-tooling",
+    "entity:aws",
+    "entity:github"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "The output-masking hook cannot prevent anything: Claude Code's reference says the tool has already run by the time the hook fires.",
+   "section": "sandbox",
+   "quote": "The tool has already run by the time the hook fires.",
+   "about": [
+    "entity:claude-code",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "Hooks are the sweet spot for now: the first layer that does not depend on the model, and the last that still sees the action as the agent meant it, a tool call by name, a commit with its message.",
+   "section": "layers",
+   "quote": "They are the first layer that does not depend on the model: the same input gets the same answer every time, at no model cost.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:hooks-are-kernel-code",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The vendors say the limits plainly: Trail of Bits says hooks are not a security boundary and a prompt injection can work around them, and on Claude Code a policy hook with a wrong path or a crashing script lets everything through by default.",
+   "section": "layers",
+   "quote": "Hooks are not a security boundary -- a prompt injection can work around them.",
+   "about": [
+    "entity:trail-of-bits",
+    "entity:claude-code",
+    "concept:prompt-injection",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r06",
+    "r01"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "A hook is a setting in the policy's terms, and what matters is who can change it: a hook in a file the agent can write is very close to an expectation, and this session's own hooks live in a folder the agent can write.",
+   "section": "layers",
+   "quote": "This session's own hooks live in a folder the agent can write.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:behaviour-policy",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "A hook the organisation installs where the agent cannot write, with only managed hooks allowed to run and failure set to block, is as strong as a hook gets; it still runs on the same machine with the user's permissions.",
+   "section": "layers",
+   "quote": "is as strong as a hook gets. It still runs on the same machine with the user's permissions, and it still sees only what is routed through it.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "entity:claude-code",
+    "entity:codex",
+    "entity:cursor"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The platforms agree on composition: on Claude Code all matching hooks run in parallel and deny beats defer beats ask beats allow; Cursor merges the same way; Codex runs matching hooks concurrently.",
+   "section": "chained",
+   "quote": "All matching hooks run in parallel",
+   "about": [
+    "entity:claude-code",
+    "entity:cursor",
+    "entity:codex",
+    "concept:agent-tooling"
+   ],
+   "refs": [
+    "r01",
+    "r03",
+    "r04"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "proposal",
+   "text": "A hook pack should be a set of independent checks, one small hook per rule with one job, where the most restrictive answer wins, not a pipeline where one hook depends on another's output.",
+   "section": "chained",
+   "quote": "A hook pack should be a set of independent checks, not a pipeline.",
+   "about": [
+    "concept:hook-pack",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The open collections that exist are mostly about dangerous commands: Trail of Bits blocks rm -rf and direct pushes to main, the safety net blocks destructive git and file commands, and Lasso Security's hooks scan tool output for prompt injection.",
+   "section": "who",
+   "quote": "The open collections that exist are mostly about dangerous commands.",
+   "about": [
+    "entity:trail-of-bits",
+    "entity:lasso-security",
+    "concept:agent-tooling",
+    "concept:prompt-injection"
+   ],
+   "refs": [
+    "r06",
+    "r07",
+    "r08"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Generating hooks from a team's own rules has started: claudecode-rule2hook converts natural language rules, Anthropic's hookify plugin writes rules from an instruction or recent conversation, and AWS's AgentCore Policy turns plain English into Cedar at a gateway.",
+   "section": "who",
+   "quote": "Off the machine, AWS's AgentCore Policy does the same for a gateway: rules in plain English become Cedar",
+   "about": [
+    "entity:anthropic",
+    "entity:aws",
+    "entity:cedar",
+    "concept:hook-pack"
+   ],
+   "refs": [
+    "r09",
+    "r10",
+    "r11"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "OWASP's Agent Control Standard, in the GenAI Security Project, defines how agent platforms expose middleware hooks and how safety policies are enforced through them, with allow, deny, modify, ask and defer decisions and a policy engine such as OPA or Cedar behind them.",
+   "section": "who",
+   "quote": "defines how agent platforms expose middleware hooks and how safety policies can be enforced through them",
+   "about": [
+    "entity:owasp",
+    "entity:agent-control-standard",
+    "entity:open-policy-agent",
+    "entity:cedar"
+   ],
+   "refs": [
+    "r12"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "The Agent Control Standard is early: its own repository says two of its nineteen hook methods are evaluated live.",
+   "section": "who",
+   "quote": "Two of ACS's nineteen hook methods are evaluated live",
+   "about": [
+    "entity:agent-control-standard",
+    "entity:owasp"
+   ],
+   "value": {
+    "n": 2,
+    "of": 19,
+    "unit": "hook methods evaluated live",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "The useful contribution to OWASP is not a new project on hooks but real policies and real hooks to test the existing standard with.",
+   "section": "who",
+   "quote": "one exists, and the useful contribution is real policies and real hooks to test it with.",
+   "about": [
+    "entity:owasp",
+    "entity:agent-control-standard",
+    "concept:hook-pack"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "The whole loop to build: from the written policy, one row per rule, generate one hook per row with fixed inputs that must be allowed and blocked as tests, install the pack where the agent cannot write, then read the pack back against the policy.",
+   "section": "pack",
+   "quote": "every rule with no hook is still hope, and every hook with no rule is a control nobody can explain.",
+   "about": [
+    "concept:hook-pack",
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "The description stays the source, as Sean Turner's control for skills does: change the rule, regenerate the hook, rerun the tests; and since a hook answers allow, deny or ask like a gateway, the same rows can later be compiled for the gateway.",
+   "section": "pack",
+   "quote": "change the rule, regenerate the hook, rerun the tests.",
+   "about": [
+    "concept:hook-pack",
+    "entity:sean-turner",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The barrier column of the policy records where each rule is kept today, so moving a rule off the machine is one edit, and the gap it leaves is visible.",
+   "section": "pack",
+   "quote": "The barrier column of the policy records where each rule is kept today, so moving a rule is one edit, and the gap it leaves is visible.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hook-pack"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "hypothesis",
+   "text": "We already need this for our own agents, which is the best reason to build it; a session with a written policy and a release process can be among the heaviest users of hooks, and every gap found is one a customer does not.",
+   "section": "pack",
+   "quote": "We already need this for our own agents, which is the best reason to build it.",
+   "about": [
+    "concept:hook-pack",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The tests were fixtures, not a live harness: each hook ran on the JSON a harness would send, in a throwaway repository, and the composition rules are from the vendors' documentation.",
+   "section": "limits",
+   "quote": "The tests were fixtures, not a live harness.",
+   "about": [
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Hooks are not a boundary: they run on the same machine with the user's permissions and see only what is routed through them; they make rules harder to break, not impossible.",
+   "section": "limits",
+   "quote": "they make rules harder to break, not impossible.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The counts are for one policy: four, two, three and two are this session's eleven rules, and another policy will divide differently.",
+   "section": "limits",
+   "quote": "Four, two, three and two are this session's eleven rules; another policy will divide differently.",
+   "about": [
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The pack is a proposal: the generator, the tests on every change and the gateway compilation are not built.",
+   "section": "limits",
+   "quote": "The generator, the tests on every change and the gateway compilation are not built.",
+   "about": [
+    "concept:hook-pack"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Collections and products move fast; they were read on 14 October 2026, and star counts and features change.",
+   "section": "limits",
+   "quote": "Read on 14 October 2026; star counts and features change.",
+   "about": [
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article was written from a voice memo of 14 October 2026 by the site's agent, with the hooks written and tested against this session's own policy and the quotes re-checked on the vendors' pages.",
+   "section": "sources",
+   "quote": "The hooks were written and tested for this article in a throwaway repository, against this session's own behaviour policy, without changing the session's settings.",
+   "about": [
+    "concept:voice-memo",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c07",
+   "verb": "answers",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c21"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c21"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose writing session's eleven-rule policy was measured and moved into hooks"
+  },
+  {
+   "id": "claude-code",
+   "role": "the harness whose hooks reference, composition rules and managed-hooks setting are quoted"
+  },
+  {
+   "id": "codex",
+   "role": "runs matching hooks concurrently and has a managed-hooks-only setting"
+  },
+  {
+   "id": "cursor",
+   "role": "merges hooks so deny beats ask beats allow, with a fail-closed setting"
+  },
+  {
+   "id": "git",
+   "role": "its own pre-push hook refused any remote but the allowed one in the sandbox"
+  },
+  {
+   "id": "github",
+   "role": "a GitHub token shape slipped through the leak scan"
+  },
+  {
+   "id": "aws",
+   "role": "its documented example key was blocked; its AgentCore Policy compiles plain English to Cedar at a gateway"
+  },
+  {
+   "id": "anthropic",
+   "role": "publishes the Claude Code hooks reference and the hookify plugin"
+  },
+  {
+   "id": "owasp",
+   "role": "its GenAI Security Project holds the Agent Control Standard"
+  },
+  {
+   "id": "open-policy-agent",
+   "role": "a policy engine the standard can put behind its hooks"
+  },
+  {
+   "id": "cedar",
+   "role": "the language AgentCore Policy compiles rules into and a policy engine the standard names"
+  },
+  {
+   "id": "sean-turner",
+   "role": "his control for skills keeps the description as the source"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memo and holds editorial responsibility"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the address to write to about moving rules into hooks"
+  },
+  {
+   "id": "trail-of-bits",
+   "role": "its Claude Code configuration ships two blocking hooks and says hooks are not a security boundary"
+  },
+  {
+   "id": "lasso-security",
+   "role": "its hooks scan tool output for prompt injection"
+  },
+  {
+   "id": "agent-control-standard",
+   "role": "defines middleware hooks and the decisions allow, deny, modify, ask and defer; two of nineteen methods evaluated live"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "hook-pack",
+   "defined_here": true
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://code.claude.com/docs/en/hooks",
+   "title": "Claude Code hooks reference",
+   "by": "Anthropic",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://code.claude.com/docs/en/sandboxing",
+   "title": "Claude Code sandboxing",
+   "by": "Anthropic",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://learn.chatgpt.com/docs/hooks",
+   "title": "Codex hooks",
+   "by": "OpenAI",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://cursor.com/docs/agent/hooks",
+   "title": "Cursor hooks",
+   "by": "Cursor",
+   "date": "2026-10-14",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds-programmatic-access.html",
+   "title": "Programmatic access credentials",
+   "by": "Amazon Web Services",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://github.com/trailofbits/claude-code-config",
+   "title": "claude-code-config",
+   "by": "Trail of Bits",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r07",
+   "url": "https://github.com/kenryu42/claude-code-safety-net",
+   "title": "claude-code-safety-net",
+   "by": "kenryu42",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r08",
+   "url": "https://github.com/lasso-security/claude-hooks",
+   "title": "claude-hooks",
+   "by": "Lasso Security",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r09",
+   "url": "https://github.com/zxdxjtu/claudecode-rule2hook",
+   "title": "claudecode-rule2hook",
+   "by": "zxdxjtu",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r10",
+   "url": "https://github.com/anthropics/claude-code/tree/main/plugins/hookify",
+   "title": "hookify plugin",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r11",
+   "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+   "title": "AgentCore Policy",
+   "by": "Amazon Web Services",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r12",
+   "url": "https://genai.owasp.org/resource/agent-control-standard-acs/",
+   "title": "Agent Control Standard (ACS)",
+   "by": "OWASP GenAI Security Project",
+   "date": "2026-10-14",
+   "kind": "standard"
+  },
+  {
+   "id": "r13",
+   "url": "https://github.com/GenAI-Security-Project/agent-control-standard",
+   "title": "agent-control-standard",
+   "by": "OWASP GenAI Security Project",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo, the hooks written and tested in a throwaway repository, and every collection and reference read"
+  },
+  {
+   "date": "2026-10-08",
+   "what": "Hope or enforcement measured 97% of one agent's rules kept only by the model"
+  }
+ ]
+}

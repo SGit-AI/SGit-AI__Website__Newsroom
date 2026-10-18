@@ -1,0 +1,606 @@
+{
+ "slug": "the-vault-is-live",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "On 11 October the site published a design for a reader's account with no server, and by 02:22 UTC on 12 October it was running on newsroom.sgit.ai, not as a demo.",
+   "section": "top",
+   "quote": "By 02:22 UTC on 12 October it was running on newsroom.sgit.ai.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:vault",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "A Vault button beside the balance opens a pane; on a first device the reader pastes an access key and the pane makes three real sgit vaults and shows a recovery code once.",
+   "section": "top",
+   "quote": "the pane makes three vaults and shows you a recovery code once",
+   "about": [
+    "concept:vault",
+    "entity:webauthn",
+    "concept:identity-and-secrets",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "sgit vaults created for one reader account",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "The design held with one change the lab forced: a door per path, because a passkey reached by a phone over QR gives different bytes from the same passkey on the device.",
+   "section": "short",
+   "quote": "a door per path, because a passkey reached by a phone over QR gives different bytes from the same passkey on the device",
+   "about": [
+    "concept:door-per-path",
+    "entity:webauthn",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The browser has no vault writer of its own: it uses the twelve files of the vault UI library that runs dev.vault.sgraph.ai, unedited, each SHA-256 recorded, with a build check that fails if one changes.",
+   "section": "short",
+   "quote": "It uses the twelve files of the vault UI library that runs dev.vault.sgraph.ai, unedited, each SHA-256 recorded",
+   "about": [
+    "entity:sg-vault",
+    "entity:sha-256",
+    "concept:publishing-method",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 12,
+    "unit": "vendored files of the vault UI library",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Local storage stays primary and the meter is unchanged; the vault is a second home the reader keeps current by pressing a button, so the number of commits is the number of presses.",
+   "section": "short",
+   "quote": "the number of commits is the number of presses",
+   "about": [
+    "concept:client-side",
+    "concept:vault",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "definition",
+   "text": "Records, never totals, one file per device: each device writes what it originated to its own file, whole, totals are recomputed on every open, and two devices never write the same file, so there is nothing to merge.",
+   "section": "sync",
+   "quote": "Two devices never write the same file, so there is nothing to merge.",
+   "about": [
+    "concept:records-never-totals",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The vault server, dev.send.sgraph.ai, holds ciphertext, sizes, times and random-looking ids; a write needs the access key, a read needs nothing because the key that decrypts is the credential, and the head pointer is guarded by compare-and-swap.",
+   "section": "layers",
+   "quote": "a read needs nothing, because the key that decrypts is the credential",
+   "about": [
+    "entity:sgit",
+    "concept:encryption-and-keys",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "For the tests there is a mock of the vault server's API in Node with the same shapes: read, write, batch with write-if-match and the conflict response, list, and the same CORS as the real server.",
+   "section": "layers",
+   "quote": "For the tests there is a mock of this API in Node, with the same shapes",
+   "about": [
+    "concept:provenance",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "One module over the library, newsroom-vault.js, is 197 lines; door.js 139; the pane 359; and sync.js is 125 lines of pure functions that touch no storage or network, so two devices' states can be tested in Node.",
+   "section": "layers",
+   "quote": "sync.js, 125 lines of pure functions that decide what goes into a device's file and what the consolidated view is",
+   "about": [
+    "concept:vault-design",
+    "concept:provenance"
+   ],
+   "value": {
+    "n": 125,
+    "unit": "lines of pure sync functions",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The door, at the address derived from the passkey's bytes, holds the master's key and where it came from; it is retired by deleting its files, never by destroying its address, because a destroyed vault id can never be used again.",
+   "section": "chain",
+   "quote": "A door is retired by deleting its files, never by destroying its address, because a destroyed vault id can never be used again and a door's is derived.",
+   "about": [
+    "concept:door-per-path",
+    "concept:vault-design",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The master, at a random id, holds the reader vault's key and every door with its own key, so any open door can rewrite or delete the others; the access key lives here, pasted once and brought to each device by the unlock.",
+   "section": "chain",
+   "quote": "The access key lives here, pasted once on the first device and brought to every other by the unlock.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:identity-and-secrets",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The reader vault holds an account file written once, one file per device rewritten whole on each sync, and a notes folder where the lab wrote its first note.",
+   "section": "chain",
+   "quote": "one per device, rewritten whole on each sync",
+   "about": [
+    "concept:records-never-totals",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Creating the account on a first device is six key derivations and three first commits; unlocking on any other device is one gesture, then the door, the master and the reader vault opened in sequence.",
+   "section": "chain",
+   "quote": "Creating the account on a first device is six key derivations and three first commits",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:webauthn"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "key derivations to create the account",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The vault holds records because a total copied from a device would be wrong the moment a second device existed; reads, spend, declined, credit and balance are recomputed from the records every time they are shown.",
+   "section": "sync",
+   "quote": "A total copied from a device would be wrong the moment a second device existed.",
+   "about": [
+    "concept:records-never-totals",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The consolidated view is computed, not stored: brought-in records are tagged with the device they came from and the next sync writes only the browser's own records back, so a record has exactly one author for ever.",
+   "section": "sync",
+   "quote": "so a record has exactly one author for ever",
+   "about": [
+    "concept:records-never-totals",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Top-ups are counted once by payment reference so a return page opened on a second device cannot credit it twice, and the keys of an unlocked session are kept in memory and the tab's session storage for the life of the tab.",
+   "section": "sync",
+   "quote": "Top-ups are counted once by payment reference",
+   "about": [
+    "concept:micropayments",
+    "concept:records-never-totals",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "The newsroom's CI runs eight test files: the account against the mock with twenty-seven checks, the lab's card 6 with thirty-three, the sync logic with nineteen, and the pane in Chromium with a virtual authenticator with twenty-eight.",
+   "section": "tests",
+   "quote": "The newsroom's CI now runs eight test files",
+   "about": [
+    "concept:provenance",
+    "entity:chrome",
+    "entity:webauthn"
+   ],
+   "value": {
+    "n": 8,
+    "unit": "test files in the newsroom's CI",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The round trip through the sgit command line runs in CI, and the first deploy of v0.10.0 failed exactly there over a temporary home directory; v0.10.1 is the fix and the versions page says so.",
+   "section": "tests",
+   "quote": "The first deploy of v0.10.0 failed exactly here",
+   "about": [
+    "concept:shipping",
+    "entity:sgit",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The live check, run by hand on 12 October on an iPad in Safari with an iCloud Keychain passkey against the real server, made the account as three vaults, wrote and read back a note, and after a refresh unlocked all three again.",
+   "section": "tests",
+   "quote": "the account made as three vaults, a note written into the reader vault and read back",
+   "about": [
+    "entity:apple",
+    "entity:webauthn",
+    "concept:vault",
+    "entity:sg-vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The three vault ids are in the newsroom's versions row, as the brief asked; no key is.",
+   "section": "tests",
+   "quote": "The three vault ids are in the newsroom's versions row, as the brief asked; no key is.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:publishing-method",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "From the design on the morning of 11 October to the vault pane at 02:22 on 12 October, none of the steps was skipped and none took more than two hours.",
+   "section": "timeline",
+   "quote": "None of those steps was skipped, and none took more than two hours.",
+   "about": [
+    "concept:shipping",
+    "concept:publishing-method"
+   ],
+   "value": {
+    "n": 2,
+    "unit": "hours, the longest any step took",
+    "as_of": "2026-10-12"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Two sites, two agents and the author reading on an iPad: the design went to the lab, the lab corrected the design, the corrected design was built, and the build was checked on a real device before the pane was written over it.",
+   "section": "timeline",
+   "quote": "The design went to the lab, the lab corrected the design, the corrected design was built, and the build was checked on a real device before the pane that readers see was written over it.",
+   "about": [
+    "concept:multi-agent",
+    "concept:agents-write-too",
+    "concept:shipping",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "hypothesis",
+   "text": "The more you have the faster you go, and this night is the cleanest case: the meter existed, so did the lab, the library and the mock, so no vault writer had to be written and two devices could be tested without a server.",
+   "section": "why",
+   "quote": "the more you have, the faster you go, and this night is the cleanest case of it I have",
+   "about": [
+    "concept:shipping",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "hypothesis",
+   "text": "The next brief could not have been written a day earlier because its constraints did not exist: the properties of what runs close off a dozen things and open the two or three worth thinking about next.",
+   "section": "why",
+   "quote": "The constraints limit the scope of what I write, and that is what lets me write it.",
+   "about": [
+    "concept:constraints-let-you-think",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The feedback loop is not only use it, miss it, build it; it is also build it, learn its properties, and only then think the next thought.",
+   "section": "why",
+   "quote": "It is also: build it, learn its properties, and only then think the next thought.",
+   "about": [
+    "concept:constraints-let-you-think",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "It is a beta on the development server: the vaults are on dev.send.sgraph.ai, the access key is handed out by the author, and the path that works everywhere is the platform one, a phone over QR getting a door of its own.",
+   "section": "limits",
+   "quote": "The vaults are on dev.send.sgraph.ai. The access key is handed out by me for now.",
+   "about": [
+    "concept:vault",
+    "concept:door-per-path",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The live check is one device and one day, an iPad with one iCloud Keychain passkey on one afternoon; the experiments the note lists have not run.",
+   "section": "limits",
+   "quote": "An iPad, one iCloud Keychain passkey, one afternoon.",
+   "about": [
+    "entity:apple",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Not built, and said so on the page: pruning local storage, retiring a device, rotating the master's key, automatic sync, the key pairs for signing, the persona vault and the notes lane to the newsroom.",
+   "section": "limits",
+   "quote": "pruning local storage once the vault holds it, retiring a device, rotating the master's key, automatic sync, the key pairs for signing, the persona vault, the notes lane to the newsroom",
+   "about": [
+    "concept:vault-design",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The session keys live for the tab, kept in memory and session storage so pages do not ask for the passkey each time, a choice the note marks to revisit.",
+   "section": "limits",
+   "quote": "Kept in memory and session storage so that pages do not ask for the passkey each time.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on the morning of 12 October 2026, with the facts from the newsroom repository's commits v0.8.3 to v0.11.0 of 11 and 12 October, the activity vault note, and the source files at v0.11.0.",
+   "section": "sources",
+   "quote": "The facts are from the newsroom repository's commits v0.8.3 to v0.11.0 of 11 and 12 October 2026",
+   "about": [
+    "concept:voice-memo",
+    "concept:publishing-method",
+    "concept:the-record",
+    "entity:newsroom-sgit-ai"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c18",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c24",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c11"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site where the reader's vault runs at v0.11.0"
+  },
+  {
+   "id": "sgit",
+   "role": "the three real vaults, the vault server dev.send.sgraph.ai and the CLI round trip"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site that published the design and revised it to match what ran"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the meter whose local storage stays primary and whose records the vault carries"
+  },
+  {
+   "id": "sg-vault",
+   "role": "dev.vault.sgraph.ai, whose twelve-file UI library the newsroom vendored and which showed the live note"
+  },
+  {
+   "id": "webauthn",
+   "role": "the passkey whose bytes derive the door"
+  },
+  {
+   "id": "sha-256",
+   "role": "the hash recorded for each vendored file"
+  },
+  {
+   "id": "chrome",
+   "role": "Chromium, where the pane is tested with a virtual authenticator"
+  },
+  {
+   "id": "apple",
+   "role": "the iPad, Safari and iCloud Keychain of the live check"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author, reading on an iPad between two agents"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "door-per-path",
+   "defined_here": true
+  },
+  {
+   "id": "records-never-totals",
+   "defined_here": true
+  },
+  {
+   "id": "constraints-let-you-think",
+   "defined_here": true
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-11",
+   "what": "The design published in the morning; two reviews; the passkey lab at 22:56 UTC"
+  },
+  {
+   "date": "2026-10-12",
+   "what": "A door per path at 00:15; real vaults at 01:33; the live check on an iPad; the vault pane live at 02:22 UTC; the memo and the article in the morning"
+  },
+  {
+   "date": "2026-10-10",
+   "what": "The meter begins writing local storage in real time"
+  }
+ ]
+}

@@ -1,0 +1,592 @@
+{
+ "slug": "what-if-an-agent-loses-its-workspace",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "question",
+   "text": "If an agent loses its workspace, does its memory come back, and do its written permissions still hold?",
+   "section": "top",
+   "quote": "if an agent loses its workspace, does its memory come back, and do its written permissions still hold?",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "Mondweep Chakravorty's video, published on YouTube on 17 October 2026, is 104.7 seconds long and replays a real terminal run in twelve steps.",
+   "section": "question",
+   "quote": "It is 104.7 seconds long.",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:youtube",
+    "entity:ruflo",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 104.7,
+    "unit": "seconds",
+    "as_of": "2026-10-17"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Mondweep Chakravorty is a member of the Ruflo-Federation and co-founder of the Agentics Foundation's London chapter.",
+   "section": "question",
+   "quote": "a member of the Ruflo-Federation and co-founder of the Agentics Foundation's London chapter",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:agentics-foundation",
+    "entity:london"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The code is public under the MIT licence: a local MCP server of four tools, a strict compiler from an Agent Behaviour Policy to Ruflo rules, 16 tests and the evidence from each run.",
+   "section": "question",
+   "quote": "a local MCP server of four tools, a strict compiler that turns an Agent Behaviour Policy into Ruflo rules, 16 tests, and the evidence from each run",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "entity:mcp",
+    "concept:open-source",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 16,
+    "unit": "tests",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The analysis was made frame by frame in a separate session with Claude and checked against the code; every number comes from the video's timeline, a frame or the repository.",
+   "section": "question",
+   "quote": "Every number below comes from the video's timeline, a frame or the repository.",
+   "about": [
+    "entity:claude",
+    "concept:provenance",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Step 1 pins the runtime: ruflo v3.56.10, the SGit source commit and the adapter version 0.2, which is what makes the run reproducible.",
+   "section": "steps",
+   "quote": "Pinning the versions is what makes a run like this reproducible.",
+   "about": [
+    "entity:ruflo",
+    "entity:sgit",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Step 2 defines four ABP rows scoped to the project: write, read and read history yes, delete memory approval; unsupported or ambiguous policies fail closed.",
+   "section": "steps",
+   "quote": "No raw rule overrides. Unsupported or ambiguous policies fail closed.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:abp-sgit-ai",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The rows are compiled into Ruflo rules when the server starts, and every tool call is checked by a pinned copy of Ruflo's own policy evaluator in enforce mode.",
+   "section": "steps",
+   "quote": "every tool call is checked by a pinned copy of Ruflo's own policy evaluator, in enforce mode",
+   "about": [
+    "entity:ruflo",
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Step 3 stores two synthetic facts about Kestrel through Ruflo's own command line, with embeddings switched off.",
+   "section": "steps",
+   "quote": "Ruflo's own command line stores two synthetic facts, with embeddings switched off",
+   "about": [
+    "entity:ruflo",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Step 4 asks the adapter to checkpoint a namespace called forbidden; it is refused with a PermissionError and nothing is written.",
+   "section": "steps",
+   "quote": "the run asks the adapter to checkpoint a namespace called forbidden",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Step 5 saves the checkpoint as a consistent SQLite backup with three SHA-256 fingerprints, of the database, the ABP and the compiled policy; only encrypted SGit bare objects enter the store.",
+   "section": "steps",
+   "quote": "Only encrypted SGit bare objects enter the checkpoint store. Private keys remain in a separate private directory.",
+   "about": [
+    "entity:sqlite",
+    "entity:sha-256",
+    "entity:sgit",
+    "concept:encryption-and-keys",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Binding the data to the rules in force, by fingerprinting the ABP and compiled policy alongside the database, is the detail the author likes most.",
+   "section": "steps",
+   "quote": "Binding the data to the rules in force is the detail I like most.",
+   "about": [
+    "concept:provenance",
+    "concept:behaviour-policy",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Step 6 tries to close the run, which would delete memory; that row says approval and none is supplied, so it stops with a PermissionError and the checkpoint is retained.",
+   "section": "steps",
+   "quote": "That row says approval, and none is supplied, so it stops with a PermissionError",
+   "about": [
+    "concept:human-in-the-loop",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Step 7 deletes the disposable test project; the loss is real, not simulated.",
+   "section": "steps",
+   "quote": "The loss is real, not simulated.",
+   "about": [
+    "concept:agent-memory",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Step 8 restores the checkpoint in a brand-new MCP server process into a workspace called fresh-runner; the database's SHA-256 is the same as in step 5.",
+   "section": "steps",
+   "quote": "a brand-new MCP server process restores the checkpoint into a workspace called fresh-runner",
+   "about": [
+    "entity:sha-256",
+    "entity:mcp",
+    "concept:agent-memory",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Step 9 has Ruflo itself, not the adapter, read the restored memory, and both facts come back word for word, which makes the proof stronger than a demo that checks its own output.",
+   "section": "steps",
+   "quote": "PASS: both values match the CLI-written facts exactly.",
+   "about": [
+    "entity:ruflo",
+    "concept:agent-memory",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Step 10 looks up a key that was never stored and it stays missing: the restore did not invent anything, and the check can fail.",
+   "section": "steps",
+   "quote": "The restore did not invent anything, and the check can fail.",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Step 11 alters one encrypted checkpoint object; the restore fails with a ValueError because the adapter compares the ciphertext digest with the one recorded and refuses before decrypting.",
+   "section": "steps",
+   "quote": "the adapter compares the digest of the stored ciphertext with the one it recorded when it saved the checkpoint, and refuses before anything is decrypted",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sha-256",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "Step 12's summary: exact recall PASS 2 of 2, ABP denial PASS, deletion needing approval BLOCKED with checkpoint retained, fresh-process restore PASS, tampered restore BLOCKED, semantic recall NOT VALIDATED.",
+   "section": "steps",
+   "quote": "exact recall PASS 2/2; ABP denial PASS; deletion that needs approval BLOCKED, checkpoint retained; fresh-process restore PASS; tampered restore BLOCKED",
+   "about": [
+    "concept:agent-memory",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 2,
+    "of": 2,
+    "unit": "facts recalled exactly",
+    "as_of": "2026-10-17"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The repository's acceptance runner has since validated keyword recall against Ruflo's real memory store; recall by meaning is partial because no vectors were stored even with embeddings on.",
+   "section": "proves",
+   "quote": "Recall by meaning is reported as partial, because no vectors were stored even with embeddings on",
+   "about": [
+    "entity:sgit-ruv-memory",
+    "concept:agent-memory"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "What makes it more than a demo is the loop: store, save, delete for real, restore in a new process, read back with the original tool, test the refusals, include a negative control, and state the scope on screen.",
+   "section": "proves",
+   "quote": "Most \"memory that persists\" demos skip the deletion or reuse the same process.",
+   "about": [
+    "concept:agent-memory",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "This is the first time someone outside our own sessions has run an encrypted vault as an agent's memory and a behaviour policy beside the prompt together inside someone else's agent stack, on camera.",
+   "section": "why",
+   "quote": "This is the first time someone outside our own sessions has taken the two ideas we keep arguing for",
+   "about": [
+    "concept:vault",
+    "concept:behaviour-policy",
+    "entity:mondweep-chakravorty",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "question",
+   "text": "Two questions this piece does not answer: when is the vault actually used, and is every path to the memory guarded, since Ruflo's own command line reaches the memory file without the policy.",
+   "section": "next",
+   "quote": "The run raises two questions this piece does not answer.",
+   "about": [
+    "concept:vault",
+    "concept:hope-or-enforcement",
+    "entity:ruflo"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The account is from the screen and the code: the audio was not transcribed, and the code was read, not run, by this site.",
+   "section": "limits",
+   "quote": "The audio was not transcribed; the code was read, not run, by this site.",
+   "about": [
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "It is a proof of concept, not a product; reliability and real-world value are still to validate.",
+   "section": "limits",
+   "quote": "A proof of concept, not a product.",
+   "about": [
+    "concept:agent-memory",
+    "entity:sgit-ruv-memory"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Recall by meaning was not tested; exact recall was.",
+   "section": "limits",
+   "quote": "Recall by meaning was not tested. Exact recall was.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The facts are synthetic; Kestrel is a test name, not a real fleet.",
+   "section": "limits",
+   "quote": "Kestrel is a test name, not a real fleet.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The analysis is an AI's, made by Claude for the author and checked against the frames by the site's agent.",
+   "section": "limits",
+   "quote": "It was made by Claude for me and checked against the frames by this site's agent.",
+   "about": [
+    "entity:claude",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The frames are Mondweep's and published with his agreement; the code was read at its commit of 16 October 2026; Ruflo is rUv's open-source agent orchestration under MIT.",
+   "section": "sources",
+   "quote": "published here with his agreement; the frames are his and are not covered by this site's licence",
+   "about": [
+    "entity:mondweep-chakravorty",
+    "entity:ruv",
+    "entity:ruflo",
+    "concept:open-source"
+   ],
+   "refs": [
+    "r01",
+    "r02",
+    "r03"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c16",
+   "verb": "answers",
+   "to": "c01"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c21"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c20",
+   "verb": "supersedes",
+   "to": "c26"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c09"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c05"
+  }
+ ],
+ "entities": [
+  {
+   "id": "mondweep-chakravorty",
+   "role": "made the video and the code"
+  },
+  {
+   "id": "ruflo",
+   "role": "rUv's agent orchestration whose memory is checkpointed and whose evaluator enforces the ABP"
+  },
+  {
+   "id": "ruv",
+   "role": "the author of Ruflo"
+  },
+  {
+   "id": "sgit",
+   "role": "the encrypted bare objects the checkpoint is made of"
+  },
+  {
+   "id": "sgit-ruv-memory",
+   "role": "the public MIT code, with 16 tests and recorded evidence"
+  },
+  {
+   "id": "agentics-foundation",
+   "role": "Mondweep co-founded its London chapter"
+  },
+  {
+   "id": "london",
+   "role": "the Agentics Foundation chapter"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "what an Agent Behaviour Policy is"
+  },
+  {
+   "id": "mcp",
+   "role": "the adapter is a local MCP server of four tools"
+  },
+  {
+   "id": "sqlite",
+   "role": "the memory database, backed up consistently for the checkpoint"
+  },
+  {
+   "id": "sha-256",
+   "role": "the fingerprints of database, ABP and compiled policy"
+  },
+  {
+   "id": "claude",
+   "role": "made the frame-by-frame analysis in a separate session"
+  },
+  {
+   "id": "youtube",
+   "role": "where the video was published on 17 October 2026"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the author of the piece"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://youtu.be/rkh6BJiaIrQ",
+   "title": "SGit x Ruflo | Working Proof of Concept",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-17",
+   "kind": "video"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/mondweep/sgit-ruv-memory",
+   "title": "mondweep/sgit-ruv-memory",
+   "by": "Mondweep Chakravorty",
+   "date": "2026-10-16",
+   "kind": "repository"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/ruvnet/ruflo",
+   "title": "ruvnet/ruflo",
+   "by": "rUv",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-17",
+   "what": "The video published on YouTube; the analysis by Claude; the article"
+  },
+  {
+   "date": "2026-10-16",
+   "what": "The commit of sgit-ruv-memory the code was read at"
+  }
+ ]
+}

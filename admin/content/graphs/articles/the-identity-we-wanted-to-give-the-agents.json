@@ -1,0 +1,755 @@
+{
+ "slug": "the-identity-we-wanted-to-give-the-agents",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "The plan of 4 October was a real identity for every agent and every user: a Google Workspace account of its own, provisioned by RiskMandate, with a mailbox, a calendar, a drive and a login.",
+   "section": "top",
+   "quote": "a Google Workspace account of its own, provisioned by us, with a mailbox, a calendar, a drive and a login",
+   "about": [
+    "entity:google-workspace",
+    "entity:riskmandate",
+    "concept:identity-and-secrets",
+    "concept:agentic-email"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "The owner's agents each have a Workspace mailbox, a Claude seat and a GitHub account, at about seven pounds a month per agent.",
+   "section": "top",
+   "quote": "It also costs about seven pounds a month per agent, which is nothing",
+   "about": [
+    "entity:google-workspace",
+    "entity:claude",
+    "entity:github",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "GBP a month per agent"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The account is the blast radius, and an agent whose account is empty on day one can leak nothing on day one.",
+   "section": "top",
+   "quote": "The account is the blast radius, and an agent whose account is empty on day one can leak nothing on day one.",
+   "about": [
+    "concept:blast-radius",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Standard Workspace storage has no admin-proof zone: a super administrator can reach any user's Drive, and client-side encryption is only on the top editions, so encryption had to happen in sgit before Google.",
+   "section": "top",
+   "quote": "standard Workspace storage has no admin-proof zone",
+   "about": [
+    "entity:google-workspace",
+    "entity:sgit",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The Google Cloud terms, last modified 2 September 2026, say the customer will not sell, resell, sublicense, transfer or distribute any of the Services.",
+   "section": "top",
+   "quote": "sell, resell, sublicense, transfer, or distribute any or all of the Services.",
+   "about": [
+    "entity:google",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The acceptable use policy forbids End User Accounts assigned to business functions rather than to human beings for the purpose of sharing files, which ended the agent as a seat.",
+   "section": "top",
+   "quote": "to create End User Accounts assigned to business functions rather than to human beings for the purpose of sharing files within or outside of the domain",
+   "about": [
+    "entity:google",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The policy also forbids reselling End User Accounts as added into a commercial product offered to third parties, which ended the shared tier as designed.",
+   "section": "top",
+   "quote": "to resell End User Accounts, or parts thereof, as added into a commercial product offered to third parties.",
+   "about": [
+    "entity:google",
+    "entity:riskmandate",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "decision",
+   "text": "The design pack now says a Workspace tenant may only hold one organisation's people unless Google agrees otherwise in writing, and data sensitivity does not change this.",
+   "section": "top",
+   "quote": "A Workspace tenant may only hold one organisation's people, unless Google agrees otherwise in writing. Data sensitivity does not change this.",
+   "about": [
+    "entity:google-workspace",
+    "entity:riskmandate"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "decision",
+   "text": "One correction to the pack: the substitute or similar service clause it cites as section 2.6 is in the legacy free-edition agreement, not the current Cloud terms, so that worry is retired.",
+   "section": "top",
+   "quote": "It is not in the current Cloud terms. The worry can be retired; the resale and function-account findings cannot.",
+   "about": [
+    "concept:corrections-propagate",
+    "entity:google"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "decision",
+   "text": "Of five options, the second won the shared tier and the MVP: one cloud project per deployment, Google's Identity Platform for login and a bucket of ciphertext, with no mailbox.",
+   "section": "top",
+   "quote": "The second row won the shared tier and the MVP.",
+   "about": [
+    "entity:google-identity-platform",
+    "entity:riskmandate",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Google's Identity Platform costs nothing to fifty thousand monthly active users and a fraction of a cent after; Amazon's Cognito is free to ten thousand.",
+   "section": "top",
+   "quote": "costs nothing to fifty thousand monthly active users and a fraction of a cent after",
+   "about": [
+    "entity:google-identity-platform",
+    "entity:amazon-cognito",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 50000,
+    "unit": "monthly active users free on Identity Platform",
+    "as_of": "2026-10-05"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Every identity provider looked at has an administrator who can become any user: Cognito sets passwords, Firebase mints custom tokens, a key service decrypts for any principal with permission.",
+   "section": "top",
+   "quote": "Every identity provider we looked at has an administrator who can become any user.",
+   "about": [
+    "concept:no-secret-in-the-login",
+    "entity:amazon-cognito",
+    "entity:firebase"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Login decides which paths you may touch and the passkey decides whether the bytes mean anything; an administrator can fake the first and never the second.",
+   "section": "top",
+   "quote": "Login decides which paths you may touch. The passkey decides whether the bytes mean anything. An administrator can fake the first and never the second.",
+   "about": [
+    "concept:no-secret-in-the-login",
+    "entity:webauthn",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "limit",
+   "text": "The one place the rule does not hold is the code: whoever controls the repository or the DNS controls the app and every user who loads it.",
+   "section": "top",
+   "quote": "Whoever controls the repository or the DNS controls the app and every user who loads it.",
+   "about": [
+    "concept:no-secret-in-the-login",
+    "concept:supply-chains"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "The passkey is scoped to exactly one subdomain and never the apex, because a passkey scoped to the apex could be asserted by any of the twenty-seven sibling sites.",
+   "section": "top",
+   "quote": "a passkey scoped to the apex could be asserted by any of the twenty-seven sibling sites",
+   "about": [
+    "entity:webauthn",
+    "entity:sgit-ai",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 27,
+    "unit": "sibling sites under the apex"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "sgit refuses to be a secrets manager; the partnership call of 24 September asked a partner to provide one, and no partner stepped forward in eleven days.",
+   "section": "top",
+   "quote": "No partner stepped forward in eleven days, which is not a complaint",
+   "about": [
+    "entity:sgit",
+    "entity:secrets-sgit-ai",
+    "concept:identity-and-secrets"
+   ],
+   "value": {
+    "n": 11,
+    "unit": "days without a partner stepping forward",
+    "as_of": "2026-10-05"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "The keyring is one encrypted file per user, in a bucket only that user's login can reach, holding their key pair and every small secret under a key derived from the passkey's PRF output.",
+   "section": "top",
+   "quote": "The keyring is one encrypted file per user in a bucket only that user's login can reach.",
+   "about": [
+    "concept:the-keyring",
+    "entity:webauthn",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "A recovery code of 128 bits, shown once, is the second way in; lose every passkey and the code and the data is gone, and the terms say so.",
+   "section": "top",
+   "quote": "A recovery code of 128 bits, shown once, is the second way in.",
+   "about": [
+    "concept:the-keyring",
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 128,
+    "unit": "bits in the recovery code"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The keyring uses the algorithms sgit pki already uses, RSA-OAEP at 4096 bits and ECDSA P-256, so an envelope sealed in the browser is one the command line can open.",
+   "section": "top",
+   "quote": "RSA-OAEP at 4096 bits and ECDSA P-256, so that an envelope sealed in the browser is one the command line can open",
+   "about": [
+    "concept:the-keyring",
+    "entity:sgit",
+    "entity:pki-sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The WebAuthn Level 3 specification that defines the PRF extension became a W3C Recommendation on 25 August 2026; Chrome, Edge, Safari 18 and Firefox ship it.",
+   "section": "top",
+   "quote": "became a W3C Recommendation on 25 August 2026",
+   "about": [
+    "entity:webauthn",
+    "entity:w3c",
+    "entity:chrome",
+    "entity:firefox"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "Bitwarden shipped vault unlock by passkey on the PRF extension in November 2025, and Dashlane with Yubico a month earlier, both with caveats about platforms and authenticators.",
+   "section": "top",
+   "quote": "Bitwarden shipped vault unlock by passkey on the same extension in November 2025, and Dashlane with Yubico a month earlier",
+   "about": [
+    "entity:bitwarden",
+    "entity:dashlane",
+    "entity:webauthn"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "decision",
+   "text": "The first thing built is a password manager, because it contains every risky piece of the design in one small, testable product.",
+   "section": "top",
+   "quote": "The first thing built is a password manager, not because the world needs another one but because it contains every risky piece of the design in one small, testable product",
+   "about": [
+    "concept:the-keyring",
+    "entity:secrets-sgit-ai",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "The acceptance test is written into the brief: hand an owner of the project a user id, ask them to produce one plaintext field, and publish the write-up of the attempt.",
+   "section": "top",
+   "quote": "hand an owner of the project a user id and ask them to produce one plaintext field, then publish the write-up of the attempt",
+   "about": [
+    "concept:the-keyring",
+    "concept:hope-or-enforcement",
+    "concept:no-secret-in-the-login"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "An agent has a service identity, not a seat; it gets a lane for signed mail where the site is the identity, and a read key released from a person's keyring, scoped and time-limited.",
+   "section": "top",
+   "quote": "An agent has a service identity, not a seat.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:agentic-email",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "Microsoft's Entra Agent ID, Okta's agent product, Google Cloud's Agent Identity and Anthropic's managed agents are all workload identity: they prove which agent called, not who holds the user's key.",
+   "section": "top",
+   "quote": "All of these are workload identity: good for proving which agent called, useless for the question this article is about, which is who holds the user's key.",
+   "about": [
+    "entity:microsoft",
+    "entity:okta",
+    "entity:google",
+    "entity:anthropic",
+    "entity:spiffe",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Every project needs to log people in, keep sensitive data nobody else can read, and give agents an identity; each has good products and none is all three.",
+   "section": "top",
+   "quote": "Each of those has good products. None of them is all three, and the research found nothing on the shelf that is.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The nearest things to a login product with per-user zero-knowledge storage are two small open-source projects, Userbase and Etebase, both password-derived and neither doing agents.",
+   "section": "top",
+   "quote": "both password-derived rather than passkey-based, neither of which does agents",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "fact",
+   "text": "GDPR Article 34 lifts the duty to tell individuals about a breach where data was rendered unintelligible to anyone not authorised, such as by encryption, if the key's confidentiality is intact.",
+   "section": "top",
+   "quote": "unintelligible to any person who is not authorised to access it, such as encryption",
+   "about": [
+    "entity:gdpr",
+    "entity:edpb",
+    "concept:regulation",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "question",
+   "text": "Unless the owner is missing something obvious, there should be a much simpler way to do this than there is, which is why the design pack is published to be corrected.",
+   "section": "top",
+   "quote": "unless I am missing something obvious, which is a real possibility and the reason this is published rather than kept",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "None of the MVP exists yet: the repository holds a README and a licence, and the nine releases in the build order will each appear in the site's reality file before being described in the present tense.",
+   "section": "top",
+   "quote": "The repository holds a README and a licence.",
+   "about": [
+    "entity:secrets-sgit-ai",
+    "concept:shipping",
+    "concept:the-keyring"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "This is a startup's account of a week, not a survey, and the question at the end is a real one; the terms figure is marked not legal advice.",
+   "section": "top",
+   "quote": "It is a startup's account of a week, not a survey, and the question at the end is a real one.",
+   "about": [
+    "concept:startups",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The distributors' account of Google's direct-partner requirements, a hundred seats, a business plan and a credit check, could not be verified against a Google page.",
+   "section": "top",
+   "quote": "that is their account, not Google's, and I have not been able to verify it against a Google page",
+   "about": [
+    "entity:google"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "The one-page infographic was generated with ChatGPT from the published text; its closing line is the other model's condensation of the ending, not a sentence from the article.",
+   "section": "top",
+   "quote": "the closing line in the picture's last panel is credited to the article but is the other model's condensation of its ending, not a sentence from it",
+   "about": [
+    "entity:chatgpt",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "data-point",
+   "text": "Five design documents and a starter prompt were written on 4 and 5 October 2026 and published as the identity and secrets design pack.",
+   "section": "top",
+   "quote": "Five design documents and a starter prompt written on 4 and 5 October 2026",
+   "about": [
+    "entity:riskmandate",
+    "entity:sgit",
+    "concept:the-brief"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "design documents",
+    "as_of": "2026-10-05"
+   },
+   "refs": [
+    "r01"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "limits",
+   "to": "c01"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c09",
+   "verb": "supersedes",
+   "to": "c08"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c22"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c24"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c26",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c22"
+  }
+ ],
+ "entities": [
+  {
+   "id": "google-workspace",
+   "role": "the account the plan wanted for every agent and user; the terms that stopped it"
+  },
+  {
+   "id": "google",
+   "role": "whose Cloud terms and acceptable use policy are quoted, and whose Agent Identity is workload identity"
+  },
+  {
+   "id": "google-identity-platform",
+   "role": "the login product that won the shared tier, free to fifty thousand monthly users"
+  },
+  {
+   "id": "amazon-cognito",
+   "role": "the AWS alternative; its admin API can set any user's password"
+  },
+  {
+   "id": "firebase",
+   "role": "lets a holder of admin credentials mint a token for any user"
+  },
+  {
+   "id": "riskmandate",
+   "role": "the company whose customers, people and agents the identity was for; author of the design pack"
+  },
+  {
+   "id": "sgit",
+   "role": "encrypts in the browser before Google; sgit pki supplies the keyring's algorithms; refuses to be a secrets manager"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the estate whose twenty-seven sibling sites make an apex-scoped passkey unsafe"
+  },
+  {
+   "id": "secrets-sgit-ai",
+   "role": "the site whose design pack, keyring and password manager MVP this is"
+  },
+  {
+   "id": "pki-sgit-ai",
+   "role": "the key pair algorithms the keyring reuses"
+  },
+  {
+   "id": "webauthn",
+   "role": "passkeys with the PRF extension, the authority to decrypt"
+  },
+  {
+   "id": "w3c",
+   "role": "made WebAuthn Level 3 a Recommendation on 25 August 2026"
+  },
+  {
+   "id": "chrome",
+   "role": "ships the PRF extension"
+  },
+  {
+   "id": "firefox",
+   "role": "has the PRF extension on desktop since version 139"
+  },
+  {
+   "id": "bitwarden",
+   "role": "shipped vault unlock by passkey on PRF in November 2025"
+  },
+  {
+   "id": "dashlane",
+   "role": "shipped passkey unlock with Yubico a month before Bitwarden"
+  },
+  {
+   "id": "microsoft",
+   "role": "Entra Agent ID gives agents identity accounts"
+  },
+  {
+   "id": "okta",
+   "role": "whose product for AI agents reached general availability in April 2026"
+  },
+  {
+   "id": "anthropic",
+   "role": "whose managed agents hold credentials the agent never sees"
+  },
+  {
+   "id": "spiffe",
+   "role": "the standard Google Cloud's Agent Identity is based on"
+  },
+  {
+   "id": "gdpr",
+   "role": "Articles 32 and 34, encryption as a measure and a lifted breach duty"
+  },
+  {
+   "id": "edpb",
+   "role": "whose guidance conditions unintelligibility on the key's confidentiality"
+  },
+  {
+   "id": "claude",
+   "role": "each agent has a Claude seat of its own"
+  },
+  {
+   "id": "github",
+   "role": "each agent has a GitHub account on the same identity"
+  },
+  {
+   "id": "chatgpt",
+   "role": "generated the one-page infographic from the published text"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "identity-and-secrets",
+   "defined_here": true
+  },
+  {
+   "id": "agentic-email",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "supply-chains",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "no-secret-in-the-login",
+   "defined_here": true
+  },
+  {
+   "id": "the-keyring",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://sgit.ai/docs/briefs/secrets-sgit-ai-design-pack.md",
+   "title": "The identity and secrets design pack",
+   "by": "Dinis Cruz with the RiskMandate and sgit teams",
+   "date": "2026-10-05",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-04",
+   "what": "The plan written up: a Workspace seat per person and per agent"
+  },
+  {
+   "date": "2026-10-05",
+   "what": "The terms re-read, the correction made, the pack published and the article written"
+  },
+  {
+   "date": "2026-09-02",
+   "what": "Google Cloud Terms of Service last modified"
+  },
+  {
+   "date": "2026-08-25",
+   "what": "WebAuthn Level 3 with the PRF extension becomes a W3C Recommendation"
+  },
+  {
+   "date": "2026-09-24",
+   "what": "The partnership call Who holds the keys? published"
+  }
+ ]
+}

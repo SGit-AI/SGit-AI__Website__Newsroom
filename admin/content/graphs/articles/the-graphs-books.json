@@ -1,0 +1,606 @@
+{
+ "slug": "the-graphs-books",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "graphs.sgit.ai was built in about a month, from 21 August to 20 September 2026, to make one idea concrete: a node means nothing on its own.",
+   "section": "start",
+   "quote": "was built in about a month, from 21 August to 20 September 2026",
+   "about": [
+    "entity:graphs-sgit-ai",
+    "concept:meaning-through-connectivity",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "A first book, Meaning Through Connectivity, was written in the first days and frozen on 23 August, its files hashed so the build fails if any changes.",
+   "section": "start",
+   "quote": "frozen on 23 August, its files hashed so the build fails if any changes",
+   "about": [
+    "entity:graphs-sgit-ai",
+    "concept:books-from-articles",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "decision",
+   "text": "On 26 August the owner sent a memo asking for a brief to write three books from the repository, because he had a long flight the next day.",
+   "section": "start",
+   "quote": "can you write a brief to write three books/pdf created from this repo and the work we have done so far",
+   "about": [
+    "concept:voice-memo",
+    "concept:the-brief",
+    "concept:books-from-articles"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Each book got a folder and a README as its first prompt, and three fresh Claude Code sessions wrote them in parallel the same day.",
+   "section": "start",
+   "quote": "three fresh Claude Code sessions wrote them in parallel, the same day",
+   "about": [
+    "entity:claude-code",
+    "concept:multi-agent",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The three books come to about 100,000 words in 47 chapters, three print PDFs, every claim anchored.",
+   "section": "in-short",
+   "quote": "47 chapters, three print PDFs, every claim anchored.",
+   "about": [
+    "concept:books-from-articles",
+    "entity:graphs-sgit-ai"
+   ],
+   "value": {
+    "n": 47,
+    "unit": "chapters across three books",
+    "as_of": "2026-08-26"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The shelf keeps v1.0.0 reserved for a book's actual final release, so a number below it says plainly that the book is still under review.",
+   "section": "books",
+   "quote": "reserved for a book's actual final release, so a number below it says plainly that the book is still under review.",
+   "about": [
+    "concept:publishing-method",
+    "entity:graphs-sgit-ai"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "Fractal Semantic Graphs: Meaning Through Connectivity, v0.3.0, is 15 chapters in five parts, 38,824 words and a 119-page PDF.",
+   "section": "books",
+   "quote": "38,824 words and a 119-page PDF",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:books-from-articles"
+   ],
+   "value": {
+    "n": 38824,
+    "unit": "words",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Creating a Book Using Agentic Workflows, v0.2.0, is twelve chapters, 31,435 words and 92 pages, built from 88 tagged releases over six days.",
+   "section": "books",
+   "quote": "31,435 words and 92 pages, built from 88 tagged releases over six days",
+   "about": [
+    "concept:books-from-articles",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 31435,
+    "unit": "words",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "The Universe volume, v0.1.0 and held, is an atlas of 90 concepts in eight regions, 168 named verbs and 165 verbatim quotes from 35 sources.",
+   "section": "books",
+   "quote": "90 concepts in eight regions, 168 named verbs, 165 verbatim quotes from 35 sources",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:books-from-articles"
+   ],
+   "value": {
+    "n": 90,
+    "unit": "concepts in the atlas",
+    "as_of": "2026-10-16"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The altitude ladder shows the same book at five altitudes, each level a compression of the level below, with every highlighted phrase descending into the units it compressed.",
+   "section": "experiments",
+   "quote": "where each level is a compression of the level below it, and every highlighted phrase descends into the units it compressed",
+   "about": [
+    "concept:altitude-ladder",
+    "concept:fractal-semantic-graphs"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "A compression puts sentences next to each other that the full text keeps forty pages apart, and two of them turned out to contradict each other.",
+   "section": "experiments",
+   "quote": "a compression puts sentences next to each other that the full text keeps forty pages apart",
+   "about": [
+    "concept:altitude-ladder"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "The book as a graph decomposed the making-of book to the word and provably put it back together: every chapter rebuilt byte-identical on the build.",
+   "section": "experiments",
+   "quote": "Every chapter below rebuilt byte-identical on this build.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:books-from-articles"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "In the worked example on Article 26(5) of the AI Act, five of nine questions are unanswered, and the brief calls those five the actual output of the exercise.",
+   "section": "experiments",
+   "quote": "where five of nine questions are unanswered",
+   "about": [
+    "entity:eu-ai-act",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 5,
+    "of": 9,
+    "unit": "questions unanswered"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The team was seven roles with one folder each, and the founder's memos were kept verbatim because the founder's voice is source material and is not edited.",
+   "section": "experiments",
+   "quote": "the founder's voice is source material and is not edited.",
+   "about": [
+    "concept:multi-agent",
+    "concept:voice-memo"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The owner's memo after the flight said the making-of book's alignment was way stronger, by orders of magnitude, than the book about graphs.",
+   "section": "better",
+   "quote": "way stronger, like by orders of magnitude",
+   "about": [
+    "concept:books-from-articles",
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The release notes give the reason: the same agent on the same day wrote book C over 41 narrated release rows, 38 verbatim briefs and a repository, and book B over an argument.",
+   "section": "better",
+   "quote": "book C was written over 41 narrated release rows, 38 verbatim briefs and a repository it could interrogate, while book B was written over an argument",
+   "about": [
+    "concept:the-record",
+    "concept:books-from-articles"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "Because every article here starts from a memo, is checked against sources and lands in a repository the next can read, books can be made from them.",
+   "section": "better",
+   "quote": "That is why I think books can be made from them.",
+   "about": [
+    "concept:books-from-articles",
+    "concept:the-record",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "decision",
+   "text": "After the flight the owner asked for review as change control: plan, map, define, review, approve, implement, then approve the implementation.",
+   "section": "stopped",
+   "quote": "we start by planning, mapping, defining, reviewing, approving, and then implementing, and then approving the implementation",
+   "about": [
+    "concept:momentum-over-review",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "The agents built a board of eight workstreams, 40 tasks and seven stages per change.",
+   "section": "stopped",
+   "quote": "a board of eight workstreams, 40 tasks and seven stages per change",
+   "about": [
+    "concept:momentum-over-review"
+   ],
+   "value": {
+    "n": 40,
+    "unit": "tasks on the board",
+    "as_of": "2026-09-20"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Both change-control workstreams are blocked at the same stage on the same person, and the approved stage has two items waiting and nothing has ever passed through it.",
+   "section": "stopped",
+   "quote": "has two items waiting and nothing has ever passed through it",
+   "about": [
+    "concept:momentum-over-review",
+    "concept:human-in-the-loop"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The last release of graphs.sgit.ai was on 20 September; the owner's energy had moved to the next place of highest leverage.",
+   "section": "stopped",
+   "quote": "The last release was on 20 September.",
+   "about": [
+    "entity:graphs-sgit-ai",
+    "concept:momentum-over-review"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The owner's Leanpub books never finished for the same reason: at 60 to 70% of the content, the overhead of making changes stopped them.",
+   "section": "stopped",
+   "quote": "I got to that sort of 60 70% of the content, and then the overhead of making changes.",
+   "about": [
+    "entity:leanpub",
+    "concept:momentum-over-review"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The workflow was well designed for quality and badly designed for momentum: every step was big, and the biggest one waited on the owner.",
+   "section": "stopped",
+   "quote": "The workflow was well designed for quality and badly designed for momentum",
+   "about": [
+    "concept:momentum-over-review",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Much moved into this newsroom: seven roles, where we lose, readable versions, a graph per document, llms.txt and a markdown twin, and memos as source material.",
+   "section": "lives-on",
+   "quote": "A lot of it moved into this newsroom, which is why I do not think of the books as wasted",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:the-newsroom",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The state map went the other way: graphs.sgit.ai borrowed it from this newsroom's brief.",
+   "section": "lives-on",
+   "quote": "graphs.sgit.ai borrowed it from this newsroom's brief",
+   "about": [
+    "entity:graphs-sgit-ai",
+    "entity:newsroom-sgit-ai",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The books are not finished: two are under review, one is held, one is frozen.",
+   "section": "limits",
+   "quote": "The books are not finished.",
+   "about": [
+    "concept:books-from-articles"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The flight notes are not on the site, which records a bunch of notes but not each one.",
+   "section": "limits",
+   "quote": "The flight notes are not on the site.",
+   "about": [
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The article does not claim the workflow was wrong; it was right for quality and needed smaller steps.",
+   "section": "limits",
+   "quote": "It was right for quality; it needed smaller steps.",
+   "about": [
+    "concept:momentum-over-review"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The comparison between the two books is one case: two books, one agent, one day.",
+   "section": "limits",
+   "quote": "Two books, one agent, one day.",
+   "about": [
+    "concept:books-from-articles"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c05"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c16",
+   "verb": "answers",
+   "to": "c15"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c23"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c16"
+  }
+ ],
+ "entities": [
+  {
+   "id": "graphs-sgit-ai",
+   "role": "the site where the three books, the altitude ladder, the board and the team live"
+  },
+  {
+   "id": "claude-code",
+   "role": "three fresh sessions wrote the books in parallel"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "Article 26(5), the worked example with five of nine questions unanswered"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "where the roles, versions, graphs and memo practice live on"
+  },
+  {
+   "id": "leanpub",
+   "role": "where the owner's earlier books stalled at 60 to 70%"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "books-from-articles",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "altitude-ladder",
+   "defined_here": false
+  },
+  {
+   "id": "momentum-over-review",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://graphs.sgit.ai/v2/books/index.html",
+   "title": "The shelf: the three books",
+   "by": "graphs.sgit.ai",
+   "date": "2026-10-16",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://graphs.sgit.ai/v1/altitudes/index.html",
+   "title": "The same book at five altitudes",
+   "by": "graphs.sgit.ai",
+   "date": "2026-10-16",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://graphs.sgit.ai/v2/books/making-a-book/graph/index.html",
+   "title": "The book as a graph",
+   "by": "graphs.sgit.ai",
+   "date": "2026-10-16",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://graphs.sgit.ai/v2/books/making-a-book/board.html",
+   "title": "The board",
+   "by": "graphs.sgit.ai",
+   "date": "2026-10-16",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://graphs.sgit.ai/v2/team/index.html",
+   "title": "The team",
+   "by": "graphs.sgit.ai",
+   "date": "2026-10-16",
+   "kind": "page"
+  },
+  {
+   "id": "r06",
+   "url": "https://graphs.sgit.ai/admin/versions.html",
+   "title": "The release history",
+   "by": "graphs.sgit.ai",
+   "date": "2026-10-16",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-08-23",
+   "what": "The first book, Meaning Through Connectivity, frozen and hashed"
+  },
+  {
+   "date": "2026-08-26",
+   "what": "The memo asking for three books; three sessions write them the same day"
+  },
+  {
+   "date": "2026-09-20",
+   "what": "The last release of graphs.sgit.ai"
+  },
+  {
+   "date": "2026-10-16",
+   "what": "The voice memo and the article"
+  }
+ ]
+}

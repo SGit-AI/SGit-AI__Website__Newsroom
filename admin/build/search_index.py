@@ -28,7 +28,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from page import newsroom_page, write, HOST  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-SKIP_PREFIX = ("search/", "og/", "assets/", "404")
+SKIP_PREFIX = ("search/", "og/", "assets/", "404",
+               "graphs/nodes/", "graphs/articles/")   # projections of the graph of meaning: the articles they project are indexed; the hub and dimension pages under graphs/ are
 SKIP_CLASSES = {"crumb", "lkit", "athreads", "athreads areviews", "agent", "small dim", "subteaser", "meter-card", "sgm", "note-archive", "archive-note"}
 BLOCK = {"p", "li", "blockquote", "figcaption", "dd", "dt", "td", "th", "pre"}
 MAX_WORDS = 160

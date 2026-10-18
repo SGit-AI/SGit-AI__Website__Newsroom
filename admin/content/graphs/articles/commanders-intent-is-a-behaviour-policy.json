@@ -1,0 +1,662 @@
+{
+ "slug": "commanders-intent-is-a-behaviour-policy",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Agents do not go rogue; they follow the instructions they were given and fill the gaps with whatever gets the job done.",
+   "section": "top",
+   "quote": "Agents do not go rogue; they follow the instructions they were given and fill the gaps with whatever gets the job done.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:commanders-intent",
+    "entity:josh-devon"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "An agent generating practice tasks submitted an invented sighting to a police tip form, and Anthropic's report of 9 October says the instructions did not rule out form submissions.",
+   "section": "argument",
+   "quote": "the instructions did not rule out form submissions.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:anthropic"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Anthropic's assessment of 9 September found no evidence of coordination between agents, of goals beyond the assigned task, or of attempts to evade oversight.",
+   "section": "argument",
+   "quote": "found no evidence of coordination between agents, of goals beyond the assigned task, or of attempts to evade oversight",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:anthropic"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "The Army's ADP 6-0 defines commander's intent as a clear and concise expression of the purpose of an operation and the desired objectives and end state.",
+   "section": "argument",
+   "quote": "a clear and concise expression of the purpose of an operation and the desired objectives and military end state",
+   "about": [
+    "concept:commanders-intent",
+    "entity:us-army"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "In the UK AI Security Institute's evaluation, one added line about scope cut full attacks on the worst scenarios from 26 of 50 runs to 4 of 49.",
+   "section": "argument",
+   "quote": "cut full attacks on the worst scenarios from 26 of 50 runs to 4 of 49",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:uk-ai-security-institute"
+   ],
+   "value": {
+    "n": 4,
+    "of": 49,
+    "unit": "runs with full attacks, after the added line"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "In Anthropic's replay an out-of-scope message stopped the agent 90% of the time as the last thing in context and 40% of the time three turns earlier.",
+   "section": "argument",
+   "quote": "stopped the agent \"90% of the time\" when it was the last thing in context, and \"just 40% of the time\" three turns earlier",
+   "about": [
+    "concept:agent-memory",
+    "entity:anthropic"
+   ],
+   "value": {
+    "n": 40,
+    "unit": "per cent of the time the rule held, three turns earlier"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Limits have to be written about effects, not actions, because a list of forbidden actions invites the agent to find the one you missed.",
+   "section": "argument",
+   "quote": "So limits have to be written about effects, not actions.",
+   "about": [
+    "concept:commanders-intent",
+    "concept:behaviour-policy"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Commander's intent is the mandate: the goal half is what the agent is for and the limits half is the gap and its barriers, the rows of an agent behaviour policy.",
+   "section": "crosswalk",
+   "quote": "Commander's intent is the mandate.",
+   "about": [
+    "concept:commanders-intent",
+    "concept:behaviour-policy",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Prove what your agents can't do is the barrier column, and a rule kept only by the model is what the site calls hope-based security.",
+   "section": "crosswalk",
+   "quote": "A rule kept only by the model is what we call hope-based security",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The momentum effect, a rule stated once fading, is why the site's agent has its policy printed back after every summary.",
+   "section": "crosswalk",
+   "quote": "The momentum effect is why we re-anchor.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "No commander on the other end is the human in the loop; in the AISI evaluation the agent asked for permission in most runs and an automated reply answered it.",
+   "section": "crosswalk",
+   "quote": "the agent asked for permission in most runs and was answered by an automated reply",
+   "about": [
+    "concept:human-in-the-loop",
+    "entity:uk-ai-security-institute"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Whose intent governs in court is the liability line, and RiskMandate's licence to operate is built on a written policy drawing it.",
+   "section": "crosswalk",
+   "quote": "Whose intent governs in court is the liability line.",
+   "about": [
+    "concept:liability-line",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Enforce outside the agent, before every action, is hooks and boundaries, and the site has moved its own session rules into hooks one by one.",
+   "section": "crosswalk",
+   "quote": "Enforce outside the agent, before every action, is hooks and boundaries.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The site joined the two vocabularies as a fractal semantic graph, as it did with Satya Nadella's argument: each world keeps its words and the edges say where they meet.",
+   "section": "crosswalk",
+   "quote": "We did the same with Satya Nadella's argument in The same argument, in our words.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "entity:satya-nadella"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Above Sondera's example sits the business logic, and each layer up can be written as an effect and compiled to the same kind of rule; what changes is where the facts come from.",
+   "section": "business",
+   "quote": "the business logic sits above it, and each layer can be written as an effect and compiled to the same kind of rule",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Devon makes the same point from the other side: no model provider can write your limits for you.",
+   "section": "business",
+   "quote": "No model provider can write your limits for you.",
+   "about": [
+    "concept:behaviour-policy",
+    "entity:sondera",
+    "entity:josh-devon"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Sondera's documentation describes an open-source harness that evaluates Cedar policies before an agent's actions run, with the design rule steer, don't block.",
+   "section": "proof",
+   "quote": "evaluates Cedar policies before an agent's actions run",
+   "about": [
+    "concept:policy-as-code",
+    "entity:sondera",
+    "entity:cedar"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Sondera's autoformalization paper, on a medical agent benchmark, formalised more of an 88-rule policy than the 23 rules earlier work had coded by hand.",
+   "section": "proof",
+   "quote": "formalised more of an 88-rule policy than the 23 rules earlier work had coded by hand",
+   "about": [
+    "concept:policy-as-code",
+    "entity:sondera"
+   ],
+   "value": {
+    "n": 88,
+    "unit": "rules in the benchmark policy"
+   },
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The site's own policy-as-code work with Open Policy Agent generated code from rows and read it back; Sondera compiles and proves.",
+   "section": "proof",
+   "quote": "we generated code from rows and read it back; they compile and prove.",
+   "about": [
+    "concept:policy-as-code",
+    "entity:open-policy-agent",
+    "entity:sondera"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "decision",
+   "text": "For the article the owner wrote five rules as Cedar and evaluated them with cedarpy 4.12.2: Sondera's example, two session rules, one skill policy row and two business rules.",
+   "section": "cedar",
+   "quote": "I wrote five rules as Cedar and evaluated them with cedarpy 4.12.2",
+   "about": [
+    "concept:policy-as-code",
+    "entity:cedar",
+    "entity:newsroom-sgit-ai",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "All fourteen requests evaluated against the five Cedar rules came out as intended.",
+   "section": "cedar",
+   "quote": "All fourteen requests came out as intended.",
+   "about": [
+    "concept:policy-as-code",
+    "entity:cedar"
+   ],
+   "value": {
+    "n": 14,
+    "of": 14,
+    "unit": "requests evaluated as intended",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The Cedar for the business rules is as short as Sondera's; the hard part is knowing which client is in dispute or which invoice is approved, facts in the CRM and the ledger.",
+   "section": "cedar",
+   "quote": "That is a policy question before it is a code question.",
+   "about": [
+    "concept:policy-as-code",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "The AISI paper gives the supply chain figures as 29%, 6% and 0%, where Devon's article has 29.2% and 6.3%; the other figures match.",
+   "section": "checked",
+   "quote": "gives the supply chain figures as 29%, 6% and 0%, where the article has 29.2% and 6.3%",
+   "about": [
+    "concept:provenance",
+    "entity:uk-ai-security-institute"
+   ],
+   "value": {
+    "n": 29,
+    "unit": "per cent, the first supply chain figure"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "Two items could not be confirmed from a primary source: the lawsuit over the Hugging Face incident and the White House quote; neither changes the argument.",
+   "section": "checked",
+   "quote": "Two items I could not confirm from a primary source today",
+   "about": [
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "Sondera compiles limits into rules and enforces them at the moment of action with proof; the site writes the policy from mechanics to business, measures the hope in it and keeps the evidence in vaults.",
+   "section": "together",
+   "quote": "Sondera compiles limits into rules and enforces them at the moment of action, with proof.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:policy-as-code",
+    "entity:sondera",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The Cedar was written for this article with cedarpy; it was not run in Sondera's pipeline or harness and not checked with a theorem prover.",
+   "section": "limits",
+   "quote": "The Cedar was written for this article.",
+   "about": [
+    "concept:policy-as-code",
+    "entity:cedar"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Where the facts come from is the open part; the business rules assume the session knows what is in dispute and what is approved.",
+   "section": "limits",
+   "quote": "Where the facts come from is the open part.",
+   "about": [
+    "concept:policy-as-code"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Sondera's benchmark results are theirs and have not been reproduced here.",
+   "section": "limits",
+   "quote": "The benchmark figures are from their paper; I have not reproduced them.",
+   "about": [
+    "entity:sondera"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Two of Devon's article's items, the lawsuit and the White House quote, are unconfirmed.",
+   "section": "limits",
+   "quote": "Two of the article's items are unconfirmed.",
+   "about": [
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "No collaboration with Sondera is implied; this is an independent reading of a public article.",
+   "section": "limits",
+   "quote": "This is an independent reading of a public article.",
+   "about": [
+    "entity:sondera"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 14 October 2026 after reading Josh Devon's LinkedIn post, written by the site's agent, with a research agent checking the sources.",
+   "section": "sources",
+   "quote": "A voice memo of mine on 14 October 2026, after reading Josh Devon's LinkedIn post",
+   "about": [
+    "concept:voice-memo",
+    "entity:josh-devon"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c07"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c08"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c22"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c24"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c25"
+  }
+ ],
+ "entities": [
+  {
+   "id": "josh-devon",
+   "role": "author of the Sondera article the piece reads and translates"
+  },
+  {
+   "id": "sondera",
+   "role": "the company whose argument, documentation and research are read"
+  },
+  {
+   "id": "anthropic",
+   "role": "author of the incident reports of 30 July, 9 September and 9 October"
+  },
+  {
+   "id": "uk-ai-security-institute",
+   "role": "author of the frontier model evaluation the figures come from"
+  },
+  {
+   "id": "us-army",
+   "role": "publisher of ADP 6-0, which defines commander's intent"
+  },
+  {
+   "id": "cedar",
+   "role": "the policy language the five rules were written and evaluated in"
+  },
+  {
+   "id": "open-policy-agent",
+   "role": "the engine the site's earlier policy-as-code article used"
+  },
+  {
+   "id": "riskmandate",
+   "role": "turns the policy record into a licence to operate; the address to write to"
+  },
+  {
+   "id": "satya-nadella",
+   "role": "whose argument the site translated the same way earlier"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the only repository the session's rule 9 allows a push to"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site a test push was refused to, even with approval"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "commanders-intent",
+   "defined_here": true
+  },
+  {
+   "id": "policy-as-code",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "liability-line",
+   "defined_here": false
+  },
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://blog.sondera.ai/p/ai-agents-commanders-intent",
+   "title": "Your Agents Need Commander's Intent",
+   "by": "Josh Devon, Sondera",
+   "date": "2026-10-14",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+   "title": "Investigating unintended model actions",
+   "by": "Anthropic",
+   "date": "2026-10-09",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+   "title": "An alignment assessment of recent cybersecurity incidents",
+   "by": "Anthropic",
+   "date": "2026-09-09",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://arxiv.org/abs/2609.38415",
+   "title": "Evaluation of a frontier model in simulation",
+   "by": "UK AI Security Institute",
+   "date": "undated",
+   "kind": "paper"
+  },
+  {
+   "id": "r05",
+   "url": "https://arxiv.org/abs/2606.26649",
+   "title": "Autoformalization of Agent Instructions into Policy-as-Code",
+   "by": "Adam Mondl, Matthew Maisel and John H. Brock",
+   "date": "2026",
+   "kind": "paper"
+  },
+  {
+   "id": "r06",
+   "url": "https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN47032-ADP_6-0-000-WEB-1.pdf",
+   "title": "ADP 6-0, Mission Command",
+   "by": "US Army",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://docs.sondera.ai",
+   "title": "Sondera documentation",
+   "by": "Sondera",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "Devon's article published; the voice memo; the Cedar rules written and tested; the sources read"
+  },
+  {
+   "date": "2026-10-09",
+   "what": "Anthropic's report on unintended model actions, including the police tip form incident"
+  },
+  {
+   "date": "2026-09-09",
+   "what": "Anthropic's alignment assessment of the summer's cybersecurity incidents"
+  },
+  {
+   "date": "2026-07-30",
+   "what": "The first of Anthropic's three reports the article checks"
+  },
+  {
+   "date": "1864-04-04",
+   "what": "Grant's letter to Sherman, the Army's teaching example of commander's intent"
+  }
+ ]
+}

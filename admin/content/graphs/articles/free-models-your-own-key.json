@@ -1,0 +1,870 @@
+{
+ "slug": "free-models-your-own-key",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "proposal",
+   "text": "The goal is that a reader talks to the newsroom with a capable model, free, on their own key, which the newsroom never holds.",
+   "section": "in-short",
+   "quote": "A reader talks to the newsroom with a capable model, free, on their own key, which we never hold.",
+   "about": [
+    "concept:bring-your-own-key",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The search page has two engines today: Chrome's built-in model, on the reader's machine with no key, and the reader's own OpenRouter key, which stays in the browser and goes only to OpenRouter.",
+   "section": "want",
+   "quote": "Chrome's built-in model runs on the reader's own machine with no key and sends nothing anywhere",
+   "about": [
+    "concept:client-side",
+    "entity:chrome",
+    "entity:openrouter"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "OpenRouter's free models allow 50 requests a day until the reader has bought at least $10 of credit, and someone trying it should not need a card.",
+   "section": "want",
+   "quote": "OpenRouter's free models allow 50 requests a day until you have bought at least $10 of credit.",
+   "about": [
+    "concept:pricing",
+    "entity:openrouter"
+   ],
+   "value": {
+    "n": 50,
+    "unit": "free requests a day before buying credit",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Two tests decide whether a provider works: free without a card, and callable from a web page directly so the key goes from the reader's browser to the provider and nowhere else.",
+   "section": "in-short",
+   "quote": "Two tests decide it. Free without a card, and callable from a web page directly.",
+   "about": [
+    "concept:callable-from-the-page",
+    "concept:bring-your-own-key"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The browser test sent a CORS preflight to every provider's chat endpoint from the newsroom's own address and recorded the answer; a provider that does not answer cannot be called from a page.",
+   "section": "method",
+   "quote": "We sent that preflight to every provider's chat endpoint, from the newsroom's own address",
+   "about": [
+    "concept:callable-from-the-page",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "GitHub Models, the easiest free option for anyone with a GitHub account, was retired on 30 July 2026.",
+   "section": "changed",
+   "quote": "GitHub Models was retired on 30 July 2026.",
+   "about": [
+    "concept:pricing",
+    "entity:github"
+   ],
+   "refs": [
+    "r14"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Hugging Face free accounts no longer get monthly credits for Inference Providers; its pricing page lists None for free users.",
+   "section": "changed",
+   "quote": "Hugging Face free accounts no longer get monthly credits",
+   "about": [
+    "concept:pricing",
+    "entity:hugging-face"
+   ],
+   "refs": [
+    "r16"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Cerebras now needs a verified payment method; new accounts get $5 of credit that expires 30 days after it is granted.",
+   "section": "changed",
+   "quote": "New accounts get $5 of credit, which expires 30 days after it is granted",
+   "about": [
+    "concept:pricing",
+    "entity:cerebras"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "dollars of credit, expiring in 30 days"
+   },
+   "refs": [
+    "r15"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "From 28 May 2026 new AI Studio keys are auth keys and the Gemini API rejects requests from unrestricted standard keys.",
+   "section": "changed",
+   "quote": "From 28 May 2026, new AI Studio keys are \"auth keys\"",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:google",
+    "entity:gemini"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "Groq is free with no card; its published table gives gpt-oss-120b 30 requests a minute, 1,000 a day and 200,000 tokens a day, requests are not retained by default, and the browser test allows any page.",
+   "section": "works",
+   "quote": "30 requests a minute, 1,000 a day and 200,000 tokens a day",
+   "about": [
+    "concept:pricing",
+    "concept:callable-from-the-page",
+    "entity:groq"
+   ],
+   "value": {
+    "n": 1000,
+    "unit": "requests a day for gpt-oss-120b on Groq",
+    "as_of": "2026-10-18"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Gemini through AI Studio is free with a Google account from 18 with no card, its limits are shown only inside AI Studio, and the browser test allows the newsroom's address.",
+   "section": "works",
+   "quote": "Limits are no longer published and are shown only inside AI Studio.",
+   "about": [
+    "concept:pricing",
+    "entity:gemini",
+    "entity:google"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "On Gemini's free tier Google uses what is sent to improve its products, human reviewers may read it, and the terms carve out the UK, the EEA and Switzerland, where paid terms apply.",
+   "section": "works",
+   "quote": "human reviewers may read, annotate, and process your API input and output",
+   "about": [
+    "concept:privacy",
+    "entity:gemini",
+    "entity:united-kingdom",
+    "entity:european-union"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Mistral's free mode needs no credit card, limits are in the console, and requests may be used to improve the models unless anonymous improvement data is switched off.",
+   "section": "works",
+   "quote": "Requests may be used to improve the models unless you switch off \"Anonymous improvement data\" in the admin privacy settings.",
+   "about": [
+    "concept:privacy",
+    "entity:mistral"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "OpenRouter's free list on 18 October had 19 entries, including Nemotron 3 Ultra and Gemma 4, and a free router that picks a free model for you.",
+   "section": "works",
+   "quote": "The free list on 18 October had 19 entries",
+   "about": [
+    "entity:openrouter",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 19,
+    "unit": "free models listed",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "OpenRouter has what the others lack, a sign-in for apps through OAuth with PKCE: the reader approves, the page receives a key of their own, and the reader never copies a key and can revoke it.",
+   "section": "works",
+   "quote": "The reader never copies or pastes a key, and can revoke it at OpenRouter.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:openrouter"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "Cohere's trial key is free on registration with 1,000 calls a month and chat at 20 a minute, on its own API shape, and the browser test allows any page.",
+   "section": "works",
+   "quote": "1,000 calls a month, chat at 20 a minute, with the Command A family",
+   "about": [
+    "concept:pricing",
+    "entity:cohere"
+   ],
+   "value": {
+    "n": 1000,
+    "unit": "calls a month on Cohere's trial key"
+   },
+   "refs": [
+    "r13"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Pollinations answered a chat request with no key at all, but its docs expect keys, so keyless use is treated as tolerated, not promised; it also has a sign-in flow.",
+   "section": "works",
+   "quote": "we would treat keyless use as tolerated, not promised",
+   "about": [
+    "entity:pollinations",
+    "concept:pricing"
+   ],
+   "refs": [
+    "r18"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "Cloudflare Workers AI has the most generous free allowance found, 10,000 neurons a day, roughly 100,000 to 300,000 tokens of gpt-oss-120b, but its API refused the browser preflight, so a Worker is needed.",
+   "section": "catch",
+   "quote": "10,000 \"neurons\" a day on a free Cloudflare account",
+   "about": [
+    "concept:pricing",
+    "concept:callable-from-the-page",
+    "entity:cloudflare"
+   ],
+   "value": {
+    "n": 10000,
+    "unit": "neurons a day on a free Cloudflare account"
+   },
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "Cloudflare does not use Customer Content processed by Workers AI to train AI models.",
+   "section": "catch",
+   "quote": "Cloudflare does not use Customer Content processed by Workers AI to train AI models.",
+   "about": [
+    "concept:privacy",
+    "entity:cloudflare"
+   ],
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Alibaba Model Studio gives about a million free tokens per model for 90 days and never uses data for training, but the Free Quota Only switch is off by default, so a reader must turn it on or be billed.",
+   "section": "catch",
+   "quote": "the \"Free Quota Only\" switch is now off by default",
+   "about": [
+    "concept:pricing",
+    "entity:alibaba-cloud"
+   ],
+   "refs": [
+    "r10"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "NVIDIA's catalogue is strong and free but fails the browser test, needs a phone check by many reports, and its terms say trial use only; good for a developer's script, not for readers from a page.",
+   "section": "not",
+   "quote": "It is a good place for a developer to try models from a script. It is not something to offer readers from a page.",
+   "about": [
+    "concept:callable-from-the-page",
+    "entity:nvidia"
+   ],
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "NVIDIA's live catalogue holds 81 models, including Kimi K2.6, GLM 5.3, DeepSeek V4.1 Flash and the Nemotron 3 family.",
+   "section": "not",
+   "quote": "the Nemotron 3 family, 81 models in all",
+   "about": [
+    "entity:nvidia"
+   ],
+   "value": {
+    "n": 81,
+    "unit": "models in NVIDIA's catalogue",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The design is bring your own key: kept in the browser or the reader's vault, sent from the browser to the provider with the question and the passages, and nowhere else, and the newsroom never holds it.",
+   "section": "key",
+   "quote": "The design is bring your own key, and the newsroom never holds it.",
+   "about": [
+    "concept:bring-your-own-key",
+    "concept:vault",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "A key in a page can be read by any script on that page, so the page that holds it must load nothing it does not control; the safest keys are issued by a sign-in, scoped and revocable.",
+   "section": "key",
+   "quote": "A key in a page can be read by any script on that page, so the page that holds it must load nothing it does not control.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "An agent should not create the account for a reader, for three reasons: sign-ups ask for phones or captchas on purpose, OpenRouter's terms forbid multiple accounts to bypass limits, and providers are watching for it.",
+   "section": "agents",
+   "quote": "I think it should not, for three reasons.",
+   "about": [
+    "concept:bring-your-own-key",
+    "entity:openrouter"
+   ],
+   "refs": [
+    "r07"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "data-point",
+   "text": "NVIDIA's forum moderators already report ten to twenty automated rate-limit requests a day written by AI agents.",
+   "section": "agents",
+   "quote": "NVIDIA's forum moderators already report ten to twenty automated rate-limit requests a day written by AI agents",
+   "about": [
+    "entity:nvidia"
+   ],
+   "value": {
+    "n": 20,
+    "unit": "automated requests a day, upper figure"
+   },
+   "refs": [
+    "r12"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "A free, keyless, dependable frontier model for everyone is not possible as far as the research found; Pollinations comes closest and says it is not guaranteed.",
+   "section": "possible",
+   "quote": "A free, keyless, dependable frontier model for everyone.",
+   "about": [
+    "concept:pricing",
+    "entity:pollinations"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "data-point",
+   "text": "In 2026 four free offers the newsroom would have recommended at the start of the year disappeared or gained a card: GitHub Models, Hugging Face's credits, Cerebras and SambaNova.",
+   "section": "possible",
+   "quote": "four free offers we would have recommended at the start of the year disappeared or gained a card",
+   "about": [
+    "concept:pricing",
+    "entity:sambanova",
+    "entity:github"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "free offers lost or gated in 2026",
+    "as_of": "2026"
+   }
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "The newsroom will add Groq, Gemini and Mistral beside OpenRouter on the search page, each with a short guide to signing up, the privacy setting, the model and what the provider does with your words.",
+   "section": "plan",
+   "quote": "Add Groq, Gemini and Mistral beside OpenRouter on the search page",
+   "about": [
+    "concept:the-newsroom",
+    "entity:groq",
+    "entity:gemini",
+    "entity:mistral",
+    "entity:openrouter"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "Then use OpenRouter's sign-in instead of a pasted key, let the key live in the reader's vault, publish a Worker for Cloudflare, and recheck the map every quarter.",
+   "section": "plan",
+   "quote": "Recheck this map every quarter, because it will change.",
+   "about": [
+    "concept:bring-your-own-key",
+    "entity:cloudflare"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "Everything is a snapshot as of 18 October 2026, and free tiers change often.",
+   "section": "limits",
+   "quote": "Everything here is as of 18 October 2026, and free tiers change often.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "Limits move: several providers show them only inside their consoles, and the article reports what is published.",
+   "section": "limits",
+   "quote": "Several providers show limits only inside their consoles; we report what is published.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "Third-party facts are marked: phone checks at NVIDIA, SambaNova's date and Z.ai's concurrency are reported, not confirmed.",
+   "section": "limits",
+   "quote": "Phone checks at NVIDIA, SambaNova's date and Z.ai's concurrency are reported, not confirmed.",
+   "about": [
+    "entity:nvidia",
+    "entity:sambanova",
+    "entity:z-ai"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "The browser test is one test, a preflight from the newsroom's address, and a provider can change its headers at any time.",
+   "section": "limits",
+   "quote": "A preflight from our address; a provider can change its headers at any time.",
+   "about": [
+    "concept:callable-from-the-page"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "The article is not legal advice; the UK, EEA and Swiss carve-outs in Gemini's terms are summarised, not interpreted.",
+   "section": "limits",
+   "quote": "The UK, EEA and Swiss carve-outs in Gemini's terms are summarised, not interpreted.",
+   "about": [
+    "entity:gemini",
+    "concept:privacy"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c29"
+  },
+  {
+   "from": "c10",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c29"
+  },
+  {
+   "from": "c15",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c30"
+  },
+  {
+   "from": "c26",
+   "verb": "backs",
+   "to": "c25"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c17",
+   "verb": "limits",
+   "to": "c27"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c11"
+  }
+ ],
+ "entities": [
+  {
+   "id": "groq",
+   "role": "free with no card, callable from a page; the simplest start"
+  },
+  {
+   "id": "google",
+   "role": "owner of AI Studio and the Gemini API, with free-tier terms that use what you send"
+  },
+  {
+   "id": "gemini",
+   "role": "free through AI Studio from 18, callable from the newsroom's address, with a UK and EEA carve-out"
+  },
+  {
+   "id": "mistral",
+   "role": "free mode with no card, improvement data on unless switched off"
+  },
+  {
+   "id": "openrouter",
+   "role": "the engine the newsroom already uses; 50 free requests a day and a sign-in flow"
+  },
+  {
+   "id": "cloudflare",
+   "role": "Workers AI, the most generous free allowance, needing a Worker in between"
+  },
+  {
+   "id": "github",
+   "role": "GitHub Models, retired on 30 July 2026"
+  },
+  {
+   "id": "chrome",
+   "role": "its built-in model, the other engine the search page has today"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose address every preflight was sent from"
+  },
+  {
+   "id": "united-kingdom",
+   "role": "carved out of Gemini's free data terms"
+  },
+  {
+   "id": "european-union",
+   "role": "the EEA, carved out of Gemini's free data terms"
+  },
+  {
+   "id": "cohere",
+   "role": "trial key, 1,000 calls a month, callable from a page"
+  },
+  {
+   "id": "pollinations",
+   "role": "answered without a key; tolerated, not promised; has a sign-in flow"
+  },
+  {
+   "id": "nvidia",
+   "role": "build.nvidia.com: a strong free catalogue that fails both tests that matter"
+  },
+  {
+   "id": "cerebras",
+   "role": "now needs a card; $5 that lasts 30 days"
+  },
+  {
+   "id": "sambanova",
+   "role": "a card and bought credits before the first request, as reported"
+  },
+  {
+   "id": "hugging-face",
+   "role": "Inference Providers no longer give free accounts credits"
+  },
+  {
+   "id": "alibaba-cloud",
+   "role": "Model Studio's free quota, with a switch to turn on"
+  },
+  {
+   "id": "z-ai",
+   "role": "free GLM flash models, not callable from a page"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "bring-your-own-key",
+   "defined_here": true
+  },
+  {
+   "id": "callable-from-the-page",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://console.groq.com/docs/rate-limits",
+   "title": "Groq rate limits",
+   "by": "Groq",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://ai.google.dev/gemini-api/docs/pricing",
+   "title": "Gemini API pricing",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://ai.google.dev/gemini-api/terms",
+   "title": "Gemini API terms",
+   "by": "Google",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://docs.mistral.ai/admin/billing-usage/usage-limits.md",
+   "title": "Mistral usage limits",
+   "by": "Mistral",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://openrouter.ai/docs/api/reference/limits",
+   "title": "OpenRouter limits",
+   "by": "OpenRouter",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://openrouter.ai/docs/guides/overview/auth/oauth",
+   "title": "OpenRouter OAuth PKCE",
+   "by": "OpenRouter",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://openrouter.ai/terms",
+   "title": "OpenRouter terms",
+   "by": "OpenRouter",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+   "title": "Workers AI pricing",
+   "by": "Cloudflare",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://developers.cloudflare.com/workers-ai/platform/data-usage/",
+   "title": "Workers AI data usage",
+   "by": "Cloudflare",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://www.alibabacloud.com/help/en/model-studio/new-free-quota",
+   "title": "Model Studio free quota",
+   "by": "Alibaba Cloud",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r11",
+   "url": "https://assets.ngc.nvidia.com/products/api-catalog/legal/NVIDIA%20API%20Trial%20Terms%20of%20Service.pdf",
+   "title": "NVIDIA API Trial Terms of Service",
+   "by": "NVIDIA",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r12",
+   "url": "https://forums.developer.nvidia.com/t/368420",
+   "title": "Forum thread on rate limits",
+   "by": "NVIDIA Developer Forums",
+   "date": "2026-04-29",
+   "kind": "post"
+  },
+  {
+   "id": "r13",
+   "url": "https://docs.cohere.com/docs/rate-limits",
+   "title": "Cohere rate limits",
+   "by": "Cohere",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r14",
+   "url": "https://github.blog/changelog/2026-07-30-github-models-is-now-retired/",
+   "title": "GitHub Models is now retired",
+   "by": "GitHub",
+   "date": "2026-07-30",
+   "kind": "post"
+  },
+  {
+   "id": "r15",
+   "url": "https://inference-docs.cerebras.ai/support/rate-limits",
+   "title": "Cerebras rate limits",
+   "by": "Cerebras",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r16",
+   "url": "https://huggingface.co/docs/inference-providers/pricing",
+   "title": "Inference Providers pricing",
+   "by": "Hugging Face",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r17",
+   "url": "https://docs.z.ai/guides/overview/pricing",
+   "title": "Z.ai pricing",
+   "by": "Z.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r18",
+   "url": "https://github.com/pollinations/pollinations/blob/main/APIDOCS.md",
+   "title": "Pollinations API docs",
+   "by": "Pollinations",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r19",
+   "url": "https://cloud.sambanova.ai/plans",
+   "title": "SambaNova plans",
+   "by": "SambaNova",
+   "date": "undated",
+   "kind": "documentation"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "Every provider's pages read and every endpoint's preflight tested; the voice memo; the article"
+  },
+  {
+   "date": "2026-07-30",
+   "what": "GitHub Models retired"
+  },
+  {
+   "date": "2026-05-28",
+   "what": "New AI Studio keys became auth keys"
+  },
+  {
+   "date": "2026-09-08",
+   "what": "Alibaba Model Studio's free quota for first activations, as its page gives it"
+  },
+  {
+   "date": "2026-08-14",
+   "what": "SambaNova began requiring a card and bought credits, as reported"
+  }
+ ]
+}

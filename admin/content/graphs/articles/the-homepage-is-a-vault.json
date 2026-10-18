@@ -1,0 +1,739 @@
+{
+ "slug": "the-homepage-is-a-vault",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "The homepage is the page that most needs to be fresh and the one that changes least: it is generated at release, so it moves when the owner publishes and stands still when he does not.",
+   "section": "why",
+   "quote": "Today it is generated when the site is released, so it moves when I publish and stands still when I do not.",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "concept:homepage-as-vault"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "proposal",
+   "text": "What is wanted is an edition: every morning a job reads the latest articles, the wires and the industry and decides what leads, what follows and what rotates out.",
+   "section": "why",
+   "quote": "every morning, a job that looks at the latest articles, the wires, and what is happening in the industry we write about, and decides what leads",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "decision",
+   "text": "The memo had two facts wrong: the site is not served by a Lambda but by GitHub Pages, and the Lambda is the vault API the wire reads through.",
+   "section": "correction",
+   "quote": "This site is not served by a Lambda function: newsroom.sgit.ai is on GitHub Pages",
+   "about": [
+    "entity:github-pages",
+    "entity:aws-lambda",
+    "entity:newsroom-sgit-ai",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "On one cold load of the wire the browser made eight chained requests to the API of 360 to 810 milliseconds each, the last ending 3.9 seconds after the page had loaded.",
+   "section": "correction",
+   "quote": "the last one ended 3.9 seconds after the page itself had loaded",
+   "about": [
+    "entity:industry-wire",
+    "entity:cloudfront",
+    "concept:client-side"
+   ],
+   "value": {
+    "n": 3.9,
+    "unit": "seconds after page load for the last API request",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "On a warm connection one request to the vault API took a median of 317 milliseconds and one request to GitHub Pages for a small file took 44.",
+   "section": "correction",
+   "quote": "one request to the vault API took a median of 317 milliseconds; one request to GitHub Pages for a small file took 44",
+   "about": [
+    "entity:github-pages",
+    "entity:aws-lambda",
+    "concept:deployment"
+   ],
+   "value": {
+    "n": 317,
+    "of": 44,
+    "unit": "milliseconds median, vault API against GitHub Pages",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The API sent no cache header for an immutable object, which sgit.ai's own September measurements had already noted.",
+   "section": "correction",
+   "quote": "the read endpoint returned no Cache-Control header at all for an immutable object",
+   "about": [
+    "entity:sgit-ai",
+    "concept:deployment"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "sgit.ai cloned the same vault in 65.4 seconds through the serverless API and in 2.63 seconds from plain GETs, twenty-five times faster with nothing about the vault changed.",
+   "section": "static",
+   "quote": "cloned the same vault in 65.4 seconds through the serverless API and in 2.63 seconds from plain GETs",
+   "about": [
+    "entity:sgit",
+    "entity:sgit-ai",
+    "concept:deployment"
+   ],
+   "value": {
+    "n": 2.63,
+    "of": 65.4,
+    "unit": "seconds to clone, plain GETs against the API"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The API is a convenience over a store, not a requirement of it; sgit already reads from plain files laid out as content-addressed objects and one ref.",
+   "section": "static",
+   "quote": "a convenience over a store, not a requirement of it",
+   "about": [
+    "entity:sgit",
+    "concept:client-side",
+    "concept:vault-design"
+   ],
+   "refs": [
+    "r01",
+    "r02"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "limit",
+   "text": "A static copy is read-only and frozen, changing only when exported again, which is no problem for a homepage released once a day.",
+   "section": "static",
+   "quote": "A static copy changes only when it is exported again, which is not a problem for a homepage that is released once a day.",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:deployment"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "decision",
+   "text": "The site's agent built the homepage vault locally with sgit 0.21.0, ran the edition job three times, and tagged each run home-v0.1.0, home-v0.1.1 and home-v0.1.2, signed by the clone.",
+   "section": "demo",
+   "quote": "each run was committed, pushed and tagged: home-v0.1.0, home-v0.1.1, home-v0.1.2",
+   "about": [
+    "entity:sgit",
+    "concept:homepage-as-vault",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "In a browser, today's edition cold took 4 requests and 4.7 KB: the ref, the commit, the tree and the page.",
+   "section": "demo",
+   "quote": "4 requests and 4.7 KB: the ref, the commit, the tree and the page",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:client-side"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "requests for today's edition, cold",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "The same reader inside two minutes made no requests at all, because the ref is reused for 120 seconds and the objects come from the browser's cache.",
+   "section": "demo",
+   "quote": "the ref is reused for 120 seconds and the objects come from the browser's cache",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:client-side"
+   ],
+   "value": {
+    "n": 120,
+    "unit": "seconds the ref is reused",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Yesterday's edition took 3 requests by commit id, with no ref needed because history is just another object.",
+   "section": "demo",
+   "quote": "3 requests, by commit id; no ref is needed, because history is just another object",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "requests for yesterday's edition",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "Those are counts, not network times: at 44 milliseconds a request four chained requests are about 0.2 seconds from static files, and about 1.3 seconds through the API at 317.",
+   "section": "demo",
+   "quote": "four chained requests are about 0.2 seconds from static files; at 317, about 1.3 seconds through the API",
+   "about": [
+    "concept:deployment",
+    "concept:homepage-as-vault"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Only the ref can change, so it is never cached; everything else is named by its own hash and can be cached by every layer in between for ever.",
+   "section": "sequence",
+   "quote": "Only the ref can change, so it is never cached; everything else is named by its own hash and can be cached by every layer in between for ever.",
+   "about": [
+    "concept:vault-design",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The read key is public on purpose: it is derived from the vault key by a one-way function, so it can never be turned back into write access.",
+   "section": "sequence",
+   "quote": "derived from the vault key by a one-way function, so a read key can never be turned back into write access.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Every edition is a commit, so any day's homepage can be opened again exactly as it was, with its links, its screenshot and the release note that says why it changed.",
+   "section": "history",
+   "quote": "Every edition is a commit, so any day's homepage can be opened again exactly as it was",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Variants sit in the same commit so an A/B test is a choice the page makes, not a second deployment, and a fork is a whole homepage for another language, culture or publisher.",
+   "section": "history",
+   "quote": "Variants sit in the same commit, so an A/B test is a choice the page makes, not a second deployment.",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "The agent configured an append lane on the homepage vault and sent it 300 synthetic page-load beacons, 2.6 milliseconds each, all read back with the enum key.",
+   "section": "stats",
+   "quote": "sent it 300 synthetic page-load beacons",
+   "about": [
+    "concept:vault-design",
+    "concept:synthetic-users"
+   ],
+   "value": {
+    "n": 300,
+    "unit": "synthetic page-load beacons",
+    "as_of": "2026-10-14"
+   },
+   "refs": [
+    "r07",
+    "r08"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "A static host cannot take writes, so the beacons still go to the API, and the lane's cap of 1000 pending files means the morning job must collect and clear it daily.",
+   "section": "stats",
+   "quote": "A static host cannot take writes, so the beacons still go to the API",
+   "about": [
+    "concept:vault-design",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "Five to ten synthetic readers run every morning against the live page, with findings and timings in their own vault, tell us when something has broken or slowed before a reader does.",
+   "section": "stats",
+   "quote": "run every morning against the live page, with their findings and timings in their own vault, they tell us when something has broken or slowed down before a reader does",
+   "about": [
+    "concept:synthetic-users",
+    "concept:homepage-as-vault"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Search engines and agents see an empty shell, so the shell on GitHub Pages should carry a plain snapshot of today's edition, a projection and never a second copy to edit.",
+   "section": "handled",
+   "quote": "Search engines and agents see an empty shell.",
+   "about": [
+    "entity:github-pages",
+    "concept:agent-readable-web",
+    "concept:publishing-method"
+   ],
+   "refs": [
+    "r03",
+    "r05"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Bytes deployed into a git repository stay in its history after deletion, so rotation cannot revoke access to them, which is a reason to put the static objects on S3.",
+   "section": "handled",
+   "quote": "stay in its history after any later deletion, so rotation cannot revoke access to what you publish now",
+   "about": [
+    "entity:aws",
+    "concept:encryption-and-keys",
+    "entity:git"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "sgit.ai learnt to give a mirror a reader before giving it a remote; the homepage vault has a reader from the first day, the homepage.",
+   "section": "handled",
+   "quote": "give a mirror a reader before giving it a remote",
+   "about": [
+    "entity:sgit-ai",
+    "concept:vault-design"
+   ],
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "Start on a separate page: build /front/ from the homepage vault and leave the homepage alone until the numbers say it is better.",
+   "section": "brief",
+   "quote": "Build /front/ from the homepage vault and leave the homepage alone until the numbers say it is better.",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Every morning at 05:45 UK time the edition job reads the articles, the wires and the stats, writes one edition, commits, tags and adds its screenshot and release note.",
+   "section": "brief",
+   "quote": "Every morning at 05:45 UK time, read the articles, the wires and the stats, write one edition",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "proposal",
+   "text": "Export each edition to S3 behind a CDN with immutable objects cached for a year and the ref never cached, keeping the vault API as the writer's path only.",
+   "section": "brief",
+   "quote": "Export each edition to S3 behind a CDN, with immutable objects cached for a year and the ref never cached",
+   "about": [
+    "entity:aws",
+    "concept:deployment",
+    "concept:homepage-as-vault"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "proposal",
+   "text": "Time the live cold and warm loads of /front/ against the current homepage every day for two weeks, and move the homepage only if /front/ is at least as fast and the variants show which works.",
+   "section": "brief",
+   "quote": "every day for two weeks, and report; move the homepage only if /front/ is at least as fast",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "The same export for the wire's vaults would take its eight API requests off the reader's path.",
+   "section": "brief",
+   "quote": "The same export for the wire's vaults would take its eight API requests off the reader's path.",
+   "about": [
+    "entity:industry-wire",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "The demo is local, a local vault server and a local static server, and the vault numbers count requests and bytes, not network time.",
+   "section": "limits",
+   "quote": "A local vault server and a local static server; the vault numbers count requests and bytes, not network time.",
+   "about": [
+    "concept:homepage-as-vault"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The live timings are from this sandbox, one location and medians of ten requests; readers elsewhere will see other numbers.",
+   "section": "limits",
+   "quote": "The live timings are from this sandbox.",
+   "about": [
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "The beacons and clicks were synthetic; they show the lane works, not which variant is better.",
+   "section": "limits",
+   "quote": "The beacons and clicks were synthetic.",
+   "about": [
+    "concept:synthetic-users",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "limit",
+   "text": "Nothing is scheduled yet: the morning job, the S3 export and /front/ are proposed.",
+   "section": "limits",
+   "quote": "The morning job, the S3 export and /front/ are proposed.",
+   "about": [
+    "concept:homepage-as-vault",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "limit",
+   "text": "A/B tests need readers; with this site's traffic a difference between variants may take weeks to show.",
+   "section": "limits",
+   "quote": "With this site's traffic, a difference between variants may take weeks to show.",
+   "about": [
+    "concept:homepage-as-vault",
+    "entity:newsroom-sgit-ai"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c09",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c17"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c20",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c25"
+  },
+  {
+   "from": "c23",
+   "verb": "gives_rise_to",
+   "to": "c27"
+  },
+  {
+   "from": "c26",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c27",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c28",
+   "verb": "specifies",
+   "to": "c25"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c33",
+   "verb": "limits",
+   "to": "c26"
+  },
+  {
+   "from": "c34",
+   "verb": "limits",
+   "to": "c18"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose homepage would become a vault; served from GitHub Pages"
+  },
+  {
+   "id": "github-pages",
+   "role": "serves the site at 44 milliseconds a request and would carry the shell with the read key"
+  },
+  {
+   "id": "aws-lambda",
+   "role": "the vault API the wire reads through, at 317 milliseconds a request"
+  },
+  {
+   "id": "cloudfront",
+   "role": "fronts the vault API"
+  },
+  {
+   "id": "aws",
+   "role": "S3, where the static objects should go, behind a CDN"
+  },
+  {
+   "id": "industry-wire",
+   "role": "reads encrypted vaults in the browser through the API, eight chained requests on a cold load"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault tool, version 0.21.0, with static transport, publish and append lanes"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "whose documentation and measurements the design rests on"
+  },
+  {
+   "id": "git",
+   "role": "whose history keeps deployed bytes after deletion"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "homepage-as-vault",
+   "defined_here": true
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://sgit.ai/updates/index.html#take-the-api-out-of-the-path",
+   "title": "Take the API out of the path",
+   "by": "sgit.ai",
+   "date": "2026",
+   "kind": "page"
+  },
+  {
+   "id": "r02",
+   "url": "https://sgit.ai/docs/vault/static-hosting.html",
+   "title": "Static hosting",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://sgit.ai/case-studies/live-vault-docs.html",
+   "title": "Live vault docs",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://sgit.ai/demos/fractal-graphs/performance.html",
+   "title": "Fractal graphs performance",
+   "by": "sgit.ai",
+   "date": "2026-09",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://sgit.ai/docs/surfaces.html",
+   "title": "Surfaces",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://sgit.ai/docs/credentials.html",
+   "title": "Credentials",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://sgit.ai/api/append-lanes.html",
+   "title": "Append lanes",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r08",
+   "url": "https://sgit.ai/docs/briefs/vault-telemetry-append-lanes.html",
+   "title": "Vault telemetry through append lanes",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://sgit.ai/updates/index.html#the-mirror-is-gone",
+   "title": "The mirror is gone",
+   "by": "sgit.ai",
+   "date": "2026",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo; the demo and timings run; two editions of the demo vault"
+  },
+  {
+   "date": "2026-10-13",
+   "what": "The first edition of the demo homepage vault"
+  }
+ ]
+}

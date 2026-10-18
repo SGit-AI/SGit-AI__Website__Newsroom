@@ -1,0 +1,759 @@
+{
+ "slug": "from-send-to-sgit",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "SG/Send began with the weekly problem of sending a file securely without installing anything, and with the rule that the best way to protect an asset is not to have the asset.",
+   "section": "start",
+   "quote": "The best way to protect an asset is not to have the asset.",
+   "about": [
+    "concept:encryption-and-keys",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The first commit on 8 February 2026 carried a specification with the rule everything since has followed: files are encrypted on the client before upload and the decryption key is never sent to the server.",
+   "section": "start",
+   "quote": "files are encrypted on the client before upload, and the decryption key is never sent to the server.",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:client-side",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The spec claimed that this single architectural decision eliminates about 90% of the security risk surface.",
+   "section": "start",
+   "quote": "This single architectural decision eliminates ~90% of the security risk surface.",
+   "about": [
+    "concept:encryption-and-keys"
+   ],
+   "value": {
+    "n": 90,
+    "unit": "per cent of the security risk surface, as the spec claimed",
+    "as_of": "2026-02-08"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "The team's historian recorded the move from infrastructure sprint on 10 February to live with real users on 13 February, in 3 days, with send.sgraph.ai live on AWS Lambda.",
+   "section": "live",
+   "quote": "The project moved from 'infrastructure sprint' (v0.1.4 brief, 10 Feb) to 'live with real users' (13 Feb) in 3 days.",
+   "about": [
+    "concept:shipping",
+    "entity:send-sgraph-ai",
+    "entity:historian",
+    "entity:aws"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "days from infrastructure sprint to live",
+    "as_of": "2026-02-13"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The way of working was written down the same day: voice memos become briefs, briefs flow down, debriefs flow up, and by 14 February there were explorers and villagers but no town planners yet.",
+   "section": "live",
+   "quote": "briefs flow down, debriefs flow up, and a clear folder structure makes everything findable.",
+   "about": [
+    "concept:the-brief",
+    "concept:explorer-villager-town-planner",
+    "concept:voice-memo"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "The pricing brief of 28 February set £5 for 500 file credits, Stripe checkout went live on 1 March, and on 2 March SG/Send had its first 10 paying customers.",
+   "section": "users",
+   "quote": "SG/Send had its first 10 paying customers",
+   "about": [
+    "concept:pricing",
+    "concept:the-market",
+    "entity:stripe"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "paying customers",
+    "as_of": "2026-03-02"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The first customers were recruited with an offer to buy £5 of credits and receive a £5 Amazon voucher, and several declined the voucher.",
+   "section": "users",
+   "quote": "Several declined the Amazon voucher.",
+   "about": [
+    "concept:the-market",
+    "entity:amazon"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The first feature request, folder upload as a client-side zip, went from the architect's proposal at 20:26 to the implementation at 20:48, 22 minutes, with a zip viewer at 22:15.",
+   "section": "users",
+   "quote": "At 20:26 the architect's proposal for folder upload as a client-side zip was committed; at 20:48 the implementation",
+   "about": [
+    "concept:shipping",
+    "concept:multi-agent"
+   ],
+   "value": {
+    "n": 22,
+    "unit": "minutes from proposal to production",
+    "as_of": "2026-03-02"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "On 3 March, while emailing material to investors, the owner realised that folder upload, the zip viewer and the previews together were a data room already built, and the vault its persistent, editable evolution.",
+   "section": "data-room",
+   "quote": "we already built the data room",
+   "about": [
+    "concept:vault",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The record shows the data room was named between 17 and 21 February and a personal data vault on 22 February, before the features: the ideas came first and the features caught up.",
+   "section": "data-room",
+   "quote": "The ideas came first. The features caught up with them",
+   "about": [
+    "concept:the-record",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "decision",
+   "text": "The architecture brief of 4 March is the turning point: stop inventing solutions, Git already solved all of them, copy Git, with commits, trees, blobs, refs and branches and encryption on top.",
+   "section": "git",
+   "quote": "Git already solved all of them. Copy Git.",
+   "about": [
+    "entity:git",
+    "concept:vault",
+    "concept:the-brief"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "In the Git model the server is a dumb key-value blob store and all intelligence lives in the client.",
+   "section": "git",
+   "quote": "All intelligence lives in the client.",
+   "about": [
+    "concept:client-side",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "The Git work took about two weeks, not the week the owner remembered: some 48 brief files on vaults, Git and the command line between 3 and 18 March.",
+   "section": "git",
+   "quote": "some 48 brief files on vaults, Git and the command line between 3 and 18 March",
+   "about": [
+    "concept:the-brief",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 48,
+    "unit": "brief files between 3 and 18 March",
+    "as_of": "2026-03-18"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "A case study of designing without code used the model as a simulator: 6 revisions of a simulation document found 14 architectural gaps and resolved 13 of them before any code was written.",
+   "section": "git",
+   "quote": "The process produced 6 revisions of a simulation document, found 14 architectural gaps, resolved 13 of them",
+   "about": [
+    "concept:the-brief",
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 14,
+    "unit": "architectural gaps found by the simulation"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The decision that makes it work came on 3 and 17 March: file names and ids that are encrypted but deterministic, derived from the read key, and knowing the read key does not let you compute the write key.",
+   "section": "git",
+   "quote": "file names and ids that are encrypted but deterministic, derived from the read key",
+   "about": [
+    "concept:encryption-and-keys",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "The sgit command arrived on 16 March as an alias of the command line that had started on 3 March as sg-send-cli, and on 20 March the package was renamed sgit-ai and published to PyPI.",
+   "section": "git",
+   "quote": "on 20 March the package was renamed sgit-ai and published to PyPI",
+   "about": [
+    "entity:sgit",
+    "entity:pypi"
+   ],
+   "refs": [
+    "r08"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "Once sgit existed the vault became its interface, rendering Markdown, images, CSV, audio, video and by 30 March HTML, and Claude learnt to create vaults through skills from late March.",
+   "section": "vault",
+   "quote": "Claude learnt to create vaults through skills, from late March.",
+   "about": [
+    "concept:vault",
+    "entity:claude"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The 2 May brief for sandboxed apps put the security model in two lines: the iframe cannot load, access or reach anything but can run JavaScript; the iframe is user-mode and the runtime kernel-mode.",
+   "section": "vault",
+   "quote": "The iframe is user-mode. The runtime is kernel-mode.",
+   "about": [
+    "concept:custom-interfaces",
+    "concept:vault",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "The SG/Send app has 4,476 commits on 246 of its first 249 days and 739 release tags from v0.1.0 to v0.34.0, 196 in February and 253 in March, then fewer each month.",
+   "section": "pace",
+   "quote": "The SG/Send app has 4,476 commits on 246 of its first 249 days, and 739 release tags from v0.1.0 to v0.34.0",
+   "about": [
+    "concept:shipping",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 4476,
+    "unit": "commits on the SG/Send app",
+    "as_of": "2026-10-15"
+   },
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "The busiest weeks were in March, at 427 and 439 commits.",
+   "section": "pace",
+   "quote": "The busiest weeks were in March, at 427 and 439 commits.",
+   "about": [
+    "concept:shipping"
+   ],
+   "value": {
+    "n": 439,
+    "unit": "commits in the busiest week",
+    "as_of": "2026-03"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "The sgit command line has 1,620 commits, its biggest week in early May at 337, two long pauses of 36 and 28 days, and a burst in October when versions 0.17 to 0.21 shipped in eight days.",
+   "section": "pace",
+   "quote": "two long pauses, 36 days from the end of June to early August and 28 days from late August to late September",
+   "about": [
+    "concept:shipping",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 36,
+    "unit": "days, the longer pause on the command line"
+   },
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "sgit's unit tests grew from 237 on 5 March to 4,232 on 14 October, and it went to PyPI 20 times as sg-send-cli and 89 times as sgit-ai.",
+   "section": "pace",
+   "quote": "Its unit tests grew from 237 on 5 March to 4,232 on 14 October.",
+   "about": [
+    "entity:sgit",
+    "entity:pypi"
+   ],
+   "value": {
+    "n": 4232,
+    "unit": "unit tests",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "Of the 1,671 commits under the owner's name on the app, 1,298 are merges of the agents' branches and most of the rest are brief files; the agents' share rose from 38% in February to over 85% from September.",
+   "section": "pace",
+   "quote": "Of the 1,671 commits under my name on the app, 1,298 are merges of the agents' branches",
+   "about": [
+    "concept:multi-agent",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 1298,
+    "of": 1671,
+    "unit": "commits that are merges of agents' branches",
+    "as_of": "2026-10-15"
+   }
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The agents wrote the code; the owner wrote the briefs, read the debriefs and merged.",
+   "section": "pace",
+   "quote": "The agents wrote the code; I wrote the briefs, read the debriefs, and merged.",
+   "about": [
+    "concept:multi-agent",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The use case did not land, and the briefs said so by 5 March: users buy credits, test once, and don't come back, and credits sit unused.",
+   "section": "market",
+   "quote": "Users buy credits, test once, and don't come back.",
+   "about": [
+    "concept:the-market",
+    "concept:startups"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "On 19 June the strategy brief set profitability and regular use as the priority, and from then on the briefs turn towards risk acceptance and RiskMandate.",
+   "section": "market",
+   "quote": "from then on the briefs turn towards risk acceptance and RiskMandate",
+   "about": [
+    "concept:the-market",
+    "concept:risk-acceptance",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "hypothesis",
+   "text": "It was a platform without a workflow that needed it; now the newsroom, RiskMandate and the vaults need exactly the features SG/Send built, which is why they are getting used.",
+   "section": "market",
+   "quote": "It was a platform without a workflow that needed it.",
+   "about": [
+    "concept:the-market",
+    "concept:startups",
+    "concept:explorer-villager-town-planner"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The owner's memory was wrong in places: the order of events, the length of the Git work, and nine months, which is eight.",
+   "section": "limits",
+   "quote": "My memory was wrong in places.",
+   "about": [
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "Usage is described, not counted; the briefs say credits sat unused and no usage figures were found.",
+   "section": "limits",
+   "quote": "Usage is described, not counted.",
+   "about": [
+    "concept:the-market"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "Thirty paying customers appears only in an investor one-pager and the team's librarian could not verify it; ten is the recorded number.",
+   "section": "limits",
+   "quote": "appears only in an investor one-pager, and the team's librarian could not verify it; ten is the recorded number",
+   "about": [
+    "concept:the-record",
+    "entity:librarian"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "limit",
+   "text": "The iframe inspiration from chat apps is the owner's recollection; the sandbox briefs do not cite them.",
+   "section": "limits",
+   "quote": "The iframe inspiration is my recollection.",
+   "about": [
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "limit",
+   "text": "Commit counts include automation: release tags and some commits are made by CI.",
+   "section": "limits",
+   "quote": "Release tags and some commits are made by CI.",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "The article comes from a voice memo of 15 October 2026, and two research agents checked every date and quote in the public repositories, with counts from git logs of all branches that day.",
+   "section": "sources",
+   "quote": "every date and quote here was checked in the repositories",
+   "about": [
+    "concept:voice-memo",
+    "concept:the-record",
+    "entity:github"
+   ],
+   "refs": [
+    "r01",
+    "r06",
+    "r07"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c10",
+   "verb": "supersedes",
+   "to": "c09"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c15",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c28"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c25",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c26",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c25"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c31",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c33",
+   "verb": "backs",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "SG/Send, which became sgit: the app, the command line and the vaults"
+  },
+  {
+   "id": "send-sgraph-ai",
+   "role": "the service that went live on 13 February 2026"
+  },
+  {
+   "id": "stripe",
+   "role": "the checkout that went live on 1 March"
+  },
+  {
+   "id": "amazon",
+   "role": "the £5 voucher offered to the first customers"
+  },
+  {
+   "id": "aws",
+   "role": "Lambda, where the MVP was deployed"
+  },
+  {
+   "id": "git",
+   "role": "the model copied on 4 March: commits, trees, blobs, refs and branches"
+  },
+  {
+   "id": "pypi",
+   "role": "where sg-send-cli and then sgit-ai were published"
+  },
+  {
+   "id": "claude",
+   "role": "learnt to create vaults through skills from late March"
+  },
+  {
+   "id": "riskmandate",
+   "role": "where the briefs turned after June"
+  },
+  {
+   "id": "github",
+   "role": "the public repositories the record was checked in"
+  },
+  {
+   "id": "historian",
+   "role": "the team's historian, whose status report recorded the three days to live"
+  },
+  {
+   "id": "librarian",
+   "role": "the team's librarian, who could not verify thirty paying customers"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "the-market",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+   "title": "SGraph-AI App Send",
+   "by": "the-cyber-boardroom",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r02",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/04/v0.11.1__arch-brief__git-like-encrypted-object-store.md",
+   "title": "Architecture brief: a Git-like encrypted object store",
+   "by": "Dinis Cruz",
+   "date": "2026-03-04",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/03/v0.10.30__brief__first-customers-debrief.md",
+   "title": "First customers debrief",
+   "by": "Dinis Cruz",
+   "date": "2026-03-03",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/12/vault/v0.13.30__case-study__simulation-driven-architecture.md",
+   "title": "Case study: simulation-driven architecture",
+   "by": "Dinis Cruz",
+   "date": "2026-03-12",
+   "kind": "post"
+  },
+  {
+   "id": "r05",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/05/v0.11.08__brief__shell-architecture-user-activation-growth.md",
+   "title": "Brief: shell architecture, user activation and growth",
+   "by": "Dinis Cruz",
+   "date": "2026-03-05",
+   "kind": "post"
+  },
+  {
+   "id": "r06",
+   "url": "https://github.com/SGit-AI/SGit-AI__CLI",
+   "title": "SGit-AI CLI",
+   "by": "SGit-AI",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r07",
+   "url": "https://github.com/the-cyber-boardroom/SG_Send__CLI",
+   "title": "SG Send CLI",
+   "by": "the-cyber-boardroom",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r08",
+   "url": "https://pypi.org/project/sgit-ai/",
+   "title": "sgit-ai on PyPI",
+   "by": "PyPI",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-02-08",
+   "what": "First commit and the specification: encrypted on the client, key never sent"
+  },
+  {
+   "date": "2026-02-13",
+   "what": "send.sgraph.ai live"
+  },
+  {
+   "date": "2026-03-01",
+   "what": "Stripe checkout live"
+  },
+  {
+   "date": "2026-03-02",
+   "what": "First 10 paying customers; folder upload shipped in 22 minutes"
+  },
+  {
+   "date": "2026-03-04",
+   "what": "The Copy Git architecture brief"
+  },
+  {
+   "date": "2026-03-05",
+   "what": "The brief that said users buy credits, test once, and don't come back"
+  },
+  {
+   "date": "2026-03-16",
+   "what": "The sgit command arrived"
+  },
+  {
+   "date": "2026-03-20",
+   "what": "Package renamed sgit-ai and published to PyPI"
+  },
+  {
+   "date": "2026-05-02",
+   "what": "The architecture brief for sandboxed vault apps"
+  },
+  {
+   "date": "2026-06-19",
+   "what": "The strategy brief set profitability as the priority"
+  },
+  {
+   "date": "2026-10-15",
+   "what": "The voice memo; the counts from git logs of all branches"
+  }
+ ]
+}

@@ -1,0 +1,451 @@
+{
+ "slug": "one-vault-ten-agents",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Anthropic's post on Scion observes that when the clients are agents they are always online, there are many of them, and the expensive thing is moving bytes nobody needs.",
+   "section": "top",
+   "quote": "when the clients are agents, they are always online, there are many of them, and the expensive thing is moving bytes nobody needs",
+   "about": [
+    "entity:anthropic",
+    "entity:scion",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "On 16 October the newsroom's vault had 1,295 commits, 5,281 files, 16,315 blobs and 16,391 trees, about 35,000 encrypted objects and 527 MB with all its history.",
+   "section": "vault",
+   "quote": "On 16 October it had 1,295 commits, 5,281 files, 16,315 blobs and 16,391 trees",
+   "about": [
+    "concept:vault",
+    "entity:newsroom-sgit-ai",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 35423,
+    "unit": "encrypted objects",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "68 of the vault's commits arrived in the two days before the measurements, which is why it is the best test the team has.",
+   "section": "vault",
+   "quote": "68 of its commits arrived in the two days before these measurements",
+   "about": [
+    "concept:vault",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 68,
+    "of": 1295,
+    "unit": "commits",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The vault is in the same range as real application source code: the SG/Send application's git repository has 5,584 files, 4,399 commits and 42,434 objects.",
+   "section": "vault",
+   "quote": "The vault is in the same range as real application source code.",
+   "about": [
+    "concept:vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The vault lives on the hosted service, S3 behind CloudFront with a small API in front, and the agents reach it through the CLI.",
+   "section": "vault",
+   "quote": "It lives on the hosted service, S3 behind CloudFront with a small API in front",
+   "about": [
+    "entity:aws",
+    "concept:deployment",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "A full clone of the vault takes three and a half minutes, and nobody needs one.",
+   "section": "in-short",
+   "quote": "Nobody clones all of it. Three and a half minutes, and nobody needs to.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 210,
+    "unit": "seconds for a full clone",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "One 130-file folder with one commit of history takes 13 seconds and 3 MB, however large the vault is, because the clone asks only for the spine of trees down to its folder and the blobs under it.",
+   "section": "fetch",
+   "quote": "A clone that carries a depth costs seconds and megabytes however large the vault is",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 13,
+    "unit": "seconds for one folder, one commit",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "A clone that carries the whole history of a folder pays for the history, not the folder: 227 seconds for 130 files, almost all of it walking 1,295 commits one request at a time.",
+   "section": "fetch",
+   "quote": "227 seconds for 130 files, almost all of it walking 1,295 commits one request at a time",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 227,
+    "unit": "seconds for one folder with all its history",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "The fix for the history walk is designed: a small encrypted record of the commit chain, written on every push, so a clone can fetch the chain in about 26 batched requests instead of discovering it.",
+   "section": "fetch",
+   "quote": "a small encrypted record of the commit chain, written on every push",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Until 14 October pull was the slow path on this vault, one request per commit and one per blob, and an agent a day behind waited the best part of an hour.",
+   "section": "session",
+   "quote": "an agent a day behind waited the best part of an hour",
+   "about": [
+    "entity:sgit",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "decision",
+   "text": "The CLI team fixed pull on the vault where the agents reported it: blobs now come in batches of 50 with 16 requests in flight, and past a long gap the client lists the store and sweeps what is missing.",
+   "section": "session",
+   "quote": "blobs now come in batches of 50 with 16 requests in flight",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "data-point",
+   "text": "After the fix, fetching the whole head into an empty store takes about three minutes, down from about 53; a pull with nothing new takes 2.5 seconds.",
+   "section": "session",
+   "quote": "takes about three minutes, down from about 53",
+   "about": [
+    "entity:sgit",
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 3,
+    "unit": "minutes to fetch the whole head into an empty store",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "With the same 35,000 objects on local disk, the one-folder, one-commit clone fell from 13 seconds to 2.3 with a plain file server and 0.8 with the API server as a local process.",
+   "section": "storage",
+   "quote": "The one-folder, one-commit clone fell from 13 seconds to 2.3 and 0.8.",
+   "about": [
+    "entity:sgit",
+    "concept:deployment"
+   ],
+   "value": {
+    "n": 0.8,
+    "unit": "seconds for one folder, one commit, from local disk",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "sgit is not the bottleneck; the distance to the storage is, because each request to the hosted service pays a round trip through a CDN, a Lambda and S3 before a byte moves.",
+   "section": "storage",
+   "quote": "So sgit is not the bottleneck; the distance to the storage is.",
+   "about": [
+    "entity:sgit",
+    "entity:aws",
+    "concept:deployment"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "The ruv.sgit hive runs say the same from the other side: on a local server every sgit operation in fifteen recorded runs took between 0.4 and 1.5 seconds, including starting Python and deriving the key.",
+   "section": "storage",
+   "quote": "every sgit operation in fifteen recorded runs took between 0.4 and 1.5 seconds",
+   "about": [
+    "entity:ruv-sgit-ai",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 15,
+    "unit": "recorded hive runs",
+    "as_of": "2026-10-16"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "Earlier measurements on a single local server process found ten clones of one folder at once took 1.9 seconds with the server mostly idle, while ten full clones queued to 21 seconds.",
+   "section": "many",
+   "quote": "ten clones of one folder at once took 1.9 seconds with the server mostly idle",
+   "about": [
+    "concept:multi-agent",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 1.9,
+    "unit": "seconds for ten simultaneous one-folder clones"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "Vaults of this size are where sgit becomes useful for more than agents' memory, including source code.",
+   "section": "code",
+   "quote": "I think vaults this size are where sgit becomes useful for more than agents' memory, including source code",
+   "about": [
+    "concept:agent-memory",
+    "concept:vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "The next test the owner wants is a real code base moved into a vault, with agents working on it, each cloning the one package it works on in seconds.",
+   "section": "code",
+   "quote": "a real code base, moved into a vault, with agents working on it",
+   "about": [
+    "concept:vault",
+    "concept:multi-agent",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "limit",
+   "text": "Not proven at Scion's scale: 35,000 objects, 1,295 commits and ten agents is the largest vault the team runs, while Scion's monorepo has 100 GB of history and 30,000 merges a day.",
+   "section": "limits",
+   "quote": "Scion's monorepo has 100 GB of history and 30,000 merges a day",
+   "about": [
+    "entity:scion",
+    "concept:vault"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "limit",
+   "text": "No blame or bisect: path history, signed commits, signed tags and verification exist; blame is not written yet.",
+   "section": "limits",
+   "quote": "Path history, signed commits, signed tags and verification exist; blame is not written yet.",
+   "about": [
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "limit",
+   "text": "A partial clone of a long history is slow without a depth today; the fix is designed, not shipped.",
+   "section": "limits",
+   "quote": "The fix is designed, not shipped.",
+   "about": [
+    "concept:vault-design",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "The measurements are one run each, from sandboxes that send every request through a proxy; a plain connection does better.",
+   "section": "limits",
+   "quote": "One run each, from sandboxes that send every request through a proxy.",
+   "about": [
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The source-code use is a proposal: the vault holds notes, mail and analysis, not code.",
+   "section": "limits",
+   "quote": "The vault holds notes, mail and analysis, not code.",
+   "about": [
+    "concept:vault",
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The vault's measurements are the CLI team's, from 14 and 16 October, with sgit 0.22.0 and the 14 October fixes; the vault's id and contents are not published.",
+   "section": "sources",
+   "quote": "from 14 and 16 October, with sgit 0.22.0 and the 14 October fixes",
+   "about": [
+    "entity:sgit",
+    "entity:newsroom-sgit-ai"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c08",
+   "verb": "gives_rise_to",
+   "to": "c09"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c19",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c13"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c17"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sgit",
+   "role": "the version control system measured, its CLI and the team that fixed pull"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the newsroom whose agents share the vault that was measured"
+  },
+  {
+   "id": "anthropic",
+   "role": "author of the post on Scion that set the question"
+  },
+  {
+   "id": "scion",
+   "role": "Anthropic's version control system for agents, the comparison at scale"
+  },
+  {
+   "id": "aws",
+   "role": "S3, CloudFront and Lambda, the hosted storage whose round trips cost the time"
+  },
+  {
+   "id": "ruv-sgit-ai",
+   "role": "whose published hive ledger gives the local-server timings"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-16",
+   "what": "The vault counted and measured from the hosted service and local disk; the voice memo"
+  },
+  {
+   "date": "2026-10-14",
+   "what": "The full clone measured and the pull fixes shipped on the vault where the agents reported it"
+  }
+ ]
+}

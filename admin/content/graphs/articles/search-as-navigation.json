@@ -1,0 +1,565 @@
+{
+ "slug": "search-as-navigation",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Search in the browser went in on 13 October, built on the observation that most of a search engine was already published: clean headings, markdown twins, teasers, topics, tags and graphs.",
+   "section": "today",
+   "quote": "Search in the browser went in on 13 October, and it was built on a good observation: most of a search engine was already published.",
+   "about": [
+    "concept:client-side",
+    "entity:newsroom-sgit-ai",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The build writes two files and the reader's browser ranks them with BM25; nothing is sent anywhere.",
+   "section": "today",
+   "quote": "The build writes two files, and the reader's browser ranks them with BM25. Nothing is sent anywhere.",
+   "about": [
+    "concept:client-side",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "Every article has a graph of its argument: 2,289 nodes and 2,326 edges across 182 graphs.",
+   "section": "today",
+   "quote": "Every article has a graph of its argument, 2,289 nodes and 2,326 edges across 182 graphs.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "entity:newsroom-sgit-ai"
+   ],
+   "value": {
+    "n": 2289,
+    "unit": "nodes across 182 article graphs",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Every section has a one-line summary and a paragraph, 1,995 of them.",
+   "section": "today",
+   "quote": "Every section has a one-line summary and a paragraph, 1,995 of them.",
+   "about": [
+    "concept:publishing-method"
+   ],
+   "value": {
+    "n": 1995,
+    "unit": "section summaries",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "There are 657 figures with captions, trails that join articles into series, and now reviews on the record; a list throws most of that away.",
+   "section": "today",
+   "quote": "There are 657 figures with captions, trails that join articles into series",
+   "about": [
+    "concept:publishing-method"
+   ],
+   "value": {
+    "n": 657,
+    "unit": "figures with captions",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "proposal",
+   "text": "The next version of search should be navigation rather than question and answer: type a word and walk into the graph around it.",
+   "section": "navigation",
+   "quote": "What I want is closer to walking than to asking.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Portugal could be the country, the Portugal wire, the tag, or just the word, and the page should say which as the reader types.",
+   "section": "navigation",
+   "quote": "Portugal could be the country, the Portugal wire, the tag, or just the word.",
+   "about": [
+    "entity:portugal",
+    "entity:industry-wire",
+    "concept:the-wire",
+    "concept:search-as-navigation"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "proposal",
+   "text": "Once a word is picked, the page shows what sits nearest and which combinations are worth following, each with an exact count of how many articles have both.",
+   "section": "navigation",
+   "quote": "Portugal and startups, Portugal and OWASP, Portugal and the talks I gave in Lisbon, each with an exact count of how many articles have both.",
+   "about": [
+    "concept:search-as-navigation",
+    "entity:owasp",
+    "entity:lisbon",
+    "entity:portugal"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "When a suggestion is wrong or a result is missing, the owner can say so on the spot with the query attached, and it goes down the lane to the agents.",
+   "section": "navigation",
+   "quote": "I can say so on the spot, with the query attached, and it goes down the lane to the agents.",
+   "about": [
+    "concept:vault-design",
+    "concept:search-as-navigation",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "decision",
+   "text": "The first version has no model in it, on purpose: words resolve through a curated list of names and aliases, combinations come from counting, and the counts are exact.",
+   "section": "deterministic",
+   "quote": "The first version has no model in it, on purpose.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "The site already runs two real database engines with no server, SQLite and a SPARQL store compiled to WebAssembly, over JSON files built at release.",
+   "section": "deterministic",
+   "quote": "This site already runs two real database engines with no server, SQLite and a SPARQL store, compiled to WebAssembly, over JSON files built at release.",
+   "about": [
+    "entity:sqlite",
+    "entity:sparql",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "A pane on the side shows the working: every file fetched, how each word resolved and by which rule, each step of the walk, why each result is there, the same query as SQL and SPARQL, and the timings.",
+   "section": "pane",
+   "quote": "every file fetched, its size and how long it took; how each word resolved, and by which rule; each step of the walk and how many nodes it touched",
+   "about": [
+    "concept:search-as-navigation",
+    "entity:sparql"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "hypothesis",
+   "text": "A search that can show its working is one you can trust and one you can improve, because a wrong result shows which part of the graph brought it in.",
+   "section": "pane",
+   "quote": "A search that can show its working is one you can trust, and one you can improve",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "There are 663 distinct tags on 182 articles, and 396 of them are used once, with near-duplicates everywhere.",
+   "section": "debt",
+   "quote": "There are 663 distinct tags on 182 articles, and 396 of them are used once.",
+   "about": [
+    "concept:taxonomy-debt"
+   ],
+   "value": {
+    "n": 396,
+    "of": 663,
+    "unit": "tags used once",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "The graphs have 2,230 distinct idea labels, and only 47 of them appear in more than one article.",
+   "section": "debt",
+   "quote": "The graphs have 2,230 distinct idea labels, and only 47 of them appear in more than one article.",
+   "about": [
+    "concept:taxonomy-debt",
+    "concept:fractal-semantic-graphs"
+   ],
+   "value": {
+    "n": 47,
+    "of": 2230,
+    "unit": "idea labels shared between articles",
+    "as_of": "2026-10-18"
+   }
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Each article's graph is an island: the same idea in two articles has two names.",
+   "section": "debt",
+   "quote": "Each article's graph is an island: the same idea in two articles has two names.",
+   "about": [
+    "concept:taxonomy-debt",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "The taxonomy debt is not a reason to reach for a model; it is the work: merge duplicate tags, write down aliases, list the people, companies, standards and places, and cluster the ideas that are the same.",
+   "section": "debt",
+   "quote": "Merge the duplicate tags, write down the aliases, build a list of the people, companies, standards and places we write about, and cluster the ideas that are the same idea.",
+   "about": [
+    "concept:taxonomy-debt"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "The build should print a report at every release, shown on a page, of what is still loose, so the debt can be watched shrinking.",
+   "section": "debt",
+   "quote": "a report, printed at every release and shown on a page, of what is still loose, so we can watch it shrink.",
+   "about": [
+    "concept:taxonomy-debt",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "definition",
+   "text": "This is graph RAG; most retrieval for models today is done with vectors, cutting text into chunks, embedding them and fetching the chunks nearest the question.",
+   "section": "vectors",
+   "quote": "This is graph RAG. Most retrieval for models today is done with vectors: cut the text into chunks, embed them, and fetch the chunks nearest the question.",
+   "about": [
+    "concept:graph-rag"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "Vector retrieval works and is opaque: you cannot see why a chunk was chosen, cannot fix a wrong match except by changing the embedding, and the structure of the argument is gone.",
+   "section": "vectors",
+   "quote": "you cannot see why a chunk was chosen, you cannot fix a wrong match except by changing the embedding",
+   "about": [
+    "concept:graph-rag",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "hypothesis",
+   "text": "The better the taxonomy, the ontology and the graph, the less of a model is needed, and a model given the subgraph a walk selected will do better than one given the nearest chunks.",
+   "section": "vectors",
+   "quote": "My hypothesis is that the better the taxonomy, the ontology and the graph, the less of a model we need",
+   "about": [
+    "concept:graph-rag",
+    "concept:fractal-semantic-graphs",
+    "concept:taxonomy-debt"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "The test: a set of queries with what each should find, measured by the build release by release, and later the same queries against a vector index over the same text, side by side.",
+   "section": "vectors",
+   "quote": "the build measures how much of it the search finds, release by release, and later the same queries go to a vector index over the same text",
+   "about": [
+    "concept:graph-rag",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "A data layer built at release: one graph of the site with an ontology, as JSON, tables and triples, plus the taxonomy report.",
+   "section": "brief",
+   "quote": "A data layer built at release: one graph of the site, with an ontology, as JSON, tables and triples, plus the taxonomy report.",
+   "about": [
+    "concept:the-brief",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "proposal",
+   "text": "Five views of one result: the graph, the sections, the figures, a timeline and the list.",
+   "section": "brief",
+   "quote": "Five views of one result: the graph, the sections, the figures, a timeline and the list.",
+   "about": [
+    "concept:the-brief",
+    "concept:search-as-navigation"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "Feedback and golden queries, so what the owner expects to find becomes a test; the model, the comparison with vectors and infographics from a walk come after.",
+   "section": "brief",
+   "quote": "Feedback and golden queries, so what I expect to find becomes a test.",
+   "about": [
+    "concept:the-brief",
+    "concept:search-as-navigation"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Nothing in Explore is built; today's search is, and the rest is a brief.",
+   "section": "limits",
+   "quote": "Nothing in Explore is built. Today's search is; the rest is a brief.",
+   "about": [
+    "concept:search-as-navigation",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The hypothesis about vectors is untested; the brief sets up the test and the article does not report a result.",
+   "section": "limits",
+   "quote": "The hypothesis about vectors is untested. The brief sets up the test; the article does not report a result.",
+   "about": [
+    "concept:graph-rag"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Deterministic does not mean right: an alias or a cluster can be wrong, and the pane is there to show it.",
+   "section": "limits",
+   "quote": "Deterministic does not mean right. An alias or a cluster can be wrong; the pane is there to show it.",
+   "about": [
+    "concept:search-as-navigation"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The counts are from 18 October 2026 and will change with every release.",
+   "section": "limits",
+   "quote": "The counts are from 18 October 2026 and will change with every release.",
+   "about": [
+    "concept:taxonomy-debt"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "limit",
+   "text": "A curated list of names is work that never ends, and that is part of the point.",
+   "section": "limits",
+   "quote": "A curated list of names is work that never ends. That is part of the point.",
+   "about": [
+    "concept:taxonomy-debt",
+    "concept:the-newsroom"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c08",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c12"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "gives_rise_to",
+   "to": "c21"
+  },
+  {
+   "from": "c21",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c24",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c25",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c21"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c14"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose search and graphs are counted and whose next search is briefed"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "the owner, whose memo and hypothesis the brief carries"
+  },
+  {
+   "id": "portugal",
+   "role": "the worked example query"
+  },
+  {
+   "id": "lisbon",
+   "role": "the talks given there, a combination worth following"
+  },
+  {
+   "id": "owasp",
+   "role": "a combination with Portugal worth following"
+  },
+  {
+   "id": "industry-wire",
+   "role": "the Portugal wire, one of the things the word could mean"
+  },
+  {
+   "id": "sqlite",
+   "role": "one of the two database engines already running in the browser"
+  },
+  {
+   "id": "sparql",
+   "role": "the query language of the second engine, and one of the pane's two query forms"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "search-as-navigation",
+   "defined_here": true
+  },
+  {
+   "id": "taxonomy-debt",
+   "defined_here": true
+  },
+  {
+   "id": "graph-rag",
+   "defined_here": true
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "the-wire",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-13",
+   "what": "Search in the browser goes in"
+  },
+  {
+   "date": "2026-10-18",
+   "what": "The voice memo; the counts of tags, graphs, summaries and figures made from the site's files"
+  }
+ ]
+}

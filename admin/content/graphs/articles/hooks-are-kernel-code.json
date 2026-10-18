@@ -1,0 +1,530 @@
+{
+ "slug": "hooks-are-kernel-code",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "A hook is called by the harness on every matching event, runs with the user's permissions, and can block the action, ask a person, or rewrite what the model reads.",
+   "section": "kernel",
+   "quote": "It runs with the user's permissions.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "definition",
+   "text": "Hooks are the agent's kernel, and today we write them like scripts.",
+   "section": "kernel",
+   "quote": "Hooks are the agent's kernel, and today we write them like scripts.",
+   "about": [
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "proposal",
+   "text": "Hooks should be managed like kernel code: small, reviewed by more than one person, versioned, tested on fixed inputs, signed, installed where the agent cannot write.",
+   "section": "kernel",
+   "quote": "So we should manage them like kernel code.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "A hook can be five lines, so the whole review graph from the intent it serves to every line it calls fits on one page and can be done completely.",
+   "section": "case-study",
+   "quote": "A hook can be five lines.",
+   "about": [
+    "concept:code-review",
+    "concept:fractal-semantic-graphs",
+    "entity:secrets-sgit-ai"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "The three hooks this session runs are in one 216-line file: re-anchoring in 9 lines, the prompt summary in 14, and the stop check in 26.",
+   "section": "case-study",
+   "quote": "The three this session runs are in one 216-line file",
+   "about": [
+    "concept:agent-tooling",
+    "entity:claude-code"
+   ],
+   "value": {
+    "n": 216,
+    "unit": "lines in the shared hooks file",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "The first ten hooks are 4 to 26 lines each; the eleven-line commit hook calls a 37-line scan.",
+   "section": "in-short",
+   "quote": "4 to 26 lines each; the eleven-line commit hook calls a 37-line scan.",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:blast-radius"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "hooks mapped",
+    "as_of": "2026-10-14"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "proposal",
+   "text": "A hook of hooks: at session start, check every installed hook against a signed list of hashes and refuse to start if one has changed.",
+   "section": "case-study",
+   "quote": "A hook at session start that checks every installed hook against a signed list of hashes",
+   "about": [
+    "concept:hooks-are-kernel-code",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "proposal",
+   "text": "A security review agent hook reviews a push before it leaves, on the most capable model, with read-only tools and no network.",
+   "section": "case-study",
+   "quote": "This is where the most capable model belongs: a security review should be as effective as possible.",
+   "about": [
+    "concept:agent-isolation",
+    "concept:code-review",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "In the sandbox the leak scan let a GitHub token shape through because its patterns were written for this site's own secrets; the hook was correct and the code below it incomplete.",
+   "section": "fractal",
+   "quote": "the scan let a GitHub token shape through because its patterns were written for this site's own secrets",
+   "about": [
+    "concept:blast-radius",
+    "concept:identity-and-secrets",
+    "entity:github"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Change one pattern in the shared scan and the climb reaches the commit gate for every session that installs it; the graph shows which changes are large whatever the size of the diff.",
+   "section": "fractal",
+   "quote": "Change one pattern in the shared scan, and the climb reaches the commit gate for every session that installs it.",
+   "about": [
+    "concept:blast-radius",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Claude Code lists five kinds of hook handler: a command, an HTTP call, an MCP tool, a prompt hook and an agent.",
+   "section": "maturity",
+   "quote": "Claude Code lists five kinds of handler",
+   "about": [
+    "concept:agent-tooling",
+    "entity:claude-code",
+    "entity:anthropic"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "A maturity model of five levels for how a rule is kept: L0 in the prompt, L1 a model decides, L2 a deterministic script, L3 managed and proven, L4 off the machine.",
+   "section": "maturity",
+   "quote": "The levels say how the rule is kept, building on the barrier types of a behaviour policy",
+   "about": [
+    "concept:hook-maturity-model",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "Three questions for every hook at any level: how much power it has, which legs of the lethal trifecta it touches, and how much sandbox it runs in.",
+   "section": "maturity",
+   "quote": "And three questions for every hook, at any level.",
+   "about": [
+    "concept:hook-maturity-model",
+    "concept:lethal-trifecta",
+    "concept:agent-isolation",
+    "entity:simon-willison"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "The less deterministic a hook is, the less it should be able to reach; full internet access for an agent inside a hook is hard to justify.",
+   "section": "maturity",
+   "quote": "The less deterministic a hook is, the less it should be able to reach.",
+   "about": [
+    "concept:reach",
+    "concept:hook-maturity-model"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "All ten hooks are L2 or proposed; none is L3, because this session's own hooks live in a folder the agent can write.",
+   "section": "maturity",
+   "quote": "All ten hooks in the figure are L2 or proposed.",
+   "about": [
+    "concept:hook-maturity-model",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "Isolated agent environments such as Chainguard's, where every run produces a signed record, are where a hook's tests should run and an agent hook can be kept from the network.",
+   "section": "where",
+   "quote": "an environment where every run is isolated and produces a signed record of what ran is exactly where a hook's tests should run",
+   "about": [
+    "concept:agent-isolation",
+    "entity:chainguard"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "proposal",
+   "text": "A hooks site and feed, the hooks equivalent of a skills manager, where every hook starts from the behaviour policy row it serves and carries its graph, fixtures, version, hash and signature.",
+   "section": "site",
+   "quote": "So the proposal is a site and a feed to manage the hooks we deploy, the hooks equivalent of a skills manager.",
+   "about": [
+    "concept:agent-tooling",
+    "concept:hooks-are-kernel-code",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "Installing and running a hook is free and works offline; paying buys state: the history of decisions, alerts, the footprint against the policy, signed attestations and managed updates.",
+   "section": "billing",
+   "quote": "Installing and running a hook is free, and it works offline",
+   "about": [
+    "concept:pay-for-state",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The billing principle is the reading meter's on sgit.ai: nobody is forced to pay.",
+   "section": "billing",
+   "quote": "the same principle as the reading meter on sgit.ai: nobody is forced to pay",
+   "about": [
+    "concept:micropayments",
+    "concept:pay-for-state",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "The feed is a hooks.json file and a page per hook; abp.sgit.ai, where the behaviour policy is published, is a natural home.",
+   "section": "brief",
+   "quote": "abp.sgit.ai, where the behaviour policy is published, is a natural home",
+   "about": [
+    "entity:abp-sgit-ai",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "Nothing in the feed or a usage record carries a key, a secret or the content the hook saw, only the decision; the site publishes defensive hooks, not ways around them.",
+   "section": "brief",
+   "quote": "Nothing in the feed or a usage record carries a key, a secret or the content the hook saw, only the decision.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:pay-for-state"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "limit",
+   "text": "Nothing in the brief is built: the site, the feed, the graph per hook and the billing are proposals.",
+   "section": "limits",
+   "quote": "Nothing in the brief is built.",
+   "about": [
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The ten hooks are this session's: three in use, five tested on fixed inputs, two proposed, and none is L3.",
+   "section": "limits",
+   "quote": "Three in use, five tested on fixed inputs, two proposed; none is L3.",
+   "about": [
+    "concept:hook-maturity-model",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "Line counts are non-blank code lines; the three session hooks were counted inside their shared file.",
+   "section": "limits",
+   "quote": "Line counts are non-blank code lines.",
+   "about": [
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The maturity model is a proposal whose levels build on the barrier types this site uses; others would draw them differently.",
+   "section": "limits",
+   "quote": "The maturity model is a proposal.",
+   "about": [
+    "concept:hook-maturity-model"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The memo was cut short, exported before it finished; the article covers what it said.",
+   "section": "limits",
+   "quote": "It was exported before it finished; this covers what it said.",
+   "about": [
+    "concept:hooks-are-kernel-code"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "The article is from a voice memo of 14 October 2026 written by the site's writer agent; the handler types are from Anthropic's Claude Code hooks reference read the same day.",
+   "section": "sources",
+   "quote": "the handler types are from Anthropic's Claude Code hooks reference, read the same day",
+   "about": [
+    "entity:anthropic",
+    "entity:claude-code",
+    "entity:dinis-cruz"
+   ],
+   "refs": [
+    "r01"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c07"
+  },
+  {
+   "from": "c11",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c18",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c22",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c12"
+  }
+ ],
+ "entities": [
+  {
+   "id": "claude-code",
+   "role": "the harness whose hooks are mapped and whose reference lists five handler kinds"
+  },
+  {
+   "id": "anthropic",
+   "role": "publishes the Claude Code hooks reference"
+  },
+  {
+   "id": "github",
+   "role": "a GitHub token shape slipped through the leak scan in the sandbox"
+  },
+  {
+   "id": "chainguard",
+   "role": "ships isolated agent environments where hooks' tests could run"
+  },
+  {
+   "id": "simon-willison",
+   "role": "named the lethal trifecta the three questions use"
+  },
+  {
+   "id": "abp-sgit-ai",
+   "role": "the proposed home of the hooks feed, where the behaviour policy is published"
+  },
+  {
+   "id": "secrets-sgit-ai",
+   "role": "where the review graphs the case study builds on started"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "its reading meter gives the billing principle"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memo and owns the argument"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "hooks-are-kernel-code",
+   "defined_here": true
+  },
+  {
+   "id": "hook-maturity-model",
+   "defined_here": true
+  },
+  {
+   "id": "pay-for-state",
+   "defined_here": true
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "lethal-trifecta",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-isolation",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://code.claude.com/docs/en/hooks",
+   "title": "Claude Code hooks reference",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/",
+   "title": "The lethal trifecta",
+   "by": "Simon Willison",
+   "date": "2025-06-16",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-14",
+   "what": "The voice memo, the ten hooks counted, and the brief written on top of v0.12.47"
+  }
+ ]
+}

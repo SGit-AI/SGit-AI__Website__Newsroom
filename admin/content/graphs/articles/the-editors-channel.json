@@ -1,0 +1,522 @@
+{
+ "slug": "the-editors-channel",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "Most of the owner's editing starts on a page, at a version, with a phrase selected, and each request arrives in the chat stripped of all of that.",
+   "section": "chat",
+   "quote": "each one arrives in the chat stripped of all of that",
+   "about": [
+    "concept:editors-channel",
+    "concept:the-newsroom"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "decision",
+   "text": "Asked to stop writing over-the-top phrases, the agent rewrote every case in recent articles and added a check so the next one fails before it is committed.",
+   "section": "chat",
+   "quote": "the agent found every case in the recent articles, rewrote them, and added a check so the next one fails before it is committed",
+   "about": [
+    "concept:the-newsroom",
+    "concept:publishing-method"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "When an article is fine nothing happens; a sign-off the owner does not record is one the agent cannot count on.",
+   "section": "chat",
+   "quote": "A sign-off I do not record is one the agent cannot count on",
+   "about": [
+    "concept:editors-channel",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Every reader's reading, notes and personas live in their browser and, if they choose, in a reader vault they own; the newsroom has no key to it.",
+   "section": "exists",
+   "quote": "The newsroom has no key to it.",
+   "about": [
+    "concept:vault",
+    "concept:privacy",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The lane is one tap at a piece, and Send to the newsroom puts unsent notes into a vault of their own and hands the newsroom its read key once.",
+   "section": "exists",
+   "quote": "Send to the newsroom puts the notes not yet sent into a vault of their own and hands the newsroom its read key, once.",
+   "about": [
+    "concept:vault-design",
+    "concept:encryption-and-keys",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The inbox is an append lane any browser with a link can write to and none can read, with messages sealed to a public key made in the reader's browser.",
+   "section": "exists",
+   "quote": "messages are sealed to the public key, and the private key stays in the reader's master vault",
+   "about": [
+    "concept:vault-design",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "limit",
+   "text": "The lane only goes one way: it is not a channel the newsroom can write back on, and nothing reads it unless the owner asks an agent to.",
+   "section": "exists",
+   "quote": "What the lane is not: a channel the newsroom can write back on.",
+   "about": [
+    "concept:vault-design",
+    "concept:editors-channel"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "proposal",
+   "text": "The switch is a key: the agent or another editor makes an editor key for a browser, and without it none of the editor code runs and the reader's site is unchanged.",
+   "section": "key",
+   "quote": "So the switch is a key.",
+   "about": [
+    "concept:editors-channel",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "proposal",
+   "text": "An editor vault holds a subset of the owner's reading account, newsroom pages and notes only, and the agent gets access to nothing of his beyond it.",
+   "section": "key",
+   "quote": "The agent gets access to this vault and to nothing of mine beyond it.",
+   "about": [
+    "concept:editors-channel",
+    "concept:vault",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "proposal",
+   "text": "The new kind of note that matters most is Signed off, against the version of the article read, so the agent can say whether the live version is the one signed off.",
+   "section": "key",
+   "quote": "One new kind of note matters most: Signed off, against the version of the article I read.",
+   "about": [
+    "concept:editors-channel",
+    "concept:human-in-the-loop",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "proposal",
+   "text": "Once a day, and whenever Process now is pressed, a pass pulls the vault, records sign-offs, runs the checks, acts on what is cheap to undo, proposes the rest and writes back.",
+   "section": "pass",
+   "quote": "Once a day, and whenever I press Process now in the pane, the pass does the same work",
+   "about": [
+    "concept:editors-channel",
+    "concept:agent-tooling"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "The pass releases what is cheap to undo: an article is a two-way door so it can release, an email is not so it never sends one.",
+   "section": "pass",
+   "quote": "an article is a two-way door, so the pass can release; an email is not, so it never sends one",
+   "about": [
+    "concept:one-way-door",
+    "concept:editors-channel"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "Anything that changes an argument, a claim or a title goes back as a proposal, not a change.",
+   "section": "pass",
+   "quote": "Anything that changes an argument, a claim or a title goes back as a proposal, not a change.",
+   "about": [
+    "concept:editors-channel",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "The pass is an agent with a policy like every agent on the site: a grant, a mandate to act on the editors' notes, and written limits.",
+   "section": "pass",
+   "quote": "The pass is an agent with a policy, like every agent on this site",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:editors-channel"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "hypothesis",
+   "text": "How much a browser should send, and to whom, is answered by five audiences, each with its own lane and key, with the reader choosing which they are in.",
+   "section": "audiences",
+   "quote": "I think the answer is five audiences, each with its own lane and its own key, and the reader chooses which one they are in.",
+   "about": [
+    "concept:editors-channel",
+    "concept:privacy",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "The anonymous lane is a checkbox, off by default, that appends the page, the kind of note and the phrase, with no account, device id or reading history.",
+   "section": "audiences",
+   "quote": "A checkbox in the pane, off by default, that says what it sends.",
+   "about": [
+    "concept:vault-design",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "The append lanes already work this way; agent workflows on ephemeral vaults measured a hundred writers posting to one at once.",
+   "section": "audiences",
+   "quote": "agent workflows on ephemeral vaults measured a hundred writers posting to one at once",
+   "about": [
+    "concept:vault-design"
+   ],
+   "value": {
+    "n": 100,
+    "unit": "writers posting to one append lane at once"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "Two-way access is a vault's read and write keys and append-only is a token; both are shared secrets today, fine for one editor and one agent, not for a desk.",
+   "section": "pki",
+   "quote": "Both are shared secrets today.",
+   "about": [
+    "concept:identity-and-secrets",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "The direction is a key pair per person and per agent: a message signed by its writer and sealed to its reader, access granted to a public key and revoked by removing it.",
+   "section": "pki",
+   "quote": "The direction is a key pair per person and per agent.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "The inbox already does half of this, sealing every message to a public key; what is missing is the signature and the per-person grant on the vault, which is sgit's to provide.",
+   "section": "pki",
+   "quote": "The inbox already does half of this: every message to it is sealed to a public key made in the reader's browser.",
+   "about": [
+    "concept:identity-and-secrets",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The vault pane, the lane, the inbox and the append lanes are built; the editor key, editor vault, Signed off note, down lane, anonymous checkbox and daily pass are not.",
+   "section": "stands",
+   "quote": "The editor key, the editor vault, the Signed off note, the down lane, the anonymous checkbox and the daily pass are not.",
+   "about": [
+    "concept:editors-channel",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "decision",
+   "text": "The agent that built the vault pane builds the browser side, the pass is the article agent's, and the map between them is a brief.",
+   "section": "stands",
+   "quote": "Another agent on this site, the one that built the vault pane, builds the browser side; the pass is mine.",
+   "about": [
+    "concept:the-brief",
+    "concept:multi-agent",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "Nothing in the editor's channel is built; the lane, the inbox and the append lanes are, and the rest is a design.",
+   "section": "limits",
+   "quote": "Nothing in the editor's channel is built.",
+   "about": [
+    "concept:editors-channel"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "The design is for a desk but has been used by one person so far.",
+   "section": "limits",
+   "quote": "The design is for a desk; it has been used by one person.",
+   "about": [
+    "concept:editors-channel",
+    "entity:publisher"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "Shared keys are not identity: until there are key pairs, a lane says that someone had the key, not who.",
+   "section": "limits",
+   "quote": "Until there are key pairs, a lane says that someone had the key, not who.",
+   "about": [
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The anonymous lane is not anonymous against everything: the server sees when an append arrived and from where, so traffic can carry identity even if the record does not.",
+   "section": "limits",
+   "quote": "The server sees when an append arrived and from where; the record carries no identity, but traffic can.",
+   "about": [
+    "concept:privacy",
+    "concept:vault-design"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The pass acting on its own is limited to what is cheap to undo; a claim, an argument or a title stays a proposal.",
+   "section": "limits",
+   "quote": "A claim, an argument or a title stays a proposal.",
+   "about": [
+    "concept:one-way-door",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Editor mode syncs as the owner reads, which is more data than the lane sends and the reason it is scoped to newsroom pages and chosen kinds of note.",
+   "section": "limits",
+   "quote": "That is more data than the lane sends, and the reason it is scoped to newsroom pages and to the kinds of note I turn on.",
+   "about": [
+    "concept:privacy",
+    "concept:editors-channel"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on 18 October 2026, after asking the agent to remove over-the-top phrases and add a check for them.",
+   "section": "sources",
+   "quote": "A voice memo from me on 18 October 2026, after asking the agent to remove over-the-top phrases and add a check for them.",
+   "about": [
+    "concept:voice-memo",
+    "entity:riskmandate"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c08"
+  },
+  {
+   "from": "c03",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c07",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c09",
+   "verb": "specifies",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "specifies",
+   "to": "c09"
+  },
+  {
+   "from": "c12",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c16",
+   "verb": "specifies",
+   "to": "c15"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c23",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c16"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c12"
+  }
+ ],
+ "entities": [
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site whose editing happens in a chat and which would gain an editor's channel"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault whose keys, lanes and future per-person grants carry the channel"
+  },
+  {
+   "id": "publisher",
+   "role": "the editor, the one person who has used the design so far"
+  },
+  {
+   "id": "riskmandate",
+   "role": "agent@riskmandate.ai, where a desk that wants to try the channel writes"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "editors-channel",
+   "defined_here": true
+  },
+  {
+   "id": "the-newsroom",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-18",
+   "what": "The voice memo; the wording check added; the brief for the editor's channel written"
+  },
+  {
+   "date": "2026-10-12",
+   "what": "The activity vault and the feedback loop designs; the first lane sent"
+  },
+  {
+   "date": "2026-10-13",
+   "what": "Send to my vault from any browser: the inbox design"
+  }
+ ]
+}

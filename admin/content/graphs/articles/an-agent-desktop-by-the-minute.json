@@ -1,0 +1,709 @@
+{
+ "slug": "an-agent-desktop-by-the-minute",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "question",
+   "text": "Can a desktop safe to hand to an agent be rented today for the two to eight hours a day it would use, paying for those hours rather than the whole month?",
+   "section": "top",
+   "quote": "Can we rent, today, a desktop that is safe to hand to an agent, for the two to eight hours a day it would use it",
+   "about": [
+    "concept:agent-isolation",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "The short answer: on Linux, nearly; on Windows, since June; on macOS, not by the minute, and possibly not for this purpose at all.",
+   "section": "top",
+   "quote": "on Linux, nearly; on Windows, since June; on macOS, not by the minute, and possibly not for this purpose at all.",
+   "about": [
+    "concept:agent-isolation",
+    "entity:apple",
+    "entity:microsoft"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "definition",
+   "text": "Read through the Agent Behaviour Policy, the desktop is the agent's grant, the task is its mandate, and the desktop's job is to keep the first close to the second and leave a readable footprint.",
+   "section": "top",
+   "quote": "the desktop is the agent's grant: everything it can reach. The task is its mandate.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "concept:footprint",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "A locked-down agent desktop has nine properties: isolation, an egress allowlist, secrets kept outside, an identity of its own, a live view and takeover, a record, a clean reset, billing that follows the work, and the right operating system.",
+   "section": "top",
+   "quote": "The first seven are about safety, the eighth about whether it is affordable to do it properly, and the ninth about whether it can be done at all.",
+   "about": [
+    "concept:agent-isolation",
+    "concept:identity-and-secrets",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "data-point",
+   "text": "Nine products were put against the nine properties from their own documentation on 7 October 2026, and no product has all nine.",
+   "section": "top",
+   "quote": "Nine products against the nine properties of a locked-down agent desktop, from each product's own documentation on 7 October 2026. No row has all nine.",
+   "about": [
+    "concept:agent-isolation"
+   ],
+   "value": {
+    "n": 9,
+    "unit": "products compared",
+    "as_of": "2026-10-07"
+   }
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "Linux sandboxes come closest on controls: E2B runs each session in a Firecracker microVM, blocks outbound traffic by default, bills by the second, and has proxy-injected secrets and short-lived identity in private beta.",
+   "section": "top",
+   "quote": "Its proxy-injected secrets and short-lived workload identity are the right design and are both in private beta.",
+   "about": [
+    "entity:e2b",
+    "concept:agent-isolation",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "Daytona has a per-sandbox firewall, secrets as placeholders swapped by an outbound proxy only for allowed hosts, screen recording, and Windows virtual machines as well as Linux.",
+   "section": "top",
+   "quote": "secrets as placeholders that an outbound proxy swaps for the real value only for allowed hosts",
+   "about": [
+    "entity:daytona",
+    "concept:agent-isolation",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Windows 365 for Agents became generally available in June 2026, with Cloud PCs that reset after every session, an agent identity in Entra, filtered web traffic, and a price of $0.40 per VM-hour in the US.",
+   "section": "top",
+   "quote": "cost $0.40 per VM-hour in the US.",
+   "about": [
+    "entity:microsoft",
+    "entity:windows-365-for-agents",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 0.4,
+    "unit": "USD per VM-hour",
+    "as_of": "2026-10-07"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "Amazon WorkSpaces for AI agents became generally available on 30 June 2026: agents connect through an MCP endpoint, authenticate through IAM, and every tool call is logged with screenshots kept.",
+   "section": "top",
+   "quote": "agents connect through an MCP endpoint, authenticate through IAM, act as known identities in Active Directory",
+   "about": [
+    "entity:aws",
+    "entity:mcp",
+    "concept:agent-isolation",
+    "concept:footprint"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "Mac hosts come closest on desktop and furthest on everything else: AWS EC2 Mac and Scaleway rent whole Apple machines with VNC, and egress, secrets and identity are built on top by the customer.",
+   "section": "top",
+   "quote": "Mac hosts come closest on desktop and furthest on everything else.",
+   "about": [
+    "entity:aws",
+    "entity:scaleway",
+    "entity:apple",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "Apple's licence for macOS Tahoe 26 allows a Mac to be leased only for a minimum of twenty-four consecutive hours and only for Permitted Developer Services, which is why every hosted Mac has a 24-hour minimum.",
+   "section": "top",
+   "quote": "The first condition is why every hosted Mac we found has a 24-hour minimum.",
+   "about": [
+    "entity:apple",
+    "entity:macos",
+    "concept:regulation",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "limit",
+   "text": "Whether a leased Mac used as a general agent desktop falls outside Permitted Developer Services is a legal question the article has not settled and is not qualified to settle; anybody planning it should ask a lawyer first.",
+   "section": "top",
+   "quote": "That is a legal question we have not settled and are not qualified to settle",
+   "about": [
+    "entity:apple",
+    "entity:macos",
+    "concept:regulation"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "data-point",
+   "text": "Two hours a day for twenty-two days is 44 hours a month: about $7.29 on an E2B or Daytona Linux sandbox, $17.60 on Windows 365 for Agents, €116.16 on a Scaleway Mac mini M4, and $649.44 for an M4 on AWS.",
+   "section": "top",
+   "quote": "On Windows 365 for Agents it is $17.60, and the first 50 hours are free.",
+   "about": [
+    "concept:pricing",
+    "entity:windows-365-for-agents",
+    "entity:e2b",
+    "entity:daytona",
+    "entity:scaleway",
+    "entity:aws"
+   ],
+   "value": {
+    "n": 44,
+    "unit": "hours of work a month priced",
+    "as_of": "2026-10-07"
+   }
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "On AWS the same 44 hours costs $649.44 for an M4 and $1,040.16 for an M4 Pro, because the hour you can buy is a day.",
+   "section": "top",
+   "quote": "The Mac is not expensive per hour; it is expensive because the hour you can buy is a day.",
+   "about": [
+    "concept:pricing",
+    "entity:aws",
+    "entity:apple"
+   ],
+   "value": {
+    "n": 649.44,
+    "unit": "USD for 44 hours on an AWS M4 Mac",
+    "as_of": "2026-10-07"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Anthropic's computer use lives in two places that do not meet: the desktop app and Claude Code run on a personal plan on a person's own computer, and the API tool is model-side only, with a Linux desktop in Docker as reference.",
+   "section": "top",
+   "quote": "A team that wants the second with the controls of the first has to build the bridge, and the bridge crosses the macOS licence.",
+   "about": [
+    "entity:anthropic",
+    "entity:claude",
+    "entity:claude-code",
+    "entity:docker",
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Of the nine properties, the three that stop a hijacked agent, egress allowlist, secrets outside and own identity, are documented on one product, E2B, where two are in private beta.",
+   "section": "top",
+   "quote": "Across the products we read, all three are documented on one, E2B, and two of them are in private beta there.",
+   "about": [
+    "entity:e2b",
+    "concept:agent-isolation",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Anthropic's measured prompt injection attack success rate in browser use fell from 23.6% without mitigations to 11.2% in August 2025 and about 1% in November 2025, a rate it says still represents meaningful risk.",
+   "section": "top",
+   "quote": "went from a 23.6% attack success rate without mitigations to 11.2% in August 2025, and to about 1% in November 2025",
+   "about": [
+    "concept:prompt-injection",
+    "entity:anthropic"
+   ],
+   "value": {
+    "n": 1,
+    "unit": "percent attack success rate",
+    "as_of": "2025-11"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "hypothesis",
+   "text": "The model cannot be the barrier: if one in a hundred attempts gets through, the question over a working month is what the agent can do when one succeeds, and that is what the box is for.",
+   "section": "top",
+   "quote": "The model's own defences reduce how often that matters, and do not replace it.",
+   "about": [
+    "concept:prompt-injection",
+    "concept:agent-isolation",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "The design: one mandate per task written before the desktop exists, Linux by default, Windows when the tool is a Windows application, macOS only for development work by the day, and a vault outside every desktop.",
+   "section": "top",
+   "quote": "One mandate per task, written before the desktop exists.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:agent-isolation",
+    "concept:vault",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "Outputs, setup scripts, the mandate and the footprint go to an encrypted sgit vault the desktop can append to and cannot rewrite, through an append lane; browser profiles and cookies are handled as secrets.",
+   "section": "top",
+   "quote": "Browser profiles and cookies are secrets and are handled as such.",
+   "about": [
+    "concept:vault-design",
+    "concept:footprint",
+    "entity:sgit",
+    "concept:identity-and-secrets"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "question",
+   "text": "Open questions to be answered by running it: how reliable live view and takeover are, how much state a paused sandbox keeps, how often an allowlist breaks a task, what recording costs, and how Windows and Linux compare.",
+   "section": "top",
+   "quote": "Those are measurements, not opinions, and they need hours on the products.",
+   "about": [
+    "concept:agent-isolation",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Several providers run startup credit programmes, read on 7 October 2026, including E2B for Startups at $20,000, Scaleway Founders up to €1,000, Google for Startups Cloud up to $350,000 and Cloudflare for Startups by tier.",
+   "section": "top",
+   "quote": "All amounts and criteria below were read from each programme's own page on 7 October 2026. Programmes change; check before applying.",
+   "about": [
+    "concept:startups",
+    "entity:e2b",
+    "entity:scaleway",
+    "entity:google",
+    "entity:cloudflare",
+    "entity:aws",
+    "entity:microsoft",
+    "entity:anthropic"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "decision",
+   "text": "RiskMandate intends to apply, from agent@riskmandate.ai, only to the programmes whose criteria it meets, checking each criterion against its own age, funding and customer status first.",
+   "section": "top",
+   "quote": "we apply only where they are met.",
+   "about": [
+    "entity:riskmandate",
+    "concept:startups"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "limit",
+   "text": "MacStadium's open-source programme and Hetzner's referral credit are not startup programmes for this purpose: a commercial agent desktop does not qualify for the first, and the second could not be confirmed on the day.",
+   "section": "top",
+   "quote": "a commercial agent desktop does not qualify, and should not be dressed up as one.",
+   "about": [
+    "concept:startups",
+    "entity:apple"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "To any programme: the credits would run the evaluation on its product next to the others, the nine properties measured rather than read, and published as a vault with its read key, including the gaps.",
+   "section": "top",
+   "quote": "the nine properties measured rather than read, and the results published on this site as a vault with its read key, including the gaps.",
+   "about": [
+    "concept:provenance",
+    "concept:vault",
+    "entity:riskmandate"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "fact",
+   "text": "Each of the nine properties is available somewhere; putting them in one place is still the customer's work, and the reason this page exists.",
+   "section": "top",
+   "quote": "Putting them in one place is still the customer's work, and the reason this page exists.",
+   "about": [
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "A dash in the comparison means the property was not found documented, which is not proof that it is missing.",
+   "section": "top",
+   "quote": "A dash means we did not find it documented, which is not proof that it is missing.",
+   "about": [
+    "concept:agent-isolation"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "Prices are list prices before tax and are arithmetic, not quotes; nothing here is legal advice, no company was contacted, and the OpenAI quote is from news coverage because the primary page could not be fetched.",
+   "section": "top",
+   "quote": "Prices are list prices before tax and are arithmetic, not quotes. Nothing here is legal advice, and no company was contacted in writing it.",
+   "about": [
+    "concept:pricing",
+    "concept:regulation",
+    "entity:openai"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The article was drafted on 7 October 2026 by agent@riskmandate.ai, Claude Opus 5.5, from a research debrief and a request from Dinis Cruz, with a research agent re-checking every programme, price and licence clause that day.",
+   "section": "top",
+   "quote": "with a research agent in the same session re-checking every programme, price, licence clause and product claim against the provider's own pages that day.",
+   "about": [
+    "entity:riskmandate",
+    "entity:claude",
+    "entity:dinis-cruz",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c04",
+   "verb": "specifies",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c14"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c13",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c18",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c11",
+   "verb": "gives_rise_to",
+   "to": "c19"
+  },
+  {
+   "from": "c20",
+   "verb": "specifies",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c22",
+   "verb": "gives_rise_to",
+   "to": "c23"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c22"
+  },
+  {
+   "from": "c26",
+   "verb": "answers",
+   "to": "c01"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c13"
+  }
+ ],
+ "entities": [
+  {
+   "id": "riskmandate",
+   "role": "its Agent Behaviour Policy frames grant and mandate; it intends to apply to the credit programmes"
+  },
+  {
+   "id": "apple",
+   "role": "its macOS licence sets the 24-hour minimum lease and the purpose clause"
+  },
+  {
+   "id": "microsoft",
+   "role": "ships Windows 365 for Agents and runs Microsoft for Startups"
+  },
+  {
+   "id": "aws",
+   "role": "rents EC2 Mac hosts, ships WorkSpaces for AI agents and runs Activate"
+  },
+  {
+   "id": "anthropic",
+   "role": "offers computer use in the desktop app, Claude Code and the API, and measured prompt injection rates"
+  },
+  {
+   "id": "claude",
+   "role": "the model whose computer use is in beta; Claude Opus 5.5 drafted the article"
+  },
+  {
+   "id": "claude-code",
+   "role": "computer use is a research preview on macOS there"
+  },
+  {
+   "id": "docker",
+   "role": "the API reference implementation is a Linux desktop in Docker"
+  },
+  {
+   "id": "mcp",
+   "role": "WorkSpaces for AI agents is reached through an MCP endpoint"
+  },
+  {
+   "id": "google",
+   "role": "runs Google for Startups Cloud, up to $350,000 for AI startups"
+  },
+  {
+   "id": "cloudflare",
+   "role": "runs Cloudflare for Startups, by funding tier"
+  },
+  {
+   "id": "openai",
+   "role": "its remark that prompt injection is unlikely to be fully solved is quoted from coverage"
+  },
+  {
+   "id": "sgit",
+   "role": "the encrypted vault outside every desktop that the design appends to"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the argument and holder of editorial responsibility"
+  },
+  {
+   "id": "e2b",
+   "role": "Linux sandbox in a Firecracker microVM, billed by the second, the product documenting most of the controls"
+  },
+  {
+   "id": "daytona",
+   "role": "sandbox with a per-sandbox firewall, proxy-swapped secrets and screen recording"
+  },
+  {
+   "id": "windows-365-for-agents",
+   "role": "Microsoft's Cloud PCs for agents, generally available since June 2026 at $0.40 per VM-hour"
+  },
+  {
+   "id": "scaleway",
+   "role": "rents Mac minis by the day and runs the Founders and Early Stage programmes"
+  },
+  {
+   "id": "macos",
+   "role": "the operating system whose licence prevents leasing by the minute"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "agent-isolation",
+   "defined_here": true
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "regulation",
+   "defined_here": false
+  },
+  {
+   "id": "prompt-injection",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://e2b.dev/",
+   "title": "E2B",
+   "by": "E2B",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://www.daytona.io/",
+   "title": "Daytona",
+   "by": "Daytona",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://e2b.dev/startups/apply",
+   "title": "E2B for Startups",
+   "by": "E2B",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://www.scaleway.com/en/startup-program/founders-program/",
+   "title": "Scaleway Founders programme",
+   "by": "Scaleway",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://aws.amazon.com/startups/join?destination=/credits/apply",
+   "title": "AWS Activate",
+   "by": "Amazon Web Services",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r06",
+   "url": "https://startups.microsoft.com",
+   "title": "Microsoft for Startups",
+   "by": "Microsoft",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r07",
+   "url": "https://cloud.google.com/startup/apply",
+   "title": "Google for Startups Cloud",
+   "by": "Google",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r08",
+   "url": "https://www.cloudflare.com/lp/startups",
+   "title": "Cloudflare for Startups",
+   "by": "Cloudflare",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r09",
+   "url": "https://platform.claude.com/offers/startups-application",
+   "title": "Anthropic startup programme",
+   "by": "Anthropic",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-07",
+   "what": "Every product, price, licence clause and programme was read from the provider's own pages, and the article drafted"
+  },
+  {
+   "date": "2026-06",
+   "what": "Windows 365 for Agents became generally available"
+  },
+  {
+   "date": "2026-06-30",
+   "what": "Amazon WorkSpaces for AI agents became generally available"
+  },
+  {
+   "date": "2025-08",
+   "what": "Anthropic measured an 11.2% prompt injection attack success rate in browser use"
+  },
+  {
+   "date": "2025-11",
+   "what": "Anthropic measured about 1% prompt injection attack success rate in browser use"
+  }
+ ]
+}

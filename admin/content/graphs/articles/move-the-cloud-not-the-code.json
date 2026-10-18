@@ -1,0 +1,678 @@
+{
+ "slug": "move-the-cloud-not-the-code",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "fact",
+   "text": "At a digital sovereignty event a conversation with the chief executive of an infrastructure company with a large footprint in Romania kept returning to one point: sovereignty has to work in practice, and what stops it is not policy, regulation or price but code.",
+   "section": "why",
+   "quote": "And in practice the thing that stops it is not policy, regulation or price. It is code.",
+   "about": [
+    "concept:privacy",
+    "entity:romania",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Organisations do not move off a hyperscaler because moving means changing the application: every call to S3, EC2 and IAM is written into code that works today, and rewriting bets the business on a migration whose upside is mostly a principle.",
+   "section": "why",
+   "quote": "Every call to S3, every EC2 API, every IAM check is written into code that works today and that nobody wants to touch.",
+   "about": [
+    "entity:aws",
+    "entity:amazon-s3",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "The AWS European Sovereign Cloud went live on 15 January 2026 with its first region in Brandenburg, operated by EU residents, and sovereign local zones planned for Belgium, the Netherlands and Portugal; but sovereignty that depends on one company's API is sovereignty by permission.",
+   "section": "why",
+   "quote": "Sovereignty that depends on one company's API is sovereignty by permission.",
+   "about": [
+    "entity:aws",
+    "entity:aws-european-sovereign-cloud",
+    "entity:european-union",
+    "concept:privacy"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "proposal",
+   "text": "The one hard requirement is that the original application must not know it is not running on a hyperscaler: not one line of its source changes, and the calls land on whatever is chosen underneath.",
+   "section": "criterion",
+   "quote": "The original application must not know that it is not running on a hyperscaler. Not one line of its source changes.",
+   "about": [
+    "concept:connectors",
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "definition",
+   "text": "A twin here is an interface to a real system valued for whether the client can tell the difference, used by unmodified production code with a real backend behind it; a mock is used by tests and measured by fidelity.",
+   "section": "criterion",
+   "quote": "The cost of switching a mock is a code path. The cost of switching a twin is an endpoint.",
+   "about": [
+    "concept:connectors",
+    "entity:twins-sgit-ai"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "If switching costs an endpoint, migration becomes a configuration decision; if it costs a code path it becomes a project, and projects get cancelled.",
+   "section": "criterion",
+   "quote": "If switching costs an endpoint, migration becomes a configuration decision.",
+   "about": [
+    "concept:connectors",
+    "concept:one-way-door"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "decision",
+   "text": "The S3 twin is built as open source: code using boto3, the AWS CLI or any S3 SDK believes it is talking to S3, and the files can come from real S3, an encrypted vault, local disk or memory, selected per environment.",
+   "section": "s3",
+   "quote": "Behind the same interface the files can be served from real S3, from an encrypted vault, from local disk or from memory, selected per environment",
+   "about": [
+    "entity:amazon-s3",
+    "entity:twins-sgit-ai",
+    "concept:open-source",
+    "concept:connectors",
+    "concept:vault"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "Of the three services named, S3 is the only one twinned; an IAM configuration risk engine is partly built, and the bigger idea of twins as a portability layer is designed, not finished.",
+   "section": "s3",
+   "quote": "The bigger idea, twins as the layer that keeps a workload portable across clouds, is designed, not finished.",
+   "about": [
+    "entity:twins-sgit-ai",
+    "concept:connectors"
+   ],
+   "value": {
+    "n": 1,
+    "of": 3,
+    "unit": "services with a finished twin",
+    "as_of": "2026-10-12"
+   },
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "S3 is the right place to start because it is the service everything touches, the best specified and already twinned; EC2 and IAM are harder, and the pattern is the same each time, a wrapping layer where the destination is a setting.",
+   "section": "s3",
+   "quote": "S3 is the right place to start because it is the service everything touches, it is the best specified, and it is already twinned.",
+   "about": [
+    "entity:amazon-s3",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "The main reason to make a move like this must never be sovereignty and never cost reduction; both are important and never urgent, and nobody signs risk for a principle.",
+   "section": "reason",
+   "quote": "The main reason to make a move like this must never be sovereignty, and it must never be cost reduction.",
+   "about": [
+    "concept:privacy",
+    "concept:risk-acceptance",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "fact",
+   "text": "A return that depends on a future event that might not occur is very hard to decide on; the signer needs cover, value added on the way that anybody can point to, and the loop has to close before the risk does.",
+   "section": "reason",
+   "quote": "So whenever a solution like this is offered, there has to be a positive loop in it, and the loop has to close before the risk does.",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:one-way-door"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "proposal",
+   "text": "The value goes in the twin layer because every call passes through it: backups that exist, every version controlled, encryption the operator cannot read, a journal of every call, behaviour policies agents cannot skip, and cost per workload.",
+   "section": "reason",
+   "quote": "That is what the twin layer is for, because every call passes through it, and that is where the value goes",
+   "about": [
+    "concept:connectors",
+    "concept:encryption-and-keys",
+    "concept:behaviour-policy",
+    "entity:sgit"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "An sgit vault behind the twin lands the files as ciphertext with the key held by the customer and not by whoever runs the hardware, and a twin's journal keeps every request and response and can replay them, unlike platform logs.",
+   "section": "reason",
+   "quote": "Put an sgit vault behind the twin and the files land as ciphertext, with the key held by the customer and not by whoever runs the hardware.",
+   "about": [
+    "entity:sgit",
+    "concept:vault",
+    "concept:encryption-and-keys",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "More of the code calling these APIs is agents, and the twin knows what the caller can reach, what it is meant to do and the gap, enforcing the barrier where the application cannot route around it.",
+   "section": "reason",
+   "quote": "it enforces the barrier at a place the application cannot route around",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:reach",
+    "concept:footprint",
+    "concept:blast-radius",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "limit",
+   "text": "The value list is still a little invisible to a signer and needs sharpening; version control and encryption with the key held elsewhere are each a tangible return, and the test is whether the move moves a top-of-register risk.",
+   "section": "reason",
+   "quote": "I will be honest that the list is still a little invisible to a signer; it needs to be sharper than this, and that is work for the next version.",
+   "about": [
+    "concept:risk-acceptance",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "proposal",
+   "text": "No new features during the move: it is a pure villager move, explorer to town planner, and the moment a feature is added the migration is also a product change and nobody can tell which broke what.",
+   "section": "villager",
+   "quote": "When you do a project like this you cannot add new features.",
+   "about": [
+    "concept:explorer-villager-town-planner",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "Testing may matter more than sovereignty: the same unmodified code can run against an in-memory twin on a laptop, a twin replaying last week's journal, a twin injecting failures, and the real service, so the environment becomes a setting rather than a guess.",
+   "section": "testing",
+   "quote": "With twins the environment becomes a setting rather than a guess",
+   "about": [
+    "concept:connectors",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "proposal",
+   "text": "Every piece of software should be able to run, unmodified, against a twin of every external service it depends on, without knowing; software that can only run against one provider's live API cannot be tested properly, moved, or put behind a policy.",
+   "section": "testing",
+   "quote": "it must be able to run, unmodified, against a twin of every external service it depends on, without knowing",
+   "about": [
+    "concept:connectors",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "hypothesis",
+   "text": "The twin layer must be open source or the lock-in has moved, not gone; open source here is about independence, not community, and there is no sovereignty without open source and open schemas because sovereignty means you can leave.",
+   "section": "open",
+   "quote": "Swap one vendor's API for another vendor's proprietary wrapper and the lock-in has moved, not gone.",
+   "about": [
+    "concept:open-source",
+    "concept:privacy",
+    "entity:open-source-sgit-ai"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "The business model is for an infrastructure operator in Romania, Portugal, the UK or anywhere in Europe: not move to us, which sells risk, but keep your code, point it at us, and gain versions, backups, encryption, a journal, policies and cost visibility.",
+   "section": "business",
+   "quote": "Selling \"move to us\" means selling risk.",
+   "about": [
+    "concept:pricing",
+    "concept:strategy",
+    "entity:romania",
+    "entity:portugal",
+    "entity:united-kingdom",
+    "entity:europe"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "The buyer owns the register line, not the cloud bill; they buy first the twin in front of the real service with nothing moving, a monthly fee per workload, then the backend switch one environment at a time, per terabyte and per call.",
+   "section": "business",
+   "quote": "The buyer is the person who owns that register line, not the person who owns the cloud bill.",
+   "about": [
+    "concept:pricing",
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "Storage and compute are commodities and should be priced as such; the operator's margin is in the twin layer, the journal, the policy enforcement and the reports a regulator or insurer will accept, the custom layer above the commodity.",
+   "section": "business",
+   "quote": "sell the custom layer above the commodity, not the commodity",
+   "about": [
+    "concept:wardley-maps",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "The hyperscaler cannot sell indistinguishability from itself; a smaller operator can, standing on commodities the big players matured, which is the judo move using the customer's code, the hyperscaler's API and open source as the weight.",
+   "section": "business",
+   "quote": "The hyperscaler cannot sell indistinguishability from itself.",
+   "about": [
+    "concept:strategy",
+    "concept:wardley-maps",
+    "entity:aws"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "question",
+   "text": "Assumptions to check: that the S3 API surface the twin covers is enough for first customers, that a journal and policy report move a real register line, that the per-call price survives a chatty workload, and that the first operator will fund the hardening.",
+   "section": "business",
+   "quote": "that the per-call price survives contact with a chatty workload; that the first operator will fund the hardening",
+   "about": [
+    "concept:pricing",
+    "entity:amazon-s3"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "The S3 twin is the only finished twin and its API surface still needs confirming against the current repository; the IAM engine is partial, EC2 and IAM twins are not built, and the hyperscaler abstraction is designed, not shipped.",
+   "section": "limits",
+   "quote": "The IAM configuration engine is partial. EC2 and IAM twins as drop-in services are not built.",
+   "about": [
+    "entity:twins-sgit-ai",
+    "entity:amazon-s3",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "Policy enforcement at the twin is the next step, not a feature anyone can download today.",
+   "section": "limits",
+   "quote": "Policy enforcement at the twin is the next step, not a feature anyone can download today.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:connectors"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The business model is for somebody else to run; the prices are shapes, not quotes, and the assumptions are listed so the first operator can test them.",
+   "section": "limits",
+   "quote": "The prices are shapes, not quotes, and the assumptions are listed so they can be tested by the first operator.",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The value list is not finished; the next version needs the two or three returns that close the loop for a specific register line.",
+   "section": "limits",
+   "quote": "the next version of this needs the two or three returns that close the loop for a specific register line",
+   "about": [
+    "concept:risk-acceptance"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The conversation is reported from one side; the chief executive is not named and did not review this.",
+   "section": "limits",
+   "quote": "The chief executive is not named and did not review this.",
+   "about": [
+    "concept:privacy"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "The article came from voice notes on 12 October 2026 after a digital sovereignty event, first drafted by another of the owner's agents and rewritten by this site's agent, with three sections added from a second note the same evening.",
+   "section": "sources",
+   "quote": "first drafted by another of my agents from those notes and then rewritten by this site's agent in the voice of this site",
+   "about": [
+    "concept:voice-memo",
+    "concept:agents-write-too",
+    "entity:dinis-cruz",
+    "entity:riskmandate"
+   ],
+   "refs": [
+    "r05"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c02",
+   "verb": "gives_rise_to",
+   "to": "c04"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c02"
+  },
+  {
+   "from": "c05",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c06",
+   "verb": "backs",
+   "to": "c05"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c08",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c12"
+  },
+  {
+   "from": "c13",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c14",
+   "verb": "specifies",
+   "to": "c12"
+  },
+  {
+   "from": "c15",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c17",
+   "verb": "gives_rise_to",
+   "to": "c18"
+  },
+  {
+   "from": "c21",
+   "verb": "specifies",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c20"
+  },
+  {
+   "from": "c24",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c07"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c14"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c20"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c12"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c01"
+  }
+ ],
+ "entities": [
+  {
+   "id": "aws",
+   "role": "the hyperscaler whose S3, EC2 and IAM calls are written into code, and whose European Sovereign Cloud went live"
+  },
+  {
+   "id": "aws-european-sovereign-cloud",
+   "role": "AWS's answer to sovereignty in Europe, live from 15 January 2026"
+  },
+  {
+   "id": "amazon-s3",
+   "role": "the service everything touches and the first to be twinned"
+  },
+  {
+   "id": "twins-sgit-ai",
+   "role": "documents what a twin is, what is built and the applications"
+  },
+  {
+   "id": "open-source-sgit-ai",
+   "role": "the open source argument as strategy, not charity"
+  },
+  {
+   "id": "sgit",
+   "role": "the vault behind the twin that lands files as ciphertext with the customer's key"
+  },
+  {
+   "id": "european-union",
+   "role": "the Sovereign Cloud is operated by EU residents within EU borders"
+  },
+  {
+   "id": "romania",
+   "role": "where the chief executive's company has a large footprint; a market for the operator model"
+  },
+  {
+   "id": "portugal",
+   "role": "a planned sovereign local zone and a market for the operator model"
+  },
+  {
+   "id": "united-kingdom",
+   "role": "a market for the infrastructure operator business model"
+  },
+  {
+   "id": "europe",
+   "role": "where an operator could sell the twin layer"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "whose voice notes the article comes from and who holds editorial responsibility"
+  },
+  {
+   "id": "riskmandate",
+   "role": "describes Agent Behaviour Policies; where readers write to move without rewriting"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "connectors",
+   "defined_here": true
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "one-way-door",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "explorer-villager-town-planner",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://press.aboutamazon.com/aws/2026/1/aws-launches-aws-european-sovereign-cloud-and-announces-expansion-across-europe",
+   "title": "AWS launches AWS European Sovereign Cloud and announces expansion across Europe",
+   "by": "Amazon Web Services",
+   "date": "2026-01-15",
+   "kind": "news"
+  },
+  {
+   "id": "r02",
+   "url": "https://twins.sgit.ai/what-is-a-twin/index.html",
+   "title": "What is a twin",
+   "by": "twins.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r03",
+   "url": "https://twins.sgit.ai/built/index.html",
+   "title": "What is built",
+   "by": "twins.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r04",
+   "url": "https://twins.sgit.ai/applications/index.html",
+   "title": "The applications",
+   "by": "twins.sgit.ai",
+   "date": "undated",
+   "kind": "page"
+  },
+  {
+   "id": "r05",
+   "url": "https://riskmandate.ai/agent-behaviour-policy.html",
+   "title": "Agent Behaviour Policy",
+   "by": "RiskMandate",
+   "date": "undated",
+   "kind": "page"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-12",
+   "what": "The digital sovereignty event, the conversation and the owner's voice notes"
+  },
+  {
+   "date": "2026-01-15",
+   "what": "The AWS European Sovereign Cloud goes live with its first region in Brandenburg"
+  }
+ ]
+}

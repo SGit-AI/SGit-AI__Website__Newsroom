@@ -1,0 +1,890 @@
+{
+ "slug": "code-review-as-a-fractal-semantic-graph",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "definition",
+   "text": "Source code is a fractal semantic graph, not as a metaphor: layers within layers, each a graph with its own node types and verbs, stories, flows, components, classes, methods and calls, the syntax tree, and below that bytecode and the machine.",
+   "section": "top",
+   "quote": "It has layers within layers, and each layer is a graph with its own node types and verbs",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:code-review",
+    "concept:code-as-layered-graph"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Each layer is a different universe: component edges are imports and data flows, class edges are field types and inheritance, method edges are calls, syntax-tree edges are the grammar, and none of these vocabularies should be forced to be the others.",
+   "section": "top",
+   "quote": "None of these vocabularies is the others, and none should be forced to be.",
+   "about": [
+    "concept:fractal-semantic-graphs",
+    "concept:code-as-layered-graph",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "Simon Brown's C4 model, named in 2011, names four levels, context, container, component and code, and calls the fourth optional because IDEs can generate it; the real thing has levels of levels below the component.",
+   "section": "top",
+   "quote": "The trouble with a fixed four is not that four is wrong. It is that the real thing has levels of levels",
+   "about": [
+    "entity:simon-brown",
+    "entity:c4-model",
+    "concept:code-as-layered-graph"
+   ],
+   "refs": [
+    "r05"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "Gherkin, created by Aslak Hellesøy in 2008, forced the top layer into Given, When, Then, but the glue underneath was a regular expression matching step text to code, the right top layer with nothing beneath it.",
+   "section": "top",
+   "quote": "The step text was matched to code by a regex",
+   "about": [
+    "entity:gherkin",
+    "entity:aslak-hellesoy",
+    "concept:code-as-layered-graph"
+   ],
+   "refs": [
+    "r06"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "Threat modelling is a third witness: data flow diagrams decompose hierarchically and STRIDE assigns threats by node type, so threat modellers have drawn a fractal graph of the system by hand for twenty years, at one altitude.",
+   "section": "top",
+   "quote": "Threat modellers have been drawing a fractal graph of the system by hand for twenty years, at one altitude, and leaving the rest unconnected.",
+   "about": [
+    "concept:threat-modelling",
+    "entity:owasp",
+    "entity:microsoft",
+    "concept:code-as-layered-graph"
+   ],
+   "refs": [
+    "r09"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "hypothesis",
+   "text": "What changed is that naming is cheap: a language model can read a function, say what it does, name the story a command serves and propose the verb between two nodes, as a structured file validated against a schema rather than prose.",
+   "section": "top",
+   "quote": "Naming used to be the expensive part.",
+   "about": [
+    "concept:code-as-layered-graph",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The syntax tree, not the text, is the right starting point, and a January 2026 paper found deterministic AST-derived graphs give more reliable coverage than LLM-extracted graphs at far lower indexing cost: derive what a parser can, spend the model on the rest.",
+   "section": "top",
+   "quote": "derive what a parser can derive, deterministically, and spend the model on what the parser cannot know.",
+   "about": [
+    "concept:code-as-layered-graph",
+    "entity:tree-sitter"
+   ],
+   "refs": [
+    "r10",
+    "r08"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "Every source file produces a pile of JSON files, classes, methods and calls, package graph, fingerprint, tests and rules, kept beside the code in a git repository or a vault, regenerated only on change so the cost scales with the change.",
+   "section": "top",
+   "quote": "so you generate it once and regenerate on change, and the cost scales with the change rather than the repository.",
+   "about": [
+    "concept:code-as-layered-graph",
+    "concept:vault",
+    "entity:git",
+    "entity:mgraph-ai"
+   ],
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "fact",
+   "text": "A code review today reads a text diff at the altitude of lines, which is the wrong one for almost every question a reviewer has: does this change user behaviour, is it the fix it claims, what else can it reach.",
+   "section": "top",
+   "quote": "The diff is at one altitude, the lines, and it is the wrong one for almost every question a reviewer actually has.",
+   "about": [
+    "concept:code-review",
+    "concept:code-as-layered-graph"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "definition",
+   "text": "A refactor should change the method and syntax layers and leave class shapes, commands and stories untouched; if the story layer moved, the claim is wrong, visible without running anything.",
+   "section": "top",
+   "quote": "If a change claims to be a refactor and the story layer moved, the claim is wrong, and you can see that without running anything.",
+   "about": [
+    "concept:code-review",
+    "concept:refactor-or-fix"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "definition",
+   "text": "A bug is a story that stopped holding; its fix moves the bottom layers and is visible at the top as the story holding again, usually with a new test: bodies moved, signatures and fields still, a test added.",
+   "section": "top",
+   "quote": "The shape is: bodies moved, signatures and fields still, a test added.",
+   "about": [
+    "concept:code-review",
+    "concept:refactor-or-fix"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "definition",
+   "text": "The blast radius of a change is the climb: from the methods touched, up through callers including dynamic dispatch, to the commands and stories, the same idea as for agents, where footprint is what happened and blast radius what could.",
+   "section": "top",
+   "quote": "the footprint is what happened, the blast radius is what could.",
+   "about": [
+    "concept:blast-radius",
+    "concept:footprint",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "This is the only honest answer to AI-generated code's characteristic failure, a change in one place that breaks another: in the layered graph it is a changed node whose upward reach includes a command the author never looked at.",
+   "section": "top",
+   "quote": "In a text diff that is invisible.",
+   "about": [
+    "concept:code-review",
+    "concept:blast-radius",
+    "concept:citizen-developer"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "GitClear's analysis of 211 million changed lines found cloned code rising from 8.3 to 12.3 percent between 2021 and 2024 while moved code, what refactoring looks like in a diff, fell from 25 percent to under 10.",
+   "section": "top",
+   "quote": "found cloned code rising from 8.3 to 12.3 percent of changed lines between 2021 and 2024",
+   "about": [
+    "entity:gitclear",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 12.3,
+    "unit": "percent of changed lines cloned in 2024",
+    "as_of": "2024"
+   },
+   "refs": [
+    "r11"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "Google's 2024 DORA report estimated a 7.2 percent reduction in delivery stability per 25 percent increase in AI adoption, and Veracode's 2025 report found AI-generated code introducing security flaws in 45 percent of tests.",
+   "section": "top",
+   "quote": "each 25 percent increase in AI adoption came with a 7.2 percent reduction in delivery stability.",
+   "about": [
+    "entity:google",
+    "entity:veracode",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 7.2,
+    "unit": "percent reduction in delivery stability per 25 percent AI adoption",
+    "as_of": "2024"
+   },
+   "refs": [
+    "r12",
+    "r14"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "definition",
+   "text": "A method stream, from June 2012, is a code representation of an entire call tree: one file with the original method and all the methods it calls, recursively, which is how code was reviewed on the O2 Platform.",
+   "section": "top",
+   "quote": "MethodSteams are a code representation of an entire call-tree, i.e. one file that contains the original method and all the methods it calls (recursively).",
+   "about": [
+    "concept:code-review",
+    "entity:o2-platform",
+    "entity:dinis-cruz"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "From a syntax tree with resolved calls a method stream is one script: the stream from the push command to depth five is 100 methods and 1,703 lines of 22,773 lines of method code, 7.5 percent, all a reviewer of that command reads.",
+   "section": "top",
+   "quote": "the stream from the push command to depth five is 100 methods and 1,703 lines out of 22,773 lines of method code in the repository.",
+   "about": [
+    "concept:code-review",
+    "entity:code-review-graphs-vault",
+    "entity:sgit"
+   ],
+   "value": {
+    "n": 1703,
+    "of": 22773,
+    "unit": "lines of method code in the push stream",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The air gaps complained of in 2012 are still there and are where a model earns its keep: a parser resolves a typed field call but not a message queue or a dynamic handler, so those edges are proposed and marked so until confirmed.",
+   "section": "top",
+   "quote": "The parser gives you the floor, and the floor in the worked example is 2,592 edges",
+   "about": [
+    "concept:code-review",
+    "concept:code-as-layered-graph"
+   ],
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "data-point",
+   "text": "At commit 397be83 the sgit tool is 427 Python files and 30,606 lines: 13 packages, 377 classes of which 361 are Type_Safe, 1,111 methods, 2,592 resolved calls, 177,313 syntax-tree nodes, 72 commands and eleven hand-written user stories.",
+   "section": "top",
+   "quote": "Seventy-two commands were parsed out of the argument-parser wiring, each with the method that handles it.",
+   "about": [
+    "entity:code-review-graphs-vault",
+    "entity:sgit",
+    "entity:python",
+    "concept:code-as-layered-graph"
+   ],
+   "value": {
+    "n": 1111,
+    "unit": "methods in the sgit tool",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "Three hundred and forty-two test modules were mapped to the classes they import, which gave 47 classes that no test imports, without running a test.",
+   "section": "top",
+   "quote": "which gave 47 classes that no test imports, without running a test.",
+   "about": [
+    "entity:code-review-graphs-vault",
+    "concept:code-review"
+   ],
+   "value": {
+    "n": 47,
+    "unit": "classes no test imports",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The commit is a real bug fix: the automatic transport treated any HTTP 404 as no live API and silently flipped a fresh writable vault to the read-only static transport on its first push.",
+   "section": "top",
+   "quote": "silently flipping a fresh, writable vault to the read-only static transport on its first push.",
+   "about": [
+    "entity:sgit",
+    "concept:refactor-or-fix",
+    "concept:incidents"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "The text diff is 75 lines added and 7 removed in three files; read upwards, seven methods changed, no shape moved, six tests added, and the climb reaches nine of 72 commands and six of eleven stories: the shape of a fix.",
+   "section": "top",
+   "quote": "reaches nine of the 72 commands and six of the eleven stories. The shape is the shape of a fix.",
+   "about": [
+    "concept:refactor-or-fix",
+    "concept:blast-radius",
+    "entity:code-review-graphs-vault"
+   ],
+   "value": {
+    "n": 9,
+    "of": 72,
+    "unit": "commands reachable from the seven changed methods",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "data-point",
+   "text": "Ten house rules run as graph queries: 19 raw primitives in 755 typed fields, eleven module-level functions in 427 modules, a mirrored test file missing for 143 of 253 domain classes, 38 methods over 80 lines with push itself at 323.",
+   "section": "top",
+   "quote": "A mirrored test file for every domain class: missing for 143 of 253.",
+   "about": [
+    "entity:code-review-graphs-vault",
+    "concept:code-review",
+    "concept:patterns-are-findings"
+   ],
+   "value": {
+    "n": 143,
+    "of": 253,
+    "unit": "domain classes with no mirrored test file",
+    "as_of": "2026-10-03"
+   }
+  },
+  {
+   "id": "c24",
+   "kind": "fact",
+   "text": "The ordering is a finding in itself: the rules the project states most firmly are the ones that hold, and the one it states least is the one most often broken; the graph shows where the discipline is and where it is only written down.",
+   "section": "top",
+   "quote": "the rules the project states most firmly are the ones that hold, and the one it states least is the one most often broken.",
+   "about": [
+    "concept:patterns-are-findings",
+    "concept:code-review"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "What makes it work is reality, not accuracy: the graph need not be right, it must be made of layers someone knows and make predictions something can check, users confirm the top, experts their layer, tests execution, each correction a commit.",
+   "section": "top",
+   "quote": "If the plan requires the graph to be right, the plan fails.",
+   "about": [
+    "concept:code-as-layered-graph",
+    "concept:provenance",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "hypothesis",
+   "text": "Patterns are findings: coding.sgit.ai and nfrs.sgit.ai rest on the hypothesis that a codebase's quality is visible in the shape of its graph, one class per file a tree, mirrored tests a symmetry, raw primitives a forbidden node type.",
+   "section": "top",
+   "quote": "a codebase's quality is visible in the shape of its graph.",
+   "about": [
+    "concept:patterns-are-findings",
+    "entity:coding-sgit-ai",
+    "entity:nfrs-sgit-ai"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "What the example does not do: the stories are hand-written, call resolution stops at the repository's edge, the syntax tree is fingerprinted per method but not diffed node by node, and it is one language with unusually strong conventions.",
+   "section": "top",
+   "quote": "It is one language with unusually strong conventions, which makes the class layer easy; a second language is the test of whether the layers hold their shape.",
+   "about": [
+    "entity:code-review-graphs-vault",
+    "concept:code-as-layered-graph"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "What does not exist yet: a model proposing stories and unresolved edges, a node-level syntax diff, a second language, the interface layer, test paths compared to predicted streams, and above all the review that sits on a pull request.",
+   "section": "top",
+   "quote": "Everything in the previous sentence is a project a competent team could start on Monday, and the first of them is the one I would start with.",
+   "about": [
+    "concept:code-review",
+    "concept:code-as-layered-graph"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The example uses a parser and not a model, deliberately, so that every number in it is checkable; the article says where a model goes on top.",
+   "section": "top",
+   "quote": "it uses a parser and not a model, so that every number in it is checkable",
+   "about": [
+    "entity:code-review-graphs-vault",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "proposal",
+   "text": "There is a company here: a code review that reads every layer, attached to a repository, showing on every change the diff at each altitude, the fix-or-refactor shape, the method stream and the climb, with the graph kept as files the customer owns.",
+   "section": "top",
+   "quote": "What it sells is a code review that reads every layer.",
+   "about": [
+    "concept:code-review",
+    "concept:startups",
+    "concept:refactor-or-fix"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "hypothesis",
+   "text": "Who buys it is anyone generating code faster than they can review it, especially teams whose review is a compliance requirement; what is defensible is the record and the loop, not the model, which will be a commodity.",
+   "section": "top",
+   "quote": "What is defensible is the record and the loop, not the model.",
+   "about": [
+    "concept:startups",
+    "concept:the-record",
+    "concept:strategy"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The method and scripts are Apache-2.0 and published in the vault, so a founder does not need permission; they need a second language and a first customer, and the plan sits with the other business plans published for founders.",
+   "section": "top",
+   "quote": "They need a second language and a first customer.",
+   "about": [
+    "entity:apache-2",
+    "entity:founder",
+    "concept:startups",
+    "concept:open-source"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "The article was drafted from a voice memo of 3 October 2026 by agent@riskmandate.ai, Claude Fable 5.1, with the worked example built in the same session from the public sgit-ai repository with Python's own parser and no model.",
+   "section": "top",
+   "quote": "The worked example was built in the same session from the public sgit-ai repository at the two commits named, with Python's own parser and no model",
+   "about": [
+    "concept:voice-memo",
+    "entity:riskmandate",
+    "entity:claude",
+    "entity:dinis-cruz",
+    "concept:agents-write-too"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c03",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c04",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c05",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c09"
+  },
+  {
+   "from": "c07",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c10"
+  },
+  {
+   "from": "c09",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c19",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c21",
+   "verb": "gives_rise_to",
+   "to": "c22"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c11"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c24"
+  },
+  {
+   "from": "c24",
+   "verb": "backs",
+   "to": "c26"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c19"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c30"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c31",
+   "verb": "specifies",
+   "to": "c30"
+  }
+ ],
+ "entities": [
+  {
+   "id": "simon-brown",
+   "role": "author of the C4 model, which saw the layers and stopped at four"
+  },
+  {
+   "id": "c4-model",
+   "role": "the fixed four-level model compared with the fractal view"
+  },
+  {
+   "id": "gherkin",
+   "role": "got the top layer into Given, When, Then and glued it to code with regexes"
+  },
+  {
+   "id": "owasp",
+   "role": "its guidance decomposes data flow diagrams by level; home of the O2 Platform"
+  },
+  {
+   "id": "microsoft",
+   "role": "STRIDE per element assigns threats by node type"
+  },
+  {
+   "id": "o2-platform",
+   "role": "where method streams were the review technique in 2012"
+  },
+  {
+   "id": "code-review-graphs-vault",
+   "role": "the worked example: the sgit tool read as layered graphs, with its read key on the page"
+  },
+  {
+   "id": "sgit",
+   "role": "the command-line tool read as the worked example, 377 classes and 1,111 methods"
+  },
+  {
+   "id": "python",
+   "role": "the language of the example, parsed with Python's own parser"
+  },
+  {
+   "id": "git",
+   "role": "where the pile of graph files can live beside the code"
+  },
+  {
+   "id": "mgraph-ai",
+   "role": "the file-backed graph database the method uses"
+  },
+  {
+   "id": "google",
+   "role": "its 2024 DORA report on AI adoption and delivery stability"
+  },
+  {
+   "id": "coding-sgit-ai",
+   "role": "a site that measures this site's own code on the hypothesis that quality is visible as shape"
+  },
+  {
+   "id": "nfrs-sgit-ai",
+   "role": "the non-functional requirements site that ends every page with its own counter-evidence"
+  },
+  {
+   "id": "apache-2",
+   "role": "the licence of the sgit tool and the scripts in the vault"
+  },
+  {
+   "id": "founder",
+   "role": "who could build the company the article describes"
+  },
+  {
+   "id": "riskmandate",
+   "role": "its agent drafted the article"
+  },
+  {
+   "id": "claude",
+   "role": "Claude Fable 5.1 drafted the article"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "recorded the memo, built the O2 Platform and holds editorial responsibility"
+  },
+  {
+   "id": "aslak-hellesoy",
+   "role": "created Gherkin in 2008"
+  },
+  {
+   "id": "tree-sitter",
+   "role": "builds a concrete syntax tree for dozens of languages and updates it incrementally"
+  },
+  {
+   "id": "gitclear",
+   "role": "its analysis of 211 million changed lines measured cloned and moved code"
+  },
+  {
+   "id": "veracode",
+   "role": "its 2025 report found AI-generated code introducing flaws in 45 percent of tests"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "code-review",
+   "defined_here": true
+  },
+  {
+   "id": "code-as-layered-graph",
+   "defined_here": true
+  },
+  {
+   "id": "refactor-or-fix",
+   "defined_here": true
+  },
+  {
+   "id": "patterns-are-findings",
+   "defined_here": true
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "citizen-developer",
+   "defined_here": false
+  },
+  {
+   "id": "incidents",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "startups",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "strategy",
+   "defined_here": false
+  },
+  {
+   "id": "open-source",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://diniscruz.blogspot.com/2012/06/o2-net-sast-engine-methodstream-and.html",
+   "title": "O2 .NET SAST engine: MethodStreams and CodeStreams",
+   "by": "Dinis Cruz",
+   "date": "2012-06",
+   "kind": "post"
+  },
+  {
+   "id": "r02",
+   "url": "https://diniscruz.blogspot.com/2012/06/in-sast-issue-is-trace-connection-not.html",
+   "title": "In SAST the issue is trace connection, not rules",
+   "by": "Dinis Cruz",
+   "date": "2012-06",
+   "kind": "post"
+  },
+  {
+   "id": "r03",
+   "url": "https://diniscruz.ai/2025/05/29/semantic-knowledge-graphs-for-llm-driven-source-code-analysis.html",
+   "title": "Semantic knowledge graphs for LLM-driven source code analysis",
+   "by": "Dinis Cruz",
+   "date": "2025-05-29",
+   "kind": "post"
+  },
+  {
+   "id": "r04",
+   "url": "https://github.com/owasp-sbot/MGraph-AI",
+   "title": "MGraph-AI",
+   "by": "OWASP SBot",
+   "date": "undated",
+   "kind": "repository"
+  },
+  {
+   "id": "r05",
+   "url": "https://c4model.com/",
+   "title": "The C4 model",
+   "by": "Simon Brown",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r06",
+   "url": "https://cucumber.io/docs/cucumber/step-definitions/",
+   "title": "Step definitions",
+   "by": "Cucumber",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r07",
+   "url": "https://doi.org/10.1109/SP.2014.44",
+   "title": "Modeling and discovering vulnerabilities with code property graphs",
+   "by": "Yamaguchi, Golde, Arp and Rieck",
+   "date": "2014",
+   "kind": "paper"
+  },
+  {
+   "id": "r08",
+   "url": "https://tree-sitter.github.io/tree-sitter/",
+   "title": "Tree-sitter",
+   "by": "Tree-sitter",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r09",
+   "url": "https://community.owasp.org/Threat_Modeling_Process",
+   "title": "Threat modeling process",
+   "by": "OWASP",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r10",
+   "url": "https://arxiv.org/abs/2601.08773",
+   "title": "Reliable graph retrieval for codebases",
+   "by": "arXiv",
+   "date": "2026-01",
+   "kind": "paper"
+  },
+  {
+   "id": "r11",
+   "url": "https://www.gitclear.com/ai_assistant_code_quality_2025_research",
+   "title": "AI assistant code quality research, 2025",
+   "by": "GitClear",
+   "date": "2025",
+   "kind": "article"
+  },
+  {
+   "id": "r12",
+   "url": "https://dora.dev/research/2024/dora-report/",
+   "title": "The 2024 DORA report",
+   "by": "Google",
+   "date": "2024",
+   "kind": "article"
+  },
+  {
+   "id": "r13",
+   "url": "https://survey.stackoverflow.co/2025/ai",
+   "title": "2025 Developer Survey, AI",
+   "by": "Stack Overflow",
+   "date": "2025",
+   "kind": "dataset"
+  },
+  {
+   "id": "r14",
+   "url": "https://www.veracode.com/resources/analyst-reports/2025-genai-code-security-report/",
+   "title": "2025 GenAI code security report",
+   "by": "Veracode",
+   "date": "2025",
+   "kind": "article"
+  },
+  {
+   "id": "r15",
+   "url": "https://changelog.com/practicalai/286",
+   "title": "Practical AI episode 286, conversation with Dinis Cruz",
+   "by": "Practical AI",
+   "date": "2024-09",
+   "kind": "talk"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-03",
+   "what": "The voice memo and the article, with the worked example built the same day"
+  },
+  {
+   "date": "2012-06",
+   "what": "Method streams and code streams written up on the O2 Platform"
+  },
+  {
+   "date": "2010-07",
+   "what": "First major release of the OWASP O2 Platform"
+  },
+  {
+   "date": "2011",
+   "what": "The C4 model got its name"
+  },
+  {
+   "date": "2008",
+   "what": "Aslak Hellesøy created Gherkin"
+  },
+  {
+   "date": "2026-01",
+   "what": "The paper on graph retrieval for codebases, finding AST-derived graphs more reliable than LLM-extracted ones"
+  }
+ ]
+}

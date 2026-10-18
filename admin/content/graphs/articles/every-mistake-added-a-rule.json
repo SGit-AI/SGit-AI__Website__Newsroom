@@ -1,0 +1,679 @@
+{
+ "slug": "every-mistake-added-a-rule",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "The code under verification is fine: its tests reproduce and 812 concurrency attacks produced no failures; what keeps breaking is the process around it.",
+   "section": "top",
+   "quote": "812 concurrency attacks produced no failures",
+   "about": [
+    "concept:shipping",
+    "concept:multi-agent"
+   ],
+   "value": {
+    "n": 812,
+    "unit": "concurrency attacks, with no failures"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Long sessions compact, and afterwards the agent skips mandatory steps or writes its report from the summary; this caused most of the failures.",
+   "section": "top",
+   "quote": "Long sessions compact, and afterwards the agent skips mandatory steps or writes its report from the compaction summary.",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "When a command exits non-zero the harness does not save its output to a file and truncates the middle, and a whole race run was lost that way.",
+   "section": "top",
+   "quote": "When a command exits non-zero, the harness does not save its output to a file and truncates the middle.",
+   "about": [
+    "concept:agent-tooling",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "data-point",
+   "text": "Asked for an exact copy of its 100 KB prompt for recovery after compaction, the agent reproduced it from memory, incomplete or wrong, and once tripped the platform's safety filter.",
+   "section": "top",
+   "quote": "Asked for an exact copy of its prompt, for recovery after compaction, the agent reproduced it from memory, incomplete or wrong.",
+   "about": [
+    "concept:agent-memory"
+   ],
+   "value": {
+    "n": 100,
+    "unit": "KB of prompt"
+   }
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The harness suggests cat, sed and heredocs, which the friend's rules forbid, so the rules fight the environment.",
+   "section": "top",
+   "quote": "The harness suggests cat, sed and heredocs, which their rules forbid.",
+   "about": [
+    "concept:agent-tooling",
+    "entity:claude-code"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "In the friend's words, every mistake added a rule, and every new rule caused new mistakes.",
+   "section": "top",
+   "quote": "Every mistake added a rule, and every new rule caused new mistakes.",
+   "about": [
+    "concept:rules-for-incidents",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "data-point",
+   "text": "The friend has decided on nine small sessions instead of two large ones, a hashed reference folder instead of a huge prompt, outputs to file, scripts hashed before each run, and a compacting session closed at once.",
+   "section": "top",
+   "quote": "nine small sessions instead of two large ones, a reference folder with hashes instead of a huge prompt",
+   "about": [
+    "concept:agent-memory",
+    "concept:the-record"
+   ],
+   "value": {
+    "n": 9,
+    "of": 2,
+    "unit": "small sessions in place of large ones"
+   }
+  },
+  {
+   "id": "c08",
+   "kind": "question",
+   "text": "The friend's question, which the article sets out to answer: does this level of rigour make sense, or am I overdoing it?",
+   "section": "top",
+   "quote": "does this level of rigour make sense, or am I overdoing it?",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "A Wardley map places each component by how visible it is to the user, top to bottom, and how evolved it is, left to right: genesis, custom-built, product, commodity.",
+   "section": "top",
+   "quote": "places each component of a system by how visible it is to the user, top to bottom, and by how evolved it is, left to right: genesis, custom-built, product, commodity",
+   "about": [
+    "concept:wardley-maps"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "hypothesis",
+   "text": "Wardley maps keep the owner's world sane: they predict roughly what will happen, and a failure looked back on is usually a mismatch on the evolution axis.",
+   "section": "top",
+   "quote": "I would go on record saying Wardley maps are what keep my world sane.",
+   "about": [
+    "concept:wardley-maps"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "definition",
+   "text": "Complexity on a map is not the number of components but custom-built components sitting where commodities already exist, each maintained by attention, and every fixing rule is one more of them.",
+   "section": "top",
+   "quote": "it is custom-built components sitting where commodities already exist, so that every one of them has to be maintained by attention",
+   "about": [
+    "concept:shipping",
+    "concept:wardley-maps"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "limit",
+   "text": "Like every map on the site, the two maps are a claim, not a finding, with their source below the figure so they can be argued with.",
+   "section": "top",
+   "quote": "Like every map on this site it is a claim, not a finding",
+   "about": [
+    "concept:wardley-maps"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "proposal",
+   "text": "The way out is not a better rule but to take each piece of the blob, make it a small component with one job, test it once, ship it and let it move right.",
+   "section": "top",
+   "quote": "The way out is not a better rule.",
+   "about": [
+    "concept:shipping",
+    "concept:rules-for-incidents"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "nfrs.sgit.ai, reading down its failure column, found that what a machine enforces holds and what attention enforces drifts.",
+   "section": "top",
+   "quote": "what a machine enforces, holds; what attention enforces, drifts.",
+   "about": [
+    "concept:hope-or-enforcement",
+    "entity:nfrs-sgit-ai"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "data-point",
+   "text": "coding.sgit.ai found 31 documented rules, and the working automated enforcement is four structural guards, each encoding an incident rather than a rule.",
+   "section": "top",
+   "quote": "31 documented rules, and the working automated enforcement is four structural guards",
+   "about": [
+    "concept:rules-for-incidents",
+    "entity:coding-sgit-ai"
+   ],
+   "value": {
+    "n": 4,
+    "of": 31,
+    "unit": "structural guards against documented rules"
+   },
+   "refs": [
+    "r02"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "Rules that come from incidents and are enforced by machines stay few; rules that come from worry and are enforced by attention multiply.",
+   "section": "top",
+   "quote": "Rules that come from worry, enforced by attention, multiply.",
+   "about": [
+    "concept:rules-for-incidents",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "wardley-maps.sgit.ai lists forty doctrines, several of them exactly the problem here, from focus on user needs to think FIRE and manage inertia.",
+   "section": "top",
+   "quote": "wardley-maps.sgit.ai lists forty doctrines, from focus on user needs and use appropriate methods to think FIRE",
+   "about": [
+    "concept:wardley-maps",
+    "entity:wardley-maps-sgit-ai"
+   ],
+   "value": {
+    "n": 40,
+    "unit": "doctrines"
+   },
+   "refs": [
+    "r03"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The bridge simulation published the day before is a 126-file vault with an app, an API description, economics and four themes, quick to build because almost nothing in it was new.",
+   "section": "top",
+   "quote": "It is a 126-file vault with an app, an API description, economics and four themes",
+   "about": [
+    "concept:shipping",
+    "concept:vault"
+   ],
+   "value": {
+    "n": 126,
+    "unit": "files in the bridge simulation vault"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "hypothesis",
+   "text": "Shipping is probably the single most important thing: to ship is to make something usable by somebody else, an agent included, and without it you over-engineer.",
+   "section": "top",
+   "quote": "Shipping is probably the single most important thing, end to end.",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "decision",
+   "text": "A lot of what the owner publishes is half-baked by design; every release teaches something and then he stops, as with the newsroom experiments before the story vault work.",
+   "section": "top",
+   "quote": "That is why a lot of what I publish is half-baked, by design.",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "proposal",
+   "text": "A good test: a new session in Claude or ChatGPT should be productive from the first prompt, with reference material that is focused, compressed and read by you.",
+   "section": "top",
+   "quote": "you should be able to open a new session, in Claude or in ChatGPT, and have it productive from the first prompt",
+   "about": [
+    "concept:agent-memory",
+    "concept:the-brief",
+    "entity:claude",
+    "entity:chatgpt"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "The agent team on the site works in one step per agent of up to twelve minutes, each reading its state from files, doing one kind of work, writing it back and stopping.",
+   "section": "top",
+   "quote": "one step per agent of up to twelve minutes",
+   "about": [
+    "concept:multi-agent",
+    "concept:agent-memory"
+   ],
+   "value": {
+    "n": 12,
+    "unit": "minutes per agent step"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "If a session needs 100 KB of rules to be productive, the rules are doing the job that structure should do.",
+   "section": "top",
+   "quote": "If a session needs 100 KB of rules to be productive, the rules are doing the job that structure should do.",
+   "about": [
+    "concept:agent-memory",
+    "concept:rules-for-incidents"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "Memory is files, versioned: the owner prefers git or a vault because the memory then has a history and can prove which version of the prompt a session read.",
+   "section": "top",
+   "quote": "I prefer version control, git or a vault, because then the memory has a history",
+   "about": [
+    "concept:agent-memory",
+    "concept:the-record",
+    "entity:git",
+    "entity:email-fs",
+    "entity:issues-fs"
+   ],
+   "refs": [
+    "r04"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "proposal",
+   "text": "When complexity hits, slow down, go back to a first draft and break it into small components; if you are not getting faster you are paying for complexity.",
+   "section": "top",
+   "quote": "if you are not getting faster, you are paying for complexity",
+   "about": [
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "proposal",
+   "text": "Secure against the threat, not against everything: ask what the assets, the threat and the attack vector are, write a one-page threat model, publish it and ask the community.",
+   "section": "top",
+   "quote": "Write the threat model down, one page, publish it, and ask the community whether you are making the right compromises.",
+   "about": [
+    "concept:threat-modelling"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "fact",
+   "text": "A rule is a weak barrier that relies on the agent remembering and judging; a record detects; a boundary prevents; and the agent team's own grading marks its policy text weak.",
+   "section": "top",
+   "quote": "A rule is a weak barrier: it relies on the agent remembering and judging",
+   "about": [
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "data-point",
+   "text": "The site and its vaults publish through gates of checks that fail the build; the bridge vault's gate runs 44 of them, many existing because something broke once.",
+   "section": "top",
+   "quote": "runs 44 of them, and many exist because something broke once",
+   "about": [
+    "concept:shipping",
+    "concept:rules-for-incidents"
+   ],
+   "value": {
+    "n": 44,
+    "unit": "checks in the bridge vault's gate"
+   }
+  },
+  {
+   "id": "c29",
+   "kind": "proposal",
+   "text": "Run it in five environments, locally, air-gapped, and on Azure, GCP and AWS, because each breaks a different assumption and shows where the bottlenecks are.",
+   "section": "top",
+   "quote": "Running in five different environments is better: locally, air-gapped, and on Azure, GCP and AWS.",
+   "about": [
+    "concept:deployment",
+    "entity:aws"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "decision",
+   "text": "The owner designs steps to finish before compaction and keeps the step's state on disk; closing a session that compacts is a boundary, not a request.",
+   "section": "top",
+   "quote": "I design steps to finish before compaction, and I keep the state of the step on disk",
+   "about": [
+    "concept:agent-memory"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "definition",
+   "text": "The post-session audit card is a script over the transcript, run after the step, counting tools, tokens, files and network calls and flagging anything outside the agent's policy.",
+   "section": "top",
+   "quote": "It is a script over the transcript, run after the step.",
+   "about": [
+    "concept:footprint",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "decision",
+   "text": "Mistakes of form are logged and the agent carries on; it stops for harm or a broken boundary, because if everything is a STOP a STOP stops meaning anything.",
+   "section": "top",
+   "quote": "If everything is a STOP, a STOP stops meaning anything",
+   "about": [
+    "concept:rules-for-incidents",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "The answer to the friend: for the process the rigour is overdone, for the intent it is not, and the rigour should match the assets and the blast radius.",
+   "section": "top",
+   "quote": "The rigour should match the assets and the blast radius.",
+   "about": [
+    "concept:blast-radius",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c34",
+   "kind": "hypothesis",
+   "text": "The owner sees very few hallucinations and thinks it is because the briefs and sessions are tight, many and isolated, each with one focus.",
+   "section": "top",
+   "quote": "I see very few hallucinations these days, and I think it is because my briefs are tight, my sessions are tight",
+   "about": [
+    "concept:agent-memory",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c35",
+   "kind": "limit",
+   "text": "The friend's messages are paraphrased and their author is not named; only one line is quoted from them, and the doctrine names are Simon Wardley's under CC BY-SA 4.0.",
+   "section": "top",
+   "quote": "The messages are paraphrased and their author is not named; the one line quoted from them is theirs.",
+   "about": [
+    "concept:voice-memo",
+    "entity:simon-wardley",
+    "entity:mermaid"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c06"
+  },
+  {
+   "from": "c06",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c11",
+   "verb": "gives_rise_to",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c15",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c27",
+   "verb": "backs",
+   "to": "c16"
+  },
+  {
+   "from": "c28",
+   "verb": "backs",
+   "to": "c27"
+  },
+  {
+   "from": "c01",
+   "verb": "backs",
+   "to": "c33"
+  },
+  {
+   "from": "c33",
+   "verb": "answers",
+   "to": "c08"
+  },
+  {
+   "from": "c13",
+   "verb": "answers",
+   "to": "c08"
+  },
+  {
+   "from": "c31",
+   "verb": "specifies",
+   "to": "c13"
+  },
+  {
+   "from": "c32",
+   "verb": "specifies",
+   "to": "c13"
+  },
+  {
+   "from": "c30",
+   "verb": "specifies",
+   "to": "c13"
+  },
+  {
+   "from": "c12",
+   "verb": "limits",
+   "to": "c11"
+  },
+  {
+   "from": "c35",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c19"
+  }
+ ],
+ "entities": [
+  {
+   "id": "claude-code",
+   "role": "Cowork, the product in which the friend's agents run"
+  },
+  {
+   "id": "chatgpt",
+   "role": "the reviewer in the friend's verification, and one of the two products that compact"
+  },
+  {
+   "id": "claude",
+   "role": "one of the two products whose compaction the owner does not control"
+  },
+  {
+   "id": "simon-wardley",
+   "role": "originator of the doctrine names and of Wardley Mapping"
+  },
+  {
+   "id": "nfrs-sgit-ai",
+   "role": "the estate's account of non-functional requirements, read down its failure column"
+  },
+  {
+   "id": "coding-sgit-ai",
+   "role": "how the code is actually written, counted: 31 rules and four guards"
+  },
+  {
+   "id": "wardley-maps-sgit-ai",
+   "role": "lists the forty doctrines"
+  },
+  {
+   "id": "email-fs",
+   "role": "how the agents talk to each other, in files"
+  },
+  {
+   "id": "issues-fs",
+   "role": "where the work is tracked, in files"
+  },
+  {
+   "id": "git",
+   "role": "the version control the owner prefers for memory, with the vault"
+  },
+  {
+   "id": "mermaid",
+   "role": "the wardley-beta diagram the two maps were rendered with"
+  },
+  {
+   "id": "aws",
+   "role": "one of the five environments to run in"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "shipping",
+   "defined_here": true
+  },
+  {
+   "id": "wardley-maps",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "threat-modelling",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "footprint",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "agent-tooling",
+   "defined_here": false
+  },
+  {
+   "id": "deployment",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  },
+  {
+   "id": "rules-for-incidents",
+   "defined_here": true
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://nfrs.sgit.ai/",
+   "title": "nfrs.sgit.ai",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r02",
+   "url": "https://coding.sgit.ai/",
+   "title": "coding.sgit.ai",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r03",
+   "url": "https://wardley-maps.sgit.ai/",
+   "title": "wardley-maps.sgit.ai",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r04",
+   "url": "https://issues-fs.sgit.ai/",
+   "title": "Issues-FS",
+   "by": "sgit.ai",
+   "date": "undated",
+   "kind": "documentation"
+  },
+  {
+   "id": "r05",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/21/v0.16.26__article__who-should-read-the-code.md",
+   "title": "Who reads the code",
+   "by": "Dinis Cruz",
+   "date": "2026-03-21",
+   "kind": "post"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-08",
+   "what": "The two messages, the voice memo and the article, drafted in a session that had itself compacted earlier that day"
+  }
+ ]
+}

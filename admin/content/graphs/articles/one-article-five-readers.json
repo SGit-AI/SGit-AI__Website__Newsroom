@@ -1,0 +1,691 @@
+{
+ "slug": "one-article-five-readers",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "data-point",
+   "text": "The articles are deep and carry their evidence, which makes them long and hard to consume: the five used here run from 2,200 to 5,100 words, about 17,100 in all.",
+   "section": "top",
+   "quote": "The five used in this article run from 2,200 to 5,100 words, about 17,100 in all.",
+   "about": [
+    "concept:five-readers",
+    "entity:sgit-ai"
+   ],
+   "value": {
+    "n": 17100,
+    "unit": "words across the five articles",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c02",
+   "kind": "decision",
+   "text": "The answer is not shorter articles but to keep writing the article first, as prose, because writing is how the argument is found, and then send five readers through it afterwards, each an agent with a defined role.",
+   "section": "top",
+   "quote": "Keep writing the article first. Writing is how the argument is found.",
+   "about": [
+    "concept:five-readers",
+    "concept:story-vault",
+    "concept:multi-agent"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "fact",
+   "text": "None of the five readers rewrites the article and none adds a claim it does not make; two build the platform, the Librarian and the Cartographer, and three write for a person, the Historian, the Explainer and the Storyteller.",
+   "section": "top",
+   "quote": "None rewrites the article, and none adds a claim it does not make.",
+   "about": [
+    "entity:librarian",
+    "entity:cartographer",
+    "entity:historian",
+    "entity:explainer",
+    "entity:storyteller",
+    "concept:five-readers"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "fact",
+   "text": "The roles come from the SG/Send agent team, where a Librarian, a Cartographer and a Historian have worked on a code base for months, each with a mission and a sentence that says when it has failed.",
+   "section": "top",
+   "quote": "If a piece of knowledge exists in this repo but cannot be found in under 30 seconds, the Librarian has failed.",
+   "about": [
+    "entity:librarian",
+    "entity:sgit",
+    "concept:multi-agent"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "decision",
+   "text": "The cartographer and the ontologist were merged into one role on purpose: deciding what kinds of thing exist and which verbs connect them is the same job as drawing what connects to what.",
+   "section": "top",
+   "quote": "I merged the cartographer and the ontologist into one role on purpose.",
+   "about": [
+    "entity:cartographer",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "fact",
+   "text": "The three context readers are deliberately short, the Historian under 400 words, the Explainer under 250, the Storyteller 6 to 9 slides; a Historian that writes three thousand words has missed the point, since the value is in the connections.",
+   "section": "top",
+   "quote": "A Historian that writes three thousand words has missed the point: the value is in the connections, not the text.",
+   "about": [
+    "entity:historian",
+    "entity:explainer",
+    "entity:storyteller",
+    "concept:meaning-through-connectivity"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "The simulation ran on five articles about agent behaviour policies published between 7 and 10 October, with five Librarians in parallel, the Explainer at once, the Cartographer after all catalogues, and the Historian and Storyteller after the Cartographer.",
+   "section": "top",
+   "quote": "Five Librarians ran in parallel, one per article.",
+   "about": [
+    "concept:behaviour-policy",
+    "concept:multi-agent",
+    "concept:five-readers"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "data-point",
+   "text": "The Librarian catalogued 662 items across the five articles and raised 32 flags; a script searched every article for every anchor and all 662 are there, word for word.",
+   "section": "top",
+   "quote": "A script searched every article for every anchor; all 662 are there, word for word.",
+   "about": [
+    "entity:librarian",
+    "concept:provenance",
+    "concept:five-readers"
+   ],
+   "value": {
+    "n": 662,
+    "unit": "catalogued items with verbatim anchors",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "The catalogue shows the shape of the writing: 161 claims and 40 items presented as evidence, with 48 data points, 65 checkable facts and 53 cited sources, a lot of reasoning resting on a smaller number of checkable things.",
+   "section": "top",
+   "quote": "There are 161 claims and 40 items the articles themselves present as evidence.",
+   "about": [
+    "entity:librarian",
+    "concept:provenance",
+    "entity:publisher"
+   ],
+   "value": {
+    "n": 161,
+    "of": 662,
+    "unit": "claims among the catalogued items",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The platform readers turned out to be fact-checkers: nobody asked them to check, but cataloguing everything with its anchor made the gaps visible, and the role says flag, do not fix.",
+   "section": "top",
+   "quote": "Nobody asked them to check; cataloguing everything with its anchor made the gaps visible.",
+   "about": [
+    "entity:librarian",
+    "concept:corrections-propagate",
+    "concept:five-readers"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "data-point",
+   "text": "Among the flags: Re-anchoring says eighteen compactions each started from about 780,000 to 800,000 tokens and that 17.8 million tokens were summarised away, but eighteen times 790,000 is about 14.2 million.",
+   "section": "top",
+   "quote": "Eighteen times 790,000 is about 14.2 million.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:agent-memory"
+   ],
+   "value": {
+    "n": 14.2,
+    "of": 17.8,
+    "unit": "million tokens, recomputed against the article's total",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Other flags: Hope or enforcement says the mandate is twelve actions but lists ten, A second reader attributes the two-person rule to the military without support, some content exists only in a picture, and two article graphs link to articles the text never mentions.",
+   "section": "top",
+   "quote": "A claim the article never supports.",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:hope-or-enforcement",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "decision",
+   "text": "The articles were not corrected in this release; the flags are published with the catalogues, and the corrections will be their own change, with the flag that prompted each.",
+   "section": "top",
+   "quote": "I have not corrected the articles in this release; the flags are published with the catalogues",
+   "about": [
+    "concept:corrections-propagate",
+    "concept:the-record"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "data-point",
+   "text": "The Cartographer built three altitudes with one grammar: at the site 13 classes and 24 verbs, each with its inverse; at the topic 45 concepts and 78 edges; at the article each article's concepts mapped up as same-as, narrower-than or instance-of.",
+   "section": "top",
+   "quote": "45 concepts for agent behaviour policies, 78 edges, a taxonomy, and for every concept the articles it appears in and the one where it first appears",
+   "about": [
+    "entity:cartographer",
+    "concept:fractal-semantic-graphs",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 45,
+    "unit": "topic concepts, with 78 edges",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "The most useful thing the Cartographer did was merge: expectation, hope and a rule held by the agent are one barrier kind; second reader, checker, maker-checker, segregation of duties and two-person rule are one concept; and one method appears in all five under five names.",
+   "section": "top",
+   "quote": "The most useful thing the Cartographer did was merge.",
+   "about": [
+    "entity:cartographer",
+    "concept:hope-or-enforcement",
+    "concept:human-in-the-loop",
+    "concept:taxonomy-debt"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "fact",
+   "text": "It also refused a merge: reach, how far one run can go, and blast radius, the cost of one bad day, stay separate, as the site already keeps them.",
+   "section": "top",
+   "quote": "reach (how far one run can go) and blast radius (the cost of one bad day) stay separate",
+   "about": [
+    "concept:reach",
+    "concept:blast-radius",
+    "entity:cartographer"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "fact",
+   "text": "The Cartographer sent the Librarian a feedback file of 13 merges, 8 splits, 6 items whose kind looks wrong and 10 notes; in this run it was written and not yet applied, and the second Librarian pass is the next run.",
+   "section": "top",
+   "quote": "In this run it was written and not yet applied; the second Librarian pass, applying it, is the next run.",
+   "about": [
+    "entity:cartographer",
+    "entity:librarian",
+    "concept:five-readers"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "data-point",
+   "text": "The Historian counted new concepts across the five articles in date order, 17, 11, 5, 11, 1; the most recent introduced exactly one concept, the canary, and reused 25, so the set starts as vocabulary and ends as configuration.",
+   "section": "top",
+   "quote": "The most recent article introduced exactly one concept, the canary, and reused 25.",
+   "about": [
+    "entity:historian",
+    "concept:five-readers",
+    "concept:behaviour-policy"
+   ],
+   "value": {
+    "n": 1,
+    "of": 26,
+    "unit": "new concepts in the most recent article against those reused",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "The Historian named the pattern none of the five articles names: the rule moves out of the agent, and every article stops one barrier short.",
+   "section": "top",
+   "quote": "The rule moves out of the agent, and every article stops one barrier short.",
+   "about": [
+    "entity:historian",
+    "concept:hope-or-enforcement",
+    "concept:behaviour-policy"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "fact",
+   "text": "It found tensions the articles do not resolve: the first sorts rules into control, accepted risk and hope and later ones keep two; one says delete rules and another adds one; and the argued exception moves from the second reader to the gate.",
+   "section": "top",
+   "quote": "from the third article on there are only two, and accepted risk quietly disappears",
+   "about": [
+    "entity:historian",
+    "concept:risk-acceptance",
+    "concept:hope-or-enforcement"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "fact",
+   "text": "The Historian caught the Cartographer out: new meant new to these five articles, not to the site, and barrier kinds, hope, accepted risk, mandate, reach and blast radius were all introduced earlier; only a site ontology tells you what is new.",
+   "section": "top",
+   "quote": "a topic ontology tells you what is new to the topic; only a site ontology tells you what is new",
+   "about": [
+    "entity:historian",
+    "entity:cartographer",
+    "concept:fractal-semantic-graphs",
+    "concept:taxonomy-debt"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "fact",
+   "text": "The Storyteller writes a deck as data, one slide per idea in nine layouts, rendered by code to 1080 by 1350 images and a PDF, the shape of a LinkedIn document post; every number is in the article and every quote slide is checked verbatim.",
+   "section": "top",
+   "quote": "Every number on a slide is in the article, and every quote slide is checked verbatim.",
+   "about": [
+    "entity:storyteller",
+    "entity:linkedin",
+    "concept:provenance",
+    "concept:custom-interfaces"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "limit",
+   "text": "The Storyteller also wrote an image-model prompt for every slide, but running them needs an image model API key this session does not have; the prompts are in the vault and the code-drawn deck is what each article carries until they are run.",
+   "section": "top",
+   "quote": "it needs an image model API key this session does not have",
+   "about": [
+    "entity:storyteller",
+    "entity:article-views-vault"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "The five articles now open, under the abstract, with a section called Read it another way: In two minutes open by default, with the arc, pictures, map and catalogue one click away, working without JavaScript and carried as text in the markdown twin.",
+   "section": "top",
+   "quote": "In two minutes is open by default; In the arc, In pictures, On the map and The catalogue are one click away.",
+   "about": [
+    "concept:five-readers",
+    "concept:publishing-method",
+    "concept:agent-readable-web"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "fact",
+   "text": "The Article Views vault holds everything: the role files and prompts, the five articles as read, the catalogues, the three altitudes of ontology, the maps, the notes, the decks, the renderers and the checks, and opens as an app with the views of each article.",
+   "section": "top",
+   "quote": "The Article Views vault holds everything",
+   "about": [
+    "entity:article-views-vault",
+    "concept:vault",
+    "concept:five-readers"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "It does not check the articles against the world: the Librarian checks the article against itself, and whether a cited fact is true is still the Journalist's job and the reviewer's.",
+   "section": "top",
+   "quote": "It does not check the articles against the world.",
+   "about": [
+    "entity:librarian",
+    "entity:publisher",
+    "concept:provenance"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "The views can be wrong: scripts check anchors, edges, word limits and quotes, but a plain-language summary subtly unfair to its article passes every check, so each view should be read by the author before it goes on the page.",
+   "section": "top",
+   "quote": "A plain-language summary that is subtly unfair to its article passes every check.",
+   "about": [
+    "concept:five-readers",
+    "concept:human-in-the-loop"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "New is relative: without the site altitude, new means new to the set, and a run without the site's graphs would not have caught it.",
+   "section": "top",
+   "quote": "Without the site altitude, \"new\" means new to the set.",
+   "about": [
+    "entity:historian",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "The round trip ran once in one direction: the Cartographer's feedback to the Librarian is written, not applied.",
+   "section": "top",
+   "quote": "The Cartographer's feedback to the Librarian is written, not applied.",
+   "about": [
+    "entity:cartographer",
+    "entity:librarian"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "data-point",
+   "text": "It costs about 1.1 million tokens for five articles, most of it the five Librarians at 403,000 and the Cartographer at 264,000; the catalogue and the ontology are the expensive parts, and the ontology gets cheaper as the site ontology settles.",
+   "section": "top",
+   "quote": "About 1.1 million tokens for five articles",
+   "about": [
+    "concept:five-readers",
+    "concept:agent-readable-web",
+    "entity:librarian",
+    "entity:cartographer"
+   ],
+   "value": {
+    "n": 1100000,
+    "unit": "tokens for five articles",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "Next: make the readers desk roles with write policies so every new article gets its views, apply the round trip and the corrections, build the site altitude so new means new, and run one deck through an image model with its cost counted.",
+   "section": "top",
+   "quote": "One ontology across every article on the site, so that \"new\" means new",
+   "about": [
+    "concept:five-readers",
+    "concept:fractal-semantic-graphs",
+    "entity:librarian",
+    "entity:cartographer",
+    "entity:historian"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "The article was written by agent@riskmandate.ai running Claude Opus 5.5 in the sgit.ai site session on 10 October 2026 from a voice memo by Dinis Cruz, every view produced by Claude agents in the same session, disclosed as Article 50 asks.",
+   "section": "top",
+   "quote": "AI-generated, disclosed as Article 50 of the EU AI Act asks.",
+   "about": [
+    "entity:riskmandate",
+    "entity:claude",
+    "entity:dinis-cruz",
+    "entity:eu-ai-act",
+    "concept:agents-write-too",
+    "concept:voice-memo"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c02"
+  },
+  {
+   "from": "c03",
+   "verb": "specifies",
+   "to": "c02"
+  },
+  {
+   "from": "c06",
+   "verb": "specifies",
+   "to": "c03"
+  },
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c11",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c13"
+  },
+  {
+   "from": "c14",
+   "verb": "backs",
+   "to": "c15"
+  },
+  {
+   "from": "c18",
+   "verb": "backs",
+   "to": "c19"
+  },
+  {
+   "from": "c21",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c10"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c24"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c18"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c02"
+  },
+  {
+   "from": "c29",
+   "verb": "gives_rise_to",
+   "to": "c31"
+  }
+ ],
+ "entities": [
+  {
+   "id": "librarian",
+   "role": "catalogues every item of an article with its anchor; five ran in parallel"
+  },
+  {
+   "id": "cartographer",
+   "role": "builds the ontology at three altitudes and draws the maps; merged with the ontologist"
+  },
+  {
+   "id": "historian",
+   "role": "says what each article added and where it sits in the arc"
+  },
+  {
+   "id": "explainer",
+   "role": "says what the article is saying in two minutes, under 250 words"
+  },
+  {
+   "id": "storyteller",
+   "role": "tells the article as a deck of 6 to 9 slides, drawn by code"
+  },
+  {
+   "id": "publisher",
+   "role": "the Journalist, whose job it remains to check cited facts against the world"
+  },
+  {
+   "id": "article-views-vault",
+   "role": "holds the whole run: roles, catalogues, ontologies, maps, decks and checks"
+  },
+  {
+   "id": "sgit",
+   "role": "the SG/Send agent team the roles come from"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site whose five articles were read and which carries the views"
+  },
+  {
+   "id": "linkedin",
+   "role": "the document post whose shape the decks take"
+  },
+  {
+   "id": "riskmandate",
+   "role": "agent@riskmandate.ai wrote the article"
+  },
+  {
+   "id": "claude",
+   "role": "Claude Opus 5.5, the model that wrote the article and ran the readers"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "whose voice memo the article is and who has editorial responsibility"
+  },
+  {
+   "id": "eu-ai-act",
+   "role": "its Article 50 is the disclosure the byline follows"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "five-readers",
+   "defined_here": true
+  },
+  {
+   "id": "story-vault",
+   "defined_here": false
+  },
+  {
+   "id": "multi-agent",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "behaviour-policy",
+   "defined_here": false
+  },
+  {
+   "id": "provenance",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "agent-memory",
+   "defined_here": false
+  },
+  {
+   "id": "hope-or-enforcement",
+   "defined_here": false
+  },
+  {
+   "id": "human-in-the-loop",
+   "defined_here": false
+  },
+  {
+   "id": "the-record",
+   "defined_here": false
+  },
+  {
+   "id": "taxonomy-debt",
+   "defined_here": false
+  },
+  {
+   "id": "reach",
+   "defined_here": false
+  },
+  {
+   "id": "blast-radius",
+   "defined_here": false
+  },
+  {
+   "id": "risk-acceptance",
+   "defined_here": false
+  },
+  {
+   "id": "custom-interfaces",
+   "defined_here": false
+  },
+  {
+   "id": "publishing-method",
+   "defined_here": false
+  },
+  {
+   "id": "agent-readable-web",
+   "defined_here": false
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/tree/HEAD/team/roles",
+   "title": "SG/Send agent team roles",
+   "by": "The Cyber Boardroom",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The article written and the simulation run on five articles"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The article updated"
+  },
+  {
+   "date": "2026-10-07",
+   "what": "The first of the five agent behaviour policy articles published"
+  }
+ ]
+}

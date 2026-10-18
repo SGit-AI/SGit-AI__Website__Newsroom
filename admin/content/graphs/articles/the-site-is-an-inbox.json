@@ -1,0 +1,586 @@
+{
+ "slug": "the-site-is-an-inbox",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "hypothesis",
+   "text": "The brief could not have been written two days earlier, not for lack of time or ideas but for lack of constraints: the properties of what runs are what let the author think.",
+   "section": "short",
+   "quote": "The properties are what let me think.",
+   "about": [
+    "concept:constraints-let-you-think",
+    "entity:dinis-cruz"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "fact",
+   "text": "Five facts of the live vault close off most of the design space: marks live in the reader vault per device, only the reader and a keyed agent read them, writing costs one commit, there is no sign-in, and personas can have key pairs.",
+   "section": "constraints",
+   "quote": "Those five facts close off most of the design space, and what is left is small enough to think about in a morning.",
+   "about": [
+    "concept:constraints-let-you-think",
+    "concept:vault",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c03",
+   "kind": "hypothesis",
+   "text": "The feedback loop is also build it, learn its properties, and only then have the next idea, because the next idea is made of the properties; ship first, think second.",
+   "section": "constraints",
+   "quote": "Ship first, think second, and do not pretend the thinking could have come first.",
+   "about": [
+    "concept:constraints-let-you-think",
+    "concept:shipping"
+   ]
+  },
+  {
+   "id": "c04",
+   "kind": "definition",
+   "text": "The site is an inbox that starts empty: every piece, an article it wrote or a wire story, waits for a decision, and the state the site should always be able to return to is empty.",
+   "section": "brief",
+   "quote": "The state the site should always be able to return to is empty.",
+   "about": [
+    "concept:the-site-is-an-inbox",
+    "entity:newsroom-sgit-ai",
+    "concept:the-wire"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "The inbox is different from a front page, which can stay the Editor's; the inbox is the reader's view of the same pieces, personal because the decisions are.",
+   "section": "brief",
+   "quote": "the inbox is the reader's view of the same pieces, and it is personal because the decisions are",
+   "about": [
+    "concept:the-site-is-an-inbox",
+    "concept:personas",
+    "entity:publisher"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "data-point",
+   "text": "Kahneman's fast and slow is the frame: the inbox mode is fast, with nothing loaded, and offers seven one-tap decisions: read now, read later, not for me, more like this, less like this, comment, move to another persona.",
+   "section": "brief",
+   "quote": "read now; read later; not for me; more like this; less like this; comment; move it to another persona",
+   "about": [
+    "concept:the-site-is-an-inbox",
+    "entity:daniel-kahneman"
+   ],
+   "value": {
+    "n": 7,
+    "unit": "one-tap decisions in the inbox mode"
+   }
+  },
+  {
+   "id": "c07",
+   "kind": "fact",
+   "text": "For the wire especially, not for me is the most important button and the most useful signal, because it says which concern the join got wrong.",
+   "section": "brief",
+   "quote": "it says which concern the join got wrong",
+   "about": [
+    "concept:the-wire",
+    "entity:industry-wire",
+    "concept:the-site-is-an-inbox"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The reading mode is slow: the piece is open and the pane on the right becomes about it, its graph beside the text, the reader's marks, the decisions already taken, and what it cost.",
+   "section": "brief",
+   "quote": "its graph beside the text, the reader's marks on it, the decisions already taken, and what it cost",
+   "about": [
+    "concept:the-site-is-an-inbox",
+    "concept:micropayments",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "definition",
+   "text": "A decision at the end of a page is gamification, a signal the site engineered which is then not a signal; a decision is offered at the moment the reader would take it.",
+   "section": "brief",
+   "quote": "a signal we engineered, which is then not a signal",
+   "about": [
+    "concept:no-gamification",
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c10",
+   "kind": "data-point",
+   "text": "Medium has one or two kinds of highlight and the author has six: interesting, great phrase, not sure, fact, evidence, question; saying which turns highlighting into building a graph.",
+   "section": "brief",
+   "quote": "this is interesting; this is a great phrase; I am not sure about this; this is a fact; this is evidence; this is a question",
+   "about": [
+    "concept:readers-own-graph",
+    "entity:medium"
+   ],
+   "value": {
+    "n": 6,
+    "unit": "kinds of mark"
+   }
+  },
+  {
+   "id": "c11",
+   "kind": "definition",
+   "text": "A mark is a node carrying the phrase, the article and its version, the persona, the kind and the time; a comment is a node with an edge to its phrase; an inbox decision is an edge from persona to piece.",
+   "section": "brief",
+   "quote": "A mark is a node. It carries the phrase, the article and its version, the persona that made it, the kind, and the time.",
+   "about": [
+    "concept:readers-own-graph",
+    "concept:fractal-semantic-graphs",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "fact",
+   "text": "Marks land on the public graphs every article already has, so a reader who marks the same claim in two articles has connected them without naming anything.",
+   "section": "brief",
+   "quote": "a reader who marks the same claim in two articles has connected them without naming anything",
+   "about": [
+    "concept:readers-own-graph",
+    "concept:meaning-through-connectivity",
+    "entity:newsroom-sgit-ai"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Meaning comes from connectivity: a phrase marked three times from three articles is a topic the reader did not declare, and as Obsidian users know the graph is a by-product of use.",
+   "section": "brief",
+   "quote": "the graph is a by-product of use, and it is the most valuable thing the reader makes",
+   "about": [
+    "concept:meaning-through-connectivity",
+    "entity:obsidian",
+    "concept:fractal-semantic-graphs"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "proposal",
+   "text": "Two views on demand: every term in the piece as a link into the vocabulary, and the piece classified sentence by sentence as the five readers see it, with the reader's disagreement recorded as a mark.",
+   "section": "brief",
+   "quote": "the reader should see that view and be able to disagree with it, sentence by sentence, and the disagreement is a mark",
+   "about": [
+    "concept:readers-own-graph",
+    "concept:agents-write-too"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "hypothesis",
+   "text": "The economics: the more a reader marks the more they use the site and pay by the meter, and the more their graph is worth; the loop closes only if reading with a graph that grows is better than reading without one.",
+   "section": "brief",
+   "quote": "reading here, with a graph that grows, is a better experience than reading without one",
+   "about": [
+    "concept:micropayments",
+    "concept:readers-own-graph",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "data-point",
+   "text": "The reading mode can record four things without asking: scroll depth, time while awake, the page the reader came from and went to, and every decision and mark.",
+   "section": "brief",
+   "quote": "The reading mode can record four things without asking, and it should, because they are useful to the reader first.",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "concept:privacy"
+   ],
+   "value": {
+    "n": 4,
+    "unit": "signals recorded without asking"
+   }
+  },
+  {
+   "id": "c17",
+   "kind": "hypothesis",
+   "text": "Awake time counts only while there is movement, so a tab left open for an hour is not an hour of reading; whether movement is a good proxy for attention is to be measured, not assumed.",
+   "section": "brief",
+   "quote": "whether movement is a good enough proxy for attention is something to measure, not assume",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "All of it is kept the way the meter keeps everything: in local storage as it happens, in the reader vault on Update, as records and never totals, shown to an agent only through a read key the reader gave.",
+   "section": "brief",
+   "quote": "as records and never totals, and shown to any agent only through a read key the reader gave it",
+   "about": [
+    "concept:privacy",
+    "entity:sg-meter",
+    "concept:vault",
+    "concept:encryption-and-keys"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "proposal",
+   "text": "Personas should be disposable, each with its own key pair in the master vault, one to sign and one to receive, so a persona can be handed to an agent as a read key to its slice of the graph only.",
+   "section": "brief",
+   "quote": "Personas should be disposable, and each should have a key pair of its own",
+   "about": [
+    "concept:personas",
+    "concept:identity-and-secrets",
+    "entity:ciso",
+    "entity:founder"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "proposal",
+   "text": "A mark addressed to the newsroom goes down the write-only lane encrypted to the newsroom's key, signed by the persona's key, with a copy kept in the reader's vault, and the reply is a new version of the article.",
+   "section": "brief",
+   "quote": "It is signed by the persona's key, so the newsroom knows which of my personas said it and that it was me.",
+   "about": [
+    "concept:vault-design",
+    "concept:personas",
+    "concept:privacy",
+    "concept:corrections-propagate"
+   ]
+  },
+  {
+   "id": "c21",
+   "kind": "decision",
+   "text": "In his own case the author will give the agent that edits the site a read key to his editor persona's vault, so it sees every mark he makes as the editor.",
+   "section": "brief",
+   "quote": "give the agent that edits the site a read key to my editor persona's vault",
+   "about": [
+    "concept:personas",
+    "concept:privacy",
+    "entity:dinis-cruz",
+    "entity:publisher"
+   ]
+  },
+  {
+   "id": "c22",
+   "kind": "proposal",
+   "text": "Build in order: the inbox mode on the front page and the wire first, then the pane about the piece, marks with kinds, the free signals, the persona key pairs, the signed lane and the views.",
+   "section": "brief",
+   "quote": "Test with the wire first, where \"not for me\" is the signal the join needs.",
+   "about": [
+    "concept:the-site-is-an-inbox",
+    "concept:the-wire",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c23",
+   "kind": "proposal",
+   "text": "An experiment per feature: each is small enough to ship in two versions and compare with a synthetic reader, two variants, a measurement, and the one that holds.",
+   "section": "brief",
+   "quote": "a synthetic reader, two variants, a measurement, and the one that holds",
+   "about": [
+    "concept:synthetic-users",
+    "concept:the-brief"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "What not to build: no decision placed at the end of a page, no signal sent without the reader pressing something, no mark the reader cannot see, and no server of ours.",
+   "section": "brief",
+   "quote": "No signal sent anywhere without the reader pressing something. No mark the reader cannot see in their own records. No server of ours.",
+   "about": [
+    "concept:no-gamification",
+    "concept:privacy",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "limit",
+   "text": "None of the brief is built: the vault, the meter, the personas, the share lane, the article graphs and the five readers exist; the inbox mode, the marks, the signals and the signed lane are a design.",
+   "section": "limits",
+   "quote": "the inbox mode, the marks, the signals and the signed lane are a design",
+   "about": [
+    "concept:the-brief",
+    "concept:the-site-is-an-inbox"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "limit",
+   "text": "The science is a frame, not a finding: whether readers behave as thinking fast and slow suggests on this site is what the experiments are for.",
+   "section": "limits",
+   "quote": "whether readers behave that way on this site is what the experiments are for",
+   "about": [
+    "entity:daniel-kahneman",
+    "concept:synthetic-users"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "limit",
+   "text": "Awake time is a guess: movement as a proxy for attention is an assumption to measure.",
+   "section": "limits",
+   "quote": "Movement as a proxy for attention is an assumption to measure.",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "limit",
+   "text": "The economics are a bet: the loop closes only if reading with a graph is better than reading without one, and one reader's experience, the author's, is where that is first tested.",
+   "section": "limits",
+   "quote": "The loop closes only if reading with a graph is better than reading without one",
+   "about": [
+    "concept:micropayments",
+    "concept:readers-own-graph"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "fact",
+   "text": "The article comes from a voice memo on the morning of 12 October 2026, after the newsroom's overnight releases and before the author had tested the vault pane, on top of newsroom.sgit.ai v0.11.0.",
+   "section": "sources",
+   "quote": "recorded after the newsroom's overnight releases and before I had tested the vault pane myself",
+   "about": [
+    "concept:voice-memo",
+    "entity:newsroom-sgit-ai",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c02",
+   "verb": "backs",
+   "to": "c01"
+  },
+  {
+   "from": "c01",
+   "verb": "gives_rise_to",
+   "to": "c03"
+  },
+  {
+   "from": "c04",
+   "verb": "gives_rise_to",
+   "to": "c06"
+  },
+  {
+   "from": "c07",
+   "verb": "specifies",
+   "to": "c06"
+  },
+  {
+   "from": "c09",
+   "verb": "limits",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c12",
+   "verb": "backs",
+   "to": "c13"
+  },
+  {
+   "from": "c13",
+   "verb": "gives_rise_to",
+   "to": "c15"
+  },
+  {
+   "from": "c16",
+   "verb": "gives_rise_to",
+   "to": "c17"
+  },
+  {
+   "from": "c19",
+   "verb": "gives_rise_to",
+   "to": "c20"
+  },
+  {
+   "from": "c22",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c23",
+   "verb": "specifies",
+   "to": "c22"
+  },
+  {
+   "from": "c24",
+   "verb": "specifies",
+   "to": "c09"
+  },
+  {
+   "from": "c25",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c26",
+   "verb": "limits",
+   "to": "c06"
+  },
+  {
+   "from": "c27",
+   "verb": "limits",
+   "to": "c17"
+  },
+  {
+   "from": "c28",
+   "verb": "limits",
+   "to": "c15"
+  }
+ ],
+ "entities": [
+  {
+   "id": "dinis-cruz",
+   "role": "author of the memo and the brief, and the first user"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "the site that becomes an inbox for its reader"
+  },
+  {
+   "id": "industry-wire",
+   "role": "the wire whose stories arrive in the inbox and where not for me is the signal"
+  },
+  {
+   "id": "sg-meter",
+   "role": "the meter whose storage rules the signals follow and whose card sits at the end of the article today"
+  },
+  {
+   "id": "publisher",
+   "role": "the Editor, whose front page stays and whose persona the author also reads as"
+  },
+  {
+   "id": "daniel-kahneman",
+   "role": "whose thinking fast and slow frames the two modes"
+  },
+  {
+   "id": "medium",
+   "role": "has one or two kinds of highlight where the author wants six"
+  },
+  {
+   "id": "obsidian",
+   "role": "whose users know the graph is a by-product of use"
+  },
+  {
+   "id": "ciso",
+   "role": "one of the author's personas"
+  },
+  {
+   "id": "founder",
+   "role": "one of the author's personas"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "the-site-is-an-inbox",
+   "defined_here": true
+  },
+  {
+   "id": "constraints-let-you-think",
+   "defined_here": true
+  },
+  {
+   "id": "readers-own-graph",
+   "defined_here": true
+  },
+  {
+   "id": "no-gamification",
+   "defined_here": true
+  },
+  {
+   "id": "vault",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "shipping",
+   "defined_here": false
+  },
+  {
+   "id": "the-wire",
+   "defined_here": false
+  },
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "fractal-semantic-graphs",
+   "defined_here": false
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "defined_here": false
+  },
+  {
+   "id": "agents-write-too",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  },
+  {
+   "id": "encryption-and-keys",
+   "defined_here": false
+  },
+  {
+   "id": "identity-and-secrets",
+   "defined_here": false
+  },
+  {
+   "id": "vault-design",
+   "defined_here": false
+  },
+  {
+   "id": "corrections-propagate",
+   "defined_here": false
+  },
+  {
+   "id": "the-brief",
+   "defined_here": false
+  },
+  {
+   "id": "synthetic-users",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "voice-memo",
+   "defined_here": false
+  }
+ ],
+ "references": [],
+ "dates": [
+  {
+   "date": "2026-10-12",
+   "what": "The morning voice memo and the brief, on top of the vault pane at v0.11.0"
+  },
+  {
+   "date": "2026-10-10",
+   "what": "Two days earlier, when the brief did not exist because the vault's properties were not yet known"
+  }
+ ]
+}

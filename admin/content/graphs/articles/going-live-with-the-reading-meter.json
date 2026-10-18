@@ -1,0 +1,610 @@
+{
+ "slug": "going-live-with-the-reading-meter",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {
+   "id": "c01",
+   "kind": "decision",
+   "text": "The meter goes live: it charges by how far down a page you scroll, lets the balance go below zero forever, shows one small balance in the top bar, and lets you refuse to pay with a reason.",
+   "section": "top",
+   "quote": "It charges by how far down a page you scroll, it lets your balance go below zero forever",
+   "about": [
+    "entity:sg-meter",
+    "concept:micropayments",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c02",
+   "kind": "data-point",
+   "text": "Paying is one £5 payment on Stripe, with no account, no subscription and nothing that renews.",
+   "section": "top",
+   "quote": "Paying is one £5 payment on Stripe.",
+   "about": [
+    "entity:stripe",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 5,
+    "unit": "GBP per top-up",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c03",
+   "kind": "data-point",
+   "text": "The price is a hypothesis: 10p for a new article read to the end, 5p for an older one, less for other pages, and it could be wrong either way.",
+   "section": "top",
+   "quote": "10p for a new article read to the end, 5p for an older one, less for other pages.",
+   "about": [
+    "concept:pricing",
+    "concept:micropayments"
+   ],
+   "value": {
+    "n": 10,
+    "unit": "pence for a new article read to the end",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c04",
+   "kind": "hypothesis",
+   "text": "The bet is that people pay for reading when nothing forces them to, if what they get back is a site that knows what they read, with the history kept on their own machine.",
+   "section": "top",
+   "quote": "people pay for reading when nothing forces them to, if what they get back is a site that knows what they read",
+   "about": [
+    "concept:honesty-box",
+    "concept:personas",
+    "concept:client-side"
+   ]
+  },
+  {
+   "id": "c05",
+   "kind": "fact",
+   "text": "A page's price is what it costs read to the end, times the share you scrolled through, never less than a tenth.",
+   "section": "top",
+   "quote": "You pay that times the share you scrolled through, never less than a tenth.",
+   "about": [
+    "concept:scrolled-is-not-read",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c06",
+   "kind": "decision",
+   "text": "At the foot of an article, four reasons not to be charged; the charge is refunded and the reason kept in the reader's history as a signal that shapes their picks.",
+   "section": "top",
+   "quote": "The charge is refunded, and the reason is kept in your history as a signal.",
+   "about": [
+    "entity:sg-meter",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c07",
+   "kind": "decision",
+   "text": "The meter is rebuilt as SG Meter, a web component another site can add with a script tag and a config.",
+   "section": "top",
+   "quote": "so another site can add it with a script tag and a config",
+   "about": [
+    "entity:sg-meter",
+    "entity:sgit-ai"
+   ]
+  },
+  {
+   "id": "c08",
+   "kind": "fact",
+   "text": "The Guardian counts what you read in the browser's own storage, a weekly count per tag starting on a Monday, and uses the count to ask for support.",
+   "section": "top",
+   "quote": "The count is used to ask you for support.",
+   "about": [
+    "entity:the-guardian",
+    "concept:client-side"
+   ],
+   "refs": [
+    "r01"
+   ]
+  },
+  {
+   "id": "c09",
+   "kind": "data-point",
+   "text": "Press Gazette reported in September 2025 that the Guardian's digital reader revenue rose 22%, from £88m to £107m in the year to the end of March 2025.",
+   "section": "top",
+   "quote": "from £88m in 2023/2024 to £107m in the year to the end of March 2025",
+   "about": [
+    "entity:the-guardian",
+    "entity:press-gazette",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 22,
+    "unit": "% rise in digital reader revenue",
+    "as_of": "2025-03"
+   }
+  },
+  {
+   "id": "c10",
+   "kind": "fact",
+   "text": "The Guardian's middle tier sells, in part, the absence of the ask, and every tier is a subscription decided in advance for reading that has not happened.",
+   "section": "top",
+   "quote": "The middle tier sells, in part, the absence of the ask. And every tier is a subscription",
+   "about": [
+    "entity:the-guardian",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c11",
+   "kind": "hypothesis",
+   "text": "A reader who can see an honest running total and is never shamed for it is more willing to settle it than one who is counted and asked.",
+   "section": "top",
+   "quote": "a reader who can see an honest running total, and who is never shamed for it, is more willing to settle it than one who is counted and asked",
+   "about": [
+    "concept:honesty-box",
+    "concept:micropayments"
+   ]
+  },
+  {
+   "id": "c12",
+   "kind": "decision",
+   "text": "Added the same day in v0.7.34, the reader sets part of the price: three scales at the foot, where usefulness of 1 is free, 3 the price and 5 double.",
+   "section": "top",
+   "quote": "A page is now charged only as much as you read it and only as much as you say it was worth.",
+   "about": [
+    "entity:sg-meter",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c13",
+   "kind": "fact",
+   "text": "Depth is measured on the main column, rounded to 5%, at most once every 400 milliseconds; it is not reading time and not attention.",
+   "section": "top",
+   "quote": "It is not reading time and it is not attention; a reader can scroll to the bottom without reading.",
+   "about": [
+    "concept:scrolled-is-not-read"
+   ]
+  },
+  {
+   "id": "c14",
+   "kind": "fact",
+   "text": "A charge tells the site nothing; a refusal with a reason is the first thing a reader has told it about a page without being asked to write anything.",
+   "section": "top",
+   "quote": "A charge tells us nothing; everyone who scrolled was charged.",
+   "about": [
+    "concept:micropayments",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c15",
+   "kind": "fact",
+   "text": "Declines are kept in the reader's browser and used there to push topics down their picks; the site does not see them unless the reader sends their history.",
+   "section": "top",
+   "quote": "They are kept in the reader's history, in their browser, like everything else, and used there",
+   "about": [
+    "concept:client-side",
+    "concept:privacy",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c16",
+   "kind": "decision",
+   "text": "Prices were raised from the first version's 5p and 3p on purpose, because a price too low teaches nothing.",
+   "section": "top",
+   "quote": "a price that is too low teaches nothing, because nobody would ever notice paying it",
+   "about": [
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c17",
+   "kind": "data-point",
+   "text": "Stripe's listed UK fee for a standard card is 1.5% plus 20p, so on £5 it is 27.5p and £4.72 reaches the site, about 94.5%.",
+   "section": "top",
+   "quote": "On £5 that is 27.5p, so £4.72 reaches the site, about 94.5%.",
+   "about": [
+    "entity:stripe",
+    "concept:pricing"
+   ],
+   "value": {
+    "n": 4.72,
+    "of": 5,
+    "unit": "GBP reaching the site per top-up",
+    "as_of": "2026-10-10"
+   }
+  },
+  {
+   "id": "c18",
+   "kind": "fact",
+   "text": "The fixed 20p is why the top-up is £5 and not £1, where a standard card would take more than a fifth.",
+   "section": "top",
+   "quote": "The fixed 20p is why the top-up is £5 and not £1",
+   "about": [
+    "entity:stripe",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c19",
+   "kind": "fact",
+   "text": "None of the revenue rows pays for anything that matters; the case is evidence, a shape to test personalisation against, and a library.",
+   "section": "top",
+   "quote": "None of those rows pays for anything that matters. That is not the case for doing this.",
+   "about": [
+    "concept:micropayments",
+    "concept:personas"
+   ]
+  },
+  {
+   "id": "c20",
+   "kind": "data-point",
+   "text": "Paul Feldman's unwatched bagel boxes were paid for about 87% of the time by 2001, against the 90% he would call honest.",
+   "section": "top",
+   "quote": "about 87% of bagels were paid for by 2001",
+   "about": [
+    "entity:paul-feldman",
+    "concept:honesty-box"
+   ],
+   "value": {
+    "n": 87,
+    "unit": "% of bagels paid for",
+    "as_of": "2001"
+   }
+  },
+  {
+   "id": "c21",
+   "kind": "data-point",
+   "text": "For Radiohead's In Rainbows, comScore estimated 38% of downloaders paid something, 48% in the UK, averaging about $6 among payers and $2.26 across everyone.",
+   "section": "top",
+   "quote": "38% of downloaders paid something (48% in the UK)",
+   "about": [
+    "entity:radiohead",
+    "entity:comscore",
+    "concept:honesty-box"
+   ],
+   "value": {
+    "n": 38,
+    "unit": "% of downloaders who paid",
+    "as_of": "2007"
+   }
+  },
+  {
+   "id": "c22",
+   "kind": "data-point",
+   "text": "In Gneezy's theme park experiment 0.5% bought at $12.95, 8.39% bought when paying what they wanted at 92 cents on average, and 4.49% at $5.33 when half went to charity.",
+   "section": "top",
+   "quote": "When riders could pay what they wanted, 8.39% bought, paying 92 cents on average.",
+   "about": [
+    "entity:gneezy",
+    "concept:honesty-box"
+   ],
+   "value": {
+    "n": 8.39,
+    "unit": "% who bought when paying what they wanted",
+    "as_of": "2010"
+   }
+  },
+  {
+   "id": "c23",
+   "kind": "fact",
+   "text": "Remove the force and many more people take part while the average payment falls; a small stated price per page sits between the two.",
+   "section": "top",
+   "quote": "Remove the force and many more people take part, while the average payment falls.",
+   "about": [
+    "concept:honesty-box",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c24",
+   "kind": "decision",
+   "text": "The review is eight weeks after the Stripe link goes live; the link went live on newsroom.sgit.ai on 11 October 2026, so the review is on 6 December 2026.",
+   "section": "top",
+   "quote": "the link went live on newsroom.sgit.ai today, so the review is on 6 December 2026",
+   "about": [
+    "entity:newsroom-sgit-ai",
+    "entity:stripe"
+   ]
+  },
+  {
+   "id": "c25",
+   "kind": "hypothesis",
+   "text": "H1: someone pays when nothing forces them to, with a first real payment within 14 days; no payment in 14 days proves it wrong.",
+   "section": "top",
+   "quote": "A first real payment within 14 days",
+   "about": [
+    "concept:honesty-box"
+   ]
+  },
+  {
+   "id": "c26",
+   "kind": "hypothesis",
+   "text": "H2: at least 10 different payers by the review; fewer than 5 proves it wrong.",
+   "section": "top",
+   "quote": "At least 10 different payers by the review",
+   "about": [
+    "concept:honesty-box"
+   ]
+  },
+  {
+   "id": "c27",
+   "kind": "hypothesis",
+   "text": "H3: paying is a habit, with at least 3 payers paying a second time; no repeat payment proves it wrong.",
+   "section": "top",
+   "quote": "At least 3 payers pay a second time",
+   "about": [
+    "concept:honesty-box"
+   ]
+  },
+  {
+   "id": "c28",
+   "kind": "hypothesis",
+   "text": "H4: making cheating easy costs nothing that reaches the site, with no disputes or chargebacks.",
+   "section": "top",
+   "quote": "Making cheating easy costs nothing that reaches us",
+   "about": [
+    "concept:honesty-box",
+    "entity:stripe"
+   ]
+  },
+  {
+   "id": "c29",
+   "kind": "limit",
+   "text": "H5, that below zero is normal, cannot be tested without readers sending their history; it is written down so the team notices if it starts believing it without evidence.",
+   "section": "top",
+   "quote": "We cannot test this without readers sending their history",
+   "about": [
+    "concept:client-side",
+    "concept:honesty-box"
+   ]
+  },
+  {
+   "id": "c30",
+   "kind": "fact",
+   "text": "What can be seen is the Stripe dashboard and LinkedIn's views; what cannot is anything the meter records, because there is no analytics and the meter sends nothing.",
+   "section": "top",
+   "quote": "There is no analytics on this site, and the meter sends nothing.",
+   "about": [
+    "concept:privacy",
+    "entity:linkedin",
+    "entity:stripe"
+   ]
+  },
+  {
+   "id": "c31",
+   "kind": "proposal",
+   "text": "If nobody pays, the first suspect is not the price but that the trade is invisible; the picks get better before the meter gets louder.",
+   "section": "top",
+   "quote": "We would make the picks better before we made the meter louder.",
+   "about": [
+    "concept:personas",
+    "concept:pricing"
+   ]
+  },
+  {
+   "id": "c32",
+   "kind": "fact",
+   "text": "Anyone can cheat by editing the balance, opening a private window, or faking a payment reference; each changes a number only the cheater sees and costs a payment never due.",
+   "section": "top",
+   "quote": "Each of those changes a number only the cheater can see, and costs the site a payment it was never going to receive.",
+   "about": [
+    "concept:client-side",
+    "entity:sg-meter"
+   ]
+  },
+  {
+   "id": "c33",
+   "kind": "fact",
+   "text": "Written from a voice note by Dinis Cruz by a Claude Code session on 10 October 2026; the meter is SG Meter v1.0.0 and its prices are the METER rules in the build.",
+   "section": "top",
+   "quote": "The meter is SG Meter v1.0.0",
+   "about": [
+    "entity:sg-meter",
+    "entity:claude-code",
+    "entity:dinis-cruz"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "c08",
+   "verb": "backs",
+   "to": "c10"
+  },
+  {
+   "from": "c09",
+   "verb": "backs",
+   "to": "c08"
+  },
+  {
+   "from": "c10",
+   "verb": "gives_rise_to",
+   "to": "c11"
+  },
+  {
+   "from": "c20",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c21",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c22",
+   "verb": "backs",
+   "to": "c23"
+  },
+  {
+   "from": "c23",
+   "verb": "backs",
+   "to": "c04"
+  },
+  {
+   "from": "c17",
+   "verb": "backs",
+   "to": "c18"
+  },
+  {
+   "from": "c16",
+   "verb": "backs",
+   "to": "c03"
+  },
+  {
+   "from": "c13",
+   "verb": "limits",
+   "to": "c05"
+  },
+  {
+   "from": "c25",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c26",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c27",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c28",
+   "verb": "specifies",
+   "to": "c04"
+  },
+  {
+   "from": "c29",
+   "verb": "limits",
+   "to": "c04"
+  },
+  {
+   "from": "c32",
+   "verb": "limits",
+   "to": "c28"
+  },
+  {
+   "from": "c30",
+   "verb": "limits",
+   "to": "c25"
+  }
+ ],
+ "entities": [
+  {
+   "id": "sg-meter",
+   "role": "the reading meter that goes live and is packaged as a library"
+  },
+  {
+   "id": "stripe",
+   "role": "takes the one £5 payment and sets the fee that fixes the top-up size"
+  },
+  {
+   "id": "sgit-ai",
+   "role": "the site where the meter went live"
+  },
+  {
+   "id": "newsroom-sgit-ai",
+   "role": "where the Stripe link went live on 11 October"
+  },
+  {
+   "id": "the-guardian",
+   "role": "counts reading in the browser and asks for support; the comparison"
+  },
+  {
+   "id": "press-gazette",
+   "role": "reported the Guardian's reader revenue figures"
+  },
+  {
+   "id": "paul-feldman",
+   "role": "left bagels and an unwatched cash box in offices"
+  },
+  {
+   "id": "radiohead",
+   "role": "released In Rainbows for whatever buyers chose to pay"
+  },
+  {
+   "id": "comscore",
+   "role": "estimated how many In Rainbows downloaders paid"
+  },
+  {
+   "id": "gneezy",
+   "role": "ran the pay-what-you-want theme park experiment published in Science"
+  },
+  {
+   "id": "linkedin",
+   "role": "its view counts are the nearest denominator"
+  },
+  {
+   "id": "claude-code",
+   "role": "the session that wrote the plan from a voice note"
+  },
+  {
+   "id": "dinis-cruz",
+   "role": "author of the idea and the plan"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "micropayments",
+   "defined_here": false
+  },
+  {
+   "id": "honesty-box",
+   "defined_here": true
+  },
+  {
+   "id": "scrolled-is-not-read",
+   "defined_here": false
+  },
+  {
+   "id": "pricing",
+   "defined_here": false
+  },
+  {
+   "id": "personas",
+   "defined_here": false
+  },
+  {
+   "id": "client-side",
+   "defined_here": false
+  },
+  {
+   "id": "privacy",
+   "defined_here": false
+  }
+ ],
+ "references": [
+  {
+   "id": "r01",
+   "url": "https://github.com/guardian/support-dotcom-components/blob/main/src/shared/lib/history.ts",
+   "title": "support-dotcom-components, history.ts",
+   "by": "The Guardian",
+   "date": "undated",
+   "kind": "repository"
+  }
+ ],
+ "dates": [
+  {
+   "date": "2026-10-10",
+   "what": "The meter goes live and the plan and hypotheses are written down"
+  },
+  {
+   "date": "2026-10-11",
+   "what": "The Stripe payment link goes live on newsroom.sgit.ai"
+  },
+  {
+   "date": "2026-12-06",
+   "what": "The review date, eight weeks after the payment link"
+  },
+  {
+   "date": "2025-09-12",
+   "what": "Press Gazette's report of the Guardian's reader revenue"
+  }
+ ]
+}

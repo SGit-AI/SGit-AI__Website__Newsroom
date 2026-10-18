@@ -50,10 +50,11 @@ NAV = [
         ("Collections", "articles/collections/index.html"),
         ("From the desk", "articles/desk/index.html"),
         ("As graphs", "articles/graphs.html"),
+        ("The graph of meaning", "graphs/index.html"),
         ("Read as a persona", "persona/index.html"),
         ("Make a reading list", "for/make.html"),
         ("Subscribe", "subscribe/index.html"),
-    ], ("articles/", "subscribe/", "persona/", "for/", "sections/")),
+    ], ("articles/", "subscribe/", "persona/", "for/", "sections/", "graphs/")),
     ("Industry Wire", "wire/index.html", [
         ("Today's edition", "wire/index.html"),
         ("The sources", "wire/sources.html"),
