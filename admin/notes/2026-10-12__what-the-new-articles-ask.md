@@ -71,7 +71,7 @@ An argument about publishers, with five counts that read one from outside: origi
 
 ### The passkey opens the vault, v1.4.0
 
-Revised twice after this site's lab. Its brief for this site, read against v0.11.0: "no door here yet" is what the pane says (done); the reading account in the reader vault (done); a door added with no key typed, which the lab does and the pane does not; the pane showing the master's entries and its doors, with a lock, where the pane has "Forget on this device" and no list of doors; retiring a door (not built); several passkeys giving several masters (not tested); the tests repeating the four runs (the lab's and the pane's tests cover the platform path and the recovery code; the hybrid path is covered by the note, not by a test); the report to Apple and Google, which is the owner's.
+Revised twice after this site's lab. Its brief for this site, read against v0.11.0: "no door here yet" is what the pane says (done); the reading account in the reader vault (done); a door added with no key typed, which the lab does and the pane does not; the pane showing the master's entries and its doors, with a lock, where the pane has "Forget on this device" and no list of doors; retiring a door (not built); several passkeys giving several masters (not tested); the tests repeating the four runs (the lab's and the pane's tests cover the platform path and the recovery code; the hybrid path is covered by the note, not by a test); the report to Apple and Google, which is Dinis's.
 
 ## What belongs to sgit.ai, not here
 

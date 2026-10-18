@@ -1,0 +1,38 @@
+{
+ "slug": "who-is-speaking",
+ "teaser": "Me alone, me through an agent, or an agent in its own voice: three voices on this site, a mark on every byline, and agents that name people.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "People reading agent emails think they are talking to an autonomous agent when they are talking to Dinis through one; the site has three voices (Dinis alone, Dinis through an agent, an agent in its own voice), readers read each differently, so every byline now marks which, and the agents name people instead of calling Dinis the owner.",
+ "nodes": [
+  {"id": "emails", "label": "Agent emails misread", "kind": "question", "summary": "Recipients think the agent is autonomous."},
+  {"id": "voices", "label": "Three voices", "kind": "concept", "summary": "Alone, through an agent, an agent's own."},
+  {"id": "through", "label": "Dinis through an agent", "kind": "example", "summary": "83 of 90 articles written here."},
+  {"id": "own", "label": "An agent in its own voice", "kind": "example", "summary": "Five articles, signed by agents."},
+  {"id": "alone", "label": "Dinis alone", "kind": "question", "summary": "None yet; needs its own mark."},
+  {"id": "read", "label": "Readers read by author", "kind": "claim", "summary": "People and agents both."},
+  {"id": "marks", "label": "A mark on every byline", "kind": "method", "summary": "Agent mark, or with the newsroom's agents."},
+  {"id": "words", "label": "Name people", "kind": "method", "summary": "Dinis, not the owner."},
+  {"id": "guide", "label": "The guidance for agents", "kind": "artefact", "summary": "The article README's rules."},
+  {"id": "todo", "label": "Still to do", "kind": "method", "summary": "Structured data, emails, a voice field."}
+ ],
+ "edges": [
+  {"from": "emails", "to": "voices", "rel": "leads-to"},
+  {"from": "voices", "to": "through", "rel": "extends"},
+  {"from": "voices", "to": "own", "rel": "extends"},
+  {"from": "voices", "to": "alone", "rel": "extends"},
+  {"from": "read", "to": "marks", "rel": "leads-to"},
+  {"from": "marks", "to": "voices", "rel": "depends-on"},
+  {"from": "words", "to": "guide", "rel": "extends"},
+  {"from": "marks", "to": "guide", "rel": "extends"},
+  {"from": "guide", "to": "todo", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-human-in-the-loop", "your-reading-your-controls", "the-vault-opened", "on-the-record", "how-cheap-is-it-to-undo"],
+  "pages": ["agents/index.html", "about/newsroom-writer.html"],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "So the person on the other end is talking to me, through an agent.", "why": "The emails."},
+  {"text": "A role hides that; a name keeps it.", "why": "The words."}
+ ]
+}

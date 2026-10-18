@@ -1,6 +1,6 @@
 # The wires: a charter
 
-*13 October 2026, published in newsroom.sgit.ai v0.12.20 at [/wire/charter.html](../../wire/charter.html). Asked for by the owner in a voice memo of 13 October: publish a charter, the guidelines, the checks and balances, and the principles, so that every agent in the chain and every reader can hold the wires to them. It binds the three wires that run today, the Industry Wire, the OWASP Wire and the AWS Wire, and any wire added under the same contract.*
+*13 October 2026, published in newsroom.sgit.ai v0.12.20 at [/wire/charter.html](../../wire/charter.html). Asked for by Dinis in a voice memo of 13 October: publish a charter, the guidelines, the checks and balances, and the principles, so that every agent in the chain and every reader can hold the wires to them. It binds the three wires that run today, the Industry Wire, the OWASP Wire and the AWS Wire, and any wire added under the same contract.*
 
 ## What a wire is for
 
@@ -24,7 +24,7 @@ A correction reaches the reader where they read the claim, not in a note elsewhe
 The wires run on at least two rounds of agents, with a third asked for on every run.
 
 1. **The desk** writes the vault. It polls the sources, freezes what the licence allows, clusters items into stories, finds the primary source, extracts entities, joins stories to personas with code (`pipeline/join.py`), writes the edition, runs the gate (`pipeline/gate.py`: no quote outside frozen bytes, no tier-C quote, no missing date or licence line, no "confirmed" on fewer than two independent sources), writes a release note and commits with the release id. The desk holds the vault's write key and nobody else does. Its runbook is in the vault for anyone to read.
-2. **The newsroom** (this site, the agent the owner calls `@newsroom.wire`) reads the vault with a published read key and draws it. It holds no write key to any wire. It enforces: everything drawn as text, nothing from a vault run as code, links only from http(s) values; status, confidence and corrections shown as written; nothing private in a public vault, and a persona in a person's name only with that person's recorded agreement; the contract on each wire's how page, checked by a test against the real vault on every release. It does not edit stories. A problem in a vault is flagged to the desk, in [the brief for the desks](../../wire/desk-brief.html), never fixed in place.
+2. **The newsroom** (this site, the agent Dinis calls `@newsroom.wire`) reads the vault with a published read key and draws it. It holds no write key to any wire. It enforces: everything drawn as text, nothing from a vault run as code, links only from http(s) values; status, confidence and corrections shown as written; nothing private in a public vault, and a persona in a person's name only with that person's recorded agreement; the contract on each wire's how page, checked by a test against the real vault on every release. It does not edit stories. A problem in a vault is flagged to the desk, in [the brief for the desks](../../wire/desk-brief.html), never fixed in place.
 3. **The verifier** is an independent agent, on a different model where possible, with no stake in the edition. It takes the vault as published, fetches the quote sources and the primaries, and checks: is the quote verbatim; is the date right; is the version right; are the coverage sources independent of each other or copies of one release; does the summary claim anything the sources do not say. It writes what it found to `data/factcheck-<date>.json` in the vault, and the desk applies the fixes as dated corrections. This site draws the verifier's record at each story it covers. The first two editions were checked this way for a sample of stories; the charter asks for every story, on every run.
 
 ## Independence
@@ -51,14 +51,14 @@ One named reader so far, by their recorded agreement while the wires are a beta.
 
 ## A wire about a person
 
-Added 16 October 2026, when the owner asked for two wires about people whose public output is high: himself (the Dinis Cruz Wire) and Reuven Cohen, rUv, of the Agentics Foundation (the rUv Wire). Each vault carries the rules in `docs/PERSON-WIRE-RULES.md`; in short:
+Added 16 October 2026, when Dinis asked for two wires about people whose public output is high: himself (the Dinis Cruz Wire) and Reuven Cohen, rUv, of the Agentics Foundation (the rUv Wire). Each vault carries the rules in `docs/PERSON-WIRE-RULES.md`; in short:
 
 1. **Works, not life.** A story is a public artefact the person published, or a public event of their work, with its link. Nothing of a private life, even when it is somewhere public, and no contact details beyond the person's own public profile pages.
 2. **Their words, then ours.** Quotes from what they published, exactly; the desk's view marked as the desk's.
 3. **Primary first.** The primary source is the person's own publication.
 4. **No scraping behind logins.** Only what any visitor can read without signing in.
-5. **Corrections and stopping.** The person can correct any story, and can ask for the wire to stop; the owner stops it.
-6. **Agreement.** For a person other than the owner, the vault's README records whether they have been told and what they said. Until they agree, the wire carries only their public work and no persona in their name.
+5. **Corrections and stopping.** The person can correct any story, and can ask for the wire to stop; Dinis stops it.
+6. **Agreement.** For a person other than Dinis, the vault's README records whether they have been told and what they said. Until they agree, the wire carries only their public work and no persona in their name.
 
 ## Holding the wires to this
 

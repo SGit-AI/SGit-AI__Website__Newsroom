@@ -4,7 +4,7 @@
 
 ## In short
 
-- **The owner's guess was right: most of a search engine was already published.** Every page has clean HTML with anchored headings and a `.md` twin; every article has a teaser, topics, tags and a graph whose nodes name its ideas; every article keeps its earlier versions; the wire keeps a snapshot of its headlines. What was missing was an index and a ranking, and both fit in a static site.
+- **Dinis's guess was right: most of a search engine was already published.** Every page has clean HTML with anchored headings and a `.md` twin; every article has a teaser, topics, tags and a graph whose nodes name its ideas; every article keeps its earlier versions; the wire keeps a snapshot of its headlines. What was missing was an index and a ranking, and both fit in a static site.
 - **The index is built at release.** `admin/build/search_index.py` reads every page in the sitemap and writes two files: `search/docs.json` (one entry per page: title, kind, number, date, teaser, topics, tags, the graph's core idea and node labels, headings with anchors; about 290 KB) and `search/text.json` (the text in paragraphs, each with its anchor; about 4 MB, served compressed).
 - **The ranking runs in the reader's browser.** `assets/search/search.js` fetches the two files from this site and ranks with BM25 over fields and paragraphs. Searching sends nothing anywhere.
 - **It finds what changed.** For each article, the paragraphs of its earlier versions that are no longer in it are indexed with the version they read that way in, so a sentence that has since been corrected is still found, and the result links to the version page that shows the change.
