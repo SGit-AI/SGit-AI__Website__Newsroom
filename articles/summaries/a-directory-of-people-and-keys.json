@@ -1,0 +1,118 @@
+{
+ "slug": "a-directory-of-people-and-keys",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 273,
+   "line": "A key directory for the people I work with",
+   "para": "Dinis wants pki.sgit.ai to hold the public keys of the people he works with. A passkey opens a vault with their key pair; they publish the public half with evidence; he verifies them first; then they verify each other, with links that count only both ways. That rule answers the 2019 flooding attack, and the use is sending secrets by QR code.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 122,
+   "line": "Keys, evidence, an anchor and two-way links",
+   "para": "A place to find people's keys and write to them securely. Start with a passkey, a vault and a key pair; add evidence; Dinis verifies first. Links count only when both people confirm, which also stops the old web-of-trust flooding. Degrees of separation and QR invitations let it spread. The number to watch is real keys in the register.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why",
+   "label": "Why now",
+   "words": 153,
+   "line": "The first thing wanted, and now possible",
+   "para": "Dinis wanted a place for people's public keys from the start and got stuck because there was none. Now sgit is moving to public-key cryptography and already makes encryption and signing keys, while its documentation says there is no web of trust and no directory. This completes a shipped feature rather than starting a new one.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "prior-art",
+   "label": "Is there really nowhere?",
+   "words": 236,
+   "line": "Places exist; a working web of trust does not",
+   "para": "There are places to publish keys: GitHub, keys.openpgp.org, Keybase (now in maintenance under Zoom), Keyoxide. The old keyserver web of trust was flooded in June 2019 because anyone could append signatures to anyone's key, and its replacement refuses third-party signatures. What is missing is the combination of browser-held keys, evidence, a trust anchor, safe vouching and sending.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "key",
+   "label": "Start with the key",
+   "words": 124,
+   "line": "Start with the key, made by its owner",
+   "para": "On pki.sgit.ai you register a passkey, which opens a vault as the newsroom's does. You make or import a key pair, the private keys stay in the vault, and the public half is published as your signed record. Nobody gets a record from someone else's description; invitation lists stay private in Dinis's vault.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "evidence",
+   "label": "Evidence",
+   "words": 101,
+   "line": "Evidence that the key is yours",
+   "para": "Each piece is a signed claim in your own record: a website with your fingerprint at a known address, GitHub, a DNS record on a domain you own, keys published elsewhere, and profiles like LinkedIn as links a person checks. It can be added from a form writing to an append lane, with no account, or from your vault.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "anchor",
+   "label": "I am the anchor, for now",
+   "words": 124,
+   "line": "Dinis verifies first, and says so",
+   "para": "Evidence links accounts to a key, not to a person. For now Dinis is the trusted element: he verifies people he knows, in person or through a known channel, and signs a statement with the method and date while the details stay private. The person confirms it as the second factor. Being the anchor is a stated choice for the start.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "two-way",
+   "label": "Two ways, or not at all",
+   "words": 178,
+   "line": "A link counts only when both confirm",
+   "para": "Anyone verified can verify others, but a link always goes both ways: a vouch is written in the voucher's own record, the confirmation in the other person's. Nobody can write to another's record, which is what the 2019 attack exploited. An unconfirmed vouch stays a claim and adds nothing, and each record has a size limit.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "degrees",
+   "label": "Degrees of separation",
+   "words": 70,
+   "line": "Degrees of separation, computed",
+   "para": "From confirmed links the site works out who is verified, by whom, and how many steps anyone is from Dinis or anyone else. Seeing a two-step path, he can ask to link directly, and the other person still has to approve. The degrees are computed from the records each time, never stored.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "qr",
+   "label": "Invitations by QR code",
+   "words": 54,
+   "line": "Invitations as QR codes",
+   "para": "People are invited by a QR code with the URL printed above it, which has worked well in person. Scanning it leads to registering a passkey and making a key, with the first link, to the person who invited you, waiting to be confirmed.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "for",
+   "label": "What it is for",
+   "words": 153,
+   "line": "What the directory is for",
+   "para": "Finding people and sending them messages; sending a secret as a QR code encrypted in the browser to someone's key and read in their vault; handing out SG/Send tokens and vault keys without pasting them in chats; and giving experts verified keys to sign their opinions on articles, as on the record proposes.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "brief",
+   "label": "The brief",
+   "words": 101,
+   "line": "The brief for the pki.sgit.ai agent",
+   "para": "A build note briefs the pki.sgit.ai agent on the newsroom, sgit and RiskMandate, checks the prior art and sets the order: people first, the passkey vault reused, browser keys compatible with sgit, evidence, verification, two-way links and the graph, sending by QR code, then invitations. It is also on the briefs page.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 115,
+   "line": "A brief, with its limits stated",
+   "para": "Nothing new is built; the register has one real record and ten test ones. Places to publish keys exist; the combination is what is missing. Two-way links stop flooding, not two people lying. Dinis is a single point of trust at first, by choice. And the vault depends on passkey support that varies between browsers and password managers.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 99,
+   "line": "A memo, pki.sgit.ai and the prior art",
+   "para": "From Dinis's voice memo of 18 October 2026, pki.sgit.ai's own pages and sgit's key and messaging documentation, and research that day: keys.openpgp.org, Keyoxide, Keybase's acquisition and state, Latacora on PGP, the AT Protocol handle specification and RFC 7929. Related articles cover secrets on public keys, handing secrets to agents and on the record.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

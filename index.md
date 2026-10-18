@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.113 · 194 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.114 · 196 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](articles/the-man-behind-the-curtain.md), 2026-10-18, 9 min. Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
+- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min. October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
 
 ## Highlights
 
+- [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](articles/a-directory-of-people-and-keys.md), 2026-10-18, 8 min.
+- [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](articles/the-man-behind-the-curtain.md), 2026-10-18, 9 min.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](articles/the-librarians-daily-brief.md), 2026-10-18, 7 min.
 - [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](articles/ephemeral-town-planner-services.md), 2026-10-18, 9 min.
-- [Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one](articles/bringing-my-past-work-back.md), 2026-10-18, 7 min.
-- [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 
 ## Who are you reading as?
 
@@ -34,17 +34,17 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
 - [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 13 min.
 
-### Building with agents (33)
+### Building with agents (34)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](articles/the-librarians-daily-brief.md), 2026-10-18, 7 min.
 - [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](articles/ephemeral-town-planner-services.md), 2026-10-18, 9 min.
-- [Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one](articles/bringing-my-past-work-back.md), 2026-10-18, 7 min.
 
-### Vaults & provenance (37)
+### Vaults & provenance (38)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](articles/a-directory-of-people-and-keys.md), 2026-10-18, 8 min.
 - [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](articles/search-as-navigation.md), 2026-10-18, 7 min.
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](articles/on-the-record.md), 2026-10-18, 11 min.
-- [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min.
 
 ### The future of news (38)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

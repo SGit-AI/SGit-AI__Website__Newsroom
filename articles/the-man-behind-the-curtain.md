@@ -115,6 +115,11 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#the-man
 - [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](my-memory-checked.md) I say it as I remember it; the agent checks it against the record before anyone reads it. Five confirmed, five corrected, two not found.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](your-own-newsroom.md) The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.
 
+### Continued by
+
+- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](hired-for-the-workflow.md) October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
+- [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 194 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=194)

@@ -92,6 +92,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#explor
 
 ### Continued by
 
+- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](hired-for-the-workflow.md) October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
 - [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](ephemeral-town-planner-services.md) Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](a-browser-for-one.md) An iPhone app that only reads my newsroom: WebKit in the UK, a paid membership and a Mac to build it, one passkey test first, and someone else to maintain it.
 - [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](the-code-you-do-not-ship.md) Code is a liability, the worst bugs sit in features nobody needed, and models make removing it safe. The minimal viable code path, and who maintains it.

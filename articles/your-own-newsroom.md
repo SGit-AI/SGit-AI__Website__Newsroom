@@ -248,6 +248,7 @@ Site & engineeringStartups & strategy[This article as a graph →](graphs.md#you
 
 ### Continued by
 
+- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](hired-for-the-workflow.md) October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 - [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](research-delivered-as-a-vault.md) Companies that sell research could deliver it as a vault: evidence, a fractal graph, briefings per reader, behaviour policies for AI products, a lane back.

@@ -134,6 +134,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#on-the
 
 ### Continued by
 
+- [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](who-is-speaking.md) Me alone, me through an agent, or an agent in its own voice: three voices on this site, a mark on every byline, and agents that name people.
 - [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.

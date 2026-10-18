@@ -1,0 +1,37 @@
+{
+ "slug": "a-directory-of-people-and-keys",
+ "teaser": "pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.",
+ "topics": ["vaults-and-method", "agents-and-policy"],
+ "core_idea": "sgit has keys but no directory or web of trust, so pki.sgit.ai should register people: a passkey opens a vault holding their key pair, they publish the public half with evidence, Dinis verifies first, and links between people count only when both confirm in their own records, which stops the 2019 flooding attack; the point is to find someone and send them a secret by QR code.",
+ "nodes": [
+  {"id": "stuck", "label": "No place for the keys", "kind": "question", "summary": "The first thing wanted, and where it stuck."},
+  {"id": "priorart", "label": "Places exist; the combination does not", "kind": "example", "summary": "GitHub keys, keys.openpgp.org, Keybase, Keyoxide."},
+  {"id": "key", "label": "Start with the key", "kind": "method", "summary": "Passkey, vault, key pair, publish."},
+  {"id": "evidence", "label": "Evidence", "kind": "method", "summary": "Website, GitHub, DNS, other keys."},
+  {"id": "anchor", "label": "Dinis as the anchor", "kind": "concept", "summary": "Verify, sign, the person confirms."},
+  {"id": "twoway", "label": "Two ways, or not at all", "kind": "claim", "summary": "A link counts only when both confirm."},
+  {"id": "flood", "label": "The 2019 flooding attack", "kind": "example", "summary": "Anyone appended to anyone's key."},
+  {"id": "degrees", "label": "Degrees of separation", "kind": "artefact", "summary": "Computed from confirmed links."},
+  {"id": "qr", "label": "Invitations and secrets by QR code", "kind": "method", "summary": "Scan, enrol, read in your vault."},
+  {"id": "kpi", "label": "Real keys in the register", "kind": "claim", "summary": "The number to watch."}
+ ],
+ "edges": [
+  {"from": "priorart", "to": "stuck", "rel": "answers"},
+  {"from": "key", "to": "evidence", "rel": "leads-to"},
+  {"from": "evidence", "to": "anchor", "rel": "leads-to"},
+  {"from": "anchor", "to": "twoway", "rel": "leads-to"},
+  {"from": "twoway", "to": "flood", "rel": "answers"},
+  {"from": "twoway", "to": "degrees", "rel": "produces"},
+  {"from": "qr", "to": "kpi", "rel": "leads-to"},
+  {"from": "key", "to": "qr", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["secrets-on-public-keys", "handing-secrets-to-agents", "on-the-record", "the-vault-opened", "the-man-behind-the-curtain"],
+  "pages": ["admin/notes/2026-10-18__a-directory-of-people-and-keys.md", "briefs/index.html"],
+  "sites": ["https://pki.sgit.ai/rules/index.html", "https://sgit.ai/docs/pki.md"]
+ },
+ "quotes": [
+  {"text": "A link exists only when both statements do.", "why": "The rule."},
+  {"text": "Being the anchor is a choice, and I would rather state it than hide it.", "why": "On Dinis as the first verifier."}
+ ]
+}

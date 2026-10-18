@@ -1489,6 +1489,33 @@
    "depends_on": [],
    "session_brief": "Read admin/notes/2026-10-18__bringing-my-past-work-back.md and the article. First deliverable: admin/build/back_catalogue.py that builds admin/content/back-catalogue.json from diniscruz.ai's llms.txt and the NotebookLM repository's markdown and link files (source, id, URL, date, status, article), marks the 27 essays already cited, applies the exclusions in the note, and prints the next three queued items. Done when the register lists every essay with a status and a second run changes nothing.",
    "size": "M"
+  },
+  {
+   "id": "pki-people-directory",
+   "title": "pki.sgit.ai as a directory of people and their keys, with two-way verification",
+   "source": [
+    "a-directory-of-people-and-keys",
+    "admin/notes/2026-10-18__a-directory-of-people-and-keys.md",
+    "secrets-on-public-keys"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "People register a passkey on pki.sgit.ai that opens a vault, make or import a key pair, publish the public half with evidence (website, GitHub, DNS TXT), are verified by Dinis and confirm it, then verify each other with links that count only when both confirm; degrees of separation; invitations and secrets by QR code. KPI: real public keys in the register.",
+   "built": "pki.sgit.ai (v0.1.74) has the design for agents, the four registry rules and a static register with one real record and ten fixtures; sgit pki makes and exports keys; vault messaging and append lanes ship; the newsroom's passkey vault exists to reuse.",
+   "remaining": [
+    "People first on pki.sgit.ai",
+    "Passkey and vault, reused from the newsroom",
+    "Browser keygen and import, compatible with sgit pki",
+    "Evidence checkers: website, GitHub, DNS TXT",
+    "Dinis's verification statements and the person's confirmation",
+    "Two-way vouching, the bound, withdrawal; the graph",
+    "Send a secret by QR code",
+    "Invitations by QR code"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "This work happens in the pki.sgit.ai repository, not this one. Read admin/notes/2026-10-18__a-directory-of-people-and-keys.md on newsroom.sgit.ai and the article, then pki.sgit.ai's llms.txt, /rules/ and /registry/llms.txt, and sgit.ai/docs/pki.md and vault-messaging.md. First deliverable: a people record schema (identity statement from an sgit pki export bundle, evidence claims, vouch and confirmation statements, each in the owner's record) with a validator that rejects writes to another person's record and computes confirmed links only when both statements exist. Done when the tests in the note pass on fixtures.",
+   "size": "L"
   }
  ]
 }
