@@ -1,0 +1,190 @@
+{
+  "slug": "allowed-is-not-right",
+  "teaser": "Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A behaviour policy answers SECURE but cannot answer VERIFY, because proving the intended outcome needs a written definition of right, which is a decision policy; mapped onto his four questions and run as a twin, refusing proves not to be the same as being right, the right amount can come from the wrong decider, and precedents cut the people's time verification costs.",
+  "nodes": [
+    {
+      "id": "northstar",
+      "label": "Northstar's $150 refund",
+      "kind": "example",
+      "summary": "Allowed, logged, wrong."
+    },
+    {
+      "id": "four",
+      "label": "Four questions",
+      "kind": "concept",
+      "summary": "SECURE, OBSERVE, RESPOND, VERIFY."
+    },
+    {
+      "id": "abp",
+      "label": "SECURE is the behaviour policy",
+      "kind": "claim",
+      "summary": "Limits enforced outside the model."
+    },
+    {
+      "id": "verify",
+      "label": "VERIFY needs a definition of right",
+      "kind": "claim",
+      "summary": "Someone must write down what right is."
+    },
+    {
+      "id": "adp",
+      "label": "The decision policy",
+      "kind": "concept",
+      "summary": "Who decides the amount, on what evidence."
+    },
+    {
+      "id": "gap",
+      "label": "A gap in my own series",
+      "kind": "example",
+      "summary": "The refund amount under the limit; a fifth state."
+    },
+    {
+      "id": "mapping",
+      "label": "Three policies, four questions",
+      "kind": "method",
+      "summary": "Every control in its cell."
+    },
+    {
+      "id": "twin",
+      "label": "The Northstar twin",
+      "kind": "artefact",
+      "summary": "Thirteen cases, four designs, replayable."
+    },
+    {
+      "id": "refuse",
+      "label": "Refusing is not being right",
+      "kind": "claim",
+      "summary": "Design B leaves customers owed."
+    },
+    {
+      "id": "decider",
+      "label": "The wrong decider",
+      "kind": "example",
+      "summary": "$261 in three refunds of $87."
+    },
+    {
+      "id": "time",
+      "label": "Verification costs time until precedent",
+      "kind": "claim",
+      "summary": "57 minutes against 18."
+    },
+    {
+      "id": "second",
+      "label": "A second model is not enough",
+      "kind": "claim",
+      "summary": "Deterministic checks where rules exist."
+    },
+    {
+      "id": "evidence",
+      "label": "The evidence for autonomy",
+      "kind": "claim",
+      "summary": "The case record, and who signed it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "northstar",
+      "to": "four",
+      "rel": "leads-to"
+    },
+    {
+      "from": "abp",
+      "to": "four",
+      "rel": "answers"
+    },
+    {
+      "from": "verify",
+      "to": "adp",
+      "rel": "leads-to"
+    },
+    {
+      "from": "northstar",
+      "to": "gap",
+      "rel": "leads-to"
+    },
+    {
+      "from": "adp",
+      "to": "mapping",
+      "rel": "extends"
+    },
+    {
+      "from": "mapping",
+      "to": "twin",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twin",
+      "to": "refuse",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twin",
+      "to": "decider",
+      "rel": "leads-to"
+    },
+    {
+      "from": "twin",
+      "to": "time",
+      "rel": "leads-to"
+    },
+    {
+      "from": "second",
+      "to": "adp",
+      "rel": "extends"
+    },
+    {
+      "from": "time",
+      "to": "evidence",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "inside-the-northstar-twin",
+      "three-policies-for-an-agent",
+      "approve-at-altitude",
+      "case-law-for-agents",
+      "three-decisions-mapped",
+      "the-policy-guards-the-door"
+    ],
+    "pages": [],
+    "sites": [
+      "https://ashishrajan.substack.com/p/what-does-it-take-to-build-ai-systems",
+      "https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html",
+      "https://abp.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A limit cannot tell $150 from $120 when both are under $200.",
+      "why": "The gap in the example."
+    },
+    {
+      "text": "So I would put his question to a team in two halves. Show me the cases. And show me who signed.",
+      "why": "The answer to his last question."
+    },
+    {
+      "text": "Refusing is not the same as being right.",
+      "why": "What the twin showed."
+    }
+  ],
+  "figures": [
+    {
+      "file": "nt-mapping.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-mapping.webp",
+      "caption": "Ashish Rajan's four questions down the side, SECURE, OBSERVE, RESPOND and VERIFY, and this newsroom's three policies across the top, behaviour, decision and workflow. Each cell holds the controls in the Northstar twin that answer that question in that policy. VERIFY has nothing in the behaviour column: a limit says what may be done, never what is right.",
+      "kind": "concept"
+    },
+    {
+      "file": "nt-compare.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-compare.webp",
+      "caption": "The thirteen cases under the four designs. Design A, as in the article, overpays on nine cases. B refuses several of them and leaves customers owed. C gets every amount right, with a person on most cases. D gets every case right, including the split refund, which only a decision policy catches.",
+      "kind": "screenshot"
+    }
+  ]
+}

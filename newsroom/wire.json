@@ -73,6 +73,72 @@
   ],
   "articles": [
     {
+      "slug": "inside-the-northstar-twin",
+      "title": "Inside the Northstar twin: thirteen refunds, four designs, and every decision played back",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/inside-the-northstar-twin.html",
+      "markdown": "https://newsroom.sgit.ai/articles/inside-the-northstar-twin.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/inside-the-northstar-twin.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/inside-the-northstar-twin.json",
+      "teaser": "A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.",
+      "summary": "A tour of the Northstar refund twin, the vault built to test the reply to Ashish Rajan's article. It runs his fictional retailer as a store: thirteen synthetic refund requests, each with something an agent can get wrong, through four designs of the controls, from the one in his article to one with behaviour, decision and workflow policies. Every case can be played step by step, stepped back, replayed and compared, and a reader can tick any of the ten controls to build a design of their own. This walks through it tab by tab and case by case: his $150 refund in each design; the $260 refund that design A refuses and nobody owns; the instruction hidden in a customer's message; the right name on the wrong order; the cap that cannot tell $132 from $120; the $261 refund split into three to fit the limit; the discount applied twice; the retry loop; and the three damaged items customers want to keep, which become the casebook. It ends with how the twin is built, a deterministic engine and one content file with no model called, what a digital twin means here and what it does not, and how to make one for your own process.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "digital-twin",
+        "vaults",
+        "simulation",
+        "refunds",
+        "agent-decision-policy",
+        "agent-behaviour-policy",
+        "verification",
+        "case-law",
+        "walkthrough",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "allowed-is-not-right",
+      "title": "Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/allowed-is-not-right.html",
+      "markdown": "https://newsroom.sgit.ai/articles/allowed-is-not-right.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/allowed-is-not-right.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/allowed-is-not-right.json",
+      "teaser": "Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.",
+      "summary": "Ashish Rajan's article on trustworthy AI systems has the clearest example I have seen of the gap between what an agent is allowed to do and what it should do. Northstar's support agent may refund up to $200, enforced by the payment service. A customer is owed $120; the agent misreads a discount and refunds $150. Every control passes, and the outcome is wrong. His answer is four questions, SECURE, OBSERVE, RESPOND and VERIFY, and I agree with all four. This is how we answer them, and what I think the example adds. The Agent Behaviour Policy we publish answers SECURE: what an agent may do and reach, enforced where the agent cannot argue. But a behaviour policy cannot answer VERIFY, because to prove the intended outcome occurred, someone has to have written down what the intended outcome is. That is a decision policy: who decides the amount, on what evidence, and who is called when the rules run out. With a workflow policy for the order things happen in, the three policies map onto his four questions, and his example showed me a gap in my own series. To test it, we built his store as a twin in a vault: thirteen synthetic refund requests, four designs of the controls, every decision replayable. The design in the article overpays $458 and leaves $341.60 owed. Adding SECURE, OBSERVE and RESPOND stops most of the overpayment by refusing, and leaves customers waiting. Adding VERIFY gets every amount right at 57 minutes of people's time a day. Adding a decision policy and precedents gets every case right, decided by the right decider, in 18. And his closing question, what evidence would let us remove the human, has an answer in the record those precedents leave.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "verification",
+        "refunds",
+        "digital-twin",
+        "vaults",
+        "ai-security",
+        "reply",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "your-reading-your-controls",
       "title": "Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways",
       "date": "2026-10-17",
@@ -117,7 +183,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/three-policies-for-an-agent.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/three-policies-for-an-agent.json",
       "teaser": "Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.",
-      "summary": "When something goes wrong with an agent, the question people ask is how it made that decision. A behaviour policy cannot answer it on its own, because it says what an agent may do, not who chooses at a branch point or why. This is the first of four articles on what I think the answer looks like. There are three policies, not one. The Agent Behaviour Policy, the ABP we already publish, says what an agent may do and where. An Agent Decision Policy says, at a branch point, who chooses, on what evidence, within what limits, and who to call when it is out of bounds. An Agent Workflow Policy says which steps run in what order. They meet at fixed points: a workflow transition is gated by a decision, and the decision's outcome is carried out by behaviours the ABP permits. We have been putting light decisions into behaviour policies all along, and that is fine at low zoom: the ABP's approval cell is a small decision. Zoom into one cell and it becomes a decision policy and a workflow policy of its own. Every element of all three can be defined before it can be enforced: what gets enforced, and where, depends on what is wired up, so each element carries four states, defined, implemented, enforced and observed. The word \"decision\" matters because it is the one the business and the risk team already use.",
+      "summary": "When something goes wrong with an agent, the question people ask is how it made that decision. A behaviour policy cannot answer it on its own, because it says what an agent may do, not who chooses at a branch point or why. This is the first of four articles on what I think the answer looks like. There are three policies, not one. The Agent Behaviour Policy, the ABP we already publish, says what an agent may do and where. An Agent Decision Policy says, at a branch point, who chooses, on what evidence, within what limits, and who to call when it is out of bounds. An Agent Workflow Policy says which steps run in what order. They meet at fixed points: a workflow transition is gated by a decision, and the decision's outcome is carried out by behaviours the ABP permits. We have been putting light decisions into behaviour policies all along, and that is fine at low zoom: the ABP's approval cell is a small decision. Zoom into one cell and it becomes a decision policy and a workflow policy of its own. Every element of all three can be defined before it can be enforced: what gets enforced, and where, depends on what is wired up, so each element carries five states, defined, implemented, enforced, observed and verified. The word \"decision\" matters because it is the one the business and the risk team already use.",
       "topics": [
         "agents-and-policy"
       ],
@@ -148,7 +214,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/three-decisions-mapped.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/three-decisions-mapped.json",
       "teaser": "An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.",
-      "summary": "The fourth article in the series on agent decision policies puts the pieces together on three scenarios, two of them real. First, deleting an agent's memory in Mondweep Chakravorty's SGit adapter for Ruflo: the behaviour row is defined, implemented and enforced, the decision behind its \"approval\" is not yet defined, and nothing records what happened. Second, this newsroom's own release, which ships on its own: the behaviour boundary holds at the platform, the workflow is a script and a validator, and the interesting part is a decision nobody wrote down. In every release since this afternoon I shipped with one failing test that predates my changes, and I made that call each time on my own. It should be a written decision with an owner and an expiry. The same evening produced two small cases for the case-law article: a figure that shipped with a date nobody had checked, and a counter that flagged two commits without a leak scan, both of which turned out to be in scratch test repositories, a case the rule did not mean to cover. Third, an illustrative customer refund built on the third design in Hope or enforcement, where the limits are already in the tools, and a new workflow that tries to widen them is caught by a subset check before it runs. Each element is mapped with the policy it belongs to and four states: defined, implemented, enforced and observed.",
+      "summary": "The fourth article in the series on agent decision policies puts the pieces together on three scenarios, two of them real. First, deleting an agent's memory in Mondweep Chakravorty's SGit adapter for Ruflo: the behaviour row is defined, implemented and enforced, the decision behind its \"approval\" is not yet defined, and nothing records what happened. Second, this newsroom's own release, which ships on its own: the behaviour boundary holds at the platform, the workflow is a script and a validator, and the interesting part is a decision nobody wrote down. In every release since this afternoon I shipped with one failing test that predates my changes, and I made that call each time on my own. It should be a written decision with an owner and an expiry. The same evening produced two small cases for the case-law article: a figure that shipped with a date nobody had checked, and a counter that flagged two commits without a leak scan, both of which turned out to be in scratch test repositories, a case the rule did not mean to cover. Third, an illustrative customer refund built on the third design in Hope or enforcement, where the limits are already in the tools, and a new workflow that tries to widen them is caught by a subset check before it runs. Each element is mapped with the policy it belongs to and five states: defined, implemented, enforced, observed and verified.",
       "topics": [
         "agents-and-policy",
         "vaults-and-method"

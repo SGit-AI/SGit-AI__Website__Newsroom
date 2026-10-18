@@ -20,7 +20,7 @@ Agent decision policies: a series in four parts
 
 How did the agent decide? Behaviour, decision and workflow as three policies; approving at altitude so it scales; case law for the cases nobody predicted; and three scenarios mapped.
 
-[1 · Three policiesThree policies for an agentBehaviour says what it may do, decision says who chooses, workflow says in what order; zoom into one cell and it becomes both.](three-policies-for-an-agent.md)[you are here2 · AltitudeApprove at altitudeDecisions at every level, each allowed to narrow the one above and never to widen it, checked against declared envelopes.](approve-at-altitude.md)[3 · Case lawCase law for agentsPrinciples from the top, precedent from the cases, and how a decision earns its way into code.](case-law-for-agents.md)[4 · MappedThree decisions, mappedAn agent's memory, this newsroom's release and a refund, element by element: defined, implemented, enforced, observed.](three-decisions-mapped.md)
+[1 · Three policiesThree policies for an agentBehaviour says what it may do, decision says who chooses, workflow says in what order; zoom into one cell and it becomes both.](three-policies-for-an-agent.md)[you are here2 · AltitudeApprove at altitudeDecisions at every level, each allowed to narrow the one above and never to widen it, checked against declared envelopes.](approve-at-altitude.md)[3 · Case lawCase law for agentsPrinciples from the top, precedent from the cases, and how a decision earns its way into code.](case-law-for-agents.md)[4 · MappedThree decisions, mappedAn agent's memory, this newsroom's release and a refund, element by element: defined, implemented, enforced, observed, verified.](three-decisions-mapped.md)
 
 ## In short
 
@@ -146,6 +146,7 @@ Agents & policy[This article as a graph →](graphs.md#approve-at-altitude)
 
 ### Continued by
 
+- [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](allowed-is-not-right.md) Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.
 - [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md) Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.
 - [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](three-decisions-mapped.md) An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.
 - [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](case-law-for-agents.md) Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.

@@ -3,8 +3,8 @@ title: Three policies for an agent: behaviour says what it may do, decision says
 date: 2026-10-17
 author: Dinis Cruz
 author_url: about/index.html
-summary: When something goes wrong with an agent, the question people ask is how it made that decision. A behaviour policy cannot answer it on its own, because it says what an agent may do, not who chooses at a branch point or why. This is the first of four articles on what I think the answer looks like. There are three policies, not one. The Agent Behaviour Policy, the ABP we already publish, says what an agent may do and where. An Agent Decision Policy says, at a branch point, who chooses, on what evidence, within what limits, and who to call when it is out of bounds. An Agent Workflow Policy says which steps run in what order. They meet at fixed points: a workflow transition is gated by a decision, and the decision's outcome is carried out by behaviours the ABP permits. We have been putting light decisions into behaviour policies all along, and that is fine at low zoom: the ABP's approval cell is a small decision. Zoom into one cell and it becomes a decision policy and a workflow policy of its own. Every element of all three can be defined before it can be enforced: what gets enforced, and where, depends on what is wired up, so each element carries four states, defined, implemented, enforced and observed. The word "decision" matters because it is the one the business and the risk team already use.
-version: v0.12.97
+summary: When something goes wrong with an agent, the question people ask is how it made that decision. A behaviour policy cannot answer it on its own, because it says what an agent may do, not who chooses at a branch point or why. This is the first of four articles on what I think the answer looks like. There are three policies, not one. The Agent Behaviour Policy, the ABP we already publish, says what an agent may do and where. An Agent Decision Policy says, at a branch point, who chooses, on what evidence, within what limits, and who to call when it is out of bounds. An Agent Workflow Policy says which steps run in what order. They meet at fixed points: a workflow transition is gated by a decision, and the decision's outcome is carried out by behaviours the ABP permits. We have been putting light decisions into behaviour policies all along, and that is fine at low zoom: the ABP's approval cell is a small decision. Zoom into one cell and it becomes a decision policy and a workflow policy of its own. Every element of all three can be defined before it can be enforced: what gets enforced, and where, depends on what is wired up, so each element carries five states, defined, implemented, enforced, observed and verified. The word "decision" matters because it is the one the business and the risk team already use.
+version: v0.12.101
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, agent-behaviour-policy, agent-decision-policy, agent-workflow-policy, decision-making, governance, risk, fractal-semantic-graphs, series, article
 status: published
@@ -21,7 +21,7 @@ status: published
 - **They meet at fixed points.** A transition in a workflow is gated by a decision; the decision is carried out by behaviours the ABP permits.
 - **Zoom in and a cell becomes a policy.** The ABP's "approval" is a small decision; zoomed in, it has a decider, evidence, limits and steps of its own.
 - **Light decisions stay inline.** Most rows never need zooming. Money, people, irreversibility and business risk are what make one worth it.
-- **Defined is not enforced.** Each element is defined, implemented, enforced and observed, separately. The map can be complete before the wiring is.
+- **Defined is not enforced.** Each element is defined, implemented, enforced, observed and verified, separately. The map can be complete before the wiring is.
 - **"Decision" is the business's word.** It connects an agent's step to a budget, an owner and a risk appetite.
 
 ## The question people ask {#question}
@@ -70,14 +70,17 @@ That keeps the work proportionate. A behaviour policy with a hundred rows might 
 
 ## Defined is not enforced {#states}
 
-The aim is to map all of it. Whether a given element can be enforced is a separate question, and the answer depends on what is wired up: the technology, the platform, whether there is a hook, a gateway or a test, and whether anyone can see what happened. So I would give every element four states, kept separately:
+The aim is to map all of it. Whether a given element can be enforced is a separate question, and the answer depends on what is wired up: the technology, the platform, whether there is a hook, a gateway or a test, and whether anyone can see what happened. So I would give every element five states, kept separately:
 
 | State | The question |
 |---|---|
 | **Defined** | Is it written down, with an owner? |
 | **Implemented** | Does something exist that could carry it out? |
 | **Enforced** | Does something outside the agent stop it when it is broken? |
-| **Observed** | Would we know, afterwards, whether it held? |
+| **Observed** | Can we reconstruct, afterwards, what happened? |
+| **Verified** | Can we prove, against records the agent did not write, that the outcome was right? |
+
+Observed and verified are different, and the difference is the subject of Ashish Rajan's Northstar example, which [allowed is not right](/articles/allowed-is-not-right.html) answers: a complete log of a wrong refund is observed and not verified.
 
 And where it is enforced matters as much as whether. This site has a scale for that, from [hooks are kernel code](/articles/hooks-are-kernel-code.html): in the prompt (L0), a model decides (L1), a deterministic script (L2), managed and proven (L3), off the machine (L4). The ABP records a simpler version in its barrier column: an expectation the agent keeps, a setting the platform keeps, or a boundary out of the agent's reach.
 
@@ -99,13 +102,13 @@ This is the first of four:
 1. **Three policies for an agent.** This one.
 2. **[Approve at altitude](/articles/approve-at-altitude.html).** How it scales: decisions at every altitude, from strategy to one agent's step, each level allowed to narrow the one above and never to widen it.
 3. **[Case law for agents](/articles/case-law-for-agents.html).** The business will never predict every case. How English law handles that, with statutes, precedent and distinguishing, and what the same would look like for agents.
-4. **[Three decisions, mapped](/articles/three-decisions-mapped.html).** An agent's memory, this newsroom's release and a customer refund, through all three policies, with each element's four states.
+4. **[Three decisions, mapped](/articles/three-decisions-mapped.html).** An agent's memory, this newsroom's release and a customer refund, through all three policies, with each element's five states.
 
 ## What this does not claim {#limits}
 
 - **It is a proposal.** There is no Agent Decision Policy or Agent Workflow Policy format yet; the ABP is the only one of the three that exists.
 - **The zoomed-in policy is mine.** Mondweep's row says a human must approve; the decider, evidence and envelope above are my illustration.
-- **The four states are a suggestion.** They are how I would map it; other cuts are possible.
+- **The five states are a suggestion.** They are how I would map it; other cuts are possible.
 - **DMN is named, not adopted.** It shows the separation is familiar; whether its format suits agents is untested here.
 
 If you have built decision policies for agents, or think three is the wrong number, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).

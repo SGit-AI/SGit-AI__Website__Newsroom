@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.100 · 174 articles since 2026-08-17; the newest is 2026-10-17. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.101 · 176 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](articles/three-policies-for-an-agent.md), 2026-10-17, 8 min. Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.
+- [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](articles/inside-the-northstar-twin.md), 2026-10-18, 10 min. A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.
 
 ## Highlights
 
-- [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](articles/three-decisions-mapped.md), 2026-10-17, 8 min.
+- [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](articles/allowed-is-not-right.md), 2026-10-18, 11 min.
+- [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](articles/three-policies-for-an-agent.md), 2026-10-17, 8 min.
+- [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](articles/three-decisions-mapped.md), 2026-10-17, 9 min.
 - [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](articles/case-law-for-agents.md), 2026-10-17, 8 min.
-- [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](articles/approve-at-altitude.md), 2026-10-17, 8 min.
-- [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](articles/our-first-pr-in-ruflo.md), 2026-10-17, 9 min.
 
 ## Who are you reading as?
 
@@ -28,11 +28,11 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (50)
+### Agent security & policy (52)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](articles/inside-the-northstar-twin.md), 2026-10-18, 10 min.
+- [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](articles/allowed-is-not-right.md), 2026-10-18, 11 min.
 - [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](articles/three-policies-for-an-agent.md), 2026-10-17, 8 min.
-- [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](articles/three-decisions-mapped.md), 2026-10-17, 8 min.
-- [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](articles/case-law-for-agents.md), 2026-10-17, 8 min.
 
 ### Building with agents (29)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

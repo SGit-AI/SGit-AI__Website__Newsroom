@@ -1,0 +1,26 @@
+# Versions of Inside the Northstar twin, sgit.ai
+
+> Every published version of the article "Inside the Northstar twin", with the date, the words and what changed.
+
+*Source: <https://newsroom.sgit.ai/articles/versions/inside-the-northstar-twin.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+
+---
+
+[Home](../../index.md) / [Articles](../index.md) / [Inside the Northstar twin](../inside-the-northstar-twin.md) / Versions
+
+# Versions of: Inside the Northstar twin
+
+1 published version of [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](../inside-the-northstar-twin.md). The current one is **v1.0.0**.
+
+v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
+
+| Version | Date | Kind | Words | Change from the version before | Commit |  |
+|---|---|---|---|---|---|---|
+| **v1.0.0** | 2026-10-18 | published | 2,510 | first published | this release | [current](../inside-the-northstar-twin.md) |
+
+[← Back to the article](../inside-the-northstar-twin.md) · [All articles](../index.md)
+
+
+---
+
+*[Site index for agents](../../llms.txt) · [HTML version](https://newsroom.sgit.ai/articles/versions/inside-the-northstar-twin.html)*

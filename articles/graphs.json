@@ -55,6 +55,460 @@
   ],
   "articles": [
     {
+      "slug": "inside-the-northstar-twin",
+      "title": "Inside the Northstar twin: thirteen refunds, four designs, and every decision played back",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/inside-the-northstar-twin.html",
+      "markdown": "https://newsroom.sgit.ai/articles/inside-the-northstar-twin.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/inside-the-northstar-twin.webp",
+      "teaser": "A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "digital-twin",
+        "vaults",
+        "simulation",
+        "refunds",
+        "agent-decision-policy",
+        "agent-behaviour-policy",
+        "verification",
+        "case-law",
+        "walkthrough",
+        "article"
+      ],
+      "links_out": [
+        "allowed-is-not-right",
+        "case-law-for-agents"
+      ],
+      "links_in": [
+        "allowed-is-not-right"
+      ],
+      "figures": [
+        {
+          "file": "nt-overview.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-overview.webp",
+          "caption": "The first tab of the twin: the scenario from Ashish Rajan's article, the four designs side by side with what each overpaid, left owed, got right and cost in people's time, and the thirteen cases, each with what goes wrong and how design A handles it.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nt-play-a.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-play-a.webp",
+          "caption": "N-1001 in design A, played to the end. The steps run down the middle, request, lookup, propose, pay and record, each tagged with its pillar and policy. On the right, the agent read the jacket at $150; the records say $120 was paid after AUTUMN20. The ledger shows $150 refunded on an order that paid $120. The trace is complete. Outcome: overpaid $30.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nt-play-d.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-play-d.webp",
+          "caption": "N-1001 in design D: the agent still proposes $150; the expected amount from the records is $120; the decided amount stands and the difference is recorded, not paid; the workflow pays $120; the decision record names the rule and the decider.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nt-split-d.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-split-d.webp",
+          "caption": "N-1008 in design D: the agent proposes three refunds of $87; the expected amount is $261 and the proposal matches; the decision table routes anything over $200 to a team lead, who approves; the workflow pays one refund of $261.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nt-casebook.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-casebook.webp",
+          "caption": "The casebook tab: precedent P-1, set by N-1010, with its material facts and reasons; and the three damaged-but-kept cases in design D, one decided by a person and recorded, one settled by the precedent, one distinguished and sent to a person.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nt-policies.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-policies.webp",
+          "caption": "The three policies tab: the behaviour policy's five rows, from read.orders.sender to send.reply.sender; the decision table, from \"the rules, by the calculator\" to \"a person, whose decision is recorded with reasons\"; and the workflow's eight stages with the controls at each.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "inside-the-northstar-twin",
+        "teaser": "A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.",
+        "topics": [
+          "vaults-and-method",
+          "agents-and-policy"
+        ],
+        "core_idea": "The twin runs Northstar's refunds as a deterministic simulation in a vault: thirteen scripted mistakes through four designs of ten controls, each step tagged with its pillar and policy, two views of the world side by side, a casebook of precedents, and one content file to swap for another process.",
+        "nodes": [
+          {
+            "id": "open",
+            "label": "Three ways in",
+            "kind": "method",
+            "summary": "The page, the vault, the CLI."
+          },
+          {
+            "id": "designs",
+            "label": "Four designs, ten controls",
+            "kind": "concept",
+            "summary": "From the $200 limit to three policies."
+          },
+          {
+            "id": "play",
+            "label": "Play and replay",
+            "kind": "method",
+            "summary": "Every step, tagged by pillar and policy."
+          },
+          {
+            "id": "views",
+            "label": "Two views of the world",
+            "kind": "concept",
+            "summary": "What the agent did, what the records say."
+          },
+          {
+            "id": "n1001",
+            "label": "His case, four ways",
+            "kind": "example",
+            "summary": "Overpaid, owed, right by a person, right by the rules."
+          },
+          {
+            "id": "cap",
+            "label": "A cap cannot tell $132 from $120",
+            "kind": "example",
+            "summary": "Exactly what was paid."
+          },
+          {
+            "id": "split",
+            "label": "The split refund",
+            "kind": "example",
+            "summary": "The right amount, the wrong decider."
+          },
+          {
+            "id": "casebook",
+            "label": "The casebook",
+            "kind": "example",
+            "summary": "A precedent, followed, then distinguished."
+          },
+          {
+            "id": "engine",
+            "label": "A deterministic engine",
+            "kind": "artefact",
+            "summary": "No model called; replays exactly."
+          },
+          {
+            "id": "twin",
+            "label": "What a twin means here",
+            "kind": "claim",
+            "summary": "A copy of a process to run decisions through."
+          },
+          {
+            "id": "swap",
+            "label": "Swap the content, keep the app",
+            "kind": "method",
+            "summary": "One file of records, rules and controls."
+          }
+        ],
+        "edges": [
+          {
+            "from": "open",
+            "to": "play",
+            "rel": "leads-to"
+          },
+          {
+            "from": "designs",
+            "to": "play",
+            "rel": "extends"
+          },
+          {
+            "from": "play",
+            "to": "views",
+            "rel": "extends"
+          },
+          {
+            "from": "n1001",
+            "to": "designs",
+            "rel": "example-of"
+          },
+          {
+            "from": "cap",
+            "to": "designs",
+            "rel": "example-of"
+          },
+          {
+            "from": "split",
+            "to": "designs",
+            "rel": "example-of"
+          },
+          {
+            "from": "casebook",
+            "to": "play",
+            "rel": "example-of"
+          },
+          {
+            "from": "engine",
+            "to": "twin",
+            "rel": "answers"
+          },
+          {
+            "from": "twin",
+            "to": "swap",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "allowed-is-not-right",
+            "case-law-for-agents",
+            "three-policies-for-an-agent"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html",
+            "https://ashishrajan.substack.com/p/what-does-it-take-to-build-ai-systems"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The twin is for seeing how controls interact, and a run that replays exactly is one anyone can check.",
+            "why": "Why no model is called."
+          },
+          {
+            "text": "a cap at what was paid cannot tell $132 from $120. Only the expected amount can.",
+            "why": "What a cap misses."
+          },
+          {
+            "text": "Over a year, it is every case that repeats.",
+            "why": "What precedent saves."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "allowed-is-not-right",
+      "title": "Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/allowed-is-not-right.html",
+      "markdown": "https://newsroom.sgit.ai/articles/allowed-is-not-right.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/allowed-is-not-right.webp",
+      "teaser": "Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "agent-decision-policy",
+        "agent-workflow-policy",
+        "verification",
+        "refunds",
+        "digital-twin",
+        "vaults",
+        "ai-security",
+        "reply",
+        "article"
+      ],
+      "links_out": [
+        "hope-or-enforcement",
+        "the-policy-guards-the-door",
+        "three-policies-for-an-agent",
+        "three-decisions-mapped",
+        "inside-the-northstar-twin",
+        "case-law-for-agents",
+        "approve-at-altitude",
+        "agency-is-not-a-yes"
+      ],
+      "links_in": [
+        "inside-the-northstar-twin",
+        "three-policies-for-an-agent",
+        "three-decisions-mapped"
+      ],
+      "figures": [
+        {
+          "file": "nt-mapping.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-mapping.webp",
+          "caption": "Ashish Rajan's four questions down the side, SECURE, OBSERVE, RESPOND and VERIFY, and this newsroom's three policies across the top, behaviour, decision and workflow. Each cell holds the controls in the Northstar twin that answer that question in that policy. VERIFY has nothing in the behaviour column: a limit says what may be done, never what is right.",
+          "kind": "concept"
+        },
+        {
+          "file": "nt-compare.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nt-compare.webp",
+          "caption": "The thirteen cases under the four designs. Design A, as in the article, overpays on nine cases. B refuses several of them and leaves customers owed. C gets every amount right, with a person on most cases. D gets every case right, including the split refund, which only a decision policy catches.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "allowed-is-not-right",
+        "teaser": "Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "A behaviour policy answers SECURE but cannot answer VERIFY, because proving the intended outcome needs a written definition of right, which is a decision policy; mapped onto his four questions and run as a twin, refusing proves not to be the same as being right, the right amount can come from the wrong decider, and precedents cut the people's time verification costs.",
+        "nodes": [
+          {
+            "id": "northstar",
+            "label": "Northstar's $150 refund",
+            "kind": "example",
+            "summary": "Allowed, logged, wrong."
+          },
+          {
+            "id": "four",
+            "label": "Four questions",
+            "kind": "concept",
+            "summary": "SECURE, OBSERVE, RESPOND, VERIFY."
+          },
+          {
+            "id": "abp",
+            "label": "SECURE is the behaviour policy",
+            "kind": "claim",
+            "summary": "Limits enforced outside the model."
+          },
+          {
+            "id": "verify",
+            "label": "VERIFY needs a definition of right",
+            "kind": "claim",
+            "summary": "Someone must write down what right is."
+          },
+          {
+            "id": "adp",
+            "label": "The decision policy",
+            "kind": "concept",
+            "summary": "Who decides the amount, on what evidence."
+          },
+          {
+            "id": "gap",
+            "label": "A gap in my own series",
+            "kind": "example",
+            "summary": "The refund amount under the limit; a fifth state."
+          },
+          {
+            "id": "mapping",
+            "label": "Three policies, four questions",
+            "kind": "method",
+            "summary": "Every control in its cell."
+          },
+          {
+            "id": "twin",
+            "label": "The Northstar twin",
+            "kind": "artefact",
+            "summary": "Thirteen cases, four designs, replayable."
+          },
+          {
+            "id": "refuse",
+            "label": "Refusing is not being right",
+            "kind": "claim",
+            "summary": "Design B leaves customers owed."
+          },
+          {
+            "id": "decider",
+            "label": "The wrong decider",
+            "kind": "example",
+            "summary": "$261 in three refunds of $87."
+          },
+          {
+            "id": "time",
+            "label": "Verification costs time until precedent",
+            "kind": "claim",
+            "summary": "57 minutes against 18."
+          },
+          {
+            "id": "second",
+            "label": "A second model is not enough",
+            "kind": "claim",
+            "summary": "Deterministic checks where rules exist."
+          },
+          {
+            "id": "evidence",
+            "label": "The evidence for autonomy",
+            "kind": "claim",
+            "summary": "The case record, and who signed it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "northstar",
+            "to": "four",
+            "rel": "leads-to"
+          },
+          {
+            "from": "abp",
+            "to": "four",
+            "rel": "answers"
+          },
+          {
+            "from": "verify",
+            "to": "adp",
+            "rel": "leads-to"
+          },
+          {
+            "from": "northstar",
+            "to": "gap",
+            "rel": "leads-to"
+          },
+          {
+            "from": "adp",
+            "to": "mapping",
+            "rel": "extends"
+          },
+          {
+            "from": "mapping",
+            "to": "twin",
+            "rel": "leads-to"
+          },
+          {
+            "from": "twin",
+            "to": "refuse",
+            "rel": "leads-to"
+          },
+          {
+            "from": "twin",
+            "to": "decider",
+            "rel": "leads-to"
+          },
+          {
+            "from": "twin",
+            "to": "time",
+            "rel": "leads-to"
+          },
+          {
+            "from": "second",
+            "to": "adp",
+            "rel": "extends"
+          },
+          {
+            "from": "time",
+            "to": "evidence",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "inside-the-northstar-twin",
+            "three-policies-for-an-agent",
+            "approve-at-altitude",
+            "case-law-for-agents",
+            "three-decisions-mapped",
+            "the-policy-guards-the-door"
+          ],
+          "pages": [],
+          "sites": [
+            "https://ashishrajan.substack.com/p/what-does-it-take-to-build-ai-systems",
+            "https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html",
+            "https://abp.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A limit cannot tell $150 from $120 when both are under $200.",
+            "why": "The gap in the example."
+          },
+          {
+            "text": "So I would put his question to a team in two halves. Show me the cases. And show me who signed.",
+            "why": "The answer to his last question."
+          },
+          {
+            "text": "Refusing is not the same as being right.",
+            "why": "What the twin showed."
+          }
+        ]
+      }
+    },
+    {
       "slug": "your-reading-your-controls",
       "title": "Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways",
       "date": "2026-10-17",
@@ -340,12 +794,14 @@
         "code-review-as-a-fractal-semantic-graph",
         "hooks-are-kernel-code",
         "how-cheap-is-it-to-undo",
+        "allowed-is-not-right",
         "three-decisions-mapped",
         "approve-at-altitude",
         "case-law-for-agents",
         "agency-is-not-a-yes"
       ],
       "links_in": [
+        "allowed-is-not-right",
         "three-decisions-mapped",
         "case-law-for-agents",
         "approve-at-altitude"
@@ -416,9 +872,9 @@
           },
           {
             "id": "states",
-            "label": "Four states",
+            "label": "Five states",
             "kind": "method",
-            "summary": "Defined, implemented, enforced, observed."
+            "summary": "Defined, implemented, enforced, observed, verified."
           },
           {
             "id": "levels",
@@ -564,10 +1020,12 @@
         "case-law-for-agents",
         "how-cheap-is-it-to-undo",
         "hope-or-enforcement",
+        "allowed-is-not-right",
         "approve-at-altitude",
         "your-agents-logs-are-a-self-report"
       ],
       "links_in": [
+        "allowed-is-not-right",
         "three-policies-for-an-agent",
         "case-law-for-agents",
         "approve-at-altitude"
@@ -576,7 +1034,7 @@
         {
           "file": "dn-map.webp",
           "url": "https://newsroom.sgit.ai/articles/images/dn-map.webp",
-          "caption": "Three scenarios mapped element by element: memory deletion in the SGit adapter for Ruflo, this newsroom's release, and an illustrative customer refund. Each element is labelled ABP, decision or workflow, with four states: defined, implemented, enforced and observed. The memory row is enforced but not observed; the newsroom's decision to ship with a failing test is not defined at all; the refund's limits hold at every state because they are in the tools.",
+          "caption": "Three scenarios mapped element by element: memory deletion in the SGit adapter for Ruflo, this newsroom's release, and an illustrative customer refund. Each element is labelled ABP, decision or workflow, with five states: defined, implemented, enforced, observed and verified. The memory row is enforced but not observed; the newsroom's decision to ship with a failing test is not defined at all; the refund's limits are enforced and observed, and nothing verifies the amount under them.",
           "kind": "matrix"
         }
       ],
@@ -587,13 +1045,13 @@
           "agents-and-policy",
           "vaults-and-method"
         ],
-        "core_idea": "Mapping three scenarios element by element, with four states each, shows behaviour policies are the most mature, the gaps sit in decisions that are unnamed, unwritten or unrecorded, observation lags enforcement, and naming an element is what makes its gap visible.",
+        "core_idea": "Mapping three scenarios element by element, with five states each, shows behaviour policies are the most mature, the gaps sit in decisions that are unnamed, unwritten or unrecorded, observation lags enforcement, and naming an element is what makes its gap visible.",
         "nodes": [
           {
             "id": "map",
             "label": "The map",
             "kind": "method",
-            "summary": "Policy and four states per element."
+            "summary": "Policy and five states per element."
           },
           {
             "id": "memory",
@@ -780,6 +1238,8 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "inside-the-northstar-twin",
+        "allowed-is-not-right",
         "three-policies-for-an-agent",
         "three-decisions-mapped",
         "approve-at-altitude"
@@ -991,6 +1451,7 @@
         "code-review-as-a-fractal-semantic-graph"
       ],
       "links_in": [
+        "allowed-is-not-right",
         "three-policies-for-an-agent",
         "three-decisions-mapped",
         "case-law-for-agents"
@@ -2672,6 +3133,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "allowed-is-not-right",
         "three-policies-for-an-agent",
         "three-decisions-mapped",
         "case-law-for-agents",
@@ -30235,6 +30697,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "allowed-is-not-right",
         "three-policies-for-an-agent",
         "case-law-for-agents",
         "approve-at-altitude",
@@ -30490,6 +30953,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "allowed-is-not-right",
         "three-decisions-mapped",
         "approve-at-altitude",
         "commanders-intent-is-a-behaviour-policy",
