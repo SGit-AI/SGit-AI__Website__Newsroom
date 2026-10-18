@@ -125,6 +125,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#the-bri
 
 ### Continued by
 
+- [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](versions-of-versions.md) When part of the site is big enough to need its own versions: the publishers' section first, and a tree of versions from a page to the API.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md) A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.
 
 [All articles](index.md) · [All graphs](graphs.md)

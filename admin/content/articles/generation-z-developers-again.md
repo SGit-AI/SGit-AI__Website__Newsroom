@@ -6,7 +6,7 @@ author_url: about/index.html
 summary: In 2018 I wrote a book called Generation Z Developers, key concepts and ideas for the next generation of developers. It is on Leanpub, 60% complete, last updated on 8 October 2018, read by 465 people, and it is also on Amazon. It was a decent book, full of spelling mistakes, and a lot of what I write about now is already in it, as chapter outlines: pioneers, settlers and town planners, graphs, your future self, publishing, GitHub as your CV; and, in a finished chapter, the advice to act like you are part of the company you want to work for. Of its 138 files, 90 are still outlines. I think the time is right for a second edition, because the outlines have since been written, as articles on this site. This is the plan. Keep the name, because the people it is for are still Generation Z and they all have to be developers now, and date the edition October 2026. Frame it with Wardley's explorers, villagers and town planners. Do it first, before the other books: a thorough review, an agent that interviews me as its editor, quick iterations in public, my handwritten notes, and then Amazon, where I already publish, with a launch in Portugal. It is the book I would most like to hand to the people I am trying to help: here is the manual for getting into development, and here is the manual for getting a job.
 version: v0.12.116
 license: https://creativecommons.org/licenses/by/4.0/
-tags: books, generation-z, careers, developers, leanpub, back-catalogue, article
+tags: books, generation-z, careers, developers, leanpub, back-catalogue, article, gen-z-book
 status: published
 ---
 

@@ -248,6 +248,8 @@ NORMALISE = [
     (re.compile(r'<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+</span>'),
      '<span>newsroom.sgit.ai &middot; </span>'),
     (re.compile(r'<section class="athreads areviews" id="reviews">[\s\S]*?</section>\n'), ''),  # stamped by reviews.py
+    (re.compile(r'<nav class="aseries"[^>]*>[\s\S]*?</nav>\n'), ''),  # stamped by series.py
+    (re.compile(r'<section class="aseries-all"[^>]*>[\s\S]*?</section>\n'), ''),  # stamped by series.py
 ]
 
 

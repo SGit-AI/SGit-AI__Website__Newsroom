@@ -10,7 +10,7 @@
 
 # Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/generation-z-developers-again.md) · [newsroom v0.12.116](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zcareersdevelopersleanpubback-cataloguearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.1, 3 versions](versions/generation-z-developers-again.md) · [newsroom v0.12.116](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zcareersdevelopersleanpubback-cataloguearticlegen-z-book
 
 ***Abstract:** In 2018 I wrote a book called Generation Z Developers, key concepts and ideas for the next generation of developers. It is on Leanpub, 60% complete, last updated on 8 October 2018, read by 465 people, and it is also on Amazon. It was a decent book, full of spelling mistakes, and a lot of what I write about now is already in it, as chapter outlines: pioneers, settlers and town planners, graphs, your future self, publishing, GitHub as your CV; and, in a finished chapter, the advice to act like you are part of the company you want to work for. Of its 138 files, 90 are still outlines. I think the time is right for a second edition, because the outlines have since been written, as articles on this site. This is the plan. Keep the name, because the people it is for are still Generation Z and they all have to be developers now, and date the edition October 2026. Frame it with Wardley's explorers, villagers and town planners. Do it first, before the other books: a thorough review, an agent that interviews me as its editor, quick iterations in public, my handwritten notes, and then Amazon, where I already publish, with a launch in Portugal. It is the book I would most like to hand to the people I am trying to help: here is the manual for getting into development, and here is the manual for getting a job.*
 
@@ -136,6 +136,8 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#genera
 
 ### Continued by
 
+- [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](a-website-to-finish-the-book.md) gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.
+- [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](a-book-for-one-reader.md) A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.
 - [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](act-as-the-job-you-want.md) If you are looking for a job you have time: act as the person in the job you want, in public, and give the people who want to help you a link.
 
 [All articles](index.md) · [All graphs](graphs.md)

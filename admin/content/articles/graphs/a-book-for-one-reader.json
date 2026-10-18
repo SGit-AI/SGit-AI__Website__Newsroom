@@ -1,0 +1,34 @@
+{
+ "slug": "a-book-for-one-reader",
+ "teaser": "A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.",
+ "topics": ["vaults-and-method", "startups-and-strategy"],
+ "core_idea": "Once the book is a graph, an agent can assemble an edition for one reader from a private brief (their role, altitude, examples, later language), sent to them and not published, metered as it is read from five pounds of credit and kept in their vault, with the correspondence notes behind it staying private.",
+ "nodes": [
+  {"id": "graph", "label": "The book as a graph", "kind": "artefact", "summary": "Every chapter at every altitude."},
+  {"id": "edition", "label": "An edition for one", "kind": "concept", "summary": "Their chapters, altitude and examples."},
+  {"id": "brief", "label": "A private brief", "kind": "artefact", "summary": "From the correspondence notes, or a form."},
+  {"id": "privacy", "label": "Read, never copied", "kind": "claim", "summary": "Notes stay private; the edition carries choices."},
+  {"id": "sent", "label": "Sent, not published", "kind": "method", "summary": "A PDF, encrypted to their key later."},
+  {"id": "pay", "label": "Pay as you read", "kind": "method", "summary": "Five pounds of credit; more read, more paid."},
+  {"id": "vault", "label": "Kept in their vault", "kind": "method", "summary": "Starts locally, saved if wanted."},
+  {"id": "innovation", "label": "Building on what is coming", "kind": "claim", "summary": "How innovation works."}
+ ],
+ "edges": [
+  {"from": "graph", "to": "edition", "rel": "produces"},
+  {"from": "brief", "to": "edition", "rel": "produces"},
+  {"from": "privacy", "to": "brief", "rel": "extends"},
+  {"from": "edition", "to": "sent", "rel": "leads-to"},
+  {"from": "edition", "to": "pay", "rel": "depends-on"},
+  {"from": "pay", "to": "vault", "rel": "leads-to"},
+  {"from": "innovation", "to": "edition", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["a-website-to-finish-the-book", "generation-z-developers-again", "a-directory-of-people-and-keys"],
+  "pages": ["admin/notes/2026-10-18__a-website-to-finish-the-book.md"],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "The edition is sent to them, not published.", "why": "The privacy rule."},
+  {"text": "Each thing we build becomes something the next idea stands on.", "why": "How innovation works."}
+ ]
+}

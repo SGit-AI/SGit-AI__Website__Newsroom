@@ -1,0 +1,94 @@
+{
+ "slug": "versions-of-versions",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 273,
+   "line": "Parts of the site with versions of their own",
+   "para": "Versioning works on this site for people and agents alike. Now some parts, starting with the publishers' section, need their own version lines, recorded by each site release, including the API release the newsroom will pin. It forms a fractal tree of versions; the home page and article pipeline come later. The article also captures an idea the agents could not find.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 105,
+   "line": "Version lines inside version lines",
+   "para": "Versioning shows what changed and why. The publishers' section needs its own, and since 18 October its page has one. Each site release should record which version of each part it carries. The tree is fractal, the API is part of it, and the home page and pipeline will follow later.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why",
+   "label": "Why versioning works",
+   "words": 133,
+   "line": "What versioning gives",
+   "para": "Every push to the release branch is a release with a note; every article has versions and a page showing the differences; summaries know when a section changed. Together that gives a visual history, a description of each session's changes, diffs when needed, and above all a history that lets agents understand what is going on and readers see what is new.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "publishers",
+   "label": "The publishers' section needs its own",
+   "words": 143,
+   "line": "The publishers' section has grown",
+   "para": "The section for publishers has its own audience, regular updates and an environment to maintain, so it needs the same discipline as the site. It has started: in v0.12.113 its page got frozen versions, a build that stops on unversioned edits, and a versions page with block and word differences, from v1.0.0 on 11 October to v2.0.0.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "versions-of-versions",
+   "label": "Versions of versions",
+   "words": 123,
+   "line": "The section's own line, recorded by the site",
+   "para": "Next, the whole section gets a version line independent of the site's, releasing at its own pace, and each site release records which version it carries, as git submodules record a commit. Then two questions have answers: what changed between the section's versions, and which version was live in a given site release.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "tree",
+   "label": "A tree, and fractal",
+   "words": 150,
+   "line": "A fractal tree, with the API in it",
+   "para": "The site becomes a tree of versions: a release holds the section, which holds its page, which holds its text's versions. api.newsroom.sgit.ai already has two lines, its site at v0.2.15 and reader code at v0.2.5, each release served under its own prefix. When the newsroom pins an API release, the site release should record it.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "areas",
+   "label": "Areas with their own releases",
+   "words": 114,
+   "line": "Areas with their own releases and checks",
+   "para": "Taken further, the site is a set of areas, each with its own release cycle, pipeline, checks and quality bar. Articles could move to a versioned home page after review, and feeds would follow the same pipeline, every step a recorded event. That is later; the publishers' section is now and the API connection is next.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "for-an-agent",
+   "label": "Written for an agent",
+   "words": 68,
+   "line": "An idea written so agents can find it",
+   "para": "Dinis referred to this idea and asked the agent to find where it was written down; it had never been. So the idea is recorded and written up here, where the agent working on the publishers' section, and any later agent, can find it, link it and build it.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "brief",
+   "label": "The brief",
+   "words": 125,
+   "line": "Five steps for the site's builder",
+   "para": "A version line for the whole publishers' section with its own changelog; each release recording the version of each part it carries; the pinned API release once the newsroom is built on it; one page showing the tree for a release with differences from the previous; and later the home page and article pipeline as areas.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 68,
+   "line": "One part today, more later",
+   "para": "Only the page for publishers has its own versions today. The newsroom does not yet pin an API release. The home page and pipeline are an idea, marked as later. And more version lines mean more to maintain, worth it only where a part really changes on its own.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 63,
+   "line": "A memo, a release and the API",
+   "para": "From Dinis's voice memo of 18 October 2026, the v0.12.113 release note and the versions of the page for publishers, and api.newsroom.sgit.ai with its llms.txt, read that day. Related articles cover the section for publishers, the briefs so far and my memory, checked.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

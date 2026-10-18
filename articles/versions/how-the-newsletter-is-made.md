@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 2,834 | first published | this release | [current](../how-the-newsletter-is-made.md) |
+| **v1.0.0** | 2026-10-18 | published | 2,834 | first published | [`a76a8d80c`](https://github.com/SGit-AI/SGit-AI__Website/commit/a76a8d80c92023cd1f1e1db9cfba95ef65ea8c2f) | [current](../how-the-newsletter-is-made.md) |
 
 [← Back to the article](../how-the-newsletter-is-made.md) · [All articles](../index.md)
 

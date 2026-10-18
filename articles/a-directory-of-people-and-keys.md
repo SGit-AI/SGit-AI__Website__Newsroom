@@ -117,6 +117,10 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#a-director
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](on-the-record.md) Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 
+### Continued by
+
+- [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](a-book-for-one-reader.md) A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 195 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=195)

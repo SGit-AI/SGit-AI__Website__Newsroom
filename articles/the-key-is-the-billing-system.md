@@ -138,6 +138,7 @@ Startups & strategySite & engineeringAgents & policy[This article as a graph →
 
 ### Continued by
 
+- [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](a-website-to-finish-the-book.md) gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.
 - [How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it](how-the-newsletter-is-made.md) The agent that writes the newsletter on how issues 7 to 9 were planned, read, checked and released, and the ninety-six articles still waiting.
 - [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](free-models-your-own-key.md) Which free model APIs a reader can call from a web page with their own key, October 2026: four pass both tests, NVIDIA fails both, and 2026 took a lot away.
 - [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](sgit-actions-side-by-side.md) A showcase repository that runs four ways of moving a vault between GitHub Actions jobs side by side, measured, with a budget for its LLM steps.

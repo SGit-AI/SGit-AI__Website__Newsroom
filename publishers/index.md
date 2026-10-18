@@ -2,7 +2,7 @@
 
 > newsroom.sgit.ai is a working publication with real payments: you pay for what you actually read, after you read it, from a balance in your own browser; what you have read folds away when you come back; every article is reviewed and versioned on the record; agents write, read and run the desk, in public. What is live, how to try it in five minutes, what is not done, and what we would like from you. Rebuilt with every release, so it stays current.
 
-*Source: <https://newsroom.sgit.ai/publishers/index.html> · newsroom.sgit.ai v0.12.113 · this file is generated from the same source as the page (`admin/content/publishers/page.md` and the site's data), so the two cannot drift.*
+*Source: <https://newsroom.sgit.ai/publishers/index.html> · newsroom.sgit.ai v0.12.118 · this file is generated from the same source as the page (`admin/content/publishers/page.md` and the site's data), so the two cannot drift.*
 
 ---
 
@@ -14,7 +14,7 @@ For publishers, journalists and anyone thinking about the future of news
 
 For the last two months I have been writing about where publishing could go: readers who pay for what they actually read, after they have read it; personas instead of profiles; stories kept as evidence; agents as readers, and as part of the newsroom. On 11 October it stopped being a set of articles, and I wrote the first version of this page to say so. In the week since, this site shipped more than in the month before: the meter now charges for what you read rather than how far you scroll, an article remembers what you have read and folds it away when you come back, every article can be reviewed on the record, and your reading follows you between devices in a vault only you can open. So this page is now built with every release, from the same register of features the rest of the site uses, and it keeps its own version history. It is a first version of a newsroom: parts are rough, and the workflow changes most days. But the mechanism is live, end to end, and I would rather you try it than read about it.
 
-*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v0.12.113: 194 articles, 19 features a publisher can use today, the newest article 18 Oct.*
+*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v0.12.118: 202 articles, 20 features a publisher can use today, the newest article 18 Oct.*
 
 [Open newsroom.sgit.ai](../index.html). No sign-up. You start with £5.00 of free credit, kept in your own browser.
 
@@ -49,6 +49,7 @@ The first version, on 11 October, was written once. These are the changes since 
 
 | What | Since | How it works | Try it |
 |---|---|---|---|
+| **Series by tag** | 18 Oct (v0.12.118) | Articles that belong together carry one tag; each shows a thin bar under its byline, with the previous and next articles, and the full list at its foot, kept current by the build. | [Try it](../articles/a-website-to-finish-the-book.html) · [read about it](../articles/a-website-to-finish-the-book.html) |
 | **A version history for a page** | 18 Oct (v0.12.113) | The page for publishers keeps every version of its text with what changed between them, and records what its live parts did in each release. | [Try it](../publishers/versions/index.html) |
 | **The briefs, in the open** | 18 Oct (v0.12.109) | Everything the newsroom has asked of itself, audited from the code: built, partly built or not, each with what remains and a brief a session can start from. | [Try it](../briefs/index.html) · [read about it](../articles/the-briefs-so-far.html) |
 | **Sections by audience** | 18 Oct (v0.12.108) | The newsroom as one audience reads it: five to start with, the latest, the features they can use, and every relevant article placed by written rules, each saying which rule placed it. | [Try it](../sections/publishers/index.html) · [read about it](../articles/a-section-for-publishers.html) |
@@ -75,14 +76,14 @@ The newsroom keeps its own dated ledger of [what runs and what is only designed]
 
 The newest pieces on how news gets paid for, answers to the industry, and how readers read here, placed in [the publishers' section](../sections/publishers/index.html) by rule as they were published.
 
+- [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](../articles/a-book-for-one-reader.html), 18 Oct. 
 - [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](../articles/your-reading-your-controls.html), 17 Oct. The meter now charges for what is read; the reader can pause, reset or mark it, and what was read folds away six ways, with a line and a paragraph per section.
 - [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](../articles/i-just-want-to-buy-the-article.html), 17 Oct. I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.
 - [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](../articles/scrolled-is-not-read.html), 16 Oct. The reading meter charged by scroll and called it read; now each section keeps scrolled and read, the chip holds still, and highlights take one tap.
 - [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](../articles/inside-the-mesa-ranch-desk.html), 15 Oct. A page-by-page tour of the Mesa Ranch observation vault: the argument, the system, the record, five graphs, and how to open and rebuild it.
 - [When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open](../articles/journalism-becomes-intelligence.html), 15 Oct. Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.
-- [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](../articles/paying-after-the-value.html), 14 Oct. Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.
 
-And 30 in the last week on [how this newsroom runs](../sections/publishers/index.html#method), the newest [The man behind the curtain](../articles/the-man-behind-the-curtain.html).
+And 33 in the last week on [how this newsroom runs](../sections/publishers/index.html#method), the newest [A website to finish the book](../articles/a-website-to-finish-the-book.html).
 
 ## Why I think this is worth your time
 
@@ -92,7 +93,7 @@ Each of these ideas exists somewhere else on its own. Micropayments have been tr
 - **Personalisation without surveillance.** The site knows what you read only inside your browser and your own vault. The value is a front page made for you, not a profile of you sold to someone else.
 - **It is cheap to run, and copyable.** There is no back end: the whole site is files and a browser. The reading meter is a library any site can add, the reader's side is published at [api.newsroom.sgit.ai](https://api.newsroom.sgit.ai/), and the newsroom publishes [how to replicate it](../replicate/index.html).
 - **Quality control you can see.** Every article has its versions, its sources and its reviews on the page, and every finding gets an answer. A correction is a new version, dated and linkable, not a silent edit.
-- **It is built fast.** 128 releases since the first version of this page on 11 October; this page is now rebuilt in every one of them.
+- **It is built fast.** 133 releases since the first version of this page on 11 October; this page is now rebuilt in every one of them.
 
 ## What is not done, so you do not have to find it
 
@@ -125,7 +126,7 @@ Your reaction, more than anything. Use it for five minutes, or for a few days, a
 
 **Write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai)**, a monitored mailbox that reaches me, or see [who I am and how to reach me](https://sgit.ai/about/index.html). The page is written to be forwarded as it is.
 
-*As of 18 Oct 2026, newsroom.sgit.ai v0.12.113. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
+*As of 18 Oct 2026, newsroom.sgit.ai v0.12.118. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
 
 
 ---

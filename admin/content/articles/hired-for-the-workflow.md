@@ -6,7 +6,7 @@ author_url: about/index.html
 summary: I think October 2026 is a moment of real opportunity for anyone willing to get properly into agentic workflows. The first phase has passed. The tools and the workflows are maturing, still rough at the edges, but you can now glue the pieces together and get real work done, and companies are moving from pilots to products. I have lived this pattern before, in security and in software. There was a time when, if you could break an application, read code, build a website, build a mobile app or make a spreadsheet do something clever, you had a job, degree or no degree. This is that time again. And the people companies need are not the ones who build models, which is who the first wave of AI hiring went to; they are good AI operators, people who know how to use the tools and the workflows to get things done. The data agrees: in Microsoft and LinkedIn's 2024 survey, 71% of leaders said they would rather hire a less experienced candidate with AI skills than a more experienced one without, and PwC found this year that jobs asking for AI skills pay 62% more. When two candidates look equally good on paper, someone still has to choose. If you work this way, the choice starts with your application: a CV fitted to the role, an analysis of their problem, something they have not seen. I got jobs that way, before any of this existed, because of my OWASP work.
 version: v0.12.114
 license: https://creativecommons.org/licenses/by/4.0/
-tags: careers, hiring, agents, ai-operators, skills, explorer-coding, article
+tags: careers, hiring, agents, ai-operators, skills, explorer-coding, article, gen-z-book
 status: published
 ---
 

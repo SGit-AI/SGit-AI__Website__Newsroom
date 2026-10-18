@@ -1,0 +1,34 @@
+{
+ "slug": "versions-of-versions",
+ "teaser": "When part of the site is big enough to need its own versions: the publishers' section first, and a tree of versions from a page to the API.",
+ "topics": ["site-and-engineering", "vaults-and-method"],
+ "core_idea": "Versioning gives history to people and agents, so parts of the site that change on their own, starting with the publishers' section, should get their own version lines, each site release recording which version of each part it carries, including the API release it pins; the result is a fractal tree of versions, with the home page and article pipeline later.",
+ "nodes": [
+  {"id": "why", "label": "Why versioning works", "kind": "claim", "summary": "What changed, between which sessions, and why."},
+  {"id": "publishers", "label": "The publishers' section", "kind": "example", "summary": "Grown from a page into a site of its own."},
+  {"id": "pagev", "label": "A version history for one page", "kind": "artefact", "summary": "v0.12.113: frozen versions and diffs."},
+  {"id": "vov", "label": "Versions of versions", "kind": "concept", "summary": "Each release records the version of each part."},
+  {"id": "tree", "label": "A fractal tree", "kind": "concept", "summary": "Versions holding versions."},
+  {"id": "api", "label": "The API's own versions", "kind": "example", "summary": "Site v0.2.15, reader code v0.2.5."},
+  {"id": "areas", "label": "Areas with their own releases", "kind": "method", "summary": "Own cycles, checks and quality bars."},
+  {"id": "agent", "label": "Written for an agent", "kind": "method", "summary": "An idea the agents could not find, now written."}
+ ],
+ "edges": [
+  {"from": "why", "to": "vov", "rel": "leads-to"},
+  {"from": "publishers", "to": "vov", "rel": "example-of"},
+  {"from": "pagev", "to": "vov", "rel": "depends-on"},
+  {"from": "vov", "to": "tree", "rel": "produces"},
+  {"from": "api", "to": "tree", "rel": "example-of"},
+  {"from": "tree", "to": "areas", "rel": "leads-to"},
+  {"from": "agent", "to": "vov", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["a-section-for-publishers", "the-briefs-so-far", "my-memory-checked"],
+  "pages": ["publishers/versions/index.html", "briefs/index.html"],
+  "sites": ["https://api.newsroom.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "Track the versions, and track the connection between them.", "why": "The rule."},
+  {"text": "And it is fractal: a version can be connected to another version that has more versions inside it.", "why": "On versions of versions."}
+ ]
+}

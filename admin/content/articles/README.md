@@ -276,6 +276,10 @@ phone). Give one to any figure narrower than the column (about 915 pixels) or ta
 comes out larger than the article's own. The size applies to the image only: the caption always keeps the column's
 full width. `python3 admin/build/figures.py` lists figures that probably need a size.
 
+## Series
+
+Articles that belong together, like the ones about the Generation Z Developers book, form a series by tag. A series is one entry in `admin/content/series.json` (id, title, tag, note); every article whose `tags` include the series' tag joins it, in publication order, and `admin/build/series.py` stamps a thin bar under its byline (the series, its place in it, the previous and next articles) and the full list at its foot. To add an article to a series, add the tag; nothing else is edited by hand.
+
 ## The graph
 
 Beside every article, `graphs/<slug>.json`, read by the card, the threads, the wire and the desk:

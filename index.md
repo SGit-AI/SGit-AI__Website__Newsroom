@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.117 · 199 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.118 · 202 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 9 min. My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.
+- [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](articles/versions-of-versions.md), 2026-10-18, 5 min. When part of the site is big enough to need its own versions: the publishers' section first, and a tree of versions from a page to the API.
 
 ## Highlights
 
+- [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](articles/a-website-to-finish-the-book.md), 2026-10-18, 5 min.
+- [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 9 min.
 - [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](articles/act-as-the-job-you-want.md), 2026-10-18, 6 min.
-- [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min.
-- [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](articles/a-directory-of-people-and-keys.md), 2026-10-18, 8 min.
-- [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](articles/the-man-behind-the-curtain.md), 2026-10-18, 9 min.
 
 ## Who are you reading as?
 
@@ -34,23 +34,23 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
 - [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 13 min.
 
-### Building with agents (34)
+### Building with agents (35)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](articles/versions-of-versions.md), 2026-10-18, 5 min.
 - [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](articles/the-librarians-daily-brief.md), 2026-10-18, 7 min.
-- [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](articles/ephemeral-town-planner-services.md), 2026-10-18, 9 min.
 
-### Vaults & provenance (40)
+### Vaults & provenance (41)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](articles/a-website-to-finish-the-book.md), 2026-10-18, 5 min.
 - [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 9 min.
 - [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](articles/act-as-the-job-you-want.md), 2026-10-18, 6 min.
-- [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](articles/a-directory-of-people-and-keys.md), 2026-10-18, 8 min.
 
-### The future of news (39)
+### The future of news (40)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](articles/who-is-speaking.md), 2026-10-18, 7 min.
-- [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](articles/a-section-for-publishers.md), 2026-10-18, 6 min.
 
 ### Strategy & startups (30)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

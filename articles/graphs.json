@@ -55,6 +55,492 @@
   ],
   "articles": [
     {
+      "slug": "versions-of-versions",
+      "title": "Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/versions-of-versions.html",
+      "markdown": "https://newsroom.sgit.ai/articles/versions-of-versions.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/versions-of-versions.webp",
+      "teaser": "When part of the site is big enough to need its own versions: the publishers' section first, and a tree of versions from a page to the API.",
+      "topics": [
+        "site-and-engineering",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "versioning",
+        "publishers",
+        "releases",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "a-section-for-publishers",
+        "the-briefs-so-far",
+        "my-memory-checked"
+      ],
+      "links_in": [
+        "a-website-to-finish-the-book"
+      ],
+      "figures": [
+        {
+          "file": "vv-tree.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vv-tree.webp",
+          "caption": "A tree of versions. At the top, a release of the newsroom, v0.12.118. Inside it, the parts it carries, each with a version line of its own: the publishers' section and its page, at version 2.0.0; the articles, each with its own versions; the API release the site pins, with its own site version and reader-code release. Coming later: the home page and the feeds. Each node can hold more versions inside it; the release records which version of each it carries.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "versions-of-versions",
+        "teaser": "When part of the site is big enough to need its own versions: the publishers' section first, and a tree of versions from a page to the API.",
+        "topics": [
+          "site-and-engineering",
+          "vaults-and-method"
+        ],
+        "core_idea": "Versioning gives history to people and agents, so parts of the site that change on their own, starting with the publishers' section, should get their own version lines, each site release recording which version of each part it carries, including the API release it pins; the result is a fractal tree of versions, with the home page and article pipeline later.",
+        "nodes": [
+          {
+            "id": "why",
+            "label": "Why versioning works",
+            "kind": "claim",
+            "summary": "What changed, between which sessions, and why."
+          },
+          {
+            "id": "publishers",
+            "label": "The publishers' section",
+            "kind": "example",
+            "summary": "Grown from a page into a site of its own."
+          },
+          {
+            "id": "pagev",
+            "label": "A version history for one page",
+            "kind": "artefact",
+            "summary": "v0.12.113: frozen versions and diffs."
+          },
+          {
+            "id": "vov",
+            "label": "Versions of versions",
+            "kind": "concept",
+            "summary": "Each release records the version of each part."
+          },
+          {
+            "id": "tree",
+            "label": "A fractal tree",
+            "kind": "concept",
+            "summary": "Versions holding versions."
+          },
+          {
+            "id": "api",
+            "label": "The API's own versions",
+            "kind": "example",
+            "summary": "Site v0.2.15, reader code v0.2.5."
+          },
+          {
+            "id": "areas",
+            "label": "Areas with their own releases",
+            "kind": "method",
+            "summary": "Own cycles, checks and quality bars."
+          },
+          {
+            "id": "agent",
+            "label": "Written for an agent",
+            "kind": "method",
+            "summary": "An idea the agents could not find, now written."
+          }
+        ],
+        "edges": [
+          {
+            "from": "why",
+            "to": "vov",
+            "rel": "leads-to"
+          },
+          {
+            "from": "publishers",
+            "to": "vov",
+            "rel": "example-of"
+          },
+          {
+            "from": "pagev",
+            "to": "vov",
+            "rel": "depends-on"
+          },
+          {
+            "from": "vov",
+            "to": "tree",
+            "rel": "produces"
+          },
+          {
+            "from": "api",
+            "to": "tree",
+            "rel": "example-of"
+          },
+          {
+            "from": "tree",
+            "to": "areas",
+            "rel": "leads-to"
+          },
+          {
+            "from": "agent",
+            "to": "vov",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-section-for-publishers",
+            "the-briefs-so-far",
+            "my-memory-checked"
+          ],
+          "pages": [
+            "publishers/versions/index.html",
+            "briefs/index.html"
+          ],
+          "sites": [
+            "https://api.newsroom.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Track the versions, and track the connection between them.",
+            "why": "The rule."
+          },
+          {
+            "text": "And it is fractal: a version can be connected to another version that has more versions inside it.",
+            "why": "On versions of versions."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-website-to-finish-the-book",
+      "title": "A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-website-to-finish-the-book.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-website-to-finish-the-book.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-website-to-finish-the-book.webp",
+      "teaser": "gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.",
+      "topics": [
+        "vaults-and-method",
+        "graphs-and-knowledge"
+      ],
+      "tags": [
+        "books",
+        "generation-z",
+        "vaults",
+        "graphs",
+        "publishing",
+        "gen-z-book",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "versions-of-versions",
+        "the-graphs-books",
+        "riskmandate-ten-questions",
+        "the-key-is-the-billing-system",
+        "generation-z-developers-again",
+        "a-book-for-one-reader"
+      ],
+      "links_in": [
+        "a-book-for-one-reader"
+      ],
+      "figures": [
+        {
+          "file": "gw-site.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gw-site.webp",
+          "caption": "The book's website. On the left, the repository: the official versions, starting with the 2018 book as released, and a delta between each version. On the right, the public vault: the working versions, the graph, the altitudes and their infographics, comments by voice, the board and issues, and the agents in their roles. A second, private vault holds the OpenRouter key and opens only with Dinis's passkey. When a version is ready, it moves from the vault into the repository.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "a-website-to-finish-the-book",
+        "teaser": "gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.",
+        "topics": [
+          "vaults-and-method",
+          "graphs-and-knowledge"
+        ],
+        "core_idea": "A website for finishing Generation Z Developers keeps official versions in the repository and working versions in a public vault, with deltas between versions, the book as a graph at every altitude with infographics, voice comments, a board, agents in roles who challenge and interview Dinis, research and evidence, and the OpenRouter key in a separate private vault.",
+        "nodes": [
+          {
+            "id": "site",
+            "label": "gen-z-developers.sgit.ai",
+            "kind": "artefact",
+            "summary": "The book's website."
+          },
+          {
+            "id": "rule",
+            "label": "Repository official, vault working",
+            "kind": "method",
+            "summary": "Versions move in when signed off."
+          },
+          {
+            "id": "delta",
+            "label": "A delta between versions",
+            "kind": "artefact",
+            "summary": "What changed, block by block."
+          },
+          {
+            "id": "graph",
+            "label": "The book as a graph",
+            "kind": "concept",
+            "summary": "Ontology, taxonomy, links."
+          },
+          {
+            "id": "altitudes",
+            "label": "Every altitude, an infographic",
+            "kind": "method",
+            "summary": "From one page to the full text."
+          },
+          {
+            "id": "roles",
+            "label": "Editor, copywriter, publisher",
+            "kind": "method",
+            "summary": "Challenge, interview, sign off."
+          },
+          {
+            "id": "evidence",
+            "label": "Research and evidence",
+            "kind": "method",
+            "summary": "Per section, later per paragraph."
+          },
+          {
+            "id": "key",
+            "label": "The key's own vault",
+            "kind": "claim",
+            "summary": "Never in a public vault."
+          },
+          {
+            "id": "last",
+            "label": "How it was built, as the last part",
+            "kind": "claim",
+            "summary": "What a Gen Z developer should build."
+          }
+        ],
+        "edges": [
+          {
+            "from": "rule",
+            "to": "site",
+            "rel": "produces"
+          },
+          {
+            "from": "rule",
+            "to": "delta",
+            "rel": "produces"
+          },
+          {
+            "from": "graph",
+            "to": "altitudes",
+            "rel": "produces"
+          },
+          {
+            "from": "roles",
+            "to": "delta",
+            "rel": "leads-to"
+          },
+          {
+            "from": "evidence",
+            "to": "graph",
+            "rel": "extends"
+          },
+          {
+            "from": "key",
+            "to": "site",
+            "rel": "depends-on"
+          },
+          {
+            "from": "site",
+            "to": "last",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "generation-z-developers-again",
+            "versions-of-versions",
+            "the-graphs-books",
+            "a-book-for-one-reader"
+          ],
+          "pages": [
+            "admin/notes/2026-10-18__a-website-to-finish-the-book.md",
+            "briefs/index.html"
+          ],
+          "sites": [
+            "https://graphs.sgit.ai/v1/altitudes/index.html",
+            "https://graphs.sgit.ai/v2/team/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "the repository contains the official versions; the vault contains the working versions.",
+            "why": "The organising rule."
+          },
+          {
+            "text": "Anything in it is readable by everyone.",
+            "why": "Why the key needs its own vault."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-book-for-one-reader",
+      "title": "A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-book-for-one-reader.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-book-for-one-reader.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-book-for-one-reader.webp",
+      "teaser": "A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.",
+      "topics": [
+        "vaults-and-method",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "books",
+        "personalisation",
+        "pay-as-you-read",
+        "vaults",
+        "generation-z",
+        "gen-z-book",
+        "article"
+      ],
+      "links_out": [
+        "a-website-to-finish-the-book",
+        "the-agent-team-as-it-runs",
+        "a-directory-of-people-and-keys",
+        "paying-after-the-value",
+        "generation-z-developers-again"
+      ],
+      "links_in": [
+        "a-website-to-finish-the-book"
+      ],
+      "figures": [
+        {
+          "file": "ob-one.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ob-one.webp",
+          "caption": "A book for one reader. On the left, what the edition is made from: the book as a graph, at every altitude, and a private brief for one person from Dinis's correspondence notes. In the middle, an agent assembles the edition: the chapters that matter, at the right altitude, with examples from the reader's world, later in their language. On the right, the reader: a PDF made for them, or the edition in their browser, metered as they read it, starting with five pounds of credit, and kept in their own vault if they want it. The brief never leaves Dinis's side.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "a-book-for-one-reader",
+        "teaser": "A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.",
+        "topics": [
+          "vaults-and-method",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Once the book is a graph, an agent can assemble an edition for one reader from a private brief (their role, altitude, examples, later language), sent to them and not published, metered as it is read from five pounds of credit and kept in their vault, with the correspondence notes behind it staying private.",
+        "nodes": [
+          {
+            "id": "graph",
+            "label": "The book as a graph",
+            "kind": "artefact",
+            "summary": "Every chapter at every altitude."
+          },
+          {
+            "id": "edition",
+            "label": "An edition for one",
+            "kind": "concept",
+            "summary": "Their chapters, altitude and examples."
+          },
+          {
+            "id": "brief",
+            "label": "A private brief",
+            "kind": "artefact",
+            "summary": "From the correspondence notes, or a form."
+          },
+          {
+            "id": "privacy",
+            "label": "Read, never copied",
+            "kind": "claim",
+            "summary": "Notes stay private; the edition carries choices."
+          },
+          {
+            "id": "sent",
+            "label": "Sent, not published",
+            "kind": "method",
+            "summary": "A PDF, encrypted to their key later."
+          },
+          {
+            "id": "pay",
+            "label": "Pay as you read",
+            "kind": "method",
+            "summary": "Five pounds of credit; more read, more paid."
+          },
+          {
+            "id": "vault",
+            "label": "Kept in their vault",
+            "kind": "method",
+            "summary": "Starts locally, saved if wanted."
+          },
+          {
+            "id": "innovation",
+            "label": "Building on what is coming",
+            "kind": "claim",
+            "summary": "How innovation works."
+          }
+        ],
+        "edges": [
+          {
+            "from": "graph",
+            "to": "edition",
+            "rel": "produces"
+          },
+          {
+            "from": "brief",
+            "to": "edition",
+            "rel": "produces"
+          },
+          {
+            "from": "privacy",
+            "to": "brief",
+            "rel": "extends"
+          },
+          {
+            "from": "edition",
+            "to": "sent",
+            "rel": "leads-to"
+          },
+          {
+            "from": "edition",
+            "to": "pay",
+            "rel": "depends-on"
+          },
+          {
+            "from": "pay",
+            "to": "vault",
+            "rel": "leads-to"
+          },
+          {
+            "from": "innovation",
+            "to": "edition",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-website-to-finish-the-book",
+            "generation-z-developers-again",
+            "a-directory-of-people-and-keys"
+          ],
+          "pages": [
+            "admin/notes/2026-10-18__a-website-to-finish-the-book.md"
+          ],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "The edition is sent to them, not published.",
+            "why": "The privacy rule."
+          },
+          {
+            "text": "Each thing we build becomes something the next idea stands on.",
+            "why": "How innovation works."
+          }
+        ]
+      }
+    },
+    {
       "slug": "how-the-newsletter-is-made",
       "title": "How the newsletter is made: twenty-three articles, three issues, and every quote checked, written by the agent that makes it",
       "date": "2026-10-18",
@@ -337,7 +823,8 @@
         "developers",
         "leanpub",
         "back-catalogue",
-        "article"
+        "article",
+        "gen-z-book"
       ],
       "links_out": [
         "act-as-the-job-you-want",
@@ -354,6 +841,8 @@
         "books-from-articles"
       ],
       "links_in": [
+        "a-website-to-finish-the-book",
+        "a-book-for-one-reader",
         "act-as-the-job-you-want"
       ],
       "figures": [
@@ -545,7 +1034,8 @@
         "linkable",
         "open-source",
         "advice",
-        "article"
+        "article",
+        "gen-z-book"
       ],
       "links_out": [
         "generation-z-developers-again",
@@ -717,7 +1207,8 @@
         "ai-operators",
         "skills",
         "explorer-coding",
-        "article"
+        "article",
+        "gen-z-book"
       ],
       "links_out": [
         "agentics-ready-to-sell",
@@ -912,7 +1403,9 @@
         "on-the-record",
         "the-man-behind-the-curtain"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-book-for-one-reader"
+      ],
       "figures": [
         {
           "file": "pk-flow.webp",
@@ -2272,6 +2765,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "versions-of-versions",
         "the-librarians-daily-brief"
       ],
       "figures": [
@@ -2452,6 +2946,7 @@
         "pay-after-you-read"
       ],
       "links_in": [
+        "versions-of-versions",
         "the-briefs-so-far"
       ],
       "figures": [
@@ -10412,6 +10907,7 @@
         "places-of-highest-leverage"
       ],
       "links_in": [
+        "a-website-to-finish-the-book",
         "generation-z-developers-again",
         "bringing-my-past-work-back",
         "portugal-and-europe-2025",
@@ -14655,6 +15151,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "versions-of-versions",
         "the-man-behind-the-curtain",
         "bringing-my-past-work-back",
         "journalism-becomes-intelligence",
@@ -16061,6 +16558,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "a-book-for-one-reader",
         "i-just-want-to-buy-the-article",
         "sell-dont-issue",
         "your-own-newsroom",
@@ -26509,6 +27007,7 @@
         "pay-after-you-read"
       ],
       "links_in": [
+        "a-website-to-finish-the-book",
         "how-the-newsletter-is-made",
         "free-models-your-own-key",
         "sgit-actions-side-by-side"
@@ -34349,6 +34848,7 @@
         "the-investigation-github-owes-its-customers"
       ],
       "links_in": [
+        "a-website-to-finish-the-book",
         "generation-z-developers-again",
         "three-linkedin-pages",
         "your-own-newsroom",
@@ -39483,6 +39983,7 @@
         "the-identity-we-wanted-to-give-the-agents"
       ],
       "links_in": [
+        "a-book-for-one-reader",
         "the-man-behind-the-curtain",
         "from-send-to-sgit",
         "the-agents-write-too",

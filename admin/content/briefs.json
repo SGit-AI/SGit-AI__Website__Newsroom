@@ -1542,6 +1542,84 @@
    "depends_on": [],
    "session_brief": "Read admin/notes/2026-10-18__generation-z-developers-second-edition.md and the article, then the book's repository (content/) and books-from-articles. First deliverable: admin/content/books/generation-z-2e/map.json with one row per chapter and outline (2018 file, status written or outline, the newsroom articles that answer it, the gap). Done when every one of the 138 files has a row and the gaps are listed for Dinis.",
    "size": "M"
+  },
+  {
+   "id": "versions-of-versions",
+   "title": "Versions of versions: the publishers' section with its own version line, recorded by each site release",
+   "source": [
+    "versions-of-versions",
+    "a-section-for-publishers"
+   ],
+   "date": "2026-10-18",
+   "status": "partly",
+   "asked": "Give large parts of the site their own version line, starting with the publishers' section; each newsroom release records which version of each part it carries, and which api.newsroom.sgit.ai release it pins once the site is built on the API; a page showing the tree; later the home page and the article pipeline as areas with their own releases and checks.",
+   "built": "v0.12.113: page_versions.py gives the page for publishers frozen versions (v1.0.0, v2.0.0), block and word diffs, and a ledger of changes per release. Articles already have their own versions.",
+   "remaining": [
+    "A version line for the whole publishers' section, with its own changelog",
+    "Each release records the version of each part it carries",
+    "Record the pinned API release once the newsroom consumes the API",
+    "A page showing the tree of versions for a release",
+    "Later: the home page and article pipeline as areas"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Read the article versions-of-versions, admin/build/page_versions.py and admin/content/publishers/versions.json. First deliverable: admin/content/parts.json listing the parts with their own version line (publishers first) and a release step that writes, per release, the version of each part into the release note and engineering/releases/<v>.parts.json. Done when a release that changes only the publishers' section bumps that section's version and the site's, and the parts file shows both.",
+   "size": "M"
+  },
+  {
+   "id": "gen-z-book-website",
+   "title": "gen-z-developers.sgit.ai: the book's website, repository for official versions, vault for working ones",
+   "source": [
+    "a-website-to-finish-the-book",
+    "admin/notes/2026-10-18__a-website-to-finish-the-book.md",
+    "generation-z-developers-again"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A website for reviewing and finishing the second edition: v1 (2018) in the repository, working versions in a public vault, deltas between versions, the book as a graph at every altitude with infographics, voice comments, a board and issues, editor/copywriter/publisher agents who challenge and interview Dinis, sign-off, research and evidence; the OpenRouter key in a separate private vault.",
+   "built": "Nothing for the site. The 2018 book's source exists; graphs.sgit.ai has the shelf, roles, book-as-graph and altitude ladder; the newsroom has page_versions.py, the passkey vault and the meter.",
+   "remaining": [
+    "Repository with v1 as released",
+    "Public vault with the working copy",
+    "The graph, ontology and taxonomy",
+    "Altitudes with infographics",
+    "Voice comments, board, issues",
+    "Roles and sign-off",
+    "Research and evidence tasks",
+    "Private vault for the OpenRouter key"
+   ],
+   "area": "publishing-method",
+   "depends_on": [
+    "generation-z-developers-2e"
+   ],
+   "session_brief": "Read admin/notes/2026-10-18__a-website-to-finish-the-book.md, then graphs.sgit.ai's books, roles and altitude ladder, and the book's repository. First deliverable: the new repository with v1 imported as released and a static site showing it at gen-z-developers.sgit.ai (or the agreed address), plus a versions page reusing page_versions.py. Done when v1 is browsable chapter by chapter and its version page exists.",
+   "size": "L"
+  },
+  {
+   "id": "book-for-one-reader",
+   "title": "Personal editions of the book, assembled by an agent, paid as read",
+   "source": [
+    "a-book-for-one-reader",
+    "admin/notes/2026-10-18__a-website-to-finish-the-book.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "An agent assembles an edition of the book for one person from the book's graph and a private brief (their role, altitude, examples, later language and culture), delivered as a PDF or in the browser and not published; pay as you read, starting with five pounds of credit; kept locally with the reader's vault as an option.",
+   "built": "The reading meter (pay after you read, five pounds of credit, balance can go negative) and the reader's vault exist on the newsroom. The book's graph does not exist yet.",
+   "remaining": [
+    "The book as a graph (gen-z-book-website)",
+    "A brief format for one reader",
+    "An assembler that walks the graph for a brief",
+    "PDF output",
+    "The meter on the book",
+    "Encryption to the reader's key (pki-people-directory)"
+   ],
+   "area": "payments",
+   "depends_on": [
+    "gen-z-book-website"
+   ],
+   "session_brief": "Read the article a-book-for-one-reader and the website brief. Wait for the book's graph. First deliverable: a brief schema (role, altitude, interests, language) and an assembler that, from the graph and a brief, outputs an ordered chapter list with altitude per chapter as JSON. Done when two different briefs give two different, sensible editions of v1.",
+   "size": "M"
   }
  ]
 }
