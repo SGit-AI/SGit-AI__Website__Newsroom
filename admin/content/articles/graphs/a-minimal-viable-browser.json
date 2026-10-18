@@ -1,0 +1,45 @@
+{
+ "slug": "a-minimal-viable-browser",
+ "teaser": "A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.",
+ "topics": ["agents-and-policy", "vaults-and-method"],
+ "core_idea": "The browser is the biggest attack surface we run and we now give it to agents; a minimal viable browser keeps a small kernel and loads components only when a page or agent needs them, boxes every extension, and gives each agent a browser with nothing to leak; Mozilla has the engine, brand and model to build it, and the pitch is speed.",
+ "nodes": [
+  {"id": "biggest", "label": "The biggest program we run", "kind": "claim", "summary": "Every feature on, for every job."},
+  {"id": "bugs", "label": "Bug counts rising", "kind": "example", "summary": "423 Firefox security bugs fixed in April 2026."},
+  {"id": "modes", "label": "Less code already ships as a mode", "kind": "example", "summary": "Edge without JIT, Vanadium, Lockdown Mode, Tor."},
+  {"id": "kernel", "label": "A small kernel", "kind": "concept", "summary": "Network, TLS, parsing, layout, isolation."},
+  {"id": "components", "label": "Components on demand", "kind": "concept", "summary": "Loaded per site, when needed."},
+  {"id": "shapes", "label": "Three shapes", "kind": "concept", "summary": "One app, one agent, one reader."},
+  {"id": "agent", "label": "A browser for one agent", "kind": "method", "summary": "No accounts, extensions or files."},
+  {"id": "injection", "label": "Prompt injection is not solved", "kind": "example", "summary": "Vendors say so; PleaseFix was fixed by removing reach."},
+  {"id": "extensions", "label": "Every extension in its own box", "kind": "method", "summary": "Only the sites and powers its job needs."},
+  {"id": "shady", "label": "Trusted extensions that change", "kind": "example", "summary": "ShadyPanda, Urban VPN, DarkSpectre."},
+  {"id": "exists", "label": "Parts of this exist", "kind": "example", "summary": "Forks, Brave Origin, Lightpanda, Tauri."},
+  {"id": "mozilla", "label": "Why Mozilla", "kind": "claim", "summary": "Own engine, privacy brand, client side."},
+  {"id": "money", "label": "Revenue is not independent", "kind": "claim", "summary": "About 85% search, mostly Google."},
+  {"id": "speed", "label": "Sell it as speed", "kind": "method", "summary": "Starts at once, a fraction of the memory."}
+ ],
+ "edges": [
+  {"from": "bugs", "to": "biggest", "rel": "example-of"},
+  {"from": "modes", "to": "kernel", "rel": "leads-to"},
+  {"from": "kernel", "to": "components", "rel": "extends"},
+  {"from": "components", "to": "shapes", "rel": "leads-to"},
+  {"from": "shapes", "to": "agent", "rel": "extends"},
+  {"from": "injection", "to": "agent", "rel": "leads-to"},
+  {"from": "shapes", "to": "extensions", "rel": "extends"},
+  {"from": "shady", "to": "extensions", "rel": "leads-to"},
+  {"from": "exists", "to": "mozilla", "rel": "contrasts"},
+  {"from": "money", "to": "mozilla", "rel": "contrasts"},
+  {"from": "mozilla", "to": "speed", "rel": "leads-to"},
+  {"from": "biggest", "to": "kernel", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["the-code-you-do-not-ship", "what-can-your-agent-reach", "cloudflare-as-lego-blocks", "the-value-of-constraints", "three-policies-for-an-agent", "the-minimum-code-below"],
+  "pages": [],
+  "sites": ["https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/", "https://stateof.mozilla.org/ledger", "https://brave.com/blog/ai-browsing/"]
+ },
+ "quotes": [
+  {"text": "An agent's browser that has no accounts, no extensions, no file access and only the origins its task needs cannot leak a password it never had or a file it cannot open.", "why": "The agent argument."},
+  {"text": "The pitch to Mozilla should not be security.", "why": "The pitch."}
+ ]
+}

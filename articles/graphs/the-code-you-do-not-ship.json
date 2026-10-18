@@ -1,0 +1,191 @@
+{
+  "slug": "the-code-you-do-not-ship",
+  "teaser": "Code is a liability, the worst bugs sit in features nobody needed, and models make removing it safe. The minimal viable code path, and who maintains it.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "The future of software is removing functionality: the minimal viable code path from the use case down, made safe by model-built scaffolding and maps of what each use case calls, maintained by a fractal market of specialists whose pieces carry their own policies and stage, and driven by what users feel rather than by security.",
+  "nodes": [
+    {
+      "id": "liability",
+      "label": "Code is a liability",
+      "kind": "claim",
+      "summary": "Every line is a capability."
+    },
+    {
+      "id": "grant",
+      "label": "Unused code is an unaccepted grant",
+      "kind": "concept",
+      "summary": "A zero-day is the gap exploited."
+    },
+    {
+      "id": "log4j",
+      "label": "Log4Shell",
+      "kind": "example",
+      "summary": "A convenience lookup, removed in 2.16.0."
+    },
+    {
+      "id": "cases",
+      "label": "ImageTragick, Heartbleed, Text4Shell, SSRF",
+      "kind": "example",
+      "summary": "Fixed by turning features off."
+    },
+    {
+      "id": "curl",
+      "label": "One in five curl CVEs",
+      "kind": "example",
+      "summary": "In protocols an HTTPS app never needs."
+    },
+    {
+      "id": "notscale",
+      "label": "Why it never scaled",
+      "kind": "question",
+      "summary": "No map, no tests; paid for features."
+    },
+    {
+      "id": "changed",
+      "label": "Models build the scaffolding and the map",
+      "kind": "claim",
+      "summary": "Removal becomes safe."
+    },
+    {
+      "id": "measured",
+      "label": "428 of 1,500 files",
+      "kind": "example",
+      "summary": "A tree of only those passed."
+    },
+    {
+      "id": "research",
+      "label": "The research agrees",
+      "kind": "concept",
+      "summary": "Debloating, bloat, reachability."
+    },
+    {
+      "id": "path",
+      "label": "The minimal viable code path",
+      "kind": "method",
+      "summary": "From the use case down."
+    },
+    {
+      "id": "market",
+      "label": "A fractal market of maintainers",
+      "kind": "concept",
+      "summary": "Kernel, components, glue, user level."
+    },
+    {
+      "id": "policies",
+      "label": "Code with its own policies",
+      "kind": "concept",
+      "summary": "Behaviour, decision, workflow, stage."
+    },
+    {
+      "id": "driver",
+      "label": "The driver is the user",
+      "kind": "claim",
+      "summary": "Faster and simpler, like sgit's constraints."
+    }
+  ],
+  "edges": [
+    {
+      "from": "liability",
+      "to": "grant",
+      "rel": "leads-to"
+    },
+    {
+      "from": "log4j",
+      "to": "grant",
+      "rel": "example-of"
+    },
+    {
+      "from": "cases",
+      "to": "grant",
+      "rel": "example-of"
+    },
+    {
+      "from": "curl",
+      "to": "grant",
+      "rel": "example-of"
+    },
+    {
+      "from": "notscale",
+      "to": "changed",
+      "rel": "answers"
+    },
+    {
+      "from": "measured",
+      "to": "changed",
+      "rel": "example-of"
+    },
+    {
+      "from": "research",
+      "to": "path",
+      "rel": "extends"
+    },
+    {
+      "from": "changed",
+      "to": "path",
+      "rel": "leads-to"
+    },
+    {
+      "from": "path",
+      "to": "market",
+      "rel": "leads-to"
+    },
+    {
+      "from": "policies",
+      "to": "market",
+      "rel": "extends"
+    },
+    {
+      "from": "driver",
+      "to": "path",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-minimum-code-below",
+      "the-eyeballs-get-cheap",
+      "the-value-of-constraints",
+      "software-vendors-as-villagers",
+      "three-policies-for-an-agent",
+      "a-minimal-viable-browser"
+    ],
+    "pages": [],
+    "sites": [
+      "https://logging.apache.org/log4j/2.x/release-notes.html",
+      "https://www.usenix.org/conference/usenixsecurity19/presentation/azad",
+      "https://arxiv.org/abs/2301.07972",
+      "https://curl.se/docs/vuln.pm"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The best code to protect is the code that is not there.",
+      "why": "The thesis."
+    },
+    {
+      "text": "That is the point: the capability is gone, not just unused.",
+      "why": "The measurement."
+    },
+    {
+      "text": "Users should choose it because it is better, not because they are told to.",
+      "why": "The driver."
+    }
+  ],
+  "figures": [
+    {
+      "file": "nc-path.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nc-path.webp",
+      "caption": "The minimal viable code path. From the use case down through features, components, libraries, the runtime and the operating system, each layer keeps only the code the layer above calls; everything else is shipped and never called, and should go. The bars are illustrative; the measured example below them is from this site's own tool: of 1,500 files in sgit and its dependencies, 428 ran for a CI use case, and a tree holding only those passed it.",
+      "kind": "concept"
+    },
+    {
+      "file": "nc-market.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nc-market.webp",
+      "caption": "medium",
+      "kind": "Who keeps the minimal code working: a fractal market of maintainers. The kernel, a few thousand lines that must be right, at town-planner stage; components with one job each, maintained by the specialists who know that job; glue that joins components for a domain; and the user level, where explorers build what they need on top. Each piece ships its own behaviour, decision and workflow policies, and its stage tells the buyer how much risk it carries."
+    }
+  ]
+}

@@ -106,6 +106,11 @@ not publish.
 6. **Plainer words.** "Retire" rather than "get rid of". Short words where they exist.
 7. **Not "prose" for the finished article.** It is the article, the piece, the finished article; "prose" is
    kept for what a renderer does to a markdown file.
+8. **No superlative self-claims.** Not "the clearest example I have seen", "the best case study I can think
+   of", "one of the clearest statements", "the best brief ever written". They claim more than an article can
+   show and they cost it credibility. Say "a good example", "a useful test", or show why it matters.
+   `admin/build/wording.py` flags them, and the leak scan fails a commit that adds one; a phrase reviewed and
+   kept (a ranking inside a stated set) goes in `admin/build/wording-allow.txt`.
 
 And three the desk keeps:
 
@@ -335,6 +340,7 @@ Before the release, read the article once as the owner would and once as the val
 - Where this comes from: the origin, the responsibility line, every source dated, what counted the numbers.
 - No em-dash; no ladder word; no "perfect", "massively", "prose"; British spelling; no model name in the
   text; no absolute without a count; no private person named.
+- No superlative self-claim ("the clearest I have seen"): `python3 admin/build/wording.py FILE` is clean.
 - Every quote is word for word; every earlier article the argument rests on is linked the first time.
 - The graph has the slug, a teaser, one or two topics, the core idea, 10 to 15 nodes, the edges, the links
   and two exact quotes.

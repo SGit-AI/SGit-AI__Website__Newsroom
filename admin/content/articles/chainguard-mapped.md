@@ -53,7 +53,7 @@ The part I care about most is the data, because data is what others can build on
 - **VEX for libraries.** An [OpenVEX index](https://libraries.cgr.dev/openvex/v1/all.json) of 732 documents: 675 for Maven, 42 for PyPI, 9 for npm and 6 for Go.
 - **The reasons, until January.** The [Wolfi advisories](https://github.com/wolfi-dev/advisories) were kept in a public repository with a reason for each decision; its last change was in January 2026, it is now archived, and it points to Chainguard's security site instead.
 
-The public records say what the status is. In the current feed, a "false positive" carries no reason. The archived repository did, and it is the best evidence of how deep the analysis goes.
+The public records say what the status is. In the current feed, a "false positive" carries no reason. The archived repository did, and it is good evidence of how deep the analysis goes.
 
 ## How deep the graph goes {#depth}
 

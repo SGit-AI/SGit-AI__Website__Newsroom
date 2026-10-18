@@ -1,61 +1,61 @@
 {
-  "slug": "the-minimum-code-below",
-  "by": "newsroom.ux",
-  "sections": {
-    "top": {
-      "line": "Keep only the code each layer above actually needs",
-      "para": "Chainguard secures from the bottom up but stops at the application, leaving unused code, test-dependent assurance and a grant-more loop. The proposal is top-down: from the user story, keep only the minimum code each layer needs. Measured on sgit, 1,500 files became 428 with the use case passing, though compiled code stayed opaque.",
-      "hash": "d0dde469908b"
-    },
-    "in-short": {
-      "line": "Top-down minimisation cut sgit's tree to 428 files",
-      "para": "Bottom-up security leaves unused code, test-dependent assurance and the habit of granting more. Coming from the top, sgit's use case ran from 428 of 1,500 files, while other commands failed. One binary was three quarters of the bytes and only 38% of kept statements ran; removed code means nothing to patch, which can be certified.",
-      "hash": "811df5b65760"
-    },
-    "bottom-up": {
-      "line": "Bottom-up hardening leaves three gaps and stops at applications",
-      "para": "Chainguard rebuilds from source and ships minimal images, but even locked-down images hold code never run, about 70% of files in the measured case. Assurance still depends on testing, and the grant-more loop remains: Custom Assembly only adds packages. Application-layer fixes such as virtual patching do not appear on its public pages.",
-      "hash": "d27d6675164e"
-    },
-    "top-down": {
-      "line": "Ask each layer for the minimum code below it",
-      "para": "Start from the user story, then trace workflows, commands, modules, functions, dependency files, runtime parts and OS binaries, keeping only what the layer above needs. The higher the immutable line, the more of the system is fixed and small. Like a good linker applied to the whole stack, it kills living off the land.",
-      "hash": "b66050565c98"
-    },
-    "measured": {
-      "line": "sgit's use case ran from 428 of 1,500 files",
-      "para": "sgit 0.21.0 with four dependencies ran a CI use case under coverage, then again from a tree of only the files that ran. It passed: 418 of 1,416 Python files ran and source fell from 4.72 MB to 1.98 MB. Commands outside the use case failed with ModuleNotFoundError.",
-      "hash": "b221e0feb7ed"
-    },
-    "limits-measured": {
-      "line": "Compiled code, coverage gaps and coarse files limit it",
-      "para": "14.78 MB of the dependencies was compiled, almost all one 14.4 MB Rust binary in cryptography, which coverage cannot see inside. Coverage missed cffi's compiled backend, which the tests caught, so passing tests are the evidence. Only 38% of statements in kept files ran, so function-level removal would cut far more.",
-      "hash": "e9b792c5b4da"
-    },
-    "scale": {
-      "line": "Models and semantic graphs make minimisation scale at last",
-      "para": "Doing this by hand per application never scaled. Models are now good at understanding what each layer is for and calls, and a fractal semantic graph can hold the story down to OS files. Minimisation becomes a walk, each file's presence is explained by its path to a story, and tests prove it.",
-      "hash": "ca0067699872"
-    },
-    "landscape": {
-      "line": "Runtime minimisers exist; starting from use cases is new",
-      "para": "SlimToolkit, a CNCF Sandbox project, watches a running container and claims images up to 30 times smaller, and RapidFort removes components that never run, by its own figures. Both work from what a container did. The proposal starts from what the application is for, tracing every layer to function level.",
-      "hash": "9f834082b96d"
-    },
-    "certify": {
-      "line": "Builds traced to their use case can be certified",
-      "para": "If vulnerable code is never called, it should not be present; in a minimal build a vulnerability becomes a record that the code is absent. A build traced from story to OS, with graph and tests, is a high-assurance artefact a third party can certify. Chainguard is well placed to build it, or partner.",
-      "hash": "4e16ec95bb91"
-    },
-    "limits": {
-      "line": "One tool, one use case, some estimates untested",
-      "para": "Only sgit and four dependencies were measured once; the Python runtime and OS layers were not. The Lambda figure is from memory, Chainguard's plans are unknown beyond public pages and one conversation, and SlimToolkit and RapidFort figures were not tested. Anything the tests miss is removed, so tests define the application.",
-      "hash": "94c65963e4ed"
-    },
-    "sources": {
-      "line": "Sources: the sgit measurement and three vendor pages",
-      "para": "Drafted from a voice memo of 14 October 2026 after a conversation at Chainguard's event. The measurement ran sgit 0.21.0 in a fresh virtual environment under coverage 7 against a local vault server. External sources are Chainguard's Custom Assembly overview, SlimToolkit and RapidFort, all read on 14 October 2026.",
-      "hash": "045974107a34"
-    }
+ "slug": "the-minimum-code-below",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "Keep only the code each layer above actually needs",
+   "para": "Chainguard secures from the bottom up but stops at the application, leaving unused code, test-dependent assurance and a grant-more loop. The proposal is top-down: from the user story, keep only the minimum code each layer needs. Measured on sgit, 1,500 files became 428 with the use case passing, though compiled code stayed opaque.",
+   "hash": "e646a6f17fda"
+  },
+  "in-short": {
+   "line": "Top-down minimisation cut sgit's tree to 428 files",
+   "para": "Bottom-up security leaves unused code, test-dependent assurance and the habit of granting more. Coming from the top, sgit's use case ran from 428 of 1,500 files, while other commands failed. One binary was three quarters of the bytes and only 38% of kept statements ran; removed code means nothing to patch, which can be certified.",
+   "hash": "811df5b65760"
+  },
+  "bottom-up": {
+   "line": "Bottom-up hardening leaves three gaps and stops at applications",
+   "para": "Chainguard rebuilds from source and ships minimal images, but even locked-down images hold code never run, about 70% of files in the measured case. Assurance still depends on testing, and the grant-more loop remains: Custom Assembly only adds packages. Application-layer fixes such as virtual patching do not appear on its public pages.",
+   "hash": "d27d6675164e"
+  },
+  "top-down": {
+   "line": "Ask each layer for the minimum code below it",
+   "para": "Start from the user story, then trace workflows, commands, modules, functions, dependency files, runtime parts and OS binaries, keeping only what the layer above needs. The higher the immutable line, the more of the system is fixed and small. Like a good linker applied to the whole stack, it kills living off the land.",
+   "hash": "b66050565c98"
+  },
+  "measured": {
+   "line": "sgit's use case ran from 428 of 1,500 files",
+   "para": "sgit 0.21.0 with four dependencies ran a CI use case under coverage, then again from a tree of only the files that ran. It passed: 418 of 1,416 Python files ran and source fell from 4.72 MB to 1.98 MB. Commands outside the use case failed with ModuleNotFoundError.",
+   "hash": "b221e0feb7ed"
+  },
+  "limits-measured": {
+   "line": "Compiled code, coverage gaps and coarse files limit it",
+   "para": "14.78 MB of the dependencies was compiled, almost all one 14.4 MB Rust binary in cryptography, which coverage cannot see inside. Coverage missed cffi's compiled backend, which the tests caught, so passing tests are the evidence. Only 38% of statements in kept files ran, so function-level removal would cut far more.",
+   "hash": "e9b792c5b4da"
+  },
+  "scale": {
+   "line": "Models and semantic graphs make minimisation scale at last",
+   "para": "Doing this by hand per application never scaled. Models are now good at understanding what each layer is for and calls, and a fractal semantic graph can hold the story down to OS files. Minimisation becomes a walk, each file's presence is explained by its path to a story, and tests prove it.",
+   "hash": "ca0067699872"
+  },
+  "landscape": {
+   "line": "Runtime minimisers exist; starting from use cases is new",
+   "para": "SlimToolkit, a CNCF Sandbox project, watches a running container and claims images up to 30 times smaller, and RapidFort removes components that never run, by its own figures. Both work from what a container did. The proposal starts from what the application is for, tracing every layer to function level.",
+   "hash": "9f834082b96d"
+  },
+  "certify": {
+   "line": "Builds traced to their use case can be certified",
+   "para": "If vulnerable code is never called, it should not be present; in a minimal build a vulnerability becomes a record that the code is absent. A build traced from story to OS, with graph and tests, is a high-assurance artefact a third party can certify. Chainguard is well placed to build it, or partner.",
+   "hash": "4e16ec95bb91"
+  },
+  "limits": {
+   "line": "One tool, one use case, some estimates untested",
+   "para": "Only sgit and four dependencies were measured once; the Python runtime and OS layers were not. The Lambda figure is from memory, Chainguard's plans are unknown beyond public pages and one conversation, and SlimToolkit and RapidFort figures were not tested. Anything the tests miss is removed, so tests define the application.",
+   "hash": "94c65963e4ed"
+  },
+  "sources": {
+   "line": "Sources: the sgit measurement and three vendor pages",
+   "para": "Drafted from a voice memo of 14 October 2026 after a conversation at Chainguard's event. The measurement ran sgit 0.21.0 in a fresh virtual environment under coverage 7 against a local vault server. External sources are Chainguard's Custom Assembly overview, SlimToolkit and RapidFort, all read on 14 October 2026.",
+   "hash": "045974107a34"
   }
+ }
 }

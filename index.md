@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.105 · 178 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.106 · 182 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](articles/what-can-your-agent-reach.md), 2026-10-18, 13 min. RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
+- [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min. A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
 
 ## Highlights
 
-- [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](articles/free-models-your-own-key.md), 2026-10-18, 13 min.
-- [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](articles/inside-the-northstar-twin.md), 2026-10-18, 10 min.
-- [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](articles/allowed-is-not-right.md), 2026-10-18, 11 min.
-- [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](articles/three-policies-for-an-agent.md), 2026-10-17, 8 min.
+- [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
+- [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](articles/cloudflare-as-lego-blocks.md), 2026-10-18, 9 min.
+- [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 12 min.
+- [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](articles/what-can-your-agent-reach.md), 2026-10-18, 13 min.
 
 ## Who are you reading as?
 
@@ -28,23 +28,23 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (53)
+### Agent security & policy (55)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
+- [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 12 min.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](articles/what-can-your-agent-reach.md), 2026-10-18, 13 min.
-- [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](articles/inside-the-northstar-twin.md), 2026-10-18, 10 min.
-- [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](articles/allowed-is-not-right.md), 2026-10-18, 11 min.
 
-### Building with agents (29)
+### Building with agents (30)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](articles/cloudflare-as-lego-blocks.md), 2026-10-18, 9 min.
 - [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](articles/fix-the-page-yourself.md), 2026-10-17, 10 min.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 12 min.
-- [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](articles/the-scripted-talk.md), 2026-10-15, 7 min.
 
-### Vaults & provenance (34)
+### Vaults & provenance (35)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min.
 - [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](articles/research-delivered-as-a-vault.md), 2026-10-16, 10 min.
 - [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](articles/sgit-is-a-standard.md), 2026-10-16, 8 min.
-- [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](articles/one-vault-ten-agents.md), 2026-10-16, 7 min.
 
 ### The future of news (32)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

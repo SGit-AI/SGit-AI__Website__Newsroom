@@ -73,6 +73,130 @@
   ],
   "articles": [
     {
+      "slug": "the-editors-channel",
+      "title": "The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-editors-channel.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-editors-channel.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-editors-channel.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-editors-channel.json",
+      "teaser": "A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.",
+      "summary": "Most of what I tell this newsroom's agent I type into a chat, and most of it is about something I was reading a minute earlier: this sentence is over the top, that figure is too big, this one is fine, ship it. The chat loses where I was. The site already has most of a better channel: a lane I send notes down, an inbox any browser can append to, a vault that carries my reading between devices. What it does not have is an editor's channel, where what I read, what I sign off and what I want changed reaches the agent on its own, and where the agent answers. This proposes one. A browser becomes an editor's when it is given a key, made by the agent or by another editor; without it, the site is the plain reader's site, unchanged. With it, on newsroom pages only, my reads, my sign-offs against the article's version, my fixes with the phrase selected and my tweaks go up to an editor vault, a subset of my reading account and never all of it. Once a day, and whenever I press a button, an agent with a written mandate reads the vault, runs the checks, such as the wording check I asked for today, applies what is cheap to undo, proposes the rest, and writes back. Around it are five audiences, from the plain reader who sends nothing to the editor who sends everything, each with its own lane and its own key: an anonymous append lane behind a checkbox, a named reader's lane, and the two-way editor's vault. The keys are shared secrets today. They should become key pairs, one per person and per agent, and the inbox already uses one. Another agent on this site builds the vault pane; the brief for it is linked at the end.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "newsroom",
+        "editor",
+        "feedback-loop",
+        "vaults",
+        "append-lanes",
+        "agents",
+        "privacy",
+        "pki",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "the-code-you-do-not-ship",
+      "title": "The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-code-you-do-not-ship.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-code-you-do-not-ship.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-code-you-do-not-ship.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-code-you-do-not-ship.json",
+      "teaser": "Code is a liability, the worst bugs sit in features nobody needed, and models make removing it safe. The minimal viable code path, and who maintains it.",
+      "summary": "Code is a liability. Every line that ships is a capability somebody may one day use in a way nobody intended, and the worst vulnerabilities of the last decade sat in features the application never needed. Log4j would look up a name over the network because a message string asked it to. I have argued for removing code for years, and it never scaled, for two reasons. Removing code safely needs a map of what each piece is for, and the tests and environments to prove nothing broke; and vendors were paid for new features, not for less. Both have changed. Models can now build the plumbing, the scaffolding and the tests that make removal safe, and model what each function, use case and flow actually calls. This site measured it on its own tool: of 1,500 files in sgit and its dependencies, 428 ran for one real use case, and a tree holding only those passed it. So I think the direction of travel is the minimal viable code path: the smallest code that does exactly the job, for components, for applications and for the platforms under them. That changes the business too. The specialist who knows a component best maintains a minimal version of it for the people above them, in a fractal market of maintainers, each piece shipping with its own behaviour, decision and workflow policies and a stage, explorer, villager or town planner, that says how much risk it carries. And the driver will not be security. It will be what users feel: faster, lighter, simpler software that does what they need, the same way encryption made sgit better by constraining it.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "software",
+        "minimal-code",
+        "attack-surface",
+        "dependencies",
+        "debloating",
+        "wardley-maps",
+        "agent-behaviour-policy",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "cloudflare-as-lego-blocks",
+      "title": "Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/cloudflare-as-lego-blocks.html",
+      "markdown": "https://newsroom.sgit.ai/articles/cloudflare-as-lego-blocks.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/cloudflare-as-lego-blocks.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/cloudflare-as-lego-blocks.json",
+      "teaser": "Cloudflare's developer platform as the smallest free blocks a non-specialist can use, and an sgit vault on it: no code read-only, 83 lines read-write.",
+      "summary": "I keep my domains at Cloudflare, and Cloudflare keeps shipping good things, but I do not want to learn Cloudflare. I want to use it, the way a non-specialist would, with an agent doing the one-time setup. So this maps its developer platform, as of 18 October 2026, as the smallest blocks a person could put together, each with what it is for and what is free: static hosting with unlimited free requests, Workers at 100,000 requests a day, R2 storage with no egress fees, D1, KV and Durable Objects, 71 models running on Cloudflare's own GPUs with 10,000 free neurons a day and a promise not to train on what you send, inbound email, Zero Trust access for up to 50 users, and domains at cost. Then it tests the question I most wanted answered: can an sgit vault live on Cloudflare? A read-only vault needs no code at all. `sgit publish` writes a folder any static host can serve, and the real sgit client cloned it back identically. A read-write vault needs one Worker of 83 lines, one R2 bucket and one Durable Object per vault, all on the free plan. We wrote it and ran it in Cloudflare's own local runtime with the real client: create, push, clone, a stale push that merged, two pushes at once where one was told \"nothing was overwritten\", a read-only clone that could not write, and no plaintext anywhere on the server. The catch for non-specialists is setup: Cloudflare's API cannot be called from a web page, so the one-time setup is a Deploy to Cloudflare button, a temporary account, or an agent with the command line. That is fine, because it happens once.",
+      "topics": [
+        "vaults-and-method"
+      ],
+      "tags": [
+        "cloudflare",
+        "workers",
+        "r2",
+        "durable-objects",
+        "workers-ai",
+        "sgit",
+        "vaults",
+        "minimal-code",
+        "self-hosting",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "a-minimal-viable-browser",
+      "title": "A minimal viable browser: why Firefox is the one that can build it, and what it would take",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-minimal-viable-browser.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-minimal-viable-browser.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-minimal-viable-browser.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-minimal-viable-browser.json",
+      "teaser": "A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.",
+      "summary": "The browser is the biggest program most of us run, the largest attack surface on the machine, and the place we now want to put agents. It does far more than any single job needs. A kiosk running one application, an agent filling in one form, and a person reading the news all get the same enormous engine, with every feature on. This follows the argument of the code you do not ship to its most visible case. A minimal viable browser has a small kernel, reviewed hardest and changed least, and loads components only when a page or an agent needs them, so its attack surface grows only as it is used. A browser for one application has no extensions, no media and no downloads. A browser for one agent has no accounts, no extensions and no file access, which is a practical defence against prompt injection: an agent cannot leak what its browser cannot reach. And every extension runs in its own box, with only the access its job needs, instead of the \"read and change all your data on all websites\" that so many hold today. Several projects already do part of this, from hardened Firefox forks to headless browsers built for agents. But I think Mozilla is uniquely placed to do all of it: it has its own engine, privacy is its brand, it runs on the client, and its revenue still does not depend on knowing more about its users. The pitch to Mozilla, though, should not be security. It should be speed: a browser that only has the code it needs is a browser that starts instantly and uses a fraction of the memory.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "browsers",
+        "firefox",
+        "mozilla",
+        "minimal-code",
+        "agents",
+        "prompt-injection",
+        "extensions",
+        "attack-surface",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "what-can-your-agent-reach",
       "title": "What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide",
       "date": "2026-10-18",
@@ -178,7 +302,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/allowed-is-not-right.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/allowed-is-not-right.json",
       "teaser": "Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.",
-      "summary": "Ashish Rajan's article on trustworthy AI systems has the clearest example I have seen of the gap between what an agent is allowed to do and what it should do. Northstar's support agent may refund up to $200, enforced by the payment service. A customer is owed $120; the agent misreads a discount and refunds $150. Every control passes, and the outcome is wrong. His answer is four questions, SECURE, OBSERVE, RESPOND and VERIFY, and I agree with all four. This is how we answer them, and what I think the example adds. The Agent Behaviour Policy we publish answers SECURE: what an agent may do and reach, enforced where the agent cannot argue. But a behaviour policy cannot answer VERIFY, because to prove the intended outcome occurred, someone has to have written down what the intended outcome is. That is a decision policy: who decides the amount, on what evidence, and who is called when the rules run out. With a workflow policy for the order things happen in, the three policies map onto his four questions, and his example showed me a gap in my own series. To test it, we built his store as a twin in a vault: thirteen synthetic refund requests, four designs of the controls, every decision replayable. The design in the article overpays $458 and leaves $341.60 owed. Adding SECURE, OBSERVE and RESPOND stops most of the overpayment by refusing, and leaves customers waiting. Adding VERIFY gets every amount right at 57 minutes of people's time a day. Adding a decision policy and precedents gets every case right, decided by the right decider, in 18. And his closing question, what evidence would let us remove the human, has an answer in the record those precedents leave.",
+      "summary": "Ashish Rajan's article on trustworthy AI systems opens with a good example of the gap between what an agent is allowed to do and what it should do. Northstar's support agent may refund up to $200, enforced by the payment service. A customer is owed $120; the agent misreads a discount and refunds $150. Every control passes, and the outcome is wrong. His answer is four questions, SECURE, OBSERVE, RESPOND and VERIFY, and I agree with all four. This is how we answer them, and what I think the example adds. The Agent Behaviour Policy we publish answers SECURE: what an agent may do and reach, enforced where the agent cannot argue. But a behaviour policy cannot answer VERIFY, because to prove the intended outcome occurred, someone has to have written down what the intended outcome is. That is a decision policy: who decides the amount, on what evidence, and who is called when the rules run out. With a workflow policy for the order things happen in, the three policies map onto his four questions, and his example showed me a gap in my own series. To test it, we built his store as a twin in a vault: thirteen synthetic refund requests, four designs of the controls, every decision replayable. The design in the article overpays $458 and leaves $341.60 owed. Adding SECURE, OBSERVE and RESPOND stops most of the overpayment by refusing, and leaves customers waiting. Adding VERIFY gets every amount right at 57 minutes of people's time a day. Adding a decision policy and precedents gets every case right, decided by the right decider, in 18. And his closing question, what evidence would let us remove the human, has an answer in the record those precedents leave.",
       "topics": [
         "agents-and-policy",
         "vaults-and-method"
@@ -404,7 +528,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/fix-the-page-yourself.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/fix-the-page-yourself.json",
       "teaser": "A bookmarklet from my security days, a page API every site should publish, and six fixes running on this newsroom: the next UX is the user's own.",
-      "summary": "Years ago, during a security assessment, I packaged an exploit as a bookmarklet, a bookmark that runs a line of JavaScript on the page you are on, and gave it to the business owner to show that one user could see data they should never see. She was more excited about the interface I had wrapped it in than about the vulnerability, because my quick Bootstrap page was so much better than the application she used every day. That story still describes most of the web. Sites are built to show ads and hold attention, not to let me read; even the newest products have gaps their own users could fix in a line of code. My argument is that the next generation of user experience is the one the user customises, and that sites should encourage it: publish a small JavaScript API for the page, the primitives a fix needs, so that every fix is one line, the same API serves tests and agents, and the fixes people keep become the best brief the site will ever get. It is also the cheapest route to accessibility, because each reader can build what they need on primitives the site provides. This newsroom now does it: a page API with six fixes, from reading mode to WCAG text spacing, as buttons, bookmarklets and code. The rest is a brief: a community library of fixes, per-site extensions that only touch the tab you click, and the same API on sgit.ai and ruv.sgit.ai.",
+      "summary": "Years ago, during a security assessment, I packaged an exploit as a bookmarklet, a bookmark that runs a line of JavaScript on the page you are on, and gave it to the business owner to show that one user could see data they should never see. She was more excited about the interface I had wrapped it in than about the vulnerability, because my quick Bootstrap page was so much better than the application she used every day. That story still describes most of the web. Sites are built to show ads and hold attention, not to let me read; even the newest products have gaps their own users could fix in a line of code. My argument is that the next generation of user experience is the one the user customises, and that sites should encourage it: publish a small JavaScript API for the page, the primitives a fix needs, so that every fix is one line, the same API serves tests and agents, and the fixes people keep become a better brief than the site could write itself. It is also the cheapest route to accessibility, because each reader can build what they need on primitives the site provides. This newsroom now does it: a page API with six fixes, from reading mode to WCAG text spacing, as buttons, bookmarklets and code. The rest is a brief: a community library of fixes, per-site extensions that only touch the tab you click, and the same API on sgit.ai and ruv.sgit.ai.",
       "topics": [
         "site-and-engineering",
         "startups-and-strategy"
@@ -470,7 +594,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/who-will-fix-your-mess.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/who-will-fix-your-mess.json",
       "teaser": "HBR's deployment gap, answered from this site's articles: explorers, villagers and town planners, a record the agents keep, and open source.",
-      "summary": "Harvard Business Review published \"Turn Vibe-Coded Prototypes Into Tools Your Company Can Actually Use\" on 16 October 2026, by José Parra Moyano and Karl Schmedders of IMD, Olivier Laplace of Vi Partners and Benjamin Torben-Nielsen of Roche. Its argument, as its summary and Olivier's post put it: AI has made building software feel almost free, so the prototype is the easy part and turning it into a tool people rely on is the hard part, which they call the deployment gap; nobody in-house knows how an AI-designed tool is built; build where you are different and partner where specialists live the problem. I agree with almost all of it, and I think this site has already answered the question in a set of articles, with Simon Wardley's explorers, villagers and town planners as the frame. The gap is not a place to stop; it is a handover between people with different skills. The prototype is not the mess; it is the best brief anyone will write. The architecture an agent designed can be known, if the agents leave a record: a mandate, a memory and a graph. Their bonus test is the town planner's accountability by another name. And the answer to \"who will fix your mess?\" should never depend on one partner: if the code is open, anyone can. I have read the public summary and Olivier's post, not the full article, which is behind a paywall.",
+      "summary": "Harvard Business Review published \"Turn Vibe-Coded Prototypes Into Tools Your Company Can Actually Use\" on 16 October 2026, by José Parra Moyano and Karl Schmedders of IMD, Olivier Laplace of Vi Partners and Benjamin Torben-Nielsen of Roche. Its argument, as its summary and Olivier's post put it: AI has made building software feel almost free, so the prototype is the easy part and turning it into a tool people rely on is the hard part, which they call the deployment gap; nobody in-house knows how an AI-designed tool is built; build where you are different and partner where specialists live the problem. I agree with almost all of it, and I think this site has already answered the question in a set of articles, with Simon Wardley's explorers, villagers and town planners as the frame. The gap is not a place to stop; it is a handover between people with different skills. The prototype is not the mess; it is a better brief than any document. The architecture an agent designed can be known, if the agents leave a record: a mandate, a memory and a graph. Their bonus test is the town planner's accountability by another name. And the answer to \"who will fix your mess?\" should never depend on one partner: if the code is open, anyone can. I have read the public summary and Olivier's post, not the full article, which is behind a paywall.",
       "topics": [
         "startups-and-strategy",
         "agents-and-policy"
@@ -956,7 +1080,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/the-graphs-books.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/the-graphs-books.json",
       "teaser": "Three books on graphs.sgit.ai, written by agents in a day: the altitudes, the board, the book as a graph, and why they stopped under review.",
-      "summary": "In August, on graphs.sgit.ai, agents wrote three books from a month of work on fractal semantic graphs, about 100,000 words between them, because I had a long flight the next day and wanted something to read. I read them, printed, and made a lot of notes. They are good, and much of what is in them, and in how they were made, now runs this newsroom. But two months later they are still at v0.3.0, v0.2.0 and v0.1.0, under review or held. This is the story of those books: what each one argues; the experiments around them, from an altitude ladder that compresses a book into one paragraph and lets you climb back down, to a board of workstreams and a book decomposed to the word and rebuilt byte-identical; why the book about making books read far better than the book about graphs; and where it stopped, which is the most useful part. The change-control workflow designed to apply my review notes had seven stages, and the approve stage was me. Nothing ever passed through it. It is the clearest example I have of a workflow that moves fast while there is energy and then stops, because the next step is too big, and it is why the next books will be made from articles.",
+      "summary": "In August, on graphs.sgit.ai, agents wrote three books from a month of work on fractal semantic graphs, about 100,000 words between them, because I had a long flight the next day and wanted something to read. I read them, printed, and made a lot of notes. They are good, and much of what is in them, and in how they were made, now runs this newsroom. But two months later they are still at v0.3.0, v0.2.0 and v0.1.0, under review or held. This is the story of those books: what each one argues; the experiments around them, from an altitude ladder that compresses a book into one paragraph and lets you climb back down, to a board of workstreams and a book decomposed to the word and rebuilt byte-identical; why the book about making books read far better than the book about graphs; and where it stopped, which is the most useful part. The change-control workflow designed to apply my review notes had seven stages, and the approve stage was me. Nothing ever passed through it. It is a good example of a workflow that moves fast while there is energy and then stops, because the next step is too big, and it is why the next books will be made from articles.",
       "topics": [
         "graphs-and-knowledge",
         "site-and-engineering"
@@ -1088,7 +1212,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/explorer-coding.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/explorer-coding.json",
       "teaser": "Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.",
-      "summary": "I would like to propose a better name for what is usually called vibe coding: explorer coding. Vibe coding sounds as if people are just typing and ad-libbing, and I have never liked it, because what they are doing is the best thing to happen to software since the spreadsheet: everyone with a need can now explore it by building, with the fast feedback loop that made spreadsheets win, and what they build is the best brief anyone will ever write. Explorer is Simon Wardley's word for exactly that kind of work. It also makes the limit clear. An explorer-coded app may look and feel like an application, but nobody has read the code or checked the architecture, and it is not ready to be in line: once other people depend on it, it is mission critical, and it needs villagers to maintain it, with agent behaviour policies, data handling and releases that do not break it, and then town planners who own the code in production and are accountable for it, as the Linux kernel, Fedora and GitHub already say the human who ships code must be. The further towards commodity, the fewer agents in line and the more deterministic code. And it suggests a commercial model: every product should have an explorer version, where users reshape it by talking to it, and paid conversions from there to a villager product and a town planner one.",
+      "summary": "I would like to propose a better name for what is usually called vibe coding: explorer coding. Vibe coding sounds as if people are just typing and ad-libbing, and I have never liked it, because what they are doing is the best thing to happen to software since the spreadsheet: everyone with a need can now explore it by building, with the fast feedback loop that made spreadsheets win, and what they build is a better brief than any document. Explorer is Simon Wardley's word for exactly that kind of work. It also makes the limit clear. An explorer-coded app may look and feel like an application, but nobody has read the code or checked the architecture, and it is not ready to be in line: once other people depend on it, it is mission critical, and it needs villagers to maintain it, with agent behaviour policies, data handling and releases that do not break it, and then town planners who own the code in production and are accountable for it, as the Linux kernel, Fedora and GitHub already say the human who ships code must be. The further towards commodity, the fewer agents in line and the more deterministic code. And it suggests a commercial model: every product should have an explorer version, where users reshape it by talking to it, and paid conversions from there to a villager product and a town planner one.",
       "topics": [
         "startups-and-strategy",
         "agents-and-policy"
@@ -1823,7 +1947,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/commanders-intent-is-a-behaviour-policy.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/commanders-intent-is-a-behaviour-policy.json",
       "teaser": "Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.",
-      "summary": "Josh Devon of Sondera published an article today that I think is one of the clearest statements of the problem we keep writing about. Agents do not go rogue; they follow the instructions they were given and fill the gaps with whatever gets the job done. The military solved this a long time ago with commander's intent, the objective and its limits written down together, and agents inherited the initiative and none of the limits. His answer is to write the limits about effects, not actions, compile them into rules a machine can check, and enforce them outside the agent before every action. We are talking about the same thing in different words, so I joined the two vocabularies: twelve of their terms against ours, most of them the same idea, and two places where one side goes further. We go further up, into the business layer, where an agent's limits stop being universal and become how a company does invoices and who it is in dispute with. They go further in proof, compiling plain English into Cedar and checking it with a theorem prover. To show the two halves meeting, I wrote five rules as Cedar, their published example, two from this session's own policy, one from the skill policy I published today and two from our business layer, and evaluated fourteen requests against them. All fourteen came out as intended. The incidents behind their argument check out against Anthropic's and the UK AI Security Institute's own reports, with a few figures rounded differently.",
+      "summary": "Josh Devon of Sondera published an article today that states clearly the problem we keep writing about. Agents do not go rogue; they follow the instructions they were given and fill the gaps with whatever gets the job done. The military solved this a long time ago with commander's intent, the objective and its limits written down together, and agents inherited the initiative and none of the limits. His answer is to write the limits about effects, not actions, compile them into rules a machine can check, and enforce them outside the agent before every action. We are talking about the same thing in different words, so I joined the two vocabularies: twelve of their terms against ours, most of them the same idea, and two places where one side goes further. We go further up, into the business layer, where an agent's limits stop being universal and become how a company does invoices and who it is in dispute with. They go further in proof, compiling plain English into Cedar and checking it with a theorem prover. To show the two halves meeting, I wrote five rules as Cedar, their published example, two from this session's own policy, one from the skill policy I published today and two from our business layer, and evaluated fourteen requests against them. All fourteen came out as intended. The incidents behind their argument check out against Anthropic's and the UK AI Security Institute's own reports, with a few figures rounded differently.",
       "topics": [
         "agents-and-policy",
         "graphs-and-knowledge"
@@ -1952,7 +2076,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/hooks-are-kernel-code.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/hooks-are-kernel-code.json",
       "teaser": "Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.",
-      "summary": "The hooks we are now going to deploy are code, and very critical code. They are also a very good example of code that is simple in many ways: a hook can be five lines. That makes them the best case study I can think of for everything we do on code review, code practices, semantic graphs and change blast radius, because the problem is small enough to do completely. A hook runs on every matching action, with the user's permissions, and can see, block or rewrite what the agent does; we should treat it like kernel code. Hooks also range from completely deterministic scripts to hooks that call a model or a whole agent, so I propose a maturity model: five levels from the prompt to off the machine, and three questions for every hook, how much power it has, which legs of the lethal trifecta it touches, and how much sandbox it runs in. I mapped the first ten: three this session runs, five tested in a sandbox, two proposed. They are between 4 and 26 lines, and the smallest of them depend on much more: the eleven-line commit hook calls a 37-line scan, so one line changed in the scan moves the commit gate for every session. And this is a brief for a site and a feed to manage them, like a skills manager: every hook from its intent, with its graph, tests, version and signature, installable anywhere, and a billing model where nobody pays to run a hook, but paying buys state.",
+      "summary": "The hooks we are now going to deploy are code, and very critical code. They are also a very good example of code that is simple in many ways: a hook can be five lines. That makes them a good case study for everything we do on code review, code practices, semantic graphs and change blast radius, because the problem is small enough to do completely. A hook runs on every matching action, with the user's permissions, and can see, block or rewrite what the agent does; we should treat it like kernel code. Hooks also range from completely deterministic scripts to hooks that call a model or a whole agent, so I propose a maturity model: five levels from the prompt to off the machine, and three questions for every hook, how much power it has, which legs of the lethal trifecta it touches, and how much sandbox it runs in. I mapped the first ten: three this session runs, five tested in a sandbox, two proposed. They are between 4 and 26 lines, and the smallest of them depend on much more: the eleven-line commit hook calls a 37-line scan, so one line changed in the scan moves the commit gate for every session. And this is a brief for a site and a feed to manage them, like a skills manager: every hook from its intent, with its graph, tests, version and signature, installable anywhere, and a billing model where nobody pays to run a hook, but paying buys state.",
       "topics": [
         "agents-and-policy",
         "site-and-engineering"
@@ -2516,7 +2640,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/how-cheap-is-it-to-undo.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/how-cheap-is-it-to-undo.json",
       "teaser": "How much to let an agent ship on its own depends on how cheap it is to undo and how mature the controls are, and both of those move.",
-      "summary": "Writing about the human in the loop, we noticed something about our own workflow: this newsroom arrived, organically, at releasing on its own, fourteen times in one day, with nobody approving each release, while every email my agents write still waits for me to press send. I think that contrast goes to the heart of the question, and it is a spectrum, not a switch. The best test I know for how much to let go is how cheap it is to undo. I remember a senior executive, I think from Google, whose test for people asking to start a project or an experiment was exactly that: if it does not reach many people and can be switched off with little side effect, say yes, trust the people, have a go, because the only cost is the time and there is always learning; what worried him was how hard it would be to undo. Amazon put the same idea as one-way and two-way doors. An email is a one-way door: once it goes, you cannot claim it back, a mistake does damage straight away, and my email workflow is still in the explorer phase, with nascent controls and not yet many emails read and sent without changes. The newsroom is a two-way door: a correction is a new version, anyone who arrives after the fix gets the fixed page, few people are reading yet, new articles land in the latest list without being placed on the front page, and the checks and balances are mature, from the validator to the leak scan to briefing packs that hand work between sites. When I read an article, I am either happy with it or I make small changes; I have not yet read one and thought I do not want that live. So the spectrum has two axes, the cost of undoing and the maturity of the controls and the record, and both move: as readership grows the newsroom's side effects grow with it, and as the email controls mature, email can move the other way.",
+      "summary": "Writing about the human in the loop, we noticed something about our own workflow: this newsroom arrived, organically, at releasing on its own, fourteen times in one day, with nobody approving each release, while every email my agents write still waits for me to press send. I think that contrast goes to the heart of the question, and it is a spectrum, not a switch. A useful test for how much to let go is how cheap it is to undo. I remember a senior executive, I think from Google, whose test for people asking to start a project or an experiment was exactly that: if it does not reach many people and can be switched off with little side effect, say yes, trust the people, have a go, because the only cost is the time and there is always learning; what worried him was how hard it would be to undo. Amazon put the same idea as one-way and two-way doors. An email is a one-way door: once it goes, you cannot claim it back, a mistake does damage straight away, and my email workflow is still in the explorer phase, with nascent controls and not yet many emails read and sent without changes. The newsroom is a two-way door: a correction is a new version, anyone who arrives after the fix gets the fixed page, few people are reading yet, new articles land in the latest list without being placed on the front page, and the checks and balances are mature, from the validator to the leak scan to briefing packs that hand work between sites. When I read an article, I am either happy with it or I make small changes; I have not yet read one and thought I do not want that live. So the spectrum has two axes, the cost of undoing and the maturity of the controls and the record, and both move: as readership grows the newsroom's side effects grow with it, and as the email controls mature, email can move the other way.",
       "topics": [
         "agents-and-policy",
         "site-and-engineering"

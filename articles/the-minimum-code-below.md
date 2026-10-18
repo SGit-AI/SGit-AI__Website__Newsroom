@@ -10,11 +10,17 @@
 
 # The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/the-minimum-code-below.md) · [newsroom v0.12.38](https://newsroom.sgit.ai/admin/versions.html) · containerssupply-chainattack-surfaceminimisationchainguardfractal-semantic-graphscode-coveragehigh-assurancepythonarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/the-minimum-code-below.md) · [newsroom v0.12.38](https://newsroom.sgit.ai/admin/versions.html) · containerssupply-chainattack-surfaceminimisationchainguardfractal-semantic-graphscode-coveragehigh-assurancepythonarticle
 
 ***Abstract:** A conversation at Chainguard's event today sharpened something I have thought for a while. Chainguard does security from the bottom up, and does it very well: it rebuilds the operating system and the libraries from source, keeps the images minimal and manages the whole process. But even the most locked-down image still holds a great deal of code the application never runs, the assurance still depends on testing, and the loop that caused the problem in the first place is still there: when something breaks, you give it more. As soon as the work reaches the application, it stops. My proposal is to come from the other end. Start from the user story and, at every layer down, ask one question: what is the minimum code below this that the layer above needs? Keep that, remove everything else, and draw the immutable line as high as the evidence allows. It did not scale before; with models and fractal semantic graphs, it can. I measured it for this article on a real tool, sgit and its dependencies, running a CI-style use case under coverage and then running it again from a tree holding only the files that ran. Of 1,500 files, 428 were kept, and the use case passed; commands outside it failed because their code was not there. It also showed the limits: one compiled binary held three quarters of the bytes and no coverage tool can see inside it, and coverage missed a compiled module the tests then caught. Tools that minimise containers at run time already exist, so the new part is the direction: from what the application is for, through a graph, down to a build that can be certified. Chainguard is unusually well placed to offer it, and someone will build it.*
 
 Top down, one question at every layer: what is the minimum code below this that the layer above needs? From a user story, through the workflow, modules and functions, to the dependencies, the language runtime and the operating system. Projected from the top, derived from the code; derived and not projected is code nobody asked for.
+
+Less code: a series in four parts
+
+Code is a liability: remove what each use case does not call, apply it to the browser, and build on small blocks you did not have to write.
+
+[you are here1 · MeasuredThe minimum code belowOne real use case of sgit, under coverage: 428 of 1,500 files ran, and a tree of only those passed.](the-minimum-code-below.md)[2 · Less codeThe code you do not shipThe worst bugs sit in features nobody needed; models make removing them safe, and someone can be paid to keep it small.](the-code-you-do-not-ship.md)[3 · The browserA minimal viable browserA small kernel and components loaded when needed: a browser for one app, one agent, or a reader, sold as speed.](a-minimal-viable-browser.md)[4 · Small blocksCloudflare as Lego blocksStorage, compute, models, email and identity as blocks, and an sgit vault server in 83 lines.](cloudflare-as-lego-blocks.md)
 
 ## In short
 
@@ -119,6 +125,8 @@ Site & engineeringGraphs & knowledge[This article as a graph →](graphs.md#the-
 
 ### Continued by
 
+- [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](the-code-you-do-not-ship.md) Code is a liability, the worst bugs sit in features nobody needed, and models make removing it safe. The minimal viable code path, and who maintains it.
+- [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](cloudflare-as-lego-blocks.md) Cloudflare's developer platform as the smallest free blocks a non-specialist can use, and an sgit vault on it: no code read-only, 83 lines read-write.
 - [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](the-eyeballs-get-cheap.md) Cheap, deep AI security review gives open source the eyeballs it never had; with sovereignty and paid maintenance, all point at the least code in production.
 - [Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in](chainguard-mapped.md) Chainguard mapped from OS to agents, its public feeds counted, and the context layer above the package where an open policy and a vault fit.
 

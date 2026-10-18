@@ -12,6 +12,8 @@ status: published
 
 !shot mq-layers.webp | images/ | Top down, one question at every layer: what is the minimum code below this that the layer above needs? From a user story, through the workflow, modules and functions, to the dependencies, the language runtime and the operating system. Projected from the top, derived from the code; derived and not projected is code nobody asked for. | architecture
 
+!trail less-code
+
 ## In short {#in-short}
 
 - **Chainguard secures from the bottom up.** Rebuilt from source, minimal images, a managed process, and it stops where the application starts.

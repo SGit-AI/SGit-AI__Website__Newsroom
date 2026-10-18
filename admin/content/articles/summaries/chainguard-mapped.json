@@ -1,61 +1,61 @@
 {
-  "slug": "chainguard-mapped",
-  "by": "newsroom.ux",
-  "sections": {
-    "top": {
-      "line": "Chainguard's open data stops at the package",
-      "para": "Mapping Chainguard from operating system to agents, and counting its public feeds, found 12,480 advisories over 12,125 CVEs. Of 2,850 archived does-not-apply decisions, 177 gave a context reason. Deciding which images must be fixed needs a graph from user story to container, where an open behaviour policy and an encrypted vault fit.",
-      "hash": "27b08b4ce3fb"
-    },
-    "in-short": {
-      "line": "Chainguard builds openly, but context stops short",
-      "para": "Founded in 2021 by Sigstore, SLSA and distroless veterans, Chainguard builds from images to agent products. In a sample, 71% of findings were fixed and 19% marked as not applying. Only 177 of 2,850 decisions cite context, so the application-level context layer is open ground for policies and vaults.",
-      "hash": "acb11f187b38"
-    },
-    "why": {
-      "line": "This map underlies two earlier articles on Chainguard",
-      "para": "Chainguard featured in Attacks rewritten as mandates, where its controls would have held in most attacks, and in The minimum code below, which argued bottom-up security stops at the application. Projects like sgit ship containers, so the question is how far Chainguard's context goes.",
-      "hash": "a8ce0393d2da"
-    },
-    "company": {
-      "line": "Google supply chain veterans, now valued at $3.5 billion",
-      "para": "Chainguard was founded in October 2021 by people who worked on SLSA, Sigstore and distroless images at Google. It raised a $356 million Series D at a $3.5 billion valuation in April 2025. Wolfi's recipes are Apache-licensed, and it maintains apko, melange, gitsign, EmeritOSS and the Athena coalition.",
-      "hash": "150009c09e02"
-    },
-    "builds": {
-      "line": "Chainguard is moving from securing installs to governing agents",
-      "para": "It builds Wolfi and Chainguard OS, hardened images with five free in Catalog Starter, rebuilt libraries and over 1,000 hardened CI actions. Agent Skills is in beta, and on 14 October it announced MCP servers, Workspaces with egress policies, Checks with signed attestations and Harness, which hunts vulnerabilities.",
-      "hash": "551faeb9d327"
-    },
-    "publishes": {
-      "line": "Its public feeds give statuses but no current reasons",
-      "para": "The OSV feed lists 12,480 advisories over 12,125 CVEs and 1,224,077 package records. A sample of 300 found 71% fixed, 19% false positives, 6% awaiting upstream and 4% fix not planned. An OpenVEX index holds 732 documents, but current false positives carry no reason; the archived Wolfi repository did.",
-      "hash": "2c26c7a41fdd"
-    },
-    "depth": {
-      "line": "Only 6% of not-applicable decisions are about context",
-      "para": "The archive holds 30,030 advisories and 2,850 not-applicable decisions; most cite code not included or versions not used, and 177 cite execution path, adversary control or mitigations. That context concerns the package build, not the application. What matters is exploit paths, since updates are not free.",
-      "hash": "4fbe09313a92"
-    },
-    "context": {
-      "line": "Reachability sorts every finding into three deployment answers",
-      "para": "A graph from user story through exposed surface, code paths and library functions to image components sorts findings into must fix, ship with a reason, or ship and watch. It is a behaviour policy applied to an image: mandate, reach, gap and barrier. VEX can carry it, but only the application owner can write the justification.",
-      "hash": "1725237dfbc5"
-    },
-    "plug-in": {
-      "line": "Policies, vaults and an open format complement Chainguard",
-      "para": "Open behaviour policies could feed the policies Agent Skills, MCP servers and Workspaces enforce, with Checks attestations as the footprint. sgit vaults could carry sensitive advisories and decisions between CI stages. Deployment decisions should be an open, signed file with reasons, and open-source projects need a clear route to its images.",
-      "hash": "06428250fab9"
-    },
-    "limits": {
-      "line": "Counts come from public data, samples and archives",
-      "para": "Feeds were read on 14 October 2026 and customer data may hold more. Status shares come from 300 of 1.22 million records, and reason counts from an archive last changed in January 2026. The context layer is a proposal, the products are unused and partly beta, and company history comes from third parties.",
-      "hash": "b0dbda4116f2"
-    },
-    "sources": {
-      "line": "Sources: Chainguard's feeds, announcements and third-party reports",
-      "para": "Two voice memos of 14 October 2026, with the OSV indexes, a 300-record sample, the OpenVEX index and the archived wolfi-dev/advisories repository counted that day. Chainguard's Unchained announcements, its OSV and developer tier posts, Contrary Research and SecurityWeek.",
-      "hash": "ac94cc90b05b"
-    }
+ "slug": "chainguard-mapped",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "Chainguard's open data stops at the package",
+   "para": "Mapping Chainguard from operating system to agents, and counting its public feeds, found 12,480 advisories over 12,125 CVEs. Of 2,850 archived does-not-apply decisions, 177 gave a context reason. Deciding which images must be fixed needs a graph from user story to container, where an open behaviour policy and an encrypted vault fit.",
+   "hash": "27b08b4ce3fb"
+  },
+  "in-short": {
+   "line": "Chainguard builds openly, but context stops short",
+   "para": "Founded in 2021 by Sigstore, SLSA and distroless veterans, Chainguard builds from images to agent products. In a sample, 71% of findings were fixed and 19% marked as not applying. Only 177 of 2,850 decisions cite context, so the application-level context layer is open ground for policies and vaults.",
+   "hash": "acb11f187b38"
+  },
+  "why": {
+   "line": "This map underlies two earlier articles on Chainguard",
+   "para": "Chainguard featured in Attacks rewritten as mandates, where its controls would have held in most attacks, and in The minimum code below, which argued bottom-up security stops at the application. Projects like sgit ship containers, so the question is how far Chainguard's context goes.",
+   "hash": "a8ce0393d2da"
+  },
+  "company": {
+   "line": "Google supply chain veterans, now valued at $3.5 billion",
+   "para": "Chainguard was founded in October 2021 by people who worked on SLSA, Sigstore and distroless images at Google. It raised a $356 million Series D at a $3.5 billion valuation in April 2025. Wolfi's recipes are Apache-licensed, and it maintains apko, melange, gitsign, EmeritOSS and the Athena coalition.",
+   "hash": "150009c09e02"
+  },
+  "builds": {
+   "line": "Chainguard is moving from securing installs to governing agents",
+   "para": "It builds Wolfi and Chainguard OS, hardened images with five free in Catalog Starter, rebuilt libraries and over 1,000 hardened CI actions. Agent Skills is in beta, and on 14 October it announced MCP servers, Workspaces with egress policies, Checks with signed attestations and Harness, which hunts vulnerabilities.",
+   "hash": "551faeb9d327"
+  },
+  "publishes": {
+   "line": "Its public feeds give statuses but no current reasons",
+   "para": "The OSV feed lists 12,480 advisories over 12,125 CVEs and 1,224,077 package records. A sample of 300 found 71% fixed, 19% false positives, 6% awaiting upstream and 4% fix not planned. An OpenVEX index holds 732 documents, but current false positives carry no reason; the archived Wolfi repository did.",
+   "hash": "2024fada3638"
+  },
+  "depth": {
+   "line": "Only 6% of not-applicable decisions are about context",
+   "para": "The archive holds 30,030 advisories and 2,850 not-applicable decisions; most cite code not included or versions not used, and 177 cite execution path, adversary control or mitigations. That context concerns the package build, not the application. What matters is exploit paths, since updates are not free.",
+   "hash": "4fbe09313a92"
+  },
+  "context": {
+   "line": "Reachability sorts every finding into three deployment answers",
+   "para": "A graph from user story through exposed surface, code paths and library functions to image components sorts findings into must fix, ship with a reason, or ship and watch. It is a behaviour policy applied to an image: mandate, reach, gap and barrier. VEX can carry it, but only the application owner can write the justification.",
+   "hash": "1725237dfbc5"
+  },
+  "plug-in": {
+   "line": "Policies, vaults and an open format complement Chainguard",
+   "para": "Open behaviour policies could feed the policies Agent Skills, MCP servers and Workspaces enforce, with Checks attestations as the footprint. sgit vaults could carry sensitive advisories and decisions between CI stages. Deployment decisions should be an open, signed file with reasons, and open-source projects need a clear route to its images.",
+   "hash": "06428250fab9"
+  },
+  "limits": {
+   "line": "Counts come from public data, samples and archives",
+   "para": "Feeds were read on 14 October 2026 and customer data may hold more. Status shares come from 300 of 1.22 million records, and reason counts from an archive last changed in January 2026. The context layer is a proposal, the products are unused and partly beta, and company history comes from third parties.",
+   "hash": "b0dbda4116f2"
+  },
+  "sources": {
+   "line": "Sources: Chainguard's feeds, announcements and third-party reports",
+   "para": "Two voice memos of 14 October 2026, with the OSV indexes, a 300-record sample, the OpenVEX index and the archived wolfi-dev/advisories repository counted that day. Chainguard's Unchained announcements, its OSV and developer tier posts, Contrary Research and SecurityWeek.",
+   "hash": "ac94cc90b05b"
   }
+ }
 }

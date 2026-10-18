@@ -10,7 +10,7 @@
 
 # Chainguard, mapped: what it builds, what it publishes, how far up the stack its context goes, and where an open behaviour policy and an encrypted vault could plug in
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/chainguard-mapped.md) · [newsroom v0.12.47](https://newsroom.sgit.ai/admin/versions.html) · chainguardsupply-chaincontainersvulnerabilitiesvexosvcontextagent-behaviour-policysgitopen-sourceagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/chainguard-mapped.md) · [newsroom v0.12.47](https://newsroom.sgit.ai/admin/versions.html) · chainguardsupply-chaincontainersvulnerabilitiesvexosvcontextagent-behaviour-policysgitopen-sourceagentsarticle
 
 ***Abstract:** Chainguard is one of the companies doing the most interesting work in software supply chain security, and much of it is open: the Wolfi distribution, public advisory feeds, Sigstore in its lineage, and a growing set of products for agents. So I mapped it: the company, what it builds from the operating system up to agents, what data it publishes that anyone can read, and how deep that data goes. I read the feeds and counted them. 12,480 advisories covering 12,125 distinct CVEs; in a sample, about seven in ten findings marked fixed and one in five marked as not applying. And in the archived Wolfi advisories, where the reasons were public, 2,850 determinations that a vulnerability did not apply, of which 177 gave a reason about context: the vulnerable code is not in the execution path, an attacker cannot control it, or it is mitigated. That is where the graph stops, and it is the question that matters to me. As with everything in security, it is about context. An image with many vulnerabilities is fine if the application on top never reaches them; one reachable flaw is not. Deciding which images are non-negotiable and which can ship today needs a graph from the user story, through the code and its dependencies, to the container. That context layer is where an open behaviour policy and an encrypted vault fit, next to the agent products Chainguard is now shipping, which already talk about policies. I make the case for each.*
 
@@ -57,7 +57,7 @@ The part I care about most is the data, because data is what others can build on
 - **VEX for libraries.** An [OpenVEX index](https://libraries.cgr.dev/openvex/v1/all.json) of 732 documents: 675 for Maven, 42 for PyPI, 9 for npm and 6 for Go.
 - **The reasons, until January.** The [Wolfi advisories](https://github.com/wolfi-dev/advisories) were kept in a public repository with a reason for each decision; its last change was in January 2026, it is now archived, and it points to Chainguard's security site instead.
 
-The public records say what the status is. In the current feed, a "false positive" carries no reason. The archived repository did, and it is the best evidence of how deep the analysis goes.
+The public records say what the status is. In the current feed, a "false positive" carries no reason. The archived repository did, and it is good evidence of how deep the analysis goes.
 
 ## How deep the graph goes
 

@@ -1,0 +1,61 @@
+{
+ "slug": "a-minimal-viable-browser",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A small browser kernel, components on demand",
+   "para": "The browser is our biggest attack surface and we are handing it to agents. A minimal viable browser keeps a small kernel and loads components only when needed, giving each agent a browser with nothing to leak and each extension its own box. Parts exist; Mozilla is well placed to build it all, and should pitch it as speed.",
+   "hash": "5668e359190d"
+  },
+  "in-short": {
+   "line": "Smaller browsers for apps, agents and readers",
+   "para": "One engine with every feature on serves every job. A small kernel with components loaded on demand changes that. A browser for one agent is a prompt-injection defence, and boxed extensions get only the access their job needs. Hardened forks and agent browsers do parts of it. Mozilla can do all of it, sold on speed.",
+   "hash": "0a6e8ff93664"
+  },
+  "biggest": {
+   "line": "Bug counts rise; vendors already ship less",
+   "para": "Mozilla fixed 423 Firefox security bugs in April 2026, against 20 to 30 a month in 2025, 271 found with an AI model. Chrome's CNA filed 3,246 CVEs in 2026 to mid-October. Vendors already ship less-code modes: Edge without the JIT, Vanadium, Lockdown Mode, Tor's Safest. None is a browser that starts small by default.",
+   "hash": "e1b960cd8b63"
+  },
+  "shape": {
+   "line": "Kernel, components, and a profile for its job",
+   "para": "A small kernel of networking, TLS, parsing, layout and isolation; components such as JavaScript, media, PDF and extensions loaded per site; and a profile saying what it is for. Firefox removed its site-specific browser in version 86, has a kiosk mode and site isolation since 95, and Servo is now an embeddable library.",
+   "hash": "822da3692706"
+  },
+  "agent": {
+   "line": "An agent cannot leak what it cannot reach",
+   "para": "OpenAI says prompt injection is unlikely to be fully solved, and Google calls it the main threat to agentic browsers. Zenity's PleaseFix reached local files through Comet and was fixed by restricting file access. Atlas's logged-out mode and Brave's isolated profile point the same way. A minimal agent browser makes that the default.",
+   "hash": "071889b1fc0e"
+  },
+  "extensions": {
+   "line": "Every extension boxed to its job",
+   "para": "99% of enterprise users have an extension, 53% one with high permissions. ShadyPanda's 145 extensions were legitimate for years before auto-updates turned them; Urban VPN harvested AI chats; DarkSpectre reached Firefox too. Firefox already has per-site host permissions and data-collection declarations; next is a process per extension and a behaviour policy.",
+   "hash": "0966edbe15c8"
+  },
+  "exists": {
+   "line": "Forks, paid minimal browsers, agent engines",
+   "para": "LibreWolf, Mullvad, Tor and Waterfox harden Firefox; Zen and Floorp slim its interface. Brave Origin sells a stripped browser for about $60. ungoogled-chromium and Vanadium strip Chromium. Ladybird and Servo are new engines; Lightpanda, headless shell and Browser Rendering serve machines; Tauri ships apps under 600KB. Nobody offers all three shapes.",
+   "hash": "a9482c7de715"
+  },
+  "why-mozilla": {
+   "line": "Own engine, privacy brand, client-side model",
+   "para": "Gecko is the large independent engine outside Chromium and WebKit, and Firefox has about 200 million monthly users and a switch that turns off AI features. Correcting the memo, revenue is not independent: search was 95 to 98%, mostly Google. But it is paid for search, not profiling, holds about $1.4 billion and wants direct revenue.",
+   "hash": "e500f0d147cc"
+  },
+  "speed": {
+   "line": "Pitch it as speed, not security",
+   "para": "Security rarely makes people switch, and Firefox has 2.8% of the market. A browser with only the code it needs starts at once and uses far less memory; Lightpanda's vendor benchmark claims 123MB against 2GB for 100 pages. Kiosks, agents running many clean browsers, and readers will notice. Two-week releases suit components too.",
+   "hash": "427bf6c282a8"
+  },
+  "limits": {
+   "line": "A proposal; some figures are vendors' own",
+   "para": "No such browser exists and Mozilla has not said it will build one. Smaller is not safe. The CVE counts are this site's from NVD, and the rise reflects AI-assisted finding. Lightpanda, Brave, Mozilla and LayerX figures are their own. Loading components per site can aid fingerprinting.",
+   "hash": "36a135b19262"
+  },
+  "sources": {
+   "line": "Mozilla, browser vendors and security research",
+   "para": "From a voice memo on 18 October 2026 and research read that day: Mozilla's hardening post, ledger, AI controls, Smart Window and add-on policies; Surman's interview; StatCounter; Servo; Microsoft, GrapheneOS and Apple; OpenAI, Google and Brave on agent security; Zenity, Gartner, LayerX, Koi and Privacy Guides; and NVD counts.",
+   "hash": "90d54fe8ad51"
+  }
+ }
+}

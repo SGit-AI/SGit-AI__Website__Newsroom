@@ -55,6 +55,865 @@
   ],
   "articles": [
     {
+      "slug": "the-editors-channel",
+      "title": "The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-editors-channel.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-editors-channel.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-editors-channel.webp",
+      "teaser": "A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.",
+      "topics": [
+        "vaults-and-method",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "newsroom",
+        "editor",
+        "feedback-loop",
+        "vaults",
+        "append-lanes",
+        "agents",
+        "privacy",
+        "pki",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "sixteen-notes-i-did-not-want-to-lose",
+        "fix-the-page-yourself",
+        "how-cheap-is-it-to-undo",
+        "three-policies-for-an-agent",
+        "agent-workflows-on-ephemeral-vaults"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ec-channel.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ec-channel.webp",
+          "caption": "The editor's channel. A key turns a browser into an editor's; on newsroom pages it sends what I read, sign off and want changed to an editor vault; a daily pass, or a press, reads it, runs the checks, acts and replies. Below, five audiences, each a lane with its own key: the plain reader sends nothing; a reader with a vault syncs only their own devices; an anonymous checkbox appends a little and reads nothing back; a named reader sends notes they choose; an editor sends everything and gets answers.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-editors-channel",
+        "teaser": "A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.",
+        "topics": [
+          "vaults-and-method",
+          "agents-and-policy"
+        ],
+        "core_idea": "Editing from a chat loses the page, the version and the sentence; an editor key turns a browser into an editor's, which sends a subset of its reading to an editor vault, a daily pass acts on what is cheap to undo and replies, and five audiences each get a lane and a key, moving from shared secrets to key pairs.",
+        "nodes": [
+          {
+            "id": "chat",
+            "label": "Editing in a chat",
+            "kind": "question",
+            "summary": "Loses the page, the version and the phrase."
+          },
+          {
+            "id": "exists",
+            "label": "What already exists",
+            "kind": "artefact",
+            "summary": "The pane, the lane, the inbox, append lanes."
+          },
+          {
+            "id": "oneway",
+            "label": "The lane goes one way",
+            "kind": "claim",
+            "summary": "Nothing comes back; nothing reads it unasked."
+          },
+          {
+            "id": "key",
+            "label": "The editor key",
+            "kind": "method",
+            "summary": "A key in a link fragment switches the mode."
+          },
+          {
+            "id": "vault",
+            "label": "The editor vault",
+            "kind": "artefact",
+            "summary": "A subset of my reading account, newsroom pages only."
+          },
+          {
+            "id": "signoff",
+            "label": "Signed off",
+            "kind": "method",
+            "summary": "Against a version; stale when it changes."
+          },
+          {
+            "id": "pass",
+            "label": "The daily pass",
+            "kind": "method",
+            "summary": "Checks, cheap fixes released, the rest proposed."
+          },
+          {
+            "id": "undo",
+            "label": "Cheap to undo",
+            "kind": "concept",
+            "summary": "Articles are two-way doors; email is not."
+          },
+          {
+            "id": "audiences",
+            "label": "Five audiences",
+            "kind": "concept",
+            "summary": "From sending nothing to two-way."
+          },
+          {
+            "id": "anon",
+            "label": "The anonymous checkbox",
+            "kind": "method",
+            "summary": "Append only: page, kind, phrase."
+          },
+          {
+            "id": "pki",
+            "label": "Key pairs",
+            "kind": "method",
+            "summary": "Sign, seal, grant and revoke per person."
+          },
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "artefact",
+            "summary": "For the agent that builds the pane."
+          }
+        ],
+        "edges": [
+          {
+            "from": "chat",
+            "to": "key",
+            "rel": "answers"
+          },
+          {
+            "from": "exists",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "oneway",
+            "to": "pass",
+            "rel": "answers"
+          },
+          {
+            "from": "key",
+            "to": "vault",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "signoff",
+            "rel": "produces"
+          },
+          {
+            "from": "vault",
+            "to": "pass",
+            "rel": "leads-to"
+          },
+          {
+            "from": "undo",
+            "to": "pass",
+            "rel": "depends-on"
+          },
+          {
+            "from": "audiences",
+            "to": "anon",
+            "rel": "produces"
+          },
+          {
+            "from": "exists",
+            "to": "anon",
+            "rel": "extends"
+          },
+          {
+            "from": "audiences",
+            "to": "pki",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pass",
+            "to": "brief",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "fix-the-page-yourself",
+            "how-cheap-is-it-to-undo",
+            "three-policies-for-an-agent",
+            "agent-workflows-on-ephemeral-vaults",
+            "sixteen-notes-i-did-not-want-to-lose"
+          ],
+          "pages": [
+            "admin/notes/2026-10-18__the-editors-channel.md",
+            "admin/notes/2026-10-12__the-feedback-loop.md"
+          ],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "Without the key, the code that does any of this never runs.",
+            "why": "The plain reader is unchanged."
+          },
+          {
+            "text": "The agent can then say, for every article, whether the version that is live is the version I signed off.",
+            "why": "Why sign-offs."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-code-you-do-not-ship",
+      "title": "The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-code-you-do-not-ship.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-code-you-do-not-ship.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-code-you-do-not-ship.webp",
+      "teaser": "Code is a liability, the worst bugs sit in features nobody needed, and models make removing it safe. The minimal viable code path, and who maintains it.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "software",
+        "minimal-code",
+        "attack-surface",
+        "dependencies",
+        "debloating",
+        "wardley-maps",
+        "agent-behaviour-policy",
+        "article"
+      ],
+      "links_out": [
+        "code-review-as-a-fractal-semantic-graph",
+        "the-minimum-code-below",
+        "software-vendors-as-villagers",
+        "explorer-coding",
+        "the-eyeballs-get-cheap",
+        "the-value-of-constraints",
+        "a-minimal-viable-browser",
+        "three-policies-for-an-agent"
+      ],
+      "links_in": [
+        "a-minimal-viable-browser"
+      ],
+      "figures": [
+        {
+          "file": "nc-path.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nc-path.webp",
+          "caption": "The minimal viable code path. From the use case down through features, components, libraries, the runtime and the operating system, each layer keeps only the code the layer above calls; everything else is shipped and never called, and should go. The bars are illustrative; the measured example below them is from this site's own tool: of 1,500 files in sgit and its dependencies, 428 ran for a CI use case, and a tree holding only those passed it.",
+          "kind": "concept"
+        },
+        {
+          "file": "nc-market.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nc-market.webp",
+          "caption": "medium",
+          "kind": "Who keeps the minimal code working: a fractal market of maintainers. The kernel, a few thousand lines that must be right, at town-planner stage; components with one job each, maintained by the specialists who know that job; glue that joins components for a domain; and the user level, where explorers build what they need on top. Each piece ships its own behaviour, decision and workflow policies, and its stage tells the buyer how much risk it carries."
+        }
+      ],
+      "graph": {
+        "slug": "the-code-you-do-not-ship",
+        "teaser": "Code is a liability, the worst bugs sit in features nobody needed, and models make removing it safe. The minimal viable code path, and who maintains it.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "The future of software is removing functionality: the minimal viable code path from the use case down, made safe by model-built scaffolding and maps of what each use case calls, maintained by a fractal market of specialists whose pieces carry their own policies and stage, and driven by what users feel rather than by security.",
+        "nodes": [
+          {
+            "id": "liability",
+            "label": "Code is a liability",
+            "kind": "claim",
+            "summary": "Every line is a capability."
+          },
+          {
+            "id": "grant",
+            "label": "Unused code is an unaccepted grant",
+            "kind": "concept",
+            "summary": "A zero-day is the gap exploited."
+          },
+          {
+            "id": "log4j",
+            "label": "Log4Shell",
+            "kind": "example",
+            "summary": "A convenience lookup, removed in 2.16.0."
+          },
+          {
+            "id": "cases",
+            "label": "ImageTragick, Heartbleed, Text4Shell, SSRF",
+            "kind": "example",
+            "summary": "Fixed by turning features off."
+          },
+          {
+            "id": "curl",
+            "label": "One in five curl CVEs",
+            "kind": "example",
+            "summary": "In protocols an HTTPS app never needs."
+          },
+          {
+            "id": "notscale",
+            "label": "Why it never scaled",
+            "kind": "question",
+            "summary": "No map, no tests; paid for features."
+          },
+          {
+            "id": "changed",
+            "label": "Models build the scaffolding and the map",
+            "kind": "claim",
+            "summary": "Removal becomes safe."
+          },
+          {
+            "id": "measured",
+            "label": "428 of 1,500 files",
+            "kind": "example",
+            "summary": "A tree of only those passed."
+          },
+          {
+            "id": "research",
+            "label": "The research agrees",
+            "kind": "concept",
+            "summary": "Debloating, bloat, reachability."
+          },
+          {
+            "id": "path",
+            "label": "The minimal viable code path",
+            "kind": "method",
+            "summary": "From the use case down."
+          },
+          {
+            "id": "market",
+            "label": "A fractal market of maintainers",
+            "kind": "concept",
+            "summary": "Kernel, components, glue, user level."
+          },
+          {
+            "id": "policies",
+            "label": "Code with its own policies",
+            "kind": "concept",
+            "summary": "Behaviour, decision, workflow, stage."
+          },
+          {
+            "id": "driver",
+            "label": "The driver is the user",
+            "kind": "claim",
+            "summary": "Faster and simpler, like sgit's constraints."
+          }
+        ],
+        "edges": [
+          {
+            "from": "liability",
+            "to": "grant",
+            "rel": "leads-to"
+          },
+          {
+            "from": "log4j",
+            "to": "grant",
+            "rel": "example-of"
+          },
+          {
+            "from": "cases",
+            "to": "grant",
+            "rel": "example-of"
+          },
+          {
+            "from": "curl",
+            "to": "grant",
+            "rel": "example-of"
+          },
+          {
+            "from": "notscale",
+            "to": "changed",
+            "rel": "answers"
+          },
+          {
+            "from": "measured",
+            "to": "changed",
+            "rel": "example-of"
+          },
+          {
+            "from": "research",
+            "to": "path",
+            "rel": "extends"
+          },
+          {
+            "from": "changed",
+            "to": "path",
+            "rel": "leads-to"
+          },
+          {
+            "from": "path",
+            "to": "market",
+            "rel": "leads-to"
+          },
+          {
+            "from": "policies",
+            "to": "market",
+            "rel": "extends"
+          },
+          {
+            "from": "driver",
+            "to": "path",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-minimum-code-below",
+            "the-eyeballs-get-cheap",
+            "the-value-of-constraints",
+            "software-vendors-as-villagers",
+            "three-policies-for-an-agent",
+            "a-minimal-viable-browser"
+          ],
+          "pages": [],
+          "sites": [
+            "https://logging.apache.org/log4j/2.x/release-notes.html",
+            "https://www.usenix.org/conference/usenixsecurity19/presentation/azad",
+            "https://arxiv.org/abs/2301.07972",
+            "https://curl.se/docs/vuln.pm"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The best code to protect is the code that is not there.",
+            "why": "The thesis."
+          },
+          {
+            "text": "That is the point: the capability is gone, not just unused.",
+            "why": "The measurement."
+          },
+          {
+            "text": "Users should choose it because it is better, not because they are told to.",
+            "why": "The driver."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "cloudflare-as-lego-blocks",
+      "title": "Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/cloudflare-as-lego-blocks.html",
+      "markdown": "https://newsroom.sgit.ai/articles/cloudflare-as-lego-blocks.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/cloudflare-as-lego-blocks.webp",
+      "teaser": "Cloudflare's developer platform as the smallest free blocks a non-specialist can use, and an sgit vault on it: no code read-only, 83 lines read-write.",
+      "topics": [
+        "vaults-and-method"
+      ],
+      "tags": [
+        "cloudflare",
+        "workers",
+        "r2",
+        "durable-objects",
+        "workers-ai",
+        "sgit",
+        "vaults",
+        "minimal-code",
+        "self-hosting",
+        "article"
+      ],
+      "links_out": [
+        "the-minimum-code-below",
+        "free-models-your-own-key",
+        "the-value-of-constraints"
+      ],
+      "links_in": [
+        "a-minimal-viable-browser"
+      ],
+      "figures": [
+        {
+          "file": "cw-blocks.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cw-blocks.webp",
+          "caption": "Cloudflare's developer platform as blocks, grouped by job. Put something on the web: static assets, free and unlimited; Workers, 100,000 requests a day; DNS and domains at cost. Keep data: R2 with 10 GB and zero egress, D1, KV, Durable Objects. Think with models it hosts: Workers AI with 10,000 neurons a day on Cloudflare's own GPUs, AI Gateway, Vectorize and AI Search. Run jobs: cron, queues and workflows, Browser Run, and Containers on the paid plan. Talk and guard: inbound email routing, email sending on the paid plan, Access free to 50 users, Turnstile and Tunnel.",
+          "kind": "map"
+        },
+        {
+          "file": "cw-vault.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cw-vault.webp",
+          "caption": "medium",
+          "kind": "Two ways to put an sgit vault on Cloudflare, both tested on 18 October 2026 with the real sgit client. Read-only: sgit publish writes the plaintext cover and a manifest, with the encrypted objects beside them; any static host serves it, and sgit clone with the read key and the static transport cloned it back identically. Read-write: a Worker of 83 lines, R2 for the encrypted objects, and a Durable Object per vault that runs writes one at a time; tested for push, clone, a stale push, two pushes at once, a read-only clone and a wrong write key, with no plaintext in the server's storage."
+        }
+      ],
+      "graph": {
+        "slug": "cloudflare-as-lego-blocks",
+        "teaser": "Cloudflare's developer platform as the smallest free blocks a non-specialist can use, and an sgit vault on it: no code read-only, 83 lines read-write.",
+        "topics": [
+          "vaults-and-method"
+        ],
+        "core_idea": "Cloudflare's platform maps to small free blocks a non-specialist can assemble once with an agent; Workers AI keeps @cf models inside the account without training on content; an sgit vault needs no code read-only and an 83-line Worker read-write, tested with the real client; and the setup must be a button, a temporary account or an agent because the API cannot be called from a page.",
+        "nodes": [
+          {
+            "id": "want",
+            "label": "Use it without learning it",
+            "kind": "question",
+            "summary": "A non-specialist, or an agent, once."
+          },
+          {
+            "id": "blocks",
+            "label": "The blocks, by job",
+            "kind": "concept",
+            "summary": "Web, data, models, jobs, mail and access."
+          },
+          {
+            "id": "free",
+            "label": "Most of it is free",
+            "kind": "claim",
+            "summary": "Hosting, Workers, R2, D1, KV, Durable Objects, Workers AI."
+          },
+          {
+            "id": "inside",
+            "label": "Models that stay inside",
+            "kind": "claim",
+            "summary": "@cf models on Cloudflare GPUs, no training."
+          },
+          {
+            "id": "readonly",
+            "label": "A read-only vault, no code",
+            "kind": "example",
+            "summary": "sgit publish plus any static host."
+          },
+          {
+            "id": "worker",
+            "label": "A read-write vault, 83 lines",
+            "kind": "artefact",
+            "summary": "One Worker, R2, a Durable Object per vault."
+          },
+          {
+            "id": "tested",
+            "label": "Tested with the real client",
+            "kind": "method",
+            "summary": "Push, clone, a race, read-only, wrong key."
+          },
+          {
+            "id": "constraint",
+            "label": "The server can read nothing",
+            "kind": "claim",
+            "summary": "So it has almost nothing to do."
+          },
+          {
+            "id": "cors",
+            "label": "The API cannot be called from a page",
+            "kind": "claim",
+            "summary": "Setup needs a button, a temporary account or an agent."
+          },
+          {
+            "id": "button",
+            "label": "Deploy to Cloudflare",
+            "kind": "method",
+            "summary": "One click into the user's own account."
+          },
+          {
+            "id": "packages",
+            "label": "Five packages",
+            "kind": "method",
+            "summary": "Site, vault, assistant, inbox, form."
+          }
+        ],
+        "edges": [
+          {
+            "from": "want",
+            "to": "blocks",
+            "rel": "leads-to"
+          },
+          {
+            "from": "blocks",
+            "to": "free",
+            "rel": "extends"
+          },
+          {
+            "from": "inside",
+            "to": "blocks",
+            "rel": "example-of"
+          },
+          {
+            "from": "constraint",
+            "to": "worker",
+            "rel": "leads-to"
+          },
+          {
+            "from": "readonly",
+            "to": "worker",
+            "rel": "extends"
+          },
+          {
+            "from": "tested",
+            "to": "worker",
+            "rel": "answers"
+          },
+          {
+            "from": "cors",
+            "to": "button",
+            "rel": "leads-to"
+          },
+          {
+            "from": "blocks",
+            "to": "packages",
+            "rel": "leads-to"
+          },
+          {
+            "from": "button",
+            "to": "packages",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-minimum-code-below",
+            "the-value-of-constraints",
+            "free-models-your-own-key"
+          ],
+          "pages": [],
+          "sites": [
+            "https://developers.cloudflare.com/workers/platform/limits/",
+            "https://developers.cloudflare.com/workers-ai/platform/privacy/",
+            "https://developers.cloudflare.com/workers/platform/deploy-buttons/",
+            "https://developers.cloudflare.com/durable-objects/platform/pricing/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "because the server can read nothing, it has almost nothing to do.",
+            "why": "Why the vault fits."
+          },
+          {
+            "text": "If staying inside is the point, the model name is the control:",
+            "why": "On models."
+          },
+          {
+            "text": "Setup cannot happen purely in a browser tab.",
+            "why": "The catch."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-minimal-viable-browser",
+      "title": "A minimal viable browser: why Firefox is the one that can build it, and what it would take",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-minimal-viable-browser.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-minimal-viable-browser.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-minimal-viable-browser.webp",
+      "teaser": "A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "browsers",
+        "firefox",
+        "mozilla",
+        "minimal-code",
+        "agents",
+        "prompt-injection",
+        "extensions",
+        "attack-surface",
+        "article"
+      ],
+      "links_out": [
+        "the-code-you-do-not-ship",
+        "what-can-your-agent-reach",
+        "three-policies-for-an-agent",
+        "from-send-to-sgit",
+        "the-value-of-constraints",
+        "cloudflare-as-lego-blocks"
+      ],
+      "links_in": [
+        "the-code-you-do-not-ship"
+      ],
+      "figures": [
+        {
+          "file": "mb-browser.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mb-browser.webp",
+          "caption": "A minimal viable browser: a small kernel of network, TLS, parsing, layout and process isolation, reviewed hardest and changed least; and components loaded only when needed, from JavaScript, with or without the JIT, to media, WebGL, PDF, downloads, extensions and sync. Three shapes from the same engine: a browser for one app, with only JavaScript and forms; a browser for one agent, the same; and the reader's own browser, with everything they use loaded as they use it and each extension in its own box.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-minimal-viable-browser",
+        "teaser": "A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "The browser is the biggest attack surface we run and we now give it to agents; a minimal viable browser keeps a small kernel and loads components only when a page or agent needs them, boxes every extension, and gives each agent a browser with nothing to leak; Mozilla has the engine, brand and model to build it, and the pitch is speed.",
+        "nodes": [
+          {
+            "id": "biggest",
+            "label": "The biggest program we run",
+            "kind": "claim",
+            "summary": "Every feature on, for every job."
+          },
+          {
+            "id": "bugs",
+            "label": "Bug counts rising",
+            "kind": "example",
+            "summary": "423 Firefox security bugs fixed in April 2026."
+          },
+          {
+            "id": "modes",
+            "label": "Less code already ships as a mode",
+            "kind": "example",
+            "summary": "Edge without JIT, Vanadium, Lockdown Mode, Tor."
+          },
+          {
+            "id": "kernel",
+            "label": "A small kernel",
+            "kind": "concept",
+            "summary": "Network, TLS, parsing, layout, isolation."
+          },
+          {
+            "id": "components",
+            "label": "Components on demand",
+            "kind": "concept",
+            "summary": "Loaded per site, when needed."
+          },
+          {
+            "id": "shapes",
+            "label": "Three shapes",
+            "kind": "concept",
+            "summary": "One app, one agent, one reader."
+          },
+          {
+            "id": "agent",
+            "label": "A browser for one agent",
+            "kind": "method",
+            "summary": "No accounts, extensions or files."
+          },
+          {
+            "id": "injection",
+            "label": "Prompt injection is not solved",
+            "kind": "example",
+            "summary": "Vendors say so; PleaseFix was fixed by removing reach."
+          },
+          {
+            "id": "extensions",
+            "label": "Every extension in its own box",
+            "kind": "method",
+            "summary": "Only the sites and powers its job needs."
+          },
+          {
+            "id": "shady",
+            "label": "Trusted extensions that change",
+            "kind": "example",
+            "summary": "ShadyPanda, Urban VPN, DarkSpectre."
+          },
+          {
+            "id": "exists",
+            "label": "Parts of this exist",
+            "kind": "example",
+            "summary": "Forks, Brave Origin, Lightpanda, Tauri."
+          },
+          {
+            "id": "mozilla",
+            "label": "Why Mozilla",
+            "kind": "claim",
+            "summary": "Own engine, privacy brand, client side."
+          },
+          {
+            "id": "money",
+            "label": "Revenue is not independent",
+            "kind": "claim",
+            "summary": "About 85% search, mostly Google."
+          },
+          {
+            "id": "speed",
+            "label": "Sell it as speed",
+            "kind": "method",
+            "summary": "Starts at once, a fraction of the memory."
+          }
+        ],
+        "edges": [
+          {
+            "from": "bugs",
+            "to": "biggest",
+            "rel": "example-of"
+          },
+          {
+            "from": "modes",
+            "to": "kernel",
+            "rel": "leads-to"
+          },
+          {
+            "from": "kernel",
+            "to": "components",
+            "rel": "extends"
+          },
+          {
+            "from": "components",
+            "to": "shapes",
+            "rel": "leads-to"
+          },
+          {
+            "from": "shapes",
+            "to": "agent",
+            "rel": "extends"
+          },
+          {
+            "from": "injection",
+            "to": "agent",
+            "rel": "leads-to"
+          },
+          {
+            "from": "shapes",
+            "to": "extensions",
+            "rel": "extends"
+          },
+          {
+            "from": "shady",
+            "to": "extensions",
+            "rel": "leads-to"
+          },
+          {
+            "from": "exists",
+            "to": "mozilla",
+            "rel": "contrasts"
+          },
+          {
+            "from": "money",
+            "to": "mozilla",
+            "rel": "contrasts"
+          },
+          {
+            "from": "mozilla",
+            "to": "speed",
+            "rel": "leads-to"
+          },
+          {
+            "from": "biggest",
+            "to": "kernel",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-code-you-do-not-ship",
+            "what-can-your-agent-reach",
+            "cloudflare-as-lego-blocks",
+            "the-value-of-constraints",
+            "three-policies-for-an-agent",
+            "the-minimum-code-below"
+          ],
+          "pages": [],
+          "sites": [
+            "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/",
+            "https://stateof.mozilla.org/ledger",
+            "https://brave.com/blog/ai-browsing/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "An agent's browser that has no accounts, no extensions, no file access and only the origins its task needs cannot leak a password it never had or a file it cannot open.",
+            "why": "The agent argument."
+          },
+          {
+            "text": "The pitch to Mozilla should not be security.",
+            "why": "The pitch."
+          }
+        ]
+      }
+    },
+    {
       "slug": "what-can-your-agent-reach",
       "title": "What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide",
       "date": "2026-10-18",
@@ -85,7 +944,9 @@
         "allowed-is-not-right",
         "hope-or-enforcement"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-minimal-viable-browser"
+      ],
       "figures": [
         {
           "file": "ga-gap.webp",
@@ -295,7 +1156,9 @@
         "chat-on-a-static-site",
         "the-key-is-the-billing-system"
       ],
-      "links_in": [],
+      "links_in": [
+        "cloudflare-as-lego-blocks"
+      ],
       "figures": [
         {
           "file": "fi-map.webp",
@@ -1223,6 +2086,9 @@
         "agency-is-not-a-yes"
       ],
       "links_in": [
+        "the-editors-channel",
+        "the-code-you-do-not-ship",
+        "a-minimal-viable-browser",
         "what-can-your-agent-reach",
         "allowed-is-not-right",
         "three-decisions-mapped",
@@ -2342,7 +3208,9 @@
         "a-custom-firefox-of-my-own",
         "custom-uis-are-not-the-exception"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-editors-channel"
+      ],
       "figures": [
         {
           "file": "pz-before-after.webp",
@@ -2515,7 +3383,7 @@
             "why": "The argument."
           },
           {
-            "text": "A fix a user writes, and keeps, is the clearest brief the site will ever get",
+            "text": "A fix a user writes, and keeps, is a better brief than any the site could write itself",
             "why": "Why sites should want it."
           }
         ]
@@ -6531,6 +7399,9 @@
         "software-vendors-as-villagers"
       ],
       "links_in": [
+        "the-code-you-do-not-ship",
+        "cloudflare-as-lego-blocks",
+        "a-minimal-viable-browser",
         "who-will-fix-your-mess",
         "sell-dont-issue",
         "research-delivered-as-a-vault",
@@ -6763,6 +7634,7 @@
         "dark-mode-and-four-more"
       ],
       "links_in": [
+        "the-code-you-do-not-ship",
         "fix-the-page-yourself",
         "who-will-fix-your-mess",
         "the-value-of-constraints",
@@ -6993,6 +7865,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "the-code-you-do-not-ship",
         "fix-the-page-yourself",
         "who-will-fix-your-mess",
         "portugal-2024-genai-in-portuguese",
@@ -10519,6 +11392,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "a-minimal-viable-browser",
         "sgit-is-a-standard",
         "scion-and-sgit",
         "the-expert-founders",
@@ -11930,6 +12804,7 @@
         "the-minimum-code-below"
       ],
       "links_in": [
+        "the-code-you-do-not-ship",
         "the-expert-founders",
         "the-citizen-developer"
       ],
@@ -12922,6 +13797,7 @@
         "sgit-actions-side-by-side"
       ],
       "links_in": [
+        "the-editors-channel",
         "one-vault-ten-agents",
         "your-own-newsroom",
         "cedar-and-the-policy-vault"
@@ -13199,7 +14075,7 @@
           "agents-and-policy",
           "site-and-engineering"
         ],
-        "core_idea": "Agent hooks are tiny but run on every matching action with the user's permissions and can block or rewrite, so they should be managed like kernel code; their small size makes them the best case study for code review, fractal semantic graphs and change blast radius, a maturity model rates each from the prompt to off the machine against its power, trifecta legs and sandbox, the first ten are mapped with their dependencies, and a proposed site and feed publishes each hook from its intent with graph, tests, version and signature, free to run and paid for the state it keeps.",
+        "core_idea": "Agent hooks are tiny but run on every matching action with the user's permissions and can block or rewrite, so they should be managed like kernel code; their small size makes them a good case study for code review, fractal semantic graphs and change blast radius, a maturity model rates each from the prompt to off the machine against its power, trifecta legs and sandbox, the first ten are mapped with their dependencies, and a proposed site and feed publishes each hook from its intent with graph, tests, version and signature, free to run and paid for the state it keeps.",
         "nodes": [
           {
             "id": "kernel",
@@ -15212,6 +16088,8 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-code-you-do-not-ship",
+        "cloudflare-as-lego-blocks",
         "the-eyeballs-get-cheap",
         "chainguard-mapped"
       ],
@@ -17200,6 +18078,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-editors-channel",
         "the-vault-opened",
         "handing-secrets-to-agents",
         "the-agents-write-too",
@@ -17452,6 +18331,7 @@
         "a-second-reader-the-agent-cannot-skip"
       ],
       "links_in": [
+        "the-editors-channel",
         "three-policies-for-an-agent",
         "three-decisions-mapped",
         "who-will-fix-your-mess",
@@ -37865,6 +38745,7 @@
         "if-somebody-built-a-company-on-code-review"
       ],
       "links_in": [
+        "the-code-you-do-not-ship",
         "three-policies-for-an-agent",
         "approve-at-altitude",
         "journalism-becomes-intelligence",

@@ -44,7 +44,7 @@ They are not three layers stacked on each other. They are three views of the sam
 
 ## Zoom into one cell {#zoom}
 
-We have been putting decisions into behaviour policies all along, and I think that is fine at low zoom. The clearest example is in a page that went into Ruflo's docs today, Mondweep Chakravorty's [ABP for SGit memory checkpoints](/articles/our-first-pr-in-ruflo.html). One of its rows:
+We have been putting decisions into behaviour policies all along, and I think that is fine at low zoom. A good example is in a page that went into Ruflo's docs today, Mondweep Chakravorty's [ABP for SGit memory checkpoints](/articles/our-first-pr-in-ruflo.html). One of its rows:
 
 > `delete.memory.project`, reach yes, mandate **approval**.
 

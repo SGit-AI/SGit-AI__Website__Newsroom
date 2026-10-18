@@ -245,3 +245,6 @@ details.src .src-copy{background:var(--panel);color:var(--head)}
   .theme-pick > button{padding:.3rem .5rem}
   .theme-pick > button .name,.theme-pick > button .caret{display:none}
 }
+
+/* Code blocks scroll inside themselves on a phone instead of widening the page (v0.12.106). */
+main.doc pre{max-width:100%;overflow-x:auto}

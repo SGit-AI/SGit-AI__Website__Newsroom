@@ -10,13 +10,14 @@
 
 # Versions of: Attacks rewritten as mandates
 
-1 published version of [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](../attacks-rewritten-as-mandates.md). The current one is **v1.0.0**.
+2 published versions of [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](../attacks-rewritten-as-mandates.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-13 | published | 3,052 | first published | [`e7a80264c`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7a80264c4bb3644cf6197b9b73a0171c4bbc195) | [current](../attacks-rewritten-as-mandates.md) |
+| **v1.1.0** | 2026-10-18 | minor | 3,049 | +0 / −3 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](attacks-rewritten-as-mandates/v1.1.0.md) · [current](../attacks-rewritten-as-mandates.md) |
+| **v1.0.0** | 2026-10-13 | published | 3,052 | first published | [`e7a80264c`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7a80264c4bb3644cf6197b9b73a0171c4bbc195) |  |
 
 [← Back to the article](../attacks-rewritten-as-mandates.md) · [All articles](../index.md)
 

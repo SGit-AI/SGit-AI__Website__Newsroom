@@ -3,7 +3,7 @@ title: Allowed is not right: an answer to Ashish Rajan's Northstar, with three p
 date: 2026-10-18
 author: Dinis Cruz
 author_url: about/index.html
-summary: Ashish Rajan's article on trustworthy AI systems has the clearest example I have seen of the gap between what an agent is allowed to do and what it should do. Northstar's support agent may refund up to $200, enforced by the payment service. A customer is owed $120; the agent misreads a discount and refunds $150. Every control passes, and the outcome is wrong. His answer is four questions, SECURE, OBSERVE, RESPOND and VERIFY, and I agree with all four. This is how we answer them, and what I think the example adds. The Agent Behaviour Policy we publish answers SECURE: what an agent may do and reach, enforced where the agent cannot argue. But a behaviour policy cannot answer VERIFY, because to prove the intended outcome occurred, someone has to have written down what the intended outcome is. That is a decision policy: who decides the amount, on what evidence, and who is called when the rules run out. With a workflow policy for the order things happen in, the three policies map onto his four questions, and his example showed me a gap in my own series. To test it, we built his store as a twin in a vault: thirteen synthetic refund requests, four designs of the controls, every decision replayable. The design in the article overpays $458 and leaves $341.60 owed. Adding SECURE, OBSERVE and RESPOND stops most of the overpayment by refusing, and leaves customers waiting. Adding VERIFY gets every amount right at 57 minutes of people's time a day. Adding a decision policy and precedents gets every case right, decided by the right decider, in 18. And his closing question, what evidence would let us remove the human, has an answer in the record those precedents leave.
+summary: Ashish Rajan's article on trustworthy AI systems opens with a good example of the gap between what an agent is allowed to do and what it should do. Northstar's support agent may refund up to $200, enforced by the payment service. A customer is owed $120; the agent misreads a discount and refunds $150. Every control passes, and the outcome is wrong. His answer is four questions, SECURE, OBSERVE, RESPOND and VERIFY, and I agree with all four. This is how we answer them, and what I think the example adds. The Agent Behaviour Policy we publish answers SECURE: what an agent may do and reach, enforced where the agent cannot argue. But a behaviour policy cannot answer VERIFY, because to prove the intended outcome occurred, someone has to have written down what the intended outcome is. That is a decision policy: who decides the amount, on what evidence, and who is called when the rules run out. With a workflow policy for the order things happen in, the three policies map onto his four questions, and his example showed me a gap in my own series. To test it, we built his store as a twin in a vault: thirteen synthetic refund requests, four designs of the controls, every decision replayable. The design in the article overpays $458 and leaves $341.60 owed. Adding SECURE, OBSERVE and RESPOND stops most of the overpayment by refusing, and leaves customers waiting. Adding VERIFY gets every amount right at 57 minutes of people's time a day. Adding a decision policy and precedents gets every case right, decided by the right decider, in 18. And his closing question, what evidence would let us remove the human, has an answer in the record those precedents leave.
 version: v0.12.101
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, agent-behaviour-policy, agent-decision-policy, agent-workflow-policy, verification, refunds, digital-twin, vaults, ai-security, reply, article
@@ -16,7 +16,7 @@ status: published
 
 ## In short {#in-short}
 
-- **His example is the clearest I have seen.** Allowed to refund $200, owed $120, refunded $150, every control passed.
+- **His example is a good one.** Allowed to refund $200, owed $120, refunded $150, every control passed.
 - **The behaviour policy answers SECURE.** What an agent may do and reach, enforced outside the model. That is the ABP.
 - **It cannot answer VERIFY.** To prove the right outcome, someone has to have written down what right is. That is a decision policy.
 - **Three policies map onto four questions.** Behaviour, decision and workflow, with every control tagged by both.
@@ -31,7 +31,7 @@ Ashish Rajan's article, [What Does It Take to Build AI Systems We Can Actually T
 
 > "The system did what it was allowed to do. It just didn't do what it was supposed to do."
 
-That sentence is the best short statement I know of the problem this site keeps writing about. His answer, from the work of AI Security Lab, is four questions:
+That sentence is a good short statement of the problem this site keeps writing about. His answer, from the work of AI Security Lab, is four questions:
 
 - **SECURE:** "Can we constrain what AI can access and change?"
 - **OBSERVE:** "Can we reconstruct its actions?"
