@@ -130,6 +130,7 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#a-link
 
 ### Continued by
 
+- [The graph of meaning: a brief for reading every article a second time, from the bottom up, and ten predictions about what will emerge](the-graph-of-meaning-a-brief.md) Every article read a second time as facts, names and sources, joined under one grammar; the brief, the method and ten predictions, before the run.
 - [Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps](places-of-highest-leverage.md) Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.
 - [I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs](i-miss-it.md) I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.
 - [Brief the agent too: the people I talk to work with agents, so what I send has to reach both](brief-the-agent-too.md) The people I advise read through agents. Content needs a second package, a brief for their agent, and memory, so it reads what changed, not everything.

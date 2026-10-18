@@ -1,0 +1,68 @@
+{
+ "slug": "every-link-points-back",
+ "by": "newsroom.cartographer",
+ "run": "2026-10-18",
+ "claims": [
+  {"id": "c01", "kind": "fact", "text": "An article links to what came before it and cannot link to what came after, because the later article did not exist when it was written.", "section": "in-short", "quote": "An article links to what came before; it cannot link to what came after, because that did not exist.", "about": ["concept:corrections-propagate", "entity:newsroom-sgit-ai"]},
+  {"id": "c02", "kind": "data-point", "text": "551 of the 566 links between the 105 articles point to an earlier article.", "section": "counts", "quote": "566 links between 105 articles. 551 point to an earlier article.", "about": ["concept:corrections-propagate", "entity:newsroom-sgit-ai"], "value": {"n": 551, "of": 566, "unit": "links", "as_of": "2026-10-13"}},
+  {"id": "c03", "kind": "data-point", "text": "15 links point forward, in 14 articles, and every one was added by an edit after the later article existed.", "section": "counts", "quote": "15 point to a later one, in 14 articles.", "about": ["concept:corrections-propagate"], "value": {"n": 15, "of": 566, "unit": "forward links", "as_of": "2026-10-13"}},
+  {"id": "c04", "kind": "data-point", "text": "94 of the 105 articles are cited by at least one later article, 551 citations in all, and 11 of those are answered by a link back.", "section": "counts", "quote": "94 of the 105 articles are cited by at least one later article", "about": ["concept:corrections-propagate"], "value": {"n": 94, "of": 105, "unit": "articles cited later", "as_of": "2026-10-13"}},
+  {"id": "c05", "kind": "data-point", "text": "In 104 pairs of consecutive articles the later one links the earlier 42 times and the earlier links the later 7 times.", "section": "counts", "quote": "In 42 the later one links the earlier; in 7 the earlier links the later.", "about": ["concept:corrections-propagate"], "value": {"n": 42, "of": 104, "unit": "consecutive pairs where the later links the earlier", "as_of": "2026-10-13"}},
+  {"id": "c06", "kind": "fact", "text": "The most cited articles link forward least: the fractal semantic graphs article is cited by 23 later articles and links to none of them.", "section": "counts", "quote": "is cited by 23 later articles and links to none of them", "about": ["concept:fractal-semantic-graphs", "concept:corrections-propagate"]},
+  {"id": "c07", "kind": "fact", "text": "Link density has risen: the August articles average fewer than one link each to another article, the September ones about one and a half, and most October days between four and ten.", "section": "counts", "quote": "The five August articles average fewer than one link each to another article", "about": ["concept:corrections-propagate", "concept:the-newsroom"]},
+  {"id": "c08", "kind": "fact", "text": "Every article already ends with a derived Threads section, Builds on and Continued by, so the forward path exists at the foot of the page.", "section": "threads", "quote": "Every article ends with a Threads section, derived from the links at build time", "about": ["concept:publishing-method", "entity:sgit-ai"]},
+  {"id": "c09", "kind": "fact", "text": "The Continued by list is easy to miss for three reasons: it is at the very end, it carries no reason, and it has one kind for a sequel, a citation and a correction alike.", "section": "threads", "quote": "There are three reasons it is easy to miss.", "about": ["concept:publishing-method"]},
+  {"id": "c10", "kind": "fact", "text": "A forward link to a sequel is a convenience; a forward link to a correction is the record.", "section": "corrections", "quote": "A forward link to a sequel is a convenience. A forward link to a correction is the record.", "about": ["concept:corrections-propagate", "concept:the-record"]},
+  {"id": "c11", "kind": "data-point", "text": "Of the 97 articles whose history sgit.ai keeps, 62 have more than one version.", "section": "corrections", "quote": "Of the 97 articles whose history sgit.ai keeps, 62 have more than one version.", "about": ["concept:publishing-method", "entity:sgit-ai"], "value": {"n": 62, "of": 97, "unit": "articles with more than one version", "as_of": "2026-10-13"}},
+  {"id": "c12", "kind": "fact", "text": "A scan for sentences linking an earlier article near a word like correct, wrong, revised or no longer found 45 sentences, most using the words in other senses.", "section": "corrections", "quote": "That second scan found 45 sentences; reading them, most use the words in other senses.", "about": ["concept:corrections-propagate"]},
+  {"id": "c13", "kind": "fact", "text": "Corrections come in three kinds: revised in place, corrected by a later article, and a status that has changed since.", "section": "corrections", "quote": "What is left falls into three kinds.", "about": ["concept:corrections-propagate"]},
+  {"id": "c14", "kind": "fact", "text": "One clear case of a correction by a later article: the code review company article corrects the code review graph article on refactoring, and the earlier one points at it only in a list at the end.", "section": "corrections", "quote": "the follow-up that answers a reader's seven questions and corrects this article on refactoring", "about": ["concept:corrections-propagate", "concept:code-review"]},
+  {"id": "c15", "kind": "hypothesis", "text": "Status since, a plan in an older article that has or has not happened, is probably the most common kind of correction, and the kind of drift that turns into a quoted claim.", "section": "corrections", "quote": "The quieter kind, and I think the most common.", "about": ["concept:corrections-propagate"]},
+  {"id": "c16", "kind": "proposal", "text": "Every article should carry four kinds of forward link: What came next, Corrected by and Status since at the top, and Cited by at the foot.", "section": "proposal", "quote": "What I would like, for every article, is to be able to see what came after it", "about": ["concept:corrections-propagate", "concept:publishing-method"]},
+  {"id": "c17", "kind": "proposal", "text": "What came next is added by the release that publishes the later article, in the same commit.", "section": "proposal", "quote": "Added by the release that publishes the later article, as part of the same commit.", "about": ["concept:corrections-propagate", "concept:publishing-method"]},
+  {"id": "c18", "kind": "proposal", "text": "Cross-article links could carry a relation, continues, corrects or cites, so a validator could warn when a correction is not acknowledged by the earlier article.", "section": "proposal", "quote": "so a validator could warn when a later article says it corrects an earlier one and the earlier one does not say so", "about": ["concept:corrections-propagate", "concept:fractal-semantic-graphs"]},
+  {"id": "c19", "kind": "decision", "text": "This release adds a What came next note to the top of the first three of the four articles written in a row on 13 October.", "section": "proposal", "quote": "This release adds a What came next note to the top of the first three.", "about": ["concept:corrections-propagate", "entity:newsroom-sgit-ai"]},
+  {"id": "c20", "kind": "proposal", "text": "Forward links should be added in turns from the most recent articles down, a few at a time, with the counts above as the baseline.", "section": "proposal", "quote": "Start from the most recent articles and go down the line, a few at a time, taking turns with the new writing.", "about": ["concept:corrections-propagate"]},
+  {"id": "c21", "kind": "limit", "text": "The counts are of links written in the text; the generated Threads and Related lists are not counted.", "section": "limits", "quote": "The counts are of links written in the text.", "about": ["concept:corrections-propagate"]},
+  {"id": "c22", "kind": "limit", "text": "The correction scan is by words and would miss a correction that uses other words.", "section": "limits", "quote": "The correction scan is by words.", "about": ["concept:corrections-propagate"]},
+  {"id": "c23", "kind": "limit", "text": "The version counts are sgit.ai's; articles written in this repository since the move are not in the 97.", "section": "limits", "quote": "The version counts are sgit.ai's.", "about": ["concept:publishing-method", "entity:sgit-ai"]},
+  {"id": "c24", "kind": "limit", "text": "The four kinds of forward link are a proposal; only the What came next notes on three articles are built.", "section": "limits", "quote": "The four kinds are a proposal.", "about": ["concept:corrections-propagate"]},
+  {"id": "c25", "kind": "fact", "text": "The counts come from a script over the source markdown of the 105 articles numbered in articles/ids.json at v0.12.23.", "section": "sources", "quote": "read by a script that parses article links", "about": ["concept:the-record", "entity:newsroom-sgit-ai"]}
+ ],
+ "edges": [
+  {"from": "c01", "verb": "gives_rise_to", "to": "c16"},
+  {"from": "c02", "verb": "backs", "to": "c01"},
+  {"from": "c03", "verb": "backs", "to": "c01"},
+  {"from": "c05", "verb": "backs", "to": "c01"},
+  {"from": "c06", "verb": "backs", "to": "c01"},
+  {"from": "c08", "verb": "limits", "to": "c01"},
+  {"from": "c09", "verb": "gives_rise_to", "to": "c16"},
+  {"from": "c10", "verb": "gives_rise_to", "to": "c16"},
+  {"from": "c12", "verb": "backs", "to": "c13"},
+  {"from": "c14", "verb": "backs", "to": "c13"},
+  {"from": "c17", "verb": "specifies", "to": "c16"},
+  {"from": "c18", "verb": "specifies", "to": "c16"},
+  {"from": "c20", "verb": "specifies", "to": "c16"},
+  {"from": "c19", "verb": "answers", "to": "c16"},
+  {"from": "c21", "verb": "limits", "to": "c02"},
+  {"from": "c22", "verb": "limits", "to": "c12"},
+  {"from": "c24", "verb": "limits", "to": "c16"}
+ ],
+ "entities": [
+  {"id": "newsroom-sgit-ai", "role": "the site whose links were counted and which gets the forward links"},
+  {"id": "sgit-ai", "role": "keeps the version history of the 97 older articles and builds the Threads section"}
+ ],
+ "concepts": [
+  {"id": "corrections-propagate", "defined_here": true},
+  {"id": "the-record", "defined_here": false},
+  {"id": "publishing-method", "defined_here": false},
+  {"id": "fractal-semantic-graphs", "defined_here": false},
+  {"id": "code-review", "defined_here": false},
+  {"id": "the-newsroom", "defined_here": false}
+ ],
+ "references": [],
+ "dates": [
+  {"date": "2026-10-13", "what": "Four articles written in a row, each linking only to the one before; the voice memo and the count"},
+  {"date": "2026-08", "what": "The five August articles, averaging fewer than one link each to another article"}
+ ]
+}

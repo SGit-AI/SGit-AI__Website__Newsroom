@@ -104,6 +104,7 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#sear
 
 ### Continued by
 
+- [The graph of meaning: a brief for reading every article a second time, from the bottom up, and ten predictions about what will emerge](the-graph-of-meaning-a-brief.md) Every article read a second time as facts, names and sources, joined under one grammar; the brief, the method and ten predictions, before the run.
 - [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.108 · 187 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.109 · 188 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
@@ -40,7 +40,7 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](articles/fix-the-page-yourself.md), 2026-10-17, 10 min.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](articles/your-own-newsroom.md), 2026-10-15, 12 min.
 
-### Vaults & provenance (37)
+### Vaults & provenance (38)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
 - [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](articles/search-as-navigation.md), 2026-10-18, 7 min.
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](articles/on-the-record.md), 2026-10-18, 11 min.

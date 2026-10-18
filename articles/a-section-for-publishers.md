@@ -104,6 +104,10 @@ News & evidenceSite & engineering[This article as a graph →](graphs.md#a-secti
 - [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](reviews-on-the-record.md) Published criteria, one record per article and text, five at a time, answered finding by finding: reviews by other models, the editor and the desk.
 - [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](pay-after-you-read.md) Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.
 
+### Continued by
+
+- [The graph of meaning: a brief for reading every article a second time, from the bottom up, and ten predictions about what will emerge](the-graph-of-meaning-a-brief.md) Every article read a second time as facts, names and sources, joined under one grammar; the brief, the method and ten predictions, before the run.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 187 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=187)
