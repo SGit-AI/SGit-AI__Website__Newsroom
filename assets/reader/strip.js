@@ -228,7 +228,7 @@
   window.addEventListener('sgit-folds', function () { if (!panel.hidden) drawMap() })
   window.SgitReading = {
     path: path, returning: returning, need: function (id) { var s = find(id); return s ? need(s) : 0 },
-    sections: function () { return sections.map(function (s) { return { id: s.id, label: s.label, words: s.words, ms: s.ms + s.pending, seen: s.seen, read: readOf(s), state: stateOf(s), mark: s.mark, nodes: s.nodes } }) },
+    sections: function () { return sections.map(function (s) { return { id: s.id, label: s.label, words: s.words, ms: Math.round(s.ms + s.pending), seen: s.seen, read: readOf(s), state: stateOf(s), mark: s.mark, nodes: s.nodes } }) },
     scrolled: scrolled, read: read, save: save, paused: paused, setPaused: setPaused, reset: resetPage, mark: markSection, open: open, viewPicker: viewPicker,
     fold: function (id, on) { var s = find(id); if (s) s.folded = !!on },
     sectionOf: function (node) {

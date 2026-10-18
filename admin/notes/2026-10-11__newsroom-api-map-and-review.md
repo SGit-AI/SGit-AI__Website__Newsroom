@@ -11,7 +11,7 @@ formats and contracts the browser runs.
 
 - Reader code: 11,101 lines that run in a browser; 8,735 more in 28 frozen files of earlier meter versions.
 - 30 pages written for it; 12 views; 56 kinds of control; 11 inputs; 9 outputs; 14 contracts.
-- Tests: 517 check calls in three files (more at run time, from loops); CI runs them since this release.
+- Tests: 518 check calls in three files (more at run time, from loops); CI runs them since this release.
 - Pages with a CSP: 0. Upstreams: two (sgit.ai  and this site).
 
 ## Findings
