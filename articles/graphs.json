@@ -62,7 +62,7 @@
       "url": "https://newsroom.sgit.ai/articles/generation-z-developers-again.html",
       "markdown": "https://newsroom.sgit.ai/articles/generation-z-developers-again.md",
       "card": "https://newsroom.sgit.ai/articles/cards/generation-z-developers-again.webp",
-      "teaser": "My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.",
+      "teaser": "My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.",
       "topics": [
         "vaults-and-method",
         "startups-and-strategy"
@@ -87,6 +87,7 @@
         "search-as-navigation",
         "the-fork-next-door",
         "the-man-behind-the-curtain",
+        "riskmandate-ten-questions",
         "books-from-articles"
       ],
       "links_in": [
@@ -98,22 +99,34 @@
           "url": "https://newsroom.sgit.ai/articles/images/gz-outlines.webp",
           "caption": "From the 2018 book to the 2026 articles. On the left, chapters of Generation Z Developers: five left as outlines in 2018 (pioneers, settlers and town planners; graphs; your future self; publish, publish, publish; GitHub as your CV) and two that were written (machine learning and AI; open source). On the right, the newsroom articles that have since written each one: software vendors as villagers and explorer coding; the graphs books and search as navigation; bringing my past work back; your own newsroom; act as the job you want; hired for the workflow; the fork next door. Of the book's 138 files, 90 are still outlines.",
           "kind": "concept"
+        },
+        {
+          "file": "gz-cover.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/gz-cover.webp",
+          "caption": "The printed early release of Generation Z Developers, September 2018: \"Key concepts and ideas for the next generation of developers\", and seven lines on the cover: question everything; make fact based decisions; understand the history of tech; learn how to learn; understand what game is being played; develop intellectual curiosity; shake things up. Creative Commons BY, with the repository's address. Photographed by Dinis.",
+          "kind": "photo"
         }
       ],
       "graph": {
         "slug": "generation-z-developers-again",
-        "teaser": "My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.",
+        "teaser": "My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.",
         "topics": [
           "vaults-and-method",
           "startups-and-strategy"
         ],
-        "core_idea": "Generation Z Developers (2018) holds much of what the newsroom now argues, mostly as outlines (90 of 138 files) that have since been written as articles, so a second edition can keep the title, finish the outlines from the articles, say what did not hold, add handwritten notes, and be published on KDP, possibly launched in Portugal, as a manual for getting into development and getting a job.",
+        "core_idea": "Generation Z Developers (2018) holds much of what the newsroom now argues, mostly as outlines since written as articles, so a second edition dated October 2026 keeps the name because everyone now has to be a developer, frames the reader with explorers, villagers and town planners, and is made first, by review, an editor agent interviewing Dinis, quick public iterations and KDP.",
         "nodes": [
           {
             "id": "book",
             "label": "Generation Z Developers, 2018",
             "kind": "artefact",
             "summary": "Leanpub, 60%, 465 readers; on Amazon."
+          },
+          {
+            "id": "cover",
+            "label": "Seven lines on the cover",
+            "kind": "artefact",
+            "summary": "Question everything; learn how to learn."
           },
           {
             "id": "advantage",
@@ -128,18 +141,6 @@
             "summary": "Collaborate on their open source."
           },
           {
-            "id": "mlai",
-            "label": "AI in the next five years",
-            "kind": "example",
-            "summary": "Written 2018; ChatGPT came in 2022."
-          },
-          {
-            "id": "dated",
-            "label": "What did not hold",
-            "kind": "question",
-            "summary": "Tool lists, building models, who is a developer."
-          },
-          {
             "id": "outlines",
             "label": "Ninety outlines",
             "kind": "artefact",
@@ -147,24 +148,47 @@
           },
           {
             "id": "name",
-            "label": "Keep the name",
+            "label": "Keep the name, date the edition",
             "kind": "claim",
-            "summary": "Still Generation Z, all developers now."
+            "summary": "They all have to be developers now."
+          },
+          {
+            "id": "bar",
+            "label": "The bar of entry fell",
+            "kind": "claim",
+            "summary": "From very high to very low."
+          },
+          {
+            "id": "roles",
+            "label": "Explorers, villagers, town planners",
+            "kind": "concept",
+            "summary": "Wardley's frame for where you fit."
+          },
+          {
+            "id": "first",
+            "label": "This book first",
+            "kind": "claim",
+            "summary": "Enough material, already published."
+          },
+          {
+            "id": "interview",
+            "label": "The editor interviews me",
+            "kind": "method",
+            "summary": "As for ten hard questions."
           },
           {
             "id": "edition",
             "label": "The second edition",
             "kind": "method",
-            "summary": "Fill outlines, then and now, handwritten notes."
-          },
-          {
-            "id": "kdp",
-            "label": "Books from articles, on KDP",
-            "kind": "method",
-            "summary": "A launch in Portugal."
+            "summary": "Review, interviews, iterations, KDP."
           }
         ],
         "edges": [
+          {
+            "from": "book",
+            "to": "cover",
+            "rel": "produces"
+          },
           {
             "from": "book",
             "to": "advantage",
@@ -177,16 +201,6 @@
           },
           {
             "from": "book",
-            "to": "mlai",
-            "rel": "produces"
-          },
-          {
-            "from": "mlai",
-            "to": "dated",
-            "rel": "contrasts"
-          },
-          {
-            "from": "book",
             "to": "outlines",
             "rel": "produces"
           },
@@ -196,14 +210,24 @@
             "rel": "leads-to"
           },
           {
-            "from": "name",
+            "from": "bar",
+            "to": "name",
+            "rel": "extends"
+          },
+          {
+            "from": "roles",
             "to": "edition",
             "rel": "extends"
           },
           {
-            "from": "edition",
-            "to": "kdp",
-            "rel": "depends-on"
+            "from": "first",
+            "to": "edition",
+            "rel": "leads-to"
+          },
+          {
+            "from": "interview",
+            "to": "edition",
+            "rel": "produces"
           }
         ],
         "links": {
@@ -222,7 +246,8 @@
           ],
           "sites": [
             "https://leanpub.com/generation-z",
-            "https://github.com/DinisCruz/Book_Generation_Z_Developer"
+            "https://github.com/DinisCruz/Book_Generation_Z_Developer",
+            "https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html"
           ]
         },
         "quotes": [
@@ -231,8 +256,8 @@
             "why": "The 2018 book."
           },
           {
-            "text": "they are all developers.",
-            "why": "Why the name still works."
+            "text": "They read more urgently now than they did then.",
+            "why": "On the cover's seven lines."
           }
         ]
       }
@@ -34049,6 +34074,7 @@
         "the-investigation-github-owes-its-customers"
       ],
       "links_in": [
+        "generation-z-developers-again",
         "three-linkedin-pages",
         "your-own-newsroom",
         "the-expert-founders",

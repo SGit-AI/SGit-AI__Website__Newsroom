@@ -4,11 +4,11 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.115 · 198 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.116 · 198 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 6 min. My 2018 book for young developers, 60% done, much of it outlines since written here as articles, and a plan for a second edition.
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 9 min. My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.
 
 ## Highlights
 
@@ -42,7 +42,7 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 
 ### Vaults & provenance (40)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 6 min.
+- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](articles/generation-z-developers-again.md), 2026-10-18, 9 min.
 - [Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you](articles/act-as-the-job-you-want.md), 2026-10-18, 6 min.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](articles/a-directory-of-people-and-keys.md), 2026-10-18, 8 min.
 

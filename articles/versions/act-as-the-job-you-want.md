@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 1,618 | first published | this release | [current](../act-as-the-job-you-want.md) |
+| **v1.0.0** | 2026-10-18 | published | 1,618 | first published | [`392d2665b`](https://github.com/SGit-AI/SGit-AI__Website/commit/392d2665bf44f2ab0044480593f79b46b64424fd) | [current](../act-as-the-job-you-want.md) |
 
 [← Back to the article](../act-as-the-job-you-want.md) · [All articles](../index.md)
 
