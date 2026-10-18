@@ -55,6 +55,777 @@
   ],
   "articles": [
     {
+      "slug": "the-librarians-daily-brief",
+      "title": "The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-librarians-daily-brief.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-librarians-daily-brief.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-librarians-daily-brief.webp",
+      "teaser": "A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "librarian",
+        "daily-brief",
+        "github",
+        "memory",
+        "newsroom",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "places-of-highest-leverage",
+        "our-first-pr-in-ruflo",
+        "the-agents-write-too",
+        "from-send-to-sgit",
+        "bringing-my-past-work-back",
+        "the-briefs-so-far"
+      ],
+      "links_in": [
+        "bringing-my-past-work-back"
+      ],
+      "figures": [
+        {
+          "file": "lb-brief.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lb-brief.webp",
+          "caption": "The Librarian's daily brief. On the left, what it reads each morning: GitHub across the organisations, pull requests including outside contributions, this site's release files, the accountant's ledger of scheduled runs and costs, the cloud sessions, the briefs map, the review status, a calendar file and the wires. In the middle, the Librarian, which reads everything and writes only its own folder. On the right, one page: what needs Dinis, yesterday, the agents' debrief, threads to pick up, what is coming, and at most three places where his leverage is. Underneath, the loop: what he acted on weights the next day's brief.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-librarians-daily-brief",
+        "teaser": "A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Working on many threads at once loses some, so the Librarian, the role that catalogues everything, writes a morning brief from sources the site already keeps (releases, the run ledger, the briefs map, reviews) plus GitHub and the cloud sessions; it writes only its own folder, learns from what is acted on after rUv's loop, and the pattern fits every team.",
+        "nodes": [
+          {
+            "id": "threads",
+            "label": "Lost threads",
+            "kind": "question",
+            "summary": "Many tangents, missed returns."
+          },
+          {
+            "id": "brief",
+            "label": "The daily brief",
+            "kind": "artefact",
+            "summary": "Needs you, yesterday, debrief, threads, coming up, leverage."
+          },
+          {
+            "id": "sources",
+            "label": "Sources already kept",
+            "kind": "artefact",
+            "summary": "Releases, ledger, briefs, reviews."
+          },
+          {
+            "id": "github",
+            "label": "GitHub across organisations",
+            "kind": "method",
+            "summary": "Search by date; events lag and expire."
+          },
+          {
+            "id": "librarian",
+            "label": "The Librarian",
+            "kind": "concept",
+            "summary": "Reads everything, writes only its folder."
+          },
+          {
+            "id": "flag",
+            "label": "Flag, do not fix",
+            "kind": "method",
+            "summary": "Problems become lines in the brief."
+          },
+          {
+            "id": "loop",
+            "label": "A loop that learns",
+            "kind": "method",
+            "summary": "Retrieve, judge, distill, consolidate."
+          },
+          {
+            "id": "others",
+            "label": "Others' daily briefs",
+            "kind": "example",
+            "summary": "ChatGPT Pulse, Google's daily email."
+          },
+          {
+            "id": "team",
+            "label": "Every team needs one",
+            "kind": "claim",
+            "summary": "Start small, retrofit backwards."
+          },
+          {
+            "id": "leverage",
+            "label": "Where the leverage is",
+            "kind": "method",
+            "summary": "At most three suggestions; Dinis decides."
+          }
+        ],
+        "edges": [
+          {
+            "from": "threads",
+            "to": "brief",
+            "rel": "answers"
+          },
+          {
+            "from": "sources",
+            "to": "brief",
+            "rel": "produces"
+          },
+          {
+            "from": "github",
+            "to": "brief",
+            "rel": "produces"
+          },
+          {
+            "from": "librarian",
+            "to": "brief",
+            "rel": "produces"
+          },
+          {
+            "from": "flag",
+            "to": "librarian",
+            "rel": "extends"
+          },
+          {
+            "from": "loop",
+            "to": "brief",
+            "rel": "extends"
+          },
+          {
+            "from": "others",
+            "to": "brief",
+            "rel": "compared-with"
+          },
+          {
+            "from": "brief",
+            "to": "team",
+            "rel": "leads-to"
+          },
+          {
+            "from": "brief",
+            "to": "leverage",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-agents-write-too",
+            "the-briefs-so-far",
+            "our-first-pr-in-ruflo",
+            "from-send-to-sgit"
+          ],
+          "pages": [
+            "admin/notes/2026-10-18__the-librarians-daily-brief.md",
+            "briefs/index.html",
+            "newsroom/policies.html"
+          ],
+          "sites": [
+            "https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-intelligence",
+            "https://docs.github.com/en/rest/activity/events"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It flags; others fix.",
+            "why": "The Librarian's policy."
+          },
+          {
+            "text": "It knows my universe because my universe is recorded, in the open, in files I own.",
+            "why": "Why it can work."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ephemeral-town-planner-services",
+      "title": "Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/ephemeral-town-planner-services.html",
+      "markdown": "https://newsroom.sgit.ai/articles/ephemeral-town-planner-services.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/ephemeral-town-planner-services.webp",
+      "teaser": "Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "serverless",
+        "cloud",
+        "wardley-maps",
+        "town-planners",
+        "pricing",
+        "aws",
+        "article"
+      ],
+      "links_out": [
+        "cloudflare-as-lego-blocks",
+        "an-agent-desktop-by-the-minute",
+        "the-code-you-do-not-ship",
+        "explorer-coding"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "es-scale.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/es-scale.webp",
+          "caption": "What \"serverless\" costs when nobody is using it, for products sold under the name, as their own pricing pages read on 18 October 2026, excluding storage. Some scale to zero: Lambda's event functions, Cloud Run, Cosmos DB serverless, Neon, Redshift Serverless, Aurora Serverless v2 since November 2024 and OpenSearch's next-generation collections since May 2026. Some do not: MSK Serverless bills $0.75 a cluster-hour, OpenSearch's classic collections a floor of two capacity units, ElastiCache Serverless a minimum of storage, Neptune Serverless a minimum of one capacity unit. The line between the two groups is the test this article proposes.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "ephemeral-town-planner-services",
+        "teaser": "Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Serverless meant scaling to zero, costing nothing idle, starting fast and turning a capability into a commodity, as its definitions said; the word now covers products billed by the hour, so a test (no hourly bill when idle) and a better name, ephemeral town planner services, say what was meant and expose the glue behind services sold as commodities.",
+        "nodes": [
+          {
+            "id": "meant",
+            "label": "What serverless meant",
+            "kind": "concept",
+            "summary": "Scale to zero, idle costs nothing, fast, a commodity."
+          },
+          {
+            "id": "defs",
+            "label": "The definitions",
+            "kind": "example",
+            "summary": "CNCF: no charge when code is not running."
+          },
+          {
+            "id": "now",
+            "label": "What it means now",
+            "kind": "example",
+            "summary": "MSK by the cluster-hour; floors elsewhere."
+          },
+          {
+            "id": "test",
+            "label": "The test",
+            "kind": "method",
+            "summary": "Billed by the hour when idle: not serverless."
+          },
+          {
+            "id": "gap",
+            "label": "An engineering gap",
+            "kind": "claim",
+            "summary": "An hourly bill means a server on their side."
+          },
+          {
+            "id": "commodity",
+            "label": "Commodity services",
+            "kind": "question",
+            "summary": "Close, but a commodity can be always on."
+          },
+          {
+            "id": "townplanner",
+            "label": "Town planner services",
+            "kind": "concept",
+            "summary": "Mature and industrialised, but maybe always on."
+          },
+          {
+            "id": "ephemeral",
+            "label": "Ephemeral services",
+            "kind": "concept",
+            "summary": "Comes and goes, but maybe a prototype."
+          },
+          {
+            "id": "name",
+            "label": "Ephemeral town planner services",
+            "kind": "claim",
+            "summary": "Three words, each covering a part."
+          },
+          {
+            "id": "lambda",
+            "label": "Lambda on S3",
+            "kind": "example",
+            "summary": "Ephemeral on top of always-there services."
+          },
+          {
+            "id": "glue",
+            "label": "The glue behind the commodity",
+            "kind": "example",
+            "summary": "Lambda on containers in EC2 until Firecracker."
+          }
+        ],
+        "edges": [
+          {
+            "from": "defs",
+            "to": "meant",
+            "rel": "example-of"
+          },
+          {
+            "from": "now",
+            "to": "meant",
+            "rel": "contrasts"
+          },
+          {
+            "from": "now",
+            "to": "test",
+            "rel": "leads-to"
+          },
+          {
+            "from": "test",
+            "to": "gap",
+            "rel": "leads-to"
+          },
+          {
+            "from": "commodity",
+            "to": "name",
+            "rel": "leads-to"
+          },
+          {
+            "from": "townplanner",
+            "to": "name",
+            "rel": "extends"
+          },
+          {
+            "from": "ephemeral",
+            "to": "name",
+            "rel": "extends"
+          },
+          {
+            "from": "name",
+            "to": "lambda",
+            "rel": "example-of"
+          },
+          {
+            "from": "name",
+            "to": "glue",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "cloudflare-as-lego-blocks",
+            "the-code-you-do-not-ship",
+            "explorer-coding"
+          ],
+          "pages": [],
+          "sites": [
+            "https://arxiv.org/abs/1902.03383",
+            "https://blog.gardeviance.org/2016/11/why-fuss-about-serverless.html",
+            "https://www.usenix.org/system/files/nsdi20-paper-agache.pdf"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "If it bills you by the hour when nobody is using it, it is not serverless.",
+            "why": "The test."
+          },
+          {
+            "text": "Put together, the three words say what serverless was supposed to say, and each covers a part the others miss",
+            "why": "The name."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "bringing-my-past-work-back",
+      "title": "Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/bringing-my-past-work-back.html",
+      "markdown": "https://newsroom.sgit.ai/articles/bringing-my-past-work-back.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/bringing-my-past-work-back.webp",
+      "teaser": "A daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles: then and now, connected, two or three a day.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "memory",
+        "archive",
+        "back-catalogue",
+        "agents",
+        "newsroom",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "portugal-2016-hacking-portugal",
+        "the-graphs-books",
+        "books-from-articles",
+        "my-memory-checked",
+        "memory-is-not-a-spectator-sport",
+        "the-librarians-daily-brief",
+        "knowledge-that-maintains-itself",
+        "how-much-of-this-did-i-write"
+      ],
+      "links_in": [
+        "the-librarians-daily-brief"
+      ],
+      "figures": [
+        {
+          "file": "pw-worker.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pw-worker.webp",
+          "caption": "The back-catalogue worker. On the left, the sources in the order the worker takes them: the essays at diniscruz.ai, the NotebookLM repository, the talks and books, the tools, the blog, the videos, and the LinkedIn and Twitter history once exported. In the middle, a register with one line per item and its status, and the worker, which takes two or three items a day. On the right, each article: what it was, what it said, then and now, and how it connects. Underneath, the compound effect: each article becomes a node the next one links to.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "bringing-my-past-work-back",
+        "teaser": "A daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles: then and now, connected, two or three a day.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Most of Dinis's past work cannot be linked from what he writes now, so a worker takes one item a day from an inventoried back catalogue, writes what it said, what changed and how it connects, keeps a register, and compounds: each article is a node the next links to; every team can do the same, retrofitted backwards.",
+        "nodes": [
+          {
+            "id": "unlinkable",
+            "label": "Work I cannot link to",
+            "kind": "question",
+            "summary": "Blog, decks, books, posts."
+          },
+          {
+            "id": "inventory",
+            "label": "The inventory",
+            "kind": "artefact",
+            "summary": "Essays, blog, decks, books, tools, NotebookLM, videos."
+          },
+          {
+            "id": "worker",
+            "label": "The back-catalogue worker",
+            "kind": "method",
+            "summary": "Two or three articles a day."
+          },
+          {
+            "id": "register",
+            "label": "The register",
+            "kind": "artefact",
+            "summary": "One line per item, with its status."
+          },
+          {
+            "id": "shape",
+            "label": "Each article's shape",
+            "kind": "method",
+            "summary": "What it was, what it said, then and now, connections."
+          },
+          {
+            "id": "checked",
+            "label": "Checked against the record",
+            "kind": "method",
+            "summary": "Old memory is less reliable than the post."
+          },
+          {
+            "id": "future",
+            "label": "Talking to my future self",
+            "kind": "concept",
+            "summary": "Writing to find it later."
+          },
+          {
+            "id": "compound",
+            "label": "The compound effect",
+            "kind": "claim",
+            "summary": "Each article is a node the next links to."
+          },
+          {
+            "id": "alive",
+            "label": "Keeps the site alive",
+            "kind": "claim",
+            "summary": "Offline days and the newsletter."
+          },
+          {
+            "id": "team",
+            "label": "Every team needs one",
+            "kind": "claim",
+            "summary": "Start small, retrofit backwards."
+          },
+          {
+            "id": "librarian",
+            "label": "The Librarian's daily brief",
+            "kind": "concept",
+            "summary": "Tracks from today; this tracks before."
+          }
+        ],
+        "edges": [
+          {
+            "from": "unlinkable",
+            "to": "worker",
+            "rel": "answers"
+          },
+          {
+            "from": "inventory",
+            "to": "register",
+            "rel": "produces"
+          },
+          {
+            "from": "register",
+            "to": "worker",
+            "rel": "depends-on"
+          },
+          {
+            "from": "worker",
+            "to": "shape",
+            "rel": "produces"
+          },
+          {
+            "from": "checked",
+            "to": "shape",
+            "rel": "extends"
+          },
+          {
+            "from": "future",
+            "to": "worker",
+            "rel": "leads-to"
+          },
+          {
+            "from": "worker",
+            "to": "compound",
+            "rel": "leads-to"
+          },
+          {
+            "from": "worker",
+            "to": "alive",
+            "rel": "produces"
+          },
+          {
+            "from": "compound",
+            "to": "team",
+            "rel": "leads-to"
+          },
+          {
+            "from": "librarian",
+            "to": "worker",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-librarians-daily-brief",
+            "my-memory-checked",
+            "books-from-articles",
+            "the-graphs-books",
+            "portugal-2016-hacking-portugal",
+            "knowledge-that-maintains-itself"
+          ],
+          "pages": [
+            "admin/notes/2026-10-18__bringing-my-past-work-back.md",
+            "briefs/index.html"
+          ],
+          "sites": [
+            "https://diniscruz.ai"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "That is not a memory, it is luck.",
+            "why": "On searching Google for my own work."
+          },
+          {
+            "text": "A back catalogue I cannot link to is a conversation with no reply.",
+            "why": "Why it matters."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-browser-for-one",
+      "title": "A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-browser-for-one.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-browser-for-one.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-browser-for-one.webp",
+      "teaser": "An iPhone app that only reads my newsroom: WebKit in the UK, a paid membership and a Mac to build it, one passkey test first, and someone else to maintain it.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "browsers",
+        "ios",
+        "webkit",
+        "newsroom",
+        "explorer-coding",
+        "villagers",
+        "brief",
+        "article"
+      ],
+      "links_out": [
+        "your-reading-your-controls",
+        "a-custom-firefox-of-my-own",
+        "software-vendors-as-villagers",
+        "who-will-fix-your-mess",
+        "a-minimal-viable-browser",
+        "explorer-coding"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "bo-app.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bo-app.webp",
+          "caption": "A browser for one, sketched on an iPhone. It opens on the newsroom where it was left, with tabs in a strip that hides as you read, read and unread marked, the vault open, an inbox of what the agents sent, and reading workflows as runs of tabs. Underneath: a native Swift shell around WebKit, a small bridge to the page, an offline cache, and a push sender. The first step is a test: do passkeys with the PRF extension work inside the app.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-browser-for-one",
+        "teaser": "An iPhone app that only reads my newsroom: WebKit in the UK, a paid membership and a Mac to build it, one passkey test first, and someone else to maintain it.",
+        "topics": [
+          "site-and-engineering",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Frustration with phone browsers, plus the power to build, turns into a brief for a personal iPhone app that only reads the newsroom; in the UK it must be WebKit, passkeys and push need the paid membership, it must be built on a Mac, the vault's PRF passkey is the first test, and once it works even a power user wants someone else to maintain it.",
+        "nodes": [
+          {
+            "id": "frustrated",
+            "label": "Browsers that get it wrong",
+            "kind": "question",
+            "summary": "Reloads, no offline, no memory."
+          },
+          {
+            "id": "power",
+            "label": "Empowerment lowers patience",
+            "kind": "claim",
+            "summary": "When I can build it, I stop putting up with it."
+          },
+          {
+            "id": "app",
+            "label": "A browser for one",
+            "kind": "artefact",
+            "summary": "Only the newsroom, knows what I read."
+          },
+          {
+            "id": "engine",
+            "label": "WebKit, by rule",
+            "kind": "example",
+            "summary": "UK apps must use WebKit; EU and Japan differ."
+          },
+          {
+            "id": "paid",
+            "label": "Paid membership needed",
+            "kind": "example",
+            "summary": "Associated domains and push are not free."
+          },
+          {
+            "id": "mac",
+            "label": "Built on a Mac",
+            "kind": "method",
+            "summary": "A local session, CI runners or Xcode Cloud."
+          },
+          {
+            "id": "prf",
+            "label": "Test PRF first",
+            "kind": "method",
+            "summary": "Does the vault's passkey work in the app?"
+          },
+          {
+            "id": "fallback",
+            "label": "The Home Screen fallback",
+            "kind": "method",
+            "summary": "No Mac, no membership, no native tabs."
+          },
+          {
+            "id": "maintain",
+            "label": "Someone to maintain it",
+            "kind": "claim",
+            "summary": "Being able to is not wanting to."
+          },
+          {
+            "id": "villagers",
+            "label": "Vendors as villagers",
+            "kind": "concept",
+            "summary": "Sell the maintenance of what users build."
+          },
+          {
+            "id": "brief",
+            "label": "The brief",
+            "kind": "artefact",
+            "summary": "Four phases, for the agent that builds it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "frustrated",
+            "to": "app",
+            "rel": "leads-to"
+          },
+          {
+            "from": "power",
+            "to": "app",
+            "rel": "leads-to"
+          },
+          {
+            "from": "app",
+            "to": "engine",
+            "rel": "depends-on"
+          },
+          {
+            "from": "app",
+            "to": "paid",
+            "rel": "depends-on"
+          },
+          {
+            "from": "app",
+            "to": "mac",
+            "rel": "depends-on"
+          },
+          {
+            "from": "prf",
+            "to": "app",
+            "rel": "depends-on"
+          },
+          {
+            "from": "fallback",
+            "to": "app",
+            "rel": "contrasts"
+          },
+          {
+            "from": "app",
+            "to": "maintain",
+            "rel": "leads-to"
+          },
+          {
+            "from": "maintain",
+            "to": "villagers",
+            "rel": "example-of"
+          },
+          {
+            "from": "app",
+            "to": "brief",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-custom-firefox-of-my-own",
+            "software-vendors-as-villagers",
+            "who-will-fix-your-mess",
+            "explorer-coding",
+            "a-minimal-viable-browser",
+            "your-reading-your-controls"
+          ],
+          "pages": [
+            "admin/notes/2026-10-18__a-browser-for-one.md",
+            "briefs/index.html"
+          ],
+          "sites": [
+            "https://developer.apple.com/support/alternative-browser-engines/",
+            "https://developer.apple.com/help/account/reference/supported-capabilities-ios/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Being able to compile a Linux kernel does not mean I want to compile Linux kernels",
+            "why": "Why maintenance is sold."
+          },
+          {
+            "text": "On an iPhone in the UK, the question answers itself.",
+            "why": "The engine."
+          }
+        ]
+      }
+    },
+    {
       "slug": "who-is-speaking",
       "title": "Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which",
       "date": "2026-10-18",
@@ -271,7 +1042,9 @@
         "a-section-for-publishers",
         "the-editors-channel"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-librarians-daily-brief"
+      ],
       "figures": [
         {
           "file": "bs-map.webp",
@@ -1696,6 +2469,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "ephemeral-town-planner-services",
         "a-minimal-viable-browser"
       ],
       "figures": [
@@ -1920,6 +2694,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "ephemeral-town-planner-services",
         "three-linkedin-pages",
         "a-minimal-viable-browser"
       ],
@@ -2122,6 +2897,7 @@
         "cloudflare-as-lego-blocks"
       ],
       "links_in": [
+        "a-browser-for-one",
         "the-code-you-do-not-ship"
       ],
       "figures": [
@@ -3231,6 +4007,7 @@
         "a-meter-in-the-browser"
       ],
       "links_in": [
+        "a-browser-for-one",
         "who-is-speaking",
         "the-briefs-so-far",
         "a-section-for-publishers"
@@ -4388,6 +5165,7 @@
         "the-policy-guards-the-door"
       ],
       "links_in": [
+        "the-librarians-daily-brief",
         "three-linkedin-pages",
         "what-can-your-agent-reach",
         "three-policies-for-an-agent",
@@ -5117,6 +5895,7 @@
         "saas-apocalypse-decided-by-inertia-not-by-ai"
       ],
       "links_in": [
+        "a-browser-for-one",
         "i-just-want-to-buy-the-article"
       ],
       "figures": [
@@ -8045,6 +8824,7 @@
         "portugal-and-europe-2025"
       ],
       "links_in": [
+        "bringing-my-past-work-back",
         "portugal-and-europe-2025",
         "portugal-2024-genai-in-portuguese",
         "portugal-2010-a-challenge",
@@ -8398,6 +9178,7 @@
         "places-of-highest-leverage"
       ],
       "links_in": [
+        "bringing-my-past-work-back",
         "portugal-and-europe-2025",
         "books-from-articles"
       ],
@@ -8624,6 +9405,7 @@
         "portugal-and-europe-2025"
       ],
       "links_in": [
+        "bringing-my-past-work-back",
         "portugal-and-europe-2025",
         "portugal-2016-hacking-portugal",
         "the-graphs-books"
@@ -9073,6 +9855,7 @@
         "dark-mode-and-four-more"
       ],
       "links_in": [
+        "a-browser-for-one",
         "the-code-you-do-not-ship",
         "fix-the-page-yourself",
         "who-will-fix-your-mess",
@@ -9304,6 +10087,8 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "ephemeral-town-planner-services",
+        "a-browser-for-one",
         "the-code-you-do-not-ship",
         "fix-the-page-yourself",
         "who-will-fix-your-mess",
@@ -9536,6 +10321,7 @@
         "the-value-of-constraints"
       ],
       "links_in": [
+        "a-browser-for-one",
         "fix-the-page-yourself",
         "who-will-fix-your-mess",
         "software-vendors-as-villagers",
@@ -12621,6 +13407,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "bringing-my-past-work-back",
         "journalism-becomes-intelligence",
         "your-own-newsroom",
         "omnichannel-programming"
@@ -12833,6 +13620,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "the-librarians-daily-brief",
         "three-linkedin-pages",
         "a-minimal-viable-browser",
         "sgit-is-a-standard",
@@ -16528,6 +17316,7 @@
         "sixteen-notes-i-did-not-want-to-lose"
       ],
       "links_in": [
+        "the-librarians-daily-brief",
         "who-is-speaking",
         "the-vault-opened",
         "your-own-newsroom",
@@ -17313,6 +18102,7 @@
         "memory-is-not-a-spectator-sport"
       ],
       "links_in": [
+        "bringing-my-past-work-back",
         "who-will-fix-your-mess",
         "the-agents-write-too"
       ],
@@ -23603,6 +24393,7 @@
         "how-much-of-this-did-i-write"
       ],
       "links_in": [
+        "the-librarians-daily-brief",
         "the-graphs-books",
         "books-from-articles",
         "who-owns-the-words",
@@ -35625,6 +36416,7 @@
         "where-is-the-why"
       ],
       "links_in": [
+        "ephemeral-town-planner-services",
         "agentic-cost-is-an-engineering-problem",
         "the-key-is-the-billing-system",
         "a-mac-of-the-agents-own",
@@ -38623,6 +39415,7 @@
         "the-wall-under-the-reply"
       ],
       "links_in": [
+        "bringing-my-past-work-back",
         "my-memory-checked",
         "from-send-to-sgit",
         "places-of-highest-leverage",
@@ -39889,6 +40682,7 @@
         "price-it-then-give-it-away"
       ],
       "links_in": [
+        "bringing-my-past-work-back",
         "the-agents-write-too",
         "knowledge-that-maintains-itself",
         "the-vault-crosses-chrome-profiles",

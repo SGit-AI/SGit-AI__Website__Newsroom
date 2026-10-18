@@ -1419,6 +1419,76 @@
    "depends_on": [],
    "session_brief": "Read publish.py's history replay and the version pages it writes (articles/versions/), and reviews/records/*/status.json. First deliverable: a 'Changed' line under each article's byline, injected at build like the Reviews section (and exempted in validate.js and sync_newsroom.py the same way), saying the last version, its date, one line of why from the release that made it, and a link to the diff. Then per-version reasons and links from review findings to the fixing version. Done when an article changed in a release shows that release's reason on its page and the link opens the diff at that version.",
    "size": "M"
+  },
+  {
+   "id": "browser-for-one",
+   "title": "A browser for one: Dinis's iPhone app for the newsroom",
+   "source": [
+    "a-browser-for-one",
+    "admin/notes/2026-10-18__a-browser-for-one.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A personal iPhone app that only browses newsroom.sgit.ai: opens where it was left, knows what was read, opens the vault, tabs, offline, no reloads, reading workflows, an inbox from the agents.",
+   "built": "",
+   "remaining": [
+    "Phase 0: test passkeys with PRF inside the app's WebKit view; the apple-app-site-association file; storage persistence",
+    "Phase 1: the app (tabs, offline, no reloads, reading state over a bridge with a written policy)",
+    "Phase 2: reading workflows kept in the vault",
+    "Phase 3: an inbox from the agents, polled from the vault, and push through a small sender"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__a-browser-for-one.md and the article a-browser-for-one, then assets/door.js and assets/vault-pane/vault-pane.js for the passkey unlock. This needs Xcode on macOS (a session on Dinis's Mac, or GitHub Actions macOS runners with TestFlight) and Apple's paid developer membership. First deliverable: the smallest Swift app with the associated domain newsroom.sgit.ai that opens the site and tries the vault unlock; record whether PRF results come back inside the web view, with the iOS version. Done when the vault opens inside the app on Dinis's phone, or when the native-ceremony fallback is in place and tested.",
+   "size": "L"
+  },
+  {
+   "id": "librarian-daily-brief",
+   "title": "The Librarian's daily brief and debrief of Dinis's universe",
+   "source": [
+    "the-librarians-daily-brief",
+    "admin/notes/2026-10-18__the-librarians-daily-brief.md",
+    "the-agents-write-too"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "Every morning, a page for Dinis: what needs him, yesterday across every repository and organisation (including outside pull requests), the agents' debrief with costs, threads worth picking up, what is coming, and at most three places where his leverage is; learning from what he acts on.",
+   "built": "The sources exist: release files, the accountant's ledger (admin/build/wire-runs.json), the briefs map, reviews/status.json, the wires.",
+   "remaining": [
+    "A Librarian role file and policy row; port policy_check.py from sgit.ai",
+    "Yesterday from this repository alone",
+    "GitHub across the organisations with a token, and outside contributions",
+    "Cloud sessions and their debriefs",
+    "Threads to pick up and where the leverage is",
+    "The loop: weights from what Dinis acted on"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__the-librarians-daily-brief.md and the article, then admin/build/runs_ledger.py, admin/build/wire-runs.json, admin/content/briefs.json and reviews/status.json. First deliverable: admin/build/librarian.py that writes admin/content/librarian/<date>.md and .json for yesterday from this repository alone (releases, ledger runs including refused ones, briefs whose status changed, new reviews and open findings), and a newsroom/roles/librarian.md role file. Done when, for a fixture day, the brief has each item in the right section and a source that could not be read is flagged at the top.",
+   "size": "M"
+  },
+  {
+   "id": "back-catalogue-worker",
+   "title": "The back-catalogue worker: Dinis's past work brought back as linkable articles",
+   "source": [
+    "bringing-my-past-work-back",
+    "admin/notes/2026-10-18__bringing-my-past-work-back.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A worker that runs every day, takes the next item from Dinis's back catalogue (essays, NotebookLM material, talks and books, tools, the blog, videos, later LinkedIn and Twitter exports) and writes two or three articles a day: what it was, what it said, then and now, and how it connects to the newsroom today.",
+   "built": "The inventory, taken 18 October 2026: 103 essays (27 cited), 2,038 NotebookLM files, 65 decks, 10 books, 29 tools in production, 1,289 blog posts, 221 videos. Nothing else.",
+   "remaining": [
+    "The register, admin/content/back-catalogue.json, filled from the essays and the NotebookLM repository",
+    "Three articles from the essays, reviewed by Dinis, to set the shape",
+    "The daily scheduled run with the site's checks",
+    "Talks, books, tools, blog and videos",
+    "LinkedIn, Twitter and NotebookLM exports, when Dinis provides them"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__bringing-my-past-work-back.md and the article. First deliverable: admin/build/back_catalogue.py that builds admin/content/back-catalogue.json from diniscruz.ai's llms.txt and the NotebookLM repository's markdown and link files (source, id, URL, date, status, article), marks the 27 essays already cited, applies the exclusions in the note, and prints the next three queued items. Done when the register lists every essay with a status and a second run changes nothing.",
+   "size": "M"
   }
  ]
 }

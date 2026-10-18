@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-18 | minor | 3,668 | +0 / −7 words; 5 changed, 0 added, 0 removed paragraphs | this release | [what changed](dark-mode-and-four-more/v1.2.0.md) · [current](../dark-mode-and-four-more.md) |
+| **v1.2.0** | 2026-10-18 | minor | 3,668 | +0 / −7 words; 5 changed, 0 added, 0 removed paragraphs | [`9f74e5714`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f74e5714f015270209da9682fa8846c51b941fb) | [what changed](dark-mode-and-four-more/v1.2.0.md) · [current](../dark-mode-and-four-more.md) |
 | **v1.1.0** | 2026-10-13 | minor | 3,675 | +89 / −1 words; 6 changed, 0 added, 0 removed paragraphs | [`750cc5899`](https://github.com/SGit-AI/SGit-AI__Website/commit/750cc5899539bbc7d4d19c94fc0e199d192ed76f) | [what changed](dark-mode-and-four-more/v1.1.0.md) |
 | **v1.0.0** | 2026-10-13 | published | 3,587 | first published | [`306297814`](https://github.com/SGit-AI/SGit-AI__Website/commit/3062978148178c9d4815c06b1244da38fb0af0b3) |  |
 

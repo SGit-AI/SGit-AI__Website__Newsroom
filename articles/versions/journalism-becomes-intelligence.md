@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-18 | minor | 2,418 | +4 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](journalism-becomes-intelligence/v1.2.0.md) · [current](../journalism-becomes-intelligence.md) |
+| **v1.2.0** | 2026-10-18 | minor | 2,418 | +4 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`9f74e5714`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f74e5714f015270209da9682fa8846c51b941fb) | [what changed](journalism-becomes-intelligence/v1.2.0.md) · [current](../journalism-becomes-intelligence.md) |
 | **v1.1.0** | 2026-10-15 | minor | 2,414 | +446 / −0 words; 1 changed, 8 added, 0 removed paragraphs | [`b4d872995`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4d872995721407b9723e840e250e3e1d634d405) | [what changed](journalism-becomes-intelligence/v1.1.0.md) |
 | **v1.0.0** | 2026-10-15 | published | 1,968 | first published | [`421049b07`](https://github.com/SGit-AI/SGit-AI__Website/commit/421049b072e0aa48ff3133e9f791bf55f0224b76) |  |
 

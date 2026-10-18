@@ -1,0 +1,165 @@
+{
+  "slug": "a-browser-for-one",
+  "teaser": "An iPhone app that only reads my newsroom: WebKit in the UK, a paid membership and a Mac to build it, one passkey test first, and someone else to maintain it.",
+  "topics": [
+    "site-and-engineering",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Frustration with phone browsers, plus the power to build, turns into a brief for a personal iPhone app that only reads the newsroom; in the UK it must be WebKit, passkeys and push need the paid membership, it must be built on a Mac, the vault's PRF passkey is the first test, and once it works even a power user wants someone else to maintain it.",
+  "nodes": [
+    {
+      "id": "frustrated",
+      "label": "Browsers that get it wrong",
+      "kind": "question",
+      "summary": "Reloads, no offline, no memory."
+    },
+    {
+      "id": "power",
+      "label": "Empowerment lowers patience",
+      "kind": "claim",
+      "summary": "When I can build it, I stop putting up with it."
+    },
+    {
+      "id": "app",
+      "label": "A browser for one",
+      "kind": "artefact",
+      "summary": "Only the newsroom, knows what I read."
+    },
+    {
+      "id": "engine",
+      "label": "WebKit, by rule",
+      "kind": "example",
+      "summary": "UK apps must use WebKit; EU and Japan differ."
+    },
+    {
+      "id": "paid",
+      "label": "Paid membership needed",
+      "kind": "example",
+      "summary": "Associated domains and push are not free."
+    },
+    {
+      "id": "mac",
+      "label": "Built on a Mac",
+      "kind": "method",
+      "summary": "A local session, CI runners or Xcode Cloud."
+    },
+    {
+      "id": "prf",
+      "label": "Test PRF first",
+      "kind": "method",
+      "summary": "Does the vault's passkey work in the app?"
+    },
+    {
+      "id": "fallback",
+      "label": "The Home Screen fallback",
+      "kind": "method",
+      "summary": "No Mac, no membership, no native tabs."
+    },
+    {
+      "id": "maintain",
+      "label": "Someone to maintain it",
+      "kind": "claim",
+      "summary": "Being able to is not wanting to."
+    },
+    {
+      "id": "villagers",
+      "label": "Vendors as villagers",
+      "kind": "concept",
+      "summary": "Sell the maintenance of what users build."
+    },
+    {
+      "id": "brief",
+      "label": "The brief",
+      "kind": "artefact",
+      "summary": "Four phases, for the agent that builds it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "frustrated",
+      "to": "app",
+      "rel": "leads-to"
+    },
+    {
+      "from": "power",
+      "to": "app",
+      "rel": "leads-to"
+    },
+    {
+      "from": "app",
+      "to": "engine",
+      "rel": "depends-on"
+    },
+    {
+      "from": "app",
+      "to": "paid",
+      "rel": "depends-on"
+    },
+    {
+      "from": "app",
+      "to": "mac",
+      "rel": "depends-on"
+    },
+    {
+      "from": "prf",
+      "to": "app",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fallback",
+      "to": "app",
+      "rel": "contrasts"
+    },
+    {
+      "from": "app",
+      "to": "maintain",
+      "rel": "leads-to"
+    },
+    {
+      "from": "maintain",
+      "to": "villagers",
+      "rel": "example-of"
+    },
+    {
+      "from": "app",
+      "to": "brief",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-custom-firefox-of-my-own",
+      "software-vendors-as-villagers",
+      "who-will-fix-your-mess",
+      "explorer-coding",
+      "a-minimal-viable-browser",
+      "your-reading-your-controls"
+    ],
+    "pages": [
+      "admin/notes/2026-10-18__a-browser-for-one.md",
+      "briefs/index.html"
+    ],
+    "sites": [
+      "https://developer.apple.com/support/alternative-browser-engines/",
+      "https://developer.apple.com/help/account/reference/supported-capabilities-ios/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Being able to compile a Linux kernel does not mean I want to compile Linux kernels",
+      "why": "Why maintenance is sold."
+    },
+    {
+      "text": "On an iPhone in the UK, the question answers itself.",
+      "why": "The engine."
+    }
+  ],
+  "figures": [
+    {
+      "file": "bo-app.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bo-app.webp",
+      "caption": "A browser for one, sketched on an iPhone. It opens on the newsroom where it was left, with tabs in a strip that hides as you read, read and unread marked, the vault open, an inbox of what the agents sent, and reading workflows as runs of tabs. Underneath: a native Swift shell around WebKit, a small bridge to the page, an offline cache, and a push sender. The first step is a test: do passkeys with the PRF extension work inside the app.",
+      "kind": "concept"
+    }
+  ]
+}

@@ -123,6 +123,10 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#the-bri
 - [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
 
+### Continued by
+
+- [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md) A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 188 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=188)

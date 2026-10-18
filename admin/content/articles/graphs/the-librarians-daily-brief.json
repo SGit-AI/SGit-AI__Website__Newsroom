@@ -1,0 +1,38 @@
+{
+ "slug": "the-librarians-daily-brief",
+ "teaser": "A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "Working on many threads at once loses some, so the Librarian, the role that catalogues everything, writes a morning brief from sources the site already keeps (releases, the run ledger, the briefs map, reviews) plus GitHub and the cloud sessions; it writes only its own folder, learns from what is acted on after rUv's loop, and the pattern fits every team.",
+ "nodes": [
+  {"id": "threads", "label": "Lost threads", "kind": "question", "summary": "Many tangents, missed returns."},
+  {"id": "brief", "label": "The daily brief", "kind": "artefact", "summary": "Needs you, yesterday, debrief, threads, coming up, leverage."},
+  {"id": "sources", "label": "Sources already kept", "kind": "artefact", "summary": "Releases, ledger, briefs, reviews."},
+  {"id": "github", "label": "GitHub across organisations", "kind": "method", "summary": "Search by date; events lag and expire."},
+  {"id": "librarian", "label": "The Librarian", "kind": "concept", "summary": "Reads everything, writes only its folder."},
+  {"id": "flag", "label": "Flag, do not fix", "kind": "method", "summary": "Problems become lines in the brief."},
+  {"id": "loop", "label": "A loop that learns", "kind": "method", "summary": "Retrieve, judge, distill, consolidate."},
+  {"id": "others", "label": "Others' daily briefs", "kind": "example", "summary": "ChatGPT Pulse, Google's daily email."},
+  {"id": "team", "label": "Every team needs one", "kind": "claim", "summary": "Start small, retrofit backwards."},
+  {"id": "leverage", "label": "Where the leverage is", "kind": "method", "summary": "At most three suggestions; Dinis decides."}
+ ],
+ "edges": [
+  {"from": "threads", "to": "brief", "rel": "answers"},
+  {"from": "sources", "to": "brief", "rel": "produces"},
+  {"from": "github", "to": "brief", "rel": "produces"},
+  {"from": "librarian", "to": "brief", "rel": "produces"},
+  {"from": "flag", "to": "librarian", "rel": "extends"},
+  {"from": "loop", "to": "brief", "rel": "extends"},
+  {"from": "others", "to": "brief", "rel": "compared-with"},
+  {"from": "brief", "to": "team", "rel": "leads-to"},
+  {"from": "brief", "to": "leverage", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["the-agents-write-too", "the-briefs-so-far", "our-first-pr-in-ruflo", "from-send-to-sgit"],
+  "pages": ["admin/notes/2026-10-18__the-librarians-daily-brief.md", "briefs/index.html", "newsroom/policies.html"],
+  "sites": ["https://github.com/ruvnet/ruflo/tree/main/plugins/ruflo-intelligence", "https://docs.github.com/en/rest/activity/events"]
+ },
+ "quotes": [
+  {"text": "It flags; others fix.", "why": "The Librarian's policy."},
+  {"text": "It knows my universe because my universe is recorded, in the open, in files I own.", "why": "Why it can work."}
+ ]
+}

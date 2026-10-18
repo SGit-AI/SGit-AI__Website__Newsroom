@@ -132,6 +132,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#the-code-y
 
 ### Continued by
 
+- [Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour](ephemeral-town-planner-services.md) Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.
 - [A minimal viable browser: why Firefox is the one that can build it, and what it would take](a-minimal-viable-browser.md) A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -1,0 +1,86 @@
+{
+ "slug": "ephemeral-town-planner-services",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 257,
+   "line": "Serverless stretched; ephemeral town planner services instead",
+   "para": "Serverless meant scaling to zero, costing nothing idle, starting fast and becoming a commodity, as the CNCF and Berkeley definitions said. Now it covers products billed by the hour, such as MSK Serverless. I propose ephemeral town planner services, a test for it, and a look at the glue behind commodities, like Lambda on containers in EC2.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 114,
+   "line": "Four properties, one test, a three-word name",
+   "para": "Serverless meant four things and its definitions said so. The word now covers hourly bills. The test: billed by the hour while idle means not serverless. Ephemeral town planner services names what was meant, Lambda on S3 is one, and naming it this way shows the glue, such as Lambda's four years on containers.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "meant",
+   "label": "What serverless meant",
+   "words": 233,
+   "line": "Pay per request, nothing when idle",
+   "para": "Lambda launched in 2014 billing per 100 ms and per request. The CNCF whitepaper says there is no charge when code is not running; Berkeley's 2019 paper requires automatic scaling and usage billing, praising Lambda's scale to zero. To me serverless meant scales to zero, near-zero idle cost, fast start and a commodity.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "now",
+   "label": "What it means now",
+   "words": 321,
+   "line": "The word now covers hourly bills",
+   "para": "On 18 October 2026, Lambda, Cloud Run, Cosmos DB serverless, Neon, Redshift Serverless, Aurora v2 since November 2024 and OpenSearch's next generation idle at zero. OpenSearch classic, MSK Serverless at $0.75 a cluster-hour, Neptune Serverless and ElastiCache Serverless do not. Jeremy Daly flagged this in 2018, Berkeley in 2019.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "test",
+   "label": "The test",
+   "words": 135,
+   "line": "Billed hourly while idle means not serverless",
+   "para": "Storage aside, compute billed by the hour, day or month while idle means a server running on the other side. It also signals an engineering gap: the provider cannot yet start and stop safely enough to bill by use, and passes that cost on under a name that promised otherwise.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "name",
+   "label": "A better name",
+   "words": 265,
+   "line": "Ephemeral, town planner, services: each needed",
+   "para": "Commodity services can be always on; town planner services, Wardley's industrialised stage, can be too; ephemeral services can be prototypes. Together: ephemeral means it comes and goes with use, town planner means mature and commoditised, services means exposed for others. Lambda is one on top of S3, echoing Wardley's 2016 phrase about not caring what a server is.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "glue",
+   "label": "The glue behind the commodity",
+   "words": 246,
+   "line": "Commodities often start as glued prototypes",
+   "para": "Naming this way asks whether something is truly a town planner service. Vogels described shipping minimal services and maturing them with customers. The Firecracker paper says Lambda first ran on containers inside per-customer EC2 machines, migrated from 2018. Shrinking floors, late scale-to-zero and withdrawn services record maturing in public.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "matters",
+   "label": "Why it matters",
+   "words": 103,
+   "line": "Buyers pay for the gap; builders design for it",
+   "para": "For buyers, the name sets the expected idle cost and the gap is real money. On this site it is the property we design for: a vault server billed per request on Cloudflare, agent desktops billed by the minute, and code that runs only when needed.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 125,
+   "line": "A proposal, dated prices, no blame",
+   "para": "The name is a proposal, not a replacement. Prices are from pricing pages on 18 October 2026, excluding storage, with monthly figures as my arithmetic at US East rates. Some listed products do scale to zero. Hourly billing is a fair product, just not what the word promised. The Firecracker account is AWS's own.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 157,
+   "line": "Pricing pages, definitions, Wardley and AWS",
+   "para": "From a voice memo on 18 October 2026, with research that day: AWS, Google, Microsoft and Neon pricing and announcements, the CNCF whitepaper, the Berkeley paper, Wardley's 2015 and 2016 posts, Corey Quinn, Jeremy Daly, Werner Vogels and the Firecracker paper, with related site articles.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "slug": "ephemeral-town-planner-services",
+ "teaser": "Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.",
+ "topics": ["startups-and-strategy", "site-and-engineering"],
+ "core_idea": "Serverless meant scaling to zero, costing nothing idle, starting fast and turning a capability into a commodity, as its definitions said; the word now covers products billed by the hour, so a test (no hourly bill when idle) and a better name, ephemeral town planner services, say what was meant and expose the glue behind services sold as commodities.",
+ "nodes": [
+  {"id": "meant", "label": "What serverless meant", "kind": "concept", "summary": "Scale to zero, idle costs nothing, fast, a commodity."},
+  {"id": "defs", "label": "The definitions", "kind": "example", "summary": "CNCF: no charge when code is not running."},
+  {"id": "now", "label": "What it means now", "kind": "example", "summary": "MSK by the cluster-hour; floors elsewhere."},
+  {"id": "test", "label": "The test", "kind": "method", "summary": "Billed by the hour when idle: not serverless."},
+  {"id": "gap", "label": "An engineering gap", "kind": "claim", "summary": "An hourly bill means a server on their side."},
+  {"id": "commodity", "label": "Commodity services", "kind": "question", "summary": "Close, but a commodity can be always on."},
+  {"id": "townplanner", "label": "Town planner services", "kind": "concept", "summary": "Mature and industrialised, but maybe always on."},
+  {"id": "ephemeral", "label": "Ephemeral services", "kind": "concept", "summary": "Comes and goes, but maybe a prototype."},
+  {"id": "name", "label": "Ephemeral town planner services", "kind": "claim", "summary": "Three words, each covering a part."},
+  {"id": "lambda", "label": "Lambda on S3", "kind": "example", "summary": "Ephemeral on top of always-there services."},
+  {"id": "glue", "label": "The glue behind the commodity", "kind": "example", "summary": "Lambda on containers in EC2 until Firecracker."}
+ ],
+ "edges": [
+  {"from": "defs", "to": "meant", "rel": "example-of"},
+  {"from": "now", "to": "meant", "rel": "contrasts"},
+  {"from": "now", "to": "test", "rel": "leads-to"},
+  {"from": "test", "to": "gap", "rel": "leads-to"},
+  {"from": "commodity", "to": "name", "rel": "leads-to"},
+  {"from": "townplanner", "to": "name", "rel": "extends"},
+  {"from": "ephemeral", "to": "name", "rel": "extends"},
+  {"from": "name", "to": "lambda", "rel": "example-of"},
+  {"from": "name", "to": "glue", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["cloudflare-as-lego-blocks", "the-code-you-do-not-ship", "explorer-coding"],
+  "pages": [],
+  "sites": ["https://arxiv.org/abs/1902.03383", "https://blog.gardeviance.org/2016/11/why-fuss-about-serverless.html", "https://www.usenix.org/system/files/nsdi20-paper-agache.pdf"]
+ },
+ "quotes": [
+  {"text": "If it bills you by the hour when nobody is using it, it is not serverless.", "why": "The test."},
+  {"text": "Put together, the three words say what serverless was supposed to say, and each covers a part the others miss", "why": "The name."}
+ ]
+}

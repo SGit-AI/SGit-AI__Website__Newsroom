@@ -1,0 +1,40 @@
+{
+ "slug": "bringing-my-past-work-back",
+ "teaser": "A daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles: then and now, connected, two or three a day.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "Most of Dinis's past work cannot be linked from what he writes now, so a worker takes one item a day from an inventoried back catalogue, writes what it said, what changed and how it connects, keeps a register, and compounds: each article is a node the next links to; every team can do the same, retrofitted backwards.",
+ "nodes": [
+  {"id": "unlinkable", "label": "Work I cannot link to", "kind": "question", "summary": "Blog, decks, books, posts."},
+  {"id": "inventory", "label": "The inventory", "kind": "artefact", "summary": "Essays, blog, decks, books, tools, NotebookLM, videos."},
+  {"id": "worker", "label": "The back-catalogue worker", "kind": "method", "summary": "Two or three articles a day."},
+  {"id": "register", "label": "The register", "kind": "artefact", "summary": "One line per item, with its status."},
+  {"id": "shape", "label": "Each article's shape", "kind": "method", "summary": "What it was, what it said, then and now, connections."},
+  {"id": "checked", "label": "Checked against the record", "kind": "method", "summary": "Old memory is less reliable than the post."},
+  {"id": "future", "label": "Talking to my future self", "kind": "concept", "summary": "Writing to find it later."},
+  {"id": "compound", "label": "The compound effect", "kind": "claim", "summary": "Each article is a node the next links to."},
+  {"id": "alive", "label": "Keeps the site alive", "kind": "claim", "summary": "Offline days and the newsletter."},
+  {"id": "team", "label": "Every team needs one", "kind": "claim", "summary": "Start small, retrofit backwards."},
+  {"id": "librarian", "label": "The Librarian's daily brief", "kind": "concept", "summary": "Tracks from today; this tracks before."}
+ ],
+ "edges": [
+  {"from": "unlinkable", "to": "worker", "rel": "answers"},
+  {"from": "inventory", "to": "register", "rel": "produces"},
+  {"from": "register", "to": "worker", "rel": "depends-on"},
+  {"from": "worker", "to": "shape", "rel": "produces"},
+  {"from": "checked", "to": "shape", "rel": "extends"},
+  {"from": "future", "to": "worker", "rel": "leads-to"},
+  {"from": "worker", "to": "compound", "rel": "leads-to"},
+  {"from": "worker", "to": "alive", "rel": "produces"},
+  {"from": "compound", "to": "team", "rel": "leads-to"},
+  {"from": "librarian", "to": "worker", "rel": "compared-with"}
+ ],
+ "links": {
+  "articles": ["the-librarians-daily-brief", "my-memory-checked", "books-from-articles", "the-graphs-books", "portugal-2016-hacking-portugal", "knowledge-that-maintains-itself"],
+  "pages": ["admin/notes/2026-10-18__bringing-my-past-work-back.md", "briefs/index.html"],
+  "sites": ["https://diniscruz.ai"]
+ },
+ "quotes": [
+  {"text": "That is not a memory, it is luck.", "why": "On searching Google for my own work."},
+  {"text": "A back catalogue I cannot link to is a conversation with no reply.", "why": "Why it matters."}
+ ]
+}

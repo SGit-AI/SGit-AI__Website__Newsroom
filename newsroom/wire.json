@@ -73,6 +73,124 @@
   ],
   "articles": [
     {
+      "slug": "the-librarians-daily-brief",
+      "title": "The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-librarians-daily-brief.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-librarians-daily-brief.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-librarians-daily-brief.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-librarians-daily-brief.json",
+      "teaser": "A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.",
+      "summary": "I am in the most productive mode I have been in for years, and I want to keep it and speed it up. But I work on many things at once, I follow tangents, and because I try to work where my leverage is highest, it is easy to miss a thread that has become worth picking up again. Today I could not even remember which cloud session had built something. So I want a daily brief, written by an agent before I start: everything that happened yesterday across every repository and organisation, the pull requests, including other people's, the releases, what each scheduled run and cloud session did and cost, the reviews, the briefs that moved; then the threads I left that are worth returning to, what is coming up, and at most three suggestions for where my leverage is today. The agent is the Librarian, my favourite role: the one that catalogues everything and keeps it in sync. Most of the sources already exist on this site: one file per release, a ledger of every scheduled run with its cost, a map of sixty-eight briefs, a status file for every review. It borrows its loop from rUv's Ruflo: retrieve, judge, distill, consolidate, so each day's brief learns from what I acted on the day before. It is for me first. But every team needs one, and it can be started small and retrofitted backwards.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "agents",
+        "librarian",
+        "daily-brief",
+        "github",
+        "memory",
+        "newsroom",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "ephemeral-town-planner-services",
+      "title": "Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/ephemeral-town-planner-services.html",
+      "markdown": "https://newsroom.sgit.ai/articles/ephemeral-town-planner-services.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/ephemeral-town-planner-services.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/ephemeral-town-planner-services.json",
+      "teaser": "Serverless meant scale to zero and pay per use; now it covers hourly bills. A better name: ephemeral town planner services, and a test for it.",
+      "summary": "I have never liked the word serverless, and it has been stretched until it barely means anything. To me it always meant four things: it scales to zero, it costs nothing when you are not using it, it starts fast, and it turns a capability into a commodity. Lambda and Cloud Run are that. But today the word is also on products that bill you every hour whether you use them or not: MSK Serverless at $0.75 a cluster-hour, OpenSearch Serverless's classic collections with a floor of two capacity units, ElastiCache Serverless with a minimum of storage metered every hour. The definitions were clear: the CNCF's whitepaper says \"there is no charge when code is not running\", and the Berkeley paper warned in 2019 that few so-called elastic services could scale to zero. So I propose a better name, built from three words that each carry part of it: ephemeral, because it comes and goes with use; town planner, Simon Wardley's word for something industrialised and mature; and services, because it is exposed for others to use. Ephemeral town planner services. Lambda is one, sitting on town planner services like S3. And naming things this way shows how much glue sits behind what is sold as a commodity: Lambda itself ran on containers inside EC2 instances for four years, until Firecracker replaced them. The test I would use is simple: if it bills you by the hour when nobody is using it, it is not serverless, and whoever runs it has something running on their side.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "serverless",
+        "cloud",
+        "wardley-maps",
+        "town-planners",
+        "pricing",
+        "aws",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "bringing-my-past-work-back",
+      "title": "Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/bringing-my-past-work-back.html",
+      "markdown": "https://newsroom.sgit.ai/articles/bringing-my-past-work-back.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/bringing-my-past-work-back.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/bringing-my-past-work-back.json",
+      "teaser": "A daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles: then and now, connected, two or three a day.",
+      "summary": "I have been creating content for a long time, and most of it is not linkable from what I write now. Essays on my own site, ten years of a blog, sixty-five decks, ten books that stopped short of done, over two hundred videos, the tools, the NotebookLM material from this year, and the posts on LinkedIn and on Twitter, which went south. I mourn some of it, because the ideas were good and I cannot point at them. So I want a worker: an agent that runs every day, takes one item at a time from that back catalogue, and writes two or three articles a day bringing it back, with what it said, what has changed since and how it connects to what this newsroom argues now. It is memory, it is me talking to my future self, and it compounds, because every article it writes is another node the next one can link to. It also keeps the site alive on the days I am offline, and feeds the newsletter. The inventory is done: 103 essays, 1,289 blog posts, 65 decks, 10 books, 29 tools, 2,038 files of NotebookLM material and 221 videos, with the LinkedIn and Twitter history still to export. This is the brief. And the argument is general: every team has a back catalogue it cannot link to, and every team can start this small and retrofit it backwards.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "memory",
+        "archive",
+        "back-catalogue",
+        "agents",
+        "newsroom",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "a-browser-for-one",
+      "title": "A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working",
+      "date": "2026-10-18",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-browser-for-one.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-browser-for-one.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-browser-for-one.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-browser-for-one.json",
+      "teaser": "An iPhone app that only reads my newsroom: WebKit in the UK, a paid membership and a Mac to build it, one passkey test first, and someone else to maintain it.",
+      "summary": "The browsers on my iPhone have frustrated me to the point where I want to build one. Not a general browser: an app that only opens my newsroom, where I left it, knows what I have read, opens my vault, keeps my tabs, works offline, never reloads a page on its own, lets me build my own reading workflows, and receives what my agents send me. A year ago I would have put up with it. Now I can do something about it, and that changes how much bad interface I am willing to tolerate. This is the brief. The facts decide most of it. In the UK an iPhone app that browses the web must use WebKit; Firefox and Chrome on iOS are WebKit too. Passkeys inside an app and push notifications both need Apple's paid developer membership, and the app has to be built on a Mac, so not by a cloud session like the one that writes this site. The one real unknown is whether the passkey extension the vault depends on works inside an app's web view, so that is the first thing to test. And there is a second point, which matters more than the app. Once it works, it will be part of my day, and I will not want to maintain it. Not because I cannot; because it is not my focus. Being able to compile a Linux kernel does not mean I want to. Even power users will pay someone to keep the thing they built working, and this app is the first example I will live with.",
+      "topics": [
+        "site-and-engineering",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "browsers",
+        "ios",
+        "webkit",
+        "newsroom",
+        "explorer-coding",
+        "villagers",
+        "brief",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "who-is-speaking",
       "title": "Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which",
       "date": "2026-10-18",
