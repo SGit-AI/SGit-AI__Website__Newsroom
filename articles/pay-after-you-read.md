@@ -185,6 +185,7 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#pay-af
 
 ### Continued by
 
+- [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](on-the-record.md) Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.
 - [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](i-just-want-to-buy-the-article.md) I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.

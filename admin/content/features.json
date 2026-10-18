@@ -1,0 +1,260 @@
+{
+ "what": "The register of what this site can do for a reader, a publisher or an agent: one entry per feature, what it does, when it shipped, its status, where to try it and the article that explains it. admin/build/sections.py reads it for each section's Features; a feature appears in a section when its audiences include the section's id. Add an entry when a feature ships, in the same release; change its status when it changes.",
+ "status_labels": {
+  "live": "Live",
+  "beta": "Beta",
+  "designed": "Designed, not running"
+ },
+ "features": [
+  {
+   "id": "reading-meter",
+   "name": "The reading meter",
+   "what": "Pence per page for the share actually read, after reading, from a balance kept in the reader's own browser that can go below zero; the reader's rating sets the price. A £5 top-up on Stripe.",
+   "why": "Payment for one article, after its value is in view, with no account and no paywall.",
+   "since": "2026-10-10",
+   "status": "live",
+   "try": "meter/index.html",
+   "article": "pay-after-you-read",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "reading-views",
+   "name": "Your reading, folded",
+   "what": "Come back to an article and the sections you have read can show as a margin line, faded, folded to a paragraph or a line, or hidden; a bar at the top says how many are read and switches between the views.",
+   "why": "A returning reader sees only what is new to them, and the article stays whole.",
+   "since": "v0.12.99",
+   "status": "live",
+   "try": "articles/the-code-you-do-not-ship.html",
+   "article": "your-reading-your-controls",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "section-summaries",
+   "name": "A line and a paragraph for every section",
+   "what": "Every section of every article has a one-line and a one-paragraph summary, written with the article and marked stale when the section changes.",
+   "why": "What the folded views show, and what search and agents can use instead of the whole text.",
+   "since": "v0.12.99",
+   "status": "live",
+   "try": "articles/summaries/reviews-on-the-record.json",
+   "article": "your-reading-your-controls",
+   "audiences": [
+    "publishers",
+    "agents"
+   ]
+  },
+  {
+   "id": "versions",
+   "name": "Every version kept",
+   "what": "Every article keeps its earlier versions, each with a page that shows what changed.",
+   "why": "A correction is visible, dated and linkable, not a silent edit.",
+   "since": "",
+   "status": "live",
+   "try": "articles/versions/what-can-your-agent-reach.html",
+   "article": "every-link-points-back",
+   "audiences": [
+    "publishers",
+    "readers",
+    "agents"
+   ]
+  },
+  {
+   "id": "reviews",
+   "name": "Reviews on the record",
+   "what": "Every article can be reviewed by other models, the editor and the desk against published criteria; each review is a record on the article, and every finding is answered.",
+   "why": "Quality control that readers can see, and that does not repeat itself.",
+   "since": "v0.12.107",
+   "status": "live",
+   "try": "reviews/index.html",
+   "article": "reviews-on-the-record",
+   "audiences": [
+    "publishers",
+    "readers",
+    "agents"
+   ]
+  },
+  {
+   "id": "article-graphs",
+   "name": "A graph of every argument",
+   "what": "Every article has a graph of its ideas, the relations between them, its links and two exact quotes, as JSON.",
+   "why": "A reader, a search or an agent can follow the argument, not just the words.",
+   "since": "",
+   "status": "live",
+   "try": "articles/graphs.html",
+   "article": "the-agent-is-the-reader",
+   "audiences": [
+    "publishers",
+    "agents"
+   ]
+  },
+  {
+   "id": "agent-readable",
+   "name": "Readable by agents",
+   "what": "Every page has a markdown twin, the site has llms.txt and llms-full.txt, and articles carry dates, hashes and graphs.",
+   "why": "Agents can read the site for a fraction of the tokens, which is what makes charging them possible.",
+   "since": "",
+   "status": "live",
+   "try": "llms.txt",
+   "article": "token-bill-nobody-is-sending",
+   "audiences": [
+    "publishers",
+    "agents"
+   ]
+  },
+  {
+   "id": "personas",
+   "name": "Read as a persona",
+   "what": "A link that opens the newsroom as a persona, a CISO, a founder, a journalist, with its own lens and list, kept in the reader's browser.",
+   "why": "Send each reader the newsroom as it matters to them.",
+   "since": "",
+   "status": "live",
+   "try": "persona/index.html",
+   "article": "a-link-to-a-persona",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "reading-lists",
+   "name": "A reading list in a link",
+   "what": "A link from one person to another that opens the newsroom as a list to read in order, with a note; the names and numbers stay in the part of the address the server never sees.",
+   "why": "Recommendation without tracking.",
+   "since": "",
+   "status": "live",
+   "try": "for/make.html",
+   "article": "a-reading-list-in-a-link",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "reader-vault",
+   "name": "Your reading, in your vault",
+   "what": "The reading account, notes and personas carried between the reader's devices in an encrypted vault opened with a passkey; the newsroom holds no key to it.",
+   "why": "A reader's history the reader owns, on every device.",
+   "since": "2026-10-12",
+   "status": "live",
+   "try": "vault/index.html",
+   "article": "the-vault-is-live",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "feedback-lane",
+   "name": "Notes to the newsroom",
+   "what": "A tap at any piece, done, wrong, fix this, more like this, with the phrase selected, sent to the newsroom down a lane the reader controls.",
+   "why": "Feedback attached to the sentence it is about.",
+   "since": "v0.12.0",
+   "status": "live",
+   "try": "vault/index.html",
+   "article": "sixteen-notes-i-did-not-want-to-lose",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "wires",
+   "name": "The wires",
+   "what": "Four wires written by agents and labelled as such: industry, OWASP, AWS and Portugal, each story with its primary source, one exact quote and why it matters.",
+   "why": "A beat covered every day, with its sources open.",
+   "since": "2026-10-11",
+   "status": "beta",
+   "try": "wire/index.html",
+   "article": "the-wire-as-a-graph",
+   "audiences": [
+    "publishers"
+   ]
+  },
+  {
+   "id": "search",
+   "name": "Search in the browser",
+   "what": "The whole site searched in the reader's browser from an index built at release, including sentences that have since been corrected; nothing is sent anywhere.",
+   "why": "Search with no server and no query log.",
+   "since": "v0.12.7",
+   "status": "live",
+   "try": "search/index.html",
+   "article": "search-as-navigation",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "themes",
+   "name": "Five themes",
+   "what": "Dark mode and four more, behind one control, kept in the reader's browser.",
+   "why": "The reader's page, the reader's way.",
+   "since": "v0.12.12",
+   "status": "live",
+   "try": "articles/dark-mode-and-four-more.html",
+   "article": "dark-mode-and-four-more",
+   "audiences": [
+    "readers"
+   ]
+  },
+  {
+   "id": "page-fixes",
+   "name": "Fix the page yourself",
+   "what": "A small JavaScript API of the page's primitives, and bookmarklets that use it, so a reader can change what they need in a line.",
+   "why": "The next user experience is the one the reader customises.",
+   "since": "2026-10-17",
+   "status": "live",
+   "try": "demos/fixes/index.html",
+   "article": "fix-the-page-yourself",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "explore",
+   "name": "Search as navigation",
+   "what": "A walk through the newsroom's graph: chips, exact suggestions, five views of one result and a pane that shows the working.",
+   "why": "Search that shows how things connect, with no model.",
+   "since": "",
+   "status": "designed",
+   "try": "",
+   "article": "search-as-navigation",
+   "audiences": [
+    "publishers",
+    "agents"
+   ]
+  },
+  {
+   "id": "signed-opinions",
+   "name": "Opinions on the record",
+   "what": "Experts go on the record on an article with a signed opinion, paid when readers value it.",
+   "why": "A feedback loop with names and stakes.",
+   "since": "",
+   "status": "designed",
+   "try": "",
+   "article": "on-the-record",
+   "audiences": [
+    "publishers"
+   ]
+  },
+  {
+   "id": "editors-channel",
+   "name": "The editor's channel",
+   "what": "An editor's reads, sign-offs and fixes reach the newsroom's agent through a vault, and a daily pass acts and replies.",
+   "why": "Editing from the page, not from a chat.",
+   "since": "",
+   "status": "designed",
+   "try": "",
+   "article": "the-editors-channel",
+   "audiences": [
+    "publishers"
+   ]
+  }
+ ]
+}

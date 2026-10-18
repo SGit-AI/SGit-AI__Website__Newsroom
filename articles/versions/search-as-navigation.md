@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 1,855 | first published | this release | [current](../search-as-navigation.md) |
+| **v1.0.0** | 2026-10-18 | published | 1,855 | first published | [`e9fbb78e9`](https://github.com/SGit-AI/SGit-AI__Website/commit/e9fbb78e9e3647c0b6933a9e7d242b4148f34937) | [current](../search-as-navigation.md) |
 
 [← Back to the article](../search-as-navigation.md) · [All articles](../index.md)
 

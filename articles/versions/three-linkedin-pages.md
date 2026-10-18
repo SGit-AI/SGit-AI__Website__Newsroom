@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 2,766 | first published | this release | [current](../three-linkedin-pages.md) |
+| **v1.0.0** | 2026-10-18 | published | 2,766 | first published | [`e9fbb78e9`](https://github.com/SGit-AI/SGit-AI__Website/commit/e9fbb78e9e3647c0b6933a9e7d242b4148f34937) | [current](../three-linkedin-pages.md) |
 
 [← Back to the article](../three-linkedin-pages.md) · [All articles](../index.md)
 

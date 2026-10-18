@@ -102,6 +102,10 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#sear
 - [Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it](code-review-as-a-fractal-semantic-graph.md) Source code is layers within layers, each a graph with its own vocabulary; code review should read a change at every one, and a vault shows it done on real code.
 - [The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks](the-wire-as-a-graph.md) Design the wire from what the reader sees: every name a link with a long-lived ID, every sentence a claim, stories of stories, folders by gravity.
 
+### Continued by
+
+- [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 185 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=185)

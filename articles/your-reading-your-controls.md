@@ -121,6 +121,10 @@ Site & engineeringNews & evidence[This article as a graph →](graphs.md#your-re
 - [The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai](the-tokens-hook.md) A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.
 - [A meter in the browser: a penny a page, a history you keep, and a site that picks for you](a-meter-in-the-browser.md) Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.
 
+### Continued by
+
+- [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md) Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 174 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=174)

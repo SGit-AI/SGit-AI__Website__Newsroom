@@ -55,6 +55,204 @@
   ],
   "articles": [
     {
+      "slug": "a-section-for-publishers",
+      "title": "A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-section-for-publishers.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-section-for-publishers.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-section-for-publishers.webp",
+      "teaser": "Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.",
+      "topics": [
+        "news-and-evidence",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "newsroom",
+        "publishers",
+        "findability",
+        "taxonomy",
+        "article"
+      ],
+      "links_out": [
+        "your-reading-your-controls",
+        "search-as-navigation",
+        "reviews-on-the-record",
+        "pay-after-you-read"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sx-section.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sx-section.webp",
+          "caption": "A section for publishers, and how it keeps itself current. Three inputs: the desks and controlled subjects every article already has, the section's own file of rules and the editor's words, and a register of the site's features with when each shipped. One build step places every article into the section's streams, says which rule placed it, and writes the page and its JSON twin. The page: five pieces to start with, the latest, the features a publisher can use today, and four streams of articles.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-section-for-publishers",
+        "teaser": "Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.",
+        "topics": [
+          "news-and-evidence",
+          "site-and-engineering"
+        ],
+        "core_idea": "A publishers page written once falls behind a site that changes daily, so the newsroom gets sections: one audience's view with five pieces to start with, the latest, the features they can use with when each shipped, and every relevant article placed by rule from the existing classification, each saying why; building it exposed loose classification, fixed as rules with reasons.",
+        "nodes": [
+          {
+            "id": "where",
+            "label": "Where to send a publisher",
+            "kind": "question",
+            "summary": "The publishers page was written once."
+          },
+          {
+            "id": "folds",
+            "label": "Reading, folded",
+            "kind": "example",
+            "summary": "A feature no page mentioned yet."
+          },
+          {
+            "id": "section",
+            "label": "A section",
+            "kind": "concept",
+            "summary": "The newsroom as one audience reads it."
+          },
+          {
+            "id": "start",
+            "label": "Start here",
+            "kind": "artefact",
+            "summary": "Five pieces, chosen by the editor."
+          },
+          {
+            "id": "features",
+            "label": "The features register",
+            "kind": "artefact",
+            "summary": "Each feature with when it shipped."
+          },
+          {
+            "id": "streams",
+            "label": "Streams placed by rule",
+            "kind": "method",
+            "summary": "Each article says which rule placed it."
+          },
+          {
+            "id": "find",
+            "label": "Findability",
+            "kind": "artefact",
+            "summary": "Desks and controlled subjects for every article."
+          },
+          {
+            "id": "current",
+            "label": "Keeps itself current",
+            "kind": "claim",
+            "summary": "Placed on publication; features as they ship."
+          },
+          {
+            "id": "history",
+            "label": "History filed as journalism",
+            "kind": "example",
+            "summary": "A subject absorbing a raw tag."
+          },
+          {
+            "id": "broad",
+            "label": "A subject too broad",
+            "kind": "example",
+            "summary": "Dark mode under the agent-readable web."
+          },
+          {
+            "id": "taxonomy",
+            "label": "Better taxonomy, less curation",
+            "kind": "claim",
+            "summary": "Every fix a rule with a reason."
+          },
+          {
+            "id": "next",
+            "label": "More sections",
+            "kind": "method",
+            "summary": "Security leads, builders, investors."
+          }
+        ],
+        "edges": [
+          {
+            "from": "where",
+            "to": "section",
+            "rel": "answers"
+          },
+          {
+            "from": "folds",
+            "to": "features",
+            "rel": "example-of"
+          },
+          {
+            "from": "section",
+            "to": "start",
+            "rel": "extends"
+          },
+          {
+            "from": "section",
+            "to": "features",
+            "rel": "depends-on"
+          },
+          {
+            "from": "section",
+            "to": "streams",
+            "rel": "extends"
+          },
+          {
+            "from": "find",
+            "to": "streams",
+            "rel": "produces"
+          },
+          {
+            "from": "streams",
+            "to": "current",
+            "rel": "leads-to"
+          },
+          {
+            "from": "features",
+            "to": "current",
+            "rel": "leads-to"
+          },
+          {
+            "from": "history",
+            "to": "taxonomy",
+            "rel": "example-of"
+          },
+          {
+            "from": "broad",
+            "to": "taxonomy",
+            "rel": "example-of"
+          },
+          {
+            "from": "section",
+            "to": "next",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "search-as-navigation",
+            "reviews-on-the-record"
+          ],
+          "pages": [
+            "sections/publishers/index.html",
+            "sections/index.html",
+            "desks/index.html"
+          ],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "The section is not written; it is maintained by the same rules that maintain everything else.",
+            "why": "How it stays current."
+          },
+          {
+            "text": "Every fix here is a rule with a reason, in a file anyone can read",
+            "why": "What building it showed."
+          }
+        ]
+      }
+    },
+    {
       "slug": "three-linkedin-pages",
       "title": "Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open",
       "date": "2026-10-18",
@@ -281,7 +479,9 @@
         "code-review-as-a-fractal-semantic-graph",
         "the-wire-as-a-graph"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-section-for-publishers"
+      ],
       "figures": [
         {
           "file": "sn-explore.webp",
@@ -482,6 +682,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "a-section-for-publishers",
         "three-linkedin-pages",
         "search-as-navigation",
         "on-the-record"
@@ -2653,7 +2854,9 @@
         "the-tokens-hook",
         "a-meter-in-the-browser"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-section-for-publishers"
+      ],
       "figures": [
         {
           "file": "rc-collage.webp",
@@ -28393,6 +28596,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "a-section-for-publishers",
         "three-linkedin-pages",
         "on-the-record",
         "i-just-want-to-buy-the-article",

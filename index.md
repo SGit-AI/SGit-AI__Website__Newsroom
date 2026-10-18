@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.107 · 186 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.108 · 187 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](articles/three-linkedin-pages.md), 2026-10-18, 12 min. Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
+- [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](articles/a-section-for-publishers.md), 2026-10-18, 6 min. Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.
 
 ## Highlights
 
+- [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](articles/three-linkedin-pages.md), 2026-10-18, 12 min.
 - [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](articles/search-as-navigation.md), 2026-10-18, 7 min.
 - [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](articles/reviews-on-the-record.md), 2026-10-18, 9 min.
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](articles/on-the-record.md), 2026-10-18, 11 min.
-- [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min.
 
 ## Who are you reading as?
 
@@ -46,11 +46,11 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](articles/on-the-record.md), 2026-10-18, 11 min.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](articles/the-editors-channel.md), 2026-10-18, 9 min.
 
-### The future of news (34)
+### The future of news (35)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](articles/a-section-for-publishers.md), 2026-10-18, 6 min.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](articles/three-linkedin-pages.md), 2026-10-18, 12 min.
 - [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](articles/reviews-on-the-record.md), 2026-10-18, 9 min.
-- [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](articles/free-models-your-own-key.md), 2026-10-18, 13 min.
 
 ### Strategy & startups (30)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

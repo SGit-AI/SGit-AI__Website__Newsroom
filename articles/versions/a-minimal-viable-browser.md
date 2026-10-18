@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,769 | +42 / −5 words; 7 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-minimal-viable-browser/v1.1.0.md) · [current](../a-minimal-viable-browser.md) |
+| **v1.1.0** | 2026-10-18 | minor | 2,769 | +42 / −5 words; 7 changed, 0 added, 0 removed paragraphs | [`e9fbb78e9`](https://github.com/SGit-AI/SGit-AI__Website/commit/e9fbb78e9e3647c0b6933a9e7d242b4148f34937) | [what changed](a-minimal-viable-browser/v1.1.0.md) · [current](../a-minimal-viable-browser.md) |
 | **v1.0.0** | 2026-10-18 | published | 2,732 | first published | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) |  |
 
 [← Back to the article](../a-minimal-viable-browser.md) · [All articles](../index.md)
