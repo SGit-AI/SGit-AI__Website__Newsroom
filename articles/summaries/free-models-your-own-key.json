@@ -1,0 +1,126 @@
+{
+ "slug": "free-models-your-own-key",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 278,
+   "line": "Which free model APIs a reader can use, October 2026",
+   "para": "We want readers to talk to the newsroom with a capable model, free, on their own key, which we never hold. We read every free offer we found on 18 October 2026 and tested each API from the newsroom's address. Four pass both tests that matter: free without a card, and callable from a web page.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 137,
+   "line": "Four providers pass; NVIDIA fails; 2026 took a lot away",
+   "para": "Groq, Gemini through AI Studio, Mistral's free mode and OpenRouter's free models are free and callable from a page; Cohere's trial and Pollinations too, smaller. Cloudflare is the most generous but needs a server. NVIDIA fails both tests. Free tiers may learn from what is sent.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "want",
+   "label": "What we want",
+   "words": 228,
+   "line": "The newsroom answers questions; the first step costs money",
+   "para": "The search page answers from the newsroom's passages with Chrome's built-in model or the reader's own OpenRouter key. OpenRouter's free models stop at 50 requests a day until $10 of credit is bought. The question: where can anyone get a free key and call a capable model from a page, for material that is not private?",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "method",
+   "label": "How we checked",
+   "words": 174,
+   "line": "Providers' own pages, and a browser test of each API",
+   "para": "Two research agents read each provider's pricing, limits, models and terms on 18 October 2026, marking third-party facts. Then a CORS preflight from https://newsroom.sgit.ai to every chat endpoint: a provider that does not answer it cannot be called from a page. Model names are as the providers list them.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "changed",
+   "label": "What changed in 2026",
+   "words": 195,
+   "line": "GitHub Models retired; credits and free tiers gone",
+   "para": "GitHub Models was retired on 30 July 2026. Hugging Face free accounts lost their monthly credits. Cerebras and SambaNova now need a card. OpenRouter's free list is now Nemotron 3 and Gemma 4. Gemini keys became restricted auth keys, and Mistral's Experiment plan became Free mode.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "works",
+   "label": "What works from the browser today",
+   "words": 619,
+   "line": "Groq, Gemini, Mistral and OpenRouter work from a page",
+   "para": "Groq: gpt-oss-120b and Qwen 3.8, not kept by default. Gemini: 3.8 Flash, used for training with human review except in the UK, EEA and Switzerland. Mistral free mode trains unless you opt out. OpenRouter: Nemotron 3 Ultra, 50 a day, and a sign-in so no key is pasted. Cohere and Pollinations work too.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "catch",
+   "label": "Usable, with a catch",
+   "words": 248,
+   "line": "Cloudflare, Alibaba and Z.ai, each with a catch",
+   "para": "Cloudflare Workers AI gives about 10,000 neurons a day, Kimi K2.5 and gpt-oss-120b, and does not train, but a page cannot call it. Alibaba gives a million tokens per model for 90 days, if Free Quota Only is switched on. Z.ai's GLM flash models are free but blocked from the browser.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "not",
+   "label": "What does not work for this",
+   "words": 161,
+   "line": "NVIDIA, SambaNova, Cerebras, Together and Hugging Face do not fit",
+   "para": "NVIDIA's catalogue is strong and free, but no page can call it, a phone is reportedly needed, and its terms say trial use only and allow it to learn from content. SambaNova and Cerebras need a card, Together a $5 minimum, Hugging Face has no free credits, and GitHub Models is gone.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "table",
+   "label": "The two tests, side by side",
+   "words": 137,
+   "line": "The two tests, side by side, with data use",
+   "para": "A compact table of every provider against free without a card, callable from the page, and whether it may learn from what is sent, from our preflight and each provider's terms on 18 October 2026.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "key",
+   "label": "The key, and where it lives",
+   "words": 186,
+   "line": "The reader keeps the key; it goes only to the provider",
+   "para": "The key stays in this browser or the reader's own vault, and travels only to the provider with the question and passages. A page holding a key must load nothing it does not control. Keys issued by a sign-in, scoped and revocable, are the safest.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "agents",
+   "label": "Can an agent create the account?",
+   "words": 153,
+   "line": "Agents should guide sign-ups, not create accounts",
+   "para": "Sign-ups ask for phones and captchas on purpose, OpenRouter forbids multiple accounts to get round limits, and NVIDIA already sees agent-written requests daily. An agent can open the page, explain each setting, check the key and store it; the account and its terms stay the reader's.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "possible",
+   "label": "What is possible, and what is not",
+   "words": 174,
+   "line": "Possible from a page; possible with a server; not possible",
+   "para": "From a page, free: capable open models on Groq, Gemini, Mistral and OpenRouter, a sign-in, and a key the reader keeps. With a reader-run Worker: Cloudflare. Not possible: a dependable keyless frontier model, calling NVIDIA from a page, stable limits, or anything private.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "plan",
+   "label": "What we will build",
+   "words": 84,
+   "line": "What we will build, later, in order",
+   "para": "Add Groq, Gemini and Mistral beside OpenRouter with short guides; use OpenRouter's sign-in; let the key live in the reader's vault; publish a Worker for Cloudflare; and recheck this map every quarter.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 102,
+   "line": "A snapshot of 18 October 2026",
+   "para": "Free tiers change often, several limits are only in consoles, third-party facts are marked, the browser test is one preflight from our address, and Gemini's regional carve-outs are summarised, not interpreted.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 146,
+   "line": "Providers' own pages, read on 18 October 2026",
+   "para": "A voice memo and the agent's research the same day: each provider's pricing, limits, models and terms pages, NVIDIA's trial terms and forum, GitHub's retirement notice, and a CORS preflight to every endpoint.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

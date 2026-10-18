@@ -55,6 +55,215 @@
   ],
   "articles": [
     {
+      "slug": "free-models-your-own-key",
+      "title": "Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot",
+      "date": "2026-10-18",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/free-models-your-own-key.html",
+      "markdown": "https://newsroom.sgit.ai/articles/free-models-your-own-key.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/free-models-your-own-key.webp",
+      "teaser": "Which free model APIs a reader can call from a web page with their own key, October 2026: four pass both tests, NVIDIA fails both, and 2026 took a lot away.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "llm",
+        "free-models",
+        "api-keys",
+        "cors",
+        "groq",
+        "gemini",
+        "mistral",
+        "openrouter",
+        "own-key",
+        "research",
+        "article"
+      ],
+      "links_out": [
+        "chat-on-a-static-site",
+        "the-key-is-the-billing-system"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "fi-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fi-map.webp",
+          "caption": "Every free inference offer we checked on 18 October 2026, placed by two questions. Across: can a web page call the provider directly, with the reader's key? Up: can anyone start free without a card? Top right are Groq, Gemini through AI Studio, Mistral's free mode and OpenRouter's free models, with Cohere's trial and Pollinations; Alibaba Model Studio is there with a catch. Top left, free but needing a server in between: Cloudflare Workers AI, Z.ai and NVIDIA. Bottom, a card, credits or gone: Cerebras, Together, Hugging Face, Fireworks, DeepInfra, SambaNova and the retired GitHub Models.",
+          "kind": "comparison"
+        },
+        {
+          "file": "fi-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fi-flow.webp",
+          "caption": "medium",
+          "kind": "The design, not yet built. The reader chooses a provider, signs up themselves with guided steps, gets a key or approves a sign-in, keeps the key in this browser or in their own vault, and asks. For Groq, Gemini, Mistral, OpenRouter and Cohere the page calls the provider directly and the newsroom never sees the key. For Cloudflare and Z.ai, a small Worker the reader deploys into their own account sits in between."
+        }
+      ],
+      "graph": {
+        "slug": "free-models-your-own-key",
+        "teaser": "Which free model APIs a reader can call from a web page with their own key, October 2026: four pass both tests, NVIDIA fails both, and 2026 took a lot away.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "For a reader to talk to the newsroom free on their own key, a provider must be free without a card and callable directly from a web page; on 18 October 2026 Groq, Gemini through AI Studio, Mistral's free mode and OpenRouter's free models pass both, Cloudflare needs a reader-run Worker, NVIDIA fails both, and the free tier means the provider may learn from what is sent.",
+        "nodes": [
+          {
+            "id": "goal",
+            "label": "Talk to the newsroom, free, own key",
+            "kind": "question",
+            "summary": "Without us holding the key."
+          },
+          {
+            "id": "tests",
+            "label": "Two tests",
+            "kind": "method",
+            "summary": "Free without a card; callable from a page."
+          },
+          {
+            "id": "cors",
+            "label": "The browser preflight",
+            "kind": "method",
+            "summary": "Tested from newsroom.sgit.ai."
+          },
+          {
+            "id": "four",
+            "label": "Four pass both",
+            "kind": "claim",
+            "summary": "Groq, Gemini, Mistral, OpenRouter."
+          },
+          {
+            "id": "signin",
+            "label": "Sign-in instead of a pasted key",
+            "kind": "method",
+            "summary": "OpenRouter and Pollinations, OAuth with PKCE."
+          },
+          {
+            "id": "cloudflare",
+            "label": "Cloudflare needs a Worker",
+            "kind": "example",
+            "summary": "Most generous, no training, no browser access."
+          },
+          {
+            "id": "nvidia",
+            "label": "NVIDIA fails both",
+            "kind": "example",
+            "summary": "No CORS, phone check, trial-only terms."
+          },
+          {
+            "id": "changed",
+            "label": "2026 took a lot away",
+            "kind": "claim",
+            "summary": "GitHub Models retired; credits and free tiers gone."
+          },
+          {
+            "id": "learn",
+            "label": "Free means they may learn from it",
+            "kind": "claim",
+            "summary": "Gemini human review; Mistral opt-out."
+          },
+          {
+            "id": "key",
+            "label": "The key stays with the reader",
+            "kind": "method",
+            "summary": "Browser storage or their own vault."
+          },
+          {
+            "id": "agents",
+            "label": "Agents should guide, not sign up",
+            "kind": "claim",
+            "summary": "Phone checks, terms, providers watching."
+          },
+          {
+            "id": "plan",
+            "label": "What we will build",
+            "kind": "artefact",
+            "summary": "Three providers beside OpenRouter, a sign-in, a vault key, a Worker."
+          }
+        ],
+        "edges": [
+          {
+            "from": "goal",
+            "to": "tests",
+            "rel": "leads-to"
+          },
+          {
+            "from": "cors",
+            "to": "tests",
+            "rel": "extends"
+          },
+          {
+            "from": "tests",
+            "to": "four",
+            "rel": "leads-to"
+          },
+          {
+            "from": "four",
+            "to": "signin",
+            "rel": "extends"
+          },
+          {
+            "from": "cloudflare",
+            "to": "tests",
+            "rel": "example-of"
+          },
+          {
+            "from": "nvidia",
+            "to": "tests",
+            "rel": "example-of"
+          },
+          {
+            "from": "changed",
+            "to": "tests",
+            "rel": "extends"
+          },
+          {
+            "from": "learn",
+            "to": "four",
+            "rel": "extends"
+          },
+          {
+            "from": "key",
+            "to": "goal",
+            "rel": "answers"
+          },
+          {
+            "from": "agents",
+            "to": "signin",
+            "rel": "leads-to"
+          },
+          {
+            "from": "four",
+            "to": "plan",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [],
+          "pages": [],
+          "sites": [
+            "https://console.groq.com/docs/rate-limits",
+            "https://ai.google.dev/gemini-api/docs/pricing",
+            "https://openrouter.ai/docs/guides/overview/auth/oauth",
+            "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+            "https://github.blog/changelog/2026-07-30-github-models-is-now-retired/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A provider that does not answer it cannot be called from a page, whatever its docs say.",
+            "why": "The test that matters."
+          },
+          {
+            "text": "The account, and the agreement to its terms, stay the reader's.",
+            "why": "On agents and sign-ups."
+          },
+          {
+            "text": "It is not something to offer readers from a page.",
+            "why": "On NVIDIA."
+          }
+        ]
+      }
+    },
+    {
       "slug": "inside-the-northstar-twin",
       "title": "Inside the Northstar twin: thirteen refunds, four designs, and every decision played back",
       "date": "2026-10-18",
@@ -21702,6 +21911,7 @@
         "pay-after-you-read"
       ],
       "links_in": [
+        "free-models-your-own-key",
         "sgit-actions-side-by-side"
       ],
       "figures": [
@@ -42720,6 +42930,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "free-models-your-own-key",
         "no-server-by-design",
         "custom-uis-are-not-the-exception"
       ],

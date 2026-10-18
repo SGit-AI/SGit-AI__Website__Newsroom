@@ -14,13 +14,43 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-176 of 176 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+177 of 177 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-176 articles, 1002 links between them (1470 mentions in all). 166 articles cite an earlier one; 49 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (39 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+177 articles, 1004 links between them (1472 mentions in all). 167 articles cite an earlier one; 49 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (39 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](free-models-your-own-key.md)
+
+2026-10-18 · Agents & policy
+
+For a reader to talk to the newsroom free on their own key, a provider must be free without a card and callable directly from a web page; on 18 October 2026 Groq, Gemini through AI Studio, Mistral's free mode and OpenRouter's free models pass both, Cloudflare needs a reader-run Worker, NVIDIA fails both, and the free tier means the provider may learn from what is sent.
+
+*[diagram]*
+**claim**method**artefact**example**question
+
+**12 nodes, 11 edges**
+
+- **Talk to the newsroom, free, own key** (question) Without us holding the key.
+- **Two tests** (method) Free without a card; callable from a page.
+- **The browser preflight** (method) Tested from newsroom.sgit.ai.
+- **Four pass both** (claim) Groq, Gemini, Mistral, OpenRouter.
+- **Sign-in instead of a pasted key** (method) OpenRouter and Pollinations, OAuth with PKCE.
+- **Cloudflare needs a Worker** (example) Most generous, no training, no browser access.
+- **NVIDIA fails both** (example) No CORS, phone check, trial-only terms.
+- **2026 took a lot away** (claim) GitHub Models retired; credits and free tiers gone.
+- **Free means they may learn from it** (claim) Gemini human review; Mistral opt-out.
+- **The key stays with the reader** (method) Browser storage or their own vault.
+- **Agents should guide, not sign up** (claim) Phone checks, terms, providers watching.
+- **What we will build** (artefact) Three providers beside OpenRouter, a sign-in, a vault key, a Worker.
+
+> A provider that does not answer it cannot be called from a page, whatever its docs say. The test that matters.
+
+> The account, and the agreement to its terms, stay the reader's. On agents and sign-ups.
+
+builds on [A chat box on a site with no server, the plan, and the trade it makes](#chat-on-a-static-site), [The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it](#the-key-is-the-billing-system).
 
 ## [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](inside-the-northstar-twin.md)
 
@@ -2812,7 +2842,7 @@ VoiceDebrief turns a voice note into a transcript and a debrief in the browser o
 
 > The two providers whose keys carry a ceiling, OpenRouter and ElevenLabs, are the two whose terms say the most about resale, because a capped key is the thing that makes resale easy. The pattern the map shows.
 
-builds on [A locked-down desktop for an agent, by the minute, is still hard to rent](#an-agent-desktop-by-the-minute), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read); continued by [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](#sgit-actions-side-by-side).
+builds on [A locked-down desktop for an agent, by the minute, is still hard to rent](#an-agent-desktop-by-the-minute), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time](#pay-after-you-read); continued by [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key), [sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps](#sgit-actions-side-by-side).
 
 ## [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md)
 
@@ -5280,7 +5310,7 @@ With no server to hold a key, a chat box on a static site has three honest tiers
 
 > A chat box on one site is a feature. The same panel on all nineteen, reading each site's own catalogue, is the thing that makes a network of nineteen sites navigable, and it is why the catalogue is generated rather than written. Why the piece is about a network's navigation rather than one widget.
 
-continued by [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception).
+continued by [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key), [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [Custom UIs are not the exception: the inbox in 2026, where every message has its own universe](#custom-uis-are-not-the-exception).
 
 ## [Twenty sites in fifteen days, and what that did to the writing](nineteen-sites.md)
 
