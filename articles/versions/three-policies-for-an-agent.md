@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,091 | +169 / −115 words; 4 changed, 3 added, 2 removed paragraphs | this release | [what changed](three-policies-for-an-agent/v1.1.0.md) · [current](../three-policies-for-an-agent.md) |
+| **v1.1.0** | 2026-10-18 | minor | 2,091 | +169 / −115 words; 4 changed, 3 added, 2 removed paragraphs | [`bb2978831`](https://github.com/SGit-AI/SGit-AI__Website/commit/bb29788318e51d3066956b4fa21ece3a565038a1) | [what changed](three-policies-for-an-agent/v1.1.0.md) · [current](../three-policies-for-an-agent.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,037 | first published | [`4c750bd9b`](https://github.com/SGit-AI/SGit-AI__Website/commit/4c750bd9bbea12d2ec6d1876f2d70552a26fa511) |  |
 
 [← Back to the article](../three-policies-for-an-agent.md) · [All articles](../index.md)

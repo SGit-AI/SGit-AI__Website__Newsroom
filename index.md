@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.101 · 176 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.102 · 176 articles since 2026-08-17; the newest is 2026-10-18. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
@@ -54,7 +54,7 @@ For editors, journalists and publishers asking how news gets paid for when agent
 
 ### Strategy & startups (30)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](articles/who-will-fix-your-mess.md), 2026-10-17, 11 min.
+- [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](articles/who-will-fix-your-mess.md), 2026-10-17, 10 min.
 - [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](articles/the-controllable-founder.md), 2026-10-16, 13 min.
 

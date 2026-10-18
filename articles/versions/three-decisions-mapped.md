@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,327 | +355 / −188 words; 7 changed, 7 added, 5 removed paragraphs | this release | [what changed](three-decisions-mapped/v1.1.0.md) · [current](../three-decisions-mapped.md) |
+| **v1.1.0** | 2026-10-18 | minor | 2,327 | +355 / −188 words; 7 changed, 7 added, 5 removed paragraphs | [`bb2978831`](https://github.com/SGit-AI/SGit-AI__Website/commit/bb29788318e51d3066956b4fa21ece3a565038a1) | [what changed](three-decisions-mapped/v1.1.0.md) · [current](../three-decisions-mapped.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,160 | first published | [`4c750bd9b`](https://github.com/SGit-AI/SGit-AI__Website/commit/4c750bd9bbea12d2ec6d1876f2d70552a26fa511) |  |
 
 [← Back to the article](../three-decisions-mapped.md) · [All articles](../index.md)

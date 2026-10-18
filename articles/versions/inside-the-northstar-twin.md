@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 2,510 | first published | this release | [current](../inside-the-northstar-twin.md) |
+| **v1.0.0** | 2026-10-18 | published | 2,510 | first published | [`bb2978831`](https://github.com/SGit-AI/SGit-AI__Website/commit/bb29788318e51d3066956b4fa21ece3a565038a1) | [current](../inside-the-northstar-twin.md) |
 
 [← Back to the article](../inside-the-northstar-twin.md) · [All articles](../index.md)
 
