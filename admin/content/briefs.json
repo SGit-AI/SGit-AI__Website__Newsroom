@@ -1441,6 +1441,31 @@
    "depends_on": [],
    "session_brief": "Read admin/notes/2026-10-18__a-browser-for-one.md and the article a-browser-for-one, then assets/door.js and assets/vault-pane/vault-pane.js for the passkey unlock. This needs Xcode on macOS (a session on Dinis's Mac, or GitHub Actions macOS runners with TestFlight) and Apple's paid developer membership. First deliverable: the smallest Swift app with the associated domain newsroom.sgit.ai that opens the site and tries the vault unlock; record whether PRF results come back inside the web view, with the iOS version. Done when the vault opens inside the app on Dinis's phone, or when the native-ceremony fallback is in place and tested.",
    "size": "L"
+  },
+  {
+   "id": "librarian-daily-brief",
+   "title": "The Librarian's daily brief and debrief of Dinis's universe",
+   "source": [
+    "the-librarians-daily-brief",
+    "admin/notes/2026-10-18__the-librarians-daily-brief.md",
+    "the-agents-write-too"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "Every morning, a page for Dinis: what needs him, yesterday across every repository and organisation (including outside pull requests), the agents' debrief with costs, threads worth picking up, what is coming, and at most three places where his leverage is; learning from what he acts on.",
+   "built": "The sources exist: release files, the accountant's ledger (admin/build/wire-runs.json), the briefs map, reviews/status.json, the wires.",
+   "remaining": [
+    "A Librarian role file and policy row; port policy_check.py from sgit.ai",
+    "Yesterday from this repository alone",
+    "GitHub across the organisations with a token, and outside contributions",
+    "Cloud sessions and their debriefs",
+    "Threads to pick up and where the leverage is",
+    "The loop: weights from what Dinis acted on"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__the-librarians-daily-brief.md and the article, then admin/build/runs_ledger.py, admin/build/wire-runs.json, admin/content/briefs.json and reviews/status.json. First deliverable: admin/build/librarian.py that writes admin/content/librarian/<date>.md and .json for yesterday from this repository alone (releases, ledger runs including refused ones, briefs whose status changed, new reviews and open findings), and a newsroom/roles/librarian.md role file. Done when, for a fixture day, the brief has each item in the right section and a source that could not be read is flagged at the top.",
+   "size": "M"
   }
  ]
 }
