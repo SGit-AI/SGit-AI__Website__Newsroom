@@ -468,6 +468,176 @@
    "added": null,
    "updated": null,
    "note": "The vault fetch was refused at step one, so no wire was refreshed and nothing was released."
+  },
+  {
+   "id": "70f4389282b5",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-18T04:47:51Z",
+   "finished_at": "2026-10-18T04:57:37Z",
+   "duration_s": 582.1,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.186237,
+     "input": 640892,
+     "output": 152225,
+     "cache_read": 502123,
+     "cache_write": 121093,
+     "thinking": 103062
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.696034,
+     "input": 112,
+     "output": 51788,
+     "cache_read": 3695229,
+     "cache_write": 269978,
+     "thinking": 3661
+    }
+   },
+   "cost_usd": 1.882271,
+   "turns": 23,
+   "subagents": 6,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-18.1",
+   "added": 9,
+   "updated": 2,
+   "note": "Nine new stories and two updates; the Haiku verifier asked for fixes on every story checked, all applied."
+  },
+  {
+   "id": "8c0dd3190980",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-18T04:52:24Z",
+   "finished_at": "2026-10-18T04:57:31Z",
+   "duration_s": 302.1,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.077036,
+     "input": 456361,
+     "output": 55659,
+     "cache_read": 153267,
+     "cache_write": 16298,
+     "thinking": 38250
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.743351,
+     "input": 54,
+     "output": 20527,
+     "cache_read": 1812342,
+     "cache_write": 110521,
+     "thinking": 1665
+    }
+   },
+   "cost_usd": 0.820386,
+   "turns": 22,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-18.1",
+   "added": 4,
+   "updated": 0,
+   "note": "Four What's New items missed earlier, none touching the stack."
+  },
+  {
+   "id": "663f44db5ef3",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-18T04:58:33Z",
+   "finished_at": "2026-10-18T05:00:02Z",
+   "duration_s": 85.4,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.00294,
+     "input": 11629,
+     "output": 3555,
+     "cache_read": 0,
+     "cache_write": 0,
+     "thinking": 2022
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.140555,
+     "input": 12,
+     "output": 1887,
+     "cache_read": 455211,
+     "cache_write": 19035,
+     "thinking": 433
+    }
+   },
+   "cost_usd": 0.143496,
+   "turns": 8,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The vault clone was refused, so the desk stopped before any research."
+  },
+  {
+   "id": "1da528cc792e",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-18T05:08:40Z",
+   "finished_at": "2026-10-18T05:21:07Z",
+   "duration_s": 743.7,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.117689,
+     "input": 16,
+     "output": 1811,
+     "cache_read": 286266,
+     "cache_write": 17730,
+     "thinking": 197
+    }
+   },
+   "cost_usd": 0.117689,
+   "turns": 11,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Page fetches were refused again, so the first run still has not started."
+  },
+  {
+   "id": "3c2f21122f01",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-18T05:56:40Z",
+   "finished_at": "2026-10-18T05:57:39Z",
+   "duration_s": 53.7,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.15789,
+     "input": 14,
+     "output": 1835,
+     "cache_read": 312921,
+     "cache_write": 27055,
+     "thinking": 205
+    }
+   },
+   "cost_usd": 0.15789,
+   "turns": 8,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "other"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The vault fetch was refused again, so no wire was refreshed."
   }
  ],
  "sessions": [
@@ -491,15 +661,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-17T06:41:08Z",
+   "as_of": "2026-10-18T06:41:24Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 0.097061,
-   "input": 2,
-   "output": 591,
-   "cache_read": 45354,
-   "cache_write": 21653,
+   "cost_usd": 0.697559,
+   "input": 28,
+   "output": 8665,
+   "cache_read": 1497892,
+   "cache_write": 115266,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
