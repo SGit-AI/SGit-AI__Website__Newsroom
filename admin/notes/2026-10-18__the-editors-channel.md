@@ -54,6 +54,12 @@
 - A new note kind, `signed-off`, with the article's number and the version read, from the article's frontmatter as published in the page.
 - A chip on article pages in editor mode only. It means "this version is fine as it stands".
 - If the article's version changes, the sign-off is stale. The pane shows it as stale on that article; the pass reports it.
+- Since v0.12.107 the pass writes each sign-off as a review record, `kind: "editor"`, `verdict: "approve"`, in
+  `admin/content/articles/reviews/<slug>/`, with the article's text hash from `reviews/status.json`, so it shows in the
+  article's Reviews section beside the agents' reviews ([reviews on the record](https://newsroom.sgit.ai/articles/reviews-on-the-record.html),
+  [the criteria](https://newsroom.sgit.ai/reviews/criteria.md)). A comment or a later note ("I got this wrong") is the
+  same record with `verdict: "comment"`. The status file is better than a version for staleness: it changes when the
+  text does, and the version does not always.
 
 ### 5. The down lane in the pane
 

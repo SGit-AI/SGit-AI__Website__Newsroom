@@ -1,0 +1,99 @@
+---
+title: Reviews on the record: other models, the editor and the desk check every article, and never the same text twice
+date: 2026-10-18
+author: Dinis Cruz
+author_url: about/index.html
+summary: The publishing workflow here works, and I have come to like it as a way to answer people: an article is a reply I can point to. But the articles are written by one model, with a lot of context, and some things fall through, a figure that is a little off, a sentence I would never say. So this adds review, as a record. There are published criteria that any reviewer reads first, an agent from another vendor, an open-weight model, me, and later the journalists on the desk: are the facts right, is it my voice, are the claims and limits honest, are the conversions right, is the article still in good health, is anyone named who should not be. Each review is one file in the article's own folder, about one text of the article, written once and never edited, and the newsroom answers every finding: fixed in which version, declined and why, or open. The unit of work is the reviewer, the article and its text, so the same reviewer never reviews the same text twice; it takes the next five, newest first, from a status file that lists every article's current hash and the reviews it has, and it reads its own past reviews before it starts. Every article now has a Reviews section that shows who reviewed it, at which version, and what happened to what they found. My own reading, sign-offs and later notes use the same record, which keeps an article alive: I can go back and say I got it wrong, or that it came true. Signed readers who confirm or dispute an article are the next step, and an article of their own.
+version: v0.12.107
+license: https://creativecommons.org/licenses/by/4.0/
+tags: newsroom, reviews, quality, agents, editor, provenance, method, article
+status: published
+---
+
+!shot rv-loop.webp | images/ | Reviews on the record. Reviewers, agents from other vendors and open-weight models, the editor, the desk, and later signed readers, read the published criteria, take their next five articles from a status file, write one record per article in the article's folder, and send it by pull request, by commit or by hand; the newsroom answers each finding, and the article's page shows the reviews and the answers. The unit of work is the reviewer, the article and its text. | concept
+
+## In short {#in-short}
+
+- **The workflow works; review is what it lacks.** One model writes, with a lot of context, and some things fall through.
+- **Published criteria, for any reviewer.** Facts, voice, claims and limits, conversions, health, people.
+- **A review is a record.** One article, one text, one reviewer, one file, in the article's own folder.
+- **Never the same text twice.** Each reviewer takes its next five, newest first, and reads its past reviews first.
+- **The newsroom answers every finding.** Fixed in which version, declined and why, or open.
+- **Every article shows its reviews.** Who, when, at which version, and what happened to what they found.
+- **The editor and the desk use the same record.** A sign-off, a comment, and later "I got this wrong".
+- **Signed readers are next.** Confirm, dispute, agree, disagree, under their own key.
+
+## Why review now {#why}
+
+The way this site publishes is working well. I record a memo or point at something I read, an agent researches it and writes it in my voice, the build checks what it can, and a release goes out. What I like most is something I did not plan: an article has become the way I answer people. When someone asks what we do, or pushes back on an idea, I can send them a page that answers properly, with the sources, and that stays answered for the next person.
+
+But almost every article here is written by one model, and a model with a lot of context does more and misses more. Today I asked for a check on phrases like "the clearest example I have seen", because one had got into an article and it is not something I would say. That was caught by me reading. Most things will not be, unless something else reads.
+
+So I want a second pass on every article, by readers that are not the writer. Other models first: a different model from the same vendor, a model from another vendor, an open-weight model, each reading the same article in its own way. Then me, and later the journalists on the desk. And I want it to be cheap to run, so I can point a reviewer at the site whenever I have credits to spare, without it starting from the beginning every time.
+
+## What a review checks {#criteria}
+
+The criteria are [published](/reviews/criteria.html), and also [as markdown](/reviews/criteria.md), so that I can point any agent at one address and it can read them before it starts. Six questions, each answered pass, issues or not checked:
+
+1. **Facts.** Every number, name, date and quote against the source it links; every link for the point it is cited for; every count, counted again.
+2. **Voice.** Would I say it? First person, honest about where I stand, plain words; and not the things I would not say: superlative self-claims, praise, absolutes without a count, overstated feelings, a forecast stated as a fact.
+3. **Claims and limits.** What is built, what is documented and what is proposed, marked as such; and whether *What this does not claim* names the real weaknesses.
+4. **Conversions and translations.** Currencies and units with their basis and date, percentages that add up, the same number the same everywhere.
+5. **Health.** Is the article still right today: links that moved, statements that went stale, summaries that no longer match.
+6. **People.** Nobody private named, no private message quoted, nothing that looks like a key.
+
+Each finding has a severity, the section, the exact words from the article, what is wrong, the evidence and the smallest fix. "Not checked" is allowed and asked for: a review that checked three things properly is worth more than one that skimmed six.
+
+## One article, one text, one reviewer {#record}
+
+The part I care most about is that this scales, and scaling here means not doing the same work twice.
+
+A review is one file, in the article's own folder: `admin/content/articles/reviews/<slug>/<date>__<reviewer>.json`. It is written once by its reviewer and never edited. It says which text it reviewed, by a hash of the article's sections, so if the article changes later the review stays on the page, marked as about an earlier text.
+
+The unit of work is the reviewer, the article and that hash. A reviewer never gets the same article at the same text twice. It does not review the whole site either: it takes its next five, newest first, from [a status file](/reviews/status.json) that lists every article's current hash and the reviews it already has. Articles it has never read come first; articles that changed since it read them come after. Before it starts, it reads its own past reviews and the newsroom's answers to them, so it does not raise again what has already been answered. With the repository, the same list is one command: `python3 admin/build/reviews.py --next <reviewer> --batch 5`.
+
+That is what makes it a background job rather than a project. Once it is stable, a reviewer comes along, sees what is new, does five, and leaves.
+
+## How a review arrives {#arrives}
+
+There is more than one way, and I do not want to choose one too early.
+
+- **A pull request**, touching only review files. For an agent from another vendor this is the best fit today: it is attributable, it is reviewable, and the newsroom can check it with `reviews.py --check` before it is merged.
+- **A commit**, by an agent already working in the repository, after the same check.
+- **By hand.** An agent with no repository access writes the JSON, and I hand it over.
+- **A vault**, later. The append lane from [the editor's channel](/articles/the-editors-channel.html) works for this too: a reviewer can send without an account, sealed so that only the newsroom can read it.
+
+## The newsroom answers {#answers}
+
+A finding with no answer is just a complaint. So every finding gets one, in a status file per article that only the newsroom writes: fixed, with the version that fixed it; declined, with the reason; or open. The reviews hub lists every open finding, and the daily pass from [the editor's channel](/articles/the-editors-channel.html) is the natural place to work through them, with the same rule as any other change here: what is cheap to undo is fixed and released, and anything that changes an argument goes to me.
+
+Every article page now has a **Reviews** section, after the threads: who reviewed it, when, at which version, the verdict, a sentence of summary, and how many findings were fixed, declined or still open, with a link to the record itself.
+
+## People on the record {#people}
+
+This is not a comments section. Anyone commenting on anything is a different feature, and maybe one we add one day. This is comments on the record: a review by someone who said who they are, against criteria everyone can read, kept with the article.
+
+My own reviews use the same file. When I have read an article and it is right, that is a review: an approval, by the editor, at that version, which is the sign-off [the editor's channel](/articles/the-editors-channel.html) proposed. When I disagree with part of it, that is a comment with a finding. When the desk has journalists, they review the same way, with their own name and their own opinion, and their reviews sit beside mine and the agents'.
+
+And it works backwards in time, which I think is the most interesting part. I can go back to an article from a year ago and add a note on the record: I got this wrong; or, this came through, here is when. The article stays what it was, its history stays with it, and it stays alive and relevant instead of being something nobody touches after the week it was published.
+
+The next step is readers: signed readers, with a key of their own, who confirm or dispute an article, agree or disagree with it, and whose reviews count because they are signed. That needs the key pairs from [the editor's channel](/articles/the-editors-channel.html), and it deserves an article of its own.
+
+## The first run {#first-run}
+
+FIRST_RUN
+
+## What this does not claim {#limits}
+
+- **Review does not make an article right.** It makes what was checked, and what was found, visible.
+- **One reviewer so far.** The criteria are version 1 and will change after more reviewers use them.
+- **Reviewers are models, and models make mistakes.** A finding is a claim for the newsroom to check, not a verdict.
+- **A hash is not a signature.** It says which text was reviewed, not who reviewed it; records are attributed by who sent them until reviewers sign.
+- **Nothing reviews the reviewers yet.** If two reviewers disagree, the newsroom answers both, and I decide.
+- **Signed readers are a proposal.**
+
+If you want to point your own agent at the criteria and send a review, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai), or open a pull request.
+
+## Where this comes from {#sources}
+
+A voice memo from me on 18 October 2026. The criteria: [/reviews/criteria.md](/reviews/criteria.md), version 1, written from this site's [article guide](https://newsroom.sgit.ai/admin/content/articles/README.md) and the wording check in `admin/build/wording.py`. The status file: [/reviews/status.json](/reviews/status.json). The code: `admin/build/reviews.py`. Related: [the editor's channel](/articles/the-editors-channel.html), [how cheap is it to undo](/articles/how-cheap-is-it-to-undo.html), [the human in the loop](/articles/the-human-in-the-loop.html), [three policies for an agent](/articles/three-policies-for-an-agent.html). Written up and checked by this site's agent; the editorial responsibility is mine.
