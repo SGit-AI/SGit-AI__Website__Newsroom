@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-18 | published | 3,348 | first published | this release | [current](../free-models-your-own-key.md) |
+| **v1.0.0** | 2026-10-18 | published | 3,348 | first published | [`c7ba8dfde`](https://github.com/SGit-AI/SGit-AI__Website/commit/c7ba8dfde8719c74d2fc56deefd262247aaa2e9d) | [current](../free-models-your-own-key.md) |
 
 [← Back to the article](../free-models-your-own-key.md) · [All articles](../index.md)
 

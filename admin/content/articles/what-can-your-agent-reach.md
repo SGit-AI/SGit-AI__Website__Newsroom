@@ -1,0 +1,115 @@
+---
+title: What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide
+date: 2026-10-18
+author: Dinis Cruz
+author_url: about/index.html
+summary: A thoughtful reader spent real time on RiskMandate and abp.sgit.ai and came back with four fair points. The pages are hard to understand. As they read it, the idea is to inspect an agent and report what it can actually do, which is valuable, and they could not think of anything else that does it. Their guess was that it does not yet work with commercial agents, or in real time. And the hard problem is not the product but the room: most people do not see how fast agents are moving, so how does anyone surface the need? This is a plain answer to all four. RiskMandate writes down, for one agent in one deployment, what it can reach, what you authorised it to do, the gap between the two, and what actually stands in the way of each capability. It is read-only on purpose and never sits in the agent's path; enforcing belongs to the gateways, hooks and runtimes, and the policy is what they enforce. It already covers commercial agents, Claude with Gmail or Microsoft 365, ChatGPT, Google Workspace and others, from the vendors' own pages and measured deployments. The worry that prompted the conversation, an enterprise assistant like Atlassian's Rovo surfacing data to people who should not see it, is exactly the gap it measures, and I walk through it. The newer work goes further: decision and workflow policies for who decides and in what order, and a twin of a refund agent where every decision can be replayed. And the way into the room is not a new budget line. It is five questions someone already has to answer, with a deadline: a contract, a security questionnaire, an insurance renewal, the board's risk appetite, and twenty minutes with the assistant you already run.
+version: v0.12.105
+license: https://creativecommons.org/licenses/by/4.0/
+tags: riskmandate, agent-behaviour-policy, enterprise-ai, oversharing, due-diligence, insurance, governance, explainer, article
+status: published
+---
+
+!shot ga-gap.webp | images/ | One agent, three sets. The grant is everything the agent can actually reach through its credentials and connectors; the mandate is what the organisation authorised it to do; the delta is the difference, the authority nobody accepted. Each capability in the grant carries a barrier: nothing in the way, a rule in prose, a setting the agent's own account can change, or a boundary enforced above it. Only the last bounds anything. | concept
+
+## In short {#in-short}
+
+- **It writes down what an agent can reach.** For one agent in one deployment: the grant, the mandate, the gap, and what stands in the way.
+- **It never sits in the agent's path.** Read-only on purpose; the gateways and runtimes enforce, and the policy is what they enforce.
+- **It already covers commercial agents.** Claude with Gmail and Microsoft 365, ChatGPT, Google Workspace, Claude Code, GitHub Actions and more.
+- **Enterprise AI oversharing is the gap it measures.** An assistant that can reach more than the person asking should see.
+- **Real time is somebody else's job, on purpose.** But the decisions it records can be enforced in real time, and we show where.
+- **The newer work adds decisions and workflows.** Who decides, on what evidence, in what order, replayable in a twin.
+- **The way in is a question already asked.** A contract, a questionnaire, a renewal, the board, or twenty minutes.
+
+## The pages are hard to read {#pages}
+
+That is a fair criticism, and I accept it. The sites were written from the inside, in the vocabulary the work needed, and they show it: grant, mandate, delta, barrier, a 23-word capability grammar. They are precise, and precision is not the same as clear. This article is the version I would give someone who has ten minutes and has to decide whether any of it matters to them.
+
+## What it is, in one paragraph {#what}
+
+When you connect an AI agent to something, a mailbox, a drive, a code host, a company wiki, it gets a credential. That credential lets it do a set of things, usually far more than the job you had in mind. RiskMandate writes down, for one agent in one deployment, four things: **the grant**, what the credential and connectors actually let it reach; **the mandate**, what you authorised it to do; **the delta**, the difference between them, which is authority nobody ever accepted; and **the barrier** for every capability, what actually stands in the way. That document is the Agent Behaviour Policy, published openly at [abp.sgit.ai](https://abp.sgit.ai/). It carries no score and no verdict. It is the record.
+
+The barrier is the part that changes conversations. There are four kinds, and only one of them bounds anything:
+
+| Barrier | What stands in the way | A control? |
+|---|---|---|
+| None | Nothing | No |
+| Expectation | A rule in prose, a line in the prompt | No |
+| Setting | A switch the agent's own account can flip | No |
+| Boundary | Something enforced above the grant, out of the agent's reach | Yes |
+
+The test behind it is one sentence from abp.sgit.ai: "A control bounds a grant only if it is enforced by something the grant does not include." Most of what organisations call agent controls today are the second row: an instruction in a prompt. An honest behaviour policy says so.
+
+## Yes, it reports what an agent can actually do {#inspect}
+
+That is the right reading. And the reason it matters is that almost nobody has seen the list. RiskMandate's [try-it page](https://riskmandate.ai/try-it.html) is thirteen prompts you paste into the assistant you already have connected to your mail. The first one asks it to list its own tools. In RiskMandate's words, "the list is longer than the tile that sold it." The second asks it to draft what you actually wanted it for, in three lists, wanted, refused, never mentioned; "the correction is almost always downward." The third writes the gap down. It takes about twenty minutes, and nothing is collected.
+
+That is a self-report, and the site says so: the agent describing its own access is "the cheapest evidence there is, and the weakest." The paid levels go further. At the corrected level, the agent that holds the credential runs a published prompt that measures what the credential actually allows, in the fixed vocabulary, and the policy is built from that measurement, with every row marked as measured, documented or inferred. At the reviewed level, a person runs two sessions with your team and signs it. The levels are on [the pricing page](https://riskmandate.ai/pricing.html), from £10 for the pack to £1,500 reviewed.
+
+## Does it work with commercial agents? {#commercial}
+
+Yes, for the ones that matter most to most organisations. The library at [riskmandate.ai](https://riskmandate.ai/agent-behaviour-policy.html) has behaviour-policy vaults for Claude with the Gmail connector, Claude with the Microsoft 365 connector, Claude in the browser with connectors, Claude Desktop, ChatGPT in the browser, a Google Workspace MCP server, Gmail and Google Drive at read-only scope, a Dropbox MCP server, n8n with an owner API key, Claude Code on a machine and on the web, GitHub Actions, a browser extension and a scheduled job. Each is built from the vendor's own published pages, quoted and dated, or measured on a deployment we are entitled to run; where two vendor pages disagree, the disagreement is published rather than settled.
+
+There is no vault yet for Atlassian's Rovo, or for Microsoft 365 Copilot or Glean. A new shape starts from the same grammar and the same method, and the corrected level exists precisely for "something not on the list".
+
+One distinction is worth knowing before any contract conversation. The policy records who holds each barrier. A scope you consented to and can revoke is a different thing from a product decision the vendor can change in a release, without notice. Both are written down, and the difference is the clause you want in the contract.
+
+## The enterprise assistant that sees too much {#oversharing}
+
+The worry that started this conversation is a good test. An organisation is looking at Atlassian's Rovo: search, chat and agents across Jira and Confluence, and through connectors across Google Drive, SharePoint, Slack and GitHub. The question is whether it will pull data in and show it to people who did not have access to it.
+
+Atlassian's documented design says it will not grant new access. Its trust page says "Rovo honors all existing permissions within each feature", and its privacy guidelines that users "will be able to see public documents and private documents that they already had access to." Connectors are set up by an administrator with broad rights, and then each user links their own account, so answers are filtered by what that person can see. I take that at face value. The risk is not in that sentence; it is in four places around it.
+
+1. **Access that was always too wide becomes easy to find.** Atlassian's own connector guide warns that "unrestricted content may appear in search results or be used by Rovo Agents or Rovo Chat", and tells administrators to "verify what data each app indexes". Microsoft says the same about its own assistant: "By default, SharePoint sets sharing settings to the most permissive option," and the first steps of getting ready for Copilot are about oversharing. A Google Drive file shared as "anyone with the link" was safe while nobody knew the link; Atlassian's Drive connector makes it findable by teammates when the link appears somewhere Rovo can read, such as a Confluence page or a Slack message. Nobody's permissions changed. What changed is that everything they already allowed is now one question away.
+2. **Some paths run as somebody else.** When a Rovo agent runs from Jira Automation, it uses the permissions of the automation's connection user, typically whoever created the rule, not the person who triggered it. In Atlassian's own tracker, a customer reported that the agent's Confluence results then include links to pages the triggering user cannot view; Atlassian answered that "this is intended behaviour", and dedicated agent accounts are planned. That is exactly the shape the question was about: output reaching someone who did not have access to the source.
+3. **Who can build agents is wide by default.** By default all users can create Rovo agents, and new agents are open to all users; administrators can narrow it to selected groups, and customers have asked Atlassian to change the default.
+4. **An agent can be talked into sending data out.** In August 2026, a security firm published a prompt injection in which a hidden instruction in an uploaded file makes Rovo send data to an outside address, "even if an organization has disabled web search for Rovo"; I found no statement from Atlassian on a fix. That is not Rovo widening permissions. It is Rovo using a legitimate user's access for someone else's purpose, which is the same risk every assistant with tools carries.
+
+Written as a behaviour policy, a Rovo agent's **grant** is the union of what the person invoking it can see across Atlassian and every connected app, or the rule creator's access when it runs from an automation, plus what its tools can create and change. Its **mandate** is what it was built for: answer questions about this project's tickets, say. The **delta** is everything else it can reach, and for most organisations that is most of the company. And the **barrier** column sorts the controls honestly. Permission filtering is a boundary, but one the vendor holds and can change in a release. The administrator's allowlists for which drives and sites are indexed, the setting for who may build agents, and the read and write switches on Atlassian's MCP server are boundaries the organisation holds. The agent's instructions are an expectation. Atlassian's own governance tools, classification, redaction of sensitive data and audit logs, sit in the boundary row too, on the plans that include them; agent identities with "explicit, role-scoped access that can be audited and revoked independently" are, in Atlassian's words, coming soon.
+
+For due diligence on a contract, that turns the vague question into five specific ones. Which connectors are on, and with whose rights were they set up? What is indexed, and has anyone reviewed what was already over-shared? Which automations run agents, and as whom? Who may build agents? And which of the controls above are in the plan being bought? Those answers are the behaviour policy for that deployment, and the gap they reveal is what somebody has to accept, by name, for a period, or fix.
+
+## Is it real time? {#realtime}
+
+No, and that is deliberate. RiskMandate is "never in the request path": it reads what exists and models it, with "no runtime decisions, no enforcement point, nothing in line that can slow an agent down or break it." That is why a security review of it is a short conversation, and why it can describe agents it has no way of controlling, including commercial ones.
+
+Real-time enforcement belongs to the things that sit in the path: an identity provider, a gateway, a proxy, a hook, the agent's own runtime. And here the newer work has something to show. In October, Mondweep Chakravorty took an ABP, compiled it into Ruflo's own policy rules, and enforced it in Ruflo's evaluator, in real time, on every memory operation; [the page documenting it was merged into Ruflo](/articles/our-first-pr-in-ruflo.html). This newsroom's own agent runs under an ABP whose rules are partly enforced by hooks, as it works. The policy is the description; the runtime is the enforcer; the barrier column says which rules have one.
+
+## Beyond what it can reach: who decides {#decisions}
+
+A behaviour policy answers "may it?". It does not answer "is it right?". The clearest example I know is a refund: an agent allowed to refund up to $200 refunds $150 to a customer owed $120, and every control passes. So we have extended the model with two more policies. A **decision policy** says, at a branch point, who decides, on what evidence, within what limits, and who is called when the case is out of bounds. A **workflow policy** says which steps run in what order. [Three policies for an agent](/articles/three-policies-for-an-agent.html) sets them out; [approve at altitude](/articles/approve-at-altitude.html) shows how a board signs off once and every level below inherits it; [case law for agents](/articles/case-law-for-agents.html) shows how the cases nobody predicted become precedent.
+
+To make it something you can see rather than read, we built the refund as a twin: [the Northstar refund twin](https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html), thirteen refund requests through four designs of the controls, every decision played and replayed. The design with a limit and good logs overpays $458 in a day; the design with three policies gets all thirteen right. [Allowed is not right](/articles/allowed-is-not-right.html) walks through it. It takes five minutes, and it is the fastest way I know to show someone that a control that works can still produce the wrong outcome.
+
+## How does it get into the room? {#room}
+
+!shot ga-doors.webp | images/ | Five ways into the room, each a question someone already has to answer: a contract, where legal and procurement ask what the vendor's agent will do with the data; a security questionnaire, where a customer asks which agents touch their data; an insurance renewal, where the question is whether AI is excluded from cover; the board's risk appetite, where the question is who can pull the plug; and twenty minutes, where anyone running an assistant asks what it can actually do. | concept
+
+This is the hardest of the four points, and the one I agree with most. There really are two groups: the people who see how fast this is moving, and the much larger group who do not. The second group will not ask for an agent risk tool, because they do not see the risk. So I do not think the way in is to sell the need. It is to answer a question somebody already has, with a deadline, and that needs exactly this record.
+
+1. **A contract.** Legal and procurement doing due diligence on a vendor's agent need to know what it will reach and do with the organisation's data. The behaviour policy for that deployment is that answer, with every barrier marked as yours or the vendor's.
+2. **A security questionnaire.** A startup's first serious enterprise customer will ask which of its agents touch their data and how they are bounded. A behaviour policy answers in rows, not assurances. RiskMandate has a page for [startups](https://riskmandate.ai/for-startups.html) and one for [founders](https://riskmandate.ai/for-founders.html), who will be diligenced on their agents before long.
+3. **An insurance renewal.** RiskMandate's starting point is that carriers are moving to exclude AI from cover, and that what buys cover back is evidence an underwriter will accept. [Make your agents insurable](https://riskmandate.ai/insurance.html) sets out the argument; the CFO and the broker are in that room already.
+4. **The board's risk appetite.** Under the UK Corporate Governance Code, boards already have to determine the principal risks the company is willing to take. Every board asks the same question about an agent, in one sentence: [who can pull the plug](https://riskmandate.ai/plug.html), how fast, what breaks, and what can't be undone. RiskMandate's answer is that a deployed agent's risk cannot be denied, only accepted, by a named owner, for an interval, with an expiry that brings the decision back.
+5. **Twenty minutes.** For the individual, the [thirteen prompts](https://riskmandate.ai/try-it.html). It is the cheapest way to move someone from the second group to the first, because the list of what their own assistant can reach is the surprise.
+
+The common thread is that none of these asks anyone to understand agents first. They ask a question in the language of the room, contracts, customers, cover, the board, and the behaviour policy is the document that answers it.
+
+## What I would like to hear back {#back}
+
+If you are in one of those rooms, I would like to know which question you are being asked, and what answer would have helped. And if you are looking at an enterprise assistant like Rovo now, I would like to build its behaviour policy with you, starting from the vendor's own pages and your deployment. The [early access programme](https://riskmandate.ai/early-access.html) does exactly that, for one agent you actually run, in exchange for telling us where it is wrong.
+
+## What this does not claim {#limits}
+
+- **No Rovo, Copilot or Glean vault exists yet.** The Rovo shape is described from Atlassian's pages, not measured on a deployment.
+- **The injection report is a third party's.** We found no statement from Atlassian on its status.
+- **RiskMandate does not enforce.** It describes and measures; enforcement is the runtime's.
+- **The insurance argument is RiskMandate's.** The state of AI exclusions is summarised from its pages, not independently surveyed here.
+- **Self-reports are weak evidence.** The site says so; measured rows are marked separately.
+
+Write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai) with the question you are being asked.
+
+## Where this comes from {#sources}
+
+[riskmandate.ai](https://riskmandate.ai/), version 1.38.8, and [abp.sgit.ai](https://abp.sgit.ai/), version 0.12.1, both read on 18 October 2026: in particular the barrier model, the try-it page, the pricing and the library of behaviour-policy vaults, the grant-gap, licence to operate, plug and insurance pages, and how it works. The Rovo section is from the vendors' own pages and one third-party report, read on 18 October 2026 by a research agent: Atlassian's [Rovo data privacy guidelines](https://support.atlassian.com/rovo/docs/rovo-data-privacy-and-usage-guidelines/), [trust page](https://www.atlassian.com/trust/atlassian-intelligence), [connector admin guide](https://www.atlassian.com/software/rovo/guides/admin-guide/rovo-connectors), [Google Drive connector](https://support.atlassian.com/organization-administration/docs/connect-google-drive-to-teamwork-graph/), [agent permissions and governance](https://support.atlassian.com/rovo/docs/rovo-agent-permissions-and-governance/), the tracker entry [ROVO-837](https://jira.atlassian.com/browse/ROVO-837) on automation identity, and the blog post [Don't build AI governance from scratch](https://www.atlassian.com/blog/rovo/ai-governance-built-in), 14 August 2026; Microsoft's [SharePoint Advanced Management guidance for Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/get-ready-copilot-sharepoint-advanced-management); and PromptArmor, [Atlassian Rovo exfiltrates data](https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data), 5 August 2026, a third party's report. Related on this site: [three policies for an agent](/articles/three-policies-for-an-agent.html), [allowed is not right](/articles/allowed-is-not-right.html), [our first PR in Ruflo](/articles/our-first-pr-in-ruflo.html), [hope or enforcement](/articles/hope-or-enforcement.html). Written up and checked by this site's agent; the editorial responsibility is mine.
