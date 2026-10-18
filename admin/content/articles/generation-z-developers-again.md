@@ -1,9 +1,9 @@
 ---
-title: Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help
+title: Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help
 date: 2026-10-18
 author: Dinis Cruz
 author_url: about/index.html
-summary: In 2018 I wrote a book called Generation Z Developers, key concepts and ideas for the next generation of developers. It is on Leanpub, 60% complete, last updated on 8 October 2018, read by 465 people, and it is also on Amazon. It was a decent book, full of spelling mistakes, and a lot of what I write about now is already in it, as chapter outlines: pioneers, settlers and town planners, graphs, your future self, publishing, GitHub as your CV; and, in a finished chapter, the advice to act like you are part of the company you want to work for. Of its 138 files, 90 are still outlines. I think the time is right for a second edition, because the outlines have since been written, as articles on this site. This is the plan. Keep the name, because the people it is for are still Generation Z and they all have to be developers now, and date the edition October 2026. Frame it with Wardley's explorers, villagers and town planners. Do it first, before the other books: a thorough review, an agent that interviews me as its editor, quick iterations in public, my handwritten notes, and then Amazon, where I already publish, with a launch in Portugal. It is the book I would most like to hand to the people I am trying to help: here is the manual for getting into development, and here is the manual for getting a job.
+summary: In 2018 I wrote a book called Generation Z Developers, key concepts and ideas for the next generation of developers. It is on Leanpub, 60% complete, last updated on 8 October 2018, read by 465 people, and it is also on Amazon. It was a decent book, full of spelling mistakes, and a lot of what I write about now is already in it, as chapter outlines: pioneers, settlers and town planners, graphs, your future self, publishing, GitHub as your CV; and, in a finished chapter, the advice to act like you are part of the company you want to work for. Of its 138 files, 90 are still outlines. I think the time is right for a new edition, Generation Z Developers (AI edition), because the outlines have since been written, as articles on this site. This is the plan. Keep the name, because the people it is for are still Generation Z and they all have to be developers now, with (AI edition) in brackets, and date it October 2026. Frame it with Wardley's explorers, villagers and town planners. Do it first, before the other books: a thorough review, an agent that interviews me as its editor, quick iterations in public, my handwritten notes, and then Amazon, where I already publish, with a launch in Portugal. It is the book I would most like to hand to the people I am trying to help: here is the manual for getting into development, and here is the manual for getting a job.
 version: v0.12.116
 license: https://creativecommons.org/licenses/by/4.0/
 tags: books, generation-z, careers, developers, leanpub, back-catalogue, article, gen-z-book
@@ -17,8 +17,8 @@ status: published
 - **I wrote Generation Z Developers in 2018.** On Leanpub at 60%, and on Amazon.
 - **Much of what I write now is in it.** Mostly as outlines: 90 of its 138 files.
 - **The outlines have since been written.** As articles on this site.
-- **So it is time for a second edition.** For the people I want to help into development and into a job.
-- **Keep the name, and date the edition: October 2026.** They are still Generation Z, and they all have to be developers now.
+- **So it is time for an AI edition.** For the people I want to help into development and into a job.
+- **Keep the name, add (AI edition), date it October 2026.** They are still Generation Z, and they all have to be developers now.
 - **Frame it with explorers, villagers and town planners.** And explain Wardley maps properly.
 - **Do this book first.** Review it, interview me, iterate in public, publish on KDP, launch in Portugal.
 
@@ -48,7 +48,7 @@ On AI, it said: "One of the most important areas that you need to gain a strong 
 
 The most interesting thing in the repository is what is not finished. Of its 138 files, 90 are outlines: a title, "Topics to cover and ideas", and a few bullet points. Life patterns: 21 of 27 are outlines. Concepts: 26 of 27. Security: all 8. Your CV: 8 of 9.
 
-Reading them now, many are briefs that this newsroom has since written as articles, without my planning it. "Future self", whose outline says to create assets that will be useful for him or her, is [bringing my past work back](/articles/bringing-my-past-work-back.html). "Publish, publish, publish" is [your own newsroom](/articles/your-own-newsroom.html). "Graphs" is [the graphs books](/articles/the-graphs-books.html) and [search as navigation](/articles/search-as-navigation.html). "GitHub is your CV" is act as the job you want. Even chapters that were written have newer answers: the one on open source now has [the fork next door](/articles/the-fork-next-door.html). That is the material for a second edition, and it is why I feel I now have enough to have a go.
+Reading them now, many are briefs that this newsroom has since written as articles, without my planning it. "Future self", whose outline says to create assets that will be useful for him or her, is [bringing my past work back](/articles/bringing-my-past-work-back.html). "Publish, publish, publish" is [your own newsroom](/articles/your-own-newsroom.html). "Graphs" is [the graphs books](/articles/the-graphs-books.html) and [search as navigation](/articles/search-as-navigation.html). "GitHub is your CV" is act as the job you want. Even chapters that were written have newer answers: the one on open source now has [the fork next door](/articles/the-fork-next-door.html). That is the material for the AI edition, and it is why I feel I now have enough to have a go.
 
 ## The cover {#cover}
 
@@ -62,13 +62,13 @@ The first question was whether to call it Generation Z Developers, or Generation
 
 And the people I want to give it to, those coming out of university or looking for their first or next job, are still Generation Z: the oldest were 22 when I wrote it, and are 30 now. It is not only for them. A target helps, and it also tells everyone else: learn this, or be outcompeted by the people who have. Generation Z is the generation entering the job market now, and in Europe in particular I think they are being fed a lot of fear about AI, and are not embracing it the way they should.
 
-So: keep the title, and mark the edition with its date, October 2026, because what it describes is the agentic workflow as I run it now, which will change.
+So: keep the title, and mark the new edition in brackets: *Generation Z Developers (AI edition)*. It says what changed in two words, and it reads as an edition of the same book, not a different one. And date it, October 2026, because what it describes is the agentic workflow as I run it now, which will change.
 
 ## Explorers, villagers and town planners {#roles}
 
 If everyone is a developer, the better question is what kind. Simon Wardley's answer, first as [pioneers, settlers and town planners](https://blog.gardeviance.org/2015/03/on-pioneers-settlers-town-planners-and.html) and since 2023 as [explorers, villagers and town planners](https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html), gives the book its frame: the explorer who builds something new and rough, the villager who makes it work for others, the town planner who turns it into something everyone can rely on. Where do you fit, and where do you want to? The 2018 book had this as an outline, and mentioned Wardley mapping once. This edition can explain Wardley maps properly, because it is now something people starting out need to know, and it makes a good narrative to hang the visualisations and infographics on.
 
-## The second edition {#edition}
+## The AI edition {#edition}
 
 - **Start with a thorough review.** There are a lot of spelling mistakes, and more besides.
 - **Keep what held,** corrected and finished.
@@ -95,11 +95,11 @@ And it is the book I want to give people. Every time I meet someone and ask: do 
 
 It is the book I would give, literally, to the people I am trying to help: here is the manual for getting into development, and here is the manual for getting a job.
 
-The build brief is a note for the agents that make it: [Generation Z Developers, second edition](https://newsroom.sgit.ai/admin/notes/2026-10-18__generation-z-developers-second-edition.md). It is also on [the briefs page](https://newsroom.sgit.ai/briefs/index.html#generation-z-developers-2e).
+The build brief is a note for the agents that make it: [Generation Z Developers (AI edition)](https://newsroom.sgit.ai/admin/notes/2026-10-18__generation-z-developers-second-edition.md). It is also on [the briefs page](https://newsroom.sgit.ai/briefs/index.html#generation-z-developers-2e).
 
 ## What this does not claim {#limits}
 
-- **Nothing of the second edition is written.** This is the plan.
+- **Nothing of the AI edition is written.** This is the plan.
 - **The outline-to-article map is a first reading.** Not every outline has an article, and not every article fits.
 - **Doing this one first is a choice, not a commitment.** The graphs books and Hacking Portugal follow if the workflow works.
 - **Fear about AI among young Europeans is my reading.** Not a measured result.

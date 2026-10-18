@@ -10,7 +10,7 @@
 
 # Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/two-years-in-the-opposite.md) · [newsroom v0.12.120](https://newsroom.sgit.ai/admin/versions.html) · aicareerspaywallspublisherspay-as-you-readwardley-mapsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/two-years-in-the-opposite.md) · [newsroom v0.12.120](https://newsroom.sgit.ai/admin/versions.html) · aicareerspaywallspublisherspay-as-you-readwardley-mapsarticle
 
 ***Abstract:** Business Insider published an essay this month by a former lawyer who moved his career towards AI two years ago and now, in the headline's words, has never felt more behind and tired of the topic. I wanted to read it. I could read three paragraphs, and then a box offered me a free trial that renews at $12.95 every four weeks, or a year for $49 that renews at $149. I do not want a subscription to an organisation I do not know yet; I wanted to pay a little for that one essay, and for its author to get some of it. Meanwhile the page had already shown me adverts in three places, so the publisher had made money from my visit before giving me almost anything. I could not read it, so I could not judge it either: not agree, not challenge it, not say whether the headline was fair. And my own story is the opposite. I have been doing AI for two years and a bit, and I have never felt more productive, more empowered or happier at work. I am building sgit, RiskMandate and this newsroom; for the first time my engineering and my creative side meet; I am in control of my inbox, which I never was. It is not easy, a startup never is, and progress is not linear. But Wardley maps let me see the game I am playing, and that gives me a kind of peace. There is an anti-AI mood right now, and burnout stories feed it. Stories like mine should be told too.*
 
@@ -66,7 +66,7 @@ A lot of my peace comes from [Wardley maps](why-i-love-wardley-maps.md). I can s
 
 ## Why tell this now
 
-There is an anti-AI mood at the moment, and stories of burnout feed it. I am not dismissing the essay; burnout is real, and I could not read his reasons. But the other story should be told as loudly: that working this way can make you more productive, more in control and happier than you have ever been. That is the story I want people starting out to hear, and it is the one [Generation Z Developers, again](generation-z-developers-again.md) is for.
+There is an anti-AI mood at the moment, and stories of burnout feed it. I am not dismissing the essay; burnout is real, and I could not read his reasons. But the other story should be told as loudly: that working this way can make you more productive, more in control and happier than you have ever been. That is the story I want people starting out to hear, and it is the one [Generation Z Developers (AI edition)](generation-z-developers-again.md) is for.
 
 ## What this does not claim
 
@@ -77,7 +77,7 @@ There is an anti-AI mood at the moment, and stories of burnout feed it. I am not
 
 ## Where this comes from
 
-A voice memo from me on 18 October 2026, and my screenshots of [the essay's page](https://www.businessinsider.com/work-in-ai-burned-out-cant-keep-up-career-2026-10) that day: the headline, the byline, the first three paragraphs, the subscription offer and the adverts. Related: [I just want to buy the article](i-just-want-to-buy-the-article.md), [paying after the value](paying-after-the-value.md), [on the record](on-the-record.md), [the man behind the curtain](the-man-behind-the-curtain.md), [why I love Wardley maps](why-i-love-wardley-maps.md), [Generation Z Developers, again](generation-z-developers-again.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo from me on 18 October 2026, and my screenshots of [the essay's page](https://www.businessinsider.com/work-in-ai-burned-out-cant-keep-up-career-2026-10) that day: the headline, the byline, the first three paragraphs, the subscription offer and the adverts. Related: [I just want to buy the article](i-just-want-to-buy-the-article.md), [paying after the value](paying-after-the-value.md), [on the record](on-the-record.md), [the man behind the curtain](the-man-behind-the-curtain.md), [why I love Wardley maps](why-i-love-wardley-maps.md), [Generation Z Developers (AI edition)](generation-z-developers-again.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
 
 ## Threads
 
@@ -90,7 +90,7 @@ News & evidenceStartups & strategy[This article as a graph →](graphs.md#two-ye
 - [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](paying-after-the-value.md) Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](why-i-love-wardley-maps.md) The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.
+- [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

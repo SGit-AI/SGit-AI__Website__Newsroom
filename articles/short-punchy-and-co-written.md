@@ -1,4 +1,4 @@
-# Short, punchy, and co-written with Claude: what the second edition of Generation Z Developers has to be, and how we show it is not AI slop, sgit.ai
+# Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop, sgit.ai
 
 > More notes for the book. It is a book I will send to anyone I know who wants to, or should, get into AI, so it needs chapters for people who do not yet work the way I do, including one on setting up a Google Workspace and the agentic workflow behind my emails. The first edition was liked for one thing above all: it was short and punchy, a condensation of ideas where almost every paragraph made you think. The second has to be the same. It will also be co-written with Claude, and I want to say so and credit it, and to show the ratio: how many words of voice memos, edits and reviews go into each word of the book. Readers will open it expecting AI slop. My first published pieces, made with ChatGPT's deep research, got exactly that reaction; the articles on this site now get told they sound like me. So the book should meet the suspicion head on, with the evidence. To keep it tight, every paragraph, group of paragraphs and chapter should know what it is: its evidence, its facts, its hypotheses, its purpose, all in a graph, which also shows where we repeat ourselves. We can refactor everything until each part is signed off. Synthetic readers will tell us what they understood and what they did not. And not every issue they raise needs fixing: sometimes the answer is, we are not doing that.
 
@@ -6,11 +6,11 @@
 
 ---
 
-[Home](../index.md) / [Articles](index.md) / Short, punchy, and co-written with Claude: what the second edition of Generation Z Developers has to be, and how we show it is not AI slop
+[Home](../index.md) / [Articles](index.md) / Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop
 
-# Short, punchy, and co-written with Claude: what the second edition of Generation Z Developers has to be, and how we show it is not AI slop
+# Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/short-punchy-and-co-written.md) · [newsroom v0.12.119](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zwritingqualitygen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/short-punchy-and-co-written.md) · [newsroom v0.12.119](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zwritingqualitygen-z-bookarticle
 
 ***Abstract:** More notes for the book. It is a book I will send to anyone I know who wants to, or should, get into AI, so it needs chapters for people who do not yet work the way I do, including one on setting up a Google Workspace and the agentic workflow behind my emails. The first edition was liked for one thing above all: it was short and punchy, a condensation of ideas where almost every paragraph made you think. The second has to be the same. It will also be co-written with Claude, and I want to say so and credit it, and to show the ratio: how many words of voice memos, edits and reviews go into each word of the book. Readers will open it expecting AI slop. My first published pieces, made with ChatGPT's deep research, got exactly that reaction; the articles on this site now get told they sound like me. So the book should meet the suspicion head on, with the evidence. To keep it tight, every paragraph, group of paragraphs and chapter should know what it is: its evidence, its facts, its hypotheses, its purpose, all in a graph, which also shows where we repeat ourselves. We can refactor everything until each part is signed off. Synthetic readers will tell us what they understood and what they did not. And not every issue they raise needs fixing: sometimes the answer is, we are not doing that.*
 
@@ -69,7 +69,7 @@ And one rule that matters as much as the others: not every piece of feedback nee
 
 ## Where this comes from
 
-A voice memo from me on 18 October 2026. Related: [how much of this did I write?](how-much-of-this-did-i-write.md), [how to run synthetic users](how-to-run-synthetic-users.md), [the man behind the curtain](the-man-behind-the-curtain.md), [a website to finish the book](a-website-to-finish-the-book.md), [Generation Z Developers, again](generation-z-developers-again.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo from me on 18 October 2026. Related: [how much of this did I write?](how-much-of-this-did-i-write.md), [how to run synthetic users](how-to-run-synthetic-users.md), [the man behind the curtain](the-man-behind-the-curtain.md), [a website to finish the book](a-website-to-finish-the-book.md), [Generation Z Developers (AI edition)](generation-z-developers-again.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
 
 ## Threads
 
@@ -81,7 +81,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#short-p
 - [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](how-much-of-this-did-i-write.md) Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.
 - [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](a-website-to-finish-the-book.md) gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.
 - [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](how-to-run-synthetic-users.md) Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.
+- [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

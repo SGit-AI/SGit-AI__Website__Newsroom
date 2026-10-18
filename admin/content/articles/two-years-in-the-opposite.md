@@ -62,7 +62,7 @@ A lot of my peace comes from [Wardley maps](/articles/why-i-love-wardley-maps.ht
 
 ## Why tell this now {#why-now}
 
-There is an anti-AI mood at the moment, and stories of burnout feed it. I am not dismissing the essay; burnout is real, and I could not read his reasons. But the other story should be told as loudly: that working this way can make you more productive, more in control and happier than you have ever been. That is the story I want people starting out to hear, and it is the one [Generation Z Developers, again](/articles/generation-z-developers-again.html) is for.
+There is an anti-AI mood at the moment, and stories of burnout feed it. I am not dismissing the essay; burnout is real, and I could not read his reasons. But the other story should be told as loudly: that working this way can make you more productive, more in control and happier than you have ever been. That is the story I want people starting out to hear, and it is the one [Generation Z Developers (AI edition)](/articles/generation-z-developers-again.html) is for.
 
 ## What this does not claim {#limits}
 
@@ -73,4 +73,4 @@ There is an anti-AI mood at the moment, and stories of burnout feed it. I am not
 
 ## Where this comes from {#sources}
 
-A voice memo from me on 18 October 2026, and my screenshots of [the essay's page](https://www.businessinsider.com/work-in-ai-burned-out-cant-keep-up-career-2026-10) that day: the headline, the byline, the first three paragraphs, the subscription offer and the adverts. Related: [I just want to buy the article](/articles/i-just-want-to-buy-the-article.html), [paying after the value](/articles/paying-after-the-value.html), [on the record](/articles/on-the-record.html), [the man behind the curtain](/articles/the-man-behind-the-curtain.html), [why I love Wardley maps](/articles/why-i-love-wardley-maps.html), [Generation Z Developers, again](/articles/generation-z-developers-again.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo from me on 18 October 2026, and my screenshots of [the essay's page](https://www.businessinsider.com/work-in-ai-burned-out-cant-keep-up-career-2026-10) that day: the headline, the byline, the first three paragraphs, the subscription offer and the adverts. Related: [I just want to buy the article](/articles/i-just-want-to-buy-the-article.html), [paying after the value](/articles/paying-after-the-value.html), [on the record](/articles/on-the-record.html), [the man behind the curtain](/articles/the-man-behind-the-curtain.html), [why I love Wardley maps](/articles/why-i-love-wardley-maps.html), [Generation Z Developers (AI edition)](/articles/generation-z-developers-again.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.

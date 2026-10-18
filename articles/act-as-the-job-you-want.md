@@ -10,7 +10,7 @@
 
 # Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.1, 2 versions](versions/act-as-the-job-you-want.md) · [newsroom v0.12.115](https://newsroom.sgit.ai/admin/versions.html) · careershiringpublishinglinkableopen-sourceadvicearticlegen-z-book
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 3 versions](versions/act-as-the-job-you-want.md) · [newsroom v0.12.115](https://newsroom.sgit.ai/admin/versions.html) · careershiringpublishinglinkableopen-sourceadvicearticlegen-z-book
 
 ***Abstract:** This is the advice I end up giving most often to people I know who are looking for a job. They are between jobs, or just out of university, or back from maternity leave, or still in a job with an evening free. Whatever the reason, if you are looking for a job, you have time. And the best use of that time is to act as the person in the job you want. If you want to be a project manager, find a startup or an open-source project and start managing something for them: add value, tag them, send them ideas, connect with the people there. If you want to be an artist, publish your art. Do it in public, because then it can be linked. I wrote this down in 2018, in a book for young developers: act like you are part of the company. It matters even more now. Do not worry about reach; most of what I publish is read by a few hundred people at most, and that is fine. The point is not to be read by everyone. It is to have something you can link, so that the people who want to help you can send it to someone and say: look at this. That is also why your CV should be online. And if you cannot yet open a GitHub account, connect it to Claude or ChatGPT and have it build and edit your site, learn that first. The bar is not high, and it is the skill that connects the rest.*
 
@@ -48,7 +48,7 @@ This is not new advice from me. In 2018 I wrote a book for young developers, [Ge
 
 Easy, start collaborating on their Open Source projects. Act like you are part of the company. Understand their values, and behave in ways that will add value to that company, namely the tech stack.
 
-And a few lines later: "What's interesting is that there is nothing stopping you from doing this!" That is even more true in 2026. The tools to do real work for a company, before they have hired you, are now in everyone's hands. I think it is time to update that book, and [Generation Z Developers, again](generation-z-developers-again.md) is the plan.
+And a few lines later: "What's interesting is that there is nothing stopping you from doing this!" That is even more true in 2026. The tools to do real work for a company, before they have hired you, are now in everyone's hands. I think it is time to update that book, and [Generation Z Developers (AI edition)](generation-z-developers-again.md) is the plan.
 
 ## Do it in public
 
@@ -85,7 +85,7 @@ If you are looking for a job and try this, I would like to see what you build: w
 
 ## Where this comes from
 
-A voice memo from me on 18 October 2026. My book [Generation Z Developers](https://leanpub.com/generation-z), its chapter on how to get a job, read from [the book's repository](https://github.com/DinisCruz/Book_Generation_Z_Developer) on 18 October 2026. Related: [hired for the workflow](hired-for-the-workflow.md), [the man behind the curtain](the-man-behind-the-curtain.md), [your own newsroom](your-own-newsroom.md), [explorer coding](explorer-coding.md), [Generation Z Developers, again](generation-z-developers-again.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo from me on 18 October 2026. My book [Generation Z Developers](https://leanpub.com/generation-z), its chapter on how to get a job, read from [the book's repository](https://github.com/DinisCruz/Book_Generation_Z_Developer) on 18 October 2026. Related: [hired for the workflow](hired-for-the-workflow.md), [the man behind the curtain](the-man-behind-the-curtain.md), [your own newsroom](your-own-newsroom.md), [explorer coding](explorer-coding.md), [Generation Z Developers (AI edition)](generation-z-developers-again.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
 
 ## Threads
 
@@ -93,7 +93,7 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#act-as
 
 ### Builds on
 
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.
+- [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](hired-for-the-workflow.md) October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](your-own-newsroom.md) The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.
@@ -101,7 +101,7 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#act-as
 
 ### Continued by
 
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.
+- [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

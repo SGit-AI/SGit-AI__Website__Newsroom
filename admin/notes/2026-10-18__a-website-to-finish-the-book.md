@@ -1,10 +1,10 @@
 # A website to finish the book: a build brief for gen-z-developers.sgit.ai
 
-*18 October 2026, written by newsroom.writer for the agent that builds the book's website. Status: a brief; nothing in it is built. The articles are [a website to finish the book](https://newsroom.sgit.ai/articles/a-website-to-finish-the-book.html) and [a book for one reader](https://newsroom.sgit.ai/articles/a-book-for-one-reader.html); the book's plan is [Generation Z Developers, again](https://newsroom.sgit.ai/articles/generation-z-developers-again.html) and its note [Generation Z Developers, second edition](https://newsroom.sgit.ai/admin/notes/2026-10-18__generation-z-developers-second-edition.md).*
+*18 October 2026, written by newsroom.writer for the agent that builds the book's website. Status: a brief; nothing in it is built. The articles are [a website to finish the book](https://newsroom.sgit.ai/articles/a-website-to-finish-the-book.html) and [a book for one reader](https://newsroom.sgit.ai/articles/a-book-for-one-reader.html); the book's plan is [Generation Z Developers (AI edition)](https://newsroom.sgit.ai/articles/generation-z-developers-again.html) and its note [Generation Z Developers (AI edition)](https://newsroom.sgit.ai/admin/notes/2026-10-18__generation-z-developers-second-edition.md).*
 
 ## The ask
 
-The most productive environment Dinis can have to review and finish the second edition of *Generation Z Developers*, consolidating the best of what the project's repositories have built. Address: gen-z-developers.sgit.ai (to confirm), matching the printed cover's *Gen Z Developers*. Repository: `SGit-AI/SGit-AI__Website__Gen-Z-Developers`, following the pattern of `SGit-AI__Website__PKI`, `SGit-AI__Website__Graphs` and `SGit-AI__Website__Newsroom__API` (recommended to Dinis on 18 October; he creates it).
+The most productive environment Dinis can have to review and finish *Generation Z Developers (AI edition)*, consolidating the best of what the project's repositories have built. Address: gen-z-developers.sgit.ai (to confirm), matching the printed cover's *Gen Z Developers*. Repository: `SGit-AI/SGit-AI__Website__Gen-Z-Developers`, following the pattern of `SGit-AI__Website__PKI`, `SGit-AI__Website__Graphs` and `SGit-AI__Website__Newsroom__API` (recommended to Dinis on 18 October; he creates it).
 
 ## The rule
 

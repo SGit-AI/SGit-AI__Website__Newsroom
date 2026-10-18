@@ -173,7 +173,7 @@ Graphs & knowledgeSite & engineering[This article as a graph →](graphs.md#how-
 
 ### Continued by
 
-- [Short, punchy, and co-written with Claude: what the second edition of Generation Z Developers has to be, and how we show it is not AI slop](short-punchy-and-co-written.md) The second edition of Generation Z Developers must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.
+- [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](short-punchy-and-co-written.md) Generation Z Developers (AI edition) must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.
 - [Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one](bringing-my-past-work-back.md) A daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles: then and now, connected, two or three a day.
 - [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](my-memory-checked.md) I say it as I remember it; the agent checks it against the record before anyone reads it. Five confirmed, five corrected, two not found.
 - [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](from-send-to-sgit.md) Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.

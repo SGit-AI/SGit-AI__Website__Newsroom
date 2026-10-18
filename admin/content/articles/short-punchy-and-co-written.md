@@ -1,5 +1,5 @@
 ---
-title: Short, punchy, and co-written with Claude: what the second edition of Generation Z Developers has to be, and how we show it is not AI slop
+title: Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop
 date: 2026-10-18
 author: Dinis Cruz
 author_url: about/index.html
@@ -65,4 +65,4 @@ And one rule that matters as much as the others: not every piece of feedback nee
 
 ## Where this comes from {#sources}
 
-A voice memo from me on 18 October 2026. Related: [how much of this did I write?](/articles/how-much-of-this-did-i-write.html), [how to run synthetic users](/articles/how-to-run-synthetic-users.html), [the man behind the curtain](/articles/the-man-behind-the-curtain.html), [a website to finish the book](/articles/a-website-to-finish-the-book.html), [Generation Z Developers, again](/articles/generation-z-developers-again.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo from me on 18 October 2026. Related: [how much of this did I write?](/articles/how-much-of-this-did-i-write.html), [how to run synthetic users](/articles/how-to-run-synthetic-users.html), [the man behind the curtain](/articles/the-man-behind-the-curtain.html), [a website to finish the book](/articles/a-website-to-finish-the-book.html), [Generation Z Developers (AI edition)](/articles/generation-z-developers-again.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.

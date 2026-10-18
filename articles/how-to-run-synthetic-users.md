@@ -234,7 +234,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#how-to-
 
 ### Continued by
 
-- [Short, punchy, and co-written with Claude: what the second edition of Generation Z Developers has to be, and how we show it is not AI slop](short-punchy-and-co-written.md) The second edition of Generation Z Developers must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.
+- [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](short-punchy-and-co-written.md) Generation Z Developers (AI edition) must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.
 - [The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it](the-homepage-is-a-vault.md) A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.
 - [Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs](four-frameworks-one-agent.md) iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.
 - [Ways to read one article: the finished piece stays at the centre, and the reader picks the way in](ways-to-read-one-article.md) The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.

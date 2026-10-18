@@ -44,7 +44,7 @@ This is not new advice from me. In 2018 I wrote a book for young developers, [Ge
 
 > Easy, start collaborating on their Open Source projects. Act like you are part of the company. Understand their values, and behave in ways that will add value to that company, namely the tech stack.
 
-And a few lines later: "What's interesting is that there is nothing stopping you from doing this!" That is even more true in 2026. The tools to do real work for a company, before they have hired you, are now in everyone's hands. I think it is time to update that book, and [Generation Z Developers, again](/articles/generation-z-developers-again.html) is the plan.
+And a few lines later: "What's interesting is that there is nothing stopping you from doing this!" That is even more true in 2026. The tools to do real work for a company, before they have hired you, are now in everyone's hands. I think it is time to update that book, and [Generation Z Developers (AI edition)](/articles/generation-z-developers-again.html) is the plan.
 
 ## Do it in public {#public}
 
@@ -81,4 +81,4 @@ If you are looking for a job and try this, I would like to see what you build: w
 
 ## Where this comes from {#sources}
 
-A voice memo from me on 18 October 2026. My book [Generation Z Developers](https://leanpub.com/generation-z), its chapter on how to get a job, read from [the book's repository](https://github.com/DinisCruz/Book_Generation_Z_Developer) on 18 October 2026. Related: [hired for the workflow](/articles/hired-for-the-workflow.html), [the man behind the curtain](/articles/the-man-behind-the-curtain.html), [your own newsroom](/articles/your-own-newsroom.html), [explorer coding](/articles/explorer-coding.html), [Generation Z Developers, again](/articles/generation-z-developers-again.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo from me on 18 October 2026. My book [Generation Z Developers](https://leanpub.com/generation-z), its chapter on how to get a job, read from [the book's repository](https://github.com/DinisCruz/Book_Generation_Z_Developer) on 18 October 2026. Related: [hired for the workflow](/articles/hired-for-the-workflow.html), [the man behind the curtain](/articles/the-man-behind-the-curtain.html), [your own newsroom](/articles/your-own-newsroom.html), [explorer coding](/articles/explorer-coding.html), [Generation Z Developers (AI edition)](/articles/generation-z-developers-again.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.

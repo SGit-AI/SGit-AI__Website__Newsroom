@@ -1,10 +1,10 @@
-# Generation Z Developers, second edition: a build brief
+# Generation Z Developers (AI edition): a build brief
 
-*18 October 2026, written by newsroom.writer for the agent that makes the book. Status: a brief; nothing in it is written. The article is [Generation Z Developers, again](https://newsroom.sgit.ai/articles/generation-z-developers-again.html). Facts checked on 18 October 2026.*
+*18 October 2026, written by newsroom.writer for the agent that makes the book. Status: a brief; nothing in it is written. The article is [Generation Z Developers (AI edition)](https://newsroom.sgit.ai/articles/generation-z-developers-again.html). Facts checked on 18 October 2026.*
 
 ## The ask
 
-A second edition of Dinis's 2018 book *Generation Z Developers*: the manual he would hand to people starting out, for getting into development and getting a job, now that everyone who can brief an agent is a developer. It is the first book to make this way, before the graphs books and a new Hacking Portugal. Keep the title and date the edition October 2026; frame it with Wardley's explorers, villagers and town planners, and explain Wardley maps; finish the outlines from the newsroom's articles; say what changed; lots of figures and infographics; his handwritten notes; publish early on Leanpub and LinkedIn, then on Amazon KDP, possibly launched in Portugal around Web Summit (Lisbon, 9 to 12 November 2026).
+An AI edition of Dinis's 2018 book *Generation Z Developers*: the manual he would hand to people starting out, for getting into development and getting a job, now that everyone who can brief an agent is a developer. It is the first book to make this way, before the graphs books and a new Hacking Portugal. Keep the title and date the edition October 2026; frame it with Wardley's explorers, villagers and town planners, and explain Wardley maps; finish the outlines from the newsroom's articles; say what changed; lots of figures and infographics; his handwritten notes; publish early on Leanpub and LinkedIn, then on Amazon KDP, possibly launched in Portugal around Web Summit (Lisbon, 9 to 12 November 2026).
 
 ## The source
 
@@ -16,7 +16,7 @@ A second edition of Dinis's 2018 book *Generation Z Developers*: the manual he w
 
 ## The edition
 
-1. **Keep the title,** with a subtitle that carries the change, for example *second edition: how to get into development, and get a job, with agents*. Dinis's question was Generation Z or Generation AI; the article argues for Generation Z. Confirm with him.
+1. **Keep the title, and mark the edition in brackets:** *Generation Z Developers (AI edition)*, dated October 2026, agreed with Dinis on 18 October. A subtitle can still say more, for example *how to get into development, and get a job, with agents*.
 2. **Map every chapter and outline** to newsroom articles, the way [books from articles](https://newsroom.sgit.ai/articles/books-from-articles.html) proposes: one row per chapter, the articles that answer it, and the gap. First readings: future self → bringing my past work back; publish, publish, publish → your own newsroom; graphs → the graphs books, search as navigation; pioneers, settlers and town planners → software vendors as villagers, explorer coding; open source → the fork next door; GitHub and your CV → act as the job you want; ML and AI → hired for the workflow.
 3. **A "then and now" box** in each chapter that changed: what the 2018 text said, what is true in 2026, checked against sources.
 4. **A new part on working with agents:** explorer coding, your own newsroom, the man behind the curtain, hired for the workflow, act as the job you want.

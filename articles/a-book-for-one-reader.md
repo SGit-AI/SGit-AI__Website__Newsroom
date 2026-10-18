@@ -10,7 +10,7 @@
 
 # A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/a-book-for-one-reader.md) · [newsroom v0.12.118](https://newsroom.sgit.ai/admin/versions.html) · bookspersonalisationpay-as-you-readvaultsgeneration-zgen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/a-book-for-one-reader.md) · [newsroom v0.12.118](https://newsroom.sgit.ai/admin/versions.html) · bookspersonalisationpay-as-you-readvaultsgeneration-zgen-z-bookarticle
 
 ***Abstract:** Once the book is a graph, an agent can assemble it. And if an agent can assemble it, it can assemble a version for one person: the chapters that matter to them, at their altitude, with examples from their world, eventually in their language. I would send it as a PDF, made for them and not published. The brief for each one already exists, in a way: the agents that run my correspondence keep a folder for each person I work with, with what we talked about and how they think, so I can say, here is this person, make them their edition. And then the part I really like: pay for it as you read it, the way this newsroom already works. Start with five pounds of credit; the more of the book you read, the more you pay; the edition starts in your browser, and you can keep it in your vault. This article maps how that would work, what has to stay private, and what is still open. It is also an example of how innovation works for me: I know the book's website is coming and how it will be built, so I am already building on top of it.*
 
@@ -67,7 +67,7 @@ If you would like to be one of the first readers of an edition made for you, wri
 
 ## Where this comes from
 
-A voice memo from me on 18 October 2026. Related: [a website to finish the book](a-website-to-finish-the-book.md), [Generation Z Developers, again](generation-z-developers-again.md), [paying after the value](paying-after-the-value.md), [the agent team as it runs](the-agent-team-as-it-runs.md), [a directory of people and their keys](a-directory-of-people-and-keys.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo from me on 18 October 2026. Related: [a website to finish the book](a-website-to-finish-the-book.md), [Generation Z Developers (AI edition)](generation-z-developers-again.md), [paying after the value](paying-after-the-value.md), [the agent team as it runs](the-agent-team-as-it-runs.md), [a directory of people and their keys](a-directory-of-people-and-keys.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
 
 ## Threads
 
@@ -79,7 +79,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#a-book
 - [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](the-agent-team-as-it-runs.md) Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.
 - [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](paying-after-the-value.md) Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.
-- [Generation Z Developers, again: the 2018 book that said act like you are part of the company, what it got right, and a second edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and a second edition, dated October 2026, made first.
+- [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 
 ### Continued by
 
