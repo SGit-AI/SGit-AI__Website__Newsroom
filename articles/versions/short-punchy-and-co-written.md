@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 1,313 | +1 / −2 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](short-punchy-and-co-written/v1.1.0.md) · [current](../short-punchy-and-co-written.md) |
+| **v1.1.0** | 2026-10-18 | minor | 1,313 | +1 / −2 words; 2 changed, 0 added, 0 removed paragraphs | [`0e4bc326b`](https://github.com/SGit-AI/SGit-AI__Website/commit/0e4bc326bf679012b66a1fd109ec00e336d67bdb) | [what changed](short-punchy-and-co-written/v1.1.0.md) · [current](../short-punchy-and-co-written.md) |
 | **v1.0.0** | 2026-10-18 | published | 1,312 | first published | [`1590ac4d8`](https://github.com/SGit-AI/SGit-AI__Website/commit/1590ac4d89adca5a0f36c788d8dbb7a3abd85509) |  |
 
 [← Back to the article](../short-punchy-and-co-written.md) · [All articles](../index.md)

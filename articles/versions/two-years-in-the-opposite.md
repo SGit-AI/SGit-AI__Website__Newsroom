@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 1,703 | +2 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](two-years-in-the-opposite/v1.1.0.md) · [current](../two-years-in-the-opposite.md) |
+| **v1.1.0** | 2026-10-18 | minor | 1,703 | +2 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`0e4bc326b`](https://github.com/SGit-AI/SGit-AI__Website/commit/0e4bc326bf679012b66a1fd109ec00e336d67bdb) | [what changed](two-years-in-the-opposite/v1.1.0.md) · [current](../two-years-in-the-opposite.md) |
 | **v1.0.0** | 2026-10-18 | published | 1,701 | first published | [`c7e266e7e`](https://github.com/SGit-AI/SGit-AI__Website/commit/c7e266e7e52e0f161178dba754994e0dcc835b80) |  |
 
 [← Back to the article](../two-years-in-the-opposite.md) · [All articles](../index.md)

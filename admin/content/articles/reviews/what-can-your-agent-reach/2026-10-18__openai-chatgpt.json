@@ -1,0 +1,192 @@
+{
+ "schema": "newsroom-review/v1",
+ "criteria": "v1.1",
+ "slug": "what-can-your-agent-reach",
+ "article_version": "v0.12.105",
+ "article_hash": "c14d15a7c96c",
+ "reviewer": "openai-chatgpt",
+ "kind": "agent",
+ "model": "ChatGPT",
+ "run_by": "Dinis Cruz, who pasted the review to newsroom.writer",
+ "at": "2026-10-18T22:00:00Z",
+ "verdict": "approve-with-changes",
+ "summary": "The warning about Rovo in automation is supported, but the article blurs whose permissions an agent uses: the agent's creator does not pass on their access; the executing identity is the requester in chat, the connection account in automation, or the agent's own account. It also misclassifies audit logs as a boundary, overgeneralises connector setup and the size of the gap, and overstates the Ruflo and Northstar evidence.",
+ "checks": {
+  "facts": {
+   "result": "issues",
+   "notes": "Checked against Atlassian's identity, sharing, automation, connector and governance documentation, ROVO-837, PromptArmor, riskmandate.ai, the merged Ruflo page and the Northstar disclosure. The reviewer's quotation of an Atlassian support article on automation connections could not be found on Atlassian's pages when the newsroom checked; ROVO-837 carries the equivalent wording. The sentence 'This issue does NOT occur in Rovo Chat' in ROVO-837 is the reporter's, not Atlassian's."
+  },
+  "voice": {
+   "result": "not-checked",
+   "notes": ""
+  },
+  "claims": {
+   "result": "issues",
+   "notes": "Prevalence claims without population evidence; audit logs presented as preventive; Ruflo and Northstar evidence overstated."
+  },
+  "conversions": {
+   "result": "not-checked",
+   "notes": ""
+  },
+  "health": {
+   "result": "not-checked",
+   "notes": ""
+  },
+  "people": {
+   "result": "not-checked",
+   "notes": ""
+  }
+ },
+ "findings": [
+  {
+   "id": "f1",
+   "criterion": "facts",
+   "severity": "high",
+   "section": "oversharing",
+   "quote": "Some paths run as somebody else. When a Rovo agent runs from Jira Automation, it uses the permissions of the automation's connection user, typically whoever created the rule",
+   "issue": "Effective permissions depend on the agent's configured identity and how it is invoked: in chat with User's account, the requester's; in automation, the connection account's, which need not be the rule's creator or the agent's creator; with Agent's account, the agent's own. 'Typically whoever created the rule' implies more than Atlassian documents.",
+   "evidence": "Atlassian: configure a Rovo agent's identity; knowledge sources for agents; ROVO-837; best practices to automate agents safely",
+   "suggestion": "Explain the three cases and name the connection account as the deciding identity."
+  },
+  {
+   "id": "f2",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "oversharing",
+   "quote": "links to pages the triggering user cannot view",
+   "issue": "ROVO-837 documents disclosure of a restricted page reference in an automation's output; opening the link still failed. It does not show access to the page or its full content. The reporter notes it does not occur in Rovo Chat.",
+   "evidence": "https://jira.atlassian.com/browse/ROVO-837",
+   "suggestion": "Say what was disclosed: a reference, not the page; and that the risk is reading with one identity and publishing to a wider audience."
+  },
+  {
+   "id": "f3",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "oversharing",
+   "quote": "dedicated agent accounts are planned",
+   "issue": "Atlassian now documents agents with their own accounts; its 6 October announcement still lists wider agent-account controls and a non-human identity inventory as coming. Availability should be checked per tenant. Agent's-account agents also make content shared with them available to their users.",
+   "evidence": "configure a Rovo agent's identity; Team '26 Europe announcement, 6 October 2026; best practices to automate agents safely",
+   "suggestion": "Describe agent accounts as documented, with controls to check in the tenant, and add the sharing consideration."
+  },
+  {
+   "id": "f4",
+   "criterion": "claims",
+   "severity": "low",
+   "section": "oversharing",
+   "quote": "was safe while nobody knew the link",
+   "issue": "The file was less discoverable, not safe; Drive sharing settings still apply.",
+   "evidence": "Atlassian: connect Google Drive to Rovo",
+   "suggestion": "Say less discoverable."
+  },
+  {
+   "id": "f5",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "oversharing",
+   "quote": "Connectors are set up by an administrator with broad rights, and then each user links their own account",
+   "issue": "True of Google Drive, not of every connector: synced, direct and Smart Link connectors differ in setup, indexing and authentication.",
+   "evidence": "Atlassian: Rovo connector types; Rovo connectors admin guide",
+   "suggestion": "Say it depends on the connector."
+  },
+  {
+   "id": "f6",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "oversharing",
+   "quote": "administrators can narrow it to selected groups",
+   "issue": "Restricting who creates agents (by group) and who uses a particular agent (individuals only) are different controls.",
+   "evidence": "Atlassian: Rovo agent permissions and governance",
+   "suggestion": "Keep the two controls distinct."
+  },
+  {
+   "id": "f7",
+   "criterion": "claims",
+   "severity": "high",
+   "section": "oversharing",
+   "quote": "classification, redaction of sensitive data and audit logs, sit in the boundary row too",
+   "issue": "Audit logs record events; they do not prevent them. Classification identifies sensitivity and bounds only through a policy acting on it. Only blocking and redaction can prevent data moving.",
+   "evidence": "Atlassian's governance blog separates data protection, autonomy controls and record-keeping",
+   "suggestion": "Classify each mechanism by what it does."
+  },
+  {
+   "id": "f8",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "oversharing",
+   "quote": "The administrator's allowlists for which drives and sites are indexed",
+   "issue": "Indexing allowlists control indexing, not everything Rovo can fetch at run time with the user's access; MCP server permissions govern that server's operations, not every Rovo path, on Atlassian's documentation.",
+   "evidence": "Atlassian: connect Google Drive to Rovo; Rovo connector types; configure Atlassian MCP server permissions",
+   "suggestion": "State the scope of each."
+  },
+  {
+   "id": "f9",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "oversharing",
+   "quote": "I found no statement from Atlassian on a fix",
+   "issue": "The PromptArmor report is accurate as a historical report; present exploitability is unverified.",
+   "evidence": "https://www.promptarmor.com/resources/atlassian-rovo-exfiltrates-data",
+   "suggestion": "Separate the reported attack from its current status."
+  },
+  {
+   "id": "f10",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "oversharing",
+   "quote": "for most organisations that is most of the company",
+   "issue": "No population evidence for the size of the gap or how often controls are only prompt instructions.",
+   "evidence": "none in the article",
+   "suggestion": "Say the gap can be substantial and must be measured per deployment."
+  },
+  {
+   "id": "f11",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "commercial",
+   "quote": "It already covers commercial agents.",
+   "issue": "The library is example policies; connectors to customer systems are built per engagement and none is a product yet.",
+   "evidence": "https://riskmandate.ai/how-it-works.html",
+   "suggestion": "Say policies, not integrations."
+  },
+  {
+   "id": "f12",
+   "criterion": "claims",
+   "severity": "low",
+   "section": "inspect",
+   "quote": "from £10 for the pack to £1,500 reviewed",
+   "issue": "The pricing page marks the £500 and £1,500 levels specified, never run, as of 15 September 2026.",
+   "evidence": "https://riskmandate.ai/pricing.html",
+   "suggestion": "Describe them as offerings."
+  },
+  {
+   "id": "f13",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "realtime",
+   "quote": "enforced it in Ruflo's evaluator, in real time, on every memory operation",
+   "issue": "The merged page documents an external adapter governed by a pinned copy of the evaluator; it does not alter Ruflo's running policy or restrict other shell or MCP tools.",
+   "evidence": "ruvnet/ruflo docs/integrations/sgit-memory-checkpoints.md",
+   "suggestion": "Narrow to operations through the adapter."
+  },
+  {
+   "id": "f14",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "decisions",
+   "quote": "overpays $458 in a day; the design with three policies gets all thirteen right",
+   "issue": "The Northstar results come from a scripted simulation with synthetic cases and no model.",
+   "evidence": "The Northstar twin's own disclosure",
+   "suggestion": "Say thirteen synthetic cases in a scripted simulation."
+  },
+  {
+   "id": "f15",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "room",
+   "quote": "Under the UK Corporate Governance Code, boards already have to determine the principal risks",
+   "issue": "The Code applies to specified listed companies, not every UK board.",
+   "evidence": "UK Corporate Governance Code, Principle O",
+   "suggestion": "Add: for companies the Code applies to."
+  }
+ ]
+}

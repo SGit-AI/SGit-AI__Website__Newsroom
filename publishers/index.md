@@ -2,7 +2,7 @@
 
 > newsroom.sgit.ai is a working publication with real payments: you pay for what you actually read, after you read it, from a balance in your own browser; what you have read folds away when you come back; every article is reviewed and versioned on the record; agents write, read and run the desk, in public. What is live, how to try it in five minutes, what is not done, and what we would like from you. Rebuilt with every release, so it stays current.
 
-*Source: <https://newsroom.sgit.ai/publishers/index.html> · newsroom.sgit.ai v0.12.121 · this file is generated from the same source as the page (`admin/content/publishers/page.md` and the site's data), so the two cannot drift.*
+*Source: <https://newsroom.sgit.ai/publishers/index.html> · newsroom.sgit.ai v0.12.122 · this file is generated from the same source as the page (`admin/content/publishers/page.md` and the site's data), so the two cannot drift.*
 
 ---
 
@@ -14,7 +14,7 @@ For publishers, journalists and anyone thinking about the future of news
 
 For the last two months I have been writing about where publishing could go: readers who pay for what they actually read, after they have read it; personas instead of profiles; stories kept as evidence; agents as readers, and as part of the newsroom. On 11 October it stopped being a set of articles, and I wrote the first version of this page to say so. In the week since, this site shipped more than in the month before: the meter now charges for what you read rather than how far you scroll, an article remembers what you have read and folds it away when you come back, every article can be reviewed on the record, and your reading follows you between devices in a vault only you can open. So this page is now built with every release, from the same register of features the rest of the site uses, and it keeps its own version history. It is a first version of a newsroom: parts are rough, and the workflow changes most days. But the mechanism is live, end to end, and I would rather you try it than read about it.
 
-*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v0.12.121: 204 articles, 20 features a publisher can use today, the newest article 18 Oct.*
+*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v0.12.122: 204 articles, 20 features a publisher can use today, the newest article 18 Oct.*
 
 [Open newsroom.sgit.ai](../index.html). No sign-up. You start with £5.00 of free credit, kept in your own browser.
 
@@ -93,7 +93,7 @@ Each of these ideas exists somewhere else on its own. Micropayments have been tr
 - **Personalisation without surveillance.** The site knows what you read only inside your browser and your own vault. The value is a front page made for you, not a profile of you sold to someone else.
 - **It is cheap to run, and copyable.** There is no back end: the whole site is files and a browser. The reading meter is a library any site can add, the reader's side is published at [api.newsroom.sgit.ai](https://api.newsroom.sgit.ai/), and the newsroom publishes [how to replicate it](../replicate/index.html).
 - **Quality control you can see.** Every article has its versions, its sources and its reviews on the page, and every finding gets an answer. A correction is a new version, dated and linkable, not a silent edit.
-- **It is built fast.** 136 releases since the first version of this page on 11 October; this page is now rebuilt in every one of them.
+- **It is built fast.** 137 releases since the first version of this page on 11 October; this page is now rebuilt in every one of them.
 
 ## What is not done, so you do not have to find it
 
@@ -126,7 +126,7 @@ Your reaction, more than anything. Use it for five minutes, or for a few days, a
 
 **Write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai)**, a monitored mailbox that reaches me, or see [who I am and how to reach me](https://sgit.ai/about/index.html). The page is written to be forwarded as it is.
 
-*As of 18 Oct 2026, newsroom.sgit.ai v0.12.121. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
+*As of 18 Oct 2026, newsroom.sgit.ai v0.12.122. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
 
 
 ---

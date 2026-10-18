@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 1,620 | +2 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](act-as-the-job-you-want/v1.1.0.md) · [current](../act-as-the-job-you-want.md) |
+| **v1.1.0** | 2026-10-18 | minor | 1,620 | +2 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`0e4bc326b`](https://github.com/SGit-AI/SGit-AI__Website/commit/0e4bc326bf679012b66a1fd109ec00e336d67bdb) | [what changed](act-as-the-job-you-want/v1.1.0.md) · [current](../act-as-the-job-you-want.md) |
 | **v1.0.1** | 2026-10-18 | patch | 1,618 | front matter only (the text is unchanged) | [`7b0b11b76`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b0b11b763d4520cb5b1e3a257a87d466f0cb17b) | [what changed](act-as-the-job-you-want/v1.0.1.md) |
 | **v1.0.0** | 2026-10-18 | published | 1,618 | first published | [`392d2665b`](https://github.com/SGit-AI/SGit-AI__Website/commit/392d2665bf44f2ab0044480593f79b46b64424fd) |  |
 

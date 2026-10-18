@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 1,549 | +2 / −2 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-website-to-finish-the-book/v1.1.0.md) · [current](../a-website-to-finish-the-book.md) |
+| **v1.1.0** | 2026-10-18 | minor | 1,549 | +2 / −2 words; 3 changed, 0 added, 0 removed paragraphs | [`0e4bc326b`](https://github.com/SGit-AI/SGit-AI__Website/commit/0e4bc326bf679012b66a1fd109ec00e336d67bdb) | [what changed](a-website-to-finish-the-book/v1.1.0.md) · [current](../a-website-to-finish-the-book.md) |
 | **v1.0.0** | 2026-10-18 | published | 1,549 | first published | [`7b0b11b76`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b0b11b763d4520cb5b1e3a257a87d466f0cb17b) |  |
 
 [← Back to the article](../a-website-to-finish-the-book.md) · [All articles](../index.md)

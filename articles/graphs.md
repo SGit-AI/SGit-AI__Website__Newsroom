@@ -774,7 +774,7 @@ builds on [The code you do not ship: why the future of software is removing func
 
 2026-10-18 · Agents & policy
 
-An Agent Behaviour Policy writes down, for one agent in one deployment, what it can reach, what was authorised, the gap and the barrier on each capability; RiskMandate stays out of the request path so runtimes can enforce it, covers commercial agents from vendor pages and measurement, names the enterprise-assistant oversharing risk as the gap, and gets into the room through questions already being asked.
+An Agent Behaviour Policy writes down, for one agent in one deployment, what it can reach, what was authorised, the gap and the barrier on each capability; RiskMandate stays out of the request path so runtimes can enforce it, has policies for commercial agents from vendor pages and measurement, names the enterprise-assistant oversharing risk as the gap, and gets into the room through questions already being asked.
 
 *[diagram]*
 **concept**claim**method**artefact**example
@@ -785,12 +785,12 @@ An Agent Behaviour Policy writes down, for one agent in one deployment, what it 
 - **The Agent Behaviour Policy** (concept) Grant, mandate, delta, barrier.
 - **Only a boundary bounds** (claim) Enforced by something the grant does not include.
 - **Twenty minutes, thirteen prompts** (method) The list is longer than the tile that sold it.
-- **Commercial agents covered** (example) Claude with Gmail and M365, ChatGPT, Workspace.
-- **The assistant that sees too much** (example) Enterprise AI over-permissioned content.
+- **Policies for commercial agents** (example) Claude with Gmail and M365, ChatGPT, Workspace; not integrations.
+- **The assistant that sees too much** (example) Whose access depends on the executing identity.
 - **Not in the request path** (claim) Runtimes enforce; the policy is what they enforce.
-- **Enforced in Ruflo** (example) An ABP compiled and enforced in real time.
+- **Enforced in Ruflo, through an adapter** (example) An ABP compiled and enforced on an adapter's memory operations.
 - **Decision and workflow policies** (concept) Who decides, on what evidence, in what order.
-- **The Northstar twin** (artefact) Allowed is not right, replayable.
+- **The Northstar twin** (artefact) Allowed is not right, a scripted simulation.
 - **Five ways into the room** (method) Contract, questionnaire, renewal, board, twenty minutes.
 - **Accepted, not denied** (claim) A named owner, an interval, an expiry.
 

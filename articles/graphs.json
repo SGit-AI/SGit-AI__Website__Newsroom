@@ -5222,7 +5222,7 @@
         "topics": [
           "agents-and-policy"
         ],
-        "core_idea": "An Agent Behaviour Policy writes down, for one agent in one deployment, what it can reach, what was authorised, the gap and the barrier on each capability; RiskMandate stays out of the request path so runtimes can enforce it, covers commercial agents from vendor pages and measurement, names the enterprise-assistant oversharing risk as the gap, and gets into the room through questions already being asked.",
+        "core_idea": "An Agent Behaviour Policy writes down, for one agent in one deployment, what it can reach, what was authorised, the gap and the barrier on each capability; RiskMandate stays out of the request path so runtimes can enforce it, has policies for commercial agents from vendor pages and measurement, names the enterprise-assistant oversharing risk as the gap, and gets into the room through questions already being asked.",
         "nodes": [
           {
             "id": "pages",
@@ -5250,15 +5250,15 @@
           },
           {
             "id": "commercial",
-            "label": "Commercial agents covered",
+            "label": "Policies for commercial agents",
             "kind": "example",
-            "summary": "Claude with Gmail and M365, ChatGPT, Workspace."
+            "summary": "Claude with Gmail and M365, ChatGPT, Workspace; not integrations."
           },
           {
             "id": "oversharing",
             "label": "The assistant that sees too much",
             "kind": "example",
-            "summary": "Enterprise AI over-permissioned content."
+            "summary": "Whose access depends on the executing identity."
           },
           {
             "id": "realtime",
@@ -5268,9 +5268,9 @@
           },
           {
             "id": "ruflo",
-            "label": "Enforced in Ruflo",
+            "label": "Enforced in Ruflo, through an adapter",
             "kind": "example",
-            "summary": "An ABP compiled and enforced in real time."
+            "summary": "An ABP compiled and enforced on an adapter's memory operations."
           },
           {
             "id": "decisions",
@@ -5282,7 +5282,7 @@
             "id": "twin",
             "label": "The Northstar twin",
             "kind": "artefact",
-            "summary": "Allowed is not right, replayable."
+            "summary": "Allowed is not right, a scripted simulation."
           },
           {
             "id": "room",
