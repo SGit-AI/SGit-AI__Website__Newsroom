@@ -1419,6 +1419,28 @@
    "depends_on": [],
    "session_brief": "Read publish.py's history replay and the version pages it writes (articles/versions/), and reviews/records/*/status.json. First deliverable: a 'Changed' line under each article's byline, injected at build like the Reviews section (and exempted in validate.js and sync_newsroom.py the same way), saying the last version, its date, one line of why from the release that made it, and a link to the diff. Then per-version reasons and links from review findings to the fixing version. Done when an article changed in a release shows that release's reason on its page and the link opens the diff at that version.",
    "size": "M"
+  },
+  {
+   "id": "browser-for-one",
+   "title": "A browser for one: Dinis's iPhone app for the newsroom",
+   "source": [
+    "a-browser-for-one",
+    "admin/notes/2026-10-18__a-browser-for-one.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A personal iPhone app that only browses newsroom.sgit.ai: opens where it was left, knows what was read, opens the vault, tabs, offline, no reloads, reading workflows, an inbox from the agents.",
+   "built": "",
+   "remaining": [
+    "Phase 0: test passkeys with PRF inside the app's WebKit view; the apple-app-site-association file; storage persistence",
+    "Phase 1: the app (tabs, offline, no reloads, reading state over a bridge with a written policy)",
+    "Phase 2: reading workflows kept in the vault",
+    "Phase 3: an inbox from the agents, polled from the vault, and push through a small sender"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__a-browser-for-one.md and the article a-browser-for-one, then assets/door.js and assets/vault-pane/vault-pane.js for the passkey unlock. This needs Xcode on macOS (a session on Dinis's Mac, or GitHub Actions macOS runners with TestFlight) and Apple's paid developer membership. First deliverable: the smallest Swift app with the associated domain newsroom.sgit.ai that opens the site and tries the vault unlock; record whether PRF results come back inside the web view, with the iOS version. Done when the vault opens inside the app on Dinis's phone, or when the native-ceremony fallback is in place and tested.",
+   "size": "L"
   }
  ]
 }

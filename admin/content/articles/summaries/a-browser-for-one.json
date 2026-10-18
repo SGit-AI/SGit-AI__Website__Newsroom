@@ -1,0 +1,50 @@
+{
+ "slug": "a-browser-for-one",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A personal iPhone browser just for the newsroom",
+   "para": "Phone browsers frustrate me enough to build one: an app that only opens the newsroom where I left it, knows what I read, opens the vault, keeps tabs, works offline and hears from my agents. In the UK it must be WebKit, needs the paid developer membership and a Mac, PRF is tested first, and I will pay someone to maintain it."
+  },
+  "in-short": {
+   "line": "WebKit, a membership, a Mac, one test",
+   "para": "Browsers keep getting my reading wrong, so I want an app that only reads my newsroom. UK apps must use WebKit, Firefox and Chrome included. Passkeys in apps and push need the paid membership, and building needs a Mac. The vault's passkey extension is the one unknown. Power lowers patience, yet I will still pay for maintenance."
+  },
+  "why": {
+   "line": "Leverage turned frustration into a brief",
+   "para": "Every browser on my phone loads the wrong thing, reloads mid-read, lacks offline, forgets where I was and wastes the screen. The browsers did not change; I did. Weeks of building with agents made a single-site browser sound reasonable, and some spare compute before the next batch is a good constraint to use."
+  },
+  "does": {
+   "line": "Where I left it, what I read, my workflows",
+   "para": "It opens on the newsroom where I left it, shows read, part read and unread, opens the vault, keeps tabs with almost no chrome, never reloads on its own, keeps articles offline, runs my own reading workflows stored in my vault, and shows an inbox from my agents. Proven logic should move into the site."
+  },
+  "engine": {
+   "line": "In the UK the engine must be WebKit",
+   "para": "Apple requires apps that browse the web to use WebKit, except in the EU since iOS 17.4 and Japan since iOS 26.2; Firefox and Chrome on iOS are WebKit underneath. The CMA designated Apple in October 2025 with browser engines in scope but has set no requirement yet. So: a Swift shell around Apple's web view."
+  },
+  "costs": {
+   "line": "A paid membership and a Mac to build",
+   "para": "Apple's table makes associated domains and push available only to paid members, and both are needed for the vault's passkey and the agents' messages. Building needs Xcode on macOS: a local session, GitHub macOS runners or Xcode Cloud, installed by TestFlight. A Home Screen web app is the fallback, without native tabs or reliable offline."
+  },
+  "unknown": {
+   "line": "Does the vault's passkey work in an app?",
+   "para": "The vault opens with a passkey's PRF extension. Safari supports it from iOS 18, but no source confirms it inside a third-party app's web view. The first build is the smallest app trying the site's own unlock; if PRF fails, the app runs the passkey ceremony natively and hands the result to the page."
+  },
+  "maintain": {
+   "line": "Being able to is not wanting to",
+   "para": "Once the app is part of my day, I will not want to maintain it; not because I cannot, but because it is not my focus. This is the vendors-as-villagers argument with me as customer: I explore and build, then pay a small monthly sum for someone to keep it working. Patience for bad interfaces wears thin."
+  },
+  "brief": {
+   "line": "Four phases in the build note",
+   "para": "Phase 0 tests PRF in the app, the association file and storage persistence; phase 1 builds the app with tabs, offline, no reloads and a policy-bound bridge; phase 2 adds reading workflows in the vault; phase 3 adds an inbox from the agents and push. It is also an entry on the briefs page."
+  },
+  "limits": {
+   "line": "A brief with an untested core",
+   "para": "Nothing is built. PRF inside an app's web view is untested. The UK engine rule may change. Prices are as of 18 October 2026. A Home Screen web app may turn out to be enough."
+  },
+  "sources": {
+   "line": "Apple, the CMA, WebKit, GitHub and the site",
+   "para": "From a voice memo on 18 October 2026, with research that day: Apple's pages on browser engines, capabilities (read directly) and passkeys, the CMA case page, WebKit's WWDC25 and app-bound domains posts, GitHub runner pricing, coverage of Mozilla on iOS, and the site's own unlock code."
+  }
+ }
+}
