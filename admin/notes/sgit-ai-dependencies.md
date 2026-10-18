@@ -4,53 +4,53 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 705 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 469 | 3094 | links to sgit.ai's pages and the network sites (18 files this site writes itself) |
-| words | 939 | 6003 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 703 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 465 | 1928 | links to sgit.ai's pages and the network sites (22 files this site writes itself) |
+| words | 944 | 6082 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 50 | 124 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 391 × `sgit.ai/about/index.html`
+- 377 × `sgit.ai/about/index.html`
 - 190 × `sgit.ai/about/index.md`
-- 162 × `sgit.ai/admin/versions.html`
+- 98 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
-- 50 × `sgit.ai/why/index.html`
-- 50 × `sgit.ai/team/index.html`
-- 44 × `sgit.ai/network/index.html`
-- 42 × `sgit.ai/security/index.html`
-- 42 × `sgit.ai/demos/vaults/index.html`
-- 42 × `sgit.ai/demos/fractal-graphs/performance.html`
 - 37 × `graphs.sgit.ai/`
-- 36 × `sgit.ai/skills/index.html`
-- 35 × `sgit.ai/docs/credentials.html`
-- 34 × `sgit.ai/docs/index.html`
-- 34 × `sgit.ai/compare/index.html`
-- 33 × `sgit.ai/docs/guidance/index.html`
-- 32 × `sgit.ai/docs/vault/index.html`
-- 32 × `sgit.ai/docs/briefs/index.html`
-- 32 × `sgit.ai/case-studies/index.html`
-- 32 × `sgit.ai/use-cases/index.html`
-- 32 × `sgit.ai/admin/index.html`
-- 30 × `sgit.ai/updates/index.html`
 - 29 × `sgit.ai/api/append-lanes.html`
 - 28 × `sgit.ai/`
-- 26 × `sgit.ai/startups/business-plans.html`
-- 25 × `sgit.ai/demos/fractal-graphs/index.html`
-- 24 × `sgit.ai/docs/surfaces.html`
-- 23 × `sgit.ai/docs/vault/sub-vaults.html`
-- 23 × `sgit.ai/docs/limitations.html`
-- 22 × `sgit.ai/docs/vault/vault-from-javascript.html`
-- 22 × `sgit.ai/docs/vault/vault-apps.html`
-- 22 × `sgit.ai/docs/vault/static-hosting.html`
-- 20 × `sgit.ai/docs/quickstart.html`
-- 20 × `sgit.ai/docs/vault/sg-bridge.html`
-- 19 × `sgit.ai/docs/what-is-sgit.html`
-- 19 × `sgit.ai/docs/agents.html`
+- 19 × `sgit.ai/docs/credentials.html`
 - 18 × `sgit.ai/docs/append-lane-messaging.html`
 - 18 × `sgit.ai/docs/append-lane-messaging.md`
-- 18 × `sgit.ai/try/index.html`
-- 18 × `sgit.ai/catalogue/index.html`
+- 17 × `nhi.sgit.ai/`
+- 17 × `sgit.ai/demos/vaults/bridge-simulation/index.html`
+- 16 × `sgit.ai/demos/vaults/risk-acceptance/index.html`
+- 15 × `sgit.ai/demos/vaults/code-review-graphs/index.html`
+- 14 × `sgit.ai/demos/vaults/regulation-graph/index.html`
+- 14 × `sgit.ai/demos/vaults/how-much-evidence/index.html`
+- 14 × `sgit.ai/case-studies/live-vault-docs.html`
+- 14 × `sgit.ai/updates/index.html`
+- 13 × `sgit.ai/docs/credentials.md`
+- 13 × `sgit.ai/api/append-lanes.md`
+- 12 × `sgit.ai/demos/vaults/hope-or-enforcement/index.html`
+- 12 × `graphs.sgit.ai/v2/books/index.html`
+- 12 × `sgit.ai/network/index.html`
+- 12 × `sgit.ai/network/index.md`
+- 12 × `sgit.ai/docs/agent-contact.html`
+- 12 × `sgit.ai/docs/agent-contact.md`
+- 11 × `pki.sgit.ai/`
+- 10 × `sgit.ai/demos/vaults/index.md`
+- 10 × `sgit.ai/startups/business-plans.html`
+- 10 × `sgit.ai/startups/business-plans.md`
+- 10 × `sgit.ai/security/index.html`
+- 10 × `sgit.ai/demos/vaults/article-views/index.html`
+- 10 × `sgit.ai/demos/vaults/article-views/index.md`
+- 10 × `sgit.ai/demos/vaults/connector-twin/index.html`
+- 10 × `sgit.ai/demos/vaults/index.html`
+- 10 × `sgit.ai/demos/fractal-graphs/performance.html`
+- 10 × `sgit.ai/demos/vaults/ai-governance-graph/index.html`
+- 9 × `sgit.ai/demos/vaults/connector-twin/index.md`
+- 9 × `sgit.ai/demos/fractal-graphs/index.html`
+- 8 × `docs.diniscruz.ai/`
 
 ## Network links in pages this site writes itself
 
@@ -74,10 +74,14 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `assets/vendor/sg-vault/v0.2.3/VENDOR.md` (1)
 - `engineering/issues/012.html` (1)
 - `provenance/articles-as-vaults.html` (1)
+- `publishers/index.html` (1)
+- `publishers/index.md` (1)
+- `publishers/versions/v1.0.0.md` (1)
+- `publishers/versions/v2.0.0.md` (1)
 
 ## Words, in pages this site writes itself
 
-- `admin/versions.html` (100)
+- `admin/versions.html` (101)
 - `admin/notes/2026-10-10__newsroom-move-and-content-audit.md` (50)
 - `newsroom-api/index.html` (30)
 - `newsroom-api/map.json` (24)
@@ -88,7 +92,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/index.html` (17)
 - `engineering/issues/020.html` (17)
 - `llms.txt` (17)
-- `README.md` (15)
+- `README.md` (16)
 - `engineering/issues/021.html` (15)
 - `admin/build/validate.js` (14)
 - `admin/notes/2026-10-12__what-the-new-articles-ask.md` (14)
@@ -117,13 +121,17 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/find.json` (6)
 - `articles/summaries/nineteen-sites.json` (6)
 - `articles/summaries/the-scripted-talk.json` (6)
+- `desks/building.html` (6)
+- `desks/security.html` (6)
 - `engineering/issues/010.html` (6)
 - `engineering/issues/017.html` (6)
 - `engineering/issues/079.html` (6)
+- `engineering/issues/085.html` (6)
 - `engineering/releases/v0.12.61.html` (6)
 - `engineering/releases/v0.12.71.html` (6)
 - `engineering/releases/v0.12.73.html` (6)
 - `engineering/releases/v0.12.77.html` (6)
+- `publishers/versions/index.html` (6)
 - `about/participant.html` (5)
 - `articles/ids.json` (5)
 - `articles/summaries/agentics-ready-to-sell.json` (5)
@@ -133,7 +141,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/008.html` (5)
 - `engineering/issues/036.html` (5)
 - `engineering/issues/049.html` (5)
-- `engineering/issues/050.html` (5)
-- `engineering/issues/063.html` (5)
-- `engineering/issues/072.html` (5)
-- `engineering/releases/v0.12.105.html` (5)

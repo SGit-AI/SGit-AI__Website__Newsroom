@@ -193,11 +193,11 @@ RECORD   = ROOT / "admin/build/newsroom-sync.json"
 MOVED_DIRS = ["articles", "newsroom", "account", "subscribe", "meter", "og", "assets/components",
               # Not in the brief's list: a vault page, which stays on sgit.ai as a rule. This one is
               # the study of this site by five synthetic readers, and Dinis asked for it here.
-              "demos/vaults/newsroom-synthetic-users",
-              # Also not in the brief's list: sgit.ai's page for publishers (11 October), which is about this
-              # site, is written to be forwarded, and so belongs at the same address here. Its links to the
-              # rest of sgit.ai become absolute, as for every imported page.
-              "publishers"]
+              "demos/vaults/newsroom-synthetic-users"]
+# sgit.ai's page for publishers (11 October) was imported here from v0.12.52 to v0.12.112. Since v0.12.113 it is this
+# site's own, built in every release by admin/build/publishers.py (card 085), so it is no longer imported; a link to it
+# from an imported page means this site's copy, like the paths in LOCAL_EQUIVALENTS.
+OWNED_HERE = ("publishers",)
 # Single files: source path -> path here.
 MOVED_FILES = {
     "assets/site.css": "assets/newsroom.css",
@@ -321,6 +321,8 @@ def rewrite_url(url, src_file, dest_file):
         new = relative(dest_file, target + ("/" if path.endswith("/") else ""))
     elif bare in LOCAL_EQUIVALENTS:
         new = relative(dest_file, bare)
+    elif any(bare == d or bare.startswith(d + "/") for d in OWNED_HERE):
+        new = relative(dest_file, bare + ("/" if path.endswith("/") else ""))
     else:
         return urlunsplit(("https", SRC_HOST, "/" + path, parts.query, parts.fragment))
     return urlunsplit(("", "", new, parts.query, parts.fragment))

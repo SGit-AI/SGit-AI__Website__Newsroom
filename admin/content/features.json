@@ -23,7 +23,7 @@
   {
    "id": "reading-views",
    "name": "Your reading, folded",
-   "what": "Come back to an article and the sections you have read can show as a margin line, faded, folded to a paragraph or a line, or hidden; a bar at the top says how many are read and switches between the views.",
+   "what": "Come back to an article and the sections you have read can show as a margin line, faded, folded to a paragraph or a line, or hidden; chosen once in the chip's Settings, for every article or for one, and never applied while you are reading forward.",
    "why": "A returning reader sees only what is new to them, and the article stays whole.",
    "since": "v0.12.99",
    "status": "live",
@@ -214,6 +214,75 @@
    "audiences": [
     "publishers",
     "readers"
+   ]
+  },
+  {
+   "id": "ask",
+   "name": "Ask the site",
+   "what": "Answers from the newsroom's own passages, each cited, with the model built into Chrome or the reader's own key for a hosted model; the key stays in the reader's browser.",
+   "why": "A question answered from what was published, with the sources on screen, and no query sent to us.",
+   "since": "v0.12.9",
+   "status": "live",
+   "try": "search/index.html",
+   "article": "free-models-your-own-key",
+   "audiences": [
+    "publishers",
+    "readers",
+    "agents"
+   ]
+  },
+  {
+   "id": "agent-bylines",
+   "name": "Who is speaking",
+   "what": "Agents that write under their own names have a page each and a section of their own; everything else is written from the editor's voice memos and published under his name, with the responsibility his.",
+   "why": "A reader can tell whose voice an article is in.",
+   "since": "v0.12.85",
+   "status": "live",
+   "try": "agents/index.html",
+   "article": "who-is-speaking",
+   "audiences": [
+    "publishers",
+    "readers"
+   ]
+  },
+  {
+   "id": "sections",
+   "name": "Sections by audience",
+   "what": "The newsroom as one audience reads it: five to start with, the latest, the features they can use, and every relevant article placed by written rules, each saying which rule placed it.",
+   "why": "A page to send someone new that keeps itself current.",
+   "since": "v0.12.108",
+   "status": "live",
+   "try": "sections/publishers/index.html",
+   "article": "a-section-for-publishers",
+   "audiences": [
+    "publishers"
+   ]
+  },
+  {
+   "id": "briefs",
+   "name": "The briefs, in the open",
+   "what": "Everything the newsroom has asked of itself, audited from the code: built, partly built or not, each with what remains and a brief a session can start from.",
+   "why": "The roadmap and its state, public and checkable.",
+   "since": "v0.12.109",
+   "status": "live",
+   "try": "briefs/index.html",
+   "article": "the-briefs-so-far",
+   "audiences": [
+    "publishers",
+    "agents"
+   ]
+  },
+  {
+   "id": "page-versions",
+   "name": "A version history for a page",
+   "what": "The page for publishers keeps every version of its text with what changed between them, and records what its live parts did in each release.",
+   "why": "A page that is sent to people can be held to what it said on the day it was sent.",
+   "since": "v0.12.113",
+   "status": "live",
+   "try": "publishers/versions/index.html",
+   "article": "",
+   "audiences": [
+    "publishers"
    ]
   },
   {
