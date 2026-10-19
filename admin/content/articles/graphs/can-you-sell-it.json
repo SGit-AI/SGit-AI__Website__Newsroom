@@ -1,0 +1,34 @@
+{
+ "slug": "can-you-sell-it",
+ "teaser": "Start selling what you have, however rough. The point is not the sale but what you learn trying, and a payment is the best signal there is.",
+ "topics": ["startups-and-strategy"],
+ "core_idea": "Founders should try to sell what they have as early as possible, expecting not to sell, because selling forces shipping, shows where the product really is, and starts the feedback loops; a payment is the strongest signal, paying must be easy from the start, and what is sold should be atomic with a price free to change.",
+ "nodes": [
+  {"id": "sell", "label": "Sell what you have", "kind": "claim", "summary": "However rough, now."},
+  {"id": "learn", "label": "The point is to learn", "kind": "concept", "summary": "Expect not to sell."},
+  {"id": "ship", "label": "Selling makes you ship", "kind": "concept", "summary": "You cannot sell what you cannot ship."},
+  {"id": "signal", "label": "A payment is the best signal", "kind": "claim", "summary": "And surprisingly hard to get."},
+  {"id": "sgsend", "label": "SG/Send's ten customers", "kind": "example", "summary": "A £5 voucher for £5 of credits; then they did not come back."},
+  {"id": "pay", "label": "Make it easy to pay", "kind": "method", "summary": "Early, not at the end."},
+  {"id": "copied", "label": "Do not worry about copying", "kind": "claim", "summary": "It is all execution."},
+  {"id": "atomic", "label": "Atomic, changeable prices", "kind": "method", "summary": "No subscriptions, no yearly contracts."}
+ ],
+ "edges": [
+  {"from": "sell", "to": "learn", "rel": "produces"},
+  {"from": "sell", "to": "ship", "rel": "depends-on"},
+  {"from": "sell", "to": "signal", "rel": "produces"},
+  {"from": "sgsend", "to": "signal", "rel": "extends"},
+  {"from": "pay", "to": "sell", "rel": "depends-on"},
+  {"from": "atomic", "to": "pay", "rel": "extends"},
+  {"from": "copied", "to": "sell", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["from-send-to-sgit", "paying-after-the-value", "start-a-company"],
+  "pages": [],
+  "sites": ["https://sgit.ai/articles/the-question-is-whether-they-miss-it.html"]
+ },
+ "quotes": [
+  {"text": "But expect not to sell, because that is not the point.", "why": "The core of the advice."},
+  {"text": "Someone who pays more than it is worth, to help you, is not a market.", "why": "Reading the signal."}
+ ]
+}

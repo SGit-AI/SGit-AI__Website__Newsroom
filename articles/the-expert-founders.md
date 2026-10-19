@@ -113,6 +113,7 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#the-ex
 
 ### Continued by
 
+- [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](start-a-company.md) Start a company once there is revenue: the UK in an afternoon, Portugal's monthly accountant learned the hard way, and Lithuania's e-residency next.
 - [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](who-will-fix-your-mess.md) HBR's deployment gap, answered from this site's articles: explorers, villagers and town planners, a record the agents keep, and open source.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](the-controllable-founder.md) Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.
 - [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](sell-dont-issue.md) For founders who have already won: the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest.

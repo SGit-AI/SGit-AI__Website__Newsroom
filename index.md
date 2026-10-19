@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.127 · 206 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.128 · 208 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](articles/a-pull-request-by-another-name.md), 2026-10-19, 11 min. The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
+- [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](articles/start-a-company.md), 2026-10-19, 10 min. Start a company once there is revenue: the UK in an afternoon, Portugal's monthly accountant learned the hard way, and Lithuania's e-residency next.
 
 ## Highlights
 
+- [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](articles/can-you-sell-it.md), 2026-10-19, 5 min.
+- [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](articles/a-pull-request-by-another-name.md), 2026-10-19, 11 min.
 - [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](articles/discovering-the-book.md), 2026-10-19, 9 min.
 - [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](articles/two-years-in-the-opposite.md), 2026-10-18, 6 min.
-- [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](articles/short-punchy-and-co-written.md), 2026-10-18, 4 min.
-- [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](articles/versions-of-versions.md), 2026-10-18, 5 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](articles/who-is-speaking.md), 2026-10-18, 7 min.
 
-### Strategy & startups (31)
+### Strategy & startups (33)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](articles/start-a-company.md), 2026-10-19, 10 min.
+- [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](articles/can-you-sell-it.md), 2026-10-19, 5 min.
 - [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](articles/two-years-in-the-opposite.md), 2026-10-18, 6 min.
-- [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](articles/who-will-fix-your-mess.md), 2026-10-17, 10 min.
-- [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](articles/the-fork-next-door.md), 2026-10-16, 15 min.
 
 ## Collections
 

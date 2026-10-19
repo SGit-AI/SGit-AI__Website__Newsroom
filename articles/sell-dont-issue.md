@@ -158,6 +158,7 @@ Startups & strategy[This article as a graph →](graphs.md#sell-dont-issue)
 
 ### Continued by
 
+- [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](start-a-company.md) Start a company once there is revenue: the UK in an afternoon, Portugal's monthly accountant learned the hard way, and Lithuania's e-residency next.
 - [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](the-fork-next-door.md) Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](the-controllable-founder.md) Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.
 

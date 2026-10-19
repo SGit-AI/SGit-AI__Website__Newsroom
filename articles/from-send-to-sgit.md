@@ -108,6 +108,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#from-s
 
 ### Continued by
 
+- [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](can-you-sell-it.md) Start selling what you have, however rough. The point is not the sale but what you learn trying, and a payment is the best signal there is.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](the-librarians-daily-brief.md) A daily brief from the Librarian: yesterday across every repository, the agents' debrief, threads to pick up, and where my leverage is today.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 - [A minimal viable browser: why Firefox is the one that can build it, and what it would take](a-minimal-viable-browser.md) A small kernel and components loaded when needed: a browser for one app, one agent or a reader. Mozilla can build it, and should sell it as speed.
