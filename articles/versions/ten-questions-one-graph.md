@@ -10,13 +10,14 @@
 
 # Versions of: Ten questions, one graph
 
-1 published version of [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](../ten-questions-one-graph.md). The current one is **v1.0.0**.
+2 published versions of [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](../ten-questions-one-graph.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-19 | published | 2,112 | first published | this release | [current](../ten-questions-one-graph.md) |
+| **v1.1.0** | 2026-10-19 | minor | 2,112 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](ten-questions-one-graph/v1.1.0.md) · [current](../ten-questions-one-graph.md) |
+| **v1.0.0** | 2026-10-19 | published | 2,112 | first published | [`24f88da2c`](https://github.com/SGit-AI/SGit-AI__Website/commit/24f88da2c670b4a0cccffea0a5749a29306fa7e7) |  |
 
 [← Back to the article](../ten-questions-one-graph.md) · [All articles](../index.md)
 

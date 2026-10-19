@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-19 | published | 1,953 | first published | this release | [current](../inside-the-thistlewood-twin.md) |
+| **v1.0.0** | 2026-10-19 | published | 1,953 | first published | [`24f88da2c`](https://github.com/SGit-AI/SGit-AI__Website/commit/24f88da2c670b4a0cccffea0a5749a29306fa7e7) | [current](../inside-the-thistlewood-twin.md) |
 
 [← Back to the article](../inside-the-thistlewood-twin.md) · [All articles](../index.md)
 
