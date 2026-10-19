@@ -10,7 +10,7 @@
 
 # Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/discovering-the-book.md) · [newsroom v0.12.125](https://newsroom.sgit.ai/admin/versions.html) · booksagentsworkflowsgen-z-bookcase-studyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/discovering-the-book.md) · [newsroom v0.12.126](https://newsroom.sgit.ai/admin/versions.html) · booksagentsworkflowsgen-z-bookcase-studyarticle
 
 ***Abstract:** On the evening of 18 October the repository for the book's website was empty. By 04:33 the next morning it held thirty-seven releases. The first edition was rebuilt exactly as published in 2018, with its print PDF matched page by page. There were two release candidates of the new edition, the second of 41 chapters and 73,314 words, written from a register of 198 ideas, each traced to its source. Five synthetic readers had read it and said they would not buy it yet, and why. The site also had a graph of the book with 857 nodes, twelve storyboards drawn by code, 81 proposed infographics, three covers ready for Amazon, fifteen decisions recorded in my own words, and twenty-six articles. It was made by a team of agents with roles, a journalist, a librarian, an editor, a reviewer, a publisher, chapter writers, an illustrator, a designer, many of them working in parallel, from voice memos I recorded as I went. What I find most interesting is not the volume. It is that the book's real positioning, Generation ZX Developers, a startup edition for Generation Z and Generation X, only appeared after the first full draft existed. I am discovering the book by building it, and the workflow makes that cheap.*
 
@@ -77,7 +77,10 @@ The loop is simple, and it is the same loop as this newsroom's:
 4. **The writers write the chapters from the ideas**, and only from them: every number, quotation and story has to be in a source the chapter names.
 5. **The candidate is frozen and published.** I read it, print it and mark it up.
 6. **Decisions are recorded** with my exact words: [fifteen of them](https://gen-z-developers.sgit.ai/decisions/index.html) so far, from the licence to the title.
-The decisions page: fifteen decisions in two days, each with who decided, what was said, what it means and what it supersedes, from 001 (the 2018 text is CC BY) to 014 (the title is Generation ZX Developers, GenAI Startup Edition) and 015.
+
+This is step five, the morning after: I printed release candidate 2 and am reading it with a pen.
+
+Release candidate 2, printed and spiral-bound on a café table the next morning, with a pen for marking it up: Generation ZX Developers, GenAI Startup Edition, second edition, release candidate v2.0.0-rc2, 19 October 2026, page 1 of 168. Photographed by Dinis.The decisions page: fifteen decisions in two days, each with who decided, what was said, what it means and what it supersedes, from 001 (the 2018 text is CC BY) to 014 (the title is Generation ZX Developers, GenAI Startup Edition) and 015.
 
 And many of these run at the same time. While the journalist was writing articles from my memos, the storyboards were being drawn on another branch and the librarian was building the graph on a third; the release candidates were written by seven agents in parallel; the synthetic readers, the infographics and the covers each had a branch of their own. The timeline above shows it.
 
