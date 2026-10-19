@@ -3,8 +3,8 @@ title: The graph companies: many of the most valuable companies in the world are
 date: 2026-10-19
 author: Dinis Cruz
 author_url: about/index.html
-summary: Reading my book, I keep coming back to one idea: some of the biggest and most successful companies in the world are graph companies. Google started from a graph of links and built a Knowledge Graph of things, not strings. Facebook is a social graph, LinkedIn calls itself an economic graph, Amazon builds a product graph on top of a supply chain, and Visa and Mastercard are networks that move trillions. Four of the ten most valuable companies today are, at heart, graphs, worth about $12.8 trillion together. Around them are the companies and consultancies that sell ontologies and taxonomies, a digital twin of an organisation, and the old ones too: legal research has been a citation graph since 1873. Even a spreadsheet, a relational database and a language model are graphs. Once a graph has the right connections, and you remove the nodes that do not matter, the answer becomes obvious, like the end of a whodunit. So why did graphs not scale for everyone else? Because building one took a lot of technology, and whoever built it used it to lock the customer in and keep competitors out: no shared schemas, no shared code. Fractal semantic graphs, where nobody has to share a schema, and agents that maintain them, are how they can scale now.
-version: v0.12.134
+summary: Something I have been looking at while reading my book: some of the biggest and most successful companies in the world are graph companies. Google started from a graph of links and built a Knowledge Graph of things, not strings. Facebook is a social graph, LinkedIn calls itself an economic graph, Amazon builds a product graph on top of a supply chain, and Visa and Mastercard are networks that move trillions. Four of the ten most valuable companies today are, at heart, graphs, worth about $12.8 trillion together. Around them are the companies and consultancies that sell ontologies and taxonomies, a digital twin of an organisation, and the old ones too: legal research has been a citation graph since 1873. Even a spreadsheet, a relational database and a language model are graphs. Once a graph has the right connections, and you remove the nodes that do not matter, the answer becomes obvious, like the end of a whodunit. So why did graphs not scale for everyone else? Because building one took a lot of technology, and whoever built it used it to lock the customer in and keep competitors out: no shared schemas, no shared code. Fractal semantic graphs, where nobody has to share a schema, and agents that maintain them, are how they can scale now.
+version: v0.12.136
 license: https://creativecommons.org/licenses/by/4.0/
 tags: graphs, strategy, startups, ontologies, gen-z-book, article
 status: published
@@ -24,7 +24,7 @@ status: published
 
 ## Graph companies {#companies}
 
-Reading my book, I keep coming back to this idea: some of the biggest and most successful companies in the world, especially the ones that do not sell physical resources, are graph companies. Nodes and edges. Connecting A to B to C to D.
+Something I have been looking at while reading my book: some of the biggest and most successful companies in the world, especially the ones that do not sell physical resources, are graph companies. Nodes and edges. Connecting A to B to C to D.
 
 Look at them:
 
