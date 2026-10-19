@@ -106,6 +106,11 @@ Graphs & knowledgeStartups & strategy[This article as a graph →](graphs.md#the
 - [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](introducing-fractal-semantic-graphs.md) A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.
 - [The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review](the-graphs-books.md) Three books on graphs.sgit.ai, written by agents in a day: the altitudes, the board, the book as a graph, and why they stopped under review.
 
+### Continued by
+
+- [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](ten-questions-one-graph.md) Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.
+- [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](inside-the-thistlewood-twin.md) The ten answers on an invented retailer's graph: where £250k goes, what keeps recurring, who has the largest blast radius, and the 29 decisions to the board.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 215 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=215)

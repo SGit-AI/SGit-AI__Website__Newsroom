@@ -55,6 +55,395 @@
   ],
   "articles": [
     {
+      "slug": "ten-questions-one-graph",
+      "title": "Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open",
+      "date": "2026-10-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/ten-questions-one-graph.html",
+      "markdown": "https://newsroom.sgit.ai/articles/ten-questions-one-graph.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/ten-questions-one-graph.webp",
+      "teaser": "Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.",
+      "topics": [
+        "graphs-and-knowledge",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "ciso",
+        "graphs",
+        "risk-acceptance",
+        "vaults",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "the-graph-companies",
+        "every-risk-is-already-accepted",
+        "inside-the-thistlewood-twin",
+        "governs-enforces-attests"
+      ],
+      "links_in": [
+        "inside-the-thistlewood-twin"
+      ],
+      "figures": [
+        {
+          "file": "tt-graph-q9.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-graph-q9.webp",
+          "caption": "Question 9 on the Thistlewood twin's graph: who are the humans and agents with the largest blast radius? Everything the answer does not use has faded. What is left is the plot: three identity admins and five deploy agents, the secrets store and staff sign-on they can reach, the risks those open, customer personal data exposed among them, and the path up to the board.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-map.webp",
+          "caption": "Ten questions, one graph. Each of Phil Venables' questions against the parts of the company it has to traverse: risks and holders, controls and cost, processes, systems, suppliers, channels and sales, humans and agents, incidents and causes, acceptances and events. No question is answered by one part alone; all of them are answered by the whole.",
+          "kind": "concept"
+        },
+        {
+          "file": "view-role-risk-map.webp",
+          "url": "https://newsroom.sgit.ai/demos/vaults/risk-graph-explorer/images/view-role-risk-map.webp",
+          "caption": "The role risk map in the Risk Graph Explorer vault, from that earlier work. Every risk is assigned to somebody, and every risk reaches the board: each role shows what it holds and what passes through it on the way up.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-graph-q7.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-graph-q7.webp",
+          "caption": "Question 7 on the graph: the minimum viable processes, and the most severe plausible scenario they cannot withstand. Ransomware in the warehouse system, run by one supplier with no fallback, stops pick, pack and ship.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-loop.webp",
+          "caption": "From a question to a decision the board can see. Ask; query the graph; see the plot, with what is not relevant faded; decide, accept for an interval, fund or fix, with one holder; record the decision in a vault with its evidence and hash; back-test the model against what happened, and recalibrate. Underneath each step, the work it comes from: fractal semantic graphs, the whodunit view, risk acceptance, sgit vaults, measured evidence.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "ten-questions-one-graph",
+        "teaser": "Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.",
+        "topics": [
+          "graphs-and-knowledge",
+          "agents-and-policy"
+        ],
+        "core_idea": "Each of Phil Venables' ten acid-test questions for a CISO's management tool needs the whole company connected as one graph, and each ends in a decision someone must hold; risk acceptance supplies that structure, and a synthetic twin in a vault answers all ten with the plot, the evidence and the decisions traced to the board.",
+        "nodes": [
+          {
+            "id": "phil",
+            "label": "Ten acid-test questions",
+            "kind": "claim",
+            "summary": "Insight, not dashboards, from measured data."
+          },
+          {
+            "id": "graph",
+            "label": "Every question is a graph question",
+            "kind": "concept",
+            "summary": "None answered from one part alone."
+          },
+          {
+            "id": "whodunit",
+            "label": "The answer becomes obvious",
+            "kind": "concept",
+            "summary": "Fade what is not relevant; the plot is left."
+          },
+          {
+            "id": "accept",
+            "label": "Risk acceptance",
+            "kind": "method",
+            "summary": "A holder, a chain to the board, accept, fund or fix."
+          },
+          {
+            "id": "twin",
+            "label": "The Thistlewood twin",
+            "kind": "artefact",
+            "summary": "An invented retailer as one graph."
+          },
+          {
+            "id": "decisions",
+            "label": "Every answer is a decision",
+            "kind": "concept",
+            "summary": "29 proposed, each with one holder."
+          },
+          {
+            "id": "abp",
+            "label": "Agents with behaviour policies",
+            "kind": "method",
+            "summary": "Reach compared with mandate."
+          },
+          {
+            "id": "backtest",
+            "label": "Measured, then back-tested",
+            "kind": "method",
+            "summary": "The model checked against last year."
+          },
+          {
+            "id": "federation",
+            "label": "Context graph federation",
+            "kind": "concept",
+            "summary": "No shared schema needed."
+          }
+        ],
+        "edges": [
+          {
+            "from": "phil",
+            "to": "graph",
+            "rel": "leads-to"
+          },
+          {
+            "from": "graph",
+            "to": "whodunit",
+            "rel": "produces"
+          },
+          {
+            "from": "accept",
+            "to": "decisions",
+            "rel": "produces"
+          },
+          {
+            "from": "twin",
+            "to": "graph",
+            "rel": "extends"
+          },
+          {
+            "from": "twin",
+            "to": "decisions",
+            "rel": "produces"
+          },
+          {
+            "from": "abp",
+            "to": "twin",
+            "rel": "extends"
+          },
+          {
+            "from": "backtest",
+            "to": "twin",
+            "rel": "extends"
+          },
+          {
+            "from": "federation",
+            "to": "graph",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-graph-companies",
+            "governs-enforces-attests",
+            "inside-the-thistlewood-twin"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.philvenables.com/post/a-cisos-ideal-management-tool",
+            "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html",
+            "https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "No question can be answered from one part of the company.",
+            "why": "The claim."
+          },
+          {
+            "text": "someone has to accept, fund or fix, and their boss should see it arrive",
+            "why": "How every answer ends."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "inside-the-thistlewood-twin",
+      "title": "Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes",
+      "date": "2026-10-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/inside-the-thistlewood-twin.html",
+      "markdown": "https://newsroom.sgit.ai/articles/inside-the-thistlewood-twin.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/inside-the-thistlewood-twin.webp",
+      "teaser": "The ten answers on an invented retailer's graph: where £250k goes, what keeps recurring, who has the largest blast radius, and the 29 decisions to the board.",
+      "topics": [
+        "graphs-and-knowledge",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "ciso",
+        "graphs",
+        "risk-acceptance",
+        "vaults",
+        "twin",
+        "article"
+      ],
+      "links_out": [
+        "ten-questions-one-graph",
+        "every-risk-is-already-accepted",
+        "the-graph-companies"
+      ],
+      "links_in": [
+        "ten-questions-one-graph"
+      ],
+      "figures": [
+        {
+          "file": "tt-live.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-live.webp",
+          "caption": "The Thistlewood decision twin, opened from its vault in the official vault UI, read-only, with the published key: the case, with the expected annual loss computed from the graph, 100 humans and agents, nine of sixteen risks accepted, sales of £920k a day at peak, and the ten questions.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-graph-all.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-graph-all.webp",
+          "caption": "The whole company as one graph, before any question: the board, business risks, operational and technical risks, recurring causes, controls, processes, systems, suppliers and channels, and the five humans and five agents with the largest reach. Edges run from cause to effect.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-q3.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-q3.webp",
+          "caption": "Question 3: the five most exposed processes, the security and reliability exposure of each, and the three things to do now, each with its holder, cost and loss avoided; then the evidence, and the decisions it proposes, each with the chain to the board.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-q4.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-q4.webp",
+          "caption": "Question 4: each recurring cause with its count and cost, followed five levels down, from what happened to the decision that let it keep happening.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-q9.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-q9.webp",
+          "caption": "Question 9: the humans and the agents with the largest blast radius, how many systems they reach directly and in all, how many other identities they can act as, and, for agents, how many systems lie beyond their behaviour policy's mandate.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-decisions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-decisions.webp",
+          "caption": "The ledger: every proposed decision by the person who holds it, with the door, the interval and the chain to the board, and on the right how many decisions pass through each role on the way up.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "tt-evidence.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/tt-evidence.webp",
+          "caption": "Evidence and back-test: the measured sources the answers rest on, and the model's prediction for each recurring cause against the last twelve months of incidents, with the ratio.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "inside-the-thistlewood-twin",
+        "teaser": "The ten answers on an invented retailer's graph: where £250k goes, what keeps recurring, who has the largest blast radius, and the 29 decisions to the board.",
+        "topics": [
+          "graphs-and-knowledge",
+          "vaults-and-method"
+        ],
+        "core_idea": "A tour of a synthetic decision twin in which a deterministic engine answers Phil Venables' ten questions on one graph, showing each answer's plot, evidence and proposed decisions, and a back-test that shows where the model is wrong.",
+        "nodes": [
+          {
+            "id": "company",
+            "label": "Thistlewood Retail",
+            "kind": "artefact",
+            "summary": "Invented: 16 risks, 16 systems, 12 suppliers, 100 identities."
+          },
+          {
+            "id": "budget",
+            "label": "Where £250k goes",
+            "kind": "example",
+            "summary": "Backups, hardware keys, a second payment provider."
+          },
+          {
+            "id": "recurring",
+            "label": "Why issues recur",
+            "kind": "example",
+            "summary": "The last level is a decision, not a bug."
+          },
+          {
+            "id": "revisit",
+            "label": "Acceptances to revisit",
+            "kind": "example",
+            "summary": "Eight, after three events."
+          },
+          {
+            "id": "resilience",
+            "label": "What the business cannot withstand",
+            "kind": "example",
+            "summary": "Warehouse ransomware."
+          },
+          {
+            "id": "blast",
+            "label": "Blast radius",
+            "kind": "example",
+            "summary": "29 of 40 agents beyond their mandate."
+          },
+          {
+            "id": "ledger",
+            "label": "The decision ledger",
+            "kind": "artefact",
+            "summary": "29 decisions, each with a chain to the board."
+          },
+          {
+            "id": "backtest",
+            "label": "The back-test",
+            "kind": "method",
+            "summary": "Where the model is wrong."
+          }
+        ],
+        "edges": [
+          {
+            "from": "company",
+            "to": "budget",
+            "rel": "produces"
+          },
+          {
+            "from": "company",
+            "to": "recurring",
+            "rel": "produces"
+          },
+          {
+            "from": "company",
+            "to": "revisit",
+            "rel": "produces"
+          },
+          {
+            "from": "company",
+            "to": "resilience",
+            "rel": "produces"
+          },
+          {
+            "from": "company",
+            "to": "blast",
+            "rel": "produces"
+          },
+          {
+            "from": "budget",
+            "to": "ledger",
+            "rel": "leads-to"
+          },
+          {
+            "from": "revisit",
+            "to": "ledger",
+            "rel": "leads-to"
+          },
+          {
+            "from": "backtest",
+            "to": "company",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "ten-questions-one-graph",
+            "the-graph-companies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html",
+            "https://www.philvenables.com/post/a-cisos-ideal-management-tool"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "That last level is where the fix belongs, and it has a holder.",
+            "why": "On recurring causes."
+          },
+          {
+            "text": "A near miss is not a loss, and the model should know the difference",
+            "why": "On the back-test."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-graph-companies",
       "title": "The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in",
       "date": "2026-10-19",
@@ -80,7 +469,10 @@
         "introducing-fractal-semantic-graphs",
         "the-graphs-books"
       ],
-      "links_in": [],
+      "links_in": [
+        "ten-questions-one-graph",
+        "inside-the-thistlewood-twin"
+      ],
       "figures": [
         {
           "file": "gc-companies.webp",
@@ -255,7 +647,9 @@
         "the-policy-draws-the-liability-line",
         "cedar-and-the-policy-vault"
       ],
-      "links_in": [],
+      "links_in": [
+        "ten-questions-one-graph"
+      ],
       "figures": [
         {
           "file": "at-stack.webp",
@@ -48138,6 +48532,8 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "ten-questions-one-graph",
+        "inside-the-thistlewood-twin",
         "three-linkedin-pages",
         "research-delivered-as-a-vault",
         "four-frameworks-one-agent",

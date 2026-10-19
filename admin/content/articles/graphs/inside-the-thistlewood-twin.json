@@ -1,0 +1,35 @@
+{
+ "slug": "inside-the-thistlewood-twin",
+ "teaser": "The ten answers on an invented retailer's graph: where £250k goes, what keeps recurring, who has the largest blast radius, and the 29 decisions to the board.",
+ "topics": ["graphs-and-knowledge", "vaults-and-method"],
+ "core_idea": "A tour of a synthetic decision twin in which a deterministic engine answers Phil Venables' ten questions on one graph, showing each answer's plot, evidence and proposed decisions, and a back-test that shows where the model is wrong.",
+ "nodes": [
+  {"id": "company", "label": "Thistlewood Retail", "kind": "artefact", "summary": "Invented: 16 risks, 16 systems, 12 suppliers, 100 identities."},
+  {"id": "budget", "label": "Where £250k goes", "kind": "example", "summary": "Backups, hardware keys, a second payment provider."},
+  {"id": "recurring", "label": "Why issues recur", "kind": "example", "summary": "The last level is a decision, not a bug."},
+  {"id": "revisit", "label": "Acceptances to revisit", "kind": "example", "summary": "Eight, after three events."},
+  {"id": "resilience", "label": "What the business cannot withstand", "kind": "example", "summary": "Warehouse ransomware."},
+  {"id": "blast", "label": "Blast radius", "kind": "example", "summary": "29 of 40 agents beyond their mandate."},
+  {"id": "ledger", "label": "The decision ledger", "kind": "artefact", "summary": "29 decisions, each with a chain to the board."},
+  {"id": "backtest", "label": "The back-test", "kind": "method", "summary": "Where the model is wrong."}
+ ],
+ "edges": [
+  {"from": "company", "to": "budget", "rel": "produces"},
+  {"from": "company", "to": "recurring", "rel": "produces"},
+  {"from": "company", "to": "revisit", "rel": "produces"},
+  {"from": "company", "to": "resilience", "rel": "produces"},
+  {"from": "company", "to": "blast", "rel": "produces"},
+  {"from": "budget", "to": "ledger", "rel": "leads-to"},
+  {"from": "revisit", "to": "ledger", "rel": "leads-to"},
+  {"from": "backtest", "to": "company", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["ten-questions-one-graph", "the-graph-companies"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html", "https://www.philvenables.com/post/a-cisos-ideal-management-tool"]
+ },
+ "quotes": [
+  {"text": "That last level is where the fix belongs, and it has a holder.", "why": "On recurring causes."},
+  {"text": "A near miss is not a loss, and the model should know the difference", "why": "On the back-test."}
+ ]
+}
