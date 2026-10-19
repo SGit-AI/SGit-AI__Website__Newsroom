@@ -55,6 +55,180 @@
   ],
   "articles": [
     {
+      "slug": "you-are-a-developer",
+      "title": "You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders",
+      "date": "2026-10-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/you-are-a-developer.html",
+      "markdown": "https://newsroom.sgit.ai/articles/you-are-a-developer.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/you-are-a-developer.webp",
+      "teaser": "Every GenAI founder I know is a developer and does not think so. They never saw the sausage factory. So the book may be Generation ZX Founders.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "founders",
+        "developers",
+        "explorer-coding",
+        "books",
+        "gen-z-book",
+        "article"
+      ],
+      "links_out": [
+        "explorer-coding",
+        "saas-apocalypse-decided-by-inertia-not-by-ai",
+        "the-citizen-developer",
+        "who-will-fix-your-mess",
+        "generation-z-developers-again"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "yd-roles.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/yd-roles.webp",
+          "caption": "One GenAI founder, many roles. In the middle, the founder who says \"I am not a developer, I just tell the model what to do\". Around them, what they actually do every day: senior stakeholder and business owner (decides what matters and pays for it), product owner (writes the requirements), designer, developer and engineer (builds, with agents), release manager (continuous deployment), and the head of a development team (the agents). Each of those is a job title in a technology company.",
+          "kind": "concept"
+        },
+        {
+          "file": "yd-iceberg.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/yd-iceberg.webp",
+          "caption": "The iceberg they never saw. Above the waterline, what a user of polished products sees: the interface and the demo, about 10% of the work in Joel Spolsky's 2002 estimate. Below it, what was there when those products were new: the back end and the data; versioning; validation, authentication and authorisation; resilience; the release pipeline and real users. On the left, what founders saw, such as the iPhone launched on a golden path of taps; on the right, what they meet now that they build: versioning, stability and security.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "you-are-a-developer",
+        "teaser": "Every GenAI founder I know is a developer and does not think so. They never saw the sausage factory. So the book may be Generation ZX Founders.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "GenAI founders already do a whole development team's jobs, often no worse than much of the industry, but do not call themselves developers because they never saw how rough new technology is inside; since people do not pick up a book addressed to a word they do not relate to, the book may be better titled Generation ZX Founders, with 'you are a developer' as the reveal at the end.",
+        "nodes": [
+          {
+            "id": "founders",
+            "label": "Every GenAI founder is a developer",
+            "kind": "claim",
+            "summary": "And none of them think so."
+          },
+          {
+            "id": "roles",
+            "label": "A whole team's roles",
+            "kind": "concept",
+            "summary": "Product owner, designer, engineer, release manager."
+          },
+          {
+            "id": "crude",
+            "label": "Crude, compared to what?",
+            "kind": "claim",
+            "summary": "Much of the industry does it worse."
+          },
+          {
+            "id": "vulns",
+            "label": "Vulnerabilities are engineering gaps",
+            "kind": "concept",
+            "summary": "Validation, authentication, authorisation, resilience."
+          },
+          {
+            "id": "sausage",
+            "label": "They never saw the sausage factory",
+            "kind": "claim",
+            "summary": "Only polished, later-generation products."
+          },
+          {
+            "id": "iphone",
+            "label": "The iPhone's golden path",
+            "kind": "example",
+            "summary": "Taps in a set order so the prototype looked as if it worked."
+          },
+          {
+            "id": "iceberg",
+            "label": "Make unfinished things look unfinished",
+            "kind": "example",
+            "summary": "Spolsky 2002; Sketchy; Napkin."
+          },
+          {
+            "id": "nfr",
+            "label": "They meet the non-functional requirements",
+            "kind": "concept",
+            "summary": "Versioning, stability, security."
+          },
+          {
+            "id": "title",
+            "label": "Generation ZX Founders",
+            "kind": "question",
+            "summary": "The hypothesis for the book's title."
+          }
+        ],
+        "edges": [
+          {
+            "from": "roles",
+            "to": "founders",
+            "rel": "extends"
+          },
+          {
+            "from": "crude",
+            "to": "founders",
+            "rel": "extends"
+          },
+          {
+            "from": "vulns",
+            "to": "crude",
+            "rel": "extends"
+          },
+          {
+            "from": "sausage",
+            "to": "founders",
+            "rel": "depends-on"
+          },
+          {
+            "from": "iphone",
+            "to": "sausage",
+            "rel": "extends"
+          },
+          {
+            "from": "iceberg",
+            "to": "sausage",
+            "rel": "extends"
+          },
+          {
+            "from": "nfr",
+            "to": "founders",
+            "rel": "produces"
+          },
+          {
+            "from": "founders",
+            "to": "title",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "explorer-coding",
+            "the-citizen-developer",
+            "who-will-fix-your-mess",
+            "generation-z-developers-again"
+          ],
+          "pages": [],
+          "sites": [
+            "https://gen-z-developers.sgit.ai/decisions/index.html",
+            "https://www.joelonsoftware.com/2002/02/13/the-iceberg-secret-revealed/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A vulnerability is a sign of bad engineering, or at least of an engineering gap.",
+            "why": "On why products break."
+          },
+          {
+            "text": "it is very hard to communicate with someone using a word they do not relate to",
+            "why": "Why the title may change."
+          }
+        ]
+      }
+    },
+    {
       "slug": "start-a-company",
       "title": "Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next",
       "date": "2026-10-19",
@@ -1930,6 +2104,7 @@
         "books-from-articles"
       ],
       "links_in": [
+        "you-are-a-developer",
         "a-pull-request-by-another-name",
         "discovering-the-book",
         "two-years-in-the-opposite",
@@ -8721,6 +8896,7 @@
         "saas-apocalypse-decided-by-inertia-not-by-ai"
       ],
       "links_in": [
+        "you-are-a-developer",
         "a-browser-for-one",
         "i-just-want-to-buy-the-article"
       ],
@@ -12923,6 +13099,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "you-are-a-developer",
         "generation-z-developers-again",
         "act-as-the-job-you-want",
         "hired-for-the-workflow",
@@ -17451,6 +17628,7 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "you-are-a-developer",
         "hired-for-the-workflow",
         "who-will-fix-your-mess",
         "software-vendors-as-villagers",
@@ -48095,6 +48273,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "you-are-a-developer",
         "who-will-fix-your-mess",
         "the-value-of-constraints",
         "explorer-coding",

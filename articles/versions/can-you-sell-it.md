@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-19 | minor | 1,492 | +0 / −2 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](can-you-sell-it/v1.1.0.md) · [current](../can-you-sell-it.md) |
+| **v1.1.0** | 2026-10-19 | minor | 1,492 | +0 / −2 words; 1 changed, 0 added, 0 removed paragraphs | [`7f08a67f6`](https://github.com/SGit-AI/SGit-AI__Website/commit/7f08a67f6450cf71fcce415d3c77f0b30d4029d8) | [what changed](can-you-sell-it/v1.1.0.md) · [current](../can-you-sell-it.md) |
 | **v1.0.0** | 2026-10-19 | published | 1,494 | first published | [`ee5725b18`](https://github.com/SGit-AI/SGit-AI__Website/commit/ee5725b1891d1151509c0e5323e02024c833f04d) |  |
 
 [← Back to the article](../can-you-sell-it.md) · [All articles](../index.md)
