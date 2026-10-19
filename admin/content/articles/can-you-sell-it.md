@@ -3,8 +3,8 @@ title: Can you sell it? Start selling what you have, however rough it is, becaus
 date: 2026-10-19
 author: Dinis Cruz
 author_url: about/index.html
-summary: One of the most important pieces of advice I can give any founder is to start selling, now, what you have. It does not matter how rough it is. Expect not to sell; that is not the point. The point is to learn, and you only learn by trying to sell. You cannot sell what you cannot ship, so selling makes you ship. The attempt tells you where you really are, and it starts the feedback loops that fix a hundred small problems. A customer who pays is the best signal you will get, and it is surprising how hard it is to get one, even when you give them the money to do it: with SG/Send I offered five pounds back for five pounds of credits, and people still had to choose to buy. So making it easy to pay you is not something you add at the end; it goes in early. Do not worry about your idea being copied; it is all execution, and if you are putting things up for sale you are already ahead of most people. Then make the customers profitable, and keep the price free to change: no subscriptions, no yearly contracts, something atomic, with a beginning, a middle and an end. My first question to any founder is the same: can you sell it?
-version: v0.12.128
+summary: One of the most important pieces of advice I can give any founder is to start selling, now, what you have. It does not matter how rough it is. Expect not to sell; that is not the point. The point is to learn, and you only learn by trying to sell. You cannot sell what you cannot ship, so selling makes you ship. The attempt tells you where you really are, and it starts the feedback loops that fix a hundred small problems. A customer who pays is the best signal you will get, and it is surprising how hard it is to get one, even when you give them the money to do it: with SG/Send I offered five pounds back for five pounds of credits, and people still had to choose to buy. So making it easy to pay you is not something you add at the end; it goes in early. Do not worry about your idea being copied; it is all execution, and putting things up for sale is already the part that counts. Then make the customers profitable, and keep the price free to change: no subscriptions, no yearly contracts, something atomic, with a beginning, a middle and an end. My first question to any founder is the same: can you sell it?
+version: v0.12.135
 license: https://creativecommons.org/licenses/by/4.0/
 tags: startups, selling, pricing, founders, gen-z-book, article
 status: published
@@ -57,7 +57,7 @@ You can sell at a loss at first; that is fine. What matters is that you start to
 
 ## Do not worry about being copied {#copied}
 
-Do not be paranoid that your idea will be copied, or that people will see what you are doing. This is all about execution. If you are putting things up for sale, you are already miles ahead of most people with ideas.
+Do not be paranoid that your idea will be copied, or that people will see what you are doing. This is all about execution. If you are putting things up for sale, you are already doing the part that counts.
 
 The best lessons I have learned came when I actually tried to ship something and sell it, and then iterated. It is not quite that simple, but it is close.
 

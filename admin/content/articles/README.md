@@ -57,6 +57,8 @@ about itself in the body except where it did the work: "the first release put th
 
 **Wishes, not demands.** Dinis does not speak in demands. When a memo says "I want", write what he would say: "I would like", "the idea is", "the plan is", "I hope", "what I have in mind". Keep "I want" only where it is plain description, not a request: "when I want to read a post", "the people I want to help", "being able to does not mean I want to". Above all, not in the abstract.
 
+**No backhanded compliments.** Do not praise one person by criticising everyone else: no "I wish more people did this", "better than most", "ahead of most people". It is a dig at the reader, and it assumes the others are wrong when they may simply not need it. Say what the person did, and why it helped.
+
 **A memo's order, kept.** The article follows the path the thinking took, including the turn that looks
 like a tangent and is the connection: a Google executive remembered in the middle of a point about email,
 the OWASP Wire at the end of an article about an iPhone. Do not reorganise the memo into someone else's

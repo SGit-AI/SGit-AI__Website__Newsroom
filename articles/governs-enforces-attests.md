@@ -10,7 +10,7 @@
 
 # Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/governs-enforces-attests.md) · [newsroom v0.12.133](https://newsroom.sgit.ai/admin/versions.html) · abpagentsenforcementassurancerufloarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/governs-enforces-attests.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · abpagentsenforcementassurancerufloarticle
 
 ***Abstract:** Someone working on assurance for agents described to me how ruv.sgit and their work fit together, and asked me to check it. They were almost right, and the part to make precise is the word "enforces". An Agent Behaviour Policy does not enforce anything by itself. It says what each role is granted and for, writes each rule down, and says how each rule is kept, at one of three levels: in the prompt, which is a hope; by hooks in the agent's harness, which are deterministic but sit on the agent's own machine; or by a third-party system that does the blocking, which is the level we recommend. In ruv.sgit that third party is Ruflo's own policy engine in enforce mode, which writes a decision receipt for every action, and an sgit vault keeps the memory encrypted and versioned. What none of that gives you is something a third party can check without taking the operator's word for it. That is the attestation layer: it signs what was assured, so a customer, an auditor or an insurer can verify it. Different layers of the same stack. This article shows the stack, the three levels, the business case with and without attestation, and one action going through all of it.*
 
@@ -29,7 +29,7 @@ Four layers of the same stack. At the top, the mandate: an Agent Behaviour Polic
 
 ## A summary, nearly right
 
-Someone who works on assurance for agents described how [ruv.sgit](https://ruv.sgit.ai/) and their work fit together, and asked me to check that they had it right. That is a good habit, and I wish more people did it. In short, their framing was that the Agent Behaviour Policy governs and enforces behaviour, and their layer attests to what was assured, so a third party can verify it: different layers of the same stack.
+Someone who works on assurance for agents described how [ruv.sgit](https://ruv.sgit.ai/) and their work fit together, and asked me to check that they had it right. In short, their framing was that the Agent Behaviour Policy governs and enforces behaviour, and their layer attests to what was assured, so a third party can verify it: different layers of the same stack.
 
 I think that is almost right. The part I would like to make precise is "enforces", because how a rule is kept is exactly what an Agent Behaviour Policy is about, and exactly what an attestation layer would need to know.
 

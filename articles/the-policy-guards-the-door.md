@@ -10,7 +10,7 @@
 
 # The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/the-policy-guards-the-door.md) · [newsroom v0.12.90](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitagent-behaviour-policysecuritymcpenforcementmemoryvideoarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/the-policy-guards-the-door.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitagent-behaviour-policysecuritymcpenforcementmemoryvideoarticle
 
 ***Abstract:** The third piece on Mondweep Chakravorty's SGit × Ruflo proof of concept is about a path, not a failure. His adapter compiles the four Agent Behaviour Policy rows into Ruflo rules and checks every one of its tools with a pinned copy of Ruflo's own policy evaluator, in enforce mode. In the video those checks cover steps 4, 5, 6, 8 and 11, and every one behaved as the policy said. But in steps 3, 9 and 10, Ruflo's own command line writes and reads the same SQLite memory file directly, and that path does not pass the gate. His README states the limit in one line: "Only adapter tools pass through this gate. Other shell/network tools are unaffected." It is the same lesson this site keeps learning about its own agent: a policy holds only on the paths that pass through its enforcer. The fix is on his list of follow-ups, native plugin registration, so the same compiled rules run where Ruflo runs. His code also answers the other questions the video left open: why every error reads the same, whether decisions are recorded, where the vault goes next, why the file name changes, and why approval means stop.*
 
@@ -62,7 +62,7 @@ To be fair to the run: using the command line in steps 3 and 9 is what makes it 
 
 A policy holds on the paths that pass through its enforcer, and nowhere else. I keep relearning that about this site's own agent. When I measured it in [your agent's logs are a self-report](your-agents-logs-are-a-self-report.md), ten of its eleven rules were kept by the agent choosing to follow them, and the one hard limit was a platform setting the policy did not even list.
 
-At [The AI Conference](the-ai-conference-read-for-governance.md), speaker after speaker said policy must live outside the model. This run does that, and better than most: the ABP is compiled, strictly, into the rule format of the tool it governs, evaluated by that tool's own evaluator, and it fails closed. What it adds is the next lesson. Outside the model is necessary; around every path to the data is the harder part.
+At [The AI Conference](the-ai-conference-read-for-governance.md), speaker after speaker said policy must live outside the model. This run does that: the ABP is compiled, strictly, into the rule format of the tool it governs, evaluated by that tool's own evaluator, and it fails closed. What it adds is the next lesson. Outside the model is necessary; around every path to the data is the harder part.
 
 ## How it could close
 

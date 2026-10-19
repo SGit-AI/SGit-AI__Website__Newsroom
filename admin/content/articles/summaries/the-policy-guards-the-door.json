@@ -1,56 +1,56 @@
 {
-  "slug": "the-policy-guards-the-door",
-  "by": "newsroom.ux",
-  "sections": {
-    "top": {
-      "line": "The policy guards the adapter, not Ruflo's command line",
-      "para": "Mondweep Chakravorty's adapter compiles four ABP rows into Ruflo rules and enforces them with a pinned copy of Ruflo's evaluator, and steps 4, 5, 6, 8 and 11 all behaved. But in steps 3, 9 and 10 Ruflo's command line uses the same SQLite file without passing the gate. A policy holds only on paths through its enforcer.",
-      "hash": "b95da16a9f52"
-    },
-    "in-short": {
-      "line": "Guarded steps behaved; the command line goes around",
-      "para": "The ABP rules run in Ruflo's own evaluator in enforce mode, and steps 4, 5, 6, 8 and 11 did what the policy said. Ruflo's command line reaches the same memory around the gate, as the README admits. Native plugin registration is on his follow-up list, and the code answers the video's other questions.",
-      "hash": "99f96d792b89"
-    },
-    "paths": {
-      "line": "Two paths reach the memory; only one is gated",
-      "para": "The adapter compiles four ABP rows at start-up and checks checkpoint, inspect, restore and close_run with a pinned Ruflo evaluator, rejecting ambiguous policy outright; steps 4, 5, 6, 8 and 11 all behaved. In steps 3, 9 and 10 Ruflo's command line writes and reads the SQLite file directly, which the README acknowledges.",
-      "hash": "701743ef3971"
-    },
-    "shown": {
-      "line": "The ungated path is shown, not tested for misuse",
-      "para": "Step 3 stores facts in ordinary unencrypted SQLite, and step 9 has Ruflo read a plain restored copy, with neither vault nor ABP on that path. What an agent with shell access might do was not tested. Using the command line is what makes step 9 convincing; the gap is where the ABP is enforced, not a test mistake.",
-      "hash": "4856c125c00b"
-    },
-    "why": {
-      "line": "Policy outside the model must also cover every path",
-      "para": "A policy holds only on paths through its enforcer, a lesson this site keeps relearning: ten of its own agent's eleven rules were kept by choice. Speakers at The AI Conference said policy must live outside the model, and this run does that well, failing closed. The harder part is guarding every path to the data.",
-      "hash": "94c2564a1363"
-    },
-    "close": {
-      "line": "Running the rules where Ruflo runs would close it",
-      "para": "The rules are already in Ruflo's format; what is missing is native plugin registration, on Mondweep's follow-up list with remote sync, key rotation and multi-tenant isolation. Two untested ideas: keep the working file where only the adapter reaches, or let only the adapter decrypt memory, though plaintext in restored workspaces is what makes step 9 possible.",
-      "hash": "15f0e6b380e0"
-    },
-    "questions": {
-      "line": "The code answers the video's five open questions",
-      "para": "Errors are generic on purpose, to avoid leaking paths or credentials; decisions are not yet logged; nothing is pushed remotely, each checkpoint being its own local vault; restores are always named memory.sqlite; and approval means stop because no approval mechanism exists. The video also trims 28 seconds of run between steps 2 and 3.",
-      "hash": "e363d8c7bed8"
-    },
-    "next": {
-      "line": "Return to the walkthrough, architecture or step-through page",
-      "para": "Go back to the walkthrough to see the run in order, or to the architecture piece for when the vault is used. The step-through page links steps 3, 9 and 10 back to this article, and every step shows what the code confirms.",
-      "hash": "0b5895e6bf75"
-    },
-    "limits": {
-      "line": "Not a vulnerability report, nor a failed run",
-      "para": "Nobody tried to bypass the policy, and the author documents the path himself. Every guarded step behaved as written. Native plugin registration is his follow-up, while the other two fixes are mine and untested, and the code was read here, not run, so its tests and evidence are the author's.",
-      "hash": "59ce2c389fb2"
-    },
-    "sources": {
-      "line": "Sources: Mondweep's video, his code and Claude's analysis",
-      "para": "Mondweep Chakravorty's video SGit × Ruflo | Working Proof of Concept, published on YouTube on 17 October 2026 with his agreement. The code is mondweep/sgit-ruv-memory, read at its 16 October commit, including the README, core.py, server.py, abp.py and bridge.mjs, plus Claude's analysis with its architecture addendum and Ruflo's repository.",
-      "hash": "544ce5f726a7"
-    }
+ "slug": "the-policy-guards-the-door",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "The policy guards the adapter, not Ruflo's command line",
+   "para": "Mondweep Chakravorty's adapter compiles four ABP rows into Ruflo rules and enforces them with a pinned copy of Ruflo's evaluator, and steps 4, 5, 6, 8 and 11 all behaved. But in steps 3, 9 and 10 Ruflo's command line uses the same SQLite file without passing the gate. A policy holds only on paths through its enforcer.",
+   "hash": "b95da16a9f52"
+  },
+  "in-short": {
+   "line": "Guarded steps behaved; the command line goes around",
+   "para": "The ABP rules run in Ruflo's own evaluator in enforce mode, and steps 4, 5, 6, 8 and 11 did what the policy said. Ruflo's command line reaches the same memory around the gate, as the README admits. Native plugin registration is on his follow-up list, and the code answers the video's other questions.",
+   "hash": "99f96d792b89"
+  },
+  "paths": {
+   "line": "Two paths reach the memory; only one is gated",
+   "para": "The adapter compiles four ABP rows at start-up and checks checkpoint, inspect, restore and close_run with a pinned Ruflo evaluator, rejecting ambiguous policy outright; steps 4, 5, 6, 8 and 11 all behaved. In steps 3, 9 and 10 Ruflo's command line writes and reads the SQLite file directly, which the README acknowledges.",
+   "hash": "701743ef3971"
+  },
+  "shown": {
+   "line": "The ungated path is shown, not tested for misuse",
+   "para": "Step 3 stores facts in ordinary unencrypted SQLite, and step 9 has Ruflo read a plain restored copy, with neither vault nor ABP on that path. What an agent with shell access might do was not tested. Using the command line is what makes step 9 convincing; the gap is where the ABP is enforced, not a test mistake.",
+   "hash": "4856c125c00b"
+  },
+  "why": {
+   "line": "Policy outside the model must also cover every path",
+   "para": "A policy holds only on paths through its enforcer, a lesson this site keeps relearning: ten of its own agent's eleven rules were kept by choice. Speakers at The AI Conference said policy must live outside the model, and this run does that well, failing closed. The harder part is guarding every path to the data.",
+   "hash": "2150ee68ed75"
+  },
+  "close": {
+   "line": "Running the rules where Ruflo runs would close it",
+   "para": "The rules are already in Ruflo's format; what is missing is native plugin registration, on Mondweep's follow-up list with remote sync, key rotation and multi-tenant isolation. Two untested ideas: keep the working file where only the adapter reaches, or let only the adapter decrypt memory, though plaintext in restored workspaces is what makes step 9 possible.",
+   "hash": "15f0e6b380e0"
+  },
+  "questions": {
+   "line": "The code answers the video's five open questions",
+   "para": "Errors are generic on purpose, to avoid leaking paths or credentials; decisions are not yet logged; nothing is pushed remotely, each checkpoint being its own local vault; restores are always named memory.sqlite; and approval means stop because no approval mechanism exists. The video also trims 28 seconds of run between steps 2 and 3.",
+   "hash": "e363d8c7bed8"
+  },
+  "next": {
+   "line": "Return to the walkthrough, architecture or step-through page",
+   "para": "Go back to the walkthrough to see the run in order, or to the architecture piece for when the vault is used. The step-through page links steps 3, 9 and 10 back to this article, and every step shows what the code confirms.",
+   "hash": "0b5895e6bf75"
+  },
+  "limits": {
+   "line": "Not a vulnerability report, nor a failed run",
+   "para": "Nobody tried to bypass the policy, and the author documents the path himself. Every guarded step behaved as written. Native plugin registration is his follow-up, while the other two fixes are mine and untested, and the code was read here, not run, so its tests and evidence are the author's.",
+   "hash": "59ce2c389fb2"
+  },
+  "sources": {
+   "line": "Sources: Mondweep's video, his code and Claude's analysis",
+   "para": "Mondweep Chakravorty's video SGit × Ruflo | Working Proof of Concept, published on YouTube on 17 October 2026 with his agreement. The code is mondweep/sgit-ruv-memory, read at its 16 October commit, including the README, core.py, server.py, abp.py and bridge.mjs, plus Claude's analysis with its architecture addendum and Ruflo's repository.",
+   "hash": "544ce5f726a7"
   }
+ }
 }

@@ -4,7 +4,7 @@ date: 2026-10-17
 author: Dinis Cruz
 author_url: about/index.html
 summary: The third piece on Mondweep Chakravorty's SGit × Ruflo proof of concept is about a path, not a failure. His adapter compiles the four Agent Behaviour Policy rows into Ruflo rules and checks every one of its tools with a pinned copy of Ruflo's own policy evaluator, in enforce mode. In the video those checks cover steps 4, 5, 6, 8 and 11, and every one behaved as the policy said. But in steps 3, 9 and 10, Ruflo's own command line writes and reads the same SQLite memory file directly, and that path does not pass the gate. His README states the limit in one line: "Only adapter tools pass through this gate. Other shell/network tools are unaffected." It is the same lesson this site keeps learning about its own agent: a policy holds only on the paths that pass through its enforcer. The fix is on his list of follow-ups, native plugin registration, so the same compiled rules run where Ruflo runs. His code also answers the other questions the video left open: why every error reads the same, whether decisions are recorded, where the vault goes next, why the file name changes, and why approval means stop.
-version: v0.12.90
+version: v0.12.135
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, ruflo, sgit, agent-behaviour-policy, security, mcp, enforcement, memory, video, article
 status: published
@@ -50,7 +50,7 @@ To be fair to the run: using the command line in steps 3 and 9 is what makes it 
 
 A policy holds on the paths that pass through its enforcer, and nowhere else. I keep relearning that about this site's own agent. When I measured it in [your agent's logs are a self-report](/articles/your-agents-logs-are-a-self-report.html), ten of its eleven rules were kept by the agent choosing to follow them, and the one hard limit was a platform setting the policy did not even list.
 
-At [The AI Conference](/articles/the-ai-conference-read-for-governance.html), speaker after speaker said policy must live outside the model. This run does that, and better than most: the ABP is compiled, strictly, into the rule format of the tool it governs, evaluated by that tool's own evaluator, and it fails closed. What it adds is the next lesson. Outside the model is necessary; around every path to the data is the harder part.
+At [The AI Conference](/articles/the-ai-conference-read-for-governance.html), speaker after speaker said policy must live outside the model. This run does that: the ABP is compiled, strictly, into the rule format of the tool it governs, evaluated by that tool's own evaluator, and it fails closed. What it adds is the next lesson. Outside the model is necessary; around every path to the data is the harder part.
 
 ## How it could close {#close}
 
