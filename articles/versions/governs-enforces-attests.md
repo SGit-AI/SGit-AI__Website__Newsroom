@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-19 | published | 1,983 | first published | this release | [current](../governs-enforces-attests.md) |
+| **v1.0.0** | 2026-10-19 | published | 1,983 | first published | [`2763ef787`](https://github.com/SGit-AI/SGit-AI__Website/commit/2763ef787f84160904d911a5b42eafb061017c36) | [current](../governs-enforces-attests.md) |
 
 [← Back to the article](../governs-enforces-attests.md) · [All articles](../index.md)
 

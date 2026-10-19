@@ -98,6 +98,10 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#when-t
 - [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](the-expert-founders.md) Agents make execution cheap, so the people who know the problem can build first. The data favours experts, and Europe's sceptical money suits them.
 - [The SaaS apocalypse will be decided by inertia, not by AI](saas-apocalypse-decided-by-inertia-not-by-ai.md) Incumbents and newcomers have the same AI; what separates them is how much past success each has to protect, so inertia decides which SaaS companies survive.
 
+### Continued by
+
+- [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](the-graph-companies.md) Four of the ten most valuable companies are graph companies. Graphs never scaled for everyone else because they were built to lock in. Now they can.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 213 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=213)
