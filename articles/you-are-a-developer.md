@@ -10,7 +10,7 @@
 
 # You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/you-are-a-developer.md) · [newsroom v0.12.130](https://newsroom.sgit.ai/admin/versions.html) · foundersdevelopersexplorer-codingbooksgen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/you-are-a-developer.md) · [newsroom v0.12.131](https://newsroom.sgit.ai/admin/versions.html) · foundersdevelopersexplorer-codingbooksgen-z-bookarticle
 
 ***Abstract:** Every GenAI founder I know is a developer, and none of them think so. When I tell them, they look at me as if I were joking: they just tell the model to do things. But look at what they do all day. They write requirements, they own the product, they design, they engineer, they deploy continuously, they run a development team. Some of it is crude, but much of the industry does it worse: underfunded teams, ridiculous deadlines, ship it anyway, which is where so many vulnerabilities come from, because a vulnerability is a sign of an engineering gap. The founders do not know that because they never saw the sausage factory. They grew up on polished, second- and third-generation products. They did not see the iPhone launched on a golden path of taps that kept the prototype from crashing, or developers giving a mock-up a hand-drawn theme so the business would not think it was finished. Now, building things themselves, they complain about versioning, stability and security, the non-functional requirements nobody used to fund. They are developers. Which brings me to the book: it is very hard to tell someone what they are in a word they do not relate to, so my hypothesis is that it should be called Generation ZX Founders, with "you are a developer" kept for the end, as the reveal.*
 
@@ -84,10 +84,12 @@ And "you are a developer" moves to the end. By then the reader has founded somet
 
 The title is decided on the book's site, where [decision 014](https://gen-z-developers.sgit.ai/decisions/index.html#the-title-is-generation-zx-developers-genai-startup-edition) chose *Generation ZX Developers (GenAI Startup Edition)* and decision 017 made it a new book rather than a second edition. This is the next question for it.
 
+**Update, later on 19 October.** It was decided: [decision 019](https://gen-z-developers.sgit.ai/decisions/index.html#the-title-is-generation-zx-founders-genai-edition) makes the title *Generation ZX Founders (GenAI Edition)*. One part went differently from this article: "you are a developer" stays as the turn of the book, in the frame chapter, rather than a reveal on the last page, because the book zooms in and keeps no punchline waiting. How the name appeared in the margins of the printed book is in [reading with a pen](reading-with-a-pen.md).
+
 ## What this does not claim
 
 - **"Every founder I know" is my experience.** Not a survey.
-- **The title is a hypothesis.** Decision 014 stands until a new decision replaces it.
+- **The title was a hypothesis when this was written.** Decision 019 adopted it the same day.
 - **The iPhone story is from one reporter's account.** Vogelstein's, from the engineers he interviewed.
 - **The Director prototypes were internal.** Apple did not show them as working software.
 - **Some founders' work is fragile.** Being a developer is not the same as the work being ready for users; [who will fix your mess?](who-will-fix-your-mess.md) is about that gap.
@@ -105,8 +107,13 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#you-ar
 - [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](explorer-coding.md) Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.
 - [The SaaS apocalypse will be decided by inertia, not by AI](saas-apocalypse-decided-by-inertia-not-by-ai.md) Incumbents and newcomers have the same AI; what separates them is how much past success each has to protect, so inertia decides which SaaS companies survive.
 - [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](the-citizen-developer.md) The citizen developer is the spreadsheet grown up: the best briefs ever written, handed to villagers and town planners, carried in versioned vaults.
+- [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](reading-with-a-pen.md) Mark the printed page, photograph it, and an agent does the processing that always made me stop highlighting. The book's new name is in its margins.
 - [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](who-will-fix-your-mess.md) HBR's deployment gap, answered from this site's articles: explorers, villagers and town planners, a record the agents keep, and open source.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
+
+### Continued by
+
+- [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](reading-with-a-pen.md) Mark the printed page, photograph it, and an agent does the processing that always made me stop highlighting. The book's new name is in its margins.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

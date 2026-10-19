@@ -4,7 +4,7 @@ date: 2026-10-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Every GenAI founder I know is a developer, and none of them think so. When I tell them, they look at me as if I were joking: they just tell the model to do things. But look at what they do all day. They write requirements, they own the product, they design, they engineer, they deploy continuously, they run a development team. Some of it is crude, but much of the industry does it worse: underfunded teams, ridiculous deadlines, ship it anyway, which is where so many vulnerabilities come from, because a vulnerability is a sign of an engineering gap. The founders do not know that because they never saw the sausage factory. They grew up on polished, second- and third-generation products. They did not see the iPhone launched on a golden path of taps that kept the prototype from crashing, or developers giving a mock-up a hand-drawn theme so the business would not think it was finished. Now, building things themselves, they complain about versioning, stability and security, the non-functional requirements nobody used to fund. They are developers. Which brings me to the book: it is very hard to tell someone what they are in a word they do not relate to, so my hypothesis is that it should be called Generation ZX Founders, with "you are a developer" kept for the end, as the reveal.
-version: v0.12.130
+version: v0.12.131
 license: https://creativecommons.org/licenses/by/4.0/
 tags: founders, developers, explorer-coding, books, gen-z-book, article
 status: published
@@ -80,10 +80,12 @@ And "you are a developer" moves to the end. By then the reader has founded somet
 
 The title is decided on the book's site, where [decision 014](https://gen-z-developers.sgit.ai/decisions/index.html#the-title-is-generation-zx-developers-genai-startup-edition) chose *Generation ZX Developers (GenAI Startup Edition)* and decision 017 made it a new book rather than a second edition. This is the next question for it.
 
+**Update, later on 19 October.** It was decided: [decision 019](https://gen-z-developers.sgit.ai/decisions/index.html#the-title-is-generation-zx-founders-genai-edition) makes the title *Generation ZX Founders (GenAI Edition)*. One part went differently from this article: "you are a developer" stays as the turn of the book, in the frame chapter, rather than a reveal on the last page, because the book zooms in and keeps no punchline waiting. How the name appeared in the margins of the printed book is in [reading with a pen](/articles/reading-with-a-pen.html).
+
 ## What this does not claim {#limits}
 
 - **"Every founder I know" is my experience.** Not a survey.
-- **The title is a hypothesis.** Decision 014 stands until a new decision replaces it.
+- **The title was a hypothesis when this was written.** Decision 019 adopted it the same day.
 - **The iPhone story is from one reporter's account.** Vogelstein's, from the engineers he interviewed.
 - **The Director prototypes were internal.** Apple did not show them as working software.
 - **Some founders' work is fragile.** Being a developer is not the same as the work being ready for users; [who will fix your mess?](/articles/who-will-fix-your-mess.html) is about that gap.

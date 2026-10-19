@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.130 · 209 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.131 · 210 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](articles/you-are-a-developer.md), 2026-10-19, 9 min. Every GenAI founder I know is a developer and does not think so. They never saw the sausage factory. So the book may be Generation ZX Founders.
+- [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](articles/reading-with-a-pen.md), 2026-10-19, 7 min. Mark the printed page, photograph it, and an agent does the processing that always made me stop highlighting. The book's new name is in its margins.
 
 ## Highlights
 
+- [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](articles/you-are-a-developer.md), 2026-10-19, 10 min.
 - [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](articles/start-a-company.md), 2026-10-19, 10 min.
 - [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](articles/can-you-sell-it.md), 2026-10-19, 5 min.
 - [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](articles/a-pull-request-by-another-name.md), 2026-10-19, 11 min.
-- [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](articles/discovering-the-book.md), 2026-10-19, 9 min.
 
 ## Who are you reading as?
 
@@ -34,11 +34,11 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
 - [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 13 min.
 
-### Building with agents (35)
+### Building with agents (36)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](articles/reading-with-a-pen.md), 2026-10-19, 7 min.
 - [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](articles/versions-of-versions.md), 2026-10-18, 5 min.
 - [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min.
-- [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](articles/the-librarians-daily-brief.md), 2026-10-18, 7 min.
 
 ### Vaults & provenance (44)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
@@ -54,7 +54,7 @@ For editors, journalists and publishers asking how news gets paid for when agent
 
 ### Strategy & startups (34)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](articles/you-are-a-developer.md), 2026-10-19, 9 min.
+- [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](articles/you-are-a-developer.md), 2026-10-19, 10 min.
 - [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](articles/start-a-company.md), 2026-10-19, 10 min.
 - [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](articles/can-you-sell-it.md), 2026-10-19, 5 min.
 
