@@ -118,6 +118,7 @@ Vaults & methodStartups & strategy[This article as a graph →](graphs.md#resear
 
 ### Continued by
 
+- [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](a-pull-request-by-another-name.md) The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](three-linkedin-pages.md) Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.
 - [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](i-just-want-to-buy-the-article.md) I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.

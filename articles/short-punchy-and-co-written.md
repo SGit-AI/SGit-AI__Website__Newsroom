@@ -85,6 +85,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#short-p
 
 ### Continued by
 
+- [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](a-pull-request-by-another-name.md) The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
 - [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](discovering-the-book.md) How a team of agents built gen-z-developers.sgit.ai in one evening: 37 releases, two release candidates, and a positioning found after the first.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault, SGit Newsroom</title>
+<meta name="description" content="This morning I am reading the printed release candidate 2 of Generation ZX Developers, with a pen. At the same time, I asked the newsroom's agent to review the same text, chapter by chapter, in my voice, and not just to list problems but to fix them, work out the principles behind the fixes, suggest how the book should be paced and ordered, and bring over what works on this site, including a way to draw the book itself. Six editors worked in parallel, one per part, under one brief whose first rule was never to invent anything. They found that the book's main problem is that it repeats itself: the same story, quote or number told in two to four chapters. They found the point of a chapter often came after the 2018 book or a tour of later parts, that some chapters were their newsroom articles pasted in, and that the company part has five chapters of hypotheses and no result. The fixes come as seven patches, in priority order, that take the book from 74,666 to 64,351 words, still above 200 pages. The seventh exists because a review in parts drops things between the parts. It is all in a vault, because the agent does not have write access to the book's repository and does not need it: a patch is the change, and applying it is the decision. A pull request by another name.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-pull-request-by-another-name.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-pull-request-by-another-name.html">
+<meta property="og:title" content="A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault, SGit Newsroom">
+<meta property="og:description" content="This morning I am reading the printed release candidate 2 of Generation ZX Developers, with a pen. At the same time, I asked the newsroom's agent to review the same text, chapter by chapter, in my voice, and not just to list problems but to fix them, work out the principles behind the fixes, suggest how the book should be paced and ordered, and bring over what works on this site, including a way to draw the book itself. Six editors worked in parallel, one per part, under one brief whose first rule was never to invent anything. They found that the book's main problem is that it repeats itself: the same story, quote or number told in two to four chapters. They found the point of a chapter often came after the 2018 book or a tour of later parts, that some chapters were their newsroom articles pasted in, and that the company part has five chapters of hypotheses and no result. The fixes come as seven patches, in priority order, that take the book from 74,666 to 64,351 words, still above 200 pages. The seventh exists because a review in parts drops things between the parts. It is all in a vault, because the agent does not have write access to the book's repository and does not need it: a patch is the change, and applying it is the decision. A pull request by another name.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-pull-request-by-another-name.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-pull-request-by-another-name.jpg">
+<link rel="alternate" type="text/markdown" href="a-pull-request-by-another-name.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault, SGit Newsroom", "headline": "A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault, SGit Newsroom", "description": "This morning I am reading the printed release candidate 2 of Generation ZX Developers, with a pen. At the same time, I asked the newsroom's agent to review the same text, chapter by chapter, in my voice, and not just to list problems but to fix them, work out the principles behind the fixes, suggest how the book should be paced and ordered, and bring over what works on this site, including a way to draw the book itself. Six editors worked in parallel, one per part, under one brief whose first rule was never to invent anything. They found that the book's main problem is that it repeats itself: the same story, quote or number told in two to four chapters. They found the point of a chapter often came after the 2018 book or a tour of later parts, that some chapters were their newsroom articles pasted in, and that the company part has five chapters of hypotheses and no result. The fixes come as seven patches, in priority order, that take the book from 74,666 to 64,351 words, still above 200 pages. The seventh exists because a review in parts drops things between the parts. It is all in a vault, because the agent does not have write access to the book's repository and does not need it: a patch is the change, and applying it is the decision. A pull request by another name.", "url": "https://newsroom.sgit.ai/articles/a-pull-request-by-another-name.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.127</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.127</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault</p>
+ <h1>A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-19 &middot; <a href="versions/a-pull-request-by-another-name.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.127</a> &middot; <span class="chip">books</span><span class="chip">gen-z-book</span><span class="chip">writing</span><span class="chip">review</span><span class="chip">vaults</span><span class="chip">article</span></p>
+<nav class="aseries" aria-label="Series: Generation ZX Developers (GenAI Startup Edition)"><a href="#series"><b>Generation ZX Developers (GenAI Startup Edition)</b></a> <span class="dim">8 of 8</span> &middot; <a href="discovering-the-book.html" rel="prev">&larr; Discovering the book</a></nav>
+ <p class="abstract"><em><b>Abstract:</b> This morning I am reading the printed release candidate 2 of Generation ZX Developers, with a pen. At the same time, I asked the newsroom's agent to review the same text, chapter by chapter, in my voice, and not just to list problems but to fix them, work out the principles behind the fixes, suggest how the book should be paced and ordered, and bring over what works on this site, including a way to draw the book itself. Six editors worked in parallel, one per part, under one brief whose first rule was never to invent anything. They found that the book's main problem is that it repeats itself: the same story, quote or number told in two to four chapters. They found the point of a chapter often came after the 2018 book or a tour of later parts, that some chapters were their newsroom articles pasted in, and that the company part has five chapters of hypotheses and no result. The fixes come as seven patches, in priority order, that take the book from 74,666 to 64,351 words, still above 200 pages. The seventh exists because a review in parts drops things between the parts. It is all in a vault, because the agent does not have write access to the book's repository and does not need it: a patch is the change, and applying it is the decision. A pull request by another name.</em></p>
+<figure class="shot" data-shot="gb-printed.webp" data-dir="images/" data-alt="Release candidate 2, printed and spiral-bound on a café table, with a pen for marking it up: Generation ZX Developers, GenAI Startup Edition, release candidate v2.0.0-rc2, 19 October 2026, page 1 of 168. This is the copy I am reading this morning, while the agents read the same text. Photographed by Dinis." data-kind="photo"><figcaption>Release candidate 2, printed and spiral-bound on a café table, with a pen for marking it up: Generation ZX Developers, GenAI Startup Edition, release candidate v2.0.0-rc2, 19 October 2026, page 1 of 168. This is the copy I am reading this morning, while the agents read the same text. Photographed by Dinis.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Two reviews at once.</b> I read the printed book; the agents reviewed the same text.</li>
+<li><b>Not a list of problems.</b> Fix them, then name the principles behind the fixes.</li>
+<li><b>Six editors, one brief.</b> One per part, and the first rule: never invent anything.</li>
+<li><b>The book repeats itself.</b> That is most of the cut: 74,666 words down to 64,351.</li>
+<li><b>The point should come first.</b> Not the 2018 book, and not a tour of later parts.</li>
+<li><b>Seven patches, in priority order.</b> The seventh fixes what fell between the parts.</li>
+<li><b>The book, drawn as itself.</b> A graph of the chapters, for the back cover.</li>
+<li><b>A vault, not a pull request.</b> A patch is the change; applying it is the decision.</li>
+</ul>
+<h2 id="reading">Reading it twice</h2>
+<p>This morning I am reading the book. Release candidate 2 is printed and spiral-bound, 168 pages, and I am going through it with a pen, the way I read anything I care about. <a href="discovering-the-book.html">Discovering the book</a> told the story of how it was written in one evening; this is the first time I have held it.</p>
+<p>At the same time, I asked the newsroom's agent to read the same text. Not to tell me whether it was good, but to do the work an editor does: go chapter by chapter, propose the changes, make the ones that only need cutting and reordering, and then reverse engineer them into a set of principles the book should follow and the guidelines to check them. Then make suggestions about pacing and structure. And take what works here, the graphs, the altitudes, the visualisations, and see what the book could use, including whether one of those visualisations could represent the book itself, on the cover or on the back.</p>
+<h2 id="editors">Six editors and one rule</h2>
+<p>The agent split the book into six parts and gave each to an editor working in parallel: the opening, the frame and the job, working with agents and judgement, the company, building without a server and the long game, and the hands-on part. Each one read the newsroom's description of my voice and three recent articles of mine, then their chapters in full.</p>
+<p>The brief had one rule above the others: never invent a fact, a number, a quote, a name, a date or a story. They could cut, reorder, merge, tighten and rephrase. If a chapter needed something only I could supply, it became a question for me, not a sentence in the book. They kept every "For Dinis" note, kept every quotation exactly, and wrote a note for every chapter and one for each part: what works, what did not sound like me, what they changed, what they would change but could not, and the figures the chapter needs.</p>
+<h2 id="found">What they found</h2>
+<p>The main finding is that the book repeats itself. Each chapter was drafted from the register of ideas and from the newsroom articles, and each one retold what it needed. So the 2018 <em>Be a founder</em> answer is told in chapter 1, again in 17 and again in 11. The habit of one session per topic appears, nearly word for word, in four chapters. The six-line email policy is in 13 and again in 30. "Users buy credits, test once, and don't come back" is in 5, 14 and 18. None of these is wrong on its own. Together, they are why a book that should be short and punchy was not.</p>
+<figure class="shot" data-shot="rp-patches.webp" data-dir="images/" data-alt="Seven patches, in priority order. Body words before and after for each part of release candidate 2: the opening, 11,120 to 8,982; hands-on 2026, 11,326 to 9,425; the frame and the job, 14,357 to 12,145; agents, judgement and how it was made, 11,085 to 9,986; building without a server and the long game, 15,134 to 13,320; the company, 11,644 to 10,347. The seventh patch works across the parts. The whole book goes from 74,666 to 64,351 words, about 215 pages, above the 60,000-word floor." data-kind="comparison"><figcaption>Seven patches, in priority order. Body words before and after for each part of release candidate 2: the opening, 11,120 to 8,982; hands-on 2026, 11,326 to 9,425; the frame and the job, 14,357 to 12,145; agents, judgement and how it was made, 11,085 to 9,986; building without a server and the long game, 15,134 to 13,320; the company, 11,644 to 10,347. The seventh patch works across the parts. The whole book goes from 74,666 to 64,351 words, about 215 pages, above the 60,000-word floor.</figcaption></figure>
+<p>The second finding is about where the point is. "You are lucky to be here", which is the core idea of the book, first appeared in the eighth paragraph of chapter 2. Chapter after chapter opened well, then turned to the 2018 book, or the method, or a tour of later parts, before the argument landed. In the last two argument parts, three chapters, 25, 26 and 29, opened with the 2018 book.</p>
+<p>The third is that some chapters were their articles. Chapter 11 shared 831 words with <a href="act-as-the-job-you-want.html">act as the job you want</a>, in the article's order. A chapter can keep an article's quotes and its best lines, but it needs its own spine; 11 now has one, and the overlap is 477 words, mostly the quotes.</p>
+<p>The fourth is one I am glad they raised. Two chapter titles named my products, "Privacy by design: SG/Send, sgit, and the value of constraints" and "Controlling your agent: RiskMandate". A book for founders should not read as a pitch. The rule they applied is a good one: the idea first, the product second as an example, and my stake declared at the first mention.</p>
+<p>And the fifth is the one only I can fix. <em>Start the company</em> has five chapters of strong argument, each careful to say what is still a hypothesis, and then a placeholder. That reads as a company not yet started, which is the opposite of what the book promises. It needs a result, a company from registration to first payment with dates, and the countries. The editors wrote those down as seven questions for me.</p>
+<h2 id="hands-on">The hands-on part</h2>
+<p>The clearest numbers are in the hands-on part. The editor measured how much of each hands-on chapter was also in the chapter it follows, in runs of six words. Chapter 30, the agentic workflow from zero, was 49% chapter 13; chapter 39, the first price and first ten customers, was 37% chapter 19. After the edit, an argument chapter argues and a hands-on chapter instructs: it opens with what you will have, points back in one line, gives the steps, and ends with what you have at the end.</p>
+<figure class="shot" data-shot="rp-overlap.webp" data-dir="images/" data-alt="Argument chapters argue; hands-on chapters instruct. The share of each hands-on chapter&#x27;s six-word runs also found in the earlier chapter it follows, before and after the edit: chapter 30 against 13, 49% to 22%; 39 against 19, 37% to 10%; 33 against 7, 20% to 3%; 32 against 7, 18% to 4%; 35 against 16, 16% to 3%; 37 against 22, 13% to 7%; 36 against 12, 11% to 1%." data-kind="comparison"><figcaption>Argument chapters argue; hands-on chapters instruct. The share of each hands-on chapter's six-word runs also found in the earlier chapter it follows, before and after the edit: chapter 30 against 13, 49% to 22%; 39 against 19, 37% to 10%; 33 against 7, 20% to 3%; 32 against 7, 18% to 4%; 35 against 16, 16% to 3%; 37 against 22, 13% to 7%; 36 against 12, 11% to 1%.</figcaption></figure>
+<p>They also suggest moving them. Today the eleven hands-on chapters sit together at the end. Interleaved, each would be the last chapter of the part it serves, still marked 2026 and listed on one index page so it can be renewed each year. That way you read <em>Price it, then give it away</em> and then you price it. I like that. It fits something I said in <a href="https://gen-z-developers.sgit.ai/articles/zoom-in-not-discover.html">zoom in, not discover</a>, which the book's own team published this morning while the review was being put together: the book is a manual, not a journey, and you learn by doing.</p>
+<h2 id="between">What fell between the parts</h2>
+<p>There is one finding about the review itself that I think matters as much as any finding about the book. Two editors, working at the same time, each cut the same passage. The editor of chapter 12 cut the steps for setting up your own newsroom and pointed to chapter 36. The editor of chapter 36 cut the same steps and pointed to chapter 12. Each pointer was correct when it was written. Together, they left the steps in neither chapter.</p>
+<figure class="shot" data-shot="rp-hole.webp" data-dir="images/" data-alt="A hand-off is only done when the other side has it. Chapter 12&#x27;s editor cut the five steps and pointed to chapter 36; chapter 36&#x27;s editor cut the eight steps and pointed to chapter 12. The steps were left in neither. Patch 0007 puts the eight steps back in chapter 36, where the hands-on part instructs, and chapter 12 keeps the why." data-kind="concept"><figcaption>A hand-off is only done when the other side has it. Chapter 12's editor cut the five steps and pointed to chapter 36; chapter 36's editor cut the eight steps and pointed to chapter 12. The steps were left in neither. Patch 0007 puts the eight steps back in chapter 36, where the hands-on part instructs, and chapter 12 keeps the why.</figcaption></figure>
+<p>That is why there is a seventh patch. After the six editors finished, the agent did a pass across the parts: every passage that had been cut and replaced with a pointer was checked against the chapter it pointed to. That pass found the missing steps, and four citations of chapter 25's old title. It is the same lesson as running agents in parallel anywhere: the work in each lane can be right and the whole still be wrong, so the join needs its own check.</p>
+<h2 id="principles">The principles</h2>
+<p>The part I asked for most was the reverse engineering: what principles were the editors following, without being told to? There are thirteen in the vault, each with a guideline. The ones that matter most:</p>
+<ol>
+<li><b>One home per idea, story, quote and number.</b> Told once, in full, in the chapter that owns it; everywhere else, one sentence and the chapter's title.</li>
+<li><b>The pointer says what is there.</b> Not "see chapter 14", but the idea in a clause and the title.</li>
+<li><b>A hand-off is only done when the other side has it.</b> A register of homes makes that a lookup.</li>
+<li><b>The point first, the story last.</b> My story and the 2018 book go at the end of a chapter, for whoever wants them.</li>
+<li><b>A chapter is not its article.</b> Above about 20% shared with its source article, it has been pasted, not written.</li>
+<li><b>Idea, example, stake.</b> No product names in chapter titles.</li>
+<li><b>Co-writing on the first page.</b> It was only in the last chapter. Now the front page says the book is co-written with Claude, and what is mine and what is the agents'.</li>
+</ol>
+<p>Several of these are what <a href="short-punchy-and-co-written.html">short, punchy and co-written</a> asked for, now with a way to check them: every paragraph knowing what it is, and a graph showing where we repeat ourselves.</p>
+<h2 id="cover">The book, drawn as itself</h2>
+<p>I asked whether one of the visualisations could represent the book. The proposal is a graph: the 41 chapters in a ring, in reading order. Each dot is sized by the number of ideas the chapter is written from and coloured by its part. A line joins two chapters that stand on three or more of the same sources. It is drawn by code from the same front matter the book's build checks, so when the book changes, the picture does.</p>
+<figure class="shot" data-shot="rp-cover.webp" data-dir="images/" data-alt="Generation ZX Developers, the book as a graph: a proposal for the back cover. 41 chapters in a ring, sized by their ideas, 198 in all, and coloured by their part. 50 lines join chapters that share three or more sources. The argument chapters form a dense web; the hands-on chapters are barely joined to it, with 14 of the 50 lines, and eight of them name no ideas at all. Drawn by code from release candidate 2&#x27;s front matter." data-kind="concept"><figcaption>Generation ZX Developers, the book as a graph: a proposal for the back cover. 41 chapters in a ring, sized by their ideas, 198 in all, and coloured by their part. 50 lines join chapters that share three or more sources. The argument chapters form a dense web; the hands-on chapters are barely joined to it, with 14 of the 50 lines, and eight of them name no ideas at all. Drawn by code from release candidate 2's front matter.</figcaption></figure>
+<p>And it shows something the text hides. The argument chapters are a dense web. The hands-on chapters are barely connected to it: 14 of the 50 lines touch them, and eight of the eleven name no ideas at all. That is the same thing the book's team found with its own graph test this morning, from the other direction. When the hands-on chapters are joined to the parts they serve, the back cover will show it. I like a cover that changes when the book gets better.</p>
+<p>The other ideas from this site are in the vault too. Altitudes: one line for the book, one paragraph per part, one line per chapter, each checked against the text below it and marked stale when that text changes, which is what this site does with its summaries. Versions with their diffs, so a reader of the next candidate can see what changed in each chapter and why. A review record where every finding is fixed, declined or open. And, at the end of each chapter, what it does not claim and where it comes from.</p>
+<h2 id="vault">Why a vault and not a pull request</h2>
+<p>I asked if the agent could make a pull request against the book's repository, or whether I needed to give it permission. It does not have write access there, and it did not need it. A pull request is a set of patches with a conversation around it. So the review went into an <a href="research-delivered-as-a-vault.html">sgit vault</a>: the seven patches made with git, the chapters with the patches applied so they can be read without git, the principles, the structure, the visuals, and the 48 notes. Encrypted, versioned, and shared with a read key.</p>
+<p>That keeps the decision where it belongs. The agent proposes; whoever applies the patch accepts it. I can take all seven, take the first and leave the rest, or take none. And like every review on this site, each finding needs an answer, and "we are not doing that", with a reason, is one of the answers.</p>
+<h2 id="next">What happens next</h2>
+<p>I will finish reading the printed copy, mark it up, and compare my marks with the patches. Where we agree, the patches go in. Where we do not, that is a finding about the review. Then I owe the book the seven answers only I have, starting with the company: one result, one company from registration to first payment, and the countries. That is the part the synthetic readers said would make them buy it, and it is the part that still needs me.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The review is an editor's reading, not mine.</b> Every change is a proposal until I sign it off.</li>
+<li><b>The patches have not been applied.</b> They are in the vault, against the book at v0.2.34.</li>
+<li><b>The book's build was not run on them.</b> Its checks on front matter and banned words were run separately and pass.</li>
+<li><b>The overlap figures are the editors' measurements.</b> Six-word runs shared with one earlier chapter; eight-word runs for chapter 11.</li>
+<li><b>Word counts are chapter bodies</b>, without front matter, for release candidate 2.</li>
+<li><b>Rc3 will not look like this.</b> The book's team has its own brief for it, and these patches are one input.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo from me on 19 October 2026, and my photograph of the printed release candidate. The book's source, release candidate 2, at <a href="https://gen-z-developers.sgit.ai/">gen-z-developers.sgit.ai</a>, repository <a href="https://github.com/SGit-AI/SGit-AI__Website__Gen-Z-Developers">SGit-AI/SGit-AI__Website__Gen-Z-Developers</a>, at its release v0.2.34, read in full. <a href="https://gen-z-developers.sgit.ai/articles/zoom-in-not-discover.html">Zoom in, not discover</a>, from the book's site. Related: <a href="discovering-the-book.html">discovering the book</a>, <a href="short-punchy-and-co-written.html">short, punchy and co-written</a>, <a href="a-website-to-finish-the-book.html">a website to finish the book</a>, <a href="generation-z-developers-again.html">Generation Z Developers (AI edition)</a>, <a href="act-as-the-job-you-want.html">act as the job you want</a>, <a href="research-delivered-as-a-vault.html">research, delivered as a vault</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-19" topics="vaults-and-method news-and-evidence" title="A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">News &amp; evidence</span> <a href="graphs.html#a-pull-request-by-another-name">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="discovering-the-book.html">Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first</a> <span class="dim">How a team of agents built gen-z-developers.sgit.ai in one evening: 37 releases, two release candidates, and a positioning found after the first.</span></li><li><a href="act-as-the-job-you-want.html">Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you</a> <span class="dim">If you are looking for a job you have time: act as the person in the job you want, in public, and give the people who want to help you a link.</span></li><li><a href="short-punchy-and-co-written.html">Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop</a> <span class="dim">Generation Z Developers (AI edition) must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.</span></li><li><a href="research-delivered-as-a-vault.html">Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive</a> <span class="dim">Companies that sell research could deliver it as a vault: evidence, a fractal graph, briefings per reader, behaviour policies for AI products, a lane back.</span></li><li><a href="a-website-to-finish-the-book.html">A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude</a> <span class="dim">gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.</span></li><li><a href="generation-z-developers-again.html">Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help</a> <span class="dim">My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 206 &middot; <a href="../for/make.html#r=206">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-pull-request-by-another-name.jpg" download>a-pull-request-by-another-name.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="aseries-all" id="series">
+ <h2>Generation ZX Developers (GenAI Startup Edition)</h2>
+ <p class="dim">Articles about the new edition of Generation Z Developers, now Generation ZX Developers (GenAI Startup Edition): the ideas going into it, and how it is being made. Every article tagged <span class="chip">gen-z-book</span> joins this list, in the order it was published.</p>
+ <ol><li><span class="aseries-n">1</span> <a href="hired-for-the-workflow.html">Hired for the workflow</a><br><span class="dim">I think October 2026 is a moment of real opportunity for anyone willing to get properly into agentic workflows.</span></li><li><span class="aseries-n">2</span> <a href="act-as-the-job-you-want.html">Act as the job you want</a><br><span class="dim">This is the advice I end up giving most often to people I know who are looking for a job.</span></li><li><span class="aseries-n">3</span> <a href="generation-z-developers-again.html">Generation Z Developers (AI edition)</a><br><span class="dim">In 2018 I wrote a book called Generation Z Developers, key concepts and ideas for the next generation of developers.</span></li><li><span class="aseries-n">4</span> <a href="a-book-for-one-reader.html">A book for one reader</a><br><span class="dim">Once the book is a graph, an agent can assemble it.</span></li><li><span class="aseries-n">5</span> <a href="a-website-to-finish-the-book.html">A website to finish the book</a><br><span class="dim">To make Generation Z Developers (AI edition), the plan is a website for it, consolidating the best of everything we have built so far into the most productive…</span></li><li><span class="aseries-n">6</span> <a href="short-punchy-and-co-written.html">Short, punchy, and co-written with Claude</a><br><span class="dim">More notes for the book.</span></li><li><span class="aseries-n">7</span> <a href="discovering-the-book.html">Discovering the book</a><br><span class="dim">On the evening of 18 October the repository for the book&#x27;s website was empty.</span></li><li class="here"><span class="aseries-n">8</span> <b>A pull request by another name</b> <span class="dim">(you are here)</span><br><span class="dim">This morning I am reading the printed release candidate 2 of Generation ZX Developers, with a pen.</span></li></ol>
+</section>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.127</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-pull-request-by-another-name.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

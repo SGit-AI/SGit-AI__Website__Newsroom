@@ -133,6 +133,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#discoverin
 
 ### Continued by
 
+- [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](a-pull-request-by-another-name.md) The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
 
 [All articles](index.md) · [All graphs](graphs.md)

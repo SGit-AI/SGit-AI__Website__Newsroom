@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-19 | minor | 2,363 | +67 / −0 words; 0 changed, 2 added, 0 removed paragraphs | this release | [what changed](discovering-the-book/v1.1.0.md) · [current](../discovering-the-book.md) |
+| **v1.1.0** | 2026-10-19 | minor | 2,363 | +67 / −0 words; 0 changed, 2 added, 0 removed paragraphs | [`2a5119a1d`](https://github.com/SGit-AI/SGit-AI__Website/commit/2a5119a1dd48f515547a9ba2767689e109a763af) | [what changed](discovering-the-book/v1.1.0.md) · [current](../discovering-the-book.md) |
 | **v1.0.0** | 2026-10-19 | published | 2,296 | first published | [`6f7d501a1`](https://github.com/SGit-AI/SGit-AI__Website/commit/6f7d501a143165e888cfb1634f54ae47726beb17) |  |
 
 [← Back to the article](../discovering-the-book.md) · [All articles](../index.md)

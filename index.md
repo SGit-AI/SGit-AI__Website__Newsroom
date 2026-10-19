@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.126 · 205 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.127 · 206 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](articles/discovering-the-book.md), 2026-10-19, 9 min. How a team of agents built gen-z-developers.sgit.ai in one evening: 37 releases, two release candidates, and a positioning found after the first.
+- [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](articles/a-pull-request-by-another-name.md), 2026-10-19, 11 min. The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.
 
 ## Highlights
 
+- [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](articles/discovering-the-book.md), 2026-10-19, 9 min.
 - [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](articles/two-years-in-the-opposite.md), 2026-10-18, 6 min.
 - [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](articles/short-punchy-and-co-written.md), 2026-10-18, 4 min.
 - [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](articles/versions-of-versions.md), 2026-10-18, 5 min.
-- [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](articles/a-website-to-finish-the-book.md), 2026-10-18, 5 min.
 
 ## Who are you reading as?
 
@@ -40,11 +40,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application](articles/hired-for-the-workflow.md), 2026-10-18, 8 min.
 - [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](articles/the-librarians-daily-brief.md), 2026-10-18, 7 min.
 
-### Vaults & provenance (43)
+### Vaults & provenance (44)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](articles/a-pull-request-by-another-name.md), 2026-10-19, 11 min.
 - [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](articles/discovering-the-book.md), 2026-10-19, 9 min.
 - [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](articles/short-punchy-and-co-written.md), 2026-10-18, 4 min.
-- [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](articles/a-website-to-finish-the-book.md), 2026-10-18, 5 min.
 
 ### The future of news (40)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

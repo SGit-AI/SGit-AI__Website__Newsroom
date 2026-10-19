@@ -1,0 +1,37 @@
+{
+ "slug": "a-pull-request-by-another-name",
+ "teaser": "The book reviewed chapter by chapter by six editors in parallel, thirteen principles behind the fixes, and seven patches delivered in a vault.",
+ "topics": ["vaults-and-method", "news-and-evidence"],
+ "core_idea": "A review that fixes rather than lists: six editors, one per part, cut and reordered release candidate 2 without inventing anything, the principles were reverse engineered from their edits, a pass across the parts caught what fell between them, and the result was delivered as patches in a vault, so that applying them stays Dinis's decision.",
+ "nodes": [
+  {"id": "printed", "label": "Reading the printed copy", "kind": "example", "summary": "168 pages, with a pen, the same morning."},
+  {"id": "editors", "label": "Six editors, one brief", "kind": "method", "summary": "One per part; never invent anything."},
+  {"id": "repeat", "label": "The book repeats itself", "kind": "claim", "summary": "The same story in two to four chapters."},
+  {"id": "point", "label": "The point first", "kind": "concept", "summary": "The 2018 book and the story at the end."},
+  {"id": "company", "label": "The company needs a result", "kind": "question", "summary": "Seven questions only Dinis can answer."},
+  {"id": "between", "label": "What fell between the parts", "kind": "example", "summary": "The steps cut from 12 and from 36."},
+  {"id": "principles", "label": "Thirteen principles", "kind": "artefact", "summary": "Each with a guideline to check it."},
+  {"id": "cover", "label": "The book drawn as a graph", "kind": "artefact", "summary": "41 chapters, 50 shared-source lines."},
+  {"id": "patches", "label": "Seven patches in a vault", "kind": "method", "summary": "A pull request by another name."}
+ ],
+ "edges": [
+  {"from": "editors", "to": "repeat", "rel": "produces"},
+  {"from": "editors", "to": "between", "rel": "leads-to"},
+  {"from": "between", "to": "principles", "rel": "produces"},
+  {"from": "repeat", "to": "principles", "rel": "produces"},
+  {"from": "point", "to": "principles", "rel": "extends"},
+  {"from": "principles", "to": "patches", "rel": "produces"},
+  {"from": "cover", "to": "repeat", "rel": "extends"},
+  {"from": "printed", "to": "patches", "rel": "depends-on"},
+  {"from": "company", "to": "patches", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["discovering-the-book", "short-punchy-and-co-written", "a-website-to-finish-the-book", "generation-z-developers-again", "act-as-the-job-you-want", "research-delivered-as-a-vault"],
+  "pages": [],
+  "sites": ["https://gen-z-developers.sgit.ai/", "https://github.com/SGit-AI/SGit-AI__Website__Gen-Z-Developers"]
+ },
+ "quotes": [
+  {"text": "the work in each lane can be right and the whole still be wrong, so the join needs its own check", "why": "On running editors in parallel."},
+  {"text": "The agent proposes; whoever applies the patch accepts it.", "why": "Why a vault and not a pull request."}
+ ]
+}
