@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-19 | published | 2,446 | first published | this release | [current](../start-a-company.md) |
+| **v1.0.0** | 2026-10-19 | published | 2,446 | first published | [`ee5725b18`](https://github.com/SGit-AI/SGit-AI__Website/commit/ee5725b1891d1151509c0e5323e02024c833f04d) | [current](../start-a-company.md) |
 
 [← Back to the article](../start-a-company.md) · [All articles](../index.md)
 

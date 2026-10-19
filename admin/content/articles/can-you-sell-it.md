@@ -43,7 +43,7 @@ Third, you start the feedback loops. All the small problems, and all the feedbac
 
 ## The best signal {#signal}
 
-It always amazes me. I meet people, sometimes people who already have users, and I say: sell it. And they look at me as if I had said something strange. But a payment is the best signal you will ever get that you have a product. Someone gave you money for it. It is that simple.
+It always amazes me. I meet people, sometimes people who already have users, and I say: sell it. And they look at me as if I had said something strange. But a payment is the signal that tells you that you have a product. Someone gave you money for it. It is that simple.
 
 You would be surprised how hard it is to get. I have done the trick of giving people the money: with SG/Send, I offered a £5 Amazon voucher to anyone who bought £5 of credits. It worked: the payments went live on 1 March 2026, and on 2 March there were [ten paying customers](/articles/from-send-to-sgit.html). But they still had to buy. They had to find the page, decide, and pay, and that is where the signal is.
 
