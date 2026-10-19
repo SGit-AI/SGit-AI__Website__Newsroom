@@ -48,7 +48,7 @@ What they lack is not another platform. It is evidence: a run they can inspect, 
 
 !shot gx-path.webp | images/ | The engagement path: a free conversation, a first run on a real problem for £10 to £50, expert time at £500 for two hours or £1,500 for a day, a four-day pilot in the client's environment for £5,000, and a maintained repository from £149 a month. | architecture
 
-ruv.sgit.ai already publishes [four offers](https://ruv.sgit.ai/business/): task runs from £10 to £50, dedicated compute by the eight-hour block, a maintained repository of the whole setup from £149 a month, and expert time at £500 for about two hours, £1,500 for a day, and £5,000 for four days setting it up in the client's own environment. Expert time sits exactly in the band I want to start with, £1,500 to £5,000, and in the middle of the boutiques' prices.
+ruv.sgit.ai already publishes [four offers](https://ruv.sgit.ai/business/): task runs from £10 to £50, dedicated compute by the eight-hour block, a maintained repository of the whole setup from £149 a month, and expert time at £500 for about two hours, £1,500 for a day, and £5,000 for four days setting it up in the client's own environment. Expert time sits exactly in the band I would like to start with, £1,500 to £5,000, and in the middle of the boutiques' prices.
 
 So the path is: a conversation, free, about what the client wants agents to do and what they must never do; a first run on a real problem, which costs pounds, not thousands, and leaves a vault; two hours to steer it, or a day to write the behaviour policy for one team; a four-day pilot in their own environment; and then the maintained setup, so they can run it themselves. Each step is small enough to say yes to, and each ends with something they keep. The plan is honest about where it stands: no paid run yet, nothing automated end to end, and [the pricing](https://ruv.sgit.ai/articles/ruv-sgit-business-model.html) is a set of hypotheses to test with the first ten customers.
 
@@ -56,7 +56,7 @@ So the path is: a conversation, free, about what the client wants agents to do a
 
 !shot gx-market-place.webp | images/ | A marketplace for the people who deliver it: clients pick a project type, then the consultants; consultants join through an application, proof of work, peer review, an interview, a shadowed pilot and standards; the platform share is a proposal. | architecture
 
-This only scales with people. Agentic engagements need someone who knows the client's world and can steer a hive in it, and there are many more of those people in the community than there are hours in my week. So alongside the offers, I want a marketplace: a small, curated list of consultants who deliver agentic engagements on this stack, where a client picks the kind of project first and then the people.
+This only scales with people. Agentic engagements need someone who knows the client's world and can steer a hive in it, and there are many more of those people in the community than there are hours in my week. So alongside the offers, the idea is a marketplace: a small, curated list of consultants who deliver agentic engagements on this stack, where a client picks the kind of project first and then the people.
 
 **The first two.** Mondweep Chakravorty, co-founder of the [Agentics Foundation's London chapter](https://london.agentics.org/), which runs the meetups where all of this was shown, and me. We are not taking bookings yet: we need to align our diaries first, so for now the page will say *register interest*, not *book*.
 

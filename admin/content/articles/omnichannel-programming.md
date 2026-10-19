@@ -25,7 +25,7 @@ status: published
 
 ## Where the word comes from {#word}
 
-Omnichannel is a retail word. Darrell Rigby put it into Harvard Business Review in December 2011, in [The Future of Shopping](https://www.bain.com/insights/the-future-of-shopping-hbr/): "Successful companies will engage customers through "omnichannel" retailing: a mashup of digital and physical experiences." The distinction that made the word useful is the one I want to borrow. A multichannel retailer has a shop, a website and a catalogue, each with its own stock, prices and customer record. An omnichannel retailer has one customer, one basket and one stock, and the channels are just ways in.
+Omnichannel is a retail word. Darrell Rigby put it into Harvard Business Review in December 2011, in [The Future of Shopping](https://www.bain.com/insights/the-future-of-shopping-hbr/): "Successful companies will engage customers through "omnichannel" retailing: a mashup of digital and physical experiences." The distinction that made the word useful is the one I would like to borrow. A multichannel retailer has a shop, a website and a catalogue, each with its own stock, prices and customer record. An omnichannel retailer has one customer, one basket and one stock, and the channels are just ways in.
 
 I did not find the phrase "omnichannel programming" used this way before, so I am using it on purpose. Programming has become multichannel almost by accident: there is a chat, an IDE, a phone app, a pull request, a preview, each good on its own. What makes it omnichannel is that every one of them reads and writes the same state, so that I can start something in one and finish it in another without carrying the context in my head.
 

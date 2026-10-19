@@ -81,9 +81,9 @@ If everyone is a developer, the better question is what kind. Simon Wardley's an
 
 ## Why this one first {#first}
 
-I want to do more books, on the graphs among others. But this one probably has enough content and material already, and because one version is already published, we can build on the back of it: fix it, do a much better release, and publish it as a new version on Amazon. It is a good target: something I can focus on, iterate on quickly, release, and move on. If the workflow works, a new version of Hacking Portugal can follow the same way.
+I would like to do more books, on the graphs among others. But this one probably has enough content and material already, and because one version is already published, we can build on the back of it: fix it, do a much better release, and publish it as a new version on Amazon. It is a good target: something I can focus on, iterate on quickly, release, and move on. If the workflow works, a new version of Hacking Portugal can follow the same way.
 
-And it is the book I want to give people. Every time I meet someone and ask: do you know about Wardley maps? Do you have an agentic workflow? I want to be able to hand them this.
+And it is the book I would like to give people. Every time I meet someone and ask: do you know about Wardley maps? Do you have an agentic workflow? I would like to be able to hand them this.
 
 ## How it gets made {#workflow}
 

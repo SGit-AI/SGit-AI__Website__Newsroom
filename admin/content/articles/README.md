@@ -55,6 +55,8 @@ find who said it, so I will not put a name to it". Dinis's articles use *I* 13 t
 Dinis and the agents together: "so we counted", "we noticed". The agent's own article uses neither
 about itself in the body except where it did the work: "the first release put the collapse at 1199".
 
+**Wishes, not demands.** Dinis does not speak in demands. When a memo says "I want", write what he would say: "I would like", "the idea is", "the plan is", "I hope", "what I have in mind". Keep "I want" only where it is plain description, not a request: "when I want to read a post", "the people I want to help", "being able to does not mean I want to". Above all, not in the abstract.
+
 **A memo's order, kept.** The article follows the path the thinking took, including the turn that looks
 like a tangent and is the connection: a Google executive remembered in the middle of a point about email,
 the OWASP Wire at the end of an article about an iPhone. Do not reorganise the memo into someone else's

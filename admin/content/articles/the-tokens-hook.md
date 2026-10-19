@@ -51,7 +51,7 @@ Two findings came out of reading it.
 
 The hook is one Python file of 132 lines and a policy file. Every time it runs, it seeks to where it stopped last time, reads only the new lines, counts each response once, prices it by its model, and saves the totals. The first run on this session's 66 MB transcript took 252 milliseconds; every run after it took about one millisecond inside the hook, and about 31 milliseconds including starting Python. If the file gets shorter, as it can after a compaction or a restore, it starts again.
 
-The policy carries the version, the mode, the limits and the prices, with their source. Prices are per model, from [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing): a five-minute cache write is 1.25 times the base input price, a one-hour write twice, a read a tenth, and "Cache hits and refreshes on Claude Opus 5.5 and Claude Sonnet 5.5 are priced at 0.05x the base input price." The modes are the ones I want for every policy: observe shows and logs; warn also warns when a limit is crossed; enforce blocks the next prompt once the session's budget is spent.
+The policy carries the version, the mode, the limits and the prices, with their source. Prices are per model, from [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing): a five-minute cache write is 1.25 times the base input price, a one-hour write twice, a read a tenth, and "Cache hits and refreshes on Claude Opus 5.5 and Claude Sonnet 5.5 are priced at 0.05x the base input price." The modes are the ones I would like for every policy: observe shows and logs; warn also warns when a limit is crossed; enforce blocks the next prompt once the session's budget is spent.
 
 Where the output goes decides who sees it. A `systemMessage` on `Stop` is shown to the user under the answer. Additional context on `UserPromptSubmit` goes to the model, so it can be frugal. A log line per event stays on the machine. Here is the box for this session, as the hook drew it while this article was written:
 
@@ -86,7 +86,7 @@ Caching works differently in each. OpenAI's is on by default and discounts reuse
 
 ## A site for one small hook {#site}
 
-I want this to live at tokens.hook.sgit.ai, as an example of how a mission-critical hook should be run: a small code base, mapped completely, measured, and released like any other software. [Hooks are kernel code](/articles/hooks-are-kernel-code.html) made the argument; this is the first hook to get the treatment.
+I would like this to live at tokens.hook.sgit.ai, as an example of how a mission-critical hook should be run: a small code base, mapped completely, measured, and released like any other software. [Hooks are kernel code](/articles/hooks-are-kernel-code.html) made the argument; this is the first hook to get the treatment.
 
 1. **The code and the policy.** The hook, the policy file and its schema, under version control, with releases signed and tagged.
 2. **The graph.** Every input field, every output, every mode and every limit, as a graph that links to the line of code that handles it.

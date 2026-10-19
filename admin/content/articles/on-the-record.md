@@ -27,7 +27,7 @@ status: published
 
 News sites have been closing comment sections for more than a decade. Reuters did it in 2014; NPR in 2016, when it counted about [19,400 active commenters](https://talkingpointsmemo.com/news/npr-ending-online-comments) against millions of readers on social media; the Press Democrat's group [on 4 September 2025](https://www.sonomanews.com/2025/08/28/press-democrat-news-group-comments-section-to-be-disabled-starting-sept-4). I understand why. A comments section asks anyone to say anything, and the people with the most to say are rarely the people with the most to add.
 
-What I want is something else. In [reviews on the record](/articles/reviews-on-the-record.html), every article here gets reviewed against published criteria, by other models, by me and by the desk, and every review is a record kept with the article. The next step is to open that record to the people who know the subject: someone who has spent twenty years on supply-chain security, or who runs a newsroom, or who wrote the standard the article discusses. Not to comment, but to go on the record with a professional opinion.
+What I have in mind is something else. In [reviews on the record](/articles/reviews-on-the-record.html), every article here gets reviewed against published criteria, by other models, by me and by the desk, and every review is a record kept with the article. The next step is to open that record to the people who know the subject: someone who has spent twenty years on supply-chain security, or who runs a newsroom, or who wrote the standard the article discusses. Not to comment, but to go on the record with a professional opinion.
 
 ## What going on the record means {#record}
 
@@ -70,7 +70,7 @@ On the open web, X's Community Notes shows a note only when raters who usually d
 
 The reading meter on this site already lets the reader decide what a page was worth: [pay after you read](/articles/pay-after-you-read.html), and the rating sets the price. The same mechanism works for an opinion. A reader who marks an expert's opinion as insightful, or as a good analysis, pays a little for it, and most of that goes to the expert.
 
-That creates the incentive I want on both sides. The reader is paying for more of the analysis they value. The expert is paid to review properly, and only when readers find it worth paying for, which rewards a careful disagreement more than a quick agreement. I could not find a news platform that pays experts for opinions on its articles today; the nearest are Medium, which counts replies and highlights in what it [pays its authors](https://help.medium.com/hc/en-us/articles/360036691193), and the paid reviewers in science.
+That creates the incentive I would like on both sides. The reader is paying for more of the analysis they value. The expert is paid to review properly, and only when readers find it worth paying for, which rewards a careful disagreement more than a quick agreement. I could not find a news platform that pays experts for opinions on its articles today; the nearest are Medium, which counts replies and highlights in what it [pays its authors](https://help.medium.com/hc/en-us/articles/360036691193), and the paid reviewers in science.
 
 ## A share for the idea {#share}
 

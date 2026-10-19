@@ -66,7 +66,7 @@ Paying for one article is only the start. Think about who arrives at an HBR arti
 
 **My reading.** A place that keeps what I read on HBR, how much of each piece I actually read rather than scrolled past, and my highlights, kept by me, not by the publisher. This newsroom's latest work is exactly that: [Scrolled is not read](/articles/scrolled-is-not-read.html) separates the two, and [the reader's vault](/articles/the-vault-opened.html) keeps it encrypted, under the reader's own keys, across devices. A personalised HBR, as a board member or as a security lead, is a [persona](/articles/pay-to-keep-your-persona.html), and readers pay to keep a good one because it helps them.
 
-**The argument, as a graph.** I want to take an article's argument into my company: its claims, its methods, its examples, connected. The articles here publish [their argument as a graph](/articles/graphs.html). HBR's would be worth far more, because people would build on it.
+**The argument, as a graph.** I would like to take an article's argument into my company: its claims, its methods, its examples, connected. The articles here publish [their argument as a graph](/articles/graphs.html). HBR's would be worth far more, because people would build on it.
 
 **The vocabulary.** HBR has spent decades naming things in management. Its ontologies and taxonomies, verified by its editors, are a product. That is what [fractal semantic graphs](/articles/introducing-fractal-semantic-graphs.html) are for: each body of knowledge kept in its own vocabulary, connected to others without anyone having to share a schema.
 

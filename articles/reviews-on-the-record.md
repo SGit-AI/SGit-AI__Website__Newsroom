@@ -10,7 +10,7 @@
 
 # Reviews on the record: other models, the editor and the desk check every article, and never the same text twice
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/reviews-on-the-record.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · newsroomreviewsqualityagentseditorarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/reviews-on-the-record.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · newsroomreviewsqualityagentseditorarticle
 
 ***Abstract:** The publishing workflow here works, and I have come to like it as a way to answer people: an article is a reply I can point to. But the articles are written by one model, with a lot of context, and some things fall through, a figure that is a little off, a sentence I would never say. So this adds review, as a record. There are published criteria that any reviewer reads first, an agent from another vendor, an open-weight model, me, and later the journalists on the desk: are the facts right, is it my voice, are the claims and limits honest, are the conversions right, is the article still in good health, is anyone named who should not be. Each review is one file in the article's own folder, about one text of the article, written once and never edited, and the newsroom answers every finding: fixed in which version, declined and why, or open. The unit of work is the reviewer, the article and its text, so the same reviewer never reviews the same text twice; it takes the next five, newest first, from a status file that lists every article's current hash and the reviews it has, and it reads its own past reviews before it starts. Every article now has a Reviews section that shows who reviewed it, at which version, and what happened to what they found. My own reading, sign-offs and later notes use the same record, which keeps an article alive: I can go back and say I got it wrong, or that it came true. Signed readers who confirm or dispute an article are the next step, and an article of their own.*
 
@@ -33,7 +33,7 @@ The way this site publishes is working well. I record a memo or point at somethi
 
 But almost every article here is written by one model, and a model with a lot of context does more and misses more. Today I asked for a check on phrases like "the clearest example I have seen", because one had got into an article and it is not something I would say. That was caught by me reading. Most things will not be, unless something else reads.
 
-So I want a second pass on every article, by readers that are not the writer. Other models first: a different model from the same vendor, a model from another vendor, an open-weight model, each reading the same article in its own way. Then me, and later the journalists on the desk. And I want it to be cheap to run, so I can point a reviewer at the site whenever I have credits to spare, without it starting from the beginning every time.
+So I would like a second pass on every article, by readers that are not the writer. Other models first: a different model from the same vendor, a model from another vendor, an open-weight model, each reading the same article in its own way. Then me, and later the journalists on the desk. And it should be cheap to run, so I can point a reviewer at the site whenever I have credits to spare, without it starting from the beginning every time.
 
 ## What a review checks
 

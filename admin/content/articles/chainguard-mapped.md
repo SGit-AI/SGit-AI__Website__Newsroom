@@ -26,7 +26,7 @@ status: published
 
 I have written about Chainguard twice already. In [Attacks rewritten as mandates](/articles/attacks-rewritten-as-mandates.html), its record of supply chain attacks was the example, and the controls it sells would by my reading have held in most of them. In [The minimum code below](/articles/the-minimum-code-below.html) I argued that security built from the bottom up stops where the application starts. This article is the map underneath both: what the company does, what it publishes, and where others can build on it.
 
-It matters to me as a user too. Projects like sgit ship containers, and the case for hardened base images is easy to make. What I want to understand is how far the context goes, and where it does not.
+It matters to me as a user too. Projects like sgit ship containers, and the case for hardened base images is easy to make. What I would like to understand is how far the context goes, and where it does not.
 
 ## The company {#company}
 

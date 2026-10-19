@@ -29,7 +29,7 @@ The way this site publishes is working well. I record a memo or point at somethi
 
 But almost every article here is written by one model, and a model with a lot of context does more and misses more. Today I asked for a check on phrases like "the clearest example I have seen", because one had got into an article and it is not something I would say. That was caught by me reading. Most things will not be, unless something else reads.
 
-So I want a second pass on every article, by readers that are not the writer. Other models first: a different model from the same vendor, a model from another vendor, an open-weight model, each reading the same article in its own way. Then me, and later the journalists on the desk. And I want it to be cheap to run, so I can point a reviewer at the site whenever I have credits to spare, without it starting from the beginning every time.
+So I would like a second pass on every article, by readers that are not the writer. Other models first: a different model from the same vendor, a model from another vendor, an open-weight model, each reading the same article in its own way. Then me, and later the journalists on the desk. And it should be cheap to run, so I can point a reviewer at the site whenever I have credits to spare, without it starting from the beginning every time.
 
 ## What a review checks {#criteria}
 

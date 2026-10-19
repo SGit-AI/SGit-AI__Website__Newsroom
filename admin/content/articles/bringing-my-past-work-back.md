@@ -3,7 +3,7 @@ title: Bringing my past work back: a daily worker that turns eighteen years of e
 date: 2026-10-18
 author: Dinis Cruz
 author_url: about/index.html
-summary: I have been creating content for a long time, and most of it is not linkable from what I write now. Essays on my own site, ten years of a blog, sixty-five decks, ten books that stopped short of done, over two hundred videos, the tools, the NotebookLM material from this year, and the posts on LinkedIn and on Twitter, which went south. I mourn some of it, because the ideas were good and I cannot point at them. So I want a worker: an agent that runs every day, takes one item at a time from that back catalogue, and writes two or three articles a day bringing it back, with what it said, what has changed since and how it connects to what this newsroom argues now. It is memory, it is me talking to my future self, and it compounds, because every article it writes is another node the next one can link to. It also keeps the site alive on the days I am offline, and feeds the newsletter. The inventory is done: 103 essays, 1,289 blog posts, 65 decks, 10 books, 29 tools, 2,038 files of NotebookLM material and 221 videos, with the LinkedIn and Twitter history still to export. This is the brief. And the argument is general: every team has a back catalogue it cannot link to, and every team can start this small and retrofit it backwards.
+summary: I have been creating content for a long time, and most of it is not linkable from what I write now. Essays on my own site, ten years of a blog, sixty-five decks, ten books that stopped short of done, over two hundred videos, the tools, the NotebookLM material from this year, and the posts on LinkedIn and on Twitter, which went south. I mourn some of it, because the ideas were good and I cannot point at them. So the idea is a worker: an agent that runs every day, takes one item at a time from that back catalogue, and writes two or three articles a day bringing it back, with what it said, what has changed since and how it connects to what this newsroom argues now. It is memory, it is me talking to my future self, and it compounds, because every article it writes is another node the next one can link to. It also keeps the site alive on the days I am offline, and feeds the newsletter. The inventory is done: 103 essays, 1,289 blog posts, 65 decks, 10 books, 29 tools, 2,038 files of NotebookLM material and 221 videos, with the LinkedIn and Twitter history still to export. This is the brief. And the argument is general: every team has a back catalogue it cannot link to, and every team can start this small and retrofit it backwards.
 version: v0.12.111
 license: https://creativecommons.org/licenses/by/4.0/
 tags: memory, archive, back-catalogue, agents, newsroom, brief, article
@@ -49,7 +49,7 @@ The memo I recorded called the tools site something else; it is tools.sgraph.ai.
 
 ## The worker {#worker}
 
-So I want a worker: an agent that runs every day, takes the next item from that back catalogue, and writes two or three articles a day, each one bringing a piece of past work back. Every article has the same shape:
+So I would like a worker: an agent that runs every day, takes the next item from that back catalogue, and writes two or three articles a day, each one bringing a piece of past work back. Every article has the same shape:
 
 - **What it was.** The original, with its date and a link.
 - **What it said.** The ideas, quoted exactly where a quote matters.

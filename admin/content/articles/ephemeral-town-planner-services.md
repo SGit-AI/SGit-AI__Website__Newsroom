@@ -94,7 +94,7 @@ For anyone building on this site's terms, it is the property we design for. [Clo
 
 ## What this does not claim {#limits}
 
-- **The name is a proposal.** I do not expect it to replace serverless; I want a word that says what I mean.
+- **The name is a proposal.** I do not expect it to replace serverless; I would like a word that says what I mean.
 - **The prices are from pricing pages on 18 October 2026**, excluding storage; the monthly figures are my arithmetic at 730 hours and US East rates.
 - **Some products in the table do scale to zero.** The test is about compute billed while idle, not about the brand.
 - **Billing by the hour is not wrong.** It is a reasonable product; it is just not what the word promised.

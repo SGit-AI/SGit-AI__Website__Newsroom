@@ -10,7 +10,7 @@
 
 # A custom Firefox of my own: the full plan to build one with a governed agent hive, for the laptop and the iPad, and how Mozilla could sell me the part I do not want to do, which is keeping it working
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/a-custom-firefox-of-my-own.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · firefoxmozillacustomisationforksagentsruflosgitagent-behaviour-policyipadbusiness-modelsexplorersvillagerstown-plannersarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/a-custom-firefox-of-my-own.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · firefoxmozillacustomisationforksagentsruflosgitagent-behaviour-policyipadbusiness-modelsexplorersvillagerstown-plannersarticle
 
 ***Abstract:** The previous articles argued that software vendors should let users explore and sell them the maintenance of what they build. This is the practical version, for the product I used as the example: a plan to make a custom Firefox with the workflow we showed at the agentics talk, a Ruflo hive of Claude Code workers, an sgit vault as its memory and a behaviour policy as its mandate, and to run it on my laptop and my iPad. The plan puts each thing I want on the least invasive layer that can deliver it: enterprise policies, hidden preferences, a stylesheet for the browser's own interface, an extension, and only then a patch set on Firefox's source, built in a mode that skips the C++ compile. The iPad is different: Apple requires WebKit, Firefox for iOS is a separate Swift codebase, and the only route is a fork of it, installed with a developer account. The plan works, and it shows where the cost is. Since September Firefox ships every two weeks, so a fork has to be rebased 26 times a year, on two codebases. I can have the hive do that, but it is exactly what I would pay Mozilla to do. Mozilla now sells a branded build and custom development to organisations; I think it should sell the same to one person: explore for free, keep it working for about 50p a release, a change built properly for £50 to £500.*
 
@@ -26,7 +26,7 @@ A custom Firefox, from the least invasive layer to a fork: policies, preferences
 - **The cost is maintenance.** 26 releases a year since September, on two codebases.
 - **Mozilla should sell it.** It already does, to organisations; the missing offer is for one person.
 
-## What I want
+## What I would like
 
 [The first article](software-vendors-as-villagers.md) explained how I came back to Firefox and found a good browser I could not bend. So here is the practical question: what would it take to make my own version, with the workflow I already use, and keep it working? The point is not the first version. I might have the time to spend on version one, creating the experience I want. After that, I do not want it to break.
 

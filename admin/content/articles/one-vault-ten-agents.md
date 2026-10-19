@@ -70,7 +70,7 @@ The question Scion's post is really about is many clients. Earlier measurements 
 
 ## From agents' memory to source code {#code}
 
-I started this vault as memory for agents, and the numbers say it is now a repository of real size: about as many files and objects as our application's source repository, every version encrypted and signed, read by ten clients that each take only what they need. That is where sgit starts to be useful for more than notes and mail. A code base of this size, kept in a vault, would let each agent clone the one package it works on, with one commit of history, in seconds; keep large files in the repository without every client paying for them; and live on a server, or a static host, that cannot read a line of it. The next test I want is exactly that: a real code base, moved into a vault, with agents working on it.
+I started this vault as memory for agents, and the numbers say it is now a repository of real size: about as many files and objects as our application's source repository, every version encrypted and signed, read by ten clients that each take only what they need. That is where sgit starts to be useful for more than notes and mail. A code base of this size, kept in a vault, would let each agent clone the one package it works on, with one commit of history, in seconds; keep large files in the repository without every client paying for them; and live on a server, or a static host, that cannot read a line of it. The next test I would like to run is exactly that: a real code base, moved into a vault, with agents working on it.
 
 ## What this does not claim {#limits}
 

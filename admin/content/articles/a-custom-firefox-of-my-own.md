@@ -22,7 +22,7 @@ status: published
 - **The cost is maintenance.** 26 releases a year since September, on two codebases.
 - **Mozilla should sell it.** It already does, to organisations; the missing offer is for one person.
 
-## What I want {#want}
+## What I would like {#want}
 
 [The first article](/articles/software-vendors-as-villagers.html) explained how I came back to Firefox and found a good browser I could not bend. So here is the practical question: what would it take to make my own version, with the workflow I already use, and keep it working? The point is not the first version. I might have the time to spend on version one, creating the experience I want. After that, I do not want it to break.
 

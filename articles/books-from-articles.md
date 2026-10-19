@@ -10,7 +10,7 @@
 
 # Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/books-from-articles.md) · [newsroom v0.12.77](https://newsroom.sgit.ai/admin/versions.html) · bookspublishingwritingworkflowsagentsfeedback-loopleverageweb-summitportugalgraphsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.3.0, 4 versions](versions/books-from-articles.md) · [newsroom v0.12.77](https://newsroom.sgit.ai/admin/versions.html) · bookspublishingwritingworkflowsagentsfeedback-loopleverageweb-summitportugalgraphsarticle
 
 ***Abstract:** I have left a lot of books behind. On Leanpub there are ten, and most stop between 60% and 95% complete; in August, agents wrote three more on graphs.sgit.ai in a day, about 100,000 words, which I read on a long flight, and two months later they are still under review. The reason is the same every time. A book is one big batch: by the time the first version exists, every change is expensive, the review piles up on one person, and when my energy moves to the next place of highest leverage, the book stays behind. The articles on this site work the other way. Each one is researched, checked, released and read on the day, links to what is already written instead of repeating it, and comes back with feedback while it still matters. So here is my hypothesis: a book is a curated, ordered set of finished articles, plus the editorial thread that connects them, and the workflow that makes the articles can make the books. The test is close. Web Summit is in Lisbon from 9 to 12 November, and I would like to have books there: one on agents with a mandate, one on graphs, a new Hacking Portugal, and one on making books this way. This article maps the plan, the material we already have, and what has to be true for it to work.*
 
@@ -72,7 +72,7 @@ Counting the articles on this site and on sgit.ai, by hand and approximately:
 
 The bigger idea is not my books. One of the most important things in any story is its constraints and its failures, and those almost never get captured. Think of someone like rUv, with 226 public repositories on GitHub, or Simon Wardley: there are so many stories, evolutions and nuggets that exist only in their heads, in old repositories and in conversations. I think we can now capture that, make it easy to consume, and help make great books from it.
 
-But I do not want to start there. I want a better workflow first, and I do not want someone else's story to be my first experiment. It is the same as the [wires](https://newsroom.sgit.ai/wire/index.html): we started one, now there are four, and I do not yet know which will find its readers. With books it may be the third or the fifth that hits the sweet spot, and it may be mine or someone else's. The way to find out is to make several, quickly, and listen.
+But I do not want to start there. I would like a better workflow first, and I do not want someone else's story to be my first experiment. It is the same as the [wires](https://newsroom.sgit.ai/wire/index.html): we started one, now there are four, and I do not yet know which will find its readers. With books it may be the third or the fifth that hits the sweet spot, and it may be mine or someone else's. The way to find out is to make several, quickly, and listen.
 
 ## What this does not claim
 

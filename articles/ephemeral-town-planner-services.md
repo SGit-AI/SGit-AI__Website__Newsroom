@@ -10,7 +10,7 @@
 
 # Ephemeral town planner services: a better name than serverless, now that serverless includes things that bill you by the hour
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/ephemeral-town-planner-services.md) · [newsroom v0.12.111](https://newsroom.sgit.ai/admin/versions.html) · serverlesscloudwardley-mapstown-plannerspricingawsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/ephemeral-town-planner-services.md) · [newsroom v0.12.111](https://newsroom.sgit.ai/admin/versions.html) · serverlesscloudwardley-mapstown-plannerspricingawsarticle
 
 ***Abstract:** I have never liked the word serverless, and it has been stretched until it barely means anything. To me it always meant four things: it scales to zero, it costs nothing when you are not using it, it starts fast, and it turns a capability into a commodity. Lambda and Cloud Run are that. But today the word is also on products that bill you every hour whether you use them or not: MSK Serverless at $0.75 a cluster-hour, OpenSearch Serverless's classic collections with a floor of two capacity units, ElastiCache Serverless with a minimum of storage metered every hour. The definitions were clear: the CNCF's whitepaper says "there is no charge when code is not running", and the Berkeley paper warned in 2019 that few so-called elastic services could scale to zero. So I propose a better name, built from three words that each carry part of it: ephemeral, because it comes and goes with use; town planner, Simon Wardley's word for something industrialised and mature; and services, because it is exposed for others to use. Ephemeral town planner services. Lambda is one, sitting on town planner services like S3. And naming things this way shows how much glue sits behind what is sold as a commodity: Lambda itself ran on containers inside EC2 instances for four years, until Firecracker replaced them. The test I would use is simple: if it bills you by the hour when nobody is using it, it is not serverless, and whoever runs it has something running on their side.*
 
@@ -98,7 +98,7 @@ For anyone building on this site's terms, it is the property we design for. [Clo
 
 ## What this does not claim
 
-- **The name is a proposal.** I do not expect it to replace serverless; I want a word that says what I mean.
+- **The name is a proposal.** I do not expect it to replace serverless; I would like a word that says what I mean.
 - **The prices are from pricing pages on 18 October 2026**, excluding storage; the monthly figures are my arithmetic at 730 hours and US East rates.
 - **Some products in the table do scale to zero.** The test is about compute billed while idle, not about the brand.
 - **Billing by the hour is not wrong.** It is a reasonable product; it is just not what the word promised.

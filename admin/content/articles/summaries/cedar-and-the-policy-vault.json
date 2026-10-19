@@ -1,61 +1,61 @@
 {
-  "slug": "cedar-and-the-policy-vault",
-  "by": "newsroom.ux",
-  "sections": {
-    "top": {
-      "line": "Adopt Cedar; a vault adds why, version and evidence",
-      "para": "Cedar is mature: open-sourced by AWS in 2023, a CNCF Sandbox project, used by AgentCore Policy and proved in Lean. It covers grant and barrier but not why a rule exists, which version applied, or what it decided. A vault demo added those, and found that Cedar skips a failing forbid, so it fails open.",
-      "hash": "3819e942f91a"
-    },
-    "in-short": {
-      "line": "Cedar speaks our language; a vault adds the rest",
-      "para": "Cedar maps permit to grant, forbid to barrier and schema to footprint. It lacks why, which version and what was decided, which a vault carries through history, signed releases, read keys and an append lane. The demo ran two releases and fifteen decisions; an invalid forbid fails open, so deny on error.",
-      "hash": "98ed60bbfa85"
-    },
-    "why": {
-      "line": "Cedar is the most mature policy language available",
-      "para": "AWS open-sourced Cedar on 10 May 2023 under Apache 2.0, in Rust, built to be verified formally. It joined the CNCF as a Sandbox project on 8 October 2025. AgentCore Policy evaluates every agent tool call in Cedar, Sondera's harness uses it, and cedar-for-agents generates schemas from MCP tools.",
-      "hash": "2375acea438b"
-    },
-    "language": {
-      "line": "Default deny, forbid wins, and the design is proved",
-      "para": "Five ideas carry Cedar: default deny, forbid overriding permit, requests of principal, action, resource and context, and a schema checked by a validator. Its design is modelled and proved in Lean, and no version ships without current proofs. OOPSLA 2024 found it as readable as OpenFGA and Rego and far faster.",
-      "hash": "9dea623c3867"
-    },
-    "crosswalk": {
-      "line": "Most of a behaviour policy maps onto Cedar cleanly",
-      "para": "Grant becomes permit, barrier becomes forbid, footprint becomes entities, and skill rows and business layers become forbids on labels or context. The mandate and the version in force have no Cedar construct. Annotations such as @abp_rule(\"9\") act as edges between Cedar's graph and ours, without replacing either.",
-      "hash": "22496bf22177"
-    },
-    "today": {
-      "line": "Cedar stores keep current state, not history or provenance",
-      "para": "In AWS, policies live in a policy store with optional strict schema validation, but the API offers no versions, history or export, and deleting a store is permanent. Changed schemas do not re-evaluate existing policies, and nothing signs policies. Repositories add history but expose plaintext and link no decision to a commit.",
-      "hash": "c026d8ec717b"
-    },
-    "demo": {
-      "line": "The vault demo worked, and exposed Cedar failing open",
-      "para": "Using sgit 0.21.0 and cedarpy 4.12.2, a gate passed version one at fourteen of fourteen and refused version two until the schema changed, then fifteen of fifteen. An old-shape request returned Allow because Cedar skips erroring policies. Signed tags, read-only enforcement and a hash-chained append lane recorded eight allows and seven denials.",
-      "hash": "71dae1c17a28"
-    },
-    "adds": {
-      "line": "A vault adds distribution, validation, evidence and history",
-      "para": "A read key deploys rules without power to change them, and the same gate runs before push and after load. Every decision names its policy, tag and commit in a lane the decider cannot read or rewrite. AgentCore's new Dogwood language, with session-history conditions, makes a trustworthy history more valuable.",
-      "hash": "a08c06e028b9"
-    },
-    "brief": {
-      "line": "The MVP brief: gate releases, deny errors, prove it",
-      "para": "Start from the demo, make validation and tests a release rule, and treat any evaluation error as Deny. Wire it to a pre-tool hook in the newsroom session, keep annotations back to ABP rules, and export signed tags to managed stores. Prove it in CI, run it two weeks, and never print a key.",
-      "hash": "2b484c582c98"
-    },
-    "limits": {
-      "line": "The demo is local, tested not proved, and unintegrated",
-      "para": "It ran on one machine with fifteen decisions, through the unofficial cedarpy binding without symbolic analysis. There is no AWS integration yet, the adopters list is AWS's own, the evidence key was shared rather than sealed to an auditor, and Dogwood has not been used. Contact: agent@riskmandate.ai.",
-      "hash": "e142dad378ed"
-    },
-    "sources": {
-      "line": "Sources: Cedar, CNCF, AWS documentation and the OOPSLA paper",
-      "para": "Drawn from a 14 October 2026 voice memo, with the demo built by the site's agent. Sources include AWS's Cedar announcements, the CNCF page, Cedar's GitHub and docs, Cutler and others at OOPSLA 2024, the Lean case study, AgentCore and policy store documentation, Sondera's harness and Dogwood.",
-      "hash": "20b8bc12d671"
-    }
+ "slug": "cedar-and-the-policy-vault",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "Adopt Cedar; a vault adds why, version and evidence",
+   "para": "Cedar is mature: open-sourced by AWS in 2023, a CNCF Sandbox project, used by AgentCore Policy and proved in Lean. It covers grant and barrier but not why a rule exists, which version applied, or what it decided. A vault demo added those, and found that Cedar skips a failing forbid, so it fails open.",
+   "hash": "3819e942f91a"
+  },
+  "in-short": {
+   "line": "Cedar speaks our language; a vault adds the rest",
+   "para": "Cedar maps permit to grant, forbid to barrier and schema to footprint. It lacks why, which version and what was decided, which a vault carries through history, signed releases, read keys and an append lane. The demo ran two releases and fifteen decisions; an invalid forbid fails open, so deny on error.",
+   "hash": "98ed60bbfa85"
+  },
+  "why": {
+   "line": "Cedar is the most mature policy language available",
+   "para": "AWS open-sourced Cedar on 10 May 2023 under Apache 2.0, in Rust, built to be verified formally. It joined the CNCF as a Sandbox project on 8 October 2025. AgentCore Policy evaluates every agent tool call in Cedar, Sondera's harness uses it, and cedar-for-agents generates schemas from MCP tools.",
+   "hash": "4fb6b678951b"
+  },
+  "language": {
+   "line": "Default deny, forbid wins, and the design is proved",
+   "para": "Five ideas carry Cedar: default deny, forbid overriding permit, requests of principal, action, resource and context, and a schema checked by a validator. Its design is modelled and proved in Lean, and no version ships without current proofs. OOPSLA 2024 found it as readable as OpenFGA and Rego and far faster.",
+   "hash": "9dea623c3867"
+  },
+  "crosswalk": {
+   "line": "Most of a behaviour policy maps onto Cedar cleanly",
+   "para": "Grant becomes permit, barrier becomes forbid, footprint becomes entities, and skill rows and business layers become forbids on labels or context. The mandate and the version in force have no Cedar construct. Annotations such as @abp_rule(\"9\") act as edges between Cedar's graph and ours, without replacing either.",
+   "hash": "22496bf22177"
+  },
+  "today": {
+   "line": "Cedar stores keep current state, not history or provenance",
+   "para": "In AWS, policies live in a policy store with optional strict schema validation, but the API offers no versions, history or export, and deleting a store is permanent. Changed schemas do not re-evaluate existing policies, and nothing signs policies. Repositories add history but expose plaintext and link no decision to a commit.",
+   "hash": "c026d8ec717b"
+  },
+  "demo": {
+   "line": "The vault demo worked, and exposed Cedar failing open",
+   "para": "Using sgit 0.21.0 and cedarpy 4.12.2, a gate passed version one at fourteen of fourteen and refused version two until the schema changed, then fifteen of fifteen. An old-shape request returned Allow because Cedar skips erroring policies. Signed tags, read-only enforcement and a hash-chained append lane recorded eight allows and seven denials.",
+   "hash": "71dae1c17a28"
+  },
+  "adds": {
+   "line": "A vault adds distribution, validation, evidence and history",
+   "para": "A read key deploys rules without power to change them, and the same gate runs before push and after load. Every decision names its policy, tag and commit in a lane the decider cannot read or rewrite. AgentCore's new Dogwood language, with session-history conditions, makes a trustworthy history more valuable.",
+   "hash": "a08c06e028b9"
+  },
+  "brief": {
+   "line": "The MVP brief: gate releases, deny errors, prove it",
+   "para": "Start from the demo, make validation and tests a release rule, and treat any evaluation error as Deny. Wire it to a pre-tool hook in the newsroom session, keep annotations back to ABP rules, and export signed tags to managed stores. Prove it in CI, run it two weeks, and never print a key.",
+   "hash": "2b484c582c98"
+  },
+  "limits": {
+   "line": "The demo is local, tested not proved, and unintegrated",
+   "para": "It ran on one machine with fifteen decisions, through the unofficial cedarpy binding without symbolic analysis. There is no AWS integration yet, the adopters list is AWS's own, the evidence key was shared rather than sealed to an auditor, and Dogwood has not been used. Contact: agent@riskmandate.ai.",
+   "hash": "e142dad378ed"
+  },
+  "sources": {
+   "line": "Sources: Cedar, CNCF, AWS documentation and the OOPSLA paper",
+   "para": "Drawn from a 14 October 2026 voice memo, with the demo built by the site's agent. Sources include AWS's Cedar announcements, the CNCF page, Cedar's GitHub and docs, Cutler and others at OOPSLA 2024, the Lean case study, AgentCore and policy store documentation, Sondera's harness and Dogwood.",
+   "hash": "20b8bc12d671"
   }
+ }
 }

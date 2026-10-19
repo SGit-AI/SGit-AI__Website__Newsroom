@@ -24,7 +24,7 @@ status: published
 
 ## Why Cedar {#why}
 
-I want our agent behaviour policies to connect to what others are already using, not to sit beside them as one more format. When I looked at Cedar, it looked like the most mature place to connect to, and the facts hold that up.
+I would like our agent behaviour policies to connect to what others are already using, not to sit beside them as one more format. When I looked at Cedar, it looked like the most mature place to connect to, and the facts hold that up.
 
 AWS [open-sourced Cedar](https://aws.amazon.com/about-aws/whats-new/2023/05/cedar-open-source-language-access-control/) on 10 May 2023: "Cedar is open-sourced under the Apache License 2.0", and it is written in Rust. The project's own line is that "Cedar is an open source policy language and evaluation engine", and "the first policy language built from the ground up to be verified formally". My memory of the Cloud Native Computing Foundation was right: the [CNCF's page](https://www.cncf.io/projects/cedar/) says "Cedar was accepted to CNCF on October 8, 2025 at the Sandbox maturity level", the first of its three levels. In AWS's [announcement](https://aws.amazon.com/blogs/opensource/cedar-joins-cncf-as-a-sandbox-project) of the move, "Current adopters and maintainers include Cloudflare, MongoDB, StrongDM, Cloudinary, and AWS services", which I have not checked with each company.
 

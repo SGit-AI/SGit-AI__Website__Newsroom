@@ -29,7 +29,7 @@ Every pipeline produces things somebody wants later: the build, its manifest and
 
 [Artifacts](https://github.com/actions/upload-artifact) "are retained for 90 days by default", are immutable since version 4, and are meant to "share that data with another job in the same workflow"; delete the run and they go with it. The [dependency cache](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching) is 10 GB per repository, and "GitHub will remove any cache entries that have not been accessed in over 7 days"; runs "cannot restore caches created for child branches or sibling branches". [Job outputs](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax) "can be a maximum of 1 MB per job", and "outputs containing secrets are redacted on the runner". All three live inside GitHub, readable by whoever can read the repository's runs, and none is a versioned history you can hand to someone outside it.
 
-What I want from a pipeline is closer to what this site wants from its agents, in [Encrypted memory for isolated agents](/articles/encrypted-memory-for-isolated-agents.html): compute that is gone after the task, and a memory that is not. A CI job is exactly that kind of compute.
+What I would like from a pipeline is closer to what this site wants from its agents, in [Encrypted memory for isolated agents](/articles/encrypted-memory-for-isolated-agents.html): compute that is gone after the task, and a memory that is not. A CI job is exactly that kind of compute.
 
 ## What was tested {#tested}
 

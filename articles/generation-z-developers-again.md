@@ -10,7 +10,7 @@
 
 # Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 4 versions](versions/generation-z-developers-again.md) · [newsroom v0.12.116](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zcareersdevelopersleanpubback-cataloguearticlegen-z-book
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.3.0, 5 versions](versions/generation-z-developers-again.md) · [newsroom v0.12.116](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zcareersdevelopersleanpubback-cataloguearticlegen-z-book
 
 ***Abstract:** In 2018 I wrote a book called Generation Z Developers, key concepts and ideas for the next generation of developers. It is on Leanpub, 60% complete, last updated on 8 October 2018, read by 465 people, and it is also on Amazon. It was a decent book, full of spelling mistakes, and a lot of what I write about now is already in it, as chapter outlines: pioneers, settlers and town planners, graphs, your future self, publishing, GitHub as your CV; and, in a finished chapter, the advice to act like you are part of the company you want to work for. Of its 138 files, 90 are still outlines. I think the time is right for a new edition, Generation Z Developers (AI edition), because the outlines have since been written, as articles on this site. This is the plan. Keep the name, because the people it is for are still Generation Z and they all have to be developers now, with (AI edition) in brackets, and date it October 2026. Frame it with Wardley's explorers, villagers and town planners. Do it first, before the other books: a thorough review, an agent that interviews me as its editor, quick iterations in public, my handwritten notes, and then Amazon, where I already publish, with a launch in Portugal. It is the book I would most like to hand to the people I am trying to help: here is the manual for getting into development, and here is the manual for getting a job.*
 
@@ -85,9 +85,9 @@ If everyone is a developer, the better question is what kind. Simon Wardley's an
 
 ## Why this one first
 
-I want to do more books, on the graphs among others. But this one probably has enough content and material already, and because one version is already published, we can build on the back of it: fix it, do a much better release, and publish it as a new version on Amazon. It is a good target: something I can focus on, iterate on quickly, release, and move on. If the workflow works, a new version of Hacking Portugal can follow the same way.
+I would like to do more books, on the graphs among others. But this one probably has enough content and material already, and because one version is already published, we can build on the back of it: fix it, do a much better release, and publish it as a new version on Amazon. It is a good target: something I can focus on, iterate on quickly, release, and move on. If the workflow works, a new version of Hacking Portugal can follow the same way.
 
-And it is the book I want to give people. Every time I meet someone and ask: do you know about Wardley maps? Do you have an agentic workflow? I want to be able to hand them this.
+And it is the book I would like to give people. Every time I meet someone and ask: do you know about Wardley maps? Do you have an agentic workflow? I would like to be able to hand them this.
 
 ## How it gets made
 

@@ -68,7 +68,7 @@ Counting the articles on this site and on sgit.ai, by hand and approximately:
 
 The bigger idea is not my books. One of the most important things in any story is its constraints and its failures, and those almost never get captured. Think of someone like rUv, with 226 public repositories on GitHub, or Simon Wardley: there are so many stories, evolutions and nuggets that exist only in their heads, in old repositories and in conversations. I think we can now capture that, make it easy to consume, and help make great books from it.
 
-But I do not want to start there. I want a better workflow first, and I do not want someone else's story to be my first experiment. It is the same as the [wires](https://newsroom.sgit.ai/wire/index.html): we started one, now there are four, and I do not yet know which will find its readers. With books it may be the third or the fifth that hits the sweet spot, and it may be mine or someone else's. The way to find out is to make several, quickly, and listen.
+But I do not want to start there. I would like a better workflow first, and I do not want someone else's story to be my first experiment. It is the same as the [wires](https://newsroom.sgit.ai/wire/index.html): we started one, now there are four, and I do not yet know which will find its readers. With books it may be the third or the fifth that hits the sweet spot, and it may be mine or someone else's. The way to find out is to make several, quickly, and listen.
 
 ## What this does not claim {#limits}
 

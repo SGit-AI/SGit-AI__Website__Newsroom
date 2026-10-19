@@ -10,7 +10,7 @@
 
 # The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.0.0](versions/the-tokens-hook.md) · [newsroom v0.12.57](https://newsroom.sgit.ai/admin/versions.html) · tokenscostsprompt-cachinghooksclaude-codeagent-behaviour-policyobservabilityopentelemetrycodexgemini-clicursorbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/the-tokens-hook.md) · [newsroom v0.12.57](https://newsroom.sgit.ai/admin/versions.html) · tokenscostsprompt-cachinghooksclaude-codeagent-behaviour-policyobservabilityopentelemetrycodexgemini-clicursorbriefarticle
 
 ***Abstract:** It is easy to spend a lot of money on model calls without seeing where it goes, and the user is the person who sees least. So I asked for a small, focused agent behaviour policy about tokens: in observe mode first, it should show the user, in a box of ASCII under each answer, how many tokens the session has read, how many came from the cache, how many it wrote, how big the context is and roughly what it has cost. This site's agent built it as a Claude Code hook of 132 lines with a policy file, and tested it. A prompt cannot do this job: asked to report its own usage, the model said twice, correctly, that it could not see the numbers. The hook gave it the exact figures, one turn behind, in about a millisecond. Building it found a bug in our own session report, which had been counting every response two or three times, because the transcript repeats a response's usage on each of its content blocks. It also found that, in this version of Claude Code, the transcript a hook can read carries the system prompt and every tool definition, though the documentation does not say so. This session has read 99% of its input from the cache, which at list prices is the difference between about $170 and about $1,950. The other tools vary: Codex, Gemini CLI and Cursor have hooks and usage commands, the chat apps show only limits. And this is the brief for tokens.hook.sgit.ai, a small site for a small, mission-critical piece of code.*
 
@@ -55,7 +55,7 @@ Two findings came out of reading it.
 
 The hook is one Python file of 132 lines and a policy file. Every time it runs, it seeks to where it stopped last time, reads only the new lines, counts each response once, prices it by its model, and saves the totals. The first run on this session's 66 MB transcript took 252 milliseconds; every run after it took about one millisecond inside the hook, and about 31 milliseconds including starting Python. If the file gets shorter, as it can after a compaction or a restore, it starts again.
 
-The policy carries the version, the mode, the limits and the prices, with their source. Prices are per model, from [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing): a five-minute cache write is 1.25 times the base input price, a one-hour write twice, a read a tenth, and "Cache hits and refreshes on Claude Opus 5.5 and Claude Sonnet 5.5 are priced at 0.05x the base input price." The modes are the ones I want for every policy: observe shows and logs; warn also warns when a limit is crossed; enforce blocks the next prompt once the session's budget is spent.
+The policy carries the version, the mode, the limits and the prices, with their source. Prices are per model, from [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing): a five-minute cache write is 1.25 times the base input price, a one-hour write twice, a read a tenth, and "Cache hits and refreshes on Claude Opus 5.5 and Claude Sonnet 5.5 are priced at 0.05x the base input price." The modes are the ones I would like for every policy: observe shows and logs; warn also warns when a limit is crossed; enforce blocks the next prompt once the session's budget is spent.
 
 Where the output goes decides who sees it. A `systemMessage` on `Stop` is shown to the user under the answer. Additional context on `UserPromptSubmit` goes to the model, so it can be frugal. A log line per event stays on the machine. Here is the box for this session, as the hook drew it while this article was written:
 
@@ -92,7 +92,7 @@ Caching works differently in each. OpenAI's is on by default and discounts reuse
 
 ## A site for one small hook
 
-I want this to live at tokens.hook.sgit.ai, as an example of how a mission-critical hook should be run: a small code base, mapped completely, measured, and released like any other software. [Hooks are kernel code](hooks-are-kernel-code.md) made the argument; this is the first hook to get the treatment.
+I would like this to live at tokens.hook.sgit.ai, as an example of how a mission-critical hook should be run: a small code base, mapped completely, measured, and released like any other software. [Hooks are kernel code](hooks-are-kernel-code.md) made the argument; this is the first hook to get the treatment.
 
 1. **The code and the policy.** The hook, the policy file and its schema, under version control, with releases signed and tagged.
 2. **The graph.** Every input field, every output, every mode and every limit, as a graph that links to the line of code that handles it.

@@ -10,7 +10,7 @@
 
 # Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/search-as-navigation.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · searchgraphsfractal-semantic-graphsontologytaxonomygraph-ragnewsroombriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/search-as-navigation.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · searchgraphsfractal-semantic-graphsontologytaxonomygraph-ragnewsroombriefarticle
 
 ***Abstract:** This site's search works, but it answers the way every search box does, with a list. We now have far more than text to search with: a graph of the argument for every article, a one-line summary for every section, figures with captions, trails, topics and reviews. So the next version of search should be navigation rather than question and answer. Type Portugal and see not just the articles about Portugal, but the graph around them: their ideas, their sections as one-liners, their images as a collage, the people and things they connect to, and on the side, what the word could mean and which combinations are worth following, each with an exact count. The reader builds the query by walking. All of it deterministic, in the browser, with code and graphs and no model, plus a pane that shows exactly what was fetched, how each result arrived and how long each step took. It also exposes the work: 663 tags on 182 articles, 396 of them used once, and 2,230 ideas in the graphs, of which only 47 appear in more than one article. That is the taxonomy debt, and paying it down is what makes deterministic search good. My hypothesis is that the better the taxonomy, the ontology and the graph, the less a model is needed, and that when one is added, it will do better on a clean graph than on a vector store. This is the brief for the agent that builds it, and the test of that hypothesis.*
 
@@ -35,7 +35,7 @@ But it answers the way every search box answers: with a list. You type, you get 
 
 ## Search as navigation
 
-What I want is closer to walking than to asking. Say I type *Portugal*. I should see the articles about Portugal, but also the graph around them: the ideas they share, the people and companies they mention, the wire stories, the other articles they link to. I should see their sections as one-liners, so I can tell in a few seconds which part of which article is the one I want. I should see their figures as a collage, because many of these articles have good images, and an image is often how I remember a piece.
+What I have in mind is closer to walking than to asking. Say I type *Portugal*. I should see the articles about Portugal, but also the graph around them: the ideas they share, the people and companies they mention, the wire stories, the other articles they link to. I should see their sections as one-liners, so I can tell in a few seconds which part of which article is the one I want. I should see their figures as a collage, because many of these articles have good images, and an image is often how I remember a piece.
 
 And on the side, as I type, the page should tell me what my words could mean. *Portugal* could be the country, the Portugal wire, the tag, or just the word. Once I pick one, it should show what sits nearest, and which combinations are worth following: Portugal and startups, Portugal and OWASP, Portugal and the talks I gave in Lisbon, each with an exact count of how many articles have both. I pick one, and the query grows. I am building the query by navigating, and the page is helping me say what I am looking for.
 
@@ -49,7 +49,7 @@ The browser can do far more of this than people assume. This site already runs [
 
 ## The pane that shows the working
 
-I want a pane on the side that shows exactly what is happening. It is how I will debug this, and it is what a power user will want: every file fetched, its size and how long it took; how each word resolved, and by which rule; each step of the walk and how many nodes it touched; why each result is there, and its score; the same query as SQL and as SPARQL, editable; and the time each stage took, from loading to drawing.
+I would like a pane on the side that shows exactly what is happening. It is how I will debug this, and it is what a power user will want: every file fetched, its size and how long it took; how each word resolved, and by which rule; each step of the walk and how many nodes it touched; why each result is there, and its score; the same query as SQL and as SPARQL, editable; and the time each stage took, from loading to drawing.
 
 This matters beyond debugging. A search that can show its working is one you can trust, and one you can improve, because when a result is wrong you can see which part of the graph brought it in.
 

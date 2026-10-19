@@ -32,7 +32,7 @@ The post makes six points. The prototype is the easy part: "Turning it into a to
 
 The trend behind it is real. McKinsey's [State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) found that 32 percent of respondents had decided against buying at least one software product or feature because they could build it in-house with coding agents.
 
-I agree with almost all of it. What I want to add is that this site has been working on the same question for months, from the other side, and I think the answer is already written down. Here it is, article by article.
+I agree with almost all of it. What I would like to add is that this site has been working on the same question for months, from the other side, and I think the answer is already written down. Here it is, article by article.
 
 ## The prototype is not the mess {#brief}
 

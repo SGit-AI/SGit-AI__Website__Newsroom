@@ -31,7 +31,7 @@ But it answers the way every search box answers: with a list. You type, you get 
 
 ## Search as navigation {#navigation}
 
-What I want is closer to walking than to asking. Say I type *Portugal*. I should see the articles about Portugal, but also the graph around them: the ideas they share, the people and companies they mention, the wire stories, the other articles they link to. I should see their sections as one-liners, so I can tell in a few seconds which part of which article is the one I want. I should see their figures as a collage, because many of these articles have good images, and an image is often how I remember a piece.
+What I have in mind is closer to walking than to asking. Say I type *Portugal*. I should see the articles about Portugal, but also the graph around them: the ideas they share, the people and companies they mention, the wire stories, the other articles they link to. I should see their sections as one-liners, so I can tell in a few seconds which part of which article is the one I want. I should see their figures as a collage, because many of these articles have good images, and an image is often how I remember a piece.
 
 And on the side, as I type, the page should tell me what my words could mean. *Portugal* could be the country, the Portugal wire, the tag, or just the word. Once I pick one, it should show what sits nearest, and which combinations are worth following: Portugal and startups, Portugal and OWASP, Portugal and the talks I gave in Lisbon, each with an exact count of how many articles have both. I pick one, and the query grows. I am building the query by navigating, and the page is helping me say what I am looking for.
 
@@ -45,7 +45,7 @@ The browser can do far more of this than people assume. This site already runs [
 
 ## The pane that shows the working {#pane}
 
-I want a pane on the side that shows exactly what is happening. It is how I will debug this, and it is what a power user will want: every file fetched, its size and how long it took; how each word resolved, and by which rule; each step of the walk and how many nodes it touched; why each result is there, and its score; the same query as SQL and as SPARQL, editable; and the time each stage took, from loading to drawing.
+I would like a pane on the side that shows exactly what is happening. It is how I will debug this, and it is what a power user will want: every file fetched, its size and how long it took; how each word resolved, and by which rule; each step of the walk and how many nodes it touched; why each result is there, and its score; the same query as SQL and as SPARQL, editable; and the time each stage took, from loading to drawing.
 
 This matters beyond debugging. A search that can show its working is one you can trust, and one you can improve, because when a result is wrong you can see which part of the graph brought it in.
 
