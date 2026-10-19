@@ -28,7 +28,7 @@ This is the book I will send to anyone I know who wants to get into AI, or shoul
 
 ## Short and punchy {#punchy}
 
-People liked the first book. There are some kind reviews of it, and what I heard most was that it was short and punchy. Of course there were spelling mistakes, and of course parts could have been expanded. But it was a condensation of ideas, and almost every line, every paragraph made you think. That is what I would like this one to be.
+People liked the first book. The reviews on its Amazon listing say so: "Amazing read for anyone new to, or wanting to get into programming," one says, and another, "I wish I had this type of book when I started my career." And what I heard most was that it was short and punchy. Of course there were spelling mistakes, and of course parts could have been expanded. But it was a condensation of ideas, and almost every line, every paragraph made you think. That is what I would like this one to be.
 
 ## Co-written with Claude {#co-written}
 
@@ -58,7 +58,7 @@ And one rule that matters as much as the others: not every piece of feedback nee
 
 ## What this does not claim {#limits}
 
-- **The reviews are from memory.** The Amazon listing could not be read for this article.
+- **The reviews were found later.** The Amazon listing could not be read when this was first written; the book's website found the reviews on 19 October.
 - **The ratio is from this site, not the book.** The book will measure its own.
 - **"Not slop" is something to show, not to say.** The evidence is the point.
 - **Synthetic readers are a tool, not readers.** Real readers come after.

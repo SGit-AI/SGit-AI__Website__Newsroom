@@ -105,6 +105,7 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#a-websi
 
 ### Continued by
 
+- [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](discovering-the-book.md) How a team of agents built gen-z-developers.sgit.ai in one evening: 37 releases, two release candidates, and a positioning found after the first.
 - [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](short-punchy-and-co-written.md) Generation Z Developers (AI edition) must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](a-book-for-one-reader.md) A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.
 

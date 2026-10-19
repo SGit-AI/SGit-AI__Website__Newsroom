@@ -10,7 +10,7 @@
 
 # Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/short-punchy-and-co-written.md) · [newsroom v0.12.119](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zwritingqualitygen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.3.0, 4 versions](versions/short-punchy-and-co-written.md) · [newsroom v0.12.119](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zwritingqualitygen-z-bookarticle
 
 ***Abstract:** More notes for the book. It is a book I will send to anyone I know who wants to, or should, get into AI, so it needs chapters for people who do not yet work the way I do, including one on setting up a Google Workspace and the agentic workflow behind my emails. The first edition was liked for one thing above all: it was short and punchy, a condensation of ideas where almost every paragraph made you think. The second has to be the same. It will also be co-written with Claude, and I would like to say so and credit it, and to show the ratio: how many words of voice memos, edits and reviews go into each word of the book. Readers will open it expecting AI slop. My first published pieces, made with ChatGPT's deep research, got exactly that reaction; the articles on this site now get told they sound like me. So the book should meet the suspicion head on, with the evidence. To keep it tight, every paragraph, group of paragraphs and chapter should know what it is: its evidence, its facts, its hypotheses, its purpose, all in a graph, which also shows where we repeat ourselves. We can refactor everything until each part is signed off. Synthetic readers will tell us what they understood and what they did not. And not every issue they raise needs fixing: sometimes the answer is, we are not doing that.*
 
@@ -32,7 +32,7 @@ This is the book I will send to anyone I know who wants to get into AI, or shoul
 
 ## Short and punchy
 
-People liked the first book. There are some kind reviews of it, and what I heard most was that it was short and punchy. Of course there were spelling mistakes, and of course parts could have been expanded. But it was a condensation of ideas, and almost every line, every paragraph made you think. That is what I would like this one to be.
+People liked the first book. The reviews on its Amazon listing say so: "Amazing read for anyone new to, or wanting to get into programming," one says, and another, "I wish I had this type of book when I started my career." And what I heard most was that it was short and punchy. Of course there were spelling mistakes, and of course parts could have been expanded. But it was a condensation of ideas, and almost every line, every paragraph made you think. That is what I would like this one to be.
 
 ## Co-written with Claude
 
@@ -62,7 +62,7 @@ And one rule that matters as much as the others: not every piece of feedback nee
 
 ## What this does not claim
 
-- **The reviews are from memory.** The Amazon listing could not be read for this article.
+- **The reviews were found later.** The Amazon listing could not be read when this was first written; the book's website found the reviews on 19 October.
 - **The ratio is from this site, not the book.** The book will measure its own.
 - **"Not slop" is something to show, not to say.** The evidence is the point.
 - **Synthetic readers are a tool, not readers.** Real readers come after.
@@ -82,6 +82,10 @@ Vaults & methodGraphs & knowledge[This article as a graph →](graphs.md#short-p
 - [A website to finish the book: gen-z-developers.sgit.ai, where the released book lives in the repository, the working book lives in a vault, and agents help me review it at every altitude](a-website-to-finish-the-book.md) gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.
 - [How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon](how-to-run-synthetic-users.md) Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.
+
+### Continued by
+
+- [Discovering the book: how a team of agents built gen-z-developers.sgit.ai in one evening, two release candidates, and a new positioning that only appeared after the first](discovering-the-book.md) How a team of agents built gen-z-developers.sgit.ai in one evening: 37 releases, two release candidates, and a positioning found after the first.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

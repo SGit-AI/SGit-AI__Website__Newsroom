@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,257 | +3 / −0 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-man-behind-the-curtain/v1.1.0.md) · [current](../the-man-behind-the-curtain.md) |
+| **v1.1.0** | 2026-10-19 | minor | 2,257 | +3 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](the-man-behind-the-curtain/v1.1.0.md) · [current](../the-man-behind-the-curtain.md) |
 | **v1.0.0** | 2026-10-18 | published | 2,254 | first published | [`9af3ea855`](https://github.com/SGit-AI/SGit-AI__Website/commit/9af3ea85577e9a3fcfcd265c4d5185cb1bdfd78d) |  |
 
 [← Back to the article](../the-man-behind-the-curtain.md) · [All articles](../index.md)

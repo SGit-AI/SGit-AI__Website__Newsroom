@@ -1,0 +1,37 @@
+{
+ "slug": "discovering-the-book",
+ "teaser": "How a team of agents built gen-z-developers.sgit.ai in one evening: 37 releases, two release candidates, and a positioning found after the first.",
+ "topics": ["vaults-and-method", "agents-and-policy"],
+ "core_idea": "In one evening a team of role-based agents, many in parallel, built the book's website from Dinis's voice memos: the 2018 edition rebuilt exactly, two frozen release candidates written from a register of traced ideas, a graph, storyboards, infographics, covers, decisions and synthetic readers; and the book's real positioning, Generation ZX Developers, appeared only after the first full draft existed.",
+ "nodes": [
+  {"id": "evening", "label": "One evening, 37 releases", "kind": "example", "summary": "21:27 to 04:33, London time."},
+  {"id": "v1", "label": "The first edition, rebuilt", "kind": "artefact", "summary": "28 chapters, the PDF matched page by page."},
+  {"id": "rc", "label": "Frozen release candidates", "kind": "method", "summary": "Read, marked, then diffed."},
+  {"id": "register", "label": "Ideas with provenance", "kind": "method", "summary": "198 ideas; the build refuses a missing source."},
+  {"id": "team", "label": "A team with roles", "kind": "concept", "summary": "Journalist, librarian, editor, writers, designer."},
+  {"id": "parallel", "label": "Working in parallel", "kind": "method", "summary": "Six working branches at once."},
+  {"id": "discovered", "label": "Positioning after the first draft", "kind": "claim", "summary": "Generation ZX, the startup edition."},
+  {"id": "readers", "label": "Synthetic readers", "kind": "example", "summary": "Nobody would buy it yet, and why."},
+  {"id": "decisions", "label": "Decisions in Dinis's words", "kind": "artefact", "summary": "Fifteen, each with what it supersedes."},
+  {"id": "open", "label": "Forty-seven notes waiting", "kind": "question", "summary": "The company chapters first."}
+ ],
+ "edges": [
+  {"from": "team", "to": "evening", "rel": "produces"},
+  {"from": "parallel", "to": "evening", "rel": "depends-on"},
+  {"from": "register", "to": "rc", "rel": "produces"},
+  {"from": "rc", "to": "discovered", "rel": "leads-to"},
+  {"from": "discovered", "to": "rc", "rel": "extends"},
+  {"from": "readers", "to": "open", "rel": "produces"},
+  {"from": "decisions", "to": "discovered", "rel": "produces"},
+  {"from": "v1", "to": "rc", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["generation-z-developers-again", "a-website-to-finish-the-book", "a-book-for-one-reader", "short-punchy-and-co-written", "books-from-articles", "the-graphs-books"],
+  "pages": [],
+  "sites": ["https://gen-z-developers.sgit.ai/", "https://github.com/SGit-AI/SGit-AI__Website__Gen-Z-Developers"]
+ },
+ "quotes": [
+  {"text": "I could not have found that positioning before the first draft existed.", "why": "On discovering the book."},
+  {"text": "That is what discovering a book looks like when a draft costs an hour instead of a year", "why": "Why the workflow matters."}
+ ]
+}

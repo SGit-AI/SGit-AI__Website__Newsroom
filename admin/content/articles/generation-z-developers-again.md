@@ -12,6 +12,8 @@ status: published
 
 !shot gz-outlines.webp | images/ | From the 2018 book to the 2026 articles. On the left, chapters of Generation Z Developers: five left as outlines in 2018 (pioneers, settlers and town planners; graphs; your future self; publish, publish, publish; GitHub as your CV) and two that were written (machine learning and AI; open source). On the right, the newsroom articles that have since written each one: software vendors as villagers and explorer coding; the graphs books and search as navigation; bringing my past work back; your own newsroom; act as the job you want; hired for the workflow; the fork next door. Of the book's 138 files, 90 are still outlines. | concept
 
+**Update, 19 October 2026.** The name moved on once the book's website started building the edition. Decision 010 made it *Gen Z Developers (GenAI Edition)*; after the first release candidate, decision 014 made it **Generation ZX Developers (GenAI Startup Edition)**: for Generation Z and Generation X, with the founder as the reader. [Discovering the book](/articles/discovering-the-book.html) tells how that happened. This article is kept as it was written, as the step before.
+
 ## In short {#in-short}
 
 - **I wrote Generation Z Developers in 2018.** On Leanpub at 60%, and on Amazon.

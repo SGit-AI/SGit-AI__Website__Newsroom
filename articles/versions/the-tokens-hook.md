@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,486 | +2 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-tokens-hook/v1.1.0.md) · [current](../the-tokens-hook.md) |
+| **v1.1.0** | 2026-10-19 | minor | 2,486 | +2 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](the-tokens-hook/v1.1.0.md) · [current](../the-tokens-hook.md) |
 | **v1.0.0** | 2026-10-15 | published | 2,484 | first published | [`e4a2670ec`](https://github.com/SGit-AI/SGit-AI__Website/commit/e4a2670ec788c55ffc9da1bf151fcd97a5f67cf6) |  |
 
 [← Back to the article](../the-tokens-hook.md) · [All articles](../index.md)

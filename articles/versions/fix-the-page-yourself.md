@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-18 | minor | 2,496 | +1 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](fix-the-page-yourself/v1.2.0.md) · [current](../fix-the-page-yourself.md) |
+| **v1.2.0** | 2026-10-19 | minor | 2,496 | +1 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](fix-the-page-yourself/v1.2.0.md) · [current](../fix-the-page-yourself.md) |
 | **v1.1.0** | 2026-10-18 | minor | 2,495 | +3 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](fix-the-page-yourself/v1.1.0.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,492 | first published | [`037e8368e`](https://github.com/SGit-AI/SGit-AI__Website/commit/037e8368e111c6c9b2b55584a8c9ca16cea92ce8) |  |
 

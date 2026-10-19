@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-18 | minor | 2,158 | +3 / −0 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](agent-workflows-on-ephemeral-vaults/v1.1.0.md) · [current](../agent-workflows-on-ephemeral-vaults.md) |
+| **v1.1.0** | 2026-10-19 | minor | 2,158 | +3 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](agent-workflows-on-ephemeral-vaults/v1.1.0.md) · [current](../agent-workflows-on-ephemeral-vaults.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,155 | first published | [`362d46bff`](https://github.com/SGit-AI/SGit-AI__Website/commit/362d46bff1ef62c3ea1e8fb4af336873a1a49bc3) |  |
 
 [← Back to the article](../agent-workflows-on-ephemeral-vaults.md) · [All articles](../index.md)
