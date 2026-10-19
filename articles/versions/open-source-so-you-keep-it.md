@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-19 | published | 1,547 | first published | this release | [current](../open-source-so-you-keep-it.md) |
+| **v1.0.0** | 2026-10-19 | published | 1,547 | first published | [`3d49fb8d6`](https://github.com/SGit-AI/SGit-AI__Website/commit/3d49fb8d64b7ed0a9dceda322239deee568d4235) | [current](../open-source-so-you-keep-it.md) |
 
 [← Back to the article](../open-source-so-you-keep-it.md) · [All articles](../index.md)
 

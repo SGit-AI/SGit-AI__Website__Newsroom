@@ -55,6 +55,183 @@
   ],
   "articles": [
     {
+      "slug": "governs-enforces-attests",
+      "title": "Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs",
+      "date": "2026-10-19",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/governs-enforces-attests.html",
+      "markdown": "https://newsroom.sgit.ai/articles/governs-enforces-attests.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/governs-enforces-attests.webp",
+      "teaser": "An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "abp",
+        "agents",
+        "enforcement",
+        "assurance",
+        "ruflo",
+        "article"
+      ],
+      "links_out": [
+        "policy-as-code-needs-a-policy-first",
+        "are-hooks-the-sweet-spot",
+        "hooks-are-kernel-code",
+        "our-first-pr-in-ruflo",
+        "the-policy-guards-the-door",
+        "the-policy-draws-the-liability-line",
+        "cedar-and-the-policy-vault"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "at-stack.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/at-stack.webp",
+          "caption": "Four layers of the same stack. At the top, the mandate: an Agent Behaviour Policy per role, saying what the role is granted, what it is for, the rules, and how each rule is kept. Below it, enforcement at three levels: the prompt, hooks in the harness, and a third-party system that blocks, such as Ruflo's policy engine in enforce mode. Below that, the record: Ruflo's decision receipt for every action, and an sgit vault keeping memory and receipts encrypted and versioned. At the bottom, attestation: what was assured, signed, so that someone outside can verify it. The first three exist in ruv.sgit; the fourth is the attestation layer.",
+          "kind": "architecture"
+        },
+        {
+          "file": "at-levels.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/at-levels.webp",
+          "caption": "Three levels of enforcement for one rule of an Agent Behaviour Policy. Level 1, the prompt: the rule is in the agent's instructions; it sees everything and enforces nothing; the agent can ignore it; the evidence is the agent's own account. Level 2, hooks: small deterministic programs the harness runs before and after each action; they can block, but they sit on the agent's machine and are often editable by its account; the evidence is the hook's log. Level 3, a third-party system: a policy engine, gateway or service that does the blocking, out of the agent's reach; the evidence is that system's decision record. The recommended level for any rule that matters is the third.",
+          "kind": "comparison"
+        },
+        {
+          "file": "at-without-with.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/at-without-with.webp",
+          "caption": "The same question, from a customer, an auditor or an insurer: was this agent working under that policy, and was each rule kept? Without an attestation layer: the operator sends the policy, the logs and the receipts; the third party cannot tell which version was in force, whether the receipts were edited, or which rules were only in the prompt; they take the operator's word. With an attestation layer: what was assured is signed, the policy version, the level of each rule, the receipts and the record's hash; the third party verifies the signature and reads what was and was not enforced; trust moves from the operator's word to a check.",
+          "kind": "comparison"
+        },
+        {
+          "file": "at-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/at-flow.webp",
+          "caption": "One action through the stack. The agent proposes a tool call. A hook checks it on the machine, as an early warning. The third-party policy engine decides allow or deny, in enforce mode, and writes a decision receipt. The receipt and the agent's memory go into the sgit vault, encrypted and versioned. The attestation layer signs what was assured: the policy version, each rule's level, the receipts, the record's hash. A customer, auditor or insurer verifies the signature without access to the operator's systems.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "governs-enforces-attests",
+        "teaser": "An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "An Agent Behaviour Policy governs rather than enforces: it states each role's mandate and the level that keeps each rule, the prompt, hooks, or a recommended third-party blocking system such as Ruflo's policy engine, whose receipts an sgit vault keeps; an attestation layer that signs what was assured is the separate piece that lets a third party verify it.",
+        "nodes": [
+          {
+            "id": "abp",
+            "label": "An ABP governs",
+            "kind": "concept",
+            "summary": "Reach, mandate, rules, and what keeps each rule."
+          },
+          {
+            "id": "prompt",
+            "label": "Level 1: the prompt",
+            "kind": "concept",
+            "summary": "Hope-based; the model keeps it or not."
+          },
+          {
+            "id": "hooks",
+            "label": "Level 2: hooks",
+            "kind": "concept",
+            "summary": "Deterministic, on the agent's machine."
+          },
+          {
+            "id": "third",
+            "label": "Level 3: a third-party system",
+            "kind": "method",
+            "summary": "Blocks out of the agent's reach; recommended."
+          },
+          {
+            "id": "ruflo",
+            "label": "Ruflo's policy engine",
+            "kind": "example",
+            "summary": "Enforce mode, a decision receipt per action."
+          },
+          {
+            "id": "vault",
+            "label": "sgit vault",
+            "kind": "artefact",
+            "summary": "Memory and receipts, encrypted and versioned."
+          },
+          {
+            "id": "attest",
+            "label": "Attestation",
+            "kind": "concept",
+            "summary": "Signs what was assured for third parties."
+          },
+          {
+            "id": "verifier",
+            "label": "Customer, auditor, insurer",
+            "kind": "example",
+            "summary": "Checks a signature, not the operator's word."
+          }
+        ],
+        "edges": [
+          {
+            "from": "abp",
+            "to": "prompt",
+            "rel": "produces"
+          },
+          {
+            "from": "abp",
+            "to": "hooks",
+            "rel": "produces"
+          },
+          {
+            "from": "abp",
+            "to": "third",
+            "rel": "produces"
+          },
+          {
+            "from": "ruflo",
+            "to": "third",
+            "rel": "extends"
+          },
+          {
+            "from": "ruflo",
+            "to": "vault",
+            "rel": "produces"
+          },
+          {
+            "from": "vault",
+            "to": "attest",
+            "rel": "leads-to"
+          },
+          {
+            "from": "attest",
+            "to": "verifier",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "policy-as-code-needs-a-policy-first",
+            "are-hooks-the-sweet-spot",
+            "hooks-are-kernel-code",
+            "our-first-pr-in-ruflo",
+            "the-policy-guards-the-door",
+            "the-policy-draws-the-liability-line",
+            "cedar-and-the-policy-vault"
+          ],
+          "pages": [],
+          "sites": [
+            "https://ruv.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "So an ABP governs. It does not, by itself, enforce. It names the enforcer.",
+            "why": "The precision the summary needed."
+          },
+          {
+            "text": "a rule kept in the prompt should be attested as a prompt rule, not as a control",
+            "why": "What an honest attestation carries."
+          }
+        ]
+      }
+    },
+    {
       "slug": "when-the-customer-becomes-the-commodity",
       "title": "When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure",
       "date": "2026-10-19",
@@ -8835,6 +9012,7 @@
         "the-policy-guards-the-door"
       ],
       "links_in": [
+        "governs-enforces-attests",
         "the-librarians-daily-brief",
         "three-linkedin-pages",
         "what-can-your-agent-reach",
@@ -10311,6 +10489,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "governs-enforces-attests",
         "allowed-is-not-right",
         "three-policies-for-an-agent",
         "three-decisions-mapped",
@@ -18024,7 +18203,9 @@
         "sgit-in-a-ci-pipeline",
         "the-policy-draws-the-liability-line"
       ],
-      "links_in": [],
+      "links_in": [
+        "governs-enforces-attests"
+      ],
       "figures": [
         {
           "file": "cd-pipeline.webp",
@@ -19979,6 +20160,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "governs-enforces-attests",
         "three-policies-for-an-agent",
         "case-law-for-agents",
         "the-tokens-hook",
@@ -21282,6 +21464,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "governs-enforces-attests",
         "your-own-newsroom",
         "the-tokens-hook",
         "commanders-intent-is-a-behaviour-policy",
@@ -22497,6 +22680,7 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "governs-enforces-attests",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
         "skill-behaviour-policy",
@@ -24995,6 +25179,7 @@
         "authority-outside-the-model"
       ],
       "links_in": [
+        "governs-enforces-attests",
         "how-the-newsletter-is-made",
         "your-own-newsroom",
         "cedar-and-the-policy-vault",

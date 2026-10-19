@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.132 · 213 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.133 · 214 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](articles/when-the-customer-becomes-the-commodity.md), 2026-10-19, 7 min. Put your customer on your Wardley map. Google and Amazon moved theirs to commodity and lost trust; airports moved back. Local delivery should be infrastructure.
+- [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](articles/governs-enforces-attests.md), 2026-10-19, 7 min. An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.
 
 ## Highlights
 
+- [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](articles/when-the-customer-becomes-the-commodity.md), 2026-10-19, 7 min.
 - [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](articles/open-source-so-you-keep-it.md), 2026-10-19, 6 min.
 - [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](articles/fund-it-with-time.md), 2026-10-19, 5 min.
 - [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](articles/reading-with-a-pen.md), 2026-10-19, 7 min.
-- [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](articles/you-are-a-developer.md), 2026-10-19, 10 min.
 
 ## Who are you reading as?
 
@@ -28,11 +28,11 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (56)
+### Agent security & policy (57)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](articles/governs-enforces-attests.md), 2026-10-19, 7 min.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](articles/the-man-behind-the-curtain.md), 2026-10-18, 9 min.
 - [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
-- [A minimal viable browser: why Firefox is the one that can build it, and what it would take](articles/a-minimal-viable-browser.md), 2026-10-18, 13 min.
 
 ### Building with agents (36)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
