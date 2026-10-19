@@ -14,13 +14,94 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-210 of 210 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+213 of 213 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-210 articles, 1209 links between them (1800 mentions in all). 200 articles cite an earlier one; 60 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (39 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+213 articles, 1218 links between them (1814 mentions in all). 203 articles cite an earlier one; 61 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (39 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](when-the-customer-becomes-the-commodity.md)
+
+2026-10-19 · Startups & strategyNews & evidence
+
+Where a company places its customer on the Wardley evolution axis shapes how it treats them; dominant platforms drift customers towards commodity, losing trust in ways price-based monopoly tests miss, while airports show the opposite loop, and local fulfilment treated as public infrastructure would open room for founders.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**9 nodes, 8 edges**
+
+- **Where is your customer?** (method) Custom built, product or commodity.
+- **Enshittification** (concept) Doctorow: good to users, then abuse them, then business customers.
+- **Price is one metric** (claim) Monopoly tests that only watch prices miss trust.
+- **Google lost my trust** (example) Ads became the purpose of the results.
+- **An alternative only has to be equivalent** (claim) Perplexity, once trust is gone.
+- **Amazon is not on my side** (example) Sponsored results; the FTC's junk-ads allegation.
+- **Airports found the way back** (example) Better service, more spending.
+- **Local delivery as infrastructure** (question) Like roads, for every high-street shop.
+- **Used because they have to** (claim) Open for disruption.
+
+> When an alternative comes along, it does not even have to be much better at the start. On losing trust.
+
+> It is very dangerous to be used because people have to, not because they want to. The conclusion.
+
+builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The SaaS apocalypse will be decided by inertia, not by AI](#saas-apocalypse-decided-by-inertia-not-by-ai).
+
+## [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](open-source-so-you-keep-it.md)
+
+2026-10-19 · Startups & strategyVaults & method
+
+Open sourcing your work, including what you bring into and build at your job with your managers aware, is how you keep using it across employers and into your own company; ideas are rarely copied, and an early, rough public history shows it evolved openly, which protects you.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 7 edges**
+
+- **Nobody copies it** (claim) Ideas need a specific person to happen.
+- **The cost of copying** (example) Three months optimistic, a year realistic.
+- **You keep using it** (concept) Closed work stays with the employer.
+- **Bring your projects into the job** (method) More productive, never from scratch.
+- **The Cyber Boardroom** (example) Open, while employed, managers aware; continued after leaving.
+- **Publish early and rough** (method) The history shows the evolution.
+- **Polished from nowhere raises questions** (claim) You never want lawyers involved.
+- **Separate machines, no competitor** (method) The line not to cross.
+- **A win for both sides** (claim) The learning improves the day job.
+
+> The advantage of open sourcing everything you do that people miss is that you get to use it too. The core idea.
+
+> Showing the sausage factory works in your favour. Why rough is better.
+
+builds on [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it); continued by [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time).
+
+## [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](fund-it-with-time.md)
+
+2026-10-19 · Startups & strategy
+
+Funding a startup is first a question of time: a founder should find it in the work and job they already have, make their existing revenue stream more effective, negotiate part time if they can, and treat savings, exits and debt as ways to buy time, taking investment only later.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 7 edges**
+
+- **Time first** (claim) Money is a means to buy time.
+- **A startup is a work of art** (concept) Money is the side effect.
+- **Start with your own revenue stream** (method) Make the work you do more effective.
+- **Solve a real problem** (claim) Or you chase shadows.
+- **More time than you think** (claim) Stop watching streaming.
+- **Start while employed** (method) The constraint makes you focus.
+- **Ask for part time** (example) Dinis did, offering a good solution.
+- **Debt buys time** (example) Back into debt for the GenAI startup.
+- **Avoid regret** (claim) There has never been a better time.
+
+> the most important thing a startup needs is time The core of the answer.
+
+> Debt is a means to an end: you are paying somebody to buy your time On the gamble.
+
+builds on [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders); continued by [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it).
 
 ## [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](reading-with-a-pen.md)
 
@@ -100,7 +181,7 @@ A founder should start a company as soon as there is revenue to put through it, 
 
 > so you might as well spend it on learning On what Portugal cost.
 
-builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders); continued by [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it).
+builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders); continued by [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it).
 
 ## [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](can-you-sell-it.md)
 
@@ -126,7 +207,7 @@ Founders should try to sell what they have as early as possible, expecting not t
 
 > Someone who pays more than it is worth, to help you, is not a market. Reading the signal.
 
-builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company); continued by [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company).
+builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company); continued by [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company).
 
 ## [A pull request by another name: the book reviewed chapter by chapter, the principles it should follow, and seven patches in a vault](a-pull-request-by-another-name.md)
 
@@ -1528,7 +1609,7 @@ A founder with a working, profitable product and competing investors can sell ex
 
 > the fork disciplines the founder because it is possible, and protects the founder because it is slow. Why the fork balances.
 
-builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
+builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
 
 ## [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](research-delivered-as-a-vault.md)
 
@@ -2174,7 +2255,7 @@ For twenty years the winning startup was often a clever outsider who found a pai
 
 > Prior experience in the specific industry predicts much greater rates of entrepreneurial success. The data on experts.
 
-builds on [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap); continued by [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom).
+builds on [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](#omnichannel-programming), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted](#not-a-straight-line), [Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not](#riskmandate-ten-questions), [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap); continued by [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](#when-the-customer-becomes-the-commodity), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom).
 
 ## [Omnichannel programming: briefs by voice, reviews by voice, previews on the phone, and one shared state underneath, at every stage from explorer to town planner](omnichannel-programming.md)
 
@@ -6123,7 +6204,7 @@ AI is available to both sides, so the SaaS apocalypse will be decided by inertia
 
 > The things SaaS companies refused to build, to protect their moats, are precisely the things an agent needs. The irony the article calls the whole piece in one paragraph: the moat is now what the customer's agent cannot get past.
 
-continued by [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](#a-reading-list-in-a-link), [The deck I could not download: an author-first home for presentations, as a business plan somebody else can build](#the-deck-i-could-not-download), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [A supply chain of vaults: how GenAI, open data and small custom tools could bring the price of food down](#supply-chain-of-vaults).
+continued by [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](#when-the-customer-becomes-the-commodity), [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](#you-are-a-developer), [Who will fix your mess? An answer to HBR's "deployment gap" from what this site has already published: explorers, villagers and town planners, a record of what the agents built, and open source so the answer never depends on one partner](#who-will-fix-your-mess), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last](#the-citizen-developer), [The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production](#the-eyeballs-get-cheap), [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](#a-reading-list-in-a-link), [The deck I could not download: an author-first home for presentations, as a business plan somebody else can build](#the-deck-i-could-not-download), [If somebody built a company on code review: how I would do it, and why it is only now possible](#if-somebody-built-a-company-on-code-review), [A supply chain of vaults: how GenAI, open data and small custom tools could bring the price of food down](#supply-chain-of-vaults).
 
 ## [Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema](introducing-fractal-semantic-graphs.md)
 

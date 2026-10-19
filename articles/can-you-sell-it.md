@@ -105,6 +105,8 @@ Startups & strategy[This article as a graph →](graphs.md#can-you-sell-it)
 
 ### Continued by
 
+- [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](open-source-so-you-keep-it.md) Nobody copies your open source ideas; the real advantage is that you keep using your own work from job to job, and a rough public history protects you.
+- [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](fund-it-with-time.md) A startup needs time before money. Start from your own revenue, start while employed, ask for part time, and treat debt as buying time. Avoid regret.
 - [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](start-a-company.md) Start a company once there is revenue: the UK in an afternoon, Portugal's monthly accountant learned the hard way, and Lithuania's e-residency next.
 
 [All articles](index.md) · [All graphs](graphs.md)

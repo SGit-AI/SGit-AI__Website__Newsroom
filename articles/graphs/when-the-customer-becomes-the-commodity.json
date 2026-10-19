@@ -1,0 +1,135 @@
+{
+  "slug": "when-the-customer-becomes-the-commodity",
+  "teaser": "Put your customer on your Wardley map. Google and Amazon moved theirs to commodity and lost trust; airports moved back. Local delivery should be infrastructure.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "Where a company places its customer on the Wardley evolution axis shapes how it treats them; dominant platforms drift customers towards commodity, losing trust in ways price-based monopoly tests miss, while airports show the opposite loop, and local fulfilment treated as public infrastructure would open room for founders.",
+  "nodes": [
+    {
+      "id": "where",
+      "label": "Where is your customer?",
+      "kind": "method",
+      "summary": "Custom built, product or commodity."
+    },
+    {
+      "id": "ensh",
+      "label": "Enshittification",
+      "kind": "concept",
+      "summary": "Doctorow: good to users, then abuse them, then business customers."
+    },
+    {
+      "id": "price",
+      "label": "Price is one metric",
+      "kind": "claim",
+      "summary": "Monopoly tests that only watch prices miss trust."
+    },
+    {
+      "id": "google",
+      "label": "Google lost my trust",
+      "kind": "example",
+      "summary": "Ads became the purpose of the results."
+    },
+    {
+      "id": "equiv",
+      "label": "An alternative only has to be equivalent",
+      "kind": "claim",
+      "summary": "Perplexity, once trust is gone."
+    },
+    {
+      "id": "amazon",
+      "label": "Amazon is not on my side",
+      "kind": "example",
+      "summary": "Sponsored results; the FTC's junk-ads allegation."
+    },
+    {
+      "id": "airports",
+      "label": "Airports found the way back",
+      "kind": "example",
+      "summary": "Better service, more spending."
+    },
+    {
+      "id": "infra",
+      "label": "Local delivery as infrastructure",
+      "kind": "question",
+      "summary": "Like roads, for every high-street shop."
+    },
+    {
+      "id": "disrupt",
+      "label": "Used because they have to",
+      "kind": "claim",
+      "summary": "Open for disruption."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ensh",
+      "to": "where",
+      "rel": "extends"
+    },
+    {
+      "from": "price",
+      "to": "ensh",
+      "rel": "extends"
+    },
+    {
+      "from": "google",
+      "to": "ensh",
+      "rel": "extends"
+    },
+    {
+      "from": "amazon",
+      "to": "ensh",
+      "rel": "extends"
+    },
+    {
+      "from": "google",
+      "to": "equiv",
+      "rel": "leads-to"
+    },
+    {
+      "from": "airports",
+      "to": "where",
+      "rel": "extends"
+    },
+    {
+      "from": "infra",
+      "to": "where",
+      "rel": "depends-on"
+    },
+    {
+      "from": "disrupt",
+      "to": "equiv",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-expert-founders"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pluralistic.net/2023/01/21/potemkin-ai/",
+      "https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon-illegally-maintaining-monopoly-power"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "When an alternative comes along, it does not even have to be much better at the start.",
+      "why": "On losing trust."
+    },
+    {
+      "text": "It is very dangerous to be used because people have to, not because they want to.",
+      "why": "The conclusion."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cc-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cc-map.webp",
+      "caption": "Where does your customer sit on your map? Along the evolution axis of a Wardley map: custom built, a customer you know and care for; product, a customer you sell to; commodity, a customer you do not care about. Arrows show the drift, as I see it: search users and shoppers moved right as ads became the purpose, and so did social media users; airport passengers moved back left, once better service made them spend more.",
+      "kind": "concept"
+    }
+  ]
+}

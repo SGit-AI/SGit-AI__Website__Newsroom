@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-19 | minor | 2,443 | +77 / −0 words; 1 changed, 1 added, 0 removed paragraphs | this release | [what changed](you-are-a-developer/v1.1.0.md) · [current](../you-are-a-developer.md) |
+| **v1.1.0** | 2026-10-19 | minor | 2,443 | +77 / −0 words; 1 changed, 1 added, 0 removed paragraphs | [`88af9da07`](https://github.com/SGit-AI/SGit-AI__Website/commit/88af9da07fb4505c025f755d5952e4ca9ac2187e) | [what changed](you-are-a-developer/v1.1.0.md) · [current](../you-are-a-developer.md) |
 | **v1.0.0** | 2026-10-19 | published | 2,366 | first published | [`074776681`](https://github.com/SGit-AI/SGit-AI__Website/commit/07477668172aaa83f10dc156346b84723439771d) |  |
 
 [← Back to the article](../you-are-a-developer.md) · [All articles](../index.md)

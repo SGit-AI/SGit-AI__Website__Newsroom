@@ -1,0 +1,35 @@
+{
+ "slug": "open-source-so-you-keep-it",
+ "teaser": "Nobody copies your open source ideas; the real advantage is that you keep using your own work from job to job, and a rough public history protects you.",
+ "topics": ["startups-and-strategy", "vaults-and-method"],
+ "core_idea": "Open sourcing your work, including what you bring into and build at your job with your managers aware, is how you keep using it across employers and into your own company; ideas are rarely copied, and an early, rough public history shows it evolved openly, which protects you.",
+ "nodes": [
+  {"id": "copy", "label": "Nobody copies it", "kind": "claim", "summary": "Ideas need a specific person to happen."},
+  {"id": "cost", "label": "The cost of copying", "kind": "example", "summary": "Three months optimistic, a year realistic."},
+  {"id": "keep", "label": "You keep using it", "kind": "concept", "summary": "Closed work stays with the employer."},
+  {"id": "bring", "label": "Bring your projects into the job", "kind": "method", "summary": "More productive, never from scratch."},
+  {"id": "tcb", "label": "The Cyber Boardroom", "kind": "example", "summary": "Open, while employed, managers aware; continued after leaving."},
+  {"id": "early", "label": "Publish early and rough", "kind": "method", "summary": "The history shows the evolution."},
+  {"id": "lawyers", "label": "Polished from nowhere raises questions", "kind": "claim", "summary": "You never want lawyers involved."},
+  {"id": "discipline", "label": "Separate machines, no competitor", "kind": "method", "summary": "The line not to cross."},
+  {"id": "winwin", "label": "A win for both sides", "kind": "claim", "summary": "The learning improves the day job."}
+ ],
+ "edges": [
+  {"from": "cost", "to": "copy", "rel": "extends"},
+  {"from": "keep", "to": "bring", "rel": "produces"},
+  {"from": "tcb", "to": "keep", "rel": "extends"},
+  {"from": "early", "to": "lawyers", "rel": "depends-on"},
+  {"from": "early", "to": "tcb", "rel": "extends"},
+  {"from": "discipline", "to": "bring", "rel": "depends-on"},
+  {"from": "bring", "to": "winwin", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["fund-it-with-time", "can-you-sell-it"],
+  "pages": [],
+  "sites": ["https://open-source.sgit.ai/founders/index.html", "https://sgit.ai/articles/not-a-straight-line.html"]
+ },
+ "quotes": [
+  {"text": "The advantage of open sourcing everything you do that people miss is that you get to use it too.", "why": "The core idea."},
+  {"text": "Showing the sausage factory works in your favour.", "why": "Why rough is better."}
+ ]
+}

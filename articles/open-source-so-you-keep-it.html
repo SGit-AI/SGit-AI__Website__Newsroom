@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it, SGit Newsroom</title>
+<meta name="description" content="People worry that if they open source their ideas, others will copy them. It does not happen: I have been open sourcing my ideas for years, and the ones I did not follow up are still there, not taken. The advantage people miss is that open source is how you get to keep using your own work. When you work for a company, what you build gets locked in, and when you leave you start from scratch. My trick was to work on open source projects that I brought into each company, so I was more productive there and never started again; my work kept getting better as I moved. The Cyber Boardroom began like that: an open experiment with AI while I was working for two companies, with my managers aware of it, and when I left both roles I continued where I had left off. So publish early, and rough. A rough public history shows an employer that it is an experiment and learning, which it is, and shows anyone who asks later how it evolved, bit by bit. A polished thing that appears from nowhere raises questions, and you never want lawyers involved. Keep it on separate machines, never build a competitor to your employer, and remember that the learning makes you better at the day job too.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/open-source-so-you-keep-it.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/open-source-so-you-keep-it.html">
+<meta property="og:title" content="Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it, SGit Newsroom">
+<meta property="og:description" content="People worry that if they open source their ideas, others will copy them. It does not happen: I have been open sourcing my ideas for years, and the ones I did not follow up are still there, not taken. The advantage people miss is that open source is how you get to keep using your own work. When you work for a company, what you build gets locked in, and when you leave you start from scratch. My trick was to work on open source projects that I brought into each company, so I was more productive there and never started again; my work kept getting better as I moved. The Cyber Boardroom began like that: an open experiment with AI while I was working for two companies, with my managers aware of it, and when I left both roles I continued where I had left off. So publish early, and rough. A rough public history shows an employer that it is an experiment and learning, which it is, and shows anyone who asks later how it evolved, bit by bit. A polished thing that appears from nowhere raises questions, and you never want lawyers involved. Keep it on separate machines, never build a competitor to your employer, and remember that the learning makes you better at the day job too.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/open-source-so-you-keep-it.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/open-source-so-you-keep-it.jpg">
+<link rel="alternate" type="text/markdown" href="open-source-so-you-keep-it.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it, SGit Newsroom", "headline": "Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it, SGit Newsroom", "description": "People worry that if they open source their ideas, others will copy them. It does not happen: I have been open sourcing my ideas for years, and the ones I did not follow up are still there, not taken. The advantage people miss is that open source is how you get to keep using your own work. When you work for a company, what you build gets locked in, and when you leave you start from scratch. My trick was to work on open source projects that I brought into each company, so I was more productive there and never started again; my work kept getting better as I moved. The Cyber Boardroom began like that: an open experiment with AI while I was working for two companies, with my managers aware of it, and when I left both roles I continued where I had left off. So publish early, and rough. A rough public history shows an employer that it is an experiment and learning, which it is, and shows anyone who asks later how it evolved, bit by bit. A polished thing that appears from nowhere raises questions, and you never want lawyers involved. Keep it on separate machines, never build a competitor to your employer, and remember that the learning makes you better at the day job too.", "url": "https://newsroom.sgit.ai/articles/open-source-so-you-keep-it.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.132</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.132</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it</p>
+ <h1>Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-19 &middot; <a href="versions/open-source-so-you-keep-it.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.132</a> &middot; <span class="chip">open-source</span><span class="chip">founders</span><span class="chip">careers</span><span class="chip">publishing</span><span class="chip">gen-z-book</span><span class="chip">article</span></p>
+<nav class="aseries" aria-label="Series: Generation ZX Founders (GenAI Edition)"><a href="#series"><b>Generation ZX Founders (GenAI Edition)</b></a> <span class="dim">14 of 15</span> &middot; <a href="fund-it-with-time.html" rel="prev">&larr; Fund it with time</a> &middot; <a href="when-the-customer-becomes-the-commodity.html" rel="next">When the customer becomes the commodity &rarr;</a></nav>
+ <p class="abstract"><em><b>Abstract:</b> People worry that if they open source their ideas, others will copy them. It does not happen: I have been open sourcing my ideas for years, and the ones I did not follow up are still there, not taken. The advantage people miss is that open source is how you get to keep using your own work. When you work for a company, what you build gets locked in, and when you leave you start from scratch. My trick was to work on open source projects that I brought into each company, so I was more productive there and never started again; my work kept getting better as I moved. The Cyber Boardroom began like that: an open experiment with AI while I was working for two companies, with my managers aware of it, and when I left both roles I continued where I had left off. So publish early, and rough. A rough public history shows an employer that it is an experiment and learning, which it is, and shows anyone who asks later how it evolved, bit by bit. A polished thing that appears from nowhere raises questions, and you never want lawyers involved. Keep it on separate machines, never build a competitor to your employer, and remember that the learning makes you better at the day job too.</em></p>
+<figure class="shot" data-shot="os-keep.webp" data-dir="images/" data-alt="Two careers, side by side. Closed: at each company you build something, it stays locked in when you leave, and at the next company you start from zero. Open: you bring your open source projects into each company, improve them there in the open, and carry them forward, so each job starts where the last one ended; the experiment you started on the side becomes a company." data-kind="comparison"><figcaption>Two careers, side by side. Closed: at each company you build something, it stays locked in when you leave, and at the next company you start from zero. Open: you bring your open source projects into each company, improve them there in the open, and carry them forward, so each job starts where the last one ended; the experiment you started on the side becomes a company.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Nobody copies your ideas.</b> I have open sourced mine for years; the ones I did not follow are still there.</li>
+<li><b>The real advantage: you keep using it.</b> Closed work stays with the employer.</li>
+<li><b>Bring your open source into the job.</b> More productive for them, and never starting from scratch for you.</li>
+<li><b>The Cyber Boardroom started that way.</b> In the open, while employed, with my managers aware.</li>
+<li><b>Publish early, and rough.</b> The history protects you.</li>
+<li><b>Polished things from nowhere raise questions.</b> And you never want lawyers involved.</li>
+<li><b>Be disciplined.</b> Separate machines, and never a competitor to your employer.</li>
+<li><b>It is a win for both sides.</b> The learning makes you better at the day job.</li>
+</ul>
+<h2 id="copying">Nobody copies it</h2>
+<p>People always think that if they open source something, others will copy it and take it. It does not happen. I can show it with my own history: I have been open sourcing my ideas for years, many of them I did not follow up, and they are still there. One of them, the one I describe below, I tried, and it did not work out. I still think it is a great idea, and I probably now have the technology to pull it off. As far as I can tell, nobody has.</p>
+<p>The reason is that an idea needs a specific person, with a specific understanding, to make it happen. <a href="https://open-source.sgit.ai/founders/index.html#cost">open-source.sgit.ai</a> maps what copying would actually cost an established company holding a full copy of your code: someone has to decide to do it, fund it, find someone to run it, pull developers off other work, deploy it, and then own it forever. Its estimate: "Optimistic: three months to reach where you already are. Realistic: closer to a year." Ideas are not what is scarce.</p>
+<h2 id="keep">You get to keep using it</h2>
+<p>The advantage of open sourcing everything you do that people miss is that you get to use it too.</p>
+<p>When you work for a company, everything you build usually gets locked in, and you have to be very careful, because there is a whole set of contracts around it. When you leave, you start from scratch. It is frustrating, and it is a waste.</p>
+<p>My trick, which worked very well, was to start early on working on open source projects that I brought into the company. In a weird way I was saying: I am making some changes to these projects, and I am bringing them in, so I am a lot more productive. Which I was. I never started from scratch in a new job, and my work kept getting better and better as I moved between companies.</p>
+<h2 id="cyber-boardroom">The Cyber Boardroom</h2>
+<p><a href="https://thecyberboardroom.com">The Cyber Boardroom</a> is the example. It was an experiment I did while I was working for two companies: I wanted to experiment with AI. Because I publish all the time, it did not stand out; it was not a big thing. I did it in the open, and I let all my managers know. Everybody was aware of it. It could have worked or not; it was an experiment, of the kind I had already been doing while working for other companies.</p>
+<p>When I left both roles, I continued where I had left off, and they were aware of it. It is not that I left and it was a success, either. I left, I formed the company, and The Cyber Boardroom was incorporated about a month later. Then I tried it, and it did not work. Fundamentally it was a wrapper around ChatGPT, there was not that much to it, and it was not the right time: what it needed was <a href="https://newsroom.sgit.ai/articles/not-a-straight-line.html">an environment to store confidential data</a>, which is what sgit is now. But the work was mine to continue, because it had always been in the open.</p>
+<h2 id="early">Publish early, and rough</h2>
+<p>If you work in a corporate environment and you have an idea, start talking about it, and the sooner the better. A lot of people are embarrassed to. They imagine an army of people out there waiting to complain about what they do. That army does not exist, and if you find someone like that, block them. You do not have to deal with it.</p>
+<p>Publishing early is also a great way to validate the market. You can experiment, see if anything bites, and you still have a job.</p>
+<p>The rougher it is, the better it protects you. A rough, public history shows your employer, if you are still there, that this is an experiment, learning, playing around, which it is: you are still very far from having a product or a company. And you are not making anything up, as long as you do not exaggerate. Showing the sausage factory works in your favour.</p>
+<p>The danger is the other way. If what you publish appears late and polished, a lot of questions can be asked, and people will want to understand what happened when. You never want that, and you never want lawyers involved, because you never want to put anyone in a tough position. I know several cases where people did not publish early and it became very messy: somebody inside was uncomfortable, somebody had to answer questions, and they threw the person under the bus, because it was not their problem. You want to be able to say: yes, you knew about it, I have been doing it for the last six months, here is the history, here is how it evolved, bit by bit. Then they can see it did not just spring up.</p>
+<h2 id="discipline">Be disciplined</h2>
+<p>Do it on separate machines and in separate environments. Do not build something that competes directly with the company you work for; that is a line not to cross. Apart from that, experiment.</p>
+<h2 id="win-win">A win for both sides</h2>
+<p>I would argue it added a lot of value both ways. What I was doing on the side was learning how to use generative AI in practice, which meant that in my day job I gave much better advice and understood what was going on much better. My employers got that, and I got to experiment.</p>
+<p>And it is how I found my startups, almost three startups later. It would have been much more painful, and probably would not have worked, if each time I had had to start from scratch. How you pay for the time it takes is the subject of the next article, <a href="fund-it-with-time.html">fund it with time</a>.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>"Nobody copies it" is my experience.</b> Some open source projects are copied; ideas on their own rarely are.</li>
+<li><b>This is not legal advice.</b> Read your employment contract; some claim what you build outside work.</li>
+<li><b>The Cyber Boardroom did not succeed.</b> The point is that the work stayed mine to continue.</li>
+<li><b>Telling your managers matters.</b> Open source without their knowledge is not the same thing.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo from me on 19 October 2026, written for this newsroom and for the book, <em>Generation ZX Founders (GenAI Edition)</em>. The cost of copying is from <a href="https://open-source.sgit.ai/founders/index.html#cost">open-source.sgit.ai, for founders</a>; The Cyber Boardroom's story is also in <a href="https://newsroom.sgit.ai/articles/not-a-straight-line.html">not a straight line</a>. Related: <a href="https://newsroom.sgit.ai/articles/what-open-source-is-and-is-not.html">what open source is, and what it is not</a>, <a href="fund-it-with-time.html">fund it with time</a>, <a href="can-you-sell-it.html">can you sell it?</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-19" topics="startups-and-strategy vaults-and-method" title="Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#open-source-so-you-keep-it">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="fund-it-with-time.html">Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it</a> <span class="dim">A startup needs time before money. Start from your own revenue, start while employed, ask for part time, and treat debt as buying time. Avoid regret.</span></li><li><a href="can-you-sell-it.html">Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn</a> <span class="dim">Start selling what you have, however rough. The point is not the sale but what you learn trying, and a payment is the best signal there is.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="fund-it-with-time.html">Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it</a> <span class="dim">A startup needs time before money. Start from your own revenue, start while employed, ask for part time, and treat debt as buying time. Avoid regret.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 212 &middot; <a href="../for/make.html#r=212">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/open-source-so-you-keep-it.jpg" download>open-source-so-you-keep-it.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="aseries-all" id="series">
+ <h2>Generation ZX Founders (GenAI Edition)</h2>
+ <p class="dim">Articles about Generation ZX Founders (GenAI Edition), the new book that grew out of Generation Z Developers (2018), first called Generation ZX Developers: the ideas going into it, and how it is being made. Every article tagged <span class="chip">gen-z-book</span> joins this list, in the order it was published.</p>
+ <ol><li><span class="aseries-n">1</span> <a href="hired-for-the-workflow.html">Hired for the workflow</a><br><span class="dim">I think October 2026 is a moment of real opportunity for anyone willing to get properly into agentic workflows.</span></li><li><span class="aseries-n">2</span> <a href="act-as-the-job-you-want.html">Act as the job you want</a><br><span class="dim">This is the advice I end up giving most often to people I know who are looking for a job.</span></li><li><span class="aseries-n">3</span> <a href="generation-z-developers-again.html">Generation Z Developers (AI edition)</a><br><span class="dim">In 2018 I wrote a book called Generation Z Developers, key concepts and ideas for the next generation of developers.</span></li><li><span class="aseries-n">4</span> <a href="a-book-for-one-reader.html">A book for one reader</a><br><span class="dim">Once the book is a graph, an agent can assemble it.</span></li><li><span class="aseries-n">5</span> <a href="a-website-to-finish-the-book.html">A website to finish the book</a><br><span class="dim">To make Generation Z Developers (AI edition), the plan is a website for it, consolidating the best of everything we have built so far into the most productive…</span></li><li><span class="aseries-n">6</span> <a href="short-punchy-and-co-written.html">Short, punchy, and co-written with Claude</a><br><span class="dim">More notes for the book.</span></li><li><span class="aseries-n">7</span> <a href="discovering-the-book.html">Discovering the book</a><br><span class="dim">On the evening of 18 October the repository for the book&#x27;s website was empty.</span></li><li><span class="aseries-n">8</span> <a href="a-pull-request-by-another-name.html">A pull request by another name</a><br><span class="dim">This morning I am reading the printed release candidate 2 of Generation ZX Developers, with a pen.</span></li><li><span class="aseries-n">9</span> <a href="can-you-sell-it.html">Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn</a><br><span class="dim">One of the most important pieces of advice I can give any founder is to start selling, now, what you have.</span></li><li><span class="aseries-n">10</span> <a href="start-a-company.html">Start a company</a><br><span class="dim">If you are an entrepreneur, start a company, as soon as you have a bit of revenue to put through it.</span></li><li><span class="aseries-n">11</span> <a href="you-are-a-developer.html">You are a developer, you just do not call it that</a><br><span class="dim">Every GenAI founder I know is a developer, and none of them think so.</span></li><li><span class="aseries-n">12</span> <a href="reading-with-a-pen.html">Reading with a pen again</a><br><span class="dim">I buy a lot of books, because a book is a better medium for me than a screen, and what people call its inefficiencies are its best features:…</span></li><li><span class="aseries-n">13</span> <a href="fund-it-with-time.html">Fund it with time</a><br><span class="dim">How do you fund a startup?</span></li><li class="here"><span class="aseries-n">14</span> <b>Open source what you build, even while you are employed</b> <span class="dim">(you are here)</span><br><span class="dim">People worry that if they open source their ideas, others will copy them.</span></li><li><span class="aseries-n">15</span> <a href="when-the-customer-becomes-the-commodity.html">When the customer becomes the commodity</a><br><span class="dim">When you draw a Wardley map of your business, ask where your customer sits on it.</span></li></ol>
+</section>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.132</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="open-source-so-you-keep-it.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
