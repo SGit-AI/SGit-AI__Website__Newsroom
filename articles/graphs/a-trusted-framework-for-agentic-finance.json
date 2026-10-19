@@ -1,0 +1,162 @@
+{
+  "slug": "a-trusted-framework-for-agentic-finance",
+  "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; here is a payments agent's, filled in.",
+  "topics": [
+    "agents-and-policy",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here: behaviour policies, risk acceptance, enforcement levels and policies as graphs; a payments agent's policy shows all four filled in, and a regulator could adopt it or connect its own graph to it.",
+  "nodes": [
+    {
+      "id": "fca",
+      "label": "A framework for agentic finance",
+      "kind": "claim",
+      "summary": "Identity, delegated authority, accountability, execution."
+    },
+    {
+      "id": "abp",
+      "label": "Agent Behaviour Policy",
+      "kind": "method",
+      "summary": "Grant, mandate, delta and barrier."
+    },
+    {
+      "id": "accept",
+      "label": "Risk acceptance",
+      "kind": "method",
+      "summary": "A holder per rule, a chain to the board."
+    },
+    {
+      "id": "levels",
+      "label": "Three enforcement levels",
+      "kind": "concept",
+      "summary": "Prompt, hooks, a third party that blocks."
+    },
+    {
+      "id": "assure",
+      "label": "Continuous, conditional assurance",
+      "kind": "concept",
+      "summary": "Rows re-tested on every model change."
+    },
+    {
+      "id": "example",
+      "label": "A payments agent's policy",
+      "kind": "example",
+      "summary": "Twelve rows, three gaps, each with a holder."
+    },
+    {
+      "id": "identity",
+      "label": "Identity block",
+      "kind": "concept",
+      "summary": "Proposed: who the agent is and for whom."
+    },
+    {
+      "id": "graphs",
+      "label": "Policies as graphs",
+      "kind": "concept",
+      "summary": "Connected by edges, no shared schema."
+    },
+    {
+      "id": "open",
+      "label": "Open, CC BY",
+      "kind": "concept",
+      "summary": "Adopt it, or write your own."
+    }
+  ],
+  "edges": [
+    {
+      "from": "abp",
+      "to": "fca",
+      "rel": "extends"
+    },
+    {
+      "from": "accept",
+      "to": "fca",
+      "rel": "extends"
+    },
+    {
+      "from": "levels",
+      "to": "fca",
+      "rel": "extends"
+    },
+    {
+      "from": "example",
+      "to": "abp",
+      "rel": "extends"
+    },
+    {
+      "from": "example",
+      "to": "identity",
+      "rel": "produces"
+    },
+    {
+      "from": "assure",
+      "to": "example",
+      "rel": "extends"
+    },
+    {
+      "from": "graphs",
+      "to": "fca",
+      "rel": "leads-to"
+    },
+    {
+      "from": "open",
+      "to": "graphs",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "what-can-your-agent-reach",
+      "governs-enforces-attests",
+      "policy-as-code-needs-a-policy-first",
+      "a-policy-beside-the-prompt",
+      "the-policy-draws-the-liability-line",
+      "ten-questions-one-graph",
+      "the-graph-companies",
+      "open-source-so-you-keep-it"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
+      "https://abp.sgit.ai/",
+      "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html",
+      "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Once the regulator's expectations and a firm's policies are both graphs, nobody has to adopt anybody's schema.",
+      "why": "On connecting."
+    },
+    {
+      "text": "a policy that is re-proven every time something under it moves",
+      "why": "On continuous assurance."
+    }
+  ],
+  "figures": [
+    {
+      "file": "fc-crosswalk.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fc-crosswalk.webp",
+      "caption": "The FCA's points from the speech, against our open work that covers the same ground. Blue: the four elements of the framework the FCA proposes. Teal: the governance themes. Orange: how the two sides could connect. Aligned with, not endorsed by.",
+      "kind": "comparison"
+    },
+    {
+      "file": "fc-abp-rows.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fc-abp-rows.webp",
+      "caption": "Delegated authority and execution: the payments agent's twelve rows. For each capability, can it (grant), may it (mandate), what stands in the way (barrier), who keeps the rule, and who holds it. Three rows, in orange, are the delta.",
+      "kind": "concept"
+    },
+    {
+      "file": "fc-abp-frame.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fc-abp-frame.webp",
+      "caption": "Around the rows: the agent's identity, the chain of holders to the board, and how the rules are kept, recorded, re-tested and failed safely. Identity and holders are not in the ABP today; they are proposed here.",
+      "kind": "architecture"
+    },
+    {
+      "file": "fc-connect.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fc-connect.webp",
+      "caption": "Two policy graphs connected by edges. On the left, a regulator's graph in its own vocabulary, hypothetical here; on the right, a firm's behaviour policies. Neither adopts the other's schema; the edges do the work.",
+      "kind": "concept"
+    }
+  ]
+}

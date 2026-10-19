@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-19 | minor | 2,112 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](ten-questions-one-graph/v1.1.0.md) · [current](../ten-questions-one-graph.md) |
+| **v1.1.0** | 2026-10-19 | minor | 2,112 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`3b0e7fd8c`](https://github.com/SGit-AI/SGit-AI__Website/commit/3b0e7fd8ca81a4abbfcd22ade6af657eca38c2c7) | [what changed](ten-questions-one-graph/v1.1.0.md) · [current](../ten-questions-one-graph.md) |
 | **v1.0.0** | 2026-10-19 | published | 2,112 | first published | [`24f88da2c`](https://github.com/SGit-AI/SGit-AI__Website/commit/24f88da2c670b4a0cccffea0a5749a29306fa7e7) |  |
 
 [← Back to the article](../ten-questions-one-graph.md) · [All articles](../index.md)

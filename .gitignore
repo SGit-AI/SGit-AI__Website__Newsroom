@@ -235,3 +235,7 @@ __marimo__/
 
 # agent worktrees made by the Claude Code session (git worktree add under .claude/worktrees/): never part of the site
 .claude/worktrees/
+
+# The test runner links node_modules here for the Playwright tests and removes it after; if the run is
+# killed in between, the link must never be committed.
+/node_modules

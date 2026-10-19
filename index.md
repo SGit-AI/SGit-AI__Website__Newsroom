@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.138 · 217 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.139 · 218 articles since 2026-08-17; the newest is 2026-10-19. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](articles/ten-questions-one-graph.md), 2026-10-19, 8 min. Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.
+- [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](articles/a-trusted-framework-for-agentic-finance.md), 2026-10-19, 10 min. The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; here is a payments agent's, filled in.
 
 ## Highlights
 
+- [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](articles/ten-questions-one-graph.md), 2026-10-19, 8 min.
 - [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](articles/inside-the-thistlewood-twin.md), 2026-10-19, 7 min.
 - [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](articles/the-graph-companies.md), 2026-10-19, 7 min.
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](articles/governs-enforces-attests.md), 2026-10-19, 7 min.
-- [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](articles/when-the-customer-becomes-the-commodity.md), 2026-10-19, 7 min.
 
 ## Who are you reading as?
 
@@ -28,11 +28,11 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (57)
+### Agent security & policy (58)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](articles/a-trusted-framework-for-agentic-finance.md), 2026-10-19, 10 min.
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](articles/governs-enforces-attests.md), 2026-10-19, 7 min.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](articles/the-man-behind-the-curtain.md), 2026-10-18, 9 min.
-- [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](articles/the-code-you-do-not-ship.md), 2026-10-18, 12 min.
 
 ### Building with agents (36)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

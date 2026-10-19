@@ -129,7 +129,8 @@ try {
         for (let i = 0; i < 100; i++) { await new Promise(r => setTimeout(r, 150)); const d = f.contentDocument; if (d && d.querySelector('.nv .tiles')) return d.querySelector('#app').textContent }
         return f.contentDocument ? f.contentDocument.body.textContent : ''
     }, { entry: inst.entry, rec })
-    check(/Your newsroom vault/.test(shown) && /pages read/.test(shown) && /shared/.test(shown) && /£4\.\d\d/.test(shown) && !/could not be read/.test(shown), `the entry page loads the viewer from the linked vault and renders the account (${shown.replace(/\s+/g, ' ').slice(0, 120)}…)`)
+    // any balance: a short read can cost under a penny, so the account may still show £5.00 after it
+    check(/Your newsroom vault/.test(shown) && /[1-9]\d*\s*pages read/.test(shown) && /shared/.test(shown) && /£\d+\.\d\d\s*balance/.test(shown) && !/could not be read/.test(shown), `the entry page loads the viewer from the linked vault and renders the account (${shown.replace(/\s+/g, ' ').slice(0, 120)}…)`)
 
     // ---- the Calls tab: named, and decrypted on a press
     await openTab('calls')

@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in, SGit Newsroom</title>
+<meta name="description" content="Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example: the behaviour policy of an invented bank's payments agent, with all four elements filled in, twelve rows, three of them gaps, each gap with a holder and a decision. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-trusted-framework-for-agentic-finance.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-trusted-framework-for-agentic-finance.html">
+<meta property="og:title" content="A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in, SGit Newsroom">
+<meta property="og:description" content="Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example: the behaviour policy of an invented bank's payments agent, with all four elements filled in, twelve rows, three of them gaps, each gap with a holder and a decision. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-trusted-framework-for-agentic-finance.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-trusted-framework-for-agentic-finance.jpg">
+<link rel="alternate" type="text/markdown" href="a-trusted-framework-for-agentic-finance.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in, SGit Newsroom", "headline": "A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in, SGit Newsroom", "description": "Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example: the behaviour policy of an invented bank's payments agent, with all four elements filled in, twelve rows, three of them gaps, each gap with a holder and a decision. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.", "url": "https://newsroom.sgit.ai/articles/a-trusted-framework-for-agentic-finance.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.139</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.12.139</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in</p>
+ <h1>A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-19 &middot; <a href="versions/a-trusted-framework-for-agentic-finance.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.139</a> &middot; <span class="chip">agents</span><span class="chip">agent-behaviour-policy</span><span class="chip">regulation</span><span class="chip">finance</span><span class="chip">accountability</span><span class="chip">graphs</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example: the behaviour policy of an invented bank's payments agent, with all four elements filled in, twelve rows, three of them gaps, each gap with a holder and a decision. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.</em></p>
+<figure class="shot" data-shot="fc-crosswalk.webp" data-dir="images/" data-alt="The FCA&#x27;s points from the speech, against our open work that covers the same ground. Blue: the four elements of the framework the FCA proposes. Teal: the governance themes. Orange: how the two sides could connect. Aligned with, not endorsed by." data-kind="comparison"><figcaption>The FCA's points from the speech, against our open work that covers the same ground. Blue: the four elements of the framework the FCA proposes. Teal: the governance themes. Orange: how the two sides could connect. Aligned with, not endorsed by.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>The FCA is building a framework for agentic finance.</b> Agent identity, delegated authority, accountability and execution.</li>
+<li><b>Most of it is what we have been publishing.</b> Behaviour policies, risk acceptance, enforcement levels, near misses, graphs.</li>
+<li><b>Delegated authority is the gap between can and may.</b> That is what an Agent Behaviour Policy writes down.</li>
+<li><b>Accountability needs a holder per rule.</b> With a chain to the board, as in our risk acceptance work.</li>
+<li><b>Execution is who keeps each rule.</b> The prompt, a hook, or a system the agent cannot reach.</li>
+<li><b>A worked example: a payments agent.</b> Twelve rows, all four elements filled in, three gaps with holders.</li>
+<li><b>It is open, CC BY.</b> Adopt it, or write your own as a graph, and the two connect.</li>
+</ul>
+<h2 id="speech">What the FCA said</h2>
+<p>Jessica Rusu, the FCA's chief data, information and intelligence officer, spoke today at Bloomberg's UK Policy Series, under the title <a href="https://www.fca.org.uk/news/speeches/building-future-finance-age-ai">Building the future of finance in the age of AI</a>. The FCA's page says it is the drafted version and may differ from what was delivered; the quotations below are from that page.</p>
+<p>Her starting point is that "Adoption is not coming. It is here." A joint survey with the Bank of England, due next week, shows 86% of firms using AI. The FCA is putting six of the seven recommendations of the Mills Review into live work, and she was clear about the style: "Our response to the review is not to consult, study and report progress."</p>
+<p>She shared good and poor practice under three themes: putting the consumer first, knowing who is accountable, and operational resilience. On accountability, firms need "clear accountability, risk-based controls, human oversight, escalation triggers, and senior managers personally accountable for AI systems", and some firms "retrofit governance after technology has already been deployed". Her verdict on that: "That is the wrong way around." On resilience: stress-test, plan for failure, keep fallbacks, and understand supplier concentration, "including reliance on a single model".</p>
+<p>Then agents. Incident reporting "must extend to significant AI failures and near-misses". Assurance has to change, because "A system that is safe at deployment may behave differently at scale, under stress or as the models beneath it change. Agentic systems therefore require continuous, conditional assurance." And the commitment I am replying to: "The FCA will work with industry, fellow regulators and frontier labs to develop a trusted framework for agentic finance, including clear approaches to agent identity, delegated authority, accountability and execution."</p>
+<p>She ended with "Let's build it together." This is my contribution to that.</p>
+<h2 id="four">Four elements we have been writing about</h2>
+<p>Reading the speech, I recognised almost every point. Not because anyone copied anything, but because the problem forces the same answers on anyone who looks at it closely.</p>
+<ul>
+<li><b>Delegated authority</b> is the gap between what an agent can do and what it may do. That is the core of an <a href="what-can-your-agent-reach.html">Agent Behaviour Policy</a>: the grant (everything it can do, measured), the mandate (what it was authorised to do), the delta between them, and the barrier, what actually stands in the way of each capability. It is published openly at <a href="https://abp.sgit.ai/">abp.sgit.ai</a>, under CC BY.</li>
+<li><b>Execution</b> is how each rule is kept. In <a href="governs-enforces-attests.html">governs, enforces, attests</a> I described three levels: in the prompt, which is a hope; in hooks, which are deterministic but sit on the agent's own machine; or by a third-party system that does the blocking, which is the level we recommend. The test, from the ABP: "A control bounds a grant only if it is enforced by something the grant does not include." <a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first</a> adds the question most frameworks miss: for every rule that is code, who can change that code.</li>
+<li><b>Accountability</b> is a holder for every rule. Our work on <a href="every-risk-is-already-accepted.html">risk acceptance</a> says every risk is already being carried, so the only questions are who has accepted it and until when; every holder has a boss, and every path ends at the board. <a href="the-policy-draws-the-liability-line.html">The policy draws the liability line</a> is the same idea for agents: without a written policy, nobody can point to what the agent was told not to do.</li>
+<li><b>Agent identity</b> is the one we have written least about, and the speech is right to put it first. In the ABP it is implicit: a policy is for one agent in one deployment. The attestation layer in <a href="governs-enforces-attests.html">governs, enforces, attests</a> makes it explicit: what was assured, at which policy version, signed so a third party can check it without taking the operator's word.</li>
+</ul>
+<p>The themes line up too. Governance written before deployment is <a href="a-policy-beside-the-prompt.html">a policy beside the prompt</a>, which also proposes a breach report the same day for every broken row and every near miss. Continuous assurance is a versioned policy whose rows are re-tested, with a receipt for every decision. Resilience and single points of failure are graph questions, which the <a href="ten-questions-one-graph.html">Thistlewood twin</a> answers for an invented retailer.</p>
+<h2 id="example">A worked example: a payments agent</h2>
+<p>The speech mentions the AI Lab seeing firms build "agent-led payments", so here is one. An invented bank deploys an agent that pays bills for one customer: it reads their accounts, pays existing payees, and asks the customer before anything unusual. Everything below is invented and illustrative; the vocabulary is the ABP's.</p>
+<figure class="shot" data-shot="fc-abp-rows.webp" data-dir="images/" data-alt="Delegated authority and execution: the payments agent&#x27;s twelve rows. For each capability, can it (grant), may it (mandate), what stands in the way (barrier), who keeps the rule, and who holds it. Three rows, in orange, are the delta." data-kind="concept"><figcaption>Delegated authority and execution: the payments agent's twelve rows. For each capability, can it (grant), may it (mandate), what stands in the way (barrier), who keeps the rule, and who holds it. Three rows, in orange, are the delta.</figcaption></figure>
+<h3 id="authority">Delegated authority: grant, mandate, delta</h3>
+<p>The customer delegated a narrow job. The agent may read their own accounts and pay existing payees up to £250 on its own. Above £250, or to a new payee, it needs the customer to confirm in the bank's app. It must not pay more than £1,000 a month, open credit, act for another customer, or change its own limits. It must route the customer to a person when a vulnerability signal appears, which is the FCA's own example of good practice.</p>
+<p>What it can do, measured, is larger. It can change standing orders, and the approval that should guard that is a flag in the agent's own profile, which its token can edit. It can pay a crypto exchange, and the only thing against it is a sentence in the system prompt. And it can write anything, including what reads as investment advice, which the bank is not offering through this agent; an output check catches most of it and hands the conversation to an adviser, but it can miss.</p>
+<p>Those three are the delta. Nine rows are clean: either the agent cannot do the thing at all, or something outside its reach keeps the limit.</p>
+<h3 id="execution">Execution: who keeps each rule</h3>
+<p>Eight of the twelve rows are kept by systems the agent cannot reach: the payment platform checks limits and asks the customer, the API gateway scopes reads, the identity service binds the token to one customer. Two are kept by hooks in the bank's harness. One is kept by a setting the agent could flip, and one by the prompt. In ABP terms, only the first eight are boundaries; a setting is not a control, and an expectation is a hope.</p>
+<p>Every decision the platform makes, allow, ask or deny, writes a receipt with the row and the policy version, kept in a vault, encrypted and versioned. The rows are also a test pack. They run on every model change, every policy change and every week, and a failed row stops the release. That is my reading of "continuous, conditional assurance": not a review at deployment, but a policy that is re-proven every time something under it moves.</p>
+<figure class="shot" data-shot="fc-abp-frame.webp" data-dir="images/" data-alt="Around the rows: the agent&#x27;s identity, the chain of holders to the board, and how the rules are kept, recorded, re-tested and failed safely. Identity and holders are not in the ABP today; they are proposed here." data-kind="architecture"><figcaption>Around the rows: the agent's identity, the chain of holders to the board, and how the rules are kept, recorded, re-tested and failed safely. Identity and holders are not in the ABP today; they are proposed here.</figcaption></figure>
+<h3 id="identity">Agent identity</h3>
+<p>The identity block says who the agent is and on whose behalf it acts: its name and version; the firm that deploys it, under its own authorisation; the customer, by consent given in the app, for 90 days, revocable; the model provider and version, so that a change re-runs the tests; a 15-minute token from the bank's identity service bound to this customer and this policy; and the policy version with its hash. A counterparty, another agent, or a supervisor sees a signed attestation of that block, not the agent's own claim about itself.</p>
+<h3 id="accountability">Accountability</h3>
+<p>Every row has one holder. The head of payments holds six of them, the product owner two, and the heads of advice, support, lending and operations one each. Each holder has a chain to the board through the senior manager whose responsibilities cover retail payments. The three gaps each get a decision from their holder, with a door and an interval: the standing-order flag is accepted for 30 days while it moves into the platform; the crypto block is funded, to land within 60 days; the advice check stays, and every miss is reported as a near miss. Nobody accepts on somebody else's behalf, and their boss sees each decision arrive.</p>
+<p>Every broken row and every near miss goes to its holder the same day; the significant ones go into the firm's incident reporting, which is where the speech says they belong. If the model or its provider is down, the agent stops and the customer pays in the app, and operations can revoke every agent token in one action. No payment depends on the agent being there.</p>
+<h3 id="data">The same policy, as data</h3>
+<p>Here is one row with the frame around it. The <code>capability</code>, <code>reach</code>, <code>mandate</code> and <code>barrier</code> fields are the ones our published policies use today; <code>identity</code>, <code>kept_by</code>, <code>holder</code> and <code>decision</code> are proposed here, to carry the FCA's four elements.</p>
+<pre class="shell">
+{
+  "policy": "Agent Behaviour Policy",
+  "version": "1.4",
+  "identity": {
+    "agent": "payments-assistant 3.2",
+    "deployed_by": "the bank",
+    "acts_for": { "customer": "one", "consent": "in the app", "days": 90, "revocable": true },
+    "model": { "provider": "recorded", "version": "recorded", "on_change": "re-run the test pack" },
+    "credential": "15-minute token, bound to this customer and this policy version"
+  },
+  "accountability": {
+    "owner": "product owner",
+    "chain": ["product owner", "head of payments", "senior manager, retail payments", "the board"],
+    "report": "every broken row and near miss to its holder the same day"
+  },
+  "rows": [
+    {
+      "capability": "change.standing_order",
+      "reach": true,
+      "mandate": "approval",
+      "barrier": "setting: the approval flag is in the agent's own profile",
+      "kept_by": "the agent's account",
+      "holder": "head of payments",
+      "decision": { "door": "accept", "days": 30, "while": "the flag moves to the payment platform" }
+    }
+  ]
+}
+</pre>
+<h2 id="graphs">Adopt it, or write your own as a graph</h2>
+<p>All of this is open. The ABP, its vocabulary and its examples are at <a href="https://abp.sgit.ai/">abp.sgit.ai</a> under CC BY, and every article here carries the same licence. I <a href="open-source-so-you-keep-it.html">open source what I build</a> so that it can be used, and this is a case where I would like it to be.</p>
+<p>So the FCA, or anyone working on the framework with them, could adopt it as it is, or take parts of it. Or they could write their own, in their own words. That is fine too, as long as it is a graph. The FCA is already moving that way: the speech mentions the Handbook API, launched in August, which gives firms machine-readable rules, and work on machine-readable data collection. Once the regulator's expectations and a firm's policies are both graphs, nobody has to adopt anybody's schema. The work is the edges: this element of the framework is shown by that identity block, is bounded by these rows, is held by that person, is kept by that system. That is what <a href="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">fractal semantic graphs</a> are for, and why I think <a href="the-graph-companies.html">the graph companies</a> will include the regulated ones.</p>
+<figure class="shot" data-shot="fc-connect.webp" data-dir="images/" data-alt="Two policy graphs connected by edges. On the left, a regulator&#x27;s graph in its own vocabulary, hypothetical here; on the right, a firm&#x27;s behaviour policies. Neither adopts the other&#x27;s schema; the edges do the work." data-kind="concept"><figcaption>Two policy graphs connected by edges. On the left, a regulator's graph in its own vocabulary, hypothetical here; on the right, a firm's behaviour policies. Neither adopts the other's schema; the edges do the work.</figcaption></figure>
+<p>It also works in the other direction. The FCA is building its own agents, including a market first responder agent. Those agents could carry a behaviour policy too, published, so that firms can see what the regulator's agents can reach and what they are for.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The FCA has not endorsed any of this.</b> The crosswalk is my reading of a speech; "aligned with" is my claim, not theirs.</li>
+<li><b>The speech is the drafted version.</b> The page says it may differ from what was delivered.</li>
+<li><b>The bank and its agent are invented.</b> The rows, limits, holders and numbers are illustrative.</li>
+<li><b>Two fields are proposals.</b> Identity and holders are not in the ABP today; kept by and decision are new here too.</li>
+<li><b>The framework does not exist yet.</b> The FCA said it will develop it with others; this is offered into that work.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>Jessica Rusu, <a href="https://www.fca.org.uk/news/speeches/building-future-finance-age-ai">Building the future of finance in the age of AI</a>, FCA, 19 October 2026, drafted version, read that day; the quotations are from it. The ABP: <a href="https://abp.sgit.ai/">abp.sgit.ai</a>, version 0.12.1, read 19 October 2026, including the barrier model and the quoted test. Our earlier work: <a href="what-can-your-agent-reach.html">what can your agent reach</a>, <a href="governs-enforces-attests.html">governs, enforces, attests</a>, <a href="policy-as-code-needs-a-policy-first.html">policy as code needs a policy first</a>, <a href="a-policy-beside-the-prompt.html">a policy beside the prompt</a>, <a href="the-policy-draws-the-liability-line.html">the policy draws the liability line</a>, <a href="every-risk-is-already-accepted.html">every risk is already accepted</a>, <a href="ten-questions-one-graph.html">ten questions, one graph</a> and <a href="the-graph-companies.html">the graph companies</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-19" topics="agents-and-policy graphs-and-knowledge" title="A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#a-trusted-framework-for-agentic-finance">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="what-can-your-agent-reach.html">What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide</a> <span class="dim">RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.</span></li><li><a href="governs-enforces-attests.html">Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</a> <span class="dim">An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.</span></li><li><a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have</a> <span class="dim">Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="the-policy-draws-the-liability-line.html">The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt</a> <span class="dim">An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.</span></li><li><a href="a-policy-beside-the-prompt.html">A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it</a> <span class="dim">A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.</span></li><li><a href="ten-questions-one-graph.html">Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open</a> <span class="dim">Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.</span></li><li><a href="open-source-so-you-keep-it.html">Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it</a> <span class="dim">Nobody copies your open source ideas; the real advantage is that you keep using your own work from job to job, and a rough public history protects you.</span></li><li><a href="the-graph-companies.html">The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in</a> <span class="dim">Four of the ten most valuable companies are graph companies. Graphs never scaled for everyone else because they were built to lock in. Now they can.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 218 &middot; <a href="../for/make.html#r=218">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-trusted-framework-for-agentic-finance.jpg" download>a-trusted-framework-for-agentic-finance.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.139</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-trusted-framework-for-agentic-finance.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
