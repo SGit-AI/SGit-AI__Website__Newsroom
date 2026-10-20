@@ -1,0 +1,164 @@
+{
+  "slug": "v0-12-in-numbers",
+  "teaser": "v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "An agent-run newsroom released 159 versions in eight days, publishing 131 articles with graphs and summaries; the data shows the cadence, the shape of the work, which agents did it, and where parallel work and gates failed or held.",
+  "nodes": [
+    {
+      "id": "cadence",
+      "label": "159 versions in eight days",
+      "kind": "example",
+      "summary": "Median gap 31 minutes."
+    },
+    {
+      "id": "published",
+      "label": "131 articles, 292,000 words",
+      "kind": "example",
+      "summary": "384 figures, six vault pages."
+    },
+    {
+      "id": "growth",
+      "label": "The site more than doubled",
+      "kind": "example",
+      "summary": "511 to 1,245 pages."
+    },
+    {
+      "id": "graphs",
+      "label": "A graph for every article",
+      "kind": "method",
+      "summary": "1,489 nodes, 1,376 edges."
+    },
+    {
+      "id": "agents",
+      "label": "Seven agents",
+      "kind": "concept",
+      "summary": "The writer made 117 releases."
+    },
+    {
+      "id": "collisions",
+      "label": "Versions reused in parallel",
+      "kind": "example",
+      "summary": "v0.12.14 and v0.12.52."
+    },
+    {
+      "id": "gates",
+      "label": "Gates that held, and did not",
+      "kind": "claim",
+      "summary": "Two unscanned commits; one stopped release."
+    },
+    {
+      "id": "next",
+      "label": "v0.13",
+      "kind": "concept",
+      "summary": "Customers, PKI, signed policies."
+    }
+  ],
+  "edges": [
+    {
+      "from": "cadence",
+      "to": "published",
+      "rel": "produces"
+    },
+    {
+      "from": "published",
+      "to": "growth",
+      "rel": "leads-to"
+    },
+    {
+      "from": "graphs",
+      "to": "published",
+      "rel": "extends"
+    },
+    {
+      "from": "agents",
+      "to": "cadence",
+      "rel": "produces"
+    },
+    {
+      "from": "agents",
+      "to": "collisions",
+      "rel": "leads-to"
+    },
+    {
+      "from": "gates",
+      "to": "published",
+      "rel": "depends-on"
+    },
+    {
+      "from": "published",
+      "to": "next",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "our-first-customers",
+      "pki-everywhere",
+      "free-to-copy-paid-at-the-source",
+      "a-leak-without-breaking-the-policy",
+      "four-frameworks-one-agent",
+      "inside-the-pellbridge-agents"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html",
+      "https://newsroom.sgit.ai/articles/hope-or-enforcement.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the agents work when a person is there to ask them for something",
+      "why": "The hours."
+    },
+    {
+      "text": "Working in parallel has a cost the data shows plainly.",
+      "why": "The collisions."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wu-days.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wu-days.webp",
+      "caption": "Releases and words, day by day. Left: releases each day, from 5 on the first afternoon to 30 on Tuesday 13 October. Right: words published in new articles by the date each carries, peaking at 51,000 on Sunday 18 October.",
+      "kind": "comparison"
+    },
+    {
+      "file": "wu-hours.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wu-hours.webp",
+      "caption": "Releases by hour of day, UTC. Every hour from 06:00 to 01:00 saw at least one; the busiest was 16:00, with 17; nothing between 02:00 and 06:00.",
+      "kind": "comparison"
+    },
+    {
+      "file": "wu-gaps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wu-gaps.webp",
+      "caption": "Time between releases. 81 of the 164 gaps were under half an hour, and three were over eight hours.",
+      "kind": "comparison"
+    },
+    {
+      "file": "wu-scatter.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wu-scatter.webp",
+      "caption": "Each of the 131 new articles by its length and its figures. Correlation r = 0.38. The articles with the most figures are the vault tours.",
+      "kind": "comparison"
+    },
+    {
+      "file": "wu-links.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wu-links.webp",
+      "caption": "The articles the new ones link to most: the foundations, from fractal semantic graphs to how cheap it is to undo.",
+      "kind": "comparison"
+    },
+    {
+      "file": "wu-graphs.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wu-graphs.webp",
+      "caption": "The article graphs. Left: the 1,489 nodes by kind. Right: the 1,376 edges by relation.",
+      "kind": "comparison"
+    },
+    {
+      "file": "wu-roles.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wu-roles.webp",
+      "caption": "Releases by the agent named in the commit subject.",
+      "kind": "comparison"
+    }
+  ]
+}

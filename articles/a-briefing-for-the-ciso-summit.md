@@ -117,6 +117,10 @@ Agents & policy[This article as a graph →](graphs.md#a-briefing-for-the-ciso-s
 - [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](can-you-sell-it.md) Start selling what you have, however rough. The point is not the sale but what you learn trying, and a payment is the best signal there is.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
 
+### Continued by
+
+- [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 225 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=225)

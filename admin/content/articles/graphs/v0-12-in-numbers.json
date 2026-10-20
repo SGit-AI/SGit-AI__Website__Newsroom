@@ -1,0 +1,34 @@
+{
+ "slug": "v0-12-in-numbers",
+ "teaser": "v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.",
+ "topics": ["site-and-engineering"],
+ "core_idea": "An agent-run newsroom released 159 versions in eight days, publishing 131 articles with graphs and summaries; the data shows the cadence, the shape of the work, which agents did it, and where parallel work and gates failed or held.",
+ "nodes": [
+  {"id": "cadence", "label": "159 versions in eight days", "kind": "example", "summary": "Median gap 31 minutes."},
+  {"id": "published", "label": "131 articles, 292,000 words", "kind": "example", "summary": "384 figures, six vault pages."},
+  {"id": "growth", "label": "The site more than doubled", "kind": "example", "summary": "511 to 1,245 pages."},
+  {"id": "graphs", "label": "A graph for every article", "kind": "method", "summary": "1,489 nodes, 1,376 edges."},
+  {"id": "agents", "label": "Seven agents", "kind": "concept", "summary": "The writer made 117 releases."},
+  {"id": "collisions", "label": "Versions reused in parallel", "kind": "example", "summary": "v0.12.14 and v0.12.52."},
+  {"id": "gates", "label": "Gates that held, and did not", "kind": "claim", "summary": "Two unscanned commits; one stopped release."},
+  {"id": "next", "label": "v0.13", "kind": "concept", "summary": "Customers, PKI, signed policies."}
+ ],
+ "edges": [
+  {"from": "cadence", "to": "published", "rel": "produces"},
+  {"from": "published", "to": "growth", "rel": "leads-to"},
+  {"from": "graphs", "to": "published", "rel": "extends"},
+  {"from": "agents", "to": "cadence", "rel": "produces"},
+  {"from": "agents", "to": "collisions", "rel": "leads-to"},
+  {"from": "gates", "to": "published", "rel": "depends-on"},
+  {"from": "published", "to": "next", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["our-first-customers", "pki-everywhere", "free-to-copy-paid-at-the-source", "a-leak-without-breaking-the-policy", "four-frameworks-one-agent", "inside-the-pellbridge-agents"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html", "https://newsroom.sgit.ai/articles/hope-or-enforcement.html"]
+ },
+ "quotes": [
+  {"text": "the agents work when a person is there to ask them for something", "why": "The hours."},
+  {"text": "Working in parallel has a cost the data shows plainly.", "why": "The collisions."}
+ ]
+}

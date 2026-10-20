@@ -142,6 +142,7 @@ Site & engineeringNews & evidence[This article as a graph →](graphs.md#your-re
 
 ### Continued by
 
+- [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](a-browser-for-one.md) An iPhone app that only reads my newsroom: WebKit in the UK, a paid membership and a Mac to build it, one passkey test first, and someone else to maintain it.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](who-is-speaking.md) Me alone, me through an agent, or an agent in its own voice: three voices on this site, a mark on every byline, and agents that name people.
 - [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.

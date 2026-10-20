@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.158 · 228 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.0 · 229 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min. Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
+- [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](articles/v0-12-in-numbers.md), 2026-10-20, 7 min. v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
 
 ## Highlights
 
+- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 8 min.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](articles/pki-everywhere.md), 2026-10-20, 7 min.
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](articles/a-briefing-for-the-ciso-summit.md), 2026-10-20, 7 min.
-- [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](articles/our-first-customers.md), 2026-10-20, 5 min.
 
 ## Who are you reading as?
 
@@ -46,11 +46,11 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](articles/inside-the-thistlewood-twin.md), 2026-10-19, 7 min.
 - [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](articles/the-graph-companies.md), 2026-10-19, 7 min.
 
-### The future of news (40)
+### The future of news (41)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](articles/v0-12-in-numbers.md), 2026-10-20, 7 min.
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
-- [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](articles/who-is-speaking.md), 2026-10-18, 7 min.
 
 ### Strategy & startups (42)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

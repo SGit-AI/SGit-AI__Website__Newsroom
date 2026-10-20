@@ -55,6 +55,204 @@
   ],
   "articles": [
     {
+      "slug": "v0-12-in-numbers",
+      "title": "v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/v0-12-in-numbers.html",
+      "markdown": "https://newsroom.sgit.ai/articles/v0-12-in-numbers.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/v0-12-in-numbers.webp",
+      "teaser": "v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "newsroom",
+        "releases",
+        "data",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "a-book-for-one-reader",
+        "four-frameworks-one-agent",
+        "inside-the-pellbridge-agents",
+        "your-reading-your-controls",
+        "a-policy-beside-the-prompt",
+        "explorer-coding",
+        "a-briefing-for-the-ciso-summit",
+        "a-leak-without-breaking-the-policy",
+        "our-first-customers",
+        "pki-everywhere",
+        "free-to-copy-paid-at-the-source"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wu-days.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wu-days.webp",
+          "caption": "Releases and words, day by day. Left: releases each day, from 5 on the first afternoon to 30 on Tuesday 13 October. Right: words published in new articles by the date each carries, peaking at 51,000 on Sunday 18 October.",
+          "kind": "comparison"
+        },
+        {
+          "file": "wu-hours.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wu-hours.webp",
+          "caption": "Releases by hour of day, UTC. Every hour from 06:00 to 01:00 saw at least one; the busiest was 16:00, with 17; nothing between 02:00 and 06:00.",
+          "kind": "comparison"
+        },
+        {
+          "file": "wu-gaps.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wu-gaps.webp",
+          "caption": "Time between releases. 81 of the 164 gaps were under half an hour, and three were over eight hours.",
+          "kind": "comparison"
+        },
+        {
+          "file": "wu-scatter.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wu-scatter.webp",
+          "caption": "Each of the 131 new articles by its length and its figures. Correlation r = 0.38. The articles with the most figures are the vault tours.",
+          "kind": "comparison"
+        },
+        {
+          "file": "wu-links.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wu-links.webp",
+          "caption": "The articles the new ones link to most: the foundations, from fractal semantic graphs to how cheap it is to undo.",
+          "kind": "comparison"
+        },
+        {
+          "file": "wu-graphs.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wu-graphs.webp",
+          "caption": "The article graphs. Left: the 1,489 nodes by kind. Right: the 1,376 edges by relation.",
+          "kind": "comparison"
+        },
+        {
+          "file": "wu-roles.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wu-roles.webp",
+          "caption": "Releases by the agent named in the commit subject.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "v0-12-in-numbers",
+        "teaser": "v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.",
+        "topics": [
+          "site-and-engineering"
+        ],
+        "core_idea": "An agent-run newsroom released 159 versions in eight days, publishing 131 articles with graphs and summaries; the data shows the cadence, the shape of the work, which agents did it, and where parallel work and gates failed or held.",
+        "nodes": [
+          {
+            "id": "cadence",
+            "label": "159 versions in eight days",
+            "kind": "example",
+            "summary": "Median gap 31 minutes."
+          },
+          {
+            "id": "published",
+            "label": "131 articles, 292,000 words",
+            "kind": "example",
+            "summary": "384 figures, six vault pages."
+          },
+          {
+            "id": "growth",
+            "label": "The site more than doubled",
+            "kind": "example",
+            "summary": "511 to 1,245 pages."
+          },
+          {
+            "id": "graphs",
+            "label": "A graph for every article",
+            "kind": "method",
+            "summary": "1,489 nodes, 1,376 edges."
+          },
+          {
+            "id": "agents",
+            "label": "Seven agents",
+            "kind": "concept",
+            "summary": "The writer made 117 releases."
+          },
+          {
+            "id": "collisions",
+            "label": "Versions reused in parallel",
+            "kind": "example",
+            "summary": "v0.12.14 and v0.12.52."
+          },
+          {
+            "id": "gates",
+            "label": "Gates that held, and did not",
+            "kind": "claim",
+            "summary": "Two unscanned commits; one stopped release."
+          },
+          {
+            "id": "next",
+            "label": "v0.13",
+            "kind": "concept",
+            "summary": "Customers, PKI, signed policies."
+          }
+        ],
+        "edges": [
+          {
+            "from": "cadence",
+            "to": "published",
+            "rel": "produces"
+          },
+          {
+            "from": "published",
+            "to": "growth",
+            "rel": "leads-to"
+          },
+          {
+            "from": "graphs",
+            "to": "published",
+            "rel": "extends"
+          },
+          {
+            "from": "agents",
+            "to": "cadence",
+            "rel": "produces"
+          },
+          {
+            "from": "agents",
+            "to": "collisions",
+            "rel": "leads-to"
+          },
+          {
+            "from": "gates",
+            "to": "published",
+            "rel": "depends-on"
+          },
+          {
+            "from": "published",
+            "to": "next",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "our-first-customers",
+            "pki-everywhere",
+            "free-to-copy-paid-at-the-source",
+            "a-leak-without-breaking-the-policy",
+            "four-frameworks-one-agent",
+            "inside-the-pellbridge-agents"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html",
+            "https://newsroom.sgit.ai/articles/hope-or-enforcement.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "the agents work when a person is there to ask them for something",
+            "why": "The hours."
+          },
+          {
+            "text": "Working in parallel has a cost the data shows plainly.",
+            "why": "The collisions."
+          }
+        ]
+      }
+    },
+    {
       "slug": "free-to-copy-paid-at-the-source",
       "title": "Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed",
       "date": "2026-10-20",
@@ -84,7 +282,9 @@
         "skill-behaviour-policy",
         "pki-everywhere"
       ],
-      "links_in": [],
+      "links_in": [
+        "v0-12-in-numbers"
+      ],
       "figures": [
         {
           "file": "of-source.webp",
@@ -247,6 +447,7 @@
         "pki-everywhere"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "free-to-copy-paid-at-the-source"
       ],
       "figures": [
@@ -435,6 +636,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "free-to-copy-paid-at-the-source",
         "a-leak-without-breaking-the-policy"
       ],
@@ -602,7 +804,9 @@
         "can-you-sell-it",
         "our-first-customers"
       ],
-      "links_in": [],
+      "links_in": [
+        "v0-12-in-numbers"
+      ],
       "figures": [
         {
           "file": "wc-rooms.webp",
@@ -758,6 +962,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "free-to-copy-paid-at-the-source",
         "pki-everywhere",
         "a-briefing-for-the-ciso-summit"
@@ -1729,6 +1934,7 @@
         "inside-the-thistlewood-twin"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "a-leak-without-breaking-the-policy",
         "our-first-customers",
         "inside-the-no-server-studio",
@@ -5283,6 +5489,7 @@
         "generation-z-developers-again"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "discovering-the-book",
         "a-website-to-finish-the-book"
       ],
@@ -10625,6 +10832,7 @@
         "a-meter-in-the-browser"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "a-browser-for-one",
         "who-is-speaking",
         "the-briefs-so-far",
@@ -16729,6 +16937,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "the-exit-is-when-you-sell-control",
         "the-no-server-startup",
         "you-are-a-developer",
@@ -26478,6 +26687,7 @@
         "ai-baseline-control-framework"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "a-briefing-for-the-ciso-summit",
         "policy-as-code-needs-a-policy-first"
       ],
@@ -27699,6 +27909,7 @@
         "stop-the-bleeding-then-ask-for-it-back"
       ],
       "links_in": [
+        "v0-12-in-numbers",
         "a-briefing-for-the-ciso-summit",
         "our-first-customers",
         "a-trusted-framework-for-agentic-finance",
