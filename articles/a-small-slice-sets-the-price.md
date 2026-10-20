@@ -10,7 +10,7 @@
 
 # A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/a-small-slice-sets-the-price.md) · [newsroom v0.12.147](https://newsroom.sgit.ai/admin/versions.html) · startupsfoundersipovaluationmarketsdata-analysisarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/a-small-slice-sets-the-price.md) · [newsroom v0.12.148](https://newsroom.sgit.ai/admin/versions.html) · startupsfoundersipovaluationmarketsdata-analysisarticle
 
 ***Abstract:** Something has been nagging me about the talk of bubbles and trillion-dollar listings. The headline valuations are set by selling a small slice of each company, and I wanted to check the numbers, including my own. Two of mine were wrong. OpenAI has not listed: its trillion-dollar figure is a private round under discussion, about 2% of the company, and its listing is now expected next year at the earliest. And SpaceX did not sell half a per cent at its IPO: it sold about 4%, $75bn of new shares, the largest IPO ever and more than twice the previous record in today's dollars. What holds is the pattern. The share of a company sold at listing has been falling for decades, from a median of about 30% to 14.5% last year, and the biggest companies sell the least. A small slice sets the price of the whole, low floats rise more on the first day, and index rules have been changed to absorb them. These companies earn revenue at a scale and speed nobody has seen, but at multiples close to the dot-com peak, and OpenAI and SpaceX are not yet profitable. For a founder, the lesson is that a valuation is a price the market allows for a slice, and the founder who controls the company decides how big the slice is.*
 
@@ -86,7 +86,7 @@ The numbers are not invented; they are prices. It is a market. The price of a co
 
 The lesson for a founder is about control. The people who control these companies decide how big each slice is, when it is sold, to whom, and whether the money goes to the company or to the people who already own it. That is what it means to be in charge of the game: not to own everything, but to decide the terms on which the next slice is sold.
 
-The same is true at every size. [Sell, don't issue](sell-dont-issue.md) argued that a founder with leverage should sell existing shares rather than issue new ones; [the controllable founder](the-controllable-founder.md) argued that investors select partly for founders they can control. A valuation is the price the market allows for the slice you choose to sell. Understanding that is the first step. The second is deciding when to sell the part of the company that controls it, which is the exit, and the next article.
+The same is true at every size. [Sell, don't issue](sell-dont-issue.md) argued that a founder with leverage should sell existing shares rather than issue new ones; [the controllable founder](the-controllable-founder.md) argued that investors select partly for founders they can control. A valuation is the price the market allows for the slice you choose to sell. Understanding that is the first step. The second is deciding when to sell the part of the company that controls it, which is the exit, and [the next article](the-exit-is-when-you-sell-control.md).
 
 ## What this does not claim
 
@@ -108,6 +108,11 @@ Startups & strategyNews & evidence[This article as a graph →](graphs.md#a-smal
 
 - [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](sell-dont-issue.md) For founders who have already won: the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest.
 - [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](the-controllable-founder.md) Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.
+- [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md) A founder's exit is the day someone else buys control, which can come long before the shares go. Leave then, and agree the terms at the start.
+
+### Continued by
+
+- [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md) A founder's exit is the day someone else buys control, which can come long before the shares go. Leave then, and agree the terms at the start.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
