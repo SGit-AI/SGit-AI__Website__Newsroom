@@ -1,36 +1,36 @@
-# The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a foundation to govern the Agent Behaviour Policy, sgit.ai
+# The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a home for the Agent Behaviour Policy outside RiskMandate, sgit.ai
 
-> This is a proposed roadmap for RiskMandate, and two decisions. The first is about governance. On 8 October RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, because a description of what an agent can do should not belong to the company that sells it. OWASP has said no. So we will set up a foundation for it instead: the point is the same, that the policy is governed outside the RiskMandate organisation, which today is mostly The Cyber Boardroom. The second is the roadmap: five stages of development, then insurance. Policies, then understand, then contain, then manage, then accelerate, and then insurance. We are in the first stage: creating the policies and the flows, with our first customers, whose programme is now running at customers.riskmandate.ai. The later stages we will start as they are needed, as we get more customers and users and the offering matures. This is the plan; the stages after the first are a first reading, to be refined with the people using it.
+> This is a proposed roadmap for RiskMandate, and two decisions. The first is about governance. On 8 October RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, because a description of what an agent can do should not belong to the company that sells it. It was not the right fit for an OWASP project, so the policy will move to the Open Security Summit instead, as a hosted project: the point is the same, that the policy is governed outside the RiskMandate organisation, which today is mostly The Cyber Boardroom. The second is the roadmap: five stages of development, then insurance. Policies, then understand, then contain, then manage, then accelerate, and then insurance. We are in the first stage: creating the policies and the flows, with our first customers, whose programme is now running at customers.riskmandate.ai. The later stages we will start as they are needed, as we get more customers and users and the offering matures. This is the plan; the stages after the first are a first reading, to be refined with the people using it.
 
 *Source: <https://newsroom.sgit.ai/articles/the-riskmandate-roadmap.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
-[Home](../index.md) / [Articles](index.md) / The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a foundation to govern the Agent Behaviour Policy
+[Home](../index.md) / [Articles](index.md) / The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a home for the Agent Behaviour Policy outside RiskMandate
 
-# The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a foundation to govern the Agent Behaviour Policy
+# The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a home for the Agent Behaviour Policy outside RiskMandate
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/the-riskmandate-roadmap.md) · [newsroom v0.13.2](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyroadmapgovernanceopen-sourcearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/the-riskmandate-roadmap.md) · [newsroom v0.13.3](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyroadmapgovernanceopen-sourcearticle
 
-***Abstract:** This is a proposed roadmap for RiskMandate, and two decisions. The first is about governance. On 8 October RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, because a description of what an agent can do should not belong to the company that sells it. OWASP has said no. So we will set up a foundation for it instead: the point is the same, that the policy is governed outside the RiskMandate organisation, which today is mostly The Cyber Boardroom. The second is the roadmap: five stages of development, then insurance. Policies, then understand, then contain, then manage, then accelerate, and then insurance. We are in the first stage: creating the policies and the flows, with our first customers, whose programme is now running at customers.riskmandate.ai. The later stages we will start as they are needed, as we get more customers and users and the offering matures. This is the plan; the stages after the first are a first reading, to be refined with the people using it.*
+***Abstract:** This is a proposed roadmap for RiskMandate, and two decisions. The first is about governance. On 8 October RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, because a description of what an agent can do should not belong to the company that sells it. It was not the right fit for an OWASP project, so the policy will move to the Open Security Summit instead, as a hosted project: the point is the same, that the policy is governed outside the RiskMandate organisation, which today is mostly The Cyber Boardroom. The second is the roadmap: five stages of development, then insurance. Policies, then understand, then contain, then manage, then accelerate, and then insurance. We are in the first stage: creating the policies and the flows, with our first customers, whose programme is now running at customers.riskmandate.ai. The later stages we will start as they are needed, as we get more customers and users and the offering matures. This is the plan; the stages after the first are a first reading, to be refined with the people using it.*
 
 The RiskMandate roadmap: five stages of development, policies, understand, contain, manage and accelerate, then insurance. We are in the first, writing the policies and the flows with our first customers.
 
 ## In short
 
-- **OWASP has said no to the project.** So the Agent Behaviour Policy gets a foundation instead.
-- **The foundation is about governance.** The policy is governed outside the RiskMandate organisation.
+- **The policy needs a home outside RiskMandate.** Governed by more people than us.
+- **It will be hosted by the Open Security Summit.** OWASP was not the right fit.
 - **The roadmap has five stages, then insurance.** Policies, understand, contain, manage, accelerate.
 - **We are in the first stage.** Creating the policies and the flows.
 - **Our first customers are where it happens.** Their programme is live at customers.riskmandate.ai.
 - **Later stages start as they are needed.** With more customers, more users and a more mature offering.
 - **Everything stays open.** CC BY 4.0 for the policies and pages, Apache 2.0 for the code.
 
-## A foundation, now that OWASP has said no
+## A home outside RiskMandate
 
 On 8 October, RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, with RiskMandate as its sponsor. The reason is on [the proposal's page](https://riskmandate.ai/owasp/): "A description of what an agent can do should not belong to the company that sells it." A format that the buyer, the vendor, the reviewer and the insurer all write in has to be one that none of them owns.
 
-OWASP has said no to the project. The reason for proposing it has not changed, so we are going to set up a foundation for it. What that means, fundamentally, is that we want the governance of the Agent Behaviour Policy to happen outside the RiskMandate organisation, which at the moment is predominantly [The Cyber Boardroom](https://thecyberboardroom.com/). The vocabulary, the schema and the published policies are already open, under CC BY 4.0 and Apache 2.0, at [abp.sgit.ai](https://abp.sgit.ai/); the foundation is where decisions about them will be made, by people who are not only us.
+It was not the right fit for an OWASP project. The reason for proposing it has not changed, so we are going to give it another home: the [Open Security Summit](agent-behaviour-policies-move-to-the-open-security-summit.md), as its first hosted project. What that means, fundamentally, is that we want the governance of the Agent Behaviour Policy to happen outside the RiskMandate organisation, which at the moment is predominantly [The Cyber Boardroom](https://thecyberboardroom.com/). The vocabulary, the schema and the published policies are already open, under CC BY 4.0 and Apache 2.0, at [abp.sgit.ai](https://abp.sgit.ai/); the new home is where decisions about them will be made, by people who are not only us.
 
 RiskMandate stays what it is: a company that sells services on the policy, from the pack to a policy a professional signs, as [its pricing page](https://riskmandate.ai/pricing.html) sets out. The line between the two is the one the OWASP proposal drew, and it still holds: the policy is shared; the work done with it can be sold.
 
@@ -59,8 +59,8 @@ The stages after the first are not a schedule. We will start each one as we get 
 
 ## What this does not claim
 
-- **The foundation is a decision, not an entity.** It does not exist yet.
-- **OWASP has not endorsed anything.** It said no to the project.
+- **The hosting is proposed.** The charter and the steering group come first.
+- **OWASP has not endorsed anything.** The project was not a fit for it.
 - **The stage meanings are a first reading.** Only the first stage is under way.
 - **The roadmap has no dates.** Each stage starts when customers need it.
 - **The counts are the customer site's own.** Read from it on 20 October 2026.
@@ -75,10 +75,15 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#the-ri
 
 ### Builds on
 
+- [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](agent-behaviour-policies-move-to-the-open-security-summit.md) The Agent Behaviour Policy moves to the Open Security Summit CIC as its first hosted project, with a charter and an independent steering majority to come.
 - [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md) Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md) A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
+
+### Continued by
+
+- [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](agent-behaviour-policies-move-to-the-open-security-summit.md) The Agent Behaviour Policy moves to the Open Security Summit CIC as its first hosted project, with a charter and an independent steering majority to come.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

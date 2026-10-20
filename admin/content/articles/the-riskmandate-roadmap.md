@@ -1,10 +1,10 @@
 ---
-title: The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a foundation to govern the Agent Behaviour Policy
+title: The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a home for the Agent Behaviour Policy outside RiskMandate
 date: 2026-10-20
 author: Dinis Cruz
 author_url: about/index.html
-summary: This is a proposed roadmap for RiskMandate, and two decisions. The first is about governance. On 8 October RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, because a description of what an agent can do should not belong to the company that sells it. OWASP has said no. So we will set up a foundation for it instead: the point is the same, that the policy is governed outside the RiskMandate organisation, which today is mostly The Cyber Boardroom. The second is the roadmap: five stages of development, then insurance. Policies, then understand, then contain, then manage, then accelerate, and then insurance. We are in the first stage: creating the policies and the flows, with our first customers, whose programme is now running at customers.riskmandate.ai. The later stages we will start as they are needed, as we get more customers and users and the offering matures. This is the plan; the stages after the first are a first reading, to be refined with the people using it.
-version: v0.13.2
+summary: This is a proposed roadmap for RiskMandate, and two decisions. The first is about governance. On 8 October RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, because a description of what an agent can do should not belong to the company that sells it. It was not the right fit for an OWASP project, so the policy will move to the Open Security Summit instead, as a hosted project: the point is the same, that the policy is governed outside the RiskMandate organisation, which today is mostly The Cyber Boardroom. The second is the roadmap: five stages of development, then insurance. Policies, then understand, then contain, then manage, then accelerate, and then insurance. We are in the first stage: creating the policies and the flows, with our first customers, whose programme is now running at customers.riskmandate.ai. The later stages we will start as they are needed, as we get more customers and users and the offering matures. This is the plan; the stages after the first are a first reading, to be refined with the people using it.
+version: v0.13.3
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, agent-behaviour-policy, roadmap, governance, open-source, article
 status: published
@@ -14,19 +14,19 @@ status: published
 
 ## In short {#in-short}
 
-- **OWASP has said no to the project.** So the Agent Behaviour Policy gets a foundation instead.
-- **The foundation is about governance.** The policy is governed outside the RiskMandate organisation.
+- **The policy needs a home outside RiskMandate.** Governed by more people than us.
+- **It will be hosted by the Open Security Summit.** OWASP was not the right fit.
 - **The roadmap has five stages, then insurance.** Policies, understand, contain, manage, accelerate.
 - **We are in the first stage.** Creating the policies and the flows.
 - **Our first customers are where it happens.** Their programme is live at customers.riskmandate.ai.
 - **Later stages start as they are needed.** With more customers, more users and a more mature offering.
 - **Everything stays open.** CC BY 4.0 for the policies and pages, Apache 2.0 for the code.
 
-## A foundation, now that OWASP has said no {#foundation}
+## A home outside RiskMandate {#foundation}
 
 On 8 October, RiskMandate's two founders decided to propose the Agent Behaviour Policy to OWASP as an open project, with RiskMandate as its sponsor. The reason is on [the proposal's page](https://riskmandate.ai/owasp/): "A description of what an agent can do should not belong to the company that sells it." A format that the buyer, the vendor, the reviewer and the insurer all write in has to be one that none of them owns.
 
-OWASP has said no to the project. The reason for proposing it has not changed, so we are going to set up a foundation for it. What that means, fundamentally, is that we want the governance of the Agent Behaviour Policy to happen outside the RiskMandate organisation, which at the moment is predominantly [The Cyber Boardroom](https://thecyberboardroom.com/). The vocabulary, the schema and the published policies are already open, under CC BY 4.0 and Apache 2.0, at [abp.sgit.ai](https://abp.sgit.ai/); the foundation is where decisions about them will be made, by people who are not only us.
+It was not the right fit for an OWASP project. The reason for proposing it has not changed, so we are going to give it another home: the [Open Security Summit](/articles/agent-behaviour-policies-move-to-the-open-security-summit.html), as its first hosted project. What that means, fundamentally, is that we want the governance of the Agent Behaviour Policy to happen outside the RiskMandate organisation, which at the moment is predominantly [The Cyber Boardroom](https://thecyberboardroom.com/). The vocabulary, the schema and the published policies are already open, under CC BY 4.0 and Apache 2.0, at [abp.sgit.ai](https://abp.sgit.ai/); the new home is where decisions about them will be made, by people who are not only us.
 
 RiskMandate stays what it is: a company that sells services on the policy, from the pack to a policy a professional signs, as [its pricing page](https://riskmandate.ai/pricing.html) sets out. The line between the two is the one the OWASP proposal drew, and it still holds: the policy is shared; the work done with it can be sold.
 
@@ -55,8 +55,8 @@ The stages after the first are not a schedule. We will start each one as we get 
 
 ## What this does not claim {#limits}
 
-- **The foundation is a decision, not an entity.** It does not exist yet.
-- **OWASP has not endorsed anything.** It said no to the project.
+- **The hosting is proposed.** The charter and the steering group come first.
+- **OWASP has not endorsed anything.** The project was not a fit for it.
 - **The stage meanings are a first reading.** Only the first stage is under way.
 - **The roadmap has no dates.** Each stage starts when customers need it.
 - **The counts are the customer site's own.** Read from it on 20 October 2026.

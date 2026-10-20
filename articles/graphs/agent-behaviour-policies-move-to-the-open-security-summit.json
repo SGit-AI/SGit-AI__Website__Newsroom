@@ -1,0 +1,127 @@
+{
+  "slug": "agent-behaviour-policies-move-to-the-open-security-summit",
+  "teaser": "The Agent Behaviour Policy moves to the Open Security Summit CIC as its first hosted project, with a charter and an independent steering majority to come.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "A shared description of agent behaviour must not belong to the company that sells services on it, so Agent Behaviour Policies is proposed as the first hosted project of the Open Security Summit CIC, with independence built through a charter and an independent steering majority rather than assumed from hosting, and RiskMandate as a founding contributor on equal terms.",
+  "nodes": [
+    {
+      "id": "home",
+      "label": "A home that is not ours",
+      "kind": "claim",
+      "summary": "Shared language, owned by none."
+    },
+    {
+      "id": "oss",
+      "label": "Open Security Summit CIC",
+      "kind": "artefact",
+      "summary": "The legal host since 2019."
+    },
+    {
+      "id": "programme",
+      "label": "A hosted-project programme",
+      "kind": "method",
+      "summary": "ABP is the first project."
+    },
+    {
+      "id": "independence",
+      "label": "Hosting is not independence",
+      "kind": "claim",
+      "summary": "Designed, not assumed."
+    },
+    {
+      "id": "charter",
+      "label": "Charter and steering group",
+      "kind": "method",
+      "summary": "An independent majority."
+    },
+    {
+      "id": "open",
+      "label": "Already open",
+      "kind": "concept",
+      "summary": "CC BY 4.0 and Apache 2.0."
+    },
+    {
+      "id": "rm",
+      "label": "RiskMandate as contributor",
+      "kind": "concept",
+      "summary": "Same terms as anyone else."
+    },
+    {
+      "id": "owasp",
+      "label": "Not an OWASP fit",
+      "kind": "example",
+      "summary": "Proposed on 8 October."
+    }
+  ],
+  "edges": [
+    {
+      "from": "home",
+      "to": "oss",
+      "rel": "leads-to"
+    },
+    {
+      "from": "oss",
+      "to": "programme",
+      "rel": "produces"
+    },
+    {
+      "from": "independence",
+      "to": "charter",
+      "rel": "depends-on"
+    },
+    {
+      "from": "programme",
+      "to": "independence",
+      "rel": "leads-to"
+    },
+    {
+      "from": "open",
+      "to": "programme",
+      "rel": "extends"
+    },
+    {
+      "from": "rm",
+      "to": "programme",
+      "rel": "depends-on"
+    },
+    {
+      "from": "owasp",
+      "to": "home",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-riskmandate-roadmap",
+      "free-to-copy-paid-at-the-source",
+      "our-first-customers"
+    ],
+    "pages": [],
+    "sites": [
+      "https://open-security-summit.org/",
+      "https://find-and-update.company-information.service.gov.uk/company/11935098",
+      "https://riskmandate.ai/owasp/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Independence has to be designed and written down, not assumed.",
+      "why": "The key point."
+    },
+    {
+      "text": "This is not a request to make open work open again.",
+      "why": "Licensing."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hp-structure.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hp-structure.webp",
+      "caption": "The proposed structure: the Open Security Summit CIC as the legal host, a hosted-project programme, Agent Behaviour Policies as its first project, governed by a steering group and maintainers under a charter, with RiskMandate contributing on the same terms as anyone else.",
+      "kind": "architecture"
+    }
+  ]
+}
