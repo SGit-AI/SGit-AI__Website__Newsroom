@@ -1,0 +1,168 @@
+{
+  "slug": "the-no-server-startup",
+  "teaser": "A blueprint for products with no server and no database of yours: static files, the user's own AI key and storage, and agents to build them.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "A product can be built, in phase one, as a folder of HTML, CSS and JavaScript with native web components and vendored libraries, running offline and anywhere, while the user brings the AI key, the storage and the passkey, so the company is never in the line of a request; the gaps are on the providers' side, capped per-user keys and paying the app that brings the customer.",
+  "nodes": [
+    {
+      "id": "noserver",
+      "label": "No server, no database of yours",
+      "kind": "claim",
+      "summary": "Phase one is a folder of static files."
+    },
+    {
+      "id": "components",
+      "label": "Native web components, vendored",
+      "kind": "method",
+      "summary": "No framework, no build step, offline."
+    },
+    {
+      "id": "anywhere",
+      "label": "Runs anywhere",
+      "kind": "concept",
+      "summary": "Laptop, Pages, any cloud, isolated networks."
+    },
+    {
+      "id": "userkey",
+      "label": "The user's own AI key",
+      "kind": "method",
+      "summary": "OAuth to the provider; their credit."
+    },
+    {
+      "id": "storage",
+      "label": "The user's own storage",
+      "kind": "method",
+      "summary": "Browser, encrypted vault, Drive app folder."
+    },
+    {
+      "id": "passkey",
+      "label": "The passkey as identity",
+      "kind": "method",
+      "summary": "PRF gives a per-user secret."
+    },
+    {
+      "id": "notinline",
+      "label": "You are not in the line",
+      "kind": "concept",
+      "summary": "Scales with users, not servers."
+    },
+    {
+      "id": "gaps",
+      "label": "Provider gaps",
+      "kind": "claim",
+      "summary": "Capped user keys; paying the app."
+    },
+    {
+      "id": "team",
+      "label": "Agents, dev and main, an explorer first",
+      "kind": "method",
+      "summary": "How a founder builds it."
+    },
+    {
+      "id": "checklist",
+      "label": "A checklist for agents",
+      "kind": "artefact",
+      "summary": "NS-01 to NS-12."
+    }
+  ],
+  "edges": [
+    {
+      "from": "components",
+      "to": "noserver",
+      "rel": "produces"
+    },
+    {
+      "from": "noserver",
+      "to": "anywhere",
+      "rel": "produces"
+    },
+    {
+      "from": "userkey",
+      "to": "notinline",
+      "rel": "produces"
+    },
+    {
+      "from": "storage",
+      "to": "notinline",
+      "rel": "produces"
+    },
+    {
+      "from": "passkey",
+      "to": "storage",
+      "rel": "extends"
+    },
+    {
+      "from": "userkey",
+      "to": "gaps",
+      "rel": "depends-on"
+    },
+    {
+      "from": "team",
+      "to": "noserver",
+      "rel": "extends"
+    },
+    {
+      "from": "checklist",
+      "to": "noserver",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "free-models-your-own-key",
+      "the-code-you-do-not-ship",
+      "cloudflare-as-lego-blocks",
+      "explorer-coding",
+      "your-own-newsroom",
+      "paying-after-the-value",
+      "the-vault-crosses-chrome-profiles"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.html",
+      "https://coding.sgit.ai/javascript/index.html",
+      "https://openrouter.ai/docs/use-cases/oauth-pkce",
+      "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+      "https://developers.google.com/workspace/drive/api/guides/appdata"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Nothing in that loop passes through the company that built the studio.",
+      "why": "The point."
+    },
+    {
+      "text": "Serverless is taken, and it means something else",
+      "why": "On the name."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ns-compare.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-compare.webp",
+      "caption": "The usual SaaS and the no-server product. On the left, the company sits in the line of every request, with its servers, its database, its AI key and its bill. On the right, the product is a folder of files, and the user brings the AI key, the storage and the passkey.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ns-anywhere.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-anywhere.webp",
+      "caption": "One folder, served from anywhere: a laptop with no network, a simple server, a container, GitHub Pages, Cloudflare or any cloud, a function that returns files, or a customer's isolated network.",
+      "kind": "architecture"
+    },
+    {
+      "file": "ns-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-flow.webp",
+      "caption": "The infographic studio as eight steps, none through the company that built it. Six work today; a cap on the user's own key works with a catch; and getting paid for bringing the provider a customer is missing.",
+      "kind": "concept"
+    },
+    {
+      "file": "ns-team.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ns-team.webp",
+      "caption": "How a founder builds it: agent sessions and synthetic users around one repository, a dev site and a main site, and the team hired in order, explorers, then villagers, then town planners.",
+      "kind": "concept"
+    }
+  ]
+}
