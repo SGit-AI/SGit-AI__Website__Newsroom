@@ -4,13 +4,13 @@
  "sections": {
   "top": {
    "line": "Can a key leak without breaking the policy? Told, checked, never given.",
-   "para": "A customer asked whether a key or personal data could leak without breaking a policy. Yes, if it lists only capabilities: sending is allowed, the key is content. So policies need content rows, each with a barrier. Three levels: told, checked, never given. A tested hook caught five of nine leaks and missed three.",
-   "hash": "b2d6c907e001"
+   "para": "A customer asked whether a key or personal data could leak without breaking a policy. Yes, if it lists only capabilities: the key is content. So policies need content rows. Three levels: told, checked, never given. A tested hook caught five of nine leaks; four experimental rules caught the rest, with no false refusals in 3,451 real commands.",
+   "hash": "b4612726c5e1"
   },
   "in-short": {
-   "line": "Seven points: content rows, three levels, a tested hook, never given.",
-   "para": "A key can leak through an allowed action, so policies need content rows. Told is a sentence in the prompt. Checked is a hook on every input and output, deterministic with gaps. Never given means the agent never holds the key. A hook tested against nine leaks caught five and missed three. It is published under CC BY 4.0.",
-   "hash": "8e1ba14dfd76"
+   "line": "Nine points: content rows, three levels, a hook, experimental rules, a real sweep.",
+   "para": "A key can leak through an allowed action, so policies need content rows. Told is the prompt; checked is a hook; never given keeps the key out of reach. The hook caught five of nine leaks; four experimental rules, base64 refused as policy among them, caught the rest. On 3,451 real commands it refused 22, none ordinary work.",
+   "hash": "97eb9edcd7b4"
   },
   "question": {
    "line": "The question from one of our first customers.",
@@ -29,13 +29,18 @@
   },
   "hook": {
    "line": "The hook, for Claude Code, in full.",
-   "para": "On PreToolUse it denies a call carrying a secret or naming a secret's variable. On PostToolUse it redacts secrets from results before the model sees them. On Stop it blocks an answer carrying a secret or card number. It matches key formats, card numbers by the Luhn check, and the exact values of the session's own secrets.",
-   "hash": "023dd392c2b4"
+   "para": "On PreToolUse it denies a call carrying a secret or naming a secret's variable. On PostToolUse it redacts secrets before the model sees them. On Stop it blocks an answer carrying a secret or card number. It matches key formats, card numbers and the session's own secret values. Experimental rules are on by default and can be turned off.",
+   "hash": "940994a5f283"
   },
   "tested": {
    "line": "Nine leaks, tested with fake keys.",
-   "para": "Denied: a token in a command, a key sent by its variable, a key in a URL. Redacted: a result that prints the key. Blocked: an answer with a card number. Allowed: an ordinary command. Missed: a base64-encoded key, a key split and joined, and a file of secrets piped straight out. A check on a command's text cannot see those.",
-   "hash": "4b590f8a603f"
+   "para": "Denied: a token in a command, a key sent by its variable, a key in a URL. Redacted: a result that prints the key. Blocked: an answer with a card number. Allowed: an ordinary command. Missed by the first version: a base64-encoded key, a key split and joined, and a file of secrets piped straight out.",
+   "hash": "fd71779e21fd"
+  },
+  "experimental": {
+   "line": "Four experimental rules, and a sweep of real work.",
+   "para": "Decode base64 and hex and scan them; match any ten characters of known secrets; refuse long base64 outright; refuse secrets files sent to the network. All nine cases caught, eight more tested. Over 3,451 real commands it refused 22: thirteen were the session passing its own token on the command line, seven test data, two AWS's example key.",
+   "hash": "0d1a893a0d63"
   },
   "never": {
    "line": "Never given: nothing to leak.",
@@ -49,8 +54,8 @@
   },
   "limits": {
    "line": "What this does not claim.",
-   "para": "The hook is an example, tested on nine cases, not every way out. Regular expressions miss encodings, splits and unknown formats. A hook is only as strong as its configuration. Never given needs a proxy or host. The test used fake keys made at random.",
-   "hash": "2099db82b197"
+   "para": "The hook is an example, tested on seventeen cases and one session. The experimental rules may refuse other kinds of work. Regular expressions miss unknown formats, short pieces and other encodings. A hook is only as strong as its configuration. Never given needs a proxy or host. The tests used fake keys made at random.",
+   "hash": "c82e64685e4f"
   },
   "sources": {
    "line": "Where this comes from.",

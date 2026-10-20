@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.157 · 227 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.158 · 228 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 6 min. A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.
+- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min. Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 
 ## Highlights
 
+- [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 8 min.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](articles/pki-everywhere.md), 2026-10-20, 7 min.
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](articles/a-briefing-for-the-ciso-summit.md), 2026-10-20, 7 min.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](articles/our-first-customers.md), 2026-10-20, 5 min.
-- [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](articles/the-exit-is-when-you-sell-control.md), 2026-10-20, 9 min.
 
 ## Who are you reading as?
 
@@ -30,7 +30,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ### Agent security & policy (63)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 6 min.
+- [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 8 min.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](articles/pki-everywhere.md), 2026-10-20, 7 min.
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](articles/a-briefing-for-the-ciso-summit.md), 2026-10-20, 7 min.
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](articles/who-is-speaking.md), 2026-10-18, 7 min.
 
-### Strategy & startups (41)
+### Strategy & startups (42)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min.
 - [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](articles/the-exit-is-when-you-sell-control.md), 2026-10-20, 9 min.
 - [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](articles/a-small-slice-sets-the-price.md), 2026-10-20, 9 min.
-- [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](articles/inside-the-no-server-studio.md), 2026-10-20, 6 min.
 
 ## Collections
 

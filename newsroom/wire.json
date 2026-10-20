@@ -73,6 +73,34 @@
   ],
   "articles": [
     {
+      "slug": "free-to-copy-paid-at-the-source",
+      "title": "Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed",
+      "date": "2026-10-20",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/free-to-copy-paid-at-the-source.html",
+      "markdown": "https://newsroom.sgit.ai/articles/free-to-copy-paid-at-the-source.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/free-to-copy-paid-at-the-source.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/free-to-copy-paid-at-the-source.json",
+      "teaser": "Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.",
+      "summary": "I think we have hit on a commercial model almost by accident. This newsroom, and the book's website, already charge per use: every reader starts with £5 of credit, and each page draws a few pence from it. Now apply that to our behaviour policies and hooks. They are open, CC BY 4.0 and Apache 2.0, and anyone may copy them. But a hook is code: Claude Code's own documentation says a plugin \"can execute arbitrary code on your machine with your user privileges\". Taking one from a website you do not know is like downloading software from unknown sources, and a company will not do it. So the official website, with its brand, its authority, its usability and its trust, is where people will come, even for something free to copy, and it can charge per use there: a customer with £50 of credit might pay £1 for the page with a hook on it. To earn that, it cannot be us saying \"trust us\". The policies we publish, the hooks above all, should be reviewed and audited by others, with the scanners and services that now exist for skills and plugins, and signed with our keys. The price is something to discover.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "business-models",
+        "open-source",
+        "agent-behaviour-policy",
+        "hooks",
+        "trust",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "a-leak-without-breaking-the-policy",
       "title": "Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks",
       "date": "2026-10-20",
@@ -82,8 +110,8 @@
       "markdown": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.md",
       "card": "https://newsroom.sgit.ai/articles/cards/a-leak-without-breaking-the-policy.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/a-leak-without-breaking-the-policy.json",
-      "teaser": "A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.",
-      "summary": "One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Those three are why the best answer is still the third level: an agent that never sees the key cannot leak it.",
+      "teaser": "A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.",
+      "summary": "One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.",
       "topics": [
         "agents-and-policy"
       ],

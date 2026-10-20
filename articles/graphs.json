@@ -55,6 +55,169 @@
   ],
   "articles": [
     {
+      "slug": "free-to-copy-paid-at-the-source",
+      "title": "Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/free-to-copy-paid-at-the-source.html",
+      "markdown": "https://newsroom.sgit.ai/articles/free-to-copy-paid-at-the-source.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/free-to-copy-paid-at-the-source.webp",
+      "teaser": "Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "business-models",
+        "open-source",
+        "agent-behaviour-policy",
+        "hooks",
+        "trust",
+        "article"
+      ],
+      "links_out": [
+        "paying-after-the-value",
+        "the-fork-next-door",
+        "a-leak-without-breaking-the-policy",
+        "our-first-customers",
+        "hooks-are-kernel-code",
+        "skill-behaviour-policy",
+        "pki-everywhere"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "of-source.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/of-source.webp",
+          "caption": "Free to copy, paid at the source. The policy and its hook are open; the official site adds who published it, who reviewed it, which version, and a signature; each use there draws down credit.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "free-to-copy-paid-at-the-source",
+        "teaser": "Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "Because a hook is code that runs with the user's permissions, companies will take policies and hooks only from a trusted official source, so that source can meter and charge per use even for openly licensed content, provided the trust is earned through third-party review, audit and signatures rather than claimed.",
+        "nodes": [
+          {
+            "id": "meter",
+            "label": "Per-use metering",
+            "kind": "method",
+            "summary": "Credit drawn down per page."
+          },
+          {
+            "id": "open",
+            "label": "Open policies and hooks",
+            "kind": "artefact",
+            "summary": "CC BY 4.0 and Apache 2.0."
+          },
+          {
+            "id": "code",
+            "label": "A hook is code",
+            "kind": "claim",
+            "summary": "Runs with your permissions."
+          },
+          {
+            "id": "source",
+            "label": "The official source",
+            "kind": "concept",
+            "summary": "Brand, authority, current version."
+          },
+          {
+            "id": "charge",
+            "label": "Charge per use at the source",
+            "kind": "claim",
+            "summary": "Even for open content."
+          },
+          {
+            "id": "review",
+            "label": "Reviewed by others",
+            "kind": "method",
+            "summary": "Scanners, audits, a named sign-off."
+          },
+          {
+            "id": "signed",
+            "label": "Signed with our keys",
+            "kind": "method",
+            "summary": "Checkable anywhere."
+          },
+          {
+            "id": "precedent",
+            "label": "Red Hat, Docker",
+            "kind": "example",
+            "summary": "Paying for certified, verified sources."
+          }
+        ],
+        "edges": [
+          {
+            "from": "code",
+            "to": "source",
+            "rel": "leads-to"
+          },
+          {
+            "from": "open",
+            "to": "source",
+            "rel": "depends-on"
+          },
+          {
+            "from": "source",
+            "to": "charge",
+            "rel": "produces"
+          },
+          {
+            "from": "meter",
+            "to": "charge",
+            "rel": "depends-on"
+          },
+          {
+            "from": "review",
+            "to": "source",
+            "rel": "answers"
+          },
+          {
+            "from": "signed",
+            "to": "source",
+            "rel": "answers"
+          },
+          {
+            "from": "precedent",
+            "to": "charge",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "paying-after-the-value",
+            "the-fork-next-door",
+            "hooks-are-kernel-code",
+            "skill-behaviour-policy",
+            "pki-everywhere",
+            "our-first-customers",
+            "a-leak-without-breaking-the-policy"
+          ],
+          "pages": [],
+          "sites": [
+            "https://code.claude.com/docs/en/plugins/security",
+            "https://github.com/cisco-ai-defense/skill-scanner",
+            "https://www.redhat.com/en/about/subscription-model-faq"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It is a way to earn from the traffic to a website, whatever the website holds, and it works even when what it holds is free to copy.",
+            "why": "The model."
+          },
+          {
+            "text": "A scanner and a policy answer different questions.",
+            "why": "Why review needs people."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-leak-without-breaking-the-policy",
       "title": "Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks",
       "date": "2026-10-20",
@@ -62,7 +225,7 @@
       "url": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.html",
       "markdown": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.md",
       "card": "https://newsroom.sgit.ai/articles/cards/a-leak-without-breaking-the-policy.webp",
-      "teaser": "A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.",
+      "teaser": "A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.",
       "topics": [
         "agents-and-policy"
       ],
@@ -83,18 +246,20 @@
         "secrets-on-public-keys",
         "pki-everywhere"
       ],
-      "links_in": [],
+      "links_in": [
+        "free-to-copy-paid-at-the-source"
+      ],
       "figures": [
         {
           "file": "lk-levels.webp",
           "url": "https://newsroom.sgit.ai/articles/images/lk-levels.webp",
-          "caption": "Nine ways a secret tries to leave, at three levels. Told leaves every case to the model. Checked is the measured result of the hook below: three denied, one redacted, one blocked, three missed. Never given leaves nothing to leak.",
+          "caption": "Nine ways a secret tries to leave, at each level. Told leaves every case to the model. Checked is the measured result of the hook: three denied, one redacted, one blocked, three missed. With four experimental rules, the three are refused. Never given leaves nothing to leak.",
           "kind": "comparison"
         }
       ],
       "graph": {
         "slug": "a-leak-without-breaking-the-policy",
-        "teaser": "A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.",
+        "teaser": "A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.",
         "topics": [
           "agents-and-policy"
         ],
@@ -141,6 +306,18 @@
             "label": "Reading the key is excess grant",
             "kind": "claim",
             "summary": "Use it, not read it."
+          },
+          {
+            "id": "experimental",
+            "label": "Experimental rules",
+            "kind": "method",
+            "summary": "Decode, match pieces, refuse base64."
+          },
+          {
+            "id": "sweep",
+            "label": "3,451 real commands",
+            "kind": "example",
+            "summary": "22 refused, none ordinary work."
           }
         ],
         "edges": [
@@ -178,6 +355,21 @@
             "from": "excess",
             "to": "never",
             "rel": "answers"
+          },
+          {
+            "from": "experimental",
+            "to": "checked",
+            "rel": "extends"
+          },
+          {
+            "from": "sweep",
+            "to": "experimental",
+            "rel": "example-of"
+          },
+          {
+            "from": "sweep",
+            "to": "never",
+            "rel": "leads-to"
           }
         ],
         "links": {
@@ -202,8 +394,12 @@
             "why": "The answer."
           },
           {
-            "text": "The three misses are not bugs in this hook.",
+            "text": "The three misses are not bugs in the first version of this hook.",
             "why": "The limits of a check."
+          },
+          {
+            "text": "The rule was right; the fix is not to allow it, but to stop giving the token to the session.",
+            "why": "The sweep's lesson."
           }
         ]
       }
@@ -239,6 +435,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "free-to-copy-paid-at-the-source",
         "a-leak-without-breaking-the-policy"
       ],
       "figures": [
@@ -561,6 +758,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "free-to-copy-paid-at-the-source",
         "pki-everywhere",
         "a-briefing-for-the-ciso-summit"
       ],
@@ -13560,6 +13758,7 @@
         "the-controllable-founder"
       ],
       "links_in": [
+        "free-to-copy-paid-at-the-source",
         "generation-z-developers-again",
         "who-will-fix-your-mess",
         "the-controllable-founder",
@@ -21284,6 +21483,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "free-to-copy-paid-at-the-source",
         "our-first-customers",
         "the-no-server-startup",
         "can-you-sell-it",
@@ -22023,6 +22223,7 @@
         "chainguard-mapped"
       ],
       "links_in": [
+        "free-to-copy-paid-at-the-source",
         "a-briefing-for-the-ciso-summit",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy"
@@ -22750,6 +22951,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "free-to-copy-paid-at-the-source",
         "governs-enforces-attests",
         "three-policies-for-an-agent",
         "case-law-for-agents",
