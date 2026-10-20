@@ -3,8 +3,8 @@ title: Inside the Pellbridge agents: six behaviour policies with the FCA's four 
 date: 2026-10-20
 author: Dinis Cruz
 author_url: about/index.html
-summary: A tour of the vault behind a trusted framework for agentic finance. Pellbridge Bank is invented. It runs six agents, a payments assistant, a support agent, a lending pre-check, an AML alert reviewer, a fraud triage agent and a transaction reporting agent, and each has an Agent Behaviour Policy that fills in the four elements the FCA named: agent identity, delegated authority, accountability and execution. Between them the policies have 43 rows; 30 are kept by a system the agent cannot reach, and 13 are gaps. Then one day of their work, 40 events from 07:02 to 18:55, replayed through the gate by a deterministic engine, each decision with a receipt chained to the one before. The 26 actions on rows kept by a boundary produce no incident. The 12 actions on gap rows produce six near misses and three breaches. A provider outage stops two agents, which fall back to people. A model change fails two rows of the test pack, so the release stops. Each agent's blast radius shows what it may reach, what it can, and what it can through a secret it can read. Every gap has a holder, a decision and a chain to the board. This article is the technical one: the policy as JSON, the receipts, and how the vault is built.
-version: v0.12.141
+summary: A tour of the vault behind a trusted framework for agentic finance. Pellbridge Bank is invented. It runs six agents, a payments assistant, a support agent, a lending pre-check, an AML alert reviewer, a fraud triage agent and a transaction reporting agent, and each has an Agent Behaviour Policy that fills in the four elements the FCA named: agent identity, delegated authority, accountability and execution. Between them the policies have 43 rows; 30 are kept by a system the agent cannot reach, and 13 are gaps. Then one day of their work, 40 events from 07:02 to 18:55, replayed through the gate by a deterministic engine, each decision with a receipt chained to the one before. The 26 actions on rows kept by a boundary produce no incident. The 12 actions on gap rows produce six near misses and three breaches. A provider outage stops two agents, which fall back to people. A model change fails two rows of the test pack, so the release stops. Each agent's blast radius shows what it may reach, what it can, and what it can through a secret it can read. Every gap has a holder, a decision and a chain to the board. The same day replays at five levels of policy: with none it has 16 breaches; with every rule in the prompt, 4; in hooks, 3; kept outside the agent, none. A page shows how a policy is written, in five steps, and lets you change any row and replay the day. Everything in the vault is open, under CC BY 4.0. This article is the technical one: the policy as JSON, the receipts, and how the vault is built.
+version: v0.12.151
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, agent-behaviour-policy, regulation, finance, vaults, twin, article
 status: published
@@ -20,9 +20,12 @@ status: published
 - **The four elements are filled in for every agent.** Identity, delegated authority, accountability, execution.
 - **One day, replayed.** 40 events through the gate, each with a hash-chained receipt.
 - **Every incident came from a gap row.** 26 boundary actions, none; 12 gap actions, nine.
+- **The same day, five ways.** No policy, 16 breaches; prompt, 4; hooks, 3; outside, none.
+- **Writing a policy takes five steps.** Change a row, and the day replays with it.
 - **Blast radius, animated.** What each agent may reach, can reach, and can reach through a secret.
 - **Every gap has a holder and a decision.** Thirteen decisions, nine people, all chains to the board.
 - **No model is called.** The engine is deterministic, so the day replays exactly.
+- **All of it is open.** The policies, the engine, the app and the data, under CC BY 4.0.
 
 ## The bank and its agents {#bank}
 
@@ -40,6 +43,10 @@ The day has 40 events. Sixteen are allowed, three approved by a person, four den
 
 !shot pa-gate-setting.webp | images/ | 15:30: the payments assistant changes a standing order. The approval rule is a setting in the agent's own profile, and that afternoon it was off. The action goes through the gap and the row is broken; the receipt says so, and the head of payments hears the same day. | screenshot
 
+The gate has a panel beside it. It picks the level of policy being enforced, which kinds of event to play (routine, denied, caught, near misses, breaches, the outage and the test pack), and two speeds: one for everything, from half speed to five times, and one that makes routine events up to five times faster still. Incidents play at half speed by default, so they can be followed. A list of moments jumps straight to a breach, a near miss, the outage, the test pack or the end of the day, and each has its own address, so a demo can open on it.
+
+!shot pa-gatepanel.webp | images/ | The gate and its panel: the policy level, what to show, the two speeds with incidents slowed to half, the moments to jump to, and how to read it. | screenshot
+
 Some moments from the day:
 
 - **10:25.** A bill PDF carries hidden text telling the payments assistant to pay a crypto exchange. Only a sentence in the prompt stands in the way. The model declines: a near miss.
@@ -54,6 +61,50 @@ Sort the day by what kept the row each action used, and the result is plain. The
 !shot pa-split.webp | images/ | The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches. | comparison
 
 A near miss is the same row as a breach, on a day the model declined. That is why the speech's point about near misses matters: they are where the next breach is visible before it happens.
+
+## With and without a policy {#levels}
+
+The same 40 events, the same agents and the same model choices, replayed five ways. What changes is only where the rules are kept.
+
+- **No policy.** The agent has its grant and its prompt for the job, and nothing says what it must not do.
+- **Policy in the prompt.** Every rule is a sentence in the system prompt. The model decides whether to keep it, so in ABP terms it is an expectation.
+- **Policy in hooks.** Every rule is a hook in the agent's harness: deterministic, but on the agent's own machine. It sees the agent's tool calls, not a credential used outside them, and its configuration is a setting the agent's account can change.
+- **Policy enforced outside the agent.** Every rule is kept by a system the agent cannot reach, and credentials it does not need are removed from its grant.
+- **As deployed.** Pellbridge's own policies: 30 rows kept outside, 13 gaps.
+
+!shot pa-levels-anim.webp | images/ | The same day, five ways. Each square is one event, in order, coloured by what happened; the counts on the right are the breaches and near misses so far. | screenshot
+
+With no policy, the day has 16 breaches, and the weight of the systems they reached adds up to 92. With every rule in the prompt, 4 breaches and 7 near misses: the model kept most rules, and every one it kept is a near miss, the same row as a breach on a day it declined. In hooks, 3 breaches and 2 near misses: a hook blocks what it sees, but the full credit search used a bureau key the hook never saw, and two hooks were off that afternoon, because their configuration is in the agent's own account. Kept outside the agent, no breaches, and one near miss: investment advice, which an output check keeps, and a check can miss. As deployed, 3 breaches and 6 near misses.
+
+!shot pa-gatehooks.webp | images/ | The gate with every rule in hooks: the purple line is the harness, in the agent's own machine. A hook blocks a hidden instruction to pay a crypto exchange. | screenshot
+
+The grant and its exposure show the same thing in size. The outer circle is everything an agent can reach, weighted by what reaching it can cost; the red part is what it can reach and may not use, with nothing out of its reach in the way. A system counts as exposed if any one path to it is open, so one gap is enough: as deployed, Pellbridge's gaps reach the same systems as no policy at all. The rules kept outside make breaches rarer; only keeping every rule outside makes the blast radius smaller. Kept outside, the grant itself shrinks, because what an agent may not use is taken away: the fraud triage agent's grant goes from 39 to 20, and its exposure from 28 to none.
+
+!shot pa-exposure.webp | images/ | Grant and exposure for every agent at every level. Only keeping the rules outside the agent shrinks both. | comparison
+
+The end of the gate's day shows the counts for the level being played, and the same day under all five.
+
+!shot pa-gatesummary.webp | images/ | The end of the day, as deployed: the counts, and the same day under each level of policy. | screenshot
+
+## Writing a policy {#write}
+
+An Agent Behaviour Policy is written in five steps.
+
+1. **List what it can do.** The grant: every capability the agent has in this deployment, measured from its account, its credentials and its tools.
+2. **Say what it may do.** The mandate: for each capability, yes, only with approval, must, or no. The deployer already knows this.
+3. **Find the gap.** The delta: where it can and may not. It is derived, never written by hand.
+4. **Say what keeps each rule.** The barrier: a system out of the agent's reach, a setting it could change, a sentence in the prompt, or nothing.
+5. **Give every row a holder.** One person per rule, with a chain to the board, and a decision for every gap: fix, fund, or accept until a date.
+
+The vault's "Write a policy" page does this for each of the six agents. Each row has two choices, what the agent may do and what keeps the rule, and the agent's day replays as you change them. Set the payments assistant's rows to be kept out of its reach and its breach and near miss go; the one gap left is investment advice, which an output check keeps. The policy is shown as JSON as it changes.
+
+!shot pa-builder.webp | images/ | Write a policy: the five steps, then the payments assistant's twelve rows, with what it may do and what keeps each rule, and its day replayed beside them. | screenshot
+
+## The lexicon {#lexicon}
+
+The words are part of the contribution. Grant, mandate, delta and barrier are the ABP's, published at [abp.sgit.ai](https://abp.sgit.ai/). Inside the barrier, three kinds: a boundary, kept by something the grant does not include, the only kind that is a control; a setting, a switch the agent's own account can change; and an expectation, a rule kept by nobody but the model. Kept by, holder, door and receipt are proposed in this vault, and so is the near miss as a row only the model kept, on a day it declined. The test for all of them is one sentence: "a control bounds a grant only if it is enforced by something the grant does not include."
+
+All of it is under CC BY 4.0: the vocabulary, the policies, the engine and the app. Take it, change it, use it.
 
 ## Blast radius {#blast}
 
@@ -130,7 +181,7 @@ Every decision of the day is a receipt in `receipts/day.json`, carrying the hash
 
 The vault holds the app, `index.html`, with the data and the engine inlined, and the files it is made from. `content.json` is the bank: roles and their chain to the board, systems and service accounts, the six agents and their rows, and the day. `engine.js` is the engine: `PellbridgeTwin.make(content)` returns each policy with its hash, its delta, its blast radius, the run of the day with receipts, the incidents, the test pack and the crosswalk. `policies/`, `receipts/`, `decisions/`, `incidents/`, `tests/` and `blast/` are written by the engine, and `tools/` has the scripts. Change a row and rebuild, and the day, the receipts and the decisions follow.
 
-The animations are drawn in SVG by the app itself: the gate plays the day on a virtual clock, with play, pause, step and speed, and the blast radius ripples out from the agent you pick. Their style comes from the animations in the [ruv.sgit.ai studio](https://ruv.sgit.ai/studio/index.html). [The vault's page](https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html) has the read key, a button to open it, and the app to use in place.
+The animations are drawn in SVG by the app itself: the gate plays the day on a virtual clock, with play, pause, step and its panel; the five levels race through the day side by side; and the blast radius ripples out from the agent you pick. The five levels are written to `levels/day.json`, with each agent's grant and exposure at each. Their style comes from the animations in the [ruv.sgit.ai studio](https://ruv.sgit.ai/studio/index.html). [The vault's page](https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html) has the read key, a button to open it, and the app to use in place.
 
 !shot pa-live.webp | images/ | The vault opened in the official vault UI, read-only, with the published key. | screenshot
 
@@ -140,6 +191,7 @@ The animations are drawn in SVG by the app itself: the gate plays the day on a v
 - **The FCA has not endorsed it.** The four elements are theirs; this filling-in is ours.
 - **The outcomes are scripted.** The day says what each model did; the engine decides what that means.
 - **Weights are illustrative.** A real blast radius would use measured data and real costs.
+- **The levels are modelled.** The model's choices are fixed; how each level answers them is the engine's rule.
 - **Some fields are proposals.** Identity, kept_by, holder, decision and execution are not in the ABP today.
 
 ## Where this comes from {#sources}

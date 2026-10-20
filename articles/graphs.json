@@ -891,10 +891,46 @@
           "kind": "screenshot"
         },
         {
+          "file": "pa-gatepanel.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gatepanel.webp",
+          "caption": "The gate and its panel: the policy level, what to show, the two speeds with incidents slowed to half, the moments to jump to, and how to read it.",
+          "kind": "screenshot"
+        },
+        {
           "file": "pa-split.webp",
           "url": "https://newsroom.sgit.ai/articles/images/pa-split.webp",
           "caption": "The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches.",
           "kind": "comparison"
+        },
+        {
+          "file": "pa-levels-anim.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-levels-anim.webp",
+          "caption": "The same day, five ways. Each square is one event, in order, coloured by what happened; the counts on the right are the breaches and near misses so far.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-gatehooks.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gatehooks.webp",
+          "caption": "The gate with every rule in hooks: the purple line is the harness, in the agent's own machine. A hook blocks a hidden instruction to pay a crypto exchange.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-exposure.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-exposure.webp",
+          "caption": "Grant and exposure for every agent at every level. Only keeping the rules outside the agent shrinks both.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pa-gatesummary.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gatesummary.webp",
+          "caption": "The end of the day, as deployed: the counts, and the same day under each level of policy.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-builder.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-builder.webp",
+          "caption": "Write a policy: the five steps, then the payments assistant's twelve rows, with what it may do and what keeps each rule, and its day replayed beside them.",
+          "kind": "screenshot"
         },
         {
           "file": "pa-blast-fraud.webp",
@@ -983,6 +1019,24 @@
             "label": "Test pack on model change",
             "kind": "method",
             "summary": "Two rows fail; release stopped."
+          },
+          {
+            "id": "fivelevels",
+            "label": "The same day, five ways",
+            "kind": "example",
+            "summary": "16 breaches with no policy; none kept outside."
+          },
+          {
+            "id": "write",
+            "label": "Writing a policy",
+            "kind": "method",
+            "summary": "Five steps; change a row, replay the day."
+          },
+          {
+            "id": "lexicon",
+            "label": "The lexicon",
+            "kind": "concept",
+            "summary": "Grant, mandate, delta, barrier and more, CC BY."
           }
         ],
         "edges": [
@@ -1025,6 +1079,26 @@
             "from": "tests",
             "to": "policies",
             "rel": "extends"
+          },
+          {
+            "from": "policies",
+            "to": "fivelevels",
+            "rel": "produces"
+          },
+          {
+            "from": "gate",
+            "to": "fivelevels",
+            "rel": "compared-with"
+          },
+          {
+            "from": "write",
+            "to": "policies",
+            "rel": "produces"
+          },
+          {
+            "from": "lexicon",
+            "to": "write",
+            "rel": "depends-on"
           }
         ],
         "links": {
@@ -1049,6 +1123,10 @@
           {
             "text": "Change a row and rebuild, and the day, the receipts and the decisions follow.",
             "why": "On how it is built."
+          },
+          {
+            "text": "What changes is only where the rules are kept.",
+            "why": "The five levels."
           }
         ]
       }
@@ -1128,6 +1206,12 @@
           "kind": "screenshot"
         },
         {
+          "file": "pa-levels-anim.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-levels-anim.webp",
+          "caption": "The same day, five ways: no policy, in the prompt, in hooks, enforced outside the agent, and as Pellbridge is deployed. Each square is one event, coloured by what happened.",
+          "kind": "screenshot"
+        },
+        {
           "file": "fc-connect.webp",
           "url": "https://newsroom.sgit.ai/articles/images/fc-connect.webp",
           "caption": "Two policy graphs connected by edges. On the left, a regulator's graph in its own vocabulary, hypothetical here; on the right, a firm's behaviour policies. Neither adopts the other's schema; the edges do the work.",
@@ -1196,6 +1280,12 @@
             "label": "Open, CC BY",
             "kind": "concept",
             "summary": "Adopt it, or write your own."
+          },
+          {
+            "id": "withwithout",
+            "label": "With and without a policy",
+            "kind": "example",
+            "summary": "16 breaches with none; none kept outside."
           }
         ],
         "edges": [
@@ -1238,6 +1328,16 @@
             "from": "open",
             "to": "graphs",
             "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "withwithout",
+            "rel": "produces"
+          },
+          {
+            "from": "withwithout",
+            "to": "levels",
+            "rel": "example-of"
           }
         ],
         "links": {

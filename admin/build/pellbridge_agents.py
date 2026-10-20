@@ -22,6 +22,13 @@ CRED = json.loads((ROOT / "admin/content/vaults/pellbridge-agents.json").read_te
 
 SHOTS = [
     ("gate-anim.webp", "The gate, animated: from 10:02 to 12:10 of the invented day. A new payee approved by the customer, a hidden instruction in a bill declined by the model, advice caught by the output check, a vulnerability routed to a person, an alert closed with a second person's approval, a full credit search that nothing stopped, and an email the model declined to send."),
+    ("gatepanel.webp", "The gate with its controls: which policy level is enforced, which kinds of event to play, two speeds (everything, and routine events faster), incidents slowed to half speed, and a list of moments to jump to."),
+    ("levels-anim.webp", "The same day, five ways: with no policy, with every rule in the prompt, in hooks, kept outside the agent, and as Pellbridge is deployed today. Each square is one event; only where the rules are kept changes."),
+    ("levels.webp", "The five levels, side by side: 16 breaches with no policy, 4 in the prompt, 3 in hooks, none kept outside, 3 as deployed."),
+    ("exposure.webp", "Grant and exposure for every agent at every level: the outer circle is everything the agent can reach, the red part is what it can reach and may not use with nothing out of its reach in the way. Kept outside, the grant itself shrinks."),
+    ("gatehooks.webp", "The gate with every rule in hooks: a hook in the agent's own harness blocks a hidden instruction to pay a crypto exchange. Hooks see the agent's tool calls; a credential used outside them, or a switched-off hook, goes past."),
+    ("gatesummary.webp", "The end of the day: the counts for the level being played, and the same day under every level of policy."),
+    ("builder.webp", "Write a policy: how an Agent Behaviour Policy works in five steps, then each agent's rows with what it may do and what keeps each rule; change a row and the agent's day replays with it."),
     ("gate-setting.webp", "15:30: the payments assistant changes a standing order. The approval rule is a setting in the agent's own profile, and it was off, so the action goes through the gap and the row is broken."),
     ("gate-tests.webp", "17:00: model provider B changes version. Every row of every policy on that provider is a test; two that only the model kept fail, and the release stops."),
     ("blast-fraud.webp", "The fraud triage agent's blast radius: what it may reach, what it can reach through a gap, and the core ledger it can reach through a service account secret it can read."),
@@ -49,10 +56,10 @@ From the CLI: <code style="word-break:break-all">sgit clone {cred}</code><br>
 <span class="small dim">Published deliberately under the <code>sgit_public_read_</code> prefix, and derived one-way from a vault key that is not in this repository. Read back with this key before it was published: the same files, the same app.</span></div>
 
 <p style="margin:18px 0 6px"><a href="{ui}" rel="noopener" target="_blank" style="display:inline-block;background:#0f766e;color:#fff;font-weight:800;font-size:20px;text-decoration:none;padding:14px 26px;border-radius:10px">Open the vault, full screen →</a> <a href="#live" style="margin-left:14px">or use it here, below</a></p>
-<p class="small dim">Opens in the vault's own app, read-only, with the published key: the six agents and their policies, the gate replaying the day, each agent's blast radius, the chain to the board, the test pack and the outage, and the four elements side by side.</p>
+<p class="small dim">Opens in the vault's own app, read-only, with the published key: the six agents and their policies, the gate replaying the day, the same day with and without a policy, writing a policy, each agent's blast radius, the chain to the board, the test pack and the outage, and the four elements side by side.</p>
 
 <h2 id="live">Use it here</h2>
-<p class="small dim" style="margin:.2rem 0 .9rem">Open the gate and press play: each action leaves its agent and meets the gate, or the gap. Step through it one action at a time. Then open the blast radius and pick an agent.</p>
+<p class="small dim" style="margin:.2rem 0 .9rem">Open the gate and press play: each action leaves its agent and meets the gate, or the gap. The panel on the right picks the policy level, which kinds of event to play and how fast, and jumps straight to a moment, such as a breach or the test pack. Then open \u201cWith and without a policy\u201d, and \u201cWrite a policy\u201d to change a row and replay the day.</p>
 <div class="sgv-uiembed" data-vault="{vid}" data-readkey="{hexkey}" data-app="1"></div>
 <script>
 (function () {{
@@ -72,15 +79,29 @@ From the CLI: <code style="word-break:break-all">sgit clone {cred}</code><br>
 <h2 id="inside">What is in it</h2>
 <table>
 <tr><th>Path</th><th>What</th></tr>
-<tr><td><code>index.html</code></td><td>The app: overview, the agents, the gate, blast radius, accountability, assurance, the four elements, and the files; the data and the engine inlined.</td></tr>
+<tr><td><code>index.html</code></td><td>The app: overview, the agents, the gate (with its controls), with and without a policy, write a policy, blast radius, accountability, assurance, the four elements, and the files; the data and the engine inlined.</td></tr>
 <tr><td><code>content.json</code></td><td>The bank: its roles and chain to the board, its systems and service accounts, the six agents and their 43 rows, and one day of 40 events.</td></tr>
 <tr><td><code>engine.js</code></td><td>The deterministic engine: <code>PellbridgeTwin.make(content)</code>, with policy, delta, blast, chain, run, incidents, tests and crosswalk.</td></tr>
+<tr><td><code>levels/day.json</code></td><td>The same day at each level of policy: no policy, in the prompt, in hooks, outside the agent, and as deployed, with each agent's grant and exposure.</td></tr>
 <tr><td><code>policies/</code></td><td>One Agent Behaviour Policy per agent, with the four elements filled in and its hash.</td></tr>
 <tr><td><code>receipts/day.json</code></td><td>Every decision of the day, each with the hash of the one before.</td></tr>
 <tr><td><code>decisions/</code></td><td>The thirteen gaps, one file each, with holder, door and interval.</td></tr>
 <tr><td><code>incidents/</code>, <code>tests/</code>, <code>blast/</code></td><td>The day's breaks and near misses, the test pack run on the model change, and each agent's blast radius.</td></tr>
 <tr><td><code>tools/</code></td><td>The scripts that build all of it. Change a row, rebuild, and the day, the receipts and the decisions follow.</td></tr>
 </table>
+<p class="small dim">Everything in this vault, the policies, the engine, the app and the data, is open, under CC BY 4.0, like the Agent Behaviour Policy's vocabulary at <a href="https://abp.sgit.ai/" rel="noopener" target="_blank">abp.sgit.ai</a>. Take it, change it, use it.</p>
+
+<h2 id="levels">With and without a policy</h2>
+<p>The same 40 events, the same agents and the same model choices, replayed five ways. Only where the rules are kept changes.</p>
+<table>
+<tr><th>Level</th><th>Breaches</th><th>Near misses</th><th>Harm (weight reached)</th></tr>
+<tr><td>No policy</td><td>16</td><td>0</td><td>92</td></tr>
+<tr><td>Policy in the prompt</td><td>4</td><td>7</td><td>22</td></tr>
+<tr><td>Policy in hooks</td><td>3</td><td>2</td><td>20</td></tr>
+<tr><td>Policy enforced outside the agent</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>As deployed today</td><td>3</td><td>6</td><td>20</td></tr>
+</table>
+<p class="small dim">The one near miss left when every rule is kept outside is investment advice: an output check out of the agent's reach keeps it, and a check can miss. In the app, the gate plays any of the five, and "Write a policy" lets you change any row and replay the agent's day.</p>
 
 <h2 id="tour">A tour</h2>
 {shots}

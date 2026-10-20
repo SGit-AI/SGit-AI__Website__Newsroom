@@ -20,7 +20,7 @@ The graphs are data first and pictures second. Take them as JSON: [all articles 
 
 *[diagram]*
 
-223 articles, 1268 links between them (1902 mentions in all). 213 articles cite an earlier one; 65 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+223 articles, 1268 links between them (1903 mentions in all). 213 articles cite an earlier one; 65 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
 
 ## [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md)
 
@@ -141,7 +141,7 @@ A synthetic vault in which six bank agents carry behaviour policies with agent i
 *[diagram]*
 **concept**method**artefact**example
 
-**9 nodes, 8 edges**
+**12 nodes, 12 edges**
 
 - **Pellbridge Bank** (artefact) Invented: six agents, 43 rows.
 - **Six behaviour policies** (artefact) The four elements filled in.
@@ -152,6 +152,9 @@ A synthetic vault in which six bank agents carry behaviour policies with agent i
 - **Blast radius** (method) May reach, can reach, through a secret.
 - **Thirteen decisions** (artefact) Fix, fund or accept, nine holders.
 - **Test pack on model change** (method) Two rows fail; release stopped.
+- **The same day, five ways** (example) 16 breaches with no policy; none kept outside.
+- **Writing a policy** (method) Five steps; change a row, replay the day.
+- **The lexicon** (concept) Grant, mandate, delta, barrier and more, CC BY.
 
 > A near miss is the same row as a breach, on a day the model declined. On near misses.
 
@@ -168,7 +171,7 @@ The FCA's planned framework for agentic finance, with agent identity, delegated 
 *[diagram]*
 **concept**claim**method**artefact**example
 
-**9 nodes, 8 edges**
+**10 nodes, 10 edges**
 
 - **A framework for agentic finance** (claim) Identity, delegated authority, accountability, execution.
 - **Agent Behaviour Policy** (method) Grant, mandate, delta and barrier.
@@ -179,6 +182,7 @@ The FCA's planned framework for agentic finance, with agent identity, delegated 
 - **Continuous, conditional assurance** (concept) Rows re-tested on every model change.
 - **Policies as graphs** (concept) Connected by edges, no shared schema.
 - **Open, CC BY** (concept) Adopt it, or write your own.
+- **With and without a policy** (example) 16 breaches with none; none kept outside.
 
 > Once the regulator's expectations and a firm's policies are both graphs, nobody has to adopt anybody's schema. On connecting.
 

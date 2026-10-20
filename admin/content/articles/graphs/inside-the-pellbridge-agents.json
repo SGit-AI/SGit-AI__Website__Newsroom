@@ -1,36 +1,173 @@
 {
  "slug": "inside-the-pellbridge-agents",
  "teaser": "Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.",
- "topics": ["agents-and-policy", "vaults-and-method"],
+ "topics": [
+  "agents-and-policy",
+  "vaults-and-method"
+ ],
  "core_idea": "A synthetic vault in which six bank agents carry behaviour policies with agent identity, delegated authority, accountability and execution filled in, and a deterministic engine replays a day through the gate with chained receipts, showing that the rows kept by boundaries held and every near miss and breach came through a gap.",
  "nodes": [
-  {"id": "bank", "label": "Pellbridge Bank", "kind": "artefact", "summary": "Invented: six agents, 43 rows."},
-  {"id": "policies", "label": "Six behaviour policies", "kind": "artefact", "summary": "The four elements filled in."},
-  {"id": "gate", "label": "The gate", "kind": "concept", "summary": "Systems out of the agent's reach decide."},
-  {"id": "gap", "label": "The gap", "kind": "concept", "summary": "Prompt, setting, check or nothing."},
-  {"id": "day", "label": "One day replayed", "kind": "example", "summary": "40 events, hash-chained receipts."},
-  {"id": "incidents", "label": "Incidents from gaps only", "kind": "example", "summary": "6 near misses, 3 breaches."},
-  {"id": "blast", "label": "Blast radius", "kind": "method", "summary": "May reach, can reach, through a secret."},
-  {"id": "decisions", "label": "Thirteen decisions", "kind": "artefact", "summary": "Fix, fund or accept, nine holders."},
-  {"id": "tests", "label": "Test pack on model change", "kind": "method", "summary": "Two rows fail; release stopped."}
+  {
+   "id": "bank",
+   "label": "Pellbridge Bank",
+   "kind": "artefact",
+   "summary": "Invented: six agents, 43 rows."
+  },
+  {
+   "id": "policies",
+   "label": "Six behaviour policies",
+   "kind": "artefact",
+   "summary": "The four elements filled in."
+  },
+  {
+   "id": "gate",
+   "label": "The gate",
+   "kind": "concept",
+   "summary": "Systems out of the agent's reach decide."
+  },
+  {
+   "id": "gap",
+   "label": "The gap",
+   "kind": "concept",
+   "summary": "Prompt, setting, check or nothing."
+  },
+  {
+   "id": "day",
+   "label": "One day replayed",
+   "kind": "example",
+   "summary": "40 events, hash-chained receipts."
+  },
+  {
+   "id": "incidents",
+   "label": "Incidents from gaps only",
+   "kind": "example",
+   "summary": "6 near misses, 3 breaches."
+  },
+  {
+   "id": "blast",
+   "label": "Blast radius",
+   "kind": "method",
+   "summary": "May reach, can reach, through a secret."
+  },
+  {
+   "id": "decisions",
+   "label": "Thirteen decisions",
+   "kind": "artefact",
+   "summary": "Fix, fund or accept, nine holders."
+  },
+  {
+   "id": "tests",
+   "label": "Test pack on model change",
+   "kind": "method",
+   "summary": "Two rows fail; release stopped."
+  },
+  {
+   "id": "fivelevels",
+   "label": "The same day, five ways",
+   "kind": "example",
+   "summary": "16 breaches with no policy; none kept outside."
+  },
+  {
+   "id": "write",
+   "label": "Writing a policy",
+   "kind": "method",
+   "summary": "Five steps; change a row, replay the day."
+  },
+  {
+   "id": "lexicon",
+   "label": "The lexicon",
+   "kind": "concept",
+   "summary": "Grant, mandate, delta, barrier and more, CC BY."
+  }
  ],
  "edges": [
-  {"from": "bank", "to": "policies", "rel": "produces"},
-  {"from": "policies", "to": "gate", "rel": "produces"},
-  {"from": "policies", "to": "gap", "rel": "produces"},
-  {"from": "day", "to": "incidents", "rel": "produces"},
-  {"from": "gap", "to": "incidents", "rel": "leads-to"},
-  {"from": "blast", "to": "policies", "rel": "extends"},
-  {"from": "incidents", "to": "decisions", "rel": "leads-to"},
-  {"from": "tests", "to": "policies", "rel": "extends"}
+  {
+   "from": "bank",
+   "to": "policies",
+   "rel": "produces"
+  },
+  {
+   "from": "policies",
+   "to": "gate",
+   "rel": "produces"
+  },
+  {
+   "from": "policies",
+   "to": "gap",
+   "rel": "produces"
+  },
+  {
+   "from": "day",
+   "to": "incidents",
+   "rel": "produces"
+  },
+  {
+   "from": "gap",
+   "to": "incidents",
+   "rel": "leads-to"
+  },
+  {
+   "from": "blast",
+   "to": "policies",
+   "rel": "extends"
+  },
+  {
+   "from": "incidents",
+   "to": "decisions",
+   "rel": "leads-to"
+  },
+  {
+   "from": "tests",
+   "to": "policies",
+   "rel": "extends"
+  },
+  {
+   "from": "policies",
+   "to": "fivelevels",
+   "rel": "produces"
+  },
+  {
+   "from": "gate",
+   "to": "fivelevels",
+   "rel": "compared-with"
+  },
+  {
+   "from": "write",
+   "to": "policies",
+   "rel": "produces"
+  },
+  {
+   "from": "lexicon",
+   "to": "write",
+   "rel": "depends-on"
+  }
  ],
  "links": {
-  "articles": ["a-trusted-framework-for-agentic-finance", "governs-enforces-attests", "inside-the-thistlewood-twin"],
+  "articles": [
+   "a-trusted-framework-for-agentic-finance",
+   "governs-enforces-attests",
+   "inside-the-thistlewood-twin"
+  ],
   "pages": [],
-  "sites": ["https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html", "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai", "https://abp.sgit.ai/", "https://ruv.sgit.ai/studio/index.html"]
+  "sites": [
+   "https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html",
+   "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
+   "https://abp.sgit.ai/",
+   "https://ruv.sgit.ai/studio/index.html"
+  ]
  },
  "quotes": [
-  {"text": "A near miss is the same row as a breach, on a day the model declined.", "why": "On near misses."},
-  {"text": "Change a row and rebuild, and the day, the receipts and the decisions follow.", "why": "On how it is built."}
+  {
+   "text": "A near miss is the same row as a breach, on a day the model declined.",
+   "why": "On near misses."
+  },
+  {
+   "text": "Change a row and rebuild, and the day, the receipts and the decisions follow.",
+   "why": "On how it is built."
+  },
+  {
+   "text": "What changes is only where the rules are kept.",
+   "why": "The five levels."
+  }
  ]
 }

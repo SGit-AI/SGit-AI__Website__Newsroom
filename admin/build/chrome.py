@@ -242,6 +242,8 @@ def nav_html(rel, up, newsroom=False, meter=False):
             f'  <link rel="stylesheet" href="{up}assets/themes/themes.css">\n'
             f'  <link rel="stylesheet" href="{up}assets/site-nav.css">\n'
             f'  <script src="{up}assets/themes/themes.js"></script>\n'
+            # the pause button on animated figures (v0.12.151), on every page
+            f'  <script src="{up}assets/reader/anim.js" defer></script>\n'
             f'  <a class="brand" href="{up}index.html">newsroom<span>.sgit.ai</span></a>\n'
             f'  <a class="ver" href="{up}admin/versions.html" title="Site release history">{VERSION}</a>\n'
             f'  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>\n'

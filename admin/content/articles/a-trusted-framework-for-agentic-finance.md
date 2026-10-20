@@ -4,7 +4,7 @@ date: 2026-10-19
 author: Dinis Cruz
 author_url: about/index.html
 summary: Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example in a vault: an invented bank with six agents, each with all four elements filled in, and one day of their work replayed through the gate. Every near miss and breach that day came through a gap, a row kept only by the prompt, a setting or nothing; the rows kept by systems the agent cannot reach held. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; and policies written as graphs can be connected with edges, without either side adopting the other's schema.
-version: v0.12.150
+version: v0.12.151
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, agent-behaviour-policy, regulation, finance, accountability, graphs, article
 status: published
@@ -23,6 +23,7 @@ status: published
 - **Execution is who keeps each rule.** The prompt, a hook, or a system the agent cannot reach.
 - **A worked example, at play.** An invented bank, six agents, all four elements, in a vault.
 - **Every incident came from a gap.** Boundary rows held; near misses and breaches came through the gaps.
+- **The same day without a policy.** 16 breaches; kept outside the agent, none.
 - **It is open, CC BY.** Adopt it, or write your own; policies as graphs can be connected.
 
 ## What the FCA said {#speech}
@@ -93,6 +94,14 @@ Sorted by what kept each row, the day is plain. The 26 actions on rows kept by a
 The rest of the speech is there too. At 14:10 one model provider is down for half an hour, and the two agents on it stop: the customer pays in the app, and fraud signals go to the analysts. At 17:00 the other provider changes version, the test pack runs, two rows that only the model kept fail, and the release stops. And each agent's blast radius shows what it may reach, what it can, and what it can through a secret it can read: the fraud triage agent can reach the core ledger through an old service account.
 
 !shot pa-blast-fraud.webp | images/ | The fraud triage agent's blast radius in the vault: its mandate inside, the gaps around it, and the core ledger reachable through a service account secret. | screenshot
+
+## The same day, with and without a policy {#levels}
+
+The clearest way to see what a behaviour policy does is to replay the same day without one. The vault replays the 40 events five ways, with the same model choices each time; only where the rules are kept changes. With no policy, 16 breaches. With every rule in the prompt, 4 breaches and 7 near misses: the model kept most of them, this time. In hooks, 3 breaches: a hook blocks what it sees, but not a credential used outside the agent's tools, nor a hook switched off in the agent's own account. Kept by systems outside the agent, no breaches, and the agents' grants shrink, because what they may not use is taken away.
+
+!shot pa-levels-anim.webp | images/ | The same day, five ways: no policy, in the prompt, in hooks, enforced outside the agent, and as Pellbridge is deployed. Each square is one event, coloured by what happened. | screenshot
+
+That is the contribution, in one picture: the policy writes the rules down, and says for each one where it is kept. Writing one takes five steps, and the vault has a page that walks through them and replays the day as you change a row. [Inside the Pellbridge agents](/articles/inside-the-pellbridge-agents.html#levels) has the detail, and the words, grant, mandate, delta, barrier and the rest, are all open under CC BY 4.0.
 
 ## Adopt it, or write your own as a graph {#graphs}
 

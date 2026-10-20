@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-20 | minor | 2,157 | +2 / −4 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-exit-is-when-you-sell-control/v1.2.0.md) · [current](../the-exit-is-when-you-sell-control.md) |
+| **v1.2.0** | 2026-10-20 | minor | 2,157 | +2 / −4 words; 2 changed, 0 added, 0 removed paragraphs | [`b4ec6e4e4`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4ec6e4e4ead9093e4c1a98cecb815a566516dce) | [what changed](the-exit-is-when-you-sell-control/v1.2.0.md) · [current](../the-exit-is-when-you-sell-control.md) |
 | **v1.1.0** | 2026-10-20 | minor | 2,159 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`4094c41b5`](https://github.com/SGit-AI/SGit-AI__Website/commit/4094c41b54a4958cfec09517ed2f70e19e486edb) | [what changed](the-exit-is-when-you-sell-control/v1.1.0.md) |
 | **v1.0.0** | 2026-10-20 | published | 2,159 | first published | [`f1708db9b`](https://github.com/SGit-AI/SGit-AI__Website/commit/f1708db9b4df92dec2c912b1a23e229178a6783f) |  |
 

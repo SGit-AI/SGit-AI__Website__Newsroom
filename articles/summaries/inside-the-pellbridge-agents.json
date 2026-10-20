@@ -5,7 +5,7 @@
   {
    "id": "top",
    "label": "The opening",
-   "words": 341,
+   "words": 403,
    "line": "A tour of the Pellbridge vault: six agents, four elements, one day at the gate.",
    "para": "An invented bank runs six agents, each with a behaviour policy filling in the FCA's four elements: 43 rows, 30 kept by boundaries, 13 gaps. A deterministic engine replays a day of 40 events with chained receipts. Every incident came from a gap row. This is the technical article, with the policy as JSON.",
    "by": "newsroom.writer"
@@ -13,7 +13,7 @@
   {
    "id": "in-short",
    "label": "In short",
-   "words": 103,
+   "words": 152,
    "line": "Seven points about the vault.",
    "para": "Six agents and policies, the four elements filled in, a replayed day with hash-chained receipts, incidents only from gap rows, an animated blast radius for each agent, a holder and decision for every gap, and no model called, so it replays exactly.",
    "by": "newsroom.writer"
@@ -29,9 +29,9 @@
   {
    "id": "gate",
    "label": "One day at the gate",
-   "words": 262,
-   "line": "How the gate decides, and moments from the day.",
-   "para": "Rows kept by a system meet the gate, and the system decides. Gap rows go through the gap, where the model decides. The day has 16 allowed, 3 approved, 4 denied, 6 near misses and 3 breaches, among them a hidden instruction declined and a full credit search nothing stopped.",
+   "words": 367,
+   "line": "How the gate decides, its controls, and moments from the day.",
+   "para": "Rows kept by a system meet the gate, and the system decides; gap rows go through the gap, where the model decides. A panel picks the policy level, which events to play, two speeds and moments to jump to. The day has 6 near misses and 3 breaches, among them a full credit search nothing stopped.",
    "by": "newsroom.writer"
   },
   {
@@ -40,6 +40,30 @@
    "words": 102,
    "line": "Every near miss and breach came from a gap row.",
    "para": "The 26 actions on rows kept by a boundary produced no incident. The 12 on gap rows produced six near misses and three breaches. A near miss is the same row as a breach, on a day the model declined.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "levels",
+   "label": "With and without a policy",
+   "words": 433,
+   "line": "The same day at five levels of policy.",
+   "para": "The 40 events replayed with no policy, in the prompt, in hooks, enforced outside the agent, and as deployed. Breaches fall from 16 to 4, 3 and none. Hooks miss a credential used outside the tools and a hook switched off. One open path exposes a system; only rules kept outside shrink the blast radius and the grant.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "write",
+   "label": "Writing a policy",
+   "words": 205,
+   "line": "Writing a policy, in five steps.",
+   "para": "List what the agent can do, say what it may do, find the gap, say what keeps each rule, and give every row a holder. The vault's page does this for each agent: change what it may do or what keeps a rule, and its day replays as you go, with the policy shown as JSON.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "lexicon",
+   "label": "The lexicon",
+   "words": 142,
+   "line": "The words, open under CC BY 4.0.",
+   "para": "Grant, mandate, delta and barrier are the ABP's. A boundary is the only barrier that is a control; a setting and an expectation are not. Kept by, holder, door, receipt and the near miss as a row only the model kept are proposed here. The vocabulary, policies, engine and app are all open.",
    "by": "newsroom.writer"
   },
   {
@@ -77,7 +101,7 @@
   {
    "id": "built",
    "label": "How it is built",
-   "words": 178,
+   "words": 206,
    "line": "What is in the vault, and how the animations are drawn.",
    "para": "The app inlines the data and the engine; content.json holds the bank and the day; the engine writes policies, receipts, decisions, incidents, tests and blast radii; tools rebuild it all. The gate and blast radius are SVG animations in the style of the ruv.sgit.ai studio.",
    "by": "newsroom.writer"
@@ -85,7 +109,7 @@
   {
    "id": "limits",
    "label": "What this does not claim",
-   "words": 74,
+   "words": 92,
    "line": "Invented, unendorsed, scripted, illustrative, and partly proposed.",
    "para": "The bank and everything in it are invented. The FCA has not endorsed it. The day scripts what each model did. Weights are illustrative. Identity, kept by, holder, decision and execution are proposed fields.",
    "by": "newsroom.writer"
