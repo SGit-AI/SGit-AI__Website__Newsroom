@@ -3,8 +3,8 @@ title: Our first customers: an early access programme for Agent Behaviour Polici
 date: 2026-10-20
 author: Dinis Cruz
 author_url: about/index.html
-summary: Agent Behaviour Policies are ready for the next level. We have a workflow that works, a mapping to what regulators are asking for, and a clear idea of how it should all fit together. What is left is execution, and execution starts with customers. We now have a first group of people who are engaged and motivated: consultants who will sell this and already use some of it, people I work with, and us. So we are launching an early access programme, and I want to call the people in it customers, not beta users: each one starts with credit to spend on a site we run, and the site already meters and bills, the way this newsroom does today, starting at £5. We will follow each customer closely, an email every day if that is what it takes, with objectives and milestones written with them, on a dedicated site with a start-here page. What we want to discover is the usage moment: the simplest policy that is useful, the entry point with least friction, and the price that feels fair. Everyone else who asks goes on a mailing list for the next batch. This is the brief.
-version: v0.12.152
+summary: Agent Behaviour Policies are ready for the next level. We have a workflow that works, a mapping to what regulators are asking for, and a clear idea of how it should all fit together. What is left is execution, and execution starts with customers. We now have a first group of people who are engaged and motivated: consultants who will sell this and already use some of it, people I work with, and us. So we are launching an early access programme, and I would like to call the people in it customers, not beta users: each one starts with credit to spend on a site we run, and the site already meters and bills, the way this newsroom does today, starting at £5. We will follow each customer closely, an email every day if that is what it takes, with objectives and milestones written with them, on a dedicated site with a start-here page. What we want to discover is the usage moment: the simplest policy that is useful, the entry point with least friction, and the price that feels fair. Everyone else who asks goes on a mailing list for the next batch. This is the brief.
+version: v0.12.154
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, agent-behaviour-policy, startups, customers, pricing, early-access, article
 status: published
@@ -38,13 +38,13 @@ The other reason is the one in [can you sell it?](/articles/can-you-sell-it.html
 
 ## A site of their own {#site}
 
-I want a dedicated site for this programme, so we can track it all and I can manage it from one place. It starts with a start-here page: what to do first, in order, with clear instructions. Then a page for each customer, with the objectives and milestones we agreed with them, and where they are.
+I think a dedicated site for this programme would help a lot: one place where we can follow how everyone is getting on, and where I can keep things up to date. It starts with a start-here page: what to do first, in order, with clear instructions. Then a page for each customer, with the objectives and milestones we agreed with them, and where they are.
 
 The billing is already there. This newsroom meters every page a reader reads against their credit, and the top-up link has been live since 11 October. The same works for any site we run: even if all a customer does is use the website, we can measure it, and we can bill for it. The price per use is something to discover. It could be quite high, or quite low. We start with credit and learn what feels fair.
 
 ## Hand-holding, on purpose {#follow}
 
-For this first batch I want to go to town on following up: an email every day if that is what helps, very specific hand-holding, and objectives and milestones mapped out for each customer.
+For this first batch, I would like us to really invest in following up: an email every day if that is what helps, very specific hand-holding, and objectives and milestones mapped out for each customer.
 
 That will not scale, and it is not meant to yet. Paul Graham made the case in [Do Things that Don't Scale](https://paulgraham.com/ds.html) (July 2013): "The most common unscalable thing founders have to do at the start is to recruit users manually." He tells how Stripe's founders got their first users: "When anyone agreed to try Stripe they'd say 'Right then, give me your laptop' and set them up on the spot." And he says you can give users "an insanely great experience with an early, incomplete, buggy product, if you make up the difference with attentiveness."
 

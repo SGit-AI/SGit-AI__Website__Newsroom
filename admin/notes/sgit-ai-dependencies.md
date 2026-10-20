@@ -5,52 +5,52 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 | kind | files | references | what it is |
 |---|---:|---:|---|
 | generator | 799 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 533 | 2078 | links to sgit.ai's pages and the network sites (23 files this site writes itself) |
-| words | 1080 | 7100 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| network | 533 | 2151 | links to sgit.ai's pages and the network sites (23 files this site writes itself) |
+| words | 1081 | 7101 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 65 | 151 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 438 × `sgit.ai/about/index.html`
+- 439 × `sgit.ai/about/index.html`
 - 222 × `sgit.ai/about/index.md`
-- 98 × `sgit.ai/admin/versions.html`
+- 102 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 37 × `graphs.sgit.ai/`
 - 34 × `sgit.ai/`
 - 29 × `sgit.ai/api/append-lanes.html`
-- 19 × `sgit.ai/docs/credentials.html`
+- 20 × `sgit.ai/docs/credentials.html`
 - 19 × `sgit.ai/demos/vaults/bridge-simulation/index.html`
 - 18 × `sgit.ai/docs/append-lane-messaging.html`
 - 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 18 × `sgit.ai/demos/vaults/risk-acceptance/index.html`
 - 17 × `nhi.sgit.ai/`
 - 16 × `graphs.sgit.ai/v2/books/index.html`
+- 15 × `sgit.ai/startups/business-plans.html`
 - 15 × `sgit.ai/demos/vaults/code-review-graphs/index.html`
+- 15 × `sgit.ai/updates/index.html`
 - 14 × `sgit.ai/docs/pki.md`
-- 14 × `sgit.ai/startups/business-plans.html`
 - 14 × `sgit.ai/demos/vaults/regulation-graph/index.html`
+- 14 × `sgit.ai/network/index.html`
 - 14 × `sgit.ai/demos/vaults/how-much-evidence/index.html`
 - 14 × `sgit.ai/case-studies/live-vault-docs.html`
-- 14 × `sgit.ai/updates/index.html`
 - 13 × `sgit.ai/docs/credentials.md`
 - 13 × `sgit.ai/api/append-lanes.md`
+- 12 × `sgit.ai/security/index.html`
 - 12 × `graphs.sgit.ai/v1/altitudes/index.html`
 - 12 × `graphs.sgit.ai/v2/team/index.html`
 - 12 × `sgit.ai/demos/vaults/hope-or-enforcement/index.html`
-- 12 × `sgit.ai/network/index.html`
+- 12 × `sgit.ai/demos/vaults/index.html`
 - 12 × `sgit.ai/network/index.md`
 - 12 × `sgit.ai/docs/agent-contact.html`
 - 12 × `sgit.ai/docs/agent-contact.md`
+- 12 × `sgit.ai/demos/fractal-graphs/performance.html`
 - 11 × `pki.sgit.ai/`
 - 10 × `sgit.ai/demos/vaults/index.md`
 - 10 × `sgit.ai/startups/business-plans.md`
-- 10 × `sgit.ai/security/index.html`
 - 10 × `sgit.ai/demos/vaults/article-views/index.html`
 - 10 × `sgit.ai/demos/vaults/article-views/index.md`
 - 10 × `sgit.ai/demos/vaults/connector-twin/index.html`
-- 10 × `sgit.ai/demos/vaults/index.html`
-- 10 × `graphs.sgit.ai/v1/docs/fractal-risk-registers.html`
-- 10 × `sgit.ai/demos/fractal-graphs/performance.html`
+- 10 × `sgit.ai/demos/fractal-graphs/index.html`
 
 ## Network links in pages this site writes itself
 
