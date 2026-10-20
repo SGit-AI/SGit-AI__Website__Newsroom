@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-20 | published | 1,763 | first published | this release | [current](../pki-everywhere.md) |
+| **v1.0.0** | 2026-10-20 | published | 1,763 | first published | [`7b4eddc3c`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b4eddc3c76dfc9f429bd6b707248912a34c1716) | [current](../pki-everywhere.md) |
 
 [← Back to the article](../pki-everywhere.md) · [All articles](../index.md)
 

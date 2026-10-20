@@ -6,7 +6,7 @@ author_url: about/index.html
 summary: My business partner is at the WestCap CISO Summit in New York this week, from 20 to 22 October, where security leaders, investors and founders meet. This page does two jobs. It is a briefing for him, and it is a place for the people he meets to come and see what we do. The summit's main day has panels on securing AI use and AI governance, on preparing for an AI attack, and on using AI to secure a company. Our work sits right across them. An Agent Behaviour Policy is a written description, for one agent in one deployment, of everything it can do, what it was authorised to do, the difference between the two, and what actually stands in the way. RiskMandate is where we sell one, from £10 for the pack to £1,500 for one a professional signs, with early users helped at no cost in exchange for telling us where it is wrong. The idea at the centre is one sentence: a control bounds a grant only if it is enforced by something the grant does not include. Below, that idea is said six ways, for CISOs, for AI governance and audit, for incident response and red teams, for AI-for-defence vendors, for investors and for founders, each with the articles and vaults to read first. Everything here is open, under CC BY 4.0.
 version: v0.12.155
 license: https://creativecommons.org/licenses/by/4.0/
-tags: agents, agent-behaviour-policy, riskmandate, ciso, security, governance, events, article
+tags: agents, agent-behaviour-policy, riskmandate, ciso, security, governance, article
 status: published
 ---
 
