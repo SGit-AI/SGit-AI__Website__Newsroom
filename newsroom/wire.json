@@ -73,6 +73,33 @@
   ],
   "articles": [
     {
+      "slug": "a-leak-without-breaking-the-policy",
+      "title": "Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks",
+      "date": "2026-10-20",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-leak-without-breaking-the-policy.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-leak-without-breaking-the-policy.json",
+      "teaser": "A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.",
+      "summary": "One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Those three are why the best answer is still the third level: an agent that never sees the key cannot leak it.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "secrets",
+        "hooks",
+        "privacy",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "pki-everywhere",
       "title": "PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key",
       "date": "2026-10-20",

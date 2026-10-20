@@ -1,0 +1,95 @@
+{
+ "slug": "a-leak-without-breaking-the-policy",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 192,
+   "line": "Can a key leak without breaking the policy? Told, checked, never given.",
+   "para": "A customer asked whether a key or personal data could leak without breaking a policy. Yes, if it lists only capabilities: sending is allowed, the key is content. So policies need content rows, each with a barrier. Three levels: told, checked, never given. A tested hook caught five of nine leaks and missed three.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 97,
+   "line": "Seven points: content rows, three levels, a tested hook, never given.",
+   "para": "A key can leak through an allowed action, so policies need content rows. Told is a sentence in the prompt. Checked is a hook on every input and output, deterministic with gaps. Never given means the agent never holds the key. A hook tested against nine leaks caught five and missed three. It is published under CC BY 4.0.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "question",
+   "label": "The question",
+   "words": 140,
+   "line": "The question from one of our first customers.",
+   "para": "Could an API key or personal data leak without breaking any Agent Behaviour Policy? For a policy that only lists capabilities, yes. If the agent may send email, the row says yes; a key pasted into the email is not a different capability. It is the same action with the wrong content.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "content",
+   "label": "Capabilities and content",
+   "words": 143,
+   "line": "Capabilities and content: two more kinds of row.",
+   "para": "Reach: can the agent read the key at all? Usually it can, and the mandate needs it to use the key, not read it: excess grant. Content: disclose.secret, mandate no; disclose.personal_data, only to the person it is about. Like investment advice, a content rule is kept by a check, and a check can miss.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "levels",
+   "label": "Three levels, and better names",
+   "words": 155,
+   "line": "Three levels, with plainer names.",
+   "para": "Told: the prompt says never print, send or store a key; an expectation. Checked: a hook in the harness scans what goes out and comes in; deterministic, but on the agent's machine, and a setting if its account can change it. Never given: something out of reach holds the key and adds it on the way out; a boundary.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "hook",
+   "label": "The hook",
+   "words": 689,
+   "line": "The hook, for Claude Code, in full.",
+   "para": "On PreToolUse it denies a call carrying a secret or naming a secret's variable. On PostToolUse it redacts secrets from results before the model sees them. On Stop it blocks an answer carrying a secret or card number. It matches key formats, card numbers by the Luhn check, and the exact values of the session's own secrets.",
+   "by": "newsroom.writer",
+   "stale": true
+  },
+  {
+   "id": "tested",
+   "label": "Nine leaks, tested",
+   "words": 194,
+   "line": "Nine leaks, tested with fake keys.",
+   "para": "Denied: a token in a command, a key sent by its variable, a key in a URL. Redacted: a result that prints the key. Blocked: an answer with a card number. Allowed: an ordinary command. Missed: a base64-encoded key, a key split and joined, and a file of secrets piped straight out. A check on a command's text cannot see those.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "never",
+   "label": "Never given",
+   "words": 197,
+   "line": "Never given: nothing to leak.",
+   "para": "If the key is not in the agent's environment, none of the nine cases can leak it; the agent asks a proxy or host to make the call. We do this already: the vault host holds the studio's model key, and secrets go into tools, not prompts. Personal data needs minimisation: a token instead of the card.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "policy",
+   "label": "What to write in the policy",
+   "words": 110,
+   "line": "What to write in the policy: three rows.",
+   "para": "read.secret.api_key: usually mandate no, kept out of reach by giving the key to a proxy. disclose.secret: no, checked by a hook that knows the session's own secret values. disclose.personal_data: only to its subject, minimised where possible. A leak breaks a row, and the policy shows in advance which rows are only told.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 68,
+   "line": "What this does not claim.",
+   "para": "The hook is an example, tested on nine cases, not every way out. Regular expressions miss encodings, splits and unknown formats. A hook is only as strong as its configuration. Never given needs a proxy or host. The test used fake keys made at random.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 70,
+   "line": "Where this comes from.",
+   "para": "A conversation with one of our first customers and a voice memo of 20 October 2026; Claude Code's hooks reference; abp.sgit.ai; and earlier articles on enforcement levels, hooks, handing secrets to agents, and the Pellbridge agents.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

@@ -93,6 +93,10 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#pki-eve
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
 
+### Continued by
+
+- [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md) A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 226 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=226)

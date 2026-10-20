@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.1** | 2026-10-20 | patch | 1,681 | front matter only (the text is unchanged) | this release | [what changed](a-briefing-for-the-ciso-summit/v1.0.1.md) · [current](../a-briefing-for-the-ciso-summit.md) |
+| **v1.0.1** | 2026-10-20 | patch | 1,681 | front matter only (the text is unchanged) | [`07c2328f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/07c2328f15128c95cac890bf5d05aca905e94de7) | [what changed](a-briefing-for-the-ciso-summit/v1.0.1.md) · [current](../a-briefing-for-the-ciso-summit.md) |
 | **v1.0.0** | 2026-10-20 | published | 1,681 | first published | [`7b4eddc3c`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b4eddc3c76dfc9f429bd6b707248912a34c1716) |  |
 
 [← Back to the article](../a-briefing-for-the-ciso-summit.md) · [All articles](../index.md)

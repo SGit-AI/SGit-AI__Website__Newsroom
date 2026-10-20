@@ -55,6 +55,160 @@
   ],
   "articles": [
     {
+      "slug": "a-leak-without-breaking-the-policy",
+      "title": "Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-leak-without-breaking-the-policy.webp",
+      "teaser": "A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "secrets",
+        "hooks",
+        "privacy",
+        "article"
+      ],
+      "links_out": [
+        "inside-the-pellbridge-agents",
+        "governs-enforces-attests",
+        "inside-the-no-server-studio",
+        "handing-secrets-to-agents",
+        "are-hooks-the-sweet-spot",
+        "secrets-on-public-keys",
+        "pki-everywhere"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lk-levels.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lk-levels.webp",
+          "caption": "Nine ways a secret tries to leave, at three levels. Told leaves every case to the model. Checked is the measured result of the hook below: three denied, one redacted, one blocked, three missed. Never given leaves nothing to leak.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "a-leak-without-breaking-the-policy",
+        "teaser": "A key can leak through an allowed action. Told, checked, never given: three levels for secrets, and a hook tested against nine leaks.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Secrets and personal data leak as content inside mandated actions, so a behaviour policy needs content rows, and each is kept at one of three levels: told in the prompt, checked by a hook on every input and output, or never given, where something out of the agent's reach holds the key; a tested hook catches most leaks and misses encoded, split and piped ones.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "A leak without breaking the policy?",
+            "kind": "claim",
+            "summary": "Sending is allowed; the key is content."
+          },
+          {
+            "id": "content",
+            "label": "Content rows",
+            "kind": "concept",
+            "summary": "disclose.secret, disclose.personal_data."
+          },
+          {
+            "id": "told",
+            "label": "Told",
+            "kind": "concept",
+            "summary": "A sentence in the prompt."
+          },
+          {
+            "id": "checked",
+            "label": "Checked",
+            "kind": "method",
+            "summary": "A hook on inputs, results and answers."
+          },
+          {
+            "id": "never",
+            "label": "Never given",
+            "kind": "method",
+            "summary": "The agent never holds the key."
+          },
+          {
+            "id": "test",
+            "label": "Nine leaks tested",
+            "kind": "example",
+            "summary": "Five caught, three missed."
+          },
+          {
+            "id": "excess",
+            "label": "Reading the key is excess grant",
+            "kind": "claim",
+            "summary": "Use it, not read it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "question",
+            "to": "content",
+            "rel": "leads-to"
+          },
+          {
+            "from": "content",
+            "to": "told",
+            "rel": "depends-on"
+          },
+          {
+            "from": "content",
+            "to": "checked",
+            "rel": "depends-on"
+          },
+          {
+            "from": "content",
+            "to": "never",
+            "rel": "depends-on"
+          },
+          {
+            "from": "test",
+            "to": "checked",
+            "rel": "example-of"
+          },
+          {
+            "from": "test",
+            "to": "never",
+            "rel": "leads-to"
+          },
+          {
+            "from": "excess",
+            "to": "never",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "governs-enforces-attests",
+            "are-hooks-the-sweet-spot",
+            "handing-secrets-to-agents",
+            "secrets-on-public-keys",
+            "inside-the-pellbridge-agents",
+            "inside-the-no-server-studio",
+            "pki-everywhere"
+          ],
+          "pages": [],
+          "sites": [
+            "https://code.claude.com/docs/en/hooks",
+            "https://abp.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It is the same action, with the wrong content.",
+            "why": "The answer."
+          },
+          {
+            "text": "The three misses are not bugs in this hook.",
+            "why": "The limits of a check."
+          }
+        ]
+      }
+    },
+    {
       "slug": "pki-everywhere",
       "title": "PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key",
       "date": "2026-10-20",
@@ -84,7 +238,9 @@
         "a-directory-of-people-and-keys",
         "the-editors-channel"
       ],
-      "links_in": [],
+      "links_in": [
+        "a-leak-without-breaking-the-policy"
+      ],
       "figures": [
         {
           "file": "ke-patterns.webp",
@@ -944,6 +1100,7 @@
         "free-models-your-own-key"
       ],
       "links_in": [
+        "a-leak-without-breaking-the-policy",
         "the-no-server-startup"
       ],
       "figures": [
@@ -1374,6 +1531,7 @@
         "inside-the-thistlewood-twin"
       ],
       "links_in": [
+        "a-leak-without-breaking-the-policy",
         "our-first-customers",
         "inside-the-no-server-studio",
         "a-trusted-framework-for-agentic-finance"
@@ -2479,6 +2637,7 @@
         "cedar-and-the-policy-vault"
       ],
       "links_in": [
+        "a-leak-without-breaking-the-policy",
         "inside-the-pellbridge-agents",
         "a-trusted-framework-for-agentic-finance",
         "ten-questions-one-graph"
@@ -19275,6 +19434,7 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "a-leak-without-breaking-the-policy",
         "pki-everywhere",
         "a-directory-of-people-and-keys",
         "omnichannel-programming"
@@ -19486,6 +19646,7 @@
         "the-tokens-hook"
       ],
       "links_in": [
+        "a-leak-without-breaking-the-policy",
         "pki-everywhere",
         "a-directory-of-people-and-keys",
         "omnichannel-programming",
@@ -23895,6 +24056,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "a-leak-without-breaking-the-policy",
         "a-briefing-for-the-ciso-summit",
         "governs-enforces-attests",
         "your-own-newsroom",
