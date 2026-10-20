@@ -19,6 +19,16 @@
 #                     from the commit subjects.
 #   3. deploy       — publishes the tagged commit. Runs on manual dispatch even
 #                     without a tag, but never when validation failed.
+#
+# Majors go to main (v0.13.0). dev carries every release, minors and majors; the
+# version is always set on dev, in admin/build/version.txt, because the built pages
+# carry it. When a version is ready to be a major, the release commit on dev bumps
+# to v{release}.{major+1}.0, and dev goes to main by pull request:
+#   - major-gate    — on a pull request into main: version.txt must be a .0 major.
+#   - major-release — on a push to main: the version must be a .0 major; its tag is
+#                     made if dev's run did not make it; and a GitHub Release is
+#                     published with admin/engineering/releases/v{version}.md as its
+#                     notes. main deploys only after this succeeds.
 name: deploy-pages
 on:
   push:
@@ -33,9 +43,13 @@ permissions:
   contents: read
   pages: write
   id-token: write
+# Pull requests get their own group, so their checks never cancel a release on dev
+# or main (v0.13.0's dev run was cancelled by its own pull request's checks). Pushes
+# queue rather than cancel: a cancelled release run would leave its tag unmade until
+# the next run's backfill.
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -185,13 +199,99 @@ jobs:
           fi
           true
 
+  # A pull request into main is a request to release a major: refuse anything else.
+  major-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: version.txt must be a .0 major
+        run: |
+          set -euo pipefail
+          VER=$(grep -oP '^v\K[0-9]+\.[0-9]+\.[0-9]+' admin/build/version.txt)
+          if ! grep -qP '^[0-9]+\.[0-9]+\.0$' <<< "$VER"; then
+            echo "::error::main takes majors only, and version.txt says v$VER. Bump dev to the next major (v{release}.{major+1}.0) in its release commit, then open the pull request."
+            exit 1
+          fi
+          test -f "admin/engineering/releases/v$VER.md" || { echo "::error::admin/engineering/releases/v$VER.md is missing: it becomes the GitHub Release's notes"; exit 1; }
+          echo "v$VER is a major: ready for main"
+
+  # A push to main is a major release: check it, make sure it is tagged, publish it.
+  major-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [validate]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check the major, tag it if dev did not, and publish the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          git fetch --tags --quiet
+          VER=$(grep -oP '^v\K[0-9]+\.[0-9]+\.[0-9]+' admin/build/version.txt)
+          TAG="v$VER"
+          if ! grep -qP '^[0-9]+\.[0-9]+\.0$' <<< "$VER"; then
+            echo "::error::main takes majors only, and version.txt says $TAG"
+            exit 1
+          fi
+          LOG=$(git log --format='%H;%s')
+          REL=$(grep -m1 -F ";site $TAG:" <<< "$LOG" | cut -d';' -f1 || true)
+          if [ -z "$REL" ]; then
+            echo "::error::no commit on main carries \"site $TAG:\" in its subject"
+            exit 1
+          fi
+          echo "release commit is ${REL:0:9}"
+          if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+            if [ "$(git rev-parse "refs/tags/$TAG^{commit}")" != "$REL" ]; then
+              echo "::error::$TAG exists on another commit"
+              exit 1
+            fi
+            echo "$TAG already tagged by dev's run"
+          else
+            # dev's run normally tags it. If that run was cancelled, tag it here: by
+            # git first, then through the API, which GITHUB_TOKEN may be allowed when
+            # a git push is not (the workflow-file limit noted in tag-release).
+            git config user.name  'GitHub Actions'
+            git config user.email 'actions@github.com'
+            git tag "$TAG" "$REL"
+            if git push origin "refs/tags/$TAG" 2>/dev/null; then
+              echo "tagged ${REL:0:9} as $TAG"
+            elif gh api "repos/$GITHUB_REPOSITORY/git/refs" -f ref="refs/tags/$TAG" -f sha="$REL" >/dev/null 2>&1; then
+              echo "tagged ${REL:0:9} as $TAG through the API"
+            else
+              echo "::error::could not create $TAG on ${REL:0:9}; push it by hand: git tag $TAG $REL && git push origin refs/tags/$TAG"
+              exit 1
+            fi
+          fi
+          NOTES="admin/engineering/releases/$TAG.md"
+          test -f "$NOTES" || { echo "::error::$NOTES is missing"; exit 1; }
+          # the notes without their front matter
+          awk 'BEGIN{n=0} /^---$/ && n<2 {n++; next} n>=2' "$NOTES" > /tmp/notes.md
+          TITLE=$(grep -m1 '^# ' /tmp/notes.md | sed 's/^# //')
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "the GitHub Release $TAG already exists"
+          else
+            gh release create "$TAG" --verify-tag --latest --title "${TITLE:-$TAG}" --notes-file /tmp/notes.md
+            echo "published the GitHub Release $TAG"
+          fi
+
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [validate, tag-release]
-    # Publish even when tag-release is skipped (manual dispatch) — never when
-    # validation failed, and never from a pull request.
-    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && (needs.tag-release.result == 'success' || needs.tag-release.result == 'skipped')
+    needs: [validate, tag-release, major-release]
+    # Publish even when tag-release is skipped (manual dispatch, or main) — never when
+    # validation failed, never from a pull request, and on main only once the major
+    # has been checked, tagged and released.
+    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && (needs.tag-release.result == 'success' || needs.tag-release.result == 'skipped') && (needs.major-release.result == 'success' || needs.major-release.result == 'skipped')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
