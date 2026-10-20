@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-221 of 221 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+222 of 222 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-221 articles, 1260 links between them (1891 mentions in all). 211 articles cite an earlier one; 64 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+222 articles, 1262 links between them (1893 mentions in all). 212 articles cite an earlier one; 64 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](a-small-slice-sets-the-price.md)
+
+2026-10-20 · Startups & strategyNews & evidence
+
+The headline valuations of the 2026 AI and space giants are set by selling small slices, as the share of companies sold at listing has fallen for decades; the money raised is large, revenue is real but profit mostly is not, multiples sit near the dot-com peak, and the founder's lesson is that control decides the size and terms of the slice.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 6 edges**
+
+- **Two numbers corrected** (claim) OpenAI has not listed; SpaceX sold about 4%.
+- **The share sold keeps falling** (example) Median 30.5% in 1990, 14.5% in 2025.
+- **The money is not small** (example) SpaceX $75bn, twice the previous record.
+- **Against the market** (method) About a quarter more than Facebook's, as a share.
+- **Record revenue, not yet profit** (example) OpenAI ~$50bn run-rate; losses and cash burn.
+- **Dot-com multiples** (example) 28x, 20x, 57x against 31.7x and 38x.
+- **A small slice sets the price** (concept) The last price times everything.
+- **Arranged demand** (concept) Index funds must buy; low floats pop.
+- **Control decides the slice** (claim) The founder's lesson.
+
+> The headline valuation is the last price paid for a slice, multiplied by everything. The mechanism.
+
+> A valuation is the price the market allows for the slice you choose to sell. The lesson.
+
+builds on [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
 
 ## [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](inside-the-no-server-studio.md)
 
@@ -1796,7 +1823,7 @@ We study survivors, so the question is why one founder was chosen over another w
 
 > Replaceability is not an accident of venture capital; it is designed in. What the contracts show.
 
-builds on [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door); continued by [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue).
+builds on [Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map](#why-i-love-wardley-maps), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door); continued by [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](#sell-dont-issue).
 
 ## [Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest](sell-dont-issue.md)
 
@@ -1826,7 +1853,7 @@ A founder with a working, profitable product and competing investors can sell ex
 
 > the fork disciplines the founder because it is possible, and protects the founder because it is slow. Why the fork balances.
 
-builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
+builds on [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value); continued by [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](#a-small-slice-sets-the-price), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next](#start-a-company), [The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out](#the-fork-next-door), [The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is](#the-controllable-founder).
 
 ## [Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive](research-delivered-as-a-vault.md)
 

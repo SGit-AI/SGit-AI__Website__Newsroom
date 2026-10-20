@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-20 | published | 1,627 | first published | this release | [current](../inside-the-no-server-studio.md) |
+| **v1.0.0** | 2026-10-20 | published | 1,627 | first published | [`67c1d54f0`](https://github.com/SGit-AI/SGit-AI__Website/commit/67c1d54f0081ad4441c90877f7168f8e7f646c99) | [current](../inside-the-no-server-studio.md) |
 
 [← Back to the article](../inside-the-no-server-studio.md) · [All articles](../index.md)
 

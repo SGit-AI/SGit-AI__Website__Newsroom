@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-20 | minor | 3,271 | +511 / −0 words; 2 changed, 11 added, 0 removed paragraphs | this release | [what changed](the-no-server-startup/v1.2.0.md) · [current](../the-no-server-startup.md) |
+| **v1.2.0** | 2026-10-20 | minor | 3,271 | +511 / −0 words; 2 changed, 11 added, 0 removed paragraphs | [`67c1d54f0`](https://github.com/SGit-AI/SGit-AI__Website/commit/67c1d54f0081ad4441c90877f7168f8e7f646c99) | [what changed](the-no-server-startup/v1.2.0.md) · [current](../the-no-server-startup.md) |
 | **v1.1.0** | 2026-10-20 | minor | 2,760 | +38 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`88bed709f`](https://github.com/SGit-AI/SGit-AI__Website/commit/88bed709ff638175c5b86c13f9bda0438f621c1b) | [what changed](the-no-server-startup/v1.1.0.md) |
 | **v1.0.0** | 2026-10-20 | published | 2,722 | first published | [`9f07c8f54`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f07c8f5496b6ca9c7d60874e1920ed08545f025) |  |
 

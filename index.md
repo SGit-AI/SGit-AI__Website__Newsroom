@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.146 · 221 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.147 · 222 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](articles/inside-the-no-server-studio.md), 2026-10-20, 6 min. An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.
+- [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](articles/a-small-slice-sets-the-price.md), 2026-10-20, 9 min. The 2026 mega-listings priced trillion-dollar companies by selling a few per cent of them. What was sold, what it raised, and the founder's lesson.
 
 ## Highlights
 
+- [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](articles/inside-the-no-server-studio.md), 2026-10-20, 6 min.
 - [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](articles/the-no-server-startup.md), 2026-10-20, 13 min.
 - [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](articles/inside-the-pellbridge-agents.md), 2026-10-20, 7 min.
 - [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](articles/a-trusted-framework-for-agentic-finance.md), 2026-10-19, 11 min.
-- [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](articles/ten-questions-one-graph.md), 2026-10-19, 8 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](articles/who-is-speaking.md), 2026-10-18, 7 min.
 
-### Strategy & startups (39)
+### Strategy & startups (40)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](articles/a-small-slice-sets-the-price.md), 2026-10-20, 9 min.
 - [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](articles/inside-the-no-server-studio.md), 2026-10-20, 6 min.
 - [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](articles/the-no-server-startup.md), 2026-10-20, 13 min.
-- [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](articles/when-the-customer-becomes-the-commodity.md), 2026-10-19, 7 min.
 
 ## Collections
 

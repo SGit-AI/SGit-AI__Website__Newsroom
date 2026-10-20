@@ -1,0 +1,146 @@
+{
+  "slug": "a-small-slice-sets-the-price",
+  "teaser": "The 2026 mega-listings priced trillion-dollar companies by selling a few per cent of them. What was sold, what it raised, and the founder's lesson.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "The headline valuations of the 2026 AI and space giants are set by selling small slices, as the share of companies sold at listing has fallen for decades; the money raised is large, revenue is real but profit mostly is not, multiples sit near the dot-com peak, and the founder's lesson is that control decides the size and terms of the slice.",
+  "nodes": [
+    {
+      "id": "memo",
+      "label": "Two numbers corrected",
+      "kind": "claim",
+      "summary": "OpenAI has not listed; SpaceX sold about 4%."
+    },
+    {
+      "id": "float",
+      "label": "The share sold keeps falling",
+      "kind": "example",
+      "summary": "Median 30.5% in 1990, 14.5% in 2025."
+    },
+    {
+      "id": "amount",
+      "label": "The money is not small",
+      "kind": "example",
+      "summary": "SpaceX $75bn, twice the previous record."
+    },
+    {
+      "id": "market",
+      "label": "Against the market",
+      "kind": "method",
+      "summary": "About a quarter more than Facebook's, as a share."
+    },
+    {
+      "id": "revenue",
+      "label": "Record revenue, not yet profit",
+      "kind": "example",
+      "summary": "OpenAI ~$50bn run-rate; losses and cash burn."
+    },
+    {
+      "id": "multiples",
+      "label": "Dot-com multiples",
+      "kind": "example",
+      "summary": "28x, 20x, 57x against 31.7x and 38x."
+    },
+    {
+      "id": "slice",
+      "label": "A small slice sets the price",
+      "kind": "concept",
+      "summary": "The last price times everything."
+    },
+    {
+      "id": "demand",
+      "label": "Arranged demand",
+      "kind": "concept",
+      "summary": "Index funds must buy; low floats pop."
+    },
+    {
+      "id": "control",
+      "label": "Control decides the slice",
+      "kind": "claim",
+      "summary": "The founder's lesson."
+    }
+  ],
+  "edges": [
+    {
+      "from": "memo",
+      "to": "slice",
+      "rel": "leads-to"
+    },
+    {
+      "from": "float",
+      "to": "slice",
+      "rel": "produces"
+    },
+    {
+      "from": "amount",
+      "to": "market",
+      "rel": "compared-with"
+    },
+    {
+      "from": "revenue",
+      "to": "multiples",
+      "rel": "leads-to"
+    },
+    {
+      "from": "demand",
+      "to": "slice",
+      "rel": "extends"
+    },
+    {
+      "from": "slice",
+      "to": "control",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "sell-dont-issue",
+      "the-controllable-founder"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.sec.gov/Archives/edgar/data/0001181412/000162828026052535/spcx-20260630.htm",
+      "https://site.warrington.ufl.edu/ritter/files/IPO-Statistics.pdf",
+      "https://www.anthropic.com/news/series-h",
+      "https://techcrunch.com/2026/06/11/spacex-officially-prices-shares-at-135-in-the-largest-ipo-ever/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The headline valuation is the last price paid for a slice, multiplied by everything.",
+      "why": "The mechanism."
+    },
+    {
+      "text": "A valuation is the price the market allows for the slice you choose to sell.",
+      "why": "The lesson."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ip-slice.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ip-slice.webp",
+      "caption": "A small slice sets the price of the whole. At the IPO, 4.2% of SpaceX was sold at $135 a share, and the whole company was priced at $1.77tn. The valuations reported along the way were set the same way, by small transactions.",
+      "kind": "concept"
+    },
+    {
+      "file": "ip-float.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ip-float.webp",
+      "caption": "How much of each company was sold at its IPO, from the final prospectuses, with the median for all US IPOs since 1980 and for 2025 from Jay Ritter's statistics.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ip-size.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ip-size.webp",
+      "caption": "The biggest IPOs, base offering only, in September 2026 dollars; and, for three of them, the money raised as a share of the US stock market.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ip-sales.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ip-sales.webp",
+      "caption": "Valuation against a year of revenue: the dot-com peak, using trailing revenue, and the 2026 AI companies, using annualised run-rates.",
+      "kind": "comparison"
+    }
+  ]
+}
