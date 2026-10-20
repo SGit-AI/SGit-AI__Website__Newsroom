@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="../assets/site-nav.css">
   <script src="../assets/themes/themes.js"></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.141</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.12.142</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -178,7 +178,7 @@ mountSearch(el); mountAsk(el);
 
 <div class="agent">
   <h4>For an agent</h4>
-  <p>Search on newsroom.sgit.ai runs in the reader's browser. The index is https://newsroom.sgit.ai/search/docs.json (one entry per page: u address, t title, k kind, n article number, d date, x teaser, tp topics, tg tags, g the article graph's core idea and node labels, h headings with anchors) and https://newsroom.sgit.ai/search/text.json (paragraphs: [doc index, anchor, text] and, for text that is only in an earlier version of an article, [doc index, anchor, text, version, the version page that shows the change]). Built at release time by admin/build/search_index.py from the published pages; 1024 documents and 10387 paragraphs at v0.12.141. An agent can fetch the two files and rank them itself, or read /llms.txt and the .md twins. Ask on the page (assets/search/ask.js) gives a model the top passages, numbered, with the instruction to answer only from them and cite them: Chrome's built-in model (LanguageModel) on the reader's machine, or the reader's own OpenRouter key, sent to openrouter.ai only.</p>
+  <p>Search on newsroom.sgit.ai runs in the reader's browser. The index is https://newsroom.sgit.ai/search/docs.json (one entry per page: u address, t title, k kind, n article number, d date, x teaser, tp topics, tg tags, g the article graph's core idea and node labels, h headings with anchors) and https://newsroom.sgit.ai/search/text.json (paragraphs: [doc index, anchor, text] and, for text that is only in an earlier version of an article, [doc index, anchor, text, version, the version page that shows the change]). Built at release time by admin/build/search_index.py from the published pages; 1025 documents and 10390 paragraphs at v0.12.142. An agent can fetch the two files and rank them itself, or read /llms.txt and the .md twins. Ask on the page (assets/search/ask.js) gives a model the top passages, numbered, with the instruction to answer only from them and cite them: Chrome's built-in model (LanguageModel) on the reader's machine, or the reader's own OpenRouter key, sent to openrouter.ai only.</p>
 </div>
 </main>
 <sg-meter view="page" kind="free" date="" topics="" title="Search, SGit Newsroom" quiet></sg-meter>
@@ -192,7 +192,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.12.141</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.12.142</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

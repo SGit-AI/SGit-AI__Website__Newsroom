@@ -834,6 +834,172 @@
    "added": null,
    "updated": null,
    "note": "The release was built but the push was refused by the git proxy, so nothing reached dev."
+  },
+  {
+   "id": "25241a77ed02",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-20T04:47:25Z",
+   "finished_at": "2026-10-20T05:00:45Z",
+   "duration_s": 794.6,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.167964,
+     "input": 813306,
+     "output": 144223,
+     "cache_read": 456274,
+     "cache_write": 79673,
+     "thinking": 89052
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.949369,
+     "input": 98,
+     "output": 73431,
+     "cache_read": 3736250,
+     "cache_write": 282944,
+     "thinking": 7670
+    }
+   },
+   "cost_usd": 2.117333,
+   "turns": 26,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-20.1",
+   "added": 15,
+   "updated": 1,
+   "note": "Fifteen new stories and one update, with a thin pool and mostly single-source stories."
+  },
+  {
+   "id": "27aef8c4d481",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-20T04:52:53Z",
+   "finished_at": "2026-10-20T04:59:38Z",
+   "duration_s": 400.4,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.118073,
+     "input": 681970,
+     "output": 90064,
+     "cache_read": 197050,
+     "cache_write": 22985,
+     "thinking": 56854
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.826292,
+     "input": 50,
+     "output": 27012,
+     "cache_read": 1824152,
+     "cache_write": 113038,
+     "thinking": 2634
+    }
+   },
+   "cost_usd": 0.944365,
+   "turns": 23,
+   "subagents": 3,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-20.1",
+   "added": 10,
+   "updated": 0,
+   "note": "Ten new stories, one of them a boto3 release that touches the stack."
+  },
+  {
+   "id": "255c5353f6e6",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-20T04:58:43Z",
+   "finished_at": "2026-10-20T05:05:21Z",
+   "duration_s": 392.8,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.080442,
+     "input": 438736,
+     "output": 58270,
+     "cache_read": 124838,
+     "cache_write": 49477,
+     "thinking": 36122
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.076691,
+     "input": 88,
+     "output": 30729,
+     "cache_read": 2981253,
+     "cache_write": 149851,
+     "thinking": 1964
+    }
+   },
+   "cost_usd": 1.157133,
+   "turns": 27,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-20.1",
+   "added": 2,
+   "updated": 0,
+   "note": "Two new stories after the vault clone went through again."
+  },
+  {
+   "id": "2d8808ac386f",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-20T05:09:20Z",
+   "finished_at": "2026-10-20T05:20:04Z",
+   "duration_s": 638.1,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.115319,
+     "input": 16,
+     "output": 2052,
+     "cache_read": 279673,
+     "cache_write": 16700,
+     "thinking": 427
+    }
+   },
+   "cost_usd": 0.115319,
+   "turns": 10,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Page fetches were refused for the fourth day, so the first run still has not started."
+  },
+  {
+   "id": "06dfb1fb826d",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-20T05:57:00Z",
+   "finished_at": "2026-10-20T06:01:37Z",
+   "duration_s": 272.3,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.443738,
+     "input": 46,
+     "output": 8030,
+     "cache_read": 1478419,
+     "cache_write": 53876,
+     "thinking": 699
+    }
+   },
+   "cost_usd": 0.443738,
+   "turns": 23,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The release was built but the git proxy refused the push again, so nothing reached dev."
   }
  ],
  "sessions": [
@@ -857,15 +1023,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-19T06:41:58Z",
+   "as_of": "2026-10-20T06:41:34Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 1.541941,
-   "input": 48,
-   "output": 15155,
-   "cache_read": 3182906,
-   "cache_write": 268001,
+   "cost_usd": 2.624752,
+   "input": 62,
+   "output": 22304,
+   "cache_read": 4648844,
+   "cache_write": 484176,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
