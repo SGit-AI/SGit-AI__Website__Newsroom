@@ -14,22 +14,49 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-218 of 218 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+219 of 219 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-218 articles, 1244 links between them (1862 mentions in all). 208 articles cite an earlier one; 62 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+219 articles, 1248 links between them (1867 mentions in all). 209 articles cite an earlier one; 63 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md)
+
+2026-10-20 · Agents & policyVaults & method
+
+A synthetic vault in which six bank agents carry behaviour policies with agent identity, delegated authority, accountability and execution filled in, and a deterministic engine replays a day through the gate with chained receipts, showing that the rows kept by boundaries held and every near miss and breach came through a gap.
+
+*[diagram]*
+**concept**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **Pellbridge Bank** (artefact) Invented: six agents, 43 rows.
+- **Six behaviour policies** (artefact) The four elements filled in.
+- **The gate** (concept) Systems out of the agent's reach decide.
+- **The gap** (concept) Prompt, setting, check or nothing.
+- **One day replayed** (example) 40 events, hash-chained receipts.
+- **Incidents from gaps only** (example) 6 near misses, 3 breaches.
+- **Blast radius** (method) May reach, can reach, through a secret.
+- **Thirteen decisions** (artefact) Fix, fund or accept, nine holders.
+- **Test pack on model change** (method) Two rows fail; release stopped.
+
+> A near miss is the same row as a breach, on a day the model declined. On near misses.
+
+> Change a row and rebuild, and the day, the receipts and the decisions follow. On how it is built.
+
+builds on [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](#inside-the-thistlewood-twin); continued by [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance).
 
 ## [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](a-trusted-framework-for-agentic-finance.md)
 
 2026-10-19 · Agents & policyGraphs & knowledge
 
-The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here: behaviour policies, risk acceptance, enforcement levels and policies as graphs; a payments agent's policy shows all four filled in, and a regulator could adopt it or connect its own graph to it.
+The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here; a vault of six invented bank agents shows all four filled in and at play, where rows kept by boundaries held and every incident came through a gap, and a regulator could adopt the work or connect its own graph to it.
 
 *[diagram]*
-**concept**claim**method**example
+**concept**claim**method**artefact**example
 
 **9 nodes, 8 edges**
 
@@ -37,9 +64,9 @@ The FCA's planned framework for agentic finance, with agent identity, delegated 
 - **Agent Behaviour Policy** (method) Grant, mandate, delta and barrier.
 - **Risk acceptance** (method) A holder per rule, a chain to the board.
 - **Three enforcement levels** (concept) Prompt, hooks, a third party that blocks.
+- **The Pellbridge vault** (artefact) Six agents, one day at the gate.
+- **Incidents come through gaps** (example) Boundary rows held.
 - **Continuous, conditional assurance** (concept) Rows re-tested on every model change.
-- **A payments agent's policy** (example) Twelve rows, three gaps, each with a holder.
-- **Identity block** (concept) Proposed: who the agent is and for whom.
 - **Policies as graphs** (concept) Connected by edges, no shared schema.
 - **Open, CC BY** (concept) Adopt it, or write your own.
 
@@ -47,7 +74,7 @@ The FCA's planned framework for agentic finance, with agent identity, delegated 
 
 > a policy that is re-proven every time something under it moves On continuous assurance.
 
-builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](#the-graph-companies).
+builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](#the-graph-companies); continued by [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents).
 
 ## [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](ten-questions-one-graph.md)
 
@@ -100,7 +127,7 @@ A tour of a synthetic decision twin in which a deterministic engine answers Phil
 
 > A near miss is not a loss, and the model should know the difference On the back-test.
 
-builds on [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](#the-graph-companies); continued by [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph).
+builds on [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph), [Every risk is already accepted. The only question is by whom, and for how long.](#every-risk-is-already-accepted), [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](#the-graph-companies); continued by [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph).
 
 ## [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](the-graph-companies.md)
 
@@ -153,7 +180,7 @@ An Agent Behaviour Policy governs rather than enforces: it states each role's ma
 
 > a rule kept in the prompt should be attested as a prompt rule, not as a control What an honest attestation carries.
 
-builds on [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault); continued by [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph).
+builds on [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine](#are-hooks-the-sweet-spot), [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](#hooks-are-kernel-code), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door), [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](#the-policy-draws-the-liability-line), [Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP](#cedar-and-the-policy-vault); continued by [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](#ten-questions-one-graph).
 
 ## [When the customer becomes the commodity: where your customer sits on your Wardley map, why Google and Amazon lost my trust, and why local delivery should be infrastructure](when-the-customer-becomes-the-commodity.md)
 

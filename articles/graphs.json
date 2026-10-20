@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-19",
+  "generated": "2026-10-20",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -55,6 +55,218 @@
   ],
   "articles": [
     {
+      "slug": "inside-the-pellbridge-agents",
+      "title": "Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/inside-the-pellbridge-agents.html",
+      "markdown": "https://newsroom.sgit.ai/articles/inside-the-pellbridge-agents.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/inside-the-pellbridge-agents.webp",
+      "teaser": "Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "regulation",
+        "finance",
+        "vaults",
+        "twin",
+        "article"
+      ],
+      "links_out": [
+        "a-trusted-framework-for-agentic-finance",
+        "governs-enforces-attests",
+        "inside-the-thistlewood-twin"
+      ],
+      "links_in": [
+        "a-trusted-framework-for-agentic-finance"
+      ],
+      "figures": [
+        {
+          "file": "pa-gate-anim.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gate-anim.webp",
+          "caption": "The gate, animated: 10:02 to 12:10 of the invented day. Each action leaves its agent and meets the gate, the line of systems that keep the rows, or the gap below it, where only the prompt, a setting or nothing stands in the way. Receipts chain along the bottom.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-agent-pay.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-agent-pay.webp",
+          "caption": "The payments assistant in the vault, with all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what keeps each row and every decision it made that day, with its receipt.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-gate-setting.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gate-setting.webp",
+          "caption": "15:30: the payments assistant changes a standing order. The approval rule is a setting in the agent's own profile, and that afternoon it was off. The action goes through the gap and the row is broken; the receipt says so, and the head of payments hears the same day.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-split.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-split.webp",
+          "caption": "The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pa-blast-fraud.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-blast-fraud.webp",
+          "caption": "The fraud triage agent's blast radius: customer records and the customer app inside its mandate; the payment platform and the secrets store through gaps; the core ledger through the ops-batch secret. On the right, all six agents compared.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-gaps.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gaps.webp",
+          "caption": "Thirteen gaps by what kept the row, the door each holder chose, and the nine people who hold them.",
+          "kind": "concept"
+        },
+        {
+          "file": "pa-assurance.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-assurance.webp",
+          "caption": "The test pack on the model change, the outage with its fallbacks, and the day's near misses and breaches.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-live.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-live.webp",
+          "caption": "The vault opened in the official vault UI, read-only, with the published key.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "inside-the-pellbridge-agents",
+        "teaser": "Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "A synthetic vault in which six bank agents carry behaviour policies with agent identity, delegated authority, accountability and execution filled in, and a deterministic engine replays a day through the gate with chained receipts, showing that the rows kept by boundaries held and every near miss and breach came through a gap.",
+        "nodes": [
+          {
+            "id": "bank",
+            "label": "Pellbridge Bank",
+            "kind": "artefact",
+            "summary": "Invented: six agents, 43 rows."
+          },
+          {
+            "id": "policies",
+            "label": "Six behaviour policies",
+            "kind": "artefact",
+            "summary": "The four elements filled in."
+          },
+          {
+            "id": "gate",
+            "label": "The gate",
+            "kind": "concept",
+            "summary": "Systems out of the agent's reach decide."
+          },
+          {
+            "id": "gap",
+            "label": "The gap",
+            "kind": "concept",
+            "summary": "Prompt, setting, check or nothing."
+          },
+          {
+            "id": "day",
+            "label": "One day replayed",
+            "kind": "example",
+            "summary": "40 events, hash-chained receipts."
+          },
+          {
+            "id": "incidents",
+            "label": "Incidents from gaps only",
+            "kind": "example",
+            "summary": "6 near misses, 3 breaches."
+          },
+          {
+            "id": "blast",
+            "label": "Blast radius",
+            "kind": "method",
+            "summary": "May reach, can reach, through a secret."
+          },
+          {
+            "id": "decisions",
+            "label": "Thirteen decisions",
+            "kind": "artefact",
+            "summary": "Fix, fund or accept, nine holders."
+          },
+          {
+            "id": "tests",
+            "label": "Test pack on model change",
+            "kind": "method",
+            "summary": "Two rows fail; release stopped."
+          }
+        ],
+        "edges": [
+          {
+            "from": "bank",
+            "to": "policies",
+            "rel": "produces"
+          },
+          {
+            "from": "policies",
+            "to": "gate",
+            "rel": "produces"
+          },
+          {
+            "from": "policies",
+            "to": "gap",
+            "rel": "produces"
+          },
+          {
+            "from": "day",
+            "to": "incidents",
+            "rel": "produces"
+          },
+          {
+            "from": "gap",
+            "to": "incidents",
+            "rel": "leads-to"
+          },
+          {
+            "from": "blast",
+            "to": "policies",
+            "rel": "extends"
+          },
+          {
+            "from": "incidents",
+            "to": "decisions",
+            "rel": "leads-to"
+          },
+          {
+            "from": "tests",
+            "to": "policies",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-trusted-framework-for-agentic-finance",
+            "governs-enforces-attests",
+            "inside-the-thistlewood-twin"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html",
+            "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
+            "https://abp.sgit.ai/",
+            "https://ruv.sgit.ai/studio/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A near miss is the same row as a breach, on a day the model declined.",
+            "why": "On near misses."
+          },
+          {
+            "text": "Change a row and rebuild, and the day, the receipts and the decisions follow.",
+            "why": "On how it is built."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-trusted-framework-for-agentic-finance",
       "title": "A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in",
       "date": "2026-10-19",
@@ -62,7 +274,7 @@
       "url": "https://newsroom.sgit.ai/articles/a-trusted-framework-for-agentic-finance.html",
       "markdown": "https://newsroom.sgit.ai/articles/a-trusted-framework-for-agentic-finance.md",
       "card": "https://newsroom.sgit.ai/articles/cards/a-trusted-framework-for-agentic-finance.webp",
-      "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; here is a payments agent's, filled in.",
+      "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.",
       "topics": [
         "agents-and-policy",
         "graphs-and-knowledge"
@@ -84,10 +296,13 @@
         "the-policy-draws-the-liability-line",
         "a-policy-beside-the-prompt",
         "ten-questions-one-graph",
+        "inside-the-pellbridge-agents",
         "open-source-so-you-keep-it",
         "the-graph-companies"
       ],
-      "links_in": [],
+      "links_in": [
+        "inside-the-pellbridge-agents"
+      ],
       "figures": [
         {
           "file": "fc-crosswalk.webp",
@@ -96,16 +311,34 @@
           "kind": "comparison"
         },
         {
-          "file": "fc-abp-rows.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/fc-abp-rows.webp",
-          "caption": "Delegated authority and execution: the payments agent's twelve rows. For each capability, can it (grant), may it (mandate), what stands in the way (barrier), who keeps the rule, and who holds it. Three rows, in orange, are the delta.",
-          "kind": "concept"
+          "file": "pa-agent-pay.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-agent-pay.webp",
+          "caption": "The payments assistant's policy in the vault, with all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what keeps each row, and every decision it made that day with its receipt.",
+          "kind": "screenshot"
         },
         {
-          "file": "fc-abp-frame.webp",
-          "url": "https://newsroom.sgit.ai/articles/images/fc-abp-frame.webp",
-          "caption": "Around the rows: the agent's identity, the chain of holders to the board, and how the rules are kept, recorded, re-tested and failed safely. Identity and holders are not in the ABP today; they are proposed here.",
-          "kind": "architecture"
+          "file": "pa-gate-anim.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gate-anim.webp",
+          "caption": "The gate, animated, from 10:02 to 12:10: a new payee approved by the customer; a hidden instruction in a bill, declined by the model; advice caught by the output check; a vulnerability routed to a person; an alert closed with a second person's approval; a full credit search that nothing stopped; an email the model declined to send. Receipts chain along the bottom.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-gate-setting.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-gate-setting.webp",
+          "caption": "15:30: the standing-order change goes through the gap, because the approval rule is a setting the agent's own account can change, and it was off.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "pa-split.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-split.webp",
+          "caption": "The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pa-blast-fraud.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pa-blast-fraud.webp",
+          "caption": "The fraud triage agent's blast radius in the vault: its mandate inside, the gaps around it, and the core ledger reachable through a service account secret.",
+          "kind": "screenshot"
         },
         {
           "file": "fc-connect.webp",
@@ -116,12 +349,12 @@
       ],
       "graph": {
         "slug": "a-trusted-framework-for-agentic-finance",
-        "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; here is a payments agent's, filled in.",
+        "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.",
         "topics": [
           "agents-and-policy",
           "graphs-and-knowledge"
         ],
-        "core_idea": "The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here: behaviour policies, risk acceptance, enforcement levels and policies as graphs; a payments agent's policy shows all four filled in, and a regulator could adopt it or connect its own graph to it.",
+        "core_idea": "The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here; a vault of six invented bank agents shows all four filled in and at play, where rows kept by boundaries held and every incident came through a gap, and a regulator could adopt the work or connect its own graph to it.",
         "nodes": [
           {
             "id": "fca",
@@ -148,22 +381,22 @@
             "summary": "Prompt, hooks, a third party that blocks."
           },
           {
+            "id": "vault",
+            "label": "The Pellbridge vault",
+            "kind": "artefact",
+            "summary": "Six agents, one day at the gate."
+          },
+          {
+            "id": "gaps",
+            "label": "Incidents come through gaps",
+            "kind": "example",
+            "summary": "Boundary rows held."
+          },
+          {
             "id": "assure",
             "label": "Continuous, conditional assurance",
             "kind": "concept",
             "summary": "Rows re-tested on every model change."
-          },
-          {
-            "id": "example",
-            "label": "A payments agent's policy",
-            "kind": "example",
-            "summary": "Twelve rows, three gaps, each with a holder."
-          },
-          {
-            "id": "identity",
-            "label": "Identity block",
-            "kind": "concept",
-            "summary": "Proposed: who the agent is and for whom."
           },
           {
             "id": "graphs",
@@ -195,18 +428,18 @@
             "rel": "extends"
           },
           {
-            "from": "example",
+            "from": "vault",
             "to": "abp",
             "rel": "extends"
           },
           {
-            "from": "example",
-            "to": "identity",
+            "from": "vault",
+            "to": "gaps",
             "rel": "produces"
           },
           {
             "from": "assure",
-            "to": "example",
+            "to": "vault",
             "rel": "extends"
           },
           {
@@ -222,6 +455,7 @@
         ],
         "links": {
           "articles": [
+            "inside-the-pellbridge-agents",
             "what-can-your-agent-reach",
             "governs-enforces-attests",
             "policy-as-code-needs-a-policy-first",
@@ -235,6 +469,7 @@
           "sites": [
             "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
             "https://abp.sgit.ai/",
+            "https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html",
             "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html",
             "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html"
           ]
@@ -472,6 +707,7 @@
         "the-graph-companies"
       ],
       "links_in": [
+        "inside-the-pellbridge-agents",
         "ten-questions-one-graph"
       ],
       "figures": [
@@ -847,6 +1083,7 @@
         "cedar-and-the-policy-vault"
       ],
       "links_in": [
+        "inside-the-pellbridge-agents",
         "a-trusted-framework-for-agentic-finance",
         "ten-questions-one-graph"
       ],

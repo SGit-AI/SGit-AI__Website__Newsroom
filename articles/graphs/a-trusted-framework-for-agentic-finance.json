@@ -1,11 +1,11 @@
 {
   "slug": "a-trusted-framework-for-agentic-finance",
-  "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; here is a payments agent's, filled in.",
+  "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.",
   "topics": [
     "agents-and-policy",
     "graphs-and-knowledge"
   ],
-  "core_idea": "The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here: behaviour policies, risk acceptance, enforcement levels and policies as graphs; a payments agent's policy shows all four filled in, and a regulator could adopt it or connect its own graph to it.",
+  "core_idea": "The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here; a vault of six invented bank agents shows all four filled in and at play, where rows kept by boundaries held and every incident came through a gap, and a regulator could adopt the work or connect its own graph to it.",
   "nodes": [
     {
       "id": "fca",
@@ -32,22 +32,22 @@
       "summary": "Prompt, hooks, a third party that blocks."
     },
     {
+      "id": "vault",
+      "label": "The Pellbridge vault",
+      "kind": "artefact",
+      "summary": "Six agents, one day at the gate."
+    },
+    {
+      "id": "gaps",
+      "label": "Incidents come through gaps",
+      "kind": "example",
+      "summary": "Boundary rows held."
+    },
+    {
       "id": "assure",
       "label": "Continuous, conditional assurance",
       "kind": "concept",
       "summary": "Rows re-tested on every model change."
-    },
-    {
-      "id": "example",
-      "label": "A payments agent's policy",
-      "kind": "example",
-      "summary": "Twelve rows, three gaps, each with a holder."
-    },
-    {
-      "id": "identity",
-      "label": "Identity block",
-      "kind": "concept",
-      "summary": "Proposed: who the agent is and for whom."
     },
     {
       "id": "graphs",
@@ -79,18 +79,18 @@
       "rel": "extends"
     },
     {
-      "from": "example",
+      "from": "vault",
       "to": "abp",
       "rel": "extends"
     },
     {
-      "from": "example",
-      "to": "identity",
+      "from": "vault",
+      "to": "gaps",
       "rel": "produces"
     },
     {
       "from": "assure",
-      "to": "example",
+      "to": "vault",
       "rel": "extends"
     },
     {
@@ -106,6 +106,7 @@
   ],
   "links": {
     "articles": [
+      "inside-the-pellbridge-agents",
       "what-can-your-agent-reach",
       "governs-enforces-attests",
       "policy-as-code-needs-a-policy-first",
@@ -119,6 +120,7 @@
     "sites": [
       "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
       "https://abp.sgit.ai/",
+      "https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html",
       "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html",
       "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html"
     ]
@@ -141,16 +143,34 @@
       "kind": "comparison"
     },
     {
-      "file": "fc-abp-rows.webp",
-      "url": "https://newsroom.sgit.ai/articles/images/fc-abp-rows.webp",
-      "caption": "Delegated authority and execution: the payments agent's twelve rows. For each capability, can it (grant), may it (mandate), what stands in the way (barrier), who keeps the rule, and who holds it. Three rows, in orange, are the delta.",
-      "kind": "concept"
+      "file": "pa-agent-pay.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-agent-pay.webp",
+      "caption": "The payments assistant's policy in the vault, with all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what keeps each row, and every decision it made that day with its receipt.",
+      "kind": "screenshot"
     },
     {
-      "file": "fc-abp-frame.webp",
-      "url": "https://newsroom.sgit.ai/articles/images/fc-abp-frame.webp",
-      "caption": "Around the rows: the agent's identity, the chain of holders to the board, and how the rules are kept, recorded, re-tested and failed safely. Identity and holders are not in the ABP today; they are proposed here.",
-      "kind": "architecture"
+      "file": "pa-gate-anim.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-gate-anim.webp",
+      "caption": "The gate, animated, from 10:02 to 12:10: a new payee approved by the customer; a hidden instruction in a bill, declined by the model; advice caught by the output check; a vulnerability routed to a person; an alert closed with a second person's approval; a full credit search that nothing stopped; an email the model declined to send. Receipts chain along the bottom.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pa-gate-setting.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-gate-setting.webp",
+      "caption": "15:30: the standing-order change goes through the gap, because the approval rule is a setting the agent's own account can change, and it was off.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pa-split.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-split.webp",
+      "caption": "The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches.",
+      "kind": "comparison"
+    },
+    {
+      "file": "pa-blast-fraud.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-blast-fraud.webp",
+      "caption": "The fraud triage agent's blast radius in the vault: its mandate inside, the gaps around it, and the core ledger reachable through a service account secret.",
+      "kind": "screenshot"
     },
     {
       "file": "fc-connect.webp",

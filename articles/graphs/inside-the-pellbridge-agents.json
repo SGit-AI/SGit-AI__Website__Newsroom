@@ -1,0 +1,181 @@
+{
+  "slug": "inside-the-pellbridge-agents",
+  "teaser": "Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A synthetic vault in which six bank agents carry behaviour policies with agent identity, delegated authority, accountability and execution filled in, and a deterministic engine replays a day through the gate with chained receipts, showing that the rows kept by boundaries held and every near miss and breach came through a gap.",
+  "nodes": [
+    {
+      "id": "bank",
+      "label": "Pellbridge Bank",
+      "kind": "artefact",
+      "summary": "Invented: six agents, 43 rows."
+    },
+    {
+      "id": "policies",
+      "label": "Six behaviour policies",
+      "kind": "artefact",
+      "summary": "The four elements filled in."
+    },
+    {
+      "id": "gate",
+      "label": "The gate",
+      "kind": "concept",
+      "summary": "Systems out of the agent's reach decide."
+    },
+    {
+      "id": "gap",
+      "label": "The gap",
+      "kind": "concept",
+      "summary": "Prompt, setting, check or nothing."
+    },
+    {
+      "id": "day",
+      "label": "One day replayed",
+      "kind": "example",
+      "summary": "40 events, hash-chained receipts."
+    },
+    {
+      "id": "incidents",
+      "label": "Incidents from gaps only",
+      "kind": "example",
+      "summary": "6 near misses, 3 breaches."
+    },
+    {
+      "id": "blast",
+      "label": "Blast radius",
+      "kind": "method",
+      "summary": "May reach, can reach, through a secret."
+    },
+    {
+      "id": "decisions",
+      "label": "Thirteen decisions",
+      "kind": "artefact",
+      "summary": "Fix, fund or accept, nine holders."
+    },
+    {
+      "id": "tests",
+      "label": "Test pack on model change",
+      "kind": "method",
+      "summary": "Two rows fail; release stopped."
+    }
+  ],
+  "edges": [
+    {
+      "from": "bank",
+      "to": "policies",
+      "rel": "produces"
+    },
+    {
+      "from": "policies",
+      "to": "gate",
+      "rel": "produces"
+    },
+    {
+      "from": "policies",
+      "to": "gap",
+      "rel": "produces"
+    },
+    {
+      "from": "day",
+      "to": "incidents",
+      "rel": "produces"
+    },
+    {
+      "from": "gap",
+      "to": "incidents",
+      "rel": "leads-to"
+    },
+    {
+      "from": "blast",
+      "to": "policies",
+      "rel": "extends"
+    },
+    {
+      "from": "incidents",
+      "to": "decisions",
+      "rel": "leads-to"
+    },
+    {
+      "from": "tests",
+      "to": "policies",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-trusted-framework-for-agentic-finance",
+      "governs-enforces-attests",
+      "inside-the-thistlewood-twin"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html",
+      "https://www.fca.org.uk/news/speeches/building-future-finance-age-ai",
+      "https://abp.sgit.ai/",
+      "https://ruv.sgit.ai/studio/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A near miss is the same row as a breach, on a day the model declined.",
+      "why": "On near misses."
+    },
+    {
+      "text": "Change a row and rebuild, and the day, the receipts and the decisions follow.",
+      "why": "On how it is built."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pa-gate-anim.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-gate-anim.webp",
+      "caption": "The gate, animated: 10:02 to 12:10 of the invented day. Each action leaves its agent and meets the gate, the line of systems that keep the rows, or the gap below it, where only the prompt, a setting or nothing stands in the way. Receipts chain along the bottom.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pa-agent-pay.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-agent-pay.webp",
+      "caption": "The payments assistant in the vault, with all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what keeps each row and every decision it made that day, with its receipt.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pa-gate-setting.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-gate-setting.webp",
+      "caption": "15:30: the payments assistant changes a standing order. The approval rule is a setting in the agent's own profile, and that afternoon it was off. The action goes through the gap and the row is broken; the receipt says so, and the head of payments hears the same day.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pa-split.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-split.webp",
+      "caption": "The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches.",
+      "kind": "comparison"
+    },
+    {
+      "file": "pa-blast-fraud.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-blast-fraud.webp",
+      "caption": "The fraud triage agent's blast radius: customer records and the customer app inside its mandate; the payment platform and the secrets store through gaps; the core ledger through the ops-batch secret. On the right, all six agents compared.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pa-gaps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-gaps.webp",
+      "caption": "Thirteen gaps by what kept the row, the door each holder chose, and the nine people who hold them.",
+      "kind": "concept"
+    },
+    {
+      "file": "pa-assurance.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-assurance.webp",
+      "caption": "The test pack on the model change, the outage with its fallbacks, and the day's near misses and breaches.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pa-live.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pa-live.webp",
+      "caption": "The vault opened in the official vault UI, read-only, with the published key.",
+      "kind": "screenshot"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+ "slug": "inside-the-pellbridge-agents",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A tour of the Pellbridge vault: six agents, four elements, one day at the gate.",
+   "para": "An invented bank runs six agents, each with a behaviour policy filling in the FCA's four elements: 43 rows, 30 kept by boundaries, 13 gaps. A deterministic engine replays a day of 40 events with chained receipts. Every incident came from a gap row. This is the technical article, with the policy as JSON.",
+   "hash": "a50e950de44a"
+  },
+  "in-short": {
+   "line": "Seven points about the vault.",
+   "para": "Six agents and policies, the four elements filled in, a replayed day with hash-chained receipts, incidents only from gap rows, an animated blast radius for each agent, a holder and decision for every gap, and no model called, so it replays exactly.",
+   "hash": "d3964cca0b97"
+  },
+  "bank": {
+   "line": "The invented bank, its six agents, and what each policy holds.",
+   "para": "Pellbridge runs a payments assistant, a support agent, a lending pre-check, an AML alert reviewer, a fraud triage agent and a reporting agent, on two model providers. Each policy has rows for grant, mandate and barrier, plus proposed identity, holder, kept-by and execution parts.",
+   "hash": "d0ca53c6e650"
+  },
+  "gate": {
+   "line": "How the gate decides, and moments from the day.",
+   "para": "Rows kept by a system meet the gate, and the system decides. Gap rows go through the gap, where the model decides. The day has 16 allowed, 3 approved, 4 denied, 6 near misses and 3 breaches, among them a hidden instruction declined and a full credit search nothing stopped.",
+   "hash": "e529d31587f9"
+  },
+  "incidents": {
+   "line": "Every near miss and breach came from a gap row.",
+   "para": "The 26 actions on rows kept by a boundary produced no incident. The 12 on gap rows produced six near misses and three breaches. A near miss is the same row as a breach, on a day the model declined.",
+   "hash": "b3d7a9b9c1ab"
+  },
+  "blast": {
+   "line": "Three rings for each agent: may reach, can reach, can reach through a secret.",
+   "para": "Systems are weighted from 2 to 10. The fraud triage agent may reach 20, can reach 39, and 28 is exposed, through an old service account secret that can post to the ledger. The lending pre-check reaches the full bureau key. The reporting agent can reach only what it may.",
+   "hash": "e094cf42c80d"
+  },
+  "accountability": {
+   "line": "Thirteen gaps, thirteen decisions, nine people.",
+   "para": "Every row has a holder with a chain to the board. Nine gaps are fixed, from today to 14 days, two are funded, in 30 to 60 days, and two are accepted for 90 days with every miss reported. Each break and near miss goes to its holder the same day.",
+   "hash": "f39ca95e44c4"
+  },
+  "assurance": {
+   "line": "A model change that fails the test pack, and an outage with fallbacks.",
+   "para": "At 17:00 provider B changes version; 19 rows run as tests, 6 through the model, and 2 fail, so the release stops. At 14:10 provider A is down for 30 minutes; its two agents stop and fall back to the app and the analysts.",
+   "hash": "d98b0ce27f96"
+  },
+  "data": {
+   "line": "The payments assistant's policy as JSON, and a receipt.",
+   "para": "The existing ABP fields are capability, reach, mandate and barrier; identity, kept by, holder, decision and execution are proposed. The hash covers the policy, so each receipt names the exact policy it was made under, and chains to the receipt before it.",
+   "hash": "2ef2da5145b1"
+  },
+  "built": {
+   "line": "What is in the vault, and how the animations are drawn.",
+   "para": "The app inlines the data and the engine; content.json holds the bank and the day; the engine writes policies, receipts, decisions, incidents, tests and blast radii; tools rebuild it all. The gate and blast radius are SVG animations in the style of the ruv.sgit.ai studio.",
+   "hash": "0ec6679d7e66"
+  },
+  "limits": {
+   "line": "Invented, unendorsed, scripted, illustrative, and partly proposed.",
+   "para": "The bank and everything in it are invented. The FCA has not endorsed it. The day scripts what each model did. Weights are illustrative. Identity, kept by, holder, decision and execution are proposed fields.",
+   "hash": "39ed3b055cde"
+  },
+  "sources": {
+   "line": "The speech, the ABP and the vault.",
+   "para": "The FCA speech of 19 October 2026 for the four elements, abp.sgit.ai for the ABP fields, and the Pellbridge agents vault for every number, with links to the reply, the attestation article and the Thistlewood tour.",
+   "hash": "cca6ec15bbdd"
+  }
+ }
+}

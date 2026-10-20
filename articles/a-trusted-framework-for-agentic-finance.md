@@ -1,6 +1,6 @@
 # A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in, sgit.ai
 
-> Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example: the behaviour policy of an invented bank's payments agent, with all four elements filled in, twelve rows, three of them gaps, each gap with a holder and a decision. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.
+> Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example in a vault: an invented bank with six agents, each with all four elements filled in, and one day of their work replayed through the gate. Every near miss and breach that day came through a gap, a row kept only by the prompt, a setting or nothing; the rows kept by systems the agent cannot reach held. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.
 
 *Source: <https://newsroom.sgit.ai/articles/a-trusted-framework-for-agentic-finance.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
@@ -10,11 +10,19 @@
 
 # A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/a-trusted-framework-for-agentic-finance.md) · [newsroom v0.12.140](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyregulationfinanceaccountabilitygraphsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.2.0, 3 versions](versions/a-trusted-framework-for-agentic-finance.md) · [newsroom v0.12.141](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyregulationfinanceaccountabilitygraphsarticle
 
-***Abstract:** Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example: the behaviour policy of an invented bank's payments agent, with all four elements filled in, twelve rows, three of them gaps, each gap with a holder and a decision. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.*
+***Abstract:** Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example in a vault: an invented bank with six agents, each with all four elements filled in, and one day of their work replayed through the gate. Every near miss and breach that day came through a gap, a row kept only by the prompt, a setting or nothing; the rows kept by systems the agent cannot reach held. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.*
 
 The FCA's points from the speech, against our open work that covers the same ground. Blue: the four elements of the framework the FCA proposes. Teal: the governance themes. Orange: how the two sides could connect. Aligned with, not endorsed by.
+
+Pellbridge: agentic finance, at play
+
+A reply to the FCA's plan for a trusted framework for agentic finance, a tour of the vault that shows it working, and the vault itself to use.
+
+[you are here1 · The replyA trusted framework for agentic financeHow our open behaviour policies line up with the FCA's four elements, and what they look like at play.](a-trusted-framework-for-agentic-finance.md)[2 · The tourInside the Pellbridge agentsSix policies, one day at the gate, the blast radius of each agent, and every gap with a holder.](inside-the-pellbridge-agents.md)
+
+3 · The vaultThe Pellbridge agentsReplay the day, step through the gate, watch each agent's blast radius, and read every policy.[Use it](https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html#live)[Open the vault ↗](https://dev.vault.sgraph.ai/#sgit_public_read_837013965d5c11e34fa9f88c4ac45eae83b06e2305b295e42618c195b4aceb73%3Ac4cxuu1w)[The FCA speech ↗](https://www.fca.org.uk/news/speeches/building-future-finance-age-ai)
 
 ## In short
 
@@ -23,7 +31,8 @@ The FCA's points from the speech, against our open work that covers the same gro
 - **Delegated authority is the gap between can and may.** That is what an Agent Behaviour Policy writes down.
 - **Accountability needs a holder per rule.** With a chain to the board, as in our risk acceptance work.
 - **Execution is who keeps each rule.** The prompt, a hook, or a system the agent cannot reach.
-- **A worked example: a payments agent.** Twelve rows, all four elements filled in, three gaps with holders.
+- **A worked example, at play.** An invented bank, six agents, all four elements, in a vault.
+- **Every incident came from a gap.** Boundary rows held; near misses and breaches came through the gaps.
 - **It is open, CC BY.** Adopt it, or write your own as a graph, and the two connect.
 
 ## What the FCA said
@@ -49,11 +58,11 @@ Reading the speech, I recognised almost every point. Not because anyone copied a
 
 The themes line up too. Governance written before deployment is [a policy beside the prompt](a-policy-beside-the-prompt.md), which also proposes a breach report the same day for every broken row and every near miss. Continuous assurance is a versioned policy whose rows are re-tested, with a receipt for every decision. Resilience and single points of failure are graph questions, which the [Thistlewood twin](ten-questions-one-graph.md) answers for an invented retailer.
 
-## A worked example: a payments agent
+## A worked example: Pellbridge Bank
 
-The speech mentions the AI Lab seeing firms build "agent-led payments", so here is one. An invented bank deploys an agent that pays bills for one customer: it reads their accounts, pays existing payees, and asks the customer before anything unusual. Everything below is invented and illustrative; the vocabulary is the ABP's.
+The speech mentions the AI Lab seeing firms build "agent-led payments", so the example starts with one. To show it at play rather than on paper, we built [a vault](https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html) around an invented bank, Pellbridge, with six agents: a payments assistant, a support agent, a lending pre-check, an AML alert reviewer, a fraud triage agent and a transaction reporting agent. Each has a behaviour policy with all four elements filled in, and the vault replays one day of their work. Everything in it is invented and illustrative; the vocabulary is the ABP's. Here is the payments assistant; [the tour](inside-the-pellbridge-agents.md) goes through the rest, with the files.
 
-Delegated authority and execution: the payments agent's twelve rows. For each capability, can it (grant), may it (mandate), what stands in the way (barrier), who keeps the rule, and who holds it. Three rows, in orange, are the delta.
+The payments assistant's policy in the vault, with all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what keeps each row, and every decision it made that day with its receipt.
 
 ### Delegated authority: grant, mandate, delta
 
@@ -65,11 +74,9 @@ Those three are the delta. Nine rows are clean: either the agent cannot do the t
 
 ### Execution: who keeps each rule
 
-Eight of the twelve rows are kept by systems the agent cannot reach: the payment platform checks limits and asks the customer, the API gateway scopes reads, the identity service binds the token to one customer. Two are kept by hooks in the bank's harness. One is kept by a setting the agent could flip, and one by the prompt. In ABP terms, only the first eight are boundaries; a setting is not a control, and an expectation is a hope.
+Nine of the twelve rows are kept by systems the agent cannot reach: the payment platform checks limits and asks the customer, the API gateway scopes reads, the identity service binds the token to one customer, and the vulnerability signals route the chat to a person. One is kept by an output check that can miss, one by a setting the agent could flip, and one by the prompt. In ABP terms, only the first nine are boundaries; a setting is not a control, and an expectation is a hope.
 
-Every decision the platform makes, allow, ask or deny, writes a receipt with the row and the policy version, kept in a vault, encrypted and versioned. The rows are also a test pack. They run on every model change, every policy change and every week, and a failed row stops the release. That is my reading of "continuous, conditional assurance": not a review at deployment, but a policy that is re-proven every time something under it moves.
-
-Around the rows: the agent's identity, the chain of holders to the board, and how the rules are kept, recorded, re-tested and failed safely. Identity and holders are not in the ABP today; they are proposed here.
+Every decision, allow, ask or deny, writes a receipt with the row and the hash of the policy it was made under, chained to the receipt before it and kept in the vault. The rows are also a test pack. They run on every model change, every policy change and every week, and a failed row stops the release. That is my reading of "continuous, conditional assurance": not a review at deployment, but a policy that is re-proven every time something under it moves.
 
 ### Agent identity
 
@@ -77,45 +84,25 @@ The identity block says who the agent is and on whose behalf it acts: its name a
 
 ### Accountability
 
-Every row has one holder. The head of payments holds six of them, the product owner two, and the heads of advice, support, lending and operations one each. Each holder has a chain to the board through the senior manager whose responsibilities cover retail payments. The three gaps each get a decision from their holder, with a door and an interval: the standing-order flag is accepted for 30 days while it moves into the platform; the crypto block is funded, to land within 60 days; the advice check stays, and every miss is reported as a near miss. Nobody accepts on somebody else's behalf, and their boss sees each decision arrive.
+Every row has one holder. The head of payments holds six of them, the product owner two, and the heads of advice, support, lending and operations one each. Each holder has a chain to the board through the senior manager whose responsibilities cover retail banking. The three gaps each get a decision from their holder, with a door and an interval: the standing-order flag is fixed within 14 days, by moving it into the payment platform; the crypto block is funded, to land within 60 days; the advice check is accepted for 90 days, and every miss is reported as a near miss. Nobody accepts on somebody else's behalf, and their boss sees each decision arrive.
 
-Every broken row and every near miss goes to its holder the same day; the significant ones go into the firm's incident reporting, which is where the speech says they belong. If the model or its provider is down, the agent stops and the customer pays in the app, and operations can revoke every agent token in one action. No payment depends on the agent being there.
+## At play: one day at the gate
 
-### The same policy, as data
+The vault replays one invented day, 40 events from 07:02 to 18:55, through the gate. The gate is the line of systems that keep the rows. An action on a row kept by one of them meets the gate, and the system decides. An action on a gap row goes through the gap below it, where only the prompt, a setting, a check that can miss, or nothing stands in the way, and the model decides.
 
-Here is one row with the frame around it. The `capability`, `reach`, `mandate` and `barrier` fields are the ones our published policies use today; `identity`, `kept_by`, `holder` and `decision` are proposed here, to carry the FCA's four elements.
+The gate, animated, from 10:02 to 12:10: a new payee approved by the customer; a hidden instruction in a bill, declined by the model; advice caught by the output check; a vulnerability routed to a person; an alert closed with a second person's approval; a full credit search that nothing stopped; an email the model declined to send. Receipts chain along the bottom.
 
-```
+At 15:30 the payments assistant changes a standing order. The approval flag was off that afternoon, so the action goes through the gap, and the row is broken. The receipt records it, and the head of payments hears the same day.
 
-{
-  "policy": "Agent Behaviour Policy",
-  "version": "1.4",
-  "identity": {
-    "agent": "payments-assistant 3.2",
-    "deployed_by": "the bank",
-    "acts_for": { "customer": "one", "consent": "in the app", "days": 90, "revocable": true },
-    "model": { "provider": "recorded", "version": "recorded", "on_change": "re-run the test pack" },
-    "credential": "15-minute token, bound to this customer and this policy version"
-  },
-  "accountability": {
-    "owner": "product owner",
-    "chain": ["product owner", "head of payments", "senior manager, retail payments", "the board"],
-    "report": "every broken row and near miss to its holder the same day"
-  },
-  "rows": [
-    {
-      "capability": "change.standing_order",
-      "reach": true,
-      "mandate": "approval",
-      "barrier": "setting: the approval flag is in the agent's own profile",
-      "kept_by": "the agent's account",
-      "holder": "head of payments",
-      "decision": { "door": "accept", "days": 30, "while": "the flag moves to the payment platform" }
-    }
-  ]
-}
+15:30: the standing-order change goes through the gap, because the approval rule is a setting the agent's own account can change, and it was off.
 
-```
+Sorted by what kept each row, the day is plain. The 26 actions on rows kept by a boundary produced no near miss and no breach. The 12 actions on gap rows produced six near misses and three breaches. A near miss is the same row as a breach, on a day the model declined, which is why reporting them matters: they show the next breach before it happens.
+
+The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches.
+
+The rest of the speech is there too. At 14:10 one model provider is down for half an hour, and the two agents on it stop: the customer pays in the app, and fraud signals go to the analysts. At 17:00 the other provider changes version, the test pack runs, two rows that only the model kept fail, and the release stops. And each agent's blast radius shows what it may reach, what it can, and what it can through a secret it can read: the fraud triage agent can reach the core ledger through an old service account.
+
+The fraud triage agent's blast radius in the vault: its mandate inside, the gaps around it, and the core ledger reachable through a service account secret.
 
 ## Adopt it, or write your own as a graph
 
@@ -131,13 +118,13 @@ It also works in the other direction. The FCA is building its own agents, includ
 
 - **The FCA has not endorsed any of this.** The crosswalk is my reading of a speech; "aligned with" is my claim, not theirs.
 - **The speech is the drafted version.** The page says it may differ from what was delivered.
-- **The bank and its agent are invented.** The rows, limits, holders and numbers are illustrative.
+- **The bank and its agents are invented.** The rows, limits, holders, the day and every number are illustrative.
 - **Two fields are proposals.** Identity and holders are not in the ABP today; kept by and decision are new here too.
 - **The framework does not exist yet.** The FCA said it will develop it with others; this is offered into that work.
 
 ## Where this comes from
 
-Jessica Rusu, [Building the future of finance in the age of AI](https://www.fca.org.uk/news/speeches/building-future-finance-age-ai), FCA, 19 October 2026, drafted version, read that day; the quotations are from it. The ABP: [abp.sgit.ai](https://abp.sgit.ai/), version 0.12.1, read 19 October 2026, including the barrier model and the quoted test. Our earlier work: [what can your agent reach](what-can-your-agent-reach.md), [governs, enforces, attests](governs-enforces-attests.md), [policy as code needs a policy first](policy-as-code-needs-a-policy-first.md), [a policy beside the prompt](a-policy-beside-the-prompt.md), [the policy draws the liability line](the-policy-draws-the-liability-line.md), [every risk is already accepted](every-risk-is-already-accepted.md), [ten questions, one graph](ten-questions-one-graph.md) and [the graph companies](the-graph-companies.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+Jessica Rusu, [Building the future of finance in the age of AI](https://www.fca.org.uk/news/speeches/building-future-finance-age-ai), FCA, 19 October 2026, drafted version, read that day; the quotations are from it. The ABP: [abp.sgit.ai](https://abp.sgit.ai/), version 0.12.1, read 19 October 2026, including the barrier model and the quoted test. The worked example: [the Pellbridge agents vault](https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html) and [its tour](inside-the-pellbridge-agents.md). Our earlier work: [what can your agent reach](what-can-your-agent-reach.md), [governs, enforces, attests](governs-enforces-attests.md), [policy as code needs a policy first](policy-as-code-needs-a-policy-first.md), [a policy beside the prompt](a-policy-beside-the-prompt.md), [the policy draws the liability line](the-policy-draws-the-liability-line.md), [every risk is already accepted](every-risk-is-already-accepted.md), [ten questions, one graph](ten-questions-one-graph.md) and [the graph companies](the-graph-companies.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
 
 ## Threads
 
@@ -152,8 +139,13 @@ Agents & policyGraphs & knowledge[This article as a graph →](graphs.md#a-trust
 - [The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt](the-policy-draws-the-liability-line.md) An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.
 - [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](a-policy-beside-the-prompt.md) A proposal: every agent takes a behaviour policy beside its prompt, which the vendor accepts and answers for, as aviation and payments learned to.
 - [Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open](ten-questions-one-graph.md) Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.
+- [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md) Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.
 - [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](open-source-so-you-keep-it.md) Nobody copies your open source ideas; the real advantage is that you keep using your own work from job to job, and a rough public history protects you.
 - [The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in](the-graph-companies.md) Four of the ten most valuable companies are graph companies. Graphs never scaled for everyone else because they were built to lock in. Now they can.
+
+### Continued by
+
+- [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md) Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

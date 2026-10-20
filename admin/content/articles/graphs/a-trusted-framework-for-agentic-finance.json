@@ -1,16 +1,16 @@
 {
  "slug": "a-trusted-framework-for-agentic-finance",
- "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; here is a payments agent's, filled in.",
+ "teaser": "The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.",
  "topics": ["agents-and-policy", "graphs-and-knowledge"],
- "core_idea": "The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here: behaviour policies, risk acceptance, enforcement levels and policies as graphs; a payments agent's policy shows all four filled in, and a regulator could adopt it or connect its own graph to it.",
+ "core_idea": "The FCA's planned framework for agentic finance, with agent identity, delegated authority, accountability and execution, lines up with open work already published here; a vault of six invented bank agents shows all four filled in and at play, where rows kept by boundaries held and every incident came through a gap, and a regulator could adopt the work or connect its own graph to it.",
  "nodes": [
   {"id": "fca", "label": "A framework for agentic finance", "kind": "claim", "summary": "Identity, delegated authority, accountability, execution."},
   {"id": "abp", "label": "Agent Behaviour Policy", "kind": "method", "summary": "Grant, mandate, delta and barrier."},
   {"id": "accept", "label": "Risk acceptance", "kind": "method", "summary": "A holder per rule, a chain to the board."},
   {"id": "levels", "label": "Three enforcement levels", "kind": "concept", "summary": "Prompt, hooks, a third party that blocks."},
+  {"id": "vault", "label": "The Pellbridge vault", "kind": "artefact", "summary": "Six agents, one day at the gate."},
+  {"id": "gaps", "label": "Incidents come through gaps", "kind": "example", "summary": "Boundary rows held."},
   {"id": "assure", "label": "Continuous, conditional assurance", "kind": "concept", "summary": "Rows re-tested on every model change."},
-  {"id": "example", "label": "A payments agent's policy", "kind": "example", "summary": "Twelve rows, three gaps, each with a holder."},
-  {"id": "identity", "label": "Identity block", "kind": "concept", "summary": "Proposed: who the agent is and for whom."},
   {"id": "graphs", "label": "Policies as graphs", "kind": "concept", "summary": "Connected by edges, no shared schema."},
   {"id": "open", "label": "Open, CC BY", "kind": "concept", "summary": "Adopt it, or write your own."}
  ],
@@ -18,16 +18,16 @@
   {"from": "abp", "to": "fca", "rel": "extends"},
   {"from": "accept", "to": "fca", "rel": "extends"},
   {"from": "levels", "to": "fca", "rel": "extends"},
-  {"from": "example", "to": "abp", "rel": "extends"},
-  {"from": "example", "to": "identity", "rel": "produces"},
-  {"from": "assure", "to": "example", "rel": "extends"},
+  {"from": "vault", "to": "abp", "rel": "extends"},
+  {"from": "vault", "to": "gaps", "rel": "produces"},
+  {"from": "assure", "to": "vault", "rel": "extends"},
   {"from": "graphs", "to": "fca", "rel": "leads-to"},
   {"from": "open", "to": "graphs", "rel": "leads-to"}
  ],
  "links": {
-  "articles": ["what-can-your-agent-reach", "governs-enforces-attests", "policy-as-code-needs-a-policy-first", "a-policy-beside-the-prompt", "the-policy-draws-the-liability-line", "ten-questions-one-graph", "the-graph-companies", "open-source-so-you-keep-it"],
+  "articles": ["inside-the-pellbridge-agents", "what-can-your-agent-reach", "governs-enforces-attests", "policy-as-code-needs-a-policy-first", "a-policy-beside-the-prompt", "the-policy-draws-the-liability-line", "ten-questions-one-graph", "the-graph-companies", "open-source-so-you-keep-it"],
   "pages": [],
-  "sites": ["https://www.fca.org.uk/news/speeches/building-future-finance-age-ai", "https://abp.sgit.ai/", "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html", "https://sgit.ai/articles/introducing-fractal-semantic-graphs.html"]
+  "sites": ["https://www.fca.org.uk/news/speeches/building-future-finance-age-ai", "https://abp.sgit.ai/", "https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html", "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html", "https://sgit.ai/articles/introducing-fractal-semantic-graphs.html"]
  },
  "quotes": [
   {"text": "Once the regulator's expectations and a firm's policies are both graphs, nobody has to adopt anybody's schema.", "why": "On connecting."},
