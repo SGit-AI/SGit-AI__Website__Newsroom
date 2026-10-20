@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it, SGit Newsroom</title>
+<meta name="description" content="On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, "was actively undermining our ability to scale", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction: immutable objects named by the hash of their ciphertext, which anyone can keep for ever; a server that cannot read what it holds, so reads can come from any static host; clones that take one folder, one commit or only the structure; and, like Scion, no packfiles and no maintenance. Measured on the vault the agents behind this newsroom share every day, 35,000 encrypted objects and 1,295 commits, an agent takes one folder with one commit of history in 13 seconds and 3 MB, however large the vault is. The differences are real too. Scion does history, blame and merges on the server and runs at a scale sgit has never been tested at; sgit does them on the client and has no blame or bisect yet. But Scion is internal and, in Anthropic's words, "by no means a suitable replacement for git for general use". sgit is open source and on PyPI today, and it encrypts everything.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/scion-and-sgit.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/scion-and-sgit.html">
+<meta property="og:title" content="Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it, SGit Newsroom">
+<meta property="og:description" content="On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, "was actively undermining our ability to scale", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction: immutable objects named by the hash of their ciphertext, which anyone can keep for ever; a server that cannot read what it holds, so reads can come from any static host; clones that take one folder, one commit or only the structure; and, like Scion, no packfiles and no maintenance. Measured on the vault the agents behind this newsroom share every day, 35,000 encrypted objects and 1,295 commits, an agent takes one folder with one commit of history in 13 seconds and 3 MB, however large the vault is. The differences are real too. Scion does history, blame and merges on the server and runs at a scale sgit has never been tested at; sgit does them on the client and has no blame or bisect yet. But Scion is internal and, in Anthropic's words, "by no means a suitable replacement for git for general use". sgit is open source and on PyPI today, and it encrypts everything.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/scion-and-sgit.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/scion-and-sgit.jpg">
+<link rel="alternate" type="text/markdown" href="scion-and-sgit.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it, SGit Newsroom", "headline": "Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it, SGit Newsroom", "description": "On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, \"was actively undermining our ability to scale\", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction: immutable objects named by the hash of their ciphertext, which anyone can keep for ever; a server that cannot read what it holds, so reads can come from any static host; clones that take one folder, one commit or only the structure; and, like Scion, no packfiles and no maintenance. Measured on the vault the agents behind this newsroom share every day, 35,000 encrypted objects and 1,295 commits, an agent takes one folder with one commit of history in 13 seconds and 3 MB, however large the vault is. The differences are real too. Scion does history, blame and merges on the server and runs at a scale sgit has never been tested at; sgit does them on the client and has no blame or bisect yet. But Scion is internal and, in Anthropic's words, \"by no means a suitable replacement for git for general use\". sgit is open source and on PyPI today, and it encrypts everything.", "url": "https://newsroom.sgit.ai/articles/scion-and-sgit.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it</p>
+ <h1>Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-16 &middot; <a href="versions/scion-and-sgit.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.80</a> &middot; <span class="chip">sgit</span><span class="chip">scion</span><span class="chip">anthropic</span><span class="chip">version-control</span><span class="chip">git</span><span class="chip">agents</span><span class="chip">encryption</span><span class="chip">caching</span><span class="chip">monorepo</span><span class="chip">open-source</span><span class="chip">comparison</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, "was actively undermining our ability to scale", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction: immutable objects named by the hash of their ciphertext, which anyone can keep for ever; a server that cannot read what it holds, so reads can come from any static host; clones that take one folder, one commit or only the structure; and, like Scion, no packfiles and no maintenance. Measured on the vault the agents behind this newsroom share every day, 35,000 encrypted objects and 1,295 commits, an agent takes one folder with one commit of history in 13 seconds and 3 MB, however large the vault is. The differences are real too. Scion does history, blame and merges on the server and runs at a scale sgit has never been tested at; sgit does them on the client and has no blame or bisect yet. But Scion is internal and, in Anthropic's words, "by no means a suitable replacement for git for general use". sgit is open source and on PyPI today, and it encrypts everything.</em></p>
+<figure class="shot" data-shot="sq-architecture-v2.webp" data-dir="images/" data-alt="Two answers to agents at scale: Scion&#x27;s always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit&#x27;s clients that encrypt, merge and read history, a dumb server that stores encrypted objects in batches of 50, and reads that any static host can serve, from objects any cache can keep." data-kind="architecture"><figcaption>Two answers to agents at scale: Scion's always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit's clients that encrypt, merge and read history, a dumb server that stores encrypted objects in batches of 50, and reads that any static host can serve, from objects any cache can keep.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Agents broke Git's assumptions at Anthropic.</b> 30,000 merges a day, 25 million CI checkouts, always-online clients.</li>
+<li><b>Scion moved the work to the server.</b> History, blame, merges and commits server-side; fetch only what you need.</li>
+<li><b>sgit shares the core ideas.</b> Immutable objects, fetch only what you need, no packfiles, compare-and-swap.</li>
+<li><b>It arrived from the other side.</b> The server is dumb and blind; the client encrypts, merges and verifies.</li>
+<li><b>Measured on a real, busy vault.</b> 35,000 objects: one folder, one commit, in 13 seconds and 3 MB.</li>
+<li><b>The gaps are real.</b> No blame or bisect; long histories need a depth; never tested at Scion's scale.</li>
+</ul>
+<h2 id="scion">What Anthropic built</h2>
+<p>Anthropic's engineering post, <a href="https://www.anthropic.com/engineering/redesigning-source-control">Redesigning source control at Anthropic</a>, is unusually concrete. Merges to its monorepo went from about 2,500 a day in May 2026 to over 30,000 in September. The main branch's history is almost 100 GB; there are about 25 million CI checkouts a day, which, fetched naively, the post estimates at over 600 PB of Git traffic a day; and at the peak the company ran several hundred internal Git mirrors.</p>
+<p>The diagnosis is the interesting part. Git was designed for people working offline on full copies, and the post says that design "was actively undermining our ability to scale as the repo grew", because nearly all its clients are now agents and jobs that are always online. So Scion inverts it. The server keeps history and does blame, commits, merges and rebases; refs move by a compare-and-swap on one database row; clients fetch only the trees and blobs they need, and many jobs never check out at all, but query an API. Objects are immutable, so three tiers of cache each serve more than 99% of reads. "There is no equivalent of packfiles (git's compressed bundles of objects), so no repository maintenance is needed." Directories can carry their own permissions.</p>
+<p>The results, by the company's own figures: about 200 times less CPU and memory than the Git mirrors it replaced, checkouts in seconds instead of minutes, a quarter of CI's CPU given back, and a migration done in five months by seven engineers. The post is equally clear about what Scion is not: "by no means a suitable replacement for git for general use".</p>
+<h2 id="recognised">Why I recognised it</h2>
+<p><a href="https://sgit.ai/">sgit</a> started from the same instruction Anthropic arrived at: Git solved most of the hard problems, so <a href="from-send-to-sgit.html#git">copy Git</a>. Commits, trees, blobs, refs and branches, with encryption underneath, and a server that, in the words of the March brief, is "a dumb key-value blob store" while "All intelligence lives in the client." Reading Scion's post, the overlap is not in the centre of gravity, which is the opposite, but in the properties that make agents fast.</p>
+<figure class="shot" data-shot="sq-matrix-v2.webp" data-dir="images/" data-alt="Scion, sgit and Git side by side: who does the work, whether the server holds plaintext, how a folder is protected, object ids, packing, partial copies, reads without the server, writes, merge, history, implementations, deployment, proven scale and availability." data-kind="comparison"><figcaption>Scion, sgit and Git side by side: who does the work, whether the server holds plaintext, how a folder is protected, object ids, packing, partial copies, reads without the server, writes, merge, history, implementations, deployment, proven scale and availability.</figcaption></figure>
+<p><b>Fetch only what you need, the same way.</b> Scion's post: "Scion's negotiation doesn't tell the server what the client already has; instead, it operates exclusively on trees and blobs the client wants. Starting from a root tree, the client checks its local store for missing trees and requests them recursively, then repeats the process for blobs." That is sgit's clone and pull walk: level by level over the trees, then the blobs in batches of 50 with 16 requests in flight. A scoped clone asks only for the spine down to its folders, and an unchanged folder keeps its tree id across commits, so it is never fetched twice.</p>
+<p><b>Immutable objects, kept by whoever fetched them.</b> Scion: "Every request is for a specific object that never changes, so any cache can answer it." Every sgit object is named by the SHA-256 of its ciphertext, and the client checks each one against its name. The name also says what it is: immutable objects carry <code>-imm-</code>, the two mutable pointers carry <code>-muw-</code>. So a browser, a proxy, a CI cache or a folder can keep an object for ever by looking at its name, without reading it. That is how sgit.ai's own documentation pages, which are a vault read in the browser, load: 18 objects cold, then one 69-byte ref, then nothing inside a two-minute window. The server also sends a one-year <code>immutable</code> cache header, though the CDN in front of the hosted API does not yet serve object reads from its cache; browsers, clients and static hosts do. The trade is deliberate: no deltas between versions, so a changed file is a new object.</p>
+<p><b>No packfiles, no maintenance.</b> Neither system packs objects on the server, and both treat that as a feature.</p>
+<p><b>Compare-and-swap.</b> Scion moves a ref with a compare-and-swap on one row; sgit moves the ref and the branch index the same way.</p>
+<p><b>Where they differ, sharply.</b> Scion protects directories with permissions on a server that holds plaintext. sgit protects them with keys: one vault per trust domain, a read key that cannot be turned into a write key, and append lanes that can write without reading. Files, names, trees, commit messages and refs are all encrypted on the client, so the server has nothing to protect and nothing to compute, and it can be anyone's. More on that in <a href="sgit-is-a-standard.html">sgit is a standard, not a server</a>.</p>
+<h2 id="measured">Measured on a real, busy vault</h2>
+<figure class="shot" data-shot="sq-bench-v2.webp" data-dir="images/" data-alt="The measurements now: the 83-file vault this article first measured, 59 seconds with sgit 0.22.0 and about 11 with the fix, 4 seconds for one folder, 1.6 from a plain static host; and the 35,000-object vault the newsroom&#x27;s agents share, 210 seconds in full, 57 with one commit of history, 13 for one folder with one commit." data-kind="comparison"><figcaption>The measurements now: the 83-file vault this article first measured, 59 seconds with sgit 0.22.0 and about 11 with the fix, 4 seconds for one folder, 1.6 from a plain static host; and the 35,000-object vault the newsroom's agents share, 210 seconds in full, 57 with one commit of history, 13 for one folder with one commit.</figcaption></figure>
+<p>An 83-file vault says little about Scion's question: what happens when the repository is big and the clients are many. The right vault is the agents behind this newsroom share every day, with their mail, briefs, runs and analysis. On 16 October it had 1,295 commits, 5,281 files and about 35,000 encrypted objects, 527 MB with all its history, which is the size of a real application's source repository.</p>
+<p>A full clone is the worst case: three and a half minutes for 35,423 objects. But no agent takes one. With one commit of history, the whole tree is 57 seconds; one 130-file folder with one commit is <b>13 seconds and 3 MB</b>, 137 objects, however large the vault is. A file fetched on demand is under 3 seconds; an up-to-date pull is 2.5. The full picture, with the honest edges, is in <a href="one-vault-ten-agents.html">One vault, ten agents, measured</a>.</p>
+<p>On a small vault the client's own edges show instead: an 83-file vault took 59 seconds to clone with sgit 0.22.0, because two batches of objects were over the size limit of the Lambda that serves the API and the client fell back to reading one object at a time; the CLI's development branch splits a refused batch in two, and the same clone takes about 11 seconds.</p>
+<p>And the time is the distance to the storage, not sgit. The same objects on local disk: the one-folder clone takes 0.8 seconds against a local API server, the full clone 69. On the small vault, the same encrypted files served by Python's built-in file server, with no sgit server at all, cloned in 1.6 seconds, identical file for file.</p>
+<h2 id="gaps">Where Scion is ahead</h2>
+<p>Scion does blame, bisect and merges on the server and builds history indexes as derived data; sgit's server cannot read a commit, so those run on the client. Today sgit has path history, signed authorship, signed tags and verification, but no blame and no bisect. Where it is behind on its own terms: a partial clone of a long history still walks the commits one request at a time, so a folder with all 1,295 commits takes nearly four minutes, and a depth avoids it; <code>history log</code> for one file over that history takes minutes of CPU; one server process queues concurrent full clones; and the largest vault it has been proven on is 35,000 objects and ten agents, not 100 GB and 30,000 merges a day. Being designed for something is not the same as being proven at it.</p>
+<p>Git and sgit also live side by side rather than in sync. A vault can sit in the same folder as a Git repository, and a vault can be committed into one and attached with its key on the other side; but there is no bridge that turns Git history into sgit history or back.</p>
+<h2 id="means">What it means</h2>
+<p>I find it fascinating to watch the same idea arrive twice. Agents change what source control is for: the clients are always online, the volume is machine-scale, and the expensive thing is moving bytes nobody needs. Anthropic answered inside one trusted company, with a powerful server that does the work. sgit answers for everyone else, where the server should not be trusted at all: encrypt everything on the client, name every object by its ciphertext, let anyone keep the objects they fetched, and keep the server dumb enough that anyone can run it. The two designs meet in the middle on immutable objects, fetching only what is needed, no packfiles and compare-and-swap.</p>
+<p>Scion's post concedes one point from the other side: it could not keep a merge queue at its rate, so "concurrent changes can conflict, but Claude can typically fix these conflicts". The merge went back to the agent. That is where sgit keeps it: a merge is a workflow step, made where the context and the policy are.</p>
+<p>The practical difference is availability. Scion is a blog post. sgit is <code>pip install sgit-ai</code> today, with its code in the open, and it already carries <a href="what-sgit-is.html">the vaults this site publishes</a> and the one its agents work in. The useful next steps are on the client: a small encrypted record of the commit chain so a partial clone does not walk history, blame as a fold over path history, and testing at a much larger scale.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>sgit is not proven at Scion's scale.</b> Its largest vault in daily use is about 35,000 objects and ten agents.</li>
+<li><b>The measurements are one run each, from cloud sandboxes.</b> A plain connection does better.</li>
+<li><b>The fix for the small vault is not released yet.</b> It is on the CLI's development branch.</li>
+<li><b>Scion's figures are Anthropic's.</b> From its post; not independently verified.</li>
+<li><b>I have a stake.</b> sgit is ours.</li>
+</ul>
+<p>If you run agents against a large repository and want to try an encrypted, cacheable alternative, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 16 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. Anthropic, <a href="https://www.anthropic.com/engineering/redesigning-source-control">Redesigning source control at Anthropic</a>, 13 October 2026, read again on 16 October. The measurements of the newsroom's shared vault are the sgit CLI team's, from 14 and 16 October, from the hosted service and from local disk; this site's agent checked the cache headers, re-ran the small vault's clone with the released CLI and the development branch, and checked the quotes and the code. sgit's facts are from the <a href="https://pypi.org/project/sgit-ai/">sgit-ai</a> package and the <a href="https://github.com/SGit-AI/SGit-AI__CLI">SGit-AI__CLI</a> code and changelog; the documentation pages' loading numbers are from sgit.ai's live-vault case study.</p>
+<sg-meter view="page" kind="article" date="2026-10-16" topics="vaults-and-method site-and-engineering" title="Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#scion-and-sgit">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="from-send-to-sgit.html">From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults</a> <span class="dim">Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.</span></li><li><a href="sgit-is-a-standard.html">sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part</a> <span class="dim">Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.</span></li><li><a href="one-vault-ten-agents.html">One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom</a> <span class="dim">The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.</span></li><li><a href="what-sgit-is.html">Git for things you cannot put on GitHub</a> <span class="dim">sgit is git for files you cannot put on GitHub: encrypted before they leave your machine, versioned like git, stored where the server cannot read a byte.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="sgit-is-a-standard.html">sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part</a> <span class="dim">Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.</span></li><li><a href="one-vault-ten-agents.html">One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom</a> <span class="dim">The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.</span></li><li><a href="the-value-of-constraints.html">The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think</a> <span class="dim">sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 141 &middot; <a href="../for/make.html#r=141">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/scion-and-sgit.jpg" download>scion-and-sgit.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="scion-and-sgit.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

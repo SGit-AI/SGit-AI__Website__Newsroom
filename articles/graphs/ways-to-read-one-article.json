@@ -1,0 +1,164 @@
+{
+  "slug": "ways-to-read-one-article",
+  "teaser": "The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge",
+    "site-and-engineering"
+  ],
+  "core_idea": "The views the five readers make, the catalogue, the maps, the arc, the two-minute version and the deck, are good and badly delivered, stacked as folds inside the article; with the pane about the piece the reader picks a mode in one tap and sets a default per persona: headlines, infographic, two minutes, slides, what is new against what they have read, facts, relationships, vocabulary, and, through a model in their own browser, a view at their level; most modes are computed from existing views and the graph, deterministic and explainable, with no round trip to the publisher; and the finished article is kept whole at the centre because it has a beginning, a pacing, a surprise and a voice and is the one artefact that must make sense end to end, which a graph cannot.",
+  "nodes": [
+    {
+      "id": "views",
+      "label": "The views worked, the delivery did not",
+      "kind": "claim",
+      "summary": "Five readers' views on five articles, delivered as folds inside the long piece, mixed with the thing they are an alternative to."
+    },
+    {
+      "id": "modes",
+      "label": "The reader picks the way in",
+      "kind": "method",
+      "summary": "Headlines, infographic, two minutes, slides, what is new, facts, relationships, vocabulary, at my level, the whole article; one tap in the pane; a default per persona; the mode in the address."
+    },
+    {
+      "id": "focus",
+      "label": "Focus and time",
+      "kind": "concept",
+      "summary": "The reader's constraint is time and their need is focus; the unit of choice is the way in, not the article."
+    },
+    {
+      "id": "deterministic",
+      "label": "Deterministic first, a model second",
+      "kind": "claim",
+      "summary": "Most modes are projections of existing views and the graph, computed and explainable; a local model is for fitting the piece to the reader; nothing round-trips to the publisher."
+    },
+    {
+      "id": "infographic",
+      "label": "The infographic is often the article",
+      "kind": "example",
+      "summary": "The figures carry most of the story; a figure drawn for one reader through their own image-model key is a small step."
+    },
+    {
+      "id": "new",
+      "label": "What is new",
+      "kind": "method",
+      "summary": "The Historian's arc crossed with the reader's own records shows only what this article adds to what they have read; needs the vault."
+    },
+    {
+      "id": "centre",
+      "label": "The finished article stays at the centre",
+      "kind": "claim",
+      "summary": "A beginning, a sequence, a pacing, a surprise and a voice; the one artefact that has to make sense end to end, which a graph cannot."
+    },
+    {
+      "id": "graph",
+      "label": "What the graph loses",
+      "kind": "concept",
+      "summary": "Hyperlinked facts, right for provenance and zooming in, with no narrative and no author."
+    },
+    {
+      "id": "devices",
+      "label": "Phone, tablet, desktop, email",
+      "kind": "method",
+      "summary": "On a phone the pane is a sheet and the default mode comes first; in email the newsletter is cut by the reader's default."
+    },
+    {
+      "id": "word",
+      "label": "Not prose: the finished article",
+      "kind": "question",
+      "summary": "The word made the article sound lesser than the graph beside it; from now on it is the finished article, or the narrative."
+    }
+  ],
+  "edges": [
+    {
+      "from": "views",
+      "to": "modes",
+      "rel": "leads-to"
+    },
+    {
+      "from": "focus",
+      "to": "modes",
+      "rel": "depends-on"
+    },
+    {
+      "from": "deterministic",
+      "to": "modes",
+      "rel": "extends"
+    },
+    {
+      "from": "infographic",
+      "to": "modes",
+      "rel": "example-of"
+    },
+    {
+      "from": "new",
+      "to": "modes",
+      "rel": "example-of"
+    },
+    {
+      "from": "centre",
+      "to": "modes",
+      "rel": "contrasts"
+    },
+    {
+      "from": "graph",
+      "to": "centre",
+      "rel": "contrasts"
+    },
+    {
+      "from": "devices",
+      "to": "modes",
+      "rel": "extends"
+    },
+    {
+      "from": "word",
+      "to": "centre",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "one-article-five-readers",
+      "the-site-is-an-inbox",
+      "the-vault-is-live",
+      "the-infographic-bake-off",
+      "a-model-in-the-tab",
+      "the-agent-is-the-reader",
+      "story-vault-meets-reader-skills",
+      "how-to-run-synthetic-users"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "The views exist; the choice does not",
+      "why": "The problem in one line."
+    },
+    {
+      "text": "the article is the one artefact that has to make sense in a coherent way, from end to end, and the graph is the one that has to be checkable.",
+      "why": "The rule that keeps the article at the centre."
+    },
+    {
+      "text": "The modes are ways into the article for a reader with twenty seconds, two minutes or an hour.",
+      "why": "What the modes are, and are not."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rm-modes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rm-modes.webp",
+      "caption": "The modes, what each is and what makes it; the finished article at the centre, with what it keeps that no view has; and why modes rather than shorter articles."
+    },
+    {
+      "file": "rm-views.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rm-views.webp",
+      "caption": "The five readers fold on a live article, opened: five more folds, one per view, in the article's own column under the abstract. The views are good; the delivery asks the reader to dig for them, inside the thing they are an alternative to."
+    },
+    {
+      "file": "rm-phone.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rm-phone.webp",
+      "caption": "The same article at phone width: the title, the tags and the abstract fill the first two screens, and the views are further down still. On a phone the default mode is the first thing a reader should see."
+    }
+  ]
+}

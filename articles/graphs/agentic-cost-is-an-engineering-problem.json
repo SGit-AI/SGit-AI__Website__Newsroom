@@ -1,0 +1,197 @@
+{
+  "slug": "agentic-cost-is-an-engineering-problem",
+  "teaser": "A business plan: read the logs a company already has, draw each agent's footprint, twin and policy, and find the money first and the engineering second.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A service that manages the cost of agentic AI by observing what already exists: an estate whose bill nobody can explain shipped from the explorer side without the villager's discipline, as the Wardley map shows, with logs, traces and invoices never read together and no owner of cost; the service installs nothing, reads the logs into a vault, draws each agent's footprint, builds a twin of the estate, writes the behaviour policy each agent was in fact running under with the enforcement column filled honestly, and maps cost and capability into one graph; the findings are the cost list, which pays, and the engineering list, which is the reason; the gaps are findings too; vaults carry capture, transformation and sealed anonymised extracts; four price levels on the RiskMandate pattern, every number a labelled assumption.",
+  "nodes": [
+    {
+      "id": "thesis",
+      "label": "Cost is an engineering problem",
+      "kind": "claim",
+      "summary": "A loop, a whole context sent every call, a key with no ceiling: defects with a cause, a fix and a test, not a discount to negotiate."
+    },
+    {
+      "id": "map",
+      "label": "The problem on a Wardley map",
+      "kind": "artefact",
+      "summary": "Agents in production from prompts grown in sessions, on commodity model APIs billed by the token, with logs nobody reads together and no owner of cost."
+    },
+    {
+      "id": "observe",
+      "label": "Observe: install nothing",
+      "kind": "method",
+      "summary": "The customer drops invoices, logs, traces, prompts and schedules into a vault they own, sealed to the service's key."
+    },
+    {
+      "id": "footprint",
+      "label": "The footprint from the logs",
+      "kind": "method",
+      "summary": "What each agent actually did: calls, tokens, tools, retries, loops, hours, data touched; the first thing the money attaches to."
+    },
+    {
+      "id": "twin",
+      "label": "The twin of the estate",
+      "kind": "method",
+      "summary": "A graph of agents, models, keys, tools, data, owners and schedules with a cost on every edge."
+    },
+    {
+      "id": "policy",
+      "label": "The policy each agent was really running under",
+      "kind": "method",
+      "summary": "Written from the footprint as an Agent Behaviour Policy with the enforcement column filled honestly; where the cost is large the policy is large."
+    },
+    {
+      "id": "lists",
+      "label": "Two lists, in this order",
+      "kind": "claim",
+      "summary": "The cost list pays for the engagement; the engineering list, attrition, gaps, shared components, is the reason to have it."
+    },
+    {
+      "id": "gaps",
+      "label": "The gaps are findings",
+      "kind": "claim",
+      "summary": "An agent with no logs has no footprint, no owner and no policy; not being able to do the analysis is its first result."
+    },
+    {
+      "id": "vaults",
+      "label": "Capture, transform, move",
+      "kind": "concept",
+      "summary": "Logs in once, every transformation a commit, the twin a vault of its own, anonymised extracts out as sealed envelopes to a benchmark vault."
+    },
+    {
+      "id": "money",
+      "label": "Four levels and a share of savings",
+      "kind": "artefact",
+      "summary": "Kit £50, your cost vault £250, Standard £3,000, Tailored from £9,000, or a share of the first year's reduction; all labelled assumptions."
+    },
+    {
+      "id": "exists",
+      "label": "What is already here",
+      "kind": "example",
+      "summary": "The footprint method, the policy format, the connector twin, the vault tooling and the Company X-Ray pattern; not yet the analysis catalogue, the twin schema, the parsers or a customer."
+    }
+  ],
+  "edges": [
+    {
+      "from": "map",
+      "to": "thesis",
+      "rel": "depends-on"
+    },
+    {
+      "from": "thesis",
+      "to": "observe",
+      "rel": "leads-to"
+    },
+    {
+      "from": "observe",
+      "to": "footprint",
+      "rel": "produces"
+    },
+    {
+      "from": "footprint",
+      "to": "twin",
+      "rel": "produces"
+    },
+    {
+      "from": "footprint",
+      "to": "policy",
+      "rel": "produces"
+    },
+    {
+      "from": "twin",
+      "to": "lists",
+      "rel": "produces"
+    },
+    {
+      "from": "policy",
+      "to": "lists",
+      "rel": "produces"
+    },
+    {
+      "from": "gaps",
+      "to": "lists",
+      "rel": "extends"
+    },
+    {
+      "from": "vaults",
+      "to": "observe",
+      "rel": "depends-on"
+    },
+    {
+      "from": "lists",
+      "to": "money",
+      "rel": "leads-to"
+    },
+    {
+      "from": "exists",
+      "to": "observe",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "an-agent-desktop-by-the-minute",
+      "connector-twin-before-you-deploy-an-agent",
+      "explorer-to-villager-newsroom",
+      "knowing-when-to-stop",
+      "rfc-0001-public-key-cryptography-for-sgit",
+      "footprint-and-blast-radius",
+      "the-behaviour-policy-is-the-business-logic",
+      "the-agent-is-the-reader",
+      "every-mistake-added-a-rule",
+      "the-article-remains-a-product"
+    ],
+    "pages": [
+      "/startups/business-plans.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Not being able to do the analysis is the first result of the analysis, and it is the one most companies need first.",
+      "why": "Why the gaps are findings."
+    },
+    {
+      "text": "So the service sells cost reduction, and delivers engineering opportunity, and the business model follows the second.",
+      "why": "The positive frame and the business model in one line."
+    },
+    {
+      "text": "A cost review is a thing companies buy once and resent. A map of what to build is a thing they come back for.",
+      "why": "Why the second list is the business."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ac-wardley-1.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ac-wardley-1.webp",
+      "caption": "The map in three frames: the problem as most companies have it, what the service adds from what is already there, and where it goes. Agents in production on the explorer side, billed by the token, with logs nobody reads together; then the footprint, the twin, the policy and the graph; then cost as a discipline.",
+      "kind": "wardley-map",
+      "frames": [
+        "https://newsroom.sgit.ai/articles/images/ac-wardley-1.webp",
+        "https://newsroom.sgit.ai/articles/images/ac-wardley-2.webp",
+        "https://newsroom.sgit.ai/articles/images/ac-wardley-3.webp"
+      ]
+    },
+    {
+      "file": "ac-wardley-problem.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ac-wardley-problem.webp",
+      "caption": "The problem. The person who pays the bill sees a total. Below it, agents in production built from prompts and workflows grown in sessions, on commodity model APIs metered by the token, with logs, traces and invoices that exist and are never read together, and no one who owns the cost.",
+      "kind": "wardley-map"
+    },
+    {
+      "file": "ac-plan.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ac-plan.webp",
+      "caption": "Observe, map, find: the three steps, the two lists, how it makes money, why vaults, and the positive frame. Every price is a labelled assumption."
+    },
+    {
+      "file": "ac-wardley-service.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ac-wardley-service.webp",
+      "caption": "What the service adds, from what is already there. The footprint read from the logs; the twin of the estate; the behaviour policy each agent was in fact running under; and the cost and capability graph that produces the findings. Nothing is installed in the customer's estate.",
+      "kind": "wardley-map"
+    }
+  ]
+}

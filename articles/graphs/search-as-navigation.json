@@ -1,0 +1,170 @@
+{
+  "slug": "search-as-navigation",
+  "teaser": "Search as a walk through the newsroom's graph: chips, exact suggestions, five views and a pane that shows the working, with no model yet.",
+  "topics": [
+    "graphs-and-knowledge",
+    "site-and-engineering"
+  ],
+  "core_idea": "The site now has a graph per article, a summary per section, figures and trails, so search should become navigation: a query built from chips with exact suggestions, five views of one result and a pane showing the working, all deterministic in the browser; the taxonomy debt is the work, and the hypothesis is that a clean graph needs less model and serves a model better than vectors.",
+  "nodes": [
+    {
+      "id": "today",
+      "label": "Search today",
+      "kind": "artefact",
+      "summary": "BM25 in the browser over two files."
+    },
+    {
+      "id": "list",
+      "label": "A list throws most away",
+      "kind": "claim",
+      "summary": "Graphs, sections and figures go unseen."
+    },
+    {
+      "id": "walk",
+      "label": "Search as navigation",
+      "kind": "concept",
+      "summary": "Build the query by walking."
+    },
+    {
+      "id": "chips",
+      "label": "Chips and suggestions",
+      "kind": "method",
+      "summary": "Exact counts; nothing that returns nothing."
+    },
+    {
+      "id": "views",
+      "label": "Five views",
+      "kind": "method",
+      "summary": "Graph, sections, figures, timeline, list."
+    },
+    {
+      "id": "pane",
+      "label": "The pane",
+      "kind": "method",
+      "summary": "What was fetched, why, how long."
+    },
+    {
+      "id": "engines",
+      "label": "Engines in the browser",
+      "kind": "artefact",
+      "summary": "SQLite and SPARQL, already vendored."
+    },
+    {
+      "id": "debt",
+      "label": "The taxonomy debt",
+      "kind": "example",
+      "summary": "396 of 663 tags used once; 47 of 2,230 ideas shared."
+    },
+    {
+      "id": "clean",
+      "label": "Clean the graph",
+      "kind": "method",
+      "summary": "Merge tags, aliases, entities, idea clusters."
+    },
+    {
+      "id": "vectors",
+      "label": "Graph versus vectors",
+      "kind": "question",
+      "summary": "A clean graph should need less model."
+    },
+    {
+      "id": "golden",
+      "label": "Golden queries",
+      "kind": "method",
+      "summary": "What I expect to find, measured each release."
+    },
+    {
+      "id": "brief",
+      "label": "The brief",
+      "kind": "artefact",
+      "summary": "For the agent that builds it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "today",
+      "to": "list",
+      "rel": "leads-to"
+    },
+    {
+      "from": "list",
+      "to": "walk",
+      "rel": "answers"
+    },
+    {
+      "from": "walk",
+      "to": "chips",
+      "rel": "depends-on"
+    },
+    {
+      "from": "walk",
+      "to": "views",
+      "rel": "produces"
+    },
+    {
+      "from": "walk",
+      "to": "pane",
+      "rel": "produces"
+    },
+    {
+      "from": "engines",
+      "to": "walk",
+      "rel": "depends-on"
+    },
+    {
+      "from": "debt",
+      "to": "clean",
+      "rel": "leads-to"
+    },
+    {
+      "from": "clean",
+      "to": "vectors",
+      "rel": "answers"
+    },
+    {
+      "from": "golden",
+      "to": "vectors",
+      "rel": "answers"
+    },
+    {
+      "from": "walk",
+      "to": "brief",
+      "rel": "leads-to"
+    },
+    {
+      "from": "clean",
+      "to": "chips",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "reviews-on-the-record",
+      "the-editors-channel"
+    ],
+    "pages": [
+      "admin/notes/2026-10-18__explore-search-as-navigation.md",
+      "databases/index.html",
+      "search/index.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "That is not a reason to reach for a model. It is the work.",
+      "why": "The taxonomy debt."
+    },
+    {
+      "text": "A search that can show its working is one you can trust, and one you can improve",
+      "why": "The pane."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sn-explore.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sn-explore.webp",
+      "caption": "Search as navigation. A query built from chips, Portugal and startups, each resolved to a thing in the graph; on the side, what the words could mean, what sits nearest and which combinations are worth following, each with an exact count; in the middle, the views of the same result: the graph, the sections as one-liners, a collage of the figures, a timeline and the ranked list; and a pane that shows what was fetched, how each result arrived and the time each step took. All of it in the browser, from files built at release, with no model.",
+      "kind": "concept"
+    }
+  ]
+}

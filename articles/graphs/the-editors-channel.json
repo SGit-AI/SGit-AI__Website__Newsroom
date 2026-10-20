@@ -1,0 +1,172 @@
+{
+  "slug": "the-editors-channel",
+  "teaser": "A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "Editing from a chat loses the page, the version and the sentence; an editor key turns a browser into an editor's, which sends a subset of its reading to an editor vault, a daily pass acts on what is cheap to undo and replies, and five audiences each get a lane and a key, moving from shared secrets to key pairs.",
+  "nodes": [
+    {
+      "id": "chat",
+      "label": "Editing in a chat",
+      "kind": "question",
+      "summary": "Loses the page, the version and the phrase."
+    },
+    {
+      "id": "exists",
+      "label": "What already exists",
+      "kind": "artefact",
+      "summary": "The pane, the lane, the inbox, append lanes."
+    },
+    {
+      "id": "oneway",
+      "label": "The lane goes one way",
+      "kind": "claim",
+      "summary": "Nothing comes back; nothing reads it unasked."
+    },
+    {
+      "id": "key",
+      "label": "The editor key",
+      "kind": "method",
+      "summary": "A key in a link fragment switches the mode."
+    },
+    {
+      "id": "vault",
+      "label": "The editor vault",
+      "kind": "artefact",
+      "summary": "A subset of my reading account, newsroom pages only."
+    },
+    {
+      "id": "signoff",
+      "label": "Signed off",
+      "kind": "method",
+      "summary": "Against a version; stale when it changes."
+    },
+    {
+      "id": "pass",
+      "label": "The daily pass",
+      "kind": "method",
+      "summary": "Checks, cheap fixes released, the rest proposed."
+    },
+    {
+      "id": "undo",
+      "label": "Cheap to undo",
+      "kind": "concept",
+      "summary": "Articles are two-way doors; email is not."
+    },
+    {
+      "id": "audiences",
+      "label": "Five audiences",
+      "kind": "concept",
+      "summary": "From sending nothing to two-way."
+    },
+    {
+      "id": "anon",
+      "label": "The anonymous checkbox",
+      "kind": "method",
+      "summary": "Append only: page, kind, phrase."
+    },
+    {
+      "id": "pki",
+      "label": "Key pairs",
+      "kind": "method",
+      "summary": "Sign, seal, grant and revoke per person."
+    },
+    {
+      "id": "brief",
+      "label": "The brief",
+      "kind": "artefact",
+      "summary": "For the agent that builds the pane."
+    }
+  ],
+  "edges": [
+    {
+      "from": "chat",
+      "to": "key",
+      "rel": "answers"
+    },
+    {
+      "from": "exists",
+      "to": "vault",
+      "rel": "extends"
+    },
+    {
+      "from": "oneway",
+      "to": "pass",
+      "rel": "answers"
+    },
+    {
+      "from": "key",
+      "to": "vault",
+      "rel": "leads-to"
+    },
+    {
+      "from": "vault",
+      "to": "signoff",
+      "rel": "produces"
+    },
+    {
+      "from": "vault",
+      "to": "pass",
+      "rel": "leads-to"
+    },
+    {
+      "from": "undo",
+      "to": "pass",
+      "rel": "depends-on"
+    },
+    {
+      "from": "audiences",
+      "to": "anon",
+      "rel": "produces"
+    },
+    {
+      "from": "exists",
+      "to": "anon",
+      "rel": "extends"
+    },
+    {
+      "from": "audiences",
+      "to": "pki",
+      "rel": "leads-to"
+    },
+    {
+      "from": "pass",
+      "to": "brief",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "fix-the-page-yourself",
+      "how-cheap-is-it-to-undo",
+      "three-policies-for-an-agent",
+      "agent-workflows-on-ephemeral-vaults",
+      "sixteen-notes-i-did-not-want-to-lose"
+    ],
+    "pages": [
+      "admin/notes/2026-10-18__the-editors-channel.md",
+      "admin/notes/2026-10-12__the-feedback-loop.md"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Without the key, the code that does any of this never runs.",
+      "why": "The plain reader is unchanged."
+    },
+    {
+      "text": "The agent can then say, for every article, whether the version that is live is the version I signed off.",
+      "why": "Why sign-offs."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ec-channel.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ec-channel.webp",
+      "caption": "The editor's channel. A key turns a browser into an editor's; on newsroom pages it sends what I read, sign off and want changed to an editor vault; a daily pass, or a press, reads it, runs the checks, acts and replies. Below, five audiences, each a lane with its own key: the plain reader sends nothing; a reader with a vault syncs only their own devices; an anonymous checkbox appends a little and reads nothing back; a named reader sends notes they choose; an editor sends everything and gets answers.",
+      "kind": "concept"
+    }
+  ]
+}

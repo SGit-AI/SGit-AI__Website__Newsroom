@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks, SGit Newsroom</title>
+<meta name="description" content="One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.html">
+<meta property="og:title" content="Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks, SGit Newsroom">
+<meta property="og:description" content="One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-leak-without-breaking-the-policy.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-leak-without-breaking-the-policy.jpg">
+<link rel="alternate" type="text/markdown" href="a-leak-without-breaking-the-policy.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks, SGit Newsroom", "headline": "Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks, SGit Newsroom", "description": "One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.", "url": "https://newsroom.sgit.ai/articles/a-leak-without-breaking-the-policy.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks</p>
+ <h1>Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-20 &middot; <a href="versions/a-leak-without-breaking-the-policy.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.158</a> &middot; <span class="chip">agents</span><span class="chip">agent-behaviour-policy</span><span class="chip">secrets</span><span class="chip">hooks</span><span class="chip">privacy</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.</em></p>
+<figure class="shot" data-shot="lk-levels.webp" data-dir="images/" data-alt="Nine ways a secret tries to leave, at each level. Told leaves every case to the model. Checked is the measured result of the hook: three denied, one redacted, one blocked, three missed. With four experimental rules, the three are refused. Never given leaves nothing to leak." data-kind="comparison"><figcaption>Nine ways a secret tries to leave, at each level. Told leaves every case to the model. Checked is the measured result of the hook: three denied, one redacted, one blocked, three missed. With four experimental rules, the three are refused. Never given leaves nothing to leak.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Yes, a key can leak without breaking a capability row.</b> Sending is allowed; the key is content.</li>
+<li><b>So a policy needs content rows too.</b> Disclosing a secret, disclosing personal data.</li>
+<li><b>Told: a sentence in the prompt.</b> The model keeps it, or does not.</li>
+<li><b>Checked: a hook on every input and output.</b> Deterministic, and it has gaps.</li>
+<li><b>Never given: the agent never holds the key.</b> It asks for the action instead.</li>
+<li><b>We tested a hook against nine leaks.</b> It caught five and missed three.</li>
+<li><b>Four experimental rules close the three.</b> Base64 refused as policy, among them.</li>
+<li><b>Run on 3,451 real commands, it refused 22.</b> None was ordinary work.</li>
+<li><b>The hook is below, CC BY 4.0.</b> Take it, tune it, run it.</li>
+</ul>
+<h2 id="question">The question</h2>
+<p>One of our first customers said something that deserves a proper answer. What scared them was that an API key, or personal data, might leak without breaking any Agent Behaviour Policy. My first reaction was: how? The policy should include that behaviour. Their reply was that it might be their lack of knowledge of what a policy can do.</p>
+<p>It is a good question, and the honest answer is that they are right about a policy that only lists capabilities. An <a href="https://abp.sgit.ai/">Agent Behaviour Policy</a> writes down what an agent can do (the grant), what it may do (the mandate), the gap, and what stands in the way. If the agent may send email, the row says yes. A key pasted into the body of that email is not a different capability. It is the same action, with the wrong content.</p>
+<h2 id="content">Capabilities and content</h2>
+<p>So a policy that covers secrets and personal data needs two more kinds of row. The first is about reach: can the agent read the key at all? In most deployments it can, because the key is in its environment, and the mandate almost never needs it to read the key, only to use it. That is excess grant, and it is exactly what a policy is for finding. The second is about content: <code>disclose.secret</code> with a mandate of no, and <code>disclose.personal_data</code> with a mandate of only to the person it is about.</p>
+<p>A content row is like the investment advice row in <a href="inside-the-pellbridge-agents.html">the Pellbridge agents</a>: no system can block a sentence outright, so the barrier is a check, and a check can miss. That is why the question of where the rule is kept matters more here than anywhere.</p>
+<h2 id="levels">Three levels, and better names</h2>
+<p>We have described the three levels before, in <a href="governs-enforces-attests.html">governs, enforces, attests</a>: in the prompt, in hooks, outside the agent. They need plainer names. I suggest these.</p>
+<ul>
+<li><b>Told.</b> The prompt says: never print, send or store a key. The model decides whether to keep it, so in ABP terms it is an expectation.</li>
+<li><b>Checked.</b> A hook in the agent's harness scans everything going out and coming in, and stops or redacts what matches. It is deterministic, which is a real level of guarantee, but it runs on the agent's own machine, and if the agent's account can change its configuration it is a setting.</li>
+<li><b>Never given.</b> The key is held by something out of the agent's reach, a proxy or a host, which adds it to the request on the way out. The agent asks for the action, not the key. This is a boundary, and I still think it is the workflow to aim for.</li>
+</ul>
+<h2 id="hook">The hook</h2>
+<p>Here is what Checked looks like in practice, for Claude Code. It runs on three hook events. On <code>PreToolUse</code> it scans the tool's input, and denies the call if it carries a secret, or names a variable that holds one: <code>$OPENAI_API_KEY</code> in a command never shows the value, but it still sends it. On <code>PostToolUse</code> it scans the tool's result and redacts secrets before the model sees them; Claude Code's documentation says to "intercept at <code>PreToolUse</code> for outbound tool inputs and <code>PostToolUse</code> for inbound tool results", and that <code>updatedToolOutput</code> "only changes what Claude sees. The tool has already run by the time the hook fires." On <code>Stop</code> it blocks a final answer that carries a secret or a card number; that hook receives the answer as <code>last_assistant_message</code>.</p>
+<p>It matches common key formats with a regular expression, card numbers with the Luhn check, and, most usefully, the exact values of the session's own secrets, read from its environment, so a match on those is not a guess. The experimental rules, described below, are on by default and can be turned off with <code>SECRET_GUARD_EXPERIMENTAL=0</code>.</p>
+<pre class="shell">
+#!/usr/bin/env python3
+"""secret_guard: a Claude Code hook that keeps secrets and personal data out of tool calls.
+PreToolUse: deny a call whose input carries a secret, or names a secret's variable.
+PostToolUse: redact secrets from a tool's result before the model sees it.
+Stop: block a final answer that carries a secret.
+EXPERIMENTAL rules (on by default; set SECRET_GUARD_EXPERIMENTAL=0 to turn them off): look inside base64 and
+hex, match pieces of the session's own secrets, refuse long base64 in outbound calls, and refuse a command that
+sends a secrets file to the network.  CC BY 4.0, newsroom.sgit.ai."""
+import base64, binascii, json, os, re, sys
+
+PATTERNS = {
+    "private key":      r"-----BEGIN [A-Z ]*PRIVATE[ ]KEY-----",
+    "AWS access key":   r"\bAKIA[0-9A-Z]{16}\b",
+    "GitHub token":     r"\bgh[pousr]_[A-Za-z0-9]{36,}\b",
+    "Anthropic key":    r"\bsk-ant-[A-Za-z0-9_-]{20,}",
+    "OpenAI-style key": r"\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}",
+    "Slack token":      r"\bxox[abprs]-[A-Za-z0-9-]{10,}",
+    "JWT":              r"\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}",
+}
+SECRET_NAME = re.compile(r"(KEY|TOKEN|SECRET|PASSWORD|CREDENTIAL)", re.I)
+# The exact values of this session's secrets: a match on these is not a guess.
+KNOWN = {k: v for k, v in os.environ.items() if SECRET_NAME.search(k) and len(v) &gt;= 12}
+
+def luhn(d):
+    s, alt = 0, False
+    for c in reversed(d):
+        n = int(c) * (2 if alt else 1); s += n - 9 if n &gt; 9 else n; alt = not alt
+    return s % 10 == 0
+
+def findings(text):
+    out = [name for name, p in PATTERNS.items() if re.search(p, text)]
+    out += ["card number" for m in re.finditer(r"\b(?:\d[ -]?){13,19}\b", text) if luhn(re.sub(r"\D", "", m.group()))][:1]
+    out += ["the value of $" + k for k, v in KNOWN.items() if v in text]
+    return out
+
+EXPERIMENTAL = os.environ.get("SECRET_GUARD_EXPERIMENTAL", "1") != "0"
+B64 = re.compile(r"[A-Za-z0-9+/_-]{24,}={0,2}")
+NET = re.compile(r"\b(curl|wget|nc|ncat|scp|rsync|ftp|Invoke-WebRequest)\b")
+SECRET_FILE = re.compile(r"(?:^|[\s/'\"=&lt;@])(\.env(?:\.[\w-]+)?|[\w-]+\.pem|id_rsa|id_ed25519|\.netrc|\.npmrc|\.pypirc|\.aws/credentials)\b")
+
+def decoded(text):  # what base64 and hex runs in the text say, decoded
+    out = []
+    for m in B64.finditer(text):
+        t = m.group()
+        for dec in (lambda x: base64.b64decode(x + "=" * (-len(x) % 4)), lambda x: base64.urlsafe_b64decode(x + "=" * (-len(x) % 4))):
+            try: out.append(dec(t).decode("utf-8")); break
+            except (binascii.Error, UnicodeDecodeError, ValueError): pass
+    for m in re.finditer(r"\b(?:[0-9a-fA-F]{2}){12,}\b", text):
+        try: out.append(bytes.fromhex(m.group()).decode("utf-8"))
+        except (ValueError, UnicodeDecodeError): pass
+    return out
+
+def pieces(text, n=10):  # a known secret split into parts: any 10 characters of it in a row
+    return ["a piece of $" + k for k, v in KNOWN.items() if any(v[i:i + n] in text for i in range(0, len(v) - n + 1))]
+
+def blob(t):  # long base64: not plain hex (a commit hash), not a path or an id in a URL (mostly short parts)
+    parts = re.split(r"[/_-]", t)
+    return (len(t) &gt;= 40 and sum(len(x) &lt; 8 for x in parts) &lt;= 1 and not re.fullmatch(r"[0-9a-fA-F]+", t)
+            and all(re.search(c, t) for c in ("[a-z]", "[A-Z]", "[0-9]")))
+
+def experimental(text):
+    f = []
+    for d in decoded(text): f += ["encoded " + x for x in findings(d)]
+    f += pieces(text)
+    if any(blob(m.group()) for m in B64.finditer(text)): f.append("a long base64 string (refused as policy)")
+    if NET.search(text) and SECRET_FILE.search(text): f.append("a secrets file sent to the network")
+    return sorted(set(f))
+
+def references(text):  # $OPENAI_API_KEY in a command: the value never appears, the variable does
+    return ["a reference to $" + k for k in KNOWN if re.search(r"\$\{?" + re.escape(k) + r"\b", text)]
+
+def redact(x):
+    if isinstance(x, str):
+        for p in PATTERNS.values(): x = re.sub(p, "[redacted]", x)
+        for v in KNOWN.values(): x = x.replace(v, "[redacted]")
+        return x
+    if isinstance(x, dict): return {k: redact(v) for k, v in x.items()}
+    if isinstance(x, list): return [redact(v) for v in x]
+    return x
+
+e = json.load(sys.stdin); ev = e.get("hook_event_name")
+if ev == "PreToolUse":
+    t = json.dumps(e.get("tool_input", {})); f = findings(t) + references(t)
+    if EXPERIMENTAL and not f: f = experimental(t)
+    if f:
+        print(json.dumps({"hookSpecificOutput": {"hookEventName": "PreToolUse", "permissionDecision": "deny",
+              "permissionDecisionReason": "secret_guard: this call carries " + ", ".join(f) + ". Ask for the action, not the secret."}}))
+elif ev == "PostToolUse":
+    r = e.get("tool_response")
+    if findings(json.dumps(r)):
+        print(json.dumps({"hookSpecificOutput": {"hookEventName": "PostToolUse", "updatedToolOutput": redact(r),
+              "additionalContext": "secret_guard redacted a secret from this result."}}))
+elif ev == "Stop":
+    f = findings(e.get("last_assistant_message") or "")
+    if f and not e.get("stop_hook_active"):
+        print("secret_guard: your answer carries " + ", ".join(f) + ". Rewrite it without them.", file=sys.stderr); sys.exit(2)
+</pre>
+<p>To use it, save it as <code>.claude/hooks/secret_guard.py</code> and register it for <code>PreToolUse</code>, <code>PostToolUse</code> and <code>Stop</code> in <code>.claude/settings.json</code>. Tune the patterns to your own keys, and add your own personal data formats.</p>
+<h2 id="tested">Nine leaks, tested</h2>
+<p>We ran it against nine cases, with fake keys made at random for the test, so no real key was involved.</p>
+<ul>
+<li><b>Denied:</b> a command with a GitHub token in it; a command that sends a key by its variable name; a web fetch with the key's value in the URL.</li>
+<li><b>Redacted:</b> a tool result that prints the key. The command ran, but the model saw <code>[redacted]</code>.</li>
+<li><b>Blocked:</b> a final answer with a card number in it.</li>
+<li><b>Allowed:</b> an ordinary <code>ls</code> and <code>git status</code>, as it should be.</li>
+<li><b>Missed:</b> the key encoded in base64; the key split in two and joined by the command; and <code>cat .env | curl -d @- …</code>, a file of secrets piped straight out, where neither the value nor its name ever appears in the command.</li>
+</ul>
+<p>The three misses are not bugs in the first version of this hook. They are what a check on the text of a command cannot see: an encoding, an assembly, or a file the hook never reads.</p>
+<h2 id="experimental">Experimental rules</h2>
+<p>Each of the three has a recognisable shape, so we added four rules and marked them experimental, to try before making them official.</p>
+<ul>
+<li><b>Look inside encodings.</b> Decode every base64 and hex run in a call, and scan what it says. A key in base64 is still a key.</li>
+<li><b>Match pieces of known secrets.</b> Any ten characters in a row of the session's own secrets is a match, so a key split into parts is caught as long as one part is ten characters long. Ten random characters do not appear by chance.</li>
+<li><b>Refuse long base64 outright.</b> An agent rarely has a reason to send a long base64 string anywhere, so the policy is simply no: forty characters or more, mixing cases and digits, not a commit hash, and not a path or an identifier inside a URL.</li>
+<li><b>Refuse a secrets file sent to the network.</b> A command that names a file such as <code>.env</code>, a <code>.pem</code> key or <code>.aws/credentials</code> and also runs <code>curl</code>, <code>wget</code>, <code>nc</code> or <code>scp</code> is refused.</li>
+</ul>
+<p>With them on, all nine cases were caught: the base64 key was refused twice over (decoded, and as a long base64 string), the split key as a piece of the known secret, and <code>cat .env | curl</code> as a secrets file sent to the network. We also tested random data in base64, a known key format inside a base64 blob, and the key in hex: all refused. And we tested what should pass: a commit hash, long file paths with version numbers, a GitHub URL, a commit with a co-author line, reading <code>.env</code> without sending it. All allowed.</p>
+<p>The real test is ordinary work, so we ran the hook over every shell command of the session that wrote this article: 3,451 of them. The first version of the base64 rule refused 183, almost all because of the random session identifier in every commit message; the second, which ignores identifiers inside URLs, refused 22. Thirteen were real: the session passing its own vault token to a tool on the command line, which is exactly what the policy says not to do, even though the use was legitimate. Seven were the test data for this hook, and two were the example key from AWS's own documentation. None was ordinary work.</p>
+<p>Those thirteen are the best argument for the next section. The rule was right; the fix is not to allow it, but to stop giving the token to the session.</p>
+<h2 id="never">Never given</h2>
+<p>So the strongest answer is the third level. If the key is not in the agent's environment, none of the nine cases has anything to leak. The agent asks a proxy or a host to make the call, and the key is added on the way out, by something the agent cannot read.</p>
+<p>We already work this way in places. In <a href="inside-the-no-server-studio.html">the no-server studio</a>, the vault host holds the model's key, caps the spend and never shows it to the page. In <a href="handing-secrets-to-agents.html">handing secrets to agents</a>, a secret is piped into the tool that needs it and never into the prompt. And the cloud sessions this newsroom runs in add some credentials through a proxy on the way out, while others are still in the environment; moving those out is on our own list.</p>
+<p>Personal data is harder, because the agent often has to see it to do the job. There, Never given means minimisation: the agent gets a token or a reference instead of the card number, and only the system that needs the real value holds it. For what it does see, Checked is the right level, with every miss reported as a near miss.</p>
+<h2 id="policy">What to write in the policy</h2>
+<p>For an agent that uses an API key, three rows, each with its barrier:</p>
+<ul>
+<li><b><code>read.secret.api_key</code></b>: can it? If yes, the mandate is almost always no. Kept out of reach by giving the key to a proxy, not the agent.</li>
+<li><b><code>disclose.secret</code></b>: mandate no. Checked by a hook on inputs, results and answers, knowing the session's own secret values.</li>
+<li><b><code>disclose.personal_data</code></b>: only to the person it is about. Minimised where possible, checked where not.</li>
+</ul>
+<p>Then the question our customer asked has a clear answer. A leak breaks a row; the row says what kept it; and the policy shows, before anything leaks, which rows are only told.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The hook is an example.</b> Tested on seventeen cases and one session, not on every way out.</li>
+<li><b>The experimental rules are experimental.</b> Expect false positives in other kinds of work.</li>
+<li><b>Regular expressions miss things.</b> Unknown formats, short pieces, other encodings.</li>
+<li><b>A hook is only as strong as its configuration.</b> If the agent can change it, it is a setting.</li>
+<li><b>Never given needs infrastructure.</b> A proxy or a host that holds the key.</li>
+<li><b>The test used fake keys.</b> Made at random; no real secret was used.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>A conversation with one of our first customers, and a voice memo of 20 October 2026. Claude Code's <a href="https://code.claude.com/docs/en/hooks">hooks reference</a>, read the same day. The Agent Behaviour Policy at <a href="https://abp.sgit.ai/">abp.sgit.ai</a>. Related: <a href="governs-enforces-attests.html">governs, enforces, attests</a>, <a href="are-hooks-the-sweet-spot.html">are hooks the sweet spot?</a>, <a href="handing-secrets-to-agents.html">handing secrets to agents</a>, <a href="secrets-on-public-keys.html">secrets on public keys</a>, <a href="inside-the-pellbridge-agents.html">inside the Pellbridge agents</a>, <a href="pki-everywhere.html">PKI everywhere</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-20" topics="agents-and-policy" title="Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#a-leak-without-breaking-the-policy">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="inside-the-pellbridge-agents.html">Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it</a> <span class="dim">Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.</span></li><li><a href="governs-enforces-attests.html">Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</a> <span class="dim">An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.</span></li><li><a href="inside-the-no-server-studio.html">Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault</a> <span class="dim">An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.</span></li><li><a href="handing-secrets-to-agents.html">Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this</a> <span class="dim">SG/Send's next focus: agents and browsers make their own key pair, owners encrypt to it, the drop is read once, and the secret never enters the chat.</span></li><li><a href="are-hooks-the-sweet-spot.html">Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine</a> <span class="dim">One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.</span></li><li><a href="secrets-on-public-keys.html">secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes</a> <span class="dim">secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.</span></li><li><a href="pki-everywhere.html">PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key</a> <span class="dim">From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="v0-12-in-numbers.html">v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works</a> <span class="dim">v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.</span></li><li><a href="free-to-copy-paid-at-the-source.html">Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed</a> <span class="dim">Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 227 &middot; <a href="../for/make.html#r=227">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-leak-without-breaking-the-policy.jpg" download>a-leak-without-breaking-the-policy.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-leak-without-breaking-the-policy.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

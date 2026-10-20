@@ -1,0 +1,144 @@
+{
+  "slug": "the-graph-companies",
+  "teaser": "Four of the ten most valuable companies are graph companies. Graphs never scaled for everyone else because they were built to lock in. Now they can.",
+  "topics": [
+    "graphs-and-knowledge",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Many of the most valuable companies are, at heart, graphs of links, people, products, payments and ontologies, and graphs make answers obvious once the right connections exist; they did not scale for everyone else because they were costly and built to lock customers in, without shared schemas or code, which fractal semantic graphs and agents can now change.",
+  "nodes": [
+    {
+      "id": "companies",
+      "label": "The graph companies",
+      "kind": "claim",
+      "summary": "Four of the top ten, about $12.8 trillion."
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "kind": "example",
+      "summary": "The link graph and the Knowledge Graph."
+    },
+    {
+      "id": "social",
+      "label": "Facebook and LinkedIn",
+      "kind": "example",
+      "summary": "The social graph and the economic graph."
+    },
+    {
+      "id": "amazon",
+      "label": "Amazon",
+      "kind": "example",
+      "summary": "A product graph on a supply chain."
+    },
+    {
+      "id": "ontology",
+      "label": "Ontologies as a business",
+      "kind": "example",
+      "summary": "A digital twin of the organisation."
+    },
+    {
+      "id": "everything",
+      "label": "Everything is a graph",
+      "kind": "concept",
+      "summary": "Spreadsheets, databases, law, models."
+    },
+    {
+      "id": "obvious",
+      "label": "The answer becomes obvious",
+      "kind": "concept",
+      "summary": "Remove the irrelevant nodes, like a whodunit."
+    },
+    {
+      "id": "lockin",
+      "label": "Graphs never scaled",
+      "kind": "claim",
+      "summary": "Costly, and built to lock in."
+    },
+    {
+      "id": "fsg",
+      "label": "Fractal semantic graphs",
+      "kind": "method",
+      "summary": "Nobody has to share a schema."
+    }
+  ],
+  "edges": [
+    {
+      "from": "google",
+      "to": "companies",
+      "rel": "extends"
+    },
+    {
+      "from": "social",
+      "to": "companies",
+      "rel": "extends"
+    },
+    {
+      "from": "amazon",
+      "to": "companies",
+      "rel": "extends"
+    },
+    {
+      "from": "ontology",
+      "to": "companies",
+      "rel": "extends"
+    },
+    {
+      "from": "everything",
+      "to": "obvious",
+      "rel": "leads-to"
+    },
+    {
+      "from": "lockin",
+      "to": "companies",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fsg",
+      "to": "lockin",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "when-the-customer-becomes-the-commodity",
+      "the-graphs-books"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html",
+      "https://blog.google/products/search/introducing-knowledge-graph-things-not/",
+      "https://www.palantir.com/docs/foundry/ontology/overview/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "once you have the right questions and the right information, the answer is obvious",
+      "why": "The whodunit."
+    },
+    {
+      "text": "The graphs were the moat, not the product.",
+      "why": "Why they never scaled."
+    }
+  ],
+  "figures": [
+    {
+      "file": "gc-companies.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gc-companies.webp",
+      "caption": "The graph companies. Market values on 19 October 2026, with the graph at the heart of each: Alphabet, $4.17 trillion, the link graph and the Knowledge Graph; Microsoft, $3.96 trillion, which owns LinkedIn's economic graph; Amazon, $2.84 trillion, the product graph and the logistics network; Meta, $1.79 trillion, the social graph; Visa, $755 billion, and Mastercard, $538 billion, payment networks; Palantir, $469 billion, an ontology of the organisation. Four of the ten most valuable companies in the world are on the list.",
+      "kind": "comparison"
+    },
+    {
+      "file": "gc-whodunit.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gc-whodunit.webp",
+      "caption": "The answer becomes obvious. On the left, a graph with every node and edge: people, places, events, evidence, and no answer in sight. In the middle, the irrelevant nodes removed, the relevant connections kept. On the right, what is left: a short path from the question to the answer, which now looks obvious. The same move works for a supply chain, a contract, a regulation, or a search result.",
+      "kind": "concept"
+    },
+    {
+      "file": "gc-lockin.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gc-lockin.webp",
+      "caption": "Why graphs never scaled, and how they can now. Before: building a graph took a lot of technology; whoever built it used it to lock in the customer and keep competitors out; there was no movement to share schemas or the code; so each graph stayed inside one company, and the advantage stayed with the few. Now: fractal semantic graphs, where each part keeps its own vocabulary and nobody has to share a schema; open source and open schemas; agents that build and maintain the graph; so graphs can be built by anyone, for any domain.",
+      "kind": "comparison"
+    }
+  ]
+}

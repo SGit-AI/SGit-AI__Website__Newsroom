@@ -1,0 +1,102 @@
+{
+ "slug": "move-the-cloud-not-the-code",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 240,
+   "line": "Move the cloud underneath, never the code above",
+   "para": "At a sovereignty event, a Romanian infrastructure chief kept returning to one point: code, not policy or price, stops workloads moving. The application must not know it has moved, its calls landing on an open source twin. Move for day-one value, never for sovereignty or cost, with no new features during the move.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 290,
+   "line": "A twin turns the destination into a setting",
+   "para": "Calls to S3, EC2 and IAM are baked into working code, so a twin must be indistinguishable to the client; the S3 twin exists. Sovereignty and cost are important but never urgent. The twin layer gives backups, versions, encryption, a journal, policies and cost per workload on day one, a pitch for European operators.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "why",
+   "label": "Why workloads do not move",
+   "words": 259,
+   "line": "Code, not policy or price, keeps workloads in place",
+   "para": "Moving means rewriting code that works and that nobody wants to touch, so most organisations stay, reasonably. AWS's European Sovereign Cloud, live since 15 January 2026 in Brandenburg, is a real step, but code still talks to one vendor's API. Sovereignty that depends on one company's API is sovereignty by permission.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "criterion",
+   "label": "The criterion: the code must not know",
+   "words": 175,
+   "line": "The application must not know it has moved",
+   "para": "Not one line changes: S3, EC2 and IAM calls land on whatever backend is chosen. A twin differs from a mock: it serves production code with a real backend and is measured by indistinguishability. Switching a twin costs an endpoint, making migration a configuration decision rather than a project that gets cancelled.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "This is not theoretical: the S3 twin",
+   "words": 199,
+   "line": "An open source S3 twin already exists",
+   "para": "It is an S3-compatible container that boto3, the AWS CLI or any SDK treats as S3, serving files from real S3, a vault, disk or memory. An IAM configuration risk engine is partly built; the cross-cloud twin layer is designed, not finished. S3 comes first because everything touches it.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "reason",
+   "label": "The reason to move is never sovereignty",
+   "words": 583,
+   "line": "Move for day-one value, never for sovereignty",
+   "para": "Sovereignty and cost are important but never urgent, and nobody signs migration risk for a principle. The signer needs cover: tested backups, version control, encryption with the key held elsewhere via an sgit vault, a call journal, enforced agent policies and cost per workload. The move must shift a top-of-register risk.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "villager",
+   "label": "A villager move: no new features",
+   "words": 141,
+   "line": "No new features may be added during the move",
+   "para": "It is a villager move, from explorer to town planner: make something boring, reliable and cheap without changing what it does. Adding features turns the migration into a product change and nobody can tell which broke what. Move first, unmodified, then add the features the move made possible.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "testing",
+   "label": "Testing goes to another level",
+   "words": 194,
+   "line": "Twins make the test environment a setting",
+   "para": "Unmodified code can run against an in-memory twin, a replay of last week's production journal, injected failures such as timeouts or vanishing permissions, and finally the real service. Every piece of software should be able to run against a twin of every external service without knowing.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "open",
+   "label": "Why this has to be open source",
+   "words": 130,
+   "line": "A closed twin layer only moves the lock-in",
+   "para": "Swapping one vendor's API for another's proprietary wrapper relocates lock-in rather than removing it, and closed code is one service agreement from lost access. Open source here means independence: you can read, run, fix and move it. Judo for small countries argues there is no sovereignty without open source and open schemas.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "business",
+   "label": "The business model",
+   "words": 545,
+   "line": "Operators should sell value with the risk removed",
+   "para": "Rather than selling risk with move to us, an operator sells keep your code and gain journals, versions, policies and cost visibility. The order is a twin in front of the real service, then backend switches per environment, then the next service. The margin is in the twin layer, not commodity storage, and sgit keeps customers unlocked.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 166,
+   "line": "Only the S3 twin is finished so far",
+   "para": "The S3 API surface needs confirming, the IAM engine is partial, EC2 and IAM twins are unbuilt and policy enforcement at the twin is the next step. The prices are shapes, the value list is unfinished, and the conversation is reported from one side, with the chief executive unnamed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 126,
+   "line": "Sources: voice notes, twins documentation and AWS's announcement",
+   "para": "Voice notes of 12 October 2026 after a sovereignty event, drafted by one agent and rewritten by this site's agent. Twins are documented at twins.sgit.ai, the AWS European Sovereign Cloud facts come from its 15 January 2026 announcement, with links to riskmandate.ai and open-source.sgit.ai.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

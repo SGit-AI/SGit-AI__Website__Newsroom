@@ -1,0 +1,43 @@
+{
+ "slug": "inside-the-mesa-ranch-desk",
+ "teaser": "A page-by-page tour of the Mesa Ranch observation vault: the argument, the system, the record, five graphs, and how to open and rebuild it.",
+ "topics": ["news-and-evidence", "vaults-and-method"],
+ "core_idea": "The Mesa Ranch observation desk turns Marconi's INMA deck into seventeen vault pages on synthetic records, all in one frame of menu, page and details panel; the tour explains each page, what to click and what it proves, from delta science and the atlas of 78 event types to the fractal semantic graph and the knowledge graph played in time, and ends with how to open, clone and rebuild it for another beat.",
+ "nodes": [
+  {"id": "frame", "label": "One frame for every page", "kind": "method", "summary": "Menu on the left, page in the middle, details on the right."},
+  {"id": "argument", "label": "The argument", "kind": "concept", "summary": "Proprietary observation; delta science before and after."},
+  {"id": "system", "label": "The system", "kind": "concept", "summary": "Four actors, 78 event types, six entities."},
+  {"id": "atlas", "label": "The atlas", "kind": "artefact", "summary": "Every event type with a definition and an observable signal."},
+  {"id": "record", "label": "The record", "kind": "artefact", "summary": "Seventeen observations, each with its evidence."},
+  {"id": "workflow", "label": "One AI cycle", "kind": "example", "summary": "Observe, compare, check, report, update, on R14."},
+  {"id": "tracker", "label": "Community tracker", "kind": "artefact", "summary": "Jobs, water, power, land, commitments."},
+  {"id": "fractal", "label": "Fractal semantic graph", "kind": "method", "summary": "Open any node into the graph inside it."},
+  {"id": "knowledge", "label": "Knowledge graph in time", "kind": "example", "summary": "Played one observation at a time."},
+  {"id": "chain", "label": "The delta chain", "kind": "artefact", "summary": "Each observation joined to the one it was compared with."},
+  {"id": "synthetic", "label": "Synthetic, and says so", "kind": "claim", "summary": "A fictional twin of the deck's example."},
+  {"id": "yours", "label": "Open, clone, rebuild", "kind": "question", "summary": "The read key and the scripts inside."}
+ ],
+ "edges": [
+  {"from": "frame", "to": "argument", "rel": "produces"},
+  {"from": "argument", "to": "system", "rel": "leads-to"},
+  {"from": "atlas", "to": "system", "rel": "example-of"},
+  {"from": "system", "to": "record", "rel": "leads-to"},
+  {"from": "workflow", "to": "record", "rel": "example-of"},
+  {"from": "record", "to": "tracker", "rel": "produces"},
+  {"from": "fractal", "to": "record", "rel": "depends-on"},
+  {"from": "knowledge", "to": "fractal", "rel": "compared-with"},
+  {"from": "chain", "to": "record", "rel": "depends-on"},
+  {"from": "synthetic", "to": "record", "rel": "answers"},
+  {"from": "yours", "to": "atlas", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["journalism-becomes-intelligence", "introducing-fractal-semantic-graphs"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/demos/vaults/mesa-ranch-desk/index.html"]
+ },
+ "quotes": [
+  {"text": "not the landscape, but what changed in it, and the record that says so", "why": "What delta science means on the page."},
+  {"text": "the atlas is what the desk is ready to recognize", "why": "Why most event types are unseen."},
+  {"text": "every arc is a change that only a record of the earlier state could reveal", "why": "Where the stories come from."}
+ ]
+}

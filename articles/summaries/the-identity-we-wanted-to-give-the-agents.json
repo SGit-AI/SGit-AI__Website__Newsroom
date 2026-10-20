@@ -1,0 +1,110 @@
+{
+ "slug": "the-identity-we-wanted-to-give-the-agents",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 395,
+   "line": "Google's terms blocked agent seats, so a keyring emerged",
+   "para": "The plan was a Google Workspace account for every agent and user, encrypted by sgit and unlocked by a passkey. Google's terms forbid reselling accounts and accounts for business functions, so the design shifted to a browser-only, passkey-unlocked keyring no administrator can read. No product yet handles login, regulator-grade encryption and agent identity together.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 356,
+   "line": "Terms ruled out shared tenants; the keyring design survived",
+   "para": "Google's terms forbid reselling the Services and accounts assigned to business functions, so one tenant for many organisations is out and an agent is not a seat. The pack's section 2.6 citation came from a legacy agreement. The surviving shape: one cloud project, a login product, ciphertext buckets and a passkey PRF keyring.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "What I wanted, and why",
+   "words": 362,
+   "line": "Give customers' agents Workspace accounts, as mine have",
+   "para": "My agents each have a Workspace mailbox, a Claude seat and a GitHub account at about seven pounds a month, and the account is the blast radius. The plan extended this to RiskMandate's customers, encrypting with sgit before Google and deriving keys from passkeys. Standard Workspace has no admin-proof zone, so encryption had to happen in sgit.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "What the terms say",
+   "words": 553,
+   "line": "Google's terms forbid resale and accounts for business functions",
+   "para": "Section 3.3 of the Google Cloud terms, modified 2 September 2026, bars selling or reselling the Services without a signed reseller contract. The acceptable use policy forbids reselling End User Accounts inside a commercial product and accounts assigned to business functions. The pack's section 2.6 citation came from the legacy free agreement and is corrected here.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "Five options, one table",
+   "words": 265,
+   "line": "Identity Platform plus a bucket wins the shared tier",
+   "para": "Five options were weighed: a shared Workspace tenant needing a Google agreement, Identity Platform with a bucket free to fifty thousand monthly users, the customer's own Workspace with a Marketplace app, a private tier in the customer's cloud, and AWS Cognito with S3. Identity Platform won the MVP; the request to Google is drafted.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "The rule that no secret can live in the login",
+   "words": 433,
+   "line": "Any identity provider's administrator can become any user",
+   "para": "Cognito can set passwords, Firebase can mint custom tokens, and key services decrypt for anyone with permission, so a secret held in the login is reachable by its administrator. Login decides which paths you may touch; the passkey decides whether the bytes mean anything. The remaining exposure is the code, so hosting, dependencies and passkey scope are locked down.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "The keyring",
+   "words": 522,
+   "line": "A passkey-unlocked browser keyring that admins cannot read",
+   "para": "Each user has one encrypted file, keyed from the passkey's PRF output, holding a key pair and secrets such as passwords and vault keys, with a 128-bit recovery code. Sharing uses RSA-OAEP 4096 and ECDSA P-256, as sgit pki does. A password manager comes first, tested by asking a project owner to extract one plaintext field.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Agents, after all that",
+   "words": 328,
+   "line": "Agents get service identities and keyring entries, not seats",
+   "para": "Because the terms name function accounts, an agent gets no seat or mailbox on the shared tier. Agent identities from Microsoft, Okta, Google Cloud and Anthropic prove which agent called, not whose key it may use. Here an agent has a service identity, a signed mail lane, and scoped, time-limited keys that a person releases.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "Why this is still too hard",
+   "words": 546,
+   "line": "Nothing on the market does login, encryption and agents",
+   "para": "Login is solved by products such as Cognito, Auth0 and Clerk, but none keeps data from its own administrator. Zero-knowledge per-user storage exists only in pieces, with Userbase and Etebase the nearest, and agent identity answers which agent, not whose key. GDPR Articles 32 and 34 describe the property; the market does not sell it.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "What exists today, and what does not",
+   "words": 161,
+   "line": "Existing pieces run, but none of the MVP exists",
+   "para": "Running today: the agents' own Workspace, Claude and GitHub identities, sgit's client-side encryption and pki, the Agent Contact lane, the partnership call and the five design documents. Not yet built: anything in the MVP's nine releases, a Google agreement for a shared tier, a customer agent with a mailbox, or any product doing all three jobs.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "The article as one page, by another model",
+   "words": 139,
+   "line": "A ChatGPT infographic was checked and found accurate",
+   "para": "Dinis gave the published text to ChatGPT for an infographic, which was checked against the article: the seat price, clauses, options, rule, keyring and three-jobs gap all match. The final panel's closing line, though credited to the article, is the other model's condensation of its ending rather than a quotation.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "Threads woven here",
+   "words": 145,
+   "line": "Links: the related articles this design builds on",
+   "para": "Links to the 24 September partnership call Who holds the keys?, the identity and secrets design pack, Six agents, one inbox, the Credentials, sgit pki and Agent Contact pages, Footprint and blast radius, The ultimate insider, and the risk mapping of sgit against GDPR articles.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s11",
+   "label": "Sources",
+   "words": 375,
+   "line": "Sources: the terms, specifications and vendor pages cited",
+   "para": "Sources include Google Cloud's terms, acceptable use policy and Reseller API pages, AWS Cognito and KMS documentation, the W3C WebAuthn Level 3 Recommendation, Bitwarden, Microsoft, Okta, Google Cloud and Anthropic agent pages, GDPR Articles 32 and 34 and EDPB guidance. Drafted by agent@riskmandate.ai from Dinis Cruz's voice memo; not legal advice.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

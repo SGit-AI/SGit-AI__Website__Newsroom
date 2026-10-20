@@ -1,0 +1,78 @@
+{
+ "slug": "every-link-points-back",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 305,
+   "line": "Nearly every link between articles points back in time",
+   "para": "Across 105 articles there are 566 links between articles, and 551 point back; all 15 forward links came from later edits. The derived Continued by list sits at the foot, gives no reason and treats corrections like mentions. This release adds What came next notes to the articles written in a row today and proposes four kinds of forward link.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 186,
+   "line": "Links point backwards, so older articles become dead ends",
+   "para": "Of 566 links, 551 point back and 15 forward, all from edits. Of 94 articles cited later, 11 answer with a forward link; in consecutive pairs the later links the earlier 42 times, the earlier the later 7. Continued by sits unexplained at the foot. Four forward link kinds are proposed: What came next, Corrected by, Status since, Cited by.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "problem",
+   "label": "The problem",
+   "words": 171,
+   "line": "Older articles cannot know what continued their argument",
+   "para": "The policy draws the liability line was followed the same day by A policy beside the prompt and two human-in-the-loop articles, meant to be read in a row, yet each only knows the one before. Readers arriving at an older article from search or a share reach a dead end exactly where the story continues.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "counts",
+   "label": "What the links say",
+   "words": 304,
+   "line": "551 of 566 links point back in time",
+   "para": "Counting text links by article number: 551 of 566 point back, and 94 articles are cited later, with 11 answered forward. In 104 consecutive pairs, later links earlier 42 times, earlier links later 7. Introducing fractal semantic graphs is cited by 23 later articles and links to none. Link density has risen from under one to between four and ten.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "threads",
+   "label": "The path exists, at the foot",
+   "words": 132,
+   "line": "The Continued by list exists, but readers miss it",
+   "para": "Every article ends with a derived Threads section listing what it builds on and what continues it. It is easy to miss: it sits after the limits and sources, gives only titles without reasons, and uses one kind for a sequel, a passing citation and a correction alike. Even the author missed it.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "corrections",
+   "label": "Corrections are the sharper case",
+   "words": 339,
+   "line": "Corrections come in three kinds; two stay hidden",
+   "para": "Revisions in place are versioned: 62 of 97 tracked articles have several versions. A correction by a later article has one clear case, linked only at the foot. The quietest kind is status since: a plan, such as personas with key pairs, that a later article says has not happened, invisible from the earlier page.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "proposal",
+   "label": "Four kinds of forward link",
+   "words": 300,
+   "line": "Four forward link kinds, starting with What came next",
+   "para": "Proposed: What came next at the top, added in the same commit as the later article; Corrected by, shown more strongly; Status since, a dated note on whether a plan happened; and Cited by, left at the foot. The first is done for three articles. Typed relations could let a validator flag unacknowledged corrections.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 156,
+   "line": "Counts are text links; the correction scan is word-based",
+   "para": "Only links written in the text are counted, one per pair, ordered by number, excluding generated lists. The correction scan searches for words such as correct or revised, so it can miss others. Version counts are sgit.ai's 97, status since is one example, and only three What came next notes are built.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 88,
+   "line": "Sources: a voice memo and the site's link data",
+   "para": "From a voice memo of 13 October 2026 prompted by The policy draws the liability line, written by the site's agent. Counts come from the source markdown of 105 articles in articles/ids.json at v0.12.23, versions from sgit.ai's article_versions.json, and the Threads section from sgit.ai's build_pages.py.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

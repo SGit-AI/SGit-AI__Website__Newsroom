@@ -1,0 +1,86 @@
+{
+ "slug": "three-decisions-mapped",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 381,
+   "line": "Three scenarios, mapped, show where decisions go unwritten",
+   "para": "The fourth article maps three scenarios, giving each element a policy and five states. Memory deletion in Mondweep's Ruflo adapter is enforced but unrecorded, with its approval undefined; this newsroom shipped past an inherited failing test on judgement alone; and a refund's limits hold while nothing verifies the amount under them.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 137,
+   "line": "Behaviour is enforced; the gaps are unwritten decisions",
+   "para": "Each element gets a policy and five states. Memory deletion is blocked but its approver is unnamed and nothing logs the block; the newsroom's gap is shipping with one inherited failing test on judgement alone. Two small cases emerged, and the refund's limits are mature while its amount is not checked at all.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "how",
+   "label": "How to read the map",
+   "words": 131,
+   "line": "A map can be complete before the wiring",
+   "para": "The series separates behaviour, decision and workflow policies, and gives each element five states: defined, implemented, enforced, observed and verified. The tables show them as D · I · E · O · V. A gap you have named is a gap you can decide about.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "memory",
+   "label": "Scenario 1: deleting an agent's memory",
+   "words": 293,
+   "line": "Memory deletion is enforced, but nobody approves or records",
+   "para": "In Mondweep Chakravorty's adapter, delete.memory.project is in the ABP and enforced by Ruflo's evaluator, refused in step 6 of the video, but no decision is logged. The barrier says a human must approve without naming who or on what evidence, so approval means stop. Add a decision log first, then a named decider, then the workflow.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "newsroom",
+   "label": "Scenario 2: this newsroom's release",
+   "words": 500,
+   "line": "Shipping past a failing test was an unwritten decision",
+   "para": "The agent pushes only to dev, a platform boundary, through a mostly scripted release recipe. In eight builds today it shipped past an inherited Portugal wire map test failure on its own judgement, which should be a written policy with an owner, a limit and an expiry. Two cases followed: an unchecked figure date and a mis-scoped leak-scan counter.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "refund",
+   "label": "Scenario 3: a customer refund",
+   "words": 433,
+   "line": "Refund limits hold; nobody checks the amount under them",
+   "para": "In an illustrative design, tools cap refunds at 100 GBP an order with a daily breaker, and a lead then finance approve larger ones. Under the limit nothing checks the amount is right, which is the Northstar failure; the amount needs a decision policy of its own. A VIP workflow widening the limit is caught before it runs.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "common",
+   "label": "What the three have in common",
+   "words": 96,
+   "line": "Behaviour is mature; decisions and observation lag behind",
+   "para": "Across all three, behaviour is the easiest to write and enforce. The gaps are in decisions: no named approver for memory, an unwritten newsroom decision, approvals without reasons for refunds. Observation lags enforcement, since a rule that leaves no trace cannot be shown to work, and naming each element is what makes the gaps visible.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "series",
+   "label": "The series",
+   "words": 44,
+   "line": "Four articles, ending with these three mapped decisions",
+   "para": "The series runs from Three policies for an agent, on behaviour, decision and workflow, through Approve at altitude and its narrow-never-widen rule, to Case law for agents on precedent and distinguishing. Three decisions, mapped is the fourth and final part.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 89,
+   "line": "A simulated refund, and states assessed rather than tested",
+   "para": "The refund is a simulation and no refunds were made. The states are my assessment, for the memory scenario from reading Mondweep's code rather than running it. Shipping with the failing test was reasonable, only unwritten, and the two flagged commits leaked nothing because they sat in scratch repositories never pushed anywhere.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 98,
+   "line": "Sources: Mondweep's code, release records and an earlier design",
+   "para": "Scenario 1 draws on mondweep/sgit-ruv-memory at 7607d72, its example ABP and the page merged into ruvnet/ruflo on 17 October 2026. Scenario 2 uses the newsroom's release record, v0.12.89 to v0.12.97, with build and test logs and the status report. Scenario 3 builds on Hope or enforcement, with illustrative approval levels.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

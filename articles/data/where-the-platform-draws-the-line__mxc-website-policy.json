@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "containerId": "website-update",
+  "containment": "processcontainer",
+  "process": {"commandLine": "agent-run --task update-homepage","cwd": "C:/src/website","timeout": 600000},
+  "filesystem": {"readwritePaths": ["C:/src/website"],"readonlyPaths": ["C:/deploy/server-config","C:/tools/git"],"deniedPaths": ["C:/Users/me/Documents","C:/Users/me/.ssh"]},
+  "network": {"egress": {"default": "deny"},"ingress": {"default": "deny","hostLoopback": "deny"}},
+  "ui": {"disable": true},
+  "processContainer": {"leastPrivilege": true}
+}

@@ -1,0 +1,94 @@
+{
+ "slug": "the-tokens-hook",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 270,
+   "line": "A prompt cannot report token usage; a hook can",
+   "para": "A small token policy should show users what a session reads, caches, writes and costs. Asked by prompt, the model twice said it could not see the numbers; a 132-line Claude Code hook supplied exact figures, one turn behind, in about a millisecond. It also exposed a double-counting bug and showed 99% of input came from cache.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 144,
+   "line": "A hook shows token costs the model cannot see",
+   "para": "Observe first: show what the session reads, caches, writes and costs. The model cannot see its own usage, but a hook gives exact figures one turn behind. Usage repeats on every content block, inflating counts. The transcript holds the system prompt and tool definitions. Caching was 99% of input, and tokens.hook.sgit.ai is proposed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "why",
+   "label": "Why tokens need a policy",
+   "words": 143,
+   "line": "Tokens deserve their own policy, starting in observe mode",
+   "para": "Every call re-sends the system prompt, tool definitions and conversation, and only the prompt cache makes that affordable; Anthropic's Claude Code team declares SEVs when cache hit rates drop. Tokens should be governed by a small behaviour policy covering what to count, show and limit, and what to do on a breach, beginning with observation.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "prompt",
+   "label": "Asking the model does not work",
+   "words": 192,
+   "line": "Asked by prompt, the model refused to invent figures",
+   "para": "Told to report usage, the model said twice it could not give the figures and would only invent them, though the first turn used 37,019 input tokens and cost $0.05. With the hook injecting totals, it reported exactly the previous turn's 37,087 context tokens and 353 output tokens. A prompt asks for behaviour; only a hook supplies data.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "see",
+   "label": "What a hook can see in Claude Code",
+   "words": 326,
+   "line": "Transcripts repeat usage per block and expose the request",
+   "para": "Hooks get no token fields generally, so usage comes from the transcript, where each response repeats its usage on every content block: 2,621 lines for 1,165 responses, inflating cache reads from 459 million to 1.06 billion. In version 2.1.300 the transcript also holds the system prompt and all 49 tool definitions, an undocumented format.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "hook",
+   "label": "The hook",
+   "words": 380,
+   "line": "A 132-line hook prices sessions in about a millisecond",
+   "para": "The Python hook reads only new transcript lines, counts each response once and prices it by model from a policy file with observe, warn and enforce modes. After a 252 millisecond first run it takes about one millisecond. This session showed 474.0M input, 99% from cache, about $171.68 in cost and roughly $1,784 saved.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "elsewhere",
+   "label": "The other places to look",
+   "words": 186,
+   "line": "Claude Code already exposes usage; the hook adds policy",
+   "para": "The status line, /usage and /context show cost and cache figures, and OpenTelemetry exports token metrics without prompt text by default. The hook still matters because it carries limits and modes, can inform the model and block. It can send numbers only to an sgit append lane, raising latency from about 31 to 96 milliseconds.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "tools",
+   "label": "Other tools",
+   "words": 209,
+   "line": "Coding agents converge on hooks; chat apps show least",
+   "para": "Codex CLI, Gemini CLI and Cursor have hooks and usage commands, Copilot moved to usage-based billing on 1 June 2026, and Cline shows cache and cost per task. Claude.ai and ChatGPT show only limits, not per-conversation tokens. Caching differs by provider, so the policy file should hold one price table per provider.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "site",
+   "label": "A site for one small hook",
+   "words": 210,
+   "line": "tokens.hook.sgit.ai would run one hook like real software",
+   "para": "The proposed site would hold the versioned, signed hook and policy, a graph linking every field and mode to its code, tests on real transcripts including the known pitfalls, published timings from 1 MB to 100 MB, installation via settings, managed settings, a plugin or a vault, and later the same policy for Codex and Gemini.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 104,
+   "line": "Tested in one tool version, at list prices only",
+   "para": "The hook ran only in Claude Code 2.1.300, whose transcript format may change. The prompt test was two turns on one model. Costs use list prices, the tool-definition estimate divides characters by four, other tools were taken from documentation, and tokens.hook.sgit.ai does not exist yet.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 107,
+   "line": "Sources: Anthropic, OpenAI, Google, Cursor and GitHub documentation",
+   "para": "Written by the site's agent from my voice memo of 15 October 2026, with experiments run that day. Sources include Anthropic's Prompt caching is everything and pricing, Claude Code documentation on hooks, the status line, monitoring and managed settings, OpenAI Codex, Gemini CLI, Cursor's 1.7 changelog, GitHub Copilot billing and sgit append lanes.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

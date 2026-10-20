@@ -1,0 +1,56 @@
+{
+  "slug": "a-link-to-a-persona",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "A link should open the newsroom as a persona",
+      "para": "Instead of a front page made for nobody, send a CISO in as a CISO, or one person as a persona made for them. Personas move into an encrypted vault the newsroom's agents update without site changes, reached by page, fragment or private vault link. Readers follow or fork them, all client side.",
+      "hash": "1668ca9baf2b"
+    },
+    "s0": {
+      "line": "Personas live in a vault, reached by three links",
+      "para": "Agents update personas in an encrypted vault, opened in the browser with a published read key, so no site push is needed. Links come as a page of its own (/persona/ciso/), a fragment (/persona/#dpo) or a private vault. Readers follow or fork. Every article and newsletter updates the relevant personas.",
+      "hash": "55926bc39200"
+    },
+    "s1": {
+      "line": "The sender, knowing the reader, should choose the persona",
+      "para": "A front-page link lands someone among sixty-odd pieces across six topics with no guide to what suits them. The starting personas help a reader who stays, but still have to be found and chosen. The sender knows they are writing to a CISO, so the link itself should open the newsroom as one.",
+      "hash": "5121a9c5670d"
+    },
+    "s2": {
+      "line": "Pages, fragments and private vault links cover every persona",
+      "para": "Common personas get tiny static pages that fetch content from the vault. Any other persona uses a fragment after the #, which a new vault file makes work instantly. A private persona's link carries vault id and read key in the fragment, which per RFC 3986 the browser never sends, so GitHub Pages never sees it.",
+      "hash": "97c39d79408c"
+    },
+    "s3": {
+      "line": "Readers follow the persona upstream or fork it",
+      "para": "The page shows who you are reading as, who keeps it and when it was updated, opens the newsroom with its picks and adds it as a visitor persona. The reader then chooses Follow, tracking the vault, Make it mine, a fork that moves with their reading, or Remove. The model comes straight from git.",
+      "hash": "f7f0bc435086"
+    },
+    "s4": {
+      "line": "A persona keeper agent commits changes to the vault",
+      "para": "Personas are JSON files in an sgit vault with id, topics, articles, keeper, update date and version, plus a changes log. A persona keeper role on the newsroom desk updates them as articles and newsletters appear, each change a vault commit, with no site release. Later, personas can carry sourced outside reading too.",
+      "hash": "ada3e82bfada"
+    },
+    "s5": {
+      "line": "Netflix, Bluesky, Mastodon, Apple and Brave point the way",
+      "para": "Netflix Profiles (2013) showed people want several, easily switched. Bluesky starter packs (2024) made the link the onboarding. Mastodon's follow packs raise consent, so public personas describe roles, never named people. Apple News and Brave News personalise on the device, but still run servers; here personas are ciphertext.",
+      "hash": "ea9b7e067bf2"
+    },
+    "s6": {
+      "line": "Private vaults, provenance labels and dates answer the risks",
+      "para": "Personas about named people go only in private vaults sent to them. Forwarded links expose only reading suggestions. Personas from other vaults are marked as not the newsroom's. Each shows its last update and keeper. There is no analytics; feedback comes from the share page and replies.",
+      "hash": "36815368ba76"
+    },
+    "s7": {
+      "line": "Build the vault first, then pages, meter, keeper",
+      "para": "Create the persona vault with the five starting personas and a local fallback, its key sent through the key registry. Add /persona/ pages, follow, fork and remove in the next SG Meter, a keeper role with a behaviour policy, private persona fragments and outside reading. Build it on newsroom.sgit.ai.",
+      "hash": "44ddf8ed8bea"
+    },
+    "s8": {
+      "line": "Every introduction becomes a better, tailored first visit",
+      "para": "Persona links give a better first visit with nothing installed and no account, and let the newsroom serve more audiences than it has articles. They also demonstrate the site's idea: content that changes without a deploy, decrypted in the browser, kept by agents whose changes are readable commits. Sources include RFC 3986 and Bluesky.",
+      "hash": "0784b466fc21"
+    }
+  }
+}

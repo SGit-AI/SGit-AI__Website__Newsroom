@@ -1,0 +1,30 @@
+{
+  "id": "wnd-lexicon",
+  "version": "0.1.0",
+  "updated": "2026-09-29",
+  "note": "The published formula behind every theme edge in this graph. Each entry is a case-insensitive regular expression run over the prose of the frozen op-ed. A match creates one edge from the article to the theme and records the words that matched. A theme edge therefore says exactly one thing: this piece contains these words. It is not a summary of the argument, and it is not a claim about what the author believes. The gate re-runs every pattern against the frozen bytes on every build, in both directions, so a theme can be neither typed in nor left out by hand.",
+  "runs_over": "the rendered prose of the article as served by the site's own REST record, licence statement and bio line excluded",
+  "flags": "IGNORECASE",
+  "entries": [
+    {"id": "ai", "label": "Artificial intelligence", "pattern": "\\bAI\\b|artificial intelligence|\\bLLMs?\\b|large language model|chatbots?|generative"},
+    {"id": "ai-slop", "label": "Synthetic content and hallucination", "pattern": "hallucinat\\w*|\\bslop\\b|deepfakes?|synthetic (?:media|content|text)|made[- ]up (?:facts|quotes)"},
+    {"id": "trust", "label": "Trust and credibility", "pattern": "\\btrust\\w*|credibilit\\w+|\\bcredible\\b|reliab\\w+"},
+    {"id": "truth", "label": "Truth and facts", "pattern": "\\btruth\\b|\\bfacts?\\b|factual|verif\\w+|accuracy|accurate"},
+    {"id": "misinformation", "label": "Misinformation and propaganda", "pattern": "misinformation|disinformation|propaganda|fake news|falsehoods?|lies\\b"},
+    {"id": "press-freedom", "label": "Press freedom", "pattern": "press freedom|freedom of the press|censorship|censor\\w*|free press"},
+    {"id": "safety", "label": "Journalist safety and persecution", "pattern": "\\bkilled\\b|murder\\w*|imprison\\w+|\\bjailed\\b|detained|persecut\\w+|violence|threats?\\b|exile"},
+    {"id": "democracy", "label": "Democracy and civic life", "pattern": "democra\\w+|civic|elections?|\\bvoters?\\b|public interest"},
+    {"id": "business-model", "label": "Money and the business model", "pattern": "revenue|business model|subscription|advertis\\w+|paywall|funding|\\bfunded\\b|philanthrop\\w+|sustainab\\w+ (?:business|model|funding)"},
+    {"id": "platforms", "label": "Platforms and distribution", "pattern": "\\bplatforms?\\b|social media|search engines?|\\bGoogle\\b|\\bMeta\\b|\\bFacebook\\b|algorithm\\w*|\\bfeed\\b"},
+    {"id": "copyright", "label": "Copyright, licensing and scraping", "pattern": "copyright|licens\\w+|intellectual property|\\bscrap\\w+|train(?:ed|ing) (?:on|data)|\\bcompensat\\w+"},
+    {"id": "local-news", "label": "Local and community news", "pattern": "local (?:news|journalism|newspapers?|reporting)|community (?:news|media)|news deserts?|\\bhyperlocal\\b"},
+    {"id": "language-access", "label": "Language and access", "pattern": "\\blanguages?\\b|multilingual|translat\\w+|mother tongue|\\bdialects?\\b"},
+    {"id": "climate", "label": "Climate", "pattern": "climate|global warming|\\bemissions\\b|environmental"},
+    {"id": "audience", "label": "Audience, attention and avoidance", "pattern": "\\baudiences?\\b|\\breaders?\\b|news avoidance|\\battention\\b|\\bengagement\\b|\\byoung people\\b"},
+    {"id": "investigation", "label": "Investigative reporting", "pattern": "investigat\\w+|accountab\\w+|\\bexpos\\w+|watchdog|corruption"},
+    {"id": "ownership", "label": "Ownership and independence", "pattern": "independen\\w+|owner\\w*|proprietor|editorial independence|state (?:control|media)"},
+    {"id": "collaboration", "label": "Collaboration and alliances", "pattern": "collaborat\\w+|alliances?|partnerships?|\\btogether\\b|coalition"},
+    {"id": "public-service", "label": "Public service and infrastructure", "pattern": "public service|infrastructure|\\bcommons\\b|public good"},
+    {"id": "war", "label": "War and conflict", "pattern": "\\bwar\\b|conflict|invasion|frontline|\\bUkraine\\b|\\bGaza\\b"}
+  ]
+}

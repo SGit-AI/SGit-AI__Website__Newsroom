@@ -1,0 +1,40 @@
+{
+ "slug": "inside-the-northstar-twin",
+ "teaser": "A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.",
+ "topics": ["vaults-and-method", "agents-and-policy"],
+ "core_idea": "The twin runs Northstar's refunds as a deterministic simulation in a vault: thirteen scripted mistakes through four designs of ten controls, each step tagged with its pillar and policy, two views of the world side by side, a casebook of precedents, and one content file to swap for another process.",
+ "nodes": [
+  {"id": "open", "label": "Three ways in", "kind": "method", "summary": "The page, the vault, the CLI."},
+  {"id": "designs", "label": "Four designs, ten controls", "kind": "concept", "summary": "From the $200 limit to three policies."},
+  {"id": "play", "label": "Play and replay", "kind": "method", "summary": "Every step, tagged by pillar and policy."},
+  {"id": "views", "label": "Two views of the world", "kind": "concept", "summary": "What the agent did, what the records say."},
+  {"id": "n1001", "label": "His case, four ways", "kind": "example", "summary": "Overpaid, owed, right by a person, right by the rules."},
+  {"id": "cap", "label": "A cap cannot tell $132 from $120", "kind": "example", "summary": "Exactly what was paid."},
+  {"id": "split", "label": "The split refund", "kind": "example", "summary": "The right amount, the wrong decider."},
+  {"id": "casebook", "label": "The casebook", "kind": "example", "summary": "A precedent, followed, then distinguished."},
+  {"id": "engine", "label": "A deterministic engine", "kind": "artefact", "summary": "No model called; replays exactly."},
+  {"id": "twin", "label": "What a twin means here", "kind": "claim", "summary": "A copy of a process to run decisions through."},
+  {"id": "swap", "label": "Swap the content, keep the app", "kind": "method", "summary": "One file of records, rules and controls."}
+ ],
+ "edges": [
+  {"from": "open", "to": "play", "rel": "leads-to"},
+  {"from": "designs", "to": "play", "rel": "extends"},
+  {"from": "play", "to": "views", "rel": "extends"},
+  {"from": "n1001", "to": "designs", "rel": "example-of"},
+  {"from": "cap", "to": "designs", "rel": "example-of"},
+  {"from": "split", "to": "designs", "rel": "example-of"},
+  {"from": "casebook", "to": "play", "rel": "example-of"},
+  {"from": "engine", "to": "twin", "rel": "answers"},
+  {"from": "twin", "to": "swap", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["allowed-is-not-right", "case-law-for-agents", "three-policies-for-an-agent"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html", "https://ashishrajan.substack.com/p/what-does-it-take-to-build-ai-systems"]
+ },
+ "quotes": [
+  {"text": "The twin is for seeing how controls interact, and a run that replays exactly is one anyone can check.", "why": "Why no model is called."},
+  {"text": "a cap at what was paid cannot tell $132 from $120. Only the expected amount can.", "why": "What a cap misses."},
+  {"text": "Over a year, it is every case that repeats.", "why": "What precedent saves."}
+ ]
+}

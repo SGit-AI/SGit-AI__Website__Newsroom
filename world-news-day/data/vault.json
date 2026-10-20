@@ -1,0 +1,57 @@
+{
+  "id": "wnd-vault-record",
+  "bundle_id": "wnd-2026-09-29",
+  "snapshot": "2026-09-29",
+  "bundle": "vault.zip",
+  "bytes": 3000691,
+  "sha256": "085893764be223f7567882a464bcb5184fa28382d1449eabbe5279bc5e7b342b",
+  "count": 116,
+  "published": true,
+  "pushed": true,
+  "vault_id": "77yuggi1",
+  "read_key": "sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4",
+  "why_not_pushed": "Not pushed. build/publish_vaults.py creates the vault and writes the vault id and the PUBLIC READ KEY here; the vault key is write access and is written nowhere, ever.",
+  "licence": {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "World News Day 2026: the corpus described",
+    "description": "Twenty-one commissioned op-eds published for World News Day 2026, fetched, frozen, hashed, described, classified by a published lexicon and expressed as a typed graph. The description is ours; the op-eds are not.",
+    "url": "https://newsroom.sgit.ai/world-news-day/",
+    "version": "wnd-2026-09-29",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "newsroom.sgit.ai",
+      "url": "https://newsroom.sgit.ai"
+    },
+    "copyrightNotice": "CC BY 4.0 covers the description, the counts, the graph, the lexicon, the transcription and the code in this bundle. It does NOT cover the twenty-one op-eds under sources/frozen/, which are the work of their authors, published at worldnewsday.org, and carried here as frozen evidence under the terms their own pages state.",
+    "usageInfo": "https://newsroom.sgit.ai/world-news-day/licences.html",
+    "isAccessibleForFree": true,
+    "creator": {
+      "@type": "Organization",
+      "name": "sgit agents",
+      "description": "Researched, extracted and drafted by software agents against frozen, hashed bytes. No human editor of record."
+    },
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/zip",
+        "contentUrl": "https://newsroom.sgit.ai/world-news-day/vault.zip"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://newsroom.sgit.ai/world-news-day/data/graph.json"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "application/n-triples",
+        "contentUrl": "https://newsroom.sgit.ai/world-news-day/data/triples.nt"
+      }
+    ],
+    "note": "This file is the one line we asked the publisher for, written out in full. schema.org has carried `license` since 2015; none of the twenty-one uses it."
+  },
+  "commit": "obj-cas-imm-3fb03428749a",
+  "remote": "https://dev.send.sgraph.ai",
+  "read_key_note": "A read key is derived one-way from the vault key and grants read and only read. The vault key is write access to everything and is published nowhere, in any file, ever."
+}

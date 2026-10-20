@@ -1,0 +1,234 @@
+{
+  "slug": "sovereignty-is-the-ability-to-move",
+  "teaser": "Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Europe's sovereignty conversation is mostly about frontier models, data centres and GPUs, which is playing where the ball is rather than where it is going; sovereignty is the ability to move workloads and actions, which most organisations lack because everything is hard-coded and never deployed twice; the test is a Wardley map where each dot is taken away and the blast radius followed up to the customer, across the whole stack; the answer is not an alternative as good as today but a twin that works for the minimum viable company, run in QA all the time, scored on a maturity model; ask whether it can move before asking whether it is cheap; only open source gives control that survives an acquisition; Europe lacks a commercial open source model, not startups or talent; some of this should be provided centrally like a road; and models and twins now make the analysis possible at scale.",
+  "nodes": [
+    {
+      "id": "wrong-things",
+      "label": "The conversation is about things Europe does not control",
+      "kind": "claim",
+      "summary": "Frontier models, giant data centres and GPUs take years and capital and benefit whoever already has them."
+    },
+    {
+      "id": "ball",
+      "label": "Play where the ball is going",
+      "kind": "concept",
+      "summary": "A good padel player has time because they read the ball and move to where it will be; moving after it comes off the glass is hopeless."
+    },
+    {
+      "id": "ability-to-move",
+      "label": "Sovereignty is the ability to move",
+      "kind": "claim",
+      "summary": "Agility, almost liquidity: moving workloads and actions between providers, even within one cloud, which most organisations cannot do."
+    },
+    {
+      "id": "critical",
+      "label": "Critical means the business stops",
+      "kind": "claim",
+      "summary": "For a company a supplier disruption that stops the service is critical whether or not it is national infrastructure."
+    },
+    {
+      "id": "take-away-dot",
+      "label": "Take away the dot",
+      "kind": "method",
+      "summary": "On a Wardley map remove one thing you do not control and follow the blast radius up to the customer; if the service stops, take it to the board."
+    },
+    {
+      "id": "whole-stack",
+      "label": "Every dot must be replaceable, built or bought",
+      "kind": "claim",
+      "summary": "Custom-built systems stand on commodities, and one only a single person can deploy is a single point of failure too."
+    },
+    {
+      "id": "zero-to-hundred",
+      "label": "Do not jump from zero to a hundred",
+      "kind": "method",
+      "summary": "The alternative does not have to be as good as today; it has to work, slower and dearer if need be."
+    },
+    {
+      "id": "mvc",
+      "label": "The minimum viable company",
+      "kind": "concept",
+      "summary": "The smallest version of the business that keeps serving the priority customers while the rest recovers; a backup of operations, not only data."
+    },
+    {
+      "id": "twin",
+      "label": "A twin for every dot you do not control",
+      "kind": "artefact",
+      "summary": "Compatible enough that the application cannot tell, on infrastructure you can run; the S3 twin exists, the others are the work."
+    },
+    {
+      "id": "levels",
+      "label": "Can it move: a maturity model",
+      "kind": "artefact",
+      "summary": "0 it stops, 1 the data can leave, 2 it runs somewhere once, 3 it runs for the minimum viable company, 4 it moves when you decide."
+    },
+    {
+      "id": "qa",
+      "label": "Run it in QA, all the time",
+      "kind": "method",
+      "summary": "Disposable QA environments built on the twins prove each week that the business can run without the dots you do not control."
+    },
+    {
+      "id": "possible-then-cheap",
+      "label": "Can it move, then is it cheap",
+      "kind": "claim",
+      "summary": "Possibility first with a cost and scale matrix per dot; cost effectiveness second; asking the second first ends the conversation."
+    },
+    {
+      "id": "acquisition",
+      "label": "Open source, or one acquisition away",
+      "kind": "claim",
+      "summary": "A European supplier today can be bought tomorrow; only open source and Creative Commons give control that survives a change of owner."
+    },
+    {
+      "id": "europe-gap",
+      "label": "Europe lacks a commercial open source model, not startups",
+      "kind": "claim",
+      "summary": "Prosus and Dealroom: as many AI startups as the US, a third of the breakout rate; 44% of US unicorn founders born abroad."
+    },
+    {
+      "id": "central",
+      "label": "Provided centrally, like a road",
+      "kind": "method",
+      "summary": "Not every company can twin every dependency; governments, industry bodies and large buyers should provide some of it as open infrastructure."
+    },
+    {
+      "id": "now",
+      "label": "Models and twins make the analysis scale",
+      "kind": "claim",
+      "summary": "Mapping, removing dots and simulating the blast radius can now be done at scale, better on twins than in spreadsheets."
+    }
+  ],
+  "edges": [
+    {
+      "from": "wrong-things",
+      "to": "ball",
+      "rel": "contrasts"
+    },
+    {
+      "from": "ball",
+      "to": "ability-to-move",
+      "rel": "leads-to"
+    },
+    {
+      "from": "critical",
+      "to": "ability-to-move",
+      "rel": "extends"
+    },
+    {
+      "from": "ability-to-move",
+      "to": "take-away-dot",
+      "rel": "depends-on"
+    },
+    {
+      "from": "take-away-dot",
+      "to": "whole-stack",
+      "rel": "extends"
+    },
+    {
+      "from": "take-away-dot",
+      "to": "zero-to-hundred",
+      "rel": "leads-to"
+    },
+    {
+      "from": "zero-to-hundred",
+      "to": "mvc",
+      "rel": "depends-on"
+    },
+    {
+      "from": "mvc",
+      "to": "twin",
+      "rel": "depends-on"
+    },
+    {
+      "from": "twin",
+      "to": "qa",
+      "rel": "produces"
+    },
+    {
+      "from": "levels",
+      "to": "take-away-dot",
+      "rel": "answers"
+    },
+    {
+      "from": "qa",
+      "to": "levels",
+      "rel": "produces"
+    },
+    {
+      "from": "possible-then-cheap",
+      "to": "levels",
+      "rel": "depends-on"
+    },
+    {
+      "from": "acquisition",
+      "to": "ability-to-move",
+      "rel": "depends-on"
+    },
+    {
+      "from": "europe-gap",
+      "to": "acquisition",
+      "rel": "extends"
+    },
+    {
+      "from": "central",
+      "to": "twin",
+      "rel": "produces"
+    },
+    {
+      "from": "now",
+      "to": "take-away-dot",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "judo-for-small-countries",
+      "agentic-cost-is-an-engineering-problem",
+      "why-i-love-wardley-maps",
+      "footprint-and-blast-radius",
+      "move-the-cloud-not-the-code"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.prosus.com/news-insights/2026/europe-is-ais-invisible-giant",
+      "https://news.crunchbase.com/venture/foreign-born-entrepreneurs-drive-americas-unicorn-boom-strebulaev-stanford/",
+      "https://twins.sgit.ai/what-is-a-twin/index.html",
+      "https://open-source.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "If you do not have the software, the schema and the ability to load and move it, you do not have data mobility; you have an archive.",
+      "why": "Why a backup of data is not a backup of operations."
+    },
+    {
+      "text": "Even if a supplier is European today, you are one acquisition away from losing that.",
+      "why": "Why only open source gives control that survives a change of owner."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sv-dot-1.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sv-dot-1.webp",
+      "caption": "Take away the dot, in three frames. One service as it runs; object storage removed and the blast radius followed up the edges to the customers; a twin of the storage, tested in QA, putting the service back for the priority customers, degraded but running. Use the controls to stop on each frame.",
+      "kind": "wardley-map",
+      "frames": [
+        "https://newsroom.sgit.ai/articles/images/sv-dot-1.webp",
+        "https://newsroom.sgit.ai/articles/images/sv-dot-2.webp",
+        "https://newsroom.sgit.ai/articles/images/sv-dot-3.webp"
+      ]
+    },
+    {
+      "file": "sv-levels.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sv-levels.webp",
+      "caption": "A maturity model for every dot you do not control. From 0, it stops, through the data can leave, it runs somewhere once, it runs for the minimum viable company, to 4, it moves when you decide. Each level carries a cost and a population it serves, and each is only real if it was tested.",
+      "kind": "maturity-model"
+    }
+  ]
+}

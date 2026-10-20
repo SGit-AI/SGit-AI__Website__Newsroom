@@ -1,0 +1,71 @@
+{
+  "slug": "a-mac-of-the-agents-own",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "An agent's next dedicated resource should be a Mac",
+      "para": "Our agents already have their own mailbox, code-host and Claude accounts; next is a desktop, and it should be a Mac. Apple's licence rules out a per-minute pool, so the plan uses allowed shapes. On a hardened dedicated Mac, the excess nothing bounds falls from 23 rows to 3.",
+      "hash": "327cd05eae8c"
+    },
+    "s0": {
+      "line": "Apple's licence shapes it; vaults hold all the state",
+      "para": "A leased Mac must be held for 24 hours, for developer services, by one customer; virtual copies may not be time-shared. Allowed shapes: a dedicated metered Mac, developer agents, software for your own Mac, and asking Apple. A clean Mac gets one key and clones a set-up vault. Unbounded excess: 23, 11, 3 rows.",
+      "hash": "8542ca30d0ba"
+    },
+    "s1": {
+      "line": "Each agent gets its own resources; next, a desktop",
+      "para": "Agents have been moving toward dedicated resources with a small blast radius: their own mailbox, code-host account and Claude account. Claude can now drive desktop apps well, but I will not run agents on my laptop, because everything I have is on it. The agent needs a desktop holding only what it should have.",
+      "hash": "cfd9b471ca02"
+    },
+    "s2": {
+      "line": "Agent apps favour Macs, yet Macs cannot be rented",
+      "para": "Agent desktop app providers ship to the Mac first, it is the desktop most people know, and unlike Windows and Linux it cannot be had on demand by the hour. That gap is the business. A Mac used only by an agent can also be supervised, profiled, allowlisted and logged far beyond a personal laptop.",
+      "hash": "0f25f144778f"
+    },
+    "s3": {
+      "line": "A per-minute Mac pool breaks Apple's licence terms",
+      "para": "Apple's licences allow leasing only for developer services, for at least 24 consecutive hours, to one customer with sole use; virtual copies cannot be time-shared, and only one user at a time. VM state is tied to its Mac. macOS 27's \"except as otherwise provided in writing\" opens a route to written terms.",
+      "hash": "760f2e42aa52"
+    },
+    "s4": {
+      "line": "Build own-Mac hosting and developer agents; skip the pool",
+      "para": "Five shapes: A, the customer's own Mac run for them; B, a dedicated leased Mac with a per-minute meter; C, developer agents; D, asking Apple for terms; E, software for a Mac mini you keep. Recommendation: build A and C, give away E, ask for D, and do not build the pool.",
+      "hash": "a5cabe5b5311"
+    },
+    "s5": {
+      "line": "One key in; vaults supply everything else",
+      "para": "Boot clean macOS, install sgit, give one key, clone a set-up vault holding the signed bootstrap, profiles, allowlists and policy. Scoped code, data and mandate vaults follow, with vault keys encrypted to each desktop's PKI key and events streamed to an audit vault. The key steps ran with sgit 0.20.0 on Linux; nothing has run on a Mac.",
+      "hash": "2bdcb51c3b4a"
+    },
+    "s6": {
+      "line": "Hardening cuts unbounded excess from 23 rows to 3",
+      "para": "The customer service agent from Hope or enforcement on three desktops: own Mac grants 33 rows with 23 unbounded and none held by a boundary; dedicated Mac 22 and 11; hardened Mac 3, with 9 boundaries. What remains is mostly the shop's admin screen. Screen recording still needs one human approval.",
+      "hash": "8f2a2ad1bf85"
+    },
+    "s7": {
+      "line": "A dedicated metered Mac costs about £211 a month",
+      "para": "For my use, about 104 desktop hours a month, a dedicated Mac costs about £211, a self-run Mac mini about £119 counting my time, and daily leases about £390. The dedicated Mac wins beyond four hours of upkeep a month or twelve days of use. The real customer is a team running several Macs.",
+      "hash": "ed281b6ee480"
+    },
+    "s8": {
+      "line": "Agent desks build on parts that are already commodities",
+      "para": "A Wardley map runs from a business running agents through work done by agents to the agent desktop on demand, which depends on desktop agent apps, observability and lock-down, PKI credentials, vault state and macOS virtual machines on Apple silicon. The desktop, vault state, PKI and observability are shown evolving.",
+      "hash": "1b0cf62b8967"
+    },
+    "s9": {
+      "line": "We want Mac hosts offering dedicated, metered, wipeable machines",
+      "para": "From a Mac hosting company: dedicated Macs per customer by day or month with an erase API, a per-minute meter with a tapering price, a developer-agent offer within the licence, and a joint approach to Apple. The stack is open; we bring the policies, vaults, keys and RiskMandate policies per customer.",
+      "hash": "d24b55d83c3d"
+    },
+    "s10": {
+      "line": "Read the licence, start with A or C",
+      "para": "Read the plan's licence section and consult a lawyer. Start with shapes A or C, where the licence is clearest. Write the behaviour policy before the product. Measure the boot, assumed at about five minutes but not yet timed. Keep state off the machine: one key in, vaults for everything, erase at the end.",
+      "hash": "6ad79daf9a27"
+    },
+    "s11": {
+      "line": "Queued agents fit a lease only for developer work",
+      "para": "Wiping between queued runs is easy. The licence cares about purpose and who uses macOS: queued coding agents on a lease fit; office agents do not; customers' agents sharing a Mac is excluded time-sharing. Your own agents on your own Mac may fit Section 2B(ii). Office agents need Apple's written terms. Not legal advice.",
+      "hash": "48e87862f4c2"
+    }
+  }
+}

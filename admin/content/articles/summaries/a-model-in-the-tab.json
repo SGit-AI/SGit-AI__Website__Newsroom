@@ -1,0 +1,56 @@
+{
+  "slug": "a-model-in-the-tab",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Chrome now puts a local model in every tab",
+      "para": "Since Chrome 148 on 5 May 2026, any page can use Gemini Nano on the reader's machine through the Prompt API, with no network once downloaded. That fills the last server-side gap in the no-server pattern. The first try was rough and examples are scarce, but there are clear uses grounded in the graph.",
+      "hash": "d0050da87e9d"
+    },
+    "short": {
+      "line": "Stable and useful, but gated, contested and still rough",
+      "para": "The Prompt API takes text, image and audio, returns JSON-constrained text, and supports five languages; tool calling is experimental. The rough download was the pages' fault. Hardware limits and opposition from Mozilla, WebKit, the TAG and Microsoft explain the few examples, and the 2,600-token graph answers fit a small model well.",
+      "hash": "d57059b3a0fb"
+    },
+    "ships": {
+      "line": "Gemini Nano runs on capable desktops through several APIs",
+      "para": "Summarizer, Translator and Language Detector have been stable since Chrome 138; Writer, Rewriter and Proofreader are trials. The Prompt API uses a 2 to 4 billion parameter model with sessions and JSON schemas. It needs a desktop OS, 22 GB free disk, and a GPU over 4 GB or 16 GB of RAM.",
+      "hash": "e2dca3776e3e"
+    },
+    "download": {
+      "line": "The download kept going; the pages lost the progress",
+      "para": "The roughly 4 GB download continues after refresh or closing, but a page only sees progress if it asks, and the demos did not. The model unpacks after downloading and is deleted below about 10 GB free disk. No component yet shows bytes, rate and time honestly, which is the first thing worth shipping.",
+      "hash": "2a12390c5acf"
+    },
+    "examples": {
+      "line": "Newness, hardware limits and standards fights explain scarce examples",
+      "para": "Chrome's case studies, such as redBus, Miravia and Terra, mostly use the summarise and translate APIs. Examples are few because the API is five months old, desktop-only, needs a 4 GB first download, is small, supports five languages and lacks tool calling. The standards fight is the most serious reason.",
+      "hash": "239ef37d73ce"
+    },
+    "against": {
+      "line": "Valid objections, answered by keeping meaning in the data",
+      "para": "Mozilla, WebKit, the W3C TAG and Microsoft object that prompts do not travel, a Google policy fronts a web API, and the browser controls the model. Those clash with sovereignty and determinism. But Edge offers the same API, so the answer is discipline: meaning in the data, the model as a function, always a fallback.",
+      "hash": "6bb7bc0d24da"
+    },
+    "fit": {
+      "line": "Small models suit anchored graphs far better than prose",
+      "para": "The five readers' graph answered questions in a median 2,579 tokens against 25,698 for the articles, which fits a small context window. Anchors let every answer show sources. A local model could also infer personas in the browser, transcribe voice memos before vaulting them, and describe the 51 missing figures out of 527.",
+      "hash": "5e88d9118db1"
+    },
+    "opportunities": {
+      "line": "Most uses are ready today; tool calling is not",
+      "para": "Ready now: ask this article from the graph, local personas, an honest download panel, voice memo to vault on GPU machines, alt text checks, Portuguese translation and a behaviour-policy helper. A local second reader is partial, WebMCP is in origin trial and native tool calling is not ready. The model never decides alone.",
+      "hash": "8b558b6c8c46"
+    },
+    "next": {
+      "line": "A vault will test and measure each capability publicly",
+      "para": "First up: an open model status panel, a graph-grounded ask-this-article box with a fallback, on-device personas, voice memo to vault, and published measurements of download time, tokens per second and accuracy. The model is small, the platform contested and first runs poor, but none of that is a reason to wait.",
+      "hash": "53a76edca630"
+    },
+    "sources": {
+      "line": "Sources: Chrome documentation, standards positions and site articles",
+      "para": "Drafted from a voice memo by an agent that checked first impressions against Chrome for Developers documentation on built-in AI, the Prompt API and model management. Also Tech Times and Gigazine on the Mozilla and WebKit objections, flutter_gemma_builtin_ai on tool calling, Microsoft's Build 2026 coverage, and this site's articles.",
+      "hash": "9429817f5a45"
+    }
+  }
+}

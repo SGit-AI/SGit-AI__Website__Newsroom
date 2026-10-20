@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open, SGit Newsroom</title>
+<meta name="description" content="Phil Venables has written down ten questions a CISO's management tool should be able to answer, from where an extra $250k would reduce the most risk to which 100 humans and 100 agents would do the most damage if they went bad. His point is that most tools cannot, and that answering them needs an enterprise knowledge graph, precise risk models and measured data, not an LLM wrapper with dashboards. I agree, and I think the questions show something more: every one of them is a graph question. None can be answered from one part of the company; all of them can be answered from the whole, once the connections are there, and then the answer becomes obvious, the way the end of a whodunit does. Our past work on risk acceptance already has half of this: every risk has a holder, every holder has a boss, every path ends at the board, and there is no deny button, only accept for an interval, fund or fix. So we built a twin of an invented retailer, put its board, risks, holders, processes, systems, suppliers, channels, controls, incidents and 100 humans and agents in one graph, and answered all ten questions on it, each with the part of the graph it came from, its evidence, and the decisions it proposes, traced to the board. It is in a vault you can open.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/ten-questions-one-graph.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/ten-questions-one-graph.html">
+<meta property="og:title" content="Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open, SGit Newsroom">
+<meta property="og:description" content="Phil Venables has written down ten questions a CISO's management tool should be able to answer, from where an extra $250k would reduce the most risk to which 100 humans and 100 agents would do the most damage if they went bad. His point is that most tools cannot, and that answering them needs an enterprise knowledge graph, precise risk models and measured data, not an LLM wrapper with dashboards. I agree, and I think the questions show something more: every one of them is a graph question. None can be answered from one part of the company; all of them can be answered from the whole, once the connections are there, and then the answer becomes obvious, the way the end of a whodunit does. Our past work on risk acceptance already has half of this: every risk has a holder, every holder has a boss, every path ends at the board, and there is no deny button, only accept for an interval, fund or fix. So we built a twin of an invented retailer, put its board, risks, holders, processes, systems, suppliers, channels, controls, incidents and 100 humans and agents in one graph, and answered all ten questions on it, each with the part of the graph it came from, its evidence, and the decisions it proposes, traced to the board. It is in a vault you can open.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/ten-questions-one-graph.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/ten-questions-one-graph.jpg">
+<link rel="alternate" type="text/markdown" href="ten-questions-one-graph.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open, SGit Newsroom", "headline": "Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open, SGit Newsroom", "description": "Phil Venables has written down ten questions a CISO's management tool should be able to answer, from where an extra $250k would reduce the most risk to which 100 humans and 100 agents would do the most damage if they went bad. His point is that most tools cannot, and that answering them needs an enterprise knowledge graph, precise risk models and measured data, not an LLM wrapper with dashboards. I agree, and I think the questions show something more: every one of them is a graph question. None can be answered from one part of the company; all of them can be answered from the whole, once the connections are there, and then the answer becomes obvious, the way the end of a whodunit does. Our past work on risk acceptance already has half of this: every risk has a holder, every holder has a boss, every path ends at the board, and there is no deny button, only accept for an interval, fund or fix. So we built a twin of an invented retailer, put its board, risks, holders, processes, systems, suppliers, channels, controls, incidents and 100 humans and agents in one graph, and answered all ten questions on it, each with the part of the graph it came from, its evidence, and the decisions it proposes, traced to the board. It is in a vault you can open.", "url": "https://newsroom.sgit.ai/articles/ten-questions-one-graph.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open</p>
+ <h1>Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-19 &middot; <a href="versions/ten-questions-one-graph.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.138</a> &middot; <span class="chip">ciso</span><span class="chip">graphs</span><span class="chip">risk-acceptance</span><span class="chip">vaults</span><span class="chip">agents</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Phil Venables has written down ten questions a CISO's management tool should be able to answer, from where an extra $250k would reduce the most risk to which 100 humans and 100 agents would do the most damage if they went bad. His point is that most tools cannot, and that answering them needs an enterprise knowledge graph, precise risk models and measured data, not an LLM wrapper with dashboards. I agree, and I think the questions show something more: every one of them is a graph question. None can be answered from one part of the company; all of them can be answered from the whole, once the connections are there, and then the answer becomes obvious, the way the end of a whodunit does. Our past work on risk acceptance already has half of this: every risk has a holder, every holder has a boss, every path ends at the board, and there is no deny button, only accept for an interval, fund or fix. So we built a twin of an invented retailer, put its board, risks, holders, processes, systems, suppliers, channels, controls, incidents and 100 humans and agents in one graph, and answered all ten questions on it, each with the part of the graph it came from, its evidence, and the decisions it proposes, traced to the board. It is in a vault you can open.</em></p>
+<figure class="shot" data-shot="tt-graph-q9.webp" data-dir="images/" data-alt="Question 9 on the Thistlewood twin&#x27;s graph: who are the humans and agents with the largest blast radius? Everything the answer does not use has faded. What is left is the plot: three identity admins and five deploy agents, the secrets store and staff sign-on they can reach, the risks those open, customer personal data exposed among them, and the path up to the board." data-kind="screenshot"><figcaption>Question 9 on the Thistlewood twin's graph: who are the humans and agents with the largest blast radius? Everything the answer does not use has faded. What is left is the plot: three identity admins and five deploy agents, the secrets store and staff sign-on they can reach, the risks those open, customer personal data exposed among them, and the path up to the board.</figcaption></figure>
+<div class="trail"><div class="trail-h">Thistlewood: ten questions, one graph</div><p class="trail-n">Phil Venables&#x27; ten questions for a CISO&#x27;s management tool, answered on one graph: the reply, a tour of the vault, and the vault itself to use.</p><div class="trail-row"><a class="trail-c here" href="ten-questions-one-graph.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="images/tt-graph-q9.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The reply</span><span class="trail-t">Ten questions, one graph</span><span class="trail-d">Why his questions are graph questions, and how our risk acceptance work and vaults answer them.</span></span></a><a class="trail-c" href="inside-the-thistlewood-twin.html"><span class="trail-img" data-trail-img="images/tt-q3.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The tour</span><span class="trail-t">Inside the Thistlewood twin</span><span class="trail-d">The ten answers one by one: the plot on the graph, the evidence, and the decisions they propose.</span></span></a><div class="trail-c"><a href="https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html"><span class="trail-img" data-trail-img="images/tt-live.webp" role="img" aria-label=""></span></a><div class="trail-b"><span class="trail-k">3 · The twin</span><span class="trail-t">The Thistlewood decision twin</span><span class="trail-d">Pick a question and watch the graph fade to the answer; read every decision up to the board.</span><span class="trail-l"><a href="https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html#live">Use it</a><a href="https://dev.vault.sgraph.ai/#sgit_public_read_32e4f88c6dbc68ae6e2566223008671cc6525ad78ef89482ab4f8b44cb28a07f%3A6v7kyxf4" target="_blank" rel="noopener">Open the vault &#8599;</a><a href="https://www.philvenables.com/post/a-cisos-ideal-management-tool" target="_blank" rel="noopener">His article &#8599;</a></span></div></div></div></div>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Phil Venables asks ten hard questions.</b> A CISO's tool should answer them with evidence, not dashboards.</li>
+<li><b>Every one is a graph question.</b> None can be answered from one part of the company.</li>
+<li><b>With the right connections, the answer is obvious.</b> Fade what is not relevant, and the plot is left.</li>
+<li><b>Our risk acceptance work is half of it.</b> A holder for every risk, a chain to the board, accept, fund or fix.</li>
+<li><b>So we built a twin, and answered all ten.</b> An invented retailer, one graph, a deterministic engine.</li>
+<li><b>Every answer ends in a decision.</b> Held by one person, with an interval, visible all the way up.</li>
+<li><b>Vaults, behaviour policies and back-testing fit in.</b> Decisions recorded, agents' reach measured, models checked.</li>
+<li><b>It is in a vault you can open.</b> With a tour, and this reply.</li>
+</ul>
+<h2 id="questions">Ten questions a tool should answer</h2>
+<p>Phil Venables' new essay, <a href="https://www.philvenables.com/post/a-cisos-ideal-management-tool">A CISO's Ideal Management Tool</a>, starts from a problem every security leader recognises: many tools for CISOs are old governance and compliance platforms with AI added on top, and in his words some are "quite terrible with the AI sprinkling simply magnifying the horror of the original bad tool". A large company's CISO does not sit in dashboards all day; like a CFO, they need "insights not just data". And because specialist teams keep their own tools, the CISO's tool has to be "an orchestrator and a means of context graph federation".</p>
+<p>Then he writes down the acid test: ten questions the tool should answer "with high accuracy, repeatability and evidence". Where would an extra $250k reduce the most risk, and where could $250k be cut with the least harm? What are the five most exposed business processes, and what are the three things to do now for each? Which issues keep recurring, and why? Which accepted risks need revisiting because a competitor had an incident, a regulation is changing, or a control became cheaper? Which controls could be made cheaper and deployed further at the same cost? What are the minimum viable business processes, and the most severe plausible scenario they cannot withstand? Which ten suppliers, down for five days, would hurt customers most? Who are the 100 humans and 100 agents whose going bad would have the largest blast radius, "including the compromise potential of their extended graph of privileges"? And which digital channels, if unavailable, would lose the most revenue over the busiest five days?</p>
+<p>His bar for answering them is the right one: "an enterprise knowledge graph, precise risk models, comprehensive real time micro-level data aggregation", "all based on measured reality vs. human self-assessments", with model validation and back-testing. A tool that cannot do that "is likely just an LLM wrapper with some fancy dashboards."</p>
+<h2 id="graph">Every question is a graph question</h2>
+<p>Look at what each question has to touch. The budget questions need risks, controls, their cost and their coverage. The process questions need processes, the systems under them, the suppliers under those, and the channels and sales above them. The blast-radius question needs every human and agent, what they can reach, and what they can act as. The accepted-risk question needs the acceptances, who made them, until when, and the events that change their assumptions.</p>
+<figure class="shot" data-shot="tt-map.webp" data-dir="images/" data-alt="Ten questions, one graph. Each of Phil Venables&#x27; questions against the parts of the company it has to traverse: risks and holders, controls and cost, processes, systems, suppliers, channels and sales, humans and agents, incidents and causes, acceptances and events. No question is answered by one part alone; all of them are answered by the whole." data-kind="concept"><figcaption>Ten questions, one graph. Each of Phil Venables' questions against the parts of the company it has to traverse: risks and holders, controls and cost, processes, systems, suppliers, channels and sales, humans and agents, incidents and causes, acceptances and events. No question is answered by one part alone; all of them are answered by the whole.</figcaption></figure>
+<p>No question can be answered from one part of the company. All of them can be answered from the whole, if the whole is connected. That is the point of <a href="the-graph-companies.html">the graph companies</a>: once a graph has the right connections, you remove the nodes that are not relevant, and the answer becomes obvious, like the end of a whodunit. All the clues were there. What changes at the end is that the right ones are connected and the rest fall away.</p>
+<p>It is also why Phil's phrase "context graph federation" matters. The specialist teams will keep their own tools and their own vocabularies, and they should. The CISO's tool does not need them to agree on one schema. It needs the edges between their worlds, which is what <a href="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">fractal semantic graphs</a> are for: everything connects to everything, and nobody has to share a schema.</p>
+<h2 id="acceptance">Half of this already exists: risk acceptance</h2>
+<p>Our earlier work on risk acceptance, in <a href="every-risk-is-already-accepted.html">every risk is already accepted</a>, has most of the structure these questions need. A risk exists the moment the exposure does, so it is always being carried; the only questions are who has accepted it, and until when. There is no deny button, only three doors: accept for a stated interval, fund the work, or fix it. Every risk has a holder, every holder has a boss, and every path ends at the board. Risks are fractal: a board line such as "loss of customer trust" opens into business, operational and technical risks, each with its own holder, down to the configuration that makes it true.</p>
+<figure class="shot" data-shot="view-role-risk-map.webp" data-dir="../demos/vaults/risk-graph-explorer/images/" data-alt="The role risk map in the Risk Graph Explorer vault, from that earlier work. Every risk is assigned to somebody, and every risk reaches the board: each role shows what it holds and what passes through it on the way up." data-kind="screenshot" data-href="https://sgit.ai/demos/vaults/risk-graph-explorer/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The role risk map in the Risk Graph Explorer vault, from that earlier work. Every risk is assigned to somebody, and every risk reaches the board: each role shows what it holds and what passes through it on the way up. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>Read Phil's questions with that in mind and several of them are acceptance questions. Cutting £250k is accepting more risk, so someone has to hold that acceptance. The accepted risks to revisit are acceptances whose assumptions changed. A cheaper control is a reason to reopen an acceptance that was made at the old price. And every answer to every question ends the same way: someone has to accept, fund or fix, and their boss should see it arrive.</p>
+<h2 id="twin">The twin</h2>
+<p>So we built one. <a href="https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html">The Thistlewood decision twin</a> is an invented retailer at the start of its busiest season. Its board holds four risks. Under them are sixteen business, operational and technical risks, each with a holder and a status, nine of them accepted until a date. The company runs 9 business processes on 16 systems and 12 suppliers, sells through four channels, and has 15 controls with their costs and coverage, 38 incidents in the last year, and 100 identities, 60 humans and 40 agents, with what each can reach and act as. Everything in it is synthetic.</p>
+<p>A small deterministic engine answers the ten questions on that graph, and every answer comes with three things: the part of the graph it used, the evidence it rests on, and the decisions it proposes, each with its holder and the chain to the board. On the twin, an extra £250k goes to warehouse backups, hardware keys for staff and a second payment provider, and cuts the expected annual loss by about a million pounds. The £250k cut comes from long log retention and the awareness programme, for about £30k a year of extra risk, which someone has to accept. Twenty-nine of the forty agents can reach systems their behaviour policy says they do not need. The worst plausible scenario the minimum viable processes cannot withstand is ransomware in the warehouse. <a href="inside-the-thistlewood-twin.html">The tour</a> goes through all ten.</p>
+<p>The graph view is where the whodunit happens. Pick a question, and everything the answer did not use fades out; what is left is the plot, from the people or the supplier at one end to the board at the other.</p>
+<figure class="shot" data-shot="tt-graph-q7.webp" data-dir="images/" data-alt="Question 7 on the graph: the minimum viable processes, and the most severe plausible scenario they cannot withstand. Ransomware in the warehouse system, run by one supplier with no fallback, stops pick, pack and ship." data-kind="screenshot"><figcaption>Question 7 on the graph: the minimum viable processes, and the most severe plausible scenario they cannot withstand. Ransomware in the warehouse system, run by one supplier with no fallback, stops pick, pack and ship.</figcaption></figure>
+<h2 id="workflow">How our workflow fits</h2>
+<p>The twin is small, but each step in it is something we already do elsewhere.</p>
+<figure class="shot" data-shot="tt-loop.webp" data-dir="images/" data-alt="From a question to a decision the board can see. Ask; query the graph; see the plot, with what is not relevant faded; decide, accept for an interval, fund or fix, with one holder; record the decision in a vault with its evidence and hash; back-test the model against what happened, and recalibrate. Underneath each step, the work it comes from: fractal semantic graphs, the whodunit view, risk acceptance, sgit vaults, measured evidence." data-kind="concept"><figcaption>From a question to a decision the board can see. Ask; query the graph; see the plot, with what is not relevant faded; decide, accept for an interval, fund or fix, with one holder; record the decision in a vault with its evidence and hash; back-test the model against what happened, and recalibrate. Underneath each step, the work it comes from: fractal semantic graphs, the whodunit view, risk acceptance, sgit vaults, measured evidence.</figcaption></figure>
+<ul>
+<li><b>Each decision is a record.</b> In the twin, every proposed decision is a file in <code>decisions/</code>, with the question, the answer, the evidence, the holder, the door and the interval. In practice each material risk deserves a vault of its own, the evidence pack of the decision, readable by each audience with its own key.</li>
+<li><b>Agents are in the graph, with their policies.</b> Phil's question 9 asks for 100 agents as well as 100 humans. When every agent has an <a href="governs-enforces-attests.html">Agent Behaviour Policy</a>, its mandate is data, so its reach can be compared with it, which is how the twin finds the 29 agents that can reach beyond what they need.</li>
+<li><b>Measured, then back-tested.</b> Every answer lists its sources, and in the twin they are measured ones: the access review, supplier status history, incident tickets, contracts, sales logs, control configuration. The back-test compares the model with last year's incidents and shows where it is wrong: it under-estimates supplier bank fraud by about half. That is the check Phil asks for, and it is what keeps the answers honest.</li>
+<li><b>Federated, not merged.</b> The twin's graph is one file because it is a twin. In a real company each part would stay in its specialist tool, connected by edges, which is the federation Phil describes.</li>
+</ul>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The twin is invented.</b> Thistlewood Retail, its people, agents, suppliers and every number are synthetic.</li>
+<li><b>The model is simple on purpose.</b> Base exposure reduced by controls in proportion to their coverage; a real one needs the measured data Phil asks for.</li>
+<li><b>It answers the questions; it is not the tool.</b> It shows what an answer looks like when it comes from a graph.</li>
+<li><b>Phil's questions are his.</b> The reading of them as graph and acceptance questions is mine.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>Phil Venables, <a href="https://www.philvenables.com/post/a-cisos-ideal-management-tool">A CISO's Ideal Management Tool</a>, 19 October 2026, read that day; the quotations are from it. The earlier work: <a href="every-risk-is-already-accepted.html">every risk is already accepted</a>, the <a href="https://sgit.ai/demos/vaults/risk-graph-explorer/views/index.html">Risk Graph Explorer</a> and <a href="https://sgit.ai/demos/vaults/risk-acceptance/index.html">Risk Acceptance Office</a> vaults, and <a href="https://graphs.sgit.ai/v1/docs/fractal-risk-registers.html">fractal risk registers</a>. Related: <a href="the-graph-companies.html">the graph companies</a>, <a href="governs-enforces-attests.html">governs, enforces, attests</a>, <a href="inside-the-thistlewood-twin.html">inside the Thistlewood twin</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<nav class="trail-end" aria-label="Continue the trail: Thistlewood: ten questions, one graph"><div class="trail-end-h"><span class="trail-end-k">Continue the trail</span> Thistlewood: ten questions, one graph</div><div class="trail-row"><a class="trail-c here" href="ten-questions-one-graph.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="images/tt-graph-q9.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The reply</span><span class="trail-t">Ten questions, one graph</span></span></a><a class="trail-c next" href="inside-the-thistlewood-twin.html"><span class="trail-here trail-next">next &rarr;</span><span class="trail-img" data-trail-img="images/tt-q3.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The tour</span><span class="trail-t">Inside the Thistlewood twin</span></span></a><div class="trail-c"><a href="https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html"><span class="trail-img" data-trail-img="images/tt-live.webp" role="img" aria-label=""></span></a><div class="trail-b"><span class="trail-k">3 · The twin</span><span class="trail-t">The Thistlewood decision twin</span></div></div></div></nav>
+<sg-meter view="page" kind="article" date="2026-10-19" topics="graphs-and-knowledge agents-and-policy" title="Ten questions, one graph: Phil Venables' acid test for a CISO's management tool, answered as a graph of the company, with risk acceptance, vaults and a twin you can open, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Graphs &amp; knowledge</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#ten-questions-one-graph">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="the-graph-companies.html">The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in</a> <span class="dim">Four of the ten most valuable companies are graph companies. Graphs never scaled for everyone else because they were built to lock in. Now they can.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="inside-the-thistlewood-twin.html">Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes</a> <span class="dim">The ten answers on an invented retailer's graph: where £250k goes, what keeps recurring, who has the largest blast radius, and the 29 decisions to the board.</span></li><li><a href="governs-enforces-attests.html">Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</a> <span class="dim">An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-briefing-for-the-ciso-summit.html">A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next</a> <span class="dim">A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.</span></li><li><a href="a-trusted-framework-for-agentic-finance.html">A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in</a> <span class="dim">The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.</span></li><li><a href="inside-the-thistlewood-twin.html">Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes</a> <span class="dim">The ten answers on an invented retailer's graph: where £250k goes, what keeps recurring, who has the largest blast radius, and the 29 decisions to the board.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 217 &middot; <a href="../for/make.html#r=217">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/ten-questions-one-graph.jpg" download>ten-questions-one-graph.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="ten-questions-one-graph.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

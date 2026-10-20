@@ -1,0 +1,94 @@
+{
+ "slug": "agent-workflows-on-ephemeral-vaults",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 258,
+   "line": "Ephemeral encrypted vaults give cooperating agents memory and messaging",
+   "para": "An encrypted vault that lives only as long as the work can be agents' shared memory and channel. The pattern should become a series of architectures, each a forkable repository with CI, run as a gate before sgit's main branch. Locally, a hundred writers landed a thousand entries in 4.9 seconds, and four defects surfaced.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 147,
+   "line": "Seven tested architectures, measured, and a gate for releases",
+   "para": "Seven architectures run from one agent and one vault to a swarm of a hundred, each a repository folder with agents, fixtures, skills and CI, and a gate before sgit's main branch. Only ciphertext leaves, so keys and lifetime matter most. A thousand entries landed in 4.9 seconds with none lost, and four defects were found.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "pattern",
+   "label": "The pattern",
+   "words": 160,
+   "line": "A vault serves as file system, channel and record",
+   "para": "The newsroom's wire agent reads research vaults with only a read key, isolated agents keep memory in vaults, and agents share lessons through them. Underneath, a vault is the shared file system, message channel and record, with keys deciding who can do what. Many vaults are ephemeral, deleted or left as unreadable ciphertext afterwards.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "questions",
+   "label": "Four questions at every level",
+   "words": 155,
+   "line": "Memory, communication, asynchrony and visibility depend on keys",
+   "para": "Every architecture must answer how agents get lasting shared memory, how they hand work over and signal completion, how agents running at different times cooperate, and how you know what each is doing. Answers depend on who holds files and keys. Since only ciphertext leaves, logs and data can sit in less trusted places.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "architectures",
+   "label": "Seven architectures",
+   "words": 261,
+   "line": "Seven architectures run from one agent to a swarm",
+   "para": "They are one agent with one ephemeral vault, a writer with read-only readers, fan-out by folder where the key is the boundary, append-only workers, sandboxed agents with no network and a keyless courier, a watched vault app, and a swarm. Each should work with a server, without one, and offline; Claude Code's concurrent subagents make this testable.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "watched",
+   "label": "Watched by a vault app",
+   "words": 157,
+   "line": "A vault app draws the agents' work from inside",
+   "para": "People want to see what agents are doing, and a vault app gives that with little new machinery: a page inside the vault renders its contents, then its screenshot is stored back. The runtime exposes files, append lanes and optionally a model while the key stays in the host. Docker or sgit vault serve run it anywhere.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "swarm",
+   "label": "The swarm, measured",
+   "words": 259,
+   "line": "Append lanes absorb a hundred writers; scoped clones scale",
+   "para": "Using sgit 0.21.0 and server 0.34.0 on four cores, 1,000 entries from a hundred writers landed in 4.9 seconds, about 205 a second. A shared token hit the 1,000-entry cap, refusing 200, so each worker needs its own. Scoped clones went from 0.59 to 0.77 seconds as vaults grew; full clones from 0.95 to 5.55.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "gate",
+   "label": "Four defects, and the case for a gate",
+   "words": 178,
+   "line": "Four defects found make the case for a gate",
+   "para": "Disk storage walked the whole store on every append, giving about three entries a second; files over 4 MB failed on local disk; a credentials-only clone could not fetch a file; full clones queued on one process. Such complex architectures exercise what changes between releases, so they belong in an independent repository that gates sgit's main branch.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "brief",
+   "label": "The brief",
+   "words": 231,
+   "line": "Build brief: one repository, one CI job per architecture",
+   "para": "Written by @newsroom.writer on 14 October 2026, the brief asks for a folder per architecture with README, skills, keys, fixtures and CI, tested across three environments, with a vault app each, a repeatable swarm test, the four defects as issues, the release gate and templates. No key may appear anywhere, and runs delete their vaults.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 88,
+   "line": "Local numbers, proposed architectures, and nothing built yet",
+   "para": "Measurements ran once on one four-core machine with one server process. The disk figures show a defect rather than the design, and in-memory figures slow as the store grows. Architectures 5, 6 and 7 are proposed while 2 and 4 build on what the site runs, and nothing in the brief exists yet.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 73,
+   "line": "From Dinis Cruz's memo and local research agent tests",
+   "para": "A voice memo by Dinis Cruz on 14 October 2026, written up by the site's writer agent, with the argument and editorial responsibility his. A research agent ran the measurements on one machine against a local server with throwaway vaults. Also read: sgit 0.21.0 command help, sgit.ai's vault app skill and Claude Code's subagents documentation.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

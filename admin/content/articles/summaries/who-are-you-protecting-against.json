@@ -1,0 +1,61 @@
+{
+ "slug": "who-are-you-protecting-against",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "Security depends on who it protects against",
+   "para": "An entrepreneur air-gapped a customer's Mac mini and wrote the app in macOS's bundled Perl. Whether that is wise depends on the threat agent, the attack vector and their sophistication, set against six tiers from your own mistakes to states. Sell something better than the customer has, not beyond what they need.",
+   "hash": "a3fbe91bac0d"
+  },
+  "s0": {
+   "line": "Name the attacker first; basics beat most tiers",
+   "para": "Ask who the threat agent is, what the vector is and how sophisticated they are. Attackers come in six tiers, and defending well against commodity threats makes a very hard target. The air-gapped Mac mini adds a USB path and removes backups and monitoring, and drawing the line too high is a disservice to both sides.",
+   "hash": "6d0944d9fbc0"
+  },
+  "s1": {
+   "line": "The air-gapped Perl design buys heavy technical debt",
+   "para": "A founder bought a dedicated Mac mini, kept it off the internet, installed nothing and wrote the app in macOS's Perl, moving files by USB stick. Apple keeps Perl only for legacy compatibility and said in 2019 it might go. Compared with Python or Node it has far fewer libraries and tools.",
+   "hash": "b0c286b92dff"
+  },
+  "s2": {
+   "line": "Three questions about attackers come before any control",
+   "para": "Ask who the threat agent is, what the attack vector is and how sophisticated they are. The UK's AI Risk Management Toolkit asks who the new threat actors are but does not define them. The definitions come instead from NIST SP 800-30, the NCSC's commodity and targeted threats, and MITRE ATT&CK.",
+   "hash": "03d19c0e30f2"
+  },
+  "s3": {
+   "line": "Six attacker tiers run from your mistakes to states",
+   "para": "T0 is your own mistakes, T1 opportunistic bots, T2 hacktivists, T3 organised crime, the realistic ceiling for most startups, T4 targeted commercial attackers and insiders, and T5 elevated threats. Few commercial organisations can withstand a determined state. The NCSC says defending well against commodity threats makes a very hard target.",
+   "hash": "2e9f49b8ce49"
+  },
+  "s4": {
+   "line": "The air gap stops attackers that basics already stop",
+   "para": "For a fictional twelve-person accounting firm, the air gap worsens your own mistakes, matches no inbound ports and patching against bots, misses ransomware arriving via staff laptops, and adds a USB path (ATT&CK T1091). The better design is isolated, not disconnected: allowlisted outbound traffic, containers, encryption, updates and read logs.",
+   "hash": "e1692f58d77b"
+  },
+  "s5": {
+   "line": "Staying on premises for security often adds holes",
+   "para": "Refusing the cloud as insecure often leaves an organisation running local infrastructure with more holes than Swiss cheese, because it lacks the expertise. A small team cannot match the platforms' full-time security staff, and decentralised usually means fewer people watching each part.",
+   "hash": "ccc5f596fcd9"
+  },
+  "s6": {
+   "line": "Beat the customer's baseline, do not exceed their needs",
+   "para": "The key primitive is the customer's current baseline: Windows laptops, a shared drive and email for an accounting firm. Something clearly better is already an improvement. Drawing the line too high protects against absent attackers, slows work, creates holes like the USB stick, and may stop the technology being used at all.",
+   "hash": "be5e322cd9bd"
+  },
+  "s7": {
+   "line": "Eight fictional startups each get a different ceiling",
+   "para": "The vault sets ceilings from T1 for a padel booking app to T3 for bookkeeping and therapy notes, T4 for litigation document review, and T5 for an open-source library and a government drafting tool. Each has an attack tree mapped to ATT&CK, with branches below the ceiling controlled and those above accepted.",
+   "hash": "1f5b3de2243b"
+  },
+  "s8": {
+   "line": "Five questions set your ceiling; publish the threat model",
+   "para": "Ask what is most valuable, who would target you specifically, what environment you sell into, how many organisations one breach reaches, and what customers use today. The highest tier is your ceiling, and risk above it is accepted and written down. Then publish a one-page threat model and ask the community.",
+   "hash": "b83ca27d7832"
+  },
+  "s9": {
+   "line": "Name attackers, do basics, prefer isolation, and publish",
+   "para": "Name attackers with the ladder, draw one attack tree, do the basics consistently, beat the customer's baseline, record what you accept above your ceiling, prefer isolation and visibility over disconnection, and publish the threat model. Drafted from a voice memo by Dinis Cruz on 8 October 2026, citing NCSC, NIST, Apple, DSIT and Schneier.",
+   "hash": "99786a379711"
+  }
+ }
+}

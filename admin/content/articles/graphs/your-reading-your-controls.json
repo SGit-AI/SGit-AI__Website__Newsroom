@@ -1,0 +1,43 @@
+{
+ "slug": "your-reading-your-controls",
+ "teaser": "The meter now charges for what is read; the reader can pause, reset or mark it, and what was read folds away six ways, with a line and a paragraph per section.",
+ "topics": ["site-and-engineering", "news-and-evidence"],
+ "core_idea": "Once Dinis decided that a reader pays for what they read and not for what they scroll, the numbers had to be the reader's to correct: pause, reset and marks by hand; and once the newsroom knows what was read, it can step aside on a return visit or a scroll back up, in six views from a margin line to hidden, never while the reader reads forward, using a line and a paragraph written for every one of 1,897 sections.",
+ "nodes": [
+  {"id": "decision", "label": "Charge for what is read", "kind": "claim", "summary": "Dinis's decision: the meter charges for the share read, not the share scrolled; reading done on an earlier visit is not charged again."},
+  {"id": "meter", "label": "The meter, v1.5.0", "kind": "artefact", "summary": "A new versioned meter whose page view settles the charge to the share read beyond what was read before, up or down."},
+  {"id": "control", "label": "The reader in control", "kind": "concept", "summary": "The measure can be wrong both ways, so the reader can correct it."},
+  {"id": "pause", "label": "Pause, kept", "kind": "method", "summary": "Stops all measuring on every page until resumed, across reloads."},
+  {"id": "reset", "label": "Reset and marks", "kind": "method", "summary": "A page back to unread with a refund to the minimum; any section marked read or unread by hand."},
+  {"id": "views", "label": "Six views of what was read", "kind": "artefact", "summary": "Full, Margin, Faded, Paragraph, Line and Hidden, chosen by the reader and kept in the browser."},
+  {"id": "when", "label": "Never while reading forward", "kind": "claim", "summary": "The views switch on only on a return visit or a scroll back up, and a section on screen is never folded by the clock."},
+  {"id": "anchor", "label": "The words in view stay", "kind": "method", "summary": "Before a fold the first visible element is noted, and the scroll is corrected after it."},
+  {"id": "summaries", "label": "A line and a paragraph per section", "kind": "artefact", "summary": "1,897 sections in 174 articles, each with about eight words and two or three sentences that say what it says."},
+  {"id": "agents", "label": "Fourteen agents", "kind": "example", "summary": "Each read a batch of articles and wrote their summaries; a script checked length, wording and coverage."},
+  {"id": "stale", "label": "A summary knows it is stale", "kind": "method", "summary": "Each carries a hash of its section; a corrected section marks its summary stale."},
+  {"id": "contract", "label": "Summaries with every article", "kind": "concept", "summary": "The authoring guide asks for summaries beside the graph, and the build counts extracts."}
+ ],
+ "edges": [
+  {"from": "decision", "to": "meter", "rel": "produces"},
+  {"from": "decision", "to": "control", "rel": "leads-to"},
+  {"from": "control", "to": "pause", "rel": "produces"},
+  {"from": "control", "to": "reset", "rel": "produces"},
+  {"from": "reset", "to": "meter", "rel": "depends-on"},
+  {"from": "control", "to": "views", "rel": "leads-to"},
+  {"from": "when", "to": "views", "rel": "extends"},
+  {"from": "anchor", "to": "when", "rel": "answers"},
+  {"from": "views", "to": "summaries", "rel": "depends-on"},
+  {"from": "agents", "to": "summaries", "rel": "produces"},
+  {"from": "stale", "to": "summaries", "rel": "extends"},
+  {"from": "contract", "to": "summaries", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["scrolled-is-not-read", "the-tokens-hook", "a-meter-in-the-browser"],
+  "pages": [],
+  "sites": ["https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/admin/content/articles/README.md"]
+ },
+ "quotes": [
+  {"text": "Nothing on the page changes while you go down it.", "why": "The rule that makes the views safe to switch on."},
+  {"text": "A summary knows when it is out of date.", "why": "Why a correction to an article cannot leave its summary lying."}
+ ]
+}

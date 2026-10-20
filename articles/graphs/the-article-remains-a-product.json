@@ -1,0 +1,258 @@
+{
+  "slug": "the-article-remains-a-product",
+  "teaser": "Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge",
+    "agents-and-policy"
+  ],
+  "core_idea": "Palmer's four outputs, structured intelligence, continuous intelligence, provenance and verification, and embedded distribution, are what a newsroom built on the story-as-graph thesis already produces: graphs as JSON beside all 74 articles, version histories read from git, a hashed corpus in a vault with a published read key, and an llms.txt and markdown twin for agents; what is designed and not running, selling the graph, propagating corrections and paying the fact creator, is said plainly; and where the two differ is the word proprietary, because provenance only someone else can check is worth charging for.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "No human readers tomorrow",
+      "kind": "artefact",
+      "summary": "Jonathan Palmer's LinkedIn post of 10 October 2026: model the scenario, and rethink what the newsroom produces."
+    },
+    {
+      "id": "scenario",
+      "label": "Model that exact scenario",
+      "kind": "method",
+      "summary": "Run the newsroom with invented readers and with an agent as the reader, and count what each costs."
+    },
+    {
+      "id": "structured",
+      "label": "Structured intelligence",
+      "kind": "claim",
+      "summary": "A graph as JSON beside every one of the 74 articles, and 21 op-eds as 160 nodes and 427 edges."
+    },
+    {
+      "id": "continuous",
+      "label": "Continuous intelligence",
+      "kind": "claim",
+      "summary": "A version history read from git and a diff page for every change; corrections that propagate are designed, not built."
+    },
+    {
+      "id": "provenance",
+      "label": "Provenance and verification",
+      "kind": "claim",
+      "summary": "Fetched once, frozen, hashed with SHA-256, re-derived by a second program, and published in a vault anyone can open."
+    },
+    {
+      "id": "embedded",
+      "label": "Embedded distribution",
+      "kind": "claim",
+      "summary": "An llms.txt, a markdown twin of every page, the feed and the graphs as data, for the agents that already read the site."
+    },
+    {
+      "id": "pays",
+      "label": "The agent pays not to pay",
+      "kind": "concept",
+      "summary": "A question answered from the graph costs a median of 2,579 tokens against 25,698 from the prose; the saving is the price."
+    },
+    {
+      "id": "proprietary",
+      "label": "Published, not proprietary",
+      "kind": "claim",
+      "summary": "The graph and the read key are published; what is sold is the fitted projection, the delta and the signed claim."
+    },
+    {
+      "id": "projection",
+      "label": "The article is a projection",
+      "kind": "concept",
+      "summary": "The story is a graph; the article, the deck and the two-minute version are projections of it, and the article is still written first."
+    },
+    {
+      "id": "shipped",
+      "label": "What runs, what is designed",
+      "kind": "artefact",
+      "summary": "The newsroom's dated ledger, the authority for every claim here about what is live."
+    },
+    {
+      "id": "cultural",
+      "label": "Cultural, not technical",
+      "kind": "question",
+      "summary": "The technical cost was eight weeks for one desk; whether a legacy newsroom can change its organising principle is not shown here."
+    },
+    {
+      "id": "wnd",
+      "label": "World News Day corpus",
+      "kind": "example",
+      "summary": "21 commissioned op-eds, frozen and hashed, graphed, and published as a vault with its read key on the page."
+    },
+    {
+      "id": "five",
+      "label": "Five readers",
+      "kind": "example",
+      "summary": "662 catalogued items anchored to their sentences, in the Article Views vault."
+    }
+  ],
+  "edges": [
+    {
+      "from": "post",
+      "to": "scenario",
+      "rel": "leads-to"
+    },
+    {
+      "from": "scenario",
+      "to": "pays",
+      "rel": "produces"
+    },
+    {
+      "from": "structured",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "continuous",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "provenance",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "embedded",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "wnd",
+      "to": "structured",
+      "rel": "example-of"
+    },
+    {
+      "from": "wnd",
+      "to": "provenance",
+      "rel": "example-of"
+    },
+    {
+      "from": "five",
+      "to": "structured",
+      "rel": "example-of"
+    },
+    {
+      "from": "pays",
+      "to": "embedded",
+      "rel": "depends-on"
+    },
+    {
+      "from": "proprietary",
+      "to": "post",
+      "rel": "contrasts"
+    },
+    {
+      "from": "projection",
+      "to": "post",
+      "rel": "compared-with"
+    },
+    {
+      "from": "shipped",
+      "to": "continuous",
+      "rel": "extends"
+    },
+    {
+      "from": "post",
+      "to": "cultural",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "future-of-news-story-vault-not-paywall",
+      "the-same-argument-in-our-words",
+      "how-to-run-synthetic-users",
+      "the-agent-is-the-reader",
+      "how-news-got-here",
+      "one-article-five-readers",
+      "where-the-vault-keys-live",
+      "a-reading-list-in-a-link",
+      "brief-the-agent-too",
+      "i-miss-it",
+      "pay-to-keep-your-persona",
+      "no-server-by-design",
+      "story-vault-meets-reader-skills"
+    ],
+    "pages": [
+      "/demos/vaults/article-views/index.html",
+      "/publishers/index.html"
+    ],
+    "sites": [
+      "https://www.linkedin.com/posts/jonathanjpalmer1_futureofnews-ai-publishing-share-7514686042193637377-Zs1Z/",
+      "https://newsroom.sgit.ai/",
+      "https://newsroom.sgit.ai/world-news-day/graph.html",
+      "https://newsroom.sgit.ai/corrections/index.html",
+      "https://newsroom.sgit.ai/newsroom/index.html",
+      "https://newsroom.sgit.ai/llms.txt",
+      "https://newsroom.sgit.ai/shipped/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Provenance that only the publisher can check is not provenance.",
+      "why": "Where this newsroom parts from the word proprietary."
+    },
+    {
+      "text": "The projection people pay to read is still the article, written first, as prose, because writing is how the argument is found.",
+      "why": "How the two sentences about the article agree."
+    },
+    {
+      "text": "I would rather say that plainly than describe a stream we do not have.",
+      "why": "The rule for the right-hand column."
+    }
+  ],
+  "figures": [
+    {
+      "file": "jp-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-map.webp",
+      "caption": "His four outputs, against what runs. Each row quotes one output from Jonathan Palmer's post; the middle column is the page on newsroom.sgit.ai that does it today, the right-hand column is what is only designed. The line between them is the newsroom's own dated page of what runs."
+    },
+    {
+      "file": "jp-graphs.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-graphs.webp",
+      "caption": "The articles as graphs, on newsroom.sgit.ai. Every article drawn in date order round the circle, sized by how many others link to it: 74 articles, 349 links between them, and 10 amber links where an older article was updated to point at a newer one. One graph per article follows below the map."
+    },
+    {
+      "file": "jp-wnd-graph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-wnd-graph.webp",
+      "caption": "The World News Day graph: 21 op-eds as 160 nodes and 427 edges, with the three machine surfaces linked at the top. The box under it is the rule the section is built under: hold the pieces, republish none, and fail the build if twelve consecutive words of any piece appear."
+    },
+    {
+      "file": "jp-five-readers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-five-readers.webp",
+      "caption": "A live article with its five readers folded under the abstract: two minutes, the arc, nine slides, a map, and 137 catalogued items, six of them flagged. The views are extracted from the article and do not change its version."
+    },
+    {
+      "file": "jp-versions.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-versions.webp",
+      "caption": "The version page of One article, five readers: v1.0.0 on 10 October, v1.1.0 on 11 October, +11 words, one paragraph changed, each with its commit. The sentence changed was a correction, found by the article that followed it."
+    },
+    {
+      "file": "jp-diff.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-diff.webp",
+      "caption": "What changed, paragraph by paragraph: 63,000 words became 65,000, 122 releases became 123, and a phrase was rewritten. The tool that draws this was built on the same day as the revision."
+    },
+    {
+      "file": "jp-wnd-vault.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-wnd-vault.webp",
+      "caption": "The published vault: one read key, printed in full, is the whole credential. It opens the World News Day corpus as an app in the reader's browser, read only, no account, nothing to install, and no write capability in it."
+    },
+    {
+      "file": "jp-economics.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-economics.webp",
+      "caption": "Contextual validation, not truth: the value split the design argues for, and the sentence that says what is billable. The page is marked as a design, and the newsroom's ledger says nothing is paid upstream."
+    },
+    {
+      "file": "jp-llms.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-llms.webp",
+      "caption": "The first screen of the newsroom's llms.txt: the honest sentence, where the pages come from, and the surfaces an agent may rely on. The chip at the top of every imported page points here."
+    },
+    {
+      "file": "jp-shipped.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jp-shipped.webp",
+      "caption": "The newsroom's own ledger, as of 10 October 2026: what runs, its limits, and below it what is designed and not running. Every claim in this article about what is live was checked against this page."
+    }
+  ]
+}

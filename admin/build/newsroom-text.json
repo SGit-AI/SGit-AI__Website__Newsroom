@@ -1,0 +1,183 @@
+{
+ "what": "Wording this site changes on specific imported pages when sync_newsroom.py imports the newsroom, so it holds on newsroom.sgit.ai and not on sgit.ai. Each is a recorded rule and not a hand edit: validate.js check 11 still passes because the import writes the page. The import stops, loudly, if the text a rule replaces is not in its page exactly once, which means sgit.ai changed it and the rule is stale. When sgit.ai adopts the wording, delete the rule here. A rule has a separate match for the HTML page and its markdown twin.",
+ "overrides": [
+  {
+   "id": "reading-data-note",
+   "files": [
+    "account/index.html",
+    "account/index.md",
+    "account/top-up.html",
+    "account/top-up.md"
+   ],
+   "find": {
+    "html": "<div class=\"note\"><b>Kept in this browser, and only here.</b> The balance, the history and the receipts are in this browser's storage; nothing is sent anywhere and there is no account. A new browser, a private window or clearing site data starts again with &pound;5.00 and no history, so with no personalisation. It never blocks a page and it never nags: credit can go below zero, the balance says so in the top bar, and that is all. <a href=\"../meter/index.html\">How the meter works</a>, and <a href=\"../articles/going-live-with-the-reading-meter.html\">why we run it this way</a>.</div>",
+    "md": "**Kept in this browser, and only here.** The balance, the history and the receipts are in this browser's storage; nothing is sent anywhere and there is no account. A new browser, a private window or clearing site data starts again with £5.00 and no history, so with no personalisation. It never blocks a page and it never nags: credit can go below zero, the balance says so in the top bar, and that is all. [How the meter works](../meter/index.md), and [why we run it this way](../articles/going-live-with-the-reading-meter.md)."
+   },
+   "with": {
+    "html": "<div class=\"note\"><b>Where your data is kept.</b> Your balance, history and receipts are kept in this browser&rsquo;s storage, and your reading is not sent anywhere unless you choose to send it. There is no account. This is a client-side application: the pages are static files, with no server of ours behind them for now, and if encrypted vaults are added this page will say so. <a href=\"../articles/no-server-by-design.html\">Why it is built this way</a>.<span style=\"display:block;margin-top:.55rem\">A new browser, a private window or clearing site data starts again with &pound;5.00 and no history. Credit can go below zero, and no page is blocked.</span><span style=\"display:block;margin-top:.55rem\">What can leave your browser, when you choose to, is a payment (made on Stripe&rsquo;s own page), a subscription or a reading share: <a href=\"../shipped/index.html#data\">what leaves your browser, and when</a>. <a href=\"../meter/index.html\">How the meter works</a>, and <a href=\"../articles/going-live-with-the-reading-meter.html\">why it works this way</a>.</span></div>",
+    "md": "**Where your data is kept.** Your balance, history and receipts are kept in this browser’s storage, and your reading is not sent anywhere unless you choose to send it. There is no account. This is a client-side application: the pages are static files, with no server of ours behind them for now, and if encrypted vaults are added this page will say so. [Why it is built this way](../articles/no-server-by-design.md).\n\nA new browser, a private window or clearing site data starts again with £5.00 and no history. Credit can go below zero, and no page is blocked.\n\nWhat can leave your browser, when you choose to, is a payment (made on Stripe’s own page), a subscription or a reading share: [what leaves your browser, and when](https://newsroom.sgit.ai/shipped/index.html#data). [How the meter works](../meter/index.md), and [why it works this way](../articles/going-live-with-the-reading-meter.md)."
+   },
+   "why": "The note said \"nothing is sent anywhere\", which is about the reading data and reads as wider than that once a top-up link exists, and it was written in a chatty register (\"it never nags\", \"and that is all\") on a page that now takes payment. It now says what is kept where, what can leave the browser and when, in plain terms and without absolutes."
+  },
+  {
+   "id": "top-up-intro",
+   "files": [
+    "account/top-up.html",
+    "account/top-up.md"
+   ],
+   "find": {
+    "html": "&pound;5 of reading, paid on Stripe's page. You come back to a page that adds the credit to the balance in this browser. No account, and no subscription: it is one payment, and nothing renews.",
+    "md": "£5 of reading, paid on Stripe's page. You come back to a page that adds the credit to the balance in this browser. No account, and no subscription: it is one payment, and nothing renews."
+   },
+   "with": {
+    "html": "&pound;5 of reading credit, paid on Stripe&rsquo;s page. It is one payment: there is no account and no subscription, and nothing renews.",
+    "md": "£5 of reading credit, paid on Stripe’s page. It is one payment: there is no account and no subscription, and nothing renews."
+   },
+   "why": "The second sentence of the intro repeated what the top-up card directly below it says."
+  },
+  {
+   "id": "top-up-gap-note",
+   "files": [
+    "account/top-up.html",
+    "account/top-up.md"
+   ],
+   "find": {
+    "html": " <p class=\"small dim\">The page you come back to cannot check the payment (this site has no server to check it with), so it adds the credit once for each payment reference it is given. That is a known gap and it is written down, with why it is accepted, in <a href=\"../articles/who-will-game-the-reading-meter.html\">who will game the reading meter</a>.</p>\n",
+    "md": "The page you come back to cannot check the payment (this site has no server to check it with), so it adds the credit once for each payment reference it is given. That is a known gap and it is written down, with why it is accepted, in [who will game the reading meter](../articles/who-will-game-the-reading-meter.md).\n\n"
+   },
+   "with": {
+    "html": "",
+    "md": ""
+   },
+   "why": "Removed at Dinis's request: a technical disclaimer under the payment button. The limit it states, that the return page cannot check the payment, is still published on /shipped/ and in the meter's security model."
+  },
+  {
+   "id": "personas-clear-data",
+   "files": [
+    "account/personas.html",
+    "account/personas.md"
+   ],
+   "find": {
+    "html": "Anyone who uses this browser can see them; \"Start again\" on the account page clears them.",
+    "md": "Anyone who uses this browser can see them; \"Start again\" on the account page clears them."
+   },
+   "with": {
+    "html": "Anyone who uses this browser can see them; clearing this site's data in the browser removes them.",
+    "md": "Anyone who uses this browser can see them; clearing this site's data in the browser removes them."
+   },
+   "why": "The account page of the reading meter v1.4.0 no longer has a Start again button: it wiped the balance, the history and the personas in one tap, which is too much to leave next to Export. The way to clear what is kept is the browser's own."
+  },
+  {
+   "id": "security-shared-computer",
+   "files": [
+    "meter/security.html",
+    "meter/security.md"
+   ],
+   "find": {
+    "html": "Privacy. Mitigations: \"Start again\" clears it; a private window keeps nothing",
+    "md": "Privacy. Mitigations: \"Start again\" clears it; a private window keeps nothing"
+   },
+   "with": {
+    "html": "Privacy. Mitigations: clearing this site's data in the browser removes it; a private window keeps nothing",
+    "md": "Privacy. Mitigations: clearing this site's data in the browser removes it; a private window keeps nothing"
+   },
+   "why": "Same change as personas-clear-data: the mitigation named a button that v1.4.0 does not have."
+  },
+  {
+   "id": "meter-account-view",
+   "files": [
+    "meter/index.html",
+    "meter/index.md"
+   ],
+   "find": {
+    "html": "top-ups; pause, export as JSON, start again.</td>",
+    "md": "top-ups; pause, export as JSON, start again. |"
+   },
+   "with": {
+    "html": "top-ups; the top-up button and export as JSON. Version 1.3 also had pause and start again; version 1.4.0 and later, which this site runs (1.5.0, charging by the share read), do not.</td>",
+    "md": "top-ups; the top-up button and export as JSON. Version 1.3 also had pause and start again; version 1.4.0 and later, which this site runs (1.5.0, charging by the share read), do not. |"
+   },
+   "why": "The component documentation lists the account view of v1.3.1. This site runs v1.4.0, and the page should say what a reader here sees."
+  },
+  {
+   "id": "account-lead-site",
+   "files": [
+    "account/index.html",
+    "account/index.md"
+   ],
+   "find": {
+    "html": "Every page on sgit.ai has a price of a few pence",
+    "md": "Every page on sgit.ai has a price of a few pence"
+   },
+   "with": {
+    "html": "Every page here has a price of a few pence",
+    "md": "Every page here has a price of a few pence"
+   },
+   "why": "The account page is written for sgit.ai, where the meter also runs on the docs, the vaults and the network. Here it is the newsroom's meter, and the sentence should name the place the reader is in."
+  },
+  {
+   "id": "account-price-rows",
+   "files": [
+    "account/index.html",
+    "account/index.md"
+   ],
+   "find": {
+    "html": "<tr><td>Any other page: docs, vaults, the network, the newsroom</td><td>1p</td></tr><tr><td>The homepage, the subscribe page and your account</td><td>free</td></tr>",
+    "md": "| Any other page: docs, vaults, the network, the newsroom | 1p |\n| The homepage, the subscribe page and your account | free |"
+   },
+   "with": {
+    "html": "<tr><td>Any other page that charges: an article's version history, the newsroom's roles and policies</td><td>1p</td></tr><tr><td>The front page, the subscribe page, your account, the design, replicate and persona pages</td><td>free</td></tr>",
+    "md": "| Any other page that charges: an article's version history, the newsroom's roles and policies | 1p |\n| The front page, the subscribe page, your account, the design, replicate and persona pages | free |"
+   },
+   "why": "The price table named sgit.ai's docs, vaults and network, which this site does not charge for. It now names the pages here that carry the 1p price, and the pages this site writes, which are free."
+  },
+  {
+   "id": "issue-3-linkedin",
+   "files": [
+    "articles/newsletter/2026/10/11/003-pay-after-you-read.html",
+    "articles/newsletter/2026/10/11/003-pay-after-you-read.md"
+   ],
+   "find": {
+    "html": "written with the <a href=\"../../../../../newsroom/roles/journalist.html\">Journalist</a></p>",
+    "md": "written with the [Journalist](../../../../../newsroom/roles/journalist.md)\n"
+   },
+   "with": {
+    "html": "written with the <a href=\"../../../../../newsroom/roles/journalist.html\">Journalist</a> &middot; <a href=\"https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/\" rel=\"noopener\" target=\"_blank\">read it on LinkedIn &#8599;</a></p>",
+    "md": "written with the [Journalist](../../../../../newsroom/roles/journalist.md) · [read it on LinkedIn ↗](https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/)\n"
+   },
+   "why": "Issue 3 was posted on LinkedIn on 13 October 2026. Its source is sgit.ai's, which this site does not edit, so the link its linkedin: field would have rendered is added here, in the same words and markup as issues 1 and 2. Retire this rule when sgit.ai's issue 3 carries the link, or when the generator moves here."
+  },
+  {
+   "id": "issue-3-linkedin-card",
+   "files": [
+    "articles/newsletter/index.html",
+    "articles/newsletter/index.md"
+   ],
+   "find": {
+    "html": "why agents will pay too.</p><p class=\"small dim\">8 articles</p>",
+    "md": "why agents will pay too.\n\n8 articles\n"
+   },
+   "with": {
+    "html": "why agents will pay too.</p><p class=\"small dim\">8 articles &middot; <a href=\"https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/\" rel=\"noopener\" target=\"_blank\">on LinkedIn &#8599;</a></p>",
+    "md": "why agents will pay too.\n\n8 articles · [on LinkedIn ↗](https://www.linkedin.com/pulse/pay-after-you-read-newsroom-charges-share-lets-go-below-dinis-cruz-i9owe/)\n"
+   },
+   "why": "The same link on issue 3's card in the list of issues, as issues 1 and 2 have it. Retire with issue-3-linkedin."
+  },
+  {
+   "id": "account-lead-read",
+   "files": [
+    "account/index.html",
+    "account/index.md"
+   ],
+   "find": {
+    "html": "you pay for the share of it you read: scroll a tenth of the way down and you pay a tenth.",
+    "md": "you pay for the share of it you read: scroll a tenth of the way down and you pay a tenth."
+   },
+   "with": {
+    "html": "you pay for the share of it you read, measured section by section in this browser: read a tenth of it and you pay a tenth, and a page you only scroll through costs the minimum, a tenth of its price. You can pause the measuring, or reset a page, from the chip at the foot of every article.",
+    "md": "you pay for the share of it you read, measured section by section in this browser: read a tenth of it and you pay a tenth, and a page you only scroll through costs the minimum, a tenth of its price. You can pause the measuring, or reset a page, from the chip at the foot of every article."
+   },
+   "why": "Since v0.12.99 the meter (sg-meter v1.5.0) charges by the share READ, measured by the reading strip, not by how far the page was scrolled (card 080, the owner's decision of 16 October 2026: 'Charge based on what you read, not based on what you scroll'). The sentence said scroll. Retire when sgit.ai's account page says the same."
+  }
+ ]
+}

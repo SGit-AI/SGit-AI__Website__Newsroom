@@ -1,0 +1,44 @@
+{
+ "slug": "sgit-actions-side-by-side",
+ "teaser": "A showcase repository that runs four ways of moving a vault between GitHub Actions jobs side by side, measured, with a budget for its LLM steps.",
+ "topics": ["vaults-and-method", "site-and-engineering"],
+ "core_idea": "A dedicated repository and site should run sgit in GitHub Actions for real on every release, moving the same build through four lanes in parallel, a vault server with keys in secrets, the encrypted vault as an immutable artefact, the vault as published files cloned read-only, and append lanes for shards, reporting time, bytes, keys and a screenshot per lane on growing vaults; measured locally, a one-folder clone barely grows with the vault while a full clone does, the runs surfaced defects worth tracking as issues, and every model call is counted against a per-run token budget across providers.",
+ "nodes": [
+  {"id": "showcase", "label": "A showcase of its own", "kind": "artefact", "summary": "A repository and site with its own issues and CI pipeline."},
+  {"id": "ci-article", "label": "sgit in a CI pipeline", "kind": "example", "summary": "The pieces tested locally; the workflow was a sketch."},
+  {"id": "lane-server", "label": "Lane 1: a vault server", "kind": "method", "summary": "Keys in secrets, --path clones, push back."},
+  {"id": "lane-artefact", "label": "Lane 2: the vault as an artefact", "kind": "method", "summary": "Encrypted zip uploaded and downloaded; immutable, 90 days."},
+  {"id": "lane-static", "label": "Lane 3: published as files", "kind": "method", "summary": "Cloned read-only from any web host."},
+  {"id": "lane-append", "label": "Lane 4: append lanes", "kind": "method", "summary": "Many jobs hand results into one inbox."},
+  {"id": "report", "label": "What each run reports", "kind": "concept", "summary": "Time, bytes, keys held, a screenshot from a vault app."},
+  {"id": "path-flat", "label": "One-folder clones barely grow", "kind": "claim", "summary": "0.59 s at 100 files, 0.77 s at 2,000."},
+  {"id": "full-grows", "label": "Full clones grow", "kind": "claim", "summary": "0.95 s to 5.55 s over the same vaults."},
+  {"id": "defects", "label": "What went wrong", "kind": "example", "summary": "Large files without cloud storage; headless fetch; queued full clones."},
+  {"id": "budget", "label": "A budget for the models", "kind": "concept", "summary": "Every token counted per run and per provider."},
+  {"id": "llm-host", "label": "The key stays in the host", "kind": "example", "summary": "Vault apps call models without seeing the key; usage is readable."},
+  {"id": "brief", "label": "The brief", "kind": "artefact", "summary": "Seven steps from the repository to a published chart."}
+ ],
+ "edges": [
+  {"from": "ci-article", "to": "showcase", "rel": "leads-to"},
+  {"from": "lane-server", "to": "showcase", "rel": "example-of"},
+  {"from": "lane-artefact", "to": "showcase", "rel": "example-of"},
+  {"from": "lane-static", "to": "showcase", "rel": "example-of"},
+  {"from": "lane-append", "to": "lane-artefact", "rel": "extends"},
+  {"from": "showcase", "to": "report", "rel": "produces"},
+  {"from": "path-flat", "to": "full-grows", "rel": "contrasts"},
+  {"from": "report", "to": "path-flat", "rel": "produces"},
+  {"from": "report", "to": "defects", "rel": "produces"},
+  {"from": "llm-host", "to": "budget", "rel": "depends-on"},
+  {"from": "budget", "to": "showcase", "rel": "extends"},
+  {"from": "brief", "to": "showcase", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["sgit-in-a-ci-pipeline", "the-key-is-the-billing-system"],
+  "pages": [],
+  "sites": ["https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts", "https://github.com/actions/upload-artifact", "https://sgit.ai/skills/index.html"]
+ },
+ "quotes": [
+  {"text": "Artifacts created by upload-artifact@v4 are immutable", "why": "Why an artefact suits a vault handed between jobs."},
+  {"text": "the vault's key stays in the HOST; your frame never sees it", "why": "How a vault app can call a model without holding a key."}
+ ]
+}

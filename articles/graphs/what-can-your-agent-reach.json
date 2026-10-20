@@ -1,0 +1,179 @@
+{
+  "slug": "what-can-your-agent-reach",
+  "teaser": "RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "An Agent Behaviour Policy writes down, for one agent in one deployment, what it can reach, what was authorised, the gap and the barrier on each capability; RiskMandate stays out of the request path so runtimes can enforce it, has policies for commercial agents from vendor pages and measurement, names the enterprise-assistant oversharing risk as the gap, and gets into the room through questions already being asked.",
+  "nodes": [
+    {
+      "id": "pages",
+      "label": "The pages are hard to read",
+      "kind": "claim",
+      "summary": "Precise is not the same as clear."
+    },
+    {
+      "id": "abp",
+      "label": "The Agent Behaviour Policy",
+      "kind": "concept",
+      "summary": "Grant, mandate, delta, barrier."
+    },
+    {
+      "id": "barrier",
+      "label": "Only a boundary bounds",
+      "kind": "claim",
+      "summary": "Enforced by something the grant does not include."
+    },
+    {
+      "id": "try",
+      "label": "Twenty minutes, thirteen prompts",
+      "kind": "method",
+      "summary": "The list is longer than the tile that sold it."
+    },
+    {
+      "id": "commercial",
+      "label": "Policies for commercial agents",
+      "kind": "example",
+      "summary": "Claude with Gmail and M365, ChatGPT, Workspace; not integrations."
+    },
+    {
+      "id": "oversharing",
+      "label": "The assistant that sees too much",
+      "kind": "example",
+      "summary": "Whose access depends on the executing identity."
+    },
+    {
+      "id": "realtime",
+      "label": "Not in the request path",
+      "kind": "claim",
+      "summary": "Runtimes enforce; the policy is what they enforce."
+    },
+    {
+      "id": "ruflo",
+      "label": "Enforced in Ruflo, through an adapter",
+      "kind": "example",
+      "summary": "An ABP compiled and enforced on an adapter's memory operations."
+    },
+    {
+      "id": "decisions",
+      "label": "Decision and workflow policies",
+      "kind": "concept",
+      "summary": "Who decides, on what evidence, in what order."
+    },
+    {
+      "id": "twin",
+      "label": "The Northstar twin",
+      "kind": "artefact",
+      "summary": "Allowed is not right, a scripted simulation."
+    },
+    {
+      "id": "room",
+      "label": "Five ways into the room",
+      "kind": "method",
+      "summary": "Contract, questionnaire, renewal, board, twenty minutes."
+    },
+    {
+      "id": "owner",
+      "label": "Accepted, not denied",
+      "kind": "claim",
+      "summary": "A named owner, an interval, an expiry."
+    }
+  ],
+  "edges": [
+    {
+      "from": "pages",
+      "to": "abp",
+      "rel": "leads-to"
+    },
+    {
+      "from": "abp",
+      "to": "barrier",
+      "rel": "extends"
+    },
+    {
+      "from": "try",
+      "to": "abp",
+      "rel": "example-of"
+    },
+    {
+      "from": "commercial",
+      "to": "abp",
+      "rel": "example-of"
+    },
+    {
+      "from": "oversharing",
+      "to": "abp",
+      "rel": "example-of"
+    },
+    {
+      "from": "realtime",
+      "to": "ruflo",
+      "rel": "example-of"
+    },
+    {
+      "from": "abp",
+      "to": "decisions",
+      "rel": "extends"
+    },
+    {
+      "from": "decisions",
+      "to": "twin",
+      "rel": "example-of"
+    },
+    {
+      "from": "room",
+      "to": "owner",
+      "rel": "extends"
+    },
+    {
+      "from": "try",
+      "to": "room",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "three-policies-for-an-agent",
+      "allowed-is-not-right",
+      "our-first-pr-in-ruflo",
+      "approve-at-altitude",
+      "case-law-for-agents"
+    ],
+    "pages": [],
+    "sites": [
+      "https://riskmandate.ai/",
+      "https://abp.sgit.ai/",
+      "https://riskmandate.ai/try-it.html",
+      "https://abp.sgit.ai/model/barriers/index.html",
+      "https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "They are precise, and precision is not the same as clear.",
+      "why": "Accepting the criticism."
+    },
+    {
+      "text": "The policy is the description; the runtime is the enforcer; the barrier column says which rules have one.",
+      "why": "On real time."
+    },
+    {
+      "text": "The common thread is that none of these asks anyone to understand agents first.",
+      "why": "How it gets into the room."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ga-gap.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ga-gap.webp",
+      "caption": "One agent, three sets. The grant is everything the agent can actually reach through its credentials and connectors; the mandate is what the organisation authorised it to do; the delta is the difference, the authority nobody accepted. Each capability in the grant carries a barrier: nothing in the way, a rule in prose, a setting the agent's own account can change, or a boundary enforced above it. Only the last bounds anything.",
+      "kind": "concept"
+    },
+    {
+      "file": "ga-doors.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ga-doors.webp",
+      "caption": "Five ways into the room, each a question someone already has to answer: a contract, where legal and procurement ask what the vendor's agent will do with the data; a security questionnaire, where a customer asks which agents touch their data; an insurance renewal, where the question is whether AI is excluded from cover; the board's risk appetite, where the question is who can pull the plug; and twenty minutes, where anyone running an assistant asks what it can actually do.",
+      "kind": "concept"
+    }
+  ]
+}

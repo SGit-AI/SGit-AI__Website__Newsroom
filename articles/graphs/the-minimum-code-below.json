@@ -1,0 +1,195 @@
+{
+  "slug": "the-minimum-code-below",
+  "teaser": "Container security from the top down: at every layer, keep only the code the layer above needs. Measured on one real tool, with its limits.",
+  "topics": [
+    "site-and-engineering",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Bottom-up hardening still leaves code the application never runs, so security should also come from the top: starting from the use case, ask at every layer for the minimum code below and remove the rest; measured on sgit, a use case ran from 428 of 1,500 files while compiled code and coverage blind spots set the limits, and a graph traced from story to build makes the result certifiable.",
+  "nodes": [
+    {
+      "id": "bottomup",
+      "label": "Bottom up, hardened",
+      "kind": "concept",
+      "summary": "Rebuild the OS and libraries from source, minimal images, a managed process."
+    },
+    {
+      "id": "gaps",
+      "label": "Three gaps",
+      "kind": "claim",
+      "summary": "Unused code, assurance by testing, and the loop of granting more when something breaks."
+    },
+    {
+      "id": "addonly",
+      "label": "Custom Assembly only adds",
+      "kind": "example",
+      "summary": "Chainguard's tailoring tool cannot remove the source image's packages by default."
+    },
+    {
+      "id": "question",
+      "label": "The minimum code below",
+      "kind": "method",
+      "summary": "At every layer, keep what the layer above needs and remove everything else."
+    },
+    {
+      "id": "immutable",
+      "label": "The immutable line",
+      "kind": "concept",
+      "summary": "Draw the line below which nothing changes as high as the evidence allows."
+    },
+    {
+      "id": "lotl",
+      "label": "No land to live off",
+      "kind": "claim",
+      "summary": "With only the use case's code on the box, an attacker finds little to use."
+    },
+    {
+      "id": "measured",
+      "label": "1,500 files to 428",
+      "kind": "example",
+      "summary": "sgit's use case ran from a tree of only the files that ran; other commands failed."
+    },
+    {
+      "id": "binary",
+      "label": "Compiled code did not move",
+      "kind": "example",
+      "summary": "A 14.4 MB Rust binary, three quarters of the bytes, invisible to coverage."
+    },
+    {
+      "id": "tests",
+      "label": "Tests are the proof",
+      "kind": "claim",
+      "summary": "Coverage missed a compiled module; the tests caught it."
+    },
+    {
+      "id": "functions",
+      "label": "Files are a coarse unit",
+      "kind": "claim",
+      "summary": "38% of statements in kept files ran; function-level removal goes further."
+    },
+    {
+      "id": "graph",
+      "label": "A graph from story to build",
+      "kind": "method",
+      "summary": "Fractal semantic graphs make the minimum a walk and every file's reason a path."
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime minimisation exists",
+      "kind": "example",
+      "summary": "SlimToolkit and RapidFort watch what a container touches and remove the rest."
+    },
+    {
+      "id": "certify",
+      "label": "Certify what is left",
+      "kind": "claim",
+      "summary": "Absent vulnerable code needs no patch; a traced build can be certified."
+    }
+  ],
+  "edges": [
+    {
+      "from": "bottomup",
+      "to": "gaps",
+      "rel": "leads-to"
+    },
+    {
+      "from": "addonly",
+      "to": "gaps",
+      "rel": "example-of"
+    },
+    {
+      "from": "gaps",
+      "to": "question",
+      "rel": "leads-to"
+    },
+    {
+      "from": "question",
+      "to": "immutable",
+      "rel": "produces"
+    },
+    {
+      "from": "question",
+      "to": "lotl",
+      "rel": "produces"
+    },
+    {
+      "from": "measured",
+      "to": "question",
+      "rel": "example-of"
+    },
+    {
+      "from": "binary",
+      "to": "measured",
+      "rel": "extends"
+    },
+    {
+      "from": "tests",
+      "to": "measured",
+      "rel": "extends"
+    },
+    {
+      "from": "functions",
+      "to": "graph",
+      "rel": "leads-to"
+    },
+    {
+      "from": "runtime",
+      "to": "question",
+      "rel": "contrasts"
+    },
+    {
+      "from": "graph",
+      "to": "certify",
+      "rel": "leads-to"
+    },
+    {
+      "from": "immutable",
+      "to": "certify",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "attacks-rewritten-as-mandates",
+      "if-somebody-built-a-company-on-code-review",
+      "sgit-in-a-ci-pipeline",
+      "introducing-fractal-semantic-graphs"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/slimtoolkit/slim",
+      "https://www.rapidfort.com/",
+      "https://edu.chainguard.dev/chainguard/containers/custom-assembly/overview/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The evidence for what is needed is the test suite passing, not the coverage report.",
+      "why": "What the cffi result showed."
+    },
+    {
+      "text": "a vulnerability in removed code is not a patch to apply; it is a line in the record saying the code is absent",
+      "why": "Why minimisation becomes assurance."
+    }
+  ],
+  "figures": [
+    {
+      "file": "mq-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mq-layers.webp",
+      "caption": "Top down, one question at every layer: what is the minimum code below this that the layer above needs? From a user story, through the workflow, modules and functions, to the dependencies, the language runtime and the operating system. Projected from the top, derived from the code; derived and not projected is code nobody asked for.",
+      "kind": "architecture"
+    },
+    {
+      "file": "mq-measured.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mq-measured.webp",
+      "caption": "One use case, measured. sgit 0.21.0 and its dependencies, run under coverage for a CI-style use case, then run again from a tree holding only the files that ran: 1,500 files down to 428, Python source from 4.72 MB to 1.98 MB, compiled code unchanged at 14.78 MB. Inside the kept files 38% of the statements ran; commands outside the use case failed; coverage missed a compiled module the tests caught.",
+      "kind": "comparison"
+    },
+    {
+      "file": "mq-landscape.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mq-landscape.webp",
+      "caption": "Three ways to get to less code. Bottom up and hardened, as Chainguard does; runtime minimisation, as SlimToolkit and RapidFort do; and top down by use case, proposed here, which starts from what the application is for and ties every remaining line to a reason.",
+      "kind": "comparison"
+    }
+  ]
+}

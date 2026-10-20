@@ -1,0 +1,275 @@
+{
+  "slug": "how-much-of-this-did-i-write",
+  "teaser": "Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.",
+  "topics": [
+    "graphs-and-knowledge",
+    "site-and-engineering"
+  ],
+  "core_idea": "Measured from the session transcript and the git history, the twenty articles of the last four weeks took 63,000 words from the author, mostly in thirty-five voice memos, and came out at 85,000 words through 122 releases, with no article from a one-line prompt; the corrections were to direction, framing, voice, vocabulary and scope rather than to hallucinations, and the input that mattered most was twenty years of published writing the agent could find and quote, which is why people with a direction are the input to the loop rather than displaced by it.",
+  "nodes": [
+    {
+      "id": "the-question",
+      "label": "How much of this did I write?",
+      "kind": "question",
+      "summary": "A friend found the volume of text baffling; the answer that I write briefs and review drafts is true and unbelieved, so the session was measured instead."
+    },
+    {
+      "id": "the-record",
+      "label": "The session record as evidence",
+      "kind": "method",
+      "summary": "The Claude Code transcript parsed for who said what and when, joined to the site's git history; limits stated, dataset published beside the article."
+    },
+    {
+      "id": "evidence-vault",
+      "label": "The evidence, as a vault",
+      "kind": "artefact",
+      "summary": "Every number as a file in a published vault with a read key: messages, releases, days, ledgers with message ids, corrections with latency, the dependency map, the article's own fractal, versions with diffs and provenance captures; built by two agents from a brief in an afternoon, and it corrected the article twice."
+    },
+    {
+      "id": "scale",
+      "label": "The scale",
+      "kind": "example",
+      "summary": "281 messages and 62,896 words in, 52,719 of them in thirty-five voice memos; twenty articles and 85,209 words out, 94 figures, 122 releases, 135 searches, 22 research agents."
+    },
+    {
+      "id": "no-one-prompt",
+      "label": "No article from a one-line prompt",
+      "kind": "claim",
+      "summary": "The shortest brief was one memo of 1,943 words; the longest ran to twenty-nine messages; the median article took three releases."
+    },
+    {
+      "id": "seven-articles",
+      "label": "Seven articles accounted for by hand",
+      "kind": "example",
+      "summary": "From 2,395 words in and 2,447 out over five rounds, to 4,522 words in plus a reader's email and 9,289 out over five; the ratio runs from one to four and is the least interesting number."
+    },
+    {
+      "id": "corrections",
+      "label": "What the corrections were",
+      "kind": "claim",
+      "summary": "Direction, framing, voice, vocabulary and scope, with one fact corrected in each direction; briefs getting better, not hallucinations being caught."
+    },
+    {
+      "id": "direction",
+      "label": "A model needs someone with a direction",
+      "kind": "claim",
+      "summary": "A model that can write well in every direction makes educated guesses; the person's job is to say which guess was meant, and each correction narrows the next."
+    },
+    {
+      "id": "the-memo-stands-on",
+      "label": "What the memo stands on",
+      "kind": "claim",
+      "summary": "The last article quotes thirty-three pieces of earlier writing: a 2010 tool, a book, 107 posts, 3,025 team files and twenty-six articles; the agent is fast because the record exists."
+    },
+    {
+      "id": "published-memory",
+      "label": "Published record as memory",
+      "kind": "concept",
+      "summary": "The memory article's mechanism measured: curated, open, machine-readable material the agent is pointed at, rebuilt from twenty-two times when the context was compacted."
+    },
+    {
+      "id": "keep-going",
+      "label": "Being able to keep going",
+      "kind": "concept",
+      "summary": "For twenty years lines of thinking stopped at the edge of what the business needed; now a thought can be followed to the end and published for the next one to stand on."
+    },
+    {
+      "id": "compounding",
+      "label": "The compounding",
+      "kind": "claim",
+      "summary": "Nineteen of twenty-seven articles cite an earlier one; corrections become rules in the build; each article is the distillation the next assumes."
+    },
+    {
+      "id": "experts-are-the-input",
+      "label": "The experts are the input",
+      "kind": "claim",
+      "summary": "Direction, angle, taste and experience are what the loop needs from a person; the architect and the reviewer scale the same way the writing does."
+    },
+    {
+      "id": "what-is-open",
+      "label": "What is open",
+      "kind": "question",
+      "summary": "The articles could be shorter; attribution is hand-checked for seven; the oldest record is quoted not counted; the conversations behind the memos are in no record."
+    },
+    {
+      "id": "better-universe",
+      "label": "A better universe to learn from",
+      "kind": "claim",
+      "summary": "The published trail of an idea, with its graphs, corrections and versions, is a better thing for a model to learn from than everything ever written without context; the vault behind this article is the next brief."
+    }
+  ],
+  "edges": [
+    {
+      "from": "the-question",
+      "to": "the-record",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-record",
+      "to": "scale",
+      "rel": "produces"
+    },
+    {
+      "from": "the-record",
+      "to": "seven-articles",
+      "rel": "produces"
+    },
+    {
+      "from": "scale",
+      "to": "no-one-prompt",
+      "rel": "produces"
+    },
+    {
+      "from": "seven-articles",
+      "to": "corrections",
+      "rel": "leads-to"
+    },
+    {
+      "from": "corrections",
+      "to": "direction",
+      "rel": "produces"
+    },
+    {
+      "from": "the-memo-stands-on",
+      "to": "published-memory",
+      "rel": "example-of"
+    },
+    {
+      "from": "seven-articles",
+      "to": "the-memo-stands-on",
+      "rel": "leads-to"
+    },
+    {
+      "from": "published-memory",
+      "to": "compounding",
+      "rel": "leads-to"
+    },
+    {
+      "from": "keep-going",
+      "to": "the-memo-stands-on",
+      "rel": "extends"
+    },
+    {
+      "from": "direction",
+      "to": "experts-are-the-input",
+      "rel": "leads-to"
+    },
+    {
+      "from": "compounding",
+      "to": "experts-are-the-input",
+      "rel": "leads-to"
+    },
+    {
+      "from": "the-record",
+      "to": "what-is-open",
+      "rel": "contrasts"
+    },
+    {
+      "from": "the-record",
+      "to": "evidence-vault",
+      "rel": "produces"
+    },
+    {
+      "from": "evidence-vault",
+      "to": "corrections",
+      "rel": "extends"
+    },
+    {
+      "from": "evidence-vault",
+      "to": "better-universe",
+      "rel": "leads-to"
+    },
+    {
+      "from": "published-memory",
+      "to": "better-universe",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "memory-is-not-a-spectator-sport",
+      "if-somebody-built-a-company-on-code-review",
+      "code-review-as-a-fractal-semantic-graph",
+      "introducing-fractal-semantic-graphs",
+      "replicating-the-agentic-inbox",
+      "the-wall-under-the-reply"
+    ],
+    "pages": [
+      "/demos/vaults/how-much-evidence/index.html",
+      "/articles/data/how-much-of-this-did-i-write.json",
+      "/articles/graphs.html",
+      "/articles/index.html"
+    ],
+    "sites": [
+      "https://diniscruz.ai/llms.txt",
+      "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+      "https://leanpub.com/secdevops"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "I rarely experience hallucinations; I experience briefs that need to be better.",
+      "why": "The finding of the corrections list: one fact wrong, the rest a model choosing a reasonable direction and a person saying which one was meant."
+    },
+    {
+      "text": "The agent is fast because the record exists.",
+      "why": "The real input is twenty years of published writing, not the memo."
+    },
+    {
+      "text": "The vaults, the graphs and the diffs are the product, not the articles.",
+      "why": "Why the evidence behind the article is published as a vault and treated as the next brief."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hmi-the-loop-as-it-ran.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hmi-the-loop-as-it-ran.webp",
+      "caption": "The loop as it actually ran between 9 September and 5 October 2026, with the counts from the session's own record. A memo sets the direction, the agent researches and drafts, I read and send it back, the release goes live, and the published piece becomes input to the next one. Every correction flows back into the draft, and the ones that become rules flow back into the build."
+    },
+    {
+      "file": "hmi-seven-articles-ledger.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hmi-seven-articles-ledger.webp",
+      "caption": "Eight articles accounted for by hand, including this one. Input is every word I typed or spoke to the agent about that article, from the first memo to the last correction. Output is the published body. Rounds are releases that changed the article's file. The lighter bars are material I brought that I had written before the session: a design pack of five documents, and a reader's email."
+    },
+    {
+      "file": "hmi-what-one-memo-stands-on.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hmi-what-one-memo-stands-on.webp",
+      "caption": "The record behind one article, by decade. Thirty-three pieces of earlier writing, none of it written for the article, found by the agent because it was published where a machine could read it, quoted with a date and linked. The agent is fast because the record exists."
+    },
+    {
+      "file": "collage.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/how-much-evidence/images/collage.webp",
+      "caption": "The nine views of the vault app: the overview, the timeline of words and releases per day, the ledger, the corrections with their latency, the dependency ring three levels deep, the evidence fractal from strategy to data, the record by era, the provenance captures, and a diff between two versions. Every screenshot in this section is a picture of the real vault."
+    },
+    {
+      "file": "timeline.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/how-much-evidence/images/timeline.webp",
+      "caption": "Twenty-seven days as words and releases. Dark teal is the memos, light teal every other message, blue the agent's prose back; amber ticks are the 123 releases, red diamonds the eleven compactions, black dots the days an article went out. Twenty releases on 21 September and nineteen on 2 October; five silent days; a 143-hour gap in the second week."
+    },
+    {
+      "file": "corrections.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/how-much-evidence/images/corrections.webp",
+      "caption": "The corrections by kind, fifteen of twenty-eight became rules, and their latency: a median of thirty-eight minutes from a release to the next correction of the same article, and five minutes from the correction to the release that carried it, with the fastest at forty seconds."
+    },
+    {
+      "file": "evidence.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/how-much-evidence/images/evidence.webp",
+      "caption": "This article's own fractal: three things it argues for, six concepts, thirteen claims, twenty-eight pieces of evidence and fourteen data files, with one claim traced down to the file and field that measures it. The same five columns could be built for every article from the graph file beside it."
+    },
+    {
+      "file": "hmi-the-articles-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hmi-the-articles-map.webp",
+      "caption": "The twenty-eight articles as the build draws them on 5 October 2026, oldest at the top and clockwise from there, sized by how many other articles link to them. Teal edges run from an article to an earlier one it cites; the six amber edges run the other way, from an older article updated to point at a newer one. The fractal semantic graphs article, with ten articles linking to it, is the one everything else stands on."
+    },
+    {
+      "file": "hmi-this-articles-graph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hmi-this-articles-graph.webp",
+      "caption": "This article's own graph, as the build draws it from the JSON beside the article: thirteen nodes, thirteen edges, coloured by kind. The same file tells the map which articles this one builds on, and tells an agent what the article claims before it reads a word of it."
+    },
+    {
+      "file": "hmi-one-page-by-another-model.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hmi-one-page-by-another-model.webp",
+      "caption": "The article as a one-page state, second version, generated with ChatGPT from the published text on 5 October 2026 and credited by it to the source. Two numbers in it are wrong, as the paragraph above says; the style and the slogans in the margins are the other model's, kept as they came."
+    }
+  ]
+}

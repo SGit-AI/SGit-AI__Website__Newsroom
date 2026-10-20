@@ -1,0 +1,21 @@
+{
+ "what": "The versions of the TEXT of https://newsroom.sgit.ai/publishers/index.html (admin/content/publishers/page.md), oldest first. A change to the text is the next minor version; a rewrite is the next major, the editor's call. text_sha256 is the sha256 of page.md as that version was built; admin/build/publishers.py stops when page.md no longer matches the newest entry. Each version is frozen at publishers/versions/<version>.md by the release that made it. The live parts of the page (features, newest articles, the five to start with) are not part of the text; publishers/changes.json records what they did per release.",
+ "versions": [
+  {
+   "version": "v1.0.0",
+   "date": "2026-10-11",
+   "site": "v0.7.1",
+   "by": "agent@riskmandate.ai, in the sgit.ai site session, from Dinis Cruz's brief",
+   "why": "First published, on sgit.ai, written to be forwarded to publishers; imported here at the same address from v0.12.52 to v0.12.112, unchanged. Frozen from the imported markdown twin.",
+   "text_sha256": null
+  },
+  {
+   "version": "v2.0.0",
+   "date": "2026-10-18",
+   "site": "v0.12.113",
+   "by": "newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026)",
+   "why": "Rewritten for the week since: charging for what is read, folds on a return visit, reviews on the record, the reader's vault on every device, search and ask, who is speaking, the publishers' section and the briefs. The page moves from sgit.ai to this site and is built in every release: the features table, the newest for publishers and the five to start with now come from the site's own data.",
+   "text_sha256": "63704fcb0aa26d0bf2a55c39ce1cdb41bbc7928184af1630cac9d6fa44a18fbc"
+  }
+ ]
+}

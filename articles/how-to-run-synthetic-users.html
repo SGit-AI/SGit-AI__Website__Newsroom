@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon, SGit Newsroom</title>
+<meta name="description" content="A how-to, from three studies we have published: store.sgit.ai in September, riskmandate.ai the day after, and newsroom.sgit.ai on 10 October, run for this article. Five to ten invented users of about five types, each with a profile, a question they arrive with and an expected journey, drive a real browser one screenshot at a time, saying what they see, think, ask and do; then they are interviewed and rate the experience, and their findings are ordered by what they cost. Claude Sonnet is good enough to play each user; the study can live in a GitHub repository or in an encrypted vault shared by a link. On the newsroom, five readers took 62 steps, asked 51 questions the site did not answer and produced 31 findings, six blocking; four of them left. Two findings turned out to be caused by our own tooling, and one turned out to be a real bug: 51 of 527 figures missing after the move. This article sets out each step with examples and screenshots, what went wrong, and a template to start from.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/how-to-run-synthetic-users.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/how-to-run-synthetic-users.html">
+<meta property="og:title" content="How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon, SGit Newsroom">
+<meta property="og:description" content="A how-to, from three studies we have published: store.sgit.ai in September, riskmandate.ai the day after, and newsroom.sgit.ai on 10 October, run for this article. Five to ten invented users of about five types, each with a profile, a question they arrive with and an expected journey, drive a real browser one screenshot at a time, saying what they see, think, ask and do; then they are interviewed and rate the experience, and their findings are ordered by what they cost. Claude Sonnet is good enough to play each user; the study can live in a GitHub repository or in an encrypted vault shared by a link. On the newsroom, five readers took 62 steps, asked 51 questions the site did not answer and produced 31 findings, six blocking; four of them left. Two findings turned out to be caused by our own tooling, and one turned out to be a real bug: 51 of 527 figures missing after the move. This article sets out each step with examples and screenshots, what went wrong, and a template to start from.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/how-to-run-synthetic-users.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/how-to-run-synthetic-users.jpg">
+<link rel="alternate" type="text/markdown" href="how-to-run-synthetic-users.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon, SGit Newsroom", "headline": "How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon, SGit Newsroom", "description": "A how-to, from three studies we have published: store.sgit.ai in September, riskmandate.ai the day after, and newsroom.sgit.ai on 10 October, run for this article. Five to ten invented users of about five types, each with a profile, a question they arrive with and an expected journey, drive a real browser one screenshot at a time, saying what they see, think, ask and do; then they are interviewed and rate the experience, and their findings are ordered by what they cost. Claude Sonnet is good enough to play each user; the study can live in a GitHub repository or in an encrypted vault shared by a link. On the newsroom, five readers took 62 steps, asked 51 questions the site did not answer and produced 31 findings, six blocking; four of them left. Two findings turned out to be caused by our own tooling, and one turned out to be a real bug: 51 of 527 figures missing after the move. This article sets out each step with examples and screenshots, what went wrong, and a template to start from.", "url": "https://newsroom.sgit.ai/articles/how-to-run-synthetic-users.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl here" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon</p>
+ <h1>How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-10 &middot; <a href="versions/how-to-run-synthetic-users.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.40</a> &middot; <span class="chip">synthetic-users</span><span class="chip">ux</span><span class="chip">testing</span><span class="chip">personas</span><span class="chip">agents</span><span class="chip">claude</span><span class="chip">playwright</span><span class="chip">vaults</span><span class="chip">newsroom</span><span class="chip">how-to</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A how-to, from three studies we have published: store.sgit.ai in September, riskmandate.ai the day after, and newsroom.sgit.ai on 10 October, run for this article. Five to ten invented users of about five types, each with a profile, a question they arrive with and an expected journey, drive a real browser one screenshot at a time, saying what they see, think, ask and do; then they are interviewed and rate the experience, and their findings are ordered by what they cost. Claude Sonnet is good enough to play each user; the study can live in a GitHub repository or in an encrypted vault shared by a link. On the newsroom, five readers took 62 steps, asked 51 questions the site did not answer and produced 31 findings, six blocking; four of them left. Two findings turned out to be caused by our own tooling, and one turned out to be a real bug: 51 of 527 figures missing after the move. This article sets out each step with examples and screenshots, what went wrong, and a template to start from.</em></p>
+<p>We have a lot of websites now, and most of them were built by agents in days, not months. What none of them has had is a steady supply of people telling us where they got lost. Synthetic users are the cheapest way I have found to get a first version of that: invented people, played by a model, driving a real browser through the site one screenshot at a time, and then telling you what they made of it.</p>
+<p>We have done this three times, and each time it found something that mattered. In September, five invented buyers walked through <a href="https://sgit.ai/demos/vaults/synthetic-users/index.html">store.sgit.ai</a>. The day after, the same method pointed at <a href="https://sgit.ai/demos/vaults/synthetic-users-riskmandate/index.html">riskmandate.ai</a> caught two JavaScript errors that had shipped and that every test had passed over. And for this article, five invented readers went through our newly launched <a href="https://newsroom.sgit.ai/">newsroom.sgit.ai</a>, and four of them left. This is the how-to: the pieces you need, the steps, examples and screenshots from all three, and the mistakes we made so you do not have to.</p>
+<figure class="shot" data-shot="app-front.webp" data-dir="../demos/vaults/newsroom-synthetic-users/images/" data-alt="The newsroom study as it opens: five invented readers on the left, each with an outcome, the counts across all of them at the top, and the disclosure that everybody in it is invented before you can scroll past it." data-href="../demos/vaults/newsroom-synthetic-users/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The newsroom study as it opens: five invented readers on the left, each with an outcome, the counts across all of them at the top, and the disclosure that everybody in it is invented before you can scroll past it. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<h2>In short</h2>
+<ul>
+<li><b>A synthetic user is a record, not a character.</b> A situation, a question they arrive with, what they know and do not know, what they decide on, what makes them leave, their patience and their screen size.</li>
+<li><b>Give the agent the screenshot, not the page's code.</b> An agent that reads the code finds every link every time, and so finds no confusion, which is the only thing worth running this for.</li>
+<li><b>Claude Sonnet is good enough to play each user.</b> We ran one Sonnet agent per persona, in parallel. Opus wrote the personas and the helper, and checked the findings.</li>
+<li><b>Keep it in a GitHub repository or a vault.</b> A public repository is the easiest to share; a vault is encrypted, opens as an app and is shared by a link.</li>
+<li><b>Five to ten users, about five types.</b> Who the site is for, who it has to convince, a sceptic who will never buy, someone on a phone, someone anxious about money.</li>
+<li><b>Write the expected journey first.</b> The difference between what you expected and what happened is often the finding.</li>
+<li><b>Interview them at the end, and ask for a rating.</b> The same questions for everyone, so answers can be compared.</li>
+<li><b>Order findings by what they cost</b>, and <b>check every surprising one</b> before you publish. On the newsroom, two were caused by our own helper, and one was a real bug we then measured.</li>
+<li><b>It is not user research.</b> Say so above the fold. What is evidence is what the browser captured.</li>
+</ul>
+<h2 id="pieces">What you need</h2>
+<p>Three pieces, and none of them is exotic.</p>
+<p><b>A model to play each user.</b> Claude Sonnet is good enough. Reading a screenshot, staying in character, saying what is on screen and choosing one action is well within what it does, and it is quicker and cheaper than Opus for a job you will run five or ten times in parallel. On the newsroom, each of the five readers was a separate Sonnet agent with its own browser profile, all five running at once. Opus is worth it for the parts that need judgement about evidence: writing the personas and journeys, building the helper, and checking whether a finding is about the site or about the tooling. Opus works for the users too, if you have it; we have not seen Sonnet's runs fall short in a way that Opus would have fixed.</p>
+<p><b>A browser the model can drive one step at a time.</b> The model needs a screenshot in and one action out: click here, scroll, go back, leave. We use a small <a href="https://playwright.dev/">Playwright</a> helper with Chromium, 58 lines, which takes one action per call, takes a screenshot at the persona's own window size, and writes the browser's own record of what happened: the address, the scroll position, the page height, any page errors, and any request it refused. It is in the newsroom vault as <code>tools/step.mjs</code>.</p>
+<p><b>Somewhere to keep the study</b>, because a study you cannot open again cannot be compared with the next one. Two options work:</p>
+<div class="tablewrap"><table>
+<tr><th></th><th>A GitHub repository</th><th>An sgit vault</th></tr>
+<tr><td><b>Sharing</b></td><td>Public is the easiest: anyone can read it, link to a line, and open an issue. Private needs a seat for each reader</td><td>A link with a read key; the reader needs no account</td></tr>
+<tr><td><b>What the server sees</b></td><td>Everything</td><td>Nothing: content is encrypted before it leaves your machine</td></tr>
+<tr><td><b>How it opens</b></td><td>As files, or as a GitHub Pages site if you build one</td><td>As an app: the vault's <code>index.html</code> runs in the browser</td></tr>
+<tr><td><b>Where it fits</b></td><td>Public sites, open findings, a team that already lives in GitHub</td><td>A site that is not public yet, findings you want to share with some people only, or work from Claude Code or Cowork that you hand over by a link</td></tr>
+</table></div>
+<p>All three of our studies are vaults, so each one opens as the same small app: a rail of users, and behind each one the run, the interview, who they are, what we expected and what they found. If your site is public and the findings are not sensitive, a public repository is just as good, and probably easier for the people who will fix things.</p>
+<h2 id="method">The method, step by step</h2>
+<figure class="shot" data-shot="su-method.webp" data-dir="images/" data-alt="The eight steps, with what we used for each on the newsroom. The first three are written before anything runs."><figcaption>The eight steps, with what we used for each on the newsroom. The first three are written before anything runs.</figcaption></figure>
+<h3 id="who">1. Choose who: five to ten users, about five types</h3>
+<p>Pick for who the site is for and who it has to convince, not for a demographic spread. Five is enough to see patterns; ten is useful when you have two of each type and want to see whether a finding holds between them.</p>
+<p>For the store, the five were buyers with different authority: a staff engineer paying on her own card, a technical co-founder for whom £500 is his call alone, a fund partner, a COO who signs up to £10,000, and a security engineer who reads vendor sites for sport and is never the buyer. For the newsroom, they were the people the newsroom has to win:</p>
+<ul>
+<li><b>An editor</b> at a regional daily, whose board wants a second revenue line, arriving at the article about the reading meter.</li>
+<li><b>A commuter</b> who never pays for news, on a phone, with eight minutes.</li>
+<li><b>An independent writer</b> with about 40,000 readers a month, who could install the meter on her own site.</li>
+<li><b>A media researcher</b> who studies trust in news and is sceptical of AI-written journalism.</li>
+<li><b>A retired teacher</b> on a tablet, sent by her grandson for a local story, who worries about being charged.</li>
+</ul>
+<p>Two habits have paid off every time. <b>Include somebody who will never buy.</b> The sceptic reads the site adversarially, and finds the claims that do not hold. <b>Put at least one on a phone.</b> In the store study, the person carrying the largest decision a single person makes alone on that site did the whole thing on a phone, and produced the most questions and the most confusion of anyone.</p>
+<h3 id="profile">2. Write each profile</h3>
+<p>The profile is what the agent checks itself against at every step: would she know that? would she leave now? So it is a record with fields, not a paragraph of colour.</p>
+<figure class="shot" data-shot="su-persona.webp" data-dir="images/" data-alt="One of the newsroom profiles, field by field. The two fields shaded amber, what they do not know and what makes them leave, are the ones that make a run honest."><figcaption>One of the newsroom profiles, field by field. The two fields shaded amber, what they do not know and what makes them leave, are the ones that make a run honest.</figcaption></figure>
+<p>The fields that matter most are the negative ones. <b>What they do not know</b> stops the agent using knowledge the person would not have: our retired teacher does not know what credit, a balance or a top-up mean here, so when the site shows "£5.00" in the corner, she has to work it out like anybody else. <b>What makes them leave</b> gives the run an honest ending, and leaving is often the most useful ending of all.</p>
+<p>Every person is invented. Do not model real people or composites of them, and do not use protected traits as stand-ins for behaviour. A profile describes a situation and a question, so that anybody can argue with it.</p>
+<h3 id="journey">3. Write the expected journey, before any run</h3>
+<p>For each user, write what you expect them to do: a hypothesis, the path, and what to watch for. For the editor, we expected her to read the article, open the meter's documentation, check the security page, look for who to contact, and try the rating card at the foot of the article. We were watching for whether she found who to talk to.</p>
+<p>She did not. That is the first blocking finding of the study, and it is visible as a difference between two files, <code>journeys.json</code> and her run, rather than only as a sentence in a report. Writing the journey first also stops you from deciding afterwards that whatever happened was what you expected.</p>
+<h3 id="run">4. Drive a browser, one screenshot at a time</h3>
+<p>This is the run, and the method is in one rule: <b>the agent gets the screenshot, the same thing a person would have, and not the page's code.</b> Then it loops:</p>
+<ol>
+<li><b>Observe</b>: a screenshot at the persona's own window size.</li>
+<li><b>Say what you see</b>, at the level of detail this persona would take in. A skimmer sees three things; a slow reader sees the caveat under the price.</li>
+<li><b>Think</b>: what they are weighing, and what they are suspicious of. This is worth more than the click path.</li>
+<li><b>Record a question</b>, if the page raised one and did not answer it. These are the output.</li>
+<li><b>Record confusion</b>, if there was any. A run with no confusion anywhere is a run that was not done properly.</li>
+<li><b>Act</b>: one action, with the reason in the persona's terms, not the site's.</li>
+<li><b>Loop</b>, until they get what they came for, leave, or run out of patience.</li>
+</ol>
+<figure class="shot" data-shot="run-local.webp" data-dir="../demos/vaults/newsroom-synthetic-users/images/" data-alt="Step 1 of the retired teacher&#x27;s run. The screenshot is the citation for everything she says next to it: a pound sign at the very top before she has read a thing, and her question, whether it is something she has been charged, given, or must pay." data-href="../demos/vaults/newsroom-synthetic-users/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Step 1 of the retired teacher's run. The screenshot is the citation for everything she says next to it: a pound sign at the very top before she has read a thing, and her question, whether it is something she has been charged, given, or must pay. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>A few rules keep the runs honest. Stay in the persona. Never use knowledge they would not have: if they have not opened a page, they do not know what is on it. Do not fix the site in the narration; "it should say X" belongs in the interview. Every claim of confusion must point at something on the screenshot. We capped each run at 14 actions; three of the five readers left before the cap, and two reached it.</p>
+<p>The screenshot also catches what a person on a small screen meets first. On the commuter's phone, the first screen of the newsroom is the masthead, eight menu links and an editor's note about agents; nothing says what the site is about, or that the £5.00 next to the name is free credit.</p>
+<figure class="shot" data-shot="step-commuter-01.webp" data-dir="../demos/vaults/newsroom-synthetic-users/images/" data-alt="The commuter&#x27;s first screen, 390 by 844, exactly as the browser showed it. He read the £5.00 as a price." data-href="../demos/vaults/newsroom-synthetic-users/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The commuter's first screen, 390 by 844, exactly as the browser showed it. He read the £5.00 as a price. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p><b>Run against a copy of your site, if you can.</b> For the newsroom, the helper answered every request to newsroom.sgit.ai from a local copy of the site's deployed files, which we had first checked were byte-identical to the live site by sha256, and refused every other request and every request that was not a read. Nothing reached the live site, nothing could be submitted, and the run can be repeated against exactly the same bytes. The store study did the same. It also matters for safety, and I come back to that below.</p>
+<h3 id="interview">5. Interview them, and ask for a rating</h3>
+<p>When the run ends, however it ends, each user answers the same ten questions:</p>
+<ol>
+<li>In one sentence, what is this site?</li>
+<li>Was any of it for you? Which part?</li>
+<li>Did you believe it? What made you believe it, or not?</li>
+<li>Where did you have to guess?</li>
+<li>What did you still not know at the end?</li>
+<li>Was the price right for what you got?</li>
+<li>Would you pay, or pay more? If not, what would have to change?</li>
+<li>One change. What is it?</li>
+<li>Would you send this to somebody else? Who?</li>
+<li>Rate the experience from 1 to 5, and say why in one sentence.</li>
+</ol>
+<p>The same questions for everyone means the answers can be read down a column as well as across a run. Down the "one change" column for the newsroom, the commuter and the retired teacher both asked for one plain line at the top, saying what the site is and what the money means. The editor asked for "a named contact and an indicative pilot price where the abstract makes its offer". The researcher asked to "put the agent involvement on the byline of every article, where a reader meets the name".</p>
+<figure class="shot" data-shot="interview-local.webp" data-dir="../demos/vaults/newsroom-synthetic-users/images/" data-alt="The retired teacher&#x27;s interview. &quot;I half believed it&quot;: the reassurance landed, and then the line saying the cart was simulated made her wonder how carefully it is all run." data-href="../demos/vaults/newsroom-synthetic-users/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The retired teacher's interview. "I half believed it": the reassurance landed, and then the line saying the cart was simulated made her wonder how carefully it is all run. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>The ratings were 2, 2, 3, 3 and 2. The interview is also where the honesty of a site shows up. In the Risk Mandate study, one of the buyers said of the site's admissions: "Nobody oversells and then volunteers that." On the newsroom, the editor trusted "the honesty" and doubted "the engineering", because the balance showed £4.97 in the top bar and £4.49 on the reader card on the same screen.</p>
+<h3 id="findings">6. Order the findings by what they cost</h3>
+<p>Each run ends with three to six findings, each with the page, the step, and what it costs: <b>blocks a pilot</b>, <b>costs a payment</b>, <b>costs trust</b>, <b>loses a reader</b>, or <b>minor</b>. Ordering by cost, not by who found it, is what turns five stories into a list someone can work through. Each finding points at a page and a step, so anybody can open the screenshot and check.</p>
+<figure class="shot" data-shot="findings.webp" data-dir="../demos/vaults/newsroom-synthetic-users/images/" data-alt="Everything they found on the newsroom, grouped by severity, each tagged with what it costs, the page, and the run that found it." data-href="../demos/vaults/newsroom-synthetic-users/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>Everything they found on the newsroom, grouped by severity, each tagged with what it costs, the page, and the run that found it. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>The newsroom produced 31 findings: six blocking, 19 worth fixing, four minor, and two that turned out not to be about the site at all. The blocking ones were all about the step after reading: no contact for a pilot, nothing showing real money moving, install steps that assume a developer, no paragraph a writer could give her readers, no clear way the writer gets paid, and a top-up page that says it is simulated while asking for money. Most of them can be fixed with a few words in the right place; one needs a decision about how payments are shown.</p>
+<h3 id="check">7. Check before you publish</h3>
+<p>This is the step that separates a study you can stand behind from a pile of plausible paragraphs. Re-check every surprising finding against the browser's own record and the site's files, label what your tooling caused, and measure what you can.</p>
+<p>On the newsroom, two findings did not survive. The editor reported the article page "jumping backwards" while she scrolled, and the commuter reported that tapping a headline opened a different article. Both looked like real bugs, and both were ours: the helper reopened the page on every step and restored the scroll position before the images had loaded, when the page was shorter (13,562 pixels against 15,728 once loaded), so the position, and the link under the finger, were not where the screenshot showed them. They are kept in the vault, labelled as helper artefacts, rather than deleted, because a findings list that silently loses items cannot be compared with the next one.</p>
+<p>One finding got bigger. The researcher hit "screenshot unavailable" where the evidence should have been, in the lead article. We checked the site's files: <b>51 of the 527 figure references in the newsroom's articles point at vault images that the move from sgit.ai did not copy</b>, so 10 articles show the same gap. The same image returns 200 on sgit.ai and 404 on newsroom.sgit.ai.</p>
+<figure class="shot" data-shot="step-researcher-12.webp" data-dir="../demos/vaults/newsroom-synthetic-users/images/" data-alt="The researcher&#x27;s step 12 on newsroom.sgit.ai: &quot;screenshot unavailable (app-email-m60.webp)&quot;, and below it a dark box with only the image&#x27;s description in it." data-href="../demos/vaults/newsroom-synthetic-users/index.html" data-href-label="Open the vault page" data-href-target="_self"><figcaption>The researcher's step 12 on newsroom.sgit.ai: "screenshot unavailable (app-email-m60.webp)", and below it a dark box with only the image's description in it. <b>Click the image to open the vault page &#8599;</b></figcaption></figure>
+<p>That pattern has held on every site. The findings that pay for the whole exercise tend to be the ones the method finds because it drives a real browser, not because the persona is clever: on Risk Mandate, a JavaScript error on every page visited, which had shipped and which every existing test had passed over because the HTML still rendered; on the newsroom, figures that went missing in a move. Neither is a matter of opinion.</p>
+<figure class="shot" data-shot="su-studies.webp" data-dir="images/" data-alt="The three studies side by side, counted from the run records in each vault."><figcaption>The three studies side by side, counted from the run records in each vault.</figcaption></figure>
+<h3 id="again">8. Publish, fix, and run again</h3>
+<p>Publish the study with the protocol inside it, so the next run follows the same loop and can be compared with this one. Say above the fold that everybody in it is invented, and separate what the model wrote from what the browser captured. Then fix things, and run the same five again. The second run is where the value compounds: a finding that disappears is a fix that worked, and a new one is something the fix broke.</p>
+<p>The store study already did part of this: four findings were fixed in the store release that followed, and they are kept in the list, marked fixed. One fix was better than the finding asked for: a persona wanted a number for how long something takes, and the page now says the time has never been measured for a paying buyer, which is the more honest answer and the harder one to write.</p>
+<h2 id="wrong">What went wrong, so you can skip it</h2>
+<p>The newsroom study took a little over two hours from the first persona starting to the vault being published, and most of that time went on our own mistakes.</p>
+<p><b>The helper reloaded the page on every step</b>, which meant the reading meter charged again each time. The fix was to carry the browser tab's session over between steps, as a tab that stays open would.</p>
+<p><b>Scrolling stuck</b> at one position. The fix was to scroll by an amount from wherever the page is, as a person does. After both fixes, all five runs were done again from the start, and those are the runs in the vault.</p>
+<p><b>The scroll position was restored before the images loaded</b>, which caused the two helper artefacts. The better design is a browser that stays open for the whole run, so each action happens on the page the persona is actually looking at. That is the first change for the next run.</p>
+<p><b>The protocol copied from the store study carried leftovers</b>, such as a rule about a discount code, which never applied to a newsroom. The agents ignored it, but it is a reminder that the protocol is part of the study: adapt it to each site, and keep the changes in the vault.</p>
+<p><b>A safety check stopped the first runs, and it was right to.</b> Claude Code's automatic permission mode blocked the persona agents when they tried to drive the live site through a browser. We did not try to get around it. Instead, we served the verified local copy, so no request could leave the machine, and asked Dinis, who approved one narrow rule allowing exactly that helper and nothing else. If you run synthetic users with agents, expect the same, and treat it as a reason to run against a copy: it is safer, and it makes the run repeatable.</p>
+<h2 id="template">A template to start from</h2>
+<p>This is the shape of the prompt each persona agent was given on the newsroom, shortened. The full version, with the protocol and the record format, is in the vault.</p>
+<pre class="shell">
+You are playing ONE synthetic user on &lt;site&gt;, for a published study.
+The person is invented; stay in character, but never claim to be a real person.
+
+PERSONA (invented): &lt;the profile record&gt;
+THE PROTOCOL: &lt;observe, say what you see, think, question, confusion, act, loop&gt;
+RULES: stay in the persona; never use knowledge they would not have;
+leaving is a valid ending; do not fix the site in the narration;
+every confusion points at something on the screenshot.
+
+HOW YOU DRIVE THE BROWSER: only this helper, one action per call:
+  node step.mjs &lt;run dir&gt; start &lt;url&gt; &lt;width&gt; &lt;height&gt; [mobile]
+  then one of: goto &lt;path&gt; | click &lt;x&gt; &lt;y&gt; | clicktext "&lt;text&gt;" | scroll &lt;px&gt; | back | look
+After every call, open the screenshot and decide the next action ONLY from what
+is visible in it. Do not read the page's HTML, DOM or markdown.
+
+Run until the persona leaves, runs out of patience, or gets what they came for,
+at most 14 actions. Then write run.json with: the steps (saw, thought, question,
+confusion, action, why), the interview (the ten questions), a rating from 1 to 5,
+and 3 to 6 findings with the page, the step and what each one costs.
+</pre>
+<p>And the files, as they sit in the newsroom vault:</p>
+<pre class="shell">
+data/personas.json    the users, and why these ones
+data/journeys.json    what each was expected to do, written before any run
+data/protocol.json    the loop, the rules, the interview, the record format
+data/checks.json      what was checked after the runs: artefacts, and measured findings
+runs/&lt;run&gt;/run.json   the run as the persona wrote it
+runs/&lt;run&gt;/NN.png     what they were looking at, step by step
+runs/&lt;run&gt;/_capture.json   the browser's own record of every step
+tools/step.mjs        the browser helper
+tools/bundle.py       rebuilds the app's data
+index.html, app.json  the app the vault opens as
+</pre>
+<h2 id="next">What is next</h2>
+<p>We have many sites to run this on, and the plan is simple: every site gets five users before it is called done, and the same five again after the fixes. The newsroom findings go to the session that runs newsroom.sgit.ai, starting with the 51 missing figures and the one plain line at the top. Personas can also be shared between sites: the staff engineer from the store study walked Risk Mandate too, which is what turns two separate studies into a comparison, and the <a href="a-link-to-a-persona.html">persona in a vault</a> idea would let the same synthetic users follow us from site to site.</p>
+<p>If you would like five synthetic users on your own site, or want to compare notes on how you do this, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo from Dinis Cruz, and the three published studies, each opened with its read key: <a href="https://sgit.ai/demos/vaults/synthetic-users/index.html">synthetic users on store.sgit.ai</a> (vault g2hei4u6, 15 September 2026), <a href="https://sgit.ai/demos/vaults/synthetic-users-riskmandate/index.html">synthetic users on riskmandate.ai</a> (vault o3q6zhtr, 16 September 2026) and <a href="../demos/vaults/newsroom-synthetic-users/index.html">synthetic users on newsroom.sgit.ai</a> (vault bg1opz3c, 10 October 2026), run for this article. Every number is counted from the run records in those vaults. The newsroom runs drove Chromium against newsroom.sgit.ai v0.6.1, served from a local copy of its deployed files, on 10 October 2026. The persona agents were Claude Sonnet; this article and the study were put together by Claude Opus in the sgit.ai site session.</p>
+<sg-meter view="page" kind="article" date="2026-10-10" topics="vaults-and-method site-and-engineering" title="How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#how-to-run-synthetic-users">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="a-link-to-a-persona.html">A link to a persona: send people to the newsroom as someone, not as nobody</a> <span class="dim">Send a CISO to the newsroom as a CISO: personas kept in a vault by the newsroom's agents, opened from a link, followed or forked.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="short-punchy-and-co-written.html">Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop</a> <span class="dim">Generation Z Developers (AI edition) must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.</span></li><li><a href="the-homepage-is-a-vault.html">The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it</a> <span class="dim">A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.</span></li><li><a href="four-frameworks-one-agent.html">Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs</a> <span class="dim">iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.</span></li><li><a href="ways-to-read-one-article.html">Ways to read one article: the finished piece stays at the centre, and the reader picks the way in</a> <span class="dim">The five readers' views arrived as folds inside the long piece; now the reader picks the way in, with a default, and the finished article stays at the centre.</span></li><li><a href="the-article-remains-a-product.html">The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs</a> <span class="dim">Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.</span></li><li><a href="explorer-to-villager-newsroom.html">Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it</a> <span class="dim">The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.</span></li><li><a href="the-passkey-opens-the-vault.html">The passkey opens the vault: a door per path, a master vault for every user, and no server of ours</a> <span class="dim">Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.</span></li><li><a href="i-miss-it.html">I miss it, so it is working: the people who decide the roadmap have to use the product, and the vault the newsroom now needs</a> <span class="dim">I read the newsroom on four devices and they do not agree. Missing a feature is the best sign; the makers must use it. And the brief for the reader's vault.</span></li><li><a href="a-reading-list-in-a-link.html">From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work</a> <span class="dim">A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.</span></li><li><a href="a-model-in-the-tab.html">A model in the tab: Chrome now ships an LLM to capable desktops, and it is the hardest piece of the client-side puzzle</a> <span class="dim">Chrome now ships a language model any page can prompt, offline, on capable desktops. The last piece of the client-side puzzle, with rough edges.</span></li><li><a href="no-server-by-design.html">No server, by design: first I retired the database, now I am retiring the back end</a> <span class="dim">First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.</span></li><li><a href="where-the-platform-draws-the-line.html">Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it</a> <span class="dim">Microsoft's MXC and ACS, briefed field by field and mapped to Agent Behaviour Policies: the platform bounds what it can see; the business logic is above.</span></li><li><a href="authority-outside-the-model.html">Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan</a> <span class="dim">Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 67 &middot; <a href="../for/make.html#r=67">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/how-to-run-synthetic-users.jpg" download>how-to-run-synthetic-users.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="how-to-run-synthetic-users.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

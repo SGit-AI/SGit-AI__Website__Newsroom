@@ -1,0 +1,251 @@
+{
+  "id": "nsdb-queries-sql",
+  "version": "v0.3.4",
+  "note": "Worked SQL queries. at_build is what each returned when the site was built, so a reader's run can disagree.",
+  "queries": [
+    {
+      "id": "speakers-by-class",
+      "title": "Who is speaking, by role class",
+      "note": "The one classification the graph makes rather than reads, counted. `role_class` is a published formula over the listed title.",
+      "sql": "SELECT role_class, COUNT(*) AS speakers\nFROM nodes\nWHERE type = 'Person'\nGROUP BY role_class\nORDER BY speakers DESC;",
+      "at_build": {
+        "rows": 4,
+        "columns": [
+          "role_class",
+          "speakers"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "orgs-with-several",
+      "title": "Organisations listing more than one speaker",
+      "note": "A join across the `listed_under` edge. Organisations are derived from the speaker cards, so this is the speaker list folded, not a registry.",
+      "sql": "SELECT o.label AS organisation, COUNT(*) AS speakers\nFROM edges e\nJOIN nodes p ON p.id = e.source\nJOIN nodes o ON o.id = e.target\nWHERE e.verb = 'listed_under'\nGROUP BY o.label\nHAVING COUNT(*) > 1\nORDER BY speakers DESC, organisation;",
+      "at_build": {
+        "rows": 3,
+        "columns": [
+          "organisation",
+          "speakers"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "programme",
+      "title": "The programme as a table",
+      "note": "Sessions with their stage, resolved through the `on_stage` edge. Sessions with no stage on the agenda keep NULL rather than a guess.",
+      "sql": "SELECT n.day, n.time, n.label AS session, n.kind,\n       (SELECT s.label FROM edges e JOIN nodes s ON s.id = e.target\n        WHERE e.source = n.id AND e.verb = 'on_stage') AS stage\nFROM nodes n\nWHERE n.type = 'Session'\nORDER BY n.day, n.time;",
+      "at_build": {
+        "rows": 16,
+        "columns": [
+          "day",
+          "time",
+          "session",
+          "kind",
+          "stage"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "arrivals",
+      "title": "Who arrived between the two snapshots",
+      "note": "The `absent_from` edge is only written for people the diff found. Five names are absent from the 8 September copy and present on 13 September.",
+      "sql": "SELECT p.label AS person, s.label AS snapshot, e.verb\nFROM edges e\nJOIN nodes p ON p.id = e.source\nJOIN nodes s ON s.id = e.target\nWHERE e.verb IN ('absent_from', 'present_in')\nORDER BY p.label, s.label;",
+      "at_build": {
+        "rows": 12,
+        "columns": [
+          "person",
+          "snapshot",
+          "verb"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "no-longer-listed",
+      "title": "Who is no longer listed, and why the reason column is empty",
+      "note": "One row. The graph records the removal and never a reason, because the source gives none.",
+      "sql": "SELECT label AS person, no_longer_listed, source\nFROM nodes\nWHERE type = 'Person' AND no_longer_listed = 1;",
+      "at_build": {
+        "rows": 1,
+        "columns": [
+          "person",
+          "no_longer_listed",
+          "source"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "verbs",
+      "title": "Every verb with its inverse, in both languages",
+      "note": "The ontology as a table. No verb is its own inverse; that is a build gate on the Portugal section and a query here.",
+      "sql": "SELECT verb, inverse, pt_verb, pt_inverse, origin\nFROM verbs\nORDER BY verb;",
+      "at_build": {
+        "rows": 23,
+        "columns": [
+          "verb",
+          "inverse",
+          "pt_verb",
+          "pt_inverse",
+          "origin"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "coverage",
+      "title": "The press, with the hash each page was frozen under",
+      "note": "Seven third-party pages, each cited only after it was frozen and hashed. The `what_it_says` column is our summary in our words; the pages are never quoted.",
+      "sql": "SELECT publisher, kind, published, substr(sha256, 1, 12) AS sha256_prefix, bytes\nFROM coverage\nORDER BY published IS NULL, published, publisher;",
+      "at_build": {
+        "rows": 7,
+        "columns": [
+          "publisher",
+          "kind",
+          "published",
+          "sha256_prefix",
+          "bytes"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "story-sources",
+      "title": "What each story stands on",
+      "note": "The `stands_on` edge from a story to a source. A story with one publisher behind it says so here.",
+      "sql": "SELECT st.label AS story, src.label AS source\nFROM edges e\nJOIN nodes st ON st.id = e.source\nJOIN nodes src ON src.id = e.target\nWHERE e.verb = 'stands_on'\nORDER BY story, source;",
+      "at_build": {
+        "rows": 10,
+        "columns": [
+          "story",
+          "source"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "path",
+      "title": "A path as a sentence, the SQL way",
+      "note": "Session, part of, event, takes place at, place. SQL can walk a fixed-length path; it needs one join per hop and knows nothing about inverses. Compare the same question in SPARQL on the graph console.",
+      "sql": "SELECT s.label AS session, 'part of' AS v1, ev.label AS event,\n       'takes place at' AS v2, pl.label AS place\nFROM nodes s\nJOIN edges e1 ON e1.source = s.id AND e1.verb = 'part_of'\nJOIN nodes ev ON ev.id = e1.target\nJOIN edges e2 ON e2.source = ev.id AND e2.verb = 'takes_place_at'\nJOIN nodes pl ON pl.id = e2.target\nWHERE s.type = 'Session'\nORDER BY s.day, s.time\nLIMIT 6;",
+      "at_build": {
+        "rows": 6,
+        "columns": [
+          "session",
+          "v1",
+          "event",
+          "v2",
+          "place"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "degree",
+      "title": "The most connected nodes",
+      "note": "Degree over both directions. The event and the two snapshots sit on top, which is what a graph built from frozen pages should look like.",
+      "sql": "SELECT n.label, n.type, COUNT(*) AS degree\nFROM nodes n\nJOIN edges e ON e.source = n.id OR e.target = n.id\nGROUP BY n.id\nORDER BY degree DESC, n.label\nLIMIT 10;",
+      "at_build": {
+        "rows": 10,
+        "columns": [
+          "label",
+          "type",
+          "degree"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "two-hops",
+      "title": "Everything within two hops of the event (recursive CTE)",
+      "note": "A graph traversal in SQL: a recursive common table expression walking edges in either direction, then counted by type. This is the query that shows where SQL stops being the natural language for a graph.",
+      "sql": "WITH RECURSIVE hop(id, depth) AS (\n  SELECT 'event:startup-summit-lisbon-2026', 0\n  UNION\n  SELECT CASE WHEN e.source = h.id THEN e.target ELSE e.source END, h.depth + 1\n  FROM hop h JOIN edges e ON e.source = h.id OR e.target = h.id\n  WHERE h.depth < 2\n)\nSELECT n.type, COUNT(DISTINCT n.id) AS nodes\nFROM hop JOIN nodes n ON n.id = hop.id\nGROUP BY n.type\nORDER BY nodes DESC;",
+      "at_build": {
+        "rows": 16,
+        "columns": [
+          "type",
+          "nodes"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "json-arrays",
+      "title": "Unpacking a JSON column: who each story stands on, from stories.json itself",
+      "note": "Columns that were arrays in the JSON are stored as JSON text, and SQLite's `json_each` unpacks them. The same fact as the `stands_on` edges, read from the other file.",
+      "sql": "SELECT s.title, j.value AS source_id\nFROM stories s, json_each(s.stands_on) j\nORDER BY s.published, s.title, source_id;",
+      "at_build": {
+        "rows": 10,
+        "columns": [
+          "title",
+          "source_id"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "topics",
+      "title": "The event's own topics, by how many speakers carry each",
+      "note": "The `Topics` list the event prints on every speaker's page, read verbatim from the frozen copy. The event's vocabulary, counted.",
+      "sql": "SELECT topic, COUNT(*) AS speakers\nFROM person_topics\nGROUP BY topic\nORDER BY speakers DESC, topic;",
+      "at_build": {
+        "rows": 23,
+        "columns": [
+          "topic",
+          "speakers"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "tags-evidence",
+      "title": "A derived tag with its evidence: the matched words",
+      "note": "Every derived tag carries the words the lexicon pattern hit on the speaker's own page, and nothing else. This is the whole evidence for the tag, on purpose.",
+      "sql": "SELECT t.type, l.label AS tag, t.matched, COUNT(*) AS people\nFROM person_tags t JOIN lexicon l ON l.id = t.tag\nGROUP BY t.type, l.label, t.matched\nORDER BY people DESC, t.type, tag\nLIMIT 40;",
+      "at_build": {
+        "rows": 40,
+        "columns": [
+          "type",
+          "tag",
+          "matched",
+          "people"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "orgs-should-talk",
+      "title": "Organisations that should be talking (the connections formula)",
+      "note": "The first of the three organisation-level formulas on the Portugal connections page, verbatim: two organisations whose speakers' pages share at least three topics, industries, technologies or ideas. The page stores the rows it got at build; this is the same SQL.",
+      "sql": "WITH ground AS (\n  SELECT DISTINCT p.org AS org, t.type AS kind, t.tag AS what\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type IN ('Industry', 'Technology', 'Idea')\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n  UNION\n  SELECT DISTINCT p.org, 'Topic', pt.topic\n  FROM person_topics pt JOIN people p ON p.id = pt.person\n  WHERE p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\noffers AS (\n  SELECT DISTINCT p.org AS org, t.tag AS service\n  FROM person_tags t JOIN people p ON p.id = t.person\n  WHERE t.type = 'Service'\n    AND p.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n),\nfounder_led AS (\n  SELECT DISTINCT n.org AS org FROM nodes n\n  WHERE n.type = 'Person' AND n.role_class = 'founder' AND n.org IS NOT NULL\n    AND n.org NOT IN (SELECT name FROM orgs WHERE placeholder = 1)\n)\nSELECT a.org AS org_a, b.org AS org_b, COUNT(*) AS shared,\n       GROUP_CONCAT(a.kind || ':' || a.what, ' · ') AS on_what\nFROM ground a JOIN ground b ON a.kind = b.kind AND a.what = b.what AND a.org < b.org\nGROUP BY a.org, b.org\nHAVING COUNT(*) >= 3\nORDER BY shared DESC, org_a, org_b\nLIMIT 40;",
+      "at_build": {
+        "rows": 40,
+        "columns": [
+          "org_a",
+          "org_b",
+          "shared",
+          "on_what"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "register-sizes",
+      "title": "The register: bytes frozen per snapshot",
+      "note": "Every frozen page with its size, summed by snapshot date. The bytes are the evidence; the hash in `sources.sha256` is what the build re-verifies.",
+      "sql": "SELECT snapshot, COUNT(*) AS pages, SUM(bytes) AS bytes\nFROM sources\nGROUP BY snapshot\nORDER BY snapshot;",
+      "at_build": {
+        "rows": 2,
+        "columns": [
+          "snapshot",
+          "pages",
+          "bytes"
+        ],
+        "version": "v0.3.4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "slug": "omnichannel-programming",
+  "teaser": "Programming by voice, chat, phone, IDE and pull request, with one shared state underneath, at every stage from explorer to town planner. This site, counted.",
+  "topics": [
+    "site-and-engineering",
+    "vaults-and-method"
+  ],
+  "core_idea": "Programming has become multichannel: voice memos, chat, phones, IDEs, pull requests, previews and vaults; it becomes omnichannel, in the retail sense Rigby described in 2011, when every channel reads and writes one shared state, git, vaults, briefs and graphs; this site is the worked example, 54 messages in and 40 releases out in three days; review and custom interfaces are channels too; it works for explorers, villagers and town planners at every altitude; it is already how a new generation builds; and it breaks through fragmentation, misplaced secrets and lost context, which the shared state fixes.",
+  "nodes": [
+    {
+      "id": "retail",
+      "label": "Omnichannel in retail",
+      "kind": "concept",
+      "summary": "Rigby, HBR 2011: one customer, one basket, many ways in."
+    },
+    {
+      "id": "multi",
+      "label": "Multichannel programming",
+      "kind": "concept",
+      "summary": "Each channel keeps its own copy of the work."
+    },
+    {
+      "id": "omni",
+      "label": "Omnichannel programming",
+      "kind": "claim",
+      "summary": "Every channel reads and writes one shared state."
+    },
+    {
+      "id": "state",
+      "label": "The shared state",
+      "kind": "artefact",
+      "summary": "Git, vaults, briefs, graphs, the release log."
+    },
+    {
+      "id": "session",
+      "label": "This site, counted",
+      "kind": "example",
+      "summary": "54 messages, 10 voice memos; 40 releases, 36 articles, 87 figures."
+    },
+    {
+      "id": "review",
+      "label": "Reviewing is a channel",
+      "kind": "method",
+      "summary": "Voice reviews and code review as a graph."
+    },
+    {
+      "id": "uis",
+      "label": "Custom interfaces as channels",
+      "kind": "method",
+      "summary": "A page made for one moment, into the same state."
+    },
+    {
+      "id": "stages",
+      "label": "Every stage, every altitude",
+      "kind": "claim",
+      "summary": "Explorers, villagers and town planners all use every channel."
+    },
+    {
+      "id": "generation",
+      "label": "The new generation",
+      "kind": "example",
+      "summary": "84% use or plan to use AI tools; a quarter of YC W25 at 95% AI code."
+    },
+    {
+      "id": "breaks",
+      "label": "What breaks",
+      "kind": "question",
+      "summary": "Fragmentation, secrets in the wrong place, lost context."
+    },
+    {
+      "id": "computing",
+      "label": "Omnichannel computing",
+      "kind": "claim",
+      "summary": "The same pattern beyond programming."
+    }
+  ],
+  "edges": [
+    {
+      "from": "retail",
+      "to": "omni",
+      "rel": "leads-to"
+    },
+    {
+      "from": "omni",
+      "to": "multi",
+      "rel": "contrasts"
+    },
+    {
+      "from": "omni",
+      "to": "state",
+      "rel": "depends-on"
+    },
+    {
+      "from": "session",
+      "to": "omni",
+      "rel": "example-of"
+    },
+    {
+      "from": "review",
+      "to": "omni",
+      "rel": "extends"
+    },
+    {
+      "from": "uis",
+      "to": "omni",
+      "rel": "extends"
+    },
+    {
+      "from": "stages",
+      "to": "omni",
+      "rel": "extends"
+    },
+    {
+      "from": "generation",
+      "to": "omni",
+      "rel": "example-of"
+    },
+    {
+      "from": "state",
+      "to": "breaks",
+      "rel": "answers"
+    },
+    {
+      "from": "omni",
+      "to": "computing",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-scripted-talk",
+      "my-memory-checked",
+      "code-review-as-a-fractal-semantic-graph",
+      "secrets-on-public-keys",
+      "custom-uis-are-not-the-exception",
+      "explorer-to-villager-newsroom",
+      "handing-secrets-to-agents",
+      "the-homepage-is-a-vault"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.bain.com/insights/the-future-of-shopping-hbr/",
+      "https://survey.stackoverflow.co/2025/ai",
+      "https://techcrunch.com/2025/03/06/a-quarter-of-startups-in-ycs-current-cohort-have-codebases-that-are-almost-entirely-ai-generated/",
+      "https://claude.com/blog/claude-code-on-the-web"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Successful companies will engage customers through \"omnichannel\" retailing: a mashup of digital and physical experiences.",
+      "why": "Where the word comes from."
+    },
+    {
+      "text": "Every channel left its trace in the same place.",
+      "why": "Why the session could be counted."
+    },
+    {
+      "text": "it is how I read code without reading it",
+      "why": "Review as a channel."
+    }
+  ],
+  "figures": [
+    {
+      "file": "oc-multi-omni.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/oc-multi-omni.webp",
+      "caption": "Multichannel and omnichannel programming: on the left, each channel keeps its own copy of the work and a person carries the context between them; on the right, every channel reads and writes one shared state, so work started in one continues in any other.",
+      "kind": "comparison"
+    },
+    {
+      "file": "oc-session.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/oc-session.webp",
+      "caption": "One session, many channels: what this newsroom session used from 13 to 15 October 2026, counted from its transcript and the repository log: what came in, what went out, what it was checked against, what kept it safe, and how I read it back, all around one shared state.",
+      "kind": "architecture"
+    },
+    {
+      "file": "oc-spectrum.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/oc-spectrum.webp",
+      "caption": "Omnichannel at every stage of a Wardley map: explorers, villagers and town planners each use all the channels, at every altitude from voice and intent, through interfaces and code, down to evidence. What changes between stages is what the work needs, not the channel.",
+      "kind": "comparison"
+    }
+  ]
+}

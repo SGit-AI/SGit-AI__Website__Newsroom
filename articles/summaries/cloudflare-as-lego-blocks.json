@@ -1,0 +1,94 @@
+{
+ "slug": "cloudflare-as-lego-blocks",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 433,
+   "line": "Cloudflare as blocks, and a vault on it",
+   "para": "I would like to use Cloudflare without learning it, with an agent doing setup once. Its platform maps to small blocks, most free: static hosting, Workers, R2, D1, KV, Durable Objects, 71 models that stay on its GPUs, email and Access. A read-only sgit vault needs no code; a read-write one needs 83 lines, tested with the real client.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 124,
+   "line": "Small free blocks; a vault server in 83 lines",
+   "para": "The aim is a non-specialist, or an agent for them, assembling blocks once. Most are free. Workers AI keeps its own models inside and does not train on content. A read-only vault is sgit publish plus static hosting; a read-write one is one Worker, R2 and a Durable Object. Setup is harder: the API cannot be called from a web page.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "want",
+   "label": "What I would like",
+   "words": 127,
+   "line": "Use it like a tool, set up once",
+   "para": "I could learn Cloudflare and do not want to. I would like a site on my domain, a vault, a small API, a model and an inbox, then not think about them again, using the least code and configuration. The route is skills, prompts and short examples an agent can follow, so setup happens once and the result is mine.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "blocks",
+   "label": "The blocks",
+   "words": 407,
+   "line": "Hosting, compute, storage, models, mail, identity",
+   "para": "From Cloudflare's own pages on 18 October 2026: static assets free and unlimited; Workers at 100,000 requests a day; R2 with no egress fees and EU pinning; D1, KV and Durable Objects on SQLite; Workers AI with 10,000 free neurons a day; inbound email routing; Access free to 50 users; domains at registry cost.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "models",
+   "label": "Which models stay inside Cloudflare",
+   "words": 154,
+   "line": "@cf/ models stay inside; others leave",
+   "para": "Workers AI says it does not train on customer content, and its listed models run on Cloudflare's GPUs, so a Worker calling a @cf/ model on your own R2 data keeps the loop in your account. Through AI Gateway the same call can reach OpenAI or Anthropic, which leaves Cloudflare. The model name is the control.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "vault",
+   "label": "An sgit vault on Cloudflare",
+   "words": 1362,
+   "line": "Read-only needs nothing; read-write needs 83 lines",
+   "para": "The server only stores encrypted objects and checks a write key. sgit publish plus a static host gave an identical clone. For writes, one Worker, an R2 bucket and a Durable Object per vault, which runs requests one at a time so compare-and-swap is atomic. Tested in Cloudflare's runtime: pushes, merges, races and wrong keys behaved as sgit expects.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "setup",
+   "label": "How a non-specialist sets it up",
+   "words": 303,
+   "line": "A button, a temporary account, or an agent",
+   "para": "Cloudflare's API does not answer a browser's preflight, so setup cannot happen in a web page. That leaves a Deploy to Cloudflare button, a temporary account that lasts an hour and can be claimed, an agent with Cloudflare's MCP servers or command line, or doing it by hand. The first three suit a non-specialist.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "packages",
+   "label": "Five packages",
+   "words": 105,
+   "line": "Five packages, each with its behaviour policy",
+   "para": "Blocks are more useful as packages: a site on my domain; my vault, hosted; an assistant over my documents; an inbox that acts; a form or small API. All fit the free plan within allowances. Each would be a repository with a button, a skill and a page saying exactly what it can reach.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "watch",
+   "label": "What I would watch",
+   "words": 71,
+   "line": "The CLI, billing and free limits are moving",
+   "para": "cf replaces Wrangler, which is kept for 18 months after cf's beta ends. AI Search starts billing on 1 November 2026. Data residency on the free plan is partial: R2 can be pinned to the EU, the full suite is Enterprise. The free limits are October's and will change.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 84,
+   "line": "A local prototype, not a real deployment",
+   "para": "The Worker ran in Cloudflare's runtime locally with the real sgit client, not on a real account. It has no large-file support, one shared token and no rate limits. The hosted sgit server may check write keys differently. Every limit is as Cloudflare gave it on 18 October 2026.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 116,
+   "line": "Cloudflare's docs and our own tests",
+   "para": "From a voice memo on 18 October 2026 and Cloudflare's documentation read that day: limits and pricing for Workers, R2, Durable Objects, Workers AI and email, privacy, deploy buttons, temporary accounts, MCP servers and data location. The API's missing CORS and the vault tests, with sgit 0.21.0 and Miniflare 4, were run here.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

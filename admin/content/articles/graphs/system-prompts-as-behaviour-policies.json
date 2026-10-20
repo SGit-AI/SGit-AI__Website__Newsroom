@@ -1,0 +1,213 @@
+{
+ "slug": "system-prompts-as-behaviour-policies",
+ "teaser": "Claude's published system prompt as 82 policy rows in eight kinds: 36 could be held by the harness, 21 partly by classifiers, 25 stay with the model.",
+ "topics": [
+  "agents-and-policy"
+ ],
+ "core_idea": "A system prompt can be represented as an agent behaviour policy: Claude Haiku 5.5's published prompt holds 82 rules in eight kinds, of which 36 about tool use, conversation state, referral, knowledge and input trust could be held by the harness, 21 harm restrictions partly by classifiers, and 25 about judgement and presentation stay with the model; a leaked ChatGPT prompt is mostly tool reach, so the two are the halves of a policy, and neither states a mandate, a checkable authority order or what keeps each rule, which a proposed JSON ontology of policy, mandate, reach, inputs and trust, state, rules and tests supplies.",
+ "nodes": [
+  {
+   "id": "hypothesis",
+   "label": "A system prompt is a light policy",
+   "kind": "question",
+   "summary": "Can a vendor's prompt be written as rows and as a file a harness checks?"
+  },
+  {
+   "id": "claude",
+   "label": "Claude Haiku 5.5's published prompt",
+   "kind": "artefact",
+   "summary": "4,255 words, published 7 October 2026, for the apps not the API."
+  },
+  {
+   "id": "rows",
+   "label": "82 rules in eight kinds",
+   "kind": "method",
+   "summary": "Sentences that read as rules, sorted by what kind of rule each is."
+  },
+  {
+   "id": "kinds",
+   "label": "The taxonomy",
+   "kind": "concept",
+   "summary": "Harm, judgement, referral, state, presentation, tool use, knowledge, input trust."
+  },
+  {
+   "id": "state",
+   "label": "Conversation state",
+   "kind": "example",
+   "summary": "\"For the rest of the conversation\" five times; a refusal that stands."
+  },
+  {
+   "id": "trust",
+   "label": "Input trust",
+   "kind": "example",
+   "summary": "Doubt messages claiming to be the vendor: a job for a signature."
+  },
+  {
+   "id": "result",
+   "label": "36, 21, 25",
+   "kind": "claim",
+   "summary": "Harness, classifiers in part, the model alone."
+  },
+  {
+   "id": "classifiers",
+   "label": "Constitutional Classifiers",
+   "kind": "example",
+   "summary": "Input and output classifiers outside the model."
+  },
+  {
+   "id": "chatgpt",
+   "label": "A leaked ChatGPT prompt",
+   "kind": "artefact",
+   "summary": "Unverified; about six words in seven under its tool sections."
+  },
+  {
+   "id": "halves",
+   "label": "Two halves of a policy",
+   "kind": "claim",
+   "summary": "Claude's prompt is the rules; the leaked one is mostly reach."
+  },
+  {
+   "id": "missing",
+   "label": "What neither has",
+   "kind": "claim",
+   "summary": "A mandate, a checkable authority order, what keeps each rule."
+  },
+  {
+   "id": "modelspec",
+   "label": "The Model Spec's chain of command",
+   "kind": "example",
+   "summary": "Root, system, developer, user, guideline: most of an authority column."
+  },
+  {
+   "id": "ontology",
+   "label": "A policy file",
+   "kind": "artefact",
+   "summary": "Policy, mandate, reach, inputs and trust, state, rules, tests."
+  },
+  {
+   "id": "could-be",
+   "label": "The could_be field",
+   "kind": "method",
+   "summary": "Each rule says where it could be kept, a plan for moving it."
+  },
+  {
+   "id": "real",
+   "label": "Used for real?",
+   "kind": "question",
+   "summary": "Formats are arriving; published behaviour policies are not."
+  }
+ ],
+ "edges": [
+  {
+   "from": "claude",
+   "to": "hypothesis",
+   "rel": "answers"
+  },
+  {
+   "from": "rows",
+   "to": "claude",
+   "rel": "depends-on"
+  },
+  {
+   "from": "rows",
+   "to": "kinds",
+   "rel": "produces"
+  },
+  {
+   "from": "state",
+   "to": "kinds",
+   "rel": "example-of"
+  },
+  {
+   "from": "trust",
+   "to": "kinds",
+   "rel": "example-of"
+  },
+  {
+   "from": "rows",
+   "to": "result",
+   "rel": "produces"
+  },
+  {
+   "from": "classifiers",
+   "to": "result",
+   "rel": "example-of"
+  },
+  {
+   "from": "chatgpt",
+   "to": "claude",
+   "rel": "contrasts"
+  },
+  {
+   "from": "chatgpt",
+   "to": "halves",
+   "rel": "leads-to"
+  },
+  {
+   "from": "halves",
+   "to": "missing",
+   "rel": "leads-to"
+  },
+  {
+   "from": "modelspec",
+   "to": "missing",
+   "rel": "answers"
+  },
+  {
+   "from": "missing",
+   "to": "ontology",
+   "rel": "leads-to"
+  },
+  {
+   "from": "kinds",
+   "to": "ontology",
+   "rel": "extends"
+  },
+  {
+   "from": "could-be",
+   "to": "ontology",
+   "rel": "extends"
+  },
+  {
+   "from": "ontology",
+   "to": "real",
+   "rel": "compared-with"
+  }
+ ],
+ "links": {
+  "articles": [
+   "a-policy-beside-the-prompt",
+   "are-hooks-the-sweet-spot",
+   "footprint-and-blast-radius",
+   "the-behaviour-policy-is-the-business-logic",
+   "policy-as-code-needs-a-policy-first",
+   "re-anchoring-agent-behaviour-policies"
+  ],
+  "pages": [],
+  "sites": [
+   "https://platform.claude.com/docs/en/release-notes/system-prompts",
+   "https://model-spec.openai.com/2026-08-18.html",
+   "https://github.com/asgeirtj/system_prompts_leaks",
+   "https://www.anthropic.com/news/constitutional-classifiers",
+   "https://www.anthropic.com/constitution",
+   "https://agents.md",
+   "https://github.com/microsoft/agent-governance-toolkit",
+   "https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/",
+   "https://news.bloomberglaw.com/legal-exchange-insights-and-commentary/rogue-ai-agents-are-here-companies-must-rethink-governance"
+  ]
+ },
+ "quotes": [
+  {
+   "text": "These system prompt updates do not apply to the Claude API.",
+   "why": "The scope of the published prompts."
+  },
+  {
+   "text": "Instructions with higher authority override those with lower authority",
+   "why": "The Model Spec's chain of command, most of an authority column."
+  },
+  {
+   "text": "the system prompt should not be considered a secret, nor should it be used as a security control.",
+   "why": "OWASP on the prompt as a control."
+  }
+ ]
+}

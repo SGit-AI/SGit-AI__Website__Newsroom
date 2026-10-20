@@ -1,0 +1,189 @@
+{
+  "slug": "what-open-source-is-and-is-not",
+  "teaser": "Open source is a copyright licence, not a free-for-all: six misconceptions corrected, and why the point is that nobody can lock you in.",
+  "topics": [
+    "startups-and-strategy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Open source is a copyright licence in which the holder grants copying, use and change; it began as the GPL's copyleft and was reframed pragmatically as open source in 1998; the common misconceptions are that nobody controls it, that anybody contributes, that it is more or less secure than proprietary software, that it costs nothing, that open weights are open source, and that no licence is the most open choice; the security metric is whether somebody had the time and money to review the code; maintainers need funding models; and the real power of open source is that nobody can lock you in and the whole development workflow is yours, which is why there is no sovereignty without it.",
+  "nodes": [
+    {
+      "id": "copyright",
+      "label": "Open source is a copyright licence",
+      "kind": "concept",
+      "summary": "The holder uses the right to control copying to grant copying, use and change, on stated terms."
+    },
+    {
+      "id": "copyleft",
+      "label": "Copyleft made sharing a condition",
+      "kind": "concept",
+      "summary": "The GPL, from Stallman and the FSF in 1989: distribute what you build from it and it carries the same licence; critics called it viral."
+    },
+    {
+      "id": "pragmatic",
+      "label": "Open source, 1998, the pragmatic reframing",
+      "kind": "example",
+      "summary": "Coined by Christine Peterson; the OSI founded by Perens and Raymond; Linux stayed on GPLv2, its pragmatism was the attitude."
+    },
+    {
+      "id": "no-licence",
+      "label": "No licence is all rights reserved",
+      "kind": "claim",
+      "summary": "Without a licence ordinary copyright applies and nobody may copy; a permissive licence like Apache 2.0 is what opens it."
+    },
+    {
+      "id": "control",
+      "label": "A few maintainers control what goes in",
+      "kind": "claim",
+      "summary": "Contributions are reviewed, signed off and refused; the control is real and visible; anybody can fork, nobody can change yours."
+    },
+    {
+      "id": "few-contributors",
+      "label": "Most projects are run by a few people",
+      "kind": "claim",
+      "summary": "The barrier to contributing is lower, and outside a few very popular projects contributions are not the norm."
+    },
+    {
+      "id": "security-time",
+      "label": "Security is about time, not openness",
+      "kind": "claim",
+      "summary": "Code somebody had the time and money to review is more secure, open or closed; proprietary products are mostly open source underneath."
+    },
+    {
+      "id": "someone-pays",
+      "label": "Somebody is always paying",
+      "kind": "claim",
+      "summary": "Around 60% of maintainers call themselves unpaid hobbyists; paid maintainers adopt more security practices; a tragedy of the commons."
+    },
+    {
+      "id": "xz",
+      "label": "The xz utils backdoor",
+      "kind": "example",
+      "summary": "A critical library maintained by one person, an attacker who earned trust over years, found in 2024 because SSH was slow."
+    },
+    {
+      "id": "open-weights",
+      "label": "Open weights are a compiled binary",
+      "kind": "claim",
+      "summary": "You can run weights, not rebuild them; the OSI's Open Source AI Definition requires code, parameters and data information."
+    },
+    {
+      "id": "fud",
+      "label": "Openness is not the danger",
+      "kind": "claim",
+      "summary": "The question is how tools are used; Metasploit made exploitation easier and the world adjusted; hosting and distribution are themselves control."
+    },
+    {
+      "id": "no-lock-in",
+      "label": "The point is that nobody can lock you in",
+      "kind": "claim",
+      "summary": "Read it, run it, fix it, move it, and own the whole development workflow, which survives an acquisition."
+    },
+    {
+      "id": "sovereignty",
+      "label": "No sovereignty without open source",
+      "kind": "claim",
+      "summary": "Sovereignty is the ability to move, and only control that survives a change of owner counts."
+    }
+  ],
+  "edges": [
+    {
+      "from": "copyright",
+      "to": "copyleft",
+      "rel": "leads-to"
+    },
+    {
+      "from": "copyleft",
+      "to": "pragmatic",
+      "rel": "leads-to"
+    },
+    {
+      "from": "copyright",
+      "to": "no-licence",
+      "rel": "answers"
+    },
+    {
+      "from": "control",
+      "to": "few-contributors",
+      "rel": "extends"
+    },
+    {
+      "from": "few-contributors",
+      "to": "someone-pays",
+      "rel": "leads-to"
+    },
+    {
+      "from": "someone-pays",
+      "to": "security-time",
+      "rel": "depends-on"
+    },
+    {
+      "from": "xz",
+      "to": "someone-pays",
+      "rel": "example-of"
+    },
+    {
+      "from": "open-weights",
+      "to": "copyright",
+      "rel": "contrasts"
+    },
+    {
+      "from": "fud",
+      "to": "control",
+      "rel": "extends"
+    },
+    {
+      "from": "pragmatic",
+      "to": "no-lock-in",
+      "rel": "leads-to"
+    },
+    {
+      "from": "no-lock-in",
+      "to": "sovereignty",
+      "rel": "leads-to"
+    },
+    {
+      "from": "control",
+      "to": "no-lock-in",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "supply-chain-of-vaults",
+      "sovereignty-is-the-ability-to-move"
+    ],
+    "pages": [],
+    "sites": [
+      "https://open-source.sgit.ai/",
+      "https://opensource.org/ai/open-source-ai-definition",
+      "https://choosealicense.com/no-permission/",
+      "https://en.wikipedia.org/wiki/XZ_Utils_backdoor",
+      "https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The control is real. It is just visible.",
+      "why": "The answer to the misconception heard at the event."
+    },
+    {
+      "text": "For me, the power of open source has nothing to do with the fact that people can contribute.",
+      "why": "The point is no lock-in and owning the workflow."
+    }
+  ],
+  "figures": [
+    {
+      "file": "os-myths.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/os-myths.webp",
+      "caption": "Six misconceptions about open source, and what is true. The control is real and visible; most projects are run by a few people; the security metric is whether somebody had the time to review it; somebody is always paying; weights are a compiled binary; and no licence means all rights reserved.",
+      "kind": "comparison"
+    },
+    {
+      "file": "os-timeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/os-timeline.webp",
+      "caption": "From free software to open weights, the short version: GNU in 1983, the Free Software Foundation in 1985, the GPL in 1989, Linux from 1991, the Debian guidelines in 1997, \"open source\" and the OSI in 1998, Apache 2.0 in 2004, and in 2024 both the xz utils backdoor and the Open Source AI Definition.",
+      "kind": "timeline"
+    }
+  ]
+}

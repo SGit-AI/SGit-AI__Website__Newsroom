@@ -1,0 +1,61 @@
+{
+  "slug": "re-anchoring-agent-behaviour-policies",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Re-anchoring restores rules from disk after every summary",
+      "para": "Instructions given only in conversation can be lost when a long session is summarised, and this session was summarised eighteen times in a month, each keeping under 2%. Re-anchoring keeps the rules in a behaviour policy file that the harness prints back after every summary, and a canary report every few answers shows the policy was read.",
+      "hash": "712944ab5b28"
+    },
+    "s0": {
+      "line": "Rules held only in conversation must survive every summary",
+      "para": "Each of eighteen summaries replaced about 98% of the context, with nothing saying what was kept. Re-anchoring prints the Agent Behaviour Policy back verbatim, so rules are restored, not remembered, but it fixes only forgetting. A canary report shows it is working, and the best recipe changes with every release.",
+      "hash": "8b793b7b4a8c"
+    },
+    "s1": {
+      "line": "Eighteen compactions kept on average 1.7% of context",
+      "para": "Between 9 September and 9 October there were eighteen automatic compactions, each turning about 780,000 to 800,000 tokens into 9,000 to 19,000; 17.8 million tokens were summarised away. A conversational rule must be judged worth keeping each time. What comes back from disk, such as project-root CLAUDE.md, survives; the rest competes.",
+      "hash": "79ca64ff5f51"
+    },
+    "s2": {
+      "line": "Forgetting, unseen violations and argued exceptions need different fixes",
+      "para": "A rule held by the agent it governs can fail in three ways, each needing its own fix. Re-anchoring is the first and cheapest, and a checker and a gate depend on it. It does not change a rule's barrier: an expectation stays a rule in prose enforced by nobody, but reliably in view.",
+      "hash": "dedfb1f4060e"
+    },
+    "s3": {
+      "line": "A SessionStart compact hook prints the policy back verbatim",
+      "para": "Claude Code offers four hook places: SessionStart with the compact matcher, UserPromptSubmit, PreCompact and Stop. The compact hook is the heart of it, printing the policy file back after every summary, while the prompt hook adds a one-line anchor. A CLAUDE.md line or asking the agent to reread also work, but depend on remembering.",
+      "hash": "74e0b536109e"
+    },
+    "s4": {
+      "line": "The policy file is memory, rulebook and enforcement list",
+      "para": "The Agent Behaviour Policy becomes infrastructure. It is what the re-anchoring hook prints back, what an independent checker reads, and, since every row carries its barrier, the list of rules still needing a reader or a gate. Rows like \"keep decisions in decisions.md\" move important material into files, which a hook can check.",
+      "hash": "d0546f483848"
+    },
+    "s5": {
+      "line": "A computed report every few answers acts as canary",
+      "para": "Like Van Halen's brown M&M's clause, a short report shows the policy is being read. The UserPromptSubmit hook computes it from the transcript and cost record, the Stop hook sends the agent back once if it is missing, and /abp-status and /abp-reload serve the person. Its commits line counts commits without a leak scan: it should be zero.",
+      "hash": "e4a43d5365f8"
+    },
+    "s6": {
+      "line": "The re-anchor worked, and the canary caught a restart",
+      "para": "Hooks loaded mid-session and the report fitted a phone at 41 characters. On 10 October the nineteenth compaction, from 789,144 tokens to 12,092, fired the re-anchor in the same second. A later container restart wiped the policy and hooks; the missing anchor showed it, and the policy was restored with hash #a0d6d2.",
+      "hash": "12b1a1b5cc0a"
+    },
+    "s7": {
+      "line": "The best re-anchoring recipe changes with every release",
+      "para": "The features used are recent: mods in Claude Code v2.1.287, onFailure \"block\" in v2.1.295, prompt-hook denial changes in v2.1.210. A policy row is a rule, its barrier and the current recipe for keeping it. A maintained, version-aware recipe library is what people will pay for, not the policy itself.",
+      "hash": "bea0469618e2"
+    },
+    "s8": {
+      "line": "Re-anchoring keeps rules in view but enforces nothing",
+      "para": "A rule in view is still an expectation. The canary is a setting in an editable file, not a boundary, and a report can be pasted without the rules being followed. Summaries stay a black box; re-anchoring only makes what matters independent of them, and the rest needs a reader or a gate.",
+      "hash": "599b3fc6f3c6"
+    },
+    "s9": {
+      "line": "Six steps: policy file, re-anchor, canary, commands, measure, enforce",
+      "para": "Write the rules as a short ABP file with barriers, re-anchor with a SessionStart compact hook plus a per-prompt anchor, and add a computed canary report checked by a Stop hook. Give the person status and reload commands, measure one rule, then move the most important rules to a reader or a gate.",
+      "hash": "86b862c77318"
+    }
+  }
+}

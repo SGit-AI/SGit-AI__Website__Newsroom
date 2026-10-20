@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks, SGit Newsroom</title>
+<meta name="description" content="The wires already collect the day's news into encrypted vaults on a schedule. This is the next step, and the way to design it is to start at the end, with what the reader sees, and work backwards to the data. A story should read as a short narrative in which every name is a link, to a person, a company, an event or a place, each with a long-lived ID, and every sentence is a claim with its evidence: a fact, an observation, a statement by a party, or our analysis. Stories group into stories, and that is the fractal part: a thread is a story made of stories, and an article someone else published is a story too. From there, the primitives: a run that collects, captures that freeze what was read, claims, stories, stories of stories and names, each with a random ID that never changes. I measured the four wires' public vaults today: 202 stories, 1,358 distinct names, only 171 of them in more than one story and 48 in more than one wire, and only 44% of the names a story lists appear in its own text. Those numbers say where the work is, and how big a folder tree it needs: a name gets its own folder when it has gravity. Earlier experiments that linked every word of a long text were the right idea done too much. A wire story's narrative is about 55 words, small enough to link every phrase. Cheaper models can do the heavy lifting and a more capable one can check it. This article is also the brief for the desks and the wire agent.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-wire-as-a-graph.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-wire-as-a-graph.html">
+<meta property="og:title" content="The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks, SGit Newsroom">
+<meta property="og:description" content="The wires already collect the day's news into encrypted vaults on a schedule. This is the next step, and the way to design it is to start at the end, with what the reader sees, and work backwards to the data. A story should read as a short narrative in which every name is a link, to a person, a company, an event or a place, each with a long-lived ID, and every sentence is a claim with its evidence: a fact, an observation, a statement by a party, or our analysis. Stories group into stories, and that is the fractal part: a thread is a story made of stories, and an article someone else published is a story too. From there, the primitives: a run that collects, captures that freeze what was read, claims, stories, stories of stories and names, each with a random ID that never changes. I measured the four wires' public vaults today: 202 stories, 1,358 distinct names, only 171 of them in more than one story and 48 in more than one wire, and only 44% of the names a story lists appear in its own text. Those numbers say where the work is, and how big a folder tree it needs: a name gets its own folder when it has gravity. Earlier experiments that linked every word of a long text were the right idea done too much. A wire story's narrative is about 55 words, small enough to link every phrase. Cheaper models can do the heavy lifting and a more capable one can check it. This article is also the brief for the desks and the wire agent.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-wire-as-a-graph.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-wire-as-a-graph.jpg">
+<link rel="alternate" type="text/markdown" href="the-wire-as-a-graph.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks, SGit Newsroom", "headline": "The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks, SGit Newsroom", "description": "The wires already collect the day's news into encrypted vaults on a schedule. This is the next step, and the way to design it is to start at the end, with what the reader sees, and work backwards to the data. A story should read as a short narrative in which every name is a link, to a person, a company, an event or a place, each with a long-lived ID, and every sentence is a claim with its evidence: a fact, an observation, a statement by a party, or our analysis. Stories group into stories, and that is the fractal part: a thread is a story made of stories, and an article someone else published is a story too. From there, the primitives: a run that collects, captures that freeze what was read, claims, stories, stories of stories and names, each with a random ID that never changes. I measured the four wires' public vaults today: 202 stories, 1,358 distinct names, only 171 of them in more than one story and 48 in more than one wire, and only 44% of the names a story lists appear in its own text. Those numbers say where the work is, and how big a folder tree it needs: a name gets its own folder when it has gravity. Earlier experiments that linked every word of a long text were the right idea done too much. A wire story's narrative is about 55 words, small enough to link every phrase. Cheaper models can do the heavy lifting and a more capable one can check it. This article is also the brief for the desks and the wire agent.", "url": "https://newsroom.sgit.ai/articles/the-wire-as-a-graph.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks</p>
+ <h1>The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/the-wire-as-a-graph.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.46</a> &middot; <span class="chip">wire</span><span class="chip">newsroom</span><span class="chip">fractal-semantic-graphs</span><span class="chip">ontology</span><span class="chip">ids</span><span class="chip">evidence</span><span class="chip">provenance</span><span class="chip">vaults</span><span class="chip">sgit</span><span class="chip">multi-model</span><span class="chip">brief</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The wires already collect the day's news into encrypted vaults on a schedule. This is the next step, and the way to design it is to start at the end, with what the reader sees, and work backwards to the data. A story should read as a short narrative in which every name is a link, to a person, a company, an event or a place, each with a long-lived ID, and every sentence is a claim with its evidence: a fact, an observation, a statement by a party, or our analysis. Stories group into stories, and that is the fractal part: a thread is a story made of stories, and an article someone else published is a story too. From there, the primitives: a run that collects, captures that freeze what was read, claims, stories, stories of stories and names, each with a random ID that never changes. I measured the four wires' public vaults today: 202 stories, 1,358 distinct names, only 171 of them in more than one story and 48 in more than one wire, and only 44% of the names a story lists appear in its own text. Those numbers say where the work is, and how big a folder tree it needs: a name gets its own folder when it has gravity. Earlier experiments that linked every word of a long text were the right idea done too much. A wire story's narrative is about 55 words, small enough to link every phrase. Cheaper models can do the heavy lifting and a more capable one can check it. This article is also the brief for the desks and the wire agent.</em></p>
+<figure class="shot" data-shot="wg-reader.webp" data-dir="images/" data-alt="Start from what the reader sees. One story from the Industry Wire, shortened, as it could read: every name in its narrative is a link to something with an ID and a type, and every sentence is a claim with its evidence. The NCSC is named in this story&#x27;s text but not in its tags, and is tagged in another story; with an ID, the two would join. Below, the three other views the same data gives: the day, the story of stories, and the name." data-kind="architecture"><figcaption>Start from what the reader sees. One story from the Industry Wire, shortened, as it could read: every name in its narrative is a link to something with an ID and a type, and every sentence is a claim with its evidence. The NCSC is named in this story's text but not in its tags, and is tagged in another story; with an ID, the two would join. Below, the three other views the same data gives: the day, the story of stories, and the name.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Start from the end.</b> Design what the reader sees first, then work back to the data and the schedule that produce it.</li>
+<li><b>Every name is a link.</b> A short narrative per story, with each person, company, event and place linked to something with an ID and a type.</li>
+<li><b>Every sentence is a claim.</b> A fact, an observation, a statement by a party or our analysis, each pointing at its evidence.</li>
+<li><b>Stories of stories.</b> A thread is a story made of stories; another outlet's article is a story too. The same schema at every size.</li>
+<li><b>Long-lived, random IDs.</b> For every run, capture, claim, story and name, minted once and never reused.</li>
+<li><b>Measured today.</b> 202 stories, 1,358 names, 171 in more than one story, 48 in more than one wire, 44% found in the story's own text.</li>
+<li><b>Gravity decides the folders.</b> A name gets its own folder when it appears in two stories or two wires; the rest stay inside their story.</li>
+<li><b>The right thing, at the right size.</b> Link the short narrative, not the whole article.</li>
+</ul>
+<h2 id="ux">Start from the end</h2>
+<p>The wires work. Four of them, each an encrypted vault that a desk writes on a schedule and this site reads: the Industry Wire, the AWS Wire and the Portugal Wire daily, the OWASP Wire weekly. Each run collects the sources, clusters them into stories, finds the primary source, joins stories to readers, writes the edition and checks it against a gate. The <a href="https://newsroom.sgit.ai/wire/charter.html">charter</a> already says "Facts first, analysis on top".</p>
+<p>The next step is the graph, and I think the way to design it is backwards: start with the user experience, and reverse engineer the data sets, the structure and the runs that produce them.</p>
+<p>What the reader should see is a story as a short narrative in which every name is a link. In the figure above, Asos, the NCSC, the Xuanye Group and Snowflake are each something: a company, a government agency, a group claiming an attack, a platform. If you mention a name, what is it? A company, a person, an event, a place? Every one of them should have its own small graph: what it is, the other stories that name it, what each of those said. Under the narrative, every sentence is a claim with its evidence: that names and contact details were affected is a fact from the NCSC's own notice; that the attackers hold the data is a claim by a party, unverified; that it was not a breach of Snowflake's systems is a statement by Snowflake. And from the same data, three more views: the day, as one graph of the stories and the names they share; the story of stories, followed over weeks; and the name, across every wire that mentions it.</p>
+<h2 id="today">What is there today</h2>
+<p>The public read-only vaults of the four wires hold one folder per story, a <code>story.json</code> and a <code>story.md</code>, and I read all of them today: 202 stories. Stories have IDs, short slugs by beat such as <code>sec-10</code>, with a pattern in the schema of letters, a hyphen and two or more digits. There is a <code>superseded_by</code> field, so one story can already replace another. Threads already group stories. The Portugal project already has an ontology with 16 types, from Event and Person to Place and Story, and verbs that read both ways.</p>
+<p>The names are where the work is. Each story lists them as tags, grouped by kind: organisations, people, products, technologies, CVEs, and for some wires events, standards and places. Across the four wires:</p>
+<ul>
+<li><b>1,358 distinct names</b>, median nine per story.</li>
+<li><b>171 appear in two or more stories</b>, and 48 in two or more wires: Anthropic, OpenAI, Microsoft, GitHub and others. Those are the joins between wires.</li>
+<li><b>Only 44% of the names a story lists appear in its headline or summary.</b> The tags describe the story; they do not anchor to its text. In the Asos story, the one person listed does not appear in its text, and the NCSC, whose notice is the primary source, is not listed at all, although it is named in the summary and tagged in another story.</li>
+<li><b>The same thing is sometimes two names.</b> "aws" and "amazon web services" are separate entries; eleven names are filed under two kinds, Snowflake as both an organisation and a product.</li>
+<li><b>Some tags are words, not names.</b> "release" is tagged as a technology 34 times.</li>
+</ul>
+<p>None of this is a mistake by the desks; it is what tags are. It is why the next step is IDs.</p>
+<h2 id="primitives">The primitives</h2>
+<figure class="shot" data-shot="wg-model.webp" data-dir="images/" data-alt="The primitives, and where each lives. A run collects; captures freeze what was read; claims are typed and point at evidence; a story is a short narrative over claims and names; stories group into stories; a name earns its own folder when it has gravity. Every object has a long-lived random ID, and an index of every ID, alias and slug." data-kind="architecture"><figcaption>The primitives, and where each lives. A run collects; captures freeze what was read; claims are typed and point at evidence; a story is a short narrative over claims and names; stories group into stories; a name earns its own folder when it has gravity. Every object has a long-lived random ID, and an index of every ID, alias and slug.</figcaption></figure>
+<p>Working back from the reader, these are the objects the data needs.</p>
+<ul>
+<li><b>The run.</b> A collection time: which wire, when, on what schedule, which models, which sources were polled, and what was produced. Daily, weekly or on any schedule; each run is an object with its own ID, not just a date.</li>
+<li><b>The capture.</b> What was read, frozen where the licence allows, with its address and a hash. The charter's tiers already say what may be kept: A frozen and shown, B frozen as evidence, C linked only.</li>
+<li><b>The claim.</b> One of four kinds: a fact, an observation, a statement by a party, or the desk's analysis. Each points at the captures that support it, and analysis is always marked as ours.</li>
+<li><b>The story.</b> A headline and a short narrative in which every name is a span linked to an ID, the claims behind it, and the role each name plays in it: the source, the victim, the claimant.</li>
+<li><b>The story of stories.</b> A thread or a topic is a story whose parts are stories. Stories can be merged, and a larger story can hold smaller ones, so it is the same schema at every size, which is the fractal part. And when another outlet publishes an article, that is a story too, with its own claims: the coverage we collect is made of the same objects as the stories we write.</li>
+<li><b>The name.</b> A person, organisation, event, place, product, technology or standard: one ID, its aliases, and a type from the ontology.</li>
+</ul>
+<p>And the days, topics and names are views, not separate data: the graph of a day is every story from that day and the names they share, and it can be drawn from the store at any time. The wire pages already draw graphs from each edition, since <a href="https://newsroom.sgit.ai/engineering/releases/v0.12.42.html">v0.12.42</a>; with IDs, they can join across days and wires.</p>
+<h2 id="ids">Long-lived IDs</h2>
+<p>Every one of those objects needs an ID that lives as long as the object, and it should be random and strong: a 128-bit identifier minted once when the object is first created, never reused and never derived from its title. A slug like <code>sec-10</code> stays as a readable alias, and so does every old ID after a merge, so a link made last month still resolves. When two stories turn out to be one, the smaller is merged into the larger and keeps its ID as an alias; when a story splits, each part records where it came from. The same for names: the NCSC and the UK National Cyber Security Centre are one ID with two aliases.</p>
+<p>That is also what lets a graph be cleaned. With IDs you can merge duplicates, fix a type, and see every story that used a name, without editing text. If everything is mapped to IDs, we can always find it.</p>
+<h2 id="size">Every phrase, at the right size</h2>
+<p>The idea of linking every word is not new here, and the first attempts taught us something. <a href="introducing-fractal-semantic-graphs.html">Introducing fractal semantic graphs</a> parsed a regulation down to the point where, for one atlas, the smallest node "is, literally, the word". Five agents <a href="one-article-five-readers.html">read one article</a> and catalogued every fact and claim in it, and one catalogue came out at "2.8 times the size of the articles it catalogues", as <a href="the-agent-is-the-reader.html">The agent is the reader</a> measured. A view that turned every term into a link was <a href="the-site-is-an-inbox.html">noted as</a> "Not always on, because it is noisy." And this site's own rules for article graphs say: "The graph is a map of the argument, not an index of every noun."</p>
+<p>That was the right thing done too much. Linking every word of a long article produces more graph than text. What I am describing is different: the top-level narrative of a story, about 55 words at the median across the four wires, with every name and every claim in it linked. That is small enough to link completely, and it is where a reader looks first. Start small, with the narrative, and expand to the coverage and the captures when the narrative works.</p>
+<h2 id="tree">The folder tree, and gravity</h2>
+<p>Every object needs a place in the vault, and the place should follow the graph. The public vaults already have one folder per story. The proposal extends that: folders for runs, captures, stories, topics and names, and an index of every ID, alias and slug. Each folder is, in effect, a small database.</p>
+<p>Not every name deserves a folder. A name that appears once lives inside its story; a name with gravity gets its own folder, with its aliases, its type and the list of stories that cite it. Today's numbers give a natural rule: in two or more stories, or two or more wires. That is 171 names out of 1,358, which is a tree the desks can maintain, and it grows only as names earn it.</p>
+<h2 id="models">Many models</h2>
+<p>This is also a good place to use more than one model. Extracting names, linking spans and typing claims is high-volume and well defined, and smaller, cheaper models such as Sonnet and Haiku can do the heavy lifting. A more capable model then checks: are these two names the same thing, is this claim really a fact, does the evidence say what the claim says. The charter already asks for a verifier that is "an independent agent, on a different model where possible". The same split works for the graph: the cheap model proposes, the capable model disposes, and the validator, which is code, checks what both produce.</p>
+<h2 id="brief">The brief</h2>
+<p><em>For the wire desks and @newsroom.wire. Written by @newsroom.writer for Dinis Cruz, 14 October 2026, on top of v0.12.45 and the four wires' public vaults as read that day.</em></p>
+<ol>
+<li><b>Start with the reader.</b> A story page where the narrative's names are links and the claims sit under it, drawn from fixtures first. Agree it before changing any data.</li>
+<li><b>Mint IDs.</b> A random 128-bit ID for every story, keeping today's slugs as aliases, and an <code>ids.json</code> in each vault with every ID, alias and slug. Nothing is renamed; links keep working.</li>
+<li><b>Names with IDs.</b> Merge the duplicates the numbers show ("aws" and "amazon web services"; names filed under two kinds), drop words that are not names, and give each name a type from the Portugal ontology, extended where a wire needs it.</li>
+<li><b>Spans in the narrative.</b> For each story, the character ranges in the summary where each name appears, linked to its ID. Measure the share of listed names found in the text; today it is 44%.</li>
+<li><b>Claims.</b> Split each summary into claims typed as fact, observation, statement by a party, or analysis, each pointing at its capture.</li>
+<li><b>Stories of stories.</b> Make threads first-class stories with IDs; record merges and splits; treat collected coverage as stories.</li>
+<li><b>Gravity and folders.</b> A folder per name in two or more stories or wires, rebuilt each run.</li>
+<li><b>Runs and models.</b> A <code>run.json</code> per run with its schedule, sources and models; a smaller model for extraction and linking, a more capable one to check, and the gate in code.</li>
+</ol>
+<p>What to be careful about. Facts first: the claim types are there so analysis is never presented as fact. Quotes stay within the charter's tiers. IDs are never reused, and an old one never stops resolving. And the public vaults are public: nothing goes into them that the charter would not publish.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The counts are from the public vaults.</b> Read on 14 October 2026; the desks' working vaults may hold more.</li>
+<li><b>Name matching was by exact text, ignoring case.</b> "Found in the text" and "in two or more stories" are lower bounds for names spelled differently.</li>
+<li><b>The reader view and IDs are proposed.</b> Nothing in the brief is built.</li>
+<li><b>The NCSC ID in the figure is an example,</b> minted for the illustration.</li>
+</ul>
+<p>If you run a news or research desk and want your stories as a graph, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 14 October 2026, written by this site's writer agent in the voice of this site; the argument and the editorial responsibility are mine. The numbers were measured for this article from read-only clones of the four wires' public vaults, using the read keys this site publishes, and the wires' charter, desk brief and design notes in this repository. The earlier experiments are this site's own articles, linked above.</p>
+<sg-meter view="page" kind="article" date="2026-10-14" topics="news-and-evidence graphs-and-knowledge" title="The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#the-wire-as-a-graph">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="one-article-five-readers.html">One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece</a> <span class="dim">Write the article first, then send five agent readers through it: a catalogue, an ontology and maps, the arc, two minutes, and a deck.</span></li><li><a href="the-agent-is-the-reader.html">The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</a> <span class="dim">Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.</span></li><li><a href="the-site-is-an-inbox.html">The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed</a> <span class="dim">The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="search-as-navigation.html">Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors</a> <span class="dim">Search as a walk through the newsroom's graph: chips, exact suggestions, five views and a pane that shows the working, with no model yet.</span></li><li><a href="books-from-articles.html">Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit</a> <span class="dim">My books stall at 60 to 95%; these articles do not. The hypothesis: a book is an ordered set of finished articles, tested by Web Summit in November.</span></li><li><a href="journalism-becomes-intelligence.html">When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open</a> <span class="dim">Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 118 &middot; <a href="../for/make.html#r=118">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-wire-as-a-graph.jpg" download>the-wire-as-a-graph.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-wire-as-a-graph.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

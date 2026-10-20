@@ -1,0 +1,188 @@
+{
+  "slug": "inside-the-northstar-twin",
+  "teaser": "A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "The twin runs Northstar's refunds as a deterministic simulation in a vault: thirteen scripted mistakes through four designs of ten controls, each step tagged with its pillar and policy, two views of the world side by side, a casebook of precedents, and one content file to swap for another process.",
+  "nodes": [
+    {
+      "id": "open",
+      "label": "Three ways in",
+      "kind": "method",
+      "summary": "The page, the vault, the CLI."
+    },
+    {
+      "id": "designs",
+      "label": "Four designs, ten controls",
+      "kind": "concept",
+      "summary": "From the $200 limit to three policies."
+    },
+    {
+      "id": "play",
+      "label": "Play and replay",
+      "kind": "method",
+      "summary": "Every step, tagged by pillar and policy."
+    },
+    {
+      "id": "views",
+      "label": "Two views of the world",
+      "kind": "concept",
+      "summary": "What the agent did, what the records say."
+    },
+    {
+      "id": "n1001",
+      "label": "His case, four ways",
+      "kind": "example",
+      "summary": "Overpaid, owed, right by a person, right by the rules."
+    },
+    {
+      "id": "cap",
+      "label": "A cap cannot tell $132 from $120",
+      "kind": "example",
+      "summary": "Exactly what was paid."
+    },
+    {
+      "id": "split",
+      "label": "The split refund",
+      "kind": "example",
+      "summary": "The right amount, the wrong decider."
+    },
+    {
+      "id": "casebook",
+      "label": "The casebook",
+      "kind": "example",
+      "summary": "A precedent, followed, then distinguished."
+    },
+    {
+      "id": "engine",
+      "label": "A deterministic engine",
+      "kind": "artefact",
+      "summary": "No model called; replays exactly."
+    },
+    {
+      "id": "twin",
+      "label": "What a twin means here",
+      "kind": "claim",
+      "summary": "A copy of a process to run decisions through."
+    },
+    {
+      "id": "swap",
+      "label": "Swap the content, keep the app",
+      "kind": "method",
+      "summary": "One file of records, rules and controls."
+    }
+  ],
+  "edges": [
+    {
+      "from": "open",
+      "to": "play",
+      "rel": "leads-to"
+    },
+    {
+      "from": "designs",
+      "to": "play",
+      "rel": "extends"
+    },
+    {
+      "from": "play",
+      "to": "views",
+      "rel": "extends"
+    },
+    {
+      "from": "n1001",
+      "to": "designs",
+      "rel": "example-of"
+    },
+    {
+      "from": "cap",
+      "to": "designs",
+      "rel": "example-of"
+    },
+    {
+      "from": "split",
+      "to": "designs",
+      "rel": "example-of"
+    },
+    {
+      "from": "casebook",
+      "to": "play",
+      "rel": "example-of"
+    },
+    {
+      "from": "engine",
+      "to": "twin",
+      "rel": "answers"
+    },
+    {
+      "from": "twin",
+      "to": "swap",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "allowed-is-not-right",
+      "case-law-for-agents",
+      "three-policies-for-an-agent"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html",
+      "https://ashishrajan.substack.com/p/what-does-it-take-to-build-ai-systems"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The twin is for seeing how controls interact, and a run that replays exactly is one anyone can check.",
+      "why": "Why no model is called."
+    },
+    {
+      "text": "a cap at what was paid cannot tell $132 from $120. Only the expected amount can.",
+      "why": "What a cap misses."
+    },
+    {
+      "text": "Over a year, it is every case that repeats.",
+      "why": "What precedent saves."
+    }
+  ],
+  "figures": [
+    {
+      "file": "nt-overview.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-overview.webp",
+      "caption": "The first tab of the twin: the scenario from Ashish Rajan's article, the four designs side by side with what each overpaid, left owed, got right and cost in people's time, and the thirteen cases, each with what goes wrong and how design A handles it.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nt-play-a.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-play-a.webp",
+      "caption": "N-1001 in design A, played to the end. The steps run down the middle, request, lookup, propose, pay and record, each tagged with its pillar and policy. On the right, the agent read the jacket at $150; the records say $120 was paid after AUTUMN20. The ledger shows $150 refunded on an order that paid $120. The trace is complete. Outcome: overpaid $30.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nt-play-d.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-play-d.webp",
+      "caption": "N-1001 in design D: the agent still proposes $150; the expected amount from the records is $120; the decided amount stands and the difference is recorded, not paid; the workflow pays $120; the decision record names the rule and the decider.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nt-split-d.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-split-d.webp",
+      "caption": "N-1008 in design D: the agent proposes three refunds of $87; the expected amount is $261 and the proposal matches; the decision table routes anything over $200 to a team lead, who approves; the workflow pays one refund of $261.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nt-casebook.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-casebook.webp",
+      "caption": "The casebook tab: precedent P-1, set by N-1010, with its material facts and reasons; and the three damaged-but-kept cases in design D, one decided by a person and recorded, one settled by the precedent, one distinguished and sent to a person.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nt-policies.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nt-policies.webp",
+      "caption": "The three policies tab: the behaviour policy's five rows, from read.orders.sender to send.reply.sender; the decision table, from \"the rules, by the calculator\" to \"a person, whose decision is recorded with reasons\"; and the workflow's eight stages with the controls at each.",
+      "kind": "screenshot"
+    }
+  ]
+}

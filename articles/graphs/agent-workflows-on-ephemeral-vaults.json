@@ -1,0 +1,199 @@
+{
+  "slug": "agent-workflows-on-ephemeral-vaults",
+  "teaser": "Seven architectures for agents on ephemeral vaults, a recipe repository that gates sgit's releases, and a hundred writers measured on an append lane.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "Agents that work together can use an ephemeral encrypted vault as shared memory, channel and record, with keys deciding who can do what and only ciphertext leaving the environment; seven architectures from one agent to a swarm, each answering memory, communication, asynchrony and visibility, belong in their own repository of forkable recipes with CI jobs that gate sgit's releases, watched by vault apps; measured locally, a hundred writers landed a thousand append-lane entries in 4.9 seconds with none lost, scoped clones scaled while full clones queued, and four defects surfaced that make the case for the gate.",
+  "nodes": [
+    {
+      "id": "pattern",
+      "label": "The pattern",
+      "kind": "concept",
+      "summary": "A vault as shared file system, channel and record, living as long as the work."
+    },
+    {
+      "id": "ephemeral",
+      "label": "Ephemeral vaults",
+      "kind": "concept",
+      "summary": "Created for the work, deleted or left as ciphertext after."
+    },
+    {
+      "id": "questions",
+      "label": "Four questions",
+      "kind": "question",
+      "summary": "Memory, communication, asynchrony, visibility."
+    },
+    {
+      "id": "ciphertext",
+      "label": "Only ciphertext leaves",
+      "kind": "claim",
+      "summary": "So storage matters less than keys and lifetime."
+    },
+    {
+      "id": "architectures",
+      "label": "Seven architectures",
+      "kind": "artefact",
+      "summary": "From one agent and one vault to a swarm of a hundred."
+    },
+    {
+      "id": "no-network",
+      "label": "No network, a keyless courier",
+      "kind": "method",
+      "summary": "Read from a folder; a courier moves ciphertext."
+    },
+    {
+      "id": "vault-app",
+      "label": "Watched by a vault app",
+      "kind": "method",
+      "summary": "A page that draws the vault; the screenshot goes back in."
+    },
+    {
+      "id": "swarm",
+      "label": "A hundred writers",
+      "kind": "claim",
+      "summary": "1,000 entries in 4.9 s in memory, none lost."
+    },
+    {
+      "id": "cap",
+      "label": "The cap holds",
+      "kind": "example",
+      "summary": "1,000 of 1,200 accepted on one shared token."
+    },
+    {
+      "id": "clones",
+      "label": "Scoped clones scale",
+      "kind": "claim",
+      "summary": "Ten at once in 1.9 s; ten full clones, 21.1 s."
+    },
+    {
+      "id": "defects",
+      "label": "Four defects",
+      "kind": "example",
+      "summary": "Disk scans, large files, headless fetch, one process."
+    },
+    {
+      "id": "gate",
+      "label": "A gate for sgit's releases",
+      "kind": "method",
+      "summary": "The repository runs before main; a failure blocks it."
+    },
+    {
+      "id": "templates",
+      "label": "Recipes to fork",
+      "kind": "artefact",
+      "summary": "Each folder a template with its rules and skills."
+    },
+    {
+      "id": "subagents",
+      "label": "Agents in parallel",
+      "kind": "example",
+      "summary": "Background subagents run concurrently in one session."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ephemeral",
+      "to": "pattern",
+      "rel": "extends"
+    },
+    {
+      "from": "pattern",
+      "to": "questions",
+      "rel": "leads-to"
+    },
+    {
+      "from": "ciphertext",
+      "to": "pattern",
+      "rel": "depends-on"
+    },
+    {
+      "from": "architectures",
+      "to": "questions",
+      "rel": "answers"
+    },
+    {
+      "from": "no-network",
+      "to": "architectures",
+      "rel": "example-of"
+    },
+    {
+      "from": "vault-app",
+      "to": "questions",
+      "rel": "answers"
+    },
+    {
+      "from": "swarm",
+      "to": "architectures",
+      "rel": "example-of"
+    },
+    {
+      "from": "cap",
+      "to": "swarm",
+      "rel": "extends"
+    },
+    {
+      "from": "clones",
+      "to": "swarm",
+      "rel": "compared-with"
+    },
+    {
+      "from": "swarm",
+      "to": "defects",
+      "rel": "produces"
+    },
+    {
+      "from": "defects",
+      "to": "gate",
+      "rel": "leads-to"
+    },
+    {
+      "from": "gate",
+      "to": "templates",
+      "rel": "depends-on"
+    },
+    {
+      "from": "subagents",
+      "to": "architectures",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "two-agents-one-vault",
+      "encrypted-memory-for-isolated-agents",
+      "the-agents-write-too",
+      "sgit-in-a-ci-pipeline",
+      "sgit-actions-side-by-side"
+    ],
+    "pages": [],
+    "sites": [
+      "https://code.claude.com/docs/en/sub-agents"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Background subagents run concurrently while you continue working.",
+      "why": "Why one session can exercise the architectures."
+    },
+    {
+      "text": "the vault's key stays in the HOST; your frame never sees it",
+      "why": "How a vault app watches agents without holding the key."
+    }
+  ],
+  "figures": [
+    {
+      "file": "aw-catalogue.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/aw-catalogue.webp",
+      "caption": "Agent workflows on ephemeral vaults: seven architectures, simple to complex, from one agent with one ephemeral vault to a swarm of a hundred writing to append lanes. Each is a folder in its own repository, with agents, keys, fixtures and a CI job that proves it works, and each says who holds which key.",
+      "kind": "comparison"
+    },
+    {
+      "file": "aw-measured.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/aw-measured.webp",
+      "caption": "The swarm, measured on one machine. With in-memory storage, a hundred writers posting ten entries each landed a thousand entries in 4.9 seconds, none lost; the same load on disk storage ran at about three entries a second because of a defect in the disk layer. Ten scoped clones at once took 1.9 seconds; ten full clones, 21.1.",
+      "kind": "comparison"
+    }
+  ]
+}

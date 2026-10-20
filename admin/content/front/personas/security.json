@@ -1,0 +1,76 @@
+{
+ "what": "The security lead persona as a full mini-site. A proposal: the live page lists eight starting articles and nothing else. Sections are drawn from articles that already exist; slugs are checked by tests/test_front_data.py.",
+ "source": "data/newsroom/personas.json (id security, its eight starting articles); section shape from context/newsroom-ux-review.md, 'Personas as the core primitive'",
+ "id": "security",
+ "line": "For security leads: agents as insiders, and the controls that hold when a model does not",
+ "story": "Your company is already running agents, whether or not anyone asked you. Some read the mailbox, some touch the CRM, one has a connector nobody remembers approving. The board wants to know whether this is safe, the builders want fewer prompts, and the frameworks you know were written for people. These pieces treat an agent as an insider with a mandate, a reach and a gap, and ask what you can enforce outside the model.",
+ "note_by": "Dinis",
+ "note": "If we have met, this is what I would want you to read first. Begin with who you are protecting against, because most agent security goes wrong by drawing the line in the wrong place. Then the ultimate insider, which is the scenario I worry about most, and footprint and blast radius, which is how I measure it. The rest is evidence from running agents myself: six of them on one inbox, a platform outage, and the identity we could not give them. Tell me which control you would want to see tested next.",
+ "start_here": [
+  "who-are-you-protecting-against",
+  "ultimate-insider-three-collisions",
+  "footprint-and-blast-radius",
+  "six-agents-one-inbox",
+  "the-identity-we-wanted-to-give-the-agents",
+  "where-is-the-why",
+  "why-my-agents-do-not-run-on-my-laptop",
+  "the-investigation-github-owes-its-customers"
+ ],
+ "sections": [
+  {
+   "title": "Draw the line",
+   "slugs": [
+    "who-are-you-protecting-against",
+    "every-risk-is-already-accepted"
+   ]
+  },
+  {
+   "title": "Agents as insiders",
+   "slugs": [
+    "ultimate-insider-three-collisions",
+    "authority-outside-the-model",
+    "the-same-argument-in-our-words"
+   ]
+  },
+  {
+   "title": "Footprint and blast radius",
+   "slugs": [
+    "footprint-and-blast-radius",
+    "connector-twin-before-you-deploy-an-agent"
+   ]
+  },
+  {
+   "title": "Identity and permission",
+   "slugs": [
+    "the-identity-we-wanted-to-give-the-agents",
+    "where-is-the-why",
+    "six-agents-one-inbox"
+   ]
+  },
+  {
+   "title": "Enforcement, not hope",
+   "slugs": [
+    "hope-or-enforcement",
+    "re-anchoring-agent-behaviour-policies",
+    "where-the-platform-draws-the-line"
+   ]
+  },
+  {
+   "title": "Incidents and keys",
+   "slugs": [
+    "the-investigation-github-owes-its-customers",
+    "where-the-vault-keys-live",
+    "why-my-agents-do-not-run-on-my-laptop"
+   ]
+  }
+ ],
+ "question": "Which control would you like to see tested in the open next?",
+ "others": [
+  "builder",
+  "board",
+  "founder"
+ ],
+ "gets": "An eight-step path from drawing the line to incidents, six sections and a board to track them.",
+ "status": "accepted",
+ "target": "persona/security: the mini-site and the doors on the front page"
+}

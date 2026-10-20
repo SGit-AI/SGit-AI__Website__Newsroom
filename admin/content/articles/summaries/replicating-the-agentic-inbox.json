@@ -1,0 +1,66 @@
+{
+  "slug": "replicating-the-agentic-inbox",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "The agent drafts and a person sends, in phases",
+      "para": "Two callers asked how to copy my email setup, so this is the walkthrough. Claude runs as a state machine, one session per role, with messages between agents as vault files and every email a draft a person sends. It goes in phases: accounts, one inbox session, split roles, then interfaces and a conductor.",
+      "hash": "95d117880278"
+    },
+    "s0": {
+      "line": "Own accounts, written policies, and nothing sent by agents",
+      "para": "The agent gets its own Workspace mailbox and its own Claude Team seat, never your inbox. Start with one inbox session and a policy written first, then split into roles that talk through Email-FS lite in a vault. Nothing is sent by an agent, except one named security exception with a hold.",
+      "hash": "9ebdc57378a7"
+    },
+    "s1": {
+      "line": "The setup is copyable, and nothing is clever",
+      "para": "Two calls ended with the same question, so the walkthrough gets its own page. The simple version takes an afternoon and the full one a week. It is accounts, a policy, drafts and files, and the discipline of the phases makes it work; you can stop at any phase.",
+      "hash": "af89259d94bd"
+    },
+    "s2": {
+      "line": "Each role session reads state, works, writes, stops",
+      "para": "Claude is good enough to be a step in a state machine. Each role reads its state from vault files, does one kind of work, writes results back as files and stops. Sessions can be opened by hand or scheduled; start with ones you open, so every run is one you watched.",
+      "hash": "acba4f180b3f"
+    },
+    "s3": {
+      "line": "The agent needs its own mailbox, seat and grants",
+      "para": "Phase 0 gives the agent a Workspace mailbox on a domain you own, never your own inbox, plus a separate Claude Team seat whose OAuth grants live only there. Connectors must first be enabled by an organisation owner. Add a GitHub account on the same identity and share your calendar read-only.",
+      "hash": "6a3cd123cc46"
+    },
+    "s4": {
+      "line": "One inbox session, a policy first, and you send",
+      "para": "The inbox agent reads, labels, summarises and writes replies as drafts. Its policy is a table of reach, mandate, gap and barriers, and on a Team plan most barriers are honestly just expectations. Each draft leaves a record line with a body hash, and sends are recorded by a different role.",
+      "hash": "4fb4e9c7bb64"
+    },
+    "s5": {
+      "line": "Split roles talk in vault files, not the mailbox",
+      "para": "Roles such as @inbox, @drafts, @crm, @briefs and @dev each have a short policy; only @inbox reads the mailbox and only @drafts writes Drafts. They exchange files through Email-FS lite with typed blocks. Clone time grows with commits: after three days a vault took seven minutes, so commit once per run.",
+      "hash": "292fc2ae3464"
+    },
+    "s6": {
+      "line": "Agents build interfaces; a conductor runs every role once",
+      "para": "Agents built phone cards and waiting-on boards in an afternoon because the data was already vault files, and each interface got its own policy. The record lets you read what agents did. A conductor runs each role once in fixed order, with twelve-minute time boxes and a security role first and last.",
+      "hash": "f61c86ac5c62"
+    },
+    "s7": {
+      "line": "Agents never send, except one held security alert",
+      "para": "The drafts role writes, and the person reads and sends. The one exception lets the security role send one critical email to the person and write a hold file that stops every run until the person releases it. A vault key leaked on day five, so a leaked write key now means a new vault.",
+      "hash": "a3fce8223fe3"
+    },
+    "s8": {
+      "line": "A checklist from accounts to the never-send rule",
+      "para": "Buy a Workspace seat, create a Claude Team account, enable then connect the connectors, and share your calendar read-only. Write the policy first, run one session for a week, then split roles that talk through Email-FS lite. Read the footprint monthly, watch clone time, and keep the rule: the agent drafts, you send.",
+      "hash": "70f97185aae8"
+    },
+    "s9": {
+      "line": "The agents add their own accounts, starting with @dev",
+      "para": "The dev agent shipped nineteen releases in eight days, wrote policies for five future roles, and refuses to fix other agents' files. A briefs-drawn roster shows twelve agents, not five, and corrects the schedule: four runs on weekdays, two at weekends, starting and ending with security.",
+      "hash": "bcc74481c240"
+    },
+    "s10": {
+      "line": "Related articles, and how this page was drafted",
+      "para": "Links to Six agents, one inbox, Custom UIs are not the exception, Footprint and blast radius, the connector twin, The ultimate insider, append-lane messaging and RiskMandate.ai. Drafted from Dinis Cruz's voice memo on 2 October 2026 and revised on 3 October from the dev agent's review pack.",
+      "hash": "e8e9a1a85f00"
+    }
+  }
+}

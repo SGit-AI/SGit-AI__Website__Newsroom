@@ -1,0 +1,61 @@
+{
+  "slug": "the-value-of-constraints",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Encryption and open source matter most as engineering constraints",
+      "para": "Nobody will buy sgit for its encryption; it will win on features, many of which came from encryption as a constraint. Client-side encryption moves security to the keys and sovereignty to the key holder, reduces but does not remove GDPR duties, and removes server code. Open source, wholly open, removes lock-in and integration sprawl.",
+      "hash": "e711ddda3480"
+    },
+    "in-short": {
+      "line": "Constraints, not encryption itself, produced sgit's better features",
+      "para": "Encryption is not the selling point; better features and workflows are. It moves protection to the keys and sovereignty to their holder, and reduces GDPR exposure without removing it. The biggest gain is no server code. Open source removes lock-in and must be complete: open core is an evaluation version.",
+      "hash": "bfa3540a318b"
+    },
+    "mistake": {
+      "line": "Encryption is a property, not a reason to choose",
+      "para": "Descriptions of sgit, including the author's own, lead with encryption, but people will choose it for better features and workflows, as the Scion comparison showed. Those features came from encryption as a constraint. Research by Acar, Tarakci and van Knippenberg found an inverted U: some constraint helps innovation, too much hurts.",
+      "hash": "d9d524a83a4a"
+    },
+    "keys": {
+      "line": "Client-side encryption shifts protection and sovereignty to the keys",
+      "para": "When the server holds only ciphertext named by its hash, the task shrinks from protecting every copy to protecting the keys. Sovereignty depends on who holds the keys, not where data sits. The EDPB's transfer recommendations agree that strong encryption with exporter-held keys is an effective supplementary measure.",
+      "hash": "24d3dbf0ac1e"
+    },
+    "gdpr": {
+      "line": "Encryption reduces GDPR exposure but does not remove it",
+      "para": "The memo overstated it. For key holders, encrypted personal data is still personal data, as the ICO says, and storage is processing. But Article 32 lists encryption as a security measure, and under Article 34(3)(a) a breach of unintelligible data need not be communicated. A September 2025 CJEU ruling may help keyless stores.",
+      "hash": "a1246b75755e"
+    },
+    "server": {
+      "line": "A server that cannot read data needs no code",
+      "para": "A blind server removes the temptation to process anything there, so there is no server code to write, deploy or patch; sgit's server is a dumb key-value blob store. Solving the constraint produced better features: clone with path scoping fetches only requested folders, and immutable encrypted objects let any static host serve a vault.",
+      "hash": "bb80cc24cf9f"
+    },
+    "open": {
+      "line": "No private code removes lock-in and bespoke integration temptations",
+      "para": "Open source makes code easy to deploy, run and change anywhere, solving many sovereignty problems. It removes the temptation to lock customers in, so they stay only because they want to, and the startup curse of building every customer's integration: the answer becomes here is the code, integrate it or pay us.",
+      "hash": "22af9e957ab6"
+    },
+    "all": {
+      "line": "Open core is merely an evaluation version, renamed",
+      "para": "Half-open software brings back the dependencies open source removes. Elastic, HashiCorp and Redis moved to non-open licences and spawned OpenSearch, OpenTofu and Valkey; Elastic and Redis later added open licences back. Working fully in the open lets very small teams build and maintain what large budgets cannot.",
+      "hash": "7b0d27913aa0"
+    },
+    "business": {
+      "line": "With open code and blind servers, sell customisation instead",
+      "para": "The two constraints rule out selling access to the code or renting the data back, which removes many bad business decisions. What remains is the model earlier articles argued for: selling customisation and keeping it working. Someone always pays; here they pay for the part worth paying for.",
+      "hash": "1fe7d9cda7fb"
+    },
+    "limits": {
+      "line": "Encryption does not remove GDPR; constraints help only moderately",
+      "para": "Encryption reduces GDPR exposure, but the controller's duties remain. Research says a moderate amount of constraint helps, not any amount. The claim that small teams win is a view, not a study. sgit's success is not shown, and the author has a stake because sgit is theirs.",
+      "hash": "a801f53523b0"
+    },
+    "sources": {
+      "line": "Sources: GDPR, EDPB, ICO, CJEU and licence histories",
+      "para": "The piece comes from a voice memo of 16 October 2026, with its GDPR claim corrected. Sources include GDPR Articles 32 and 34, EDPB Recommendations 01/2020, ICO encryption guidance, CJEU case C-413/23 P, Acar, Tarakci and van Knippenberg, the OSI on the SSPL, Elastic and Redis announcements, and the sgit-ai 0.22.0 code.",
+      "hash": "a6be248a9180"
+    }
+  }
+}

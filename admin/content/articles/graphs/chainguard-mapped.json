@@ -1,0 +1,62 @@
+{
+ "slug": "chainguard-mapped",
+ "teaser": "Chainguard mapped from OS to agents, its public feeds counted, and the context layer above the package where an open policy and a vault fit.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "Chainguard builds hardened software from the operating system up to agents and publishes open data, 12,480 advisories over 12,125 CVEs with a status per component, but its analysis stops at the package: of 2,850 recorded not-applicable decisions only 177 give a context reason, and current public records carry no reason at all; deciding which images must be fixed and which can ship today needs a context layer from the user story through the code to the container, written as a policy row per image, which is where open behaviour policies for its new agent products, sgit vaults for data between stages and an open format for deployment decisions plug in.",
+ "nodes": [
+  {"id": "company", "label": "Chainguard", "kind": "concept", "summary": "Founded 2021 by people from Google's Sigstore, SLSA and distroless work."},
+  {"id": "builds", "label": "From the OS to agents", "kind": "artefact", "summary": "Wolfi, images, libraries, Actions, and MCP, Workspaces, Checks, Harness, Skills."},
+  {"id": "agents", "label": "Agent products talk about policy", "kind": "example", "summary": "Skills to enforce skill policies; MCP verifies organisation policy; egress policy."},
+  {"id": "feeds", "label": "Public feeds, counted", "kind": "artefact", "summary": "12,480 advisories, 12,125 CVEs; 732 VEX documents."},
+  {"id": "sample", "label": "Status in a sample", "kind": "claim", "summary": "71% fixed, 19% false positive, 6% pending, 4% not planned."},
+  {"id": "reasons", "label": "177 context reasons of 2,850", "kind": "claim", "summary": "Most say the code or version is not there; few are about reachability."},
+  {"id": "busybox", "label": "The busybox note", "kind": "example", "summary": "A configuration flag not used, so the vulnerable code is not called."},
+  {"id": "stops", "label": "The graph stops at the package", "kind": "claim", "summary": "Context about the build, not about the application."},
+  {"id": "exploit-paths", "label": "Context decides", "kind": "concept", "summary": "Reachable from the exposed surface or not; updating is never free."},
+  {"id": "three", "label": "Three answers", "kind": "method", "summary": "Must fix; ship now with a reason; ship now and watch."},
+  {"id": "context-layer", "label": "The context layer", "kind": "method", "summary": "A graph from user story to container, a policy row per image."},
+  {"id": "abp", "label": "Behaviour policies", "kind": "concept", "summary": "Mandate, reach, gap and barrier, used as controls for an image."},
+  {"id": "vaults", "label": "Vaults between stages", "kind": "method", "summary": "Advisories, VEX and decisions carried encrypted and scoped."},
+  {"id": "open-format", "label": "An open format for decisions", "kind": "artefact", "summary": "Signed, with reasons, published as VEX where it can be."},
+  {"id": "oss", "label": "A route for open-source projects", "kind": "question", "summary": "No dedicated programme found; five free images today."}
+ ],
+ "edges": [
+  {"from": "company", "to": "builds", "rel": "produces"},
+  {"from": "agents", "to": "builds", "rel": "example-of"},
+  {"from": "company", "to": "feeds", "rel": "produces"},
+  {"from": "feeds", "to": "sample", "rel": "produces"},
+  {"from": "feeds", "to": "reasons", "rel": "produces"},
+  {"from": "busybox", "to": "reasons", "rel": "example-of"},
+  {"from": "reasons", "to": "stops", "rel": "leads-to"},
+  {"from": "stops", "to": "exploit-paths", "rel": "contrasts"},
+  {"from": "exploit-paths", "to": "three", "rel": "leads-to"},
+  {"from": "context-layer", "to": "three", "rel": "produces"},
+  {"from": "abp", "to": "context-layer", "rel": "extends"},
+  {"from": "agents", "to": "abp", "rel": "depends-on"},
+  {"from": "vaults", "to": "context-layer", "rel": "depends-on"},
+  {"from": "three", "to": "open-format", "rel": "produces"},
+  {"from": "oss", "to": "company", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["attacks-rewritten-as-mandates", "the-minimum-code-below", "code-review-as-a-fractal-semantic-graph", "footprint-and-blast-radius", "a-policy-for-every-skill", "sgit-in-a-ci-pipeline"],
+  "pages": [],
+  "sites": [
+   "https://research.contrary.com/company/chainguard",
+   "https://www.securityweek.com/chainguard-raises-hefty-356m-series-d-at-3-5-billion-valuation/",
+   "https://www.chainguard.dev/unchained/introducing-chainguard-agent-skills",
+   "https://www.chainguard.dev/unchained/introducing-chainguard-mcp-for-secure-agentic-development",
+   "https://www.chainguard.dev/unchained/introducing-chainguard-workspaces",
+   "https://www.chainguard.dev/unchained/introducing-chainguard-checks",
+   "https://www.chainguard.dev/unchained/introducing-chainguard-harness",
+   "https://advisories.cgr.dev/chainguard/v2/osv/all.json",
+   "https://libraries.cgr.dev/openvex/v1/all.json",
+   "https://github.com/wolfi-dev/advisories",
+   "https://chainguard.dev/athena"
+  ]
+ },
+ "quotes": [
+  {"text": "custom best-practices configurations that let organizations define and enforce their own skill security policies", "why": "Chainguard's agent products moving towards behaviour policies."},
+  {"text": "We don't use that configuration flag, so the free logic isn't called", "why": "The kind of context reason the archive recorded."},
+  {"text": "a status without a reason is a decision nobody can check", "why": "Why reasons should be published with every status."}
+ ]
+}

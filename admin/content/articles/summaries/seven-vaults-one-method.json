@@ -1,0 +1,41 @@
+{
+  "slug": "seven-vaults-one-method",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Seven published vaults turned mistakes into a repeatable method",
+      "para": "Between 14 and 18 August the site published seven encrypted vaults, each openable in a browser from a printed read key: a gallery, field notes, a supplement record, a risk register, two risk explorers and a catalogue. By the seventh there was a method, and every rule exists because something first went wrong.",
+      "hash": "62a47955066b"
+    },
+    "s0": {
+      "line": "Classify every credential by script before publishing anything",
+      "para": "Three of the seven vaults arrived as vault keys described as read keys; publishing one would grant irrevocable write access. They were caught by shape: a read key is 64 hex characters, a vault passphrase 24 lowercase alphanumerics. A script now checks this, and a release validator scans all files, catching its own author three times.",
+      "hash": "e6c92a30c44d"
+    },
+    "s1": {
+      "line": "Derive a read key, rather than refuse vault keys",
+      "para": "A read key is derived one-way from a vault key, so an unpublishable submission can become a publishable one. The vault key goes into a gitignored tier the tripwire scans, and the derived read key is published. It is a strictly lesser capability, with the reduction enforced by mathematics rather than policy.",
+      "hash": "7b2b407e681e"
+    },
+    "s2": {
+      "line": "Audit with the exact read key readers will hold",
+      "para": "One vault carried a sealed LLM credential, a potential open tab on someone's budget. Using the published read key to open it failed with InvalidTag, so nothing was exposed: checked, not assumed. The rule against metered capabilities behind published read keys came from the Risk Graph Explorer's own PUBLIC.md.",
+      "hash": "a3ea5367dea1"
+    },
+    "s3": {
+      "line": "Screenshots come from driving the real vault in browsers",
+      "para": "Every screenshot is taken by opening the actual vault with the published read key in a real browser, navigating and cropping. It is slow but repeatedly contradicted what was about to be written. An appProbe step asks the running app for its element names instead of guessing, avoiding wasted capture runs.",
+      "hash": "48c5b3caae79"
+    },
+    "s4": {
+      "line": "Every vault page ends with what it cannot do",
+      "para": "Each vault page gives its limitations a section with the same weight as its features, never small print. A published vault argues that this way of working is sound, and an argument omitting its own edges is a brochure. The limitations and comparison pages, including rows where vaults lose, follow the same instinct.",
+      "hash": "5888f7c80f8c"
+    },
+    "s5": {
+      "line": "Four days caught three keys and three shipping bugs",
+      "para": "Seven vaults took roughly four days, and the method is now a playbook for another site's agent. The ledger: three vault keys caught and none published, one budget exposure checked by attempting the attack, one upstream rule adopted, and three bugs found by testing that would otherwise have shipped.",
+      "hash": "c6d3f60354ec"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "sgit-subscribe/v1",
+  "site": "sgit.ai",
+  "updated": "2026-10-07T00:30:00Z",
+  "list": "new sgit.ai articles",
+  "brief": "https://sgit.ai/docs/briefs/subscribe-lane-agent-brief.html",
+  "note": "Everything in this file is public on purpose: the vault id, the lane's append token and the recipient's public key. The append token can only write; it cannot list, fetch or read anything. The recipient is subscribe@sgit.ai, whose private keys live, passphrase-encrypted, in the subscribe vault itself, so the one secret is that vault's key, which is not on this site. The same identity is in /.well-known/sgit-agents.json. Recompute the fingerprint from the PEM before trusting it.",
+  "recipient": {
+    "address": "subscribe@sgit.ai",
+    "fingerprint": "sha256:d85b358000612e4e",
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAvBRtJE9HGPt8GKDflXc2\nEQe55+z2U0xDGrsy9jA8KkN2EKr6xCArq66X5mAODoPZTwucsNoLX50JDBJfQBsi\nTQU6MTFh1O5BLt8mucBvX50X3UOP3fxy+2UJmeIMGGNafGErV2C1wzuQi09JC6IM\nhz4IdHa896SkjyzTzLOmanCj3NiDvOBFKtMcU9idAPJ3fyZtRCkPaalSo6P1wFBg\nEWibODVkIh/iwU4Wl7nRIe2hTC3YK5yDkzyaT7Yk5e+OHYyB05GZ5f9sfwsqQ998\nhYpLerkefS3s6lu+wyt5B2wJUNJrIvL/zhsHxCK6b7L8mjskhlSerrXwL9Z3OK9h\no4XjjJQ8jc0FrvKa9MmcvFXclJPvz1S0BBadRCot0wVHE5XjyR0C7GeI0yQ1cEvM\nrY1Qgcm+xm+urLU4jVbGDzy7oR5DP9n5GdCWa8ue8aUN0JRUWNVfbBQCwEjHSYZO\n/qepomzCrqlLWwb0IlZ6wNksM5jgy86AG4TdFLFulD4lutcj9fuQsFkFT8mseYI6\nf8llkPX+BvXiyR94w/erohTwSAoe2P4BCcP3QGuPCKv6UQ1aEovnm6lTCe2vNCEc\npW3L4vrQ4trcq0CbmXSbEYudFBRBklfhzJIHaGPUUJB8mESb46EMazLlEzpKuiHH\nfL+QmLQ2vl609Kx+xmff0QkCAwEAAQ==\n-----END PUBLIC KEY-----\n"
+  },
+  "inbox": {
+    "vault": "y9j3nc60",
+    "endpoint": "https://dev.send.sgraph.ai",
+    "encrypt_to": "sha256:d85b358000612e4e",
+    "status": "open",
+    "lane": {
+      "name": "subscribe",
+      "append_token": "0158853058a43736c30f54d48d10f54bfe45330eae30817c79fdb3d67123bb75",
+      "use": "one single-part .eml per subscribe request, encrypted to encrypt_to in the visitor's browser, unsigned, X-EmailFS-Kind notification, X-SGit-Form subscribe",
+      "since": "2026-10-04"
+    }
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "slug": "on-the-record",
+  "teaser": "Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.",
+  "topics": [
+    "vaults-and-method",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Instead of a comments section, let experts go on the record on an article with a signed professional opinion they can withdraw; identity comes in levels from an anonymous tap to a key bound to a domain with a track record; readers pay for opinions they value and idea contributors share in revenue; the case for signing is accountability and payment, since the evidence on civility is mixed.",
+  "nodes": [
+    {
+      "id": "notcomments",
+      "label": "Not a comments section",
+      "kind": "claim",
+      "summary": "Many news sites closed theirs."
+    },
+    {
+      "id": "record",
+      "label": "An opinion on the record",
+      "kind": "concept",
+      "summary": "Position, reasons, evidence, signed."
+    },
+    {
+      "id": "disagree",
+      "label": "Disagreement is the point",
+      "kind": "claim",
+      "summary": "The challenge is where facts get tested."
+    },
+    {
+      "id": "withdraw",
+      "label": "Withdrawable",
+      "kind": "method",
+      "summary": "A signed withdrawal stays on the record."
+    },
+    {
+      "id": "levels",
+      "label": "Identity in levels",
+      "kind": "concept",
+      "summary": "From a tap to a key with a track record."
+    },
+    {
+      "id": "proofs",
+      "label": "Domain and key proofs",
+      "kind": "example",
+      "summary": "Bluesky, Mastodon, did:web, GitHub."
+    },
+    {
+      "id": "keybase",
+      "label": "Keybase's warning",
+      "kind": "example",
+      "summary": "An identity layer owned by one company."
+    },
+    {
+      "id": "science",
+      "label": "Signed and paid peer review",
+      "kind": "example",
+      "summary": "F1000Research, eLife, Biology Open."
+    },
+    {
+      "id": "paying",
+      "label": "Readers pay for opinions",
+      "kind": "method",
+      "summary": "Rating moves money to the expert."
+    },
+    {
+      "id": "share",
+      "label": "A share for the idea",
+      "kind": "method",
+      "summary": "Revenue follows recorded ideas."
+    },
+    {
+      "id": "evidence",
+      "label": "The evidence on signing",
+      "kind": "question",
+      "summary": "Real names did not help; stable identities did."
+    },
+    {
+      "id": "build",
+      "label": "What to build",
+      "kind": "method",
+      "summary": "Keys, proofs, records, display, payment."
+    }
+  ],
+  "edges": [
+    {
+      "from": "notcomments",
+      "to": "record",
+      "rel": "contrasts"
+    },
+    {
+      "from": "record",
+      "to": "disagree",
+      "rel": "extends"
+    },
+    {
+      "from": "record",
+      "to": "withdraw",
+      "rel": "extends"
+    },
+    {
+      "from": "levels",
+      "to": "record",
+      "rel": "depends-on"
+    },
+    {
+      "from": "proofs",
+      "to": "levels",
+      "rel": "example-of"
+    },
+    {
+      "from": "keybase",
+      "to": "proofs",
+      "rel": "contrasts"
+    },
+    {
+      "from": "science",
+      "to": "paying",
+      "rel": "example-of"
+    },
+    {
+      "from": "paying",
+      "to": "share",
+      "rel": "leads-to"
+    },
+    {
+      "from": "evidence",
+      "to": "levels",
+      "rel": "contrasts"
+    },
+    {
+      "from": "record",
+      "to": "build",
+      "rel": "leads-to"
+    },
+    {
+      "from": "paying",
+      "to": "build",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "reviews-on-the-record",
+      "the-editors-channel"
+    ],
+    "pages": [
+      "economics/paying-the-fact-creator.html",
+      "economics/trust-as-a-service.html"
+    ],
+    "sites": [
+      "https://f1000research.com/about",
+      "https://bsky.social/about/blog/04-21-2025-verification"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "An expert who agrees with everything adds a name, not a view.",
+      "why": "Why disagreement."
+    },
+    {
+      "text": "So I do not think the case for signing is that it makes people polite.",
+      "why": "The evidence."
+    }
+  ],
+  "figures": [
+    {
+      "file": "or-levels.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/or-levels.webp",
+      "caption": "Going on the record. Left, the levels of identity, from an anonymous tap to a key bound to a domain and a track record; each level allows more: a tap, a note, a review, an opinion that counts, and payment. Right, an opinion on the record: a position on the article, the reasons, the evidence, signed by its author's key, answered by the newsroom, rated by readers, paid from what readers pay, and withdrawable, with the withdrawal recorded.",
+      "kind": "concept"
+    }
+  ]
+}

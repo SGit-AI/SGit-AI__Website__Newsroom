@@ -1,0 +1,195 @@
+{
+  "slug": "from-send-to-sgit",
+  "teaser": "Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.",
+  "topics": [
+    "vaults-and-method",
+    "startups-and-strategy"
+  ],
+  "core_idea": "SG/Send began as file sharing where the server holds nothing, went live five days after its first commit, took payments within three weeks, and through folders, zips, a data room and the decision to copy Git became sgit and the vaults; the public record of 4,476 app commits, 1,620 command-line commits, 739 tags and 1,389 briefs corrects the founder's memory of the order, shows a fast February to May, a turn to focus in June, pauses and an October burst, shows the agents writing the code while the founder wrote briefs and merged, and records early that users bought credits and did not come back: the technology worked before the use case did.",
+  "nodes": [
+    {
+      "id": "nothing",
+      "label": "The server holds nothing",
+      "kind": "concept",
+      "summary": "Encrypted on the client; the key never sent."
+    },
+    {
+      "id": "live",
+      "label": "Live in five days",
+      "kind": "example",
+      "summary": "First commit 8 Feb; send.sgraph.ai live 13 Feb."
+    },
+    {
+      "id": "paying",
+      "label": "Ten paying customers",
+      "kind": "example",
+      "summary": "Stripe on 1 Mar; £5 for 500 credits; 2 Mar."
+    },
+    {
+      "id": "folders",
+      "label": "Folders in 22 minutes",
+      "kind": "example",
+      "summary": "Proposal 20:26, code 20:48, zip viewer 22:15."
+    },
+    {
+      "id": "ideas",
+      "label": "The ideas came first",
+      "kind": "claim",
+      "summary": "Vault and data room named in February, before the features."
+    },
+    {
+      "id": "copygit",
+      "label": "Copy Git",
+      "kind": "method",
+      "summary": "Commits, trees, refs, branches, encrypted; the client does the work."
+    },
+    {
+      "id": "simulation",
+      "label": "Designing by simulation",
+      "kind": "method",
+      "summary": "6 revisions, 14 gaps found, 13 resolved, no code."
+    },
+    {
+      "id": "sgit",
+      "label": "sgit",
+      "kind": "artefact",
+      "summary": "The command on 16 Mar, the sgit-ai package on 20 Mar."
+    },
+    {
+      "id": "apps",
+      "label": "Vaults become apps",
+      "kind": "artefact",
+      "summary": "Previews, HTML, sandboxed iframes, full screen by May."
+    },
+    {
+      "id": "pace",
+      "label": "The pace in the data",
+      "kind": "claim",
+      "summary": "Commits on 246 of 249 days; bursts and pauses on the CLI."
+    },
+    {
+      "id": "agents",
+      "label": "Agents write, I merge",
+      "kind": "claim",
+      "summary": "1,298 of 1,671 commits under my name are merges."
+    },
+    {
+      "id": "market",
+      "label": "Credits sit unused",
+      "kind": "claim",
+      "summary": "Users bought, tested once and did not come back."
+    },
+    {
+      "id": "next",
+      "label": "A real need now",
+      "kind": "question",
+      "summary": "The same technology, with workflows that use it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "nothing",
+      "to": "live",
+      "rel": "leads-to"
+    },
+    {
+      "from": "live",
+      "to": "paying",
+      "rel": "leads-to"
+    },
+    {
+      "from": "paying",
+      "to": "folders",
+      "rel": "produces"
+    },
+    {
+      "from": "folders",
+      "to": "ideas",
+      "rel": "example-of"
+    },
+    {
+      "from": "ideas",
+      "to": "copygit",
+      "rel": "leads-to"
+    },
+    {
+      "from": "simulation",
+      "to": "copygit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "copygit",
+      "to": "sgit",
+      "rel": "produces"
+    },
+    {
+      "from": "sgit",
+      "to": "apps",
+      "rel": "leads-to"
+    },
+    {
+      "from": "agents",
+      "to": "pace",
+      "rel": "answers"
+    },
+    {
+      "from": "market",
+      "to": "pace",
+      "rel": "contrasts"
+    },
+    {
+      "from": "market",
+      "to": "next",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "no-server-by-design",
+      "how-much-of-this-did-i-write",
+      "what-sgit-is",
+      "the-agent-team-as-it-runs"
+    ],
+    "pages": [],
+    "sites": [
+      "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+      "https://github.com/SGit-AI/SGit-AI__CLI",
+      "https://github.com/the-cyber-boardroom/SG_Send__CLI",
+      "https://pypi.org/project/sgit-ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "stop inventing solutions to these problems. Git already solved all of them. Copy Git.",
+      "why": "The turning point, 4 March."
+    },
+    {
+      "text": "Users buy credits, test once, and don't come back. Credits sit unused.",
+      "why": "What the market said, already on 5 March."
+    },
+    {
+      "text": "The ideas came first. The features caught up with them",
+      "why": "Where memory and the record part ways."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sh-cadence.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sh-cadence.webp",
+      "caption": "Eight months of SG/Send and sgit, week by week: commits per week across all branches of the SG/Send app (bars) and the sgit command line (line), from 8 February to 14 October 2026, with the milestones the briefs and commits record and the command line's two long pauses shaded.",
+      "kind": "comparison"
+    },
+    {
+      "file": "sh-order.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sh-order.webp",
+      "caption": "The order I remembered, and the order the record shows: the memo's sequence on the left, the same steps dated from the briefs and commits on the right. The vault and the data room were named in February, before folders, zips and Git.",
+      "kind": "comparison"
+    },
+    {
+      "file": "sh-tests.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sh-tests.webp",
+      "caption": "sgit's unit tests as recorded in its commit messages, from 237 on 5 March to 4,232 on 14 October, and its releases to PyPI per month: the tests grew fastest from March to May; the releases came in bursts.",
+      "kind": "comparison"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+ "slug": "your-own-newsroom",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 242,
+   "line": "Authentic founders can run their own voice-memo newsroom",
+   "para": "Authentic founders' brand is themselves, and they need a medium that keeps their story. This site works from voice memos: an agent researches, checks and publishes to a static site, and readers pay a few pence a page. The recipe uses GitHub Pages, Claude cloud sessions, a house-rules file and the reader meter.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 159,
+   "line": "Everything needed for a founder's newsroom exists today",
+   "para": "Speak a memo; an agent writes, checks and publishes; readers pay if it helps. The tools are GitHub, Pages, Claude cloud sessions, the reader meter and a Stripe Payment Link. The house rules are the product. A behaviour policy governs separate writer, editor and publisher agents, a private vault holds drafts, and the pipeline is not yet a kit.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "why",
+   "label": "Why a founder needs one",
+   "words": 217,
+   "line": "A founder's brand needs a medium that keeps it",
+   "para": "For founders from their field, authenticity is the brand, and most of their story is lost in calls and chats. A site from checked voice memos keeps it, dated and trustworthy; my own memory needed checking too. Building one also teaches, natively, what a pure client-side site with no data-holding server means.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "need",
+   "label": "What you need",
+   "words": 196,
+   "line": "A public repository, a Claude plan, transcription and Stripe",
+   "para": "You need a GitHub repository, public on free plans, with Pages limited to 1 GB and 100 GB monthly bandwidth; a Claude Pro, Max or Team plan for cloud sessions with the GitHub App; a transcription app such as Otter; a Stripe Payment Link; and optionally a domain.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "steps",
+   "label": "Step by step",
+   "words": 360,
+   "line": "Validate before publishing, then record, review and correct",
+   "para": "Create a public repository with Pages served by GitHub Actions, add a workflow where a failed check stops the release, write CLAUDE.md, connect a cloud session and paste the first brief. Then record memos, review on your phone and correct by voice. Add the meter later; corrections are new versions with diffs.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "rules",
+   "label": "The house rules",
+   "words": 356,
+   "line": "The house rules turn a model into your writer",
+   "para": "CLAUDE.md grows from every mistake. The template covers who you are, your voice (first person, British spelling, no em-dashes), checking every fact, never publishing confidential material or keys, a fixed article structure and release steps. A first brief has the agent build folders, a build script, a validator and the first article.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "meter",
+   "label": "Readers who pay a little",
+   "words": 362,
+   "line": "The reader meter is an honesty box, not paywall",
+   "para": "api.newsroom.sgit.ai provides a client-side meter: readers start with £5 credit, pay 5p an article or 10p when new, and top up through your own Stripe Payment Link. Pin release v0.2.5. Balances live in the browser, so readers can edit them. GitHub Pages forbids sites that are primarily commercial.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "policy",
+   "label": "A behaviour policy for your agents",
+   "words": 713,
+   "line": "A behaviour policy sets agents' security and business rules",
+   "para": "Write the house rules as an Agent Behaviour Policy: the grant (push to one repository), the mandate and rules such as one article a day, sourced facts and no client names without consent. Split writer, editor and publisher with separate grants. Prompt enforcement is still the agent keeping rules; hooks block actions regardless.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "vault",
+   "label": "Further: a private vault beside the public site",
+   "words": 253,
+   "line": "Drafts and private material live in an encrypted vault",
+   "para": "An sgit vault holds drafts, transcripts, data, client notes and voice guidance, encrypted before upload and unreadable by the server. The agent clones it with a key from the environment, the editor reviews there, and only approved final text reaches the public repository. A read-only key can share a single folder.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "running",
+   "label": "What it is like to run",
+   "words": 120,
+   "line": "Fifty-four messages became forty checked releases in three days",
+   "para": "On this site, 54 messages from me, ten of them voice memos, became 40 releases with figures and sources in three days. Two habits help most: ask the agent to interview you as a challenging journalist when a story is thin, and link every article to earlier ones so the record maps the path.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 136,
+   "line": "The pipeline is a pattern; the meter trusts readers",
+   "para": "The writing pipeline is a pattern, not a kit. Meter balances are editable and payments unverified, by design. GitHub Pages is free within limits, but Claude, a domain and Stripe fees are not. A public repository is public. A rule in a prompt is only hope; only hook or CI rules are enforced.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 87,
+   "line": "Sources: this site's repository, the meter API and docs",
+   "para": "Drawn from my voice memo of 15 October 2026 and this site's repository, deploy workflow and Replicate page. Also api.newsroom.sgit.ai release v0.2.5 with its publisher page and quick start, GitHub Docs on creating Pages sites and their limits, and Claude Code's cloud documentation.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

@@ -1,0 +1,236 @@
+{
+  "slug": "are-hooks-the-sweet-spot",
+  "teaser": "One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Most agent rules are hope-based security kept by the model; tested rule by rule on this site's own behaviour policy, hooks could keep four of eleven rules fully and two mostly, which makes them the sweet spot until enforcement moves off the machine, because they are the first layer that does not rely on the model and the last that sees the action as the agent meant it, provided the organisation installs them where the agent cannot write and sets them to fail closed; existing packs block dangerous commands, and the missing step is generating tested hooks from a written policy so the same rows can later compile to a gateway such as one built on OWASP's Agent Control Standard.",
+  "nodes": [
+    {
+      "id": "hope",
+      "label": "Hope-based security",
+      "kind": "concept",
+      "summary": "Rules in the prompt, kept only if the model keeps them."
+    },
+    {
+      "id": "question",
+      "label": "Are hooks the sweet spot?",
+      "kind": "question",
+      "summary": "How much of a policy can move from the prompt into a hook today."
+    },
+    {
+      "id": "abp",
+      "label": "This session's policy",
+      "kind": "artefact",
+      "summary": "Eleven rules; one kept by a hook, one in part by a setting, the rest by the agent."
+    },
+    {
+      "id": "slip",
+      "label": "A trailer slip",
+      "kind": "example",
+      "summary": "A commit carried the wrong model name; nothing compared it with the session's."
+    },
+    {
+      "id": "sandbox",
+      "label": "Rule by rule in a sandbox",
+      "kind": "method",
+      "summary": "One hook per rule, fed fixed inputs, in a throwaway repository with two remotes."
+    },
+    {
+      "id": "result",
+      "label": "Four, two, three, two",
+      "kind": "claim",
+      "summary": "Fully, mostly, partly and not at all, of eleven rules."
+    },
+    {
+      "id": "gap",
+      "label": "The scan's gap",
+      "kind": "example",
+      "summary": "The leak scan blocked the key shapes it knows and missed a GitHub token shape."
+    },
+    {
+      "id": "layers",
+      "label": "Where a rule can be kept",
+      "kind": "concept",
+      "summary": "Prompt, agent hooks, tools' hooks, sandbox, gateway, the service."
+    },
+    {
+      "id": "sweet",
+      "label": "Hooks sit at the right place",
+      "kind": "claim",
+      "summary": "First layer that does not rely on the model, last that sees the agent's intent."
+    },
+    {
+      "id": "managed",
+      "label": "Only if the agent cannot edit them",
+      "kind": "claim",
+      "summary": "Organisation-installed, managed-only, failing closed; still same machine and user."
+    },
+    {
+      "id": "chained",
+      "label": "Chained, not ordered",
+      "kind": "concept",
+      "summary": "Matching hooks run in parallel; deny beats ask beats allow."
+    },
+    {
+      "id": "packs",
+      "label": "Existing hook packs",
+      "kind": "example",
+      "summary": "Trail of Bits, the safety net, Lasso: dangerous commands and injection warnings."
+    },
+    {
+      "id": "acs",
+      "label": "OWASP Agent Control Standard",
+      "kind": "artefact",
+      "summary": "Hooks and decisions across platforms; two of nineteen hook methods live."
+    },
+    {
+      "id": "pack",
+      "label": "A pack generated from a policy",
+      "kind": "method",
+      "summary": "One hook per row, with fixtures as tests, read back against the policy."
+    },
+    {
+      "id": "gateway",
+      "label": "Off the machine later",
+      "kind": "concept",
+      "summary": "The same allow, deny or ask, compiled for a gateway when one can keep the rule."
+    }
+  ],
+  "edges": [
+    {
+      "from": "hope",
+      "to": "question",
+      "rel": "leads-to"
+    },
+    {
+      "from": "abp",
+      "to": "hope",
+      "rel": "example-of"
+    },
+    {
+      "from": "slip",
+      "to": "abp",
+      "rel": "example-of"
+    },
+    {
+      "from": "sandbox",
+      "to": "abp",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sandbox",
+      "to": "result",
+      "rel": "produces"
+    },
+    {
+      "from": "sandbox",
+      "to": "gap",
+      "rel": "produces"
+    },
+    {
+      "from": "result",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "layers",
+      "to": "sweet",
+      "rel": "leads-to"
+    },
+    {
+      "from": "sweet",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "managed",
+      "to": "sweet",
+      "rel": "extends"
+    },
+    {
+      "from": "chained",
+      "to": "pack",
+      "rel": "leads-to"
+    },
+    {
+      "from": "packs",
+      "to": "pack",
+      "rel": "contrasts"
+    },
+    {
+      "from": "pack",
+      "to": "gateway",
+      "rel": "leads-to"
+    },
+    {
+      "from": "acs",
+      "to": "gateway",
+      "rel": "example-of"
+    },
+    {
+      "from": "gap",
+      "to": "pack",
+      "rel": "leads-to"
+    },
+    {
+      "from": "hope",
+      "to": "layers",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "agent-hooks-october-2026",
+      "hope-or-enforcement",
+      "footprint-and-blast-radius",
+      "policy-as-code-needs-a-policy-first",
+      "a-policy-for-every-skill"
+    ],
+    "pages": [],
+    "sites": [
+      "https://code.claude.com/docs/en/hooks",
+      "https://code.claude.com/docs/en/sandboxing",
+      "https://learn.chatgpt.com/docs/hooks",
+      "https://cursor.com/docs/agent/hooks",
+      "https://github.com/trailofbits/claude-code-config",
+      "https://github.com/kenryu42/claude-code-safety-net",
+      "https://github.com/lasso-security/claude-hooks",
+      "https://github.com/zxdxjtu/claudecode-rule2hook",
+      "https://github.com/anthropics/claude-code/tree/main/plugins/hookify",
+      "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+      "https://docs.docker.com/reference/cli/docker/mcp/gateway/gateway_run",
+      "https://genai.owasp.org/resource/agent-control-standard-acs/",
+      "https://github.com/GenAI-Security-Project/agent-control-standard"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A hook is only as good as the check it runs.",
+      "why": "What the sandbox test found."
+    },
+    {
+      "text": "A hook pack should be a set of independent checks, not a pipeline.",
+      "why": "What parallel hooks and deny-wins precedence imply."
+    },
+    {
+      "text": "every rule with no hook is still hope, and every hook with no rule is a control nobody can explain.",
+      "why": "The round trip between policy and hooks."
+    }
+  ],
+  "figures": [
+    {
+      "file": "hs-rules.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hs-rules.webp",
+      "caption": "The eleven rules of this site's writing session, rule by rule. Today one rule is kept by a hook, one in part by a disabled push URL, and the rest by the agent's good behaviour. Moved into hooks and tested on fixed inputs in a throwaway repository: four fully, two mostly, three partly, two not at all.",
+      "kind": "comparison"
+    },
+    {
+      "file": "hs-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/hs-layers.webp",
+      "caption": "Where a rule can be kept. From the prompt, which sees everything and enforces nothing, through agent hooks and the tools' own hooks, to the sandbox, a gateway off the machine, and the service itself. Each layer down is harder for the agent to change and sees less of what the agent meant to do.",
+      "kind": "architecture"
+    }
+  ]
+}

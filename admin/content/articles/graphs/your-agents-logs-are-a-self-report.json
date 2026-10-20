@@ -1,0 +1,41 @@
+{
+ "slug": "your-agents-logs-are-a-self-report",
+ "teaser": "An answer to a GRC adviser's post: why an agent's logs are a self-report, and this site's agent measured, including two commits its own counter got wrong.",
+ "topics": ["agents-and-policy", "news-and-evidence"],
+ "core_idea": "An agent's own account is a self-report, and research shows models rarely admit reward hacks; evidence comes from four sources of increasing independence, and this site's agent, measured against them, keeps ten of eleven rules itself, has one real boundary its policy does not list, and a hook-written counter that is more honest than the agent and still flagged two commits wrongly; owners belong to mandates, controls need testing, and the policy should be published.",
+ "nodes": [
+  {"id": "post", "label": "The adviser's post", "kind": "artefact", "summary": "Control failures, not war stories."},
+  {"id": "selfreport", "label": "Logs are a self-report", "kind": "claim", "summary": "Reward hacks admitted in under 2% of cases."},
+  {"id": "sources", "label": "Four sources of evidence", "kind": "concept", "summary": "Account, hook, boundary, outside test."},
+  {"id": "abp", "label": "This agent's policy", "kind": "artefact", "summary": "Eleven rules, each labelled by who keeps it."},
+  {"id": "ten", "label": "Ten of eleven kept by the agent", "kind": "claim", "summary": "One setting, no boundary as written."},
+  {"id": "boundary", "label": "The unlisted boundary", "kind": "example", "summary": "GitHub tools scoped to one repository."},
+  {"id": "counter", "label": "The counter's two commits", "kind": "example", "summary": "Both in throwaway test repositories."},
+  {"id": "ranvsworked", "label": "Ran is not worked", "kind": "claim", "summary": "The scan was run; the counter cannot see if it passed."},
+  {"id": "mandate", "label": "An owner per mandate", "kind": "method", "summary": "Agents are too many and too brief."},
+  {"id": "testcontrols", "label": "Test the controls", "kind": "method", "summary": "Do they still fire after a change?"},
+  {"id": "publish", "label": "Publish the policy", "kind": "method", "summary": "The artefact the frameworks do not define."}
+ ],
+ "edges": [
+  {"from": "selfreport", "to": "post", "rel": "extends"},
+  {"from": "sources", "to": "selfreport", "rel": "answers"},
+  {"from": "abp", "to": "sources", "rel": "example-of"},
+  {"from": "ten", "to": "abp", "rel": "depends-on"},
+  {"from": "boundary", "to": "abp", "rel": "contrasts"},
+  {"from": "counter", "to": "sources", "rel": "example-of"},
+  {"from": "ranvsworked", "to": "counter", "rel": "extends"},
+  {"from": "mandate", "to": "post", "rel": "answers"},
+  {"from": "testcontrols", "to": "ranvsworked", "rel": "answers"},
+  {"from": "publish", "to": "abp", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-ai-conference-read-for-governance", "a-policy-beside-the-prompt", "hooks-are-kernel-code", "four-frameworks-one-agent"],
+  "pages": [],
+  "sites": ["https://elevateconsult.com/insights/agentic-ai-governance-lessons-ai-conference/", "https://www.anthropic.com/research/reasoning-models-dont-say-think", "https://www.aiuc-1.com/", "https://abp.sgit.ai/what-is-an-abp/index.html"]
+ },
+ "quotes": [
+  {"text": "Evidence that the control ran is not evidence that it worked.", "why": "The gap in the counter."},
+  {"text": "So an agent's account of what it did, including its reasoning and its tidy summary at the end, is a self-report.", "why": "The core claim."},
+  {"text": "Inventory the mandates, and authorise each action at runtime.", "why": "The answer to the inventory question."}
+ ]
+}

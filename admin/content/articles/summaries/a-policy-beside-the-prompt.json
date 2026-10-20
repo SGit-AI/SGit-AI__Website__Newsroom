@@ -1,0 +1,76 @@
+{
+ "slug": "a-policy-beside-the-prompt",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "Agents should take a behaviour policy beside the prompt",
+   "para": "Beside the system prompt and prompt, an agent should take an Agent Behaviour Policy to a published standard, which the vendor accepts, enforces and eventually answers for. Agent behaviour now threatens vendors through liability and trust. Aviation and payments got safe when rule, liability and business model aligned, and agents can too.",
+   "hash": "12aea74d5949"
+  },
+  "in-short": {
+   "line": "A third input splits liability between user and vendor",
+   "para": "Models mix code and data in one channel, so a policy gives a second channel for what the agent may do. At 1995's rate, 2025 would have seen about 105 fatal airliner accidents, not 12; payments got safe when liability moved. The user answers outside the policy, the vendor inside it.",
+   "hash": "8d3c1d21a7a5"
+  },
+  "idea": {
+   "line": "Agents need an Agent Behaviour Policy as third input",
+   "para": "Answering Ralf Thomas on liability led to a standalone proposal: beside the vendor's system prompt and our prompt, an agent should get an Agent Behaviour Policy, row by row. The vendor accepts, enforces, reports breaches and eventually carries liability. The vocabulary is published under CC BY at abp.sgit.ai.",
+   "hash": "e07329c47d7f"
+  },
+  "code-and-data": {
+   "line": "A policy moves key rules out of shared channels",
+   "para": "Models do not separate instructions from data; the NCSC said in December 2025 that prompt injection may never be mitigated like SQL injection. A policy does not fix that, but it takes the most important instructions out of the channel anyone can write into: loaded by the platform, versioned, signed, checked outside the model.",
+   "hash": "9868fe70974b"
+  },
+  "existential": {
+   "line": "Agent behaviour is an existential risk for model vendors",
+   "para": "Agents are going off the rails in public. Liability could be large, since software including AI becomes a product under EU product liability rules from 9 December 2026. Trust matters more: a few people badly hurt, amplified by the news, could make many more stop using agents.",
+   "hash": "a1b650d7c2f0"
+  },
+  "aviation": {
+   "line": "Aviation got safe because every crash became news",
+   "para": "Aviation became safe not from altruism but because every crash was news. In 1995 there were 2.72 fatal airliner accidents per million flights; at that rate 2025's 38.7 million flights would mean about 105. The Aviation Safety Network counted 12, a near ninefold fall in the rate.",
+   "hash": "e6f2f429ba35"
+  },
+  "payments": {
+   "line": "Payments got secure because fraud liability moved to companies",
+   "para": "Consumer liability was capped at $50 in the US and £35 in the UK, the 2015 chip shift moved counterfeit losses, and card brands founded PCI in 2006. UK scam reimbursement since October 2024 cut Faster Payments losses by about 21%. Those carrying the loss built detection, as Target's breach discovery showed.",
+   "hash": "36b2a58893ef"
+  },
+  "regulation": {
+   "line": "Rules work only when liability and business model align",
+   "para": "Some companies happily pay fines that conflict with their model, as Meta's €1.2 billion GDPR fine and €200 million consent-or-pay fine show. Real improvement came where a rule, a liability landing on the company and a visible systemic risk lined up, as in payments and aviation. Agents can join them.",
+   "hash": "13017ef99bee"
+  },
+  "inside": {
+   "line": "The vendor answers for the rows it accepted",
+   "para": "The policy makes the split explicit: vendor-accepted rows are the vendor's to answer for, everything else stays with the user, unlike today's \"you clicked allow\". It is a competitive advantage. The standard needs a versioned signed policy file, per-row vendor acknowledgement, the vendor's own policy, same-day breach reports and per-row liability.",
+   "hash": "cdd402c9d123"
+  },
+  "modes": {
+   "line": "In both modes today, the policy is mostly hope",
+   "para": "Over the API we write the whole system prompt; in the Claude apps and Claude Code the vendor's comes first and ours follows. Either way the policy is text the model is asked to keep, and CLAUDE.md is context, not enforced configuration. Vendors already run outside checks; policy rows deserve the same, under our control.",
+   "hash": "3ae0d392c5ea"
+  },
+  "system-prompt": {
+   "line": "A system prompt is an unwritten light behaviour policy",
+   "para": "Claude already has a behaviour policy in its system prompt and platform rules, just not written as one. System prompts should become readable, checkable rows. The layering: the vendor's published policy for the platform, the deployer's on top with business rules, each row marked with its enforcer and each layer with an owner.",
+   "hash": "d6b3714a7e96"
+  },
+  "already": {
+   "line": "Agents already run hidden policies we cannot rely on",
+   "para": "Claude in Chrome will not trade stocks, bypass captchas or type passwords, and asks before financial sites. That is a good policy, but we cannot control it, rely on it or know when it changes. A worthwhile project: reverse-engineer agents' policies, as with the Gmail connector's thirty tools, and publish them in ABP format.",
+   "hash": "3500fc4a6438"
+  },
+  "limits": {
+   "line": "A proposal only; prompt injection remains and figures mix",
+   "para": "No published figures show how often models keep a system prompt under pressure, and no vendor accepts a behaviour policy today. A policy does not separate code from data. The aviation numbers mix sources, the 21% fall is one estimate, and per-row liability is the end state, after acknowledgement and breach reporting.",
+   "hash": "d8076df792a3"
+  },
+  "sources": {
+   "line": "Sources: aviation data, payment law, vendor documentation",
+   "para": "Based on my two memos of 13 October 2026. Sources include Our World in Data and the Aviation Safety Network, IATA, 15 U.S.C. 1643, the UK Payment Services Regulations, Visa, PCI, the PSR and Frontier Economics, the Target report, the NCSC, Simon Willison, and Anthropic's Claude Code and Claude in Chrome documentation.",
+   "hash": "b85000cea0d6"
+  }
+ }
+}

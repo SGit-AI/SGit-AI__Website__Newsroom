@@ -1,0 +1,39 @@
+{
+ "slug": "sgit-is-a-standard",
+ "teaser": "Git won as a standard, not a server. sgit is one too: every name computed from the key, a file four GETs away, any storage can serve it.",
+ "topics": ["vaults-and-method", "site-and-engineering"],
+ "core_idea": "Like git, sgit is a format rather than a product: encrypted blobs, trees, commits and refs laid out by a convention, immutable objects named by the hash of their ciphertext and marked -imm-, every name derived from the key so a file is four GETs from any host, writes one batch and a compare-and-swap, two implementations that agree; deployment is choosing where the objects live and speed is how close they are; a cache layer computed by the writer replaces server-side derived data; and the design is what remains when the server cannot read.",
+ "nodes": [
+  {"id": "git", "label": "Git is a standard", "kind": "concept", "summary": "Why it outlived every central server."},
+  {"id": "vault", "label": "A vault is a convention", "kind": "concept", "summary": "Blobs, trees, commits, refs; all ciphertext."},
+  {"id": "imm", "label": "The name says -imm-", "kind": "method", "summary": "Anyone can keep the object for ever."},
+  {"id": "hash", "label": "Everything from one hash", "kind": "claim", "summary": "The key gives every name; four GETs to a file."},
+  {"id": "impls", "label": "Two implementations", "kind": "example", "summary": "The CLI and the browser app agree."},
+  {"id": "storage", "label": "Any storage reads it", "kind": "claim", "summary": "Bucket, CDN, GitHub Pages, a folder."},
+  {"id": "cas", "label": "Writes need one CAS", "kind": "method", "summary": "The API's main job."},
+  {"id": "cache", "label": "A cache you can compute", "kind": "artefact", "summary": "sgit cache add; one batch read."},
+  {"id": "client", "label": "Merges stay on the client", "kind": "claim", "summary": "A merge is a workflow step."},
+  {"id": "constraint", "label": "The constraint designed it", "kind": "concept", "summary": "A server that cannot read."}
+ ],
+ "edges": [
+  {"from": "git", "to": "vault", "rel": "extends"},
+  {"from": "vault", "to": "imm", "rel": "produces"},
+  {"from": "vault", "to": "hash", "rel": "produces"},
+  {"from": "impls", "to": "hash", "rel": "example-of"},
+  {"from": "hash", "to": "storage", "rel": "leads-to"},
+  {"from": "cas", "to": "storage", "rel": "contrasts"},
+  {"from": "cache", "to": "hash", "rel": "extends"},
+  {"from": "client", "to": "git", "rel": "depends-on"},
+  {"from": "constraint", "to": "vault", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["scion-and-sgit", "one-vault-ten-agents", "the-value-of-constraints", "the-homepage-is-a-vault", "from-send-to-sgit"],
+  "pages": [],
+  "sites": ["https://sgit.ai/case-studies/live-vault-docs.html", "https://github.com/SGit-AI/SGit-AI__CLI", "https://pypi.org/project/sgit-ai/"]
+ },
+ "quotes": [
+  {"text": "There is a server, and it is the least interesting part.", "why": "The thesis."},
+  {"text": "\"How fast is sgit\" is the wrong question. The right one is where the storage is, and how close.", "why": "Deployment as storage."},
+  {"text": "Every feature had to be expressible as objects a writer produces and a reader derives.", "why": "Why the designs are small."}
+ ]
+}

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering, SGit Newsroom</title>
+<meta name="description" content="A business plan, written to be handed to someone who wants to build it or to collaborate on it. The service helps companies manage the cost of agentic AI, and it starts from a claim this site has made before: cost is an engineering problem. An agent estate whose bill nobody can explain is an estate that shipped from the explorer side without the villager's discipline, and the Wardley map says so: prompts and workflows grown in sessions, running in production on commodity model APIs, with logs, traces and invoices that exist and are never read together, and no one who owns the cost. The service installs nothing. It reads what is already there, draws the footprint of every agent, builds a digital twin of the estate, writes the behaviour policy each agent was in fact running under, and maps cost and capability into one graph. The findings are two lists: what to stop paying for, which pays for the engagement, and what to build, which is the reason to have it: the places of attrition, the gaps, the workflow three teams rebuilt, the policy that would end a loop. The gaps are findings too: a company that cannot provide the data has learned the first one. Vaults carry the data in, the transformations as commits, and anonymised extracts out as sealed envelopes. Four price levels on the RiskMandate pattern, every number a labelled assumption.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/agentic-cost-is-an-engineering-problem.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/agentic-cost-is-an-engineering-problem.html">
+<meta property="og:title" content="Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering, SGit Newsroom">
+<meta property="og:description" content="A business plan, written to be handed to someone who wants to build it or to collaborate on it. The service helps companies manage the cost of agentic AI, and it starts from a claim this site has made before: cost is an engineering problem. An agent estate whose bill nobody can explain is an estate that shipped from the explorer side without the villager's discipline, and the Wardley map says so: prompts and workflows grown in sessions, running in production on commodity model APIs, with logs, traces and invoices that exist and are never read together, and no one who owns the cost. The service installs nothing. It reads what is already there, draws the footprint of every agent, builds a digital twin of the estate, writes the behaviour policy each agent was in fact running under, and maps cost and capability into one graph. The findings are two lists: what to stop paying for, which pays for the engagement, and what to build, which is the reason to have it: the places of attrition, the gaps, the workflow three teams rebuilt, the policy that would end a loop. The gaps are findings too: a company that cannot provide the data has learned the first one. Vaults carry the data in, the transformations as commits, and anonymised extracts out as sealed envelopes. Four price levels on the RiskMandate pattern, every number a labelled assumption.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/agentic-cost-is-an-engineering-problem.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/agentic-cost-is-an-engineering-problem.jpg">
+<link rel="alternate" type="text/markdown" href="agentic-cost-is-an-engineering-problem.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering, SGit Newsroom", "headline": "Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering, SGit Newsroom", "description": "A business plan, written to be handed to someone who wants to build it or to collaborate on it. The service helps companies manage the cost of agentic AI, and it starts from a claim this site has made before: cost is an engineering problem. An agent estate whose bill nobody can explain is an estate that shipped from the explorer side without the villager's discipline, and the Wardley map says so: prompts and workflows grown in sessions, running in production on commodity model APIs, with logs, traces and invoices that exist and are never read together, and no one who owns the cost. The service installs nothing. It reads what is already there, draws the footprint of every agent, builds a digital twin of the estate, writes the behaviour policy each agent was in fact running under, and maps cost and capability into one graph. The findings are two lists: what to stop paying for, which pays for the engagement, and what to build, which is the reason to have it: the places of attrition, the gaps, the workflow three teams rebuilt, the policy that would end a loop. The gaps are findings too: a company that cannot provide the data has learned the first one. Vaults carry the data in, the transformations as commits, and anonymised extracts out as sealed envelopes. Four price levels on the RiskMandate pattern, every number a labelled assumption.", "url": "https://newsroom.sgit.ai/articles/agentic-cost-is-an-engineering-problem.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering</p>
+ <h1>Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-12 &middot; <a href="versions/agentic-cost-is-an-engineering-problem.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.74</a> &middot; <span class="chip">business-plan</span><span class="chip">agentic-ai</span><span class="chip">cost</span><span class="chip">wardley-maps</span><span class="chip">explorer-villager</span><span class="chip">agent-behaviour-policy</span><span class="chip">digital-twin</span><span class="chip">logs</span><span class="chip">vaults</span><span class="chip">riskmandate</span><span class="chip">startups</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> A business plan, written to be handed to someone who wants to build it or to collaborate on it. The service helps companies manage the cost of agentic AI, and it starts from a claim this site has made before: cost is an engineering problem. An agent estate whose bill nobody can explain is an estate that shipped from the explorer side without the villager's discipline, and the Wardley map says so: prompts and workflows grown in sessions, running in production on commodity model APIs, with logs, traces and invoices that exist and are never read together, and no one who owns the cost. The service installs nothing. It reads what is already there, draws the footprint of every agent, builds a digital twin of the estate, writes the behaviour policy each agent was in fact running under, and maps cost and capability into one graph. The findings are two lists: what to stop paying for, which pays for the engagement, and what to build, which is the reason to have it: the places of attrition, the gaps, the workflow three teams rebuilt, the policy that would end a loop. The gaps are findings too: a company that cannot provide the data has learned the first one. Vaults carry the data in, the transformations as commits, and anonymised extracts out as sealed envelopes. Four price levels on the RiskMandate pattern, every number a labelled assumption.</em></p>
+<figure class="shot shot--frames" data-shot="ac-wardley-1.webp" data-dir="images/" data-alt="The map in three frames: the problem as most companies have it, what the service adds from what is already there, and where it goes. Agents in production on the explorer side, billed by the token, with logs nobody reads together; then the footprint, the twin, the policy and the graph; then cost as a discipline." data-frames="ac-wardley-1.webp,ac-wardley-2.webp,ac-wardley-3.webp" data-kind="wardley-map"><figcaption>The map in three frames: the problem as most companies have it, what the service adds from what is already there, and where it goes. Agents in production on the explorer side, billed by the token, with logs nobody reads together; then the footprint, the twin, the policy and the graph; then cost as a discipline.</figcaption><noscript><p class="small dim">The 3 frames, one image each: <a href="images/ac-wardley-1.webp">1</a> <a href="images/ac-wardley-2.webp">2</a> <a href="images/ac-wardley-3.webp">3</a>.</p></noscript></figure>
+<p>This is a business plan, of the kind this site has published before: <a href="an-agent-desktop-by-the-minute.html">Agent Desk</a>, <a href="connector-twin-before-you-deploy-an-agent.html">Connector Twin</a> and the others on the <a href="https://sgit.ai/startups/business-plans.html">business plans page</a>. It is written to be handed to someone, and the someone is whoever wants to build it, or build it with me. The service is simple to say: help companies manage the cost of agentic AI, by observing what is already happening.</p>
+<p>The reason I think it is a business, and not a consulting engagement, is that the inputs already exist in every company that has put agents into production, nobody is reading them together, and the two things that come out of reading them, a shorter bill and a map of what to build, are both things companies pay for.</p>
+<h2 id="short">In short</h2>
+<ul>
+<li><b>Cost is an engineering problem.</b> When the bill for agents cannot be explained, it is not because models are expensive. It is because the estate shipped from the explorer side, prompts and workflows grown in sessions, without the discipline production needs: a policy, a twin, an owner, a cap. The Wardley map shows the shape.</li>
+<li><b>The logs already tell the story.</b> Model and gateway invoices by key and day; the traces agents write; the prompts and schedules as they are. Read together, they give every agent a footprint, and a footprint is most of a policy.</li>
+<li><b>The service installs nothing.</b> The customer drops what they have into a vault; the service reads it; the customer gets the twin, the policies and two lists.</li>
+<li><b>Two lists, in this order.</b> The cost list: loops disguised as retries, whole context sent every call, big models where small ones answer, schedules nobody reads, keys with no ceiling. The engineering list: the workflow three teams rebuilt, the policy that would end the loop, the twin that would make the next incident replayable, the prompt that should be a component.</li>
+<li><b>The gaps are findings.</b> The less data a company can provide, the more it has learned already: an agent with no logs has no footprint, no owner and no policy.</li>
+<li><b>Vaults carry it.</b> Data in, encrypted to the service's key in a vault the customer owns; every transformation a commit, so the chain from invoice to finding is walkable; anonymised extracts out as sealed envelopes to a benchmark vault, seen by the customer before they go.</li>
+<li><b>Four price levels</b>, on the RiskMandate pattern, and a share-of-savings option. Every number is a labelled assumption.</li>
+</ul>
+<h2 id="problem">The problem, on a map</h2>
+<figure class="shot" data-shot="ac-wardley-problem.webp" data-dir="images/" data-alt="The problem. The person who pays the bill sees a total. Below it, agents in production built from prompts and workflows grown in sessions, on commodity model APIs metered by the token, with logs, traces and invoices that exist and are never read together, and no one who owns the cost." data-kind="wardley-map"><figcaption>The problem. The person who pays the bill sees a total. Below it, agents in production built from prompts and workflows grown in sessions, on commodity model APIs metered by the token, with logs, traces and invoices that exist and are never read together, and no one who owns the cost.</figcaption></figure>
+<p>Take any company that has agents doing real work: reading a mailbox, running a schedule, answering customers, writing code. Draw the value chain with the person who pays the bill at the top. Under them, the agents. Under the agents, where did they come from? Almost always from a session: someone built a prompt that worked, wrapped it in a workflow, and it went to production because it worked. That is the explorer side of the map, genesis and custom-built, and it is the right place to build something new. It is the wrong place to run something at scale, and <a href="explorer-to-villager-newsroom.html">the newsroom's move from explorer to villager</a> is this site's own worked example of what the move involves.</p>
+<p>Meanwhile the things the agents run on are at the far right: model APIs, token metering, cloud compute, all commodities, all billed by use, and billed well, which is the irony. The invoice is exact. The logs are complete. The traces exist because the platforms write them whether anyone asked or not. And nobody reads them together, because the agents came from the explorer side where nobody needed to, and the one node on the map that should connect the bill to the agents, an owner of cost, is missing.</p>
+<p>That is why <a href="knowing-when-to-stop.html">cost is an engineering problem</a>, in the sense that article meant it about security: not a thing you fix by negotiating a discount, but a class of defect with a cause, a fix and a test. An agent that retries in a loop is a bug. A workflow that sends its whole context on every call is a bug. A key with no ceiling is a missing control. These are the things engineers fix once they can see them, and the service exists to make them visible.</p>
+<h2 id="service">What the service does</h2>
+<figure class="shot" data-shot="ac-plan.webp" data-dir="images/" data-alt="Observe, map, find: the three steps, the two lists, how it makes money, why vaults, and the positive frame. Every price is a labelled assumption."><figcaption>Observe, map, find: the three steps, the two lists, how it makes money, why vaults, and the positive frame. Every price is a labelled assumption.</figcaption></figure>
+<figure class="shot" data-shot="ac-wardley-service.webp" data-dir="images/" data-alt="What the service adds, from what is already there. The footprint read from the logs; the twin of the estate; the behaviour policy each agent was in fact running under; and the cost and capability graph that produces the findings. Nothing is installed in the customer&#x27;s estate." data-kind="wardley-map"><figcaption>What the service adds, from what is already there. The footprint read from the logs; the twin of the estate; the behaviour policy each agent was in fact running under; and the cost and capability graph that produces the findings. Nothing is installed in the customer's estate.</figcaption></figure>
+<p><b>Observe.</b> No agent is installed and nothing in the customer's environment is changed. The customer drops into a vault what they already have: model and gateway invoices by key and by day; the logs and traces their agents write; the prompts, workflow files and schedules as they are; and whatever they know about who owns which agent. The vault is theirs; the contents are sealed to the service's key, as <a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001</a> describes.</p>
+<p><b>Map.</b> Three things are built from that, and they are the three things this site has been arguing for all along, applied to cost.</p>
+<ul>
+<li><b>The footprint</b> of every agent: what it actually did, read from the logs. Calls, tokens, tools, retries, loops, hours of the day, which data it touched. This is the <a href="footprint-and-blast-radius.html">footprint</a> that article proposed as the after-the-fact twin of a mandate, with nobody inline and no production access needed, and here it is the first thing the money attaches to.</li>
+<li><b>The twin</b> of the estate: a graph of agents, models, keys, tools, data, owners and schedules, with a cost on every edge. It is a digital twin in the plain sense: a representation of what is running that can be queried, compared with the invoice, and followed. The <a href="connector-twin-before-you-deploy-an-agent.html">connector twin</a> is one component of it; this is the whole estate.</li>
+<li><b>The policy</b> each agent was in fact running under. Not the one somebody wrote, if anybody did, but the one the footprint reveals: what it reached, what it did with what it reached, where it stopped and where it did not. Written as an <a href="the-behaviour-policy-is-the-business-logic.html">Agent Behaviour Policy</a>, with the enforcement column filled honestly, so that the rows that say "told" are visible, because that is where both the cost and the risk are. Where the cost is large, the policy will be large, and that is the intersection this plan sits on.</li>
+</ul>
+<p>And the gaps: where there is no log, no owner, no policy, no cap. These go on the map as findings, not as missing data.</p>
+<p><b>Find.</b> Two lists, in this order. The cost list first, because it pays for the engagement: retries that are loops; context sent whole on every call when a graph would send a slice, which <a href="the-agent-is-the-reader.html">The agent is the reader</a> measured at ninety per cent less; the large model used where a smaller one answers the same; agents on schedules whose output nobody reads; keys with no ceiling. Then the engineering list, which is the reason to have the engagement at all: the workflow three teams built separately; the policy that would end the loop for good; the twin that would make the next incident replayable; the thing that should be a component and is a prompt that every session has to remember, which is the argument of <a href="every-mistake-added-a-rule.html">Every mistake added a rule</a>.</p>
+<h2 id="positive">Why the positive frame matters</h2>
+<p>A cost review is a thing companies buy once and resent. A map of what to build is a thing they come back for. The difference is the frame, and it is not a sales trick; it is what the data supports. The same logs that show an agent looping show the workflow it was trying to run, and the workflow is usually worth more than the loop costs. The same twin that shows three teams calling the same model with the same prompt shows the component they should share. The places of attrition, where an agent gives up, retries, or hands off to a person, are the places where a policy and a component would change what the company can do, not only what it spends.</p>
+<p>So the service sells cost reduction, and delivers engineering opportunity, and the business model follows the second. That is also why the gaps are findings rather than obstacles. A company that cannot produce a log for an agent has an agent nobody is watching; a company with no owner for a key has a key that will be the next incident; a company whose prompts live only in a session has no way to know what its agents are doing. Not being able to do the analysis is the first result of the analysis, and it is the one most companies need first.</p>
+<h2 id="vaults">Why vaults</h2>
+<p>The plan is specific about vaults because they fit this job unusually well, and because the latest capabilities make the fit better.</p>
+<ul>
+<li><b>Capture.</b> The customer's logs go into a vault once, encrypted in their browser or on their machine, in a vault they own and can revoke. The service holds a read key to that vault and nothing else.</li>
+<li><b>Transform.</b> Every step from invoice to finding is a commit: the parsed logs, the footprints, the twin, the policies, the lists. The chain is walkable, so a finding can be followed back to the lines it rests on, which is the same provenance rule the <a href="the-article-remains-a-product.html">newsroom</a> runs on.</li>
+<li><b>Move.</b> The twin is a vault of its own, and a read key opens exactly one customer's estate to exactly one analyst or agent. Anonymised extracts, the shape of a loop, the ratio of context to answer, the distribution of cost by agent type, can leave as <a href="rfc-0001-public-key-cryptography-for-sgit.html">sealed envelopes</a> to a benchmark vault, and the customer sees the extract before it goes. Over time that vault is the thing that lets the service say "companies like yours spend this much on this", which is the second business.</li>
+</ul>
+<h2 id="money">How it makes money</h2>
+<p>Four levels, on the pattern RiskMandate uses, and one alternative.</p>
+<div class="tablewrap"><table>
+<tr><th>Level</th><th>What</th><th>Price</th></tr>
+<tr><td><b>Kit</b></td><td>The log formats, the twin schema, the policy template and the scripts, to run yourself</td><td>£50</td></tr>
+<tr><td><b>Your cost vault</b></td><td>The customer runs the catalogue of analyses on their own logs, in their own vault</td><td>£250</td></tr>
+<tr><td><b>Standard</b></td><td>One estate read: the twin, the policies, both lists, a one-page board summary, within ten working days</td><td>£3,000</td></tr>
+<tr><td><b>Tailored</b></td><td>Standard, plus the engineering list worked through with the team, and a re-read when the bill moves</td><td>from £9,000</td></tr>
+<tr><td><b>Share of savings</b></td><td>Where a customer prefers it: a share of the first year's reduction, measured from the invoices</td><td>an assumption</td></tr>
+</table></div>
+<p>About eight Standard and two Tailored a month cover a two-founder burn, on the same arithmetic as <a href="https://sgit.ai/startups/business-plans.html">Company X-Ray</a>. Every number is a labelled assumption, and the calculator belongs in the plan vault when it is made.</p>
+<h2 id="exists">What is already here, and what is not</h2>
+<p>What exists on this site, and in the agents that run it: the footprint method, the behaviour policy format with its enforcement column, the connector twin design, the vault tooling for capture, transform and move, the sealed envelopes, and the Company X-Ray pattern of reading a company's own documents in a vault and returning findings in five days. What does not exist: the catalogue of cost analyses, the twin schema for an agent estate, the log parsers for the common platforms, the benchmark vault, a single customer. That is the work, and it is a few weeks of it, which is why I am writing the plan rather than keeping it.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>No customer has been read.</b> The method is assembled from pieces that run elsewhere; the cost list and the engineering list are what I expect to find, not what has been found.</li>
+<li><b>The prices are assumptions.</b> Labelled as such, on the pattern of the other plans here, and to be tested against the first three customers.</li>
+<li><b>The map is a sketch.</b> Wardley maps are arguments, not measurements; this one says where I think the problem sits and why.</li>
+<li><b>Share of savings is hard to measure honestly.</b> It needs a baseline from the invoices and an agreed way to attribute a reduction; the plan should say how before anyone signs it.</li>
+</ul>
+<p>If you want to build this, or you run agents in production and would like to be the first estate read, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 12 October 2026, after a conversation with someone I may collaborate with; they are not named. Written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine. The plan rests on earlier work here: the footprint in <a href="footprint-and-blast-radius.html">Footprint and blast radius</a>, the policy in <a href="the-behaviour-policy-is-the-business-logic.html">The behaviour policy is the business logic</a>, the twin in <a href="connector-twin-before-you-deploy-an-agent.html">Connector Twin</a>, the explorer-to-villager move in <a href="explorer-to-villager-newsroom.html">the newsroom's own case</a>, the context measurement in <a href="the-agent-is-the-reader.html">The agent is the reader</a>, the component argument in <a href="every-mistake-added-a-rule.html">Every mistake added a rule</a>, the vault cryptography in <a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001</a>, and the pricing pattern of the plans on the <a href="https://sgit.ai/startups/business-plans.html">business plans page</a>. The Wardley maps and the plan figure were drawn for this article. Related: <a href="knowing-when-to-stop.html">Knowing when to stop</a>, <a href="an-agent-desktop-by-the-minute.html">An agent desktop by the minute</a> and <a href="the-article-remains-a-product.html">The article remains a product</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-12" topics="startups-and-strategy agents-and-policy vaults-and-method" title="Agentic cost is an engineering problem: a business plan for a service that reads the logs a company already has and finds the money, then the engineering, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#agentic-cost-is-an-engineering-problem">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="an-agent-desktop-by-the-minute.html">A locked-down desktop for an agent, by the minute, is still hard to rent</a> <span class="dim">Nine properties a safe agent desktop needs, nine products against them, the macOS day-long lease, and the startup credits that would pay for testing it.</span></li><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="explorer-to-villager-newsroom.html">Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it</a> <span class="dim">The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.</span></li><li><a href="knowing-when-to-stop.html">Knowing when to stop: what experience gives people, and what we have to design into agents</a> <span class="dim">Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.</span></li><li><a href="rfc-0001-public-key-cryptography-for-sgit.html">RFC 0001: two ways to add public-key cryptography to sgit, and the questions we want you to answer</a> <span class="dim">A Request for Comments: two key pairs so a reader cannot write, sealed files only named people can open, and fourteen questions for reviewers.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a> <span class="dim">Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.</span></li><li><a href="the-agent-is-the-reader.html">The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</a> <span class="dim">Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.</span></li><li><a href="every-mistake-added-a-rule.html">Every mistake added a rule: complexity, agents, and the way back to shipping</a> <span class="dim">When every agent mistake adds a rule, complexity wins: map the process, move each piece right as a small shipped component, and keep the rigour for the work.</span></li><li><a href="the-article-remains-a-product.html">The article remains a product: Jonathan Palmer's four outputs for a newsroom with no human readers, checked against one that runs</a> <span class="dim">Jonathan Palmer's four outputs for a newsroom with no human readers, quoted line by line and checked against newsroom.sgit.ai as it runs, screenshots included.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="explorer-coding.html">Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it</a> <span class="dim">Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.</span></li><li><a href="sovereignty-is-the-ability-to-move.html">Sovereignty is the ability to move: play where the ball is going, take away the dot, and keep a twin that works</a> <span class="dim">Sovereignty is the ability to move: take away each dot on the map, and keep a twin that works for the minimum viable company, tested in QA.</span></li><li><a href="move-the-cloud-not-the-code.html">Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch</a> <span class="dim">Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.</span></li><li><a href="why-i-love-wardley-maps.html">Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map</a> <span class="dim">The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 88 &middot; <a href="../for/make.html#r=88">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/agentic-cost-is-an-engineering-problem.jpg" download>agentic-cost-is-an-engineering-problem.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="agentic-cost-is-an-engineering-problem.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

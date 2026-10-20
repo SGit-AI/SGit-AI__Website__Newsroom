@@ -1,0 +1,216 @@
+{
+  "id": "nsdb-queries-sparql",
+  "version": "v0.3.4",
+  "note": "Worked SPARQL queries with the same question in Cypher (shown, not run). at_build is what each returned when the site was built.",
+  "prefixes": "PREFIX p: <https://newsroom.sgit.ai/portugal/id/>\nPREFIX v: <https://newsroom.sgit.ai/portugal/verb/>\nPREFIX t: <https://newsroom.sgit.ai/portugal/type/>\nPREFIX a: <https://newsroom.sgit.ai/portugal/prop/>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\n",
+  "queries": [
+    {
+      "id": "count-by-type",
+      "title": "Nodes by type",
+      "note": "Every node carries `rdf:type`; the types are the ontology's, with labels in English and Portuguese.",
+      "sparql": "SELECT ?type (COUNT(?n) AS ?nodes)\nWHERE { ?n a ?type . }\nGROUP BY ?type\nORDER BY DESC(?nodes)",
+      "cypher": "MATCH (n)\nRETURN labels(n)[0] AS type, count(n) AS nodes\nORDER BY nodes DESC",
+      "at_build": {
+        "kind": "select",
+        "rows": 18,
+        "columns": [
+          "type",
+          "nodes"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "speakers-orgs",
+      "title": "Who speaks at the event, listed under which organisation",
+      "note": "Two edges from the same person. The event is named by its IRI; every node's IRI is its graph id under `portugal/id/`.",
+      "sparql": "SELECT ?person ?organisation\nWHERE {\n  ?p v:speaks_at <https://newsroom.sgit.ai/portugal/id/event:startup-summit-lisbon-2026> ;\n     rdfs:label ?person ;\n     v:listed_under ?o .\n  ?o rdfs:label ?organisation .\n}\nORDER BY ?person",
+      "cypher": "MATCH (p:Person)-[:SPEAKS_AT]->(:Event {id: 'event:startup-summit-lisbon-2026'}),\n      (p)-[:LISTED_UNDER]->(o:Organisation)\nRETURN p.label AS person, o.label AS organisation\nORDER BY person",
+      "at_build": {
+        "kind": "select",
+        "rows": 64,
+        "columns": [
+          "person",
+          "organisation"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "path-pt",
+      "title": "A path read aloud in Portuguese",
+      "note": "The verbs are in the store with `@pt` labels, so the sentence is assembled by the query, not the page. graphs.sgit.ai's rule: if a path does not read as a sentence in the reader's language, the edge is wrong.",
+      "sparql": "SELECT ?sessao ?v1 ?evento ?v2 ?local\nWHERE {\n  ?s a t:Session ; rdfs:label ?sessao ; v:part_of ?e .\n  ?e rdfs:label ?evento ; v:takes_place_at ?l .\n  ?l rdfs:label ?local .\n  v:part_of rdfs:label ?v1 .\n  v:takes_place_at rdfs:label ?v2 .\n  FILTER(lang(?v1) = \"pt\" && lang(?v2) = \"pt\")\n}\nLIMIT 6",
+      "cypher": "MATCH (s:Session)-[r1:PART_OF]->(e:Event)-[r2:TAKES_PLACE_AT]->(l:Place)\nRETURN s.label, r1.pt, e.label, r2.pt, l.label\nLIMIT 6",
+      "at_build": {
+        "kind": "select",
+        "rows": 6,
+        "columns": [
+          "sessao",
+          "v1",
+          "evento",
+          "v2",
+          "local"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "inverse-walk",
+      "title": "Walking an edge backwards with a property path",
+      "note": "`^v:speaks_at` is `hosts` read from the event's side. The store holds each fact once; the inverse is declared with `owl:inverseOf` and walked with `^`.",
+      "sparql": "SELECT ?event (COUNT(?p) AS ?speakers)\nWHERE {\n  ?event ^v:speaks_at ?p .\n}\nGROUP BY ?event",
+      "cypher": "MATCH (e:Event)<-[:SPEAKS_AT]-(p:Person)\nRETURN e, count(p) AS speakers",
+      "at_build": {
+        "kind": "select",
+        "rows": 1,
+        "columns": [
+          "event",
+          "speakers"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "inverses",
+      "title": "The named inverses, from the ontology inside the store",
+      "note": "The ontology travels with the data. Every verb has a distinct named inverse; a query can prove it rather than a page assert it.",
+      "sparql": "SELECT ?verb ?inverse ?verbo\nWHERE {\n  ?i owl:inverseOf ?v .\n  ?v rdfs:label ?verb . FILTER(lang(?verb) = \"en\")\n  ?i rdfs:label ?inverse . FILTER(lang(?inverse) = \"en\")\n  ?v rdfs:label ?verbo . FILTER(lang(?verbo) = \"pt\")\n}\nORDER BY ?verb",
+      "cypher": "-- Cypher has no ontology in the store; relationship types are strings.\n-- The nearest is CALL db.relationshipTypes(), which returns names without inverses.",
+      "at_build": {
+        "kind": "select",
+        "rows": 19,
+        "columns": [
+          "verb",
+          "inverse",
+          "verbo"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "two-hops",
+      "title": "Everything within two hops of the event",
+      "note": "A property path over any verb, in either direction, then counted by type. This is the query the SQL console needs a recursive CTE for.",
+      "sparql": "SELECT ?type (COUNT(DISTINCT ?n) AS ?nodes)\nWHERE {\n  <https://newsroom.sgit.ai/portugal/id/event:startup-summit-lisbon-2026> (!(a|rdfs:label)|^!(a|rdfs:label))/(!(a|rdfs:label)|^!(a|rdfs:label)) ?n .\n  FILTER(isIRI(?n))\n  ?n a ?type .\n}\nGROUP BY ?type\nORDER BY DESC(?nodes)",
+      "cypher": "MATCH (e:Event {id: 'event:startup-summit-lisbon-2026'})-[*1..2]-(n)\nRETURN labels(n)[0] AS type, count(DISTINCT n) AS nodes\nORDER BY nodes DESC",
+      "at_build": {
+        "kind": "select",
+        "rows": 14,
+        "columns": [
+          "type",
+          "nodes"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "stages",
+      "title": "Sessions grouped by stage",
+      "note": "`GROUP_CONCAT` over the `on_stage` edge. Sessions the agenda gives no stage do not appear, and that absence is the honest answer.",
+      "sparql": "SELECT ?stage (GROUP_CONCAT(?s; separator=\" · \") AS ?sessions)\nWHERE {\n  ?sess v:on_stage ?st ; rdfs:label ?s .\n  ?st rdfs:label ?stage . FILTER(lang(?stage) = \"en\")\n}\nGROUP BY ?stage",
+      "cypher": "MATCH (s:Session)-[:ON_STAGE]->(st:Stage)\nRETURN st.label AS stage, collect(s.label) AS sessions",
+      "at_build": {
+        "kind": "select",
+        "rows": 2,
+        "columns": [
+          "stage",
+          "sessions"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "coverage",
+      "title": "The press pages and who publishes them",
+      "note": "Coverage nodes carry the publisher as a property and `covers` the event as an edge; the Organisation behind each is reached through `published_by`.",
+      "sparql": "SELECT ?publisher ?title ?published\nWHERE {\n  ?c a t:Coverage ; v:covers <https://newsroom.sgit.ai/portugal/id/event:startup-summit-lisbon-2026> ; rdfs:label ?title .\n  ?c v:published_by ?org . ?org rdfs:label ?publisher .\n  OPTIONAL { ?c a:published ?published }\n}\nORDER BY ?published ?publisher",
+      "cypher": "MATCH (c:Coverage)-[:COVERS]->(:Event {id: 'event:startup-summit-lisbon-2026'}),\n      (c)-[:PUBLISHED_BY]->(o:Organisation)\nRETURN o.label AS publisher, c.label AS title, c.published\nORDER BY c.published, publisher",
+      "at_build": {
+        "kind": "select",
+        "rows": 7,
+        "columns": [
+          "publisher",
+          "title",
+          "published"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "no-longer-listed",
+      "title": "Who is no longer listed",
+      "note": "The boolean is typed `xsd:boolean` in the triples, so `true` matches as a literal. There is no reason property to ask for.",
+      "sparql": "SELECT ?person ?source\nWHERE {\n  ?p a t:Person ; a:no_longer_listed true ; rdfs:label ?person ; a:source ?source .\n}",
+      "cypher": "MATCH (p:Person {no_longer_listed: true})\nRETURN p.label AS person, p.source AS source",
+      "at_build": {
+        "kind": "select",
+        "rows": 1,
+        "columns": [
+          "person",
+          "source"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "construct-inverses",
+      "title": "CONSTRUCT the inverse edges on the fly",
+      "note": "The store holds 298 forward edges. This query builds the 298 inverse ones as new triples without storing them; the console shows what came back.",
+      "sparql": "CONSTRUCT { ?o ?inv ?s }\nWHERE {\n  ?s ?v ?o .\n  ?inv owl:inverseOf ?v .\n}",
+      "cypher": "-- No Cypher equivalent: inverses are not declared, so nothing can construct them.",
+      "at_build": {
+        "kind": "construct",
+        "triples": 1106,
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "same-topic",
+      "title": "Two people at different organisations who speak on the same topic",
+      "note": "The event's own topic tags, joined across organisations. The first ingredient of the connections page, one hop each side.",
+      "sparql": "SELECT ?topic ?org_a ?org_b\nWHERE {\n  ?p1 v:speaks_on ?t ; v:listed_under ?o1 .\n  ?p2 v:speaks_on ?t ; v:listed_under ?o2 .\n  FILTER(STR(?o1) < STR(?o2))\n  ?t rdfs:label ?topic . ?o1 rdfs:label ?org_a . ?o2 rdfs:label ?org_b .\n}\nORDER BY ?topic ?org_a ?org_b\nLIMIT 40",
+      "cypher": "MATCH (p1:Person)-[:SPEAKS_ON]->(t:Topic)<-[:SPEAKS_ON]-(p2:Person),\n      (p1)-[:LISTED_UNDER]->(o1:Organisation), (p2)-[:LISTED_UNDER]->(o2:Organisation)\nWHERE o1.label < o2.label\nRETURN t.label AS topic, o1.label AS org_a, o2.label AS org_b\nORDER BY topic, org_a, org_b LIMIT 40",
+      "at_build": {
+        "kind": "select",
+        "rows": 40,
+        "columns": [
+          "topic",
+          "org_a",
+          "org_b"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "derived-with-pattern",
+      "title": "A derived tag, with the pattern that made it",
+      "note": "Tag nodes carry the lexicon pattern as a property, so the store can show the formula next to the result. The matched words live on the edge in graph.json and are not reified here; the SQL console has them.",
+      "sparql": "SELECT ?tag ?type ?pattern (COUNT(?p) AS ?people)\nWHERE {\n  ?p (v:active_in|v:uses|v:advocates|v:offers) ?n .\n  ?n a ?type ; rdfs:label ?tag ; a:pattern ?pattern .\n  FILTER(lang(?tag) = \"en\")\n}\nGROUP BY ?tag ?type ?pattern\nORDER BY DESC(?people)\nLIMIT 20",
+      "cypher": "MATCH (p:Person)-[:ACTIVE_IN|USES|ADVOCATES|OFFERS]->(n)\nRETURN n.label AS tag, labels(n)[0] AS type, n.pattern AS pattern, count(p) AS people\nORDER BY people DESC LIMIT 20",
+      "at_build": {
+        "kind": "select",
+        "rows": 20,
+        "columns": [
+          "tag",
+          "type",
+          "pattern",
+          "people"
+        ],
+        "version": "v0.3.4"
+      }
+    },
+    {
+      "id": "ask-symmetric",
+      "title": "ASK: is any edge symmetric?",
+      "note": "graphs.sgit.ai bans symmetric edges (`related_to`, `associated_with`). The answer should be false; the rule is a query, not a promise.",
+      "sparql": "ASK {\n  ?x ?v ?y .\n  ?y ?v ?x .\n  FILTER(?v != owl:inverseOf && ?x != ?y)\n}",
+      "cypher": "MATCH (x)-[r]->(y)-[s]->(x)\nWHERE type(r) = type(s)\nRETURN count(*) > 0 AS symmetric",
+      "at_build": {
+        "kind": "ask",
+        "answer": false,
+        "version": "v0.3.4"
+      }
+    }
+  ]
+}

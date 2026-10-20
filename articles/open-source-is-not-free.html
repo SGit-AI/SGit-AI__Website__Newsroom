@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Open source is not free: who pays to keep the long tail working?, SGit Newsroom</title>
+<meta name="description" content="An old Intel iMac, clean-installed for my agents, could not run Homebrew or Docker Desktop, and needed Python by hand. Each project that dropped it did so because supporting old machines costs money and the people on the long tail have no easy way to pay for it. This article measures that long tail from Homebrew and PyPI analytics, sets out where money does flow for old versions (Oracle, Red Hat, Windows ESU, Rimini Street) and where it does not (open source receives about 0.09% of its estimated value), shows why pence payments only work aggregated, and simulates five ways to pay for it. About £1.80 a machine a year from individuals covers one project's long-tail cost in half the draws; customised builds for companies cover it in 94%. Open source is not free; the question is whether the people who get the value have an easy way to pay for it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/open-source-is-not-free.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/open-source-is-not-free.html">
+<meta property="og:title" content="Open source is not free: who pays to keep the long tail working?, SGit Newsroom">
+<meta property="og:description" content="An old Intel iMac, clean-installed for my agents, could not run Homebrew or Docker Desktop, and needed Python by hand. Each project that dropped it did so because supporting old machines costs money and the people on the long tail have no easy way to pay for it. This article measures that long tail from Homebrew and PyPI analytics, sets out where money does flow for old versions (Oracle, Red Hat, Windows ESU, Rimini Street) and where it does not (open source receives about 0.09% of its estimated value), shows why pence payments only work aggregated, and simulates five ways to pay for it. About £1.80 a machine a year from individuals covers one project's long-tail cost in half the draws; customised builds for companies cover it in 94%. Open source is not free; the question is whether the people who get the value have an easy way to pay for it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/open-source-is-not-free.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Open source is not free: who pays to keep the long tail working?, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/open-source-is-not-free.jpg">
+<link rel="alternate" type="text/markdown" href="open-source-is-not-free.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Open source is not free: who pays to keep the long tail working?, SGit Newsroom", "headline": "Open source is not free: who pays to keep the long tail working?, SGit Newsroom", "description": "An old Intel iMac, clean-installed for my agents, could not run Homebrew or Docker Desktop, and needed Python by hand. Each project that dropped it did so because supporting old machines costs money and the people on the long tail have no easy way to pay for it. This article measures that long tail from Homebrew and PyPI analytics, sets out where money does flow for old versions (Oracle, Red Hat, Windows ESU, Rimini Street) and where it does not (open source receives about 0.09% of its estimated value), shows why pence payments only work aggregated, and simulates five ways to pay for it. About £1.80 a machine a year from individuals covers one project's long-tail cost in half the draws; customised builds for companies cover it in 94%. Open source is not free; the question is whether the people who get the value have an easy way to pay for it.", "url": "https://newsroom.sgit.ai/articles/open-source-is-not-free.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Open source is not free: who pays to keep the long tail working?</p>
+ <h1>Open source is not free: who pays to keep the long tail working?</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-10 &middot; <a href="versions/open-source-is-not-free.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.25</a> &middot; <span class="chip">open-source</span><span class="chip">economics</span><span class="chip">funding</span><span class="chip">long-tail</span><span class="chip">support</span><span class="chip">micropayments</span><span class="chip">simulation</span><span class="chip">data-science</span><span class="chip">homebrew</span><span class="chip">docker</span><span class="chip">macos</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> An old Intel iMac, clean-installed for my agents, could not run Homebrew or Docker Desktop, and needed Python by hand. Each project that dropped it did so because supporting old machines costs money and the people on the long tail have no easy way to pay for it. This article measures that long tail from Homebrew and PyPI analytics, sets out where money does flow for old versions (Oracle, Red Hat, Windows ESU, Rimini Street) and where it does not (open source receives about 0.09% of its estimated value), shows why pence payments only work aggregated, and simulates five ways to pay for it. About £1.80 a machine a year from individuals covers one project's long-tail cost in half the draws; customised builds for companies cover it in 94%. Open source is not free; the question is whether the people who get the value have an easy way to pay for it.</em></p>
+<p>Open source is not free. Somebody is paying for it, even if what they pay with is only their time. I believe that more strongly every month, and last week an old iMac showed me why.</p>
+<p>Everything I build at RiskMandate and sgit is open source. Anyone can take it and run it. But if somebody wants to deploy it, they should work through us, because we ought to be cheaper than doing it themselves. What we sell is not the code. It is a build for that customer: sometimes with fewer features, because fewer features means less attack surface, but always with the capabilities the customer actually wants, tested so that it works. The question this article asks is whether that idea scales down. Could a project earn money from people like me, and from companies, for supported, customised builds, at prices from pence to pounds rather than thousands?</p>
+<p>I did not want to answer that from my own experience alone, so the research for this article went to the data: install analytics, download statistics, company filings, maintainer surveys and published price lists. Every number below has a source, and the <a href="https://sgit.ai/demos/vaults/long-tail-ledger/index.html">Long Tail Ledger</a> vault holds each one with its quote and a flag saying whether it was read at the source. On top of that sits a model, a Monte Carlo simulation of five ways to pay for the long tail. It is a model, not a forecast, and every assumption in it is labelled with its range and its reason.</p>
+<h2>In short</h2>
+<ul>
+<li><b>The long tail is measurable, and it is not small.</b> In Homebrew's install analytics, 6.99% of macOS install events in the last 30 days, and 16.66% over a year, came from versions older than the newest three. On PyPI, 18.55% of pip downloads run on end-of-life Python.</li>
+<li><b>Money flows to old versions when a vendor owns them.</b> Oracle earned $19.8 billion from support last year; Red Hat's subscriptions ran at about 93% gross margin. Open source receives about 0.09% of its estimated value in investment.</li>
+<li><b>Pence only work aggregated.</b> A 20p card fee is 41.5% of a 50p payment and 5.5% of £5.</li>
+<li><b>Simulated, micro-payments roughly pay for the long tail.</b> About £1.80 a machine a year covers one project's long-tail cost in half the draws with typical conversion, and 70p with great conversion. No price reaches nine draws in ten.</li>
+<li><b>Companies pay for it reliably.</b> Customised builds priced below a company's own cost of keeping the tool working cover the cost in 94% of draws. Donations cover it in 24%.</li>
+<li><b>The satellites follow the money.</b> Rimini Street shows a third-party support market exists where money flows: about $136,000 a year per client.</li>
+</ul>
+<h2 id="imac">The iMac</h2>
+<p>I gave my agents an Intel iMac as a desktop of their own, wiped and clean-installed with macOS 13 Ventura, the newest macOS the installer offered. Chrome works. Claude Desktop works. Homebrew would not install. Docker Desktop would not install. Getting sgit on it meant downloading Python by hand.</p>
+<p>I asked the research not to take my word for any of that. Here is what it found, including where I was wrong.</p>
+<ul>
+<li><b>Which iMac matters.</b> Only the 2017 iMacs stop at Ventura. The 2019 models are on Apple's lists for Sonoma and Sequoia, and Sequoia was still being patched on 28 September 2026. If the machine is a 2019, a clean install of Sequoia would put it back in support for both Apple and Docker. The quick check is the model identifier: iMac18,x is 2017, iMac19,x is 2019.</li>
+<li><b>Ventura is unpatched.</b> Its last security update was 13.7.8 on 20 August 2025. A clean Ventura install today is an operating system that has gone more than a year without a fix, on a machine that will run agents and a browser. Apple does not publish end dates; its deployment guide says only that "not all known security issues are addressed in previous versions".</li>
+<li><b>Homebrew refuses the CPU, not just the OS.</b> Since September 2026 the official installer stops on any Intel Mac with "Homebrew on macOS is only supported on Apple Silicon processors!", whatever macOS it runs. Homebrew's own reasoning is worth quoting: "If Apple and Microsoft's GitHub, two of the world's largest technology companies, cannot continue supporting macOS Intel x86_64, sadly neither can Homebrew." Existing Intel installs keep working, without support, until about September 2027.</li>
+<li><b>Docker Desktop needs macOS 14.</b> Ventura support ended in 4.48.0 (October 2025) and the installer has required Sonoma since 4.49.0. Docker still ships an Intel build.</li>
+<li><b>Python was the easy part, once found.</b> The python.org installer supports macOS 10.15 and later, so it runs on Ventura. The reason a manual download was needed is that Ventura has no usable Python 3 of its own: <code>/usr/bin/python3</code> is a stub that offers Apple's Command Line Tools, which users report bring Python 3.9.6, below sgit's 3.11.</li>
+<li><b>There is still a package manager.</b> MacPorts ships a Ventura installer and was building Ventura Intel packages on the day I checked. Homebrew's own release notes point Intel users there.</li>
+<li><b>The floor is rising everywhere at once.</b> Go 1.27, Node.js 24 and Chrome 151 all now need macOS 13 or later, which makes Ventura the next version to be dropped. Rust, Homebrew, Node.js and CPython have all moved Intel macOS to a lower support tier, mostly because free Intel CI is going away: GitHub retires its last Intel macOS runner in autumn 2027.</li>
+<li><b>The volunteers who kept old Macs alive stopped taking money.</b> OpenCore Legacy Patcher, the project that puts newer macOS on unsupported Macs, raised about $96,000 from over 4,000 contributors. In March 2026 it stopped taking donations: "with multiple developers having left the team, development progress has become much slower."</li>
+</ul>
+<p>So my story was mostly right and a little unfair. The machine works, the tools do still exist for it, and some of what I hit was the hardware's age rather than anyone's choice. But the pattern underneath is exactly the one I suspected. Every project that dropped this machine did it for the same reason: supporting it costs money, in CI hardware and in maintainer time, and the people who still need the support are not the ones paying for it.</p>
+<h2 id="measured">The long tail, measured</h2>
+<p>How many people are on that long tail? Homebrew publishes anonymous install analytics by macOS version, which is the best direct measure I found. These are install events from users who have not opted out, not unique machines, but the shares are telling.</p>
+<div class="tablewrap"><table>
+<tr><th>Homebrew macOS install events</th><th>Last 30 days</th><th>Last 90 days</th><th>Last 365 days</th></tr>
+<tr><td>Older than the newest three versions</td><td>6.99%</td><td>12.39%</td><td>16.66%</td></tr>
+<tr><td>Ventura 13 or older</td><td>3.32%</td><td>5.19%</td><td>5.43%</td></tr>
+</table></div>
+<p>Over a year that is 4.64 million install events from Ventura and 4.94 million from Monterey, one version older. Monterey outnumbering Ventura fits Intel Macs that cannot go beyond macOS 12.</p>
+<figure class="shot" data-shot="lt-tail.webp" data-dir="images/" data-alt="Homebrew macOS install events by version over 30, 90 and 365 days. macOS 27 shipped in September 2026, so it is large in the 30-day window and small in the year. From the Long Tail Ledger vault."><figcaption>Homebrew macOS install events by version over 30, 90 and 365 days. macOS 27 shipped in September 2026, so it is large in the 30-day window and small in the year. From the Long Tail Ledger vault.</figcaption></figure>
+<p>The same pattern shows up in Python. Over the last 30 days, 18.55% of pip downloads and 10.45% of requests downloads came from Python 3.9 or older, all past end of life, and Python 3.10, which reached end of life this month, is a further 15% of pip. Those are mostly servers and CI rather than desktops, so they measure a different long tail, but a large one. Inside companies, Black Duck's 2026 audit found components more than four years out of date in 92% of codebases.</p>
+<p>This is exactly the population that volunteer projects are dropping. Homebrew stopped building Intel bottles while its own analytics show millions of installs a year from machines on old versions. That is not a criticism of Homebrew. Its volunteers said plainly that the retreat of Apple and GitHub "exceeds what Homebrew's volunteers can replace". The long tail has value to the people on it, and no revenue stream back to the people who would have to support it.</p>
+<h2 id="money">Where the money flows</h2>
+<p>Open source is worth a great deal and is paid for very little. The Harvard Business School study by Hoffmann, Nagle and Zhou put the demand-side value of widely used open source at $8.8 trillion: what every firm would spend to rebuild it. The Linux Foundation estimates that about $7.7 billion a year is invested across the whole ecosystem, 86% of it as staff time rather than cash. That is about 0.09% of the value. GitHub Sponsors has passed $100 million since 2019, which is real money and a real achievement, but at its current rate it comes to about 13 cents a year per GitHub developer.</p>
+<p>The maintainers feel it. In Tidelift's 2024 survey, 60% of maintainers describe themselves as unpaid hobbyists, and 60% have quit or considered quitting a project. Paid maintainers are 55% more likely to do the security and maintenance work that matters. Some of the most important code in the world has run on almost nothing: the xz maintainer wrote in 2022 that "this is an unpaid hobby project", two years before the backdoor; core-js, on more than half of the top thousand websites, was earning about $400 for a month of work in 2023.</p>
+<p>Now look at where money does flow for exactly the thing my iMac needs: keeping old versions alive.</p>
+<ul>
+<li><b>Oracle</b> supports every version for as long as you run it, and charges for it. Software support brought in $19.8 billion in the year to May 2026, 29.4% of revenue, and Oracle says "substantially all" support customers renew.</li>
+<li><b>Red Hat</b>, in its last year as a standalone company, earned 87.7% of its revenue from subscriptions, at a gross margin of about 93%. That is an open source company selling support for code anyone can download.</li>
+<li><b>Microsoft</b> charges organisations $61 per device for the first year of Windows 10 extended security updates, doubling each year, and consumers $30 one-off for up to ten devices.</li>
+<li><b>Canonical</b> sells Ubuntu Pro at $25 a desktop and $500 a server a year, free for up to five personal machines. TuxCare sells extended support for end-of-life Linux at about $100 a system.</li>
+<li><b>Rimini Street</b>, which supports other companies' software, earned $421.5 million from 3,102 clients in 2025, about $136,000 each, at a 60% gross margin. That is the satellite market, and it exists where the money flows.</li>
+</ul>
+<figure class="shot" data-shot="lt-money.webp" data-dir="images/" data-alt="What people pay to keep old software supported, per machine per year, against what open source receives in voluntary funding. From the Long Tail Ledger vault."><figcaption>What people pay to keep old software supported, per machine per year, against what open source receives in voluntary funding. From the Long Tail Ledger vault.</figcaption></figure>
+<p>The contrast is the whole argument. The same need, "keep the version I have working and safe", is a multi-billion-pound business when a vendor owns the code, and a donation jar when a community does.</p>
+<h2 id="charge">Why not just charge?</h2>
+<p>Projects do try, and the record is instructive.</p>
+<p><b>Docker</b> made Docker Desktop paid for companies with 250 or more staff or $10 million or more in revenue in August 2021. Commercially it worked: annual recurring revenue passed $50 million within months and analysts estimate over $200 million since. I have seen organisations ban it rather than buy seats, though I found no survey that measures how many. What can be measured is that the alternatives grew. In Homebrew's install analytics today, OrbStack, Colima, Podman Desktop and Rancher Desktop together make up about 47% of container-tool installs over the past year and 51% over the past month. Most Docker Desktop installs do not come through Homebrew, so this overstates the alternatives, but it shows how many Mac developers route around the paid product.</p>
+<figure class="shot" data-shot="lt-containers.webp" data-dir="images/" data-alt="Desktop container tools installed through Homebrew, as a share of the five tools&#x27; installs over 30 and 365 days. Most Docker Desktop installs come from Docker&#x27;s own download, so this overstates the alternatives. From the Long Tail Ledger vault."><figcaption>Desktop container tools installed through Homebrew, as a share of the five tools' installs over 30 and 365 days. Most Docker Desktop installs come from Docker's own download, so this overstates the alternatives. From the Long Tail Ledger vault.</figcaption></figure>
+<p><b>Relicensing</b> has a pattern. HashiCorp, Elastic and Redis each moved from an open licence to a source-available one. Each produced a well-funded fork backed by the cloud providers it targeted (OpenTofu, OpenSearch, Valkey), and two of the three have since added an open licence back.</p>
+<p><b>Dual licensing</b> changes what the free version is for. Once a project sells a paid edition, it has a reason not to make the free one too good. That is the incentive I most want to avoid, and it is why I do not think open core is the answer to the long tail. <a href="https://open-source.sgit.ai/views/open-core.html">Open core, or packaging?</a> sets out the test I use.</p>
+<p><b>Per-install rewards</b> get gamed. When tea.xyz rewarded package popularity with tokens, one developer published nearly 14,000 packages, and by one estimate about 70% of new npm packages over six months were spam. Payment has to be tied to a verified user who receives something, not to a count.</p>
+<h2 id="pence">The pence problem</h2>
+<p>My instinct is that I would pay pence to pounds for a supported build of each tool on that iMac. The first obstacle is not willingness to pay. It is the card fee.</p>
+<p>Stripe's standard UK rate is 1.5% plus 20p. On a £20 payment that is 2.5%. On £5 it is 5.5%. On 50p it is 41.5%, and on 10p it is more than the payment. Below about £5, the fixed fee is the price.</p>
+<figure class="shot" data-shot="lt-fees.webp" data-dir="images/" data-alt="Fee as a share of one payment, by payment size and payment rail. The fixed part of a card fee dominates below about £5; aggregation is what makes pence payments work. From the Long Tail Ledger vault."><figcaption>Fee as a share of one payment, by payment size and payment rail. The fixed part of a card fee dominates below about £5; aggregation is what makes pence payments work. From the Long Tail Ledger vault.</figcaption></figure>
+<p>So pence payments only work aggregated: one charge a year that covers many projects, or a platform that already holds a balance and settles in bulk. I made this argument for news in <a href="https://diniscruz.ai/2025/04/02/the-future-of-news-monetization__embracing-micro-and-nano-payments.html">the future of news monetisation</a>, and the arithmetic has not changed. This site is testing the reader's side of it now, with <a href="a-meter-in-the-browser.html">a meter in the browser</a> that prices each page at a few pence against five pounds of credit, settled as one balance rather than per page. The model below compares paying each project by card with paying through an aggregating platform.</p>
+<h2 id="models">Five ways to pay for the long tail, simulated</h2>
+<p>To test the idea, I built a model of one project at Homebrew's scale with one long-tail target to keep alive: an old macOS version, or Intel. The cost of that target is CI hardware the free runners no longer provide, plus part of a maintainer's year. The model puts it at a median of about £27,000 a year, from £18,000 to £39,000. The installed base comes from Homebrew's 203 million macOS install events in a year, divided by an assumed number of install events per machine. That gives a median of 6.6 million machines, about 631,000 of them on the long tail.</p>
+<p>Then it runs 10,000 draws of every uncertain assumption through five ways of paying:</p>
+<ol>
+<li><b>Donations</b>, at GitHub Sponsors-like rates and gift sizes. Unrestricted money, of which only a share reaches the long tail.</li>
+<li><b>A seat licence above a size threshold</b>, Docker-style: companies above the threshold pay per user per month, some switch to alternatives, and some ignore it. Also unrestricted.</li>
+<li><b>Support that rises with age</b>, Oracle and Windows ESU style: a price per machine that doubles each year past end of life, with uptake falling as the price rises.</li>
+<li><b>Micro-paid supported builds</b>, my thesis: a price per machine per year from 50p to £25, paid by card directly or through an aggregating platform. Willingness to pay follows a lognormal curve, and conversion is capped by the freemium benchmarks (1% pessimistic, 3% to 5% typical, 8% great).</li>
+<li><b>Customised builds for companies</b>: a company pays a price compared with its internal cost of keeping the tool working itself (engineer hours times a loaded rate). The further the price is below that cost, the more companies buy.</li>
+</ol>
+<figure class="shot" data-shot="lt-models.webp" data-dir="images/" data-alt="The five models side by side: the spread of 10,000 draws of the net revenue available for the long-tail target, on a log scale, against the cost of keeping that target alive (the grey band). Typical conversion, base values. From the Long Tail Ledger vault."><figcaption>The five models side by side: the spread of 10,000 draws of the net revenue available for the long-tail target, on a log scale, against the cost of keeping that target alive (the grey band). Typical conversion, base values. From the Long Tail Ledger vault.</figcaption></figure>
+<p>The results, at base values and typical conversion:</p>
+<div class="tablewrap"><table>
+<tr><th>Model</th><th>Median revenue for the long tail</th><th>10th to 90th percentile</th><th>Covers the cost</th></tr>
+<tr><td>Donations (a share of about £194,000)</td><td>£12,700</td><td>£3,200 to £45,000</td><td>24% of draws</td></tr>
+<tr><td>Seat licence (a share of about £18.1m)</td><td>£1.20m</td><td>£378,000 to £3.37m</td><td>99.9%</td></tr>
+<tr><td>Support that rises with age</td><td>£28,800</td><td>£10,700 to £71,200</td><td>54%</td></tr>
+<tr><td>Micro-paid builds, direct cards</td><td>£31,800</td><td>£12,600 to £73,900</td><td>60%</td></tr>
+<tr><td>Micro-paid builds, aggregated</td><td>£31,400</td><td>£12,500 to £72,800</td><td>59%</td></tr>
+<tr><td>Customised builds for companies</td><td>£1.51m</td><td>£241,000 to £5.71m</td><td>94%</td></tr>
+</table></div>
+<p>Three things stand out.</p>
+<p><b>Donations do not pay for the long tail.</b> Even at a popular project's scale, and even if a fair share of donations went to old platforms, they cover the cost in about one draw in four. That matches what happened to OpenCore Legacy Patcher.</p>
+<p><b>A seat licence raises a great deal of money, but not for this.</b> It is the biggest number in the table, and it covers the cost almost always, but only if the project chooses to spend licence money on old platforms. It has nothing to do with the people on the long tail, and it brings the problems Docker found: switching, bans, and a reason to keep the free version weaker.</p>
+<p><b>Micro-payments roughly cover the cost, and companies cover it easily.</b> At £3 a machine a year, supported builds sold to long-tail users cover the cost in about six draws in ten. Customised builds for the companies that keep old machines for a job (a build box, a test rig, an agent desktop like mine) cover it in more than nine in ten, with money to spare.</p>
+<h2 id="break-even">What price pays for the long tail?</h2>
+<p>My question was whether pence to pounds would be enough. The break-even view answers it directly: the lowest price per machine per year at which supported builds cover the cost in half, or nine in ten, of the draws.</p>
+<figure class="shot" data-shot="lt-breakeven.webp" data-dir="images/" data-alt="The share of draws in which micro-paid supported builds cover the long-tail cost, at every price from 50p to £25, for three conversion scenarios. The curves fall at high prices because fewer people pay. From the Long Tail Ledger vault."><figcaption>The share of draws in which micro-paid supported builds cover the long-tail cost, at every price from 50p to £25, for three conversion scenarios. The curves fall at high prices because fewer people pay. From the Long Tail Ledger vault.</figcaption></figure>
+<div class="tablewrap"><table>
+<tr><th>Conversion</th><th>Covers half the draws (aggregated)</th><th>Covers half the draws (direct cards)</th><th>Covers nine in ten</th></tr>
+<tr><td>Pessimistic, 1%</td><td>not reached (best: 6% of draws, at £5.50)</td><td>not reached</td><td>not reached</td></tr>
+<tr><td>Typical, 3% to 5%</td><td><b>£1.80</b></td><td>£1.90</td><td>not reached (best: 59%, at £3.50)</td></tr>
+<tr><td>Great, 8%</td><td><b>70p</b></td><td>90p</td><td>not reached (best: 87%, at £2.75)</td></tr>
+</table></div>
+<p>So the answer to "cents to pounds" is yes, in a specific sense. With typical conversion, about £2 a machine a year is enough to cover the long tail more often than not, and with great conversion, under £1. That is the same order as the cheapest published support price I found (Windows 10's $30 for ten devices), and well below the rest.</p>
+<p>But no price reaches nine in ten. The model is clear about why: conversion caps the number of payers, and raising the price loses more payers than it gains in revenue. Pence from individuals can make the long tail roughly self-funding. They cannot make it safe to depend on. And with pessimistic conversion, no price works at all.</p>
+<p>The card-versus-platform difference is smaller than I expected at these prices, because at £2 to £3 the 20p fee is under 10%. It matters below about £1, where only aggregation keeps the price viable.</p>
+<h2 id="sensitivity">What matters most</h2>
+<figure class="shot" data-shot="lt-tornado.webp" data-dir="images/" data-alt="Which assumption moves the answer most: the median margin of micro-paid builds (revenue minus the long-tail cost) with each assumption held at the low and the high end of its range. From the Long Tail Ledger vault."><figcaption>Which assumption moves the answer most: the median margin of micro-paid builds (revenue minus the long-tail cost) with each assumption held at the low and the high end of its range. From the Long Tail Ledger vault.</figcaption></figure>
+<p>The three assumptions that move the result most are:</p>
+<ul>
+<li><b>How many machines are really out there</b> (install events per machine): a swing of about £90,000 in the median margin.</li>
+<li><b>What people are willing to pay</b>: about £47,000.</li>
+<li><b>The share of machines on the long tail</b>: about £43,000.</li>
+</ul>
+<p>None of the three is measured well in public data today, and two of them are things a project could measure itself, if it had a way to sell a supported build and count who buys. Conversion, which I expected to dominate, matters less than these. The biggest uncertainty is not whether people pay. It is how many of them there are.</p>
+<h2 id="satellites">The satellites</h2>
+<p>Where is the local company providing support? The model asks how many small support firms (two or three engineers, about £240,000 a year to run) the money from micro-paid and company builds could sustain, if some buyers prefer a supplier in their own country and a firm supports about ten projects.</p>
+<figure class="shot" data-shot="lt-satellites.webp" data-dir="images/" data-alt="Small support firms the pool could sustain, worldwide and in one mid-sized country. From the Long Tail Ledger vault."><figcaption>Small support firms the pool could sustain, worldwide and in one mid-sized country. From the Long Tail Ledger vault.</figcaption></figure>
+<p>The median is about 18 such firms worldwide, from 2.4 to 85, and about one per country, from 0.1 to 4.9. Most of that comes from company builds. The existence proof is Rimini Street: about $136,000 a year per client, so one small firm would need two or three clients like that, and its $421.5 million of revenue is the running cost of about 1,300 small firms. The satellite market exists where money flows. For open source today, little of the money flows to anyone outside the project, so few satellites form.</p>
+<h2 id="says">What this says</h2>
+<p>I started with a hunch from one old iMac. The data mostly supports it, with two corrections.</p>
+<p>The first correction is about who pays. Pence-to-pounds payments from individuals like me can roughly cover the long tail, at about £2 a machine a year, if the payment is aggregated and tied to something real: a supported build, tested on my machine. But they are not reliable enough to depend on. The reliable money comes from companies, paying for a customised build at a price well below what it costs them to keep the tool working themselves. That is how RiskMandate and sgit already work: open source, and cheaper to deploy through us than on your own. The model suggests that the same logic, applied to old platforms, pays for the long tail with room to spare.</p>
+<p>The second correction is about what is sold. It should not be a donation, and it should not be a licence that makes the free version worse. It should be a build: the capabilities the customer wants, sometimes with fewer features and less attack surface, tested on their target, with someone accountable for it. "I pay because I get value." The value is the support, not the code, so the code can stay open.</p>
+<p>What is missing is the plumbing: one annual charge that covers many projects, payment tied to a verified build rather than a count of installs, and a split of the money between the maintainers and the local firms that do the support. That is the market argument I made in <a href="https://open-source.sgit.ai/views/villagers.html">somebody has to be the villagers</a> and the usage-based billing I described in <a href="https://diniscruz.ai/2025/07/04/usage-based-billable-entities-aligning-saas-pricing-with-customer-usage.html">usage-based billable entities</a>, applied to the oldest machines in the room. And with GenAI, the cost of producing a customised, tested build for an old target is falling, which is the argument of the <a href="https://diniscruz.ai/2025/06/07/genai-legacy-code-refactoring-business-plan.html">GenAI legacy code refactoring business plan</a>.</p>
+<p>Open source is not free. The question was never whether somebody pays. It is whether the people who get the value have an easy way to pay for it.</p>
+<h2 id="check">Check my numbers</h2>
+<p>Everything above is in the <a href="https://sgit.ai/demos/vaults/long-tail-ledger/index.html">Long Tail Ledger</a> vault: the 175 sourced facts with their quotes and verified flags, the 26 case facts, the 36 assumptions with their ranges and reasons, the model in Python, and the same model in the browser behind a calculator with a slider for every assumption. The release gate checks that the browser and Python give the same numbers on 77 grids of inputs, exactly. If you think an assumption is wrong, move its slider and see what changes.</p>
+<p>What the model does not do: forecast anyone's revenue, or measure willingness to pay, the installed base, the Intel share or company behaviour. Those are assumptions, and the sensitivity view shows which matter most. Some of the claims I started with are not in the data. I have seen organisations ban Docker Desktop rather than buy seats, but I found no survey that measures how many.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>The case: a clean install on my agents' iMac, checked against Apple's compatibility and security pages, the Homebrew, Docker, Python, MacPorts and OpenCore Legacy Patcher documentation, and the Go, Node.js, Rust and Chrome support notes, all read on 10 October 2026. The economics: the Harvard Business School working paper on the value of open source, the Linux Foundation's 2024 funding study, the Tidelift maintainer surveys, Black Duck's OSSRA 2026, Sonatype's reports, Oracle, Red Hat, IBM and Rimini Street filings, published price lists from Microsoft, Canonical, TuxCare, Docker and the payment providers, and Homebrew and PyPI analytics, fetched the same day. Every source is listed, with its quote, in the vault.</p>
+<p>My earlier positions, which this article tries to stay consistent with: <a href="https://open-source.sgit.ai/views/index.html">the position</a>, <a href="https://open-source.sgit.ai/funding/index.html">three funding proposals</a>, <a href="https://open-source.sgit.ai/views/open-core.html">open core, or packaging?</a>, <a href="https://open-source.sgit.ai/history/numbers.html">the numbers, and the ones we refuse to publish</a> and <a href="https://open-source.sgit.ai/funding/curl.html">cURL's closed bug bounty</a> on open-source.sgit.ai; and on diniscruz.ai, <a href="https://diniscruz.ai/2025/04/02/the-future-of-news-monetization__embracing-micro-and-nano-payments.html">micro and nano payments</a>, <a href="https://diniscruz.ai/2025/07/04/usage-based-billable-entities-aligning-saas-pricing-with-customer-usage.html">usage-based billable entities</a> and <a href="https://diniscruz.ai/2025/06/07/genai-legacy-code-refactoring-business-plan.html">GenAI legacy code refactoring</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-10" topics="startups-and-strategy vaults-and-method" title="Open source is not free: who pays to keep the long tail working?, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#open-source-is-not-free">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="a-meter-in-the-browser.html">A meter in the browser: a penny a page, a history you keep, and a site that picks for you</a> <span class="dim">Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="portugal-2010-a-challenge.html">A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands</a> <span class="dim">My 2010 IBWAS keynote in Lisbon, slide by slide: twelve actions for Portugal, more of which came true than I expected, mostly from Brussels.</span></li><li><a href="the-value-of-constraints.html">The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think</a> <span class="dim">sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.</span></li><li><a href="the-eyeballs-get-cheap.html">The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production</a> <span class="dim">Cheap, deep AI security review gives open source the eyeballs it never had; with sovereignty and paid maintenance, all point at the least code in production.</span></li><li><a href="pay-after-you-read.html">Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time</a> <span class="dim">Seven releases in one afternoon turned the reading meter into a working model: pay after you read, and the rating sets the price.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 59 &middot; <a href="../for/make.html#r=59">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/open-source-is-not-free.jpg" download>open-source-is-not-free.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="open-source-is-not-free.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

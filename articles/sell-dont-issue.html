@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest, SGit Newsroom</title>
+<meta name="description" content="In The controllable founder I argued that investors select partly for control. This piece asks what a founder should do once they hold the leverage: a product with customers, profit and growth, built cheaply with agents, and several investors who want in. My answer is a two-part model. First, the investor buys existing shares from the founder rather than new shares from the company, so the founder is paid now, the investor gets a stake in something already working, and nothing in the deal requires handing over control. Second, if the company needs money, the founder lends it, subordinated, to be repaid if the company succeeds. The founder gets financial security, the company gets cash, and the investors get exposure without the steering wheel. What protects the investors instead is open source: if the founder goes rogue, they can take the code and back a better service, because customers are locked in by service and trust, not technology. I think this raises the odds of success, because a founder lending their own money watches every penny. It also has real costs, which I set out: UK angels lose their EIS relief on bought shares, a large early sale can read as a lack of conviction, a founder who is also a lender has a conflict, and the details of the tax and the articles of association matter.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/sell-dont-issue.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/sell-dont-issue.html">
+<meta property="og:title" content="Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest, SGit Newsroom">
+<meta property="og:description" content="In The controllable founder I argued that investors select partly for control. This piece asks what a founder should do once they hold the leverage: a product with customers, profit and growth, built cheaply with agents, and several investors who want in. My answer is a two-part model. First, the investor buys existing shares from the founder rather than new shares from the company, so the founder is paid now, the investor gets a stake in something already working, and nothing in the deal requires handing over control. Second, if the company needs money, the founder lends it, subordinated, to be repaid if the company succeeds. The founder gets financial security, the company gets cash, and the investors get exposure without the steering wheel. What protects the investors instead is open source: if the founder goes rogue, they can take the code and back a better service, because customers are locked in by service and trust, not technology. I think this raises the odds of success, because a founder lending their own money watches every penny. It also has real costs, which I set out: UK angels lose their EIS relief on bought shares, a large early sale can read as a lack of conviction, a founder who is also a lender has a conflict, and the details of the tax and the articles of association matter.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/sell-dont-issue.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/sell-dont-issue.jpg">
+<link rel="alternate" type="text/markdown" href="sell-dont-issue.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest, SGit Newsroom", "headline": "Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest, SGit Newsroom", "description": "In The controllable founder I argued that investors select partly for control. This piece asks what a founder should do once they hold the leverage: a product with customers, profit and growth, built cheaply with agents, and several investors who want in. My answer is a two-part model. First, the investor buys existing shares from the founder rather than new shares from the company, so the founder is paid now, the investor gets a stake in something already working, and nothing in the deal requires handing over control. Second, if the company needs money, the founder lends it, subordinated, to be repaid if the company succeeds. The founder gets financial security, the company gets cash, and the investors get exposure without the steering wheel. What protects the investors instead is open source: if the founder goes rogue, they can take the code and back a better service, because customers are locked in by service and trust, not technology. I think this raises the odds of success, because a founder lending their own money watches every penny. It also has real costs, which I set out: UK angels lose their EIS relief on bought shares, a large early sale can read as a lack of conviction, a founder who is also a lender has a conflict, and the details of the tax and the articles of association matter.", "url": "https://newsroom.sgit.ai/articles/sell-dont-issue.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest</p>
+ <h1>Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-16 &middot; <a href="versions/sell-dont-issue.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.83</a> &middot; <span class="chip">founders</span><span class="chip">startups</span><span class="chip">investors</span><span class="chip">venture-capital</span><span class="chip">secondaries</span><span class="chip">open-source</span><span class="chip">business-models</span><span class="chip">tax</span><span class="chip">uk</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> In The controllable founder I argued that investors select partly for control. This piece asks what a founder should do once they hold the leverage: a product with customers, profit and growth, built cheaply with agents, and several investors who want in. My answer is a two-part model. First, the investor buys existing shares from the founder rather than new shares from the company, so the founder is paid now, the investor gets a stake in something already working, and nothing in the deal requires handing over control. Second, if the company needs money, the founder lends it, subordinated, to be repaid if the company succeeds. The founder gets financial security, the company gets cash, and the investors get exposure without the steering wheel. What protects the investors instead is open source: if the founder goes rogue, they can take the code and back a better service, because customers are locked in by service and trust, not technology. I think this raises the odds of success, because a founder lending their own money watches every penny. It also has real costs, which I set out: UK angels lose their EIS relief on bought shares, a large early sale can read as a lack of conviction, a founder who is also a lender has a conflict, and the details of the tax and the articles of association matter.</em></p>
+<figure class="shot" data-shot="si-model.webp" data-dir="images/" data-alt="The two-part model: the investor buys the founder&#x27;s ordinary shares and pays the founder; the founder lends part of the proceeds to the company as a subordinated loan; the company gets cash without new shares; and the investor&#x27;s protection is the open-source fork, not a board seat." data-kind="architecture"><figcaption>The two-part model: the investor buys the founder's ordinary shares and pays the founder; the founder lends part of the proceeds to the company as a subordinated loan; the company gets cash without new shares; and the investor's protection is the open-source fork, not a board seat.</figcaption></figure>
+<div class="trail"><div class="trail-h">Founders, investors and the fork</div><p class="trail-n">One argument in three parts: who investors choose and why, a deal a founder with leverage could offer instead, and what keeps every side honest once control is out of the contract.</p><div class="trail-row"><a class="trail-c" href="the-controllable-founder.html"><span class="trail-img" data-trail-img="images/fo-control.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The choice</span><span class="trail-t">The controllable founder</span><span class="trail-d">Why investors may pick the founder they can steer, and what record labels taught us about who the commodity is.</span></span></a><a class="trail-c here" href="sell-dont-issue.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="images/si-model.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The deal</span><span class="trail-t">Sell, don&#x27;t issue</span><span class="trail-d">The investor buys the founder&#x27;s shares, the founder lends the company what it needs, and nobody buys the steering wheel.</span></span></a><a class="trail-c" href="the-fork-next-door.html"><span class="trail-img" data-trail-img="images/fk-triangle.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">3 · The protection</span><span class="trail-t">The fork next door</span><span class="trail-d">Founders, customers and investors are each protected from the others because anyone can fork, and forks win only after a breakdown.</span></span></a></div></div>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Start from strength.</b> This only works when the product is already working and investors are competing.</li>
+<li><b>Sell, don't issue.</b> The investor buys the founder's shares; the founder is paid, the company is not diluted.</li>
+<li><b>No control in the deal.</b> The investor buys the vision and the direction, not a board seat.</li>
+<li><b>Lend, don't dilute.</b> Growth money goes in as a subordinated founder loan, repaid if the company succeeds.</li>
+<li><b>Open source is the investor's insurance.</b> A fork gets the forker the position, not the velocity.</li>
+<li><b>Own money, careful money.</b> A founder lending their own cash has every reason not to waste it.</li>
+<li><b>The costs are real.</b> No EIS on bought shares, a signalling problem, a creditor conflict, and the fine print.</li>
+<li><b>Refuse a broad non-compete.</b> It keeps the fork for the investors and takes it away from the founder.</li>
+<li><b>It is the end point of the contract.</b> Venture deals already hand control back when performance is strong; this starts there.</li>
+</ul>
+<h2 id="start">The starting point: a founder who has already won</h2>
+<p>This model has one precondition, and it matters. The founder has an app with traction: paying customers, profit, growth. It has already proved its value. And because of that, investors want in, and more than one of them.</p>
+<p>That used to be rare at angel and seed stage, because building the first version took a funded team. With generative AI it is no longer rare. As I argued in <a href="the-expert-founders.html">The expert founders</a>, agents make execution cheap enough that a founder who knows the problem can build, sell and reach profit before raising anything.</p>
+<p>At that point the negotiation has flipped. The founder does not need the money to survive; the investor needs access to the deal. And the question becomes: if the founder could design the deal from scratch, what would it look like? <a href="the-controllable-founder.html">The controllable founder</a> describes the deal they would be designing against.</p>
+<h2 id="sell">Sell, don't issue</h2>
+<p>In a normal round, the company issues new shares and the investor's money goes into the company. In this model, the investor buys shares the founder already owns, in a private sale. The money goes to the founder. The company is not diluted; the cap table changes only in who holds the founder's former shares.</p>
+<p>The founder pays tax on the gain. In the UK, assuming the conditions for Business Asset Disposal Relief are met (among them, two years as an employee or officer holding at least 5% of the shares), the first £1 million of lifetime qualifying gains is taxed at <a href="https://www.gov.uk/business-asset-disposal-relief">18% from 6 April 2026</a>, and gains above that at the higher <a href="https://www.gov.uk/capital-gains-tax/rates">capital gains rate of 24%</a>. That is a cost, but it is paid on money the founder actually has, not a paper gain on illiquid shares.</p>
+<p>What the founder gets is more than cash. They get a return on years of unpaid or underpaid work, straight away. They no longer have to worry about their own financial stability, or wonder whether the company will ever pay them back for the risk. And because the founder still owns most of the company and cares deeply about it, nothing about the sale makes them leave. If anything, it removes the pressure that pushes founders towards an early exit.</p>
+<p>The point of the structure is control. A secondary sale does not, by itself, require preferred shares, board seats, vetoes or liquidation preferences. The investor buys ordinary shares in a company they believe in: the vision, the direction and the founder, not the steering wheel.</p>
+<p>This is less radical than it sounds. Founder secondaries are routine at later stages; <a href="https://www.angelbacked.co/glossary/secondary-sale">one industry guide</a> says that "A modest founder secondary ... is now widely viewed by VCs as alignment-positive". And Kaplan and Strömberg found that when a company performs very well, "the VCs retain their cash-flow rights, but relinquish most of their control and liquidation rights" (<a href="https://www.nber.org/papers/w7660">their study</a>). This model simply starts there.</p>
+<h2 id="lend">Lend, don't dilute</h2>
+<p>The company may still need money to grow. If the investors do not want to put in more, the founder puts some of the sale proceeds back in, as a loan. The terms are simple: subordinated to every other creditor, repaid if the company succeeds, at a modest fixed interest rate or none.</p>
+<p>This does three things. The company gets cash without issuing a single new share. The founder keeps their ownership, and gets a claim to have the money returned on top of it. And nobody outside gains control in exchange for the money, because a loan from the founder carries no board seat and no veto.</p>
+<p>The combination is what makes the model work. Part one turns some of the founder's paper wealth into cash and personal security. Part two lets the founder choose how much of that cash to put back at risk, on terms they set, in a company they still control.</p>
+<h2 id="fork">The open source safety valve</h2>
+<p>The obvious objection from an investor is: what if the founder goes rogue? I have bought shares with no board seat and no veto. If the founder takes the company in a direction I think is wrong, what can I do?</p>
+<p>The answer is the other half of how I think startups should be built in 2026: everything is open source. I set out the argument at <a href="https://open-source.sgit.ai/index.html">open-source.sgit.ai</a>, and its core is that technology stops being the moat. Customers are not locked in by the code; they stay for the service, the quality and the trust. As <a href="https://open-source.sgit.ai/views/index.html#rate-not-wall">the position</a> puts it: "A competitor who forks our code today gets our position as of today. They do not get our velocity."</p>
+<p>That has a twist that matters here. Open source protects the investor too. If the investors lose faith in the founder's direction, they do not need control of the company to act on it: they can take the code and fund a different team to build a better service on top of it. Code released under an open licence stays released; <a href="https://open-source.sgit.ai/survivability/index.html">an OSI licence is irrevocable for code already published</a>.</p>
+<p>So the investor's protection moves from the contract to the commons. In a conventional round, control is the insurance: the right to replace the founder. In this model, the fork is the insurance: the right to replace the company. It is far less intrusive, because it only bites if the founder really does go wrong.</p>
+<p>And the fork is weaker than it sounds for anyone. My own estimate, in <a href="https://open-source.sgit.ai/founders/index.html#cost">notes for a founder facing exactly this fear</a>, is that an established company of a few hundred people, holding a full copy of the code, needs three months at best and closer to a year realistically to reach where the original team already is. The same notes warn that it protects far less against a funded competitor that already has the team. That cuts both ways, and it is the honest version of the claim: the fork disciplines the founder because it is possible, and protects the founder because it is slow. Neither side has a stick big enough to bully the other, which is roughly where a good partnership should sit. <a href="the-fork-next-door.html">The fork next door</a> follows the same exit round all three corners: founders, customers and investors.</p>
+<p>Two conditions make it real. The licence has to be genuinely open, not open core with the valuable parts kept back; I argued in <a href="the-value-of-constraints.html#all">The value of constraints</a> that half open is an evaluation version. And the copyright structure matters more than the licence file: <a href="https://open-source.sgit.ai/survivability/index.html">every catalogued relicensing between 2018 and 2024</a> was made by a single corporate copyright holder that had gathered contributors' copyright. The brand stays with the company, which is fine: the investor is protected on the technology, and the company keeps what it earned in trust.</p>
+<h2 id="example">A worked example</h2>
+<figure class="shot" data-shot="si-example.webp" data-dir="images/" data-alt="The same £2 million, two ways, for a UK company worth £10 million: the founder keeps 80% either way; a standard round gives the investor new preferred shares, rights and control, and puts £2 million into the company; selling and lending gives the investor ordinary shares and the fork as protection, and leaves the founder about £1.58 million after tax, to lend back as much as the company needs; and bought shares carry no EIS relief." data-kind="comparison"><figcaption>The same £2 million, two ways, for a UK company worth £10 million: the founder keeps 80% either way; a standard round gives the investor new preferred shares, rights and control, and puts £2 million into the company; selling and lending gives the investor ordinary shares and the fork as protection, and leaves the founder about £1.58 million after tax, to lend back as much as the company needs; and bought shares carry no EIS relief.</figcaption></figure>
+<p>The numbers are illustrative: a UK company worth £10 million, a founder who owns all of it with a nil base cost and an unused BADR allowance, and an investor writing £2 million. The founder ends with 80% either way. In a standard round, the investor buys new preferred shares at £8 million pre-money and the £2 million goes into the company. In this model, the investor buys 20% of the founder's ordinary shares at £10 million, the founder pays about £420,000 in tax (18% on the first £1 million and 24% on the second), and has about £1.58 million to decide with: how much to keep, and how much to lend back. Lend £0.75 million and the company has that, as a subordinated loan, and the founder about £0.83 million. The buyer also pays stamp duty of 0.5% on the shares.</p>
+<h2 id="odds">Why it could raise the odds</h2>
+<p>My claim is that this structure does not just suit the founder; it raises the chance that the company succeeds. Three reasons.</p>
+<p>The first is money discipline. A founder lending their own money will look after every penny, because they want it back, as well as their shares. Too much money too early is one of the most reliable ways to kill a startup: the Startup Genome study of more than 3,200 high-growth startups found that <a href="https://s3.amazonaws.com/startupcompass-public/StartupGenomeReport2_Why_Startups_Fail_v2.pdf">"74% of high growth internet startups fail due to premature scaling"</a>, and that "Many investors invest 2-3x more capital than necessary in startups in the discovery phase." A founder loan is sized by someone who feels the cost of every pound. It is the same instinct as <a href="paying-after-the-value.html">paying after the value</a>.</p>
+<p>The second is focus. A founder with some money in the bank is not distracted by their own finances, and is not tempted by the first acquisition offer that would make them personally safe; the same industry guide says a founder who has taken some chips off the table "can rationally swing for a large outcome".</p>
+<p>The third is direction. The company keeps the founder who built it, with the vision and the ethics intact, and no investor with the power to trade them for a faster exit. If the argument in <a href="the-controllable-founder.html">The controllable founder</a> is right, that is exactly what conventional rounds put at risk.</p>
+<h2 id="breaks">What breaks</h2>
+<p>The model has costs, and a founder who uses it should know them before the term sheet does.</p>
+<p><b>UK angels lose their tax relief.</b> EIS gives investors 30% income tax relief and SEIS 50%, but <a href="https://www.gov.uk/guidance/venture-capital-schemes-tax-relief-for-investors">only on shares that are "newly issued and paid for in full"</a>, as <a href="https://taxscape.deloitte.com/article/eis-and-seed-eis.aspx">Deloitte's briefing</a> also explains. For a UK angel, that can make the same shares 30% to 50% more expensive in real terms. Expect them to ask for a lower price, or for at least part of the round as new shares. And EIS money cannot later repay the founder's loan: <a href="https://www.penningtonslaw.com/insights/enterprise-investment-scheme-checklist-or-why-you-wont-qualify-for-eis-relief/">share issues used to repay existing loan financing are unlikely to qualify</a>.</p>
+<p><b>Ordinary shares are priced lower, sometimes.</b> <a href="https://www.angelbacked.co/glossary/secondary-sale">One industry guide</a> puts typical discounts for common stock at 10% to 30% to the last primary round, although an <a href="https://www.ey.com/en_in/insights/strategy-transactions/rethinking-secondary-transaction-discounts-in-indian-start-ups">EY analysis of 306 Indian deals</a> found 85% priced in line with the primary round. When investors are competing, the discount shrinks; when they are not, the model is not available anyway.</p>
+<p><b>It can read as a lack of conviction.</b> Balderton, one of Europe's best-known funds, writes that it has <a href="https://www.balderton.com/resources/part-i-the-european-venture-liquidity-gap-why-it-matters-and-how-to-fix-it/">"walked away from several high quality businesses"</a> over the size of the secondary being asked for, and that "As a good rule of thumb, we would not expect a founder to sell more than 10% of their overall holding at the growth stage." Selling 20% at seed is well outside that. The answer is the precondition: profit, growth and competition for the deal. But some funds will simply say no.</p>
+<p><b>The founder becomes a creditor, and that is a conflict.</b> A loan normally ranks ahead of shares if the company fails, so a founder who sells shares and lends back the proceeds has moved part of their risk ahead of the investors who just bought in. In Germany the law deals with it directly: shareholder loans are <a href="https://www.fgs.de/en/news-and-insights/blog/detail/ecj-confirms-subordination-of-shareholder-loans-in-german-insolvency-proceedings-choice-of-law-in-loan-agreements-has-no-effect">subordinated to all other creditors in insolvency</a>, and repayments made within a year before filing can be clawed back. The UK has no automatic rule, so the honest version of the model writes it in: the founder's loan is subordinated by contract, ranking behind every other creditor, and repaid only from success.</p>
+<p><b>The fine print matters.</b> Four things a lawyer will raise:</p>
+<ul>
+<li><b>Transfer restrictions.</b> The Model Articles have no pre-emption on transfers, but many companies add a right of first refusal in their articles or shareholders' agreement, and directors can refuse to register a transfer; check before promising shares to anyone.</li>
+<li><b>Selling above market value.</b> For a director, shares are employment-related securities, and HMRC can <a href="https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm80030">charge the excess over market value</a> as employment income rather than a capital gain. A strategic premium on a minority stake is exactly that risk.</li>
+<li><b>A loan whose interest depends on success.</b> If the return on the founder's loan depends on the company's results, HMRC can <a href="https://www.gov.uk/hmrc-internal-manuals/company-taxation-manual/ctm15520">treat the interest as a distribution</a>, not a deductible cost. A fixed modest rate, or none, avoids it.</li>
+<li><b>The order of a hybrid.</b> An angel who already holds other shares in the company can lose EIS on new ones, so in a hybrid the new shares should be issued before, or at the same time as, any of the founder's shares are bought.</li>
+</ul>
+<p><b>Control can come back through the paperwork.</b> Ordinary shares carry no board seat, but a shareholders' agreement can add one, along with vetoes and information rights. The model only protects the founder if the founder refuses those terms; the leverage to refuse is the whole point of starting from strength.</p>
+<p><b>A broad non-compete closes the founder's exit.</b> Investors usually ask for one. The NVCA's model investors' rights agreement has the company require "[and, to the extent legally permissible, non-competition and non-solicitation agreement]" from key employees, and the BVCA's 2023 model documents include founder restrictive covenants, where a breach can turn a good leaver into a bad leaver. In this model the fork protects both sides: the investors from a founder who goes wrong, and the founder from investors who take the company somewhere they will not follow. A broad non-compete keeps the first and removes the second. Refuse it, and offer narrow protections instead: confidentiality, no poaching of staff or customers for a period, and no use of the brand. The law will not do this for you. In the UK, the 2023 plan to cap non-competes at three months was <a href="https://www.gov.uk/government/publications/reform-of-non-compete-clauses-in-employment-contracts-working-paper/working-paper-on-options-for-reform-of-non-compete-clauses-in-employment-contracts">never legislated</a>, and a new consultation closed in February 2026 without a decision; and both rounds covered employment contracts, not covenants given as a shareholder or on the sale of shares, which courts treat more leniently. Even California, which <a href="https://wsgr.com/en/insights/california-extends-prohibition-on-noncompete-agreements.html">voids almost every non-compete</a>, makes an exception for the sale of a business.</p>
+<p><b>The fork protects the thesis, not the stake.</b> If investors fork the code and fund a rival, their shares in the original company do not get better; they are competing with their own investment. The fork is a deterrent and a last resort, not a way to get the money back.</p>
+<p><b>Less cash may go in.</b> The company gets what the founder chooses to lend, not the whole cheque. For a profitable company that may be the right amount; for one that must outspend a funded competitor, it may not.</p>
+<h2 id="fit">When it works and when it does not</h2>
+<p>The model fits a profitable company, growing on its own revenue, where investors compete to get in and the founder needs security more than the company needs cash. It fits founders who would rather own less of a company they control than more of one they do not, companies whose code is genuinely open and whose customers stay for the service, and investors who want exposure to a working business and are happy to back the founder's direction.</p>
+<p>It fits badly where the company must spend heavily ahead of revenue, such as deep tech, hardware or a land grab against funded rivals; with UK angels whose economics depend on EIS; where the value is in proprietary code, because then there is no fork; with investors who insist on a broad non-compete, because then the fork only protects them; and with funds whose model depends on control rights.</p>
+<p>There is a hybrid that keeps most of the benefit: issue a modest tranche of new ordinary shares that can qualify for EIS, then sell a smaller slice of the founder's shares, and make up any shortfall with a subordinated founder loan. What matters is not the exact mix. It is that the founder sets the terms, and that no part of the money buys the steering wheel.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>This is the best case for the founder.</b> It assumes leverage most founders do not have.</li>
+<li><b>No study tests this model.</b> The claim that it raises the odds is an argument from discipline and incentives, not data.</li>
+<li><b>The fork as insurance is an argument, not a tested mechanism.</b> It depends on the code being genuinely open and on investors being able to fund a credible alternative.</li>
+<li><b>Not tax or legal advice.</b> The UK figures are for 2026/27, BADR has conditions, and other countries differ.</li>
+<li><b>The worked example is illustrative.</b> Real valuations, base costs and tax positions will change the numbers.</li>
+<li><b>The secondary pricing data is thin.</b> The EY figures are Indian deals; the discount range is from one industry guide.</li>
+<li><b>Not that investors are the enemy.</b> Many will happily back a founder on these terms; the point is to choose them.</li>
+<li><b>I have a stake.</b> I am a founder, my companies run on open source, and this model suits me.</li>
+</ul>
+<p>If you are a founder with the leverage to try this, or an investor who would back it, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 16 October 2026, drafted with an agent in a separate session and fact-checked and edited by this site's agent; the argument and the editorial responsibility are mine. Tax: gov.uk on <a href="https://www.gov.uk/business-asset-disposal-relief">Business Asset Disposal Relief</a>, <a href="https://www.gov.uk/capital-gains-tax/rates">capital gains tax rates</a> and <a href="https://www.gov.uk/guidance/venture-capital-schemes-tax-relief-for-investors">venture capital schemes</a>; HMRC manuals <a href="https://www.gov.uk/hmrc-internal-manuals/employment-related-securities/ersm80030">ERSM80030</a> and <a href="https://www.gov.uk/hmrc-internal-manuals/company-taxation-manual/ctm15520">CTM15520</a>; Deloitte, <a href="https://taxscape.deloitte.com/article/eis-and-seed-eis.aspx">EIS and Seed EIS</a>; Penningtons Manches Cooper, <a href="https://www.penningtonslaw.com/insights/enterprise-investment-scheme-checklist-or-why-you-wont-qualify-for-eis-relief/">EIS checklist</a>. Secondaries: Balderton, <a href="https://www.balderton.com/resources/part-i-the-european-venture-liquidity-gap-why-it-matters-and-how-to-fix-it/">The liquidity gap, part I</a>; Angel Backed, <a href="https://www.angelbacked.co/glossary/secondary-sale">Secondary sale</a>, July 2026; EY India, <a href="https://www.ey.com/en_in/insights/strategy-transactions/rethinking-secondary-transaction-discounts-in-indian-start-ups">Rethinking secondary transaction discounts</a>. Law: Flick Gocke Schaumburg, <a href="https://www.fgs.de/en/news-and-insights/blog/detail/ecj-confirms-subordination-of-shareholder-loans-in-german-insolvency-proceedings-choice-of-law-in-loan-agreements-has-no-effect">ECJ confirms subordination of shareholder loans</a>, 24 March 2026. Research: Kaplan and Strömberg, <a href="https://www.nber.org/papers/w7660">Financial Contracting Theory Meets the Real World</a>, NBER working paper 2000, Review of Economic Studies 2003; Startup Genome, <a href="https://s3.amazonaws.com/startupcompass-public/StartupGenomeReport2_Why_Startups_Fail_v2.pdf">Report Extra on Premature Scaling</a>, 2011. Open source: <a href="https://open-source.sgit.ai/index.html">open-source.sgit.ai</a>, <a href="https://open-source.sgit.ai/views/index.html">the position</a>, <a href="https://open-source.sgit.ai/founders/index.html">for founders</a> and <a href="https://open-source.sgit.ai/survivability/index.html">survivability</a>. Non-competes: NVCA, <a href="https://nvca.org/model-legal-documents/">model legal documents</a>, October 2025; Slaughter and May, <a href="https://www.slaughterandmay.com/insights/importedcontent/the-bvca-s-new-standard-form-model-documents-10-key-takeaways-for-growth-companies-and-investors/">The BVCA's new model documents</a>; Department for Business and Trade, <a href="https://www.gov.uk/government/publications/reform-of-non-compete-clauses-in-employment-contracts-working-paper/working-paper-on-options-for-reform-of-non-compete-clauses-in-employment-contracts">working paper on non-compete clauses</a>, November 2025; Wilson Sonsini, <a href="https://wsgr.com/en/insights/california-extends-prohibition-on-noncompete-agreements.html">California extends prohibition on noncompete agreements</a>. Read on 16 October 2026.</p>
+<nav class="trail-end" aria-label="Continue the trail: Founders, investors and the fork"><div class="trail-end-h"><span class="trail-end-k">Continue the trail</span> Founders, investors and the fork</div><div class="trail-row"><a class="trail-c" href="the-controllable-founder.html"><span class="trail-img" data-trail-img="images/fo-control.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">1 · The choice</span><span class="trail-t">The controllable founder</span></span></a><a class="trail-c here" href="sell-dont-issue.html"><span class="trail-here">you are here</span><span class="trail-img" data-trail-img="images/si-model.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">2 · The deal</span><span class="trail-t">Sell, don&#x27;t issue</span></span></a><a class="trail-c next" href="the-fork-next-door.html"><span class="trail-here trail-next">next &rarr;</span><span class="trail-img" data-trail-img="images/fk-triangle.webp" role="img" aria-label=""></span><span class="trail-b"><span class="trail-k">3 · The protection</span><span class="trail-t">The fork next door</span></span></a></div></nav>
+<sg-meter view="page" kind="article" date="2026-10-16" topics="startups-and-strategy" title="Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#sell-dont-issue">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="the-expert-founders.html">The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them</a> <span class="dim">Agents make execution cheap, so the people who know the problem can build first. The data favours experts, and Europe's sceptical money suits them.</span></li><li><a href="the-controllable-founder.html">The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is</a> <span class="dim">Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.</span></li><li><a href="the-fork-next-door.html">The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out</a> <span class="dim">Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.</span></li><li><a href="the-value-of-constraints.html">The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think</a> <span class="dim">sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.</span></li><li><a href="paying-after-the-value.html">Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running</a> <span class="dim">Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="the-exit-is-when-you-sell-control.html">The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause</a> <span class="dim">A founder's exit is the day someone else buys control, which can come long before the shares go. Leave then, and agree the terms at the start.</span></li><li><a href="a-small-slice-sets-the-price.html">A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it</a> <span class="dim">The 2026 mega-listings priced trillion-dollar companies by selling a few per cent of them. What was sold, what it raised, and the founder's lesson.</span></li><li><a href="fund-it-with-time.html">Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it</a> <span class="dim">A startup needs time before money. Start from your own revenue, start while employed, ask for part time, and treat debt as buying time. Avoid regret.</span></li><li><a href="start-a-company.html">Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next</a> <span class="dim">Start a company once there is revenue: the UK in an afternoon, Portugal's monthly accountant learned the hard way, and Lithuania's e-residency next.</span></li><li><a href="the-fork-next-door.html">The fork next door: why open source protects founders, customers and investors from each other, why forks only take hold when someone stops executing, and why a maturing company should give its explorers a way out</a> <span class="dim">Founders, customers and investors are each protected from the others because anyone can fork; forks take hold only after a breakdown.</span></li><li><a href="the-controllable-founder.html">The controllable founder: why investors pick one founder over another who looks just as good, and what record labels taught us about who the commodity is</a> <span class="dim">Why investors pick one founder over another who looks just as good: coachability, contracts that move control, and who the commodity is.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 156 &middot; <a href="../for/make.html#r=156">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/sell-dont-issue.jpg" download>sell-dont-issue.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="sell-dont-issue.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

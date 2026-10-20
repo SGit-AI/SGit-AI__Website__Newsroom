@@ -1,0 +1,112 @@
+{
+ "schema": "newsroom-review/v1",
+ "criteria": "v1",
+ "slug": "a-minimal-viable-browser",
+ "article_version": "v0.12.106",
+ "reviewer": "anthropic-fable",
+ "kind": "agent",
+ "model": "Claude Fable 5.1",
+ "run_by": "newsroom.writer, at the editor's request",
+ "at": "2026-10-18T11:30:00Z",
+ "verdict": "approve-with-changes",
+ "summary": "The numbers hold up well: the NVD counts reproduce exactly (Chrome 202 and 3,246, Mozilla 213 and 675), Mozilla's 423, 271, 180/80/11, Chrome's 247, Edge's 45%, Surman's 95 to 98% and 10 to 12%, StatCounter's 2.8%, Lightpanda's benchmark and LayerX's 99% and 53% all match their sources. Fix first the limits bullet that says Mozilla's latest audited statements are for 2023: the ledger page links the 2024 statement.",
+ "checks": {
+  "facts": {
+   "result": "issues",
+   "notes": "Checked on 18 October 2026: Mozilla hacks post (7 May 2026; 423, roughly 20 to 30 a month in 2025, 271 in Firefox 150, 180/80/11, sandbox escapes via IPC, IndexedDB and image decoding); Malwarebytes (6 October 2026, 247 fixes); NVD API 2.0 by sourceIdentifier, chrome-cve-admin@google.com and security@mozilla.org, 1 January 2025 to 17 October 2026: 202, 3,246, 213, 675, exactly as the article says; The Record (4 August 2021, 45%); Servo 0.1.0 (13 April 2026, library, Linux Foundation Europe); Firefox 95 for Fission (release notes quoted in coverage); Bugzilla 1682593 (SSB removed, milestone 86); TechCrunch OpenAI quote (verbatim); Google's phrase (verbatim in Google's own post, see f2); Gartner via The Register; PleaseFix (BusinessWire 3 March 2026; calendar invite, local files, password manager) and Black Hat coverage (five agents, mixed vendor responses); Brave AI browsing (isolated profile, verbatim); The Register on Urban VPN (Featured badge, ChatGPT, Claude, Gemini, Copilot, July 2025 update, no toggle); The Hacker News on ShadyPanda (4.3 million; 20 + 125 extensions, see f4); LayerX PDF (99%, 53%); Privacy Guides on Brave Origin (June 2026, $60 one-time, what is removed and kept); MediaNama (4 April 2026, 95 to 98%, 10 to 12%); Mozilla ledger (about 200 million users, $1.4 billion reserves, 2024 audited statement linked); Firefox 148 AI controls (current and future features); Firefox 155 two-week cadence (coverage of Mozilla's announcement); Lightpanda README (123 MB vs 2 GB, 5 s vs 46 s, 100 pages); Tauri (\"less than 600KB\"); Mullvad 14.0 removed the security-level button over fingerprinting. Not checked: Zen's star count (GitHub API not reachable from this session), the DarkSpectre attribution (Cybernews returned 403), the Google remedies and appeals sentence, and that Comet's fix was specifically to restrict file:// access."
+  },
+  "voice": {
+   "result": "issues",
+   "notes": "In voice overall, and the memo correction on Mozilla's revenue is marked as one. Two slips noted below: \"Many were sandbox escapes\" and the absolutes in Sell it as speed."
+  },
+  "claims": {
+   "result": "pass",
+   "notes": "Proposal versus existing is explicit; the limits name the vendor-sourced figures, the NVD counting method and the fingerprinting cost. One limits bullet is wrong on a fact (f1)."
+  },
+  "conversions": {
+   "result": "pass",
+   "notes": "180 + 80 + 11 = 271; 423 and 271 are the same in the body and sources; Lightpanda's ratios match its README; no currency conversion."
+  },
+  "health": {
+   "result": "issues",
+   "notes": "One link now redirects away from its content (f3); BusinessWire and Dark Reading returned 403 to my fetches but are reachable in a browser per coverage; Cybernews returned 403 (not checked). Figure exists; graph quotes verbatim; no stale section summary."
+  },
+  "people": {
+   "result": "pass",
+   "notes": "Only public figures (Mark Surman) and vendors named; no secret."
+  }
+ },
+ "findings": [
+  {
+   "id": "f1",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "limits",
+   "quote": "Its latest audited statements on its site are for 2023.",
+   "issue": "The State of Mozilla ledger page the article links lists a 2024 audited financial statement and a 2024 Form 990.",
+   "evidence": "https://stateof.mozilla.org/ledger, read 18 October 2026",
+   "suggestion": "\"Its latest audited statements on its site are for 2024\", or drop the sentence."
+  },
+  {
+   "id": "f2",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "agent",
+   "quote": "\"the primary new threat facing all agentic browsers\"",
+   "issue": "The phrase is Google's, from Nathan Parker's Chrome security post of 8 December 2025 (\"The primary new threat facing all agentic browsers is indirect prompt injection\"); the link goes to a BleepingComputer article that, as fetched, does not contain the phrase, and names the feature \"Origin Sets\" where Google writes \"Agent Origin Sets\".",
+   "evidence": "https://blog.google/security/architecting-security-for-agentic/ (phrase verbatim); https://www.bleepingcomputer.com/news/security/google-chrome-adds-new-security-layer-for-gemini-ai-agentic-browsing (phrase absent as fetched), both read 18 October 2026",
+   "suggestion": "Link the quote to Google's post and add it to the sources with its date; keep BleepingComputer as coverage if wanted."
+  },
+  {
+   "id": "f3",
+   "criterion": "health",
+   "severity": "medium",
+   "section": "extensions",
+   "quote": "ShadyPanda",
+   "issue": "The Koi link https://www.koi.ai/blog/4-million-browsers-infected-inside-shadypanda-7-year-malware-campaign now answers 301 to a Palo Alto Networks product page; the report is no longer at that address.",
+   "evidence": "HTTP 301 to https://www.paloaltonetworks.com/cortex/agentic-endpoint-security, read 18 October 2026",
+   "suggestion": "Link an archived copy of Koi's post, or coverage that carries the figures (The Hacker News, 1 December 2025; The Register, 1 December 2025)."
+  },
+  {
+   "id": "f4",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "extensions",
+   "quote": "145 extensions with about 4.3 million installs",
+   "issue": "The 4.3 million is in every account of the report; the 145 is the sum of 20 Chrome and 125 Edge extensions published in the 2023 phase, as The Hacker News relays Koi's report, and no source I read gives 145 as the campaign's total. The article does not say how it got the count.",
+   "evidence": "https://thehackernews.com/2025/12/shadypanda-turns-popular-browser.html, read 18 October 2026",
+   "suggestion": "\"145 extensions (20 for Chrome and 125 for Edge, by Koi's count of the 2023 phase)\" or cite the source of the total."
+  },
+  {
+   "id": "f5",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "shape",
+   "quote": "removed it in Firefox 86",
+   "issue": "The linked Thurrott article is about Firefox 85 and reports that the SSB feature will be removed, without a version; the version is in Bugzilla 1682593 (\"Remove the SSB feature\", target milestone 86).",
+   "evidence": "https://www.thurrott.com/dev/246716/firefox-85-is-here-but-mozilla-is-killing-pwa-features and https://bugzilla.mozilla.org/show_bug.cgi?id=1682593, read 18 October 2026",
+   "suggestion": "Link the Bugzilla bug for the version, keeping Thurrott for the reasons."
+  },
+  {
+   "id": "f6",
+   "criterion": "voice",
+   "severity": "low",
+   "section": "biggest",
+   "quote": "Many were sandbox escapes",
+   "issue": "Mozilla's post says \"a number of these bugs are sandbox escapes\"; \"many\" is stronger than the source.",
+   "evidence": "https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/, read 18 October 2026",
+   "suggestion": "\"A number of them were sandbox escapes\"."
+  },
+  {
+   "id": "f7",
+   "criterion": "voice",
+   "severity": "low",
+   "section": "speed",
+   "quote": "Security has never been enough to make people switch browsers",
+   "issue": "An absolute without a count, followed by \"knows that better than anyone\", another. The same sentence shape is in the code-you-do-not-ship article.",
+   "evidence": "Criteria, Voice: absolutes without a count",
+   "suggestion": "\"Security has rarely been enough to make people switch browsers, and Firefox at 2.8% knows it\"."
+  }
+ ],
+ "article_hash": "c9643229bfd8"
+}

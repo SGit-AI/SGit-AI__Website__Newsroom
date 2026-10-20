@@ -1,0 +1,61 @@
+{
+ "slug": "policy-as-code-needs-a-policy-first",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "Policy as code only answers: is this allowed",
+   "para": "Policy as code is right for agents, but businesses, auditors and insurers ask about reach, mandate, gaps, unenforceable rules and who can change the code. An ABP lets policy go both ways: five rows became Rego that OPA ran on seven requests, and of this session's eleven rules only one has code the agent cannot change.",
+   "hash": "838bc44fd3ba"
+  },
+  "in-short": {
+   "line": "A rule the agent can rewrite is a setting",
+   "para": "An ABP holds what the engine does not: measured reach, mandate and reason, gap, owner, and who can change each rule's code. Five rows became 35 lines of Rego that denied three requests, asked on one and allowed three; parsing it back found the gaps. Fractal semantic graphs make the round trip work.",
+   "hash": "fd1e1352cfe7"
+  },
+  "question": {
+   "line": "Policy as code is right but answers one question",
+   "para": "A speaker described policy as code as the way to scale governance and AI innovation, and it is where agent governance must end up. Open Policy Agent decouples policy from services and returns structured decisions. But it only answers whether a request is allowed, which is rarely the first question when an agent goes wrong.",
+   "hash": "0c4a733d68df"
+  },
+  "adds": {
+   "line": "An ABP holds the questions around the engine's decision",
+   "para": "Boards and insurers ask about measured reach, the mandate and why each rule exists, the gap between them, rules no engine can see, the owner of each row, and who can change the code. A boundary sits above the agent's reach; a setting is a switch its own account could flip.",
+   "hash": "28be2466d528"
+  },
+  "session": {
+   "line": "Of eleven rules, only one is a true boundary",
+   "para": "Reverse engineering this session's policy found code behind eight of eleven rules, in the leak scan, validators and hooks, but nearly all of it the agent can change, so those rules are settings. Only the platform's GitHub scope is a boundary. Policy as code alone would have scored the session well governed.",
+   "hash": "2eab2f747bf3"
+  },
+  "generate": {
+   "line": "Five policy rows became Rego, and the gaps surfaced",
+   "para": "A generator of about twenty-five lines turned five rows into Rego carrying each row's id and reason. OPA 1.21.2 denied a push to sgit.ai, an unscanned commit and a model id, asked on a pull request, and allowed a sentence no engine can judge. Parsing back flagged R6c without code and an unexplained no-friday-releases rule.",
+   "hash": "4c24b6abb98f"
+  },
+  "paper": {
+   "line": "Spreadsheets and paper policies can be reverse engineered too",
+   "para": "The AI Baseline Control Framework's CSV became a semantic graph joined to the EU AI Act, and four frameworks were mapped for one agent. sgit.ai's newsroom role files render both a published policy table and the release check, so neither drifts. The ABP should be the source, with table and code as renderings.",
+   "hash": "4991c4283b72"
+  },
+  "fsg": {
+   "line": "Fractal semantic graphs connect formats without one schema",
+   "para": "Board policies, regulations, spreadsheets, ABPs and Rego each keep their own vocabulary, joined by edges with inverse verbs. Questions such as which rows have no code, or which rely on code the agent can change, become graph walks rather than workshops. Generated code keeps an edge back to its row, so anyone can ask why.",
+   "hash": "43ea808ef977"
+  },
+  "jobs": {
+   "line": "An ABP sharpens enabler, scaling, enforcer and decision-maker",
+   "para": "With an ABP as source, a reviewed policy enables shipping without per-agent meetings, one source renders into many engines, the barrier column shows which rules are real boundaries, and every decision returns its row. Hope or enforcement found rules kept by behaviour fell from 97% to 23% when moved into the platform.",
+   "hash": "c73113cdc83a"
+  },
+  "limits": {
+   "line": "A demonstration of one agent, not a product",
+   "para": "The round trip was five rows, a short generator and seven requests; real agents must route requests through the engine. The table covers one session on 14 October 2026, the GitHub scope was not tested by trying, some rows will never be code, and the speaker is not named.",
+   "hash": "9c20f5c9c2c8"
+  },
+  "sources": {
+   "line": "Sources: a voice memo and an OPA run",
+   "para": "From my voice memo of 14 October 2026 after an event talk on policy as code. The round trip used Open Policy Agent 1.21.2 with opa check, eval on seven requests and parse. The session table comes from its policy v0.3 of eleven rules, hooks, leak scan, validator and git configuration.",
+   "hash": "966f8dc4d74a"
+  }
+ }
+}

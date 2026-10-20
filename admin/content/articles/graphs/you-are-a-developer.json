@@ -1,0 +1,36 @@
+{
+ "slug": "you-are-a-developer",
+ "teaser": "Every GenAI founder I know is a developer and does not think so. They never saw the sausage factory. So the book may be Generation ZX Founders.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "GenAI founders already do a whole development team's jobs, often no worse than much of the industry, but do not call themselves developers because they never saw how rough new technology is inside; since people do not pick up a book addressed to a word they do not relate to, the book may be better titled Generation ZX Founders, with 'you are a developer' as the reveal at the end.",
+ "nodes": [
+  {"id": "founders", "label": "Every GenAI founder is a developer", "kind": "claim", "summary": "And none of them think so."},
+  {"id": "roles", "label": "A whole team's roles", "kind": "concept", "summary": "Product owner, designer, engineer, release manager."},
+  {"id": "crude", "label": "Crude, compared to what?", "kind": "claim", "summary": "Much of the industry does it worse."},
+  {"id": "vulns", "label": "Vulnerabilities are engineering gaps", "kind": "concept", "summary": "Validation, authentication, authorisation, resilience."},
+  {"id": "sausage", "label": "They never saw the sausage factory", "kind": "claim", "summary": "Only polished, later-generation products."},
+  {"id": "iphone", "label": "The iPhone's golden path", "kind": "example", "summary": "Taps in a set order so the prototype looked as if it worked."},
+  {"id": "iceberg", "label": "Make unfinished things look unfinished", "kind": "example", "summary": "Spolsky 2002; Sketchy; Napkin."},
+  {"id": "nfr", "label": "They meet the non-functional requirements", "kind": "concept", "summary": "Versioning, stability, security."},
+  {"id": "title", "label": "Generation ZX Founders", "kind": "question", "summary": "The hypothesis for the book's title."}
+ ],
+ "edges": [
+  {"from": "roles", "to": "founders", "rel": "extends"},
+  {"from": "crude", "to": "founders", "rel": "extends"},
+  {"from": "vulns", "to": "crude", "rel": "extends"},
+  {"from": "sausage", "to": "founders", "rel": "depends-on"},
+  {"from": "iphone", "to": "sausage", "rel": "extends"},
+  {"from": "iceberg", "to": "sausage", "rel": "extends"},
+  {"from": "nfr", "to": "founders", "rel": "produces"},
+  {"from": "founders", "to": "title", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["explorer-coding", "the-citizen-developer", "who-will-fix-your-mess", "generation-z-developers-again"],
+  "pages": [],
+  "sites": ["https://gen-z-developers.sgit.ai/decisions/index.html", "https://www.joelonsoftware.com/2002/02/13/the-iceberg-secret-revealed/"]
+ },
+ "quotes": [
+  {"text": "A vulnerability is a sign of bad engineering, or at least of an engineering gap.", "why": "On why products break."},
+  {"text": "it is very hard to communicate with someone using a word they do not relate to", "why": "Why the title may change."}
+ ]
+}

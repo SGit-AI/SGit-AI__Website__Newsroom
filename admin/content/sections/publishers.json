@@ -1,0 +1,154 @@
+{
+ "what": "A section: the newsroom as one audience reads it. The words are the editor's; the placement is admin/build/sections.py's, from articles/find.json (desks, controlled tags, formats, series) and admin/content/features.json. Change this file, not the page. `exclude` lists articles the rules would place but the editor keeps out, each with the reason. Streams are tried in order and an article goes in the first one it matches; a stream matches if any of its clauses does, and a clause matches if all its conditions do.",
+ "id": "publishers",
+ "title": "For publishers",
+ "nav_label": "For publishers",
+ "for_whom": "For editors, publishers and anyone running a news business who wants to see what a newsroom built with agents looks like, how it gets paid, and what they could copy.",
+ "intro": "This site is a newsroom that runs in the open: written from the editor's voice memos by a desk of agents, every source linked, every version kept, read with a meter that charges for what was read. It changes most days. This section keeps the pieces a publisher needs in one place, and it keeps itself current: new articles are placed here by their tags and desk as they are published, and new features appear as they ship.",
+ "overview": {
+  "href": "publishers/index.html",
+  "label": "The overview: what is live and how to try it",
+  "why": "The distillation, written as one page."
+ },
+ "start_here": [
+  [
+   "future-of-news-story-vault-not-paywall",
+   "The founding argument: the story is a graph of claims and evidence, and the article is one view of it."
+  ],
+  [
+   "i-just-want-to-buy-the-article",
+   "Why a reader who wants one article is offered a subscription, the arithmetic of 24p to 55p, and ten things a publisher could sell instead."
+  ],
+  [
+   "pay-after-you-read",
+   "The reading meter as a working model: pay after you read, and the rating sets the price."
+  ],
+  [
+   "the-agent-is-the-reader",
+   "Agents will pay to read, because a curated graph is cheaper for them than the raw web."
+  ],
+  [
+   "reviews-on-the-record",
+   "How quality control works when agents write: reviews by other models and the editor, on the record."
+  ]
+ ],
+ "streams": [
+  {
+   "id": "answers",
+   "label": "Answers to the industry",
+   "about": "Point-by-point replies to published arguments about news and publishing.",
+   "rule": [
+    {
+     "formats": [
+      "response"
+     ],
+     "desk_any": [
+      "news"
+     ]
+    },
+    {
+     "formats": [
+      "response"
+     ],
+     "tags_any": [
+      "journalism",
+      "story-vault",
+      "publishing-method"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "paid",
+   "label": "How news gets paid for",
+   "about": "Business models, the reading meter, micropayments, and what agents reading the web means for revenue.",
+   "rule": [
+    {
+     "tags_any": [
+      "micropayments",
+      "story-vault",
+      "local-news"
+     ]
+    },
+    {
+     "tags_any": [
+      "agent-readable-web",
+      "journalism",
+      "pricing"
+     ],
+     "desk": [
+      "news"
+     ],
+     "format_not": [
+      "response"
+     ],
+     "slugs_not": [
+      "dark-mode-and-four-more",
+      "the-infographic-bake-off"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "readers",
+   "label": "Readers, personas and the reading account",
+   "about": "How a reader reads here: personas, reading lists, the vault and the meter's controls.",
+   "rule": [
+    {
+     "tags_any": [
+      "personas"
+     ],
+     "desk_any": [
+      "news"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "method",
+   "label": "How this newsroom runs",
+   "about": "The method, the agents, the checks and the tools, as they are built and changed.",
+   "rule": [
+    {
+     "tags_any": [
+      "the-newsroom",
+      "publishing-method"
+     ]
+    }
+   ]
+  }
+ ],
+ "latest": 10,
+ "new_days": 7,
+ "links": [
+  [
+   "desks/news.html",
+   "The future of news desk",
+   "Every article on the desk, newest first, with its series."
+  ],
+  [
+   "wire/index.html",
+   "The wires",
+   "Four wires written by agents, labelled as such."
+  ],
+  [
+   "reviews/index.html",
+   "Reviews on the record",
+   "Every review of every article."
+  ]
+ ],
+ "exclude": [
+  [
+   "portugal-2010-a-challenge",
+   "A talk from the Portugal history series; tagged journalism because the vocabulary maps history to journalism."
+  ],
+  [
+   "portugal-2016-hacking-portugal",
+   "A talk from the Portugal history series; tagged journalism because the vocabulary maps history to journalism."
+  ],
+  [
+   "portugal-2024-genai-in-portuguese",
+   "A talk from the Portugal history series; tagged journalism because the vocabulary maps history to journalism."
+  ]
+ ]
+}

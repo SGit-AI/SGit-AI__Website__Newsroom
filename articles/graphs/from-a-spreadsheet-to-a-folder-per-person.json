@@ -1,0 +1,155 @@
+{
+  "slug": "from-a-spreadsheet-to-a-folder-per-person",
+  "teaser": "A walkthrough from a spreadsheet CRM to one Drive folder per person, worked by Claude under a six-line policy, with five exercises, before any vault is needed.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "The jump from a spreadsheet CRM to the agents' vault-per-person memory is too high in one step and does not need to be: the row becomes a Google Drive folder with a record, an append-only ledger, the messages word for word, the notes and a summary the agent writes; the agent is a Claude Project connected to Drive and Gmail whose instructions are a six-line behaviour policy carried over unchanged from ours, draft never send, append never rewrite, stay in the folder; the migration is one afternoon, five exercises from a question to a campaign form the habit, two predictable mistakes are fixed by policy lines, and the vault is the later step whose shape the folders already have.",
+  "nodes": [
+    {
+      "id": "gap",
+      "label": "The jump is too high in one step",
+      "kind": "claim",
+      "summary": "From a customised spreadsheet to a vault per person with hashes and a graph; the folder is the step between."
+    },
+    {
+      "id": "record",
+      "label": "The record is what happened, not the row",
+      "kind": "concept",
+      "summary": "In a folder the summary is derived from everything kept as it happened; in a spreadsheet the row is the summary you typed."
+    },
+    {
+      "id": "folder",
+      "label": "One folder, five documents",
+      "kind": "method",
+      "summary": "Record, Ledger, Messages, Notes, and a Summary the agent writes and nobody edits by hand; the same shape as the agents' vault minus hashes and graph."
+    },
+    {
+      "id": "policy",
+      "label": "A Claude Project whose instructions are the policy",
+      "kind": "method",
+      "summary": "Six lines: draft never send; read Contacts and Gmail, write only into a person's folder; append never rewrite; every fact names its source; ask before a new folder; report in one line."
+    },
+    {
+      "id": "enforced",
+      "label": "Told, not enforced, so report",
+      "kind": "claim",
+      "summary": "Gmail drafting is enforced; the rest is told; the one-line report is the twin that lets you check, and a seat per agent makes the rest settings."
+    },
+    {
+      "id": "migration",
+      "label": "One afternoon",
+      "kind": "method",
+      "summary": "Export the sheet, make the folders, fill each record from the mail the agent can read, correct once, generate the summaries; nothing is retyped again."
+    },
+    {
+      "id": "exercises",
+      "label": "Five exercises",
+      "kind": "example",
+      "summary": "Ask, prepare, draft, debrief, campaign: one message each, in order, over the first week."
+    },
+    {
+      "id": "wrong",
+      "label": "Two predictable mistakes",
+      "kind": "question",
+      "summary": "A fact without a source, and a summary that drops something; both fixed by a policy line and by fixing the source, never the summary."
+    },
+    {
+      "id": "vault",
+      "label": "When to move to a vault",
+      "kind": "claim",
+      "summary": "A second agent must read it, the operator must not, or the record must carry between tools; the move is a copy and the policy does not change."
+    },
+    {
+      "id": "send",
+      "label": "Written to be sent",
+      "kind": "artefact",
+      "summary": "The RiskMandate agent sends it with four substitutions: names, plan, three real contacts, the topic they sell."
+    }
+  ],
+  "edges": [
+    {
+      "from": "gap",
+      "to": "folder",
+      "rel": "leads-to"
+    },
+    {
+      "from": "record",
+      "to": "folder",
+      "rel": "depends-on"
+    },
+    {
+      "from": "policy",
+      "to": "folder",
+      "rel": "extends"
+    },
+    {
+      "from": "enforced",
+      "to": "policy",
+      "rel": "depends-on"
+    },
+    {
+      "from": "migration",
+      "to": "folder",
+      "rel": "produces"
+    },
+    {
+      "from": "exercises",
+      "to": "policy",
+      "rel": "example-of"
+    },
+    {
+      "from": "wrong",
+      "to": "policy",
+      "rel": "answers"
+    },
+    {
+      "from": "folder",
+      "to": "vault",
+      "rel": "leads-to"
+    },
+    {
+      "from": "send",
+      "to": "gap",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-agent-team-as-it-runs",
+      "memory-is-not-a-spectator-sport",
+      "the-behaviour-policy-is-the-business-logic",
+      "six-agents-one-inbox",
+      "custom-uis-are-not-the-exception",
+      "every-mistake-added-a-rule",
+      "where-the-vault-keys-live",
+      "replicating-the-agentic-inbox"
+    ],
+    "pages": [],
+    "sites": [
+      "https://voicedebrief.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "This is the row, promoted.",
+      "why": "What the Record is."
+    },
+    {
+      "text": "The Summary is a view; the Record is the truth.",
+      "why": "The rule that keeps the summary honest."
+    },
+    {
+      "text": "From then on, the rule is that nothing is retyped.",
+      "why": "What the migration buys."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cf-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cf-map.webp",
+      "caption": "The row becomes a folder with four documents and one the agent writes; the agent is a Claude Project whose instructions are the policy; the five exercises below the line are the first week."
+    }
+  ]
+}

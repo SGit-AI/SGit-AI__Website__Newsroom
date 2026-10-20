@@ -1,0 +1,118 @@
+{
+ "slug": "why-my-agents-do-not-run-on-my-laptop",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 458,
+   "line": "A laptop agent runs as me, so none do",
+   "para": "Operating systems have two hard walls, the kernel and the user account, and a laptop agent runs inside mine with all my credentials. So my agents run in Claude chat, Cowork in the cloud, Claude Code on the web and ChatGPT, with a vault as the shared drive. A dedicated machine is a separate question.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 375,
+   "line": "No OS boundary separates local agents from my secrets",
+   "para": "Inside a user account, nothing the OS enforces stands between an agent and SSH keys, cloud credentials and browser sessions; desktop agents' sandboxes are settings. Fifteen months of incidents show the pattern. Four cloud surfaces each get only what their job needs, and a vault lets the laptop pass keys and nothing else.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "The question, and the short answer",
+   "words": 208,
+   "line": "Local agents lack the isolation I would need",
+   "para": "I have no business need to run a model offline, and what a local agent would need, isolation better than online, no local agent offers. The models are fine; the place is the problem. On my laptop the grant is my whole account and the mandate is one document, which I would not accept from a contractor.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "The two walls",
+   "words": 455,
+   "line": "Within one user account there is no third wall",
+   "para": "The OS separates the kernel and separates users, but a process I start runs with my rights. Desktop agents add approval prompts, allow lists and sandboxes, all enforced inside the wall marked me; Anthropic's docs say the default read scope includes ~/.ssh. A real boundary is a separate user, machine or cloud environment.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "The evidence",
+   "words": 802,
+   "line": "Fifteen months of incidents show agents reaching account credentials",
+   "para": "From July 2025 to September 2026: deleted home directories and drives, pre-trust code execution in Claude Code and Cursor, CamoLeak exfiltration, tens of thousands of exposed OpenClaw instances and 341 malicious skills, a Cowork VM escape. GitGuardian counted 24,008 secrets in agent configs. Willison's lethal trifecta is present on every laptop by default.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "The setup",
+   "words": 426,
+   "line": "Four cloud surfaces, each reaching only its job's needs",
+   "para": "Claude chat, with nothing connected and past-chat search off, is for thinking, while Cowork in the cloud does most agentic work with no repositories, only the vaults I hand it. Claude Code on the web gets one repository and a network allowlist. ChatGPT has no assets, only an occasional read key.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "The vault is the shared drive",
+   "words": 282,
+   "line": "An encrypted vault lets isolated agents hand work over",
+   "para": "An sgit vault encrypts every file, name and message client-side, and each session gets a key out of band, pulls, works, commits and pushes. Cowork writes briefs that Claude Code pulls, so neither needs the other's reach. Only keys move between surfaces: a write key, a one-way read key and an append-only lane token.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Same mandate, two deployments",
+   "words": 130,
+   "line": "The cloud shrinks what an injected instruction can reach",
+   "para": "Moving to the cloud does not prevent prompt injection: a hidden instruction will be followed in either deployment. What changes is reach: one repository and one vault instead of my whole account. The barrier that holds is the small grant, not a cleverer filter, as Footprint and blast radius and The ultimate insider argue.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "What it costs me",
+   "words": 206,
+   "line": "The trade-offs are real, cheap, and worth paying",
+   "para": "No agents without a connection, a key handed by hand each session, one vault per scope because Cowork lacks per-session secrets, no cross-chat memory, and two products with different flows. In return sessions start clean and a mistake costs a repository and vault with history: a bad afternoon, not an incident.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "Three things I wish the platforms gave me",
+   "words": 235,
+   "line": "Agents need their own identity, secrets and key pair",
+   "para": "Each agent should have an account and name on its commits, secrets injected and revocable per agent, and a key pair to sign and receive encrypted messages. Claude Code on the web has the right shape for secrets; Cowork does not. Together they would let an agent run as itself rather than as me.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "The caveat, properly",
+   "words": 161,
+   "line": "A dedicated, separate-account machine is a different model",
+   "para": "Everything here concerns a laptop holding the main account. A Mac mini or second laptop with separate Apple and Workspace accounts and nothing of mine resembles the cloud model, and vendor sandboxes would become a second layer. I have not run it yet, and will report when I have.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "What exists today, and what does not",
+   "words": 85,
+   "line": "The setup runs; the three wishes do not exist",
+   "para": "Running today: the four surfaces, the vault as shared drive, per-session keys, a leak check before every commit, and the twelve-agent RiskMandate version. Missing: the three wishes as platform features, a desktop agent running as a separate OS user by default, and the dedicated-machine report.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s11",
+   "label": "Threads woven here",
+   "words": 135,
+   "line": "Related articles: agent team, blast radius, vaults and egress",
+   "para": "Links to The agent team as it runs, Six agents one inbox, Footprint and blast radius, The ultimate insider, and A personal agent that keeps your secrets. Also Working with AI agents, the Team and Enterprise egress how-to, and the vault credentials, security model and limitations pages.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s12",
+   "label": "Sources",
+   "words": 355,
+   "line": "Sources: vendor docs, dated incident reports and earlier writing",
+   "para": "Sources include Anthropic's Claude Code sandboxing and Cowork documentation, incident reports from Gemini CLI and Amazon Q to Cowork SharedRoot and Muse, and GitGuardian's 2026 secrets reports. Also Simon Willison's lethal trifecta post and Dinis Cruz's June 2026 LinkedIn piece and 2025 MCP writing.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

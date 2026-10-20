@@ -1,0 +1,281 @@
+{
+  "slug": "code-review-as-a-fractal-semantic-graph",
+  "teaser": "Source code is layers within layers, each a graph with its own vocabulary; code review should read a change at every one, and a vault shows it done on real code.",
+  "topics": [
+    "graphs-and-knowledge",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Source code is already a fractal semantic graph, stories to syntax tree and below, so a code review should diff every layer: a refactor moves the bottom and leaves the top still, a fix is a story that holds again, and the blast radius is the climb from changed methods to the stories that can reach them.",
+  "nodes": [
+    {
+      "id": "code-is-fractal",
+      "label": "Source code is a fractal semantic graph",
+      "kind": "claim",
+      "summary": "Stories, flows, components, classes, methods and calls, the syntax tree, and down to the machine: each layer a graph with its own node types and verbs, and you change universe between them."
+    },
+    {
+      "id": "fixed-levels",
+      "label": "C4 and Gherkin: right instinct, fixed levels",
+      "kind": "concept",
+      "summary": "C4 named four levels and left the code level optional; Gherkin shaped the top layer and glued it to code with regular expressions. Both saw the shape before anything could fill it cheaply."
+    },
+    {
+      "id": "naming-is-cheap",
+      "label": "Naming is now the cheap part",
+      "kind": "claim",
+      "summary": "A model can say what a function does, which story a command serves and the verb between two nodes, from the syntax tree, once per change, as structured files."
+    },
+    {
+      "id": "ast-first",
+      "label": "Start from the syntax tree",
+      "kind": "method",
+      "summary": "The tree survives reformatting and renaming; derive deterministically what a parser can, and spend the model on what it cannot know."
+    },
+    {
+      "id": "pile-of-files",
+      "label": "Every source file produces a pile of files",
+      "kind": "method",
+      "summary": "Classes, methods and calls, package edges, fingerprints, tests, pattern results, kept as JSON next to the code in git, a vault or both; regenerated only on change."
+    },
+    {
+      "id": "diff-every-layer",
+      "label": "Diff every layer",
+      "kind": "method",
+      "summary": "A refactor moves the bottom layers and leaves the top still; a fix moves the bottom and is visible at the top as a story holding again, with a test; a leak is a forbidden edge."
+    },
+    {
+      "id": "blast-radius",
+      "label": "Blast radius as the climb",
+      "kind": "concept",
+      "summary": "From the methods a change touched, up the call graph with dynamic dispatch, to the commands and stories that can reach them, before anything runs."
+    },
+    {
+      "id": "method-streams",
+      "label": "Method streams",
+      "kind": "method",
+      "summary": "Follow the call tree from one method and write out only that code; a 2012 O2 Platform review technique, now one script over a syntax tree with resolved calls."
+    },
+    {
+      "id": "worked-example",
+      "label": "The sgit CLI, read as layers",
+      "kind": "example",
+      "summary": "427 files, 377 classes, 1,111 methods, 2,592 calls, 72 commands, eleven stories, two streams, ten rules, one commit read upwards; nothing run; published as a vault."
+    },
+    {
+      "id": "fix-shape",
+      "label": "One commit, read upwards",
+      "kind": "example",
+      "summary": "Seven methods changed, no signature or field moved, six tests added; the climb reaches nine commands and six stories. The shape of a fix, and the commit message agrees."
+    },
+    {
+      "id": "reality-loop",
+      "label": "Reality corrects the graph",
+      "kind": "claim",
+      "summary": "You do not have to get the graph right; users confirm the top, experts confirm their layer, tests confirm execution, and every correction is a commit."
+    },
+    {
+      "id": "patterns-are-findings",
+      "label": "Patterns are findings",
+      "kind": "claim",
+      "summary": "Folder shape, type shape, test shape and size shape are queries over the graph; the rules a project states most firmly are the ones that hold."
+    },
+    {
+      "id": "ai-code-burden",
+      "label": "The review burden of generated code",
+      "kind": "example",
+      "summary": "More cloned code and less refactoring, lower delivery stability with adoption, developers reporting almost-right answers and longer debugging: the answer is a different diff, not a faster reviewer."
+    },
+    {
+      "id": "what-is-missing",
+      "label": "What does not exist yet",
+      "kind": "question",
+      "summary": "Proposed stories and edges from a model, node-level tree diffs, a second language, the interface layer, execution paths compared to predicted streams, and the review surface itself."
+    },
+    {
+      "id": "company",
+      "label": "A company to build",
+      "kind": "concept",
+      "summary": "A review that reads every layer, keeps the graph as files the customer owns, runs their rules as queries and improves with every correction; defensible through the record, not the model."
+    }
+  ],
+  "edges": [
+    {
+      "from": "code-is-fractal",
+      "to": "fixed-levels",
+      "rel": "compared-with"
+    },
+    {
+      "from": "naming-is-cheap",
+      "to": "code-is-fractal",
+      "rel": "extends"
+    },
+    {
+      "from": "ast-first",
+      "to": "pile-of-files",
+      "rel": "leads-to"
+    },
+    {
+      "from": "naming-is-cheap",
+      "to": "pile-of-files",
+      "rel": "produces"
+    },
+    {
+      "from": "pile-of-files",
+      "to": "diff-every-layer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "diff-every-layer",
+      "to": "blast-radius",
+      "rel": "produces"
+    },
+    {
+      "from": "method-streams",
+      "to": "diff-every-layer",
+      "rel": "extends"
+    },
+    {
+      "from": "ast-first",
+      "to": "method-streams",
+      "rel": "depends-on"
+    },
+    {
+      "from": "worked-example",
+      "to": "code-is-fractal",
+      "rel": "example-of"
+    },
+    {
+      "from": "fix-shape",
+      "to": "diff-every-layer",
+      "rel": "example-of"
+    },
+    {
+      "from": "fix-shape",
+      "to": "blast-radius",
+      "rel": "example-of"
+    },
+    {
+      "from": "worked-example",
+      "to": "fix-shape",
+      "rel": "produces"
+    },
+    {
+      "from": "worked-example",
+      "to": "method-streams",
+      "rel": "example-of"
+    },
+    {
+      "from": "reality-loop",
+      "to": "diff-every-layer",
+      "rel": "depends-on"
+    },
+    {
+      "from": "patterns-are-findings",
+      "to": "reality-loop",
+      "rel": "extends"
+    },
+    {
+      "from": "worked-example",
+      "to": "patterns-are-findings",
+      "rel": "example-of"
+    },
+    {
+      "from": "ai-code-burden",
+      "to": "diff-every-layer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "worked-example",
+      "to": "what-is-missing",
+      "rel": "leads-to"
+    },
+    {
+      "from": "what-is-missing",
+      "to": "company",
+      "rel": "leads-to"
+    },
+    {
+      "from": "reality-loop",
+      "to": "company",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "introducing-fractal-semantic-graphs",
+      "footprint-and-blast-radius",
+      "custom-uis-are-not-the-exception",
+      "every-risk-is-already-accepted"
+    ],
+    "pages": [
+      "/demos/vaults/code-review-graphs/index.html",
+      "/demos/fractal-graphs/index.html",
+      "/demos/vaults/threatmodcon-2025/index.html",
+      "/startups/business-plans.html"
+    ],
+    "sites": [
+      "https://coding.sgit.ai/",
+      "https://nfrs.sgit.ai/",
+      "https://c4model.com/",
+      "https://diniscruz.ai/2025/05/29/semantic-knowledge-graphs-for-llm-driven-source-code-analysis.html",
+      "https://diniscruz.blogspot.com/2012/06/o2-net-sast-engine-methodstream-and.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "You do not have to get the graph right. You have to get it to where user behaviour, the people who know each layer, and the tests can confirm or correct it.",
+      "why": "The condition that makes a model-derived graph of a codebase usable at all."
+    },
+    {
+      "text": "The answer is not a faster reviewer reading the same diff. It is a different diff.",
+      "why": "The article's claim about the review burden of generated code."
+    }
+  ],
+  "figures": [
+    {
+      "file": "crg-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-ladder.webp",
+      "caption": "The altitudes of one Python repository, and where the vocabulary changes. Each layer is a graph of its own. The green marks are where you change universe: the words for architecture are not the words for types, and neither are the words for syntax. C4's four levels and Gherkin's top layer are beside it for comparison. Counts are from the worked example in the vault."
+    },
+    {
+      "file": "crg-files-per-file.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-files-per-file.webp",
+      "caption": "Every source file produces a pile of files, and the review reads the pile. Start from the syntax tree, not the text. Derive each layer once and again only when its inputs change. Keep the results next to the code, in a git repository, in a vault, or in both side by side. The source box is illustrative; the file names and figures are from the worked example."
+    },
+    {
+      "file": "crg-delta-upwards.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-delta-upwards.webp",
+      "caption": "One commit, read upwards. The text diff is 75 lines added and 7 removed in three files. The graph reads the same change at every altitude and climbs the call graph to the commands and stories that can reach it. The pattern across the layers is the shape of a fix: bodies moved, shapes still, a test added."
+    },
+    {
+      "file": "crg-method-stream.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-method-stream.webp",
+      "caption": "A method stream: the code on one path and only that code. The stream from the push command, breadth-first to depth five, is 100 methods and 1,703 lines from 20 classes, which is 7.5 percent of the repository's method code and the whole of what a reviewer of \"publish a new vault\" has to read. The fix in the worked example sits at depth four of it."
+    },
+    {
+      "file": "collage.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/collage.webp",
+      "caption": "The nine views of the vault app: the ladder, the stories, the package graph, the classes, the methods, the two method streams, one commit read upwards, the pattern checks and the test map. Every screenshot in this section is a picture of the real vault, and clicking one opens its page, where the vault runs live with its read key."
+    },
+    {
+      "file": "overview.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/overview.webp",
+      "caption": "The vault as it opens: the ladder of seven altitudes, with how many nodes at each one commit touched. Click a layer to open its layer."
+    },
+    {
+      "file": "delta.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/delta.webp",
+      "caption": "The commit in the vault: every altitude it touched in red, the fix-or-refactor table, and the commit message beside it as evidence to be checked against the graph rather than taken on trust."
+    },
+    {
+      "file": "patterns.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/code-review-graphs/images/patterns.webp",
+      "caption": "Ten house rules, each run as a query over the graph, with the count of nodes where it does not hold and the count checked. A rule is a shape; a violation is a node where the shape is missing."
+    },
+    {
+      "file": "crg-reality-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/crg-reality-loop.webp",
+      "caption": "The feedback loop. Derive what a parser can derive and let a model propose the rest, marked as proposed. Confront it with users, who confirm whether a story holds; with experts, who each read the layer they know; and with tests, which are mapped from imports and confirmed by execution. Keep every correction as a commit to the graph files, and re-derive only what changed."
+    }
+  ]
+}

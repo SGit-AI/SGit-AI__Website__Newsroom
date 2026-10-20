@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it, SGit Newsroom</title>
+<meta name="description" content="On 7 October Microsoft made Microsoft Execution Containers (MXC) generally available: a containment layer for AI agents, declared in JSON and enforced by the operating system. With its companion, the Agent Control Specification (ACS), it is the most complete platform control for agents I have seen, and it confirms the direction of travel: the policy sits outside the agent, the agent cannot grant itself more, and you observe before you enforce. This article is a briefing on how the two actually work, field by field, and a map from them to RiskMandate's Agent Behaviour Policy. My argument is the shared responsibility model, applied to agents. Every platform draws its line where it can see and touch: files, network addresses and ports, the desktop, and with ACS the arguments of a tool call. Above that line is what a business actually runs on: what a Gmail label means, whose voice an email goes out in, how many refunds in a day is normal, which customer this run is for. Eight scenarios, each run three ways (a plain agent, an agent with a behaviour policy, and an agent with a behaviour policy on top of MXC and ACS), show what the platform turns into boundaries, what it hands back to the business, and what only a named person can accept. The platform is an important stage of the climb, not the summit.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/where-the-platform-draws-the-line.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/where-the-platform-draws-the-line.html">
+<meta property="og:title" content="Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it, SGit Newsroom">
+<meta property="og:description" content="On 7 October Microsoft made Microsoft Execution Containers (MXC) generally available: a containment layer for AI agents, declared in JSON and enforced by the operating system. With its companion, the Agent Control Specification (ACS), it is the most complete platform control for agents I have seen, and it confirms the direction of travel: the policy sits outside the agent, the agent cannot grant itself more, and you observe before you enforce. This article is a briefing on how the two actually work, field by field, and a map from them to RiskMandate's Agent Behaviour Policy. My argument is the shared responsibility model, applied to agents. Every platform draws its line where it can see and touch: files, network addresses and ports, the desktop, and with ACS the arguments of a tool call. Above that line is what a business actually runs on: what a Gmail label means, whose voice an email goes out in, how many refunds in a day is normal, which customer this run is for. Eight scenarios, each run three ways (a plain agent, an agent with a behaviour policy, and an agent with a behaviour policy on top of MXC and ACS), show what the platform turns into boundaries, what it hands back to the business, and what only a named person can accept. The platform is an important stage of the climb, not the summit.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/where-the-platform-draws-the-line.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/where-the-platform-draws-the-line.jpg">
+<link rel="alternate" type="text/markdown" href="where-the-platform-draws-the-line.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it, SGit Newsroom", "headline": "Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it, SGit Newsroom", "description": "On 7 October Microsoft made Microsoft Execution Containers (MXC) generally available: a containment layer for AI agents, declared in JSON and enforced by the operating system. With its companion, the Agent Control Specification (ACS), it is the most complete platform control for agents I have seen, and it confirms the direction of travel: the policy sits outside the agent, the agent cannot grant itself more, and you observe before you enforce. This article is a briefing on how the two actually work, field by field, and a map from them to RiskMandate's Agent Behaviour Policy. My argument is the shared responsibility model, applied to agents. Every platform draws its line where it can see and touch: files, network addresses and ports, the desktop, and with ACS the arguments of a tool call. Above that line is what a business actually runs on: what a Gmail label means, whose voice an email goes out in, how many refunds in a day is normal, which customer this run is for. Eight scenarios, each run three ways (a plain agent, an agent with a behaviour policy, and an agent with a behaviour policy on top of MXC and ACS), show what the platform turns into boundaries, what it hands back to the business, and what only a named person can accept. The platform is an important stage of the climb, not the summit.", "url": "https://newsroom.sgit.ai/articles/where-the-platform-draws-the-line.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it</p>
+ <h1>Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-11 &middot; <a href="versions/where-the-platform-draws-the-line.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.42</a> &middot; <span class="chip">riskmandate</span><span class="chip">agent-behaviour-policy</span><span class="chip">microsoft</span><span class="chip">mxc</span><span class="chip">execution-containers</span><span class="chip">agent-control-specification</span><span class="chip">containment</span><span class="chip">shared-responsibility</span><span class="chip">business-logic</span><span class="chip">barriers</span><span class="chip">briefing</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> On 7 October Microsoft made Microsoft Execution Containers (MXC) generally available: a containment layer for AI agents, declared in JSON and enforced by the operating system. With its companion, the Agent Control Specification (ACS), it is the most complete platform control for agents I have seen, and it confirms the direction of travel: the policy sits outside the agent, the agent cannot grant itself more, and you observe before you enforce. This article is a briefing on how the two actually work, field by field, and a map from them to RiskMandate's Agent Behaviour Policy. My argument is the shared responsibility model, applied to agents. Every platform draws its line where it can see and touch: files, network addresses and ports, the desktop, and with ACS the arguments of a tool call. Above that line is what a business actually runs on: what a Gmail label means, whose voice an email goes out in, how many refunds in a day is normal, which customer this run is for. Eight scenarios, each run three ways (a plain agent, an agent with a behaviour policy, and an agent with a behaviour policy on top of MXC and ACS), show what the platform turns into boundaries, what it hands back to the business, and what only a named person can accept. The platform is an important stage of the climb, not the summit.</em></p>
+<figure class="shot" data-shot="pl-stack.webp" data-dir="images/" data-alt="The shared responsibility model, drawn for agents. Each layer can only name what it can see. MXC names files, network addresses and the desktop; ACS names tool calls and their arguments; the business logic and the authority above them are the deployer&#x27;s, and that is where the Agent Behaviour Policy works."><figcaption>The shared responsibility model, drawn for agents. Each layer can only name what it can see. MXC names files, network addresses and the desktop; ACS names tool calls and their arguments; the business logic and the authority above them are the deployer's, and that is where the Agent Behaviour Policy works.</figcaption></figure>
+<p>On 7 October Microsoft announced that <a href="https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/">Microsoft Execution Containers are generally available</a>. I read it the day after Satya Nadella's post on models as insider risks, which I answered in <a href="the-same-argument-in-our-words.html">The same argument, in our words</a> and <a href="authority-outside-the-model.html">Authority outside the model</a>, and I recorded a voice memo straight away, because the question it raises for RiskMandate is obvious: if the platform now does containment, what is left for us to do?</p>
+<p>My answer is that this is the shared responsibility model again, and that it is good news. But a voice memo is a first reaction, so this article does two jobs. First, it is a briefing: what Microsoft has actually shipped and how it works, built from the announcement, the <a href="https://github.com/microsoft/mxc">MXC repository</a> and its schema, and the <a href="https://commandline.microsoft.com/agent-control-specification-runtime-governance/">Agent Control Specification announcement</a>. Where my memo guessed and the documents disagreed, the documents win, and I say so. Second, it is the practical companion to the two Nadella articles: where the platform's line sits, what lies above it, and where RiskMandate fits.</p>
+<h2>In short</h2>
+<ul>
+<li><b>The direction of travel is right, and now it is shipping.</b> Microsoft's own announcement states the principle this site has built on: an agent must not be the one that decides its own limits. MXC puts the policy outside the workload, enforces it in the operating system, denies by default, and lets you watch an agent in a permissive mode before you enforce. That is the enforcer test, footprint and "instrument before you enforce", built into a platform.</li>
+<li><b>MXC is a JSON policy, a set of SDKs and several sandboxes.</b> A versioned request names the container, the command, the paths the workload may read, write or never touch, the network egress and ingress, and the desktop. The SDKs (Rust, .NET, Node) and the process container run on Windows, macOS and Linux; the session container, learning-mode reports and Intune management are Windows only. It is open source, under the MIT licence. It is Microsoft's schema, not an industry standard.</li>
+<li><b>ACS is the layer above it, and it climbs toward ours.</b> The Agent Control Specification is a portable manifest that evaluates a policy, usually Rego, at eight points in the agent loop, including before every tool call, with the session's context passed in. Its worked example is an email rule. It supplies the hooks, the inputs and the enforcement contract. It deliberately does not supply the rules.</li>
+<li><b>This is the shared responsibility model again.</b> Cloud providers drew their line where they had control: security <em>of</em> the cloud is theirs, security <em>in</em> the cloud is yours. Platforms for agents do the same, and not out of bad faith: they draw the line at the granularity they can touch. MXC's unit is a path, a numeric address and port, the desktop. ACS's unit is a tool call. What a label in a mailbox means to the business, whose voice a message carries, and how many of an action is normal in a day sit above both.</li>
+<li><b>Run the same agent three ways and the layers separate cleanly.</b> In eight scenarios, a plain agent has an open path in all eight. A behaviour policy names all eight and makes none of them a boundary on its own. Put the same policy on top of MXC and ACS, and three become operating-system boundaries, four become boundaries if the business writes the rule into ACS or the tool, and one stays where only a named person can accept it.</li>
+<li><b>This is the move we wanted.</b> RiskMandate has always said it is not inline, and that the customer's own stack enforces. MXC and ACS are a large part of that stack arriving at once. Rows of a behaviour policy that were hope, kept by the agent, can now become boundaries, kept by the platform. The policy is what says which rows, and what to write into them.</li>
+</ul>
+<h2 id="briefing">What Microsoft shipped: a briefing</h2>
+<h3 id="problem">The problem it states</h3>
+<p>Microsoft's announcement frames the choice customers feel they have: give agents unrestricted access and hope, or block them and lose the productivity. Its answer is three platform capabilities: containment (what an agent can access and do), identity (telling an agent's activity apart from a person's) and manageability (letting organisations govern and monitor agents). MXC is the containment layer, and it is generally available now. The other two are announced as coming: Microsoft Entra telling agent activity apart from user activity, and Agent 365 controls extending to local agents.</p>
+<p>The sentence that matters most is the one this whole site agrees with: <b>"An agent cannot be its own security authority."</b> And its example is the right one. A coding agent asked to update a website needs to read and write the repository, and may need to read the production server's configuration, but should not be able to change it. Without a boundary, the agent might decide that changing the server configuration is the fastest way to finish. That would be reasonable from the agent's point of view, and still beyond what its developer meant to grant. In RiskMandate's terms, that is a row of the gap, and the announcement's answer is to make it a boundary.</p>
+<h3 id="mxc">What MXC is, mechanically</h3>
+<p>MXC is an SDK that an agent, or the application that hosts it, builds in. The application hands MXC a request naming the container type, the containment rules and the command to run. MXC validates it, picks a backend, and launches the workload inside a container that enforces the rules. The policy is held outside the workload, so the agent, or code it generated, cannot grant itself more.</p>
+<p>The request is JSON, validated against a versioned schema: the stable schema is 1.0.0, and a 1.1.0 preview version carries experimental features. Here is what a policy for Microsoft's own website example could look like. The field names are the schema's; the paths and the command are ours, for illustration:</p>
+<pre class="shell">
+{
+  "version": "1.0.0",
+  "containerId": "website-update",
+  "containment": "processcontainer",
+  "process": {
+    "commandLine": "agent-run --task update-homepage",
+    "cwd": "C:/src/website",
+    "timeout": 600000
+  },
+  "filesystem": {
+    "readwritePaths": ["C:/src/website"],
+    "readonlyPaths":  ["C:/deploy/server-config", "C:/tools/git"],
+    "deniedPaths":    ["C:/Users/me/Documents", "C:/Users/me/.ssh"]
+  },
+  "network": {
+    "egress":  { "default": "deny" },
+    "ingress": { "default": "deny", "hostLoopback": "deny" }
+  },
+  "ui": { "disable": true },
+  "processContainer": { "leastPrivilege": true }
+}
+</pre>
+<p>This example validates against the stable 1.0.0 schema in the repository, and it is published with this article as <a href="data/where-the-platform-draws-the-line__mxc-website-policy.json">JSON</a>. Read it as five policy areas, which is how Microsoft's announcement presents them:</p>
+<div class="tablewrap"><table>
+<tr><th>Policy area</th><th>What it controls</th><th>What it can name</th></tr>
+<tr><td><b>Containment</b></td><td>Which sandbox the workload runs in</td><td><code>processcontainer</code>, a session container, WSL, a microVM</td></tr>
+<tr><td><b>Process</b></td><td>The command, working directory, environment, timeout</td><td>One command line and its settings</td></tr>
+<tr><td><b>File system</b></td><td>Paths the workload may change, read, or never touch</td><td>Paths</td></tr>
+<tr><td><b>Network</b></td><td>Outbound and inbound connectivity, host loopback</td><td>Allow or deny by default; numeric address ranges, protocols and ports; or a proxy</td></tr>
+<tr><td><b>User interface</b></td><td>Desktop, clipboard, input</td><td>On or off, read or not</td></tr>
+</table></div>
+<p>Two details from the repository matter for what follows. Containers are <b>deny by default</b>: when the network section is left out, outbound traffic is denied. And the network rules are <b>numeric</b>: an address range, a protocol and a port. Filtering by host name, or by anything above that, is left to a proxy the caller runs. MXC itself does not see what the traffic says.</p>
+<p>That last detail is very familiar. The day before writing this, we ran <a href="how-to-run-synthetic-users.html">five synthetic users</a> through newsroom.sgit.ai, and to keep them from touching anything real we wrote exactly that proxy, at the request level: every request to the site was answered from a verified local copy, and every request that was not a read, or that went to any other host, was refused and logged. MXC would have given us the sandbox around it. The rule that mattered, "read this one site, change nothing", was ours to write.</p>
+<h3 id="backends">Four sandboxes, one schema</h3>
+<p>The same request maps to the right sandbox on each platform:</p>
+<div class="tablewrap"><table>
+<tr><th>Backend</th><th>Where</th><th>What it is</th></tr>
+<tr><td><b>Process container</b></td><td>Windows 11, macOS, Linux</td><td>The platform's own process sandbox: AppContainer on Windows, Seatbelt on macOS, Bubblewrap on Linux</td></tr>
+<tr><td><b>Session container</b></td><td>Windows 11 only</td><td>A separate Windows account and session: its own desktop, clipboard, input and identity</td></tr>
+<tr><td><b>WSL container</b></td><td>Windows 11 only</td><td>A Linux environment through the Windows Subsystem for Linux</td></tr>
+<tr><td><b>MicroVM</b></td><td>Windows 11 and Linux, experimental</td><td>A hardware-backed virtual machine boundary</td></tr>
+</table></div>
+<p>So my memo's guess, that this is a Windows thing and not a standard, was half right. The schema, the SDKs and the lightest sandbox are cross-platform, and the code is MIT-licensed on GitHub. But the parts that make it manageable across an organisation, the session container, the learning-mode reports and the coming Intune policy, are Windows only, and the schema is Microsoft's own rather than a standards body's.</p>
+<h3 id="modes">Observe, then enforce</h3>
+<p>The feature closest to our own method is the three operating modes:</p>
+<div class="tablewrap"><table>
+<tr><th>Mode</th><th>Ungranted access</th><th>Recorded</th><th>Use</th></tr>
+<tr><td><b>Enforcement</b></td><td>Blocked</td><td>No</td><td>Production</td></tr>
+<tr><td><b>Learning</b></td><td>Blocked and recorded</td><td>Yes, as a JSON activity report</td><td>Find what the policy is missing without loosening it</td></tr>
+<tr><td><b>Permissive</b></td><td>Allowed and recorded</td><td>Yes</td><td>Watch everything the agent would touch if nothing were blocked</td></tr>
+</table></div>
+<p>Permissive mode answers, on the machine, the question an Agent Behaviour Policy's reach answers on paper: what would this agent touch if nothing stopped it? Learning mode is calibration against reality. The repository is candid that permissive mode weakens containment, and flags it as security-sensitive whenever it is used. Activity reports are Windows only.</p>
+<h3 id="identity">Developer policy, organisation policy, agent identity</h3>
+<p>An agent developer declares what the workload needs. The organisation can then narrow it through management policy, with Intune support announced as coming for process containers on Windows 11, so the same agent runs inside different enterprise boundaries without the developer encoding each company's posture. Microsoft asks agent developers to expect the organisation to be stricter, and to explain a blocked task rather than fail silently. Agent identity through Entra is announced as coming, so that a misbehaving agent's access can be cut without cutting the employee's. GitHub Copilot, OpenAI Codex, Replit and others support MXC now; Anthropic's Claude Code is listed among those releasing support.</p>
+<h3 id="acs">The layer above: the Agent Control Specification</h3>
+<p>MXC answers what a workload can reach on the machine. It cannot answer whether a particular email should be sent, because to MXC an email is an encrypted connection to an allowed address on port 443. Microsoft's answer for that is a separate project, published in June: the <a href="https://commandline.microsoft.com/agent-control-specification-runtime-governance/">Agent Control Specification</a> (ACS), an MIT-licensed specification and SDK in Microsoft's Agent Governance Toolkit, pitched as an open, vendor-neutral standard.</p>
+<p>ACS's own explanation of why it exists is the clearest statement of the problem I have seen from a vendor. Traditional access control can say whether a credential may call a resource; it has no way to ask, in its words, <b>"given everything this agent has touched in this conversation, is this call still safe?"</b> ACS defines eight interception points in the agent loop: startup, input, before and after each model call, before and after each tool call, output, and shutdown. At each one, the host passes a snapshot of the session (the actor, prior tool calls, data sensitivity, approval state); ACS shapes it into a standard input, gathers evidence from classifiers or other services, runs a policy engine (usually Rego), and returns allow, warn, deny or escalate, failing closed if anything breaks. A manifest file binds policies to points and ships with the agent, and adapters exist for most agent frameworks. Its worked example is an email agent whose policy denies sending to external recipients.</p>
+<p>That is a real step up the stack. It is the same layer as the <a href="a-second-reader-the-agent-cannot-skip.html">second reader</a> on our own drafts: a check on the tool call, outside the model, failing closed. And it has the same property we found there: whether it is a boundary depends on who owns the installation. ACS is enforced by the host that runs the agent loop. If the agent can edit the manifest, or the host, it is a setting. Same code, different owner.</p>
+<p>ACS is also explicit about what it is not. It owns where, when and how a policy is evaluated. The rules themselves, it says, come from whoever authors them. Which is exactly where this article is going.</p>
+<h2 id="shared">The shared responsibility model, applied to agents</h2>
+<p>Every security professional knows this move. Cloud providers drew a line: security <em>of</em> the cloud (the hardware, the hypervisor, the network) is theirs; security <em>in</em> the cloud (your configuration, your identities, your data) is yours. AWS put it on <a href="https://aws.amazon.com/compliance/shared-responsibility-model/">a page</a> that everyone in this industry has seen. It was a good model. It was also, inevitably, a line drawn exactly where the provider's control ended. A company draws its responsibility around what it can touch. That is not bad faith. It is the only line it can honestly draw.</p>
+<p>Platforms for agents are drawing the same line, at the granularity they can touch. MXC's unit is a path, a numeric address and port, a desktop. ACS's unit is a tool call and its arguments. RiskMandate's <a href="https://riskmandate.ai/lab-connector-grants.html">Lab 01</a> found the same shape in the connectors themselves: the narrowest Gmail scope that reads one message reads every message, and no scope filters by sender, label or date. The unit of restriction is the application and the tool. It is not the data, and it is not the business.</p>
+<p>The problem is that a business does not run at that granularity. In <a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a>, I described what happens a few layers into any real policy: you stop writing about files and ports, and start writing about how this company does email, which steps an invoice goes through, who a client is this week. For decades those rules lived in software, enforced by the screen that did not show the button. Software was the law. An agent calls the API the button would have called, and the rule is gone, unless somebody writes it down and something enforces it. Three examples from our own work show the gap.</p>
+<p><b>A label is a decision.</b> To a platform, applying or removing a Gmail label is one call that changes one property of one message. To a business, labels are the filing system: in Gmail a label is a folder, and filters, workflows, retention and delegation hang off them. Remove an invoices-to-pay label from forty messages, for example, and they leave somebody's queue, and the bills go unpaid. The <a href="connector-twin-before-you-deploy-an-agent.html">connector twin</a> can put every one of those labels back exactly; it cannot put back the missed payments. MXC sees an allowed connection to Google. ACS can see the call and its arguments, but nothing in it knows which label means what. That is business knowledge, and only the business has it.</p>
+<p><b>Sending depends on who, from whom, and in whose voice.</b> ACS's own example denies email to external recipients, which is a good rule, and a real boundary if the host enforces it. But the failure we actually had was different. <a href="a-second-reader-the-agent-cannot-skip.html">Two emails went out</a> to a legitimate external contact, in my voice and signed with my name. An external-recipient rule would not have stopped them. The rule that mattered was ours: agents draft, a person sends. Who may be written to, on whose behalf, about what, and whether a model may speak as a person are business rules.</p>
+<p><b>Quantity is context.</b> One database call is fine; fifty in a minute is something else. One refund is service; a hundred is a loss. MXC cannot count. ACS can, if the host passes the history in its snapshot. But what number is normal for this agent, this customer, this day, is not something a platform can know. In <a href="hope-or-enforcement.html">Hope or enforcement</a>, the limits that made the difference were the business's: 100 GBP per order, a 2,000 GBP daily circuit breaker on all automatic refunds, and, proposed after the run, 250 GBP per customer in 30 days.</p>
+<h2 id="scenarios">One agent, three ways: eight scenarios</h2>
+<p>To make the layers concrete, take eight things an agent might do, four from a coding agent like Microsoft's example and four from agents on a mailbox and a shop's support inbox, and run each through three designs:</p>
+<ul>
+<li><b>A plain agent</b>, running as the signed-in user, with a long and careful prompt.</li>
+<li><b>The same agent with an Agent Behaviour Policy</b>: reach measured, mandate written, every row of the gap named with its barrier. On its own, a policy turns nothing into a boundary. It turns unknowns into named rows, and most rows into honest expectations.</li>
+<li><b>The same policy on top of MXC and ACS</b>, with each row placed at the lowest layer that can enforce it.</li>
+</ul>
+<figure class="shot" data-shot="pl-scenarios.webp" data-dir="images/" data-alt="Eight scenarios, three designs. The plain agent leaves every path open. The behaviour policy names every row but bounds none on its own. On top of MXC and ACS, three rows become operating-system boundaries, four become boundaries once the business&#x27;s rule is written into ACS or the tool, and one stays inside the mandate, where only a named person can accept it."><figcaption>Eight scenarios, three designs. The plain agent leaves every path open. The behaviour policy names every row but bounds none on its own. On top of MXC and ACS, three rows become operating-system boundaries, four become boundaries once the business's rule is written into ACS or the tool, and one stays inside the mandate, where only a named person can accept it.</figcaption></figure>
+<div class="tablewrap"><table>
+<tr><th>#</th><th>Scenario</th><th>Plain agent</th><th>With an ABP</th><th>ABP on top of MXC and ACS</th></tr>
+<tr><td>1</td><td>Coding agent rewrites the production server config to finish faster</td><td>Open: runs as the user</td><td>Named row; barrier is an expectation</td><td><b>Boundary, OS:</b> config path read-only</td></tr>
+<tr><td>2</td><td>Coding agent reads the user's SSH keys or Documents</td><td>Open</td><td>Named row; expectation</td><td><b>Boundary, OS:</b> denied paths</td></tr>
+<tr><td>3</td><td>Generated code posts the repository to an unknown host</td><td>Open</td><td>Named row; expectation</td><td><b>Boundary, OS:</b> egress denied by default</td></tr>
+<tr><td>4</td><td>Coding agent force-pushes to main on the allowed code host</td><td>Open</td><td>Mandate says one branch; expectation</td><td>MXC cannot tell (same address, same port). <b>Boundary if</b> the rule is written into ACS or the code host's branch protection</td></tr>
+<tr><td>5</td><td>Mailbox agent removes a payables label from forty messages</td><td>Open</td><td>Mandate lists the labels it may change; expectation</td><td>MXC sees an allowed connection. <b>Boundary if</b> ACS or the tool encodes which labels are protected; the twin can restore the labels, not the late payments</td></tr>
+<tr><td>6</td><td>Agent sends a reply in a person's voice to a real external contact</td><td>Open</td><td>Mandate says draft, never send; expectation</td><td>An external-recipient rule does not catch it. <b>Boundary if</b> there is no send tool, or a second reader gates the draft at the harness</td></tr>
+<tr><td>7</td><td>Support agent issues fifty refunds in an afternoon</td><td>Open, no limit</td><td>Limits written down; expectation</td><td>MXC cannot count. <b>Boundary if</b> the limit lives in the refund tool or an ACS policy given the history</td></tr>
+<tr><td>8</td><td>A real customer's compromised mailbox asks for a new address and refunds</td><td>Open</td><td>Inside the mandate; named, with proposed boundaries</td><td>No platform rule applies: every call is allowed. <b>Bounded and accepted:</b> confirmation link, per-customer cap, named owner</td></tr>
+</table></div>
+<p>Read down the right-hand column and the layers separate. Rows 1 to 3 are the platform's, and MXC handles them well: by construction, outside the agent's reach. Rows 4 to 7 are where the two halves meet. The hook exists, in ACS, in the tool, in the code host, but the content of the rule (which branch, which labels, whose voice, how many) comes from the business's mandate. Row 8 is inside the mandate altogether. No platform rule can refuse a genuine customer's account asking for something the agent is authorised to do. The policy names it, proposes the boundaries that shrink it, and the <a href="every-risk-is-already-accepted.html">risk that is left</a> is accepted by a named person for a stated interval.</p>
+<p>To be clear about what this table is: the scenarios are reasoned from the published behaviour of MXC and ACS and from our own policies and vaults; they are not a test run. Rows 5 to 8 come from <a href="https://sgit.ai/demos/vaults/hope-or-enforcement/index.html">Hope or enforcement</a>, the <a href="https://sgit.ai/demos/vaults/connector-twin/index.html">connector twin</a> and our own agent team. The eight rows are published as <a href="data/where-the-platform-draws-the-line__scenarios.json">data</a>. The next step is to publish them as a vault with every row computed, the way Hope or enforcement was.</p>
+<h2 id="map">How MXC and ACS map to an Agent Behaviour Policy</h2>
+<figure class="shot" data-shot="pl-briefing.webp" data-dir="images/" data-alt="MXC in one page: the policy file, the modes, and where each piece lands in the Agent Behaviour Policy. Permissive mode measures the reach; learning mode calibrates it; enforcement mode turns rows into boundaries. ACS adds the tool-call layer, and whether it is a boundary depends on who owns the host."><figcaption>MXC in one page: the policy file, the modes, and where each piece lands in the Agent Behaviour Policy. Permissive mode measures the reach; learning mode calibrates it; enforcement mode turns rows into boundaries. ACS adds the tool-call layer, and whether it is a boundary depends on who owns the host.</figcaption></figure>
+<div class="tablewrap"><table>
+<tr><th>Agent Behaviour Policy</th><th>MXC</th><th>ACS</th></tr>
+<tr><td><b>Reach</b>, measured</td><td>Permissive mode's activity report: what the workload tried to touch with nothing blocked</td><td>Post-tool-call and shutdown records</td></tr>
+<tr><td><b>Calibration</b> against reality</td><td>Learning mode: blocked and recorded</td><td>Evidence providers and logged verdicts</td></tr>
+<tr><td><b>Mandate</b></td><td>Not expressed. A policy says what the workload may touch, not what it is for</td><td>Not expressed. The manifest says where checks run; the rules come from the author</td></tr>
+<tr><td><b>Gap</b></td><td>Derived only if a mandate exists to compare against</td><td>The same</td></tr>
+<tr><td><b>Barrier: boundary</b></td><td>Paths, address ranges, ports, desktop, enforced by the OS, outside the workload</td><td>Tool-call verdicts enforced by the host, if the agent cannot edit the host or manifest</td></tr>
+<tr><td><b>Barrier: setting</b></td><td>A developer policy file the agent itself can edit</td><td>A manifest inside the agent's own writable files</td></tr>
+<tr><td><b>Owner and expiry</b></td><td>Organisation policy through Intune (coming)</td><td>Not expressed</td></tr>
+</table></div>
+<p>For RiskMandate, three things follow.</p>
+<p><b>MXC and ACS are barrier sources.</b> When an ABP row has a matching MXC deny that the agent cannot change, the barrier is a boundary, and the policy can say so with evidence: the JSON, its version, and who installed it. One warning goes with that. An MXC policy file sitting inside a coding agent's own read-write path is a setting, not a boundary. We have lived that one: the rule that let our synthetic users drive a browser sits in a settings file the agent's own account can write, so by our own test it is a setting with a person's approval on record. The policy file must live where the workload cannot write.</p>
+<p><b>Activity reports are footprint.</b> Permissive and learning-mode reports are exactly the evidence the <a href="footprint-and-blast-radius.html">footprint</a> proposal asks for: what the agent actually did, read afterwards, with nobody inline. Read against a mandate, they produce the two findings that matter: a near miss, and a dormant mandate.</p>
+<p><b>The policy is what writes the rules.</b> ACS needs Rego; MXC needs paths and ranges; the refund tool needs a number. None of them can say what the numbers should be. An ABP row such as "removes labels only from the support queue; never from finance labels; at most twenty a run" is the source that compiles down into an MXC path, an ACS policy and a tool limit. Generating MXC JSON and ACS policies from an ABP is a design today, not a product. It is the integration RiskMandate's model was built for, since <a href="riskmandate-ten-questions.html">we are not inline</a>, and the customer's own stack enforces.</p>
+<h2 id="summit">Not the summit</h2>
+<p>MXC and ACS are the most complete platform controls for agents I have seen, and they should be in place wherever agents run on Windows, and on the other platforms the process container covers. With them, rows that a behaviour policy can only describe as hope become boundaries that the agent cannot argue with. That is the move <a href="hope-or-enforcement.html">Hope or enforcement</a> measured, from 97% hope to 23%, and here it is arriving as platform features rather than custom code. This is a big deal, and I want to be clear about that.</p>
+<p>But it is a stage of the climb, not the top. Above the platform's line sit the layers a business actually runs on: the function, the process, the client, and what the company says it is for. Each refines the one below, inside the room the one below allows, and each has its own owner. The platform cannot write those layers, and should not try: it does not know what a label means here. The business can, and the behaviour policy is where it does. Where the platform draws its line, the business's work starts.</p>
+<h2 id="start">Where to start</h2>
+<ul>
+<li><b>Turn on MXC for coding agents now,</b> deny by default, and keep the policy file outside every path the agent can write.</li>
+<li><b>Run new agents in permissive mode first,</b> read the activity report as the agent's reach, and write the mandate against it before you enforce.</li>
+<li><b>Put the external-facing tool calls behind ACS or an equivalent,</b> installed by somebody other than the agent's owner, failing closed.</li>
+<li><b>Write the business rules down,</b> layer by layer: which labels, which recipients, whose voice, how many per day, which customer. They are the content the platform's hooks are waiting for.</li>
+<li><b>Mark each rule with what enforces it,</b> and count what is still hope. That count is what the platform has not covered yet.</li>
+<li><b>Name the owner of what is left,</b> and the date it is next accepted.</li>
+</ul>
+<p>If you are rolling out MXC or ACS and want to try writing the layer above it for one of your agents, let's talk: <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine, recorded after reading Microsoft's announcement. I asked an agent in a separate Claude session to check the memo against Microsoft's own material and this network's pages, and to draft this article with its figures and data; this site's agent then rewrote it in the voice of this site and added what we learned this week. The argument is mine, and so is the editorial responsibility. The briefing is built from Microsoft's <a href="https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/">announcement of 7 October 2026</a> (Windows Developer Blog), the <a href="https://github.com/microsoft/mxc">MXC repository</a> as of 11 October 2026 (README, configuration schema documentation, learning-mode documentation and the 1.0.0 contract fixtures, MIT licence), and Microsoft's <a href="https://commandline.microsoft.com/agent-control-specification-runtime-governance/">ACS announcement</a> of 2 June 2026 (Command Line) with the <a href="https://github.com/microsoft/agent-governance-toolkit">Agent Governance Toolkit</a>. Microsoft's material is paraphrased throughout and quoted twice. The JSON example uses the schema's field names with illustrative paths, and validates against the 1.0.0 schema. The eight scenarios are reasoned, not run. Also: AWS's <a href="https://aws.amazon.com/compliance/shared-responsibility-model/">Shared Responsibility Model</a>; on this site, <a href="the-same-argument-in-our-words.html">The same argument, in our words</a>, <a href="authority-outside-the-model.html">Authority outside the model</a>, <a href="the-behaviour-policy-is-the-business-logic.html">the business logic</a>, <a href="hope-or-enforcement.html">Hope or enforcement</a>, <a href="a-second-reader-the-agent-cannot-skip.html">A second reader the agent cannot skip</a>, <a href="connector-twin-before-you-deploy-an-agent.html">the connector twin</a>, <a href="footprint-and-blast-radius.html">Footprint and blast radius</a>, <a href="every-risk-is-already-accepted.html">Every risk is already accepted</a>, <a href="how-to-run-synthetic-users.html">How to run synthetic users</a> and <a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered</a>; RiskMandate's <a href="https://riskmandate.ai/lab-connector-grants.html">Lab 01, the grant is user-shaped, not data-shaped</a>; and the vaults <a href="https://sgit.ai/demos/vaults/hope-or-enforcement/index.html">Hope or enforcement</a> and <a href="https://sgit.ai/demos/vaults/connector-twin/index.html">Connector Twin</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-11" topics="agents-and-policy" title="Where the platform draws the line: Microsoft Execution Containers, the shared responsibility model for agents, and the business logic above it, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#where-the-platform-draws-the-line">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="the-same-argument-in-our-words.html">The same argument, in our words: Satya Nadella on models as insider risks, translated into the language of RiskMandate</a> <span class="dim">Satya Nadella's case for treating models as insider risks, translated idea by idea into our vocabulary: reach, mandate, gap, barriers and accepted risk.</span></li><li><a href="authority-outside-the-model.html">Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan</a> <span class="dim">Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.</span></li><li><a href="how-to-run-synthetic-users.html">How to run synthetic users on your own site: five people who do not exist, a browser, and an afternoon</a> <span class="dim">Five invented users, a model reading screenshots, and a real browser: how to run synthetic users, from three studies.</span></li><li><a href="a-second-reader-the-agent-cannot-skip.html">A second reader the agent cannot skip: how two wrong emails became a gate on every draft</a> <span class="dim">Two emails went out in my voice despite a written rule. The fix: a hook that makes a second model approve every draft, failing closed.</span></li><li><a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a> <span class="dim">Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.</span></li><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="four-frameworks-one-agent.html">Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs</a> <span class="dim">iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.</span></li><li><a href="the-policy-draws-the-liability-line.html">The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt</a> <span class="dim">An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.</span></li><li><a href="move-the-cloud-not-the-code.html">Move the cloud, not the code: twins, sovereignty that works in practice, and the migration that pays for itself on the day you switch</a> <span class="dim">Workloads stay on hyperscalers because moving means changing code; a twin lets the code not know, and the value in the twin is what signs the migration.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 70 &middot; <a href="../for/make.html#r=70">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/where-the-platform-draws-the-line.jpg" download>where-the-platform-draws-the-line.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-the-platform-draws-the-line.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

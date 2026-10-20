@@ -1,0 +1,41 @@
+{
+ "schema": "newsroom-review/v1",
+ "criteria": "v1",
+ "slug": "the-editors-channel",
+ "article_version": "v0.12.106",
+ "reviewer": "anthropic-fable",
+ "kind": "agent",
+ "model": "Claude Fable 5.1",
+ "run_by": "newsroom.writer, at the editor's request",
+ "at": "2026-10-18T11:30:00Z",
+ "verdict": "approve",
+ "summary": "A design article whose factual claims are about this site's own notes and tools, and they hold: the quote from the feedback-loop note is word for word, the four notes and the brief resolve, the wording check and the lane reader exist, and the counts it borrows from earlier articles match them. Nothing to fix; the one thing I could not check is how sgit handles a copied key.",
+ "checks": {
+  "facts": {
+   "result": "pass",
+   "notes": "Checked against the repository and the live site on 18 October 2026: the quote \"What the lane is not: a channel the newsroom can write back on.\" is word for word in admin/notes/2026-10-12__the-feedback-loop.md; admin/build/lane.py and admin/build/wording.py exist, and the v0.12.106 release notes say the leak scan fails a commit that adds a flagged phrase, which supports \"a check so the next one fails before it is committed\"; the four notes and the brief at newsroom.sgit.ai/admin/notes/ return HTTP 200; the inbox's key pair (RSA-OAEP, private half in the master vault) is in the send-to-my-vault note; \"a hundred writers posting to one at once\" matches agent-workflows-on-ephemeral-vaults (100 writers, 10 entries each, 4.9 s); \"the first lane I sent changed the pane the same day\" matches the feedback-loop note's section \"The first lane, read (13 October 2026, v0.12.8)\". Not checked: that a copied vault key can only be revoked by making a new vault or token, which is sgit's behaviour rather than this site's."
+  },
+  "voice": {
+   "result": "pass",
+   "notes": "First person, memo order, plain words. \"the clearest example I have seen\" appears only as the phrase being banned. No em-dashes, no hype, no model names, British spelling."
+  },
+  "claims": {
+   "result": "pass",
+   "notes": "Built and proposed are separated twice, in Where this stands and in the limits; the limits name real weaknesses (one editor, shared keys are not identity, traffic metadata on the anonymous lane, editor mode sends more than the lane)."
+  },
+  "conversions": {
+   "result": "pass",
+   "notes": "No currency, units or translations. The summary, In short and body agree: five audiences, one key per lane, a daily pass plus a button."
+  },
+  "health": {
+   "result": "pass",
+   "notes": "All linked notes and articles resolve; the figure ec-channel.webp exists; both graph quotes appear verbatim in the text; summaries.py --check reports no stale section summary."
+  },
+  "people": {
+   "result": "pass",
+   "notes": "No private person named (\"another agent on this site\"), no key or token shown; the only address is the public agent@riskmandate.ai."
+  }
+ },
+ "findings": [],
+ "article_hash": "b241cd83c9da"
+}

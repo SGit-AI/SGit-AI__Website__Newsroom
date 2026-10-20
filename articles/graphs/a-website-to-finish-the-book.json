@@ -1,0 +1,136 @@
+{
+  "slug": "a-website-to-finish-the-book",
+  "teaser": "gen-z-developers.sgit.ai: the released book in the repository, the working book in a public vault, and agents helping me review it at every altitude.",
+  "topics": [
+    "vaults-and-method",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "A website for finishing Generation Z Developers keeps official versions in the repository and working versions in a public vault, with deltas between versions, the book as a graph at every altitude with infographics, voice comments, a board, agents in roles who challenge and interview Dinis, research and evidence, and the OpenRouter key in a separate private vault.",
+  "nodes": [
+    {
+      "id": "site",
+      "label": "gen-z-developers.sgit.ai",
+      "kind": "artefact",
+      "summary": "The book's website."
+    },
+    {
+      "id": "rule",
+      "label": "Repository official, vault working",
+      "kind": "method",
+      "summary": "Versions move in when signed off."
+    },
+    {
+      "id": "delta",
+      "label": "A delta between versions",
+      "kind": "artefact",
+      "summary": "What changed, block by block."
+    },
+    {
+      "id": "graph",
+      "label": "The book as a graph",
+      "kind": "concept",
+      "summary": "Ontology, taxonomy, links."
+    },
+    {
+      "id": "altitudes",
+      "label": "Every altitude, an infographic",
+      "kind": "method",
+      "summary": "From one page to the full text."
+    },
+    {
+      "id": "roles",
+      "label": "Editor, copywriter, publisher",
+      "kind": "method",
+      "summary": "Challenge, interview, sign off."
+    },
+    {
+      "id": "evidence",
+      "label": "Research and evidence",
+      "kind": "method",
+      "summary": "Per section, later per paragraph."
+    },
+    {
+      "id": "key",
+      "label": "The key's own vault",
+      "kind": "claim",
+      "summary": "Never in a public vault."
+    },
+    {
+      "id": "last",
+      "label": "How it was built, as the last part",
+      "kind": "claim",
+      "summary": "What a Gen Z developer should build."
+    }
+  ],
+  "edges": [
+    {
+      "from": "rule",
+      "to": "site",
+      "rel": "produces"
+    },
+    {
+      "from": "rule",
+      "to": "delta",
+      "rel": "produces"
+    },
+    {
+      "from": "graph",
+      "to": "altitudes",
+      "rel": "produces"
+    },
+    {
+      "from": "roles",
+      "to": "delta",
+      "rel": "leads-to"
+    },
+    {
+      "from": "evidence",
+      "to": "graph",
+      "rel": "extends"
+    },
+    {
+      "from": "key",
+      "to": "site",
+      "rel": "depends-on"
+    },
+    {
+      "from": "site",
+      "to": "last",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "generation-z-developers-again",
+      "versions-of-versions",
+      "the-graphs-books",
+      "a-book-for-one-reader"
+    ],
+    "pages": [
+      "admin/notes/2026-10-18__a-website-to-finish-the-book.md",
+      "briefs/index.html"
+    ],
+    "sites": [
+      "https://graphs.sgit.ai/v1/altitudes/index.html",
+      "https://graphs.sgit.ai/v2/team/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the repository contains the official versions; the vault contains the working versions.",
+      "why": "The organising rule."
+    },
+    {
+      "text": "Anything in it is readable by everyone.",
+      "why": "Why the key needs its own vault."
+    }
+  ],
+  "figures": [
+    {
+      "file": "gw-site.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gw-site.webp",
+      "caption": "The book's website. On the left, the repository: the official versions, starting with the 2018 book as released, and a delta between each version. On the right, the public vault: the working versions, the graph, the altitudes and their infographics, comments by voice, the board and issues, and the agents in their roles. A second, private vault holds the OpenRouter key and opens only with Dinis's passkey. When a version is ready, it moves from the vault into the repository.",
+      "kind": "architecture"
+    }
+  ]
+}

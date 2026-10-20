@@ -1,0 +1,43 @@
+{
+ "slug": "free-models-your-own-key",
+ "teaser": "Which free model APIs a reader can call from a web page with their own key, October 2026: four pass both tests, NVIDIA fails both, and 2026 took a lot away.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "For a reader to talk to the newsroom free on their own key, a provider must be free without a card and callable directly from a web page; on 18 October 2026 Groq, Gemini through AI Studio, Mistral's free mode and OpenRouter's free models pass both, Cloudflare needs a reader-run Worker, NVIDIA fails both, and the free tier means the provider may learn from what is sent.",
+ "nodes": [
+  {"id": "goal", "label": "Talk to the newsroom, free, own key", "kind": "question", "summary": "Without us holding the key."},
+  {"id": "tests", "label": "Two tests", "kind": "method", "summary": "Free without a card; callable from a page."},
+  {"id": "cors", "label": "The browser preflight", "kind": "method", "summary": "Tested from newsroom.sgit.ai."},
+  {"id": "four", "label": "Four pass both", "kind": "claim", "summary": "Groq, Gemini, Mistral, OpenRouter."},
+  {"id": "signin", "label": "Sign-in instead of a pasted key", "kind": "method", "summary": "OpenRouter and Pollinations, OAuth with PKCE."},
+  {"id": "cloudflare", "label": "Cloudflare needs a Worker", "kind": "example", "summary": "Most generous, no training, no browser access."},
+  {"id": "nvidia", "label": "NVIDIA fails both", "kind": "example", "summary": "No CORS, phone check, trial-only terms."},
+  {"id": "changed", "label": "2026 took a lot away", "kind": "claim", "summary": "GitHub Models retired; credits and free tiers gone."},
+  {"id": "learn", "label": "Free means they may learn from it", "kind": "claim", "summary": "Gemini human review; Mistral opt-out."},
+  {"id": "key", "label": "The key stays with the reader", "kind": "method", "summary": "Browser storage or their own vault."},
+  {"id": "agents", "label": "Agents should guide, not sign up", "kind": "claim", "summary": "Phone checks, terms, providers watching."},
+  {"id": "plan", "label": "What we will build", "kind": "artefact", "summary": "Three providers beside OpenRouter, a sign-in, a vault key, a Worker."}
+ ],
+ "edges": [
+  {"from": "goal", "to": "tests", "rel": "leads-to"},
+  {"from": "cors", "to": "tests", "rel": "extends"},
+  {"from": "tests", "to": "four", "rel": "leads-to"},
+  {"from": "four", "to": "signin", "rel": "extends"},
+  {"from": "cloudflare", "to": "tests", "rel": "example-of"},
+  {"from": "nvidia", "to": "tests", "rel": "example-of"},
+  {"from": "changed", "to": "tests", "rel": "extends"},
+  {"from": "learn", "to": "four", "rel": "extends"},
+  {"from": "key", "to": "goal", "rel": "answers"},
+  {"from": "agents", "to": "signin", "rel": "leads-to"},
+  {"from": "four", "to": "plan", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": [],
+  "pages": [],
+  "sites": ["https://console.groq.com/docs/rate-limits", "https://ai.google.dev/gemini-api/docs/pricing", "https://openrouter.ai/docs/guides/overview/auth/oauth", "https://developers.cloudflare.com/workers-ai/platform/pricing/", "https://github.blog/changelog/2026-07-30-github-models-is-now-retired/"]
+ },
+ "quotes": [
+  {"text": "A provider that does not answer it cannot be called from a page, whatever its docs say.", "why": "The test that matters."},
+  {"text": "The account, and the agreement to its terms, stay the reader's.", "why": "On agents and sign-ups."},
+  {"text": "It is not something to offer readers from a page.", "why": "On NVIDIA."}
+ ]
+}

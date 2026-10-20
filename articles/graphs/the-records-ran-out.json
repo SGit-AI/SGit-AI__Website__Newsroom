@@ -1,0 +1,189 @@
+{
+  "slug": "the-records-ran-out",
+  "teaser": "A fresh agent found a shared contract in two MCP calls from build records; where the records stopped is exactly where evidence labels and sgit vaults fit.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Ignacio Aldama's test shows build-generated dependency records give a fresh Claude Code session a system's structure in two MCP calls, enough to know what not to touch, and he names where the records stop: they describe structure not behaviour, a green build can hide tests that never ran, a demo carries a public signing secret and unfinished work, and memory holds intent without being tied to a version; each edge has a name in the vocabulary of evidence levels and barriers, and is filled by labelling every fact with how it is known, treating a skipped test as an expectation, accepting a shortcut by name and for an interval, keeping memory and records in one encrypted versioned sgit history, and letting records cross company boundaries with publish, clone and mirror.",
+  "nodes": [
+    {
+      "id": "demo",
+      "label": "Two MCP calls found the shared contract",
+      "kind": "example",
+      "summary": "A fresh session called read_scope and read_components, saw two components share one version of the ticket entity, changed only the app; 41 tests passed, nine new."
+    },
+    {
+      "id": "what-not-to-touch",
+      "label": "Knowing what is shared tells an agent what not to touch",
+      "kind": "claim",
+      "summary": "The records gave structure, and structure was enough to keep the change inside one component."
+    },
+    {
+      "id": "structure-not-behaviour",
+      "label": "Records describe structure, not behaviour",
+      "kind": "claim",
+      "summary": "The route list lived in a test fake's docs and nothing checked it against the real service."
+    },
+    {
+      "id": "evidence-levels",
+      "label": "Label every fact with how it is known",
+      "kind": "method",
+      "summary": "Derived, inferred, self-reported, documented, measured, observed: the route list was documented, the restart check was observed."
+    },
+    {
+      "id": "green-build",
+      "label": "A green build can hide tests that never ran",
+      "kind": "claim",
+      "summary": "Database tests skip when CI cannot start the database, so a pass does not show they ran."
+    },
+    {
+      "id": "expectation",
+      "label": "A skipped test is an expectation reported as a control",
+      "kind": "concept",
+      "summary": "Only a boundary is a control; count the run from what happened and drop the evidence back to documented until the test runs."
+    },
+    {
+      "id": "shortcuts",
+      "label": "Demo shortcuts stay invisible",
+      "kind": "claim",
+      "summary": "A demo account and a public signing secret are a grant wider than the mandate; concurrency, migrations and recovery are still to do."
+    },
+    {
+      "id": "acceptance",
+      "label": "Accept by name, in a direction, for an interval, or stop",
+      "kind": "method",
+      "summary": "No deny button for a deployed system; the unfinished items become conditions in a licence to operate with owners and expiries."
+    },
+    {
+      "id": "memory-drift",
+      "label": "Memory holds intent but is not tied to a version",
+      "kind": "claim",
+      "summary": "A memory note is dated; a record is part of its version but carries no intent."
+    },
+    {
+      "id": "one-history",
+      "label": "Memory and records in one encrypted versioned history",
+      "kind": "method",
+      "summary": "In an sgit vault the intent of version 1.4 is committed at 1.4, and encryption means the sensitive intent can be written down at all."
+    },
+    {
+      "id": "boundary",
+      "label": "Records must cross company boundaries",
+      "kind": "question",
+      "summary": "His goal is a record that holds where the other side is outside the agent's index."
+    },
+    {
+      "id": "publish-mirror",
+      "label": "Publish, clone and mirror",
+      "kind": "artefact",
+      "summary": "sgit publish and clone over plain GETs, vault mirror for custody without access, append lanes for writers who cannot read; documented in 0.21.0, untested here."
+    },
+    {
+      "id": "judgement",
+      "label": "The best decision was the agent's own judgement",
+      "kind": "claim",
+      "summary": "Nothing stopped it changing a contract two components depend on: a write row held by an expectation, which a platform could make a boundary."
+    }
+  ],
+  "edges": [
+    {
+      "from": "demo",
+      "to": "what-not-to-touch",
+      "rel": "produces"
+    },
+    {
+      "from": "demo",
+      "to": "structure-not-behaviour",
+      "rel": "leads-to"
+    },
+    {
+      "from": "structure-not-behaviour",
+      "to": "evidence-levels",
+      "rel": "answers"
+    },
+    {
+      "from": "green-build",
+      "to": "expectation",
+      "rel": "example-of"
+    },
+    {
+      "from": "expectation",
+      "to": "evidence-levels",
+      "rel": "depends-on"
+    },
+    {
+      "from": "shortcuts",
+      "to": "acceptance",
+      "rel": "leads-to"
+    },
+    {
+      "from": "memory-drift",
+      "to": "one-history",
+      "rel": "leads-to"
+    },
+    {
+      "from": "one-history",
+      "to": "evidence-levels",
+      "rel": "extends"
+    },
+    {
+      "from": "boundary",
+      "to": "publish-mirror",
+      "rel": "answers"
+    },
+    {
+      "from": "one-history",
+      "to": "publish-mirror",
+      "rel": "leads-to"
+    },
+    {
+      "from": "what-not-to-touch",
+      "to": "judgement",
+      "rel": "contrasts"
+    },
+    {
+      "from": "judgement",
+      "to": "expectation",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "connector-twin-before-you-deploy-an-agent",
+      "every-risk-is-already-accepted",
+      "encrypted-memory-for-isolated-agents",
+      "memory-is-not-a-spectator-sport",
+      "the-mandate-stack",
+      "footprint-and-blast-radius"
+    ],
+    "pages": [
+      "case-studies/exposed-vault-key.html"
+    ],
+    "sites": [
+      "https://thenewstack.io/claude-code-mcp-records/",
+      "https://abp.sgit.ai/data/index.html",
+      "https://riskmandate.ai/acceptance.html",
+      "https://riskmandate.ai/licence-to-operate.html",
+      "https://riskmandate.ai/agent-behaviour-policy.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "knowing what is shared also tells an agent what not to touch.",
+      "why": "Aldama's own line for why structure alone was enough in his test."
+    },
+    {
+      "text": "A skipped test is a control that did not run.",
+      "why": "The green-build edge in the vocabulary of barriers."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rr-gaps.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rr-gaps.webp",
+      "caption": "Where the records ran out, and what fills each gap. The left two columns are Ignacio Aldama's own findings; the right two are the label each one gets in the vocabulary of evidence and barriers, and what fills it today. The status column says which of those exist, which are documented and untested here, and which are proposed.",
+      "kind": "comparison"
+    }
+  ]
+}

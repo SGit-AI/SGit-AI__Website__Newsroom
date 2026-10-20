@@ -1,0 +1,200 @@
+{
+  "slug": "discovering-the-book",
+  "teaser": "How a team of agents built gen-z-developers.sgit.ai in one evening: 37 releases, two release candidates, and a positioning found after the first.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "In one evening a team of role-based agents, many in parallel, built the book's website from Dinis's voice memos: the 2018 edition rebuilt exactly, two frozen release candidates written from a register of traced ideas, a graph, storyboards, infographics, covers, decisions and synthetic readers; and the book's real positioning, Generation ZX Developers, appeared only after the first full draft existed.",
+  "nodes": [
+    {
+      "id": "evening",
+      "label": "One evening, 37 releases",
+      "kind": "example",
+      "summary": "21:27 to 04:33, London time."
+    },
+    {
+      "id": "v1",
+      "label": "The first edition, rebuilt",
+      "kind": "artefact",
+      "summary": "28 chapters, the PDF matched page by page."
+    },
+    {
+      "id": "rc",
+      "label": "Frozen release candidates",
+      "kind": "method",
+      "summary": "Read, marked, then diffed."
+    },
+    {
+      "id": "register",
+      "label": "Ideas with provenance",
+      "kind": "method",
+      "summary": "198 ideas; the build refuses a missing source."
+    },
+    {
+      "id": "team",
+      "label": "A team with roles",
+      "kind": "concept",
+      "summary": "Journalist, librarian, editor, writers, designer."
+    },
+    {
+      "id": "parallel",
+      "label": "Working in parallel",
+      "kind": "method",
+      "summary": "Six working branches at once."
+    },
+    {
+      "id": "discovered",
+      "label": "Positioning after the first draft",
+      "kind": "claim",
+      "summary": "Generation ZX, the startup edition."
+    },
+    {
+      "id": "readers",
+      "label": "Synthetic readers",
+      "kind": "example",
+      "summary": "Nobody would buy it yet, and why."
+    },
+    {
+      "id": "decisions",
+      "label": "Decisions in Dinis's words",
+      "kind": "artefact",
+      "summary": "Fifteen, each with what it supersedes."
+    },
+    {
+      "id": "open",
+      "label": "Forty-seven notes waiting",
+      "kind": "question",
+      "summary": "The company chapters first."
+    }
+  ],
+  "edges": [
+    {
+      "from": "team",
+      "to": "evening",
+      "rel": "produces"
+    },
+    {
+      "from": "parallel",
+      "to": "evening",
+      "rel": "depends-on"
+    },
+    {
+      "from": "register",
+      "to": "rc",
+      "rel": "produces"
+    },
+    {
+      "from": "rc",
+      "to": "discovered",
+      "rel": "leads-to"
+    },
+    {
+      "from": "discovered",
+      "to": "rc",
+      "rel": "extends"
+    },
+    {
+      "from": "readers",
+      "to": "open",
+      "rel": "produces"
+    },
+    {
+      "from": "decisions",
+      "to": "discovered",
+      "rel": "produces"
+    },
+    {
+      "from": "v1",
+      "to": "rc",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "generation-z-developers-again",
+      "a-website-to-finish-the-book",
+      "a-book-for-one-reader",
+      "short-punchy-and-co-written",
+      "books-from-articles",
+      "the-graphs-books"
+    ],
+    "pages": [],
+    "sites": [
+      "https://gen-z-developers.sgit.ai/",
+      "https://github.com/SGit-AI/SGit-AI__Website__Gen-Z-Developers"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "I could not have found that positioning before the first draft existed.",
+      "why": "On discovering the book."
+    },
+    {
+      "text": "That is what discovering a book looks like when a draft costs an hour instead of a year",
+      "why": "Why the workflow matters."
+    }
+  ],
+  "figures": [
+    {
+      "file": "gb-timeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-timeline.webp",
+      "caption": "One evening, one book site. Lanes for Dinis, the journalist, the librarian, the seven chapter writers, the storyboards, the editor with the synthetic readers, and the illustrator and designer, on a timeline from 21:27 on 18 October to 04:33 on 19 October, London time. The first release candidate lands at 01:47; the Gen ZX memo follows at 01:51 and the title decision at 02:06; the second release candidate, rewritten under the new frame, lands at 02:46.",
+      "kind": "timeline"
+    },
+    {
+      "file": "gb-home.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-home.webp",
+      "caption": "The home page of gen-z-developers.sgit.ai at site v0.2.33: the 2018 cover, the lines from it, and four ways in: the second edition's release candidate, the first edition as published, the paperback on Amazon, and the free version on Leanpub.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gb-rc2.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-rc2.webp",
+      "caption": "The second edition's release candidate 2: Generation ZX Developers (GenAI Startup Edition), 41 chapters, 73,314 words, 198 ideas written in, 47 notes for Dinis; marked as a release candidate, not a version, and frozen.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gb-reader.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-reader.webp",
+      "caption": "Reading release candidate 2 on the site: the contents on the left, the chapter in the middle, the chapter's graph on the right, and at the top the reading meter, the balance, the price of the chapter, and review mode.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gb-graph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-graph.webp",
+      "caption": "The book as a graph: 857 nodes and 1,742 edges, the 2018 book's files, the sources (articles and decisions) and the ideas, with filters for each idea's state and destination.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gb-storyboards.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-storyboards.webp",
+      "caption": "The storyboards: twelve storyboards, 160 panels and seven characters, all drawn from data, with the cast.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gb-covers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-covers.webp",
+      "caption": "Three covers for Generation ZX Developers (GenAI Startup Edition), drawn by code into SVG, each in three formats: ZX, the book as a graph, and one letter more, the 2018 cover with an X added.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gb-printed.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-printed.webp",
+      "caption": "Release candidate 2, printed and spiral-bound on a café table the next morning, with a pen for marking it up: Generation ZX Developers, GenAI Startup Edition, second edition, release candidate v2.0.0-rc2, 19 October 2026, page 1 of 168. Photographed by Dinis.",
+      "kind": "photo"
+    },
+    {
+      "file": "gb-decisions.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-decisions.webp",
+      "caption": "The decisions page: fifteen decisions in two days, each with who decided, what was said, what it means and what it supersedes, from 001 (the 2018 text is CC BY) to 014 (the title is Generation ZX Developers, GenAI Startup Edition) and 015.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "gb-readers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gb-readers.webp",
+      "caption": "Synthetic readers: invented readers who read release candidate 2 and are interviewed. Nobody would buy it today; four of the five would once the company chapters are written. Everything in the studies is invented; every quote a reader cites is checked against the chapter.",
+      "kind": "screenshot"
+    }
+  ]
+}

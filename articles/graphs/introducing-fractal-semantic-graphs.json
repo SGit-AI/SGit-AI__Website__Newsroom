@@ -1,0 +1,262 @@
+{
+  "slug": "introducing-fractal-semantic-graphs",
+  "teaser": "A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.",
+  "topics": [
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Every unit of knowledge is already a graph in its owner's vocabulary, and a short shared grammar rather than a shared schema is what lets any node in one world link to any node in another, up or down, without an adapter.",
+  "nodes": [
+    {
+      "id": "fractal-semantic-graph",
+      "label": "Fractal Semantic Graph",
+      "kind": "concept",
+      "summary": "A fractal semantic graph has no privileged level and no single schema; zoom into any node and you enter a new world with its own node types, verbs and taxonomy."
+    },
+    {
+      "id": "semantic-graph",
+      "label": "Semantic graph",
+      "kind": "concept",
+      "summary": "A semantic graph gives the edges meaning: every edge is a verb, and every verb has a named inverse, so a link reads correctly from whichever end you are standing at."
+    },
+    {
+      "id": "ontology",
+      "label": "Ontology",
+      "kind": "concept",
+      "summary": "An ontology is the agreed vocabulary of node types and verbs that a graph is allowed to use, and each altitude gets its own."
+    },
+    {
+      "id": "the-jump",
+      "label": "The jump",
+      "kind": "method",
+      "summary": "On one link in a risk register you can jump into another universe, from an incident to security operations to the DNS estate to a single TCP packet, and nobody built an adapter."
+    },
+    {
+      "id": "everything-is-a-graph",
+      "label": "Everything is already a graph",
+      "kind": "claim",
+      "summary": "A regulation, a PDF, a spreadsheet, a codebase and a JSON document are already graphs; each one only needs its edges named."
+    },
+    {
+      "id": "five-rule-grammar",
+      "label": "The five-rule grammar",
+      "kind": "method",
+      "summary": "Every edge is a verb with an inverse, relates_to is banned, properties carry data never meaning, supersede never delete, and never render the whole graph."
+    },
+    {
+      "id": "banned-verb",
+      "label": "relates_to is banned",
+      "kind": "claim",
+      "summary": "An edge with no verb constrains nothing and cannot narrow a query; the granularity of the verb is the precision of the question you will later be able to ask."
+    },
+    {
+      "id": "provenance-from-the-word",
+      "label": "Provenance comes free",
+      "kind": "claim",
+      "summary": "When the leaf is a word connected to the byte range it came from and the hash of the file that held it, every claim at every altitude above it is traceable to source."
+    },
+    {
+      "id": "the-ladder",
+      "label": "The ladder of eleven altitudes",
+      "kind": "artefact",
+      "summary": "Eleven altitudes, each a live graph in its own vocabulary, from the law down to the compute instance, every altitude joined to the next by a named edge."
+    },
+    {
+      "id": "regulation-graph",
+      "label": "Regulation Graph",
+      "kind": "artefact",
+      "summary": "The EU AI Act parsed from the official XML into 1,523 nodes and 1,944 edges, with the SHA-256 of the retrieved bytes at the end of every provenance chain."
+    },
+    {
+      "id": "crosswalk-finding",
+      "label": "The crosswalk finding",
+      "kind": "example",
+      "summary": "Joining the AIUC-1 standard to the regulation graph showed that 8 of the 27 articles reached have since been amended, a finding that existed in neither graph on its own."
+    },
+    {
+      "id": "gdpr-article-45",
+      "label": "GDPR Article 45",
+      "kind": "example",
+      "summary": "The text has not changed a word since 2016 while what it permits has flipped four times, drawn as a timeline of ruling nodes over one unchanged article node."
+    },
+    {
+      "id": "threat-model-ladder",
+      "label": "Threat model zoom ladder",
+      "kind": "artefact",
+      "summary": "Eleven linked models, 51 nodes and 179 threats, tracing a single SQL injection from the method it lives in to the revenue it puts at risk."
+    },
+    {
+      "id": "named-gaps",
+      "label": "What is still modelled rather than imported",
+      "kind": "question",
+      "summary": "The bottom four altitudes are placed by an author, enterprise architecture is missing, crosswalks resolve at article level only, and the agent altitude is a vocabulary not yet a join."
+    },
+    {
+      "id": "why-now",
+      "label": "Why now",
+      "kind": "claim",
+      "summary": "Naming edges became the cheap part, agents acting on the world make provenance mandatory, and the schema wars are over because nobody won."
+    }
+  ],
+  "edges": [
+    {
+      "from": "fractal-semantic-graph",
+      "to": "semantic-graph",
+      "rel": "extends"
+    },
+    {
+      "from": "semantic-graph",
+      "to": "ontology",
+      "rel": "depends-on"
+    },
+    {
+      "from": "five-rule-grammar",
+      "to": "ontology",
+      "rel": "contrasts"
+    },
+    {
+      "from": "fractal-semantic-graph",
+      "to": "everything-is-a-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-jump",
+      "to": "fractal-semantic-graph",
+      "rel": "example-of"
+    },
+    {
+      "from": "the-jump",
+      "to": "five-rule-grammar",
+      "rel": "depends-on"
+    },
+    {
+      "from": "banned-verb",
+      "to": "five-rule-grammar",
+      "rel": "extends"
+    },
+    {
+      "from": "provenance-from-the-word",
+      "to": "everything-is-a-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "the-ladder",
+      "to": "fractal-semantic-graph",
+      "rel": "example-of"
+    },
+    {
+      "from": "regulation-graph",
+      "to": "the-ladder",
+      "rel": "example-of"
+    },
+    {
+      "from": "threat-model-ladder",
+      "to": "the-ladder",
+      "rel": "example-of"
+    },
+    {
+      "from": "regulation-graph",
+      "to": "provenance-from-the-word",
+      "rel": "example-of"
+    },
+    {
+      "from": "crosswalk-finding",
+      "to": "regulation-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "crosswalk-finding",
+      "to": "the-jump",
+      "rel": "example-of"
+    },
+    {
+      "from": "gdpr-article-45",
+      "to": "five-rule-grammar",
+      "rel": "example-of"
+    },
+    {
+      "from": "named-gaps",
+      "to": "the-ladder",
+      "rel": "contrasts"
+    },
+    {
+      "from": "why-now",
+      "to": "fractal-semantic-graph",
+      "rel": "leads-to"
+    },
+    {
+      "from": "why-now",
+      "to": "provenance-from-the-word",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [],
+    "pages": [
+      "/demos/fractal-graphs/index.html",
+      "/demos/vaults/voice-debrief/index.html"
+    ],
+    "sites": [
+      "https://graphs.sgit.ai/",
+      "https://standards.sgit.ai/",
+      "https://abp.sgit.ai/",
+      "https://graphs.sgit.ai/llms.txt"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "There is no top and no bottom. There is only the altitude you happen to be looking from, and how much definition you choose to load at it.",
+      "why": "The definition of fractal in one line: no privileged level, no single schema."
+    },
+    {
+      "text": "Two graphs, built by different people for different purposes in different vocabularies, joined by declared edges, produced a finding that did not exist in either of them.",
+      "why": "The evidence that the method does work, not just that it is defined: the amended-articles finding came from the join."
+    }
+  ],
+  "figures": [
+    {
+      "file": "fsg-zoom.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fsg-zoom.webp",
+      "caption": "Three zooms, three ontologies. A four-node semantic graph; the Law node opened into a legal ontology of articles, paragraphs and an amendment drawn as an edge; one paragraph opened into a lexical ontology of the terms it uses. The grammar never changes; the ontology does."
+    },
+    {
+      "file": "gdpr-altitude-0.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gdpr-altitude-0.webp",
+      "caption": "The GDPR atlas says it in its own graph view: \"You are at the top of the fractal. Each domain is its own ontology that connects up to the GDPR root and down to concepts and articles.\" The layout is computed from the graph, not drawn."
+    },
+    {
+      "file": "fsg-jump.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fsg-jump.webp",
+      "caption": "The jump. Four worlds in a row, each a small graph in its own vocabulary, joined by a jump link on one node each. All four together are one node in a bigger graph that analyses them, and that graph in another."
+    },
+    {
+      "file": "fsg-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/fsg-ladder.webp",
+      "caption": "The ladder: eleven altitudes, eleven ontologies, one grammar. Each altitude names the published vault where that altitude is a live graph, and on the page each name is a link to the vault and its read key."
+    },
+    {
+      "file": "regulation-overview.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/regulation-overview.webp",
+      "caption": "The Regulation Graph's landing view: the counts, both instruments with their CELEX identifiers and the hash of the retrieved bytes, and application dates kept as versioned properties rather than bare facts."
+    },
+    {
+      "file": "aiuc-two-vaults.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/aiuc-two-vaults.webp",
+      "caption": "Two vaults on one canvas. The chip row is the join: the standard, its crosswalks, another vault's articles, the conformance layer, bow ties, acceptances."
+    },
+    {
+      "file": "threatmodcon-ladder.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/threatmodcon-ladder.webp",
+      "caption": "The zoom ladder, counted: 11 layers, 51 nodes, 179 threats. The bottom altitude is a compute instance."
+    },
+    {
+      "file": "role-risk-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/role-risk-map.webp",
+      "caption": "The role risk map: what a role holds against what arrives through it because the graph says it must. Nothing stops short of the board."
+    },
+    {
+      "file": "gdpr-article-45.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/gdpr-article-45.webp",
+      "caption": "One article, five rulings, twenty-five years. Safe Harbour to a pending CJEU appeal, over an Article 45 that has not changed a word."
+    }
+  ]
+}

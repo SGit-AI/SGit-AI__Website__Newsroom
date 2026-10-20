@@ -1,0 +1,92 @@
+{
+  "schema": "newsroom-review/v1",
+  "criteria": "v1",
+  "slug": "the-code-you-do-not-ship",
+  "article_version": "v0.12.106",
+  "reviewer": "anthropic-fable",
+  "kind": "agent",
+  "model": "Claude Fable 5.1",
+  "run_by": "newsroom.writer, at the editor's request",
+  "at": "2026-10-18T11:30:00Z",
+  "verdict": "approve-with-changes",
+  "summary": "The research is cited accurately: every quote I checked is word for word, the curl count reproduces exactly (239 total, 49 in other protocols, both criticals among them), the Azad table gives 27 of 69 CVEs at function level, and Gamblin's, DARPA's, Anthropic's and Google's figures match their pages. Fix first the Pendo wording, which reads as if the $29.5 billion were about public-cloud vendors rather than publicly traded cloud software companies.",
+  "checks": {
+    "facts": {
+      "result": "issues",
+      "notes": "Checked on 18 October 2026: LOG4J2-313 (created 17 July 2013; the \"really convenient\" sentence is verbatim); Log4j release notes for 2.16.0 (\"Completely remove support for Message Lookups\" and the \"undue risk\" sentence, verbatim); ImageTragick mitigation sentence (verbatim); OpenSSL advisory (recompile with -DOPENSSL_NO_HEARTBEATS); OWASP A10 2021 sentences (verbatim); Kettle 2015 (phrase verbatim); curl INSTALL.md phrase (verbatim); curl vuln.pm downloaded and recounted: 239 entries, 49 in FTP, SSH, SFTP, TFTP, LDAP, Telnet, SMB, SMTP, IMAP, mail, RTSP, MQTT, FILE, WebSocket and pingpong areas, the two criticals in mail and FTP, 69 announced in 2026 (53 low, 15 medium, 1 high), previous yearly maximum 24 in 2016; Stenberg's post says thirty-five from Aisle; Azad et al. abstract and Table 2 (46.8% function-level reduction, up to 60%, and 12/20 + 10/21 + 2/20 + 3/8 = 27/69 = 39%); Soto-Valero 75.1%; Drosos et al. (>50%, 15%); Mir et al. (3M packages, <1%); Endor Labs (<9.5%); Brown and Pande abstract; Cohn on the Standish figure (four internal applications); Pendo PDF (80%, 12%, $29.5 billion for publicly traded cloud software companies); Tidelift 2024 (about 60% unpaid, via press coverage); Gamblin (48,185, +20.6%, 72,812 through September, no AI attribution); Anthropic (5 February 2026, sentence verbatim); DARPA (18 real vulnerabilities); Google Android post (76% to 24%, both quotes verbatim); the-minimum-code-below (1,500, 428, three quarters of the bytes). Two small issues below."
+    },
+    "voice": {
+      "result": "issues",
+      "notes": "Mostly in voice: first person, the correction of the usage figures is explicit, the other side's point is stated first. Two sentences read as absolutes or superlatives, noted below."
+    },
+    "claims": {
+      "result": "pass",
+      "notes": "Built versus proposed is clear (the measurement is one tool and one use case; the market is a proposal). The limits name the vendor-sourced figures and the Standish caveat."
+    },
+    "conversions": {
+      "result": "pass",
+      "notes": "49/239 is 20.5%, \"about one in five\" holds; 27/69 is 39.1%; 428 of 1,500 is the same in the summary, In short, the figure caption and the body."
+    },
+    "health": {
+      "result": "issues",
+      "notes": "All source links load except the OpenSSL advisory, which now redirects (301) to openssl-library.org; the Pendo and USENIX PDFs load but need a PDF reader. Graph quotes appear verbatim in the text; no stale section summary; both figures exist."
+    },
+    "people": {
+      "result": "pass",
+      "notes": "Only public authors and vendors are named; no private person, no secret."
+    }
+  },
+  "findings": [
+    {
+      "id": "f1",
+      "criterion": "facts",
+      "severity": "low",
+      "section": "why-not",
+      "quote": "public cloud software companies had spent up to $29.5 billion",
+      "issue": "Pendo's estimate is for publicly traded cloud software companies (it divides Gartner's public cloud revenue forecast by the 80% figure); \"public cloud software companies\" reads as software companies in the public cloud.",
+      "evidence": "Pendo, 2019 Feature Adoption Report, page with \"Publicly-traded cloud software companies collectively invested up to $29.5 billion\", read 18 October 2026",
+      "suggestion": "Write \"publicly traded cloud software companies\"."
+    },
+    {
+      "id": "f2",
+      "criterion": "facts",
+      "severity": "low",
+      "section": "liability",
+      "quote": "came from interpolators for scripts, DNS and URLs that were on by default",
+      "issue": "The linked Commons Text security page says only that some interpolators \"can trigger network access or code execution\" and that the configuration was made \"secure by default\"; it does not name the script, DNS and URL interpolators or say they were on by default. The statement is right (CVE-2022-42889), but the link does not carry it.",
+      "evidence": "https://commons.apache.org/proper/commons-text/security.html, read 18 October 2026",
+      "suggestion": "Add the CVE-2022-42889 advisory or the GHSL advisory the security page cites, which name the three interpolators."
+    },
+    {
+      "id": "f3",
+      "criterion": "voice",
+      "severity": "low",
+      "section": "driver",
+      "quote": "Security has never been enough to make people use something.",
+      "issue": "An absolute without a count. The article's own evidence is one case, sgit.",
+      "evidence": "Criteria, Voice: absolutes without a count",
+      "suggestion": "\"Security has rarely been enough to make people use something\" or \"has not been enough in any case I have seen\"."
+    },
+    {
+      "id": "f4",
+      "criterion": "voice",
+      "severity": "low",
+      "section": "changed",
+      "quote": "The best thing models have done for my own engineering is not writing the feature.",
+      "issue": "A superlative self-claim of the kind the wording check was added for, even though it is bounded to the author's own work.",
+      "evidence": "Criteria, Voice: superlative self-claims; admin/build/wording.py",
+      "suggestion": "\"The most useful thing models have done for my own engineering\" or \"What models have done most for my own engineering\"."
+    },
+    {
+      "id": "f5",
+      "criterion": "health",
+      "severity": "low",
+      "section": "sources",
+      "quote": "OpenSSL Heartbleed advisory",
+      "issue": "The link https://www.openssl.org/news/secadv/20140407.txt now answers 301 to https://openssl-library.org/news/secadv/20140407.txt, where the text (recompile with -DOPENSSL_NO_HEARTBEATS) still is.",
+      "evidence": "HTTP 301 from www.openssl.org, read 18 October 2026",
+      "suggestion": "Point the link at openssl-library.org."
+    }
+  ],
+  "article_hash": "11a6481a8599"
+}

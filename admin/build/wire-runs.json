@@ -1,0 +1,1039 @@
+{
+ "schema": "wire-runs/v1",
+ "kept_by": "newsroom.accountant",
+ "runs": [
+  {
+   "id": "439de67e42b1",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-14T05:56:56Z",
+   "finished_at": "2026-10-14T05:58:51Z",
+   "duration_s": 107.5,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.194741,
+     "input": 22,
+     "output": 2285,
+     "cache_read": 512986,
+     "cache_write": 30137,
+     "thinking": 227
+    }
+   },
+   "cost_usd": 0.194741,
+   "turns": 12,
+   "subagents": 0,
+   "refused": 2,
+   "refused_kinds": [
+    "pip install",
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the install of the sgit client was refused as code from external"
+  },
+  {
+   "id": "85e0959d708d",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-15T05:56:17Z",
+   "finished_at": "2026-10-15T05:57:55Z",
+   "duration_s": 93.9,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.159767,
+     "input": 16,
+     "output": 1676,
+     "cache_read": 362834,
+     "cache_write": 26673,
+     "thinking": 166
+    }
+   },
+   "cost_usd": 0.159767,
+   "turns": 8,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "pip install",
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the install of the sgit client and the clones were refused"
+  },
+  {
+   "id": "e8664880bccc",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-16T04:47:44Z",
+   "finished_at": "2026-10-16T05:09:06Z",
+   "duration_s": 1277.4,
+   "models": {
+    "claude-opus-5-5": {
+     "cost_usd": 7.69439,
+     "input": 290,
+     "output": 123515,
+     "cache_read": 12149805,
+     "cache_write": 478237,
+     "thinking": 18601
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.876967,
+     "input": 94,
+     "output": 71732,
+     "cache_read": 3308345,
+     "cache_write": 331450,
+     "thinking": 11888
+    },
+    "claude-haiku-5-5": {
+     "cost_usd": 0.487036,
+     "input": 2950861,
+     "output": 383899,
+     "cache_read": 0,
+     "cache_write": 0,
+     "thinking": 249670
+    }
+   },
+   "cost_usd": 10.058393,
+   "turns": 43,
+   "subagents": 8,
+   "refused": 1,
+   "refused_kinds": [
+    "pip install",
+    "sgit clone"
+   ],
+   "outcome": "published",
+   "release": "2026-10-16.1",
+   "added": 18,
+   "updated": 16,
+   "note": "the first install-and-clone was refused; the second, separate, went through"
+  },
+  {
+   "id": "e3faa7ef5a92",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-16T04:53:27Z",
+   "finished_at": "2026-10-16T04:55:42Z",
+   "duration_s": 131.4,
+   "models": {
+    "claude-opus-5-5": {
+     "cost_usd": 0.290337,
+     "input": 16,
+     "output": 1659,
+     "cache_read": 585463,
+     "cache_write": 17500,
+     "thinking": 357
+    }
+   },
+   "cost_usd": 0.290337,
+   "turns": 9,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "pip install",
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the clone was refused as data exfiltration"
+  },
+  {
+   "id": "f050ea9959a5",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-16T04:58:33Z",
+   "finished_at": "2026-10-16T04:59:54Z",
+   "duration_s": 77.5,
+   "models": {
+    "claude-opus-5-5": {
+     "cost_usd": 0.21828,
+     "input": 10,
+     "output": 1538,
+     "cache_read": 355318,
+     "cache_write": 14552,
+     "thinking": 460
+    }
+   },
+   "cost_usd": 0.21828,
+   "turns": 6,
+   "subagents": 0,
+   "refused": 2,
+   "refused_kinds": [
+    "pip install",
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the install was refused as data exfiltration, the clone as credential exploration"
+  },
+  {
+   "id": "1363f8428ee5",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-16T05:57:01Z",
+   "finished_at": "2026-10-16T05:58:30Z",
+   "duration_s": 84.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.178024,
+     "input": 18,
+     "output": 2040,
+     "cache_read": 416595,
+     "cache_write": 28982,
+     "thinking": 164
+    }
+   },
+   "cost_usd": 0.178024,
+   "turns": 9,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "pip install",
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the install of the sgit client was refused as code from external"
+  },
+  {
+   "id": "645d22b9de8f",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-16T12:00:07Z",
+   "finished_at": "2026-10-16T12:13:09Z",
+   "duration_s": 777.5,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 2.266418,
+     "input": 114,
+     "output": 89014,
+     "cache_read": 4697695,
+     "cache_write": 288385,
+     "thinking": 12057
+    },
+    "claude-haiku-5-5": {
+     "cost_usd": 0.309748,
+     "input": 1576576,
+     "output": 261690,
+     "cache_read": 675862,
+     "cache_write": 115892,
+     "thinking": 194384
+    }
+   },
+   "cost_usd": 2.576165,
+   "turns": 41,
+   "subagents": 9,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-16.1",
+   "added": 53,
+   "updated": 3,
+   "note": "the re-run on Sonnet with the new wording; nothing refused; the Friday digest"
+  },
+  {
+   "id": "64ab573e188d",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-16T12:00:09Z",
+   "finished_at": "2026-10-16T12:01:27Z",
+   "duration_s": 72.9,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.152985,
+     "input": 18,
+     "output": 1823,
+     "cache_read": 609953,
+     "cache_write": 18431,
+     "thinking": 571
+    }
+   },
+   "cost_usd": 0.152985,
+   "turns": 9,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the re-run on Sonnet: the install went through, the clone was refused three times as code from external"
+  },
+  {
+   "id": "d8bd42b01d0f",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-16T12:08:23Z",
+   "finished_at": "2026-10-16T12:29:57Z",
+   "duration_s": 1286.7,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.178908,
+     "input": 22,
+     "output": 2761,
+     "cache_read": 387058,
+     "cache_write": 28137,
+     "thinking": 357
+    }
+   },
+   "cost_usd": 0.178908,
+   "turns": 16,
+   "subagents": 0,
+   "refused": 5,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "the first run: every web fetch waited for an approval no one gave, then the account's session limit stopped it"
+  },
+  {
+   "id": "642f0e71641f",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-17T04:47:53Z",
+   "finished_at": "2026-10-17T05:03:42Z",
+   "duration_s": 944.7,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.424268,
+     "input": 1398566,
+     "output": 243889,
+     "cache_read": 1234730,
+     "cache_write": 150509,
+     "thinking": 165411
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 2.328508,
+     "input": 188,
+     "output": 70172,
+     "cache_read": 6242814,
+     "cache_write": 356186,
+     "thinking": 8828
+    }
+   },
+   "cost_usd": 2.752776,
+   "turns": 27,
+   "subagents": 7,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-17.1",
+   "added": 4,
+   "updated": 8,
+   "note": "A quiet Saturday: four new stories and eight updates, all checked by the Haiku verifier."
+  },
+  {
+   "id": "3381fce7124b",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-17T04:52:24Z",
+   "finished_at": "2026-10-17T05:00:34Z",
+   "duration_s": 487.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.152539,
+     "input": 899552,
+     "output": 113241,
+     "cache_read": 173430,
+     "cache_write": 33830,
+     "thinking": 73564
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.280643,
+     "input": 78,
+     "output": 40198,
+     "cache_read": 2959568,
+     "cache_write": 184683,
+     "thinking": 3766
+    }
+   },
+   "cost_usd": 1.433182,
+   "turns": 36,
+   "subagents": 5,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-17.1",
+   "added": 13,
+   "updated": 0,
+   "note": "Thirteen new stories, one touching the stack; five fact-check fixes applied."
+  },
+  {
+   "id": "be7144b47e80",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-17T04:58:20Z",
+   "finished_at": "2026-10-17T05:05:02Z",
+   "duration_s": 396.9,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.084226,
+     "input": 387072,
+     "output": 82285,
+     "cache_read": 157755,
+     "cache_write": 22393,
+     "thinking": 47393
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.131503,
+     "input": 92,
+     "output": 33257,
+     "cache_read": 3117041,
+     "cache_write": 156898,
+     "thinking": 3217
+    }
+   },
+   "cost_usd": 1.215729,
+   "turns": 27,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-17.1",
+   "added": 3,
+   "updated": 0,
+   "note": "Three new stories on a quiet Saturday; the business beats had nothing with a fetched primary."
+  },
+  {
+   "id": "53902fbf3136",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-17T05:09:20Z",
+   "finished_at": "2026-10-17T05:26:02Z",
+   "duration_s": 997.7,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.236489,
+     "input": 22,
+     "output": 3745,
+     "cache_read": 478114,
+     "cache_write": 37796,
+     "thinking": 837
+    }
+   },
+   "cost_usd": 0.236489,
+   "turns": 16,
+   "subagents": 0,
+   "refused": 5,
+   "refused_kinds": [
+    "other",
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The first run stopped before any story: page fetches and the pipeline copy were refused, so nothing was pushed."
+  },
+  {
+   "id": "e826db6c5a8b",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-17T05:56:12Z",
+   "finished_at": "2026-10-17T05:57:13Z",
+   "duration_s": 56.9,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.180306,
+     "input": 16,
+     "output": 2135,
+     "cache_read": 368404,
+     "cache_write": 30521,
+     "thinking": 292
+    }
+   },
+   "cost_usd": 0.180306,
+   "turns": 9,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "other"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The vault fetch was refused at step one, so no wire was refreshed and nothing was released."
+  },
+  {
+   "id": "70f4389282b5",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-18T04:47:51Z",
+   "finished_at": "2026-10-18T04:57:37Z",
+   "duration_s": 582.1,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.186237,
+     "input": 640892,
+     "output": 152225,
+     "cache_read": 502123,
+     "cache_write": 121093,
+     "thinking": 103062
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.696034,
+     "input": 112,
+     "output": 51788,
+     "cache_read": 3695229,
+     "cache_write": 269978,
+     "thinking": 3661
+    }
+   },
+   "cost_usd": 1.882271,
+   "turns": 23,
+   "subagents": 6,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-18.1",
+   "added": 9,
+   "updated": 2,
+   "note": "Nine new stories and two updates; the Haiku verifier asked for fixes on every story checked, all applied."
+  },
+  {
+   "id": "8c0dd3190980",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-18T04:52:24Z",
+   "finished_at": "2026-10-18T04:57:31Z",
+   "duration_s": 302.1,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.077036,
+     "input": 456361,
+     "output": 55659,
+     "cache_read": 153267,
+     "cache_write": 16298,
+     "thinking": 38250
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.743351,
+     "input": 54,
+     "output": 20527,
+     "cache_read": 1812342,
+     "cache_write": 110521,
+     "thinking": 1665
+    }
+   },
+   "cost_usd": 0.820386,
+   "turns": 22,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-18.1",
+   "added": 4,
+   "updated": 0,
+   "note": "Four What's New items missed earlier, none touching the stack."
+  },
+  {
+   "id": "663f44db5ef3",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-18T04:58:33Z",
+   "finished_at": "2026-10-18T05:00:02Z",
+   "duration_s": 85.4,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.00294,
+     "input": 11629,
+     "output": 3555,
+     "cache_read": 0,
+     "cache_write": 0,
+     "thinking": 2022
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.140555,
+     "input": 12,
+     "output": 1887,
+     "cache_read": 455211,
+     "cache_write": 19035,
+     "thinking": 433
+    }
+   },
+   "cost_usd": 0.143496,
+   "turns": 8,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The vault clone was refused, so the desk stopped before any research."
+  },
+  {
+   "id": "1da528cc792e",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-18T05:08:40Z",
+   "finished_at": "2026-10-18T05:21:07Z",
+   "duration_s": 743.7,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.117689,
+     "input": 16,
+     "output": 1811,
+     "cache_read": 286266,
+     "cache_write": 17730,
+     "thinking": 197
+    }
+   },
+   "cost_usd": 0.117689,
+   "turns": 11,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Page fetches were refused again, so the first run still has not started."
+  },
+  {
+   "id": "3c2f21122f01",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-18T05:56:40Z",
+   "finished_at": "2026-10-18T05:57:39Z",
+   "duration_s": 53.7,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.15789,
+     "input": 14,
+     "output": 1835,
+     "cache_read": 312921,
+     "cache_write": 27055,
+     "thinking": 205
+    }
+   },
+   "cost_usd": 0.15789,
+   "turns": 8,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "other"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The vault fetch was refused again, so no wire was refreshed."
+  },
+  {
+   "id": "f856298d4313",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-19T04:47:26Z",
+   "finished_at": "2026-10-19T05:02:53Z",
+   "duration_s": 920.6,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.571261,
+     "input": 1678945,
+     "output": 344216,
+     "cache_read": 1163903,
+     "cache_write": 189571,
+     "thinking": 213948
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 2.405921,
+     "input": 160,
+     "output": 74738,
+     "cache_read": 6596749,
+     "cache_write": 354479,
+     "thinking": 9071
+    }
+   },
+   "cost_usd": 2.977182,
+   "turns": 22,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-19.1",
+   "added": 14,
+   "updated": 14,
+   "note": "Fourteen new stories and fourteen updates, the verifier's fixes applied as dated changes."
+  },
+  {
+   "id": "24301b6384bd",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-19T04:53:11Z",
+   "finished_at": "2026-10-19T04:56:23Z",
+   "duration_s": 188.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.072349,
+     "input": 485439,
+     "output": 47610,
+     "cache_read": 0,
+     "cache_write": 0,
+     "thinking": 24586
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.643387,
+     "input": 48,
+     "output": 16259,
+     "cache_read": 1369385,
+     "cache_write": 109600,
+     "thinking": 951
+    }
+   },
+   "cost_usd": 0.715735,
+   "turns": 15,
+   "subagents": 3,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "nothing new",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Nothing new since the last release, so nothing was published."
+  },
+  {
+   "id": "c90ea62809fe",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-19T04:58:47Z",
+   "finished_at": "2026-10-19T04:59:38Z",
+   "duration_s": 47.6,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.121133,
+     "input": 10,
+     "output": 1524,
+     "cache_read": 373611,
+     "cache_write": 17128,
+     "thinking": 419
+    }
+   },
+   "cost_usd": 0.121133,
+   "turns": 6,
+   "subagents": 0,
+   "refused": 1,
+   "refused_kinds": [
+    "sgit clone"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The vault clone was refused again, so the desk stopped before any research."
+  },
+  {
+   "id": "e3940885d7b9",
+   "task": "owasp",
+   "trigger": "trig_01EMyAt2FWwi2mCmzVPnrzm8",
+   "fired_at": "2026-10-19T05:03:51Z",
+   "finished_at": "2026-10-19T05:06:57Z",
+   "duration_s": 181.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.081887,
+     "input": 640733,
+     "output": 35627,
+     "cache_read": 0,
+     "cache_write": 0,
+     "thinking": 23483
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.804055,
+     "input": 62,
+     "output": 21112,
+     "cache_read": 1708200,
+     "cache_write": 141221,
+     "thinking": 1697
+    }
+   },
+   "cost_usd": 0.885942,
+   "turns": 16,
+   "subagents": 3,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "nothing new",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The weekly run found nothing dated after the 13 October release and published nothing."
+  },
+  {
+   "id": "d3dceacba62b",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-19T05:10:15Z",
+   "finished_at": "2026-10-19T05:21:11Z",
+   "duration_s": 653.2,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.124931,
+     "input": 16,
+     "output": 2219,
+     "cache_read": 284410,
+     "cache_write": 18567,
+     "thinking": 315
+    }
+   },
+   "cost_usd": 0.124931,
+   "turns": 12,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Page fetches were refused for the third day, so the first run still has not started."
+  },
+  {
+   "id": "9ca328bc865a",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-19T05:56:56Z",
+   "finished_at": "2026-10-19T06:02:19Z",
+   "duration_s": 316.8,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.52483,
+     "input": 56,
+     "output": 9181,
+     "cache_read": 1884997,
+     "cache_write": 61102,
+     "thinking": 937
+    }
+   },
+   "cost_usd": 0.52483,
+   "turns": 29,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The release was built but the push was refused by the git proxy, so nothing reached dev."
+  },
+  {
+   "id": "25241a77ed02",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-20T04:47:25Z",
+   "finished_at": "2026-10-20T05:00:45Z",
+   "duration_s": 794.6,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.167964,
+     "input": 813306,
+     "output": 144223,
+     "cache_read": 456274,
+     "cache_write": 79673,
+     "thinking": 89052
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.949369,
+     "input": 98,
+     "output": 73431,
+     "cache_read": 3736250,
+     "cache_write": 282944,
+     "thinking": 7670
+    }
+   },
+   "cost_usd": 2.117333,
+   "turns": 26,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-20.1",
+   "added": 15,
+   "updated": 1,
+   "note": "Fifteen new stories and one update, with a thin pool and mostly single-source stories."
+  },
+  {
+   "id": "27aef8c4d481",
+   "task": "aws",
+   "trigger": "trig_01Ag6kKsgRHFRG8yAs6G47MH",
+   "fired_at": "2026-10-20T04:52:53Z",
+   "finished_at": "2026-10-20T04:59:38Z",
+   "duration_s": 400.4,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.118073,
+     "input": 681970,
+     "output": 90064,
+     "cache_read": 197050,
+     "cache_write": 22985,
+     "thinking": 56854
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.826292,
+     "input": 50,
+     "output": 27012,
+     "cache_read": 1824152,
+     "cache_write": 113038,
+     "thinking": 2634
+    }
+   },
+   "cost_usd": 0.944365,
+   "turns": 23,
+   "subagents": 3,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-20.1",
+   "added": 10,
+   "updated": 0,
+   "note": "Ten new stories, one of them a boto3 release that touches the stack."
+  },
+  {
+   "id": "255c5353f6e6",
+   "task": "portugal",
+   "trigger": "trig_01DsBEr34j7yERR8yQRRhWWU",
+   "fired_at": "2026-10-20T04:58:43Z",
+   "finished_at": "2026-10-20T05:05:21Z",
+   "duration_s": 392.8,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.080442,
+     "input": 438736,
+     "output": 58270,
+     "cache_read": 124838,
+     "cache_write": 49477,
+     "thinking": 36122
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.076691,
+     "input": 88,
+     "output": 30729,
+     "cache_read": 2981253,
+     "cache_write": 149851,
+     "thinking": 1964
+    }
+   },
+   "cost_usd": 1.157133,
+   "turns": 27,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-20.1",
+   "added": 2,
+   "updated": 0,
+   "note": "Two new stories after the vault clone went through again."
+  },
+  {
+   "id": "2d8808ac386f",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-20T05:09:20Z",
+   "finished_at": "2026-10-20T05:20:04Z",
+   "duration_s": 638.1,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.115319,
+     "input": 16,
+     "output": 2052,
+     "cache_read": 279673,
+     "cache_write": 16700,
+     "thinking": 427
+    }
+   },
+   "cost_usd": 0.115319,
+   "turns": 10,
+   "subagents": 0,
+   "refused": 3,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Page fetches were refused for the fourth day, so the first run still has not started."
+  },
+  {
+   "id": "06dfb1fb826d",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-20T05:57:00Z",
+   "finished_at": "2026-10-20T06:01:37Z",
+   "duration_s": 272.3,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.443738,
+     "input": 46,
+     "output": 8030,
+     "cache_read": 1478419,
+     "cache_write": 53876,
+     "thinking": 699
+    }
+   },
+   "cost_usd": 0.443738,
+   "turns": 23,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The release was built but the git proxy refused the push again, so nothing reached dev."
+  }
+ ],
+ "sessions": [
+  {
+   "name": "@newsroom.wire's working session (13 to 16 October 2026): the wires, the graphs, the pictures, the accountant, the first screen, the fixes of 16 October",
+   "kind": "build",
+   "from": "2026-10-13",
+   "as_of": "2026-10-16T12:05:00Z",
+   "models": [
+    "claude-fable-5-1",
+    "claude-opus-5-5"
+   ],
+   "cost_usd": 150.63,
+   "input": 16938,
+   "output": 756325,
+   "cache_read": 108567451,
+   "cache_write": 4712954,
+   "note": "an interactive session the owner steers; its cost includes its subagents (the architect, the designer, the developer)"
+  },
+  {
+   "name": "@newsroom.accountant's session",
+   "kind": "accountant",
+   "from": "2026-10-16",
+   "as_of": "2026-10-20T06:41:34Z",
+   "models": [
+    "claude-sonnet-5-5"
+   ],
+   "cost_usd": 2.624752,
+   "input": 62,
+   "output": 22304,
+   "cache_read": 4648844,
+   "cache_write": 484176,
+   "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
+  }
+ ],
+ "what": "Every scheduled run of the wires and the newsroom, with what it cost (the platform's own figures per model), its tokens, turns, subagents, what the permission check refused, and what it published; and the working sessions that built them. Kept by @newsroom.accountant with admin/build/runs_ledger.py."
+}

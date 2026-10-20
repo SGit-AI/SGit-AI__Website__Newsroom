@@ -1,0 +1,51 @@
+{
+ "slug": "two-agents-one-vault",
+ "by": "newsroom.ux",
+ "sections": {
+  "top": {
+   "line": "One agent writes the news vault, another only reads",
+   "para": "The wire at newsroom.sgit.ai shows a week of news read as me: forty stories across five beats, twenty-five reaching me and fourteen withheld with reasons. It lives in an encrypted vault a separate agent wrote on 11 October. The newsroom holds only the read key and draws it in the browser.",
+   "hash": "015007fe3e4f"
+  },
+  "short": {
+   "line": "The site holds the read key and nothing else",
+   "para": "Vault u9i9jp0l holds 40 stories, 55 sources, 7 personas and a 280-row join in 24 files. Pages decrypt it in the browser with Web Crypto, and a commit appears within two minutes with no site release. Everything is public for good, every story is marked unreviewed, and the vault is the interface between agents.",
+   "hash": "9eea798e9682"
+  },
+  "reader": {
+   "line": "Each story shows its source, and lenses explain withholding",
+   "para": "The page names the vault, commit and cache state, then the editor's note, three threads, the lead and stories by beat, each with source, confidence, one exact quote and why it matters. A lens over six public personas and one named reader shows what reached them and why stories were withheld, plus my personal brief.",
+   "hash": "18d745736800"
+  },
+  "vault": {
+   "line": "The vault holds the news under strict writing rules",
+   "para": "Made by research agents and unreviewed, the vault holds the edition, 40 stories, 55 tiered sources, seven personas, a deterministic join and an independent check of 10 stories that corrected 3. Its runbook confines four desk roles to their own folders, gates every commit on quotes and licences, and stops on stated conditions.",
+   "hash": "7606e1b73285"
+  },
+  "site": {
+   "line": "The newsroom reads, decrypts, draws, and refuses unsafe things",
+   "para": "Released as v0.9.0 at 23:51 UTC, the site reads the vault with a 182-line reader and a 214-line text-only renderer, tested by twenty-eight checks in CI by v0.9.3. Before publishing the key it read the whole vault, then held back a lens naming one person until I agreed in writing.",
+   "hash": "59eff5f42c5d"
+  },
+  "interface": {
+   "line": "A vault beats pushing commits, APIs or shared sessions",
+   "para": "The site owns presentation and the vault owns the news, and neither holds the other's key. Updating is a commit, not a release; the public read key is the only credential; the server sees only ciphertext; the history is the audit trail; and a third agent can join from the clone command alone.",
+   "hash": "ead28c8d85e6"
+  },
+  "loop": {
+   "line": "This is MyFeeds running, with me as first reader",
+   "para": "The two git logs show the vault on 11 October at 16:16 UTC, the newsroom pages at 23:51 and the named reader at 00:54 on 12 October. The morning read records four feedback actions that a weekly agent turns into persona diffs. Next come articles from wire stories, front-page placements, a newsletter and a private feedback vault.",
+   "hash": "b4f0c51e7e03"
+  },
+  "limits": {
+   "line": "A first, unreviewed pass, not a product",
+   "para": "The edition is a week's catch-up and every story is unreviewed: 22 of 40 primary sources were not fetched and only 10 stories were checked, 3 corrected. The join matches rather than understands, the personas are a draft, the vault is on a development server, and one contract flag remains open.",
+   "hash": "53c5c1406987"
+  },
+  "sources": {
+   "line": "Sources: two git logs, the vault, and screenshots",
+   "para": "Written by the site's agent from my message of 12 October 2026. Facts come from newsroom commits v0.9.0 and v0.9.3 and from the vault cloned read-only that day, including its README, design documents, runbook and join code. Related articles include the story vault, No server, by design, and Where the vault keys live.",
+   "hash": "0172dab79504"
+  }
+ }
+}

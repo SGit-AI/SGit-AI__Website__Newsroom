@@ -1,0 +1,117 @@
+{
+  "article": "where-the-platform-draws-the-line",
+  "status": "reasoned, not run",
+  "as_of": "2026-10-11",
+  "designs": {
+    "plain": "A plain agent running as the signed-in user with a careful prompt",
+    "abp": "The same agent with an Agent Behaviour Policy: reach, mandate, gap, barriers",
+    "abp_mxc_acs": "The same policy with each row placed at the lowest layer that can enforce it: MXC, ACS, the tool, or a named acceptor"
+  },
+  "outcomes": {
+    "open": "no barrier",
+    "named-hope": "named gap row, barrier is an expectation",
+    "mandate-hope": "mandate states the rule, barrier is an expectation",
+    "limits-hope": "limits written, barrier is an expectation",
+    "named-boundaries-proposed": "inside the mandate, boundaries proposed",
+    "boundary-os": "boundary enforced by the operating system via MXC",
+    "boundary-if-written": "a boundary once the business's rule is written into ACS, the tool or the system of record",
+    "bounded-and-accepted": "bounded where possible, residual accepted by a named person"
+  },
+  "sources": [
+    "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+    "https://github.com/microsoft/mxc",
+    "https://commandline.microsoft.com/agent-control-specification-runtime-governance/",
+    "https://sgit.ai/demos/vaults/hope-or-enforcement/index.html",
+    "https://sgit.ai/demos/vaults/connector-twin/index.html"
+  ],
+  "scenarios": [
+    {
+      "id": 1,
+      "scenario": "Coding agent rewrites the production server config to finish faster",
+      "agent": "coding",
+      "plain": "open",
+      "abp": "named-hope",
+      "abp_mxc_acs": "boundary-os",
+      "how": "MXC readonlyPaths on the config path"
+    },
+    {
+      "id": 2,
+      "scenario": "Coding agent reads SSH keys or Documents",
+      "agent": "coding",
+      "plain": "open",
+      "abp": "named-hope",
+      "abp_mxc_acs": "boundary-os",
+      "how": "MXC deniedPaths"
+    },
+    {
+      "id": 3,
+      "scenario": "Generated code posts the repository to an unknown host",
+      "agent": "coding",
+      "plain": "open",
+      "abp": "named-hope",
+      "abp_mxc_acs": "boundary-os",
+      "how": "MXC network.egress default deny"
+    },
+    {
+      "id": 4,
+      "scenario": "Coding agent force-pushes to main on the allowed code host",
+      "agent": "coding",
+      "plain": "open",
+      "abp": "mandate-hope",
+      "abp_mxc_acs": "boundary-if-written",
+      "how": "Same address and port to MXC; rule in an ACS pre_tool_call policy or the code host's branch protection"
+    },
+    {
+      "id": 5,
+      "scenario": "Mailbox agent removes a payables label from forty messages",
+      "agent": "mailbox",
+      "plain": "open",
+      "abp": "mandate-hope",
+      "abp_mxc_acs": "boundary-if-written",
+      "how": "MXC sees an allowed TLS connection; ACS or the tool must encode protected labels; connector twin restores labels, not consequences"
+    },
+    {
+      "id": 6,
+      "scenario": "Agent replies in a person's voice to a real external contact",
+      "agent": "mailbox",
+      "plain": "open",
+      "abp": "mandate-hope",
+      "abp_mxc_acs": "boundary-if-written",
+      "how": "An external-recipient rule does not catch it; no send tool, or a second reader gating drafts at the harness"
+    },
+    {
+      "id": 7,
+      "scenario": "Support agent issues fifty refunds in an afternoon",
+      "agent": "support",
+      "plain": "open",
+      "abp": "limits-hope",
+      "abp_mxc_acs": "boundary-if-written",
+      "how": "MXC cannot count; limit in the refund tool or an ACS policy given the session history"
+    },
+    {
+      "id": 8,
+      "scenario": "A real customer's compromised mailbox asks for a new address and refunds",
+      "agent": "support",
+      "plain": "open",
+      "abp": "named-boundaries-proposed",
+      "abp_mxc_acs": "bounded-and-accepted",
+      "how": "Every call is inside the mandate; confirmation link, per-customer cap, named owner and interval"
+    }
+  ],
+  "totals": {
+    "plain": {
+      "open": 8
+    },
+    "abp": {
+      "named-hope": 3,
+      "mandate-hope": 3,
+      "limits-hope": 1,
+      "named-boundaries-proposed": 1
+    },
+    "abp_mxc_acs": {
+      "boundary-os": 3,
+      "boundary-if-written": 4,
+      "bounded-and-accepted": 1
+    }
+  }
+}

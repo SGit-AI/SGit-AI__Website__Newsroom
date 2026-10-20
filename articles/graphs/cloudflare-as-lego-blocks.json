@@ -1,0 +1,165 @@
+{
+  "slug": "cloudflare-as-lego-blocks",
+  "teaser": "Cloudflare's developer platform as the smallest free blocks a non-specialist can use, and an sgit vault on it: no code read-only, 83 lines read-write.",
+  "topics": [
+    "vaults-and-method"
+  ],
+  "core_idea": "Cloudflare's platform maps to small free blocks a non-specialist can assemble once with an agent; Workers AI keeps @cf models inside the account without training on content; an sgit vault needs no code read-only and an 83-line Worker read-write, tested with the real client; and the setup must be a button, a temporary account or an agent because the API cannot be called from a page.",
+  "nodes": [
+    {
+      "id": "want",
+      "label": "Use it without learning it",
+      "kind": "question",
+      "summary": "A non-specialist, or an agent, once."
+    },
+    {
+      "id": "blocks",
+      "label": "The blocks, by job",
+      "kind": "concept",
+      "summary": "Web, data, models, jobs, mail and access."
+    },
+    {
+      "id": "free",
+      "label": "Most of it is free",
+      "kind": "claim",
+      "summary": "Hosting, Workers, R2, D1, KV, Durable Objects, Workers AI."
+    },
+    {
+      "id": "inside",
+      "label": "Models that stay inside",
+      "kind": "claim",
+      "summary": "@cf models on Cloudflare GPUs, no training."
+    },
+    {
+      "id": "readonly",
+      "label": "A read-only vault, no code",
+      "kind": "example",
+      "summary": "sgit publish plus any static host."
+    },
+    {
+      "id": "worker",
+      "label": "A read-write vault, 83 lines",
+      "kind": "artefact",
+      "summary": "One Worker, R2, a Durable Object per vault."
+    },
+    {
+      "id": "tested",
+      "label": "Tested with the real client",
+      "kind": "method",
+      "summary": "Push, clone, a race, read-only, wrong key."
+    },
+    {
+      "id": "constraint",
+      "label": "The server can read nothing",
+      "kind": "claim",
+      "summary": "So it has almost nothing to do."
+    },
+    {
+      "id": "cors",
+      "label": "The API cannot be called from a page",
+      "kind": "claim",
+      "summary": "Setup needs a button, a temporary account or an agent."
+    },
+    {
+      "id": "button",
+      "label": "Deploy to Cloudflare",
+      "kind": "method",
+      "summary": "One click into the user's own account."
+    },
+    {
+      "id": "packages",
+      "label": "Five packages",
+      "kind": "method",
+      "summary": "Site, vault, assistant, inbox, form."
+    }
+  ],
+  "edges": [
+    {
+      "from": "want",
+      "to": "blocks",
+      "rel": "leads-to"
+    },
+    {
+      "from": "blocks",
+      "to": "free",
+      "rel": "extends"
+    },
+    {
+      "from": "inside",
+      "to": "blocks",
+      "rel": "example-of"
+    },
+    {
+      "from": "constraint",
+      "to": "worker",
+      "rel": "leads-to"
+    },
+    {
+      "from": "readonly",
+      "to": "worker",
+      "rel": "extends"
+    },
+    {
+      "from": "tested",
+      "to": "worker",
+      "rel": "answers"
+    },
+    {
+      "from": "cors",
+      "to": "button",
+      "rel": "leads-to"
+    },
+    {
+      "from": "blocks",
+      "to": "packages",
+      "rel": "leads-to"
+    },
+    {
+      "from": "button",
+      "to": "packages",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-minimum-code-below",
+      "the-value-of-constraints",
+      "free-models-your-own-key"
+    ],
+    "pages": [],
+    "sites": [
+      "https://developers.cloudflare.com/workers/platform/limits/",
+      "https://developers.cloudflare.com/workers-ai/platform/privacy/",
+      "https://developers.cloudflare.com/workers/platform/deploy-buttons/",
+      "https://developers.cloudflare.com/durable-objects/platform/pricing/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "because the server can read nothing, it has almost nothing to do.",
+      "why": "Why the vault fits."
+    },
+    {
+      "text": "If staying inside is the point, the model name is the control:",
+      "why": "On models."
+    },
+    {
+      "text": "Setup cannot happen purely in a browser tab.",
+      "why": "The catch."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cw-blocks.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cw-blocks.webp",
+      "caption": "Cloudflare's developer platform as blocks, grouped by job. Put something on the web: static assets, free and unlimited; Workers, 100,000 requests a day; DNS and domains at cost. Keep data: R2 with 10 GB and zero egress, D1, KV, Durable Objects. Think with models it hosts: Workers AI with 10,000 neurons a day on Cloudflare's own GPUs, AI Gateway, Vectorize and AI Search. Run jobs: cron, queues and workflows, Browser Run, and Containers on the paid plan. Talk and guard: inbound email routing, email sending on the paid plan, Access free to 50 users, Turnstile and Tunnel.",
+      "kind": "map"
+    },
+    {
+      "file": "cw-vault.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cw-vault.webp",
+      "caption": "medium",
+      "kind": "Two ways to put an sgit vault on Cloudflare, both tested on 18 October 2026 with the real sgit client. Read-only: sgit publish writes the plaintext cover and a manifest, with the encrypted objects beside them; any static host serves it, and sgit clone with the read key and the static transport cloned it back identically. Read-write: a Worker of 83 lines, R2 for the encrypted objects, and a Durable Object per vault that runs writes one at a time; tested for push, clone, a stale push, two pushes at once, a read-only clone and a wrong write key, with no plaintext in the server's storage."
+    }
+  ]
+}

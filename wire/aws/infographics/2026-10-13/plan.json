@@ -1,0 +1,837 @@
+{
+ "schema": "wire-infographics-plan/v1",
+ "wire": "aws",
+ "edition": "2026-10-13",
+ "at": "2026-10-14T21:58:04Z",
+ "dry_run": false,
+ "stories": "added by this edition (brief.new_in_edition)",
+ "model_preferences": {
+  "card": [
+   "gemini-3-pro-image",
+   "nano-banana-2.1",
+   "gemini-3.1-flash-image",
+   "nano-banana"
+  ],
+  "hero": [
+   "gpt-5.4-image-2",
+   "gpt-5.4-image",
+   "gpt-5-image"
+  ]
+ },
+ "prices_usd": {
+  "card": 0.14,
+  "hero": 0.245
+ },
+ "price_source": "OpenRouter's own figures on the first live run of 14 October 2026 (the bake-off article, 10 October, had 0.039 and 0.176 for Nano Banana 2.1 and GPT-5.4 Image 2)",
+ "caps": {
+  "max_images": 40,
+  "max_cost_usd": 2.0
+ },
+ "jobs": [
+  {
+   "key": "aws.2026-10-13.edition.04ef5618",
+   "kind": "hero",
+   "id": "edition",
+   "prompt_sha256": "04ef5618a609c742b9bc50d2ebc9f6ffc3cd11f95dde762ffa04bd57543de3d4",
+   "prompt_file": "prompts/aws.2026-10-13.edition.04ef5618.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.245
+  },
+  {
+   "key": "aws.2026-10-13.aws-08.0ee69b32",
+   "kind": "card",
+   "id": "aws-08",
+   "prompt_sha256": "0ee69b3296c88e06dd079d168c6bb2f005ee4d8a1fdc1cb2a2894a0c4f4db74a",
+   "prompt_file": "prompts/aws.2026-10-13.aws-08.0ee69b32.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-07.ce65af0b",
+   "kind": "card",
+   "id": "wn-07",
+   "prompt_sha256": "ce65af0bbed9af32f7a0407e2f07adc4e03a3e7e5ab482fcc301aa6dac85fd4f",
+   "prompt_file": "prompts/aws.2026-10-13.wn-07.ce65af0b.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-06.42d43123",
+   "kind": "card",
+   "id": "wn-06",
+   "prompt_sha256": "42d431238d2d49999ec0b50ea3d9f89512ad8083b4ec80ab8caeda584dcb827d",
+   "prompt_file": "prompts/aws.2026-10-13.wn-06.42d43123.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-05.3c3bfaad",
+   "kind": "card",
+   "id": "wn-05",
+   "prompt_sha256": "3c3bfaada136cabe4b767c24b246738c94f64e3424fffff2170fd126580a94d1",
+   "prompt_file": "prompts/aws.2026-10-13.wn-05.3c3bfaad.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-04.64e3db35",
+   "kind": "card",
+   "id": "wn-04",
+   "prompt_sha256": "64e3db35775a74971f373e168e29dfbf1990dbdd94bd895637c217b2f04367f4",
+   "prompt_file": "prompts/aws.2026-10-13.wn-04.64e3db35.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-03.9c83bfec",
+   "kind": "card",
+   "id": "wn-03",
+   "prompt_sha256": "9c83bfecc365569082da1101b9e16fe7be5b99bb323aa359a3bc08efa981f6ef",
+   "prompt_file": "prompts/aws.2026-10-13.wn-03.9c83bfec.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-02.12b7a957",
+   "kind": "card",
+   "id": "wn-02",
+   "prompt_sha256": "12b7a957abdd16e0c51082b89a2c5b5380e36129f285192c0ce786c8df4d489e",
+   "prompt_file": "prompts/aws.2026-10-13.wn-02.12b7a957.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-01.16e16687",
+   "kind": "card",
+   "id": "wn-01",
+   "prompt_sha256": "16e16687cc446c87eb21eedbdebea8a261484c9d3a41c37e31a0463b7e75e966",
+   "prompt_file": "prompts/aws.2026-10-13.wn-01.16e16687.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-25.6a0b7784",
+   "kind": "card",
+   "id": "aws-25",
+   "prompt_sha256": "6a0b7784315c062173aa9ec4c7ec6a693fd0d5902b2be81b1d915b7e887fd2ff",
+   "prompt_file": "prompts/aws.2026-10-13.aws-25.6a0b7784.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-12.36094b91",
+   "kind": "card",
+   "id": "aws-12",
+   "prompt_sha256": "36094b9122e7fd94c1a17ec6f6ebdd599b863e3bf8441470b9cae4b4eee1bab1",
+   "prompt_file": "prompts/aws.2026-10-13.aws-12.36094b91.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-11.58044d21",
+   "kind": "card",
+   "id": "aws-11",
+   "prompt_sha256": "58044d21420f7304a07cf5d70001b139cfc4ca306aed44c95a52453da9b05a12",
+   "prompt_file": "prompts/aws.2026-10-13.aws-11.58044d21.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-03.adbdda65",
+   "kind": "card",
+   "id": "aws-03",
+   "prompt_sha256": "adbdda650122bc8b90a49b7cf322f2ef9da5be8e51979cb22c9928426f786cf9",
+   "prompt_file": "prompts/aws.2026-10-13.aws-03.adbdda65.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-02.118f132c",
+   "kind": "card",
+   "id": "aws-02",
+   "prompt_sha256": "118f132c4071d581b5484d7e3f5b2cdf9e19e7d1af5a3d46552a33fe29b1f2ea",
+   "prompt_file": "prompts/aws.2026-10-13.aws-02.118f132c.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-01.a723b319",
+   "kind": "card",
+   "id": "aws-01",
+   "prompt_sha256": "a723b3199a8a0413a4e9e1aaf8c24e049b225e697a2a9a29092d501fa03847b9",
+   "prompt_file": "prompts/aws.2026-10-13.aws-01.a723b319.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-08.fbef5556",
+   "kind": "card",
+   "id": "wn-08",
+   "prompt_sha256": "fbef55562dbb9957c1ccdb3aa725a575080875612c502efe625835390594b912",
+   "prompt_file": "prompts/aws.2026-10-13.wn-08.fbef5556.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-16.10aeb9f7",
+   "kind": "card",
+   "id": "aws-16",
+   "prompt_sha256": "10aeb9f7fb503c4b3b6ea2649631c9b85e5d4b65bf085b7fb5e33a342ca94a04",
+   "prompt_file": "prompts/aws.2026-10-13.aws-16.10aeb9f7.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-16.cc0e28a4",
+   "kind": "card",
+   "id": "wn-16",
+   "prompt_sha256": "cc0e28a49349bb45a744f80ce286e965583afef4d09355d0038474335e257710",
+   "prompt_file": "prompts/aws.2026-10-13.wn-16.cc0e28a4.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-15.d920a54f",
+   "kind": "card",
+   "id": "wn-15",
+   "prompt_sha256": "d920a54f91c453726c8d2bca10fa7b5c24c972d2eb36bc9575610a0810d0c121",
+   "prompt_file": "prompts/aws.2026-10-13.wn-15.d920a54f.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-14.ace24546",
+   "kind": "card",
+   "id": "wn-14",
+   "prompt_sha256": "ace245462a07157d3ea88c37ee606380eede1a160fb70ae6f0c9b73492be2df7",
+   "prompt_file": "prompts/aws.2026-10-13.wn-14.ace24546.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-13.d07bbf00",
+   "kind": "card",
+   "id": "wn-13",
+   "prompt_sha256": "d07bbf009bd08993e68ffd43210e4abb2baebfd439ada39c18d397269598ef9c",
+   "prompt_file": "prompts/aws.2026-10-13.wn-13.d07bbf00.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-12.3fc9a65f",
+   "kind": "card",
+   "id": "wn-12",
+   "prompt_sha256": "3fc9a65f6162ba1fafa45692253e5d9e5597807297ed22c7e74fd134338a3135",
+   "prompt_file": "prompts/aws.2026-10-13.wn-12.3fc9a65f.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-11.2f741e7e",
+   "kind": "card",
+   "id": "wn-11",
+   "prompt_sha256": "2f741e7e84a70e198b42bd0e2b119a7565a7a03037ace54bb097c58ff2db6a5c",
+   "prompt_file": "prompts/aws.2026-10-13.wn-11.2f741e7e.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-10.af6c5908",
+   "kind": "card",
+   "id": "wn-10",
+   "prompt_sha256": "af6c5908e3c074c79ffbbbde0bac34ef3d779a96eedfde29b10b94b053d097b3",
+   "prompt_file": "prompts/aws.2026-10-13.wn-10.af6c5908.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-09.94cbf316",
+   "kind": "card",
+   "id": "wn-09",
+   "prompt_sha256": "94cbf31675b503870657b424d8cb8f5db15f620f7d1af32c811908704c0ce62f",
+   "prompt_file": "prompts/aws.2026-10-13.wn-09.94cbf316.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-24.f4da61c4",
+   "kind": "card",
+   "id": "aws-24",
+   "prompt_sha256": "f4da61c411a774d2c09197f587eb024d5afe920a1a7f2a46d2f4b8a74263a29c",
+   "prompt_file": "prompts/aws.2026-10-13.aws-24.f4da61c4.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-05.435ff167",
+   "kind": "card",
+   "id": "aws-05",
+   "prompt_sha256": "435ff167088a44aab574a051f03ca9ff1aa6af7b32a724d3befa3e7599864224",
+   "prompt_file": "prompts/aws.2026-10-13.aws-05.435ff167.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-04.1171dd08",
+   "kind": "card",
+   "id": "aws-04",
+   "prompt_sha256": "1171dd08638b12f4c2cc493a4bc0eb7d8f705c6b1d01adaa459e884e2a349130",
+   "prompt_file": "prompts/aws.2026-10-13.aws-04.1171dd08.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-21.91bc17e1",
+   "kind": "card",
+   "id": "wn-21",
+   "prompt_sha256": "91bc17e116ca7becbbfaaf37c72e636290cdafeff650d058c8e7670021a80e20",
+   "prompt_file": "prompts/aws.2026-10-13.wn-21.91bc17e1.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-20.45d4d685",
+   "kind": "card",
+   "id": "wn-20",
+   "prompt_sha256": "45d4d6855369fd4ca87d18dac3434e45f3b2061c80171e5fdb5d466cdcddbf3c",
+   "prompt_file": "prompts/aws.2026-10-13.wn-20.45d4d685.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-19.1ad142e1",
+   "kind": "card",
+   "id": "wn-19",
+   "prompt_sha256": "1ad142e1ae29d69acd46440121c28111a80fc3e48e13244d350eeb5dcd6537c2",
+   "prompt_file": "prompts/aws.2026-10-13.wn-19.1ad142e1.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-18.8c9d44ef",
+   "kind": "card",
+   "id": "wn-18",
+   "prompt_sha256": "8c9d44effa7de94f912bf84b8bed12d4147347120029be68eeee123425c1e85b",
+   "prompt_file": "prompts/aws.2026-10-13.wn-18.8c9d44ef.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-17.d96dbbb7",
+   "kind": "card",
+   "id": "wn-17",
+   "prompt_sha256": "d96dbbb7ccd85f96fb431975f8958af9cc307f66b290694ebedce4c5ad76740e",
+   "prompt_file": "prompts/aws.2026-10-13.wn-17.d96dbbb7.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-26.36d313b1",
+   "kind": "card",
+   "id": "aws-26",
+   "prompt_sha256": "36d313b1165eaa90662c6b2e4286be4b8bddd737cfadb11fe65cd1301994c12d",
+   "prompt_file": "prompts/aws.2026-10-13.aws-26.36d313b1.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-21.f68a9145",
+   "kind": "card",
+   "id": "aws-21",
+   "prompt_sha256": "f68a9145d40da03857cdff3074defa1727e23e5367652b2577484271ef4b3e92",
+   "prompt_file": "prompts/aws.2026-10-13.aws-21.f68a9145.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-15.14e841ea",
+   "kind": "card",
+   "id": "aws-15",
+   "prompt_sha256": "14e841ea763edf9c9ebdb0a4388fbda21215ad45b6b81afa67d6d72e4deecbc4",
+   "prompt_file": "prompts/aws.2026-10-13.aws-15.14e841ea.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-10.6cf2d2e3",
+   "kind": "card",
+   "id": "aws-10",
+   "prompt_sha256": "6cf2d2e36bdbb8461da557daff0a877186a2d19e7aed187712fa6c17846d633c",
+   "prompt_file": "prompts/aws.2026-10-13.aws-10.6cf2d2e3.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-09.26e40afa",
+   "kind": "card",
+   "id": "aws-09",
+   "prompt_sha256": "26e40afa3ab4da4ae2ae4544e4016df2fc8cf37dba3060ca8ca3ed30f6092715",
+   "prompt_file": "prompts/aws.2026-10-13.aws-09.26e40afa.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-26.ff69c5bd",
+   "kind": "card",
+   "id": "wn-26",
+   "prompt_sha256": "ff69c5bdb5768cc82557dd93bda7968b113db8e9c260ed0935f92ff5faf322d9",
+   "prompt_file": "prompts/aws.2026-10-13.wn-26.ff69c5bd.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-25.2a28c8d2",
+   "kind": "card",
+   "id": "wn-25",
+   "prompt_sha256": "2a28c8d26d6cce614590e84c1c742d807b4aa79d50209778f12fa4e9b50592b3",
+   "prompt_file": "prompts/aws.2026-10-13.wn-25.2a28c8d2.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-24.5ed95637",
+   "kind": "card",
+   "id": "wn-24",
+   "prompt_sha256": "5ed956376650cfd8ab8e0831aba6fcdceb93a7d5f54b36ac148e025b9f145159",
+   "prompt_file": "prompts/aws.2026-10-13.wn-24.5ed95637.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-23.38ab0001",
+   "kind": "card",
+   "id": "wn-23",
+   "prompt_sha256": "38ab0001fa518e725546164cba408b06a19cb17a42719a2fd92db99651842f41",
+   "prompt_file": "prompts/aws.2026-10-13.wn-23.38ab0001.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-22.c98f78ab",
+   "kind": "card",
+   "id": "wn-22",
+   "prompt_sha256": "c98f78abe9ed8feb2680fac66a9b3ee06f6100e0ccef5ddebc9d2ee22405cfe3",
+   "prompt_file": "prompts/aws.2026-10-13.wn-22.c98f78ab.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-18.bbc70239",
+   "kind": "card",
+   "id": "aws-18",
+   "prompt_sha256": "bbc70239f263f60c2508bd45933fc64780c414dd30e861489ca5cf6a3860fa21",
+   "prompt_file": "prompts/aws.2026-10-13.aws-18.bbc70239.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-28.fc887d04",
+   "kind": "card",
+   "id": "wn-28",
+   "prompt_sha256": "fc887d04d69fd197719a154c5f7f29fc8163f2e3100455560e2307da0c047c2b",
+   "prompt_file": "prompts/aws.2026-10-13.wn-28.fc887d04.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-27.cf8d0579",
+   "kind": "card",
+   "id": "wn-27",
+   "prompt_sha256": "cf8d057971a9f77282b2deb2ac2de3d7150519f3680850157525277c0bfcb3e4",
+   "prompt_file": "prompts/aws.2026-10-13.wn-27.cf8d0579.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-22.b68d23f9",
+   "kind": "card",
+   "id": "aws-22",
+   "prompt_sha256": "b68d23f9c22f0195a54790aaafa5c15bd2bf29a3e821e2e88f41592f59e9b39a",
+   "prompt_file": "prompts/aws.2026-10-13.aws-22.b68d23f9.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-14.3c1b99f5",
+   "kind": "card",
+   "id": "aws-14",
+   "prompt_sha256": "3c1b99f539985f78b44fe99718a008fcf74d96f9554da67b384381c15b2718e0",
+   "prompt_file": "prompts/aws.2026-10-13.aws-14.3c1b99f5.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-06.a6f4f54e",
+   "kind": "card",
+   "id": "aws-06",
+   "prompt_sha256": "a6f4f54e8ed625863a1039d42a2ae1ba8681678efca92e745e7eb2bcdce981f6",
+   "prompt_file": "prompts/aws.2026-10-13.aws-06.a6f4f54e.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-39.02705b7f",
+   "kind": "card",
+   "id": "wn-39",
+   "prompt_sha256": "02705b7f106b5a78f2f330b3a2fb0c7f635286c67b7f818b79103715e30aa8a2",
+   "prompt_file": "prompts/aws.2026-10-13.wn-39.02705b7f.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-38.a3ea6362",
+   "kind": "card",
+   "id": "wn-38",
+   "prompt_sha256": "a3ea63626b7c62a6faa0591b446f521b0c153d01efb237accd9cbdc7b00346c5",
+   "prompt_file": "prompts/aws.2026-10-13.wn-38.a3ea6362.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-37.b6bdb485",
+   "kind": "card",
+   "id": "wn-37",
+   "prompt_sha256": "b6bdb485550af9bdadc545ad5f85e39ef36372cf77a0b80f6f7be98d22a139bf",
+   "prompt_file": "prompts/aws.2026-10-13.wn-37.b6bdb485.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-36.9eeb578d",
+   "kind": "card",
+   "id": "wn-36",
+   "prompt_sha256": "9eeb578d02e80aace3f81c4451133a782180058b287bf60115da121e52790393",
+   "prompt_file": "prompts/aws.2026-10-13.wn-36.9eeb578d.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-35.7b1b0c5c",
+   "kind": "card",
+   "id": "wn-35",
+   "prompt_sha256": "7b1b0c5ca5cc76eb0d7c188e1a306ffe876930c96e035da4b9ed2ba9b7019a45",
+   "prompt_file": "prompts/aws.2026-10-13.wn-35.7b1b0c5c.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-34.78177c86",
+   "kind": "card",
+   "id": "wn-34",
+   "prompt_sha256": "78177c86e303ead85e8e6b088065a9838444877cd14e6d92572453aa87b05842",
+   "prompt_file": "prompts/aws.2026-10-13.wn-34.78177c86.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-33.3247c72d",
+   "kind": "card",
+   "id": "wn-33",
+   "prompt_sha256": "3247c72d6217fa051ebcbb02125575c7778915cb3d23eed5e8c63a216b7387cf",
+   "prompt_file": "prompts/aws.2026-10-13.wn-33.3247c72d.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-32.451725fe",
+   "kind": "card",
+   "id": "wn-32",
+   "prompt_sha256": "451725fe5d3dbdc7f9983b55d7c8f55d66db448fb858f31fe03b180720896167",
+   "prompt_file": "prompts/aws.2026-10-13.wn-32.451725fe.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-31.e8201003",
+   "kind": "card",
+   "id": "wn-31",
+   "prompt_sha256": "e8201003906d8a4f6a673c4c625137fea8a4a62710ccb9816bd489cc0c163aa2",
+   "prompt_file": "prompts/aws.2026-10-13.wn-31.e8201003.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-30.7fab9912",
+   "kind": "card",
+   "id": "wn-30",
+   "prompt_sha256": "7fab9912f7eb726acf1b3ece0855375a9f984c52330cc6151634065cff8d4077",
+   "prompt_file": "prompts/aws.2026-10-13.wn-30.7fab9912.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-29.8a3e5c74",
+   "kind": "card",
+   "id": "wn-29",
+   "prompt_sha256": "8a3e5c741b706b97f793dce3f5919c71d07d2c68f5595f96fcf64ec6287cd691",
+   "prompt_file": "prompts/aws.2026-10-13.wn-29.8a3e5c74.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-23.6a5da6a7",
+   "kind": "card",
+   "id": "aws-23",
+   "prompt_sha256": "6a5da6a789a5f749e8b1b0a87156a19a7911b106d855bd8d64a7fcac42660002",
+   "prompt_file": "prompts/aws.2026-10-13.aws-23.6a5da6a7.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-17.5e94aecb",
+   "kind": "card",
+   "id": "aws-17",
+   "prompt_sha256": "5e94aecb35f16999b2674d6b3b9276992ee255907c2aef102b8e8cf106991839",
+   "prompt_file": "prompts/aws.2026-10-13.aws-17.5e94aecb.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-49.12d2a927",
+   "kind": "card",
+   "id": "wn-49",
+   "prompt_sha256": "12d2a927d613b195b452a09157a164c8c1bde6a52ae775242994ca3dda8df17c",
+   "prompt_file": "prompts/aws.2026-10-13.wn-49.12d2a927.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-48.f51e84d2",
+   "kind": "card",
+   "id": "wn-48",
+   "prompt_sha256": "f51e84d21ae531624775d459279b9371eec0623d5c996a49166560540d6eda14",
+   "prompt_file": "prompts/aws.2026-10-13.wn-48.f51e84d2.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-47.5148ab23",
+   "kind": "card",
+   "id": "wn-47",
+   "prompt_sha256": "5148ab23d627a457d1120623602bdc645f0b75733dfacd4aede135e49dffd1c8",
+   "prompt_file": "prompts/aws.2026-10-13.wn-47.5148ab23.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-46.aec65de0",
+   "kind": "card",
+   "id": "wn-46",
+   "prompt_sha256": "aec65de0575d57bbf8bb5e2d902cf4ac7e251862dbcd23d8b28f40933470a696",
+   "prompt_file": "prompts/aws.2026-10-13.wn-46.aec65de0.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-45.0225348e",
+   "kind": "card",
+   "id": "wn-45",
+   "prompt_sha256": "0225348e7062a91dbe8959d69e9ce3ef60323e5559a639989c4eb6c7d5d5c9f2",
+   "prompt_file": "prompts/aws.2026-10-13.wn-45.0225348e.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-44.598b5a4b",
+   "kind": "card",
+   "id": "wn-44",
+   "prompt_sha256": "598b5a4be5ce148c258f134f317b79f5179b671adb16f8a71c804f1c08c1310e",
+   "prompt_file": "prompts/aws.2026-10-13.wn-44.598b5a4b.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-43.c287d972",
+   "kind": "card",
+   "id": "wn-43",
+   "prompt_sha256": "c287d972466da52bc2d6e4d827c08d91f88d85af1931cf862b1e416ad4781c85",
+   "prompt_file": "prompts/aws.2026-10-13.wn-43.c287d972.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-42.21baea68",
+   "kind": "card",
+   "id": "wn-42",
+   "prompt_sha256": "21baea681af90c83b7e547a09d59b464f5e003758e669e79369d435b318d687d",
+   "prompt_file": "prompts/aws.2026-10-13.wn-42.21baea68.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-41.85ff02c1",
+   "kind": "card",
+   "id": "wn-41",
+   "prompt_sha256": "85ff02c1c5a23cffd3475ad165a978a79bdb78989daf0d5ef6a2c201007aef7e",
+   "prompt_file": "prompts/aws.2026-10-13.wn-41.85ff02c1.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-40.d6c9a711",
+   "kind": "card",
+   "id": "wn-40",
+   "prompt_sha256": "d6c9a7112f2309ac23f01c9edfc52c2c8018c52e45adb9160bbdbe22e4347cd6",
+   "prompt_file": "prompts/aws.2026-10-13.wn-40.d6c9a711.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-54.6cec2964",
+   "kind": "card",
+   "id": "wn-54",
+   "prompt_sha256": "6cec2964accf8f70e731ad37d28e8aa9f72461bc6275dc9f1e4b6282c1d2859f",
+   "prompt_file": "prompts/aws.2026-10-13.wn-54.6cec2964.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-53.67c7a3af",
+   "kind": "card",
+   "id": "wn-53",
+   "prompt_sha256": "67c7a3af7804875b9836d546fa36d195fab5210d4a59d8965826da2eb0c5fd67",
+   "prompt_file": "prompts/aws.2026-10-13.wn-53.67c7a3af.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-52.01d7d894",
+   "kind": "card",
+   "id": "wn-52",
+   "prompt_sha256": "01d7d8944b433a8becf158c721810fd1aac465bfb0560aaadca4c93b71ccdb9b",
+   "prompt_file": "prompts/aws.2026-10-13.wn-52.01d7d894.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-51.2f80680d",
+   "kind": "card",
+   "id": "wn-51",
+   "prompt_sha256": "2f80680dd3a5d754b8a98c9a6a8fe1397ee7eecde4085a28cde9726e276a402f",
+   "prompt_file": "prompts/aws.2026-10-13.wn-51.2f80680d.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-50.cdebd956",
+   "kind": "card",
+   "id": "wn-50",
+   "prompt_sha256": "cdebd956cebc7d6ec5646b66dc5c43db98ff99c86e2655c033ae91d698969199",
+   "prompt_file": "prompts/aws.2026-10-13.wn-50.cdebd956.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-13.d02cdabf",
+   "kind": "card",
+   "id": "aws-13",
+   "prompt_sha256": "d02cdabfad059bd38a00023276cc21554eac526cb81a7b433de32b49357f9063",
+   "prompt_file": "prompts/aws.2026-10-13.aws-13.d02cdabf.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-59.2ff60183",
+   "kind": "card",
+   "id": "wn-59",
+   "prompt_sha256": "2ff601832d7cdbe0c7628fe97383f88c1f6a815dbd0509b846c54eb39ca26cc1",
+   "prompt_file": "prompts/aws.2026-10-13.wn-59.2ff60183.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-58.b558354b",
+   "kind": "card",
+   "id": "wn-58",
+   "prompt_sha256": "b558354b051cafeed9ef2b8eae1f7b06feef9c82a8cb1783f29bf03f449d812b",
+   "prompt_file": "prompts/aws.2026-10-13.wn-58.b558354b.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-55.7e848622",
+   "kind": "card",
+   "id": "wn-55",
+   "prompt_sha256": "7e84862243ee5e4dd7987769df1868c7c81a73bda6f2f1210015472b76545f97",
+   "prompt_file": "prompts/aws.2026-10-13.wn-55.7e848622.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-19.bede8ab6",
+   "kind": "card",
+   "id": "aws-19",
+   "prompt_sha256": "bede8ab68e0ae9c5f7ad62c339f34f241a7c22b5d197f4ebedc0dbb575079b85",
+   "prompt_file": "prompts/aws.2026-10-13.aws-19.bede8ab6.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-57.01c1267b",
+   "kind": "card",
+   "id": "wn-57",
+   "prompt_sha256": "01c1267bd15e1406018b8ea2c0520cb22bbb133b2a2c121f41e21698d99e494e",
+   "prompt_file": "prompts/aws.2026-10-13.wn-57.01c1267b.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.wn-56.474cb5e8",
+   "kind": "card",
+   "id": "wn-56",
+   "prompt_sha256": "474cb5e8895d654411dbb9f9a3789980a7595c8c17aad1ff18abbe862a9e4e44",
+   "prompt_file": "prompts/aws.2026-10-13.wn-56.474cb5e8.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-20.835cfdd2",
+   "kind": "card",
+   "id": "aws-20",
+   "prompt_sha256": "835cfdd234f753c292236a123f3bfeb55018aa20c3b587d8e2402fb8fe0f1b98",
+   "prompt_file": "prompts/aws.2026-10-13.aws-20.835cfdd2.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-07.3ce3a179",
+   "kind": "card",
+   "id": "aws-07",
+   "prompt_sha256": "3ce3a179aba5bbb735f44b9333b5813987ff89ea0fabdcc090347fb49888051c",
+   "prompt_file": "prompts/aws.2026-10-13.aws-07.3ce3a179.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-29.296e5d4c",
+   "kind": "card",
+   "id": "aws-29",
+   "prompt_sha256": "296e5d4cbffa568cc1035b97bf89a7ba886084edb35baeec32465142aeda4f21",
+   "prompt_file": "prompts/aws.2026-10-13.aws-29.296e5d4c.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-28.3dce1a5c",
+   "kind": "card",
+   "id": "aws-28",
+   "prompt_sha256": "3dce1a5cba93dfe5da0207f494bc0a0d88ff3fdb5a8b4a0b3e4a37f8b6e92ecd",
+   "prompt_file": "prompts/aws.2026-10-13.aws-28.3dce1a5c.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  },
+  {
+   "key": "aws.2026-10-13.aws-27.f89b1f8c",
+   "kind": "card",
+   "id": "aws-27",
+   "prompt_sha256": "f89b1f8c9fbe1bb8836198df590cb0e0eedb5806e3760e1c4195ff7abeb78a27",
+   "prompt_file": "prompts/aws.2026-10-13.aws-27.f89b1f8c.txt",
+   "exists": false,
+   "estimated_cost_usd": 0.14
+  }
+ ],
+ "estimate": {
+  "images": 89,
+  "cost_usd": 12.565
+ }
+}

@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where is the why? A permission prompt asked me to decide, and kept the reason, SGit Newsroom</title>
+<meta name="description" content="An agent session asked, in the middle of a task, to add a repository. The prompt showed three fields, owner, repository and access, and two buttons, Decline and Allow once. It did not say which session was asking, why, what the session would be able to do afterwards that it could not do before, or what would happen on a no. The session was one of several, and one of them was working on a vault holding confidential data. This article reads that prompt through the Agent Behaviour Policy, where a permission prompt is a request to change the grant mid-session and a barrier whose strength is the information the person is given; sets it against what courts, regulators and research have said about decisions taken without the facts, from Montgomery's consent forms and the red hand rule to GDPR's informed consent, token human oversight, and the moral crumple zone; lists the other prompts that asked without a why and the fixes that worked, from Apple's purpose strings and Microsoft's number matching to the CNIL's rule that refusing must be as easy as accepting; puts Anthropic's own figures on how often people approve agent prompts beside them; and proposes a why card, a prompt that carries its reason, its change in reach, its cost, the path if declined, and a record, and that turns into a risk acceptance when the risk rises.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/where-is-the-why.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/where-is-the-why.html">
+<meta property="og:title" content="Where is the why? A permission prompt asked me to decide, and kept the reason, SGit Newsroom">
+<meta property="og:description" content="An agent session asked, in the middle of a task, to add a repository. The prompt showed three fields, owner, repository and access, and two buttons, Decline and Allow once. It did not say which session was asking, why, what the session would be able to do afterwards that it could not do before, or what would happen on a no. The session was one of several, and one of them was working on a vault holding confidential data. This article reads that prompt through the Agent Behaviour Policy, where a permission prompt is a request to change the grant mid-session and a barrier whose strength is the information the person is given; sets it against what courts, regulators and research have said about decisions taken without the facts, from Montgomery's consent forms and the red hand rule to GDPR's informed consent, token human oversight, and the moral crumple zone; lists the other prompts that asked without a why and the fixes that worked, from Apple's purpose strings and Microsoft's number matching to the CNIL's rule that refusing must be as easy as accepting; puts Anthropic's own figures on how often people approve agent prompts beside them; and proposes a why card, a prompt that carries its reason, its change in reach, its cost, the path if declined, and a record, and that turns into a risk acceptance when the risk rises.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/where-is-the-why.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Where is the why? A permission prompt asked me to decide, and kept the reason, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/where-is-the-why.jpg">
+<link rel="alternate" type="text/markdown" href="where-is-the-why.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Where is the why? A permission prompt asked me to decide, and kept the reason, SGit Newsroom", "headline": "Where is the why? A permission prompt asked me to decide, and kept the reason, SGit Newsroom", "description": "An agent session asked, in the middle of a task, to add a repository. The prompt showed three fields, owner, repository and access, and two buttons, Decline and Allow once. It did not say which session was asking, why, what the session would be able to do afterwards that it could not do before, or what would happen on a no. The session was one of several, and one of them was working on a vault holding confidential data. This article reads that prompt through the Agent Behaviour Policy, where a permission prompt is a request to change the grant mid-session and a barrier whose strength is the information the person is given; sets it against what courts, regulators and research have said about decisions taken without the facts, from Montgomery's consent forms and the red hand rule to GDPR's informed consent, token human oversight, and the moral crumple zone; lists the other prompts that asked without a why and the fixes that worked, from Apple's purpose strings and Microsoft's number matching to the CNIL's rule that refusing must be as easy as accepting; puts Anthropic's own figures on how often people approve agent prompts beside them; and proposes a why card, a prompt that carries its reason, its change in reach, its cost, the path if declined, and a record, and that turns into a risk acceptance when the risk rises.", "url": "https://newsroom.sgit.ai/articles/where-is-the-why.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Where is the why? A permission prompt asked me to decide, and kept the reason</p>
+ <h1>Where is the why? A permission prompt asked me to decide, and kept the reason</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-07 &middot; <a href="versions/where-is-the-why.html" title="Every published version of this article, and what changed">article v1.1.1, 3 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.6.84</a> &middot; <span class="chip">agents</span><span class="chip">agent-behaviour-policy</span><span class="chip">human-in-the-loop</span><span class="chip">permission-prompts</span><span class="chip">security-ux</span><span class="chip">consent</span><span class="chip">accountability</span><span class="chip">risk-acceptance</span><span class="chip">claude-code</span><span class="chip">mcp</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> An agent session asked, in the middle of a task, to add a repository. The prompt showed three fields, owner, repository and access, and two buttons, Decline and Allow once. It did not say which session was asking, why, what the session would be able to do afterwards that it could not do before, or what would happen on a no. The session was one of several, and one of them was working on a vault holding confidential data. This article reads that prompt through the Agent Behaviour Policy, where a permission prompt is a request to change the grant mid-session and a barrier whose strength is the information the person is given; sets it against what courts, regulators and research have said about decisions taken without the facts, from Montgomery's consent forms and the red hand rule to GDPR's informed consent, token human oversight, and the moral crumple zone; lists the other prompts that asked without a why and the fixes that worked, from Apple's purpose strings and Microsoft's number matching to the CNIL's rule that refusing must be as easy as accepting; puts Anthropic's own figures on how often people approve agent prompts beside them; and proposes a why card, a prompt that carries its reason, its change in reach, its cost, the path if declined, and a record, and that turns into a risk acceptance when the risk rises.</em></p>
+<figure class="shot" data-shot="why-missing.webp" data-dir="images/" data-alt="What the prompt carried and what it did not: three fields and two buttons on the left; on the right, the six things the person needed to judge the request, none of which were on the screen. Infographic from a screenshot of 7 October 2026."><figcaption>What the prompt carried and what it did not: three fields and two buttons on the left; on the right, the six things the person needed to judge the request, none of which were on the screen. Infographic from a screenshot of 7 October 2026.</figcaption></figure>
+<div class="note"><b>Where this comes from.</b> On 7 October 2026 a prompt appeared asking to add a repository to a Claude Code session. I had several sessions running, and one of them was working on a vault that handles confidential data. My first question was the one the prompt did not answer: why? This article is built from that screenshot and a voice note recorded straight after it. The session that wrote the article did not make the request, and which session did is not known: the prompt did not say. The repository asked for is public. The article is written by an agent running on Claude about a prompt in a Claude product, and it says so here because the question it asks applies to the session writing it.</div>
+<h2>In short</h2>
+<ul>
+<li><b>The prompt asked for a decision and kept the reason.</b> Owner, repository, access level, Decline, Allow once. Not which session, not which step, not the instruction it served, not what changes, not what a no would cost.</li>
+<li><b>Both buttons had a hidden price.</b> Decline breaks a task the person started, with no account of what breaks. Allow makes the person the author of a decision whose basis they could not see.</li>
+<li><b>Read through the policy, a prompt is a grant change.</b> The question is not whether the repository is safe, but what the session becomes once it holds this and what it already holds. Read access to a public repository adds almost nothing. Write access to the same repository, from a session holding confidential data, adds a publishing channel.</li>
+<li><b>The prompt is a real barrier, and a weak one.</b> It is enforced by the host, not the model, so the agent cannot click it. Its strength is the person's judgement, and the person was given three fields to judge with.</li>
+<li><b>The record mostly puts the duty on whoever asks.</b> Consent forms signed routinely, clicks on unexplained buttons, onerous terms in small print and token human sign-offs have each been held not to carry the weight the asker wanted. In practice the blame still lands on the nearest person.</li>
+<li><b>The fixes that worked put the why into the prompt.</b> Purpose strings on phones, number matching and location on sign-in pushes, refusal made as easy as acceptance on cookie banners.</li>
+<li><b>The proposal is a why card.</b> Every field on it is something the agent already knows when it asks. When the risk rises, the card becomes a risk acceptance, with a holder, an interval and a record.</li>
+</ul>
+<h2>The prompt</h2>
+<figure class="shot shot--small" data-shot="why-prompt-screenshot.webp" data-dir="images/" data-alt="The prompt as it appeared on 7 October 2026: &quot;Claude wants to add a repository to this session&quot;, with the owner, the repository, the access level, and two buttons. Screenshot, cropped."><figcaption>The prompt as it appeared on 7 October 2026: "Claude wants to add a repository to this session", with the owner, the repository, the access level, and two buttons. Screenshot, cropped.</figcaption></figure>
+<p>The text was: Claude wants to add a repository to this session. Owner SGit-AI. Repository SGit-AI__Website. Access read. Decline, or Allow once.</p>
+<p>That is everything the person had. The tool the agent calls to make this request, as listed in the session that wrote this article, takes the same three values, owner, repository and access, and nothing else. There is no field for a reason, so there is no reason to show.</p>
+<p>Three things the prompt did right deserve saying first. It asked for read rather than write, the narrower of the two. It is enforced by the host rather than by the model, so the agent cannot approve its own request. And it offered Allow once rather than Allow always. Each of those is a control. None of them is visible to the person as a control, because the prompt does not say what the alternative would have been.</p>
+<h2>The choice it offered</h2>
+<figure class="shot" data-shot="why-dilemma.webp" data-dir="images/" data-alt="Decline breaks the work; Allow buys accountability without information; the third answer, a reason, was not offered. From the voice note of 7 October 2026."><figcaption>Decline breaks the work; Allow buys accountability without information; the third answer, a reason, was not offered. From the voice note of 7 October 2026.</figcaption></figure>
+<p>The person asked the agent to do something, and the agent was getting on with it. The prompt arrived in the middle. Declining stops or derails a task the person started, and nothing on the screen says which step fails, whether the work so far survives, or how to resume. Allowing lets the task continue and makes the person the one who approved it, on the basis of a repository name and the word read.</p>
+<p>Neither is a decision in the sense that matters. It is a choice between two costs that the prompt does not state. The answer that would have removed both costs, a sentence saying why, was not on the screen.</p>
+<h2>The same request, read through the policy</h2>
+<figure class="shot" data-shot="why-abp.webp" data-dir="images/" data-alt="The request through the Agent Behaviour Policy&#x27;s words: the grant before and after, the mandate, the gap, the barrier, the blast radius and the kind of decision, for read access and for write access to the same public repository."><figcaption>The request through the Agent Behaviour Policy's words: the grant before and after, the mandate, the gap, the barrier, the blast radius and the kind of decision, for read access and for write access to the same public repository.</figcaption></figure>
+<p>The <a href="https://riskmandate.ai/abp.html">Agent Behaviour Policy</a> describes an agent with four words: the grant, everything it can technically reach; the mandate, what it is authorised to do; the gap between them; and the barrier that stops the excess. <a href="footprint-and-blast-radius.html">Footprint and blast radius</a> adds two more: what the agent actually did, read afterwards, and what a row would cost if used in full.</p>
+<p>A permission prompt is a request to change the grant in the middle of a session. That reframes the question. It is not "is this repository safe". It is "what does this session become once it holds this as well as what it already holds".</p>
+<p>For read access to a public repository the answer is: very little. The session can read files anyone on the internet can read. The request tool's own documentation, in the session that wrote this, notes that read access to a public repository is often available without attaching anything at all. The blast radius is low and reversible, and the right record is a line in the session card.</p>
+<p>For write access to the same repository the answer is different. A public repository is a publishing channel. A session that already holds a vault key for confidential data, and gains the ability to push to a public repository, has gained an exfiltration path: confidential data in, a public commit out, copied, cached and indexed within minutes. That is not a convenience. It is a risk, and under the policy a change that raises the blast radius of the session as a whole is a decision to accept a risk. <a href="every-risk-is-already-accepted.html">Every risk is already accepted</a> argues that such a decision should name who accepts it, for how long, and what would end it.</p>
+<p>The person could not tell which of these two they were being asked, because the prompt does not show the session's existing reach, and does not say that read was chosen over write or why.</p>
+<p>The barrier, in the policy's terms, is the prompt itself. It is enforced outside the model, which makes it a boundary rather than an expectation. But a boundary whose enforcement is a human judgement is exactly as strong as the information that human is given. Withhold the why, and the boundary becomes a habit.</p>
+<h2>How often people say yes</h2>
+<p>The numbers on that habit are now public, from the vendor of the product in the screenshot.</p>
+<p>In October 2025 Anthropic wrote that sandboxing "safely reduces permission prompts by 84%" in its internal use, and that constant approving "can lead to 'approval fatigue', where users might not pay close attention to what they're approving". In March 2026, introducing auto mode, it wrote that "Claude Code users approve 93% of permission prompts". In August 2026, making auto mode the default from 14 August, it reported a study of 1,053 paid testers in which a single prompt was swapped for a clearly dangerous command: "The testers caught the dangerous command just 13.6% of the time", about 17% early in a session and about 5% after fifty or more prompts. These are vendor-run studies and have not been independently replicated.</p>
+<p>Anthropic's answer is fewer prompts, decided by a classifier. That is a reasonable answer to fatigue, and it has a consequence: the prompts that remain are, by design, the ones the classifier could not settle, which makes them the ones where a person most needs the reason. Anthropic's own write-up of where its classifier fails is close to the argument of this article. The misses, it says, are about "whether a real consent signal in the session actually covers this action"; the classifier "finds approval-shaped evidence and stops short of checking whether it's consent for the blast radius of the action". A request that carried its reason, quoting the instruction it serves, is what would let either a classifier or a person check exactly that.</p>
+<p>On accountability, the clearest statement is an exchange. In August 2025 Checkmarx showed that a malicious command could be hidden in a long Claude Code permission prompt. Anthropic's reply, which Checkmarx published as a screenshot in September 2025, treated it as outside its threat model and said: "Users are responsible for carefully reviewing all permission prompts (including scrolling up to see the entire prompt) before accepting them." Checkmarx's summary of the general problem was that "a human can only respond to what the agent prompts them with".</p>
+<p>The same pattern, approvals that follow a prompt without following the reason, shows up in 2026 preprints on agent permissions: in one, 13 of 16 participants used "Always Allow" simply to dismiss prompts; in another, of 148 overreach actions executed under user-written policies, 133 went through after a person approved them. Both are preprints with small or simulated samples.</p>
+<h2>Who is accountable</h2>
+<figure class="shot" data-shot="why-accountable.webp" data-dir="images/" data-alt="Who carries a decision taken without the information: courts, regulators and research from 1956 to 2023, grouped by where they put the burden. Not legal advice; sources in the Sources section."><figcaption>Who carries a decision taken without the information: courts, regulators and research from 1956 to 2023, grouped by where they put the burden. Not legal advice; sources in the Sources section.</figcaption></figure>
+<p>The question in the voice note was direct: if a person is asked to make a decision and is not given the information to make it, who is liable, the person who clicked or the one who asked? Agents are new to this question. The question is not new. What follows is the shape of the record, not legal advice.</p>
+<p><b>The one who asks, and holds the information, has to disclose it in a usable form.</b> In medicine, the UK Supreme Court in Montgomery (2015) held that a doctor must make the patient aware of material risks, judged from the patient's position, and that the duty is not fulfilled "by bombarding the patient with technical information which she cannot reasonably be expected to grasp, let alone by routinely demanding her signature on a consent form". In contract, Denning's red hand rule (1956) says the more unreasonable a clause, "the greater the notice which must be given of it", and Interfoto (1987) that an onerous term binds only if "fairly brought to the attention" of the other party. Online, the Ninth Circuit in Berman (2022) held that "merely clicking on a button on a webpage, viewed in the abstract, does not signify a user's agreement to anything" unless the user is told what the click means, and in Nguyen (2014) that "the onus must be on website owners to put users on notice". In consumer law, the Consumer Rights Act 2015 says a trader "must ensure" a written term is transparent. In data protection, GDPR Article 7(1) puts the burden of demonstrating consent on the controller, and the EDPB's 2020 guidelines say that without accessible information "user control becomes illusory and consent will be an invalid basis".</p>
+<p><b>A token sign-off is not a human decision.</b> The Article 29 Working Party's guidance on automated decisions says the controller "cannot avoid the Article 22 provisions by fabricating human involvement", and that oversight must be "meaningful, rather than just a token gesture", by someone with "the authority and competence to change the decision". The Court of Justice in SCHUFA (2023) held that a machine output given "a determining role" is an automated decision even when a person signs. The EU AI Act's Article 14 requires that people overseeing high-risk systems be enabled to understand their limits and to "remain aware of the possible tendency of automatically relying or over-relying" on the output; those duties now apply from December 2027 after this year's amendment.</p>
+<p><b>The decider is not excused when they could have asked.</b> In Smith v Van Gorkom (Delaware, 1985), directors who approved a sale after two hours, without seeing the agreement or a valuation, lost the protection of the business judgment rule, which presumes an "informed basis". In UK financial services, a senior manager is liable for a contravention in their area if they "did not take such steps as a person in the senior manager's position could reasonably be expected to take". Both judge the decider on what they could have done. A prompt that offers no way to ask removes most of what they could have done.</p>
+<p><b>In practice, the blame lands on the nearest person.</b> Madeleine Clare Elish named this the moral crumple zone: the human in an automated system "bears the brunt of the moral and legal responsibilities when the overall system malfunctions", protecting the system "at the expense of the nearest human operator". The Post Office Horizon cases are the British example at scale: sub-postmasters had "no way of disputing shortfalls within Horizon", and the Court of Appeal found that the Post Office "effectively sought to reverse the burden of proof".</p>
+<p>Read for a permission prompt, the asker is the agent and the product around it, which hold the context; the decider is the person. The doctrine, across these fields, puts the duty to make the information usable on the asker, and the duty to ask on the decider when asking is possible. In practice, the click is the record, and the click has the person's name on it. Which of the two wins is decided by the design of the prompt.</p>
+<h2>Others who asked without a why, and what fixed it</h2>
+<figure class="shot" data-shot="why-others.webp" data-dir="images/" data-alt="Prompts that asked without a why, and the fixes that worked: purpose strings, number matching and context, refusal as easy as acceptance; and the ones still open, from OAuth scopes to agent prompts. Sources and dates in the article."><figcaption>Prompts that asked without a why, and the fixes that worked: purpose strings, number matching and context, refusal as easy as acceptance; and the ones still open, from OAuth scopes to agent prompts. Sources and dates in the article.</figcaption></figure>
+<p>This is not the first prompt to ask without a reason, and several have been fixed. The fixes have the same shape.</p>
+<p><b>Mobile permissions.</b> Android's own documentation says the system dialog "says what permission your app wants, but doesn't say why", and tells developers to explain why before asking, in context. Apple went further: an app that accesses the camera, the microphone, contacts or location must declare a purpose string, a message that "tells people why the app is requesting access", and without one the access fails and the app can crash. App Review asks that purpose strings "clearly and completely describe your use of the data". The why is a required field, checked before the prompt can be shown.</p>
+<p><b>Sign-in approvals.</b> In September 2022 an attacker who had a contractor's password at Uber kept triggering approval pushes until, in Uber's words, "the contractor accepted one". Microsoft's answer was to put context into the prompt that only the real requester has: number matching, enforced for all Authenticator push notifications from 8 May 2023, and the application name and location of the sign-in shown on the prompt.</p>
+<p><b>Cookie banners.</b> In January 2022 the CNIL fined Google €150 million and Facebook €60 million because "several clicks are required to refuse all cookies, in contrast to a single one to accept them", and ordered a way of refusing "as simple as" accepting. Refusing must not cost more than accepting. The decline path of an agent prompt is the same problem: a person who knows the work survives a no can afford to say no.</p>
+<p><b>The ones still open.</b> Google requires a justification for every sensitive OAuth scope, but the justification goes to Google's reviewers; the person clicking sees "Read, compose, send, and permanently delete all your email from Gmail". GitHub's docs describe the permissions an app requests, and carry a justification only in the fine-grained token approval flow, as an optional field. The Model Context Protocol's specification says users "should understand what each tool does before authorizing its use", but its tool annotations say read-only or destructive, carry no reason, and "should be considered untrusted". And the research on warnings explains what happens meanwhile: 70.2% of Chrome's certificate warnings clicked through across more than 25 million impressions (2013); 51 seconds spent on terms of service that take fifteen minutes to read (2018); 85 to 99% of hospital alarms needing no action, and 80 deaths in 98 alarm-related events reported to the Joint Commission between 2009 and 2012.</p>
+<p>Herley's 2009 paper put the rational version plainly: users' rejection of security advice "is entirely rational from an economic perspective". A prompt that cannot be judged will be clicked. Böhme and Grossklags (2011) called attention "a scarce resource" and every unnecessary prompt a cost imposed on the others who need that attention.</p>
+<h2>The why card</h2>
+<figure class="shot" data-shot="why-card.webp" data-dir="images/" data-alt="A proposal: the same request as a why card, with the session and step, the reason quoting the instruction, the change in reach, the cost, the path if declined, the scope and the record; buttons to allow for the task, decline and continue, ask a question, or park it. The reason shown is illustrative."><figcaption>A proposal: the same request as a why card, with the session and step, the reason quoting the instruction, the change in reach, the cost, the path if declined, the scope and the record; buttons to allow for the task, decline and continue, ask a question, or park it. The reason shown is illustrative.</figcaption></figure>
+<p>Every field on the card is something the agent already knows at the moment it asks. Nothing on it needs a new capability, only that the request carry the context the agent is holding.</p>
+<ul>
+<li><b>Who is asking.</b> The session, the task it was given and when, and the step it is on. With several sessions running, this is the first thing a person needs and the prompt in the screenshot did not have it.</li>
+<li><b>Why.</b> The step that needs the access, and the instruction it serves, quoted. This is the field a classifier or a person needs to check that consent covers the action. It should be required: no reason, no prompt, the way a phone app with no purpose string gets no camera.</li>
+<li><b>What changes.</b> The reach the session gains, shown next to the reach it already holds, and what was not requested. Read, not write, is a control only if the person can see it was a choice.</li>
+<li><b>What it could cost.</b> The worst use of the new reach, and whether it can be undone.</li>
+<li><b>If you decline.</b> What the agent will do instead, and whether the work survives. This is the CNIL's rule applied to agents: declining must not cost more than allowing.</li>
+<li><b>Scope and record.</b> How long the grant lasts, and where the request, the reason and the answer are written. The record pairs the reason given with what the session then did, which is the footprint; a reason that does not match the footprint is a finding.</li>
+<li><b>Buttons.</b> Allow for this task. Decline and continue without it. Ask a question first. Park it and ask at the end. The third is the one the screenshot lacked: a way to ask why.</li>
+</ul>
+<p>When the change raises the blast radius of the session as a whole, write to a public repository from a session holding confidential data being the example, the card should stop being a prompt and become a risk acceptance: who accepts it, for how long, what would end it, recorded as such. The <a href="https://sgit.ai/demos/vaults/risk-acceptance/index.html">risk acceptance vault</a> is a worked example of that record, and <a href="https://riskmandate.ai/acceptable.html">RiskMandate's acceptable-risk page</a> is the product end of it.</p>
+<h2>What this site's own team already does, and what it does not</h2>
+<p>The agent team described in <a href="the-mandate-stack.html">The Mandate Stack</a> asks its person for decisions too, and the format it settled on is close to a why card: a decision draft in the email thread, with the question, lettered options and an answer box, read back on the next run. Its session cards count the tools, files and network calls each session used and flag anything outside the mandate, which is the record half of the card. What it does not have is a required reason on a mid-session grant change: a session that needs a new repository, connector or vault asks the same way the screenshot did. <a href="six-agents-one-inbox.html">Six agents, one inbox</a> and <a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> are the earlier work on fixing grants before a session starts, which is the other way to need fewer prompts.</p>
+<h2>What is not known</h2>
+<ul>
+<li>Which session made the request in the screenshot, and why. The prompt did not say, and nothing recorded it where the person could see.</li>
+<li>Whether the fields of this prompt can be configured by the person or an administrator. The documentation consulted for this article does not describe a reason field.</li>
+<li>How well Anthropic's figures generalise. They are the vendor's own studies; the one independent comment found asked for independent confirmation.</li>
+<li>The law. The cases and rules above are cited for the shape of the reasoning, across several jurisdictions, and none of them has been applied to an agent permission prompt by a court that this research found. This is not legal advice.</li>
+</ul>
+<h2>Threads woven here</h2>
+<ul>
+<li><a href="footprint-and-blast-radius.html">Footprint and blast radius</a> and <a href="https://sgit.ai/docs/briefs/riskmandate-footprint-and-blast-radius.html">the brief that proposed them</a>: the words the policy reading uses, and the record that pairs a reason with what was done.</li>
+<li><a href="every-risk-is-already-accepted.html">Every risk is already accepted</a> and <a href="https://sgit.ai/demos/vaults/risk-acceptance/index.html">the risk acceptance vault</a>: what a grant change becomes when it raises the risk, and how to record it.</li>
+<li><a href="ultimate-insider-three-collisions.html">The ultimate insider</a>: why the infrastructure around agents has not caught up with what they can reach.</li>
+<li><a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop</a>: the same prompts on a laptop, where the grant is the person's whole account.</li>
+<li><a href="the-mandate-stack.html">The Mandate Stack</a> and <a href="the-agent-team-as-it-runs.html">The agent team as it runs</a>: decision drafts and session cards, the nearest thing this site's team has to a why card.</li>
+<li><a href="six-agents-one-inbox.html">Six agents, one inbox</a> and <a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a>: fixing the grant before the session, so fewer grant changes are asked for during it.</li>
+<li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets</a>: the policy as the permission authority, the barrier that would decide grant changes outside the agent.</li>
+<li><a href="https://sgit.ai/docs/briefs/riskmandate-sandbox-twins-and-tokens.html">The sandbox brief</a>: a place where a policy, and a prompt, can be tested rather than read.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>The screenshot and a voice note by Dinis Cruz, 7 October 2026. The repository's visibility was checked against GitHub's public API on the same day.</li>
+<li>Medicine and contract: [Montgomery v Lanarkshire Health Board [2015] UKSC 11](https://supremecourt.uk/uploads/uksc_2013_0136_judgment_fd5635b4cd.pdf), paras 87 to 90; J Spurling Ltd v Bradshaw [1956] 1 WLR 461 and Interfoto Picture Library v Stiletto Visual Programmes [1989] QB 433, quoted from secondary sources; <a href="https://cdn.ca9.uscourts.gov/datastore/opinions/2022/04/05/20-16900.pdf">Berman v Freedom Financial Network, 9th Cir., 5 April 2022</a>; <a href="https://cdn.ca9.uscourts.gov/datastore/opinions/2014/08/18/12-56628.pdf">Nguyen v Barnes &amp; Noble, 9th Cir., 18 August 2014</a>; <a href="https://www.legislation.gov.uk/ukpga/2015/15/section/64">Consumer Rights Act 2015, s.64</a> and <a href="https://www.legislation.gov.uk/ukpga/2015/15/section/68">s.68</a>.</li>
+<li>Data protection and automated decisions: <a href="https://www.legislation.gov.uk/eur/2016/679/article/4/adopted">GDPR Article 4</a> and Article 7; <a href="https://www.edpb.europa.eu/system/files/documents/files/file1/edpb_guidelines_202005_consent_en.pdf">EDPB Guidelines 05/2020 on consent</a>; <a href="https://ec.europa.eu/newsroom/article29/redirection/document/49826">Article 29 Working Party, WP251rev.01</a>; <a href="https://curia.europa.eu/jcms/upload/docs/application/pdf/2023-12/cp230186en.pdf">CJEU SCHUFA, C-634/21, 7 December 2023</a>; EU AI Act, Regulation 2024/1689, Articles 14 and 26, with application dates as amended by Regulation 2026/1744, per <a href="https://cdp.cooley.com/digital-ai-omnibus-delays-key-deadlines-introduces-new-rules/">Cooley, 3 August 2026</a>.</li>
+<li>Decisions by those accountable: Smith v Van Gorkom, 488 A.2d 858 (Del. 1985), from secondary sources; <a href="https://www.legislation.gov.uk/ukpga/2006/46/section/174">Companies Act 2006, s.174</a>; <a href="https://www.legislation.gov.uk/ukpga/2000/8/section/66A">Financial Services and Markets Act 2000, s.66A</a>; <a href="https://www.judiciary.uk/wp-content/uploads/2022/07/Hamilton-Others-v-Post-Office-judgment-230421.pdf">Hamilton v Post Office, 23 April 2021</a>; <a href="https://estsjournal.org/index.php/ests/article/view/260">Elish, "Moral Crumple Zones", Engaging Science, Technology, and Society, 2019</a>.</li>
+<li>Prompts and their fixes: <a href="https://developer.apple.com/documentation/uikit/requesting-access-to-protected-resources">Apple, requesting access to protected resources</a> and <a href="https://developer.apple.com/app-store/review/guidelines/">App Review Guidelines</a>; <a href="https://developer.android.com/training/permissions/requesting">Android, request runtime permissions</a>; <a href="https://www.uber.com/newsroom/security-update/">Uber, security update, September 2022</a>; Microsoft number matching as reported by <a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-enforces-number-matching-to-fight-mfa-fatigue-attacks/">BleepingComputer, 8 May 2023</a> and <a href="https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-additional-context">additional context on Microsoft Learn</a>; the CNIL decisions of January 2022 as reported by <a href="https://www.scl.org/12482-french-data-protection-regulator-fines-google-and-facebook-for-making-it-harder-to-refuse-cookies-than-to-accept-them/">SCL, 11 January 2022</a>; <a href="https://developers.google.com/identity/protocols/oauth2/production-readiness/sensitive-scope-verification">Google, sensitive scope verification</a>; <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">GitHub, managing personal access tokens</a>; <a href="https://modelcontextprotocol.io/specification/2026-07-28">Model Context Protocol specification, 2026-07-28</a>.</li>
+<li>Research on warnings and attention: <a href="https://www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_akhawe.pdf">Akhawe and Felt, "Alice in Warningland", USENIX Security 2013</a>; <a href="https://cups.cs.cmu.edu/soups/2012/proceedings/a3_Felt.pdf">Felt et al., SOUPS 2012</a>; Obar and Oeldorf-Hirsch, "The biggest lie on the Internet", Information, Communication &amp; Society, 2018; <a href="https://gwern.net/doc/cs/security/2009-herley.pdf">Herley, NSPW 2009</a>; Böhme and Grossklags, NSPW 2011; <a href="https://www.usenix.org/legacy/event/upsec/tech/full_papers/cranor/cranor.pdf">Cranor, UPSEC 2008</a>; The Joint Commission, Sentinel Event Alert 50, April 2013.</li>
+<li>Agent prompts: <a href="https://www.anthropic.com/engineering/claude-code-sandboxing">Anthropic, "Beyond permission prompts", 20 October 2025</a>; <a href="https://www.anthropic.com/engineering/claude-code-auto-mode">Anthropic, "How we built Claude Code auto mode", 25 March 2026</a>; <a href="https://claude.com/blog/auto-mode-default-in-claude-code">Anthropic, auto mode as the default, 7 August 2026</a>; <a href="https://code.claude.com/docs/en/permission-modes">Claude Code permission modes</a>; <a href="https://checkmarx.com/zero-post/bypassing-ai-agent-defenses-with-lies-in-the-loop/">Checkmarx, "Lies-in-the-Loop", 15 September 2025</a>; the preprints arXiv 2605.11360 and 2608.27443.</li>
+</ul>
+<p><em>Drafted from a screenshot and a voice note by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 7 October 2026, with a research agent in the same session verifying the cases, rules and figures against primary sources where they could be reached; the ones taken from secondary sources are marked as such. The screenshot is the real prompt; the why card is a proposal, and the reason on it is illustrative. No key or token appears in any figure or file.</em></p>
+<p><em>© 2026 Dinis Cruz. This article's own text is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You're free to share and adapt it, as long as you give credit. Quoted material and linked sources keep their own licences.</em></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#where-is-the-why">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="ultimate-insider-three-collisions.html">The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up</a> <span class="dim">Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.</span></li><li><a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has</a> <span class="dim">An OS has two hard walls, the kernel and the user; an agent on a laptop runs inside the one marked you, so the agents run in the cloud with a vault as shared drive.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li><li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser</a> <span class="dim">The 2026 personal agents read through behaviour policy and encryption, and a design on vaults, an attested enclave and the browser where no vendor holds a key.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="the-human-in-the-loop.html">The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why</a> <span class="dim">Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.</span></li><li><a href="the-policy-draws-the-liability-line.html">The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt</a> <span class="dim">An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.</span></li><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li><li><a href="agency-is-not-a-yes.html">Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source</a> <span class="dim">A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.</span></li><li><a href="an-agent-desktop-by-the-minute.html">A locked-down desktop for an agent, by the minute, is still hard to rent</a> <span class="dim">Nine properties a safe agent desktop needs, nine products against them, the macOS day-long lease, and the startup credits that would pay for testing it.</span></li><li><a href="ai-baseline-control-framework.html">An open AI governance framework, and what its licence let us build</a> <span class="dim">Twenty open AI governance controls under CC BY-SA, why the licence matters, and the same day's conversion into a graph, a database and a walk down to EU law.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 39 &middot; <a href="../for/make.html#r=39">start a reading list with it</a></p>
+</section>
+<sg-meter view="page" kind="article" date="2026-10-07" topics="agents-and-policy" title="Where is the why? A permission prompt asked me to decide, and kept the reason, SGit Newsroom"></sg-meter>
+<section class="athreads" id="desk"><h2>From the desk</h2><ul><li><a href="collections/how-agents-decide.html">How agents decide, and when they stop</a> <span class="dim">collection, 6 articles</span></li></ul></section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/where-is-the-why.jpg" download>where-is-the-why.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-is-the-why.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

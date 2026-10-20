@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from, SGit Newsroom</title>
+<meta name="description" content="The walkthrough told you how to build the agentic inbox in phases. This is the stack as it runs today, written up from the agents' own field notes so that it can be referenced and copied: twelve Claude agents on dedicated accounts, each with one focus and a behaviour policy; encrypted vaults the host cannot read, driven by sgit, as the only memory; messages between agents as files in each other's mailroom; a CRM that is one folder per person with provenance on every fact and a hash on every message; a conductor that runs the team four times a day with a security role first and last; and a mailbox the agents draft in but never send from. It then does two things the field notes did not. It names the security and privacy properties as properties, client-side encryption with keys handed out of band, read keys that cannot write, a leak check before every commit, rotation by new vault, a record that is read afterwards against the policy, and a three-way distinction between public, private-ish and personal information in which the team's vaults are built to hold the first two and refuse the third, with rules that can be scoped per customer and written to protect the person on the other end. And it maps every piece of the setup to the idea on this site that it implements, vaults, behaviour policies, fractal semantic graphs, memory as files, so that nothing in it has to be taken on trust. It ends on the question the setup leaves open, who gives the mandate over information, which gets a document of its own.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html">
+<meta property="og:title" content="The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from, SGit Newsroom">
+<meta property="og:description" content="The walkthrough told you how to build the agentic inbox in phases. This is the stack as it runs today, written up from the agents' own field notes so that it can be referenced and copied: twelve Claude agents on dedicated accounts, each with one focus and a behaviour policy; encrypted vaults the host cannot read, driven by sgit, as the only memory; messages between agents as files in each other's mailroom; a CRM that is one folder per person with provenance on every fact and a hash on every message; a conductor that runs the team four times a day with a security role first and last; and a mailbox the agents draft in but never send from. It then does two things the field notes did not. It names the security and privacy properties as properties, client-side encryption with keys handed out of band, read keys that cannot write, a leak check before every commit, rotation by new vault, a record that is read afterwards against the policy, and a three-way distinction between public, private-ish and personal information in which the team's vaults are built to hold the first two and refuse the third, with rules that can be scoped per customer and written to protect the person on the other end. And it maps every piece of the setup to the idea on this site that it implements, vaults, behaviour policies, fractal semantic graphs, memory as files, so that nothing in it has to be taken on trust. It ends on the question the setup leaves open, who gives the mandate over information, which gets a document of its own.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-agent-team-as-it-runs.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-agent-team-as-it-runs.jpg">
+<link rel="alternate" type="text/markdown" href="the-agent-team-as-it-runs.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from, SGit Newsroom", "headline": "The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from, SGit Newsroom", "description": "The walkthrough told you how to build the agentic inbox in phases. This is the stack as it runs today, written up from the agents' own field notes so that it can be referenced and copied: twelve Claude agents on dedicated accounts, each with one focus and a behaviour policy; encrypted vaults the host cannot read, driven by sgit, as the only memory; messages between agents as files in each other's mailroom; a CRM that is one folder per person with provenance on every fact and a hash on every message; a conductor that runs the team four times a day with a security role first and last; and a mailbox the agents draft in but never send from. It then does two things the field notes did not. It names the security and privacy properties as properties, client-side encryption with keys handed out of band, read keys that cannot write, a leak check before every commit, rotation by new vault, a record that is read afterwards against the policy, and a three-way distinction between public, private-ish and personal information in which the team's vaults are built to hold the first two and refuse the third, with rules that can be scoped per customer and written to protect the person on the other end. And it maps every piece of the setup to the idea on this site that it implements, vaults, behaviour policies, fractal semantic graphs, memory as files, so that nothing in it has to be taken on trust. It ends on the question the setup leaves open, who gives the mandate over information, which gets a document of its own.", "url": "https://newsroom.sgit.ai/articles/the-agent-team-as-it-runs.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</p>
+ <h1>The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-06 &middot; updated 2026-10-06 &middot; <a href="versions/the-agent-team-as-it-runs.html" title="Every published version of this article, and what changed">article v1.0.1, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.6.76</a> &middot; <span class="chip">agents</span><span class="chip">agent-behaviour-policy</span><span class="chip">riskmandate</span><span class="chip">vaults</span><span class="chip">sgit</span><span class="chip">email-fs</span><span class="chip">crm</span><span class="chip">provenance</span><span class="chip">encryption</span><span class="chip">privacy</span><span class="chip">data-classes</span><span class="chip">fractal-semantic-graphs</span><span class="chip">claude</span><span class="chip">google-workspace</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The walkthrough told you how to build the agentic inbox in phases. This is the stack as it runs today, written up from the agents' own field notes so that it can be referenced and copied: twelve Claude agents on dedicated accounts, each with one focus and a behaviour policy; encrypted vaults the host cannot read, driven by sgit, as the only memory; messages between agents as files in each other's mailroom; a CRM that is one folder per person with provenance on every fact and a hash on every message; a conductor that runs the team four times a day with a security role first and last; and a mailbox the agents draft in but never send from. It then does two things the field notes did not. It names the security and privacy properties as properties, client-side encryption with keys handed out of band, read keys that cannot write, a leak check before every commit, rotation by new vault, a record that is read afterwards against the policy, and a three-way distinction between public, private-ish and personal information in which the team's vaults are built to hold the first two and refuse the third, with rules that can be scoped per customer and written to protect the person on the other end. And it maps every piece of the setup to the idea on this site that it implements, vaults, behaviour policies, fractal semantic graphs, memory as files, so that nothing in it has to be taken on trust. It ends on the question the setup leaves open, who gives the mandate over information, which gets a document of its own.</em></p>
+<figure class="shot" data-shot="team-the-picture.webp" data-dir="images/" data-alt="The whole stack in one line: a phone, twelve sessions, encrypted vaults, a Drafts folder, and people. Below the line, the four properties that make it safe to copy. Infographic from the team&#x27;s field notes of 6 October 2026; no live data."><figcaption>The whole stack in one line: a phone, twelve sessions, encrypted vaults, a Drafts folder, and people. Below the line, the four properties that make it safe to copy. Infographic from the team's field notes of 6 October 2026; no live data.</figcaption></figure>
+<div class="note"><b>What this is.</b> The description of a setup that is running, as the agents who run it wrote it down on 6 October 2026, with the pieces they left out added back: why each part is the shape it is, which earlier article argued for it, and what it protects against. It is written to be referenced by somebody setting up the same thing. The step-by-step version is <a href="replicating-the-agentic-inbox.html">Replicating the agentic inbox</a>; the argument about policy rows is <a href="six-agents-one-inbox.html">Six agents, one inbox</a>. This page sits between them: the system, its properties, and its honest gaps. It says nothing about other people's agents. That comparison, and a design for a personal agent built on these properties, is <a href="a-personal-agent-that-keeps-your-secrets.html">the next article</a>.</div>
+<h2>In short</h2>
+<ul>
+<li><b>Twelve agents, one focus each, and one thing none of them can do.</b> Every agent is a Claude session on a dedicated account with a written brief and an Agent Behaviour Policy it reads before it works. Eleven of the twelve policies forbid the same thing: sending.</li>
+<li><b>The only memory is encrypted vaults.</b> Collaboration, CRM and LinkedIn are each a vault, driven by the sgit command line. Files are encrypted on the agent's side before they leave; the host stores ciphertext and never holds a key. Keys are given to each session out of band and are never written into a file.</li>
+<li><b>Agents talk in files.</b> A message between agents is an email file dropped into the recipient's mailroom folder in the shared vault. The recipient moves it to its inbox, acts, and files it as done. Nothing calls anything.</li>
+<li><b>Memory is one folder per person.</b> The CRM is plain JSON and Markdown: a record, an append-only ledger, every message word for word with provenance and a hash, meeting notes, a graph of interests against what has been made that meets them, and a generated summary nobody edits by hand.</li>
+<li><b>A conductor runs the team four times a day</b>, one step per agent of up to twelve minutes, with a security role first and last. A run that dies leaves a lock, and the next run notices.</li>
+<li><b>The properties are the point.</b> Identity and encryption are strong barriers by construction. The record detects. The policy text is weak and the setup says so. The vaults are built to hold public and private-ish information and to refuse personal information, and the rules can be scoped to one customer or written to protect the person on the other end of the email.</li>
+<li><b>Nothing here is new to this site.</b> Every piece implements an idea already argued for: dedicated accounts, behaviour policies, vaults the host cannot read, messages as files, fractal graphs, memory with provenance, the footprint read afterwards. This page maps each piece to its argument.</li>
+</ul>
+<h2>The picture</h2>
+<p>The person talks to the agents from a phone: voice notes, screenshots, chat, and decisions as one tap on a card. The agents work in their own cloud sessions. They keep everything as files in vaults they encrypt before anything leaves, and they leave email as drafts in a mailbox of their own. The person reads the drafts and presses send. Replies come back to the same mailbox and are captured into the CRM with provenance and a hash. A conductor runs every agent once, four times a day, and writes a debrief.</p>
+<div class="tablewrap"><table>
+<tr><th>On 6 October 2026</th><th></th></tr>
+<tr><td>Agents</td><td>12</td></tr>
+<tr><td>Scheduled runs</td><td>4 a day on weekdays</td></tr>
+<tr><td>People in the CRM</td><td>71</td></tr>
+<tr><td>Emails an agent sent on its own</td><td>0</td></tr>
+</table></div>
+<p>That last row is the one the whole design is organised around.</p>
+<h2>Accounts: the account is the blast radius</h2>
+<p>Nothing the agents use belongs to the person. Each identity is separate, so a mistake stays inside one account.</p>
+<ul>
+<li><b>A dedicated Google Workspace</b> for the company, with a mailbox for the agents on the company's domain. The agents never touch the person's own inbox, which has years of history in it; theirs was empty on day one and holds only what people have since sent to it.</li>
+<li><b>A dedicated Claude Team account.</b> Each agent is a session in it, with only the connectors it needs. The connectors are enabled by the organisation owner and connected by the agent's account, so the grants live there and nowhere else.</li>
+<li><b>Encrypted vaults</b> on the SG/Send platform, driven by sgit. Files are encrypted on the agent's side before they leave, and the server only holds ciphertext. The keys are handed to each session by the person, out of band, and never written into a file.</li>
+<li><b>A separate personal agent</b> for the person's private life, on the person's own domain, with its own mailbox, lane and vault. Personal matters do not enter the team vault.</li>
+</ul>
+<figure class="shot" data-shot="team-accounts.webp" data-dir="images/" data-alt="Four separate identities, and the boundaries between them that hold by construction. A session running as one account cannot reach what another holds; a vault key handed to one session does not open another vault. The strongest barriers in the setup cost a few pounds a month each. Fictional detail; no address beyond the agents&#x27; published one."><figcaption>Four separate identities, and the boundaries between them that hold by construction. A session running as one account cannot reach what another holds; a vault key handed to one session does not open another vault. The strongest barriers in the setup cost a few pounds a month each. Fictional detail; no address beyond the agents' published one.</figcaption></figure>
+<p>This is the first control because it is the one that does not depend on anyone behaving. A policy can ask an agent not to look; an account boundary means there is nothing there to see. <a href="six-agents-one-inbox.html">Six agents, one inbox</a> is the long version, including what a Workspace administrator can lock per organisational unit once each agent is a unit of its own.</p>
+<h2>The agents</h2>
+<p>Each agent is a role with one focus, a written brief, and an Agent Behaviour Policy. The names are short and lowercase; the detail is in each policy.</p>
+<div class="tablewrap"><table>
+<tr><th>Agent</th><th>Focus</th><th>Cannot</th></tr>
+<tr><td>@inbox</td><td>Everything coming in: triage, summaries, labels, filing replies into the CRM</td><td>send</td></tr>
+<tr><td>@drafts</td><td>Everything going out, as Gmail drafts, from a registered email file</td><td>send; change what an email says</td></tr>
+<tr><td>@crm</td><td>Contacts, campaigns, the email register, relationship decisions</td><td>send</td></tr>
+<tr><td>@briefs</td><td>Research, dossiers, email text, meeting briefs and debriefs</td><td>send; touch Zapier</td></tr>
+<tr><td>@abp</td><td>The policy vocabulary and each agent's policy</td><td>send; publish</td></tr>
+<tr><td>@dev</td><td>Tools, the vault UI, the postmaster, the run setup</td><td>send</td></tr>
+<tr><td>@security</td><td>Checks first and last in every run; reports, never fixes</td><td>send, except one hold email</td></tr>
+<tr><td>@conductor</td><td>The scheduled run: one step per agent, a debrief at the end</td><td>change scheduled tasks</td></tr>
+<tr><td>@webSummit</td><td>Event planning: who, when, why</td><td>send; book</td></tr>
+<tr><td>@zapier</td><td>An experimental channel (WhatsApp, Discord) through Zapier</td><td>go live without approval</td></tr>
+<tr><td>@linkedin</td><td>LinkedIn conversations, in a vault of their own</td><td>post</td></tr>
+<tr><td>@newsroom</td><td>A sibling site's team, working from outside this one</td><td>read this team's vault</td></tr>
+</table></div>
+<figure class="shot" data-shot="team-roster.webp" data-dir="images/" data-alt="The roster on 6 October 2026, grouped by what each role touches: the mailbox, the memory, the running of the team, the world outside. The last column is the row that does the work, and it is the same word in eleven of twelve rows."><figcaption>The roster on 6 October 2026, grouped by what each role touches: the mailbox, the memory, the running of the team, the world outside. The last column is the row that does the work, and it is the same word in eleven of twelve rows.</figcaption></figure>
+<p>The split into roles is not neatness. Each role gets a policy short enough to check, and the policies differ in the one place that matters: who touches the mailbox, and how. Every account has the same reach to the mailbox. One role reads it, one role writes drafts into it, and none sends from it.</p>
+<h2>How they talk: email, but as files</h2>
+<p>Agents do not call each other. They write messages as <code>.eml</code> files into each other's mailroom folder inside the shared vault, a convention the team calls Email-FS lite. The recipient moves a message to its inbox, acts, and files it as done. Every message has a sender, a recipient, a kind (request, update, notice) and references to the files it is about.</p>
+<pre class="shell">
+mail/
+  mailroom/&lt;agent&gt;/NNN-subject.eml   new, unread; anyone may add
+  &lt;agent&gt;/inbox/  done/  outbox/      each agent's own folders
+  &lt;agent&gt;/ABP.md                      its policy, read before work
+  &lt;agent&gt;/issues/open/ …              its task list
+conductor/agents.json                 the run order
+runs/index.jsonl                      every run, with each step's outcome
+security/findings.jsonl               what the checks found
+</pre>
+<p>Email as the message format is deliberate. Any mail tool and any agent can read it; a thread has references built in; and a person can open the folder and understand what was asked without learning a schema. The vault keeps every version, so the conversation between the agents is a record from the first message, and it can be read later with a read key by someone who holds no write credential. The shape is the one described in <a href="https://sgit.ai/docs/append-lane-messaging.html">append-lane messaging</a>, and <a href="https://sgit.ai/docs/agent-contact.html">Agent Contact</a> is the same idea between sites rather than within a team.</p>
+<p><b>The conductor</b> runs the team four times a day on weekdays. Security opens; then drafts, inbox, briefs, CRM, events, ABP and dev each get one step of up to twelve minutes; then security closes. Each step is a sub-agent that reads its state, does one kind of work, writes its state, and stops. Late mail waits for the next run. Nothing loops. A run that dies leaves a lock, and the next run notices and says so.</p>
+<h3>One agent's session, start to end</h3>
+<ol>
+<li><b>Check for a security hold.</b> If one is open, stop before anything else.</li>
+<li><b>Open a change snapshot</b>, so the team can see what this session changed.</li>
+<li><b>Pull the vaults</b> with sgit. Always commit before pulling: the team reports that a pull overwrites uncommitted edits in the local working tree, which two agents learned by losing work. The two-branch model's guarantee is about other agents' committed work, which a pull cannot clobber; the local uncommitted tree is a different matter, and the behaviour is reported by the team here rather than yet filed against the CLI.</li>
+<li><b>Deliver the mailroom</b>, read the messages, do the work. Write only in your own folders and new mailroom files.</li>
+<li><b>Run the leak check</b> before every commit. No key, token or password may be in any file.</li>
+<li><b>Commit, pull, push</b>, one commit per cycle.</li>
+<li><b>End with a card.</b> A script reads the session transcript afterwards and counts tools, tokens, files and network calls, then flags anything outside the agent's policy. The snapshot is closed with the card attached.</li>
+</ol>
+<figure class="shot" data-shot="team-mailroom.webp" data-dir="images/" data-alt="Left: the mailroom convention and a message as a file. Right: the seven steps of a session and the card that ends it. Along the bottom, the four rules that are never negotiated. Fictional paths and counts."><figcaption>Left: the mailroom convention and a message as a file. Right: the seven steps of a session and the card that ends it. Along the bottom, the four rules that are never negotiated. Fictional paths and counts.</figcaption></figure>
+<p>The card is the footprint, measured after the fact from the record, which is what <a href="footprint-and-blast-radius.html">Footprint and blast radius</a> proposed. The first one the team ran flagged two writes as outside the mandate; on inspection the policy allowed them and the script had misread it. Both findings were useful, and both are in the record.</p>
+<h2>The CRM: memory is one folder per person</h2>
+<p>The CRM is a vault of plain JSON and Markdown files. There is no database. Each person gets a folder; every exchange with them is a file; a timeline links the files; a graph says what they care about and what has been made that meets it.</p>
+<pre class="shell">
+contacts/&lt;person&gt;/
+  contact.json            the record: role, stage, priority, next step, interests
+  comms/ledger.jsonl      the timeline: one line per event, append-only
+  comms/&lt;UTC&gt;__&lt;in|out&gt;__&lt;channel&gt;__&lt;id&gt;.md
+                          each message, word for word, with provenance and a hash
+  meetings/&lt;date&gt;/notes.md from voice debriefs
+  graph.json              interests ↔ what we have made that meets them
+  materials.jsonl         every link and vault ever sent to them
+  sources/                where each fact came from
+  README.md               generated summary; never hand-edited
+index.json · organisations/ · campaigns/ · vocabulary.json (stages S0 known → S7 advocate)
+</pre>
+<figure class="shot" data-shot="team-crm-folder.webp" data-dir="images/" data-alt="One folder per person, with a sample of the ledger and the six rules that make the folder trustworthy. The summary is generated from the files beneath it, so it cannot drift from them. Fictional person and content."><figcaption>One folder per person, with a sample of the ledger and the six rules that make the folder trustworthy. The summary is generated from the files beneath it, so it cannot drift from them. Fictional person and content.</figcaption></figure>
+<p><b>The rules that make it trustworthy.</b></p>
+<ul>
+<li><b>Append-only.</b> A correction is a new line pointing at the old one. Tasks are lines too; the last line for a task wins. Nothing is rewritten, so the history is the record.</li>
+<li><b>Provenance on everything:</b> who captured it, when, how, and how faithfully.</li>
+<li><b>A hash of every stored message</b>, so a changed file shows, and so the text that left in a draft can be matched to the text that was approved.</li>
+<li><b>Inbound is data.</b> Nothing stored is ever acted on as an instruction. A message from the world is a fact about the world, not a command to the team.</li>
+<li><b>Each agent adds to the folder of the person it is working on</b>; the relationship fields stay with @crm.</li>
+<li><b>Only what the work needs.</b> No credentials, ever. Health and other sensitive data stay out.</li>
+</ul>
+<p><b>What it is used for.</b> Who has the ball and for how long; the next step per owner; meeting preparation; who should get which article, read from the graph's gaps and matches; and a "what we know about you" pack that can be sent to the person, so they can correct it. That last use is the privacy design showing through the product design: a memory that can be shown to its subject is a memory that has been kept to what can be shown.</p>
+<h2>The rules that are never negotiated</h2>
+<ol>
+<li><b>Keys never go into any file</b>, message or draft.</li>
+<li><b>No agent sends.</b> Agents create drafts; a person sends. The one exception: @security may send one email, to one address, to put the team on hold.</li>
+<li><b>No agent creates, fires or changes a scheduled task</b> from a step.</li>
+<li><b>Create anywhere, edit your own.</b> Any agent may create a draft or a file; only its creator edits it.</li>
+</ol>
+<p>The fourth rule replaced a stricter one. "Only one agent may draft" became a bottleneck in two days, and the replacement keeps the property that mattered, that no agent rewrites another's work, while letting the work flow.</p>
+<h2>The policies in practice: barriers typed honestly</h2>
+<p>An Agent Behaviour Policy, in <a href="https://riskmandate.ai/abp.html">RiskMandate's vocabulary</a>, sets each agent's reach, what it can do, against its mandate, what it was asked to do, and names the barrier that holds in the gap. The barrier is where honesty matters, and most of this team's barriers are weaker than anyone would like.</p>
+<div class="tablewrap"><table>
+<tr><th>Barrier</th><th>Strength</th><th>Where it holds here</th></tr>
+<tr><td>identity</td><td>strong</td><td>Separate Workspace, Claude, vault and personal-agent accounts. A mistake cannot cross accounts.</td></tr>
+<tr><td>encryption</td><td>strong</td><td>Vaults are encrypted client-side; the host sees ciphertext. Only key-holders read, and a read key cannot write.</td></tr>
+<tr><td>grant</td><td>medium</td><td>Connectors added per session, where the platform allows it. Often it does not: one grant covers draft and send.</td></tr>
+<tr><td>record</td><td>medium</td><td>sgit history, append-only ledgers, session cards. Nothing is hidden, but a record detects rather than stops.</td></tr>
+<tr><td>policy</td><td>weak</td><td>The policy text and the agent's own judgement. Many rows, including "no agent sends", rely on it.</td></tr>
+</table></div>
+<p>The five words are the team's own grading. RiskMandate's published vocabulary types a barrier as one of four kinds, boundary, setting, expectation or none, and says that only a boundary is a control, because "a control bounds a grant only if it is enforced by something the grant does not include." Mapped onto that: identity and encryption are boundaries; a grant is a setting the account could flip; the record and the policy are expectations, one of which at least leaves evidence. The published page still calls the reach the grant and the gap the delta; the words differ, the structure does not.</p>
+<figure class="shot" data-shot="team-barriers.webp" data-dir="images/" data-alt="The five barriers graded, and the six things the policies caught or showed in the first weeks. Reading the table top to bottom: what touches identity and keys is enforced; what touches mail is a prompt, a setting or a hope."><figcaption>The five barriers graded, and the six things the policies caught or showed in the first weeks. Reading the table top to bottom: what touches identity and keys is enforced; what touches mail is a prompt, a setting or a hope.</figcaption></figure>
+<p><b>What the policies caught, or showed.</b></p>
+<ul>
+<li><b>A connector appeared mid-session</b>, giving reach to thousands of apps through Zapier. Three agents flagged it as outside their policy before using it.</li>
+<li><b>Calendar invites have no draft state.</b> An agent that can create an event can invite anyone, at once. "A person sends" cannot be written for calendars, so whoever grants the calendar accepts that risk, and the policy now says so.</li>
+<li><b>A discarded Gmail draft is gone</b>, with no log the agent can read. The record has a hole where the platform has one.</li>
+<li><b>Gmail drafts strip images.</b> The workaround on offer was to send pictures through Zapier: a 9,000-app reach to send one picture. Workarounds are where permissions grow, and this one was refused.</li>
+<li><b>Mistakes get recorded too.</b> One agent made an accidental calendar call. It failed and nothing was sent, and the agent logged the attempt against its own policy.</li>
+</ul>
+<p>The honest column is the one that says <em>policy</em>. Those rows are where the next incident comes from and where the next piece of tooling goes, which is why <a href="every-risk-is-already-accepted.html">Every risk is already accepted</a> insists the policy say who accepted each gap and for how long.</p>
+<h2>The security properties, as properties</h2>
+<p>The field notes describe mechanisms. It is worth restating them as properties, each with what it protects against, because that is the form in which somebody else can check whether their copy has them.</p>
+<div class="tablewrap"><table>
+<tr><th>Property</th><th>Mechanism</th><th>What it protects against</th></tr>
+<tr><td>The host cannot read the memory</td><td>Every file, filename, commit message and branch name is encrypted on the agent's side before it leaves: AES-256-GCM with per-file keys derived by HKDF-SHA256, the key hierarchy rooted in a vault key that never travels to the server. The same primitives run in the browser, byte for byte, under a versioned contract with test vectors.</td><td>A breach, a subpoena or an insider at the host yields ciphertext. What the host does see, and the <a href="https://sgit.ai/security/index.html">security model page</a> says so, is the vault id, object sizes, timing and volume.</td></tr>
+<tr><td>A reader cannot write</td><td>A read key is derived one way from the vault key and cannot be turned back into it. Readers get read keys.</td><td>A leaked read key caps the damage at disclosure of what that vault holds.</td></tr>
+<tr><td>A writer can be given only a slot</td><td>An append lane is a write-only token: the holder can add a message and cannot read, list or change anything.</td><td>A form on a public page or a sibling team can report in without being able to read the record.</td></tr>
+<tr><td>Keys never touch a file</td><td>Keys are handed to each session out of band; the leak check refuses any commit containing a key shape, including other people's; the security role scans for them first and last in every run.</td><td>The commonest leak, a key in a log or a capture.</td></tr>
+<tr><td>A leaked write key means a new vault</td><td>History holds what redaction removes, so rotation is a fresh vault seeded from the current files, the old one frozen.</td><td>The false comfort of a redacted file whose history still holds the secret.</td></tr>
+<tr><td>The account is the blast radius</td><td>Dedicated Workspace, Claude and personal-agent accounts; vault keys per session.</td><td>A compromised or confused agent reaches one account's worth of things.</td></tr>
+<tr><td>No agent sends</td><td>Drafts only, with the hash of each draft on record; one named exception with one recipient and a hold behind it.</td><td>An agent, or whoever is driving it through a poisoned message, speaking for the person.</td></tr>
+<tr><td>The team can be stopped</td><td>The hold file: while it is open, the conductor refuses to open a run, every step refuses to start, and every interface shows it. Only a person releases it.</td><td>An incident that outruns the people.</td></tr>
+<tr><td>Inbound is data</td><td>Nothing stored is acted on as an instruction.</td><td>Prompt injection through the mailbox or a connected document.</td></tr>
+<tr><td>Everything is read afterwards</td><td>sgit history, append-only ledgers, the session card against the policy.</td><td>Not knowing what happened; the near miss going unrecorded.</td></tr>
+</table></div>
+<p>Two of these are stronger than they look and two are weaker. The host's blindness is a property of the mathematics, not of a promise, and it holds against the host's own staff. The one-way read key is the reason the team can publish read keys on purpose. The leak check and the hold are only as good as the scripts that run them, which is why the tool that checks the team is held to the team's own standard, in the way <a href="https://sgit.ai/docs/briefs/code-review-graphs-in-the-repository.html">the review brief</a> asks for. And "no agent sends" is, on today's platform, a prompt and a policy rather than a block, which the barriers table above says plainly.</p>
+<p>Three limits the platform's own <a href="https://sgit.ai/docs/limitations.html">limitations page</a> states, and which apply to this team: commit authorship is not yet signed, so in a shared vault an agent's identity comes from its branch rather than a signature; there is no key revocation, so rotating a read key protects future commits and not the objects someone already fetched; and the lane that would let two vaults message each other without a person in between is not wired end to end, which is why that row appears under what is not working.</p>
+<h2>The privacy properties: three classes of information</h2>
+<p>The second thing the field notes did not say in so many words is the distinction the setup runs on. Information is handled in three classes, and the class decides where it may live.</p>
+<figure class="shot" data-shot="team-data-classes.webp" data-dir="images/" data-alt="Public, private-ish, personal. The team&#x27;s vaults are built to hold the first two and refuse the third, and the rules can be scoped per customer or written to protect the person on the other end. The question in the black bar gets its own document."><figcaption>Public, private-ish, personal. The team's vaults are built to hold the first two and refuse the third, and the rules can be scoped per customer or written to protect the person on the other end. The question in the black bar gets its own document.</figcaption></figure>
+<p><b>Public</b> is what the person or the organisation has already published, or would publish without a second thought: articles, talks, published vaults and their read keys, public profiles and roles, what has been made and sent to people. It may live in any team vault, on the sites, in the CRM's materials and graph.</p>
+<p><b>Private-ish</b> is the working record of a professional relationship: not secret, not for broadcast. Correspondence sent to the agents' mailbox, the stage and next step, who has the ball, meeting notes from voice debriefs. It lives in the CRM vault, one folder per person, with provenance and a hash, readable only by key-holders, and correctable by the person through the "what we know about you" pack.</p>
+<p><b>Personal</b> is health, family, finances, private life: anything confidential enough that a leak would hurt the person rather than embarrass the team. It is not captured, even when it arrives in a message. Credentials of any kind are never stored. Personal matters belong to the separate personal agent, on the other side of the account wall. The policy says so, the security role's checks look for it, and the recipient's privacy outranks the team's completeness.</p>
+<p>Most of what a company agent handles is public or nearly so. Holding to that is what bounds the worst case before any encryption is counted: the worst a leaked read key to the CRM vault could disclose is the working record of professional relationships, and nothing that would hurt the people in it.</p>
+<p>Two things follow from the way the setup is built, and both are available to anyone who copies it.</p>
+<p><b>Rules can be per customer.</b> Because the policy is a file per agent and the memory is a folder per person, a rule can be scoped to one relationship: what may be kept about this organisation, who on the team may read it, what must never be summarised onward, how long it is held. A customer who asks for a tighter rule gets a line in a file, not a product roadmap.</p>
+<p><b>Rules can protect the recipient.</b> The same mechanism writes rules in the other direction: what the person on the other end of the email would expect, rather than what the team would find useful. "Capture only what the work needs" is a rule about their privacy, enforced on our side. So is "inbound is data". So is the pack that shows them what is held.</p>
+<h2>The logic: files, graphs and a state machine</h2>
+<p>Why is it this shape? Three ideas, each argued for earlier on this site, and the setup is what they look like when run together.</p>
+<p><b>Files, not a database.</b> Every piece of state is a file in a vault: a message, a policy, a ledger line, a run record, a finding. Files can be encrypted one at a time, versioned, diffed, read with a read key, hashed, and understood by a person with no tooling. A database would have given the team one query language and taken away all of that. The interfaces the team built on top, a card for the phone, a board of who is waiting on whom, were each built in an afternoon because the data was already files, which is the argument of <a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception</a>.</p>
+<p><b>Graphs inside graphs.</b> The CRM's <code>graph.json</code> is a small <a href="introducing-fractal-semantic-graphs.html">fractal semantic graph</a>: a person's interests as nodes, the things made that meet them as nodes, and typed edges between them, so that "who should get this article" is a query and not a memory. Zoom out and the same grammar describes the team: agents, the files they own, the messages between them, the policies that bind them. Zoom in and a message's references are edges to the files it is about. One grammar at every level is what lets one set of tools and one set of checks serve all of them, and it is why the memory can be shown to the person it is about: a graph with provenance on every node is a graph that can be audited by its subject. <a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport</a> is the argument for memory as files with provenance built in; the CRM is that argument with 71 folders.</p>
+<p><b>Claude as a state machine.</b> Each role reads its state from files, does one kind of work, writes its state back as files, and stops. It does not converse; it runs a step. This is what makes the conductor possible, and it is what makes the footprint readable: a step that reads and writes files leaves exactly the record its files are. The walkthrough article introduced the idea; the conductor is the idea on a schedule.</p>
+<figure class="shot" data-shot="team-pieces.webp" data-dir="images/" data-alt="Every piece of the setup, and the writing on this site that argued for it, in four colours: policy and control, vaults and keys, graphs and memory, record and interfaces. Nothing in the setup has to be taken on trust; each piece has an argument and the argument has a page."><figcaption>Every piece of the setup, and the writing on this site that argued for it, in four colours: policy and control, vaults and keys, graphs and memory, record and interfaces. Nothing in the setup has to be taken on trust; each piece has an argument and the argument has a page.</figcaption></figure>
+<h2>Build your own: the first week</h2>
+<ol>
+<li><b>Accounts.</b> A separate Workspace mailbox for your agent, a separate Claude account, and one vault. Never connect your own inbox.</li>
+<li><b>One agent, one policy.</b> An inbox agent that reads, labels and drafts. Write its policy before you connect anything: reach, mandate, gap, barriers, with the barriers typed honestly.</li>
+<li><b>Your memory.</b> A folder per person for your first twenty people, then a ledger line for every email, call and meeting. Decide now which class of information you will not hold.</li>
+<li><b>Voice debriefs.</b> Two minutes after each call; your agent turns them into notes and tasks.</li>
+<li><b>Then split roles</b>, inbox, drafts, CRM, and let them talk through files as above. Add a schedule last, and a security role before the schedule.</li>
+</ol>
+<p>The detailed phases, with the Workspace and Claude Team settings that cost time, are in <a href="replicating-the-agentic-inbox.html">Replicating the agentic inbox</a>. For the policy itself, <a href="https://riskmandate.ai/">RiskMandate.ai</a> has the vocabulary and a workshop that writes a first one in a few minutes.</p>
+<h2>What is not working yet</h2>
+<p>The field notes end with this list and so does this article, because a description of a running system that leaves it out is a brochure.</p>
+<ul>
+<li><b>Two registers disagree</b> on how many emails have been sent, so the dashboards under-count until the registers are reconciled.</li>
+<li><b>Messaging between vaults still needs a person</b> to paste text, because the encrypted lane between them needs re-keying.</li>
+<li><b>One agent, @dev, holds most of the open work</b>, and much of it needs a live session rather than a scheduled step.</li>
+<li><b>There is no daily brief channel to the person.</b> WhatsApp got the account suspended in testing, and Discord failed twice.</li>
+<li><b>Most barriers are policy-only.</b> The platform does not let the team remove send tools per agent, so "no agent sends" is a prompt and a promise. The property that would make it a block, a separate permission authority that holds the credentials and decides each action, does not exist in this setup yet.</li>
+</ul>
+<h2>The question this leaves open</h2>
+<p>Something a person sent to one of us was sent to a person. It was not sent to a team of agents, and it was not sent to whatever those agents might pass it to next: another agent, a summary, a dashboard, another organisation. The setup's answer so far is to hold less and to say what it holds, which is what the three classes do. It is not an answer to the question underneath, which is who gives the mandate over a piece of information, and whether the recipient of an email has the authority to hand it to an agent at all. That question is bigger than this setup and gets a document of its own. What this page can say is that the mechanisms to enforce whatever the answer turns out to be, a policy per agent, a rule per relationship, provenance on every fact and a memory that can be shown to its subject, are already running.</p>
+<h2>Threads woven here</h2>
+<ul>
+<li><a href="replicating-the-agentic-inbox.html">Replicating the agentic inbox</a>: the phases, from one session to the team described here.</li>
+<li><a href="six-agents-one-inbox.html">Six agents, one inbox</a>: the account as the blast radius, and what an administrator can lock per organisational unit.</li>
+<li><a href="footprint-and-blast-radius.html">Footprint and blast radius</a>: the session card is this article's footprint, read afterwards against the mandate.</li>
+<li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a>: test the reach before writing the mandate; the attachments finding is the case in point.</li>
+<li><a href="every-risk-is-already-accepted.html">Every risk is already accepted</a>: the weak rows in the barriers table are accepted risks, and the policy should say by whom.</li>
+<li><a href="introducing-fractal-semantic-graphs.html">Introducing fractal semantic graphs</a> and <a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport</a>: the grammar of the CRM's graph, and memory as files with provenance.</li>
+<li><a href="the-wall-under-the-reply.html">The wall under the reply</a>: the ledger is the state of a relationship the way the reply tail is the state of a thread.</li>
+<li><a href="the-identity-we-wanted-to-give-the-agents.html">The identity we wanted to give the agents</a>: why the agents have Workspace identities, and where secrets must not live.</li>
+<li><a href="https://sgit.ai/docs/credentials.html">Vault credentials</a>, <a href="https://sgit.ai/docs/append-lane-messaging.html">append-lane messaging</a> and <a href="https://sgit.ai/docs/agent-contact.html">Agent Contact</a>: the key classes, the write-only lane, and messages between agents and sites.</li>
+<li><a href="https://sgit.ai/docs/briefs/code-review-graphs-in-the-repository.html">Code review graphs in the repository</a>: the tool that checks the team is held to the team's standard.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>The team's field notes, <em>How our agent team works, and how to build your own</em>, written by the briefs role on 6 October 2026 for Dinis Cruz, from which the roster, the folder layouts, the session steps, the barrier grades, the findings and the list of what is not working are taken. The counts are the notes' counts on that date.</li>
+<li><a href="https://riskmandate.ai/abp.html">RiskMandate.ai, the Agent Behaviour Policy</a>: reach, mandate, gap, barriers.</li>
+<li>The sgit documentation on this site for the crypto stack and the key classes: <a href="https://sgit.ai/docs/what-is-sgit.html">What is sgit</a>, <a href="https://sgit.ai/docs/credentials.html">Vault credentials</a>, <a href="https://sgit.ai/docs/limitations.html">Limitations</a>.</li>
+</ul>
+<p><em>Drafted from the team's field notes and a voice memo by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Fable 5.1, claude-fable-5-1) in the sgit.ai site session, on 6 October 2026. The figures are infographics drawn from the notes with fictional names, paths and sample content; no contact is named beyond the agents' published address, and no key or token appears in any figure or file.</em></p>
+<p><em>© 2026 Dinis Cruz. This article's own text is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You're free to share and adapt it, as long as you give credit. Quoted material and linked sources keep their own licences.</em></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#the-agent-team-as-it-runs">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="replicating-the-agentic-inbox.html">Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send</a> <span class="dim">How to copy a working agentic email setup in phases: a mailbox and Claude seat of the agent's own, one session with a policy, then roles talking in files.</span></li><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li><li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser</a> <span class="dim">The 2026 personal agents read through behaviour policy and encryption, and a design on vaults, an attested enclave and the browser where no vendor holds a key.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception: the inbox in 2026, where every message has its own universe</a> <span class="dim">Every message has a graph, so it can be shaped for the reader's moment; a custom interface per moment is now how interfaces get made, and each gets a policy.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one</a> <span class="dim">Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.</span></li><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="the-wall-under-the-reply.html">The wall under the reply: end an email with the state of the thread, not the thread</a> <span class="dim">End an email reply with the state of the thread for this reader, not the quoted wall: decided, open, next, who is on copy, with links to the record.</span></li><li><a href="the-identity-we-wanted-to-give-the-agents.html">The identity we wanted to give the agents: a week of design, the line in Google's terms, and why login plus secrets is still too hard</a> <span class="dim">A week of designing identities for agents and users met Google's terms; what survived is a passkey-unlocked keyring and a gap nobody sells.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-book-for-one-reader.html">A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read</a> <span class="dim">A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.</span></li><li><a href="the-man-behind-the-curtain.html">The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next</a> <span class="dim">Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.</span></li><li><a href="from-send-to-sgit.html">From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults</a> <span class="dim">Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.</span></li><li><a href="the-agents-write-too.html">The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it</a> <span class="dim">The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.</span></li><li><a href="the-human-in-the-loop.html">The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why</a> <span class="dim">Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.</span></li><li><a href="the-policy-draws-the-liability-line.html">The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt</a> <span class="dim">An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.</span></li><li><a href="from-a-spreadsheet-to-a-folder-per-person.html">From a spreadsheet to a folder per person: how to run your contacts the way our agents do, with Google Drive, Gmail and the Claude app, before you touch a vault</a> <span class="dim">A walkthrough from a spreadsheet CRM to one Drive folder per person, worked by Claude under a six-line policy, with five exercises, before any vault is needed.</span></li><li><a href="authority-outside-the-model.html">Authority outside the model: an answer to Satya Nadella on models as insider risks, principle by principle, with what we run, what we ship and what we plan</a> <span class="dim">Satya Nadella's seven principles for models as insider risks, answered one by one: what we run, what is design, and the five things the list leaves out.</span></li><li><a href="a-mac-of-the-agents-own.html">A Mac of the agent's own: a business plan for agent desktops, what Apple's licence allows, and three behaviour policies</a> <span class="dim">A business plan for a Mac of the agent's own: what Apple's licence allows, a desktop built from vaults per run, and three behaviour policies for one agent.</span></li><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li><li><a href="how-i-work-with-claude.html">How I work with Claude: one session per topic, agents with names, and memory you curate</a> <span class="dim">A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.</span></li><li><a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</a> <span class="dim">Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.</span></li><li><a href="knowing-when-to-stop.html">Knowing when to stop: what experience gives people, and what we have to design into agents</a> <span class="dim">Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.</span></li><li><a href="agency-is-not-a-yes.html">Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source</a> <span class="dim">A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.</span></li><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li><li><a href="every-mistake-added-a-rule.html">Every mistake added a rule: complexity, agents, and the way back to shipping</a> <span class="dim">When every agent mistake adds a rule, complexity wins: map the process, move each piece right as a small shipped component, and keep the rigour for the work.</span></li><li><a href="where-is-the-why.html">Where is the why? A permission prompt asked me to decide, and kept the reason</a> <span class="dim">A prompt asked for a decision and kept the reason. Read through the policy, the law on uninformed consent, and the fixes that worked: put the why in the prompt.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop: chat, Cowork and Code in the cloud, a vault as the shared drive, and the two walls an operating system has</a> <span class="dim">An OS has two hard walls, the kernel and the user; an agent on a laptop runs inside the one marked you, so the agents run in the cloud with a vault as shared drive.</span></li><li><a href="the-deck-i-could-not-download.html">The deck I could not download: an author-first home for presentations, as a business plan somebody else can build</a> <span class="dim">One download offered as a subscription, an author paid nothing, and a design for the service the author would have chosen: vaults, keys, seven roles, 85% to the author.</span></li><li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser</a> <span class="dim">The 2026 personal agents read through behaviour policy and encryption, and a design on vaults, an attested enclave and the browser where no vendor holds a key.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 32 &middot; <a href="../for/make.html#r=32">start a reading list with it</a></p>
+</section>
+<sg-meter view="page" kind="article" date="2026-10-06" topics="agents-and-policy vaults-and-method" title="The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from, SGit Newsroom"></sg-meter>
+<section class="athreads" id="desk"><h2>From the desk</h2><ul><li><a href="desk/the-week-to-7-october.html">The week to 7 October: the agent team, written up from the inside</a> <span class="dim">the week, 2026-10-07</span></li><li><a href="desk/create-anywhere-edit-your-own.html">Create anywhere, edit your own: a rule learned in the inbox, applied to the newsroom</a> <span class="dim">thread, 2026-10-07</span></li><li><a href="collections/what-the-human-brings.html">What the human brings</a> <span class="dim">collection, 4 articles</span></li><li><a href="collections/behaviour-policy-in-practice.html">Behaviour policy in practice</a> <span class="dim">collection, 11 articles</span></li></ul></section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-agent-team-as-it-runs.jpg" download>the-agent-team-as-it-runs.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-agent-team-as-it-runs.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

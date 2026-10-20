@@ -1,0 +1,110 @@
+{
+ "slug": "when-is-the-vault-actually-used",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 450,
+   "line": "The vault is used in three of twelve steps",
+   "para": "In Mondweep Chakravorty's SGit × Ruflo run, the vault is written in step 5, read in step 8 and read and rejected in step 11. It sits on one machine, inside the adapter, and Ruflo knows nothing about it. That is what a recovery copy should look like; what it does not yet show is the vault leaving the machine.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 129,
+   "line": "Written, read, rejected: one machine, inside the adapter",
+   "para": "The vault is written in step 5, read in 8 and rejected in 11, protected in 6 and surviving 7. It is encrypted SGit objects on one machine, one vault per checkpoint, inside the adapter. Ruflo's hive-mind, policy state and vector search are unused, and what is missing is the vault leaving the machine.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "answers",
+   "label": "Six short answers",
+   "words": 310,
+   "line": "The vault is a sealed recovery copy, used rarely",
+   "para": "The vault is a recovery copy of Ruflo's memory database, sealed with fingerprints of the data, the ABP and the compiled policy, stored as encrypted SGit objects with keys apart. The adapter, a local MCP server at version 0.2, implements it. The ABP checks the adapter's tools, while Ruflo's own command line, in steps 3, 9 and 10, bypasses it.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "map",
+   "label": "The component map",
+   "words": 84,
+   "line": "Two paths: Ruflo's command line, and the gated adapter",
+   "para": "The test script reaches Ruflo's command line, which reads and writes the memory file directly, and the adapter's tools: checkpoint, inspect, restore and close_run, three of them used. Each tool call passes a fail-closed policy gate, a pinned copy of Ruflo's evaluator, before reaching the SGit library. Everything happens on one machine's disk.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "step-5",
+   "label": "Step 5: the vault is written",
+   "words": 232,
+   "line": "Each checkpoint records which policy was in force",
+   "para": "The adapter takes a consistent SQLite backup of Ruflo's memory, fingerprints it, and stores it in a new SGit vault; only the encrypted bare store leaves private staging, and nothing is pushed. The manifest records the ABP and compiled rules' hashes, which bind evidence to a mandate but are not signatures. A restore can be tied to the governing rules.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "step-8",
+   "label": "Step 8: the vault is read",
+   "words": 97,
+   "line": "A fresh process restores the database byte for byte",
+   "para": "A brand-new adapter process restores the checkpoint into a new workspace, fresh-runner, with a SHA-256 identical to step 5. The code checks the ciphertext digest, decrypts with the private key record, checks the manifest, database digest and SQLite soundness, and only then promotes it. It never overwrites an existing workspace.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "step-11",
+   "label": "Step 11: the vault is read, and refuses",
+   "words": 83,
+   "line": "A digest check refuses the tampered vault before decryption",
+   "para": "One encrypted object is altered and a restore tried. The ABP allows it, but the adapter compares the stored ciphertext's digest with the one recorded at checkpoint and refuses with \"Checkpoint ciphertext integrity mismatch\". No tampered workspace is created, and SGit is never asked to decrypt the altered copy.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "step-6",
+   "label": "Steps 6 and 7: protected, then left standing",
+   "words": 72,
+   "line": "The vault is protected, then outlives the project's deletion",
+   "para": "In step 6, closing the run would delete memory, needs approval that is not given, and the run stops with the checkpoint retained. In step 7 the project and Ruflo's memory file are deleted, but the vault and keys survive in folders outside it, as step 8 confirms.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "where",
+   "label": "Where the vault lives",
+   "words": 140,
+   "line": "It survives the project's deletion, not a lost machine",
+   "para": "Encryption happens on the machine and the ciphertext stays there; no remote push is performed, and remote sync is a listed follow-up. The next step I want is pushing to a vault server that holds only ciphertext and restoring on another machine. One vault, ten agents already measures that pattern for this site.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "three",
+   "label": "Is three steps of twelve a weakness?",
+   "words": 127,
+   "line": "Three steps of twelve is the right shape",
+   "para": "A recovery copy should be touched only when saving and restoring; touched every step it would be working memory. The key finding is that Ruflo knows nothing about the vault: the adapter wraps its memory file through MCP, so the pattern could wrap any tool with file memory, but is only as complete as the adapter's reach.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "next",
+   "label": "Where to go next",
+   "words": 58,
+   "line": "Next: the paths that bypass the adapter's policy",
+   "para": "The policy guards the door; the command line uses the window covers steps 3, 9 and 10, where Ruflo's own command line writes and reads the memory file without passing the ABP. Readers can also step through the run, with a diagram per step, or return to the walkthrough.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 70,
+   "line": "Drawn from screen and code, not a cryptography review",
+   "para": "Anything beyond the screen and the code is marked inferred, with dashed arrows. It is not a review of SGit's cryptography, since tampering is caught by the adapter's digest check, nor a criticism of a laptop proof of concept. Ruflo's unused parts were outside the test's scope and are not judged.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 126,
+   "line": "Sources: the video, the code and the analysis",
+   "para": "Mondweep Chakravorty's SGit × Ruflo video of 17 October 2026, his MIT-licensed mondweep/sgit-ruv-memory code read at its 16 October commit. Also an architecture addendum made by Claude from on-screen content and checked by this site's agent, Ruflo itself, and the related One vault, ten agents and SGit is a standard.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

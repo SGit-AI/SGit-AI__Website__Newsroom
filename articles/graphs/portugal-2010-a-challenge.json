@@ -1,0 +1,138 @@
+{
+  "slug": "portugal-2010-a-challenge",
+  "teaser": "My 2010 IBWAS keynote in Lisbon, slide by slide: twelve actions for Portugal, more of which came true than I expected, mostly from Brussels.",
+  "topics": [
+    "news-and-evidence",
+    "startups-and-strategy"
+  ],
+  "core_idea": "The December 2010 IBWAS keynote proposed five focuses and twelve actions to treat software security like health and safety, from ethical hacking and score cards to liability, disclosure and paying for open source, and challenged Portugal to become the Switzerland of hacking; sixteen years later liability, disclosure and HTTPS arrived, mostly through slow EU regulation rather than fear, while the Portugal challenge is still to do.",
+  "nodes": [
+    {
+      "id": "talk",
+      "label": "IBWAS'10 keynote",
+      "kind": "artefact",
+      "summary": "Lisbon, December 2010; 168 slides."
+    },
+    {
+      "id": "focuses",
+      "label": "Five focuses",
+      "kind": "claim",
+      "summary": "Respect for software; security as intelligence and advantage."
+    },
+    {
+      "id": "actions",
+      "label": "Twelve actions",
+      "kind": "method",
+      "summary": "Ethical hacking, score cards, liability, disclosure, open source."
+    },
+    {
+      "id": "health",
+      "label": "Like health and safety",
+      "kind": "concept",
+      "summary": "A minimum quality, by law."
+    },
+    {
+      "id": "fear",
+      "label": "The fear section",
+      "kind": "claim",
+      "summary": "Disasters would move governments."
+    },
+    {
+      "id": "liability",
+      "label": "Software liability",
+      "kind": "example",
+      "summary": "Product Liability Directive, December 2026."
+    },
+    {
+      "id": "disclosure",
+      "label": "Disclosure",
+      "kind": "example",
+      "summary": "The EUVD; CRA reporting from September 2026."
+    },
+    {
+      "id": "switzerland",
+      "label": "The Switzerland of hacking",
+      "kind": "question",
+      "summary": "Portugal had nothing to lose."
+    },
+    {
+      "id": "mechanism",
+      "label": "Regulation, not fear",
+      "kind": "claim",
+      "summary": "What actually moved governments."
+    }
+  ],
+  "edges": [
+    {
+      "from": "talk",
+      "to": "focuses",
+      "rel": "produces"
+    },
+    {
+      "from": "talk",
+      "to": "actions",
+      "rel": "produces"
+    },
+    {
+      "from": "actions",
+      "to": "health",
+      "rel": "depends-on"
+    },
+    {
+      "from": "liability",
+      "to": "actions",
+      "rel": "answers"
+    },
+    {
+      "from": "disclosure",
+      "to": "actions",
+      "rel": "answers"
+    },
+    {
+      "from": "fear",
+      "to": "mechanism",
+      "rel": "contrasts"
+    },
+    {
+      "from": "talk",
+      "to": "switzerland",
+      "rel": "leads-to"
+    },
+    {
+      "from": "mechanism",
+      "to": "liability",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "portugal-2016-hacking-portugal",
+      "portugal-2024-genai-in-portuguese",
+      "judo-for-small-countries",
+      "open-source-is-not-free"
+    ],
+    "pages": [],
+    "sites": [
+      "https://wiki.owasp.org/images/0/0d/Dcruz.pdf",
+      "https://diniscruz.blogspot.com/2011/01/keynote-at-owasp-ibwas-conference-lots.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "There are a lot of thought provoking ideas in there, and I don't expect that some of them will become reality any time soon.",
+      "why": "What I thought in 2011."
+    },
+    {
+      "text": "Health and safety for software is arriving the way health and safety arrived for everything else: through liability and reporting duties, not through a single disaster.",
+      "why": "What I got wrong."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pt-2010-slides.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pt-2010-slides.webp",
+      "caption": "Twelve slides from the IBWAS 2010 keynote in Lisbon: the title, the five proposed focuses, the twelve proposed actions such as allowing ethical hacking, score cards, procurement requirements, rewriting computer laws and open-sourcing end-of-life applications, application security as health and safety, a country-wide fire drill, and Portugal as the Switzerland of hacking.",
+      "kind": "comparison"
+    }
+  ]
+}

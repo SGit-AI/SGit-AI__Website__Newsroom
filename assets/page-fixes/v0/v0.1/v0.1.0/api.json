@@ -1,0 +1,21 @@
+{
+ "name": "page-fixes",
+ "version": "0.1.0",
+ "description": "Small fixes a reader applies to the page in front of them, exposed as a JS API at window.__tools.page.",
+ "global": "window.__tools.page",
+ "ready_event": "tool:ready",
+ "environment": "browser",
+ "methods": [
+  {"name": "list", "async": false, "params": [], "returns": "[{ name, title, on }]", "description": "The fixes this page offers, and which are on."},
+  {"name": "apply", "async": false, "params": [{"name": "name", "type": "string", "required": true}, {"name": "on", "type": "boolean", "required": false, "default": true}], "returns": "list()", "description": "Turn a fix on or off."},
+  {"name": "toggle", "async": false, "params": [{"name": "name", "type": "string", "required": true}], "returns": "list()", "description": "Flip a fix."},
+  {"name": "reset", "async": false, "params": [], "returns": "list()", "description": "Every fix off, and forget them for this site."}
+ ],
+ "events": [
+  {"name": "tool:ready", "detail": "{ name: 'page' }"},
+  {"name": "page-fixes:change", "detail": "{ name, on }"}
+ ],
+ "fixes": ["reading", "bigger", "contrast", "spacing", "outline", "markdown"],
+ "storage": "localStorage key page-fixes:<host>, kept in the reader's browser",
+ "licence": "Apache-2.0"
+}

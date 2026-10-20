@@ -1,0 +1,162 @@
+{
+  "slug": "ten-questions-one-graph",
+  "teaser": "Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.",
+  "topics": [
+    "graphs-and-knowledge",
+    "agents-and-policy"
+  ],
+  "core_idea": "Each of Phil Venables' ten acid-test questions for a CISO's management tool needs the whole company connected as one graph, and each ends in a decision someone must hold; risk acceptance supplies that structure, and a synthetic twin in a vault answers all ten with the plot, the evidence and the decisions traced to the board.",
+  "nodes": [
+    {
+      "id": "phil",
+      "label": "Ten acid-test questions",
+      "kind": "claim",
+      "summary": "Insight, not dashboards, from measured data."
+    },
+    {
+      "id": "graph",
+      "label": "Every question is a graph question",
+      "kind": "concept",
+      "summary": "None answered from one part alone."
+    },
+    {
+      "id": "whodunit",
+      "label": "The answer becomes obvious",
+      "kind": "concept",
+      "summary": "Fade what is not relevant; the plot is left."
+    },
+    {
+      "id": "accept",
+      "label": "Risk acceptance",
+      "kind": "method",
+      "summary": "A holder, a chain to the board, accept, fund or fix."
+    },
+    {
+      "id": "twin",
+      "label": "The Thistlewood twin",
+      "kind": "artefact",
+      "summary": "An invented retailer as one graph."
+    },
+    {
+      "id": "decisions",
+      "label": "Every answer is a decision",
+      "kind": "concept",
+      "summary": "29 proposed, each with one holder."
+    },
+    {
+      "id": "abp",
+      "label": "Agents with behaviour policies",
+      "kind": "method",
+      "summary": "Reach compared with mandate."
+    },
+    {
+      "id": "backtest",
+      "label": "Measured, then back-tested",
+      "kind": "method",
+      "summary": "The model checked against last year."
+    },
+    {
+      "id": "federation",
+      "label": "Context graph federation",
+      "kind": "concept",
+      "summary": "No shared schema needed."
+    }
+  ],
+  "edges": [
+    {
+      "from": "phil",
+      "to": "graph",
+      "rel": "leads-to"
+    },
+    {
+      "from": "graph",
+      "to": "whodunit",
+      "rel": "produces"
+    },
+    {
+      "from": "accept",
+      "to": "decisions",
+      "rel": "produces"
+    },
+    {
+      "from": "twin",
+      "to": "graph",
+      "rel": "extends"
+    },
+    {
+      "from": "twin",
+      "to": "decisions",
+      "rel": "produces"
+    },
+    {
+      "from": "abp",
+      "to": "twin",
+      "rel": "extends"
+    },
+    {
+      "from": "backtest",
+      "to": "twin",
+      "rel": "extends"
+    },
+    {
+      "from": "federation",
+      "to": "graph",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-graph-companies",
+      "governs-enforces-attests",
+      "inside-the-thistlewood-twin"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.philvenables.com/post/a-cisos-ideal-management-tool",
+      "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html",
+      "https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "No question can be answered from one part of the company.",
+      "why": "The claim."
+    },
+    {
+      "text": "someone has to accept, fund or fix, and their boss should see it arrive",
+      "why": "How every answer ends."
+    }
+  ],
+  "figures": [
+    {
+      "file": "tt-graph-q9.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tt-graph-q9.webp",
+      "caption": "Question 9 on the Thistlewood twin's graph: who are the humans and agents with the largest blast radius? Everything the answer does not use has faded. What is left is the plot: three identity admins and five deploy agents, the secrets store and staff sign-on they can reach, the risks those open, customer personal data exposed among them, and the path up to the board.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tt-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tt-map.webp",
+      "caption": "Ten questions, one graph. Each of Phil Venables' questions against the parts of the company it has to traverse: risks and holders, controls and cost, processes, systems, suppliers, channels and sales, humans and agents, incidents and causes, acceptances and events. No question is answered by one part alone; all of them are answered by the whole.",
+      "kind": "concept"
+    },
+    {
+      "file": "view-role-risk-map.webp",
+      "url": "https://newsroom.sgit.ai/demos/vaults/risk-graph-explorer/images/view-role-risk-map.webp",
+      "caption": "The role risk map in the Risk Graph Explorer vault, from that earlier work. Every risk is assigned to somebody, and every risk reaches the board: each role shows what it holds and what passes through it on the way up.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tt-graph-q7.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tt-graph-q7.webp",
+      "caption": "Question 7 on the graph: the minimum viable processes, and the most severe plausible scenario they cannot withstand. Ransomware in the warehouse system, run by one supplier with no fallback, stops pick, pack and ship.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tt-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tt-loop.webp",
+      "caption": "From a question to a decision the board can see. Ask; query the graph; see the plot, with what is not relevant faded; decide, accept for an interval, fund or fix, with one holder; record the decision in a vault with its evidence and hash; back-test the model against what happened, and recalibrate. Underneath each step, the work it comes from: fractal semantic graphs, the whodunit view, risk acceptance, sgit vaults, measured evidence.",
+      "kind": "concept"
+    }
+  ]
+}

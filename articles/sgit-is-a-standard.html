@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part, SGit Newsroom</title>
+<meta name="description" content="Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it. People read encrypted git and picture a product with a server in the middle. There is a server, and it is the least interesting part. A vault is a set of encrypted files laid out by a convention: blobs, trees, commits and one mutable pointer per branch, every immutable object named by the SHA-256 of its ciphertext and marked -imm- in its name. Nothing in it has to be discovered: the vault key gives the read key, the read key gives the name of the ref, and the ref leads to the commit, the trees and the file, four plain GETs from any host that answers one. Writing is the same objects plus one compare-and-swap, which is all the API is for. Two independent implementations, the CLI and the browser app, speak it and check each other. So deploying sgit is choosing where the objects live, from a folder to a laptop to a static host to the hosted service, and how fast it is depends on how close they are. That design was not a plan to be minimal: it is what is left when the server cannot read a byte.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/sgit-is-a-standard.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/sgit-is-a-standard.html">
+<meta property="og:title" content="sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part, SGit Newsroom">
+<meta property="og:description" content="Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it. People read encrypted git and picture a product with a server in the middle. There is a server, and it is the least interesting part. A vault is a set of encrypted files laid out by a convention: blobs, trees, commits and one mutable pointer per branch, every immutable object named by the SHA-256 of its ciphertext and marked -imm- in its name. Nothing in it has to be discovered: the vault key gives the read key, the read key gives the name of the ref, and the ref leads to the commit, the trees and the file, four plain GETs from any host that answers one. Writing is the same objects plus one compare-and-swap, which is all the API is for. Two independent implementations, the CLI and the browser app, speak it and check each other. So deploying sgit is choosing where the objects live, from a folder to a laptop to a static host to the hosted service, and how fast it is depends on how close they are. That design was not a plan to be minimal: it is what is left when the server cannot read a byte.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/sgit-is-a-standard.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/sgit-is-a-standard.jpg">
+<link rel="alternate" type="text/markdown" href="sgit-is-a-standard.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part, SGit Newsroom", "headline": "sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part, SGit Newsroom", "description": "Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it. People read encrypted git and picture a product with a server in the middle. There is a server, and it is the least interesting part. A vault is a set of encrypted files laid out by a convention: blobs, trees, commits and one mutable pointer per branch, every immutable object named by the SHA-256 of its ciphertext and marked -imm- in its name. Nothing in it has to be discovered: the vault key gives the read key, the read key gives the name of the ref, and the ref leads to the commit, the trees and the file, four plain GETs from any host that answers one. Writing is the same objects plus one compare-and-swap, which is all the API is for. Two independent implementations, the CLI and the browser app, speak it and check each other. So deploying sgit is choosing where the objects live, from a folder to a laptop to a static host to the hosted service, and how fast it is depends on how close they are. That design was not a plan to be minimal: it is what is left when the server cannot read a byte.", "url": "https://newsroom.sgit.ai/articles/sgit-is-a-standard.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part</p>
+ <h1>sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-16 &middot; <a href="versions/sgit-is-a-standard.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.80</a> &middot; <span class="chip">sgit</span><span class="chip">standards</span><span class="chip">git</span><span class="chip">vaults</span><span class="chip">encryption</span><span class="chip">architecture</span><span class="chip">caching</span><span class="chip">static-hosting</span><span class="chip">open-source</span><span class="chip">deployment</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Git won not because of GitHub but because it is a standard: a way of laying out objects that any tool, any host and any person can read, and that GitHub, GitLab and a folder on a laptop all implement. sgit is the same kind of thing, and I think that is the most important thing to understand about it. People read encrypted git and picture a product with a server in the middle. There is a server, and it is the least interesting part. A vault is a set of encrypted files laid out by a convention: blobs, trees, commits and one mutable pointer per branch, every immutable object named by the SHA-256 of its ciphertext and marked -imm- in its name. Nothing in it has to be discovered: the vault key gives the read key, the read key gives the name of the ref, and the ref leads to the commit, the trees and the file, four plain GETs from any host that answers one. Writing is the same objects plus one compare-and-swap, which is all the API is for. Two independent implementations, the CLI and the browser app, speak it and check each other. So deploying sgit is choosing where the objects live, from a folder to a laptop to a static host to the hosted service, and how fast it is depends on how close they are. That design was not a plan to be minimal: it is what is left when the server cannot read a byte.</em></p>
+<figure class="shot" data-shot="sd-onehash.webp" data-dir="images/" data-alt="Everything in a vault is one hash away: the vault key gives the read key, the read key gives the ref&#x27;s name by an HMAC, and the ref, the commit, the trees on the path and the blob are plain GETs; reads come from any host that answers a GET, writes need a compare-and-swap, and caching is by name, not by header." data-kind="architecture"><figcaption>Everything in a vault is one hash away: the vault key gives the read key, the read key gives the ref's name by an HMAC, and the ref, the commit, the trees on the path and the blob are plain GETs; reads come from any host that answers a GET, writes need a compare-and-swap, and caching is by name, not by header.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Git is a standard.</b> That is why it won, not any one server.</li>
+<li><b>sgit is one too.</b> Encrypted objects laid out by a convention.</li>
+<li><b>Everything is one hash away.</b> The key gives every name; a file is four GETs.</li>
+<li><b>The name says what can be cached.</b> <code>-imm-</code> is for ever; <code>-muw-</code> is the ref.</li>
+<li><b>Any storage implements the read half.</b> A bucket, a CDN, GitHub Pages, a folder.</li>
+<li><b>The server protects writes.</b> A compare-and-swap, and not much else.</li>
+<li><b>The constraint designed it.</b> A server that cannot read leaves only small designs.</li>
+</ul>
+<h2 id="git">Git is a standard</h2>
+<p>Git is not GitHub. It is a format: blobs, trees, commits and refs, named by their hashes, laid out in a way any tool can read. GitHub, GitLab, a bare repository on a server and a folder on a laptop all implement it, and that is why git survived every centralised system that promised to be faster: your history is not in anyone's product.</p>
+<p>sgit was built the same way on purpose. Git solved the hard problems of history, branching and merging twenty years ago, and the workflows built on them are why it won, so sgit <a href="from-send-to-sgit.html#git">copies git's object model</a> and changes one thing: where the trust sits. Everything is encrypted on the client, and the convention is designed so that nothing about reading a vault needs anyone's help. People read "encrypted git" and picture a product with a server in the middle. There is a server, and it is the least interesting part.</p>
+<h2 id="vault">What a vault is</h2>
+<p>A vault is a set of files laid out by a convention. Four kinds of object, all ciphertext: blobs, the file contents; trees, a folder's encrypted names pointing at blob and tree ids; commits, a tree id, parents, a message and a signature; and one mutable pointer per branch, the ref. Every object except the ref and the branch index is named by the SHA-256 of its own ciphertext, so a name can never point at different bytes, anyone can check an object against its name, and anyone who has fetched one can keep it for ever.</p>
+<p>The name says which is which. An immutable object's id is <code>obj-cas-imm-</code> and a hash; the mutable pointers are <code>ref-pid-muw-</code> and a hash. So anything between the storage and the reader, a browser, a proxy, a CDN, a CI cache, a page on a website, can decide to keep an object for ever by looking at its name, without reading a byte of it and without being told by a header. That is how the vault app in the browser got fast: it caches every <code>-imm-</code> object the first time it sees one and refetches only the ref. sgit.ai's own documentation pages are a vault read that way: <a href="https://sgit.ai/case-studies/live-vault-docs.html">a cold load fetches 18 objects</a>, the next load one 69-byte ref, and a load inside the two-minute freshness window nothing at all.</p>
+<p>It is a trade made on purpose. sgit keeps no deltas between versions of a file; a changed file is a new object. Git stores deltas and has to be told what changed; sgit stores whole objects that anyone can cache without asking.</p>
+<h2 id="one-hash">Everything from one hash</h2>
+<p>What makes it a standard rather than a service is that nothing in a vault has to be discovered. It is all derived from the key:</p>
+<ol>
+<li><b>The vault key</b> gives the vault id and, one way, the read key. The read key cannot be turned back into the write key, so it can be published.</li>
+<li><b>The read key gives the ref's name.</b> In the CLI's code it is the first twelve hex characters of an HMAC of the read key over <code>sg-vault-v1:file-id:ref:</code> and the vault id. The server never told you where the head is; you computed it.</li>
+<li><b>The ref holds the head commit id.</b> The commit holds the tree id; trees hold the ids of blobs and subtrees, with the names encrypted inside them. Ref, commit, the trees on the path, the blob: a file is four kinds of request from its read key, and every one is a plain GET of a fixed path.</li>
+<li><b>Writing is the same objects, PUT in batches,</b> and one compare-and-swap on the ref and the branch index.</li>
+</ol>
+<p>Two independent implementations speak this format: the CLI, and the browser vault app, which the CLI team says sgit.ai's pages reduce to a reader of about ninety lines. A change made in the browser is one the CLI verifies, and the other way round. That is what a standard is: a format with more than one implementation that agree.</p>
+<h2 id="storage">Any storage implements the read half</h2>
+<figure class="shot" data-shot="sd-storage.webp" data-dir="images/" data-alt="Deploying sgit is choosing where the objects live: a folder; a laptop running the hosted image; your own server; a static host such as GitHub Pages; or the hosted service, a Lambda in front of S3 behind CloudFront; from closer and faster to further and shared." data-kind="comparison"><figcaption>Deploying sgit is choosing where the objects live: a folder; a laptop running the hosted image; your own server; a static host such as GitHub Pages; or the hosted service, a Lambda in front of S3 behind CloudFront; from closer and faster to further and shared.</figcaption></figure>
+<p>Because reading is plain GETs of fixed paths, any storage that answers a GET implements the read half of the convention: an S3 bucket, a CDN, GitHub Pages, a folder, Python's one-line file server. <code>sgit clone --transport static</code> reads from any of them, and <code>sgit publish</code> lays a vault out for one. This site <a href="the-homepage-is-a-vault.html">measured the difference</a>: 317 milliseconds a request through the vault API, against 44 for a small file from GitHub Pages.</p>
+<p>The write half needs the one thing plain storage does not give you, a compare-and-swap on the ref, and that is what the API is for. Strip the convention down and the API has two jobs: protect writes, with an access token and the compare-and-swap, and shorten reads a little, with batches of fifty objects and a listing that makes a cold full clone fast. Everything else is storage.</p>
+<p>So deploying sgit is choosing where the objects live, and every option is shipped: a folder, with <code>--transport local</code>; a laptop, with <code>sgit serve</code> running the hosted service's own image in Docker, Podman or a plain Python process; your own server, one container with a disk or a bucket; a static host, read-only; or the hosted service, a Lambda in front of S3 behind CloudFront. And how fast sgit is depends on how close they are. On <a href="one-vault-ten-agents.html">the vault behind this newsroom</a>, a one-folder clone is 13 seconds hosted and 0.8 seconds from a local server; on ruv.sgit.ai's hive runs, on a local server, every operation takes between 0.4 and 1.5 seconds, most of it starting Python and deriving the key. "How fast is sgit" is the wrong question. The right one is where the storage is, and how close.</p>
+<h2 id="cache">A cache you can compute</h2>
+<p>Four GETs is cheap, but a page that serves one record a thousand times a minute does not want to walk trees. So the convention has a cache layer, shipped: <code>sgit cache add &lt;path&gt;</code> declares a path, and every push keeps an encrypted cache object for it at a location derived from the read key and the path. A reader with only the vault id and the read key computes where to look, makes one batch request for the ref and the candidates, checks the commit inside against the ref, and has the file with no walk. A miss or a stale entry falls back to the ordinary walk, so correctness never depends on the cache; losing one is a performance problem, never a correctness one.</p>
+<p>This is Scion's "derived data", built by the writer instead of a server, and named by the key instead of indexed by it.</p>
+<h2 id="client">Why the work stays on the client</h2>
+<p><a href="scion-and-sgit.html">Scion</a> moves history, blame and merges to the server. sgit keeps them on the client, and would even if the server could read the data, for the reason git did: a merge is a workflow step that needs the context of the change, the history and the policy that says who may merge what. In ruv.sgit, every worker in a hive writes to its own branch and the host merges them under the run's written mandate; in the vault behind this newsroom, ten agents meet on a named branch and resolve on the clone that has the conflict in front of it. Scion's own post concedes the point from the other side: it could not keep a merge queue at its rate, so "concurrent changes can conflict, but Claude can typically fix these conflicts". The merge went back to the agent there too.</p>
+<p>And sgit keeps the property that made git git: a full clone is one command and a complete, verifiable copy of everything, and anyone with the key can rebuild it from any host. What changed is that the full clone became optional. A folder scope, a history depth, a sparse clone and the cache layer mean a client takes the part it needs, and a repository can hold large files without every client paying for them, which every git team has had to police by hand. The whole-history clone is the backup and the audit, and it is still there.</p>
+<h2 id="constraint">The constraint that designed it</h2>
+<p>None of this was a plan to be minimal. The server cannot read a byte, so "just do it on the server" was never available: no server-side index, no server-side render, no merge the client did not make, no derived data the client could not compute from the key. Every feature had to be expressible as objects a writer produces and a reader derives. That is why the designs are small enough to be a standard, and why they fit in an article. It is the argument of <a href="the-value-of-constraints.html">The value of constraints</a>, applied to the format itself.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>Not a formal standard.</b> No standards body; a documented format with two implementations.</li>
+<li><b>Not proven at Scion's scale.</b> The largest vault in daily use is about 35,000 objects and ten agents.</li>
+<li><b>No blame or bisect yet.</b> And a partial clone of a long history walks the commits one at a time until a commit-chain object ships; a depth avoids it today.</li>
+<li><b>The CDN in front of the hosted API does not cache object reads yet.</b> Browsers, clients and static hosts do.</li>
+</ul>
+<p>If you want to implement the format somewhere new, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 16 October 2026, written by this site's agent in the voice of this site from a draft by the sgit CLI team; the editorial responsibility is mine. The derivation and the cache layer were checked by this site's agent in the <a href="https://github.com/SGit-AI/SGit-AI__CLI">SGit-AI__CLI</a> code (<code>Vault__Crypto</code>, <code>CLI__Cache</code>) and changelog; the loading numbers are from sgit.ai's <a href="https://sgit.ai/case-studies/live-vault-docs.html">live-vault case study</a>; the hive timings from ruv.sgit.ai's published ledger of 16 October; the Scion quote from <a href="https://www.anthropic.com/engineering/redesigning-source-control">Anthropic's post</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-16" topics="vaults-and-method site-and-engineering" title="sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#sgit-is-a-standard">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="from-send-to-sgit.html">From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults</a> <span class="dim">Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.</span></li><li><a href="the-homepage-is-a-vault.html">The homepage is a vault: a fresh edition every morning, every past homepage one commit away, served from plain files, and a brief for the agent that builds it</a> <span class="dim">A new homepage edition every morning, each a signed commit in a vault, served from plain files: every past homepage one commit id away.</span></li><li><a href="one-vault-ten-agents.html">One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom</a> <span class="dim">The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.</span></li><li><a href="scion-and-sgit.html">Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it</a> <span class="dim">Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas, measured on a 35,000-object vault.</span></li><li><a href="the-value-of-constraints.html">The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think</a> <span class="dim">sgit's encryption and open source matter less as features than as constraints: they remove the temptations that lead to server code, lock-in and bad decisions.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="three-linkedin-pages.html">Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open</a> <span class="dim">Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.</span></li><li><a href="when-is-the-vault-actually-used.html">When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy</a> <span class="dim">In the SGit × Ruflo run the vault is written or read in three steps of twelve, on one machine, inside the adapter: the right shape for a recovery copy.</span></li><li><a href="research-delivered-as-a-vault.html">Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive</a> <span class="dim">Companies that sell research could deliver it as a vault: evidence, a fractal graph, briefings per reader, behaviour policies for AI products, a lane back.</span></li><li><a href="one-vault-ten-agents.html">One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom</a> <span class="dim">The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.</span></li><li><a href="scion-and-sgit.html">Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it</a> <span class="dim">Anthropic's Scion replaced Git for agents inside one company; sgit, open source and encrypted, shares its core ideas, measured on a 35,000-object vault.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 154 &middot; <a href="../for/make.html#r=154">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/sgit-is-a-standard.jpg" download>sgit-is-a-standard.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="sgit-is-a-standard.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

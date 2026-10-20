@@ -1,0 +1,102 @@
+{
+ "slug": "encrypted-memory-for-isolated-agents",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 278,
+   "line": "Isolated agents can keep encrypted memory you control",
+   "para": "Isolation removes the shared drive and ephemeral compute removes the disk, so agent memory must live where the owner controls it. sgit plus a self-run vault server gives that: one container, an access token, a folder or bucket, ciphertext only. Five patterns are mapped, with every command run against a local server.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 243,
+   "line": "One container gives agents memory a breach cannot read",
+   "para": "The server is one container with an access token, storing to a folder or S3, and a Mac mini is the place to start. Scoped clones cut a 600-commit vault from 80 s to 14 s, and in testing the server held no plaintext or file names. Trust sits with the agents, so separate vaults keep agents apart.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "Why isolated agents need memory somewhere else",
+   "words": 429,
+   "line": "Memory must live outside the agent's isolated box",
+   "para": "Running agents in VMs or containers shrinks the damage they can do, but the box has no shared drive and often no lasting disk. Memory outside it must meet three conditions: the owner controls it, the agent can reach it with a scoped, revocable credential, and a breach of the storage exposes nothing.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "What is in the box",
+   "words": 367,
+   "line": "SG/Send runs in one container with four key settings",
+   "para": "The server is the diniscruz/sg-send-vault image, about 90 MB, version v0.33.0, serving API and vault UI on port 8080. Four settings matter: the access token, storage mode, disk path and S3 bucket. Use the base-url flag, not the documented endpoint flag that sgit 0.20.0 rejects, and pin mcp below 2 when installing from pip.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "Pattern one: a Mac mini, a vault container and a folder",
+   "words": 546,
+   "line": "Start on a Mac mini, backing up one folder",
+   "para": "One owned machine with no cloud account: the vault container and agent containers share a Docker network, configured by a Compose file, and each agent's entry point clones its folder, works, commits and pushes. The script was tested; the Compose file was not, lacking Docker. Backup is copying ./sg-data, which is only ciphertext.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "Pattern two: one agent run, from nothing to memory and back",
+   "words": 396,
+   "line": "Each run clones its folder, works, pushes, then disappears",
+   "para": "An orchestrator gives the agent an access token and vault key; it clones one folder with one commit of history, works, commits and pushes, then the container is deleted. On a 600-commit, 9,400-file vault, a full clone takes 80 s and 173 MB; one folder takes 14 s and 3.2 MB. Scoped clones are not access boundaries.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "Pattern three: Kubernetes",
+   "words": 327,
+   "line": "On Kubernetes, one vault replica and agents as Jobs",
+   "para": "The server is a single-replica Deployment with a PersistentVolumeClaim at /data, a ClusterIP Service and the token in a Secret; agents are Jobs that clone, work in an emptyDir and push, behind a NetworkPolicy. Disk storage needs one replica and more needs S3. This pattern was not run on a cluster.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Pattern four: the cloud, with no public route to the server",
+   "words": 495,
+   "line": "In the cloud, the vault server stays private",
+   "para": "Agents in a VPC reach the server through an internal load balancer, with S3 storage via a VPC endpoint, a site-to-site VPN for the Mac mini, and CloudFront with a VPC origin for phones. The server can be a container or Lambda. The CloudFormation templates are still in progress and currently public-facing, so this shape is an adaptation.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "Pattern five: two servers, one vault",
+   "words": 323,
+   "line": "Two servers can hold one vault for resilience",
+   "para": "A vault is hash-addressed encrypted objects, so any clone can rebuild any server. Tested: pushing to a backup remote copied everything; restarting the memory-mode server emptied it, and one more push restored it at the same commit. Servers do not replicate to each other, so schedule pushes to the backup or have agents push to both.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "What a breach of the server gives an attacker",
+   "words": 325,
+   "line": "A stolen server yields ciphertext, sizes and timing only",
+   "para": "After testing, storage held 26 files, 228 KB, with zero matches for any written text or file names. An attacker gets vault ids, object counts, sizes, timing and a write-key hash, and can delete data. The real trust boundary is the agent's environment, since each clone keeps the vault key and token on disk.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "Which pattern, when",
+   "words": 93,
+   "line": "Match the pattern to where your agents already run",
+   "para": "One owned machine suits the Mac mini pattern with folder backup, and ephemeral compute suits any server with the one-run life cycle. An existing cluster suits Deployment and Jobs, cloud or GPU agents suit the private VPC with S3 and a VPN, and memory you cannot lose needs two servers and a backup remote.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "Where to start",
+   "words": 235,
+   "line": "Start small, with scoped clones and clear trust boundaries",
+   "para": "Run the container on an owned machine and back up its folder; give each agent a folder and clone it scoped and shallow; use the base-url and token flags; decide trust boundaries first; add a second remote; treat cloud templates as unfinished. Drafted from Dinis Cruz's voice memo on 8 October 2026, tested with sgit-ai 0.20.0.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

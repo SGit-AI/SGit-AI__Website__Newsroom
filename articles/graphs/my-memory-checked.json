@@ -1,0 +1,174 @@
+{
+  "slug": "my-memory-checked",
+  "teaser": "I say it as I remember it; the agent checks it against the record before anyone reads it. Five confirmed, five corrected, two not found.",
+  "topics": [
+    "news-and-evidence",
+    "agents-and-policy"
+  ],
+  "core_idea": "Voice memos can now say things as remembered, because the writing agent checks every claim against repositories, documentation, the web and the author's own old writing before publishing; in the last eight articles five claims were confirmed, five corrected and two not found, and the articles say which; the habit began with ChatGPT Deep Research in February 2025, whose O2 essay cited the author's own 2012 posts as evidence; peer review has moved from the crowd after publishing to the record before it, thinking out loud becomes safe, the checking runs both ways, and every article carries provenance for journalists and their agents to check again.",
+  "nodes": [
+    {
+      "id": "memo",
+      "label": "Say it as I remember it",
+      "kind": "method",
+      "summary": "The instinct first, half-baked allowed."
+    },
+    {
+      "id": "check",
+      "label": "The agent checks",
+      "kind": "method",
+      "summary": "Repositories, commits, briefs, docs, the web, my old writing."
+    },
+    {
+      "id": "ledger",
+      "label": "Five, five and two",
+      "kind": "artefact",
+      "summary": "Confirmed, corrected, not found, across eight articles."
+    },
+    {
+      "id": "history",
+      "label": "The SG/Send history",
+      "kind": "example",
+      "summary": "Order, length and dates corrected from the record."
+    },
+    {
+      "id": "deepresearch",
+      "label": "Deep Research, 2025",
+      "kind": "example",
+      "summary": "The O2 essay cited my own 2012 posts 31 times."
+    },
+    {
+      "id": "cunningham",
+      "label": "Post the wrong answer",
+      "kind": "concept",
+      "summary": "Peer review from the crowd, after publishing."
+    },
+    {
+      "id": "before",
+      "label": "Review moved before publishing",
+      "kind": "claim",
+      "summary": "Against the record, not the crowd."
+    },
+    {
+      "id": "thinking",
+      "label": "Thinking out loud is safe",
+      "kind": "claim",
+      "summary": "Monday's plan can move; the evidence catches up."
+    },
+    {
+      "id": "bothways",
+      "label": "It goes both ways",
+      "kind": "example",
+      "summary": "I corrected the agent; checking caught our own bug."
+    },
+    {
+      "id": "provenance",
+      "label": "Provenance for the next writer",
+      "kind": "concept",
+      "summary": "Journalists and their agents check again and rewrite."
+    },
+    {
+      "id": "graph",
+      "label": "The graph grows",
+      "kind": "question",
+      "summary": "Every checked article is evidence for the next."
+    }
+  ],
+  "edges": [
+    {
+      "from": "memo",
+      "to": "check",
+      "rel": "leads-to"
+    },
+    {
+      "from": "check",
+      "to": "ledger",
+      "rel": "produces"
+    },
+    {
+      "from": "history",
+      "to": "ledger",
+      "rel": "example-of"
+    },
+    {
+      "from": "deepresearch",
+      "to": "check",
+      "rel": "example-of"
+    },
+    {
+      "from": "cunningham",
+      "to": "before",
+      "rel": "contrasts"
+    },
+    {
+      "from": "check",
+      "to": "before",
+      "rel": "produces"
+    },
+    {
+      "from": "before",
+      "to": "thinking",
+      "rel": "leads-to"
+    },
+    {
+      "from": "bothways",
+      "to": "check",
+      "rel": "extends"
+    },
+    {
+      "from": "before",
+      "to": "provenance",
+      "rel": "produces"
+    },
+    {
+      "from": "provenance",
+      "to": "graph",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "from-send-to-sgit",
+      "every-link-points-back",
+      "proof-behind-the-claim",
+      "the-tokens-hook",
+      "how-much-of-this-did-i-write",
+      "introducing-fractal-semantic-graphs"
+    ],
+    "pages": [],
+    "sites": [
+      "https://en.wikipedia.org/wiki/ChatGPT_Deep_Research",
+      "https://diniscruz.ai/",
+      "https://diniscruz.ai/2025/02/11/o2-platforms-methodstreams-2010-open-source-sast-engine.html",
+      "https://meta.wikimedia.org/wiki/Cunningham's_Law"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The memo is a draft of a thought; the article is the thought, checked.",
+      "why": "The workflow in one line."
+    },
+    {
+      "text": "the best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer.",
+      "why": "Peer review the old way."
+    },
+    {
+      "text": "Not found is not false.",
+      "why": "What the verdicts mean."
+    }
+  ],
+  "figures": [
+    {
+      "file": "mc-ledger.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mc-ledger.webp",
+      "caption": "What I said, and what the record said: the claims from the voice memos behind the last eight articles, each confirmed, corrected or not found before publishing, and the two corrections that went the other way.",
+      "kind": "comparison"
+    },
+    {
+      "file": "mc-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/mc-loop.webp",
+      "caption": "Peer review moved before publishing: the memo, the research, the verdicts and the article, then readers and their agents checking again from the links, and every checked article becoming evidence for the next memo. The old way, posting and waiting to be corrected, is the dashed box.",
+      "kind": "architecture"
+    }
+  ]
+}

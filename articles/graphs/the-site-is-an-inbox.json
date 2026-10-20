@@ -1,0 +1,188 @@
+{
+  "slug": "the-site-is-an-inbox",
+  "teaser": "The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.",
+  "topics": [
+    "news-and-evidence",
+    "graphs-and-knowledge",
+    "vaults-and-method"
+  ],
+  "core_idea": "With the reader's vault live, the next brief treats the site as an inbox that starts empty: every piece, original or aggregated, waits for a one-tap decision in a fast inbox mode with nothing loaded, and only reading is the slow mode, where marks of six kinds become nodes in a graph the reader owns, connected to the graphs the site publishes for every article; scroll depth, awake time and from-and-to are recorded for the reader and kept as the meter keeps everything, in the browser and the vault; personas each have a key pair so a comment to the newsroom goes down the write-only lane signed with a copy kept; nothing is gamified; and the brief could only be written once the properties of what runs became the constraints to think with.",
+  "nodes": [
+    {
+      "id": "constraints",
+      "label": "The constraints are what let me think",
+      "kind": "claim",
+      "summary": "The brief could not be written until the vault ran; five properties of what runs closed the design space enough to think in a morning."
+    },
+    {
+      "id": "inbox",
+      "label": "The site is an inbox",
+      "kind": "concept",
+      "summary": "It starts empty; every piece, original or aggregated, waits for a decision; deciding is the work and reading is one of the decisions."
+    },
+    {
+      "id": "fast",
+      "label": "The inbox mode",
+      "kind": "method",
+      "summary": "With nothing loaded, one tap: read now, read later, not for me, more like this, less like this, comment, move to a persona."
+    },
+    {
+      "id": "slow",
+      "label": "The reading mode",
+      "kind": "method",
+      "summary": "The piece open, the pane about it: its graph, the reader's marks, the decisions, the cost."
+    },
+    {
+      "id": "nogame",
+      "label": "No gamification",
+      "kind": "claim",
+      "summary": "A decision is offered where the reader would take it, never at the end of a page; a signal the site engineered is not a signal."
+    },
+    {
+      "id": "marks",
+      "label": "Marks of six kinds",
+      "kind": "method",
+      "summary": "Interesting, great phrase, not sure, fact, evidence, question: each a node with the phrase, the article, the version, the persona and the time."
+    },
+    {
+      "id": "mygraph",
+      "label": "The reader's own graph",
+      "kind": "concept",
+      "summary": "Marks connect to the public article graphs; meaning comes from connectivity; the graph is worth more the more it is used."
+    },
+    {
+      "id": "signals",
+      "label": "The free signals",
+      "kind": "method",
+      "summary": "Scroll depth as read or glanced, time while awake, from and to, the decisions; kept in the browser and the vault, seen by an agent only through a read key."
+    },
+    {
+      "id": "personas",
+      "label": "Personas with keys",
+      "kind": "concept",
+      "summary": "Disposable, one key pair each; the editor persona comments on everything; a persona can be handed to an agent as a read key to its slice."
+    },
+    {
+      "id": "lane",
+      "label": "The signed lane",
+      "kind": "method",
+      "summary": "A mark for the newsroom is encrypted to its published key, signed by the persona, copied to the vault; the reply is a new version."
+    },
+    {
+      "id": "bet",
+      "label": "The bet",
+      "kind": "question",
+      "summary": "The loop closes only if reading with a graph that grows is better than reading without one."
+    },
+    {
+      "id": "order",
+      "label": "What to build, in order",
+      "kind": "artefact",
+      "summary": "Inbox mode on the wire first, the pane about the piece, marks, signals, persona keys, the signed lane, the views, an experiment per feature."
+    }
+  ],
+  "edges": [
+    {
+      "from": "constraints",
+      "to": "inbox",
+      "rel": "leads-to"
+    },
+    {
+      "from": "inbox",
+      "to": "fast",
+      "rel": "produces"
+    },
+    {
+      "from": "inbox",
+      "to": "slow",
+      "rel": "produces"
+    },
+    {
+      "from": "fast",
+      "to": "slow",
+      "rel": "contrasts"
+    },
+    {
+      "from": "nogame",
+      "to": "fast",
+      "rel": "depends-on"
+    },
+    {
+      "from": "marks",
+      "to": "mygraph",
+      "rel": "produces"
+    },
+    {
+      "from": "slow",
+      "to": "marks",
+      "rel": "produces"
+    },
+    {
+      "from": "signals",
+      "to": "slow",
+      "rel": "example-of"
+    },
+    {
+      "from": "personas",
+      "to": "lane",
+      "rel": "depends-on"
+    },
+    {
+      "from": "lane",
+      "to": "mygraph",
+      "rel": "extends"
+    },
+    {
+      "from": "mygraph",
+      "to": "bet",
+      "rel": "leads-to"
+    },
+    {
+      "from": "order",
+      "to": "inbox",
+      "rel": "answers"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-vault-is-live",
+      "pay-after-you-read",
+      "two-agents-one-vault",
+      "introducing-fractal-semantic-graphs",
+      "one-article-five-readers",
+      "the-passkey-opens-the-vault",
+      "i-miss-it"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/articles/graphs.html",
+      "https://newsroom.sgit.ai/account/share.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Deciding is the work; reading is one of the decisions.",
+      "why": "The inbox in one line."
+    },
+    {
+      "text": "Ship first, think second, and do not pretend the thinking could have come first.",
+      "why": "The order the feedback loop runs in."
+    },
+    {
+      "text": "I am not highlighting any more. I am building my graph.",
+      "why": "What kinds of mark change."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ib-modes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ib-modes.webp",
+      "caption": "Two modes. The inbox mode decides what happens to a piece with nothing loaded; the reading mode is where the marks and the signals live. Everything stays in the reader's browser and vault, and the reader chooses what an agent sees."
+    },
+    {
+      "file": "ib-graph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ib-graph.webp",
+      "caption": "The reader's graph is made of marks, each with a kind; the marks land on the public graphs this site already publishes; a chosen slice goes to the newsroom, signed; a new version comes back."
+    }
+  ]
+}

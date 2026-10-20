@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema, SGit Newsroom</title>
+<meta name="description" content="The introduction to the term. Four words and only one of them new; the test that decides whether something deserves the word, worked from a risk register to a TCP packet; why every file format is already a graph; the five-rule grammar; the evidence, eleven altitudes across seven live vaults; what is still modelled rather than imported; and why now.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html">
+<meta property="og:title" content="Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema, SGit Newsroom">
+<meta property="og:description" content="The introduction to the term. Four words and only one of them new; the test that decides whether something deserves the word, worked from a risk register to a TCP packet; why every file format is already a graph; the five-rule grammar; the evidence, eleven altitudes across seven live vaults; what is still modelled rather than imported; and why now.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/introducing-fractal-semantic-graphs.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/introducing-fractal-semantic-graphs.jpg">
+<link rel="alternate" type="text/markdown" href="introducing-fractal-semantic-graphs.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema, SGit Newsroom", "headline": "Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema, SGit Newsroom", "description": "The introduction to the term. Four words and only one of them new; the test that decides whether something deserves the word, worked from a risk register to a TCP packet; why every file format is already a graph; the five-rule grammar; the evidence, eleven altitudes across seven live vaults; what is still modelled rather than imported; and why now.", "url": "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</p>
+ <h1>Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-09-20 &middot; <a href="versions/introducing-fractal-semantic-graphs.html" title="Every published version of this article, and what changed">article v1.1.1, 6 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.2.97</a> &middot; <span class="chip">graphs</span><span class="chip">method</span><span class="chip">fractal-semantic-graphs</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The introduction to the term. Four words and only one of them new; the test that decides whether something deserves the word, worked from a risk register to a TCP packet; why every file format is already a graph; the five-rule grammar; the evidence, eleven altitudes across seven live vaults; what is still modelled rather than imported; and why now.</em></p>
+<p><em>By Dinis Cruz. This is the canonical copy of the article, with the diagrams and screenshots the LinkedIn version cannot carry. The definition it introduces, the three diagrams and the seven vaults are on <a href="https://sgit.ai/demos/fractal-graphs/index.html">the Fractal Semantic Graphs page</a>; the vault where the idea was first worked is <a href="https://sgit.ai/demos/vaults/voice-debrief/index.html">VoiceDebrief · Fractal Semantic Graphs</a>.</em></p>
+<p>For about six months I have been calling this "graphs of graphs of graphs", or when I was feeling more precise, "ontologies of ontologies of ontologies". Neither is a name you can put on a page. This week we gave it one, defined it, and published the evidence: seven live graphs you can open in a browser, from the text of a law down to a threat in one line of code on one compute instance, all built with one method.</p>
+<p>The name is Fractal Semantic Graph. This article is the introduction.</p>
+<h2>Four words, and only one of them is new</h2>
+<p>Most people reading this already know three of the four.</p>
+<p>A graph is nodes and edges. A semantic graph gives the edges meaning: every edge is a verb, and every verb has a named inverse, so a link reads correctly from whichever end you are standing at. A fact <code>gives_rise_to</code> a risk; a risk <code>arises_from</code> a fact. An ontology is the agreed vocabulary of node types and verbs that a graph is allowed to use.</p>
+<p>The fourth word is fractal, and here is what it adds.</p>
+<p>A fractal semantic graph has no privileged level and no single schema. Zoom into any node and you enter a new world with its own node types, its own verbs, its own taxonomy, its own centre of gravity. A regulation is a node in a graph of instruments and jurisdictions. Open it and it is a graph of articles, recitals and amendments: a legal ontology. Open an article and it is a graph of paragraphs and points. Open a paragraph and it is a graph of the terms it uses, each one an edge to the article that defines it: a lexical ontology that looks nothing like the one two levels up.</p>
+<figure class="shot" data-shot="fsg-zoom.webp" data-dir="images/" data-alt="Three zooms, three ontologies. A four-node semantic graph; the Law node opened into a legal ontology of articles, paragraphs and an amendment drawn as an edge; one paragraph opened into a lexical ontology of the terms it uses. The grammar never changes; the ontology does."><figcaption>Three zooms, three ontologies. A four-node semantic graph; the Law node opened into a legal ontology of articles, paragraphs and an amendment drawn as an edge; one paragraph opened into a lexical ontology of the terms it uses. The grammar never changes; the ontology does.</figcaption></figure>
+<p>Every one of those worlds was defined by whoever owns it, in its own vocabulary, and none of them was made to conform to the others. What connects them is that each one is still a semantic graph. Every edge is a verb with an inverse. Every node knows where it came from. So an edge can be drawn from any node in one world to any node in another, and the walk works.</p>
+<p>There is no top and no bottom. There is only the altitude you happen to be looking from, and how much definition you choose to load at it.</p>
+<figure class="shot" data-shot="gdpr-altitude-0.webp" data-dir="images/" data-alt="The GDPR atlas says it in its own graph view: &quot;You are at the top of the fractal. Each domain is its own ontology that connects up to the GDPR root and down to concepts and articles.&quot; The layout is computed from the graph, not drawn."><figcaption>The GDPR atlas says it in its own graph view: "You are at the top of the fractal. Each domain is its own ontology that connects up to the GDPR root and down to concepts and articles." The layout is computed from the graph, not drawn.</figcaption></figure>
+<h2>The test is what happens at a link</h2>
+<p>Here is the test I use to decide whether something deserves the word.</p>
+<p>Start inside a risk register. A good one is already a rich semantic graph with a large vocabulary of verbs. A fact <code>gives_rise_to</code> a risk, a risk <code>is_owned_by</code> a role, a person <code>reports_to</code> a person, a control <code>mitigates</code> a risk, evidence <code>backs</code> a fact. Every link that makes sense inside that ontology teaches you something, and a register with ten thousand well named edges is a great deal of knowledge.</p>
+<p>Nothing about it is fractal yet. It is one graph, however large and however deeply it nests, in one vocabulary. A system that never lets you leave that vocabulary is a single graph, or a hierarchy. Not a fractal.</p>
+<p>The fractal property is that on one of those links you can jump into another universe.</p>
+<p>Follow the register's fact node for an incident and you land in the security operations world: alerts, signals, the systems that were touched, ATT&amp;CK techniques, attack trees. Its own verbs, its own taxonomy, none of it borrowed from the register. In that world you meet a DNS entry that looks like command and control. Follow it and you are in the DNS estate: zones, records, parents, values, every request the resolvers logged, a dataset that might be millions of nodes and is quite possibly served from a SQL database or a GraphQL endpoint rather than held as files. Follow one record to the traffic it produced and you are reading network captures, flows, and eventually a single TCP packet, in yet another vocabulary.</p>
+<p>Four worlds. Four ontologies. Four taxonomies. One continuous path of named edges between them, and nobody built an adapter.</p>
+<figure class="shot" data-shot="fsg-jump.webp" data-dir="images/" data-alt="The jump. Four worlds in a row, each a small graph in its own vocabulary, joined by a jump link on one node each. All four together are one node in a bigger graph that analyses them, and that graph in another."><figcaption>The jump. Four worlds in a row, each a small graph in its own vocabulary, joined by a jump link on one node each. All four together are one node in a bigger graph that analyses them, and that graph in another.</figcaption></figure>
+<p>What makes it fractal rather than merely linked is that in every one of those self contained worlds you find the same building blocks: nodes, edges with verbs and inverses, an ontology, a taxonomy, provenance. The grammar is what lets the jump work, in either direction. And it runs upward as well as down. Everything I just described can itself be one node in a larger graph that analyses it, sitting next to graphs of behaviour, of agent actions, of agendas, of funding.</p>
+<h2>Everything is already a graph, including every file format</h2>
+<p>This is the part that took me longest to see clearly, and once you see it you cannot unsee it.</p>
+<p>A regulation is a graph of articles. A PDF of that regulation is a graph of pages, blocks, lines and glyphs. A spreadsheet is a graph of sheets, rows, cells and formulas. A codebase is a graph of packages, classes, methods and tokens. A JSON document is a tree, which is a graph with one verb.</p>
+<p>None of them needs to be converted into a graph. Each one only needs its edges named. And once the edges are named, the boundaries between formats stop mattering, and things become possible that no document can do.</p>
+<p>A question can cross formats without a join table. "Which method in our code implements the control that the crosswalk maps to the article the amendment changed?" is one traversal, from a word in a law to a control in a standard to an attestation to a method, because each step is an edge somebody named.</p>
+<p>A correction propagates instead of being republished. Mark one node superseded and every path that rested on it becomes a query: what did we build on this? A document cannot do that. The correction is a new document, and nothing connects it to the thousand that already cite the error.</p>
+<p>The smallest node is whatever your question needs, not what the format offers. For a lawyer it is the defined term. For a threat model it is the method. For a conformance check it is the attestation and its expiry date. For our GDPR atlas it is, literally, the word.</p>
+<p>Every unit keeps its own world. The regulation is modelled in the regulator's vocabulary, the register in the risk team's, the threat model in the engineers', and none of them is asked to change. The bridges are edges somebody declares, not a merged schema everybody has to agree on first.</p>
+<p>And provenance comes free. When the leaf is a word, and the word is connected to the byte range it came from and the hash of the file that held it, every claim at every altitude above it is traceable to source with no extra machinery.</p>
+<h2>The grammar is short, and one rule does most of the work</h2>
+<p>Each altitude gets its own schema. What none of them gets to change is the grammar, and the grammar is five rules.</p>
+<p>Every edge is a verb, stated in both directions, with an inverse a person in the business would actually say. <code>relates_to</code> is banned. Properties carry data, never meaning, so two nodes both holding the value 8080 differ only in what they are connected to. Supersede, never delete. And never render the whole graph: render the answer to a question.</p>
+<p>The banned verb is the one I get the most pushback on, so let me defend it. Two things always relate. An edge with no verb constrains nothing and cannot narrow a query. The granularity of the verb is the precision of the question you will later be able to ask. Every time somebody reaches for <code>relates_to</code> they are deferring the thinking to whoever has to read the graph later, and that person is usually you.</p>
+<h2>The evidence: eleven altitudes, seven vaults, one grammar</h2>
+<p>A definition is cheap. So we published the ladder.</p>
+<p>Eleven altitudes, each one a live graph in its own vocabulary, modelled by its own author, and every altitude joined to the next by a named edge. From the top: the law, the standard, the evidence behind the standard, the fact about your estate, the risk it gives rise to, the owner, the acceptance, the insuring policy, the agent, the system, the compute instance.</p>
+<figure class="shot" data-shot="fsg-ladder.webp" data-dir="images/" data-alt="The ladder: eleven altitudes, eleven ontologies, one grammar. Each altitude names the published vault where that altitude is a live graph, and on the page each name is a link to the vault and its read key."><figcaption>The ladder: eleven altitudes, eleven ontologies, one grammar. Each altitude names the published vault where that altitude is a live graph, and on the page each name is a link to the vault and its read key.</figcaption></figure>
+<p>At the top sits the EU AI Act, parsed from the official XML into 113 articles, 500 paragraphs, 417 points, 180 recitals, 13 annexes and 68 definitions: 1,523 nodes and 1,944 edges, with the SHA-256 of the retrieved bytes at the end of every provenance chain. When something elsewhere says "touches Article 12", this is the graph that can say what Article 12 says and prove the bytes.</p>
+<figure class="shot" data-shot="regulation-overview.webp" data-dir="images/" data-alt="The Regulation Graph&#x27;s landing view: the counts, both instruments with their CELEX identifiers and the hash of the retrieved bytes, and application dates kept as versioned properties rather than bare facts."><figcaption>The Regulation Graph's landing view: the counts, both instruments with their CELEX identifiers and the hash of the retrieved bytes, and application dates kept as versioned properties rather than bare facts.</figcaption></figure>
+<p>One altitude down is the AIUC-1 agent standard as data: 53 controls, 2,788 nodes, 11,610 edges. Its explorer loads two vaults as one graph, and one of the packs it loads is literally the AI Act by article from the vault above. That join is where a crosswalk stops being a string. The standard publishes 1,126 crosswalks as text. 62 of them resolve into node identifiers in the regulation graph. And the traversal returns something neither graph knew on its own: 8 of the 27 articles reached have since been amended, so the crosswalk was written against text that no longer says what it said.</p>
+<p>That is the whole argument in one number. Two graphs, built by different people for different purposes in different vocabularies, joined by declared edges, produced a finding that did not exist in either of them.</p>
+<figure class="shot" data-shot="aiuc-two-vaults.webp" data-dir="images/" data-alt="Two vaults on one canvas. The chip row is the join: the standard, its crosswalks, another vault&#x27;s articles, the conformance layer, bow ties, acceptances."><figcaption>Two vaults on one canvas. The chip row is the join: the standard, its crosswalks, another vault's articles, the conformance layer, bow ties, acceptances.</figcaption></figure>
+<p>At the bottom of the ladder is a threat model that is itself a graph of graphs: eleven linked models zooming from Customer through Business, Application, Component, Package, Class and Method, down to Source Code, Environment, Runtime and Compute. 51 nodes, 179 threats. The demonstration is a single SQL injection traced upward from the method it lives in to the revenue it puts at risk, and then framed four ways, for the board, the CISO, the CTO and the developer, from one fact.</p>
+<figure class="shot" data-shot="threatmodcon-ladder.webp" data-dir="images/" data-alt="The zoom ladder, counted: 11 layers, 51 nodes, 179 threats. The bottom altitude is a compute instance."><figcaption>The zoom ladder, counted: 11 layers, 51 nodes, 179 threats. The bottom altitude is a compute instance.</figcaption></figure>
+<p>In between are the altitudes that make this useful to people who are not engineers: a register where answers become facts and facts give rise to risks, an org chart with risks flowing up it until every path terminates at the board, and the same exposure read at seven stakeholder altitudes, each owning it in their own words.</p>
+<figure class="shot" data-shot="role-risk-map.webp" data-dir="images/" data-alt="The role risk map: what a role holds against what arrives through it because the graph says it must. Nothing stops short of the board."><figcaption>The role risk map: what a role holds against what arrives through it because the graph says it must. Nothing stops short of the board.</figcaption></figure>
+<p>My favourite single picture in the whole set is Article 45 of the GDPR. The text has not changed a word since 2016. What it permits has flipped four times: Safe Harbour, Schrems I, Privacy Shield, Schrems II, the Data Privacy Framework, and an appeal pending. The atlas draws that as a timeline of ruling nodes over one unchanged article node. The text is a constant. Its meaning is the graph. That is why a static PDF of a law is wrong and a versioned graph is not.</p>
+<figure class="shot" data-shot="gdpr-article-45.webp" data-dir="images/" data-alt="One article, five rulings, twenty-five years. Safe Harbour to a pending CJEU appeal, over an Article 45 that has not changed a word."><figcaption>One article, five rulings, twenty-five years. Safe Harbour to a pending CJEU appeal, over an Article 45 that has not changed a word.</figcaption></figure>
+<h2>What is still modelled rather than imported</h2>
+<p>I would rather tell you this than have you find it.</p>
+<p>The bottom four altitudes of the threat model, environment through compute, are nodes an author placed, not a live import from a CMDB, an infrastructure repository or a cloud account. The grammar to receive such an import exists. The connector that emits it is not published yet.</p>
+<p>Enterprise architecture is a gap. No published graph holds an EA repository joined upward to obligations, and that is the layer between the standard and the system that the ladder cannot yet point at.</p>
+<p>The crosswalks resolve at article level only, where the regulation graph has paragraphs. The GDPR atlas is a seed pass from May, and six of its 227 edges use the banned <code>relates</code> verb, because the rule was written after that graph was. And the agent altitude is a vocabulary, not yet a join: we have the 23 capability primitives that describe what an agent can do, and no published graph yet imports a real permission set and computes the difference against what the operator intended, at scale.</p>
+<p>Named gaps get filled. Unnamed ones do not. That is why they are on the page.</p>
+<h2>Why now</h2>
+<p>Three things changed in the last year that make this practical rather than academic.</p>
+<p>Naming edges used to be the expensive part. It is now the cheap part. A language model can propose the verb between two nodes faster than a human can type it, which means the bottleneck moved from authoring the graph to deciding what the graph is for.</p>
+<p>Agents act on the world, and when something acts, provenance stops being a nicety. Every consequential claim needs to be traceable to the byte it came from, and a graph whose leaf is the word gives you that without a second system.</p>
+<p>And the schema wars are over, because nobody won. Every organisation, division, team and regulator has its own vocabulary and will keep it. The only integration model that survives contact with that fact is one where nobody is asked to conform and everybody is allowed to connect.</p>
+<h2>Open them</h2>
+<p>Everything in this article is a live graph you can open. Every read key is published on purpose, and none of them can write. Start at the law and walk down, or start at the compute instance and walk up. Either direction works, which is rather the point.</p>
+<ul>
+<li>The definition, the ladder and the seven vaults: <a href="https://sgit.ai/demos/fractal-graphs/index.html">sgit.ai/demos/fractal-graphs</a></li>
+<li>The vault where the idea was first worked, with its fifteen-principle register: <a href="https://sgit.ai/demos/vaults/voice-debrief/index.html">VoiceDebrief · Fractal Semantic Graphs</a></li>
+<li>The grammar in full, with the four situations in which the argument is wrong: <a href="https://graphs.sgit.ai/">graphs.sgit.ai</a></li>
+<li>Laws and standards as addressable provisions: <a href="https://standards.sgit.ai/">standards.sgit.ai</a></li>
+<li>The Agent Behaviour Policy, where the graph meets a real permission set: <a href="https://abp.sgit.ai/">abp.sgit.ai</a></li>
+</ul>
+<p>If you build one of your own, the grammar for drawing it is at <a href="https://graphs.sgit.ai/llms.txt">graphs.sgit.ai/llms.txt</a>, and it is written for agents as much as for people. I would like to see what you connect to what.</p>
+<p><em>This article is released under the Creative Commons Attribution 4.0 International licence (CC BY 4.0). The diagrams are inline SVG on the Fractal Semantic Graphs page and may be reused under the same terms; the screenshots are of published vaults, taken with their published read keys.</em></p>
+<sg-meter view="page" kind="article" date="2026-09-20" topics="graphs-and-knowledge" title="Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#introducing-fractal-semantic-graphs">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Continued by</h3><ul><li><a href="the-graph-companies.html">The graph companies: many of the most valuable companies in the world are graphs, of links, people, products, payments and ontologies, and the graphs never scaled for everyone else because they were built to lock in</a> <span class="dim">Four of the ten most valuable companies are graph companies. Graphs never scaled for everyone else because they were built to lock in. Now they can.</span></li><li><a href="i-just-want-to-buy-the-article.html">I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom</a> <span class="dim">I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.</span></li><li><a href="research-delivered-as-a-vault.html">Research, delivered as a vault: what companies that sell research could do with fractal graphs, behaviour policies for AI-enabled products, and evaluations run by a governed agent hive</a> <span class="dim">Companies that sell research could deliver it as a vault: evidence, a fractal graph, briefings per reader, behaviour policies for AI products, a lane back.</span></li><li><a href="portugal-and-europe-2025.html">Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later</a> <span class="dim">Five 2025 essays on Portuguese as code, a sovereign open-source cloud, regulation as graphs and Europe in GenAI, read again: two moved, one did not.</span></li><li><a href="portugal-2024-genai-in-portuguese.html">GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed</a> <span class="dim">My 2024 OWASP talk in Lisbon: Portuguese as a programming language, provenance, graphs instead of RAG, and the first public demo of The Cyber Boardroom.</span></li><li><a href="books-from-articles.html">Books from articles: why my books stall at 95%, why these articles do not, and a plan to turn them into books by Web Summit</a> <span class="dim">My books stall at 60 to 95%; these articles do not. The hypothesis: a book is an ordered set of finished articles, tested by Web Summit in November.</span></li><li><a href="inside-the-mesa-ranch-desk.html">Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time</a> <span class="dim">A page-by-page tour of the Mesa Ranch observation vault: the argument, the system, the record, five graphs, and how to open and rebuild it.</span></li><li><a href="journalism-becomes-intelligence.html">When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open</a> <span class="dim">Marconi's deck on journalism as intelligence, built as a working vault: 78 event types, an ontology, 17 observations and a community tracker, all synthetic.</span></li><li><a href="my-memory-checked.html">My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing</a> <span class="dim">I say it as I remember it; the agent checks it against the record before anyone reads it. Five confirmed, five corrected, two not found.</span></li><li><a href="cedar-and-the-policy-vault.html">Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP</a> <span class="dim">Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.</span></li><li><a href="commanders-intent-is-a-behaviour-policy.html">Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested</a> <span class="dim">Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.</span></li><li><a href="the-wire-as-a-graph.html">The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks</a> <span class="dim">Design the wire from what the reader sees: every name a link with a long-lived ID, every sentence a claim, stories of stories, folders by gravity.</span></li><li><a href="knowledge-that-maintains-itself.html">Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief</a> <span class="dim">Fractal semantic graphs for policies and internal knowledge: brief people and agents from the graph, maintain it in a loop, carry the brief in a vault.</span></li><li><a href="the-minimum-code-below.html">The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool</a> <span class="dim">Container security from the top down: at every layer, keep only the code the layer above needs. Measured on one real tool, with its limits.</span></li><li><a href="a-policy-for-every-skill.html">A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less</a> <span class="dim">Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.</span></li><li><a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have</a> <span class="dim">Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.</span></li><li><a href="every-link-points-back.html">Every link points back: 566 links between 105 articles, 15 that point forward, and why an article should know what came next and what corrected it</a> <span class="dim">551 of 566 links between articles point back in time. Why older articles should say what came next and what corrected them.</span></li><li><a href="why-i-love-wardley-maps.html">Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map</a> <span class="dim">The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.</span></li><li><a href="the-site-is-an-inbox.html">The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed</a> <span class="dim">The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.</span></li><li><a href="the-agent-is-the-reader.html">The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</a> <span class="dim">Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.</span></li><li><a href="one-article-five-readers.html">One article, five readers: a librarian, a cartographer, a historian, an explainer and a storyteller read the same piece</a> <span class="dim">Write the article first, then send five agent readers through it: a catalogue, an ontology and maps, the arc, two minutes, and a deck.</span></li><li><a href="the-ai-governance-stack-as-a-graph.html">The AI governance stack, as a graph: an answer to Hari Kota, built</a> <span class="dim">Hari Kota's ten-layer AI governance stack, kept as posted and turned into a fractal semantic graph: the gaps become missing edges, and queries.</span></li><li><a href="riskmandate-ten-questions.html">Ten hard questions for RiskMandate, answered: the mandate, the reach, the gap, and what we are deliberately not</a> <span class="dim">Ten hard questions from a conference, answered in a two-hour interview: what RiskMandate does, what it deliberately is not, and how mature each part is.</span></li><li><a href="agency-is-not-a-yes.html">Agency is not a yes: a scale for human and agent decisions, from rubber stamp to the reviewer who fixes the source</a> <span class="dim">A yes or no is not agency: seven dimensions, a seven-level scale for people and agents, and the review as a QA step that fixes the source.</span></li><li><a href="liquid-content-needs-water.html">Liquid content needs water: liquefy the journalist's notebook, not the finished product</a> <span class="dim">A reply to FT Strategies on liquid content: the water is the reporting, so liquefy the journalist's notebook, keep the writing theirs, and pay per use.</span></li><li><a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a> <span class="dim">Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.</span></li><li><a href="ai-baseline-control-framework.html">An open AI governance framework, and what its licence let us build</a> <span class="dim">Twenty open AI governance controls under CC BY-SA, why the licence matters, and the same day's conversion into a graph, a database and a walk down to EU law.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li><li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser</a> <span class="dim">The 2026 personal agents read through behaviour policy and encryption, and a design on vaults, an attested enclave and the browser where no vendor holds a key.</span></li><li><a href="how-much-of-this-did-i-write.html">How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was</a> <span class="dim">Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.</span></li><li><a href="if-somebody-built-a-company-on-code-review.html">If somebody built a company on code review: how I would do it, and why it is only now possible</a> <span class="dim">A reader's seven questions answered as a company plan: one reader for every layer, review as a science, and the layers as the customer's own.</span></li><li><a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one</a> <span class="dim">Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.</span></li><li><a href="code-review-as-a-fractal-semantic-graph.html">Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it</a> <span class="dim">Source code is layers within layers, each a graph with its own vocabulary; code review should read a change at every one, and a vault shows it done on real code.</span></li><li><a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception: the inbox in 2026, where every message has its own universe</a> <span class="dim">Every message has a graph, so it can be shaped for the reader's moment; a custom interface per moment is now how interfaces get made, and each gets a policy.</span></li><li><a href="ultimate-insider-three-collisions.html">The ultimate insider: agents, the infrastructure that cannot hold them, and risk management that cannot keep up</a> <span class="dim">Agents, the infrastructure meant to contain them, and risk management run on spreadsheets are arriving at once, and together they are one scenario.</span></li><li><a href="how-news-got-here.html">The reader was always the product: a corrected history of how news got into this mess</a> <span class="dim">News has sold the reader to advertisers since 1833; the web took the monopoly, the platforms made the reader measurable, and AI took the traffic.</span></li><li><a href="token-bill-nobody-is-sending.html">Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read</a> <span class="dim">AI answer engines pay to read the web as HTML; a publisher who serves markdown, dates, hashes and a typed graph saves them tokens and should get a share.</span></li><li><a href="supply-chain-of-vaults.html">A supply chain of vaults: how GenAI, open data and small custom tools could bring the price of food down</a> <span class="dim">The food chain is a data problem: one encrypted vault per party, joined by append lanes and a typed graph, could cut the waste that keeps prices high.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 8 &middot; <a href="../for/make.html#r=8">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/introducing-fractal-semantic-graphs.jpg" download>introducing-fractal-semantic-graphs.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="introducing-fractal-semantic-graphs.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

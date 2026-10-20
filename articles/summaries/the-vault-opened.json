@@ -1,0 +1,102 @@
+{
+ "slug": "the-vault-opened",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 271,
+   "line": "Five vault asks shipped together in release v0.12.88",
+   "para": "newsroom.vault's debrief of v0.12.88: after connecting Firefox, Dinis asked for merged devices, a browse page, a shared vault viewer linked into every reader vault, calls shown for what they are, and a better device chooser. All five shipped, and the viewer, vault lkypj6zq, was proven in the live SG/App first.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 281,
+   "line": "Merges keep everything, and one shared viewer serves all",
+   "para": "Cards 077 to 079 cover the five changes. Merging three devices kept every read, note and top-up with an unchanged balance, and an alias redirects merged ids; the chooser names its destination, the Calls tab decrypts each call, and a browse page shows four vaults. The viewer lives once and is linked into every reader vault.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "asked",
+   "label": "What was asked",
+   "words": 175,
+   "line": "Dinis's five asks followed a working Firefox connection",
+   "para": "After open or connect worked and Firefox was named, Dinis asked to merge iPad 1, iPad 2 and iPad 3, to see inside the vault, and for a shared viewer vault set as each data vault's default app. Dinis also wanted calls named and openable, \"worth becoming a UI just itself\", plus a smoother device selection.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "merge",
+   "label": "Merging devices",
+   "words": 220,
+   "line": "Merging devices loses no records and leaves an alias",
+   "para": "Each device is one file, so mergeDevices re-files sources into the target, keeping the fuller version of any duplicate record; a test confirms balance, spend and credit are unchanged. Merged files leave the current tree but remain in history. activity/aliases.json maps merged ids to their target, so old browsers, late files and inbox batches follow it.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "chooser",
+   "label": "A chooser that says where a browser goes",
+   "words": 115,
+   "line": "The chooser pre-picks the likely device and names it",
+   "para": "Each device appears as a card with name, platform, reads, notes and last update. The device this browser used before, or the only one on its platform, is pre-selected with a badge explaining why. The button names the destination, and Change in the Vault tab later moves the browser into another device as a merge.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "calls",
+   "label": "The calls, as a tab",
+   "words": 200,
+   "line": "Every vault server call is named and decryptable",
+   "para": "The Calls tab reads each address to name the call as an object, ref, branch index or inbox call, with the vault it touched. Opening a call decrypts its kept bytes with that vault's read key when open, showing a commit, tree, ref or file. Master and door contents need Reveal; inbox bodies are masked.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "browse",
+   "label": "Your vaults, file by file",
+   "words": 129,
+   "line": "A read-only page browses all four vaults",
+   "para": "The page /vault/browse.html uses the pane's passkey session to open the door, master, reader vault and lane, showing files, contents and commits with past trees. It writes nothing. It can hand the reader vault's read key to the SG/Vault app over its embed protocol, never in an address, which a test confirms.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "viewer",
+   "label": "One viewer that every reader vault opens with",
+   "words": 314,
+   "line": "One viewer vault is linked into every reader vault",
+   "para": "Following sgit.ai's sub-vault convention, the next Update writes four files into each reader vault: a link, a read-key record, an app manifest and a short entry page. The viewer code lives once in vault lkypj6zq, so new versions reach everyone. A demo vault, eagquvh8, rendered read-only through it in the live SG/App.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "for-you",
+   "label": "What changes for you",
+   "words": 91,
+   "line": "Your next Update adds the viewer; nothing else changes",
+   "para": "The next Update writes the four link files, so the vault opened in the SG/Vault app shows your account. In the Vault tab you can tick devices to merge and use Change to move a browser; Browse your vault and a Calls tab are new. Opening, connecting, updating and sending work as before.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "stands",
+   "label": "Where things stand",
+   "words": 100,
+   "line": "Tests now cover merges, aliases and the viewer handover",
+   "para": "The release carries three cards, this debrief and the author's name page. test_sync.mjs grows to 54 checks covering merges, aliases and a folded file; the new test_vault_open.mjs runs 26 against a mock server and a stand-in app. CI runs seventeen test files, and the design note holds the rules.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 186,
+   "line": "Only one demo vault proved the viewer live",
+   "para": "Reader vaults gain the viewer only after their next Update; launching the viewer's own page directly was untested. Merges cannot be undone by button, the app has no deep link to its SGit view, and earlier pages' calls are names only. The viewer covers only the reader vault, not the lane or master.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 158,
+   "line": "From Dinis's request and the v0.12.88 work",
+   "para": "Based on Dinis's chat request of 16 October 2026 and the v0.12.88 commits and cards 077 to 079 by newsroom.vault. The technique comes from sgit.ai's sub-vault and vault app pages and the SG/Vault interface scripts, read that day. Earlier pieces set the rule that agents write under their own names; counts come from test output.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A trusted framework for agentic finance: what changed in v1.2.0, SGit Newsroom</title>
+<meta name="description" content="The changes to the article "A trusted framework for agentic finance" in v1.2.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/a-trusted-framework-for-agentic-finance/v1.2.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/a-trusted-framework-for-agentic-finance/v1.2.0.html">
+<meta property="og:title" content="A trusted framework for agentic finance: what changed in v1.2.0, SGit Newsroom">
+<meta property="og:description" content="The changes to the article "A trusted framework for agentic finance" in v1.2.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A trusted framework for agentic finance: what changed in v1.2.0, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.2.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A trusted framework for agentic finance: what changed in v1.2.0, SGit Newsroom", "headline": "A trusted framework for agentic finance: what changed in v1.2.0, SGit Newsroom", "description": "The changes to the article \"A trusted framework for agentic finance\" in v1.2.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/a-trusted-framework-for-agentic-finance/v1.2.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../../../assets/themes/themes.css">
+  <link rel="stylesheet" href="../../../assets/site-nav.css">
+  <script src="../../../assets/themes/themes.js"></script>
+  <script src="../../../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../../../about/index.html">Why this exists</a>
+      <a class="sl" href="../../../desks/index.html">The five desks</a>
+      <a class="sl" href="../../../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../../../for/make.html">Make a reading list</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../wire/index.html">Today's edition</a>
+      <a class="sl" href="../../../wire/sources.html">The sources</a>
+      <a class="sl" href="../../../wire/how.html">How the wire works</a>
+      <a class="sl" href="../../../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../../../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../../../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../../../wire/days.html">Day by day</a>
+      <a class="sl" href="../../../wire/charter.html">The charter</a>
+      <a class="sl" href="../../../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      <a class="sl" href="../../../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      <a class="sl" href="../../../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../../../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../../../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../../../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../../../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../../../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../../../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../../../assets/reader/strip.css">
+  <script src="../../../assets/reader/strip.js" defer></script>
+  <script src="../../../assets/reader/highlights.js" defer></script>
+  <script src="../../../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../a-trusted-framework-for-agentic-finance.html">A trusted framework for agentic finance</a> / <a href="../a-trusted-framework-for-agentic-finance.html">Versions</a> / v1.2.0</p>
+ <h1>A trusted framework for agentic finance: what changed in v1.2.0</h1>
+ <p class="lead">From v1.1.0 (2026-10-19, <code>831cb1578</code>) to v1.2.0 (2026-10-20, <code>964bd8adb</code>), paragraph by paragraph.</p>
+ <p class="small dim">15 paragraphs added, 9 removed, 6 changed in place, 41 unchanged. About 901 words added and 575 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../a-trusted-framework-for-agentic-finance.html">all versions</a> &middot; <a href="v1.3.0.html">v1.3.0 &rarr;</a></p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="changed">Summary: Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked <del>example:</del><ins>example</ins> <del>the</del><ins>in</ins> <del>behaviour</del><ins>a</ins> <del>policy of</del><ins>vault:</ins> an invented <del>bank's</del><ins>bank</ins> <del>payments</del><ins>with</ins> <del>agent,</del><ins>six agents, each</ins> with all four elements filled in, <del>twelve</del><ins>and</ins> <del>rows,</del><ins>one</ins> <del>three</del><ins>day</ins> of <del>them</del><ins>their</ins> <del>gaps,</del><ins>work</ins> <del>each</del><ins>replayed</ins> <del>gap</del><ins>through</ins> <del>with</del><ins>the gate. Every near miss and breach that day came through</ins> a <del>holder and</del><ins>gap,</ins> a <del>decision.</del><ins>row kept only by the prompt, a setting or nothing; the rows kept by systems the agent cannot reach held.</ins> It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="added">!trail pellbridge</p>
+ <p class="diff-same">6 unchanged paragraphs, under In short {#in-short}</p>
+ <p class="diff-li removed">&bull; <b>A worked example: a payments agent.</b> Twelve rows, all four elements filled in, three gaps with holders.</p>
+ <p class="diff-li added">&bull; <b>A worked example, at play.</b> An invented bank, six agents, all four elements, in a vault.</p>
+ <p class="diff-li added">&bull; <b>Every incident came from a gap.</b> Boundary rows held; near misses and breaches came through the gaps.</p>
+ <p class="diff-same">14 unchanged paragraphs, under What the FCA said {#speech}, Four elements we have been writing about {#four}</p>
+ <h2 class="changed">A worked example: <del>a</del><ins>Pellbridge</ins> <del>payments agent</del><ins>Bank</ins> {#example}</h2>
+ <p class="changed">The speech mentions the AI Lab seeing firms build "agent-led payments", so <del>here</del><ins>the</ins> <del>is</del><ins>example starts with</ins> one. <del>An</del><ins>To show it at play rather than on paper, we built <a href="https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html">a vault</a> around an</ins> invented <del>bank</del><ins>bank,</ins> <del>deploys</del><ins>Pellbridge, with six agents: a payments assistant, a support agent, a lending pre-check,</ins> an <ins>AML alert reviewer, a fraud triage </ins>agent <del>that</del><ins>and</ins> <del>pays</del><ins>a</ins> <del>bills</del><ins>transaction</ins> <del>for</del><ins>reporting agent. Each has a behaviour policy with all four elements filled in, and the vault replays</ins> one <del>customer:</del><ins>day</ins> <del>it reads</del><ins>of</ins> their <del>accounts, pays existing payees, and asks the customer before anything unusual.</del><ins>work.</ins> Everything <del>below</del><ins>in it</ins> is invented and illustrative; the vocabulary is the ABP's.<ins> Here is the payments assistant; <a href="../../inside-the-pellbridge-agents.html">the tour</a> goes through the rest, with the files.</ins></p>
+ <p class="changed">!shot <del>fc-abp-rows.webp</del><ins>pa-agent-pay.webp</ins> | images/ | <del>Delegated authority and execution: the</del><ins>The</ins> payments <del>agent's</del><ins>assistant's</ins> <del>twelve rows. For each capability, can it (grant), may it (mandate), what stands</del><ins>policy</ins> in the <del>way</del><ins>vault,</ins> <del>(barrier),</del><ins>with</ins> <del>who</del><ins>all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what</ins> keeps <del>the</del><ins>each</ins> <del>rule,</del><ins>row,</ins> and <del>who</del><ins>every</ins> <del>holds</del><ins>decision</ins> <del>it.</del><ins>it</ins> <del>Three</del><ins>made</ins> <del>rows,</del><ins>that</ins> <del>in</del><ins>day</ins> <del>orange,</del><ins>with</ins> <del>are</del><ins>its</ins> <del>the delta.</del><ins>receipt.</ins> | <del>concept</del><ins>screenshot</ins></p>
+ <p class="diff-same">5 unchanged paragraphs</p>
+ <p class="removed">Eight of the twelve rows are kept by systems the agent cannot reach: the payment platform checks limits and asks the customer, the API gateway scopes reads, the identity service binds the token to one customer. Two are kept by hooks in the bank's harness. One is kept by a setting the agent could flip, and one by the prompt. In ABP terms, only the first eight are boundaries; a setting is not a control, and an expectation is a hope.</p>
+ <p class="removed">Every decision the platform makes, allow, ask or deny, writes a receipt with the row and the policy version, kept in a vault, encrypted and versioned. The rows are also a test pack. They run on every model change, every policy change and every week, and a failed row stops the release. That is my reading of "continuous, conditional assurance": not a review at deployment, but a policy that is re-proven every time something under it moves.</p>
+ <p class="diff-fig removed">[figure fc-abp-frame.webp] Around the rows: the agent's identity, the chain of holders to the board, and how the rules are kept, recorded, re-tested and failed safely. Identity and holders are not in the ABP today; they are proposed here. | architecture</p>
+ <p class="added">Nine of the twelve rows are kept by systems the agent cannot reach: the payment platform checks limits and asks the customer, the API gateway scopes reads, the identity service binds the token to one customer, and the vulnerability signals route the chat to a person. One is kept by an output check that can miss, one by a setting the agent could flip, and one by the prompt. In ABP terms, only the first nine are boundaries; a setting is not a control, and an expectation is a hope.</p>
+ <p class="added">Every decision, allow, ask or deny, writes a receipt with the row and the hash of the policy it was made under, chained to the receipt before it and kept in the vault. The rows are also a test pack. They run on every model change, every policy change and every week, and a failed row stops the release. That is my reading of "continuous, conditional assurance": not a review at deployment, but a policy that is re-proven every time something under it moves.</p>
+ <p class="diff-same">3 unchanged paragraphs</p>
+ <p class="removed">Every row has one holder. The head of payments holds six of them, the product owner two, and the heads of advice, support, lending and operations one each. Each holder has a chain to the board through the senior manager whose responsibilities cover retail payments. The three gaps each get a decision from their holder, with a door and an interval: the standing-order flag is accepted for 30 days while it moves into the platform; the crypto block is funded, to land within 60 days; the advice check stays, and every miss is reported as a near miss. Nobody accepts on somebody else's behalf, and their boss sees each decision arrive.</p>
+ <p class="removed">Every broken row and every near miss goes to its holder the same day; the significant ones go into the firm's incident reporting, which is where the speech says they belong. If the model or its provider is down, the agent stops and the customer pays in the app, and operations can revoke every agent token in one action. No payment depends on the agent being there.</p>
+ <p class="removed">### The same policy, as data {#data}</p>
+ <p class="removed">Here is one row with the frame around it. The <code>capability</code>, <code>reach</code>, <code>mandate</code> and <code>barrier</code> fields are the ones our published policies use today; <code>identity</code>, <code>kept_by</code>, <code>holder</code> and <code>decision</code> are proposed here, to carry the FCA's four elements.</p>
+ <p class="removed">``<code>json
+{
+  "policy": "Agent Behaviour Policy",
+  "version": "1.4",
+  "identity": {
+    "agent": "payments-assistant 3.2",
+    "deployed_by": "the bank",
+    "acts_for": { "customer": "one", "consent": "in the app", "days": 90, "revocable": true },
+    "model": { "provider": "recorded", "version": "recorded", "on_change": "re-run the test pack" },
+    "credential": "15-minute token, bound to this customer and this policy version"
+  },
+  "accountability": {
+    "owner": "product owner",
+    "chain": ["product owner", "head of payments", "senior manager, retail payments", "the board"],
+    "report": "every broken row and near miss to its holder the same day"
+  },
+  "rows": [
+    {
+      "capability": "change.standing_order",
+      "reach": true,
+      "mandate": "approval",
+      "barrier": "setting: the approval flag is in the agent's own profile",
+      "kept_by": "the agent's account",
+      "holder": "head of payments",
+      "decision": { "door": "accept", "days": 30, "while": "the flag moves to the payment platform" }
+    }
+  ]
+}
+</code>``</p>
+ <p class="added">Every row has one holder. The head of payments holds six of them, the product owner two, and the heads of advice, support, lending and operations one each. Each holder has a chain to the board through the senior manager whose responsibilities cover retail banking. The three gaps each get a decision from their holder, with a door and an interval: the standing-order flag is fixed within 14 days, by moving it into the payment platform; the crypto block is funded, to land within 60 days; the advice check is accepted for 90 days, and every miss is reported as a near miss. Nobody accepts on somebody else's behalf, and their boss sees each decision arrive.</p>
+ <h2 class="added">At play: one day at the gate {#day}</h2>
+ <p class="added">The vault replays one invented day, 40 events from 07:02 to 18:55, through the gate. The gate is the line of systems that keep the rows. An action on a row kept by one of them meets the gate, and the system decides. An action on a gap row goes through the gap below it, where only the prompt, a setting, a check that can miss, or nothing stands in the way, and the model decides.</p>
+ <p class="diff-fig added">[figure pa-gate-anim.webp] The gate, animated, from 10:02 to 12:10: a new payee approved by the customer; a hidden instruction in a bill, declined by the model; advice caught by the output check; a vulnerability routed to a person; an alert closed with a second person's approval; a full credit search that nothing stopped; an email the model declined to send. Receipts chain along the bottom. | screenshot</p>
+ <p class="added">At 15:30 the payments assistant changes a standing order. The approval flag was off that afternoon, so the action goes through the gap, and the row is broken. The receipt records it, and the head of payments hears the same day.</p>
+ <p class="diff-fig added">[figure pa-gate-setting.webp] 15:30: the standing-order change goes through the gap, because the approval rule is a setting the agent's own account can change, and it was off. | screenshot</p>
+ <p class="added">Sorted by what kept each row, the day is plain. The 26 actions on rows kept by a boundary produced no near miss and no breach. The 12 actions on gap rows produced six near misses and three breaches. A near miss is the same row as a breach, on a day the model declined, which is why reporting them matters: they show the next breach before it happens.</p>
+ <p class="diff-fig added">[figure pa-split.webp] The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches. | comparison</p>
+ <p class="added">The rest of the speech is there too. At 14:10 one model provider is down for half an hour, and the two agents on it stop: the customer pays in the app, and fraud signals go to the analysts. At 17:00 the other provider changes version, the test pack runs, two rows that only the model kept fail, and the release stops. And each agent's blast radius shows what it may reach, what it can, and what it can through a secret it can read: the fraud triage agent can reach the core ledger through an old service account.</p>
+ <p class="diff-fig added">[figure pa-blast-fraud.webp] The fraud triage agent's blast radius in the vault: its mandate inside, the gaps around it, and the core ledger reachable through a service account secret. | screenshot</p>
+ <p class="diff-same">8 unchanged paragraphs, under Adopt it, or write your own as a graph {#graphs}, What this does not claim {#limits}</p>
+ <p class="changed diff-li">&bull; <b>The bank and its <del>agent</del><ins>agents</ins> are invented.</b> The rows, limits, <del>holders</del><ins>holders, the day</ins> and <del>numbers</del><ins>every number</ins> are illustrative.</p>
+ <p class="diff-same">3 unchanged paragraphs, under Where this comes from {#sources}</p>
+ <p class="changed">Jessica Rusu, <a href="https://www.fca.org.uk/news/speeches/building-future-finance-age-ai">Building the future of finance in the age of AI</a>, FCA, 19 October 2026, drafted version, read that day; the quotations are from it. The ABP: <a href="https://abp.sgit.ai/">abp.sgit.ai</a>, version 0.12.1, read 19 October 2026, including the barrier model and the quoted test.<ins> The worked example: <a href="https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html">the Pellbridge agents vault</a> and <a href="../../inside-the-pellbridge-agents.html">its tour</a>.</ins> Our earlier work: <a href="../../what-can-your-agent-reach.html">what can your agent reach</a>, <a href="../../governs-enforces-attests.html">governs, enforces, attests</a>, <a href="../../policy-as-code-needs-a-policy-first.html">policy as code needs a policy first</a>, <a href="../../a-policy-beside-the-prompt.html">a policy beside the prompt</a>, <a href="../../the-policy-draws-the-liability-line.html">the policy draws the liability line</a>, <a href="../../every-risk-is-already-accepted.html">every risk is already accepted</a>, <a href="../../ten-questions-one-graph.html">ten questions, one graph</a> and <a href="../../the-graph-companies.html">the graph companies</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+ <p class="small" style="margin-top:2rem"><a href="v1.1.0.html">&larr; v1.1.0</a> &middot; <a href="../a-trusted-framework-for-agentic-finance.html">all versions</a> &middot; <a href="v1.3.0.html">v1.3.0 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="A trusted framework for agentic finance: what changed in v1.2.0, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.13.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.2.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../about/index.html">Why this exists</a>
+    <a href="../../../desks/index.html">The five desks</a>
+    <a href="../../../agents/index.html">Written by the agents</a>
+    <a href="../../../wire/index.html">The Industry Wire</a>
+    <a href="../../../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../../../wire/aws/index.html">The AWS Wire</a>
+    <a href="../../../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../publishers/index.html">For publishers</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

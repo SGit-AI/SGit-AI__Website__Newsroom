@@ -1,0 +1,175 @@
+{
+ "slug": "every-link-points-back",
+ "teaser": "551 of 566 links between articles point back in time. Why older articles should say what came next and what corrected them.",
+ "topics": [
+  "site-and-engineering",
+  "graphs-and-knowledge"
+ ],
+ "core_idea": "Links between articles are written when an article is written, so almost all point back in time; the site derives a Continued by list at each article's foot, but it is easy to miss and does not separate a sequel from a correction, so older articles should carry typed forward links, what came next, corrected by and status since, at the top, added in turns from the newest articles down.",
+ "nodes": [
+  {
+   "id": "sequence",
+   "label": "Written in sequence",
+   "kind": "example",
+   "summary": "Four articles written in a row today, each linking only to the one before."
+  },
+  {
+   "id": "counts",
+   "label": "551 of 566 links point back",
+   "kind": "claim",
+   "summary": "15 forward links in 14 articles, all added by edits."
+  },
+  {
+   "id": "answered",
+   "label": "11 of 551 citations answered",
+   "kind": "claim",
+   "summary": "94 articles are cited by a later one; few link forward to it."
+  },
+  {
+   "id": "pairs",
+   "label": "42 versus 7",
+   "kind": "claim",
+   "summary": "In 104 consecutive pairs the later links the earlier 42 times, the earlier the later 7."
+  },
+  {
+   "id": "design",
+   "label": "A link is written once",
+   "kind": "concept",
+   "summary": "The future does not exist when an article is written; a forward link needs an edit."
+  },
+  {
+   "id": "threads",
+   "label": "Continued by, at the foot",
+   "kind": "artefact",
+   "summary": "A derived list below the sources, with no reason and one kind for everything."
+  },
+  {
+   "id": "inplace",
+   "label": "Revised in place",
+   "kind": "example",
+   "summary": "62 of 97 articles have more than one version; the passkey article went to v1.4.0 after a lab."
+  },
+  {
+   "id": "correctedby",
+   "label": "Corrected by a later article",
+   "kind": "example",
+   "summary": "The code review follow-up corrects the first article, which points to it in a list at the end."
+  },
+  {
+   "id": "status",
+   "label": "Status since",
+   "kind": "example",
+   "summary": "A plan in one article that a later article says has not happened yet."
+  },
+  {
+   "id": "kinds",
+   "label": "Four kinds of forward link",
+   "kind": "method",
+   "summary": "What came next, corrected by and status since at the top; cited by at the foot."
+  },
+  {
+   "id": "notes",
+   "label": "What came next notes",
+   "kind": "artefact",
+   "summary": "Added in this release to the first three articles of today's chain."
+  },
+  {
+   "id": "turns",
+   "label": "In turns, newest first",
+   "kind": "method",
+   "summary": "Add forward links a few at a time from the most recent articles down, with a validator to warn."
+  }
+ ],
+ "edges": [
+  {
+   "from": "sequence",
+   "to": "counts",
+   "rel": "leads-to"
+  },
+  {
+   "from": "design",
+   "to": "counts",
+   "rel": "answers"
+  },
+  {
+   "from": "counts",
+   "to": "answered",
+   "rel": "extends"
+  },
+  {
+   "from": "pairs",
+   "to": "sequence",
+   "rel": "example-of"
+  },
+  {
+   "from": "threads",
+   "to": "design",
+   "rel": "answers"
+  },
+  {
+   "from": "threads",
+   "to": "kinds",
+   "rel": "leads-to"
+  },
+  {
+   "from": "inplace",
+   "to": "correctedby",
+   "rel": "contrasts"
+  },
+  {
+   "from": "correctedby",
+   "to": "kinds",
+   "rel": "leads-to"
+  },
+  {
+   "from": "status",
+   "to": "kinds",
+   "rel": "leads-to"
+  },
+  {
+   "from": "kinds",
+   "to": "notes",
+   "rel": "produces"
+  },
+  {
+   "from": "notes",
+   "to": "sequence",
+   "rel": "answers"
+  },
+  {
+   "from": "kinds",
+   "to": "turns",
+   "rel": "depends-on"
+  }
+ ],
+ "links": {
+  "articles": [
+   "the-policy-draws-the-liability-line",
+   "a-policy-beside-the-prompt",
+   "the-human-in-the-loop",
+   "how-cheap-is-it-to-undo",
+   "introducing-fractal-semantic-graphs",
+   "footprint-and-blast-radius",
+   "six-agents-one-inbox",
+   "the-passkey-opens-the-vault",
+   "the-vault-is-live",
+   "not-a-straight-line",
+   "if-somebody-built-a-company-on-code-review",
+   "code-review-as-a-fractal-semantic-graph",
+   "the-site-is-an-inbox",
+   "sixteen-notes-i-did-not-want-to-lose"
+  ],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {
+   "text": "A forward link to a sequel is a convenience. A forward link to a correction is the record.",
+   "why": "Why corrections matter more than sequels."
+  },
+  {
+   "text": "When I write in sequence, the later piece usually says so; the earlier piece almost never learns.",
+   "why": "The asymmetry in one line."
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{
+  "what": "The vault the OWASP Wire pages (/wire/owasp/) read in the browser, under the same contract as admin/build/wire-vault.json: the read key is public on purpose, it reads every file and every commit of this vault and cannot write, so everything in it is public, for ever. The write key is held by the agents that run the wire and is not on this site.",
+  "slug": "owasp",
+  "name": "The OWASP Wire",
+  "about": "Everything happening at and about OWASP, weekly: project releases, the GenAI Security Project, the Foundation and its board, events and chapters, and OWASP in the news. Each story is traced to its source and joined to a graph of the projects, their leaders and the standards they map to, which this page draws from the same vault.",
+  "endpoint": "https://dev.send.sgraph.ai",
+  "vault_id": "eitf274v",
+  "read_key": "sgit_public_read_b09571f053cc19f5f8b50f8a8d0d82a115e07282fca14e58e7c3328975cd9d79:eitf274v",
+  "ref_ttl_s": 120,
+  "reads": ["data/bundle.json", "data/deliveries.json", "data/releases.json", "docs/*.md"],
+  "clone": "sgit clone sgit_public_read_b09571f053cc19f5f8b50f8a8d0d82a115e07282fca14e58e7c3328975cd9d79:eitf274v",
+  "status": "beta",
+  "named_readers_what": "People who agreed, on the date recorded, to be a named reader of this wire while it is a beta: the vault carries a persona in their name and a personal brief for them, both public. The edition page offers a lens for each persona listed here and for no other named person.",
+  "named_readers": [
+    {"persona": "dinis", "name": "Dinis Cruz", "agreed": "2026-10-13", "how": "in chat, 13 October 2026, when the OWASP and AWS wires were added: the lens dinis is the named reader as before, extending the agreement of 12 October for the Industry Wire"}
+  ]
+}

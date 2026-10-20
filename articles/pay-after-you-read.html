@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time, SGit Newsroom</title>
+<meta name="description" content="On 10 October the reading meter on sgit.ai went, in seven releases between 12:09 and 15:49, from an experiment to a working pay-on-demand publication. A reader pays pence for the share of a page they actually read, from a balance that can go below zero without ever blocking them; after reading, they say how useful it was, and that sets the price, from free to double; their reading builds personas and a newsroom of their own, kept in their browser; and they can send it to us, encrypted, for a front page designed for them. Once a Stripe link is set, the only question left is whether people pay. This article introduces each feature, shows how each one grew out of the last, with a Wardley map that adds them one at a time, explains why paying after you see the value is the right way round, and why every decision started from one rule: do not rip off the reader. It ends with an offer to sites with traffic that would like to test it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/pay-after-you-read.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/pay-after-you-read.html">
+<meta property="og:title" content="Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time, SGit Newsroom">
+<meta property="og:description" content="On 10 October the reading meter on sgit.ai went, in seven releases between 12:09 and 15:49, from an experiment to a working pay-on-demand publication. A reader pays pence for the share of a page they actually read, from a balance that can go below zero without ever blocking them; after reading, they say how useful it was, and that sets the price, from free to double; their reading builds personas and a newsroom of their own, kept in their browser; and they can send it to us, encrypted, for a front page designed for them. Once a Stripe link is set, the only question left is whether people pay. This article introduces each feature, shows how each one grew out of the last, with a Wardley map that adds them one at a time, explains why paying after you see the value is the right way round, and why every decision started from one rule: do not rip off the reader. It ends with an offer to sites with traffic that would like to test it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/pay-after-you-read.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/pay-after-you-read.jpg">
+<link rel="alternate" type="text/markdown" href="pay-after-you-read.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time, SGit Newsroom", "headline": "Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time, SGit Newsroom", "description": "On 10 October the reading meter on sgit.ai went, in seven releases between 12:09 and 15:49, from an experiment to a working pay-on-demand publication. A reader pays pence for the share of a page they actually read, from a balance that can go below zero without ever blocking them; after reading, they say how useful it was, and that sets the price, from free to double; their reading builds personas and a newsroom of their own, kept in their browser; and they can send it to us, encrypted, for a front page designed for them. Once a Stripe link is set, the only question left is whether people pay. This article introduces each feature, shows how each one grew out of the last, with a Wardley map that adds them one at a time, explains why paying after you see the value is the right way round, and why every decision started from one rule: do not rip off the reader. It ends with an offer to sites with traffic that would like to test it.", "url": "https://newsroom.sgit.ai/articles/pay-after-you-read.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time</p>
+ <h1>Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-10 &middot; updated 2026-10-11 &middot; <a href="versions/pay-after-you-read.html" title="Every published version of this article, and what changed">article v1.3.0, 4 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.36</a> &middot; <span class="chip">newsroom</span><span class="chip">reading-meter</span><span class="chip">micropayments</span><span class="chip">pricing</span><span class="chip">personalisation</span><span class="chip">personas</span><span class="chip">wardley-maps</span><span class="chip">innovation</span><span class="chip">agents</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> On 10 October the reading meter on sgit.ai went, in seven releases between 12:09 and 15:49, from an experiment to a working pay-on-demand publication. A reader pays pence for the share of a page they actually read, from a balance that can go below zero without ever blocking them; after reading, they say how useful it was, and that sets the price, from free to double; their reading builds personas and a newsroom of their own, kept in their browser; and they can send it to us, encrypted, for a front page designed for them. Once a Stripe link is set, the only question left is whether people pay. This article introduces each feature, shows how each one grew out of the last, with a Wardley map that adds them one at a time, explains why paying after you see the value is the right way round, and why every decision started from one rule: do not rip off the reader. It ends with an offer to sites with traffic that would like to test it.</em></p>
+<p>On 10 October, between 12:09 and 15:49, what I had been doing with the reading meter on this site stopped being a theoretical exercise. It went from an interesting piece of research to something commercial. As soon as a Stripe link is wired in, sgit.ai is a fully working pay-on-demand publication: every page has a price, readers pay for what they read and what they valued, and the money arrives in one place. The only question left is whether people will pay for it. That is literally the only thing.</p>
+<p>This article does two things. It introduces what was built, because a lot was added in one afternoon and none of it has been described in one place. And it uses the afternoon as a case study, probably the cleanest one we have, of the way I think innovation should happen when you work with agents: the more you have, the faster you go.</p>
+<figure class="shot" data-shot="pv-wardley-today.webp" data-dir="images/" data-alt="The reading meter at the end of 10 October, as a Wardley map: everything added that afternoon sits on the left, built on components that already existed on the right. The animated version, one release at a time, is in How it grew." data-kind="wardley-map"><figcaption>The reading meter at the end of 10 October, as a Wardley map: everything added that afternoon sits on the left, built on components that already existed on the right. The animated version, one release at a time, is in How it grew.</figcaption></figure>
+<h2>In short</h2>
+<ul>
+<li><b>Seven releases in 3 hours 40 minutes</b>, alongside seven other pieces of work, with no slowdown: a meter, then paying by depth with no block below zero, then personas, versions, sharing your reading, and finally a rating that sets the price.</li>
+<li><b>You pay after you see the value.</b> You read; the meter charges for the share you read; then you say how useful it was, and that sets the price, from free to double.</li>
+<li><b>Your reading is yours.</b> It lives in your browser, builds personas and a newsroom for each of them, and reaches us only if you send it, encrypted.</li>
+<li><b>The end state was not planned.</b> Each feature came from using the one before. Designed up front, it would have been a bigger, slower and probably over-engineered project.</li>
+<li><b>It is the ILC zigzag at work.</b> Every layer underneath, from sgit in March to the newsrooms in September, matured until it was invisible, and so the next could be built on it.</li>
+<li><b>It was fast because of what was already there</b>: the build and its gates, versioned components, git as the history, vaults, append lanes and sealed envelopes, and sessions that release on their own.</li>
+<li><b>Every decision started with the reader.</b> Not "money left on the table", but value for money: the reader should always feel the price was fair.</li>
+<li><b>What is missing is traffic.</b> If you run a site with readers and little revenue from them, let's test it together.</li>
+</ul>
+<h2 id="features">What a reader gets now</h2>
+<p>Start with a reader arriving at an article.</p>
+<p><b>A price for every page, and you pay for what you read.</b> A new article costs 10p and an older one 5p, read to the end. The meter charges the share you actually scroll through, rounded to 5% and never less than a tenth, once per page per session, topping up as you read further. Bounce off a page and it costs almost nothing.</p>
+<p><b>A balance that can go below zero, for ever.</b> Everyone starts with £5.00 of credit. When it runs out, nothing happens: no wall, no bar, no nag, only a small balance in the top bar that turns a warmer colour below zero. Paying is something you do because you want to, not because a page has stopped you.</p>
+<p><b>A card at the foot of every article.</b> It shows what the page has cost so far, how much of it you read, and the price to the end. It adds the article to your reading list. And it asks three questions, each on a five-step scale that starts in the middle:</p>
+<ul>
+<li><b>How useful was this?</b> This sets the price: 1 is free, 2 is half, 3 is the price, 4 is one and a half times, 5 is double.</li>
+<li><b>More like this?</b> This moves the page's topics and tags in your persona, so your picks change.</li>
+<li><b>Level of detail.</b> This is kept as your preference, and shown in your newsroom.</li>
+</ul>
+<figure class="shot" data-shot="pv-card.webp" data-dir="images/" data-alt="The reader card at the foot of an article: what it cost, how much was read, the reading list, and the three ratings. Usefulness sets the price; the other two shape the newsroom."><figcaption>The reader card at the foot of an article: what it cost, how much was read, the reading list, and the three ratings. Usefulness sets the price; the other two shape the newsroom.</figcaption></figure>
+<p><b>Personas, and a newsroom for each.</b> Your default persona is built from everything you read, weighted by how much of each page you read, and named from your top topics until you name it yourself (mine, in the test browser, became "The Fact Finder, with a streak of the Strategist"). You can start from five presets (a founder, a journalist, a security lead, an AI builder, a board member) or add as many of your own as you like, one for each kind of reading you do. Each has a newsroom: a front page of what it would want next, what you kept in it and what you put out of it, and a graph of the topics and pages it has grown.</p>
+<figure class="shot" data-shot="pv-newsroom.webp" data-dir="images/" data-alt="Your newsroom: a front page for one persona at a time, built in your browser from what you read."><figcaption>Your newsroom: a front page for one persona at a time, built in your browser from what you read.</figcaption></figure>
+<p><b>A reading account that stays with you.</b> The balance, the history, what you spent and your graph, with a top-up, a pause, an export as JSON and a fresh start. All of it is in your browser's storage and nowhere else.</p>
+<figure class="shot" data-shot="pv-account.webp" data-dir="images/" data-alt="The reading account: the balance, what was spent, and the controls. Kept in this browser, and only here."><figcaption>The reading account: the balance, what was spent, and the controls. Kept in this browser, and only here.</figcaption></figure>
+<p><b>Send us your reading, and get a front page designed for you.</b> This is the one way your reading reaches us. The page shows, word for word, everything that would be sent. You can copy it into an email, or send it encrypted in your browser to our list agent's published key, over a write-only lane, with a consent tick. In return, I reply with what your front page could look like, built from your actual reading.</p>
+<figure class="shot" data-shot="pv-share.webp" data-dir="images/" data-alt="Send us your reading: exactly what would be sent, word for word, then copy it or send it encrypted with your consent."><figcaption>Send us your reading: exactly what would be sent, word for word, then copy it or send it encrypted with your consent.</figcaption></figure>
+<p><b>Articles that show their changes.</b> Every article now has versions, read from git, with a page for each showing what changed, paragraph by paragraph. If you pay for writing that keeps improving, you can see what improved.</p>
+<p><b>One payment, when you choose.</b> Topping up is one £5 Stripe Payment Link, with no account and nothing that renews. On a standard UK card Stripe's fee is about 27.5p of the £5, so one top-up spreads one card fee over dozens of pages: the aggregation that makes pence payments viable, which the <a href="open-source-is-not-free.html#pence">open source economics article</a> argued for earlier the same day.</p>
+<h2 id="after">Pay after you see the value</h2>
+<p>A model I have always liked is Leanpub's. An author sets a minimum price and a suggested price, and the reader chooses what to pay with a slider, from the minimum upwards; Leanpub says readers "will choose to pay you more than your Minimum Price, and even more than your Suggested Price" (<a href="https://leanpub.com/blog/lean-publishing-tip-of-the-day-leanpubs-variable-pricing-model/">Leanpub</a>), and it offers a full refund within 60 days (<a href="https://leanpub.com/refunds">refunds</a>). The one thing that always felt odd to me is that you choose the price before you have seen the value. The reader card turns that round: you read first, and then say what it was worth.</p>
+<p>That is a known idea, and the evidence on it is mixed in useful ways.</p>
+<ul>
+<li><b>Paying what you want works better than people expect, but not for everyone.</b> In a field experiment with 113,047 people buying souvenir photos, 0.5% bought at a fixed $12.95, while 8.39% bought when they could pay what they wanted, at an average of $0.92 (<a href="https://pubmed.ncbi.nlm.nih.gov/20647467/">Gneezy and others, Science, 2010</a>). Across three field studies, prices paid were "significantly greater than zero", and paying what you want "can even lead to an increase in seller revenues" (<a href="https://doi.org/10.1509/jmkg.73.1.044">Kim, Natter and Spann, 2009</a>). In a restaurant run that way for two years, average payments declined slightly and settled "at a positive level" (<a href="https://ideas.repec.org/a/eee/soceco/v41y2012i4p476-483.html">Riener and Traxler, 2012</a>). The caution is that some people buy less, because they "feel bad when they pay less than the 'appropriate' price" (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3358869">Gneezy and others, PNAS, 2012</a>). That is why the card starts at the middle, at the price, so a reader who does nothing pays what the page costs and does not have to name a number.</li>
+<li><b>Refunds for articles have been tried, and they measure quality.</b> Blendle, the Dutch pay-per-article service, charged tens of cents an article and gave "an instant refund on any article they have purchased within 24 hours" (<a href="https://www.journalism.co.uk/how-the-itunes-of-journalism-reached-100k-users-in-4-months/">journalism.co.uk, 2014</a>). Refunds ran at about 3% of articles at first, about 10% on average by 2016, and "as high as 50 percent" for gossip and lists (<a href="https://techcrunch.com/2016/03/23/blendle-us-launch/">TechCrunch, 2016</a>). That is the clickbait point in numbers: readers asked for their money back when a page did not deliver.</li>
+<li><b>Pay-per-article on its own did not last.</b> Blendle stopped selling single articles in the Netherlands in 2019 to focus on a monthly subscription, saying "We are still not making a profit" (<a href="https://www.dutchnews.nl/2019/06/dutch-news-aggregate-website-blendle-ditches-pay-per-article-service/">DutchNews</a>), and closed its German and US pay-per-article service in September 2023 because their user bases were "very limited" (<a href="https://www.journalism.co.uk/blendle-shuts-down-micropayment-model-due-to-very-limited-user-base/">journalism.co.uk, 2023</a>). The difference here is not the price per page. It is what the page buys: a persona and a newsroom that get better the more you read, and a balance that never stops you.</li>
+<li><b>Elsewhere, refunds come with limits.</b> Steam refunds a game for any reason within 14 days if it was played for under two hours (<a href="https://store.steampowered.com/steam_refunds/">Steam</a>), and Amazon restricted Kindle returns in 2023 to books less than 10% read (<a href="https://authorsguild.org/news/amazon-changing-ebook-return-policy/">Authors Guild</a>). Charging for the share actually read solves the same problem from the other end: a page you abandon early costs little, so there is little to refund.</li>
+</ul>
+<p>The context is why this is worth trying. Across 20 countries, 17% of people paid for online news in 2026, and in the UK it is about one in ten (<a href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/dnr-executive-summary">Reuters Institute Digital News Report 2026</a>; <a href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2025/dnr-executive-summary">2025</a>). The subscription has a ceiling. Paying for what you read, after you read it, is one way past it.</p>
+<h2 id="reader-first">Every decision started with the reader</h2>
+<figure class="shot" data-shot="pv-decisions.webp" data-dir="images/" data-alt="Every decision this afternoon was a choice between charging more now and making the reader glad they paid."><figcaption>Every decision this afternoon was a choice between charging more now and making the reader glad they paid.</figcaption></figure>
+<p>Looking back at the afternoon, every decision was easy to make, because each one started from the same rule: do not rip off the reader. Make sure they are paying for value, and make sure they are happy with what they paid.</p>
+<p>That is not how a lot of pricing is done. A common instinct, in management and in sales, is not to leave money on the table: we could charge a bit more, and by not doing so we are letting the customer get away with something. I think that is a bad instinct. You never want to charge a customer the maximum they can pay, because by definition they end up feeling it was expensive, and a customer who feels that is not happy.</p>
+<p>Think about what "expensive" means. I do not find something expensive when its value for money is high, even if it costs a lot. Something becomes expensive when its value drops below its price. I might still pay for it and I can still afford it, but I now find it expensive, which means I use it less, and I do not recommend it: if something is good but expensive, I am not going to push it on friends and make them carry the cost. The sweet spot is value for money, because that is where people use a thing more and more, which is exactly what a publication wants.</p>
+<p>So, when the first version had a "Don't charge me" button, it worked, but it felt draconian: a refund you had to ask for, with a reason. The rating that replaced it as the main path says the same thing the other way round: if you saw the value, pay; if you saw more value, pay more; if you did not, do not. "Don't charge me" is still there, as the exception.</p>
+<p>What about the readers who read and never pay? Those are not readers a publication is losing money on. And a reader who did not value a page is the last one who should pay for it: charging them makes them more jaded, not more loyal. This is also a measure of the journalism. Click on a headline that promised something the article did not deliver, and you feel it: you came for something and did not find it. If you also paid for it, you feel it twice. A rating after reading puts that feeling on the record, page by page, and gives the publication a reason to stop writing pages that cause it.</p>
+<h2 id="how">How it grew: one release at a time</h2>
+<figure class="shot" data-shot="pv-timeline.webp" data-dir="images/" data-alt="The afternoon from git: seven steps of the reading meter in 3 hours 40 minutes, and seven other pieces of work released in the same four hours."><figcaption>The afternoon from git: seven steps of the reading meter in 3 hours 40 minutes, and seven other pieces of work released in the same four hours.</figcaption></figure>
+<p>None of the features at the end of the afternoon were where I started. The sequence, from the commits:</p>
+<ol>
+<li><b>The experiment, two weeks earlier.</b> The first version of browser-based consumption was on <a href="https://pt.newsroom.sgit.ai/carteira/index.html">pt.newsroom.sgit.ai</a>, the Portuguese newsroom: a wallet in which "cada página deste site custa um cêntimo a abrir" (every page costs a cent to open), with the record of what you spent on a page of its own, and the balance kept in the reader's browser.</li>
+<li><b>12:09, a meter in the browser</b> (v0.7.24). That wallet brought to sgit.ai: a price for every page, £5 of credit, a history, and picks from it. A simulated top-up with every step except the payment.</li>
+<li><b>13:40, the meter goes live</b> (v0.7.26). Using it made the next steps obvious: pay for how far you read, decline a page with a reason, a real £5 Stripe link, and the meter rebuilt as a component, SG Meter, other sites can install. And the step that made it commercial: <b>below zero, with no cut-off.</b> From that moment the offer is simply that readers can pay if they want.</li>
+<li><b>14:23, personas and a newsroom of your own</b> (v0.7.28). Once the history existed, it could become a persona, and a persona could have a front page.</li>
+<li><b>14:29, articles have versions</b> (v0.7.29), read from git.</li>
+<li><b>15:28, send us your reading</b> (v0.7.31). The personalised newsroom raised the obvious question of what readers would actually want, and the way to find out was to ask them to send it, on their terms.</li>
+<li><b>15:49, the reader card</b> (v0.7.34). The last feature, and probably the best: the ratings, with usefulness setting the price.</li>
+</ol>
+<p>There is a direct line between something working, trying it out, and improving it, and improving it again. Each step was me trying the previous one and saying: now add this. Ironically, if I had designed the end state we arrived at, I think we would have over-engineered it. It would have been the typical big project, with too much attempted at once, months of work, and untested features shaping other untested features. Instead, each feature was shaped by the one before it being in use. The "Don't charge me" button is the best example: it had to exist, and feel wrong, for the rating to be the obvious answer.</p>
+<p>The Wardley map makes the same point. Every new component sits at the genesis end, on the left, and every one of them is built on components further right that were already there and already boring: browser storage, git, Stripe, the build, vaults, append lanes, the sealed envelope. The afternoon was cheap because the right-hand side of the map was already built.</p>
+<figure class="shot shot--frames" data-shot="pv-wardley-1.webp" data-dir="images/" data-alt="The afternoon as a Wardley map, one release at a time: what already existed, then each feature as it was added and what it was built on, ending with what comes next. Times are UTC, from the commits." data-frames="pv-wardley-1.webp,pv-wardley-2.webp,pv-wardley-3.webp,pv-wardley-4.webp,pv-wardley-5.webp,pv-wardley-6.webp,pv-wardley-7.webp,pv-wardley-8.webp" data-kind="wardley-map"><figcaption>The afternoon as a Wardley map, one release at a time: what already existed, then each feature as it was added and what it was built on, ending with what comes next. Times are UTC, from the commits.</figcaption><noscript><p class="small dim">The 8 frames, one image each: <a href="images/pv-wardley-1.webp">1</a> <a href="images/pv-wardley-2.webp">2</a> <a href="images/pv-wardley-3.webp">3</a> <a href="images/pv-wardley-4.webp">4</a> <a href="images/pv-wardley-5.webp">5</a> <a href="images/pv-wardley-6.webp">6</a> <a href="images/pv-wardley-7.webp">7</a> <a href="images/pv-wardley-8.webp">8</a>.</p></noscript></figure>
+<h2 id="ilc">The zigzag: innovate, leverage, commoditise</h2>
+<figure class="shot" data-shot="pv-zigzag-anim.webp" data-dir="images/" data-alt="The same story at a larger scale, built up one layer at a time: each layer matured until it was invisible, and that is what made the next one possible."><figcaption>The same story at a larger scale, built up one layer at a time: each layer matured until it was invisible, and that is what made the next one possible.</figcaption></figure>
+<p>The map of the afternoon shows one day. The same pattern runs through the whole project, and Simon Wardley has a name for it: ILC, innovate, leverage, commoditise. You "take an existing product that is relatively well defined and commonplace and turn it into an industrialised utility", then "encourage and enable other companies to innovate by building on top of your utility", and "you then repeat this virtuous circle" (<a href="https://blog.gardeviance.org/2016/08/the-play-and-decision-to-act.html">Wardley, 2016</a>). His map of it has a platform growing on the right as each component is industrialised, with new things being built on the left.</p>
+<p>Drawn for this project, it is a zigzag. Here, a thing is commoditised when it becomes invisible: when the layer above can use it without thinking about it.</p>
+<ol>
+<li><b>sgit</b>, encrypted vaults from a command line. The first release was on 4 March 2026, as sg-send-cli 0.3.0, and after 88 releases it is sgit-ai 0.20.0. Once it just worked, vaults could hold more than files.</li>
+<li><b>Vaults that open as apps</b>: HTML in a vault, a read key in the browser. The first on this site was published on 16 August; there are 53 now. Once that was routine, a vault could be an experiment of its own.</li>
+<li><b>Claude sessions with a repository and a vault</b>, which is the layer we did not build. Agents with no other access, using a vault as their memory and their shared drive. When that became ordinary, building a website became a conversation.</li>
+<li><b>Websites built and released by agents</b>: sgit.ai from v0.1.1 on 11 August to v0.7.39 today, with gates on every release. Once a release was routine, a site could be a product of its own.</li>
+<li><b>Newsrooms</b>: sgit.newsroom and pt.newsroom, where the one-cent wallet appeared by 27 September. Once the newsroom worked, it could carry an experiment in paying.</li>
+<li><b>SG Meter</b>, the reading meter, from v1.0 at 12:09 to v1.3 at 15:49 on 10 October.</li>
+<li><b>At the top, the reader</b>: read on demand, pay for use and for value. From the reader's side it already just works: open a page, read it, choose what it was worth. Every layer under it is invisible to them, which is the point.</li>
+</ol>
+<p>The speed of the afternoon is the zigzag at work. Every time I tried something and it was solid, it became something to stand on: this is working, now do this, now do that. Each step was small because the steps under it had stopped needing attention.</p>
+<figure class="shot" data-shot="pv-zigzag.webp" data-dir="images/" data-alt="The whole zigzag. Solid arrows are a thing maturing, until it is invisible; dashed arrows are what its maturity made possible, one layer up."><figcaption>The whole zigzag. Solid arrows are a thing maturing, until it is invisible; dashed arrows are what its maturity made possible, one layer up.</figcaption></figure>
+<h2 id="fast">Why it could go this fast</h2>
+<p>I have written several times that small shipped components compound (<a href="every-mistake-added-a-rule.html">every mistake added a rule</a>): the more we have, the faster we go. This afternoon is the cleanest case study we have, and the reasons are specific.</p>
+<ul>
+<li><b>A build with gates.</b> Every release runs the same build and the same validator, so a feature lands without anyone checking the site by hand, and a broken link, a missing card or a leaked key stops the release.</li>
+<li><b>Components on versioned, immutable paths.</b> SG Meter went from v1.0 to v1.3 in an afternoon, each version on a new path with the old ones kept, so nothing that already worked could break.</li>
+<li><b>A browser test</b> for the meter (depth, decline, below zero, the return page, personas, restore), added after the second release and run on every one after.</li>
+<li><b>git as the history</b>, which is what made article versions a feature rather than a project, and the timeline above a query.</li>
+<li><b>Things already built for something else.</b> The encrypted share reuses the subscribe identity, its published key, its write-only lane and its list agent; the persona graph reuses the site's article graphs.</li>
+<li><b>Sessions that release on their own.</b> Several Claude sessions worked on this one repository in parallel, each fetching, rebuilding and releasing in minutes, which is why seven other pieces of work shipped in the same four hours without getting in the way.</li>
+</ul>
+<p>These are all non-functional requirements: the work that never appears in a feature list. They are why the feature list could grow by one item every half hour.</p>
+<h2 id="pieces">Do we have all the pieces?</h2>
+<p>I think so, for a first version, and it is worth being exact about what that means.</p>
+<p>What exists and runs: a price for every page; metering by depth; a balance that never blocks; feedback that sets the price; personalisation through personas and newsrooms; a way for a reader to share their data with consent and encryption; a payment path; documentation for other sites; a <a href="../meter/security.html">security page</a> with nine known gaps, all accepted and costed; and <a href="going-live-with-the-reading-meter.html">hypotheses with thresholds</a> to check after eight weeks.</p>
+<p>What does not exist yet:</p>
+<ul>
+<li><b>The Stripe link itself.</b> Until it is set, readers see the simulated top-up, and the eight-week clock has not started. <em>Update, 11 October 2026: the link is set and payments are live on <a href="https://newsroom.sgit.ai/account/top-up.html">newsroom.sgit.ai</a>, so the clock has started.</em></li>
+<li><b>Payment verification.</b> A static site cannot receive Stripe's confirmation, so the return page credits without checking it, and says so. That is accepted, because the cost of someone faking a top-up is that they read more of our articles.</li>
+<li><b>Your reading on more than one device.</b> Everything lives in one browser; a new device starts again unless you export. The answer is a persona in your own encrypted vault, which follows you and your agent, and which we cannot read. That is the next step, and it is why the vault matters.</li>
+<li><b>The accounting side of real money</b>: receipts, and the obligations that come once revenue is material.</li>
+<li><b>Readers.</b> This site does not have the traffic to say whether people pay.</li>
+</ul>
+<p>And the real test is not the payment. It is whether a reader prefers the front page personalised for them, or for one of their personas, over the front page everybody gets. The persona that follows you, private by default and readable by us only if you choose, is the value; the payment is what a reader does when they feel it.</p>
+<h2 id="others">Want to try it on your site?</h2>
+<p>SG Meter is ready for other sites: five files on versioned paths, a small config, a Stripe Payment Link, and <a href="../meter/index.html">the documentation</a>. How others can commercialise with it, and how we could help as a service, will be a future article, and we will publish it as a fully documented, open model.</p>
+<p>What I do not have here is traffic: readers who come back every day. This would be far more interesting on a site that has them, and especially on one that is not monetising its readers much today, so it has almost nothing to lose. A blogger with a loyal readership would be a great fit. I am going to reach out to some people I know, and if you run a site like that, let's work together to test it. It will get more interesting still once the persona lives in the reader's own vault, so I would like a couple of sites validating the model before then. Write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo from Dinis Cruz, the releases of 10 October 2026 (v0.7.24 to v0.7.34) and their commits, read from git, the <a href="../meter/index.html">SG Meter documentation</a>, and the earlier articles on the meter: <a href="a-meter-in-the-browser.html">a meter in the browser</a>, <a href="going-live-with-the-reading-meter.html">going live with the reading meter</a>, <a href="who-will-game-the-reading-meter.html">who will game the reading meter</a> and <a href="pay-to-keep-your-persona.html">pay to keep your persona</a>. The screenshots were taken in a fresh browser after reading six articles, so the balances are real for that browser.</p>
+<sg-meter view="page" kind="article" date="2026-10-10" topics="news-and-evidence startups-and-strategy" title="Pay after you read: how a reading meter became a working business model in one afternoon, one release at a time, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">News &amp; evidence</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#pay-after-you-read">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="open-source-is-not-free.html">Open source is not free: who pays to keep the long tail working?</a> <span class="dim">An old iMac, the long tail of old versions that projects are not paid to support, measured from public data, and five ways to pay for it, simulated.</span></li><li><a href="every-mistake-added-a-rule.html">Every mistake added a rule: complexity, agents, and the way back to shipping</a> <span class="dim">When every agent mistake adds a rule, complexity wins: map the process, move each piece right as a small shipped component, and keep the rigour for the work.</span></li><li><a href="going-live-with-the-reading-meter.html">Going live with the reading meter: pay for what you read, go below zero if you like, and the numbers we will check in eight weeks</a> <span class="dim">Pay for the share of a page you read, go below zero with no nagging, top up £5 on Stripe: the plan, and the numbers we check in eight weeks.</span></li><li><a href="a-meter-in-the-browser.html">A meter in the browser: a penny a page, a history you keep, and a site that picks for you</a> <span class="dim">Every page now costs a few pence from £5 of credit kept in your browser, and the reading history it keeps is what personalises the site.</span></li><li><a href="who-will-game-the-reading-meter.html">Who will game the reading meter? Eight kinds of reader, nine ways to cheat, and the risks that will actually happen</a> <span class="dim">Eight kinds of reader, none of them attackers, nine ways to cheat a browser meter, and the quieter risks that will actually happen.</span></li><li><a href="pay-to-keep-your-persona.html">Pay to keep your persona: readers should pay because it helps them, not because they feel they should</a> <span class="dim">Readers should pay because it helps them: a persona with a name and a graph, several for focus, and one that follows you between devices.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-section-for-publishers.html">A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current</a> <span class="dim">Where to send a publisher new to the newsroom: a section placed by rule, with features as they ship, that keeps itself current as the site changes.</span></li><li><a href="three-linkedin-pages.html">Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open</a> <span class="dim">Three companies, no LinkedIn pages: the decisions, every drafted field with its count, thirty first posts already written, and a new profile, in the open.</span></li><li><a href="on-the-record.html">On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses</a> <span class="dim">Experts go on the record with signed opinions, readers pay for the ones they value, and the people whose ideas an article uses get a share.</span></li><li><a href="i-just-want-to-buy-the-article.html">I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom</a> <span class="dim">I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.</span></li><li><a href="the-citizen-developer.html">The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last</a> <span class="dim">The citizen developer is the spreadsheet grown up: the best briefs ever written, handed to villagers and town planners, carried in versioned vaults.</span></li><li><a href="paying-after-the-value.html">Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running</a> <span class="dim">Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.</span></li><li><a href="hooks-are-kernel-code.html">Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run</a> <span class="dim">Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.</span></li><li><a href="the-vault-crosses-chrome-profiles.html">The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it</a> <span class="dim">The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.</span></li><li><a href="not-a-straight-line.html">Not a straight line: working for RiskMandate by working on the newsroom, and why the thinking is never wasted</a> <span class="dim">Working on the newsroom solved RiskMandate's oldest problem in two days: progress is not a straight line, and the thinking is never wasted.</span></li><li><a href="why-i-love-wardley-maps.html">Why I love Wardley maps: the best of ours, how I read one, and a map inside a map inside a map</a> <span class="dim">The best of our Wardley maps with their context, why the technique matters, one map read as a story, and a map inside a map inside a map.</span></li><li><a href="places-of-highest-leverage.html">Places of highest leverage: where to focus when the agents can go in every direction, told with three days of real steps</a> <span class="dim">Where to focus when agents can go in every direction: the place of highest leverage, shown on three days of real steps, two walked back and one parked.</span></li><li><a href="the-key-is-the-billing-system.html">The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it</a> <span class="dim">VoiceDebrief runs with no server on the user's own key; the one thing it cannot sell is a capped key, and this maps who could allow it and what to ask them.</span></li><li><a href="firing-journalists.html">Firing journalists is the worst thing a publication can do: what a hiring decision says about where a publisher is going, and who to hire instead</a> <span class="dim">A hiring decision is a direction of travel: fire the journalists and the centre of gravity moves to packaging, where the metric makes clickbait by construction.</span></li><li><a href="the-site-is-an-inbox.html">The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed</a> <span class="dim">The site as an inbox that starts empty: decide fast before reading, mark slowly while reading, build a graph you own, and sign what you send to the newsroom.</span></li><li><a href="the-vault-is-live.html">The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together</a> <span class="dim">The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.</span></li><li><a href="the-passkey-opens-the-vault.html">The passkey opens the vault: a door per path, a master vault for every user, and no server of ours</a> <span class="dim">Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.</span></li><li><a href="no-server-by-design.html">No server, by design: first I retired the database, now I am retiring the back end</a> <span class="dim">First the database went, now the back end: the SGit Newsroom runs all its logic in the browser, on commodity servers that cannot read your data.</span></li><li><a href="the-agent-is-the-reader.html">The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</a> <span class="dim">Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 65 &middot; <a href="../for/make.html#r=65">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/pay-after-you-read.jpg" download>pay-after-you-read.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="pay-after-you-read.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+ "slug": "sixteen-notes-i-did-not-want-to-lose",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 315,
+   "line": "Every reader vault needs a lane any browser writes",
+   "para": "On an iPhone browser that could not reach my passkeys, the vault showed sixteen changes held only there, and I wanted them. The request: an append lane on every reader vault, reachable by link, text or QR code. It is also a commentary on messy identity, and on two new wires built from small config files.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 242,
+   "line": "Sixteen stranded changes show readers value their own intelligence",
+   "para": "Sixteen changes existed only in a browser without passkey access, and wanting them back is the nudge working. The request is a write-only lane offered as URL, text or QR, reusing the newsroom's reading-summary pattern. Identity is a mess, users accept one-off friction for value, and the OWASP and AWS wires came from config.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "happened",
+   "label": "What happened",
+   "words": 192,
+   "line": "An in-app iPhone web view could not reach passkeys",
+   "para": "Reading the newsroom in a Chrome-like browser not signed in, the vault button counted sixteen unsynced changes, and the vault would not open. The likely cause: iOS in-app web views cannot use passkeys for domains not configured for the app, while real browsers like Chrome on iOS 17 can, and nothing shows which you are in.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "nudge",
+   "label": "The nudge is working, for the right reason",
+   "words": 181,
+   "line": "The unsynced count nudges for the right reason",
+   "para": "The reaction was not indifference but wanting the reads, notes and marked stories back as intelligence of my own. The count on the vault button does not invent a reason to click, unlike gamification; it shows what is yours and at risk. It is the same loop as I miss it, so it is working.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "request",
+   "label": "The request: send from any browser to my vault",
+   "words": 345,
+   "line": "An append lane lets any browser reach my vault",
+   "para": "The recovery code is too much power for an untrusted browser. Instead each vault should have an append lane: a link carrying the lane address and public key, offered as URL, text or QR code. Any browser encrypts and appends, learning nothing; the vault drains it on next unlock. The newsroom already does this for sgit.ai.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "brief",
+   "label": "The brief",
+   "words": 325,
+   "line": "Build a reader key pair, lane, link and drain",
+   "para": "The brief, dated 13 October 2026 at v0.12.22: a reader key pair with the private key in the master vault, an append lane with its token there too, and a link as URL, text and QR carrying only address, token and public key. Senders encrypt pending records; unlock drains them on one press. Tokens should rotate and links expire.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "hard",
+   "label": "This stuff is hard in the real world",
+   "words": 313,
+   "line": "Users accept one-off friction for value, never data loss",
+   "para": "Identity works in some browsers and not others without telling the user, which stops good ideas being adopted. Yet users tolerate complex steps that happen once and connect to value: linking WhatsApp by QR code, or Midjourney's Discord /imagine workflow, which hit a million users. The link against a pairing flow should be A/B tested.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "email",
+   "label": "And then there is email",
+   "words": 280,
+   "line": "Gmail's agent connector makes simple email tasks hard",
+   "para": "Through Claude's Gmail connector, attachments go inline, forcing a 1.4 MB PDF down to 17 KB; trimmed in-thread replies and inline images have not worked. Gmail's API supports all of these, so the limit is the connector's. If it is security, it buys little, and it pushes people to other tools, which is a bigger risk.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "wire",
+   "label": "Two config files, a new product line",
+   "words": 195,
+   "line": "Two seventeen-line config files created a new product line",
+   "para": "The wire began as one agent writing industry news into a vault. Now an OWASP Wire, joined to a graph of OWASP projects, and an AWS Wire, filtered by a declared stack, run on one builder from two seventeen-line config files: a wire is a vault plus a config. Each may find its own audience.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 148,
+   "line": "The diagnosis, lane, email limits and wires are untested",
+   "para": "The in-app web view is a best explanation, not a diagnosis. The lane is a request; only append lanes, browser encryption and recovery codes exist. The email limits are what was met in use. Accepting one-off friction is a hypothesis, and demand for OWASP or AWS wires is not yet tested.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 84,
+   "line": "Sources: a voice memo, newsroom code, Apple, Google, Discord",
+   "para": "Written by the site's agent from my voice memo of 13 October 2026, with newsroom details from code and release notes up to v0.12.22. Sources are Apple's passkey documentation, Google's passkeys on iOS note of 16 January 2025, the Gmail API guides, Anthropic's Workspace connectors page and Discord's Midjourney case study.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

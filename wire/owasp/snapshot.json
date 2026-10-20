@@ -1,0 +1,292 @@
+{
+ "what": "The OWASP Wire as it was in its vault when this site was last released: headlines and primary links, each story's edition and dated corrections, the desk's latest release note. The live edition is the vault (eitf274v); this file is the fallback and the index for agents.",
+ "release": "v0.12.84",
+ "vault": "eitf274v",
+ "endpoint": "https://dev.send.sgraph.ai",
+ "clone": "sgit clone sgit_public_read_b09571f053cc19f5f8b50f8a8d0d82a115e07282fca14e58e7c3328975cd9d79:eitf274v",
+ "wire": {
+  "id": "owasp",
+  "title": "The OWASP Wire",
+  "cadence": "weekly",
+  "description": "Everything happening at and about OWASP: project releases, the GenAI Security Project, the Foundation and its board, events and chapters, and OWASP in the news. Each story is traced to its source and joined to the projects graph.",
+  "personal_persona": "dinis"
+ },
+ "edition": "2026-10-13",
+ "window": {
+  "from": "2026-09-29",
+  "to": "2026-10-13"
+ },
+ "kind": "first edition: two weeks of OWASP, with September context",
+ "status": "ai-generated, unreviewed",
+ "counts": {
+  "stories": 19,
+  "sources": 28,
+  "personas": 6,
+  "primary_not_fetched": 0,
+  "corrected": 1,
+  "map_entities": 20,
+  "stack_services": 0,
+  "deadlines": 0
+ },
+ "latest_release": {
+  "id": "2026-10-13.3",
+  "at": "2026-10-13T21:40:00Z",
+  "edition": "2026-10-13",
+  "title": "Correction to ow-09 and the source tiers: OWASP materials are open-licensed",
+  "summary": "The owner, a long-time OWASP leader, confirms that all OWASP materials are released under open licences. The 'All rights reserved' footer on the new owasp.org is treated as a template oversight, pending the Foundation's confirmation, and ow-09 says so. OWASP's own sources move to tier A (open, share-alike where stated).",
+  "added": [],
+  "updated": [
+   "ow-09"
+  ],
+  "withdrawn": []
+ },
+ "threads": [
+  {
+   "id": "governance-season",
+   "title": "Governance season",
+   "stories": [
+    "ow-07",
+    "ow-08",
+    "ow-09",
+    "ow-10"
+   ]
+  },
+  {
+   "id": "agents-at-owasp",
+   "title": "Agents, through OWASP's lens",
+   "stories": [
+    "ow-04",
+    "ow-05",
+    "ow-06",
+    "ow-17"
+   ]
+  },
+  {
+   "id": "identity-in-tools",
+   "title": "Identity and supply chain in the tools",
+   "stories": [
+    "ow-01",
+    "ow-02",
+    "ow-19",
+    "ow-03"
+   ]
+  }
+ ],
+ "beats": [
+  {
+   "id": "projects",
+   "label": "Projects and releases",
+   "stories": [
+    {
+     "id": "ow-01",
+     "headline": "Dependency-Track 5.2.0 adds service accounts and keyless CI authentication via workload identity federation",
+     "date": "2026-10-08",
+     "primary_url": "https://dependencytrack.org/news/dependency-track-5-2",
+     "publisher": "OWASP Dependency-Track",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-02",
+     "headline": "OWASP CRS ships 4.30.0 and 4.25.2 LTS, fixing three WAF bypass advisories",
+     "date": "2026-10-02",
+     "primary_url": "https://coreruleset.org/20261002/crs-versions-4.30.0-and-4.25.2-lts-released/",
+     "publisher": "OWASP CRS Project",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-19",
+     "headline": "OWASP Cornucopia ships Mobile App Edition v2.0 mapped to MASVS 2.1, MASTG 2.0 and AISVS 1.0",
+     "date": "2026-09-10",
+     "primary_url": "https://cornucopia.owasp.org/news/20260910-owasp-cornucopia-mobile-app-edition-v2",
+     "publisher": "OWASP Cornucopia",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "genai-security",
+   "label": "GenAI Security Project",
+   "stories": [
+    {
+     "id": "ow-04",
+     "headline": "OWASP GenAI project's Q3 2026 exploit roundup documents AI agents escaping their sandboxes",
+     "date": "2026-10-08",
+     "primary_url": "https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/",
+     "publisher": "OWASP GenAI Security Project",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-06",
+     "headline": "Zenity hands Agent Control Standard v0.1 to OWASP; early reviews call it an enforcement layer, not a scorecard",
+     "date": "2026-09-10",
+     "primary_url": "https://labs.zenity.io/post/the-agent-control-standard-lands-at-owasp",
+     "publisher": "Zenity Labs",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-05",
+     "headline": "OWASP publishes 2026 Top 10 for LLM Applications; Excessive Agency jumps to #3",
+     "date": "2026-09-01",
+     "primary_url": "https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members/",
+     "publisher": "OWASP GenAI Security Project",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "foundation",
+   "label": "Foundation and governance",
+   "stories": [
+    {
+     "id": "ow-09",
+     "headline": "New owasp.org goes live with an 'All rights reserved' footer, muddying OWASP's long-standing CC BY-SA licence",
+     "date": "2026-10-13",
+     "primary_url": "https://owasp.org/about",
+     "publisher": "OWASP Foundation",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13",
+     "changes": [
+      {
+       "at": "2026-10-13",
+       "what": "Context added from the wire's owner, a long-time OWASP leader: all OWASP materials are released under open licences, so the 'All rights reserved' footer on the new site is most likely a template oversight rather than a policy change. The question stands as a question to the Foundation, not a verdict; sources from OWASP are treated as open (tier A) in this vault."
+      }
+     ]
+    },
+    {
+     "id": "ow-08",
+     "headline": "OWASP's October public board meeting moves in person to Global AppSec San Francisco; agenda still mostly TBA",
+     "date": "2026-10-13",
+     "primary_url": "https://board.owasp.org/meetings/202610",
+     "publisher": "OWASP Global Board",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-07",
+     "headline": "OWASP board election: candidate town hall held 6 Oct, member voting runs 15-30 Oct for three seats",
+     "date": "2026-10-06",
+     "primary_url": "https://board.owasp.org/elections/2026_elections",
+     "publisher": "OWASP Global Board",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-10",
+     "headline": "September board meeting puts CRA implementation, an AI policy and the website launch on the agenda",
+     "date": "2026-09-22",
+     "primary_url": "https://owasp.org/board/meetings/202609",
+     "publisher": "OWASP Global Board",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "events-community",
+   "label": "Events, chapters and community",
+   "stories": [
+    {
+     "id": "ow-15",
+     "headline": "LASCON 2026, OWASP Austin's annual conference, set for late October",
+     "date": "2026-10-13",
+     "primary_url": "https://www.eventbrite.com/e/owasp-lascon-2026-tickets-1858757757489",
+     "publisher": "OWASP Austin (Eventbrite)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-14",
+     "headline": "Global AppSec USA 2026 (San Francisco, 2-6 Nov) sets keynotes and a new 'OWASP by Design' track",
+     "date": "2026-10-13",
+     "primary_url": "https://owasp.glueup.com/event/owasp-global-appsec-usa-2026-167174/",
+     "publisher": "OWASP Foundation (Glue Up)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-13",
+     "headline": "OWASP Ottawa marks the foundation's 25th anniversary with a free AppSec day on 17 October",
+     "date": "2026-10-13",
+     "primary_url": "https://www.uottawa.ca/faculty-engineering/events-all/owasp-ottawa-application-security-conference",
+     "publisher": "University of Ottawa, Faculty of Engineering",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-12",
+     "headline": "New OWASP Valencia chapter launched by UPV researcher Santiago Escobar",
+     "date": "2026-10-13",
+     "primary_url": "https://vrain.upv.es/el-investigador-de-vrain-de-la-upv-santiago-escobar-junto-con-otros-profesionales-valencianos-crea-un-capitulo-de-owasp-valencia",
+     "publisher": "VRAIN - Universitat Politècnica de València",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-16",
+     "headline": "OWASP London holds back-to-back chapter meetups (28 Sept and 7 Oct)",
+     "date": "2026-10-07",
+     "primary_url": "https://www.meetup.com/owasp-london/",
+     "publisher": "OWASP London Chapter",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-11",
+     "headline": "OWASP AppSec Israel 2026 runs in Tel Aviv",
+     "date": "2026-10-06",
+     "primary_url": "https://appsecil.org/",
+     "publisher": "OWASP Israel Chapter",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  },
+  {
+   "id": "owasp-in-the-news",
+   "label": "OWASP in the news",
+   "stories": [
+    {
+     "id": "ow-18",
+     "headline": "Pentest buyers' guide names the OWASP Testing Guide alongside PTES, NIST SP 800-115 and OSSTMM",
+     "date": "2026-10-10",
+     "primary_url": "https://securityboulevard.com/2026/10/is-your-annual-pentest-report-enough-understanding-industry-specific-vapt-requirements/",
+     "publisher": "Security Boulevard (Kratikal)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-17",
+     "headline": "Kovrr: treat prompt injection as a standing risk, citing its #1 spot in OWASP's LLM Top 10",
+     "date": "2026-10-08",
+     "primary_url": "https://securityboulevard.com/2026/10/prompt-injection-as-a-standing-risk-kovrr/",
+     "publisher": "Security Boulevard (Kovrr)",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    },
+    {
+     "id": "ow-03",
+     "headline": "Help Net Security profiles OWASP Noir, a static attack-surface mapper covering 29 languages",
+     "date": "2026-09-30",
+     "primary_url": "https://www.helpnetsecurity.com/2026/09/30/owasp-noir-open-source-static-analysis-tool/",
+     "publisher": "Help Net Security",
+     "status": "ai-generated, unreviewed",
+     "edition": "2026-10-13"
+    }
+   ]
+  }
+ ],
+ "pictures": {
+  "what": "AI-made pictures for the editions, a hero per edition and a card per story, made by this site from the stories' text; https://newsroom.sgit.ai/wire/owasp/infographics/ledger.json and infographics/<edition>/ledger.json with each image's model, cost and prompt",
+  "images": 13,
+  "cost_usd": 1.905794,
+  "editions": [
+   "2026-10-13"
+  ]
+ }
+}

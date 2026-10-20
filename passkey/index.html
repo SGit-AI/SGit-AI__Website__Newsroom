@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The passkey lab &middot; newsroom.sgit.ai</title>
+<meta name="description" content="Try the pieces of a reader account with no server: make a passkey with PRF, see the same bytes on every device through the same path, derive a door vault and sgit&#x27;s keys from them, make a recovery code, check against sgit&#x27;s own code, and create the door on a vault server.">
+<link rel="canonical" href="https://newsroom.sgit.ai/passkey/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/passkey/index.html">
+<meta property="og:title" content="The passkey lab">
+<meta property="og:description" content="Try the pieces of a reader account with no server: make a passkey with PRF, see the same bytes on every device through the same path, derive a door vault and sgit&#x27;s keys from them, make a recovery code, check against sgit&#x27;s own code, and create the door on a vault server.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/newsroom.css">
+<link rel="stylesheet" href="lab.css">
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-send/sg-send-crypto.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-send/sg-send.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-crypto.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-object-store.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-ref-manager.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault-commit.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--file-ops.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--folder-ops.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--sync.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--history.js"></script>
+<script src="../assets/vendor/sg-vault/v0.2.3/sg-vault/sg-vault--branches.js"></script>
+<script src="../assets/vendor/sg-vault/local/sg-vault--create-with-id.js"></script>
+</head>
+<body>
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl here" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="../replicate/index.html">Replicate</a> / The passkey lab</p>
+ <p class="eyebrow">A lab: the passkey opens the vault</p>
+ <h1>The passkey lab</h1>
+ <p class="lead">Each step of the design, as a thing you can press in your own browser: a passkey, its PRF bytes, the door derived from them, a recovery code, and the door created on a vault server.</p>
+<div class="note lab"><b>A lab, not a feature.</b> Nothing here changes your reading account, your balance or your personas. The page stores one public thing in this browser, the id of a passkey it made, so it can say so next time. Keys it derives are shown behind a reveal and kept in the page&rsquo;s memory only; an access key you paste is kept the same way and forgotten when the page closes. The page loads no code from anywhere else, and every call it makes to a vault server is listed as it happens.</div>
+<p>The design is in <a href="../articles/the-passkey-opens-the-vault.html">The passkey opens the vault</a>: a passkey, through the WebAuthn PRF extension, gives the browser 32 bytes that only your authenticator can produce for this site; from those bytes the browser <em>computes</em> the key and the address of a small door vault, so nothing has to be stored to be found; the door holds the master vault&rsquo;s key. Each card below is one step of that, as a thing you can press.</p>
+
+<section class="poc" id="poc0">
+<h2>0. What this browser can do</h2>
+<p class="what">WebAuthn, the platform authenticator, and whether the browser says it supports the PRF extension. Nothing to press: it is read when the page opens.</p>
+<div class="acts"></div>
+<div class="out" id="poc0-out"></div>
+</section>
+
+<section class="poc" id="poc1">
+<h2>1. Make a passkey for this site</h2>
+<p class="what"><code>navigator.credentials.create()</code> with <code>rp.id</code> set to this host, a resident key, user verification required, and the <code>prf</code> extension. The passkey is stored by your provider (Google Password Manager, iCloud Keychain, Windows Hello, a hardware key, or the browser&rsquo;s own store); the page learns a credential id, a public key and whether PRF is on. It never learns who you are.</p>
+<div class="acts"><button type="button" class="btn primary" id="poc1-go">Make a passkey</button><span class="dim">You will be asked for a touch, a face or a PIN.</span></div>
+<div class="ladder" id="poc1-ladder" hidden><b>No PRF bytes from this passkey.</b> The article&rsquo;s ladder, in order:<ol><li>Sign in to a passkey provider (Google Password Manager in Chrome, iCloud Keychain in Safari), so the passkey syncs and PRF is available.</li><li>Use your phone by QR: a passkey on the phone, one scan at a time.</li><li>Plug in a hardware key.</li><li>Stay on this device: the browser&rsquo;s own copy of the reading account keeps working, and the recovery code (4) is the way back.</li></ol></div><div class="out" id="poc1-out"></div>
+</section>
+
+<section class="poc" id="poc2">
+<h2>2. Touch it: the PRF bytes</h2>
+<p class="what"><code>navigator.credentials.get()</code> with the fixed input, the SHA-256 of a public string. The authenticator returns 32 bytes computed from a secret it keeps for this site and this passkey. The same passkey gives the same bytes on every device it syncs to, through the same kind of path; that is the whole trick. Through a different path (a phone over QR, instead of the provider on the device) the same passkey can give different bytes, which a test here found on 12 October 2026; the result shows which path answered, and the design gives each path its own door: <a href='../admin/notes/2026-10-12__one-door-per-passkey-path.md'>one door per passkey path</a>.</p>
+<div class="acts"><label>Input text <input type="text" id="poc2-input" class="mono"></label><button type="button" class="btn primary" id="poc2-go">Get the PRF bytes</button></div>
+<div class="ladder" id="poc2-compare" hidden>Your fingerprint here: <b class="mono" id="poc2-mine"></b>. From another device: <input type="text" id="poc2-other" class="mono" placeholder="8 hex characters" maxlength="8"> <button type="button" class="btn sm" id="poc2-cmp-go">Compare</button> <span id="poc2-cmp-out" class="dim"></span></div><div class="out" id="poc2-out"></div>
+</section>
+
+<section class="poc" id="poc3">
+<h2>3. From the bytes, the door</h2>
+<p class="what">The article&rsquo;s derivation, made exact: HKDF to a seed, a passphrase and an 8-character vault id; then sgit&rsquo;s own derivation of the read key and the write key, PBKDF2-HMAC-SHA256 at 600,000 iterations each, timed on this device. The door&rsquo;s key is not stored anywhere: it comes out the same every time.</p>
+<div class="acts"><button type="button" class="btn" id="poc3-go">Derive again</button><span class="dim">Runs by itself after 2.</span></div>
+<div class="out" id="poc3-out"></div>
+</section>
+
+<section class="poc" id="poc4">
+<h2>4. A recovery code: the second door</h2>
+<p class="what">26 characters of base32, 128 bits, made by the page and in the real flow shown once. In place of the PRF bytes it derives a second door to the same master, for the day every passkey is gone.</p>
+<div class="acts"><button type="button" class="btn primary" id="poc4-go">Make a recovery code</button></div>
+<div class="ladder">Type a code back: <input type="text" id="poc4-code" class="mono" placeholder="XXXX-XXXX-…"> <button type="button" class="btn sm" id="poc4-check">Which door?</button> <label class="dim"><input type="checkbox" id="poc4-use"> use it as the door in 3 and 6 when there is no passkey</label> <span id="poc4-check-out" class="dim"></span></div><div class="out" id="poc4-out"></div>
+</section>
+
+<section class="poc" id="poc5">
+<h2>5. Test vectors: the browser and sgit agree</h2>
+<p class="what">The same derivation from a fixed, fake PRF output, compared value by value with what sgit&rsquo;s own Python produced (<a href='vectors.json'>vectors.json</a>, from <code>admin/build/passkey_vectors.py</code>). Runs when the page opens. If any line is wrong, the browser and the command line would open different vaults.</p>
+<div class="acts"><span id="poc5-use" hidden><button type="button" class="btn" id="poc5-use-go">Use the test vector as the door in 3 and 6</button> <span class="dim">for trying the server without a passkey</span></span></div>
+<div class="out" id="poc5-out"></div>
+</section>
+
+<section class="poc" id="poc6" hidden>
+<h2>6. Real vaults: the door, the master and the reader vault</h2>
+<p class="what">With the door from 3 (or the recovery code from 4, or the test vector), the vault library that runs dev.vault.sgraph.ai, <a href="../assets/vendor/sg-vault/v0.2.3/VENDOR.md">vendored here</a> and loaded from this origin, creates and opens real sgit vaults: the <b>door</b> at its derived address, holding the master&rsquo;s key and a record of where it came from (kind, provider, path, credential id, device, date); the <b>master</b>, made at random, holding the reader vault&rsquo;s key and the list of doors; the <b>reader vault</b>, where a note is written and read back. Every vault made here is one <code>sgit clone</code> opens, with write access, from the key shown behind each reveal. Writing needs an <b>access key</b> for the server, which is the thing a reader will buy; opening and reading need nothing.</p>
+<div class="acts">
+  <label>Server <select id="poc6-server"><option value="https://dev.send.sgraph.ai">dev.send.sgraph.ai</option><option value="https://send.sgraph.ai">send.sgraph.ai</option></select></label>
+  <label>Access key <input type="password" id="poc6-access" autocomplete="off" placeholder="kept in memory only"></label>
+  <label>This device <input type="text" id="poc6-device" maxlength="40" placeholder="a label for the door&rsquo;s record"></label>
+</div>
+<div class="acts">
+  <button type="button" class="btn" id="poc6-check">Is there a door at <span class="mono" id="poc6-id"></span>?</button>
+  <button type="button" class="btn primary" id="poc6-create" disabled>Create the account: door, master, reader vault</button>
+  <button type="button" class="btn" id="poc6-unlock">Unlock through this door</button>
+  <button type="button" class="btn" id="poc6-add" disabled>Add the recovery code as a second door</button>
+</div>
+<div class="acts">
+  <label>A note <input type="text" id="poc6-note" maxlength="200" placeholder="goes into the reader vault, notes/"></label>
+  <button type="button" class="btn" id="poc6-write" disabled>Write it and read it back</button>
+</div>
+<p class="dim">An address with no door says so; it is not an error. A vault id is never destroyed, because a destroyed id can never be used again and a door&rsquo;s is derived. The test vector&rsquo;s door has the same address for everyone, so on the real server only the first person can create it. Moving the reading account into the reader vault is the next step and is not built.</p>
+<div class="out" id="poc6-out"></div>
+<ul class="calls" id="poc6-log" hidden></ul>
+</section>
+
+<h2 id="notes">What this lab is, and is not</h2>
+<ul>
+<li><b>The relying party id is this host.</b> On newsroom.sgit.ai a passkey made here is for newsroom.sgit.ai exactly, as the article&rsquo;s trust boundary asks; it does not work on sgit.ai or on any other site. The derivation&rsquo;s constants name newsroom.sgit.ai whichever host runs the page, so the test vectors are the same everywhere.</li>
+<li><b>Where the passkey lives decides what you get.</b> Card 1 shows whether the passkey is backup-eligible, which is the browser&rsquo;s word for synced. A clean browser with no provider may make a passkey that signs and returns no PRF bytes; card 2 says so if it happens, and card 1 shows the ladder.</li>
+<li><b>A door per path, not per passkey.</b> On 12 October 2026 one Google Password Manager passkey gave one set of bytes through the provider on a Mac and on an iPhone, and a different set, consistently, when a phone answered a QR code from a Mac or an iPad: same credential id, same user handle, same input. Apple&rsquo;s developer forums carry the same symptom for iCloud Keychain passkeys since late 2024, with a fix announced and a tester reporting it persisting. A second passkey in iCloud Keychain gave the same bytes on a Mac, a current iPad and a current iPhone, in Safari and in Chrome, which is the common case; an older iPad that could not use it locally offered only the QR path. The design therefore treats every distinct set of bytes as its own door to the same master, adds a door while unlocked on a device where both paths run (a Mac with Chrome runs both in one session), and uses the recovery code to bring a new path in where no door opens. The finding, the bug and the revised design are written out in <a href="../admin/notes/2026-10-12__one-door-per-passkey-path.md">one door per passkey path</a>.</li>
+<li><b>Not built here:</b> the master vault, the newsroom vault, moving the reading account into it, adding a second path or passkey as a door, retiring a door, and anything that signs the reader in. The brief&rsquo;s phase five is where those land, after the move.</li>
+<li><b>The door record this lab writes</b> is one sgit object (<code>obj-cas-imm-&hellip;</code>, content-addressed), encrypted the way sgit encrypts, so sgit&rsquo;s own code can decrypt it; it is not yet a commit in a tree, so <code>sgit clone</code> of the door would show an empty history. The real door will be a vault with one committed file.</li>
+<li><b>Tests:</b> <code>admin/build/test_passkey.mjs</code> drives the page in Chromium with a virtual authenticator that has PRF, checks the derivation against the vectors, and runs the server flow against a stand-in server; the real server is tried by a person with an access key.</li>
+</ul>
+<script type="module">
+import { lab } from './lab.js';
+lab({ vectors: 'vectors.json' });
+</script>
+
+<div class="agent">
+  <h4>For an agent</h4>
+  <p>A lab page for the design in https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.html: in a browser, make a passkey with the PRF extension, get the PRF bytes, derive a door vault's passphrase and id (HKDF) and sgit's read and write keys (PBKDF2, 600,000 iterations), make a recovery code, compare with sgit's Python at https://newsroom.sgit.ai/passkey/vectors.json, and with an access key create the door on a vault server and open it. It stores nothing but a passkey id; it does not touch the reading account. The derivation is written out at the top of https://newsroom.sgit.ai/passkey/lab.js.</p>
+</div>
+</main>
+<sg-meter view="page" kind="free" date="" topics="" title="The passkey lab, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

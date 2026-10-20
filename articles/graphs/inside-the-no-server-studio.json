@@ -1,0 +1,155 @@
+{
+  "slug": "inside-the-no-server-studio",
+  "teaser": "An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.",
+  "topics": [
+    "startups-and-strategy",
+    "vaults-and-method"
+  ],
+  "core_idea": "A working MVP of the no-server blueprint, one HTML file of native web components that draws infographics in the browser, runs in simulation by default, leaves the model's key to the vault host or the user, and carries a business plan for somebody to build, tested by synthetic users and a live check.",
+  "nodes": [
+    {
+      "id": "studio",
+      "label": "The no-server studio",
+      "kind": "artefact",
+      "summary": "One HTML file, seven web components."
+    },
+    {
+      "id": "sim",
+      "label": "Simulation mode",
+      "kind": "method",
+      "summary": "A deterministic extractor stands in for the model."
+    },
+    {
+      "id": "render",
+      "label": "The browser draws",
+      "kind": "method",
+      "summary": "SVG in four layouts, the same for both paths."
+    },
+    {
+      "id": "host",
+      "label": "The vault host holds the key",
+      "kind": "concept",
+      "summary": "Capped, consented, never seen by the page."
+    },
+    {
+      "id": "flow",
+      "label": "The flow with invented money",
+      "kind": "example",
+      "summary": "Eight steps, one gap."
+    },
+    {
+      "id": "plan",
+      "label": "A business plan",
+      "kind": "artefact",
+      "summary": "Three businesses, prices as hypotheses."
+    },
+    {
+      "id": "checklist",
+      "label": "Nine of twelve done",
+      "kind": "example",
+      "summary": "Two partial, one simulated."
+    },
+    {
+      "id": "users",
+      "label": "Synthetic users",
+      "kind": "method",
+      "summary": "Three personas walked it first."
+    },
+    {
+      "id": "bug",
+      "label": "A bug found live",
+      "kind": "example",
+      "summary": "The vault sandbox has no session storage."
+    }
+  ],
+  "edges": [
+    {
+      "from": "sim",
+      "to": "studio",
+      "rel": "produces"
+    },
+    {
+      "from": "render",
+      "to": "studio",
+      "rel": "produces"
+    },
+    {
+      "from": "host",
+      "to": "studio",
+      "rel": "extends"
+    },
+    {
+      "from": "flow",
+      "to": "plan",
+      "rel": "leads-to"
+    },
+    {
+      "from": "checklist",
+      "to": "studio",
+      "rel": "extends"
+    },
+    {
+      "from": "users",
+      "to": "studio",
+      "rel": "extends"
+    },
+    {
+      "from": "bug",
+      "to": "users",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-no-server-startup",
+      "inside-the-pellbridge-agents",
+      "free-models-your-own-key"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/demos/vaults/no-server-studio/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "So the model only ever writes the words.",
+      "why": "On the engine."
+    },
+    {
+      "text": "Synthetic users test the product; a live check tests the place it runs.",
+      "why": "On the bug."
+    }
+  ],
+  "figures": [
+    {
+      "file": "nv-live.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nv-live.webp",
+      "caption": "The no-server studio, opened from its vault in the official vault UI, read-only, with the published key. The host reports no AI key for a public read, and the studio says so and stays in simulation.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nv-studio-night.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nv-studio-night.webp",
+      "caption": "The Pellbridge day as big numbers, in the night theme.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nv-gallery.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nv-gallery.webp",
+      "caption": "The gallery: four sample documents, four layouts, three themes, all drawn in the browser.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nv-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nv-flow.webp",
+      "caption": "The flow after every step has been tried: the credit at the provider, what was spent, and what the studio would earn at a fifth.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nv-checklist.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nv-checklist.webp",
+      "caption": "The checklist for this studio: nine done, two partial, one simulated.",
+      "kind": "screenshot"
+    }
+  ]
+}

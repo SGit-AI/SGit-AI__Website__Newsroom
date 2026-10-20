@@ -1,0 +1,166 @@
+{
+  "id": "governance-beat-ontology",
+  "version": "0.1.0",
+  "updated": "2026-08-26",
+  "beat": "Risk, governance and accountability in autonomous systems",
+  "note": "The vocabulary this publication classifies with. Inherited edges come from the fifteen published at graphs.sgit.ai/v1/grammar/edge-set.html and are used unchanged; proposed edges are new here and are marked as such. Every edge is a verb with a distinct, meaningfully-named inverse — no symmetric 'related' edge exists, by rule.",
+  "inherits_from": {
+    "site": "graphs.sgit.ai",
+    "page": "https://graphs.sgit.ai/v1/grammar/edge-set.html",
+    "checked": "2026-08-26"
+  },
+  "node_types": [
+    {
+      "id": "Body",
+      "label": "Body",
+      "definition": "A regulator, supervisory authority, standards body or legislature that publishes binding or advisory text."
+    },
+    {
+      "id": "Instrument",
+      "label": "Instrument",
+      "definition": "A regulation, directive, standard or other named body of text that can be cited as a whole."
+    },
+    {
+      "id": "Provision",
+      "label": "Provision",
+      "definition": "An article, clause or recital inside an instrument, addressable on its own."
+    },
+    {
+      "id": "Publication",
+      "label": "Publication",
+      "definition": "A dated artefact issued by a Body: guidance, a news item, a consultation, a decision, a consolidated text."
+    },
+    {
+      "id": "Fact",
+      "label": "Fact",
+      "definition": "An extracted claim about what a text says or when something happened. A Fact records the source it came from and its anchor state; anchoring pins it to a byte range in a frozen copy, and nothing in this release is anchored."
+    },
+    {
+      "id": "Question",
+      "label": "Question",
+      "definition": "Something a text does not determine. A first-class node, not an omission — countable, dateable and assignable."
+    },
+    {
+      "id": "Role",
+      "label": "Role",
+      "definition": "A duty-holder named by an instrument: provider, deployer, importer, authority."
+    },
+    {
+      "id": "Milestone",
+      "label": "Milestone",
+      "definition": "A dated event in an instrument's life: adoption, entry into force, applicability, amendment."
+    }
+  ],
+  "edges": [
+    {
+      "verb": "backed_by",
+      "inverse": "backs",
+      "domain": "Fact",
+      "range": "Publication",
+      "origin": "inherited",
+      "sentence": "This fact is backed by that publication."
+    },
+    {
+      "verb": "gives_rise_to",
+      "inverse": "arises_from",
+      "domain": "Fact",
+      "range": "Question",
+      "origin": "inherited",
+      "sentence": "This fact gives rise to that question."
+    },
+    {
+      "verb": "conditional_on",
+      "inverse": "conditions",
+      "domain": "Fact",
+      "range": "Fact",
+      "origin": "inherited",
+      "sentence": "This fact is conditional on that one holding."
+    },
+    {
+      "verb": "observed_on",
+      "inverse": "observes",
+      "domain": "Fact",
+      "range": "Milestone",
+      "origin": "inherited",
+      "sentence": "This fact was observed on that date."
+    },
+    {
+      "verb": "published_by",
+      "inverse": "publishes",
+      "domain": "Publication",
+      "range": "Body",
+      "origin": "proposed",
+      "sentence": "This publication was published by that body."
+    },
+    {
+      "verb": "part_of",
+      "inverse": "contains",
+      "domain": "Provision",
+      "range": "Instrument",
+      "origin": "proposed",
+      "sentence": "This provision is part of that instrument."
+    },
+    {
+      "verb": "anchored_in",
+      "inverse": "anchors",
+      "domain": "Fact",
+      "range": "Provision",
+      "origin": "proposed",
+      "sentence": "This fact is anchored in that provision."
+    },
+    {
+      "verb": "obliges",
+      "inverse": "obliged_by",
+      "domain": "Provision",
+      "range": "Role",
+      "origin": "proposed",
+      "sentence": "This provision obliges that role."
+    },
+    {
+      "verb": "leaves_open",
+      "inverse": "left_open_by",
+      "domain": "Provision",
+      "range": "Question",
+      "origin": "proposed",
+      "sentence": "This provision leaves that question open."
+    },
+    {
+      "verb": "supersedes",
+      "inverse": "superseded_by",
+      "domain": "Fact",
+      "range": "Fact",
+      "origin": "proposed",
+      "sentence": "This fact supersedes that earlier one, which is kept."
+    },
+    {
+      "verb": "dated_by",
+      "inverse": "dates",
+      "domain": "Instrument",
+      "range": "Milestone",
+      "origin": "proposed",
+      "sentence": "This instrument is dated by that milestone."
+    }
+  ],
+  "formulas": [
+    {
+      "id": "StaleSource",
+      "expression": "Publication where a dates edge to its own Milestone precedes the in-force Milestone of the Instrument it claims to consolidate",
+      "note": "Classification is a queryable formula rather than a label somebody applied. Change the formula and every affected publication reclassifies at once — which is itself a correction and is published as one."
+    },
+    {
+      "id": "UnpriceableObligation",
+      "expression": "Provision that obliges a Role and also leaves_open at least one Question",
+      "note": "A duty exists and what satisfies it is undetermined. This is the class of finding the absence report exists to surface."
+    }
+  ],
+  "banned": [
+    {
+      "verb": "related_to",
+      "why": "Symmetric edges carry no direction and no meaning. Banned by the inherited grammar and checked by the gate."
+    },
+    {
+      "verb": "mentions",
+      "why": "Too weak to be worth an edge: it says a string appeared, not that anything follows from it."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+ "slug": "cloudflare-as-lego-blocks",
+ "teaser": "Cloudflare's developer platform as the smallest free blocks a non-specialist can use, and an sgit vault on it: no code read-only, 83 lines read-write.",
+ "topics": ["vaults-and-method"],
+ "core_idea": "Cloudflare's platform maps to small free blocks a non-specialist can assemble once with an agent; Workers AI keeps @cf models inside the account without training on content; an sgit vault needs no code read-only and an 83-line Worker read-write, tested with the real client; and the setup must be a button, a temporary account or an agent because the API cannot be called from a page.",
+ "nodes": [
+  {"id": "want", "label": "Use it without learning it", "kind": "question", "summary": "A non-specialist, or an agent, once."},
+  {"id": "blocks", "label": "The blocks, by job", "kind": "concept", "summary": "Web, data, models, jobs, mail and access."},
+  {"id": "free", "label": "Most of it is free", "kind": "claim", "summary": "Hosting, Workers, R2, D1, KV, Durable Objects, Workers AI."},
+  {"id": "inside", "label": "Models that stay inside", "kind": "claim", "summary": "@cf models on Cloudflare GPUs, no training."},
+  {"id": "readonly", "label": "A read-only vault, no code", "kind": "example", "summary": "sgit publish plus any static host."},
+  {"id": "worker", "label": "A read-write vault, 83 lines", "kind": "artefact", "summary": "One Worker, R2, a Durable Object per vault."},
+  {"id": "tested", "label": "Tested with the real client", "kind": "method", "summary": "Push, clone, a race, read-only, wrong key."},
+  {"id": "constraint", "label": "The server can read nothing", "kind": "claim", "summary": "So it has almost nothing to do."},
+  {"id": "cors", "label": "The API cannot be called from a page", "kind": "claim", "summary": "Setup needs a button, a temporary account or an agent."},
+  {"id": "button", "label": "Deploy to Cloudflare", "kind": "method", "summary": "One click into the user's own account."},
+  {"id": "packages", "label": "Five packages", "kind": "method", "summary": "Site, vault, assistant, inbox, form."}
+ ],
+ "edges": [
+  {"from": "want", "to": "blocks", "rel": "leads-to"},
+  {"from": "blocks", "to": "free", "rel": "extends"},
+  {"from": "inside", "to": "blocks", "rel": "example-of"},
+  {"from": "constraint", "to": "worker", "rel": "leads-to"},
+  {"from": "readonly", "to": "worker", "rel": "extends"},
+  {"from": "tested", "to": "worker", "rel": "answers"},
+  {"from": "cors", "to": "button", "rel": "leads-to"},
+  {"from": "blocks", "to": "packages", "rel": "leads-to"},
+  {"from": "button", "to": "packages", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-minimum-code-below", "the-value-of-constraints", "free-models-your-own-key"],
+  "pages": [],
+  "sites": ["https://developers.cloudflare.com/workers/platform/limits/", "https://developers.cloudflare.com/workers-ai/platform/privacy/", "https://developers.cloudflare.com/workers/platform/deploy-buttons/", "https://developers.cloudflare.com/durable-objects/platform/pricing/"]
+ },
+ "quotes": [
+  {"text": "because the server can read nothing, it has almost nothing to do.", "why": "Why the vault fits."},
+  {"text": "If staying inside is the point, the model name is the control:", "why": "On models."},
+  {"text": "Setup cannot happen purely in a browser tab.", "why": "The catch."}
+ ]
+}

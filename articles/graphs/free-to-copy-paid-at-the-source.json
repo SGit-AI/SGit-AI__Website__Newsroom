@@ -1,0 +1,131 @@
+{
+  "slug": "free-to-copy-paid-at-the-source",
+  "teaser": "Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "Because a hook is code that runs with the user's permissions, companies will take policies and hooks only from a trusted official source, so that source can meter and charge per use even for openly licensed content, provided the trust is earned through third-party review, audit and signatures rather than claimed.",
+  "nodes": [
+    {
+      "id": "meter",
+      "label": "Per-use metering",
+      "kind": "method",
+      "summary": "Credit drawn down per page."
+    },
+    {
+      "id": "open",
+      "label": "Open policies and hooks",
+      "kind": "artefact",
+      "summary": "CC BY 4.0 and Apache 2.0."
+    },
+    {
+      "id": "code",
+      "label": "A hook is code",
+      "kind": "claim",
+      "summary": "Runs with your permissions."
+    },
+    {
+      "id": "source",
+      "label": "The official source",
+      "kind": "concept",
+      "summary": "Brand, authority, current version."
+    },
+    {
+      "id": "charge",
+      "label": "Charge per use at the source",
+      "kind": "claim",
+      "summary": "Even for open content."
+    },
+    {
+      "id": "review",
+      "label": "Reviewed by others",
+      "kind": "method",
+      "summary": "Scanners, audits, a named sign-off."
+    },
+    {
+      "id": "signed",
+      "label": "Signed with our keys",
+      "kind": "method",
+      "summary": "Checkable anywhere."
+    },
+    {
+      "id": "precedent",
+      "label": "Red Hat, Docker",
+      "kind": "example",
+      "summary": "Paying for certified, verified sources."
+    }
+  ],
+  "edges": [
+    {
+      "from": "code",
+      "to": "source",
+      "rel": "leads-to"
+    },
+    {
+      "from": "open",
+      "to": "source",
+      "rel": "depends-on"
+    },
+    {
+      "from": "source",
+      "to": "charge",
+      "rel": "produces"
+    },
+    {
+      "from": "meter",
+      "to": "charge",
+      "rel": "depends-on"
+    },
+    {
+      "from": "review",
+      "to": "source",
+      "rel": "answers"
+    },
+    {
+      "from": "signed",
+      "to": "source",
+      "rel": "answers"
+    },
+    {
+      "from": "precedent",
+      "to": "charge",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "paying-after-the-value",
+      "the-fork-next-door",
+      "hooks-are-kernel-code",
+      "skill-behaviour-policy",
+      "pki-everywhere",
+      "our-first-customers",
+      "a-leak-without-breaking-the-policy"
+    ],
+    "pages": [],
+    "sites": [
+      "https://code.claude.com/docs/en/plugins/security",
+      "https://github.com/cisco-ai-defense/skill-scanner",
+      "https://www.redhat.com/en/about/subscription-model-faq"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It is a way to earn from the traffic to a website, whatever the website holds, and it works even when what it holds is free to copy.",
+      "why": "The model."
+    },
+    {
+      "text": "A scanner and a policy answer different questions.",
+      "why": "Why review needs people."
+    }
+  ],
+  "figures": [
+    {
+      "file": "of-source.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/of-source.webp",
+      "caption": "Free to copy, paid at the source. The policy and its hook are open; the official site adds who published it, who reviewed it, which version, and a signature; each use there draws down credit.",
+      "kind": "concept"
+    }
+  ]
+}

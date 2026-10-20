@@ -1,0 +1,61 @@
+{
+  "slug": "are-hooks-the-sweet-spot",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Hooks are the right place to start enforcing rules",
+      "para": "Most agent rules are hope-based: in the prompt, kept only if the model keeps them. Moving this session's eleven-rule policy into hooks, four moved fully, two mostly, three partly and two not at all. Hooks are the right start if installed beyond the agent's reach and set to fail closed.",
+      "hash": "7a18cfcdeb11"
+    },
+    "in-short": {
+      "line": "Six of eleven rules moved largely into hooks",
+      "para": "Of this session's eleven rules, one was kept by a hook. In tests four moved fully, two mostly, three partly and two not at all, and the leak scan let a GitHub token shape through. Hooks need organisation installation and fail-closed settings. Generating hooks from a written policy is the missing step.",
+      "hash": "0789baea4a57"
+    },
+    "question": {
+      "line": "How much policy can move from prompt into hooks",
+      "para": "Most rules are hope-based security; Hope or enforcement found 97% of one agent's rules kept only by the model. Real enforcement will end up outside the agent, in proxies, sandboxes and credentials, but most teams are not there yet. The question is whether hooks are the sweet spot in between.",
+      "hash": "d1ffa30b3cca"
+    },
+    "own": {
+      "line": "Ten of this session's eleven rules are expectations",
+      "para": "Each rule names its keeper: expectation, setting or boundary. Only the status report is a setting, kept by hooks, and the disabled sgit.ai push URL keeps one rule in part. Everything else is the agent keeping its word. A commit today carried the wrong model name, a slip a hook should catch.",
+      "hash": "8799aac59561"
+    },
+    "sandbox": {
+      "line": "Hooks enforced several rules, and exposed a leak-scan gap",
+      "para": "In a throwaway repository, hooks blocked commits failing the leak scan, refused model ids outside the byline, restricted pushes with harness and git pre-push hooks, masked keys in output and turned pull requests into an ask. The leak scan missed a GitHub token shape. Judgement rules, like researching first, stayed with the agent.",
+      "hash": "85333c62be9c"
+    },
+    "layers": {
+      "line": "Hooks are deterministic, intent-aware, but only settings",
+      "para": "Hooks are the first layer independent of the model and the last that sees actions in the agent's terms. Vendors admit they are not a security boundary, and a crashing hook lets everything through by default. They are strongest when organisation-managed, outside the agent's writable files, with managed-only and fail-closed settings.",
+      "hash": "9a6658822df4"
+    },
+    "chained": {
+      "line": "Hooks run in parallel and the strictest answer wins",
+      "para": "Claude Code runs matching hooks in parallel, with deny beating defer, ask and allow; Cursor merges every source the same way; Codex runs them concurrently. Each rule should be one small, independent hook, not a pipeline where one depends on another's output or order.",
+      "hash": "2f99117b7d76"
+    },
+    "who": {
+      "line": "Hook packs exist; OWASP's ACS links hooks to policy",
+      "para": "Trail of Bits, the safety net and Lasso Security publish generic hooks for dangerous commands or injection. claudecode-rule2hook and Anthropic's hookify generate hooks from rules. AWS AgentCore Policy and Docker's MCP Gateway enforce at gateways. OWASP's Agent Control Standard defines hook decisions but evaluates only two of nineteen methods live.",
+      "hash": "b48f162ef68d"
+    },
+    "pack": {
+      "line": "Generate tested hooks from the written policy, then gateways",
+      "para": "The missing loop: one hook per policy row, with allow and block fixtures run as tests, installed beyond the agent's reach, then read back against the policy so unhooked rules show as hope. Since hooks give allow, deny or ask like gateways, the same rows can later compile to a gateway.",
+      "hash": "9cd363fd28cd"
+    },
+    "limits": {
+      "line": "Fixture tests only; hooks are not a boundary",
+      "para": "Hooks were run on fixture JSON in a throwaway repository, not a live harness, and composition rules come from vendor documentation. Hooks run with the user's permissions and are not a boundary. The four, two, three, two split applies to this policy only. The generator is a proposal; sources read 14 October 2026.",
+      "hash": "07df76c0f912"
+    },
+    "sources": {
+      "line": "Sources: vendor hook documentation and the OWASP standard",
+      "para": "From my voice memo of 14 October 2026, with hooks tested in a throwaway repository against this session's policy. A research agent gathered collections and standards, with quotes re-checked. Sources are Anthropic's Claude Code hooks and sandboxing references, OpenAI's Codex hooks, Cursor's hooks and OWASP's Agent Control Standard.",
+      "hash": "1b75b21221ef"
+    }
+  }
+}

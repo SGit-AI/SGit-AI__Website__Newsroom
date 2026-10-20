@@ -1,0 +1,182 @@
+{
+  "slug": "reviews-on-the-record",
+  "teaser": "Published criteria, one record per article and text, five at a time, answered finding by finding: reviews by other models, the editor and the desk.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy"
+  ],
+  "core_idea": "One model writes the articles and some things fall through, so every article gets reviewed, as a record, against published criteria, by other models, the editor and the desk; the unit of work is the reviewer, the article and its text, so nothing is reviewed twice, and every finding is answered on the article itself.",
+  "nodes": [
+    {
+      "id": "works",
+      "label": "The workflow works",
+      "kind": "claim",
+      "summary": "An article has become a way to answer people."
+    },
+    {
+      "id": "falls",
+      "label": "Things fall through",
+      "kind": "question",
+      "summary": "One model, a lot of context."
+    },
+    {
+      "id": "criteria",
+      "label": "Published criteria",
+      "kind": "artefact",
+      "summary": "Facts, voice, claims, conversions, health, people."
+    },
+    {
+      "id": "record",
+      "label": "A review is a record",
+      "kind": "concept",
+      "summary": "One article, one text, one reviewer, one file."
+    },
+    {
+      "id": "unit",
+      "label": "Never the same text twice",
+      "kind": "method",
+      "summary": "Reviewer, article and hash; five at a time."
+    },
+    {
+      "id": "status",
+      "label": "The status file",
+      "kind": "artefact",
+      "summary": "Every article's hash and its reviews."
+    },
+    {
+      "id": "arrives",
+      "label": "How a review arrives",
+      "kind": "method",
+      "summary": "Pull request, commit, by hand, later a vault."
+    },
+    {
+      "id": "answers",
+      "label": "Every finding answered",
+      "kind": "method",
+      "summary": "Fixed, declined or open."
+    },
+    {
+      "id": "page",
+      "label": "Reviews on the page",
+      "kind": "artefact",
+      "summary": "Who, when, which version, what happened."
+    },
+    {
+      "id": "people",
+      "label": "People on the record",
+      "kind": "concept",
+      "summary": "The editor and the desk, same record."
+    },
+    {
+      "id": "retro",
+      "label": "Back in time",
+      "kind": "concept",
+      "summary": "I got this wrong; this came true."
+    },
+    {
+      "id": "readers",
+      "label": "Signed readers",
+      "kind": "question",
+      "summary": "Confirm or dispute, under their own key."
+    },
+    {
+      "id": "first",
+      "label": "The first run",
+      "kind": "example",
+      "summary": "Another model, five articles."
+    }
+  ],
+  "edges": [
+    {
+      "from": "works",
+      "to": "falls",
+      "rel": "contrasts"
+    },
+    {
+      "from": "falls",
+      "to": "criteria",
+      "rel": "answers"
+    },
+    {
+      "from": "criteria",
+      "to": "record",
+      "rel": "leads-to"
+    },
+    {
+      "from": "record",
+      "to": "unit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "status",
+      "to": "unit",
+      "rel": "produces"
+    },
+    {
+      "from": "record",
+      "to": "arrives",
+      "rel": "leads-to"
+    },
+    {
+      "from": "arrives",
+      "to": "answers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "answers",
+      "to": "page",
+      "rel": "produces"
+    },
+    {
+      "from": "people",
+      "to": "record",
+      "rel": "extends"
+    },
+    {
+      "from": "retro",
+      "to": "people",
+      "rel": "extends"
+    },
+    {
+      "from": "readers",
+      "to": "people",
+      "rel": "extends"
+    },
+    {
+      "from": "first",
+      "to": "criteria",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-editors-channel",
+      "how-cheap-is-it-to-undo",
+      "the-human-in-the-loop",
+      "three-policies-for-an-agent"
+    ],
+    "pages": [
+      "reviews/index.html",
+      "reviews/criteria.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "A finding with no answer is just a complaint.",
+      "why": "Why the newsroom answers."
+    },
+    {
+      "text": "The unit of work is the reviewer, the article and that hash.",
+      "why": "How it scales."
+    }
+  ],
+  "figures": [
+    {
+      "file": "rv-loop.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/rv-loop.webp",
+      "caption": "Reviews on the record. Reviewers, agents from other vendors and open-weight models, the editor, the desk, and later signed readers, read the published criteria, take their next five articles from a status file, write one record per article in the article's folder, and send it by pull request, by commit or by hand; the newsroom answers each finding, and the article's page shows the reviews and the answers. The unit of work is the reviewer, the article and its text.",
+      "kind": "concept"
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "id": "wnd-ontology",
+  "version": "0.1.0",
+  "updated": "2026-09-29",
+  "inherits_from": {
+    "site": "graphs.sgit.ai",
+    "what": "Every edge a verb with a distinct named inverse; symmetric edges banned; a path must read as a sentence."
+  },
+  "language_rule": "Every type and verb carries `pt`, so the vocabulary can travel to pt.newsroom.sgit.ai without being rewritten.",
+  "node_types": [
+    {
+      "id": "Article",
+      "label": "Article",
+      "pt": "Artigo",
+      "colour": "#0f766e",
+      "definition": "One commissioned op-ed, as published on worldnewsday.org and frozen here. The prose is linked, never reproduced."
+    },
+    {
+      "id": "Author",
+      "label": "Author",
+      "pt": "Autor",
+      "colour": "#b45309",
+      "definition": "A named person in an article's byline, in their professional capacity. Name and the role line they gave; nothing else, and never a contact detail."
+    },
+    {
+      "id": "Organisation",
+      "label": "Organisation",
+      "pt": "Organização",
+      "colour": "#1d4ed8",
+      "definition": "An organisation an author's own role line names. Derived from that line, never typed by hand."
+    },
+    {
+      "id": "Theme",
+      "label": "Theme",
+      "pt": "Tema",
+      "colour": "#7c3aed",
+      "definition": "A theme from the published lexicon whose pattern matched the article's prose. It says the piece contains those words and nothing more."
+    },
+    {
+      "id": "CitedSource",
+      "label": "Cited source",
+      "pt": "FonteCitada",
+      "colour": "#a16207",
+      "definition": "A page an article links out to. The evidence the piece offers its reader, counted as the piece offers it."
+    },
+    {
+      "id": "Licence",
+      "label": "Licence",
+      "pt": "Licença",
+      "colour": "#b91c1c",
+      "definition": "A statement of republication terms. Carries the form it takes: prose, a named public licence, or a machine-readable declaration."
+    },
+    {
+      "id": "Snapshot",
+      "label": "Snapshot",
+      "pt": "Captura",
+      "colour": "#5c5f66",
+      "definition": "A dated capture of the source site: every page fetched, frozen to bytes in this repository, and hashed."
+    },
+    {
+      "id": "Source",
+      "label": "Frozen file",
+      "pt": "Fonte",
+      "colour": "#8a8d94",
+      "definition": "One frozen file with its SHA-256. The thing a claim walks back to."
+    }
+  ],
+  "edges": [
+    {
+      "verb": "written_by",
+      "inverse": "wrote",
+      "domain": "Article",
+      "range": "Author",
+      "pt": {
+        "verb": "escrito_por",
+        "inverse": "escreveu"
+      },
+      "reads": "{s} is written by {t}"
+    },
+    {
+      "verb": "affiliated_to",
+      "inverse": "affiliates",
+      "domain": "Author",
+      "range": "Organisation",
+      "pt": {
+        "verb": "afiliado_a",
+        "inverse": "afilia"
+      },
+      "reads": "{s} is affiliated to {t}"
+    },
+    {
+      "verb": "touches",
+      "inverse": "touched_by",
+      "domain": "Article",
+      "range": "Theme",
+      "pt": {
+        "verb": "aborda",
+        "inverse": "abordado_por"
+      },
+      "reads": "{s} touches {t}"
+    },
+    {
+      "verb": "cites",
+      "inverse": "cited_by",
+      "domain": "Article",
+      "range": "CitedSource",
+      "pt": {
+        "verb": "cita",
+        "inverse": "citado_por"
+      },
+      "reads": "{s} cites {t}"
+    },
+    {
+      "verb": "published_under",
+      "inverse": "governs",
+      "domain": "Article",
+      "range": "Licence",
+      "pt": {
+        "verb": "publicado_sob",
+        "inverse": "rege"
+      },
+      "reads": "{s} is published under {t}"
+    },
+    {
+      "verb": "commissioned_by",
+      "inverse": "commissioned",
+      "domain": "Article",
+      "range": "Organisation",
+      "pt": {
+        "verb": "encomendado_por",
+        "inverse": "encomendou"
+      },
+      "reads": "{s} was commissioned by {t}"
+    },
+    {
+      "verb": "attested_by",
+      "inverse": "attests",
+      "domain": "Article",
+      "range": "Source",
+      "pt": {
+        "verb": "atestado_por",
+        "inverse": "atesta"
+      },
+      "reads": "{s} is attested by {t}"
+    },
+    {
+      "verb": "captured_in",
+      "inverse": "captures",
+      "domain": "Source",
+      "range": "Snapshot",
+      "pt": {
+        "verb": "capturado_em",
+        "inverse": "captura"
+      },
+      "reads": "{s} was captured in {t}"
+    }
+  ],
+  "banned": [
+    {
+      "verb": "related_to",
+      "why": "Symmetric, so it would be its own inverse, and it says nothing a reader could walk."
+    },
+    {
+      "verb": "mentions",
+      "why": "Every edge in a graph built from text mentions something. It is the absence of a verb."
+    },
+    {
+      "verb": "associated_with",
+      "why": "The verb reached for when the relationship is unknown. Find out, or leave the edge out."
+    },
+    {
+      "verb": "agrees_with",
+      "why": "Two pieces touching the same theme is not agreement. Asserting agreement would be this section putting words in an author's mouth."
+    }
+  ],
+  "taxonomy": [
+    {
+      "id": "work",
+      "broader": null,
+      "label": "The work",
+      "pt": "O trabalho",
+      "types": [
+        "Article",
+        "Theme",
+        "CitedSource"
+      ]
+    },
+    {
+      "id": "people",
+      "broader": null,
+      "label": "The people",
+      "pt": "As pessoas",
+      "types": [
+        "Author",
+        "Organisation"
+      ]
+    },
+    {
+      "id": "terms",
+      "broader": null,
+      "label": "The terms",
+      "pt": "Os termos",
+      "types": [
+        "Licence"
+      ]
+    },
+    {
+      "id": "evidence",
+      "broader": null,
+      "label": "The evidence",
+      "pt": "A evidência",
+      "types": [
+        "Snapshot",
+        "Source"
+      ]
+    }
+  ],
+  "formulas": [
+    {
+      "id": "themes",
+      "on": "Article",
+      "lexicon": "data/lexicon.json",
+      "entries": 20,
+      "note": "The only classification this graph makes rather than reads. Each edge carries the words the pattern matched, and the gate re-runs every pattern on the frozen bytes in both directions."
+    }
+  ]
+}

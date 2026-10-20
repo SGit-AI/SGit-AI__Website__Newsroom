@@ -1,0 +1,41 @@
+{
+ "slug": "books-from-articles",
+ "teaser": "My books stall at 60 to 95%; these articles do not. The hypothesis: a book is an ordered set of finished articles, tested by Web Summit in November.",
+ "topics": ["startups-and-strategy", "site-and-engineering"],
+ "core_idea": "Books stall because they are one big batch: the first version locks the content, review piles up on one person, and the energy moves on; the newsroom's articles are small, finished, linked and read, with a feedback loop; so a book can be a curated, ordered set of finished articles plus the editorial thread, and the test is to have books on agents, graphs, Portugal and making books for Web Summit in Lisbon, 9 to 12 November, via KDP author copies.",
+ "nodes": [
+  {"id": "leanpub", "label": "Ten books on Leanpub", "kind": "example", "summary": "Most stop between 60% and 95%."},
+  {"id": "graphsbooks", "label": "Three graphs books", "kind": "example", "summary": "Written in a day; still under review."},
+  {"id": "batch", "label": "One big batch", "kind": "claim", "summary": "Locked by the first version; review on one person."},
+  {"id": "leverage", "label": "Energy moves on", "kind": "concept", "summary": "The next place of highest leverage."},
+  {"id": "articles", "label": "Small, finished articles", "kind": "method", "summary": "Researched, released, linked, read."},
+  {"id": "loop", "label": "A feedback loop", "kind": "concept", "summary": "Shipping, often and early."},
+  {"id": "record", "label": "Written over a record", "kind": "claim", "summary": "Why the making-of read better."},
+  {"id": "hypothesis", "label": "A book is ordered articles", "kind": "claim", "summary": "Plus the editorial thread."},
+  {"id": "candidates", "label": "Four candidate books", "kind": "artefact", "summary": "Agents, graphs, Portugal, books."},
+  {"id": "plan", "label": "The plan to Web Summit", "kind": "method", "summary": "Map, write, assemble, KDP, author copies."},
+  {"id": "others", "label": "Other people's stories", "kind": "question", "summary": "Failures and constraints that never get captured."}
+ ],
+ "edges": [
+  {"from": "leanpub", "to": "batch", "rel": "example-of"},
+  {"from": "graphsbooks", "to": "batch", "rel": "example-of"},
+  {"from": "batch", "to": "leverage", "rel": "leads-to"},
+  {"from": "articles", "to": "batch", "rel": "contrasts"},
+  {"from": "articles", "to": "loop", "rel": "depends-on"},
+  {"from": "record", "to": "articles", "rel": "extends"},
+  {"from": "articles", "to": "hypothesis", "rel": "leads-to"},
+  {"from": "hypothesis", "to": "candidates", "rel": "produces"},
+  {"from": "candidates", "to": "plan", "rel": "leads-to"},
+  {"from": "others", "to": "hypothesis", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-graphs-books", "places-of-highest-leverage", "knowing-when-to-stop", "judo-for-small-countries", "the-mandate-stack"],
+  "pages": [],
+  "sites": ["https://leanpub.com/u/DinisCruz", "https://graphs.sgit.ai/v2/books/index.html", "https://websummit.com/", "https://kdp.amazon.com/en_US/help/topic/G202173620"]
+ },
+ "quotes": [
+  {"text": "you almost start to be locked by the first version of the content, because making changes becomes quite painful.", "why": "Why books stall."},
+  {"text": "When I ramble on a topic that another article already covers, the agent does not write three paragraphs about it again; it puts in the link and goes to the nugget.", "why": "Why the articles stay sharp."},
+  {"text": "A book becomes a curated, ordered set of finished articles, plus the editorial thread that connects them", "why": "The hypothesis."}
+ ]
+}

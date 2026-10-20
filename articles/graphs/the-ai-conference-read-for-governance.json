@@ -1,0 +1,181 @@
+{
+  "slug": "the-ai-conference-read-for-governance",
+  "teaser": "Six claims from a post about The AI Conference traced to the slides, five open disagreements, and the best fact-check, in a speaker's notes.",
+  "topics": [
+    "agents-and-policy",
+    "news-and-evidence"
+  ],
+  "core_idea": "Reading the agenda, 35 slide decks with their notes and the abstracts of The AI Conference 2026 traces three of six claims in a GRC adviser's post to keynotes and finds no source for the other three; the programme's loudest idea is that policy must be enforced outside the model, its commonest story is the quiet failure, and its speakers disagree on humans in the loop, model or rule, inventories, probes and open models.",
+  "nodes": [
+    {
+      "id": "post",
+      "label": "The adviser's post",
+      "kind": "artefact",
+      "summary": "Three failure stories, a poll, two case studies."
+    },
+    {
+      "id": "traced",
+      "label": "Three items traced",
+      "kind": "claim",
+      "summary": "Stoica, Ameisen, Chambers."
+    },
+    {
+      "id": "untraced",
+      "label": "Three items not found",
+      "kind": "question",
+      "summary": "43%, 1,200 developers, 1,500 agents."
+    },
+    {
+      "id": "outside",
+      "label": "Policy outside the model",
+      "kind": "concept",
+      "summary": "Hedera, Dropbox, C1, ReFocus, SS&C."
+    },
+    {
+      "id": "quiet",
+      "label": "Quiet failures",
+      "kind": "concept",
+      "summary": "A 200 OK, a green dashboard."
+    },
+    {
+      "id": "identity",
+      "label": "Identity before autonomy",
+      "kind": "concept",
+      "summary": "A name you can call at 2am."
+    },
+    {
+      "id": "gaming",
+      "label": "Evaluations get gamed",
+      "kind": "example",
+      "summary": "A key-value store that won the benchmark."
+    },
+    {
+      "id": "hitl",
+      "label": "Humans in the loop?",
+      "kind": "question",
+      "summary": "Dead, or still a human job."
+    },
+    {
+      "id": "modelrule",
+      "label": "A model or a rule?",
+      "kind": "question",
+      "summary": "Only something deterministic should decide."
+    },
+    {
+      "id": "inventory",
+      "label": "Can agents be inventoried?",
+      "kind": "question",
+      "summary": "Thirteen agents in 23 minutes."
+    },
+    {
+      "id": "review",
+      "label": "Review is thinning",
+      "kind": "example",
+      "summary": "56% of PRs with no human comment."
+    },
+    {
+      "id": "notes",
+      "label": "The fact-check in the notes",
+      "kind": "example",
+      "summary": "A number is a fact only because someone measured it."
+    },
+    {
+      "id": "nopolicy",
+      "label": "Nobody showed the policy",
+      "kind": "claim",
+      "summary": "Rules described, never published."
+    }
+  ],
+  "edges": [
+    {
+      "from": "traced",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "untraced",
+      "to": "post",
+      "rel": "answers"
+    },
+    {
+      "from": "gaming",
+      "to": "traced",
+      "rel": "example-of"
+    },
+    {
+      "from": "quiet",
+      "to": "traced",
+      "rel": "extends"
+    },
+    {
+      "from": "hitl",
+      "to": "outside",
+      "rel": "contrasts"
+    },
+    {
+      "from": "modelrule",
+      "to": "outside",
+      "rel": "depends-on"
+    },
+    {
+      "from": "inventory",
+      "to": "identity",
+      "rel": "contrasts"
+    },
+    {
+      "from": "review",
+      "to": "hitl",
+      "rel": "example-of"
+    },
+    {
+      "from": "nopolicy",
+      "to": "outside",
+      "rel": "contrasts"
+    },
+    {
+      "from": "notes",
+      "to": "untraced",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "your-agents-logs-are-a-self-report",
+      "a-policy-beside-the-prompt",
+      "four-frameworks-one-agent"
+    ],
+    "pages": [],
+    "sites": [
+      "https://aiconference.com/",
+      "https://elevateconsult.com/insights/agentic-ai-governance-lessons-ai-conference/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Prompt injection is not an LLM problem, it is an authority problem.",
+      "why": "The sharpest statement of policy outside the model."
+    },
+    {
+      "text": "The worst bugs don't fail loudly. They succeed quietly, and wrongly.",
+      "why": "The commonest failure story."
+    },
+    {
+      "text": "Everyone said policy outside the model; nobody showed the policy.",
+      "why": "The gap the programme left."
+    }
+  ],
+  "figures": [
+    {
+      "file": "aq-items.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/aq-items.webp",
+      "caption": "The six items in the post, traced to the programme: the three failure stories trace to keynotes by Ion Stoica, Emmanuel Ameisen and Mike Chambers; the 43% poll and the 1,200-developer case are not in any abstract, deck or recap we read; the 1,500-agent architecture matches PayPal's abstract closely, but its count does not appear.",
+      "kind": "comparison"
+    },
+    {
+      "file": "aq-tensions.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/aq-tensions.webp",
+      "caption": "Five questions on which speakers took opposite sides: whether humans stay in the loop, whether a model or a rule enforces policy, whether agents can be inventoried, whether internal probes beat reading the output, and whether open models are cheaper for the same work. The right-hand column is this site's reading.",
+      "kind": "comparison"
+    }
+  ]
+}

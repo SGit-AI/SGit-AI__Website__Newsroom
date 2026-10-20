@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The method &middot; Portugal Startups</title>
+<meta name="description" content="Fetch, freeze, hash, extract, diff — the ingestion path The Governance Wire specifies and cannot run, here running.">
+<link rel="canonical" href="https://newsroom.sgit.ai/portugal/method.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/portugal/method.html">
+<meta property="og:title" content="The method">
+<meta property="og:description" content="Fetch, freeze, hash, extract, diff — the ingestion path The Governance Wire specifies and cannot run, here running.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer and the shipped CLI. This site is the future-of-news stack: provenance, corrections, and paying the fact creator">&#8593; part of <b>sgit.ai</b></a>
+  <span class="stage-pill">design, not built</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.12</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../thesis/index.html">The argument<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../economics/index.html">The economics<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../economics/rails.html">The payment rails</a>
+      <a class="sl" href="../economics/trust-as-a-service.html">Trust as a service</a>
+      <a class="sl" href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../rights/index.html">Rights &amp; ops<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+      <a class="sl" href="../mvps/index.html">The MVPs: publication instances</a>
+      <a class="sl" href="../mvps/portugal.html">The Portugal instance, as specified</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../governance/index.html">Governance<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../governance/index.html">The wire (beta)</a>
+      <a class="sl" href="../governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
+      <a class="sl" href="../governance/newsroom/workflow.html">The state map: the workflow</a>
+      <a class="sl" href="../governance/team.html">The team: seven roles</a>
+      <a class="sl" href="../governance/research/index.html">Research runs</a>
+      <a class="sl" href="../governance/graph.html">The graph</a>
+      <a class="sl" href="../governance/sources.html">Sources</a>
+      <a class="sl" href="../governance/method.html">Method &amp; gates</a>
+      <a class="sl" href="../governance/about.html">About &amp; limits</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../portugal/index.html">Portugal<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../portugal/index.html">The wire (beta)</a>
+      <a class="sl" href="../portugal/graph.html">The graph</a>
+      <a class="sl" href="../portugal/explorer.html">The files</a>
+      <a class="sl" href="../portugal/connections.html">Connections</a>
+      <a class="sl" href="../portugal/summit/index.html">The Summit</a>
+      <a class="sl" href="../portugal/summit/people.html">Who is speaking</a>
+      <a class="sl" href="../portugal/summit/orgs.html">The organisations</a>
+      <a class="sl" href="../portugal/summit/changes.html">What changed</a>
+      <a class="sl" href="../portugal/sources.html">Sources</a>
+      <a class="sl here" href="../portugal/method.html">Method</a>
+      <a class="sl" href="../portugal/team.html">The team</a>
+      <a class="sl" href="../portugal/notice.html">Your data</a>
+      <a class="sl" href="../portugal/about.html">About &amp; limits</a>
+      <a class="sl" href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
+      <a class="sl" href="../pt-newsroom/index.html">pt.newsroom: the home page, as designed</a>
+      <a class="sl" href="../pt-newsroom/directions.html">pt.newsroom: the four directions (archive)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../databases/index.html">Databases<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../databases/index.html">No server: the argument (beta)</a>
+      <a class="sl" href="../databases/sql.html">The SQL console</a>
+      <a class="sl" href="../databases/graph.html">The graph console (SPARQL)</a>
+      <a class="sl" href="../portugal/explorer.html">The files it queries</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../library/index.html">The record<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../library/index.html">The library: 2025 &rarr; present</a>
+      <a class="sl" href="../shipped/index.html">What is shipped, what is argued</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../network/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../network/index.html">The network: sibling boundaries</a>
+      <a class="sl" href="../documents/index.html">Documents &amp; sources</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">portugal</a> / method</div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#0f766e"><b style="color:#0f766e">Portugal Startups &middot; beta</b><p style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:.45rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The wire</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">The graph</a><a href="explorer.html" style="font-size:.83rem;color:#5c5f66">The files</a><a href="connections.html" style="font-size:.83rem;color:#5c5f66">Connections</a><a href="summit/index.html" style="font-size:.83rem;color:#5c5f66">The Summit</a><a href="summit/people.html" style="font-size:.83rem;color:#5c5f66">Who is speaking</a><a href="summit/orgs.html" style="font-size:.83rem;color:#5c5f66">The organisations</a><a href="summit/changes.html" style="font-size:.83rem;color:#5c5f66">What changed</a><a href="sources.html" style="font-size:.83rem;color:#5c5f66">Sources</a><a href="method.html" style="font-size:.83rem;color:#101114;font-weight:600">Method</a><a href="team.html" style="font-size:.83rem;color:#5c5f66">The team</a><a href="notice.html" style="font-size:.83rem;color:#5c5f66">Your data</a><a href="about.html" style="font-size:.83rem;color:#5c5f66">About & limits</a></p></div></div>
+<h1>The method</h1>
+<p class="lead"><b>Fetch, freeze, hash, extract, diff.</b> Five verbs, and the third is the one
+that matters: a claim on this section points at bytes in this repository, not at a URL that
+might have changed since anybody looked.</p>
+
+<div class="warnbox"><p style="margin-top:0"><b>Beta, agent-produced, human-reviewed.</b> The research, extraction and drafting are done by software agents. <b>Dinis Cruz is the named editor of record</b> and reads every page before it publishes. That is a person taking responsibility, not a legal opinion &mdash; there has been no legal review.</p><p><b>Every claim here walks back to bytes we hold.</b> Each source page was fetched, frozen to a dated snapshot in this repository and hashed with SHA-256. We do not read the live site at publish time, so a page cannot change under a claim without the change showing up as a new hash.</p><p><b>We report what others have published.</b> This publication originates no facts about any company or person, makes no assessment of anybody, and does not explain why a name appears or disappears from somebody else’s list. <a href="about.html">The full limits &rarr;</a></p><p><b>If you are named on this site</b> &mdash; what is held about you, why, and how to have it removed without giving a reason: <a href="notice.html">your data &rarr;</a></p></div>
+
+<h2 id="path">The ingestion path</h2>
+<div class="cards">
+  <div class="card"><span class="tag">1 &middot; Fetch</span><h3>Take a dated snapshot</h3>
+    <p>Every page of the source site, pulled into
+    <code>sources/frozen/&lt;date&gt;/</code>. Not one page &mdash; all of them, so a claim
+    made from one page can be checked against what the others said on the same day.</p></div>
+  <div class="card"><span class="tag">2 &middot; Freeze</span><h3>Keep the bytes</h3>
+    <p>The copy is committed to this repository. It is what the extractor reads and what a
+    reader can download. The live site is never read at publish time.</p></div>
+  <div class="card"><span class="tag">3 &middot; Hash</span><h3>SHA-256, in the register</h3>
+    <p>Every frozen file is hashed and the hash is published. Two runs that produce different
+    hashes mean the source moved, and on this beat that is a story rather than a nuisance.</p></div>
+  <div class="card"><span class="tag">4 &middot; Extract</span><h3>Typed nodes, from the copy</h3>
+    <p>Speakers and organisations are parsed out of the frozen HTML. Organisations are
+    <em>derived</em> from speaker cards rather than typed by hand, so the graph cannot contain
+    an organisation no source mentions.</p></div>
+  <div class="card"><span class="tag">5 &middot; Diff</span><h3>Compare the snapshots</h3>
+    <p>Added, removed, edited &mdash; with the hash of both sides. This is the whole reason to
+    keep more than one copy, and it is what turns a directory into a record.</p></div>
+</div>
+
+<h2 id="notreproduce">What we link rather than reproduce</h2>
+<p>Speaker biographies are not stored as data and not published. They are the speakers&rsquo; and
+the organisers&rsquo; own writing, and this publication adds structure over other people&rsquo;s
+material rather than republishing it. We hold the frozen page for verification; the reader gets
+the pointer. Since v0.3.4 each speaker&rsquo;s own page is frozen too, and two things are <em>read</em>
+from it: the event&rsquo;s own Topics list for that speaker, verbatim, and the words that match
+<a href="data/lexicon.json">a published lexicon</a>. The matched words travel on the edge; no
+sentence of the biography does, and gate 10 fails the build if one ever did. The same rule
+governs session descriptions and sponsor copy.</p>
+
+<h2 id="roles">Seven roles and a named human</h2>
+<p>Seven agent roles and one named human. The posture differs deliberately from The Governance Wire, which is fully agentic with nobody reviewing before publication: this beat is about named people and named companies in a small ecosystem, where being wrong in public costs somebody other than us.</p>
+<ul class="timeline"><li><span class="when">Researcher</span><span class="what"><b>No claim without bytes we hold.</b><br>The ingestion path: fetch, freeze to a dated snapshot, hash, record retrieval time.</span></li><li><span class="when">Extractor</span><span class="what"><b>The graph says what the frozen copy says, and nothing more.</b><br>Typed entities from frozen bytes; the speaker and organisation nodes.</span></li><li><span class="when">Cartographer</span><span class="what"><b>The map is closeable, or it is not a map.</b><br>Coverage: which entities on this beat are known, and which are known to be missing.</span></li><li><span class="when">Diff Watch</span><span class="what"><b>What changed is the story.</b><br>Comparison between snapshots: added, removed, edited, and the hashes on both sides.</span></li><li><span class="when">Writer</span><span class="what"><b>Every sentence traces to a node.</b><br>Story markdown and the node ids each story stands on.</span></li><li><span class="when">Editor</span><span class="what"><b>The publication&#x27;s voice, and the things it will not say.</b><br>The refusal list and the disclaimers.</span></li><li><span class="when">Publisher</span><span class="what"><b>Versions are promises, and a beta says so on its face.</b><br>The section version, the release note, the beta notice, the gates.</span></li></ul>
+<div class="claim">Dinis Cruz is the editor of record and reads
+every page before it publishes.</div>
+<p>Open question 5 of the 12 May 2026 newsroom brief — who is the editor of record, and who carries legal responsibility for published content — which that brief left open and which this site called the one it should be most uncomfortable about.
+<a href="team.html">The team, and what each role refuses &rarr;</a></p>
+
+<h2 id="refusals">Three things this publication will not do</h2>
+<div class="ops">
+  <div class="op"><b>Assess anybody</b><p>No review, recommendation, ranking or warning about
+  any event, company or person. It reports what has been published and links to it.</p></div>
+  <div class="op"><b>Explain a removal</b><p>When a name leaves a list, the diff is published
+  and the reason is left blank. Withdrawal, a clash, a duplicate and an editing error look
+  identical from outside, and guessing would be the easiest way to do real harm.</p></div>
+  <div class="op"><b>Report a target as a result</b><p>&ldquo;Targeting 2,000+&rdquo; is a plan.
+  It is not attendance, and it will not be reported as attendance even after the event.</p></div>
+</div>
+
+<div class="agent"><h4>For an agent</h4><p>The ingestion path is fetch, freeze, hash, extract, diff — implemented in <code>portugal/build/extract.py</code> and reproducible from this repository. Claims point at frozen bytes, not at live URLs. <b>Biographies and other third-party prose are deliberately not reproduced</b>; the event's Topics list and lexicon matches are read from each speaker's frozen page (<code>topics.json</code>, <code>lexicon.json</code>) and carry the matched words only. The publication has a named human editor of record who reviews before publication, which is the posture difference from /governance/. It assesses nobody, explains no removal, and does not report a target as a result.</p></div>
+
+<div class="pagenav">
+  <a href="checks.html">&larr; What we checked</a>
+  <a href="team.html">The team &rarr;</a>
+</div>
+
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>News is failing not because there is too little information but because there is no walkable chain from a claim to its evidence, no way for a correction to reach what it disproved, and no way to pay the person who did the original work. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>&#8593; sgit.ai</b></a> &middot; <a href="https://graphs.sgit.ai">&#8593; graphs.sgit.ai</a> &middot; <a href="https://pki.sgit.ai">&#8593; pki.sgit.ai</a> &middot; <a href="https://nhi.sgit.ai">&#8593; nhi.sgit.ai</a> &middot; <a href="https://sg-sentinel.sgit.ai">&#8593; sg-sentinel.sgit.ai</a> &middot; <a href="https://docs.diniscruz.ai">&#8593; docs.diniscruz.ai</a> &mdash; the prior art</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.12</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The argument</h4>
+    <a href="../thesis/index.html">&#8594; The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../corrections/the-claim-that-would-not-die.html">The claim that would not die</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../provenance/a-worked-story.html">A worked story: &pound;8.40</a>
+  </div>
+  <div>
+    <h4>The economics</h4>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../economics/rails.html">The payment rails</a>
+    <a href="../economics/trust-as-a-service.html">Trust as a service</a>
+    <a href="../economics/micro-and-nano-payments.html">Micro and nano payments (2025)</a>
+  </div>
+  <div>
+    <h4>Rights, ops &amp; record</h4>
+    <a href="../rights/index.html">Content rights: CC-Signed</a>
+    <a href="../newsroom/index.html">The newsroom: roles &amp; operations</a>
+    <a href="../mvps/index.html">The MVPs: publication instances</a>
+    <a href="../library/index.html">The library: 2025 &rarr; present</a>
+    <a href="../shipped/index.html">What is shipped, what is argued</a>
+  </div>
+  <div>
+    <h4>What runs</h4>
+    <a href="../governance/index.html">The Governance Wire (beta)</a>
+    <a href="../governance/newsroom/index.html">The floor: a point-and-click newsroom</a>
+    <a href="../portugal/index.html">Portugal Startups (beta)</a>
+    <a href="../portugal/connections.html">Connections: who should talk to whom</a>
+    <a href="../databases/index.html">Databases with no server (beta)</a>
+    <a href="../databases/sql.html">The SQL and SPARQL consoles</a>
+    <a href="../documents/pt-newsroom.html">Brief: pt.newsroom.sgit.ai</a>
+    <a href="../pt-newsroom/index.html">pt.newsroom: the home page, as designed</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../network/index.html">The network: sibling boundaries</a>
+    <a href="../documents/index.html">Documents &amp; sources</a>
+    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

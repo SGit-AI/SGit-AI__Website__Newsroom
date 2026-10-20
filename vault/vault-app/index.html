@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The newsroom's vault viewer</title>
+<style>body{font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;margin:0;padding:1.2rem;color:#1c1d21;background:#fbfaf7}.note{background:#e8f2ee;border-radius:8px;padding:.6rem .8rem;max-width:1100px;margin:0 auto 1rem}</style></head>
+<body>
+<p class="note">This is the newsroom's vault viewer, opened on its own vault, so it shows a demo account. In a reader's vault it is linked read-only and opens as the vault's app, with that reader's records. See README.md.</p>
+<div id="app"><p>Opening…</p></div>
+<script>
+(async function () {
+  var app = document.getElementById('app')
+  try { await sg.loadJs('viewer.js'); await window.NewsroomViewer.render({ sg: sg, mount: app, base: 'demo/activity/' }) }
+  catch (e) { app.textContent = 'The viewer could not load: ' + (e && e.message || e) }
+  try { parent.postMessage({ type: 'sg-app-ready' }, '*') } catch (e) {}
+})()
+</script></body></html>

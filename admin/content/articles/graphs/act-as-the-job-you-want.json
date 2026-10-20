@@ -1,0 +1,36 @@
+{
+ "slug": "act-as-the-job-you-want",
+ "teaser": "If you are looking for a job you have time: act as the person in the job you want, in public, and give the people who want to help you a link.",
+ "topics": ["startups-and-strategy", "vaults-and-method"],
+ "core_idea": "Someone looking for a job has time, and the best use of it is to do the job they want before they have it, for a startup, open-source project or company, in public so it can be linked; reach does not matter, because the link lets the people who want to help forward it, which is also why a CV should be online and why the small skill of publishing with an agent is worth learning first.",
+ "nodes": [
+  {"id": "time", "label": "You have time", "kind": "claim", "summary": "Whatever the reason you are looking."},
+  {"id": "act", "label": "Act as the job you want", "kind": "method", "summary": "Do the work before the title."},
+  {"id": "summit", "label": "The would-be project manager", "kind": "example", "summary": "Advice given at a startup summit."},
+  {"id": "book2018", "label": "Act like you are part of the company", "kind": "example", "summary": "Generation Z Developers, 2018."},
+  {"id": "public", "label": "Do it in public", "kind": "method", "summary": "So the work can be linked."},
+  {"id": "reach", "label": "Reach does not matter", "kind": "claim", "summary": "A hundred views is fine."},
+  {"id": "help", "label": "Let people help you", "kind": "concept", "summary": "They need something to forward."},
+  {"id": "cv", "label": "Your CV online", "kind": "artefact", "summary": "A page with links to the work."},
+  {"id": "bar", "label": "The bar is not high", "kind": "claim", "summary": "GitHub plus an agent, in an afternoon."}
+ ],
+ "edges": [
+  {"from": "time", "to": "act", "rel": "leads-to"},
+  {"from": "summit", "to": "act", "rel": "example-of"},
+  {"from": "book2018", "to": "act", "rel": "example-of"},
+  {"from": "act", "to": "public", "rel": "depends-on"},
+  {"from": "public", "to": "help", "rel": "leads-to"},
+  {"from": "reach", "to": "public", "rel": "extends"},
+  {"from": "help", "to": "cv", "rel": "depends-on"},
+  {"from": "bar", "to": "cv", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["hired-for-the-workflow", "the-man-behind-the-curtain", "your-own-newsroom", "explorer-coding", "generation-z-developers-again"],
+  "pages": [],
+  "sites": ["https://leanpub.com/generation-z", "https://github.com/DinisCruz/Book_Generation_Z_Developer"]
+ },
+ "quotes": [
+  {"text": "Act on the job you want to get.", "why": "The advice."},
+  {"text": "Publish anyway, because reach is not the point.", "why": "On reach."}
+ ]
+}

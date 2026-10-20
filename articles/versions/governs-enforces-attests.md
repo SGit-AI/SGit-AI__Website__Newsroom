@@ -1,0 +1,27 @@
+# Versions of Governs, enforces, attests, sgit.ai
+
+> Every published version of the article "Governs, enforces, attests", with the date, the words and what changed.
+
+*Source: <https://newsroom.sgit.ai/articles/versions/governs-enforces-attests.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
+
+---
+
+[Home](../../index.md) / [Articles](../index.md) / [Governs, enforces, attests](../governs-enforces-attests.md) / Versions
+
+# Versions of: Governs, enforces, attests
+
+2 published versions of [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](../governs-enforces-attests.md). The current one is **v1.1.0**.
+
+v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
+
+| Version | Date | Kind | Words | Change from the version before | Commit |  |
+|---|---|---|---|---|---|---|
+| **v1.1.0** | 2026-10-19 | minor | 1,971 | +0 / −12 words; 1 changed, 0 added, 0 removed paragraphs | [`4805e6671`](https://github.com/SGit-AI/SGit-AI__Website/commit/4805e6671026e3e51cc0de8f493b74b61a53cc3d) | [what changed](governs-enforces-attests/v1.1.0.md) · [current](../governs-enforces-attests.md) |
+| **v1.0.0** | 2026-10-19 | published | 1,983 | first published | [`2763ef787`](https://github.com/SGit-AI/SGit-AI__Website/commit/2763ef787f84160904d911a5b42eafb061017c36) |  |
+
+[← Back to the article](../governs-enforces-attests.md) · [All articles](../index.md)
+
+
+---
+
+*[Site index for agents](../../llms.txt) · [HTML version](https://newsroom.sgit.ai/articles/versions/governs-enforces-attests.html)*

@@ -1,0 +1,71 @@
+{
+ "what": "Words for the front page that do not exist on the live site yet: the door labels, the neutral door, the newsletter ask, the briefing title and the footer. Everything else on the front page is computed from data/newsroom/.",
+ "source": "context/newsroom-ux-review.md, sections 'First visit' and 'Personas as the core primitive'",
+ "neutral": "newsroom",
+ "doors_title": "Who are you reading as?",
+ "doors_dek": "Pick a door. Each one is the same front page, filled for a different reader.",
+ "door_lines": {
+  "newsroom": "Just looking: the newsroom's own front page",
+  "founder": "I am building a company",
+  "journalist": "I work in news",
+  "security": "I run security",
+  "builder": "I build agents",
+  "board": "I sit on a board",
+  "publisher": "I publish news"
+ },
+ "briefing": {
+  "title": "The newsroom in 60 seconds",
+  "dek": "The lead and four more, each in two sentences. Then pick a door."
+ },
+ "desks_title": "The desks",
+ "desks_note": "The six desks are the site's six topics for now. Each shows its three newest pieces, not all of them.",
+ "start_here_title": "Start here",
+ "start_here_dek": "Six pieces, in order, for a first visit. The newsroom persona's path.",
+ "newsletter": {
+  "kicker": "The newsletter",
+  "ask": "One email when an edition closes: what the newsroom wrote, and why it leads.",
+  "button": "Subscribe",
+  "url": "subscribe/index.html"
+ },
+ "footer": {
+  "about": "Written from Dinis Cruz's voice notes by a desk of named agents working under published rules. Every version is kept.",
+  "licence": "Content CC BY 4.0 unless a page states otherwise.",
+  "licence_source": "Live homepage footer, newsroom.sgit.ai, 11 Oct 2026",
+  "agents_label": "For agents: llms.txt",
+  "agents_url": "llms.txt",
+  "purpose_label": "Why this exists",
+  "workshop_label": "The workshop: how this is built"
+ },
+ "status": "accepted",
+ "target": "index.html, admin/build/front.py",
+ "door_publisher": {
+  "line": "I publish news",
+  "who": "Editors, publishers and executives",
+  "blurb": "What a reader gets, what the newsroom keeps, what it costs to adopt, and the code that runs it, as an API.",
+  "url": "https://api.newsroom.sgit.ai/for-publishers/",
+  "local": "publishers/index.html"
+ },
+ "views": {
+  "what": "The three ways to read the front page, from the Newsroom Design Lab's three directions. The reader's choice is kept in this browser under newsroom.view; Broadsheet is the default.",
+  "list": [
+   {
+    "id": "broadsheet",
+    "key": "A",
+    "name": "Broadsheet",
+    "note": "A serious paper: one lead, the desks, the doors"
+   },
+   {
+    "id": "briefing",
+    "key": "B",
+    "name": "Briefing",
+    "note": "Answers first: five items in two sentences, then pick a door"
+   },
+   {
+    "id": "desk",
+    "key": "C",
+    "name": "Your desk",
+    "note": "Your own newsroom: what you read, what it cost, your board"
+   }
+  ]
+ }
+}

@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one, SGit Newsroom</title>
+<meta name="description" content="People ask how my agents remember, and the honest answer is that memory is the thing I have been building all along without calling it that. The industry's picture of agentic memory is one store that everything gets pumped into and retrieved from by similarity. Mine is the opposite. Memory is context management: giving an agent the right context for the moment, and no more, because context has a cost in tokens and in attention. It is many memories, not one, because context is specific: the inbox has its rules, the news has its rules, a contact in the CRM has a world of its own, and forcing them into one ontology would lose what each knows. It is fractal, principles at the top in a few kilobytes and the code at the bottom, so an agent loads the altitude its question lives at. It is published and open, because an agent can fetch, quote and link what is public, with a URL for every claim and a hash for every file. And it is shared between agents through vaults, so a session can end and the next one, or a different agent, or a person, picks up from the same files. This article says how that works, what it cost, where the industry's tools and this approach agree and differ, and where mine falls short, with the evidence of the session that wrote it: one Claude Code session across several context resets that revised an article from another team's review, wrote two more, published a vault and shipped six releases in a day, remembering nothing between resets except what the files remembered for it.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/memory-is-not-a-spectator-sport.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/memory-is-not-a-spectator-sport.html">
+<meta property="og:title" content="Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one, SGit Newsroom">
+<meta property="og:description" content="People ask how my agents remember, and the honest answer is that memory is the thing I have been building all along without calling it that. The industry's picture of agentic memory is one store that everything gets pumped into and retrieved from by similarity. Mine is the opposite. Memory is context management: giving an agent the right context for the moment, and no more, because context has a cost in tokens and in attention. It is many memories, not one, because context is specific: the inbox has its rules, the news has its rules, a contact in the CRM has a world of its own, and forcing them into one ontology would lose what each knows. It is fractal, principles at the top in a few kilobytes and the code at the bottom, so an agent loads the altitude its question lives at. It is published and open, because an agent can fetch, quote and link what is public, with a URL for every claim and a hash for every file. And it is shared between agents through vaults, so a session can end and the next one, or a different agent, or a person, picks up from the same files. This article says how that works, what it cost, where the industry's tools and this approach agree and differ, and where mine falls short, with the evidence of the session that wrote it: one Claude Code session across several context resets that revised an article from another team's review, wrote two more, published a vault and shipped six releases in a day, remembering nothing between resets except what the files remembered for it.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/memory-is-not-a-spectator-sport.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/memory-is-not-a-spectator-sport.jpg">
+<link rel="alternate" type="text/markdown" href="memory-is-not-a-spectator-sport.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one, SGit Newsroom", "headline": "Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one, SGit Newsroom", "description": "People ask how my agents remember, and the honest answer is that memory is the thing I have been building all along without calling it that. The industry's picture of agentic memory is one store that everything gets pumped into and retrieved from by similarity. Mine is the opposite. Memory is context management: giving an agent the right context for the moment, and no more, because context has a cost in tokens and in attention. It is many memories, not one, because context is specific: the inbox has its rules, the news has its rules, a contact in the CRM has a world of its own, and forcing them into one ontology would lose what each knows. It is fractal, principles at the top in a few kilobytes and the code at the bottom, so an agent loads the altitude its question lives at. It is published and open, because an agent can fetch, quote and link what is public, with a URL for every claim and a hash for every file. And it is shared between agents through vaults, so a session can end and the next one, or a different agent, or a person, picks up from the same files. This article says how that works, what it cost, where the industry's tools and this approach agree and differ, and where mine falls short, with the evidence of the session that wrote it: one Claude Code session across several context resets that revised an article from another team's review, wrote two more, published a vault and shipped six releases in a day, remembering nothing between resets except what the files remembered for it.", "url": "https://newsroom.sgit.ai/articles/memory-is-not-a-spectator-sport.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one</p>
+ <h1>Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-03 &middot; <a href="versions/memory-is-not-a-spectator-sport.html" title="Every published version of this article, and what changed">article v1.0.1, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.6.54</a> &middot; <span class="chip">memory</span><span class="chip">agents</span><span class="chip">context-engineering</span><span class="chip">fractal-semantic-graphs</span><span class="chip">vaults</span><span class="chip">provenance</span><span class="chip">open-publishing</span><span class="chip">email-fs</span><span class="chip">issues-fs</span><span class="chip">llms-txt</span><span class="chip">claude</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> People ask how my agents remember, and the honest answer is that memory is the thing I have been building all along without calling it that. The industry's picture of agentic memory is one store that everything gets pumped into and retrieved from by similarity. Mine is the opposite. Memory is context management: giving an agent the right context for the moment, and no more, because context has a cost in tokens and in attention. It is many memories, not one, because context is specific: the inbox has its rules, the news has its rules, a contact in the CRM has a world of its own, and forcing them into one ontology would lose what each knows. It is fractal, principles at the top in a few kilobytes and the code at the bottom, so an agent loads the altitude its question lives at. It is published and open, because an agent can fetch, quote and link what is public, with a URL for every claim and a hash for every file. And it is shared between agents through vaults, so a session can end and the next one, or a different agent, or a person, picks up from the same files. This article says how that works, what it cost, where the industry's tools and this approach agree and differ, and where mine falls short, with the evidence of the session that wrote it: one Claude Code session across several context resets that revised an article from another team's review, wrote two more, published a vault and shipped six releases in a day, remembering nothing between resets except what the files remembered for it.</em></p>
+<figure class="shot" data-shot="mem-many-memories.webp" data-dir="images/" data-alt="Memory is not one store. Every one of these is a memory an agent reads from in a session like the one that wrote this, each a different shape because it answers a different kind of question. They disagree with each other in places, and that is allowed: each is right for its context, and each says where it came from. Counts from the live site on 3 October 2026."><figcaption>Memory is not one store. Every one of these is a memory an agent reads from in a session like the one that wrote this, each a different shape because it answers a different kind of question. They disagree with each other in places, and that is allowed: each is right for its context, and each says where it came from. Counts from the live site on 3 October 2026.</figcaption></figure>
+<div class="note"><b>Where this comes from, and what is behind it.</b> A voice memo on 3 October 2026, answering a question I get asked a lot. Behind it is the <a href="https://nfrs.sgit.ai/memory/index.html">memory thesis</a> on nfrs.sgit.ai, which argues that these sites are "a more evolved and focused version of what is usually called LLM memory" and lists where that fails; the <a href="token-bill-nobody-is-sending.html">token bill</a> and <a href="introducing-fractal-semantic-graphs.html">fractal semantic graphs</a> articles on loading only the altitude a question needs; the three articles on the agent inbox, whose files are the memory this article describes; and a day of watching one session remember. The industry references were read on 3 October 2026 at the URLs in the sources.</div>
+<h2>In short</h2>
+<ul>
+<li><b>Memory is not a spectator sport.</b> It is not one store you pump everything into and watch. It is work: deciding what the agent needs for this moment, giving it that, and writing back what it learned so the next moment is cheaper.</li>
+<li><b>Memory is context management.</b> The question is never "what do we remember" but "what does this agent need in its window right now". That is the same question the industry now calls context engineering, and it has a cost in tokens that makes "everything" the wrong answer.</li>
+<li><b>It is many memories, not one.</b> The inbox, the CRM, the news, the code, the sites, the release log: each is a memory with its own vocabulary, and by now they are inconsistent with each other in places. Forcing one ontology on them would lose what each knows.</li>
+<li><b>It is fractal.</b> Principles at the top in a few kilobytes, arguments and worked examples below, code at the bottom. An agent loads the altitude its question lives at and follows a link down only when it has to. The fractal is the budget.</li>
+<li><b>It is published and open.</b> Open source and Creative Commons mean an agent can fetch, quote, link and cite. The more I publish, the better the next context gets, and every claim arrives with a URL.</li>
+<li><b>It is shared through vaults.</b> A vault is a bundle with the right information for a moment, encrypted, versioned and hashed, opened with a read key that cannot write. Agents talk in it through files, so a session can end and the next picks up from the same place.</li>
+<li><b>Provenance is built in, not bolted on.</b> A URL for every quote, a commit for every release, a read key for every vault, a hash for every source file, a byline on every page. Nothing has to be trusted because nothing is unsourced.</li>
+<li><b>It falls short in known ways.</b> Stale pages become false memories; the session that wrote this found four and fixed two. The thesis is stated as falsifiable and this article keeps it that way.</li>
+</ul>
+<h2>Memory is not a spectator sport</h2>
+<p>When people ask how my agents remember, they usually have a picture in mind: a memory system, singular, somewhere behind the agent, into which everything it sees is deposited and from which it retrieves by similarity whatever seems relevant. The agent remembers the way a camera remembers. Nobody decides what goes in; nobody decides what comes out; the store just accumulates.</p>
+<p>I think that picture is wrong in three ways, and the three are related.</p>
+<p>It is wrong that there should be one. Context is specific. The rules that govern my inbox agent are not the rules that govern the news graph, and the vocabulary of a code review is not the vocabulary of a risk register. Each of those is a memory, and each has its own ontology because the people and agents who work in it need different things from it. By now, with twenty-seven sibling sites, forty published vaults, a CRM and an inbox, those memories are inconsistent with each other in places. I used to think that was a problem to solve. I now think it is the point: each is correct for its context, and a memory that had been forced to agree with all the others would be wrong for every one of them.</p>
+<p>It is wrong that it should hold everything. Memory has a cost, and right now the cost is paid in two currencies: the context window, which is finite and degrades as it fills, and the prompt, which is billed by the token. Anthropic's engineering guidance of September 2025 puts it exactly: "Context, therefore, must be treated as a finite resource with diminishing marginal returns", and the goal is "the smallest possible set of high-signal tokens that maximize the likelihood of some desired outcome." A memory that gives the agent everything gives it the wrong thing at every altitude.</p>
+<p>And it is wrong that it should be passive. Memory is made. Somebody, a person or an agent, decides that a thing is worth keeping, puts it where the next reader will find it, says where it came from, and links it to what it relates to. That is work, and it is the work my sites, graphs and vaults exist to do. The inbox article's agents talk in files that stay; the release log is written for the next agent rather than a changelog reader; the article graphs are published as JSON so that "what does this site think about X" costs a few kilobytes. None of that is spectating.</p>
+<h2>What the industry built, and where we agree</h2>
+<p>I want to be fair to the field, because it has moved a long way and some of it has arrived where I am.</p>
+<p>The consumer products have memory as a feature. ChatGPT's Memory launched in February 2024 and in April 2025 was extended so that it "can now reference all of your past chats". Claude's memory, from September 2025, is scoped differently: "Claude creates a separate memory for each project", with a summary the person can read and edit. Gemini's personal context arrived in August 2025, on by default. These are a single vendor's store of a person's conversations, and the memory thesis on nfrs.sgit.ai describes that shape plainly: "accumulated transcripts, retrieved by similarity, private to one vendor, unversioned and invisible to the person it describes." Claude's editable summary is the exception that shows the rule.</p>
+<p>The developer frameworks are more interesting. MemGPT, in October 2023, drew "inspiration from hierarchical memory systems in traditional operating systems" and paged information in and out of a limited window. Its successor Letta gives agents editable memory blocks that live in the context itself. Mem0 and Zep store extracted facts, Zep as a temporal knowledge graph, and both claim large savings against sending the whole history. And then Letta ran a benchmark in August 2025 that I find telling: a plain filesystem, with the agent reading and writing files, scored 74.0 percent on the LoCoMo memory benchmark against 68.5 percent for Mem0's graph variant. Their explanation was that "simpler tools are more likely to be in the training data of an agent and therefore more likely to be used effectively." Files won.</p>
+<p>The agent builders have said the same thing from the other side. Manus, in July 2025: "we treat the file system as the ultimate context", and the cache hit rate is "the single most important metric for a production-stage AI agent". Anthropic's own memory tool, from September 2025, is "a dedicated memory directory stored in your infrastructure that persists across conversations", files that the application, not the vendor, holds, with the model told to "ASSUME INTERRUPTION: Your context window might be reset at any moment". Claude Code's memory is a markdown index whose first 200 lines or 25 kilobytes load at the start of every conversation, with topic files read on demand. And the word for all of this, since Andrej Karpathy used it in June 2025, is context engineering, "filling the context window with just the right information for the next step."</p>
+<p>So the field has arrived at files, at budgets, at loading on demand, at the context window as the scarce thing. Where I differ is in what the files are, who can read them, and how far the ladder goes.</p>
+<h2>Memory is context management</h2>
+<p>Here is the frame I use. There are two ways an agent meets memory, and they look different but are the same problem.</p>
+<p>The first is the agentic session: a model with tools, running for hours or days, managing its own context. It fetches an index, follows links, reads what it needs, and when the window fills it is summarised and restarted with the summary. This is the mode the session that wrote this article ran in. Anthropic calls the restart compaction, "summarizing its contents, and reinitiating a new context window with the summary", and its guidance for agents is to "maintain lightweight identifiers (file paths, stored queries, web links, etc.) and use these references to dynamically load data into context at runtime." In this mode the agent makes its own working memory as it goes, and the question is whether the material it loads from is shaped to be loaded a little at a time.</p>
+<p>The second is the chat or the API call, where there is no second turn. The bundle handed to the model has to be right the first time and as small as it can be, because every token in it is in the prompt. I wrote about this in March, in a draft that is still unpublished but was quoted in a brief this week: "When I send a one-shot request via API, I control the model's entire universe. Everything the model doesn't need? Simply absent." The loop is to "curate reality, send it all at once, get the answer, then use the answer to improve the reality for the next prompt." That is memory as context management stated as a procedure. The published material is the reality, the bundle is the curation, and the answer feeds back into the material.</p>
+<figure class="shot" data-shot="mem-altitudes-cost.webp" data-dir="images/" data-alt="As much memory as the question needs. The published altitudes of this site, from the index to a whole vault, with what each costs to load. An agentic session walks down them; a one-shot call is handed the one it needs. Neither gets the whole thing. Sizes from the live site on 3 October 2026."><figcaption>As much memory as the question needs. The published altitudes of this site, from the index to a whole vault, with what each costs to load. An agentic session walks down them; a one-shot call is handed the one it needs. Neither gets the whole thing. Sizes from the live site on 3 October 2026.</figcaption></figure>
+<p>Both modes are served by the same memory if the memory has altitudes. On this site the index, llms.txt, is 350 lines and about 106 kilobytes: enough to decide where to look. The graphs of all twenty-three articles are one file of 234 kilobytes: enough to answer "what does this site think about X" without opening an article. One article's graph is eight kilobytes; the article itself is around sixty. The data bundle of the code review vault is a megabyte; the vault with its history is four. The token-bill article made the argument for the top of that ladder: "The tokens saved are not a percentage of the page. They are the page, minus the answer." The fractal graphs demo made it for the bottom, where "the landing view of a 1,051-node semantic graph costs three requests and 94 KB." Memory that is shaped like that can be loaded by either mode without loading all of it.</p>
+<h2>Many memories, each its own context</h2>
+<p>Now the part that I think is most different from the industry's picture, and most important.</p>
+<p>Every site I run is part of my memory, and so is every vault, and so is the inbox and the CRM and the release log. They are different memories because they hold different kinds of thing and answer different kinds of question. The sites hold principles and arguments. The release log holds what changed and what was learned, 211 entries from the first release to this one, each stamped with a commit, which the historian role on this site describes as "the site's memory, and it is written for the next agent, not for a changelog reader." The briefs hold what one team asked of another, with the status. The vaults hold worked examples, forty of them totalling 328 megabytes, each opened with a read key. The inbox agents hold their conversation in Email-FS, a mailroom, an inbox and a done folder per agent with every message kept as a file, so that "why did this happen" is a walk back through the folder rather than a search. The CRM holds one folder per contact, and each contact has a semantic graph of its own, a history, an interface and a workflow, with sub-projects below it: a world per person, hyperlinked to the rest.</p>
+<p>None of those is forced to agree with the others. The inbox's policy rows use reach, mandate, gap and barriers; the news graph uses claims and evidence; the code review graph uses stories, commands, classes and calls; the risk graph uses acceptance and owners. A single ontology across them would be a worse memory for every one of them. What joins them is not a schema but links, and the index that keeps the links. In the SG/Send team that is a librarian role that indexes everything; on this site it is the historian and the build itself, which refuses to publish a page the index would omit.</p>
+<p>This is also why being open matters more than people expect. Open source and Creative Commons are not a licensing preference here. They are what makes the memory usable by an agent: a public page can be fetched, a public quote can be cited with its URL, a public graph can be loaded by anyone's model, a public vault can be cloned with a key that is itself public. The more I publish, the more there is for the next session to stand on, and the less it has to be told. One of the articles published this week said it in passing, "the site is becoming the memory", and that is the right description of what happens when the material an agent needs is published rather than deposited.</p>
+<h2>Provenance built in</h2>
+<p>A memory that is shared, and made by agents as well as people, has to be able to say where each thing came from, or it becomes a rumour mill. The field has started to notice this: Claude Code's memory files carry a type and a modification timestamp; Anthropic's guidance warns of context rot, where "the model's ability to accurately recall information from that context decreases" as the window grows, and the older research on long contexts found the same, performance "significantly degrades when models must access relevant information in the middle of long contexts." The answer to a memory that cannot be trusted is not to trust it less. It is to make every item in it carry its source.</p>
+<p>On this estate that is a set of habits rather than a feature. Every quote in an article has a URL. Every release has a commit hash in the log. Every vault has a read key on its page, derived one way from a vault key that is never published, classified before it is put there, and the page says what the key can and cannot do. Every source file inside a vault has a hash. Every page has a byline that names the person responsible, the model that drafted it and the date. The fractal graphs page states the rule outright: "claims from memory are not allowed anywhere in this system", and the journalist role's card says "a claim about the site is checked with grep or git, not memory". When something is derived rather than observed, the page says so, as the code review vault does for its hand-written stories against its parsed graphs.</p>
+<p>Provenance is what lets memory be shared without being trusted, and it is the part that a vector store cannot give you, because a similarity score is not a source.</p>
+<h2>What it looked like in the session that wrote this</h2>
+<p>I can show rather than claim, because this article was written by the same kind of session it describes, and the record of that session is itself in the memory.</p>
+<figure class="shot" data-shot="mem-this-session.webp" data-dir="images/" data-alt="One Claude Code session on this site, across several context resets, during the day this was written. It had no memory system. It had the published surfaces, the vaults, the conventions in the repository, and a summary of itself carried across each reset. What it read in, how it worked, and what it wrote back."><figcaption>One Claude Code session on this site, across several context resets, during the day this was written. It had no memory system. It had the published surfaces, the vaults, the conventions in the repository, and a summary of itself carried across each reset. What it read in, how it worked, and what it wrote back.</figcaption></figure>
+<p>The session ran for days across several context resets. Each time the window filled it was summarised and restarted with the summary: what had been asked, what had been done, the rules still in force, the exact paths of the files. That summary is memory as a hand-off note, and it is the one thing the model carried itself. Everything else it read: the repository's conventions, which the build enforces rather than the model remembering; the published sites, which three research agents read and came back from with quotes and URLs, including my own blog posts from 2012; and a vault from another team, the dev agent's review pack for the inbox article, which arrived as files, a review, drop-in text, eight figures and their sources, leak-checked, and was applied the same morning. Memory handed between agents without a shared session.</p>
+<p>It worked by altitude. The index first, then the graph of an article, then the article, then the code, and the four-megabyte vault only when the question was about the evidence in it. It checked against reality: every number recomputed, every key scanned for before every commit, every page screenshotted and looked at. When the memo and the record disagreed, the record won and the article said so. And it forgot on purpose: scratch files, screenshots and worktrees stayed in a scratch folder, and nothing went into the published memory that was not meant to be read again.</p>
+<p>Then it wrote back. Two new articles, each with its graph as JSON so that the next session can answer "what does the site think" without reading them. A vault with a read key on its page. Six entries in the release log, including the mistakes: a bundler that doubled a page, a figure that clipped its last rows, a value line that had to be corrected twice. And a byline on each piece saying who was responsible, which model drafted it, and when. The day's output was a revised article, two new ones, a vault and six releases, each consistent with the ones before, from a model that remembered nothing between resets except what the files remembered for it.</p>
+<h2>The loop, and the conventions that keep it cheap</h2>
+<figure class="shot" data-shot="mem-loop.webp" data-dir="images/" data-alt="Memory is context management as a loop: publish, index, load by altitude, act, write back, and the next session starts from the published material. The conventions along the bottom are what make agents able to share a memory without sharing a session."><figcaption>Memory is context management as a loop: publish, index, load by altitude, act, write back, and the next session starts from the published material. The conventions along the bottom are what make agents able to share a memory without sharing a session.</figcaption></figure>
+<p>What makes the pile of sites and vaults a memory rather than an archive is the loop. Publish, with graphs, keys, briefs, logs and bylines. Index, with llms.txt per site and section, graphs.json across the articles, Agent Contact files per site, and a librarian or a historian keeping the links. Load by altitude, index then graph then text, the vault only for evidence, a summary carried across resets, and prompt caching for the part that does not change, which the vendors now price at a tenth of the standard input rate or less. Act, and check. Write back: a commit to the vault, one per cycle after a leak check; a message into another agent's mailroom; an issue as a folder; a release log entry. Then the next session starts from what was published.</p>
+<p>The conventions matter more than the tooling. Email-FS lite gives every agent a mailroom, an inbox, a done folder and an outbox, a message is a file with email headers and typed blocks, and each agent writes only its own folders, which is what lets a conductor run twelve of them in order without a shared session. Issues-FS makes an issue a folder whose history is the vault's history, so nothing is deleted and the board is files that version with the thing they track. The CRM's per-contact worlds give each person their own graph and interface, so an agent working on one contact loads one folder. And read keys let a memory be shared without being handed over: a published key reads everything and writes nothing, which is what makes it safe to put on a web page.</p>
+<p>Nothing is remembered by the model between sessions. Everything is remembered by the files. A new session, a different agent, or a person reads the same memory from the same place, and that is the whole design.</p>
+<h2>Where it falls short</h2>
+<p>The memory thesis on nfrs.sgit.ai calls itself untested and falsifiable, and lists its own limits, and I want to keep it that way here.</p>
+<p>Stale pages become false memories. The thesis says this failure had already been seen four times when it was written; the session that wrote this article found four more while researching it. The fractal graphs index page still says a vault has 617 nodes when the corrected count on its own performance page is 1,051. The site's index told agents that the full-text file was "about 155 KB" when the file was 2.5 megabytes. The published article graphs and updates feed both said they were generated on 15 August when the site was at version 0.6.53. And the updates feed stops on 21 September while the release log runs to today. Two of those are fixed in this release, the size and the dates are now measured at build time rather than remembered, and two are left standing and named here, because a memory that hides its own errors is the thing this article is arguing against. The nfrs rule is the right one: "If the reality document doesn't list it, it does not exist", and "briefs are aspirations, not facts."</p>
+<p>The memory is opinionated. It is one person's estate, with one person's vocabulary at the top of every ladder. An agent that loads it loads the opinions with the facts, and the bylines are there so that it knows whose.</p>
+<p>Discovery is hard at scale. Twenty-seven sites, forty vaults, 211 releases and a growing CRM are already more than one index comfortably holds, and the librarian role exists because the links do not keep themselves. The graphs help, the altitudes help, but "where is the thing I need" is a question this memory answers well for agents that already know its shape and less well for those that do not.</p>
+<p>And it is, so far, mine. The thesis would be properly tested when a second person's estate, with a different vocabulary, is read by the same agents alongside this one, and the agents cope with the disagreement. That has not happened yet.</p>
+<h2>What exists today, and what does not</h2>
+<p><b>Exists and runs:</b> the sites, their llms.txt indexes and markdown twins; the article graphs as JSON, per article and combined; the release log with 211 entries; the briefs with status; forty vaults with published read keys; Email-FS lite and the conductor runs in the agent team's vaults; Issues-FS on this site's own board; the CRM with per-contact folders; the session summaries that carry a Claude Code session across resets; the research agents that read the published material and return quotes with URLs.</p>
+<p><b>Does not exist yet:</b> a second estate read alongside this one; a freshness check in the build that fails on a stale claim the way the leak scan fails on a key; a published shape for the session hand-off summary, so that an agent other than the one that wrote it can load it; the one-shot bundle as a first-class artefact, a vault that is exactly one prompt's universe, built from the altitudes and nothing else; and the librarian as a role on this site rather than in the SG/Send team.</p>
+<h2>Threads woven here</h2>
+<ul>
+<li><a href="introducing-fractal-semantic-graphs.html">Introducing fractal semantic graphs</a>: altitudes, and "how much definition you choose to load" at each.</li>
+<li><a href="token-bill-nobody-is-sending.html">The token bill nobody is sending</a>: the markdown twins, the graphs, and loading the altitude a question needs.</li>
+<li><a href="replicating-the-agentic-inbox.html">Replicating the agentic inbox</a>, <a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception</a> and <a href="six-agents-one-inbox.html">Six agents, one inbox</a>: Email-FS, the CRM's per-contact worlds, the conductor's run folder as record.</li>
+<li><a href="code-review-as-a-fractal-semantic-graph.html">Code review as a fractal semantic graph</a>: a memory of a codebase, derived and marked as such, published yesterday by the session described above.</li>
+<li><a href="price-it-then-give-it-away.html">Price it, then give it away</a>: "the site is becoming the memory".</li>
+<li><a href="https://nfrs.sgit.ai/memory/index.html">The memory thesis</a> and <a href="https://nfrs.sgit.ai/documentation/index.html">documentation as a truth system</a> on nfrs.sgit.ai: the limits this article keeps.</li>
+<li><a href="https://sgit.ai/team/index.html">The team roles</a> on this site, including the historian who owns the release log, and the <a href="https://sgit.ai/use-cases/ai-agents.html">agent state use case</a>: "An agent's context window ends; its work shouldn't."</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>Anthropic, <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering for AI agents</a>, 29 September 2025; <a href="https://claude.com/blog/context-management">Managing context on the Claude Developer Platform</a>, 29 September 2025; <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool">the memory tool</a>; <a href="https://code.claude.com/docs/en/memory">How Claude Code remembers your project</a>; <a href="https://claude.com/blog/memory">Bringing memory to teams at work</a>, 11 September 2025; <a href="https://platform.claude.com/docs/en/about-claude/pricing">prompt caching pricing</a>.</li>
+<li>OpenAI, <a href="https://openai.com/index/memory-and-new-controls-for-chatgpt/">Memory and new controls for ChatGPT</a>, 13 February 2024, and the <a href="https://community.openai.com/t/chatgpt-can-now-reference-all-past-conversations-april-10-2025/1229453">10 April 2025 expansion</a>. Google, <a href="https://blog.google/products-and-platforms/products/gemini/temporary-chats-privacy-controls/">Gemini personal context</a>, 13 August 2025.</li>
+<li>Packer et al., <a href="https://arxiv.org/abs/2310.08560">MemGPT: Towards LLMs as Operating Systems</a>, October 2023; Letta, <a href="https://www.letta.com/blog/agent-memory/">Agent memory</a>, July 2025, and <a href="https://www.letta.com/blog/benchmarking-ai-agent-memory/">Benchmarking AI agent memory: is a filesystem all you need?</a>, 12 August 2025; Chhikara et al., <a href="https://arxiv.org/abs/2504.19413">Mem0</a>, April 2025; Rasmussen et al., <a href="https://arxiv.org/abs/2501.13956">Zep</a>, January 2025.</li>
+<li>Manus, <a href="https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus">Context engineering for AI agents: lessons from building Manus</a>, 18 July 2025; Cognition, <a href="https://cognition.com/blog/dont-build-multi-agents">Don't build multi-agents</a>, 12 June 2025; LangChain, <a href="https://www.langchain.com/blog/the-rise-of-context-engineering">The rise of context engineering</a>, 23 June 2025.</li>
+<li>Andrej Karpathy on context engineering, 25 June 2025, as reported by <a href="https://pureai.com/articles/2025/09/23/karpathy-puts-context-at-the-core-of-ai-coding.aspx">Pure AI</a>; the original post is on X.</li>
+<li>Chroma, <a href="https://www.trychroma.com/research/context-rot">Context rot</a>, 14 July 2025; Liu et al., <a href="https://arxiv.org/abs/2307.03172">Lost in the middle</a>, 2023.</li>
+<li>Jeremy Howard, <a href="https://llmstxt.org/">llms.txt</a>, September 2024; Anthropic, <a href="https://www.anthropic.com/news/model-context-protocol">Model Context Protocol</a>, 25 November 2024.</li>
+<li>Dinis Cruz, <a href="https://diniscruz.ai/2025/06/19/using-llms-as-ephemeral-graph-databases--empowering-the-graph-thinkers-in-the-age-of-generative-ai.html">Using LLMs as ephemeral graph databases</a>, June 2025; <a href="https://diniscruz.ai/2025/07/02/using-memory_fs-to-build-a-file-based-representation-of-the-gdpr-standard.html">Memory_FS and the GDPR as files</a>, July 2025; the one-shot draft of March 2026, quoted in the <a href="https://sgit.ai/docs/briefs/riskmandate-sandbox-twins-and-tokens.html">RiskMandate sandbox brief</a>.</li>
+</ul>
+<p><em>Drafted from a voice memo by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Fable 5.1, claude-fable-5-1) in the sgit.ai site session, on 3 October 2026. The account of the session is the account of this one: the summaries, research agents, review pack, releases and mistakes described are those recorded in the release log for versions 0.6.49 to 0.6.54. The industry quotations are verbatim from the pages cited, read on 3 October 2026; two vendor pages were read through a proxy because the sites refused direct fetches, and the Karpathy quotation is taken from a secondary report because the original post could not be fetched. The four stale facts named were found by the research agents and two were fixed in this release. The figures are infographics drawn from the live site's counts.</em></p>
+<p><em>© 2026 Dinis Cruz. This article's own text is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. You're free to share and adapt it, as long as you give credit. Quoted material and linked sources keep their own licences.</em></p>
+<sg-meter view="page" kind="article" date="2026-10-03" topics="graphs-and-knowledge agents-and-policy" title="Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Graphs &amp; knowledge</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#memory-is-not-a-spectator-sport">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="token-bill-nobody-is-sending.html">Sixteen thousand fetches, ten clicks, and a token bill nobody is sending: the case for paying publishers to be easy to read</a> <span class="dim">AI answer engines pay to read the web as HTML; a publisher who serves markdown, dates, hashes and a typed graph saves them tokens and should get a share.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="replicating-the-agentic-inbox.html">Replicating the agentic inbox: a walkthrough from one Claude session to a team of agents that never press send</a> <span class="dim">How to copy a working agentic email setup in phases: a mailbox and Claude seat of the agent's own, one session with a policy, then roles talking in files.</span></li><li><a href="custom-uis-are-not-the-exception.html">Custom UIs are not the exception: the inbox in 2026, where every message has its own universe</a> <span class="dim">Every message has a graph, so it can be shaped for the reader's moment; a custom interface per moment is now how interfaces get made, and each gets a policy.</span></li><li><a href="six-agents-one-inbox.html">Six agents, one inbox: what a real multi-agent setup taught me about access policies</a> <span class="dim">An access policy for an agent is only as real as its worst row: every rule in a real six-agent setup, graded by how it is enforced today.</span></li><li><a href="code-review-as-a-fractal-semantic-graph.html">Code review as a fractal semantic graph: source code is already one, and the review should read every layer of it</a> <span class="dim">Source code is layers within layers, each a graph with its own vocabulary; code review should read a change at every one, and a vault shows it done on real code.</span></li><li><a href="price-it-then-give-it-away.html">Price it, then give it away: the early access programme as the next step after "do they miss it"</a> <span class="dim">Define the product, price it, deliver it at a cost that grows a step at a time, then offer it free to people who know you and measure what it costs them.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="bringing-my-past-work-back.html">Bringing my past work back: a daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles, and why every team needs one</a> <span class="dim">A daily worker that turns eighteen years of essays, talks, posts and tools into linkable articles: then and now, connected, two or three a day.</span></li><li><a href="the-agents-write-too.html">The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it</a> <span class="dim">The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.</span></li><li><a href="knowledge-that-maintains-itself.html">Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief</a> <span class="dim">Fractal semantic graphs for policies and internal knowledge: brief people and agents from the graph, maintain it in a loop, carry the brief in a vault.</span></li><li><a href="the-vault-crosses-chrome-profiles.html">The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it</a> <span class="dim">The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.</span></li><li><a href="stop-the-bleeding-then-ask-for-it-back.html">Stop the bleeding, then ask for it back: a helper, an agent and a friendly letter for the subscriptions you keep and do not use</a> <span class="dim">A helper and an agent ask what you used, ask nicely for a pause and a refund, stop the payments either way, and publish what each company did.</span></li><li><a href="the-records-ran-out.html">The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges</a> <span class="dim">A fresh agent found a shared contract in two MCP calls from build records; where the records stopped is exactly where evidence labels and sgit vaults fit.</span></li><li><a href="from-a-spreadsheet-to-a-folder-per-person.html">From a spreadsheet to a folder per person: how to run your contacts the way our agents do, with Google Drive, Gmail and the Claude app, before you touch a vault</a> <span class="dim">A walkthrough from a spreadsheet CRM to one Drive folder per person, worked by Claude under a six-line policy, with five exercises, before any vault is needed.</span></li><li><a href="the-agent-is-the-reader.html">The agent is the reader: why agents will pay for graphs, personas and signed claims, because it is cheaper than not paying</a> <span class="dim">Agents pay to read the raw web and guess its meaning. A curated graph answers for 90% fewer tokens, so paying the publisher is cheaper than not paying.</span></li><li><a href="how-i-work-with-claude.html">How I work with Claude: one session per topic, agents with names, and memory you curate</a> <span class="dim">A practical guide from a year of daily use: one Claude session per topic, named agents with a role.md, curated memory, vaults, and policy before connectors.</span></li><li><a href="knowing-when-to-stop.html">Knowing when to stop: what experience gives people, and what we have to design into agents</a> <span class="dim">Knowing when to stop is the hard part for people and agents: what experience gives people, and the constraints that give agents the same perspective.</span></li><li><a href="every-mistake-added-a-rule.html">Every mistake added a rule: complexity, agents, and the way back to shipping</a> <span class="dim">When every agent mistake adds a rule, complexity wins: map the process, move each piece right as a small shipped component, and keep the rigour for the work.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="the-agent-team-as-it-runs.html">The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from</a> <span class="dim">Twelve agents on dedicated accounts, encrypted vaults as the only memory, messages as files, a folder per person, and a mailbox nobody sends from.</span></li><li><a href="a-personal-agent-that-keeps-your-secrets.html">A personal agent that keeps your secrets: the 2026 agents read through behaviour policy and encryption, and a privacy-first design on vaults, enclaves and the browser</a> <span class="dim">The 2026 personal agents read through behaviour policy and encryption, and a design on vaults, an attested enclave and the browser where no vendor holds a key.</span></li><li><a href="how-much-of-this-did-i-write.html">How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was</a> <span class="dim">Twenty articles in four weeks, measured from the session record: 63,000 words in, 85,000 out, no one-line prompts, and the real input is twenty years of writing.</span></li><li><a href="the-wall-under-the-reply.html">The wall under the reply: end an email with the state of the thread, not the thread</a> <span class="dim">End an email reply with the state of the thread for this reader, not the quoted wall: decided, open, next, who is on copy, with links to the record.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 24 &middot; <a href="../for/make.html#r=24">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/memory-is-not-a-spectator-sport.jpg" download>memory-is-not-a-spectator-sport.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="memory-is-not-a-spectator-sport.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

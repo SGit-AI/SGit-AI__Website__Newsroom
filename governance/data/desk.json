@@ -1,0 +1,78 @@
+{
+  "id": "governance-desk",
+  "version": "0.1.0",
+  "updated": "2026-08-28",
+  "note": "What is on the desk right now, and where each item sits in the workflow. This is the live state the newsroom floor renders. Items entered from the Researcher's run of 28 August 2026; the pick is recorded here because the recommendation belongs to the Researcher and the decision does not.",
+  "run": "run-2026-08-28",
+  "pick": {
+    "item": "cand-a",
+    "decided": "2026-08-28",
+    "by": "conductor",
+    "note": "Taken on the Researcher's recommendation. It is the only candidate whose load-bearing facts were read from a primary source by this newsroom, and it needs no characterisation of any organisation — which the editor refuses absolutely."
+  },
+  "items": [
+    {
+      "id": "cand-a",
+      "title": "The guidance that was due in February is still a draft in August",
+      "state": "registered",
+      "owner": "researcher",
+      "picked": true,
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems",
+        "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
+      ],
+      "blocked_at": "frozen",
+      "blocked_why": "The fetch-freeze-hash path does not exist, so the story cannot be anchored and cannot honestly be written as a verified reading. It stops here until T10 lands.",
+      "facts_ready": 4,
+      "questions_open": 2
+    },
+    {
+      "id": "cand-b",
+      "title": "Two things happened to the AI Act on the same day, in opposite directions",
+      "state": "parked",
+      "owner": "librarian",
+      "picked": false,
+      "blocked_why": "The Council press releases that carry the primary record returned 403 to our fetch — blocked by our own egress, not confirmed dead. Until they can be read, the deferral dates would have to be published as secondary, and they are the half of the story that matters.",
+      "facts_ready": 2,
+      "questions_open": 1
+    },
+    {
+      "id": "cand-c",
+      "title": "The transparency rules are live, and the announcement names no article",
+      "state": "spotted",
+      "owner": "researcher",
+      "picked": false,
+      "blocked_why": "Real and verified, but thin as news — a story about citation practice. Held as a method note rather than a lead.",
+      "facts_ready": 2,
+      "questions_open": 1
+    },
+    {
+      "id": "cand-d",
+      "title": "180 organisations signed a Code of Practice nobody has counted",
+      "state": "spotted",
+      "owner": "researcher",
+      "picked": false,
+      "blocked_why": "Needs a second pass to establish whether the signatory list is published. Not a story until that is known either way.",
+      "facts_ready": 1,
+      "questions_open": 1
+    },
+    {
+      "id": "consolidated-text-two-years-behind",
+      "title": "The consolidated text is two years behind the law it consolidates",
+      "state": "published",
+      "owner": "publisher",
+      "picked": false,
+      "facts_ready": 3,
+      "questions_open": 1
+    },
+    {
+      "id": "nine-questions-five-unanswered",
+      "title": "Nine questions, five unanswered — and four of those we cannot show you",
+      "state": "published",
+      "owner": "publisher",
+      "picked": false,
+      "facts_ready": 2,
+      "questions_open": 2
+    }
+  ]
+}

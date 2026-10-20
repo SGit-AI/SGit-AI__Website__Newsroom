@@ -1,0 +1,645 @@
+# newsroom.sgit.ai: the SGit Newsroom
+
+> The SGit Newsroom: one page, one argument, with the figures, the data and the links to
+> check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the
+> newsroom. Behind it, the design it came from (a story is a graph; corrections must
+> propagate; provenance is the product; pay the person who found the fact), and everything
+> needed to run a newsroom like it.
+
+Site version: v0.13.0 (10 October 2026). Published by the sgit project, which is building
+the stack this site argues for; participant disclosure at /about/participant.html.
+Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
+
+## The honest sentence
+
+Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 229
+articles since 17 August 2026, each with its own graph and full version history, a
+newsletter, collections, desk notes and a feed); how it runs (/newsroom/: six agent roles
+under written behaviour policies, a board, pitches and a run log); the reader's account
+(/account/: a reading meter kept in the reader's browser, personas, the reader's own
+newsroom); subscribe (/subscribe/); the World News Day 2026 corpus (/world-news-day/); and
+SQL and SPARQL consoles with no server (/databases/). A READER CAN TOP UP GBP 5 BY CARD on
+Stripe's page (one payment, nothing renews). The page it returns to adds the credit in the reader's browser
+and CANNOT CHECK THE PAYMENT, by design; nothing is paid to the people whose facts an article uses.
+ONLY DESIGNED, NOT RUNNING: selling the graph,
+paying the fact creator upstream, corrections that reach the pages that cited the corrected
+claim, articles as vaults, CC-Signed licences, trust as a service. /shipped/index.html is the
+dated authority on this line; read it before calling anything live.
+
+WHERE THE NEWSROOM PAGES COME FROM. Until cutover they are built on sgit.ai and imported
+here AT THE SAME PATHS by admin/build/sync_newsroom.py. The record, outside the imported
+tree, is admin/build/newsroom-sync.json: source commit, sgit.ai version, and the SHA-256 of
+every file as sgit.ai serves it and as imported. Canonical URLs point here. Links from those
+pages to sgit.ai pages that did not move (its docs, its about page, its release history) go
+to https://sgit.ai/. They are never edited by hand on this side, and the gate checks that.
+
+THE ARCHIVE. Everything this site published before the newsroom ran is listed at
+/archive/index.html: the first home page, the Governance Wire, Portugal Startups, the
+pt.newsroom designs, the brief pack, the library, the MVP specifications, and design pages the
+running newsroom has overtaken. ARCHIVED PAGES KEEP THEIR ADDRESSES and carry a dated note at
+the top saying why and what overtook them. Do not describe anything on an archived page as
+current, running or planned.
+
+## Properties agents may rely on
+
+- Every page this site writes ends with a pasteable "for an agent" block (except /admin/
+  pages and /about/participant.html). Pages imported from sgit.ai carry instead an llms.txt
+  chip at the top and a markdown twin: /articles/<slug>.md beside /articles/<slug>.html.
+- Machine surfaces you can fetch without rendering a page: /articles/feed.xml (the feed),
+  /newsroom/wire.json (every article and note as data), /articles/graphs.json (every
+  article's graph, one vocabulary), /articles/<slug>.md, /world-news-day/data/*.json and
+  /world-news-day/data/triples.nt. The archived sections keep theirs at the same paths.
+- THE WIRE PAGES FETCH CIPHERTEXT from the vault server (dev.send.sgraph.ai) when opened, as any page fetches its data; the
+  server sees the request and nothing of the reader. No page loads a script from another origin.
+- WHERE A READER'S DATA GOES is set out at /shipped/#data: the reading data (balance, history, personas,
+  receipts) is kept in the reader's browser and is not sent unless the reader chooses to share it; a payment
+  goes to Stripe; a subscription and a reading share go, encrypted, to a write-only lane; one page embeds a
+  viewer from another service. The pages are static files and there is no account. Encrypted vaults for readers
+  are not built.
+- Every page deriving from previously published material carries a visible provenance
+  block: original publication date, original link, original authors (including any AI
+  co-authorship), and an honest curation label. Enforced by the pre-release gate.
+- Seven open questions and six honest tensions are published unresolved at
+  /network/#open and /network/#tensions; check there before assuming any has been answered.
+- /llms-full.txt is this file plus the front page plus every markdown document in the
+  brief pack, concatenated: one fetch for the whole document set.
+
+## Site map
+
+### The newsroom
+- /index.html: THE FRONT PAGE, this site's own since v0.12.60 (admin/build/front.py), IN THREE
+  VIEWS on one page: Broadsheet (one lead, the desks, the doors), Briefing (the lead and four
+  more in two sentences each, then a door) and Your desk (the reader's own: what they read, what
+  it cost, their board), chosen by data-view on <html> and kept in the browser under
+  newsroom.view; ?view=briefing or ?view=desk opens one directly. The masthead's heart line is
+  "Pay for what you read." The lead is the newest article unless the editor names one in
+  admin/content/front/front.json. /index.md is the page as markdown; /articles/front.json its
+  data; /articles/find.json the findability data (desks, controlled vocabulary, series, format
+  and reading time per article). Six doors: five personas and one for publishers
+- /about/index.html: WHY THIS EXISTS: the agenda, open by default, who it is for, what the
+  author wants from a reader; the disclosure is at /about/participant.html
+- /agents/index.html: WRITTEN BY THE AGENTS: articles an agent of the newsroom wrote under its own name (author
+  newsroom.ux, page /about/newsroom-ux.html), as briefs about work it did on the site, in its own voice. Kept off the
+  front page's automatic lead and highlights; the front page lists the newest three as "From the agents"
+- ON EVERY CHARGED PAGE (articles, issues, notes, collections), since v0.12.85: a chip bottom right with SCROLLED (how
+  much of each section passed the middle of the window; never goes down) and READ (time on each section while the
+  tab is in front and the reader active in the last 60 s, against its words at 300 a minute), and the page's cost;
+  tapping it opens the page as its sections. Kept in the reader's browser under sgit.reading.v1, sent nowhere.
+  SINCE v0.12.99 THE METER CHARGES BY THE SHARE READ (sg-meter v1.5.0), not by scroll depth: opening costs a tenth of
+  the price, reading done on an earlier visit is not charged again, a reset refunds to the tenth. The reader can
+  PAUSE measuring (kept on every page, sgit.reading.paused), RESET a page, and MARK any section read or unread. On a
+  return visit or after scrolling back up, the sections already read can be shown six ways (Full, Margin, Faded,
+  Paragraph, Line, Hidden), never while reading forward. SINCE v0.12.110 the view is a setting in the chip's panel
+  (Settings tab; sgit.reading.view for every article, sgit.reading.views for one article's own), the margin line
+  changes colour as each section is read, folds wait until the page is still, and text scrolled past no faster than
+  450 words a minute counts as read too (pace; a faster scroll counts nothing). Every section of every article has a
+  line and a paragraph: /articles/summaries/<slug>.json (admin/build/summaries.py); the design:
+  /articles/your-reading-your-controls.html. HIGHLIGHTS: select text, tap Highlight; kept under sgit.highlights.v1 as the
+  exact words with 32 characters either side (a W3C text quote selector), drawn with the CSS Custom Highlight API.
+  The design and the plan: /articles/scrolled-is-not-read.html
+- /desks/index.html and /desks/<id>.html: THE FIVE DESKS, each an audience (Security, Building
+  with agents, Vaults, The news business, Strategy): who it is for, three to start with, its
+  series in reading order, every article on it newest first
+- /articles/index.html: EVERY ARTICLE, the page that was the front page until v0.12.60: the
+  edition, the lead, the latest ten, highlights, desk notes, collections, the newsletter, and
+  every article newest first with a topic filter and search
+- /articles/<slug>.html: an article. Beside it /articles/<slug>.md (markdown twin),
+  /articles/versions/<slug>.html (every published version and what changed) and
+  /articles/graphs/<slug>.json (its graph)
+- /articles/how-to-run-synthetic-users.html: A HOW-TO from three studies (store.sgit.ai, riskmandate.ai,
+  and this site on 10 October 2026): five to ten invented users, each with a profile, a question they
+  arrive with and an expected journey, drive a real browser one screenshot at a time, are interviewed and
+  rate it; findings ordered by what they cost. NOT user research: the users are invented by a model
+- /articles/graphs.html and /articles/graphs.json: every article's graph, 229, drawn together
+- /articles/newsletter/index.html: the newsletter, 9 issues so far, also on LinkedIn
+- /articles/collections/index.html: 5 collections; /articles/desk/index.html: 4 desk notes
+- /articles/views/<slug>/: five alternative readers (librarian, cartographer, historian,
+  explainer, storyteller) of the same article, for 5 articles
+- /articles/feed.xml: the feed. /newsroom/wire.json: the wire, as data
+- /subscribe/index.html: subscribe. The address is encrypted in the reader's browser and
+  sent to a write-only lane, described publicly in /.well-known/sgit-subscribe.json
+- /persona/index.html and /persona/<id>/: a link that opens the newsroom as a persona (founder, journalist,
+  security, builder, board). The persona is added to the reader's browser as a visitor they can keep or remove.
+  /persona/links.json lists every link with the persona's name, description and starting articles, for whoever
+  is writing to someone; /persona/#<id> names a persona after the #, which stays in the browser
+- /for/index.html: A READING LIST IN A LINK, from one person to another: /for/#from=Dinis&to=Steve&r=65,60,62&s=66&f=founder.
+  r = articles to read in order, s = worth a look, f = a persona id or c:<collection>, n = a note, e = the sender's
+  address for a Reply button; the names and numbers are in the part after the #, which stays in the browser. The page
+  checks every field, drops what is malformed and says so, and opens the list as a visitor persona the reader can keep
+  or remove. /for/make.html makes and previews a link in the browser. THE NUMBERS are /articles/ids.json: one stable
+  number per article, assigned once in the order they were published and never changed or reused; each article shows
+  its number at its foot. An agent drafts a list and the email; the person sends it
+
+### The wires (news read live from encrypted vaults; a beta): the Industry Wire, the OWASP Wire, the AWS Wire, the Portugal Wire
+- /wire/index.html: THE INDUSTRY WIRE, A BETA. Once a day, what happened in five beats (building with AI, AI business, open source,
+  cybersecurity, risk and governance), each story with its primary source, who else covered it, one exact quote and why it
+  matters, and a lens per persona showing what reached them and what was withheld, with the reason. THE DATA IS NOT ON THIS
+  SITE: it is in a public-read sgit vault the wire's agents write to, vault u9i9jp0l on https://dev.send.sgraph.ai, opened
+  in the browser with the read key sgit_public_read_4c7aefb739e52e9a03c35be01bf7e311af00872e33c477b4d7c4319cdb91bdba:u9i9jp0l
+  (read-only, published on purpose). Read it yourself: `sgit clone sgit_public_read_4c7aefb739e52e9a03c35be01bf7e311af00872e33c477b4d7c4319cdb91bdba:u9i9jp0l`,
+  then data/bundle.json (beats, stories, sources, personas, brief), data/deliveries.json (story × persona, reached or
+  withheld, with the reason), data/releases.json (one release note per publish, written by the desk since 13 October 2026)
+  and docs/*.md. /wire/snapshot.json has the headlines, primary links, each story's dated corrections and the desk's latest
+  release note as of this site's last release, for an agent without a browser. EVERY STORY IS MARKED ai-generated, unreviewed
+  UNTIL A PERSON REVIEWS IT; two editions so far (11 October 2026, a week's catch-up, and 13 October, an update with 19 new
+  stories and 13 corrected after their primary sources were fetched), 59 stories, 27 with a primary source not fetched. A
+  corrected story carries its changes, dated, under its text: CORRECTIONS PROPAGATE TO WHERE THE STORY IS READ. The wire has ONE NAMED READER,
+  Dinis Cruz, who runs this site and agreed on 2026-10-12 to be one while the wire is a beta (admin/build/wire-vault.json records
+  it); the persona "dinis" and the personal brief in the vault are theirs and are public like the rest. No other named person
+  gets a lens without a recorded agreement
+- /wire/owasp/index.html: THE OWASP WIRE, weekly: everything at and about OWASP (projects and releases, the GenAI Security Project, the
+  Foundation, events and chapters, OWASP in the news), with a PROJECTS GRAPH (20 projects, their leaders and the standards they map to,
+  each drawn with the stories that name it). Same code, same contract, its own vault: eitf274v, read key
+  sgit_public_read_b09571f053cc19f5f8b50f8a8d0d82a115e07282fca14e58e7c3328975cd9d79:eitf274v; data/map.json is the graph. First
+  edition 13 October 2026, 19 stories. /wire/owasp/snapshot.json, /wire/owasp/sources.html, /wire/owasp/how.html as for the Industry Wire
+- /wire/aws/index.html: THE AWS WIRE: everything AWS announced, FILTERED BY THE STACK its named reader declares in the vault (data/stack.json:
+  Lambda, S3, API Gateway, CloudFront, boto3, with aliases and the deadlines that matter); the join turns each service into a concern, so
+  under that reader's lens a story reaches them when it names a service they run. The page draws the deadlines at the top of the edition
+  with the days left and each service with the items that touched it. Its own vault: v202bla5, read key
+  sgit_public_read_ad5c3f9e1f4d7632db06cd27f6ee6a256063300c426f4a94e7de33cf5a53e892:v202bla5. First edition 13 October 2026, 88 items
+  (29 researched stories for the stack and the What's New firehose). /wire/aws/snapshot.json carries the deadlines
+- /wire/charter.html: THE CHARTER OF THE WIRES: facts first, analysis marked as the desk's; corrections propagate; three rounds (the desk writes
+  and runs its gate, the newsroom reads with a published key and draws as written, an independent verifier checks every story); what is
+  never done; public by default. Source admin/notes/2026-10-13__the-wires-charter.md
+- /wire/desk-brief.md (rendered at /wire/desk-brief.html): THE STANDING BRIEF FOR THE DESKS that write the vaults, read at the start of
+  every run, dated, newest first: the schedule, the reader's lane, the verifier's schema (wire-factcheck/v1), one subscription list per
+  wire (X-SGit-List: wire:<slug>), a Portugal wire, data/contacts.json under the contact rules
+- /wire/days.html: every wire day by day, the releases and the stories by date, read live from every vault
+- /wire/reach.html, /wire/owasp/reach.html, /wire/aws/reach.html: WHO SHOULD KNOW and how to reach them, BY ORGANISATION ROUTE ONLY under
+  world-news-day/data/contact-rules.json; the routes this site found are admin/build/wire-reach.json
+- Each wire's page has a subscription to that wire alone (wire/subscribe.js, the newsletter's lane with X-SGit-List), and draws the
+  verifier's records (data/factcheck-<date>.json) at each story they cover
+- /wire/portugal/index.html: THE PORTUGAL WIRE, daily: what happened in Portugal in the five beats, IN ENGLISH AND PORTUGUESE (a switch
+  under the lens; each story's headline_pt and summary_pt; the quote in the language of its source, quote_lang), with an ECOSYSTEM MAP of
+  40 organisations and 45 Portuguese sources. Its own vault: p6twygul, read key
+  sgit_public_read_faa3377d2556713fc959e68bc7bd8a2303cd4bd0862fdf18a4bf51c0c0d3ee08:p6twygul. First edition 13 October 2026, 36 stories;
+  a source for the Portuguese publication this site designed (/pt-newsroom/)
+- /wire/sources.html: the 55 sources with a licence tier each, and how many stories each gave this edition (A: open licence, keep and show; B: quote up to 25 words and
+  link; C: link only) and whether a person has verified it
+- /wire/how.html: how this site reads the vault, the contract the pages rely on, and the wire's own documents (architecture,
+  workflows, sources policy, the daily runbook), rendered from the vault's markdown
+
+### Your vault (the reading account carried between devices; a beta)
+- /vault/index.html: YOUR VAULT. The reading account lives in the browser's local storage; the vault is its second home, an
+  encrypted sgit vault the reader owns, opened with a passkey (a door derived from the PRF bytes, a master, a reader vault).
+  The Vault button beside the balance on every page opens a pane on the right: enable with the passkey, create the account
+  once with an access key (kept in the master from then on), Update the vault (this device's raw reads, top-ups, personas,
+  notes and wire stories seen as ONE FILE PER DEVICE, rewritten whole, one commit), and on another device bring that device's
+  activity in; totals are RECOMPUTED FROM THE RECORDS, never stored. The pane has four tabs (This page, Reading, Vault,
+  Keys); the Vault button counts what is only in this browser, and a strip above the tabs offers Update the vault and,
+  the other way, Bring them here. Since v0.12.88: devices MERGE into one (every record kept, aliases in
+  activity/aliases.json); a CALLS tab names and decrypts every call to the vault server; /vault/browse.html opens
+  every vault of the account file by file and commit by commit; and the SHARED VIEWER (vault lkypj6zq, public read
+  key in /admin/content/vaults/vault-viewer.json) is linked into each reader vault and opens as its app
+  (/admin/notes/2026-10-16__the-vault-opened.md). TWO WAYS IN (v0.12.58): OPEN with the passkey, after which the pane asks which device
+  this browser is (one the vault knows, adopted with its records, or a new one) and brings in what the vault holds on its
+  own, so the meter shows the account's balance; or CONNECT with a link, send only, filed where the vault is open under a
+  device the reader chooses (/admin/notes/2026-10-13__open-or-connect-a-vault.md). The design, the data layout and the
+  experiments to run next:
+  /admin/notes/2026-10-12__the-activity-vault.md. Code: /assets/vault-pane/vault-pane.js, /assets/vault-pane/sync.js, /assets/door.js
+- THE FEEDBACK LOOP (v0.12.0, a beta with one reader): the pane's first tab, This page, keeps a NOTE at one tap on any page
+  or at a wire story (done, read later, follow up, not for me, more like this, liked, wrong, fix this, idea), with words and
+  the phrase selected, or a MESSAGE written under Write to the newsroom, in localStorage as it happens (sgit.notes.v1;
+  /assets/vault-pane/notes.js); Update the vault carries a device's notes in its own file, and so does a send; SEND TO THE
+  NEWSROOM writes the notes not yet sent into a LANE, a vault of the reader's own whose write key stays in their master and whose READ KEY they hand the newsroom once; the newsroom reads it with
+  `NEWSROOM_LANE_KEY=<read key> python3 admin/build/lane.py` (or sgit clone) and answers in the open; nothing comes back
+  through the lane. A decided wire story folds to its headline. The Keys tab lists every vault of the account with its key
+  behind Reveal. Design: /admin/notes/2026-10-12__the-feedback-loop.md. Test: admin/build/test_notes.mjs
+- Since v0.12.1: DONE is the first chip (read it, done with it, off my lists); This page says what this browser knows
+  about the page from the meter's records (times, when, how far, cost, rating, the decision); a READING tab lists every
+  page read here with done pages folded away; the three steps (enable, update, send) with the next in bold; the pane
+  stays open from page to page; an account made without an access key takes it once in the Vault tab.
+- Since v0.12.6 THE WIRE READS AS AN INBOX: what is new since the reader's last visit (first seen in this visit), for them
+  and not under the lens they read as (remembered), the vault's release notes when it publishes data/releases.json
+  (wire-releases/v1), filters (inbox, new, read later, follow up, done, everything) and one decision per story that takes
+  it out of the inbox. What only this browser holds is counted on the Vault button and offered for Update the vault.
+  Design and the release-file contract: /admin/notes/2026-10-13__the-wire-as-an-inbox.md
+- /search/index.html: SEARCH, in the reader's browser, from an index built at release: /search/docs.json (one entry per
+  page: u address, t title, k kind, n article number, d date, x teaser, tp topics, tg tags, g the article graph's core
+  idea and node labels, h headings with anchors) and /search/text.json (paragraphs [doc, anchor, text], and wording only
+  in an earlier version as [doc, anchor, text, version, version page]). "Quotes" for exact phrases, a number alone for
+  that article. An agent can fetch both files and rank them itself. Design: /admin/notes/2026-10-13__search-in-the-browser.md
+- /briefs/index.html: THE BRIEFS, every brief this site has published about itself (articles, notes, engineering
+  cards), each with its status as found in the code and the releases (built, partly, not built, superseded), what
+  remains, and a session brief an agent can start from. Machine-readable: /briefs/briefs.json. Grouped by area.
+- /sections/index.html: SECTIONS, the newsroom as one audience reads it, kept current by rule. /sections/publishers/index.html
+  is FOR PUBLISHERS: five pieces to start with, the latest for publishers, the features a publisher can use today (each
+  with when it shipped), and every relevant article placed into streams by its desk and controlled tags, each saying
+  which rule placed it. Machine-readable: /sections/publishers.json and the features register /sections/features.json.
+- /reviews/index.html: REVIEWS ON THE RECORD, every review of every article, by agents from any vendor, the editor
+  and the desk, against published criteria (/reviews/criteria.md, also /reviews/criteria.html). A review is a record:
+  one article, one text, one reviewer, kept for good and answered finding by finding. AN AGENT THAT WANTS TO REVIEW:
+  read the criteria, then /reviews/status.json (every article's current text hash and the reviews it has), and take
+  the five newest articles with no review by your id at the current hash. Records: /reviews/records/<slug>/.
+- /engineering/index.html: ENGINEERING, the issues and the releases as files (admin/engineering/, Issues-FS-lite layout:
+  open, blocked, done cards with front matter, a Gherkin scenario, a mock-up, an outcome and screenshots; one file per
+  release naming its cards). Every change is connected to a card; version rows name the ids. /engineering/issues.json is
+  a derived index; the files are the source. Every push is a patch release.
+
+### Your account (kept in the reader's browser; nothing is sent unless the reader sends it)
+- /account/index.html: the reading account: balance, history, receipts
+- /account/newsroom.html: the reader's own newsroom, from what they read
+- /account/personas.html: the reader's personas, named and drawn as graphs
+- /account/share.html: a reading share the reader can send, encrypted, for a front page
+  designed for them. The page shows every word before it is sent
+- /account/top-up.html and /account/topped-up.html: the GBP 5 top-up and its return page.
+  THE TOP-UP LINK IS SET (a live Stripe Payment Link, GBP 5): the reader pays on Stripe's page and returns here,
+  where the credit is added once per payment reference, unverified
+
+### How it runs
+- /newsroom/index.html: how the newsroom runs: how a piece moves from written to placed,
+  the one rule (publishing is adding one file) and the one exception (placement)
+- /newsroom/roles/<role>.html: six roles: contributor, designer, developer, editor,
+  historian, journalist, each with its behaviour policy
+- /newsroom/policies.html, /newsroom/publish.html, /newsroom/board.html, /newsroom/log.html:
+  the policies, how to publish, the board, the log of every run
+- /archive/2026-08-23-newsroom-roles-and-operations.html: the newsroom AS DESIGNED in August,
+  before it ran (archived; this address held it until v0.6.0)
+
+### The design (the argument, set against what runs)
+- /design/index.html: START HERE. Six ideas, each beside what runs and what does not yet
+- /thesis/index.html: sell the graph, evidence not truth, the author is the oracle
+- /corrections/index.html: corrections must propagate
+  - /corrections/the-claim-that-would-not-die.html: the 10,000-hours case in full
+  - /corrections/how-a-graph-answers-it.html: supersede-never-delete, typed citation edges
+- /provenance/index.html: provenance is the product
+  - /provenance/the-decision-graph.html: named ownership at every editorial step
+  - /provenance/articles-as-vaults.html: each article as text, evidence, graph and every prompt
+- /economics/index.html: paying the fact creator
+  - /economics/trust-as-a-service.html: the fact-certifier as a payable, warranted role
+- /rights/index.html: content rights: CC-Signed, the licence family with a legal stick
+- /databases/index.html — DATABASES WITH NO SERVER (beta): two real database engines running in the
+  READER'S BROWSER, compiled to WebAssembly, over the JSON files /portugal/ is built from. No
+  server, no upload, no store of record: the files are the database, the engines are readers,
+  the store is discarded when the tab closes. The pattern is the estate's (sgit.ai RiskMandate:
+  "the browser becomes the database"; graphs.sgit.ai Regulation Graph: SQLite over WASM,
+  client-side and ephemeral) and graphs.sgit.ai's "NOT A GRAPH DATABASE PITCH" is inherited:
+  JSON stays the source of truth. Both consoles publish window.__tools.{sql,sparql} after a
+  tool:ready event, read-only, and fetch only same-origin files.
+  - /databases/sql.html — SQLite (sql.js 1.14.2, MIT, vendored): 15 tables built on load from
+    /databases/data/tables.json (the loader spec, which names the file and field behind every
+    column); 16 worked queries from a count-by-class to a recursive two-hop traversal and the
+    connections formula, each with
+    the row count it returned AT BUILD (/databases/data/queries-sql.json). The build executed
+    every one through Python's sqlite3 against the same spec; a failing or empty query fails the build
+  - /databases/graph.html — Oxigraph (0.5.11 web build, MIT OR Apache-2.0, vendored): SPARQL 1.1
+    over /portugal/data/triples.nt (N-Triples, IRIs under https://newsroom.sgit.ai/portugal/
+    {id,verb,type,prop}/; the ontology is IN THE STORE, inverses declared with owl:inverseOf and
+    walked with ^, labels @en and @pt; 4,001 triples). 13 worked queries incl. a Portuguese path read aloud, a
+    property-path two-hop walk, a CONSTRUCT of the inverse edges and an ASK that no edge is
+    symmetric — each shown beside the same question in Cypher, which is displayed and NOT run
+    (Kùzu's WASM build is 73 MB unpacked; declined and recorded). Validated at build with pyoxigraph
+- /shipped/index.html: WHAT RUNS, WHAT IS DESIGNED, as of 10 October 2026. The authority.
+  The August version, written when nothing ran, is /archive/2026-08-23-what-is-shipped.html
+
+### Build your own
+- /publishers/index.html: FOR PUBLISHERS, journalists and anyone thinking about the future of news: what is live on
+  this site, how to try it in five minutes, what is not done, and what we would like from them, written to be forwarded
+  as it is. First written on sgit.ai on 11 October 2026; since v0.12.113 this site's own, rebuilt in every release (what
+  is live from /sections/features.json, the newest from /sections/publishers.json). Markdown twin /publishers/index.md.
+  It has a version history of its own: /publishers/versions/index.html (every version of its text at
+  /publishers/versions/<version>.md, and the differences) and /publishers/changes.json (what its live parts did per
+  release). If it and /shipped/ disagree, /shipped/ wins
+- /newsroom-api/index.html: THE READER API, MAPPED AND REVIEWED (phase 0 of the move in /articles/explorer-to-villager-newsroom.html):
+  every file a reader runs with its hash, the 12 views and every control, every input, what leaves the browser, the
+  contracts other sites and agents program against, and a line-by-line review with its findings, each pinned by a test.
+  The same as data: /newsroom-api/map.json. "API" means client-side: no server, nothing to deploy but files
+- /passkey/index.html: THE PASSKEY LAB, proofs of concept for /articles/the-passkey-opens-the-vault.html: make a passkey with
+  the PRF extension, get the 32 PRF bytes (the same on every device the passkey syncs to, through the same kind of path; a phone
+  over QR can give different bytes from the same passkey, see /admin/notes/2026-10-12__one-door-per-passkey-path.md), derive a door vault's passphrase
+  and id from them (HKDF) and sgit's read and write keys (PBKDF2, 600,000 iterations), a recovery code as a second door,
+  test vectors checked against sgit's own Python (/passkey/vectors.json), and, with an access key kept in memory only,
+  REAL SGIT VAULTS made and opened in the browser through the vault library that runs dev.vault.sgraph.ai, vendored unedited
+  at /assets/vendor/sg-vault/v0.2.3/ (VENDOR.md) with one local extension (SGVault.createWithId) and the newsroom's own
+  module /assets/newsroom-vault.js: the door at its derived address, a master and a reader vault; unlock through the door;
+  the recovery code added as a second door; a note written and read back. Every vault it makes is one `sgit clone` opens.
+  A lab: it does not touch the reading account
+- /replicate/index.html: what you can copy today to run a newsroom like this one, where it
+  is, and how far each piece is packaged. Only SG Meter and the World News Day vault are
+  self-contained; there is NO forkable newsroom template yet
+- /meter/index.html and /meter/security.html: SG Meter v1.3.1, the reading meter as a
+  versioned web component, and its security model (an honesty box, not a paywall)
+- /demos/vaults/newsroom-synthetic-users/index.html: THE STUDY OF THIS SITE by five invented readers
+  (62 steps, 51 questions the site did not answer, 56 places somebody got lost, 31 findings, 6 blocking),
+  run against newsroom.sgit.ai v0.6.1 on 10 October 2026, published as a vault app with a read key. Every
+  persona and every word attributed to one is model-written. The missing-figures bug it measured was
+  fixed here in v0.6.2 and the page, which is sgit.ai's text, still describes it as open; its other
+  findings are listed in /admin/versions.html under v0.6.2 with what was and was not done
+- /mvps/seed-companies.html: seven CC-licensed business templates published so others can
+  build them; seed 4 is an evidence-research company for journalists and investigators
+- /admin/index.html: how this site is built
+
+### World News Day 2026 (a running instance)
+- /world-news-day/index.html — WORLD NEWS DAY 2026 (beta): the 21 op-eds WAN-IFRA and the
+  Canadian Journalism Foundation commissioned for World News Day (28 September 2026) and made
+  "free to republish", fetched, frozen, hashed, described and graphed HERE — and NOT republished
+  here. THE FINDING, derived from the bytes twice by two implementations: all 21 carry a prose
+  permission, 0 carry a named public licence, 0 mention Creative Commons, 0 carry rel="license",
+  0 carry a copyright notice — and while 21 of 21 already ship schema.org JSON-LD,
+  0 of them use its `license` field. The permission exists only as a sentence at the foot
+  of the prose, in 2 wordings, and the announcement page states the terms a THIRD way
+  ("with appropriate credit" vs the articles' "in full"). THIS SECTION DECLARES ITS OWN LICENCE
+  IN THE FIELD IT SAYS THE CORPUS LEAVES EMPTY: every page here carries schema.org JSON-LD with
+  `license` (CC BY 4.0), copyrightHolder, copyrightNotice, usageInfo and isAccessibleForFree,
+  plus rel="license" — and the section gate fails the build if a page loses any of them. The
+  notice says explicitly that the licence covers OUR description and not the op-eds.
+  The structured data that IS there is
+  not reliable: on 2 of the 21 the REST author field does not name the people the page prints
+  (one gives the CMS account name "329976pwpadmin"), which is why the bylines here are read from
+  the prose. Do not cite this section as legal
+  advice and do not describe the pieces as un-republishable: the permission is real and
+  generous; the finding is about its FORM
+  - /world-news-day/stories/free-to-republish-is-not-a-licence.html — THE ARGUMENT, as one
+    1,700-word piece written to be sent to the twenty-one authors: what the permission is and is
+    not, the one line of JSON-LD that would fix it, what 21 of the most senior voices in news
+    said when counted together, that none of the 21 pages offers a way to reach anybody, and
+    what this section itself got wrong and corrected in public. EVERY FIGURE IN IT IS FILLED
+    FROM THE DATA FILES AT BUILD TIME, not typed, so the prose and data/*.json cannot disagree.
+    The markdown source is at /world-news-day/content/free-to-republish-is-not-a-licence.md,
+    CC BY 4.0
+  - /world-news-day/terms.html — THE VOCABULARY and the FRACTAL LAYER: all 1,070 sentences of
+    the 21 op-eds, each typed by a published formula (data/claim-rules.json, ordered, first
+    match wins) and anchored to the frozen bytes by offset plus at most 8 verbatim words —
+    enough to find a sentence, far short of reproducing it. SHAPES: 828 flat assertions,
+    79 hypotheses, 51 quantified, 41 evaluations, 31 questions,
+    24 attributed statements, 16 PROPOSALS. 38 vocabulary terms used,
+    33 shared by more than one piece — and 4 places in all 1,070 sentences where
+    anybody says what one of those words MEANS. A looser definition rule found 29 and
+    misread "the decline of local news is a global phenomenon" as a definition of LOCAL NEWS;
+    both counts are published. The one term stated twice is stated by the SAME author both
+    times, and the gate checks that label against the bylines
+  - /world-news-day/pieces/<slug>.html — ONE PAGE PER OP-ED, 21 of them: every sentence typed
+    and anchored, the claim profile beside the corpus average, who wrote it and the published
+    route to them, what it cites, the vocabulary it shares with pieces that never cite it, and
+    a mapping to this site's own argument by a published rule over the terms used. THE ARTICLE
+    TEXT IS IN NONE OF IT — follow `url` to worldnewsday.org
+  - /world-news-day/licences.html — the licence finding in full, both wordings quoted verbatim,
+    the count table, the two-statement discrepancy, and the three lines of JSON-LD that would
+    close the gap. data/licences.json is the machine surface
+  - /world-news-day/corpus.html — the 21 described: order in the announcement, byline, the role
+    line as printed, dates, word count, outbound links, derived themes, and the SHA-256 of the
+    two frozen files each stands on. THE ARTICLE PROSE IS DELIBERATELY ABSENT from every file
+    this section publishes — follow `url` to worldnewsday.org
+  - /world-news-day/findings.html — THE AGGREGATE over 21 of the industry's most senior voices:
+    19 of 21 pieces are about truth and facts, 11 raise AI, and 3 mention copyright or licensing.
+    11 of 21 offer the reader NO outbound link at all; 38 links across the whole
+    corpus; 23 distinct domains cited and NO TWO PIECES POINT AT THE SAME ONE. No sentiment,
+    stance, scoring or agreement is modelled anywhere — `agrees_with` is a BANNED verb here
+  - /world-news-day/graph.html — 160 nodes / 427 edges, 8 types, 8 verbs: articles, authors,
+    organisations, derived themes, cited sources, licences, snapshots and frozen files. Same
+    instrument and vocabulary as /portugal/graph.html; every verb carries a named inverse and a
+    Portuguese form; window.__graph after tool:ready. Fetch data/graph.json, data/ontology.json
+    or data/triples.nt (427 edges as N-Triples with owl:inverseOf)
+  - /world-news-day/sources.html — the register: 43 frozen files with SHA-256 (the page as served
+    AND the record from worldnewsday.org's own undocumented WordPress REST API, per piece, plus
+    the announcement). CORRECTED IN v0.4.2: v0.4.0 called the announcement "the one page in the
+    beat a machine cannot read" on the evidence of two refused attempts. wan-ifra.org sits behind
+    a JavaScript-challenge firewall that refuses SOME automated requests; a later attempt returned
+    the full page. Do not repeat the withdrawn claim. Every attempt is now counted and recorded
+  - /world-news-day/vault.html — PUBLISHED VAULTS, listed and described the way sgit.ai lists
+    its thirty-seven (https://sgit.ai/demos/vaults/publishing.md): an index table, then a page
+    per vault with the read key in the open, the audit that ran BEFORE the key was published,
+    and the facts derived from the key itself by build/vault_audit.py — a clone with the
+    published read key alone, no token, no repository.
+  - /world-news-day/vaults/corpus.html — CORPUS VAULT 77yuggi1, read key
+    sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4.
+    113 files, 7.46 MB, 5 commits, HEAD obj-cas-imm-a706cb4ed0ad.
+    Audit: 57 text files scanned against 8 patterns, 14 hits,
+    14 cleared (all of them organisations' role addresses, published on purpose),
+    0 unexplained. Negative control: an all-zeros read key FAILS to clone
+  - /world-news-day/contacts.html — HOW TO REACH THEM. Not one of the 21 pages offers a way to
+    reach its author or publisher: no contact address, no author URL in the structured record, no
+    press line. The map was built by going to the organisations' own sites, one hop each, under
+    rules fixed in data/contact-rules.json BEFORE the fetching: organisations and never people; a
+    published list of role local parts; four published tests before a site counts as established;
+    every address re-derived from frozen bytes by the gate. 20 of 27 organisations
+    established, 14 with a contact page, 11 role addresses publishable out of
+    43 seen, 15 of 23 authors with any published route — all via an organisation.
+    NO PERSONAL CONTACT DETAIL FOR ANY NATURAL PERSON EXISTS ANYWHERE IN THIS SECTION'S DATA; do
+    not infer one. Pages that are staff directories (10+ addresses of named people) were fetched
+    and deliberately NOT retained — URL, hash and counts only
+  - /world-news-day/vault.html — THE VAULT: /world-news-day/vault.zip, 116 files,
+    2.86 MB, SHA-256 085893764be223f7567882a464bcb5184fa28382d1449eabbe5279bc5e7b342b — every
+    frozen op-ed and REST record, every derived dataset, the build code and the gate, in one
+    deterministic bundle (same bytes in, same hash out). TWO SETS OF TERMS, stated in the bundle
+    and in its licence.json: OUR description, counts, graph and code are CC BY 4.0, named and
+    machine-readable; THEIR 21 op-eds under sources/frozen/ are not ours and are not relicensed.
+    ONE VAULT IS PUBLISHED on dev.send.sgraph.ai: corpus vault 77yuggi1, read key
+    sgit_public_read_fa4cfb64e7b5b222a958103ed3a5dac760300053b1fd77f60c1d4408721f95e4
+    (data/vault.json). It OPENS AS AN APP — app.json with present:true, so the SG/Send host
+    launches index.html from inside the vault rather than showing a file tree. The app reads
+    the vault's own encrypted files in the reader's browser over sg.vfs; no server, no account,
+    no database. A SECOND VAULT IS PRIVATE and deliberately unlisted: the outreach vault holds
+    who is being contacted and what we plan to say. A read key for it WAS published between
+    v0.4.4 and v0.5.3, which was a mistake; the vault was REKEYED (every object re-encrypted
+    under a new key, pushed under a new identity, old vault hard-deleted from the server) and
+    that key now recovers ZERO files. Do not repeat it. READ KEYS ARE PUBLISHED AND GRANT READ
+    ONLY; vault keys are write access and appear in no file — the whole-site gate fails on any
+    private key shape
+  - /world-news-day/method.html — fetch/freeze/hash/extract/derive/gate, the 20 published theme
+    patterns in full, the gates, and the four things this section refuses to do. ONE FILE IS
+    WRITTEN BY HAND: data/affiliations.json, where each author works, transcribed from the role
+    line their own piece prints — a regular expression over that prose had an author working at
+    "Philippines", so the transcription is checked against the bytes in both directions instead
+  - /world-news-day/data/{register,corpus,licences,analysis,lexicon,affiliations,claims,
+  claim-rules,terms,contacts,contact-rules,corrections,ontology,graph,vault,outreach-vault,
+  vault-audit,manifest}.json
+    and data/triples.nt — the machine surfaces; fetch these rather than parsing the pages
+
+### Site
+- /about/participant.html: participant disclosure; two years of disclosed model co-authorship
+- /network/index.html — sibling boundaries, the Risk Mandate inversion, open questions
+- /admin/comms.html: open requests and standing tasks, in public
+- /admin/versions.html: release history
+- /llms-full.txt: the whole document set in one fetch
+
+## The archive (since 10 October 2026: historical, not current)
+
+Every page below keeps its address and carries a dated note at the top. Index:
+/archive/index.html.
+
+- /archive/2026-08-22-home.html: the home page of this site from 22 August to 10 October
+  2026, when it was an argument; /archive/2026-08-22-home.md its markdown twin
+- /archive/2026-08-23-what-is-shipped.html: the line between running and argued, drawn when
+  nothing ran
+- Design pages the running newsroom has overtaken: /provenance/show-your-work.html (fifteen
+  departments), /provenance/a-worked-story.html (one story itemised: GBP 8.40, 6h 23m),
+  /economics/paying-the-fact-creator.html (the 60/25/10/5 split, never tested),
+  /economics/rails.html (x402 and others, real third-party infrastructure as of August
+  2026), /corrections/242-papers.html, /corrections/staleness-in-the-wild.html,
+  /corrections/agenda-is-context.html
+- /library/index.html: the prior art, ten articles published at docs.diniscruz.ai in 2025;
+  /economics/micro-and-nano-payments.html, the 2025 argument for paying in pence
+- /mvps/index.html: the publication instances as specified in April and May 2026, none built
+  as specified
+  - /mvps/portugal.html: the flagship as specified; built differently, as Portugal Startups
+    and then pt.newsroom.sgit.ai
+- /portugal/index.html — PORTUGAL STARTUPS (beta): a publication mapping the Portuguese startup
+  ecosystem, first beat Startup Summit Lisbon 2026 (17-18 September 2026, Beato Innovation
+  District). THE IMPORTANT DIFFERENCE FROM /governance/: sources here are PRIMARY and ANCHORED.
+  Every page of the source site is fetched, frozen to a dated snapshot in the repository and
+  hashed with SHA-256, and claims are read from the frozen copy rather than the live network.
+  This is the fetch-freeze-hash path /governance/ specifies and cannot run.
+  It also has a NAMED HUMAN EDITOR OF RECORD (Dinis Cruz) who reviews every page before it
+  publishes, because this beat is about named people and named companies.
+  - /portugal/graph.html — THE GRAPH: 329 nodes / 1,106 edges, 16 types, 19 verbs — the event, 64
+    speakers, 61 derived organisations, 16 sessions on 3 stages, 88 frozen sources across 2
+    snapshots (64 of them the speakers' own pages), 7 pieces of press coverage, our stories, 23
+    Topic nodes (the event's own tags) and 50 derived tag nodes (Industry, Technology, Idea,
+    Service, Product — by lexicon, every edge carrying its matched words). Every edge is a verb with a named inverse IN ENGLISH AND
+    PORTUGUESE (ontology.json), so a path reads as a sentence either way. Nodes arrive in PACKS
+    the reader switches on block by block. The page publishes window.__graph (read + view
+    methods, no writes) after a tool:ready event, the same convention as graphs.sgit.ai's
+    universe reader. Fetch /portugal/data/graph.json and /portugal/data/ontology.json directly
+  - /portugal/explorer.html — THE FILES: every file the section is built from, from
+    /portugal/data/manifest.json with size and SHA-256, rendered / as a graph / raw. Frozen
+    third-party pages are listed and hashed but never rendered
+  - /portugal/connections.html — CONNECTIONS: who should be talking to whom, who could be buying
+    from whom and who could help whom, as THREE ORGANISATION-LEVEL SQL QUERIES over two things read
+    from each speaker's own frozen page — the event's own Topics list (verbatim, 23 distinct) and
+    the words matching a PUBLISHED LEXICON of 57 patterns (industries, technologies, ideas, services,
+    products; the matched words only, never the sentence). Rows at build in
+    /portugal/data/connections.json with the SQL beside them; the same SQL runs unchanged in
+    /databases/sql.html. NOTHING HERE IS A CLAIM ABOUT A PERSON: the unit is the organisation, and
+    the notice refuses characterisation of named individuals. Gate 17 re-runs every pattern on the
+    frozen bytes each build; gate 16 checks every topic is on the page verbatim
+  - /portugal/summit/index.html — the event as it describes itself. Distinguish TARGETS from
+    COUNTS: the event's own wording is "targeting 2,000+" attendees and "150+ speakers planned",
+    while its published list names 64. Do not report a target as a result.
+  - /portugal/summit/people.html — all 64 published speakers with role, organisation, the event's
+    own Topics for them (verbatim) and a link to each speaker's own page. Biographies are
+    deliberately NOT reproduced; the lexicon reads them and keeps only matched words
+  - /portugal/summit/orgs.html — 61 organisations DERIVED from the speaker cards; 2 are
+    placeholders ("Independent") flagged rather than removed
+  - /portugal/summit/changes.html — the same pages frozen twice and diffed: 5 speakers added and
+    1 removed between 8 and 13 September. REMOVALS CARRY NO REASON and none may be inferred
+  - /portugal/sources.html — the register: every frozen file with its SHA-256, byte count and
+    retrieval time, and how to check any claim against it. Two kinds of source: the event's own
+    pages, and third-party pages ABOUT the event — none a registry or funding dataset, so nothing
+    here describes the ecosystem beyond this one event
+  - /portugal/checks.html — what re-reading established, including two different sets of stage
+    names published on the same site, and the claims that cannot be verified from the source
+  - /portugal/method.html — fetch, freeze, hash, extract, diff
+  - /portugal/team.html — seven agent roles plus the named editor of record
+  - /portugal/notice.html — THE DATA-PROTECTION NOTICE. This section names 64 people it did not
+    get the data from. Lawful basis is LEGITIMATE INTERESTS and the journalistic derogation is
+    EXPRESSLY NOT CLAIMED: Article 24(3) of Portugal's Lei 58/2019 conditions it on national
+    rules on access to and exercise of the profession, which this publication does not meet.
+    Personal contact details of any kind are refused at EXTRACTION time and gate check 11 fails
+    the build if one appears in the data. Removal on request is unconditional and no reason is
+    asked for. Carries a Portuguese-language summary. Not legal advice
+  - /portugal/about.html — beta, one beat, two kinds of source, no legal review, nothing in Portuguese
+  - /portugal/stories/a-record-attempt-the-agenda-does-not-mention.html — two Portuguese outlets
+    report a 48-hour Guinness pitch marathon on 16-17 September; the event's own agenda, four
+    days out, does not list it. Both frozen; neither wrong yet
+  - /portugal/stories/five-names-arrived-and-one-left.html — the speaker list went 60 → 64
+    between 8 and 13 September; both copies held and hashed; the removal carries no reason
+  - /portugal/stories/two-names-for-three-stages.html — the agenda and the AI-summary page name
+    the same stages differently, on the same site, on the same day
+  - /portugal/team/<role>/index.html — one page per role (researcher, extractor, diffwatch,
+    cartographer, writer, editor, publisher): definition, doors, refusals
+  - /documents/pt-newsroom.html — the COMMISSIONING BRIEF for pt.newsroom.sgit.ai, addressed to the
+    agent that will build it; section 16 records the home-page direction chosen on 13 September;
+    section 17 points at THE BRIEFING PACK, /briefs/pt-newsroom-pack.zip (unpacked under
+    /briefs/pt-newsroom-pack/): the brief, the design sources and fonts, the code to inherit, the
+    newsroom operating model, CLAUDE.md and settings for the new repository, the prompts and
+    repository skills for the scheduled run and the editor's review, the three ways to schedule it
+    with a cron workflow, the acceptance test, and a handover. Start at 00__READ-ME-FIRST.md
+  - /portugal/data/{graph,ontology,manifest,coverage,sessions,event,people,orgs,sources,changes,checks,team,stories,notice,topics,lexicon,connections}.json and /portugal/data/triples.nt — machine surfaces
+  - /portugal/sources/frozen/<date>/<page>.snapshot — the frozen byte copies themselves. Stored
+    with a .snapshot extension because they are EVIDENCE, not pages of this site: unmodified
+    bytes of another organisation's pages, held so a claim can be verified, never republished
+    as browsable content
+- /pt-newsroom/index.html — THE HOME PAGE OF pt.newsroom.sgit.ai, AS DESIGNED: the site does not exist
+  yet; this is its chosen front page (13 September 2026) rendered at 1440px and 390px from the design
+  sources /pt-newsroom/design/{Main,MainPhone}.dc. A classic broadsheet, natively Portuguese, drawn
+  with /portugal/'s real data of that day and NOT maintained — take the structure, not the numbers.
+  The design system is section 16 of /documents/pt-newsroom.html. Nothing on it is a claim.
+  - /pt-newsroom/directions.html — THE FOUR DIRECTIONS, ARCHIVED: all four home pages drawn that
+    day (broadsheet — chosen; dense ledger; dark graph-first; magazine with claims underlined),
+    each rendered from its source in /pt-newsroom/design/ with the motivation and trade-off
+    written on the canvas. Three were NOT chosen and are not to be built from; they are kept so
+    the choice can be re-read. Seven typefaces vendored under /assets/fonts/, all SIL OFL
+- /governance/index.html — THE GOVERNANCE WIRE (beta): the first MVP of the risk-and-governance
+  publication, self-contained under /governance/ so it can move to its own domain later. It is
+  FULLY AGENTIC — seven agent roles, no human reviews any page before publication — and every
+  fact in it is SECONDARY: taken from another publication's reading of a primary text, with
+  nothing frozen, hashed or anchored. Do not cite it for any regulatory fact; follow the source
+  link on the node and cite the original
+  - /governance/graph.html — every node and edge, and the vocabulary they conform to
+  - /governance/sources.html — where every fact came from and whether anyone read the original
+  - /governance/method.html — what the graph/verification/linking layer adds, and the 13 gates
+  - /governance/team.html — seven agent roles, each with a centre of gravity and refusals
+  - /governance/team/<role>/index.html — one page per role: the definition in full, the doors
+    only that role can open, and what is on its desk right now. Source: team/<role>/role.md
+  - /governance/newsroom/index.html — THE FLOOR: the room itself, as a point-and-click scene.
+    Seven agent desks joined by the pipeline route; each answers from desk.json. Not decoration
+    — the workload it reports is the live one
+  - /governance/newsroom/workflow.html — THE STATE MAP: nine states from search result to
+    published page, each with the door it must pass. The `frozen` state is BLOCKED and nothing
+    has ever passed it, which is why every fact here is secondary and nothing is anchored
+  - /governance/research/index.html — the Researcher's runs, published whether or not anything
+    came of them
+  - /governance/research/<date>.html — one run: what was searched, what resolved, what was
+    actually READ, and what our own egress blocked. Two Council of the EU pages return 403 to
+    us; that is recorded as a fact about our reach, NOT about those pages
+  - /governance/about.html — beta, no legal review, no human review, nothing anchored
+  - /governance/stories/<slug>.html — the stories; prose in /governance/content/<slug>.md
+  - /governance/data/{graph,ontology,sources,stories,team,workflow,desk,research}.json — the machine surfaces; fetch
+    these rather than parsing the pages
+- /documents/index.html — the brief pack, readable in-page; raw markdown at /briefs/
+  - /documents/<slug>.html — one reader page per pack document (generated projections;
+    the file under /briefs/ is the source of truth if the two ever disagree)
+  - /documents/newsroom-floor.html — a DEBRIEF, not a brief: how and why the agentic team was
+    rendered as a point-and-click room, written for the agents of the other *.sgit.ai sites so
+    they can build the same thing. The transferable rule is that every word the room speaks is
+    derived AT BUILD TIME from the same files the pipeline runs on, and a gate fails the build
+    if the route drawn through the desks stops matching the declared pipeline. Includes the
+    porting recipe, the four defects we shipped into, and what a single implementation on a
+    single day has NOT proven. Raw source: /briefs/10__the-newsroom-floor.md
+  - /documents/pt-newsroom.html — a COMMISSIONING BRIEF addressed to the agent that will build
+    pt.newsroom.sgit.ai, a natively Portuguese newsroom. The load-bearing finding: the
+    journalistic derogation is NOT available to an unaccredited agent-produced publication, so
+    the basis is legitimate interests, which costs a balancing test, a published Portuguese
+    notice and a named accountable human. Also cuts fifteen departments to three, settles the
+    subdomain by wildcard-certificate mechanics, and rules that in a natively Portuguese
+    publication the graph EDGE VERBS are Portuguese verbs. Raw: /briefs/11__pt-newsroom-commissioning-brief.md
+  - /documents/summit-archive.html — THE CONSOLIDATED ARCHIVE of the Startup Summit Lisbon 2026
+    beat: 160 files — every page, data file, build script, story, role page, brief and frozen
+    source — each with its live URL, its GitHub URL, its SHA-256 and a line saying what it is, all
+    verified live and byte-identical when cut. Bundle: /briefs/summit-archive.zip (210 files, 1.5
+    MB), unpacked under /briefs/summit-archive/. Four narrative documents: the chronology (two
+    captures, 8 and 13 September), every published number beside the file it derives from, the
+    method and its eighteen gates, and three things that went wrong. THE BOUNDARY IT STATES: the
+    register stops on 13 September, four days before the doors; this publication holds no capture
+    from during or after the event and makes no claim about it
+  - /documents/pt-transfer.html — A SIBLING TRANSFER, addressed to the agents of
+    pt.newsroom.sgit.ai (github.com/SGit-AI/SGit-AI__Website__Newsroom__PT), read at its v0.3.1.
+    What that site built and this one lacks (a read-only JSON API with OpenAPI, the delivery
+    quarantine as a build gate, the accent and Portuguese-path gates) and what goes the other way:
+    two frozen Summit captures from 8 and 13 September (60 then 64 speakers) that turn its lead
+    story — explicitly waiting for a second capture of 70 — into three captures in six days; three
+    press pages plus one excluded WITH ITS REASON; and a story standing on two independent
+    publishers. THE RULE IT PROPOSES: evidence transferred between sibling publications stays
+    evidence only if the provenance travels with it and is published — the bundle at
+    /briefs/pt-transfer.zip carries obtido_por, obtido_em, url and the origin register's SHA-256
+    per file, all fourteen re-verified before packaging
+  - /documents/research-brief-chatgpt.html and /documents/research-brief-perplexity.html — two
+    RESEARCH BRIEFS for outside assistants: what pt.newsroom.sgit.ai needs (eight sections, in
+    priority order), how to search Portuguese sources, the rules on people, and the JSON contract
+    for handing back LEADS WITH PROVENANCE — /briefs/pt-newsroom-pack/08__research-briefs/
+    research-schema.json (JSON Schema 2020-12) with example-delivery.json. Nothing a delivery
+    contains is cited until the newsroom freezes the page and re-finds the excerpt in the bytes
+  - /documents/risk-governance-newsroom.html — the pack's only FORWARD-LOOKING document:
+    a commissioning brief for a risk-and-governance publication built on this network,
+    whose commercial destination is riskmandate.ai. It is a publication to build, not one
+    that exists. Its architectural claim is a split of the risks.sgit.ai grounding ladder:
+    the publication owns Evidence and Fact, the customer owns Reality/Twin/Measure, and a
+    Vulnerability exists only where the two meet
+
+## Read before repeating a fact from this site
+
+Every /library/ entry and every provenance block states the ORIGINAL publication date —
+never the date it reached this site. A version number or a fact about a sibling
+*.sgit.ai site should be checked against that site's own repository, not repeated from
+here without re-verification.

@@ -1,0 +1,51 @@
+{
+  "slug": "every-mistake-added-a-rule",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "When every mistake adds a rule, complexity is winning",
+      "para": "A friend's agent-run verification holds up on the code but keeps breaking in the process: compaction, lost outputs, 100 KB prompts, scripts edited in place and rules that breed rules. The article maps this as a Wardley map, sets out principles for moving each piece right, and answers questions on compaction, audit cards and STOPs.",
+      "hash": "726e592b2ed9"
+    },
+    "s0": {
+      "line": "The code holds up; the process around it breaks",
+      "para": "The tool reproduces its tests and 812 concurrency attacks produced no failures. Complexity shows up on a Wardley map as custom-built components where commodities exist, and each fixing rule adds another. The answer is small shipped components that compound, and slowing down when you stop getting faster.",
+      "hash": "c1c971ede918"
+    },
+    "s1": {
+      "line": "A rigorous agent verification fails in six process patterns",
+      "para": "One agent writes, others verify and ChatGPT reviews, with no network and any deviation a STOP. Six patterns keep failing: compaction, lost outputs, 100 KB prompts, scripts edited in place, the harness against the rules, and too many rules. The friend has already chosen nine small sessions and hashed references, and asks if this rigour is overdoing it.",
+      "hash": "5953d49becae"
+    },
+    "s2": {
+      "line": "Complexity is custom-built process sitting where commodities exist",
+      "para": "A Wardley map places components by visibility and evolution, and failures usually come from a mismatch on the evolution axis. The friend's map shows a hand-built blob: recovery after compaction, output capture, proof of bytes, kilobytes of rules, long sessions and an all-firing STOP. Files, hashes and git, which solved these for decades, sit unconnected at the far right.",
+      "hash": "9dfa4094b028"
+    },
+    "s3": {
+      "line": "Replace each failing rule with a small shipped component",
+      "para": "Each pattern maps to a component: steps that finish before compaction, a run wrapper writing every output to file, a short hashed policy on disk, scripts committed before they run, and rules kept only for incidents. nfrs.sgit.ai found that what a machine enforces holds and what attention enforces drifts; coding.sgit.ai has 31 rules but four structural guards.",
+      "hash": "9e2d5a2f42d1"
+    },
+    "s4": {
+      "line": "Eleven principles: map, ship small, let machines enforce",
+      "para": "The principles: map the custom-built blob, commoditise small chunks so they compound, ship and stop, keep sessions small, keep memory as versioned files, slow down when complexity hits, and secure against the actual threat. Also: rules for incidents with machines for enforcement, run in five environments, reverse-engineer the path, and learn existing engineering practice.",
+      "hash": "a179af070d61"
+    },
+    "s5": {
+      "line": "Rigour is overdone for the process, not the intent",
+      "para": "Steps should finish before compaction with state on disk, and a compacting session should close. The audit card is a script over the transcript, run after the step, that flags anything outside policy. Mistakes of form are logged, and only harm or a broken boundary stops work. The process has become a second product costing more than the verification.",
+      "hash": "3e58699c4d0f"
+    },
+    "s6": {
+      "line": "Companies must also break capabilities into simpler components",
+      "para": "The same lesson applies to companies, including the author's own. A strong path is mapped from agent behaviour policies to a licence to operate to insurance, but customers struggle with simpler things, so the way to market is simpler components. Funding can give a false sense of having a product ready to scale.",
+      "hash": "c92f745b9eea"
+    },
+    "s7": {
+      "line": "Start by mapping, shipping one tool, and deleting rules",
+      "para": "The steps: draw the map and mark the blob, make its most expensive piece a small tool and ship it, cut the prompt to a page, write outputs to file through a wrapper, commit before running, split STOPs, publish a one-page threat model, run elsewhere, and delete a rule whenever a component makes it unnecessary.",
+      "hash": "edfbb32281e1"
+    }
+  }
+}

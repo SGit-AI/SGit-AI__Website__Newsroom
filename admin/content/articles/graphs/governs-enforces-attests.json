@@ -1,0 +1,34 @@
+{
+ "slug": "governs-enforces-attests",
+ "teaser": "An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "An Agent Behaviour Policy governs rather than enforces: it states each role's mandate and the level that keeps each rule, the prompt, hooks, or a recommended third-party blocking system such as Ruflo's policy engine, whose receipts an sgit vault keeps; an attestation layer that signs what was assured is the separate piece that lets a third party verify it.",
+ "nodes": [
+  {"id": "abp", "label": "An ABP governs", "kind": "concept", "summary": "Reach, mandate, rules, and what keeps each rule."},
+  {"id": "prompt", "label": "Level 1: the prompt", "kind": "concept", "summary": "Hope-based; the model keeps it or not."},
+  {"id": "hooks", "label": "Level 2: hooks", "kind": "concept", "summary": "Deterministic, on the agent's machine."},
+  {"id": "third", "label": "Level 3: a third-party system", "kind": "method", "summary": "Blocks out of the agent's reach; recommended."},
+  {"id": "ruflo", "label": "Ruflo's policy engine", "kind": "example", "summary": "Enforce mode, a decision receipt per action."},
+  {"id": "vault", "label": "sgit vault", "kind": "artefact", "summary": "Memory and receipts, encrypted and versioned."},
+  {"id": "attest", "label": "Attestation", "kind": "concept", "summary": "Signs what was assured for third parties."},
+  {"id": "verifier", "label": "Customer, auditor, insurer", "kind": "example", "summary": "Checks a signature, not the operator's word."}
+ ],
+ "edges": [
+  {"from": "abp", "to": "prompt", "rel": "produces"},
+  {"from": "abp", "to": "hooks", "rel": "produces"},
+  {"from": "abp", "to": "third", "rel": "produces"},
+  {"from": "ruflo", "to": "third", "rel": "extends"},
+  {"from": "ruflo", "to": "vault", "rel": "produces"},
+  {"from": "vault", "to": "attest", "rel": "leads-to"},
+  {"from": "attest", "to": "verifier", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["policy-as-code-needs-a-policy-first", "are-hooks-the-sweet-spot", "hooks-are-kernel-code", "our-first-pr-in-ruflo", "the-policy-guards-the-door", "the-policy-draws-the-liability-line", "cedar-and-the-policy-vault"],
+  "pages": [],
+  "sites": ["https://ruv.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "So an ABP governs. It does not, by itself, enforce. It names the enforcer.", "why": "The precision the summary needed."},
+  {"text": "a rule kept in the prompt should be attested as a prompt rule, not as a control", "why": "What an honest attestation carries."}
+ ]
+}

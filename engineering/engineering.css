@@ -1,0 +1,17 @@
+/* the engineering pages */
+.eng-board h2 { margin-top: 1.6rem; }
+.eng-board table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.eng-board th, .eng-board td { text-align: left; padding: .45rem .5rem; border-bottom: 1px solid var(--line, #e3e5ea); vertical-align: top; }
+.eng-board th { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim, #5a5e68); }
+.eng-board td.id, .eng-meta td.k { font-family: var(--mono, ui-monospace, monospace); white-space: nowrap; }
+.eng-tag { display: inline-block; padding: 0 .5em; border-radius: 999px; font-size: .74rem; font-weight: 600; background: var(--mute-bg, #eef1f4); color: var(--text, #3a3d45); white-space: nowrap; }
+.eng-tag.bug { background: var(--danger-bg, #fdecec); color: var(--danger-ink, #8a0a0a); } .eng-tag.story { background: var(--tint-solid, #e6f4ee); color: var(--accent, #0f6b4f); } .eng-tag.task { background: var(--info-bg, #e8eefc); color: var(--info-ink, #1d4ed8); }
+.eng-tag.open { background: var(--warn-bg, #fff4e0); color: var(--warn-ink, #8a5a0a); } .eng-tag.blocked { background: var(--danger-bg, #fdecec); color: var(--danger-ink, #8a0a0a); } .eng-tag.done { background: var(--fg, #1c1d21); color: var(--bg, #fff); }
+.eng-tag.urgent { background: var(--danger-ink, #8a0a0a); color: #fff; } .eng-tag.high { background: var(--danger-bg, #fdecec); color: var(--danger-ink, #8a0a0a); }
+.eng-meta { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .8rem 0 1.4rem; }
+.eng-meta td { padding: .3rem .5rem; border-bottom: 1px solid var(--line, #e3e5ea); vertical-align: top; }
+.eng-meta td.k { color: var(--dim, #5a5e68); width: 9rem; }
+.eng-body pre { background: #14161a; color: #e6e8ec; padding: .8rem 1rem; border-radius: 8px; overflow: auto; font-size: .82rem; line-height: 1.5; }
+.eng-body pre code.lang-gherkin { color: #a6e3c3; }
+.eng-body img { max-width: 100%; height: auto; border: 1px solid var(--line, #e3e5ea); border-radius: 8px; margin: .4rem 0; }
+.eng-body blockquote { border-left: 3px solid var(--line2, #cfd2d8); margin: .6rem 0; padding: .1rem 0 .1rem .9rem; color: var(--text, #34363c); }

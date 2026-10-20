@@ -1,0 +1,174 @@
+{
+ "slug": "the-mandate-stack",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 351,
+   "line": "About fifteen agents and one person run RiskMandate",
+   "para": "RiskMandate runs its business with about fifteen agents and one person, Dinis Cruz, whose name is on every message that leaves. The article describes the setup in eight layers, follows an input through them, explains the vault as an app platform and the draft as a release candidate, and draws two Wardley maps.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 320,
+   "line": "Eight layers, one written mandate each, one human sends",
+   "para": "The team runs four times a day and whenever Dinis sits down with it. Compute and channels are rented, while vaults, graphs, a conductor and written mandates are the team's own. The vault is an app platform, the draft is a release candidate, and stalled agent projects are answered at the end.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "One that runs",
+   "words": 184,
+   "line": "Each agent has a written mandate; only Dinis sends",
+   "para": "RiskMandate.ai's agents each hold a narrow Agent Behaviour Policy, share state in encrypted sgit vaults and connect everything as semantic graphs. The briefing counts about fifteen agents, while a companion article names twelve roles. The collaboration vault holds over 620 commits and 9,000 files, and the layers describe what was running, not a prior design.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "From the outside in",
+   "words": 295,
+   "line": "Every input enters as data; only Dinis's send leaves",
+   "para": "An email is captured word for word with a hash by the inbox role, filed into the person's folder and graph, and turned into a Gmail draft by the drafts role on the next run. Forms, other agents' lanes and the Web Summit extension enter the same way. Dinis enters by session, email or decision draft.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "Layer 1: compute",
+   "words": 186,
+   "line": "Agents are Claude sessions; the vault is the interface",
+   "para": "Most agents run as Cowork sessions in a Claude Teams account, each with its own role and connectors. Some run as Claude Code cloud sessions on a separate account with access to the vault only, no email, calendar or CRM write, yet they still join the team, take work and leave a trail.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "Layer 2: channels",
+   "words": 271,
+   "line": "Each channel is split by role; nobody holds sending",
+   "para": "One Google Workspace identity provides the channels. The inbox role reads and captures, the drafts role makes Gmail drafts only from the email register, and decision drafts carry questions to Dinis with lettered options. No agent sends, except the security role's single \"SECURITY HOLD\" email to Dinis.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "Layer 3: shared memory and messaging",
+   "words": 356,
+   "line": "Encrypted vaults are shared memory; agents message through files",
+   "para": "A vault is plain files encrypted client-side with AES-256-GCM, versioned like git and synced through a server that never sees plaintext. Agents talk through Email-FS, .eml files moved between mailroom, inbox and done folders. Append lanes give outsiders a write-only, encrypted and signed slot, used by the newsroom agent, the Web Summit extension and the subscribe form.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Layer 4: domain vaults",
+   "words": 189,
+   "line": "Per-domain vaults apply least privilege to context itself",
+   "para": "The relationships vault holds one folder per person, and the collaboration vault links to it read-only. Focused projects get mission vaults with their own owner, policy and key holders. Web Summit Lisbon 2026 has a data vault, a discovery inbox and an extension vault, shareable with a partner without exposing the team vault.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "Layer 5: semantic graphs",
+   "words": 783,
+   "line": "Each record is a node; edges give its meaning",
+   "para": "The CRM is a graph: as of 3 October, 71 people, 24 organisations, 281 timeline events and 12 campaigns. Each person's folder holds a graph file, an append-only ledger and hashed messages. Contexts like the Web Summit crowd are graphs over shared nodes, and the team, the ABPs and data governance are graphs too.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "Layer 6: orchestration",
+   "words": 284,
+   "line": "Four daily conductor runs open and close with security",
+   "para": "Each run takes a lock and gives every agent one step in fixed order: security, drafts, inbox, briefs, CRM, event mission, research, dev, then security again. Dinis's own sessions and emails add work between runs. A new agent joins with two chat messages, a prompt and the vault key, then onboards itself.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "Layer 7: governance",
+   "words": 476,
+   "line": "Written policies name their gaps; only Dinis amends them",
+   "para": "Every agent's ABP states its grant, mandate, gap and barrier. The agent reading raw mail has the least power, making prompt injection a containment problem. No agent sends, the security role runs first and last with a hold it cannot lift, keys travel only in chat, and every session ends with a card.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s10",
+   "label": "Layer 8: the human",
+   "words": 108,
+   "line": "One person holds the single irreversible step: sending",
+   "para": "Dinis makes decisions, amends mandates and sends. The top layer is one person because the irreversible step is one step, so everything below it can be wrong and still be caught there. Links point to the four rules never negotiated and to a measurement of what the person's input actually is.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s11",
+   "label": "The vault is not storage: the tool loop",
+   "words": 520,
+   "line": "The vault is an app platform, so tools compound",
+   "para": "Because a vault serves committed HTML as a web app, one person can hit a friction, have the model build a tool in the same session, deploy and use it. The tools compound, interfaces reach down to a single contact, and research is the same loop. Work is mature when it no longer calls for a tool.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s12",
+   "label": "The feedback loop: the draft is pre-production",
+   "words": 360,
+   "line": "The draft is a release candidate for the pipeline",
+   "para": "Agents automate capturing, connecting and remembering, while Dinis keeps the low-volume, feedback-rich send. Reviewing a draft is QA on the whole system and where the thinking sharpens. Mistakes trace to captured data, a graph edge or the model, now the rarest cause, are fixed at source, and recipients' replies close the loop.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s13",
+   "label": "Two maps: what is being commoditised, and what is being made",
+   "words": 1050,
+   "line": "Memory and sgit become commodity; policies and graphs, product",
+   "para": "Two Wardley maps rendered with Mermaid place the components. From outside, a thin custom layer of roles, folders, policies and conductor rests on rented vaults, Claude sessions, Google Workspace and S3. From Dinis's view, sgit vaults and the CLI are pushed toward commodity while behaviour policies, graphs and custom interfaces move toward product.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s14",
+   "label": "Why it holds",
+   "words": 275,
+   "line": "Five reasons the setup holds, each answering a failure",
+   "para": "The control surface is small, written and versioned; the human holds the irreversible step; shared state is files, with costs counted per session; the graph puts meaning on the read path; and everything leaves a trail. None of this makes the setup immune, but it shows where a failure would have to get through.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s15",
+   "label": "A working name",
+   "words": 105,
+   "line": "The Mandate Stack is only a working name",
+   "para": "The name carries the mandate, a written policy per agent as the unit of design, and the stack, with lower layers rented and upper ones owned. It omits the human who sends, which the one-line version keeps. A better name may come, since the description of something that runs is what matters.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s16",
+   "label": "What is not in it",
+   "words": 201,
+   "line": "Unsigned commits, unrevocable keys and policy-only barriers remain",
+   "para": "Commit authorship is not signed, a vault key can only be replaced by a new vault, and most barriers are policy-only, with no separate permission authority. An identity, secret store and key pair per agent are still wishes. Who may hand a recipient's information to an agent stays open; the answer so far is to hold less.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s17",
+   "label": "The record, for anyone who asks why this is worth writing down",
+   "words": 640,
+   "line": "Agent pilots often stall, while drafts-only designs ship",
+   "para": "Gartner predicts over 40% of agentic projects cancelled by end of 2027, MIT NANDA reports 95% getting zero return, and KPMG finds 49% scaled back. Klarna, Taco Bell, CBA and Ford put people back at key steps. Yet 52% and 57% report agents in production, and email products all stop at the draft.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s18",
+   "label": "Threads woven here",
+   "words": 371,
+   "line": "Links: the articles behind each layer of the stack",
+   "para": "Each layer links to where it was worked out, including The agent team as it runs, Replicating the agentic inbox, Six agents, one inbox, Footprint and blast radius and the fractal semantic graph articles. Memory is not a spectator sport, Seven vaults, one method, the sgit documentation, the briefs and wardley-maps.sgit.ai are also linked.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s19",
+   "label": "Sources",
+   "words": 571,
+   "line": "Sources: the briefing, voice notes and surveys cited",
+   "para": "The main source is the CRM agent's v0.3 briefing of 6 October 2026, with three voice notes by Dinis Cruz. The record draws on Gartner, S&P Global, MIT NANDA, McKinsey, Deloitte, Forrester, KPMG, Carnegie Mellon, Google Cloud and LangChain, plus press reports of reversals and vendor guidance from Anthropic and OpenAI.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

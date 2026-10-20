@@ -1,0 +1,51 @@
+{
+  "slug": "where-the-platform-draws-the-line",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "Platforms enforce what they touch; business rules sit above",
+      "para": "Microsoft made MXC generally available on 7 October, with ACS above it: a broad set of platform controls for agents. It confirms the direction: policy outside the agent, observe before enforce. But the platform draws its line at files, ports and tool calls, and eight scenarios show what is left for the business.",
+      "hash": "4a3a2c23def3"
+    },
+    "s0": {
+      "line": "MXC and ACS make hope rows into boundaries",
+      "para": "MXC is an MIT-licensed JSON policy enforced by the operating system, deny by default, with a permissive mode to watch first. ACS evaluates Rego policies at eight points in the agent loop but supplies no rules. Across eight scenarios, three become OS boundaries, four need business-written rules, and one needs a named person.",
+      "hash": "6c72f9b6e311"
+    },
+    "briefing": {
+      "line": "MXC contains workloads; ACS checks tool calls, without rules",
+      "para": "MXC takes a versioned JSON request naming container, command, file paths, numeric network rules and desktop, across four sandboxes; session containers, activity reports and Intune are Windows only. Enforcement, learning and permissive modes mirror our calibration method. ACS, published in June, returns allow, warn, deny or escalate, failing closed, but is only a boundary if the agent cannot edit it.",
+      "hash": "856f564da5e6"
+    },
+    "shared": {
+      "line": "Agent platforms repeat the cloud's shared responsibility line",
+      "para": "Like cloud providers, agent platforms draw their line where their control ends: paths, ports and tool calls. Businesses run above that. Three examples: a Gmail label is a business decision, sending in a person's voice escaped an external-recipient rule, and quantity limits like 100 GBP per order and a 2,000 GBP daily breaker are business knowledge.",
+      "hash": "2d8c474e5f06"
+    },
+    "scenarios": {
+      "line": "Three rows are platform, four shared, one only human",
+      "para": "Eight scenarios run three ways: a plain agent leaves all eight open; an ABP names them all as expectations; ABP on MXC and ACS makes rows 1 to 3 OS boundaries, rows 4 to 7 boundaries only if the business writes the rule, and row 8, a compromised customer mailbox, accepted by a named owner. Reasoned, not run.",
+      "hash": "266d583d244c"
+    },
+    "map": {
+      "line": "MXC and ACS supply barriers; the policy writes rules",
+      "para": "Permissive and learning reports give reach and calibration; neither tool expresses a mandate. An MXC deny the agent cannot change is a boundary, but a policy file in the agent's writable path is only a setting. The ABP is the source that compiles into MXC paths, ACS policies and tool limits, which is design today.",
+      "hash": "598d3828de1a"
+    },
+    "summit": {
+      "line": "The platform is one stage, not the summit",
+      "para": "MXC and ACS should be in place wherever agents run, turning hope into boundaries, the same move Hope or enforcement measured from 97% hope to 23%. Above them sit the function, process, client and purpose, each with its own owner. Where the platform draws its line, the business's work starts.",
+      "hash": "6f006eb8043a"
+    },
+    "start": {
+      "line": "Enable MXC, observe first, then write the business rules",
+      "para": "Turn on MXC for coding agents, deny by default, with the policy file outside the agent's writable paths. Run new agents in permissive mode first and write the mandate against the report. Put external tool calls behind ACS, installed by someone else. Write business rules layer by layer, count the hope, and name owners.",
+      "hash": "e66e497c9ec9"
+    },
+    "sources": {
+      "line": "Sources: Microsoft's MXC and ACS material and related articles",
+      "para": "Built from my voice memo, checked by a separate Claude session, using Microsoft's 7 October 2026 announcement, the MXC repository as of 11 October, the ACS announcement of 2 June 2026 and the Agent Governance Toolkit. Also AWS's Shared Responsibility Model, RiskMandate's Lab 01, and site articles including Hope or enforcement and the connector twin.",
+      "hash": "1d1b1bd78ac7"
+    }
+  }
+}

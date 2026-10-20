@@ -1,0 +1,36 @@
+{
+ "slug": "ten-questions-one-graph",
+ "teaser": "Phil Venables' ten questions for a CISO's tool are graph questions. Risk acceptance is half the answer; a twin in a vault answers all ten.",
+ "topics": ["graphs-and-knowledge", "agents-and-policy"],
+ "core_idea": "Each of Phil Venables' ten acid-test questions for a CISO's management tool needs the whole company connected as one graph, and each ends in a decision someone must hold; risk acceptance supplies that structure, and a synthetic twin in a vault answers all ten with the plot, the evidence and the decisions traced to the board.",
+ "nodes": [
+  {"id": "phil", "label": "Ten acid-test questions", "kind": "claim", "summary": "Insight, not dashboards, from measured data."},
+  {"id": "graph", "label": "Every question is a graph question", "kind": "concept", "summary": "None answered from one part alone."},
+  {"id": "whodunit", "label": "The answer becomes obvious", "kind": "concept", "summary": "Fade what is not relevant; the plot is left."},
+  {"id": "accept", "label": "Risk acceptance", "kind": "method", "summary": "A holder, a chain to the board, accept, fund or fix."},
+  {"id": "twin", "label": "The Thistlewood twin", "kind": "artefact", "summary": "An invented retailer as one graph."},
+  {"id": "decisions", "label": "Every answer is a decision", "kind": "concept", "summary": "29 proposed, each with one holder."},
+  {"id": "abp", "label": "Agents with behaviour policies", "kind": "method", "summary": "Reach compared with mandate."},
+  {"id": "backtest", "label": "Measured, then back-tested", "kind": "method", "summary": "The model checked against last year."},
+  {"id": "federation", "label": "Context graph federation", "kind": "concept", "summary": "No shared schema needed."}
+ ],
+ "edges": [
+  {"from": "phil", "to": "graph", "rel": "leads-to"},
+  {"from": "graph", "to": "whodunit", "rel": "produces"},
+  {"from": "accept", "to": "decisions", "rel": "produces"},
+  {"from": "twin", "to": "graph", "rel": "extends"},
+  {"from": "twin", "to": "decisions", "rel": "produces"},
+  {"from": "abp", "to": "twin", "rel": "extends"},
+  {"from": "backtest", "to": "twin", "rel": "extends"},
+  {"from": "federation", "to": "graph", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-graph-companies", "governs-enforces-attests", "inside-the-thistlewood-twin"],
+  "pages": [],
+  "sites": ["https://www.philvenables.com/post/a-cisos-ideal-management-tool", "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html", "https://newsroom.sgit.ai/demos/vaults/thistlewood-twin/index.html"]
+ },
+ "quotes": [
+  {"text": "No question can be answered from one part of the company.", "why": "The claim."},
+  {"text": "someone has to accept, fund or fix, and their boss should see it arrive", "why": "How every answer ends."}
+ ]
+}

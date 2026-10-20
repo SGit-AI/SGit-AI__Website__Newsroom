@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The SQL console &middot; Databases with no server</title>
+<meta name="description" content="SQLite compiled to WebAssembly, running in the browser over the Portugal section&#x27;s JSON files. Worked queries with their build-time row counts, and a box for your own.">
+<link rel="canonical" href="https://newsroom.sgit.ai/databases/sql.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/databases/sql.html">
+<meta property="og:title" content="The SQL console">
+<meta property="og:description" content="SQLite compiled to WebAssembly, running in the browser over the Portugal section&#x27;s JSON files. Worked queries with their build-time row counts, and a box for your own.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.nsdb{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:1rem;align-items:start}
+@media(max-width:820px){.nsdb{grid-template-columns:minmax(0,1fr)}}
+.nsdb .ex{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.6rem .7rem;max-height:70vh;overflow:auto}
+.nsdb .ex h4{margin:.2rem 0 .5rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.nsdb .ex button{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);padding:.5rem .2rem;font:inherit;font-size:.82rem;color:var(--fg);cursor:pointer;line-height:1.35}
+.nsdb .ex button:hover,.nsdb .ex button.here{color:var(--accent-dk);font-weight:600}
+.nsdb .ex button small{display:block;font-family:var(--mono);font-size:.62rem;color:var(--dim2);font-weight:400}
+.nsdb textarea{width:100%;min-height:11rem;font-family:var(--mono);font-size:.82rem;line-height:1.5;border:1px solid var(--line2);border-radius:10px;padding:.7rem .8rem;background:var(--panel);color:var(--fg);resize:vertical;box-sizing:border-box}
+.nsdb .bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.5rem 0}
+.nsdb .bar button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:.45rem .9rem;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer}
+.nsdb .bar button.alt{background:var(--panel);color:var(--fg);border:1px solid var(--line2)}
+.nsdb .bar button:disabled{opacity:.5;cursor:wait}
+.nsdb .status{font-family:var(--mono);font-size:.72rem;color:var(--dim)}
+.nsdb .status b{color:var(--accent-dk)}
+.nsdb .err{font-family:var(--mono);font-size:.78rem;color:var(--red);white-space:pre-wrap;background:#fff5f5;border:1px solid #f3c7c7;border-radius:8px;padding:.5rem .7rem}
+.nsdb .res{overflow:auto;max-height:60vh;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.nsdb .res table{border-collapse:collapse;width:100%;font-size:.8rem}
+.nsdb .res th{position:sticky;top:0;background:var(--panel2);text-align:left;padding:.4rem .6rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);white-space:nowrap}
+.nsdb .res td{padding:.35rem .6rem;border-bottom:1px solid var(--line);vertical-align:top;font-variant-numeric:tabular-nums;max-width:32rem;overflow-wrap:anywhere}
+.nsdb .res td.n{text-align:right;font-family:var(--mono)}
+.nsdb .res td.null{color:var(--dim2);font-style:italic}
+.nsdb .note-q{font-size:.85rem;color:var(--dim);margin:.3rem 0 .6rem}
+.nsdb .alt-lang{margin-top:.8rem}
+.nsdb .alt-lang pre{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:.6rem .8rem;font-size:.76rem;overflow:auto;margin:.3rem 0 0}
+.meter{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin:.8rem 0 1.2rem}
+.meter .m{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.55rem .7rem}
+.meter .m b{display:block;font-family:var(--mono);font-size:1rem;color:var(--accent-dk)}
+.meter .m span{display:block;font-size:.7rem;color:var(--dim);line-height:1.4;margin-top:.15rem}
+.meter .m em{display:block;font-style:normal;font-family:var(--mono);font-size:.6rem;color:var(--dim2);margin-top:.15rem}
+</style>
+<script src="../assets/vendor/sql-wasm.js"></script>
+<script src="../assets/nsdb-sql.js" defer></script>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / databases</div>
+<div class="ops" style="margin:0 0 1.4rem"><div class="op" style="border-left-color:#0f766e"><b style="color:#0f766e">Databases with no server &middot; beta</b><div style="display:flex;flex-wrap:wrap;gap:.35rem 1rem;margin-top:.4rem"><a href="index.html" style="font-size:.83rem;color:#5c5f66">The argument</a><a href="sql.html" style="font-size:.83rem;color:#101114;font-weight:600">SQL console</a><a href="graph.html" style="font-size:.83rem;color:#5c5f66">SPARQL console</a><a href="../portugal/explorer.html" style="font-size:.83rem;color:#5c5f66">The files it queries</a><a href="../portugal/graph.html" style="font-size:.83rem;color:#5c5f66">The graph, drawn</a></div></div></div>
+<h1>The SQL console</h1>
+<p class="claim">SQLite, compiled to WebAssembly, running in this tab over the Portugal section's JSON files.
+The tables are built when the page loads, from a spec that names the file and field behind every column.
+Pick a worked query or write your own; nothing leaves your browser.</p>
+<div class="meter"><div class="m"><b id="m-engine">&ndash;</b><span>engine loaded</span><em>sql-wasm.js + .wasm, then init</em></div><div class="m"><b id="m-data">&ndash;</b><span>data fetched</span><em>same-origin JSON, bytes / ms</em></div><div class="m"><b id="m-tables">&ndash;</b><span>tables built</span><em>rows inserted / ms</em></div><div class="m"><b id="m-query">&ndash;</b><span>last query</span><em>rows / ms</em></div></div>
+<div class="nsdb">
+  <div class="ex"><h4>Worked queries</h4><button type="button" data-id="speakers-by-class">Who is speaking, by role class<small>4 rows at build</small></button><button type="button" data-id="orgs-with-several">Organisations listing more than one speaker<small>3 rows at build</small></button><button type="button" data-id="programme">The programme as a table<small>16 rows at build</small></button><button type="button" data-id="arrivals">Who arrived between the two snapshots<small>12 rows at build</small></button><button type="button" data-id="no-longer-listed">Who is no longer listed, and why the reason column is empty<small>1 row at build</small></button><button type="button" data-id="verbs">Every verb with its inverse, in both languages<small>23 rows at build</small></button><button type="button" data-id="coverage">The press, with the hash each page was frozen under<small>7 rows at build</small></button><button type="button" data-id="story-sources">What each story stands on<small>10 rows at build</small></button><button type="button" data-id="path">A path as a sentence, the SQL way<small>6 rows at build</small></button><button type="button" data-id="degree">The most connected nodes<small>10 rows at build</small></button><button type="button" data-id="two-hops">Everything within two hops of the event (recursive CTE)<small>16 rows at build</small></button><button type="button" data-id="json-arrays">Unpacking a JSON column: who each story stands on, from stories.json itself<small>10 rows at build</small></button><button type="button" data-id="topics">The event&#x27;s own topics, by how many speakers carry each<small>23 rows at build</small></button><button type="button" data-id="tags-evidence">A derived tag with its evidence: the matched words<small>40 rows at build</small></button><button type="button" data-id="orgs-should-talk">Organisations that should be talking (the connections formula)<small>40 rows at build</small></button><button type="button" data-id="register-sizes">The register: bytes frozen per snapshot<small>2 rows at build</small></button></div>
+  <div>
+    <div class="note-q" id="q-note">Loading the engine and the files&hellip;</div>
+    <textarea id="q" spellcheck="false" aria-label="SQL query"></textarea>
+    <div class="bar">
+      <button type="button" id="run" disabled>Run (Ctrl+Enter)</button>
+      <button type="button" class="alt" id="schema">Show schema</button>
+      <button type="button" class="alt" id="link">Copy link to this query</button>
+      <span class="status" id="status"></span>
+    </div>
+    <div id="out"></div>
+  </div>
+</div>
+
+<h2 id="tables">The tables, and the file behind each</h2>
+<p>This is <a href="data/tables.json">tables.json</a>, the loader spec, rendered. The build ran the same
+spec through Python's sqlite3 and executed every worked query against it; a query that failed or came
+back empty would have failed the build. Arrays and objects are stored as JSON text and unpacked with
+<code>json_each</code>; booleans as 1 and 0.</p>
+<div class="tablewrap"><table class="gloss">
+<thead><tr><th>Table</th><th>From</th><th>Columns</th></tr></thead>
+<tbody><tr><td><code>nodes</code></td><td><a href="../portugal/data/graph.json">graph.json</a> &rarr; <code>nodes</code></td><td>id, type, label, pack, source, role, role_class, org, day, time, kind, publisher, published, date, url, page, no_longer_listed</td></tr><tr><td><code>edges</code></td><td><a href="../portugal/data/graph.json">graph.json</a> &rarr; <code>edges</code></td><td>id, verb, source, target, pack</td></tr><tr><td><code>verbs</code></td><td><a href="../portugal/data/ontology.json">ontology.json</a> &rarr; <code>edges</code></td><td>verb, inverse, domain, range, pt_verb, pt_inverse, reads, origin</td></tr><tr><td><code>types</code></td><td><a href="../portugal/data/ontology.json">ontology.json</a> &rarr; <code>node_types</code></td><td>id, pt, colour, definition</td></tr><tr><td><code>people</code></td><td><a href="../portugal/data/people.json">people.json</a> &rarr; <code>people</code></td><td>id, name, role, org, page, linkedin</td></tr><tr><td><code>orgs</code></td><td><a href="../portugal/data/orgs.json">orgs.json</a> &rarr; <code>orgs</code></td><td>id, name, people, placeholder</td></tr><tr><td><code>sessions</code></td><td><a href="../portugal/data/sessions.json">sessions.json</a> &rarr; <code>sessions</code></td><td>id, title, day, time, kind, stage</td></tr><tr><td><code>stages</code></td><td><a href="../portugal/data/sessions.json">sessions.json</a> &rarr; <code>stages</code></td><td>id, label, pt, also_called</td></tr><tr><td><code>sources</code></td><td><a href="../portugal/data/sources.json">sources.json</a> &rarr; <code>sources</code></td><td>id, snapshot, page, publisher, url, frozen, bytes, sha256, retrieved, state</td></tr><tr><td><code>coverage</code></td><td><a href="../portugal/data/coverage.json">coverage.json</a> &rarr; <code>items</code></td><td>id, publisher, kind, published, title, url, source, bytes, sha256, what_it_says</td></tr><tr><td><code>stories</code></td><td><a href="../portugal/data/stories.json">stories.json</a> &rarr; <code>stories</code></td><td>slug, kicker, title, standfirst, published, byline, stands_on</td></tr><tr><td><code>changes</code></td><td><a href="../portugal/data/changes.json">changes.json</a> &rarr; <code>changes</code></td><td>from_snapshot, to_snapshot, count_from, count_to, added, removed, changed, reason_known</td></tr><tr><td><code>person_topics</code></td><td><a href="../portugal/data/topics.json">topics.json</a> &rarr; <code>person_topics</code></td><td>person, topic, source</td></tr><tr><td><code>person_tags</code></td><td><a href="../portugal/data/topics.json">topics.json</a> &rarr; <code>person_tags</code></td><td>person, tag, type, matched, source</td></tr><tr><td><code>lexicon</code></td><td><a href="../portugal/data/lexicon.json">lexicon.json</a> &rarr; <code>entries</code></td><td>id, type, label, pt, pattern</td></tr></tbody></table></div>
+
+<h2 id="why">Where SQL is the right language, and where it stops</h2>
+<p>Counting, grouping, joining two named tables, unpacking a column: SQL does these better than any
+graph language and the first eight worked queries are that. Walking a path is where it strains &mdash;
+one join per hop, the length fixed in the query, nothing known about inverses &mdash; and
+the recursive traversal near the end of the list is the honest picture of what a two-hop neighbourhood
+costs to ask for. <a href="graph.html">The graph console</a> asks the same two questions in SPARQL, for
+comparison.</p>
+
+<div class="agent"><h4>For an agent</h4><p>After <code>tool:ready</code> (detail.name = 'nsdb-sql'): <code>window.__tools.sql.run(sql)</code> &rarr; <code>{columns, rows, ms}</code> or throws with the SQLite message; <code>.tables()</code> lists tables with row counts; <code>.examples()</code> returns the worked queries with their build-time row counts; <code>.timings()</code> the load measurements; <code>.select(id)</code> puts a worked query in the editor. The page reads <code>#q=&lt;urlencoded sql&gt;</code> and <code>?example=&lt;id&gt;</code>. Every call is read-only; there is no write path by design.</p></div>
+
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

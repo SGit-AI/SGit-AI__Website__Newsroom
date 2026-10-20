@@ -1,0 +1,102 @@
+{
+ "slug": "system-prompts-as-behaviour-policies",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 245,
+   "line": "A system prompt can be written as a policy",
+   "para": "Claude Haiku 5.5's published prompt holds 4,255 words and 82 rules: 36 could be held by the harness, 21 in part by classifiers and 25 stay with the model. A leaked ChatGPT prompt is mostly tools. Neither has a checkable mandate or says what keeps each rule, so I propose an ontology and JSON shape.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 162,
+   "line": "Much of a system prompt could leave the prompt",
+   "para": "Claude Haiku 5.5's prompt of 7 October 2026 yields 82 rules of eight kinds; 36 could be held by the harness, 21 partly by classifiers, and 25 stay with the model. The unverified ChatGPT prompt is mostly reach. Both lack a mandate and an enforcement record, and published agent behaviour policies do not yet exist.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "hypothesis",
+   "label": "The hypothesis",
+   "words": 134,
+   "line": "Next step: turn a vendor's system prompt into policy",
+   "para": "Earlier articles argued that a system prompt is a light behaviour policy and moved this site's own rules from prompt into hooks. The test here applies that to a vendor's prompt: can it be represented as a behaviour policy, and what JSON file would let the harness enforce it with stronger controls?",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "prompts",
+   "label": "The prompts",
+   "words": 162,
+   "line": "Anthropic publishes Claude's prompts; ChatGPT's is only leaked",
+   "para": "Anthropic publishes app system prompts on its release notes page, noting they do not apply to the API; the test used Claude Haiku 5.5's of 7 October 2026. OpenAI publishes the Model Spec, but the ChatGPT prompt used is an unverified leak dated 22 August 2026, treated only as an illustration of shape.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "claude",
+   "label": "Claude's prompt, as rows",
+   "words": 350,
+   "line": "Claude's prompt sorts into 82 rules of eight kinds",
+   "para": "Of 181 sentences, 82 are rules: 21 harm restriction, 17 judgement, 13 referral, 11 conversation state, 8 presentation, 5 tool use, 5 knowledge and 2 input trust. A refusal stands for the rest of the conversation. Many rules carry their reason, so the prompt can be represented as rows.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "leave",
+   "label": "What could leave the prompt",
+   "words": 273,
+   "line": "Thirty-six rules could be held by the harness instead",
+   "para": "Tool use, conversation state, referrals, knowledge and input trust could be harness settings: a state flag held across turns, or signed vendor reminders instead of asking the model to doubt them. Harm restrictions can partly sit in classifiers, as Anthropic's Constitutional Classifiers do. Judgement and presentation, 25 rules, stay with the model.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "chatgpt",
+   "label": "The leaked ChatGPT prompt: the other half",
+   "words": 260,
+   "line": "The leaked ChatGPT prompt is mostly reach, not rules",
+   "para": "About 18,000 words, with roughly six words in seven under tool sections covering web, shopping, files, memory, images, canvas, Python and automations. Some rules are settings written as sentences, like a disabled tool. Claude's prompt is the rules, ChatGPT's the reach; neither states a mandate, who may override whom, or what keeps each rule.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "authority",
+   "label": "Who may override whom",
+   "words": 109,
+   "line": "The Model Spec answers authority, but not enforcement",
+   "para": "OpenAI's Model Spec has a chain of command from root through system, developer and user to guideline, and Anthropic's constitution separates hard constraints from defaults. Neither links authority to enforcement: a root rule kept only by the model is still an expectation.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "ontology",
+   "label": "A proposed ontology",
+   "words": 561,
+   "line": "The proposed shape records where each rule could live",
+   "para": "The ontology has layered policies with mandate, reach, inputs and trust, state, and rules carrying kind, trigger, decision, authority, barrier, tests and source quote. Three Claude rules are shown in JSON. The could_be field turns the policy into a plan for moving rules to hooks, flags, signatures or classifiers.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "real",
+   "label": "Is anyone using this for real?",
+   "words": 210,
+   "line": "The formats are arriving; published agent policies are not",
+   "para": "AGENTS.md, Claude Code managed settings, AWS AgentCore Policy in Cedar, Microsoft's Agent Governance Toolkit and OWASP's Agent Control Standard all exist, and OWASP says a system prompt is not a security control. No organisation publishes a written behaviour policy for an agent it runs, beyond this site's own examples.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 131,
+   "line": "The classification is one reading, and untested",
+   "para": "The rule classification is one reader's, and could be kept is not is kept. The ChatGPT prompt is unverified, with the six-in-seven figure a word count under tool headings. The JSON shape is an untested proposal, and the published prompts apply to the apps, not the API.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 115,
+   "line": "Sources: published prompts, specs and security guidance",
+   "para": "A voice memo of 14 October 2026. Anthropic's published Claude Haiku 5.5 system prompt, constitution and Constitutional Classifiers; the leaked ChatGPT file in system_prompts_leaks; OpenAI's Model Spec; OWASP's LLM07:2025 System Prompt Leakage; and Bloomberg Law's Rogue AI agents are here, 17 September 2026.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

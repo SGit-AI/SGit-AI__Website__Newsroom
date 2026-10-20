@@ -1,0 +1,94 @@
+{
+ "slug": "skill-behaviour-policy",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 252,
+   "line": "A skill policy compares described, actual and granted mandates",
+   "para": "A video's claim that 1 in 20 Claude skills hack you overstates a study finding 5.2% with patterns suggesting malicious intent. A skill behaviour policy compares what a skill promises, what it can do and what its environment grants, then generates a hook and sandbox setting. Run on 899 public skills, it found 39 undescribed features and none obfuscated.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 171,
+   "line": "The gaps between three mandates are the findings",
+   "para": "The 5.2% figure came from 31,132 marketplace skills in one study. Findings are features, not verdicts, the grant depends on where a skill runs, and of 899 skills, 812 reach beyond their scripts and 39 have an undescribed feature. A scanner asks if a skill looks malicious; a policy asks what it needs.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "claim",
+   "label": "The claim, and what the study found",
+   "words": 168,
+   "line": "The 1-in-20 claim is marketplace skills suggesting intent",
+   "para": "The number comes from Agent Skills in the Wild, which analysed 31,132 skills and found 26.1% with a vulnerability and 5.2% with patterns suggesting malicious intent. It concerns marketplace skills, not Claude's own, and NVIDIA's SkillSpector did not produce it. Skills still run with implicit trust and minimal vetting.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "three",
+   "label": "Three mandates",
+   "words": 295,
+   "line": "Undescribed features are suspicious; unrequested grant is excess",
+   "para": "Each skill has a described mandate, an actual mandate found in its instructions and files, and a grant set by its environment. On Claude Code skills get any program's network access; through the API, none. Claude Code's allowed-tools pre-approves rather than restricts, so a skill can widen its own grant.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "features",
+   "label": "Features, not verdicts",
+   "words": 111,
+   "line": "Every finding is a feature, judged by its context",
+   "para": "An upload could be exfiltration or a login, and reading ~/.claude could be harvesting or requested analysis. The policy records each feature as a row with what it does, why the description needs it, and whether the description says so. An unexplained feature is a finding.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "measured",
+   "label": "899 skills, read statically",
+   "words": 266,
+   "line": "Of 899 skills, 812 reach beyond their own scripts",
+   "para": "A static calculator read skills from Anthropic's repository, obra/superpowers and ComposioHQ/awesome-claude-skills on 14 October. 782 reach out through one third-party tool server, and 39 have undescribed features such as installs or outside paths. None was obfuscated, but description and reach often differ even when everyone means well.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "example",
+   "label": "One skill, end to end",
+   "words": 388,
+   "line": "An honest lethal-trifecta skill still needs a control",
+   "para": "developer-growth-analysis reads Claude Code chat history, searches HackerNews and posts to Slack, describing all but the server in between. Four policy rows produced a hook, tested on nine inputs, that allows the history file, denies SSH keys and .env, and asks before sending. Script network access belongs to the sandbox.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "scanner",
+   "label": "A scanner and a policy",
+   "words": 307,
+   "line": "Scanners ask about malice; policies ask about need",
+   "para": "NVIDIA's SkillSpector 2.12.0, run statically on five skills, rated developer-growth-analysis safe and gave connect and quickbooks-automation zero. Both tools flagged langsmith-fetch's ~/.bashrc key line. The scanner rightly says these mostly do not look malicious, while the policy shows what each needs, gets and must be limited to.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "service",
+   "label": "A service, and a standard",
+   "words": 137,
+   "line": "Skill policies can become a service and open format",
+   "para": "For any skill, the service would state the described and actual mandates, the minimal grant, extra reach on Claude Code, claude.ai and the API, and tested hook and sandbox settings. The calculator is cheap and static, with a model for judgement. Chainguard's planned skill policies would need this written down.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 133,
+   "line": "Pattern matching gives lower bounds; nothing is called malicious",
+   "para": "The calculator misses features it has no pattern for, and the 899 skills come from curated sources, not marketplaces. The hook was tested on fixed inputs only, and SkillSpector ran without its model stage on five skills. A feature remains a feature until context says otherwise.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 112,
+   "line": "Sources: the skills study, SkillSpector and Anthropic docs",
+   "para": "Written from a 14 October 2026 voice memo, with skills read as text in an isolated folder and never run. Sources are Liu et al., Agent Skills in the Wild (January 2026), NVIDIA's SkillSpector and verified agent skills, and Anthropic's Claude Code skills, Agent Skills overview and sandboxing pages.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

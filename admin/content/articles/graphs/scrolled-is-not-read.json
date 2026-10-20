@@ -1,0 +1,47 @@
+{
+ "slug": "scrolled-is-not-read",
+ "teaser": "The reading meter charged by scroll and called it read; now each section keeps scrolled and read, the chip holds still, and highlights take one tap.",
+ "topics": ["site-and-engineering", "graphs-and-knowledge"],
+ "core_idea": "How far a reader scrolled is not how much they read, so the newsroom now keeps both, per section, in the reader's own browser: scrolled only grows, read is time on the words while the tab is in front and the reader present, counted against 300 words a minute; the page becomes a small graph the reader owns, with highlights anchored by quote, while the billing stays on scroll until the data says whether to settle it by reading.",
+ "nodes": [
+  {"id": "ask", "label": "The chip moves", "kind": "example", "summary": "Dinis's two fixes: drop the balance the bar already shows, and stop the flicker; measured as 20 positions in 30 scroll steps."},
+  {"id": "position", "label": "Position is not progress", "kind": "claim", "summary": "The chip showed where the window was, so scrolling back up made a page look unread."},
+  {"id": "scroll-read", "label": "Scrolled is not read", "kind": "claim", "summary": "The meter charges by the deepest point scrolled and its foot block calls that read; a page flicked to the end is not read."},
+  {"id": "meter", "label": "The reading meter", "kind": "artefact", "summary": "A few pence a page from credit in the browser, charged by scroll depth in 5% steps, once a session, re-priced by the rating."},
+  {"id": "engaged", "label": "Engaged time", "kind": "concept", "summary": "Chartbeat counts attention while the tab is in front and the reader acted in the last five seconds; Medium counts a read after thirty."},
+  {"id": "pace", "label": "Reading pace", "kind": "concept", "summary": "Adults read non-fiction at 238 words a minute, most between 175 and 300 (Brysbaert 2019)."},
+  {"id": "two", "label": "Scrolled and read, per section", "kind": "method", "summary": "Scrolled is how much of each section passed the reading band; read is attended time on it against its words at 300 a minute."},
+  {"id": "map", "label": "The page as you read it", "kind": "artefact", "summary": "The chip opens the article as its sections, each with scrolled, read, time and highlights."},
+  {"id": "highlight", "label": "Highlights by quote", "kind": "method", "summary": "Exact words with 32 characters either side, as the W3C annotation model anchors them, drawn with the CSS Custom Highlight API without changing the page."},
+  {"id": "local", "label": "The reader's own records", "kind": "concept", "summary": "Everything is kept in the browser and sent nowhere; the vault is where it would travel, later."},
+  {"id": "billing", "label": "Charge by scroll or by read", "kind": "question", "summary": "Keep scroll, charge by read, or charge by scroll and settle by read when the reader leaves or rates."},
+  {"id": "islands", "label": "Graphs are islands", "kind": "claim", "summary": "1,788 concept labels across 142 article graphs, only 32 shared: a shared vocabulary comes before more links."},
+  {"id": "protos", "label": "Three prototypes", "kind": "artefact", "summary": "Links: more, How this connects, and What you read, drawn from the newsroom's real data for the screenshots only."},
+  {"id": "agents", "label": "Written by the agents", "kind": "artefact", "summary": "A section for articles an agent writes under its own name, as briefs, kept off the front page's automatic lead."}
+ ],
+ "edges": [
+  {"from": "ask", "to": "position", "rel": "leads-to"},
+  {"from": "position", "to": "scroll-read", "rel": "leads-to"},
+  {"from": "scroll-read", "to": "meter", "rel": "contrasts"},
+  {"from": "engaged", "to": "two", "rel": "leads-to"},
+  {"from": "pace", "to": "two", "rel": "leads-to"},
+  {"from": "two", "to": "scroll-read", "rel": "answers"},
+  {"from": "two", "to": "map", "rel": "produces"},
+  {"from": "highlight", "to": "map", "rel": "extends"},
+  {"from": "two", "to": "local", "rel": "depends-on"},
+  {"from": "highlight", "to": "local", "rel": "depends-on"},
+  {"from": "two", "to": "billing", "rel": "leads-to"},
+  {"from": "islands", "to": "protos", "rel": "leads-to"},
+  {"from": "map", "to": "protos", "rel": "extends"},
+  {"from": "agents", "to": "ask", "rel": "compared-with"}
+ ],
+ "links": {
+  "articles": ["a-meter-in-the-browser", "going-live-with-the-reading-meter", "dark-mode-and-four-more", "the-tokens-hook"],
+  "pages": [],
+  "sites": ["https://help.chartbeat.com/hc/en-us/articles/360045890913", "https://www.nngroup.com/articles/scrolling-and-attention/", "https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API"]
+ },
+ "quotes": [
+  {"text": "Position is not progress.", "why": "The first fault of the chip, and the reason it now shows what the reader did, not where they are."},
+  {"text": "Scrolling past is cheap. Attention is not.", "why": "The one line from the research that the design rests on."}
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "slug": "hired-for-the-workflow",
+ "teaser": "October 2026 is the moment to get into agentic work: companies need AI operators, not model builders, and the edge starts with the application.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Agents are moving from pilots to products, and as with breaking apps, building websites or mobile apps before, the skill to run agentic workflows gets people hired now; companies need operators rather than model builders, the data shows employers prefer AI skills, and the edge shows when candidates are equal, starting with an application that brings analysis they have not seen.",
+ "nodes": [
+  {"id": "moment", "label": "The productisation moment", "kind": "claim", "summary": "Tools and workflows maturing; pilots to products."},
+  {"id": "history", "label": "There was a time", "kind": "example", "summary": "Breaking apps, websites, mobile apps got people hired."},
+  {"id": "technical", "label": "More technical than you think", "kind": "claim", "summary": "Learn the new techniques."},
+  {"id": "operators", "label": "Operators, not model builders", "kind": "claim", "summary": "The first AI hiring wave went to ML."},
+  {"id": "fde", "label": "Forward-deployed engineers", "kind": "example", "summary": "Postings up 1,165% in 2025."},
+  {"id": "data", "label": "Employers prefer AI skills", "kind": "example", "summary": "71% would hire less experience with AI skills; 62% premium."},
+  {"id": "experience", "label": "You have to do it", "kind": "method", "summary": "Perception changes by doing."},
+  {"id": "equal", "label": "When all things are equal", "kind": "question", "summary": "Why would they choose you?"},
+  {"id": "application", "label": "The edge starts with the application", "kind": "method", "summary": "Fitted CV, analysis, something new."},
+  {"id": "owasp", "label": "The OWASP interview", "kind": "example", "summary": "Half the interview on their tool."}
+ ],
+ "edges": [
+  {"from": "history", "to": "moment", "rel": "example-of"},
+  {"from": "moment", "to": "operators", "rel": "leads-to"},
+  {"from": "fde", "to": "operators", "rel": "example-of"},
+  {"from": "data", "to": "moment", "rel": "extends"},
+  {"from": "technical", "to": "experience", "rel": "leads-to"},
+  {"from": "equal", "to": "application", "rel": "answers"},
+  {"from": "owasp", "to": "application", "rel": "example-of"},
+  {"from": "operators", "to": "equal", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["the-man-behind-the-curtain", "explorer-coding", "the-citizen-developer", "your-own-newsroom", "agentics-ready-to-sell"],
+  "pages": [],
+  "sites": ["https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part", "https://diniscruz.ai/2025/06/08/using-presentations-instead-of-cvs-in-hiring.html"]
+ },
+ "quotes": [
+  {"text": "Of course you are technical.", "why": "To people who say they are not."},
+  {"text": "Perception changes when people experience it, and only then.", "why": "Why doing matters."}
+ ]
+}

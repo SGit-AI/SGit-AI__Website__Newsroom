@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Custom UIs are not the exception: what changed in v1.1.0, SGit Newsroom</title>
+<meta name="description" content="The changes to the article "Custom UIs are not the exception" in v1.1.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/custom-uis-are-not-the-exception/v1.1.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/custom-uis-are-not-the-exception/v1.1.0.html">
+<meta property="og:title" content="Custom UIs are not the exception: what changed in v1.1.0, SGit Newsroom">
+<meta property="og:description" content="The changes to the article "Custom UIs are not the exception" in v1.1.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Custom UIs are not the exception: what changed in v1.1.0, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.1.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Custom UIs are not the exception: what changed in v1.1.0, SGit Newsroom", "headline": "Custom UIs are not the exception: what changed in v1.1.0, SGit Newsroom", "description": "The changes to the article \"Custom UIs are not the exception\" in v1.1.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/custom-uis-are-not-the-exception/v1.1.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../../../assets/themes/themes.css">
+  <link rel="stylesheet" href="../../../assets/site-nav.css">
+  <script src="../../../assets/themes/themes.js"></script>
+  <script src="../../../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../../../about/index.html">Why this exists</a>
+      <a class="sl" href="../../../desks/index.html">The five desks</a>
+      <a class="sl" href="../../../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../../../for/make.html">Make a reading list</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../wire/index.html">Today's edition</a>
+      <a class="sl" href="../../../wire/sources.html">The sources</a>
+      <a class="sl" href="../../../wire/how.html">How the wire works</a>
+      <a class="sl" href="../../../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../../../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../../../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../../../wire/days.html">Day by day</a>
+      <a class="sl" href="../../../wire/charter.html">The charter</a>
+      <a class="sl" href="../../../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      <a class="sl" href="../../../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      <a class="sl" href="../../../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../../../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../../../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../../../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../../../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../../../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../../../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../../../assets/reader/strip.css">
+  <script src="../../../assets/reader/strip.js" defer></script>
+  <script src="../../../assets/reader/highlights.js" defer></script>
+  <script src="../../../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../custom-uis-are-not-the-exception.html">Custom UIs are not the exception</a> / <a href="../custom-uis-are-not-the-exception.html">Versions</a> / v1.1.0</p>
+ <h1>Custom UIs are not the exception: what changed in v1.1.0</h1>
+ <p class="lead">From v1.0.0 (2026-10-01, <code>fa4b48896</code>) to v1.1.0 (2026-10-02, <code>3716f8ffa</code>), paragraph by paragraph.</p>
+ <p class="small dim">20 paragraphs added, 2 removed, 12 changed in place, 45 unchanged. About 1,515 words added and 205 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="../custom-uis-are-not-the-exception.html">all versions</a> &middot; <a href="v1.2.0.html">v1.2.0 &rarr;</a></p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="changed">Summary: The hardest part of working with many people and many agents is not doing the work, it is following up: every person has a different context, and the thread you both hold carries actions, questions, statements and decisions <del>that</del><ins>the</ins> <del>nobody</del><ins>thread</ins> <del>can</del><ins>does</ins> <del>see.</del><ins>not show.</ins> This article weaves together what this site has built over the past months, fractal semantic graphs, six agents on one inbox, append lanes and Email-FS, vault apps, the story vault, the connector twin, the business plans, into one argument. Every message deserves a graph, at the altitude of the contact, the company, the conversation, the message and the block inside it. Email is a medium, so the design brief for a message is the recipient's moment, not the sender's thread, and the thread itself, by now, is pointless. A custom interface per message, thread, topic or question is not an exception; it is how interfaces now get made, the way Wardley maps say everything gets made: you are always either building a new one or recycling one that exists, and each one you build commoditises a thing so that next time you just send it. <ins>It starts with the user: not one interface but many, one per moment, each shaped for how the person wants to work right now. </ins>The worked example is a page an agent built in an afternoon that lists the PDFs still owed and gives a place to drop them, through a vault's append lane, so the to-do and the place to act are one <del>page.</del><ins>page; and that afternoon was one item in an eight-day stream in which ten agents and one human built a working way of doing outreach, with more than a dozen interfaces.</ins> It compounds, because each interface teaches the agent how its user wants to work, and because automation creates more work than any inbox can hold, so the interface becomes the prioritisation. And it has to be governed, because an interface is an agent surface too.</p>
+ <p class="changed">!shot custom-ui-altitudes.webp | images/ | Every message has a graph, and the graph has altitudes: the contact, the company, the conversation, the message, the block inside the message. Below, the Wardley strip that governs the interfaces built on it: a new interface is genesis; the second time it is custom; the fifth time it is a product you just send; eventually it is a commodity <del>nobody</del><ins>you</ins> <del>notices.</del><ins>stop noticing.</ins> A custom interface per message is not an exception. It is the left edge of that strip.</p>
+ <p class="changed">&gt; <b>Where this comes from.</b> A voice memo on 1 October 2026, recorded after a week in which an agent built a drag-and-drop page for a set of PDFs I owed somebody, and I realised the page was the point. The article weaves that memo together with the threads this site has been pulling for months. Links go to the articles, vaults and sites where each thread was <del>first </del>worked out.<ins> Revised on 2 October after a review by the RiskMandate agent team, who pointed out that the earlier draft described one page and one afternoon when the page was one item in an eight-day stream; their timeline, team map and mock-ups appear below. Counts come from the vaults' commit history; no contact is named and no message is quoted.</ins></p>
+ <p class="diff-same">8 unchanged paragraphs, under In short, The follow-up problem</p>
+ <p class="changed">Here is the problem as it feels from the inside. I am in conversations with dozens of people and a growing number of agents. Each person has their own context: what they know about the work, which tools they use, what they agreed to last time, what they are waiting on from me and what I am waiting on from them. The medium we share is, mostly, an email thread, and a thread is a terrible place to keep any of that. It holds a huge amount of information, and the information has a structure <del>nobody</del><ins>the</ins> <del>can</del><ins>thread</ins> <del>see:</del><ins>does not show:</ins> actions somebody took on, questions <del>somebody</del><ins>that</ins> <del>asked</del><ins>went</ins> <del>and nobody answered,</del><ins>unanswered,</ins> statements of fact, decisions that were made in a subordinate clause three replies ago, ideas that were good and went nowhere.</p>
+ <p class="changed">The problem gets worse the moment vaults and agents enter. When I create a vault for somebody, that vault is a whole new universe: its own files, its own activities, its own flows, its own things to do, none of which fit in a thread. When I write an <a href="https://riskmandate.ai/abp.html">Agent Behaviour Policy</a> with somebody, their environment is different from the last person's: one is on Gmail, one lives in Claude, one builds in Lovable, one has a Workspace admin and one does not, and the policy that is honest for one is wrong for another. The <a href="../../six-agents-one-inbox.html">six agents on one inbox</a> made this concrete: <del>the</del><ins>what broke</ins> first<del> thing that broke</del> was not a permission but the follow-up, because the reader agent that must never reply had to reply when the message was from me, and nothing in the thread said so.</p>
+ <p class="diff-same">4 unchanged paragraphs, under Every message has a graph</p>
+ <p class="changed">That is exactly what <a href="../../introducing-fractal-semantic-graphs.html">the introduction to fractal semantic graphs</a> described, with its test worked from a risk register down to a TCP packet and its eleven altitudes across seven live vaults. What I did not say clearly enough then is that the inbox is where the idea bites <del>first,</del><ins>first.</ins> <del>because</del><ins>The inbox already has</ins> the <del>inbox</del><ins>altitudes;</ins> <del>is</del><ins>we</ins> <del>where</del><ins>started</ins> <del>the altitudes already exist and nobody has drawn</del><ins>drawing</ins> them. The <a href="https://sgit.ai/demos/vaults/company-xray/index.html">company X-ray</a> plan does it for a company's documents, every finding tied to its evidence. The <a href="https://sgit.ai/demos/vaults/evidence-dispatch/index.html">Evidence Dispatch</a> does it for news, with a claim ledger and a graph of declared relationships. The inbox is the same move, pointed at the one data set every working person already has.</p>
+ <p class="diff-same">5 unchanged paragraphs, under Email is a medium, so design for the recipient's moment</p>
+ <p class="removed">And we have HTML. Every one of these projections can be an interface: a card, a checklist, a form, a board, a page. Which is where the memo's central claim comes in.</p>
+ <p class="added">And we have HTML. Every one of these projections can be an interface: a card, a checklist, a form, a board, a page. The picture below is one we now send in first emails instead of an explanation, because a reader opening a cold email has about a minute, and a minute is enough for one picture, one link and one easy ask.</p>
+ <p class="diff-fig added">[figure custom-ui-abp-explainer.webp] An Agent Behaviour Policy in one picture, as it goes out in a first email: what the agent can do, what you asked it to do, the gap between them, what actually stops the rest, and who accepts the gap until when. No data in it; it is the explanation, shaped for the recipient's minute.</p>
+ <h2 class="added">It starts with the user</h2>
+ <p class="diff-fig added">[figure custom-ui-many-ux.webp] One user, many interfaces, each shaped for the moment: Now cards on a phone between meetings, a voice prompt behind an encrypted link on a walk, boards at a desk, a contact page, a drop zone, Gmail drafts the human sends, a chat with an agent, and the email itself. Some threads are agentic, some deterministic, some information, some for thinking. The map starts at the user and works down to the components.</p>
+ <p class="added">The interfaces in this piece have one thing in common: they start with me. Not with the tool, the data model or the agent that built them, but with how I want to work at that moment. Between meetings I am on my phone and need two things to do, blockers first. On a walk I want to talk, so the brief comes as a voice prompt behind an encrypted link and the summary goes back to the agent. At a desk I want the board: who is waiting on whom. When I owe somebody a document, I want the list of what I owe and the place to drop it, on the same page.</p>
+ <p class="added">So there is not one UX. There are many, one per moment, and each is a mix of threads: some agentic, where an agent drafted it; some deterministic, computed from the vaults and the same every time; some purely informational; some for thinking. Mapped the Wardley way, the map starts at the user and works down to the components, not the other way round.</p>
+ <p class="added">This is what human-in-the-loop looks like when it works. The human is not a bottleneck approving everything; the human is made faster, because the surface in front of them matches their focus right now, and every decision they make is one tap that writes a record.</p>
+ <p class="added">The test is simple, and it is the measurable version of this article's title. Every time I ask an agent in chat for something a page could have shown me, that is the next interface. Ask the same question twice and an agent builds the card.</p>
+ <p class="diff-same">8 unchanged paragraphs, under Custom interfaces are not the exception, The page that is both the to-do and the place to act</p>
+ <p class="changed">So I asked <del>an agent to build me</del><ins>for</ins> an interface, and <del>it</del><ins>an agent</ins> built one in an afternoon. The page does two things. It lists the PDFs that are still missing, which is to say it is my to-do list, exact and current, for this one job. And it gives me a place to drop them. I open the page, I see precisely what I owe, and I do it, there, without changing context, without opening another tool, without an email. The drop goes down the lane; the list shortens.</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="diff-fig added">[figure custom-ui-now-and-drop.webp] Two of the interfaces, as mock-ups with placeholder names. Left: the Now card on a phone, computed from the vaults, blockers first, at most two actions, one tap to decide. Right: the sibling of the PDF drop page in the RiskMandate workspace, a list of what is owed that is also the drop zone; each drop goes down the append lane, an agent files it, the row disappears. The user never asks "what do I owe?" in chat. The page answers before the question, and the answer is also the button.</p>
+ <p class="added">The drop page has a sibling, built from the same pattern in the RiskMandate workspace: a list of the people whose documents are still owed, fed by a view of the CRM, where each row is also the place to drop. Each card started as a question in chat. When the same question came up twice, an agent built the card.</p>
+ <h2 class="added">Eight days, not one afternoon</h2>
+ <p class="diff-fig added">[figure custom-ui-eight-days.webp] The workflow as it happened, 25 September to 2 October 2026. Every column is a day; each line is something that now exists and is in use: an agent, a vault, an interface release, a workflow. The counts at the bottom are from the vaults' commit history. The PDF drop page is one item in this stream.</p>
+ <p class="added">The drop page was built in an afternoon. That is true, and it undersells what happened. It was one item in a stream.</p>
+ <p class="added">In eight days, from 25 September to 2 October 2026, a small team of agents and I went from an empty vault to a working way of doing outreach: the agents and their accounts; the connections to email; an inbox agent that drafts and another that sends only what I approve; a CRM in its own vault with one folder per person; several versions of the CRM's interface, sixteen releases in all; vault apps; voice prompts delivered as encrypted links; phone cards; boards; a channel to my LinkedIn data; the first Agent Behaviour Policy we wrote for somebody else's agent; and a rotation of four vault keys in a single day after an agent's own leak check caught an exposed key. Around 230 commits and more than 550 messages between agents, all in files, all versioned.</p>
+ <p class="added">None of it was planned as a product. Each piece was the answer to "this is how I want to work now", built by whichever agent owned that part of the job. The speed is the point: when an interface costs an afternoon, you stop asking whether it is worth building and start asking which moment it is for.</p>
+ <p class="diff-same">4 unchanged paragraphs, under Why it compounds</p>
+ <p class="removed"><b>Automation creates more work than any inbox can hold.</b> This is the one people do not see coming. Once agents are running, they produce tasks, activities and asks faster than a person can read them, because a model will simply execute. The inbox, which was already failing as a place to hold context, fails completely as a place to hold volume. So the interface stops being a convenience and becomes the prioritisation: the filter, the index, the board. I have kanban boards for this. I have an interface where a model inside the vault, with access to the CRM, answers questions about who said what and what is owed. When a feature is missing, I add it; when one is unused, I remove it. The interface is customised to how I work because it was built from how I work, and at some point it stabilises and I am simply a user of a tool that did not exist a month ago.</p>
+ <p class="added"><b>Automation creates more work than any inbox can hold.</b> This is the one people do not see coming. Once agents are running, they produce tasks, activities and asks faster than a person can read them, because a model will simply execute. The inbox, which was already failing as a place to hold context, fails completely as a place to hold volume. So the interface stops being a convenience and becomes the prioritisation: the filter, the index, the board. I have kanban boards for this. I have an interface where a model inside the vault, with access to the CRM, answers questions about who said what and what is owed. When a feature is missing, I add it; when one is unused, I remove it. The interface is customised to how I work because it was built from how I work, and at some point it stabilises and I am simply a user of a tool we did not have a month ago.</p>
+ <h2 class="added">Who builds them</h2>
+ <p class="diff-fig added">[figure custom-ui-agents-map.webp] Ten agents and one human, each with a scoped role, as of 2 October 2026. Most share the same reach, one account and many tools, and differ in mandate. Each writes only its own folders and talks to the others in files. Six already have a written Agent Behaviour Policy. Names generalised; no keys, contacts or message content shown.</p>
+ <p class="added">Readers will ask who builds all these interfaces. Behind them is a team of ten agents with narrow jobs and one human who decides. One builds the interfaces, one reads the inbox and drafts, one sends only what I have approved, one keeps the CRM, one researches people one at a time, one runs the others on a schedule, one holds my LinkedIn data, one is about to become a WhatsApp channel. They talk to each other in files, each writes only its own folders, and six of them already have a written Agent Behaviour Policy, including the WhatsApp agent, whose policy was written before any action was switched on.</p>
+ <p class="added">The work flows in one direction: a memo from me, the CRM routes it, the briefs agent writes, the CRM registers it, the mailbox agent drafts, I approve, the inbox agent sends, replies land in the CRM, and the next interface is built for whatever got stuck. That last step is the whole article in a sentence.</p>
+ <p class="diff-same">1 unchanged paragraph, under An interface is an agent surface, so it gets a policy</p>
+ <p class="changed">One more thread, because without it this is a story about convenience, and it is not.<ins> The same rule runs the team above: the smaller and clearer the mandate, the more an agent can be trusted to do on its own.</ins> A page that drops files into a vault, answers questions on my behalf, or lets a model read my CRM is an agent surface. It has a grant: what the page can reach. It has a mandate: what it is for. There is a delta, and there are barriers, and most of them are expectations rather than controls, exactly as <a href="https://sgit.ai/demos/vaults/kit-bag/index.html">the Kit Bag policy</a> found for a browser extension and <a href="../../ultimate-insider-three-collisions.html">The ultimate insider</a> argued for agents generally.</p>
+ <p class="diff-same">2 unchanged paragraphs, under What this looks like from here</p>
+ <p class="changed">An inbox where every thread has folded into its actions, decisions and open questions, at the altitude you need, and the thread itself is history you can open if you want to. Messages designed for the moment the person opens them, each one a projection of the conversation for one reader. A library of interfaces growing in a vault, each born in a chat, reused in a session, sent in an email, and eventually so ordinary it has a name and <del>nobody</del><ins>is</ins> <del>builds</del><ins>never</ins> <del>it</del><ins>built</ins> again. Agents that learn how each person wants to work and build for that. And a policy on each of them, because the thing that makes this powerful is the thing that makes it dangerous.</p>
+ <p class="changed">Most of this exists today, in <del>pieces, on this site:</del><ins>pieces:</ins> the graphs, the lanes, the vault apps, the agents, the policy method, the <ins>boards, the contact pages, the Now cards, the </ins>drop <del>page. What does not exist yet is</del><ins>zones,</ins> the<ins> voice prompts behind encrypted links. The</ins> inbox that joins <del>them,</del><ins>them is being built now, out of those pieces,</ins> and <del>that</del><ins>it</ins> is <del>the next thing to build. When it exists, it will have been</del><ins>being</ins> built the way everything in this article was built: one custom interface at a time, <ins>each one the answer to a question I asked in chat that a page could have answered, </ins>none of them an exception.</p>
+ <p class="diff-same">2 unchanged paragraphs, under Threads woven here</p>
+ <p class="changed diff-li">&bull; <a href="../../six-agents-one-inbox.html">Six agents, one inbox</a>, <del>the first time</del><ins>where</ins> the follow-up broke before the permissions did.</p>
+ <p class="diff-same">8 unchanged paragraphs</p>
+ <p class="changed">*Drafted from a voice memo by Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Fable 5.1, claude-fable-5-1) in the sgit.ai site <del>session.*</del><ins>session. Revised on 2 October 2026 after a review by the RiskMandate agent team's CRM agent, whose timeline, team map and mock-ups are the figures with placeholder names; the counts in them come from the vaults' commit history and files.*</ins></p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="small" style="margin-top:2rem"><a href="../custom-uis-are-not-the-exception.html">all versions</a> &middot; <a href="v1.2.0.html">v1.2.0 &rarr;</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="Custom UIs are not the exception: what changed in v1.1.0, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.13.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.1.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../about/index.html">Why this exists</a>
+    <a href="../../../desks/index.html">The five desks</a>
+    <a href="../../../agents/index.html">Written by the agents</a>
+    <a href="../../../wire/index.html">The Industry Wire</a>
+    <a href="../../../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../../../wire/aws/index.html">The AWS Wire</a>
+    <a href="../../../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../publishers/index.html">For publishers</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

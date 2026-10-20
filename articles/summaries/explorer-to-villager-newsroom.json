@@ -1,0 +1,78 @@
+{
+ "slug": "explorer-to-villager-newsroom",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 448,
+   "line": "The live newsroom must slow down to keep shipping",
+   "para": "The newsroom's MVP is live and taking money, but its reader application sits in the same repository as 74 articles: about 2,700 lines of reader code, 433 lines of tests the workflow never runs, and two diverging meter copies. The plan moves it to its own repository as a pure refactoring, then builds tests, review and a fast pipeline.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "short",
+   "label": "In short",
+   "words": 232,
+   "line": "Reader code moves out first, with features waiting",
+   "para": "The newsroom is now villager code, read line by line. Reader features move to their own repository as versioned files, proven unchanged by hashing what the live site serves. Six phases follow: map, move, test, review, refactor, then features. Bugs become passing tests, every finding a GitHub issue, and the pipeline runs on every commit.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "why",
+   "label": "Why now",
+   "words": 231,
+   "line": "Taking real money moved the newsroom into villager territory",
+   "para": "Explorer code is read for intent, villager code line by line. Now a reader can pay £5 by card and the meter decides what they spend, so mistakes touch money and pages sent in the author's name. The sgit command line made the same transition in March and has shipped steadily since.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "measured",
+   "label": "What I measured",
+   "words": 329,
+   "line": "Reader code is bundled, under-tested and has two upstreams",
+   "para": "At v0.8.0 SG Meter v1.4.0 is 1,326 lines, reading lists 706, with 433 lines of tests the single workflow never runs and 5,016 lines of earlier meter versions. No page has a Content-Security-Policy. sgit.ai's page builder is 7,844 lines, and the sync imports pages then swaps v1.3.1 for the newsroom's fork.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "phases",
+   "label": "The six phases",
+   "words": 539,
+   "line": "Map, move, test, review, refactor, then the explorer returns",
+   "para": "Map every file, control and external call. Move the reader code unchanged, proven by matching hashes of served files. Write only tests, recording bugs as passing tests, with vulnerability tests kept private. Review with every finding an issue. Refactor until no change to what readers see or pay slips through. Then add vault, passkey and agent pack.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "pipeline",
+   "label": "The pipeline",
+   "words": 332,
+   "line": "Every commit tested in three browsers under two minutes",
+   "para": "Pure JavaScript allows lint, Node tests, Chromium, WebKit and Firefox and a reproducible build in under two minutes. Every merge deploys to pre-production with a Stripe test link and synthetic readers. Releases pin versioned files and check the live site's hashes. Nightly runs repeat the full study, and every pull request needs a person and an agent reviewer.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "brief",
+   "label": "The brief",
+   "words": 830,
+   "line": "Move to SGit-AI__Newsroom__API with no behaviour change",
+   "para": "The meter, account pages, reading lists, personas, subscribe and share move to SGit-AI__Newsroom__API, which sgit.ai will also pin; content stays. Rules: no behaviour change before phase five, same bytes served, no mocks, every finding an issue. The security review starts with the missing Content-Security-Policy, URL inputs, money in the browser and outbound data.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 114,
+   "line": "Not a verdict on the explorer code; targets unproven",
+   "para": "The explorer work is why the newsroom exists, and this is its next phase rather than a correction. Line counts are not quality: 433 lines of tests could cover much or little. The two-minute pipeline is a target the shape of the code allows, still to be proven.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 119,
+   "line": "Sources: a voice memo and the repository measurements",
+   "para": "The piece comes from a voice memo of 11 October 2026. Measurements are from the newsroom repository at v0.8.0 and sgit.ai's source that day, and the phases adapt the explorer-to-villager brief of 12 March 2026. Related articles include Code review as a fractal semantic graph and Green does not mean live.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

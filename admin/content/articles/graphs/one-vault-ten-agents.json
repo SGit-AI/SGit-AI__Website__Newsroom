@@ -1,0 +1,38 @@
+{
+ "slug": "one-vault-ten-agents",
+ "teaser": "The vault behind this newsroom, 35,000 objects and ten agents, measured eight ways: one folder in 13 seconds, history as the edge, storage as the bottleneck.",
+ "topics": ["vaults-and-method", "site-and-engineering"],
+ "core_idea": "The vault the newsroom's ten agents share, 1,295 commits, 5,281 files and 35,000 encrypted objects, is the size of a real application's source repository; a full clone takes three and a half minutes but an agent takes one folder with one commit in 13 seconds and 3 MB, a file on demand in under 3, a pull in 2.5; without a depth a partial clone walks history one request per commit, a fix is designed; and from local disk the same clone is 0.8 seconds, so the time is the storage, which makes sgit plausible for source code.",
+ "nodes": [
+  {"id": "vault", "label": "The newsroom's vault", "kind": "artefact", "summary": "1,295 commits, 5,281 files, 35,000 objects."},
+  {"id": "code", "label": "The size of real source code", "kind": "claim", "summary": "Like the SG/Send repository: 5,584 files."},
+  {"id": "full", "label": "A full clone", "kind": "example", "summary": "3½ minutes, 527 MB; nobody needs one."},
+  {"id": "depth", "label": "One folder, one commit", "kind": "method", "summary": "13 seconds, 3 MB, whatever the size."},
+  {"id": "history", "label": "History walked per commit", "kind": "question", "summary": "227 s for a folder's full history."},
+  {"id": "chain", "label": "A commit-chain object", "kind": "method", "summary": "Designed fix: 26 batched requests."},
+  {"id": "pull", "label": "The pull, fixed", "kind": "example", "summary": "About 53 minutes to about 3."},
+  {"id": "storage", "label": "The time is the storage", "kind": "claim", "summary": "0.8 s from a local server."},
+  {"id": "many", "label": "Many clients", "kind": "example", "summary": "Ten scoped clones at once: 1.9 s."},
+  {"id": "next", "label": "A code base in a vault", "kind": "question", "summary": "The next test."}
+ ],
+ "edges": [
+  {"from": "vault", "to": "code", "rel": "compared-with"},
+  {"from": "vault", "to": "full", "rel": "produces"},
+  {"from": "depth", "to": "full", "rel": "contrasts"},
+  {"from": "history", "to": "depth", "rel": "contrasts"},
+  {"from": "chain", "to": "history", "rel": "answers"},
+  {"from": "pull", "to": "vault", "rel": "example-of"},
+  {"from": "storage", "to": "depth", "rel": "extends"},
+  {"from": "many", "to": "depth", "rel": "depends-on"},
+  {"from": "code", "to": "next", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["scion-and-sgit", "sgit-is-a-standard", "agent-workflows-on-ephemeral-vaults"],
+  "pages": [],
+  "sites": ["https://pypi.org/project/sgit-ai/", "https://github.com/SGit-AI/SGit-AI__CLI", "https://www.anthropic.com/engineering/redesigning-source-control"]
+ },
+ "quotes": [
+  {"text": "A clone that carries a depth costs seconds and megabytes however large the vault is", "why": "The agent pattern."},
+  {"text": "So sgit is not the bottleneck; the distance to the storage is.", "why": "Where the time goes."}
+ ]
+}

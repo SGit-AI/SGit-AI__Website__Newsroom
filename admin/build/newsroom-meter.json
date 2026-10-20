@@ -1,0 +1,5 @@
+{
+  "what": "Settings this site applies to the reading meter's config when sync_newsroom.py imports the newsroom, so they hold on newsroom.sgit.ai and not on sgit.ai. It is a recorded rule of the import, not a hand edit: the imported pages are otherwise unchanged, and validate.js check 11 still passes because the import writes them.",
+  "topup_link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04",
+  "topup_link_note": "A live-mode Stripe Payment Link for 5 GBP, one payment, quantity fixed at 1, created 11 October 2026. After payment it redirects to https://newsroom.sgit.ai/account/topped-up.html?session_id={CHECKOUT_SESSION_ID}, which adds the credit once per session id and cannot check the payment (unverified by design, and documented on the page). TO SWITCH TOP-UPS OFF: set topup_link to an empty string, run admin/build/sync_newsroom.py, and release; the top-up page goes back to the simulated cart. The link is public by nature; it is not a credential."
+}

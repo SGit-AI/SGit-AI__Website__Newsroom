@@ -1,0 +1,86 @@
+{
+ "slug": "attacks-rewritten-as-mandates",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 269,
+   "line": "Every supply-chain attack exploits a credential's reach beyond mandate",
+   "para": "Chainguard's ledger lists 28 supply-chain attacks from May 2024 to October 2026, 23 this year, and each used a credential or step that could do more than its job. By our reading consumer-side controls appear in 26 and publisher-side mandates in 16. Agents now hold those tokens, so pipelines need trusted inputs, written mandates and provable outputs.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 224,
+   "line": "Consumer controls are bought; publisher mandates must be written",
+   "para": "Every one of the 28 attacks was reach beyond mandate. A consumer-side control would likely have held in 26, a publisher-side mandate in 16, both in 14; the consumer side is a product; the publisher side is a document only the publisher can write. sgit asks how a small project joins a hardened registry.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "ledger",
+   "label": "A ledger of attacks",
+   "words": 301,
+   "line": "Most attacks used install hooks or stolen maintainer accounts",
+   "para": "The ledger runs from 28 May 2024 to 8 October 2026 and includes tj-actions, chalk and debug, Shai-Hulud's 639 versions in 22 minutes, and Trivy leading to LiteLLM five days later. Install-time hooks ran payloads in 17 incidents and maintainer accounts or tokens were taken over in 16.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "reach",
+   "label": "Every attack is reach beyond mandate",
+   "words": 317,
+   "line": "Read as policies, every row shows unwritten credential mandates",
+   "para": "Applying reach, mandate, gap and barrier to the ledger fills it in. tensorlake's maintainer token could publish anything, yet its mandate was one SDK from a reviewed build; CI-bound publishing and a cooldown would have stopped it. Moved tags and elementary-data's PR-comment attack share the shape, and nobody had written down what credentials were for.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "barriers",
+   "label": "Two kinds of barrier",
+   "words": 306,
+   "line": "Consumer controls detect attacks; publisher mandates make them impossible",
+   "para": "Consumer-side controls such as rebuilt sources, cooldowns, no install scripts and pinned actions would likely have held in 26 of 28 and need nobody's cooperation. Publisher-side mandates such as trusted publishing appear in 16, and alone help in two. They prevent rather than detect, as moving rules into a platform cut hope from 97% to 23%.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "agents",
+   "label": "The next maintainer is an agent",
+   "words": 469,
+   "line": "Agents hold tokens, but their mandates live in prompts",
+   "para": "The first incident was a hallucinated huggingface-cli package downloaded over 30,000 times. Chainguard's agent fleet opened 4,746 pull requests in eight weeks, with 840 of 1,117 graded low-risk merged without a human. Its reach and barriers are well configured, but the mandate lives in prompts, bot configuration and a blog post.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "records",
+   "label": "One pipeline, three records",
+   "words": 305,
+   "line": "Agent pipelines need trusted inputs, mandates and provable memory",
+   "para": "Trusted inputs already have a market, such as Chainguard's hardened skills with HARDENING.md. A written mandate, the Agent Behaviour Policy, separates allowed actions from ignored instructions. Provable outputs and memory need to outlive sessions; sgit provides encrypted, versioned vaults with a branch per agent and a server holding only ciphertext.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "oss",
+   "label": "An open source question",
+   "words": 337,
+   "line": "Small active open source projects lack a hardened-registry path",
+   "para": "sgit is Apache-2.0, pure Python with two dependencies, and its image moving off python:3.12-slim is a one-line change. Chainguard offers free images, paid libraries rebuilt on request, a free skills registry and EmeritOSS for mature projects, but no published path for small, active ones, where both risk and fix begin.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 191,
+   "line": "The readings are judgements, untested and not an audit",
+   "para": "The incidents are Chainguard's; the vectors, mandates and barriers are our reading as at 13 October 2026, and no control was tested. The four-column lens has not been applied to any company's agents with access. Chainguard has not yet been asked about open source terms, and the sgit image change is planned, not made.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 112,
+   "line": "Sources: Chainguard's ledger, engineering post and registry pages",
+   "para": "Drafted from voice memos of 13 October 2026, the night before Chainguard Assemble London. Sources are Chainguard's AI threat protection ledger, Maxime Gréau's post on keeping code on standard, the Workspaces overview, the skills registry, Python libraries, pricing and EmeritOSS pages, all fetched that day, plus sgit's public Dockerfile.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

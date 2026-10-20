@@ -1,0 +1,154 @@
+{
+  "slug": "a-leak-without-breaking-the-policy",
+  "teaser": "A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.",
+  "topics": [
+    "agents-and-policy"
+  ],
+  "core_idea": "Secrets and personal data leak as content inside mandated actions, so a behaviour policy needs content rows, and each is kept at one of three levels: told in the prompt, checked by a hook on every input and output, or never given, where something out of the agent's reach holds the key; a tested hook catches most leaks and misses encoded, split and piped ones.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "A leak without breaking the policy?",
+      "kind": "claim",
+      "summary": "Sending is allowed; the key is content."
+    },
+    {
+      "id": "content",
+      "label": "Content rows",
+      "kind": "concept",
+      "summary": "disclose.secret, disclose.personal_data."
+    },
+    {
+      "id": "told",
+      "label": "Told",
+      "kind": "concept",
+      "summary": "A sentence in the prompt."
+    },
+    {
+      "id": "checked",
+      "label": "Checked",
+      "kind": "method",
+      "summary": "A hook on inputs, results and answers."
+    },
+    {
+      "id": "never",
+      "label": "Never given",
+      "kind": "method",
+      "summary": "The agent never holds the key."
+    },
+    {
+      "id": "test",
+      "label": "Nine leaks tested",
+      "kind": "example",
+      "summary": "Five caught, three missed."
+    },
+    {
+      "id": "excess",
+      "label": "Reading the key is excess grant",
+      "kind": "claim",
+      "summary": "Use it, not read it."
+    },
+    {
+      "id": "experimental",
+      "label": "Experimental rules",
+      "kind": "method",
+      "summary": "Decode, match pieces, refuse base64."
+    },
+    {
+      "id": "sweep",
+      "label": "3,451 real commands",
+      "kind": "example",
+      "summary": "22 refused, none ordinary work."
+    }
+  ],
+  "edges": [
+    {
+      "from": "question",
+      "to": "content",
+      "rel": "leads-to"
+    },
+    {
+      "from": "content",
+      "to": "told",
+      "rel": "depends-on"
+    },
+    {
+      "from": "content",
+      "to": "checked",
+      "rel": "depends-on"
+    },
+    {
+      "from": "content",
+      "to": "never",
+      "rel": "depends-on"
+    },
+    {
+      "from": "test",
+      "to": "checked",
+      "rel": "example-of"
+    },
+    {
+      "from": "test",
+      "to": "never",
+      "rel": "leads-to"
+    },
+    {
+      "from": "excess",
+      "to": "never",
+      "rel": "answers"
+    },
+    {
+      "from": "experimental",
+      "to": "checked",
+      "rel": "extends"
+    },
+    {
+      "from": "sweep",
+      "to": "experimental",
+      "rel": "example-of"
+    },
+    {
+      "from": "sweep",
+      "to": "never",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "governs-enforces-attests",
+      "are-hooks-the-sweet-spot",
+      "handing-secrets-to-agents",
+      "secrets-on-public-keys",
+      "inside-the-pellbridge-agents",
+      "inside-the-no-server-studio",
+      "pki-everywhere"
+    ],
+    "pages": [],
+    "sites": [
+      "https://code.claude.com/docs/en/hooks",
+      "https://abp.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It is the same action, with the wrong content.",
+      "why": "The answer."
+    },
+    {
+      "text": "The three misses are not bugs in the first version of this hook.",
+      "why": "The limits of a check."
+    },
+    {
+      "text": "The rule was right; the fix is not to allow it, but to stop giving the token to the session.",
+      "why": "The sweep's lesson."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lk-levels.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lk-levels.webp",
+      "caption": "Nine ways a secret tries to leave, at each level. Told leaves every case to the model. Checked is the measured result of the hook: three denied, one redacted, one blocked, three missed. With four experimental rules, the three are refused. Never given leaves nothing to leak.",
+      "kind": "comparison"
+    }
+  ]
+}

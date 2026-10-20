@@ -1,0 +1,308 @@
+{
+  "slug": "if-somebody-built-a-company-on-code-review",
+  "teaser": "A reader's seven questions answered as a company plan: one reader for every layer, review as a science, and the layers as the customer's own.",
+  "topics": [
+    "graphs-and-knowledge",
+    "startups-and-strategy"
+  ],
+  "core_idea": "One technology can now read every layer from strategy to bytecode, which makes a graph at every altitude buildable and close to reality, and moves code review from an art of opinion to a science of facts if the models build, prune and maintain the graphs and then leave the line; what is fractal is the grammar and the layers are each company's own, so a code review company projects a graph from stories, derives one from code, reviews the join, holds one layer still to call a change a refactor, reshapes changes by reach, budgets per altitude as the objective good enough, runs its agents under behaviour policies, and gives the grammar away.",
+  "nodes": [
+    {
+      "id": "one-reader-every-layer",
+      "label": "One technology can read every layer",
+      "kind": "claim",
+      "summary": "From a board objective to a syntax tree in one path or through sub-agents of the same kind; what people did by instinct between altitudes becomes buildable, and buildable close to reality, for the first time at scale."
+    },
+    {
+      "id": "art-to-science",
+      "label": "From art to science",
+      "kind": "claim",
+      "summary": "Review was opinion, taste and power because there was no fact base; the map says where the code is and the graph says what a change reaches, and the models get review there only by building and maintaining the graphs and then leaving the line."
+    },
+    {
+      "id": "grammar-vs-layers",
+      "label": "The grammar is fractal, the layers are yours",
+      "kind": "claim",
+      "summary": "Nodes, edges, an ontology, a taxonomy and the move between altitudes are constant; which layers exist, what they are called and where they stop are decided by the company, its culture, languages and stack."
+    },
+    {
+      "id": "projected-graph",
+      "label": "The projected graph",
+      "kind": "method",
+      "summary": "Built top down before the code exists: objectives, stories with rules and examples, features and flows, the commands and surfaces they will touch, components as far as design can honestly see."
+    },
+    {
+      "id": "derived-graph",
+      "label": "The derived graph",
+      "kind": "method",
+      "summary": "Built bottom up from the syntax tree with no model in line: fingerprinted nodes, resolved calls, classes, modules, the commands the code exposes, and proposed stories marked as proposed."
+    },
+    {
+      "id": "the-join",
+      "label": "The review is the join",
+      "kind": "claim",
+      "summary": "Three outcomes: a match, where a derived surface serves a projected story; derived but not projected, a bug or an unwritten story; projected but not derived, the plan or the forgotten thing."
+    },
+    {
+      "id": "rules-and-examples",
+      "label": "Stories as rules and examples",
+      "kind": "method",
+      "summary": "Example Mapping's cards as the top layer: a story node whose children are rules, whose children are examples a test or a run can satisfy; prose stories were the right first layer and the wrong final one."
+    },
+    {
+      "id": "held-layer",
+      "label": "A refactor is relative to the held layer",
+      "kind": "claim",
+      "summary": "A refactor is a change where some layers move and one chosen layer, the one with the tests or the contract, does not; an architecture migration holding only the client interface is a refactor at a higher altitude."
+    },
+    {
+      "id": "deploy-layer",
+      "label": "The deploy is a layer",
+      "kind": "concept",
+      "summary": "Pipelines, environments, running services, configuration and secrets form a graph with its own verbs; a change's reach continues through it, and the non-functional requirements live there."
+    },
+    {
+      "id": "who-reads",
+      "label": "Who reads the code depends on the map",
+      "kind": "claim",
+      "summary": "Explorer code is read for intent, mostly by agents; villager code is read all the way down; town planner code is read by deterministic checks at the boundary, with a person for exceptions. The company sits in the two moves."
+    },
+    {
+      "id": "reshape",
+      "label": "Reshape the change before reviewing it",
+      "kind": "method",
+      "summary": "Split a change by reach: provably no behaviour, merged by a check; reaches tested behaviour, checks plus a glance; reaches a mission-critical path, the right people. Review is sorting, not saying no."
+    },
+    {
+      "id": "reality-first",
+      "label": "Replicate reality first",
+      "kind": "method",
+      "summary": "Derive what a parser can, let a model propose the rest marked proposed, confront the graph with users, experts and tests, version everything so a review can be replayed as the graph was."
+    },
+    {
+      "id": "budgets",
+      "label": "A budget per altitude, per change",
+      "kind": "method",
+      "summary": "Deterministic checks always run; the delta re-derives only what changed; models get small budgets and hard stops; onboarding starts at one point and continues; handed-on work carries its budget and never widens it."
+    },
+    {
+      "id": "behaviour-policies",
+      "label": "The reviewing agents run under a policy",
+      "kind": "method",
+      "summary": "Every agent deriving, proposing or summarising runs under an Agent Behaviour Policy written before its first run: which repositories, which actions, where it writes, what it spends; the control on the reviewers' own blast radius."
+    },
+    {
+      "id": "five-whys",
+      "label": "The five whys fix the layer below",
+      "kind": "method",
+      "summary": "Every finding at one layer is a question about the layer below, and the fix goes there as a rule or a graph query, so the next change like it is caught for the price of a query. Not whack-a-mole."
+    },
+    {
+      "id": "compare-to-intent",
+      "label": "Compare the blast radius to the intent",
+      "kind": "claim",
+      "summary": "Not to the old code: to the projected graph, the commit message, the existing documentation and the stories. Report one line per layer that moved; measure increments as projected nodes gaining a derived match."
+    },
+    {
+      "id": "open-source-only",
+      "label": "Open source is the only model that fits",
+      "kind": "claim",
+      "summary": "The layers are the customer's and the loop runs where the code is; sell the customised deployment, the running of the loop and the accumulated rules; give away the grammar, the parser and the model."
+    },
+    {
+      "id": "corrections",
+      "label": "What the first article got wrong",
+      "kind": "example",
+      "summary": "The refactor sentence was one refactor at one altitude; the seven altitudes were one repository's layers; the text skipped the commands and modules the delta had and the figure showed."
+    }
+  ],
+  "edges": [
+    {
+      "from": "one-reader-every-layer",
+      "to": "art-to-science",
+      "rel": "leads-to"
+    },
+    {
+      "from": "one-reader-every-layer",
+      "to": "derived-graph",
+      "rel": "produces"
+    },
+    {
+      "from": "art-to-science",
+      "to": "who-reads",
+      "rel": "depends-on"
+    },
+    {
+      "from": "art-to-science",
+      "to": "budgets",
+      "rel": "leads-to"
+    },
+    {
+      "from": "budgets",
+      "to": "behaviour-policies",
+      "rel": "depends-on"
+    },
+    {
+      "from": "behaviour-policies",
+      "to": "reshape",
+      "rel": "extends"
+    },
+    {
+      "from": "grammar-vs-layers",
+      "to": "open-source-only",
+      "rel": "leads-to"
+    },
+    {
+      "from": "projected-graph",
+      "to": "the-join",
+      "rel": "produces"
+    },
+    {
+      "from": "derived-graph",
+      "to": "the-join",
+      "rel": "produces"
+    },
+    {
+      "from": "rules-and-examples",
+      "to": "projected-graph",
+      "rel": "extends"
+    },
+    {
+      "from": "the-join",
+      "to": "compare-to-intent",
+      "rel": "produces"
+    },
+    {
+      "from": "held-layer",
+      "to": "corrections",
+      "rel": "example-of"
+    },
+    {
+      "from": "grammar-vs-layers",
+      "to": "corrections",
+      "rel": "example-of"
+    },
+    {
+      "from": "deploy-layer",
+      "to": "grammar-vs-layers",
+      "rel": "example-of"
+    },
+    {
+      "from": "who-reads",
+      "to": "reshape",
+      "rel": "leads-to"
+    },
+    {
+      "from": "who-reads",
+      "to": "budgets",
+      "rel": "leads-to"
+    },
+    {
+      "from": "reshape",
+      "to": "derived-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "reality-first",
+      "to": "derived-graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "budgets",
+      "to": "five-whys",
+      "rel": "contrasts"
+    },
+    {
+      "from": "five-whys",
+      "to": "who-reads",
+      "rel": "extends"
+    },
+    {
+      "from": "reality-first",
+      "to": "compare-to-intent",
+      "rel": "depends-on"
+    },
+    {
+      "from": "who-reads",
+      "to": "open-source-only",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "code-review-as-a-fractal-semantic-graph",
+      "introducing-fractal-semantic-graphs",
+      "saas-apocalypse-decided-by-inertia-not-by-ai",
+      "footprint-and-blast-radius",
+      "connector-twin-before-you-deploy-an-agent",
+      "the-question-is-whether-they-miss-it",
+      "six-agents-one-inbox"
+    ],
+    "pages": [
+      "/demos/vaults/code-review-graphs/index.html",
+      "/demos/vaults/synthetic-users/index.html"
+    ],
+    "sites": [
+      "https://nfrs.sgit.ai/",
+      "https://coding.sgit.ai/",
+      "https://open-source.sgit.ai/",
+      "https://wardley-maps.sgit.ai/",
+      "https://diniscruz.ai/2025/06/10/explorers-villagers-and-town-planners-understanding-the-generative-ai-divide.md",
+      "https://cucumber.io/blog/bdd/example-mapping-introduction/",
+      "https://riskmandate.ai/abp.html",
+      "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/03/21/v0.16.26__article__who-should-read-the-code.md",
+      "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send/blob/dev/team/humans/dinis_cruz/briefs/07/12/architecture/v0.33.48__arch-brief__sg-send-fractal-semantic-graphs-agentic-operating-layer-deterministic-sovereign-open-source.md"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A model in the line on every change is the art again with a different reviewer.",
+      "why": "The condition on which the move from art to science depends: the models build and maintain the graphs, then leave the line."
+    },
+    {
+      "text": "The grammar is fractal. The layers are yours.",
+      "why": "The distinction the whole answer turns on, and the reason a review product has to learn each company's layers rather than impose its own."
+    },
+    {
+      "text": "Review is not saying no. It is sorting what can go fast from what must go slow, and giving the slow part to people who have the context to decide well.",
+      "why": "The job of the product, stated as a job to the change rather than to the reviewer."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cr2-fractal-or-not.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-fractal-or-not.webp",
+      "caption": "What is fractal and what is not. The constant across every codebase is the grammar: nodes, edges, an ontology, a taxonomy and a way to zoom in and out. Which layers exist, what they are called, which languages fill the bottom layers and what the business counts as a change that matters are decided by the company you are in. The first article's seven altitudes were one Python repository's layers, not the layers."
+    },
+    {
+      "file": "cr2-projected-meets-derived.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-projected-meets-derived.webp",
+      "caption": "Two graphs, one grammar. The projected graph is built top down before the code exists: objectives, stories with their rules and examples, features and flows, the commands and surfaces they will touch, and the components as far as design can see. The derived graph is built bottom up from the syntax tree. The review is the join, and the join has three outcomes."
+    },
+    {
+      "file": "cr2-refactor-is-relative.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-refactor-is-relative.webp",
+      "caption": "Three changes, three held layers. Tidying a method holds the class shapes and is proved by unit tests on them. Migrating an architecture holds the client interface and is proved by contract tests on it, while everything below is new. A change that holds nothing is not a refactor, whatever the commit message says, and the review should treat it as a fix or a feature."
+    },
+    {
+      "file": "cr2-explorer-villager-town-planner.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-explorer-villager-town-planner.webp",
+      "caption": "Code review by stage of evolution. For explorer code, review is for speed and feedback and the person reads the behaviour, not the lines. For villager code it is for quality and reachability, all the way down, because this is where changes land. For town planner code it is for guarantees at the boundary, read by deterministic checks with a person for the exceptions. The company sits in the two moves between columns."
+    },
+    {
+      "file": "cr2-reshape-the-change.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-reshape-the-change.webp",
+      "caption": "Reshape the change before you review it. A pull request as it arrived, and the same change split by what it can reach: the part that provably reaches no behaviour, the part that reaches behaviour through tested paths, and the part that reaches a mission-critical path or a layer with no test holding it. Review is sorting what can go fast from what must go slow. Counts are illustrative."
+    },
+    {
+      "file": "cr2-constraints-and-five-whys.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-constraints-and-five-whys.webp",
+      "caption": "Two mechanisms. Left, a budget per altitude and per change, decided in advance: deterministic checks always run and cost compute, the delta re-derives only what the change touched, a model summarising has a small budget and a hard stop, a model proposing has a larger one and every output marked proposed, onboarding is budgeted per slice, and work handed from agent to agent carries its budget with it. Right, the five whys as the loop: a bug at one layer is a question about the layer below, and the fix is a rule there, so the next change like it is caught for the price of a query. Budgets are illustrative."
+    },
+    {
+      "file": "cr2-one-page-by-another-model.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cr2-one-page-by-another-model.webp",
+      "caption": "The article as a one-page state, generated with ChatGPT from the published text on 5 October 2026 and credited by it to the source. The style and the slogans in the margins are the other model's, kept as they came, because who made a condensation is part of its provenance."
+    }
+  ]
+}

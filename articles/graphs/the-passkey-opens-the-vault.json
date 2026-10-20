@@ -1,0 +1,275 @@
+{
+  "slug": "the-passkey-opens-the-vault",
+  "teaser": "Tested: a passkey's PRF bytes compute a door that holds the master's key, and a different path to the same passkey gives different bytes, so a door per path.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "An end-to-end, client-side account with no sign-in to the site: a passkey with the WebAuthn PRF extension gives 32 bytes only the user's authenticator can produce for the site, and because sgit vault keys are made in the client the browser computes a door vault's key and address from them, so nothing is stored or found first; the door holds the master vault's key and a record of its provider, path, credential id, device and date, and the master holds the keys of the vaults below, received read keys, the access key, key pairs generated at random and never derived from the passkey, and the list of its doors. A test on newsroom.sgit.ai on 11 and 12 October 2026 held for the platform path, the derivation and a door on a real server, and showed that the same passkey reached by a phone over QR gives different bytes, so the claim is narrowed to the same kind of path and the unit of the design is a door per path: added in the first week while unlocked with no key typed, bootstrapped by the recovery code where no device has both paths, with an unknown address meaning no door here yet and a door retired by deleting its file, never by destroying its derived address.",
+  "nodes": [
+    {
+      "id": "store",
+      "label": "Signed in where you already are",
+      "kind": "concept",
+      "summary": "Apple, Google or Microsoft syncs the passkey store; the site is never signed in to, and the vault travels with the store."
+    },
+    {
+      "id": "prf",
+      "label": "Passkey with PRF",
+      "kind": "concept",
+      "summary": "32 bytes only your authenticator produces for this site; the same on every device it syncs to, through the same kind of path."
+    },
+    {
+      "id": "door",
+      "label": "A door per path, computed",
+      "kind": "method",
+      "summary": "Key and address computed from the PRF bytes with HKDF; one file holding the master key and its record: provider, path, credential id, device, date."
+    },
+    {
+      "id": "keyring",
+      "label": "The master vault",
+      "kind": "artefact",
+      "summary": "The keys of the vaults below, received read keys, the access key, random key pairs, and the list of doors with their keys."
+    },
+    {
+      "id": "nowhere",
+      "label": "Where the key lives: nowhere",
+      "kind": "claim",
+      "summary": "sgit keys are made in the client, so the door is computed, not stored; the lab created one on a real server and opened it again."
+    },
+    {
+      "id": "recovery",
+      "label": "The recovery code, a door of its own",
+      "kind": "method",
+      "summary": "128 bits, shown once; derives the recovery door, and is the way a new path joins where no device has both paths."
+    },
+    {
+      "id": "noscripts",
+      "label": "No third-party scripts where keys live",
+      "kind": "claim",
+      "summary": "Storage is per origin; the unlock page loads nothing it did not build."
+    },
+    {
+      "id": "support",
+      "label": "PRF support in 2026",
+      "kind": "example",
+      "summary": "Google Password Manager, iCloud Keychain, Windows Hello, Firefox; tested on a Mac, an iPhone and an iPad."
+    },
+    {
+      "id": "enables",
+      "label": "Accounts with no server",
+      "kind": "claim",
+      "summary": "Any static site: sign in, open your own data on any device, unreadable by the operator."
+    },
+    {
+      "id": "clean",
+      "label": "Where the passkey lives",
+      "kind": "claim",
+      "summary": "A synced provider or a hardware key gives every device; a clean browser gives one device plus recovery; Chrome's own store has no PRF."
+    },
+    {
+      "id": "lock",
+      "label": "A lock, not an identity",
+      "kind": "claim",
+      "summary": "Key pairs are generated at random and stored in the top, never derived from the passkey, so the identity survives any change of lock."
+    },
+    {
+      "id": "several",
+      "label": "Several passkeys, several masters",
+      "kind": "method",
+      "summary": "A second passkey for another role computes its own doors to its own master; the store's picker is the switch."
+    },
+    {
+      "id": "retire",
+      "label": "Retire a door, never destroy its address",
+      "kind": "method",
+      "summary": "A door is retired by deleting its one file; a destroyed vault id can never be used again, and a door's address is derived from the passkey."
+    },
+    {
+      "id": "chain",
+      "label": "Vaults all the way down",
+      "kind": "concept",
+      "summary": "The pattern already in use: vaults that hold the keys of other vaults, so a read key to one child exposes nothing above it."
+    },
+    {
+      "id": "test",
+      "label": "The test, 11 and 12 October",
+      "kind": "example",
+      "summary": "One Google Password Manager passkey: the same bytes on a Mac and an iPhone by the platform path; different bytes, consistently, when the phone answered a QR code from an iPad or that Mac."
+    },
+    {
+      "id": "path",
+      "label": "The unit is the path",
+      "kind": "claim",
+      "summary": "Whatever produced a distinct set of bytes gets a distinct door; every door points at the same master."
+    },
+    {
+      "id": "adddoor",
+      "label": "Add a door, no key typed",
+      "kind": "method",
+      "summary": "While unlocked, ask for the bytes by the other path and write the new door from memory; a normal first-week step."
+    },
+    {
+      "id": "nodoor",
+      "label": "No door here yet",
+      "kind": "claim",
+      "summary": "An unknown derived address means a path with no door; the page offers an open device or the recovery code, never an error."
+    }
+  ],
+  "edges": [
+    {
+      "from": "prf",
+      "to": "door",
+      "rel": "produces"
+    },
+    {
+      "from": "nowhere",
+      "to": "door",
+      "rel": "answers"
+    },
+    {
+      "from": "door",
+      "to": "keyring",
+      "rel": "leads-to"
+    },
+    {
+      "from": "test",
+      "to": "path",
+      "rel": "leads-to"
+    },
+    {
+      "from": "path",
+      "to": "door",
+      "rel": "extends"
+    },
+    {
+      "from": "test",
+      "to": "prf",
+      "rel": "contrasts"
+    },
+    {
+      "from": "adddoor",
+      "to": "path",
+      "rel": "depends-on"
+    },
+    {
+      "from": "nodoor",
+      "to": "path",
+      "rel": "depends-on"
+    },
+    {
+      "from": "recovery",
+      "to": "adddoor",
+      "rel": "extends"
+    },
+    {
+      "from": "chain",
+      "to": "door",
+      "rel": "extends"
+    },
+    {
+      "from": "lock",
+      "to": "keyring",
+      "rel": "depends-on"
+    },
+    {
+      "from": "store",
+      "to": "prf",
+      "rel": "depends-on"
+    },
+    {
+      "from": "several",
+      "to": "keyring",
+      "rel": "extends"
+    },
+    {
+      "from": "retire",
+      "to": "door",
+      "rel": "depends-on"
+    },
+    {
+      "from": "recovery",
+      "to": "door",
+      "rel": "example-of"
+    },
+    {
+      "from": "noscripts",
+      "to": "door",
+      "rel": "depends-on"
+    },
+    {
+      "from": "support",
+      "to": "prf",
+      "rel": "example-of"
+    },
+    {
+      "from": "keyring",
+      "to": "enables",
+      "rel": "produces"
+    },
+    {
+      "from": "clean",
+      "to": "prf",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "i-miss-it",
+      "no-server-by-design",
+      "where-the-vault-keys-live",
+      "rfc-0001-public-key-cryptography-for-sgit",
+      "how-to-run-synthetic-users",
+      "pay-after-you-read"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/passkey/",
+      "https://newsroom.sgit.ai/admin/notes/2026-10-12__one-door-per-passkey-path.md",
+      "https://developer.apple.com/forums/thread/764730",
+      "https://secrets.sgit.ai/",
+      "https://www.corbado.com/blog/passkeys-prf-webauthn",
+      "https://web.dev/articles/webauthn-related-origin-requests"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The same passkey gives the same bytes on every device it syncs to, **through the same kind of path**.",
+      "why": "The narrowed claim."
+    },
+    {
+      "text": "The test is the requirement.",
+      "why": "Why the door layer is back."
+    },
+    {
+      "text": "The page never treats it as a failure, because a provider's fix can move a path's bytes at any time",
+      "why": "An unknown address means no door here yet."
+    },
+    {
+      "text": "The passkey is a lock, not an identity.",
+      "why": "Why the key pairs are never derived from the passkey."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pk-chain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-chain.webp",
+      "caption": "The key chain, after the test. The passkey's PRF output, by one path, computes a door; the door holds the master vault's key and a record of where it came from; the master holds the keys of everything else and the list of its doors. A different path to the same passkey can give different bytes, and gets a door of its own."
+    },
+    {
+      "file": "pk-options.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-options.webp",
+      "caption": "The places the key could live, and how you would find each before you could open it. Deriving the door from the passkey needs nothing to be found; the stored options become backups."
+    },
+    {
+      "file": "pk-flows.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-flows.webp",
+      "caption": "The first device, a new device on a path that has a door, adding a door while unlocked, a new device on a path with no door yet, and a lost device. Every step runs in the browser, against the passkey store for the gesture and the vault server for ciphertext."
+    },
+    {
+      "file": "pk-where.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pk-where.webp",
+      "caption": "Where a passkey can live, what each place needs, whether the passkey travels, whether it can return the PRF bytes, and what that means for the reader. The ladder below the table is what the page offers when PRF is off."
+    }
+  ]
+}

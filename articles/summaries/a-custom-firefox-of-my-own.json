@@ -1,0 +1,94 @@
+{
+ "slug": "a-custom-firefox-of-my-own",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 244,
+   "line": "A custom Firefox is feasible; maintaining it is costly",
+   "para": "The plan builds a custom Firefox with a Ruflo hive, an sgit vault and a behaviour policy, using the least invasive layer first, then a patch set. The iPad needs a fork of the Swift codebase. With 26 releases a year on two codebases, Mozilla should sell maintenance to one person, about 50p a release.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 109,
+   "line": "Lowest layer first; maintenance is the real cost",
+   "para": "The goal is a Firefox that behaves as I want on laptop and iPad, next month and next year. Policies, preferences, CSS and an extension come before a renamed front-end patch set. The iPad is a second codebase, and Mozilla already sells customisation to organisations but not to one person.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "want",
+   "label": "What I would like",
+   "words": 145,
+   "line": "The aim is a Firefox that stays mine",
+   "para": "Version one is affordable; what matters is that it does not break afterwards. The workflow from the agentics talk is reused: a Ruflo hive of Claude Code workers, an sgit vault as memory and an Agent Behaviour Policy as mandate. The plan is a proposal and has not yet been run.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "brief",
+   "label": "Step 1: the brief",
+   "words": 88,
+   "line": "The brief is my wants, triaged by layer",
+   "para": "Explorer coding starts with my own words: compact density, a hiding toolbar on the iPad, no sponsored content or unused AI features, my search engine, my own new-tab page and a daily-tools sidebar. The first worker finds the lowest layer for each want, since every layer up costs more maintenance.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "layers",
+   "label": "Step 2: the laptop, without forking",
+   "words": 223,
+   "line": "Most of the list needs no fork at all",
+   "para": "Enterprise policies in policies.json survive updates and cover menus, search, new-tab and the AI chatbot sidebar, and locked hidden preferences enable userChrome.css, the most powerful but least stable layer. An unlisted, Mozilla-signed extension handles sidebars, buttons and new-tab pages. The hive writes all four with tests.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "fork",
+   "label": "Step 3: the fork, for the rest",
+   "words": 154,
+   "line": "A small renamed patch set covers the rest",
+   "para": "Firefox's code is on GitHub since 2025, and a personal fork is a patch set on each release, as LibreWolf carries 63 patches and Debian 17. Artifact mode skips the C++ compile for interface changes. Mozilla's trademark policy means a modified build cannot be distributed as Firefox.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "ipad",
+   "label": "Step 4: the iPad",
+   "words": 159,
+   "line": "The iPad needs a fork of Firefox's Swift codebase",
+   "para": "Apple's guideline 2.5.6 requires WebKit outside the EU and Japan, and Mozilla will not build Gecko for iOS. Firefox for iOS is a separate open-source Swift codebase, so the only route is a fork built in Xcode. A free Apple account install lasts 7 days; a paid account gives a year.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "loop",
+   "label": "Step 5: keeping it working",
+   "words": 212,
+   "line": "Keeping it working means following 26 releases a year",
+   "para": "Since Firefox 155 a major release ships every two weeks, on each of two codebases; LibreWolf ships within three days with a team. On each release the hive rebases, builds, tests and reports into the vault, under a policy barring security or trademark changes. PortGPT reported 89.15% success, but a person still approves every release.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "business",
+   "label": "Step 6: what Mozilla could sell",
+   "words": 324,
+   "line": "Mozilla should sell customisation maintenance to one person",
+   "para": "Only Mozilla can ship a modified build called Firefox, and it already sells Firefox Enterprise and custom development to organisations. A personal offer would be: explore free, keep a customisation working for about 50p a release, or £13 a year, adopt a change for £50 to £500, or own a branded build by contract.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 100,
+   "line": "The plan is unrun and the prices are illustrative",
+   "para": "Every step was checked against documentation, not tried end to end. The prices are mine, not Mozilla's, and its consumer offer does not exist while enterprise prices are not public. A person approves every release, and the iPad route needs a developer account and is limited to WebKit.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 91,
+   "line": "Sources: Mozilla, Apple and fork maintainers' documentation",
+   "para": "A voice memo of 16 October 2026. Mozilla's channels, policy reference, artifact builds, extension and signing docs, distribution policy and Firefox Enterprise announcement; Apple's App Review Guidelines; PiunikaWeb relaying Ars Technica; LibreWolf; Waterfox; and PortGPT, 2025. Read on 16 October 2026.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

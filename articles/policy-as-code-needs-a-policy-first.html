@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have, SGit Newsroom</title>
+<meta name="description" content="At an event this week a speaker described policy as code as the way to scale governance and AI innovation together, and it clicked. Policy as code is right, and it is where agent governance has to end up. But for agents it answers one question, is this request allowed, and the questions a business, an auditor or an insurer asks are the ones around it, the ones an Agent Behaviour Policy holds. What can this agent reach, measured. What was it asked to do, and why. Where the two differ. Which rules can no engine ever see. And the one that surprised me when I checked: for every rule that is code, who can change that code. A rule the agent can rewrite is a setting, not a control. Because an ABP has those columns, it can be written in both directions. From the policy, generate code: for this article, five rows of a real ABP became a Rego policy that Open Policy Agent ran against seven requests, denying a push to the wrong repository, a commit without a leak scan and a model id in a diff, asking before a pull request, and allowing a sentence no engine can judge. From what exists, reverse engineer the policy: parse the code back, and the gaps show on both sides, a row with no code and a rule nobody wrote a reason for. I did it to this session's own policy: of its eleven rules, eight have some code behind them, and only one has code the agent cannot change. Fractal semantic graphs are what make the round trip work across paper, spreadsheets, regulations and code, because each keeps its own vocabulary and the edges between them carry verbs both ways.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/policy-as-code-needs-a-policy-first.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/policy-as-code-needs-a-policy-first.html">
+<meta property="og:title" content="Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have, SGit Newsroom">
+<meta property="og:description" content="At an event this week a speaker described policy as code as the way to scale governance and AI innovation together, and it clicked. Policy as code is right, and it is where agent governance has to end up. But for agents it answers one question, is this request allowed, and the questions a business, an auditor or an insurer asks are the ones around it, the ones an Agent Behaviour Policy holds. What can this agent reach, measured. What was it asked to do, and why. Where the two differ. Which rules can no engine ever see. And the one that surprised me when I checked: for every rule that is code, who can change that code. A rule the agent can rewrite is a setting, not a control. Because an ABP has those columns, it can be written in both directions. From the policy, generate code: for this article, five rows of a real ABP became a Rego policy that Open Policy Agent ran against seven requests, denying a push to the wrong repository, a commit without a leak scan and a model id in a diff, asking before a pull request, and allowing a sentence no engine can judge. From what exists, reverse engineer the policy: parse the code back, and the gaps show on both sides, a row with no code and a rule nobody wrote a reason for. I did it to this session's own policy: of its eleven rules, eight have some code behind them, and only one has code the agent cannot change. Fractal semantic graphs are what make the round trip work across paper, spreadsheets, regulations and code, because each keeps its own vocabulary and the edges between them carry verbs both ways.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/policy-as-code-needs-a-policy-first.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/policy-as-code-needs-a-policy-first.jpg">
+<link rel="alternate" type="text/markdown" href="policy-as-code-needs-a-policy-first.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have, SGit Newsroom", "headline": "Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have, SGit Newsroom", "description": "At an event this week a speaker described policy as code as the way to scale governance and AI innovation together, and it clicked. Policy as code is right, and it is where agent governance has to end up. But for agents it answers one question, is this request allowed, and the questions a business, an auditor or an insurer asks are the ones around it, the ones an Agent Behaviour Policy holds. What can this agent reach, measured. What was it asked to do, and why. Where the two differ. Which rules can no engine ever see. And the one that surprised me when I checked: for every rule that is code, who can change that code. A rule the agent can rewrite is a setting, not a control. Because an ABP has those columns, it can be written in both directions. From the policy, generate code: for this article, five rows of a real ABP became a Rego policy that Open Policy Agent ran against seven requests, denying a push to the wrong repository, a commit without a leak scan and a model id in a diff, asking before a pull request, and allowing a sentence no engine can judge. From what exists, reverse engineer the policy: parse the code back, and the gaps show on both sides, a row with no code and a rule nobody wrote a reason for. I did it to this session's own policy: of its eleven rules, eight have some code behind them, and only one has code the agent cannot change. Fractal semantic graphs are what make the round trip work across paper, spreadsheets, regulations and code, because each keeps its own vocabulary and the edges between them carry verbs both ways.", "url": "https://newsroom.sgit.ai/articles/policy-as-code-needs-a-policy-first.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have</p>
+ <h1>Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/policy-as-code-needs-a-policy-first.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.35</a> &middot; <span class="chip">policy-as-code</span><span class="chip">agent-behaviour-policy</span><span class="chip">open-policy-agent</span><span class="chip">rego</span><span class="chip">fractal-semantic-graphs</span><span class="chip">governance</span><span class="chip">enforcement</span><span class="chip">reverse-engineering</span><span class="chip">agents</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> At an event this week a speaker described policy as code as the way to scale governance and AI innovation together, and it clicked. Policy as code is right, and it is where agent governance has to end up. But for agents it answers one question, is this request allowed, and the questions a business, an auditor or an insurer asks are the ones around it, the ones an Agent Behaviour Policy holds. What can this agent reach, measured. What was it asked to do, and why. Where the two differ. Which rules can no engine ever see. And the one that surprised me when I checked: for every rule that is code, who can change that code. A rule the agent can rewrite is a setting, not a control. Because an ABP has those columns, it can be written in both directions. From the policy, generate code: for this article, five rows of a real ABP became a Rego policy that Open Policy Agent ran against seven requests, denying a push to the wrong repository, a commit without a leak scan and a model id in a diff, asking before a pull request, and allowing a sentence no engine can judge. From what exists, reverse engineer the policy: parse the code back, and the gaps show on both sides, a row with no code and a rule nobody wrote a reason for. I did it to this session's own policy: of its eleven rules, eight have some code behind them, and only one has code the agent cannot change. Fractal semantic graphs are what make the round trip work across paper, spreadsheets, regulations and code, because each keeps its own vocabulary and the edges between them carry verbs both ways.</em></p>
+<figure class="shot" data-shot="pq-altitudes.webp" data-dir="images/" data-alt="One policy at three altitudes. At the top, the business&#x27;s words: a board policy, a row of a control spreadsheet, an article of a regulation. In the middle, the ABP row for one agent in one deployment: reach, mandate, gap, barrier and owner. At the bottom, the code where decisions are made: a Rego rule, a hook, a validator check. Generating code walks down; reverse engineering walks up; a node with no edge is a gap." data-kind="architecture"><figcaption>One policy at three altitudes. At the top, the business's words: a board policy, a row of a control spreadsheet, an article of a regulation. In the middle, the ABP row for one agent in one deployment: reach, mandate, gap, barrier and owner. At the bottom, the code where decisions are made: a Rego rule, a hook, a validator check. Generating code walks down; reverse engineering walks up; a node with no edge is a gap.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Policy as code is right, and it answers one question.</b> Is this request allowed. For agents, the governance questions are around it.</li>
+<li><b>An ABP holds what the engine does not.</b> The reach, measured; the mandate and its reason; the gap; the rules no engine can see; the owner; and who can change each rule's code.</li>
+<li><b>A rule the agent can rewrite is a setting.</b> This session's policy has eleven rules; eight have code behind them; only one has code the agent cannot change.</li>
+<li><b>Generate code from the policy.</b> Five ABP rows became a 35-line Rego policy; Open Policy Agent decided seven requests: three denied, one asked, three allowed.</li>
+<li><b>Reverse engineer the policy from the code.</b> Parsing the Rego back found a row with no code and a rule with no row, the two gaps that matter.</li>
+<li><b>The same works from paper and spreadsheets.</b> A control spreadsheet became a graph joined to the law it maps to; a role file becomes both a published table and a check.</li>
+<li><b>Fractal semantic graphs make the round trip work.</b> Each altitude keeps its own vocabulary, and every edge reads both ways.</li>
+<li><b>The four jobs.</b> Enabler, scaling, enforcer and decision-maker: an ABP does the first and keeps the other three honest.</li>
+</ul>
+<h2 id="question">Policy as code, and the question it answers</h2>
+<p>At an event this week, one of the speakers described policy as code as the way to scale governance and AI innovation at the same time. I agree, and I think it is where agent governance has to end up: rules that are versioned, tested, reviewed like code and enforced by something other than the model's good behaviour.</p>
+<p>The best known engine for it describes the idea well. Open Policy Agent, a Cloud Native Computing Foundation graduated project, <a href="https://www.openpolicyagent.org/docs/philosophy">lets you</a> "decouple policy from that software service": services "offload policy decisions to OPA by executing queries", policies "are written in a high-level declarative language", and a decision can be "arbitrary structured data", not only allow or deny.</p>
+<p>That is exactly the right shape for the moment an agent acts. An agent asks to push, to send, to read a table; the engine answers. But it answers one question, is this request allowed, and when something goes wrong with an agent, that is rarely the question anyone asks first.</p>
+<h2 id="adds">What an agent behaviour policy adds</h2>
+<p>The questions a board, an auditor or an insurer asks about an agent are the ones around the decision, and they are the columns of an Agent Behaviour Policy, as <a href="footprint-and-blast-radius.html">Footprint and blast radius</a> set them out.</p>
+<ul>
+<li><b>The reach, measured.</b> What the agent can actually do, from its connectors and accounts. A policy engine only sees the requests that are routed through it; the reach includes the ones that are not.</li>
+<li><b>The mandate, with its reason.</b> What the agent was asked to do, and why each rule exists. Code holds the condition; the reason lives, at best, in a comment.</li>
+<li><b>The gap.</b> Reach minus mandate, derived. It is the list of things the agent could do that nobody asked for, which is where the rules should come from.</li>
+<li><b>The rules no engine can see.</b> "Great, not perfect." "The tone is mine." Some rows will always be expectations, kept by a second reader, and an ABP lists them instead of silently leaving them out.</li>
+<li><b>The owner.</b> Who answers for each row, which is what <a href="the-policy-draws-the-liability-line.html">The policy draws the liability line</a> argued decides where liability lands.</li>
+<li><b>Who can change the code.</b> For every rule that is code, whether the agent's own account could rewrite it. The barrier column types it: "A boundary is enforced above the agent's reach, so it cannot flip it. A setting is a switch the agent's own account could flip."</li>
+</ul>
+<p>That last one is the column I did not expect to matter so much, until I checked this session.</p>
+<h2 id="session">Reverse engineering this session's own policy</h2>
+<figure class="shot" data-shot="pq-session.webp" data-dir="images/" data-alt="This session&#x27;s own policy, reverse engineered from its code. Eleven rules; for each, the code that enforces it, who can change that code, and the barrier that results. Eight have some code behind them; only one, never pushing to sgit.ai, has code the agent cannot change." data-kind="comparison"><figcaption>This session's own policy, reverse engineered from its code. Eleven rules; for each, the code that enforces it, who can change that code, and the barrier that results. Eight have some code behind them; only one, never pushing to sgit.ai, has code the agent cannot change.</figcaption></figure>
+<p>The agent writing this site works under a written policy, eleven rules, reloaded after every summary, as <a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring</a> describes. So I did the exercise on it: for each rule, find the code that enforces it, in the session's hooks, its leak scan, the site's validators and its git configuration, and then ask who can change that code.</p>
+<p>Eight of the eleven have some code behind them. The leak scan refuses a staged diff with a key-shaped string, a model id outside the byline, an em-dash in an article or a name on a private list. The validator fails the build on the ladder word and warns on absolutes. A hook prints the policy back after every summary and supplies the status report. Three rules have no code at all: masking keys in output, not using anyone else's credential, and answering when asked for the policy's status.</p>
+<p>Then the second question, and the honest answer. Nearly all of that code is code the agent can change. The leak scan and the hooks are files in its own home directory; the validators are in the repository it pushes to and in a clone on its own disk. By the policy's own definitions, those rules are settings. Even "never push to sgit.ai", enforced by a push address set to nothing, is a setting on its own, because the agent could set it back. What makes that one rule a boundary is something the agent cannot touch: this session's access to GitHub is scoped to the newsroom's repository by the platform it runs on. One rule in eleven.</p>
+<p>None of that is a failure; it is the session's real state, and most organisations' agents would look the same if anyone drew the table. It is also why policy as code alone would have scored this session as well governed: most of its rules are code. The ABP is what shows that the code is the agent's own.</p>
+<p>And reverse engineering finds the reasons where they hide. The validator's rule against em-dashes carries its reason in a comment: readers find them off-putting, "and 2,900 of them do not stay gone without a rule". The rule against absolutes is advisory, and its message says why: "say what was found, not what nobody has". That is the paper policy, scattered through the code. Walking up from the code collects it into rows.</p>
+<h2 id="generate">Generating code from the policy</h2>
+<figure class="shot" data-shot="pq-roundtrip.webp" data-dir="images/" data-alt="A round trip through Open Policy Agent. Five ABP rows as data, generated into a 35-line Rego policy, evaluated against seven requests, then parsed back with OPA&#x27;s own parser and compared with the ABP: one row with no code, one rule with no row." data-kind="architecture"><figcaption>A round trip through Open Policy Agent. Five ABP rows as data, generated into a 35-line Rego policy, evaluated against seven requests, then parsed back with OPA's own parser and compared with the ABP: one row with no code, one rule with no row.</figcaption></figure>
+<p>The other direction was built for this article. Five rows of the session's policy went into a small JSON file: an id, the rule, why it exists, the decision, a condition where there is one, the barrier, and what enforces it today. A generator of about twenty-five lines turned them into Rego, each rule carrying its row's id and reason as a comment and as the value it returns:</p>
+<pre class="shell">
+# R9: Never push to the sgit.ai repository. Why: sgit.ai is read-only for this session.
+deny contains "R9" if {
+	input.tool == "git.push"
+	not input.remote in {"github.com/SGit-AI/SGit-AI__Website__Newsroom"}
+}
+</pre>
+<p>OPA 1.21.2 checked the policy and evaluated seven requests. A push to sgit.ai: deny, R9. A push to the newsroom: allow. A commit with no leak scan: deny, R2. A commit adding a model id in a code comment: deny, R5. A clean, scanned commit: allow. Opening a pull request: ask, R7b, because the decision is the owner's. And publishing a sentence that says "a perfect result": allow, because the row that forbids it has no condition any engine can check, and the generator wrote that down as a comment instead of pretending.</p>
+<p>Then back again. <code>opa parse</code> turned the Rego into its syntax tree, and comparing the rules it found with the ABP's rows gave the two lists that matter. Rows with no code: R6c, the wording rule, which stays an expectation with a second reader. Code with no row: after a second file added a rule against Friday releases, "added in a hurry after an incident", the comparison flagged <code>no-friday-releases</code> as enforcement nobody had written a reason for. That is the rule that will confuse the next person, block the next urgent fix, and have no owner when someone asks why.</p>
+<h2 id="paper">From spreadsheets and paper</h2>
+<p>Code is not the only thing to reverse engineer, and this site has done the other two.</p>
+<p>From a spreadsheet: when Jan van Dijke published the <a href="ai-baseline-control-framework.html">AI Baseline Control Framework</a>, twenty controls mapped to the NIST AI RMF, ISO/IEC 42001 and the EU AI Act, its CSV became, on the day, "a semantic graph with an ontology", "joined to the EU AI Act's own text", and "the six things the graph found that the CSV does not say". <a href="four-frameworks-one-agent.html">Four frameworks, one agent</a> did the same for four frameworks and one agent, as a mapping file with a row for every element and its status.</p>
+<p>From paper, in both directions at once: sgit.ai's newsroom roles are written as files, and the check that gates a release reads them. In the words of the check itself, "The policy is the <code>writes</code> and <code>edits</code> lists in <code>admin/content/newsroom/roles/&lt;role&gt;.md</code>, the same files the <code>/newsroom/policies.html</code> table is generated from." One source, rendered as a page people read and as a check a release must pass. That is the pattern I would want for every agent: the ABP is the source, the table and the code are renderings, and neither can drift from the other because neither is edited by hand.</p>
+<h2 id="fsg">Why it needs fractal semantic graphs</h2>
+<p>A round trip like this breaks if every format has to share one schema. A board policy is written in the board's words; a regulation in the legislator's; a control spreadsheet in the auditor's; an ABP in reach, mandate, gap and barrier; Rego in packages, rules and conditions. Asking any of them to adopt the others' vocabulary is why mapping exercises become workshops.</p>
+<p><a href="introducing-fractal-semantic-graphs.html">Fractal semantic graphs</a> are the answer this site has been building: "Zoom into any node and you enter a new world with its own node types, its own verbs, its own taxonomy." Each altitude keeps its own vocabulary; the edges between them are verbs with inverses, so a row answers a policy and the policy is answered by the row; a rule enforces a row and the row is enforced by the rule. Then the questions that matter are walks, not workshops. "A question can cross formats without a join table." Which board policies have no row? Which rows have no code? Which code has no row? Which rows are enforced only by code the agent's own account can change? And when a regulation changes, supersede the node, never delete it, and every row and rule that rested on it becomes the answer to a query.</p>
+<p>That is what makes reverse engineering practical at scale: the code, the spreadsheet and the paper do not need to be converted, only connected. And it is what makes generation safe: the code that comes out carries an edge back to the row it came from, so the next person can ask why.</p>
+<h2 id="jobs">The four jobs</h2>
+<p>The speaker's framing was policy as code as an enabler, a way to scale, an enforcer and a basis for decisions. With an ABP as the source, each one gets sharper.</p>
+<ul>
+<li><b>Enabler.</b> A written mandate lets a team ship an agent without a review meeting per agent, because the review was of the policy. <a href="the-behaviour-policy-is-the-business-logic.html">The behaviour policy is the business logic</a>: writing it is the work.</li>
+<li><b>Scaling.</b> One source, rendered into as many engines and agents as needed, versioned and diffable, with every generated rule traceable to its row.</li>
+<li><b>Enforcer.</b> Rows compiled into boundaries, and the barrier column saying, honestly, which ones still are not. <a href="hope-or-enforcement.html">Hope or enforcement</a> measured what that is worth: one agent's rules kept only by good behaviour fell from 97% to 23% as they moved into the platform.</li>
+<li><b>Decision-maker.</b> Every decision returns the row it came from, allow, deny or ask, and every ask goes to a named person, as <a href="the-human-in-the-loop.html">The human in the loop</a> argued, with the record of decisions moving the line over time.</li>
+</ul>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The round trip is a demonstration.</b> Five rows, a short generator and seven requests, run for this article; it is not a product, and real agents need their requests routed through the engine for any of it to bind.</li>
+<li><b>The session table is one agent's.</b> Counted from this session's hooks, scripts, validators and configuration on 14 October 2026; other agents will look different, and I expect most to look similar.</li>
+<li><b>The GitHub scope was not tested by trying.</b> It is how this session's access is configured; pushing to sgit.ai to prove it is exactly what the policy forbids.</li>
+<li><b>Some rows will never be code.</b> That is a feature of the method, not a gap in it: an ABP says which rows rely on a person.</li>
+<li><b>The speaker is not named.</b> I took the idea from a talk and have not checked how they would put it.</li>
+</ul>
+<p>If you have policies in code, spreadsheets or paper and want to see the agent behaviour policy they imply, or the code an ABP implies, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 14 October 2026, from an event where a speaker described policy as code as a way to scale governance and AI innovation; written by this site's agent in the voice of this site, and the argument and the editorial responsibility are mine. The round trip was run for this article with Open Policy Agent 1.21.2: a JSON file of five rows from this session's policy, a generator written for the purpose, <code>opa check</code>, <code>opa eval</code> on seven requests and <code>opa parse</code> to read it back. The session table is from this session's own policy (v0.3, eleven rules), its hooks, its leak scan, sgit.ai's validator and policy check, and its git configuration. OPA's description is from its <a href="https://www.openpolicyagent.org/docs/philosophy">philosophy page</a>, read on 14 October 2026.</p>
+<sg-meter view="page" kind="article" date="2026-10-14" topics="agents-and-policy graphs-and-knowledge" title="Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Graphs &amp; knowledge</span> <a href="graphs.html#policy-as-code-needs-a-policy-first">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="the-policy-draws-the-liability-line.html">The policy draws the liability line: an answer to Ralf Thomas on agent accountability, and why every agent in a loop should take a behaviour policy beside its prompt</a> <span class="dim">An answer to Ralf Thomas: the shell game works because nothing is written down, and a behaviour policy's explicit prohibitions move the liability line.</span></li><li><a href="re-anchoring-agent-behaviour-policies.html">Re-anchoring: keeping an agent's rules alive through every summary, and a canary that shows when they are not</a> <span class="dim">Summaries keep under 2% of a long session. Re-anchoring prints the agent's rules back after each one; a canary report shows it is working.</span></li><li><a href="ai-baseline-control-framework.html">An open AI governance framework, and what its licence let us build</a> <span class="dim">Twenty open AI governance controls under CC BY-SA, why the licence matters, and the same day's conversion into a graph, a database and a walk down to EU law.</span></li><li><a href="four-frameworks-one-agent.html">Four frameworks, one agent: iason's comparison of the OECD classification, the NIST AI RMF, Japan's guidelines and the EU AI Act, read against what runs here, with the evidence and the graphs</a> <span class="dim">iason's comparison of four AI risk frameworks, mapped to the behaviour policy, the footprint and the graphs that run here, with the status of each row.</span></li><li><a href="introducing-fractal-semantic-graphs.html">Fractal Semantic Graphs: everything connects to everything, and nobody has to share a schema</a> <span class="dim">A fractal semantic graph has no privileged level and no single schema: each world keeps its own vocabulary and connects to others through named edges.</span></li><li><a href="the-behaviour-policy-is-the-business-logic.html">Zoom into an agent's behaviour policy and you find the business logic</a> <span class="dim">Below the first rules, an agent's behaviour policy is the business: functions, processes, clients, values. Layered, owned, counted, and where vendors plug in.</span></li><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li><li><a href="the-human-in-the-loop.html">The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why</a> <span class="dim">Checking every output is a bottleneck and a weak safety net; put the person where it cannot be undone, and let controls do the rest.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-briefing-for-the-ciso-summit.html">A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next</a> <span class="dim">A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.</span></li><li><a href="a-trusted-framework-for-agentic-finance.html">A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in</a> <span class="dim">The FCA plans a framework for agentic finance. Our open behaviour policies cover its four elements; a vault shows six bank agents at play.</span></li><li><a href="governs-enforces-attests.html">Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</a> <span class="dim">An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.</span></li><li><a href="cedar-and-the-policy-vault.html">Cedar and the policy vault: a debrief on the policy language agents are adopting, where our behaviour policies and sgit vaults meet it, and a brief for the MVP</a> <span class="dim">Cedar is mature and adopted; it lacks the why, the version in force and the evidence. A vault carries all three, and the demo shows it working.</span></li><li><a href="commanders-intent-is-a-behaviour-policy.html">Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested</a> <span class="dim">Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.</span></li><li><a href="skill-behaviour-policy.html">A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills</a> <span class="dim">A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.</span></li><li><a href="system-prompts-as-behaviour-policies.html">System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce</a> <span class="dim">Claude's published system prompt as 82 policy rows in eight kinds: 36 could be held by the harness, 21 partly by classifiers, 25 stay with the model.</span></li><li><a href="are-hooks-the-sweet-spot.html">Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine</a> <span class="dim">One agent's eleven rules, moved from the prompt into hooks and tested: four fully, two mostly, three partly, two not at all, and a gap in the leak scan.</span></li><li><a href="knowledge-that-maintains-itself.html">Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief</a> <span class="dim">Fractal semantic graphs for policies and internal knowledge: brief people and agents from the graph, maintain it in a loop, carry the brief in a vault.</span></li><li><a href="a-policy-for-every-skill.html">A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less</a> <span class="dim">Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 110 &middot; <a href="../for/make.html#r=110">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/policy-as-code-needs-a-policy-first.jpg" download>policy-as-code-needs-a-policy-first.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="policy-as-code-needs-a-policy-first.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

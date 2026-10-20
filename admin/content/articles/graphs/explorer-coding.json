@@ -1,0 +1,44 @@
+{
+ "slug": "explorer-coding",
+ "teaser": "Call it explorer coding, not vibe coding: the best thing since the spreadsheet, the best brief there is, and not ready to be in line until villagers take it.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "What is called vibe coding is explorers at work, in Wardley's sense: everyone with a need can now build with the fast feedback loop that made spreadsheets win, and what they build is the best brief there is; but it is not ready to be in line, so villagers maintain it with policies, data handling and safe releases, and town planners own and answer for the code, with fewer agents in line and more deterministic code towards commodity; products should offer an explorer version, with paid conversions to villager and town planner products.",
+ "nodes": [
+  {"id": "vibe", "label": "Vibe coding, the word", "kind": "concept", "summary": "Karpathy, February 2025; it hides what is happening."},
+  {"id": "explorer", "label": "Explorer coding", "kind": "claim", "summary": "The better name, from Wardley's explorers."},
+  {"id": "exploratory", "label": "Exploratory programming", "kind": "concept", "summary": "The research ancestor of the term."},
+  {"id": "spreadsheet", "label": "Since the spreadsheet", "kind": "claim", "summary": "A fast feedback loop for anything, for everyone."},
+  {"id": "hr", "label": "When can I start?", "kind": "example", "summary": "An HR conversation this week."},
+  {"id": "brief", "label": "The best brief there is", "kind": "artefact", "summary": "A working app says what its user wants."},
+  {"id": "inline", "label": "Not ready to be in line", "kind": "claim", "summary": "Once people depend on it, it is mission critical."},
+  {"id": "villagers", "label": "Villagers maintain it", "kind": "method", "summary": "Policies, data, tests, releases that do not break it."},
+  {"id": "planners", "label": "Town planners own it", "kind": "method", "summary": "Accountable for the code in production."},
+  {"id": "accountable", "label": "Whoever ships is accountable", "kind": "example", "summary": "Linux kernel and Fedora rules on AI-assisted code."},
+  {"id": "deterministic", "label": "Fewer agents in line", "kind": "concept", "summary": "Towards commodity, more deterministic code."},
+  {"id": "versions", "label": "An explorer version of every product", "kind": "method", "summary": "Paid conversions to villager and town planner products."}
+ ],
+ "edges": [
+  {"from": "explorer", "to": "vibe", "rel": "contrasts"},
+  {"from": "explorer", "to": "exploratory", "rel": "extends"},
+  {"from": "explorer", "to": "spreadsheet", "rel": "compared-with"},
+  {"from": "hr", "to": "spreadsheet", "rel": "example-of"},
+  {"from": "explorer", "to": "brief", "rel": "produces"},
+  {"from": "brief", "to": "inline", "rel": "leads-to"},
+  {"from": "inline", "to": "villagers", "rel": "leads-to"},
+  {"from": "villagers", "to": "planners", "rel": "leads-to"},
+  {"from": "accountable", "to": "planners", "rel": "example-of"},
+  {"from": "planners", "to": "deterministic", "rel": "depends-on"},
+  {"from": "versions", "to": "villagers", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-citizen-developer", "software-vendors-as-villagers", "a-custom-firefox-of-my-own", "saas-apocalypse-decided-by-inertia-not-by-ai", "if-somebody-built-a-company-on-code-review"],
+  "pages": [],
+  "sites": ["https://blog.gardeviance.org/2023/12/how-to-organise-yourself-dangerous-path.html", "https://docs.kernel.org/process/coding-assistants.html", "https://en.wikipedia.org/wiki/Vibe_coding"]
+ },
+ "quotes": [
+  {"text": "Amazing! When can I start?", "why": "What explorer coding means to someone in HR."},
+  {"text": "A working app says what its user wants better than any document, because it runs.", "why": "Why it is the best brief."},
+  {"text": "Once something gets used, it is mission critical, because people depend on it", "why": "Why the handover matters."},
+  {"text": "The contributor is always the author and is fully accountable for their contributions.", "why": "Fedora on accountability."}
+ ]
+}

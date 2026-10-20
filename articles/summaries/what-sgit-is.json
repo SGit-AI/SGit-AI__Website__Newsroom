@@ -1,0 +1,62 @@
+{
+ "slug": "what-sgit-is",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 194,
+   "line": "sgit is git for files too sensitive for GitHub",
+   "para": "Risk registers, contested regulatory analyses, agent memory and NDA material all need git's history, branches and shareable links, yet cannot go to GitHub, so they end up in shared drives and lose their history. sgit encrypts them before they leave your machine, versions them like git, and stores them on a server that cannot read them.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "The part that is easy to say and hard to build",
+   "words": 192,
+   "line": "One vault key addresses, authorises and decrypts everything",
+   "para": "The server holds only ciphertext: no filenames, structure or commit messages, and no escrow or recovery. The vault key, passphrase plus vault id, is address, write authorisation and decryption key at once, so losing it loses the data. A one-way read key is safe to publish, and a release tripwire ensures no vault key ever is.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "Ten seconds of proof",
+   "words": 129,
+   "line": "A read key opens it; the host sees ciphertext",
+   "para": "The read key is the whole credential, with no account or login, while the host sees only content-addressed ciphertext it can deduplicate, cache and serve from a CDN without knowing what it is. Underneath is real version control: multi-parent commits, per-directory trees, HMAC-derived refs, merge-base computation and three-way merge.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "Nineteen vaults you can open right now",
+   "words": 72,
+   "line": "Nineteen live vaults open from their published read keys",
+   "para": "Every vault on sgit.ai is live, and the screenshots show real vaults opened with their published keys. They range from a photo library to Regulation (EU) 2024/1689 parsed into 1,523 nodes and 1,944 edges. Before writing, all nineteen were cloned from their keys: 1,389 files, no failures.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "The part that surprises people",
+   "words": 94,
+   "line": "Apps inside a vault run without holding a key",
+   "para": "A vault can contain an application that runs against it with no credential. With \"permissions\": {}, the app requests no filesystem access, yet renders the whole risk graph because the host reads the vault and passes results in. This is capability without credential, with the blast radius set by a readable config file.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "Why there is a network of sites",
+   "words": 192,
+   "line": "Nineteen sites each take one sgit question further",
+   "para": "sgit.ai is one of nineteen *.sgit.ai sites, including graphs, risks, llms, issues-fs, open-source and sg-sentinel, which marks itself NOT BUILT. The directory starts from the reader's question. Each site publishes its argument before the thing exists and states what has shipped, preferring to be checkable rather than impressive.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "Try it",
+   "words": 146,
+   "line": "Install sgit-ai and clone the EU AI Act vault",
+   "para": "One pip install and a clone with a public read key put the EU AI Act vault's 207 files on disk in under a minute, with no account; every vault also opens in a browser. sgit is beta, Apache-2.0 and pure Python, and the site itself is served from a vault released 59 times, every release logged.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "slug": "hooks-are-kernel-code",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 253,
+   "line": "Agent hooks are small code with kernel reach",
+   "para": "Hooks run on every matching action with the user's permissions and can see, block or rewrite what the agent does, so they should be treated like kernel code. At 4 to 26 lines they are a good code review case study. A five-level maturity model, ten mapped hooks and a brief for a hooks site and feed follow.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 162,
+   "line": "Treat hooks like kernel code, mapped and signed",
+   "para": "Hooks are small but critical, ranging from five-line scripts to agents running agents, and small enough to apply review, graphs and blast radius completely. A maturity model has five levels and three questions: power, the lethal trifecta and the sandbox. A proposed site and feed would manage them, where installs are free and paying buys state.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "kernel",
+   "label": "Kernel code",
+   "words": 201,
+   "line": "Hooks sit where the kernel sits; manage them so",
+   "para": "The harness calls a hook on every matching event, before and after tool calls and at prompts and stops, with the user's permissions and the power to block, ask or rewrite. That is the kernel's position. Hooks should be minimal, multiply reviewed, versioned, tested on fixed inputs, signed, installed where agents cannot write, and their deployment mapped.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "case-study",
+   "label": "A good case study",
+   "words": 273,
+   "line": "A five-line hook's whole graph fits one page",
+   "para": "A hook's full graph, from intent to every line it calls, fits on one page, unlike a large codebase. The session's three hooks are 9, 14 and 26 lines in one 216-line file; five sandbox hooks are 4 to 17 lines. Two proposed: an integrity hook checking signed hashes at start, and a read-only, network-free security review agent.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "fractal",
+   "label": "Hooks of hooks",
+   "words": 243,
+   "line": "A hook's real size includes everything it calls",
+   "para": "The eleven-line commit hook runs a 37-line leak scan, which let a GitHub token shape through because its patterns suited only this site's secrets. Hooks call scripts, configuration, models or agents, so each needs a graph of intent, event, calls, reads and decisions. Blast radius then becomes a walk: one scan pattern reaches every session's commit gate.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "maturity",
+   "label": "A maturity model",
+   "words": 356,
+   "line": "Less deterministic hooks should be able to reach less",
+   "para": "Five levels: L0 in the prompt, L1 a model decides, L2 a deterministic script, L3 managed, tested, signed and failing closed, L4 off the machine. Each hook also answers how much power it has, which lethal trifecta legs it touches and what sandbox it runs in. All ten hooks are L2 or proposed; none is L3.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "where",
+   "label": "Where hooks run",
+   "words": 90,
+   "line": "Isolated agent environments could host hook tests and agents",
+   "para": "Hooks need somewhere to run besides the developer's machine. Isolated environments like those Chainguard now ships for agents, producing a signed record of every run, suit hook tests and can keep a network-free agent hook offline. Whether hooks can run there, and with what attestation, is part of the site's research.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "site",
+   "label": "A site and a feed",
+   "words": 164,
+   "line": "A site and feed should manage hooks like skills",
+   "para": "Like a skills manager, the proposed site lists every hook from its intent, the behaviour policy row it serves, with its graph, fixtures, version, hash and signature. One JSON feed readable by people, agents and installers records fields such as event, matcher, lines, calls, power, level, trifecta, network, fixtures with known gaps, and status.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "billing",
+   "label": "Pay for state, never to run",
+   "words": 189,
+   "line": "Running hooks is free; paying buys the stored state",
+   "para": "Following the reading meter principle that nobody is forced to pay, installing and running hooks is free and works offline. Reporting usage turns each decision into a record, and paying buys decision history, alerts, footprint against policy, signed attestations of which versions ran, and managed updates. Without reporting, nothing is tracked.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "brief",
+   "label": "The brief",
+   "words": 325,
+   "line": "Build brief: ten hooks as signed, graphed, tested code",
+   "para": "Written by @newsroom.writer on 14 October 2026, the brief asks for a repository of the ten hooks with fixtures, a record and graph per hook, blast radius on every change, kernel-style signed releases, a feed and site, managed installs reaching L3, opt-in billing and research. No hook ships without fixtures, and usage records carry decisions only.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 109,
+   "line": "Nothing in the brief is built yet",
+   "para": "The site, feed, graphs and billing are proposals; of the ten hooks, three are in use, five tested on fixed inputs and two proposed, none at L3. Line counts are non-blank code lines. The maturity model is a proposal others might draw differently, and the voice memo was cut short before it finished.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 65,
+   "line": "From Dinis Cruz's memo and Claude Code's hooks reference",
+   "para": "A voice memo by Dinis Cruz on 14 October 2026, written up by the site's writer agent, with the argument and editorial responsibility his. The hooks were written and counted in the session, the handler types come from Anthropic's Claude Code hooks reference, and the billing principle from the reading meter articles.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

@@ -1,0 +1,1622 @@
+{
+ "what": "The map of every brief published on newsroom.sgit.ai about the site itself, and whether it is built. One entry per thing to build, with its sources, its status from the code and the releases, what remains, and a session brief an agent can start from. admin/build/briefs.py publishes it at /briefs/. Change an entry's status in the release that ships it. First audited 18 October 2026 by newsroom.writer, from the code, admin/engineering, the notes and the releases.",
+ "audited": "2026-10-18",
+ "briefs": [
+  {
+   "id": "persona-links-and-vault",
+   "title": "Personas from a vault: follow, fork, keeper, private links",
+   "source": [
+    "a-link-to-a-persona",
+    "admin/notes/2026-10-10__newsroom-move-and-content-audit.md (v0.7.0 section)"
+   ],
+   "date": "2026-10-10",
+   "status": "partly",
+   "asked": "Persona links (/persona/<id>/, /persona/#<id>, private /persona/#v=&k=&p=) whose personas live in an sgit vault kept by a newsroom keeper role; opening adds a visitor persona the reader can Follow, Make it mine (fork) or Remove.",
+   "built": "Step 2 only, without a vault: persona/index.html, persona/<founder|journalist|security|builder|board>/, persona/links.json, written by admin/build/personas.py from the meter config (v0.7.0, 11 Oct); the persona is added as a visitor via the meter. shipped/index.html lists 'Personas in a vault' as designed, not built.",
+   "remaining": [
+    "Persona vault with personas/index.json, <id>.json and changes.jsonl, read key published, site copy as fallback",
+    "persona pages read the vault in the browser (vault-docs style reader), showing keeper and updated date",
+    "Follow (refresh from vault), Make it mine (fork), Remove in the meter/pane",
+    "Persona keeper role with a behaviour policy in newsroom/roles/",
+    "Private persona fragment v/k/p with a plain statement of origin and a mark for non-newsroom vaults",
+    "Outside reading carried by a persona"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: move the five starting personas into an sgit vault and let a reader follow or fork one. Read first: admin/content/articles of sgit.ai a-link-to-a-persona.md (sections 'The vault' and 'How to build it'), admin/build/personas.py, persona/index.html, the meter config in any article page (sg-meter-config personas.presets), assets/newsroom-vault.js and wire/vault-reader.js for how this site opens a vault with a published read key. First deliverable: a persona vault (personas/index.json, one file per persona, changes.jsonl) published with a read key recorded in admin/content/vaults/, and persona/ pages that read it with the built-in presets as fallback. Then Follow/Fork/Remove. Done when a new admin/build/test_personas.mjs shows: a persona page renders from the vault mock (admin/build/vault-mock.mjs), falls back when the vault is unreachable, a followed persona picks up a changed vault file, a forked one does not, and a private v/k/p link opens and is labelled with its origin. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "reading-list-in-a-link",
+   "title": "Reading lists in a link (/for/) and article numbers",
+   "source": [
+    "a-reading-list-in-a-link",
+    "admin/notes/2026-10-10__newsroom-move-and-content-audit.md (v0.8.0 section)",
+    "admin/notes/2026-10-11__newsroom-api-map-and-review.md (R9, R17)"
+   ],
+   "date": "2026-10-11",
+   "status": "partly",
+   "asked": "A stable number for every article (articles/ids.json with a build gate), /for/ that opens a list from the URL fragment as a visitor persona with an optional Reply mailto, /for/make.html to make one, parser tests and a synthetic recipient test.",
+   "built": "articles/ids.json + admin/build/ids.py with gate check 12; for/index.html, for/reading-list.js, for/make.html, for/make.js; admin/build/test_lists.mjs in CI (v0.8.0, 11 Oct). Number printed at the foot of each article.",
+   "remaining": [
+    "Synthetic recipient run (founder on phone and laptop) as the brief's acceptance asks",
+    "renamed_to on a withdrawn number when a slug changes (finding R9)",
+    "longer list key than the 32-bit hash (finding R17)",
+    "Signed lists (needs reader-signing-keys)",
+    "Paying for someone else's reading"
+   ],
+   "area": "reader-features",
+   "depends_on": [
+    "reader-signing-keys"
+   ],
+   "session_brief": "Goal: close the reading-list brief's open acceptance items. Read first: sgit.ai article a-reading-list-in-a-link.md (Part one), admin/notes/2026-10-11__newsroom-api-map-and-review.md findings R9 and R17, for/reading-list.js, admin/build/ids.py, admin/build/test_lists.mjs, and the synthetic-users method (how-to-run-synthetic-users). First deliverable: renamed_to support in ids.py and the list page (a renamed article's old number opens the new slug), plus a longer list key, both pinned in test_lists.mjs. Second: one synthetic recipient run recorded as a note in admin/notes/. Signed lists and sender-pays wait for reader-signing-keys. Done when test_lists.mjs covers a renamed slug and the hash collision fix, and the synthetic run's findings are filed as cards. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "agent-pack",
+   "title": "A pack for the reader's agent, onboarding packs, changes.json and an agent's door",
+   "source": [
+    "brief-the-agent-too",
+    "the-agent-is-the-reader (What comes next 2)"
+   ],
+   "date": "2026-10-11",
+   "status": "not built",
+   "asked": "A 'For your agent' button on /for/ that produces the same list as a plain-text/markdown pack (who it is for, numbers, markdown twins and graphs, reasons, reading rules, where to continue); curated onboarding packs; articles/changes.json listing new articles, versions and corrections per release; later a per-persona page telling an agent how to navigate the graph with token costs.",
+   "built": "Nothing of the pack: for/*.js has no pack code, articles/changes.json does not exist. The ingredients exist: llms.txt, llms-full.txt, a markdown twin per article, articles/graphs/<slug>.json, articles/ids.json, articles/versions/.",
+   "remaining": [
+    "'For your agent' button on /for/ generating the pack in the browser (copy / save .md)",
+    "Onboarding packs (human page + agent pack) for 3-4 starting topics",
+    "articles/changes.json generated each release from versions and corrections",
+    "Per-persona agent door with concept index, edge list, token cost headers",
+    "Safety rules from the brief (data not instructions, nothing hidden, no actions) in every pack"
+   ],
+   "area": "reader-features",
+   "depends_on": [
+    "reading-list-in-a-link"
+   ],
+   "session_brief": "Goal: give every reading list an agent-readable twin and publish a per-release delta. Read first: sgit.ai articles brief-the-agent-too.md ('What a pack looks like', 'Writing to someone else's agent, safely', 'What to build next') and the-agent-is-the-reader.md ('What comes next'), for/reading-list.js and for/make.js, llms.txt, articles/versions/. First deliverable: a 'For your agent' button on for/index.html that builds the pack text from the fragment and articles/ids.json, plus admin/build step writing articles/changes.json (new articles, new versions with one-line summary, corrections) named in llms.txt. Done when test_lists.mjs asserts the pack for the brief's example link contains each article's number, markdown URL, graph URL and the safety preamble, and the validator checks changes.json lists the release's new articles. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "inbox-decisions",
+   "title": "One-tap decisions at every piece (the inbox mode), incl. read now, comment, move to a persona, front page",
+   "source": [
+    "the-site-is-an-inbox (item 1)",
+    "two-agents-one-vault (the morning read)",
+    "admin/notes/2026-10-12__what-the-new-articles-ask.md",
+    "admin/notes/2026-10-12__the-feedback-loop.md",
+    "card 013",
+    "card 017"
+   ],
+   "date": "2026-10-12",
+   "status": "partly",
+   "asked": "Seven one-tap decisions at each piece (read now, read later, not for me, more like this, less like this, comment, move to a persona), recorded as records, carried by the vault, clearing the piece from the inbox; on the wire first, then the front page.",
+   "built": "assets/vault-pane/notes.js KINDS: done, read later, follow up, not for me, more like this (decisions) plus liked, wrong, fix this, idea, at every page and wire story (v0.12.0, Done added v0.12.1 card 004); Reading tab with done pages folded (006); wire stories fold when decided (v0.12.6, cards 023/024). The front page's Your desk view reads decisions as statuses (assets/front/front.js, v0.12.60).",
+   "remaining": [
+    "Read now, less like this, comment as a decision",
+    "Move to a persona (card 013, open)",
+    "Decision row on front-page cards (card 017, blocked on 'front page is imported', which is stale since admin/build/front.py writes it in v0.12.60)"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: finish the decision set and bring it to the front page. Read first: sgit.ai article the-site-is-an-inbox.md ('What to build, in order'), admin/notes/2026-10-12__the-feedback-loop.md ('What is not built'), cards open/013 and blocked/017, assets/vault-pane/notes.js, assets/front/front.js and admin/build/front.py. First deliverable: unblock 017 (move it to open with a note that front.py now owns the markup) and render the decision chips on Broadsheet and Briefing cards, a decided piece folding as on the wire. Then 'Move to a persona' (a note of kind persona carrying the target persona id, Reading tab filterable by persona) and 'less like this'. Done when test_front.mjs taps a decision on a front card and sees it folded and recorded in notes, and test_notes.mjs covers the persona kind round-tripping through sync.js extract/consolidate. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "pane-about-the-piece",
+   "title": "The pane about the piece: article graph, marks, decisions and cost",
+   "source": [
+    "the-site-is-an-inbox (item 2)",
+    "admin/notes/2026-10-12__what-the-new-articles-ask.md (order 2)",
+    "card 016"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "On an article, a Piece tab in the right-hand pane showing the article's graph drawn from articles/graphs/<slug>.json, the reader's marks and decisions on it and what it cost so far; the vault and meter move to their own tabs.",
+   "built": "Nothing of it. The pane has tabs (This page, Reading, Vault, Keys, Calls; assets/vault-pane/vault-pane.js) and the inputs exist: article graphs JSON, cytoscape vendored, the meter log. Card 016 is open; shipped/index.html lists it as designed.",
+   "remaining": [
+    "Piece tab on article pages",
+    "Graph drawn (cytoscape) with nodes the reader marked highlighted",
+    "This page's decisions, marks and cost listed",
+    "Phone: pane as a bottom sheet"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: make the pane about the article in front of the reader. Read first: card open/016, sgit.ai the-site-is-an-inbox.md (item 2), admin/notes/2026-10-12__what-the-new-articles-ask.md, assets/vault-pane/vault-pane.js (tab structure), assets/vault-pane/notes.js, articles/graphs/<slug>.json shape, assets/vendor/cytoscape.min.js and wire/graphs.js for how graphs are drawn here. First deliverable: a Piece tab, shown only on /articles/*.html, drawing the article's graph and listing this page's notes and the meter's cost for the page. Done when a new check in test_pane.mjs opens an article, opens the Piece tab, finds the graph's node count equal to the JSON's, sees a note kept on the page listed, and the tab is absent on non-article pages; nothing overflows at 390px. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "reading-modes",
+   "title": "Ways to read one article: modes row, default per persona, what is new, model modes",
+   "source": [
+    "ways-to-read-one-article",
+    "one-article-five-readers (What it looks like on the page)",
+    "your-reading-your-controls (limits)",
+    "admin/notes/2026-10-12__what-the-new-articles-ask.md"
+   ],
+   "date": "2026-10-12",
+   "status": "partly",
+   "asked": "A row of modes in the pane (headlines, infographic, two minutes, slides, what is new, facts, relationships, vocabulary, whole) with one tap to switch; default per persona; the mode in the address; 'what is new' from the Historian's arc and the reader's records; phone sheet; newsletter cut; model modes via the Prompt API; a figure per reader; an experiment per mode.",
+   "built": "A line and a paragraph for every section of every article (articles/summaries/, admin/build/summaries.py, card 083, v0.12.99); six ways to show sections already read (assets/reader/folds.js, card 082); the five readers' views for 5 articles (articles/views/, imported).",
+   "remaining": [
+    "Modes row (needs pane-about-the-piece)",
+    "Headlines / facts / relationships / vocabulary / infographic computed for every article",
+    "Default mode per persona; ?mode= in the address",
+    "What is new against the reader's records",
+    "Phone bottom sheet",
+    "Model modes through Chrome's Prompt API",
+    "Figure drawn for this reader",
+    "Picture in place of a folded section",
+    "Experiment per mode"
+   ],
+   "area": "reader-features",
+   "depends_on": [
+    "pane-about-the-piece"
+   ],
+   "session_brief": "Goal: computed reading modes for every article, switchable in one tap and linkable. Read first: sgit.ai ways-to-read-one-article.md ('The modes', 'The brief'), admin/notes/2026-10-12__what-the-new-articles-ask.md (table of modes and their inputs), assets/reader/folds.js, articles/summaries/<slug>.json, articles/graphs/<slug>.json, articles/views/. First deliverable: Headlines (title, In short, one line per section from summaries) and Facts/Relationships (from the graph) as modes switchable from the pane and via ?mode=headlines, the whole article always one tap away. Done when test_reading.mjs opens /articles/<slug>.html?mode=headlines and finds one line per h2 section, switches back to whole, and a mode with no data says so and offers the nearest. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "marks-and-highlights",
+   "title": "Marks with kinds on a phrase, and highlights that travel to the vault and lane",
+   "source": [
+    "the-site-is-an-inbox (item 3)",
+    "scrolled-is-not-read (plan 1)",
+    "admin/notes/2026-10-13__design-lab-review.md (item 4)",
+    "card 014",
+    "card 076"
+   ],
+   "date": "2026-10-12",
+   "status": "partly",
+   "asked": "Select a phrase, choose a kind (interesting, great phrase, not sure, fact, evidence, question, or the reader's own), kept as a record with article, version and persona, visible in the pane and linked to the graph node; highlights become a note kind so they reach the vault and, when sent, the newsroom's lane.",
+   "built": "Highlights: select and tap, kept in the browser, drawn with the CSS Custom Highlight API (assets/reader/highlights.js, card 074, v0.12.85); a note keeps the selected phrase as its quote (notes.js).",
+   "remaining": [
+    "Mark kinds and a custom kind",
+    "Highlight as a note kind carried by sync.js and sendable down the lane",
+    "Article version on the mark",
+    "Link from phrase to graph node (with pane-about-the-piece)"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: one record type for marks and highlights that travels. Read first: card open/014, card open/076 item 1, assets/reader/highlights.js, assets/vault-pane/notes.js and sync.js, sgit.ai the-site-is-an-inbox.md ('Marks, and the reader's own graph'). First deliverable: highlights stored as notes of kind 'mark' with {quote, context, kind, n, version}, migrated from highlights' current storage, shown in This page, carried by extract/consolidate. Done when test_reading.mjs makes a highlight with kind 'evidence', test_sync.mjs sees it in a device file and back on a second device, and the published page markup is unchanged. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "what-you-read",
+   "title": "What you read, for real: statuses from reading, the account by article, signals, records in the vault",
+   "source": [
+    "scrolled-is-not-read (plan 2, 3, 8)",
+    "your-reading-your-controls (limits)",
+    "the-site-is-an-inbox (item 4, free signals)",
+    "card 076"
+   ],
+   "date": "2026-10-12",
+   "status": "partly",
+   "asked": "Use the two measures: a pick is Done when read and Skimmed is a status on Your desk; an account page listing each article with scrolled, read, verdict and highlights; the free signals (depth, awake time, from and to); a summary of reading records carried in the vault.",
+   "built": "Per-section scrolled and read (active time) kept in sgit.reading.v1 by assets/reader/strip.js (v0.12.85), which covers the 'awake time' signal. Your desk statuses still use depth >= 0.9 (assets/front/front.js line ~67).",
+   "remaining": [
+    "Your desk: Done when read, Skimmed status",
+    "Account page by article with verdicts and a highlights filter (the prototype in the article)",
+    "From/to signals (where a reader came from and went next)",
+    "Reading-record summary per page in the device file (sync.js)"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: turn the reading records into what the reader sees and carries. Read first: admin/content/articles/scrolled-is-not-read.md ('Three prototypes', 'The plan'), card open/076, assets/reader/strip.js (record shape), assets/front/front.js (status logic), account/index.html, assets/vault-pane/sync.js. First deliverable: a 'What you read' section on the account page built only from sgit.reading.v1 and the highlights store, with verdicts read / part read / skimmed / started. Second: front.js statuses from the read measure. Third: a per-page summary in extract(). Done when test_reading.mjs seeds a skimmed and a read article and sees the right verdicts and the Your desk statuses, and test_sync.mjs carries the summary. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "forward-links",
+   "title": "Forward links: what came next, corrected by, status since, cited by",
+   "source": [
+    "every-link-points-back"
+   ],
+   "date": "2026-10-13",
+   "status": "partly",
+   "asked": "For every article: 'What came next' at the top, a stronger 'Corrected by', a dated 'Status since' note, and 'Cited by' at the foot; cross-article links typed continues/corrects/cites so a validator can warn when a correction is not acknowledged.",
+   "built": "'What came next' notes added by hand to 8 article sources (v0.12.24 onward); the derived Threads list with 'Continued by' at the foot.",
+   "remaining": [
+    "Front matter fields (e.g. next/corrected_by/status_since) rendered at the top by the build",
+    "Typed relations on cross-article links",
+    "Validator warning for unacknowledged corrections",
+    "Backfill from the newest articles down"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: make forward links data, not hand-written lines. Read first: admin/content/articles/every-link-points-back.md ('Four kinds of forward link'), admin/build/publish.py and admin/build/md.py, admin/build/validate.js, and the eight articles with a 'What came next' note (grep -l 'What came next' admin/content/articles/*.md). First deliverable: front-matter fields corrected_by and status_since rendered as notes at the top of the article page, plus a validator rule. Done when the validator fails on a fixture where article B says it corrects A and A has no corrected_by, and the three existing chain notes render from front matter unchanged. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "front-page-own-data",
+   "title": "The front page from the newsroom's own data, in three views",
+   "source": [
+    "admin/notes/2026-10-13__design-lab-review.md",
+    "cards 063, 064, 065, 066"
+   ],
+   "date": "2026-10-13",
+   "status": "built",
+   "asked": "Take the Design Lab's data (desks, tags, series, formats), words (purpose, masthead, persona stories) and decide a direction before porting a layout.",
+   "built": "admin/build/front.py writes index.html in Broadsheet, Briefing and Your desk views with ?view= (v0.12.60); desks/, articles/find.json; about/index.html; masthead 'Pay for what you read.'; admin/content/front/personas/*.json; test_front.mjs.",
+   "remaining": [],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "design-lab-leftovers",
+   "title": "Design Lab leftovers: 404 page, escaping template, the board, feedback wording",
+   "source": [
+    "admin/notes/2026-10-13__design-lab-review.md (items 3, 4, 6)"
+   ],
+   "date": "2026-10-13",
+   "status": "partly",
+   "asked": "A 404.html with search and the doors; a label on the balance chip; the four-column board with keyboard and swipe and the feedback block's consent and receipt wording as patterns; adopt nr-html.js (escaping template) as a shared primitive.",
+   "built": "Highlights (item 4) shipped as card 074; the chip was redesigned in v0.12.85.",
+   "remaining": [
+    "404.html with search and the doors",
+    "nr-html.js escaping template adopted by wire.js, vault-pane.js, search.js",
+    "Four-column board with keyboard and swipe",
+    "Consent and receipt wording in the feedback block"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: take the small remaining items from the Design Lab review. Read first: admin/notes/2026-10-13__design-lab-review.md ('What to take, in order' and 'Where the material is' for vault links), assets/wire/... renderers (wire/wire.js, assets/vault-pane/vault-pane.js, assets/search/search.js). First deliverable: a 404.html with the site chrome, a search box and the main doors, checked by validate.js. Second: a shared escaping helper adopted in one renderer with tests. Done when GitHub Pages serves the 404 for an unknown path (check live) and the chosen renderer's tests pass with markup-in-data fixtures. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "reading-measures-and-controls",
+   "title": "Scrolled is not read: two measures, the chip, charging by what is read, reader controls",
+   "source": [
+    "scrolled-is-not-read",
+    "your-reading-your-controls",
+    "cards 073, 074, 080, 081, 082, 083"
+   ],
+   "date": "2026-10-16",
+   "status": "built",
+   "asked": "Measure scrolled and read per section, a chip that holds still, highlights, then charge for what is read, with pause, reset and sections marked by hand, and read sections shown several ways.",
+   "built": "assets/reader/strip.js, strip.css, highlights.js, folds.js; sg-meter v1.5.0 at assets/components/sg-meter/v1/v1.5/v1.5.0/; releases v0.12.85 (073-075), v0.12.99 (080-083), v0.12.100 (081 fix); admin/build/test_reading.mjs and test_meter.mjs in CI. The billing decision was taken: charge by read.",
+   "remaining": [],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "links-more-and-how-this-connects",
+   "title": "Links: more, and How this connects",
+   "source": [
+    "scrolled-is-not-read (prototypes, plan 7)",
+    "card 076"
+   ],
+   "date": "2026-10-16",
+   "status": "not built",
+   "asked": "A toggle that turns concepts defined in other articles' graphs and shared subjects into links with a card, and a 'How this connects' block at the foot drawing links in, links out and articles sharing two or more subjects, with text lists, drawn in the browser from published data.",
+   "built": "Only as screenshots in the article (prototypes, not on the site).",
+   "remaining": [
+    "How this connects block from articles/graphs/*.json links and articles/find.json subjects",
+    "Links: more toggle once a shared vocabulary exists"
+   ],
+   "area": "reader-features",
+   "depends_on": [
+    "shared-vocabulary"
+   ],
+   "session_brief": "Goal: show each article's neighbourhood from data already published. Read first: admin/content/articles/scrolled-is-not-read.md ('Three prototypes'), articles/graphs.json, articles/graphs/<slug>.json (links), articles/find.json (subjects), wire/graphs.js for drawing. First deliverable (independent of the vocabulary): 'How this connects' at the foot of article pages, injected client-side, with three text lists and a small graph. Done when a test opens the-tokens-hook and finds lists that match the counts computed from the JSON, and no layout shift above the foot. Links: more waits for shared-vocabulary. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "fix-the-page",
+   "title": "Fix the page yourself: the page API on every page and a library of fixes",
+   "source": [
+    "fix-the-page-yourself"
+   ],
+   "date": "2026-10-17",
+   "status": "partly",
+   "asked": "An 8-step plan: load the page API on every newsroom page and name page parts; a community library of fixes; a per-site activeTab extension; the same API on sgit.ai and ruv.sgit.ai; count kept fixes; adopt popular ones; let a model write a fix; paid personal fixes.",
+   "built": "/demos/fixes/ (admin/build/page_fixes.py) with six fixes as buttons, bookmarklets and calls; assets/page-fixes/v0/v0.1/v0.1.0/page-fixes.js + api.json exposing window.__tools.page (v0.12.93). Only the article page itself loads it; site pages do not.",
+   "remaining": [
+    "Load page-fixes.js on every page via the shared chrome and mark page parts (data attributes)",
+    "Library of fixes with versioned paths and a per-site list",
+    "activeTab extension",
+    "Count kept fixes in the reader's record",
+    "Model-written fix via the Prompt API",
+    "(Outside this repo: sgit.ai and ruv.sgit.ai)"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Goal: step 1 and 2 of the brief on this site. Read first: admin/content/articles/fix-the-page-yourself.md ('The brief'), admin/build/page_fixes.py, assets/page-fixes/v0/v0.1/v0.1.0/page-fixes.js and api.json, admin/build/chrome.py (shared chrome). First deliverable: every page loads page-fixes.js from its versioned path and marks its chrome and content regions, so Reading mode needs no guessing. Done when a Playwright test on an article, a wire page and the front page calls window.__tools.page.apply('reading', true) after tool:ready and finds only the content visible, and test_themes.mjs still passes. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "reader-vault-across-devices",
+   "title": "The reader's own encrypted vault, the same newsroom on every device",
+   "source": [
+    "i-miss-it",
+    "admin/notes/2026-10-12__the-activity-vault.md"
+   ],
+   "date": "2026-10-11",
+   "status": "built",
+   "asked": "An encrypted reader vault carrying personas, history, ratings, picks, notes and receipts between devices; one file per device, state computed, receipts counted once by reference, local copy stays primary; a line to the newsroom.",
+   "built": "Vault pane assets/vault-pane/vault-pane.js + sync.js (extract/consolidate/mergeInto/accountFile), assets/newsroom-vault.js, vault/index.html (v0.11.0); test_sync.mjs, test_pane.mjs, test_vault.mjs in CI; top-ups keyed by payment reference (topupKey in sync.js). Later additions in the open-or-connect and vault-opened entries.",
+   "remaining": [],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "L"
+  },
+  {
+   "id": "passkey-opens-the-vault",
+   "title": "The passkey MVP: doors per path, identity, add/retire doors, several passkeys",
+   "source": [
+    "the-passkey-opens-the-vault",
+    "admin/notes/2026-10-12__one-door-per-passkey-path.md",
+    "admin/notes/2026-10-12__what-the-new-articles-ask.md"
+   ],
+   "date": "2026-10-11",
+   "status": "partly",
+   "asked": "13-step MVP: passkey with PRF, the derivation, door/master/reader/recovery vaults, identity key pairs in the master, add a door with no key typed (QR path), 'no door here yet', reading account moved into the vault, the master's entries and doors shown with a lock and retire, several passkeys/masters, tests of the four runs, the report to Apple/Google.",
+   "built": "passkey/ lab (v0.8.3) with test vectors; assets/door.js; createAccount/unlock/addDoor in assets/newsroom-vault.js; the pane creates door, master, reader vault and recovery door, adds a passkey-path door when joining with the recovery code (vault-pane.js ~line 755), says 'no door here yet', lists doors in the Keys tab; test_passkey.mjs, test_pane.mjs with a virtual authenticator.",
+   "remaining": [
+    "Identity key pairs in the master (see reader-signing-keys)",
+    "Add a door from an open master to another path without the recovery code ('add your phone by QR')",
+    "Retire a door; lock button",
+    "Several passkeys -> several masters, move and retire screens",
+    "Tests repeating the four provider/path runs",
+    "Owner: report the PRF mismatch to Apple and Google"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "Goal: the remaining door operations in the pane. Read first: sgit.ai the-passkey-opens-the-vault.md ('The brief for the MVP'), admin/notes/2026-10-12__one-door-per-passkey-path.md ('The flow, written out'), assets/newsroom-vault.js (addDoor), assets/vault-pane/vault-pane.js (createAccount, joinWithCode, Keys tab), passkey/lab.js. First deliverable: 'Add another device's path' from an unlocked pane (bytes from the other path via a one-time link/QR handled in the browser), and 'Retire this door' that removes the door file and its entry in the master's list. Done when test_pane.mjs with two virtual authenticators adds a second door from an open session, opens with it, retires the first, and the first can no longer open. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "reader-signing-keys",
+   "title": "Key pairs for the reader (and personas): sign what is sent, verify on receipt",
+   "source": [
+    "i-miss-it (Connect: a key pair)",
+    "the-passkey-opens-the-vault (step 5)",
+    "the-site-is-an-inbox (items 5, 6)",
+    "sixteen-notes-i-did-not-want-to-lose (step 1)",
+    "on-the-record (step 1)",
+    "the-editors-channel (Keys, and then key pairs)"
+   ],
+   "date": "2026-10-11",
+   "status": "partly",
+   "asked": "Random signing and encryption key pairs made in the reader's browser, private halves in the master with label/purpose/date/status, public halves published; notes and lane messages signed; the inbox brief adds one pair per persona.",
+   "built": "An RSA-OAEP 3072 encryption key pair per inbox, private half in the master (assets/vault-pane/inbox.js, v0.12.26). No signing key anywhere; lane notes are unsigned (feedback-loop note).",
+   "remaining": [
+    "Signing pair generated on first unlock, stored in the master",
+    "Public key published where the newsroom can fetch it",
+    "Lane notes and inbox messages signed; drain verifies",
+    "Decide per-person vs per-persona pairs (inbox brief vs later briefs)"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [
+    "passkey-opens-the-vault"
+   ],
+   "session_brief": "Goal: a signing identity for the reader. Read first: the-passkey-opens-the-vault.md step 5 ('Never derive a key pair from the passkey'), assets/vault-pane/inbox.js (key pair creation and sealing, sgit hybrid envelope v2), admin/content/articles/the-editors-channel.md ('Keys, and then key pairs'), admin/build/lane.py. First deliverable: an ECDSA P-256 (or Ed25519 where supported) pair made at random on unlock if absent, stored in the master with metadata, the public key shown in the Keys tab; notes sent down the lane carry a signature over their canonical JSON; lane.py verifies and flags unsigned/invalid. Done when test_inbox.mjs/test_notes.mjs sign and verify a note, a tampered note fails, and lane.py's check reports it. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "add-device-by-code-and-google",
+   "title": "Add a device by a code carrying the vault key; sign-in with Google",
+   "source": [
+    "i-miss-it (3. Add a device)"
+   ],
+   "date": "2026-10-11",
+   "status": "superseded",
+   "asked": "Show a QR/text carrying the vault key and access key to add a device; later a passkey and Google sign-in for identity and recovery.",
+   "built": "Replaced by the passkey design (a door per path, recovery code; the-passkey-opens-the-vault step 13: no sign-in to the site, no OAuth) and by 'Connect with a link' (v0.12.58) and the inbox link (v0.12.26), none of which carries the vault key.",
+   "remaining": [],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "S"
+  },
+  {
+   "id": "vault-lifecycle",
+   "title": "Vault housekeeping: pruning, retiring a device, rotating the master, purge, split, unsynced state",
+   "source": [
+    "admin/notes/2026-10-12__the-activity-vault.md (not synced; experiments)",
+    "admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md (Not built)",
+    "admin/notes/2026-10-16__the-vault-opened.md (Not built)",
+    "shipped/index.html (vault pane limits)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "Prune local storage once the vault holds a record (meter reads the consolidated view), retire a device, rotate the master's key, purge processed inbox files, split a merged device back out, sync the active persona and shares; run the experiments (two real devices, a page read on two devices, ratings after merge, top-up across devices).",
+   "built": "Merge devices with aliases (card 077) is done; every other item is listed as designed, not built.",
+   "remaining": [
+    "Pruning (meter reading the consolidated view)",
+    "Retire a device",
+    "Rotate the master key",
+    "Purge processed inbox files",
+    "Split a merged device",
+    "Shares and active persona in the device file",
+    "Experiments 1-5 of the activity-vault note, written up"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [
+    "reader-vault-across-devices"
+   ],
+   "session_brief": "Goal: the vault's lifecycle operations, one at a time. Read first: admin/notes/2026-10-12__the-activity-vault.md ('What is not synced', 'The experiments to run next'), admin/notes/2026-10-16__the-vault-opened.md ('Merging, the rules'), assets/vault-pane/sync.js, assets/vault-pane/inbox.js. First deliverable: purge of processed inbox files and 'retire a device' (its file removed from the tree, an alias/tombstone in activity/aliases.json, history kept). Done when test_sync.mjs and test_vault_open.mjs cover retire and purge with the mock, totals unchanged and no record lost, and the note gets a 'What the pane gained' line. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "automatic-sync",
+   "title": "Regular or automatic sync of the reader vault",
+   "source": [
+    "card 029",
+    "admin/notes/2026-10-12__the-activity-vault.md (experiment 6)",
+    "admin/notes/2026-10-13__the-wire-as-an-inbox.md"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "A setting the reader turns on: write the device file on a timer, on leaving a page or past a threshold, with the pane saying when it last ran.",
+   "built": "Explicit Update the vault and the pending count (card 027, v0.12.6); inbound bring-in on open (v0.12.58).",
+   "remaining": [
+    "Setting, timer/visibilitychange trigger, last-run line"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "Goal: opt-in automatic sync. Read first: card open/029, assets/vault-pane/pending.js and vault-pane.js (Update the vault), the activity-vault note experiment 1 (cost per sync). First deliverable: a per-device setting (off by default) that runs the same write as Update the vault on visibilitychange to hidden when pending > 0 and at most every N minutes, showing 'last synced'. Done when test_pane.mjs turns it on, reads a page, hides the tab and sees one commit with the device file, and none when off. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "early-access-key-first",
+   "title": "The early-access key first, checked before a passkey or vault is made",
+   "source": [
+    "card 012",
+    "i-miss-it (Connect: an access key)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "On a device with no account the first thing asked is the early-access key, with a Check button that asks the vault server without creating anything; only then are passkey and account offered.",
+   "built": "The access key is asked inside createAccount (vault-pane.js) and stored in the master; no prior check.",
+   "remaining": [
+    "Check step against the server",
+    "Ordering of the Vault tab"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "Goal: key first. Read first: card open/012, assets/vault-pane/vault-pane.js (createAccount, client()), the vault API's token check used by the vault library. First deliverable: a 'Check' that calls a read-only endpoint with the key and reports valid/invalid before showing passkey creation. Done when test_pane.mjs shows an invalid key blocks the next step and a valid one (mock) unlocks it with no vault created. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "first-time-guidance",
+   "title": "Guide a first-time reader through the whole loop",
+   "source": [
+    "card 018",
+    "card 007 (three steps, done)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "From nothing to the first note sent: the loop in three lines, each step saying what it makes (passkey, three vaults, a file, a lane) and what leaves the browser, ending in the Keys tab and what was sent.",
+   "built": "The three steps with the next in bold (card 007, v0.12.1).",
+   "remaining": [
+    "Guided first run in the pane"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [
+    "early-access-key-first"
+   ],
+   "session_brief": "Goal: a first run a stranger can follow. Read first: card open/018, card done/007, assets/vault-pane/vault-pane.js, vault/index.html, admin/notes/2026-10-12__the-feedback-loop.md ('The loop, step by step'). First deliverable: a guided sequence in the pane with one screen per step and a 'what this made / what left the browser' line. Done when a synthetic first-time reader (scripted Playwright run plus the synthetic-users method) completes the loop without outside help and test_pane.mjs asserts each step's text appears in order. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "feedback-lane",
+   "title": "The feedback loop: notes kept as you read, sent down the reader's own lane; Write to the newsroom",
+   "source": [
+    "admin/notes/2026-10-12__the-feedback-loop.md",
+    "i-miss-it (A line to the agent)",
+    "the-site-is-an-inbox (item 6, unsigned part)",
+    "card 034"
+   ],
+   "date": "2026-10-12",
+   "status": "built",
+   "asked": "Notes kept at any page or wire story, carried by the vault, sent when the reader chooses down a lane whose read key the newsroom holds; a message box to write to the newsroom.",
+   "built": "assets/vault-pane/notes.js, the This page tab, the lane (v0.12.0), admin/build/lane.py, Write to the newsroom with Save and send (card 034, v0.12.8); test_notes.mjs.",
+   "remaining": [],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "no-vault-and-anonymous-feedback",
+   "title": "Feedback without a vault: the newsroom's own append lane, typed schema, anonymous checkbox",
+   "source": [
+    "card 010",
+    "the-editors-channel (Five audiences; anonymous lane)",
+    "admin/notes/2026-10-18__the-editors-channel.md (item 6)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "A reader with no vault can send notes, encrypted in the browser to the newsroom's public key, into the newsroom's append lane with a published write token and a strongly typed schema; a checkbox (off by default) sends taps anonymously with exactly {kind, path, n, quote, at}.",
+   "built": "The pattern exists for subscribe (.well-known/sgit-subscribe.json, assets/subscribe.js) and the inbox sealing (inbox.js); not for notes.",
+   "remaining": [
+    "Newsroom note lane + contact file",
+    "Schema and validation in the browser and in lane.py",
+    "Send for no-vault readers",
+    "Anonymous checkbox with exact field set",
+    "Drain treats it as untrusted data"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "Goal: let any reader send a note without a vault, and anonymous taps when they opt in. Read first: card open/010, admin/notes/2026-10-18__the-editors-channel.md item 6 and Tests, assets/subscribe.js and .well-known/sgit-subscribe.json, assets/vault-pane/inbox.js (seal), admin/build/lane.py. First deliverable: a newsroom notes lane (contact file with vault id, append token, public key, schema id), the pane's Send working without a vault, and lane.py draining and validating. Done when a test sends from a browser with no vault, the server mock holds only ciphertext, a record with extra fields is rejected, and the anonymous mode sends exactly five fields. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "screenshots-in-feedback",
+   "title": "Screenshots in feedback",
+   "source": [
+    "card 011"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "Paste or pick an image in a note, resized in the browser to <=1280px webp, shown under the note and sent with it.",
+   "built": "Nothing.",
+   "remaining": [
+    "Paste/pick, resize, store with the note, send"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "Goal: images on notes. Read first: card open/011, assets/vault-pane/notes.js and vault-pane.js (note editor), sync.js (size of device files). First deliverable: paste/pick into the note box, canvas resize to webp, stored as a separate file in the reader vault referenced from the note. Done when test_notes.mjs pastes a fixture PNG, finds a <=1280px webp attached and sent with the note. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "reply-lane",
+   "title": "Replies: the newsroom answers in the pane, down a lane the other way",
+   "source": [
+    "card 015",
+    "card 035 (blocked)",
+    "admin/notes/2026-10-12__the-feedback-loop.md",
+    "admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md",
+    "i-miss-it (The reply is the change)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "When the newsroom answers a note, the answer is written to a reply vault/lane the newsroom writes and the reader reads with a key in their master, and shown under the message in the pane.",
+   "built": "Nothing; answers come in chat or as article versions. Card 035 blocked ('none yet').",
+   "remaining": [
+    "Reply vault/lane per reader",
+    "lane.py writing replies",
+    "Pane showing replies under messages"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [
+    "reader-signing-keys"
+   ],
+   "session_brief": "Goal: close the loop from the newsroom back to the reader. Read first: cards open/015 and blocked/035, admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md (the inbox lane is the same machinery pointed the other way), admin/build/lane.py, assets/vault-pane/inbox.js. First deliverable: the reader's inbox accepts messages sealed by the newsroom (to the inbox public key), lane.py --reply <note id> writes one, and the pane shows it under the note in This page. Done when test_inbox.mjs drains a newsroom reply fixture and renders it under the right note, and a reply sealed to another key is refused. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "send-to-my-vault",
+   "title": "Send to my vault from any browser: the inbox lane, the link three ways, the drain",
+   "source": [
+    "sixteen-notes-i-did-not-want-to-lose",
+    "admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md",
+    "card 049"
+   ],
+   "date": "2026-10-13",
+   "status": "partly",
+   "asked": "A key pair, an append lane on the reader vault, a link as URL/text/QR, the sender side, the drain on unlock, tests; tokens rotatable, arrivals shown before merge, links able to expire.",
+   "built": "vault/send.html, assets/vault-pane/inbox.js, send.js, the drain and rotation in vault-pane.js (v0.12.26); test_inbox.mjs.",
+   "remaining": [
+    "Link expiry enforced (server has none; a date in the link)",
+    "A/B of the link against a pairing flow",
+    "Signatures on sent batches (reader-signing-keys)"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [
+    "reader-signing-keys"
+   ],
+   "session_brief": "Goal: the inbox's open items. Read first: admin/notes/2026-10-13__send-to-my-vault-from-any-browser.md ('Not built'), assets/vault-pane/inbox.js, vault/send.html. First deliverable: an expiry date carried in the link and enforced by send.html and by the drain (late messages listed and not merged). Done when test_inbox.mjs shows an expired link refused on both sides. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "open-connect-and-vault-opened",
+   "title": "Open or connect a vault; merge devices, the Calls tab, browse, the shared viewer",
+   "source": [
+    "admin/notes/2026-10-13__open-or-connect-a-vault.md",
+    "admin/notes/2026-10-16__the-vault-opened.md",
+    "the-vault-crosses-chrome-profiles",
+    "cards 059, 077, 078, 079"
+   ],
+   "date": "2026-10-13",
+   "status": "built",
+   "asked": "Two ways in (passkey or link), which device a browser is, what the vault holds brought in; merge devices; calls decoded; a browse page; one viewer every reader vault opens with.",
+   "built": "v0.12.58 (059) and v0.12.88 (077-079): vault/browse.html, assets/vault-pane/calls.js, browse.js, sg-embed.js, installViewer in assets/newsroom-vault.js, admin/build/viewer_vault.mjs, viewer vault lkypj6zq; test_vault_open.mjs, test_sync.mjs.",
+   "remaining": [],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "L"
+  },
+  {
+   "id": "shared-vocabulary",
+   "title": "A shared vocabulary of concepts across the article graphs (the site altitude)",
+   "source": [
+    "one-article-five-readers (What comes next 3)",
+    "the-agent-is-the-reader (What comes next 1)",
+    "scrolled-is-not-read (plan 6)",
+    "admin/notes/2026-10-18__explore-search-as-navigation.md (taxonomy debt, idea clusters)",
+    "card 076"
+   ],
+   "date": "2026-10-10",
+   "status": "not built",
+   "asked": "One ontology across every article: concept labels merged (2,230 distinct labels, 47 shared), duplicate tags merged, kept by the Librarian in the findability data, so 'new' means new and concepts can link across articles.",
+   "built": "Tags already reduced to 42 controlled subjects in articles/find.json (card 064, v0.12.60). Concept labels are still per-article islands.",
+   "remaining": [
+    "admin/content/explore/aliases.json (or equivalent) with clusters",
+    "Near-duplicate tag merges in sources",
+    "Taxonomy report printed each release"
+   ],
+   "area": "search-and-graphs",
+   "depends_on": [],
+   "session_brief": "Goal: deterministic concept clusters and a taxonomy report. Read first: admin/notes/2026-10-18__explore-search-as-navigation.md ('The taxonomy debt, counted', 'Idea clusters', 'The taxonomy report'), admin/content/articles/graphs/, admin/build/find.py, articles/find.json. First deliverable: a builder that normalises graph node labels, applies a curated aliases file, writes clusters and the report (tags used once, near-duplicates, cross-article ideas), and merges the obvious duplicate tags in sources with each merge in the release note. Done when the build prints the counts, a fixture alias merges two labels, and an alias mapping to two clusters fails the build. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "search-in-the-browser",
+   "title": "Search in the browser and Ask the site",
+   "source": [
+    "admin/notes/2026-10-13__search-in-the-browser.md",
+    "cards 031, 033"
+   ],
+   "date": "2026-10-13",
+   "status": "built",
+   "asked": "A client-side search over articles, wire, notes and cards from an index built at release; Ask answers from the passages with Chrome's built-in model or the reader's OpenRouter key.",
+   "built": "admin/build/search_index.py -> search/docs.json, search/text.json; assets/search/search.js, ask.js; /search/; v0.12.7, v0.12.9; test_search.mjs, test_ask.mjs.",
+   "remaining": [],
+   "area": "search-and-graphs",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "search-followups",
+   "title": "Search follow-ups: the live wire, search in the pane, synonyms, conversation, answers as notes",
+   "source": [
+    "admin/notes/2026-10-13__search-in-the-browser.md (What is not built, twice)"
+   ],
+   "date": "2026-10-13",
+   "status": "not built",
+   "asked": "Index wire stories added since release, search the reader's own notes and reading in the pane, synonyms and spelling, Ask with a conversation and tools, answers kept as notes and sendable.",
+   "built": "None of these (the search note lists them as not built).",
+   "remaining": [
+    "Live wire search from the vault at query time",
+    "Pane search over notes/reading",
+    "Synonyms/spelling (could come from explore's terms.json)",
+    "Ask conversation and tools",
+    "Answers kept as notes"
+   ],
+   "area": "search-and-graphs",
+   "depends_on": [
+    "search-in-the-browser"
+   ],
+   "session_brief": "Goal: the cheapest follow-ups first. Read first: admin/notes/2026-10-13__search-in-the-browser.md, assets/search/search.js and ask.js, assets/vault-pane/notes.js, wire/vault-reader.js. First deliverable: 'Keep this answer' on Ask, storing the answer and its cited passages as a note (kind idea or a new kind) that travels with the vault; and search over the reader's notes in the pane. Done when test_ask.mjs keeps an answer and finds it in notes, and test_pane.mjs searches a kept note by a word. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "ask-own-key-providers",
+   "title": "Free models, your own key: more providers, sign-in, key in the vault, a Worker",
+   "source": [
+    "free-models-your-own-key",
+    "admin/notes/2026-10-13__search-in-the-browser.md (key in the master vault)",
+    "ways-to-read-one-article (model modes)"
+   ],
+   "date": "2026-10-18",
+   "status": "partly",
+   "asked": "Add Groq, Gemini (AI Studio) and Mistral beside OpenRouter on the search page with short guides; OpenRouter sign-in instead of a pasted key; the key kept in the reader's vault; a Worker a reader can deploy for Cloudflare; recheck the map quarterly.",
+   "built": "Ask with Chrome's built-in model or the reader's OpenRouter key in session/local storage (assets/search/ask.js, v0.12.9). The article (v0.12.104) says the BYOK design is not built.",
+   "remaining": [
+    "Groq, Gemini, Mistral adapters with CORS-tested endpoints and guides",
+    "OpenRouter OAuth PKCE sign-in",
+    "Key stored in the master vault",
+    "Cloudflare Worker template and steps",
+    "Quarterly recheck task"
+   ],
+   "area": "search-and-graphs",
+   "depends_on": [
+    "search-in-the-browser"
+   ],
+   "session_brief": "Goal: more providers on Ask, then the key in the vault. Read first: admin/content/articles/free-models-your-own-key.md ('What works from the browser today', 'The two tests', 'What we will build'), assets/search/ask.js, admin/build/test_ask.mjs. First deliverable: a provider choice (OpenRouter, Groq, Gemini, Mistral) in 'How questions are answered', each with endpoint, default free model and a two-line guide, requests built per provider's API shape. Done when test_ask.mjs stubs each endpoint and checks request shape, Authorization handling and that the key never leaves for any other host. Next: OpenRouter sign-in, then the key in the master vault. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "explore-search-as-navigation",
+   "title": "Explore: search as navigation over the site's graph, with an inspector pane",
+   "source": [
+    "search-as-navigation",
+    "admin/notes/2026-10-18__explore-search-as-navigation.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A release-time data layer (ontology, nodes, edges, terms, triples, tables, stats), /explore/ with a chip query bar, exact suggestions, five views (graph, sections, figures, timeline, list), the walk in the address, an inspector pane (fetches, plan, why, SQL/SPARQL, timings, export), feedback and golden queries with recall at build. No model in this version.",
+   "built": "Nothing (no explore/ directory, no admin/build/explore_index.py; features.json marks explore 'designed'). Inputs exist: search/docs.json, articles/graphs, articles/summaries, ids.json, trails.json, reviews/status.json, vendored cytoscape, Oxigraph and sql.js.",
+   "remaining": [
+    "explore_index.py and explore/*.json within 1.5 MB",
+    "/explore/ query bar + suggestions + list and sections views",
+    "Graph view, walk, figures",
+    "Inspector with SQL and SPARQL",
+    "Feedback and golden queries"
+   ],
+   "area": "search-and-graphs",
+   "depends_on": [
+    "shared-vocabulary"
+   ],
+   "session_brief": "Goal: follow the note's order. Read first: admin/notes/2026-10-18__explore-search-as-navigation.md in full, admin/build/search_index.py, assets/search/search.js, databases/ (graph.html and sql.html with assets/nsdb-sparql.js, nsdb-sql.js). First deliverable: admin/build/explore_index.py writing explore/ontology.json, nodes.json, edges.json, terms.json and stats.json in the release after summaries and reviews, with the size budget printed; the build fails on a dangling edge. Second: /explore/ with chips, suggestions, list and sections views. Done when admin/build/test_explore.mjs passes the note's checks (Portugal offers entity, wire and tag with exact counts; second chip narrows; sections link to real anchors; nothing overflows at 390px; window.__tools.explore returns the same ids). Ask Dinis the note's three questions (golden queries, nav placement, first entities) early. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "experiments-per-feature",
+   "title": "An experiment per feature: two variants, a synthetic reader, a measurement",
+   "source": [
+    "the-site-is-an-inbox (item 8)",
+    "ways-to-read-one-article (item 10)",
+    "the-homepage-is-a-vault (item 7)",
+    "a-reading-list-in-a-link (tests)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "Run every reader feature as two variants measured with a synthetic reader (the how-to-run-synthetic-users method), starting with the inbox decisions, the mark kinds and the awake-time proxy.",
+   "built": "The synthetic-users method was run once on this site (v0.6.2 study, /mvps or study page); the front page accepts ?view= so variants can be linked (v0.12.60). No per-feature experiments recorded.",
+   "remaining": [
+    "A harness that runs a synthetic reader against two variants and records findings and timings",
+    "First three experiments: decisions, mark kinds, read-time proxy",
+    "Results published as notes"
+   ],
+   "area": "quality-and-review",
+   "depends_on": [],
+   "session_brief": "Goal: a repeatable synthetic-reader experiment for one feature. Read first: sgit.ai how-to-run-synthetic-users.md, admin/notes/2026-10-10__newsroom-move-and-content-audit.md (v0.6.2 study), admin/build/test_front.mjs (Playwright setup), the-site-is-an-inbox.md item 8. First deliverable: admin/build/experiment.mjs that drives two front-page views (?view=broadsheet vs ?view=briefing) with a scripted persona task and records time-to-task and errors to a JSON file; a note in admin/notes/ with the result. Done when the script runs locally twice with consistent results and the note states the hypothesis and the outcome. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "five-counts-on-ourselves",
+   "title": "The five counts of Firing journalists, run on this site",
+   "source": [
+    "firing-journalists (Read it from outside)",
+    "admin/notes/2026-10-12__what-the-new-articles-ask.md (order 4)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "A page built at release from the site's own files: original share, sourcing (with a link-resolution check), corrections and whether they propagate, roles, the metric reported.",
+   "built": "Nothing; no page carries the counts.",
+   "remaining": [
+    "Builder computing the five counts",
+    "A page and its JSON twin, linked from the design/what-runs pages"
+   ],
+   "area": "quality-and-review",
+   "depends_on": [],
+   "session_brief": "Goal: publish the newsroom's own five counts. Read first: sgit.ai firing-journalists.md ('Read it from outside'), admin/notes/2026-10-12__what-the-new-articles-ask.md ('Firing journalists'), articles/graphs/, corrections/, articles/versions/, newsroom/roles/. First deliverable: admin/build/counts.py writing a page and JSON with each count and its method; sourcing includes an optional slow link check run nightly, not per commit. Done when the validator checks the page exists and the numbers reproduce from a second run. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "reviews-on-the-record",
+   "title": "Reviews on the record: criteria, one file per review, the newsroom answers",
+   "source": [
+    "reviews-on-the-record"
+   ],
+   "date": "2026-10-18",
+   "status": "built",
+   "asked": "Published review criteria, reviews by any agent/editor/desk as one immutable file per article text, status.json with the newsroom's answers, --next batches, a Reviews section on every article.",
+   "built": "reviews/criteria.html/.md v1.1, admin/build/reviews.py (--next, --check), admin/content/articles/reviews/<slug>/, reviews/status.json, /reviews/, Reviews section on articles (v0.12.107). Five agent reviews recorded; no editor or reader reviews yet (see editors-channel and on-the-record).",
+   "remaining": [],
+   "area": "quality-and-review",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "on-the-record-opinions",
+   "title": "Signed opinions on the record, paid when valued, a share for the idea",
+   "source": [
+    "on-the-record",
+    "reviews-on-the-record (People on the record)",
+    "the-agent-is-the-reader (signed claims)"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A reader key pair; a proof page (key on a domain or DNS) checked and recorded; an opinion record (review with a position, signed, withdrawable); opinions shown beside reviews with identity level and the newsroom's answer; payment from a reader's rating to the expert and a revenue share for recorded ideas.",
+   "built": "Only the review record format with a 'reader' kind (reviews.py) and the meter's ratings. features.json marks signed-opinions 'designed'.",
+   "remaining": [
+    "Proof page and check",
+    "Signed opinion record type and verification in reviews.py --check",
+    "Rendering beside reviews",
+    "Payment flow to experts"
+   ],
+   "area": "quality-and-review",
+   "depends_on": [
+    "reader-signing-keys",
+    "reviews-on-the-record"
+   ],
+   "session_brief": "Goal: the first signed opinion end to end, without money. Read first: admin/content/articles/on-the-record.md ('Identity, in levels', 'What exists, and what to build'), reviews/criteria.md, admin/build/reviews.py, admin/content/articles/reviews/. First deliverable: a 'reader' review record with a public key, a signature over the canonical record and the text hash, verified by reviews.py --check, and a domain-proof check (fetch https://<domain>/.well-known/... ) recorded with its date. Done when --check accepts a valid fixture and rejects a tampered one, and the article page shows the opinion with its identity level. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "wire-stories-on-front-page",
+   "title": "The Editor places wire stories on the front page",
+   "source": [
+    "two-agents-one-vault",
+    "admin/notes/2026-10-12__what-the-new-articles-ask.md",
+    "shipped/index.html (wires limits)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "Up to three wire stories on the front page with a reason per slot, from a placement file the Editor writes.",
+   "built": "Nothing: index.html links the wires in the nav only. The front page is now built here by admin/build/front.py (v0.12.60), so the 2026-10-12 note's 'sgit.ai's to build' no longer applies.",
+   "remaining": [
+    "Placement file (in the wire vault or admin/content/front/)",
+    "front.py rendering wire slots",
+    "Editor role's policy updated"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Goal: wire slots on the front page. Read first: sgit.ai two-agents-one-vault.md ('The loop'), admin/notes/2026-10-12__what-the-new-articles-ask.md (Two agents table), admin/build/front.py, wire/snapshot.json, newsroom/roles/editor.md. First deliverable: admin/content/front/wire-slots.json (story id, wire, reason) read by front.py, rendered as a 'From the wires' block with each reason; slots older than two days drop out. Done when test_front.mjs finds the block with the fixture's stories and reasons and no block when the file is empty. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "wire-story-to-article",
+   "title": "A pitched wire story becomes an article that inherits its sources and provenance",
+   "source": [
+    "two-agents-one-vault"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "The Journalist pitches a wire story; the article written from it inherits the story's frozen sources and provenance graph from the vault.",
+   "built": "Nothing.",
+   "remaining": [
+    "Pitch record",
+    "Article front matter linking the story id",
+    "Build pulls sources/provenance into the article graph"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Goal: one article made from a wire story with inherited provenance. Read first: sgit.ai two-agents-one-vault.md, wire/vault-reader.js and the wire contract (wire/desk-brief.md), admin/build/publish.py, an article graph JSON. First deliverable: a front-matter field from_wire: <wire>:<story id> that the build resolves from the snapshot into the article's sources and a provenance section. Done when one article built with it shows the story's sources and the validator fails on an unknown story id. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "wire-weekly-newsletter",
+   "title": "A weekly newsletter cut from the week's wire briefs, quotes checked at build",
+   "source": [
+    "two-agents-one-vault",
+    "shipped/index.html (wires limits)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "A weekly newsletter built from the week's wire briefs, every quote checked against frozen bytes at build time.",
+   "built": "The newsletter of articles is written here (v0.12.18, admin/content/newsletter/); nothing from the wires.",
+   "remaining": [
+    "Builder selecting the week's stories",
+    "Quote check against frozen captures",
+    "Issue page and subscriber delivery"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Goal: a wire digest issue. Read first: sgit.ai two-agents-one-vault.md, admin/content/newsletter/, the wire snapshots (wire/*/snapshot.json), wire/charter.html (quote tiers). First deliverable: admin/build step writing a draft weekly issue per wire from the snapshot with quotes verified verbatim against the stored capture, failing on a mismatch. Done when a fixture week builds and a modified quote fails the build. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "release-decision-policy",
+   "title": "A written decision policy for shipping past a pre-existing failing test",
+   "source": [
+    "three-decisions-mapped (Scenario 2)"
+   ],
+   "date": "2026-10-17",
+   "status": "not built",
+   "asked": "Turn the agent's repeated judgement into a rule: a test that fails before the change, on pages it does not touch, does not block for at most N days and its owner is told; also check a figure's facts like the body's; count leak-scan gaps only in covered repositories.",
+   "built": "Nothing written as a policy; the release recipe and leak scan exist.",
+   "remaining": [
+    "Decision policy file in newsroom/policies",
+    "CI or release script reading it",
+    "Figure-facts check rule"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Goal: write and enforce the release decision. Read first: admin/content/articles/three-decisions-mapped.md (Scenario 2), newsroom/policies.md, .github/workflows/deploy-pages.yml. First deliverable: the policy text in newsroom/policies.md and a known-failures file (test, since, owner, expires) that the reader-tests job consults to warn instead of fail until expiry. Done when CI passes with a listed, unexpired failure and fails once it expires. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "editors-channel",
+   "title": "The editor's channel: editor key and vault, signed-off notes, the daily pass, the down lane",
+   "source": [
+    "the-editors-channel",
+    "admin/notes/2026-10-18__the-editors-channel.md",
+    "reviews-on-the-record (editor reviews)"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A signed-off note kind; a daily pass (newsroom.writer) reading the lane, running checks, applying cheap fixes, proposing the rest, recording sign-offs as editor review records; an editor key carried in a fragment; an editor vault with up/ and down/; editor mode sending reads/notes/fixes; the down lane and Process now in the pane; later signatures and per-key grants.",
+   "built": "Nothing of it (note status: a brief; features.json 'designed'). Reused pieces exist: notes.js, lane.py, inbox.js sealing, wording.py, reviews.py.",
+   "remaining": [
+    "signed-off kind (stale on version/text-hash change)",
+    "Daily pass as a scheduled task with its behaviour policy",
+    "Editor key + editor.html + editor vault",
+    "Down lane and Process now",
+    "Signatures, per-key grants"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [
+    "reviews-on-the-record"
+   ],
+   "session_brief": "Goal: order step 1 of the note. Read first: admin/notes/2026-10-18__the-editors-channel.md in full, admin/content/articles/the-editors-channel.md, assets/vault-pane/notes.js, admin/build/lane.py, admin/build/reviews.py, reviews/status.json. First deliverable: a 'signed-off' note kind on article pages (shown only in editor mode or behind a flag), and a pass script that reads the existing lane, writes each sign-off as an editor review record with the text hash, and reports stale sign-offs. Done when test_notes.mjs keeps a sign-off, the pass on a fixture lane writes a valid record that reviews.py --check accepts, and a browser with no editor key loads no editor code (network log). Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "sections-by-audience",
+   "title": "Sections by audience, kept current by rule",
+   "source": [
+    "a-section-for-publishers"
+   ],
+   "date": "2026-10-18",
+   "status": "partly",
+   "asked": "A section per audience: five picks by the editor, latest marked new, the features usable today, every relevant article placed by written rules into streams; next sections for security leads and boards, people building with agents, founders and investors.",
+   "built": "For publishers: sections/publishers/, sections/index.html, sections/publishers.json, sections/features.json from admin/content/features.json, admin/build/sections.py (v0.12.108).",
+   "remaining": [
+    "Security leads and boards section",
+    "Builders with agents section",
+    "Founders and investors section"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Goal: the next three sections. Read first: admin/content/articles/a-section-for-publishers.md, admin/content/sections/publishers.json, admin/build/sections.py, articles/find.json, desks/. First deliverable: admin/content/sections/security.json with rules, exclusions with reasons and five picks left as a placeholder for Dinis, built by sections.py with its near-miss report. Done when sections.py writes the page and JSON twin, the near misses are reviewed in the release note, and Dinis has chosen the five picks. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "desk-reads-decisions",
+   "title": "The wire's desk reads the reader's decisions and proposes persona edits",
+   "source": [
+    "card 030",
+    "two-agents-one-vault (the morning read)",
+    "admin/notes/2026-10-13__the-wire-as-an-inbox.md",
+    "shipped/index.html (the lane's read key has not reached the desks)"
+   ],
+   "date": "2026-10-12",
+   "status": "not built",
+   "asked": "The desk reads the reader's lane with a read key, takes wire decisions (Not for me, Should reach me, more like this), and proposes persona edits as a diff for approval in its weekly pass.",
+   "built": "Decisions are kept and can be sent down the reader's lane; no desk reads them.",
+   "remaining": [
+    "Hand the lane's read key to the desk (owner)",
+    "Desk step reading wire decisions",
+    "Persona diff proposed in the vault"
+   ],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "Goal: the join learns from the reader. Read first: card open/030, admin/notes/2026-10-13__the-wire-as-an-inbox.md ('The message for the wire's agent'), wire/desk-brief.md, admin/build/lane.py. First deliverable: a script (shared with the desks) that reads a lane with a read key and outputs the wire decisions per story id and persona as JSON, plus a desk-brief section asking desks to propose persona edits as a diff. Done when the script on a fixture lane outputs the expected decisions and the desk brief names the file the desks read. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "wire-inbox",
+   "title": "The wire as an inbox: new since last visit, for me / not for me, release notes, decisions",
+   "source": [
+    "admin/notes/2026-10-13__the-wire-as-an-inbox.md",
+    "the-site-is-an-inbox (applied to the wire)",
+    "cards 023-028"
+   ],
+   "date": "2026-10-13",
+   "status": "built",
+   "asked": "Read the wire as an inbox: filters, decisions that leave the inbox, what is new, the lens remembered, the vault's release notes, seen stories carried by the vault.",
+   "built": "v0.12.6 (023, 024, 025, 027, 028) and v0.12.14 (026); wire/wire.js, assets/vault-pane/wire-state.js; test_wire.mjs.",
+   "remaining": [],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "more-wires",
+   "title": "More than one wire: OWASP, AWS, Portugal (two languages), one contract",
+   "source": [
+    "admin/notes/2026-10-13__more-than-one-wire.md",
+    "sixteen-notes-i-did-not-want-to-lose (Two config files, a new product line)",
+    "cards 040, 046, 052"
+   ],
+   "date": "2026-10-13",
+   "status": "built",
+   "asked": "Run more wires from their own vaults under the same code and contract.",
+   "built": "wire/owasp/, wire/aws/, wire/portugal/ with admin/build/wire-vault.*.json (v0.12.14, v0.12.32).",
+   "remaining": [],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "wires-charter-and-desk-brief",
+   "title": "The wires' charter, the brief for the desks, verifier, reach, subscribe per wire, the morning run",
+   "source": [
+    "admin/notes/2026-10-13__the-wires-charter.md",
+    "cards 041-045, 047"
+   ],
+   "date": "2026-10-13",
+   "status": "built",
+   "asked": "Publish a charter and a standing brief for the desks; the verifier's record at the story; who should know; one subscription list per wire; a daily run.",
+   "built": "wire/charter.html, wire/desk-brief.md, wire/reach.html, wire/days.html, wire/subscribe.js (v0.12.20); morning run scheduled; unattended runs fixed in v0.12.74 (068-070).",
+   "remaining": [],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "M"
+  },
+  {
+   "id": "edition-as-graphs-and-pictures",
+   "title": "The edition as graphs, an infographic per story with its cost, the first screen",
+   "source": [
+    "admin/notes/2026-10-13__five-wires-five-pages.md",
+    "cards 053, 054, 056, 062"
+   ],
+   "date": "2026-10-13",
+   "status": "built",
+   "asked": "Provenance strip, week by beat, threads, entities; infographics per story and edition with cost made by the newsroom; a first screen for a first-time visitor.",
+   "built": "wire/graphs.js (v0.12.42), admin/build/infographics.py, wire/infographics/ledger.json, wire/costs.html (v0.12.59), first screen (v0.12.70); test_graphs.mjs.",
+   "remaining": [],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "",
+   "size": "L"
+  },
+  {
+   "id": "wire-overview",
+   "title": "The overview at /wire/: tiles, one lens, the week as small multiples, edition history",
+   "source": [
+    "admin/notes/2026-10-13__five-wires-five-pages.md (stage R3)",
+    "admin/notes/2026-10-13__more-than-one-wire.md (a page of the wires; one inbox across wires)",
+    "admin/notes/2026-10-13__the-wire-as-an-inbox.md (editions as history)",
+    "card 057"
+   ],
+   "date": "2026-10-13",
+   "status": "not built",
+   "asked": "/wire/ becomes the overview of all wires (tiles, one lens, today across wires, the week per wire, picture costs), the Industry Wire moves to /wire/industry/, per-edition history kept, one inbox count across wires.",
+   "built": "Nothing; /wire/ is still the Industry Wire. Card 057 is blocked on Dinis's yes to the move.",
+   "remaining": [
+    "Owner decision on the move",
+    "wire/overview.json and per-edition history",
+    "/wire/ overview page",
+    "Redirect line at the old address with state carried over"
+   ],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "Goal: the overview, once Dinis agrees to the move. Read first: card open/057, admin/notes/2026-10-13__five-wires-five-pages.md (stages), admin/notes/wires-ux/design.md and architecture.md, wire/wire.js, admin/build/wire.py. First deliverable (no move needed): per-edition history kept at release (wire/<wire>/editions/<date>.json) and wire/overview.json. Then the page at a temporary address /wire/overview.html until Dinis says yes. Done when test_wire.mjs renders the overview with the four wires' counts matching their snapshots and the Industry Wire's inbox state survives the move in a migration test. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "routine-makes-pictures",
+   "title": "The morning routine makes the pictures (key in the environment, caps)",
+   "source": [
+    "admin/notes/2026-10-13__five-wires-five-pages.md (stage R5)",
+    "card 060"
+   ],
+   "date": "2026-10-13",
+   "status": "not built",
+   "asked": "The scheduled routine runs the infographic pipeline per changed wire with caps (forty images, two dollars), committing images and ledgers, the key only from the environment's secrets.",
+   "built": "The step is in the routine's prompt since 14 October and runs dry without the key; card 060 open, blocked on Dinis adding OPENROUTER_API_KEY to the environment.",
+   "remaining": [
+    "Owner: add the secret and allow the clone/pip steps",
+    "Verify one live run and the ledger"
+   ],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "Goal: verify, once Dinis has set the secret. Read first: card open/060, admin/build/infographics.py, wire/infographics/ledger.json, wire/costs.html. First deliverable: one supervised run of the routine with the key present, images and ledger committed, cost shown on the page. Done when the ledger has a dated row per image within the caps and a wire whose edition did not change produced nothing. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "person-wires",
+   "title": "Wires about people: the Dinis Cruz Wire, and the rUv Wire with agreement",
+   "source": [
+    "admin/notes/2026-10-13__the-wires-charter.md (A wire about a person)",
+    "card 072"
+   ],
+   "date": "2026-10-13",
+   "status": "not built",
+   "asked": "A wire per person (works, not life; primary first; agreement recorded) at wire/dinis/ and wire/ruv/, under the same contract.",
+   "built": "Vaults exist (j008k1ti, u10tbqpc per the card); the Dinis Cruz Wire's first run (v0.12.84) published nothing (fetch approvals, session limit); no wire/dinis/ page. rUv's run blocked pending agreement.",
+   "remaining": [
+    "Owner: recreate the desk task with auto-judged fetches",
+    "First edition",
+    "wire-vault.dinis.json and pages",
+    "rUv's agreement recorded before any run"
+   ],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "Goal: publish the first person wire once its desk has an edition. Read first: card open/072 (progress and blocker), wire/charter.html ('A wire about a person'), admin/build/wire-vault.json and admin/build/wire.py. First deliverable: once the vault holds an edition, admin/build/wire-vault.dinis.json and wire/dinis/ pages generated like wire/owasp/. Done when test_wire.mjs renders wire/dinis/ from a snapshot and the charter's agreement line is shown. Do not create a run for rUv without the recorded agreement. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "aws-stack-from-account",
+   "title": "The AWS Wire's stack derived from the account",
+   "source": [
+    "admin/notes/2026-10-13__more-than-one-wire.md (What is not built)"
+   ],
+   "date": "2026-10-13",
+   "status": "not built",
+   "asked": "Derive the AWS stack file from what the reader's account runs, with the declared list as an override.",
+   "built": "A seeded stack file in the vault.",
+   "remaining": [
+    "Desk-side derivation",
+    "Override semantics on the page"
+   ],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "Goal: a derived stack. Read first: admin/notes/2026-10-13__more-than-one-wire.md, the AWS wire vault's stack file and 'later' note, wire/aws/. First deliverable: the desk brief section describing stack derivation and the override, and the page showing 'derived' vs 'declared'. Done when the page renders both from fixtures. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "wire-as-a-graph",
+   "title": "The wire as a graph: IDs, typed names, spans, claims, stories of stories",
+   "source": [
+    "the-wire-as-a-graph"
+   ],
+   "date": "2026-10-14",
+   "status": "not built",
+   "asked": "Design the wires backwards from the reader: a story page whose names link to long-lived IDs and whose claims are typed with evidence; mint 128-bit story IDs with aliases; merge duplicate names with types; character spans; claims; threads as stories; folders by gravity; run.json per run with cheap extraction and a capable checker.",
+   "built": "Nothing (v0.12.46: 'Nothing in the brief is built'); desk brief asks only for optional card.claim.",
+   "remaining": [
+    "Reader-side story page from fixtures",
+    "IDs + ids.json per vault (desk side)",
+    "Name merging/typing",
+    "Spans",
+    "Claims",
+    "Threads as stories",
+    "Gravity folders",
+    "run.json"
+   ],
+   "area": "wires",
+   "depends_on": [
+    "more-wires"
+   ],
+   "session_brief": "Goal: step 1 of the brief, reader first. Read first: admin/content/articles/the-wire-as-a-graph.md (primitives, brief), wire/desk-brief.md, wire/wire.js, one wire snapshot. First deliverable: a story page prototype (wire/story.html?id=) drawn from a fixture with linked names and typed claims, agreed with Dinis before any vault change; then a desk-brief section asking desks for ids.json. Done when the prototype renders the fixture at 390px and 1280px and Dinis signs off the shape. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "accountant-daily",
+   "title": "The accountant runs daily",
+   "source": [
+    "card 071",
+    "card 061"
+   ],
+   "date": "2026-10-15",
+   "status": "not built",
+   "asked": "A session of its own each morning adds a row per new run to admin/build/wire-runs.json with runs_ledger.py and releases the costs page.",
+   "built": "The accountant (061, v0.12.59) and runs costed (070) by hand releases (v0.12.87, v0.12.103); no scheduled session.",
+   "remaining": [
+    "Scheduled task with the tools to read run usage",
+    "Daily release"
+   ],
+   "area": "wires",
+   "depends_on": [],
+   "session_brief": "Goal: schedule the accountant. Read first: card open/071, admin/build/accountant.py, runs_ledger.py, wire-runs.json, releases v0.12.87 and v0.12.103. First deliverable: a scheduled task prompt that runs runs_ledger.py, rebuilds wire/costs.html and releases; one supervised run. Done when two consecutive days add rows without manual help. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "S"
+  },
+  {
+   "id": "five-readers-as-desk-roles",
+   "title": "The five readers as desk roles, the round trip, image prompts",
+   "source": [
+    "one-article-five-readers (What comes next)"
+   ],
+   "date": "2026-10-10",
+   "status": "not built",
+   "asked": "Librarian, Cartographer, Explainer and Storyteller join the Historian as desk roles with write policies so every new article gets its views; apply the Cartographer's feedback; run image prompts for one deck.",
+   "built": "The views exist for 5 articles only (articles/views/); newsroom/roles/ has contributor, designer, developer, editor, historian, journalist.",
+   "remaining": [
+    "Role files and policies",
+    "A step in the release that produces/validates views for new articles",
+    "Round trip",
+    "Image deck with cost"
+   ],
+   "area": "agents-and-authors",
+   "depends_on": [
+    "shared-vocabulary"
+   ],
+   "session_brief": "Goal: views for every new article. Read first: sgit.ai one-article-five-readers.md, the Article Views vault (demos/vaults/article-views/), newsroom/roles/historian.md, articles/views/. First deliverable: newsroom/roles/librarian.md and explainer.md with policies, and a release step that requires an Explainer two-minute view for each new article with script checks (anchors verbatim, word limits). Done when a new article without a view fails the validator and one with a view renders under 'Read it another way'. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "agents-write-too",
+   "title": "The agents write too: a page per agent, lessons, debriefs, a conductor",
+   "source": [
+    "the-agents-write-too",
+    "scrolled-is-not-read (The agents' own section)",
+    "card 075"
+   ],
+   "date": "2026-10-14",
+   "status": "partly",
+   "asked": "A conductor session that keeps the site; a page for every agent; an agents index; debriefs per run; lessons one per file loaded at session start; agent-authored articles with author/author_url; a schedule.",
+   "built": "'Written by the agents' section agents/index.html from admin/content/agents.json via admin/build/agents.py (card 075, v0.12.85); agent pages about/newsroom-ux.html and about/newsroom-vault.html; author fields used by agent articles; front page 'From the agents' block. newsroom.writer registered as an agent with its own page in v0.12.109.",
+   "remaining": [
+    "Pages for newsroom.writer (listed in agents.json, no page), wire, newsletter, conductor",
+    "Lessons files + build into one JSON/MD read at session start (seed the article's five)",
+    "Debriefs as dated files",
+    "Conductor session and schedule"
+   ],
+   "area": "agents-and-authors",
+   "depends_on": [],
+   "session_brief": "Goal: lessons and the missing agent pages. Read first: admin/content/articles/the-agents-write-too.md (Lessons and debriefs, The brief), admin/content/agents.json, admin/build/agents.py, wire/desk-brief.md and the articles README wording rules. First deliverable: admin/content/lessons/NNN-slug.md (evidence, status, superseded_by) seeded with the article's five, built to lessons.json and lessons.md, and about/newsroom-writer.html generated for the writer. Done when the build fails on a lesson without evidence, agents/index.html links every agent in agents.json to a page, and CLAUDE-style session instructions point at lessons.md. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "pay-to-keep-your-persona",
+   "title": "Pay to keep your persona: a persona that follows you to every device and your agent",
+   "source": [
+    "pay-to-keep-your-persona"
+   ],
+   "date": "2026-10-10",
+   "status": "partly",
+   "asked": "Readers pay to keep their persona in an encrypted vault that follows them across devices and to their agent; hypotheses H6/H7 to test.",
+   "built": "Personas travel in the reader vault's device files (sync.js extract) during the beta, gated only by an early-access key; nothing is sold; no agent access to a persona.",
+   "remaining": [
+    "A price and purchase for the vault/persona sync (access key as the product)",
+    "Persona readable by the reader's agent (read key or pack)",
+    "Measure H6/H7"
+   ],
+   "area": "payments",
+   "depends_on": [
+    "reader-vault-across-devices",
+    "agent-pack"
+   ],
+   "session_brief": "Goal: make persona sync the thing a reader buys. Read first: sgit.ai pay-to-keep-your-persona.md, going-live-with-the-reading-meter.md (hypotheses), account/top-up.html, assets/vault-pane/vault-pane.js (access key). First deliverable: an owner-approved offer page and a Stripe payment link that issues an early-access key (manual fulfilment first), recorded in the account; plus 'share this persona with your agent' as a read-only export. Done when Dinis approves the wording and a test purchase in Stripe test mode leads to a working key. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "priced-answers-and-signed-claims",
+   "title": "Price one question (402) and sign one claim with an expiry",
+   "source": [
+    "the-agent-is-the-reader (What comes next 3, 4)"
+   ],
+   "date": "2026-10-11",
+   "status": "not built",
+   "asked": "Put a graph answer behind a 402 at a fraction of a cent and count agents that pay; re-check ten claims, sign them with the publisher's key and an expiry, and publish the signatures.",
+   "built": "Nothing; the site has no server and no publisher signing key.",
+   "remaining": [
+    "Publisher signing key and verification page",
+    "Ten signed claims with expiry",
+    "402 experiment design (needs a server or vault-based mechanism)"
+   ],
+   "area": "payments",
+   "depends_on": [],
+   "session_brief": "Goal: the signed claims half, which needs no server. Read first: sgit.ai the-agent-is-the-reader.md ('Signed claims, with an expiry date'), rfc-0001 on sgit.ai, articles/graphs/ (anchors). First deliverable: a publisher key pair (private half outside the repo), claims/<id>.json with the sentence, anchor, source hash, dates and signature, and a verify page in the browser. Done when the verify page validates all ten and rejects an edited one. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "fair-visible-chosen-pricing",
+   "title": "Prices fair by country, visible use of money, chosen levels",
+   "source": [
+    "paying-after-the-value (Fair, visible, chosen; The experiment)"
+   ],
+   "date": "2026-10-14",
+   "status": "not built",
+   "asked": "Prices that follow local purchasing power, a visible statement of what the money pays for, and paid levels (verified facts, follow-ups, checked briefings); the five hypotheses reviewed on 6 December 2026.",
+   "built": "The meter's single price table (sg-meter-config prices) and the £5 top-up.",
+   "remaining": [
+    "Price multiplier by country (from the browser's locale, no server)",
+    "What the money pays for, on the account page",
+    "Paid levels",
+    "The 6 December review article"
+   ],
+   "area": "payments",
+   "depends_on": [],
+   "session_brief": "Goal: price by country as a meter rule. Read first: admin/content/articles/paying-after-the-value.md, the meter config in any page, assets/components/sg-meter/v1/v1.5/v1.5.0/, meter/security.html. First deliverable: a config table of multipliers by region applied from navigator.language/Intl, shown to the reader with an override. Done when test_meter.mjs with locale pt-PT charges the configured fraction and the account page says why. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "newsroom-cutover-generator",
+   "title": "The move to newsroom.sgit.ai: port the generator, cut every dependency but the vaults",
+   "source": [
+    "admin/notes/2026-10-10__newsroom-move-and-content-audit.md",
+    "admin/notes/sgit-ai-dependencies.md",
+    "card 067"
+   ],
+   "date": "2026-10-10",
+   "status": "partly",
+   "asked": "Move the newsroom from sgit.ai: articles, newsroom pages, reader account, feeds; then cut over so the site is self-contained, keeping only links to vaults.",
+   "built": "Import by sync_newsroom.py (v0.6.0+); articles written and published here by admin/build/publish.py borrowing sgit.ai's generator (v0.12.10); own front page (v0.12.60); footer dependency removed and admin/build/deps.py report (card 067).",
+   "remaining": [
+    "Port the generator (684 imported pages still from sgit.ai's build)",
+    "450 files with network links to sgit.ai",
+    "Phase 5 cutover with the sgit.ai session",
+    "Feed validation and LinkedIn post-inspector check"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Goal: port the article generator so publish.py no longer clones sgit.ai. Read first: admin/notes/2026-10-10__newsroom-move-and-content-audit.md, admin/notes/sgit-ai-dependencies.md, admin/build/publish.py, admin/build/sync_newsroom.py, admin/build/validate.js. First deliverable: the generator for one article page type running here, producing byte-identical output (chrome and version stamps normalised) for three existing articles. Done when the hash comparison passes for every article and deps.py's 'generator' count drops to zero for articles. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "explorer-to-villager",
+   "title": "Go slow to go fast: the reader code to its own repository, tests, review, refactor",
+   "source": [
+    "explorer-to-villager-newsroom",
+    "admin/notes/2026-10-11__newsroom-api-map-and-review.md"
+   ],
+   "date": "2026-10-11",
+   "status": "partly",
+   "asked": "Six phases: map, move the reader code to SGit-AI__Newsroom__API released as pinned versioned files, tests (Node + Chromium/WebKit/Firefox, pre-production, synthetic run), review (findings as issues), refactor, then fixes and features; a pipeline under two minutes; a person and an agent reviewer per PR; CSP.",
+   "built": "Phase 0: /newsroom-api/ map and 18 findings pinned by test_review.mjs (v0.8.2); CI runs the browser tests before a tag (Chromium only); the reader API is published at api.newsroom.sgit.ai (v0.2.5 referenced in pages). This site still loads its own copy of sg-meter (assets/components/sg-meter/v1/v1.5/v1.5.0/) rather than a pinned API release.",
+   "remaining": [
+    "Pin the API release on this site and stop the sync carrying reader code",
+    "WebKit and Firefox in CI; reproducible build",
+    "Pre-production host with a Stripe test link",
+    "Agent reviewer as a required check",
+    "Fix findings R1-R18 as test changes; CSP plan (R10)"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Goal: make this site a consumer of api.newsroom.sgit.ai. Read first: sgit.ai explorer-to-villager-newsroom.md (Rules, Acceptance), admin/notes/2026-10-11__newsroom-api-map-and-review.md, newsroom-api/map.json, .github/workflows/deploy-pages.yml, the API repository's release layout. First deliverable: load the meter from a pinned API release path (or a vendored copy at that version with a hash check) and prove every reader file hashes the same before and after. Done when the hash table matches, test_meter.mjs passes, and CI adds WebKit and Firefox for test_meter.mjs and test_lists.mjs. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "homepage-is-a-vault",
+   "title": "The homepage is a vault: daily editions as signed commits, variants and stats",
+   "source": [
+    "the-homepage-is-a-vault"
+   ],
+   "date": "2026-10-14",
+   "status": "not built",
+   "asked": "/front/ built from a homepage vault: a morning edition job committing and tagging each edition with screenshot and note; editions exported as static files behind a CDN; a shell with a snapshot; every edition reachable; two variants and a stats lane; daily synthetic users; timing against the homepage for two weeks; the same export for the wire.",
+   "built": "Nothing of the vault design (no /front/ page). The front page is built from repo data by admin/build/front.py with three views selectable by ?view= (v0.12.60).",
+   "remaining": [
+    "Homepage vault and edition job",
+    "Static export + shell with snapshot",
+    "Edition history links",
+    "Variants + stats lane",
+    "Daily synthetic users and timings",
+    "Wire export"
+   ],
+   "area": "publishing-method",
+   "depends_on": [
+    "experiments-per-feature"
+   ],
+   "session_brief": "Goal: /front/ from a vault, beside the current homepage. Read first: admin/content/articles/the-homepage-is-a-vault.md (The demo, A brief for the agent), admin/build/front.py (current data), admin/build/wire_* readers and wire/vault-reader.js. First deliverable: an edition writer that renders today's front data into an edition JSON committed to a homepage vault with a tag, and /front/index.html that reads the latest edition with a published read key and a static snapshot fallback. Done when /front/ renders the same lead as index.html, a past tag opens by commit id, and load time is measured cold and warm in a script. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "L"
+  },
+  {
+   "id": "replicate-kit",
+   "title": "Your own newsroom: the recipe, with the writing pipeline as a package",
+   "source": [
+    "your-own-newsroom"
+   ],
+   "date": "2026-10-15",
+   "status": "partly",
+   "asked": "A founder's recipe: public repo, Pages, Claude cloud sessions, house rules, the reader meter from api.newsroom.sgit.ai pinned with their own Stripe link, a behaviour policy, optionally a private vault beside the site.",
+   "built": "The recipe and house rules are in the article; the meter is packaged at api.newsroom.sgit.ai; /replicate/ exists. The article itself says the writing pipeline as one package is not ready.",
+   "remaining": [
+    "A template repository with house rules, validator, workflow and meter pin",
+    "Writing pipeline packaged"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Goal: a template a founder can fork. Read first: admin/content/articles/your-own-newsroom.md (Step by step, The house rules, A behaviour policy), replicate/index.html, admin/build/validate.js, .github/workflows/deploy-pages.yml. First deliverable: a minimal template (files listed in the article) with a validator and a Pages workflow, plus a page on this site that links it. Done when a fresh fork publishes a first article to Pages with the meter loaded from a pinned API release. Open a card in admin/engineering/issues/open/ first, ship as a patch release with a file in admin/engineering/releases/ naming the card, and add any new test to the loop in .github/workflows/deploy-pages.yml.",
+   "size": "M"
+  },
+  {
+   "id": "voice-marks",
+   "title": "Who is speaking: a mark on every byline, the voice in the data, a line on agent emails",
+   "source": [
+    "who-is-speaking"
+   ],
+   "date": "2026-10-18",
+   "status": "partly",
+   "asked": "Make it clear on every piece who is speaking: Dinis alone, Dinis through an agent, or an agent in its own voice; name people instead of 'the owner'.",
+   "built": "Byline marks by CSS in assets/themes/themes.css (agent mark and 'agent' pill on agent bylines, 'with the newsroom's agents' on Dinis's), the README's 'Who is speaking' section and rule 9, 'the owner' replaced in the agents' articles and notes; all in v0.12.109.",
+   "remaining": "A voice field in each article's front matter (dinis, dinis-with-agents, agent) read by the byline, lists, cards and search; the agent pages' structured data typed as software, not a Person (a template change on sgit.ai); a line on every agent-drafted email saying it was drafted by an agent and sent by Dinis.",
+   "area": "agents-and-authors",
+   "depends_on": [],
+   "session_brief": "Read who-is-speaking.md, the README's 'Who is speaking' section and the byline CSS at the end of assets/themes/themes.css. First deliverable: a 'voice' front-matter field on every article in admin/content/articles (default dinis-with-agents; agent for author newsroom.*), carried into articles/find.json by admin/build/find.py, and the byline marks driven by it instead of by the link. Then show the voice on cards and search results. Done when a test asserts each article's byline mark matches its voice field and an article with voice: dinis shows no 'with' label.",
+   "size": "M"
+  },
+  {
+   "id": "version-diffs-visible",
+   "title": "Make each article's changes easy to see",
+   "source": [
+    "Dinis, 18 October 2026, in the session"
+   ],
+   "date": "2026-10-18",
+   "status": "partly",
+   "asked": "Every article keeps its versions and a page shows what changed between two of them; Dinis finds it powerful but not easy to see. Revising articles as facts and understanding change is expected, so the changes should be visible where people read.",
+   "built": "Version pages per article under articles/versions/<slug>/, with the differences between published versions (articles/versions/your-reading-your-controls.html is an example), built by publish.py from the git history.",
+   "remaining": "On the article itself: a line saying when it last changed and what changed, with a link to the diff; a reason line per version, from the release notes; links from a review finding to the version that fixed it; a clearer diff page (changed sentences highlighted in place, not only listed).",
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Read publish.py's history replay and the version pages it writes (articles/versions/), and reviews/records/*/status.json. First deliverable: a 'Changed' line under each article's byline, injected at build like the Reviews section (and exempted in validate.js and sync_newsroom.py the same way), saying the last version, its date, one line of why from the release that made it, and a link to the diff. Then per-version reasons and links from review findings to the fixing version. Done when an article changed in a release shows that release's reason on its page and the link opens the diff at that version.",
+   "size": "M"
+  },
+  {
+   "id": "browser-for-one",
+   "title": "A browser for one: Dinis's iPhone app for the newsroom",
+   "source": [
+    "a-browser-for-one",
+    "admin/notes/2026-10-18__a-browser-for-one.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A personal iPhone app that only browses newsroom.sgit.ai: opens where it was left, knows what was read, opens the vault, tabs, offline, no reloads, reading workflows, an inbox from the agents.",
+   "built": "",
+   "remaining": [
+    "Phase 0: test passkeys with PRF inside the app's WebKit view; the apple-app-site-association file; storage persistence",
+    "Phase 1: the app (tabs, offline, no reloads, reading state over a bridge with a written policy)",
+    "Phase 2: reading workflows kept in the vault",
+    "Phase 3: an inbox from the agents, polled from the vault, and push through a small sender"
+   ],
+   "area": "reader-features",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__a-browser-for-one.md and the article a-browser-for-one, then assets/door.js and assets/vault-pane/vault-pane.js for the passkey unlock. This needs Xcode on macOS (a session on Dinis's Mac, or GitHub Actions macOS runners with TestFlight) and Apple's paid developer membership. First deliverable: the smallest Swift app with the associated domain newsroom.sgit.ai that opens the site and tries the vault unlock; record whether PRF results come back inside the web view, with the iOS version. Done when the vault opens inside the app on Dinis's phone, or when the native-ceremony fallback is in place and tested.",
+   "size": "L"
+  },
+  {
+   "id": "librarian-daily-brief",
+   "title": "The Librarian's daily brief and debrief of Dinis's universe",
+   "source": [
+    "the-librarians-daily-brief",
+    "admin/notes/2026-10-18__the-librarians-daily-brief.md",
+    "the-agents-write-too"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "Every morning, a page for Dinis: what needs him, yesterday across every repository and organisation (including outside pull requests), the agents' debrief with costs, threads worth picking up, what is coming, and at most three places where his leverage is; learning from what he acts on.",
+   "built": "The sources exist: release files, the accountant's ledger (admin/build/wire-runs.json), the briefs map, reviews/status.json, the wires.",
+   "remaining": [
+    "A Librarian role file and policy row; port policy_check.py from sgit.ai",
+    "Yesterday from this repository alone",
+    "GitHub across the organisations with a token, and outside contributions",
+    "Cloud sessions and their debriefs",
+    "Threads to pick up and where the leverage is",
+    "The loop: weights from what Dinis acted on"
+   ],
+   "area": "editorial-workflow",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__the-librarians-daily-brief.md and the article, then admin/build/runs_ledger.py, admin/build/wire-runs.json, admin/content/briefs.json and reviews/status.json. First deliverable: admin/build/librarian.py that writes admin/content/librarian/<date>.md and .json for yesterday from this repository alone (releases, ledger runs including refused ones, briefs whose status changed, new reviews and open findings), and a newsroom/roles/librarian.md role file. Done when, for a fixture day, the brief has each item in the right section and a source that could not be read is flagged at the top.",
+   "size": "M"
+  },
+  {
+   "id": "back-catalogue-worker",
+   "title": "The back-catalogue worker: Dinis's past work brought back as linkable articles",
+   "source": [
+    "bringing-my-past-work-back",
+    "admin/notes/2026-10-18__bringing-my-past-work-back.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "A worker that runs every day, takes the next item from Dinis's back catalogue (essays, NotebookLM material, talks and books, tools, the blog, videos, later LinkedIn and Twitter exports) and writes two or three articles a day: what it was, what it said, then and now, and how it connects to the newsroom today.",
+   "built": "The inventory, taken 18 October 2026: 103 essays (27 cited), 2,038 NotebookLM files, 65 decks, 10 books, 29 tools in production, 1,289 blog posts, 221 videos. Nothing else.",
+   "remaining": [
+    "The register, admin/content/back-catalogue.json, filled from the essays and the NotebookLM repository",
+    "Three articles from the essays, reviewed by Dinis, to set the shape",
+    "The daily scheduled run with the site's checks",
+    "Talks, books, tools, blog and videos",
+    "LinkedIn, Twitter and NotebookLM exports, when Dinis provides them"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__bringing-my-past-work-back.md and the article. First deliverable: admin/build/back_catalogue.py that builds admin/content/back-catalogue.json from diniscruz.ai's llms.txt and the NotebookLM repository's markdown and link files (source, id, URL, date, status, article), marks the 27 essays already cited, applies the exclusions in the note, and prints the next three queued items. Done when the register lists every essay with a status and a second run changes nothing.",
+   "size": "M"
+  },
+  {
+   "id": "pki-people-directory",
+   "title": "pki.sgit.ai as a directory of people and their keys, with two-way verification",
+   "source": [
+    "a-directory-of-people-and-keys",
+    "admin/notes/2026-10-18__a-directory-of-people-and-keys.md",
+    "secrets-on-public-keys"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "People register a passkey on pki.sgit.ai that opens a vault, make or import a key pair, publish the public half with evidence (website, GitHub, DNS TXT), are verified by Dinis and confirm it, then verify each other with links that count only when both confirm; degrees of separation; invitations and secrets by QR code. KPI: real public keys in the register.",
+   "built": "pki.sgit.ai (v0.1.74) has the design for agents, the four registry rules and a static register with one real record and ten fixtures; sgit pki makes and exports keys; vault messaging and append lanes ship; the newsroom's passkey vault exists to reuse.",
+   "remaining": [
+    "People first on pki.sgit.ai",
+    "Passkey and vault, reused from the newsroom",
+    "Browser keygen and import, compatible with sgit pki",
+    "Evidence checkers: website, GitHub, DNS TXT",
+    "Dinis's verification statements and the person's confirmation",
+    "Two-way vouching, the bound, withdrawal; the graph",
+    "Send a secret by QR code",
+    "Invitations by QR code"
+   ],
+   "area": "reading-account-and-vault",
+   "depends_on": [],
+   "session_brief": "This work happens in the pki.sgit.ai repository, not this one. Read admin/notes/2026-10-18__a-directory-of-people-and-keys.md on newsroom.sgit.ai and the article, then pki.sgit.ai's llms.txt, /rules/ and /registry/llms.txt, and sgit.ai/docs/pki.md and vault-messaging.md. First deliverable: a people record schema (identity statement from an sgit pki export bundle, evidence claims, vouch and confirmation statements, each in the owner's record) with a validator that rejects writes to another person's record and computes confirmed links only when both statements exist. Done when the tests in the note pass on fixtures.",
+   "size": "L"
+  },
+  {
+   "id": "generation-z-developers-2e",
+   "title": "Generation Z Developers (AI edition), from the newsroom's articles",
+   "source": [
+    "generation-z-developers-again",
+    "admin/notes/2026-10-18__generation-z-developers-second-edition.md",
+    "books-from-articles"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "An AI edition of Dinis's 2018 book, done first before the other books: keep the title, dated October 2026; frame it with explorers, villagers and town planners and explain Wardley maps; a thorough review, then an editor agent that interviews Dinis; fill the 90 outlines from newsroom articles; then-and-now; a part on working with agents and on how the book was made; figures; his handwritten notes; Leanpub and LinkedIn iterations, then Amazon KDP, possibly launched in Portugal at Web Summit.",
+   "built": "The 2018 book exists on Leanpub (60%) and Amazon; its source is in DinisCruz/Book_Generation_Z_Developer (138 files, 90 outlines). Many outlines have matching articles on this site.",
+   "remaining": [
+    "A new repository for the edition, with roles (reviewer, editor, publisher)",
+    "A thorough review of the 2018 text, one record per chapter",
+    "Editor interviews with Dinis, transcripts kept",
+    "The chapter-to-article map and drafts, with figures",
+    "Then-and-now boxes; the agents part; how the book was made",
+    "Scanned handwritten notes",
+    "Leanpub iterations, then a 6x9 PDF and KDP"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Read admin/notes/2026-10-18__generation-z-developers-second-edition.md and the article, then the book's repository (content/) and books-from-articles. First deliverable: admin/content/books/generation-z-2e/map.json with one row per chapter and outline (2018 file, status written or outline, the newsroom articles that answer it, the gap). Done when every one of the 138 files has a row and the gaps are listed for Dinis.",
+   "size": "M"
+  },
+  {
+   "id": "versions-of-versions",
+   "title": "Versions of versions: the publishers' section with its own version line, recorded by each site release",
+   "source": [
+    "versions-of-versions",
+    "a-section-for-publishers"
+   ],
+   "date": "2026-10-18",
+   "status": "partly",
+   "asked": "Give large parts of the site their own version line, starting with the publishers' section; each newsroom release records which version of each part it carries, and which api.newsroom.sgit.ai release it pins once the site is built on the API; a page showing the tree; later the home page and the article pipeline as areas with their own releases and checks.",
+   "built": "v0.12.113: page_versions.py gives the page for publishers frozen versions (v1.0.0, v2.0.0), block and word diffs, and a ledger of changes per release. Articles already have their own versions.",
+   "remaining": [
+    "A version line for the whole publishers' section, with its own changelog",
+    "Each release records the version of each part it carries",
+    "Record the pinned API release once the newsroom consumes the API",
+    "A page showing the tree of versions for a release",
+    "Later: the home page and article pipeline as areas"
+   ],
+   "area": "publishing-method",
+   "depends_on": [],
+   "session_brief": "Read the article versions-of-versions, admin/build/page_versions.py and admin/content/publishers/versions.json. First deliverable: admin/content/parts.json listing the parts with their own version line (publishers first) and a release step that writes, per release, the version of each part into the release note and engineering/releases/<v>.parts.json. Done when a release that changes only the publishers' section bumps that section's version and the site's, and the parts file shows both.",
+   "size": "M"
+  },
+  {
+   "id": "gen-z-book-website",
+   "title": "gen-z-developers.sgit.ai: the book's website, repository for official versions, vault for working ones",
+   "source": [
+    "a-website-to-finish-the-book",
+    "admin/notes/2026-10-18__a-website-to-finish-the-book.md",
+    "generation-z-developers-again"
+   ],
+   "date": "2026-10-18",
+   "status": "partly",
+   "asked": "A website for reviewing and finishing the AI edition: v1 (2018) in the repository, working versions in a public vault, deltas between versions, the book as a graph at every altitude with infographics, voice comments, a board and issues, editor/copywriter/publisher agents who challenge and interview Dinis, sign-off, research and evidence; the OpenRouter key in a separate private vault.",
+   "built": "Built in one evening (18 to 19 October 2026), site v0.2.33 at gen-z-developers.sgit.ai, repository SGit-AI/SGit-AI__Website__Gen-Z-Developers: v1.0.0 rebuilt with its print PDF matched; release candidates 1 and 2 of Generation ZX Developers (GenAI Startup Edition); the ideas register and graph; the reader with the meter; roles and a review board; decisions; synthetic readers; storyboards, infographics and covers. See discovering-the-book.",
+   "remaining": [
+    "47 notes waiting on Dinis, including the company chapters",
+    "Sign-off of a first version of the new edition",
+    "Voice comments while reading",
+    "The working vault in use for text issues",
+    "Personal editions (book-for-one-reader)"
+   ],
+   "area": "publishing-method",
+   "depends_on": [
+    "generation-z-developers-2e"
+   ],
+   "session_brief": "Read admin/notes/2026-10-18__a-website-to-finish-the-book.md, then graphs.sgit.ai's books, roles and altitude ladder, and the book's repository. First deliverable: the new repository (SGit-AI/SGit-AI__Website__Gen-Z-Developers) with v1 imported as released and a static site showing it at gen-z-developers.sgit.ai (or the agreed address), plus a versions page reusing page_versions.py. Done when v1 is browsable chapter by chapter and its version page exists.",
+   "size": "L"
+  },
+  {
+   "id": "book-for-one-reader",
+   "title": "Personal editions of the book, assembled by an agent, paid as read",
+   "source": [
+    "a-book-for-one-reader",
+    "admin/notes/2026-10-18__a-website-to-finish-the-book.md"
+   ],
+   "date": "2026-10-18",
+   "status": "not built",
+   "asked": "An agent assembles an edition of the book for one person from the book's graph and a private brief (their role, altitude, examples, later language and culture), delivered as a PDF or in the browser and not published; pay as you read, starting with five pounds of credit; kept locally with the reader's vault as an option.",
+   "built": "The reading meter (pay after you read, five pounds of credit, balance can go negative) and the reader's vault exist on the newsroom. The book's graph does not exist yet.",
+   "remaining": [
+    "The book as a graph (gen-z-book-website)",
+    "A brief format for one reader",
+    "An assembler that walks the graph for a brief",
+    "PDF output",
+    "The meter on the book",
+    "Encryption to the reader's key (pki-people-directory)"
+   ],
+   "area": "payments",
+   "depends_on": [
+    "gen-z-book-website"
+   ],
+   "session_brief": "Read the article a-book-for-one-reader and the website brief. Wait for the book's graph. First deliverable: a brief schema (role, altitude, interests, language) and an assembler that, from the graph and a brief, outputs an ordered chapter list with altitude per chapter as JSON. Done when two different briefs give two different, sensible editions of v1.",
+   "size": "M"
+  }
+ ]
+}

@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine, SGit Newsroom</title>
+<meta name="description" content="Most of the rules we give agents today are hope-based security: written in the prompt, kept only if the model keeps them. The agent writing this site works under a behaviour policy of eleven rules, and only one of them is kept by something other than the agent. So I asked the question directly: in October 2026, are hooks the sweet spot? Can we move the rules out of the prompt and into small deterministic programs the agent's harness runs before and after every action, and keep them there until enforcement moves into a gateway or the platform itself? I took this session's own policy and tried, rule by rule, in a throwaway repository. Four rules moved into hooks fully, two mostly, three partly and two not at all, and the tests found a gap in the check I trust most. Hooks are the first layer that does not rely on the model and the last that still sees the action in the agent's own terms, which is why I think they are the right place to start, provided they are installed where the agent cannot edit them and set to fail closed. The open hook collections that exist block dangerous commands; the step that is missing is generating hooks from a written policy, and testing them, so the same rules can later be enforced by a gateway. We already need this for our own agents, so we can be among its heaviest users.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/are-hooks-the-sweet-spot.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/are-hooks-the-sweet-spot.html">
+<meta property="og:title" content="Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine, SGit Newsroom">
+<meta property="og:description" content="Most of the rules we give agents today are hope-based security: written in the prompt, kept only if the model keeps them. The agent writing this site works under a behaviour policy of eleven rules, and only one of them is kept by something other than the agent. So I asked the question directly: in October 2026, are hooks the sweet spot? Can we move the rules out of the prompt and into small deterministic programs the agent's harness runs before and after every action, and keep them there until enforcement moves into a gateway or the platform itself? I took this session's own policy and tried, rule by rule, in a throwaway repository. Four rules moved into hooks fully, two mostly, three partly and two not at all, and the tests found a gap in the check I trust most. Hooks are the first layer that does not rely on the model and the last that still sees the action in the agent's own terms, which is why I think they are the right place to start, provided they are installed where the agent cannot edit them and set to fail closed. The open hook collections that exist block dangerous commands; the step that is missing is generating hooks from a written policy, and testing them, so the same rules can later be enforced by a gateway. We already need this for our own agents, so we can be among its heaviest users.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/are-hooks-the-sweet-spot.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/are-hooks-the-sweet-spot.jpg">
+<link rel="alternate" type="text/markdown" href="are-hooks-the-sweet-spot.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine, SGit Newsroom", "headline": "Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine, SGit Newsroom", "description": "Most of the rules we give agents today are hope-based security: written in the prompt, kept only if the model keeps them. The agent writing this site works under a behaviour policy of eleven rules, and only one of them is kept by something other than the agent. So I asked the question directly: in October 2026, are hooks the sweet spot? Can we move the rules out of the prompt and into small deterministic programs the agent's harness runs before and after every action, and keep them there until enforcement moves into a gateway or the platform itself? I took this session's own policy and tried, rule by rule, in a throwaway repository. Four rules moved into hooks fully, two mostly, three partly and two not at all, and the tests found a gap in the check I trust most. Hooks are the first layer that does not rely on the model and the last that still sees the action in the agent's own terms, which is why I think they are the right place to start, provided they are installed where the agent cannot edit them and set to fail closed. The open hook collections that exist block dangerous commands; the step that is missing is generating hooks from a written policy, and testing them, so the same rules can later be enforced by a gateway. We already need this for our own agents, so we can be among its heaviest users.", "url": "https://newsroom.sgit.ai/articles/are-hooks-the-sweet-spot.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine</p>
+ <h1>Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/are-hooks-the-sweet-spot.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.43</a> &middot; <span class="chip">hooks</span><span class="chip">agents</span><span class="chip">agent-behaviour-policy</span><span class="chip">enforcement</span><span class="chip">policy-as-code</span><span class="chip">claude-code</span><span class="chip">guardrails</span><span class="chip">owasp</span><span class="chip">security</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> Most of the rules we give agents today are hope-based security: written in the prompt, kept only if the model keeps them. The agent writing this site works under a behaviour policy of eleven rules, and only one of them is kept by something other than the agent. So I asked the question directly: in October 2026, are hooks the sweet spot? Can we move the rules out of the prompt and into small deterministic programs the agent's harness runs before and after every action, and keep them there until enforcement moves into a gateway or the platform itself? I took this session's own policy and tried, rule by rule, in a throwaway repository. Four rules moved into hooks fully, two mostly, three partly and two not at all, and the tests found a gap in the check I trust most. Hooks are the first layer that does not rely on the model and the last that still sees the action in the agent's own terms, which is why I think they are the right place to start, provided they are installed where the agent cannot edit them and set to fail closed. The open hook collections that exist block dangerous commands; the step that is missing is generating hooks from a written policy, and testing them, so the same rules can later be enforced by a gateway. We already need this for our own agents, so we can be among its heaviest users.</em></p>
+<figure class="shot" data-shot="hs-rules.webp" data-dir="images/" data-alt="The eleven rules of this site&#x27;s writing session, rule by rule. Today one rule is kept by a hook, one in part by a disabled push URL, and the rest by the agent&#x27;s good behaviour. Moved into hooks and tested on fixed inputs in a throwaway repository: four fully, two mostly, three partly, two not at all." data-kind="comparison"><figcaption>The eleven rules of this site's writing session, rule by rule. Today one rule is kept by a hook, one in part by a disabled push URL, and the rest by the agent's good behaviour. Moved into hooks and tested on fixed inputs in a throwaway repository: four fully, two mostly, three partly, two not at all.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Most agent rules are hope.</b> Written in the prompt, kept only if the model keeps them.</li>
+<li><b>This session's own policy, measured.</b> Eleven rules; one kept by a hook, one in part by a setting, the rest by the agent.</li>
+<li><b>Moved into hooks and tested.</b> Four fully, two mostly, three partly, two not at all.</li>
+<li><b>The tests found a gap.</b> The leak scan blocked the key shapes it knows and let a GitHub token shape through.</li>
+<li><b>Hooks sit at the right place, for now.</b> The first layer that does not rely on the model, and the last that sees the action as the agent meant it.</li>
+<li><b>Only if the agent cannot edit them.</b> Installed by the organisation, outside the agent's reach, and set to fail closed.</li>
+<li><b>The missing step is generation.</b> Hook packs exist; hooks generated from a written policy, with tests, mostly do not.</li>
+<li><b>The same rules can move off the machine later.</b> A gateway answers the same allow, deny or ask.</li>
+</ul>
+<h2 id="question">The question</h2>
+<p><a href="agent-hooks-october-2026.html">Agent hooks in October 2026</a> was the debrief: what each platform's hooks can see, stop and change, and where they fail. This is the question I actually wanted answered. Most of the rules we give agents today are what I call hope-based security. They are in the prompt, or in a policy the prompt points to, and they hold because the model follows them. <a href="hope-or-enforcement.html">Hope or enforcement</a> measured how far that goes for one customer service agent: built the obvious way, 97% of its rules were kept only by the model's good behaviour.</p>
+<p>Real enforcement will end up outside the agent: in a proxy that every tool call passes through, in the sandbox, in the platform, in credentials that cannot do the wrong thing. That is being built, and it is not where most teams are today. So, in October 2026, are hooks the sweet spot in between? How much of an agent's policy can move from the prompt into a hook now?</p>
+<h2 id="own">This session's own policy</h2>
+<p>The agent writing this site works under an <a href="footprint-and-blast-radius.html">agent behaviour policy</a> of eleven rules, and each rule says what keeps it: an expectation, which the agent keeps; a setting, which something configurable keeps; or a boundary, which is out of the agent's reach. Ten of the eleven say expectation. The one setting is the status report you see at the end of its answers: a hook supplies it, and a second hook, run when the agent stops, asks once if it is missing. In this session it has asked. One more rule is kept in part by a setting: the push URL for the sgit.ai repository is disabled, so a push there fails.</p>
+<p>Everything else, never leaking a key, scanning before every commit, keeping model names out of commits, asking before opening a pull request, is the agent keeping its word. That has mostly worked, and not always. The commit that published the first hooks article today carried the wrong model name in its trailer. The rule says the trailer is the one the session gives; the leak scan looks for model ids, not names; nothing compared the two. It is a small slip, and exactly the kind a hook exists to catch.</p>
+<h2 id="sandbox">Rule by rule, in a sandbox</h2>
+<p>So I tried. In a throwaway repository with two bare remotes, one allowed and one forbidden, I wrote one small hook per rule and fed each one fixed inputs, the JSON a harness would send. My own session's settings were not changed.</p>
+<ul>
+<li><b>Rule 2, the leak scan before every commit.</b> A hook before each shell command looks for <code>git commit</code> and runs the scan itself; if it fails, the hook exits with code 2 and the commit does not happen. It let a clean change through and blocked <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds-programmatic-access.html">AWS's documented example key</a>. It also let a GitHub token shape through, because the scan's patterns were written for this site's own secrets and do not know that shape. A hook is only as good as the check it runs.</li>
+<li><b>Rule 5, no model ids outside the byline.</b> A hook reads the commit message: an id in the body was refused, the agreed byline allowed. Checking the trailer against the one the session was given is one more line.</li>
+<li><b>Rule 9, release only to the newsroom.</b> Two layers. A hook before <code>git push</code> checks the remote, and git's own pre-push hook, in the repository, refuses any destination but the allowed one, by name or by URL, whatever started the push.</li>
+<li><b>Rule 3, mask keys in output.</b> A hook after each command rewrites what the model reads, masking anything shaped like a key. The first version broke the output's shape; Claude Code's reference is clear that the replacement "must match the tool's output shape", and the fixed version keeps it. The same reference says what this cannot do: "The tool has already run by the time the hook fires."</li>
+<li><b>Rule 7, no pull request or issue without asking.</b> A hook on those tools answers "ask", and the person decides. Contacting nobody and naming nobody on a private list stay judgement, with the leak scan checking the names.</li>
+</ul>
+<p>The rest moved partly or not at all. Never leaking a key is covered where it would leave by a commit or reach the model, and not anywhere else. Using no credential but the session's own is better kept by not having other credentials in reach. Wording rules can be checked on the files an agent writes, and the site's validator already does part of it. Research before writing is judgement, not a check at a moment of action, and stays with the agent and the review.</p>
+<h2 id="layers">Where a hook sits</h2>
+<figure class="shot" data-shot="hs-layers.webp" data-dir="images/" data-alt="Where a rule can be kept. From the prompt, which sees everything and enforces nothing, through agent hooks and the tools&#x27; own hooks, to the sandbox, a gateway off the machine, and the service itself. Each layer down is harder for the agent to change and sees less of what the agent meant to do." data-kind="architecture"><figcaption>Where a rule can be kept. From the prompt, which sees everything and enforces nothing, through agent hooks and the tools' own hooks, to the sandbox, a gateway off the machine, and the service itself. Each layer down is harder for the agent to change and sees less of what the agent meant to do.</figcaption></figure>
+<p>That result is why I think hooks are the sweet spot for now. They are the first layer that does not depend on the model: the same input gets the same answer every time, at no model cost. And they are the last layer that still sees the action as the agent meant it: a tool call by name, a commit with its message, a pull request with its title. A sandbox sees files and hosts. A gateway sees requests. Further down, enforcement is stronger and the intent is harder to read.</p>
+<p>The limits are the ones the first article listed, and the vendors say them plainly. Trail of Bits, whose configuration ships two blocking hooks: "Hooks are not a security boundary -- a prompt injection can work around them." The safety net hook collection describes itself as "not a sandbox". On Claude Code, by default, "a policy hook with a wrong path or a crashing script lets everything through". And its sandbox has a matching limit in the other direction: "The sandbox covers shell commands only."</p>
+<p>So a hook is a setting, in the policy's own terms, and what matters is who can change it. A hook in a file the agent can write is a setting the agent keeps, which is very close to an expectation. This session's own hooks live in a folder the agent can write. A hook the organisation installs where the agent cannot write, with only the organisation's hooks allowed to run (<code>allowManagedHooksOnly</code> in Claude Code, <code>allow_managed_hooks_only</code> in Codex) and a failure set to block (<code>onFailure</code> in Claude Code, <code>failClosed</code> in Cursor), is as strong as a hook gets. It still runs on the same machine with the user's permissions, and it still sees only what is routed through it. Git's own hooks have the same question: by default they live in <code>.git/hooks</code>, which the agent can usually write.</p>
+<h2 id="chained">Chained, not ordered</h2>
+<p>A policy of many rules becomes many hooks, so how they combine matters, and the platforms agree on more than I expected. On Claude Code, "All matching hooks run in parallel", and "When multiple PreToolUse hooks return different decisions, precedence is <code>deny</code> &gt; <code>defer</code> &gt; <code>ask</code> &gt; <code>allow</code>." Cursor merges hooks from every source the same way: "any deny wins over ask, and ask wins over allow, regardless of source." Codex runs matching hooks concurrently, so one cannot stop another from starting.</p>
+<p>That suits a policy. Each rule becomes one small hook with one job; they run side by side; the most restrictive answer wins. What it rules out is a chain where one hook depends on another's output, or on running first. A hook pack should be a set of independent checks, not a pipeline.</p>
+<h2 id="who">Who else is doing this</h2>
+<p>The open collections that exist are mostly about dangerous commands. Trail of Bits' <a href="https://github.com/trailofbits/claude-code-config">configuration</a> blocks <code>rm -rf</code> and direct pushes to the main branch. The <a href="https://github.com/kenryu42/claude-code-safety-net">safety net</a> blocks destructive git and file commands and access to sensitive files, across several agents. <a href="https://github.com/lasso-security/claude-hooks">Lasso Security's hooks</a> look for prompt injection in tool output: "The defender scans all tool outputs and warns Claude when suspicious patterns are detected." Those are good, and they are the same rules for everyone.</p>
+<p>Generating hooks from a team's own rules has started too. <a href="https://github.com/zxdxjtu/claudecode-rule2hook">claudecode-rule2hook</a> says: "Convert natural language project rules into Claude Code hooks automatically!" Anthropic's <a href="https://github.com/anthropics/claude-code/tree/main/plugins/hookify">hookify</a> plugin writes rules from an instruction, or "Analyzes recent conversation" to find behaviour you corrected. Off the machine, AWS's <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html">AgentCore Policy</a> does the same for a gateway: rules in plain English become Cedar, and every action through the gateway is "evaluated at the boundary" outside the agent's code. Docker's <a href="https://docs.docker.com/reference/cli/docker/mcp/gateway/gateway_run">MCP Gateway</a> can block secrets and network access for the tools behind it.</p>
+<p>And OWASP has the piece that joins them. The <a href="https://genai.owasp.org/resource/agent-control-standard-acs/">Agent Control Standard</a>, in the OWASP GenAI Security Project, "defines how agent platforms expose middleware hooks and how safety policies can be enforced through them". Its decisions are the hooks' decisions, allow, deny, modify, ask, defer, with a policy engine such as OPA or Cedar behind them. It is early, and its own <a href="https://github.com/GenAI-Security-Project/agent-control-standard">repository</a> says so: "Two of ACS's nineteen hook methods are evaluated live". So the question is not whether OWASP should start a project on hooks; one exists, and the useful contribution is real policies and real hooks to test it with.</p>
+<h2 id="pack">A hook pack generated from a policy</h2>
+<p>What I have not found is the whole loop, and it is the one I would build. Start from the written policy, one row per rule, with its barrier. Generate one hook per row that can be checked at a moment of action, with fixed inputs that must be allowed and fixed inputs that must be blocked, run as tests on every change. Install the pack where the agent cannot write, with only managed hooks allowed and failures set to block. Then read the pack back against the policy, the same round trip <a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first</a> ran with Open Policy Agent: every rule with no hook is still hope, and every hook with no rule is a control nobody can explain.</p>
+<p>The description stays the source, as Sean Turner's control for skills does in <a href="a-policy-for-every-skill.html">A policy for every skill</a>: change the rule, regenerate the hook, rerun the tests. And because a hook's answer is the same allow, deny or ask that a gateway gives, the same rows can later be compiled for the gateway, and each rule moves off the machine when something off the machine can keep it. The barrier column of the policy records where each rule is kept today, so moving a rule is one edit, and the gap it leaves is visible.</p>
+<p>We already need this for our own agents, which is the best reason to build it. A session like this one, with a written policy, a leak scan, a release process and a report that proves the policy is still loaded, can be among the heaviest users of hooks, and every gap we find is one a customer does not.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The tests were fixtures, not a live harness.</b> Each hook was run on the JSON a harness would send, in a throwaway repository; the composition rules are from the vendors' documentation.</li>
+<li><b>Hooks are not a boundary.</b> They run on the same machine with the user's permissions and see only what is routed through them; they make rules harder to break, not impossible.</li>
+<li><b>The counts are for one policy.</b> Four, two, three and two are this session's eleven rules; another policy will divide differently.</li>
+<li><b>The pack is a proposal.</b> The generator, the tests on every change and the gateway compilation are not built.</li>
+<li><b>Collections and products move fast.</b> Read on 14 October 2026; star counts and features change.</li>
+</ul>
+<p>If you are moving an agent's rules into hooks, or building the gateway they should move to next, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 14 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The hooks were written and tested for this article in a throwaway repository, against this session's own behaviour policy, without changing the session's settings. A research agent gathered the collections, gateways and standards, and the quotes were re-checked on the pages themselves. Anthropic, <a href="https://code.claude.com/docs/en/hooks">Claude Code hooks reference</a> and <a href="https://code.claude.com/docs/en/sandboxing">sandboxing</a>; OpenAI, <a href="https://learn.chatgpt.com/docs/hooks">Codex hooks</a>; Cursor, <a href="https://cursor.com/docs/agent/hooks">hooks</a>; OWASP GenAI Security Project, <a href="https://genai.owasp.org/resource/agent-control-standard-acs/">Agent Control Standard</a>. All read on 14 October 2026.</p>
+<sg-meter view="page" kind="article" date="2026-10-14" topics="agents-and-policy site-and-engineering" title="Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#are-hooks-the-sweet-spot">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="agent-hooks-october-2026.html">Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail</a> <span class="dim">A debrief on agent hooks across ten platforms: what each can see, stop and change, where they run, and the failure modes every vendor admits.</span></li><li><a href="hope-or-enforcement.html">Hope or enforcement: one customer service agent, three designs, and who keeps each promise</a> <span class="dim">One customer service agent built three ways, each with an Agent Behaviour Policy: how much of each policy is hope, and what one run can reach.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li><li><a href="policy-as-code-needs-a-policy-first.html">Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have</a> <span class="dim">Policy as code answers one question. An agent behaviour policy holds the rest, and can be generated into code or reverse engineered from it.</span></li><li><a href="a-policy-for-every-skill.html">A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less</a> <span class="dim">Sean Turner's natural-language control for agent skills, read as a behaviour policy, and why the description, not the code, stays canonical.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-leak-without-breaking-the-policy.html">Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks</a> <span class="dim">A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.</span></li><li><a href="a-briefing-for-the-ciso-summit.html">A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next</a> <span class="dim">A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.</span></li><li><a href="governs-enforces-attests.html">Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</a> <span class="dim">An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.</span></li><li><a href="your-own-newsroom.html">Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful</a> <span class="dim">The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.</span></li><li><a href="the-tokens-hook.html">The tokens hook: a token behaviour policy that shows what every session reads, caches, writes and costs, why a prompt cannot do it, and a brief for tokens.hook.sgit.ai</a> <span class="dim">A token behaviour policy as a 132-line hook: the user sees what each session reads, caches and costs; a prompt cannot do it.</span></li><li><a href="commanders-intent-is-a-behaviour-policy.html">Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested</a> <span class="dim">Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.</span></li><li><a href="skill-behaviour-policy.html">A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills</a> <span class="dim">A skill behaviour policy compares what a skill says, what it can do and what it is given, then generates the control; measured on 899 skills.</span></li><li><a href="hooks-are-kernel-code.html">Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run</a> <span class="dim">Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.</span></li><li><a href="system-prompts-as-behaviour-policies.html">System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce</a> <span class="dim">Claude's published system prompt as 82 policy rows in eight kinds: 36 could be held by the harness, 21 partly by classifiers, 25 stay with the model.</span></li><li><a href="the-agents-write-too.html">The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it</a> <span class="dim">The newsroom's agents get their own bylines: lessons every agent loads, debriefs as source material, a page for every agent, and a conductor.</span></li><li><a href="agent-hooks-october-2026.html">Agent hooks in October 2026: a technical debrief on what each platform lets you see, stop and change, where hooks run, and where they fail</a> <span class="dim">A debrief on agent hooks across ten platforms: what each can see, stop and change, where they run, and the failure modes every vendor admits.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 115 &middot; <a href="../for/make.html#r=115">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/are-hooks-the-sweet-spot.jpg" download>are-hooks-the-sweet-spot.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="are-hooks-the-sweet-spot.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

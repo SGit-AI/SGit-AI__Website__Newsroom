@@ -1,0 +1,183 @@
+{
+ "slug": "dark-mode-and-four-more",
+ "teaser": "Five themes behind one pill in the bar, kept in the reader's browser, built as a layer over a stylesheet this site cannot edit, with colour as a token and a test.",
+ "topics": [
+  "site-and-engineering"
+ ],
+ "core_idea": "A reader's two-word reply became five themes: the look the site had stays the default, pixel for pixel, and four more reach every heading because every colour on the site now comes from one file of tokens, with the imported stylesheet's literal colours shadowed rule by rule rather than edited, the theme set before the first paint, and a test that fails on a theme with a hole or a stylesheet with a literal.",
+ "nodes": [
+  {
+   "id": "ask",
+   "label": "Dark mode!",
+   "kind": "example",
+   "summary": "The first reaction to the wire from outside: a reader on WhatsApp, two words, which became Dinis's ask for five themes like VoiceDebrief's."
+  },
+  {
+   "id": "five",
+   "label": "Five themes",
+   "kind": "artefact",
+   "summary": "Newsprint, the default and unchanged; Night, the dark mode; Paper, warm cream; Blueprint, white and blue; Ember, dark and amber."
+  },
+  {
+   "id": "picker",
+   "label": "The pill in the bar",
+   "kind": "artefact",
+   "summary": "A swatch and a name beside Search and Vault; a list of five with a swatch, a name and three words each; keyboard and touch."
+  },
+  {
+   "id": "memory",
+   "label": "Kept in this browser",
+   "kind": "claim",
+   "summary": "The choice lives in localStorage and never leaves the device; the system's dark preference decides only until the reader chooses."
+  },
+  {
+   "id": "imported",
+   "label": "A stylesheet this site cannot edit",
+   "kind": "question",
+   "summary": "The newsroom's look is sgit.ai's stylesheet, imported on every sync and checked unedited, and it writes forty-odd colours as literals."
+  },
+  {
+   "id": "map",
+   "label": "The override map",
+   "kind": "method",
+   "summary": "Every rule with a literal is restated later in the cascade with a token whose Newsprint value is that literal: same selector, same specificity, generated from a script, not guessed."
+  },
+  {
+   "id": "token",
+   "label": "Colour is a token",
+   "kind": "claim",
+   "summary": "A stylesheet names a colour through a token, defined once in all five themes; the stylesheets this site owns were rewritten to the rule."
+  },
+  {
+   "id": "paint",
+   "label": "Before the first paint",
+   "kind": "method",
+   "summary": "The theme stylesheet and a classic, blocking script are the first lines of the body on every page, so a page opens in the reader's theme rather than flipping."
+  },
+  {
+   "id": "head",
+   "label": "--head, not --ink",
+   "kind": "concept",
+   "summary": "A token is named for what it is for: the imported deck viewer reads --ink as a dark bar, so a near-white heading token under that name would have turned the bar white."
+  },
+  {
+   "id": "bar",
+   "label": "The bar on one row",
+   "kind": "artefact",
+   "summary": "Eight groups, the tools as one cluster, the parent pill gone, breakpoints found by a sweep of widths and kept by the test."
+  },
+  {
+   "id": "gate",
+   "label": "The test",
+   "kind": "method",
+   "summary": "Every token in every theme; no literal outside the themes file; the picker and its memory; contrast at 4.5:1 measured in every theme; the bar on one row from 1200 up."
+  },
+  {
+   "id": "clash",
+   "label": "White on white",
+   "kind": "example",
+   "summary": "The map's .btn rule outranked the wire's own button and the first screenshot showed an empty pill; the fix is specificity, and the lesson is in the guidance."
+  },
+  {
+   "id": "guidance",
+   "label": "The design guidance",
+   "kind": "artefact",
+   "summary": "assets/themes/README.md: the tokens and what each is for, what stays literal and why, and how to add a theme."
+  }
+ ],
+ "edges": [
+  {
+   "from": "ask",
+   "to": "five",
+   "rel": "leads-to"
+  },
+  {
+   "from": "five",
+   "to": "picker",
+   "rel": "produces"
+  },
+  {
+   "from": "picker",
+   "to": "memory",
+   "rel": "depends-on"
+  },
+  {
+   "from": "five",
+   "to": "imported",
+   "rel": "depends-on"
+  },
+  {
+   "from": "imported",
+   "to": "map",
+   "rel": "answers"
+  },
+  {
+   "from": "map",
+   "to": "token",
+   "rel": "example-of"
+  },
+  {
+   "from": "token",
+   "to": "gate",
+   "rel": "produces"
+  },
+  {
+   "from": "five",
+   "to": "paint",
+   "rel": "depends-on"
+  },
+  {
+   "from": "token",
+   "to": "head",
+   "rel": "extends"
+  },
+  {
+   "from": "ask",
+   "to": "bar",
+   "rel": "leads-to"
+  },
+  {
+   "from": "bar",
+   "to": "gate",
+   "rel": "depends-on"
+  },
+  {
+   "from": "map",
+   "to": "clash",
+   "rel": "leads-to"
+  },
+  {
+   "from": "clash",
+   "to": "guidance",
+   "rel": "leads-to"
+  },
+  {
+   "from": "token",
+   "to": "guidance",
+   "rel": "produces"
+  }
+ ],
+ "links": {
+  "articles": [
+   "the-vault-crosses-chrome-profiles",
+   "i-miss-it",
+   "the-site-is-an-inbox"
+  ],
+  "pages": [],
+  "sites": [
+   "https://voicedebrief.ai/",
+   "https://voicedebrief.ai/vd-tokens.css",
+   "https://voicedebrief.ai/vd-theme.js"
+  ]
+ },
+ "quotes": [
+  {
+   "text": "Newsprint renders pixel for pixel as before, and the other four reach every heading.",
+   "why": "The whole design constraint and its answer in one sentence."
+  },
+  {
+   "text": "A token is named for what it is for, not for what it looks like in one theme.",
+   "why": "The naming rule, learnt from a bar that would have turned white."
+  }
+ ]
+}

@@ -1,0 +1,293 @@
+{
+  "slug": "replicating-the-agentic-inbox",
+  "teaser": "How to copy a working agentic email setup in phases: a mailbox and Claude seat of the agent's own, one session with a policy, then roles talking in files.",
+  "topics": [
+    "agents-and-policy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Claude is used as an agent state machine, one session per role, every message between agents a file in a vault and every outgoing email a draft a person sends; the phases take you from one session to a scheduled team without ever breaking that rule.",
+  "nodes": [
+    {
+      "id": "state-machine",
+      "label": "Claude as a state machine",
+      "kind": "concept",
+      "summary": "Each role is one session that reads its state from a vault, does one kind of work, writes files back and stops; the conductor makes this literal."
+    },
+    {
+      "id": "own-accounts",
+      "label": "Accounts of the agent's own",
+      "kind": "method",
+      "summary": "A Workspace mailbox on a domain you own, a Claude Team seat, a GitHub account on the same identity; never your own inbox."
+    },
+    {
+      "id": "connectors",
+      "label": "Connectors enabled, then connected",
+      "kind": "artefact",
+      "summary": "On a Team plan the owner enables connectors for the organisation; the agent's own account then connects, so the OAuth grants live only there."
+    },
+    {
+      "id": "inbox-agent",
+      "label": "The inbox role",
+      "kind": "artefact",
+      "summary": "The one session that reads the mailbox, labels, moves, summarises and captures what people wrote into the CRM."
+    },
+    {
+      "id": "policy-table",
+      "label": "The policy as a table",
+      "kind": "method",
+      "summary": "Reach, mandate, gap and barriers written before the first run; most barriers in front of a single session are the policy and nothing technical, and the table says so."
+    },
+    {
+      "id": "roles",
+      "label": "Roles: @inbox, @drafts, @crm, @briefs, @dev",
+      "kind": "concept",
+      "summary": "Each role a session with a policy short enough to check; every account has the same reach to the mailbox, two have it in their mandate, one may write."
+    },
+    {
+      "id": "email-fs",
+      "label": "Email-FS lite",
+      "kind": "artefact",
+      "summary": "A message is a file with email headers and typed blocks; mailroom, inbox, done and outbox folders; each role writes only its own folders; one commit per cycle after a leak check."
+    },
+    {
+      "id": "drafts-rule",
+      "label": "The agent drafts, a person sends",
+      "kind": "claim",
+      "summary": "Nothing is sent by an agent; the draft is Cc'd to the person, its hash is logged, and the inbox role records the send from the Sent folder afterwards."
+    },
+    {
+      "id": "security-hold",
+      "label": "The security hold",
+      "kind": "example",
+      "summary": "The one exception: the security role may send one email to one address on a critical finding, and writes a hold file that stops every agent and every run until a person releases it."
+    },
+    {
+      "id": "conductor",
+      "label": "The conductor",
+      "kind": "artefact",
+      "summary": "A scheduled session that runs every role exactly once in a fixed order with a time box, leak-checks and pushes after each step, and writes a report; a security role runs first and last."
+    },
+    {
+      "id": "clone-cost",
+      "label": "The clone cost",
+      "kind": "claim",
+      "summary": "Clone time grows with the number of commits, not file size; fifty commits a day made a seven-minute clone after three days. Commit once per run and compact when a clone passes five minutes."
+    },
+    {
+      "id": "key-rotation",
+      "label": "A leaked write key means a new vault",
+      "kind": "method",
+      "summary": "History keeps what was committed, so a key quoted in a committed file is fixed by a fresh vault seeded from the current files, not by a redaction; scan for other people's secret shapes too."
+    },
+    {
+      "id": "interfaces",
+      "label": "Interfaces for the moment",
+      "kind": "artefact",
+      "summary": "The Now card and the waiting-on board, computed from the vault files when the page opens, nothing stored; each one gets a policy."
+    },
+    {
+      "id": "record",
+      "label": "The record",
+      "kind": "concept",
+      "summary": "Every message a file, every draft in the mailbox, every decision a row: a footprint that can be read afterwards without touching anything."
+    },
+    {
+      "id": "trust",
+      "label": "Trust built from the record",
+      "kind": "claim",
+      "summary": "You do not have to believe what the agent says it did; you can read what it did, and give it more as the drafts you did not change pile up."
+    },
+    {
+      "id": "agents-own-account",
+      "label": "The agents' own account",
+      "kind": "question",
+      "summary": "Each role describes what it reads, writes and refuses, in its own words; the dev role's paragraph and the briefs role's picture of the twelve-agent team are the first two."
+    }
+  ],
+  "edges": [
+    {
+      "from": "own-accounts",
+      "to": "connectors",
+      "rel": "leads-to"
+    },
+    {
+      "from": "own-accounts",
+      "to": "inbox-agent",
+      "rel": "leads-to"
+    },
+    {
+      "from": "policy-table",
+      "to": "inbox-agent",
+      "rel": "depends-on"
+    },
+    {
+      "from": "inbox-agent",
+      "to": "drafts-rule",
+      "rel": "depends-on"
+    },
+    {
+      "from": "security-hold",
+      "to": "drafts-rule",
+      "rel": "example-of"
+    },
+    {
+      "from": "inbox-agent",
+      "to": "roles",
+      "rel": "leads-to"
+    },
+    {
+      "from": "roles",
+      "to": "email-fs",
+      "rel": "depends-on"
+    },
+    {
+      "from": "roles",
+      "to": "policy-table",
+      "rel": "extends"
+    },
+    {
+      "from": "state-machine",
+      "to": "roles",
+      "rel": "produces"
+    },
+    {
+      "from": "state-machine",
+      "to": "conductor",
+      "rel": "leads-to"
+    },
+    {
+      "from": "conductor",
+      "to": "security-hold",
+      "rel": "depends-on"
+    },
+    {
+      "from": "conductor",
+      "to": "clone-cost",
+      "rel": "produces"
+    },
+    {
+      "from": "clone-cost",
+      "to": "key-rotation",
+      "rel": "compared-with"
+    },
+    {
+      "from": "email-fs",
+      "to": "record",
+      "rel": "produces"
+    },
+    {
+      "from": "record",
+      "to": "key-rotation",
+      "rel": "leads-to"
+    },
+    {
+      "from": "roles",
+      "to": "interfaces",
+      "rel": "leads-to"
+    },
+    {
+      "from": "interfaces",
+      "to": "policy-table",
+      "rel": "extends"
+    },
+    {
+      "from": "record",
+      "to": "trust",
+      "rel": "produces"
+    },
+    {
+      "from": "drafts-rule",
+      "to": "trust",
+      "rel": "produces"
+    },
+    {
+      "from": "own-accounts",
+      "to": "trust",
+      "rel": "depends-on"
+    },
+    {
+      "from": "roles",
+      "to": "agents-own-account",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "six-agents-one-inbox",
+      "custom-uis-are-not-the-exception",
+      "footprint-and-blast-radius",
+      "connector-twin-before-you-deploy-an-agent",
+      "ultimate-insider-three-collisions"
+    ],
+    "pages": [
+      "/docs/append-lane-messaging.html",
+      "/docs/agent-contact.html",
+      "/docs/briefs/vault-telemetry-append-lanes.html"
+    ],
+    "sites": [
+      "https://riskmandate.ai/abp.html",
+      "https://riskmandate.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Nothing is sent by an agent.",
+      "why": "The rule that never changes, and the reason the setup gives the person more control rather than less."
+    },
+    {
+      "text": "You do not have to believe what the agent says it did. You can read what it did.",
+      "why": "Why the record is the point for someone learning to trust a set of agents."
+    },
+    {
+      "text": "A leaked write key means a new vault, not an edit.",
+      "why": "The lesson the record taught on day five: history keeps what was committed."
+    }
+  ],
+  "figures": [
+    {
+      "file": "inbox-four-phases.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-four-phases.webp",
+      "caption": "The agentic inbox in four phases, and the rule across the top that never changes. Phase 0 is the accounts, a mailbox and a Claude seat of the agent's own. Phase 1 is one session with a policy. Phase 2 splits the roles and has them talk in files through a vault. Phase 3 adds the interfaces, the record and, later, the schedule. Stop at any phase; each one is already worth having. Figure by the dev agent, 3 October 2026; no live data."
+    },
+    {
+      "file": "inbox-policy-table.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-policy-table.webp",
+      "caption": "A behaviour policy is four columns: reach, mandate, the gap between them, and the barrier for each row of the gap. Grey is \"the policy and nothing else\"; green is a control that holds. Mock-up by the dev agent with fictional rows; no live data."
+    },
+    {
+      "file": "inbox-draft-as-left.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-draft-as-left.webp",
+      "caption": "A draft as the agent leaves it. The agent writes the text and logs its hash; the person reads, edits and presses Send. The Send button belongs to no agent. Mock-up with fictional names and addresses; no live data."
+    },
+    {
+      "file": "inbox-team-mandate-matrix.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-team-mandate-matrix.webp",
+      "caption": "The team as a mandate matrix. Every role could do every column; each may do almost none. Phase 2 is the moment this picture becomes checkable, because each row is a file an agent reads before it works. Infographic by the dev agent; no live data."
+    },
+    {
+      "file": "inbox-email-fs-message.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-email-fs-message.webp",
+      "caption": "Email-FS lite. Left: one agent's folders in the vault (mailroom, then inbox, then done; the sender keeps a copy in its outbox). Right: a message as a file: email headers, typed blocks, one commit per cycle. Mock-up with fictional paths; no live data."
+    },
+    {
+      "file": "inbox-now-card-and-board.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-now-card-and-board.webp",
+      "caption": "Two of the interfaces phase 3 produces. Left: the Now card on a phone, blockers first, at most two actions, one tap to decide. Right: the board of who is waiting on whom; every card is computed from the vault files when the page opens. Mock-up with fictional names; no live data."
+    },
+    {
+      "file": "inbox-conductor-run.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-conductor-run.webp",
+      "caption": "The schedule, when you get there: a conductor runs every role once, in order, and writes the evidence; a security role runs first and last. The report is a file in the vault; the brief to the person is one message. Infographic with fictional timings; no live data."
+    },
+    {
+      "file": "inbox-security-hold.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-security-hold.webp",
+      "caption": "The named exception, as it looks when it fires: the security role is the only agent that may send an email, one message to one address, and the hold it raises stops every other agent until a person releases it. Mock-up with fictional paths; the key shown is masked and not real."
+    },
+    {
+      "file": "inbox-team-roster.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inbox-team-roster.webp",
+      "caption": "The team as the briefs role drew it on 2 October 2026: twelve agents, one owner, grouped by what they touch, with the path an email takes to leave and the order of a run along the bottom. Redrawn from the briefs role's card with the content kept; no contact named beyond the agent's published address."
+    }
+  ]
+}

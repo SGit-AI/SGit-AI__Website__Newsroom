@@ -1,0 +1,102 @@
+{
+ "slug": "the-wire-as-a-graph",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 277,
+   "line": "Design the wire graph backwards from the reader",
+   "para": "Each wire story should be a short narrative where every name links to an ID and every sentence is a claim with evidence. Stories group into stories, the fractal part. The four wires' vaults hold 202 stories and 1,358 names, only 44% found in their own text, and the article doubles as the desks' brief.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 176,
+   "line": "Every name a link, every sentence a claim",
+   "para": "Start from what the reader sees: a narrative with linked people, companies, events and places, and sentences typed as fact, observation, party statement or analysis. Threads are stories of stories, with random IDs never reused. Of 1,358 names, 171 appear in two stories and 48 in two wires; gravity decides folders.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "ux",
+   "label": "Start from the end",
+   "words": 282,
+   "line": "Readers should see stories whose names are links",
+   "para": "Four wires, Industry, AWS and Portugal daily and OWASP weekly, already collect, cluster and gate editions. The reader should see a narrative where Asos, the NCSC, the Xuanye Group and Snowflake are typed links, with each claim's evidence beneath. The same data also gives views of the day, the story of stories and the name.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "today",
+   "label": "What is there today",
+   "words": 294,
+   "line": "Tags describe stories but do not anchor to text",
+   "para": "The public vaults hold 202 stories with slug IDs, superseded_by fields, threads and a 16-type Portugal ontology. Of 1,358 distinct names, median nine per story, only 44% appear in a story's headline or summary. Duplicates like \"aws\" and \"amazon web services\" and words like \"release\" tagged 34 times show why IDs are needed.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "primitives",
+   "label": "The primitives",
+   "words": 313,
+   "line": "Runs, captures, claims, stories and names are the primitives",
+   "para": "A run records wire, schedule, models and sources; a capture freezes what was read within the charter's tiers; a claim is one of four kinds pointing at captures. A story is a linked narrative, threads and other outlets' articles are stories too, and days, topics and names are views drawn from the store.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "ids",
+   "label": "Long-lived IDs",
+   "words": 159,
+   "line": "Every object needs a random ID that never changes",
+   "para": "Each object gets a 128-bit identifier minted once, never reused and never derived from its title. Slugs like sec-10 and old IDs after a merge remain aliases, so old links still resolve. Splits record their origin, and one name can carry several aliases, which lets the graph be cleaned without editing text.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "size",
+   "label": "Every phrase, at the right size",
+   "words": 200,
+   "line": "Link every phrase only in the short narrative",
+   "para": "Earlier experiments linked down to single words, and one catalogue came out 2.8 times the size of its articles: the right idea done too much. A wire story's narrative is about 55 words at the median, small enough to link completely, and it is where readers look first.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "tree",
+   "label": "The folder tree, and gravity",
+   "words": 129,
+   "line": "A name earns its own folder through gravity",
+   "para": "Folders for runs, captures, stories, topics and names follow the graph, with an index of every ID, alias and slug. A name appearing once lives inside its story; one in two or more stories or wires gets a folder. That means 171 of 1,358 names, a tree the desks can maintain.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "models",
+   "label": "Many models",
+   "words": 108,
+   "line": "Cheaper models propose, a capable model checks the graph",
+   "para": "Extracting names, linking spans and typing claims is high-volume work suited to Sonnet and Haiku. A more capable model then checks whether names match, claims are facts and evidence supports them, as the charter's independent verifier requires, while a code validator checks both.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "brief",
+   "label": "The brief",
+   "words": 311,
+   "line": "The brief: reader view first, then IDs and claims",
+   "para": "Written on 14 October 2026 on top of v0.12.45, the brief asks the desks to agree a reader view from fixtures, mint 128-bit IDs with slugs as aliases, merge duplicate names, record name spans and typed claims, make threads stories, add folders by gravity and run records. Analysis must never appear as fact.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 90,
+   "line": "The counts are lower bounds; nothing is built yet",
+   "para": "The figures come from the public vaults read on 14 October 2026, and working vaults may hold more. Matching was exact text ignoring case, so the counts are lower bounds. The reader view and IDs are only proposed, and the NCSC ID in the figure is an illustrative example.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 74,
+   "line": "Sources: a voice memo and the wires' vaults",
+   "para": "The article came from my voice memo of 14 October 2026, written by this site's writer agent. The numbers were measured from read-only clones of the four wires' public vaults and the wires' charter, desk brief and design notes, and the earlier experiments are this site's own articles.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

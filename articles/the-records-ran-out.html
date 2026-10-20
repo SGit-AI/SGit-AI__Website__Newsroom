@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges, SGit Newsroom</title>
+<meta name="description" content="On 11 October The New Stack published a piece by Ignacio Aldama, an engineer at Bit Cloud, in which a brand-new Claude Code session with no history and no local code found a support console's shared ticket contract in two MCP calls, from the dependency records the build platform writes as each component is versioned, and then left the contract alone because it knew two components depended on it. It is a good demonstration and an honest one, because he then says where the records ran out. They describe structure, not behaviour; a green build can hide tests that never ran; a demo carries a public signing secret and a list of unfinished work; and memory, which holds intent, is not tied to a code version. Those edges are exactly where sgit and RiskMandate sit. Label every fact with how it is known. Treat a skipped test as a control that did not run. Accept a demo shortcut by name and for an interval, or stop. Keep memory and records in one encrypted, versioned history so the intent of version 1.4 is recorded at 1.4. And let records cross a company boundary with publish, clone and mirror. What exists, what is documented and what is only proposed are marked as such.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/the-records-ran-out.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/the-records-ran-out.html">
+<meta property="og:title" content="The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges, SGit Newsroom">
+<meta property="og:description" content="On 11 October The New Stack published a piece by Ignacio Aldama, an engineer at Bit Cloud, in which a brand-new Claude Code session with no history and no local code found a support console's shared ticket contract in two MCP calls, from the dependency records the build platform writes as each component is versioned, and then left the contract alone because it knew two components depended on it. It is a good demonstration and an honest one, because he then says where the records ran out. They describe structure, not behaviour; a green build can hide tests that never ran; a demo carries a public signing secret and a list of unfinished work; and memory, which holds intent, is not tied to a code version. Those edges are exactly where sgit and RiskMandate sit. Label every fact with how it is known. Treat a skipped test as a control that did not run. Accept a demo shortcut by name and for an interval, or stop. Keep memory and records in one encrypted, versioned history so the intent of version 1.4 is recorded at 1.4. And let records cross a company boundary with publish, clone and mirror. What exists, what is documented and what is only proposed are marked as such.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/the-records-ran-out.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/the-records-ran-out.jpg">
+<link rel="alternate" type="text/markdown" href="the-records-ran-out.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges, SGit Newsroom", "headline": "The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges, SGit Newsroom", "description": "On 11 October The New Stack published a piece by Ignacio Aldama, an engineer at Bit Cloud, in which a brand-new Claude Code session with no history and no local code found a support console's shared ticket contract in two MCP calls, from the dependency records the build platform writes as each component is versioned, and then left the contract alone because it knew two components depended on it. It is a good demonstration and an honest one, because he then says where the records ran out. They describe structure, not behaviour; a green build can hide tests that never ran; a demo carries a public signing secret and a list of unfinished work; and memory, which holds intent, is not tied to a code version. Those edges are exactly where sgit and RiskMandate sit. Label every fact with how it is known. Treat a skipped test as a control that did not run. Accept a demo shortcut by name and for an interval, or stop. Keep memory and records in one encrypted, versioned history so the intent of version 1.4 is recorded at 1.4. And let records cross a company boundary with publish, clone and mirror. What exists, what is documented and what is only proposed are marked as such.", "url": "https://newsroom.sgit.ai/articles/the-records-ran-out.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges</p>
+ <h1>The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-12 &middot; <a href="versions/the-records-ran-out.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.80</a> &middot; <span class="chip">agents</span><span class="chip">mcp</span><span class="chip">claude-code</span><span class="chip">memory</span><span class="chip">records</span><span class="chip">evidence</span><span class="chip">sgit</span><span class="chip">riskmandate</span><span class="chip">agent-behaviour-policy</span><span class="chip">licence-to-operate</span><span class="chip">versioning</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> On 11 October The New Stack published a piece by Ignacio Aldama, an engineer at Bit Cloud, in which a brand-new Claude Code session with no history and no local code found a support console's shared ticket contract in two MCP calls, from the dependency records the build platform writes as each component is versioned, and then left the contract alone because it knew two components depended on it. It is a good demonstration and an honest one, because he then says where the records ran out. They describe structure, not behaviour; a green build can hide tests that never ran; a demo carries a public signing secret and a list of unfinished work; and memory, which holds intent, is not tied to a code version. Those edges are exactly where sgit and RiskMandate sit. Label every fact with how it is known. Treat a skipped test as a control that did not run. Accept a demo shortcut by name and for an interval, or stop. Keep memory and records in one encrypted, versioned history so the intent of version 1.4 is recorded at 1.4. And let records cross a company boundary with publish, clone and mirror. What exists, what is documented and what is only proposed are marked as such.</em></p>
+<figure class="shot" data-shot="rr-gaps.webp" data-dir="images/" data-alt="Where the records ran out, and what fills each gap. The left two columns are Ignacio Aldama&#x27;s own findings; the right two are the label each one gets in the vocabulary of evidence and barriers, and what fills it today. The status column says which of those exist, which are documented and untested here, and which are proposed." data-kind="comparison"><figcaption>Where the records ran out, and what fills each gap. The left two columns are Ignacio Aldama's own findings; the right two are the label each one gets in the vocabulary of evidence and barriers, and what fills it today. The status column says which of those exist, which are documented and untested here, and which are proposed.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>The demonstration is real and useful.</b> A fresh Claude Code session, no history, no local code, called <code>read_scope</code> and <code>read_components</code> over MCP, found that the app and the service depend on the same version of a shared ticket entity, and changed only the app. 41 tests passed, nine of them new. Knowing what is shared tells an agent what not to touch.</li>
+<li><b>He says where it stops, which is why it is worth answering.</b> Records describe structure, not behaviour. A green build can hide tests that did not run. A demo carries a public signing secret and a list of unfinished work. A memory note is dated but not tied to a version.</li>
+<li><b>Each edge has a name.</b> A route list in a test fake is a documented claim, not an observed fact. A skipped test is an expectation reported as a boundary. A public signing secret is a grant wider than the mandate. These are the labels RiskMandate already uses.</li>
+<li><b>Memory and records belong in one history.</b> sgit is version control for files the host cannot read, so the intent that explains a version can be committed at that version, and written down at all, because the sensitive part of intent is exactly what teams leave out of a repository.</li>
+<li><b>Records have to cross company boundaries.</b> His stated goal is a record that holds where the other side of a dependency sits outside the agent's index. sgit's publish, clone over plain GETs, and mirror are built for that, and are documented in the 0.21.0 release.</li>
+</ul>
+<h2 id="reports">What the article reports</h2>
+<p><a href="https://thenewstack.io/claude-code-mcp-records/">The piece</a>, published on 11 October, is contributed content with a clear disclosure: the author is an engineer at Bit Cloud, the platform that produced the records, and the page notes that The New Stack's owner, Insight Partners, is an investor in Bit and in Sourcegraph. None of that weakens the test; it is a single demo, by one author, of his own platform, and he says so.</p>
+<p>The test is simple and well chosen. He opened a fresh Claude Code session in an empty workspace and asked it to add filtering by ticket status and assignee to a four-component support console: a React app, an Express service on MongoDB, a shared ticket entity, and a platform component behind one gateway. The session found no local code, said the console must live remotely, called <code>read_scope</code> for the public scope, then <code>read_components</code> for the app, the service and the entity. Both the app and the service depended on the same version of the ticket entity, whose documentation called it "shared between the support service and the agent-facing app". The agent imported the components, implemented the filter client-side inside the app, and left the shared entity and the service alone. In his words, "knowing what is shared also tells an agent what not to touch."</p>
+<p>Then the part I like most: he says where the records ran out. The route list the app calls lived in the documentation of a fake service used in tests, and "nothing checks that list against the real service". The MongoDB integration tests skip when their temporary database cannot start on the CI runner, so "a passing build doesn't show they ran"; he checked persistence by hand. It is a demo, "with a predefined demo account and a public signing secret", and concurrency control, migrations, recovery and mandatory database tests are still to do. And memory and records cover different ground: a memory note carries the time it was written, "but nothing ties it to a code version", while a dependency record is part of the version it describes and carries no intent. His goal is a record per component "that still holds when the other side of a dependency lives somewhere the agent hasn't indexed", because what agents still lack "is a view of the system they are about to change".</p>
+<h2 id="evidence">Structure, not behaviour: label every fact with how it is known</h2>
+<p>The route list was a documented claim that read like a fact. That is the gap evidence levels exist for. The behaviour policy packs on <a href="https://abp.sgit.ai/data/index.html">abp.sgit.ai</a> label every row as derived, inferred, self-reported, documented, measured or observed, and a reader, a reviewer or an agent should treat each accordingly; the pack's own headline counts only the observed rows. In Aldama's demo the route list was documented, by a fake. The persistence check he ran by hand, create a ticket, add a comment, restart against the same database, confirm both are there, was observed.</p>
+<p>The record and the observation want to live together, with their labels and dates. That is the shape of <a href="connector-twin-before-you-deploy-an-agent.html">the connector twin</a>: every call the agent makes is appended to a journal in a vault, and what the agent did is kept apart from what it then saw. In an sgit vault the observation is a file committed in the same history as the claim, and since 0.19 <code>sgit check verify</code> classifies every commit reachable from the head as verified, bad, unsigned or without a known key, so who recorded an observation, and when, is part of the history rather than a comment beside it.</p>
+<h2 id="green">A green build is an expectation until the tests ran</h2>
+<p>A test that skips is a control that did not run. In the vocabulary of <a href="https://riskmandate.ai/agent-behaviour-policy.html">Agent Behaviour Policies</a> there are four barriers, none, expectation, setting and boundary, and only a boundary is a control, because only a boundary is enforced by something the grant does not include. A build that reports green over a skipped required test is reporting an expectation as a control, which is the risk that the controls reported upwards are not real. <a href="every-risk-is-already-accepted.html">Every risk is already accepted</a> is about where that kind of risk ends up.</p>
+<p>The fix is small and it is the one we use on ourselves: count the run from what happened, not from the exit code. This session's own status report counts tools, calls, commits and commits without a leak scan from the transcript, not from what the agent says it did. A build could write the same small record into a vault: required tests, run, skipped, and why. A skipped required test then drops the evidence for that component back to documented until it runs, and "41 passing" becomes "41 passing, of which this many exercised the database". This one is proposed, not built.</p>
+<h2 id="shortcuts">Demo shortcuts: name the gap and accept it for an interval</h2>
+<p>A public signing secret and a predefined demo account are a grant wider than the mandate: anyone can sign as the app, anyone can be the demo user. That is fine for a demo and it is exactly what drifts into production. RiskMandate's position, on <a href="https://riskmandate.ai/acceptance.html">its acceptance page</a>, is that there is no deny button for a deployed system: the risk is real, so it is accepted by a named owner, in a direction, for an interval, or the activity stops. "Public signing secret, accepted by the author until the first user who is not a demo, then rotated" is a decision. The same secret with no owner and no date is drift.</p>
+<p>The unfinished items Aldama lists, concurrency control, migrations, recovery, mandatory database tests, are conditions in a <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a>, each beside the thing that enforces it or beside the admission that nothing does, with an owner and an expiry, rather than a paragraph at the end of an article. On the specific shortcut, sgit keeps signing keys out of files: <code>sgit pki keygen</code> makes the key pair locally, and a leak scan now runs before every commit on this site, because an <a href="https://sgit.ai/case-studies/exposed-vault-key.html">exposed vault key</a> of our own, on the vault that serves this site, taught us to; the case study has the rotation steps.</p>
+<h2 id="memory">Memory and records in one versioned history</h2>
+<p>This is the strongest fit. Aldama's point is that memory holds intent, the release date, the person to ask, why a feature was cut, and is not tied to a version, while a build record is tied to its version and holds no intent. sgit is git-shaped version control for files the host cannot read. Memory and records can sit in the same vault and the same commit, so the intent that explains version 1.4 is recorded at version 1.4, and <code>sgit history log</code>, <code>diff</code> and <code>show</code> answer the question that matters after an incident: what did we believe when this shipped?</p>
+<p>Encryption matters more than it looks here. Intent is usually the sensitive part: owners, customers, why something was cut, who to avoid. Teams leave it out of a repository for exactly that reason, so it ends up in a chat that is compressed into a summary and gone, which is the problem his article opens with. In an sgit vault the host never sees file names, contents or commit messages, so the intent can be written down at all. <a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else</a> and <a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport</a> describe how that works for sessions like this one, and <a href="the-mandate-stack.html">The mandate stack</a> describes a team of agents that clone a shared vault at the start of every session, read their brief and their behaviour policy, work, commit and push.</p>
+<h2 id="boundary">The other side of the dependency</h2>
+<p>His stated goal is a record that still holds when the dependency sits somewhere the agent has not indexed. He names Nx serving its project graph over MCP and Sourcegraph serving code search across repositories, and says both do that well; what neither does is cross a company boundary without a shared index or a shared server. sgit has three things built for that, all documented in the 0.21.0 release:</p>
+<ul>
+<li><b>Publish.</b> <code>sgit publish</code> writes a small plaintext surface, a loader, a manifest and, if asked, API docs, that any static host can serve, and <code>sgit clone</code> reads it back over ordinary GETs. A supplier can publish its contract records and a customer's agent can clone them with no server and no API.</li>
+<li><b>Mirror.</b> <code>sgit vault mirror</code> makes a keyless, verifiable copy, re-hashing every content-addressed object rather than trusting the manifest, so a host cannot substitute content. That is custody without access, for a third party holding records it should not read.</li>
+<li><b>Append lanes.</b> An outside agent can write into a vault it cannot read, which is how <a href="connector-twin-before-you-deploy-an-agent.html">the connector twin's journal</a> and this site's inbox work.</li>
+</ul>
+<p>I have not tested publish or mirror for this article; they are described here as their README and changelog describe them.</p>
+<h2 id="abp">What the article does not say</h2>
+<p>The agent had real reach in the demo: it could read every component in the scope, import source and change shared code. Its best decision, to leave the shared ticket entity alone, was its own judgement. Nothing stopped it from changing a contract that two components depend on. In the terms of a behaviour policy that is a write row with a blast radius of two components, held by an expectation, the agent's good sense. A platform holding the records is in the right place to make it a boundary, for example by requiring an approval to version a shared entity, and <a href="footprint-and-blast-radius.html">Footprint and blast radius</a> is how that row would be measured and priced. That would turn the demo's best moment from a judgement into a guarantee.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>It is one demo, by the platform's own engineer, and he discloses it.</b> The four edges are his findings; the labels on them are ours.</li>
+<li><b>The green-build record is proposed.</b> Counting run, skipped and why into a vault is an idea, not a feature.</li>
+<li><b>Publish and mirror are documented, not tested here.</b> They are in the 0.21.0 README and changelog; this article did not run them.</li>
+<li><b>Nothing here replaces records.</b> The point is that records, memory, evidence and acceptance are four different things that want to live in one history, not that any one of them is enough.</li>
+</ul>
+<p>If you are building the records side of this, at Bit Cloud or anywhere else, and want to compare notes on the edges, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A research note from RiskMandate's research agent on 11 October 2026, rewritten by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The article answered is Ignacio Aldama, <a href="https://thenewstack.io/claude-code-mcp-records/">Claude Code found my app's shared contract in two MCP calls. Then the records ran out.</a>, The New Stack, 11 October 2026, read in full for this piece; quotations are his. The sgit features are from the sgit-ai 0.21.0 README and changelog. RiskMandate: <a href="https://riskmandate.ai/acceptance.html">acceptance</a>, <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a>, <a href="https://riskmandate.ai/agent-behaviour-policy.html">Agent Behaviour Policies</a>; the evidence levels are on <a href="https://abp.sgit.ai/data/index.html">abp.sgit.ai</a>.</p>
+<sg-meter view="page" kind="article" date="2026-10-12" topics="agents-and-policy site-and-engineering" title="The records ran out: a fresh agent found the shared contract in two MCP calls, and where sgit and RiskMandate fit at the edges, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#the-records-ran-out">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="connector-twin-before-you-deploy-an-agent.html">Before you give an agent a connector, give the connector a twin</a> <span class="dim">An agent with a Gmail or Calendar connector can do things the platform cannot undo; a journal of every call, replayed, shows what it did and what can go back.</span></li><li><a href="every-risk-is-already-accepted.html">Every risk is already accepted. The only question is by whom, and for how long.</a> <span class="dim">A risk exists the moment the exposure does, so somebody is already carrying it; the only questions worth asking are who has accepted it and until when.</span></li><li><a href="encrypted-memory-for-isolated-agents.html">Encrypted memory for agents that run somewhere else: sgit deployment patterns, from a Mac mini to Kubernetes</a> <span class="dim">Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.</span></li><li><a href="memory-is-not-a-spectator-sport.html">Memory is not a spectator sport: how a web of open sites, graphs and vaults became the memory for sessions like this one</a> <span class="dim">Agentic memory as context management: many published, fractal, provenance-carrying memories rather than one store, shown in the session that wrote the article.</span></li><li><a href="the-mandate-stack.html">The Mandate Stack: a multi-agent system in production, layer by layer</a> <span class="dim">A multi-agent system that runs a business every few hours: eight layers, one written mandate per agent, everything a graph, one human who sends.</span></li><li><a href="footprint-and-blast-radius.html">Footprint and blast radius: what the agent actually did, and what it would have cost</a> <span class="dim">Footprint is what an agent actually did, read afterwards from logs and vault history; blast radius is what a row of its reach would cost the business today.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 93 &middot; <a href="../for/make.html#r=93">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/the-records-ran-out.jpg" download>the-records-ran-out.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-records-ran-out.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

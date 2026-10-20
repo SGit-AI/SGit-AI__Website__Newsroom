@@ -1,0 +1,149 @@
+{
+  "slug": "reading-with-a-pen",
+  "teaser": "Mark the printed page, photograph it, and an agent does the processing that always made me stop highlighting. The book's new name is in its margins.",
+  "topics": [
+    "vaults-and-method",
+    "graphs-and-knowledge"
+  ],
+  "core_idea": "Reading has three moments, read, mark and process, and because nobody did the processing, marking stopped being worth it; photographing pen-marked pages for an agent that reads handwriting, flags uncertainty and turns notes into articles and decisions restores the second moment, captures ideas when they are best, and gives authors feedback, even with a crude workflow.",
+  "nodes": [
+    {
+      "id": "medium",
+      "label": "A book is the better medium",
+      "kind": "claim",
+      "summary": "Unconnected, no links, no undo."
+    },
+    {
+      "id": "three",
+      "label": "Three moments of reading",
+      "kind": "concept",
+      "summary": "Read, mark, process."
+    },
+    {
+      "id": "stopped",
+      "label": "Marking stopped",
+      "kind": "claim",
+      "summary": "The third moment never came, so the second was not worth it."
+    },
+    {
+      "id": "agent",
+      "label": "The agent processes the page",
+      "kind": "method",
+      "summary": "Reads handwriting, flags uncertainty, redraws, writes up."
+    },
+    {
+      "id": "review",
+      "label": "The pen review of the book",
+      "kind": "example",
+      "summary": "13 pages, 83 notes, 7 uncertain readings."
+    },
+    {
+      "id": "founders",
+      "label": "The name changed in the margins",
+      "kind": "example",
+      "summary": "ZX developer to ZX founder, decision 019."
+    },
+    {
+      "id": "knowledge",
+      "label": "Knowledge, hyperlinked later",
+      "kind": "concept",
+      "summary": "Focus while reading, links afterwards."
+    },
+    {
+      "id": "authors",
+      "label": "Feedback for authors",
+      "kind": "claim",
+      "summary": "The reader only takes a photograph."
+    },
+    {
+      "id": "crude",
+      "label": "The crude version",
+      "kind": "claim",
+      "summary": "Before any tool exists."
+    }
+  ],
+  "edges": [
+    {
+      "from": "three",
+      "to": "stopped",
+      "rel": "produces"
+    },
+    {
+      "from": "agent",
+      "to": "stopped",
+      "rel": "extends"
+    },
+    {
+      "from": "review",
+      "to": "agent",
+      "rel": "extends"
+    },
+    {
+      "from": "founders",
+      "to": "review",
+      "rel": "extends"
+    },
+    {
+      "from": "agent",
+      "to": "knowledge",
+      "rel": "produces"
+    },
+    {
+      "from": "agent",
+      "to": "authors",
+      "rel": "produces"
+    },
+    {
+      "from": "medium",
+      "to": "three",
+      "rel": "depends-on"
+    },
+    {
+      "from": "crude",
+      "to": "agent",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-graphs-books",
+      "you-are-a-developer",
+      "a-pull-request-by-another-name"
+    ],
+    "pages": [],
+    "sites": [
+      "https://gen-z-developers.sgit.ai/articles/paper-that-talks-both-ways.html",
+      "https://influences.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "the moment you are reading is when you have the best mental models, the best ideas and the best connections",
+      "why": "Why capture matters."
+    },
+    {
+      "text": "Do not worry about the third step.",
+      "why": "What to tell reviewers."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pb-page1.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pb-page1.webp",
+      "caption": "Page 1 of the printed release candidate, two ways. On the left, my photograph: the spiral-bound page on a café table, with a box drawn at the top saying \"Graph representation of book\", an arrow saying it \"can also go here\", lines struck through the small print, and two notes in the margin: \"should be what is the book all about\" and \"this paragraph buys more time from the reader to continue reading\". On the right, the same page as the agent redrew it, every mark in place and every note typed and numbered, so anyone can read it. From the book's site, RC2 on paper, batch 1.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pb-moments.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pb-moments.webp",
+      "caption": "Three moments of reading, and the one that always failed. Before: read, mark the page, and then process it, typing it up and cross-referencing it, which took hours, was rarely done, and so made the marking not worth its cost. Now: read, mark the page with a pen, photograph it, and an agent processes it, reading the handwriting, asking when it is unsure and capturing every note, which becomes an article that can be found later, links to the ideas it touches, or feedback the author receives. The pen review of 19 October: 13 pages, 83 notes, 7 uncertain readings.",
+      "kind": "concept"
+    },
+    {
+      "file": "pb-page4.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pb-page4.webp",
+      "caption": "Page 4 of the printed release candidate, with the agent's callouts. Note 14: \"the ZX FOUNDER doesn't care yet → maybe at the end of the Book\"; note 15: \"is this a better name than ZX developer?\"; and the notes that became the book's decisions that day: \"WRONG\" over \"not a version\", \"this is an RC which will be added to Leanpub & sold\", \"this should be a release → not a draft\". Each note is grouped by theme, with what it means. From the book's site, RC2 on paper, batch 2.",
+      "kind": "screenshot"
+    }
+  ]
+}

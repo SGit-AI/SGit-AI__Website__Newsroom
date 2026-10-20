@@ -1,0 +1,56 @@
+{
+  "slug": "the-vault-is-live",
+  "by": "newsroom.ux",
+  "sections": {
+    "top": {
+      "line": "The serverless reader vault went live overnight",
+      "para": "The passkey-and-door design published on 11 October was running on newsroom.sgit.ai by 02:22 UTC on 12 October. A Vault button creates three real sgit vaults, syncs each device's records and shows one balance, checked live on an iPad. Knowing what runs supplies the constraints for the next brief.",
+      "hash": "08845992fc8c"
+    },
+    "short": {
+      "line": "A passkey now opens three real vaults across devices",
+      "para": "At v0.11.0 a reader enables a vault with a passkey and syncs each device by pressing a button. The lab forced one change: a door per path. The browser uses the vendored vault library, records per device mean nothing to merge, and eight CI test files plus an iPad check proved it.",
+      "hash": "022dec251cbb"
+    },
+    "layers": {
+      "line": "Every layer runs in the browser, with no server",
+      "para": "Everything on the reader's side runs on static pages. From the bottom: the dev.send.sgraph.ai vault server holding only ciphertext, mocked in Node for tests; the vault UI library v0.2.3, twelve vendored files hash-checked by validator check 13; newsroom-vault.js at 197 lines, door.js, the vault pane, pure sync.js functions and the unchanged SG Meter v1.4.0.",
+      "hash": "c858796d7a8c"
+    },
+    "chain": {
+      "line": "The door holds the master, the master holds everything",
+      "para": "The door, at a passkey-derived address, holds master-key.json and door.json, one door per path. The master, at a random id, holds the reader vault's key, every door and the access key. The reader vault holds account.json, one file per device and notes; creating it takes six derivations and three commits.",
+      "hash": "2a0d5da3e2c3"
+    },
+    "sync": {
+      "line": "One file per device makes sync conflict-free by construction",
+      "para": "Six principles: local storage stays primary; the reader syncs by pressing one button; the vault holds records, never totals; each device writes only its own file; the consolidated view is computed; nothing is typed twice. Top-ups count once by payment reference, and session keys live for the tab.",
+      "hash": "0eb3ad310596"
+    },
+    "tests": {
+      "line": "Eight CI test files, then a real iPad check",
+      "para": "Tests cover the account against the mock with twenty-seven checks, an sgit-ai 0.21.0 command-line round trip that failed v0.10.0 and was fixed in v0.10.1, the lab card, sync logic and a three-device Chromium run. On 12 October an iPad with an iCloud Keychain passkey reopened all three vaults after a refresh.",
+      "hash": "fce2448f9f03"
+    },
+    "timeline": {
+      "line": "Design to live pane in one night, nothing skipped",
+      "para": "From the git logs: the design and two reviews on 11 October, the passkey lab at 22:56, the door-per-path finding at 00:15, real vaults at 01:33, the CLI round trip at 01:38, the iPad check at 01:57 and the live pane at 02:22. No step took more than two hours.",
+      "hash": "3b0980898baf"
+    },
+    "why": {
+      "line": "Running code supplies the constraints I think with",
+      "para": "Existing pieces made the night fast: the meter, the lab, the library and the mock. More importantly, I could not have written the next brief yesterday, because I did not know the passkey worked, a door is per path, and sync is one file per device. Build it, learn its properties, then think.",
+      "hash": "f7d4eceaa03c"
+    },
+    "limits": {
+      "line": "A beta on the dev server, checked once",
+      "para": "The vaults are on dev.send.sgraph.ai and the access key is handed out by me; a phone over QR gets its own door. The live check was one iPad, one afternoon. Pruning, retiring devices, key rotation, automatic sync, key pairs, the persona vault and the notes lane are not built.",
+      "hash": "3af7417748e5"
+    },
+    "sources": {
+      "line": "Sources: my memo, newsroom commits, notes and code",
+      "para": "Based on my voice memo of 12 October 2026 and the newsroom's commits v0.8.3 to v0.11.0. Further sources are its activity vault note, vault page and passkey lab, the source of newsroom-vault.js, sync.js, door.js and vault-pane.js, and the v0.10.2 versions row recording the live check.",
+      "hash": "e84b7da7c04d"
+    }
+  }
+}

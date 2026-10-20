@@ -1,0 +1,94 @@
+{
+ "slug": "re-anchoring-agent-behaviour-policies",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 3909,
+   "line": "Re-anchoring restores rules from disk after every summary",
+   "para": "Instructions given only in conversation can be lost when a long session is summarised, and this session was summarised eighteen times in a month, each keeping under 2%. Re-anchoring keeps the rules in a behaviour policy file that the harness prints back after every summary, and a canary report every few answers shows the policy was read.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s0",
+   "label": "In short",
+   "words": 207,
+   "line": "Rules held only in conversation must survive every summary",
+   "para": "Each of eighteen summaries replaced about 98% of the context, with nothing saying what was kept. Re-anchoring prints the Agent Behaviour Policy back verbatim, so rules are restored, not remembered, but it fixes only forgetting. A canary report shows it is working, and the best recipe changes with every release.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s1",
+   "label": "What summarisation does to a session",
+   "words": 268,
+   "line": "Eighteen compactions kept on average 1.7% of context",
+   "para": "Between 9 September and 9 October there were eighteen automatic compactions, each turning about 780,000 to 800,000 tokens into 9,000 to 19,000; 17.8 million tokens were summarised away. A conversational rule must be judged worth keeping each time. What comes back from disk, such as project-root CLAUDE.md, survives; the rest competes.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s2",
+   "label": "Three ways a rule fails",
+   "words": 98,
+   "line": "Forgetting, unseen violations and argued exceptions need different fixes",
+   "para": "A rule held by the agent it governs can fail in three ways, each needing its own fix. Re-anchoring is the first and cheapest, and a checker and a gate depend on it. It does not change a rule's barrier: an expectation stays a rule in prose enforced by nobody, but reliably in view.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s3",
+   "label": "Re-anchoring: the rules come back from disk",
+   "words": 328,
+   "line": "A SessionStart compact hook prints the policy back verbatim",
+   "para": "Claude Code offers four hook places: SessionStart with the compact matcher, UserPromptSubmit, PreCompact and Stop. The compact hook is the heart of it, printing the policy file back after every summary, while the prompt hook adds a one-line anchor. A CLAUDE.md line or asking the agent to reread also work, but depend on remembering.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s4",
+   "label": "One file, three jobs",
+   "words": 162,
+   "line": "The policy file is memory, rulebook and enforcement list",
+   "para": "The Agent Behaviour Policy becomes infrastructure. It is what the re-anchoring hook prints back, what an independent checker reads, and, since every row carries its barrier, the list of rules still needing a reader or a gate. Rows like \"keep decisions in decisions.md\" move important material into files, which a hook can check.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s5",
+   "label": "The canary: a report that ends every few answers",
+   "words": 720,
+   "line": "A computed report every few answers acts as canary",
+   "para": "Like Van Halen's brown M&M's clause, a short report shows the policy is being read. The UserPromptSubmit hook computes it from the transcript and cost record, the Stop hook sends the agent back once if it is missing, and /abp-status and /abp-reload serve the person. Its commits line counts commits without a leak scan: it should be zero.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s6",
+   "label": "Living with it",
+   "words": 423,
+   "line": "The re-anchor worked, and the canary caught a restart",
+   "para": "Hooks loaded mid-session and the report fitted a phone at 41 characters. On 10 October the nineteenth compaction, from 789,144 tokens to 12,092, fired the re-anchor in the same second. A later container restart wiped the policy and hooks; the missing anchor showed it, and the policy was restored with hash #a0d6d2.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s7",
+   "label": "The recipe changes with the platform",
+   "words": 238,
+   "line": "The best re-anchoring recipe changes with every release",
+   "para": "The features used are recent: mods in Claude Code v2.1.287, onFailure \"block\" in v2.1.295, prompt-hook denial changes in v2.1.210. A policy row is a rule, its barrier and the current recipe for keeping it. A maintained, version-aware recipe library is what people will pay for, not the policy itself.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s8",
+   "label": "What it does not do",
+   "words": 116,
+   "line": "Re-anchoring keeps rules in view but enforces nothing",
+   "para": "A rule in view is still an expectation. The canary is a setting in an editable file, not a boundary, and a report can be pasted without the rules being followed. Summaries stay a black box; re-anchoring only makes what matters independent of them, and the rest needs a reader or a gate.",
+   "by": "newsroom.ux"
+  },
+  {
+   "id": "s9",
+   "label": "Build your own",
+   "words": 177,
+   "line": "Six steps: policy file, re-anchor, canary, commands, measure, enforce",
+   "para": "Write the rules as a short ABP file with barriers, re-anchor with a SessionStart compact hook plus a per-prompt anchor, and add a computed canary report checked by a Stop hook. Give the person status and reload commands, measure one rule, then move the most important rules to a reader or a gate.",
+   "by": "newsroom.ux"
+  }
+ ]
+}

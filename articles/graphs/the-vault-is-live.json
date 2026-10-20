@@ -1,0 +1,177 @@
+{
+  "slug": "the-vault-is-live",
+  "teaser": "The reader's vault runs on newsroom.sgit.ai: a passkey opens three real vaults, each device writes one file, and the architecture is drawn as it stands.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "Between the morning of 11 October and 02:22 UTC on 12 October the reader's vault went from a design to a running feature on newsroom.sgit.ai: a Vault pane on every page enables the account with a passkey, creates a door at its derived address, a master and a reader vault as real sgit vaults through the vendored vault library, writes each device's raw records as one file in one commit, and brings other devices' activity into the browser so the meter shows one balance; local storage stays primary, the vault holds records never totals, one file per device means no conflict by construction, eight test files run in CI against a mock of the vault server plus a CLI round trip, and a live check on an iPad confirmed it; the properties of what runs are the constraints the next brief is thought with.",
+  "nodes": [
+    {
+      "id": "live",
+      "label": "The vault pane, running",
+      "kind": "artefact",
+      "summary": "A Vault button beside the balance on every newsroom page: enable, create once, update, see every device, bring their activity here."
+    },
+    {
+      "id": "chain",
+      "label": "Door, master, reader vault",
+      "kind": "method",
+      "summary": "Three real vaults: the door at its derived address holds the master's key and its record; the master holds the reader's key, the access key and the doors; the reader vault holds the activity files."
+    },
+    {
+      "id": "vendored",
+      "label": "One code base, vendored",
+      "kind": "claim",
+      "summary": "The vault UI library v0.2.3 that runs dev.vault.sgraph.ai, twelve files unedited with every SHA-256 checked at build, and one local patch pending upstream."
+    },
+    {
+      "id": "localfirst",
+      "label": "Local storage stays primary",
+      "kind": "claim",
+      "summary": "The meter is unchanged; the vault is a copy the reader keeps current by pressing a button, so the number of commits is the number of presses."
+    },
+    {
+      "id": "records",
+      "label": "Records, never totals",
+      "kind": "claim",
+      "summary": "Reads, top-ups and personas go in raw; reads, spend, declined, credit and balance are recomputed from the records with one starting credit."
+    },
+    {
+      "id": "onefile",
+      "label": "One file per device",
+      "kind": "method",
+      "summary": "Each device writes what it originated to its own file, whole; two devices never write the same file; brought-in records keep their author."
+    },
+    {
+      "id": "tests",
+      "label": "Eight test files, then an iPad",
+      "kind": "example",
+      "summary": "The account, the sync logic, two devices in Chromium with a virtual authenticator, a CLI round trip in CI; then three vaults made from an iCloud Keychain passkey on a real device."
+    },
+    {
+      "id": "timeline",
+      "label": "From design to pane in a night",
+      "kind": "example",
+      "summary": "22:56 the lab, 00:15 the finding, 01:33 real vaults, 01:57 the live check, 02:22 the pane; none of the steps skipped."
+    },
+    {
+      "id": "constraints",
+      "label": "The properties are the constraints I think with",
+      "kind": "claim",
+      "summary": "The next brief could not be written until this ran, because what works and what does not is what limits the scope enough to think."
+    },
+    {
+      "id": "notbuilt",
+      "label": "Not built",
+      "kind": "question",
+      "summary": "Pruning local storage, retiring a device, rotating the master, automatic sync, the key pairs, the persona vault, the notes lane; each designed, with experiments listed first."
+    }
+  ],
+  "edges": [
+    {
+      "from": "chain",
+      "to": "live",
+      "rel": "produces"
+    },
+    {
+      "from": "vendored",
+      "to": "chain",
+      "rel": "depends-on"
+    },
+    {
+      "from": "localfirst",
+      "to": "live",
+      "rel": "extends"
+    },
+    {
+      "from": "records",
+      "to": "onefile",
+      "rel": "depends-on"
+    },
+    {
+      "from": "onefile",
+      "to": "live",
+      "rel": "produces"
+    },
+    {
+      "from": "tests",
+      "to": "live",
+      "rel": "example-of"
+    },
+    {
+      "from": "timeline",
+      "to": "live",
+      "rel": "example-of"
+    },
+    {
+      "from": "live",
+      "to": "constraints",
+      "rel": "leads-to"
+    },
+    {
+      "from": "notbuilt",
+      "to": "live",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-passkey-opens-the-vault",
+      "i-miss-it",
+      "no-server-by-design",
+      "pay-after-you-read",
+      "two-agents-one-vault"
+    ],
+    "pages": [
+      "/docs/vault/vault-from-javascript.html"
+    ],
+    "sites": [
+      "https://newsroom.sgit.ai/",
+      "https://newsroom.sgit.ai/admin/notes/2026-10-12__the-activity-vault.md",
+      "https://newsroom.sgit.ai/vault/",
+      "https://newsroom.sgit.ai/passkey/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Two devices never write the same file, so there is nothing to merge and no conflict by construction.",
+      "why": "The sync model's central property."
+    },
+    {
+      "text": "The constraints limit the scope of what I write, and that is what lets me write it.",
+      "why": "Why shipping comes before the next brief."
+    },
+    {
+      "text": "The design went to the lab, the lab corrected the design, the corrected design was built, and the build was checked on a real device before the pane that readers see was written over it.",
+      "why": "The sequence, and why the speed is not recklessness."
+    }
+  ],
+  "figures": [
+    {
+      "file": "av-stack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/av-stack.webp",
+      "caption": "What is running on newsroom.sgit.ai at v0.11.0: the meter and local storage as before; the vault pane and one module over the vendored vault library, new; the vault server holding ciphertext. On the right, the three vaults, what each holds, and how one gesture opens all three."
+    },
+    {
+      "file": "av-pane.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/av-pane.webp",
+      "caption": "The pane, on an article, before it is enabled: the device's id, a label for it, the two ways in, one paragraph that says what the passkey does, and the list where every call to the vault server will appear."
+    },
+    {
+      "file": "av-card6.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/av-card6.webp",
+      "caption": "Cards 3 and 4 of the passkey lab: the derivation from the bytes to the door, timed on the device, and the recovery code that derives a second door. Card 6, where the account was first built as three real vaults, appears on a browser with a platform authenticator; this headless one has none."
+    },
+    {
+      "file": "av-sync.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/av-sync.webp",
+      "caption": "Two devices, one passkey, one view. Each device writes its own file, whole, when its reader presses Update; the vault holds records, never totals; opening the vault computes one view from every file; brought-in records keep their author."
+    },
+    {
+      "file": "av-page.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/av-page.webp",
+      "caption": "The page that explains the vault and opens the pane on arrival: the loop in five steps, the principles, what leaves the browser, and a block for an agent."
+    }
+  ]
+}

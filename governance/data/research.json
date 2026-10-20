@@ -1,0 +1,88 @@
+{
+  "id": "governance-research-runs",
+  "version": "0.1.0",
+  "updated": "2026-08-28",
+  "note": "The Researcher's runs. Each records what was searched, what was found, which URLs were actually fetched and what came back — including the ones our egress blocked, because a source we could not read is a fact about our reach, not about the source. Candidates are proposals for the desk; the recommendation is the Researcher's, and the Conductor's pick is recorded separately in desk.json.",
+  "runs": [
+    {
+      "id": "run-2026-08-28",
+      "date": "2026-08-28",
+      "role": "researcher",
+      "brief": "Scan for new or ongoing stories on the beat. Propose candidates; recommend one.",
+      "queries": [
+        "EU AI Act guidance regulator August 2026",
+        "EU AI Act Article 6 classification guidelines delayed high-risk 2026",
+        "digital omnibus AI Act simplification Council Parliament agreement 2026 delay high-risk",
+        "\"AI Act\" final guidelines high-risk classification adopted August 2026 status"
+      ],
+      "fetched": [
+        { "url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+          "http": 200, "read": true, "publisher": "European Commission", "kind": "primary",
+          "note": "Read in full. Published 31 July 2026. States enforcement and transparency obligations begin 2 August 2026, enforced by the Commission's AI Office with national authorities. NOTE: the page does NOT cite article numbers — the attribution to Article 50 comes from secondary commentary, not from here." },
+        { "url": "https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems",
+          "http": 200, "read": true, "publisher": "European Commission", "kind": "primary",
+          "note": "Read in full. Draft guidelines under Article 6(5), published 19 May 2026, last updated 23 July 2026, STILL DRAFT. The page states no date for final guidelines." },
+        { "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+          "http": 200, "read": false, "publisher": "European Commission", "kind": "primary",
+          "note": "Resolved but not read this run. Registered for a later pass." },
+        { "url": "https://artificialintelligenceact.eu/article/6/",
+          "http": 200, "read": false, "publisher": "artificialintelligenceact.eu", "kind": "secondary",
+          "note": "Resolved but not read this run. A tracker, not a regulator." },
+        { "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/",
+          "http": 403, "read": false, "publisher": "Council of the EU", "kind": "primary",
+          "note": "BLOCKED BY OUR EGRESS, not confirmed dead. Cannot enter the register: gate check 7 requires a source to have resolved when checked. This is a limitation of our reach and is recorded as one." },
+        { "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/",
+          "http": 403, "read": false, "publisher": "Council of the EU", "kind": "primary",
+          "note": "Same: blocked by our egress, unverified, excluded from the register." }
+      ],
+      "candidates": [
+        {
+          "id": "cand-a",
+          "headline": "The guidance that was due in February is still a draft in August",
+          "what": "Article 6(5) of the AI Act required the Commission to publish classification guidelines by 2 February 2026. A draft appeared on 19 May — 106 days late. As of today it is still marked draft, last touched 23 July, with no date given for a final version. That is 207 days past the statutory deadline.",
+          "why_it_fits": "A duty exists in binding text and what satisfies it is undetermined — the publication's own UnpriceableObligation formula, instantiated from a primary source we read ourselves.",
+          "evidence_state": "primary — read directly from the Commission's own library page",
+          "strength": "The whole story is checkable from one official page and a date subtraction. No characterisation of anybody is required.",
+          "weakness": "The deferral (see cand-b) reduces the immediate practical bite: the duty it governs no longer lands until December 2027.",
+          "recommended": true
+        },
+        {
+          "id": "cand-b",
+          "headline": "Two things happened to the AI Act on the same day, in opposite directions",
+          "what": "On 2 August 2026 transparency obligations became enforceable, while the high-risk obligations originally due that same day were deferred to 2 December 2027 — 487 days — with the Annex I route moved to 2 August 2028.",
+          "why_it_fits": "A single Milestone node with two Instruments pointing at it in opposite directions. It is the clearest thing on the beat to draw as a graph.",
+          "evidence_state": "mixed — the 2 August enforcement is primary; the deferral dates reached us only through secondary commentary, because the Council pages our egress blocked are where the primary record sits",
+          "strength": "Genuinely surprising and easy to verify once the Council pages can be reached.",
+          "weakness": "We cannot currently read the primary source for the half that matters most. Publishing it now would mean labelling the key dates secondary.",
+          "recommended": false
+        },
+        {
+          "id": "cand-c",
+          "headline": "The transparency rules are live, and the Commission's own announcement names no article",
+          "what": "The Commission's 31 July notice says transparency obligations apply from 2 August and describes them, but cites no article number. Every secondary account attributes them to Article 50. The attribution is almost certainly right and is not, on this evidence, primary.",
+          "why_it_fits": "Exactly the primary/secondary distinction the source register exists to make, caught in the wild on day one.",
+          "evidence_state": "primary for what the notice says; secondary for the article attribution",
+          "strength": "A small, honest, method-demonstrating piece the publication could stand behind completely.",
+          "weakness": "Thin as news. It is a story about citation practice, interesting mostly to this publication's own argument.",
+          "recommended": false
+        },
+        {
+          "id": "cand-d",
+          "headline": "180 organisations signed a Code of Practice nobody has counted",
+          "what": "The Commission's notice states that over 180 organisations have signed the Code of Practice on transparency of AI-generated content. Who they are, and whether the list is published, is not stated on that page.",
+          "why_it_fits": "A countable claim with an uncounted list — a natural absence report if the signatory list turns out not to be public.",
+          "evidence_state": "primary for the number; nothing yet on the list",
+          "strength": "If the list is unpublished, that is a finding. If it is published, it is a graph of 180 named bodies.",
+          "weakness": "Requires a second research pass before it is a story at all. Not ready today.",
+          "recommended": false
+        }
+      ],
+      "recommendation": {
+        "candidate": "cand-a",
+        "because": "It is the only candidate where every load-bearing fact came from a primary source this newsroom fetched and read itself, and where the finding needs no characterisation of any organisation — which matters, because the editor role refuses that absolutely and there is no legal sign-off. It also instantiates the publication's own formula rather than merely illustrating it, and it would produce the first primary-state nodes in the graph.",
+        "risk": "The deferral in cand-b changes what the delay means in practice. The story must carry that, or it overstates the consequence.",
+        "next": "Freeze both Commission pages, hash them, anchor the four load-bearing quotes, and open the Council pages from a network that is not blocked so cand-b's dates can be lifted to primary."
+      }
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "slug": "encrypted-memory-for-isolated-agents",
+  "teaser": "Agents in isolated, ephemeral places need memory that outlives them. Five sgit deployment patterns, from a Mac mini to Kubernetes, with ciphertext-only servers.",
+  "topics": [
+    "vaults-and-method",
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Agents are safer in isolated places, but isolation takes away the shared drive and ephemeral compute takes away the disk, so their memory has to live somewhere the owner controls and a breach does not expose; a self-hosted SG/Send container with an access token and storage in a folder or bucket, with sgit in each agent, gives them that: scoped clones make each run fast, the server holds only ciphertext, any clone can restore any server, and the trust sits with the agents and their keys, so a scoped clone is speed, not a boundary, and one vault per trust boundary is the rule.",
+  "nodes": [
+    {
+      "id": "isolation",
+      "label": "Isolated agents lose their memory",
+      "kind": "claim",
+      "summary": "No shared drive in the box, and no disk that survives ephemeral compute."
+    },
+    {
+      "id": "three",
+      "label": "Owner-controlled, reachable, breach-safe",
+      "kind": "concept",
+      "summary": "The three conditions the memory has to meet."
+    },
+    {
+      "id": "server",
+      "label": "One vault container, an access token",
+      "kind": "artefact",
+      "summary": "diniscruz/sg-send-vault, port 8080, storage in a folder, S3 or memory."
+    },
+    {
+      "id": "macmini",
+      "label": "Start with a Mac mini",
+      "kind": "method",
+      "summary": "Vault container next to agent containers; back up one folder of ciphertext."
+    },
+    {
+      "id": "run",
+      "label": "One agent run",
+      "kind": "method",
+      "summary": "Scoped shallow clone, one task, commit, push, delete the container."
+    },
+    {
+      "id": "scoped",
+      "label": "Scoped clones make it fast",
+      "kind": "example",
+      "summary": "One folder of a 600-commit vault in 14 s against 80 s for the whole."
+    },
+    {
+      "id": "notboundary",
+      "label": "A scoped clone is not a boundary",
+      "kind": "claim",
+      "summary": "sgit fetch widened a1's clone to a2's folder: one vault per trust boundary."
+    },
+    {
+      "id": "k8s",
+      "label": "Kubernetes: a Deployment and Jobs",
+      "kind": "method",
+      "summary": "One replica on disk or more on S3, ClusterIP, NetworkPolicy, a Secret per agent."
+    },
+    {
+      "id": "cloud",
+      "label": "The cloud, with no public route",
+      "kind": "method",
+      "summary": "Container or Lambda, both inside the VPC behind an internal load balancer; S3, a VPN, CloudFront."
+    },
+    {
+      "id": "replica",
+      "label": "Two servers, one vault",
+      "kind": "example",
+      "summary": "Push to a backup remote; any clone restored a memory-mode server after a restart."
+    },
+    {
+      "id": "breach",
+      "label": "A breach gives away ciphertext",
+      "kind": "claim",
+      "summary": "No plaintext, no file names in storage; vault ids, sizes, timing, a write-key hash."
+    },
+    {
+      "id": "trust",
+      "label": "The trust sits with the agents",
+      "kind": "claim",
+      "summary": "Writing agents hold the vault key on disk; ephemeral boxes and per-agent secrets matter."
+    },
+    {
+      "id": "status",
+      "label": "What is ready and what is not",
+      "kind": "question",
+      "summary": "The image runs; cloud templates are in progress; use --base-url, not --endpoint."
+    }
+  ],
+  "edges": [
+    {
+      "from": "isolation",
+      "to": "three",
+      "rel": "leads-to"
+    },
+    {
+      "from": "three",
+      "to": "server",
+      "rel": "answers"
+    },
+    {
+      "from": "server",
+      "to": "macmini",
+      "rel": "produces"
+    },
+    {
+      "from": "server",
+      "to": "k8s",
+      "rel": "produces"
+    },
+    {
+      "from": "server",
+      "to": "cloud",
+      "rel": "produces"
+    },
+    {
+      "from": "run",
+      "to": "scoped",
+      "rel": "depends-on"
+    },
+    {
+      "from": "macmini",
+      "to": "run",
+      "rel": "extends"
+    },
+    {
+      "from": "scoped",
+      "to": "notboundary",
+      "rel": "contrasts"
+    },
+    {
+      "from": "replica",
+      "to": "server",
+      "rel": "extends"
+    },
+    {
+      "from": "breach",
+      "to": "three",
+      "rel": "answers"
+    },
+    {
+      "from": "breach",
+      "to": "trust",
+      "rel": "contrasts"
+    },
+    {
+      "from": "notboundary",
+      "to": "trust",
+      "rel": "example-of"
+    },
+    {
+      "from": "cloud",
+      "to": "status",
+      "rel": "leads-to"
+    },
+    {
+      "from": "macmini",
+      "to": "cloud",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "why-my-agents-do-not-run-on-my-laptop",
+      "an-agent-desktop-by-the-minute",
+      "who-are-you-protecting-against",
+      "the-agent-team-as-it-runs"
+    ],
+    "pages": [
+      "docs/self-host-for-agents.html",
+      "docs/partial-clones.html",
+      "docs/agents-sharing-one-vault.html",
+      "deploy/index.html"
+    ],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "An agent that starts every run from nothing repeats work, loses what it found, and cannot hand anything to the next agent.",
+      "why": "Why isolated agents need memory outside the box."
+    },
+    {
+      "text": "`--path` decides what is downloaded, not what can be read.",
+      "why": "Scoped clones are speed, not an access boundary."
+    },
+    {
+      "text": "Not the contents, not the names, not the keys.",
+      "why": "What a breach of the server does not give an attacker."
+    }
+  ],
+  "figures": [
+    {
+      "file": "dp-overview.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dp-overview.webp",
+      "caption": "The agents run in isolated places and often only for one task. Each clones the part of the vault it needs, works, commits and pushes, encrypting before anything leaves. The server is yours, it is one container, and what it stores is ciphertext."
+    },
+    {
+      "file": "dp-macmini.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dp-macmini.webp",
+      "caption": "The vault server runs as a container next to the agent containers, and its storage is a folder on the Mac mini. Backing up the memory of every agent is copying one folder, and the copy holds only ciphertext."
+    },
+    {
+      "file": "dp-run.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dp-run.webp",
+      "caption": "The compute is disposable and the memory is not. Each run starts from a scoped, shallow clone of the folder the agent owns and ends with a push, so the next run starts where this one stopped."
+    },
+    {
+      "file": "dp-k8s.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dp-k8s.webp",
+      "caption": "The vault server is an ordinary Deployment with a volume and a ClusterIP Service. Agents run as Jobs that clone, work, commit and push, and a NetworkPolicy keeps everything else away from the server."
+    },
+    {
+      "file": "dp-cloud.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dp-cloud.webp",
+      "caption": "Everything the agents talk to is inside the VPC: an internal load balancer on a private address, and behind it the vault server, either the container on EC2, Fargate or Kubernetes, or the same app on Lambda attached to the VPC, with S3 behind both. The Mac mini joins over a VPN, and CloudFront can give the owner a stable name and TLS without a public address on the server."
+    },
+    {
+      "file": "dp-replica.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/dp-replica.webp",
+      "caption": "A vault is not tied to the server it was created on. Add a second remote and push to it, and any clone with the vault key can restore either server."
+    }
+  ]
+}
