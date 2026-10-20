@@ -93,6 +93,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#free-t
 
 ### Continued by
 
+- [The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a foundation to govern the Agent Behaviour Policy](the-riskmandate-roadmap.md) OWASP said no, so the Agent Behaviour Policy gets a foundation. The roadmap: policies, understand, contain, manage, accelerate, then insurance.
 - [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
 
 [All articles](index.md) · [All graphs](graphs.md)
