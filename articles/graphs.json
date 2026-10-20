@@ -55,6 +55,326 @@
   ],
   "articles": [
     {
+      "slug": "pki-everywhere",
+      "title": "PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/pki-everywhere.html",
+      "markdown": "https://newsroom.sgit.ai/articles/pki-everywhere.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/pki-everywhere.webp",
+      "teaser": "From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "pki",
+        "keys",
+        "agents",
+        "identity",
+        "security",
+        "sgit",
+        "article"
+      ],
+      "links_out": [
+        "our-first-customers",
+        "secrets-on-public-keys",
+        "handing-secrets-to-agents",
+        "sgit-in-a-ci-pipeline",
+        "a-directory-of-people-and-keys",
+        "the-editors-channel"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ke-patterns.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ke-patterns.webp",
+          "caption": "How an agent gets its first key: two patterns. A, the agent's own key, confirmed by a person comparing fingerprints, is built at pki.sgit.ai. B, an identity key issued and held centrally after a second-step approval, is proposed.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "pki-everywhere",
+        "teaser": "From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "PKI becomes the default for everything we send, and agent identity is solved by choreography rather than cryptography: a session's own ephemeral key confirmed by a person, and, when identity must last, an identity key issued and held centrally after a second-step approval.",
+        "nodes": [
+          {
+            "id": "decision",
+            "label": "PKI everywhere",
+            "kind": "claim",
+            "summary": "Sign everything; encrypt where it matters."
+          },
+          {
+            "id": "register",
+            "label": "pki.sgit.ai register",
+            "kind": "artefact",
+            "summary": "People, keys, two-way links."
+          },
+          {
+            "id": "trap",
+            "label": "The bootstrap trap",
+            "kind": "concept",
+            "summary": "Recognition needs an identity you lack."
+          },
+          {
+            "id": "a",
+            "label": "Pattern A: the agent's own key",
+            "kind": "method",
+            "summary": "Ephemeral, confirmed by fingerprint."
+          },
+          {
+            "id": "b",
+            "label": "Pattern B: an issued identity key",
+            "kind": "method",
+            "summary": "Second-step approval; held centrally."
+          },
+          {
+            "id": "twoway",
+            "label": "Two-way trust that expires",
+            "kind": "concept",
+            "summary": "Both records link; an end date."
+          },
+          {
+            "id": "platforms",
+            "label": "Platform-level signing",
+            "kind": "example",
+            "summary": "Web Bot Auth, A2A cards, OAuth."
+          }
+        ],
+        "edges": [
+          {
+            "from": "register",
+            "to": "decision",
+            "rel": "depends-on"
+          },
+          {
+            "from": "trap",
+            "to": "a",
+            "rel": "leads-to"
+          },
+          {
+            "from": "trap",
+            "to": "b",
+            "rel": "leads-to"
+          },
+          {
+            "from": "a",
+            "to": "twoway",
+            "rel": "produces"
+          },
+          {
+            "from": "b",
+            "to": "a",
+            "rel": "extends"
+          },
+          {
+            "from": "platforms",
+            "to": "trap",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "secrets-on-public-keys",
+            "handing-secrets-to-agents",
+            "a-directory-of-people-and-keys",
+            "sgit-in-a-ci-pipeline",
+            "the-editors-channel",
+            "our-first-customers"
+          ],
+          "pages": [],
+          "sites": [
+            "https://pki.sgit.ai/",
+            "https://pki.sgit.ai/bootstrap/index.html",
+            "https://spiffe.io/docs/latest/spiffe-about/spiffe-concepts/",
+            "https://docs.sigstore.dev/certificate_authority/overview/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It applies to everything.",
+            "why": "The decision."
+          },
+          {
+            "text": "The way out of the loop is a person.",
+            "why": "The bootstrap."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-briefing-for-the-ciso-summit",
+      "title": "A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-briefing-for-the-ciso-summit.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-briefing-for-the-ciso-summit.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-briefing-for-the-ciso-summit.webp",
+      "teaser": "A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "riskmandate",
+        "ciso",
+        "security",
+        "governance",
+        "events",
+        "article"
+      ],
+      "links_out": [
+        "what-can-your-agent-reach",
+        "hope-or-enforcement",
+        "every-risk-is-already-accepted",
+        "who-are-you-protecting-against",
+        "ten-questions-one-graph",
+        "your-agents-logs-are-a-self-report",
+        "four-frameworks-one-agent",
+        "policy-as-code-needs-a-policy-first",
+        "a-trusted-framework-for-agentic-finance",
+        "attacks-rewritten-as-mandates",
+        "footprint-and-blast-radius",
+        "agent-hooks-october-2026",
+        "skill-behaviour-policy",
+        "a-policy-beside-the-prompt",
+        "are-hooks-the-sweet-spot",
+        "three-policies-for-an-agent",
+        "the-policy-draws-the-liability-line",
+        "riskmandate-ten-questions",
+        "can-you-sell-it",
+        "our-first-customers"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wc-rooms.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wc-rooms.webp",
+          "caption": "One idea, six rooms: the same point said for each kind of person at the summit, with the article to read first.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-briefing-for-the-ciso-summit",
+        "teaser": "A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "For a CISO audience, the whole of our work reduces to one test, that a control bounds a grant only if it is enforced by something the grant does not include, said differently for security leaders, auditors, incident responders, AI-for-defence vendors, investors and founders, with the policy as what guardrails are compiled from.",
+        "nodes": [
+          {
+            "id": "summit",
+            "label": "The WestCap CISO Summit",
+            "kind": "example",
+            "summary": "Governance, AI attacks, AI for defence."
+          },
+          {
+            "id": "abp",
+            "label": "Agent Behaviour Policy",
+            "kind": "method",
+            "summary": "Can, may, the gap, what stands in the way."
+          },
+          {
+            "id": "test",
+            "label": "Only a rule out of reach is a control",
+            "kind": "claim",
+            "summary": "The one-sentence test."
+          },
+          {
+            "id": "rm",
+            "label": "RiskMandate",
+            "kind": "artefact",
+            "summary": "The policy for the agent you run."
+          },
+          {
+            "id": "rooms",
+            "label": "Six rooms",
+            "kind": "concept",
+            "summary": "CISOs, audit, IR, defence, investors, founders."
+          },
+          {
+            "id": "compiled",
+            "label": "What guardrails are compiled from",
+            "kind": "claim",
+            "summary": "Alongside runtime products."
+          },
+          {
+            "id": "early",
+            "label": "Early access",
+            "kind": "method",
+            "summary": "Built with you, at no cost."
+          }
+        ],
+        "edges": [
+          {
+            "from": "summit",
+            "to": "rooms",
+            "rel": "produces"
+          },
+          {
+            "from": "abp",
+            "to": "test",
+            "rel": "depends-on"
+          },
+          {
+            "from": "rm",
+            "to": "abp",
+            "rel": "produces"
+          },
+          {
+            "from": "test",
+            "to": "rooms",
+            "rel": "answers"
+          },
+          {
+            "from": "abp",
+            "to": "compiled",
+            "rel": "leads-to"
+          },
+          {
+            "from": "rm",
+            "to": "early",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-can-your-agent-reach",
+            "your-agents-logs-are-a-self-report",
+            "attacks-rewritten-as-mandates",
+            "a-policy-beside-the-prompt",
+            "the-policy-draws-the-liability-line",
+            "can-you-sell-it",
+            "our-first-customers",
+            "a-trusted-framework-for-agentic-finance"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/articles/hope-or-enforcement.html",
+            "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html",
+            "https://luma.com/rym6b377",
+            "https://riskmandate.ai/",
+            "https://abp.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Only the last is a control.",
+            "why": "The barrier."
+          },
+          {
+            "text": "So it sits alongside them, not against them",
+            "why": "Where we add value."
+          }
+        ]
+      }
+    },
+    {
       "slug": "our-first-customers",
       "title": "Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch",
       "date": "2026-10-20",
@@ -85,7 +405,10 @@
         "system-prompts-as-behaviour-policies",
         "what-can-your-agent-reach"
       ],
-      "links_in": [],
+      "links_in": [
+        "pki-everywhere",
+        "a-briefing-for-the-ciso-summit"
+      ],
       "figures": [
         {
           "file": "ea-journey.webp",
@@ -1351,6 +1674,7 @@
         "the-graph-companies"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "inside-the-pellbridge-agents"
       ],
       "figures": [
@@ -1586,6 +1910,7 @@
         "governs-enforces-attests"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "a-trusted-framework-for-agentic-finance",
         "inside-the-thistlewood-twin"
       ],
@@ -3330,6 +3655,7 @@
         "start-a-company"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "our-first-customers",
         "open-source-so-you-keep-it",
         "fund-it-with-time",
@@ -5601,6 +5927,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "pki-everywhere",
         "a-book-for-one-reader"
       ],
       "figures": [
@@ -8183,6 +8510,7 @@
         "agent-workflows-on-ephemeral-vaults"
       ],
       "links_in": [
+        "pki-everywhere",
         "the-briefs-so-far",
         "search-as-navigation",
         "reviews-on-the-record",
@@ -9052,6 +9380,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "our-first-customers",
         "a-trusted-framework-for-agentic-finance",
         "the-man-behind-the-curtain",
@@ -10229,6 +10558,7 @@
         "agency-is-not-a-yes"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "reviews-on-the-record",
         "the-editors-channel",
         "the-code-you-do-not-ship",
@@ -16953,6 +17283,7 @@
         "a-policy-beside-the-prompt"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "three-decisions-mapped",
         "case-law-for-agents",
         "the-policy-guards-the-door",
@@ -18945,6 +19276,7 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "pki-everywhere",
         "a-directory-of-people-and-keys",
         "omnichannel-programming"
       ],
@@ -19155,6 +19487,7 @@
         "the-tokens-hook"
       ],
       "links_in": [
+        "pki-everywhere",
         "a-directory-of-people-and-keys",
         "omnichannel-programming",
         "secrets-on-public-keys"
@@ -21530,6 +21863,7 @@
         "chainguard-mapped"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy"
       ],
@@ -23562,6 +23896,7 @@
         "a-policy-for-every-skill"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "governs-enforces-attests",
         "your-own-newsroom",
         "the-tokens-hook",
@@ -23841,6 +24176,7 @@
         "re-anchoring-agent-behaviour-policies"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "hooks-are-kernel-code",
         "are-hooks-the-sweet-spot"
       ],
@@ -24779,6 +25115,7 @@
         "the-human-in-the-loop"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "a-trusted-framework-for-agentic-finance",
         "governs-enforces-attests",
         "cedar-and-the-policy-vault",
@@ -25017,6 +25354,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "pki-everywhere",
         "three-linkedin-pages",
         "the-value-of-constraints",
         "cedar-and-the-policy-vault",
@@ -25522,6 +25860,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "chainguard-mapped",
         "the-minimum-code-below",
         "a-policy-for-every-skill",
@@ -25776,6 +26115,7 @@
         "ai-baseline-control-framework"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "policy-as-code-needs-a-policy-first"
       ],
       "figures": [
@@ -26996,6 +27336,7 @@
         "stop-the-bleeding-then-ask-for-it-back"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "our-first-customers",
         "a-trusted-framework-for-agentic-finance",
         "how-the-newsletter-is-made",
@@ -27281,6 +27622,7 @@
         "authority-outside-the-model"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "a-trusted-framework-for-agentic-finance",
         "governs-enforces-attests",
         "how-the-newsletter-is-made",
@@ -39100,6 +39442,7 @@
         "the-investigation-github-owes-its-customers"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "a-website-to-finish-the-book",
         "generation-z-developers-again",
         "three-linkedin-pages",
@@ -40524,6 +40867,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "what-can-your-agent-reach",
         "allowed-is-not-right",
         "three-decisions-mapped",
@@ -40794,6 +41138,7 @@
         "every-risk-is-already-accepted"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "brief-the-agent-too",
         "no-server-by-design",
         "who-will-game-the-reading-meter",
@@ -47935,6 +48280,7 @@
         "six-agents-one-inbox"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "research-delivered-as-a-vault",
         "cedar-and-the-policy-vault",
         "commanders-intent-is-a-behaviour-policy",
@@ -50068,6 +50414,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "a-briefing-for-the-ciso-summit",
         "a-trusted-framework-for-agentic-finance",
         "ten-questions-one-graph",
         "inside-the-thistlewood-twin",

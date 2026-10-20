@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-20 | minor | 1,410 | +12 / −0 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](our-first-customers/v1.1.0.md) · [current](../our-first-customers.md) |
+| **v1.1.0** | 2026-10-20 | minor | 1,410 | +12 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`6bbae7c44`](https://github.com/SGit-AI/SGit-AI__Website/commit/6bbae7c446cb6973826a76d8315031a9382cd64a) | [what changed](our-first-customers/v1.1.0.md) · [current](../our-first-customers.md) |
 | **v1.0.0** | 2026-10-20 | published | 1,398 | first published | [`725259bf9`](https://github.com/SGit-AI/SGit-AI__Website/commit/725259bf9911ea380d920331ec3d7f34a36e4a75) |  |
 
 [← Back to the article](../our-first-customers.md) · [All articles](../index.md)

@@ -73,6 +73,64 @@
   ],
   "articles": [
     {
+      "slug": "pki-everywhere",
+      "title": "PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key",
+      "date": "2026-10-20",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/pki-everywhere.html",
+      "markdown": "https://newsroom.sgit.ai/articles/pki-everywhere.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/pki-everywhere.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/pki-everywhere.json",
+      "teaser": "From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.",
+      "summary": "This is a strategic decision. From now on, every message, every secret and every transmission of data we make should be signed, and in some cases encrypted, with public key cryptography. Everything starts with a PKI handshake, including our first customers and the workflows we build for them. We are at a level of maturity where this is possible: pki.sgit.ai now has a register of people and their public keys, and since its v0.2.1 a workflow for an agent to get a key its operator confirms, with trust that runs both ways and has an end date. The hard part is the first key. As far as we found, no major agent platform gives an individual agent session its own key pair; what exists signs at the level of the platform. So there are two patterns, and we need both. In the first, the agent makes a key only it knows, sends the public half over an append lane, and a person compares fingerprints and approves it: that proves who is here now. In the second, the agent asks a central workflow, a person approves as a second step, and the agent receives an identity key that is made and held centrally: logged, revocable, and the same in the next session. A central store of the keys that give agents their identity is fine, and the agent can always make its own keys for its own work.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "pki",
+        "keys",
+        "agents",
+        "identity",
+        "security",
+        "sgit",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "a-briefing-for-the-ciso-summit",
+      "title": "A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next",
+      "date": "2026-10-20",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-briefing-for-the-ciso-summit.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-briefing-for-the-ciso-summit.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-briefing-for-the-ciso-summit.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-briefing-for-the-ciso-summit.json",
+      "teaser": "A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.",
+      "summary": "My business partner is at the WestCap CISO Summit in New York this week, from 20 to 22 October, where security leaders, investors and founders meet. This page does two jobs. It is a briefing for him, and it is a place for the people he meets to come and see what we do. The summit's main day has panels on securing AI use and AI governance, on preparing for an AI attack, and on using AI to secure a company. Our work sits right across them. An Agent Behaviour Policy is a written description, for one agent in one deployment, of everything it can do, what it was authorised to do, the difference between the two, and what actually stands in the way. RiskMandate is where we sell one, from £10 for the pack to £1,500 for one a professional signs, with early users helped at no cost in exchange for telling us where it is wrong. The idea at the centre is one sentence: a control bounds a grant only if it is enforced by something the grant does not include. Below, that idea is said six ways, for CISOs, for AI governance and audit, for incident response and red teams, for AI-for-defence vendors, for investors and for founders, each with the articles and vaults to read first. Everything here is open, under CC BY 4.0.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "riskmandate",
+        "ciso",
+        "security",
+        "governance",
+        "events",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "our-first-customers",
       "title": "Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch",
       "date": "2026-10-20",

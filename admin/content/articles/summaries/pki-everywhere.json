@@ -1,0 +1,56 @@
+{
+ "slug": "pki-everywhere",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Sign everything, and how an agent gets its first key.",
+   "para": "From now on every message, secret and handover should be signed, and encrypted where it matters; everything starts with a PKI handshake, customers included. pki.sgit.ai now has a register and an agent workflow. Agent platforms do not give a session its own key, so two patterns: the agent's own key, confirmed by a person, and an issued identity key.",
+   "hash": "0a375552e79a"
+  },
+  "in-short": {
+   "line": "Seven points: the decision, the handshake, readiness, the first key, two patterns.",
+   "para": "Sign everything and encrypt where it matters. Everything starts with a PKI handshake, including first customers. pki.sgit.ai has a register and an agent workflow. The hard part is the first key. Pattern A: the agent's own key, confirmed by a person. Pattern B: an issued identity key, held centrally. We need both.",
+   "hash": "db7a0f4627eb"
+  },
+  "decision": {
+   "line": "The decision: PKI everywhere, as the default.",
+   "para": "Every message, secret and transmission of data signed, and encrypted where it should be private. It applies to customers, workflows, sessions and agents. It builds on earlier work: a key pair for every person, browser and agent, secrets handed to agents end to end, and a key pair per CI job. What is new is that it is now the default.",
+   "hash": "37b1988aac7a"
+  },
+  "pki": {
+   "line": "Why now: pki.sgit.ai's register and agent workflow.",
+   "para": "A register of people and keys, live since 19 October, with signed statements and links that exist only when both sides hold one. Since v0.2.1 an agent submits its public key to its operator's inbox, and a person compares fingerprints. Trust runs both ways and expires. It is early: one agent key, no confirmed links yet.",
+   "hash": "733c82576517"
+  },
+  "first": {
+   "line": "The first key: what the platforms offer, and the bootstrap trap.",
+   "para": "As far as we found, platforms sign at the level of the platform or service: ChatGPT agent's signed requests, A2A's signed agent cards, MCP's OAuth. None gives a session its own key pair. pki.sgit.ai calls it the bootstrap trap: a loop, where the hardest part is authority choreography. The way out is a person.",
+   "hash": "57e35af58d57"
+  },
+  "own": {
+   "line": "Pattern A: the agent's own, ephemeral key.",
+   "para": "The session makes a key pair only it knows, sends the public half over an append lane, and a person compares fingerprints. It is built at pki.sgit.ai and recommended for sessions. It proves who is here now; nothing outlives the session, so the next one starts again.",
+   "hash": "85de2c3020ab"
+  },
+  "issued": {
+   "line": "Pattern B: an identity key, issued and held centrally.",
+   "para": "The session asks a central workflow, signed with its own key; a person approves as a second step; the workflow sends an identity key encrypted to the session. Every key logged, identity that survives sessions, one place to revoke. The central workflow is the custodian, on purpose. The agent can still make its own keys.",
+   "hash": "2d15a02beaef"
+  },
+  "fit": {
+   "line": "How the two fit, and what the industry does for workloads.",
+   "para": "Pattern A comes first in both; B is what a session asks for when it needs an identity that lasts. Workloads already go this way: SPIFFE's short-lived identities, Sigstore's ten-minute certificates, Let's Encrypt's six-day certificates. For agents, the thing that vouches is a person. The workflows are the next piece of work.",
+   "hash": "1c2c194b0410"
+  },
+  "limits": {
+   "line": "What this does not claim.",
+   "para": "Pattern B is proposed; pattern A is built. The register is new, with one agent key and no confirmed links. Identity is not permission; that is a behaviour policy's job. Platform support may change. Not every message needs encrypting: signing is the default.",
+   "hash": "ef4db163063d"
+  },
+  "sources": {
+   "line": "Where this comes from.",
+   "para": "A voice memo of 20 October 2026; pki.sgit.ai, its keys-for-agents article and its bootstrap trap; OpenAI, A2A, MCP, SPIFFE, Sigstore and Let's Encrypt documentation; and earlier articles on secrets, keys and directories.",
+   "hash": "13611f2c4166"
+  }
+ }
+}

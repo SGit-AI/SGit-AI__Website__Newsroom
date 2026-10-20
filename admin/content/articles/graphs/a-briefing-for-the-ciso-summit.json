@@ -1,0 +1,32 @@
+{
+ "slug": "a-briefing-for-the-ciso-summit",
+ "teaser": "A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "For a CISO audience, the whole of our work reduces to one test, that a control bounds a grant only if it is enforced by something the grant does not include, said differently for security leaders, auditors, incident responders, AI-for-defence vendors, investors and founders, with the policy as what guardrails are compiled from.",
+ "nodes": [
+  {"id": "summit", "label": "The WestCap CISO Summit", "kind": "example", "summary": "Governance, AI attacks, AI for defence."},
+  {"id": "abp", "label": "Agent Behaviour Policy", "kind": "method", "summary": "Can, may, the gap, what stands in the way."},
+  {"id": "test", "label": "Only a rule out of reach is a control", "kind": "claim", "summary": "The one-sentence test."},
+  {"id": "rm", "label": "RiskMandate", "kind": "artefact", "summary": "The policy for the agent you run."},
+  {"id": "rooms", "label": "Six rooms", "kind": "concept", "summary": "CISOs, audit, IR, defence, investors, founders."},
+  {"id": "compiled", "label": "What guardrails are compiled from", "kind": "claim", "summary": "Alongside runtime products."},
+  {"id": "early", "label": "Early access", "kind": "method", "summary": "Built with you, at no cost."}
+ ],
+ "edges": [
+  {"from": "summit", "to": "rooms", "rel": "produces"},
+  {"from": "abp", "to": "test", "rel": "depends-on"},
+  {"from": "rm", "to": "abp", "rel": "produces"},
+  {"from": "test", "to": "rooms", "rel": "answers"},
+  {"from": "abp", "to": "compiled", "rel": "leads-to"},
+  {"from": "rm", "to": "early", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["what-can-your-agent-reach", "your-agents-logs-are-a-self-report", "attacks-rewritten-as-mandates", "a-policy-beside-the-prompt", "the-policy-draws-the-liability-line", "can-you-sell-it", "our-first-customers", "a-trusted-framework-for-agentic-finance"],
+  "pages": [],
+  "sites": ["https://newsroom.sgit.ai/articles/hope-or-enforcement.html", "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html", "https://luma.com/rym6b377", "https://riskmandate.ai/", "https://abp.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "Only the last is a control.", "why": "The barrier."},
+  {"text": "So it sits alongside them, not against them", "why": "Where we add value."}
+ ]
+}

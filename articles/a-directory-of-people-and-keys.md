@@ -119,6 +119,7 @@ Vaults & methodAgents & policy[This article as a graph →](graphs.md#a-director
 
 ### Continued by
 
+- [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md) From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](a-book-for-one-reader.md) A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.
 
 [All articles](index.md) · [All graphs](graphs.md)

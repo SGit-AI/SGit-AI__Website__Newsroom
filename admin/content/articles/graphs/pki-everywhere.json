@@ -1,0 +1,32 @@
+{
+ "slug": "pki-everywhere",
+ "teaser": "From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "PKI becomes the default for everything we send, and agent identity is solved by choreography rather than cryptography: a session's own ephemeral key confirmed by a person, and, when identity must last, an identity key issued and held centrally after a second-step approval.",
+ "nodes": [
+  {"id": "decision", "label": "PKI everywhere", "kind": "claim", "summary": "Sign everything; encrypt where it matters."},
+  {"id": "register", "label": "pki.sgit.ai register", "kind": "artefact", "summary": "People, keys, two-way links."},
+  {"id": "trap", "label": "The bootstrap trap", "kind": "concept", "summary": "Recognition needs an identity you lack."},
+  {"id": "a", "label": "Pattern A: the agent's own key", "kind": "method", "summary": "Ephemeral, confirmed by fingerprint."},
+  {"id": "b", "label": "Pattern B: an issued identity key", "kind": "method", "summary": "Second-step approval; held centrally."},
+  {"id": "twoway", "label": "Two-way trust that expires", "kind": "concept", "summary": "Both records link; an end date."},
+  {"id": "platforms", "label": "Platform-level signing", "kind": "example", "summary": "Web Bot Auth, A2A cards, OAuth."}
+ ],
+ "edges": [
+  {"from": "register", "to": "decision", "rel": "depends-on"},
+  {"from": "trap", "to": "a", "rel": "leads-to"},
+  {"from": "trap", "to": "b", "rel": "leads-to"},
+  {"from": "a", "to": "twoway", "rel": "produces"},
+  {"from": "b", "to": "a", "rel": "extends"},
+  {"from": "platforms", "to": "trap", "rel": "contrasts"}
+ ],
+ "links": {
+  "articles": ["secrets-on-public-keys", "handing-secrets-to-agents", "a-directory-of-people-and-keys", "sgit-in-a-ci-pipeline", "the-editors-channel", "our-first-customers"],
+  "pages": [],
+  "sites": ["https://pki.sgit.ai/", "https://pki.sgit.ai/bootstrap/index.html", "https://spiffe.io/docs/latest/spiffe-about/spiffe-concepts/", "https://docs.sigstore.dev/certificate_authority/overview/"]
+ },
+ "quotes": [
+  {"text": "It applies to everything.", "why": "The decision."},
+  {"text": "The way out of the loop is a person.", "why": "The bootstrap."}
+ ]
+}
