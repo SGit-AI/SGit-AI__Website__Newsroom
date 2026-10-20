@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-20 | minor | 2,288 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-small-slice-sets-the-price/v1.1.0.md) · [current](../a-small-slice-sets-the-price.md) |
+| **v1.1.0** | 2026-10-20 | minor | 2,288 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`f1708db9b`](https://github.com/SGit-AI/SGit-AI__Website/commit/f1708db9b4df92dec2c912b1a23e229178a6783f) | [what changed](a-small-slice-sets-the-price/v1.1.0.md) · [current](../a-small-slice-sets-the-price.md) |
 | **v1.0.0** | 2026-10-20 | published | 2,288 | first published | [`2672ce22a`](https://github.com/SGit-AI/SGit-AI__Website/commit/2672ce22a772a14edab605f83b88db6e08daa57f) |  |
 
 [← Back to the article](../a-small-slice-sets-the-price.md) · [All articles](../index.md)

@@ -10,7 +10,7 @@
 
 # The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/the-exit-is-when-you-sell-control.md) · [newsroom v0.12.148](https://newsroom.sgit.ai/admin/versions.html) · startupsfoundersexitscontrolgovernanceopen-sourcearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/the-exit-is-when-you-sell-control.md) · [newsroom v0.12.149](https://newsroom.sgit.ai/admin/versions.html) · startupsfoundersexitscontrolgovernanceopen-sourcearticle
 
 ***Abstract:** What is a good exit for a founder? Fundamentally, it is somebody buying the company: buying control of what you created. And control can be sold long before the shares are. A founder can own 50 or 60% and not be calling the shots, because the board and the investors' vetoes decide; another can own 14% and hold 61% of the votes. My argument is that the founder's exit is the day control changes hands, and that is the day to leave. Founders want to create. When the strategy is no longer theirs, and the company moves from explorer to villager and town planner, the founder's energy is no longer what it needs, and staying costs them their health, their sanity and what they could build next, for a couple more zeros. The research agrees that most founders lose the top job early: in Noam Wasserman's study, half were no longer CEO by year three, and four in five were forced to step down. So negotiate the exit at the start, while you have leverage. I call it the Mourinho clause: his exits, whatever caused them, were priced in his contracts before anyone needed them. And write down now the number that would make you happy, so that later you recognise when you have passed it.*
 
@@ -79,7 +79,7 @@ The time to agree the exit is at the beginning, when the investors want you, not
 - **What you keep.** Your name, your reputation, the open source you wrote, and a non-compete narrow enough to let you build again.
 - **Your number.** See below.
 
-This is also leverage in the negotiation. If investors know that asking for too much control means losing the founder, they price that in. Sometimes they will still ask for it, and that may be the right outcome for both sides: the company has matured, it no longer needs that ball of energy, it needs someone to execute, and a new CEO and a new CTO take it from there. That might be the best case for everybody, as long as it was agreed in advance and not fought over at the end.
+This is also leverage in the negotiation. If investors know that asking for too much control means losing the founder, they price that in. Sometimes they will still ask for it, and that may be the right outcome for both sides: the company has matured, it no longer needs that ball of energy, it needs someone to execute, and a new CEO and a new CTO take it from there. That might be the right outcome for everybody, as long as it was agreed in advance and not fought over at the end.
 
 ## Write your number down now
 
