@@ -55,6 +55,192 @@
   ],
   "articles": [
     {
+      "slug": "inside-the-no-server-studio",
+      "title": "Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/inside-the-no-server-studio.html",
+      "markdown": "https://newsroom.sgit.ai/articles/inside-the-no-server-studio.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/inside-the-no-server-studio.webp",
+      "teaser": "An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.",
+      "topics": [
+        "startups-and-strategy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "startups",
+        "architecture",
+        "client-side",
+        "no-server",
+        "vaults",
+        "business-models",
+        "article"
+      ],
+      "links_out": [
+        "the-no-server-startup",
+        "inside-the-pellbridge-agents",
+        "free-models-your-own-key"
+      ],
+      "links_in": [
+        "the-no-server-startup"
+      ],
+      "figures": [
+        {
+          "file": "nv-live.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nv-live.webp",
+          "caption": "The no-server studio, opened from its vault in the official vault UI, read-only, with the published key. The host reports no AI key for a public read, and the studio says so and stays in simulation.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nv-studio-night.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nv-studio-night.webp",
+          "caption": "The Pellbridge day as big numbers, in the night theme.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nv-gallery.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nv-gallery.webp",
+          "caption": "The gallery: four sample documents, four layouts, three themes, all drawn in the browser.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nv-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nv-flow.webp",
+          "caption": "The flow after every step has been tried: the credit at the provider, what was spent, and what the studio would earn at a fifth.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nv-checklist.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nv-checklist.webp",
+          "caption": "The checklist for this studio: nine done, two partial, one simulated.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "inside-the-no-server-studio",
+        "teaser": "An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.",
+        "topics": [
+          "startups-and-strategy",
+          "vaults-and-method"
+        ],
+        "core_idea": "A working MVP of the no-server blueprint, one HTML file of native web components that draws infographics in the browser, runs in simulation by default, leaves the model's key to the vault host or the user, and carries a business plan for somebody to build, tested by synthetic users and a live check.",
+        "nodes": [
+          {
+            "id": "studio",
+            "label": "The no-server studio",
+            "kind": "artefact",
+            "summary": "One HTML file, seven web components."
+          },
+          {
+            "id": "sim",
+            "label": "Simulation mode",
+            "kind": "method",
+            "summary": "A deterministic extractor stands in for the model."
+          },
+          {
+            "id": "render",
+            "label": "The browser draws",
+            "kind": "method",
+            "summary": "SVG in four layouts, the same for both paths."
+          },
+          {
+            "id": "host",
+            "label": "The vault host holds the key",
+            "kind": "concept",
+            "summary": "Capped, consented, never seen by the page."
+          },
+          {
+            "id": "flow",
+            "label": "The flow with invented money",
+            "kind": "example",
+            "summary": "Eight steps, one gap."
+          },
+          {
+            "id": "plan",
+            "label": "A business plan",
+            "kind": "artefact",
+            "summary": "Three businesses, prices as hypotheses."
+          },
+          {
+            "id": "checklist",
+            "label": "Nine of twelve done",
+            "kind": "example",
+            "summary": "Two partial, one simulated."
+          },
+          {
+            "id": "users",
+            "label": "Synthetic users",
+            "kind": "method",
+            "summary": "Three personas walked it first."
+          },
+          {
+            "id": "bug",
+            "label": "A bug found live",
+            "kind": "example",
+            "summary": "The vault sandbox has no session storage."
+          }
+        ],
+        "edges": [
+          {
+            "from": "sim",
+            "to": "studio",
+            "rel": "produces"
+          },
+          {
+            "from": "render",
+            "to": "studio",
+            "rel": "produces"
+          },
+          {
+            "from": "host",
+            "to": "studio",
+            "rel": "extends"
+          },
+          {
+            "from": "flow",
+            "to": "plan",
+            "rel": "leads-to"
+          },
+          {
+            "from": "checklist",
+            "to": "studio",
+            "rel": "extends"
+          },
+          {
+            "from": "users",
+            "to": "studio",
+            "rel": "extends"
+          },
+          {
+            "from": "bug",
+            "to": "users",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-no-server-startup",
+            "inside-the-pellbridge-agents",
+            "free-models-your-own-key"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/demos/vaults/no-server-studio/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "So the model only ever writes the words.",
+            "why": "On the engine."
+          },
+          {
+            "text": "Synthetic users test the product; a live check tests the place it runs.",
+            "why": "On the bug."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-no-server-startup",
       "title": "The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them",
       "date": "2026-10-20",
@@ -85,9 +271,12 @@
         "explorer-coding",
         "your-own-newsroom",
         "paying-after-the-value",
-        "the-vault-crosses-chrome-profiles"
+        "the-vault-crosses-chrome-profiles",
+        "inside-the-no-server-studio"
       ],
-      "links_in": [],
+      "links_in": [
+        "inside-the-no-server-studio"
+      ],
       "figures": [
         {
           "file": "ns-compare.webp",
@@ -112,6 +301,18 @@
           "url": "https://newsroom.sgit.ai/articles/images/ns-team.webp",
           "caption": "How a founder builds it: agent sessions and synthetic users around one repository, a dev site and a main site, and the team hired in order, explorers, then villagers, then town planners.",
           "kind": "concept"
+        },
+        {
+          "file": "nv-studio.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nv-studio.webp",
+          "caption": "The no-server studio in its vault: an invented bakery's quarter as a poster, drawn in the browser, in simulation mode.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "nv-plan.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/nv-plan.webp",
+          "caption": "The business plan in the vault: three businesses in one blueprint, packages and prices as hypotheses, go-to-market, ninety days, a calculator, risks as acceptances and open questions.",
+          "kind": "screenshot"
         }
       ],
       "graph": {
@@ -182,6 +383,18 @@
             "label": "A checklist for agents",
             "kind": "artefact",
             "summary": "NS-01 to NS-12."
+          },
+          {
+            "id": "mvp",
+            "label": "The MVP, in a vault",
+            "kind": "artefact",
+            "summary": "An infographic studio, mostly simulated."
+          },
+          {
+            "id": "business",
+            "label": "For somebody to build",
+            "kind": "claim",
+            "summary": "Three businesses and a plan."
           }
         ],
         "edges": [
@@ -224,10 +437,21 @@
             "from": "checklist",
             "to": "noserver",
             "rel": "extends"
+          },
+          {
+            "from": "mvp",
+            "to": "checklist",
+            "rel": "extends"
+          },
+          {
+            "from": "business",
+            "to": "mvp",
+            "rel": "leads-to"
           }
         ],
         "links": {
           "articles": [
+            "inside-the-no-server-studio",
             "free-models-your-own-key",
             "the-code-you-do-not-ship",
             "cloudflare-as-lego-blocks",
@@ -238,6 +462,8 @@
           ],
           "pages": [],
           "sites": [
+            "https://newsroom.sgit.ai/demos/vaults/no-server-studio/index.html",
+            "https://sgit.ai/startups/business-plans.html",
             "https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.html",
             "https://coding.sgit.ai/javascript/index.html",
             "https://nfrs.sgit.ai/",
@@ -286,6 +512,7 @@
         "inside-the-thistlewood-twin"
       ],
       "links_in": [
+        "inside-the-no-server-studio",
         "a-trusted-framework-for-agentic-finance"
       ],
       "figures": [
@@ -8398,6 +8625,7 @@
         "the-key-is-the-billing-system"
       ],
       "links_in": [
+        "inside-the-no-server-studio",
         "the-no-server-startup",
         "cloudflare-as-lego-blocks"
       ],

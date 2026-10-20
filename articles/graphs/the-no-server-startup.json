@@ -66,6 +66,18 @@
       "label": "A checklist for agents",
       "kind": "artefact",
       "summary": "NS-01 to NS-12."
+    },
+    {
+      "id": "mvp",
+      "label": "The MVP, in a vault",
+      "kind": "artefact",
+      "summary": "An infographic studio, mostly simulated."
+    },
+    {
+      "id": "business",
+      "label": "For somebody to build",
+      "kind": "claim",
+      "summary": "Three businesses and a plan."
     }
   ],
   "edges": [
@@ -108,10 +120,21 @@
       "from": "checklist",
       "to": "noserver",
       "rel": "extends"
+    },
+    {
+      "from": "mvp",
+      "to": "checklist",
+      "rel": "extends"
+    },
+    {
+      "from": "business",
+      "to": "mvp",
+      "rel": "leads-to"
     }
   ],
   "links": {
     "articles": [
+      "inside-the-no-server-studio",
       "free-models-your-own-key",
       "the-code-you-do-not-ship",
       "cloudflare-as-lego-blocks",
@@ -122,6 +145,8 @@
     ],
     "pages": [],
     "sites": [
+      "https://newsroom.sgit.ai/demos/vaults/no-server-studio/index.html",
+      "https://sgit.ai/startups/business-plans.html",
       "https://newsroom.sgit.ai/articles/the-passkey-opens-the-vault.html",
       "https://coding.sgit.ai/javascript/index.html",
       "https://nfrs.sgit.ai/",
@@ -164,6 +189,18 @@
       "url": "https://newsroom.sgit.ai/articles/images/ns-team.webp",
       "caption": "How a founder builds it: agent sessions and synthetic users around one repository, a dev site and a main site, and the team hired in order, explorers, then villagers, then town planners.",
       "kind": "concept"
+    },
+    {
+      "file": "nv-studio.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nv-studio.webp",
+      "caption": "The no-server studio in its vault: an invented bakery's quarter as a poster, drawn in the browser, in simulation mode.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nv-plan.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nv-plan.webp",
+      "caption": "The business plan in the vault: three businesses in one blueprint, packages and prices as hypotheses, go-to-market, ninety days, a calculator, risks as acceptances and open questions.",
+      "kind": "screenshot"
     }
   ]
 }

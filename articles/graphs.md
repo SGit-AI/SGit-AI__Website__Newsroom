@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-220 of 220 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+221 of 221 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-220 articles, 1256 links between them (1887 mentions in all). 210 articles cite an earlier one; 63 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+221 articles, 1260 links between them (1891 mentions in all). 211 articles cite an earlier one; 64 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [The Mandate Stack](#the-mandate-stack) (20 links out). 0 articles not yet linked either way.
+
+## [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](inside-the-no-server-studio.md)
+
+2026-10-20 · Startups & strategyVaults & method
+
+A working MVP of the no-server blueprint, one HTML file of native web components that draws infographics in the browser, runs in simulation by default, leaves the model's key to the vault host or the user, and carries a business plan for somebody to build, tested by synthetic users and a live check.
+
+*[diagram]*
+**concept**method**artefact**example
+
+**9 nodes, 7 edges**
+
+- **The no-server studio** (artefact) One HTML file, seven web components.
+- **Simulation mode** (method) A deterministic extractor stands in for the model.
+- **The browser draws** (method) SVG in four layouts, the same for both paths.
+- **The vault host holds the key** (concept) Capped, consented, never seen by the page.
+- **The flow with invented money** (example) Eight steps, one gap.
+- **A business plan** (artefact) Three businesses, prices as hypotheses.
+- **Nine of twelve done** (example) Two partial, one simulated.
+- **Synthetic users** (method) Three personas walked it first.
+- **A bug found live** (example) The vault sandbox has no session storage.
+
+> So the model only ever writes the words. On the engine.
+
+> Synthetic users test the product; a live check tests the place it runs. On the bug.
+
+builds on [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key); continued by [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup).
 
 ## [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](the-no-server-startup.md)
 
@@ -31,7 +58,7 @@ A product can be built, in phase one, as a folder of HTML, CSS and JavaScript wi
 *[diagram]*
 **concept**claim**method**artefact
 
-**10 nodes, 8 edges**
+**12 nodes, 10 edges**
 
 - **No server, no database of yours** (claim) Phase one is a folder of static files.
 - **Native web components, vendored** (method) No framework, no build step, offline.
@@ -43,12 +70,14 @@ A product can be built, in phase one, as a folder of HTML, CSS and JavaScript wi
 - **Provider gaps** (claim) Capped user keys; paying the app.
 - **Agents, dev and main, an explorer first** (method) How a founder builds it.
 - **A checklist for agents** (artefact) NS-01 to NS-12.
+- **The MVP, in a vault** (artefact) An infographic studio, mostly simulated.
+- **For somebody to build** (claim) Three businesses and a plan.
 
 > Nothing in that loop passes through the company that built the studio. The point.
 
 > Serverless is taken, and it means something else On the name.
 
-builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles).
+builds on [The passkey opens the vault: a door per path, a master vault for every user, and no server of ours](#the-passkey-opens-the-vault), [Free models, your own key: what a reader can use from the browser in October 2026, and what they cannot](#free-models-your-own-key), [The code you do not ship: why the future of software is removing functionality, and who gets paid to keep it small](#the-code-you-do-not-ship), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks), [Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it](#explorer-coding), [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](#your-own-newsroom), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](#the-vault-crosses-chrome-profiles), [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio); continued by [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio).
 
 ## [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md)
 
@@ -75,7 +104,7 @@ A synthetic vault in which six bank agents carry behaviour policies with agent i
 
 > Change a row and rebuild, and the day, the receipts and the decisions follow. On how it is built.
 
-builds on [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](#inside-the-thistlewood-twin); continued by [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance).
+builds on [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [Inside the Thistlewood twin: Phil Venables' ten questions answered one by one on the graph of an invented retailer, with the plot, the evidence and the decisions each one proposes](#inside-the-thistlewood-twin); continued by [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance).
 
 ## [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](a-trusted-framework-for-agentic-finance.md)
 
@@ -1258,7 +1287,7 @@ For a reader to talk to the newsroom free on their own key, a provider must be f
 
 > The account, and the agreement to its terms, stay the reader's. On agents and sign-ups.
 
-builds on [A chat box on a site with no server, the plan, and the trade it makes](#chat-on-a-static-site), [The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it](#the-key-is-the-billing-system); continued by [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks).
+builds on [A chat box on a site with no server, the plan, and the trade it makes](#chat-on-a-static-site), [The key is the billing system: VoiceDebrief, a product with no server, the one thing it cannot sell, and who could let it](#the-key-is-the-billing-system); continued by [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](#inside-the-no-server-studio), [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](#the-no-server-startup), [Cloudflare as Lego blocks: what a non-specialist can build on it in October 2026, and an sgit vault in 83 lines](#cloudflare-as-lego-blocks).
 
 ## [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](inside-the-northstar-twin.md)
 

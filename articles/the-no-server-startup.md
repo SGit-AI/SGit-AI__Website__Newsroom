@@ -1,6 +1,6 @@
 # The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them, sgit.ai
 
-> This is a blueprint, for founders and for the agents that work with them, of a kind of product that a lot of what I have written here adds up to. Phase one has no server and no database of its own. The product is a folder of HTML, CSS and JavaScript, built from native web components with the few libraries it needs vendored inside it, so it runs offline and anywhere a web page can be served, from a laptop to GitHub Pages to a customer's isolated network. The user brings the expensive parts: their own AI key, capped and paid by them, called straight from the browser; their own storage, in the browser, in an encrypted vault or in their own cloud drive; and their own passkey, which can give the browser a secret that only their device can produce. You are not in the line of any request, so the product scales with its users, not with your servers. The pieces mostly exist today, OpenRouter's OAuth among them, which bills each user's requests to their own credit. The gaps are on the providers' side: a user's own key with a cap, and paying the app that brought them the customer, which none of the providers I checked offers. Then how to build it, with agent sessions, a dev and a main site and an explorer as the first hire; how to charge for it; and a checklist an agent can work through.
+> This is a blueprint, for founders and for the agents that work with them, of a kind of product that a lot of what I have written here adds up to. Phase one has no server and no database of its own. The product is a folder of HTML, CSS and JavaScript, built from native web components with the few libraries it needs vendored inside it, so it runs offline and anywhere a web page can be served, from a laptop to GitHub Pages to a customer's isolated network. The user brings the expensive parts: their own AI key, capped and paid by them, called straight from the browser; their own storage, in the browser, in an encrypted vault or in their own cloud drive; and their own passkey, which can give the browser a secret that only their device can produce. You are not in the line of any request, so the product scales with its users, not with your servers. The pieces mostly exist today, OpenRouter's OAuth among them, which bills each user's requests to their own credit. The gaps are on the providers' side: a user's own key with a cap, and paying the app that brought them the customer, which none of the providers I checked offers. Then how to build it, with agent sessions, a dev and a main site and an explorer as the first hire; how to charge for it; a checklist an agent can work through; and an MVP of it, an infographic studio, mostly simulated, in a vault, with a business plan for somebody to build.
 
 *Source: <https://newsroom.sgit.ai/articles/the-no-server-startup.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
@@ -10,11 +10,19 @@
 
 # The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/the-no-server-startup.md) · [newsroom v0.12.145](https://newsroom.sgit.ai/admin/versions.html) · startupsarchitectureclient-sideno-serveragentsbusiness-modelsblueprintarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/the-no-server-startup.md) · [newsroom v0.12.146](https://newsroom.sgit.ai/admin/versions.html) · startupsarchitectureclient-sideno-serveragentsbusiness-modelsblueprintarticle
 
-***Abstract:** This is a blueprint, for founders and for the agents that work with them, of a kind of product that a lot of what I have written here adds up to. Phase one has no server and no database of its own. The product is a folder of HTML, CSS and JavaScript, built from native web components with the few libraries it needs vendored inside it, so it runs offline and anywhere a web page can be served, from a laptop to GitHub Pages to a customer's isolated network. The user brings the expensive parts: their own AI key, capped and paid by them, called straight from the browser; their own storage, in the browser, in an encrypted vault or in their own cloud drive; and their own passkey, which can give the browser a secret that only their device can produce. You are not in the line of any request, so the product scales with its users, not with your servers. The pieces mostly exist today, OpenRouter's OAuth among them, which bills each user's requests to their own credit. The gaps are on the providers' side: a user's own key with a cap, and paying the app that brought them the customer, which none of the providers I checked offers. Then how to build it, with agent sessions, a dev and a main site and an explorer as the first hire; how to charge for it; and a checklist an agent can work through.*
+***Abstract:** This is a blueprint, for founders and for the agents that work with them, of a kind of product that a lot of what I have written here adds up to. Phase one has no server and no database of its own. The product is a folder of HTML, CSS and JavaScript, built from native web components with the few libraries it needs vendored inside it, so it runs offline and anywhere a web page can be served, from a laptop to GitHub Pages to a customer's isolated network. The user brings the expensive parts: their own AI key, capped and paid by them, called straight from the browser; their own storage, in the browser, in an encrypted vault or in their own cloud drive; and their own passkey, which can give the browser a secret that only their device can produce. You are not in the line of any request, so the product scales with its users, not with your servers. The pieces mostly exist today, OpenRouter's OAuth among them, which bills each user's requests to their own credit. The gaps are on the providers' side: a user's own key with a cap, and paying the app that brought them the customer, which none of the providers I checked offers. Then how to build it, with agent sessions, a dev and a main site and an explorer as the first hire; how to charge for it; a checklist an agent can work through; and an MVP of it, an infographic studio, mostly simulated, in a vault, with a business plan for somebody to build.*
 
 The usual SaaS and the no-server product. On the left, the company sits in the line of every request, with its servers, its database, its AI key and its bill. On the right, the product is a folder of files, and the user brings the AI key, the storage and the passkey.
+
+The no-server startup
+
+A blueprint for products with no server and no database of their own, a tour of an MVP built to it, and the MVP itself, in a vault, with its business plan.
+
+[you are here1 · The blueprintThe no-server startupTen principles, the provider gaps, how to build and charge, and a checklist for agents.](the-no-server-startup.md)[2 · The tourInside the no-server studioAn infographic studio built to the blueprint: what is real, what is simulated, and the plan.](inside-the-no-server-studio.md)
+
+3 · The vaultThe no-server studioMake an infographic from your own text, walk the flow, and run the business plan's numbers.[Use it](https://newsroom.sgit.ai/demos/vaults/no-server-studio/index.html#live)[Open the vault ↗](https://dev.vault.sgraph.ai/#sgit_public_read_f12934c9b37c9c8911aafa6897c6a89b8375ef6fb84232fcf929c40b1c7cdc98%3Aiozssz56)
 
 ## In short
 
@@ -26,6 +34,7 @@ The usual SaaS and the no-server product. On the left, the company sits in the l
 - **Build it with agents.** A dev and a main site, synthetic users, an explorer as the first hire.
 - **Charge for the build, the users and the keys.** Even when they bring their own.
 - **A checklist for agents.** Each step can be marked done.
+- **An MVP and a business plan, in a vault.** For somebody to build.
 
 ## What this is
 
@@ -101,6 +110,24 @@ The costs are almost nothing, so the price is about value, not about covering se
 
 This newsroom uses the same model on itself: you start with credit, you pay for what you read, and the price falls as you read more. The product is the same set of files for everyone; what changes is who brings what.
 
+## The MVP, in a vault
+
+The worked example is now a working one. [The no-server studio](https://newsroom.sgit.ai/demos/vaults/no-server-studio/index.html) is that infographic studio, built to this blueprint and published the way this site publishes its demos: in an sgit vault you can open. It is one HTML file of seven native web components, with no framework, no build step and no server. Pick a document or paste your own, choose a layout and a theme, and the browser draws the infographic.
+
+Most of it is simulated, on purpose, which is why a vault is the right place for it. With no model connected, a deterministic extractor stands in for the model, so every feature works, offline, and replays exactly. Inside the vault, the studio asks the vault host for a model: the host holds the AI key, caps the spend per session and asks the user before the first call, and the studio never sees the key. That is the capped key the providers are missing, at the vault layer. The flow walks all eight steps with invented money, and three synthetic users walked the studio before it was published. [The tour](inside-the-no-server-studio.md) says what is real and what is simulated.
+
+The no-server studio in its vault: an invented bakery's quarter as a poster, drawn in the browser, in simulation mode.
+
+## For somebody to build
+
+I think this should be a business, and possibly three, and the studio's vault holds the plan, for somebody else to run or to run with us. The first is the studio itself: a no-server product for one segment, infographics for small businesses from their own reports and plans, where the user brings the key and the studio charges for the product. The second is a no-server product studio: a company that builds these for founders and for teams inside companies, a new product in weeks, handed over as a folder they own, with agents that maintain it. The third is the credit layer the providers are missing: capped keys for each user, and a share of the credit they buy paid to the app that brought them, which a provider, or a broker in front of providers, could build.
+
+The plan in the vault has who it is for, packages and prices as hypotheses, go-to-market, the first ninety days, a calculator, the risks as acceptances, and the open questions. It sits with the other [business plans published for founders](https://sgit.ai/startups/business-plans.html).
+
+The pitch is one line long: infographics from your own documents, in your browser, with your own AI credit, and nothing kept by us.
+
+The business plan in the vault: three businesses in one blueprint, packages and prices as hypotheses, go-to-market, ninety days, a calculator, risks as acceptances and open questions.
+
 ## For agents: the next steps
 
 Each step is a checkbox an agent can mark, with the evidence that it is done.
@@ -124,7 +151,7 @@ Each step is a checkbox an agent can mark, with the evidence that it is done.
 - **The name is a proposal.** No-server, as distinct from serverless.
 - **Provider terms change.** What each provider allows is as of 20 October 2026.
 - **Not every product fits.** Anything that must hold shared state between users needs more than this.
-- **This is a blueprint, not a product.** A working MVP is the next step.
+- **The MVP is mostly simulated.** The studio's own key path is written, not yet run against a live key.
 
 ## Where this comes from
 
@@ -144,6 +171,11 @@ Startups & strategySite & engineering[This article as a graph →](graphs.md#the
 - [Your own newsroom: how a founder can tell their story by voice memo, with an agent that checks it and publishes it to GitHub Pages, and readers who pay a little if they find it useful](your-own-newsroom.md) The recipe for a founder's own site: voice memos, an agent wired to GitHub that checks and publishes, GitHub Pages, and readers who pay a little.
 - [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](paying-after-the-value.md) Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.
 - [The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it](the-vault-crosses-chrome-profiles.md) The reader's vault carries the newsroom between Chrome profiles as it does between devices, a way to share state across browser sessions nobody built.
+- [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](inside-the-no-server-studio.md) An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.
+
+### Continued by
+
+- [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](inside-the-no-server-studio.md) An infographic studio built to the no-server blueprint, mostly simulated, in a vault: what is real, the business plan, and a bug found live.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
