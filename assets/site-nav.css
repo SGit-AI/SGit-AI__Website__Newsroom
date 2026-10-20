@@ -70,3 +70,20 @@ nav.site .gh .lbl{margin-left:.3em}
 
 /* A trail of exactly three cards fills the row in three columns (the imported stylesheet lays trails out in four). */
 @media (min-width:861px){.trail-row:has(> .trail-c:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* Trail ends: a compact copy of the article's trail at the end of its text (admin/build/trail_end.py), so the
+   next piece is one click away where the reader finishes, not only under the meter. Same cards, smaller: a
+   short image band, the label and the title; the card after "you are here" is marked "next". */
+.trail-end{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px 12px;margin:2rem 0 1.4rem}
+.trail-end-h{font-family:var(--serif);font-size:1rem;margin:0 0 8px}
+.trail-end-k{font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dk);margin-right:.4rem}
+.trail-end .trail-row{gap:8px}
+.trail-end .trail-img{aspect-ratio:1200/360}
+.trail-end .trail-b{padding:6px 9px 8px}
+.trail-end .trail-t{font-size:.84rem}
+.trail-end .trail-here{font-size:.6rem;padding:1px 7px}
+.trail-end .trail-c.next{border:2px solid var(--accent-dk)}
+.trail-end .trail-next{background:var(--accent-dk)}
+@media (min-width:861px){.trail-end .trail-row:has(> .trail-c:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:860px){.trail-end .trail-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.trail-end .trail-row{grid-template-columns:minmax(0,1fr)}.trail-end .trail-img{display:none}}

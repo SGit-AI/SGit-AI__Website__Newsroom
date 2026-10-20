@@ -59,7 +59,7 @@ def sections_of(slug):
     if not m:
         return []
     body = m.group(1)
-    cut = [i for i in (body.find("<sg-meter"), body.find('<section class="athreads"'), body.find('<div class="agent"')) if i >= 0]
+    cut = [i for i in (body.find("<sg-meter"), body.find('<nav class="trail-end"'), body.find('<section class="athreads"'), body.find('<div class="agent"')) if i >= 0]
     if cut:
         body = body[:min(cut)]
     body = re.sub(r'<p class="crumb">.*?</p>', " ", body, flags=re.S)

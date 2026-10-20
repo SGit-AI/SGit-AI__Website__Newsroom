@@ -250,6 +250,7 @@ NORMALISE = [
     (re.compile(r'<section class="athreads areviews" id="reviews">[\s\S]*?</section>\n'), ''),  # stamped by reviews.py
     (re.compile(r'<nav class="aseries"[^>]*>[\s\S]*?</nav>\n'), ''),  # stamped by series.py
     (re.compile(r'<section class="aseries-all"[^>]*>[\s\S]*?</section>\n'), ''),  # stamped by series.py
+    (re.compile(r'<nav class="trail-end"[^>]*>[\s\S]*?</nav>\n'), ''),  # stamped by trail_end.py
 ]
 
 

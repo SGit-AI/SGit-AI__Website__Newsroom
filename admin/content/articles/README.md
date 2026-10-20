@@ -286,6 +286,8 @@ full width. `python3 admin/build/figures.py` lists figures that probably need a 
 
 Articles that belong together, like the ones about the Generation Z Developers book, form a series by tag. A series is one entry in `admin/content/series.json` (id, title, tag, note); every article whose `tags` include the series' tag joins it, in publication order, and `admin/build/series.py` stamps a thin bar under its byline (the series, its place in it, the previous and next articles) and the full list at its foot. To add an article to a series, add the tag; nothing else is edited by hand.
 
+Pieces that belong together as a reply, a tour and a vault form a trail: `!trail <name>` under the top figure renders a row of cards from `admin/content/trails.json`, this one marked "you are here". `admin/build/trail_end.py`, which `series.py` runs, copies the same cards, smaller, to the end of the text, just before the meter, and marks the next piece, so the reader who finishes an article sees where to go next. Nothing is written by hand for it.
+
 ## The graph
 
 Beside every article, `graphs/<slug>.json`, read by the card, the threads, the wire and the desk:

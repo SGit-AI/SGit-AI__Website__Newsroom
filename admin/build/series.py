@@ -9,6 +9,7 @@ front matter carries the tag, in the order they were first published (their arti
 by being tagged and nothing here is edited by hand. The bar sits under the byline, before the abstract, so it is not
 part of the article's text; the list sits at the foot, after the meter and before the Reviews section, so neither
 summaries.py nor reviews.py reads it. Runs after reviews.py. validate.js and sync_newsroom.py strip both blocks.
+It then runs trail_end.py, which puts a compact copy of an article's trail at the end of its text.
 """
 import argparse
 import html
@@ -16,6 +17,9 @@ import json
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import trail_end  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "admin/content/series.json"
@@ -131,6 +135,7 @@ def main():
         sys.exit(1)
     if not a.check:
         print(f"series: {len(series())} series, {n} pages stamped")
+        trail_end.run()
 
 
 if __name__ == "__main__":

@@ -395,6 +395,7 @@ try {
       [/<section class="athreads areviews" id="reviews">[\s\S]*?<\/section>\n/, ''],  // stamped by reviews.py
       [/<nav class="aseries"[^>]*>[\s\S]*?<\/nav>\n/, ''],  // stamped by series.py
       [/<section class="aseries-all"[^>]*>[\s\S]*?<\/section>\n/, ''],  // stamped by series.py
+      [/<nav class="trail-end"[^>]*>[\s\S]*?<\/nav>\n/, ''],  // stamped by trail_end.py
     ];
     let edited = 0;
     for (const [rel, entry] of Object.entries(record.files)) {
