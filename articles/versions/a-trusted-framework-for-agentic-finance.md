@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-20 | minor | 3,110 | +247 / −0 words; 0 changed, 5 added, 0 removed paragraphs | this release | [what changed](a-trusted-framework-for-agentic-finance/v1.4.0.md) · [current](../a-trusted-framework-for-agentic-finance.md) |
+| **v1.4.0** | 2026-10-20 | minor | 3,110 | +247 / −0 words; 0 changed, 5 added, 0 removed paragraphs | [`d54a7ab8d`](https://github.com/SGit-AI/SGit-AI__Website/commit/d54a7ab8d727dbe1c649b2791a561f312d7708ca) | [what changed](a-trusted-framework-for-agentic-finance/v1.4.0.md) · [current](../a-trusted-framework-for-agentic-finance.md) |
 | **v1.3.0** | 2026-10-20 | minor | 2,863 | +13 / −9 words; 4 changed, 0 added, 0 removed paragraphs | [`b4ec6e4e4`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4ec6e4e4ead9093e4c1a98cecb815a566516dce) | [what changed](a-trusted-framework-for-agentic-finance/v1.3.0.md) |
 | **v1.2.0** | 2026-10-20 | minor | 2,859 | +901 / −575 words; 6 changed, 15 added, 9 removed paragraphs | [`964bd8adb`](https://github.com/SGit-AI/SGit-AI__Website/commit/964bd8adb136c648dbff1c6fcf096f7a2a96e8a0) | [what changed](a-trusted-framework-for-agentic-finance/v1.2.0.md) |
 | **v1.1.0** | 2026-10-19 | minor | 2,533 | +0 / −7 words; 3 changed, 0 added, 0 removed paragraphs | [`831cb1578`](https://github.com/SGit-AI/SGit-AI__Website/commit/831cb157811fec830ab422962915be45a48f184c) | [what changed](a-trusted-framework-for-agentic-finance/v1.1.0.md) |

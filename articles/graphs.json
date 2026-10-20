@@ -55,6 +55,190 @@
   ],
   "articles": [
     {
+      "slug": "our-first-customers",
+      "title": "Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch",
+      "date": "2026-10-20",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/our-first-customers.html",
+      "markdown": "https://newsroom.sgit.ai/articles/our-first-customers.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/our-first-customers.webp",
+      "teaser": "Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agents",
+        "agent-behaviour-policy",
+        "startups",
+        "customers",
+        "pricing",
+        "early-access",
+        "article"
+      ],
+      "links_out": [
+        "inside-the-pellbridge-agents",
+        "a-policy-beside-the-prompt",
+        "a-policy-for-every-skill",
+        "paying-after-the-value",
+        "can-you-sell-it",
+        "system-prompts-as-behaviour-policies",
+        "what-can-your-agent-reach"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ea-journey.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ea-journey.webp",
+          "caption": "The first customers, from credit to the moment they would pay: credit, a start-here page, a first policy, milestones and the value, with a daily follow-up and the meter alongside. Proposed.",
+          "kind": "concept"
+        },
+        {
+          "file": "ea-batches.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ea-batches.webp",
+          "caption": "Batches, not a launch: the first batch of friendlies, what we learn from them, the mailing list, and the second batch. Proposed.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "our-first-customers",
+        "teaser": "Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "The first users of Agent Behaviour Policies should be treated as customers from day one, each with credit on a site that meters and bills, followed closely by hand, so that the programme discovers the usage moment: the simplest useful policy, the entry point with least friction, and a fair price, before a larger second batch.",
+        "nodes": [
+          {
+            "id": "ready",
+            "label": "Ready for the next level",
+            "kind": "claim",
+            "summary": "Workflow, mapping, understanding."
+          },
+          {
+            "id": "customers",
+            "label": "Customers, not beta users",
+            "kind": "claim",
+            "summary": "Each starts with credit."
+          },
+          {
+            "id": "credit",
+            "label": "Credit and the meter",
+            "kind": "method",
+            "summary": "Use metered from day one."
+          },
+          {
+            "id": "site",
+            "label": "A start-here site",
+            "kind": "artefact",
+            "summary": "Instructions, objectives, milestones."
+          },
+          {
+            "id": "follow",
+            "label": "Hand-holding on purpose",
+            "kind": "method",
+            "summary": "Daily follow-up; does not scale yet."
+          },
+          {
+            "id": "moment",
+            "label": "The usage moment",
+            "kind": "concept",
+            "summary": "When a policy becomes worth something."
+          },
+          {
+            "id": "simplest",
+            "label": "The simplest useful policy",
+            "kind": "concept",
+            "summary": "One agent, a few rows, the gap."
+          },
+          {
+            "id": "batches",
+            "label": "Batches and a mailing list",
+            "kind": "method",
+            "summary": "The next batch learns from the first."
+          },
+          {
+            "id": "pg",
+            "label": "Do things that don't scale",
+            "kind": "example",
+            "summary": "Recruit manually; set them up on the spot."
+          }
+        ],
+        "edges": [
+          {
+            "from": "ready",
+            "to": "customers",
+            "rel": "leads-to"
+          },
+          {
+            "from": "customers",
+            "to": "credit",
+            "rel": "depends-on"
+          },
+          {
+            "from": "site",
+            "to": "customers",
+            "rel": "answers"
+          },
+          {
+            "from": "follow",
+            "to": "moment",
+            "rel": "produces"
+          },
+          {
+            "from": "credit",
+            "to": "moment",
+            "rel": "produces"
+          },
+          {
+            "from": "simplest",
+            "to": "moment",
+            "rel": "example-of"
+          },
+          {
+            "from": "moment",
+            "to": "batches",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pg",
+            "to": "follow",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "paying-after-the-value",
+            "can-you-sell-it",
+            "inside-the-pellbridge-agents",
+            "what-can-your-agent-reach",
+            "system-prompts-as-behaviour-policies",
+            "a-policy-beside-the-prompt",
+            "a-policy-for-every-skill"
+          ],
+          "pages": [],
+          "sites": [
+            "https://paulgraham.com/ds.html",
+            "https://abp.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "What is left is execution.",
+            "why": "The claim."
+          },
+          {
+            "text": "So I think they should be customers.",
+            "why": "The naming."
+          },
+          {
+            "text": "Give it for free until there is enough value that they want to pay for it.",
+            "why": "The model."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-exit-is-when-you-sell-control",
       "title": "The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause",
       "date": "2026-10-20",
@@ -868,6 +1052,7 @@
         "inside-the-thistlewood-twin"
       ],
       "links_in": [
+        "our-first-customers",
         "inside-the-no-server-studio",
         "a-trusted-framework-for-agentic-finance"
       ],
@@ -3145,6 +3330,7 @@
         "start-a-company"
       ],
       "links_in": [
+        "our-first-customers",
         "open-source-so-you-keep-it",
         "fund-it-with-time",
         "start-a-company"
@@ -8866,6 +9052,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "our-first-customers",
         "a-trusted-framework-for-agentic-finance",
         "the-man-behind-the-curtain",
         "three-linkedin-pages",
@@ -20604,6 +20791,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "our-first-customers",
         "the-no-server-startup",
         "can-you-sell-it",
         "two-years-in-the-opposite",
@@ -22848,7 +23036,9 @@
         "policy-as-code-needs-a-policy-first",
         "re-anchoring-agent-behaviour-policies"
       ],
-      "links_in": [],
+      "links_in": [
+        "our-first-customers"
+      ],
       "figures": [
         {
           "file": "sp-map.webp",
@@ -24357,6 +24547,7 @@
         "riskmandate-ten-questions"
       ],
       "links_in": [
+        "our-first-customers",
         "skill-behaviour-policy",
         "hooks-are-kernel-code",
         "chainguard-mapped",
@@ -26805,6 +26996,7 @@
         "stop-the-bleeding-then-ask-for-it-back"
       ],
       "links_in": [
+        "our-first-customers",
         "a-trusted-framework-for-agentic-finance",
         "how-the-newsletter-is-made",
         "three-linkedin-pages",

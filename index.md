@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.151 · 223 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.152 · 224 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](articles/the-exit-is-when-you-sell-control.md), 2026-10-20, 9 min. A founder's exit is the day someone else buys control, which can come long before the shares go. Leave then, and agree the terms at the start.
+- [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](articles/our-first-customers.md), 2026-10-20, 5 min. Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
 
 ## Highlights
 
+- [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](articles/the-exit-is-when-you-sell-control.md), 2026-10-20, 9 min.
 - [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](articles/a-small-slice-sets-the-price.md), 2026-10-20, 9 min.
 - [Inside the no-server studio: an infographic studio built to the no-server blueprint, what is real, what is simulated, and the business plan in its vault](articles/inside-the-no-server-studio.md), 2026-10-20, 6 min.
 - [The no-server startup: a blueprint for products that run entirely in the browser, with no server and no database of yours, the user's own AI key, and a team of agents to build them](articles/the-no-server-startup.md), 2026-10-20, 13 min.
-- [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](articles/inside-the-pellbridge-agents.md), 2026-10-20, 12 min.
 
 ## Who are you reading as?
 
@@ -28,11 +28,11 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 
 ## The five desks
 
-### Agent security & policy (59)
+### Agent security & policy (60)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](articles/our-first-customers.md), 2026-10-20, 5 min.
 - [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](articles/inside-the-pellbridge-agents.md), 2026-10-20, 12 min.
 - [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](articles/a-trusted-framework-for-agentic-finance.md), 2026-10-19, 13 min.
-- [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](articles/governs-enforces-attests.md), 2026-10-19, 7 min.
 
 ### Building with agents (36)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

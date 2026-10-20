@@ -1,0 +1,151 @@
+{
+  "slug": "our-first-customers",
+  "teaser": "Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "The first users of Agent Behaviour Policies should be treated as customers from day one, each with credit on a site that meters and bills, followed closely by hand, so that the programme discovers the usage moment: the simplest useful policy, the entry point with least friction, and a fair price, before a larger second batch.",
+  "nodes": [
+    {
+      "id": "ready",
+      "label": "Ready for the next level",
+      "kind": "claim",
+      "summary": "Workflow, mapping, understanding."
+    },
+    {
+      "id": "customers",
+      "label": "Customers, not beta users",
+      "kind": "claim",
+      "summary": "Each starts with credit."
+    },
+    {
+      "id": "credit",
+      "label": "Credit and the meter",
+      "kind": "method",
+      "summary": "Use metered from day one."
+    },
+    {
+      "id": "site",
+      "label": "A start-here site",
+      "kind": "artefact",
+      "summary": "Instructions, objectives, milestones."
+    },
+    {
+      "id": "follow",
+      "label": "Hand-holding on purpose",
+      "kind": "method",
+      "summary": "Daily follow-up; does not scale yet."
+    },
+    {
+      "id": "moment",
+      "label": "The usage moment",
+      "kind": "concept",
+      "summary": "When a policy becomes worth something."
+    },
+    {
+      "id": "simplest",
+      "label": "The simplest useful policy",
+      "kind": "concept",
+      "summary": "One agent, a few rows, the gap."
+    },
+    {
+      "id": "batches",
+      "label": "Batches and a mailing list",
+      "kind": "method",
+      "summary": "The next batch learns from the first."
+    },
+    {
+      "id": "pg",
+      "label": "Do things that don't scale",
+      "kind": "example",
+      "summary": "Recruit manually; set them up on the spot."
+    }
+  ],
+  "edges": [
+    {
+      "from": "ready",
+      "to": "customers",
+      "rel": "leads-to"
+    },
+    {
+      "from": "customers",
+      "to": "credit",
+      "rel": "depends-on"
+    },
+    {
+      "from": "site",
+      "to": "customers",
+      "rel": "answers"
+    },
+    {
+      "from": "follow",
+      "to": "moment",
+      "rel": "produces"
+    },
+    {
+      "from": "credit",
+      "to": "moment",
+      "rel": "produces"
+    },
+    {
+      "from": "simplest",
+      "to": "moment",
+      "rel": "example-of"
+    },
+    {
+      "from": "moment",
+      "to": "batches",
+      "rel": "leads-to"
+    },
+    {
+      "from": "pg",
+      "to": "follow",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "paying-after-the-value",
+      "can-you-sell-it",
+      "inside-the-pellbridge-agents",
+      "what-can-your-agent-reach",
+      "system-prompts-as-behaviour-policies",
+      "a-policy-beside-the-prompt",
+      "a-policy-for-every-skill"
+    ],
+    "pages": [],
+    "sites": [
+      "https://paulgraham.com/ds.html",
+      "https://abp.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "What is left is execution.",
+      "why": "The claim."
+    },
+    {
+      "text": "So I think they should be customers.",
+      "why": "The naming."
+    },
+    {
+      "text": "Give it for free until there is enough value that they want to pay for it.",
+      "why": "The model."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ea-journey.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ea-journey.webp",
+      "caption": "The first customers, from credit to the moment they would pay: credit, a start-here page, a first policy, milestones and the value, with a daily follow-up and the meter alongside. Proposed.",
+      "kind": "concept"
+    },
+    {
+      "file": "ea-batches.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ea-batches.webp",
+      "caption": "Batches, not a launch: the first batch of friendlies, what we learn from them, the mailing list, and the second batch. Proposed.",
+      "kind": "concept"
+    }
+  ]
+}

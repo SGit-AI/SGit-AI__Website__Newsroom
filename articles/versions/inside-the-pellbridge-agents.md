@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-20 | minor | 3,503 | +1,258 / −0 words; 2 changed, 28 added, 0 removed paragraphs | this release | [what changed](inside-the-pellbridge-agents/v1.1.0.md) · [current](../inside-the-pellbridge-agents.md) |
+| **v1.1.0** | 2026-10-20 | minor | 3,503 | +1,258 / −0 words; 2 changed, 28 added, 0 removed paragraphs | [`d54a7ab8d`](https://github.com/SGit-AI/SGit-AI__Website/commit/d54a7ab8d727dbe1c649b2791a561f312d7708ca) | [what changed](inside-the-pellbridge-agents/v1.1.0.md) · [current](../inside-the-pellbridge-agents.md) |
 | **v1.0.0** | 2026-10-20 | published | 2,245 | first published | [`964bd8adb`](https://github.com/SGit-AI/SGit-AI__Website/commit/964bd8adb136c648dbff1c6fcf096f7a2a96e8a0) |  |
 
 [← Back to the article](../inside-the-pellbridge-agents.md) · [All articles](../index.md)
