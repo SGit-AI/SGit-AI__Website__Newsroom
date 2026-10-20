@@ -4,7 +4,7 @@ date: 2026-10-20
 author: Dinis Cruz
 author_url: about/index.html
 summary: Something has been nagging me about the talk of bubbles and trillion-dollar listings. The headline valuations are set by selling a small slice of each company, and I wanted to check the numbers, including my own. Two of mine were wrong. OpenAI has not listed: its trillion-dollar figure is a private round under discussion, about 2% of the company, and its listing is now expected next year at the earliest. And SpaceX did not sell half a per cent at its IPO: it sold about 4%, $75bn of new shares, the largest IPO ever and more than twice the previous record in today's dollars. What holds is the pattern. The share of a company sold at listing has been falling for decades, from a median of about 30% to 14.5% last year, and the biggest companies sell the least. A small slice sets the price of the whole, low floats rise more on the first day, and index rules have been changed to absorb them. These companies earn revenue at a scale and speed nobody has seen, but at multiples close to the dot-com peak, and OpenAI and SpaceX are not yet profitable. For a founder, the lesson is that a valuation is a price the market allows for a slice, and the founder who controls the company decides how big the slice is.
-version: v0.12.148
+version: v0.12.150
 license: https://creativecommons.org/licenses/by/4.0/
 tags: startups, founders, ipo, valuation, markets, data-analysis, article
 status: published
@@ -78,7 +78,7 @@ It is also worth being precise about who gets the money. In SpaceX's IPO, the mo
 
 ## What founders should take from it {#founders}
 
-The numbers are not invented; they are prices. It is a market. The price of a company is what the buyers of its next slice are willing to pay, and in 2026 there is a great deal of money willing to pay a great deal for a small slice of the companies at the centre of the most important technology of the moment.
+The numbers are prices, and this is a market. The price of a company is what the buyers of its next slice are willing to pay, and in 2026 there is a great deal of money willing to pay a great deal for a small slice of the companies at the centre of the most important technology of the moment.
 
 The lesson for a founder is about control. The people who control these companies decide how big each slice is, when it is sold, to whom, and whether the money goes to the company or to the people who already own it. That is what it means to be in charge of the game: not to own everything, but to decide the terms on which the next slice is sold.
 

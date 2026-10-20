@@ -59,6 +59,8 @@ about itself in the body except where it did the work: "the first release put th
 
 **No backhanded compliments.** Do not praise one person by criticising everyone else: no "I wish more people did this", "better than most", "ahead of most people". It is a dig at the reader, and it assumes the others are wrong when they may simply not need it. Say what the person did, and why it helped.
 
+**No negative framing.** Do not raise an accusation nobody made in order to deny it ("not because anyone copied anything", "the numbers are not invented"), and do not put conditions on how others may do things ("that is fine too, as long as it is a graph"). Say the positive thing directly: what is true, and what it makes possible ("once both are graphs, nobody has to adopt anybody's schema" is fine: it says what graphs enable). Everything here is open source anyway.
+
 **No judging the reader.** Do not imply the reader, or anyone else, missed something or did not look hard enough: no "anyone who looks at it closely", "what most frameworks miss", "if you pay attention", and no grading of other people's work ("is right to"). It reads as arrogant. Say what the thing is, and let the reader judge.
 
 **A memo's order, kept.** The article follows the path the thinking took, including the turn that looks

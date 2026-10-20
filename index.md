@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.12.149 · 223 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.12.150 · 223 articles since 2026-08-17; the newest is 2026-10-20. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
@@ -31,7 +31,7 @@ The reading meter charges a few pence a page from credit kept in your browser, b
 ### Agent security & policy (59)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
 - [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](articles/inside-the-pellbridge-agents.md), 2026-10-20, 7 min.
-- [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](articles/a-trusted-framework-for-agentic-finance.md), 2026-10-19, 11 min.
+- [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](articles/a-trusted-framework-for-agentic-finance.md), 2026-10-19, 12 min.
 - [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](articles/governs-enforces-attests.md), 2026-10-19, 7 min.
 
 ### Building with agents (36)

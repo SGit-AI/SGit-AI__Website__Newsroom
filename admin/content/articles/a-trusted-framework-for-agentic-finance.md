@@ -3,8 +3,8 @@ title: A trusted framework for agentic finance: a reply to the FCA's Jessica Rus
 date: 2026-10-19
 author: Dinis Cruz
 author_url: about/index.html
-summary: Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example in a vault: an invented bank with six agents, each with all four elements filled in, and one day of their work replayed through the gate. Every near miss and breach that day came through a gap, a row kept only by the prompt, a setting or nothing; the rows kept by systems the agent cannot reach held. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; if theirs is a graph too, the two can be connected with edges, without either side adopting the other's schema.
-version: v0.12.141
+summary: Jessica Rusu, the FCA's chief data, information and intelligence officer, said today that the FCA will work with industry, other regulators and frontier labs on a trusted framework for agentic finance, with clear approaches to agent identity, delegated authority, accountability and execution. Most of what she asks of firms is something we have been writing about and publishing openly here: Agent Behaviour Policies that put what an agent can do beside what it may do, a holder for every risk with a chain to the board, rules kept by something the agent cannot reach, breaks and near misses reported, and policies as graphs. This is a crosswalk from her points to that work, and a worked example in a vault: an invented bank with six agents, each with all four elements filled in, and one day of their work replayed through the gate. Every near miss and breach that day came through a gap, a row kept only by the prompt, a setting or nothing; the rows kept by systems the agent cannot reach held. It is all CC BY. The FCA, or anyone building the framework, could adopt it, or write their own; and policies written as graphs can be connected with edges, without either side adopting the other's schema.
+version: v0.12.150
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, agent-behaviour-policy, regulation, finance, accountability, graphs, article
 status: published
@@ -23,7 +23,7 @@ status: published
 - **Execution is who keeps each rule.** The prompt, a hook, or a system the agent cannot reach.
 - **A worked example, at play.** An invented bank, six agents, all four elements, in a vault.
 - **Every incident came from a gap.** Boundary rows held; near misses and breaches came through the gaps.
-- **It is open, CC BY.** Adopt it, or write your own as a graph, and the two connect.
+- **It is open, CC BY.** Adopt it, or write your own; policies as graphs can be connected.
 
 ## What the FCA said {#speech}
 
@@ -39,7 +39,7 @@ She ended with "Let's build it together." This is my contribution to that.
 
 ## Four elements we have been writing about {#four}
 
-Reading the speech, I recognised almost every point. Not because anyone copied anything: we are working on the same problem, and it leads to similar answers.
+Reading the speech, I recognised almost every point. We are working on the same problem, and it leads to similar answers.
 
 - **Delegated authority** is the gap between what an agent can do and what it may do. That is the core of an [Agent Behaviour Policy](/articles/what-can-your-agent-reach.html): the grant (everything it can do, measured), the mandate (what it was authorised to do), the delta between them, and the barrier, what actually stands in the way of each capability. It is published openly at [abp.sgit.ai](https://abp.sgit.ai/), under CC BY.
 - **Execution** is how each rule is kept. In [governs, enforces, attests](/articles/governs-enforces-attests.html) I described three levels: in the prompt, which is a hope; in hooks, which are deterministic but sit on the agent's own machine; or by a third-party system that does the blocking, which is the level we recommend. The test, from the ABP: "A control bounds a grant only if it is enforced by something the grant does not include." [Policy as code needs a policy first](/articles/policy-as-code-needs-a-policy-first.html) adds one more question: for every rule that is code, who can change that code.
@@ -98,7 +98,7 @@ The rest of the speech is there too. At 14:10 one model provider is down for hal
 
 All of this is open. The ABP, its vocabulary and its examples are at [abp.sgit.ai](https://abp.sgit.ai/) under CC BY, and every article here carries the same licence. I [open source what I build](/articles/open-source-so-you-keep-it.html) so that it can be used, and this is a case where I would like it to be.
 
-So the FCA, or anyone working on the framework with them, could adopt it as it is, or take parts of it. Or they could write their own, in their own words. That is fine too, as long as it is a graph. The FCA is already moving that way: the speech mentions the Handbook API, launched in August, which gives firms machine-readable rules, and work on machine-readable data collection. Once the regulator's expectations and a firm's policies are both graphs, nobody has to adopt anybody's schema. The work is the edges: this element of the framework is shown by that identity block, is bounded by these rows, is held by that person, is kept by that system. That is what [fractal semantic graphs](https://sgit.ai/articles/introducing-fractal-semantic-graphs.html) are for, and why I think [the graph companies](/articles/the-graph-companies.html) will include the regulated ones.
+So the FCA, or anyone working on the framework with them, could adopt it as it is, or take parts of it. Or they could write their own, in their own words and in whatever form suits them. And when policies are written as graphs, or can be read as graphs, they can be connected. The FCA is already moving towards machine-readable rules: the speech mentions the Handbook API, launched in August, which gives firms machine-readable rules, and work on machine-readable data collection. Once the regulator's expectations and a firm's policies are both graphs, nobody has to adopt anybody's schema. The work is the edges: this element of the framework is shown by that identity block, is bounded by these rows, is held by that person, is kept by that system. That is what [fractal semantic graphs](https://sgit.ai/articles/introducing-fractal-semantic-graphs.html) are for, and why I think [the graph companies](/articles/the-graph-companies.html) will include the regulated ones.
 
 !shot fc-connect.webp | images/ | Two policy graphs connected by edges. On the left, a regulator's graph in its own vocabulary, hypothetical here; on the right, a firm's behaviour policies. Neither adopts the other's schema; the edges do the work. | concept
 
