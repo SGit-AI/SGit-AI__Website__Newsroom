@@ -113,6 +113,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#you-ar
 
 ### Continued by
 
+- [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](programming-taught-upside-down.md) We teach programming the way Lockhart says we teach maths: concepts first. Explorer coding starts where the hook is.
 - [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](reading-with-a-pen.md) Mark the printed page, photograph it, and an agent does the processing that always made me stop highlighting. The book's new name is in its margins.
 
 [All articles](index.md) · [All graphs](graphs.md)
