@@ -10,7 +10,7 @@ tags: vaults, billing, pki, architecture, proposal, article
 status: published
 ---
 
-!shot um-parties.webp | images/ | The proposed design. The user's browser appends its activity to a billing vault, signed by the user. The admin vault reads it, reads payments from Stripe, and commits credit back, signed by the admin. The upload server checks that credit through a small credits API before it accepts an upload. | architecture
+!shot um-parties.webp | images/ | The proposed design. The user's browser appends its activity to a billing vault, signed by the user. The admin vault reads it, reads payments from Stripe, and commits credit back, signed by the admin. The upload server checks that credit through a small credits API before it accepts an upload. | narrow | architecture
 
 ## In short {#in-short}
 

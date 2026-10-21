@@ -10,7 +10,7 @@ tags: aws, vaults, cloud, pki, architecture, proposal, article
 status: published
 ---
 
-!shot aw-flow.webp | images/ | The proposed flow. Sign in to the AWS access portal and copy temporary credentials for one account and role. Paste them into the vault. The site, in the browser, calls AWS with them, and the results go back into the vault, where they become graphs and workflows. | architecture
+!shot aw-flow.webp | images/ | The proposed flow. Sign in to the AWS access portal and copy temporary credentials for one account and role. Paste them into the vault. The site, in the browser, calls AWS with them, and the results go back into the vault, where they become graphs and workflows. | narrow | architecture
 
 ## In short {#in-short}
 
