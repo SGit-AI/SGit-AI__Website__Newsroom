@@ -117,6 +117,7 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#the-man
 
 ### Continued by
 
+- [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](answering-a-draft.md) How email works now: the agent drafts and logs, I send, and a decision draft turns the drafts folder into a work queue.
 - [Two years in, the opposite: an essay about burning out on AI that I could not buy, and why my two years of AI have been the most productive of my career](two-years-in-the-opposite.md) An essay about burning out on AI that I could not buy, three paragraphs and a subscription; and why my two years of AI were the opposite.
 - [Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop](short-punchy-and-co-written.md) Generation Z Developers (AI edition) must be short and punchy, co-written with Claude and credited, and show with evidence it is not AI slop.
 - [Generation Z Developers (AI edition): the 2018 book that said act like you are part of the company, what it got right, and a new edition for the people I want to help](generation-z-developers-again.md) My 2018 book for young developers, 60% done, its outlines since written here as articles, and an AI edition, dated October 2026, made first.

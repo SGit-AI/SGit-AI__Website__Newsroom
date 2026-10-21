@@ -1,0 +1,36 @@
+{
+ "slug": "answering-a-draft",
+ "teaser": "How email works now: the agent drafts and logs, I send, and a decision draft turns the drafts folder into a work queue.",
+ "topics": ["agents-and-policy"],
+ "core_idea": "An inbox agent that researches, drafts with sources and logs everything, with a person who sends every email, works when the drafts folder becomes a work queue with three labels and decisions are asked as unsent decision drafts answered in the person's own words, letting the person shift into a decision context while the agent carries the before and the after.",
+ "nodes": [
+  {"id": "agent", "label": "The inbox agent", "kind": "artefact", "summary": "Reads, researches, drafts, logs."},
+  {"id": "send", "label": "I send everything", "kind": "claim", "summary": "178 emails, all reviewed by me."},
+  {"id": "numbers", "label": "The debrief's numbers", "kind": "example", "summary": "145 drafts, 47 decisions, 36 blocked."},
+  {"id": "guard", "label": "The draft guard", "kind": "method", "summary": "No unsourced claims."},
+  {"id": "queue", "label": "Drafts as a work queue", "kind": "method", "summary": "Send, review, decide."},
+  {"id": "decision", "label": "The decision draft", "kind": "method", "summary": "Never sent; answered in my words."},
+  {"id": "context", "label": "Shifting context", "kind": "claim", "summary": "Answer-email mode."},
+  {"id": "rules", "label": "Rules from mistakes", "kind": "example", "summary": "Never as me; no duplicates."},
+  {"id": "limits", "label": "What it still costs", "kind": "claim", "summary": "A permission broader than the rule."}
+ ],
+ "edges": [
+  {"from": "agent", "to": "queue", "rel": "produces"},
+  {"from": "guard", "to": "agent", "rel": "extends"},
+  {"from": "queue", "to": "decision", "rel": "extends"},
+  {"from": "decision", "to": "context", "rel": "produces"},
+  {"from": "numbers", "to": "agent", "rel": "example-of"},
+  {"from": "rules", "to": "guard", "rel": "produces"},
+  {"from": "limits", "to": "send", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["the-man-behind-the-curtain", "jobs-that-never-scaled"],
+  "pages": [],
+  "sites": ["https://sgit.ai/articles/replicating-the-agentic-inbox.html", "https://sgit.ai/articles/six-agents-one-inbox.html", "https://newsroom.sgit.ai/articles/hope-or-enforcement.html"]
+ },
+ "quotes": [
+  {"text": "None of it is a newsletter. Each email is written for one person.", "why": "One person per email."},
+  {"text": "The most useful thing we built is the decision draft.", "why": "The decision draft."},
+  {"text": "Most of the rules exist because something went wrong once", "why": "Rules from mistakes."}
+ ]
+}

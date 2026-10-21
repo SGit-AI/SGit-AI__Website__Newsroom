@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 1,912 | first published | this release | [current](../the-open-security-summit-and-its-debt.md) |
+| **v1.0.0** | 2026-10-21 | published | 1,912 | first published | [`e9e5d63eb`](https://github.com/SGit-AI/SGit-AI__Website/commit/e9e5d63ebceafc79a5344a2ad8903d16d0f5d1ed) | [current](../the-open-security-summit-and-its-debt.md) |
 
 [← Back to the article](../the-open-security-summit-and-its-debt.md) · [All articles](../index.md)
 
