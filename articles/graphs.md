@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-243 of 243 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+244 of 244 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-243 articles, 1385 links between them (2081 mentions in all). 233 articles cite an earlier one; 68 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+244 articles, 1386 links between them (2082 mentions in all). 234 articles cite an earlier one; 68 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+
+## [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](the-checks-measured.md)
+
+2026-10-21 · Site & engineering
+
+Measuring the newsroom's checks shows a release takes about 8 minutes locally, half of it a borrowed generator, and about 5 in CI, with the same tests run twice; most CI failures come from tests coupled to live services; failed tests do not stop the deploy; and several checks live only in the session, the container or nowhere, so moving them into the repository and CI is the work.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Where a release's time goes** (claim) 8 minutes here, 5 in CI.
+- **The borrowed generator** (concept) sgit.ai's, run in a clone.
+- **The tests run twice** (claim) Locally and in CI.
+- **18 test files, 1,061 checks** (example) Mostly in a browser.
+- **Live coupling** (concept) A server, a vault's contents.
+- **Tests do not gate the deploy** (claim) 43 deploys after a failed run.
+- **Where each check lives** (method) Repository, session, container, nowhere.
+- **Session-only checks** (concept) Lost in a new session.
+- **What to change** (method) Five jobs, decoupled tests, checks in the repo.
+
+> That is the strongest case for change, because a test that fails for reasons outside the code teaches everyone to ignore it. Live coupling.
+
+> A check is only as durable as the place it lives Where checks live.
+
+builds on [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far).
 
 ## [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md)
 
@@ -1564,7 +1591,7 @@ The agent that writes most of the site, in its own voice, maps every brief the n
 
 > The list of what this newsroom has promised itself should be held to the same rule. Why it exists.
 
-builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel); continued by [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](#versions-of-versions), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief).
+builds on [The site is an inbox: deciding before reading, marks that build the reader's own graph, and why I could not write this brief until the vault existed](#the-site-is-an-inbox), [Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors](#search-as-navigation), [The vault is live: from a design on 11 October to a reader's vault on newsroom.sgit.ai by two in the morning, and how all of it fits together](#the-vault-is-live), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose), [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](#your-reading-your-controls), [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](#reviews-on-the-record), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [Scrolled is not read: what the reading meter measures, what it should, highlights you can keep, and the page as the reader's own graph](#scrolled-is-not-read), [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](#who-is-speaking), [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](#a-section-for-publishers), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel); continued by [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](#versions-of-versions), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief).
 
 ## [A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current](a-section-for-publishers.md)
 

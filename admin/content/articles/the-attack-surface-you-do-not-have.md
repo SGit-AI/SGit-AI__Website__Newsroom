@@ -3,7 +3,7 @@ title: The attack surface you do not have: every CVE now makes me smile, because
 date: 2026-10-21
 author: Dinis Cruz
 author_url: about/index.html
-summary: Every time I see a CVE now, I smile, because it is one less thing to worry about. My server-side attack surface is very small: fundamentally, the SG/Send upload server, and that only ever stores encrypted data. Today two critical PHP vulnerabilities were released, unauthenticated remote code execution in every supported PHP branch. In the month before, CISA's catalogue of exploited vulnerabilities filled with VPN gateways, mail gateways, firewalls, media servers and a help desk, and WordPress shipped a critical fix. None of it runs in my stack. That is the result of a constraint I have been writing about for months: no database, then no back end, everything that can run in the browser running there. It is good engineering, and it is not a limitation. It is giving me speed: 45 static sites in eleven weeks, a newsroom that can take payments, a customer programme, a key register, and accounts and an AWS twin on the way, with nothing to provision or patch. Internal applications are where the risk is going, because they are rarely tested like public ones. The question to ask of every component is the one this article ends with: why does this need to be on the server?
+summary: Every time I see a CVE now, I smile, because it is one less thing to worry about. My server-side attack surface is very small: fundamentally, the SG/Send upload server, and that only ever stores encrypted data. Today two critical PHP vulnerabilities were released, unauthenticated remote code execution in every supported PHP branch. In the month before, CISA's catalogue of exploited vulnerabilities filled with VPN gateways, mail gateways, firewalls, media servers and a help desk, and WordPress shipped a critical fix. None of it runs in my stack. That is the result of a constraint I have been writing about for months: no database, then no back end, everything that can run in the browser running there. It is good engineering, and it is not a limitation. It is giving me speed: 45 static sites in eleven weeks, a newsroom that can take payments, 100+ users and customers, a key register, and accounts and an AWS twin on the way, with nothing to provision or patch. Internal applications are where the risk is going, because they are rarely tested like public ones. The question to ask of every component is the one this article ends with: why does this need to be on the server?
 version: v0.13.24
 license: https://creativecommons.org/licenses/by/4.0/
 tags: security, architecture, client-side, attack-surface, article
@@ -60,13 +60,13 @@ I think this is good engineering. The constraint of not having anything on the s
 
 ## The constraint is speed {#speed}
 
-!shot cv-speed.webp | images/ | The constraint gives speed: 45 live sgit.ai sites, all static, in eleven weeks; 1,306 pages on this newsroom, with a meter and payments; 3 customers on customers.riskmandate.ai; and one server of our own, SG/Send, which stores only ciphertext. | comparison
+!shot cv-speed.webp | images/ | The constraint gives speed: 45 live sgit.ai sites, all static, in eleven weeks; 1,306 pages on this newsroom, with a meter and payments; 100+ users and customers across our vaults, sgit.ai and riskmandate.ai; and one server of our own, SG/Send, which stores only ciphertext. | comparison
 
 I also want to make the business case, because the usual reading is that no server is a limitation. It is the opposite. There is nothing to provision, patch, scale or keep running, so a new site is a repository and a session, and the innovation shows it:
 
 - **45 live sites in eleven weeks**, all static, as counted in [the sgit.ai sites in numbers](/articles/the-sgit-ai-sites-in-numbers.html).
 - **This newsroom**, a full publication of over 1,300 pages, with a reading meter and payments, and able to earn revenue, entirely on the client.
-- **[customers.riskmandate.ai](https://customers.riskmandate.ai/)**, the early-customer programme, with each customer's milestones.
+- **100+ users and customers**, across our vaults, sgit.ai and riskmandate.ai, including [customers.riskmandate.ai](https://customers.riskmandate.ai/), the early-customer programme.
 - **[pki.sgit.ai](https://pki.sgit.ai/)**, the key register, now accelerating.
 - **On the way, the same pattern**: users.sgit.ai, accounts and billing on vaults, and aws.twin.sgit.ai, an AWS twin on a vault, both built today and not yet serving.
 

@@ -1,0 +1,167 @@
+{
+  "slug": "the-checks-measured",
+  "teaser": "A release measured step by step, 123 local builds, 245 CI runs and 1,061 test checks, and where each check actually lives.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "Measuring the newsroom's checks shows a release takes about 8 minutes locally, half of it a borrowed generator, and about 5 in CI, with the same tests run twice; most CI failures come from tests coupled to live services; failed tests do not stop the deploy; and several checks live only in the session, the container or nowhere, so moving them into the repository and CI is the work.",
+  "nodes": [
+    {
+      "id": "release",
+      "label": "Where a release's time goes",
+      "kind": "claim",
+      "summary": "8 minutes here, 5 in CI."
+    },
+    {
+      "id": "generator",
+      "label": "The borrowed generator",
+      "kind": "concept",
+      "summary": "sgit.ai's, run in a clone."
+    },
+    {
+      "id": "twice",
+      "label": "The tests run twice",
+      "kind": "claim",
+      "summary": "Locally and in CI."
+    },
+    {
+      "id": "tests",
+      "label": "18 test files, 1,061 checks",
+      "kind": "example",
+      "summary": "Mostly in a browser."
+    },
+    {
+      "id": "live",
+      "label": "Live coupling",
+      "kind": "concept",
+      "summary": "A server, a vault's contents."
+    },
+    {
+      "id": "deploy",
+      "label": "Tests do not gate the deploy",
+      "kind": "claim",
+      "summary": "43 deploys after a failed run."
+    },
+    {
+      "id": "where",
+      "label": "Where each check lives",
+      "kind": "method",
+      "summary": "Repository, session, container, nowhere."
+    },
+    {
+      "id": "session",
+      "label": "Session-only checks",
+      "kind": "concept",
+      "summary": "Lost in a new session."
+    },
+    {
+      "id": "proposals",
+      "label": "What to change",
+      "kind": "method",
+      "summary": "Five jobs, decoupled tests, checks in the repo."
+    }
+  ],
+  "edges": [
+    {
+      "from": "release",
+      "to": "generator",
+      "rel": "depends-on"
+    },
+    {
+      "from": "release",
+      "to": "twice",
+      "rel": "depends-on"
+    },
+    {
+      "from": "tests",
+      "to": "twice",
+      "rel": "example-of"
+    },
+    {
+      "from": "live",
+      "to": "tests",
+      "rel": "contrasts"
+    },
+    {
+      "from": "live",
+      "to": "deploy",
+      "rel": "leads-to"
+    },
+    {
+      "from": "where",
+      "to": "session",
+      "rel": "produces"
+    },
+    {
+      "from": "deploy",
+      "to": "proposals",
+      "rel": "leads-to"
+    },
+    {
+      "from": "session",
+      "to": "proposals",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-briefs-so-far"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/articles/hope-or-enforcement.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "That is the strongest case for change, because a test that fails for reasons outside the code teaches everyone to ignore it.",
+      "why": "Live coupling."
+    },
+    {
+      "text": "A check is only as durable as the place it lives",
+      "why": "Where checks live."
+    },
+    {
+      "text": "Half the local time is the borrowed generator, which is the cutover not yet finished.",
+      "why": "Where the time goes."
+    }
+  ],
+  "figures": [
+    {
+      "file": "qm-where.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/qm-where.webp",
+      "caption": "Where each check runs. The site validator and the 18 test files run in the repository and in CI. The rebuild and sgit.ai's style rules run only on my machine. The summaries, page-width, graph, version and live checks live in this session's scratchpad; the leak scan and the behaviour policy in this container; and the wording check runs nowhere.",
+      "kind": "comparison"
+    },
+    {
+      "file": "qm-release.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/qm-release.webp",
+      "caption": "Where a release's time goes: on this machine, borrowing sgit.ai's generator 246 s, this site's 30 builders 38 s, validation 9 s and the 18 test files 184 s, about 8 minutes; then in CI since v0.13.7, validation 18 s alongside the test job, 217 s, then the tag 33 s and the deploy 49 s.",
+      "kind": "comparison"
+    },
+    {
+      "file": "qm-local.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/qm-local.webp",
+      "caption": "123 local builds between 15 and 21 October 2026: builds a day, 11, 9, 2, 28, 21, 25 and 27, and the median minutes from starting a build to reading its result, between 9.8 and 23.9.",
+      "kind": "comparison"
+    },
+    {
+      "file": "qm-ci.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/qm-ci.webp",
+      "caption": "Left: the median minutes of a push run on dev, by week, from 0.6 in late August to 7.6 in the week of 19 October. Right: the median seconds of the test step, by day, from 102 on 11 October to 348 on 20 October, and 180 on 21 October when the tests began to run four at a time.",
+      "kind": "comparison"
+    },
+    {
+      "file": "qm-tests.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/qm-tests.webp",
+      "caption": "The 18 test files: their checks in the last release, from 203 for the wire to 14 for the review; the seconds each took; what each drives, mostly a browser, two of them a live service; and how many CI runs each failed, 14 each for the wire and the vault viewer.",
+      "kind": "comparison"
+    },
+    {
+      "file": "qm-fails.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/qm-fails.webp",
+      "caption": "The first failing check in each of 44 failed CI test runs: the vault viewer from SG/Send 14, the wire map's 55 entities 12, front.py idempotent 7, a review finding 3, the wire's release notes 2, reading measured in time 2, and one each for the top bar, search, an sgit clone and a run with no check printed.",
+      "kind": "comparison"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.24 · 243 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.25 · 244 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
@@ -34,7 +34,7 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](articles/agent-behaviour-policies-move-to-the-open-security-summit.md), 2026-10-20, 5 min.
 - [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](articles/the-riskmandate-roadmap.md), 2026-10-20, 6 min.
 
-### Building with agents (41)
+### Building with agents (42)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](articles/answering-a-draft.md), 2026-10-21, 8 min.
 - [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min.
