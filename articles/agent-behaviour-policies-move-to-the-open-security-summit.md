@@ -95,6 +95,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#agent-
 
 ### Continued by
 
+- [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](the-open-security-summit-and-its-debt.md) How technical debt stalled the Open Security Summit's website and follow-up, what the repositories show, and why agents make a restart worthwhile.
 - [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](the-riskmandate-roadmap.md) A proposed strategy for RiskMandate, a spectrum of trust: policies, understand, risk acceptance, contain, manage, insure.
 
 [All articles](index.md) · [All graphs](graphs.md)

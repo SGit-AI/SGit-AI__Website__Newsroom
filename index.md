@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.21 · 240 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.22 · 241 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](articles/connect-your-dots-backwards.md), 2026-10-21, 8 min. Let your LLM interview you about your path: find the side roads, the misread doors, what memory rewrote, and where a startup hides.
+- [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min. How technical debt stalled the Open Security Summit's website and follow-up, what the repositories show, and why agents make a restart worthwhile.
 
 ## Highlights
 
+- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](articles/connect-your-dots-backwards.md), 2026-10-21, 8 min.
 - [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](articles/programming-taught-upside-down.md), 2026-10-21, 7 min.
 - [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](articles/jobs-that-never-scaled.md), 2026-10-21, 12 min.
 - [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min.
-- [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](articles/plural-for-the-family-singular-for-the-site.md), 2026-10-21, 7 min.
 
 ## Who are you reading as?
 
@@ -34,11 +34,11 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](articles/the-riskmandate-roadmap.md), 2026-10-20, 6 min.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 8 min.
 
-### Building with agents (39)
+### Building with agents (40)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min.
 - [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min.
 - [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](articles/plural-for-the-family-singular-for-the-site.md), 2026-10-21, 7 min.
-- [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](articles/how-a-memo-becomes-a-release.md), 2026-10-21, 10 min.
 
 ### Vaults & provenance (50)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.

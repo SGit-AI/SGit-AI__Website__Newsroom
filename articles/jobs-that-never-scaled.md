@@ -170,6 +170,7 @@ Startups & strategy[This article as a graph →](graphs.md#jobs-that-never-scale
 
 ### Continued by
 
+- [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](the-open-security-summit-and-its-debt.md) How technical debt stalled the Open Security Summit's website and follow-up, what the repositories show, and why agents make a restart worthwhile.
 - [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](connect-your-dots-backwards.md) Let your LLM interview you about your path: find the side roads, the misread doors, what memory rewrote, and where a startup hides.
 - [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](programming-taught-upside-down.md) We teach programming the way Lockhart says we teach maths: concepts first. Explorer coding starts where the hook is.
 

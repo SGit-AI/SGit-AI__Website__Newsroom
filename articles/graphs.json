@@ -55,6 +55,210 @@
   ],
   "articles": [
     {
+      "slug": "the-open-security-summit-and-its-debt",
+      "title": "The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-open-security-summit-and-its-debt.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-open-security-summit-and-its-debt.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-open-security-summit-and-its-debt.webp",
+      "teaser": "How technical debt stalled the Open Security Summit's website and follow-up, what the repositories show, and why agents make a restart worthwhile.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "open-security-summit",
+        "technical-debt",
+        "community",
+        "events",
+        "agents",
+        "article"
+      ],
+      "links_out": [
+        "agent-behaviour-policies-move-to-the-open-security-summit",
+        "jobs-that-never-scaled",
+        "the-code-you-do-not-ship",
+        "explorer-coding"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "os-commits.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/os-commits.webp",
+          "caption": "Left: commits a quarter across the four summit websites, 19,045 in all, with spikes in the summit weeks of June 2018, 2019 and 2020. Right: the number of different people committing each year, from 180 in 2018 to 14 in 2024 and 2 in 2025.",
+          "kind": "comparison"
+        },
+        {
+          "file": "os-frozen.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/os-frozen.webp",
+          "caption": "Left: lines of Hugo template code, from about 5,200 in the 2018 site to about 9,600, flat from 2022. Right: content files in the current site, from 140 at the end of 2020 to 998 at the end of 2024.",
+          "kind": "comparison"
+        },
+        {
+          "file": "os-sessions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/os-sessions.webp",
+          "caption": "Sessions on the current site by year and how many link a recording: 87 and 1 in 2020, 91 and 25 in 2021, 110 and 67 in 2022, 70 and 58 in 2023, 51 and 45 in 2024.",
+          "kind": "comparison"
+        },
+        {
+          "file": "os-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/os-loop.webp",
+          "caption": "How the debt grew: a new summit copied last year's site, a new need added an exception, there was no time to refactor, every change got slower, and the loop repeated. The restart: agents map what is there, a personal path for each person, in person in London and online, and hosted open source projects.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-open-security-summit-and-its-debt",
+        "teaser": "How technical debt stalled the Open Security Summit's website and follow-up, what the repositories show, and why agents make a restart worthwhile.",
+        "topics": [
+          "site-and-engineering"
+        ],
+        "core_idea": "The Open Security Summit treated every participant as a presenter and its website was edited by its participants, but copying each year's site, adding exceptions and never refactoring froze the code, drove contributors away and left the follow-up unscaled; agents that map the data, personalise and follow up now make it worth restarting, in person, online and as a home for projects, if it is funded.",
+        "nodes": [
+          {
+            "id": "model",
+            "label": "Every participant a presenter",
+            "kind": "concept",
+            "summary": "Working sessions and outcomes."
+          },
+          {
+            "id": "website",
+            "label": "The website as part of the summit",
+            "kind": "example",
+            "summary": "180 committers in 2018."
+          },
+          {
+            "id": "copy",
+            "label": "Copy last year's site",
+            "kind": "method",
+            "summary": "171 of 186 template files reused."
+          },
+          {
+            "id": "growth",
+            "label": "Templates grew",
+            "kind": "example",
+            "summary": "5,200 to 9,600 lines."
+          },
+          {
+            "id": "freeze",
+            "label": "The code froze",
+            "kind": "claim",
+            "summary": "No change from 2022; content kept coming."
+          },
+          {
+            "id": "people",
+            "label": "The people went",
+            "kind": "example",
+            "summary": "180 to 14 committers."
+          },
+          {
+            "id": "followup",
+            "label": "Follow-up never scaled",
+            "kind": "claim",
+            "summary": "No personal path per participant."
+          },
+          {
+            "id": "material",
+            "label": "The material",
+            "kind": "artefact",
+            "summary": "409 sessions, 194 recordings."
+          },
+          {
+            "id": "agents",
+            "label": "Agents map and follow up",
+            "kind": "method",
+            "summary": "Map, analyse, personalise."
+          },
+          {
+            "id": "restart",
+            "label": "The restart",
+            "kind": "method",
+            "summary": "London, online, hosted projects."
+          },
+          {
+            "id": "funding",
+            "label": "Needs funding",
+            "kind": "question",
+            "summary": "Someone to fund it."
+          }
+        ],
+        "edges": [
+          {
+            "from": "model",
+            "to": "website",
+            "rel": "produces"
+          },
+          {
+            "from": "copy",
+            "to": "growth",
+            "rel": "produces"
+          },
+          {
+            "from": "growth",
+            "to": "freeze",
+            "rel": "leads-to"
+          },
+          {
+            "from": "freeze",
+            "to": "people",
+            "rel": "leads-to"
+          },
+          {
+            "from": "model",
+            "to": "followup",
+            "rel": "depends-on"
+          },
+          {
+            "from": "followup",
+            "to": "material",
+            "rel": "contrasts"
+          },
+          {
+            "from": "agents",
+            "to": "followup",
+            "rel": "answers"
+          },
+          {
+            "from": "agents",
+            "to": "restart",
+            "rel": "leads-to"
+          },
+          {
+            "from": "restart",
+            "to": "funding",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "agent-behaviour-policies-move-to-the-open-security-summit",
+            "jobs-that-never-scaled",
+            "the-code-you-do-not-ship",
+            "explorer-coding"
+          ],
+          "pages": [],
+          "sites": [
+            "https://open-security-summit.org/",
+            "https://diniscruz.ai/2025/06/07/history-and-analysis-of-owasp-in-person-summits.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "every participant was treated as a presenter.",
+            "why": "The model."
+          },
+          {
+            "text": "Nobody had the time to change the structure, so everything new went into a structure that could not change.",
+            "why": "The freeze."
+          },
+          {
+            "text": "Nothing broke all at once.",
+            "why": "The lesson."
+          }
+        ]
+      }
+    },
+    {
       "slug": "connect-your-dots-backwards",
       "title": "Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding",
       "date": "2026-10-21",
@@ -465,6 +669,7 @@
         "start-a-company"
       ],
       "links_in": [
+        "the-open-security-summit-and-its-debt",
         "connect-your-dots-backwards",
         "programming-taught-upside-down"
       ],
@@ -1906,6 +2111,7 @@
         "our-first-customers"
       ],
       "links_in": [
+        "the-open-security-summit-and-its-debt",
         "the-riskmandate-roadmap"
       ],
       "figures": [
@@ -11457,6 +11663,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "the-open-security-summit-and-its-debt",
         "jobs-that-never-scaled",
         "the-no-server-startup",
         "ephemeral-town-planner-services",
@@ -19111,6 +19318,7 @@
         "a-custom-firefox-of-my-own"
       ],
       "links_in": [
+        "the-open-security-summit-and-its-debt",
         "programming-taught-upside-down",
         "v0-12-in-numbers",
         "the-exit-is-when-you-sell-control",
