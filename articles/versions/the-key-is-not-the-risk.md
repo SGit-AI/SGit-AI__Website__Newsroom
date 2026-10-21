@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 2,381 | first published | this release | [current](../the-key-is-not-the-risk.md) |
+| **v1.0.0** | 2026-10-21 | published | 2,381 | first published | [`2a747f154`](https://github.com/SGit-AI/SGit-AI__Website/commit/2a747f15400a81024bf2a42a54f1e909ab301dc9) | [current](../the-key-is-not-the-risk.md) |
 
 [← Back to the article](../the-key-is-not-the-risk.md) · [All articles](../index.md)
 

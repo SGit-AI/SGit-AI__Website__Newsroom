@@ -132,6 +132,10 @@ Site & engineering[This article as a graph →](graphs.md#the-checks-measured)
 
 - [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](the-briefs-so-far.md) Sixty-five briefs this newsroom has asked of itself, audited from the code: 11 built, 21 partly, 32 not, each open one with a session brief.
 
+### Continued by
+
+- [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](behaviour-policies-from-the-checks.md) 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 244 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=244)

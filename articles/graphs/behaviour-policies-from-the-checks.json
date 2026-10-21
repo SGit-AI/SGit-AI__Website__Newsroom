@@ -1,0 +1,160 @@
+{
+  "slug": "behaviour-policies-from-the-checks",
+  "teaser": "57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "Every test checks for a behaviour: walking each of the site's 57 checks up a graph of what it checks, why it exists, the behaviour it protects, where it runs and what keeps it yields eight behaviour policies, shows two with no check in CI and only one check out of the agent's reach, and points to running every repository check in CI and protecting the checks so settings become boundaries.",
+  "nodes": [
+    {
+      "id": "checks",
+      "label": "57 checks",
+      "kind": "example",
+      "summary": "Validators, tests, tools, hooks."
+    },
+    {
+      "id": "graph",
+      "label": "Up the graph and back down",
+      "kind": "method",
+      "summary": "What, why, behaviour, where, kept by."
+    },
+    {
+      "id": "behaviours",
+      "label": "Eight behaviours",
+      "kind": "claim",
+      "summary": "Secrets to mandate."
+    },
+    {
+      "id": "unnamed",
+      "label": "Enforced before named",
+      "kind": "claim",
+      "summary": "Every page can be reached."
+    },
+    {
+      "id": "ci",
+      "label": "19 block a deploy",
+      "kind": "example",
+      "summary": "Most are the validator's."
+    },
+    {
+      "id": "voice",
+      "label": "No voice check in CI",
+      "kind": "claim",
+      "summary": "Only my build and the leak scan."
+    },
+    {
+      "id": "boundary",
+      "label": "One boundary",
+      "kind": "claim",
+      "summary": "The repository scope."
+    },
+    {
+      "id": "setting",
+      "label": "CI checks are settings",
+      "kind": "concept",
+      "summary": "The agent can change them."
+    },
+    {
+      "id": "protect",
+      "label": "Protect the checks",
+      "kind": "method",
+      "summary": "Required checks and a person's review."
+    }
+  ],
+  "edges": [
+    {
+      "from": "checks",
+      "to": "graph",
+      "rel": "depends-on"
+    },
+    {
+      "from": "graph",
+      "to": "behaviours",
+      "rel": "produces"
+    },
+    {
+      "from": "behaviours",
+      "to": "unnamed",
+      "rel": "example-of"
+    },
+    {
+      "from": "graph",
+      "to": "ci",
+      "rel": "produces"
+    },
+    {
+      "from": "voice",
+      "to": "ci",
+      "rel": "contrasts"
+    },
+    {
+      "from": "setting",
+      "to": "boundary",
+      "rel": "contrasts"
+    },
+    {
+      "from": "protect",
+      "to": "setting",
+      "rel": "answers"
+    },
+    {
+      "from": "ci",
+      "to": "setting",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-checks-measured",
+      "policy-as-code-needs-a-policy-first",
+      "what-can-your-agent-reach"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/articles/hope-or-enforcement.html",
+      "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html",
+      "https://abp.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "every test is checking for a behaviour",
+      "why": "The idea."
+    },
+    {
+      "text": "the behaviour was being enforced before it was named",
+      "why": "Reverse-engineering."
+    },
+    {
+      "text": "a control bounds a grant only if it is enforced by something the grant does not include",
+      "why": "The boundary test."
+    }
+  ],
+  "figures": [
+    {
+      "file": "bv-graph.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bv-graph.webp",
+      "caption": "57 checks, 8 behaviours: the site in the centre, the eight behaviours around it, sized by their checks, and each check as a dot coloured by what keeps it today: one boundary, 34 settings and 22 expectations.",
+      "kind": "concept"
+    },
+    {
+      "file": "bv-chains.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bv-chains.webp",
+      "caption": "Two checks taken apart the same way. The em-dash: no em-dash in prose; many readers find it off-putting; the house voice; run by sgit.ai's validator in my build and the leak scan; kept only because I run them. The key tripwire: nothing looks like a vault key; a published key opens a vault for ever; never publish a secret; CI blocks the deploy; kept by a file my own push can change.",
+      "kind": "concept"
+    },
+    {
+      "file": "bv-where.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bv-where.webp",
+      "caption": "The checks for each behaviour by where they run: CI that blocks the deploy, CI that only reports, the local build, the session, and the container or hooks. The house voice and the agents' mandate have no check in CI; the reader's data is checked in CI, but a failure does not stop the deploy.",
+      "kind": "comparison"
+    },
+    {
+      "file": "bv-target.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bv-target.webp",
+      "caption": "Where each behaviour should be kept: each behaviour's checks moved into this site's validator and CI where they can run on the repository, the tests required once decoupled from live services, the mandate kept in grants and hooks; and the checks protected, so a change to them needs a person's review.",
+      "kind": "concept"
+    }
+  ]
+}

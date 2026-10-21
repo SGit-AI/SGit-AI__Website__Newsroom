@@ -4,9 +4,9 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 868 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 583 | 2916 | links to sgit.ai's pages and the network sites (23 files this site writes itself) |
-| words | 1188 | 8362 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 872 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 585 | 2916 | links to sgit.ai's pages and the network sites (23 files this site writes itself) |
+| words | 1193 | 8405 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 65 | 151 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
@@ -93,7 +93,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/019.html` (18)
 - `engineering/issues/022.html` (18)
 - `articles/ids.json` (17)
-- `desks/vaults.html` (17)
 - `engineering/issues/020.html` (17)
 - `llms.txt` (17)
 - `README.md` (16)
@@ -102,6 +101,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.13.16.html` (15)
 - `admin/build/validate.js` (14)
 - `admin/notes/2026-10-12__what-the-new-articles-ask.md` (14)
+- `desks/vaults.html` (14)
 - `engineering/releases/v0.12.145.html` (14)
 - `engineering/releases/v0.12.2.html` (13)
 - `admin/notes/2026-10-18__a-directory-of-people-and-keys.md` (12)
@@ -111,12 +111,12 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.5.html` (12)
 - `engineering/releases/v0.12.65.html` (12)
 - `admin/notes/2026-10-11__newsroom-api-map-and-review.md` (11)
-- `desks/building.html` (11)
 - `admin/build/newsroom-text.json` (10)
 - `articles/find.json` (10)
 - `articles/summaries/aws-from-the-vault.json` (10)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
+- `desks/building.html` (8)
 - `engineering/releases/v0.12.10.html` (8)
 - `engineering/releases/v0.12.25.html` (8)
 - `engineering/releases/v0.12.49.html` (8)
