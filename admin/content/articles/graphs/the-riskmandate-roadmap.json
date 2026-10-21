@@ -1,126 +1,36 @@
 {
  "slug": "the-riskmandate-roadmap",
- "teaser": "The Agent Behaviour Policy moves to the Open Security Summit. The roadmap: policies, understand, contain, manage, accelerate, then insurance.",
- "topics": [
-  "agents-and-policy",
-  "startups-and-strategy"
- ],
- "core_idea": "The Agent Behaviour Policy should be governed outside the company that sells services on it, so after OWASP proved not the right fit it moves to the Open Security Summit as a hosted project; RiskMandate's roadmap runs from policies through understanding, containment, management and acceleration to insurance, and is in its first stage with its first customers.",
+ "teaser": "RiskMandate's strategy as a spectrum of trust: policies, understand, risk acceptance, contain, manage. Acceleration throughout; insurance later.",
+ "topics": ["startups-and-strategy", "agents-and-policy"],
+ "core_idea": "RiskMandate's strategy is a spectrum of trust walked with each customer, where each stage answers the customer's next question, from a single agent's policy through understanding exposure, accepting risk and containing it to managing a fleet; acceleration is the benefit of every stage, and insurance a later decision.",
  "nodes": [
-  {
-   "id": "owasp",
-   "label": "Not an OWASP fit",
-   "kind": "example",
-   "summary": "Proposed on 8 October."
-  },
-  {
-   "id": "foundation",
-   "label": "Hosted by the Open Security Summit",
-   "kind": "claim",
-   "summary": "Governance outside RiskMandate."
-  },
-  {
-   "id": "policies",
-   "label": "Policies",
-   "kind": "method",
-   "summary": "Stage one: where we are."
-  },
-  {
-   "id": "understand",
-   "label": "Understand",
-   "kind": "concept",
-   "summary": "What agents actually do."
-  },
-  {
-   "id": "contain",
-   "label": "Contain",
-   "kind": "concept",
-   "summary": "Rules out of the agent's reach."
-  },
-  {
-   "id": "manage",
-   "label": "Manage",
-   "kind": "concept",
-   "summary": "Holders, decisions, test packs."
-  },
-  {
-   "id": "accelerate",
-   "label": "Accelerate",
-   "kind": "concept",
-   "summary": "More to do, safely."
-  },
-  {
-   "id": "insurance",
-   "label": "Insurance",
-   "kind": "concept",
-   "summary": "Evidence of containment."
-  },
-  {
-   "id": "customers",
-   "label": "customers.riskmandate.ai",
-   "kind": "artefact",
-   "summary": "The first stage, step by step."
-  }
+  {"id": "trust", "label": "A spectrum of trust", "kind": "concept", "summary": "Each stage earns the next."},
+  {"id": "policies", "label": "Policies", "kind": "method", "summary": "A microcosm; we are here."},
+  {"id": "understand", "label": "Understand", "kind": "method", "summary": "What is our exposure?"},
+  {"id": "acceptance", "label": "Risk acceptance", "kind": "method", "summary": "Which risks, and who decides?"},
+  {"id": "contain", "label": "Contain", "kind": "method", "summary": "A smaller blast radius."},
+  {"id": "manage", "label": "Manage", "kind": "method", "summary": "Agents run as a fleet."},
+  {"id": "accelerate", "label": "Accelerate throughout", "kind": "claim", "summary": "Not a stage: the benefit of every stage."},
+  {"id": "insurance", "label": "Insurance, later", "kind": "question", "summary": "A future decision."},
+  {"id": "players", "label": "Players at every stage", "kind": "concept", "summary": "Partners, or an opening for us."}
  ],
  "edges": [
-  {
-   "from": "owasp",
-   "to": "foundation",
-   "rel": "leads-to"
-  },
-  {
-   "from": "policies",
-   "to": "understand",
-   "rel": "leads-to"
-  },
-  {
-   "from": "understand",
-   "to": "contain",
-   "rel": "leads-to"
-  },
-  {
-   "from": "contain",
-   "to": "manage",
-   "rel": "leads-to"
-  },
-  {
-   "from": "manage",
-   "to": "accelerate",
-   "rel": "leads-to"
-  },
-  {
-   "from": "accelerate",
-   "to": "insurance",
-   "rel": "leads-to"
-  },
-  {
-   "from": "customers",
-   "to": "policies",
-   "rel": "example-of"
-  }
+  {"from": "trust", "to": "policies", "rel": "produces"},
+  {"from": "policies", "to": "understand", "rel": "leads-to"},
+  {"from": "understand", "to": "acceptance", "rel": "leads-to"},
+  {"from": "acceptance", "to": "contain", "rel": "leads-to"},
+  {"from": "contain", "to": "manage", "rel": "leads-to"},
+  {"from": "manage", "to": "insurance", "rel": "leads-to"},
+  {"from": "accelerate", "to": "trust", "rel": "extends"},
+  {"from": "players", "to": "trust", "rel": "contrasts"}
  ],
  "links": {
-  "articles": [
-   "our-first-customers",
-   "inside-the-pellbridge-agents",
-   "a-leak-without-breaking-the-policy",
-   "free-to-copy-paid-at-the-source"
-  ],
+  "articles": ["our-first-customers", "inside-the-pellbridge-agents", "three-policies-for-an-agent", "agent-behaviour-policies-move-to-the-open-security-summit"],
   "pages": [],
-  "sites": [
-   "https://riskmandate.ai/owasp/",
-   "https://customers.riskmandate.ai/",
-   "https://riskmandate.ai/insurance.html"
-  ]
+  "sites": ["https://customers.riskmandate.ai/", "https://riskmandate.ai/insurance.html", "https://newsroom.sgit.ai/articles/every-risk-is-already-accepted.html"]
  },
  "quotes": [
-  {
-   "text": "Control is what makes it safe to say yes.",
-   "why": "Accelerate."
-  },
-  {
-   "text": "The reason for proposing it has not changed, so we are going to give it another home",
-   "why": "The decision."
-  }
+  {"text": "So the way to think about the roadmap is as a spectrum of trust.", "why": "The frame."},
+  {"text": "Acceleration is what every stage gives the business", "why": "On accelerate."}
  ]
 }

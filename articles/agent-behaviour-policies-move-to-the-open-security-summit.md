@@ -90,12 +90,12 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#agent-
 ### Builds on
 
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
-- [The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a home for the Agent Behaviour Policy outside RiskMandate](the-riskmandate-roadmap.md) The Agent Behaviour Policy moves to the Open Security Summit. The roadmap: policies, understand, contain, manage, accelerate, then insurance.
+- [The RiskMandate roadmap: policies, understand, risk acceptance, contain and manage, a spectrum of trust we walk with each customer](the-riskmandate-roadmap.md) RiskMandate's strategy as a spectrum of trust: policies, understand, risk acceptance, contain, manage. Acceleration throughout; insurance later.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
 
 ### Continued by
 
-- [The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a home for the Agent Behaviour Policy outside RiskMandate](the-riskmandate-roadmap.md) The Agent Behaviour Policy moves to the Open Security Summit. The roadmap: policies, understand, contain, manage, accelerate, then insurance.
+- [The RiskMandate roadmap: policies, understand, risk acceptance, contain and manage, a spectrum of trust we walk with each customer](the-riskmandate-roadmap.md) RiskMandate's strategy as a spectrum of trust: policies, understand, risk acceptance, contain, manage. Acceleration throughout; insurance later.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

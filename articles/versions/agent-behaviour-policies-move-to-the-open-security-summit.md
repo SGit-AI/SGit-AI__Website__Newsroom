@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-20 | published | 1,463 | first published | this release | [current](../agent-behaviour-policies-move-to-the-open-security-summit.md) |
+| **v1.0.0** | 2026-10-20 | published | 1,463 | first published | [`3a760bc1c`](https://github.com/SGit-AI/SGit-AI__Website/commit/3a760bc1c7b1ce4554be52608b52277d5bcab21b) | [current](../agent-behaviour-policies-move-to-the-open-security-summit.md) |
 
 [← Back to the article](../agent-behaviour-policies-move-to-the-open-security-summit.md) · [All articles](../index.md)
 

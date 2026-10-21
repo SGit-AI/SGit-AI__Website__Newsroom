@@ -223,7 +223,7 @@ Agents & policyVaults & method[This article as a graph →](graphs.md#inside-the
 
 ### Continued by
 
-- [The RiskMandate roadmap: policies, understand, contain, manage, accelerate, then insurance, and a home for the Agent Behaviour Policy outside RiskMandate](the-riskmandate-roadmap.md) The Agent Behaviour Policy moves to the Open Security Summit. The roadmap: policies, understand, contain, manage, accelerate, then insurance.
+- [The RiskMandate roadmap: policies, understand, risk acceptance, contain and manage, a spectrum of trust we walk with each customer](the-riskmandate-roadmap.md) RiskMandate's strategy as a spectrum of trust: policies, understand, risk acceptance, contain, manage. Acceleration throughout; insurance later.
 - [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](v0-12-in-numbers.md) v0.12 in numbers: 159 versions in eight days, 131 articles, 292,000 words, a graph for every article, and the mistakes the data shows.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](a-leak-without-breaking-the-policy.md) A key can leak through an allowed action. Told, checked, never given: a hook tested on nine leaks, four experimental rules, and a real sweep.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
