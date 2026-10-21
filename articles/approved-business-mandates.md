@@ -10,7 +10,7 @@
 
 # Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/approved-business-mandates.md) · [newsroom v0.13.35](https://newsroom.sgit.ai/admin/versions.html) · riskmandatestrategyabpmandatesassurancearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/approved-business-mandates.md) · [newsroom v0.13.35](https://newsroom.sgit.ai/admin/versions.html) · riskmandatestrategyabpmandatesassurancearticle
 
 ***Abstract:** I gave our answer to the analyst's blueprint back to the ChatGPT session the analysis came from, and asked it to review it. Its review is good, it corrects its own first recommendation, and it gives us a phrase I think is right for what RiskMandate does: turning approved business mandates into tested controls, and keeping the relationship between them accurate as the deployment changes. The words that matter are approved business mandates. Companies already have behaviour policies: delegated authority, approval limits, four-eyes rules, data handling, who may contact a customer and when. They wrote them for people. Our job is to work with them to capture what they already approve, convert it into Agent Behaviour Policies their agentic workflows can understand and enforce, test that each control holds, say plainly where a requirement cannot be enforced yet, and notice when a change to the deployment breaks what was true last month. The review also sharpens things we should accept: a policy described is not a policy delivered; our Cedar work is a demonstration, not a compiler; the Pellbridge bank explains, it does not measure; and the earlier notes were AI-assisted, which I have now said on those pages. It ends with the right next step: one real workflow, a policy the business understands, controls that demonstrably hold, and an honest account of what remains.*
 
@@ -97,6 +97,20 @@ A few points I would keep, with the review's caveats:
 - **Insurance stays an outcome to validate.** The question to ask a broker is the review's: which specific evidence changes your decision, and how would you verify it?
 - **Open source earns trust, not revenue.** The recurring value is maintaining integrations, detecting changes, testing translations and keeping evidence current.
 
+## Room to grow
+
+Room to grow: capture the process and its approved rules, then the behaviour policy, both the focus now; and, already explored in published articles, the decision policy, the workflow policy, and approval at altitude with precedent.
+
+One thing the review does not see, because it read only this exchange, is that we have already gone further than the behaviour policy in our published work. That matters, because it is part of our strength: we can evolve with a customer into more advanced cases, or give them the tools to evolve on their own.
+
+- **[Three policies for an agent](three-policies-for-an-agent.md).** The behaviour policy says what an agent may do. An Agent Decision Policy says, at a branch point, who chooses, on what evidence and within what limits. An Agent Workflow Policy says in what order things happen, with which checks between the steps.
+- **[Allowed is not right](allowed-is-not-right.md) and [the Northstar twin](inside-the-northstar-twin.md).** A refund that every control allowed and was still wrong, played through four designs, which is the sequence problem the review raises, worked on an example.
+- **[Approve at altitude](approve-at-altitude.md).** Decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it, so an owner signs off once instead of two hundred times.
+- **[Case law for agents](case-law-for-agents.md).** Principles from the top and precedent from the cases, for the decisions nobody predicted.
+- **[Three decisions, mapped](three-decisions-mapped.md).** All three policies on real scenarios, including this newsroom's own release.
+
+We are in the product-market-fit phase, and we do not know every direction this will go. So the order matters. The focus now, especially for RiskMandate, is the first step: getting people to use the behaviour policies, and learning the best way to do it. Start by capturing an existing business process and the rules it already approves, then write the policies around it. The decision and workflow policies are the evolution path, already explored and published, for the customers whose cases need them.
+
 ## What changes now
 
 - **The earlier notes are marked as AI-assisted.** Done, on both pages.
@@ -110,6 +124,7 @@ A few points I would keep, with the review's caveats:
 - **The rows and tables are illustrative.** No customer has a coverage explanation yet.
 - **Vendor descriptions are their own.** Read from their pages, not tested.
 - **Nothing here is a pilot result.** The pilot is the next step.
+- **The advanced policies are explored, not deployed.** Decision and workflow policies are in published articles, not yet in a customer's workflow.
 
 ## Where this comes from
 
@@ -125,6 +140,12 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#approv
 - [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](drift-is-the-mandate-moving.md) An analyst's case for drift as RiskMandate's thesis, and the versioned behaviour policy that drift is measured against.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 - [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md) Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.
+- [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](three-policies-for-an-agent.md) Behaviour says what an agent may do, decision who chooses at a branch point, workflow in what order. Zoom into one ABP cell and it becomes both.
+- [Allowed is not right: an answer to Ashish Rajan's Northstar, with three policies and a twin you can run](allowed-is-not-right.md) Ashish Rajan's Northstar refund: allowed to refund $200, owed $120, paid $150. His four questions mapped to three policies, and tested on a twin.
+- [Inside the Northstar twin: thirteen refunds, four designs, and every decision played back](inside-the-northstar-twin.md) A tour of the Northstar refund twin: thirteen synthetic refunds through four designs, every decision played step by step, replayed and compared.
+- [Approve at altitude: decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it](approve-at-altitude.md) Models can draft two hundred decision policies; nobody can sign two hundred. Approve at altitude: each level may narrow the one above, never widen it.
+- [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](case-law-for-agents.md) Nobody predicts every case. Borrow the shape of English case law: escalate what the policy does not settle, record it, follow it, then compile it.
+- [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](three-decisions-mapped.md) An agent's memory, this newsroom's release and a refund, mapped through behaviour, decision and workflow: the gaps are in the decisions.
 - [Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested](commanders-intent-is-a-behaviour-policy.md) Sondera's commander's intent and our behaviour policies are one idea: twelve terms joined, the business layer above, and five rules tested in Cedar.
 - [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](the-riskmandate-roadmap.md) A proposed strategy for RiskMandate, a spectrum of trust: policies, understand, risk acceptance, contain, manage, insure.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.

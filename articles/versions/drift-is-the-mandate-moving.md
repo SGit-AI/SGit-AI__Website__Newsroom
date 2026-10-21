@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-21 | minor | 2,157 | +22 / −0 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](drift-is-the-mandate-moving/v1.1.0.md) · [current](../drift-is-the-mandate-moving.md) |
+| **v1.1.0** | 2026-10-21 | minor | 2,157 | +22 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`d9d4562f2`](https://github.com/SGit-AI/SGit-AI__Website/commit/d9d4562f26c69d3dabd07b573a993a0f1eb41643) | [what changed](drift-is-the-mandate-moving/v1.1.0.md) · [current](../drift-is-the-mandate-moving.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,135 | first published | [`22ff46a29`](https://github.com/SGit-AI/SGit-AI__Website/commit/22ff46a29ad83268d518892795df8611602de41f) |  |
 
 [← Back to the article](../drift-is-the-mandate-moving.md) · [All articles](../index.md)

@@ -93,6 +93,20 @@ A few points I would keep, with the review's caveats:
 - **Insurance stays an outcome to validate.** The question to ask a broker is the review's: which specific evidence changes your decision, and how would you verify it?
 - **Open source earns trust, not revenue.** The recurring value is maintaining integrations, detecting changes, testing translations and keeping evidence current.
 
+## Room to grow {#grow}
+
+!shot bm-grow.webp | images/ | Room to grow: capture the process and its approved rules, then the behaviour policy, both the focus now; and, already explored in published articles, the decision policy, the workflow policy, and approval at altitude with precedent. | concept
+
+One thing the review does not see, because it read only this exchange, is that we have already gone further than the behaviour policy in our published work. That matters, because it is part of our strength: we can evolve with a customer into more advanced cases, or give them the tools to evolve on their own.
+
+- **[Three policies for an agent](/articles/three-policies-for-an-agent.html).** The behaviour policy says what an agent may do. An Agent Decision Policy says, at a branch point, who chooses, on what evidence and within what limits. An Agent Workflow Policy says in what order things happen, with which checks between the steps.
+- **[Allowed is not right](/articles/allowed-is-not-right.html) and [the Northstar twin](/articles/inside-the-northstar-twin.html).** A refund that every control allowed and was still wrong, played through four designs, which is the sequence problem the review raises, worked on an example.
+- **[Approve at altitude](/articles/approve-at-altitude.html).** Decisions at every level, from strategy to one agent's step, where each level may narrow the one above and never widen it, so an owner signs off once instead of two hundred times.
+- **[Case law for agents](/articles/case-law-for-agents.html).** Principles from the top and precedent from the cases, for the decisions nobody predicted.
+- **[Three decisions, mapped](/articles/three-decisions-mapped.html).** All three policies on real scenarios, including this newsroom's own release.
+
+We are in the product-market-fit phase, and we do not know every direction this will go. So the order matters. The focus now, especially for RiskMandate, is the first step: getting people to use the behaviour policies, and learning the best way to do it. Start by capturing an existing business process and the rules it already approves, then write the policies around it. The decision and workflow policies are the evolution path, already explored and published, for the customers whose cases need them.
+
 ## What changes now {#next}
 
 - **The earlier notes are marked as AI-assisted.** Done, on both pages.
@@ -106,6 +120,7 @@ A few points I would keep, with the review's caveats:
 - **The rows and tables are illustrative.** No customer has a coverage explanation yet.
 - **Vendor descriptions are their own.** Read from their pages, not tested.
 - **Nothing here is a pilot result.** The pilot is the next step.
+- **The advanced policies are explored, not deployed.** Decision and workflow policies are in published articles, not yet in a customer's workflow.
 
 ## Where this comes from {#sources}
 

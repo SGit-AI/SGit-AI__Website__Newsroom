@@ -12,7 +12,8 @@
   {"id": "maintain", "label": "Maintain the evidence", "kind": "method", "summary": "Changes taken back to the holder."},
   {"id": "coverage", "label": "Coverage explanation", "kind": "artefact", "summary": "Implementation, evidence, what remains."},
   {"id": "market", "label": "The market is closer", "kind": "example", "summary": "Noma, AWS, Endor, Cedar."},
-  {"id": "pilot", "label": "One real workflow", "kind": "method", "summary": "The next proof."}
+  {"id": "pilot", "label": "One real workflow", "kind": "method", "summary": "The next proof."},
+  {"id": "grow", "label": "Room to grow", "kind": "concept", "summary": "Decision and workflow policies."}
  ],
  "edges": [
   {"from": "review", "to": "mandates", "rel": "produces"},
@@ -23,10 +24,11 @@
   {"from": "maintain", "to": "convert", "rel": "leads-to"},
   {"from": "coverage", "to": "verify", "rel": "produces"},
   {"from": "market", "to": "coverage", "rel": "leads-to"},
-  {"from": "pilot", "to": "coverage", "rel": "depends-on"}
+  {"from": "pilot", "to": "coverage", "rel": "depends-on"},
+  {"from": "grow", "to": "convert", "rel": "extends"}
  ],
  "links": {
-  "articles": ["an-analysts-blueprint-for-riskmandate", "drift-is-the-mandate-moving", "inside-the-pellbridge-agents", "commanders-intent-is-a-behaviour-policy", "the-riskmandate-roadmap", "our-first-customers", "what-can-your-agent-reach"],
+  "articles": ["three-policies-for-an-agent", "allowed-is-not-right", "inside-the-northstar-twin", "approve-at-altitude", "case-law-for-agents", "three-decisions-mapped", "an-analysts-blueprint-for-riskmandate", "drift-is-the-mandate-moving", "inside-the-pellbridge-agents", "commanders-intent-is-a-behaviour-policy", "the-riskmandate-roadmap", "our-first-customers", "what-can-your-agent-reach"],
   "pages": [],
   "sites": ["https://noma.security/solutions/agent-behavior-runtime-control", "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-temporal.html", "https://docs.endorlabs.com/agent-governance/how-it-works", "https://docs.cedarpolicy.com/other/security.html"]
  },

@@ -60,6 +60,12 @@
       "label": "One real workflow",
       "kind": "method",
       "summary": "The next proof."
+    },
+    {
+      "id": "grow",
+      "label": "Room to grow",
+      "kind": "concept",
+      "summary": "Decision and workflow policies."
     }
   ],
   "edges": [
@@ -107,10 +113,21 @@
       "from": "pilot",
       "to": "coverage",
       "rel": "depends-on"
+    },
+    {
+      "from": "grow",
+      "to": "convert",
+      "rel": "extends"
     }
   ],
   "links": {
     "articles": [
+      "three-policies-for-an-agent",
+      "allowed-is-not-right",
+      "inside-the-northstar-twin",
+      "approve-at-altitude",
+      "case-law-for-agents",
+      "three-decisions-mapped",
       "an-analysts-blueprint-for-riskmandate",
       "drift-is-the-mandate-moving",
       "inside-the-pellbridge-agents",
@@ -159,6 +176,12 @@
       "url": "https://newsroom.sgit.ai/articles/images/bm-coverage.webp",
       "caption": "A coverage explanation: for each requirement, what implements it, the evidence that it holds, and what remains, such as an approval that must be invalidated if the content changes, or a session rule that does not yet follow a task into another agent. Illustrative rows.",
       "kind": "comparison"
+    },
+    {
+      "file": "bm-grow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/bm-grow.webp",
+      "caption": "Room to grow: capture the process and its approved rules, then the behaviour policy, both the focus now; and, already explored in published articles, the decision policy, the workflow policy, and approval at altitude with precedent.",
+      "kind": "concept"
     }
   ]
 }
