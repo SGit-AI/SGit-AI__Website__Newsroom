@@ -55,6 +55,204 @@
   ],
   "articles": [
     {
+      "slug": "approved-business-mandates",
+      "title": "Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/approved-business-mandates.html",
+      "markdown": "https://newsroom.sgit.ai/articles/approved-business-mandates.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/approved-business-mandates.webp",
+      "teaser": "Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "riskmandate",
+        "strategy",
+        "abp",
+        "mandates",
+        "assurance",
+        "article"
+      ],
+      "links_out": [
+        "an-analysts-blueprint-for-riskmandate",
+        "drift-is-the-mandate-moving",
+        "what-can-your-agent-reach",
+        "inside-the-pellbridge-agents",
+        "commanders-intent-is-a-behaviour-policy",
+        "the-riskmandate-roadmap",
+        "our-first-customers"
+      ],
+      "links_in": [
+        "an-analysts-blueprint-for-riskmandate"
+      ],
+      "figures": [
+        {
+          "file": "bm-convert.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bm-convert.webp",
+          "caption": "Companies already have behaviour policies: delegated authority, four-eyes, data handling, spending limits, communications and advice rules, each written for people, turned into an Agent Behaviour Policy row with its mandate and what keeps it. Illustrative rows.",
+          "kind": "concept"
+        },
+        {
+          "file": "bm-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bm-loop.webp",
+          "caption": "From an approved mandate to tested controls, and back: specify the mandate; find what the environment supports; generate the configurations, or say why not; verify that prohibited actions stop and legitimate work continues; and maintain the evidence as the deployment changes.",
+          "kind": "concept"
+        },
+        {
+          "file": "bm-coverage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bm-coverage.webp",
+          "caption": "A coverage explanation: for each requirement, what implements it, the evidence that it holds, and what remains, such as an approval that must be invalidated if the content changes, or a session rule that does not yet follow a task into another agent. Illustrative rows.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "approved-business-mandates",
+        "teaser": "Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Companies already approve behaviour policies for people, delegated authority, four-eyes, data handling and limits, so RiskMandate's role is to convert those approved business mandates into agent behaviour policies, generate controls on existing enforcement points or say plainly where a requirement cannot be enforced, verify them against the protected systems, and maintain the evidence as deployments change, proven first on one real workflow.",
+        "nodes": [
+          {
+            "id": "review",
+            "label": "An AI-assisted review",
+            "kind": "artefact",
+            "summary": "It corrected its own first advice."
+          },
+          {
+            "id": "mandates",
+            "label": "Approved business mandates",
+            "kind": "concept",
+            "summary": "Rules companies already approve for people."
+          },
+          {
+            "id": "convert",
+            "label": "Convert to behaviour policies",
+            "kind": "method",
+            "summary": "Rows an agent's workflow can enforce."
+          },
+          {
+            "id": "saywhynot",
+            "label": "Say why not",
+            "kind": "claim",
+            "summary": "Never weaken a rule silently."
+          },
+          {
+            "id": "verify",
+            "label": "Verify by the protected system",
+            "kind": "method",
+            "summary": "Prohibited stopped, legitimate done."
+          },
+          {
+            "id": "maintain",
+            "label": "Maintain the evidence",
+            "kind": "method",
+            "summary": "Changes taken back to the holder."
+          },
+          {
+            "id": "coverage",
+            "label": "Coverage explanation",
+            "kind": "artefact",
+            "summary": "Implementation, evidence, what remains."
+          },
+          {
+            "id": "market",
+            "label": "The market is closer",
+            "kind": "example",
+            "summary": "Noma, AWS, Endor, Cedar."
+          },
+          {
+            "id": "pilot",
+            "label": "One real workflow",
+            "kind": "method",
+            "summary": "The next proof."
+          }
+        ],
+        "edges": [
+          {
+            "from": "review",
+            "to": "mandates",
+            "rel": "produces"
+          },
+          {
+            "from": "mandates",
+            "to": "convert",
+            "rel": "leads-to"
+          },
+          {
+            "from": "convert",
+            "to": "saywhynot",
+            "rel": "depends-on"
+          },
+          {
+            "from": "convert",
+            "to": "verify",
+            "rel": "leads-to"
+          },
+          {
+            "from": "verify",
+            "to": "maintain",
+            "rel": "leads-to"
+          },
+          {
+            "from": "maintain",
+            "to": "convert",
+            "rel": "leads-to"
+          },
+          {
+            "from": "coverage",
+            "to": "verify",
+            "rel": "produces"
+          },
+          {
+            "from": "market",
+            "to": "coverage",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pilot",
+            "to": "coverage",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "an-analysts-blueprint-for-riskmandate",
+            "drift-is-the-mandate-moving",
+            "inside-the-pellbridge-agents",
+            "commanders-intent-is-a-behaviour-policy",
+            "the-riskmandate-roadmap",
+            "our-first-customers",
+            "what-can-your-agent-reach"
+          ],
+          "pages": [],
+          "sites": [
+            "https://noma.security/solutions/agent-behavior-runtime-control",
+            "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-temporal.html",
+            "https://docs.endorlabs.com/agent-governance/how-it-works",
+            "https://docs.cedarpolicy.com/other/security.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "turning approved business mandates into tested controls, and keeping the relationship between them accurate as the deployment changes",
+            "why": "The phrase."
+          },
+          {
+            "text": "Companies already have behaviour policies. They are just written for people.",
+            "why": "The insight."
+          },
+          {
+            "text": "This target cannot enforce this requirement with the information and controls currently available.",
+            "why": "Saying why not."
+          }
+        ]
+      }
+    },
+    {
       "slug": "drift-is-the-mandate-moving",
       "title": "Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against",
       "date": "2026-10-21",
@@ -81,7 +279,9 @@
         "the-key-is-not-the-risk",
         "behaviour-policies-from-the-checks"
       ],
-      "links_in": [],
+      "links_in": [
+        "approved-business-mandates"
+      ],
       "figures": [
         {
           "file": "df-forms.webp",
@@ -414,6 +614,7 @@
       ],
       "links_out": [
         "a-briefing-for-the-ciso-summit",
+        "approved-business-mandates",
         "what-can-your-agent-reach",
         "the-key-is-not-the-risk",
         "our-first-customers",
@@ -424,6 +625,7 @@
         "how-to-help"
       ],
       "links_in": [
+        "approved-business-mandates",
         "drift-is-the-mandate-moving"
       ],
       "figures": [
@@ -4540,6 +4742,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "approved-business-mandates",
         "an-analysts-blueprint-for-riskmandate",
         "how-a-memo-becomes-a-release",
         "agent-behaviour-policies-move-to-the-open-security-summit"
@@ -5602,6 +5805,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "approved-business-mandates",
         "an-analysts-blueprint-for-riskmandate",
         "how-to-help",
         "agent-behaviour-policies-move-to-the-open-security-summit",
@@ -6580,6 +6784,7 @@
         "inside-the-thistlewood-twin"
       ],
       "links_in": [
+        "approved-business-mandates",
         "drift-is-the-mandate-moving",
         "an-analysts-blueprint-for-riskmandate",
         "the-key-is-not-the-risk",
@@ -14607,6 +14812,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "approved-business-mandates",
         "drift-is-the-mandate-moving",
         "an-analysts-blueprint-for-riskmandate",
         "behaviour-policies-from-the-checks",
@@ -26861,6 +27067,7 @@
         "policy-as-code-needs-a-policy-first"
       ],
       "links_in": [
+        "approved-business-mandates",
         "an-analysts-blueprint-for-riskmandate",
         "approve-at-altitude",
         "your-own-newsroom",

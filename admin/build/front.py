@@ -229,7 +229,7 @@ class Front:
     # ---- A · Broadsheet ----
     def broadsheet(self):
         e, m, lead = self.edition, self.mast, self.lead
-        latest = self.newest(6, [lead["slug"]])
+        latest = self.newest(6, [lead["slug"]], agents=True)  # the agents' own articles too: they are published here
         neutral = self.personas[0]
         desks = self.desks(3, [lead["slug"]])
         latest_li = "".join(

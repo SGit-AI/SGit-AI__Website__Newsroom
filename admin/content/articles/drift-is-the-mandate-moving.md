@@ -24,7 +24,7 @@ status: published
 
 ## The note {#note}
 
-The analyst who sent us [a blueprint from the WestCap CISO Summit](/articles/an-analysts-blueprint-for-riskmandate.html) sent a second note, on an area where I think we have a very good story. Paraphrased:
+The analyst who sent us [a blueprint from the WestCap CISO Summit](/articles/an-analysts-blueprint-for-riskmandate.html) sent a second note, on an area where I think we have a very good story. Like the first, it was written in a ChatGPT session: an AI-assisted analysis, not independent market research. Paraphrased:
 
 - **Drift could be the strongest differentiator.** More defensible than agent discovery, MCP security or static policy enforcement.
 - **Four kinds.** Policy drift, when effective controls diverge from approved policy; behavioural drift, when actions move away from approved intent; goal drift, when intermediate objectives move away from the task; and authority drift, when an agent gains or uses more autonomy, for example by delegating to sub-agents with broader privileges.
@@ -81,7 +81,7 @@ The analyst is right that this is not empty ground, and that is good news. [Adri
 
 ## What this does not claim {#limits}
 
-- **The note is the analyst's.** Paraphrased; the reading is mine.
+- **The note is AI-assisted.** Written in a ChatGPT session; paraphrased, and the reading is mine.
 - **Pellbridge is a demo.** An invented bank and one replayed day; no customer runs this yet.
 - **Re-measuring a grant is not continuous yet.** It runs when the policy is built or tested.
 - **Goal drift is not solved.** Not here, and we know of no one who claims to have solved it in general.

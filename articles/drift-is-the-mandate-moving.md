@@ -10,7 +10,7 @@
 
 # Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/drift-is-the-mandate-moving.md) · [newsroom v0.13.34](https://newsroom.sgit.ai/admin/versions.html) · riskmandatedriftabpagentsassurancearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/drift-is-the-mandate-moving.md) · [newsroom v0.13.34](https://newsroom.sgit.ai/admin/versions.html) · riskmandatedriftabpagentsassurancearticle
 
 ***Abstract:** The same analyst who sent us a blueprint from the WestCap CISO Summit sent a second note, on what may be our strongest story: drift. The question moves from "is this agent authorised?" to "is this agent still behaving within its intended mandate, and how do we know?" The note names four kinds of drift, policy, behavioural, goal and authority, all of which can happen without malicious code, stolen credentials or any single step breaking a rule. I agree, and I think we are better placed for it than the note assumes, because drift needs something to drift from. An Agent Behaviour Policy is exactly that: a versioned, signed statement of what an agent can do, what it may do, and what keeps each rule. Measure the grant again and policy drift shows up as a bigger delta. Check each action against its row and behavioural drift shows up as broken rows and near misses. Say what keeps every rule and authority drift shows up as a setting someone switched off. Our Pellbridge demo already does all three: every row is a test that runs on every model change, every policy change and every week, and a failed row stops the release. Goal drift, judging whether a sequence of allowed actions still serves the task, is the hard and open part. And a close-to-home example of drift is this session itself, an agent that loses its policy at every compaction and reads it back from disk.*
 
@@ -28,7 +28,7 @@ Four kinds of drift, and what catches each: policy drift, by the grant re-measur
 
 ## The note
 
-The analyst who sent us [a blueprint from the WestCap CISO Summit](an-analysts-blueprint-for-riskmandate.md) sent a second note, on an area where I think we have a very good story. Paraphrased:
+The analyst who sent us [a blueprint from the WestCap CISO Summit](an-analysts-blueprint-for-riskmandate.md) sent a second note, on an area where I think we have a very good story. Like the first, it was written in a ChatGPT session: an AI-assisted analysis, not independent market research. Paraphrased:
 
 - **Drift could be the strongest differentiator.** More defensible than agent discovery, MCP security or static policy enforcement.
 - **Four kinds.** Policy drift, when effective controls diverge from approved policy; behavioural drift, when actions move away from approved intent; goal drift, when intermediate objectives move away from the task; and authority drift, when an agent gains or uses more autonomy, for example by delegating to sub-agents with broader privileges.
@@ -85,7 +85,7 @@ The analyst is right that this is not empty ground, and that is good news. [Adri
 
 ## What this does not claim
 
-- **The note is the analyst's.** Paraphrased; the reading is mine.
+- **The note is AI-assisted.** Written in a ChatGPT session; paraphrased, and the reading is mine.
 - **Pellbridge is a demo.** An invented bank and one replayed day; no customer runs this yet.
 - **Re-measuring a grant is not continuous yet.** It runs when the policy is built or tested.
 - **Goal drift is not solved.** Not here, and we know of no one who claims to have solved it in general.
@@ -107,6 +107,10 @@ Agents & policy[This article as a graph →](graphs.md#drift-is-the-mandate-movi
 - [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](inside-the-pellbridge-agents.md) Six invented bank agents with the FCA's four elements filled in, one day replayed through the gate: every incident came from a gap row.
 - [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](the-key-is-not-the-risk.md) Credential injection for AI agents is a good pattern; the first question is still what an attacker can make the agent do.
 - [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](behaviour-policies-from-the-checks.md) 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept.
+
+### Continued by
+
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

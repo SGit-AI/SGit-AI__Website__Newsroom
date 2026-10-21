@@ -98,6 +98,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#our-fi
 
 ### Continued by
 
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](an-analysts-blueprint-for-riskmandate.md) An analyst's blueprint for RiskMandate from the WestCap CISO Summit, the vendors already moving, and our answer.
 - [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](how-to-help.md) Six steps for anyone who wants to help or be involved with sgit, Risk Mandate or this newsroom, and what they get back.
 - [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](agent-behaviour-policies-move-to-the-open-security-summit.md) The Agent Behaviour Policy moves to the Open Security Summit CIC as its first hosted project, with a charter and an independent steering majority to come.

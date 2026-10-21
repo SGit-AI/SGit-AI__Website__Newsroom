@@ -10,7 +10,7 @@
 
 # An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/an-analysts-blueprint-for-riskmandate.md) · [newsroom v0.13.31](https://newsroom.sgit.ai/admin/versions.html) · riskmandatestrategyagentssecuritymarketarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.2.0, 3 versions](versions/an-analysts-blueprint-for-riskmandate.md) · [newsroom v0.13.31](https://newsroom.sgit.ai/admin/versions.html) · riskmandatestrategyagentssecuritymarketarticle
 
 ***Abstract:** One of our power users, an analyst, sent us a note from the WestCap CISO Summit: what RiskMandate should borrow from the companies on the backdrop. It is a good piece of work, and I agree with most of it. Its thesis, control what AI agents do, not just what they can access, is the Agent Behaviour Policy's grant against mandate in other words. Its best question, which agent action would a CISO never permit even with valid credentials, is the argument we published this week. And its advice to start with one workflow and a handful of policies is how our first-customer programme already works. It also found something important: Drata announced AI Agent Governance in August, with plain-English policies enforced inline, and Endor Labs, Socket, Sondera, AWS and the gateway makers are all moving into the same space. Where I would change the plan is its first build item: intercepting tool calls ourselves. What we provide is wider than any one control: an understanding of each environment, a risk analysis, and the set of controls that fits it. Some environments need only a line in the prompt, some a hook, and some a gateway, monitoring and a person to approve; our job is to know which, and to generate the rules for all of them. So these companies arriving is good news: each has a centre of gravity around its own tooling, and our remit runs across them. Many open their enforcement points; we open the policy above them. Bluntly, what we need now are the customers, and the use cases, to do this with, for real.*
 
@@ -28,7 +28,7 @@ Who does what, by their own description: Drata, Endor Labs, Socket, Bedrock Data
 
 ## The note
 
-My business partner is at the [WestCap CISO Summit](a-briefing-for-the-ciso-summit.md) in New York this week, and one of our power users, an analyst, sent us a note from it: what RiskMandate should borrow from the companies whose logos were on the backdrop. In short, it says:
+My business partner is at the [WestCap CISO Summit](a-briefing-for-the-ciso-summit.md) in New York this week, and one of our power users sent us a note from it: what RiskMandate should borrow from the companies whose logos were on the backdrop. To be clear about where it came from: the analysis was written in a ChatGPT session, an AI-assisted analysis rather than independent market research. I later gave this answer back to that session, and its review, which corrects some of what is here, is in [approved business mandates](approved-business-mandates.md). In short, the note says:
 
 - **Study seven companies.** Socket for risky tools and packages, Endor Labs for prioritising by what is reachable, Drata for continuous controls and evidence, Bedrock Data for what data agents can reach, Bishop Fox for adversarial testing, Kroll for incident investigation, and Optiv for reaching CISOs through existing budgets. Its own caveat: these are analogies, not claims that the products work alike.
 - **Combine three of them.** Socket's view of capabilities, Drata's machine-testable controls and Bedrock Data's map of data exposure, so that RiskMandate governs what an agent may do, with which data, in which circumstances, and with what consequences.
@@ -85,12 +85,12 @@ That matters because the right control depends on what is at stake. There are en
 
 Here is where I would change the plan. Its first build item is intercepting agents' tool calls ourselves. I think that is the wrong first bet for us, for three reasons.
 
-First, it puts us in line. As we argued in [the key is not the risk](the-key-is-not-the-risk.md), a proxy in the middle is a single point of failure, and it usually lacks the context to judge a request that looks valid; the state lives in the application. Second, the space is full: Drata, Sondera, AWS and the gateway makers all intercept tool calls already, and the customers we want already run some of them. Third, it is not what we are best at. As abp.sgit.ai puts it, a behaviour policy is "not a guardrail. It is what guardrails are compiled from."
+First, it puts us in line. As we argued in [the key is not the risk](the-key-is-not-the-risk.md), a proxy in the middle adds a component that every call depends on, unless it is deployed redundantly, and it usually lacks the context to judge a request that looks valid; the state lives in the application. Second, the space is full: Drata, Sondera, AWS and the gateway makers all intercept tool calls already, and the customers we want already run some of them. Third, it is not what we are best at. As abp.sgit.ai puts it, a behaviour policy is "not a guardrail. It is what guardrails are compiled from."
 
 But that does not mean we only describe. We have started to play in block and prevent, in two ways that do not put a new box in the customer's path:
 
 - **Hooks in the agent's own harness.** They see each tool call before it runs and can block it. They can also keep state across a session, so the analyst's sequence, read, export, send, can be one rule. Honestly labelled, a hook the agent's account can change is a setting, not a boundary, and the policy says so.
-- **The same rules, compiled for the enforcement points customers already run.** We have already compiled our rules to Cedar and tested them, the language Sondera and AWS evaluate. Kept by a gateway outside the agent's reach, the same rule becomes a boundary.
+- **The same rules, compiled for the enforcement points customers already run.** We have shown it on a small scale: five rules written for an earlier article, evaluated in Cedar, the language Sondera and AWS use, against fourteen requests. That is a demonstration, not yet a general compiler. Kept by a gateway outside the agent's reach, the same rule becomes a boundary.
 
 And we map the environment first, so the customer knows which of their agents needs which, and why.
 
@@ -130,7 +130,7 @@ The analyst's closing question is the best way to find them: which agent action 
 
 ## What this does not claim
 
-- **The note is the analyst's.** Paraphrased, not quoted; the reading of it is mine.
+- **The note is AI-assisted.** Written in a ChatGPT session and shared by a power user; paraphrased, and the reading of it is mine.
 - **The vendors' capabilities are their own claims.** Read from their pages on 21 October 2026, not tested.
 - **Our dots are rings.** In the figure, RiskMandate supplies the policy for each layer, not a product in it.
 - **The hooks are settings.** Kept by the agent's own harness; a boundary needs something outside it.
@@ -139,7 +139,7 @@ The analyst's closing question is the best way to find them: which agent action 
 
 ## Where this comes from
 
-An analyst's note to us from the WestCap CISO Summit, 21 October 2026, paraphrased. Drata's [announcement of 4 August 2026](https://drata.com/about/news/drata-extends-trust-management-platform-to-continuously-monitor-and-govern-ai-agents); Endor Labs' [agent governance](https://www.endorlabs.com/learn/agent-governance); Socket's MCP server and hook documentation; Bedrock Data's announcement of March 2026; [Sondera's documentation](https://docs.sondera.ai); and the pages of AWS, Ping Identity, Docker, Bishop Fox, Optiv, Kroll and Sygnia, and the public repositories of agentgateway, Docker, Sondera, Cedar, Socket and Endor Labs, all read the same day. Related: [a briefing for the WestCap CISO Summit](a-briefing-for-the-ciso-summit.md), [the RiskMandate roadmap](the-riskmandate-roadmap.md), [the key is not the risk](the-key-is-not-the-risk.md), [commander's intent is a behaviour policy](commanders-intent-is-a-behaviour-policy.md), [Cedar and the policy vault](cedar-and-the-policy-vault.md), [our first customers](our-first-customers.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A note to us from the WestCap CISO Summit, 21 October 2026, written in a ChatGPT session and shared by one of our power users, paraphrased. Drata's [announcement of 4 August 2026](https://drata.com/about/news/drata-extends-trust-management-platform-to-continuously-monitor-and-govern-ai-agents); Endor Labs' [agent governance](https://www.endorlabs.com/learn/agent-governance); Socket's MCP server and hook documentation; Bedrock Data's announcement of March 2026; [Sondera's documentation](https://docs.sondera.ai); and the pages of AWS, Ping Identity, Docker, Bishop Fox, Optiv, Kroll and Sygnia, and the public repositories of agentgateway, Docker, Sondera, Cedar, Socket and Endor Labs, all read the same day. Related: [a briefing for the WestCap CISO Summit](a-briefing-for-the-ciso-summit.md), [the RiskMandate roadmap](the-riskmandate-roadmap.md), [the key is not the risk](the-key-is-not-the-risk.md), [commander's intent is a behaviour policy](commanders-intent-is-a-behaviour-policy.md), [Cedar and the policy vault](cedar-and-the-policy-vault.md), [our first customers](our-first-customers.md). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
 
 ## Threads
 
@@ -148,6 +148,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#an-ana
 ### Builds on
 
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](a-briefing-for-the-ciso-summit.md) A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](what-can-your-agent-reach.md) RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.
 - [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](the-key-is-not-the-risk.md) Credential injection for AI agents is a good pattern; the first question is still what an attacker can make the agent do.
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
@@ -159,6 +160,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#an-ana
 
 ### Continued by
 
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](drift-is-the-mandate-moving.md) An analyst's case for drift as RiskMandate's thesis, and the versioned behaviour policy that drift is measured against.
 
 [All articles](index.md) · [All graphs](graphs.md)

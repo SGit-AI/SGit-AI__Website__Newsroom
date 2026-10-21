@@ -24,7 +24,7 @@ status: published
 
 ## The note {#note}
 
-My business partner is at the [WestCap CISO Summit](/articles/a-briefing-for-the-ciso-summit.html) in New York this week, and one of our power users, an analyst, sent us a note from it: what RiskMandate should borrow from the companies whose logos were on the backdrop. In short, it says:
+My business partner is at the [WestCap CISO Summit](/articles/a-briefing-for-the-ciso-summit.html) in New York this week, and one of our power users sent us a note from it: what RiskMandate should borrow from the companies whose logos were on the backdrop. To be clear about where it came from: the analysis was written in a ChatGPT session, an AI-assisted analysis rather than independent market research. I later gave this answer back to that session, and its review, which corrects some of what is here, is in [approved business mandates](/articles/approved-business-mandates.html). In short, the note says:
 
 - **Study seven companies.** Socket for risky tools and packages, Endor Labs for prioritising by what is reachable, Drata for continuous controls and evidence, Bedrock Data for what data agents can reach, Bishop Fox for adversarial testing, Kroll for incident investigation, and Optiv for reaching CISOs through existing budgets. Its own caveat: these are analogies, not claims that the products work alike.
 - **Combine three of them.** Socket's view of capabilities, Drata's machine-testable controls and Bedrock Data's map of data exposure, so that RiskMandate governs what an agent may do, with which data, in which circumstances, and with what consequences.
@@ -81,12 +81,12 @@ That matters because the right control depends on what is at stake. There are en
 
 Here is where I would change the plan. Its first build item is intercepting agents' tool calls ourselves. I think that is the wrong first bet for us, for three reasons.
 
-First, it puts us in line. As we argued in [the key is not the risk](/articles/the-key-is-not-the-risk.html), a proxy in the middle is a single point of failure, and it usually lacks the context to judge a request that looks valid; the state lives in the application. Second, the space is full: Drata, Sondera, AWS and the gateway makers all intercept tool calls already, and the customers we want already run some of them. Third, it is not what we are best at. As abp.sgit.ai puts it, a behaviour policy is "not a guardrail. It is what guardrails are compiled from."
+First, it puts us in line. As we argued in [the key is not the risk](/articles/the-key-is-not-the-risk.html), a proxy in the middle adds a component that every call depends on, unless it is deployed redundantly, and it usually lacks the context to judge a request that looks valid; the state lives in the application. Second, the space is full: Drata, Sondera, AWS and the gateway makers all intercept tool calls already, and the customers we want already run some of them. Third, it is not what we are best at. As abp.sgit.ai puts it, a behaviour policy is "not a guardrail. It is what guardrails are compiled from."
 
 But that does not mean we only describe. We have started to play in block and prevent, in two ways that do not put a new box in the customer's path:
 
 - **Hooks in the agent's own harness.** They see each tool call before it runs and can block it. They can also keep state across a session, so the analyst's sequence, read, export, send, can be one rule. Honestly labelled, a hook the agent's account can change is a setting, not a boundary, and the policy says so.
-- **The same rules, compiled for the enforcement points customers already run.** We have already compiled our rules to Cedar and tested them, the language Sondera and AWS evaluate. Kept by a gateway outside the agent's reach, the same rule becomes a boundary.
+- **The same rules, compiled for the enforcement points customers already run.** We have shown it on a small scale: five rules written for an earlier article, evaluated in Cedar, the language Sondera and AWS use, against fourteen requests. That is a demonstration, not yet a general compiler. Kept by a gateway outside the agent's reach, the same rule becomes a boundary.
 
 And we map the environment first, so the customer knows which of their agents needs which, and why.
 
@@ -126,7 +126,7 @@ The analyst's closing question is the best way to find them: which agent action 
 
 ## What this does not claim {#limits}
 
-- **The note is the analyst's.** Paraphrased, not quoted; the reading of it is mine.
+- **The note is AI-assisted.** Written in a ChatGPT session and shared by a power user; paraphrased, and the reading of it is mine.
 - **The vendors' capabilities are their own claims.** Read from their pages on 21 October 2026, not tested.
 - **Our dots are rings.** In the figure, RiskMandate supplies the policy for each layer, not a product in it.
 - **The hooks are settings.** Kept by the agent's own harness; a boundary needs something outside it.
@@ -135,4 +135,4 @@ The analyst's closing question is the best way to find them: which agent action 
 
 ## Where this comes from {#sources}
 
-An analyst's note to us from the WestCap CISO Summit, 21 October 2026, paraphrased. Drata's [announcement of 4 August 2026](https://drata.com/about/news/drata-extends-trust-management-platform-to-continuously-monitor-and-govern-ai-agents); Endor Labs' [agent governance](https://www.endorlabs.com/learn/agent-governance); Socket's MCP server and hook documentation; Bedrock Data's announcement of March 2026; [Sondera's documentation](https://docs.sondera.ai); and the pages of AWS, Ping Identity, Docker, Bishop Fox, Optiv, Kroll and Sygnia, and the public repositories of agentgateway, Docker, Sondera, Cedar, Socket and Endor Labs, all read the same day. Related: [a briefing for the WestCap CISO Summit](/articles/a-briefing-for-the-ciso-summit.html), [the RiskMandate roadmap](/articles/the-riskmandate-roadmap.html), [the key is not the risk](/articles/the-key-is-not-the-risk.html), [commander's intent is a behaviour policy](/articles/commanders-intent-is-a-behaviour-policy.html), [Cedar and the policy vault](/articles/cedar-and-the-policy-vault.html), [our first customers](/articles/our-first-customers.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A note to us from the WestCap CISO Summit, 21 October 2026, written in a ChatGPT session and shared by one of our power users, paraphrased. Drata's [announcement of 4 August 2026](https://drata.com/about/news/drata-extends-trust-management-platform-to-continuously-monitor-and-govern-ai-agents); Endor Labs' [agent governance](https://www.endorlabs.com/learn/agent-governance); Socket's MCP server and hook documentation; Bedrock Data's announcement of March 2026; [Sondera's documentation](https://docs.sondera.ai); and the pages of AWS, Ping Identity, Docker, Bishop Fox, Optiv, Kroll and Sygnia, and the public repositories of agentgateway, Docker, Sondera, Cedar, Socket and Endor Labs, all read the same day. Related: [a briefing for the WestCap CISO Summit](/articles/a-briefing-for-the-ciso-summit.html), [the RiskMandate roadmap](/articles/the-riskmandate-roadmap.html), [the key is not the risk](/articles/the-key-is-not-the-risk.html), [commander's intent is a behaviour policy](/articles/commanders-intent-is-a-behaviour-policy.html), [Cedar and the policy vault](/articles/cedar-and-the-policy-vault.html), [our first customers](/articles/our-first-customers.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
