@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 2,108 | first published | this release | [current](../answering-a-draft.md) |
+| **v1.0.0** | 2026-10-21 | published | 2,108 | first published | [`4d5cc42bc`](https://github.com/SGit-AI/SGit-AI__Website/commit/4d5cc42bc3ed9831e68784bcd6e924936e851175) | [current](../answering-a-draft.md) |
 
 [← Back to the article](../answering-a-draft.md) · [All articles](../index.md)
 

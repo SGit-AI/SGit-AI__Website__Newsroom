@@ -55,6 +55,195 @@
   ],
   "articles": [
     {
+      "slug": "the-attack-surface-you-do-not-have",
+      "title": "The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-attack-surface-you-do-not-have.webp",
+      "teaser": "Every CVE makes me smile: moving to the client side took my servers out of the news, and the constraint turned out to be speed.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "security",
+        "architecture",
+        "client-side",
+        "attack-surface",
+        "article"
+      ],
+      "links_out": [
+        "the-no-server-startup",
+        "inside-the-no-server-studio",
+        "the-code-you-do-not-ship",
+        "the-minimum-code-below",
+        "the-user-keeps-the-meter",
+        "messaging-fs",
+        "aws-from-the-vault",
+        "the-sgit-ai-sites-in-numbers"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "cv-month.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cv-month.webp",
+          "caption": "A month of critical vulnerabilities in server software, from 22 September to 21 October 2026: PHP, Plex Media Server, SiteGuard, Palo Alto PAN-OS, Cisco Secure Email Gateway, Ahsay, Ivanti Connect Secure, Zammad, Fortinet FortiMail, Citrix NetScaler and WordPress. My exposure to each: none.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cv-surface.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cv-surface.webp",
+          "caption": "The attack surface compared. A typical web product runs a web server and runtime, a framework and CMS, a database, admin panels and APIs, VPN and mail gateways, and file processing. These sites run static files, the reader's browser, and one upload server that stores ciphertext.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cv-speed.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cv-speed.webp",
+          "caption": "The constraint gives speed: 45 live sgit.ai sites, all static, in eleven weeks; 1,306 pages on this newsroom, with a meter and payments; 3 customers on customers.riskmandate.ai; and one server of our own, SG/Send, which stores only ciphertext.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-attack-surface-you-do-not-have",
+        "teaser": "Every CVE makes me smile: moving to the client side took my servers out of the news, and the constraint turned out to be speed.",
+        "topics": [
+          "site-and-engineering"
+        ],
+        "core_idea": "Moving everything that can run in the browser to the client, with no database and no back end, leaves one upload server that stores only ciphertext, so a month of critical server vulnerabilities needs no response, and the same constraint makes building faster, leaner and more scalable; internal applications remain the growing risk, and every component should justify being on the server.",
+        "nodes": [
+          {
+            "id": "php",
+            "label": "Today's PHP flaws",
+            "kind": "example",
+            "summary": "Unauthenticated remote code execution."
+          },
+          {
+            "id": "month",
+            "label": "A month of critical server flaws",
+            "kind": "example",
+            "summary": "Gateways, firewalls, WordPress."
+          },
+          {
+            "id": "surface",
+            "label": "The attack surface you do not have",
+            "kind": "claim",
+            "summary": "Static files, the browser, one ciphertext store."
+          },
+          {
+            "id": "constraint",
+            "label": "No database, no back end",
+            "kind": "method",
+            "summary": "Everything possible on the client."
+          },
+          {
+            "id": "speed",
+            "label": "The constraint is speed",
+            "kind": "claim",
+            "summary": "45 static sites in eleven weeks."
+          },
+          {
+            "id": "lean",
+            "label": "Leaner, scalable",
+            "kind": "claim",
+            "summary": "Fewer parts; readers bring compute."
+          },
+          {
+            "id": "internal",
+            "label": "Internal apps",
+            "kind": "claim",
+            "summary": "Rarely tested like public ones."
+          },
+          {
+            "id": "question",
+            "label": "Why the server?",
+            "kind": "question",
+            "summary": "Asked of every component."
+          },
+          {
+            "id": "clientrisk",
+            "label": "Client-side risks",
+            "kind": "concept",
+            "summary": "XSS, supply chain, the browser."
+          }
+        ],
+        "edges": [
+          {
+            "from": "php",
+            "to": "month",
+            "rel": "example-of"
+          },
+          {
+            "from": "constraint",
+            "to": "surface",
+            "rel": "produces"
+          },
+          {
+            "from": "surface",
+            "to": "month",
+            "rel": "answers"
+          },
+          {
+            "from": "constraint",
+            "to": "speed",
+            "rel": "produces"
+          },
+          {
+            "from": "speed",
+            "to": "lean",
+            "rel": "extends"
+          },
+          {
+            "from": "internal",
+            "to": "constraint",
+            "rel": "leads-to"
+          },
+          {
+            "from": "question",
+            "to": "constraint",
+            "rel": "leads-to"
+          },
+          {
+            "from": "clientrisk",
+            "to": "surface",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-no-server-startup",
+            "inside-the-no-server-studio",
+            "the-code-you-do-not-ship",
+            "the-minimum-code-below",
+            "the-user-keeps-the-meter",
+            "messaging-fs",
+            "aws-from-the-vault",
+            "the-sgit-ai-sites-in-numbers"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/articles/no-server-by-design.html",
+            "https://newsroom.sgit.ai/articles/who-are-you-protecting-against.html",
+            "https://newsroom.sgit.ai/articles/saas-apocalypse-decided-by-inertia-not-by-ai.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "That is the best model: not responding faster to these things, but not having to worry about them at all.",
+            "why": "The model."
+          },
+          {
+            "text": "It is the opposite.",
+            "why": "Constraint as speed."
+          },
+          {
+            "text": "Most of the time, in my experience, the honest answer is habit.",
+            "why": "The question."
+          }
+        ]
+      }
+    },
+    {
       "slug": "answering-a-draft",
       "title": "Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue",
       "date": "2026-10-21",
@@ -1110,6 +1299,7 @@
         "how-a-memo-becomes-a-release"
       ],
       "links_in": [
+        "the-attack-surface-you-do-not-have",
         "plural-for-the-family-singular-for-the-site"
       ],
       "figures": [
@@ -1463,7 +1653,9 @@
         "pki-everywhere",
         "agent-workflows-on-ephemeral-vaults"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-attack-surface-you-do-not-have"
+      ],
       "figures": [
         {
           "file": "mf-vaults.webp",
@@ -1670,6 +1862,7 @@
         "agent-workflows-on-ephemeral-vaults"
       ],
       "links_in": [
+        "the-attack-surface-you-do-not-have",
         "plural-for-the-family-singular-for-the-site"
       ],
       "figures": [
@@ -1882,6 +2075,7 @@
         "free-to-copy-paid-at-the-source"
       ],
       "links_in": [
+        "the-attack-surface-you-do-not-have",
         "messaging-fs",
         "aws-from-the-vault"
       ],
@@ -4053,6 +4247,7 @@
         "free-models-your-own-key"
       ],
       "links_in": [
+        "the-attack-surface-you-do-not-have",
         "a-leak-without-breaking-the-policy",
         "the-no-server-startup"
       ],
@@ -4247,6 +4442,7 @@
         "inside-the-no-server-studio"
       ],
       "links_in": [
+        "the-attack-surface-you-do-not-have",
         "inside-the-no-server-studio"
       ],
       "figures": [
@@ -11844,6 +12040,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "the-attack-surface-you-do-not-have",
         "the-open-security-summit-and-its-debt",
         "jobs-that-never-scaled",
         "the-no-server-startup",
@@ -27792,6 +27989,7 @@
         "introducing-fractal-semantic-graphs"
       ],
       "links_in": [
+        "the-attack-surface-you-do-not-have",
         "jobs-that-never-scaled",
         "the-code-you-do-not-ship",
         "cloudflare-as-lego-blocks",
