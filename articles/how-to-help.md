@@ -90,6 +90,10 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#how-to
 - [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](our-first-customers.md) Agent Behaviour Policies move to execution: a first batch of customers with credit, a start-here site, daily follow-up, and a list for the next batch.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](answering-a-draft.md) How email works now: the agent drafts and logs, I send, and a decision draft turns the drafts folder into a work queue.
 
+### Continued by
+
+- [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](an-analysts-blueprint-for-riskmandate.md) An analyst's blueprint for RiskMandate from the WestCap CISO Summit, the vendors already moving, and our answer.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 250 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=250)

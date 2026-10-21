@@ -1,0 +1,37 @@
+{
+ "slug": "an-analysts-blueprint-for-riskmandate",
+ "teaser": "An analyst's blueprint for RiskMandate from the WestCap CISO Summit, the vendors already moving, and our answer.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "An analyst's blueprint for RiskMandate, control what agents do and not just what they can access, matches the Agent Behaviour Policy's grant against mandate; with Drata, Endor Labs, Socket, Sondera, AWS and gateway makers already intercepting tool calls, RiskMandate should be the open policy those enforcement points are configured from, blocking through hooks and compiled gateway rules rather than adding another box in line, and it now needs customers to do it for real.",
+ "nodes": [
+  {"id": "note", "label": "The analyst's blueprint", "kind": "artefact", "summary": "Discover, evaluate, enforce, prove."},
+  {"id": "thesis", "label": "Control what agents do", "kind": "claim", "summary": "Grant against mandate."},
+  {"id": "question", "label": "The CISO question", "kind": "question", "summary": "Never permitted, even with valid credentials."},
+  {"id": "vendors", "label": "Vendors already moving", "kind": "example", "summary": "Drata, Endor Labs, Socket, Sondera, AWS."},
+  {"id": "drata", "label": "Drata AI Agent Governance", "kind": "example", "summary": "Plain-English policy, enforced inline."},
+  {"id": "inline", "label": "Not another box in the middle", "kind": "claim", "summary": "In line, without context, in a full market."},
+  {"id": "hooks", "label": "Hooks that block", "kind": "method", "summary": "In the agent's harness; settings."},
+  {"id": "compiled", "label": "Rules compiled for gateways", "kind": "method", "summary": "Cedar kept outside the agent."},
+  {"id": "customers", "label": "Customers, for real", "kind": "claim", "summary": "One workflow and one agent each."}
+ ],
+ "edges": [
+  {"from": "note", "to": "thesis", "rel": "produces"},
+  {"from": "question", "to": "thesis", "rel": "example-of"},
+  {"from": "drata", "to": "vendors", "rel": "example-of"},
+  {"from": "vendors", "to": "inline", "rel": "leads-to"},
+  {"from": "hooks", "to": "inline", "rel": "answers"},
+  {"from": "compiled", "to": "inline", "rel": "answers"},
+  {"from": "hooks", "to": "compiled", "rel": "compared-with"},
+  {"from": "question", "to": "customers", "rel": "leads-to"}
+ ],
+ "links": {
+  "articles": ["a-briefing-for-the-ciso-summit", "the-riskmandate-roadmap", "the-key-is-not-the-risk", "commanders-intent-is-a-behaviour-policy", "cedar-and-the-policy-vault", "our-first-customers", "what-can-your-agent-reach", "inside-the-pellbridge-agents", "how-to-help"],
+  "pages": [],
+  "sites": ["https://drata.com/about/news/drata-extends-trust-management-platform-to-continuously-monitor-and-govern-ai-agents", "https://docs.sondera.ai", "https://customers.riskmandate.ai/"]
+ },
+ "quotes": [
+  {"text": "the policy layer, not another runtime layer", "why": "Our answer."},
+  {"text": "Bluntly, what we need now are the customers, to do this for real.", "why": "The ask."},
+  {"text": "Every answer is the first row of a mandate.", "why": "The CISO question."}
+ ]
+}
