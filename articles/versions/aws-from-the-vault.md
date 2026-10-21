@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-21 | minor | 2,218 | +204 / −4 words; 6 changed, 3 added, 0 removed paragraphs | this release | [what changed](aws-from-the-vault/v1.2.0.md) · [current](../aws-from-the-vault.md) |
+| **v1.2.0** | 2026-10-21 | minor | 2,218 | +204 / −4 words; 6 changed, 3 added, 0 removed paragraphs | [`c06c9ae1e`](https://github.com/SGit-AI/SGit-AI__Website/commit/c06c9ae1ebc25440a5c3a751f3f05d70fd609c57) | [what changed](aws-from-the-vault/v1.2.0.md) · [current](../aws-from-the-vault.md) |
 | **v1.1.0** | 2026-10-21 | minor | 2,018 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`2d1bfa2af`](https://github.com/SGit-AI/SGit-AI__Website/commit/2d1bfa2af37e9eb5650b2517cfda4f361f7e5157) | [what changed](aws-from-the-vault/v1.1.0.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,016 | first published | [`1adde1954`](https://github.com/SGit-AI/SGit-AI__Website/commit/1adde1954b0f99c8c171cdd0cd55a68e586cbb7b) |  |
 
