@@ -75,20 +75,29 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # Chromium is cached between runs (v0.13.7): it is the same build for a given Playwright version, and
+      # downloading it was most of the 1m40s this step took. The system libraries still come from apt.
+      - name: Cache Playwright's Chromium
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-1.56.1-chromium-${{ runner.os }}
       - name: Install Playwright's Chromium
         run: |
           npm install --no-save --no-audit --no-fund playwright@1.56.1 jsqr@1.4.0
-          npx playwright install --with-deps chromium
+          if [ "${{ steps.pw-cache.outputs.cache-hit }}" = "true" ]; then
+            npx playwright install-deps chromium
+          else
+            npx playwright install --with-deps chromium
+          fi
       - name: Install sgit-ai 0.21.0, for the vault test's CLI round trip
         run: python3 -m pip install --quiet 'sgit-ai==0.21.0' && sgit --version
+      # Every admin/build/test_*.mjs, four at a time (v0.13.7; one at a time they took six minutes). Each test
+      # serves on a port the system picks and drives its own browser. The two that measure timing run alone,
+      # after the rest; a test that prints SKIP fails the job. admin/build/run_tests.sh has the details.
       - name: The meter, the reading lists, the review's findings, the passkey lab, the wire and the themes in Chromium, and the vault library in Node
-        run: |
-          set -euo pipefail
-          for t in test_meter.mjs test_lists.mjs test_review.mjs test_passkey.mjs test_wire.mjs test_graphs.mjs test_vault.mjs test_sync.mjs test_pane.mjs test_notes.mjs test_search.mjs test_ask.mjs test_themes.mjs test_inbox.mjs test_front.mjs test_reading.mjs test_vault_open.mjs; do
-            echo "== $t"
-            node admin/build/$t | tee /tmp/$t.log
-            if grep -q '^SKIP' /tmp/$t.log; then echo "::error::$t skipped: Playwright or Chromium missing on the runner"; exit 1; fi
-          done
+        run: bash admin/build/run_tests.sh 4 /tmp/test-logs
 
   tag-release:
     runs-on: ubuntu-latest
@@ -121,10 +130,12 @@ jobs:
           # Backfill: every release commit carries its version in the subject
           # ("site vR.M.N: ..."). Tag any that are missing — idempotent, so this
           # is a no-op on every run after the first.
+          NEWTAGS=""
           while IFS=';' read -r h s; do
             v=$(printf '%s' "$s" | grep -oP '^site v\K[0-9]+\.[0-9]+\.[0-9]+(?=:)' || true)
             if [ -n "$v" ] && ! git rev-parse -q --verify "refs/tags/v$v" >/dev/null; then
               git tag "v$v" "$h"
+              NEWTAGS="$NEWTAGS v$v"
               echo "backfilled v$v -> ${h:0:9}"
             fi
           done <<< "$LOG"
@@ -184,8 +195,10 @@ jobs:
           # push a ref to a commit whose tree carries a DIFFERENT
           # .github/workflows blob, so releases predating a workflow change may
           # be rejected. Push what is accepted, report what is not.
+          # Only the tags this run made: the ones already on the remote need no push, and pushing all of
+          # them, one round trip each, had grown to more than a minute a run (v0.13.7).
           MISSED=0
-          for t in $(git tag --list 'v*'); do
+          for t in $NEWTAGS; do
             [ "$t" = "$TAG" ] && continue
             if git push origin "refs/tags/$t" >/dev/null 2>&1; then
               echo "backfill ok: $t"

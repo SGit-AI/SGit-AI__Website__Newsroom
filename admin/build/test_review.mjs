@@ -36,7 +36,10 @@ const walk = d => { for (const e of fs.readdirSync(d, { withFileTypes: true })) 
 walk(ROOT)
 pin('R10', evalPages > 300 && cspPages === 0, `${evalPages} of ${total} pages run fetched text through eval, and ${cspPages} set a Content-Security-Policy`)
 const wf = read('.github/workflows/deploy-pages.yml')
-pin('R11', /test_meter\.mjs/.test(wf) && /test_lists\.mjs/.test(wf) && /test_review\.mjs/.test(wf), 'CI runs the three test files (this one records the fix, not the bug)')
+// Since v0.13.7 the workflow runs every admin/build/test_*.mjs through run_tests.sh rather than naming each file.
+const runner = fs.existsSync(path.join(ROOT, 'admin/build/run_tests.sh')) ? read('admin/build/run_tests.sh') : ''
+const allRun = /admin\/build\/run_tests\.sh/.test(wf) && /admin\/build\/test_\*\.mjs/.test(runner)
+pin('R11', allRun || (/test_meter\.mjs/.test(wf) && /test_lists\.mjs/.test(wf) && /test_review\.mjs/.test(wf)), 'CI runs the three test files (this one records the fix, not the bug)')
 const core = read('assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter-core.js')
 pin('R14', !/sessions\s*=\s*this\.state\.sessions\.slice/.test(core) && /this\.state\.sessions\.push\(ref\)/.test(core), 'payment references are kept unbounded and unchecked')
 pin('R15', /\|\| this\.state\.personas\[0\]/.test(core), 'persona(id) falls back to personas[0], not to “me”')
