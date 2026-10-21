@@ -55,6 +55,384 @@
   ],
   "articles": [
     {
+      "slug": "the-human-is-the-network",
+      "title": "The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-human-is-the-network.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-human-is-the-network.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-human-is-the-network.webp",
+      "teaser": "Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "qr-codes",
+        "pki",
+        "encryption",
+        "agents",
+        "experiments",
+        "article"
+      ],
+      "links_out": [
+        "sixteen-notes-i-did-not-want-to-lose",
+        "secrets-on-public-keys",
+        "a-directory-of-people-and-keys",
+        "handing-secrets-to-agents"
+      ],
+      "links_in": [
+        "a-secret-is-a-qr-code"
+      ],
+      "figures": [
+        {
+          "file": "hn-collage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hn-collage.webp",
+          "caption": "Text, then JSON, then binary, then PKI, each in one QR code: a plain message, a signed JSON key offer, a compressed vector graphic, a photo-like image, an X.509 certificate and an encrypted message, passed between two Claude sessions by screenshot and paste, and each decoded and verified on arrival. Made by Session B.",
+          "kind": "infographic"
+        },
+        {
+          "file": "hn-screenshot.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hn-screenshot.webp",
+          "caption": "The screenshot that carried four QR codes from one session to the other, as Session A showed them in its chat: from a short message to the largest code the format allows, the one on the right, 2,953 bytes.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "hn-capacity.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hn-capacity.webp",
+          "caption": "Left: the bytes in each code of the graded test set, from 53 for a short message to 2,953 for the largest code, with its QR version. Right: a version 40 code holds 2,953 bytes written raw, 2,864 as base45 and 2,214 as base64.",
+          "kind": "comparison"
+        },
+        {
+          "file": "hn-images.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hn-images.webp",
+          "caption": "Two images inside single QR codes, each next to the image rebuilt from its decoded bytes: the whole infographic as compressed SVG, 539 bytes, and a 480 by 320 photo-like image as AVIF, 2,083 bytes.",
+          "kind": "comparison"
+        },
+        {
+          "file": "hn-exchange.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hn-exchange.webp",
+          "caption": "The key exchange by screenshot: Session B publishes an X25519 public key as a QR code; the person carries it; Session A encrypts and signs a message to it and returns it as a QR code of 1,329 bytes; Session B decrypts it.",
+          "kind": "concept"
+        },
+        {
+          "file": "hn-first.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/hn-first.webp",
+          "caption": "Session B's reply to the first QR code: it decoded the signed key offer, verified the Ed25519 signature, and pointed out that this proves integrity, not authenticity.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "the-human-is-the-network",
+        "teaser": "Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.",
+        "topics": [
+          "site-and-engineering"
+        ],
+        "core_idea": "A person relaying screenshots between two isolated AI sessions is a lossless channel for QR codes up to the format's 2,953-byte limit, enough for keys, certificates, compressed images and encrypted, signed messages; the trust still comes from signatures and a human checking fingerprints, and QR codes are a friendlier way to move keys than blobs of text.",
+        "nodes": [
+          {
+            "id": "relay",
+            "label": "The human relay",
+            "kind": "method",
+            "summary": "Screenshot, paste, nothing else."
+          },
+          {
+            "id": "layers",
+            "label": "Layer by layer",
+            "kind": "example",
+            "summary": "Text, JSON, keys, images, encryption."
+          },
+          {
+            "id": "screenshot",
+            "label": "Four codes in one screenshot",
+            "kind": "example",
+            "summary": "2,953 bytes at 1.3 px a square."
+          },
+          {
+            "id": "capacity",
+            "label": "Capacity",
+            "kind": "concept",
+            "summary": "2,953 bytes; base45 costs 3%."
+          },
+          {
+            "id": "images",
+            "label": "Images in a code",
+            "kind": "example",
+            "summary": "An infographic in 539 bytes."
+          },
+          {
+            "id": "exchange",
+            "label": "The key exchange",
+            "kind": "artefact",
+            "summary": "QRE1: X25519, ChaCha20-Poly1305, Ed25519."
+          },
+          {
+            "id": "failures",
+            "label": "The failures",
+            "kind": "claim",
+            "summary": "No reading by eye; a lost key."
+          },
+          {
+            "id": "auth",
+            "label": "Integrity is not authenticity",
+            "kind": "concept",
+            "summary": "Fingerprints checked by a person."
+          },
+          {
+            "id": "friendly",
+            "label": "Friendlier than text blobs",
+            "kind": "claim",
+            "summary": "Keys a person can see and hand over."
+          }
+        ],
+        "edges": [
+          {
+            "from": "relay",
+            "to": "screenshot",
+            "rel": "produces"
+          },
+          {
+            "from": "layers",
+            "to": "exchange",
+            "rel": "leads-to"
+          },
+          {
+            "from": "screenshot",
+            "to": "capacity",
+            "rel": "example-of"
+          },
+          {
+            "from": "images",
+            "to": "capacity",
+            "rel": "example-of"
+          },
+          {
+            "from": "failures",
+            "to": "auth",
+            "rel": "leads-to"
+          },
+          {
+            "from": "exchange",
+            "to": "auth",
+            "rel": "depends-on"
+          },
+          {
+            "from": "relay",
+            "to": "friendly",
+            "rel": "produces"
+          },
+          {
+            "from": "friendly",
+            "to": "exchange",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "sixteen-notes-i-did-not-want-to-lose",
+            "secrets-on-public-keys",
+            "handing-secrets-to-agents",
+            "a-directory-of-people-and-keys"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "one of those super interesting sort of serendipity things that happens when you're doing a bunch of experiments",
+            "why": "The question."
+          },
+          {
+            "text": "QR codes are way more user friendly than what we were using to share the vault keys and the encrypted messages.",
+            "why": "Why it matters."
+          },
+          {
+            "text": "A signature proves the bytes did not change; a key that travels inside its own message proves nothing about who sent it.",
+            "why": "Integrity is not authenticity."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-secret-is-a-qr-code",
+      "title": "A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-secret-is-a-qr-code.webp",
+      "teaser": "Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "qr-codes",
+        "pki",
+        "secrets",
+        "agents",
+        "encryption",
+        "article"
+      ],
+      "links_out": [
+        "the-human-is-the-network",
+        "handing-secrets-to-agents",
+        "secrets-on-public-keys",
+        "a-directory-of-people-and-keys",
+        "sixteen-notes-i-did-not-want-to-lose"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "qw-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/qw-flow.webp",
+          "caption": "The workflow: publish my public key as a QR code and a link; their browser or agent encrypts the secret to it and adds its own public key; the ciphertext travels as a QR code by any channel; I decrypt it and check their fingerprint once; from then on it is two-way. Agents do the same.",
+          "kind": "concept"
+        },
+        {
+          "file": "qw-prior.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/qw-prior.webp",
+          "caption": "Who already moves keys and secrets in QR codes: the EU Digital COVID Certificate, key verification in Signal, WhatsApp and Matrix, device linking in Signal and WhatsApp, Threema, passkeys on another device, offline wallets, Keybase and OpenKeychain, and provisioning codes for authenticators, Wi-Fi, WireGuard and eSIMs.",
+          "kind": "comparison"
+        },
+        {
+          "file": "qw-qre1.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/qw-qre1.webp",
+          "caption": "Anatomy of a QRE1 frame: the version, the recipient's key id, the sender's one-off X25519 key, a nonce, the ChaCha20-Poly1305 ciphertext, and optionally the sender's Ed25519 key and signature, in one line of text.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "a-secret-is-a-qr-code",
+        "teaser": "Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.",
+        "topics": [
+          "site-and-engineering"
+        ],
+        "core_idea": "Publishing a public key as a QR code and a link lets anyone, person or agent, return a secret encrypted to it as another QR code carrying their own key, so one exchange becomes a two-way, serverless channel trusted by a one-time fingerprint check; each piece is proven elsewhere, and the experiment's QRE1 frame can become a shared format with chunking, forward secrecy and an identity.",
+        "nodes": [
+          {
+            "id": "workflow",
+            "label": "A secret is a QR code",
+            "kind": "method",
+            "summary": "A key link out, a QR code back."
+          },
+          {
+            "id": "twoway",
+            "label": "Two-way after one exchange",
+            "kind": "claim",
+            "summary": "The first message carries the sender's key."
+          },
+          {
+            "id": "fingerprint",
+            "label": "The fingerprint check",
+            "kind": "concept",
+            "summary": "Once, out of band."
+          },
+          {
+            "id": "agents",
+            "label": "Agents in the loop",
+            "kind": "example",
+            "summary": "Their own key pairs."
+          },
+          {
+            "id": "prior",
+            "label": "Prior art",
+            "kind": "example",
+            "summary": "Certificates, key checks, device linking, wallets."
+          },
+          {
+            "id": "signal",
+            "label": "Signal device linking",
+            "kind": "example",
+            "summary": "A public key out, a message encrypted back."
+          },
+          {
+            "id": "quishing",
+            "label": "Quishing",
+            "kind": "concept",
+            "summary": "QR codes as a phishing route."
+          },
+          {
+            "id": "qre1",
+            "label": "QRE1",
+            "kind": "artefact",
+            "summary": "One-line encrypted frame."
+          },
+          {
+            "id": "additions",
+            "label": "Three additions",
+            "kind": "method",
+            "summary": "Chunking, forward secrecy, identity."
+          }
+        ],
+        "edges": [
+          {
+            "from": "workflow",
+            "to": "twoway",
+            "rel": "produces"
+          },
+          {
+            "from": "twoway",
+            "to": "fingerprint",
+            "rel": "depends-on"
+          },
+          {
+            "from": "agents",
+            "to": "workflow",
+            "rel": "extends"
+          },
+          {
+            "from": "signal",
+            "to": "workflow",
+            "rel": "compared-with"
+          },
+          {
+            "from": "signal",
+            "to": "prior",
+            "rel": "example-of"
+          },
+          {
+            "from": "quishing",
+            "to": "fingerprint",
+            "rel": "leads-to"
+          },
+          {
+            "from": "qre1",
+            "to": "workflow",
+            "rel": "answers"
+          },
+          {
+            "from": "additions",
+            "to": "qre1",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-human-is-the-network",
+            "secrets-on-public-keys",
+            "handing-secrets-to-agents",
+            "a-directory-of-people-and-keys",
+            "sixteen-notes-i-did-not-want-to-lose"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "all I have to do now is send them a QR code and the link to my public key",
+            "why": "The workflow."
+          },
+          {
+            "text": "It's just unusable. It's not practical. It looks messy.",
+            "why": "Why not text."
+          },
+          {
+            "text": "What I have not found is the combination",
+            "why": "Prior art."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-checks-measured",
       "title": "The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives",
       "date": "2026-10-21",
@@ -82,7 +460,7 @@
         {
           "file": "qm-where.webp",
           "url": "https://newsroom.sgit.ai/articles/images/qm-where.webp",
-          "caption": "Where each check runs. The site validator and the 18 test files run in the repository and in CI. The rebuild and sgit.ai's style rules run only on my machine. The summaries, page-width, graph, version and live checks live in this session's scratchpad; the leak scan and the behaviour policy in this container; and the wording check runs nowhere.",
+          "caption": "Where each check runs. The site validator and the 18 test files run in the repository and in CI. The rebuild and sgit.ai's style rules run only on my machine. The summaries, page-width, graph, version and live checks live in this session's scratchpad; and the leak scan, with the wording check it runs, and the behaviour policy in this container.",
           "kind": "comparison"
         },
         {
@@ -9433,6 +9811,8 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "the-human-is-the-network",
+        "a-secret-is-a-qr-code",
         "pki-everywhere",
         "a-book-for-one-reader"
       ],
@@ -22798,6 +23178,8 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "the-human-is-the-network",
+        "a-secret-is-a-qr-code",
         "the-user-keeps-the-meter",
         "a-leak-without-breaking-the-policy",
         "pki-everywhere",
@@ -23011,6 +23393,8 @@
         "the-tokens-hook"
       ],
       "links_in": [
+        "the-human-is-the-network",
+        "a-secret-is-a-qr-code",
         "a-leak-without-breaking-the-policy",
         "pki-everywhere",
         "a-directory-of-people-and-keys",
@@ -30183,6 +30567,8 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-human-is-the-network",
+        "a-secret-is-a-qr-code",
         "the-briefs-so-far",
         "the-editors-channel",
         "the-vault-opened",

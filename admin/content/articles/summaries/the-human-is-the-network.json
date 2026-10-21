@@ -1,0 +1,66 @@
+{
+ "slug": "the-human-is-the-network",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Two AI sessions that share nothing passed keys, a certificate, images and an encrypted message through QR codes I screenshotted.",
+   "para": "In three hours: text, signed JSON, keys, an X.509 certificate, images, then a key exchange. The 2,953-byte maximum decoded from a screenshot at 1.3 pixels a square, byte-identical to the original. The failures matter too: no reading by eye, the decoder mattered, a key was lost. QR codes beat blobs of text for moving keys.",
+   "hash": "4a12cf4f5c01"
+  },
+  "in-short": {
+   "line": "Seven lines: no shared anything, the limit, nothing lost, keys and images, encryption, failures, friendlier.",
+   "para": "The only link was me. One code holds 2,953 bytes and it decoded from a screenshot. Every payload matched byte for byte. Keys, a certificate and a 539-byte infographic fitted. A public key went out and an encrypted message came back. The failures taught the most. QR codes are friendlier than blobs of text.",
+   "hash": "0dcd81123b0c"
+  },
+  "question": {
+   "line": "A serendipitous question: could two sessions with nothing shared talk through QR codes and a person?",
+   "para": "Session A generated codes and Session B decoded and verified them, in two browser tabs with no shared memory, network link or files. The connection was me: a screenshot, a paste, and later a ZIP. Both sessions wrote debriefs, and this article is built from them and their data.",
+   "hash": "811c20fe9166"
+  },
+  "layers": {
+   "line": "Up a layer each time: text, signed JSON, keys and a certificate, binary and images, then encryption.",
+   "para": "An Ed25519 signature still verified after the trip; Ed25519, P-256 and RSA keys and an X.509 certificate parsed and checked; images rebuilt from their bytes. A graded test set of eleven codes, from 53 bytes to the maximum, each with its own hash, all decoded and matched a separate manifest.",
+   "hash": "58f22b182a24"
+  },
+  "screenshot": {
+   "line": "One screenshot of four codes, pasted into the other tab: all four decoded, byte for byte.",
+   "para": "Through a browser's scaling, a Retina screenshot and a clipboard. The version 40 code, 177 by 177 squares in about 230 pixels, about 1.3 pixels a square, decoded first time. Compared with the originals later, every payload was identical: QR error correction absorbed what the screenshot did.",
+   "hash": "c7338bd67ed9"
+  },
+  "capacity": {
+   "line": "2,953 bytes is the ceiling; elliptic-curve keys are tiny; compression did not help; encoding matters.",
+   "para": "An Ed25519 key is 43 characters and RSA-4096 still fits at 800. A zlib-compressed certificate came out larger than an RSA-4096 key, since signed data is near random. Raw bytes hold most but many decoders corrupt them; base45 costs about 3% and survives everywhere.",
+   "hash": "cf748a4b60c2"
+  },
+  "images": {
+   "line": "A whole infographic in 539 bytes as compressed SVG; a photo-like image in 2,083 as AVIF.",
+   "para": "The SVG came back exact and sharp at any size, about a fifth of one code. The 480 by 320 image was generated for the test. As raster the infographic needed 1,881 to 2,810 bytes and lost detail: for anything drawn, vector wins by far.",
+   "hash": "3739612025ab"
+  },
+  "exchange": {
+   "line": "Session B published an X25519 key as a QR code; Session A encrypted and signed a message to it; B decrypted it.",
+   "para": "QRE1 frames: a fresh ephemeral key per message, ChaCha20-Poly1305, an Ed25519 signature, 1,329 bytes in one code, fingerprint aab8 bef5 confirmed first. I carried a public key one way and ciphertext the other, so email or chat would have done as well.",
+   "hash": "ff9ddae2095e"
+  },
+  "failures": {
+   "line": "The failures: no reading by eye, the decoder over resolution, a lost key, integrity not authenticity.",
+   "para": "Session A said plainly it could not decode by looking. OpenCV failed on dense codes; ZXing read them all, and Session B corrected its own explanation. A private key kept only in memory was lost, and Session A signed with a new key and said so. A signature proves bytes, not senders.",
+   "hash": "79af6e9c2bf6"
+  },
+  "why": {
+   "line": "QR codes are friendlier than blobs of text, and point to a client-side channel on public keys.",
+   "para": "In the memo: way more user friendly than what we used to share vault keys and encrypted messages. It extends send to my vault, the ways a secret moves on public keys, and the directory of keys. Today measured the channel; the workflow and who else does this come next.",
+   "hash": "366158ca42d7"
+  },
+  "limits": {
+   "line": "No reading by vision, no proof of sender, a new key not yet accepted, not forward-secret, an experiment.",
+   "para": "A library decodes. Authenticity needs a fingerprint check or pinning on first use. The new signing key waited on my check. Session B's key is long-lived, so not forward-secret. Keys lived in cloud sessions. About 2.9 KB a code; more needs several codes.",
+   "hash": "ac958fde1cc1"
+  },
+  "sources": {
+   "line": "The two sessions' debriefs, their data, scripts and images, and my voice memo of the same afternoon.",
+   "para": "Session A's debrief pack with results, manifest, scripts and images; Session B's briefing and its QRE1 format; my voice memo of 21 October 2026. All images were made in the experiment. Related articles on send to my vault, secrets on public keys, handing secrets to agents, and the directory of keys.",
+   "hash": "d45f05c0f00d"
+  }
+ }
+}

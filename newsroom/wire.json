@@ -73,6 +73,60 @@
   ],
   "articles": [
     {
+      "slug": "the-human-is-the-network",
+      "title": "The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-human-is-the-network.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-human-is-the-network.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-human-is-the-network.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-human-is-the-network.json",
+      "teaser": "Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.",
+      "summary": "This afternoon I ran one of those experiments that starts as a small question and ends somewhere much more interesting. Can two AI sessions that share nothing, no memory, no network link, no files, send each other data through QR codes that I screenshot in one browser tab and paste into another? In about three hours the answer went from maybe to yes, all the way to the format's limit. One session generated the codes; the other decoded and verified them. Text, then signed JSON, then public keys and an X.509 certificate, then images, then a real key exchange: one session published an encryption key as a QR code, the other encrypted and signed a message to it and returned it as a QR code, and the first decrypted it. The densest code, 2,953 bytes, the most one QR code can hold, decoded from a screenshot at about 1.3 pixels per square, and every screenshot payload was byte-identical to the original. The failures are as useful as the results: the AI cannot read a QR code by looking at it, the decoder mattered more than the resolution, and a lost key turned the experiment into a lesson in why fingerprints matter. For me the result is simple: QR codes are a far friendlier way to move keys and encrypted messages than the blobs of text we have been pasting.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "qr-codes",
+        "pki",
+        "encryption",
+        "agents",
+        "experiments",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "a-secret-is-a-qr-code",
+      "title": "A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-secret-is-a-qr-code.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-secret-is-a-qr-code.json",
+      "teaser": "Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.",
+      "summary": "The QR experiment showed that two AI sessions can pass keys and an encrypted message through QR codes and a screenshot. This is what I want to do with it. If I want to give someone a secret, all I have to do now is send them a QR code and a link to my public key; if they want to give me one, they encrypt it to my key and send me back a QR code. The first message carries their public key too, so after one exchange we can both write to each other, and once we have checked each other's fingerprints, we know who we are talking to. The same works for agents: an agent makes its own key pair, publishes the public half, and swaps QR codes with me or with another agent. None of it needs a server. The pieces are not new, and that is a good sign: QR codes already carry signed health certificates, verify keys in messaging apps, sign people in with a passkey on another device, and move signed transactions in and out of offline wallets. What is new is putting them together for secrets and agents, on top of public keys we publish, in a format we can share across our tools. The experiment's QRE1 format is a good start for that, with three things to add.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "qr-codes",
+        "pki",
+        "secrets",
+        "agents",
+        "encryption",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-checks-measured",
       "title": "The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives",
       "date": "2026-10-21",

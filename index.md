@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.25 · 244 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.26 · 246 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](articles/the-attack-surface-you-do-not-have.md), 2026-10-21, 7 min. Every CVE makes me smile: moving to the client side took my servers out of the news, and the constraint turned out to be speed.
+- [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](articles/the-human-is-the-network.md), 2026-10-21, 8 min. Two AI sessions sharing nothing passed keys, a certificate, images and an encrypted message through QR codes and a screenshot.
 
 ## Highlights
 
+- [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](articles/a-secret-is-a-qr-code.md), 2026-10-21, 8 min.
+- [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](articles/the-attack-surface-you-do-not-have.md), 2026-10-21, 7 min.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](articles/answering-a-draft.md), 2026-10-21, 8 min.
 - [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min.
-- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](articles/connect-your-dots-backwards.md), 2026-10-21, 8 min.
-- [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](articles/programming-taught-upside-down.md), 2026-10-21, 7 min.
 
 ## Who are you reading as?
 
@@ -40,11 +40,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min.
 - [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min.
 
-### Vaults & provenance (50)
+### Vaults & provenance (52)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](articles/the-human-is-the-network.md), 2026-10-21, 8 min.
+- [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](articles/a-secret-is-a-qr-code.md), 2026-10-21, 8 min.
 - [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](articles/messaging-fs.md), 2026-10-21, 9 min.
-- [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](articles/aws-from-the-vault.md), 2026-10-21, 8 min.
-- [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](articles/the-user-keeps-the-meter.md), 2026-10-21, 12 min.
 
 ### The future of news (41)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

@@ -43,9 +43,9 @@
    "hash": "4c0fdcd0961a"
   },
   "where": {
-   "line": "Where each check lives: repository and CI; repository, local only; session scratchpad; container; nowhere.",
-   "para": "CI runs the validator and the tests. Only my machine runs the rebuild and sgit.ai's style rules. The summaries, page-width, graph, version and live checks are in my scratchpad; the leak scan and behaviour policy in this container; wording.py runs nowhere. A new session keeps only the first two.",
-   "hash": "05b00c312660"
+   "line": "Where each check lives: repository and CI; repository, local only; session scratchpad; container.",
+   "para": "CI runs the validator and the tests. Only my machine runs the rebuild and sgit.ai's style rules. The summaries, page-width, graph, version and live checks are in my scratchpad; the leak scan, which also runs wording.py, and the behaviour policy are in this container. A new session keeps only the first two.",
+   "hash": "7adb3ab31531"
   },
   "next": {
    "line": "Proposals: tests that gate the deploy, decoupled from live services, five CI jobs, checks in the repo.",
