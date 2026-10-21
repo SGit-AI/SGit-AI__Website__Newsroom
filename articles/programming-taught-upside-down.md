@@ -104,6 +104,10 @@ Startups & strategy[This article as a graph →](graphs.md#programming-taught-up
 - [You are a developer, you just do not call it that: what every GenAI founder I know does all day, the sausage factory they never saw, and why the book may be called Generation ZX Founders](you-are-a-developer.md) Every GenAI founder I know is a developer and does not think so. They never saw the sausage factory. So the book may be Generation ZX Founders.
 - [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md) What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 
+### Continued by
+
+- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](connect-your-dots-backwards.md) Let your LLM interview you about your path: find the side roads, the misread doors, what memory rewrote, and where a startup hides.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 239 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=239)

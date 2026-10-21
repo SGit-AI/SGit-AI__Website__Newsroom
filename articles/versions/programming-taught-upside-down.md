@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 1,746 | first published | this release | [current](../programming-taught-upside-down.md) |
+| **v1.0.0** | 2026-10-21 | published | 1,746 | first published | [`6385c6c40`](https://github.com/SGit-AI/SGit-AI__Website/commit/6385c6c40666f12396d4be384cab7668e3bdef21) | [current](../programming-taught-upside-down.md) |
 
 [← Back to the article](../programming-taught-upside-down.md) · [All articles](../index.md)
 

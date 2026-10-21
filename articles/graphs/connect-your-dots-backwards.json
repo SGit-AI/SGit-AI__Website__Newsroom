@@ -1,0 +1,164 @@
+{
+  "slug": "connect-your-dots-backwards",
+  "teaser": "Let your LLM interview you about your path: find the side roads, the misread doors, what memory rewrote, and where a startup hides.",
+  "topics": [
+    "startups-and-strategy"
+  ],
+  "core_idea": "Founders should connect their own dots backwards now, by letting an LLM interview them about their non-linear path in seven stages, finding the side roads and misread doors, separating what is remembered from what is evidenced because memory rewrites itself, answering impostor syndrome with facts, and finding startups hidden in old passions.",
+  "nodes": [
+    {
+      "id": "jobs",
+      "label": "Connect the dots backwards",
+      "kind": "artefact",
+      "summary": "Jobs, Stanford, 2005; the book's chapter."
+    },
+    {
+      "id": "nonlinear",
+      "label": "Paths are not linear",
+      "kind": "claim",
+      "summary": "Success stories are tidied up."
+    },
+    {
+      "id": "side",
+      "label": "The side roads",
+      "kind": "concept",
+      "summary": "Experiments that made the person."
+    },
+    {
+      "id": "interview",
+      "label": "The look-back interview",
+      "kind": "method",
+      "summary": "Seven stages, one question at a time."
+    },
+    {
+      "id": "doors",
+      "label": "Misread doors",
+      "kind": "concept",
+      "summary": "One-way and two-way, as felt and as they were."
+    },
+    {
+      "id": "memory",
+      "label": "Memory rewrites itself",
+      "kind": "claim",
+      "summary": "Reconsolidation; remembered or evidenced."
+    },
+    {
+      "id": "impostor",
+      "label": "Impostor syndrome",
+      "kind": "concept",
+      "summary": "Answered with facts, not reassurance."
+    },
+    {
+      "id": "startup",
+      "label": "Where a startup hides",
+      "kind": "claim",
+      "summary": "Old passions that did not work out then."
+    },
+    {
+      "id": "prompt",
+      "label": "The prompt",
+      "kind": "artefact",
+      "summary": "First version, for Claude or ChatGPT."
+    },
+    {
+      "id": "finder",
+      "label": "The startups finder",
+      "kind": "artefact",
+      "summary": "Pick a thread and ship it."
+    }
+  ],
+  "edges": [
+    {
+      "from": "jobs",
+      "to": "interview",
+      "rel": "leads-to"
+    },
+    {
+      "from": "nonlinear",
+      "to": "side",
+      "rel": "produces"
+    },
+    {
+      "from": "interview",
+      "to": "side",
+      "rel": "produces"
+    },
+    {
+      "from": "interview",
+      "to": "doors",
+      "rel": "produces"
+    },
+    {
+      "from": "memory",
+      "to": "interview",
+      "rel": "extends"
+    },
+    {
+      "from": "interview",
+      "to": "impostor",
+      "rel": "answers"
+    },
+    {
+      "from": "side",
+      "to": "startup",
+      "rel": "leads-to"
+    },
+    {
+      "from": "prompt",
+      "to": "interview",
+      "rel": "example-of"
+    },
+    {
+      "from": "startup",
+      "to": "finder",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "jobs-that-never-scaled",
+      "programming-taught-upside-down",
+      "how-cheap-is-it-to-undo"
+    ],
+    "pages": [],
+    "sites": [
+      "https://gen-z-developers.sgit.ai/v2/book/connect-the-dots-backwards.html",
+      "https://startups.sgit.ai/",
+      "https://newsroom.sgit.ai/articles/not-a-straight-line.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Some of them sound silly in hindsight, and sometimes they are exactly what made that person.",
+      "why": "Side roads."
+    },
+    {
+      "text": "Looking back, the interesting doors are the ones we read wrong at the time.",
+      "why": "The doors."
+    },
+    {
+      "text": "The look-back interview is an answer made of facts, not reassurance.",
+      "why": "Impostor syndrome."
+    }
+  ],
+  "figures": [
+    {
+      "file": "cd-dots.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cd-dots.webp",
+      "caption": "Some of my own dots, as the book tells them: the ZX Spectrum, The Cyber Boardroom, MyFeeds, SG/Send, sgit and the newsroom. Looking back, the Cyber Boardroom's personas and its need for somewhere to keep the data, MyFeeds' graphs of the news, and what SG/Send taught about Stripe and pricing all feed the newsroom.",
+      "kind": "concept"
+    },
+    {
+      "file": "cd-interview.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cd-interview.webp",
+      "caption": "The look-back interview in seven stages: the timeline; the side roads; the doors; what each taught; the connections; remembered or evidenced; and where a startup may be hiding.",
+      "kind": "concept"
+    },
+    {
+      "file": "cd-doors.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/cd-doors.webp",
+      "caption": "Doors as they felt and as they were. Felt big and was big; felt big and was small, where fear kept you longer than it had to; felt small and was big, the side project that set the path; and felt small and was small.",
+      "kind": "comparison"
+    }
+  ]
+}

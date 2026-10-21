@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.20 · 239 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.21 · 240 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](articles/programming-taught-upside-down.md), 2026-10-21, 7 min. We teach programming the way Lockhart says we teach maths: concepts first. Explorer coding starts where the hook is.
+- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](articles/connect-your-dots-backwards.md), 2026-10-21, 8 min. Let your LLM interview you about your path: find the side roads, the misread doors, what memory rewrote, and where a startup hides.
 
 ## Highlights
 
+- [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](articles/programming-taught-upside-down.md), 2026-10-21, 7 min.
 - [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](articles/jobs-that-never-scaled.md), 2026-10-21, 12 min.
 - [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min.
 - [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](articles/plural-for-the-family-singular-for-the-site.md), 2026-10-21, 7 min.
-- [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](articles/messaging-fs.md), 2026-10-21, 9 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 
-### Strategy & startups (44)
+### Strategy & startups (45)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](articles/connect-your-dots-backwards.md), 2026-10-21, 8 min.
 - [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](articles/programming-taught-upside-down.md), 2026-10-21, 7 min.
 - [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](articles/jobs-that-never-scaled.md), 2026-10-21, 12 min.
-- [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min.
 
 ## Collections
 
