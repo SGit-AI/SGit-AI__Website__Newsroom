@@ -1000,6 +1000,100 @@
    "added": null,
    "updated": null,
    "note": "The release was built but the git proxy refused the push again, so nothing reached dev."
+  },
+  {
+   "id": "ff8541a60241",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-21T04:48:05Z",
+   "finished_at": "2026-10-21T05:00:12Z",
+   "duration_s": 723.7,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.16251,
+     "input": 841602,
+     "output": 133551,
+     "cache_read": 219282,
+     "cache_write": 75049,
+     "thinking": 85633
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.64735,
+     "input": 114,
+     "output": 53136,
+     "cache_read": 3979521,
+     "cache_write": 236362,
+     "thinking": 4032
+    }
+   },
+   "cost_usd": 1.809859,
+   "turns": 25,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-21.1",
+   "added": 10,
+   "updated": 1,
+   "note": "Ten new stories and a correction to one; the cost is the per-model figures, which the session record totals higher."
+  },
+  {
+   "id": "62c050f52255",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-21T05:09:17Z",
+   "finished_at": "2026-10-21T05:20:09Z",
+   "duration_s": 648.2,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.12167,
+     "input": 16,
+     "output": 1996,
+     "cache_read": 285702,
+     "cache_write": 18277,
+     "thinking": 271
+    }
+   },
+   "cost_usd": 0.12167,
+   "turns": 12,
+   "subagents": 0,
+   "refused": 4,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Page fetches were refused for the fifth day, so the first run still has not started."
+  },
+  {
+   "id": "458a435ad913",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-21T05:56:31Z",
+   "finished_at": "2026-10-21T06:01:23Z",
+   "duration_s": 287.0,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.414564,
+     "input": 46,
+     "output": 7877,
+     "cache_read": 1392304,
+     "cache_write": 49118,
+     "thinking": 819
+    }
+   },
+   "cost_usd": 0.414564,
+   "turns": 24,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The release was built and tested but the git proxy refused the push for the third day, so nothing reached dev."
   }
  ],
  "sessions": [
@@ -1023,15 +1117,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-20T06:41:34Z",
+   "as_of": "2026-10-21T06:41:00Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 2.624752,
-   "input": 62,
-   "output": 22304,
-   "cache_read": 4648844,
-   "cache_write": 484176,
+   "cost_usd": 3.924524,
+   "input": 76,
+   "output": 28239,
+   "cache_read": 6430824,
+   "cache_write": 749725,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
