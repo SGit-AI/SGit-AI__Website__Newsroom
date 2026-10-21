@@ -55,6 +55,184 @@
   ],
   "articles": [
     {
+      "slug": "drift-is-the-mandate-moving",
+      "title": "Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/drift-is-the-mandate-moving.html",
+      "markdown": "https://newsroom.sgit.ai/articles/drift-is-the-mandate-moving.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/drift-is-the-mandate-moving.webp",
+      "teaser": "An analyst's case for drift as RiskMandate's thesis, and the versioned behaviour policy that drift is measured against.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "riskmandate",
+        "drift",
+        "abp",
+        "agents",
+        "assurance",
+        "article"
+      ],
+      "links_out": [
+        "an-analysts-blueprint-for-riskmandate",
+        "what-can-your-agent-reach",
+        "inside-the-pellbridge-agents",
+        "the-key-is-not-the-risk",
+        "behaviour-policies-from-the-checks"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "df-forms.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/df-forms.webp",
+          "caption": "Four kinds of drift, and what catches each: policy drift, by the grant re-measured against the versioned policy; behavioural drift, by every action against its mandate row and near misses as the early sign; authority drift, by what keeps every row; and goal drift, judged against the mandate in the customer's words, the open problem.",
+          "kind": "concept"
+        },
+        {
+          "file": "df-procurement.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/df-procurement.webp",
+          "caption": "The analyst's procurement agent, through a behaviour policy: day 1 within mandate; day 10 behavioural drift, a row with a \"no\" broken or a near miss; day 20 policy drift, a new capability in the grant before it is used; day 30 blocked, the purchase over the threshold denied by the purchasing system.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "drift-is-the-mandate-moving",
+        "teaser": "An analyst's case for drift as RiskMandate's thesis, and the versioned behaviour policy that drift is measured against.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Policy, behavioural, goal and authority drift can happen without an attack or a single broken rule, so detecting them needs a reference: a versioned Agent Behaviour Policy, against which a re-measured grant, every action's mandate row and every rule's barrier make three of the four drifts measurable now, as the Pellbridge demo's test pack shows, while goal drift remains the open problem.",
+        "nodes": [
+          {
+            "id": "note",
+            "label": "The analyst's drift note",
+            "kind": "artefact",
+            "summary": "Four drifts, a trajectory."
+          },
+          {
+            "id": "openai",
+            "label": "OpenAI agents weakened monitoring",
+            "kind": "example",
+            "summary": "Legitimate tasks, controls weakened."
+          },
+          {
+            "id": "reference",
+            "label": "A versioned policy",
+            "kind": "concept",
+            "summary": "What drift is measured against."
+          },
+          {
+            "id": "policy",
+            "label": "Policy drift",
+            "kind": "method",
+            "summary": "The grant, re-measured."
+          },
+          {
+            "id": "behaviour",
+            "label": "Behavioural drift",
+            "kind": "method",
+            "summary": "Every action against its row."
+          },
+          {
+            "id": "authority",
+            "label": "Authority drift",
+            "kind": "method",
+            "summary": "What keeps every rule."
+          },
+          {
+            "id": "goal",
+            "label": "Goal drift",
+            "kind": "question",
+            "summary": "The open problem."
+          },
+          {
+            "id": "tests",
+            "label": "Pellbridge's test pack",
+            "kind": "example",
+            "summary": "Every model change, policy change, week."
+          },
+          {
+            "id": "self",
+            "label": "This session",
+            "kind": "example",
+            "summary": "Loses its policy, reads it back."
+          }
+        ],
+        "edges": [
+          {
+            "from": "note",
+            "to": "reference",
+            "rel": "leads-to"
+          },
+          {
+            "from": "openai",
+            "to": "note",
+            "rel": "example-of"
+          },
+          {
+            "from": "reference",
+            "to": "policy",
+            "rel": "produces"
+          },
+          {
+            "from": "reference",
+            "to": "behaviour",
+            "rel": "produces"
+          },
+          {
+            "from": "reference",
+            "to": "authority",
+            "rel": "produces"
+          },
+          {
+            "from": "goal",
+            "to": "reference",
+            "rel": "depends-on"
+          },
+          {
+            "from": "tests",
+            "to": "behaviour",
+            "rel": "example-of"
+          },
+          {
+            "from": "self",
+            "to": "policy",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "an-analysts-blueprint-for-riskmandate",
+            "inside-the-pellbridge-agents",
+            "behaviour-policies-from-the-checks",
+            "the-key-is-not-the-risk",
+            "what-can-your-agent-reach"
+          ],
+          "pages": [],
+          "sites": [
+            "https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/",
+            "https://github.com/secureagentics/Adrian",
+            "https://arxiv.org/abs/2602.22302"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Drift is the change nobody approved.",
+            "why": "The definition."
+          },
+          {
+            "text": "without it, drift detection is anomaly detection with a new name",
+            "why": "The thesis."
+          },
+          {
+            "text": "In two internal coding tasks, agents weakened misalignment monitoring while making requested software changes.",
+            "why": "OpenAI's report."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-reading-account-as-built",
       "title": "The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed",
       "date": "2026-10-21",
@@ -245,7 +423,9 @@
         "inside-the-pellbridge-agents",
         "how-to-help"
       ],
-      "links_in": [],
+      "links_in": [
+        "drift-is-the-mandate-moving"
+      ],
       "figures": [
         {
           "file": "wb-landscape.webp",
@@ -839,6 +1019,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "drift-is-the-mandate-moving",
         "governed-semi-autonomous-development-read-here"
       ],
       "figures": [
@@ -1028,6 +1209,7 @@
         "the-attack-surface-you-do-not-have"
       ],
       "links_in": [
+        "drift-is-the-mandate-moving",
         "an-analysts-blueprint-for-riskmandate",
         "governed-semi-autonomous-development-read-here"
       ],
@@ -6398,6 +6580,7 @@
         "inside-the-thistlewood-twin"
       ],
       "links_in": [
+        "drift-is-the-mandate-moving",
         "an-analysts-blueprint-for-riskmandate",
         "the-key-is-not-the-risk",
         "the-riskmandate-roadmap",
@@ -14424,6 +14607,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "drift-is-the-mandate-moving",
         "an-analysts-blueprint-for-riskmandate",
         "behaviour-policies-from-the-checks",
         "aws-from-the-vault",
