@@ -216,6 +216,7 @@ Vaults & method[This article as a graph →](graphs.md#messaging-fs)
 
 ### Continued by
 
+- [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](governed-semi-autonomous-development-read-here.md) Levente Simon's method for governing agent teams, read in a newsroom run by agents: shared ideas, a mirror, and five suggestions.
 - [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md) Every CVE makes me smile: moving to the client side took my servers out of the news, and the constraint turned out to be speed.
 
 [All articles](index.md) · [All graphs](graphs.md)

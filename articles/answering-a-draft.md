@@ -126,6 +126,10 @@ Agents & policy[This article as a graph →](graphs.md#answering-a-draft)
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md) What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 
+### Continued by
+
+- [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](governed-semi-autonomous-development-read-here.md) Levente Simon's method for governing agent teams, read in a newsroom run by agents: shared ideas, a mirror, and five suggestions.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 242 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=242)

@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-248 of 248 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+249 of 249 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-248 articles, 1401 links between them (2105 mentions in all). 238 articles cite an earlier one; 69 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+249 articles, 1408 links between them (2118 mentions in all). 239 articles cite an earlier one; 69 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+
+## [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](governed-semi-autonomous-development-read-here.md)
+
+2026-10-21 · Agents & policy
+
+Governed semi-autonomous development and this newsroom's work reached many of the same rules separately, which suggests they are real; held up as a mirror, the method's Lite profile finds the same gap our own count found, an agent able to change the checks that gate it; and five additions follow: a column for what keeps each rule, policies for product agents, encrypted vault state, measured owner metrics, and memory loss as a design input.
+
+*[diagram]*
+**concept**claim**method**artefact
+
+**9 nodes, 8 edges**
+
+- **Governed semi-autonomous development** (artefact) Eight layers, three profiles.
+- **Arrived at separately** (claim) The same rules, by different roads.
+- **Decisions, not files** (concept) The decision draft.
+- **Twice becomes a mechanism** (concept) A repeated failure becomes a check.
+- **A good mirror** (method) Our work against his Lite profile.
+- **The agent can change its checks** (claim) Repository controls below Lite.
+- **What keeps each rule** (method) Grant, mandate, delta, barrier.
+- **Policies for product agents** (claim) Business logic is the risk.
+- **Memory loss by design** (concept) Re-anchoring the policy.
+
+> Trust comes from layered controls, not from the agents behaving well. The method's stance.
+
+> a session cannot write what enforces its limits The rule that finds our gap.
+
+builds on [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](#the-key-is-not-the-risk), [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](#messaging-fs), [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured).
 
 ## [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](behaviour-policies-from-the-checks.md)
 
@@ -47,7 +74,7 @@ Every test checks for a behaviour: walking each of the site's 57 checks up a gra
 
 > the behaviour was being enforced before it was named Reverse-engineering.
 
-builds on [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach).
+builds on [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
 
 ## [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](the-key-is-not-the-risk.md)
 
@@ -74,7 +101,7 @@ Keeping credentials out of AI agents and injecting them at a gateway is good pra
 
 > We didn't eliminate the credentials. We just created a high-value target. The pattern's own cost.
 
-builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have).
+builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [Attacks rewritten as mandates: 28 supply-chain incidents, the column each one was missing, and why the next maintainer is an agent](#attacks-rewritten-as-mandates), [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
 
 ## [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](the-human-is-the-network.md)
 
@@ -128,7 +155,7 @@ Publishing a public key as a QR code and a link lets anyone, person or agent, re
 
 > It's just unusable. It's not practical. It looks messy. Why not text.
 
-builds on [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose).
+builds on [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
 
 ## [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](the-checks-measured.md)
 
@@ -155,7 +182,7 @@ Measuring the newsroom's checks shows a release takes about 8 minutes locally, h
 
 > A check is only as durable as the place it lives Where checks live.
 
-builds on [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far); continued by [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks).
+builds on [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks).
 
 ## [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md)
 
@@ -209,7 +236,7 @@ An inbox agent that researches, drafts with sources and logs everything, with a 
 
 > The most useful thing we built is the decision draft. The decision draft.
 
-builds on [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled).
+builds on [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
 
 ## [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](the-open-security-summit-and-its-debt.md)
 
@@ -409,7 +436,7 @@ Append lanes on every user's vault, combined with PKI, give an end-to-end encryp
 
 > The client decides what the bytes mean. Why a schema is needed.
 
-builds on [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults); continued by [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have).
+builds on [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](#the-user-keeps-the-meter), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](#the-attack-surface-you-do-not-have).
 
 ## [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md)
 
@@ -1499,7 +1526,7 @@ sgit has keys but no directory or web of trust, so pki.sgit.ai should register p
 
 > Being the anchor is a choice, and I would rather state it than hide it. On Dinis as the first verifier.
 
-builds on [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain); continued by [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader).
+builds on [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [The vault, opened: merging devices, reading every call to the vault server, browsing your vaults, and one viewer that every reader vault links and opens with](#the-vault-opened), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [On the record: signed opinions from experts, paid when readers value them, and a share for the people whose ideas an article uses](#on-the-record), [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](#a-book-for-one-reader).
 
 ## [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md)
 

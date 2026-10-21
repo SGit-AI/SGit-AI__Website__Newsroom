@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 3,343 | first published | this release | [current](../behaviour-policies-from-the-checks.md) |
+| **v1.0.0** | 2026-10-21 | published | 3,343 | first published | [`69e244a3c`](https://github.com/SGit-AI/SGit-AI__Website/commit/69e244a3c6c95dd19fbe4fd0d7f5395ee0f73370) | [current](../behaviour-policies-from-the-checks.md) |
 
 [← Back to the article](../behaviour-policies-from-the-checks.md) · [All articles](../index.md)
 
