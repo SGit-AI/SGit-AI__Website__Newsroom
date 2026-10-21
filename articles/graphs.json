@@ -55,6 +55,213 @@
   ],
   "articles": [
     {
+      "slug": "the-user-keeps-the-meter",
+      "title": "The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-user-keeps-the-meter.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-user-keeps-the-meter.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-user-keeps-the-meter.webp",
+      "teaser": "A proposed design for billing on vaults: the user's browser keeps the meter, the admin signs credit, and one server does a light check.",
+      "topics": [
+        "vaults-and-method"
+      ],
+      "tags": [
+        "vaults",
+        "billing",
+        "pki",
+        "architecture",
+        "proposal",
+        "article"
+      ],
+      "links_out": [
+        "paying-after-the-value",
+        "the-editors-channel",
+        "secrets-on-public-keys",
+        "pki-everywhere",
+        "free-to-copy-paid-at-the-source"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "um-parties.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/um-parties.webp",
+          "caption": "The proposed design. The user's browser appends its activity to a billing vault, signed by the user. The admin vault reads it, reads payments from Stripe, and commits credit back, signed by the admin. The upload server checks that credit through a small credits API before it accepts an upload.",
+          "kind": "architecture"
+        },
+        {
+          "file": "um-topup.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/um-topup.webp",
+          "caption": "A top-up, step by step. The user pays through a payment link and appends a signed claim. The admin's browser reads recent payments from Stripe, matches the claim, and commits a signed credit. The upload server reads that credit and checks it.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "the-user-keeps-the-meter",
+        "teaser": "A proposed design for billing on vaults: the user's browser keeps the meter, the admin signs credit, and one server does a light check.",
+        "topics": [
+          "vaults-and-method"
+        ],
+        "core_idea": "User management, activity and billing can move to the client: each user has a billing vault where their browser appends signed activity and the admin side commits signed credit after reconciling payments with Stripe from the admin's browser, so the one remaining server only checks a valid key and a cached signed credit.",
+        "nodes": [
+          {
+            "id": "problem",
+            "label": "Server-side billing",
+            "kind": "concept",
+            "summary": "Database, races, bottleneck or scheduler."
+          },
+          {
+            "id": "have",
+            "label": "Pieces that exist",
+            "kind": "artefact",
+            "summary": "Meter, append lanes, versioned vaults, key register."
+          },
+          {
+            "id": "idea",
+            "label": "The user keeps the meter",
+            "kind": "claim",
+            "summary": "The browser appends its own activity to a vault."
+          },
+          {
+            "id": "vault",
+            "label": "One billing vault per user",
+            "kind": "concept",
+            "summary": "Written by the user and the admin."
+          },
+          {
+            "id": "activity",
+            "label": "Activity signed by the user",
+            "kind": "method",
+            "summary": "Appended at intervals."
+          },
+          {
+            "id": "credit",
+            "label": "Credit signed by the admin",
+            "kind": "method",
+            "summary": "Verifiable by anyone."
+          },
+          {
+            "id": "stripe",
+            "label": "Stripe read from the admin's browser",
+            "kind": "method",
+            "summary": "List events; client_reference_id."
+          },
+          {
+            "id": "when",
+            "label": "Credit now or after matching",
+            "kind": "question",
+            "summary": "An allowance in between."
+          },
+          {
+            "id": "server",
+            "label": "Upload server's light check",
+            "kind": "method",
+            "summary": "Key valid, credit left."
+          },
+          {
+            "id": "parties",
+            "label": "Four parties",
+            "kind": "concept",
+            "summary": "Admin vault, user, upload server, credits API."
+          },
+          {
+            "id": "benefits",
+            "label": "Data travels with the user",
+            "kind": "claim",
+            "summary": "Across every site."
+          },
+          {
+            "id": "trust",
+            "label": "Trust limits",
+            "kind": "claim",
+            "summary": "Activity on trust; real costs counted at the server."
+          }
+        ],
+        "edges": [
+          {
+            "from": "problem",
+            "to": "idea",
+            "rel": "answers"
+          },
+          {
+            "from": "have",
+            "to": "idea",
+            "rel": "leads-to"
+          },
+          {
+            "from": "idea",
+            "to": "vault",
+            "rel": "produces"
+          },
+          {
+            "from": "vault",
+            "to": "activity",
+            "rel": "depends-on"
+          },
+          {
+            "from": "vault",
+            "to": "credit",
+            "rel": "depends-on"
+          },
+          {
+            "from": "stripe",
+            "to": "credit",
+            "rel": "leads-to"
+          },
+          {
+            "from": "when",
+            "to": "stripe",
+            "rel": "extends"
+          },
+          {
+            "from": "credit",
+            "to": "server",
+            "rel": "leads-to"
+          },
+          {
+            "from": "parties",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "vault",
+            "to": "benefits",
+            "rel": "produces"
+          },
+          {
+            "from": "trust",
+            "to": "activity",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "paying-after-the-value",
+            "the-editors-channel",
+            "secrets-on-public-keys",
+            "pki-everywhere",
+            "free-to-copy-paid-at-the-source"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "A user very rarely runs several clients at the same time.",
+            "why": "Why the race mostly disappears."
+          },
+          {
+            "text": "The user cannot raise their own balance, and the admin cannot invent activity the user did not sign.",
+            "why": "Two writers, two keys."
+          },
+          {
+            "text": "Today, the access key gates use of the upload server, but it does not meter it",
+            "why": "The gap this fills."
+          }
+        ]
+      }
+    },
+    {
       "slug": "how-a-memo-becomes-a-release",
       "title": "How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing",
       "date": "2026-10-21",
@@ -794,6 +1001,7 @@
         "pki-everywhere"
       ],
       "links_in": [
+        "the-user-keeps-the-meter",
         "agent-behaviour-policies-move-to-the-open-security-summit",
         "v0-12-in-numbers"
       ],
@@ -1149,6 +1357,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "the-user-keeps-the-meter",
         "v0-12-in-numbers",
         "free-to-copy-paid-at-the-source",
         "a-leak-without-breaking-the-policy"
@@ -9589,6 +9798,7 @@
         "agent-workflows-on-ephemeral-vaults"
       ],
       "links_in": [
+        "the-user-keeps-the-meter",
         "pki-everywhere",
         "the-briefs-so-far",
         "search-as-navigation",
@@ -20359,6 +20569,7 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "the-user-keeps-the-meter",
         "a-leak-without-breaking-the-policy",
         "pki-everywhere",
         "a-directory-of-people-and-keys",
@@ -22209,6 +22420,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "the-user-keeps-the-meter",
         "free-to-copy-paid-at-the-source",
         "our-first-customers",
         "the-no-server-startup",

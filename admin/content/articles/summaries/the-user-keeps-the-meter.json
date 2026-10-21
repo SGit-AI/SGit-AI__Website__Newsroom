@@ -1,0 +1,91 @@
+{
+ "slug": "the-user-keeps-the-meter",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A proposal to do user management, activity and billing on the client, with vaults.",
+   "para": "Billing usually needs a server, a database and a balance every action updates. This proposal gives each user a billing vault: their browser appends activity signed by them, the admin side commits credit signed by the admin key, reconciled with Stripe from the admin's browser, and the upload server only checks the key and the signed credit.",
+   "hash": "6d806b93e516"
+  },
+  "in-short": {
+   "line": "The design in seven lines: two writers, two keys, one light check.",
+   "para": "Billing on the client: each user has a billing vault, their browser keeps the meter, the admin signs credit after reconciling with Stripe, and the upload server asks only whether the key is valid and there is credit. The user's data travels with them across sites. Nothing is built yet.",
+   "hash": "15a6926ef62a"
+  },
+  "problem": {
+   "line": "Server-side billing means a database, races on one balance, and a bottleneck or a scheduler.",
+   "para": "Every action updates a central balance, so concurrent actions race. A file as the single source of truth is hard to keep in sync. Appending first and updating later either makes the updater a bottleneck or needs a scheduler or Lambda functions, which work but are one more thing to run.",
+   "hash": "d6e24240d845"
+  },
+  "have": {
+   "line": "Most pieces exist: the newsroom's meter, append lanes, versioned vaults and a key register.",
+   "para": "The newsroom already meters reading in the browser, with £5 of credit and a top-up link live since 11 October. Append lanes are write-only inboxes already in use. Vaults are versioned, so two writers' changes can be merged. And PKI everywhere put signatures and a public key register at the centre.",
+   "hash": "de67a19ff189"
+  },
+  "idea": {
+   "line": "Each user's browser meters its own activity into a vault, behind user.sgit.ai.",
+   "para": "A user rarely runs several clients at once, so the race a central server suffers mostly disappears, and vault version control merges the rest. The browser appends activity at intervals, as the newsroom's meter does, but into a vault that can be synced, checked and billed. Proposed sites: user.sgit.ai and api.user.sgit.ai.",
+   "hash": "df9cd2773b01"
+  },
+  "writers": {
+   "line": "One billing vault, two writers: the user signs activity, the admin signs credit.",
+   "para": "The user's browser commits what they used, signed by their key, and the record is theirs. The admin side commits credit records signed by the admin key, which anyone can verify and nobody else can forge. A sketch of a credit record shows balance, grants, coverage, an end date and a signature.",
+   "hash": "f5f84c66b690"
+  },
+  "stripe": {
+   "line": "The admin's browser reads payments from Stripe and matches them to signed claims.",
+   "para": "Stripe webhooks need a public HTTPS endpoint and are HMAC-signed, which does not fit a design without a server. So the admin's browser lists recent events, up to 30 days back, with a read-only key kept on the admin's machine. A payment link carries the billing vault's id as client_reference_id.",
+   "hash": "d4780b71e385"
+  },
+  "when": {
+   "line": "Credit straight away, or only once the payment is matched? An open question.",
+   "para": "Stripe warns that customers may never reach the landing page, and some methods take 2 to 14 days to confirm. A middle way, like the meter's negative balance: let the user carry on with a small allowance, and make the payment real once the admin side has matched it.",
+   "hash": "f410629be358"
+  },
+  "server": {
+   "line": "The upload server does a light check only: a valid key and a signed credit.",
+   "para": "The sgit upload server is the one server left, and where usage costs real money. It verifies the key against the register and reads a cached, signed credit through a small credits API, with no balance or database of its own. Today access keys gate use but do not meter it.",
+   "hash": "3a9a40b2c29c"
+  },
+  "parties": {
+   "line": "Four parties: the admin vault, the user, the upload server and the credits API.",
+   "para": "The admin vault writes licensing and credit, collects usage and reconciles with Stripe. The user commits activity and owns it. The upload server checks key and credit before doing the work. The credits API is a simple, cacheable read of the signed credit.",
+   "hash": "0d2fbf83ccef"
+  },
+  "benefits": {
+   "line": "A logged-in user's data travels with them across every site.",
+   "para": "Because what a user reads, sets, buys and prefers lives in their vault, every site can give a logged-in user a better experience without keeping a copy of them on a server. Billing is one use of that vault, not the only one.",
+   "hash": "512f5c9882f9"
+  },
+  "trust": {
+   "line": "Activity is on trust; real costs are counted at the server; credit cannot be forged.",
+   "para": "Browser-reported activity is trusted, as on the newsroom meter, where costs are small. Storage and transfer are counted at the upload server. Credit is valid only with the admin's signature. A cached credit can be stale, so it carries an end date. The admin key matters most.",
+   "hash": "049fd5aa2b68"
+  },
+  "open": {
+   "line": "Six open questions, from when a payment counts to how refunds are written.",
+   "para": "When a payment counts; whether we create a user's first vault at login; how login starts with a PKI handshake; how anonymous the usage is; how often the browser syncs; and how refunds and disputes are recorded, probably as negative signed credit records.",
+   "hash": "41d5e1936bab"
+  },
+  "versioning": {
+   "line": "api.user.sgit.ai would follow the versioned API rule; the newsroom will write it up.",
+   "para": "Our API sites publish every release as a complete, independent copy at its own versioned path, never edited, with a manifest of hashes, as documented on api.send.sgit.ai. A site pins its version. This newsroom has not written about the rule yet, and it is now on the list.",
+   "hash": "4d41f6cc06bb"
+  },
+  "limits": {
+   "line": "Nothing is built; the formats are sketches; the Stripe flow is untested.",
+   "para": "user.sgit.ai and api.user.sgit.ai do not exist yet. The field names will change. Stripe's constraints come from its documentation, read on 21 October 2026. Client-reported activity is not proof. The meter, append lanes, versioning and key register are in use today.",
+   "hash": "81b010cefcbb"
+  },
+  "diagrams": {
+   "line": "The Mermaid source of both diagrams, to reuse or correct.",
+   "para": "The flowchart of the four parties and the sequence of a top-up, as Mermaid source, exactly as rendered on this page.",
+   "hash": "923804598157"
+  },
+  "sources": {
+   "line": "A voice memo, Stripe's documentation and api.send.sgit.ai, read on 21 October.",
+   "para": "A voice memo of 21 October 2026, Stripe's pages on webhooks, keys, events, success pages and payment link parameters, and api.send.sgit.ai's independent releases article, with related newsroom articles on the meter, append lanes and PKI.",
+   "hash": "cd9bbb973ef5"
+  }
+ }
+}
