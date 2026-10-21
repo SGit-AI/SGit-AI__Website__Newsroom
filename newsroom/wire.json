@@ -73,6 +73,33 @@
   ],
   "articles": [
     {
+      "slug": "how-a-memo-becomes-a-release",
+      "title": "How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/how-a-memo-becomes-a-release.html",
+      "markdown": "https://newsroom.sgit.ai/articles/how-a-memo-becomes-a-release.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/how-a-memo-becomes-a-release.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/how-a-memo-becomes-a-release.json",
+      "teaser": "From voice memo to tagged release: the session's checks, GitHub's checks, the times, what is redundant, and what a new session would lack.",
+      "summary": "Every article on this site starts as a voice memo and ends as a tagged release on GitHub Pages. In between there are two sets of checks. In the session, the newsroom's writer agent researches, writes and builds: it runs sgit.ai's generator and validator through publish.py, this site's own builders and validator, the 18 tests, a phone-width check, and a leak scan of what it is about to commit. Then, on GitHub, Actions validate the site again, run the 18 tests again, tag the release and deploy it. After v0.13.7, a release that adds no new article takes about 400 seconds in the session and about 290 on GitHub, down from about 750 and 640; a release with a new article still takes about 720 in the session, because a new card and banner need all three of sgit.ai's page builds. This article documents all of it, with the times, and asks two questions about it. First, what is redundant: the 15 browser tests run in both places, and I propose they run only on GitHub unless the change is to the site's code, which would save almost three minutes in the session on every article release. Second, what a new session would have: the repository holds the builders, the tests, the workflow and the writing rules, but the release script, the graph writer, the figure helpers, the phone-width check, the session's behaviour policy and the leak scan live only in this session's container, and a new one would not have them.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "newsroom",
+        "engineering",
+        "ci",
+        "agents",
+        "pipeline",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "agent-behaviour-policies-move-to-the-open-security-summit",
       "title": "Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor",
       "date": "2026-10-20",

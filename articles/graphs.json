@@ -55,6 +55,187 @@
   ],
   "articles": [
     {
+      "slug": "how-a-memo-becomes-a-release",
+      "title": "How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/how-a-memo-becomes-a-release.html",
+      "markdown": "https://newsroom.sgit.ai/articles/how-a-memo-becomes-a-release.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/how-a-memo-becomes-a-release.webp",
+      "teaser": "From voice memo to tagged release: the session's checks, GitHub's checks, the times, what is redundant, and what a new session would lack.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "newsroom",
+        "engineering",
+        "ci",
+        "agents",
+        "pipeline",
+        "article"
+      ],
+      "links_out": [
+        "v0-12-in-numbers",
+        "a-leak-without-breaking-the-policy",
+        "hooks-are-kernel-code",
+        "the-riskmandate-roadmap"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pi-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pi-flow.webp",
+          "caption": "From a memo to a release, in three stages: writing in the session, checking in the session, and shipping on GitHub. A failed leak scan sends the work back to the first stage.",
+          "kind": "architecture"
+        },
+        {
+          "file": "pi-ci.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pi-ci.webp",
+          "caption": "The jobs on GitHub. A push to dev validates, tests, tags and deploys. A pull request into main must be a major. A push to main checks the major, tags it if needed, publishes a GitHub Release and deploys.",
+          "kind": "architecture"
+        },
+        {
+          "file": "pi-time.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pi-time.webp",
+          "caption": "One release, in seconds. In the session, the 18 tests are the longest step, then the cards and banners and sgit.ai's page build. On GitHub, the tests again.",
+          "kind": "timeline"
+        },
+        {
+          "file": "pi-where.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pi-where.webp",
+          "caption": "Where each part lives. The builders, tests, workflow and writing rules are in the repository. The release script, graph writer, figure helpers and width check exist only in this session; the behaviour policy and the leak scan only in this container.",
+          "kind": "architecture"
+        },
+        {
+          "file": "pi-split.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pi-split.webp",
+          "caption": "The proposed split: the session runs what only it can check, about 4 minutes; GitHub runs the browser tests, about 5. A change to the site's code runs the browser tests in the session too.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "how-a-memo-becomes-a-release",
+        "teaser": "From voice memo to tagged release: the session's checks, GitHub's checks, the times, what is redundant, and what a new session would lack.",
+        "topics": [
+          "site-and-engineering"
+        ],
+        "core_idea": "An article moves from a voice memo through research and writing, a sequence of checks in the writer's session, and a second set of checks on GitHub that gates the tag and deploy; the browser tests are redundant in the session for article releases, and several of the session's tools must move into the repository for a new session to work the same way.",
+        "nodes": [
+          {
+            "id": "memo",
+            "label": "A voice memo",
+            "kind": "artefact",
+            "summary": "Transcribed and pasted in."
+          },
+          {
+            "id": "write",
+            "label": "Research and writing",
+            "kind": "method",
+            "summary": "Article, figures, graph, summaries."
+          },
+          {
+            "id": "local",
+            "label": "The session's checks",
+            "kind": "method",
+            "summary": "Generator, builders, tests, leak scan."
+          },
+          {
+            "id": "ci",
+            "label": "GitHub's checks",
+            "kind": "method",
+            "summary": "Validate, test, tag, deploy."
+          },
+          {
+            "id": "time",
+            "label": "400 and 290 seconds",
+            "kind": "example",
+            "summary": "After v0.13.7."
+          },
+          {
+            "id": "redundant",
+            "label": "Tests run twice",
+            "kind": "claim",
+            "summary": "Browser tests could run on GitHub only."
+          },
+          {
+            "id": "where",
+            "label": "Where each part lives",
+            "kind": "concept",
+            "summary": "Repository, GitHub, session, container."
+          },
+          {
+            "id": "gap",
+            "label": "What a new session lacks",
+            "kind": "claim",
+            "summary": "Release script, helpers, leak scan, policy."
+          },
+          {
+            "id": "next",
+            "label": "Move the tools in",
+            "kind": "method",
+            "summary": "Keep private lists outside."
+          }
+        ],
+        "edges": [
+          {
+            "from": "memo",
+            "to": "write",
+            "rel": "leads-to"
+          },
+          {
+            "from": "write",
+            "to": "local",
+            "rel": "leads-to"
+          },
+          {
+            "from": "local",
+            "to": "ci",
+            "rel": "leads-to"
+          },
+          {
+            "from": "time",
+            "to": "local",
+            "rel": "example-of"
+          },
+          {
+            "from": "redundant",
+            "to": "local",
+            "rel": "answers"
+          },
+          {
+            "from": "where",
+            "to": "gap",
+            "rel": "produces"
+          },
+          {
+            "from": "gap",
+            "to": "next",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "v0-12-in-numbers",
+            "a-leak-without-breaking-the-policy",
+            "hooks-are-kernel-code",
+            "the-riskmandate-roadmap"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "Either is enough to stop a broken release reaching readers",
+            "why": "Why the tests are redundant."
+          },
+          {
+            "text": "The leak scan and the session's behaviour policy are not in the repository at all.",
+            "why": "The gap."
+          }
+        ]
+      }
+    },
+    {
       "slug": "agent-behaviour-policies-move-to-the-open-security-summit",
       "title": "Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor",
       "date": "2026-10-20",
@@ -239,6 +420,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "how-a-memo-becomes-a-release",
         "agent-behaviour-policies-move-to-the-open-security-summit"
       ],
       "figures": [
@@ -413,7 +595,9 @@
         "pki-everywhere",
         "free-to-copy-paid-at-the-source"
       ],
-      "links_in": [],
+      "links_in": [
+        "how-a-memo-becomes-a-release"
+      ],
       "figures": [
         {
           "file": "wu-days.webp",
@@ -775,6 +959,7 @@
         "pki-everywhere"
       ],
       "links_in": [
+        "how-a-memo-becomes-a-release",
         "v0-12-in-numbers",
         "free-to-copy-paid-at-the-source"
       ],
@@ -23492,6 +23677,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "how-a-memo-becomes-a-release",
         "free-to-copy-paid-at-the-source",
         "governs-enforces-attests",
         "three-policies-for-an-agent",
