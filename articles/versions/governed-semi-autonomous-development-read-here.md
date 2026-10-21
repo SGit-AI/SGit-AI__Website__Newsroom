@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 1,780 | first published | this release | [current](../governed-semi-autonomous-development-read-here.md) |
+| **v1.0.0** | 2026-10-21 | published | 1,780 | first published | [`ce2e11671`](https://github.com/SGit-AI/SGit-AI__Website/commit/ce2e11671a2cca84f3cad502b349c1610384b504) | [current](../governed-semi-autonomous-development-read-here.md) |
 
 [← Back to the article](../governed-semi-autonomous-development-read-here.md) · [All articles](../index.md)
 

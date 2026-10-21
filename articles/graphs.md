@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-249 of 249 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+250 of 250 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-249 articles, 1408 links between them (2118 mentions in all). 239 articles cite an earlier one; 69 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+250 articles, 1410 links between them (2122 mentions in all). 240 articles cite an earlier one; 69 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+
+## [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](how-to-help.md)
+
+2026-10-21 · Startups & strategyVaults & method
+
+The most useful help is using what we build and reporting honestly what happened, so six steps take a helper from a first email to agent@riskmandate.ai through setup, trying each project, publishing and checking in, with tasks taken only when there is time; in return helpers get public credit, learning and credibility, and every site and repository should carry the same steps, walked daily by synthetic users too.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Use it** (claim) The best way to help.
+- **Say hello** (method) One email to agent@riskmandate.ai.
+- **Claude and GitHub** (method) One repository for your work.
+- **Try each place** (example) Risk Mandate, sgit, the newsroom.
+- **Check in** (method) Links and honest feedback.
+- **The open source deal** (concept) Work in public, with your name.
+- **Centre of gravity** (concept) Where each helper's interest lies.
+- **A page on every site** (method) And in every README.
+- **Synthetic users** (method) The same steps, every day.
+
+> the best thing you can do to help is to try to use it The answer.
+
+> What you publish is your portfolio. For job seekers.
+
+builds on [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft).
 
 ## [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](governed-semi-autonomous-development-read-here.md)
 
@@ -236,7 +263,7 @@ An inbox agent that researches, drafts with sources and logs everything, with a 
 
 > The most useful thing we built is the decision draft. The decision draft.
 
-builds on [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
+builds on [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](#the-man-behind-the-curtain), [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](#jobs-that-never-scaled); continued by [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](#how-to-help), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
 
 ## [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](the-open-security-summit-and-its-debt.md)
 
@@ -733,7 +760,7 @@ The first users of Agent Behaviour Policies should be treated as customers from 
 
 > So I think they should be customers. The naming.
 
-builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](#agent-behaviour-policies-move-to-the-open-security-summit), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit).
+builds on [Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it](#inside-the-pellbridge-agents), [A policy beside the prompt: a proposal that every agent takes a behaviour policy as an input, with enforcement and liability attached, and why aviation and payments say the vendors should want it](#a-policy-beside-the-prompt), [A policy for every skill: Sean Turner's natural-language control for agent skills, the behaviour policy behind it, and using models to need them less](#a-policy-for-every-skill), [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](#system-prompts-as-behaviour-policies), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](#how-to-help), [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](#agent-behaviour-policies-move-to-the-open-security-summit), [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](#the-riskmandate-roadmap), [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](#v0-12-in-numbers), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](#a-briefing-for-the-ciso-summit).
 
 ## [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](the-exit-is-when-you-sell-control.md)
 

@@ -8,6 +8,20 @@ its original addresses.
 
 Live site: https://newsroom.sgit.ai (GitHub Pages, deployed from `dev`).
 
+## How to help
+
+Want to help, learn, or be involved with this newsroom, sgit or Risk Mandate? The best way is to use
+what we build and tell us honestly what happened. Six steps, explained in
+[How to help](https://newsroom.sgit.ai/articles/how-to-help.html):
+
+1. **Say hello** to agent@riskmandate.ai: what interests you, and that we may contact you.
+2. **Set up your tools:** a Claude account with Claude Code, a GitHub account, one repository.
+3. **Try one thing in each place:** the six examples on [customers.riskmandate.ai](https://customers.riskmandate.ai/),
+   [sgit in your browser](https://sgit.ai/try/), and this newsroom with its reader credit and vault.
+4. **Publish what you did:** a small site or a vault we can open.
+5. **Check in:** links, what worked, what got in the way, what is next.
+6. **Take the next task** when we send one, if you have the time.
+
 ## Since v0.6.0
 
 - `/` and `articles/`: **the newsroom**, imported from sgit.ai's built pages at the same

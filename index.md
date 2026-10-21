@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.29 · 249 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.30 · 250 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](articles/governed-semi-autonomous-development-read-here.md), 2026-10-21, 7 min. Levente Simon's method for governing agent teams, read in a newsroom run by agents: shared ideas, a mirror, and five suggestions.
+- [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](articles/how-to-help.md), 2026-10-21, 6 min. Six steps for anyone who wants to help or be involved with sgit, Risk Mandate or this newsroom, and what they get back.
 
 ## Highlights
 
+- [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](articles/governed-semi-autonomous-development-read-here.md), 2026-10-21, 7 min.
 - [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](articles/the-key-is-not-the-risk.md), 2026-10-21, 9 min.
 - [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](articles/the-human-is-the-network.md), 2026-10-21, 8 min.
 - [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](articles/a-secret-is-a-qr-code.md), 2026-10-21, 8 min.
-- [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](articles/the-attack-surface-you-do-not-have.md), 2026-10-21, 7 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 
-### Strategy & startups (45)
+### Strategy & startups (46)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](articles/how-to-help.md), 2026-10-21, 6 min.
 - [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](articles/connect-your-dots-backwards.md), 2026-10-21, 8 min.
 - [Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end](articles/programming-taught-upside-down.md), 2026-10-21, 7 min.
-- [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](articles/jobs-that-never-scaled.md), 2026-10-21, 12 min.
 
 ## Collections
 
