@@ -3,7 +3,7 @@ title: An analyst's blueprint for RiskMandate: what the companies at the WestCap
 date: 2026-10-21
 author: Dinis Cruz
 author_url: about/index.html
-summary: One of our power users, an analyst, sent us a note from the WestCap CISO Summit: what RiskMandate should borrow from the companies on the backdrop. It is a good piece of work, and I agree with most of it. Its thesis, control what AI agents do, not just what they can access, is the Agent Behaviour Policy's grant against mandate in other words. Its best question, which agent action would a CISO never permit even with valid credentials, is the argument we published this week. And its advice to start with one workflow and a handful of policies is how our first-customer programme already works. It also found something important: Drata announced AI Agent Governance in August, with plain-English policies enforced inline, and Endor Labs, Socket, Sondera, AWS and the gateway makers are all moving into the same space. Where I would change the plan is its first build item: intercepting tool calls ourselves. We would rather be the policy every one of those enforcement points is configured from, use the hooks in the agent's own harness to block and prevent, and compile the same rules for the gateways customers already run. We are compatible with all of them, and that is the point. Bluntly, what we need now are the customers to do this with, for real.
+summary: One of our power users, an analyst, sent us a note from the WestCap CISO Summit: what RiskMandate should borrow from the companies on the backdrop. It is a good piece of work, and I agree with most of it. Its thesis, control what AI agents do, not just what they can access, is the Agent Behaviour Policy's grant against mandate in other words. Its best question, which agent action would a CISO never permit even with valid credentials, is the argument we published this week. And its advice to start with one workflow and a handful of policies is how our first-customer programme already works. It also found something important: Drata announced AI Agent Governance in August, with plain-English policies enforced inline, and Endor Labs, Socket, Sondera, AWS and the gateway makers are all moving into the same space. Where I would change the plan is its first build item: intercepting tool calls ourselves. What we provide is wider than any one control: an understanding of each environment, a risk analysis, and the set of controls that fits it. Some environments need only a line in the prompt, some a hook, and some a gateway, monitoring and a person to approve; our job is to know which, and to generate the rules for all of them. So these companies arriving is good news: each has a centre of gravity around its own tooling, and our remit runs across them. Many open their enforcement points; we open the policy above them. Bluntly, what we need now are the customers, and the use cases, to do this with, for real.
 version: v0.13.31
 license: https://creativecommons.org/licenses/by/4.0/
 tags: riskmandate, strategy, agents, security, market, article
@@ -18,9 +18,9 @@ status: published
 - **Most of it, I agree with.** Control what agents do, not just what they can access.
 - **The vendors are already moving.** Drata, Endor Labs, Socket, Sondera, AWS, the gateways.
 - **Their architecture maps onto ours.** Discover, evaluate, enforce, prove.
-- **Where I would change the plan:** do not build another box in the middle.
-- **Be the policy they are all configured from.** Hooks to block; rules compiled for gateways.
-- **What we need now is customers.** One workflow each, for real.
+- **Our offer is the controls fitted to the context.** A prompt, a hook, a gateway, or all of them.
+- **More players is good news.** Each has gravity around its tooling; our remit runs across them.
+- **What we need now is customers.** And use cases, one workflow each.
 
 ## The note {#note}
 
@@ -69,6 +69,14 @@ Laid against [our proposed roadmap](/articles/the-riskmandate-roadmap.html), the
 
 And two things the four layers leave out, which our roadmap adds: risk acceptance, who carries each remaining risk and until when, and insurance, the evidence that lets someone cover the agent.
 
+## The controls fitted to the context {#fit}
+
+!shot wb-fit.webp | images/ | The controls fitted to the context: a line in the prompt where little is at stake; a hook in the harness where the agent acts alone; a gateway or proxy where it reaches systems that matter; monitoring and a person where money, customers or regulators are involved. The same behaviour policy feeds all four. | concept
+
+This is the part of our positioning I most want to be clear about, because it is what makes it different from any single product on that backdrop. What we provide is a map of the whole situation: a good understanding of each environment, a risk analysis of each agent in it, and the set of security controls that fits that context.
+
+That matters because the right control depends on what is at stake. There are environments where all you need is a line in the prompt: nothing goes outward, and a person reads every output. There are environments where a hook in the agent's harness is the right answer: the agent acts on its own, but the rule has to hold every time. And there are environments where you need a gateway or a proxy, monitoring, an evidence trail and a person to approve the irreversible actions, because money, customers or regulators are involved. Most of the companies above sell one of those answers. We help a customer work out which one each agent needs, and the behaviour policy says so row by row, so a rule can move from the prompt to a hook to a gateway as the stakes rise.
+
 ## Not another box in the middle {#inline}
 
 Here is where I would change the plan. Its first build item is intercepting agents' tool calls ourselves. I think that is the wrong first bet for us, for three reasons.
@@ -88,9 +96,27 @@ And we map the environment first, so the customer knows which of their agents ne
 
 So the list becomes: use the hooks and the gateways customers already have; keep building the policy, which is the part nobody else does openly; make the hooks hold the sequences; and partner for the rest, Socket and Endor Labs on skills and dependencies, exactly as the analyst suggests. The analyst's own conclusion is that RiskMandate's best opportunity is to be the layer those platforms integrate with. I agree, with one change of words: the policy layer, not another runtime layer.
 
-## Compatible with all of them {#compatible}
+## More players is good news {#players}
 
-That is why I think we are in a good position. An Agent Behaviour Policy is open, CC BY 4.0, with code under Apache 2.0, and it is written so any of these products can use it: Drata's plain-English policies, Sondera's and AWS's Cedar, a gateway's rules, a red team's test plan, an incident responder's starting point. A customer who wants to go in the direction the analyst describes can do it with us, whichever of these they already run.
+I do not see these companies moving into our space as a bad thing. I see it as a good one. It means the problem is real, and that budgets are forming around it. And each of these companies has a centre of gravity around its own tooling: Drata around its trust platform, Socket around packages, a gateway around its gateway. That is natural, and it is also the limit. Our remit is wider: the whole set of agents, environments and controls, across whichever of these tools a customer runs. Even the simplest version of what we do, connecting a lot of those tools to one policy, is valuable on its own.
+
+## Who plays open source {#open}
+
+!shot wb-open.webp | images/ | Who plays open source, and what they open: agentgateway, Docker's MCP gateway and Sondera's harness are open; AWS opens its Cedar language, Socket and Endor Labs their agent tooling; no public code was found for Drata's, Bedrock Data's or Ping's agent products. RiskMandate opens the vocabulary, the policies, the engine and the apps. | comparison
+
+We play open source, and that is a design choice: everything we make is meant to be used by the customer, in their own hands. So it is worth asking how many of these companies do the same. From their public repositories and documentation:
+
+- **The enforcement points are often open.** [agentgateway](https://agentgateway.dev/docs/) is a Linux Foundation project under Apache 2.0; Docker's MCP gateway and Sondera's harness are MIT; AWS's policy language, Cedar, is Apache 2.0, though AgentCore Policy itself is a service.
+- **The tooling around a service is partly open.** Socket's MCP server and command line, and Endor Labs' agent kit, are MIT, and both need their companies' services behind them.
+- **The governance platforms mostly are not.** We found no public code for the agent products of Drata, Bedrock Data or Ping, nor agent-governance code from the testers and responders.
+
+So the honest picture is not that we are the only ones who are open. It is that what we open is a different layer: the policy above the enforcement points, the analysis that decides which control fits, and the vocabulary to say it, under CC BY 4.0, with the code under Apache 2.0. That is exactly the layer the open gateways need something to feed them, and the closed platforms could adopt without giving anything up.
+
+## The more mature, the less we are needed? {#maturity}
+
+We have talked about this before. The more mature a company is, in a way, the less of what we do it might need: it already has its gateways, its monitoring and its governance. That is true, and there is still a lot of value to add: the risk analysis across all of it, the gaps between the tools, the rows nobody holds, and the evidence that ties it together for a board or an insurer. And for the many companies that are not mature yet, we are the place to start.
+
+The platform we now have is very mouldable: policies, hooks, vaults, compiled rules, replayable evidence. What it needs is lots of use cases.
 
 ## What we need now {#customers}
 
@@ -105,7 +131,8 @@ The analyst's closing question is the best way to find them: which agent action 
 - **Our dots are rings.** In the figure, RiskMandate supplies the policy for each layer, not a product in it.
 - **The hooks are settings.** Kept by the agent's own harness; a boundary needs something outside it.
 - **Our evidence trail is a demo.** The Pellbridge bank is invented.
+- **The open-source check is of public code.** Repositories and documentation we could read; some may hold more.
 
 ## Where this comes from {#sources}
 
-An analyst's note to us from the WestCap CISO Summit, 21 October 2026, paraphrased. Drata's [announcement of 4 August 2026](https://drata.com/about/news/drata-extends-trust-management-platform-to-continuously-monitor-and-govern-ai-agents); Endor Labs' [agent governance](https://www.endorlabs.com/learn/agent-governance); Socket's MCP server and hook documentation; Bedrock Data's announcement of March 2026; [Sondera's documentation](https://docs.sondera.ai); and the pages of AWS, Ping Identity, Docker, Bishop Fox, Optiv, Kroll and Sygnia, all read the same day. Related: [a briefing for the WestCap CISO Summit](/articles/a-briefing-for-the-ciso-summit.html), [the RiskMandate roadmap](/articles/the-riskmandate-roadmap.html), [the key is not the risk](/articles/the-key-is-not-the-risk.html), [commander's intent is a behaviour policy](/articles/commanders-intent-is-a-behaviour-policy.html), [Cedar and the policy vault](/articles/cedar-and-the-policy-vault.html), [our first customers](/articles/our-first-customers.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+An analyst's note to us from the WestCap CISO Summit, 21 October 2026, paraphrased. Drata's [announcement of 4 August 2026](https://drata.com/about/news/drata-extends-trust-management-platform-to-continuously-monitor-and-govern-ai-agents); Endor Labs' [agent governance](https://www.endorlabs.com/learn/agent-governance); Socket's MCP server and hook documentation; Bedrock Data's announcement of March 2026; [Sondera's documentation](https://docs.sondera.ai); and the pages of AWS, Ping Identity, Docker, Bishop Fox, Optiv, Kroll and Sygnia, and the public repositories of agentgateway, Docker, Sondera, Cedar, Socket and Endor Labs, all read the same day. Related: [a briefing for the WestCap CISO Summit](/articles/a-briefing-for-the-ciso-summit.html), [the RiskMandate roadmap](/articles/the-riskmandate-roadmap.html), [the key is not the risk](/articles/the-key-is-not-the-risk.html), [commander's intent is a behaviour policy](/articles/commanders-intent-is-a-behaviour-policy.html), [Cedar and the policy vault](/articles/cedar-and-the-policy-vault.html), [our first customers](/articles/our-first-customers.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.

@@ -29,9 +29,9 @@ The graphs are data first and pictures second. Take them as JSON: [all articles 
 An analyst's blueprint for RiskMandate, control what agents do and not just what they can access, matches the Agent Behaviour Policy's grant against mandate; with Drata, Endor Labs, Socket, Sondera, AWS and gateway makers already intercepting tool calls, RiskMandate should be the open policy those enforcement points are configured from, blocking through hooks and compiled gateway rules rather than adding another box in line, and it now needs customers to do it for real.
 
 *[diagram]*
-**claim**method**artefact**example**question
+**concept**claim**method**artefact**example**question
 
-**9 nodes, 8 edges**
+**11 nodes, 10 edges**
 
 - **The analyst's blueprint** (artefact) Discover, evaluate, enforce, prove.
 - **Control what agents do** (claim) Grant against mandate.
@@ -42,6 +42,8 @@ An analyst's blueprint for RiskMandate, control what agents do and not just what
 - **Hooks that block** (method) In the agent's harness; settings.
 - **Rules compiled for gateways** (method) Cedar kept outside the agent.
 - **Customers, for real** (claim) One workflow and one agent each.
+- **Controls fitted to the context** (method) Prompt, hook, gateway, monitoring.
+- **The open policy layer** (concept) Enforcement points open; policy open.
 
 > the policy layer, not another runtime layer Our answer.
 

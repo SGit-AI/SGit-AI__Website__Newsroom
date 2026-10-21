@@ -12,7 +12,9 @@
   {"id": "inline", "label": "Not another box in the middle", "kind": "claim", "summary": "In line, without context, in a full market."},
   {"id": "hooks", "label": "Hooks that block", "kind": "method", "summary": "In the agent's harness; settings."},
   {"id": "compiled", "label": "Rules compiled for gateways", "kind": "method", "summary": "Cedar kept outside the agent."},
-  {"id": "customers", "label": "Customers, for real", "kind": "claim", "summary": "One workflow and one agent each."}
+  {"id": "customers", "label": "Customers, for real", "kind": "claim", "summary": "One workflow and one agent each."},
+  {"id": "fit", "label": "Controls fitted to the context", "kind": "method", "summary": "Prompt, hook, gateway, monitoring."},
+  {"id": "open", "label": "The open policy layer", "kind": "concept", "summary": "Enforcement points open; policy open."}
  ],
  "edges": [
   {"from": "note", "to": "thesis", "rel": "produces"},
@@ -22,7 +24,9 @@
   {"from": "hooks", "to": "inline", "rel": "answers"},
   {"from": "compiled", "to": "inline", "rel": "answers"},
   {"from": "hooks", "to": "compiled", "rel": "compared-with"},
-  {"from": "question", "to": "customers", "rel": "leads-to"}
+  {"from": "question", "to": "customers", "rel": "leads-to"},
+  {"from": "fit", "to": "inline", "rel": "answers"},
+  {"from": "open", "to": "vendors", "rel": "compared-with"}
  ],
  "links": {
   "articles": ["a-briefing-for-the-ciso-summit", "the-riskmandate-roadmap", "the-key-is-not-the-risk", "commanders-intent-is-a-behaviour-policy", "cedar-and-the-policy-vault", "our-first-customers", "what-can-your-agent-reach", "inside-the-pellbridge-agents", "how-to-help"],

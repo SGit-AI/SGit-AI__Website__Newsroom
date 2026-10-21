@@ -60,6 +60,18 @@
       "label": "Customers, for real",
       "kind": "claim",
       "summary": "One workflow and one agent each."
+    },
+    {
+      "id": "fit",
+      "label": "Controls fitted to the context",
+      "kind": "method",
+      "summary": "Prompt, hook, gateway, monitoring."
+    },
+    {
+      "id": "open",
+      "label": "The open policy layer",
+      "kind": "concept",
+      "summary": "Enforcement points open; policy open."
     }
   ],
   "edges": [
@@ -102,6 +114,16 @@
       "from": "question",
       "to": "customers",
       "rel": "leads-to"
+    },
+    {
+      "from": "fit",
+      "to": "inline",
+      "rel": "answers"
+    },
+    {
+      "from": "open",
+      "to": "vendors",
+      "rel": "compared-with"
     }
   ],
   "links": {
@@ -151,9 +173,21 @@
       "kind": "comparison"
     },
     {
+      "file": "wb-fit.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wb-fit.webp",
+      "caption": "The controls fitted to the context: a line in the prompt where little is at stake; a hook in the harness where the agent acts alone; a gateway or proxy where it reaches systems that matter; monitoring and a person where money, customers or regulators are involved. The same behaviour policy feeds all four.",
+      "kind": "concept"
+    },
+    {
       "file": "wb-start.webp",
       "url": "https://newsroom.sgit.ai/articles/images/wb-start.webp",
       "caption": "Where to start: the analyst's first build list, and our order. Tool-call interception through the hooks and the customer's own gateways; behavioural policies, which we have; cross-step detection in hooks that keep state; allow, block and approve generated from the policy; audit and replay, which we have; and partners for skill and MCP risk scoring.",
+      "kind": "comparison"
+    },
+    {
+      "file": "wb-open.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wb-open.webp",
+      "caption": "Who plays open source, and what they open: agentgateway, Docker's MCP gateway and Sondera's harness are open; AWS opens its Cedar language, Socket and Endor Labs their agent tooling; no public code was found for Drata's, Bedrock Data's or Ping's agent products. RiskMandate opens the vocabulary, the policies, the engine and the apps.",
       "kind": "comparison"
     }
   ]
