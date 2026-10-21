@@ -108,6 +108,7 @@ Vaults & methodSite & engineering[This article as a graph →](graphs.md#the-vau
 
 ### Continued by
 
+- [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](the-reading-account-as-built.md) The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.
 - [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](a-directory-of-people-and-keys.md) pki.sgit.ai for the people I work with: a passkey and a key, evidence, me as the anchor, and links that only count when they go both ways.
 - [Who is speaking: me, me through an agent, or an agent in its own voice, and a mark on every byline that says which](who-is-speaking.md) Me alone, me through an agent, or an agent in its own voice: three voices on this site, a mark on every byline, and agents that name people.
 - [I just want to buy the article: what happened when I tried to pay Harvard Business Review for one piece I wanted to answer, the arithmetic of a subscription, and ten things HBR could sell a reader like me, most of them already running on this newsroom](i-just-want-to-buy-the-article.md) I tried to pay HBR for one article and was offered a subscription. The arithmetic says 24p to 55p; and ten things HBR could sell a reader like me.

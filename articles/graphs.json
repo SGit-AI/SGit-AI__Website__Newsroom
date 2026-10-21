@@ -55,6 +55,165 @@
   ],
   "articles": [
     {
+      "slug": "the-reading-account-as-built",
+      "title": "The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-reading-account-as-built.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-reading-account-as-built.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-reading-account-as-built.webp",
+      "teaser": "The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.",
+      "topics": [
+        "vaults-and-method",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "meter",
+        "payments",
+        "vaults",
+        "reading-account",
+        "status",
+        "article"
+      ],
+      "links_out": [
+        "the-user-keeps-the-meter",
+        "paying-after-the-value",
+        "the-vault-opened",
+        "sixteen-notes-i-did-not-want-to-lose"
+      ],
+      "links_in": [
+        "the-user-keeps-the-meter"
+      ],
+      "figures": [
+        {
+          "file": "rb-built.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rb-built.webp",
+          "caption": "The reading account, piece by piece: the meter, £5 of starting credit, top-up with Stripe, the account in your vault, a balance across devices, devices merged, notes and send to my vault, and a server that sees only ciphertext, all built; checking payments against Stripe, signed validations and one account across our sites, proposed.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-reading-account-as-built",
+        "teaser": "The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.",
+        "topics": [
+          "vaults-and-method",
+          "site-and-engineering"
+        ],
+        "core_idea": "The reader's account on this site is built and in daily use, the meter, starting credit, Stripe top-ups and an account kept in the reader's own vault across devices with a lane any browser can write to, while the server sees only ciphertext; what remains proposed is checking each payment against Stripe and signing the result, and a missing status page let an agent mistake one for the other.",
+        "nodes": [
+          {
+            "id": "meter",
+            "label": "The meter",
+            "kind": "artefact",
+            "summary": "Charges by how much was read."
+          },
+          {
+            "id": "topup",
+            "label": "Stripe top-ups",
+            "kind": "artefact",
+            "summary": "Credited once per payment reference."
+          },
+          {
+            "id": "vault",
+            "label": "The account in your vault",
+            "kind": "artefact",
+            "summary": "One file per device."
+          },
+          {
+            "id": "balance",
+            "label": "A balance across devices",
+            "kind": "concept",
+            "summary": "A payment counts once."
+          },
+          {
+            "id": "lane",
+            "label": "Send to my vault",
+            "kind": "artefact",
+            "summary": "Any browser can write."
+          },
+          {
+            "id": "cipher",
+            "label": "Ciphertext only",
+            "kind": "claim",
+            "summary": "The server reads nothing."
+          },
+          {
+            "id": "check",
+            "label": "Payments checked and signed",
+            "kind": "method",
+            "summary": "Proposed."
+          },
+          {
+            "id": "gap",
+            "label": "A missing status page",
+            "kind": "claim",
+            "summary": "An agent misread the proposal."
+          }
+        ],
+        "edges": [
+          {
+            "from": "meter",
+            "to": "vault",
+            "rel": "produces"
+          },
+          {
+            "from": "topup",
+            "to": "balance",
+            "rel": "produces"
+          },
+          {
+            "from": "vault",
+            "to": "balance",
+            "rel": "produces"
+          },
+          {
+            "from": "lane",
+            "to": "vault",
+            "rel": "extends"
+          },
+          {
+            "from": "vault",
+            "to": "cipher",
+            "rel": "depends-on"
+          },
+          {
+            "from": "check",
+            "to": "topup",
+            "rel": "extends"
+          },
+          {
+            "from": "gap",
+            "to": "check",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-user-keeps-the-meter",
+            "paying-after-the-value",
+            "the-vault-opened",
+            "sixteen-notes-i-did-not-want-to-lose"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "Half of that is wrong.",
+            "why": "The correction."
+          },
+          {
+            "text": "it does not, and cannot, verify the payment",
+            "why": "What the return page says."
+          },
+          {
+            "text": "For something with no server keeping the balance, it is quite powerful",
+            "why": "From here."
+          }
+        ]
+      }
+    },
+    {
       "slug": "an-analysts-blueprint-for-riskmandate",
       "title": "An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer",
       "date": "2026-10-21",
@@ -3622,12 +3781,14 @@
       ],
       "links_out": [
         "paying-after-the-value",
+        "the-reading-account-as-built",
         "the-editors-channel",
         "secrets-on-public-keys",
         "pki-everywhere",
         "free-to-copy-paid-at-the-source"
       ],
       "links_in": [
+        "the-reading-account-as-built",
         "the-attack-surface-you-do-not-have",
         "messaging-fs",
         "aws-from-the-vault"
@@ -22389,6 +22550,7 @@
         "the-agents-write-too"
       ],
       "links_in": [
+        "the-reading-account-as-built",
         "a-directory-of-people-and-keys",
         "who-is-speaking",
         "i-just-want-to-buy-the-article"
@@ -26027,6 +26189,7 @@
         "pay-to-keep-your-persona"
       ],
       "links_in": [
+        "the-reading-account-as-built",
         "the-user-keeps-the-meter",
         "free-to-copy-paid-at-the-source",
         "our-first-customers",
@@ -31563,6 +31726,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-reading-account-as-built",
         "the-human-is-the-network",
         "a-secret-is-a-qr-code",
         "the-briefs-so-far",

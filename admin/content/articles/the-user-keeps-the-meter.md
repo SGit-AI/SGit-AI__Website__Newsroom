@@ -21,7 +21,7 @@ status: published
 - **Stripe is reconciled from the admin's browser.** Payments are read, matched and validated.
 - **One server, one light check.** The upload server asks: is the key valid, and is there credit?
 - **The user's data travels with them.** Across every site, because it lives in their vault.
-- **It is a proposal.** Nothing here is built yet, and the open questions are written down.
+- **It is a proposal, on parts that run.** The billing vault is not built yet; the meter and the account in the reader's vault are.
 
 ## The old problem {#problem}
 
@@ -33,7 +33,7 @@ The usual way out is to append first and update later: write every event to a lo
 
 What made me look at this again is that most of the pieces already exist on our sites.
 
-**A meter in the reader's browser.** This newsroom already charges per use, without a server keeping the balance: every reader starts with £5 of credit, each page draws a few pence from it, the credit is kept in the reader's browser, and the balance can go below zero until they top up with a £5 payment link, live since 11 October. I wrote about why in [paying after the value](/articles/paying-after-the-value.html).
+**A meter, and an account in the reader's own vault.** This newsroom already charges per use, without a server keeping the balance: every reader starts with £5 of credit, each page draws a few pence from it, and the balance can go below zero until they top up with a £5 payment link, live since 11 October. I wrote about why in [paying after the value](/articles/paying-after-the-value.html). The account is kept in the browser and, when the reader opens their vault with a passkey, carried into it: one file per device, a balance consolidated across devices, and a lane that browsers without the passkey can write to. What is not built is the check: the page a payment returns to adds the credit, and does not verify it. [The reading account, as built](/articles/the-reading-account-as-built.html) lists every piece.
 
 **Append lanes.** A vault can have a lane that others write to and only its owner reads. On this site that is already in use: in [the editor's channel](/articles/the-editors-channel.html), "An append lane on the reader vault that any browser with a link can write to and none can read, with a key pair made in the reader's browser". And from [secrets on public keys](/articles/secrets-on-public-keys.html): "Append lanes are already write-only inboxes, read with an enum key, and this site has measured a hundred writers on one."
 
@@ -166,7 +166,7 @@ api.user.sgit.ai, or api.billing.sgit.ai, would follow the rule our other API si
 
 ## What this does not claim {#limits}
 
-- **Nothing here is built.** Neither user.sgit.ai nor billing.sgit.ai exists yet.
+- **The billing vault is not built.** Neither user.sgit.ai nor billing.sgit.ai exists yet, and payments are not yet checked or signed; the meter and the reading account in the reader's vault are, as [the reading account, as built](/articles/the-reading-account-as-built.html) lists.
 - **The record formats are sketches.** The field names will change.
 - **The Stripe flow is not tested.** Its constraints are from Stripe's documentation, read on 21 October 2026.
 - **Client-reported activity is not proof.** The design says where it is trusted and where it is counted.

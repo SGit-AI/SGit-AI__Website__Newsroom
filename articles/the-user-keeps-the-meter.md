@@ -10,7 +10,7 @@
 
 # The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.2.0, 3 versions](versions/the-user-keeps-the-meter.md) · [newsroom v0.13.13](https://newsroom.sgit.ai/admin/versions.html) · vaultsbillingpkiarchitectureproposalarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.3.0, 4 versions](versions/the-user-keeps-the-meter.md) · [newsroom v0.13.13](https://newsroom.sgit.ai/admin/versions.html) · vaultsbillingpkiarchitectureproposalarticle
 
 ***Abstract:** Billing is usually a server problem: a server, a database, a balance every action has to update, race conditions, and either a bottleneck or a scheduler to keep it all in step. This is an exploration of doing it the other way round, on the client, with vaults. Each user gets a billing vault that both they and I can write to. The user's browser meters its own activity and appends it there, signed with the user's key, the way this newsroom's meter already works. When the user pays, their browser adds the credit straight away, so they can carry on. My admin vault, which can be offline for a while, later reconciles payments with Stripe, from my browser, and commits a validation back into the user's vault, signed with the admin key, so anyone can check it. Credit is then unvalidated, validated, or not valid, and the product keeps working on unvalidated credit, because on the client it costs us nothing. Since the vault's first commit is pinned and every commit is signed, we always know who wrote what. The one server left, the sgit upload server, does a light check only: is the key valid, and is there credit, read from a cached, signed value through a small credits API. Four parties, each with its own key: the admin vault, the user, the upload server and the API. And because the user's data lives in their vault, it travels with them across our sites. It is all PKI from here. Where it lives is open: user.sgit.ai, or billing.sgit.ai, so others can use it too. This is a proposal, with the open questions written down.*
 
@@ -25,7 +25,7 @@ The proposed design. The user's browser appends its activity, and adds credit wh
 - **Stripe is reconciled from the admin's browser.** Payments are read, matched and validated.
 - **One server, one light check.** The upload server asks: is the key valid, and is there credit?
 - **The user's data travels with them.** Across every site, because it lives in their vault.
-- **It is a proposal.** Nothing here is built yet, and the open questions are written down.
+- **It is a proposal, on parts that run.** The billing vault is not built yet; the meter and the account in the reader's vault are.
 
 ## The old problem
 
@@ -37,7 +37,7 @@ The usual way out is to append first and update later: write every event to a lo
 
 What made me look at this again is that most of the pieces already exist on our sites.
 
-**A meter in the reader's browser.** This newsroom already charges per use, without a server keeping the balance: every reader starts with £5 of credit, each page draws a few pence from it, the credit is kept in the reader's browser, and the balance can go below zero until they top up with a £5 payment link, live since 11 October. I wrote about why in [paying after the value](paying-after-the-value.md).
+**A meter, and an account in the reader's own vault.** This newsroom already charges per use, without a server keeping the balance: every reader starts with £5 of credit, each page draws a few pence from it, and the balance can go below zero until they top up with a £5 payment link, live since 11 October. I wrote about why in [paying after the value](paying-after-the-value.md). The account is kept in the browser and, when the reader opens their vault with a passkey, carried into it: one file per device, a balance consolidated across devices, and a lane that browsers without the passkey can write to. What is not built is the check: the page a payment returns to adds the credit, and does not verify it. [The reading account, as built](the-reading-account-as-built.md) lists every piece.
 
 **Append lanes.** A vault can have a lane that others write to and only its owner reads. On this site that is already in use: in [the editor's channel](the-editors-channel.md), "An append lane on the reader vault that any browser with a link can write to and none can read, with a key pair made in the reader's browser". And from [secrets on public keys](secrets-on-public-keys.md): "Append lanes are already write-only inboxes, read with an enum key, and this site has measured a hundred writers on one."
 
@@ -172,7 +172,7 @@ api.user.sgit.ai, or api.billing.sgit.ai, would follow the rule our other API si
 
 ## What this does not claim
 
-- **Nothing here is built.** Neither user.sgit.ai nor billing.sgit.ai exists yet.
+- **The billing vault is not built.** Neither user.sgit.ai nor billing.sgit.ai exists yet, and payments are not yet checked or signed; the meter and the reading account in the reader's vault are, as [the reading account, as built](the-reading-account-as-built.md) lists.
 - **The record formats are sketches.** The field names will change.
 - **The Stripe flow is not tested.** Its constraints are from Stripe's documentation, read on 21 October 2026.
 - **Client-reported activity is not proof.** The design says where it is trusted and where it is counted.
@@ -235,6 +235,7 @@ Vaults & method[This article as a graph →](graphs.md#the-user-keeps-the-meter)
 ### Builds on
 
 - [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](paying-after-the-value.md) Most purchases are bets on future value; a reading balance that can go negative asks for payment when the value is already in view.
+- [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](the-reading-account-as-built.md) The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
 - [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](secrets-on-public-keys.md) secrets.sgit.ai becomes a service for moving a secret from A to B on public keys only: no shared keys, a vault for the private key, eight scenarios.
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md) From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.
@@ -242,6 +243,7 @@ Vaults & method[This article as a graph →](graphs.md#the-user-keeps-the-meter)
 
 ### Continued by
 
+- [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](the-reading-account-as-built.md) The meter, the credit, Stripe top-ups and the account in your own vault run today; checking payments is what is proposed.
 - [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md) Every CVE makes me smile: moving to the client side took my servers out of the news, and the constraint turned out to be speed.
 - [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](messaging-fs.md) A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.
 - [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md) A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.

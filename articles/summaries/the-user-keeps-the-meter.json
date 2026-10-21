@@ -13,9 +13,9 @@
   {
    "id": "in-short",
    "label": "In short",
-   "words": 124,
+   "words": 133,
    "line": "The design in short: two writers, credit now and validated later, one light check.",
-   "para": "Billing on the client: each user has a billing vault and their browser keeps the meter. The user signs activity; the admin signs the validation of credit. Credit is given straight away and validated later. The upload server asks only whether the key is valid and there is credit. Data travels with the user. Nothing is built yet.",
+   "para": "Billing on the client: each user has a billing vault and their browser keeps the meter. The user signs activity; the admin signs the validation of credit. Credit is given at once and validated later. The upload server asks only whether the key is valid and there is credit. The billing vault is not built; the meter it builds on is.",
    "by": "newsroom.writer"
   },
   {
@@ -29,9 +29,9 @@
   {
    "id": "have",
    "label": "What we already have",
-   "words": 237,
+   "words": 302,
    "line": "Most pieces exist: the newsroom's meter, append lanes, versioned vaults and a key register.",
-   "para": "The newsroom already meters reading in the browser, with £5 of credit and a top-up link live since 11 October. Append lanes are write-only inboxes already in use. Vaults are versioned, so two writers' changes can be merged. And PKI everywhere put signatures and a public key register at the centre.",
+   "para": "The newsroom already meters reading, with £5 of credit and a top-up link live since 11 October, and carries the reading account into the reader's own vault, across devices. Append lanes are write-only inboxes in use. Vaults are versioned, so two writers' changes can be merged. PKI everywhere put signatures and a key register at the centre.",
    "by": "newsroom.writer"
   },
   {
@@ -133,9 +133,9 @@
   {
    "id": "limits",
    "label": "What this does not claim",
-   "words": 79,
-   "line": "Nothing is built; the formats are sketches; the Stripe flow is untested.",
-   "para": "Neither user.sgit.ai nor billing.sgit.ai exists yet. The field names will change. Stripe's constraints come from its documentation, read on 21 October 2026. Client-reported activity is not proof. The meter, append lanes, versioning and key register are in use today.",
+   "words": 107,
+   "line": "The billing vault is not built; the formats are sketches; the Stripe flow is untested; the meter and vault account are.",
+   "para": "The billing vault is not built: neither user.sgit.ai nor billing.sgit.ai exists, and payments are not yet checked or signed. The meter and the reading account in the reader's vault are built. Field names will change. Stripe's constraints come from its documentation. Client-reported activity is not proof.",
    "by": "newsroom.writer"
   },
   {
