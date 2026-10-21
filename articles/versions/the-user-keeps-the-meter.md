@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 2,684 | first published | this release | [current](../the-user-keeps-the-meter.md) |
+| **v1.0.0** | 2026-10-21 | published | 2,684 | first published | [`cee9fa985`](https://github.com/SGit-AI/SGit-AI__Website/commit/cee9fa9853c08681e8d0a639bd70dbafae3ac6ec) | [current](../the-user-keeps-the-meter.md) |
 
 [← Back to the article](../the-user-keeps-the-meter.md) · [All articles](../index.md)
 

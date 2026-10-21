@@ -55,6 +55,203 @@
   ],
   "articles": [
     {
+      "slug": "aws-from-the-vault",
+      "title": "AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/aws-from-the-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/aws-from-the-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/aws-from-the-vault.webp",
+      "teaser": "A proposed aws.sgit.ai: a temporary AWS session in the user's vault, the browser calls AWS, and the data goes back into the vault.",
+      "topics": [
+        "vaults-and-method"
+      ],
+      "tags": [
+        "aws",
+        "vaults",
+        "cloud",
+        "pki",
+        "architecture",
+        "proposal",
+        "article"
+      ],
+      "links_out": [
+        "what-can-your-agent-reach",
+        "knowledge-that-maintains-itself",
+        "pki-everywhere",
+        "the-user-keeps-the-meter",
+        "agent-workflows-on-ephemeral-vaults"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "aw-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/aw-flow.webp",
+          "caption": "The proposed flow. Sign in to the AWS access portal and copy temporary credentials for one account and role. Paste them into the vault. The site, in the browser, calls AWS with them, and the results go back into the vault, where they become graphs and workflows.",
+          "kind": "architecture"
+        },
+        {
+          "file": "aw-deploy.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/aw-deploy.webp",
+          "caption": "The first job, as an example. One template, deployed through one session per account into several regions, with each deployment recorded in the vault. The accounts and regions are illustrative.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "aws-from-the-vault",
+        "teaser": "A proposed aws.sgit.ai: a temporary AWS session in the user's vault, the browser calls AWS, and the data goes back into the vault.",
+        "topics": [
+          "vaults-and-method"
+        ],
+        "core_idea": "Client-side AWS tooling was missing a safe place for credentials and a home for its data; the user's vault supplies both, holding temporary IAM Identity Center credentials for one session while the browser calls AWS with the JavaScript SDK and writes versioned results back for graphs and workflows, starting with multi-region, multi-account deployments.",
+        "nodes": [
+          {
+            "id": "missing",
+            "label": "Two missing pieces",
+            "kind": "claim",
+            "summary": "Where credentials and data go."
+          },
+          {
+            "id": "tools",
+            "label": "OSBot-AWS and SG/Compute",
+            "kind": "artefact",
+            "summary": "Years of AWS tooling."
+          },
+          {
+            "id": "portal",
+            "label": "AWS access portal",
+            "kind": "method",
+            "summary": "Temporary credentials, one to twelve hours."
+          },
+          {
+            "id": "vault",
+            "label": "The user's vault",
+            "kind": "concept",
+            "summary": "Holds the session and the data."
+          },
+          {
+            "id": "browser",
+            "label": "The browser does the work",
+            "kind": "method",
+            "summary": "AWS SDK for JavaScript."
+          },
+          {
+            "id": "cors",
+            "label": "CORS per service",
+            "kind": "question",
+            "summary": "S3 needs it; the rest to measure."
+          },
+          {
+            "id": "data",
+            "label": "AWS data in the vault",
+            "kind": "artefact",
+            "summary": "Versioned snapshots."
+          },
+          {
+            "id": "graphs",
+            "label": "Graphs of an account",
+            "kind": "method",
+            "summary": "What can reach what."
+          },
+          {
+            "id": "deploy",
+            "label": "Multi-region deployment",
+            "kind": "example",
+            "summary": "One session per account."
+          },
+          {
+            "id": "pki",
+            "label": "IAM Roles Anywhere",
+            "kind": "question",
+            "summary": "X.509 for temporary credentials."
+          },
+          {
+            "id": "careful",
+            "label": "Narrow roles, short sessions",
+            "kind": "claim",
+            "summary": "The session can do what its role can."
+          }
+        ],
+        "edges": [
+          {
+            "from": "tools",
+            "to": "missing",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "missing",
+            "rel": "answers"
+          },
+          {
+            "from": "portal",
+            "to": "vault",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "browser",
+            "rel": "leads-to"
+          },
+          {
+            "from": "cors",
+            "to": "browser",
+            "rel": "extends"
+          },
+          {
+            "from": "browser",
+            "to": "data",
+            "rel": "produces"
+          },
+          {
+            "from": "data",
+            "to": "graphs",
+            "rel": "leads-to"
+          },
+          {
+            "from": "deploy",
+            "to": "browser",
+            "rel": "example-of"
+          },
+          {
+            "from": "pki",
+            "to": "portal",
+            "rel": "compared-with"
+          },
+          {
+            "from": "careful",
+            "to": "portal",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-user-keeps-the-meter",
+            "pki-everywhere",
+            "agent-workflows-on-ephemeral-vaults",
+            "what-can-your-agent-reach",
+            "knowledge-that-maintains-itself"
+          ],
+          "pages": [],
+          "sites": []
+        },
+        "quotes": [
+          {
+            "text": "It was two missing pieces.",
+            "why": "The diagnosis."
+          },
+          {
+            "text": "The vault answers both.",
+            "why": "The answer."
+          },
+          {
+            "text": "The vault becomes the record of the estate",
+            "why": "Deployments."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-user-keeps-the-meter",
       "title": "The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server",
       "date": "2026-10-21",
@@ -81,7 +278,9 @@
         "pki-everywhere",
         "free-to-copy-paid-at-the-source"
       ],
-      "links_in": [],
+      "links_in": [
+        "aws-from-the-vault"
+      ],
       "figures": [
         {
           "file": "um-parties.webp",
@@ -1357,6 +1556,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "aws-from-the-vault",
         "the-user-keeps-the-meter",
         "v0-12-in-numbers",
         "free-to-copy-paid-at-the-source",
@@ -10669,6 +10869,7 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "aws-from-the-vault",
         "a-briefing-for-the-ciso-summit",
         "our-first-customers",
         "a-trusted-framework-for-agentic-finance",
@@ -23645,6 +23846,7 @@
         "sgit-actions-side-by-side"
       ],
       "links_in": [
+        "aws-from-the-vault",
         "the-editors-channel",
         "one-vault-ten-agents",
         "your-own-newsroom",
@@ -25729,6 +25931,7 @@
         "memory-is-not-a-spectator-sport"
       ],
       "links_in": [
+        "aws-from-the-vault",
         "bringing-my-past-work-back",
         "who-will-fix-your-mess",
         "the-agents-write-too"

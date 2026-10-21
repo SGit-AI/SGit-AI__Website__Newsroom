@@ -73,6 +73,34 @@
   ],
   "articles": [
     {
+      "slug": "aws-from-the-vault",
+      "title": "AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/aws-from-the-vault.html",
+      "markdown": "https://newsroom.sgit.ai/articles/aws-from-the-vault.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/aws-from-the-vault.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/aws-from-the-vault.json",
+      "teaser": "A proposed aws.sgit.ai: a temporary AWS session in the user's vault, the browser calls AWS, and the data goes back into the vault.",
+      "summary": "I have wanted to build this for a long time: a website for managing AWS and working with its data, all on the client. aws.sgit.ai, or something wider, a platform or provider site. Two pieces were always missing. The first was a safe place in the browser for the AWS credentials. The second was somewhere to put the data: the inventories, logs and costs you gather. Now that every user has a vault, both are solved. You sign in to the AWS access portal, IAM Identity Center, copy the temporary credentials for one account and role, which last from one to twelve hours, and paste them into your vault, which can itself be temporary. For that session the site can do whatever that role can do, from the browser, with the normal AWS SDK for JavaScript: an S3 browser, Lambda functions, EC2 instances, billing, logs. The results go back into the vault, where they are versioned and can be turned into graphs. The first job I want from it is a better way to deploy the SG/Send server components to many regions and accounts. There may be a PKI way to get the session as well: IAM Roles Anywhere exchanges X.509 certificates for temporary credentials. That is to test. This is a proposal.",
+      "topics": [
+        "vaults-and-method"
+      ],
+      "tags": [
+        "aws",
+        "vaults",
+        "cloud",
+        "pki",
+        "architecture",
+        "proposal",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-user-keeps-the-meter",
       "title": "The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server",
       "date": "2026-10-21",

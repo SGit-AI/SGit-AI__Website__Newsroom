@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 826 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 556 | 3001 | links to sgit.ai's pages and the network sites (23 files this site writes itself) |
-| words | 1122 | 7377 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 829 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 558 | 3006 | links to sgit.ai's pages and the network sites (23 files this site writes itself) |
+| words | 1128 | 7491 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 65 | 151 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 468 × `sgit.ai/about/index.html`
-- 231 × `sgit.ai/about/index.md`
+- 470 × `sgit.ai/about/index.html`
+- 232 × `sgit.ai/about/index.md`
 - 146 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 38 × `sgit.ai/why/index.html`
@@ -43,10 +43,10 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 19 × `sgit.ai/docs/limitations.html`
 - 19 × `sgit.ai/demos/vaults/bridge-simulation/index.html`
 - 18 × `sgit.ai/docs/vault/vault-from-javascript.html`
-- 18 × `sgit.ai/docs/append-lane-messaging.html`
-- 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 18 × `sgit.ai/docs/vault/vault-apps.html`
 - 18 × `sgit.ai/docs/vault/static-hosting.html`
+- 18 × `sgit.ai/docs/append-lane-messaging.html`
+- 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 17 × `pki.sgit.ai/`
 - 17 × `nhi.sgit.ai/`
 - 16 × `graphs.sgit.ai/v2/books/index.html`
@@ -82,7 +82,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 
 ## Words, in pages this site writes itself
 
-- `admin/versions.html` (105)
+- `admin/versions.html` (106)
 - `admin/notes/2026-10-10__newsroom-move-and-content-audit.md` (50)
 - `newsroom-api/index.html` (30)
 - `newsroom-api/map.json` (24)
@@ -97,18 +97,19 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/021.html` (15)
 - `admin/build/validate.js` (14)
 - `admin/notes/2026-10-12__what-the-new-articles-ask.md` (14)
+- `desks/vaults.html` (14)
 - `engineering/releases/v0.12.145.html` (14)
 - `engineering/releases/v0.12.2.html` (13)
 - `admin/notes/2026-10-18__a-directory-of-people-and-keys.md` (12)
-- `desks/vaults.html` (12)
+- `articles/ids.json` (12)
 - `engineering/releases/v0.12.15.html` (12)
 - `engineering/releases/v0.12.3.html` (12)
 - `engineering/releases/v0.12.4.html` (12)
 - `engineering/releases/v0.12.5.html` (12)
 - `engineering/releases/v0.12.65.html` (12)
 - `admin/notes/2026-10-11__newsroom-api-map-and-review.md` (11)
-- `articles/ids.json` (11)
 - `admin/build/newsroom-text.json` (10)
+- `articles/summaries/the-user-keeps-the-meter.json` (9)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
 - `desks/security.html` (8)
@@ -130,7 +131,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/summaries/nineteen-sites.json` (6)
 - `articles/summaries/the-scripted-talk.json` (6)
 - `demos/vaults/pellbridge-agents/index.html` (6)
-- `desks/building.html` (6)
 - `engineering/issues/010.html` (6)
 - `engineering/issues/017.html` (6)
 - `engineering/issues/079.html` (6)

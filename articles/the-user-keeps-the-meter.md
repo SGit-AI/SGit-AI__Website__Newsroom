@@ -216,6 +216,10 @@ Vaults & method[This article as a graph →](graphs.md#the-user-keeps-the-meter)
 - [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](pki-everywhere.md) From now on every message, secret and handover is signed. The hard part is an agent's first key: two patterns, one built and one proposed.
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](free-to-copy-paid-at-the-source.md) Open policies and hooks, free to copy, can still earn per use at the official source, if others review them and we sign them.
 
+### Continued by
+
+- [AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md) A proposed aws.sgit.ai: a temporary AWS session in the user's vault, the browser calls AWS, and the data goes back into the vault.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 233 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=233)
