@@ -73,6 +73,34 @@
   ],
   "articles": [
     {
+      "slug": "messaging-fs",
+      "title": "Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/messaging-fs.html",
+      "markdown": "https://newsroom.sgit.ai/articles/messaging-fs.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/messaging-fs.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/messaging-fs.json",
+      "teaser": "A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.",
+      "summary": "In the early versions of what is now the append lane, the API was called the inbox, and two agent teams used it to send each other signed, encrypted messages in both directions. It worked, and it was crude. I think we now have a much better way of doing it. Every user will have a vault, their billing vault or a comms vault, and every vault can have append lanes: write-only channels that anyone holding a token can write to and only the owner can read. Put that together with PKI and you have a full messaging system between vaults. It is not quite peer to peer, because everything still goes through the server, but the server only ever sees ciphertext, its size and its time. Each message is encrypted to the recipient's public key and signed by the sender, so we always know who sent what. On top of that transport sits a schema, which I would call Messaging-FS, alongside Issues-FS and Email-FS: a conversation is one JSON file, updated as each message and reply arrives, where an email is one file at a time. The same messages can be sent and read from a web messenger or from the command line. This maps out the workflow, what exists, and what we would build.",
+      "topics": [
+        "vaults-and-method"
+      ],
+      "tags": [
+        "vaults",
+        "messaging",
+        "pki",
+        "append-lanes",
+        "architecture",
+        "proposal",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "aws-from-the-vault",
       "title": "AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go",
       "date": "2026-10-21",

@@ -1,0 +1,81 @@
+{
+ "slug": "messaging-fs",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A proposed encrypted messenger between vaults, on append lanes and PKI, with Messaging-FS as its schema.",
+   "para": "The append lane was once called the inbox, and two agent teams messaged each other over it, crudely. Now every user has a vault, and lanes plus PKI make a messenger: encrypted to the recipient, signed by the sender, through a server that sees only ciphertext, size and time. Messaging-FS keeps a conversation in one JSON file.",
+   "hash": "ce5f9f8a9cad"
+  },
+  "in-short": {
+   "line": "Seven lines: done once crudely, every user a vault, lanes plus PKI, Messaging-FS, web and CLI.",
+   "para": "We messaged over the old inbox before. Every user now has a vault with append lanes. Encrypted to the recipient and signed by the sender, messages go through a server that cannot read them. Messaging-FS is the schema, alongside Issues-FS and Email-FS. The same messages work in a browser or a terminal. The transport exists; the rest is proposed.",
+   "hash": "b75869a9ba6c"
+  },
+  "inbox": {
+   "line": "The first version: the inbox, used both ways by two agent teams in September, and crude.",
+   "para": "The append lane was called the inbox until v0.32.7. On 25 and 26 September 2026 two agent teams messaged both ways over it, neither holding the other's vault key. The write-up lists the rough edges: lane addresses agreed by hand, payloads encoded twice, configure replacing the sender list, a partial signature, and tooling written twice.",
+   "hash": "7f6eb67c546f"
+  },
+  "idea": {
+   "line": "Every user's vault gets lanes; with PKI, vaults can message vaults, like a messenger.",
+   "para": "Every user will have a vault, a billing or comms vault, and lanes are already used to communicate. Put a lane on each vault and PKI on top, and a vault can message another: a web messenger or a command-line one. It goes through the server, so it is not strictly peer to peer, but it is end to end encrypted.",
+   "hash": "cd50c3f725c0"
+  },
+  "travel": {
+   "line": "Four separated capabilities make it work: append token, enum key, write key, private key.",
+   "para": "The sender's append token can only write to one lane. The owner's enum key lists and fetches, the write key configures, and the private key decrypts and never reaches the server. A sender learns nothing, not even whether others write there; the write answers only ok. The owner drains, verifies, adds the message to the thread and marks it processed.",
+   "hash": "396ff005418e"
+  },
+  "fs": {
+   "line": "Messaging-FS keeps a conversation in one JSON file; Email-FS keeps one file per email.",
+   "para": "The transport carries bytes; the client gives them meaning. Next to Issues-FS and Email-FS, Messaging-FS would hold contacts and one thread file per conversation, updated with each message and reply, while Email-FS keeps emails a file at a time in inbox, done and outbox. The server's time-sorted file names keep messages in order.",
+   "hash": "e096a3e5268a"
+  },
+  "owner": {
+   "line": "No conflicts: each side writes only its own vault, and lanes sit beside the commit tree.",
+   "para": "Alice keeps her copy of a thread in her vault, Bob his in his. Sending means writing to the other's lane and adding to your own copy; draining adds the message to yours and commits it. Appends never touch a branch or conflict with a push, so a conversation's history is the vault's history.",
+   "hash": "815c7063481b"
+  },
+  "identity": {
+   "line": "PKI makes it trustworthy: the lane, the signature and the sender must all agree.",
+   "para": "Every message is encrypted to the recipient and signed by the sender. The lane shows who holds the token, the signature who holds the key, and the From header must match both. Keys are made on the device, published in a register, pinned on first contact and checked by fingerprint, and a shared vault's first commit can be pinned too.",
+   "hash": "eebc1e56169c"
+  },
+  "clients": {
+   "line": "The same messages from a web app, through sg.append, or the command line.",
+   "para": "In a vault app, write reaches any vault but list and fetch act only on the open one, which is the right shape for a messenger. On the command line it takes sgit pki encrypt and an HTTP call today; sgit-ai 0.23.0 has no lane command, which the write-up asked for. The web is the main use, over the same lanes.",
+   "hash": "61cfbb7cf65e"
+  },
+  "build": {
+   "line": "Most of the work list is already in the write-up's recommendations.",
+   "para": "Derive the lane address from the public key; encode once; add and remove senders without resending the list; sign the whole envelope; report the signer's fingerprint; add a lane command; put the routes in production, where send.sgraph.ai still has the older inbox routes; and write the Messaging-FS schema, with threads, contacts, replies and receipts.",
+   "hash": "4511c1085031"
+  },
+  "not": {
+   "line": "Not a chat protocol, not guaranteed delivery, not anonymous: Messaging-FS adds the chat layer.",
+   "para": "The guide says the transport is not a chat protocol, has no delivery guarantees, and is not anonymous, since the server sees activity and timing. Messaging-FS is the chat layer on top, and delivery is confirmed by replies or receipts. Limits: 5 MB per message and 1,000 waiting per lane; large files go as a vault of their own.",
+   "hash": "5b0505223b62"
+  },
+  "uses": {
+   "line": "Billing notes, reader mail, agent handovers and person-to-person messages become one thing.",
+   "para": "Once vaults can message each other, the billing design's validation notes, a reader writing to the editor, agents handing work to each other, and people writing to people are all messages over the same lanes and schema.",
+   "hash": "1aaa92e97ecf"
+  },
+  "limits": {
+   "line": "Messaging-FS is proposed; the transport exists on dev; there is no lane command yet.",
+   "para": "Email-FS lite and Issues-FS are in use; Messaging-FS is not built. The append routes run on dev.send.sgraph.ai and were used both ways in September. sgit-ai 0.23.0 has no lane command. The rough edges come from the September write-up, and some may have changed since. The server sees when and how much, not what.",
+   "hash": "a2e5053cd8fe"
+  },
+  "diagrams": {
+   "line": "The Mermaid source of both diagrams, to reuse or correct.",
+   "para": "The two vaults with a lane each for the other, and the sequence of one message from Alice to Bob through the server, as Mermaid source.",
+   "hash": "675e75462fdd"
+  },
+  "sources": {
+   "line": "A voice memo, sgit.ai's lane API, messaging guide and agent write-up, and the servers, read 21 October.",
+   "para": "A voice memo of 21 October 2026; sgit.ai's append lanes API, vault messaging guide and the September write-up of messaging between agents; the article on Issues-FS and Email-FS lite; the API descriptions of both SG/Send servers and the sgit-ai 0.23.0 commands, read the same day.",
+   "hash": "6f52f6753d44"
+  }
+ }
+}

@@ -55,6 +55,210 @@
   ],
   "articles": [
     {
+      "slug": "messaging-fs",
+      "title": "Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/messaging-fs.html",
+      "markdown": "https://newsroom.sgit.ai/articles/messaging-fs.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/messaging-fs.webp",
+      "teaser": "A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.",
+      "topics": [
+        "vaults-and-method"
+      ],
+      "tags": [
+        "vaults",
+        "messaging",
+        "pki",
+        "append-lanes",
+        "architecture",
+        "proposal",
+        "article"
+      ],
+      "links_out": [
+        "the-user-keeps-the-meter",
+        "the-editors-channel",
+        "pki-everywhere",
+        "agent-workflows-on-ephemeral-vaults"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "mf-vaults.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mf-vaults.webp",
+          "caption": "Messaging between two vaults. Each vault has a lane for the other: Alice encrypts to Bob and writes to the lane on Bob's vault, Bob does the same into Alice's. Each owner drains its own lane, checks the signature, and commits the message to its own copy of the thread.",
+          "kind": "architecture"
+        },
+        {
+          "file": "mf-send.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mf-send.webp",
+          "caption": "One message, step by step. Alice encrypts to Bob's public key, signs with her own key, keeps a copy in her thread, and writes to Bob's lane. The server answers only \"ok\". Bob lists and fetches with his enum key, decrypts, checks that the signature, the lane and the sender agree, adds the message to his copy of the thread, and marks it processed.",
+          "kind": "architecture"
+        }
+      ],
+      "graph": {
+        "slug": "messaging-fs",
+        "teaser": "A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.",
+        "topics": [
+          "vaults-and-method"
+        ],
+        "core_idea": "Append lanes on every user's vault, combined with PKI, give an end-to-end encrypted messaging system between vaults, used from the web or the command line; Messaging-FS adds the schema, one JSON file per conversation beside Email-FS's one file per email, with each side writing only its own vault so there are no conflicts.",
+        "nodes": [
+          {
+            "id": "inbox",
+            "label": "The first inbox",
+            "kind": "example",
+            "summary": "Two agent teams, September 2026."
+          },
+          {
+            "id": "edges",
+            "label": "Rough edges",
+            "kind": "claim",
+            "summary": "Tokens by hand, double encoding, partial signatures."
+          },
+          {
+            "id": "vault",
+            "label": "A vault per user",
+            "kind": "concept",
+            "summary": "Billing or comms vault."
+          },
+          {
+            "id": "lane",
+            "label": "Append lanes",
+            "kind": "artefact",
+            "summary": "Write-only, owner-read."
+          },
+          {
+            "id": "caps",
+            "label": "Four separated capabilities",
+            "kind": "concept",
+            "summary": "Append token, enum key, write key, private key."
+          },
+          {
+            "id": "pki",
+            "label": "Encrypted and signed",
+            "kind": "method",
+            "summary": "Lane, signature and sender agree."
+          },
+          {
+            "id": "mfs",
+            "label": "Messaging-FS",
+            "kind": "method",
+            "summary": "One JSON file per conversation."
+          },
+          {
+            "id": "efs",
+            "label": "Email-FS",
+            "kind": "method",
+            "summary": "One file per email."
+          },
+          {
+            "id": "owner",
+            "label": "Each side writes its own vault",
+            "kind": "claim",
+            "summary": "No conflicts; history is the vault's."
+          },
+          {
+            "id": "clients",
+            "label": "Web and command line",
+            "kind": "method",
+            "summary": "sg.append; sgit pki plus a lane command."
+          },
+          {
+            "id": "build",
+            "label": "The work list",
+            "kind": "method",
+            "summary": "Derive lanes from keys, sign the whole envelope."
+          },
+          {
+            "id": "not",
+            "label": "What it is not",
+            "kind": "claim",
+            "summary": "Not a chat protocol, not anonymous."
+          }
+        ],
+        "edges": [
+          {
+            "from": "inbox",
+            "to": "edges",
+            "rel": "produces"
+          },
+          {
+            "from": "edges",
+            "to": "build",
+            "rel": "leads-to"
+          },
+          {
+            "from": "vault",
+            "to": "lane",
+            "rel": "depends-on"
+          },
+          {
+            "from": "lane",
+            "to": "caps",
+            "rel": "depends-on"
+          },
+          {
+            "from": "pki",
+            "to": "lane",
+            "rel": "extends"
+          },
+          {
+            "from": "lane",
+            "to": "mfs",
+            "rel": "leads-to"
+          },
+          {
+            "from": "mfs",
+            "to": "efs",
+            "rel": "compared-with"
+          },
+          {
+            "from": "mfs",
+            "to": "owner",
+            "rel": "depends-on"
+          },
+          {
+            "from": "clients",
+            "to": "mfs",
+            "rel": "depends-on"
+          },
+          {
+            "from": "not",
+            "to": "mfs",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-user-keeps-the-meter",
+            "the-editors-channel",
+            "pki-everywhere",
+            "agent-workflows-on-ephemeral-vaults"
+          ],
+          "pages": [],
+          "sites": [
+            "https://sgit.ai/docs/vault-messaging.html",
+            "https://sgit.ai/api/append-lanes.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It worked, and it was crude.",
+            "why": "The first inbox."
+          },
+          {
+            "text": "The client decides what the bytes mean.",
+            "why": "Why a schema is needed."
+          },
+          {
+            "text": "appends never touch a branch and never conflict with a push.",
+            "why": "Why there are no conflicts."
+          }
+        ]
+      }
+    },
+    {
       "slug": "aws-from-the-vault",
       "title": "AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go",
       "date": "2026-10-21",
@@ -279,6 +483,7 @@
         "free-to-copy-paid-at-the-source"
       ],
       "links_in": [
+        "messaging-fs",
         "aws-from-the-vault"
       ],
       "figures": [
@@ -1573,6 +1778,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "messaging-fs",
         "aws-from-the-vault",
         "the-user-keeps-the-meter",
         "v0-12-in-numbers",
@@ -10015,6 +10221,7 @@
         "agent-workflows-on-ephemeral-vaults"
       ],
       "links_in": [
+        "messaging-fs",
         "the-user-keeps-the-meter",
         "pki-everywhere",
         "the-briefs-so-far",
@@ -23863,6 +24070,7 @@
         "sgit-actions-side-by-side"
       ],
       "links_in": [
+        "messaging-fs",
         "aws-from-the-vault",
         "the-editors-channel",
         "one-vault-ten-agents",

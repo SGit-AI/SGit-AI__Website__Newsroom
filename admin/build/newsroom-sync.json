@@ -114,6 +114,7 @@
    "admin/content/articles/graphs/inside-the-thistlewood-twin.json": "c28fee9329bdad114c52f0f457dd9be8684a06fc63ba6a05e86f8f4ba5e6645e",
    "admin/content/articles/graphs/journalism-becomes-intelligence.json": "5edfe3e25648f02209ff4650f5eff2e68521bd5ede74f8e4fa25fe17b330e7ad",
    "admin/content/articles/graphs/knowledge-that-maintains-itself.json": "dcd057f80ebda7e5fb5e2cda40998679d228592b3172303f1cae776a4151ce81",
+   "admin/content/articles/graphs/messaging-fs.json": "9208bafa1a2886b07e2773954e64170a71272b04677842a60fe9c19712711039",
    "admin/content/articles/graphs/my-memory-checked.json": "bb051aff528bbb98649c9ff9784ab4b200705d77fc9e1b0c66b91f2a778e9411",
    "admin/content/articles/graphs/omnichannel-programming.json": "01ddf0c98f5e3c61bcde63e6f97df3f5c5f20bb45274ab48ae13f1a7d1652dff",
    "admin/content/articles/graphs/on-the-record.json": "29234e1620864db43a9aec34c8678e72845e748debeb28a530528e3bd30d8dfc",
@@ -365,6 +366,8 @@
    "admin/content/articles/images/mc-ledger.webp": "e2f60e63881fadf189df2bc0dabde56eeaefa552ca2cff1957fea575abb6ecba",
    "admin/content/articles/images/mc-loop.webp": "cfe02a0ef7e38a994b94755eb3dfaac9c151abcf0e9f222d68c95c15bba2f637",
    "admin/content/articles/images/mc-scale.webp": "f57a2327129da592eac73b9db92b13629b1579497865adc00c28653fd6fd61c8",
+   "admin/content/articles/images/mf-send.webp": "083980cb04cd573d1c2667c0eb9f25178822b88ec3756cea5f47e0505aff9ecb",
+   "admin/content/articles/images/mf-vaults.webp": "a2f0f88561f09e70c55e03a56252a3e0f36b3c0df6f64c4e270823d467969b97",
    "admin/content/articles/images/mg-files.webp": "7c542d9549f0fee8fbe49fe288d17caa48636f777ea50e0f2d1a210b54952f33",
    "admin/content/articles/images/mg-live.webp": "61835e9a34caa8bca41313c9745e306265df5e95ccabd1a1a5b77f2c488beb96",
    "admin/content/articles/images/mg-merged.webp": "ea1dd3bd155aed36a38bdbb2bc16b05bc55716f6ddda281cdd9c9c0be3f8feb4",
@@ -630,6 +633,7 @@
    "admin/content/articles/inside-the-thistlewood-twin.md": "3b4666eef9cc5d19494a8a57df5f24fa5c8eb9e2657c88118cd3aa3609d6e4cd",
    "admin/content/articles/journalism-becomes-intelligence.md": "cd508f9518922e960b4d196a95985f2050830f732216a615fe5f0adb38ed578e",
    "admin/content/articles/knowledge-that-maintains-itself.md": "3cb79968a29ed18ed864bef702c61a33962b71dff9e0f2115ba52ab968a7aa75",
+   "admin/content/articles/messaging-fs.md": "78d515a1632a3a323756ccf8158b257f31e81a3192e61d6a24bc1fd5b8401576",
    "admin/content/articles/my-memory-checked.md": "2af9417caf0e5c128bdba35be3ca08ec5664344bb4c1ca8a7469309f4b273641",
    "admin/content/articles/omnichannel-programming.md": "c519f14cbe1654604c6d42b80faab5259708a8e2731b2b572fda625150bc4e22",
    "admin/content/articles/on-the-record.md": "dd55e813a4ffb7ad33b400bad96554916925aa3b58e2d20ed06c1ac797aea4ab",
@@ -771,6 +775,7 @@
    "admin/content/articles/summaries/knowledge-that-maintains-itself.json": "62a11eee8790a51b039510e317d9de4a3028628d4396c77a73c658ad6f02c3ec",
    "admin/content/articles/summaries/liquid-content-needs-water.json": "0506a9f567ef69168fd47bc64cfa7a87ebe3079adb33e174e314ae4b1ff421e8",
    "admin/content/articles/summaries/memory-is-not-a-spectator-sport.json": "a45f9a7fc842d60bd89aa05bf370ef33988904f2be3ba8307b7b92146a3f79da",
+   "admin/content/articles/summaries/messaging-fs.json": "bc82d7fe124fd49c847ad9525fd5c7ddd72a91bf182c9489a93b50d1d1caa207",
    "admin/content/articles/summaries/move-the-cloud-not-the-code.json": "2b81c0f9da9ee56cf8b2d2eacc497f0716e9b9bfe46d3370f43bc4468a689bd4",
    "admin/content/articles/summaries/my-memory-checked.json": "15850d14cfa511fa3aa597d1f22d09981e7f61de6f0a0febe223020f2e79afc3",
    "admin/content/articles/summaries/nineteen-sites.json": "704171d020532149304e4bc0fbdf54a3e6fc4f9fb684eea772a6d8d5e1da151c",
@@ -1053,10 +1058,10 @@
   }
  ],
  "counts": {
-  "files": 3581,
-  "pages": 824,
-  "articles": 234,
-  "verbatim": 1698,
+  "files": 3591,
+  "pages": 826,
+  "articles": 235,
+  "verbatim": 1703,
   "dependencies": 52,
   "text_overrides": 11,
   "unresolved_on_sgit_ai": 0
@@ -1379,13 +1384,13 @@
   },
   "articles/agent-workflows-on-ephemeral-vaults.html": {
    "from": "articles/agent-workflows-on-ephemeral-vaults.html",
-   "sha256_source": "c5113214d6d4b53459e0174fe65bc5de255a47f148723a0401bcdd65e335cc22",
-   "sha256": "808d73a7e3fe06a821c7519e99e3d3e4407b8c1f031dfbd5c9ec0ed66e7c014a"
+   "sha256_source": "9827eef6a02ce776b91d5fb250af7a76212c3178090de7f69227bfb6dcea2940",
+   "sha256": "1284510c15717f5e7ea6fb7cf4dad1ce0cc807b42eb54431dfbd23966fc0aba6"
   },
   "articles/agent-workflows-on-ephemeral-vaults.md": {
    "from": "articles/agent-workflows-on-ephemeral-vaults.md",
-   "sha256_source": "91416be6e77583c6ff33a3a67f26e9d5ac76656aa640745feb32e33d585565e5",
-   "sha256": "06440587506c93b7349c1c3b826f9e4ee28cbe9b0ad9038c222278346e4de55d"
+   "sha256_source": "1e2929d61a0083964bd41a1d392417f450ccd2597990cfde01f4e0f3dbe7e335",
+   "sha256": "eb15d9f10429f7cb2b1ce90fa937028d05d16a2f3ae7442f01c113b61467ccb9"
   },
   "articles/agentic-cost-is-an-engineering-problem.html": {
    "from": "articles/agentic-cost-is-an-engineering-problem.html",
@@ -1489,8 +1494,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "ff585cc3e98d98c52748ed9f479b789c5c0784caabe6a900a8ec454231b1bbfa",
-   "sha256": "ff585cc3e98d98c52748ed9f479b789c5c0784caabe6a900a8ec454231b1bbfa"
+   "sha256_source": "3cbe47879f14869c5b2e4e9f1fa4af08a229a36ac32662a1b35368320eb88297",
+   "sha256": "3cbe47879f14869c5b2e4e9f1fa4af08a229a36ac32662a1b35368320eb88297"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -2094,13 +2099,18 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "e5d975192a191a00c095cac59f350e6fb3871716c4a71f2575c0bd9cc192bcdb",
-   "sha256": "e5d975192a191a00c095cac59f350e6fb3871716c4a71f2575c0bd9cc192bcdb"
+   "sha256_source": "44194985f7090cee2e132833896381d97aa1decbe444c3f6dd4d9b19ff45c226",
+   "sha256": "44194985f7090cee2e132833896381d97aa1decbe444c3f6dd4d9b19ff45c226"
   },
   "articles/banners/memory-is-not-a-spectator-sport.jpg": {
    "from": "articles/banners/memory-is-not-a-spectator-sport.jpg",
    "sha256_source": "fa6c032565c7c46d00d79511760ba829dbbb99efdc4bd186311a98b9e9bc3735",
    "sha256": "fa6c032565c7c46d00d79511760ba829dbbb99efdc4bd186311a98b9e9bc3735"
+  },
+  "articles/banners/messaging-fs.jpg": {
+   "from": "articles/banners/messaging-fs.jpg",
+   "sha256_source": "01004beb5e66295a6879ebcc549014caa75337e272fa14fa49bdee1d4aca693d",
+   "sha256": "01004beb5e66295a6879ebcc549014caa75337e272fa14fa49bdee1d4aca693d"
   },
   "articles/banners/move-the-cloud-not-the-code.jpg": {
    "from": "articles/banners/move-the-cloud-not-the-code.jpg",
@@ -2369,8 +2379,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "6add2ec4a9523cd1745fc3df696be66fcf58f9b0b58b6a741f6ccde359141501",
-   "sha256": "6add2ec4a9523cd1745fc3df696be66fcf58f9b0b58b6a741f6ccde359141501"
+   "sha256_source": "a9ccf1da770f91c6871b692715b70dcedc8029c896f2b2f98c7b3ec8279e8511",
+   "sha256": "a9ccf1da770f91c6871b692715b70dcedc8029c896f2b2f98c7b3ec8279e8511"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -3322,6 +3332,11 @@
    "sha256_source": "1f1536502b2fa690dfd82ab044845855775171e685a8e89e5e4bf7df2d2b730a",
    "sha256": "1f1536502b2fa690dfd82ab044845855775171e685a8e89e5e4bf7df2d2b730a"
   },
+  "articles/cards/messaging-fs.webp": {
+   "from": "articles/cards/messaging-fs.webp",
+   "sha256_source": "40dd42296851f4f47a12cbccba7d39c72297d9b5c948430558de09d29b4492ed",
+   "sha256": "40dd42296851f4f47a12cbccba7d39c72297d9b5c948430558de09d29b4492ed"
+  },
   "articles/cards/move-the-cloud-not-the-code.webp": {
    "from": "articles/cards/move-the-cloud-not-the-code.webp",
    "sha256_source": "c07e1965a864e30b844fdf14e8b8b8957e2ea135021f2f467452abb06701bda1",
@@ -4079,13 +4094,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "bef3aa9507ef55a8bdcc242518d129c22420b85b8b1379b8565c4d443a1328d3",
-   "sha256": "5f5814efb8bc144fdaad3f07313ff0fbd2e54eb843559064a5ec4e9cda59c5b2"
+   "sha256_source": "94f138d6642024744e0a59782a0df824e22b73f0eb1a2b8780b850a7bb90a3d2",
+   "sha256": "5f6795d02cb10a90e66cf6cd298431e90acad3b7925584f6fed59af0662e47dd"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "3cae4290dd12a91c3289c6935bd90327417f14733155259946516527339587f6",
-   "sha256": "4216f556e62301723e09b198ef32949786ecac355a2598567d4a6cad1d52d113"
+   "sha256_source": "7604033d78fb2f7e9e936dc8660c5dd30ff1ec2eb8b2b3e18134b599932c8a71",
+   "sha256": "7a2b111cb57dbdb88886c02a8baa7eea628fc876d75d09d84adbb3c8b1fdb9b7"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -4229,13 +4244,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "4227ffb9376c1f934be5539f847e46572fe730d6dd04d19b7cc6aad2b82824ff",
-   "sha256": "546362c0e73f65ebb3af308f09fb267250fb7d49949c2098687c80b890e8a0de"
+   "sha256_source": "fe8e6da3743f2c98811278c28a5ec1031e1e6b1bf8b988869d344e2110a26690",
+   "sha256": "f4712a36976b6c4846c67b316b37c7c858b05b2f2173414d73f49ff63dd1e722"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "554f329851b51580518f1e44ec5d98a39c09a32ca97a4578e13cb6fc2b9ea4fc",
-   "sha256": "e189fc90e541eb65acf0cc43dd920a77b0f980f77676192e173447ce7cbf2321"
+   "sha256_source": "bfd14cc1e503fabb51779ba36248b918e53c773dbb78483e2ae3ae3103b60f17",
+   "sha256": "72e54a03d3e57d34df67e1dd54283689a8c3a5450e1d6b6a0d737f3b89f37b56"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -4349,8 +4364,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "5e12f64dcb11c5f08a474737563bb4020c747795d49df427ba40c5cd389d977c",
-   "sha256": "64333fc7502afcc926be6db17ba5996258d38f0647362abe134216c6eb040c2a"
+   "sha256_source": "c6640321f469f3e9dd5be0f8491cd4f8c9b87f271f53b7dc3c21b1e0e6b21f83",
+   "sha256": "7a77d601fb3ccfe11b469acbe73456abc5ce862768c6f9aa8c6a4bc39a1ee6da"
   },
   "articles/firing-journalists.html": {
    "from": "articles/firing-journalists.html",
@@ -4484,18 +4499,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "87398dfcad2df8dbf24f60aae9f6cb79eac9c205bd3a90f4f83cc0ccbd73f2a8",
-   "sha256": "a2548f15ba09596cd4519bb0a215c92a0b0eb464689cb0c51aff1c75caefa34f"
+   "sha256_source": "bcb62e374a921cb9f89922a2c70fdc249a429b8c54ff590e43cee9e0b6e57fc1",
+   "sha256": "d36df2724cb7e9a9106432a11d439814e47fc716b317706175376a499ce02a1d"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "57d86fd97e0b06d5528f56cd22541c90d7ad1dc58d81e3013036e531d0cbb197",
-   "sha256": "b156d9d6baf36d36845a208471923292874f4f39cca646f3bcc7716748d2d482"
+   "sha256_source": "f755a493335a39b8276cb9dcfbe78b70c3c95ea3700b10d3c4c64c631259bd79",
+   "sha256": "2834bc5fbceaa495326664e580c4cf521ff04baa4083a161ccb457bf6f0e73a1"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "9fdacad301e14af40a851195a262b386a0d81cb47eed50f5f2fc62b48b4b7431",
-   "sha256": "5f2302348c86bf9c1cc4c94cc639dd7653f7754dead1bd474d2066b4dc80b2c5"
+   "sha256_source": "6d88a548efbf16d295a3e2f0bc42ea3854b5b3414a0a3096f8ebf3cc5590d33e",
+   "sha256": "59026dfd591197c9bac50b2feddbb2035b7277c29c6f60e68d9340bd5e1133ae"
   },
   "articles/graphs/a-book-for-one-reader.json": {
    "from": "articles/graphs/a-book-for-one-reader.json",
@@ -4991,6 +5006,11 @@
    "from": "articles/graphs/memory-is-not-a-spectator-sport.json",
    "sha256_source": "54142c9b1b6247bf5ce11e7908828dc5a4c319a7d8a835f6820511f4dab7f090",
    "sha256": "15f598722d8cab8222a2d02e96498d1d3d52f17a837cefa660667ada33780378"
+  },
+  "articles/graphs/messaging-fs.json": {
+   "from": "articles/graphs/messaging-fs.json",
+   "sha256_source": "eb312a445971a760bc23424a07f671ef93ab097320d7339b3c65e4c9ff34db25",
+   "sha256": "01e077081564e820ded8ee51d34a6a29a0ba80609b70d3a8921de23b678f02c3"
   },
   "articles/graphs/move-the-cloud-not-the-code.json": {
    "from": "articles/graphs/move-the-cloud-not-the-code.json",
@@ -7822,6 +7842,16 @@
    "sha256_source": "47398b87192edcb845f2672509cc9a90acddf302de980b0206d4f356f2d408ab",
    "sha256": "47398b87192edcb845f2672509cc9a90acddf302de980b0206d4f356f2d408ab"
   },
+  "articles/images/mf-send.webp": {
+   "from": "articles/images/mf-send.webp",
+   "sha256_source": "083980cb04cd573d1c2667c0eb9f25178822b88ec3756cea5f47e0505aff9ecb",
+   "sha256": "083980cb04cd573d1c2667c0eb9f25178822b88ec3756cea5f47e0505aff9ecb"
+  },
+  "articles/images/mf-vaults.webp": {
+   "from": "articles/images/mf-vaults.webp",
+   "sha256_source": "a2f0f88561f09e70c55e03a56252a3e0f36b3c0df6f64c4e270823d467969b97",
+   "sha256": "a2f0f88561f09e70c55e03a56252a3e0f36b3c0df6f64c4e270823d467969b97"
+  },
   "articles/images/mg-files.webp": {
    "from": "articles/images/mg-files.webp",
    "sha256_source": "7c542d9549f0fee8fbe49fe288d17caa48636f777ea50e0f2d1a210b54952f33",
@@ -9924,13 +9954,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "aa79173407b30f917e9774b7987af693175ad934e0fca5faf1bd8d88e09c5271",
-   "sha256": "9195cb359b7a1588066e776927d31ea2223b8834bf728d26e3da477bdfea098e"
+   "sha256_source": "f4ea1a35bb16a7150e440d697c054af8b93ade186c14e5aac56f1e40a07fb42d",
+   "sha256": "83041bd8009a990fcfcd6ec50c63b462346d11e2851666d9cf97f9dc96b9529e"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "7d6a0f445ed2ce405e66c99f64fb285c36bcdf7f00b35abc1aec96d0973a396d",
-   "sha256": "a0309d3d611eb60632821961ce4786d091767b07388e68435031067fe19f333a"
+   "sha256_source": "67f4c4f52829b9bf19857784aa7333800ef158a36a7cf9efedd6e9fe1605816a",
+   "sha256": "8f0544a7de94db708a7e138970cdce0abc27a47603c07cfbf378aada9e645303"
   },
   "articles/inside-the-mesa-ranch-desk.html": {
    "from": "articles/inside-the-mesa-ranch-desk.html",
@@ -10052,6 +10082,16 @@
    "sha256_source": "340c04c961dd196090642c7a9e0429b0465ecb73bef902bac7f9823c583dadaf",
    "sha256": "3f2c534725e3300fbd9af2d8bbf21c1545dbb2eb97c0348d3139ffb2b9ea6a0f"
   },
+  "articles/messaging-fs.html": {
+   "from": "articles/messaging-fs.html",
+   "sha256_source": "bc418b361fd0c47a1021d5e25a87d9b52befc4340fd873d1da6573150cd34d72",
+   "sha256": "c00e3db2af1e4ab307263b6c4b35ae27d868091adcadcb3e0afb9654f3e6fb35"
+  },
+  "articles/messaging-fs.md": {
+   "from": "articles/messaging-fs.md",
+   "sha256_source": "6479a84e9cb60507c2816fdcdccef052462a500297d536e6611f955fd8eb31e9",
+   "sha256": "34d271b72a014bff7f55bc348a55af7cfe56b36544dbffc0556794fe7ae55146"
+  },
   "articles/move-the-cloud-not-the-code.html": {
    "from": "articles/move-the-cloud-not-the-code.html",
    "sha256_source": "d5e0fd65b867c151876b311d9a1a17afcd05eb17c33d372957d8b08774bdf03e",
@@ -10164,13 +10204,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "a23f1c8a7e2d475b2ffc07d3affe36ca6d3394eab5126a82b24ab4f4e61a6ec2",
-   "sha256": "8812d22ac80c6eb4d145238f13bf88bef1b4146747c64bfb70a8f162ac117753"
+   "sha256_source": "a9301ae9a29a1b8a2eb8a76bcb206800ed8cafb0116730511d7e44a87c09fe9f",
+   "sha256": "326f3900d45749e2fe528b986bbdeae1b6842c14525f81b2514e85eb5d759ffd"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "99ffc8305594081bc1dc18f93d33e5c6b0eae6b47f461580a58ff85e0edc331e",
-   "sha256": "71508fa8264738d4d8fceba2207a7ffe41d6fe99da6c6e8652614b8a249dc4e9"
+   "sha256_source": "f5e58e14b9fcec51d56729b9b3fcc326042b21e84f4cd0075090f317f49ff724",
+   "sha256": "86629a6a83a9fc7f2fdd3efa637b8ba35bbc32d442667ee170ca4f33fca4c53f"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -10314,13 +10354,13 @@
   },
   "articles/pki-everywhere.html": {
    "from": "articles/pki-everywhere.html",
-   "sha256_source": "83a547fd85821c543b044161b79e592ab61ae49627bc07014f5bcf1058fb2e0e",
-   "sha256": "15faeaa151be2a8bc83f8127c50ca6e1061e610035937a877466f523f5e7750f"
+   "sha256_source": "9c117b02f3d430f61430a25230ddbe3188274bfe522b92537923eb9bb3d6b2bf",
+   "sha256": "6fd9b607d41625ba47d5300fd2a297646d31bba5fdb357840d9ca19a074538df"
   },
   "articles/pki-everywhere.md": {
    "from": "articles/pki-everywhere.md",
-   "sha256_source": "7721b064eb6506ba1df59bfad68ea6e1e39fa3a0e7273ed38d28b465453382a8",
-   "sha256": "fe140fd8ec5a69d8b9ad0eaa5f921130521508cf2fa695baf523105ee0d8645b"
+   "sha256_source": "2b345972b8f9f92f32f41cb7b78df0605bb05cc3abfc0c3121e0bcafdd144ca1",
+   "sha256": "2d1dea7caf3d77a12d002f4af005523fc3bd3a01e1a931ce9b2fe29f78127946"
   },
   "articles/places-of-highest-leverage.html": {
    "from": "articles/places-of-highest-leverage.html",
@@ -10844,13 +10884,13 @@
   },
   "articles/the-editors-channel.html": {
    "from": "articles/the-editors-channel.html",
-   "sha256_source": "9d0be6688f580aba371b81a49a003aa8cfbba452715a1b9d6173f091a8679627",
-   "sha256": "ec6e2f677055ba4d6ba0b86b21f943eceb1a93fc7f60e88137eb3d231ccaa68d"
+   "sha256_source": "67a719199e32cb97daafe3c9bbf687be3c16d612d94b6fef0ba0f6aa9b3a17fb",
+   "sha256": "b895e71af53a26f8106490718f98e39e8982a4a5131d7e876f8a75a65d3bdb4d"
   },
   "articles/the-editors-channel.md": {
    "from": "articles/the-editors-channel.md",
-   "sha256_source": "3dc080c084cfca46b9b277b5c63f5ba711a1e29c232daf16fb79dca5557e0df5",
-   "sha256": "11be444fe00f55dd36e83c84f5d176ab8e64f83359f9ad6e762ed3c1b63e5b57"
+   "sha256_source": "905c8953688d88b1f176fba6febad1846dc19fbb97c4dc34fad8fd2b8ad6527c",
+   "sha256": "5825b641debec051c025ee05bd045b83e465950853820b9f4bd4bddb8e9a2cee"
   },
   "articles/the-exit-is-when-you-sell-control.html": {
    "from": "articles/the-exit-is-when-you-sell-control.html",
@@ -11124,13 +11164,13 @@
   },
   "articles/the-user-keeps-the-meter.html": {
    "from": "articles/the-user-keeps-the-meter.html",
-   "sha256_source": "f56e2a46cf2bc352f1eb6916fae50f3911170c9178619ceca5d3ea4ed2616f4b",
-   "sha256": "d6775e3d7a5346e3942c36791e282b3accbdcd5e5362cb644d2dd5eb2f6878ad"
+   "sha256_source": "09a99ad3ebc60f6ea3b1fd6f85cbab452618c99794c8e2c03bf023777dec475a",
+   "sha256": "e2f727f767813eecdfc67f10d0b2c6927f9400cd711972570abee15b9e44c7ab"
   },
   "articles/the-user-keeps-the-meter.md": {
    "from": "articles/the-user-keeps-the-meter.md",
-   "sha256_source": "132a0a34cbe2a418fe7e2ad1d98ee4ab0ed2cdafcaf5f58dff62d6632e025bd9",
-   "sha256": "d50c10e7c012a8ed8b1b2245aff1ed3b3ee9cd50e20fc6fa719105be7b5efe4f"
+   "sha256_source": "c5a00a188de47911bc22cbdbba830b535cfefb421be23e532ea32e489aab942f",
+   "sha256": "91520813595ff88a6c4005d900d45a1dd539c69a12bbdbf39a3a163fb1d2333a"
   },
   "articles/the-value-of-constraints.html": {
    "from": "articles/the-value-of-constraints.html",
@@ -13621,6 +13661,16 @@
    "from": "articles/versions/memory-is-not-a-spectator-sport/v1.0.1.md",
    "sha256_source": "7e79b1c4d5920faf19686c31de983e62469ad50c5acf81bcc72ddcd5ac485e62",
    "sha256": "6bb5a9ed18648a92454a755723c34d3db06b262b5d4df1d8c3d529c627c031d9"
+  },
+  "articles/versions/messaging-fs.html": {
+   "from": "articles/versions/messaging-fs.html",
+   "sha256_source": "82df7a94bd22aad0c712073184945dfe06459cbeff45eafb9804b0e14ca10422",
+   "sha256": "baa2b0b09ed5460681fe04701dc4a5df6737f43d2713d87f2258c98135d6819e"
+  },
+  "articles/versions/messaging-fs.md": {
+   "from": "articles/versions/messaging-fs.md",
+   "sha256_source": "db6e18fad0767d5d89e8abbb0a8c832369618f5a6f5260bfa45ad6ab2e336b5e",
+   "sha256": "26bc2255b5b59b8c91117069c9034b29a9747adb3437f3d7410769d36af1302c"
   },
   "articles/versions/move-the-cloud-not-the-code.html": {
    "from": "articles/versions/move-the-cloud-not-the-code.html",
@@ -17837,13 +17887,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "2567870ba50d5ad556bc7ad283b0553f68c5ff1eb983a654d77ac75bc9be0fc7",
-   "sha256": "7217d4b14177515851733d9347aaed882809d25a5d5cca6fe64256c29d478e69"
+   "sha256_source": "9e1247ace07ad8574ca139c2bd17b2313c418c763783d7214f97e93747b73f3f",
+   "sha256": "851ba6fb05f427b251ff525ee548d72476b762b24f0f8731ed3491e58129d696"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "a2f7d7cfc493386075a0bf75de05d7101d02124b83a467be67e04112f1d50741",
-   "sha256": "8bf439f9bd75d0233b986831179cdec8cb025c39212b71eabfe947e10ef40c86"
+   "sha256_source": "bd95b087f0216b9d5f14d0239afa8132f37cae715f6f9e9873e56930f60171e7",
+   "sha256": "3b15ad6036aac370d98dc555f651bb8b8795ff69bea6e8ba85ac22e5220a57f9"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -17937,8 +17987,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "a459b652cd944cbeb795abbf606da81d267e6720360ecb72f945acc5f33cd083",
-   "sha256": "482730531198144abc1756154f9993450436bc832e134f8564695dcdb1e6b644"
+   "sha256_source": "cb76aeeaed9184133e4eca277aa8733a988518c5417083ce6508300dce583b1e",
+   "sha256": "bab1abdbe0174308c15c79cab5490a8baffab81357f93523e83776c16bd59f1c"
   },
   "og/a-book-for-one-reader.jpg": {
    "from": "og/a-book-for-one-reader.jpg",
@@ -18439,6 +18489,11 @@
    "from": "og/memory-is-not-a-spectator-sport.jpg",
    "sha256_source": "dfd10718904826a3be3582dcae54ed9f5079af775d1ccf62711a434ada72a721",
    "sha256": "dfd10718904826a3be3582dcae54ed9f5079af775d1ccf62711a434ada72a721"
+  },
+  "og/messaging-fs.jpg": {
+   "from": "og/messaging-fs.jpg",
+   "sha256_source": "8f3e774379faa405386cfd5f6f87f98fc710ee0d174a1de1e61f1d9fdc3929cf",
+   "sha256": "8f3e774379faa405386cfd5f6f87f98fc710ee0d174a1de1e61f1d9fdc3929cf"
   },
   "og/move-the-cloud-not-the-code.jpg": {
    "from": "og/move-the-cloud-not-the-code.jpg",
