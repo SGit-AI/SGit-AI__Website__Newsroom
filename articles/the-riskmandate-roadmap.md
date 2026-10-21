@@ -1,20 +1,20 @@
-# The RiskMandate roadmap: policies, understand, risk acceptance, contain and manage, a spectrum of trust we walk with each customer, sgit.ai
+# The RiskMandate roadmap: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we walk with each customer, sgit.ai
 
-> This is the strategy for RiskMandate as a company, and the path we will walk with each customer. The question behind it is how we start engaging with a customer, how we earn their trust, and how we become a player: running our code and our vaults, and being there with them. So think of the roadmap as a spectrum of trust, where each stage answers the next question a customer asks once the last one is answered. Policies first, because we can create them today and they are a microcosm of what we do: the grant, the gap, the hooks, a first picture. Then understand: help us get a grip, what is our exposure, where are our agents and what can they reach. Then risk acceptance: which of these risks do we carry, and who decides. Then contain: make the blast radius smaller. Then manage: run the agents as a fleet. Acceleration is not a stage; it is what every stage gives the business. Insurance comes after, once the evidence exists, and whether we play there is a future decision. At every stage there are other companies that should be the big players, and where they do not move fast enough, there is an opportunity for us. We are in the first stage, with our first customers.
+> This is the strategy for RiskMandate as a company, and the path we will walk with each customer. The question behind it is how we start engaging with a customer, how we earn their trust, and how we become a player: running our code and our vaults, and being there with them. So think of the roadmap as a spectrum of trust, where each stage answers the next question a customer asks once the last one is answered. Policies first, because we can create them today and they are a microcosm of what we do: the grant, the gap, the hooks, a first picture. Then understand: help us get a grip, what is our exposure, where are our agents and what can they reach. Then risk acceptance: which of these risks do we carry, and who decides. Then contain: make the blast radius smaller. Then manage: run the agents as a fleet. And then insure: by then the evidence an insurer needs exists, and insurance is the end game that gives the whole path its arc, so we want to start talking to insurers now. Acceleration is not a stage; it is what every stage gives the business. At every stage there are other companies that should be the big players, and where they do not move fast enough, there is an opportunity for us. We are in the first stage, with our first customers.
 
 *Source: <https://newsroom.sgit.ai/articles/the-riskmandate-roadmap.html> · sgit.ai v0.7.87 · this file is generated from the same content as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links below point at them.*
 
 ---
 
-[Home](../index.md) / [Articles](index.md) / The RiskMandate roadmap: policies, understand, risk acceptance, contain and manage, a spectrum of trust we walk with each customer
+[Home](../index.md) / [Articles](index.md) / The RiskMandate roadmap: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we walk with each customer
 
-# The RiskMandate roadmap: policies, understand, risk acceptance, contain and manage, a spectrum of trust we walk with each customer
+# The RiskMandate roadmap: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we walk with each customer
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/the-riskmandate-roadmap.md) · [newsroom v0.13.4](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyroadmapstrategycustomersarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.3.0, 4 versions](versions/the-riskmandate-roadmap.md) · [newsroom v0.13.5](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyroadmapstrategycustomersarticle
 
-***Abstract:** This is the strategy for RiskMandate as a company, and the path we will walk with each customer. The question behind it is how we start engaging with a customer, how we earn their trust, and how we become a player: running our code and our vaults, and being there with them. So think of the roadmap as a spectrum of trust, where each stage answers the next question a customer asks once the last one is answered. Policies first, because we can create them today and they are a microcosm of what we do: the grant, the gap, the hooks, a first picture. Then understand: help us get a grip, what is our exposure, where are our agents and what can they reach. Then risk acceptance: which of these risks do we carry, and who decides. Then contain: make the blast radius smaller. Then manage: run the agents as a fleet. Acceleration is not a stage; it is what every stage gives the business. Insurance comes after, once the evidence exists, and whether we play there is a future decision. At every stage there are other companies that should be the big players, and where they do not move fast enough, there is an opportunity for us. We are in the first stage, with our first customers.*
+***Abstract:** This is the strategy for RiskMandate as a company, and the path we will walk with each customer. The question behind it is how we start engaging with a customer, how we earn their trust, and how we become a player: running our code and our vaults, and being there with them. So think of the roadmap as a spectrum of trust, where each stage answers the next question a customer asks once the last one is answered. Policies first, because we can create them today and they are a microcosm of what we do: the grant, the gap, the hooks, a first picture. Then understand: help us get a grip, what is our exposure, where are our agents and what can they reach. Then risk acceptance: which of these risks do we carry, and who decides. Then contain: make the blast radius smaller. Then manage: run the agents as a fleet. And then insure: by then the evidence an insurer needs exists, and insurance is the end game that gives the whole path its arc, so we want to start talking to insurers now. Acceleration is not a stage; it is what every stage gives the business. At every stage there are other companies that should be the big players, and where they do not move fast enough, there is an opportunity for us. We are in the first stage, with our first customers.*
 
-The RiskMandate roadmap as a spectrum of trust: five stages, policies, understand, risk acceptance, contain and manage, each answering the customer's next question. Acceleration runs through all of them; insurance comes after, as a future decision. We are in the first stage.
+The RiskMandate roadmap as a spectrum of trust: six stages, policies, understand, risk acceptance, contain, manage and insure, each answering the customer's next question. Acceleration runs through all of them. We are in the first stage.
 
 ## In short
 
@@ -23,7 +23,8 @@ The RiskMandate roadmap as a spectrum of trust: five stages, policies, understan
 - **Then understand.** Help the customer get a grip on their exposure.
 - **Then risk acceptance.** Which risks they carry, and who decides.
 - **Then contain, then manage.** A smaller blast radius, then a fleet run strategically.
-- **Acceleration runs through all of it.** Insurance comes after, as a future decision.
+- **Then insure.** The end game: agents an insurer can cover.
+- **Acceleration runs through all of it.** It is what every stage gives the business.
 - **We are in the first stage.** With our first customers.
 
 ## A spectrum of trust
@@ -32,7 +33,7 @@ What we are describing here is the strategy for RiskMandate as a company, and th
 
 So the way to think about the roadmap is as a spectrum of trust. Each stage answers a different question the customer has, and each one is only asked once the one before it has been answered. The further along we are with a customer, the deeper the relationship, and the more we are helping them in the way they work. The stages are a sequence of events, not always a straight line: with some customers two will overlap, and with others one will come early. But the order is the one we can operate in.
 
-## The five stages
+## The six stages
 
 **Policies.** *"What can this agent do, and what stops it?"* This is where we can start, today, and it is a great place to engage. The policies are a microcosm of everything else: for one agent we already have the grant, the gap, the barriers and the enforcement, the hooks, and a first visualisation. A customer gets to experience what we do, on one agent, in a way that is useful to them on its own.
 
@@ -44,15 +45,19 @@ So the way to think about the roadmap is as a spectrum of trust. Each stage answ
 
 **Manage.** *"How do we run the fleet?"* Once the agents are contained, the customer can think much more strategically about them, as a fleet: which agents they need, the resources each one uses, how changes are tested and released, and what the fleet should be doing next.
 
+**Insure.** *"Can our agents be covered?"* By the time the fleet is managed, the evidence an insurer needs already exists: what each agent can reach, what was authorised, which risks were accepted and by whom, and what actually contains each one. RiskMandate already publishes how that works, from the [policy](https://riskmandate.ai/), to a [licence to operate](https://riskmandate.ai/licence-to-operate.html), to [insurable](https://riskmandate.ai/insurance.html).
+
 ## Accelerate, all the way through
 
 I first had accelerate as a stage of its own, after manage. I do not think it is one. Acceleration is what every stage gives the business: each one lets it do more with its agents, with more confidence, and faster. It reads better as the reason for the roadmap than as a step on it, so it runs along the whole length of it.
 
-## Insurance, and the players at every stage
+## Insurance is the end game
 
-After manage, the customer is ready for insurance: the evidence an insurer needs, of what each agent can reach and what contains it, already exists. RiskMandate already publishes how that would work, from the [policy](https://riskmandate.ai/), to a [licence to operate](https://riskmandate.ai/licence-to-operate.html), to [insurable](https://riskmandate.ai/insurance.html). Whether we play in insurance ourselves, or work with the players who do, is a future decision, and we will be well placed for it either way.
+Insurance is what gives the whole path its arc. Every stage before it produces evidence: the policies, the exposure, the decisions, the containment, the managed fleet. Insurance is where that evidence is worth the most, to the company and to the people who would cover it. That is why insurers are part of the play from the start, and why we want to start talking to them now, with this roadmap in front of them: it shows them how a company gets from its first agent policy to agents they can cover.
 
-The same is true at every stage. Each one has other companies that should be the big players in it: in discovering agents, in risk management, in enforcement, in fleet management. Many of them we will work with. Where they do not move fast enough, there is a business opportunity for us to get into that space, because we will already be there with the customer.
+## The players at every stage
+
+Each stage has other companies that should be the big players in it: in discovering agents, in risk management, in enforcement, in fleet management, and in insurance. Many of them we will work with. Where they do not move fast enough, there is a business opportunity for us to get into that space, because we will already be there with the customer.
 
 ## Where we are: the policies
 
@@ -66,13 +71,13 @@ On its own count, at v0.1.1, the first batch has three customers, two of them st
 
 One operational note, which does not change the strategy. The Agent Behaviour Policy started inside RiskMandate, and its stewardship is moving to the Open Security Summit, as [its first hosted project](agent-behaviour-policies-move-to-the-open-security-summit.md), so that it is governed by more people than us. RiskMandate is still the one operating it with customers.
 
-And the policies themselves are a stepping stone. Behaviour policies, and the decision and workflow policies that come after them, as in [three policies for an agent](three-policies-for-an-agent.md), are how we start. What we are pursuing is the whole path above: being the people a customer trusts with their agents, from the first policy to the managed fleet.
+And the policies themselves are a stepping stone. Behaviour policies, and the decision and workflow policies that come after them, as in [three policies for an agent](three-policies-for-an-agent.md), are how we start. What we are pursuing is the whole path above: being the people a customer trusts with their agents, from the first policy to agents an insurer can cover.
 
 ## What this does not claim
 
 - **The stages are a sequence, not a schedule.** They have no dates, and may overlap.
 - **Only the first stage is under way.** The others are described as we see them today.
-- **Insurance is a future decision.** We have not decided to play there.
+- **No insurer is signed up.** The conversations start now.
 - **The other players are not named.** Which ones lead each stage is still to be seen.
 - **The counts are the customer site's own.** Read from it on 20 October 2026.
 

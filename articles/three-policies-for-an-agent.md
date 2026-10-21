@@ -144,7 +144,7 @@ Agents & policy[This article as a graph →](graphs.md#three-policies-for-an-age
 
 ### Continued by
 
-- [The RiskMandate roadmap: policies, understand, risk acceptance, contain and manage, a spectrum of trust we walk with each customer](the-riskmandate-roadmap.md) RiskMandate's strategy as a spectrum of trust: policies, understand, risk acceptance, contain, manage. Acceleration throughout; insurance later.
+- [The RiskMandate roadmap: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we walk with each customer](the-riskmandate-roadmap.md) RiskMandate's strategy as a spectrum of trust: policies, understand, risk acceptance, contain, manage, insure. Acceleration throughout.
 - [A briefing for the WestCap CISO Summit: what RiskMandate and Agent Behaviour Policies are, said for each kind of person in the room, where we add value, and what to read next](a-briefing-for-the-ciso-summit.md) A briefing for the WestCap CISO Summit: Agent Behaviour Policies and RiskMandate, said for six kinds of person in the room, with what to read next.
 - [Reviews on the record: other models, the editor and the desk check every article, and never the same text twice](reviews-on-the-record.md) Published criteria, one record per article and text, five at a time, answered finding by finding: reviews by other models, the editor and the desk.
 - [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](the-editors-channel.md) A key makes a browser an editor's: reads, sign-offs and fixes go to a vault, a daily pass acts and replies, and five lanes set what any reader sends.
