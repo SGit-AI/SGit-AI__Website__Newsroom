@@ -1,43 +1,46 @@
 {
  "slug": "the-user-keeps-the-meter",
- "teaser": "A proposed design for billing on vaults: the user's browser keeps the meter, the admin signs credit, and one server does a light check.",
+ "teaser": "A proposed design for billing on vaults: the user's browser keeps the meter, credit now and validated later, one light check at the server.",
  "topics": ["vaults-and-method"],
- "core_idea": "User management, activity and billing can move to the client: each user has a billing vault where their browser appends signed activity and the admin side commits signed credit after reconciling payments with Stripe from the admin's browser, so the one remaining server only checks a valid key and a cached signed credit.",
+ "core_idea": "User management, activity and billing can move to the client: each user has a billing vault where their browser appends signed activity and adds credit as soon as they pay, while the admin side later checks payments with Stripe and commits signed validations, so the product keeps working on unvalidated credit and the one remaining server only checks a valid key and a cached signed credit.",
  "nodes": [
   {"id": "problem", "label": "Server-side billing", "kind": "concept", "summary": "Database, races, bottleneck or scheduler."},
   {"id": "have", "label": "Pieces that exist", "kind": "artefact", "summary": "Meter, append lanes, versioned vaults, key register."},
   {"id": "idea", "label": "The user keeps the meter", "kind": "claim", "summary": "The browser appends its own activity to a vault."},
   {"id": "vault", "label": "One billing vault per user", "kind": "concept", "summary": "Written by the user and the admin."},
-  {"id": "activity", "label": "Activity signed by the user", "kind": "method", "summary": "Appended at intervals."},
-  {"id": "credit", "label": "Credit signed by the admin", "kind": "method", "summary": "Verifiable by anyone."},
+  {"id": "activity", "label": "Activity and claims signed by the user", "kind": "method", "summary": "Appended at intervals; credit added on payment."},
+  {"id": "validation", "label": "Validations signed by the admin", "kind": "method", "summary": "Verifiable by anyone."},
   {"id": "stripe", "label": "Stripe read from the admin's browser", "kind": "method", "summary": "List events; client_reference_id."},
-  {"id": "when", "label": "Credit now or after matching", "kind": "question", "summary": "An allowance in between."},
+  {"id": "states", "label": "Three states of credit", "kind": "concept", "summary": "Unvalidated, validated, not valid."},
+  {"id": "now", "label": "Credit now, validated later", "kind": "claim", "summary": "The product keeps working; it costs nothing on the client."},
+  {"id": "threat", "label": "Who are we defending against?", "kind": "question", "summary": "Gaming the client: unlikely, easy to detect."},
+  {"id": "pin", "label": "Pin the first commit", "kind": "method", "summary": "Check every later commit; know who did what."},
   {"id": "server", "label": "Upload server's light check", "kind": "method", "summary": "Key valid, credit left."},
-  {"id": "parties", "label": "Four parties", "kind": "concept", "summary": "Admin vault, user, upload server, credits API."},
-  {"id": "benefits", "label": "Data travels with the user", "kind": "claim", "summary": "Across every site."},
-  {"id": "trust", "label": "Trust limits", "kind": "claim", "summary": "Activity on trust; real costs counted at the server."}
+  {"id": "where", "label": "user.sgit.ai or billing.sgit.ai", "kind": "question", "summary": "So others can use it."}
  ],
  "edges": [
   {"from": "problem", "to": "idea", "rel": "answers"},
   {"from": "have", "to": "idea", "rel": "leads-to"},
   {"from": "idea", "to": "vault", "rel": "produces"},
   {"from": "vault", "to": "activity", "rel": "depends-on"},
-  {"from": "vault", "to": "credit", "rel": "depends-on"},
-  {"from": "stripe", "to": "credit", "rel": "leads-to"},
-  {"from": "when", "to": "stripe", "rel": "extends"},
-  {"from": "credit", "to": "server", "rel": "leads-to"},
-  {"from": "parties", "to": "vault", "rel": "extends"},
-  {"from": "vault", "to": "benefits", "rel": "produces"},
-  {"from": "trust", "to": "activity", "rel": "extends"}
+  {"from": "vault", "to": "validation", "rel": "depends-on"},
+  {"from": "stripe", "to": "validation", "rel": "leads-to"},
+  {"from": "now", "to": "states", "rel": "produces"},
+  {"from": "validation", "to": "states", "rel": "extends"},
+  {"from": "threat", "to": "now", "rel": "answers"},
+  {"from": "pin", "to": "vault", "rel": "extends"},
+  {"from": "validation", "to": "server", "rel": "leads-to"},
+  {"from": "where", "to": "idea", "rel": "extends"}
  ],
  "links": {
   "articles": ["paying-after-the-value", "the-editors-channel", "secrets-on-public-keys", "pki-everywhere", "free-to-copy-paid-at-the-source"],
   "pages": [],
-  "sites": []
+  "sites": ["https://newsroom.sgit.ai/articles/who-are-you-protecting-against.html"]
  },
  "quotes": [
   {"text": "A user very rarely runs several clients at the same time.", "why": "Why the race mostly disappears."},
-  {"text": "The user cannot raise their own balance, and the admin cannot invent activity the user did not sign.", "why": "Two writers, two keys."},
+  {"text": "The product keeps working, and the credit simply moves from unvalidated to validated.", "why": "Credit now, validated later."},
+  {"text": "It makes it visible, and it puts the hard check where a mistake would cost us money: at the server.", "why": "The threat model."},
   {"text": "Today, the access key gates use of the upload server, but it does not meter it", "why": "The gap this fills."}
  ]
 }

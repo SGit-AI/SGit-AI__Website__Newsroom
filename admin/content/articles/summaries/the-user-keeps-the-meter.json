@@ -4,13 +4,13 @@
  "sections": {
   "top": {
    "line": "A proposal to do user management, activity and billing on the client, with vaults.",
-   "para": "Billing usually needs a server, a database and a balance every action updates. This proposal gives each user a billing vault: their browser appends activity signed by them, the admin side commits credit signed by the admin key, reconciled with Stripe from the admin's browser, and the upload server only checks the key and the signed credit.",
-   "hash": "6d806b93e516"
+   "para": "Each user gets a billing vault. Their browser appends activity, signed by them, and adds credit the moment they pay. The admin side, which can be offline, later checks payments with Stripe and commits signed validations. Credit is unvalidated, validated or not valid, and the product keeps working meanwhile. The upload server only checks the key and the signed credit.",
+   "hash": "03a19ab84e2c"
   },
   "in-short": {
-   "line": "The design in seven lines: two writers, two keys, one light check.",
-   "para": "Billing on the client: each user has a billing vault, their browser keeps the meter, the admin signs credit after reconciling with Stripe, and the upload server asks only whether the key is valid and there is credit. The user's data travels with them across sites. Nothing is built yet.",
-   "hash": "15a6926ef62a"
+   "line": "The design in short: two writers, credit now and validated later, one light check.",
+   "para": "Billing on the client: each user has a billing vault and their browser keeps the meter. The user signs activity; the admin signs the validation of credit. Credit is given straight away and validated later. The upload server asks only whether the key is valid and there is credit. Data travels with the user. Nothing is built yet.",
+   "hash": "6cdf9b745fd0"
   },
   "problem": {
    "line": "Server-side billing means a database, races on one balance, and a bottleneck or a scheduler.",
@@ -23,29 +23,39 @@
    "hash": "de67a19ff189"
   },
   "idea": {
-   "line": "Each user's browser meters its own activity into a vault, behind user.sgit.ai.",
-   "para": "A user rarely runs several clients at once, so the race a central server suffers mostly disappears, and vault version control merges the rest. The browser appends activity at intervals, as the newsroom's meter does, but into a vault that can be synced, checked and billed. Proposed sites: user.sgit.ai and api.user.sgit.ai.",
-   "hash": "df9cd2773b01"
+   "line": "Each user's browser meters its own activity into a vault, at user.sgit.ai or billing.sgit.ai.",
+   "para": "A user rarely runs several clients at once, so the race a central server suffers mostly disappears, and vault version control merges the rest. The browser appends activity at intervals, as the newsroom meter does. Where it lives is open: user.sgit.ai with api.user.sgit.ai, or billing.sgit.ai with api.billing.sgit.ai, so others can use it easily.",
+   "hash": "a9d1a1b32322"
   },
   "writers": {
-   "line": "One billing vault, two writers: the user signs activity, the admin signs credit.",
-   "para": "The user's browser commits what they used, signed by their key, and the record is theirs. The admin side commits credit records signed by the admin key, which anyone can verify and nobody else can forge. A sketch of a credit record shows balance, grants, coverage, an end date and a signature.",
-   "hash": "f5f84c66b690"
+   "line": "One billing vault, two writers: the user signs activity and claims, the admin signs validations.",
+   "para": "The user's browser commits what they used and adds credit with a signed claim when they pay. The admin side later checks the claim and commits a validation signed by the admin key, which anyone can verify and nobody else can forge. A sketch shows claims with a status, the validated balance, an end date and a signature.",
+   "hash": "7d06888f1aad"
   },
   "stripe": {
-   "line": "The admin's browser reads payments from Stripe and matches them to signed claims.",
-   "para": "Stripe webhooks need a public HTTPS endpoint and are HMAC-signed, which does not fit a design without a server. So the admin's browser lists recent events, up to 30 days back, with a read-only key kept on the admin's machine. A payment link carries the billing vault's id as client_reference_id.",
-   "hash": "d4780b71e385"
+   "line": "The admin's browser reads payments from Stripe and matches them to the users' signed claims.",
+   "para": "Stripe webhooks need a public HTTPS endpoint and are HMAC-signed, which does not fit a design without a server. So the admin's browser lists recent events, up to 30 days back, with a read-only key kept on the admin's machine. A payment link carries the billing vault's id as client_reference_id. The user gets credit on return; validation follows.",
+   "hash": "93e584c25b3a"
   },
   "when": {
-   "line": "Credit straight away, or only once the payment is matched? An open question.",
-   "para": "Stripe warns that customers may never reach the landing page, and some methods take 2 to 14 days to confirm. A middle way, like the meter's negative balance: let the user carry on with a small allowance, and make the payment real once the admin side has matched it.",
-   "hash": "f410629be358"
+   "line": "Credit is given straight away; validation is a signed layer added later.",
+   "para": "The user must be able to use what they paid for immediately, so the browser adds the credit on return from Stripe. The admin side catches up later, even hours later, and signs a note: validated, or not accepted. Credit is unvalidated, validated, or not valid; the last means an attack or a bug. Unvalidated credit costs us nothing on the client.",
+   "hash": "621bd3d4635e"
+  },
+  "threat": {
+   "line": "Users gaming the client is unlikely in the short term, and very easy to detect.",
+   "para": "Who are we protecting against? The user could add credit they did not pay for, or leave out activity. Every claim must match a Stripe payment and every commit is signed, so a claim with no payment shows up as not valid. The design makes cheating visible on the client, and keeps the hard check at the server.",
+   "hash": "42d447399d6f"
+  },
+  "shared": {
+   "line": "A vault shared by an untrusted and a trusted party: pin its first commit, check every one after.",
+   "para": "The user is untrusted, we are trusted. Pinning the billing vault's first commit lets every later commit be checked: it descends from that commit and is signed by a known key. That makes a two-way channel where we always know who did what. Billing is the first use; the pattern fits any shared record between a user and a service.",
+   "hash": "566557306e56"
   },
   "server": {
-   "line": "The upload server does a light check only: a valid key and a signed credit.",
-   "para": "The sgit upload server is the one server left, and where usage costs real money. It verifies the key against the register and reads a cached, signed credit through a small credits API, with no balance or database of its own. Today access keys gate use but do not meter it.",
-   "hash": "3a9a40b2c29c"
+   "line": "The upload server does a light check only: a valid key and a signed validation.",
+   "para": "The sgit upload server is the one server left, and where usage costs real money. It verifies the key against the register and reads a cached, signed validation record through a small credits API, with no balance or database of its own. Today access keys gate use but do not meter it.",
+   "hash": "521237948b1a"
   },
   "parties": {
    "line": "Four parties: the admin vault, the user, the upload server and the credits API.",
@@ -58,24 +68,24 @@
    "hash": "512f5c9882f9"
   },
   "trust": {
-   "line": "Activity is on trust; real costs are counted at the server; credit cannot be forged.",
-   "para": "Browser-reported activity is trusted, as on the newsroom meter, where costs are small. Storage and transfer are counted at the upload server. Credit is valid only with the admin's signature. A cached credit can be stale, so it carries an end date. The admin key matters most.",
-   "hash": "049fd5aa2b68"
+   "line": "Activity and unvalidated credit are on trust; validated credit and real costs are not.",
+   "para": "Browser-reported activity is trusted, as on the newsroom meter, where costs are small. Storage and transfer are counted at the upload server. Validated credit needs the admin's signature; unvalidated credit could be forged and would show up as not valid. A cached record can be stale, so it carries an end date. The admin key matters most.",
+   "hash": "766761246e72"
   },
   "open": {
-   "line": "Six open questions, from when a payment counts to how refunds are written.",
-   "para": "When a payment counts; whether we create a user's first vault at login; how login starts with a PKI handshake; how anonymous the usage is; how often the browser syncs; and how refunds and disputes are recorded, probably as negative signed credit records.",
-   "hash": "41d5e1936bab"
+   "line": "Seven open questions, from where it lives to how refunds are written.",
+   "para": "Whether it lives at user.sgit.ai or billing.sgit.ai; whether the upload server should accept unvalidated credit where usage costs money; who creates the first vault; how login starts with a PKI handshake; how anonymous the usage is; how often the browser syncs; and how refunds and disputes are recorded as signed validation records.",
+   "hash": "e164ccc54eca"
   },
   "versioning": {
-   "line": "api.user.sgit.ai would follow the versioned API rule; the newsroom will write it up.",
-   "para": "Our API sites publish every release as a complete, independent copy at its own versioned path, never edited, with a manifest of hashes, as documented on api.send.sgit.ai. A site pins its version. This newsroom has not written about the rule yet, and it is now on the list.",
-   "hash": "4d41f6cc06bb"
+   "line": "The API site would follow the versioned API rule; the newsroom will write it up.",
+   "para": "Our API sites publish every release as a complete, independent copy at its own versioned path, never edited, with a manifest of hashes, as documented on api.send.sgit.ai. api.user.sgit.ai or api.billing.sgit.ai would do the same, and a site pins its version. This newsroom has not written about the rule yet, and it is on the list.",
+   "hash": "eac3f533f2ad"
   },
   "limits": {
    "line": "Nothing is built; the formats are sketches; the Stripe flow is untested.",
-   "para": "user.sgit.ai and api.user.sgit.ai do not exist yet. The field names will change. Stripe's constraints come from its documentation, read on 21 October 2026. Client-reported activity is not proof. The meter, append lanes, versioning and key register are in use today.",
-   "hash": "81b010cefcbb"
+   "para": "Neither user.sgit.ai nor billing.sgit.ai exists yet. The field names will change. Stripe's constraints come from its documentation, read on 21 October 2026. Client-reported activity is not proof. The meter, append lanes, versioning and key register are in use today.",
+   "hash": "8861a4558f9e"
   },
   "diagrams": {
    "line": "The Mermaid source of both diagrams, to reuse or correct.",
@@ -83,9 +93,9 @@
    "hash": "923804598157"
   },
   "sources": {
-   "line": "A voice memo, Stripe's documentation and api.send.sgit.ai, read on 21 October.",
-   "para": "A voice memo of 21 October 2026, Stripe's pages on webhooks, keys, events, success pages and payment link parameters, and api.send.sgit.ai's independent releases article, with related newsroom articles on the meter, append lanes and PKI.",
-   "hash": "cd9bbb973ef5"
+   "line": "Two voice memos, Stripe's documentation and api.send.sgit.ai, read on 21 October.",
+   "para": "Two voice memos of 21 October 2026, Stripe's pages on webhooks, keys, events, success pages and payment link parameters, and api.send.sgit.ai's independent releases article, with related newsroom articles on the meter, threat tiers, append lanes and PKI.",
+   "hash": "b95ca45215df"
   }
  }
 }

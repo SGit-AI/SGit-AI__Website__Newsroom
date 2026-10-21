@@ -55,29 +55,30 @@ builds on [What can your agent reach? RiskMandate and the Agent Behaviour Policy
 
 2026-10-21 · Vaults & method
 
-User management, activity and billing can move to the client: each user has a billing vault where their browser appends signed activity and the admin side commits signed credit after reconciling payments with Stripe from the admin's browser, so the one remaining server only checks a valid key and a cached signed credit.
+User management, activity and billing can move to the client: each user has a billing vault where their browser appends signed activity and adds credit as soon as they pay, while the admin side later checks payments with Stripe and commits signed validations, so the product keeps working on unvalidated credit and the one remaining server only checks a valid key and a cached signed credit.
 
 *[diagram]*
 **concept**claim**method**artefact**question
 
-**12 nodes, 11 edges**
+**13 nodes, 12 edges**
 
 - **Server-side billing** (concept) Database, races, bottleneck or scheduler.
 - **Pieces that exist** (artefact) Meter, append lanes, versioned vaults, key register.
 - **The user keeps the meter** (claim) The browser appends its own activity to a vault.
 - **One billing vault per user** (concept) Written by the user and the admin.
-- **Activity signed by the user** (method) Appended at intervals.
-- **Credit signed by the admin** (method) Verifiable by anyone.
+- **Activity and claims signed by the user** (method) Appended at intervals; credit added on payment.
+- **Validations signed by the admin** (method) Verifiable by anyone.
 - **Stripe read from the admin's browser** (method) List events; client_reference_id.
-- **Credit now or after matching** (question) An allowance in between.
+- **Three states of credit** (concept) Unvalidated, validated, not valid.
+- **Credit now, validated later** (claim) The product keeps working; it costs nothing on the client.
+- **Who are we defending against?** (question) Gaming the client: unlikely, easy to detect.
+- **Pin the first commit** (method) Check every later commit; know who did what.
 - **Upload server's light check** (method) Key valid, credit left.
-- **Four parties** (concept) Admin vault, user, upload server, credits API.
-- **Data travels with the user** (claim) Across every site.
-- **Trust limits** (claim) Activity on trust; real costs counted at the server.
+- **user.sgit.ai or billing.sgit.ai** (question) So others can use it.
 
 > A user very rarely runs several clients at the same time. Why the race mostly disappears.
 
-> The user cannot raise their own balance, and the admin cannot invent activity the user did not sign. Two writers, two keys.
+> The product keeps working, and the credit simply moves from unvalidated to validated. Credit now, validated later.
 
 builds on [Paying after the value: why a balance that can go negative feels different from a subscription, the psychology behind it, and the experiment this newsroom is running](#paying-after-the-value), [The editor's channel: what I read, sign off and want changed, sent to the newsroom's agent in a vault](#the-editors-channel), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key](#pki-everywhere), [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](#free-to-copy-paid-at-the-source); continued by [AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](#aws-from-the-vault).
 
