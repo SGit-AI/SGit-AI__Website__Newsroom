@@ -118,6 +118,7 @@ Site & engineering[This article as a graph →](graphs.md#v0-12-in-numbers)
 
 ### Continued by
 
+- [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](the-sgit-ai-sites-in-numbers.md) All 53 sgit.ai site repositories counted: 45 live sites, 1,679 commits, 5,419 pages, growth in bursts and a long tail.
 - [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](how-a-memo-becomes-a-release.md) From voice memo to tagged release: the session's checks, GitHub's checks, the times, what is redundant, and what a new session would lack.
 
 [All articles](index.md) · [All graphs](graphs.md)

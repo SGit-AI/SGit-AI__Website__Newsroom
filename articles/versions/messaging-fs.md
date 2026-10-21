@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 2,521 | first published | this release | [current](../messaging-fs.md) |
+| **v1.0.0** | 2026-10-21 | published | 2,521 | first published | [`4404c4a42`](https://github.com/SGit-AI/SGit-AI__Website/commit/4404c4a42bcaea33d57c544e5c68eb97e9d813db) | [current](../messaging-fs.md) |
 
 [← Back to the article](../messaging-fs.md) · [All articles](../index.md)
 

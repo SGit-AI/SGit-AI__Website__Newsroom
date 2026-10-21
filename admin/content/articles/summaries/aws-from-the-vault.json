@@ -3,19 +3,24 @@
  "by": "newsroom.writer",
  "sections": {
   "top": {
-   "line": "A proposed aws.sgit.ai: a temporary AWS session in the vault, the browser does the work.",
-   "para": "Building AWS tools on the client always lacked two things: a place for the credentials and a place for the data. The vault gives both. Temporary credentials from the AWS access portal go into a vault for one session; the browser calls AWS with the SDK for JavaScript; results go back into the vault, ready for graphs.",
-   "hash": "5c52ae9331a9"
+   "line": "A proposed aws.twin.sgit.ai: a twin on a vault first, then a temporary AWS session in front of it.",
+   "para": "Building AWS tools on the client lacked a place for the credentials and a place for the data; the vault gives both. aws.twin.sgit.ai is a twin first: an AWS-shaped interface on a vault, with the live account as a second backend. Temporary credentials from the access portal go into a vault, the browser calls AWS, and results go back as snapshots.",
+   "hash": "6b4d7f0e9474"
   },
   "in-short": {
-   "line": "Eight lines: credentials in the vault, the browser does the work, data in the vault.",
-   "para": "A client-side site for managing AWS. Credentials come from the AWS access portal and last one to twelve hours. The browser uses the AWS SDK for JavaScript. The vault holds the results, versioned. The first job is deploying our server components to many regions and accounts. IAM Roles Anywhere may give a PKI route. Nothing is built yet.",
-   "hash": "266a573fdb03"
+   "line": "Credentials in the vault, a twin first, the browser does the work, data in the vault.",
+   "para": "A client-side site for managing AWS, at aws.twin.sgit.ai. Built on a vault first, with the live account as a second backend. Credentials come from the AWS access portal and last one to twelve hours. The browser uses the AWS SDK for JavaScript; the vault holds the results. First job: multi-region deployment. IAM Roles Anywhere may give a PKI route.",
+   "hash": "f2c1c3bfc41a"
   },
   "missing": {
    "line": "Years of AWS tooling, and two missing pieces: where the credentials and the data go.",
    "para": "OSBot-AWS, an Apache 2.0 Python library with about 1,180 commits, and SG/Compute, which launches and terminates EC2 environments, took the code a long way. What was missing was a safe place in the browser for an AWS session, and somewhere to keep what it gathers. The user's vault answers both.",
    "hash": "3c6f40be03f4"
+  },
+  "twin": {
+   "line": "A twin first: an AWS-shaped interface on a vault, with the live account as a second backend.",
+   "para": "The site is aws.twin.sgit.ai, in the twins family. It is built as an AWS-shaped interface whose backend is a vault, with the temporary session put in front as a second backend behind the same interface, the pattern of the working S3 container twin. Everything can be built and tested with no credentials, and deployments rehearsed before running live.",
+   "hash": "3128549789eb"
   },
   "workflow": {
    "line": "Sign in to the AWS access portal, copy temporary credentials, paste them into the vault.",
@@ -48,9 +53,9 @@
    "hash": "f06b170f12d2"
   },
   "limits": {
-   "line": "Nothing is built; browser access and Roles Anywhere are untested; templates in beta.",
-   "para": "aws.sgit.ai does not exist and its name is not decided. S3 needs CORS and other services are still to measure. IAM Roles Anywhere from a browser is untested. The deployment templates are written but not a reviewed reference architecture. AWS is quoted from its documentation, read on 21 October 2026.",
-   "hash": "e3cd83259513"
+   "line": "The name is decided; nothing is built; browser access and Roles Anywhere are untested.",
+   "para": "aws.twin.sgit.ai is decided and its repository exists; the site does not. S3 needs CORS and other services are still to measure. IAM Roles Anywhere from a browser is untested. The deployment templates are written but not a reviewed reference architecture. AWS is quoted from its documentation, read on 21 October 2026.",
+   "hash": "e61f1ae2132b"
   },
   "diagrams": {
    "line": "The Mermaid source of both diagrams, to reuse or correct.",
@@ -58,9 +63,9 @@
    "hash": "fcac46ca0432"
   },
   "sources": {
-   "line": "A voice memo, AWS documentation, OSBot-AWS, SG/Compute and sgit.ai's AWS page.",
-   "para": "A voice memo of 21 October 2026; AWS's pages on IAM Identity Center credentials, IAM Roles Anywhere, and the SDK for JavaScript on CORS and browser credentials; OSBot-AWS on GitHub; SG/Compute's site; and sgit.ai's AWS page, with related newsroom articles.",
-   "hash": "dfcbb27df7da"
+   "line": "A voice memo, AWS documentation, OSBot-AWS, SG/Compute, twins.sgit.ai and sgit.ai's AWS page.",
+   "para": "A voice memo of 21 October 2026; AWS's pages on IAM Identity Center credentials, IAM Roles Anywhere, and the SDK for JavaScript on CORS and browser credentials; OSBot-AWS on GitHub; SG/Compute's site; twins.sgit.ai on the S3 container; and sgit.ai's AWS page, with related newsroom articles.",
+   "hash": "e15a5e207a42"
   }
  }
 }

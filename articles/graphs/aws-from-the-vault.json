@@ -1,10 +1,10 @@
 {
   "slug": "aws-from-the-vault",
-  "teaser": "A proposed aws.sgit.ai: a temporary AWS session in the user's vault, the browser calls AWS, and the data goes back into the vault.",
+  "teaser": "A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.",
   "topics": [
     "vaults-and-method"
   ],
-  "core_idea": "Client-side AWS tooling was missing a safe place for credentials and a home for its data; the user's vault supplies both, holding temporary IAM Identity Center credentials for one session while the browser calls AWS with the JavaScript SDK and writes versioned results back for graphs and workflows, starting with multi-region, multi-account deployments.",
+  "core_idea": "Client-side AWS tooling was missing a safe place for credentials and a home for its data; the user's vault supplies both, and aws.twin.sgit.ai is built twin first, an AWS-shaped interface on a vault with temporary IAM Identity Center credentials as a second backend, while the browser calls AWS with the JavaScript SDK and writes versioned results back for graphs and workflows, starting with multi-region, multi-account deployments.",
   "nodes": [
     {
       "id": "missing",
@@ -17,6 +17,12 @@
       "label": "OSBot-AWS and SG/Compute",
       "kind": "artefact",
       "summary": "Years of AWS tooling."
+    },
+    {
+      "id": "twin",
+      "label": "A twin first",
+      "kind": "method",
+      "summary": "Interface on a vault; live account as a second backend."
     },
     {
       "id": "portal",
@@ -85,9 +91,14 @@
       "rel": "answers"
     },
     {
-      "from": "portal",
+      "from": "twin",
       "to": "vault",
-      "rel": "leads-to"
+      "rel": "depends-on"
+    },
+    {
+      "from": "portal",
+      "to": "twin",
+      "rel": "extends"
     },
     {
       "from": "vault",
@@ -111,7 +122,7 @@
     },
     {
       "from": "deploy",
-      "to": "browser",
+      "to": "twin",
       "rel": "example-of"
     },
     {
@@ -127,6 +138,7 @@
   ],
   "links": {
     "articles": [
+      "plural-for-the-family-singular-for-the-site",
       "the-user-keeps-the-meter",
       "pki-everywhere",
       "agent-workflows-on-ephemeral-vaults",
@@ -134,7 +146,9 @@
       "knowledge-that-maintains-itself"
     ],
     "pages": [],
-    "sites": []
+    "sites": [
+      "https://twins.sgit.ai/"
+    ]
   },
   "quotes": [
     {
@@ -142,8 +156,8 @@
       "why": "The diagnosis."
     },
     {
-      "text": "The vault answers both.",
-      "why": "The answer."
+      "text": "The name carries the design.",
+      "why": "Twin first."
     },
     {
       "text": "The vault becomes the record of the estate",

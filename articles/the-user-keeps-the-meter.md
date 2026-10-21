@@ -243,7 +243,7 @@ Vaults & method[This article as a graph →](graphs.md#the-user-keeps-the-meter)
 ### Continued by
 
 - [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](messaging-fs.md) A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.
-- [AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md) A proposed aws.sgit.ai: a temporary AWS session in the user's vault, the browser calls AWS, and the data goes back into the vault.
+- [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](aws-from-the-vault.md) A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

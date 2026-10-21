@@ -1,0 +1,155 @@
+{
+  "slug": "the-sgit-ai-sites-in-numbers",
+  "teaser": "All 53 sgit.ai site repositories counted: 45 live sites, 1,679 commits, 5,419 pages, growth in bursts and a long tail.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "Counted on 21 October 2026, the sgit.ai estate is 53 website repositories and 45 live sites that grew in bursts of about ten sites a week; most sites are built in a session or two, four repositories hold most of the work, and families of hub and instance sites are appearing, which is why naming needs a rule.",
+  "nodes": [
+    {
+      "id": "count",
+      "label": "53 repositories, 45 live",
+      "kind": "example",
+      "summary": "One not serving, seven placeholders."
+    },
+    {
+      "id": "growth",
+      "label": "Growth in bursts",
+      "kind": "claim",
+      "summary": "About ten new sites in each of five weeks."
+    },
+    {
+      "id": "tail",
+      "label": "A long tail",
+      "kind": "claim",
+      "summary": "Four repositories hold 62% of commits; median seven."
+    },
+    {
+      "id": "cheap",
+      "label": "A site is cheap",
+      "kind": "claim",
+      "summary": "Most built in one or two sessions."
+    },
+    {
+      "id": "pages",
+      "label": "5,419 pages",
+      "kind": "example",
+      "summary": "Newsroom 1,282; Portuguese edition 929."
+    },
+    {
+      "id": "machine",
+      "label": "Readable by agents",
+      "kind": "artefact",
+      "summary": "llms.txt, sitemaps, versions."
+    },
+    {
+      "id": "families",
+      "label": "Families of sites",
+      "kind": "concept",
+      "summary": "Hubs with instances; API sites; editions."
+    },
+    {
+      "id": "rule",
+      "label": "A naming rule",
+      "kind": "method",
+      "summary": "Plural hub, singular instance."
+    },
+    {
+      "id": "loose",
+      "label": "Loose ends",
+      "kind": "claim",
+      "summary": "One not serving, four without sitemaps, four hosts to rename."
+    }
+  ],
+  "edges": [
+    {
+      "from": "count",
+      "to": "growth",
+      "rel": "leads-to"
+    },
+    {
+      "from": "count",
+      "to": "tail",
+      "rel": "produces"
+    },
+    {
+      "from": "tail",
+      "to": "cheap",
+      "rel": "answers"
+    },
+    {
+      "from": "count",
+      "to": "pages",
+      "rel": "extends"
+    },
+    {
+      "from": "machine",
+      "to": "count",
+      "rel": "extends"
+    },
+    {
+      "from": "growth",
+      "to": "families",
+      "rel": "produces"
+    },
+    {
+      "from": "families",
+      "to": "rule",
+      "rel": "leads-to"
+    },
+    {
+      "from": "count",
+      "to": "loose",
+      "rel": "produces"
+    }
+  ],
+  "links": {
+    "articles": [
+      "plural-for-the-family-singular-for-the-site",
+      "v0-12-in-numbers",
+      "how-a-memo-becomes-a-release"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "Four repositories, sgit.ai, the newsroom, graphs and PKI, hold 62% of all the commits.",
+      "why": "The long tail."
+    },
+    {
+      "text": "A site that renders a book or a corpus can be large and young at the same time.",
+      "why": "Pages versus commits."
+    },
+    {
+      "text": "That is not a sign of neglect.",
+      "why": "How sites are made."
+    }
+  ],
+  "figures": [
+    {
+      "file": "es-growth.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/es-growth.webp",
+      "caption": "Fifty-three repositories in eleven weeks. Left: new site repositories each week, with the running total underneath. Right: commits across all of them each week, peaking at 331 in the week of 12 October.",
+      "kind": "comparison"
+    },
+    {
+      "file": "es-commits.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/es-commits.webp",
+      "caption": "Commits per repository, the fourteen busiest. sgit.ai has 495, the newsroom 262, graphs 139 and PKI 137; together they hold 62% of the 1,679 commits.",
+      "kind": "comparison"
+    },
+    {
+      "file": "es-pages.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/es-pages.webp",
+      "caption": "Pages listed in each live site's sitemap, the fourteen largest. The newsroom lists 1,282 and its Portuguese edition 929; sgit.ai 604 and the Gen Z Developers book 496.",
+      "kind": "comparison"
+    },
+    {
+      "file": "es-families.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/es-families.webp",
+      "caption": "The families held against the convention agreed on 21 October: plural for the hub, singular for the instance. The twins and hooks families follow it; four provider and game hosts break it; the demo, hook and twin instances are reserved, with no site yet.",
+      "kind": "architecture"
+    }
+  ]
+}

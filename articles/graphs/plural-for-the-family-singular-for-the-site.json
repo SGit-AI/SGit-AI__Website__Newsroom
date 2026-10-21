@@ -1,0 +1,139 @@
+{
+  "slug": "plural-for-the-family-singular-for-the-site",
+  "teaser": "Why the AWS site is aws.twin.sgit.ai: a twin first, and one naming rule for every family of sites.",
+  "topics": [
+    "site-and-engineering"
+  ],
+  "core_idea": "The AWS site is named aws.twin.sgit.ai because it is designed twin first, an AWS-shaped interface on a vault with the live account as a second backend, and because every family of sites now follows one rule, plural for the hub and singular for the instance, which four existing hosts break and which needs DNS records rather than wildcard certificates on GitHub Pages.",
+  "nodes": [
+    {
+      "id": "name",
+      "label": "aws.twin.sgit.ai",
+      "kind": "artefact",
+      "summary": "Repository Twin__AWS, hub twins.sgit.ai."
+    },
+    {
+      "id": "twin",
+      "label": "Twin first",
+      "kind": "method",
+      "summary": "Interface on a vault; live account as a backend."
+    },
+    {
+      "id": "s3",
+      "label": "The S3 container",
+      "kind": "example",
+      "summary": "boto3 cannot tell the difference."
+    },
+    {
+      "id": "rejected",
+      "label": "Rejected names",
+      "kind": "concept",
+      "summary": "aws, aws.platform, aws.provider."
+    },
+    {
+      "id": "rule",
+      "label": "Plural hub, singular instance",
+      "kind": "method",
+      "summary": "Also for repositories."
+    },
+    {
+      "id": "breaks",
+      "label": "Four hosts break it",
+      "kind": "example",
+      "summary": "Three providers, one game."
+    },
+    {
+      "id": "dns",
+      "label": "DNS, not certificates",
+      "kind": "claim",
+      "summary": "GitHub Pages provisions a certificate per host."
+    },
+    {
+      "id": "ruling",
+      "label": "The twins ruling",
+      "kind": "question",
+      "summary": "A live backend borrows the user's session."
+    },
+    {
+      "id": "providers",
+      "label": "Providers to the singular",
+      "kind": "method",
+      "summary": "Redirect the plural; switch hosts first."
+    }
+  ],
+  "edges": [
+    {
+      "from": "twin",
+      "to": "name",
+      "rel": "produces"
+    },
+    {
+      "from": "s3",
+      "to": "twin",
+      "rel": "example-of"
+    },
+    {
+      "from": "rejected",
+      "to": "name",
+      "rel": "contrasts"
+    },
+    {
+      "from": "rule",
+      "to": "name",
+      "rel": "produces"
+    },
+    {
+      "from": "breaks",
+      "to": "rule",
+      "rel": "extends"
+    },
+    {
+      "from": "dns",
+      "to": "rule",
+      "rel": "depends-on"
+    },
+    {
+      "from": "twin",
+      "to": "ruling",
+      "rel": "leads-to"
+    },
+    {
+      "from": "breaks",
+      "to": "providers",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "aws-from-the-vault",
+      "the-sgit-ai-sites-in-numbers"
+    ],
+    "pages": [],
+    "sites": [
+      "https://twins.sgit.ai/naming/index.html",
+      "https://providers.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The name carries the design.",
+      "why": "Why the name."
+    },
+    {
+      "text": "The repositories are already right: every family repository uses the singular.",
+      "why": "Where the rule already holds."
+    },
+    {
+      "text": "But these sites are on GitHub Pages, and there no wildcard certificate is needed.",
+      "why": "The correction."
+    }
+  ],
+  "figures": [
+    {
+      "file": "es-families.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/es-families.webp",
+      "caption": "The families held against the rule: plural for the hub, singular for the instance. The twins and hooks families follow it; the three provider hosts and the game break it; the twin, hook and demo instances are reserved, with no site yet.",
+      "kind": "architecture"
+    }
+  ]
+}

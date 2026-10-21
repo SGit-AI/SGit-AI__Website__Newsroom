@@ -1,10 +1,10 @@
 ---
-title: AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go
+title: AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go
 date: 2026-10-21
 author: Dinis Cruz
 author_url: about/index.html
-summary: I have wanted to build this for a long time: a website for managing AWS and working with its data, all on the client. aws.sgit.ai, or something wider, a platform or provider site. Two pieces were always missing. The first was a safe place in the browser for the AWS credentials. The second was somewhere to put the data: the inventories, logs and costs you gather. Now that every user has a vault, both are solved. You sign in to the AWS access portal, IAM Identity Center, copy the temporary credentials for one account and role, which last from one to twelve hours, and paste them into your vault, which can itself be temporary. For that session the site can do whatever that role can do, from the browser, with the normal AWS SDK for JavaScript: an S3 browser, Lambda functions, EC2 instances, billing, logs. The results go back into the vault, where they are versioned and can be turned into graphs. The first job I want from it is a better way to deploy the SG/Send server components to many regions and accounts. There may be a PKI way to get the session as well: IAM Roles Anywhere exchanges X.509 certificates for temporary credentials. That is to test. This is a proposal.
-version: v0.13.10
+summary: I have wanted to build this for a long time: a website for managing AWS and working with its data, all on the client. It will be aws.twin.sgit.ai, because it is a twin first: an AWS-shaped interface whose backend is a vault, with the live account put in front of it later as a second backend. Two pieces were always missing. The first was a safe place in the browser for the AWS credentials. The second was somewhere to put the data: the inventories, logs and costs you gather. Now that every user has a vault, both are solved. You sign in to the AWS access portal, IAM Identity Center, copy the temporary credentials for one account and role, which last from one to twelve hours, and paste them into your vault, which can itself be temporary. For that session the site can do whatever that role can do, from the browser, with the normal AWS SDK for JavaScript: an S3 browser, Lambda functions, EC2 instances, billing, logs. The results go back into the vault, where they are versioned and can be turned into graphs. The first job I want from it is a better way to deploy the SG/Send server components to many regions and accounts. There may be a PKI way to get the session as well: IAM Roles Anywhere exchanges X.509 certificates for temporary credentials. That is to test. This is a proposal.
+version: v0.13.16
 license: https://creativecommons.org/licenses/by/4.0/
 tags: aws, vaults, cloud, pki, architecture, proposal, article
 status: published
@@ -14,7 +14,7 @@ status: published
 
 ## In short {#in-short}
 
-- **A website for managing AWS, all on the client.** aws.sgit.ai, or a wider platform or provider site.
+- **A website for managing AWS, all on the client.** aws.twin.sgit.ai, a twin first.
 - **The missing piece was the credentials.** Now they go in the user's vault, for one session.
 - **They come from the AWS access portal.** Temporary credentials, from one to twelve hours.
 - **The browser does the work.** With the normal AWS SDK for JavaScript.
@@ -32,6 +32,12 @@ And I have talked for a long time about what I wanted to do on top of that: grap
 The first was where to put the credentials. A tool that runs in the browser needs an AWS session, and there was no good place in the browser to keep one. The second was where to put the data. Every time we gathered logs, inventories or costs, we had to decide where they lived, and we never really sorted that out.
 
 The vault answers both. Every user now has one, encrypted on their device, versioned, and able to be temporary. It can hold the session for as long as the session lasts, and it can hold what that session finds.
+
+## A twin first {#twin}
+
+The site has a name now: aws.twin.sgit.ai, part of the family at [twins.sgit.ai](https://twins.sgit.ai/). The name carries the design. It is built twin first: an AWS-shaped interface, for S3, Lambda, EC2, IAM, billing and logs, whose backend is a vault. The real connection, the temporary session below, is put in front of it as a second backend behind the same interface. Everything built against the twin then works against the live account, because the code is written against the interface, not the backend.
+
+That is the pattern of the one twin that already works, the S3-compatible vault container, where code using boto3 cannot tell whether it is talking to S3, a vault, disk or memory. It means every part of the site can be built and tested on a vault, with no credentials at all, and every deployment rehearsed before it runs live. The naming, and the rule behind it, are in [plural for the family, singular for the site](/articles/plural-for-the-family-singular-for-the-site.html).
 
 ## The workflow {#workflow}
 
@@ -93,7 +99,7 @@ That fits the direction we are going in, with keys made on the device and a regi
 
 ## What this does not claim {#limits}
 
-- **Nothing here is built.** aws.sgit.ai does not exist yet, and its name is not decided.
+- **Nothing here is built.** The name is decided, aws.twin.sgit.ai, and its repository exists; the site does not yet.
 - **Browser access is not tested service by service.** S3 needs CORS; the rest is to measure.
 - **IAM Roles Anywhere from a browser is untested.** It is the PKI path to explore.
 - **The deployment pieces are in beta.** The templates are written, not a reviewed reference architecture.
@@ -111,7 +117,7 @@ flowchart TB
     C["The session's credentials"]
     D["AWS data: inventories,<br/>logs, costs, snapshots"]
   end
-  B["aws.sgit.ai in the browser<br/>AWS SDK for JavaScript"]
+  B["aws.twin.sgit.ai in the browser<br/>AWS SDK for JavaScript"]
   A["AWS: S3, Lambda, EC2,<br/>IAM, billing, logs"]
   G["Graphs and workflows"]
   P -->|copy| K
@@ -146,4 +152,4 @@ flowchart LR
 
 ## Where this comes from {#sources}
 
-A voice memo of 21 October 2026. AWS's documentation, read the same day: [getting IAM Identity Center user credentials](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtogetcredentials.html), [what is IAM Roles Anywhere](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html), and the AWS SDK for JavaScript's pages on [CORS](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/cors.html) and [credentials in a browser](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/setting-credentials-browser.html). [OSBot-AWS](https://github.com/owasp-sbot/OSBot-AWS) on GitHub and [SG/Compute's site](https://sg-compute.sgit.ai/), read the same day. sgit.ai's [AWS page](https://sgit.ai/partnerships/aws.html), for the templates and runbooks. Related: [the user keeps the meter](/articles/the-user-keeps-the-meter.html), [PKI everywhere](/articles/pki-everywhere.html), [agent workflows on ephemeral vaults](/articles/agent-workflows-on-ephemeral-vaults.html), [what can your agent reach?](/articles/what-can-your-agent-reach.html), [knowledge that maintains itself](/articles/knowledge-that-maintains-itself.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+A voice memo of 21 October 2026. AWS's documentation, read the same day: [getting IAM Identity Center user credentials](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtogetcredentials.html), [what is IAM Roles Anywhere](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html), and the AWS SDK for JavaScript's pages on [CORS](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/cors.html) and [credentials in a browser](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/setting-credentials-browser.html). [OSBot-AWS](https://github.com/owasp-sbot/OSBot-AWS) on GitHub and [SG/Compute's site](https://sg-compute.sgit.ai/), and [twins.sgit.ai](https://twins.sgit.ai/built/index.html) on the S3 container, read the same day. sgit.ai's [AWS page](https://sgit.ai/partnerships/aws.html), for the templates and runbooks. Related: [plural for the family, singular for the site](/articles/plural-for-the-family-singular-for-the-site.html), [the user keeps the meter](/articles/the-user-keeps-the-meter.html), [PKI everywhere](/articles/pki-everywhere.html), [agent workflows on ephemeral vaults](/articles/agent-workflows-on-ephemeral-vaults.html), [what can your agent reach?](/articles/what-can-your-agent-reach.html), [knowledge that maintains itself](/articles/knowledge-that-maintains-itself.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.

@@ -251,6 +251,10 @@ Site & engineering[This article as a graph →](graphs.md#how-a-memo-becomes-a-r
 - [Hooks are kernel code: a maturity model, the first ten hooks mapped, and a brief for a hooks site and feed where you pay for state, never to run](hooks-are-kernel-code.md) Hooks are small code with kernel reach: a maturity model, the first ten hooks mapped, and a brief for a hooks site where you pay for state, never to run.
 - [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](the-riskmandate-roadmap.md) A proposed strategy for RiskMandate, a spectrum of trust: policies, understand, risk acceptance, contain, manage, insure.
 
+### Continued by
+
+- [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](the-sgit-ai-sites-in-numbers.md) All 53 sgit.ai site repositories counted: 45 live sites, 1,679 commits, 5,419 pages, growth in bursts and a long tail.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 232 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=232)

@@ -73,6 +73,59 @@
   ],
   "articles": [
     {
+      "slug": "the-sgit-ai-sites-in-numbers",
+      "title": "The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-sgit-ai-sites-in-numbers.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-sgit-ai-sites-in-numbers.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-sgit-ai-sites-in-numbers.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-sgit-ai-sites-in-numbers.json",
+      "teaser": "All 53 sgit.ai site repositories counted: 45 live sites, 1,679 commits, 5,419 pages, growth in bursts and a long tail.",
+      "summary": "It is worth taking a step back and looking at all the sgit.ai sites together. On 21 October 2026 there were 53 website repositories under SGit-AI, the first started on 11 August. 45 of them answer as live sites, one is built and not yet serving, and seven are placeholders, two of them created this morning for the AWS twin and the user site. Between them they hold 1,679 commits, 33,541 files and 5,419 pages listed in their sitemaps. The estate grew in bursts of about ten new sites a week, and the busiest week for commits was the one of 12 October, with 331. The shape is a long tail: four repositories, sgit.ai, the newsroom, graphs and PKI, hold 62% of the commits, while the median site has seven, because most sites were built in a session or two and then left to do their job. Families are appearing, hubs with instances under them, which is why the naming now needs a rule. This is the data, with the charts, and what I read from it.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "websites",
+        "data",
+        "estate",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "plural-for-the-family-singular-for-the-site",
+      "title": "Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/plural-for-the-family-singular-for-the-site.html",
+      "markdown": "https://newsroom.sgit.ai/articles/plural-for-the-family-singular-for-the-site.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/plural-for-the-family-singular-for-the-site.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/plural-for-the-family-singular-for-the-site.json",
+      "teaser": "Why the AWS site is aws.twin.sgit.ai: a twin first, and one naming rule for every family of sites.",
+      "summary": "The site proposed in AWS from the vault now has a name: aws.twin.sgit.ai, with its repository SGit-AI__Website__Twin__AWS and its hub at twins.sgit.ai. The name carries the design. It is a twin first: an AWS-shaped interface, for S3, Lambda, EC2, IAM, billing and logs, whose backend is a vault, with the real AWS account put in front of it later as a second backend behind the same interface. That is the same pattern as the one twin that already works, the S3-compatible vault container, where boto3 cannot tell the difference. The name also follows a rule we have now fixed for every family of sites: plural for the hub, singular for the instance, so twins.sgit.ai and aws.twin.sgit.ai, hooks.sgit.ai and tokens.hook.sgit.ai, providers.sgit.ai and elevenlabs.provider.sgit.ai. Held against the hosts that exist, the newer families follow it, and four hosts break it: three under providers and one under games. This records the decisions, the options we rejected, what changes on the twins and providers sites, and one correction: on GitHub Pages, no wildcard certificate is needed.",
+      "topics": [
+        "site-and-engineering"
+      ],
+      "tags": [
+        "sgit",
+        "naming",
+        "twins",
+        "websites",
+        "decisions",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "messaging-fs",
       "title": "Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line",
       "date": "2026-10-21",
@@ -102,7 +155,7 @@
     },
     {
       "slug": "aws-from-the-vault",
-      "title": "AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go",
+      "title": "AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go",
       "date": "2026-10-21",
       "updated": "",
       "author": "Dinis Cruz",
@@ -110,8 +163,8 @@
       "markdown": "https://newsroom.sgit.ai/articles/aws-from-the-vault.md",
       "card": "https://newsroom.sgit.ai/articles/cards/aws-from-the-vault.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/aws-from-the-vault.json",
-      "teaser": "A proposed aws.sgit.ai: a temporary AWS session in the user's vault, the browser calls AWS, and the data goes back into the vault.",
-      "summary": "I have wanted to build this for a long time: a website for managing AWS and working with its data, all on the client. aws.sgit.ai, or something wider, a platform or provider site. Two pieces were always missing. The first was a safe place in the browser for the AWS credentials. The second was somewhere to put the data: the inventories, logs and costs you gather. Now that every user has a vault, both are solved. You sign in to the AWS access portal, IAM Identity Center, copy the temporary credentials for one account and role, which last from one to twelve hours, and paste them into your vault, which can itself be temporary. For that session the site can do whatever that role can do, from the browser, with the normal AWS SDK for JavaScript: an S3 browser, Lambda functions, EC2 instances, billing, logs. The results go back into the vault, where they are versioned and can be turned into graphs. The first job I want from it is a better way to deploy the SG/Send server components to many regions and accounts. There may be a PKI way to get the session as well: IAM Roles Anywhere exchanges X.509 certificates for temporary credentials. That is to test. This is a proposal.",
+      "teaser": "A proposed aws.twin.sgit.ai: an AWS twin on a vault first, then a temporary AWS session from the user's vault.",
+      "summary": "I have wanted to build this for a long time: a website for managing AWS and working with its data, all on the client. It will be aws.twin.sgit.ai, because it is a twin first: an AWS-shaped interface whose backend is a vault, with the live account put in front of it later as a second backend. Two pieces were always missing. The first was a safe place in the browser for the AWS credentials. The second was somewhere to put the data: the inventories, logs and costs you gather. Now that every user has a vault, both are solved. You sign in to the AWS access portal, IAM Identity Center, copy the temporary credentials for one account and role, which last from one to twelve hours, and paste them into your vault, which can itself be temporary. For that session the site can do whatever that role can do, from the browser, with the normal AWS SDK for JavaScript: an S3 browser, Lambda functions, EC2 instances, billing, logs. The results go back into the vault, where they are versioned and can be turned into graphs. The first job I want from it is a better way to deploy the SG/Send server components to many regions and accounts. There may be a PKI way to get the session as well: IAM Roles Anywhere exchanges X.509 certificates for temporary credentials. That is to test. This is a proposal.",
       "topics": [
         "vaults-and-method"
       ],

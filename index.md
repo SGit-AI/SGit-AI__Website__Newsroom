@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.15 · 235 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.16 · 237 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](articles/messaging-fs.md), 2026-10-21, 9 min. A proposed encrypted messenger between vaults: append lanes for transport, PKI for trust, and Messaging-FS as the schema.
+- [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min. All 53 sgit.ai site repositories counted: 45 live sites, 1,679 commits, 5,419 pages, growth in bursts and a long tail.
 
 ## Highlights
 
-- [AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](articles/aws-from-the-vault.md), 2026-10-21, 7 min.
+- [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](articles/plural-for-the-family-singular-for-the-site.md), 2026-10-21, 7 min.
+- [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](articles/messaging-fs.md), 2026-10-21, 9 min.
+- [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](articles/aws-from-the-vault.md), 2026-10-21, 8 min.
 - [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](articles/the-user-keeps-the-meter.md), 2026-10-21, 12 min.
-- [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](articles/how-a-memo-becomes-a-release.md), 2026-10-21, 10 min.
-- [Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor](articles/agent-behaviour-policies-move-to-the-open-security-summit.md), 2026-10-20, 5 min.
 
 ## Who are you reading as?
 
@@ -34,16 +34,16 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer](articles/the-riskmandate-roadmap.md), 2026-10-20, 6 min.
 - [Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks](articles/a-leak-without-breaking-the-policy.md), 2026-10-20, 8 min.
 
-### Building with agents (37)
+### Building with agents (39)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min.
+- [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](articles/plural-for-the-family-singular-for-the-site.md), 2026-10-21, 7 min.
 - [How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing](articles/how-a-memo-becomes-a-release.md), 2026-10-21, 10 min.
-- [Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book](articles/reading-with-a-pen.md), 2026-10-19, 7 min.
-- [Versions of versions: when a part of the site is big enough to need its own versions, the publishers' section first, and a tree of versions that runs from a page to the API](articles/versions-of-versions.md), 2026-10-18, 5 min.
 
 ### Vaults & provenance (50)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
 - [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](articles/messaging-fs.md), 2026-10-21, 9 min.
-- [AWS from the vault: a proposed aws.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](articles/aws-from-the-vault.md), 2026-10-21, 7 min.
+- [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](articles/aws-from-the-vault.md), 2026-10-21, 8 min.
 - [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](articles/the-user-keeps-the-meter.md), 2026-10-21, 12 min.
 
 ### The future of news (41)
