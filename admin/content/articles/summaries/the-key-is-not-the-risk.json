@@ -1,0 +1,51 @@
+{
+ "slug": "the-key-is-not-the-risk",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Credential injection for AI agents is a good pattern; the first question is still what an attacker can do with the agent.",
+   "para": "Before weighing a control, ask what you are worried about. Can an attacker reach the target with a leaked key? Would we see it used? What can it do? On Pellbridge's invented day, hiding keys touches two of nine incidents; seven are business logic. Leaking the key may be the least dangerous thing an injection does.",
+   "hash": "845223c6c47e"
+  },
+  "in-short": {
+   "line": "Seven lines: a good pattern, start with risk, reachability, detection and scope, Pellbridge, the cost, the least dangerous thing.",
+   "para": "Keep keys out of agents and inject them on the way out. But first ask whether the control moves the needle. A key to an unreachable system is of little use. Prefixes, egress, scope and lifetime matter. Two of Pellbridge's nine incidents involve a key. A gateway must be run, secured and paid for.",
+   "hash": "d7553d3fb769"
+  },
+  "pattern": {
+   "line": "Christian Posta's series: the agent never holds the credential, and the store becomes a high-value target.",
+   "para": "Part 1 attaches the real credential on the path; Parts 2 and 2.5 protect the store with AWS KMS and narrow their own claims; Part 3 is promised on Vault and OpenBao. It builds on the CB4A Internet-Draft, and agentgateway is open source. Careful, public work, and its core is right: agents should not hold keys.",
+   "hash": "efbf1d19f59b"
+  },
+  "worried": {
+   "line": "What are we worried about? Can the attacker reach the target, would we see it, what can it do, and what can the agent do.",
+   "para": "From AppSec: a found password is not critical by itself. Internal systems behind layers make a leaked key of little use outside. Cloud keys are the exception: AWS network limits are opt-in, and SaaS keys are meant for the internet. Prefixes like AKIA and ghp_ make keys easy to spot. Scope and lifetime beat secrecy.",
+   "hash": "42a8104174dd"
+  },
+  "pellbridge": {
+   "line": "Pellbridge's day: hiding keys touches two of nine incidents; the other seven are what the agent may do.",
+   "para": "The readable full bureau key and the ops-batch secret involve keys, and Pellbridge fixed both by scope: split the key, retire the account. A crypto payment, an email to a new address, advice, a standing order, a trade record and an unreviewed alert are legitimate calls a gateway would let through. Four of thirteen gaps involve credentials.",
+   "hash": "d637499adbd3"
+  },
+  "proxy": {
+   "line": "What a proxy can and cannot see: the policy needs state that lives in the application, and the proxy is in line.",
+   "para": "The series has a policy step, and Part 2.5 notes the attacker need not decrypt the store. But a proxy outside the application lacks the context to judge a valid-looking request. In line it is a single point of failure, may run on someone else's network, and must be scaled, owned and paid for.",
+   "hash": "7e5a01a1d8ba"
+  },
+  "questions": {
+   "line": "Five questions in order: reachability, detection, what the key can do, what an injected agent can do, what the control costs.",
+   "para": "Securing secrets by injection is technically simple, which does not make it first. Map the use case end to end and check whether the control moves the needle. Then keep keys out of agents as defence in depth, short-lived and PKI-based, with hooks and an Agent Behaviour Policy.",
+   "hash": "499d33fdbbc7"
+  },
+  "limits": {
+   "line": "Not against the pattern; public keys differ; Pellbridge is invented; proxies can carry rules; read the whole series.",
+   "para": "Keeping keys out of agents is good practice; the argument is order and weight. Cloud and SaaS keys reachable from anywhere do matter if leaked. Pellbridge's day and its classification are ours. A proxy with enough context can enforce business rules. This replies to the argument, not every part of the series.",
+   "hash": "bfdada419ee8"
+  },
+  "sources": {
+   "line": "My voice memo, Christian Posta's series, the CB4A draft, AWS and GitHub documentation, and the Pellbridge vault.",
+   "para": "The memo of 21 October 2026, prompted by a public post; Parts 1, 2 and 2.5 of the series; the CB4A Internet-Draft; agentgateway's docs; AWS IAM and data perimeter documentation; GitHub on token formats and push protection; the Pellbridge vault's incidents, policies and gaps; related articles.",
+   "hash": "29a9395d3be0"
+  }
+ }
+}

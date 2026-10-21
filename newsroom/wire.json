@@ -73,6 +73,33 @@
   ],
   "articles": [
     {
+      "slug": "the-key-is-not-the-risk",
+      "title": "The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent",
+      "date": "2026-10-21",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-key-is-not-the-risk.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-key-is-not-the-risk.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-key-is-not-the-risk.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-key-is-not-the-risk.json",
+      "teaser": "Credential injection for AI agents is a good pattern; the first question is still what an attacker can make the agent do.",
+      "summary": "A post going round this week, by Christian Posta, makes a point I agree with: do not give AI agents credentials, inject them on the way out through a gateway, and then protect the credential store, which becomes a high-value target. It is a good pattern, and this is not an article against it. It is about the question I learned to ask in application security, before deciding how much a control matters: what are we actually worried about? When we found a password in a config file, the first question was never \"we found a credential, this is critical\". It was \"can the attacker reach the system it opens?\". If not, the key is of little use. Cloud and SaaS keys are the exception, because they work from anywhere by default. Then: would we see it used, what can it do, and what can an attacker make the agent do without it? I ran that question over the day of Pellbridge, the invented bank in our vault for the FCA's four elements. Of its nine incidents, three breaches and six near misses, hiding the keys touches two. The other seven are about what the agent may do: a payment to a crypto exchange, an alert closed without a second person, a standing order changed without approval. A gateway that injects keys adds the key to those calls too, and it sits in line, a new system to run, secure and pay for. In a good design, a leaked key should not matter much. What the agent can do with its permissions matters more, and if an attacker can inject instructions into an agent, leaking the credential may be the least dangerous thing they can do.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "security",
+        "agents",
+        "credentials",
+        "risk",
+        "abp",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-human-is-the-network",
       "title": "The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot",
       "date": "2026-10-21",

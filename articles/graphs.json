@@ -55,6 +55,186 @@
   ],
   "articles": [
     {
+      "slug": "the-key-is-not-the-risk",
+      "title": "The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent",
+      "date": "2026-10-21",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-key-is-not-the-risk.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-key-is-not-the-risk.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-key-is-not-the-risk.webp",
+      "teaser": "Credential injection for AI agents is a good pattern; the first question is still what an attacker can make the agent do.",
+      "topics": [
+        "agents-and-policy"
+      ],
+      "tags": [
+        "security",
+        "agents",
+        "credentials",
+        "risk",
+        "abp",
+        "article"
+      ],
+      "links_out": [
+        "inside-the-pellbridge-agents",
+        "attacks-rewritten-as-mandates",
+        "the-attack-surface-you-do-not-have"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "kr-pellbridge.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kr-pellbridge.webp",
+          "caption": "Pellbridge's day through one question: would hiding the keys have stopped it? Of nine incidents, a gateway that injects credentials touches two, the readable bureau key and the ops-batch secret. The other seven are about what the agent may do: a payment, an email, an alert, a standing order, a trade record, advice.",
+          "kind": "comparison"
+        },
+        {
+          "file": "kr-pattern.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kr-pattern.webp",
+          "caption": "Credential injection, and where the risk goes: the agent holds no key, the gateway adds it on the way out from a credential store, to public APIs and internal systems. A hidden instruction that makes the agent ask for the wrong payment still gets its key added. Our drawing of the pattern.",
+          "kind": "concept"
+        },
+        {
+          "file": "kr-questions.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kr-questions.webp",
+          "caption": "Five questions before protecting a key: can an attacker reach the target with it; would we see it used; what can the key do; what can an injected agent do without it; what does the control cost. Then defence in depth.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-key-is-not-the-risk",
+        "teaser": "Credential injection for AI agents is a good pattern; the first question is still what an attacker can make the agent do.",
+        "topics": [
+          "agents-and-policy"
+        ],
+        "core_idea": "Keeping credentials out of AI agents and injecting them at a gateway is good practice, but a risk-based view asks first whether a leaked key can reach its target, would be seen, and how much it can do, and then what an injected agent can do without it; on an invented bank's day most incidents are business-logic misuse a credential gateway would let through, while the gateway adds an in-line system with its own costs.",
+        "nodes": [
+          {
+            "id": "pattern",
+            "label": "Credential injection",
+            "kind": "method",
+            "summary": "The agent never holds the key."
+          },
+          {
+            "id": "store",
+            "label": "The credential store",
+            "kind": "concept",
+            "summary": "A high-value target."
+          },
+          {
+            "id": "reach",
+            "label": "Can the attacker reach the target?",
+            "kind": "question",
+            "summary": "Internal systems are not exposed."
+          },
+          {
+            "id": "cloud",
+            "label": "Cloud and SaaS keys",
+            "kind": "concept",
+            "summary": "Usable from anywhere by default."
+          },
+          {
+            "id": "detect",
+            "label": "Would we see it?",
+            "kind": "question",
+            "summary": "AKIA, ghp_, push protection."
+          },
+          {
+            "id": "scope",
+            "label": "What can the key do?",
+            "kind": "question",
+            "summary": "Grant against mandate."
+          },
+          {
+            "id": "pellbridge",
+            "label": "Pellbridge's day",
+            "kind": "example",
+            "summary": "Two of nine incidents involve a key."
+          },
+          {
+            "id": "logic",
+            "label": "Business logic",
+            "kind": "claim",
+            "summary": "The transaction is the risk."
+          },
+          {
+            "id": "inline",
+            "label": "A system in line",
+            "kind": "concept",
+            "summary": "Single point of failure, cost, location."
+          }
+        ],
+        "edges": [
+          {
+            "from": "pattern",
+            "to": "store",
+            "rel": "produces"
+          },
+          {
+            "from": "reach",
+            "to": "pattern",
+            "rel": "answers"
+          },
+          {
+            "from": "cloud",
+            "to": "reach",
+            "rel": "contrasts"
+          },
+          {
+            "from": "detect",
+            "to": "reach",
+            "rel": "extends"
+          },
+          {
+            "from": "scope",
+            "to": "logic",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pellbridge",
+            "to": "logic",
+            "rel": "example-of"
+          },
+          {
+            "from": "pattern",
+            "to": "inline",
+            "rel": "produces"
+          },
+          {
+            "from": "logic",
+            "to": "pattern",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "inside-the-pellbridge-agents",
+            "attacks-rewritten-as-mandates",
+            "the-attack-surface-you-do-not-have"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/articles/hope-or-enforcement.html",
+            "https://newsroom.sgit.ai/articles/who-are-you-protecting-against.html",
+            "https://blog.christianposta.com/credential-brokering-patterns-for-ai-agent-egress/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "can the attacker reach the system the credential opens?",
+            "why": "The first question."
+          },
+          {
+            "text": "We didn't eliminate the credentials. We just created a high-value target.",
+            "why": "The pattern's own cost."
+          },
+          {
+            "text": "leaking the credential may be the least dangerous thing they can do",
+            "why": "The conclusion."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-human-is-the-network",
       "title": "The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot",
       "date": "2026-10-21",
@@ -653,7 +833,9 @@
         "aws-from-the-vault",
         "the-sgit-ai-sites-in-numbers"
       ],
-      "links_in": [],
+      "links_in": [
+        "the-key-is-not-the-risk"
+      ],
       "figures": [
         {
           "file": "cv-month.webp",
@@ -5250,6 +5432,7 @@
         "inside-the-thistlewood-twin"
       ],
       "links_in": [
+        "the-key-is-not-the-risk",
         "the-riskmandate-roadmap",
         "v0-12-in-numbers",
         "a-leak-without-breaking-the-policy",
@@ -29781,6 +29964,7 @@
         "two-agents-one-vault"
       ],
       "links_in": [
+        "the-key-is-not-the-risk",
         "a-briefing-for-the-ciso-summit",
         "chainguard-mapped",
         "the-minimum-code-below",

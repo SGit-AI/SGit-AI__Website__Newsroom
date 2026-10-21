@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-21 | minor | 2,519 | +48 / −0 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-checks-measured/v1.1.0.md) · [current](../the-checks-measured.md) |
+| **v1.1.0** | 2026-10-21 | minor | 2,519 | +48 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`e835280b3`](https://github.com/SGit-AI/SGit-AI__Website/commit/e835280b3a717f9c93c03b2e261d5e504af4c626) | [what changed](the-checks-measured/v1.1.0.md) · [current](../the-checks-measured.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,471 | first published | [`7c8ad22c8`](https://github.com/SGit-AI/SGit-AI__Website/commit/7c8ad22c8b9b75e416aaca91fdb350c56e5f9b24) |  |
 
 [← Back to the article](../the-checks-measured.md) · [All articles](../index.md)
