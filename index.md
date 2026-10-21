@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.17 · 237 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.18 · 238 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min. All 53 sgit.ai site repositories counted: 45 live sites, 1,679 commits, 5,419 pages, growth in bursts and a long tail.
+- [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](articles/jobs-that-never-scaled.md), 2026-10-21, 12 min. What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 
 ## Highlights
 
+- [The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says](articles/the-sgit-ai-sites-in-numbers.md), 2026-10-21, 5 min.
 - [Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites](articles/plural-for-the-family-singular-for-the-site.md), 2026-10-21, 7 min.
 - [Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line](articles/messaging-fs.md), 2026-10-21, 9 min.
 - [AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go](articles/aws-from-the-vault.md), 2026-10-21, 8 min.
-- [The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server](articles/the-user-keeps-the-meter.md), 2026-10-21, 12 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 
-### Strategy & startups (42)
+### Strategy & startups (43)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](articles/jobs-that-never-scaled.md), 2026-10-21, 12 min.
 - [Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed](articles/free-to-copy-paid-at-the-source.md), 2026-10-20, 6 min.
 - [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](articles/the-exit-is-when-you-sell-control.md), 2026-10-20, 9 min.
-- [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](articles/a-small-slice-sets-the-price.md), 2026-10-20, 9 min.
 
 ## Collections
 
