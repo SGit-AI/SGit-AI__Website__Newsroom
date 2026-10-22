@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-22 | published | 2,203 | first published | this release | [current](../the-delegation-record.md) |
+| **v1.0.0** | 2026-10-22 | published | 2,203 | first published | [`e74e14f2e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e74e14f2ef79e0e06a5fb8ca63fb3715a050cc99) | [current](../the-delegation-record.md) |
 
 [← Back to the article](../the-delegation-record.md) · [All articles](../index.md)
 

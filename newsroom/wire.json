@@ -73,6 +73,34 @@
   ],
   "articles": [
     {
+      "slug": "where-a-check-runs",
+      "title": "Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom",
+      "date": "2026-10-22",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/where-a-check-runs.html",
+      "markdown": "https://newsroom.sgit.ai/articles/where-a-check-runs.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/where-a-check-runs.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/where-a-check-runs.json",
+      "teaser": "Tests as enforcers of behaviour policies, and what moving them out of the agent's environment would gain, measured on this newsroom.",
+      "summary": "Tests are deterministic: they run, or they do not, and they pass, or they fail. That makes them good enforcers of an Agent Behaviour Policy, and it raises a question we had not asked: where should each test run? A test the agent runs in its own environment is, at best, a setting the agent could skip. The same test run in a CI pipeline that stops the deploy is out of the agent's session; and with the platform protecting the pipeline, it is out of the agent's reach altogether. Moving checks outward should reduce the agent's grant. So we measured it on this newsroom, where a release takes about 7 minutes of building and testing on the agent's machine and about 5 more in CI. Of the 57 checks we mapped this week, 19 stop a deploy in CI today; 26 run only on the agent's side. Moving everything that can run on the repository into CI, as a gate, would make it 49, leave 7 with the agent because they govern the agent itself, and, by our estimate from the measured parts, cut each release by about a third. The cost of moving is small and visible: most checks already pass on all of today's content; a few need a clean-up first. One rule matters more than the numbers: moving a check out of the agent's environment improves security only if the new place is a gate. And whether a policy can be enforced is always specific to its context, so this is one example, with the cases that do not work yet said plainly.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "abp",
+        "testing",
+        "ci",
+        "agents",
+        "security",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-delegation-record",
       "title": "The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox",
       "date": "2026-10-22",

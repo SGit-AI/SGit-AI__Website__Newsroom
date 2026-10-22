@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-255 of 255 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+256 of 256 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-255 articles, 1450 links between them (2191 mentions in all). 245 articles cite an earlier one; 71 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+256 articles, 1454 links between them (2198 mentions in all). 246 articles cite an earlier one; 71 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 0 articles not yet linked either way.
+
+## [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](where-a-check-runs.md)
+
+2026-10-22 · Agents & policySite & engineering
+
+Tests are deterministic enforcers of Agent Behaviour Policies, and where a test runs decides what kind of control it is: moving this site's checks from the agent's environment into a CI gate would take the deploy-blocking checks from 19 to 49 and, by estimate from measured parts, cut each release by about a third, but only if the new place is a gate, and only as boundaries once the platform protects the pipeline.
+
+*[diagram]*
+**concept**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Tests as enforcers** (concept) Deterministic: run or not, pass or fail.
+- **Where a check runs** (claim) Decides expectation, setting or boundary.
+- **Today** (example) 19 gating, 26 on the agent's side.
+- **Moved** (method) 49 gating, 7 with the agent.
+- **About a third faster** (claim) An estimate from measured parts.
+- **Only into a gate** (claim) 43 deploys after failed tests.
+- **Platform protection** (method) Branch protection and reviews.
+- **Signed test runs** (method) Skipping made visible.
+- **Context-specific** (concept) Pipelines, not chat agents.
+
+> Moving a check out of the agent's environment improves security only if the new place is a gate. The rule.
+
+> A test is a behaviour policy in disguise. The idea.
+
+builds on [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks), [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](#the-delegation-record), [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](#a-secret-is-a-qr-code).
 
 ## [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md)
 
@@ -47,7 +74,7 @@ RiskMandate's go-to-market plan is to deliver one chain end to end, existing req
 
 > A model can propose an interpretation; it must not quietly inherit the authority of the original policy. Translation.
 
-builds on [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers).
+builds on [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](#an-analysts-blueprint-for-riskmandate), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](#approved-business-mandates), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped), [Case law for agents: principles from the top, precedent from the cases, and how a decision earns its way into code](#case-law-for-agents), [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](#answering-a-draft), [Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch](#our-first-customers); continued by [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs).
 
 ## [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md)
 
@@ -238,7 +265,7 @@ Every test checks for a behaviour: walking each of the site's 57 checks up a gra
 
 > the behaviour was being enforced before it was named Reverse-engineering.
 
-builds on [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
+builds on [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](#the-checks-measured), [Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have](#policy-as-code-needs-a-policy-first), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach); continued by [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](#drift-is-the-mandate-moving), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
 
 ## [The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent](the-key-is-not-the-risk.md)
 
@@ -319,7 +346,7 @@ Publishing a public key as a QR code and a link lets anyone, person or agent, re
 
 > It's just unusable. It's not practical. It looks messy. Why not text.
 
-builds on [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
+builds on [The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot](#the-human-is-the-network), [Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this](#handing-secrets-to-agents), [secrets.sgit.ai on public keys: no more shared keys, eight ways a secret moves, a vault for the private key, and the commercial service it becomes](#secrets-on-public-keys), [A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways](#a-directory-of-people-and-keys), [Sixteen notes I did not want to lose: a request to send from any browser to my vault, why identity is still this hard, and how two more wires became a product line](#sixteen-notes-i-did-not-want-to-lose); continued by [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here).
 
 ## [The checks, measured: 123 local builds, 245 CI runs, 1,061 test checks, and where each check actually lives](the-checks-measured.md)
 
@@ -346,7 +373,7 @@ Measuring the newsroom's checks shows a release takes about 8 minutes locally, h
 
 > A check is only as durable as the place it lives Where checks live.
 
-builds on [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far); continued by [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks).
+builds on [The briefs so far: sixty-five things this newsroom has asked of itself, what is built, and where each next session starts](#the-briefs-so-far); continued by [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](#where-a-check-runs), [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](#governed-semi-autonomous-development-read-here), [Behaviour policies from the checks: 57 checks taken apart into the 8 behaviours they protect, and where each one is actually kept](#behaviour-policies-from-the-checks).
 
 ## [The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed](the-attack-surface-you-do-not-have.md)
 
