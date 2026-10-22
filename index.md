@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.46 · 262 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.47 · 262 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,7 +12,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 12 min. Where the php2shell story stands at 8pm UK time on 22 October, and a guided tour of the site built in one day to track it, with the versions of everything recorded for the next update.
+- [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 14 min. Where the php2shell story stands at 8pm UK time on 22 October, and a guided tour of the site built in one day to track it, with the versions of everything recorded for the next update.
 
 ## Highlights
 
@@ -46,7 +46,7 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 
 ### Vaults & provenance (56)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
-- [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 12 min.
+- [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 14 min.
 - [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](articles/capture-first.md), 2026-10-22, 13 min.
 - [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](articles/the-reading-account-as-built.md), 2026-10-21, 4 min.
 

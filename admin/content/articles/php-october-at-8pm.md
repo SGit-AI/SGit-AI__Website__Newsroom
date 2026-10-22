@@ -3,8 +3,8 @@ title: PHP October 2026, at 8pm: where the php2shell story stands, and a guided 
 date: 2026-10-22
 author: Dinis Cruz
 author_url: about/index.html
-summary: At 8pm UK time on 22 October, this is where the php2shell story stands. The fix has been out since 21 October; sixteen agencies say install it; attackers are trying, in large numbers, and Amazon saw an attempt four days before the announcement; no organisation has confirmed a break-in, and the US list of flaws known to be used in attacks still does not include these two. The Dutch inventory of affected software has 724 rows, and only 61 of them have a fix. And behind that update is something I want to show properly: php.oct.2026.newsroom.sgit.ai, a site built today, from 09:27 to 19:04 UTC, in 34 versions, by two people and thirteen agents. It reads an evidence vault of 184 sources and 177 dated captures, now public. It has a front page in plain English and fifteen briefings, 70 claims each graded by a fact-check desk, ten contradictions in a ledger, a graph of 209 nodes, the fix read in the code, the inventory hour by hour, every section versioned, a phone app, synthetic readers and eight vaults. This is a guided tour of it, with the versions of everything, so the next update can say exactly what changed.
-version: v0.13.43
+summary: At 8pm UK time on 22 October, this is where the php2shell story stands. The fix has been out since 21 October; sixteen agencies say install it; attackers are trying, in large numbers, and Amazon saw an attempt four days before the announcement; no named organisation has said it was broken into through these flaws, and the US list of flaws known to be used in attacks still does not include these two. The Dutch inventory of affected software has 724 rows, and only 61 of them have a fix. And behind that update is something I want to show properly: php.oct.2026.newsroom.sgit.ai, a site built today, from 09:27 to 19:04 UTC, in 34 versions, by two people and thirteen agents. It reads an evidence vault of 184 sources and 177 dated captures, now public. It has a front page in plain English and fifteen briefings, 70 claims each graded by a fact-check desk, ten contradictions in a ledger, a graph of 209 nodes, the fix read in the code, the inventory hour by hour, every section versioned, a phone app, synthetic readers and eight vaults. This is a guided tour of it, with the versions of everything, so the next update can say exactly what changed.
+version: v0.13.47
 license: https://creativecommons.org/licenses/by/4.0/
 tags: php2shell, breaking-news, evidence, vaults, versions, article
 status: published
@@ -12,11 +12,13 @@ status: published
 
 !shot po-collage.webp | images/ | A guided tour of php.oct.2026.newsroom.sgit.ai in nine pages: the front page for everyone, the inventory hour by hour, the story as a graph, every section versioned, a source and its captures, the fix read in the code, the team, the eight vaults, and the six synthetic readers. | wide | screenshot
 
+> **Updated at 22:15 UTC.** The story's site has moved from v0.5.5 to v0.6.0 since 8pm. What changed is in [since 8pm](#since): a map of the evidence on compromise, a second fact-check run that answers the incomplete-fix report, and a new risk and compliance section. Two lines below are corrected to match: no *named* organisation has said it was compromised through these flaws, and the incomplete-fix report was answered that morning.
+
 ## In short {#in-short}
 
 - **The fix is out; the advice is unanimous.** Install PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35.
 - **Attackers are trying.** Millions of attempts; one seen four days before the announcement.
-- **No confirmed break-in yet.** And the US list of exploited flaws does not include these two.
+- **No named compromise yet.** And the US list of exploited flaws does not include these two.
 - **724 affected products listed; 61 fixed.** 440 still under investigation.
 - **A whole site, built today.** 34 versions, two people, thirteen agents.
 - **Everything rests on a vault anyone can read.** 184 sources, 177 dated captures.
@@ -32,7 +34,7 @@ What the evidence shows:
 - **When it was disclosed.** On 21 October, not 22 October as many reports, and the first version of our own section, said. The primary records date it to the afternoon of 21 October UTC; the site's fact-check desk graded "disclosed on 22 October" as refuted today, and we have corrected our section.
 - **What governments say.** [Sixteen agencies](https://php.oct.2026.newsroom.sgit.ai/agencies/index.html) agree on one thing: install the fix now. They disagree on what to do if you cannot: the US says take the website offline, the UK lists that as a last resort, several European agencies say cut it off from the public internet.
 - **Exploitation.** Attackers are trying. Cloudflare's chief executive reported millions of attempts; Amazon reported an attempt against one of its decoy servers on 17 October, four days before the announcement. Other security companies report attempts too; one reported seeing none on its partners' systems on the evening of 21 October.
-- **Compromise.** No organisation has confirmed it was broken into through these flaws, in anything the vault has captured. At 19:00 the US government's [catalogue of known exploited vulnerabilities](https://php.oct.2026.newsroom.sgit.ai/impact/index.html) still did not list either flaw; its latest edition was released at 14:04 UTC on 21 October.
+- **Compromise.** No named organisation had said it was broken into through these flaws, in anything the vault had captured. At 19:00 the US government's [catalogue of known exploited vulnerabilities](https://php.oct.2026.newsroom.sgit.ai/impact/index.html) still did not list either flaw; its latest edition was released at 14:04 UTC on 21 October.
 - **Systems taken offline.** [Ten entries](https://php.oct.2026.newsroom.sgit.ai/impact/index.html) in the site's ledger of organisations that took websites offline as a precaution, from the Dutch government's login service to UK councils and game wikis. Taken offline is not the same as compromised, and the site keeps them in separate ledgers.
 - **Affected software.** The Dutch national cyber security centre keeps a public list of software that ships or depends on PHP. At its latest version, 15:28 UTC, it had 724 rows: 61 fixed, 216 vulnerable, 440 still under investigation, 6 not affected.
 
@@ -41,7 +43,7 @@ What the evidence shows:
 ## What we still do not know {#unknown}
 
 - **Whether any website was broken into** before it installed the fix.
-- **Whether the fix is complete.** A relayed report on 21 October suggested it may not be; the fact-check desk grades that "not shown".
+- **Whether the fix is complete: since answered.** A relayed report on 21 October suggested it may not be. At 8pm the fact-check desk graded it "not shown"; its second run found that PHP's security team had answered it publicly at 09:11 UTC that morning: an unrelated crash bug, nothing to do with the remote code execution. I should have caught that at 8pm.
 - **How many systems are still unpatched.** One count is open in the [contradiction ledger](https://php.oct.2026.newsroom.sgit.ai/factcheck/index.html), with no second measure to settle it.
 - **Who leaked the news on 20 October**, and whether any technical detail leaked with it.
 - **Where the "70% of the internet" figure comes from.** It is roughly the share of websites built with PHP, not a measure of how many are at risk.
@@ -83,6 +85,19 @@ There is a lot here, so this is the route I would take a colleague through.
 **11. The readers, real and synthetic.** The telemetry lane counted 120 anonymous events from 74 sessions by the afternoon, with no cookie and no IP address. And six [synthetic readers](https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/index.html), a board member, a CTO, a project manager, a security lead, a developer and a designer, each read the live site in a real browser on its own device, follow their own reading path, and say whether they got their answer, each into its own private vault. They are a test instrument, not readers, and the site says so.
 
 !shot po-numbers.webp | images/ | The site in numbers at v0.5.5: 34 versions in one day, 144 sources in its export of the vault, 70 claims, 68 events, 16 agencies, 724 inventory rows, 209 graph nodes, 15 readers and briefings, 110 sections with 207 versions, 341 items, 17 team members, 8 vaults, 328 watched pages, 6 synthetic readers, 70 claims graded and 89 board items. | comparison
+
+## Since 8pm {#since}
+
+!shot ay-layers.webp | images/ | From attempts to a named compromise, as of 20:50 UTC on 22 October: millions of attempts; three security vendors reporting exploitation without naming a victim; one named organisation saying it was attacked, with the attack stopped; and none saying php2shell was the way in. | comparison
+
+By 22:00 the story's site had gone from v0.5.5 to [v0.6.0](https://php.oct.2026.newsroom.sgit.ai/admin/versions.html), in five more versions. The ones that change the story:
+
+- **The compromise map (v0.5.9, 21:06 UTC).** A [page of its own](https://php.oct.2026.newsroom.sgit.ai/compromise/index.html) for one statement: "No named organisation has said it was compromised through php2shell", as of 20:50 UTC. It searched the evidence vault's 184 sources, 773 pages watched hourly from 474 publishers in 57 countries, 3,444 news items and 295 named sites probed every 30 minutes. It found millions of attempts; three vendors, Hadrian, Patchstack and Amazon, reporting exploitation without naming a victim; one named organisation, the Czech Technical University, saying it faced an attack that was stopped; one Japanese company reporting a break-in without a cause; another that blamed the PHP flaw and then corrected itself; and none saying php2shell was the way in. The site moved its own claim from "confirmed" to "reported", because it is "a time-bounded absence, not a confirmed fact". I take this further, with three readings of the silence, in [application behaviour policies](https://newsroom.sgit.ai/articles/application-behaviour-policies.html).
+- **The second fact-check run (v0.5.8, 20:58 UTC).** It found the PHP security team's public answer to the incomplete-fix report, opened an eleventh contradiction, and recorded that the US catalogue still lists neither flaw. When I checked at 22:09 UTC, its latest edition was still the one released at 14:04 UTC on 21 October.
+- **Risk and compliance (v0.6.0, 21:44 UTC).** A new [section](https://php.oct.2026.newsroom.sgit.ai/grc/index.html) with risk registers for php2shell: 34 risks assigned to 53 stakeholders, each joined to its weakness, CVE, fix and code, and mapped to 95 controls in 20 frameworks, from GDPR and NIS2 to ISO 27001. A data protection officer joins the readers, with a briefing on the GDPR 72-hour clock.
+- **Readers.** The telemetry lane counted 235 anonymous events from 161 sessions by 20:35 UTC, against 120 from 74 in the afternoon.
+
+The snapshot below stays as it was at 8pm; the next update will compare against it.
 
 ## A map for the next update {#map}
 
