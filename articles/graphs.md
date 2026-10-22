@@ -70,10 +70,10 @@ At 8pm on 22 October the php2shell fix is out, attackers are trying and no break
 - **The story graph** (artefact) 209 nodes, 281 edges.
 - **Versions of everything** (method) 110 sections, 207 versions.
 - **The 8pm snapshot** (artefact) Heads, counts and file hashes.
-- **The machinery outran the evidence** (claim) Last capture 11:34 UTC.
+- **The pages lag the evidence** (claim) Capture continued; the copies did not.
 - **Our own date corrected** (example) Disclosed 21 October, not 22.
 
-> The machinery outran the evidence. What the day showed.
+> So the gap is not between the story and the capture; it is between the capture and the pages. What the day showed.
 
 > Taken offline is not the same as compromised The impact ledger.
 

@@ -35,7 +35,8 @@
   "countries": 38,
   "languages": 32,
   "snapshots": 440,
-  "latest_run_finished": "2026-10-22T15:11:42Z"
+  "latest_run_finished": "2026-10-22T15:11:42Z",
+  "correction": "Corrected at 22:45 UTC on 22 October: the head, pages, snapshots and latest run above were read from the site's export of the watch (data/source-watch.json), not from the watch vault itself. The vault had runs at 17:15 and 18:16 UTC before 8pm, and later at 19:15 and 20:34, with probes of 295 sites until 21:08; at head 946ca795c607 it held 773 pages and 1,851 dated snapshots."
  },
  "inventory": {
   "source": "https://github.com/NCSC-NL/php2shell",
@@ -140,5 +141,8 @@
   "vault.json": "578823c248c46c6f",
   "vaults.json": "bdbfaf8fb3f08611",
   "versions.json": "d51594c549221ea0"
- }
+ },
+ "corrections": [
+  "22:45 UTC: source_watch values are the site's export, not the vault; see source_watch.correction."
+ ]
 }
