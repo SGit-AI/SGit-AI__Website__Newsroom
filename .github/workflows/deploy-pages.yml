@@ -67,7 +67,10 @@ jobs:
   # pass, without it, so the install is checked for too.
   reader-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    # 25, not 12 (v0.13.46): on 22 October the runners' apt mirror served the 26 MB of system packages
+    # at about 43 kB/s, the install took 8 to 12 minutes, and the job hit its limit mid-test three times.
+    # The packages are cached below now; the limit leaves room for a cold cache on a slow mirror.
+    timeout-minutes: 25
     permissions:
       contents: read
     steps:
@@ -75,6 +78,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # The .deb files Playwright's install-deps fetches, cached between runs (v0.13.46), so a slow mirror
+      # costs one run, not every run. A new key each run saves the latest set; restore-keys takes the newest.
+      - name: Cache the system packages Chromium needs
+        uses: actions/cache@v4
+        with:
+          path: ~/apt-debs
+          key: apt-debs-playwright-1.56.1-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: apt-debs-playwright-1.56.1-${{ runner.os }}-
+      - name: Hand the cached packages to apt, and keep what it downloads
+        run: |
+          mkdir -p ~/apt-debs
+          echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/01keep-debs
+          echo 'Acquire::Retries "3";' | sudo tee /etc/apt/apt.conf.d/02retries
+          sudo cp ~/apt-debs/*.deb /var/cache/apt/archives/ 2>/dev/null || true
+          echo "$(ls ~/apt-debs | wc -l) cached packages"
       # Chromium is cached between runs (v0.13.7): it is the same build for a given Playwright version, and
       # downloading it was most of the 1m40s this step took. The system libraries still come from apt.
       - name: Cache Playwright's Chromium
@@ -91,6 +109,7 @@ jobs:
           else
             npx playwright install --with-deps chromium
           fi
+          cp /var/cache/apt/archives/*.deb ~/apt-debs/ 2>/dev/null || true
       - name: Install sgit-ai 0.21.0, for the vault test's CLI round trip
         run: python3 -m pip install --quiet 'sgit-ai==0.21.0' && sgit --version
       # Every admin/build/test_*.mjs, four at a time (v0.13.7; one at a time they took six minutes). Each test
