@@ -96,6 +96,8 @@ class Front:
         self.front = load("admin/content/front/front.json")
         self.mast = load("admin/content/front/masthead.json")
         self.purpose = load("admin/content/front/purpose.json")
+        dv = ROOT / "admin/content/front/developing.json"
+        self.developing_stories = json.loads(dv.read_text(encoding="utf-8"))["stories"] if dv.exists() else []
         self.agents = {a["name"]: a for a in load("admin/content/agents.json")["agents"]}
         self.written = {}
         for p in sorted((ROOT / "admin/content/front/personas").glob("*.json")):
@@ -225,6 +227,37 @@ class Front:
                     f'<ul class="agents-list">{li}</ul></section>')
         return (f'<section class="bf-block" aria-labelledby="bf-agents-h"><h2 class="bf-sec" id="bf-agents-h">From the agents</h2>'
                 f'<ul class="bf-coll">{li}</ul><p class="bf-more"><a href="agents/index.html">Written by the agents &rarr;</a></p></section>')
+
+    # ---- developing stories: one strip above all three views ----
+    def _dev_items(self):
+        out = []
+        for d in self.developing_stories:
+            tf = ROOT / d["tracker"]
+            t = json.loads(tf.read_text(encoding="utf-8")) if tf.exists() else {}
+            c = t.get("counts") or {}
+            out.append(dict(d, version=t.get("version"), sources=c.get("sources"), data_as_of=t.get("data_as_of"),
+                            passed=t.get("passed"), total=t.get("total"), checked=t.get("checked_utc"),
+                            has_article=d.get("article") in self.by))
+        return out
+
+    def developing(self):
+        items = self._dev_items()
+        if not items:
+            return ""
+        html = []
+        for d in items:
+            facts = [f"site v{esc(d['version'])}" if d["version"] else "",
+                     f"{d['sources']} sources captured" if d["sources"] else "",
+                     f"data as of {esc(d['data_as_of'])}" if d["data_as_of"] else ""]
+            links = [f'<a class="dev-go" href="{esc(d["url"])}">{esc(d["label"])} &rarr;</a>']
+            if d["has_article"]:
+                links.append(f'<a href="articles/{esc(d["article"])}.html">{esc(d["article_label"])}</a>')
+            if d.get("passed") is not None:
+                links.append(f'<a href="{esc(d["moving_url"])}">{esc(d["moving_label"])}: {d["passed"]} of {d["total"]} checks</a>')
+            html.append(f'<section class="dev-strip" aria-label="{esc(d["kicker"])}"><p class="dev-k"><span class="dev-dot"></span>{esc(d["kicker"])}</p>'
+                        f'<h2 class="dev-h"><a href="{esc(d["url"])}">{esc(d["title"])}</a></h2><p class="dev-dek">{esc(d["dek"])}</p>'
+                        f'<p class="dev-facts">{" &middot; ".join(f for f in facts if f)}</p><p class="dev-links">{" ".join(links)}</p></section>')
+        return "\n".join(html)
 
     # ---- A · Broadsheet ----
     def broadsheet(self):
@@ -490,6 +523,7 @@ class Front:
 <nav class="site"></nav>
 <main class="front-views" id="front">
 {self.switcher()}
+{self.developing()}
 {self.broadsheet()}
 {self.briefing()}
 {self.desk()}
@@ -507,6 +541,7 @@ class Front:
         out = [f"# {m['title']}", "", f"**{m['heart']}** {m['line']}", "",
                f"{m['heart_note']}", "",
                f"> newsroom.sgit.ai · site {VERSION} · {plural(e['total'], 'article')} since {e['first']}; the newest is {e['date']}. Three views of this page: Broadsheet, Briefing, Your desk (https://{HOST}/).", "",
+               *[l for d in self._dev_items() for l in (f"## {d['kicker']}: {d['title']}", "", f"{d['dek']} [{d['label']}]({d['url']})" + (f", site v{d['version']}, {d['sources']} sources captured, data as of {d['data_as_of']}." if d['version'] else "."), "")],
                f"## The lead", "", f"- [{self.lead['title']}](articles/{self.lead['slug']}.md), {self.lead['date']}, {mins(self.lead['minutes'])}. {self.lead['why']}", "",
                "## Highlights", ""]
         out += [f"- [{h['title']}](articles/{h['slug']}.md), {h['date']}, {mins(h['minutes'])}." for h in self.highlights]

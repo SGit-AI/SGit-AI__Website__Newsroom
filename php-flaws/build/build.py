@@ -105,6 +105,27 @@ def src_link(slug, by_slug):
     return f'<a href="{E(s["url"])}" rel="noopener">{E(s.get("publisher") or slug)}</a>'
 
 
+def moved_panel():
+    """The story's move to its own site, from data/transition.json (written by track.py); empty without it."""
+    tf = DATA / 'transition.json'
+    if not tf.exists():
+        return ''
+    t = json.loads(tf.read_text())
+    c = t.get('counts') or {}
+    rows = ''.join(f'<li class="{"ok" if k["ok"] else "todo"}"><span>{"&#10003;" if k["ok"] else "&#9675;"}</span> '
+                   f'{E(k["label"])} <small>{E(k["detail"])}</small></li>' for k in t['checks'])
+    return (f'<div class="pf-moved"><p class="pf-moved-k">This story has its own site</p>'
+            f'<h2><a href="{E(t["site"])}">php.oct.2026.newsroom.sgit.ai</a></h2>'
+            f'<p>The facts are now kept there, built from the same evidence vault, with a page per source and per party, the numbers, '
+            f'the agencies compared and a briefing for each kind of reader. This section was the first step; it will be retired, and '
+            f'this address will point to the site, once every check below passes. The newsroom keeps the context and the opinion: '
+            f'<a href="../articles/capture-first.html">how the coverage started</a>.</p>'
+            f'<p class="pf-moved-n">Site v{E(t.get("version"))} &middot; {E(c.get("sources"))} sources, {E(c.get("captures"))} captures '
+            f'&middot; data as of {E(t.get("data_as_of"))} &middot; checked {E(t["checked_utc"])} &middot; <a href="{E(t["repo"])}">repository</a> '
+            f'&middot; <a href="../briefs/php-oct-2026.zip">the briefing pack for the site\'s team</a></p>'
+            f'<p class="pf-moved-k">Retiring this section: {t["passed"]} of {t["total"]} checks pass</p><ul class="pf-checks">{rows}</ul></div>')
+
+
 def render():
     story = json.loads((DATA / 'story.json').read_text())
     sources = json.loads((DATA / 'sources.json').read_text())
@@ -120,6 +141,7 @@ def render():
         return ', '.join(src_link(x, by_slug) for x in slugs)
 
     b = [f'<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / php flaws</div>',
+         moved_panel(),
          f'<p class="pf-status"><b>{E(story["status"])}</b> &middot; updated {E(story["updated"])}</p>',
          f'<h1>{E(story["title"])}</h1>',
          f'<p class="lead">{story["lead_html"]}</p>',

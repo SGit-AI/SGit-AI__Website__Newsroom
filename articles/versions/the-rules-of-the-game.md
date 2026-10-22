@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-22 | published | 2,398 | first published | this release | [current](../the-rules-of-the-game.md) |
+| **v1.0.0** | 2026-10-22 | published | 2,398 | first published | [`08e700b32`](https://github.com/SGit-AI/SGit-AI__Website/commit/08e700b3272eb5ef4a19aeac1e746d8467ebfdc6) | [current](../the-rules-of-the-game.md) |
 
 [← Back to the article](../the-rules-of-the-game.md) · [All articles](../index.md)
 
