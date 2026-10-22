@@ -41,6 +41,7 @@ PARENT_TITLE = ("sgit.ai — the parent project: the vault layer and the shipped
 NAV = [
     ("Newsroom", "index.html", [
         ("Front page", "index.html"),
+        ("Investigation: the PHP flaws", "php-flaws/index.html"),
         ("For publishers: start here", "sections/publishers/index.html"),
         ("Why this exists", "about/index.html"),
         ("The five desks", "desks/index.html"),
@@ -53,7 +54,7 @@ NAV = [
         ("Read as a persona", "persona/index.html"),
         ("Make a reading list", "for/make.html"),
         ("Subscribe", "subscribe/index.html"),
-    ], ("articles/", "subscribe/", "persona/", "for/", "sections/")),
+    ], ("articles/", "subscribe/", "persona/", "for/", "sections/", "php-flaws/")),
     ("Industry Wire", "wire/index.html", [
         ("Today's edition", "wire/index.html"),
         ("The sources", "wire/sources.html"),

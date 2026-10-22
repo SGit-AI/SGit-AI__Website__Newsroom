@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The PHP flaws: AI found them, a leak forced them out, and the web went offline &middot; newsroom.sgit.ai</title>
+<meta name="description" content="A running investigation into the critical PHP vulnerabilities disclosed on 22 October 2026: what is known, who says so, and the evidence, captured, dated and hashed as the story moves.">
+<link rel="canonical" href="https://newsroom.sgit.ai/php-flaws/index.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/php-flaws/index.html">
+<meta property="og:title" content="The PHP flaws: AI found them, a leak forced them out, and the web went offline">
+<meta property="og:description" content="A running investigation into the critical PHP vulnerabilities disclosed on 22 October 2026: what is known, who says so, and the evidence, captured, dated and hashed as the story moves.">
+<meta name="twitter:card" content="summary">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="php-flaws.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "The PHP flaws: AI found them, a leak forced them out, and the web went offline",
+ "description": "A running investigation into the critical PHP vulnerabilities disclosed on 22 October 2026: what is known, who says so, and the evidence, captured, dated and hashed as the story moves.",
+ "url": "https://newsroom.sgit.ai/php-flaws/index.html",
+ "isPartOf": {
+  "@type": "WebSite",
+  "name": "newsroom.sgit.ai",
+  "url": "https://newsroom.sgit.ai"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "dateModified": "2026-10-22",
+ "copyrightNotice": "CC BY 4.0 covers this page's own text, timeline and tables. Quoted words are their authors', with a link to each; no third-party page is reproduced here."
+}
+</script>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.40</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl here" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / php flaws</div>
+<p class="pf-status"><b>Developing</b> &middot; updated 2026-10-22T08:20Z</p>
+<h1>The PHP flaws: AI found them, a leak forced them out, and the web went offline</h1>
+<p class="lead">Early on 22 October 2026, governments told organisations to <b>take websites offline</b> if they could not patch two critical flaws in PHP. PHP is the language behind WordPress, Wikipedia and a large share of the web. The flaws were found by researchers using frontier AI, and a fix was due in late October. Then the details leaked and the disclosure was rushed. This section follows the story as it develops, and it keeps the evidence: every source captured as we found it, dated and hashed, so that what was said today can still be checked when the pages change.</p>
+<div class="proof"><div class="n"><b>1</b><span>sources in the evidence vault</span><em>0 primary</em></div><div class="n"><b>3</b><span>dated captures, each hashed</span><em>screenshot, raw and rendered page</em></div><div class="n"><b>12</b><span>claims tracked to their source</span><em>2 not verified</em></div><div class="n"><b>8</b><span>events on the timeline</span><em>1 agents writing</em></div></div>
+<div class="warnbox"><p style="margin-top:0"><b>Developing, and agent-produced.</b> This page is assembled by software agents working from captured sources, and the editor is Dinis Cruz. Most of what is below is <i>reported</i>, often second-hand, and it is marked that way. Nothing here is advice on what to patch. For that, read the <a href="https://www.php.net/" rel="noopener">PHP project</a> and your national cyber-security agency.</p></div>
+<h2 id="know">What we know so far</h2>
+<ul class="pf-list">
+<li>The flaws are in the PHP language itself. The NSA's cyber division calls them <q>two critical vulnerabilities</q>, and they could let an attacker run their own code on a web server without authenticating. <span class="pf-src"><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></span></li>
+<li>The UK's NCSC, the NSA and their counterparts in the EU and Australia advise patching. <q>Where immediate remediation is not feasible</q>, they advise taking the system offline. <span class="pf-src"><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></span></li>
+<li>Researchers at Calif found the flaws in August with OpenAI's models, under OpenAI's <i>Patch the Planet</i> initiative, which the PHP Foundation joined in July. Wiz and OpenAI found them independently shortly after. <span class="pf-src"><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></span></li>
+<li>The coordinated disclosure broke down when basic details leaked. According to the PHP Foundation, as the BBC quotes it, Calif then <q>mistakenly published a video</q>. That forced the announcement forward. <span class="pf-src"><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></span></li>
+<li>Estimates of the scale differ: <q>something like 30 million websites</q> (Alan Woodward) against <q>roughly 70%</q> of the internet (Wiz). The BBC says it could not verify the second figure. <span class="pf-src"><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></span></li>
+<li>Sites reported as affected or taken offline include parts of Wikipedia, Edinburgh council, French government services, the University of Geneva and the BBC. <span class="pf-src"><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></span></li>
+<li>As of 08:00 BST, the researcher who found the flaws said there was no evidence of exploitation yet. Probing has been reported (Amazon, Cloudflare), but only second-hand so far. <span class="pf-src"><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></span></li>
+</ul>
+<h2 id="open">What we do not know yet</h2>
+<ul class="pf-list">
+<li>The CVE numbers, the affected PHP versions and SAPIs, and the fixed releases. The primary advisory is being captured now.</li>
+<li>Who leaked the details, where and when, and what exactly the deleted video showed. So far the accounts come from one party.</li>
+<li>What the 70% and the 30 million figures are measured from, and why they differ so much.</li>
+<li>Whether any site was actually exploited before it was taken offline or patched.</li>
+<li>How the AI-assisted discovery worked. The researchers call it <q>a complex chain of steps, at the edge of what human researchers could practically achieve</q>. What did the model do, and what did the people do?</li>
+<li>What this says about coordinated disclosure once AI can find flaws, and turn a leak into an exploit, faster than a patch can be shipped.</li>
+</ul>
+<h2 id="timeline">The timeline</h2>
+<p>Each event is dated as its source states it. Where we worked a date out ourselves, it is marked <i>inferred</i>.</p>
+<div class="tablewrap"><table class="pf-table"><thead><tr><th>When</th><th>What</th><th>Source</th></tr></thead><tbody>
+<tr><td class="pf-when">2024</td><td>PHP Foundation researchers find a theoretical flaw in PHP but cannot work out how an attacker could use it</td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td class="pf-when">2026-07</td><td>PHP Foundation accepted into OpenAI&#x27;s Patch the Planet initiative (frontier AI to find and fix flaws in popular software)</td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td class="pf-when">2026-08</td><td>Calif, part of the project, finds a serious flaw in PHP; researchers at OpenAI and Wiz find it shortly after</td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td class="pf-when">2026-08/2026-10</td><td>PHP Foundation works with the companies on a patch, planned for release in late October</td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td class="pf-when">2026-10-20 <i>(inferred)</i></td><td>Coordinated disclosure breaks down (&#x27;worked well until two days ago&#x27;, per the PHP Foundation as quoted by the BBC): basic details leak on social media; Calif &#x27;mistakenly published a video&#x27;<br><small>date inferred from &#x27;two days ago&#x27; in a 22 Oct post</small></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td class="pf-when">2026-10-22T06:15:40Z</td><td>BBC opens its live page: governments and companies rush to protect websites</td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td class="pf-when">2026-10-22T06:55:50Z</td><td>BBC reports the NSA&#x27;s cyber division post on X: prepare &#x27;for an update addressing two critical vulnerabilities&#x27;; take systems offline if an immediate update is not feasible<br><small>time is the BBC post, not the NSA post</small></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td class="pf-when">2026-10-22T07:00:00Z</td><td>Ryan Austin (Calif) on Radio 4 Today: no evidence of exploitation yet (&#x27;Not at the moment&#x27;)<br><small>08:00 BST post, seen in capture 20261022T080453Z</small></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+</tbody></table></div>
+<h2 id="claims">The claims, and who makes them</h2>
+<p>A claim stays <i>reported</i> until a primary source confirms it, and <i>unverified</i> where even the reporting outlet says it could not check it.</p>
+<div class="tablewrap"><table class="pf-table"><thead><tr><th>Claim</th><th>By</th><th>Status</th><th>Source</th></tr></thead><tbody>
+<tr><td>Wikipedia (parts), Edinburgh council, French government sites, the University of Geneva, online shops and the BBC affected or taken offline</td><td>BBC</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Found using frontier AI (ChatGPT) by Calif, then Wiz and OpenAI; &#x27;a complex chain of steps, at the edge of what human researchers could practically achieve&#x27;</td><td>Calif, Wiz, OpenAI</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Attackers could take control of affected web servers without authentication and steal data</td><td>Paul Spain, Gorilla Cyber Security; Woodward</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Calif &#x27;mistakenly published a video&#x27; showing basic details of how the flaws could be used<br><small>Calif&#x27;s own account needed</small></td><td>PHP Foundation (as reported by the BBC)</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>The &#x27;most severe&#x27; flaws ever detected by AI</td><td>Wiz</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>No evidence yet that hackers have exploited the flaw</td><td>Ryan Austin, Calif (08:00 BST)</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Where immediate remediation is not feasible, take the system offline until fully mitigated</td><td>UK NCSC; NSA; EU and Australian counterparts</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Amazon and Cloudflare saw sites being probed for the flaw<br><small>second-hand; need AWS or Cloudflare statements</small></td><td>Alan Woodward</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Something like 30 million websites could be affected</td><td>Alan Woodward, Surrey Centre for Cyber Security</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Roughly 70% of the internet is affected<br><small>BBC: &#x27;unable to independently verify that figure&#x27;</small></td><td>Wiz</td><td><span class="pf-st pf-unverified">unverified</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Two critical vulnerabilities<br><small>need the NSA post itself and the CVE IDs</small></td><td>NSA Cybersecurity (X)</td><td><span class="pf-st pf-reported">reported</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+<tr><td>Criminals are using AI to &#x27;vibe code&#x27; an attack method</td><td>unnamed researchers (BBC)</td><td><span class="pf-st pf-unverified">unverified</span></td><td><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">BBC News</a></td></tr>
+</tbody></table></div>
+<h2 id="evidence">How the evidence is kept</h2>
+<p>Every source is kept in a <b>private, encrypted sgit vault</b> that several agents and the editor write to. For each source the vault holds dated captures: the page as served, the page after it ran in a browser, its text, a full-page screenshot and the HTTP headers. Each file's sha256 is recorded at the moment of capture. Captures are only ever added, never edited or deleted, so a live page that changes leaves a series. Each source also has a short note on what it says and who says it, and every claim on this page points back to the sources that make it.</p><p>The captures are third-party pages, so they are not republished here. This page links to the originals and quotes them briefly, and the <a href="sources.html">sources page</a> lists every capture with its hashes. Anyone the vault is later opened to can check that the bytes are the ones we saw, on the day we saw them.</p>
+<p><a class="go" href="sources.html">Every source, every capture and its hashes &rarr;</a></p>
+<div class="agent"><h4>For an agent</h4><p>The data behind this page is <a href="data/sources.json">data/sources.json</a>, <a href="data/timeline.json">data/timeline.json</a>, <a href="data/claims.json">data/claims.json</a> and the editor's <a href="data/story.json">data/story.json</a>. <code>php-flaws/build/build.py --from &lt;vault clone&gt;</code> re-exports the vault's metadata and rebuilds both pages. The captures themselves are in a private sgit vault and are not published; each one's sha256 is listed on the sources page.</p></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.40</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

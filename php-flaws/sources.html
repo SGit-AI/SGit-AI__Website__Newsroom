@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The PHP flaws: sources and captures &middot; newsroom.sgit.ai</title>
+<meta name="description" content="Every source in the PHP flaws evidence vault, with each dated capture and the sha256 of its files.">
+<link rel="canonical" href="https://newsroom.sgit.ai/php-flaws/sources.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/php-flaws/sources.html">
+<meta property="og:title" content="The PHP flaws: sources and captures">
+<meta property="og:description" content="Every source in the PHP flaws evidence vault, with each dated capture and the sha256 of its files.">
+<meta name="twitter:card" content="summary">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="php-flaws.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "The PHP flaws: sources and captures",
+ "description": "Every source in the PHP flaws evidence vault, with each dated capture and the sha256 of its files.",
+ "url": "https://newsroom.sgit.ai/php-flaws/sources.html",
+ "isPartOf": {
+  "@type": "WebSite",
+  "name": "newsroom.sgit.ai",
+  "url": "https://newsroom.sgit.ai"
+ },
+ "license": "https://creativecommons.org/licenses/by/4.0/",
+ "dateModified": "2026-10-22",
+ "copyrightNotice": "CC BY 4.0 covers this page's own text, timeline and tables. Quoted words are their authors', with a link to each; no third-party page is reproduced here."
+}
+</script>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.40</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../index.html">newsroom.sgit.ai</a> / <a href="index.html">php flaws</a> / sources</div>
+<h1>The sources, and the captures</h1>
+<p class="lead">1 sources and 3 captures. Each capture is a dated folder in the private evidence vault: the page as served, the page after it ran in Chromium, its text, a full-page screenshot and the response headers. Each file's sha256 was recorded when it was captured. A live page is captured again each time we look, so the series of captures shows how the page changed.</p>
+<h2 id="news-live">News live (1)</h2>
+<div class="pf-src-card" id="bbc-live-ckgel5xp2xv9t"><h3><a href="https://www.bbc.co.uk/news/live/ckgel5xp2xv9t" rel="noopener">PHP: Global scramble to fix critical cyber-security flaws as many websites taken offline - follow live</a></h3><p class="pf-meta">BBC News &middot; published 2026-10-22T06:16:24Z &middot; <span class="pf-st pf-captured">captured</span> &middot; added by claude-newsroom-lead &middot; <code>bbc-live-ckgel5xp2xv9t</code></p>
+<details><summary>3 capture(s)</summary><ul class="pf-caps">
+<li><b>2026-10-22T08:04:53.526Z</b> &middot; HTTP 200<ul><li><code>headers.json</code> <code class="pf-h">6f92f9cc2df7e178c6a5480cde0a0d07eaa057374c17573ed0539cd2ec5e4f76</code></li><li><code>page.html</code> <code class="pf-h">dc9a4c45bac2ffecb6c3904ab17c14f29288f0928f0247acd449f62d0b715981</code></li><li><code>rendered.html</code> <code class="pf-h">e9ae7f01673df9b32a99007f255c2106bc6f4179841891af83732ce54cac1bde</code></li><li><code>screenshot.png</code> <code class="pf-h">a466ce380b452e0a851e07db1d769f1ccb1b41391a8bf001b5febe1a6b0a8352</code></li><li><code>text.txt</code> <code class="pf-h">df1dbe6b553a8c004f6d950a1d606138f2795062d3225feaa37043d24343bc99</code></li></ul></li>
+<li><b>2026-10-22T08:05:26.517Z</b> &middot; HTTP 200<ul><li><code>headers.json</code> <code class="pf-h">d63c60c458f9e0144dfc1ec7336b7e7eb13ac35383008623841bf01030b99175</code></li><li><code>page.html</code> <code class="pf-h">dc9a4c45bac2ffecb6c3904ab17c14f29288f0928f0247acd449f62d0b715981</code></li><li><code>rendered.html</code> <code class="pf-h">b42a90b0ed17266eac83cb8bc81fc6e2321285b3b3dd01c15aed55411ec51255</code></li><li><code>screenshot.png</code> <code class="pf-h">65eb8a2dd5d93f8ef2399b62dd91d4bae200c41997a77ccae9b9388d33c505bf</code></li><li><code>text.txt</code> <code class="pf-h">9ae96265aa96cff67f4da71f5ed410376023b17283d83b617eab7e98d2602738</code></li></ul></li>
+<li><b>2026-10-22T08:05:59.064Z</b> &middot; HTTP 200<ul><li><code>headers.json</code> <code class="pf-h">adef455045234df0fcb6936e0b86ce89d83c6b68719892c1e08bc498d0704517</code></li><li><code>page.html</code> <code class="pf-h">50bc0fc20681b834b1a40742cf921b27ceb5356d5ab38b417c7e53513016eefd</code></li><li><code>rendered.html</code> <code class="pf-h">8ae9c4bca9c7ff8b5037ffa58536c2b75c45efdee1f851d583a80ac5cd05ff5c</code></li><li><code>screenshot.png</code> <code class="pf-h">f3cf0359a5f9aec2edf5dfa6cd060f55f94aa3c64b90f7e260edec02180a434c</code></li><li><code>text.txt</code> <code class="pf-h">c88b8c5f4c6bc07d2ef85b78d0d66482f0322075621abb0631ef4352932aa97d</code></li></ul></li>
+</ul></details>
+</div>
+
+<div class="agent"><h4>For an agent</h4><p>This page is rendered from <a href="data/sources.json">data/sources.json</a>. To check a capture, ask for the vault and compare a file's sha256 with the one listed here.</p></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.40</a> &middot; <a href="../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>
