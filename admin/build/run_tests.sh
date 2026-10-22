@@ -9,6 +9,9 @@
 #
 # Two tests measure timing in the page and are run alone, after the rest: test_themes reads a page's contrast right
 # after switching theme, and under load it read a page mid-switch; test_reading measures reading time.
+#
+# LEAVE_OUT names tests this run leaves out, by file name, separated by spaces (v0.13.48). CI uses it for test_wire,
+# which reads the real vault server and runs in a job of its own that reports without stopping a release.
 set -uo pipefail
 cd "$(dirname "$0")/../.."
 JOBS="${1:-4}"
@@ -25,8 +28,8 @@ one='
   fi'
 export one
 rc=0
-ls admin/build/test_*.mjs | grep -v -F -e test_themes.mjs -e test_reading.mjs | xargs -P "$JOBS" -I{} bash -c "$one" || rc=1
-for b in $SERIAL; do t="admin/build/$b"; [ -f "$t" ] && { bash -c "${one//\{\}/$t}" || rc=1; }; done
+ls admin/build/test_*.mjs | grep -v -F -e test_themes.mjs -e test_reading.mjs $(for b in ${LEAVE_OUT:-}; do printf -- "-e %s " "$b"; done) | xargs -P "$JOBS" -I{} bash -c "$one" || rc=1
+for b in $SERIAL; do case " ${LEAVE_OUT:-} " in *" $b "*) continue;; esac; t="admin/build/$b"; [ -f "$t" ] && { bash -c "${one//\{\}/$t}" || rc=1; }; done
 if [ $rc -ne 0 ]; then
   for f in "$LOGS"/*.log; do grep -q "^SKIP\|FAIL\|Error" "$f" 2>/dev/null && { echo "== $(basename "$f")"; tail -20 "$f"; }; done
   echo "tests: at least one failed"; exit 1

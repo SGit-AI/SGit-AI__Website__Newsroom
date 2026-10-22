@@ -115,8 +115,55 @@ jobs:
       # Every admin/build/test_*.mjs, four at a time (v0.13.7; one at a time they took six minutes). Each test
       # serves on a port the system picks and drives its own browser. The two that measure timing run alone,
       # after the rest; a test that prints SKIP fails the job. admin/build/run_tests.sh has the details.
-      - name: The meter, the reading lists, the review's findings, the passkey lab, the wire and the themes in Chromium, and the vault library in Node
+      # test_wire reads the real vault server, so a bad minute there is not a bug here: it runs in wire-live
+      # below, which reports and does not stop a release (v0.13.48). Everything else here must pass to deploy.
+      - name: The meter, the reading lists, the review's findings, the passkey lab and the themes in Chromium, and the vault library in Node
+        env:
+          LEAVE_OUT: test_wire.mjs
         run: bash admin/build/run_tests.sh 4 /tmp/test-logs
+
+  # The wire pages in Chromium against their real vaults (admin/build/test_wire.mjs, whose brief says a test that
+  # needs a vault uses a vault). It reports: a failure shows on the run, and does not stop the deploy (v0.13.48).
+  wire-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    continue-on-error: true
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Cache the system packages Chromium needs
+        uses: actions/cache@v4
+        with:
+          path: ~/apt-debs
+          key: apt-debs-playwright-1.56.1-${{ runner.os }}-wire-${{ github.run_id }}
+          restore-keys: apt-debs-playwright-1.56.1-${{ runner.os }}-
+      - name: Hand the cached packages to apt
+        run: |
+          mkdir -p ~/apt-debs
+          echo 'Acquire::Retries "3";' | sudo tee /etc/apt/apt.conf.d/02retries
+          sudo cp ~/apt-debs/*.deb /var/cache/apt/archives/ 2>/dev/null || true
+      - name: Cache Playwright's Chromium
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-1.56.1-chromium-${{ runner.os }}
+      - name: Install Playwright's Chromium
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1.56.1
+          if [ "${{ steps.pw-cache.outputs.cache-hit }}" = "true" ]; then
+            npx playwright install-deps chromium
+          else
+            npx playwright install --with-deps chromium
+          fi
+      - name: The wire pages, reading their real vaults
+        run: |
+          node admin/build/test_wire.mjs | tee /tmp/wire.log
+          ! grep -q '^SKIP' /tmp/wire.log
 
   tag-release:
     runs-on: ubuntu-latest
@@ -319,11 +366,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [validate, tag-release, major-release]
+    needs: [validate, reader-tests, tag-release, major-release]
     # Publish even when tag-release is skipped (manual dispatch, or main) — never when
-    # validation failed, never from a pull request, and on main only once the major
-    # has been checked, tagged and released.
-    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && (needs.tag-release.result == 'success' || needs.tag-release.result == 'skipped') && (needs.major-release.result == 'success' || needs.major-release.result == 'skipped')
+    # validation failed, never when the reader's tests failed (v0.13.48: before, a failed
+    # test only skipped the tag), never from a pull request, and on main only once the
+    # major has been checked, tagged and released.
+    if: always() && github.event_name != 'pull_request' && needs.validate.result == 'success' && needs.reader-tests.result == 'success' && (needs.tag-release.result == 'success' || needs.tag-release.result == 'skipped') && (needs.major-release.result == 'success' || needs.major-release.result == 'skipped')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
