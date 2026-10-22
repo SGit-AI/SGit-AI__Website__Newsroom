@@ -125,6 +125,11 @@ Agents & policySite & engineering[This article as a graph →](graphs.md#where-a
 - [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md) RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.
 - [A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share](a-secret-is-a-qr-code.md) Send a QR code and a link to a public key: the workflow the QR experiment opens, who already does this, and a format to share.
 
+### Continued by
+
+- [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](the-sidecar-repository.md) A second repository the agent cannot write to, which checks every release, trusts signed checks instead of re-running them, and is the only thing that deploys.
+- [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](the-rules-of-the-game.md) A policy for which files an agent may change, and the least GitHub can enforce on a public repository today without a new tool.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 256 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=256)

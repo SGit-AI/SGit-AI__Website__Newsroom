@@ -1,0 +1,37 @@
+{
+ "slug": "the-sidecar-repository",
+ "teaser": "A second repository the agent cannot write to, which checks every release, trusts signed checks instead of re-running them, and is the only thing that deploys.",
+ "topics": ["agents-and-policy", "site-and-engineering"],
+ "core_idea": "A sidecar repository that no agent can write to holds the policy, a lock of approved hashes, private lists and keys, verifies GitHub's signed test results from the approved workflow instead of re-running them, waits for the owner when a gate changes, and is the only thing that deploys, so each attack by a fully compromised agent does nothing or stops the deploy.",
+ "nodes": [
+  {"id": "sidecar", "label": "The sidecar repository", "kind": "concept", "summary": "No agent can write to it."},
+  {"id": "lock", "label": "The lock", "kind": "artefact", "summary": "Approved hashes of every gate file."},
+  {"id": "attest", "label": "Signed test results", "kind": "method", "summary": "GitHub attestations for this commit."},
+  {"id": "trust", "label": "Trust, not re-run", "kind": "claim", "summary": "The 227-second tests run once."},
+  {"id": "status", "label": "Statuses ignored", "kind": "claim", "summary": "Anything with a token can post one."},
+  {"id": "owner", "label": "The owner's approval", "kind": "method", "summary": "Only when a gate changes."},
+  {"id": "private", "label": "Private checks", "kind": "method", "summary": "Lists the agent has never seen."},
+  {"id": "compromise", "label": "Total compromise", "kind": "question", "summary": "What can a compromised agent do?"},
+  {"id": "residual", "label": "What remains", "kind": "claim", "summary": "The owner, GitHub, valid bad content."}
+ ],
+ "edges": [
+  {"from": "lock", "to": "trust", "rel": "depends-on"},
+  {"from": "attest", "to": "trust", "rel": "produces"},
+  {"from": "status", "to": "attest", "rel": "contrasts"},
+  {"from": "lock", "to": "owner", "rel": "leads-to"},
+  {"from": "sidecar", "to": "lock", "rel": "produces"},
+  {"from": "sidecar", "to": "private", "rel": "produces"},
+  {"from": "compromise", "to": "sidecar", "rel": "leads-to"},
+  {"from": "residual", "to": "compromise", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["the-rules-of-the-game", "where-a-check-runs", "behaviour-policies-from-the-checks", "the-delegation-record", "a-secret-is-a-qr-code"],
+  "pages": [],
+  "sites": []
+ },
+ "quotes": [
+  {"text": "did the deploy workflow, on this commit, produce this result?", "why": "The question an attestation answers."},
+  {"text": "Anything an agent can write, a compromised agent can rewrite.", "why": "Why a second repository."},
+  {"text": "the sidecar treats an agent's signature as attribution, never as a reason to skip a check", "why": "Agent keys."}
+ ]
+}

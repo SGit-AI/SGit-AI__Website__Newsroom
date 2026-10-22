@@ -1,0 +1,66 @@
+{
+ "slug": "the-sidecar-repository",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A second repository the agent cannot write to checks every release and is the only thing that deploys.",
+   "para": "The sidecar holds the policies, a lock of approved hashes, private lists and keys. It reads each release, checks paths and the lock, trusts GitHub's signed test results from the approved workflow instead of re-running them, runs its own private checks, asks the owner when gates change, and deploys. Designed for full agent compromise; not yet built.",
+   "hash": "b5efa67d45f7"
+  },
+  "in-short": {
+   "line": "Seven lines: a second repository, the only deployer, code as data, signed checks, owner on gates, full compromise, no new tools.",
+   "para": "A repository no agent can write to holds the policy and keys and is the only thing that deploys. It treats the site's code as data, trusts signed results only from the approved workflow, makes gate changes wait for the owner, and is designed against full compromise using only GitHub Actions, attestations and our own signing.",
+   "hash": "1eb6b35d00d1"
+  },
+  "why": {
+   "line": "Rules an agent can rewrite are not rules; the last zone needs another repository.",
+   "para": "The first article showed what GitHub enforces on a public repository and left a gap: an old workflow may return. Anything a compromised agent can write it can rewrite, so the rules live in a separate repository with its own CI, which checks the site's work, adds hidden checks and decides what goes live.",
+   "hash": "019e6f72a415"
+  },
+  "holds": {
+   "line": "The policies, the lock of approved hashes, its own checks, private lists, public keys, the site and a record.",
+   "para": "The sidecar keeps the copy of the policy that counts, a lock with the approved hash of every gate file, its own pinned checks, the private lists as secrets, the agents' and owner's public keys, the Pages deployment and domain, and a signed line for every release deployed or refused.",
+   "hash": "7445f32b8e2c"
+  },
+  "does": {
+   "line": "Seven steps: read the commit, check paths, check the lock, verify the attestation, own checks, owner if gates changed, deploy and sign.",
+   "para": "It reads the public commit with no credential, only following the last deployment. It checks changed paths against the zones, hashes gate files against the lock, verifies GitHub's attestation for this repository, workflow and commit, runs its own cheap checks, waits for the owner if a gate changed, then deploys and signs the outcome.",
+   "hash": "32a01dbee145"
+  },
+  "trust": {
+   "line": "A valid attestation from the approved workflow replaces re-running the 227-second tests; statuses are ignored.",
+   "para": "An attestation records the repository, commit and workflow that produced a result. With the lock confirming the workflow and tests are the approved ones, the result is as good as the sidecar's own, so the slow tests are not re-run. Commit statuses can be posted by anything with a token. An agent's own signature is attribution only.",
+   "hash": "6262dd4a7723"
+  },
+  "compromise": {
+   "line": "Each attack by a fully compromised agent does nothing or stops the deploy until the owner looks.",
+   "para": "Removed hooks change nothing. Rewritten or restored workflows and tests fail the lock. Fake statuses are ignored; forged results fail verification. The site's repository holds no secrets to steal. Rewritten history is not deployed. Re-runs have no secrets. The doorbell's message is ignored and a schedule runs anyway. Private lists catch leaks.",
+   "hash": "65ad4fc3754c"
+  },
+  "residual": {
+   "line": "Still open: a persuaded owner, the sidecar's owner or GitHub compromised, bad valid content, and an unbuilt design.",
+   "para": "The owner's approval is the last line and must be read against the diff. A compromised owner account or GitHub is outside the design. The sidecar checks rules, not judgement. The reader's code must be in the lock from day one. None of it is built yet.",
+   "hash": "687d63cf846b"
+  },
+  "cost": {
+   "line": "Two repositories, small pipeline changes, seconds per content release, and an owner look per gate change.",
+   "para": "The site's pipeline adds an attestation and loses its deploy job and domain. A content release costs the sidecar a few seconds of checks plus verification and deploy, not a second test run. Gate changes cost an owner review; 62 of 227 commits would be too many, so machinery changes should be batched.",
+   "hash": "0ff27797ad3b"
+  },
+  "next": {
+   "line": "Six steps for the owner, from creating the sidecar to moving the domain.",
+   "para": "Create the sidecar with no agent access; add the policy, lock and private lists; attest the site's test results; build the sidecar workflow with the owner as required reviewer; run it beside the current deploy for a week; then move the domain and remove the site's own deploy.",
+   "hash": "5a07f423ee32"
+  },
+  "limits": {
+   "line": "A design from documentation and one run's timings; agent keys not in use; the no-secrets claim is about today.",
+   "para": "Nothing is built. Timings are from the v0.13.38 run. GitHub features and availability come from documentation read on 22 October 2026. Agent signatures are planned and only attribution. The site's workflow uses no secrets today, which a later change could alter.",
+   "hash": "6e48b75802eb"
+  },
+  "sources": {
+   "line": "The memo, the workflow and its job timings, GitHub's documentation and the first article's research.",
+   "para": "Sources: the voice memo of 22 October 2026, the workflow at v0.13.38 with its last run's job timings, GitHub's documentation on attestations, verification, OIDC claims, environments, trigger events and rulesets, and the research and policy in the rules of the game.",
+   "hash": "2ea05c16ca9b"
+  }
+ }
+}
