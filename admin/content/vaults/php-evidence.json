@@ -1,0 +1,25 @@
+{
+ "what": "The PHP flaws evidence vault (October 2026), opened read-only. The read key is public on purpose, by the editor's decision on 22 October 2026: it can read every file and every commit of this vault and cannot write. Everything in the vault is therefore public for good; a published read key cannot be withdrawn from anyone who has fetched the objects. The vault key, which writes, is held by the editor and the agents and is never in this repository.",
+ "vault_id": "3ytzxm3g",
+ "read_key": "sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g",
+ "remote": "https://dev.send.sgraph.ai",
+ "clone": "sgit clone sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g",
+ "browse": "https://dev.vault.sgraph.ai/#sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8%3A3ytzxm3g",
+ "opened": "2026-10-22T08:03Z",
+ "published": "2026-10-22",
+ "decided_by": "Dinis Cruz, in chat, 22 October 2026: \"we should publish the whole vault right, since all that is there is public materials ... this is just a more focused version of the wayback machine\"",
+ "scan": {
+  "date": "2026-10-22",
+  "vault_head": "0f97fe36ab4d",
+  "files": 1839,
+  "searched_for": ["sgit vault and read keys", "this vault's passphrase", "the sgit access token", "GitHub, AWS, OpenAI and Slack token shapes", "private keys", "bearer headers", "the editor's email address", "the capture environment's paths"],
+  "found": "no secret and no personal data",
+  "noted": [
+   "one OpenAI-shaped string: an advertising sync parameter inside a captured French news page (a false positive)",
+   "93 set-cookie headers: anonymous cookies the sites gave the capture browser",
+   "9 Wikipedia captures whose headers echo the capture environment's outbound address (x-client-ip, a cloud egress address, not a person's)"
+  ],
+  "action": "none: captures are never edited, so these stay as served; the scan is recorded in the vault's README"
+ },
+ "note": "Card 089. Read by admin/build/php_desk.py for /admin/php-oct-2026/."
+}

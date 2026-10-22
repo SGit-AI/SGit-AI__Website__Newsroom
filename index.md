@@ -4,11 +4,11 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.41 · 259 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.42 · 260 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
-Governments told organisations to take sites offline if they could not patch. The story has its own site now: every claim tied to a captured, hashed source, the numbers pinned to what they measure, and a briefing for each kind of reader. [php.oct.2026.newsroom.sgit.ai](https://php.oct.2026.newsroom.sgit.ai/), site v0.2.2, 144 sources captured, data as of 2026-10-22T11:34Z.
+Governments told organisations to take sites offline if they could not patch. The story has its own site now: every claim tied to a captured, hashed source, the numbers pinned to what they measure, and a briefing for each kind of reader. [php.oct.2026.newsroom.sgit.ai](https://php.oct.2026.newsroom.sgit.ai/), site v0.2.4, 144 sources captured, data as of 2026-10-22T11:34Z.
 
 ## The lead
 
@@ -44,7 +44,7 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](articles/answering-a-draft.md), 2026-10-21, 8 min.
 - [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min.
 
-### Vaults & provenance (54)
+### Vaults & provenance (55)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
 - [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](articles/capture-first.md), 2026-10-22, 13 min.
 - [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](articles/the-reading-account-as-built.md), 2026-10-21, 4 min.

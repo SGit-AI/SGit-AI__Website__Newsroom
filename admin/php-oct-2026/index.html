@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The PHP desk: work, roles and the evidence vault &middot; newsroom.sgit.ai</title>
+<meta name="description" content="The admin page for the PHP flaws story of October 2026: the work and who did it, the roles of the people and agents, and the evidence vault opened with a public read key.">
+<link rel="canonical" href="https://newsroom.sgit.ai/admin/php-oct-2026/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="newsroom.sgit.ai">
+<meta property="og:url" content="https://newsroom.sgit.ai/admin/php-oct-2026/index.html">
+<meta property="og:title" content="The PHP desk: work, roles and the evidence vault">
+<meta property="og:description" content="The admin page for the PHP flaws story of October 2026: the work and who did it, the roles of the people and agents, and the evidence vault opened with a public read key.">
+<meta name="twitter:card" content="summary">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="desk.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../../assets/themes/themes.css">
+  <link rel="stylesheet" href="../../assets/site-nav.css">
+  <script src="../../assets/themes/themes.js"></script>
+  <script src="../../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.13.42</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../index.html">Front page</a>
+      <a class="sl" href="../../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../../about/index.html">Why this exists</a>
+      <a class="sl" href="../../desks/index.html">The five desks</a>
+      <a class="sl" href="../../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../../for/make.html">Make a reading list</a>
+      <a class="sl" href="../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../wire/index.html">Today's edition</a>
+      <a class="sl" href="../../wire/sources.html">The sources</a>
+      <a class="sl" href="../../wire/how.html">How the wire works</a>
+      <a class="sl" href="../../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../../wire/days.html">Day by day</a>
+      <a class="sl" href="../../wire/charter.html">The charter</a>
+      <a class="sl" href="../../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../account/top-up.html">Top up</a>
+      <a class="sl" href="../../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../newsroom/log.html">The run log</a>
+      <a class="sl" href="../../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../archive/index.html">The archive</a>
+      <a class="sl" href="../../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../network/index.html">The network</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../../assets/search/search-nav.css">
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+  <script src="../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../../index.html">newsroom.sgit.ai</a> / <a href="../index.html">admin</a> / php desk</div>
+<h1>The PHP desk</h1>
+<p class="lead">The admin page for the PHP flaws story of October 2026 as this newsroom covers it: the work and who did it, the roles of the people and agents on the story, and the evidence vault, which anyone can now open read-only. The facts themselves live on <a href="https://php.oct.2026.newsroom.sgit.ai/">the story&rsquo;s own site</a>; how the coverage started is in <a href="../../articles/capture-first.html">Capture first</a>; the design of this page is <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/admin/notes/2026-10-22__the-php-desk.md">its brief</a>.</p>
+<div class="proof">
+<div class="n"><b>18</b><span>pieces of work done</span><em>each with its proof</em></div>
+<div class="n"><b>6</b><span>open, in progress or blocked</span><em>1 blocked</em></div>
+<div class="n"><b>9</b><span>people and agents</span><em>roles and responsibilities</em></div>
+<div class="n"><b>184</b><span>sources in the vault</span><em>177 captures, 855 hashed files</em></div>
+</div>
+
+<h2 id="work">The work</h2>
+<p>One row per piece of work, from <code>admin/content/php-oct-2026/work.json</code>. Work in progress, blocked and open comes first, then what is done, newest first. Every done row names its proof: a card, a release, a commit in this repository or in the vault, a source, an article or a page. The build refuses a row whose owner is not in the roles, or a done row without proof.</p>
+<div class="tablewrap"><table class="pd-table"><thead><tr><th>Status</th><th>What</th><th>Owner</th><th>Opened / closed (UTC)</th><th>Proof</th></tr></thead><tbody><tr class="pd-blocked"><td><span class="pd-st">blocked</span></td><td><b>Retire /php-flaws/ into a pointer to the story&#x27;s site</b><br><small>waits for w-17 and w-18, then the editor&#x27;s word</small></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T12:50Z</td><td><a href="../../engineering/issues/088.html">card 088</a></td></tr><tr class="pd-open"><td><span class="pd-st">open</span></td><td><b>Publish /status.json for the newsroom to read</b><br><small>check 2 of the move; the shape is in the briefing pack</small></td><td>claude-story-site</td><td class="pd-when">2026-10-22T12:50Z</td><td><a href="../../briefs/php-oct-2026.zip">briefs/php-oct-2026.zip</a></td></tr><tr class="pd-open"><td><span class="pd-st">open</span></td><td><b>Re-export the vault so the 40 recovered sources are on the site; fill their publisher and date</b><br><small>check 3 of the move</small></td><td>claude-story-site</td><td class="pd-when">2026-10-22T12:50Z</td><td><a href="../../briefs/php-oct-2026.zip">briefs/php-oct-2026.zip</a></td></tr><tr class="pd-open"><td><span class="pd-st">open</span></td><td><b>Add two rules to the vault&#x27;s protocol: commit after every source; check every clone before calling the vault complete</b><br><small>proposed in the briefing pack</small></td><td>claude-story-site</td><td class="pd-when">2026-10-22T12:50Z</td><td><a href="../../articles/capture-first.html">capture-first</a></td></tr><tr class="pd-open"><td><span class="pd-st">open</span></td><td><b>Visitor logging with an append lane, region and country only</b><br><small>the editor&#x27;s decision: the PHP site&#x27;s own work, not this site&#x27;s</small></td><td>claude-story-site</td><td class="pd-when">2026-10-22T13:00Z</td><td></td></tr><tr class="pd-open"><td><span class="pd-st">open</span></td><td><b>Act on the review: the first screen, the tables, claims to sentences, exploitation over time, who said what first, briefings, blast radius, playbook, graph</b><br><small>the site&#x27;s own priorities; the newsroom asks, the site decides</small></td><td>claude-story-site</td><td class="pd-when">2026-10-22T13:52Z</td><td><a href="../../briefs/php-oct-2026-review.zip">briefs/php-oct-2026-review.zip</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>The live vault view on this page, reading only what is opened</b><br><small>the SG/App vault browser had not opened this vault after four minutes; this view shows the manifest in about three seconds</small></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T13:35Z<br>2026-10-22T13:52Z</td><td><a href="../../admin/php-oct-2026/index.html#browse">admin/php-oct-2026/index.html#browse</a> <a href="../../engineering/issues/089.html">card 089</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Review the story&#x27;s site against the newsroom&#x27;s published design and ethos; a briefing for its agent</b><br><small>ten changes ranked by impact, checked against the site at v0.2.4</small></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T13:05Z<br>2026-10-22T13:52Z</td><td><a href="../../briefs/php-oct-2026-review.zip">briefs/php-oct-2026-review.zip</a> <a href="../../engineering/issues/089.html">card 089</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>This admin page: the work, the roles, the vault</b></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T13:10Z<br>2026-10-22T13:45Z</td><td><a href="../../engineering/issues/089.html">card 089</a> <a href="../../admin/php-oct-2026/index.html">admin/php-oct-2026/index.html</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Scan the vault, then open it with a public read key</b></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T13:10Z<br>2026-10-22T13:30Z</td><td><code>vault 292f563656ab</code> <a href="../../engineering/issues/089.html">card 089</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Put the story&#x27;s own site on the front page; track the move; a briefing pack for its team</b></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T12:00Z<br>2026-10-22T12:54Z</td><td><a href="../../engineering/releases/v0.13.41.html">v0.13.41</a> <a href="../../engineering/issues/088.html">card 088</a> <a href="../../briefs/php-oct-2026.zip">briefs/php-oct-2026.zip</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Write the article on how the coverage started</b></td><td>newsroom.writer</td><td class="pd-when">2026-10-22T12:10Z<br>2026-10-22T12:54Z</td><td><a href="../../articles/capture-first.html">capture-first</a> <a href="../../engineering/releases/v0.13.41.html">v0.13.41</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Build the vault&#x27;s own app</b></td><td>claude-vault-app</td><td class="pd-when"><br>2026-10-22T12:22Z</td><td><code>vault 0f97fe36ab4d</code></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Build the story&#x27;s own site, php.oct.2026.newsroom.sgit.ai</b><br><small>v0.1.0 at 09:27, v0.2.2 by noon</small></td><td>claude-story-site</td><td class="pd-when"><br>2026-10-22T11:52Z</td><td><a href="https://php.oct.2026.newsroom.sgit.ai/">https://php.oct.2026.newsroom.sgit.ai/</a> <code>vault 200d08971937</code></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Recover the uncommitted work of two collectors and push every clone</b><br><small>40 sources; rows written from each capture&#x27;s provenance.json</small></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T11:58Z<br>2026-10-22T12:08Z</td><td><code>vault f72ad76c99c9</code> <code>vault d5549bc61fd2</code> <a href="../../articles/capture-first.html">capture-first</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Keep the NCSC-NL php2shell repository whole and count its inventory</b><br><small>git bundle, 52 commits; 674 products at cca173c64ec5</small></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T08:47Z<br>2026-10-22T08:50Z</td><td><a href="../../php-flaws/sources.html#ncsc-nl-php2shell-software-list">ncsc-nl-php2shell-software-list</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Capture news coverage and impact, including the maintenance pages</b><br><small>31 sources, all committed later in w-10</small></td><td>collector-news</td><td class="pd-when">2026-10-22T08:08Z<br>2026-10-22T08:19Z</td><td><code>vault f72ad76c99c9</code></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Capture government and CERT advisories</b><br><small>37 sources, nine of them committed later in w-10</small></td><td>collector-gov</td><td class="pd-when">2026-10-22T08:08Z<br>2026-10-22T08:20Z</td><td><code>vault 1988169025cd</code> <code>vault be782bff89bf</code></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Capture the researchers&#x27; accounts and the leak</b><br><small>14 sources; closing time not recorded</small></td><td>collector-researchers</td><td class="pd-when">2026-10-22T08:08Z</td><td><code>vault 788a1d01f5a7</code></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Capture the primary technical sources</b><br><small>17 sources; closing time not recorded</small></td><td>collector-primary</td><td class="pd-when">2026-10-22T08:08Z</td><td><a href="../../php-flaws/sources.html#php-net-advisory">php-net-advisory</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Seed claims and timeline from the BBC page; per-agent files so writers never conflict</b></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T08:07Z<br>2026-10-22T08:10Z</td><td><code>vault 4dd942654566</code></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Publish the /php-flaws/ section</b></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T08:00Z<br>2026-10-22T08:13Z</td><td><a href="../../engineering/releases/v0.13.40.html">v0.13.40</a> <a href="../../engineering/issues/087.html">card 087</a> <a href="../../php-flaws/index.html">php-flaws/index.html</a></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Open the evidence vault, write its protocol and the capture tool; first three captures of the BBC page</b></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T08:03Z<br>2026-10-22T08:07Z</td><td><code>vault b12e6b952e17</code> <code>vault 3133f619762a</code></td></tr><tr class="pd-done"><td><span class="pd-st">done</span></td><td><b>Read the BBC live page and summarise it for the editor</b></td><td>newsroom.dev</td><td class="pd-when">2026-10-22T07:55Z<br>2026-10-22T07:58Z</td><td><a href="../../php-flaws/sources.html#bbc-live-ckgel5xp2xv9t">bbc-live-ckgel5xp2xv9t</a></td></tr></tbody></table></div>
+<p class="pd-owners-h">By owner</p><ul class="pd-owners"><li><b>newsroom.dev</b> 1 blocked, 11 done</li><li><b>claude-story-site</b> 5 open, 1 done</li><li><b>collector-primary</b> 1 done</li><li><b>collector-researchers</b> 1 done</li><li><b>collector-gov</b> 1 done</li><li><b>collector-news</b> 1 done</li><li><b>claude-vault-app</b> 1 done</li><li><b>newsroom.writer</b> 1 done</li></ul>
+<h2 id="move">The move to the story&rsquo;s own site</h2><p>The facts live on <a href="https://php.oct.2026.newsroom.sgit.ai/">php.oct.2026.newsroom.sgit.ai</a> (v0.2.4, data as of 2026-10-22T11:34Z). <a href="../../php-flaws/index.html">/php-flaws/</a> retires into a pointer when these pass; 2 of 5 did when last checked, 2026-10-22T13:51Z.</p><ul class="pd-checks"><li class="ok">&#10003; The site answers at its own domain <small>HTTP 200</small></li><li class="todo">&#9675; The site publishes /status.json for this newsroom to read <small>HTTP 404</small></li><li class="todo">&#9675; Every source the section lists is on the site <small>144 of 184; missing 20min-fr-suisse-romande, abc-au-gov-sites-exposed, abc-au-politics-live, actu17-prefectures, bleepingcomputer-php2shell</small></li><li class="ok">&#10003; The newsroom&#x27;s front page links to the site <small>the Developing strip, from admin/content/front/developing.json</small></li><li class="todo">&#9675; The section is replaced by a page that points to the site <small>the last step, done here once the checks above pass</small></li></ul>
+
+<h2 id="roles">The roles</h2>
+<p>Everyone who has worked on the story, from <code>admin/content/php-oct-2026/roles.json</code>: what each is responsible for, what each may and may not change, where each works, and the record that shows it. Drawn from the git logs and the vault&rsquo;s commit messages. The editorial responsibility is always Dinis&rsquo;s.</p>
+<div class="pd-roles"><div class="pd-role" id="role-dinis-cruz"><p class="pd-kind">editor</p><h3>Dinis Cruz</h3><p>What is published and when; the editorial line; the decisions: opening the vault to everyone, moving the facts to their own site, retiring /php-flaws/.</p><dl><dt>May change</dt><dd>anything</dd><dt>Works in</dt><dd>chat with the agents; voice memos</dd><dt>Record</dt><dd>the memos in the PHP site&#x27;s admin/content/briefs/memos/; every decision quoted in admin/notes/2026-10-22__the-php-desk.md</dd></dl></div><div class="pd-role" id="role-newsroom-dev"><p class="pd-kind">agent</p><h3>newsroom.dev</h3><p>The PHP story&#x27;s functionality on newsroom.sgit.ai: the /php-flaws/ section and its builder, the tracker of the move to the story&#x27;s own site, the front page&#x27;s Developing strip, this admin page, the vault&#x27;s protocol and capture tool, opening the vault with a public read key, and the briefing packs for the PHP site&#x27;s team.</p><dl><dt>May change</dt><dd>php-flaws/, admin/php-oct-2026/, admin/content/php-oct-2026/, admin/content/vaults/php-evidence.json, briefs/php-oct-2026*/, the front page&#x27;s developing strip; the vault&#x27;s README and tools/</dd><dt>Must not</dt><dd>edit captures or another agent&#x27;s source rows, claims or timeline; edit the PHP site&#x27;s repository; put a write key in any file</dd><dt>Works in</dt><dd>a Claude Code session on SGit-AI__Website__Newsroom; the evidence vault</dd><dt>Record</dt><dd>v0.13.40, v0.13.41 (with newsroom.writer), v0.13.42; cards 087, 088, 089; vault commits named claude-newsroom-lead or newsroom.dev</dd><dt>Also known as</dt><dd>claude-newsroom-lead: Its work on the morning of 22 October went out as claude-newsroom-lead, before it had a name of its own; the vault&#x27;s history keeps that name.</dd></dl></div><div class="pd-role" id="role-newsroom-writer"><p class="pd-kind">agent</p><h3>newsroom.writer</h3><p>The articles about the story on newsroom.sgit.ai, written from the editor&#x27;s messages and memos in his voice, with their figures, graphs and summaries.</p><dl><dt>May change</dt><dd>admin/content/articles/ and the release files of an article release</dd><dt>Must not</dt><dd>state a fact about the story that the PHP site or the vault does not back</dd><dt>Works in</dt><dd>a Claude Code session on SGit-AI__Website__Newsroom</dd><dt>Record</dt><dd>Capture first (v0.13.41)</dd></dl></div><div class="pd-role" id="role-claude-story-site"><p class="pd-kind">agent</p><h3>claude-story-site</h3><p>php.oct.2026.newsroom.sgit.ai: the facts, the claims with their status, the pages per source and per party, the numbers, the agencies, the briefings by role, its gate and releases. The vault&#x27;s largest writer.</p><dl><dt>May change</dt><dd>its own repository, SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP; its own source rows, claims and timeline in the vault</dd><dt>Must not</dt><dd>edit other writers&#x27; rows or any capture</dd><dt>Works in</dt><dd>a Claude Code session on the PHP site&#x27;s repository; the evidence vault</dd><dt>Record</dt><dd>site v0.1.0 to v0.2.2 on 22 October; vault commits 379e3d7f172a and 200d08971937 (83 sources)</dd></dl></div><div class="pd-role" id="role-claude-vault-app"><p class="pd-kind">agent</p><h3>claude-vault-app</h3><p>The vault&#x27;s own app: index.html, .vault/app.json and app/ (reduced screenshots, manifest, versions), built from the PHP site&#x27;s vault-app/.</p><dl><dt>May change</dt><dd>index.html, .vault/, app/ and a README section in the vault</dd><dt>Must not</dt><dd>edit captures, source rows, claims or timeline</dd><dt>Works in</dt><dd>the evidence vault</dd><dt>Record</dt><dd>vault commit 0f97fe36ab4d (app v0.1.0)</dd></dl></div><div class="pd-role" id="role-collector-primary"><p class="pd-kind">agent, one task</p><h3>collector-primary</h3><p>Primary technical sources: php.net, the CVE records, the GitHub advisories, php-src, oss-security, distributions.</p><dl><dt>May change</dt><dd>its own source rows, claims and timeline</dd><dt>Must not</dt><dd>edit other writers&#x27; files</dd><dt>Works in</dt><dd>the evidence vault, on 22 October from 08:08 UTC; finished</dd><dt>Record</dt><dd>17 sources</dd></dl></div><div class="pd-role" id="role-collector-researchers"><p class="pd-kind">agent, one task</p><h3>collector-researchers</h3><p>The researchers and the AI angle: Calif, Wiz, OpenAI, Cloudflare, the leak; never the exploit itself.</p><dl><dt>May change</dt><dd>its own source rows, claims and timeline</dd><dt>Must not</dt><dd>store exploit code or video</dd><dt>Works in</dt><dd>the evidence vault, on 22 October from 08:08 UTC; finished</dd><dt>Record</dt><dd>14 sources; vault commit 788a1d01f5a7</dd></dl></div><div class="pd-role" id="role-collector-gov"><p class="pd-kind">agent, one task</p><h3>collector-gov</h3><p>Government and CERT advisories worldwide, and the government sites taken offline.</p><dl><dt>May change</dt><dd>its own source rows, claims and timeline</dd><dt>Must not</dt><dd>edit other writers&#x27; files</dd><dt>Works in</dt><dd>the evidence vault, on 22 October from 08:08 UTC; stopped before committing its last nine captures</dd><dt>Record</dt><dd>37 sources; vault commits 1988169025cd to be782bff89bf, d5549bc61fd2</dd></dl></div><div class="pd-role" id="role-collector-news"><p class="pd-kind">agent, one task</p><h3>collector-news</h3><p>News coverage and real-world impact, and the maintenance pages while they were up.</p><dl><dt>May change</dt><dd>its own source rows, claims and timeline</dd><dt>Must not</dt><dd>edit other writers&#x27; files</dd><dt>Works in</dt><dd>the evidence vault, on 22 October from 08:08 UTC; stopped before committing any of its work</dd><dt>Record</dt><dd>31 sources, committed for it by newsroom.dev in f72ad76c99c9</dd></dl></div></div>
+
+<h2 id="vault">The evidence vault, open to everyone</h2>
+<p>Every source the story rests on, captured as its publisher served it: the raw page, the rendered page, its text, a full-page screenshot and the headers, each file hashed at capture. The vault is <b>public and read-only</b> since 2026-10-22, by the editor&rsquo;s decision. The key below can read every file and every commit and cannot write. Anyone who fetches the objects keeps them, so everything in it is public for good.</p>
+<div class="pd-key">
+<p><a class="btn primary" href="#browse">Browse it on this page &darr;</a> <a class="btn" href="https://dev.vault.sgraph.ai/#sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8%3A3ytzxm3g">Open it in the SG/App vault browser</a> <small>The vault carries its own app. The vault browser reads the whole vault before it draws, which for half a gigabyte of captures takes several minutes; the view on this page reads only what you open.</small></p>
+<p class="pd-k">Public read key</p><pre><code>sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g</code></pre>
+<p class="pd-k">Clone it</p><pre><code>pip install sgit-ai
+sgit clone sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g</code></pre>
+<p><small>Vault <code>3ytzxm3g</code> on <code>https://dev.send.sgraph.ai</code>, opened 2026-10-22T08:03Z. The vault key, which writes, is held by the editor and the agents and is never in this repository.</small></p>
+</div>
+<h3 id="browse">Browse it here</h3>
+<p>The vault, read live in this page with the key above: the manifest first, then each source&rsquo;s notes, its captures, a thumbnail of each, and the full screenshot or the text when asked for. Only what is opened is fetched, and everything is decrypted in your browser.</p>
+<div id="vault-view" class="vv" data-config="{&quot;remote&quot;: &quot;https://dev.send.sgraph.ai&quot;, &quot;vault_id&quot;: &quot;3ytzxm3g&quot;, &quot;read_key&quot;: &quot;sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g&quot;}"><p class="vv-status">This view needs JavaScript; without it, clone the vault with the command above.</p></div>
+<script type="module" src="vault-view.js"></script>
+<h3 id="scan">The scan before the key</h3>
+<p>On 2026-10-22, at vault head <code>0f97fe36ab4d</code>, all 1839 files, captures included, were searched for: sgit vault and read keys; this vault&#x27;s passphrase; the sgit access token; GitHub, AWS, OpenAI and Slack token shapes; private keys; bearer headers; the editor&#x27;s email address; the capture environment&#x27;s paths. Found: <b>no secret and no personal data</b>. Noted:</p>
+<ul><li>one OpenAI-shaped string: an advertising sync parameter inside a captured French news page (a false positive)</li><li>93 set-cookie headers: anonymous cookies the sites gave the capture browser</li><li>9 Wikipedia captures whose headers echo the capture environment&#x27;s outbound address (x-client-ip, a cloud egress address, not a person&#x27;s)</li></ul>
+<p>None: captures are never edited, so these stay as served; the scan is recorded in the vault&#x27;s README.</p>
+<h3 id="contents">What is in it</h3>
+<p>At vault head <code>326d5001d7b2</code>: 1839 files, 536.0 MB; 184 sources, 177 captures, 855 files hashed at capture, 61 claims and 67 timeline events in per-agent files, and the vault&rsquo;s own app.</p>
+<div class="pd-grid">
+<div><p class="pd-k">Sources by writer</p><table class="pd-table pd-small"><tbody><tr><td>claude-story-site</td><td class="n">83</td></tr><tr><td>collector-gov</td><td class="n">37</td></tr><tr><td>collector-news</td><td class="n">31</td></tr><tr><td>collector-primary</td><td class="n">17</td></tr><tr><td>collector-researchers</td><td class="n">14</td></tr><tr><td>claude-newsroom-lead</td><td class="n">2</td></tr></tbody></table></div>
+<div><p class="pd-k">Sources by kind</p><table class="pd-table pd-small"><tbody><tr><td>news</td><td class="n">53</td></tr><tr><td>government</td><td class="n">29</td></tr><tr><td>advisory</td><td class="n">25</td></tr><tr><td>vendor</td><td class="n">22</td></tr><tr><td>cve</td><td class="n">14</td></tr><tr><td>researcher</td><td class="n">11</td></tr><tr><td>other</td><td class="n">9</td></tr><tr><td>social</td><td class="n">9</td></tr><tr><td>code</td><td class="n">9</td></tr><tr><td>forum</td><td class="n">2</td></tr><tr><td>news-live</td><td class="n">1</td></tr></tbody></table></div>
+<div><p class="pd-k">The top level</p><table class="pd-table pd-small"><thead><tr><th>Path</th><th>Files</th><th>Size</th></tr></thead><tbody><tr><td><code>.vault/</code></td><td class="n">1</td><td class="n">0 KB</td></tr><tr><td><code>README.md</code></td><td class="n">1</td><td class="n">6 KB</td></tr><tr><td><code>app/</code></td><td class="n">346</td><td class="n">44.0 MB</td></tr><tr><td><code>claims/</code></td><td class="n">2</td><td class="n">24 KB</td></tr><tr><td><code>index.html</code></td><td class="n">1</td><td class="n">0.5 MB</td></tr><tr><td><code>memos/</code></td><td class="n">2</td><td class="n">13 KB</td></tr><tr><td><code>notes/</code></td><td class="n">2</td><td class="n">3 KB</td></tr><tr><td><code>sources/</code></td><td class="n">1480</td><td class="n">491.5 MB</td></tr><tr><td><code>timeline/</code></td><td class="n">2</td><td class="n">19 KB</td></tr><tr><td><code>tools/</code></td><td class="n">2</td><td class="n">5 KB</td></tr></tbody></table></div>
+</div>
+<p class="pd-k">The latest commits on the head&rsquo;s line</p><ul class="pd-commits"><li><code>326d5001d7b2</code> newsroom.dev: README: name the scanned head</li><li><code>292f563656ab</code> newsroom.dev: README: the vault is public read-only; the scan before the key</li><li><code>0f97fe36ab4d</code> claude-vault-app: the vault&#x27;s own app v0.1.0 (index.html, .vault/app.json, app/: reduced screenshots, manifest, versions), README section, notes</li><li><code>e96281b64dd0</code> claude-newsroom-lead: rebuild index</li><li><code>f72ad76c99c9</code> Merge current into local</li><li><code>d5549bc61fd2</code> collector-gov: nine site captures (down pages), rows by claude-newsroom-lead</li><li><code>634de193e2ac</code> Merge current into local</li><li><code>be782bff89bf</code> collector-gov: KEV, ACSC, CCCS, NCSC-NZ, JPCERT, BACS, NCSC-NL portal</li><li><code>0406c9954fe4</code> collector-gov: CERT-EU, ENISA CNW, CISA alert, CERT-FR, CERT.LV, ACN; CCN/CNCS blocked</li><li><code>973cccc43414</code> collector-gov: NCSC UK alert, NSA X posts + press release, NCSC-NL php2shell</li><li><code>1988169025cd</code> collector-gov: NCSC UK alert, NSA X posts + press release, NCSC-NL php2shell</li><li><code>4dd942654566</code> claude-newsroom-lead: per-agent claims and timeline files; seed both from the BBC live page</li></ul>
+<p>The protocol every writer follows is the vault&rsquo;s <code>README.md</code>; the hashes of every capture are also listed on <a href="../../php-flaws/sources.html">the section&rsquo;s sources page</a>.</p>
+
+<h2 id="not">Not on this page</h2>
+<ul><li><b>Visitor logging</b> with an append lane is the story site&rsquo;s own work, by the editor&rsquo;s decision; it is row w-22 above.</li>
+<li><b>Writing from the page.</b> The page reads; the work and the roles change by commit.</li></ul>
+
+<div class="agent"><h4>For an agent</h4><p>The data: <code>admin/content/php-oct-2026/work.json</code>, <code>roles.json</code>, <code>vault.json</code>; the key and the scan in <code>admin/content/vaults/php-evidence.json</code>; the move in <code>php-flaws/data/transition.json</code>. Rebuild with <code>python3 admin/build/php_desk.py --from &lt;clone&gt;</code>, where the clone can be made with the public read key above. To add work, append a row to work.json with an owner from roles.json and, when done, its proof.</p></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.13.42</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../index.html">&#8594; The front page</a>
+    <a href="../../about/index.html">Why this exists</a>
+    <a href="../../desks/index.html">The five desks</a>
+    <a href="../../agents/index.html">Written by the agents</a>
+    <a href="../../wire/index.html">The Industry Wire</a>
+    <a href="../../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../../wire/aws/index.html">The AWS Wire</a>
+    <a href="../../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../../articles/index.html#all">Every article</a>
+    <a href="../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../articles/collections/index.html">Collections</a>
+    <a href="../../articles/desk/index.html">From the desk</a>
+    <a href="../../articles/graphs.html">As graphs</a>
+    <a href="../../subscribe/index.html">Subscribe</a>
+    <a href="../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../account/index.html">Your reading account</a>
+    <a href="../../account/newsroom.html">Your newsroom</a>
+    <a href="../../account/personas.html">Your personas</a>
+    <a href="../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../newsroom/publish.html">How to publish</a>
+    <a href="../../newsroom/board.html">The board</a>
+    <a href="../../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../design/index.html">The design, and what runs</a>
+    <a href="../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../provenance/index.html">Provenance is the product</a>
+    <a href="../../economics/index.html">Paying the fact creator</a>
+    <a href="../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../publishers/index.html">For publishers</a>
+    <a href="../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../archive/index.html">The archive</a>
+    <a href="../../network/index.html">The network</a>
+    <a href="../../admin/versions.html">Release history</a>
+    <a href="../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../about/participant.html">Where we lose</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

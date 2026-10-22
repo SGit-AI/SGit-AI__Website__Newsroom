@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-22 | published | 3,371 | first published | this release | [current](../capture-first.md) |
+| **v1.0.0** | 2026-10-22 | published | 3,371 | first published | [`d9d72c877`](https://github.com/SGit-AI/SGit-AI__Website/commit/d9d72c877129c1c293240f56fccbda55bb941df8) | [current](../capture-first.md) |
 
 [← Back to the article](../capture-first.md) · [All articles](../index.md)
 

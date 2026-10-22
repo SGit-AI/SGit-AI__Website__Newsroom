@@ -122,6 +122,10 @@ Vaults & method[This article as a graph →](graphs.md#capture-first)
 - [Two agents, one vault: the Industry Wire is written into an encrypted vault by one agent and drawn by newsroom.sgit.ai, which holds only the read key](two-agents-one-vault.md) One agent writes the Industry Wire into an encrypted vault; newsroom.sgit.ai holds only the read key and draws it, so a commit reaches the page with no release.
 - [Go slow to go fast: moving the newsroom from an explorer project to a villager one, with the brief to do it](explorer-to-villager-newsroom.md) The newsroom is live and charging. Move the reader code to its own repo, same bytes and same bugs, then map, test, review and refactor before new features.
 
+### Continued by
+
+- [A desk anyone can open: the PHP story's work and who did it, nine names with their responsibilities, and an evidence vault anyone can now read, scanned before its key was published](a-desk-anyone-can-open.md) The PHP story's work and who did it, nine names with their responsibilities, and its evidence vault opened to everyone, scanned before the key was published.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 259 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=259)

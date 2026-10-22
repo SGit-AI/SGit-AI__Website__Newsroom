@@ -6,13 +6,13 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.13.41 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.13.42 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
 ## The honest sentence
 
-Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 259
+Since v0.6.0 this site is a newsroom first. WHAT RUNS: the newsroom (/ and /articles/: 260
 articles since 17 August 2026, each with its own graph and full version history, a
 newsletter, collections, desk notes and a feed); how it runs (/newsroom/: six agent roles
 under written behaviour policies, a board, pitches and a run log); the reader's account
@@ -110,7 +110,7 @@ current, running or planned.
   and this site on 10 October 2026): five to ten invented users, each with a profile, a question they
   arrive with and an expected journey, drive a real browser one screenshot at a time, are interviewed and
   rate it; findings ordered by what they cost. NOT user research: the users are invented by a model
-- /articles/graphs.html and /articles/graphs.json: every article's graph, 259, drawn together
+- /articles/graphs.html and /articles/graphs.json: every article's graph, 260, drawn together
 - /articles/newsletter/index.html: the newsletter, 9 issues so far, also on LinkedIn
 - /articles/collections/index.html: 5 collections; /articles/desk/index.html: 4 desk notes
 - /articles/views/<slug>/: five alternative readers (librarian, cartographer, historian,
@@ -335,6 +335,10 @@ current, running or planned.
   the NCSC-NL inventory and briefings by role. Read the facts there. /php-flaws/ below retires into a pointer
   once the checks in /php-flaws/data/transition.json pass (written by php-flaws/build/track.py against the live
   site). The handover to the site's team: /briefs/php-oct-2026.zip (also unzipped at /briefs/php-oct-2026/).
+- /admin/php-oct-2026/index.html: THE PHP DESK, the admin page for this story: the work (admin/content/php-oct-2026/work.json,
+  owner, status, proof), the roles of the people and agents (roles.json), and the evidence vault OPEN READ-ONLY with a
+  public read key (admin/content/vaults/php-evidence.json; sgit clone sgit_public_read_6451da6ba1c6201d35b0832d570097327552564c12c8e9a550fc2ed1150769f8:3ytzxm3g),
+  with the scan made before the key was published. Built by admin/build/php_desk.py.
 - /articles/capture-first.html: how the coverage started, from a BBC live page at breakfast to an evidence vault,
   this section and the dedicated site by lunchtime; what went wrong (forty sources nearly lost to uncommitted work).
 - /php-flaws/index.html: THE PHP FLAWS, a running investigation into the two critical PHP vulnerabilities

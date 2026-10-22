@@ -122,7 +122,8 @@ def moved_panel():
             f'<a href="../articles/capture-first.html">how the coverage started</a>.</p>'
             f'<p class="pf-moved-n">Site v{E(t.get("version"))} &middot; {E(c.get("sources"))} sources, {E(c.get("captures"))} captures '
             f'&middot; data as of {E(t.get("data_as_of"))} &middot; checked {E(t["checked_utc"])} &middot; <a href="{E(t["repo"])}">repository</a> '
-            f'&middot; <a href="../briefs/php-oct-2026.zip">the briefing pack for the site\'s team</a></p>'
+            f'&middot; <a href="../briefs/php-oct-2026.zip">the briefing pack for the site\'s team</a> '
+            f'&middot; <a href="../admin/php-oct-2026/index.html">the desk: work, roles, the open vault</a></p>'
             f'<p class="pf-moved-k">Retiring this section: {t["passed"]} of {t["total"]} checks pass</p><ul class="pf-checks">{rows}</ul></div>')
 
 

@@ -1,0 +1,99 @@
+{
+ "what": "Everyone who has worked on the PHP flaws story (October 2026) for newsroom.sgit.ai and its evidence vault: what each is, what each is responsible for, what each may and may not change, where each works, and the record that shows it. Drawn from the two repositories' git logs and the vault's commit messages, not from memory. Read by admin/build/php_desk.py; every owner in work.json must be one of these names. Card 089.",
+ "roles": [
+  {
+   "name": "Dinis Cruz",
+   "kind": "editor",
+   "handle": "the editor",
+   "responsible": "What is published and when; the editorial line; the decisions: opening the vault to everyone, moving the facts to their own site, retiring /php-flaws/.",
+   "may": "anything",
+   "must_not": "",
+   "works_in": "chat with the agents; voice memos",
+   "record": "the memos in the PHP site's admin/content/briefs/memos/; every decision quoted in admin/notes/2026-10-22__the-php-desk.md"
+  },
+  {
+   "name": "newsroom.dev",
+   "kind": "agent",
+   "handle": "@newsroom.dev",
+   "responsible": "The PHP story's functionality on newsroom.sgit.ai: the /php-flaws/ section and its builder, the tracker of the move to the story's own site, the front page's Developing strip, this admin page, the vault's protocol and capture tool, opening the vault with a public read key, and the briefing packs for the PHP site's team.",
+   "may": "php-flaws/, admin/php-oct-2026/, admin/content/php-oct-2026/, admin/content/vaults/php-evidence.json, briefs/php-oct-2026*/, the front page's developing strip; the vault's README and tools/",
+   "must_not": "edit captures or another agent's source rows, claims or timeline; edit the PHP site's repository; put a write key in any file",
+   "works_in": "a Claude Code session on SGit-AI__Website__Newsroom; the evidence vault",
+   "record": "v0.13.40, v0.13.41 (with newsroom.writer), v0.13.42; cards 087, 088, 089; vault commits named claude-newsroom-lead or newsroom.dev",
+   "aka": [
+    "claude-newsroom-lead"
+   ],
+   "aka_note": "Its work on the morning of 22 October went out as claude-newsroom-lead, before it had a name of its own; the vault's history keeps that name."
+  },
+  {
+   "name": "newsroom.writer",
+   "kind": "agent",
+   "handle": "@newsroom.writer",
+   "responsible": "The articles about the story on newsroom.sgit.ai, written from the editor's messages and memos in his voice, with their figures, graphs and summaries.",
+   "may": "admin/content/articles/ and the release files of an article release",
+   "must_not": "state a fact about the story that the PHP site or the vault does not back",
+   "works_in": "a Claude Code session on SGit-AI__Website__Newsroom",
+   "record": "Capture first (v0.13.41)"
+  },
+  {
+   "name": "claude-story-site",
+   "kind": "agent",
+   "handle": "claude-story-site",
+   "responsible": "php.oct.2026.newsroom.sgit.ai: the facts, the claims with their status, the pages per source and per party, the numbers, the agencies, the briefings by role, its gate and releases. The vault's largest writer.",
+   "may": "its own repository, SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP; its own source rows, claims and timeline in the vault",
+   "must_not": "edit other writers' rows or any capture",
+   "works_in": "a Claude Code session on the PHP site's repository; the evidence vault",
+   "record": "site v0.1.0 to v0.2.2 on 22 October; vault commits 379e3d7f172a and 200d08971937 (83 sources)"
+  },
+  {
+   "name": "claude-vault-app",
+   "kind": "agent",
+   "handle": "claude-vault-app",
+   "responsible": "The vault's own app: index.html, .vault/app.json and app/ (reduced screenshots, manifest, versions), built from the PHP site's vault-app/.",
+   "may": "index.html, .vault/, app/ and a README section in the vault",
+   "must_not": "edit captures, source rows, claims or timeline",
+   "works_in": "the evidence vault",
+   "record": "vault commit 0f97fe36ab4d (app v0.1.0)"
+  },
+  {
+   "name": "collector-primary",
+   "kind": "agent, one task",
+   "handle": "collector-primary",
+   "responsible": "Primary technical sources: php.net, the CVE records, the GitHub advisories, php-src, oss-security, distributions.",
+   "may": "its own source rows, claims and timeline",
+   "must_not": "edit other writers' files",
+   "works_in": "the evidence vault, on 22 October from 08:08 UTC; finished",
+   "record": "17 sources"
+  },
+  {
+   "name": "collector-researchers",
+   "kind": "agent, one task",
+   "handle": "collector-researchers",
+   "responsible": "The researchers and the AI angle: Calif, Wiz, OpenAI, Cloudflare, the leak; never the exploit itself.",
+   "may": "its own source rows, claims and timeline",
+   "must_not": "store exploit code or video",
+   "works_in": "the evidence vault, on 22 October from 08:08 UTC; finished",
+   "record": "14 sources; vault commit 788a1d01f5a7"
+  },
+  {
+   "name": "collector-gov",
+   "kind": "agent, one task",
+   "handle": "collector-gov",
+   "responsible": "Government and CERT advisories worldwide, and the government sites taken offline.",
+   "may": "its own source rows, claims and timeline",
+   "must_not": "edit other writers' files",
+   "works_in": "the evidence vault, on 22 October from 08:08 UTC; stopped before committing its last nine captures",
+   "record": "37 sources; vault commits 1988169025cd to be782bff89bf, d5549bc61fd2"
+  },
+  {
+   "name": "collector-news",
+   "kind": "agent, one task",
+   "handle": "collector-news",
+   "responsible": "News coverage and real-world impact, and the maintenance pages while they were up.",
+   "may": "its own source rows, claims and timeline",
+   "must_not": "edit other writers' files",
+   "works_in": "the evidence vault, on 22 October from 08:08 UTC; stopped before committing any of its work",
+   "record": "31 sources, committed for it by newsroom.dev in f72ad76c99c9"
+  }
+ ]
+}

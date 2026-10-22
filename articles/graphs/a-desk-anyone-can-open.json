@@ -1,0 +1,176 @@
+{
+  "slug": "a-desk-anyone-can-open",
+  "teaser": "The PHP story's work and who did it, nine names with their responsibilities, and its evidence vault opened to everyone, scanned before the key was published.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "A story with many agent writers needs its work, its roles and its evidence written down where anyone can check them: a work file the build holds to its rules, roles drawn from the record, and an evidence vault opened with a read key only after a scan, read in the browser one source at a time.",
+  "nodes": [
+    {
+      "id": "names",
+      "label": "Nine names, one chat",
+      "kind": "example",
+      "summary": "The editor, three long-lived agents, an app builder and four collectors worked the story in a day."
+    },
+    {
+      "id": "work",
+      "label": "The work as a file",
+      "kind": "artefact",
+      "summary": "work.json: 24 rows, each with an owner, a status, times and proof."
+    },
+    {
+      "id": "rules",
+      "label": "Two rules the build keeps",
+      "kind": "method",
+      "summary": "An owner must be a known name, and a finished row must name its proof."
+    },
+    {
+      "id": "roles",
+      "label": "Roles from the record",
+      "kind": "artefact",
+      "summary": "What each name may and must not change, drawn from git logs and vault commits."
+    },
+    {
+      "id": "aka",
+      "label": "A name kept, not rewritten",
+      "kind": "claim",
+      "summary": "The morning name stays in the history, with the reason, so the record can be checked."
+    },
+    {
+      "id": "open",
+      "label": "The vault opened read-only",
+      "kind": "artefact",
+      "summary": "A public read key that reads every file and cannot write."
+    },
+    {
+      "id": "scan",
+      "label": "The scan before the key",
+      "kind": "method",
+      "summary": "1,839 files searched for keys, tokens and personal data; none found, three things noted."
+    },
+    {
+      "id": "forever",
+      "label": "Public for good",
+      "kind": "claim",
+      "summary": "A published read key cannot be withdrawn from anyone who has fetched the objects."
+    },
+    {
+      "id": "browser",
+      "label": "The browser that could not open it",
+      "kind": "example",
+      "summary": "After four minutes and 742 requests the vault browser was still reading."
+    },
+    {
+      "id": "view",
+      "label": "Read one source at a time",
+      "kind": "method",
+      "summary": "The manifest in about three seconds, a source in about seven, screenshots on request."
+    },
+    {
+      "id": "review",
+      "label": "A review for the story's site",
+      "kind": "artefact",
+      "summary": "Ten changes ranked by impact, each against an article here, sent as a zip."
+    },
+    {
+      "id": "move",
+      "label": "The move's five checks",
+      "kind": "artefact",
+      "summary": "Read from the same file as the section, so the two cannot disagree."
+    }
+  ],
+  "edges": [
+    {
+      "from": "names",
+      "to": "work",
+      "rel": "leads-to"
+    },
+    {
+      "from": "rules",
+      "to": "work",
+      "rel": "extends"
+    },
+    {
+      "from": "names",
+      "to": "roles",
+      "rel": "leads-to"
+    },
+    {
+      "from": "roles",
+      "to": "aka",
+      "rel": "produces"
+    },
+    {
+      "from": "scan",
+      "to": "open",
+      "rel": "leads-to"
+    },
+    {
+      "from": "open",
+      "to": "forever",
+      "rel": "depends-on"
+    },
+    {
+      "from": "open",
+      "to": "browser",
+      "rel": "leads-to"
+    },
+    {
+      "from": "browser",
+      "to": "view",
+      "rel": "contrasts"
+    },
+    {
+      "from": "work",
+      "to": "move",
+      "rel": "depends-on"
+    },
+    {
+      "from": "review",
+      "to": "work",
+      "rel": "produces"
+    },
+    {
+      "from": "view",
+      "to": "open",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "capture-first",
+      "two-agents-one-vault"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/",
+      "https://newsroom.sgit.ai/php-flaws/index.html",
+      "https://github.com/SGit-AI/SGit-AI__Website__Newsroom/blob/dev/briefs/php-oct-2026-review/README.md"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "A history that changes its names when someone is renamed is a history nobody can check.",
+      "why": "Why the roles keep a retired name instead of rewriting the record."
+    },
+    {
+      "text": "A published read key cannot be withdrawn from anyone who has fetched the objects, so before publishing it I scanned the whole vault, captures included",
+      "why": "The order that matters when opening a vault."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ad-desk.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ad-desk.webp",
+      "caption": "The PHP desk at /admin/php-oct-2026/, Newsprint theme, 1280 pixels wide. Under the title, four counts: pieces of work done, work still open or blocked, the people and agents on the story, and the sources in the vault. Below, the work table: status, what, owner, when it was opened and closed in UTC, and the proof for each row, with work in progress, blocked and open first.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "ad-vault-view.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ad-vault-view.webp",
+      "caption": "The live view on the PHP desk page, 916 pixels wide, read from the vault in the browser with its public read key. The status line names the vault's head and its commit message, and counts what was fetched: 7 objects and 197 KB for the whole manifest. Below, the filter for slug, publisher or title, kind and writer, and the BBC live page opened: its first capture's time and HTTP status, the vault app's thumbnail, the buttons for the full screenshot and the text, and the full screenshot loaded on request.",
+      "kind": "screenshot"
+    }
+  ]
+}

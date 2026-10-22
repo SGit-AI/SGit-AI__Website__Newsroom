@@ -1,0 +1,416 @@
+{
+ "what": "The work on the PHP flaws story, one row per piece: owner (a name in roles.json), status (open, doing, blocked, done, dropped), when it was opened and closed (UTC), and the proof that lets a reader check it (a card, a release, a commit, a vault commit, a source, an article, a page). Edited by commit; drawn by admin/build/php_desk.py on /admin/php-oct-2026/. Card 089.",
+ "work": [
+  {
+   "id": "w-01",
+   "what": "Read the BBC live page and summarise it for the editor",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T07:55Z",
+   "closed": "2026-10-22T07:58Z",
+   "proof": [
+    {
+     "kind": "source",
+     "ref": "bbc-live-ckgel5xp2xv9t"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-02",
+   "what": "Open the evidence vault, write its protocol and the capture tool; first three captures of the BBC page",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T08:03Z",
+   "closed": "2026-10-22T08:07Z",
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "b12e6b952e17"
+    },
+    {
+     "kind": "vault-commit",
+     "ref": "3133f619762a"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-03",
+   "what": "Publish the /php-flaws/ section",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T08:00Z",
+   "closed": "2026-10-22T08:13Z",
+   "proof": [
+    {
+     "kind": "release",
+     "ref": "v0.13.40"
+    },
+    {
+     "kind": "card",
+     "ref": "087"
+    },
+    {
+     "kind": "page",
+     "ref": "php-flaws/index.html"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-04",
+   "what": "Seed claims and timeline from the BBC page; per-agent files so writers never conflict",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T08:07Z",
+   "closed": "2026-10-22T08:10Z",
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "4dd942654566"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-05",
+   "what": "Capture the primary technical sources",
+   "owner": "collector-primary",
+   "status": "done",
+   "opened": "2026-10-22T08:08Z",
+   "closed": null,
+   "proof": [
+    {
+     "kind": "source",
+     "ref": "php-net-advisory"
+    }
+   ],
+   "note": "17 sources; closing time not recorded"
+  },
+  {
+   "id": "w-06",
+   "what": "Capture the researchers' accounts and the leak",
+   "owner": "collector-researchers",
+   "status": "done",
+   "opened": "2026-10-22T08:08Z",
+   "closed": null,
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "788a1d01f5a7"
+    }
+   ],
+   "note": "14 sources; closing time not recorded"
+  },
+  {
+   "id": "w-07",
+   "what": "Capture government and CERT advisories",
+   "owner": "collector-gov",
+   "status": "done",
+   "opened": "2026-10-22T08:08Z",
+   "closed": "2026-10-22T08:20Z",
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "1988169025cd"
+    },
+    {
+     "kind": "vault-commit",
+     "ref": "be782bff89bf"
+    }
+   ],
+   "note": "37 sources, nine of them committed later in w-10"
+  },
+  {
+   "id": "w-08",
+   "what": "Capture news coverage and impact, including the maintenance pages",
+   "owner": "collector-news",
+   "status": "done",
+   "opened": "2026-10-22T08:08Z",
+   "closed": "2026-10-22T08:19Z",
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "f72ad76c99c9"
+    }
+   ],
+   "note": "31 sources, all committed later in w-10"
+  },
+  {
+   "id": "w-09",
+   "what": "Keep the NCSC-NL php2shell repository whole and count its inventory",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T08:47Z",
+   "closed": "2026-10-22T08:50Z",
+   "proof": [
+    {
+     "kind": "source",
+     "ref": "ncsc-nl-php2shell-software-list"
+    }
+   ],
+   "note": "git bundle, 52 commits; 674 products at cca173c64ec5"
+  },
+  {
+   "id": "w-10",
+   "what": "Recover the uncommitted work of two collectors and push every clone",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T11:58Z",
+   "closed": "2026-10-22T12:08Z",
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "f72ad76c99c9"
+    },
+    {
+     "kind": "vault-commit",
+     "ref": "d5549bc61fd2"
+    },
+    {
+     "kind": "article",
+     "ref": "capture-first"
+    }
+   ],
+   "note": "40 sources; rows written from each capture's provenance.json"
+  },
+  {
+   "id": "w-11",
+   "what": "Build the story's own site, php.oct.2026.newsroom.sgit.ai",
+   "owner": "claude-story-site",
+   "status": "done",
+   "opened": null,
+   "closed": "2026-10-22T11:52Z",
+   "proof": [
+    {
+     "kind": "site",
+     "ref": "https://php.oct.2026.newsroom.sgit.ai/"
+    },
+    {
+     "kind": "vault-commit",
+     "ref": "200d08971937"
+    }
+   ],
+   "note": "v0.1.0 at 09:27, v0.2.2 by noon"
+  },
+  {
+   "id": "w-12",
+   "what": "Build the vault's own app",
+   "owner": "claude-vault-app",
+   "status": "done",
+   "opened": null,
+   "closed": "2026-10-22T12:22Z",
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "0f97fe36ab4d"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-13",
+   "what": "Write the article on how the coverage started",
+   "owner": "newsroom.writer",
+   "status": "done",
+   "opened": "2026-10-22T12:10Z",
+   "closed": "2026-10-22T12:54Z",
+   "proof": [
+    {
+     "kind": "article",
+     "ref": "capture-first"
+    },
+    {
+     "kind": "release",
+     "ref": "v0.13.41"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-14",
+   "what": "Put the story's own site on the front page; track the move; a briefing pack for its team",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T12:00Z",
+   "closed": "2026-10-22T12:54Z",
+   "proof": [
+    {
+     "kind": "release",
+     "ref": "v0.13.41"
+    },
+    {
+     "kind": "card",
+     "ref": "088"
+    },
+    {
+     "kind": "page",
+     "ref": "briefs/php-oct-2026.zip"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-15",
+   "what": "Scan the vault, then open it with a public read key",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T13:10Z",
+   "closed": "2026-10-22T13:30Z",
+   "proof": [
+    {
+     "kind": "vault-commit",
+     "ref": "292f563656ab"
+    },
+    {
+     "kind": "card",
+     "ref": "089"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-16",
+   "what": "This admin page: the work, the roles, the vault",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T13:10Z",
+   "closed": "2026-10-22T13:45Z",
+   "proof": [
+    {
+     "kind": "card",
+     "ref": "089"
+    },
+    {
+     "kind": "page",
+     "ref": "admin/php-oct-2026/index.html"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "id": "w-17",
+   "what": "Publish /status.json for the newsroom to read",
+   "owner": "claude-story-site",
+   "status": "open",
+   "opened": "2026-10-22T12:50Z",
+   "closed": null,
+   "proof": [
+    {
+     "kind": "page",
+     "ref": "briefs/php-oct-2026.zip"
+    }
+   ],
+   "note": "check 2 of the move; the shape is in the briefing pack"
+  },
+  {
+   "id": "w-18",
+   "what": "Re-export the vault so the 40 recovered sources are on the site; fill their publisher and date",
+   "owner": "claude-story-site",
+   "status": "open",
+   "opened": "2026-10-22T12:50Z",
+   "closed": null,
+   "proof": [
+    {
+     "kind": "page",
+     "ref": "briefs/php-oct-2026.zip"
+    }
+   ],
+   "note": "check 3 of the move"
+  },
+  {
+   "id": "w-19",
+   "what": "Retire /php-flaws/ into a pointer to the story's site",
+   "owner": "newsroom.dev",
+   "status": "blocked",
+   "opened": "2026-10-22T12:50Z",
+   "closed": null,
+   "proof": [
+    {
+     "kind": "card",
+     "ref": "088"
+    }
+   ],
+   "note": "waits for w-17 and w-18, then the editor's word"
+  },
+  {
+   "id": "w-20",
+   "what": "Review the story's site against the newsroom's published design and ethos; a briefing for its agent",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T13:05Z",
+   "closed": "2026-10-22T13:52Z",
+   "proof": [
+    {
+     "kind": "page",
+     "ref": "briefs/php-oct-2026-review.zip"
+    },
+    {
+     "kind": "card",
+     "ref": "089"
+    }
+   ],
+   "note": "ten changes ranked by impact, checked against the site at v0.2.4"
+  },
+  {
+   "id": "w-21",
+   "what": "Add two rules to the vault's protocol: commit after every source; check every clone before calling the vault complete",
+   "owner": "claude-story-site",
+   "status": "open",
+   "opened": "2026-10-22T12:50Z",
+   "closed": null,
+   "proof": [
+    {
+     "kind": "article",
+     "ref": "capture-first"
+    }
+   ],
+   "note": "proposed in the briefing pack"
+  },
+  {
+   "id": "w-22",
+   "what": "Visitor logging with an append lane, region and country only",
+   "owner": "claude-story-site",
+   "status": "open",
+   "opened": "2026-10-22T13:00Z",
+   "closed": null,
+   "proof": [],
+   "note": "the editor's decision: the PHP site's own work, not this site's"
+  },
+  {
+   "id": "w-23",
+   "what": "Act on the review: the first screen, the tables, claims to sentences, exploitation over time, who said what first, briefings, blast radius, playbook, graph",
+   "owner": "claude-story-site",
+   "status": "open",
+   "opened": "2026-10-22T13:52Z",
+   "closed": null,
+   "proof": [
+    {
+     "kind": "page",
+     "ref": "briefs/php-oct-2026-review.zip"
+    }
+   ],
+   "note": "the site's own priorities; the newsroom asks, the site decides"
+  },
+  {
+   "id": "w-24",
+   "what": "The live vault view on this page, reading only what is opened",
+   "owner": "newsroom.dev",
+   "status": "done",
+   "opened": "2026-10-22T13:35Z",
+   "closed": "2026-10-22T13:52Z",
+   "proof": [
+    {
+     "kind": "page",
+     "ref": "admin/php-oct-2026/index.html#browse"
+    },
+    {
+     "kind": "card",
+     "ref": "089"
+    }
+   ],
+   "note": "the SG/App vault browser had not opened this vault after four minutes; this view shows the manifest in about three seconds"
+  }
+ ]
+}
