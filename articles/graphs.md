@@ -14,13 +14,39 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-261 of 261 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+262 of 262 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-261 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 1 article not yet linked either way.
+262 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 2 articles not yet linked either way.
+
+## [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](application-behaviour-policies.md)
+
+2026-10-22 · Agents & policyNews & evidence
+
+A remote code execution flaw hands an application's whole reach to an attacker, so an application behaviour policy maps reach, mandate, gap, barriers and per-row blast radius with a way back, and decision and workflow policies say who accepts what remains and in what order, turning the decision to bring a precautionary-offline site back into a decision about known rows.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**10 nodes, 9 edges**
+
+- **Agent Behaviour Policy** (concept) Reach, mandate, gap, barrier, footprint.
+- **Application behaviour policy** (concept) The same words for an application.
+- **Remote code execution** (claim) The visitor's grant becomes the reach.
+- **Blast radius** (method) Per row, with a way back.
+- **Decision and workflow policies** (method) Who accepts, and in what order.
+- **Sites taken offline** (example) Councils, wikis, a cyber centre.
+- **The bring-back question** (question) What if it is taken over anyway?
+- **An invented council site** (example) Ten rows, five cheap cuts.
+- **Our static sites** (example) The blast radius moved to the pipeline.
+- **Signals** (method) The trace each open row leaves.
+
+> An exploit is the moment somebody else starts using the difference. The method.
+
+> A row the footprint never uses is a candidate to cut; a row used outside the mandate is a near miss. Reading the footprint.
 
 ## [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](php-october-at-8pm.md)
 

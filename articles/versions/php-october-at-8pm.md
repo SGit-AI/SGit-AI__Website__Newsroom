@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-22 | published | 2,659 | first published | this release | [current](../php-october-at-8pm.md) |
+| **v1.0.0** | 2026-10-22 | published | 2,659 | first published | [`c80b07273`](https://github.com/SGit-AI/SGit-AI__Website/commit/c80b072731cb52c1bcd95468dc56539a791991f6) | [current](../php-october-at-8pm.md) |
 
 [← Back to the article](../php-october-at-8pm.md) · [All articles](../index.md)
 

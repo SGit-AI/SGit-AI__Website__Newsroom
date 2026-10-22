@@ -1,0 +1,61 @@
+{
+ "slug": "application-behaviour-policies",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Map an application like an agent: reach, mandate, gap, barrier and blast radius, so offline sites can come back knowingly.",
+   "para": "A remote code execution flaw hands the application's reach to anyone, as php2shell did on unpatched servers. An application behaviour policy lists what the site can reach, what it is for, the gap, each row's barrier and blast radius with a way back. With decision and workflow policies, bringing a precautionary-offline site back becomes a decision about known rows.",
+   "hash": "3b2b0cc35ef9"
+  },
+  "in-short": {
+   "line": "Seven lines: an exploit hands over reach, map it, blast radius, three policies, the bring-back question, cuts, signals.",
+   "para": "An exploit gives an attacker the application's reach and ignores its purpose, so map it with the agent method. Blast radius is defined over the reach, with a way-back axis. Decision and workflow policies say who accepts risk and in what order. The bring-back question is the worst case if taken over anyway. Cut cheap rows first; name signals first.",
+   "hash": "f5f9decd8555"
+  },
+  "question": {
+   "line": "Patching is necessary but not sufficient; the restore question is what a full takeover would cost.",
+   "para": "Councils, wikis and a national cyber centre took sites offline for php2shell. Bringing them back needs more than the fix: completeness is unshown, more flaws will come, and some sites run unfixable PHP versions. The question that lets someone sign off is what would be lost if the site were taken over anyway, and few have written down its reach.",
+   "hash": "c7a318b9bbd5"
+  },
+  "method": {
+   "line": "Reach, mandate, gap, barrier, footprint and blast radius all fit an application.",
+   "para": "The words from footprint and blast radius carry over: reach is what the application process can do, mandate what the site is for, the gap the difference, barriers typed as boundary, setting, expectation or none, footprint read from logs, blast radius per row with a way back. Remote code execution turns a visitor's tiny grant into the application's reach.",
+   "hash": "ca8730d1ef08"
+  },
+  "three": {
+   "line": "Behaviour is the map; decision says who accepts each row; workflow says in what order.",
+   "para": "The behaviour policy lists reach, mandate, gap, barriers and blast radius. The decision policy names who accepts open rows, who decides to restore, and which in-app actions need a person. The workflow policy orders the bring-back, patch to watch, and the application's own flows, such as storing a form before sending a confirmation.",
+   "hash": "46c8ac2a182f"
+  },
+  "example": {
+   "line": "An invented council site: ten rows, five cheap cuts, and a worst case reduced to defacement and database data.",
+   "para": "A PHP content system on a cloud machine can typically write its code, use a full-rights database user, send mail, reach the internet and internal network, read instance credentials, hold admin sessions, see backups and hold third-party keys. Cutting code writes, mail, egress, credentials and backups, all configuration changes, shrinks a takeover to defacement and the database's data.",
+   "hash": "4a9926ff6adf"
+  },
+  "ours": {
+   "line": "Our static sites have a tiny run-time blast radius; it moved to the deploy pipeline.",
+   "para": "This newsroom and the PHP story site are static pages on GitHub Pages with no server process, database, mail or secrets of ours, so a takeover means false content with a redeploy as the way back. The blast radius moved to whoever controls deployment, which is why the rules of the game and the sidecar protect the pipeline.",
+   "hash": "3c59ee778fc2"
+  },
+  "bring-back": {
+   "line": "Seven steps: patch, map the reach, write the mandate, cut cheap rows, name signals, decide, restore and watch.",
+   "para": "Patch to a fixed release or supplier build. Map each thing the application can do from the server. Write its mandate with the owners. Cut egress, code writes, mail, credentials and mounted backups. Name each open row's trace, using the PHP site's sourced detection signals. The named owner decides. Restore and read the footprint, first hourly, then weekly.",
+   "hash": "92ddd2a4cf4f"
+  },
+  "new": {
+   "line": "The pieces are established practice; writing them as one policy per application, like agents, is the new part.",
+   "para": "Least privilege, segmentation, threat modelling and business impact analysis are long established. The proposal is to write them as one policy per application in the same five words as for agents, with honest barrier types and per-row blast radius, so the same people, tools and reviews cover both, since both are code acting with a grant.",
+   "hash": "88b6eae5785f"
+  },
+  "limits": {
+   "line": "The council is invented; cuts reduce but do not fix; signals are not guarantees; only our sites are measured.",
+   "para": "The worked example describes no real council. Cutting rows reduces blast radius but does not remove the flaw, so patching comes first. Signals are evidence a careful attacker can minimise. No third party's site was mapped. PHP facts are as the story site records them, with evidence last captured at 11:34 UTC.",
+   "hash": "620cd8606f50"
+  },
+  "sources": {
+   "line": "The memo, two earlier method articles, the PHP story site's ledger and signals, and this site's deployment.",
+   "para": "Sources: the voice memo of 22 October 2026, the method in footprint and blast radius and the code you do not ship, the impact ledger, detection signals and fact-check of the PHP story site at v0.5.5, and this site's own deployment, with related articles on PHP, mandates, the rules of the game and attack surface.",
+   "hash": "37f9b56fc8b3"
+  }
+ }
+}

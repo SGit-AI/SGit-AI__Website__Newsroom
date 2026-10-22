@@ -1,0 +1,39 @@
+{
+ "slug": "application-behaviour-policies",
+ "teaser": "Map an application the way we map an agent, so a site switched off for php2shell can come back with a known blast radius.",
+ "topics": ["agents-and-policy", "news-and-evidence"],
+ "core_idea": "A remote code execution flaw hands an application's whole reach to an attacker, so an application behaviour policy maps reach, mandate, gap, barriers and per-row blast radius with a way back, and decision and workflow policies say who accepts what remains and in what order, turning the decision to bring a precautionary-offline site back into a decision about known rows.",
+ "nodes": [
+  {"id": "abp", "label": "Agent Behaviour Policy", "kind": "concept", "summary": "Reach, mandate, gap, barrier, footprint."},
+  {"id": "app", "label": "Application behaviour policy", "kind": "concept", "summary": "The same words for an application."},
+  {"id": "rce", "label": "Remote code execution", "kind": "claim", "summary": "The visitor's grant becomes the reach."},
+  {"id": "blast", "label": "Blast radius", "kind": "method", "summary": "Per row, with a way back."},
+  {"id": "three", "label": "Decision and workflow policies", "kind": "method", "summary": "Who accepts, and in what order."},
+  {"id": "offline", "label": "Sites taken offline", "kind": "example", "summary": "Councils, wikis, a cyber centre."},
+  {"id": "question", "label": "The bring-back question", "kind": "question", "summary": "What if it is taken over anyway?"},
+  {"id": "council", "label": "An invented council site", "kind": "example", "summary": "Ten rows, five cheap cuts."},
+  {"id": "ours", "label": "Our static sites", "kind": "example", "summary": "The blast radius moved to the pipeline."},
+  {"id": "signals", "label": "Signals", "kind": "method", "summary": "The trace each open row leaves."}
+ ],
+ "edges": [
+  {"from": "app", "to": "abp", "rel": "extends"},
+  {"from": "rce", "to": "app", "rel": "leads-to"},
+  {"from": "app", "to": "blast", "rel": "produces"},
+  {"from": "three", "to": "app", "rel": "extends"},
+  {"from": "offline", "to": "question", "rel": "leads-to"},
+  {"from": "app", "to": "question", "rel": "answers"},
+  {"from": "council", "to": "app", "rel": "example-of"},
+  {"from": "ours", "to": "app", "rel": "example-of"},
+  {"from": "signals", "to": "question", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["php-october-at-8pm", "approved-business-mandates", "the-rules-of-the-game", "the-sidecar-repository", "the-attack-surface-you-do-not-have", "the-code-you-do-not-ship"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/"]
+ },
+ "quotes": [
+  {"text": "An exploit is the moment somebody else starts using the difference.", "why": "The method."},
+  {"text": "A row the footprint never uses is a candidate to cut; a row used outside the mandate is a near miss.", "why": "Reading the footprint."},
+  {"text": "An agent and an application are both code acting with a grant.", "why": "What is new."}
+ ]
+}
