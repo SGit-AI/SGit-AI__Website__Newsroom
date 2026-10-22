@@ -1,0 +1,185 @@
+{
+  "slug": "php-october-at-8pm",
+  "teaser": "Where the php2shell story stands at 8pm on 22 October, and a guided tour of the site built in one day to track it.",
+  "topics": [
+    "news-and-evidence",
+    "vaults-and-method"
+  ],
+  "core_idea": "At 8pm on 22 October the php2shell fix is out, attackers are trying and no break-in is confirmed; the story is tracked by php.oct.2026.newsroom.sgit.ai, built in 34 versions in one day by two people and thirteen agents on a public evidence vault, with graded claims and versions of everything, so a snapshot of every version makes the next update an exact diff.",
+  "nodes": [
+    {
+      "id": "stands",
+      "label": "The story at 8pm",
+      "kind": "claim",
+      "summary": "Fix out, attempts, no confirmed break-in."
+    },
+    {
+      "id": "unknown",
+      "label": "What is not known",
+      "kind": "question",
+      "summary": "Break-ins, completeness, unpatched counts."
+    },
+    {
+      "id": "inventory",
+      "label": "The Dutch inventory",
+      "kind": "example",
+      "summary": "724 rows, 61 fixed."
+    },
+    {
+      "id": "site",
+      "label": "A site built in a day",
+      "kind": "example",
+      "summary": "34 versions, 13 agents."
+    },
+    {
+      "id": "vault",
+      "label": "The evidence vault",
+      "kind": "artefact",
+      "summary": "184 sources, 177 captures, public."
+    },
+    {
+      "id": "factcheck",
+      "label": "The fact-check desk",
+      "kind": "method",
+      "summary": "70 claims graded, two refuted."
+    },
+    {
+      "id": "graph",
+      "label": "The story graph",
+      "kind": "artefact",
+      "summary": "209 nodes, 281 edges."
+    },
+    {
+      "id": "versions",
+      "label": "Versions of everything",
+      "kind": "method",
+      "summary": "110 sections, 207 versions."
+    },
+    {
+      "id": "snapshot",
+      "label": "The 8pm snapshot",
+      "kind": "artefact",
+      "summary": "Heads, counts and file hashes."
+    },
+    {
+      "id": "outran",
+      "label": "The machinery outran the evidence",
+      "kind": "claim",
+      "summary": "Last capture 11:34 UTC."
+    },
+    {
+      "id": "correction",
+      "label": "Our own date corrected",
+      "kind": "example",
+      "summary": "Disclosed 21 October, not 22."
+    }
+  ],
+  "edges": [
+    {
+      "from": "vault",
+      "to": "stands",
+      "rel": "produces"
+    },
+    {
+      "from": "inventory",
+      "to": "stands",
+      "rel": "example-of"
+    },
+    {
+      "from": "stands",
+      "to": "unknown",
+      "rel": "contrasts"
+    },
+    {
+      "from": "site",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "factcheck",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "factcheck",
+      "to": "correction",
+      "rel": "produces"
+    },
+    {
+      "from": "graph",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "versions",
+      "to": "snapshot",
+      "rel": "leads-to"
+    },
+    {
+      "from": "outran",
+      "to": "site",
+      "rel": "contrasts"
+    },
+    {
+      "from": "snapshot",
+      "to": "stands",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "capture-first",
+      "a-desk-anyone-can-open"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The machinery outran the evidence.",
+      "why": "What the day showed."
+    },
+    {
+      "text": "Taken offline is not the same as compromised",
+      "why": "The impact ledger."
+    },
+    {
+      "text": "the difference between the two will be the update",
+      "why": "The snapshot."
+    }
+  ],
+  "figures": [
+    {
+      "file": "po-collage.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/po-collage.webp",
+      "caption": "A guided tour of php.oct.2026.newsroom.sgit.ai in nine pages: the front page for everyone, the inventory hour by hour, the story as a graph, every section versioned, a source and its captures, the fix read in the code, the team, the eight vaults, and the six synthetic readers.",
+      "kind": "wide"
+    },
+    {
+      "file": "po-inventory.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/po-inventory.webp",
+      "caption": "The Dutch inventory of affected software, at each of its 38 versions from 21 October: 724 rows at 15:28 UTC on 22 October, of which 61 fixed, 216 vulnerable and 440 still under investigation.",
+      "kind": "comparison"
+    },
+    {
+      "file": "po-releases.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/po-releases.webp",
+      "caption": "One day, 34 versions of php.oct.2026.newsroom.sgit.ai, from v0.1.0 at 09:27 UTC to v0.5.5 at 19:04 UTC, with two lines of versions running in parallel until the design branch was merged into v0.4.0.",
+      "kind": "comparison"
+    },
+    {
+      "file": "po-phone.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/po-phone.webp",
+      "caption": "On a phone: the front page, and Now, which answers what to know for the time you have, one, five, ten or thirty minutes, from the data alone or written by a model with the reader's own key.",
+      "kind": "comparison"
+    },
+    {
+      "file": "po-numbers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/po-numbers.webp",
+      "caption": "The site in numbers at v0.5.5: 34 versions in one day, 144 sources in its export of the vault, 70 claims, 68 events, 16 agencies, 724 inventory rows, 209 graph nodes, 15 readers and briefings, 110 sections with 207 versions, 341 items, 17 team members, 8 vaults, 328 watched pages, 6 synthetic readers, 70 claims graded and 89 board items.",
+      "kind": "comparison"
+    }
+  ]
+}

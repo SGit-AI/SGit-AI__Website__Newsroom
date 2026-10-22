@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-22 | published | 2,263 | first published | this release | [current](../a-desk-anyone-can-open.md) |
+| **v1.0.0** | 2026-10-22 | published | 2,263 | first published | [`2070508f7`](https://github.com/SGit-AI/SGit-AI__Website/commit/2070508f7c984e85333cc327dfce73db4ac8356b) | [current](../a-desk-anyone-can-open.md) |
 
 [← Back to the article](../a-desk-anyone-can-open.md) · [All articles](../index.md)
 
