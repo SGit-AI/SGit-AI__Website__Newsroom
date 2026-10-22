@@ -85,6 +85,12 @@
           "kind": "concept"
         },
         {
+          "file": "ay-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ay-layers.webp",
+          "caption": "From attempts to a named compromise, as of 20:50 UTC on 22 October: millions of attempts against sensors, honeypots and edges; three security vendors reporting exploitation without naming a victim; one named organisation saying it was attacked, with the attack stopped; and none saying php2shell was the way in. Behind it, 184 vault sources, 773 watched pages from 474 publishers in 57 countries, 3,444 news items scanned and 295 named sites probed every 30 minutes.",
+          "kind": "comparison"
+        },
+        {
           "file": "ay-three.webp",
           "url": "https://newsroom.sgit.ai/articles/images/ay-three.webp",
           "caption": "Three policies for an application: behaviour, what it can reach and what it is for, with the gap and blast radius per row; decision, who accepts each row's blast radius and who decides to bring the site back; workflow, the order things happen in, from patching and mapping to cutting rows, naming signals, deciding and restoring.",
@@ -171,6 +177,18 @@
             "label": "Signals",
             "kind": "method",
             "summary": "The trace each open row leaves."
+          },
+          {
+            "id": "map",
+            "label": "The compromise map",
+            "kind": "artefact",
+            "summary": "33 statements, as of 20:50 UTC."
+          },
+          {
+            "id": "silence",
+            "label": "No named compromise",
+            "kind": "claim",
+            "summary": "Lower likelihood, same blast radius."
           }
         ],
         "edges": [
@@ -218,11 +236,27 @@
             "from": "signals",
             "to": "question",
             "rel": "answers"
+          },
+          {
+            "from": "map",
+            "to": "silence",
+            "rel": "produces"
+          },
+          {
+            "from": "silence",
+            "to": "blast",
+            "rel": "contrasts"
+          },
+          {
+            "from": "silence",
+            "to": "question",
+            "rel": "answers"
           }
         ],
         "links": {
           "articles": [
             "php-october-at-8pm",
+            "a-policy-beside-the-prompt",
             "approved-business-mandates",
             "the-rules-of-the-game",
             "the-sidecar-repository",
@@ -246,6 +280,10 @@
           {
             "text": "An agent and an application are both code acting with a grant.",
             "why": "What is new."
+          },
+          {
+            "text": "The silence lowers the likelihood; it does nothing to the blast radius.",
+            "why": "The silence."
           }
         ]
       }

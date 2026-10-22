@@ -66,6 +66,18 @@
       "label": "Signals",
       "kind": "method",
       "summary": "The trace each open row leaves."
+    },
+    {
+      "id": "map",
+      "label": "The compromise map",
+      "kind": "artefact",
+      "summary": "33 statements, as of 20:50 UTC."
+    },
+    {
+      "id": "silence",
+      "label": "No named compromise",
+      "kind": "claim",
+      "summary": "Lower likelihood, same blast radius."
     }
   ],
   "edges": [
@@ -113,11 +125,27 @@
       "from": "signals",
       "to": "question",
       "rel": "answers"
+    },
+    {
+      "from": "map",
+      "to": "silence",
+      "rel": "produces"
+    },
+    {
+      "from": "silence",
+      "to": "blast",
+      "rel": "contrasts"
+    },
+    {
+      "from": "silence",
+      "to": "question",
+      "rel": "answers"
     }
   ],
   "links": {
     "articles": [
       "php-october-at-8pm",
+      "a-policy-beside-the-prompt",
       "approved-business-mandates",
       "the-rules-of-the-game",
       "the-sidecar-repository",
@@ -141,6 +169,10 @@
     {
       "text": "An agent and an application are both code acting with a grant.",
       "why": "What is new."
+    },
+    {
+      "text": "The silence lowers the likelihood; it does nothing to the blast radius.",
+      "why": "The silence."
     }
   ],
   "figures": [
@@ -149,6 +181,12 @@
       "url": "https://newsroom.sgit.ai/articles/images/ay-grant.webp",
       "caption": "What a remote code execution flaw does to the grant: before, an anonymous visitor can request pages and submit a form; after, on an unpatched server, the same visitor runs commands as the application, with everything it can reach: its files, its database, its mail, its secrets, its network and the systems that trust it.",
       "kind": "concept"
+    },
+    {
+      "file": "ay-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ay-layers.webp",
+      "caption": "From attempts to a named compromise, as of 20:50 UTC on 22 October: millions of attempts against sensors, honeypots and edges; three security vendors reporting exploitation without naming a victim; one named organisation saying it was attacked, with the attack stopped; and none saying php2shell was the way in. Behind it, 184 vault sources, 773 watched pages from 474 publishers in 57 countries, 3,444 news items scanned and 295 named sites probed every 30 minutes.",
+      "kind": "comparison"
     },
     {
       "file": "ay-three.webp",

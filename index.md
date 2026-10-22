@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.44 · 262 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.45 · 262 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -17,7 +17,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 ## Highlights
 
 - [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](articles/capture-first.md), 2026-10-22, 13 min.
-- [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 10 min.
+- [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
 - [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](articles/the-sidecar-repository.md), 2026-10-22, 9 min.
 - [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](articles/the-rules-of-the-game.md), 2026-10-22, 9 min.
 
@@ -34,7 +34,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ### Agent security & policy (73)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 10 min.
+- [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
 - [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](articles/the-sidecar-repository.md), 2026-10-22, 9 min.
 - [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](articles/the-rules-of-the-game.md), 2026-10-22, 9 min.
 

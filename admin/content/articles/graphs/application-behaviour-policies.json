@@ -13,7 +13,9 @@
   {"id": "question", "label": "The bring-back question", "kind": "question", "summary": "What if it is taken over anyway?"},
   {"id": "council", "label": "An invented council site", "kind": "example", "summary": "Ten rows, five cheap cuts."},
   {"id": "ours", "label": "Our static sites", "kind": "example", "summary": "The blast radius moved to the pipeline."},
-  {"id": "signals", "label": "Signals", "kind": "method", "summary": "The trace each open row leaves."}
+  {"id": "signals", "label": "Signals", "kind": "method", "summary": "The trace each open row leaves."},
+  {"id": "map", "label": "The compromise map", "kind": "artefact", "summary": "33 statements, as of 20:50 UTC."},
+  {"id": "silence", "label": "No named compromise", "kind": "claim", "summary": "Lower likelihood, same blast radius."}
  ],
  "edges": [
   {"from": "app", "to": "abp", "rel": "extends"},
@@ -24,16 +26,20 @@
   {"from": "app", "to": "question", "rel": "answers"},
   {"from": "council", "to": "app", "rel": "example-of"},
   {"from": "ours", "to": "app", "rel": "example-of"},
-  {"from": "signals", "to": "question", "rel": "answers"}
+  {"from": "signals", "to": "question", "rel": "answers"},
+  {"from": "map", "to": "silence", "rel": "produces"},
+  {"from": "silence", "to": "blast", "rel": "contrasts"},
+  {"from": "silence", "to": "question", "rel": "answers"}
  ],
  "links": {
-  "articles": ["php-october-at-8pm", "approved-business-mandates", "the-rules-of-the-game", "the-sidecar-repository", "the-attack-surface-you-do-not-have", "the-code-you-do-not-ship"],
+  "articles": ["php-october-at-8pm", "a-policy-beside-the-prompt", "approved-business-mandates", "the-rules-of-the-game", "the-sidecar-repository", "the-attack-surface-you-do-not-have", "the-code-you-do-not-ship"],
   "pages": [],
   "sites": ["https://php.oct.2026.newsroom.sgit.ai/"]
  },
  "quotes": [
   {"text": "An exploit is the moment somebody else starts using the difference.", "why": "The method."},
   {"text": "A row the footprint never uses is a candidate to cut; a row used outside the mandate is a near miss.", "why": "Reading the footprint."},
-  {"text": "An agent and an application are both code acting with a grant.", "why": "What is new."}
+  {"text": "An agent and an application are both code acting with a grant.", "why": "What is new."},
+  {"text": "The silence lowers the likelihood; it does nothing to the blast radius.", "why": "The silence."}
  ]
 }

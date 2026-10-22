@@ -29,9 +29,9 @@ The graphs are data first and pictures second. Take them as JSON: [all articles 
 A remote code execution flaw hands an application's whole reach to an attacker, so an application behaviour policy maps reach, mandate, gap, barriers and per-row blast radius with a way back, and decision and workflow policies say who accepts what remains and in what order, turning the decision to bring a precautionary-offline site back into a decision about known rows.
 
 *[diagram]*
-**concept**claim**method**example**question
+**concept**claim**method**artefact**example**question
 
-**10 nodes, 9 edges**
+**12 nodes, 12 edges**
 
 - **Agent Behaviour Policy** (concept) Reach, mandate, gap, barrier, footprint.
 - **Application behaviour policy** (concept) The same words for an application.
@@ -43,6 +43,8 @@ A remote code execution flaw hands an application's whole reach to an attacker, 
 - **An invented council site** (example) Ten rows, five cheap cuts.
 - **Our static sites** (example) The blast radius moved to the pipeline.
 - **Signals** (method) The trace each open row leaves.
+- **The compromise map** (artefact) 33 statements, as of 20:50 UTC.
+- **No named compromise** (claim) Lower likelihood, same blast radius.
 
 > An exploit is the moment somebody else starts using the difference. The method.
 
