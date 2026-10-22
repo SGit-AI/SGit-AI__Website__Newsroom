@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-21",
+  "generated": "2026-10-22",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -55,6 +55,200 @@
   ],
   "articles": [
     {
+      "slug": "the-delegation-record",
+      "title": "The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox",
+      "date": "2026-10-22",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-delegation-record.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-delegation-record.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-delegation-record.webp",
+      "teaser": "RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "riskmandate",
+        "go-to-market",
+        "abp",
+        "pilots",
+        "mandates",
+        "article"
+      ],
+      "links_out": [
+        "an-analysts-blueprint-for-riskmandate",
+        "drift-is-the-mandate-moving",
+        "approved-business-mandates",
+        "three-decisions-mapped",
+        "case-law-for-agents",
+        "answering-a-draft",
+        "our-first-customers"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "dl-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dl-chain.webp",
+          "caption": "The chain to deliver once, end to end: an existing requirement, an approved delegation, an implemented control, an observed result, and evidence that still holds after a change.",
+          "kind": "concept"
+        },
+        {
+          "file": "dl-record.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dl-record.webp",
+          "caption": "The delegation record in six parts, business requirement, agent delegation, control mapping, evidence, remaining gaps and change conditions, filled in for pilot zero, our own inbox, as the plan stands; nothing in it has been tested yet.",
+          "kind": "comparison"
+        },
+        {
+          "file": "dl-translate.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dl-translate.webp",
+          "caption": "A rule for people is not yet a delegation to an agent: refunds up to £100, the amount, one refund, a team lead's approval, eligibility and the process approval, each with the question an agent deployment must also answer.",
+          "kind": "comparison"
+        },
+        {
+          "file": "dl-stages.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dl-stages.webp",
+          "caption": "Three stages: immediate value, fix one mismatch and show it from the protected system; maintenance value, make a controlled change and show what it invalidates; repeatability, a related workflow or a second customer, measuring what was reused.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "the-delegation-record",
+        "teaser": "RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "RiskMandate's go-to-market plan is to deliver one chain end to end, existing requirement, approved agent delegation, implemented control, observed result and evidence valid after change, packaged as a six-part delegation record, with human rules translated through an explicit approval, baselines never learned from behaviour, three stages that test value, maintenance and repeatability, and a first pilot on its own inbox, where Gmail cannot enforce draft-but-never-send.",
+        "nodes": [
+          {
+            "id": "chain",
+            "label": "The chain",
+            "kind": "method",
+            "summary": "Requirement to evidence after change."
+          },
+          {
+            "id": "record",
+            "label": "The delegation record",
+            "kind": "artefact",
+            "summary": "Six parts a customer can act on."
+          },
+          {
+            "id": "translate",
+            "label": "A people rule is not a delegation",
+            "kind": "claim",
+            "summary": "Extract, list ambiguities, approve."
+          },
+          {
+            "id": "baseline",
+            "label": "An approved baseline",
+            "kind": "concept",
+            "summary": "Never learned from behaviour."
+          },
+          {
+            "id": "obligations",
+            "label": "Obligations too",
+            "kind": "concept",
+            "summary": "Legitimate work must complete."
+          },
+          {
+            "id": "stages",
+            "label": "Three stages",
+            "kind": "method",
+            "summary": "Value, maintenance, repeatability."
+          },
+          {
+            "id": "customer",
+            "label": "A small first customer",
+            "kind": "example",
+            "summary": "One workflow, owner, environment."
+          },
+          {
+            "id": "pilotzero",
+            "label": "Pilot zero: our inbox",
+            "kind": "example",
+            "summary": "Draft, never send."
+          },
+          {
+            "id": "gmail",
+            "label": "Gmail cannot enforce it",
+            "kind": "claim",
+            "summary": "Drafting scopes also send."
+          }
+        ],
+        "edges": [
+          {
+            "from": "chain",
+            "to": "record",
+            "rel": "produces"
+          },
+          {
+            "from": "translate",
+            "to": "chain",
+            "rel": "depends-on"
+          },
+          {
+            "from": "baseline",
+            "to": "record",
+            "rel": "depends-on"
+          },
+          {
+            "from": "obligations",
+            "to": "record",
+            "rel": "extends"
+          },
+          {
+            "from": "stages",
+            "to": "customer",
+            "rel": "leads-to"
+          },
+          {
+            "from": "pilotzero",
+            "to": "record",
+            "rel": "example-of"
+          },
+          {
+            "from": "gmail",
+            "to": "pilotzero",
+            "rel": "produces"
+          },
+          {
+            "from": "pilotzero",
+            "to": "customer",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "approved-business-mandates",
+            "drift-is-the-mandate-moving",
+            "an-analysts-blueprint-for-riskmandate",
+            "answering-a-draft",
+            "three-decisions-mapped",
+            "case-law-for-agents",
+            "our-first-customers"
+          ],
+          "pages": [],
+          "sites": [
+            "https://developers.google.com/workspace/gmail/api/auth/scopes"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "existing requirement → approved agent delegation → implemented control → observed result → evidence that remains valid after change",
+            "why": "The chain."
+          },
+          {
+            "text": "A model can propose an interpretation; it must not quietly inherit the authority of the original policy.",
+            "why": "Translation."
+          },
+          {
+            "text": "there is no permission that lets an agent draft without also letting it send",
+            "why": "Pilot zero's first finding."
+          }
+        ]
+      }
+    },
+    {
       "slug": "approved-business-mandates",
       "title": "Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes",
       "date": "2026-10-21",
@@ -91,6 +285,7 @@
         "our-first-customers"
       ],
       "links_in": [
+        "the-delegation-record",
         "an-analysts-blueprint-for-riskmandate"
       ],
       "figures": [
@@ -309,6 +504,7 @@
         "behaviour-policies-from-the-checks"
       ],
       "links_in": [
+        "the-delegation-record",
         "approved-business-mandates"
       ],
       "figures": [
@@ -654,6 +850,7 @@
         "how-to-help"
       ],
       "links_in": [
+        "the-delegation-record",
         "approved-business-mandates",
         "drift-is-the-mandate-moving"
       ],
@@ -2389,6 +2586,7 @@
         "jobs-that-never-scaled"
       ],
       "links_in": [
+        "the-delegation-record",
         "how-to-help",
         "governed-semi-autonomous-development-read-here"
       ],
@@ -5834,6 +6032,7 @@
         "what-can-your-agent-reach"
       ],
       "links_in": [
+        "the-delegation-record",
         "approved-business-mandates",
         "an-analysts-blueprint-for-riskmandate",
         "how-to-help",
@@ -16259,6 +16458,7 @@
         "your-agents-logs-are-a-self-report"
       ],
       "links_in": [
+        "the-delegation-record",
         "approved-business-mandates",
         "allowed-is-not-right",
         "three-policies-for-an-agent",
@@ -16473,6 +16673,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "the-delegation-record",
         "approved-business-mandates",
         "what-can-your-agent-reach",
         "inside-the-northstar-twin",

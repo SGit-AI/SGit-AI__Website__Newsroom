@@ -4,18 +4,18 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.36 · 254 articles since 2026-08-17; the newest is 2026-10-21. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.37 · 255 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## The lead
 
-- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](articles/approved-business-mandates.md), 2026-10-21, 10 min. Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
+- [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](articles/the-delegation-record.md), 2026-10-22, 8 min. RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.
 
 ## Highlights
 
+- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](articles/approved-business-mandates.md), 2026-10-21, 10 min.
 - [Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against](articles/drift-is-the-mandate-moving.md), 2026-10-21, 8 min.
 - [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](articles/the-reading-account-as-built.md), 2026-10-21, 4 min.
 - [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](articles/an-analysts-blueprint-for-riskmandate.md), 2026-10-21, 12 min.
-- [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](articles/how-to-help.md), 2026-10-21, 6 min.
 
 ## Who are you reading as?
 
@@ -52,11 +52,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 
-### Strategy & startups (47)
+### Strategy & startups (48)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](articles/the-delegation-record.md), 2026-10-22, 8 min.
 - [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](articles/approved-business-mandates.md), 2026-10-21, 10 min.
 - [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](articles/how-to-help.md), 2026-10-21, 6 min.
-- [Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding](articles/connect-your-dots-backwards.md), 2026-10-21, 8 min.
 
 ## Collections
 

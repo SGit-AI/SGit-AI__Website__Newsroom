@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-21 | minor | 2,621 | +366 / −0 words; 0 changed, 10 added, 0 removed paragraphs | this release | [what changed](approved-business-mandates/v1.1.0.md) · [current](../approved-business-mandates.md) |
+| **v1.1.0** | 2026-10-21 | minor | 2,621 | +366 / −0 words; 0 changed, 10 added, 0 removed paragraphs | [`c11b2fe2c`](https://github.com/SGit-AI/SGit-AI__Website/commit/c11b2fe2c03c569fe688f47cc3017374c844f322) | [what changed](approved-business-mandates/v1.1.0.md) · [current](../approved-business-mandates.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,255 | first published | [`d9d4562f2`](https://github.com/SGit-AI/SGit-AI__Website/commit/d9d4562f26c69d3dabd07b573a993a0f1eb41643) |  |
 
 [← Back to the article](../approved-business-mandates.md) · [All articles](../index.md)

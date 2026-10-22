@@ -98,6 +98,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#our-fi
 
 ### Continued by
 
+- [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md) RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.
 - [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](approved-business-mandates.md) Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.
 - [An analyst's blueprint for RiskMandate: what the companies at the WestCap CISO Summit suggest we build, the vendors already moving, and our answer](an-analysts-blueprint-for-riskmandate.md) An analyst's blueprint for RiskMandate from the WestCap CISO Summit, the vendors already moving, and our answer.
 - [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](how-to-help.md) Six steps for anyone who wants to help or be involved with sgit, Risk Mandate or this newsroom, and what they get back.
