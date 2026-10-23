@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-23 | published | 2,626 | first published | this release | [current](../almost-working.md) |
+| **v1.0.0** | 2026-10-23 | published | 2,626 | first published | [`22be698e6`](https://github.com/SGit-AI/SGit-AI__Website/commit/22be698e605eb1d36dd1817470b9247b1d1ed27f) | [current](../almost-working.md) |
 
 [← Back to the article](../almost-working.md) · [All articles](../index.md)
 
