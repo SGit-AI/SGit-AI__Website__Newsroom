@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-22",
+  "generated": "2026-10-23",
   "site_version": "v0.7.87",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
@@ -72,6 +72,34 @@
     }
   ],
   "articles": [
+    {
+      "slug": "an-agent-that-may-only-chat",
+      "title": "An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone",
+      "date": "2026-10-23",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/an-agent-that-may-only-chat.html",
+      "markdown": "https://newsroom.sgit.ai/articles/an-agent-that-may-only-chat.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/an-agent-that-may-only-chat.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/an-agent-that-may-only-chat.json",
+      "teaser": "RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats, and the fallback drill that shows what a hook is for.",
+      "summary": "What is the smallest useful mandate you can give an agent? Talk to me, and nothing else. On 21 October, from my phone, I asked a Claude session running on my computer at home to build that policy and prove it. It drove claude.ai in Chrome, an account that can reach about 90 tools, among them Gmail, Calendar, Drive, Slack, Zapier and GitHub, and headless Claude Code on the same machine. What came back is RM-CHAT-ONLY: one policy as a line, a skill, a CLAUDE.md block and a hook that denies every tool and fails closed, with 96 Claude Code runs across eight modes and 11 red-team chats on claude.ai. The line alone held against all ten claude.ai attacks, and against every attack in normal Claude Code runs. Then the fallback drill: tell the model to ignore the policy, and the line drops from 12 of 12 to 3 of 12, while the line with the hook stays at 12 of 12, with the hook blocking five attempts. In normal use the hooks never fire, which is exactly why you cannot tell from normal use whether they work. The work also reviewed RiskMandate's own policies and found seven things to fix, from a line that does not say who can lift it to hooks that fail open; I checked them against the live sites. Everything reusable is published with this article.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "abp",
+        "riskmandate",
+        "hooks",
+        "claude-code",
+        "red-team",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
     {
       "slug": "application-behaviour-policies",
       "title": "Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius",

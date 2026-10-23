@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.50 · 262 articles since 2026-08-17; the newest is 2026-10-22. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.51 · 263 articles since 2026-08-17; the newest is 2026-10-23. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -17,9 +17,9 @@ Governments told organisations to take sites offline if they could not patch. Th
 ## Highlights
 
 - [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](articles/capture-first.md), 2026-10-22, 13 min.
+- [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 11 min.
 - [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
 - [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](articles/the-sidecar-repository.md), 2026-10-22, 9 min.
-- [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](articles/the-rules-of-the-game.md), 2026-10-22, 9 min.
 
 ## Who are you reading as?
 
@@ -38,11 +38,11 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](articles/the-sidecar-repository.md), 2026-10-22, 9 min.
 - [The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool](articles/the-rules-of-the-game.md), 2026-10-22, 9 min.
 
-### Building with agents (44)
+### Building with agents (45)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 11 min.
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](articles/where-a-check-runs.md), 2026-10-22, 8 min.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](articles/answering-a-draft.md), 2026-10-21, 8 min.
-- [The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting](articles/the-open-security-summit-and-its-debt.md), 2026-10-21, 7 min.
 
 ### Vaults & provenance (56)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.

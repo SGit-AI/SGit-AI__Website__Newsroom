@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-262 of 262 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+263 of 263 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-262 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 2 articles not yet linked either way.
+263 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 3 articles not yet linked either way.
+
+## [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](an-agent-that-may-only-chat.md)
+
+2026-10-23 · Agents & policySite & engineering
+
+A chat-only policy, whose mandate is talk to me, held as a line in normal use, but when the model was told to ignore it the line fell from 12 of 12 to 3 of 12 while the line with a fail-closed deny-all hook held at 12 of 12, so a hook can only be tested by a fallback drill, and the same work found seven fixes for RiskMandate's own policies.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**11 nodes, 10 edges**
+
+- **Talk to me** (concept) The smallest mandate; every tool in the gap.
+- **An agent driven from a phone** (example) Remote control to a home computer.
+- **About 90 tools** (example) claude.ai with six connectors.
+- **The line** (artefact) Cannot be lifted inside the chat.
+- **The deny-all hook** (artefact) Matcher star, fails closed.
+- **10 of 10 on claude.ai** (example) Line only, incognito chats.
+- **96 runs in Claude Code** (example) Eight modes, canary checks.
+- **The fallback drill** (method) Told to ignore it: 3 of 12 against 12 of 12.
+- **Hooks never fire in normal use** (claim) So normal runs cannot test them.
+- **Seven fixes for RiskMandate** (claim) Lift clauses, fail closed, match every tool.
+- **Agent driving agent** (question) It inherits the inner reach.
+
+> That is the trap: from normal runs you cannot tell whether your hooks work at all. The fallback drill.
+
+> The expectation held until something stronger said otherwise; the setting held regardless. The drill's result.
 
 ## [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](application-behaviour-policies.md)
 

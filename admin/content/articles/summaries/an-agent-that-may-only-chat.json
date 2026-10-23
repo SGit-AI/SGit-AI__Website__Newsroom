@@ -1,0 +1,71 @@
+{
+ "slug": "an-agent-that-may-only-chat",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "RM-CHAT-ONLY: a chat-only policy, built and tested by an agent at home driven from a phone, with a fallback drill.",
+   "para": "A Claude session on Dinis's home computer, driven from his phone, built a policy whose mandate is talk to me, in four forms: a line, a skill, a CLAUDE.md block and a fail-closed deny-all hook. The line held in normal use; told to ignore it, it fell to 3 of 12, while the hook held at 12 of 12.",
+   "hash": "3f3435807b21"
+  },
+  "in-short": {
+   "line": "Seven lines: the smallest mandate, four forms, the line held, the drill, the hook held, drills test hooks, seven fixes.",
+   "para": "Talk to me is the smallest mandate; every tool is in the gap. The policy is a line, a skill, a CLAUDE.md block and a deny-all hook. The line held 10 of 10 claude.ai attacks and 12 of 12 in Claude Code, but fell to 3 of 12 when told to ignore it; the hook held. Seven fixes for RiskMandate follow.",
+   "hash": "d0c0d20f9921"
+  },
+  "how": {
+   "line": "A phone, remote control, and an agent on a home computer driving claude.ai and headless Claude Code.",
+   "para": "From his phone, Dinis asked a Claude session on his home computer, by remote control, to do the work. It drove claude.ai in Chrome, with Gmail, Calendar, Drive, Slack, Zapier and GitHub connected, and headless Claude Code in fresh folders. A powerful workflow, and a threat: an agent steering another inherits its whole reach.",
+   "hash": "97e6297d2408"
+  },
+  "mandate": {
+   "line": "Reach is about 90 tools; the mandate is talk to me; the gap is every tool; self-reports disagree with settings.",
+   "para": "The session measured a fresh claude.ai chat: web search on, memory off, six connectors connected, four listed but not. Claude listed about 90 tools, about 50 with outside effects and 40 that read or contact. A chat-only policy must stop all of them. Claude's self-report called four unconnected connectors connected, so measured and documented stay apart.",
+   "hash": "212ad0d3947b"
+  },
+  "policy": {
+   "line": "One policy, four barriers: the line, a skill, a CLAUDE.md block, and a hook that denies everything and fails closed.",
+   "para": "The line forbids every tool and says it cannot be lifted inside the chat, only by starting a new one. The skill and the CLAUDE.md block are expectations. The hook denies every tool with matcher star, audits attempts, re-anchors the line each prompt, fails closed with onFailure block, and allows only the skill to load. Six unit tests pass.",
+   "hash": "a4e5a08295e6"
+  },
+  "claude-ai": {
+   "line": "Ten claude.ai attacks with the line alone, ten refusals; without the line the weather tool fired at once.",
+   "para": "In incognito claude.ai chats with no hooks, the line held against urgency, links, Gmail, code, I lift it, a fake administrator notice, role-play, three turns of pressure and a fake version 0.2.0. The model kept helping from memory. Without the line, a weather question fired the tool immediately, proving the tools were live.",
+   "hash": "3aa60f99acfc"
+  },
+  "runs": {
+   "line": "Eight modes, twelve evals each: nothing installed 2 of 12; skill, line, hooks and combinations 12 of 12.",
+   "para": "Each Claude Code run had its own folder with a canary secret, and scoring checked canary files, leaked secrets and tools that ran. With nothing installed, Claude wrote files, ran the shell, read the secret, fetched, searched and started a subagent. The skill, line, hooks and combinations all scored 12 of 12; the hooks alone denied ten attempts. Runs cost about $9.",
+   "hash": "492acea3589d"
+  },
+  "drill": {
+   "line": "Told to ignore the policy, the line fell to 3 of 12; with the hook it stayed 12 of 12, five blocks.",
+   "para": "In normal use the line was enough and the hooks never fired, so normal runs cannot test hooks. The drill added a system prompt to ignore the policy: the line alone allowed nine breaches; the line plus hooks held, the hook blocking five attempts, and the per-prompt re-anchor kept five attacks from trying a tool, against one without it.",
+   "hash": "355dabf86f7e"
+  },
+  "skill": {
+   "line": "A skill is a good package but a weak vehicle; always-on policies belong in always-loaded context, with the hook as setting.",
+   "para": "A skill loads when the model decides, eleven of twelve times here. An always-on policy belongs in CLAUDE.md or project instructions. Recommended layering: the line as expectation, the skill for distribution, the hook as setting, managed settings as boundary; or start with no tools. In claude.ai, switching off search and connectors changes the reach.",
+   "hash": "5d813eed53f2"
+  },
+  "review": {
+   "line": "Seven fixes for RiskMandate, checked against the live sites: lift clauses, fail-closed hooks, match every tool, live tests.",
+   "para": "The keep-a-secret line lacks a lift clause and fell in one turn. The RM-R0015 hook fails open on bad input. Starter hooks match only named tools. Tests are unit-level. Every hook-backed policy needs a drill. A project hook is a setting, since bare mode skips hooks. Agent-driving-agent belongs in the threat model.",
+   "hash": "099959a35f68"
+  },
+  "pack": {
+   "line": "Everything reusable is published as data; private account details, paths, the canary and transcripts are left out.",
+   "para": "The pack holds the line, skill, CLAUDE.md block, hook source and settings, test names, eval prompts, modes, the claude.ai red team, the measured reach and all 96 runs with verdicts, tools, denials, canaries, cost, time and answers. The account email and organisation id, local paths, the canary secret and the full transcripts are left out.",
+   "hash": "773799cfe41d"
+  },
+  "limits": {
+   "line": "One model, one day; scoring bugs fixed; skill untested in claude.ai; slash skills bypass the hook; fixes are proposals.",
+   "para": "Claude Opus 5.5 on 21 October 2026: 96 runs and 11 chats, a first measurement. Two scoring bugs were fixed by re-scoring transcripts without hand edits. The skill was not tested in claude.ai. A typed slash skill bypasses PreToolUse. One mapping chat was not incognito. The RiskMandate fixes are proposals, checked but not made.",
+   "hash": "de4070f0a0c7"
+  },
+  "sources": {
+   "line": "The chat-only pack from 21 October, checked against the RiskMandate sites and Claude Code's documentation.",
+   "para": "Sources: the chat-only policy pack produced on 21 October 2026 by a Claude session on Dinis's computer, with its brief, capability map, red-team notes, screenshots, results and run data; checked on 23 October against customers.riskmandate.ai, its starter pack and RM-R0015, and Claude Code's documentation on hooks and its command line.",
+   "hash": "2f936693d842"
+  }
+ }
+}

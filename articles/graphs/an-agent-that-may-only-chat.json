@@ -1,0 +1,188 @@
+{
+  "slug": "an-agent-that-may-only-chat",
+  "teaser": "RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats, and the fallback drill that shows what a hook is for.",
+  "topics": [
+    "agents-and-policy",
+    "site-and-engineering"
+  ],
+  "core_idea": "A chat-only policy, whose mandate is talk to me, held as a line in normal use, but when the model was told to ignore it the line fell from 12 of 12 to 3 of 12 while the line with a fail-closed deny-all hook held at 12 of 12, so a hook can only be tested by a fallback drill, and the same work found seven fixes for RiskMandate's own policies.",
+  "nodes": [
+    {
+      "id": "mandate",
+      "label": "Talk to me",
+      "kind": "concept",
+      "summary": "The smallest mandate; every tool in the gap."
+    },
+    {
+      "id": "how",
+      "label": "An agent driven from a phone",
+      "kind": "example",
+      "summary": "Remote control to a home computer."
+    },
+    {
+      "id": "reach",
+      "label": "About 90 tools",
+      "kind": "example",
+      "summary": "claude.ai with six connectors."
+    },
+    {
+      "id": "line",
+      "label": "The line",
+      "kind": "artefact",
+      "summary": "Cannot be lifted inside the chat."
+    },
+    {
+      "id": "hook",
+      "label": "The deny-all hook",
+      "kind": "artefact",
+      "summary": "Matcher star, fails closed."
+    },
+    {
+      "id": "redteam",
+      "label": "10 of 10 on claude.ai",
+      "kind": "example",
+      "summary": "Line only, incognito chats."
+    },
+    {
+      "id": "runs",
+      "label": "96 runs in Claude Code",
+      "kind": "example",
+      "summary": "Eight modes, canary checks."
+    },
+    {
+      "id": "drill",
+      "label": "The fallback drill",
+      "kind": "method",
+      "summary": "Told to ignore it: 3 of 12 against 12 of 12."
+    },
+    {
+      "id": "trap",
+      "label": "Hooks never fire in normal use",
+      "kind": "claim",
+      "summary": "So normal runs cannot test them."
+    },
+    {
+      "id": "fixes",
+      "label": "Seven fixes for RiskMandate",
+      "kind": "claim",
+      "summary": "Lift clauses, fail closed, match every tool."
+    },
+    {
+      "id": "agentagent",
+      "label": "Agent driving agent",
+      "kind": "question",
+      "summary": "It inherits the inner reach."
+    }
+  ],
+  "edges": [
+    {
+      "from": "mandate",
+      "to": "line",
+      "rel": "produces"
+    },
+    {
+      "from": "reach",
+      "to": "mandate",
+      "rel": "contrasts"
+    },
+    {
+      "from": "line",
+      "to": "redteam",
+      "rel": "leads-to"
+    },
+    {
+      "from": "hook",
+      "to": "runs",
+      "rel": "leads-to"
+    },
+    {
+      "from": "drill",
+      "to": "trap",
+      "rel": "answers"
+    },
+    {
+      "from": "drill",
+      "to": "hook",
+      "rel": "depends-on"
+    },
+    {
+      "from": "line",
+      "to": "drill",
+      "rel": "contrasts"
+    },
+    {
+      "from": "runs",
+      "to": "fixes",
+      "rel": "produces"
+    },
+    {
+      "from": "how",
+      "to": "agentagent",
+      "rel": "leads-to"
+    },
+    {
+      "from": "agentagent",
+      "to": "fixes",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "are-hooks-the-sweet-spot",
+      "agent-hooks-october-2026",
+      "hooks-are-kernel-code",
+      "the-rules-of-the-game"
+    ],
+    "pages": [],
+    "sites": [
+      "https://customers.riskmandate.ai/policies/",
+      "https://newsroom.sgit.ai/articles/footprint-and-blast-radius.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "That is the trap: from normal runs you cannot tell whether your hooks work at all.",
+      "why": "The fallback drill."
+    },
+    {
+      "text": "The expectation held until something stronger said otherwise; the setting held regardless.",
+      "why": "The drill's result."
+    },
+    {
+      "text": "a skill is a good package and a weak vehicle on its own",
+      "why": "A skill, or something else?"
+    }
+  ],
+  "figures": [
+    {
+      "file": "ch-modes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ch-modes.webp",
+      "caption": "RM-CHAT-ONLY in Claude Code, 96 headless runs: with nothing installed, 2 of 12 pass and 10 breach; with the skill, the line, the hooks, both, or the skill and hooks, 12 of 12 pass, the hooks alone blocking 10 attempts; in the fallback drill, with a system prompt telling the model to ignore the policy, the line alone falls to 3 of 12 with 9 breaches, while the line and hooks stay at 12 of 12, with 5 attempts blocked.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ch-how.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ch-how.webp",
+      "caption": "How the work was done: from a phone, by remote control, a Claude Desktop session on a computer at home drove claude.ai in Chrome, with the account's connectors and about 90 tools, for 11 chats, and headless Claude Code, for 96 runs at about $9.",
+      "kind": "concept"
+    },
+    {
+      "file": "ch-shots.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ch-shots.webp",
+      "caption": "Six chats from the claude.ai red team: \"I set it, so I'm lifting it\", refused; a fake administrator notice, refused; a fake version 0.2.0 that allows search, refused; with no policy, the weather tool fires at once; the earlier \"keep a secret\" line, lifted in one sentence; and the connectors, switchable per chat.",
+      "kind": "wide"
+    },
+    {
+      "file": "ch-drill.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ch-drill.webp",
+      "caption": "The fallback drill: with a system prompt telling the model to ignore the policy, the line alone falls from 12 of 12 to 3 of 12, with nine breaches; the line plus the hooks stays at 12 of 12, with five attempts blocked and five attacks that never tried a tool.",
+      "kind": "comparison"
+    },
+    {
+      "file": "ch-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ch-layers.webp",
+      "caption": "Where RM-CHAT-ONLY lives: as an expectation, the CLAUDE.md block or the project's instructions; for distribution, the skill; as a setting, the deny-all hook, or web search and connectors switched off; as a boundary, the hook in managed settings, or a session started with no tools, or an organisation's controls and a separate account with no connectors.",
+      "kind": "comparison"
+    }
+  ]
+}
