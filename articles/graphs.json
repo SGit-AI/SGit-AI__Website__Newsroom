@@ -55,6 +55,212 @@
   ],
   "articles": [
     {
+      "slug": "who-maintains-the-php-you-run",
+      "title": "Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code",
+      "date": "2026-10-23",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-maintains-the-php-you-run.webp",
+      "teaser": "A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code.",
+      "topics": [
+        "startups-and-strategy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "open-source",
+        "php2shell",
+        "business-models",
+        "maintainers",
+        "sovereignty",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "mk-both-ways.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mk-both-ways.webp",
+          "caption": "A market failing both ways: those who run open source budget for building and migrating and have no maintenance to buy; those in the middle, integrators, consultancies and platforms, win the contracts; those who know the code take donations and have no product to sell. The missing piece is a workflow for the first to buy maintenance from the last.",
+          "kind": "concept"
+        },
+        {
+          "file": "mk-vendors.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mk-vendors.webp",
+          "caption": "Who sold the fix for old PHP, and what flows back: the PHP security team published source backports for 7.4, 8.0 and 8.1 free; Zend by Perforce sold PHP LTS for 7.2 to 8.1 and is a Silver sponsor of the Foundation, with no revenue share stated; Canonical's Ubuntu Pro, TuxCare and HeroDevs sold subscriptions and are not shown as Foundation sponsors; Freexian sells PHP LTS for Debian with the packager's help.",
+          "kind": "comparison"
+        },
+        {
+          "file": "mk-services.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mk-services.webp",
+          "caption": "The services that should exist now: bring it back; a maintained build; patch on behalf; remove what is not used; the dependency register; the incident desk; and the endorsed partner, with a stated share of revenue flowing to the foundation, the line procurement can require.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "who-maintains-the-php-you-run",
+        "teaser": "A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code.",
+        "topics": [
+          "startups-and-strategy",
+          "news-and-evidence"
+        ],
+        "core_idea": "The open source maintenance market fails both ways: organisations running PHP cannot buy maintenance of what they run, and PHP's own experts have no product to sell, so the security team's free fixes were resold within a day with no stated share flowing back; the OpenJS revenue-sharing model shows another way, and seven services, starting with bringing switched-off sites back, should exist now.",
+        "nodes": [
+          {
+            "id": "questions",
+            "label": "Two questions",
+            "kind": "question",
+            "summary": "Does it matter, and who pays to maintain it?"
+          },
+          {
+            "id": "both",
+            "label": "A market failing both ways",
+            "kind": "claim",
+            "summary": "No maintenance to buy or to sell."
+          },
+          {
+            "id": "sponsor",
+            "label": "Sponsorship tiers",
+            "kind": "example",
+            "summary": "Logos and an advisory seat, from $12,000."
+          },
+          {
+            "id": "free",
+            "label": "The fix written free",
+            "kind": "example",
+            "summary": "Source backports for 7.4, 8.0, 8.1."
+          },
+          {
+            "id": "resold",
+            "label": "Resold within a day",
+            "kind": "example",
+            "summary": "Zend, Ubuntu Pro, TuxCare, HeroDevs."
+          },
+          {
+            "id": "openjs",
+            "label": "The OpenJS model",
+            "kind": "example",
+            "summary": "15% revenue share since 2024."
+          },
+          {
+            "id": "experts",
+            "label": "The experts",
+            "kind": "claim",
+            "summary": "No workflow to hire them for what you run."
+          },
+          {
+            "id": "services",
+            "label": "Seven services",
+            "kind": "method",
+            "summary": "Bring it back to the endorsed partner."
+          },
+          {
+            "id": "remove",
+            "label": "Remove what is not used",
+            "kind": "method",
+            "summary": "Why is that code there at all?"
+          },
+          {
+            "id": "register",
+            "label": "The dependency register",
+            "kind": "method",
+            "summary": "Dependency, usage, maintainability."
+          },
+          {
+            "id": "regulation",
+            "label": "Towards regulation",
+            "kind": "method",
+            "summary": "Procurement line items, the CRA."
+          },
+          {
+            "id": "beyond",
+            "label": "Not only PHP",
+            "kind": "concept",
+            "summary": "Node, Python and the rest."
+          }
+        ],
+        "edges": [
+          {
+            "from": "questions",
+            "to": "both",
+            "rel": "leads-to"
+          },
+          {
+            "from": "sponsor",
+            "to": "both",
+            "rel": "example-of"
+          },
+          {
+            "from": "free",
+            "to": "resold",
+            "rel": "leads-to"
+          },
+          {
+            "from": "resold",
+            "to": "both",
+            "rel": "example-of"
+          },
+          {
+            "from": "openjs",
+            "to": "both",
+            "rel": "answers"
+          },
+          {
+            "from": "experts",
+            "to": "services",
+            "rel": "leads-to"
+          },
+          {
+            "from": "remove",
+            "to": "services",
+            "rel": "example-of"
+          },
+          {
+            "from": "register",
+            "to": "services",
+            "rel": "example-of"
+          },
+          {
+            "from": "services",
+            "to": "regulation",
+            "rel": "leads-to"
+          },
+          {
+            "from": "beyond",
+            "to": "both",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-maintenance-deficit-with-evidence",
+            "application-behaviour-policies",
+            "the-code-you-do-not-ship",
+            "the-eyeballs-get-cheap"
+          ],
+          "pages": [],
+          "sites": [
+            "https://thephp.foundation/sponsor/",
+            "https://newsroom.sgit.ai/articles/open-source-is-not-free.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The money is not missing. The market is failing on both sides.",
+            "why": "A market failing both ways."
+          },
+          {
+            "text": "The cheapest patch is the code that is not there.",
+            "why": "Remove what is not used."
+          },
+          {
+            "text": "The patches were written by a small team, mostly funded by donations, and resold.",
+            "why": "What happened to the old versions."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-maintenance-deficit-with-evidence",
       "title": "The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data",
       "date": "2026-10-23",
@@ -81,7 +287,7 @@
         {
           "file": "dw-built-on-volunteers.webp",
           "url": "https://newsroom.sgit.ai/articles/images/dw-built-on-volunteers.webp",
-          "caption": "\"Built on volunteers: €108 million for the building, €112,000 for the foundation.\" Dion Wiggins' illustration for his article: a building labelled Digital Sovereignty, lifted by a crane carrying the €108 million contract, resting on a cracked column of PHP, OpenSSL, curl, FFmpeg, libxml2, core-js and pgBackRest, held up by volunteers, beside a jar of $730,534 from 536 donors and a sign saying 11 part-time engineers on duty, while an official with binoculars holds a €2 billion, seven-year sovereignty package. Reused from his public post, with credit.",
+          "caption": "\"Built on volunteers: €108 million for the building, €112,000 for the foundation.\" Dion Wiggins' illustration for the article: a building labelled Digital Sovereignty, lifted by a crane carrying the €108 million contract, resting on a cracked column of PHP, OpenSSL, curl, FFmpeg, libxml2, core-js and pgBackRest, held up by volunteers, beside a jar of $730,534 from 536 donors and a sign saying 11 part-time engineers on duty, while an official with binoculars holds a €2 billion, seven-year sovereignty package. Reused from Dion's public post, with credit.",
           "kind": "wide"
         },
         {

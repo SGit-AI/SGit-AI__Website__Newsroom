@@ -14,13 +14,41 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-264 of 264 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+265 of 265 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-264 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 4 articles not yet linked either way.
+265 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 5 articles not yet linked either way.
+
+## [Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](who-maintains-the-php-you-run.md)
+
+2026-10-23 · Startups & strategyNews & evidence
+
+The open source maintenance market fails both ways: organisations running PHP cannot buy maintenance of what they run, and PHP's own experts have no product to sell, so the security team's free fixes were resold within a day with no stated share flowing back; the OpenJS revenue-sharing model shows another way, and seven services, starting with bringing switched-off sites back, should exist now.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**12 nodes, 10 edges**
+
+- **Two questions** (question) Does it matter, and who pays to maintain it?
+- **A market failing both ways** (claim) No maintenance to buy or to sell.
+- **Sponsorship tiers** (example) Logos and an advisory seat, from $12,000.
+- **The fix written free** (example) Source backports for 7.4, 8.0, 8.1.
+- **Resold within a day** (example) Zend, Ubuntu Pro, TuxCare, HeroDevs.
+- **The OpenJS model** (example) 15% revenue share since 2024.
+- **The experts** (claim) No workflow to hire them for what you run.
+- **Seven services** (method) Bring it back to the endorsed partner.
+- **Remove what is not used** (method) Why is that code there at all?
+- **The dependency register** (method) Dependency, usage, maintainability.
+- **Towards regulation** (method) Procurement line items, the CRA.
+- **Not only PHP** (concept) Node, Python and the rest.
+
+> The money is not missing. The market is failing on both sides. A market failing both ways.
+
+> The cheapest patch is the code that is not there. Remove what is not used.
 
 ## [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](the-maintenance-deficit-with-evidence.md)
 

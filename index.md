@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.53 · 264 articles since 2026-08-17; the newest is 2026-10-23. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.54 · 265 articles since 2026-08-17; the newest is 2026-10-23. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min. Dion Wiggins' maintenance deficit ratio, checked, with the PHP story's evidence, and why open source's business model pays the wrong layer.
+- [Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min. A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code.
 
 ## Highlights
 
+- [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 - [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 17 min.
 - [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
 - [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 15 min.
-- [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](articles/capture-first.md), 2026-10-22, 13 min.
 
 ## Who are you reading as?
 
@@ -56,11 +56,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
 - [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 
-### Strategy & startups (49)
+### Strategy & startups (50)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min.
 - [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 - [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](articles/the-delegation-record.md), 2026-10-22, 8 min.
-- [Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes](articles/approved-business-mandates.md), 2026-10-21, 10 min.
 
 ## Collections
 
