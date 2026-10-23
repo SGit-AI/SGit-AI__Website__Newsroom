@@ -14,15 +14,43 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-265 of 265 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+266 of 266 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-265 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 5 articles not yet linked either way.
+266 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 6 articles not yet linked either way.
 
-## [Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](who-maintains-the-php-you-run.md)
+## [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](the-false-positives-are-the-next-incident.md)
+
+2026-10-23 · News & evidence
+
+Most php2shell scanners read the version string, which cannot see a distribution's backported fix, so patched servers are reported vulnerable; the noise is already in bulk while the compromise map holds no named victim, so the false positives, and the sites switched off because of them, are an incident of their own.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**12 nodes, 10 edges**
+
+- **Jeremiah Grossman's warning** (claim) Makeshift scanners' false positives will be apocalyptic.
+- **No company named as hit** (claim) My reply: no public record, as of the night before.
+- **Version checks** (method) Read the banner and compare with the fixed release.
+- **Distribution backports** (concept) Fixed package, old upstream number.
+- **Ubuntu 8.5.4-0ubuntu1.5** (example) Patched, reported vulnerable by a check script.
+- **Producing the fault** (method) Try the trigger, read the response.
+- **53 templated notices** (example) One account, each saying it may be a false positive.
+- **The rule that never fired** (example) A ModSecurity rule withdrawn by its author.
+- **The compromise map** (artefact) Millions of attempts, zero named via php2shell.
+- **The noise as an incident** (claim) Patched sites switched off on a scanner's word.
+- **The lab test** (method) Public scanners against patched and unpatched PHP.
+- **Ask how it decides** (method) Check the package, not the banner.
+
+> A false positive in one scanner is a bug. A false positive sent to many people at once is noise, and it scales. The noise is already in bulk.
+
+> The problem is that the people downstream act on the first version. Detection rules fail in both directions.
+
+## [Who maintains the PHP you run? A follow-up to the maintenance deficit: a market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](who-maintains-the-php-you-run.md)
 
 2026-10-23 · Startups & strategyNews & evidence
 

@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 926 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 617 | 2825 | links to sgit.ai's pages and the network sites (24 files this site writes itself) |
-| words | 1265 | 8712 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 929 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 619 | 2828 | links to sgit.ai's pages and the network sites (24 files this site writes itself) |
+| words | 1268 | 8720 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 66 | 156 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 522 × `sgit.ai/about/index.html`
-- 260 × `sgit.ai/about/index.md`
+- 524 × `sgit.ai/about/index.html`
+- 261 × `sgit.ai/about/index.md`
 - 130 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 37 × `graphs.sgit.ai/`

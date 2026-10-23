@@ -1,0 +1,94 @@
+{
+ "slug": "the-false-positives-are-the-next-incident",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 193,
+   "line": "Jeremiah Grossman warned php2shell scanner false positives would be apocalyptic; a day later the evidence shows why.",
+   "para": "Most scanners read the version string, which misses backports; a check script already called Ubuntu's patched PHP vulnerable. 53 templated notices came from one account; a ModSecurity rule was withdrawn because it never fired. The compromise map holds no named victim. With loud noise and a quiet signal, switching patched sites off on a scanner's word is an incident of its own.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 118,
+   "line": "Seven lines: the warning is right, version checks, a reported false positive, bulk noise, rules, quiet signal, what to do.",
+   "para": "Jeremiah Grossman's warning holds. A scanner maker says most scanners read the version string, which cannot see backports, and that exact error has been reported. Noise is already in bulk: 53 templated issues, 62 false-positive issues. Detection rules fail both ways. Millions of attempts, no named victim. Ask how a scanner decides, and check the package, not the banner.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "the-post",
+   "label": "The post, and my reply",
+   "words": 174,
+   "line": "The post, my reply, and why the two belong together; the scanner-noise angle and its twelve captured pages.",
+   "para": "Jeremiah Grossman posted on 22 October that makeshift scanners' false positives would be apocalyptic. I replied that there was no public record of a company being hit. Both are true: when confirmed damage is small and fear large, organisations act on their tools. The PHP story's researcher made it a research angle, with twelve captured pages by 12:40 UTC on 23 October.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "version-strings",
+   "label": "Why a version check gets it wrong",
+   "words": 249,
+   "line": "A version check cannot see a backported fix: Ubuntu's patched 8.5.4-0ubuntu1.5 reads as vulnerable.",
+   "para": "A scanner either reads the advertised version or tries to produce the fault. Distributions backport fixes without changing the upstream number, so Ubuntu's fixed package still says 8.5.4, below 8.5.12. Searchlight Cyber says most scanners rely on version checks; an issue on php2shell-check reports exactly that error against Ubuntu's patched package.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "bulk",
+   "label": "The noise is already in bulk",
+   "words": 184,
+   "line": "The noise scales: 53 templated notices from one account, 62 false-positive issues, 10 nuclei-templates issues.",
+   "para": "One account opened 53 templated heads-up issues, including on training and deliberately vulnerable repositories; the template says it may itself be a false positive. A GitHub search finds 62 issues for php2shell false positive. nuclei-templates has 10 issues and two merged fixes. Counts are rough and move; the direction matters more.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "detection",
+   "label": "Detection rules fail in both directions",
+   "words": 248,
+   "line": "Detection rules fail both ways: a withdrawn ModSecurity rule, a zero-false-positive claim, and the limits vendors state.",
+   "para": "A detection gist withdrew a ModSecurity rule that never fired on multipart requests, and claims its replacement has zero false positives, a claim to test. Cloudflare says the origin's response helps separate success from noise; Equixly, citing Huntress, says host detections need a baseline. The Core Rule Set has an open signature request.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "signal",
+   "label": "A quiet signal under a loud alarm",
+   "words": 231,
+   "line": "Millions of attempts and no named victim: false positives drive shutdowns, an incident of their own.",
+   "para": "On 22 October the compromise map held millions of attempts, three vendors reporting exploitation without a victim, one organisation attacked and none saying php2shell was the way in. When nobody can quickly say a site is safe, a scanner's red line decides, and patched sites go offline. The cost of the noise can exceed the visible attacks.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "what-to-do",
+   "label": "What to do with a scanner's answer",
+   "words": 152,
+   "line": "Ask how a scanner decides, check the package not the banner, and write down why before switching off.",
+   "para": "A version-based vulnerable means an old upstream number. On distribution installs, check the package version and changelog for both CVEs, and the PHP serving web requests. Prefer checks that produce the fault, with permission. A scanner's word is a reason to look, not to remove a service. Scanner makers should state their method on every result.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "lab",
+   "label": "What would settle it",
+   "words": 132,
+   "line": "A lab test of public scanners against patched and unpatched PHP would turn reports into measurements.",
+   "para": "The PHP story's board holds a lab test waiting for my go: run public scanners against a distribution-patched and an unpatched PHP in an isolated lab, and record which get each right. It tests tools, never anyone's systems. The watch meanwhile tracks issue searches, notices and Hacker News; Reddit, X, Bluesky and LinkedIn need an external collector.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 119,
+   "line": "What this does not claim: reports are one account, counts move, nobody private named, evidence not risk.",
+   "para": "A false-positive report is one person's account, not a verdict. Search counts are what the page showed and move. No private people are named. The angle maps evidence, not risk. The absence of a named victim is time-bounded. No cost of the noise has been measured; that it can exceed visible attacks is an argument.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 103,
+   "line": "Jeremiah Grossman's post, the PHP story's brief and source watch, Konfirmity's advisory and the compromise map.",
+   "para": "The post and my screenshot of it; the scanner-noise brief and its twelve captured pages in the source watch, from Help Net Security, Digital Today, GitHub, a detection gist, Cloudflare, Equixly, the Core Rule Set and nuclei-templates; Konfirmity for Ubuntu's fixed package; the compromise map. Written up and checked by newsroom.writer.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

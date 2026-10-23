@@ -73,8 +73,35 @@
   ],
   "articles": [
     {
+      "slug": "the-false-positives-are-the-next-incident",
+      "title": "The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later",
+      "date": "2026-10-23",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/the-false-positives-are-the-next-incident.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-false-positives-are-the-next-incident.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-false-positives-are-the-next-incident.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/the-false-positives-are-the-next-incident.json",
+      "teaser": "Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later: loud noise, a quiet signal.",
+      "summary": "On the evening of 22 October, Jeremiah Grossman wrote on LinkedIn that \"the false-positives for php2shell from makeshift scanners is what's going to be apocalyptic\". I replied that, as of the night before, there was no public record of a company being hit. Both things are true, and the data the PHP story's source watch captured by midday on 23 October shows why they belong together. One scanner maker says most scanners in circulation read the version string, and a version string cannot see a distribution's backported fix: one user has already reported a check script calling Ubuntu's patched PHP vulnerable. One account opened 53 templated \"heads up\" issues, each saying it may itself be a false positive. A detection guide withdrew its own ModSecurity rule because it never fired. Against that, the compromise map holds millions of attempts and no named organisation saying php2shell was the way in. When the noise is this loud and the confirmed signal this quiet, the false positives are not a side effect: they are what organisations act on, and switching a patched site off because a makeshift scanner said so is an incident of its own.",
+      "topics": [
+        "news-and-evidence"
+      ],
+      "tags": [
+        "php2shell",
+        "scanners",
+        "false-positives",
+        "detection",
+        "evidence",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "who-maintains-the-php-you-run",
-      "title": "Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code",
+      "title": "Who maintains the PHP you run? A follow-up to the maintenance deficit: a market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code",
       "date": "2026-10-23",
       "updated": "",
       "author": "Dinis Cruz",
@@ -83,7 +110,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/who-maintains-the-php-you-run.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/who-maintains-the-php-you-run.json",
       "teaser": "A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code.",
-      "summary": "php2shell asks every organisation that switched a website off one of two questions. Either the site does not matter, and it can stay off. Or it matters, there is a real cost to it being down, and somebody has to pay to keep it maintained. Today almost nobody is paying, and that is not because the money is missing; it is because the market is failing both ways. The organisations that run PHP have no maintenance of exactly what they run to buy. The people who know PHP best, its core developers and the people around its foundation, have no product to sell them: the foundation sells sponsorship tiers, and its packager for Debian and Ubuntu does it \"mostly in my free time\". When the flaws landed, the PHP security team wrote the fixes and published source backports for old versions for free, and vendors sold builds of those fixes within a day, with no stated share flowing back. One model shows it can be different: since 2024 the OpenJS Foundation has endorsed a vendor that shares 15% of its revenue with the projects it supports. So here are the services I think should exist now, starting with bringing the switched-off sites back, and the rules that would make the money flow to the people who maintain the code. This is not about leaving open source; it is about fixing its economics, for PHP first, then Node, Python and the rest.",
+      "summary": "A follow-up to the maintenance deficit, with evidence, which followed the money spent on top of PHP; this one follows what should be bought instead. php2shell asks every organisation that switched a website off one of two questions. Either the site does not matter, and it can stay off. Or it matters, there is a real cost to it being down, and somebody has to pay to keep it maintained. Today almost nobody is paying, and that is not because the money is missing; it is because the market is failing both ways. The organisations that run PHP have no maintenance of exactly what they run to buy. The people who know PHP best, its core developers and the people around its foundation, have no product to sell them: the foundation sells sponsorship tiers, and its packager for Debian and Ubuntu does it \"mostly in my free time\". When the flaws landed, the PHP security team wrote the fixes and published source backports for old versions for free, and vendors sold builds of those fixes within a day, with no stated share flowing back. One model shows it can be different: since 2024 the OpenJS Foundation has endorsed a vendor that shares 15% of its revenue with the projects it supports. So here are the services I think should exist now, starting with bringing the switched-off sites back, and the rules that would make the money flow to the people who maintain the code. This is not about leaving open source; it is about fixing its economics, for PHP first, then Node, Python and the rest.",
       "topics": [
         "startups-and-strategy",
         "news-and-evidence"

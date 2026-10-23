@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.54 · 265 articles since 2026-08-17; the newest is 2026-10-23. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.55 · 266 articles since 2026-08-17; the newest is 2026-10-23. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min. A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code.
+- [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min. Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later: loud noise, a quiet signal.
 
 ## Highlights
 
+- [Who maintains the PHP you run? A follow-up to the maintenance deficit: a market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min.
 - [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 - [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 17 min.
 - [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
-- [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 15 min.
 
 ## Who are you reading as?
 
@@ -44,11 +44,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](articles/where-a-check-runs.md), 2026-10-22, 8 min.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](articles/answering-a-draft.md), 2026-10-21, 8 min.
 
-### Vaults & provenance (56)
+### Vaults & provenance (57)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
 - [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 15 min.
 - [Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it](articles/capture-first.md), 2026-10-22, 13 min.
-- [The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed](articles/the-reading-account-as-built.md), 2026-10-21, 4 min.
 
 ### The future of news (41)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
@@ -58,7 +58,7 @@ For editors, journalists and publishers asking how news gets paid for when agent
 
 ### Strategy & startups (50)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [Who maintains the PHP you run? A market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min.
+- [Who maintains the PHP you run? A follow-up to the maintenance deficit: a market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min.
 - [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 - [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](articles/the-delegation-record.md), 2026-10-22, 8 min.
 
