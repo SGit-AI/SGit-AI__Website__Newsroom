@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-23 | published | 2,283 | first published | this release | [current](../the-maintenance-deficit-with-evidence.md) |
+| **v1.0.0** | 2026-10-23 | published | 2,283 | first published | [`f5c74c22f`](https://github.com/SGit-AI/SGit-AI__Website/commit/f5c74c22f31f55b0fa004b8ab5636c6f0954d614) | [current](../the-maintenance-deficit-with-evidence.md) |
 
 [← Back to the article](../the-maintenance-deficit-with-evidence.md) · [All articles](../index.md)
 

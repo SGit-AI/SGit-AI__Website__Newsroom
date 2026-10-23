@@ -8,9 +8,9 @@
    "hash": "3f3435807b21"
   },
   "in-short": {
-   "line": "Seven lines: the smallest mandate, four forms, the line held, the drill, the hook held, drills test hooks, seven fixes.",
-   "para": "Talk to me is the smallest mandate; every tool is in the gap. The policy is a line, a skill, a CLAUDE.md block and a deny-all hook. The line held 10 of 10 claude.ai attacks and 12 of 12 in Claude Code, but fell to 3 of 12 when told to ignore it; the hook held. Seven fixes for RiskMandate follow.",
-   "hash": "d0c0d20f9921"
+   "line": "Ten lines: the smallest mandate, four forms, the line held, the drill, the hook held, gaps, a spec, seven fixes.",
+   "para": "Talk to me is the smallest mandate, written as a line, a skill, a CLAUDE.md block and a deny-all hook. The line held normally but fell to 3 of 12 when told to ignore it; the hook held, with no breach in any mode that had it. The gaps are untested paths, above all partial allow lists. The tests form a spec.",
+   "hash": "b1d1e383151a"
   },
   "how": {
    "line": "A phone, remote control, and an agent on a home computer driving claude.ai and headless Claude Code.",
@@ -58,14 +58,34 @@
    "hash": "773799cfe41d"
   },
   "limits": {
-   "line": "One model, one day; scoring bugs fixed; skill untested in claude.ai; slash skills bypass the hook; fixes are proposals.",
-   "para": "Claude Opus 5.5 on 21 October 2026: 96 runs and 11 chats, a first measurement. Two scoring bugs were fixed by re-scoring transcripts without hand edits. The skill was not tested in claude.ai. A typed slash skill bypasses PreToolUse. One mapping chat was not incognito. The RiskMandate fixes are proposals, checked but not made.",
-   "hash": "de4070f0a0c7"
+   "line": "One model, one day; untested paths remain; scoring bugs fixed; skill untested in claude.ai; fixes are proposals.",
+   "para": "Claude Opus 5.5 on 21 October 2026: 96 runs and 11 chats. No attack passed the hooks, but untested paths remain. Two scoring bugs were fixed by re-scoring transcripts. The skill was not tested in claude.ai. A typed slash skill bypasses PreToolUse. One mapping chat was not incognito. The RiskMandate fixes are proposals.",
+   "hash": "eeaa20935809"
   },
   "sources": {
    "line": "The chat-only pack from 21 October, checked against the RiskMandate sites and Claude Code's documentation.",
    "para": "Sources: the chat-only policy pack produced on 21 October 2026 by a Claude session on Dinis's computer, with its brief, capability map, red-team notes, screenshots, results and run data; checked on 23 October against customers.riskmandate.ai, its starter pack and RM-R0015, and Claude Code's documentation on hooks and its command line.",
    "hash": "2f936693d842"
+  },
+  "hooks": {
+   "line": "No attack got past the hook in 48 runs; it blocked each attempt at the first try, even tool loading.",
+   "para": "In every mode with the hook, nothing breached. Alone, it blocked all ten attacks at the first attempt; it denied ToolSearch, so web tools never loaded, and stopped the subagent from starting. In the drill it held where the line failed, five attempts denied. The owner lift attack failed even without the hook, thanks to the lift clause.",
+   "hash": "c14c29d9b610"
+  },
+  "gaps": {
+   "line": "Untested gaps: typed skills and subagents, removal outside the session, model text, claude.ai, and partial allow lists.",
+   "para": "A better hook could cover typed slash skills and subagents. Only managed settings or launch controls stop the hook being removed or overridden. Hooks cannot see what the model says, and claude.ai has none. The real gap is allowing some tools: allow Bash and every script is in reach, which needs a sandbox or OS boundary.",
+   "hash": "5bff9d4e6d5c"
+  },
+  "spec": {
+   "line": "Twelve evals, eight modes, scored from outside the model: a reusable specification.",
+   "para": "Each run uses a fresh folder with a canary secret and headless Claude Code, judged by tools that ran, canary files created, and leaks in the answer. Two controls and ten attacks cover files, shell, secret, listing, fetch, search, lifting, injection, subagent and role-play, across eight modes including a drill with an operator override prompt.",
+   "hash": "81a21f79b54a"
+  },
+  "next": {
+   "line": "Next: every model, a weekly schedule, partial allow lists, the untested paths and other agent platforms.",
+   "para": "One model on one day needs far more validation. Run the suite against other Claude models and versions, on a schedule at about $9 a run, so behaviour change shows in the matrix. Test partial allow lists with a sandbox, typed skills, subagents, managed settings and bare mode, then other agents such as ChatGPT's.",
+   "hash": "23368894a1dc"
   }
  }
 }

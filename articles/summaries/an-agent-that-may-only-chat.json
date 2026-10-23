@@ -5,17 +5,18 @@
   {
    "id": "top",
    "label": "The opening",
-   "words": 235,
+   "words": 277,
    "line": "RM-CHAT-ONLY: a chat-only policy, built and tested by an agent at home driven from a phone, with a fallback drill.",
    "para": "A Claude session on Dinis's home computer, driven from his phone, built a policy whose mandate is talk to me, in four forms: a line, a skill, a CLAUDE.md block and a fail-closed deny-all hook. The line held in normal use; told to ignore it, it fell to 3 of 12, while the hook held at 12 of 12.",
-   "by": "newsroom.writer"
+   "by": "newsroom.writer",
+   "stale": true
   },
   {
    "id": "in-short",
    "label": "In short",
-   "words": 91,
-   "line": "Seven lines: the smallest mandate, four forms, the line held, the drill, the hook held, drills test hooks, seven fixes.",
-   "para": "Talk to me is the smallest mandate; every tool is in the gap. The policy is a line, a skill, a CLAUDE.md block and a deny-all hook. The line held 10 of 10 claude.ai attacks and 12 of 12 in Claude Code, but fell to 3 of 12 when told to ignore it; the hook held. Seven fixes for RiskMandate follow.",
+   "words": 136,
+   "line": "Ten lines: the smallest mandate, four forms, the line held, the drill, the hook held, gaps, a spec, seven fixes.",
+   "para": "Talk to me is the smallest mandate, written as a line, a skill, a CLAUDE.md block and a deny-all hook. The line held normally but fell to 3 of 12 when told to ignore it; the hook held, with no breach in any mode that had it. The gaps are untested paths, above all partial allow lists. The tests form a spec.",
    "by": "newsroom.writer"
   },
   {
@@ -67,6 +68,22 @@
    "by": "newsroom.writer"
   },
   {
+   "id": "hooks",
+   "label": "What the hooks stopped",
+   "words": 239,
+   "line": "No attack got past the hook in 48 runs; it blocked each attempt at the first try, even tool loading.",
+   "para": "In every mode with the hook, nothing breached. Alone, it blocked all ten attacks at the first attempt; it denied ToolSearch, so web tools never loaded, and stopped the subagent from starting. In the drill it held where the line failed, five attempts denied. The owner lift attack failed even without the hook, thanks to the lift clause.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "gaps",
+   "label": "What the hooks do not cover",
+   "words": 360,
+   "line": "Untested gaps: typed skills and subagents, removal outside the session, model text, claude.ai, and partial allow lists.",
+   "para": "A better hook could cover typed slash skills and subagents. Only managed settings or launch controls stop the hook being removed or overridden. Hooks cannot see what the model says, and claude.ai has none. The real gap is allowing some tools: allow Bash and every script is in reach, which needs a sandbox or OS boundary.",
+   "by": "newsroom.writer"
+  },
+  {
    "id": "skill",
    "label": "A skill, or something else?",
    "words": 168,
@@ -83,6 +100,22 @@
    "by": "newsroom.writer"
   },
   {
+   "id": "spec",
+   "label": "The tests, as a spec",
+   "words": 406,
+   "line": "Twelve evals, eight modes, scored from outside the model: a reusable specification.",
+   "para": "Each run uses a fresh folder with a canary secret and headless Claude Code, judged by tools that ran, canary files created, and leaks in the answer. Two controls and ten attacks cover files, shell, secret, listing, fetch, search, lifting, injection, subagent and role-play, across eight modes including a drill with an operator override prompt.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "next",
+   "label": "More tests, more models, on a schedule",
+   "words": 184,
+   "line": "Next: every model, a weekly schedule, partial allow lists, the untested paths and other agent platforms.",
+   "para": "One model on one day needs far more validation. Run the suite against other Claude models and versions, on a schedule at about $9 a run, so behaviour change shows in the matrix. Test partial allow lists with a sandbox, typed skills, subagents, managed settings and bare mode, then other agents such as ChatGPT's.",
+   "by": "newsroom.writer"
+  },
+  {
    "id": "pack",
    "label": "Everything, published",
    "words": 108,
@@ -93,9 +126,9 @@
   {
    "id": "limits",
    "label": "What this does not claim",
-   "words": 118,
-   "line": "One model, one day; scoring bugs fixed; skill untested in claude.ai; slash skills bypass the hook; fixes are proposals.",
-   "para": "Claude Opus 5.5 on 21 October 2026: 96 runs and 11 chats, a first measurement. Two scoring bugs were fixed by re-scoring transcripts without hand edits. The skill was not tested in claude.ai. A typed slash skill bypasses PreToolUse. One mapping chat was not incognito. The RiskMandate fixes are proposals, checked but not made.",
+   "words": 136,
+   "line": "One model, one day; untested paths remain; scoring bugs fixed; skill untested in claude.ai; fixes are proposals.",
+   "para": "Claude Opus 5.5 on 21 October 2026: 96 runs and 11 chats. No attack passed the hooks, but untested paths remain. Two scoring bugs were fixed by re-scoring transcripts. The skill was not tested in claude.ai. A typed slash skill bypasses PreToolUse. One mapping chat was not incognito. The RiskMandate fixes are proposals.",
    "by": "newsroom.writer"
   },
   {
