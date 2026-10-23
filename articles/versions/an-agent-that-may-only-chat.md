@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-23 | published | 2,808 | first published | this release | [current](../an-agent-that-may-only-chat.md) |
+| **v1.0.0** | 2026-10-23 | published | 2,808 | first published | [`f18455477`](https://github.com/SGit-AI/SGit-AI__Website/commit/f18455477de46f188edd45bc8ffc49f9b11c4228) | [current](../an-agent-that-may-only-chat.md) |
 
 [← Back to the article](../an-agent-that-may-only-chat.md) · [All articles](../index.md)
 

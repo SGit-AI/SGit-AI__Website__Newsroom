@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 920 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 613 | 2746 | links to sgit.ai's pages and the network sites (24 files this site writes itself) |
-| words | 1258 | 8684 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 923 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 615 | 2749 | links to sgit.ai's pages and the network sites (24 files this site writes itself) |
+| words | 1261 | 8699 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 66 | 156 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 517 × `sgit.ai/about/index.html`
-- 258 × `sgit.ai/about/index.md`
+- 519 × `sgit.ai/about/index.html`
+- 259 × `sgit.ai/about/index.md`
 - 126 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 37 × `graphs.sgit.ai/`
@@ -35,12 +35,12 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 18 × `sgit.ai/skills/index.html`
 - 17 × `nhi.sgit.ai/`
 - 16 × `graphs.sgit.ai/v2/books/index.html`
-- 16 × `sgit.ai/docs/index.html`
 - 16 × `sgit.ai/demos/fractal-graphs/index.html`
+- 16 × `sgit.ai/docs/index.html`
 - 16 × `sgit.ai/compare/index.html`
 - 15 × `sgit.ai/docs/guidance/index.html`
-- 15 × `sgit.ai/docs/surfaces.html`
 - 15 × `sgit.ai/demos/vaults/code-review-graphs/index.html`
+- 15 × `sgit.ai/docs/surfaces.html`
 - 14 × `sgit.ai/docs/vault/sub-vaults.html`
 - 14 × `sgit.ai/docs/pki.md`
 - 14 × `sgit.ai/demos/vaults/hope-or-enforcement/index.html`
@@ -94,7 +94,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/019.html` (18)
 - `engineering/issues/022.html` (18)
 - `articles/ids.json` (17)
-- `desks/vaults.html` (17)
 - `engineering/issues/020.html` (17)
 - `llms.txt` (17)
 - `README.md` (16)
@@ -103,6 +102,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.13.16.html` (15)
 - `admin/build/validate.js` (14)
 - `admin/notes/2026-10-12__what-the-new-articles-ask.md` (14)
+- `desks/vaults.html` (14)
 - `engineering/releases/v0.12.145.html` (14)
 - `engineering/releases/v0.12.2.html` (13)
 - `admin/notes/2026-10-18__a-directory-of-people-and-keys.md` (12)
@@ -112,12 +112,13 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.5.html` (12)
 - `engineering/releases/v0.12.65.html` (12)
 - `admin/notes/2026-10-11__newsroom-api-map-and-review.md` (11)
+- `desks/building.html` (11)
 - `admin/build/newsroom-text.json` (10)
 - `articles/find.json` (10)
 - `articles/summaries/aws-from-the-vault.json` (10)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
-- `desks/building.html` (8)
+- `desks/security.html` (8)
 - `engineering/releases/v0.12.10.html` (8)
 - `engineering/releases/v0.12.25.html` (8)
 - `engineering/releases/v0.12.49.html` (8)
@@ -142,4 +143,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/079.html` (6)
 - `engineering/issues/085.html` (6)
 - `engineering/releases/v0.12.114.html` (6)
-- `engineering/releases/v0.12.61.html` (6)

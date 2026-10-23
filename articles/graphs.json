@@ -55,6 +55,209 @@
   ],
   "articles": [
     {
+      "slug": "the-maintenance-deficit-with-evidence",
+      "title": "The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data",
+      "date": "2026-10-23",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-maintenance-deficit-with-evidence.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-maintenance-deficit-with-evidence.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-maintenance-deficit-with-evidence.webp",
+      "teaser": "Dion Wiggins' maintenance deficit ratio, checked, with the PHP story's evidence, and why open source's business model pays the wrong layer.",
+      "topics": [
+        "startups-and-strategy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "php2shell",
+        "open-source",
+        "sovereignty",
+        "funding",
+        "maintainers",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "dw-built-on-volunteers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dw-built-on-volunteers.webp",
+          "caption": "\"Built on volunteers: €108 million for the building, €112,000 for the foundation.\" Dion Wiggins' illustration for his article: a building labelled Digital Sovereignty, lifted by a crane carrying the €108 million contract, resting on a cracked column of PHP, OpenSSL, curl, FFmpeg, libxml2, core-js and pgBackRest, held up by volunteers, beside a jar of $730,534 from 536 donors and a sign saying 11 part-time engineers on duty, while an official with binoculars holds a €2 billion, seven-year sovereignty package. Reused from his public post, with credit.",
+          "kind": "wide"
+        },
+        {
+          "file": "dw-ratio.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dw-ratio.webp",
+          "caption": "The maintenance deficit ratio, checked: with Dion Wiggins' figures, 241 to 1; with the whole contract and the Sovereign Tech Agency's own page, 263 to 1; with the migration share alone, 179 to 1. Two orders of magnitude in every case.",
+          "kind": "comparison"
+        },
+        {
+          "file": "dw-inventory.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dw-inventory.webp",
+          "caption": "The Dutch NCSC's inventory of software that ships or depends on PHP: on 22 October at 15:28 UTC, 724 rows, 61 fixed, 216 vulnerable, 440 under investigation; on 23 October at 12:50 UTC, 751 rows, 109 fixed, 222 vulnerable, 389 under investigation, 30 not affected.",
+          "kind": "comparison"
+        },
+        {
+          "file": "dw-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dw-flow.webp",
+          "caption": "Where the money flows: Germany's €108 million contract over four years, Acquia sold for $1 billion, Automattic's reported revenue of over $700 million in 2024, the EU's €2 billion seven-year open source strategy and its €264 billion a year on proprietary IT; against the PHP Foundation's $730,534 from 536 donors, 11 to 13 developers, one security engineer for six months, €205,000 from the Sovereign Tech Agency, and one person packaging PHP for Debian and Ubuntu.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-maintenance-deficit-with-evidence",
+        "teaser": "Dion Wiggins' maintenance deficit ratio, checked, with the PHP story's evidence, and why open source's business model pays the wrong layer.",
+        "topics": [
+          "startups-and-strategy",
+          "news-and-evidence"
+        ],
+        "core_idea": "Dion Wiggins' maintenance deficit ratio for Germany and PHP holds at two orders of magnitude under every cut of the primary sources, and the PHP story's evidence two days on shows the gap in distribution and the absence of named compromise, because open source's business model pays integrators, platforms and hosts while maintainers and packagers sell nothing a buyer can buy, and AI has made discovery cheaper than fixing.",
+        "nodes": [
+          {
+            "id": "ratio",
+            "label": "The maintenance deficit ratio",
+            "kind": "concept",
+            "summary": "Migration spend over maintenance spend."
+          },
+          {
+            "id": "checked",
+            "label": "Checked: 179 to 263 to 1",
+            "kind": "claim",
+            "summary": "Two orders of magnitude, every cut."
+          },
+          {
+            "id": "stack",
+            "label": "The sovereignty stack",
+            "kind": "example",
+            "summary": "PHP, OpenSSL, curl, FFmpeg and more."
+          },
+          {
+            "id": "inventory",
+            "label": "109 of 751 fixed",
+            "kind": "example",
+            "summary": "The Dutch inventory, two days on."
+          },
+          {
+            "id": "compromise",
+            "label": "No named compromise",
+            "kind": "claim",
+            "summary": "As of 20:50 UTC, 22 October."
+          },
+          {
+            "id": "assessment",
+            "label": "An assessment in a day",
+            "kind": "example",
+            "summary": "Agents and an evidence vault."
+          },
+          {
+            "id": "model",
+            "label": "The wrong layer is paid",
+            "kind": "claim",
+            "summary": "Integrators and hosts, not maintainers."
+          },
+          {
+            "id": "ai",
+            "label": "Finding cheap, fixing scarce",
+            "kind": "claim",
+            "summary": "Discoverers outresource maintainers."
+          },
+          {
+            "id": "product",
+            "label": "Maintenance as the product",
+            "kind": "method",
+            "summary": "Scope, owner, service level."
+          },
+          {
+            "id": "source",
+            "label": "Paid at the source",
+            "kind": "method",
+            "summary": "Signed, timely builds."
+          },
+          {
+            "id": "measure",
+            "label": "Measure it everywhere",
+            "kind": "method",
+            "summary": "The ratio and each site's reach."
+          }
+        ],
+        "edges": [
+          {
+            "from": "checked",
+            "to": "ratio",
+            "rel": "answers"
+          },
+          {
+            "from": "stack",
+            "to": "ratio",
+            "rel": "example-of"
+          },
+          {
+            "from": "inventory",
+            "to": "model",
+            "rel": "example-of"
+          },
+          {
+            "from": "compromise",
+            "to": "assessment",
+            "rel": "produces"
+          },
+          {
+            "from": "model",
+            "to": "ai",
+            "rel": "extends"
+          },
+          {
+            "from": "product",
+            "to": "model",
+            "rel": "answers"
+          },
+          {
+            "from": "source",
+            "to": "model",
+            "rel": "answers"
+          },
+          {
+            "from": "measure",
+            "to": "ratio",
+            "rel": "extends"
+          },
+          {
+            "from": "assessment",
+            "to": "model",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-eyeballs-get-cheap",
+            "the-code-you-do-not-ship",
+            "free-to-copy-paid-at-the-source",
+            "application-behaviour-policies",
+            "php-october-at-8pm",
+            "a-desk-anyone-can-open"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/",
+            "https://www.linkedin.com/pulse/maintenance-deficit-governments-building-digital-nobody-dion-wiggins-zv7pf/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "That is not a funding gap; it is a missing product.",
+            "why": "Why this is a business model failure."
+          },
+          {
+            "text": "The capacity to understand an incident has become cheap. The capacity to fix the code has not.",
+            "why": "An assessment in a day."
+          },
+          {
+            "text": "The patch was the easy part.",
+            "why": "Two days on."
+          }
+        ]
+      }
+    },
+    {
       "slug": "an-agent-that-may-only-chat",
       "title": "An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone",
       "date": "2026-10-23",

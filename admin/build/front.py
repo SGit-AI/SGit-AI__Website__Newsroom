@@ -228,7 +228,7 @@ class Front:
         return (f'<section class="bf-block" aria-labelledby="bf-agents-h"><h2 class="bf-sec" id="bf-agents-h">From the agents</h2>'
                 f'<ul class="bf-coll">{li}</ul><p class="bf-more"><a href="agents/index.html">Written by the agents &rarr;</a></p></section>')
 
-    # ---- developing stories: one strip above all three views ----
+    # ---- developing stories: a strip in each view, after the broadsheet's masthead (v0.13.52, the editor's call) ----
     def _dev_items(self):
         out = []
         for d in self.developing_stories:
@@ -291,6 +291,7 @@ class Front:
   <p class="mast-line">{esc(m["line"])}</p>
   <p class="mast-meta">{esc(m["heart_note"])} <a href="about/index.html">Why this exists</a></p>
 </header>
+{self.developing()}
 <div class="bs-top">
   <article class="lead" aria-labelledby="bs-lead-h">
     <p class="kicker">{esc(lead["kicker"])}</p>
@@ -364,6 +365,7 @@ class Front:
         start = "".join(f'<li><span class="bf-num">{i + 1}</span><a href="{a["url"]}">{esc(a["head"])}</a><span class="muted">{mins(a["minutes"])}</span></li>' for i, a in enumerate(neutral["start"]))
         colls = "".join(f'<li><a href="articles/collections/{c["id"]}.html">{esc(c["title"])}</a><span class="muted">{len(c["articles"])}</span></li>' for c in self.wire["collections"])
         return f"""<section class="view bf" data-view="briefing" aria-label="Briefing">
+{self.developing()}
 <header class="bf-head">
   <p class="bf-brand"><b>{esc(m["title"])}</b> <span>{day_long(e["date"])}</span></p>
   <h1>{esc(self.front["briefing"]["title"])}</h1>
@@ -418,6 +420,7 @@ class Front:
             + "".join(f'<li><a href="{a["url"]}">{esc(a["head"])}</a></li>' for a in dk["articles"]) + '</ol></section>' for dk in desks)
         colls = "".join(f'<a class="pill tap" href="articles/collections/{c["id"]}.html">{esc(c["title"])} &middot; {len(c["articles"])}</a>' for c in self.wire["collections"])
         return f"""<section class="view dk" data-view="desk" aria-label="Your desk">
+{self.developing()}
 <header class="dk-hello">
   <p class="dk-date">{esc(m["title"])} &middot; {day_long(e["date"])}</p>
   <h1>{esc(self.front["doors_title"])}</h1>
@@ -523,7 +526,6 @@ class Front:
 <nav class="site"></nav>
 <main class="front-views" id="front">
 {self.switcher()}
-{self.developing()}
 {self.broadsheet()}
 {self.briefing()}
 {self.desk()}
