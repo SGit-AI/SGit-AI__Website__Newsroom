@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-266 of 266 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+267 of 267 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-266 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 6 articles not yet linked either way.
+267 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 7 articles not yet linked either way.
+
+## [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](almost-working.md)
+
+2026-10-23 · Agents & policyVaults & method
+
+The PHP story site is updated by three scheduled agents in a chain, from raw captures to curated evidence to the published site; because neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a secret, each agent session gets its vault key once by a QR handshake on pki.sgit.ai and is then woken on a schedule, a workflow that is almost working and is being built slowly, in its genesis stage.
+
+*[diagram]*
+**concept**claim**method**artefact**question
+
+**11 nodes, 9 edges**
+
+- **Updatability** (question) When did we last check, and can we prove nothing changed?
+- **The researcher** (artefact) Captures pages, raw, into the source watch.
+- **The curator** (artefact) Promotes what holds into the evidence vault.
+- **The journalist** (artefact) Updates the site and its versioned views.
+- **No identity, no secrets** (claim) Scheduled tasks and ChatGPT have no place for an agent's key.
+- **The QR handshake** (method) A session key, the root on pki.sgit.ai, one sealed QR image.
+- **A schedule wakes the session** (method) The same session, still holding its key.
+- **Feature and vulnerability** (claim) A session with a write key acting unattended.
+- **Control is the queue** (method) The schedule vault: schedules, tasks, run records.
+- **Almost working** (claim) Structure in place; runs not yet all recorded by the agents.
+- **Genesis** (concept) Built slowly by hand, then a product.
+
+> It is a slightly mad solution, and a lovely one. The handshake.
+
+> Collection is easy. Collection with an identity, a secret and a schedule is not. Where it broke.
 
 ## [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](the-false-positives-are-the-next-incident.md)
 

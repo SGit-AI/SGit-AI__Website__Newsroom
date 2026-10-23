@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-23 | minor | 2,553 | +366 / −278 words; 1 changed, 3 added, 2 removed paragraphs | this release | [what changed](who-maintains-the-php-you-run/v1.1.0.md) · [current](../who-maintains-the-php-you-run.md) |
+| **v1.1.0** | 2026-10-23 | minor | 2,553 | +366 / −278 words; 1 changed, 3 added, 2 removed paragraphs | [`e50452d9f`](https://github.com/SGit-AI/SGit-AI__Website/commit/e50452d9f6687e04f34bf22764904617086cc3c7) | [what changed](who-maintains-the-php-you-run/v1.1.0.md) · [current](../who-maintains-the-php-you-run.md) |
 | **v1.0.0** | 2026-10-23 | published | 2,471 | first published | [`02627ff76`](https://github.com/SGit-AI/SGit-AI__Website/commit/02627ff7603cca72a47e81b5a9ca02bf4a9b1b74) |  |
 
 [← Back to the article](../who-maintains-the-php-you-run.md) · [All articles](../index.md)

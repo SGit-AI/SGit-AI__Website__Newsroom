@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly, SGit Newsroom</title>
+<meta name="description" content="The PHP story site is now updated by three agents in a chain. A researcher follows the leads and captures pages, raw, into a large vault. A curator reads those captures and promotes what holds into a second, curated vault. A journalist reads that and updates the site, its numbers and its narrative. Each wakes on a schedule. Getting there took the better part of two days, with all the visibility and control I have, because the moment a workflow becomes mission critical every gap shows. The biggest gap was not the agents: neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a way to receive a secret. So we built one. A new agent session makes a key pair that lives only as long as the session, shows me its public key as a QR code, and I seal the vault key to it on pki.sgit.ai, signed by my root key. Then a schedule wakes that same session, which still holds the key. It is a slightly mad solution, and a lovely one. It is also not finished: on the evening of 23 October the researcher's passes are recorded, the curator has its key and its five wakes a day, and no agent has yet written its own run record. This is what it looks like to build something in its genesis stage, bit by bit, and why the next one will be much easier.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/almost-working.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/almost-working.html">
+<meta property="og:title" content="Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly, SGit Newsroom">
+<meta property="og:description" content="The PHP story site is now updated by three agents in a chain. A researcher follows the leads and captures pages, raw, into a large vault. A curator reads those captures and promotes what holds into a second, curated vault. A journalist reads that and updates the site, its numbers and its narrative. Each wakes on a schedule. Getting there took the better part of two days, with all the visibility and control I have, because the moment a workflow becomes mission critical every gap shows. The biggest gap was not the agents: neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a way to receive a secret. So we built one. A new agent session makes a key pair that lives only as long as the session, shows me its public key as a QR code, and I seal the vault key to it on pki.sgit.ai, signed by my root key. Then a schedule wakes that same session, which still holds the key. It is a slightly mad solution, and a lovely one. It is also not finished: on the evening of 23 October the researcher's passes are recorded, the curator has its key and its five wakes a day, and no agent has yet written its own run record. This is what it looks like to build something in its genesis stage, bit by bit, and why the next one will be much easier.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/almost-working.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/almost-working.jpg">
+<link rel="alternate" type="text/markdown" href="almost-working.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly, SGit Newsroom", "headline": "Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly, SGit Newsroom", "description": "The PHP story site is now updated by three agents in a chain. A researcher follows the leads and captures pages, raw, into a large vault. A curator reads those captures and promotes what holds into a second, curated vault. A journalist reads that and updates the site, its numbers and its narrative. Each wakes on a schedule. Getting there took the better part of two days, with all the visibility and control I have, because the moment a workflow becomes mission critical every gap shows. The biggest gap was not the agents: neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a way to receive a secret. So we built one. A new agent session makes a key pair that lives only as long as the session, shows me its public key as a QR code, and I seal the vault key to it on pki.sgit.ai, signed by my root key. Then a schedule wakes that same session, which still holds the key. It is a slightly mad solution, and a lovely one. It is also not finished: on the evening of 23 October the researcher's passes are recorded, the curator has its key and its five wakes a day, and no agent has yet written its own run record. This is what it looks like to build something in its genesis stage, bit by bit, and why the next one will be much easier.", "url": "https://newsroom.sgit.ai/articles/almost-working.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.56</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.56</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly</p>
+ <h1>Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-23 &middot; <a href="versions/almost-working.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.56</a> &middot; <span class="chip">agents</span><span class="chip">schedules</span><span class="chip">pki</span><span class="chip">qr</span><span class="chip">evidence</span><span class="chip">php2shell</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> The PHP story site is now updated by three agents in a chain. A researcher follows the leads and captures pages, raw, into a large vault. A curator reads those captures and promotes what holds into a second, curated vault. A journalist reads that and updates the site, its numbers and its narrative. Each wakes on a schedule. Getting there took the better part of two days, with all the visibility and control I have, because the moment a workflow becomes mission critical every gap shows. The biggest gap was not the agents: neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a way to receive a secret. So we built one. A new agent session makes a key pair that lives only as long as the session, shows me its public key as a QR code, and I seal the vault key to it on pki.sgit.ai, signed by my root key. Then a schedule wakes that same session, which still holds the key. It is a slightly mad solution, and a lovely one. It is also not finished: on the evening of 23 October the researcher's passes are recorded, the curator has its key and its five wakes a day, and no agent has yet written its own run record. This is what it looks like to build something in its genesis stage, bit by bit, and why the next one will be much easier.</em></p>
+<figure class="shot" data-shot="wk-pipeline.webp" data-dir="images/" data-alt="Three agents, three stores, one site: the researcher writes the source watch (oq9gflln, raw captures); the curator promotes what holds into the evidence vault (3ytzxm3g, 227 curated sources); the journalist updates the site from it. The schedule vault (weic8imn, public) records who runs, when, and what each run did." data-kind="architecture"><figcaption>Three agents, three stores, one site: the researcher writes the source watch (oq9gflln, raw captures); the curator promotes what holds into the evidence vault (3ytzxm3g, 227 curated sources); the journalist updates the site from it. The schedule vault (weic8imn, public) records who runs, when, and what each run did.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>Three agents in a chain.</b> A researcher captures, a curator curates, a journalist publishes.</li>
+<li><b>The hard part is updatability.</b> When did we last check, and can we prove that "nothing new" means nothing new?</li>
+<li><b>The platforms have no place for an agent's identity or secrets.</b> Claude's scheduled tasks and ChatGPT both fell short there.</li>
+<li><b>So each agent gets its key by QR handshake.</b> A session key, my root key on pki.sgit.ai, one sealed QR image.</li>
+<li><b>Then a schedule wakes the same session.</b> A feature in Claude, and a vulnerability too.</li>
+<li><b>It is almost working.</b> The structure is in place; the runs are not yet all recorded by the agents themselves.</li>
+<li><b>This is genesis.</b> Built slowly, bit by bit; next time it is a product.</li>
+</ul>
+<h2 id="slowly">Slowly, and bit by bit</h2>
+<p>I want to capture this workflow while it is still being built, because it is a good example of something I keep saying: this stuff has to be done slowly and bit by bit. I have a lot of visibility and control over these agents: every session is mine, every vault is mine, every rule is written down and checked. And it has still taken the better part of two days to set up. Not because any one piece is hard, but because the workflow became mission critical while we were building it. The PHP story site makes public statements about a live security event, and every one of them needs to be current, or say how old it is.</p>
+<p>In Wardley mapping terms this is the genesis stage. Nobody sells "a newsroom of scheduled agents with their own keys" as a product. We are building it by hand, discovering what it needs as we go, and writing each discovery down as a brief. That is the right way to build something new: custom first, with all the mess that implies, so that the next time it is a set of prompts, a vault layout and a handshake we already know work.</p>
+<h2 id="updatability">The problem: updatability</h2>
+<p>The problem space is simple to state. How do we get new sources? How do we get new material into the evidence? How do we get the updates onto the website? The PHP site makes a lot of statements: how many sites are dark, which products are fixed, whether anyone has been compromised. Each of those statements is only as good as the last time someone checked it.</p>
+<p>In this kind of event, non-updates matter too. "No named organisation has said it was compromised through php2shell" is one of the most important lines on the site, and it is <a href="https://php.oct.2026.newsroom.sgit.ai/compromise/">a time-bounded absence</a>: true as of the last check, and ended by one statement from one organisation. You can only say "nothing changed" if you have the data to show you looked. So the site now carries a last-checked stamp, the newest of the evidence vault's latest capture, the source watch's latest run and the latest read of the Dutch NCSC's inventory, each with its time. And that stamp is only honest if something keeps checking.</p>
+<h2 id="three-agents">Three agents, three stores</h2>
+<p>We arrived at this organically, which is why it took a while. There are other agents on the team, but these three carry the work. One correction to how I described it in my memo: I had the two vault names the other way round. The large, raw vault is the source watch; the evidence vault is the curated one.</p>
+<ul>
+<li><b>The researcher</b> (researcher@php.newsroom) follows the leads. It opens the pages, captures the text, the HTML and a screenshot, rebuilds the series (sites dark, KEV, EPSS, the NCSC-NL inventory) and queues new captures for the curator. It takes and does not judge. Its store is the <b>source watch</b>, vault <code>oq9gflln</code>: by 22 October it was watching 773 pages from 474 publishers in 57 countries, and its local clone is now over a gigabyte. We are configuring it to run on Sonnet.</li>
+<li><b>The curator</b> (curator@php.newsroom, on Sonnet) reads each queued capture, skips what does not hold what the queue says (a login wall, an empty page, private people's details), and promotes the rest into the <b>evidence vault</b>, <code>3ytzxm3g</code>, as sources with their provenance, claims and a timeline. That vault held 227 sources on 23 October; 45 of them were promoted by the first curator session on 22 and 23 October.</li>
+<li><b>The journalist</b> reads the evidence and updates the site: it re-exports the data, makes sure the numbers are right, writes the narrative, and keeps <a href="https://php.oct.2026.newsroom.sgit.ai/views/">the state of affairs</a> as a versioned page, with every version kept and every pair of versions diffed.</li>
+</ul>
+<p>Each stage is still close to raw data. The point of the chain is not to transform the material quickly; it is to keep each step small enough that a person can check it, and to keep the record of who did what.</p>
+<h2 id="what-broke">Where it broke</h2>
+<p>This is where things stopped working. I wanted to use Claude's scheduled tasks. That did not work very well. I wanted to use ChatGPT for some of the collection. That did not work very well either.</p>
+<p>The reason is the same in both, and it is an interesting one: neither has a good way to give an agent an identity, and neither has a good way to share a secret with one. A scheduled task in Claude's interface starts from a prompt; there is nowhere to hand it the private vault key it needs to write. And a schedule that started a fresh session each time would need a fresh key each time. ChatGPT ran our first external collection job well when I pasted it in by hand. It reached four sites that refuse our cloud address. But it ran from its own cloud network, with its own proxy errors, and only when I was there to paste. Collection is easy. Collection with an identity, a secret and a schedule is not.</p>
+<h2 id="handshake">The handshake</h2>
+<p>So we built the missing piece, and it is a slightly mad solution, and a lovely one. It rests on <a href="https://pki.sgit.ai/">pki.sgit.ai</a>, which is a major milestone for us: it now holds my root key, and it can sign, seal, open and verify, and check that a public key chains to that root.</p>
+<ol>
+<li><b>The agent makes its own key.</b> When a new agent session starts, it reads its instructions, downloads the agent tool, and makes a key pair for that session only. The private half never leaves the session. It pins my root, <code>sha256:db7f79fdd87e030a</code>.</li>
+<li><b>It shows me its public key.</b> Its fingerprint and a QR image of its public record, in the chat.</li>
+<li><b>I check it.</b> I compare the fingerprint, character for character, with the one the agent printed.</li>
+<li><b>I seal the secret to it.</b> On pki.sgit.ai, I seal the vault key to that fingerprint, signed by my root, as a QR image, and carry it to the session.</li>
+<li><b>The agent opens it.</b> It checks the signature and that the sender is my root, saves the key to a private file without printing it, clones the vault, and deletes the file.</li>
+</ol>
+<p>That is the whole identity and secrets layer: a key pair that lives as long as the session, a root that both sides already know, and QR codes carried by a person. It is the workflow from <a href="https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.html">a secret is a QR code</a> and <a href="https://newsroom.sgit.ai/articles/pki-everywhere.html">PKI everywhere</a>, now carrying a key that a mission-critical agent needs. The curator's scheduled session was the first to go through it for real, on 23 October; its fingerprint is <code>sha256:6c81ae257fee1938</code>.</p>
+<figure class="shot" data-shot="wk-handshake.webp" data-dir="images/" data-alt="One handshake, then a schedule: the agent makes a session key and pins the root; shows its fingerprint and QR; the editor checks it and seals the vault key to it on pki.sgit.ai; the agent opens it, clones the vault and deletes the file; a scheduled task wakes the same session." data-kind="diagram"><figcaption>One handshake, then a schedule: the agent makes a session key and pins the root; shows its fingerprint and QR; the editor checks it and seals the vault key to it on pki.sgit.ai; the agent opens it, clones the vault and deletes the file; a scheduled task wakes the same session.</figcaption></figure>
+<h2 id="feature-and-vulnerability">A feature, and a vulnerability</h2>
+<p>The trick that makes it work is one Claude supports: a normal Claude session can have a schedule that wakes it. So once I have given a session its identity and its key, a scheduled task wakes that same session, which still holds both. The curator now wakes five times a day, UK time, in the working day: 08:00, 10:30, 13:00, 15:30 and 18:00, and never overnight.</p>
+<p>That is both a feature and a large vulnerability, and I want to be clear about both. The feature is obvious. The vulnerability is that a session holding a write key can now act on its own, on a timer, with nobody watching each run. We have already seen the edge of it: the researcher's earlier passes were set up so that each pass booked the next one, which meant that when I paused it, a pass still running could have booked another. So the rules are explicit. The curator's prompt says it promotes only what the queue lists and creates no scheduled tasks, sessions or workflows of its own. Everything it reads from the web is data, never instructions. And if its container is replaced, its key pair and its clone go with it, and its next wake must say "needs a new key handshake" and stop.</p>
+<h2 id="schedule-vault">The schedule vault: control is the queue</h2>
+<p>The other thing I was missing was visibility. Scheduling is where I had the least of it. So there is now a public <a href="https://php.oct.2026.newsroom.sgit.ai/team/schedule/">schedule vault</a>, <code>weic8imn</code>, with two primitives: the schedule (when an agent wakes) and the tasks (what it should do, by when). Every scheduled agent follows the same wake protocol: pull the vault, ask what is due, run each task's brief, and write one run record with its log. If no task is due, it records an idle run and stops. To stop an agent, take its tasks away; to make it do something, queue a task. Nothing an agent does on a schedule is outside a task someone queued. And the page reads the vault live, so I can have a Claude session on one side and the schedule on the other, and say: run the task with this ID.</p>
+<h2 id="state">Where it stands</h2>
+<p>It is almost working. The structure is in place. Here is the honest state on the evening of 23 October, read from the PHP site's briefs and the schedule vault at head <code>0881481b6136</code>.</p>
+<ul>
+<li><b>Works.</b> The researcher's passes: 40 runs recorded on 22 and 23 October. The handshake: the curator's session has its key. The schedule vault and its page. The journalist's versioned views, v0 and v1. The last-checked stamp.</li>
+<li><b>Set up, not yet proven.</b> The curator has its five wakes a day, but no run of its own is in the schedule vault yet. Every run record there so far was written by the conductor agent, from the agents' reports, not by an agent at wake time. The researcher's schedule and model are still to be confirmed. The source watch has no schedule of its own, so a curator wake can find nothing new; it should run half an hour before each wake. And the first key was sent as message text rather than as a file, which I accepted once.</li>
+<li><b>Missing.</b> Surviving a replaced container. Notifications: a wake reports only into its own session. An agreed behaviour policy for each agent (drafted). Queueing a task from the page. External collectors on a schedule.</li>
+</ul>
+<figure class="shot" data-shot="wk-state.webp" data-dir="images/" data-alt="Almost working, on the evening of 23 October: what works (the researcher&#x27;s 40 recorded runs, the handshake, the schedule vault, the journalist&#x27;s views, the last-checked stamp), what is set up but not yet proven (the curator&#x27;s wakes, run records written by the agents themselves, the researcher&#x27;s schedule), and what is missing." data-kind="comparison"><figcaption>Almost working, on the evening of 23 October: what works (the researcher's 40 recorded runs, the handshake, the schedule vault, the journalist's views, the last-checked stamp), what is set up but not yet proven (the curator's wakes, run records written by the agents themselves, the researcher's schedule), and what is missing.</figcaption></figure>
+<h2 id="next-time">Next time, much easier</h2>
+<p>Every one of these gaps is now written down as a brief or a board item, which is the point of doing it slowly. The next story will not start from nothing. It will start from the researcher's and the curator's prompts, the schedule vault's layout and its wake protocol, the handshake on pki.sgit.ai, and the list above of what broke. That is how something moves from genesis to custom-built to product: you build it by hand once, carefully, in public, and you keep the record of what it took.</p>
+<p>The order for the next few days is clear enough. The researcher on its own schedule, half an hour before each curator wake. Every agent writing its own run record at wake time. A short path for "needs a new key handshake". A behaviour policy per agent, checked per run. And only then, more agents.</p>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>It is not finished.</b> "Almost working" is the claim, with the gaps listed.</li>
+<li><b>The counts are as of 23 October.</b> 40 recorded researcher runs, 227 evidence sources, 773 watched pages; they move.</li>
+<li><b>The vulnerability is real.</b> A scheduled session holding a write key acts unattended; the rules reduce that risk, they do not remove it.</li>
+<li><b>ChatGPT was not tested on a schedule.</b> It ran one collection job, by paste.</li>
+<li><b>The handshake depends on a person.</b> That is by design, and it is also the bottleneck.</li>
+</ul>
+<h2 id="sources">Where this comes from</h2>
+<p>My voice memo of 23 October 2026; the PHP story site's briefs, all of 22 and 23 October: <a href="https://php.oct.2026.newsroom.sgit.ai/admin/briefs/">the scheduled curator</a>, the schedule vault, the journalist's views and external collectors; its schedule vault (<code>weic8imn</code>, public), read at head <code>0881481b6136</code>; its <a href="https://php.oct.2026.newsroom.sgit.ai/compromise/">compromise map</a> for the source watch's coverage; and <a href="https://pki.sgit.ai/">pki.sgit.ai</a>'s pages on <a href="https://pki.sgit.ai/agents/">identities for agents</a> and <a href="https://pki.sgit.ai/handover/">handing over a vault key</a>. Related: <a href="https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.html">a secret is a QR code</a>, <a href="https://newsroom.sgit.ai/articles/pki-everywhere.html">PKI everywhere</a>, <a href="https://newsroom.sgit.ai/articles/the-human-is-the-network.html">the human is the network</a>, <a href="https://newsroom.sgit.ai/articles/capture-first.html">capture first</a>, <a href="https://newsroom.sgit.ai/articles/the-false-positives-are-the-next-incident.html">the false positives are the next incident</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
+<sg-meter view="page" kind="article" date="2026-10-23" topics="agents-and-policy vaults-and-method" title="Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly, SGit Newsroom"></sg-meter>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#almost-working">This article as a graph &rarr;</a></p>
+ <p class="small dim">No other article links here yet.</p>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 267 &middot; <a href="../for/make.html#r=267">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/almost-working.jpg" download>almost-working.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.56</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="almost-working.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
