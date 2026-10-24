@@ -4,6 +4,12 @@
 
 ## Queued
 
+### Maintaining the core platforms as a cost item in every project
+
+- **Added:** 24 October 2026. **Status:** queued, not started. Not to be mentioned as a coming article in published pages.
+- **Source:** Dinis, in a comment on "who maintains the PHP you run?": the support of the core platforms has to be a cost item in any project, and its absence a named risk; lots of small purchases in proportion to each project's spend, adding value all the time, never seen as insurance; the maintainers (for example PHP's) involved and paid, helping set up and maintain the applications built on top, and the chain going down from there; Gen AI makes it scale by helping understand code bases, side effects and changes, not by writing all the code; and now there is data to map these risks.
+- **First:** the PHP story's data (the NCSC-NL inventory, the source watch's sites dark) as the first risk map; RiskMandate's maintenance tiers; how a project budget would carry the line.
+
 ### Versioned API sites: every release a complete, independent copy
 
 - **Added:** 21 October 2026. **Status:** queued, not started (proposed to Dinis).

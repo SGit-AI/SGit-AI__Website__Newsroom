@@ -77,7 +77,7 @@ Most php2shell scanners read the version string, which cannot see a distribution
 
 > The problem is that the people downstream act on the first version. Detection rules fail in both directions.
 
-## [Who maintains the PHP you run? A follow-up to the maintenance deficit: a market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](who-maintains-the-php-you-run.md)
+## [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](who-maintains-the-php-you-run.md)
 
 2026-10-23 · Startups & strategyNews & evidence
 
@@ -86,20 +86,25 @@ The open source maintenance market fails both ways: organisations running PHP ca
 *[diagram]*
 **concept**claim**method**example**question
 
-**12 nodes, 10 edges**
+**17 nodes, 15 edges**
 
 - **Two questions** (question) Does it matter, and who pays to maintain it?
 - **A market failing both ways** (claim) No maintenance to buy or to sell.
 - **Sponsorship tiers** (example) Logos and an advisory seat, from $12,000.
 - **The fix written free** (example) Source backports for 7.4, 8.0, 8.1.
 - **Resold within a day** (example) Zend, Ubuntu Pro, TuxCare, HeroDevs.
-- **The OpenJS model** (example) 15% revenue share since 2024.
+- **The best that exists today** (example) 15% revenue share since 2024.
 - **The experts** (claim) No workflow to hire them for what you run.
 - **Seven services** (method) Bring it back to the endorsed partner.
 - **Remove what is not used** (method) Why is that code there at all?
 - **The dependency register** (method) Dependency, usage, maintainability.
 - **Towards regulation** (method) Procurement line items, the CRA.
 - **Not only PHP** (concept) Node, Python and the rest.
+- **The signed-off version** (method) Maintainers sign the build they support; buyers require it.
+- **The town planners** (concept) Paid to read, maintain and sign off; insurance and licence to operate.
+- **Gen AI scales the work** (claim) Understanding and support, not writing the code.
+- **Smaller maintained versions** (claim) A direct line from users to maintainers.
+- **Map, engineer, maintain** (method) RiskMandate's options, priced by criticality.
 
 > The money is not missing. The market is failing on both sides. A market failing both ways.
 

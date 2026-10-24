@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.56 · 267 articles since 2026-08-17; the newest is 2026-10-23. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.57 · 267 articles since 2026-08-17; the newest is 2026-10-23. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -17,7 +17,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 ## Highlights
 
 - [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
-- [Who maintains the PHP you run? A follow-up to the maintenance deficit: a market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min.
+- [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](articles/who-maintains-the-php-you-run.md), 2026-10-23, 20 min.
 - [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 - [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 17 min.
 
@@ -58,7 +58,7 @@ For editors, journalists and publishers asking how news gets paid for when agent
 
 ### Strategy & startups (50)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [Who maintains the PHP you run? A follow-up to the maintenance deficit: a market failing both ways, the services and business models that should exist now, and why the money has to reach the people who know the code](articles/who-maintains-the-php-you-run.md), 2026-10-23, 10 min.
+- [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](articles/who-maintains-the-php-you-run.md), 2026-10-23, 20 min.
 - [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 - [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](articles/the-delegation-record.md), 2026-10-22, 8 min.
 
