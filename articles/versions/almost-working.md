@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-24 | minor | 2,716 | +90 / −0 words; 0 changed, 1 added, 0 removed paragraphs | this release | [what changed](almost-working/v1.1.0.md) · [current](../almost-working.md) |
+| **v1.1.0** | 2026-10-24 | minor | 2,716 | +90 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`264ddad06`](https://github.com/SGit-AI/SGit-AI__Website/commit/264ddad06c1e1242385d4ab14c23ff2739d34f8a) | [what changed](almost-working/v1.1.0.md) · [current](../almost-working.md) |
 | **v1.0.0** | 2026-10-23 | published | 2,626 | first published | [`22be698e6`](https://github.com/SGit-AI/SGit-AI__Website/commit/22be698e605eb1d36dd1817470b9247b1d1ed27f) |  |
 
 [← Back to the article](../almost-working.md) · [All articles](../index.md)

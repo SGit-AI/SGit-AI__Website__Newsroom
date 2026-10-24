@@ -277,3 +277,8 @@ main section.aseries-all ol{list-style:none;padding:0;margin:.6rem 0 0}
 main section.aseries-all li{padding:.45rem 0;border-top:1px solid var(--line);overflow-wrap:anywhere}
 main section.aseries-all li.here{border-left:3px solid var(--accent);padding-left:.6rem}
 main section.aseries-all .aseries-n{display:inline-block;min-width:1.6em;font-weight:700;color:var(--accent-dk)}
+
+/* Bylines carry their tag chips with no whitespace between them, so a line of chips had no place to wrap and pushed
+   57 article pages past a phone's width. As a wrapping flex row, the byline breaks between items at any width. */
+p:has(> .chip){display:flex;flex-wrap:wrap;align-items:center;column-gap:.3em;row-gap:.25rem}
+p:has(> .chip) > .chip{margin-right:0}
