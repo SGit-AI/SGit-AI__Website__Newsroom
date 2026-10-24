@@ -14,13 +14,39 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-271 of 271 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+272 of 272 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-271 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 9 articles not yet linked either way.
+272 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 10 articles not yet linked either way.
+
+## [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](a-tangent-that-shipped.md)
+
+2026-10-24 · Vaults & methodSite & engineering
+
+A slow-clone bug and a tangent about running vaults from zip files, treated as research and reviewed before release, produced sgit's pack mode in ten days; the next day it took the PHP story's source watch from a 13-minute clone to 95 seconds, shipping without a web view because the vault that needed it did not need one.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**10 nodes, 9 edges**
+
+- **A slow clone** (example) 59 seconds for 83 files; 3½ minutes for the comms vault.
+- **A vault in one zip** (question) Can a vault live on Drive, Dropbox or a USB stick?
+- **Research before code** (method) Measured, designed, specified, reviewed.
+- **A pack per push** (method) One zip per push, a snapshot for the head.
+- **Four review rounds** (method) A second agent with reproducing scripts.
+- **sgit-ai 0.24.0** (artefact) Pack mode, opt-in, 22 October.
+- **The source watch** (example) 63,662 objects, a listing that timed out.
+- **13 min 47 s to 95 s** (claim) Clone, list, pull and push, measured.
+- **Not everything at once** (claim) No web view yet; shipped anyway.
+- **No server to maintain** (concept) A vault as one file, anywhere.
+
+> That is not luck. Why the tangent mattered.
+
+> The limit we hit was not storage. The vault that needed it.
 
 ## [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](a-pen-and-a-key.md)
 

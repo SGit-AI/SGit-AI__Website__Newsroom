@@ -1,0 +1,38 @@
+{
+ "slug": "a-tangent-that-shipped",
+ "teaser": "How a tangent about zips became sgit's pack mode in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds.",
+ "topics": ["vaults-and-method", "site-and-engineering"],
+ "core_idea": "A slow-clone bug and a tangent about running vaults from zip files, treated as research and reviewed before release, produced sgit's pack mode in ten days; the next day it took the PHP story's source watch from a 13-minute clone to 95 seconds, shipping without a web view because the vault that needed it did not need one.",
+ "nodes": [
+  {"id": "bug", "label": "A slow clone", "kind": "example", "summary": "59 seconds for 83 files; 3½ minutes for the comms vault."},
+  {"id": "tangent", "label": "A vault in one zip", "kind": "question", "summary": "Can a vault live on Drive, Dropbox or a USB stick?"},
+  {"id": "research", "label": "Research before code", "kind": "method", "summary": "Measured, designed, specified, reviewed."},
+  {"id": "pack", "label": "A pack per push", "kind": "method", "summary": "One zip per push, a snapshot for the head."},
+  {"id": "reviews", "label": "Four review rounds", "kind": "method", "summary": "A second agent with reproducing scripts."},
+  {"id": "release", "label": "sgit-ai 0.24.0", "kind": "artefact", "summary": "Pack mode, opt-in, 22 October."},
+  {"id": "watch", "label": "The source watch", "kind": "example", "summary": "63,662 objects, a listing that timed out."},
+  {"id": "numbers", "label": "13 min 47 s to 95 s", "kind": "claim", "summary": "Clone, list, pull and push, measured."},
+  {"id": "gaps", "label": "Not everything at once", "kind": "claim", "summary": "No web view yet; shipped anyway."},
+  {"id": "noserver", "label": "No server to maintain", "kind": "concept", "summary": "A vault as one file, anywhere."}
+ ],
+ "edges": [
+  {"from": "bug", "to": "tangent", "rel": "leads-to"},
+  {"from": "tangent", "to": "research", "rel": "leads-to"},
+  {"from": "research", "to": "pack", "rel": "produces"},
+  {"from": "pack", "to": "reviews", "rel": "depends-on"},
+  {"from": "reviews", "to": "release", "rel": "leads-to"},
+  {"from": "release", "to": "watch", "rel": "answers"},
+  {"from": "watch", "to": "numbers", "rel": "produces"},
+  {"from": "gaps", "to": "release", "rel": "extends"},
+  {"from": "tangent", "to": "noserver", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["scion-and-sgit", "almost-working", "php-daily-2026-10-23"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.html", "https://cli.sgit.ai/docs/update-to-0-24-0.html", "https://cli.sgit.ai/articles/a-pack-per-push.html"]
+ },
+ "quotes": [
+  {"text": "That is not luck.", "why": "Why the tangent mattered."},
+  {"text": "The limit we hit was not storage.", "why": "The vault that needed it."}
+ ]
+}
