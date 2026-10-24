@@ -10,11 +10,13 @@
 
 # A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.0.0](versions/a-newsroom-for-one.md) · [newsroom v0.13.63](https://newsroom.sgit.ai/admin/versions.html) · reading-listspersonasemailriskmandateagentsdesignnewsroomthe-newsroompublishing-methodarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.1.0, 2 versions](versions/a-newsroom-for-one.md) · [newsroom v0.13.63](https://newsroom.sgit.ai/admin/versions.html) · reading-listspersonasemailriskmandateagentsdesignnewsroomthe-newsroompublishing-methodarticle
 
 ***Abstract:** The reading list has become one of the most useful things this newsroom does for me. On 11 October I asked for a way to send someone a link that says: from me, for you, these are the articles I think you should read, in this order, and here is why. It shipped the same day. Since then the agent behind agent@riskmandate.ai has been building these lists into the emails it drafts for me, about twenty of them by its debrief of 18 October, and I read and send every one. What I had not thought through was that for most of the people I send one to, the list is the first page of this newsroom they ever open. They arrive from an email, often through a link their mail client has wrapped, and until this week they found a narrow column of titles that did not say what the site was, what a price of a few pence meant, or what to do next. So on 21 October the page changed. It now opens as a letter: a dateline, my note signed, and one line on what the list holds and what it costs. It uses the width of the screen, with the articles as cards whose pictures can be read, four more views (headlines, sections, pictures, and the list as a graph), and a column that explains the newsroom in four steps. And it shows the reader what they have read, section by section, from their own browser, with done, later and not for me on every article. Before it shipped, the newsroom's Designer role reviewed it on a real list and fourteen of its findings were fixed. This is the second page this week that had to be brought up to date because people started to use it, after the page for publishers, and it points at the next step: the answers coming back to me, and to the agent, as easily as the lists go out.*
 
 A reading list from me to Steve, the site's own example, as it opens since 21 October, at 1440 pixels wide in the Newsprint theme, after one article was read and half of another. At the top, a dateline and my note, signed; a ring at 32% with one of seven read and 55 minutes left; the first article as a card, its section bar full, marked Read; and on the right, what the page is, in four steps, and the list as a persona.
+
+**What came next.** [A pen and a key](a-pen-and-a-key.md): a Pen on every article to mark it and tell the newsroom, and notes signed with a browser key that pki.sgit.ai vouches for.
 
 ## In short
 
@@ -111,6 +113,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#a-newsr
 
 ### Builds on
 
+- [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](a-pen-and-a-key.md) Every article now has a Pen to mark it, comment and tell the newsroom, and a browser key pki.sgit.ai vouches for signs each note as mine.
 - [A link to a persona: send people to the newsroom as someone, not as nobody](a-link-to-a-persona.md) Send a CISO to the newsroom as a CISO: personas kept in a vault by the newsroom's agents, opened from a link, followed or forked.
 - [From me to you, in a link: a personal reading list, two briefs to build and use it, and the loop that makes it a day's work](a-reading-list-in-a-link.md) A reading list from one person to another, in a link the server never sees; a brief to build it, a brief to use it, and the loop that ships it in a day.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](answering-a-draft.md) How email works now: the agent drafts and logs, I send, and a decision draft turns the drafts folder into a work queue.
@@ -122,6 +125,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#a-newsr
 
 ### Continued by
 
+- [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](a-pen-and-a-key.md) Every article now has a Pen to mark it, comment and tell the newsroom, and a browser key pki.sgit.ai vouches for signs each note as mine.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](answering-a-draft.md) How email works now: the agent drafts and logs, I send, and a decision draft turns the drafts folder into a work queue.
 
 [All articles](index.md) · [All graphs](graphs.md)

@@ -86,8 +86,12 @@
   function place(rect) {
     btn.hidden = false
     var x = Math.min(window.innerWidth - btn.offsetWidth - 8, Math.max(8, rect.left + rect.width / 2 - btn.offsetWidth / 2))
-    var y = rect.top - btn.offsetHeight - 8
-    if (y < 56) y = rect.bottom + 8
+    // on a touch screen the system's own menu (Copy, Look Up) sits above the selection and covers anything there,
+    // so the button goes below it; with a mouse, above, where the eye already is
+    var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches
+    var y = touch ? rect.bottom + 14 : rect.top - btn.offsetHeight - 8
+    if (!touch && y < 56) y = rect.bottom + 8
+    if (touch && y > window.innerHeight - btn.offsetHeight - 70) y = rect.top - btn.offsetHeight - 60
     btn.style.left = Math.round(x) + 'px'; btn.style.top = Math.round(y) + 'px'
   }
   function hide() { btn.hidden = true; pendingSel = null; pendingRemove = null; pendingRange = null }

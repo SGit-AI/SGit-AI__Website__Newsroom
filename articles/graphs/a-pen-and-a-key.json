@@ -1,0 +1,203 @@
+{
+  "slug": "a-pen-and-a-key",
+  "teaser": "Every article now has a Pen to mark it, comment and tell the newsroom, and a browser key pki.sgit.ai vouches for signs each note as mine.",
+  "topics": [
+    "site-and-engineering",
+    "vaults-and-method"
+  ],
+  "core_idea": "Feedback on a page should happen on the page: the Pen keeps a selection the moment it is made, out of the iPad's own menu, holds private marks with comments and notes for the newsroom with their passages, and signs those notes with a key for this browser that my key on pki.sgit.ai operates, so anyone can check them against the public register from a pinned root; of four ways to log in with that key, the key per browser works now, the sign-in redirect is the end state, and the two vaults stay separate, connected by keys.",
+  "nodes": [
+    {
+      "id": "chat",
+      "label": "Feedback through a chat",
+      "kind": "claim",
+      "summary": "What I tell the newsroom about a page goes into a chat window, away from the page."
+    },
+    {
+      "id": "ipad",
+      "label": "The iPad's menu in the way",
+      "kind": "example",
+      "summary": "Copy, Look Up and Translate sit above a selection, where the Highlight button was."
+    },
+    {
+      "id": "bar",
+      "label": "A bar at the foot",
+      "kind": "method",
+      "summary": "Keep, Comment, Tell the newsroom, out of the menu's way; the selection kept as it is made."
+    },
+    {
+      "id": "pen",
+      "label": "A Pen on every article",
+      "kind": "artefact",
+      "summary": "A panel on the right: selected, my marks, tell the newsroom, signed as you."
+    },
+    {
+      "id": "marks",
+      "label": "Private marks with comments",
+      "kind": "artefact",
+      "summary": "Highlights with a comment of my own, kept in the browser, never sent."
+    },
+    {
+      "id": "notes",
+      "label": "Notes with their passages",
+      "kind": "artefact",
+      "summary": "The vault pane's own notes, sent down my lane when I press Send."
+    },
+    {
+      "id": "operates",
+      "label": "The register's operates rule",
+      "kind": "concept",
+      "summary": "One key vouches for another both ways, with an end date."
+    },
+    {
+      "id": "key",
+      "label": "A key per browser",
+      "kind": "method",
+      "summary": "Made with pki.sgit.ai's code; operated by my key; signs every note."
+    },
+    {
+      "id": "root",
+      "label": "Checked from a pinned root",
+      "kind": "method",
+      "summary": "In the browser and in Python, from my key's fingerprint, never the register's own anchors."
+    },
+    {
+      "id": "options",
+      "label": "Four ways to log in",
+      "kind": "question",
+      "summary": "One passkey, a sign-in redirect, a key per browser, the same by QR code."
+    },
+    {
+      "id": "now",
+      "label": "Key per browser now, redirect later",
+      "kind": "claim",
+      "summary": "Works with pki.sgit.ai as it is; the redirect is the end state; not one passkey."
+    },
+    {
+      "id": "vaults",
+      "label": "Two vaults, connected by keys",
+      "kind": "claim",
+      "summary": "The reader vault and the pki.sgit.ai account stay separate."
+    },
+    {
+      "id": "left",
+      "label": "What is left",
+      "kind": "question",
+      "summary": "My first link, an authorize page, the key in the vault, the newsroom's own lane."
+    }
+  ],
+  "edges": [
+    {
+      "from": "chat",
+      "to": "pen",
+      "rel": "leads-to"
+    },
+    {
+      "from": "ipad",
+      "to": "bar",
+      "rel": "leads-to"
+    },
+    {
+      "from": "bar",
+      "to": "pen",
+      "rel": "depends-on"
+    },
+    {
+      "from": "pen",
+      "to": "marks",
+      "rel": "produces"
+    },
+    {
+      "from": "pen",
+      "to": "notes",
+      "rel": "produces"
+    },
+    {
+      "from": "operates",
+      "to": "key",
+      "rel": "leads-to"
+    },
+    {
+      "from": "key",
+      "to": "notes",
+      "rel": "extends"
+    },
+    {
+      "from": "key",
+      "to": "root",
+      "rel": "depends-on"
+    },
+    {
+      "from": "options",
+      "to": "now",
+      "rel": "answers"
+    },
+    {
+      "from": "now",
+      "to": "key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vaults",
+      "to": "key",
+      "rel": "depends-on"
+    },
+    {
+      "from": "now",
+      "to": "left",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-editors-channel",
+      "reading-with-a-pen",
+      "a-directory-of-people-and-keys",
+      "pki-everywhere",
+      "a-secret-is-a-qr-code",
+      "a-newsroom-for-one"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pki.sgit.ai/",
+      "https://pki.sgit.ai/llms.txt",
+      "https://pki.sgit.ai/directory/index.json"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It was not a bug in either; they simply wanted the same place.",
+      "why": "The iPad problem stated without blame, and why the fix is to move."
+    },
+    {
+      "text": "It is a place of my own because the key is mine.",
+      "why": "What a login means here: a key, not an account on a server."
+    }
+  ],
+  "figures": [
+    {
+      "file": "pn-pen.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pn-pen.webp",
+      "caption": "An article with the Pen open on the right, at 1280 pixels wide in the Newsprint theme. In the article, a highlighted sentence. In the Pen, from the top: what is selected; the reader's own marks on this page, private, with a comment; and Tell the newsroom, with a note kept with the passage it is about and waiting to be sent. Below them, out of the picture, Signed as you: this browser's key and what the register says about it.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "pn-ipad.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pn-ipad.webp",
+      "caption": "Two ways to place a button for selected words on an iPad. Left, as it was: the button above the selection, under the system's Copy, Look Up and Translate menu. Right, as it is now: the Highlight button below the selection, and the Pen's bar at the foot of the screen with Keep, Comment and Tell the newsroom. Drawn, not a screenshot.",
+      "kind": "comparison"
+    },
+    {
+      "file": "pn-chain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pn-chain.webp",
+      "caption": "How a note is checked as mine. This browser's key signs the note. The register at pki.sgit.ai holds the browser's record, which says it is operated by my key, and my record, which says I operate it until a date. The newsroom pins my key as the root, reads the register, checks the signature against the browser's key and the chain back to the root, and marks the note signed and checked, valid but not vouched for, or failing.",
+      "kind": "diagram"
+    },
+    {
+      "file": "pn-options.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/pn-options.webp",
+      "caption": "Four ways to log in to newsroom.sgit.ai with a pki.sgit.ai key, compared on what it needs from pki.sgit.ai, the steps for the person, where the private key lives, and the decision: a key per browser in the register now, the same by QR code next, a sign-in redirect when pki.sgit.ai has a page for it, and not one passkey for both sites.",
+      "kind": "comparison"
+    }
+  ]
+}

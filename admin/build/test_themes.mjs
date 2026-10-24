@@ -48,7 +48,7 @@ for (const t of THEMES) {
 
 /* ---- 2. no literal colour outside the themes file ---- */
 const OWN = ['assets/site.css', 'assets/site-nav.css', 'assets/vault-pane/vault-pane.css', 'assets/search/search.css', 'assets/search/ask.css',
-             'assets/search/search-nav.css', 'wire/wire.css', 'for/for.css', 'passkey/lab.css', 'assets/fonts.css', 'engineering/engineering.css', 'assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.css',
+             'assets/search/search-nav.css', 'wire/wire.css', 'for/for.css', 'assets/pen/pen.css', 'passkey/lab.css', 'assets/fonts.css', 'engineering/engineering.css', 'assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.css',
              'assets/front/front.css', 'assets/reader/strip.css', 'php-flaws/php-flaws.css', 'admin/php-oct-2026/desk.css']
 // the signals that stay literal on purpose: the vault button's dots, the wire's amber "new" flag and its ink, the terminal
 // panel (and its text), the print page, and the sg-meter's neutral fallbacks inside var(), which the token overrides

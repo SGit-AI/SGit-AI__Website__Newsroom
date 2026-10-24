@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.63 · 270 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.64 · 271 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](articles/a-newsroom-for-one.md), 2026-10-24, 12 min. The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.
+- [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](articles/a-pen-and-a-key.md), 2026-10-24, 10 min. Every article now has a Pen to mark it, comment and tell the newsroom, and a browser key pki.sgit.ai vouches for signs each note as mine.
 
 ## Highlights
 
+- [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](articles/a-newsroom-for-one.md), 2026-10-24, 12 min.
 - [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
 - [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](articles/php-daily-2026-10-23.md), 2026-10-24, 8 min.
 - [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](articles/almost-working.md), 2026-10-23, 11 min.
-- [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
 
 ## Who are you reading as?
 
@@ -44,11 +44,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](articles/where-a-check-runs.md), 2026-10-22, 8 min.
 - [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](articles/answering-a-draft.md), 2026-10-21, 8 min.
 
-### Vaults & provenance (58)
+### Vaults & provenance (59)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](articles/a-pen-and-a-key.md), 2026-10-24, 10 min.
 - [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](articles/almost-working.md), 2026-10-23, 11 min.
 - [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
-- [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 15 min.
 
 ### The future of news (42)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

@@ -12,6 +12,8 @@ status: published
 
 !shot nf-list.webp | images/ | A reading list from me to Steve, the site's own example, as it opens since 21 October, at 1440 pixels wide in the Newsprint theme, after one article was read and half of another. At the top, a dateline and my note, signed; a ring at 32% with one of seven read and 55 minutes left; the first article as a card, its section bar full, marked Read; and on the right, what the page is, in four steps, and the list as a persona. | screenshot
 
+> **What came next.** [A pen and a key](/articles/a-pen-and-a-key.html): a Pen on every article to mark it and tell the newsroom, and notes signed with a browser key that pki.sgit.ai vouches for.
+
 ## In short {#in-short}
 
 - **A reading list is a link from me to one person.** The articles to read in order, a few worth a look, what to follow and a line from me, all in the part of the address after the #, which the browser never sends to the server. It shipped on 11 October, the day I asked for it.
