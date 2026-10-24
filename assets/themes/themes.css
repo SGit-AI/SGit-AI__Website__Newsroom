@@ -257,6 +257,14 @@ main figure.shot.shot--small img{max-width:42%;margin:0 auto}
 main figure.shot.shot--narrow img{max-width:62%;margin:0 auto}
 main figure.shot.shot--medium img{max-width:78%;margin:0 auto}
 @media (max-width:720px){main figure.shot.shot--narrow img,main figure.shot.shot--medium img{max-width:100%}main figure.shot.shot--small img{max-width:80%}}
+/* A figure beside the text ("!shot … | aside"): floats to the right at 38% of the column with a smaller caption, and the
+   text runs beside it; the next section heading starts below it. Full width, in the flow, on a phone (v0.13.69). */
+main figure.shot[data-kind="aside"]{float:right;width:38%;max-width:38%;margin:.3rem 0 1rem 1.6rem}
+main figure.shot[data-kind="aside"] img{max-width:100%;width:100%}
+main figure.shot[data-kind="aside"] figcaption{font-size:.82em}
+main figure.shot[data-kind="aside"] ~ h2{clear:both}
+main figure.shot[data-kind="aside"] ~ :is(blockquote,pre,.note,.callout){display:flow-root}
+@media (max-width:720px){main figure.shot[data-kind="aside"]{float:none;width:auto;max-width:100%;margin:1rem 0}}
 
 /* Who is speaking, on every article's byline (v0.12.109). An agent writing in its own voice links to its page under
    newsroom.sgit.ai/about/newsroom-*: it gets a small agent mark and the word "agent". Dinis's byline links to his

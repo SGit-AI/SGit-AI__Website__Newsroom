@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-24 | minor | 2,147 | +692 / −62 words; 3 changed, 14 added, 4 removed paragraphs | this release | [what changed](a-team-frozen-in-time/v1.1.0.md) · [current](../a-team-frozen-in-time.md) |
+| **v1.1.0** | 2026-10-24 | minor | 2,147 | +692 / −62 words; 3 changed, 14 added, 4 removed paragraphs | [`125add183`](https://github.com/SGit-AI/SGit-AI__Website/commit/125add1835605abf81a5af854f5fb74f7f50a415) | [what changed](a-team-frozen-in-time/v1.1.0.md) · [current](../a-team-frozen-in-time.md) |
 | **v1.0.0** | 2026-10-24 | published | 1,517 | first published | [`ab7e5dc61`](https://github.com/SGit-AI/SGit-AI__Website/commit/ab7e5dc61fef4b38afda730877b6a0865bb21653) |  |
 
 [← Back to the article](../a-team-frozen-in-time.md) · [All articles](../index.md)

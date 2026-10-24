@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-276 of 276 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+277 of 277 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-276 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 14 articles not yet linked either way.
+277 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 15 articles not yet linked either way.
+
+## [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](who-signs-for-this.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+A maintainer's signature names who stands behind a version, not what is running; extending Andrey Lazarev's split between measured and declared context, every layer from hardware to business contract should end in an accountable signer, forming a fractal graph of signed certificates in which unsigned lines are visible blind spots for businesses and insurers to accept or close, with experts paid to sign and departures exposed.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **A signature names who stands behind** (claim) Not whether the version is what booted.
+- **Measured and declared** (method) Measured by the device; declared by operator or auditor.
+- **Somebody accountable** (claim) Maintains, patches, fixes, moves the system.
+- **Signers define gaps** (claim) Shared responsibility, extended up and down.
+- **A fractal graph of signed certificates** (method) Every line opens into its own graph.
+- **Blind spots** (claim) Unsigned lines, made visible for a decision.
+- **Experts paid to sign** (method) Town planners sign for more than explorers.
+- **When the signer leaves** (example) The line turns into a visible gap.
+
+> The honest certificate keeps the two kinds apart, and names the signer of each. What is measured, and what is declared.
+
+> The line goes from signed to blind spot, and everyone can see it. When the person who signed leaves.
 
 ## [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](process-behaviour-policies.md)
 

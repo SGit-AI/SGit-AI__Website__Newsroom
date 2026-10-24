@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.68 · 276 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.69 · 277 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min. The most locked-down Linux process we could build inside Claude's cloud container: a policy traced from one run, seven kernel walls, 0.1 s.
+- [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](articles/who-signs-for-this.md), 2026-10-24, 11 min. Map every layer from the hardware to the business contract by who signs it; the lines nobody signs are the blind spots worth paying to see.
 
 ## Highlights
 
+- [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min.
 - [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](articles/signed-by-the-source.md), 2026-10-24, 8 min.
 - [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](articles/patch-for-breakfast.md), 2026-10-24, 7 min.
 - [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 9 min.
-- [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](articles/a-tangent-that-shipped.md), 2026-10-24, 9 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (77)
+### Agent security & policy (78)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](articles/who-signs-for-this.md), 2026-10-24, 11 min.
 - [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min.
 - [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](articles/patch-for-breakfast.md), 2026-10-24, 7 min.
-- [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
 
 ### Building with agents (46)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

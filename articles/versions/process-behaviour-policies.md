@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-24 | published | 2,718 | first published | this release | [current](../process-behaviour-policies.md) |
+| **v1.0.0** | 2026-10-24 | published | 2,718 | first published | [`125add183`](https://github.com/SGit-AI/SGit-AI__Website/commit/125add1835605abf81a5af854f5fb74f7f50a415) | [current](../process-behaviour-policies.md) |
 
 [← Back to the article](../process-behaviour-policies.md) · [All articles](../index.md)
 

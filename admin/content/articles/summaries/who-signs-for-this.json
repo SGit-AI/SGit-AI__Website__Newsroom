@@ -1,0 +1,66 @@
+{
+ "slug": "who-signs-for-this",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Map every layer from hardware to business by who signs it; the lines nobody signs are the blind spots.",
+   "para": "Andrey Lazarev noted that a maintainer's signature names who stands behind a version, not what actually booted, and split context into what a device measures and what an operator or auditor must declare. Generalised, each layer from hardware to contract ends in a signer or a blind spot, making gaps visible for businesses, insurers and paid experts.",
+   "hash": "42e883ecb879"
+  },
+  "in-short": {
+   "line": "Seven lines: signatures and running code, measured versus declared, accountability, gaps, fractals, blind spots, people.",
+   "para": "A signature says who stands behind a version, not that it runs. Some context can be measured; the rest must be declared and signed. Someone accountable maintains, patches and fixes. Signers define what they do not cover. Each signed line opens into its own graph. Visible blind spots let someone decide on them; experts get paid; departures show.",
+   "hash": "7c8103869e31"
+  },
+  "thread": {
+   "line": "Andrey Lazarev's LinkedIn comments: check what booted, and keep measured and declared context apart.",
+   "para": "Under my post on signed PHP versions, Andrey Lazarev of TactiQ AI said a maintainer's sign-off needs a measured boot record checked against the signed reference by someone other than the supplier. Context splits into what a device measures itself and what an operator or auditor declares and signs. I called it a fractal graph of signed certificates.",
+   "hash": "b217dd1c9e75"
+  },
+  "accountable": {
+   "line": "The point of signing is that somebody is accountable: the person paid to maintain, patch, fix and move it.",
+   "para": "What we do not want is a part of the infrastructure that nobody watches. The accountable party is whoever maintains it and is paid for it: patching, fixing, handling incidents, rebuilding, replicating and moving it. These are the non-functional requirements, the same ability to change safely argued in patch for breakfast.",
+   "hash": "01d97b20487b"
+  },
+  "gaps": {
+   "line": "Signers define gaps; shared responsibility, as AWS, Microsoft and Google describe it, should reach the business.",
+   "para": "AWS separates security of the cloud from security in it, with inherited physical controls; Microsoft says customers always own data and identities; Google adds shared fate; AWS Artifact supplies its SOC and ISO attestations. The model should extend upward to application, product and business sign-off, and downward to hardware.",
+   "hash": "8908e737a4b7"
+  },
+  "measured": {
+   "line": "Measured lines include TPM boot logs and RFC 9334 roles, plus SLSA, in-toto and Sigstore; the rest is declared.",
+   "para": "Firmware hashes each component into TPM registers and an event log; RFC 9334 names Attester, Verifier, Endorser and Reference Value Provider. In software, SLSA provenance, in-toto and Sigstore record builds and signings, and our process policy measures a running process. Physical access and business fit are declared, and worth whoever signed them.",
+   "hash": "54c6c8f51133"
+  },
+  "fractal": {
+   "line": "Like fractal semantic graphs: every signed line, in any domain, opens into its own graph of evidence and signers.",
+   "para": "Hardware, software, business applications and contracts are domains, each a graph. Is the application doing what it should, did business and product owners sign, did someone read the code, is the release endorsed, is it what booted? Each is a line with a signer, and each signature expands into evidence and accountable people.",
+   "hash": "8bccd9bcc738"
+  },
+  "blind-spots": {
+   "line": "Blind spots are unsigned areas; make them visible so businesses and insurers decide, scaled to importance.",
+   "para": "If physical security is not a data centre's, whoever maintains it should sign on the record, or it is black magic. A blind spot is a decision about acceptable assurance, for the business and its insurers. Complexity scales with an application's importance; today critical systems carry unseen gaps, and the goal is to name them.",
+   "hash": "fdc70ba7f0ff"
+  },
+  "experts": {
+   "line": "Experts should sign and be paid; explorers can guarantee little, town planners much more.",
+   "para": "Scalable certification sends money to the experts who understand each layer, extending the signed-version model to every line of the map. An explorer team can offer few guarantees and should say so, while town planners can sign for much more. The map shows whether someone read live code and whether its authors remain.",
+   "hash": "8d69379e30bb"
+  },
+  "leaves": {
+   "line": "When a signer leaves unreplaced, their line becomes a visible blind spot, which encourages keeping talent.",
+   "para": "Tying certification to a person turns a departure into a visible gap, discouraging companies from losing the people who hold systems together. In 133 GitHub projects, 65% had a truck factor of two or fewer. The FCA's SM&CR and Sarbanes-Oxley certifications already tie named individuals to accountability.",
+   "hash": "87e14a8444e3"
+  },
+  "limits": {
+   "line": "The map is illustrative; measured is not safe; signatures can be wrong; tools are partial; some sources secondary.",
+   "para": "The map shows the argument, not any audit. A boot record proves what booted, not that it is flawless. A signature makes someone accountable, not infallible. SLSA, in-toto and Sigstore cover builds and source, not contract fit. ISO 27001 detail comes from a secondary source, and Andrey's first comment is truncated by LinkedIn.",
+   "hash": "0d2f9c172c3c"
+  },
+  "sources": {
+   "line": "The LinkedIn thread and my memos; RFC 9334, TPM docs, cloud responsibility pages, SLSA, in-toto, Sigstore, studies, regulation.",
+   "para": "The LinkedIn thread of 24 October 2026 and my voice memos; IETF RFC 9334; the Linux TPM event log; Microsoft, AWS and Google Cloud on attestation and shared responsibility; AWS Artifact; SLSA 1.2, in-toto and Sigstore; a secondary source on ISO 27001; the truck factor study; the FCA's SM&CR; 15 U.S.C. 7241; and related articles.",
+   "hash": "16350ce2ab50"
+  }
+ }
+}

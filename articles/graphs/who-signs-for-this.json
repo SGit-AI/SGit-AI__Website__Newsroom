@@ -1,0 +1,143 @@
+{
+  "slug": "who-signs-for-this",
+  "teaser": "Map every layer from the hardware to the business contract by who signs it; the lines nobody signs are the blind spots worth paying to see.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "A maintainer's signature names who stands behind a version, not what is running; extending Andrey Lazarev's split between measured and declared context, every layer from hardware to business contract should end in an accountable signer, forming a fractal graph of signed certificates in which unsigned lines are visible blind spots for businesses and insurers to accept or close, with experts paid to sign and departures exposed.",
+  "nodes": [
+    {
+      "id": "sig",
+      "label": "A signature names who stands behind",
+      "kind": "claim",
+      "summary": "Not whether the version is what booted."
+    },
+    {
+      "id": "split",
+      "label": "Measured and declared",
+      "kind": "method",
+      "summary": "Measured by the device; declared by operator or auditor."
+    },
+    {
+      "id": "acc",
+      "label": "Somebody accountable",
+      "kind": "claim",
+      "summary": "Maintains, patches, fixes, moves the system."
+    },
+    {
+      "id": "gaps",
+      "label": "Signers define gaps",
+      "kind": "claim",
+      "summary": "Shared responsibility, extended up and down."
+    },
+    {
+      "id": "fractal",
+      "label": "A fractal graph of signed certificates",
+      "kind": "method",
+      "summary": "Every line opens into its own graph."
+    },
+    {
+      "id": "blind",
+      "label": "Blind spots",
+      "kind": "claim",
+      "summary": "Unsigned lines, made visible for a decision."
+    },
+    {
+      "id": "experts",
+      "label": "Experts paid to sign",
+      "kind": "method",
+      "summary": "Town planners sign for more than explorers."
+    },
+    {
+      "id": "leaves",
+      "label": "When the signer leaves",
+      "kind": "example",
+      "summary": "The line turns into a visible gap."
+    }
+  ],
+  "edges": [
+    {
+      "from": "split",
+      "to": "sig",
+      "rel": "answers"
+    },
+    {
+      "from": "acc",
+      "to": "gaps",
+      "rel": "produces"
+    },
+    {
+      "from": "gaps",
+      "to": "blind",
+      "rel": "produces"
+    },
+    {
+      "from": "fractal",
+      "to": "split",
+      "rel": "depends-on"
+    },
+    {
+      "from": "experts",
+      "to": "blind",
+      "rel": "answers"
+    },
+    {
+      "from": "leaves",
+      "to": "blind",
+      "rel": "example-of"
+    },
+    {
+      "from": "sig",
+      "to": "acc",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "who-maintains-the-php-you-run",
+      "signed-by-the-source",
+      "process-behaviour-policies",
+      "patch-for-breakfast",
+      "a-team-frozen-in-time",
+      "explorer-coding"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html",
+      "https://www.rfc-editor.org/rfc/rfc9334",
+      "https://aws.amazon.com/compliance/shared-responsibility-model/",
+      "https://slsa.dev/spec/v1.2/build-provenance"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The honest certificate keeps the two kinds apart, and names the signer of each.",
+      "why": "What is measured, and what is declared."
+    },
+    {
+      "text": "The line goes from signed to blind spot, and everyone can see it.",
+      "why": "When the person who signed leaves."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ky-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ky-map.webp",
+      "caption": "Who signs for each layer: an accountability map from the business to the hardware. Each line says what is claimed, whether it is measured or declared, and who signs it: the business owner for the contract, the product owner for what was delivered, a maintainer for the code that goes live and the release, the platform team for the process, the cloud provider for the platform, a hardware root and a verifier for the device. The building, who can reach it and what is plugged in, is signed by nobody: a blind spot. An illustration of the argument, not an audit of any system.",
+      "kind": "concept"
+    },
+    {
+      "file": "ky-thread.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ky-thread.webp",
+      "caption": "The LinkedIn thread under my post sharing \"Who maintains the PHP you run?\", 24 October 2026: Andrey Lazarev on what a maintainer's signature does and does not prove, my replies, and his split between what a device can measure and what an operator or auditor has to declare.",
+      "kind": "aside"
+    },
+    {
+      "file": "ky-fractal.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ky-fractal.webp",
+      "caption": "Every signed line is a graph of its own: the line \"the device: this is what actually booted\", signed by a verifier, opens into the measurement, the reference it should match, the verifier who checked one against the other, and the endorsement of the hardware root. The same holds in every domain: the business, the product, the code, the release, the platform, the device. Each opening ends in somebody who signed, or in a blind spot.",
+      "kind": "concept"
+    }
+  ]
+}
