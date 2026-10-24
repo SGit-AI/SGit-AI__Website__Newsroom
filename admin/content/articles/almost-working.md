@@ -10,6 +10,8 @@ tags: agents, schedules, pki, qr, evidence, php2shell, article
 status: published
 ---
 
+> **Update, 24 October.** This article read the PHP site's schedule vault, which the agents had not yet adopted, and so understated how far things had got. By 23:30 UTC on 23 October the scheduled curator had promoted 33 captures (the evidence vault at 260 sources) and the scheduled source watch was running five times a day; just after midnight the schedules moved out of the schedule vault and into the repository, and the source watch into a pack-mode vault, `7r83qic5`. The day is in [PHP October 2026, day three](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html).
+
 !shot wk-pipeline.webp | images/ | Three agents, three stores, one site: the researcher writes the source watch (oq9gflln, raw captures); the curator promotes what holds into the evidence vault (3ytzxm3g, 227 curated sources); the journalist updates the site from it. The schedule vault (weic8imn, public) records who runs, when, and what each run did. | architecture
 
 ## In short {#in-short}

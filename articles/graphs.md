@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-267 of 267 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+268 of 268 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-267 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 7 articles not yet linked either way.
+268 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 8 articles not yet linked either way.
+
+## [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](php-daily-2026-10-23.md)
+
+2026-10-24 · News & evidenceAgents & policy
+
+On 23 October the php2shell story held its key line, no named compromise, while the newsroom covering it moved to scheduled agents, pack-mode vaults and self-observation, and the main constraint became the editor's decisions.
+
+*[diagram]*
+**claim**method**artefact
+
+**9 nodes, 6 edges**
+
+- **The story held** (claim) No named compromise, no KEV listing, 109 of 751 fixed.
+- **The scheduled curator** (artefact) 33 captures promoted, 260 sources.
+- **The scheduled source watch** (artefact) Five wakes a day, into pack mode.
+- **Pack mode** (method) A clone in 95 seconds instead of 13 minutes 47.
+- **Telemetry** (artefact) Every chart a filter; journeys as a Sankey.
+- **The risk graph as a tool** (artefact) 713 nodes, computed gaps.
+- **The Sherpa** (artefact) Readers' feedback answered point by point.
+- **The status snapshot** (artefact) Twenty sessions read at 23:30 UTC.
+- **Waiting on the editor** (claim) Fifteen of twenty agents.
+
+> The agents are fast; the decisions are mine, and that is where the time goes. What waits on me.
+
+> That is the kind of honest gap list I want every system to have. The risk graph as a tool.
 
 ## [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](almost-working.md)
 

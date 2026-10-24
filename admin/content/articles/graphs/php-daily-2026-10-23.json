@@ -1,0 +1,34 @@
+{
+ "slug": "php-daily-2026-10-23",
+ "teaser": "Day three at 23:30 UTC: the story held, the agents ran on a schedule, the site learned to watch itself, and 15 agents waited on me.",
+ "topics": ["news-and-evidence", "agents-and-policy"],
+ "core_idea": "On 23 October the php2shell story held its key line, no named compromise, while the newsroom covering it moved to scheduled agents, pack-mode vaults and self-observation, and the main constraint became the editor's decisions.",
+ "nodes": [
+  {"id": "story", "label": "The story held", "kind": "claim", "summary": "No named compromise, no KEV listing, 109 of 751 fixed."},
+  {"id": "curator", "label": "The scheduled curator", "kind": "artefact", "summary": "33 captures promoted, 260 sources."},
+  {"id": "watch", "label": "The scheduled source watch", "kind": "artefact", "summary": "Five wakes a day, into pack mode."},
+  {"id": "pack", "label": "Pack mode", "kind": "method", "summary": "A clone in 95 seconds instead of 13 minutes 47."},
+  {"id": "telemetry", "label": "Telemetry", "kind": "artefact", "summary": "Every chart a filter; journeys as a Sankey."},
+  {"id": "risk", "label": "The risk graph as a tool", "kind": "artefact", "summary": "713 nodes, computed gaps."},
+  {"id": "sherpa", "label": "The Sherpa", "kind": "artefact", "summary": "Readers' feedback answered point by point."},
+  {"id": "status", "label": "The status snapshot", "kind": "artefact", "summary": "Twenty sessions read at 23:30 UTC."},
+  {"id": "waits", "label": "Waiting on the editor", "kind": "claim", "summary": "Fifteen of twenty agents."}
+ ],
+ "edges": [
+  {"from": "watch", "to": "curator", "rel": "produces"},
+  {"from": "pack", "to": "watch", "rel": "depends-on"},
+  {"from": "curator", "to": "story", "rel": "produces"},
+  {"from": "status", "to": "waits", "rel": "produces"},
+  {"from": "telemetry", "to": "sherpa", "rel": "compared-with"},
+  {"from": "risk", "to": "story", "rel": "extends"}
+ ],
+ "links": {
+  "articles": ["almost-working", "php-october-at-8pm", "the-false-positives-are-the-next-incident"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/team/status/", "https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/"]
+ },
+ "quotes": [
+  {"text": "The agents are fast; the decisions are mine, and that is where the time goes.", "why": "What waits on me."},
+  {"text": "That is the kind of honest gap list I want every system to have.", "why": "The risk graph as a tool."}
+ ]
+}
