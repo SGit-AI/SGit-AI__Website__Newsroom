@@ -14,13 +14,43 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-268 of 268 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+269 of 269 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-268 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 8 articles not yet linked either way.
+269 articles, 1470 links between them (2220 mentions in all). 250 articles cite an earlier one; 72 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 9 articles not yet linked either way.
+
+## [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](underwriting-the-agent-economy-reviewed.md)
+
+2026-10-24 · Agents & policyStartups & strategyGraphs & knowledge
+
+The AI insurance stack blueprint says what insurers must build and what they need from the companies they cover, accountability, reach, change history and evidence that controls held; agent behaviour policies, the delegation record and insurability computed from evidence are how a deploying company produces that, with clear gaps still to fill.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**14 nodes, 14 edges**
+
+- **The AI insurance stack** (artefact) arXiv 2607.11999: eight components, 37 authors.
+- **Silent coverage** (claim) Agent risk unpriced inside existing policies.
+- **Three providers, 80%** (claim) A defect becomes a correlated shock.
+- **Recurring technical tests** (method) Evaluations, red teaming, chaos testing.
+- **Underwriters Laboratories** (example) Insurers in 1894; the mark became a test of insurability.
+- **AI standards** (concept) ISO 42001, NIST AI RMF, STAR for AI, AIUC-1.
+- **Expected loss** (method) Severity times probability times usage.
+- **The market today** (example) Harbor, Armilla, Munich Re with Mosaic, AIUC.
+- **Agent behaviour policy** (method) Owner, reach, mandate, enforcement, evidence.
+- **The delegation record** (artefact) Approval, grant, gap, controls, evidence, version.
+- **Hooks and audit logs** (method) Blocked attempts logged apart from executed actions.
+- **Insurability as a query** (artefact) AIUC-1 evidence on a date: conditions and exclusions.
+- **What we still miss** (question) Loss numbers, pooled data, accumulation, contracts.
+- **Maintainers' sign-off** (concept) The UL mark for open source.
+
+> A standard tells you what good looks like. It cannot tell you whether you do it. What we did with AIUC-1.
+
+> That is the job we have been doing. What the paper asks for, and does not build.
 
 ## [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](php-daily-2026-10-23.md)
 

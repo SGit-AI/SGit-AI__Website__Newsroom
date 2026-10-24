@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 935 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 620 | 2333 | links to sgit.ai's pages and the network sites (24 files this site writes itself) |
-| words | 1281 | 8858 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 938 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 623 | 2348 | links to sgit.ai's pages and the network sites (24 files this site writes itself) |
+| words | 1287 | 8903 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 66 | 156 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 521 × `sgit.ai/about/index.html`
-- 263 × `sgit.ai/about/index.md`
+- 523 × `sgit.ai/about/index.html`
+- 264 × `sgit.ai/about/index.md`
 - 102 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 37 × `graphs.sgit.ai/`
@@ -26,12 +26,12 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 18 × `sgit.ai/docs/append-lane-messaging.md`
 - 17 × `nhi.sgit.ai/`
 - 16 × `graphs.sgit.ai/v2/books/index.html`
+- 16 × `sgit.ai/demos/vaults/regulation-graph/index.html`
 - 15 × `sgit.ai/startups/business-plans.html`
 - 15 × `sgit.ai/demos/vaults/code-review-graphs/index.html`
 - 15 × `sgit.ai/updates/index.html`
 - 14 × `sgit.ai/docs/pki.md`
 - 14 × `sgit.ai/demos/vaults/hope-or-enforcement/index.html`
-- 14 × `sgit.ai/demos/vaults/regulation-graph/index.html`
 - 14 × `sgit.ai/network/index.html`
 - 14 × `sgit.ai/demos/vaults/how-much-evidence/index.html`
 - 14 × `sgit.ai/case-studies/live-vault-docs.html`
@@ -116,6 +116,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `admin/build/newsroom-text.json` (10)
 - `articles/find.json` (10)
 - `articles/summaries/aws-from-the-vault.json` (10)
+- `publishers/versions/index.html` (9)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
 - `desks/security.html` (8)
@@ -142,4 +143,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/017.html` (6)
 - `engineering/issues/079.html` (6)
 - `engineering/issues/085.html` (6)
-- `engineering/releases/v0.12.114.html` (6)

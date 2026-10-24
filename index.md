@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.61 · 268 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.62 · 269 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](articles/php-daily-2026-10-23.md), 2026-10-24, 8 min. Day three at 23:30 UTC: the story held, the agents ran on a schedule, the site learned to watch itself, and 15 agents waited on me.
+- [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min. A review of the AI insurance stack blueprint, the companies selling agent cover, and what agent behaviour policies add to it.
 
 ## Highlights
 
+- [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](articles/php-daily-2026-10-23.md), 2026-10-24, 8 min.
 - [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](articles/almost-working.md), 2026-10-23, 11 min.
 - [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
 - [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](articles/who-maintains-the-php-you-run.md), 2026-10-23, 20 min.
-- [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (74)
+### Agent security & policy (75)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
 - [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](articles/php-daily-2026-10-23.md), 2026-10-24, 8 min.
 - [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
-- [The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised](articles/the-sidecar-repository.md), 2026-10-22, 9 min.
 
 ### Building with agents (45)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
