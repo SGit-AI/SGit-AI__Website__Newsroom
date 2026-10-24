@@ -3,8 +3,8 @@ title: A team frozen in time: agent sessions with a mandate, a role and a reposi
 date: 2026-10-24
 author: Dinis Cruz
 author_url: about/index.html
-summary: Every project has a moment when the team is sharp, everyone is there, and features ship fast. Then the project dries out, the goals are met, or the company is sold, and the team moves on, taking with it the knowledge of why the system was built the way it was, its side effects, and how to build and ship it. Years later a fix is needed, as with PHP this week, and nobody can make it safely; sometimes even the pipeline is gone. I am now experiencing something we never had: agent sessions that are focused on one piece of work, with one mandate, one role and one repository, which can be paused and picked up again later, with the conversation, the reasoning, the lessons and the code exactly where they were. On the PHP story's team, two sessions did exactly that this week: each left off on 22 October and carried on 28 hours later, by first reading what the rest of the team had done. A new developer who joins such a project inherits the history, the materials, and agents ready to make the change. That is a very powerful idea, and I want to capture it.
-version: v0.13.67
+summary: Every project has a moment when the team is sharp, everyone is there, and features ship fast. Then the project dries out, the goals are met, or the company is sold, and the team moves on, taking with it the knowledge of why the system was built the way it was, its side effects, and how to build and ship it. Years later a fix is needed, as with PHP this week, and nobody can make it safely; sometimes even the pipeline is gone. I am now experiencing something we never had: agent sessions that are focused on one piece of work, with one mandate, one role and one repository, which can be paused and picked up again later, with the conversation, the reasoning, the lessons and the code exactly where they were. The best examples are the teams behind the sgit CLI and SG/Send, the vaults, which I keep coming back to: one of their sessions has resumed after 43 days without a commit, and another after 36, starting from the current code and getting straight back to tested work. On the PHP story's team, two sessions did the same this week after 28 hours. A new developer who joins such a project inherits the history, the materials, and agents ready to make the change. That is a very powerful idea, and I want to capture it.
+version: v0.13.68
 license: https://creativecommons.org/licenses/by/4.0/
 tags: agents, teams, knowledge, maintenance, sessions, article
 status: published
@@ -18,7 +18,8 @@ status: published
 - **That is why fixes are hard years later.** Nobody knows the side effects, and sometimes nobody can even build it.
 - **Agent sessions can be frozen.** One mandate, one role, one repository, paused and picked up again.
 - **Nothing is lost while they wait.** The conversation, the reasoning, the lessons, the code and the tests stay where they were.
-- **We have seen it this week.** Two PHP-team sessions resumed after 28 hours by first reading what had changed.
+- **The sgit teams show it best.** Sessions on the CLI and SG/Send resumed after 36 and 43 days, from the current code.
+- **And this week, too.** Two PHP-team sessions resumed after 28 hours by first reading what had changed.
 - **A newcomer inherits a team, not just code.** The history, the materials, and agents ready to make the change.
 
 ## The team that leaves {#the-team-that-leaves}
@@ -33,16 +34,29 @@ What I am experiencing more and more is different. The newsroom and the PHP stor
 
 The new part is that such a session can be paused, and picked up again later. Not a new chat that has to be briefed from scratch: the same session, with its conversation, its reasoning and its decisions where they were, in a repository where the code, the history, the tests and the pipeline still work. Paused, it costs nothing. Woken, it can carry on where it left off.
 
-## We saw it this week {#this-week}
+## The teams I keep coming back to {#sgit-teams}
 
-The PHP story's git history shows it plainly, because every commit names the session that made it.
+The best examples are the teams behind [the sgit CLI](https://cli.sgit.ai/), whose source is [SGit-AI/SGit-AI__CLI](https://github.com/SGit-AI/SGit-AI__CLI), and behind SG/Send, the vaults, in [SGraph-AI__App__Send](https://github.com/the-cyber-boardroom/SGraph-AI__App__Send). I have dedicated Claude Code sessions for that work, and every commit they make names its session, so their git histories show when a session went quiet and when it came back. Increasingly there are long periods when they are paused. And when they start again, they pick up where I left them, with a lot of quality.
+
+!shot fz-pauses.webp | images/ | Four sessions that keep coming back, from the git histories of the sgit CLI and SG/Send: an SG/Send session over 158 days with pauses of 23.5, 18.9 and 43 days; another over 69 days with a pause of 37; a CLI session over 86 days with pauses of 15, 15 and 36; and another over 47 days with pauses of 22 and 17.5. Each pause was ended by the same session. | timeline
+
+- **SG/Send, a 43-day pause.** One session's last commit before the pause, on 29 June, updated a dependency with the full unit suite at "977 passed, 9 skipped". Its next, on 11 August, started from the current dev branch, 19 releases later, with "Add DevOps review: API deployment current state, container unification, and AWS Marketplace". The next day it shipped "Phase A: universal container image", with "Container unit tests: 36 green", and the deployment templates with "all cfn-lint clean". The same session had paused for 23.5 days in the spring and come back with "rebase debrief to v0.27.53 after dev sync": catch up first, then work.
+- **SG/Send, a 37-day pause.** Another session stopped on 9 June with a fix to the vault editor and came back on 16 July with documentation, then a review of its own docs against the live sources, the fixes from that review, and then features: "native LLM chat, talk to the file you are viewing".
+- **The sgit CLI, pauses of 15 and 36 days.** One session came back on 30 June after 15 days with a dependency fix: "sgit-ai full unit suite on Python 3.11 with osbot-utils 3.75.0: 3822 passed, no regressions". After 36 more days it came back with a security review and threat model, "analysis only; no code changes".
+- **Both teams at once.** On 8 April a CLI session, quiet for 9 days, shipped a fix rejecting human-readable vault IDs; 16 minutes later an SG/Send session, quiet for the same 9 days, added the server-side check: "complements the client-side fix already shipped in sgit", with 8 new tests.
+
+Two honest qualifications. These are not one session per project: the CLI's history has 19 sessions and SG/Send's 240, many of them short, so the repositories never stopped; it is the long-lived sessions that pause. And a gap in commits does not prove a session was idle, only that it committed nothing. The commit trailers also suggest that some of these sessions carried on across a change of model, which is the point: the session kept its context while the model behind it moved on.
+
+## And this week {#this-week}
+
+The PHP story's git history shows the same thing on a short scale, because every commit names the session that made it.
 
 !shot fz-resumed.webp | images/ | Two sessions on the PHP story's team, paused and picked up again: the librarian's last commit on 22 October at 20:20 UTC and its next on 24 October at 00:12; the cartographer's last on 22 October at 19:48 and its next on 24 October at 00:16. Each resumed by taking in what the rest of the team had done. | timeline
 
 - **The librarian**, which keeps the questions readers ask and maps every member of the team, last committed at 20:20 UTC on 22 October. Its next commit, at 00:12 on 24 October, was "Merge dev (v0.10.18) into the librarian's branch, and the librarian's pass of 24 October". It read what the team had shipped while it waited, then did its work. Six hours later it ran its first scheduled pass.
 - **The cartographer**, which builds the story's graphs, last committed at 19:48 on 22 October. It came back at 00:16 on 24 October: "dev taken in, 76 new parties resolved". It took in two more releases as it worked, and within the hour its role was renamed the ontologist, at my word, and it carried on under the new name.
 
-The gap here was about 28 hours, not months. But nothing in how this works depends on the length of the gap. The session, the repository and the record are the same whether it waits a day or a quarter.
+The gap here was about 28 hours. With the sgit teams it has been more than a month. Nothing in how this works depends on the length of the gap: the session, the repository and the record are the same whether it waits a day or a quarter.
 
 ## Why this is so powerful {#why-powerful}
 
@@ -64,11 +78,12 @@ It does not happen by accident. It works here because of a few habits:
 
 ## What this does not claim {#limits}
 
-- **The gap observed was 28 hours.** Months is the promise of the design, not yet a measurement.
+- **The longest pause observed is 43 days.** Years is the promise of the design, not yet a measurement.
+- **Commits are the evidence.** A session that commits nothing may still have been open; and the CLI and SG/Send also have many short sessions alongside the long ones.
 - **A session's context has limits.** Long sessions summarise their history, which is why the written record matters as much as the conversation.
 - **The platform must keep the session.** A frozen team depends on the provider keeping it, and on the repository outliving it.
 - **Agents do not replace the people.** They keep the knowledge within reach; someone still decides.
 
 ## Where this comes from {#sources}
 
-My voice memo of 24 October 2026; the PHP story site's git history, its commits grouped by the Claude Code session named in each, 22 to 24 October; its [team status page](https://php.oct.2026.newsroom.sgit.ai/team/status/). Related: [the agents write too](https://newsroom.sgit.ai/articles/the-agents-write-too.html), [almost working](https://newsroom.sgit.ai/articles/almost-working.html), [who will fix your mess?](https://newsroom.sgit.ai/articles/who-will-fix-your-mess.html), [who maintains the PHP you run?](https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html), [PHP October 2026, update 2](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.
+My voice memos of 24 October 2026; the git histories of [SGit-AI__CLI](https://github.com/SGit-AI/SGit-AI__CLI) and [SGraph-AI__App__Send](https://github.com/the-cyber-boardroom/SGraph-AI__App__Send), all branches, keyed on the session named in each commit, read on 24 October; the PHP story site's git history, its commits grouped by the Claude Code session named in each, 22 to 24 October; its [team status page](https://php.oct.2026.newsroom.sgit.ai/team/status/). Related: [the agents write too](https://newsroom.sgit.ai/articles/the-agents-write-too.html), [almost working](https://newsroom.sgit.ai/articles/almost-working.html), [who will fix your mess?](https://newsroom.sgit.ai/articles/who-will-fix-your-mess.html), [who maintains the PHP you run?](https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html), [PHP October 2026, update 2](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html). Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.

@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-275 of 275 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+276 of 276 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-275 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 13 articles not yet linked either way.
+276 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 14 articles not yet linked either way.
+
+## [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](process-behaviour-policies.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+A process behaviour policy, derived from one traced run as the files, system calls and hosts a process needs, can be enforced inside a root-everywhere cloud container by Linux itself (ephemeral user, read-only root, namespaces, Landlock, seccomp, a network broker and cgroup limits) for about a tenth of a second, and its size measures how well engineered the software is.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **sgit without the vault key** (claim) The key lives in a broker the process cannot reach.
+- **Root everywhere** (claim) Containers run every process as root.
+- **Derive from one run** (method) strace lists files, calls, programs and hosts.
+- **Seven walls** (method) User, root, namespaces, Landlock, seccomp, broker, limits.
+- **The probe** (example) 13 of 14 attempts as root; none under the policy.
+- **92 to 187 ms** (example) Median overhead per run, measured.
+- **Policy size as a measure** (claim) 1 file for Hello World; 1,025 for sgit.
+- **A policy of policies** (claim) OS, environment, runtime, application, execution.
+
+> `/etc/shadow`, `/root` and `/bin/sh` are not refused: they do not exist. Enforce it with seven walls.
+
+> It is all about least privilege, and you cannot have least privilege until you know what the least is. The size of the policy measures the software.
 
 ## [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](signed-by-the-source.md)
 
@@ -74,7 +98,7 @@ Organisations took sites down during php2shell because they could not say they w
 
 2026-10-24 · Agents & policyStartups & strategy
 
-When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as two PHP-team sessions did after 28 hours, so a later fix can wake the team rather than rebuild its knowledge.
+When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as sessions on the sgit CLI and SG/Send did after 36 and 43 days, so a later fix can wake the team rather than rebuild its knowledge.
 
 *[diagram]*
 **claim**method**example
@@ -86,7 +110,7 @@ When project teams dissolve, the knowledge needed to change their systems leaves
 - **The PHP fix nobody can make** (example) Sites dark because nobody could say they were safe.
 - **A session with one mandate** (method) One role, one repository, one piece of work.
 - **Paused and resumed** (method) The conversation, record and code intact.
-- **Two sessions, 28 hours** (example) The librarian and the cartographer, 22 to 24 October.
+- **Sessions back after 43 days** (example) The sgit CLI and SG/Send teams, and two PHP-team sessions after 28 hours.
 - **A newcomer inherits a team** (claim) History, materials and agents ready to act.
 - **What it takes** (method) Write it down, keep the pipeline, catch up first.
 

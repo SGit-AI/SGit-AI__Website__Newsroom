@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-24 | published | 1,677 | first published | this release | [current](../patch-for-breakfast.md) |
+| **v1.0.0** | 2026-10-24 | published | 1,677 | first published | [`ab7e5dc61`](https://github.com/SGit-AI/SGit-AI__Website/commit/ab7e5dc61fef4b38afda730877b6a0865bb21653) | [current](../patch-for-breakfast.md) |
 
 [← Back to the article](../patch-for-breakfast.md) · [All articles](../index.md)
 

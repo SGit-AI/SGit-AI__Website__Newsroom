@@ -73,6 +73,36 @@
   ],
   "articles": [
     {
+      "slug": "process-behaviour-policies",
+      "title": "Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second",
+      "date": "2026-10-24",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/process-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/process-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/process-behaviour-policies.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/process-behaviour-policies.json",
+      "teaser": "The most locked-down Linux process we could build inside Claude's cloud container: a policy traced from one run, seven kernel walls, 0.1 s.",
+      "summary": "The behaviour policy family has policies for agents, decisions, workflows, skills and applications. This one is for a process. It started with sgit and keys: we want sgit to work with PKI keys rather than holding a vault key, so the vault key has to live somewhere else, in a small process acting as a key service or a network broker. That only helps if sgit's own process cannot reach the key, which led to a bigger question. Inside a cloud container, everything runs as root, which is bad practice and no defence in depth. So what is the most locked-down process Linux lets us build there? We built it, in this newsroom's own Claude Code container, and measured it. A policy is derived from one traced run: every file the process reads, every system call it makes, every host it talks to. Then the kernel enforces it with seven walls: a user that exists for one run, an empty read-only root holding only the listed files, its own namespaces, Landlock, a seccomp allowlist, a network broker that only opens tunnels to the policy's hosts, and limits. A probe that, as root, could read /etc/shadow, the agent's home and the internet could do none of it under the policy. The cost was 92 to 187 milliseconds a run. And the size of the policy is a measure of the software: Hello World in C needs 1 file and 12 system calls; sgit needs 1,025 files and 58.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "behaviour-policies",
+        "linux",
+        "least-privilege",
+        "sandboxing",
+        "sgit",
+        "landlock",
+        "seccomp",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "signed-by-the-source",
       "title": "Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too",
       "date": "2026-10-24",
@@ -139,7 +169,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/a-team-frozen-in-time.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/a-team-frozen-in-time.json",
       "teaser": "Agent sessions with a mandate, a role and a repository, paused and picked up again, so a team's knowledge outlives the team.",
-      "summary": "Every project has a moment when the team is sharp, everyone is there, and features ship fast. Then the project dries out, the goals are met, or the company is sold, and the team moves on, taking with it the knowledge of why the system was built the way it was, its side effects, and how to build and ship it. Years later a fix is needed, as with PHP this week, and nobody can make it safely; sometimes even the pipeline is gone. I am now experiencing something we never had: agent sessions that are focused on one piece of work, with one mandate, one role and one repository, which can be paused and picked up again later, with the conversation, the reasoning, the lessons and the code exactly where they were. On the PHP story's team, two sessions did exactly that this week: each left off on 22 October and carried on 28 hours later, by first reading what the rest of the team had done. A new developer who joins such a project inherits the history, the materials, and agents ready to make the change. That is a very powerful idea, and I want to capture it.",
+      "summary": "Every project has a moment when the team is sharp, everyone is there, and features ship fast. Then the project dries out, the goals are met, or the company is sold, and the team moves on, taking with it the knowledge of why the system was built the way it was, its side effects, and how to build and ship it. Years later a fix is needed, as with PHP this week, and nobody can make it safely; sometimes even the pipeline is gone. I am now experiencing something we never had: agent sessions that are focused on one piece of work, with one mandate, one role and one repository, which can be paused and picked up again later, with the conversation, the reasoning, the lessons and the code exactly where they were. The best examples are the teams behind the sgit CLI and SG/Send, the vaults, which I keep coming back to: one of their sessions has resumed after 43 days without a commit, and another after 36, starting from the current code and getting straight back to tested work. On the PHP story's team, two sessions did the same this week after 28 hours. A new developer who joins such a project inherits the history, the materials, and agents ready to make the change. That is a very powerful idea, and I want to capture it.",
       "topics": [
         "agents-and-policy",
         "startups-and-strategy"

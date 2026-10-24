@@ -55,6 +55,180 @@
   ],
   "articles": [
     {
+      "slug": "process-behaviour-policies",
+      "title": "Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second",
+      "date": "2026-10-24",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/process-behaviour-policies.html",
+      "markdown": "https://newsroom.sgit.ai/articles/process-behaviour-policies.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/process-behaviour-policies.webp",
+      "teaser": "The most locked-down Linux process we could build inside Claude's cloud container: a policy traced from one run, seven kernel walls, 0.1 s.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "behaviour-policies",
+        "linux",
+        "least-privilege",
+        "sandboxing",
+        "sgit",
+        "landlock",
+        "seccomp",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "px-walls.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/px-walls.webp",
+          "caption": "Seven walls around one process, set from its policy and enforced by Linux inside this cloud container: an ephemeral user with no capabilities; an empty, read-only root holding only the listed files; its own namespaces; Landlock for paths, exec and TCP ports; a seccomp allowlist of the system calls the traced run made; a network broker that only opens tunnels to the policy's hosts; and cgroup limits.",
+          "kind": "concept"
+        },
+        {
+          "file": "px-probe.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/px-probe.webp",
+          "caption": "What the probe tried, and what stopped it: as root in the container today, it could read /etc/shadow and the agent's home, write to /usr/lib and /tmp, see 92 processes, start a shell, mount a filesystem, make a user namespace, reach the internet and the agent's proxy, and open a netlink socket; under the Hello World policy, all of it was refused; with seccomp and Landlock switched off, the other walls still refused all but the netlink socket.",
+          "kind": "comparison"
+        },
+        {
+          "file": "px-cost.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/px-cost.webp",
+          "caption": "The size of a policy, and what it costs: Hello World in C, 1 file, 12 system calls, no hosts, 5 ms bare, 103 ms of policy overhead; Hello World in Python, 37 files, 34 system calls, 30 ms bare, 92 ms overhead; Python fetching one page, 169 files, 44 system calls, one host, 565 ms bare, 149 ms overhead; sgit init, commit and status, 1,025 files, 58 system calls, one host, 3,495 ms bare, 187 ms overhead.",
+          "kind": "comparison"
+        },
+        {
+          "file": "px-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/px-layers.webp",
+          "caption": "A policy of policies: the operating system (what Linux can do here), the environment (this container's proxy, CA bundle and paths), the runtime (Python and its standard library), the application (sgit, its dependencies and its server), and this execution (one command, one folder, one host, one user for one run), each narrowing the one above.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "process-behaviour-policies",
+        "teaser": "The most locked-down Linux process we could build inside Claude's cloud container: a policy traced from one run, seven kernel walls, 0.1 s.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "A process behaviour policy, derived from one traced run as the files, system calls and hosts a process needs, can be enforced inside a root-everywhere cloud container by Linux itself (ephemeral user, read-only root, namespaces, Landlock, seccomp, a network broker and cgroup limits) for about a tenth of a second, and its size measures how well engineered the software is.",
+        "nodes": [
+          {
+            "id": "keys",
+            "label": "sgit without the vault key",
+            "kind": "claim",
+            "summary": "The key lives in a broker the process cannot reach."
+          },
+          {
+            "id": "root",
+            "label": "Root everywhere",
+            "kind": "claim",
+            "summary": "Containers run every process as root."
+          },
+          {
+            "id": "trace",
+            "label": "Derive from one run",
+            "kind": "method",
+            "summary": "strace lists files, calls, programs and hosts."
+          },
+          {
+            "id": "walls",
+            "label": "Seven walls",
+            "kind": "method",
+            "summary": "User, root, namespaces, Landlock, seccomp, broker, limits."
+          },
+          {
+            "id": "probe",
+            "label": "The probe",
+            "kind": "example",
+            "summary": "13 of 14 attempts as root; none under the policy."
+          },
+          {
+            "id": "cost",
+            "label": "92 to 187 ms",
+            "kind": "example",
+            "summary": "Median overhead per run, measured."
+          },
+          {
+            "id": "size",
+            "label": "Policy size as a measure",
+            "kind": "claim",
+            "summary": "1 file for Hello World; 1,025 for sgit."
+          },
+          {
+            "id": "layers",
+            "label": "A policy of policies",
+            "kind": "claim",
+            "summary": "OS, environment, runtime, application, execution."
+          }
+        ],
+        "edges": [
+          {
+            "from": "keys",
+            "to": "walls",
+            "rel": "depends-on"
+          },
+          {
+            "from": "root",
+            "to": "walls",
+            "rel": "contrasts"
+          },
+          {
+            "from": "trace",
+            "to": "walls",
+            "rel": "produces"
+          },
+          {
+            "from": "probe",
+            "to": "walls",
+            "rel": "example-of"
+          },
+          {
+            "from": "cost",
+            "to": "walls",
+            "rel": "example-of"
+          },
+          {
+            "from": "trace",
+            "to": "size",
+            "rel": "produces"
+          },
+          {
+            "from": "layers",
+            "to": "walls",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "application-behaviour-policies",
+            "skill-behaviour-policy",
+            "three-policies-for-an-agent",
+            "a-policy-beside-the-prompt",
+            "approve-at-altitude",
+            "hooks-are-kernel-code",
+            "the-key-is-not-the-risk"
+          ],
+          "pages": [],
+          "sites": [
+            "https://docs.kernel.org/userspace-api/landlock.html",
+            "https://docs.kernel.org/userspace-api/seccomp_filter.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "`/etc/shadow`, `/root` and `/bin/sh` are not refused: they do not exist.",
+            "why": "Enforce it with seven walls."
+          },
+          {
+            "text": "It is all about least privilege, and you cannot have least privilege until you know what the least is.",
+            "why": "The size of the policy measures the software."
+          }
+        ]
+      }
+    },
+    {
       "slug": "signed-by-the-source",
       "title": "Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too",
       "date": "2026-10-24",
@@ -402,6 +576,12 @@
           "kind": "concept"
         },
         {
+          "file": "fz-pauses.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fz-pauses.webp",
+          "caption": "Four sessions that keep coming back, from the git histories of the sgit CLI and SG/Send: an SG/Send session over 158 days with pauses of 23.5, 18.9 and 43 days; another over 69 days with a pause of 37; a CLI session over 86 days with pauses of 15, 15 and 36; and another over 47 days with pauses of 22 and 17.5. Each pause was ended by the same session.",
+          "kind": "timeline"
+        },
+        {
           "file": "fz-resumed.webp",
           "url": "https://newsroom.sgit.ai/articles/images/fz-resumed.webp",
           "caption": "Two sessions on the PHP story's team, paused and picked up again: the librarian's last commit on 22 October at 20:20 UTC and its next on 24 October at 00:12; the cartographer's last on 22 October at 19:48 and its next on 24 October at 00:16. Each resumed by taking in what the rest of the team had done.",
@@ -415,7 +595,7 @@
           "agents-and-policy",
           "startups-and-strategy"
         ],
-        "core_idea": "When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as two PHP-team sessions did after 28 hours, so a later fix can wake the team rather than rebuild its knowledge.",
+        "core_idea": "When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as sessions on the sgit CLI and SG/Send did after 36 and 43 days, so a later fix can wake the team rather than rebuild its knowledge.",
         "nodes": [
           {
             "id": "dissolve",
@@ -449,9 +629,9 @@
           },
           {
             "id": "evidence",
-            "label": "Two sessions, 28 hours",
+            "label": "Sessions back after 43 days",
             "kind": "example",
-            "summary": "The librarian and the cartographer, 22 to 24 October."
+            "summary": "The sgit CLI and SG/Send teams, and two PHP-team sessions after 28 hours."
           },
           {
             "id": "newcomer",
@@ -512,7 +692,9 @@
           ],
           "pages": [],
           "sites": [
-            "https://php.oct.2026.newsroom.sgit.ai/team/status/"
+            "https://php.oct.2026.newsroom.sgit.ai/team/status/",
+            "https://github.com/SGit-AI/SGit-AI__CLI",
+            "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send"
           ]
         },
         "quotes": [

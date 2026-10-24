@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.67 · 275 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.68 · 276 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](articles/signed-by-the-source.md), 2026-10-24, 8 min. Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.
+- [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min. The most locked-down Linux process we could build inside Claude's cloud container: a policy traced from one run, seven kernel walls, 0.1 s.
 
 ## Highlights
 
+- [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](articles/signed-by-the-source.md), 2026-10-24, 8 min.
 - [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](articles/patch-for-breakfast.md), 2026-10-24, 7 min.
-- [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 6 min.
+- [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 9 min.
 - [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](articles/a-tangent-that-shipped.md), 2026-10-24, 9 min.
-- [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](articles/a-pen-and-a-key.md), 2026-10-24, 10 min.
 
 ## Who are you reading as?
 
@@ -32,15 +32,15 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (76)
+### Agent security & policy (77)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min.
 - [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](articles/patch-for-breakfast.md), 2026-10-24, 7 min.
 - [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
-- [PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)](articles/php-daily-2026-10-23.md), 2026-10-24, 11 min.
 
 ### Building with agents (46)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
-- [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 6 min.
+- [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 9 min.
 - [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 17 min.
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](articles/where-a-check-runs.md), 2026-10-22, 8 min.
 

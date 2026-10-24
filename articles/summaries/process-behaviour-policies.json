@@ -1,0 +1,118 @@
+{
+ "slug": "process-behaviour-policies",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 249,
+   "line": "A process behaviour policy, derived from one traced run and enforced by seven kernel walls, for about 0.1 seconds.",
+   "para": "To keep sgit from reaching a vault key held elsewhere, its process must be locked down, yet cloud containers run everything as root. We built the most locked-down process Linux allows in this newsroom's container: a policy traced from one run, enforced by seven walls. A root-capable probe could do nothing under it, at 92 to 187 milliseconds a run.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 146,
+   "line": "Eight lines: the family, sgit's keys, root everywhere, derived policy, kernel walls, the probe, cost, size.",
+   "para": "A process joins agents, decisions, workflows, skills and applications as a policy subject. It began with sgit's keys. Containers run everything as root. The policy is derived from one traced run and enforced by the kernel. A probe that managed 13 of 14 attempts as root managed none under it. Overhead was 92 to 187 milliseconds, and policy size measures the software.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "why",
+   "label": "Why a process",
+   "words": 255,
+   "line": "sgit should use PKI keys and not hold the vault key, so its process must not reach the broker that does.",
+   "para": "The vault key could live in a small key service or network broker, but only if sgit's own process cannot reach that key, memory or files. In a cloud container every process runs as root, can read every file, signal every process and reach any host, which is no defence in depth.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "question",
+   "label": "The question, made concrete",
+   "words": 132,
+   "line": "The most locked-down process possible: one run's user, an immutable root, only the files, hosts and calls it needs.",
+   "para": "A process printing Hello World or running a small Python program should do nothing else: an ephemeral user, an immutable file system, a couple of directories and hosts, no other executables or processes. The policy should list every dependency down to the file system, reverse-engineering the process's blast radius.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "container",
+   "label": "What the container offers",
+   "words": 137,
+   "line": "This container offers Landlock ABI 7, seccomp, namespaces, cgroups, iptables and the tools, with nothing to install.",
+   "para": "The Claude Code cloud container runs Ubuntu 24.04 in a Firecracker microVM on Linux 6.18, as root with nearly every capability. Inside it we found Landlock at ABI 7, seccomp, mount, process, IPC, hostname, cgroup and network namespaces, version 1 cgroups, iptables with owner matching, useradd, chroot, strace and a static C toolchain.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "derive",
+   "label": "Derive the policy from a run",
+   "words": 141,
+   "line": "The policy comes from strace: files, directories, programs, system calls and connections, plus ELF interpreters.",
+   "para": "A script runs the command once under strace and records every file opened, directory listed, program executed, system call made and connection opened, adding ELF and script interpreters the trace misses. Hello World in C needs one file and twelve system calls, with an ephemeral user, no capabilities and limits of 64 processes and 512 MB.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "enforce",
+   "label": "Enforce it with seven walls",
+   "words": 299,
+   "line": "Seven walls: ephemeral user, empty read-only root, namespaces, Landlock, seccomp, a network broker, limits.",
+   "para": "A script builds the process's world from the policy and a static launcher applies the rest: a one-run user without groups or capabilities and with no_new_privs; a tiny read-only root of listed files; its own namespaces; Landlock path, exec and port rules; a seccomp allowlist; a host-allowlisting broker with a per-user firewall rule; and cgroup limits.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "probe",
+   "label": "Did it hold?",
+   "words": 231,
+   "line": "A probe managed 13 of 14 attempts as root, none under the policy, and only two with seccomp and Landlock off.",
+   "para": "As root the probe could read /etc/shadow and the agent's home, write system folders, see 92 processes, start a shell and reach the internet. Under the policy all failed. Without seccomp and Landlock only a netlink socket and signalling itself got through. The broker refused other hosts, and a fork loop stopped at 63.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sgit",
+   "label": "sgit, under its own policy",
+   "words": 88,
+   "line": "sgit ran under its own policy, and the trace showed that sgit status contacts the server.",
+   "para": "We traced sgit creating a vault, committing a file and checking status in one folder, then ran it under the policy, and it worked. The trace revealed that sgit status contacts the server even with nothing to push, so the policy needed dev.send.sgraph.ai through the broker: a derived policy shows what software really does.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "cost",
+   "label": "What it costs",
+   "words": 157,
+   "line": "Overhead was 92 to 187 milliseconds a run; building the root with direct mount calls took about 60.",
+   "para": "Building the root through shell mount commands took 1.7 seconds for 169 files; direct system calls took about 60 milliseconds whatever the count. Median overhead over five runs was 92 to 187 milliseconds, about 5% of sgit's 3.5-second job, and the user, rules and root can be prepared in advance.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "policy-of-policies",
+   "label": "A policy of policies",
+   "words": 106,
+   "line": "A policy of policies: OS, environment, runtime, application and execution, each narrowing the one above.",
+   "para": "There is a policy for the operating system, the environment, Python, sgit and this execution, each narrowing the layer before and never widening it, as decisions narrow at every level. Like hooks, the policy executes nothing: it states what is allowed and the kernel enforces it.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "measure",
+   "label": "The size of the policy measures the software",
+   "words": 150,
+   "line": "Policy size measures software: 1 file for Hello World in C, 1,025 files and 66 MB for sgit.",
+   "para": "Hello World in C needs one file and twelve system calls; in Python, 37 files and 34; a page fetch, 169 files. sgit needs 1,025 files, 66 MB and 58 system calls, led by its own modules, the standard library, osbot_utils and cryptography. That maps attack surface and shows what a purpose-built version could drop.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 132,
+   "line": "One run is not every path, seccomp ignores arguments, it is a prototype, and the key service is not built.",
+   "para": "A trace only covers the paths that run took, so tests should feed it. Seccomp filtered by call, so a netlink socket got through. It is about 350 lines in one container, not a hardened tool. The microVM remains the outer wall, the broker holds no credential yet, and the numbers are this machine's.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 98,
+   "line": "My memo; the experiment in this container with code, policies and results in the data pack; kernel docs.",
+   "para": "My voice memo of 24 October 2026; the experiment run that day by this site's agent, with code, four policies and results in the data pack; the Linux kernel's Landlock and seccomp documentation; and related articles on application, skill, agent, decision and workflow policies, hooks, credential injection, and footprint and blast radius.",
+   "by": "newsroom.writer"
+  }
+ ]
+}
