@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-24 | published | 3,385 | first published | this release | [current](../underwriting-the-agent-economy-reviewed.md) |
+| **v1.0.0** | 2026-10-24 | published | 3,385 | first published | [`05830a1fe`](https://github.com/SGit-AI/SGit-AI__Website/commit/05830a1fe57fef2804e0693d3332f76a18655780) | [current](../underwriting-the-agent-economy-reviewed.md) |
 
 [← Back to the article](../underwriting-the-agent-economy-reviewed.md) · [All articles](../index.md)
 

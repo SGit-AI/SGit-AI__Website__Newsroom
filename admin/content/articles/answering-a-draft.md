@@ -12,6 +12,8 @@ status: published
 
 !shot ib-queue.webp | images/ | The drafts folder as a work queue: a decision draft labelled next/3 decide, two replies labelled next/2 review, and one labelled next/1 send. Example, names invented. | screenshot
 
+> **What came next.** [A newsroom for one](/articles/a-newsroom-for-one.html) follows one kind of these emails, the reading lists, to the page the person opens, and what changed on it.
+
 ## In short {#in-short}
 
 - **The agent drafts; I send.** Every one of 178 emails, reviewed and sent by me.

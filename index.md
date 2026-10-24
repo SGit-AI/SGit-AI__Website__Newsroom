@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.62 · 269 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.63 · 270 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min. A review of the AI insurance stack blueprint, the companies selling agent cover, and what agent behaviour policies add to it.
+- [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](articles/a-newsroom-for-one.md), 2026-10-24, 12 min. The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.
 
 ## Highlights
 
+- [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
 - [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](articles/php-daily-2026-10-23.md), 2026-10-24, 8 min.
 - [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](articles/almost-working.md), 2026-10-23, 11 min.
 - [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
-- [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](articles/who-maintains-the-php-you-run.md), 2026-10-23, 20 min.
 
 ## Who are you reading as?
 
@@ -50,11 +50,11 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
 - [PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read](articles/php-october-at-8pm.md), 2026-10-22, 15 min.
 
-### The future of news (41)
+### The future of news (42)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](articles/a-newsroom-for-one.md), 2026-10-24, 12 min.
 - [v0.12 in numbers: 159 releases in eight days, 131 articles, 292,000 words, and what the data says about how an agent-run newsroom works](articles/v0-12-in-numbers.md), 2026-10-20, 7 min.
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](articles/a-book-for-one-reader.md), 2026-10-18, 4 min.
-- [A browser for one: an iPhone app that only reads my newsroom, why I am building it now, and why I will still pay someone to keep it working](articles/a-browser-for-one.md), 2026-10-18, 8 min.
 
 ### Strategy & startups (50)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

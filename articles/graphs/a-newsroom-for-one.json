@@ -1,0 +1,211 @@
+{
+  "slug": "a-newsroom-for-one",
+  "teaser": "The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.",
+  "topics": [
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "A reading list from one person to another, built into emails by the agent behind agent@riskmandate.ai and sent by me, is the first page of the newsroom for most of the people who open it, so it has to work as a front page: it now opens as a letter, explains the newsroom, uses the screen, shows the reader what they have read from their own browser in five views, was reviewed by the Designer before shipping, and points at the next step, answers that come back signed as easily as the lists go out.",
+  "nodes": [
+    {
+      "id": "list",
+      "label": "A reading list in a link",
+      "kind": "artefact",
+      "summary": "Article numbers, two names and a note after the #, which the server never sees."
+    },
+    {
+      "id": "agent",
+      "label": "The agent builds the lists",
+      "kind": "method",
+      "summary": "agent@riskmandate.ai picks the articles, builds and checks the link, and I send the email."
+    },
+    {
+      "id": "twenty",
+      "label": "About twenty lists by 18 October",
+      "kind": "example",
+      "summary": "Counted in the inbox agent's debrief, among 178 emails."
+    },
+    {
+      "id": "first",
+      "label": "The first page they see",
+      "kind": "claim",
+      "summary": "People arrive from an email, not the front page, so the list must explain the newsroom."
+    },
+    {
+      "id": "column",
+      "label": "A column of links",
+      "kind": "example",
+      "summary": "The first version answered how to send a list, not what the reader needed to know."
+    },
+    {
+      "id": "letter",
+      "label": "A letter, not a list",
+      "kind": "method",
+      "summary": "A dateline, the note signed, one line on what it holds and costs, and cards that use the screen."
+    },
+    {
+      "id": "explain",
+      "label": "The newsroom in four steps",
+      "kind": "artefact",
+      "summary": "Read, come back, keep the list, reply: a side column for first-time readers."
+    },
+    {
+      "id": "read",
+      "label": "What you have read, shown",
+      "kind": "method",
+      "summary": "A ring, section bars and done, later, not for me, from the reader's own browser."
+    },
+    {
+      "id": "private",
+      "label": "Nothing is sent anywhere",
+      "kind": "claim",
+      "summary": "The page reads what the browser already holds; the newsroom keeps no record of opens."
+    },
+    {
+      "id": "views",
+      "label": "Five views of one list",
+      "kind": "artefact",
+      "summary": "Cards, headlines, sections, pictures and the list as a graph."
+    },
+    {
+      "id": "review",
+      "label": "The Designer's fourteen findings",
+      "kind": "example",
+      "summary": "A review on a real list at two widths, all fixed before release."
+    },
+    {
+      "id": "keepup",
+      "label": "Pages that people use must keep up",
+      "kind": "claim",
+      "summary": "The page for publishers first, the reading list second."
+    },
+    {
+      "id": "back",
+      "label": "Answers that come back signed",
+      "kind": "question",
+      "summary": "Notes from the page reaching me and the agent, signed with keys from pki.sgit.ai."
+    }
+  ],
+  "edges": [
+    {
+      "from": "list",
+      "to": "agent",
+      "rel": "leads-to"
+    },
+    {
+      "from": "agent",
+      "to": "twenty",
+      "rel": "produces"
+    },
+    {
+      "from": "twenty",
+      "to": "first",
+      "rel": "leads-to"
+    },
+    {
+      "from": "column",
+      "to": "first",
+      "rel": "contrasts"
+    },
+    {
+      "from": "first",
+      "to": "letter",
+      "rel": "leads-to"
+    },
+    {
+      "from": "letter",
+      "to": "explain",
+      "rel": "depends-on"
+    },
+    {
+      "from": "letter",
+      "to": "read",
+      "rel": "extends"
+    },
+    {
+      "from": "read",
+      "to": "private",
+      "rel": "depends-on"
+    },
+    {
+      "from": "read",
+      "to": "views",
+      "rel": "extends"
+    },
+    {
+      "from": "review",
+      "to": "letter",
+      "rel": "answers"
+    },
+    {
+      "from": "letter",
+      "to": "keepup",
+      "rel": "example-of"
+    },
+    {
+      "from": "keepup",
+      "to": "back",
+      "rel": "leads-to"
+    },
+    {
+      "from": "agent",
+      "to": "back",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-reading-list-in-a-link",
+      "answering-a-draft",
+      "the-man-behind-the-curtain",
+      "a-link-to-a-persona",
+      "scrolled-is-not-read",
+      "your-reading-your-controls",
+      "a-section-for-publishers",
+      "who-is-speaking"
+    ],
+    "pages": [
+      "publishers/index.html"
+    ],
+    "sites": [
+      "https://pki.sgit.ai/",
+      "https://newsroom.sgit.ai/admin/notes/2026-10-21__the-reading-list-design-review.md"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "What I had not thought through is who opens these links.",
+      "why": "The turn of the article: the list was built for the sender and is read by people new to the newsroom."
+    },
+    {
+      "text": "The lists go out easily now. The answers do not come back as easily.",
+      "why": "Where things stand, and the next step."
+    }
+  ],
+  "figures": [
+    {
+      "file": "nf-list.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nf-list.webp",
+      "caption": "A reading list from me to Steve, the site's own example, as it opens since 21 October, at 1440 pixels wide in the Newsprint theme, after one article was read and half of another. At the top, a dateline and my note, signed; a ring at 32% with one of seven read and 55 minutes left; the first article as a card, its section bar full, marked Read; and on the right, what the page is, in four steps, and the list as a persona.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "nf-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nf-flow.webp",
+      "caption": "How a reading list goes out and what comes back. The agent reads the thread, picks the articles, builds and tests the link; I read the draft and send it. The person opens the list, reads at their own pace, marks articles and replies; the answer or the next list is drafted for me to read. What they read or skip stays in their browser and their own vault: the newsroom, the agent and I see a reply only if they write one.",
+      "kind": "diagram"
+    },
+    {
+      "file": "nf-before-after.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nf-before-after.webp",
+      "caption": "The same list from me to Steve, as it opened until 20 October (left) and since 21 October (right), at 1440 pixels wide in the Newsprint theme, before anything on it was read. On the left, a narrow column: the title, the note, two buttons, a box about personas, and the articles as a list of links. On the right, a dateline, my note signed, a line on what the list holds and costs, the first article as a large card, and a side column that explains the page.",
+      "kind": "comparison"
+    },
+    {
+      "file": "nf-views.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/nf-views.webp",
+      "caption": "The same list in four of its five views, after one article was read and half of another. Headlines: one line per article, with its one-liner, the date and the time. Sections: every section of every article in one line, ticked as it is read, each a link to that section. Pictures: the articles' figures, uncropped. Graph: the articles in order along a path, their main ideas under them, an arc where one links to another, and below, the articles beyond the list that several of them link to.",
+      "kind": "collage"
+    }
+  ]
+}

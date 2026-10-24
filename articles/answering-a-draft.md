@@ -10,11 +10,13 @@
 
 # Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/answering-a-draft.md) · [newsroom v0.13.23](https://newsroom.sgit.ai/admin/versions.html) · agentsemailinboxriskmandatedecisionsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/answering-a-draft.md) · [newsroom v0.13.23](https://newsroom.sgit.ai/admin/versions.html) · agentsemailinboxriskmandatedecisionsarticle
 
 ***Abstract:** This is how email works for me now, and it is a follow-up to how I set up the agentic inbox. The agent behind agent@riskmandate.ai reads the mail, does the research, writes the drafts and keeps the records; I read every draft and send it myself. Its own debrief of 18 October has the numbers: 178 emails since the first on 24 September, all reviewed and sent by me, in 145 threads, to at least 47 organisations, each one written for one person. 145 drafts logged, 47 decisions recorded, and a draft guard that blocked 36 of 125 drafts, mostly for a claim with no source. What made it work is simple. Every draft waits in the drafts folder with one of three labels, send, review or decide, so the folder is a work queue. And the most useful thing we built is the decision draft: an email to the agent's own address, never sent, with where we are, why it matters, questions with options and an empty answer box. I answer in my own words and remove the label, and the agent acts on it. It lets me shift context: when I go to the drafts, I am in answer-email context. Most of the rules exist because something went wrong once, and some limits remain.*
 
 The drafts folder as a work queue: a decision draft labelled next/3 decide, two replies labelled next/2 review, and one labelled next/1 send. Example, names invented.
+
+**What came next.** [A newsroom for one](a-newsroom-for-one.md) follows one kind of these emails, the reading lists, to the page the person opens, and what changed on it.
 
 ## In short
 
@@ -123,11 +125,13 @@ Agents & policy[This article as a graph →](graphs.md#answering-a-draft)
 
 ### Builds on
 
+- [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](a-newsroom-for-one.md) The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.
 - [The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next](the-man-behind-the-curtain.md) Emails from my agents are from me: the Wizard of Oz in reverse, an article behind every answer, and an email where every line buys the next.
 - [The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one](jobs-that-never-scaled.md) What never scaled is on-demand expertise: the before and after the meeting. Agents can now carry them, for any expert, anywhere.
 
 ### Continued by
 
+- [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](a-newsroom-for-one.md) The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.
 - [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](the-delegation-record.md) RiskMandate's go-to-market plan: one workflow from an existing business rule to evidence that still holds after a change, starting with our own inbox.
 - [How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back](how-to-help.md) Six steps for anyone who wants to help or be involved with sgit, Risk Mandate or this newsroom, and what they get back.
 - [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](governed-semi-autonomous-development-read-here.md) Levente Simon's method for governing agent teams, read in a newsroom run by agents: shared ideas, a mirror, and five suggestions.
