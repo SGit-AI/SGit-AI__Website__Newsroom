@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.66 · 272 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.67 · 275 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](articles/a-tangent-that-shipped.md), 2026-10-24, 9 min. How a tangent about zips became sgit's pack mode in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds.
+- [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](articles/signed-by-the-source.md), 2026-10-24, 8 min. Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.
 
 ## Highlights
 
+- [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](articles/patch-for-breakfast.md), 2026-10-24, 7 min.
+- [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 6 min.
+- [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](articles/a-tangent-that-shipped.md), 2026-10-24, 9 min.
 - [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](articles/a-pen-and-a-key.md), 2026-10-24, 10 min.
-- [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](articles/a-newsroom-for-one.md), 2026-10-24, 12 min.
-- [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
-- [PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)](articles/php-daily-2026-10-23.md), 2026-10-24, 11 min.
 
 ## Who are you reading as?
 
@@ -32,23 +32,23 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (75)
+### Agent security & policy (76)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](articles/patch-for-breakfast.md), 2026-10-24, 7 min.
 - [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
 - [PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)](articles/php-daily-2026-10-23.md), 2026-10-24, 11 min.
-- [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
 
-### Building with agents (45)
+### Building with agents (46)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 6 min.
 - [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 17 min.
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](articles/where-a-check-runs.md), 2026-10-22, 8 min.
-- [Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue](articles/answering-a-draft.md), 2026-10-21, 8 min.
 
-### Vaults & provenance (59)
+### Vaults & provenance (60)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](articles/signed-by-the-source.md), 2026-10-24, 8 min.
 - [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](articles/a-pen-and-a-key.md), 2026-10-24, 10 min.
 - [Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly](articles/almost-working.md), 2026-10-23, 11 min.
-- [The false positives are the next incident: Jeremiah Grossman's warning about php2shell scanners, checked against what the evidence holds a day later](articles/the-false-positives-are-the-next-incident.md), 2026-10-23, 9 min.
 
 ### The future of news (42)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

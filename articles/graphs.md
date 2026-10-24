@@ -14,13 +14,85 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-272 of 272 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+275 of 275 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-272 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 10 articles not yet linked either way.
+275 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 13 articles not yet linked either way.
+
+## [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](signed-by-the-source.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+Checking that an article represents its sources correctly is costly when every reader or agent repeats it; the source is best placed to review the passage, add a caveat and sign it with a key its website vouches for, paid where the article earns money, while readers sign their own reviews, building a web of trust on pieces that mostly exist, with organisation federation still a proposal.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Every reader checks** (claim) Hours of expert time or many tokens, repeated.
+- **The source judges best** (claim) They know what they meant and which caveat matters.
+- **Quote, ask, review, sign, verify** (method) The passage, its hash and links, sent to the source.
+- **The caveat** (example) 70%, but only of these.
+- **Paid verification** (method) As Biology Open pays reviewers.
+- **Keys a website vouches for** (method) Domain proofs and a register on pki.sgit.ai.
+- **Federation** (claim) Organisations verifying each other: proposed, not built.
+- **Readers on the record** (method) Signed notes from the Pen; Ask cites passages.
+
+> It is the difference between reading every reference and reading a stamp. Why the economics work.
+
+> A signature is about representation, not truth. Start small.
+
+## [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](patch-for-breakfast.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+Organisations took sites down during php2shell because they could not say they were safe, and nobody can be safe without being able to deploy a patch; teams with good tests and pipelines patch routinely, others face surgery, so a system nobody updates is measurable risk and the answer is sustained investment in the pipeline, tests and paid maintenance rather than a one-off fix.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **php2shell has board attention** (claim) Real questions, real impact.
+- **Sites went dark** (example) Nobody could answer: are we safe?
+- **Nobody refuses to patch** (claim) The best pipelines patch for breakfast.
+- **A patch is surgery** (claim) Without tests, deployers or known side effects.
+- **A measurable signal** (method) When was it last updated; how long would a change take?
+- **Root causes** (claim) Team, funding, automation, life cycle.
+- **The one-off** (claim) Patch, bring it back, move on: whack-a-mole.
+- **Invest instead** (method) Pipeline, tests and paid maintenance.
+
+> In fact the best teams patch for breakfast. Nobody refuses to patch.
+
+> The ability to patch and the ability to improve are the same ability. A system you cannot update is a signal.
+
+## [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](a-team-frozen-in-time.md)
+
+2026-10-24 · Agents & policyStartups & strategy
+
+When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as two PHP-team sessions did after 28 hours, so a later fix can wake the team rather than rebuild its knowledge.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Teams dissolve** (claim) Projects end, companies are sold, people move on.
+- **Knowledge leaves** (claim) Side effects, reasons, how to build and ship.
+- **The PHP fix nobody can make** (example) Sites dark because nobody could say they were safe.
+- **A session with one mandate** (method) One role, one repository, one piece of work.
+- **Paused and resumed** (method) The conversation, record and code intact.
+- **Two sessions, 28 hours** (example) The librarian and the cartographer, 22 to 24 October.
+- **A newcomer inherits a team** (claim) History, materials and agents ready to act.
+- **What it takes** (method) Write it down, keep the pipeline, catch up first.
+
+> Paused, it costs nothing. A session with one mandate.
+
+> That is a very different position from inheriting a repository and a wiki page. Why this is so powerful.
 
 ## [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](a-tangent-that-shipped.md)
 

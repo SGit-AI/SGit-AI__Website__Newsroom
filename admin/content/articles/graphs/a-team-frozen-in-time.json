@@ -1,0 +1,34 @@
+{
+ "slug": "a-team-frozen-in-time",
+ "teaser": "Agent sessions with a mandate, a role and a repository, paused and picked up again, so a team's knowledge outlives the team.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as two PHP-team sessions did after 28 hours, so a later fix can wake the team rather than rebuild its knowledge.",
+ "nodes": [
+  {"id": "dissolve", "label": "Teams dissolve", "kind": "claim", "summary": "Projects end, companies are sold, people move on."},
+  {"id": "loss", "label": "Knowledge leaves", "kind": "claim", "summary": "Side effects, reasons, how to build and ship."},
+  {"id": "php", "label": "The PHP fix nobody can make", "kind": "example", "summary": "Sites dark because nobody could say they were safe."},
+  {"id": "session", "label": "A session with one mandate", "kind": "method", "summary": "One role, one repository, one piece of work."},
+  {"id": "frozen", "label": "Paused and resumed", "kind": "method", "summary": "The conversation, record and code intact."},
+  {"id": "evidence", "label": "Two sessions, 28 hours", "kind": "example", "summary": "The librarian and the cartographer, 22 to 24 October."},
+  {"id": "newcomer", "label": "A newcomer inherits a team", "kind": "claim", "summary": "History, materials and agents ready to act."},
+  {"id": "habits", "label": "What it takes", "kind": "method", "summary": "Write it down, keep the pipeline, catch up first."}
+ ],
+ "edges": [
+  {"from": "dissolve", "to": "loss", "rel": "leads-to"},
+  {"from": "loss", "to": "php", "rel": "produces"},
+  {"from": "session", "to": "frozen", "rel": "leads-to"},
+  {"from": "frozen", "to": "loss", "rel": "answers"},
+  {"from": "evidence", "to": "frozen", "rel": "example-of"},
+  {"from": "frozen", "to": "newcomer", "rel": "produces"},
+  {"from": "habits", "to": "frozen", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["the-agents-write-too", "almost-working", "who-will-fix-your-mess", "who-maintains-the-php-you-run"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/team/status/"]
+ },
+ "quotes": [
+  {"text": "Paused, it costs nothing.", "why": "A session with one mandate."},
+  {"text": "That is a very different position from inheriting a repository and a wiki page.", "why": "Why this is so powerful."}
+ ]
+}

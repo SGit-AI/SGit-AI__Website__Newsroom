@@ -55,6 +55,479 @@
   ],
   "articles": [
     {
+      "slug": "signed-by-the-source",
+      "title": "Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too",
+      "date": "2026-10-24",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/signed-by-the-source.html",
+      "markdown": "https://newsroom.sgit.ai/articles/signed-by-the-source.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/signed-by-the-source.webp",
+      "teaser": "Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "provenance",
+        "signatures",
+        "pki",
+        "peer-review",
+        "economics",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "vs-economics.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vs-economics.webp",
+          "caption": "Who is best placed to check a claim: today every reader, or an agent with the right context, loads the article and the source and maps one to the other, hours of work or a lot of tokens, repeated by every reader; instead, the author of the source reads how it is used, adds a caveat if needed, and signs it once, and every reader after that checks one signature.",
+          "kind": "concept"
+        },
+        {
+          "file": "vs-workflow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/vs-workflow.webp",
+          "caption": "Signed by the source, the workflow: the article quotes or summarises a source; the newsroom sends the source the passage with its hash and links; the source agrees or adds the caveat that makes it correct; the source signs the passage with a key its own website vouches for; and a reader or an agent checks the signature and the signer's standing, without loading every reference. Paid where it earns money, and open to readers and researchers going on the record too.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "signed-by-the-source",
+        "teaser": "Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Checking that an article represents its sources correctly is costly when every reader or agent repeats it; the source is best placed to review the passage, add a caveat and sign it with a key its website vouches for, paid where the article earns money, while readers sign their own reviews, building a web of trust on pieces that mostly exist, with organisation federation still a proposal.",
+        "nodes": [
+          {
+            "id": "cost",
+            "label": "Every reader checks",
+            "kind": "claim",
+            "summary": "Hours of expert time or many tokens, repeated."
+          },
+          {
+            "id": "source",
+            "label": "The source judges best",
+            "kind": "claim",
+            "summary": "They know what they meant and which caveat matters."
+          },
+          {
+            "id": "flow",
+            "label": "Quote, ask, review, sign, verify",
+            "kind": "method",
+            "summary": "The passage, its hash and links, sent to the source."
+          },
+          {
+            "id": "caveat",
+            "label": "The caveat",
+            "kind": "example",
+            "summary": "70%, but only of these."
+          },
+          {
+            "id": "paid",
+            "label": "Paid verification",
+            "kind": "method",
+            "summary": "As Biology Open pays reviewers."
+          },
+          {
+            "id": "keys",
+            "label": "Keys a website vouches for",
+            "kind": "method",
+            "summary": "Domain proofs and a register on pki.sgit.ai."
+          },
+          {
+            "id": "fed",
+            "label": "Federation",
+            "kind": "claim",
+            "summary": "Organisations verifying each other: proposed, not built."
+          },
+          {
+            "id": "readers",
+            "label": "Readers on the record",
+            "kind": "method",
+            "summary": "Signed notes from the Pen; Ask cites passages."
+          }
+        ],
+        "edges": [
+          {
+            "from": "source",
+            "to": "cost",
+            "rel": "answers"
+          },
+          {
+            "from": "flow",
+            "to": "source",
+            "rel": "depends-on"
+          },
+          {
+            "from": "caveat",
+            "to": "flow",
+            "rel": "example-of"
+          },
+          {
+            "from": "paid",
+            "to": "flow",
+            "rel": "depends-on"
+          },
+          {
+            "from": "keys",
+            "to": "flow",
+            "rel": "depends-on"
+          },
+          {
+            "from": "fed",
+            "to": "keys",
+            "rel": "leads-to"
+          },
+          {
+            "from": "readers",
+            "to": "flow",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-pen-and-a-key",
+            "on-the-record",
+            "reviews-on-the-record",
+            "pki-everywhere",
+            "who-is-speaking",
+            "free-to-copy-paid-at-the-source"
+          ],
+          "pages": [],
+          "sites": [
+            "https://pki.sgit.ai/people/how.html",
+            "https://pki.sgit.ai/roadmap/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It is the difference between reading every reference and reading a stamp.",
+            "why": "Why the economics work."
+          },
+          {
+            "text": "A signature is about representation, not truth.",
+            "why": "Start small."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "patch-for-breakfast",
+      "title": "Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change",
+      "date": "2026-10-24",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/patch-for-breakfast.html",
+      "markdown": "https://newsroom.sgit.ai/articles/patch-for-breakfast.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/patch-for-breakfast.webp",
+      "teaser": "Nobody refuses to patch by choice: without tests and a pipeline a patch is surgery. The PHP crisis is the moment to invest, not patch once.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "patching",
+        "ci-cd",
+        "maintenance",
+        "php2shell",
+        "non-functional-requirements",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "bx-surgery.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bx-surgery.webp",
+          "caption": "A patch is a change to a system: without tests, a pipeline and the people who know the side effects, patching is surgery, postponed and risky; with them, it is routine, and the teams with the best pipelines run out of things to patch.",
+          "kind": "concept"
+        },
+        {
+          "file": "bx-three-ways.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/bx-three-ways.webp",
+          "caption": "Three ways to answer the crisis: the one-off (patch, bring it back, move on, and meet the same problem next time), the measured (record when each system was last updated, how long a change would take and who can still build it), and the investment (fund the pipeline, the tests and paid maintenance, with a signed, supported version).",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "patch-for-breakfast",
+        "teaser": "Nobody refuses to patch by choice: without tests and a pipeline a patch is surgery. The PHP crisis is the moment to invest, not patch once.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Organisations took sites down during php2shell because they could not say they were safe, and nobody can be safe without being able to deploy a patch; teams with good tests and pipelines patch routinely, others face surgery, so a system nobody updates is measurable risk and the answer is sustained investment in the pipeline, tests and paid maintenance rather than a one-off fix.",
+        "nodes": [
+          {
+            "id": "crisis",
+            "label": "php2shell has board attention",
+            "kind": "claim",
+            "summary": "Real questions, real impact."
+          },
+          {
+            "id": "dark",
+            "label": "Sites went dark",
+            "kind": "example",
+            "summary": "Nobody could answer: are we safe?"
+          },
+          {
+            "id": "refuse",
+            "label": "Nobody refuses to patch",
+            "kind": "claim",
+            "summary": "The best pipelines patch for breakfast."
+          },
+          {
+            "id": "surgery",
+            "label": "A patch is surgery",
+            "kind": "claim",
+            "summary": "Without tests, deployers or known side effects."
+          },
+          {
+            "id": "signal",
+            "label": "A measurable signal",
+            "kind": "method",
+            "summary": "When was it last updated; how long would a change take?"
+          },
+          {
+            "id": "roots",
+            "label": "Root causes",
+            "kind": "claim",
+            "summary": "Team, funding, automation, life cycle."
+          },
+          {
+            "id": "oneoff",
+            "label": "The one-off",
+            "kind": "claim",
+            "summary": "Patch, bring it back, move on: whack-a-mole."
+          },
+          {
+            "id": "invest",
+            "label": "Invest instead",
+            "kind": "method",
+            "summary": "Pipeline, tests and paid maintenance."
+          }
+        ],
+        "edges": [
+          {
+            "from": "crisis",
+            "to": "dark",
+            "rel": "produces"
+          },
+          {
+            "from": "surgery",
+            "to": "dark",
+            "rel": "leads-to"
+          },
+          {
+            "from": "refuse",
+            "to": "surgery",
+            "rel": "contrasts"
+          },
+          {
+            "from": "signal",
+            "to": "surgery",
+            "rel": "answers"
+          },
+          {
+            "from": "roots",
+            "to": "surgery",
+            "rel": "produces"
+          },
+          {
+            "from": "oneoff",
+            "to": "invest",
+            "rel": "contrasts"
+          },
+          {
+            "from": "invest",
+            "to": "roots",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "who-maintains-the-php-you-run",
+            "a-team-frozen-in-time",
+            "the-code-you-do-not-ship",
+            "who-will-fix-your-mess",
+            "underwriting-the-agent-economy-reviewed"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/compromise/",
+            "https://dora.dev/guides/dora-metrics/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "In fact the best teams patch for breakfast.",
+            "why": "Nobody refuses to patch."
+          },
+          {
+            "text": "The ability to patch and the ability to improve are the same ability.",
+            "why": "A system you cannot update is a signal."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-team-frozen-in-time",
+      "title": "A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on",
+      "date": "2026-10-24",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-team-frozen-in-time.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-team-frozen-in-time.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-team-frozen-in-time.webp",
+      "teaser": "Agent sessions with a mandate, a role and a repository, paused and picked up again, so a team's knowledge outlives the team.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agents",
+        "teams",
+        "knowledge",
+        "maintenance",
+        "sessions",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "fz-frozen.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fz-frozen.webp",
+          "caption": "When the team leaves, and when it can be woken: the usual life of a project team, where people move on and the knowledge goes with them, against a team of agent sessions, each with one mandate, role and repository, paused at no cost and picked up again with its history intact.",
+          "kind": "concept"
+        },
+        {
+          "file": "fz-resumed.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fz-resumed.webp",
+          "caption": "Two sessions on the PHP story's team, paused and picked up again: the librarian's last commit on 22 October at 20:20 UTC and its next on 24 October at 00:12; the cartographer's last on 22 October at 19:48 and its next on 24 October at 00:16. Each resumed by taking in what the rest of the team had done.",
+          "kind": "timeline"
+        }
+      ],
+      "graph": {
+        "slug": "a-team-frozen-in-time",
+        "teaser": "Agent sessions with a mandate, a role and a repository, paused and picked up again, so a team's knowledge outlives the team.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "When project teams dissolve, the knowledge needed to change their systems leaves with them; agent sessions focused on one mandate, role and repository can be paused and resumed with their record intact, as two PHP-team sessions did after 28 hours, so a later fix can wake the team rather than rebuild its knowledge.",
+        "nodes": [
+          {
+            "id": "dissolve",
+            "label": "Teams dissolve",
+            "kind": "claim",
+            "summary": "Projects end, companies are sold, people move on."
+          },
+          {
+            "id": "loss",
+            "label": "Knowledge leaves",
+            "kind": "claim",
+            "summary": "Side effects, reasons, how to build and ship."
+          },
+          {
+            "id": "php",
+            "label": "The PHP fix nobody can make",
+            "kind": "example",
+            "summary": "Sites dark because nobody could say they were safe."
+          },
+          {
+            "id": "session",
+            "label": "A session with one mandate",
+            "kind": "method",
+            "summary": "One role, one repository, one piece of work."
+          },
+          {
+            "id": "frozen",
+            "label": "Paused and resumed",
+            "kind": "method",
+            "summary": "The conversation, record and code intact."
+          },
+          {
+            "id": "evidence",
+            "label": "Two sessions, 28 hours",
+            "kind": "example",
+            "summary": "The librarian and the cartographer, 22 to 24 October."
+          },
+          {
+            "id": "newcomer",
+            "label": "A newcomer inherits a team",
+            "kind": "claim",
+            "summary": "History, materials and agents ready to act."
+          },
+          {
+            "id": "habits",
+            "label": "What it takes",
+            "kind": "method",
+            "summary": "Write it down, keep the pipeline, catch up first."
+          }
+        ],
+        "edges": [
+          {
+            "from": "dissolve",
+            "to": "loss",
+            "rel": "leads-to"
+          },
+          {
+            "from": "loss",
+            "to": "php",
+            "rel": "produces"
+          },
+          {
+            "from": "session",
+            "to": "frozen",
+            "rel": "leads-to"
+          },
+          {
+            "from": "frozen",
+            "to": "loss",
+            "rel": "answers"
+          },
+          {
+            "from": "evidence",
+            "to": "frozen",
+            "rel": "example-of"
+          },
+          {
+            "from": "frozen",
+            "to": "newcomer",
+            "rel": "produces"
+          },
+          {
+            "from": "habits",
+            "to": "frozen",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-agents-write-too",
+            "almost-working",
+            "who-will-fix-your-mess",
+            "who-maintains-the-php-you-run"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/team/status/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Paused, it costs nothing.",
+            "why": "A session with one mandate."
+          },
+          {
+            "text": "That is a very different position from inheriting a repository and a wiki page.",
+            "why": "Why this is so powerful."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-tangent-that-shipped",
       "title": "A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after",
       "date": "2026-10-24",

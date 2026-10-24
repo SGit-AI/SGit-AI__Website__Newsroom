@@ -1,0 +1,135 @@
+{
+  "slug": "signed-by-the-source",
+  "teaser": "Ask the people and companies we quote to sign that we represent them fairly: one signature instead of every reader checking.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Checking that an article represents its sources correctly is costly when every reader or agent repeats it; the source is best placed to review the passage, add a caveat and sign it with a key its website vouches for, paid where the article earns money, while readers sign their own reviews, building a web of trust on pieces that mostly exist, with organisation federation still a proposal.",
+  "nodes": [
+    {
+      "id": "cost",
+      "label": "Every reader checks",
+      "kind": "claim",
+      "summary": "Hours of expert time or many tokens, repeated."
+    },
+    {
+      "id": "source",
+      "label": "The source judges best",
+      "kind": "claim",
+      "summary": "They know what they meant and which caveat matters."
+    },
+    {
+      "id": "flow",
+      "label": "Quote, ask, review, sign, verify",
+      "kind": "method",
+      "summary": "The passage, its hash and links, sent to the source."
+    },
+    {
+      "id": "caveat",
+      "label": "The caveat",
+      "kind": "example",
+      "summary": "70%, but only of these."
+    },
+    {
+      "id": "paid",
+      "label": "Paid verification",
+      "kind": "method",
+      "summary": "As Biology Open pays reviewers."
+    },
+    {
+      "id": "keys",
+      "label": "Keys a website vouches for",
+      "kind": "method",
+      "summary": "Domain proofs and a register on pki.sgit.ai."
+    },
+    {
+      "id": "fed",
+      "label": "Federation",
+      "kind": "claim",
+      "summary": "Organisations verifying each other: proposed, not built."
+    },
+    {
+      "id": "readers",
+      "label": "Readers on the record",
+      "kind": "method",
+      "summary": "Signed notes from the Pen; Ask cites passages."
+    }
+  ],
+  "edges": [
+    {
+      "from": "source",
+      "to": "cost",
+      "rel": "answers"
+    },
+    {
+      "from": "flow",
+      "to": "source",
+      "rel": "depends-on"
+    },
+    {
+      "from": "caveat",
+      "to": "flow",
+      "rel": "example-of"
+    },
+    {
+      "from": "paid",
+      "to": "flow",
+      "rel": "depends-on"
+    },
+    {
+      "from": "keys",
+      "to": "flow",
+      "rel": "depends-on"
+    },
+    {
+      "from": "fed",
+      "to": "keys",
+      "rel": "leads-to"
+    },
+    {
+      "from": "readers",
+      "to": "flow",
+      "rel": "contrasts"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-pen-and-a-key",
+      "on-the-record",
+      "reviews-on-the-record",
+      "pki-everywhere",
+      "who-is-speaking",
+      "free-to-copy-paid-at-the-source"
+    ],
+    "pages": [],
+    "sites": [
+      "https://pki.sgit.ai/people/how.html",
+      "https://pki.sgit.ai/roadmap/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It is the difference between reading every reference and reading a stamp.",
+      "why": "Why the economics work."
+    },
+    {
+      "text": "A signature is about representation, not truth.",
+      "why": "Start small."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vs-economics.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vs-economics.webp",
+      "caption": "Who is best placed to check a claim: today every reader, or an agent with the right context, loads the article and the source and maps one to the other, hours of work or a lot of tokens, repeated by every reader; instead, the author of the source reads how it is used, adds a caveat if needed, and signs it once, and every reader after that checks one signature.",
+      "kind": "concept"
+    },
+    {
+      "file": "vs-workflow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vs-workflow.webp",
+      "caption": "Signed by the source, the workflow: the article quotes or summarises a source; the newsroom sends the source the passage with its hash and links; the source agrees or adds the caveat that makes it correct; the source signs the passage with a key its own website vouches for; and a reader or an agent checks the signature and the signer's standing, without loading every reference. Paid where it earns money, and open to readers and researchers going on the record too.",
+      "kind": "process"
+    }
+  ]
+}

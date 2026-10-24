@@ -1,0 +1,34 @@
+{
+ "slug": "patch-for-breakfast",
+ "teaser": "Nobody refuses to patch by choice: without tests and a pipeline a patch is surgery. The PHP crisis is the moment to invest, not patch once.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Organisations took sites down during php2shell because they could not say they were safe, and nobody can be safe without being able to deploy a patch; teams with good tests and pipelines patch routinely, others face surgery, so a system nobody updates is measurable risk and the answer is sustained investment in the pipeline, tests and paid maintenance rather than a one-off fix.",
+ "nodes": [
+  {"id": "crisis", "label": "php2shell has board attention", "kind": "claim", "summary": "Real questions, real impact."},
+  {"id": "dark", "label": "Sites went dark", "kind": "example", "summary": "Nobody could answer: are we safe?"},
+  {"id": "refuse", "label": "Nobody refuses to patch", "kind": "claim", "summary": "The best pipelines patch for breakfast."},
+  {"id": "surgery", "label": "A patch is surgery", "kind": "claim", "summary": "Without tests, deployers or known side effects."},
+  {"id": "signal", "label": "A measurable signal", "kind": "method", "summary": "When was it last updated; how long would a change take?"},
+  {"id": "roots", "label": "Root causes", "kind": "claim", "summary": "Team, funding, automation, life cycle."},
+  {"id": "oneoff", "label": "The one-off", "kind": "claim", "summary": "Patch, bring it back, move on: whack-a-mole."},
+  {"id": "invest", "label": "Invest instead", "kind": "method", "summary": "Pipeline, tests and paid maintenance."}
+ ],
+ "edges": [
+  {"from": "crisis", "to": "dark", "rel": "produces"},
+  {"from": "surgery", "to": "dark", "rel": "leads-to"},
+  {"from": "refuse", "to": "surgery", "rel": "contrasts"},
+  {"from": "signal", "to": "surgery", "rel": "answers"},
+  {"from": "roots", "to": "surgery", "rel": "produces"},
+  {"from": "oneoff", "to": "invest", "rel": "contrasts"},
+  {"from": "invest", "to": "roots", "rel": "answers"}
+ ],
+ "links": {
+  "articles": ["who-maintains-the-php-you-run", "a-team-frozen-in-time", "the-code-you-do-not-ship", "who-will-fix-your-mess", "underwriting-the-agent-economy-reviewed"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/compromise/", "https://dora.dev/guides/dora-metrics/"]
+ },
+ "quotes": [
+  {"text": "In fact the best teams patch for breakfast.", "why": "Nobody refuses to patch."},
+  {"text": "The ability to patch and the ability to improve are the same ability.", "why": "A system you cannot update is a signal."}
+ ]
+}
