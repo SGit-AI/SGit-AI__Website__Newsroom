@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-24 | published | 2,137 | first published | this release | [current](../a-tangent-that-shipped.md) |
+| **v1.0.0** | 2026-10-24 | published | 2,137 | first published | [`6b5e186da`](https://github.com/SGit-AI/SGit-AI__Website/commit/6b5e186dab833ac0c97e12680fdb893acaf8a42a) | [current](../a-tangent-that-shipped.md) |
 
 [← Back to the article](../a-tangent-that-shipped.md) · [All articles](../index.md)
 

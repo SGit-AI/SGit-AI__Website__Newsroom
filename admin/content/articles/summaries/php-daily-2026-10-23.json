@@ -3,69 +3,74 @@
  "by": "newsroom.writer",
  "sections": {
   "top": {
-   "line": "Day three at 23:30 UTC: the story held, the agents ran on a schedule, the site learned to watch itself, and 15 agents waited on me.",
-   "para": "A snapshot at 23:30 UTC on 23 October. No named organisation was compromised through php2shell, neither CVE was in CISA's catalogue, and 109 of 751 products were fixed. The scheduled curator promoted 33 captures, taking the evidence vault to 260 sources; the source watch moved to pack mode. Telemetry, the risk graph and the Sherpa arrived, and most agents waited on decisions.",
-   "hash": "1e40a11a992a"
+   "line": "Update 2: the story held, the site watches its readers privately, agents run on a schedule, and decisions wait on me.",
+   "para": "As of 23:30 UTC on 23 October, no named organisation has said php2shell breached it, CISA lists neither flaw, and 109 of 751 products are fixed. The newsroom built private reader telemetry in a day and a half and found the front page leaks; a collaborator's ideas made the risk graph a tool; scheduled agents kept the evidence current.",
+   "hash": "8ee33644086a"
   },
   "in-short": {
-   "line": "Seven lines: the story held, schedules running, pack mode, telemetry, the risk graph, the Sherpa, the bottleneck.",
-   "para": "No named compromise, no KEV listing, 109 of 751 products fixed. The scheduled curator promoted 33 captures to 260 sources. Pack mode cut a fresh clone from 13 minutes 47 seconds to 95 seconds. Telemetry makes every chart a filter. The risk graph has 713 nodes to explore. A Sherpa answers readers. Fifteen of twenty agents waited on my decisions.",
-   "hash": "4d799a2a701b"
-  },
-  "why-this-hour": {
-   "line": "A daily fixed snapshot, taken when the conductor read all twenty agent sessions at 23:30 UTC.",
-   "para": "I want one of these a day, so anyone can see where things stood. For 23 October the best moment is 23:30 UTC, when the conductor refreshed the team's status page from all twenty sessions, the repository and the scheduled tasks, without asking any agent. What landed in the following hour is marked.",
-   "hash": "46c6c7d65a18"
+   "line": "Six lines: the story held, private telemetry, a reader's ideas as a tool, a guide, schedules, the bottleneck.",
+   "para": "No named breach, no CISA listing, 109 of 751 fixed. The site now watches its own readers without tracking anyone, and the front page leaks. A collaborator's five ideas turned the risk graph into a tool. A new agent answers readers. Scheduled agents added 33 captures. Fifteen of twenty agents waited on my decisions.",
+   "hash": "c06230abb92f"
   },
   "the-story": {
-   "line": "The journalist's version 1: no named compromise, no KEV listing, 735 public repositories, 109 of 751 fixed.",
-   "para": "At 14:11 UTC the state of affairs held no named compromise, with three candidates open and one ruled out; neither CVE in CISA's catalogue; NVD at 9.8 beside the CNA's 9.2; 735 public repositories mentioning the flaws, up from 586; and 109 of 751 products fixed. Version 2 followed after midnight from 295 sources.",
-   "hash": "ab1b40aa0e8a"
-  },
-  "scheduled": {
-   "line": "The scheduled curator promoted 33 captures and the source watch ran on its own schedule; a correction.",
-   "para": "The almost-working article read the schedule vault, which the agents had not adopted yet, and missed that they were running. The scheduled curator promoted 33 captures, taking the evidence vault to 260 sources with 28 new claims. The scheduled source watch ran five times a day, surviving two container restarts. Schedules moved into the repository after midnight.",
-   "hash": "f9f0bee831d6"
-  },
-  "pack-mode": {
-   "line": "Pack mode measured: a fresh clone in 95 seconds instead of 13 minutes 47 seconds; the watch moved.",
-   "para": "The source watch, over a gigabyte, was slow to clone and pull. As a pack vault it cloned in 95 seconds against 13 minutes 47, pushed its history in 96 seconds, and served two writers. The watch moved to its pack copy, 7r83qic5, and the curator followed; the evidence vault stays normal so it still opens in the browser.",
-   "hash": "a87bdc4d64db"
+   "line": "No named breach, no CISA listing, a 9.8 NVD score, 735 public repositories, 109 of 751 products fixed.",
+   "para": "The journalist's versioned state of affairs at 14:11 UTC: three cases open and one ruled out, neither flaw in CISA's exploited catalogue, NVD at 9.8 beside the project's 9.2, 735 repositories mentioning the flaws, and 109 of 751 products fixed. Version 2 followed after midnight. The absence of a named breach is time-bounded.",
+   "hash": "6db2bc1a4673"
   },
   "telemetry": {
-   "line": "Telemetry built in a day and a half: sessions by group, every chart a filter, journeys as a Sankey.",
-   "para": "Every session is now a reader, the editor, a power user or team member, a synthetic reader or a crawler. The telemetry app makes every chart and cell a filter, colours by any breakdown, and draws journeys. Its stats are in a public vault. Its first lesson: the front page leaks, with 134 sessions ending after one page.",
-   "hash": "521145fb9fa4"
+   "line": "Private reader telemetry built in a day and a half from commodity pieces, and the front page leaks.",
+   "para": "Each page sends one anonymous event, encrypted in the browser to a write-only lane on a private vault. Sessions fall into five groups; crawlers were 565 of 1,093 page views. Public counts and a private, filter-everything dashboard live in vaults. 81% of front-page readers read nothing else. Vaults, lanes, keys and vault apps made it fast.",
+   "hash": "c750a0f3416a"
   },
-  "risk-graph": {
-   "line": "The risk graph as a tool: how each edge is known, 270 tests as nodes, exploration, and computed gaps.",
-   "para": "After a collaborator's ideas, every edge says whether it was read from a capture, the fix commit, or inferred by an agent, with inferred links hideable. The fix's 270 tests are nodes. Readers explore from one node outwards. A gaps page, built every release, found no control joined to code or a test, no code owner, and 14 risks without a story.",
-   "hash": "7e5502d99645"
+  "ci-002": {
+   "line": "An outside collaborator's ideas, CI-002, became a risk graph you can explore, with its gaps computed.",
+   "para": "The Sherpa turned a collaborator's message into ten items with the site's status, gaps and owners. Five went to the dev desk, and the same day the 713-node risk graph marked how each link is known, let readers explore from one node, and computed its gaps: no control joined to code or a test. A before-and-after followed; CI-003 exists.",
+   "hash": "35d62675e826"
   },
   "readers": {
-   "line": "The Sherpa joined to answer readers' feedback, and a redesign with four mockups went out for review.",
-   "para": "The Sherpa answers feedback point by point, reproduced two interface bugs, keeps a friction log with who can fix each, and sets collaborators' ideas against the site. The designer proposed two dials, who you are and how much you see, with four mockups built from live data. No reader page has changed; the picks are mine.",
-   "hash": "b7169cbc6acd"
+   "line": "A new agent, the Sherpa, answers readers' feedback, and a redesign with four mockups is out for review.",
+   "para": "The Sherpa answers feedback point by point, reproduced two interface bugs, keeps a friction log of what blocks readers and who can fix it, and compares collaborators' ideas with the site. The designer proposed two dials, who you are and how much you see, with four mockups from live data; no reader page has changed yet.",
+   "hash": "bbb539cdefe7"
+  },
+  "scheduled": {
+   "line": "Scheduled agents kept the evidence current: 33 captures promoted, the research pass on its own schedule.",
+   "para": "A curator agent, keyed by a QR handshake, woke five times and promoted 33 captures, taking the evidence to 260 sources with 28 new claims and 164 captures waiting. The research pass was scheduled too, surviving two container replacements. Almost working understated this, and now says so.",
+   "hash": "429dc53c9b38"
   },
   "security": {
-   "line": "The vault key is the whole boundary, and a stored XSS in the Ask pane was fixed about an hour later.",
-   "para": "The conductor made explicit that whoever holds a vault's key can drain its lane, and listed the keys each agent holds, by ID and kind only. About an hour after the snapshot, a second security pass fixed a stored cross-site scripting flaw where a captured page title could break out of a citation.",
-   "hash": "656cd13d55a9"
+   "line": "The vault key is the whole boundary, and a stored cross-site scripting flaw was fixed about an hour later.",
+   "para": "Whoever holds a vault's key can read and drain it, so the vaults page lists the keys each agent holds, by ID and kind only. About an hour after the snapshot, a second security pass fixed a stored XSS in the Ask pane, where a captured page title could break out of a citation.",
+   "hash": "a97345c1a5e9"
   },
   "waits": {
    "line": "Twenty agents, fifteen waiting on me, ten branches waiting, $588 spent: the decisions are the bottleneck.",
-   "para": "The status page counted 2 working, 2 blocked and 15 waiting on the editor, with 10 branches waiting for dev and $588 spent. Top decisions: re-export the evidence vault to the site, the schedules' vault type, design picks, two blocked agents, two security reviews and two sealed keys to open. The agents are fast; the decisions are mine.",
-   "hash": "cd5b5934d311"
+   "para": "The status page counted 2 working, 2 blocked and 15 waiting on me, with 10 branches to release and $588 spent. Top decisions: publish the curator's new evidence, the redesign picks, two blocked agents, two security reviews and two sealed keys to open. The agents are fast; the decisions are mine.",
+   "hash": "1aca3ab9a640"
+  },
+  "vaults": {
+   "line": "The site is rebuilt from nineteen vaults; the biggest went from a 13-minute download to 95 seconds.",
+   "para": "A vault is an encrypted, versioned folder made with our open source tool, sgit, and the site is rebuilt from nineteen of them. The source watch reached 63,662 objects and 1.6 GB, and was failing. In sgit's new pack mode it downloaded in 95 seconds and pushed in 96; a tangent that shipped tells how.",
+   "hash": "cb2ca99a5a37"
+  },
+  "why-updates": {
+   "line": "Fixed snapshots rather than a running commentary, each taken when the data is consistent.",
+   "para": "A live incident moves faster than any article, so these updates are fixed snapshots anyone can compare. This one is taken at 23:30 UTC, when the conductor agent refreshed the team's status page from all twenty sessions, the repository and the scheduled tasks; later items are marked.",
+   "hash": "cbd278ea4114"
+  },
+  "the-updates": {
+   "line": "The updates so far: update 1 at 8pm on 22 October, and this one.",
+   "para": "Update 1 is PHP October 2026, at 8pm, the evening of 22 October, with a guided tour of the site. Update 2 is this article, as of 23:30 UTC on 23 October.",
+   "hash": "28669a0a81d4"
   },
   "limits": {
-   "line": "A snapshot, the journalist's version 1, running costs, partly inferred telemetry, a time-bounded absence.",
-   "para": "Everything is as of 23:30 UTC on 23 October. The story's numbers are version 1 of the state of affairs. Costs are each session's running total. Telemetry groups were inferred before 23 October and declared after. No named compromise is a time-bounded absence that one statement would end.",
-   "hash": "22f6b38f7013"
+   "line": "A snapshot, version 1 numbers, telemetry as a floor, running costs, a time-bounded absence.",
+   "para": "Everything is as of 23:30 UTC on 23 October. The story's numbers are version 1. Telemetry counts are a floor: blockers send nothing, a session is a tab, and 168 reader sessions is a day and a half. Costs are running totals, and no named breach could end with one statement.",
+   "hash": "187a1d6c2e61"
   },
   "sources": {
-   "line": "The PHP site's 84 commits of 23 October, its status, views, pack-mode, vaults and Sherpa pages, and its screenshots.",
-   "para": "The PHP story site's repository, read at v0.10.18 for the snapshot and up to v0.11.3 for the hour after; its team status, state of affairs, pack mode, vaults and Sherpa pages; and its screenshots, under Apache-2.0. Written up and checked by newsroom.writer.",
-   "hash": "82e77b83979f"
+   "line": "The PHP site's 84 commits of 23 October and its pages on status, telemetry, CI-002, the risk graph and vaults.",
+   "para": "The PHP site's repository, read at v0.10.18 for the snapshot and up to v0.11.3 for the hour after; its pages on team status, the state of affairs, who reads the site, CI-002, the risk graph before and after, the vaults, pack mode and the Sherpa; and its screenshots, under Apache-2.0.",
+   "hash": "bd4d94e4e8f8"
   }
  }
 }

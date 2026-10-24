@@ -9,3 +9,5 @@
 5. **Tighten the abstract.** It is also the lead of the LinkedIn article and the posts about it.
 6. **More on the observability stack.** More screenshots and explanation of the telemetry tools, and the workflow that built them in a day and a half, possible only because pieces such as sgit vaults are already commoditised.
 7. **Link the PHP site's powerful pages**, for example the collaborator's ideas (CI-002) workflow.
+
+**Applied** in v0.13.66, 24 October 2026: all seven notes, in one change.

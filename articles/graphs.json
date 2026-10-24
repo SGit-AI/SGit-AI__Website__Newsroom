@@ -1037,22 +1037,21 @@
     },
     {
       "slug": "php-daily-2026-10-23",
-      "title": "PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me",
+      "title": "PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)",
       "date": "2026-10-24",
       "updated": "",
       "url": "https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html",
       "markdown": "https://newsroom.sgit.ai/articles/php-daily-2026-10-23.md",
       "card": "https://newsroom.sgit.ai/articles/cards/php-daily-2026-10-23.webp",
-      "teaser": "Day three at 23:30 UTC: the story held, the agents ran on a schedule, the site learned to watch itself, and 15 agents waited on me.",
+      "teaser": "Update 2: the story held, the site watches its own readers privately, agents run on a schedule, and decisions wait on me.",
       "topics": [
         "news-and-evidence",
         "agents-and-policy"
       ],
       "tags": [
         "php2shell",
-        "daily",
+        "updates",
         "agents",
-        "schedules",
         "observability",
         "evidence",
         "article"
@@ -1063,31 +1062,67 @@
         {
           "file": "dy-telemetry-filters.webp",
           "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-filters.webp",
-          "caption": "The PHP site's telemetry app (v0.4.0) on 23 October: 1,093 events from 13:43 UTC on 22 October to 20:26 UTC on 23 October, split by who sent them (readers, the editor, power users and the team, synthetic readers and crawlers), with every chart and cell a filter: click to keep, shift-click to exclude.",
+          "caption": "The PHP site's telemetry dashboard (v0.4.0) on 23 October: 1,093 page views from 13:43 UTC on 22 October to 20:26 UTC on 23 October, split into readers, the editor, power users and the team, synthetic readers and crawlers, with every chart and number a filter. Here: readers in the United Kingdom, phones left out, in three clicks.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "dy-telemetry-who.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-who.webp",
+          "caption": "All 1,093 page views by group: 233 by readers in 168 sessions, 110 by the editor, 9 by power users and the team, 176 synthetic, 565 by crawlers.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "dy-telemetry-timeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-timeline.webp",
+          "caption": "Page views per hour from 13:00 on 22 October to 20:00 on 23 October, by group: the crawler working through the night, readers steadiest in the UK morning and afternoon.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "dy-telemetry-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-map.webp",
+          "caption": "Readers by country, on a log scale: eighteen countries, the United Kingdom first by far, then the United States and Norway.",
           "kind": "screenshot"
         },
         {
           "file": "dy-telemetry-journeys.webp",
           "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-journeys.webp",
-          "caption": "How sessions move through the PHP site, step by step: 113 sessions entered on the front page, and 134 left at the second step; colours are the site's sections. From the telemetry app, 23 October.",
+          "caption": "How reader sessions move through the PHP site, step by step: most start on the front page, and most of those end there, at the grey block marked (left).",
+          "kind": "screenshot"
+        },
+        {
+          "file": "dy-telemetry-network.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-network.webp",
+          "caption": "The same moves as a network: each page a node sized by the sessions that saw it. The front page is the hub; the one route that bypasses it runs from a source page to the claims.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "dy-telemetry-what-works.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dy-telemetry-what-works.webp",
+          "caption": "What works, page by page: right is read more, up is where readers go on. The front page is far right and low: read most, sending about one in five on.",
           "kind": "screenshot"
         },
         {
           "file": "dy-risk-explore.webp",
           "url": "https://newsroom.sgit.ai/articles/images/dy-risk-explore.webp",
-          "caption": "Exploring the PHP story's risk graph from one node: 713 nodes and 1,418 edges in all; from CVE-2026-109618, the fix, the tests that check it and the risks it touches, with inferred links dashed and hideable. 23 October.",
+          "caption": "Exploring the PHP story's risk graph from one node: from CVE-2026-109618 to the fix, the tests that check it and the risks it touches, with inferred links dashed and hideable.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "dy-risk-gaps.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/dy-risk-gaps.webp",
+          "caption": "What the risk graph is missing, computed at every release over its 713 nodes and 1,418 edges: 95 of 95 controls joined to no code or test, 16 of 16 code nodes with no owner one step away, 9 of 16 that no test reaches, 14 of 34 risks no story tells, and 815 links inferred by an agent and not yet checked.",
           "kind": "screenshot"
         },
         {
           "file": "dy-redesign-a.webp",
           "url": "https://newsroom.sgit.ai/articles/images/dy-redesign-a.webp",
-          "caption": "Mockup A of the PHP site's redesign, for review: a board member's front page, built from the live data of release v0.9.2, with the Focus, Standard and Everything dial and an answer in thirty seconds. Not the live site.",
+          "caption": "Mockup A of the PHP site's redesign, for review: a board member's front page with the Focus, Standard and Everything dial and an answer in thirty seconds. Not the live site.",
           "kind": "screenshot"
         }
       ],
       "graph": {
         "slug": "php-daily-2026-10-23",
-        "teaser": "Day three at 23:30 UTC: the story held, the agents ran on a schedule, the site learned to watch itself, and 15 agents waited on me.",
+        "teaser": "Update 2: the story held, the site watches its own readers privately, agents run on a schedule, and decisions wait on me.",
         "topics": [
           "news-and-evidence",
           "agents-and-policy"
@@ -1184,6 +1219,7 @@
         "links": {
           "articles": [
             "almost-working",
+            "a-tangent-that-shipped",
             "php-october-at-8pm",
             "the-false-positives-are-the-next-incident"
           ],

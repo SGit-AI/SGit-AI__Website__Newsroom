@@ -10,9 +10,11 @@
 
 # PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.2.0, 3 versions](versions/php-october-at-8pm.md) · [newsroom v0.13.49](https://newsroom.sgit.ai/admin/versions.html) · php2shellbreaking-newsevidencevaultsversionsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.3.0, 4 versions](versions/php-october-at-8pm.md) · [newsroom v0.13.49](https://newsroom.sgit.ai/admin/versions.html) · php2shellbreaking-newsevidencevaultsversionsarticle
 
 ***Abstract:** At 8pm UK time on 22 October, this is where the php2shell story stands. The fix has been out since 21 October; sixteen agencies say install it; attackers are trying, in large numbers, and Amazon saw an attempt four days before the announcement; no named organisation has said it was broken into through these flaws, and the US list of flaws known to be used in attacks still does not include these two. The Dutch inventory of affected software has 724 rows, and only 61 of them have a fix. And behind that update is something I want to show properly: php.oct.2026.newsroom.sgit.ai, a site built today, from 09:27 to 19:04 UTC, in 34 versions, by two people and thirteen agents. It reads an evidence vault of 184 sources and 177 dated captures, now public. It has a front page in plain English and fifteen briefings, 70 claims each graded by a fact-check desk, ten contradictions in a ledger, a graph of 209 nodes, the fix read in the code, the inventory hour by hour, every section versioned, a phone app, synthetic readers and eight vaults. This is a guided tour of it, with the versions of everything, so the next update can say exactly what changed.*
+
+**Update 1.** This is the first update on the php2shell story and the newsroom covering it. [Update 2](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html) follows, as of 23:30 UTC on 23 October.
 
 A guided tour of php.oct.2026.newsroom.sgit.ai in nine pages: the front page for everyone, the inventory hour by hour, the story as a graph, every section versioned, a source and its captures, the fix read in the code, the team, the eight vaults, and the six synthetic readers.
 

@@ -10,6 +10,8 @@ tags: php2shell, breaking-news, evidence, vaults, versions, article
 status: published
 ---
 
+> **Update 1.** This is the first update on the php2shell story and the newsroom covering it. [Update 2](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html) follows, as of 23:30 UTC on 23 October.
+
 !shot po-collage.webp | images/ | A guided tour of php.oct.2026.newsroom.sgit.ai in nine pages: the front page for everyone, the inventory hour by hour, the story as a graph, every section versioned, a source and its captures, the fix read in the code, the team, the eight vaults, and the six synthetic readers. | wide | screenshot
 
 > **Updated at 22:15 UTC.** The story's site has moved from v0.5.5 to v0.6.0 since 8pm. What changed is in [since 8pm](#since): a map of the evidence on compromise, a second fact-check run that answers the incomplete-fix report, and a new risk and compliance section. Two lines below are corrected to match: no *named* organisation has said it was compromised through these flaws, and the incomplete-fix report was answered that morning. At 22:45 UTC, a third correction: the source watch did not stop at 15:11, and the vendor reports were captured; see [what the day showed](#lessons).

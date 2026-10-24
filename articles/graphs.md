@@ -140,7 +140,7 @@ The AI insurance stack blueprint says what insurers must build and what they nee
 
 > That is the job we have been doing. What the paper asks for, and does not build.
 
-## [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](php-daily-2026-10-23.md)
+## [PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)](php-daily-2026-10-23.md)
 
 2026-10-24 · News & evidenceAgents & policy
 

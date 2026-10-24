@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.65 · 272 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.66 · 272 articles since 2026-08-17; the newest is 2026-10-24. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -19,7 +19,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 - [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](articles/a-pen-and-a-key.md), 2026-10-24, 10 min.
 - [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](articles/a-newsroom-for-one.md), 2026-10-24, 12 min.
 - [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
-- [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](articles/php-daily-2026-10-23.md), 2026-10-24, 8 min.
+- [PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)](articles/php-daily-2026-10-23.md), 2026-10-24, 11 min.
 
 ## Who are you reading as?
 
@@ -35,7 +35,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 ### Agent security & policy (75)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
 - [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](articles/underwriting-the-agent-economy-reviewed.md), 2026-10-24, 14 min.
-- [PHP October 2026, day three: where the story and the newsroom covering it stood at 23:30 UTC on 23 October, the scheduled agents running, the observability built in a day, and what waits on me](articles/php-daily-2026-10-23.md), 2026-10-24, 8 min.
+- [PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)](articles/php-daily-2026-10-23.md), 2026-10-24, 11 min.
 - [Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius](articles/application-behaviour-policies.md), 2026-10-22, 15 min.
 
 ### Building with agents (45)
