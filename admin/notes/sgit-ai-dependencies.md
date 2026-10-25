@@ -4,18 +4,18 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 999 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 673 | 2891 | links to sgit.ai's pages and the network sites (27 files this site writes itself) |
-| words | 1360 | 9500 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1002 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 676 | 2900 | links to sgit.ai's pages and the network sites (27 files this site writes itself) |
+| words | 1364 | 9518 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 66 | 156 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 569 × `sgit.ai/about/index.html`
-- 284 × `sgit.ai/about/index.md`
+- 571 × `sgit.ai/about/index.html`
+- 285 × `sgit.ai/about/index.md`
 - 126 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
-- 37 × `pki.sgit.ai/`
+- 43 × `pki.sgit.ai/`
 - 37 × `graphs.sgit.ai/`
 - 34 × `sgit.ai/`
 - 33 × `sgit.ai/api/append-lanes.html`
@@ -31,17 +31,17 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 - 21 × `sgit.ai/updates/index.html`
 - 20 × `sgit.ai/demos/vaults/risk-acceptance/index.html`
 - 19 × `sgit.ai/demos/vaults/bridge-simulation/index.html`
-- 18 × `sgit.ai/skills/index.html`
 - 18 × `sgit.ai/docs/append-lane-messaging.md`
+- 18 × `sgit.ai/skills/index.html`
 - 17 × `nhi.sgit.ai/`
-- 16 × `sgit.ai/docs/index.html`
-- 16 × `sgit.ai/demos/fractal-graphs/index.html`
-- 16 × `sgit.ai/compare/index.html`
 - 16 × `graphs.sgit.ai/v2/books/index.html`
 - 16 × `sgit.ai/demos/vaults/regulation-graph/index.html`
+- 16 × `sgit.ai/demos/fractal-graphs/index.html`
+- 16 × `sgit.ai/docs/index.html`
+- 16 × `sgit.ai/compare/index.html`
 - 15 × `sgit.ai/docs/guidance/index.html`
-- 15 × `sgit.ai/docs/surfaces.html`
 - 15 × `sgit.ai/demos/vaults/code-review-graphs/index.html`
+- 15 × `sgit.ai/docs/surfaces.html`
 - 14 × `sgit.ai/docs/vault/sub-vaults.html`
 - 14 × `sgit.ai/docs/pki.md`
 - 14 × `sgit.ai/demos/vaults/hope-or-enforcement/index.html`

@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.79 · 289 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.80 · 290 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](articles/a-secure-rule-applied-literally.md), 2026-10-25, 7 min. A secure rule, applied literally: the CSP that made an agent copy shared code into every repository, and the person accountable who asked why.
+- [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](articles/simplified-or-outsourced.md), 2026-10-25, 6 min. A reply to Nadzeya Stalbouskaya: removing servers simplifies only if you move to real commodities, so map it and ask who would certify it.
 
 ## Highlights
 
+- [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](articles/a-secure-rule-applied-literally.md), 2026-10-25, 7 min.
 - [Who creates the original? Mapping where the PHP story's data comes from, giving that map to the historian, and the places where we can make content nobody else has: our own counts, interviews and op-eds](articles/who-creates-the-original.md), 2026-10-25, 6 min.
 - [Agents need direction: how agent roles differ from human ones, why one focused agent can also be a developer, a designer and a data scientist, why that power has to be contained, and teams that send each other pull requests](articles/agents-need-direction.md), 2026-10-25, 6 min.
 - [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](articles/a-call-for-help.md), 2026-10-25, 4 min.
-- [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](articles/monstream-briefing.md), 2026-10-25, 9 min.
 
 ## Who are you reading as?
 
@@ -56,11 +56,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](articles/own-the-stack-and-the-trust.md), 2026-10-25, 8 min.
 - [Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them](articles/local-trust-certified-upwards.md), 2026-10-25, 7 min.
 
-### Strategy & startups (51)
+### Strategy & startups (52)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](articles/simplified-or-outsourced.md), 2026-10-25, 6 min.
 - [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](articles/a-tangent-that-shipped.md), 2026-10-24, 9 min.
 - [Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit](articles/who-maintains-the-php-you-run.md), 2026-10-23, 20 min.
-- [The maintenance deficit, with evidence: a follow-up to Dion Wiggins on why open source's business model fails the people who maintain it, checked against the PHP story's own data](articles/the-maintenance-deficit-with-evidence.md), 2026-10-23, 9 min.
 
 ## Collections
 

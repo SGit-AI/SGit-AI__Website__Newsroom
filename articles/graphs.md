@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-289 of 289 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+290 of 290 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-289 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 27 articles not yet linked either way.
+290 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 28 articles not yet linked either way.
+
+## [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](simplified-or-outsourced.md)
+
+2026-10-25 · Startups & strategySite & engineering
+
+Removing your own servers and databases can outsource complexity rather than remove it, so the move must be a conscious, mapped decision: moving a component to a genuine commodity such as passkeys or object storage simplifies, while a young startup's service may only look like a commodity, and the test is whether anyone would certify, insure or guarantee what you now depend on.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Simplified or outsourced?** (claim) Nadzeya Stalbouskaya's challenge.
+- **A conscious decision** (claim) The risk is real.
+- **Map the move** (method) Custom-built to commodity on a Wardley map.
+- **Login to passkeys** (example) A mature standard; pki.sgit.ai.
+- **Servers to a utility** (example) Object storage and static hosting.
+- **A startup's service** (example) Looks right, is left.
+- **SG/Send's vault** (example) A villager product, encrypted on the device.
+- **Who would certify it?** (method) Maturity goes with insurability.
+
+> If the answer is nobody, you have not simplified. Who would certify it?
+
+> That is a genuine simplification. Map it.
 
 ## [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](a-secure-rule-applied-literally.md)
 
