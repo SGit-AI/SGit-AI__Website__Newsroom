@@ -237,7 +237,7 @@ Monstream, run by the small encryption company Fair Math, turns described topics
 
 2026-10-25 · Agents & policyStartups & strategy
 
-Bert Kok is right that AI platforms now own synthesis and the interface while publishers fund costly discovery; the knowledge architecture and reader feedback loop he calls for already exist in our open-source stack, where agents augment rather than replace journalists, so publishers should own that cheap stack and, above all, the reader's trust.
+Bert Kok is right that AI platforms now own synthesis and the interface while publishers fund costly discovery; the knowledge architecture and reader feedback loop the essay calls for already exist in our open-source stack, where agents augment rather than replace journalists, so publishers should own that cheap stack and, above all, the reader's trust.
 
 *[diagram]*
 **claim**method**example

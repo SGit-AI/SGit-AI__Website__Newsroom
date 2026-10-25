@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.86 · 293 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.87 · 293 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -54,7 +54,7 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
 - [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](articles/translate-the-assumption.md), 2026-10-25, 6 min.
 - [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](articles/a-call-for-help.md), 2026-10-25, 4 min.
-- [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](articles/own-the-stack-and-the-trust.md), 2026-10-25, 8 min.
+- [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](articles/own-the-stack-and-the-trust.md), 2026-10-25, 9 min.
 
 ### Strategy & startups (52)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
