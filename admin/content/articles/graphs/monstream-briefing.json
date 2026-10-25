@@ -1,0 +1,35 @@
+{
+ "slug": "monstream-briefing",
+ "teaser": "Monstream, briefed: AI research streams with a clean integration API, and how our newsrooms could use, check and contribute to it.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Monstream, run by the small encryption company Fair Math, turns described topics into rules that AI agents apply to sources continuously; with no public pricing but a careful integration API of streams by our own id, signed webhooks and feedback, it can feed our newsrooms leads through the API only, while our own captures, checks and verdicts remain the evidence.",
+ "nodes": [
+  {"id": "streams", "label": "Continuous research streams", "kind": "claim", "summary": "Describe, rules, refine, preview."},
+  {"id": "fairmath", "label": "Fair Math", "kind": "example", "summary": "An encryption company; $1.4 million reported."},
+  {"id": "cost", "label": "No public pricing", "kind": "claim", "summary": "Following and the Mac app are free."},
+  {"id": "api", "label": "The Integration API", "kind": "method", "summary": "Streams by our id, signed webhooks, feedback."},
+  {"id": "legal", "label": "API, not scraping", "kind": "claim", "summary": "AI summaries can be wrong: finds are leads."},
+  {"id": "php", "label": "No php2shell stream", "kind": "claim", "summary": "Testing needs an account."},
+  {"id": "use", "label": "Finds into the source watch", "kind": "method", "summary": "Captured, checked, verdicts sent back."},
+  {"id": "contribute", "label": "Contribute back", "kind": "method", "summary": "Public streams, the checking layer, payments."}
+ ],
+ "edges": [
+  {"from": "fairmath", "to": "streams", "rel": "produces"},
+  {"from": "api", "to": "streams", "rel": "depends-on"},
+  {"from": "legal", "to": "api", "rel": "depends-on"},
+  {"from": "use", "to": "api", "rel": "depends-on"},
+  {"from": "use", "to": "legal", "rel": "depends-on"},
+  {"from": "php", "to": "api", "rel": "depends-on"},
+  {"from": "contribute", "to": "use", "rel": "depends-on"},
+  {"from": "cost", "to": "streams", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["sources-and-shadows", "local-trust-certified-upwards", "own-the-stack-and-the-trust", "the-side-stories-of-php2shell"],
+  "pages": [],
+  "sites": ["https://monstream.io/", "https://monstream.io/developers", "https://monstream.io/terms", "https://monstream.io/privacy", "https://fairmath.xyz/", "https://php.oct.2026.newsroom.sgit.ai/pulse/index.html"]
+ },
+ "quotes": [
+  {"text": "Monstream widens what we see; our captures decide what we say.", "why": "How we could use it."},
+  {"text": "It is a clean, careful design: idempotent, signed, scoped, and built around the caller's own ids.", "why": "The integration API."}
+ ]
+}

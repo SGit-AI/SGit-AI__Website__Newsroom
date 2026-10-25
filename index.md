@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.76 · 284 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.77 · 285 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](articles/own-the-stack-and-the-trust.md), 2026-10-25, 8 min. A reply to Bert Kok: agents that augment journalists, publishers that own the now cheap stack, and the reader's trust above all.
+- [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](articles/monstream-briefing.md), 2026-10-25, 9 min. Monstream, briefed: AI research streams with a clean integration API, and how our newsrooms could use, check and contribute to it.
 
 ## Highlights
 
+- [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](articles/own-the-stack-and-the-trust.md), 2026-10-25, 8 min.
 - [Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them](articles/local-trust-certified-upwards.md), 2026-10-25, 7 min.
 - [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](articles/a-villager-for-the-agents.md), 2026-10-25, 7 min.
 - [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](articles/the-side-stories-of-php2shell.md), 2026-10-25, 11 min.
-- [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](articles/sources-and-shadows.md), 2026-10-25, 8 min.
 
 ## Who are you reading as?
 
@@ -38,11 +38,11 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](articles/php-daily-2026-10-24.md), 2026-10-25, 10 min.
 - [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](articles/who-signs-for-this.md), 2026-10-24, 11 min.
 
-### Building with agents (47)
+### Building with agents (48)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](articles/monstream-briefing.md), 2026-10-25, 9 min.
 - [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](articles/a-villager-for-the-agents.md), 2026-10-25, 7 min.
 - [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 9 min.
-- [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 17 min.
 
 ### Vaults & provenance (62)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.

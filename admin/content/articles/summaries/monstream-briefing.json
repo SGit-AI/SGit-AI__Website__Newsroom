@@ -1,0 +1,54 @@
+{
+ "slug": "monstream-briefing",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "Monstream runs AI research streams with a clean integration API; usable through the API, with finds as leads.",
+   "para": "Monstream turns a described topic into rules and has AI agents read sources continuously, sending matching finds with summaries and original links. Fair Math, a small encryption company, runs it. There is no public pricing. Its integration API offers streams by our own id, signed webhooks and feedback. Its terms allow automation only through that API, and its AI summaries may be wrong."
+  },
+  "in-short": {
+   "line": "Research streams by a small cryptography company: free to follow, a good API, no php2shell stream yet.",
+   "para": "Monstream sends what matches your rules, read by AI agents. Fair Math runs it, reportedly funded with $1.4 million. Of 116 public streams, mostly cryptography, the largest has 24 subscribers. There is no public pricing. The API is the interesting part. Legally it is the only automated way in, and finds are leads. No public stream covers php2shell."
+  },
+  "what": {
+   "line": "Describe a topic, get rules, and AI agents send only what matches, with sources, across many channels.",
+   "para": "A description becomes rules: must include, any of, red flags, trusted or ignored sources, strictness, previewed on last week's data. Agents then read pages around the clock; the home page counted 5,258 that day. Streams can be digests, radars or watches, delivered by web, email, push, a Mac app or Telegram, private or public and forkable."
+  },
+  "who": {
+   "line": "Fair Math, an encryption company, runs it; $1.4 million reported in 2024, and Discover leans to cryptography.",
+   "para": "Fair Math builds infrastructure for computing on encrypted data and runs FHERMA. FinSMEs and Crunchbase report a $1.4 million pre-seed round in February 2024; PitchBook and Tracxn call it seed. Those pages could not be read directly, and no separate Monstream funding was found. The most followed public streams are cryptography radars, the largest with 24 subscribers."
+  },
+  "cost": {
+   "line": "No pricing page: following is free and the Mac app is free, but streams cost real money underneath.",
+   "para": "Discover says subscribing costs nothing extra, and the terms reserve the right to limit how many streams an account can run. Each stream pays for model calls, searches and data sources such as PitchBook and Crunchbase, so a paid tier seems likely, but no commercial model is public yet."
+  },
+  "api": {
+   "line": "Scoped keys, idempotent streams by our own id, signed webhooks, cursor pull and feedback on each find.",
+   "para": "The Integration API, updated 20 October 2026, takes scoped bearer keys stored only as hashes; without one it answers 401. A PUT by system and reference creates or updates a stream from words or rules. Webhooks for finds and streams are HMAC-signed, deduplicated by event id and retried for about a day. Finds can also be pulled by cursor and marked relevant or not."
+  },
+  "legal": {
+   "line": "Usable through the API only; finds point to third-party material and AI summaries may be wrong.",
+   "para": "The terms forbid automated access other than the means provided, so the API is in and scraping is out. Results are third-party material under their own terms, and summaries can be incomplete or wrong, so finds are leads. Stream rules and descriptions go to model providers. The privacy policy both denies third-party analytics and says it uses Google Analytics."
+  },
+  "php": {
+   "line": "No public Monstream stream covers php2shell; testing one needs an account, which was not created.",
+   "para": "No public stream in Discover covers php2shell or vulnerability news; the nearest are on crypto implementation flaws and trending security repositories. Public stream pages failed for an anonymous visitor. Creating a php2shell stream would take one API call, but needs an account and key, which is left to the editor."
+  },
+  "use": {
+   "line": "A stream per story, finds captured as leads by our researcher, and our verdicts returned as feedback.",
+   "para": "A stream named by our own id per story or wire, with our watched sources as hints. A signed webhook passes each find to the researcher, which captures the original into the source watch; the curator and journalist decide what holds. Their verdicts go back as feedback, improving the stream at no extra cost. This is proposed, not built."
+  },
+  "contribute": {
+   "line": "Public streams of our own, a checking layer on finds, a payment share later, and a conversation.",
+   "para": "A public php2shell stream and a vulnerabilities stream modelled on Pulse would fill a gap in Discover. Finds linked to our hashed captures, licences and verdicts are more trustworthy. When commercial models exist, streams and sources that led to a story should share payment. Fair Math's encryption work overlaps with our vaults; nobody has been contacted."
+  },
+  "limits": {
+   "line": "Nothing tested with an account; funding as reported; counts dated 25 October; the integration is proposed.",
+   "para": "No account was made, so only public pages and one unauthenticated call were tested. Funding comes from reports that could not be read directly. Page, stream and subscriber counts are from 25 October 2026. The failing stream pages were observed twice, not explained."
+  },
+  "sources": {
+   "line": "Monstream's own pages, read on 25 October 2026, Fair Math's site, and funding reports via search.",
+   "para": "A friend's link and a voice memo; Monstream's home page, Discover, Integration API, terms, privacy policy and robots.txt; an unauthenticated API call; Fair Math's site; funding as reported by FinSMEs, Crunchbase, PitchBook and Tracxn; and related newsroom articles."
+  }
+ }
+}

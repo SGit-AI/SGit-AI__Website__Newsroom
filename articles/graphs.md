@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-284 of 284 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+285 of 285 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-284 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 22 articles not yet linked either way.
+285 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 23 articles not yet linked either way.
+
+## [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](monstream-briefing.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Monstream, run by the small encryption company Fair Math, turns described topics into rules that AI agents apply to sources continuously; with no public pricing but a careful integration API of streams by our own id, signed webhooks and feedback, it can feed our newsrooms leads through the API only, while our own captures, checks and verdicts remain the evidence.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 8 edges**
+
+- **Continuous research streams** (claim) Describe, rules, refine, preview.
+- **Fair Math** (example) An encryption company; $1.4 million reported.
+- **No public pricing** (claim) Following and the Mac app are free.
+- **The Integration API** (method) Streams by our id, signed webhooks, feedback.
+- **API, not scraping** (claim) AI summaries can be wrong: finds are leads.
+- **No php2shell stream** (claim) Testing needs an account.
+- **Finds into the source watch** (method) Captured, checked, verdicts sent back.
+- **Contribute back** (method) Public streams, the checking layer, payments.
+
+> Monstream widens what we see; our captures decide what we say. How we could use it.
+
+> It is a clean, careful design: idempotent, signed, scoped, and built around the caller's own ids. The integration API.
 
 ## [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](own-the-stack-and-the-trust.md)
 
