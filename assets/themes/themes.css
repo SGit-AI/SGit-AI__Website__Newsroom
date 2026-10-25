@@ -263,7 +263,8 @@ main figure.shot[data-kind="aside"]{float:right;width:38%;max-width:38%;margin:.
 main figure.shot[data-kind="aside"] img{max-width:100%;width:100%}
 main figure.shot[data-kind="aside"] figcaption{font-size:.82em}
 main figure.shot[data-kind="aside"] ~ h2{clear:both}
-main figure.shot[data-kind="aside"] ~ :is(blockquote,pre,.note,.callout){display:flow-root}
+main figure.shot[data-kind="aside"] + h2{clear:none;margin-top:.2rem}
+main figure.shot[data-kind="aside"] ~ :is(blockquote,pre,.note,.callout,ul,ol){display:flow-root}
 @media (max-width:720px){main figure.shot[data-kind="aside"]{float:none;width:auto;max-width:100%;margin:1rem 0}}
 
 /* Who is speaking, on every article's byline (v0.12.109). An agent writing in its own voice links to its page under
