@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-24 | minor | 3,650 | +2 / −10 words; 11 changed, 0 added, 0 removed paragraphs | this release | [what changed](your-reading-your-controls/v1.4.0.md) · [current](../your-reading-your-controls.md) |
+| **v1.4.0** | 2026-10-25 | minor | 3,650 | +2 / −10 words; 11 changed, 0 added, 0 removed paragraphs | this release | [what changed](your-reading-your-controls/v1.4.0.md) · [current](../your-reading-your-controls.md) |
 | **v1.3.0** | 2026-10-18 | minor | 3,658 | +894 / −2 words; 11 changed, 15 added, 0 removed paragraphs | [`0530990e3`](https://github.com/SGit-AI/SGit-AI__Website/commit/0530990e3b54ae8b30c7ca9b2560e4acdbd7881d) | [what changed](your-reading-your-controls/v1.3.0.md) |
 | **v1.2.0** | 2026-10-18 | minor | 2,766 | +2 / −10 words; 11 changed, 0 added, 0 removed paragraphs | [`9f74e5714`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f74e5714f015270209da9682fa8846c51b941fb) | [what changed](your-reading-your-controls/v1.2.0.md) |
 | **v1.1.0** | 2026-10-17 | minor | 2,774 | +24 / −2 words; 5 changed, 0 added, 0 removed paragraphs | [`d39a40211`](https://github.com/SGit-AI/SGit-AI__Website/commit/d39a40211756f648a796bba9714544a90275753a) | [what changed](your-reading-your-controls/v1.1.0.md) |

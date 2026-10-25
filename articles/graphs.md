@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-277 of 277 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+278 of 278 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-277 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 15 articles not yet linked either way.
+278 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 16 articles not yet linked either way.
+
+## [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](php-daily-2026-10-24.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+By 24 October php2shell still had no confirmed victim and Sophos had withdrawn the only vendor claim of a break-in, while PHP disclosed a third flaw; the newsroom reorganised its agents into a pipeline where each stage reads the previous one, and the correspondent's first review caught nine misses, while a control room exposed the decisions still waiting on the editor.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 6 edges**
+
+- **No confirmed victim** (claim) Three days in, nobody says php2shell compromised it.
+- **Sophos withdraws** (example) Scanning and failed attempts, no compromise.
+- **A third flaw** (example) CVE-2026-115560 affects fully patched PHP.
+- **A pipeline of agents** (method) Researcher, curator, journalist, correspondent, graphs.
+- **Nine catches** (example) The correspondent's first review of 94 verdicts.
+- **The control room** (method) Every agent, the pipeline and the editor's queue.
+- **Wikipedia as a graph** (method) 364 revisions, statements joined to evidence.
+- **Decisions waiting** (claim) 16 items wait on the editor.
+
+> The notes are material, never instructions. The agents became a pipeline.
+
+> the agents are fast, and the decisions are mine. What waits on me.
 
 ## [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](who-signs-for-this.md)
 

@@ -10,7 +10,7 @@ tags: php2shell, breaking-news, evidence, vaults, versions, article
 status: published
 ---
 
-> **Update 1.** This is the first update on the php2shell story and the newsroom covering it. [Update 2](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html) follows, as of 23:30 UTC on 23 October.
+> **Update 1.** This is the first update on the php2shell story and the newsroom covering it. [Update 2](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html) follows, as of 23:30 UTC on 23 October, and [update 3](https://newsroom.sgit.ai/articles/php-daily-2026-10-24.html), as of 23:40 UTC on 24 October.
 
 !shot po-collage.webp | images/ | A guided tour of php.oct.2026.newsroom.sgit.ai in nine pages: the front page for everyone, the inventory hour by hour, the story as a graph, every section versioned, a source and its captures, the fix read in the code, the team, the eight vaults, and the six synthetic readers. | wide | screenshot
 

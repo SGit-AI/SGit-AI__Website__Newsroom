@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.69</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.70</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,13 +160,13 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.69</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.70</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)</p>
  <h1>PHP October 2026, update 2: the story held, a site that watches its own readers, agents on a schedule, and the decisions that wait on me (23 October, 23:30 UTC)</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-24 &middot; <a href="versions/php-daily-2026-10-23.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.66</a> &middot; <span class="chip">php2shell</span><span class="chip">updates</span><span class="chip">agents</span><span class="chip">observability</span><span class="chip">evidence</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-24 &middot; <a href="versions/php-daily-2026-10-23.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.66</a> &middot; <span class="chip">php2shell</span><span class="chip">updates</span><span class="chip">agents</span><span class="chip">observability</span><span class="chip">evidence</span><span class="chip">article</span></p>
  <p class="abstract"><em><b>Abstract:</b> The second update on php2shell and the newsroom covering it, as of 23:30 UTC on 23 October. The story held: no named organisation has said it was breached through php2shell, CISA still lists neither flaw as exploited, and 109 of 751 affected products in the Dutch NCSC's inventory are fixed. The newsroom changed more. In a day and a half it built tools to see who reads the site and what works on it, private by design, and they found that the front page leaks: 81% of readers who start there read nothing else. An outside collaborator's five ideas turned the risk graph into a tool within hours. Scheduled agents now keep the evidence current, and our biggest data vault went from a 13-minute download to 95 seconds. And 15 of the 20 agents were waiting on a decision from me.</em></p>
-<div class="note"><b>Update 2.</b> Following <a href="https://newsroom.sgit.ai/articles/php-october-at-8pm.html">update 1, PHP October 2026, at 8pm</a> on 22 October, here is where things stood at 23:30 UTC on 23 October. The updates so far are listed <a href="#the-updates">at the end</a>.</div>
+<div class="note"><b>Update 2.</b> Following <a href="https://newsroom.sgit.ai/articles/php-october-at-8pm.html">update 1, PHP October 2026, at 8pm</a> on 22 October, here is where things stood at 23:30 UTC on 23 October. <a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-24.html">Update 3</a> follows, as of 23:40 UTC on 24 October. The updates so far are listed <a href="#the-updates">at the end</a>.</div>
 <figure class="shot" data-shot="dy-telemetry-filters.webp" data-dir="images/" data-alt="The PHP site&#x27;s telemetry dashboard (v0.4.0) on 23 October: 1,093 page views from 13:43 UTC on 22 October to 20:26 UTC on 23 October, split into readers, the editor, power users and the team, synthetic readers and crawlers, with every chart and number a filter. Here: readers in the United Kingdom, phones left out, in three clicks." data-kind="screenshot"><figcaption>The PHP site's telemetry dashboard (v0.4.0) on 23 October: 1,093 page views from 13:43 UTC on 22 October to 20:26 UTC on 23 October, split into readers, the editor, power users and the team, synthetic readers and crawlers, with every chart and number a filter. Here: readers in the United Kingdom, phones left out, in three clicks.</figcaption></figure>
 <h2 id="in-short">In short</h2>
 <ul>
@@ -223,6 +223,7 @@
 <ol>
 <li><a href="https://newsroom.sgit.ai/articles/php-october-at-8pm.html">PHP October 2026, at 8pm</a>: update 1, the evening of 22 October, with a guided tour of the site.</li>
 <li>This article: update 2, 23:30 UTC on 23 October.</li>
+<li><a href="https://newsroom.sgit.ai/articles/php-daily-2026-10-24.html">PHP October 2026, update 3</a>: 23:40 UTC on 24 October.</li>
 </ol>
 <h2 id="limits">What this does not claim</h2>
 <ul>
@@ -270,7 +271,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.69</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="php-daily-2026-10-23.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.70</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="php-daily-2026-10-23.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

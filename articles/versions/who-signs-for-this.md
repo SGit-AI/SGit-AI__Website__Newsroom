@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-24 | published | 2,689 | first published | this release | [current](../who-signs-for-this.md) |
+| **v1.0.0** | 2026-10-24 | published | 2,689 | first published | [`8011d773e`](https://github.com/SGit-AI/SGit-AI__Website/commit/8011d773e21fb9689f08187239d05159a8882da2) | [current](../who-signs-for-this.md) |
 
 [← Back to the article](../who-signs-for-this.md) · [All articles](../index.md)
 
