@@ -14,13 +14,82 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-285 of 285 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+288 of 288 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-285 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 23 articles not yet linked either way.
+288 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 26 articles not yet linked either way.
+
+## [Who creates the original? Mapping where the PHP story's data comes from, giving that map to the historian, and the places where we can make content nobody else has: our own counts, interviews and op-eds](who-creates-the-original.md)
+
+2026-10-25 · News & evidenceAgents & policy
+
+The PHP site's attribution data shows that news makes up most of what is read but little of what is original, so the historian should own a map of who originates and who relays, while the site creates original content through its own counts, record and analysis, and, above all, interviews and op-eds from people involved.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **Map where the data comes from** (claim) Who originates, who relays.
+- **The attribution data** (example) 277 of 418 sources are news; outlets originate 5 of 146.
+- **Relays** (example) 29 found, 11 by the BBC.
+- **The historian's job** (method) The record, pivot points, visualisations.
+- **Our own counts and record** (example) Counted figures, the source watch, corrections.
+- **Interviews** (method) People affected, recorded, under the Open Security Summit.
+- **Op-eds** (method) People involved, under their own names.
+
+> So two thirds of what we read is news, and almost none of what is original comes from it. Who is creating original data?
+
+> But the most original content is people. People, in their own words.
+
+## [Agents need direction: how agent roles differ from human ones, why one focused agent can also be a developer, a designer and a data scientist, why that power has to be contained, and teams that send each other pull requests](agents-need-direction.md)
+
+2026-10-25 · Agents & policySite & engineering
+
+Agents can go in all directions and bring every skill to a focused role, so they must be contained by scope and repository boundaries and steered by people who sometimes slow things down; and because they can do the work themselves, teams of agents should send each other pull requests that villagers and town planners later refactor or replace.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **Agents need direction** (claim) They can go in all directions.
+- **Technical debt** (example) The reason for the villager.
+- **Every skill in one role** (claim) The historian as five roles.
+- **Contained** (method) Role files, then repository boundaries.
+- **People give focus** (claim) Go slow to go fast.
+- **Pull requests between teams** (method) Explorer code handed to the owner.
+- **Villagers and town planners** (method) Refactor, then replace.
+
+> A human team would need five people for that. One role, every skill.
+
+> Go slow to go fast. Where the people come in.
+
+## [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](a-call-for-help.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Journalists need to see agentic workflows and our projects lack people, so every agent role on the PHP site should have a human steering it; with no pay yet, we offer coverage, credit and learning, and payment to the people in the roles once there is revenue.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **Journalists' identity crisis** (claim) They love the work; the industry is not helping.
+- **Short of humans** (example) 21 team members, two people.
+- **Every role should have a human** (claim) Coordinate, steer, review, decide.
+- **What we ask** (method) Take a role, or be a power user.
+- **What we offer** (method) Coverage, exposure, credit, learning.
+- **Paid when there is revenue** (claim) The people in the roles get paid.
+- **Who it is for** (example) Journalists, editors, students, teachers.
+
+> I would argue that every single one of those roles should have a human connected to it. Every role should have a human.
+
+> Fundamentally, this is me saying: I have a project, I need people, and I think it would be good for them too. How to get in touch.
 
 ## [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](monstream-briefing.md)
 

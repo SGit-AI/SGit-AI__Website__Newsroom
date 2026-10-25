@@ -2,7 +2,7 @@
 
 > newsroom.sgit.ai is a working publication with real payments: you pay for what you actually read, after you read it, from a balance in your own browser; what you have read folds away when you come back; every article is reviewed and versioned on the record; agents write, read and run the desk, in public. What is live, how to try it in five minutes, what is not done, and what we would like from you. Rebuilt with every release, so it stays current.
 
-*Source: <https://newsroom.sgit.ai/publishers/index.html> · newsroom.sgit.ai v0.13.77 · this file is generated from the same source as the page (`admin/content/publishers/page.md` and the site's data), so the two cannot drift.*
+*Source: <https://newsroom.sgit.ai/publishers/index.html> · newsroom.sgit.ai v0.13.78 · this file is generated from the same source as the page (`admin/content/publishers/page.md` and the site's data), so the two cannot drift.*
 
 ---
 
@@ -14,7 +14,7 @@ For publishers, journalists and anyone thinking about the future of news
 
 For the last two months I have been writing about where publishing could go: readers who pay for what they actually read, after they have read it; personas instead of profiles; stories kept as evidence; agents as readers, and as part of the newsroom. On 11 October it stopped being a set of articles, and I wrote the first version of this page to say so. In the week since, this site shipped more than in the month before: the meter now charges for what you read rather than how far you scroll, an article remembers what you have read and folds it away when you come back, every article can be reviewed on the record, and your reading follows you between devices in a vault only you can open. So this page is now built with every release, from the same register of features the rest of the site uses, and it keeps its own version history. It is a first version of a newsroom: parts are rough, and the workflow changes most days. But the mechanism is live, end to end, and I would rather you try it than read about it.
 
-*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v0.13.77: 285 articles, 20 features a publisher can use today, the newest article 25 Oct.*
+*This page: **v2.0.0**, 18 Oct 2026, [every version and what changed](versions/index.html). Built with newsroom.sgit.ai v0.13.78: 288 articles, 20 features a publisher can use today, the newest article 25 Oct.*
 
 [Open newsroom.sgit.ai](../index.html). No sign-up. You start with £5.00 of free credit, kept in your own browser.
 
@@ -76,12 +76,12 @@ The newsroom keeps its own dated ledger of [what runs and what is only designed]
 
 The newest pieces on how news gets paid for, answers to the industry, and how readers read here, placed in [the publishers' section](../sections/publishers/index.html) by rule as they were published.
 
+- [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](../articles/a-call-for-help.html), 25 Oct. 
 - [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](../articles/own-the-stack-and-the-trust.html), 25 Oct. A reply to Bert Kok: agents that augment journalists, publishers that own the now cheap stack, and the reader's trust above all.
 - [Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them](../articles/local-trust-certified-upwards.html), 25 Oct. Local and niche publishers own the trust: take in commodity, certify the big outlets' local stories for pay, and keep stories maintained.
 - [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](../articles/sources-and-shadows.html), 25 Oct. Each reference's licence, access, links and quotes, reading a paywalled article through its shadow, and paying the sources we use.
 - [A newsroom for one: the reading list I send by email became the first page of this newsroom for the people I write to, so it now says what it is, shows what they have read, and asks for an answer](../articles/a-newsroom-for-one.html), 24 Oct. The reading list I send by email is the first page people see of this newsroom, so it now explains itself, shows what was read, and asks for an answer.
 - [A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read](../articles/a-book-for-one-reader.html), 18 Oct. A personalised edition of Generation Z Developers, assembled by an agent for one person from a private brief, and paid for as it is read.
-- [Your reading, your controls: the meter charges for what you read, you can pause or reset it, and what you have read folds away in six ways](../articles/your-reading-your-controls.html), 17 Oct. The meter now charges for what is read; the reader can pause, reset or mark it, and what was read folds away six ways, with a line and a paragraph per section.
 
 And 3 in the last week on [how this newsroom runs](../sections/publishers/index.html#method), the newest [How a memo becomes a release](../articles/how-a-memo-becomes-a-release.html).
 
@@ -93,7 +93,7 @@ Each of these ideas exists somewhere else on its own. Micropayments have been tr
 - **Personalisation without surveillance.** The site knows what you read only inside your browser and your own vault. The value is a front page made for you, not a profile of you sold to someone else.
 - **It is cheap to run, and copyable.** There is no back end: the whole site is files and a browser. The reading meter is a library any site can add, the reader's side is published at [api.newsroom.sgit.ai](https://api.newsroom.sgit.ai/), and the newsroom publishes [how to replicate it](../replicate/index.html).
 - **Quality control you can see.** Every article has its versions, its sources and its reviews on the page, and every finding gets an answer. A correction is a new version, dated and linkable, not a silent edit.
-- **It is built fast.** 251 releases since the first version of this page on 11 October; this page is now rebuilt in every one of them.
+- **It is built fast.** 252 releases since the first version of this page on 11 October; this page is now rebuilt in every one of them.
 
 ## What is not done, so you do not have to find it
 
@@ -126,7 +126,7 @@ Your reaction, more than anything. Use it for five minutes, or for a few days, a
 
 **Write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai)**, a monitored mailbox that reaches me, or see [who I am and how to reach me](https://sgit.ai/about/index.html). The page is written to be forwarded as it is.
 
-*As of 25 Oct 2026, newsroom.sgit.ai v0.13.77. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
+*As of 25 Oct 2026, newsroom.sgit.ai v0.13.78. The text is version v2.0.0 of this page, by newsroom.dev, from Dinis Cruz's brief (the article A section for publishers, and a message on 18 October 2026); the features, the newest articles and the five to start with are rebuilt from the site's own data in every release. The first version was written on sgit.ai on 11 October 2026 by agent@riskmandate.ai, from Dinis Cruz's brief. AI-generated, disclosed as Article 50 of the EU AI Act asks. Dinis Cruz has editorial responsibility.*
 
 
 ---

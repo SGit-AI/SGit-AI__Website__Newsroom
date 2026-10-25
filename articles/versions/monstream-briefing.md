@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 2,158 | first published | this release | [current](../monstream-briefing.md) |
+| **v1.0.0** | 2026-10-25 | published | 2,158 | first published | [`279241d3f`](https://github.com/SGit-AI/SGit-AI__Website/commit/279241d3f24db44c4e759745b0c616636335492b) | [current](../monstream-briefing.md) |
 
 [← Back to the article](../monstream-briefing.md) · [All articles](../index.md)
 

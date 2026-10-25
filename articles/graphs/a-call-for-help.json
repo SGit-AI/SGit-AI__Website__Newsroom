@@ -1,0 +1,123 @@
+{
+  "slug": "a-call-for-help",
+  "teaser": "A call for help: journalists, editors, students and teachers for a live newsroom run with agents, where every role should have a human.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Journalists need to see agentic workflows and our projects lack people, so every agent role on the PHP site should have a human steering it; with no pay yet, we offer coverage, credit and learning, and payment to the people in the roles once there is revenue.",
+  "nodes": [
+    {
+      "id": "crisis",
+      "label": "Journalists' identity crisis",
+      "kind": "claim",
+      "summary": "They love the work; the industry is not helping."
+    },
+    {
+      "id": "short",
+      "label": "Short of humans",
+      "kind": "example",
+      "summary": "21 team members, two people."
+    },
+    {
+      "id": "roles",
+      "label": "Every role should have a human",
+      "kind": "claim",
+      "summary": "Coordinate, steer, review, decide."
+    },
+    {
+      "id": "ask",
+      "label": "What we ask",
+      "kind": "method",
+      "summary": "Take a role, or be a power user."
+    },
+    {
+      "id": "offer",
+      "label": "What we offer",
+      "kind": "method",
+      "summary": "Coverage, exposure, credit, learning."
+    },
+    {
+      "id": "pay",
+      "label": "Paid when there is revenue",
+      "kind": "claim",
+      "summary": "The people in the roles get paid."
+    },
+    {
+      "id": "who",
+      "label": "Who it is for",
+      "kind": "example",
+      "summary": "Journalists, editors, students, teachers."
+    }
+  ],
+  "edges": [
+    {
+      "from": "crisis",
+      "to": "roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "short",
+      "to": "roles",
+      "rel": "produces"
+    },
+    {
+      "from": "ask",
+      "to": "roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "offer",
+      "to": "ask",
+      "rel": "answers"
+    },
+    {
+      "from": "pay",
+      "to": "offer",
+      "rel": "depends-on"
+    },
+    {
+      "from": "who",
+      "to": "ask",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "who-creates-the-original",
+      "agents-need-direction",
+      "own-the-stack-and-the-trust",
+      "jobs-that-never-scaled",
+      "how-to-help"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/team/index.html",
+      "https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "I would argue that every single one of those roles should have a human connected to it.",
+      "why": "Every role should have a human."
+    },
+    {
+      "text": "Fundamentally, this is me saying: I have a project, I need people, and I think it would be good for them too.",
+      "why": "How to get in touch."
+    }
+  ],
+  "figures": [
+    {
+      "file": "wn-roles.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wn-roles.webp",
+      "caption": "Every role should have a human: the PHP story's team page lists 21 members, two of them human, the editor and a project manager; the other 19 roles, from the conductor and the journalist to the historian, the verifier and the corrections liaison, are run by agents or waiting to be filled, and each could have a person coordinating it.",
+      "kind": "concept"
+    },
+    {
+      "file": "wn-offer.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/wn-offer.webp",
+      "caption": "A call for help: what we ask, to take a role, review and steer its agents, and do what only a person can, or a few minutes an ask as a power user; what we offer now, no pay yet, but coverage, exposure, credit under your own name, and a close look at a newsroom run with agents; and when there is revenue, the people in the roles are the ones who get paid.",
+      "kind": "concept"
+    }
+  ]
+}
