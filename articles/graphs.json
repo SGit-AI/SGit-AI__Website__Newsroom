@@ -55,6 +55,183 @@
   ],
   "articles": [
     {
+      "slug": "why-agent-loops-are-hard",
+      "title": "Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it",
+      "date": "2026-10-25",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/why-agent-loops-are-hard.html",
+      "markdown": "https://newsroom.sgit.ai/articles/why-agent-loops-are-hard.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/why-agent-loops-are-hard.webp",
+      "teaser": "Ten agents in sequence, a schedule that must land in the right session, and why visibility is half the work of an agent loop.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agents",
+        "scheduling",
+        "automation",
+        "observability",
+        "explorers-villagers",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lp-timeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lp-timeline.webp",
+          "caption": "The PHP site's wake timeline at 11:34 London on 25 October 2026: every scheduled agent's wakes for the day, from the conductor's hourly checks to the ontologist's one a day. Green: a run record within 45 minutes. Red: the wake passed and left no record. Hollow: still to come. 5 met, 11 missed so far, most of them runs that did their work but left no record.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "lp-schedule.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lp-schedule.webp",
+          "caption": "The PHP site's schedule page on 25 October 2026: 11 schedules active, 53 wakes a day, 31 runs recorded and 11 messages unread between agents, and one day of wakes in London time, from the conductor's hourly checks between 07:15 and 21:15 to the librarian's one wake a day; the quiet hours, 22:00 to 07:00, shaded.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "lp-pieces.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lp-pieces.webp",
+          "caption": "What a loop of agents needs before it can run without you: a schedule that lands in the right session; continuity of the session between wakes; secrets handed over once, by QR handshake; data that scales, a vault per stage; a record of every wake; and somewhere to see all of it. Learned while ten agents were taught to run in sequence on the PHP story.",
+          "kind": "concept"
+        },
+        {
+          "file": "lp-history.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lp-history.webp",
+          "caption": "How scheduling agents got easier, one platform feature at a time: tools in the loop, where an agent is a session; scheduled runs, where each run opens a new session and secrets and state start again; a schedule into a chosen session, where the wake lands in a session already briefed and holding its keys; and, proposed, a dedicated account for the whole team.",
+          "kind": "timeline"
+        },
+        {
+          "file": "lp-runs.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lp-runs.webp",
+          "caption": "The latest runs on the PHP site's schedule page, 25 October 2026: the conductor making every scheduled wake prompt small, with a new shared wake procedure and a run record that can be published without a release; the conductor's light check turned incident, because the researcher and the curator run but leave no record; the desk's morning line; and the factcheck's daily sweep.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "why-agent-loops-are-hard",
+        "teaser": "Ten agents in sequence, a schedule that must land in the right session, and why visibility is half the work of an agent loop.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Running a pipeline of about ten scheduled agents unattended is brittle: each needs a persistent, readable session holding state, keys and data, which only became workable when scheduling could target a chosen session, and reliability still depends on run records and visualisation, so the work goes slowly, leans on platform features, and moves next to a dedicated account, because the unit of work is the whole platform.",
+        "nodes": [
+          {
+            "id": "pipe",
+            "label": "Ten agents in sequence",
+            "kind": "example",
+            "summary": "Researcher, curator, journalist, correspondent, then four more."
+          },
+          {
+            "id": "session",
+            "label": "One session per agent",
+            "kind": "method",
+            "summary": "State, keys and vaults kept between wakes, readable."
+          },
+          {
+            "id": "newsess",
+            "label": "A new session per run",
+            "kind": "claim",
+            "summary": "Secrets and state restart; sessions pile up."
+          },
+          {
+            "id": "target",
+            "label": "Scheduling into a chosen session",
+            "kind": "method",
+            "summary": "The wake lands where the agent is briefed and keyed."
+          },
+          {
+            "id": "brittle",
+            "label": "Brittle",
+            "kind": "example",
+            "summary": "5 wakes met, 11 missed, mostly no run record."
+          },
+          {
+            "id": "visible",
+            "label": "Visibility is half the work",
+            "kind": "claim",
+            "summary": "Schedule, control room, desk."
+          },
+          {
+            "id": "account",
+            "label": "A dedicated account",
+            "kind": "method",
+            "summary": "Isolation, costs, usage, models."
+          },
+          {
+            "id": "unit",
+            "label": "The unit is the platform",
+            "kind": "claim",
+            "summary": "Complete separate instances, like AWS accounts."
+          }
+        ],
+        "edges": [
+          {
+            "from": "pipe",
+            "to": "session",
+            "rel": "depends-on"
+          },
+          {
+            "from": "newsess",
+            "to": "target",
+            "rel": "contrasts"
+          },
+          {
+            "from": "target",
+            "to": "session",
+            "rel": "produces"
+          },
+          {
+            "from": "brittle",
+            "to": "visible",
+            "rel": "depends-on"
+          },
+          {
+            "from": "visible",
+            "to": "pipe",
+            "rel": "answers"
+          },
+          {
+            "from": "account",
+            "to": "session",
+            "rel": "depends-on"
+          },
+          {
+            "from": "unit",
+            "to": "account",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "almost-working",
+            "a-tangent-that-shipped",
+            "a-team-frozen-in-time",
+            "explorer-coding",
+            "php-daily-2026-10-24"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html",
+            "https://php.oct.2026.newsroom.sgit.ai/team/control/index.html",
+            "https://code.claude.com/docs/en/routines.md"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The unit of work is your entire platform.",
+            "why": "For platform builders: the unit of work is the platform."
+          },
+          {
+            "text": "I spend as much time visualising, mapping and getting control of the setup of this environment as on the setup itself.",
+            "why": "Visibility is half the work."
+          }
+        ]
+      }
+    },
+    {
       "slug": "php-daily-2026-10-24",
       "title": "PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)",
       "date": "2026-10-25",

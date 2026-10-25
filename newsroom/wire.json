@@ -73,6 +73,34 @@
   ],
   "articles": [
     {
+      "slug": "why-agent-loops-are-hard",
+      "title": "Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it",
+      "date": "2026-10-25",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/why-agent-loops-are-hard.html",
+      "markdown": "https://newsroom.sgit.ai/articles/why-agent-loops-are-hard.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/why-agent-loops-are-hard.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/why-agent-loops-are-hard.json",
+      "teaser": "Ten agents in sequence, a schedule that must land in the right session, and why visibility is half the work of an agent loop.",
+      "summary": "The PHP story is now run by a pipeline of agents that wake on their own: a researcher finds sources, a curator turns them into evidence, a journalist updates the site, and a correspondent checks the journalist's work; then the Sherpa, the desk, the librarian and the ontologist run after them. Eleven schedules, 53 wakes a day. It works, but it is brittle, and the reasons are worth writing down. Each agent needs its own session that I can open and read, holding its state, its keys and gigabytes of vaults between wakes. For a long time the platform's scheduling opened a new session for every run, which made secrets and state start again and the list of sessions grow with every wake. A couple of days ago I found I could schedule a wake into a specific session, and that is what made the pipeline possible; it still took a day and a half to become somewhat reliable, and this morning the wake timeline still showed 5 wakes met and 11 missed, mostly runs that worked but left no record. That is why I go slowly, use what the platform provides and keep my own code to a minimum, and spend as much time on visualisation as on the setup itself. The next step is the move from explorer to villager: a dedicated account for the whole team, for isolation and for costs, usage and models I can see. And a lesson for platform builders: the unit of work is the whole platform.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "agents",
+        "scheduling",
+        "automation",
+        "observability",
+        "explorers-villagers",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "php-daily-2026-10-24",
       "title": "PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)",
       "date": "2026-10-25",

@@ -1,0 +1,34 @@
+{
+ "slug": "why-agent-loops-are-hard",
+ "teaser": "Ten agents in sequence, a schedule that must land in the right session, and why visibility is half the work of an agent loop.",
+ "topics": ["agents-and-policy", "startups-and-strategy"],
+ "core_idea": "Running a pipeline of about ten scheduled agents unattended is brittle: each needs a persistent, readable session holding state, keys and data, which only became workable when scheduling could target a chosen session, and reliability still depends on run records and visualisation, so the work goes slowly, leans on platform features, and moves next to a dedicated account, because the unit of work is the whole platform.",
+ "nodes": [
+  {"id": "pipe", "label": "Ten agents in sequence", "kind": "example", "summary": "Researcher, curator, journalist, correspondent, then four more."},
+  {"id": "session", "label": "One session per agent", "kind": "method", "summary": "State, keys and vaults kept between wakes, readable."},
+  {"id": "newsess", "label": "A new session per run", "kind": "claim", "summary": "Secrets and state restart; sessions pile up."},
+  {"id": "target", "label": "Scheduling into a chosen session", "kind": "method", "summary": "The wake lands where the agent is briefed and keyed."},
+  {"id": "brittle", "label": "Brittle", "kind": "example", "summary": "5 wakes met, 11 missed, mostly no run record."},
+  {"id": "visible", "label": "Visibility is half the work", "kind": "claim", "summary": "Schedule, control room, desk."},
+  {"id": "account", "label": "A dedicated account", "kind": "method", "summary": "Isolation, costs, usage, models."},
+  {"id": "unit", "label": "The unit is the platform", "kind": "claim", "summary": "Complete separate instances, like AWS accounts."}
+ ],
+ "edges": [
+  {"from": "pipe", "to": "session", "rel": "depends-on"},
+  {"from": "newsess", "to": "target", "rel": "contrasts"},
+  {"from": "target", "to": "session", "rel": "produces"},
+  {"from": "brittle", "to": "visible", "rel": "depends-on"},
+  {"from": "visible", "to": "pipe", "rel": "answers"},
+  {"from": "account", "to": "session", "rel": "depends-on"},
+  {"from": "unit", "to": "account", "rel": "produces"}
+ ],
+ "links": {
+  "articles": ["almost-working", "a-tangent-that-shipped", "a-team-frozen-in-time", "explorer-coding", "php-daily-2026-10-24"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html", "https://php.oct.2026.newsroom.sgit.ai/team/control/index.html", "https://code.claude.com/docs/en/routines.md"]
+ },
+ "quotes": [
+  {"text": "The unit of work is your entire platform.", "why": "For platform builders: the unit of work is the platform."},
+  {"text": "I spend as much time visualising, mapping and getting control of the setup of this environment as on the setup itself.", "why": "Visibility is half the work."}
+ ]
+}

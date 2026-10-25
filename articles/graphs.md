@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-278 of 278 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+279 of 279 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-278 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 16 articles not yet linked either way.
+279 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 17 articles not yet linked either way.
+
+## [Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it](why-agent-loops-are-hard.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Running a pipeline of about ten scheduled agents unattended is brittle: each needs a persistent, readable session holding state, keys and data, which only became workable when scheduling could target a chosen session, and reliability still depends on run records and visualisation, so the work goes slowly, leans on platform features, and moves next to a dedicated account, because the unit of work is the whole platform.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Ten agents in sequence** (example) Researcher, curator, journalist, correspondent, then four more.
+- **One session per agent** (method) State, keys and vaults kept between wakes, readable.
+- **A new session per run** (claim) Secrets and state restart; sessions pile up.
+- **Scheduling into a chosen session** (method) The wake lands where the agent is briefed and keyed.
+- **Brittle** (example) 5 wakes met, 11 missed, mostly no run record.
+- **Visibility is half the work** (claim) Schedule, control room, desk.
+- **A dedicated account** (method) Isolation, costs, usage, models.
+- **The unit is the platform** (claim) Complete separate instances, like AWS accounts.
+
+> The unit of work is your entire platform. For platform builders: the unit of work is the platform.
+
+> I spend as much time visualising, mapping and getting control of the setup of this environment as on the setup itself. Visibility is half the work.
 
 ## [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](php-daily-2026-10-24.md)
 

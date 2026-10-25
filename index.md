@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.71 · 278 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.72 · 279 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](articles/php-daily-2026-10-24.md), 2026-10-25, 10 min. Update 3: no confirmed victim after three days, a vendor claim withdrawn, a third flaw, and agents that review each other.
+- [Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it](articles/why-agent-loops-are-hard.md), 2026-10-25, 10 min. Ten agents in sequence, a schedule that must land in the right session, and why visibility is half the work of an agent loop.
 
 ## Highlights
 
+- [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](articles/php-daily-2026-10-24.md), 2026-10-25, 10 min.
 - [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](articles/who-signs-for-this.md), 2026-10-24, 11 min.
 - [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min.
 - [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](articles/signed-by-the-source.md), 2026-10-24, 8 min.
-- [Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change](articles/patch-for-breakfast.md), 2026-10-24, 7 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (79)
+### Agent security & policy (80)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it](articles/why-agent-loops-are-hard.md), 2026-10-25, 10 min.
 - [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](articles/php-daily-2026-10-24.md), 2026-10-25, 10 min.
 - [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](articles/who-signs-for-this.md), 2026-10-24, 11 min.
-- [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min.
 
 ### Building with agents (46)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
