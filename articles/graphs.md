@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-279 of 279 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+280 of 280 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-279 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 17 articles not yet linked either way.
+280 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 18 articles not yet linked either way.
+
+## [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](sources-and-shadows.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Every reference carries primitives worth recording (licence, access, links, quotes, quality, history); when an article cannot be read, the shadow of who cites and quotes it is evidence, as Wikipedia's paywalled citations show, and disagreements between shadow and source become visible, building a record of who got it right and a basis for paying the sources used.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Explore there, settle here** (claim) PHP agents explore; the newsroom's wires adopt.
+- **Primitives of a reference** (method) Licence, access, links, quotes, quality, history.
+- **The source watch** (example) 913 pages: 735 open, 59 challenged, 15 paywalled.
+- **The shadow of an article** (method) Who cites it, what they quote.
+- **Wikipedia's paywalled citations** (example) 8 of 39 statements rest on subscription titles.
+- **Disagreements** (claim) Quotes that no longer match a changed source.
+- **Who got it right** (claim) A record from captures, quotes, corrections.
+- **Paying the sources** (method) Micropayments funnelled to sources used.
+
+> A reference we cannot read, because we have no licence, is still a node in the graph, with its shadow around it. The shadow of an article.
+
+> not to read around the wall, but to pay through it, per use, for what we actually cite. Paying the sources we use.
 
 ## [Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it](why-agent-loops-are-hard.md)
 

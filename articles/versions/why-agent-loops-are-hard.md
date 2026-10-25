@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 2,434 | first published | this release | [current](../why-agent-loops-are-hard.md) |
+| **v1.0.0** | 2026-10-25 | published | 2,434 | first published | [`9720d6fc4`](https://github.com/SGit-AI/SGit-AI__Website/commit/9720d6fc495ed2c92b2d4e01815e1e3cccaf2a7a) | [current](../why-agent-loops-are-hard.md) |
 
 [← Back to the article](../why-agent-loops-are-hard.md) · [All articles](../index.md)
 

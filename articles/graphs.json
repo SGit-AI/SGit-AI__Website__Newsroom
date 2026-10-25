@@ -55,6 +55,179 @@
   ],
   "articles": [
     {
+      "slug": "sources-and-shadows",
+      "title": "Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use",
+      "date": "2026-10-25",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/sources-and-shadows.html",
+      "markdown": "https://newsroom.sgit.ai/articles/sources-and-shadows.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/sources-and-shadows.webp",
+      "teaser": "Each reference's licence, access, links and quotes, reading a paywalled article through its shadow, and paying the sources we use.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "sources",
+        "provenance",
+        "paywalls",
+        "wikipedia",
+        "micropayments",
+        "wires",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "so-shadow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/so-shadow.webp",
+          "caption": "Seeing an article through its shadow: a paywalled article we hold no licence for, at the centre, and around it what we can read: Wikipedia, whose editors read it, cite it and quote it; other outlets that quote, summarise or disagree with it; social posts that pull out one line; and our own captures, which keep every quote with its source.",
+          "kind": "concept"
+        },
+        {
+          "file": "so-primitives.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/so-primitives.webp",
+          "caption": "What every reference should carry, recorded each time a page is captured: its licence; its access; its links, out and in; its quotes, made and received; its quality; its history; and who to pay. Proposed; the access and the history are already recorded by the PHP site's source watch.",
+          "kind": "concept"
+        },
+        {
+          "file": "so-watch.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/so-watch.webp",
+          "caption": "The PHP site's source watch: a vault that watches every outside source on the story, 913 pages from 597 publishers in 59 countries, in 34 languages, recording what access it had on each run and keeping a new snapshot whenever the content changed, 2,946 snapshots and graphs over 38 runs.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "so-refs.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/so-refs.webp",
+          "caption": "Every reference in Wikipedia's PHP2Shell article, as the PHP site reads it: 43 references at revision 1381798757, 16 of them pages the site's evidence vault holds, the others not yet captured, including The New York Times and The Wall Street Journal; for each, its publisher, which of the article's statements cite it, and which of the site's own claims rest on it.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "sources-and-shadows",
+        "teaser": "Each reference's licence, access, links and quotes, reading a paywalled article through its shadow, and paying the sources we use.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Every reference carries primitives worth recording (licence, access, links, quotes, quality, history); when an article cannot be read, the shadow of who cites and quotes it is evidence, as Wikipedia's paywalled citations show, and disagreements between shadow and source become visible, building a record of who got it right and a basis for paying the sources used.",
+        "nodes": [
+          {
+            "id": "explore",
+            "label": "Explore there, settle here",
+            "kind": "claim",
+            "summary": "PHP agents explore; the newsroom's wires adopt."
+          },
+          {
+            "id": "prims",
+            "label": "Primitives of a reference",
+            "kind": "method",
+            "summary": "Licence, access, links, quotes, quality, history."
+          },
+          {
+            "id": "watch",
+            "label": "The source watch",
+            "kind": "example",
+            "summary": "913 pages: 735 open, 59 challenged, 15 paywalled."
+          },
+          {
+            "id": "shadow",
+            "label": "The shadow of an article",
+            "kind": "method",
+            "summary": "Who cites it, what they quote."
+          },
+          {
+            "id": "wiki",
+            "label": "Wikipedia's paywalled citations",
+            "kind": "example",
+            "summary": "8 of 39 statements rest on subscription titles."
+          },
+          {
+            "id": "disagree",
+            "label": "Disagreements",
+            "kind": "claim",
+            "summary": "Quotes that no longer match a changed source."
+          },
+          {
+            "id": "record",
+            "label": "Who got it right",
+            "kind": "claim",
+            "summary": "A record from captures, quotes, corrections."
+          },
+          {
+            "id": "pay",
+            "label": "Paying the sources",
+            "kind": "method",
+            "summary": "Micropayments funnelled to sources used."
+          }
+        ],
+        "edges": [
+          {
+            "from": "explore",
+            "to": "prims",
+            "rel": "produces"
+          },
+          {
+            "from": "watch",
+            "to": "prims",
+            "rel": "example-of"
+          },
+          {
+            "from": "shadow",
+            "to": "prims",
+            "rel": "depends-on"
+          },
+          {
+            "from": "wiki",
+            "to": "shadow",
+            "rel": "example-of"
+          },
+          {
+            "from": "shadow",
+            "to": "disagree",
+            "rel": "produces"
+          },
+          {
+            "from": "disagree",
+            "to": "record",
+            "rel": "produces"
+          },
+          {
+            "from": "prims",
+            "to": "pay",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "signed-by-the-source",
+            "on-the-record",
+            "free-to-copy-paid-at-the-source",
+            "who-signs-for-this",
+            "php-daily-2026-10-24",
+            "explorer-coding"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html",
+            "https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/references/index.html",
+            "https://newsroom.sgit.ai/wire/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A reference we cannot read, because we have no licence, is still a node in the graph, with its shadow around it.",
+            "why": "The shadow of an article."
+          },
+          {
+            "text": "not to read around the wall, but to pay through it, per use, for what we actually cite.",
+            "why": "Paying the sources we use."
+          }
+        ]
+      }
+    },
+    {
       "slug": "why-agent-loops-are-hard",
       "title": "Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it",
       "date": "2026-10-25",
