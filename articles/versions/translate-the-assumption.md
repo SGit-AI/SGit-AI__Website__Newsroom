@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 1,706 | first published | this release | [current](../translate-the-assumption.md) |
+| **v1.0.0** | 2026-10-25 | published | 1,706 | first published | [`9b4a89d1f`](https://github.com/SGit-AI/SGit-AI__Website/commit/9b4a89d1fba4ffd961a447ea7b15bc13d3a09abc) | [current](../translate-the-assumption.md) |
 
 [← Back to the article](../translate-the-assumption.md) · [All articles](../index.md)
 

@@ -57,6 +57,7 @@ So that is my practical answer to Nadzeya's question. Using third-party services
 
 ## What this does not claim {#limits}
 
+- **Corrected on 25 October 2026.** The first version said the thread sat under a post about open source as a business model; that line was my own LinkedIn headline. The thread is under Stephan Bitton's post on AI-first startups, and is now linked.
 - **The maps are illustrative.** The positions are judgements, not measurements.
 - **Commodities have outages and lock-in too.** The point is that the risk is shallower, better documented and shared by everyone.
 - **Not every startup is messy.** The point is that you cannot tell from your own map.

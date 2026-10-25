@@ -10,7 +10,7 @@
 
 # Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.2.0, 3 versions](versions/simplified-or-outsourced.md) · [newsroom v0.13.80](https://newsroom.sgit.ai/admin/versions.html) · architecturewardley-mapsserverlesspasskeysriskcertificationarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.3.0, 4 versions](versions/simplified-or-outsourced.md) · [newsroom v0.13.80](https://newsroom.sgit.ai/admin/versions.html) · architecturewardley-mapsserverlesspasskeysriskcertificationarticle
 
 ***Abstract:** Under my LinkedIn comment that I run with no databases, serverless services and no server-side code of my own, Nadzeya Stalbouskaya asked a good question: removing servers and databases does not necessarily remove complexity; sometimes it just moves it into external services, APIs and dependencies we do not fully control, trading operational overhead today for dependency and lock-in tomorrow. So how do you tell genuinely simplifying an architecture from outsourcing its complexity? My answer: Nadzeya is right that there is risk, and it must be a conscious decision. The way to make it is to map it. On a Wardley map, moving a component from custom-built to commodity removes complexity only if what you move to really is a commodity. Replacing our own login with passkeys is that: a standard every major browser and platform supports, with a track record. Moving our data to object storage and static hosting is too. But moving to a young startup's service can look like a commodity on our map while, behind it, it is as messy as what we had, or worse. So you de-risk the move by choosing the commodity, and you can test which one you have by asking who would certify it, insure it, or sign a high SLA on it. Maturity and certifiability go together.*
 
@@ -61,6 +61,7 @@ So that is my practical answer to Nadzeya's question. Using third-party services
 
 ## What this does not claim
 
+- **Corrected on 25 October 2026.** The first version said the thread sat under a post about open source as a business model; that line was my own LinkedIn headline. The thread is under Stephan Bitton's post on AI-first startups, and is now linked.
 - **The maps are illustrative.** The positions are judgements, not measurements.
 - **Commodities have outages and lock-in too.** The point is that the risk is shallower, better documented and shared by everyone.
 - **Not every startup is messy.** The point is that you cannot tell from your own map.
