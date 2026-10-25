@@ -14,13 +14,36 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-292 of 292 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+293 of 293 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-292 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 30 articles not yet linked either way.
+293 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 31 articles not yet linked either way.
+
+## [Feisty Duck, briefed: Ivan Ristić's cryptography and security news, newsletter, guide and history as an anchor for everything SSL, TLS and PKI, what it shares with our newsrooms, and how we could integrate with it](feisty-duck-briefed.md)
+
+2026-10-25 · News & evidenceVaults & method
+
+Feisty Duck's expert, continuously published TLS, PKI and cryptography content, including a news feed with LLM summaries, a newsletter, a free guide and a 174-event history, is a natural anchor for our crypto claims; it shares our continuous publishing and curation, and integration can start by linking and checking, while capturing its content in a vault waits for its permission.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 7 edges**
+
+- **Feisty Duck** (example) Books, training, newsletter, since 2009.
+- **Feisty Duck News** (example) 37 sources, LLM summaries, hand-picked front page.
+- **The SSL/TLS and PKI history** (example) 174 events, 1994 to 2029.
+- **An anchor for crypto claims** (method) Link to the guide, book and newsletter.
+- **What we share** (claim) Continuous publishing, curation, public sources.
+- **Provenance on summaries** (method) Capture, hash, check, verdict.
+- **A vault, with permission** (claim) Our notes now; their pages only if they agree.
+
+> A vault of their content needs their permission. In short.
+
+> Captures of Feisty Duck's own pages are different. Is there a need for a vault?
 
 ## [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](translate-the-assumption.md)
 

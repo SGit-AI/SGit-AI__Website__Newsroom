@@ -55,6 +55,169 @@
   ],
   "articles": [
     {
+      "slug": "feisty-duck-briefed",
+      "title": "Feisty Duck, briefed: Ivan Ristić's cryptography and security news, newsletter, guide and history as an anchor for everything SSL, TLS and PKI, what it shares with our newsrooms, and how we could integrate with it",
+      "date": "2026-10-25",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/feisty-duck-briefed.html",
+      "markdown": "https://newsroom.sgit.ai/articles/feisty-duck-briefed.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/feisty-duck-briefed.webp",
+      "teaser": "Feisty Duck, briefed: an anchor for TLS, PKI and cryptography, what it shares with our newsrooms, and how we could integrate.",
+      "topics": [
+        "news-and-evidence",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "tls",
+        "pki",
+        "cryptography",
+        "sources",
+        "anchors",
+        "integrations",
+        "briefing",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "fd-pages.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fd-pages.webp",
+          "caption": "Feisty Duck on 25 October 2026: Feisty Duck News, the live front page of cryptography and security news; the Cryptography & Security Newsletter, with issues to #141, \"Get Ready for Seven-Day Certificates\"; the SSL/TLS and PKI History, starting with SSL v2 in 1994; and the free Bulletproof TLS Guide, last updated on 16 June 2026.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "fd-numbers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fd-numbers.webp",
+          "caption": "Feisty Duck, in numbers: the 100 items in the news feed between 1 September and 25 October 2026, by category, led by post-quantum cryptography (24), PKI (21), cryptography (18) and security (17); and the 174 events in the SSL/TLS and PKI history, by decade, 109 of them in the 2010s, scored 115 positive and 56 negative.",
+          "kind": "chart"
+        },
+        {
+          "file": "fd-flow.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/fd-flow.webp",
+          "caption": "How Feisty Duck and our newsrooms could fit together: Feisty Duck curates and explains; we link our crypto, TLS and PKI claims to its guide, book and newsletter as an anchor, now; we could run a crypto and TLS wire that follows the same public sources and credits Feisty Duck News; we could add provenance to the LLM summaries of items we cite; and, with permission, keep the history as a graph and capture pages in a vault.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "feisty-duck-briefed",
+        "teaser": "Feisty Duck, briefed: an anchor for TLS, PKI and cryptography, what it shares with our newsrooms, and how we could integrate.",
+        "topics": [
+          "news-and-evidence",
+          "vaults-and-method"
+        ],
+        "core_idea": "Feisty Duck's expert, continuously published TLS, PKI and cryptography content, including a news feed with LLM summaries, a newsletter, a free guide and a 174-event history, is a natural anchor for our crypto claims; it shares our continuous publishing and curation, and integration can start by linking and checking, while capturing its content in a vault waits for its permission.",
+        "nodes": [
+          {
+            "id": "fd",
+            "label": "Feisty Duck",
+            "kind": "example",
+            "summary": "Books, training, newsletter, since 2009."
+          },
+          {
+            "id": "news",
+            "label": "Feisty Duck News",
+            "kind": "example",
+            "summary": "37 sources, LLM summaries, hand-picked front page."
+          },
+          {
+            "id": "history",
+            "label": "The SSL/TLS and PKI history",
+            "kind": "example",
+            "summary": "174 events, 1994 to 2029."
+          },
+          {
+            "id": "anchor",
+            "label": "An anchor for crypto claims",
+            "kind": "method",
+            "summary": "Link to the guide, book and newsletter."
+          },
+          {
+            "id": "shared",
+            "label": "What we share",
+            "kind": "claim",
+            "summary": "Continuous publishing, curation, public sources."
+          },
+          {
+            "id": "provenance",
+            "label": "Provenance on summaries",
+            "kind": "method",
+            "summary": "Capture, hash, check, verdict."
+          },
+          {
+            "id": "vault",
+            "label": "A vault, with permission",
+            "kind": "claim",
+            "summary": "Our notes now; their pages only if they agree."
+          }
+        ],
+        "edges": [
+          {
+            "from": "news",
+            "to": "fd",
+            "rel": "depends-on"
+          },
+          {
+            "from": "history",
+            "to": "fd",
+            "rel": "depends-on"
+          },
+          {
+            "from": "anchor",
+            "to": "fd",
+            "rel": "depends-on"
+          },
+          {
+            "from": "shared",
+            "to": "fd",
+            "rel": "contrasts"
+          },
+          {
+            "from": "provenance",
+            "to": "news",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "history",
+            "rel": "depends-on"
+          },
+          {
+            "from": "vault",
+            "to": "provenance",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "monstream-briefing",
+            "sources-and-shadows",
+            "who-creates-the-original",
+            "a-secure-rule-applied-literally",
+            "signed-by-the-source"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.feistyduck.com/news/",
+            "https://www.feistyduck.com/newsletter/",
+            "https://www.feistyduck.com/ssl-tls-and-pki-history/",
+            "https://www.feistyduck.com/library/bulletproof-tls-guide/",
+            "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A vault of their content needs their permission.",
+            "why": "In short."
+          },
+          {
+            "text": "Captures of Feisty Duck's own pages are different.",
+            "why": "Is there a need for a vault?"
+          }
+        ]
+      }
+    },
+    {
       "slug": "translate-the-assumption",
       "title": "Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy",
       "date": "2026-10-25",
