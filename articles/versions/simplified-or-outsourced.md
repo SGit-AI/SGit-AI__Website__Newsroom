@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-25 | minor | 1,579 | +7 / −4 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](simplified-or-outsourced/v1.1.0.md) · [current](../simplified-or-outsourced.md) |
+| **v1.1.0** | 2026-10-25 | minor | 1,579 | +7 / −4 words; 3 changed, 0 added, 0 removed paragraphs | [`b4bf7bb20`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4bf7bb20274a3fbe538b886a29cd65c9c9742d6) | [what changed](simplified-or-outsourced/v1.1.0.md) · [current](../simplified-or-outsourced.md) |
 | **v1.0.0** | 2026-10-25 | published | 1,576 | first published | [`f44a0e820`](https://github.com/SGit-AI/SGit-AI__Website/commit/f44a0e820049a0e0c94f4e4bb11387c6959d02fc) |  |
 
 [← Back to the article](../simplified-or-outsourced.md) · [All articles](../index.md)
