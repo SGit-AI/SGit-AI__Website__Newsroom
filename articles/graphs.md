@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-290 of 290 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+291 of 291 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-290 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 28 articles not yet linked either way.
+291 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 29 articles not yet linked either way.
+
+## [Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open](software-is-now-a-product.md)
+
+2026-10-25 · Agents & policyNews & evidence
+
+Directive (EU) 2024/2853 makes software, including SaaS, a product under no-fault liability for products placed on the market after 9 December 2026, removes the later-defect defence for missing security updates within the maker's control, and ignores attackers and EULAs, but only natural persons can claim and only for injury, private property and private data destroyed, so for php2shell unpatched vendors and SaaS harming consumers are likely liable while leaks and business losses fall outside.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 8 edges**
+
+- **Software is a product** (claim) However supplied, SaaS included.
+- **After 9 December 2026** (claim) Old products stay under 1985 rules.
+- **Only natural persons claim** (claim) Injury, private property, private data destroyed.
+- **Defective, with cybersecurity** (method) A vulnerability can be a defect.
+- **Updates count** (method) No later-defect defence for missing updates.
+- **php2shell, applied** (example) PHP out; unpatched vendors and SaaS in.
+- **Will it stop updates?** (claim) Patches are not substantial modifications.
+- **Open questions** (claim) SaaS placing, services, end of support, CRA.
+
+> A data leak is not covered, and neither is a company's own loss. In short.
+
+> The text makes that weaker than it sounds. Will it stop companies updating?
 
 ## [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](simplified-or-outsourced.md)
 

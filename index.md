@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.80 · 290 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.81 · 291 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](articles/simplified-or-outsourced.md), 2026-10-25, 6 min. A reply to Nadzeya Stalbouskaya: removing servers simplifies only if you move to real commodities, so map it and ask who would certify it.
+- [Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open](articles/software-is-now-a-product.md), 2026-10-25, 9 min. Software is now a product: the EU's new Product Liability Directive read article by article, applied to SaaS, updates and php2shell.
 
 ## Highlights
 
+- [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](articles/simplified-or-outsourced.md), 2026-10-25, 6 min.
 - [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](articles/a-secure-rule-applied-literally.md), 2026-10-25, 7 min.
 - [Who creates the original? Mapping where the PHP story's data comes from, giving that map to the historian, and the places where we can make content nobody else has: our own counts, interviews and op-eds](articles/who-creates-the-original.md), 2026-10-25, 6 min.
 - [Agents need direction: how agent roles differ from human ones, why one focused agent can also be a developer, a designer and a data scientist, why that power has to be contained, and teams that send each other pull requests](articles/agents-need-direction.md), 2026-10-25, 6 min.
-- [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](articles/a-call-for-help.md), 2026-10-25, 4 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (82)
+### Agent security & policy (83)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open](articles/software-is-now-a-product.md), 2026-10-25, 9 min.
 - [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](articles/a-secure-rule-applied-literally.md), 2026-10-25, 7 min.
 - [Agents need direction: how agent roles differ from human ones, why one focused agent can also be a developer, a designer and a data scientist, why that power has to be contained, and teams that send each other pull requests](articles/agents-need-direction.md), 2026-10-25, 6 min.
-- [Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it](articles/why-agent-loops-are-hard.md), 2026-10-25, 10 min.
 
 ### Building with agents (48)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

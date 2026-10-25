@@ -1,0 +1,35 @@
+{
+ "slug": "software-is-now-a-product",
+ "teaser": "Software is now a product: the EU's new Product Liability Directive read article by article, applied to SaaS, updates and php2shell.",
+ "topics": ["agents-and-policy", "news-and-evidence"],
+ "core_idea": "Directive (EU) 2024/2853 makes software, including SaaS, a product under no-fault liability for products placed on the market after 9 December 2026, removes the later-defect defence for missing security updates within the maker's control, and ignores attackers and EULAs, but only natural persons can claim and only for injury, private property and private data destroyed, so for php2shell unpatched vendors and SaaS harming consumers are likely liable while leaks and business losses fall outside.",
+ "nodes": [
+  {"id": "product", "label": "Software is a product", "kind": "claim", "summary": "However supplied, SaaS included."},
+  {"id": "scope", "label": "After 9 December 2026", "kind": "claim", "summary": "Old products stay under 1985 rules."},
+  {"id": "people", "label": "Only natural persons claim", "kind": "claim", "summary": "Injury, private property, private data destroyed."},
+  {"id": "defect", "label": "Defective, with cybersecurity", "kind": "method", "summary": "A vulnerability can be a defect."},
+  {"id": "updates", "label": "Updates count", "kind": "method", "summary": "No later-defect defence for missing updates."},
+  {"id": "php", "label": "php2shell, applied", "kind": "example", "summary": "PHP out; unpatched vendors and SaaS in."},
+  {"id": "incentives", "label": "Will it stop updates?", "kind": "claim", "summary": "Patches are not substantial modifications."},
+  {"id": "questions", "label": "Open questions", "kind": "claim", "summary": "SaaS placing, services, end of support, CRA."}
+ ],
+ "edges": [
+  {"from": "scope", "to": "product", "rel": "depends-on"},
+  {"from": "people", "to": "product", "rel": "depends-on"},
+  {"from": "defect", "to": "product", "rel": "depends-on"},
+  {"from": "updates", "to": "defect", "rel": "depends-on"},
+  {"from": "php", "to": "updates", "rel": "example-of"},
+  {"from": "php", "to": "people", "rel": "depends-on"},
+  {"from": "incentives", "to": "updates", "rel": "answers"},
+  {"from": "questions", "to": "product", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["who-signs-for-this", "simplified-or-outsourced", "who-maintains-the-php-you-run", "patch-for-breakfast", "the-policy-draws-the-liability-line"],
+  "pages": [],
+  "sites": ["https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng", "https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng", "https://www.linkedin.com/posts/laurenz1010_share-7520128390050529280-M2XB/", "https://github.com/NCSC-NL/php2shell"]
+ },
+ "quotes": [
+  {"text": "A data leak is not covered, and neither is a company's own loss.", "why": "In short."},
+  {"text": "The text makes that weaker than it sounds.", "why": "Will it stop companies updating?"}
+ ]
+}
