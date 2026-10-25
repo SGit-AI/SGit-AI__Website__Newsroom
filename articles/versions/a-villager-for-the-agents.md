@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 1,795 | first published | this release | [current](../a-villager-for-the-agents.md) |
+| **v1.0.0** | 2026-10-25 | published | 1,795 | first published | [`5806348c9`](https://github.com/SGit-AI/SGit-AI__Website/commit/5806348c9dceeb2accfe67a18f24beaf5b7eba12) | [current](../a-villager-for-the-agents.md) |
 
 [← Back to the article](../a-villager-for-the-agents.md) · [All articles](../index.md)
 

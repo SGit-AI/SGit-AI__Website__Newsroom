@@ -55,6 +55,335 @@
   ],
   "articles": [
     {
+      "slug": "own-the-stack-and-the-trust",
+      "title": "Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built",
+      "date": "2026-10-25",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/own-the-stack-and-the-trust.html",
+      "markdown": "https://newsroom.sgit.ai/articles/own-the-stack-and-the-trust.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/own-the-stack-and-the-trust.webp",
+      "teaser": "A reply to Bert Kok: agents that augment journalists, publishers that own the now cheap stack, and the reader's trust above all.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "news",
+        "journalism",
+        "ai",
+        "provenance",
+        "open-source",
+        "business-models",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "kb-collage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kb-collage.webp",
+          "caption": "What we have built, in twelve pages: this newsroom's front page; the PHP October 2026 story site; its state of affairs, versioned; its source watch of 913 pages; Wikipedia's article on the flaw, read as a graph; the control room for its 23 agents; the bridge, a local story kept as a graph; the waiting room that knew first; a desk kept in a vault; the Industry Wire; the World News Day corpus; and Pulse, exploited against talked about.",
+          "kind": "collage"
+        },
+        {
+          "file": "kb-post.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kb-post.webp",
+          "caption": "Bert Kok's post on LinkedIn, 25 October 2026, sharing his essay for The News Stack: \"Publishers may fund the most expensive layer and capture the least valuable\".",
+          "kind": "aside"
+        },
+        {
+          "file": "kb-comment.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kb-comment.webp",
+          "caption": "My reply under Bert Kok's post, 25 October 2026: thinking along very similar lines, building MVPs that show how the data behind a story can be captured, linked and monetised, and this article to follow.",
+          "kind": "aside"
+        }
+      ],
+      "graph": {
+        "slug": "own-the-stack-and-the-trust",
+        "teaser": "A reply to Bert Kok: agents that augment journalists, publishers that own the now cheap stack, and the reader's trust above all.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Bert Kok is right that AI platforms now own synthesis and the interface while publishers fund costly discovery; the knowledge architecture and reader feedback loop he calls for already exist in our open-source stack, where agents augment rather than replace journalists, so publishers should own that cheap stack and, above all, the reader's trust.",
+        "nodes": [
+          {
+            "id": "kok",
+            "label": "Bert Kok's essay",
+            "kind": "claim",
+            "summary": "Publishers fund the costliest layer, capture the least."
+          },
+          {
+            "id": "layers",
+            "label": "Three layers converging",
+            "kind": "claim",
+            "summary": "Synthesis and the interface in one platform."
+          },
+          {
+            "id": "arch",
+            "label": "Knowledge architecture",
+            "kind": "method",
+            "summary": "Facts, claims, sources, checks, changes."
+          },
+          {
+            "id": "sensor",
+            "label": "The interface as a sensor",
+            "kind": "method",
+            "summary": "Readers' feedback turned into features."
+          },
+          {
+            "id": "augment",
+            "label": "Agents augment journalists",
+            "kind": "claim",
+            "summary": "Missing: more journalists and more readers."
+          },
+          {
+            "id": "stack",
+            "label": "Own the stack",
+            "kind": "claim",
+            "summary": "No longer millions; open source."
+          },
+          {
+            "id": "trust",
+            "label": "Own the trust",
+            "kind": "claim",
+            "summary": "What platforms cannot copy."
+          },
+          {
+            "id": "tour",
+            "label": "A guided tour",
+            "kind": "example",
+            "summary": "The PHP site, the bridge, the wire."
+          }
+        ],
+        "edges": [
+          {
+            "from": "kok",
+            "to": "layers",
+            "rel": "depends-on"
+          },
+          {
+            "from": "arch",
+            "to": "kok",
+            "rel": "answers"
+          },
+          {
+            "from": "sensor",
+            "to": "kok",
+            "rel": "answers"
+          },
+          {
+            "from": "augment",
+            "to": "arch",
+            "rel": "depends-on"
+          },
+          {
+            "from": "stack",
+            "to": "layers",
+            "rel": "contrasts"
+          },
+          {
+            "from": "trust",
+            "to": "stack",
+            "rel": "depends-on"
+          },
+          {
+            "from": "tour",
+            "to": "arch",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "local-trust-certified-upwards",
+            "sources-and-shadows",
+            "signed-by-the-source",
+            "the-side-stories-of-php2shell",
+            "php-daily-2026-10-24",
+            "why-agent-loops-are-hard",
+            "a-pen-and-a-key"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.linkedin.com/pulse/publishers-may-fund-most-expensive-layer-capture-least-bert-kok-mba-lkgif",
+            "https://www.journalism.cuny.edu/2026/10/tow-knight-center-report-journalisms-future-ai-information/",
+            "https://php.oct.2026.newsroom.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Owning the stack is now a matter of choosing, not of spending.",
+            "why": "Where I disagree: own the stack."
+          },
+          {
+            "text": "One person sending feedback changed the product.",
+            "why": "Agents augment journalists; they do not replace them."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "local-trust-certified-upwards",
+      "title": "Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them",
+      "date": "2026-10-25",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/local-trust-certified-upwards.html",
+      "markdown": "https://newsroom.sgit.ai/articles/local-trust-certified-upwards.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/local-trust-certified-upwards.webp",
+      "teaser": "Local and niche publishers own the trust: take in commodity, certify the big outlets' local stories for pay, and keep stories maintained.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "news",
+        "local-news",
+        "business-models",
+        "trust",
+        "provenance",
+        "open-banking",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lt-flows.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lt-flows.webp",
+          "caption": "Local trust, certified upwards: a local or niche publisher at the centre, owning the trust, the expertise and the stack; flowing in, facts that are commodity, the big outlets' global news told from its audience's point of view, and other local and niche sources, credited; flowing up, certification of the big outlets' stories about its area, paid per use, and a record of who reports and who recycles; and below, the reader, who trusts it, pays it and tells it what is missing.",
+          "kind": "concept"
+        },
+        {
+          "file": "lt-parallel.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lt-parallel.webp",
+          "caption": "The same argument, twice: in software, the maintainer does the expert work, signs off the version you run, is free-ridden by everyone who runs it unpaid, maintains patches for years, and when they leave nobody can fix it; in news, the journalist or local expert does the expert work, signs off the story and its facts, is free-ridden by outlets that recycle without a source, maintains the story's facts as they change, and when they leave nobody vouches for it. In both, the money should flow to them.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "local-trust-certified-upwards",
+        "teaser": "Local and niche publishers own the trust: take in commodity, certify the big outlets' local stories for pay, and keep stories maintained.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Local and niche publishers hold readers' trust, so they should serve commodity facts and global news from their readers' point of view, certify big outlets' stories about their area for payment, rely on open billable interfaces like UK open banking, expose who reports versus who recycles, and be paid to maintain stories, just as software maintainers should be paid to sign off versions.",
+        "nodes": [
+          {
+            "id": "local",
+            "label": "The local and niche publisher",
+            "kind": "claim",
+            "summary": "Close to readers; owns the trust."
+          },
+          {
+            "id": "commodity",
+            "label": "Commodity flows in",
+            "kind": "method",
+            "summary": "Weather, sport, global news from the reader's view."
+          },
+          {
+            "id": "certify",
+            "label": "Certification flows up",
+            "kind": "method",
+            "summary": "Local journalists vouch for big outlets' stories, paid."
+          },
+          {
+            "id": "shadow",
+            "label": "A story without a local source",
+            "kind": "claim",
+            "summary": "Reads as a shadow."
+          },
+          {
+            "id": "open",
+            "label": "Open interfaces",
+            "kind": "example",
+            "summary": "UK open banking, ordered by the CMA."
+          },
+          {
+            "id": "recycle",
+            "label": "Who reports, who recycles",
+            "kind": "method",
+            "summary": "Cuts to experts made visible."
+          },
+          {
+            "id": "milk",
+            "label": "Stories go off like milk",
+            "kind": "claim",
+            "summary": "Experts must maintain them."
+          },
+          {
+            "id": "software",
+            "label": "The same argument as software",
+            "kind": "claim",
+            "summary": "Whoever does the expert work is paid and signs."
+          }
+        ],
+        "edges": [
+          {
+            "from": "commodity",
+            "to": "local",
+            "rel": "depends-on"
+          },
+          {
+            "from": "local",
+            "to": "certify",
+            "rel": "produces"
+          },
+          {
+            "from": "certify",
+            "to": "shadow",
+            "rel": "contrasts"
+          },
+          {
+            "from": "open",
+            "to": "commodity",
+            "rel": "depends-on"
+          },
+          {
+            "from": "recycle",
+            "to": "certify",
+            "rel": "depends-on"
+          },
+          {
+            "from": "milk",
+            "to": "certify",
+            "rel": "depends-on"
+          },
+          {
+            "from": "software",
+            "to": "milk",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "own-the-stack-and-the-trust",
+            "signed-by-the-source",
+            "sources-and-shadows",
+            "who-maintains-the-php-you-run",
+            "who-signs-for-this",
+            "the-side-stories-of-php2shell"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.openbanking.org.uk/about-us/",
+            "https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html",
+            "https://newsroom.sgit.ai/articles/the-bridge-followed-to-the-end.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It is a shadow of the real reporting, and I can go and read the local one instead.",
+            "why": "Certification flows up."
+          },
+          {
+            "text": "But a story with facts that can change goes off, like milk.",
+            "why": "Stories go off like milk."
+          }
+        ]
+      }
+    },
+    {
       "slug": "a-villager-for-the-agents",
       "title": "A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files",
       "date": "2026-10-25",

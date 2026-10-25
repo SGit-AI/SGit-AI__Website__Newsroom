@@ -14,13 +14,61 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-282 of 282 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+284 of 284 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-282 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 20 articles not yet linked either way.
+284 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 22 articles not yet linked either way.
+
+## [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](own-the-stack-and-the-trust.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Bert Kok is right that AI platforms now own synthesis and the interface while publishers fund costly discovery; the knowledge architecture and reader feedback loop he calls for already exist in our open-source stack, where agents augment rather than replace journalists, so publishers should own that cheap stack and, above all, the reader's trust.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Bert Kok's essay** (claim) Publishers fund the costliest layer, capture the least.
+- **Three layers converging** (claim) Synthesis and the interface in one platform.
+- **Knowledge architecture** (method) Facts, claims, sources, checks, changes.
+- **The interface as a sensor** (method) Readers' feedback turned into features.
+- **Agents augment journalists** (claim) Missing: more journalists and more readers.
+- **Own the stack** (claim) No longer millions; open source.
+- **Own the trust** (claim) What platforms cannot copy.
+- **A guided tour** (example) The PHP site, the bridge, the wire.
+
+> Owning the stack is now a matter of choosing, not of spending. Where I disagree: own the stack.
+
+> One person sending feedback changed the product. Agents augment journalists; they do not replace them.
+
+## [Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them](local-trust-certified-upwards.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Local and niche publishers hold readers' trust, so they should serve commodity facts and global news from their readers' point of view, certify big outlets' stories about their area for payment, rely on open billable interfaces like UK open banking, expose who reports versus who recycles, and be paid to maintain stories, just as software maintainers should be paid to sign off versions.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **The local and niche publisher** (claim) Close to readers; owns the trust.
+- **Commodity flows in** (method) Weather, sport, global news from the reader's view.
+- **Certification flows up** (method) Local journalists vouch for big outlets' stories, paid.
+- **A story without a local source** (claim) Reads as a shadow.
+- **Open interfaces** (example) UK open banking, ordered by the CMA.
+- **Who reports, who recycles** (method) Cuts to experts made visible.
+- **Stories go off like milk** (claim) Experts must maintain them.
+- **The same argument as software** (claim) Whoever does the expert work is paid and signs.
+
+> It is a shadow of the real reporting, and I can go and read the local one instead. Certification flows up.
+
+> But a story with facts that can change goes off, like milk. Stories go off like milk.
 
 ## [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](a-villager-for-the-agents.md)
 

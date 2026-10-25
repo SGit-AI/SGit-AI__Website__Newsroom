@@ -1,0 +1,136 @@
+{
+  "slug": "local-trust-certified-upwards",
+  "teaser": "Local and niche publishers own the trust: take in commodity, certify the big outlets' local stories for pay, and keep stories maintained.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Local and niche publishers hold readers' trust, so they should serve commodity facts and global news from their readers' point of view, certify big outlets' stories about their area for payment, rely on open billable interfaces like UK open banking, expose who reports versus who recycles, and be paid to maintain stories, just as software maintainers should be paid to sign off versions.",
+  "nodes": [
+    {
+      "id": "local",
+      "label": "The local and niche publisher",
+      "kind": "claim",
+      "summary": "Close to readers; owns the trust."
+    },
+    {
+      "id": "commodity",
+      "label": "Commodity flows in",
+      "kind": "method",
+      "summary": "Weather, sport, global news from the reader's view."
+    },
+    {
+      "id": "certify",
+      "label": "Certification flows up",
+      "kind": "method",
+      "summary": "Local journalists vouch for big outlets' stories, paid."
+    },
+    {
+      "id": "shadow",
+      "label": "A story without a local source",
+      "kind": "claim",
+      "summary": "Reads as a shadow."
+    },
+    {
+      "id": "open",
+      "label": "Open interfaces",
+      "kind": "example",
+      "summary": "UK open banking, ordered by the CMA."
+    },
+    {
+      "id": "recycle",
+      "label": "Who reports, who recycles",
+      "kind": "method",
+      "summary": "Cuts to experts made visible."
+    },
+    {
+      "id": "milk",
+      "label": "Stories go off like milk",
+      "kind": "claim",
+      "summary": "Experts must maintain them."
+    },
+    {
+      "id": "software",
+      "label": "The same argument as software",
+      "kind": "claim",
+      "summary": "Whoever does the expert work is paid and signs."
+    }
+  ],
+  "edges": [
+    {
+      "from": "commodity",
+      "to": "local",
+      "rel": "depends-on"
+    },
+    {
+      "from": "local",
+      "to": "certify",
+      "rel": "produces"
+    },
+    {
+      "from": "certify",
+      "to": "shadow",
+      "rel": "contrasts"
+    },
+    {
+      "from": "open",
+      "to": "commodity",
+      "rel": "depends-on"
+    },
+    {
+      "from": "recycle",
+      "to": "certify",
+      "rel": "depends-on"
+    },
+    {
+      "from": "milk",
+      "to": "certify",
+      "rel": "depends-on"
+    },
+    {
+      "from": "software",
+      "to": "milk",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "own-the-stack-and-the-trust",
+      "signed-by-the-source",
+      "sources-and-shadows",
+      "who-maintains-the-php-you-run",
+      "who-signs-for-this",
+      "the-side-stories-of-php2shell"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.openbanking.org.uk/about-us/",
+      "https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html",
+      "https://newsroom.sgit.ai/articles/the-bridge-followed-to-the-end.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "It is a shadow of the real reporting, and I can go and read the local one instead.",
+      "why": "Certification flows up."
+    },
+    {
+      "text": "But a story with facts that can change goes off, like milk.",
+      "why": "Stories go off like milk."
+    }
+  ],
+  "figures": [
+    {
+      "file": "lt-flows.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lt-flows.webp",
+      "caption": "Local trust, certified upwards: a local or niche publisher at the centre, owning the trust, the expertise and the stack; flowing in, facts that are commodity, the big outlets' global news told from its audience's point of view, and other local and niche sources, credited; flowing up, certification of the big outlets' stories about its area, paid per use, and a record of who reports and who recycles; and below, the reader, who trusts it, pays it and tells it what is missing.",
+      "kind": "concept"
+    },
+    {
+      "file": "lt-parallel.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/lt-parallel.webp",
+      "caption": "The same argument, twice: in software, the maintainer does the expert work, signs off the version you run, is free-ridden by everyone who runs it unpaid, maintains patches for years, and when they leave nobody can fix it; in news, the journalist or local expert does the expert work, signs off the story and its facts, is free-ridden by outlets that recycle without a source, maintains the story's facts as they change, and when they leave nobody vouches for it. In both, the money should flow to them.",
+      "kind": "comparison"
+    }
+  ]
+}
