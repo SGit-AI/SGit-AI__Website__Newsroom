@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-280 of 280 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+281 of 281 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-280 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 18 articles not yet linked either way.
+281 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 19 articles not yet linked either way.
+
+## [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](the-side-stories-of-php2shell.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Because the PHP story site keeps every source and capture, php2shell's evolution can be examined beyond the headline: provenance, features built against real needs, who corrects reporting (including an unannounced rewording), a crisis with no named victim and possibly needless shutdowns, immature detection, the cost of sites going dark, who is paid, exploited flaws that got little attention, and thin evidence of AI-driven exploitation.
+
+*[diagram]*
+**claim**method**example
+
+**9 nodes, 7 edges**
+
+- **Provenance** (claim) Every claim tied to a dated, hashed capture.
+- **Features against a real problem** (example) 179 releases in three and a half days.
+- **Who corrects** (example) Amazon reworded without a note.
+- **No named victim** (claim) Undisclosed, unharmed, or overreaction?
+- **Detection and the WAF** (claim) Counted attacks can be blocked.
+- **Sites that went dark** (example) 17 ledger entries; cost unknown.
+- **Follow the money** (method) Who is paid, compared with funding maintenance.
+- **The flaws nobody watched** (example) Zimbra 16 items, SharePoint 1, php2shell 175.
+- **How much was AI?** (claim) AI helped discovery; exploitation evidence thin.
+
+> We only know because we kept both captures. Who corrects their reporting?
+
+> If there were a lot of value on the other side, people would be doing it. How much of it was AI?
 
 ## [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](sources-and-shadows.md)
 

@@ -1,0 +1,81 @@
+{
+ "slug": "the-side-stories-of-php2shell",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "The PHP site's data opens side stories: provenance, iteration, silent corrections, no victim, dark sites, unwatched flaws, AI.",
+   "para": "With captures kept, the PHP site can trace php2shell's evolution. Side stories include rare provenance, 179 releases built against real needs, twelve drafted correction requests and one unannounced Amazon rewording, no named victim, immature detection, 17 offline entries, following the money, flaws with real exploitation but little coverage, and thin evidence of AI-driven exploitation.",
+   "hash": "9102a1620c6e"
+  },
+  "in-short": {
+   "line": "Ten lines covering the data, provenance, features, corrections, no victim, detection, dark sites, money, unwatched flaws, AI.",
+   "para": "Kept captures let us trace the story. Provenance is rare beyond Wikipedia. Features built for real needs shipped fast but fell short. Corrections are drafted; one publisher edited silently. No victim is named. Detection lags. Sites went dark at a cost. Money flows somewhere. Other flaws were ignored. AI helped discovery, not visible exploitation.",
+   "hash": "585b109bfe9b"
+  },
+  "data": {
+   "line": "418 sources, a 913-page source watch and versioned states let us go back in time.",
+   "para": "The PHP site keeps every source with captures, a watch that snapshots pages when they change, and versioned states of affairs. Because nothing is discarded, the story's evolution can be examined, enabling questions beyond the headline; some can be answered now and most need the record to grow.",
+   "hash": "30963d274423"
+  },
+  "provenance": {
+   "line": "Showing where each claim comes from is rare; Wikipedia does it well, and the PHP site adds dated, hashed captures.",
+   "para": "Few sites expose the origin of every claim. Wikipedia comes closest, though readers cannot easily see what a reference said or whether it changed. The PHP site links each claim to a source and each source to a dated, hashed capture, which underpins every other side story.",
+   "hash": "6f8d479de2ad"
+  },
+  "features": {
+   "line": "179 releases in three and a half days, each solving a live need, none good enough at first.",
+   "para": "Building against a real problem replaces predicting it. From 22 to 25 October the site shipped 179 releases, some normally weeks of work. Using them exposed gaps in observability, workflows and UI, driving iteration. The result will be a template for the next incident and features, starting with observability, for this newsroom.",
+   "hash": "26730442c2ce"
+  },
+  "corrections": {
+   "line": "Twelve correction requests drafted on the 70% and 'exploited' claims; Amazon reworded its post without a note.",
+   "para": "The liaison drafted requests quoting publishers from captures: Wiz, BBC, CNN, Fortune and Clarín on the 70% figure, WIRED and BankInfoSecurity on 'exploited'. None is sent yet. Amazon changed 'broadly exploited' to 'broad exploitation attempts' at 21:25 UTC on 22 October without a note, detectable only because both captures were kept.",
+   "hash": "5e964d803dac"
+  },
+  "no-victim": {
+   "line": "No named victim after four days: undisclosed, unharmed, or sites taken down needlessly; decisions need accountability.",
+   "para": "Organisations need not disclose such exploitation, so absence is not proof. If they were not hit, many sites may have gone offline without clear and present danger, an overreaction worth measuring. As a CISO, I knew taking systems down spends limited credit with the business, which is costly if the danger never arrives.",
+   "hash": "a3bc9bd59020"
+  },
+  "detection": {
+   "line": "Detection seems immature; withholding rules helps attackers less than it hurts defenders, and counted attacks can be blocked.",
+   "para": "Some withhold detection details to avoid helping attackers, but that leaves defenders unsure what to block. If attempts can be counted, a WAF rule could block them. Cloudflare says its rules blocked traffic until payloads mutated; Switzerland's NCSC says a WAF alone is not sufficient. Good protections need good data.",
+   "hash": "f322c93c146f"
+  },
+  "offline": {
+   "line": "Seventeen offline entries, two confirmed; security products vulnerable too; cost, decisions and recovery remain to research.",
+   "para": "The ledger runs from the Dutch NCSC's own site to Finland, Latvia, Wikimedia, UK councils, Japanese and Moroccan banks and Nepal's portals; the tracker lists 51 sites, 50 back. The Dutch inventory listed 10 security and network vendor products vulnerable, 26 not, 16 investigating. Costs and who pays remain open.",
+   "hash": "8a240fe20259"
+  },
+  "money": {
+   "line": "With little exploitation, map who is paid for the response and compare it with funding maintenance.",
+   "para": "Criminals seem to earn little here, yet vendors, consultants, responders, extended-support providers and patching organisations all spend time and money. Mapping those flows allows comparing them with paying maintainers to sign versions, funding tests and pipelines, and paying for certification, which I expect would be better value.",
+   "hash": "7c9af3488fdc"
+  },
+  "coverage": {
+   "line": "Coverage fell from 117 sources on 21 October to 8 on 24 October; did the conversation move?",
+   "para": "News-following energy fades and nothing changes. The vault shows 4 sources published on 20 October, 117 on release day, 94, 34 and then 8, partly capture lag. The real question is whether discussion shifted toward open-source sustainability and who maintains critical software, which the data can answer over time.",
+   "hash": "f26de47c478f"
+  },
+  "nobody-watched": {
+   "line": "Pulse shows exploited flaws with little coverage: Zimbra 16 items, SharePoint 1, against php2shell's 175.",
+   "para": "Pulse tracks 26 flaws with eight dated steps of exploitation evidence beside attention counts. php2shell drew 175 English items with a proof of concept and reported attempts but no KEV listing. Zimbra's RCE is on KEV with a national CERT reporting compromises yet got 16; a SharePoint RCE on KEV got 1.",
+   "hash": "0c67caba7075"
+  },
+  "ai": {
+   "line": "AI helped find the flaws, but exploitation evidence is thin; orchestration, motive and asset value may explain it.",
+   "para": "Big flaws, Metasploit and scanners long predate AI. Discovery came from an AI-assisted project, yet AhnLab classed only 27 of 100 repositories as proofs of concept, Sophos found exploitation hard even with AI, and VulnCheck saw no correct-mechanism public PoC. Missing exploitation may reflect hard orchestration, missing business models and low asset value.",
+   "hash": "9cd2ed1c4f7c"
+  },
+  "limits": {
+   "line": "Questions not findings; no victim is time-bounded; ledgers incomplete; counts hard to compare; requests unsent; AI evidence reported.",
+   "para": "Most points need more data. Disclosure is optional and one statement could change the victim count. The offline ledger relies mostly on press. Only the like-for-like English count is compared. Recent coverage includes capture lag. Correction requests are unsent. Exploitation evidence comes via reports from AhnLab, Sophos and VulnCheck.",
+   "hash": "26960390b58e"
+  },
+  "sources": {
+   "line": "My memo and the PHP site at v0.21.4: sources, state, outreach, fact-checks, impact, claims, Pulse and git history.",
+   "para": "My voice memo of 25 October 2026; the PHP story site at release v0.21.4, including its sources, state of affairs version 3, correction requests, fact-check record of Amazon's revision, offline ledger, defence claims, Pulse data and git history of 179 releases; and related newsroom articles on maintenance, patching, accountability, sources and agent loops.",
+   "hash": "a58d6965a7cb"
+  }
+ }
+}

@@ -55,6 +55,179 @@
   ],
   "articles": [
     {
+      "slug": "the-side-stories-of-php2shell",
+      "title": "The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI",
+      "date": "2026-10-25",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-side-stories-of-php2shell.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-side-stories-of-php2shell.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-side-stories-of-php2shell.webp",
+      "teaser": "Beyond the headline: silent corrections, no named victim, the sites that went dark, the flaws nobody watched, and how much was AI.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "php2shell",
+        "provenance",
+        "corrections",
+        "exploitation",
+        "ai",
+        "open-source",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "sz-stories.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sz-stories.webp",
+          "caption": "The side stories of php2shell, from the data the PHP site keeps: provenance; building on a real problem; who corrects, and how; no named victim; detection and the WAF; the sites that went dark; follow the money; the flaws nobody watched; and how much of it was AI.",
+          "kind": "concept"
+        },
+        {
+          "file": "sz-coverage.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sz-coverage.webp",
+          "caption": "How fast the coverage faded: the PHP site's evidence vault holds 4 sources published on 20 October, 117 on 21 October, 94 on 22 October, 34 on 23 October and 8 on 24 October, of 418 sources, 53 with no date; the latest days are partly the capture lag.",
+          "kind": "comparison"
+        },
+        {
+          "file": "sz-attention.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/sz-attention.webp",
+          "caption": "Attention against evidence, from the Pulse data: English-language news items over 30 days against the furthest step of evidence of exploitation. php2shell, 175 items, a public proof of concept and attempts reported, not on CISA's exploited list; Windows command injection, 40, on the list with attempts reported; BeyondTrust, 24; Ivanti, 23, on the list; a GitLab flaw rated 10.0, 22, no step reached; Zimbra, 16, on the list with a national CERT reporting compromises; SharePoint, 1, on the list with attempts reported.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "the-side-stories-of-php2shell",
+        "teaser": "Beyond the headline: silent corrections, no named victim, the sites that went dark, the flaws nobody watched, and how much was AI.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Because the PHP story site keeps every source and capture, php2shell's evolution can be examined beyond the headline: provenance, features built against real needs, who corrects reporting (including an unannounced rewording), a crisis with no named victim and possibly needless shutdowns, immature detection, the cost of sites going dark, who is paid, exploited flaws that got little attention, and thin evidence of AI-driven exploitation.",
+        "nodes": [
+          {
+            "id": "prov",
+            "label": "Provenance",
+            "kind": "claim",
+            "summary": "Every claim tied to a dated, hashed capture."
+          },
+          {
+            "id": "feat",
+            "label": "Features against a real problem",
+            "kind": "example",
+            "summary": "179 releases in three and a half days."
+          },
+          {
+            "id": "corr",
+            "label": "Who corrects",
+            "kind": "example",
+            "summary": "Amazon reworded without a note."
+          },
+          {
+            "id": "novictim",
+            "label": "No named victim",
+            "kind": "claim",
+            "summary": "Undisclosed, unharmed, or overreaction?"
+          },
+          {
+            "id": "detect",
+            "label": "Detection and the WAF",
+            "kind": "claim",
+            "summary": "Counted attacks can be blocked."
+          },
+          {
+            "id": "dark",
+            "label": "Sites that went dark",
+            "kind": "example",
+            "summary": "17 ledger entries; cost unknown."
+          },
+          {
+            "id": "money",
+            "label": "Follow the money",
+            "kind": "method",
+            "summary": "Who is paid, compared with funding maintenance."
+          },
+          {
+            "id": "unwatched",
+            "label": "The flaws nobody watched",
+            "kind": "example",
+            "summary": "Zimbra 16 items, SharePoint 1, php2shell 175."
+          },
+          {
+            "id": "ai",
+            "label": "How much was AI?",
+            "kind": "claim",
+            "summary": "AI helped discovery; exploitation evidence thin."
+          }
+        ],
+        "edges": [
+          {
+            "from": "prov",
+            "to": "corr",
+            "rel": "produces"
+          },
+          {
+            "from": "prov",
+            "to": "unwatched",
+            "rel": "produces"
+          },
+          {
+            "from": "novictim",
+            "to": "dark",
+            "rel": "leads-to"
+          },
+          {
+            "from": "dark",
+            "to": "money",
+            "rel": "leads-to"
+          },
+          {
+            "from": "detect",
+            "to": "novictim",
+            "rel": "contrasts"
+          },
+          {
+            "from": "ai",
+            "to": "novictim",
+            "rel": "depends-on"
+          },
+          {
+            "from": "feat",
+            "to": "prov",
+            "rel": "produces"
+          }
+        ],
+        "links": {
+          "articles": [
+            "who-maintains-the-php-you-run",
+            "patch-for-breakfast",
+            "who-signs-for-this",
+            "sources-and-shadows",
+            "why-agent-loops-are-hard",
+            "php-daily-2026-10-24"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/pulse/index.html",
+            "https://php.oct.2026.newsroom.sgit.ai/outreach/index.html",
+            "https://php.oct.2026.newsroom.sgit.ai/impact/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "We only know because we kept both captures.",
+            "why": "Who corrects their reporting?"
+          },
+          {
+            "text": "If there were a lot of value on the other side, people would be doing it.",
+            "why": "How much of it was AI?"
+          }
+        ]
+      }
+    },
+    {
       "slug": "sources-and-shadows",
       "title": "Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use",
       "date": "2026-10-25",

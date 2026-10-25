@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 2,004 | first published | this release | [current](../sources-and-shadows.md) |
+| **v1.0.0** | 2026-10-25 | published | 2,004 | first published | [`581240927`](https://github.com/SGit-AI/SGit-AI__Website/commit/5812409277cbce92e1db1bf589a8401918afc9ce) | [current](../sources-and-shadows.md) |
 
 [← Back to the article](../sources-and-shadows.md) · [All articles](../index.md)
 

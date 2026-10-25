@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 972 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 655 | 2864 | links to sgit.ai's pages and the network sites (27 files this site writes itself) |
-| words | 1336 | 9395 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 975 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 657 | 2867 | links to sgit.ai's pages and the network sites (27 files this site writes itself) |
+| words | 1338 | 9415 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 66 | 156 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 551 × `sgit.ai/about/index.html`
-- 275 × `sgit.ai/about/index.md`
+- 553 × `sgit.ai/about/index.html`
+- 276 × `sgit.ai/about/index.md`
 - 126 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 37 × `pki.sgit.ai/`
@@ -123,6 +123,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/summaries/aws-from-the-vault.json` (10)
 - `assets/pen/pen.js` (10)
 - `assets/pen/identity.js` (9)
+- `desks/security.html` (9)
 - `engineering/releases/v0.13.64.html` (9)
 - `reviews/status.json` (9)
 - `articles/summaries/a-pen-and-a-key.json` (8)
@@ -145,4 +146,3 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/summaries/a-website-to-finish-the-book.json` (6)
 - `articles/summaries/nineteen-sites.json` (6)
 - `articles/summaries/the-attack-surface-you-do-not-have.json` (6)
-- `articles/summaries/the-scripted-talk.json` (6)

@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.73 · 280 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.74 · 281 articles since 2026-08-17; the newest is 2026-10-25. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](articles/sources-and-shadows.md), 2026-10-25, 8 min. Each reference's licence, access, links and quotes, reading a paywalled article through its shadow, and paying the sources we use.
+- [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](articles/the-side-stories-of-php2shell.md), 2026-10-25, 11 min. Beyond the headline: silent corrections, no named victim, the sites that went dark, the flaws nobody watched, and how much was AI.
 
 ## Highlights
 
+- [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](articles/sources-and-shadows.md), 2026-10-25, 8 min.
 - [Why agent loops are hard: ten agents in sequence, a schedule that has to land in the right session, and why I spend as long making the system visible as building it](articles/why-agent-loops-are-hard.md), 2026-10-25, 10 min.
 - [PHP October 2026, update 3: a vendor withdraws the first claim of a break-in, a third flaw, a pipeline of agents that review each other, and a control room for all of it (24 October, 23:40 UTC)](articles/php-daily-2026-10-24.md), 2026-10-25, 10 min.
 - [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](articles/who-signs-for-this.md), 2026-10-24, 11 min.
-- [Process behaviour policies: the most locked-down Linux process we could build inside Claude's own cloud container, derived from one traced run, enforced by the kernel, for about a tenth of a second](articles/process-behaviour-policies.md), 2026-10-24, 11 min.
 
 ## Who are you reading as?
 
@@ -44,11 +44,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](articles/an-agent-that-may-only-chat.md), 2026-10-23, 17 min.
 - [Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom](articles/where-a-check-runs.md), 2026-10-22, 8 min.
 
-### Vaults & provenance (61)
+### Vaults & provenance (62)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](articles/the-side-stories-of-php2shell.md), 2026-10-25, 11 min.
 - [Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use](articles/sources-and-shadows.md), 2026-10-25, 8 min.
 - [Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too](articles/signed-by-the-source.md), 2026-10-24, 8 min.
-- [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](articles/a-pen-and-a-key.md), 2026-10-24, 10 min.
 
 ### The future of news (42)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
