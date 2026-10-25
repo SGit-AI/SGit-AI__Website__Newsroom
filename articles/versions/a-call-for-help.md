@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 1,189 | first published | this release | [current](../a-call-for-help.md) |
+| **v1.0.0** | 2026-10-25 | published | 1,189 | first published | [`6c9721119`](https://github.com/SGit-AI/SGit-AI__Website/commit/6c9721119b6758627b985dcfc32f5747158b9ab8) | [current](../a-call-for-help.md) |
 
 [← Back to the article](../a-call-for-help.md) · [All articles](../index.md)
 

@@ -55,6 +55,157 @@
   ],
   "articles": [
     {
+      "slug": "a-secure-rule-applied-literally",
+      "title": "A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask",
+      "date": "2026-10-25",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-secure-rule-applied-literally.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-secure-rule-applied-literally.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-secure-rule-applied-literally.webp",
+      "teaser": "A secure rule, applied literally: the CSP that made an agent copy shared code into every repository, and the person accountable who asked why.",
+      "topics": [
+        "agents-and-policy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "security",
+        "agents",
+        "accountability",
+        "csp",
+        "engineering",
+        "php2shell",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "cq-copies.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cq-copies.webp",
+          "caption": "A secure rule, applied literally: as planned in the first pass of the split, the press, the shared code, is copied into each of the four sites, so one fix means four copies and four releases, and copies drift; as changed from v0.22.2, the four sites load it from the press at a fixed version, with a published sha256 for every file and the security policy naming the press and data hosts. Both protect readers against a compromised outside host; the difference is cost and drift.",
+          "kind": "comparison"
+        },
+        {
+          "file": "cq-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/cq-chain.webp",
+          "caption": "Where the question was asked: security on 24 October sets a policy on every page, scripts only from the site itself and hashed inline scripts; the architects on 25 October plan one repository into six; the developer's first pass gives each site its own runtime because of the policy; the editor reads the developer's notes, sees the copies and asks why; and the developer's v0.22.2 adds one resolver, with assets from the press, data from the data API, and the policy to allow those hosts.",
+          "kind": "process"
+        }
+      ],
+      "graph": {
+        "slug": "a-secure-rule-applied-literally",
+        "teaser": "A secure rule, applied literally: the CSP that made an agent copy shared code into every repository, and the person accountable who asked why.",
+        "topics": [
+          "agents-and-policy",
+          "site-and-engineering"
+        ],
+        "core_idea": "The PHP security agent's sound rule to load scripts only from the page's own host, applied literally to the split into several sites, led the developer agent to copy the shared runtime into each site, adding cost, drift and no single source of truth; no agent challenged it, and the accountable editor did, replacing the copies with one versioned, hashed source named in the policy.",
+        "nodes": [
+          {
+            "id": "rule",
+            "label": "Scripts only from the site",
+            "kind": "claim",
+            "summary": "A sound CSP rule."
+          },
+          {
+            "id": "split",
+            "label": "One repository into six",
+            "kind": "example",
+            "summary": "The refactoring plan."
+          },
+          {
+            "id": "copies",
+            "label": "A copy in every site",
+            "kind": "example",
+            "summary": "Four copies, drift, no single source."
+          },
+          {
+            "id": "nobody",
+            "label": "Nobody challenged it",
+            "kind": "claim",
+            "summary": "Each agent did its job."
+          },
+          {
+            "id": "complexity",
+            "label": "Agents handle complexity",
+            "kind": "claim",
+            "summary": "The good news and the bad news."
+          },
+          {
+            "id": "editor",
+            "label": "The person accountable",
+            "kind": "method",
+            "summary": "Reads the notes, asks why."
+          },
+          {
+            "id": "fix",
+            "label": "One pinned source",
+            "kind": "method",
+            "summary": "Versioned press, sha256, hosts in the CSP."
+          }
+        ],
+        "edges": [
+          {
+            "from": "split",
+            "to": "copies",
+            "rel": "produces"
+          },
+          {
+            "from": "rule",
+            "to": "copies",
+            "rel": "produces"
+          },
+          {
+            "from": "complexity",
+            "to": "nobody",
+            "rel": "produces"
+          },
+          {
+            "from": "nobody",
+            "to": "copies",
+            "rel": "depends-on"
+          },
+          {
+            "from": "editor",
+            "to": "copies",
+            "rel": "answers"
+          },
+          {
+            "from": "fix",
+            "to": "editor",
+            "rel": "depends-on"
+          },
+          {
+            "from": "fix",
+            "to": "rule",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "agents-need-direction",
+            "a-villager-for-the-agents",
+            "who-signs-for-this",
+            "signed-by-the-source"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A rule meant to make us more secure was making us less so.",
+            "why": "The story, without the jargon."
+          },
+          {
+            "text": "Without it, every agent can be right and the system still wrong.",
+            "why": "Where the person comes in."
+          }
+        ]
+      }
+    },
+    {
       "slug": "who-creates-the-original",
       "title": "Who creates the original? Mapping where the PHP story's data comes from, giving that map to the historian, and the places where we can make content nobody else has: our own counts, interviews and op-eds",
       "date": "2026-10-25",

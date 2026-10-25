@@ -1,0 +1,70 @@
+{
+ "slug": "a-secure-rule-applied-literally",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 226,
+   "line": "A sound CSP rule, applied literally to the split, meant copying shared code everywhere; the accountable editor asked why.",
+   "para": "The PHP site's security agent required pages to load scripts only from their own host. When the site split into separate sites, the developer agent copied the shared code into each, creating drift and no single source of truth. No agent challenged it. The editor did, and v0.22.2 serves one versioned, hashed source with the policy naming its hosts.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 95,
+   "line": "A good rule, applied literally, made the code less secure; nobody challenged it until the person accountable did.",
+   "para": "Loading scripts only from the site protects readers. Splitting into several sites made that rule mean a copy per site: four fixes per change, drifting copies, no single source. Every agent did its job. Agents handle complexity well, which is both the strength and the problem. The editor asked for one source at a fixed version with hashes.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "story",
+   "label": "The story, without the jargon",
+   "words": 339,
+   "line": "The security agent's rule was sound; the split made the developer copy the shared code into every site.",
+   "para": "A security agent sets standards and checks them daily. Its rule that pages only run code from the site protects readers from compromised outside servers. When the site was split into six repositories, the developer explained it would copy the shared code into each site because of that rule, creating overhead, drift and no single source of truth.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "nobody",
+   "label": "Why nobody challenged it",
+   "words": 138,
+   "line": "The developer did not push back because it was a requirement; agents tolerate complexity a person would not.",
+   "para": "The developer's task was to split the site, not to question security policy. Agents can handle a lot of complexity, so four copies of the same code is no trouble to them, while a person would object at the second. Agents can go in all directions, so they need direction.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "accountable",
+   "label": "Where the person comes in",
+   "words": 168,
+   "line": "The editor caught it reading the developer's notes; the accountable person is placed to re-examine old requirements.",
+   "para": "The editor asked for one source for every file and approved naming the new hosts in the policy; v0.22.2 implemented it. Whatever agents create must be underwritten and eventually signed by an accountable human, who can ask whether yesterday's requirement fits today's design. A villager, and security reviewing plans, would also help.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "technical",
+   "label": "The technical detail",
+   "words": 459,
+   "line": "CSP limits scripts to the site's origin and hashed inline code; the fix serves the press at fixed, hashed versions.",
+   "para": "The CSP is script-src 'self' plus listed hashes, tested on 802 pages. After the split, the press is another origin, so the literal rule meant a runtime copy per site: 122 files, about 6 MB, four times. sg-meter had already been edited in place. The fix: a resolver loading assets from the immutable, sha256-listed press and data hosts named in the policy.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 80,
+   "line": "The rule and the developer were right; the words are paraphrased; the fix rolls out with the split.",
+   "para": "The point is that nobody re-examined the rule for the new design. The developer's words are paraphrased from its session notes. None of the six repositories had deployed yet. The memo's 10 or 15 agents are 23 in the status data, 12 on schedules.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 98,
+   "line": "A voice memo and the PHP site's security brief, split plan and releases v0.22.0 to v0.22.2.",
+   "para": "The editor's memo of 25 October 2026 and the PHP story site at v0.22.2: the application security brief and debrief, the one-into-six plan, release notes, the sg-meter board items and the front page's CSP, with related newsroom articles.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

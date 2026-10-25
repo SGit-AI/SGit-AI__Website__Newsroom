@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 1,443 | first published | this release | [current](../who-creates-the-original.md) |
+| **v1.0.0** | 2026-10-25 | published | 1,443 | first published | [`6c9721119`](https://github.com/SGit-AI/SGit-AI__Website/commit/6c9721119b6758627b985dcfc32f5747158b9ab8) | [current](../who-creates-the-original.md) |
 
 [← Back to the article](../who-creates-the-original.md) · [All articles](../index.md)
 

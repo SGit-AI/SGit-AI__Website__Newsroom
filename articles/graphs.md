@@ -14,13 +14,36 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-288 of 288 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+289 of 289 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-288 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 26 articles not yet linked either way.
+289 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 27 articles not yet linked either way.
+
+## [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](a-secure-rule-applied-literally.md)
+
+2026-10-25 · Agents & policySite & engineering
+
+The PHP security agent's sound rule to load scripts only from the page's own host, applied literally to the split into several sites, led the developer agent to copy the shared runtime into each site, adding cost, drift and no single source of truth; no agent challenged it, and the accountable editor did, replacing the copies with one versioned, hashed source named in the policy.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 7 edges**
+
+- **Scripts only from the site** (claim) A sound CSP rule.
+- **One repository into six** (example) The refactoring plan.
+- **A copy in every site** (example) Four copies, drift, no single source.
+- **Nobody challenged it** (claim) Each agent did its job.
+- **Agents handle complexity** (claim) The good news and the bad news.
+- **The person accountable** (method) Reads the notes, asks why.
+- **One pinned source** (method) Versioned press, sha256, hosts in the CSP.
+
+> A rule meant to make us more secure was making us less so. The story, without the jargon.
+
+> Without it, every agent can be right and the system still wrong. Where the person comes in.
 
 ## [Who creates the original? Mapping where the PHP story's data comes from, giving that map to the historian, and the places where we can make content nobody else has: our own counts, interviews and op-eds](who-creates-the-original.md)
 
