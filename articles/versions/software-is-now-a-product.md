@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 2,378 | first published | this release | [current](../software-is-now-a-product.md) |
+| **v1.0.0** | 2026-10-25 | published | 2,378 | first published | [`3b8ae9586`](https://github.com/SGit-AI/SGit-AI__Website/commit/3b8ae95860e932fc213e1fae288d0940626c99cf) | [current](../software-is-now-a-product.md) |
 
 [← Back to the article](../software-is-now-a-product.md) · [All articles](../index.md)
 
