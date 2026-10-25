@@ -1,0 +1,34 @@
+{
+ "slug": "translate-the-assumption",
+ "teaser": "Translate the assumption, not the vocabulary: five stages of a CTO's mindset, the PHP site's roles, and a deck for every reader.",
+ "topics": ["startups-and-strategy", "news-and-evidence"],
+ "core_idea": "Adelina Chalmers' five stages of a CTO's executive mindset show that effective communication changes the assumption underneath, starting from the receiver's problem rather than rewording engineering's case; the PHP site applies this with seven roles that each get their own first question, a deck per reader is proposed with LLMs to scale it, and the voice and accountability stay with the sender.",
+ "nodes": [
+  {"id": "stages", "label": "Five stages", "kind": "example", "summary": "Technologist to trusted advisor."},
+  {"id": "assumption", "label": "The assumption underneath", "kind": "claim", "summary": "Not the vocabulary."},
+  {"id": "translation", "label": "Real translation", "kind": "claim", "summary": "Start from the other person's problem."},
+  {"id": "php", "label": "php2shell to a board", "kind": "example", "summary": "Five illustrative answers."},
+  {"id": "roles", "label": "Seven roles on the PHP site", "kind": "example", "summary": "Each with its first question."},
+  {"id": "decks", "label": "A deck per reader", "kind": "method", "summary": "Proposed; LLMs make it scale."},
+  {"id": "dims", "label": "What translation weighs", "kind": "method", "summary": "Role, focus, language, culture, power."},
+  {"id": "voice", "label": "The sender's voice", "kind": "claim", "summary": "Empathy, and efficiency."}
+ ],
+ "edges": [
+  {"from": "assumption", "to": "stages", "rel": "depends-on"},
+  {"from": "translation", "to": "assumption", "rel": "depends-on"},
+  {"from": "php", "to": "stages", "rel": "example-of"},
+  {"from": "roles", "to": "translation", "rel": "example-of"},
+  {"from": "decks", "to": "roles", "rel": "depends-on"},
+  {"from": "dims", "to": "translation", "rel": "depends-on"},
+  {"from": "voice", "to": "decks", "rel": "depends-on"}
+ ],
+ "links": {
+  "articles": ["the-scripted-talk", "a-book-for-one-reader", "connect-your-dots-backwards", "software-is-now-a-product", "simplified-or-outsourced"],
+  "pages": [],
+  "sites": ["https://php.oct.2026.newsroom.sgit.ai/as/executive/", "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html", "https://thecyberboardroom.com"]
+ },
+ "quotes": [
+  {"text": "Real translation is what happens in stages three to five.", "why": "Translation is the assumption."},
+  {"text": "For me, that is communicating with empathy.", "why": "Still the sender's voice."}
+ ]
+}

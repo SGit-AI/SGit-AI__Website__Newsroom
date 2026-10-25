@@ -1,0 +1,153 @@
+{
+  "slug": "translate-the-assumption",
+  "teaser": "Translate the assumption, not the vocabulary: five stages of a CTO's mindset, the PHP site's roles, and a deck for every reader.",
+  "topics": [
+    "startups-and-strategy",
+    "news-and-evidence"
+  ],
+  "core_idea": "Adelina Chalmers' five stages of a CTO's executive mindset show that effective communication changes the assumption underneath, starting from the receiver's problem rather than rewording engineering's case; the PHP site applies this with seven roles that each get their own first question, a deck per reader is proposed with LLMs to scale it, and the voice and accountability stay with the sender.",
+  "nodes": [
+    {
+      "id": "stages",
+      "label": "Five stages",
+      "kind": "example",
+      "summary": "Technologist to trusted advisor."
+    },
+    {
+      "id": "assumption",
+      "label": "The assumption underneath",
+      "kind": "claim",
+      "summary": "Not the vocabulary."
+    },
+    {
+      "id": "translation",
+      "label": "Real translation",
+      "kind": "claim",
+      "summary": "Start from the other person's problem."
+    },
+    {
+      "id": "php",
+      "label": "php2shell to a board",
+      "kind": "example",
+      "summary": "Five illustrative answers."
+    },
+    {
+      "id": "roles",
+      "label": "Seven roles on the PHP site",
+      "kind": "example",
+      "summary": "Each with its first question."
+    },
+    {
+      "id": "decks",
+      "label": "A deck per reader",
+      "kind": "method",
+      "summary": "Proposed; LLMs make it scale."
+    },
+    {
+      "id": "dims",
+      "label": "What translation weighs",
+      "kind": "method",
+      "summary": "Role, focus, language, culture, power."
+    },
+    {
+      "id": "voice",
+      "label": "The sender's voice",
+      "kind": "claim",
+      "summary": "Empathy, and efficiency."
+    }
+  ],
+  "edges": [
+    {
+      "from": "assumption",
+      "to": "stages",
+      "rel": "depends-on"
+    },
+    {
+      "from": "translation",
+      "to": "assumption",
+      "rel": "depends-on"
+    },
+    {
+      "from": "php",
+      "to": "stages",
+      "rel": "example-of"
+    },
+    {
+      "from": "roles",
+      "to": "translation",
+      "rel": "example-of"
+    },
+    {
+      "from": "decks",
+      "to": "roles",
+      "rel": "depends-on"
+    },
+    {
+      "from": "dims",
+      "to": "translation",
+      "rel": "depends-on"
+    },
+    {
+      "from": "voice",
+      "to": "decks",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "the-scripted-talk",
+      "a-book-for-one-reader",
+      "connect-your-dots-backwards",
+      "software-is-now-a-product",
+      "simplified-or-outsourced"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/as/executive/",
+      "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__a-deck-per-persona/index.html",
+      "https://thecyberboardroom.com"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Real translation is what happens in stages three to five.",
+      "why": "Translation is the assumption."
+    },
+    {
+      "text": "For me, that is communicating with empathy.",
+      "why": "Still the sender's voice."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ac-post.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ac-post.webp",
+      "caption": "Adelina Chalmers' post on LinkedIn, 23 October 2026: \"The best CTO answer I've heard in a board meeting gave away his own budget.\" The same platform problem, five ways a CTO can answer it, depending on the executive mindset stage they are at, \"and sadly only one gets invited into the exit conversation.\"",
+      "kind": "aside"
+    },
+    {
+      "file": "ac-table.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ac-table.webp",
+      "caption": "Adelina Chalmers' \"5 stages of a executive mindset for CTOs\", Cambridge Executive Mindset and Diligence Lab: for each stage, where the thinking starts, what they say to the board, what investors think, and the assumption the CTO is making. From \"We need to re-platform. It will take 18 months and 6 more engineers\" at stage one, to \"Our exit problem is enterprise churn, not the platform, so I'd spend the £250k on customer onboarding first\" at stage five.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tr-stages.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tr-stages.webp",
+      "caption": "php2shell, told to a board at five stages, following Adelina Chalmers' stages: the technologist asks to patch and rebuild everything with more engineers; the translator says patching protects the business; the commercial partner names the two customer-facing sites and the cost of a weekend; the value creator has it patched and the evidence ready for due diligence; the trusted advisor says the exposure is closed and the bigger risk is a supplier running end-of-life PHP 7.4, which is a call for someone else to make. Illustrative.",
+      "kind": "concept"
+    },
+    {
+      "file": "tr-roles.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tr-roles.webp",
+      "caption": "The PHP site already translates: seven roles, seven first questions. Executive: are we exposed, what do I decide; general reader: does it touch me, what do I do; security: what do we patch, block and watch; engineer: which versions, settings and commands; journalist: what holds up, who said it first; researcher: what's the evidence, what's still open; and everything. Next, a deck each, proposed on 25 October.",
+      "kind": "concept"
+    },
+    {
+      "file": "tr-dims.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tr-dims.webp",
+      "caption": "What a translation has to take into account: around the message, which keeps the facts and the sender's voice, the receiver's role and objectives, focus and pain points, understanding and depth, language and culture, power dynamics, how they consume it, and what they want to get.",
+      "kind": "concept"
+    }
+  ]
+}

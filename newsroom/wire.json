@@ -73,6 +73,35 @@
   ],
   "articles": [
     {
+      "slug": "translate-the-assumption",
+      "title": "Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy",
+      "date": "2026-10-25",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/translate-the-assumption.html",
+      "markdown": "https://newsroom.sgit.ai/articles/translate-the-assumption.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/translate-the-assumption.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/translate-the-assumption.json",
+      "teaser": "Translate the assumption, not the vocabulary: five stages of a CTO's mindset, the PHP site's roles, and a deck for every reader.",
+      "summary": "Adelina Chalmers posted the same platform problem answered by a CTO at five stages of an executive mindset, technologist, translator, commercial partner, value creator and trusted advisor, and only the last one gets invited into the exit conversation. I agree, and the table deserves to be read closely. The key line is this: \"Notice what changes. It isn't the vocabulary. It's the assumption underneath.\" That is what real translation is: not putting engineering words into business words, which is stage two in the table, but starting from the other person's problem. It is exactly what we are trying to do on the PHP story site, where each of seven roles, from the executive to the engineer, gets its own first question, its own order and its own depth, and where we have just asked for a deck per reader. It is what I started exploring with The Cyber Boardroom: translating content to someone's role, focus, objectives, understanding, language and culture, even the power dynamics in the room, and how they want to consume it. With LLMs, we can now do this for every stakeholder, at scale. But the deck is still the voice of the person giving the information. Going to the receiver's pain points, in their language, is communicating with empathy, and very efficiently.",
+      "topics": [
+        "startups-and-strategy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "communication",
+        "boards",
+        "personas",
+        "cto",
+        "decks",
+        "php2shell",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "software-is-now-a-product",
       "title": "Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open",
       "date": "2026-10-25",
@@ -83,7 +112,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/software-is-now-a-product.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/software-is-now-a-product.json",
       "teaser": "Software is now a product: the EU's new Product Liability Directive read article by article, applied to SaaS, updates and php2shell.",
-      "summary": "Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under her post how it applies to SaaS, so I read the directive itself. Software is a product \"irrespective of the mode of its supply\", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.",
+      "summary": "Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under the post how it applies to SaaS, so I read the directive itself. Software is a product \"irrespective of the mode of its supply\", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.",
       "topics": [
         "agents-and-policy",
         "news-and-evidence"
@@ -113,7 +142,7 @@
       "card": "https://newsroom.sgit.ai/articles/cards/simplified-or-outsourced.webp",
       "graph": "https://newsroom.sgit.ai/articles/graphs/simplified-or-outsourced.json",
       "teaser": "A reply to Nadzeya Stalbouskaya: removing servers simplifies only if you move to real commodities, so map it and ask who would certify it.",
-      "summary": "Under my LinkedIn comment that I run with no databases, serverless services and no server-side code of my own, Nadzeya Stalbouskaya asked a good question: removing servers and databases does not necessarily remove complexity; sometimes it just moves it into external services, APIs and dependencies we do not fully control, trading operational overhead today for dependency and lock-in tomorrow. So how do you tell genuinely simplifying an architecture from outsourcing its complexity? My answer: she is right that there is risk, and it must be a conscious decision. The way to make it is to map it. On a Wardley map, moving a component from custom-built to commodity removes complexity only if what you move to really is a commodity. Replacing our own login with passkeys is that: a standard every major browser and platform supports, with a track record. Moving our data to object storage and static hosting is too. But moving to a young startup's service can look like a commodity on our map while, behind it, it is as messy as what we had, or worse. So you de-risk the move by choosing the commodity, and you can test which one you have by asking who would certify it, insure it, or sign a high SLA on it. Maturity and certifiability go together.",
+      "summary": "Under my LinkedIn comment that I run with no databases, serverless services and no server-side code of my own, Nadzeya Stalbouskaya asked a good question: removing servers and databases does not necessarily remove complexity; sometimes it just moves it into external services, APIs and dependencies we do not fully control, trading operational overhead today for dependency and lock-in tomorrow. So how do you tell genuinely simplifying an architecture from outsourcing its complexity? My answer: Nadzeya is right that there is risk, and it must be a conscious decision. The way to make it is to map it. On a Wardley map, moving a component from custom-built to commodity removes complexity only if what you move to really is a commodity. Replacing our own login with passkeys is that: a standard every major browser and platform supports, with a track record. Moving our data to object storage and static hosting is too. But moving to a young startup's service can look like a commodity on our map while, behind it, it is as messy as what we had, or worse. So you de-risk the move by choosing the commodity, and you can test which one you have by asking who would certify it, insure it, or sign a high SLA on it. Maturity and certifiability go together.",
       "topics": [
         "startups-and-strategy",
         "site-and-engineering"

@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-291 of 291 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+292 of 292 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-291 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 29 articles not yet linked either way.
+292 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 30 articles not yet linked either way.
+
+## [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](translate-the-assumption.md)
+
+2026-10-25 · Startups & strategyNews & evidence
+
+Adelina Chalmers' five stages of a CTO's executive mindset show that effective communication changes the assumption underneath, starting from the receiver's problem rather than rewording engineering's case; the PHP site applies this with seven roles that each get their own first question, a deck per reader is proposed with LLMs to scale it, and the voice and accountability stay with the sender.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Five stages** (example) Technologist to trusted advisor.
+- **The assumption underneath** (claim) Not the vocabulary.
+- **Real translation** (claim) Start from the other person's problem.
+- **php2shell to a board** (example) Five illustrative answers.
+- **Seven roles on the PHP site** (example) Each with its first question.
+- **A deck per reader** (method) Proposed; LLMs make it scale.
+- **What translation weighs** (method) Role, focus, language, culture, power.
+- **The sender's voice** (claim) Empathy, and efficiency.
+
+> Real translation is what happens in stages three to five. Translation is the assumption.
+
+> For me, that is communicating with empathy. Still the sender's voice.
 
 ## [Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open](software-is-now-a-product.md)
 

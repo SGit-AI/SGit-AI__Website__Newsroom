@@ -3,7 +3,7 @@ title: Software is now a product: what the EU's new Product Liability Directive 
 date: 2026-10-25
 author: Dinis Cruz
 author_url: about/index.html
-summary: Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under her post how it applies to SaaS, so I read the directive itself. Software is a product "irrespective of the mode of its supply", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.
+summary: Lauren Zabierek shared a card on LinkedIn about the EU's new Product Liability Directive, 2024/2853: the 1985 directive never named software, and the new one makes it a product, subject to strict, no-fault liability that a EULA cannot waive, for products placed on the market after 9 December 2026. I asked under the post how it applies to SaaS, so I read the directive itself. Software is a product "irrespective of the mode of its supply", and the recitals name SaaS. Updates matter: a manufacturer cannot escape liability by saying the defect came later if it is due to software, an update, or a lack of updates needed to maintain safety, while the product is in its control; and an attacker's exploit does not reduce its liability. But the directive is narrower than it sounds. Only natural persons can claim, and only for death or injury, property not used only for work, or data destroyed or corrupted that is not used for work. A data leak is not on the list, and a company cannot claim for its own losses. Applied to php2shell, the PHP project is out of scope; a vendor or SaaS that leaves a known, fixed flaw unpatched and lets attackers wipe consumers' files is likely in. Patching does not bring an old product into scope, but a new one that is not patched has no defence. Here is what the articles say, and the questions they leave.
 version: v0.13.81
 license: https://creativecommons.org/licenses/by/4.0/
 tags: regulation, liability, software, saas, cybersecurity, php2shell, briefing, article
@@ -24,7 +24,7 @@ status: published
 
 ## Why I read it {#why}
 
-[Lauren Zabierek](https://www.linkedin.com/posts/laurenz1010_share-7520128390050529280-M2XB/) shared a card on LinkedIn that summarises the new directive. Under her post I asked whether there was a mapping of how it applies to SaaS. Rather than wait, I read [Directive (EU) 2024/2853](https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng) itself, articles and recitals, and tested it against the story we have been following on [the PHP site](https://php.oct.2026.newsroom.sgit.ai/). This is a briefing and a list of questions, from an engineer reading the text. It is not legal advice, and courts in 27 member states will decide what it means.
+[Lauren Zabierek](https://www.linkedin.com/posts/laurenz1010_share-7520128390050529280-M2XB/) shared a card on LinkedIn that summarises the new directive. Under the post I asked whether there was a mapping of how it applies to SaaS. Rather than wait, I read [Directive (EU) 2024/2853](https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng) itself, articles and recitals, and tested it against the story we have been following on [the PHP site](https://php.oct.2026.newsroom.sgit.ai/). This is a briefing and a list of questions, from an engineer reading the text. It is not legal advice, and courts in 27 member states will decide what it means.
 
 The card is accurate. Two small precisions: the articles name software and digital manufacturing files as products, while SaaS and AI systems are named in the recitals that explain them; and the directive applies to products placed on the market "after", not from, 9 December 2026.
 
@@ -85,7 +85,7 @@ The worry is a perverse incentive: if updating brings a product into scope, do n
 
 - **This is a reading of the text, not legal advice.** Member states transpose it by 9 December 2026, and courts will interpret it.
 - **The php2shell cases are hypothetical:** today's products are under the old directive.
-- **Lauren Zabierek's post is quoted from the card in her screenshot;** the rest of the post needs a sign-in.
+- **Lauren Zabierek's post is quoted from the card in the screenshot;** the rest of the post needs a sign-in.
 
 ## Where this comes from {#sources}
 
