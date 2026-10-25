@@ -1282,6 +1282,102 @@
    "added": null,
    "updated": null,
    "note": "The release was built but not committed, because four wire-test checks failed on a date format and the run stopped to ask."
+  },
+  {
+   "id": "ccbd51c0c93a",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-25T05:47:36Z",
+   "finished_at": "2026-10-25T05:56:11Z",
+   "duration_s": 511.0,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.109256,
+     "input": 505553,
+     "output": 98992,
+     "cache_read": 221920,
+     "cache_write": 55883,
+     "thinking": 63589
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.378819,
+     "input": 100,
+     "output": 30806,
+     "cache_read": 3478211,
+     "cache_write": 249465,
+     "thinking": 3290
+    }
+   },
+   "cost_usd": 1.488074,
+   "turns": 31,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-25.1",
+   "added": 2,
+   "updated": 2,
+   "note": "A thin Sunday: two new and two updated stories."
+  },
+  {
+   "id": "3d867d611ea0",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-25T06:09:01Z",
+   "finished_at": "2026-10-25T06:10:17Z",
+   "duration_s": 70.5,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.111876,
+     "input": 18,
+     "output": 1514,
+     "cache_read": 321796,
+     "cache_write": 16130,
+     "thinking": 119
+    }
+   },
+   "cost_usd": 0.111876,
+   "turns": 11,
+   "subagents": 0,
+   "refused": 6,
+   "refused_kinds": [
+    "other",
+    "sgit clone",
+    "web fetch"
+   ],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "Every shell and web command was refused with no verdict from the check, so the vault was never cloned."
+  },
+  {
+   "id": "cd840c8eb7a9",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-25T06:56:30Z",
+   "finished_at": "2026-10-25T07:07:13Z",
+   "duration_s": 636.6,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.502232,
+     "input": 44,
+     "output": 8571,
+     "cache_read": 1541657,
+     "cache_write": 65567,
+     "thinking": 1420
+    }
+   },
+   "cost_usd": 0.502232,
+   "turns": 23,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The release was built but not committed, because the same four wire-test date checks failed again."
   }
  ],
  "sessions": [
@@ -1305,15 +1401,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-24T06:41:30Z",
+   "as_of": "2026-10-25T07:40:40Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 7.219902,
-   "input": 108,
-   "output": 39856,
-   "cache_read": 11624001,
-   "cache_write": 1414230,
+   "cost_usd": 9.118357,
+   "input": 122,
+   "output": 44538,
+   "cache_read": 14221662,
+   "cache_write": 1812010,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
