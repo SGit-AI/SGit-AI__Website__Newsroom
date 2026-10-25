@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-281 of 281 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+282 of 282 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-281 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 19 articles not yet linked either way.
+282 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 20 articles not yet linked either way.
+
+## [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](a-villager-for-the-agents.md)
+
+2026-10-25 · Agents & policyStartups & strategy
+
+Task-focused agents rarely step back to improve the system, a blind spot made visible on the PHP site where every release rewrites about two thousand files and shared files cause conflicts; asked, the dev agent proposed splitting one repository into six, so a daily villager agent will recommend refactoring and every agent will add a quality check beside its security check, with a town planner left for later.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **Task-focused agents** (claim) 23 agents, each on its own job.
+- **The blind spot** (claim) Nobody steps back to improve the whole.
+- **2,140 files a release** (example) The version stamped on every page.
+- **Shared files, conflicts** (example) 28 release messages name a conflict.
+- **One repository into six** (method) The dev agent's proposal, when asked.
+- **The villager** (method) Daily recommendations, why things went wrong.
+- **A quality check every wake** (method) A comment beside the security check.
+- **The town planner, later** (claim) Not yet; it would freeze what still changes.
+
+> The insight came because I asked an agent to step back. What the dev agent saw, when asked.
+
+> A comment, not a change. A quality check on every wake.
 
 ## [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](the-side-stories-of-php2shell.md)
 

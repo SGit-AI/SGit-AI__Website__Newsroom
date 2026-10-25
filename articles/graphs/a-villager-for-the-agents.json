@@ -1,0 +1,140 @@
+{
+  "slug": "a-villager-for-the-agents",
+  "teaser": "A daily agent that only looks for what to refactor, because task-focused agents rarely step back to improve the whole.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Task-focused agents rarely step back to improve the system, a blind spot made visible on the PHP site where every release rewrites about two thousand files and shared files cause conflicts; asked, the dev agent proposed splitting one repository into six, so a daily villager agent will recommend refactoring and every agent will add a quality check beside its security check, with a town planner left for later.",
+  "nodes": [
+    {
+      "id": "explorers",
+      "label": "Task-focused agents",
+      "kind": "claim",
+      "summary": "23 agents, each on its own job."
+    },
+    {
+      "id": "blind",
+      "label": "The blind spot",
+      "kind": "claim",
+      "summary": "Nobody steps back to improve the whole."
+    },
+    {
+      "id": "rewrites",
+      "label": "2,140 files a release",
+      "kind": "example",
+      "summary": "The version stamped on every page."
+    },
+    {
+      "id": "conflicts",
+      "label": "Shared files, conflicts",
+      "kind": "example",
+      "summary": "28 release messages name a conflict."
+    },
+    {
+      "id": "six",
+      "label": "One repository into six",
+      "kind": "method",
+      "summary": "The dev agent's proposal, when asked."
+    },
+    {
+      "id": "villager",
+      "label": "The villager",
+      "kind": "method",
+      "summary": "Daily recommendations, why things went wrong."
+    },
+    {
+      "id": "quality",
+      "label": "A quality check every wake",
+      "kind": "method",
+      "summary": "A comment beside the security check."
+    },
+    {
+      "id": "planner",
+      "label": "The town planner, later",
+      "kind": "claim",
+      "summary": "Not yet; it would freeze what still changes."
+    }
+  ],
+  "edges": [
+    {
+      "from": "explorers",
+      "to": "blind",
+      "rel": "produces"
+    },
+    {
+      "from": "blind",
+      "to": "rewrites",
+      "rel": "produces"
+    },
+    {
+      "from": "blind",
+      "to": "conflicts",
+      "rel": "produces"
+    },
+    {
+      "from": "six",
+      "to": "rewrites",
+      "rel": "answers"
+    },
+    {
+      "from": "villager",
+      "to": "blind",
+      "rel": "answers"
+    },
+    {
+      "from": "quality",
+      "to": "villager",
+      "rel": "depends-on"
+    },
+    {
+      "from": "villager",
+      "to": "planner",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "explorer-coding",
+      "why-agent-loops-are-hard",
+      "the-side-stories-of-php2shell",
+      "patch-for-breakfast",
+      "a-team-frozen-in-time"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html",
+      "https://php.oct.2026.newsroom.sgit.ai/team/schedule/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The insight came because I asked an agent to step back.",
+      "why": "What the dev agent saw, when asked."
+    },
+    {
+      "text": "A comment, not a change.",
+      "why": "A quality check on every wake."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vg-roles.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vg-roles.webp",
+      "caption": "A villager beside the explorers: the task agents, each focused on its own job every wake; security, with a stricter gate on every release and a daily pass; the villager, once a day, proposed, reading what changed, asking what could be better and why it went wrong, and leaving recommendations for each agent; and, later, the town planner.",
+      "kind": "concept"
+    },
+    {
+      "file": "vg-rewrites.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vg-rewrites.webp",
+      "caption": "Every release rewrites the whole site: the median of the PHP site's last 20 releases changed 2,140 files, about as many as the build writes (2,145) of the 3,332 in the repository, whatever the release was for, because the version is stamped on every page.",
+      "kind": "comparison"
+    },
+    {
+      "file": "vg-proposal.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vg-proposal.webp",
+      "caption": "The dev agent's proposal on the PHP site, 25 October 2026: one repository into six, so that tens of agents can work without waiting on each other, with what one repository costs today: 3,332 files, 1,057 pages from one build script of 7,847 lines, up to 77 releases a day, a median of 1,936 generated files rewritten by every release, 28 release messages naming a conflict, and about 53 scheduled wakes a day.",
+      "kind": "screenshot"
+    }
+  ]
+}
