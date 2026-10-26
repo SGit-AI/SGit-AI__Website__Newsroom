@@ -55,6 +55,163 @@
   ],
   "articles": [
     {
+      "slug": "one-researcher-for-every-newsroom",
+      "title": "One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom",
+      "date": "2026-10-26",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/one-researcher-for-every-newsroom.html",
+      "markdown": "https://newsroom.sgit.ai/articles/one-researcher-for-every-newsroom.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/one-researcher-for-every-newsroom.webp",
+      "teaser": "One researcher for every newsroom: research.newsroom.sgit.ai, a light, focused archive captured on a schedule into a pack a day.",
+      "topics": [
+        "vaults-and-method",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "research",
+        "archive",
+        "provenance",
+        "sgit",
+        "vaults",
+        "agents",
+        "design",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "rz-arch.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rz-arch.webp",
+          "caption": "research.newsroom.sgit.ai, one researcher shared by every newsroom: a watch list of what to watch, who asked, how often and its licence tier; three kinds of scheduled run, the daily web, Wikipedia, and focus runs for current work; a pack a day in an sgit pack vault, with an index of what is inside; the research site, where tier A is published in full and tiers B and C as index, hashes and links; and the readers, the PHP story site, the Industry Wire, the Web Summit newsroom and anyone outside. Proposed.",
+          "kind": "process"
+        },
+        {
+          "file": "rz-pack.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rz-pack.webp",
+          "caption": "Why pack mode makes this possible: the source watch vault measured by the PHP site's researcher on 23 October 2026, as a normal sgit vault and as a pack vault; a fresh clone took 827 seconds and 95 seconds, listing the vault on the server 91 seconds (a failure, HTTP 504) and 0.73 seconds, a pull with nothing new 34 seconds and 4 seconds; the vault was 1,614 MB as loose objects and 1,184 MB as packs.",
+          "kind": "chart"
+        },
+        {
+          "file": "rz-tiers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/rz-tiers.webp",
+          "caption": "What the research site may publish, by tier: tier A, open or public sector, the full capture in a public pack with a published read key, 73 of the source watch's pages, and Wikipedia under its open licence; tier B, at most 25 words and a link, the index, hash and change record in public and the full bytes in a private vault, 523 pages; tier C, link only, 15 pages. And an opt-out: any publisher who asks us to stop, we stop.",
+          "kind": "concept"
+        }
+      ],
+      "graph": {
+        "slug": "one-researcher-for-every-newsroom",
+        "teaser": "One researcher for every newsroom: research.newsroom.sgit.ai, a light, focused archive captured on a schedule into a pack a day.",
+        "topics": [
+          "vaults-and-method",
+          "news-and-evidence"
+        ],
+        "core_idea": "Instead of each newsroom running its own slow researcher over overlapping sources, one shared researcher should run scheduled, parallel captures of the daily web, Wikipedia and focus requests into a daily sgit pack with its provenance, publish them at research.newsroom.sgit.ai by licence tier, open pages in full and the rest as records, and let each team research only what is not covered.",
+        "nodes": [
+          {
+            "id": "problem",
+            "label": "A researcher in every newsroom",
+            "kind": "claim",
+            "summary": "The same sources, read again, slowly."
+          },
+          {
+            "id": "watch",
+            "label": "The source watch",
+            "kind": "example",
+            "summary": "About 900 pages, 2,946 snapshots."
+          },
+          {
+            "id": "site",
+            "label": "research.newsroom.sgit.ai",
+            "kind": "method",
+            "summary": "A light, focused Internet Archive."
+          },
+          {
+            "id": "runs",
+            "label": "Parallel runs",
+            "kind": "method",
+            "summary": "Daily web, Wikipedia, focus runs."
+          },
+          {
+            "id": "packs",
+            "label": "A pack a day",
+            "kind": "method",
+            "summary": "sgit pack mode, provenance in the zip."
+          },
+          {
+            "id": "tiers",
+            "label": "Published by tier",
+            "kind": "claim",
+            "summary": "A in full; B and C as records."
+          },
+          {
+            "id": "reuse",
+            "label": "Reuse by every newsroom",
+            "kind": "claim",
+            "summary": "Teams research only the gaps."
+          }
+        ],
+        "edges": [
+          {
+            "from": "watch",
+            "to": "problem",
+            "rel": "example-of"
+          },
+          {
+            "from": "site",
+            "to": "problem",
+            "rel": "answers"
+          },
+          {
+            "from": "runs",
+            "to": "site",
+            "rel": "produces"
+          },
+          {
+            "from": "packs",
+            "to": "runs",
+            "rel": "depends-on"
+          },
+          {
+            "from": "tiers",
+            "to": "site",
+            "rel": "depends-on"
+          },
+          {
+            "from": "reuse",
+            "to": "site",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "web-summit-2026-the-plan",
+            "sources-and-shadows",
+            "who-creates-the-original",
+            "feisty-duck-briefed",
+            "a-villager-for-the-agents"
+          ],
+          "pages": [],
+          "sites": [
+            "https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-23__brief__phased-source-watch-pass/index.html",
+            "https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/index.html",
+            "https://newsroom.sgit.ai/wire/how.html",
+            "https://web.archive.org/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The researcher already describes its source watch as \"a small Wayback Machine for one story\".",
+            "why": "A light, focused Internet Archive."
+          },
+          {
+            "text": "Most of what makes the archive useful, what changed, when, and who said it first, is in the record, not the bytes.",
+            "why": "What we may publish."
+          }
+        ]
+      }
+    },
+    {
       "slug": "web-summit-2026-the-plan",
       "title": "Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on",
       "date": "2026-10-26",

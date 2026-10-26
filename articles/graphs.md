@@ -14,13 +14,36 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-294 of 294 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+295 of 295 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-294 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 32 articles not yet linked either way.
+295 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 33 articles not yet linked either way.
+
+## [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](one-researcher-for-every-newsroom.md)
+
+2026-10-26 · Vaults & methodNews & evidence
+
+Instead of each newsroom running its own slow researcher over overlapping sources, one shared researcher should run scheduled, parallel captures of the daily web, Wikipedia and focus requests into a daily sgit pack with its provenance, publish them at research.newsroom.sgit.ai by licence tier, open pages in full and the rest as records, and let each team research only what is not covered.
+
+*[diagram]*
+**claim**method**example
+
+**7 nodes, 6 edges**
+
+- **A researcher in every newsroom** (claim) The same sources, read again, slowly.
+- **The source watch** (example) About 900 pages, 2,946 snapshots.
+- **research.newsroom.sgit.ai** (method) A light, focused Internet Archive.
+- **Parallel runs** (method) Daily web, Wikipedia, focus runs.
+- **A pack a day** (method) sgit pack mode, provenance in the zip.
+- **Published by tier** (claim) A in full; B and C as records.
+- **Reuse by every newsroom** (claim) Teams research only the gaps.
+
+> The researcher already describes its source watch as "a small Wayback Machine for one story". A light, focused Internet Archive.
+
+> Most of what makes the archive useful, what changed, when, and who said it first, is in the record, not the bytes. What we may publish.
 
 ## [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](web-summit-2026-the-plan.md)
 

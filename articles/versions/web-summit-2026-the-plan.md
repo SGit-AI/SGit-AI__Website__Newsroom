@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-26 | published | 2,358 | first published | this release | [current](../web-summit-2026-the-plan.md) |
+| **v1.0.0** | 2026-10-26 | published | 2,358 | first published | [`2f4b0f742`](https://github.com/SGit-AI/SGit-AI__Website/commit/2f4b0f742d27f46d5506eac39e74a099a6e28b8e) | [current](../web-summit-2026-the-plan.md) |
 
 [← Back to the article](../web-summit-2026-the-plan.md) · [All articles](../index.md)
 
