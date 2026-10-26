@@ -14,13 +14,60 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-295 of 295 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+297 of 297 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-295 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 33 articles not yet linked either way.
+297 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 35 articles not yet linked either way.
+
+## [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md)
+
+2026-10-26 · Startups & strategySite & engineering
+
+Selling AI-built websites by the month gets the economics wrong: rent pays most when clients use least, a few clients never stop asking, and page caps are arbitrary when static pages cost almost nothing; instead the client should own an AI account, GitHub Pages and a domain, and buy a finished job of setup, build, design choice, QA and handover, with blocks of hours only if wanted.
+
+*[diagram]*
+**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **The infographic** (example) £39 to £119 a month, page and edit caps.
+- **Rent is the wrong model** (claim) Paid most when used least.
+- **Page caps make no sense** (claim) 1,500 pages on GitHub Pages here.
+- **The seller's AI account** (claim) Cost and bottleneck in the wrong place.
+- **The client owns the stack** (method) AI account, GitHub Pages, domain.
+- **A finished job** (method) Setup, build, designs, QA, handover.
+- **Blocks of hours** (method) Only if wanted; nothing monthly.
+- **Kitewing Websites** (example) A made-up studio and three sites.
+
+> A cap of five pages is a pricing device, not a cost. 1. The price plans.
+
+> Every engagement is finite The model I propose.
+
+## [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](inside-kitewing-websites.md)
+
+2026-10-26 · Vaults & methodStartups & strategy
+
+A made-up studio, Kitewing Websites, and three made-up client sites in different industries, a potter's catalogue, a community garden and a plumber's guides library, show the websites-you-own model in practice: each is one self-contained HTML file with its data in JSON, changeable by asking an agent, and built as an sgit vault app, with the studio's vault holding the examples.
+
+*[diagram]*
+**method**example
+
+**7 nodes, 6 edges**
+
+- **Kitewing Websites** (example) The one-off offer, stated.
+- **Tidewrack Studio Pottery** (example) 28 pieces, no checkout.
+- **Fennick Lane Community Garden** (example) Events, rota, 14 guides.
+- **Quillon Heat & Plumbing** (example) A map and 19 guides.
+- **One file, data beside it** (method) No external requests.
+- **Changed by asking** (method) Edits to content.json.
+- **A vault in a vault** (method) Committed; push awaits a token.
+
+> A vault in a vault: In short.
+
+> That is the handover the studio sells. How each one is made.
 
 ## [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](one-researcher-for-every-newsroom.md)
 

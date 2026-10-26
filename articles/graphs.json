@@ -55,6 +55,365 @@
   ],
   "articles": [
     {
+      "slug": "websites-you-own",
+      "title": "Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it",
+      "date": "2026-10-26",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/websites-you-own.html",
+      "markdown": "https://newsroom.sgit.ai/articles/websites-you-own.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/websites-you-own.webp",
+      "teaser": "Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.",
+      "topics": [
+        "startups-and-strategy",
+        "site-and-engineering"
+      ],
+      "tags": [
+        "business-models",
+        "websites",
+        "agents",
+        "pricing",
+        "explorers-villagers",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "kw-info-all.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-info-all.webp",
+          "caption": "The infographic as I received it, on 26 October 2026: a pay-monthly website business built with Claude, in five sections: price plans, cost to run, time per five-page build, the numbers, and risks and fixes. Shared without its author's name; nothing in it identifies them.",
+          "kind": "aside"
+        },
+        {
+          "file": "kw-info-plans.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-info-plans.webp",
+          "caption": "Section 1, price plans: Starter £39 a month and £149 setup, up to five pages, hosting, DNS and SSL, 30 minutes of edits a month; Standard £69 a month and £299 setup, up to ten pages, contact form, analytics, uptime checks, an hour of edits; Plus £119 a month and £499 setup, blog or booking, two hours of edits, a quarterly report; extra work £35 an hour; the client owns the domain and content.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-info-cost.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-info-cost.webp",
+          "caption": "Section 2, cost to run: fixed £95 to £190 a month, Claude Max at $100 or $200 (about £75 to £150), insurance, email and accounts £20 to £40; each extra site £1 to £5 a month, Route 53 $0.50 per site, Amplify hosting free to a few pounds, a domain about $12 a year, passed to the client.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-info-time.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-info-time.webp",
+          "caption": "Section 3, time per five-page build: 10 to 15 hours in total, 3 to 5 hours of coding, fast with Claude Code, and 7 to 10 hours of everything else, calls, content, revisions, testing and launch. \"Price on the client's time, not Claude's speed.\"",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-info-numbers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-info-numbers.webp",
+          "caption": "Section 4, the numbers: £1,127 from one Standard client in year one (£299 plus 12 times £69); two Standard clients needed to cover fixed costs; £690 a month from ten Standard clients, about £570 after costs, for about ten hours' work.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-incentive.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-incentive.webp",
+          "caption": "Who wins when the client uses it more? On a monthly plan the fee is fixed and the cost of serving the client rises with every request, so the margin shrinks as use grows. On a handover the job is priced once, and afterwards the client's own use costs the studio nothing. Illustrative.",
+          "kind": "chart"
+        },
+        {
+          "file": "kw-info-risks.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-info-risks.webp",
+          "caption": "Section 5, risks and fixes: code I cannot fix, keep sites simple and static, read what Claude writes; Claude usage caps, never promise same-hour fixes in the contract.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-models.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-models.webp",
+          "caption": "Two ways to sell a website made with an agent: rent, a monthly plan where the seller holds the AI account, the hosting and the edits, with caps on pages and edits; and handover, a finished job where the client owns Claude or ChatGPT, GitHub with Pages and the domain, the studio charges once for setup, build, designs, QA and handover, and help afterwards is a block of hours.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "websites-you-own",
+        "teaser": "Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.",
+        "topics": [
+          "startups-and-strategy",
+          "site-and-engineering"
+        ],
+        "core_idea": "Selling AI-built websites by the month gets the economics wrong: rent pays most when clients use least, a few clients never stop asking, and page caps are arbitrary when static pages cost almost nothing; instead the client should own an AI account, GitHub Pages and a domain, and buy a finished job of setup, build, design choice, QA and handover, with blocks of hours only if wanted.",
+        "nodes": [
+          {
+            "id": "info",
+            "label": "The infographic",
+            "kind": "example",
+            "summary": "£39 to £119 a month, page and edit caps."
+          },
+          {
+            "id": "rent",
+            "label": "Rent is the wrong model",
+            "kind": "claim",
+            "summary": "Paid most when used least."
+          },
+          {
+            "id": "caps",
+            "label": "Page caps make no sense",
+            "kind": "claim",
+            "summary": "1,500 pages on GitHub Pages here."
+          },
+          {
+            "id": "cost",
+            "label": "The seller's AI account",
+            "kind": "claim",
+            "summary": "Cost and bottleneck in the wrong place."
+          },
+          {
+            "id": "own",
+            "label": "The client owns the stack",
+            "kind": "method",
+            "summary": "AI account, GitHub Pages, domain."
+          },
+          {
+            "id": "job",
+            "label": "A finished job",
+            "kind": "method",
+            "summary": "Setup, build, designs, QA, handover."
+          },
+          {
+            "id": "hours",
+            "label": "Blocks of hours",
+            "kind": "method",
+            "summary": "Only if wanted; nothing monthly."
+          },
+          {
+            "id": "mock",
+            "label": "Kitewing Websites",
+            "kind": "example",
+            "summary": "A made-up studio and three sites."
+          }
+        ],
+        "edges": [
+          {
+            "from": "rent",
+            "to": "info",
+            "rel": "answers"
+          },
+          {
+            "from": "caps",
+            "to": "info",
+            "rel": "answers"
+          },
+          {
+            "from": "cost",
+            "to": "info",
+            "rel": "answers"
+          },
+          {
+            "from": "own",
+            "to": "rent",
+            "rel": "contrasts"
+          },
+          {
+            "from": "job",
+            "to": "own",
+            "rel": "depends-on"
+          },
+          {
+            "from": "hours",
+            "to": "job",
+            "rel": "depends-on"
+          },
+          {
+            "from": "mock",
+            "to": "job",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "inside-kitewing-websites",
+            "your-own-newsroom",
+            "stop-the-bleeding-then-ask-for-it-back",
+            "paying-after-the-value",
+            "jobs-that-never-scaled",
+            "explorer-coding",
+            "the-no-server-startup"
+          ],
+          "pages": [],
+          "sites": [
+            "https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits",
+            "https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A cap of five pages is a pricing device, not a cost.",
+            "why": "1. The price plans."
+          },
+          {
+            "text": "Every engagement is finite",
+            "why": "The model I propose."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "inside-kitewing-websites",
+      "title": "Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it",
+      "date": "2026-10-26",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/inside-kitewing-websites.html",
+      "markdown": "https://newsroom.sgit.ai/articles/inside-kitewing-websites.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/inside-kitewing-websites.webp",
+      "teaser": "Inside Kitewing Websites: a made-up studio and three made-up client sites, built as vault apps, each one file and each different.",
+      "topics": [
+        "vaults-and-method",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "websites",
+        "vaults",
+        "sgit",
+        "demos",
+        "business-models",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "kw-sites.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-sites.webp",
+          "caption": "Kitewing Websites and its three example clients, all made up: the studio's own site, \"a website you own, and can talk to\"; Tidewrack Studio Pottery, a catalogue in clay and sea-grey; Fennick Lane Community Garden, in leaf green and sunflower yellow; and Quillon Heat & Plumbing, in navy and safety orange.",
+          "kind": "collage"
+        },
+        {
+          "file": "kw-studio.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-studio.webp",
+          "caption": "The studio's own site: the offer in five steps, setup, build, choose a design, QA and handover; one-off packages as hypotheses, a simple site £500, a larger site £1,000, a lift and shift £200 to £1,000; a domain for a year and blocks of hours as extras; and why there is no monthly fee.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-tidewrack.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-tidewrack.webp",
+          "caption": "Tidewrack Studio Pottery, a ceramicist's catalogue: 28 pieces drawn in their glazes, filtered by kind and glaze, each with a reference, size and a price or \"price on enquiry\", and an enquiry note instead of a checkout; plus the maker, the glazes, classes, open studio days and a care guide.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-fennick.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-fennick.webp",
+          "caption": "Fennick Lane Community Garden: what the garden grows, the plots and the waiting list, a season of 15 events filtered by month and type, a volunteer rota, news, and 14 growing guides that open in a reader view.",
+          "kind": "screenshot"
+        },
+        {
+          "file": "kw-quillon.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/kw-quillon.webp",
+          "caption": "Quillon Heat & Plumbing: services, the areas it covers on a sketch map, how to book, what to do in an emergency, and 19 household guides, each marked as general guidance for a demonstration, not professional advice.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "inside-kitewing-websites",
+        "teaser": "Inside Kitewing Websites: a made-up studio and three made-up client sites, built as vault apps, each one file and each different.",
+        "topics": [
+          "vaults-and-method",
+          "startups-and-strategy"
+        ],
+        "core_idea": "A made-up studio, Kitewing Websites, and three made-up client sites in different industries, a potter's catalogue, a community garden and a plumber's guides library, show the websites-you-own model in practice: each is one self-contained HTML file with its data in JSON, changeable by asking an agent, and built as an sgit vault app, with the studio's vault holding the examples.",
+        "nodes": [
+          {
+            "id": "studio",
+            "label": "Kitewing Websites",
+            "kind": "example",
+            "summary": "The one-off offer, stated."
+          },
+          {
+            "id": "pottery",
+            "label": "Tidewrack Studio Pottery",
+            "kind": "example",
+            "summary": "28 pieces, no checkout."
+          },
+          {
+            "id": "garden",
+            "label": "Fennick Lane Community Garden",
+            "kind": "example",
+            "summary": "Events, rota, 14 guides."
+          },
+          {
+            "id": "plumber",
+            "label": "Quillon Heat & Plumbing",
+            "kind": "example",
+            "summary": "A map and 19 guides."
+          },
+          {
+            "id": "file",
+            "label": "One file, data beside it",
+            "kind": "method",
+            "summary": "No external requests."
+          },
+          {
+            "id": "edit",
+            "label": "Changed by asking",
+            "kind": "method",
+            "summary": "Edits to content.json."
+          },
+          {
+            "id": "vaults",
+            "label": "A vault in a vault",
+            "kind": "method",
+            "summary": "Committed; push awaits a token."
+          }
+        ],
+        "edges": [
+          {
+            "from": "pottery",
+            "to": "studio",
+            "rel": "example-of"
+          },
+          {
+            "from": "garden",
+            "to": "studio",
+            "rel": "example-of"
+          },
+          {
+            "from": "plumber",
+            "to": "studio",
+            "rel": "example-of"
+          },
+          {
+            "from": "file",
+            "to": "studio",
+            "rel": "depends-on"
+          },
+          {
+            "from": "edit",
+            "to": "file",
+            "rel": "depends-on"
+          },
+          {
+            "from": "vaults",
+            "to": "file",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "websites-you-own",
+            "inside-the-no-server-studio",
+            "your-own-newsroom",
+            "the-homepage-is-a-vault"
+          ],
+          "pages": [],
+          "sites": [
+            "https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A vault in a vault:",
+            "why": "In short."
+          },
+          {
+            "text": "That is the handover the studio sells.",
+            "why": "How each one is made."
+          }
+        ]
+      }
+    },
+    {
       "slug": "one-researcher-for-every-newsroom",
       "title": "One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom",
       "date": "2026-10-26",

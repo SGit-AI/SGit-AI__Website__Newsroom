@@ -1,0 +1,34 @@
+{
+ "slug": "websites-you-own",
+ "teaser": "Websites you own: a reply to an infographic that rents AI-built websites by the month, and the one-off model I propose.",
+ "topics": ["startups-and-strategy", "site-and-engineering"],
+ "core_idea": "Selling AI-built websites by the month gets the economics wrong: rent pays most when clients use least, a few clients never stop asking, and page caps are arbitrary when static pages cost almost nothing; instead the client should own an AI account, GitHub Pages and a domain, and buy a finished job of setup, build, design choice, QA and handover, with blocks of hours only if wanted.",
+ "nodes": [
+  {"id": "info", "label": "The infographic", "kind": "example", "summary": "£39 to £119 a month, page and edit caps."},
+  {"id": "rent", "label": "Rent is the wrong model", "kind": "claim", "summary": "Paid most when used least."},
+  {"id": "caps", "label": "Page caps make no sense", "kind": "claim", "summary": "1,500 pages on GitHub Pages here."},
+  {"id": "cost", "label": "The seller's AI account", "kind": "claim", "summary": "Cost and bottleneck in the wrong place."},
+  {"id": "own", "label": "The client owns the stack", "kind": "method", "summary": "AI account, GitHub Pages, domain."},
+  {"id": "job", "label": "A finished job", "kind": "method", "summary": "Setup, build, designs, QA, handover."},
+  {"id": "hours", "label": "Blocks of hours", "kind": "method", "summary": "Only if wanted; nothing monthly."},
+  {"id": "mock", "label": "Kitewing Websites", "kind": "example", "summary": "A made-up studio and three sites."}
+ ],
+ "edges": [
+  {"from": "rent", "to": "info", "rel": "answers"},
+  {"from": "caps", "to": "info", "rel": "answers"},
+  {"from": "cost", "to": "info", "rel": "answers"},
+  {"from": "own", "to": "rent", "rel": "contrasts"},
+  {"from": "job", "to": "own", "rel": "depends-on"},
+  {"from": "hours", "to": "job", "rel": "depends-on"},
+  {"from": "mock", "to": "job", "rel": "example-of"}
+ ],
+ "links": {
+  "articles": ["inside-kitewing-websites", "your-own-newsroom", "stop-the-bleeding-then-ask-for-it-back", "paying-after-the-value", "jobs-that-never-scaled", "explorer-coding", "the-no-server-startup"],
+  "pages": [],
+  "sites": ["https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits", "https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features"]
+ },
+ "quotes": [
+  {"text": "A cap of five pages is a pricing device, not a cost.", "why": "1. The price plans."},
+  {"text": "Every engagement is finite", "why": "The model I propose."}
+ ]
+}

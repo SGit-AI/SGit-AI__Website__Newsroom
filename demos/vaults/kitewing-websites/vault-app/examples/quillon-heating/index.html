@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quillon Heat &amp; Plumbing</title>
+<meta name="description" content="Quillon Heat &amp; Plumbing, a fictional heating and plumbing firm in the made-up town of Harrowby. A demonstration site built for newsroom.sgit.ai.">
+<style>
+:root{
+  --navy:#0e2240;--navy-2:#16315a;--navy-3:#23467a;--ink:#0b1a30;--ink-2:#3a4a63;--muted:#5d6b80;
+  --line:#d7dee8;--line-2:#e8edf3;--paper:#ffffff;--wash:#f3f6fa;
+  --orange:#ff6b1a;--orange-ink:#b84300;--orange-soft:#fff1e7;--red:#c8231f;--red-soft:#fdecea;--blue-soft:#e8f0fb;
+  --font:"Inter","Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  --r:6px;--wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;overflow-wrap:break-word}
+a{color:var(--navy-3)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+h1,h2,h3,h4{line-height:1.15;margin:0;letter-spacing:-.015em}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.ic{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--orange);color:var(--ink);padding:10px 14px;z-index:50;font-weight:700}
+.skip:focus{left:8px;top:8px}
+
+/* demo strip */
+.demo{background:var(--ink);color:#c9d4e4;font-size:13.5px}
+.demo .wrap{display:flex;gap:6px 18px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:8px;padding-bottom:8px}
+.demo b{color:#fff;font-weight:600}
+.demo a{color:#ffb98f}
+.demo .tag{display:inline-block;border:1px solid #42587a;border-radius:3px;padding:0 6px;margin-right:6px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#ffb98f}
+
+/* header */
+header.top{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);min-width:0}
+.brand svg{width:42px;height:42px;flex:none}
+.brand strong{display:block;font-size:19px;letter-spacing:-.02em;line-height:1.1}
+.bname{display:block}
+.bname span{display:block;font-size:12.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+nav.main{display:flex;gap:4px;margin-left:auto}
+nav.main a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:15px;padding:8px 11px;border-radius:4px}
+nav.main a:hover{background:var(--wash);color:var(--ink)}
+.call{display:inline-flex;align-items:center;gap:9px;background:var(--orange);color:var(--ink);text-decoration:none;font-weight:800;padding:11px 16px;border-radius:var(--r);white-space:nowrap;font-size:16px;letter-spacing:-.01em}
+.call:hover{background:#ff7f38}
+.call .ic{width:20px;height:20px;stroke-width:2.2}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:repeating-linear-gradient(-45deg,var(--orange) 0 14px,var(--ink) 14px 28px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;padding-top:72px;padding-bottom:84px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ffb98f}
+.kicker::before{content:"";width:22px;height:3px;background:var(--orange)}
+.hero h1{font-size:clamp(38px,6vw,68px);font-weight:800;margin:18px 0 20px;letter-spacing:-.035em}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);color:#d3dceb;max-width:36em;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:16px;border-radius:var(--r);padding:12px 18px;text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-ghost{border-color:#5a7299;color:#fff;background:transparent}
+.btn-ghost:hover{border-color:#fff}
+.btn .ic{width:20px;height:20px}
+.panel{background:#fff;color:var(--ink);border-radius:var(--r);box-shadow:0 18px 40px rgba(0,0,0,.25);overflow:hidden}
+.panel-head{background:var(--orange);color:var(--ink);padding:14px 22px;display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em}
+.panel-body{padding:22px}
+.panel .num{display:block;font-size:clamp(28px,3.4vw,36px);font-weight:800;letter-spacing:-.03em;color:var(--navy);text-decoration:none;line-height:1.1;white-space:nowrap}
+.panel .num-note{font-size:13.5px;color:var(--muted);margin:6px 0 18px}
+.hours{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:15px}
+.hours li span:first-child{font-weight:600}
+.hours li span:last-child{color:var(--ink-2);text-align:right}
+.panel-link{display:flex;align-items:center;gap:8px;margin-top:16px;font-weight:700;color:var(--red);text-decoration:none;font-size:15px}
+.panel-link:hover{text-decoration:underline}
+
+.facts{background:var(--wash);border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.fact{padding:20px 24px;border-left:1px solid var(--line)}
+.fact:first-child{border-left:0;padding-left:0}
+.fact small{display:block;font-size:12.5px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.fact b{font-size:18px}
+
+/* sections */
+section.block{padding:88px 0;border-bottom:1px solid var(--line)}
+section.alt{background:var(--wash)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:40px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink);display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.eyebrow i{display:inline-block;width:10px;height:10px;background:var(--orange)}
+.head h2{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.03em}
+.head p{color:var(--ink-2);margin:0}
+
+/* services */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc{padding:26px 24px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;position:relative;transition:background .15s}
+.svc:hover{background:var(--wash)}
+.svc:hover .ibox{background:var(--orange);color:var(--ink)}
+.ibox{width:52px;height:52px;border-radius:var(--r);background:var(--navy);color:#fff;display:grid;place-items:center;margin-bottom:18px;transition:background .15s,color .15s}
+.ibox .ic{width:28px;height:28px}
+.svc h3{font-size:19px;margin-bottom:8px}
+.svc p{font-size:15.5px;color:var(--ink-2);margin-bottom:14px}
+.svc ul{list-style:none;margin:0;padding:0;font-size:14.5px}
+.svc li{display:flex;gap:8px;align-items:flex-start;padding:3px 0}
+.svc li .ic{width:16px;height:16px;color:var(--orange-ink);margin-top:4px;stroke-width:2.6}
+.gasband{margin-top:28px;display:flex;gap:16px;align-items:flex-start;background:var(--navy);color:#e3e9f3;border-radius:var(--r);padding:18px 22px;font-size:15.5px}
+.gasband .ic{color:var(--orange);width:28px;height:28px;margin-top:2px}
+.gasband b{color:#fff}
+
+/* booking */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;position:relative}
+.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--orange);color:var(--ink);font-weight:800;font-size:18px;margin-bottom:16px}
+.steps h3{font-size:18px;margin-bottom:8px}
+.steps p{font-size:15.5px;color:var(--ink-2);margin:0}
+.book-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:20px}
+.box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.box h3{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.box h3 .ic{color:var(--orange-ink)}
+.checks{list-style:none;margin:0;padding:0}
+.checks li{display:flex;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+.checks li:last-child{border-bottom:0}
+.checks .ic{width:18px;height:18px;color:var(--navy-3);margin-top:3px;stroke-width:2.4}
+.box-call{background:var(--navy);color:#fff;border-color:var(--navy)}
+.box-call h3 .ic{color:var(--orange)}
+.box-call p{color:#d3dceb;font-size:15.5px}
+.box-call .call{margin-top:6px}
+
+/* areas */
+.areas{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:start}
+.map{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.map svg{display:block;width:100%;height:auto}
+.map .pl{cursor:pointer}
+.map .pl text{font:600 15px var(--font);fill:var(--ink)}
+.map .pl.on circle.dot{fill:var(--orange);stroke:var(--ink)}
+.map .pl.on text{fill:var(--orange-ink)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--muted);padding:8px 6px 2px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%}
+.places{list-style:none;margin:0 0 16px;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.places button{width:100%;text-align:left;font:inherit;font-size:15px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 12px;cursor:pointer;color:var(--ink);display:flex;align-items:center;gap:8px}
+.places button i{width:9px;height:9px;border-radius:50%;flex:none}
+.places button:hover{border-color:var(--navy-3)}
+.places button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.place-info{border-left:4px solid var(--orange);background:#fff;padding:14px 18px;border-radius:0 var(--r) var(--r) 0;font-size:15.5px;min-height:76px}
+.place-info b{display:block;font-size:17px}
+
+/* emergency */
+.emg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ecard{border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
+.ecard-h{display:flex;align-items:center;gap:12px;padding:16px 22px;font-weight:800;font-size:18px}
+.ecard-h .ic{width:28px;height:28px}
+.ecard.danger .ecard-h{background:var(--red);color:#fff}
+.ecard.warn .ecard-h{background:var(--orange);color:var(--ink)}
+.ecard.info .ecard-h{background:var(--navy);color:#fff}
+.ecard ol{margin:0;padding:18px 22px 20px 44px;font-size:15.5px}
+.ecard li{padding:3px 0}
+.ecard li::marker{font-weight:800;color:var(--navy-3)}
+.notice{display:flex;gap:12px;align-items:flex-start;background:var(--orange-soft);border:1px solid #ffd2b4;border-radius:var(--r);padding:14px 18px;font-size:15px;color:#5a2a06;margin-bottom:28px}
+.notice .ic{color:var(--orange-ink);margin-top:1px}
+
+/* guides */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px}
+.search{position:relative;flex:1 1 260px;min-width:0}
+.search .ic{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);width:20px;height:20px}
+.search input{width:100%;font:inherit;font-size:16px;padding:11px 14px 11px 42px;border:1px solid var(--line);border-radius:var(--r);background:#fff;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:14.5px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink-2);cursor:pointer}
+.chip:hover{border-color:var(--navy-3)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.count{font-size:14px;color:var(--muted);margin:0 0 14px}
+.glist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0}
+.gcard{width:100%;height:100%;text-align:left;font:inherit;color:inherit;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;cursor:pointer;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,box-shadow .15s}
+.gcard:hover{border-color:var(--navy-3);box-shadow:0 6px 18px rgba(14,34,64,.08)}
+.gtop{display:flex;align-items:center;gap:12px}
+.gtop .ibox{width:42px;height:42px;margin:0}
+.gtop .ibox .ic{width:22px;height:22px}
+.gcat{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-ink)}
+.gtime{font-size:13px;color:var(--muted)}
+.gcard h3{font-size:18px}
+.gcard p{font-size:15px;color:var(--ink-2);margin:0;flex:1}
+.gmore{font-size:14.5px;font-weight:700;color:var(--navy-3);display:flex;align-items:center;gap:6px}
+.gmore .ic{width:16px;height:16px;stroke-width:2.4}
+.gcard.safety .ibox{background:var(--red)}
+.empty{padding:28px;text-align:center;border:1px dashed var(--line);border-radius:var(--r);color:var(--muted)}
+
+/* reader */
+.reader{position:fixed;inset:0;z-index:40;display:none;background:rgba(11,26,48,.6);padding:24px;overflow-y:auto}
+.reader.open{display:block}
+.sheet{max-width:760px;margin:0 auto;background:#fff;border-radius:var(--r);box-shadow:0 24px 60px rgba(0,0,0,.35);overflow:hidden}
+.sheet-h{background:var(--navy);color:#fff;padding:22px 26px;display:flex;gap:16px;align-items:flex-start}
+.sheet-h .ibox{background:var(--orange);color:var(--ink);margin:0;flex:none}
+.sheet-h .meta{flex:1;min-width:0}
+.sheet-h small{display:block;color:#ffb98f;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px;margin-bottom:6px}
+.sheet-h h2{font-size:clamp(24px,3.2vw,32px);letter-spacing:-.025em}
+.xbtn{flex:none;background:transparent;border:1px solid #5a7299;color:#fff;border-radius:4px;width:40px;height:40px;display:grid;place-items:center;cursor:pointer}
+.xbtn:hover{border-color:#fff}
+.sheet-b{padding:24px 26px 8px}
+.disc{display:flex;gap:10px;align-items:flex-start;background:var(--orange-soft);border:1px solid #ffd2b4;color:#5a2a06;border-radius:4px;padding:10px 14px;font-size:14.5px;font-weight:600;margin-bottom:20px}
+.disc .ic{width:20px;height:20px;color:var(--orange-ink);margin-top:1px}
+.sheet-b .sum{font-size:18px;color:var(--ink-2)}
+.sheet-b h3{font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+.sheet-b ul.need{margin:0;padding-left:20px;font-size:15.5px}
+.sheet-b ol.do{margin:0;padding:0;list-style:none;counter-reset:d}
+.sheet-b ol.do li{counter-increment:d;display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2);font-size:16px}
+.sheet-b ol.do li::before{content:counter(d);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:14px}
+.stop{display:flex;gap:12px;align-items:flex-start;background:var(--red-soft);border-left:4px solid var(--red);padding:14px 16px;margin:22px 0 12px;border-radius:0 4px 4px 0;font-size:15.5px}
+.stop .ic{color:var(--red);margin-top:1px}
+.gasline{display:flex;gap:12px;align-items:flex-start;background:var(--blue-soft);padding:12px 16px;border-radius:4px;font-size:14.5px;margin-bottom:18px}
+.gasline .ic{color:var(--navy-3);width:20px;height:20px;margin-top:1px}
+.sheet-f{display:flex;justify-content:space-between;gap:12px;padding:16px 26px 22px;border-top:1px solid var(--line);flex-wrap:wrap}
+.nbtn{font:inherit;font-weight:700;font-size:15px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:9px 14px;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;gap:6px;max-width:100%}
+.nbtn:hover{border-color:var(--navy-3)}
+.nbtn .ic{width:18px;height:18px}
+.nbtn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* faq */
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:0 20px}
+.faq summary{cursor:pointer;list-style:none;font-weight:700;font-size:17px;padding:18px 0;display:flex;justify-content:space-between;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--orange-ink);font-weight:800}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{color:var(--ink-2);font-size:15.5px;padding-bottom:6px}
+
+/* footer */
+footer{background:var(--ink);color:#b7c3d6;padding:56px 0 36px;font-size:15px}
+footer a{color:#ffb98f}
+.fgrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:36px;padding-bottom:32px;border-bottom:1px solid #26385a}
+footer h4{color:#fff;font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{padding:3px 0}
+footer .brand{color:#fff;margin-bottom:14px}
+footer .bname span{color:#8fa0bb}
+.fnote{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;padding-top:26px;font-size:14px}
+.agent{border:1px dashed #42587a;border-radius:4px;padding:12px 14px;color:#9fb0c9;font-size:13.5px;line-height:1.5}
+.agent strong{color:#fff;display:block;margin-bottom:2px}
+.agent code{color:#ffb98f}
+.studio{margin-top:10px}
+
+@media (max-width:1020px){
+  nav.main{display:none}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:36px;padding-top:52px;padding-bottom:64px}
+  .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .glist{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .areas{grid-template-columns:minmax(0,1fr)}
+  .head{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  header.top .wrap{min-height:62px;gap:12px}
+  .brand svg{width:36px;height:36px}
+  .brand strong{font-size:16px}
+  .bname span{font-size:11px}
+  .call{margin-left:auto;padding:10px 12px;font-size:15px}
+  .call .long{display:none}
+  section.block{padding:60px 0}
+  .facts .wrap{grid-template-columns:minmax(0,1fr)}
+  .fact{border-left:0;border-top:1px solid var(--line);padding:14px 0}
+  .fact:first-child{border-top:0}
+  .grid4,.steps,.glist,.book-grid,.emg,.faq,.fnote{grid-template-columns:minmax(0,1fr)}
+  .fgrid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .places{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reader{padding:0}
+  .sheet{border-radius:0;min-height:100%}
+  .sheet-h{padding:18px 16px}
+  .sheet-h .ibox{display:none}
+  .sheet-b{padding:20px 16px 4px}
+  .sheet-f{padding:14px 16px 20px}
+  .nbtn{flex:1 1 0;min-width:0}
+}
+@media (max-width:400px){
+  .call{padding:10px 11px;font-size:14.5px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-boiler" viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2"/><rect x="8" y="5.5" width="8" height="4" rx="1"/><path d="M12 13.2c1.4 1.4 1.8 2.4 1.8 3.2a1.8 1.8 0 0 1-3.6 0c0-.8.4-1.8 1.8-3.2z"/><path d="M9 21.5v1M15 21.5v1"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9z"/></symbol>
+  <symbol id="i-radiator" viewBox="0 0 24 24"><path d="M3 20h18"/><rect x="4" y="5" width="3.2" height="13" rx="1.4"/><rect x="8.9" y="5" width="3.2" height="13" rx="1.4"/><rect x="13.8" y="5" width="3.2" height="13" rx="1.4"/><path d="M18.7 9h1.8M18.7 14h1.8M17 9h1.7M17 14h1.7M2.5 9H4"/></symbol>
+  <symbol id="i-thermostat" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 7v3M12 3v1.5M21 12h-1.5M4.5 12H3"/></symbol>
+  <symbol id="i-tap" viewBox="0 0 24 24"><path d="M4 9h9a4 4 0 0 1 4 4v1"/><path d="M4 6v6M8 9V5.5M5.5 5.5h5"/><path d="M15 14h4"/><path d="M17 17.5c.9 1.1 1.3 1.9 1.3 2.5a1.3 1.3 0 0 1-2.6 0c0-.6.4-1.4 1.3-2.5z"/></symbol>
+  <symbol id="i-cylinder" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="6"/><path d="M6 9h12M6 15h12M12 1.5V3M9 21v1.5M15 21v1.5"/></symbol>
+  <symbol id="i-shower" viewBox="0 0 24 24"><path d="M4 21V7a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4"/><path d="M8.5 9h7a1 1 0 0 1 1 1H7.5a1 1 0 0 1 1-1z"/><path d="M9 13.5v1M12 13.5v1M15 13.5v1M10.5 17v1M13.5 17v1"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11"/><path d="M9.5 3.5 12 5.5l2.5-2M9.5 20.5 12 18.5l2.5 2"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2.5c3.5 3.7 6 6.9 6 10.6a6 6 0 0 1-12 0c0-2.4 1.1-4.1 2.4-5.6.2 1.8 1 2.9 2 3.3C10 8 10.6 5.3 12 2.5z"/><path d="M12 14.5c1 1 1.6 1.9 1.6 2.8a1.6 1.6 0 0 1-3.2 0c0-.9.6-1.8 1.6-2.8z"/></symbol>
+  <symbol id="i-alarm" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7"/><path d="M12 9.5v4l2.5 1.5M4 5l3-2.5M20 5l-3-2.5"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2.8C16.3 7.6 18.5 11 18.5 14.2a6.5 6.5 0 0 1-13 0C5.5 11 7.7 7.6 12 2.8z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+  <symbol id="i-valve" viewBox="0 0 24 24"><path d="M2 15h6M16 15h6"/><rect x="8" y="12" width="8" height="6" rx="1"/><path d="M12 12V8"/><path d="M8 6.5h8"/><circle cx="12" cy="6.5" r="1"/></symbol>
+  <symbol id="i-toilet" viewBox="0 0 24 24"><rect x="5" y="2.5" width="9" height="7" rx="1"/><path d="M4 12h15a5.5 5.5 0 0 1-5.5 5.5H9.5A5.5 5.5 0 0 1 4 12z"/><path d="M9 17.5 8 21.5h7l-1-4M7 5h3"/></symbol>
+  <symbol id="i-sink" viewBox="0 0 24 24"><path d="M3 11h18v1a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/><path d="M12 18v4M9 22h6M12 11V5a2 2 0 0 1 4 0"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0"/><path d="M12 17l3.5-5.5"/><circle cx="12" cy="17" r="1.3"/><path d="M6.5 11.5l1 .8M12 7.5v1.3M17.5 11.5l-1 .8"/></symbol>
+  <symbol id="i-pipe" viewBox="0 0 24 24"><path d="M2 8h9a4 4 0 0 1 4 4v10"/><path d="M2 13h7a1 1 0 0 1 1 1v8"/><path d="M5 6.5v8M13.5 18.5h3"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 3.5 21 11"/><path d="M5.5 9v11.5h13V9"/><path d="M10 20.5V15h4v5.5"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12c2.5-4 4.5-4 7 0s4.5 4 7 0 4.5-4 6 0"/><path d="M4 18h16M4 6h16"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3.5h3.2l1.6 4-2 1.3a11 11 0 0 0 5.4 5.4l1.3-2 4 1.6V17a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.5 4 5.5v6c0 4.7 3.4 8.6 8 10 4.6-1.4 8-5.3 8-10v-6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20.5h20z"/><path d="M12 10v5M12 17.6v.1"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.3-7-11.5a7 7 0 0 1 14 0c0 5.2-7 11.5-7 11.5z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01" stroke-width="3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h6v17H5a2 2 0 0 0-2 2z"/><path d="M21 5a2 2 0 0 0-2-2h-6v17h6a2 2 0 0 1 2 2z"/></symbol>
+</svg>
+
+<aside class="demo" aria-label="About this site">
+  <div class="wrap">
+    <p style="margin:0"><span class="tag">Demo</span><b>A fictional business.</b> Built by Kitewing Websites (a made-up studio) for newsroom.sgit.ai.</p>
+    <p style="margin:0"><a href="https://newsroom.sgit.ai/articles/websites-you-own.html">Read the article</a> &middot; <a href="../../index.html">Built by Kitewing Websites, a made-up studio</a></p>
+  </div>
+</aside>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Quillon Heat and Plumbing, back to top">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 6 9v13c0 11 7.7 19.5 18 23 10.3-3.5 18-12 18-23V9z" fill="#0e2240"/><path d="M24 3v42c10.3-3.5 18-12 18-23V9z" fill="#16315a"/><path d="M24 12c5 5.4 7.5 9.2 7.5 13.2a7.5 7.5 0 0 1-15 0c0-4 2.5-7.8 7.5-13.2z" fill="#ff6b1a"/><path d="M24 22c2 2.1 3 3.7 3 5.2a3 3 0 0 1-6 0c0-1.5 1-3.1 3-5.2z" fill="#fff"/></svg>
+      <span class="bname"><strong>Quillon</strong><span>Heat &amp; Plumbing</span></span>
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a><a href="#book">Book</a><a href="#areas">Areas</a><a href="#emergency">Emergency</a><a href="#guides">Guides</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="call" id="hdrCall" href="tel:01632960418"><svg class="ic" aria-hidden="true"><use href="#i-phone"></use></svg><span class="long">Call&nbsp;</span><span data-phone>01632 960 418</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <span class="kicker" id="heroKicker"></span>
+        <h1 id="heroTitle"></h1>
+        <p class="lead" id="heroLead"></p>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" href="#services"><svg class="ic" aria-hidden="true"><use href="#i-wrench"></use></svg>Our services</a>
+          <a class="btn btn-ghost" href="#guides"><svg class="ic" aria-hidden="true"><use href="#i-book"></use></svg>Household guides</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><svg class="ic" aria-hidden="true"><use href="#i-phone"></use></svg>Book a visit by phone</div>
+        <div class="panel-body">
+          <a class="num" href="tel:01632960418" data-phone>01632 960 418</a>
+          <p class="num-note">A fictional number in a range reserved for drama. It does not connect.</p>
+          <ul class="hours" id="hours"></ul>
+          <a class="panel-link" href="#emergency"><svg class="ic" aria-hidden="true"><use href="#i-alert"></use></svg>Water pouring or smell gas? What to do first</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts"><div class="wrap" id="facts"></div></div>
+
+  <section class="block" id="services" aria-labelledby="svcH">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow"><i></i>Services</p><h2 id="svcH">What we do</h2></div>
+        <p>Heating, hot water and plumbing for homes. We explain what we find, quote before bigger work, and leave the place as tidy as we found it.</p>
+      </div>
+      <div class="grid4" id="svcGrid"></div>
+      <div class="gasband"><svg class="ic" aria-hidden="true"><use href="#i-shield"></use></svg><p style="margin:0" id="gasNote"></p></div>
+    </div>
+  </section>
+
+  <section class="block alt" id="book" aria-labelledby="bookH">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow"><i></i>How to book</p><h2 id="bookH">One phone call, a clear price</h2></div>
+        <p>We do not take bookings online. A short call lets us ask the right questions and bring the right parts.</p>
+      </div>
+      <ol class="steps" id="steps"></ol>
+      <div class="book-grid">
+        <div class="box">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-list"></use></svg>Handy to have when you ring</h3>
+          <ul class="checks" id="handy"></ul>
+        </div>
+        <div class="box box-call">
+          <h3><svg class="ic" aria-hidden="true"><use href="#i-clock"></use></svg>Office hours</h3>
+          <p id="hoursLine"></p>
+          <a class="call" href="tel:01632960418"><svg class="ic" aria-hidden="true"><use href="#i-phone"></use></svg><span data-phone>01632 960 418</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="areas" aria-labelledby="areaH">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow"><i></i>Areas covered</p><h2 id="areaH">Harrowby and the villages</h2></div>
+        <p id="areaIntro"></p>
+      </div>
+      <div class="areas">
+        <div class="map">
+          <svg id="map" viewBox="0 0 600 380" role="img" aria-label="Sketch map of Harrowby and the villages we cover"></svg>
+          <div class="legend"><span><i style="background:#ff6b1a"></i>Base</span><span><i style="background:#0e2240"></i>Every day</span><span><i style="background:#8aa0c0"></i>Weekdays</span><span>Not to scale</span></div>
+        </div>
+        <div>
+          <ul class="places" id="places"></ul>
+          <div class="place-info" id="placeInfo" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="emergency" aria-labelledby="emgH">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow"><i></i>Emergencies</p><h2 id="emgH">What to do first</h2></div>
+        <p id="emgIntro"></p>
+      </div>
+      <div class="notice"><svg class="ic" aria-hidden="true"><use href="#i-alert"></use></svg><p style="margin:0">Your safety comes before any repair. If anyone is in danger, call the emergency services. For anything involving gas, call a Gas Safe registered engineer.</p></div>
+      <div class="emg" id="emg"></div>
+    </div>
+  </section>
+
+  <section class="block" id="guides" aria-labelledby="gH">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow"><i></i>Household guides</p><h2 id="gH">Small jobs, explained</h2></div>
+        <p>Short guides for common jobs around the house, and when to stop and call someone. Every guide is general guidance, sample text for a demonstration, not professional advice.</p>
+      </div>
+      <div class="toolbar">
+        <label class="search"><span class="sr">Search the guides</span><svg class="ic" aria-hidden="true"><use href="#i-search"></use></svg><input id="q" type="search" placeholder="Search guides, e.g. radiator" autocomplete="off"></label>
+        <div class="chips" id="chips" role="group" aria-label="Filter guides by topic"></div>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <ul class="glist" id="glist"></ul>
+    </div>
+  </section>
+
+  <section class="block alt" id="faq" aria-labelledby="faqH">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow"><i></i>Questions</p><h2 id="faqH">Asked often</h2></div>
+        <p>Plain answers. If yours is not here, ring us.</p>
+      </div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+</main>
+
+<div class="reader" id="reader" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="rTitle" tabindex="-1" id="sheet">
+    <div class="sheet-h">
+      <span class="ibox" id="rIcon"></span>
+      <div class="meta"><small id="rCat"></small><h2 id="rTitle"></h2></div>
+      <button class="xbtn" id="rClose" type="button" aria-label="Close guide"><svg class="ic" aria-hidden="true"><use href="#i-close"></use></svg></button>
+    </div>
+    <div class="sheet-b" id="rBody"></div>
+    <div class="sheet-f">
+      <button class="nbtn" id="rPrev" type="button"><svg class="ic" aria-hidden="true"><use href="#i-left"></use></svg><span></span></button>
+      <button class="nbtn" id="rNext" type="button"><span></span><svg class="ic" aria-hidden="true"><use href="#i-right"></use></svg></button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 6 9v13c0 11 7.7 19.5 18 23 10.3-3.5 18-12 18-23V9z" fill="#23467a"/><path d="M24 12c5 5.4 7.5 9.2 7.5 13.2a7.5 7.5 0 0 1-15 0c0-4 2.5-7.8 7.5-13.2z" fill="#ff6b1a"/><path d="M24 22c2 2.1 3 3.7 3 5.2a3 3 0 0 1-6 0c0-1.5 1-3.1 3-5.2z" fill="#fff"/></svg><span class="bname"><strong>Quillon</strong><span>Heat &amp; Plumbing</span></span></a>
+        <p id="footTag"></p>
+        <p style="margin:0"><a href="tel:01632960418" data-phone>01632 960 418</a></p>
+      </div>
+      <div>
+        <h4>On this site</h4>
+        <ul><li><a href="#services">Services</a></li><li><a href="#book">How to book</a></li><li><a href="#areas">Areas covered</a></li><li><a href="#emergency">Emergencies</a></li><li><a href="#guides">Household guides</a></li></ul>
+      </div>
+      <div>
+        <h4>About this demo</h4>
+        <p id="demoNote"></p>
+        <p style="margin:0"><a href="https://newsroom.sgit.ai/articles/websites-you-own.html">Websites you own, on newsroom.sgit.ai</a></p>
+        <p class="studio"><a href="../../index.html">Built by Kitewing Websites, a made-up studio</a></p>
+      </div>
+    </div>
+    <div class="fnote">
+      <p style="margin:0">No customer reviews appear on this site: the business is invented, so any review would be invented too. The guides are general guidance, sample text for a demonstration, not professional advice.</p>
+      <div class="agent">
+        <strong>For an agent</strong>
+        This is the home page of Quillon Heat &amp; Plumbing, a fictional heating and plumbing firm made up for a newsroom.sgit.ai demonstration.
+        All text, guides, areas and the phone number are invented. The content lives in <code>content.json</code> next to this <code>index.html</code>.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FALLBACK = /*__DATA__*/{"site":{"name":"Quillon Heat & Plumbing","short":"Quillon","tagline":"Heating, hot water and plumbing for Harrowby and the villages around it.","phone":"01632 960 418","phoneHref":"tel:01632960418","hours":[{"days":"Monday to Friday","time":"8am to 6pm"},{"days":"Saturday","time":"9am to 1pm"},{"days":"Sunday","time":"Closed, emergency callbacks only"}],"demoNote":"Quillon Heat & Plumbing is a made-up business in the made-up town of Harrowby. This site is a fictional demonstration built by Kitewing Websites (also made up) for newsroom.sgit.ai. The phone number is in a range reserved for drama and does not connect to anyone.","articleUrl":"https://newsroom.sgit.ai/articles/websites-you-own.html","studioUrl":"../../index.html"},"hero":{"kicker":"Local heating and plumbing, Harrowby","title":"Warm rooms, hot water, no drips.","lead":"Boiler servicing and repairs, radiators, taps, toilets and leaks. Ring us, tell us what is going on, and we give you a time window and a clear price for the visit before we set off.","facts":[{"label":"Book by phone","value":"01632 960 418"},{"label":"Covering","value":"Harrowby + 10 villages"},{"label":"Guides","value":"Household how-tos below"}]},"services":[{"id":"service","icon":"boiler","title":"Boiler servicing","text":"A yearly check of your gas boiler by a Gas Safe registered engineer, with a written record you keep.","points":["Flue and safety checks","Pressure and controls checked","Service record for your files"]},{"id":"repair","icon":"wrench","title":"Boiler repairs","text":"No heating, no hot water, odd noises or a fault code on the display. We find the cause and explain it plainly.","points":["Fault finding","Parts quoted before fitting","Most common makes"]},{"id":"heating","icon":"radiator","title":"Central heating","text":"Radiators that stay cold, rooms that never warm up, or a system that needs balancing.","points":["Radiator swaps and moves","System balancing","Valves and thermostatic heads"]},{"id":"controls","icon":"thermostat","title":"Controls and thermostats","text":"Programmers, room thermostats and smart controls, fitted and set up so you understand them.","points":["Room thermostats","Programmers and timers","A walk-through before we leave"]},{"id":"plumbing","icon":"tap","title":"Everyday plumbing","text":"Dripping taps, running toilets, slow drains, leaks under the sink and noisy pipes.","points":["Taps and washers","Toilet cisterns","Leaks and pipework"]},{"id":"water","icon":"cylinder","title":"Hot water cylinders","text":"Hot water cylinders and immersion heaters, repaired or replaced, vented or unvented.","points":["Cylinder checks","Immersion heaters","Replacement quotes"]},{"id":"bathroom","icon":"shower","title":"Showers and bathrooms","text":"Showers that run cold or weak, new basins and toilets, and small bathroom refits.","points":["Shower valves","Basins and toilets","Small refits"]},{"id":"winter","icon":"snow","title":"Winter checks","text":"Pipe lagging, frost protection and a look over the system before the cold arrives.","points":["Lagging exposed pipes","Condensate pipe checks","Stopcock located and labelled"]}],"gasNote":"Gas work must only be done by a Gas Safe registered engineer. In a real firm you would see the engineer's card on arrival. In this demonstration there is no firm and no engineer.","areas":{"intro":"We are based in Harrowby and cover the villages within a short drive. If your village is not listed, ring and ask.","centre":{"name":"Harrowby","x":300,"y":200},"places":[{"name":"Harrowby","x":300,"y":200,"zone":"base","note":"Our base. Same-day visits are often possible."},{"name":"Little Harrowby","x":368,"y":150,"zone":"near","note":"Covered every day."},{"name":"Wenlow","x":222,"y":150,"zone":"near","note":"Covered every day."},{"name":"Crane's Ford","x":250,"y":268,"zone":"near","note":"Covered every day."},{"name":"Pelling Cross","x":388,"y":252,"zone":"near","note":"Covered every day."},{"name":"Ashby Fold","x":150,"y":210,"zone":"outer","note":"Covered on weekdays."},{"name":"Saltmarsh End","x":470,"y":300,"zone":"outer","note":"Covered on weekdays."},{"name":"Highnam Down","x":300,"y":72,"zone":"outer","note":"Covered on weekdays."},{"name":"Brackle","x":452,"y":104,"zone":"outer","note":"Covered on weekdays."},{"name":"Upper Tolley","x":140,"y":92,"zone":"outer","note":"Covered on weekdays."},{"name":"Stowe Marren","x":196,"y":324,"zone":"outer","note":"Covered on weekdays."}]},"booking":{"steps":[{"title":"Ring us","text":"Call 01632 960 418 in office hours. If we are out on a job, leave your name, number and village and we call you back the same day."},{"title":"Tell us what is happening","text":"What you can see or hear, how long it has been going on, and the make of boiler if it is a heating problem."},{"title":"Get a time and a price","text":"We give you a two-hour arrival window and the price of the visit before we book it in."},{"title":"We fix it, or quote it","text":"Small jobs are usually done on the first visit. Bigger work gets a written quote you can think about."}],"handy":["The make and model of your boiler (on a label on the front or underneath)","Any fault code showing on the display","Where your stopcock is, if you know","Whether anyone in the house is vulnerable to the cold"]},"emergency":{"intro":"Some problems cannot wait. These are the first things to do while help is on the way. They are general guidance for a demonstration, not professional advice.","cards":[{"id":"gas","icon":"flame","tone":"danger","title":"If you smell gas","steps":["Do not use light switches, sockets, doorbells or anything that could spark.","Do not smoke or use a naked flame.","Open doors and windows.","Turn off the gas at the meter if you can do it safely.","Leave the property and call the national gas emergency number from outside. It is printed on your gas bill and near your meter.","Any repair afterwards must be done by a Gas Safe registered engineer."]},{"id":"co","icon":"alarm","tone":"danger","title":"If your carbon monoxide alarm sounds","steps":["Open doors and windows and get everyone outside into fresh air.","Turn off gas appliances if you can do it safely on the way out.","If anyone feels unwell (headache, dizziness, sickness), get medical help straight away.","Call the national gas emergency number from outside.","Do not use the appliance again until a Gas Safe registered engineer has checked it."]},{"id":"burst","icon":"drop","tone":"warn","title":"If a pipe bursts or water is pouring","steps":["Turn off the water at the stopcock (usually under the kitchen sink).","If water is near electrics, sockets or a light fitting, do not touch them. Turn the electricity off at the consumer unit only if you can reach it while standing somewhere dry.","Open the cold taps to drain the pipes.","Catch what you can with buckets and towels.","Ring us, or any plumber, and tell them the water is off."]},{"id":"heat","icon":"radiator","tone":"info","title":"If the heating fails in a cold snap","steps":["Check the boiler display for a fault code and write it down.","Look at the pressure gauge and compare it with the normal range in your boiler manual.","In freezing weather, check the condensate pipe outside (see the guide below).","Keep one room warm with a safe portable heater and keep doors closed.","Ring us and tell us if anyone in the house is vulnerable to the cold."]}]},"categories":[{"id":"all","label":"All guides"},{"id":"heating","label":"Heating"},{"id":"boiler","label":"Boilers"},{"id":"water","label":"Water and leaks"},{"id":"winter","label":"Winter"},{"id":"safety","label":"Safety"}],"disclaimer":"General guidance, sample text for a demonstration, not professional advice.","gasLine":"Anything involving gas: call a Gas Safe registered engineer. Never open up a boiler or gas appliance yourself.","guides":[{"id":"bleed-radiator","cat":"heating","icon":"radiator","title":"Bleeding a radiator","time":"15 minutes","summary":"A radiator that is cold at the top usually has air trapped in it. Letting the air out is a common household job.","need":["A radiator key (from a hardware shop)","An old cloth or towel","A small container"],"steps":["Turn the heating off and wait until the radiators are cool to the touch.","Find the bleed valve: a small square fitting at one top corner of the radiator.","Hold the cloth under the valve and fit the key.","Turn the key slowly anticlockwise, about a quarter turn. You should hear a hiss as air escapes.","When water starts to dribble out instead of air, turn the key back clockwise to close it. Do not overtighten.","Check the boiler pressure gauge afterwards. Bleeding can lower it (see the boiler pressure guide).","Turn the heating back on and check the radiator warms evenly."],"stop":"If the valve will not turn, is damaged, or water keeps coming after you close it, stop and call a heating engineer."},{"id":"boiler-pressure","cat":"boiler","icon":"gauge","title":"Topping up boiler pressure","time":"10 minutes","summary":"Many combi boilers lose a little pressure over time. Your manual explains how to top it up using the filling loop.","need":["Your boiler manual (most are online under the model name)","A torch"],"steps":["Find the pressure gauge on the boiler or just below it. Most gauges have a marked normal range.","Read the manual for your exact boiler before you touch anything. Filling loops differ between makes.","With the heating off and the system cool, locate the filling loop: usually a flexible hose or a built-in key or lever under the boiler.","Open the valves slowly, as the manual describes, and watch the gauge rise.","Close the valves once the needle is within the normal range shown in your manual. Do not go above it.","If your filling loop is a detachable hose, follow your manual about whether to remove it afterwards."],"stop":"If the pressure keeps dropping, if you see water leaking, or if you are unsure which part is which, stop and call a Gas Safe registered engineer. Never remove the boiler casing."},{"id":"condensate","cat":"winter","icon":"snow","title":"Thawing a frozen condensate pipe","time":"20 minutes","summary":"Condensing boilers drain water through a plastic pipe, often running outside. In a hard frost it can freeze and stop the boiler.","need":["A kettle or jug of warm water","Old towels","Good footwear for icy ground"],"steps":["Check the display. Some boilers show a specific fault code or a gurgling noise when the condensate pipe is blocked.","Follow the grey or white plastic pipe from the boiler to where it leaves the house and runs to a drain.","Look for the frozen part, often the lowest bend or the open end.","Pour warm water (not boiling) slowly along the pipe, or hold a warm cloth on it.","Take care not to create ice on the ground where you or others walk.","Once it is clear, reset the boiler following your manual."],"stop":"Never use boiling water or a flame. If you cannot reach the pipe safely, or the boiler will not restart, call a Gas Safe registered engineer."},{"id":"stopcock","cat":"water","icon":"valve","title":"Finding your stopcock","time":"10 minutes","summary":"The stopcock turns off the water to the whole house. Knowing where it is before you need it saves a lot of mess.","need":["A torch","A label or tag"],"steps":["Look under the kitchen sink first. This is the most common place.","If it is not there, check a downstairs toilet, airing cupboard, utility room, cellar or under the stairs.","It looks like a tap or lever on a pipe, often where the water supply comes in through the floor.","Turn it clockwise to close. It may be stiff if it has not been used for years.","Turn it back anticlockwise to open, then back a fraction so it does not stick.","Label it and tell everyone in the house where it is."],"stop":"If it will not move with hand pressure, do not force it with tools. Ring a plumber to free or replace it."},{"id":"dripping-tap","cat":"water","icon":"tap","title":"A dripping tap","time":"30 minutes","summary":"Most drips come from a worn washer or cartridge. Whether you change it yourself depends on the type of tap.","need":["Adjustable spanner","Replacement washer or cartridge to match","A plug for the sink"],"steps":["Put the plug in so small parts cannot fall down the drain.","Turn off the water to the tap, using the isolation valve under the sink or the stopcock.","Open the tap to let the remaining water out.","Remove the handle cover and loosen the headgear, as the tap maker describes.","Swap the washer or cartridge for a matching one.","Reassemble, turn the water back on slowly and check for drips."],"stop":"If the tap body is cracked, the fittings are seized, or you cannot isolate the water, leave it and book a plumber."},{"id":"running-toilet","cat":"water","icon":"toilet","title":"A toilet that keeps running","time":"20 minutes","summary":"Water trickling into the pan after a flush usually means the fill valve or the flush valve seal needs attention.","need":["Towels","A torch"],"steps":["Lift the cistern lid carefully and put it somewhere safe. It is heavy and breaks easily.","Watch the water level. If it rises above the overflow, the fill valve needs adjusting.","Most fill valves have an adjuster or a float you can lower a little.","If water runs into the pan without reaching the overflow, the flush valve seal is probably worn.","Isolate the water and follow the maker's instructions to replace the seal, or book a plumber."],"stop":"If you see cracks in the cistern or water around the base of the toilet, turn the water off and call a plumber."},{"id":"blocked-sink","cat":"water","icon":"sink","title":"A slow or blocked sink","time":"20 minutes","summary":"Grease, hair and food build up in the trap under the sink. Clearing it by hand is often enough.","need":["A sink plunger","A bucket","Rubber gloves"],"steps":["Remove the plug and any visible debris from the plughole.","Block the overflow with a damp cloth and use the plunger with a little water in the sink.","If that does not work, put a bucket under the trap (the U-shaped pipe) and unscrew it by hand.","Clean it out, check the seals and screw it back hand tight.","Run water and check for leaks under the sink."],"stop":"Avoid mixing drain chemicals. If several drains are slow at once, the problem is further down and needs a plumber or drainage company."},{"id":"cold-at-bottom","cat":"heating","icon":"radiator","title":"Radiator cold at the bottom","time":"5 minutes to check","summary":"A radiator that is warm at the top and cold at the bottom often has sludge settled inside it.","need":["Your hand, carefully","A note of which radiators are affected"],"steps":["With the heating on, feel the radiator from top to bottom, taking care as it may be hot.","Note which radiators are cold at the bottom and which are fine.","If it is only one radiator, it may need removing and flushing.","If several are affected, the whole system may need cleaning.","Tell your engineer what you found when you book."],"stop":"Flushing a system and removing radiators is work for a heating engineer."},{"id":"no-heat-one-room","cat":"heating","icon":"thermostat","title":"One radiator will not warm up","time":"10 minutes","summary":"A single cold radiator is often down to a closed valve or a stuck thermostatic valve pin.","need":["A cloth","Nothing else to start with"],"steps":["Check both valves at the ends of the radiator are open.","If it has a thermostatic head with numbers, turn it to its highest setting.","Remove the head (most unscrew by hand) and look for a small pin underneath.","Press the pin gently. It should spring back. If it is stuck down, it can sometimes be freed by tapping it lightly.","Refit the head and give the radiator time to warm."],"stop":"If the pin will not move or water appears around the valve, stop and call a heating engineer."},{"id":"thermostat-basics","cat":"heating","icon":"thermostat","title":"Understanding your thermostat and timer","time":"15 minutes","summary":"The room thermostat decides when the house is warm enough. The timer decides when heating is allowed to run.","need":["The manual for your controls, or the model name"],"steps":["Find the room thermostat. It is often in a hallway or living room.","Find the timer or programmer, usually near the boiler or in the airing cupboard.","Set the timer for the hours you are normally at home and awake.","Set the room thermostat to a comfortable setting and leave it, rather than turning it up and down.","Use the radiator valves to make individual rooms cooler.","Check the clock on the timer after a power cut or clock change."],"stop":"If the controls do not seem to switch the boiler on and off, ask a heating engineer to check the wiring and settings."},{"id":"service-prep","cat":"boiler","icon":"boiler","title":"Getting ready for a boiler service","time":"10 minutes","summary":"A few minutes before the engineer arrives makes the visit quicker.","need":["Your previous service record if you have it"],"steps":["Clear a path to the boiler and space around it.","Have the make and model to hand.","Note any noises, leaks or fault codes you have seen since the last service.","Know where your gas meter and stopcock are.","Ask to see the engineer's Gas Safe ID card when they arrive."],"stop":"If anyone offers to service a gas boiler without being Gas Safe registered, do not let them."},{"id":"going-away","cat":"winter","icon":"home","title":"Going away in winter","time":"10 minutes","summary":"An empty, unheated house is where frozen and burst pipes tend to happen.","need":["Your heating controls"],"steps":["Leave the heating on a frost or low setting rather than off. Your controls manual explains the frost setting.","Open loft hatches and under-sink cupboards so warm air reaches the pipes.","Check outside taps are isolated and drained if they have their own valve.","Leave a key and the stopcock location with a neighbour.","Ask someone to look in if the weather turns very cold."],"stop":"If you come back to a leak or no water, turn off the stopcock and call a plumber."},{"id":"lagging","cat":"winter","icon":"pipe","title":"Lagging exposed pipes","time":"1 hour","summary":"Foam lagging on pipes in lofts, garages and outside walls helps stop them freezing.","need":["Foam pipe lagging to fit your pipe size","Scissors","Tape"],"steps":["Find pipes in unheated places: loft, garage, outside walls, under floors.","Measure the pipe width and buy lagging to fit.","Slip the lagging over the pipe and tape the joins.","Cover bends and valves as well as straight runs.","Leave stopcocks and valves easy to reach."],"stop":"Take care in lofts: step only on joists or boards, and do not lift insulation near electrical fittings."},{"id":"low-pressure","cat":"water","icon":"drop","title":"Low water pressure at a tap","time":"15 minutes","summary":"If only one tap is weak, the problem is often a clogged filter or a part-closed valve.","need":["A cloth","An old toothbrush"],"steps":["Check whether the problem is one tap, one room or the whole house.","For a single tap, unscrew the aerator on the end of the spout and clean it.","Check the isolation valve under the sink is fully open.","If the whole house is affected, ask neighbours. It may be a supply issue for your water company.","Check the stopcock is fully open."],"stop":"If pressure drops suddenly with no reason, or you can hear water running when all taps are off, there may be a leak. Call a plumber."},{"id":"noisy-pipes","cat":"heating","icon":"wave","title":"Banging or noisy pipes","time":"10 minutes to check","summary":"Knocking, banging and whistling pipes usually point to loose clips, air, or water pressure changes.","need":["A torch","A note of when the noise happens"],"steps":["Note when it happens: when a tap closes, when the heating starts, or all the time.","Banging when a tap shuts quickly can be water hammer. Try closing taps more slowly.","Look for pipes you can see that move when water runs. Loose clips can often be tightened.","Gurgling in radiators can mean air. See the radiator bleeding guide.","Kettling noises from a boiler need an engineer to look at it."],"stop":"Any loud or new noise from the boiler itself: stop using it if it sounds wrong and call a Gas Safe registered engineer."},{"id":"co-alarm","cat":"safety","icon":"alarm","title":"Carbon monoxide alarms","time":"10 minutes","summary":"Carbon monoxide has no smell or colour. An audible alarm is the way to know it is there.","need":["An audible carbon monoxide alarm","The alarm's instructions"],"steps":["Fit an alarm in any room with a fuel-burning appliance, following the maker's instructions.","Test it regularly with the test button.","Know the difference between the alarm sound and the low battery chirp.","Replace it at the end of its life. The date is on the back.","Learn the warning signs: headaches, dizziness, sickness that ease when you go outside."],"stop":"If it sounds, follow the emergency steps on this page and get a Gas Safe registered engineer to check appliances."},{"id":"gas-smell","cat":"safety","icon":"flame","title":"If you smell gas","time":"Read now, before you need it","summary":"What to do in the first minutes if you smell gas at home.","need":["Know where your gas meter is","Know where the emergency number is printed (gas bill and near the meter)"],"steps":["Do not touch light switches, sockets or anything that could spark.","Put out any naked flames and do not smoke.","Open doors and windows.","Turn off the gas at the meter if you can safely reach it.","Leave the property and call the national gas emergency number from outside.","Wait for help outside."],"stop":"Never try to find or fix a gas leak yourself. All gas work must be done by a Gas Safe registered engineer."},{"id":"shower-cold","cat":"water","icon":"shower","title":"Shower running cold or weak","time":"15 minutes","summary":"A cold or weak shower can be a blocked head, a hot water problem or a faulty valve.","need":["Descaler or vinegar","A bowl"],"steps":["Check other hot taps. If they are cold too, the problem is the hot water supply, not the shower.","Unscrew the shower head and soak it to remove limescale.","Check the hose is not kinked.","For an electric shower, check its own switch and trip at the consumer unit.","Run it again and note what changed."],"stop":"Electric showers and their wiring are for a qualified electrician. Gas hot water problems need a Gas Safe registered engineer."},{"id":"leak-under-sink","cat":"water","icon":"drop","title":"A leak under the sink","time":"15 minutes","summary":"A slow drip in the cupboard under the sink is easy to miss and worth catching early.","need":["A torch","Kitchen roll","A small bowl"],"steps":["Empty the cupboard and dry everything with kitchen roll.","Run the tap and watch with a torch to see where the water appears.","If it is the waste trap, hand tighten the joints and check the seals.","If it is a supply pipe or valve, turn off the isolation valve or stopcock.","Put a bowl underneath and book a plumber."],"stop":"If the cupboard floor is soft or swollen, the leak may have been there a while. Turn the water off and call a plumber."}],"faq":[{"q":"Do you charge a call-out fee?","a":"We tell you the price of the visit on the phone before we book it, so there are no surprises. (In this demonstration there are no real prices.)"},{"q":"Can I book online?","a":"Not on this site. We book by phone so we can ask the right questions. This site is static and has no booking system."},{"q":"Are your engineers Gas Safe registered?","a":"A real heating firm must be for any gas work, and you should always ask to see the ID card. This is a fictional demonstration, so there are no engineers here."},{"q":"Are the guides on this site professional advice?","a":"No. They are general guidance, written as sample text for a demonstration. If in doubt, stop and call a qualified engineer."}]};
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function icon(n){return '<svg class="ic" aria-hidden="true"><use href="#i-'+n+'"></use></svg>'}
+function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
+const $=id=>document.getElementById(id);
+
+async function loadData(){
+  let data=null;
+  try { if (window.sg && sg.vfs) data = JSON.parse(await sg.vfs.readText('content.json')) } catch(e){}
+  if(!data){ try { const r = await fetch('content.json'); if(r.ok) data = await r.json() } catch(e){} }
+  if(!data || !data.guides) data = FALLBACK;
+  return data;
+}
+
+function render(D){
+  const S=D.site;
+  document.querySelectorAll('[data-phone]').forEach(n=>{n.textContent=S.phone});
+  document.querySelectorAll('a[href^="tel:"]').forEach(a=>a.setAttribute('href',S.phoneHref));
+
+  $('heroKicker').textContent=D.hero.kicker;
+  $('heroTitle').textContent=D.hero.title;
+  $('heroLead').textContent=D.hero.lead;
+  $('hours').innerHTML=S.hours.map(h=>'<li><span>'+esc(h.days)+'</span><span>'+esc(h.time)+'</span></li>').join('');
+  $('hoursLine').textContent=S.hours.map(h=>h.days+': '+h.time).join('. ')+'. If we are out on a job, leave a message and we ring back the same day.';
+  const facts=$('facts');
+  D.hero.facts.forEach(f=>{const d=el('div','fact');d.appendChild(el('small',null,esc(f.label)));d.appendChild(el('b',null,esc(f.value)));facts.appendChild(d)});
+
+  const svcG=$('svcGrid');
+  D.services.forEach(s=>{
+    const a=el('article','svc');
+    const ib=el('div','ibox',icon(s.icon));a.appendChild(ib);
+    a.appendChild(el('h3',null,esc(s.title)));
+    a.appendChild(el('p',null,esc(s.text)));
+    a.appendChild(el('ul',null,s.points.map(p=>'<li>'+icon('check')+'<span>'+esc(p)+'</span></li>').join('')));
+    svcG.appendChild(a);
+  });
+  $('gasNote').innerHTML='<b>Gas work.</b> '+esc(D.gasNote);
+
+  $('steps').innerHTML=D.booking.steps.map(s=>'<li><h3>'+esc(s.title)+'</h3><p>'+esc(s.text)+'</p></li>').join('');
+  $('handy').innerHTML=D.booking.handy.map(h=>'<li>'+icon('check')+'<span>'+esc(h)+'</span></li>').join('');
+
+  renderAreas(D.areas);
+
+  $('emgIntro').textContent=D.emergency.intro;
+  const eg=$('emg');
+  D.emergency.cards.forEach(c=>{
+    const a=el('article','ecard '+c.tone);
+    a.appendChild(el('h3','ecard-h',icon(c.icon)+'<span>'+esc(c.title)+'</span>'));
+    a.appendChild(el('ol',null,c.steps.map(s=>'<li>'+esc(s)+'</li>').join('')));
+    eg.appendChild(a);
+  });
+
+  renderGuides(D);
+
+  $('faqList').innerHTML=D.faq.map(f=>'<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>').join('');
+  $('footTag').textContent=S.tagline;
+  $('demoNote').textContent=S.demoNote;
+}
+
+function renderAreas(A){
+  $('areaIntro').textContent=A.intro;
+  const svg=$('map');
+  const c=A.centre;
+  const col={base:'#ff6b1a',near:'#0e2240',outer:'#8aa0c0'};
+  let s='';
+  s+='<rect x="0" y="0" width="600" height="380" fill="#f3f6fa"/>';
+  s+='<path d="M0 300 C 90 280, 130 250, 200 240 S 330 300, 420 280 S 540 200, 600 210" fill="none" stroke="#bcd3ee" stroke-width="14" stroke-linecap="round"/>';
+  s+='<circle cx="'+c.x+'" cy="'+c.y+'" r="215" fill="none" stroke="#c7d1de" stroke-dasharray="6 8"/>';
+  s+='<circle cx="'+c.x+'" cy="'+c.y+'" r="115" fill="#e8f0fb" stroke="#9fb3cf" stroke-dasharray="6 8"/>';
+  A.places.forEach(p=>{ if(p.zone!=='base') s+='<line x1="'+c.x+'" y1="'+c.y+'" x2="'+p.x+'" y2="'+p.y+'" stroke="#d4dbe5" stroke-width="3"/>'; });
+  const list=$('places');
+  const info=$('placeInfo');
+  const items=[];
+  function pick(i){
+    items.forEach((it,j)=>{it.g.classList.toggle('on',i===j);it.b.setAttribute('aria-pressed',String(i===j))});
+    const p=A.places[i];
+    info.innerHTML='<b>'+esc(p.name)+'</b>'+esc(p.note);
+  }
+  A.places.forEach(p=>{
+    const r=p.zone==='base'?13:8;
+    s+='<g class="pl"><circle class="dot" cx="'+p.x+'" cy="'+p.y+'" r="'+r+'" fill="'+col[p.zone]+'" stroke="#fff" stroke-width="3"/>'+
+      '<text x="'+p.x+'" y="'+(p.y+r+19)+'" text-anchor="middle"'+(p.zone==='base'?' style="font-weight:800;font-size:18px"':'')+'>'+esc(p.name)+'</text></g>';
+  });
+  svg.innerHTML=s;
+  const gs=svg.querySelectorAll('.pl');
+  A.places.forEach((p,i)=>{
+    const g=gs[i];
+    g.addEventListener('click',()=>pick(i));
+    const li=el('li');const b=el('button',null,'<i style="background:'+col[p.zone]+'"></i><span>'+esc(p.name)+'</span>');
+    b.type='button';b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>pick(i));
+    li.appendChild(b);list.appendChild(li);
+    items.push({g:g,b:b});
+  });
+  pick(0);
+}
+
+let G={all:[],shown:[],cat:'all',q:'',cats:{},idx:-1,lastFocus:null,data:null};
+function renderGuides(D){
+  G.data=D;G.all=D.guides;
+  D.categories.forEach(c=>G.cats[c.id]=c.label);
+  const chips=$('chips');
+  D.categories.forEach(c=>{
+    const b=el('button','chip',esc(c.label));b.type='button';b.setAttribute('aria-pressed',String(c.id==='all'));
+    b.addEventListener('click',()=>{G.cat=c.id;chips.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));drawList()});
+    chips.appendChild(b);
+  });
+  $('q').addEventListener('input',e=>{G.q=e.target.value.trim().toLowerCase();drawList()});
+  drawList();
+  $('rClose').addEventListener('click',closeReader);
+  $('reader').addEventListener('click',e=>{if(e.target.id==='reader')closeReader()});
+  $('rPrev').addEventListener('click',()=>openGuide(G.idx-1));
+  $('rNext').addEventListener('click',()=>openGuide(G.idx+1));
+  document.addEventListener('keydown',e=>{
+    if(!$('reader').classList.contains('open'))return;
+    if(e.key==='Escape')closeReader();
+    if(e.key==='ArrowLeft'&&G.idx>0)openGuide(G.idx-1);
+    if(e.key==='ArrowRight'&&G.idx<G.shown.length-1)openGuide(G.idx+1);
+  });
+}
+function drawList(){
+  const q=G.q;
+  G.shown=G.all.filter(g=>(G.cat==='all'||g.cat===G.cat)&&(!q||(g.title+' '+g.summary+' '+g.steps.join(' ')).toLowerCase().includes(q)));
+  const ul=$('glist');ul.innerHTML='';
+  $('count').textContent=G.shown.length+' of '+G.all.length+' guides';
+  if(!G.shown.length){const li=el('li','empty','No guides match. Try another word, or ring us.');li.style.gridColumn='1/-1';ul.appendChild(li);return}
+  G.shown.forEach((g,i)=>{
+    const li=el('li');
+    const b=el('button','gcard '+g.cat);b.type='button';
+    const top=el('span','gtop');
+    const ib=el('span','ibox',icon(g.icon));
+    const meta=el('span',null,'<span class="gcat">'+esc(G.cats[g.cat]||g.cat)+'</span><br><span class="gtime">'+esc(g.time)+'</span>');
+    top.appendChild(ib);top.appendChild(meta);
+    b.appendChild(top);
+    b.appendChild(el('h3',null,esc(g.title)));
+    b.appendChild(el('p',null,esc(g.summary)));
+    b.appendChild(el('span','gmore','Read the guide'+icon('right')));
+    b.addEventListener('click',()=>{G.lastFocus=b;openGuide(i)});
+    li.appendChild(b);ul.appendChild(li);
+  });
+}
+function isGas(g){return /gas|boiler/i.test(g.title+' '+g.summary+' '+g.steps.join(' ')+' '+g.stop)}
+function openGuide(i){
+  if(i<0||i>=G.shown.length)return;
+  G.idx=i;const g=G.shown[i];const D=G.data;
+  $('rIcon').innerHTML=icon(g.icon);
+  $('rCat').textContent=(G.cats[g.cat]||g.cat)+' · '+g.time;
+  $('rTitle').textContent=g.title;
+  let h='<p class="disc">'+icon('alert')+'<span>'+esc(D.disclaimer)+'</span></p>';
+  h+='<p class="sum">'+esc(g.summary)+'</p>';
+  if(isGas(g)) h+='<p class="gasline">'+icon('flame')+'<span>'+esc(D.gasLine)+'</span></p>';
+  h+='<h3>You will need</h3><ul class="need">'+g.need.map(n=>'<li>'+esc(n)+'</li>').join('')+'</ul>';
+  h+='<h3>Steps</h3><ol class="do">'+g.steps.map(s=>'<li><span>'+esc(s)+'</span></li>').join('')+'</ol>';
+  h+='<p class="stop">'+icon('alert')+'<span><b>When to stop and call someone.</b> '+esc(g.stop)+'</span></p>';
+  $('rBody').innerHTML=h;
+  const p=$('rPrev'),n=$('rNext');
+  p.disabled=i===0;p.style.visibility=i===0?'hidden':'visible';
+  n.disabled=i===G.shown.length-1;n.style.visibility=n.disabled?'hidden':'visible';
+  p.querySelector('span').textContent=i>0?G.shown[i-1].title:'';
+  n.querySelector('span').textContent=i<G.shown.length-1?G.shown[i+1].title:'';
+  const r=$('reader');
+  if(!r.classList.contains('open')){r.classList.add('open');r.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+  r.scrollTop=0;$('sheet').focus();
+}
+function closeReader(){
+  const r=$('reader');r.classList.remove('open');r.setAttribute('aria-hidden','true');document.body.style.overflow='';
+  if(G.lastFocus)G.lastFocus.focus();
+}
+
+(async function(){
+  const D=await loadData();
+  render(D);
+  try { window.parent && window.parent.postMessage({type:'sg-app-ready'},'*') } catch(e){}
+})();
+</script>
+</body>
+</html>

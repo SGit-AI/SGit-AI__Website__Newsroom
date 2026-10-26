@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fennick Lane Community Garden</title>
+<meta name="description" content="Fennick Lane Community Garden, a fictional community group in Harrowby. A demonstration site built for newsroom.sgit.ai.">
+<style>
+:root{
+  --leaf:#2f7a3d; --leaf-d:#1f5a2b; --leaf-l:#7cbf5a; --mint:#e6f3dc; --sun:#f7c531; --sun-l:#fff1bf;
+  --soil:#6b4a2f; --tom:#e05a3a; --cream:#fffaf0; --ink:#21301f; --muted:#56664f; --card:#ffffff;
+  --line:#d9e8cc; --r:22px; --r-l:36px;
+  --font:"ui-rounded","Nunito","SF Pro Rounded","Varela Round",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;overflow-wrap:break-word}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,4.5vw,2.5rem);color:var(--leaf-d)}
+h3{font-size:1.15rem}
+p{margin:0 0 1em}
+a{color:var(--leaf-d)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+@media (max-width:480px){.wrap{padding:0 16px}}
+svg{display:block}
+
+/* demo strip */
+.demo{background:var(--leaf-d);color:#eaf6df;font-size:.85rem;text-align:center;padding:7px 16px}
+.demo a{color:var(--sun-l)}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(255,250,240,.94);backdrop-filter:blur(6px);border-bottom:2px dashed var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--leaf-d);font-weight:800;font-size:1.1rem;line-height:1.1}
+.brand small{display:block;font-weight:600;color:var(--muted);font-size:.75rem}
+.brand .mark{width:42px;height:42px;flex:none}
+nav.pills{display:flex;gap:6px;margin-left:auto;overflow-x:auto;max-width:100%;scrollbar-width:none;padding:2px}
+nav.pills::-webkit-scrollbar{display:none}
+nav.pills a{flex:none;text-decoration:none;color:var(--ink);background:var(--mint);padding:6px 14px;border-radius:999px;font-weight:700;font-size:.9rem}
+nav.pills a:hover{background:var(--sun)}
+@media (max-width:760px){nav.pills{margin-left:0;width:100%}}
+
+/* hero */
+.hero{position:relative;padding:48px 0 36px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,6.5vw,4.1rem);color:var(--leaf-d);font-weight:900}
+.hero h1 span{background:linear-gradient(transparent 62%,var(--sun) 62%);padding:0 4px;border-radius:6px}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:36em}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-block;text-decoration:none;font-weight:800;padding:12px 22px;border-radius:999px;border:0;background:var(--leaf);color:#fff;box-shadow:0 4px 0 var(--leaf-d)}
+.btn.alt{background:var(--sun);color:var(--ink);box-shadow:0 4px 0 #c99a12}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--leaf-d)}
+.meet{margin-top:20px;background:var(--card);border-radius:var(--r);padding:14px 18px;border:2px solid var(--line);display:flex;gap:12px;align-items:flex-start;max-width:36em}
+.meet svg{flex:none;width:34px;height:34px}
+.meet p{margin:0;font-size:.95rem}
+.art{width:100%;max-width:440px;justify-self:center}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.art{max-width:320px;order:-1}}
+
+/* sections */
+section{padding:56px 0;scroll-margin-top:110px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--leaf);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin-bottom:8px}
+.kicker svg{width:22px;height:22px}
+.sub{color:var(--muted);max-width:42em;font-size:1.05rem}
+.band{background:var(--mint);border-radius:var(--r-l);margin:0 12px}
+@media (max-width:480px){.band{margin:0 6px;border-radius:26px}}
+.wave{display:block;width:100%;height:28px}
+
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));margin-top:24px}
+.card{background:var(--card);border-radius:var(--r);padding:20px;border:2px solid var(--line);position:relative}
+.card .ic{width:56px;height:56px;border-radius:50%;background:var(--sun-l);display:grid;place-items:center;margin-bottom:10px}
+.card .ic svg{width:36px;height:36px}
+.card p{margin:0;color:var(--muted)}
+
+/* plots */
+.plots{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
+@media (max-width:820px){.plots{grid-template-columns:1fr}}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.fact{background:var(--card);border-radius:var(--r);padding:16px;text-align:center;border:2px solid var(--line)}
+.fact b{display:block;font-size:1.7rem;color:var(--leaf);line-height:1.1}
+.fact span{font-size:.85rem;color:var(--muted)}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:12px 14px 12px 58px;background:var(--card);border-radius:var(--r);margin-bottom:10px;border:2px solid var(--line)}
+ol.steps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:34px;height:34px;border-radius:50%;background:var(--sun);display:grid;place-items:center;font-weight:900}
+.note{font-size:.9rem;color:var(--muted);background:var(--sun-l);border-radius:16px;padding:10px 14px}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.chip{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;font-weight:700;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--leaf);border-color:var(--leaf);color:#fff}
+
+/* events */
+.events{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));margin-top:16px}
+.ev{display:flex;gap:14px;background:var(--card);border-radius:var(--r);padding:16px;border:2px solid var(--line)}
+.ev .date{flex:none;width:68px;height:76px;border-radius:20px 20px 28px 28px;background:var(--sun);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.ev .date b{font-size:1.7rem}
+.ev .date span{font-size:.75rem;font-weight:800;text-transform:uppercase;margin-top:3px}
+.ev .body{min-width:0}
+.ev h3{margin-bottom:4px}
+.ev .meta{font-size:.85rem;color:var(--muted);margin-bottom:6px}
+.ev p{font-size:.95rem;margin:0}
+.ev .bring{margin-top:8px;font-size:.85rem;background:var(--mint);display:inline-block;padding:3px 10px;border-radius:999px}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:2px 9px;border-radius:999px;background:var(--mint);color:var(--leaf-d);margin-bottom:6px}
+.tag.Family{background:#ffe2d8;color:#a33a1f}.tag.Social{background:var(--sun-l);color:#7a5a00}.tag.Meeting{background:#e8e4f7;color:#4a3c87}.tag.Sale,.tag.Swap{background:#dff1f3;color:#1d6670}
+
+/* rota */
+.rota{margin-top:20px;display:grid;gap:10px}
+.rrow{display:grid;grid-template-columns:170px repeat(4,minmax(0,1fr));gap:8px;align-items:stretch}
+.rrow > *{background:var(--card);border-radius:16px;padding:10px 12px;font-size:.92rem;border:2px solid var(--line)}
+.rrow.head > *{background:var(--leaf);color:#fff;border-color:var(--leaf);font-weight:800}
+.rrow .wk{font-weight:800;background:var(--sun-l);border-color:var(--sun-l)}
+.rrow .want{background:#fff;border-style:dashed;color:var(--tom);font-weight:700}
+.rrow .lbl{display:none}
+@media (max-width:760px){
+  .rrow.head{display:none}
+  .rrow{grid-template-columns:1fr 1fr;background:var(--card);border-radius:var(--r);padding:12px;border:2px solid var(--line)}
+  .rrow > *{border:0;padding:6px 8px;background:var(--mint)}
+  .rrow .wk{grid-column:1/-1;background:var(--sun-l)}
+  .rrow .want{background:#fff4f0}
+  .rrow .lbl{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:800}
+}
+
+/* news */
+.news{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));margin-top:20px}
+.news article{background:var(--card);border-radius:var(--r) var(--r) var(--r) 6px;padding:18px;border:2px solid var(--line)}
+.news time{font-size:.8rem;font-weight:800;color:var(--leaf);text-transform:uppercase;letter-spacing:.05em}
+.news p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* guides */
+.guides{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));margin-top:16px}
+.gcard{display:flex;flex-direction:column;align-items:flex-start;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:var(--r);padding:16px;color:var(--ink);transition:transform .15s,border-color .15s}
+.gcard:hover{transform:translateY(-3px) rotate(-.4deg);border-color:var(--leaf-l)}
+.gcard .ic{width:52px;height:52px;border-radius:18px;background:var(--mint);display:grid;place-items:center;margin-bottom:10px}
+.gcard .ic svg{width:34px;height:34px}
+.gcard .gt{display:block;font-weight:800;margin-bottom:4px;font-size:1.05rem;line-height:1.25}
+.gcard .gl{display:block;margin:0 0 10px;color:var(--muted);font-size:.9rem}
+.gcard .foot{margin-top:auto;font-size:.8rem;font-weight:800;color:var(--leaf)}
+.count{font-size:.9rem;color:var(--muted)}
+
+/* reader */
+.reader{position:fixed;inset:0;z-index:50;background:rgba(31,58,30,.55);display:flex;align-items:flex-start;justify-content:center;padding:24px 12px;overflow-y:auto}
+.reader[hidden]{display:none}
+.sheet{background:var(--cream);border-radius:30px;max-width:680px;width:100%;padding:28px;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+@media (max-width:480px){.sheet{padding:20px 18px;border-radius:24px}}
+.sheet .x{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:0;background:var(--mint);font-size:1.4rem;font-weight:900;line-height:1;color:var(--leaf-d)}
+.sheet .hd{display:flex;gap:14px;align-items:center;margin:0 48px 14px 0}
+.sheet .hd .ic{flex:none;width:64px;height:64px;border-radius:22px;background:var(--sun-l);display:grid;place-items:center}
+.sheet .hd .ic svg{width:42px;height:42px}
+.sheet h2{font-size:clamp(1.4rem,5vw,1.9rem);margin:4px 0 0}
+.sheet .lead{font-size:1.1rem}
+.sheet ol{padding-left:1.3em}
+.sheet ol li{margin-bottom:8px}
+.sheet .tip{background:var(--sun-l);border-radius:18px;padding:12px 16px;margin:16px 0}
+.sheet .nav2{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:18px}
+.sheet .nav2 button{border:2px solid var(--line);background:var(--card);border-radius:999px;padding:8px 16px;font-weight:700;max-width:100%}
+.sheet .demo-mini{font-size:.8rem;color:var(--muted);margin-top:14px}
+
+/* footer */
+footer{background:var(--leaf-d);color:#e6f3dc;margin-top:56px;padding:44px 0 28px;border-radius:40px 40px 0 0}
+footer a{color:var(--sun-l)}
+.fgrid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+footer h3{color:#fff}
+.agent{margin-top:28px;border:2px dashed rgba(230,243,220,.5);border-radius:18px;padding:12px 16px;font-size:.85rem}
+.agent strong{color:var(--sun)}
+.studio{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gcard{transition:none}}
+</style>
+</head>
+<body>
+<div class="demo" role="note">A fictional demonstration site built for newsroom.sgit.ai. <a href="https://newsroom.sgit.ai/articles/websites-you-own.html">Read the article</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Fennick Lane Community Garden, top of page">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#fff1bf"/><path d="M24 40V20" stroke="#1f5a2b" stroke-width="3" stroke-linecap="round"/><path d="M24 26c-9 0-13-6-13-13 8 0 13 5 13 13z" fill="#2f7a3d"/><path d="M24 22c0-8 5-12 13-12 0 8-5 12-13 12z" fill="#7cbf5a"/></svg>
+      <span id="brandName">Fennick Lane<small>Community Garden, Harrowby</small></span>
+    </a>
+    <nav class="pills" aria-label="Sections">
+      <a href="#grow">What we grow</a><a href="#plots">Plots</a><a href="#events">Events</a><a href="#rota">Rota</a><a href="#news">News</a><a href="#guides">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1 id="heroTitle">Fennick Lane <span>Community Garden</span></h1>
+        <p class="lead" id="tagline"></p>
+        <p id="intro"></p>
+        <div class="btns"><a class="btn" href="#events">See what's on</a><a class="btn alt" href="#plots">Get a plot</a></div>
+        <div class="meet">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="9" fill="#f7c531"/><g stroke="#f7c531" stroke-width="3" stroke-linecap="round"><path d="M20 3v5M20 32v5M3 20h5M32 20h5M8 8l3.5 3.5M28.5 28.5L32 32M8 32l3.5-3.5M28.5 11.5L32 8"/></g></svg>
+          <p id="meet"></p>
+        </div>
+      </div>
+      <svg class="art" viewBox="0 0 400 360" role="img" aria-label="Illustration of sunflowers, leaves and vegetables growing in a raised bed">
+        <ellipse cx="200" cy="200" rx="190" ry="150" fill="#e6f3dc"/>
+        <circle cx="320" cy="70" r="34" fill="#f7c531" opacity=".55"/>
+        <g>
+          <path d="M120 300V120" stroke="#2f7a3d" stroke-width="7" stroke-linecap="round"/>
+          <path d="M120 220c-30 0-48-18-50-42 26 0 48 16 50 42z" fill="#7cbf5a"/>
+          <path d="M120 190c28-2 46-20 46-44-26 2-44 18-46 44z" fill="#2f7a3d"/>
+          <g transform="translate(120 105)">
+            <g fill="#f7c531"><ellipse rx="12" ry="30" transform="rotate(0) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(30) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(60) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(90) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(120) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(150) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(180) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(210) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(240) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(270) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(300) translate(0 -34)"/><ellipse rx="12" ry="30" transform="rotate(330) translate(0 -34)"/></g>
+            <circle r="26" fill="#6b4a2f"/><g fill="#8a6440"><circle cx="-8" cy="-8" r="3"/><circle cx="6" cy="-10" r="3"/><circle cx="10" cy="4" r="3"/><circle cx="-4" cy="8" r="3"/><circle cx="0" cy="-1" r="3"/></g>
+          </g>
+        </g>
+        <g>
+          <path d="M215 300V175" stroke="#2f7a3d" stroke-width="5" stroke-linecap="round"/>
+          <path d="M215 240c22-2 36-16 36-34-20 0-34 14-36 34z" fill="#7cbf5a"/>
+          <g transform="translate(215 160)"><g fill="#f7c531"><ellipse rx="8" ry="20" transform="translate(0 -22)"/><ellipse rx="8" ry="20" transform="rotate(45) translate(0 -22)"/><ellipse rx="8" ry="20" transform="rotate(90) translate(0 -22)"/><ellipse rx="8" ry="20" transform="rotate(135) translate(0 -22)"/><ellipse rx="8" ry="20" transform="rotate(180) translate(0 -22)"/><ellipse rx="8" ry="20" transform="rotate(225) translate(0 -22)"/><ellipse rx="8" ry="20" transform="rotate(270) translate(0 -22)"/><ellipse rx="8" ry="20" transform="rotate(315) translate(0 -22)"/></g><circle r="16" fill="#6b4a2f"/></g>
+        </g>
+        <g transform="translate(290 210)">
+          <path d="M0 90V10" stroke="#2f7a3d" stroke-width="4"/>
+          <path d="M0 40c-18 0-28-10-28-26 16 0 28 10 28 26zM0 30c18 0 28-10 28-26-16 0-28 10-28 26z" fill="#7cbf5a"/>
+          <circle cx="-14" cy="56" r="14" fill="#e05a3a"/><circle cx="12" cy="64" r="12" fill="#e05a3a"/><circle cx="-2" cy="78" r="10" fill="#f0805f"/>
+          <path d="M-14 42l-4 -4M-14 42l4-4M12 52l-3-4M12 52l3-4" stroke="#2f7a3d" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <rect x="40" y="296" width="320" height="40" rx="18" fill="#6b4a2f"/>
+        <rect x="40" y="296" width="320" height="12" rx="6" fill="#8a6440"/>
+        <g fill="#7cbf5a"><path d="M70 296c0-14 8-22 20-22 0 12-8 22-20 22z"/><path d="M340 296c0-14-8-22-20-22 0 12 8 22 20 22z"/></g>
+      </svg>
+    </div>
+  </div>
+
+  <section id="grow" class="band">
+    <svg class="wave" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14c100-14 200 14 300 0s200 14 300 0 200 14 300 0 200 14 300 0V0H0z" fill="#fffaf0"/></svg>
+    <div class="wrap">
+      <span class="kicker" data-icon="leaf">What we grow</span>
+      <h2>A bit of everything, shared</h2>
+      <p class="sub">Members grow on their own plots and on four shared beds. Whatever is spare goes on the table by the gate.</p>
+      <div class="grid" id="growGrid"></div>
+    </div>
+  </section>
+
+  <section id="plots">
+    <div class="wrap">
+      <span class="kicker" data-icon="spade">Plots and the waiting list</span>
+      <h2>Fancy a patch of your own?</h2>
+      <div class="plots">
+        <div>
+          <p class="sub" id="plotSummary"></p>
+          <div class="facts" id="plotFacts"></div>
+          <p id="plotWaiting"></p>
+        </div>
+        <div>
+          <h3>How to join the waiting list</h3>
+          <ol class="steps" id="plotSteps"></ol>
+          <p class="note" id="plotNote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="band">
+    <div class="wrap">
+      <span class="kicker" data-icon="sunflower">Events calendar</span>
+      <h2>This season at the garden</h2>
+      <p class="sub">Season 2027 runs from March to October. Dates are part of the demonstration. Filter by month or by type.</p>
+      <div class="chips" id="monthChips" role="group" aria-label="Filter events by month"></div>
+      <div class="chips" id="kindChips" role="group" aria-label="Filter events by type"></div>
+      <p class="count" id="evCount" aria-live="polite"></p>
+      <div class="events" id="evList"></div>
+    </div>
+    <svg class="wave" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14c100 14 200-14 300 0s200-14 300 0 200-14 300 0 200-14 300 0v14H0z" fill="#fffaf0"/></svg>
+  </section>
+
+  <section id="rota">
+    <div class="wrap">
+      <span class="kicker" data-icon="can">Volunteer rota</span>
+      <h2>Who is looking after what</h2>
+      <p class="sub" id="rotaIntro"></p>
+      <div class="rota" id="rotaGrid"></div>
+    </div>
+  </section>
+
+  <section id="news" class="band">
+    <div class="wrap">
+      <span class="kicker" data-icon="seed">News</span>
+      <h2>From the shed noticeboard</h2>
+      <div class="news" id="newsList"></div>
+    </div>
+  </section>
+
+  <section id="guides">
+    <div class="wrap">
+      <span class="kicker" data-icon="lettuce">Growing guides library</span>
+      <h2>Short guides, written by members</h2>
+      <p class="sub">Plain advice for our own soil and weather. Tap a guide to open it in the reader.</p>
+      <div class="chips" id="topicChips" role="group" aria-label="Filter guides by topic"></div>
+      <div class="guides" id="guideList"></div>
+    </div>
+  </section>
+</main>
+
+<div class="reader" id="reader" hidden role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>Find us</h3>
+        <p id="where"></p>
+        <p id="how"></p>
+      </div>
+      <div>
+        <h3>About this site</h3>
+        <p id="demoNote"></p>
+        <p><a href="https://newsroom.sgit.ai/articles/websites-you-own.html">Read the article on newsroom.sgit.ai</a></p>
+        <a class="studio" href="../../index.html"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 9-8 11-8-11z" fill="#f7c531"/><path d="M12 22v-4" stroke="#f7c531" stroke-width="2"/></svg><span id="studioText">Built by Kitewing Websites, a made-up studio</span></a>
+      </div>
+    </div>
+    <div class="agent" id="agentNote"><strong>For an agent:</strong> this page is the fictional Fennick Lane Community Garden, a demonstration website for newsroom.sgit.ai. Nothing here is a real group, event or person. All text, events, rota and guides are loaded from content.json next to this index.html.</div>
+  </div>
+</footer>
+
+<script>
+const FALLBACK = /*__DATA__*/{"site":{"name":"Fennick Lane Community Garden","short":"Fennick Lane","town":"Harrowby","tagline":"Growing food, flowers and friendships on a quarter acre of Harrowby","intro":"We are a group of neighbours who look after a shared garden at the end of Fennick Lane. Some of us have our own plots, some help on the shared beds, and some just come for the tea. Everyone is welcome.","meet":"Work days are on Saturday mornings, roughly every fortnight from March to October. Just turn up at the lane gate.","demo_note":"Fennick Lane Community Garden is fictional. This site is a demonstration built for newsroom.sgit.ai to show a small website that its owners can edit by talking to Claude.","demo_link":"https://newsroom.sgit.ai/articles/websites-you-own.html","studio_link_text":"Built by Kitewing Websites, a made-up studio"},"grow":[{"name":"Vegetables","icon":"tomato","text":"Tomatoes, courgettes, beans, potatoes, salad and squash on the shared beds and members' plots."},{"name":"Herbs","icon":"leaf","text":"A herb spiral by the shed with mint, chives, thyme, sage and parsley. Take a sprig when you need one."},{"name":"Fruit","icon":"apple","text":"Four old apple trees in the orchard corner, a row of raspberries and a rhubarb patch that never gives up."},{"name":"Flowers","icon":"sunflower","text":"Sunflowers, calendula and sweet peas for cutting, and wildflowers along the lane for the bees."},{"name":"Wildlife","icon":"snail","text":"A small pond, a bug hotel, a hedge and a wild corner where nettles feed the butterflies."},{"name":"Community","icon":"can","text":"Tea in the shed, shared tools, a seed tin, and a table by the gate for spare produce."}],"plots":{"summary":"The garden has 18 half-size plots, 4 shared beds and a raised bed for members who prefer not to kneel.","facts":[{"label":"Half-size plots","value":"18"},{"label":"Shared beds","value":"4"},{"label":"Raised bed","value":"1"},{"label":"Plot donation","value":"£15 a year"}],"waiting":"Plots are offered in order from the waiting list each autumn, when members decide whether to carry on. In the meantime you are very welcome on the shared beds, which is how most plot holders started.","steps":["Come to any work day and say hello at the shed.","Ask a committee member to add your name to the waiting list book.","Help on the shared beds while you wait, if you like.","When a plot comes free, we will find you at the next work day or leave a note on the gate board."],"note":"The waiting list is kept in a paper book in the shed, not online, so nobody's details are published here."},"events":[{"date":"2027-03-06","day":"Sat","dnum":6,"month":"March","mon":"Mar","title":"Spring clear-up and soup","kind":"Work day","time":"10:00 to 13:00","where":"Whole garden","blurb":"We clear winter debris, turn the compost bays and mend the path edges. Leek and potato soup at one o'clock.","bring":"Gloves and old clothes"},{"date":"2027-03-20","day":"Sat","dnum":20,"month":"March","mon":"Mar","title":"Seed swap at the shed","kind":"Swap","time":"11:00 to 14:00","where":"The tool shed","blurb":"Bring spare seed, saved or shop-bought, and leave with something new to try. Envelopes and pencils provided.","bring":""},{"date":"2027-04-03","day":"Sat","dnum":3,"month":"April","mon":"Apr","title":"Potato planting morning","kind":"Work day","time":"10:00 to 12:30","where":"Shared beds 1 to 4","blurb":"First earlies go in on the shared beds. A good one for first-timers: we show you trenching and spacing.","bring":""},{"date":"2027-04-17","day":"Sat","dnum":17,"month":"April","mon":"Apr","title":"Children's sunflower race begins","kind":"Family","time":"10:30 to 12:00","where":"The lawn","blurb":"Every child plants a sunflower seed in a named pot. We measure them in July and everybody gets a rosette.","bring":"Nothing, pots and seeds supplied"},{"date":"2027-05-01","day":"Sat","dnum":1,"month":"May","mon":"May","title":"Plant sale for the garden fund","kind":"Sale","time":"10:00 to 13:00","where":"Lane gate","blurb":"Tomato, courgette and herb plants raised by members, all sold for a small donation to the garden fund.","bring":""},{"date":"2027-05-15","day":"Sat","dnum":15,"month":"May","mon":"May","title":"Pond dipping and wildlife count","kind":"Family","time":"14:00 to 16:00","where":"Wildlife pond","blurb":"Nets, trays and identification cards. We record what we find in the garden notebook.","bring":"Wellies"},{"date":"2027-06-05","day":"Sat","dnum":5,"month":"June","mon":"Jun","title":"Watering rota briefing","kind":"Meeting","time":"18:30 to 19:30","where":"The tool shed","blurb":"Before the dry weeks arrive we agree who waters what, and how to use the water butts fairly.","bring":""},{"date":"2027-06-19","day":"Sat","dnum":19,"month":"June","mon":"Jun","title":"Midsummer picnic","kind":"Social","time":"17:00 until dusk","where":"The lawn","blurb":"Bring a dish to share. Lanterns, a little music and a walk round the plots to see how everyone is getting on.","bring":"A dish and a blanket"},{"date":"2027-07-10","day":"Sat","dnum":10,"month":"July","mon":"Jul","title":"Sunflower measuring day","kind":"Family","time":"10:30 to 12:00","where":"The lawn","blurb":"The tape measure comes out. Tallest, cheeriest and most lopsided sunflowers each get a home-made rosette.","bring":""},{"date":"2027-07-24","day":"Sat","dnum":24,"month":"July","mon":"Jul","title":"Open garden afternoon","kind":"Open day","time":"13:00 to 17:00","where":"Whole garden","blurb":"Neighbours welcome. Members show their plots, the shed serves tea and there is a table of spare courgettes.","bring":""},{"date":"2027-08-14","day":"Sat","dnum":14,"month":"August","mon":"Aug","title":"Pickling and preserving workshop","kind":"Workshop","time":"10:00 to 12:30","where":"Church hall kitchen","blurb":"Quick pickles, a simple chutney and how to store a glut safely. Jars to take home.","bring":"A clean jar or two"},{"date":"2027-09-04","day":"Sat","dnum":4,"month":"September","mon":"Sep","title":"Harvest supper","kind":"Social","time":"18:00 to 21:00","where":"Church hall","blurb":"A shared supper cooked from the garden. Long tables, a harvest display and thanks to every volunteer.","bring":""},{"date":"2027-09-25","day":"Sat","dnum":25,"month":"September","mon":"Sep","title":"Bulb planting and hedge day","kind":"Work day","time":"10:00 to 13:00","where":"Lane boundary","blurb":"Daffodils along the lane and fifty new hedge whips for the birds. Spades and tea provided.","bring":""},{"date":"2027-10-16","day":"Sat","dnum":16,"month":"October","mon":"Oct","title":"Apple pressing","kind":"Family","time":"11:00 to 14:00","where":"The orchard corner","blurb":"Bring windfalls from home. We wash, scrat and press them, and everyone leaves with a bottle of juice.","bring":"Apples and a clean bottle"},{"date":"2027-10-30","day":"Sat","dnum":30,"month":"October","mon":"Oct","title":"Season close and AGM","kind":"Meeting","time":"14:00 to 16:00","where":"Church hall","blurb":"A short annual meeting, the waiting list update and plans for next year. Cake, of course.","bring":""}],"rota":{"intro":"Volunteers sign up for a fortnight at a time. Names here are invented for the demonstration. The real rota is the chalkboard on the shed door.","tasks":["Watering","Compost","Shed and tea","Gate table"],"weeks":[{"week":"7 to 20 June","people":["Priya and Tom","Olu","Margaret","The Hendry family"]},{"week":"21 June to 4 July","people":["Sam","Priya and Tom","Ellis","Ruth"]},{"week":"5 to 18 July","people":["Ruth","Ellis","Olu","Margaret"]},{"week":"19 July to 1 August","people":["The Hendry family","Sam","Priya and Tom","Volunteer wanted"]},{"week":"2 to 15 August","people":["Volunteer wanted","Margaret","Sam","Ellis"]},{"week":"16 to 29 August","people":["Olu","Ruth","Volunteer wanted","Priya and Tom"]}]},"news":[{"date":"October 2026","title":"New water butts on the shed roof","text":"Thanks to the summer plant sale we have fitted two more water butts. That nearly doubles what we can collect from the shed roof."},{"date":"September 2026","title":"A record sunflower","text":"This year's tallest sunflower, grown on the children's bed, finished taller than the shed door. It now lives on as bird food."},{"date":"August 2026","title":"Open afternoon thank you","text":"Neighbours came to look round, several new names went in the waiting list book and the courgette table emptied by four o'clock."},{"date":"July 2026","title":"Hedgehog spotted","text":"A hedgehog has been seen near the compost bays at dusk. Please check the bays before turning them and keep the gap under the gate clear."}],"guides":[{"id":"first-plot","title":"Your first plot: where to start","topic":"Getting started","icon":"spade","read":"5 min","lead":"A new plot can look like a lot. Start small and you will enjoy it more.","steps":["Walk the plot and note where the sun falls in the morning and the afternoon.","Clear one bed properly rather than four beds badly.","Cover the rest with cardboard to stop weeds while you work up to it.","Choose three easy crops for your first season: salad leaves, courgettes and beans.","Ask a neighbour on the next plot. Everyone here was new once."],"tip":"Bring a flask to the garden. Plots are friendlier when you sit down on them now and then."},{"id":"compost","title":"Making compost in the shared bays","topic":"Soil","icon":"leaf","read":"4 min","lead":"Our three compost bays turn kitchen and garden waste into the soil we all share.","steps":["Mix greens (peelings, grass, soft prunings) with browns (cardboard, straw, dry leaves).","Aim for roughly equal amounts of each by volume.","Chop big stems so they rot down faster.","Leave out cooked food, meat, dairy and diseased plants.","We turn the bays together on work days. You are welcome to join in."],"tip":"If the heap smells, it needs more browns. If nothing is happening, it needs more greens and a little water."},{"id":"tomatoes","title":"Growing tomatoes outdoors","topic":"Vegetables","icon":"tomato","read":"6 min","lead":"Tomatoes like warmth, shelter and steady watering. Harrowby summers can do the job.","steps":["Plant out after the last frost, usually late May here.","Choose a sunny spot sheltered from the wind off the lane.","Push in a stout cane at planting time so you do not damage roots later.","Pinch out side shoots on cordon types as they appear.","Water at the base, little and often, rather than soaking now and then."],"tip":"Uneven watering causes split fruit. A water butt nearby makes regular watering much easier."},{"id":"courgettes","title":"Courgettes without the glut panic","topic":"Vegetables","icon":"courgette","read":"3 min","lead":"Two plants feed a family. Six plants feed the street.","steps":["Sow indoors in late April, one seed on its edge per pot.","Plant out in June into a rich, well-watered spot.","Pick when fruit are the length of your hand. They grow fast.","Check every two days in summer, or they will turn into marrows.","Share spares on the table by the gate."],"tip":"Leave space around each plant: they spread more than the seed packet suggests."},{"id":"beans","title":"Runner beans up a wigwam","topic":"Vegetables","icon":"bean","read":"4 min","lead":"A wigwam of canes takes little space and gives beans from July to the first frosts.","steps":["Push six to eight long canes into a circle and tie them at the top.","Sow two seeds at the foot of each cane in late May.","Keep the one that comes up stronger.","Water well when the flowers appear, so they set pods.","Pick often. The more you pick, the more they make."],"tip":"Children love a bean wigwam with a gap left for a door. It becomes a den by August."},{"id":"salad","title":"Salad leaves all summer","topic":"Vegetables","icon":"lettuce","read":"3 min","lead":"Small sowings every few weeks give you leaves to cut from spring to autumn.","steps":["Sow a short row every three weeks from April to August.","Choose cut-and-come-again mixes for easy picking.","Give them a little shade in the hottest weeks.","Cut leaves with scissors a thumb's width above the soil.","Water in the evening during dry spells."],"tip":"Slugs love young leaves. See the guide on slugs for kind ways to keep them off."},{"id":"potatoes","title":"Potatoes for beginners","topic":"Vegetables","icon":"potato","read":"5 min","lead":"Potatoes are forgiving, and digging them up feels like treasure hunting.","steps":["Set seed potatoes in egg boxes in a light, cool room to sprout in February.","Plant first earlies in early April, about a trowel deep.","Draw soil up around the stems as they grow. This is called earthing up.","First earlies are usually ready when the flowers open.","Dig carefully from the side of the row with a fork."],"tip":"Keep potatoes covered by soil: green potatoes should not be eaten."},{"id":"watering","title":"Watering wisely in dry weeks","topic":"Care","icon":"can","read":"4 min","lead":"Our water comes from butts and one shared tap, so we use it carefully.","steps":["Water in the early morning or evening, not at midday.","Water the roots, not the leaves.","One good soak twice a week beats a sprinkle every day.","Mulch around plants with grass clippings or compost to hold moisture.","Follow the rota on the shed door during holidays."],"tip":"Seedlings and new plantings come first when water is short. Established shrubs can usually wait."},{"id":"slugs","title":"Living with slugs, kindly","topic":"Care","icon":"snail","read":"4 min","lead":"We garden without slug pellets to protect the frogs and birds that help us.","steps":["Go out with a torch on damp evenings and move slugs to the wild corner.","Raise seedlings in pots until they are sturdy before planting out.","Use collars cut from plastic bottles around young plants.","Encourage frogs: our pond is their headquarters.","Accept a few holes. The garden is shared with wildlife too."],"tip":"Beer traps work, but sink them a little proud of the soil so beetles can climb out."},{"id":"pollinators","title":"Flowers for bees and hoverflies","topic":"Wildlife","icon":"flower","read":"3 min","lead":"Flowers among the veg bring the insects that pollinate our crops.","steps":["Sow calendula and cornflowers at the ends of your beds.","Let a few herbs flower: chives, thyme and marjoram.","Leave dandelions in the wild corner for early bees.","Plant for a long season, from crocus in spring to ivy in autumn.","Skip sprays. Insects eat the pests for us."],"tip":"Sunflowers are the garden's favourite: tall, cheerful and full of seed for the birds in autumn."},{"id":"seeds","title":"Saving your own seeds","topic":"Getting started","icon":"seed","read":"5 min","lead":"Saved seed costs nothing and adapts a little more to our garden every year.","steps":["Start with easy ones: peas, beans, tomatoes and sunflowers.","Choose your best plants to save from, not the leftovers.","Let pods dry on the plant until they rattle.","Dry seeds on a plate indoors for a week.","Store in labelled paper envelopes in a cool, dry tin."],"tip":"Bring spares to the March seed swap and write the variety and year on every envelope."},{"id":"winter","title":"Putting a plot to bed for winter","topic":"Soil","icon":"spade","read":"4 min","lead":"A little care in autumn makes spring much easier.","steps":["Clear spent crops and add healthy ones to the compost.","Spread a layer of compost or leaves over empty beds.","Sow a green manure such as field beans to cover bare soil.","Clean and oil tools before they go in the shed.","Leave some seed heads standing for birds and insects."],"tip":"Covered soil is happy soil. Bare soil washes away in winter rain."},{"id":"tools","title":"Using the shared tools","topic":"Getting started","icon":"fork","read":"2 min","lead":"The shed holds tools for everyone. A few habits keep them working.","steps":["Sign tools out on the board by the door.","Scrape soil off before putting them back.","Report anything broken on the shed whiteboard.","Return wheelbarrows upside down so they do not fill with rain.","Lock the shed if you are the last to leave."],"tip":"The combination is shared in person at your first work day, never online."},{"id":"children","title":"Gardening with children","topic":"Family","icon":"sunflower","read":"4 min","lead":"Children are welcome at Fennick Lane when they come with a grown-up.","steps":["Give them their own small patch, even one square of a bed.","Choose fast crops: radishes, cress, sunflowers and peas.","Let them water, dig and pick. Mess is part of it.","Show them the pond and the bug hotel.","Join the sunflower race in April."],"tip":"Small watering cans are hung on the low hooks inside the shed door."}],"contact":{"where":"The garden is at the end of Fennick Lane, Harrowby, behind the church hall. (Fictional address.)","how":"The easiest way to reach us is to come to a work day. There is also a notice board on the lane gate."},"agent":"This page is the fictional Fennick Lane Community Garden, a demonstration for newsroom.sgit.ai. All content, including events and guides, is in content.json next to index.html."};
+
+const ICONS = {
+  leaf:'<svg viewBox="0 0 40 40"><path d="M8 32C8 16 18 6 34 6c0 16-10 26-26 26z" fill="#7cbf5a"/><path d="M8 32L26 14" stroke="#1f5a2b" stroke-width="2.5" stroke-linecap="round"/></svg>',
+  spade:'<svg viewBox="0 0 40 40"><path d="M20 4v20" stroke="#6b4a2f" stroke-width="4" stroke-linecap="round"/><path d="M14 4h12" stroke="#6b4a2f" stroke-width="4" stroke-linecap="round"/><path d="M12 22h16v6c0 5-4 8-8 8s-8-3-8-8z" fill="#8aa0a8"/></svg>',
+  fork:'<svg viewBox="0 0 40 40"><path d="M20 4v16" stroke="#6b4a2f" stroke-width="4" stroke-linecap="round"/><path d="M12 20h16" stroke="#8aa0a8" stroke-width="4" stroke-linecap="round"/><path d="M13 20v14M20 20v14M27 20v14" stroke="#8aa0a8" stroke-width="3" stroke-linecap="round"/></svg>',
+  tomato:'<svg viewBox="0 0 40 40"><circle cx="20" cy="23" r="13" fill="#e05a3a"/><path d="M20 10l-6 4 6-1 6 1z" fill="#2f7a3d"/><path d="M20 12V6" stroke="#2f7a3d" stroke-width="3" stroke-linecap="round"/><ellipse cx="15" cy="19" rx="3" ry="2" fill="#f7a88f"/></svg>',
+  courgette:'<svg viewBox="0 0 40 40"><path d="M8 30C4 26 20 8 30 6c6 0 6 6 2 10C24 26 12 34 8 30z" fill="#2f7a3d"/><path d="M12 26c6-4 12-10 16-16" stroke="#7cbf5a" stroke-width="2" stroke-linecap="round"/><path d="M30 6l4-3" stroke="#6b4a2f" stroke-width="3" stroke-linecap="round"/></svg>',
+  bean:'<svg viewBox="0 0 40 40"><path d="M10 6c10 4 14 14 20 28" stroke="#2f7a3d" stroke-width="7" stroke-linecap="round"/><g fill="#7cbf5a"><circle cx="15" cy="12" r="2"/><circle cx="20" cy="19" r="2"/><circle cx="24" cy="26" r="2"/></g></svg>',
+  lettuce:'<svg viewBox="0 0 40 40"><path d="M20 34c-10 0-15-6-15-13 4 2 6 0 7-4 2 3 5 3 8-2 3 5 6 5 8 2 1 4 3 6 7 4 0 7-5 13-15 13z" fill="#7cbf5a"/><path d="M20 34c-5 0-8-4-8-9 4 1 6-1 8-5 2 4 4 6 8 5 0 5-3 9-8 9z" fill="#2f7a3d"/></svg>',
+  potato:'<svg viewBox="0 0 40 40"><ellipse cx="20" cy="22" rx="14" ry="11" fill="#c9995c" transform="rotate(-12 20 22)"/><g fill="#8a6440"><circle cx="14" cy="20" r="1.6"/><circle cx="24" cy="17" r="1.6"/><circle cx="22" cy="27" r="1.6"/></g></svg>',
+  can:'<svg viewBox="0 0 40 40"><rect x="8" y="16" width="18" height="16" rx="4" fill="#2f9ac2"/><path d="M26 22l9-8" stroke="#2f9ac2" stroke-width="3.5" stroke-linecap="round"/><path d="M12 16c0-6 10-6 10 0" stroke="#1d6670" stroke-width="2.5" fill="none"/><g fill="#7fd0ea"><circle cx="36" cy="18" r="1.4"/><circle cx="37" cy="23" r="1.4"/></g></svg>',
+  snail:'<svg viewBox="0 0 40 40"><path d="M4 32h28c3 0 4-3 4-6" stroke="#c9995c" stroke-width="5" stroke-linecap="round" fill="none"/><circle cx="18" cy="21" r="10" fill="#e8a24a"/><path d="M18 21m-5 0a5 5 0 1 0 5-5" stroke="#6b4a2f" stroke-width="2" fill="none"/><path d="M34 26l-2-8M36 26l2-8" stroke="#c9995c" stroke-width="2" stroke-linecap="round"/></svg>',
+  flower:'<svg viewBox="0 0 40 40"><g fill="#e86fa0"><circle cx="20" cy="11" r="6"/><circle cx="29" cy="18" r="6"/><circle cx="25" cy="28" r="6"/><circle cx="15" cy="28" r="6"/><circle cx="11" cy="18" r="6"/></g><circle cx="20" cy="20" r="5" fill="#f7c531"/></svg>',
+  seed:'<svg viewBox="0 0 40 40"><rect x="8" y="8" width="24" height="28" rx="4" fill="#fff1bf" stroke="#c99a12" stroke-width="2"/><path d="M8 14h24" stroke="#c99a12" stroke-width="2"/><g fill="#6b4a2f"><ellipse cx="16" cy="23" rx="2" ry="3"/><ellipse cx="24" cy="25" rx="2" ry="3"/><ellipse cx="19" cy="30" rx="2" ry="3"/></g></svg>',
+  sunflower:'<svg viewBox="0 0 40 40"><g fill="#f7c531"><circle cx="20" cy="9" r="5"/><circle cx="31" cy="20" r="5"/><circle cx="20" cy="31" r="5"/><circle cx="9" cy="20" r="5"/><circle cx="28" cy="12" r="5"/><circle cx="28" cy="28" r="5"/><circle cx="12" cy="28" r="5"/><circle cx="12" cy="12" r="5"/></g><circle cx="20" cy="20" r="8" fill="#6b4a2f"/></svg>',
+  apple:'<svg viewBox="0 0 40 40"><path d="M20 13c-6-4-14-1-14 9 0 8 6 14 10 14 2 0 3-1 4-1s2 1 4 1c4 0 10-6 10-14 0-10-8-13-14-9z" fill="#e05a3a"/><path d="M20 13V6" stroke="#6b4a2f" stroke-width="3" stroke-linecap="round"/><path d="M21 9c3-4 8-4 9-3-2 4-6 4-9 3z" fill="#7cbf5a"/></svg>'
+};
+
+function el(tag, attrs, kids){
+  const n = document.createElement(tag);
+  if (attrs) for (const k in attrs){
+    if (k === 'text') n.textContent = attrs[k];
+    else if (k === 'html') n.innerHTML = attrs[k];
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), attrs[k]);
+    else n.setAttribute(k, attrs[k]);
+  }
+  (kids || []).forEach(c => c != null && n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c));
+  return n;
+}
+function icon(name){ const s = el('span', {'aria-hidden':'true', html: ICONS[name] || ICONS.leaf}); s.style.display = 'contents'; return s; }
+function box(cls, kids){ return el('div', {class: cls}, kids); }
+function setText(id, t){ const n = document.getElementById(id); if (n && t) n.textContent = t; }
+
+async function loadData(){
+  let data = null;
+  try { if (window.sg && sg.vfs) data = JSON.parse(await sg.vfs.readText('content.json')); } catch(e){}
+  if (!data){ try { const r = await fetch('content.json'); if (r.ok) data = await r.json(); } catch(e){} }
+  return data || FALLBACK;
+}
+
+let D;
+const state = { month: 'All', kind: 'All', topic: 'All', guide: -1, lastFocus: null };
+
+function renderBasics(){
+  const s = D.site;
+  setText('tagline', s.tagline); setText('intro', s.intro); setText('meet', s.meet);
+  setText('demoNote', s.demo_note); setText('studioText', s.studio_link_text);
+  setText('where', D.contact.where); setText('how', D.contact.how);
+  document.querySelectorAll('.kicker[data-icon]').forEach(k => k.prepend(icon(k.getAttribute('data-icon'))));
+}
+
+function renderGrow(){
+  const g = document.getElementById('growGrid'); g.textContent = '';
+  D.grow.forEach(it => g.appendChild(box('card', [box('ic', [icon(it.icon)]), el('h3', {text: it.name}), el('p', {text: it.text})])));
+}
+
+function renderPlots(){
+  const p = D.plots;
+  setText('plotSummary', p.summary); setText('plotWaiting', p.waiting); setText('plotNote', p.note);
+  const f = document.getElementById('plotFacts'); f.textContent = '';
+  p.facts.forEach(x => f.appendChild(box('fact', [el('b', {text: x.value}), el('span', {text: x.label})])));
+  const o = document.getElementById('plotSteps'); o.textContent = '';
+  p.steps.forEach(x => o.appendChild(el('li', {text: x})));
+}
+
+function chipRow(id, values, key, onChange){
+  const row = document.getElementById(id); row.textContent = '';
+  ['All'].concat(values).forEach(v => {
+    row.appendChild(el('button', {class: 'chip', type: 'button', 'aria-pressed': String(state[key] === v), text: v === 'All' ? (key === 'month' ? 'All months' : key === 'kind' ? 'All types' : 'All topics') : v,
+      onclick: (ev) => { state[key] = v; row.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c === ev.currentTarget))); onChange(); }}));
+  });
+}
+function uniq(a){ return a.filter((v, i) => a.indexOf(v) === i); }
+
+function renderEvents(){
+  const list = document.getElementById('evList'); list.textContent = '';
+  const items = D.events.filter(e => (state.month === 'All' || e.month === state.month) && (state.kind === 'All' || e.kind === state.kind));
+  items.forEach(e => {
+    const body = box('body', [
+      el('span', {class: 'tag ' + e.kind.replace(/\s/g, ''), text: e.kind}),
+      el('h3', {text: e.title}),
+      box('meta', [e.day + ' ' + e.dnum + ' ' + e.month + ' · ' + e.time + ' · ' + e.where]),
+      el('p', {text: e.blurb}),
+      e.bring ? el('span', {class: 'bring', text: 'Bring: ' + e.bring}) : null
+    ]);
+    list.appendChild(el('article', {class: 'ev'}, [box('date', [el('b', {text: String(e.dnum)}), el('span', {text: e.mon})]), body]));
+  });
+  setText('evCount', items.length === 1 ? '1 event' : items.length + ' events');
+  if (!items.length) list.appendChild(el('p', {text: 'Nothing matches that filter. Try another month.'}));
+}
+
+function renderRota(){
+  const r = D.rota; setText('rotaIntro', r.intro);
+  const g = document.getElementById('rotaGrid'); g.textContent = '';
+  g.appendChild(box('rrow head', [el('span', {text: 'Fortnight'})].concat(r.tasks.map(t => el('span', {text: t})))));
+  r.weeks.forEach(w => {
+    const cells = [el('span', {class: 'wk', text: w.week})];
+    w.people.forEach((p, i) => {
+      const want = /wanted/i.test(p);
+      cells.push(el('span', {class: want ? 'want' : ''}, [el('span', {class: 'lbl', text: r.tasks[i]}), p]));
+    });
+    g.appendChild(box('rrow', cells));
+  });
+}
+
+function renderNews(){
+  const n = document.getElementById('newsList'); n.textContent = '';
+  D.news.forEach(x => n.appendChild(el('article', {}, [el('time', {text: x.date}), el('h3', {text: x.title}), el('p', {text: x.text})])));
+}
+
+function visibleGuides(){ return D.guides.map((g, i) => i).filter(i => state.topic === 'All' || D.guides[i].topic === state.topic); }
+
+function renderGuides(){
+  const l = document.getElementById('guideList'); l.textContent = '';
+  visibleGuides().forEach(i => {
+    const g = D.guides[i];
+    l.appendChild(el('button', {class: 'gcard', type: 'button', 'aria-haspopup': 'dialog', onclick: () => openGuide(i)}, [
+      el('span', {class: 'ic'}, [icon(g.icon)]),
+      el('span', {class: 'tag', text: g.topic}),
+      el('span', {class: 'gt', text: g.title}),
+      el('span', {class: 'gl', text: g.lead}),
+      el('span', {class: 'foot', text: 'Read guide · ' + g.read})
+    ]));
+  });
+}
+
+function openGuide(i){
+  const g = D.guides[i]; state.guide = i;
+  const reader = document.getElementById('reader'), sheet = document.getElementById('sheet');
+  if (reader.hidden) state.lastFocus = document.activeElement;
+  const vis = visibleGuides(), pos = vis.indexOf(i);
+  const prev = vis[(pos - 1 + vis.length) % vis.length], next = vis[(pos + 1) % vis.length];
+  sheet.textContent = '';
+  sheet.append(
+    el('button', {class: 'x', type: 'button', 'aria-label': 'Close guide', text: '×', onclick: closeGuide}),
+    box('hd', [box('ic', [icon(g.icon)]), el('span', {}, [el('span', {class: 'tag', text: g.topic + ' · ' + g.read}), el('h2', {id: 'readerTitle', text: g.title})])]),
+    el('p', {class: 'lead', text: g.lead}),
+    el('h3', {text: 'What to do'}),
+    el('ol', {}, g.steps.map(s => el('li', {text: s}))),
+    box('tip', [el('strong', {text: 'Member tip: '}), g.tip]),
+    box('nav2', [
+      el('button', {type: 'button', text: '‹ ' + D.guides[prev].title, onclick: () => openGuide(prev)}),
+      el('button', {type: 'button', text: D.guides[next].title + ' ›', onclick: () => openGuide(next)})
+    ]),
+    el('p', {class: 'demo-mini', text: 'Sample guide written for a fictional garden, as part of a demonstration.'})
+  );
+  reader.hidden = false; document.body.style.overflow = 'hidden';
+  reader.scrollTop = 0;
+  sheet.querySelector('.x').focus();
+}
+function closeGuide(){
+  const reader = document.getElementById('reader');
+  reader.hidden = true; document.body.style.overflow = ''; state.guide = -1;
+  if (state.lastFocus && state.lastFocus.focus) state.lastFocus.focus();
+}
+
+async function main(){
+  D = await loadData();
+  if (!D) return;
+  renderBasics(); renderGrow(); renderPlots();
+  chipRow('monthChips', uniq(D.events.map(e => e.month)), 'month', renderEvents);
+  chipRow('kindChips', uniq(D.events.map(e => e.kind)), 'kind', renderEvents);
+  renderEvents(); renderRota(); renderNews();
+  chipRow('topicChips', uniq(D.guides.map(g => g.topic)), 'topic', renderGuides);
+  renderGuides();
+  document.getElementById('reader').addEventListener('click', e => { if (e.target.id === 'reader') closeGuide(); });
+  document.addEventListener('keydown', e => {
+    if (state.guide < 0) return;
+    if (e.key === 'Escape') closeGuide();
+    if (e.key === 'Tab'){
+      const f = document.querySelectorAll('#sheet button'); const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  try { window.parent && window.parent.postMessage({type: 'sg-app-ready'}, '*'); } catch(e){}
+}
+main();
+</script>
+</body>
+</html>
