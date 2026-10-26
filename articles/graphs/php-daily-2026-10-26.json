@@ -1,0 +1,173 @@
+{
+  "slug": "php-daily-2026-10-26",
+  "teaser": "PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the cutover, and faster agent tools.",
+  "topics": [
+    "news-and-evidence",
+    "site-and-engineering"
+  ],
+  "core_idea": "Five days after php2shell, no named organisation says it was compromised, and the advice shifts to checking for past break-ins; meanwhile the PHP story site split from one repository into six, by who writes and how often, cutting a release from a median of 88 seconds to 25 to 42, froze the old repository, moved its main address to the new build, and upgraded its agents to a faster sgit, while the pages still wait on one build and a token only the editor can set.",
+  "nodes": [
+    {
+      "id": "novictim",
+      "label": "Still no confirmed victim",
+      "kind": "claim",
+      "summary": "543 sources; time-bounded."
+    },
+    {
+      "id": "advice",
+      "label": "Check for past break-ins",
+      "kind": "claim",
+      "summary": "The advice is shifting."
+    },
+    {
+      "id": "bounty",
+      "label": "A bounty, not a victim",
+      "kind": "example",
+      "summary": "Full control, consenting target."
+    },
+    {
+      "id": "six",
+      "label": "One repository into six",
+      "kind": "method",
+      "summary": "Split by who writes and how often."
+    },
+    {
+      "id": "fast",
+      "label": "Releases in seconds",
+      "kind": "claim",
+      "summary": "25 to 42 s, not a median of 88."
+    },
+    {
+      "id": "cutover",
+      "label": "The cutover",
+      "kind": "artefact",
+      "summary": "Edition v0.22.32 at the main address."
+    },
+    {
+      "id": "sgit",
+      "label": "sgit 0.25.0",
+      "kind": "artefact",
+      "summary": "A pass of 57 min becomes 35."
+    },
+    {
+      "id": "proposal",
+      "label": "A new write needs a proposal",
+      "kind": "method",
+      "summary": "Reason, review, agreement, trial."
+    },
+    {
+      "id": "token",
+      "label": "Waiting on the editor",
+      "kind": "claim",
+      "summary": "The round needs a token."
+    }
+  ],
+  "edges": [
+    {
+      "from": "advice",
+      "to": "novictim",
+      "rel": "depends-on"
+    },
+    {
+      "from": "bounty",
+      "to": "novictim",
+      "rel": "contrasts"
+    },
+    {
+      "from": "fast",
+      "to": "six",
+      "rel": "example-of"
+    },
+    {
+      "from": "cutover",
+      "to": "six",
+      "rel": "depends-on"
+    },
+    {
+      "from": "token",
+      "to": "cutover",
+      "rel": "depends-on"
+    },
+    {
+      "from": "proposal",
+      "to": "six",
+      "rel": "depends-on"
+    },
+    {
+      "from": "sgit",
+      "to": "fast",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "php-daily-2026-10-24",
+      "php-daily-2026-10-23",
+      "php-october-at-8pm",
+      "one-researcher-for-every-newsroom",
+      "a-team-frozen-in-time"
+    ],
+    "pages": [],
+    "sites": [
+      "https://php.oct.2026.newsroom.sgit.ai/",
+      "https://data.php.oct.2026.newsroom.sgit.ai/",
+      "https://team.php.oct.2026.newsroom.sgit.ai/team/control/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "No named organisation has said it was compromised through php2shell.",
+      "why": "The story."
+    },
+    {
+      "text": "The cause is not the number of agents.",
+      "why": "One repository into six."
+    },
+    {
+      "text": "pull is now the slow step",
+      "why": "The agents' tools got faster."
+    },
+    {
+      "text": "The agents are fast, and the decisions are mine.",
+      "why": "What waits on me."
+    }
+  ],
+  "figures": [
+    {
+      "file": "u4-front.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u4-front.webp",
+      "caption": "The PHP site's front page at its main address, edition v0.22.32, after the cutover of 26 October: the line under the masthead says \"You're viewing this as an Executive\" and offers six other ways to read it, and the thirty-second answer says that, as of 12:14 UTC on 26 October, no named organisation has said it was broken into through this flaw.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "u4-six.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u4-six.webp",
+      "caption": "One repository into six, as split on 25 October 2026: press, the scaffolding, at press.php.oct.2026.newsroom.sgit.ai; data, the API, every version immutable with a sha256 manifest; team, the operations; and the three page sites, site at the main address, refs for the references and updates for the regular updates, each pinning a data version and a press version.",
+      "kind": "process"
+    },
+    {
+      "file": "u4-ci.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u4-ci.webp",
+      "caption": "What the split buys, measured by dev on 25 October 2026: a CI run from push to live took a median of 88 seconds in the one repository and 25 to 42 seconds in the six; the gate step 70 to 132 seconds against 0.1 to 7; a release rewrote a median of 1,809 files against about 470 to 550 per cut, and 1 for a run record; checking a change to the references took about 75 seconds against 7.",
+      "kind": "chart"
+    },
+    {
+      "file": "u4-data.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u4-data.webp",
+      "caption": "The data host, data.php.oct.2026.newsroom.sgit.ai, at version 0.1.39: every version immutable once published at its own address, the newest at /latest/, and each version's manifest listing every file with its sha256 and its schema.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "u4-sgit.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u4-sgit.webp",
+      "caption": "sgit 0.25.0 in the newsroom, measured by the researcher on its source watch vault of 79,465 files and 2.7 GB on 26 October 2026: commit phase 1 from 12 minutes 38 seconds to 25 seconds; push from 4 minutes 16 seconds to 67 seconds; the data export from 9 minutes to 34 seconds; the whole pass from 57 minutes to 35.",
+      "kind": "chart"
+    },
+    {
+      "file": "u4-control.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/u4-control.webp",
+      "caption": "The control room at edition v0.22.32: data 2 hours old and ageing, 2 agents blocked, 17 items waiting on the editor, 4 decisions, 16 branches ahead with 43 commits, and the pipeline from researcher to desk, with the ontologist, the librarian and the desk flagged for leaving no run record in 24 hours.",
+      "kind": "screenshot"
+    }
+  ]
+}

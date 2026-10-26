@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-297 of 297 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+298 of 298 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-297 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 35 articles not yet linked either way.
+298 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 36 articles not yet linked either way.
+
+## [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](php-daily-2026-10-26.md)
+
+2026-10-26 · News & evidenceSite & engineering
+
+Five days after php2shell, no named organisation says it was compromised, and the advice shifts to checking for past break-ins; meanwhile the PHP story site split from one repository into six, by who writes and how often, cutting a release from a median of 88 seconds to 25 to 42, froze the old repository, moved its main address to the new build, and upgraded its agents to a faster sgit, while the pages still wait on one build and a token only the editor can set.
+
+*[diagram]*
+**claim**method**artefact**example
+
+**9 nodes, 7 edges**
+
+- **Still no confirmed victim** (claim) 543 sources; time-bounded.
+- **Check for past break-ins** (claim) The advice is shifting.
+- **A bounty, not a victim** (example) Full control, consenting target.
+- **One repository into six** (method) Split by who writes and how often.
+- **Releases in seconds** (claim) 25 to 42 s, not a median of 88.
+- **The cutover** (artefact) Edition v0.22.32 at the main address.
+- **sgit 0.25.0** (artefact) A pass of 57 min becomes 35.
+- **A new write needs a proposal** (method) Reason, review, agreement, trial.
+- **Waiting on the editor** (claim) The round needs a token.
+
+> No named organisation has said it was compromised through php2shell. The story.
+
+> The cause is not the number of agents. One repository into six.
 
 ## [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](websites-you-own.md)
 
