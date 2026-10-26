@@ -4,7 +4,7 @@ date: 2026-10-26
 author: Dinis Cruz
 author_url: about/index.html
 summary: Someone I am helping, who is doing a lot of agentic work now, sent me an infographic for a business selling websites built with Claude: three monthly plans from £39 to £119 with a setup fee, a cap of five or ten pages, half an hour to two hours of edits a month, the seller's Claude subscription as the main cost, and ten clients making about £570 a month. It is a good sign that people see the opportunity. But the temptation is always rent, money while you sleep, and the economics are wrong. On a monthly plan you earn most when your clients use you least, the clients who use you most cost you most, and a few of them will never stop asking. The page caps make no sense either: a static page costs almost nothing, and this newsroom runs about 1,500 of them on GitHub Pages. The model I propose is different. The client owns three accounts, Claude or ChatGPT, GitHub with Pages, and a domain. You charge once, to set them up and wire them together, build the site from the client's own material with designs to choose from, check it, and hand it over with a lesson in changing it by talking to their AI. After that, help is a block of hours, if they want it. Every engagement ends, the client is in control, and delighted clients tell others. Here is the infographic, section by section, and the alternative.
-version: v0.13.92
+version: v0.13.95
 license: https://creativecommons.org/licenses/by/4.0/
 tags: business-models, websites, agents, pricing, explorers-villagers, article
 status: published
@@ -32,7 +32,7 @@ It is a good piece of work, and a good sign. People are seeing the opportunity t
 
 ## 1. The price plans {#plans}
 
-!shot kw-info-plans.webp | images/ | Section 1, price plans: Starter £39 a month and £149 setup, up to five pages, hosting, DNS and SSL, 30 minutes of edits a month; Standard £69 a month and £299 setup, up to ten pages, contact form, analytics, uptime checks, an hour of edits; Plus £119 a month and £499 setup, blog or booking, two hours of edits, a quarterly report; extra work £35 an hour; the client owns the domain and content. | screenshot
+!shot kw-info-plans.webp | images/ | Section 1, price plans: Starter £39 a month and £149 setup, up to five pages, hosting, DNS and SSL, 30 minutes of edits a month; Standard £69 a month and £299 setup, up to ten pages, contact form, analytics, uptime checks, an hour of edits; Plus £119 a month and £499 setup, blog or booking, two hours of edits, a quarterly report; extra work £35 an hour; the client owns the domain and content. | medium | aside
 
 Three monthly plans, each with a setup fee, a page cap and a monthly allowance of edits. Two things are wrong here.
 
@@ -44,7 +44,7 @@ What I agree with: "Client owns the domain and content." Yes, and they should ow
 
 ## 2. The cost to run {#cost}
 
-!shot kw-info-cost.webp | images/ | Section 2, cost to run: fixed £95 to £190 a month, Claude Max at $100 or $200 (about £75 to £150), insurance, email and accounts £20 to £40; each extra site £1 to £5 a month, Route 53 $0.50 per site, Amplify hosting free to a few pounds, a domain about $12 a year, passed to the client. | screenshot
+!shot kw-info-cost.webp | images/ | Section 2, cost to run: fixed £95 to £190 a month, Claude Max at $100 or $200 (about £75 to £150), insurance, email and accounts £20 to £40; each extra site £1 to £5 a month, Route 53 $0.50 per site, Amplify hosting free to a few pounds, a domain about $12 a year, passed to the client. | small | aside
 
 The biggest cost in the plan is the seller's own Claude subscription, used to run every client's site. That puts the cost, and the bottleneck, in the wrong place. The client can have their own Claude or ChatGPT account, which they are probably already paying for, and use it for everything else too. Reselling access to someone else's AI service may also have legal ramifications, so I would not build a business on it; I would read the provider's terms first.
 
@@ -52,13 +52,13 @@ The hosting is right in spirit: static, cheap, nearly free. On GitHub Pages it i
 
 ## 3. The time per build {#time}
 
-!shot kw-info-time.webp | images/ | Section 3, time per five-page build: 10 to 15 hours in total, 3 to 5 hours of coding, fast with Claude Code, and 7 to 10 hours of everything else, calls, content, revisions, testing and launch. "Price on the client's time, not Claude's speed." | screenshot
+!shot kw-info-time.webp | images/ | Section 3, time per five-page build: 10 to 15 hours in total, 3 to 5 hours of coding, fast with Claude Code, and 7 to 10 hours of everything else, calls, content, revisions, testing and launch. "Price on the client's time, not Claude's speed." | small | aside
 
 This is the best section, and I agree with it. Most of the time is not the code: it is the calls, the content, the revisions and the launch. And "price on the client's time, not Claude's speed" is right. Which is exactly why the work should be priced as a job: a finite number of hours, delivered and finished.
 
 ## 4. The numbers {#numbers}
 
-!shot kw-info-numbers.webp | images/ | Section 4, the numbers: £1,127 from one Standard client in year one (£299 plus 12 times £69); two Standard clients needed to cover fixed costs; £690 a month from ten Standard clients, about £570 after costs, for about ten hours' work. | screenshot
+!shot kw-info-numbers-s.webp | images/ | Section 4, the numbers: £1,127 from one Standard client in year one (£299 plus 12 times £69); two Standard clients needed to cover fixed costs; £690 a month from ten Standard clients, about £570 after costs, for about ten hours' work. | medium | aside
 
 The arithmetic mostly holds, at the optimistic end. £299 plus twelve months at £69 is £1,127. Two Standard clients bring £138 a month, which covers the fixed costs only at their low end of £95; at £190 it takes three. And ten clients bring £690 a month, which leaves about £570 only if the costs are at their lowest; at the top end it is closer to £450.
 
@@ -70,7 +70,7 @@ On a monthly plan you make money when your clients do not use you. The more they
 
 ## 5. The risks {#risks}
 
-!shot kw-info-risks.webp | images/ | Section 5, risks and fixes: code I cannot fix, keep sites simple and static, read what Claude writes; Claude usage caps, never promise same-hour fixes in the contract. | screenshot
+!shot kw-info-risks-s.webp | images/ | Section 5, risks and fixes: code I cannot fix, keep sites simple and static, read what Claude writes; Claude usage caps, never promise same-hour fixes in the contract. | small | aside
 
 "Keep sites simple and static. Read what Claude writes." Agreed. The second risk, Claude's usage caps, only exists because the seller holds one AI account for every client. When each client has their own, a cap is theirs, and nobody has promised anyone a same-hour fix.
 
