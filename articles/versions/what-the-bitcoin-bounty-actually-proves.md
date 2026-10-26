@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-26 | published | 2,736 | first published | this release | [current](../what-the-bitcoin-bounty-actually-proves.md) |
+| **v1.0.0** | 2026-10-26 | published | 2,736 | first published | [`77f353ae5`](https://github.com/SGit-AI/SGit-AI__Website/commit/77f353ae54b7a3405577be7cf98547ea59eca4c9) | [current](../what-the-bitcoin-bounty-actually-proves.md) |
 
 [← Back to the article](../what-the-bitcoin-bounty-actually-proves.md) · [All articles](../index.md)
 

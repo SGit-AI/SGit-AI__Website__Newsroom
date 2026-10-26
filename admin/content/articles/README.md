@@ -365,7 +365,7 @@ An article is a release. The steps, as the last nine did them:
    generator and validator there (the em-dash, the ladder word, the links, the graph limits, the quotes),
    and imports the result. Nothing is pushed to sgit.ai. A slug sgit.ai already has stops the run.
 5. Steps 4 to 8 of the release process in the root `README.md`: `summaries.py --stamp` then `summaries.py`, `ids.py`, `hubs.py`, `agents.py`,
-   `personas.py`, `lists.py`, `passkey_lab.py`, `wire.py`, `api_map.py`, `archive.py`, `engineering.py`,
+   `personas.py`, `lists.py`, `passkey_lab.py`, `drafts.py`, `wire.py`, `api_map.py`, `archive.py`, `engineering.py`,
    `chrome.py`, `gen_sitemap.py`, `gen_llms_full.py`, then `node admin/build/validate.js`. Running them
    twice changes nothing.
 6. Commit as `site vX.Y.Z: @newsroom.writer: <title>` and push the branch. Dinis reads the article after

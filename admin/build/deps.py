@@ -26,6 +26,7 @@ OUT = ROOT / "admin/notes/sgit-ai-dependencies.md"
 EXT = {".html", ".md", ".css", ".js", ".mjs", ".json", ".txt", ".xml"}
 SKIP = ("admin/build/newsroom-sync.json", "admin/notes/sgit-ai-dependencies.md", "llms-full.txt", "search/text.json", "search/docs.json",
         "node_modules/", ".git/", "admin/engineering/", "admin/content/", "articles/versions/", "world-news-day/", "documents/",
+        "drafts/",   # review drafts (admin/build/drafts.py): not published yet, so not counted
         # the archive (admin/build/archive.py): dated pages kept at their addresses, not the running newsroom
         "archive/", "library/", "briefs/", "governance/", "portugal/", "mvps/", "pt-newsroom/")
 VAULT = re.compile(r"https?://(store|vaults?|hub)\.sgit\.ai|sgit (clone|read|open) sgit_public_read_|sgit_public_read_[0-9a-f]{8}")
