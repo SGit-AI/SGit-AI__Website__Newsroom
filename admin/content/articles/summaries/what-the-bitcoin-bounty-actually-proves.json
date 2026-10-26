@@ -1,0 +1,61 @@
+{
+ "slug": "what-the-bitcoin-bounty-actually-proves",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "A won bitcoin bounty proves php2shell's power; the real timeline, WAF coverage and hardening limits, checked.",
+   "para": "A researcher won a public bounty exploiting php2shell on a deliberately vulnerable server, a rare independent confirmation of full command execution. The 19.28-hour headline mostly measures a page that did not exist yet; the real build time was about three hours. Vendors publish WAF coverage, each naming its own gap, and every hardening measure is partial by its own authors.",
+   "hash": "788cf2ecb598"
+  },
+  "in-short": {
+   "line": "Eight lines: a real win, three hours not nineteen, an exact build needed, five vendors' gaps, partial hardening, a loud method.",
+   "para": "A researcher broke into a purpose-built server and published how. The real number is three hours once a page existed, not nineteen. The method needs an exact build, and succeeds about seven times in ten. Five vendors each name their own detection gap. Every hardening measure is partial, by its own author; the method leaves a loud signature in PHP's error log.",
+   "hash": "193965d6ec05"
+  },
+  "bounty": {
+   "line": "A researcher won a real bounty against a purpose-built server, recovering a key through php2shell and publishing a checkable write-up.",
+   "para": "On 25 October a researcher using the handle killa won a public bounty at stealmybitcoin.com, recovering a private key through php2shell; the win was logged at 15:47 UTC. The published write-up lets others check the account rather than take it on trust. It is the first independent outsider's success I have seen, against a consenting, purpose-built target, not a real victim.",
+   "hash": "5d268ef46e46"
+  },
+  "timeline": {
+   "line": "The headline 19.28 hours is mostly a target with no attackable page; the real number is about three hours.",
+   "para": "The challenge launched on 21 October with no page that executed PHP, so the flaw could not be reached for most of the following day and a half. The operator added an executable page on 25 October; it was solved roughly three hours later. Nineteen hours measures how long the page sat up; three hours measures how hard the exploit was.",
+   "hash": "0f1c15cc4ec2"
+  },
+  "effort": {
+   "line": "The method needs an exact PHP build, is a race that succeeds about seven times in ten, and uses few requests.",
+   "para": "The write-up is explicit about its own limits: calibrated to one PHP image, a different build with the same version string fails outright. Ten lab runs succeeded about seven times. The method is twenty HTTP requests at most, a short sequence, not a brute force. The original run's exact bytes were not fully captured; what is published is a reconstruction.",
+   "hash": "4ce14e2dbf79"
+  },
+  "shell": {
+   "line": "The access obtained was one command run once, output returned, not a standing or reverse shell.",
+   "para": "By the write-up's account, the final step runs one operating-system command and returns its output over the already-open connection: a fresh marker, the output of id, and a file hash, as evidence it ran. That is command execution as the PHP process's own user, demonstrated once, not an interactive or reverse shell. Whether a lower-privileged deployment yields less is unanswered.",
+   "hash": "e4af13f2c189"
+  },
+  "waf": {
+   "line": "Five vendors publish php2shell detection; each names its own gap in the same breath.",
+   "para": "Cloudflare had rules live nine hours before PHP's advisory, later adding response inspection since request data alone could not always tell an exploit from ordinary traffic. AWS WAF can miss header amplification under its size cap; a rate rule does not stop one request. Azure's rule is off by default. Emerging Threats' signatures can be dodged. Sophos's WAF has no specific rule.",
+   "hash": "b1999f739834"
+  },
+  "hardening": {
+   "line": "Every hardening measure is called partial by its own author; GrapheneOS tested three and went offline anyway.",
+   "para": "Turning off upload progress, raising the memory limit, blocking multipart uploads and capping container memory each close one path while leaving another open, by their own authors' account; a PHP developer says only patching works. GrapheneOS deployed and tested three measures on 21 October, trusted none enough, and took its forum offline instead, patching and returning within about seven hours.",
+   "hash": "c001a4a37397"
+  },
+  "logs": {
+   "line": "The method forces PHP past its memory limit, which is a loud, repeated signal, not a silent one.",
+   "para": "Without the exploit's internals: the published method's reliance on forcing PHP past its own memory limit, repeatedly, produces PHP's own fatal-error path from one client in a short window, with unusual worker reuse. A defender watching PHP's own error log has a real signal today, independent of any WAF rule. Whether anyone actually watches for it is the open question.",
+   "hash": "7d6131668e68"
+  },
+  "limits": {
+   "line": "One bounty is not a measurement of real-world compromise rates; the mechanism is read from the author's own account.",
+   "para": "This is one bounty, one researcher, one target; it shows the flaw is exploitable by a skilled person, not how common successful attacks are. No named organisation has reported a real compromise separately from this challenge. Vendor coverage changes quickly. Nothing here was independently reproduced; the mechanism and GrapheneOS's timeline come from each party's own account.",
+   "hash": "f23bf7704669"
+  },
+  "sources": {
+   "line": "The challenge site and write-up, press coverage, vendors' own posts, and GrapheneOS's own feed, read directly.",
+   "para": "stealmybitcoin.com and the researcher's GitHub write-up; coverage from Cybersecurity News, Cryptopolitan, daily.dev and BigGo; posts from Cloudflare, AWS, Emerging Threats and Sophos; GrapheneOS's own Bluesky posts; PHP's mitigation guidance via lilting.ch; the CISA KEV catalogue, which did not list either CVE as of 23 October. Written up by newsroom.writer; the editorial responsibility is mine.",
+   "hash": "d510b2ee73f9"
+  }
+ }
+}

@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-298 of 298 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+299 of 299 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-298 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 36 articles not yet linked either way.
+299 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 37 articles not yet linked either way.
+
+## [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](what-the-bitcoin-bounty-actually-proves.md)
+
+2026-10-26 · News & evidenceAgents & policy
+
+A won bitcoin bounty is real, independent proof that php2shell gives full command execution, but the headline 19.28 hours mostly measures a target with no attackable page; the real build time was about three hours once one existed. Vendor WAF and IDS coverage exists but each vendor names its own gap, and every public hardening measure, tested seriously by GrapheneOS, is described as partial by its own authors; patching remains the only complete fix.
+
+*[diagram]*
+**concept**claim**example
+
+**8 nodes, 7 edges**
+
+- **The bounty, won** (example) A real, checkable, independent win.
+- **19 hours vs 3** (claim) Most of the time, nothing was attackable.
+- **How hard, really** (claim) Exact build, a race, 20 requests.
+- **What kind of access** (concept) Command execution, not a standing shell.
+- **Could a WAF catch it** (claim) Five vendors, five named gaps.
+- **Hardening without patching** (claim) Every measure is partial, by its own authors.
+- **GrapheneOS's own test** (example) Tried three measures, went offline anyway.
+- **What a defender would see** (concept) A memory-exhaustion fatal, repeated.
+
+> the only mitigation is patching / upgrading PHP. I sadly know too much. Hardening without patching: what actually holds.
+
+> the original server did not expose any page that executed PHP programs. The real timeline is three hours, not nineteen.
 
 ## [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](php-daily-2026-10-26.md)
 

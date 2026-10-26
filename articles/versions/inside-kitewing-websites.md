@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-26 | minor | 1,366 | +2 / −0 words; 0 changed, 1 added, 0 removed paragraphs | this release | [what changed](inside-kitewing-websites/v1.2.0.md) · [current](../inside-kitewing-websites.md) |
+| **v1.2.0** | 2026-10-26 | minor | 1,366 | +2 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`0a2260ed2`](https://github.com/SGit-AI/SGit-AI__Website/commit/0a2260ed217f951f4ffb7b8d23d800d2d8720f68) | [what changed](inside-kitewing-websites/v1.2.0.md) · [current](../inside-kitewing-websites.md) |
 | **v1.1.0** | 2026-10-26 | minor | 1,364 | +125 / −66 words; 3 changed, 8 added, 1 removed paragraphs | [`19a4bef4b`](https://github.com/SGit-AI/SGit-AI__Website/commit/19a4bef4b56de13802a71badf30d7e24474b19a4) | [what changed](inside-kitewing-websites/v1.1.0.md) |
 | **v1.0.0** | 2026-10-26 | published | 1,305 | first published | [`d2f3477a9`](https://github.com/SGit-AI/SGit-AI__Website/commit/d2f3477a9552c35c71a530218ab7ef3c481e69a1) |  |
 
