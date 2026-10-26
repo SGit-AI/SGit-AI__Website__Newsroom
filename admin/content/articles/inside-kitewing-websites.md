@@ -3,7 +3,7 @@ title: Inside Kitewing Websites: a made-up studio that sells websites you own, a
 date: 2026-10-26
 author: Dinis Cruz
 author_url: about/index.html
-summary: To make the model in websites you own concrete, the agents built a mock-up of it. Kitewing Websites is a made-up studio that sells exactly that offer: setup of three accounts the client owns, a build from the client's own material with designs to choose from, QA, a handover, and nothing monthly. Next to it are three made-up client sites in a made-up town called Harrowby, chosen because they are the kinds of site that sound complicated and are easy for an agent to maintain: Tidewrack Studio Pottery, a catalogue of 28 pieces with filters; Fennick Lane Community Garden, with a season of events, a volunteer rota and 14 growing guides; and Quillon Heat & Plumbing, a local trade with a map of the villages it covers and 19 household guides. Each is one HTML file with its words and data in a JSON file beside it, no external requests, no fonts or images to fetch, and each looks different. They are built as vault apps, so each can live in an encrypted sgit vault, and the studio's vault holds the three examples inside it: a vault in a vault. The four vaults are made and committed; pushing them to the vault server is the step that needs the editor's token. Meanwhile, the four sites are served here, as previews.
+summary: To make the model in websites you own concrete, the agents built a mock-up of it. Kitewing Websites is a made-up studio that sells exactly that offer: setup of three accounts the client owns, a build from the client's own material with designs to choose from, QA, a handover, and nothing monthly. Next to it are three made-up client sites in a made-up town called Harrowby, chosen because they are the kinds of site that sound complicated and are easy for an agent to maintain: Tidewrack Studio Pottery, a catalogue of 28 pieces with filters; Fennick Lane Community Garden, with a season of events, a volunteer rota and 14 growing guides; and Quillon Heat & Plumbing, a local trade with a map of the villages it covers and 19 household guides. Each is one HTML file with its words and data in a JSON file beside it, no external requests, no fonts or images to fetch, and each looks different. They are built as vault apps, so each can live in an encrypted sgit vault, and the studio's vault holds the three examples inside it: a vault in a vault. The four vaults are pushed and published with their public read keys, and the four sites are also served here, as previews.
 version: v0.13.92
 license: https://creativecommons.org/licenses/by/4.0/
 tags: websites, vaults, sgit, demos, business-models, article
@@ -19,7 +19,7 @@ status: published
 - **Each is one file,** with its words and data in a JSON file beside it.
 - **Built as vault apps,** so each can live in an encrypted sgit vault.
 - **A vault in a vault:** the studio's vault holds the three examples.
-- **Served here as previews,** until the vaults are pushed.
+- **Pushed and published,** with public read keys; also served here as previews.
 
 ## Kitewing Websites {#studio}
 
@@ -56,13 +56,26 @@ Each site is the same shape, the one a vault app needs.
 
 Each site is also a vault: an encrypted, versioned sgit folder with an `app.json` that opens the site when the vault is opened. The studio's vault holds the three examples inside it, under `examples/`, so opening the studio's vault gives you the whole demonstration, and each example is also its own vault, to be handed to its owner.
 
-The four vaults are created and committed, locally. Pushing them to the vault server needs an access token, and that step is the editor's. Until then, the four sites are served on this newsroom, from the same files, as previews. When they are pushed, the public read keys will be published here, as for the [other demonstration vaults](https://newsroom.sgit.ai/articles/inside-the-no-server-studio.html).
+The four vaults are pushed to the vault server, encrypted, and published with their public read keys, so anyone can open them read-only:
+
+- **Kitewing Websites, with the three examples inside**, vault `ixrnfp9r`: [open it in the vault browser](https://dev.vault.sgraph.ai/#sgit_public_read_59d20551766612f10442bf3c39c994a572a6967ebb7e4e289033b29f3db443b8%3Aixrnfp9r).
+- **Tidewrack Studio Pottery**, vault `mpyp4tkh`: [open it in the vault browser](https://dev.vault.sgraph.ai/#sgit_public_read_6c45a6c6c6d2e3770d170d7af19b21db3e5c2126106a3669ad357ae14f136ffd%3Ampyp4tkh).
+- **Fennick Lane Community Garden**, vault `39jyfa9l`: [open it in the vault browser](https://dev.vault.sgraph.ai/#sgit_public_read_8ea698f00b104bfdbde7a184264e2e782e53c2dde85380933cbd09e1708f7d15%3A39jyfa9l).
+- **Quillon Heat & Plumbing**, vault `7ff1r1bi`: [open it in the vault browser](https://dev.vault.sgraph.ai/#sgit_public_read_1e1699bbf9fbe0880410b1b86aacc197e8aa3a1d0d24d65bf116192de1a24fa3%3A7ff1r1bi).
+
+Or clone the studio's vault, with the examples inside it, from a terminal:
+
+```
+sgit clone sgit_public_read_59d20551766612f10442bf3c39c994a572a6967ebb7e4e289033b29f3db443b8:ixrnfp9r kitewing-websites
+```
+
+The vault keys, which allow writing, are not published. The same files are also served on this newsroom as previews, at the links above.
 
 ## What this does not claim {#limits}
 
 - **Everything is made up:** the studio, the clients, the town, the people, the prices.
 - **The guides are sample text,** for a demonstration, not advice.
-- **The vaults are not pushed yet;** the previews are the same files.
+- **The previews and the vaults hold the same files,** pushed on 26 October 2026.
 - **The prices are hypotheses,** from [websites you own](https://newsroom.sgit.ai/articles/websites-you-own.html).
 
 ## Where this comes from {#sources}

@@ -63,7 +63,7 @@ A made-up studio, Kitewing Websites, and three made-up client sites in different
 - **Quillon Heat & Plumbing** (example) A map and 19 guides.
 - **One file, data beside it** (method) No external requests.
 - **Changed by asking** (method) Edits to content.json.
-- **A vault in a vault** (method) Committed; push awaits a token.
+- **A vault in a vault** (method) Pushed, public read keys published.
 
 > A vault in a vault: In short.
 

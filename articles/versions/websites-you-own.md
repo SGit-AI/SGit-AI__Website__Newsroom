@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-26 | published | 2,340 | first published | this release | [current](../websites-you-own.md) |
+| **v1.0.0** | 2026-10-26 | published | 2,340 | first published | [`d2f3477a9`](https://github.com/SGit-AI/SGit-AI__Website/commit/d2f3477a9552c35c71a530218ab7ef3c481e69a1) | [current](../websites-you-own.md) |
 
 [← Back to the article](../websites-you-own.md) · [All articles](../index.md)
 
