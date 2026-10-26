@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-293 of 293 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+294 of 294 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-293 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 31 articles not yet linked either way.
+294 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 32 articles not yet linked either way.
+
+## [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](web-summit-2026-the-plan.md)
+
+2026-10-26 · Startups & strategyAgents & policy
+
+For Web Summit 2026 a five-person team pursues usage before the sale, with five-minute onboarding, public-source intelligence, outreach tailored to one person and content for traffic, all run by one method, an asset, a page and a link, from a Web Summit newsroom of its own, while the team learns the two agentic workflows, starting with the scheduled website workflow because a page is cheap to undo.
+
+*[diagram]*
+**claim**method**example
+
+**9 nodes, 8 edges**
+
+- **Five people, five tickets** (example) Founders, PM, technical expert, explorer coder.
+- **Usage, then the sale** (claim) People buy after they use it.
+- **Five-minute onboarding** (method) The RiskMandate customer site's model.
+- **Three parallel tracks** (method) Intelligence, outreach, content.
+- **Asset, page, link** (method) On steroids, with agents.
+- **A Web Summit newsroom** (method) Vaults, a feed, agents; simpler than six repos.
+- **The email workflow** (example) A person on every send.
+- **The website workflow** (example) Agents on a schedule, through a gate.
+- **Start with the website** (claim) Safe, instructive, productive.
+
+> The sale happens after the usage The objectives: usage, then the sale.
+
+> you create an asset, you put it on a website, and you send a link The method, on steroids.
 
 ## [Feisty Duck, briefed: Ivan Ristić's cryptography and security news, newsletter, guide and history as an anchor for everything SSL, TLS and PKI, what it shares with our newsrooms, and how we could integrate with it](feisty-duck-briefed.md)
 

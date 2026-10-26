@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-25",
+  "generated": "2026-10-26",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -54,6 +54,187 @@
     "produces"
   ],
   "articles": [
+    {
+      "slug": "web-summit-2026-the-plan",
+      "title": "Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on",
+      "date": "2026-10-26",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html",
+      "markdown": "https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/web-summit-2026-the-plan.webp",
+      "teaser": "Web Summit 2026, the plan: usage first, an asset, a page and a link for every person, a summit newsroom, and two agentic workflows.",
+      "topics": [
+        "startups-and-strategy",
+        "agents-and-policy"
+      ],
+      "tags": [
+        "web-summit",
+        "strategy",
+        "team",
+        "agents",
+        "outreach",
+        "briefing",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "wt-loop.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wt-loop.webp",
+          "caption": "Web Summit 2026, usage first, then the sale: intelligence on who to talk to, from public material only; an asset made for one company or one post; a link to it, published on the Web Summit newsroom and sent by email or LinkedIn; usage, five minutes to value in their browser; and what they tell us, pain points from use, not from asking; the next asset is better. The sale comes after the usage, as the RiskMandate customer programme does.",
+          "kind": "process"
+        },
+        {
+          "file": "wt-team.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wt-team.webp",
+          "caption": "Five people, five tickets, who leads what: the two founders, the story, the products and the sale, approving every message that goes out; the project manager, the board and the rhythm, and the daily follow-up; the Gen AI consultant and technical expert, the demos, the onboarding and the website workflow; the Gen AI founder and explorer coder, the assets built for one company or one post.",
+          "kind": "concept"
+        },
+        {
+          "file": "wt-flows.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/wt-flows.webp",
+          "caption": "The two agentic workflows we run today: the email workflow, agent@riskmandate.ai, where the agent reads, researches, drafts for one person and keeps the records, and the editor reads and sends every draft, the drafts folder a work queue labelled send, review or decide, 178 emails by 18 October; and the website workflow, agents with a role, a policy and a schedule card that wake on their own and release through a gate, 23 agents and 13 schedule cards on the PHP story site.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "web-summit-2026-the-plan",
+        "teaser": "Web Summit 2026, the plan: usage first, an asset, a page and a link for every person, a summit newsroom, and two agentic workflows.",
+        "topics": [
+          "startups-and-strategy",
+          "agents-and-policy"
+        ],
+        "core_idea": "For Web Summit 2026 a five-person team pursues usage before the sale, with five-minute onboarding, public-source intelligence, outreach tailored to one person and content for traffic, all run by one method, an asset, a page and a link, from a Web Summit newsroom of its own, while the team learns the two agentic workflows, starting with the scheduled website workflow because a page is cheap to undo.",
+        "nodes": [
+          {
+            "id": "team",
+            "label": "Five people, five tickets",
+            "kind": "example",
+            "summary": "Founders, PM, technical expert, explorer coder."
+          },
+          {
+            "id": "usage",
+            "label": "Usage, then the sale",
+            "kind": "claim",
+            "summary": "People buy after they use it."
+          },
+          {
+            "id": "onboarding",
+            "label": "Five-minute onboarding",
+            "kind": "method",
+            "summary": "The RiskMandate customer site's model."
+          },
+          {
+            "id": "tracks",
+            "label": "Three parallel tracks",
+            "kind": "method",
+            "summary": "Intelligence, outreach, content."
+          },
+          {
+            "id": "method",
+            "label": "Asset, page, link",
+            "kind": "method",
+            "summary": "On steroids, with agents."
+          },
+          {
+            "id": "newsroom",
+            "label": "A Web Summit newsroom",
+            "kind": "method",
+            "summary": "Vaults, a feed, agents; simpler than six repos."
+          },
+          {
+            "id": "email",
+            "label": "The email workflow",
+            "kind": "example",
+            "summary": "A person on every send."
+          },
+          {
+            "id": "website",
+            "label": "The website workflow",
+            "kind": "example",
+            "summary": "Agents on a schedule, through a gate."
+          },
+          {
+            "id": "start",
+            "label": "Start with the website",
+            "kind": "claim",
+            "summary": "Safe, instructive, productive."
+          }
+        ],
+        "edges": [
+          {
+            "from": "onboarding",
+            "to": "usage",
+            "rel": "depends-on"
+          },
+          {
+            "from": "tracks",
+            "to": "usage",
+            "rel": "produces"
+          },
+          {
+            "from": "method",
+            "to": "tracks",
+            "rel": "depends-on"
+          },
+          {
+            "from": "newsroom",
+            "to": "method",
+            "rel": "depends-on"
+          },
+          {
+            "from": "website",
+            "to": "newsroom",
+            "rel": "produces"
+          },
+          {
+            "from": "email",
+            "to": "website",
+            "rel": "depends-on"
+          },
+          {
+            "from": "start",
+            "to": "website",
+            "rel": "depends-on"
+          },
+          {
+            "from": "team",
+            "to": "newsroom",
+            "rel": "depends-on"
+          }
+        ],
+        "links": {
+          "articles": [
+            "answering-a-draft",
+            "the-man-behind-the-curtain",
+            "how-cheap-is-it-to-undo",
+            "a-call-for-help",
+            "explorer-coding",
+            "translate-the-assumption",
+            "sources-and-shadows"
+          ],
+          "pages": [],
+          "sites": [
+            "https://websummit.com/",
+            "https://customers.riskmandate.ai/",
+            "https://sharness.ai/",
+            "https://api.newsroom.sgit.ai/",
+            "https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__the-split-for-every-agent/index.html"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "The sale happens after the usage",
+            "why": "The objectives: usage, then the sale."
+          },
+          {
+            "text": "you create an asset, you put it on a website, and you send a link",
+            "why": "The method, on steroids."
+          }
+        ]
+      }
+    },
     {
       "slug": "feisty-duck-briefed",
       "title": "Feisty Duck, briefed: Ivan Ristić's cryptography and security news, newsletter, guide and history as an anchor for everything SSL, TLS and PKI, what it shares with our newsrooms, and how we could integrate with it",
