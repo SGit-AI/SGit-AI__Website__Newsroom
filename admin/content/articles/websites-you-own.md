@@ -4,11 +4,13 @@ date: 2026-10-26
 author: Dinis Cruz
 author_url: about/index.html
 summary: Someone I am helping, who is doing a lot of agentic work now, sent me an infographic for a business selling websites built with Claude: three monthly plans from £39 to £119 with a setup fee, a cap of five or ten pages, half an hour to two hours of edits a month, the seller's Claude subscription as the main cost, and ten clients making about £570 a month. It is a good sign that people see the opportunity. But the temptation is always rent, money while you sleep, and the economics are wrong. On a monthly plan you earn most when your clients use you least, the clients who use you most cost you most, and a few of them will never stop asking. The page caps make no sense either: a static page costs almost nothing, and this newsroom runs about 1,500 of them on GitHub Pages. The model I propose is different. The client owns three accounts, Claude or ChatGPT, GitHub with Pages, and a domain. You charge once, to set them up and wire them together, build the site from the client's own material with designs to choose from, check it, and hand it over with a lesson in changing it by talking to their AI. After that, help is a block of hours, if they want it. Every engagement ends, the client is in control, and delighted clients tell others. Here is the infographic, section by section, and the alternative.
-version: v0.13.95
+version: v0.13.96
 license: https://creativecommons.org/licenses/by/4.0/
 tags: business-models, websites, agents, pricing, explorers-villagers, article
 status: published
 ---
+
+!trail kitewing
 
 !shot kw-info-all.webp | images/ | The infographic as I received it, on 26 October 2026: a pay-monthly website business built with Claude, in five sections: price plans, cost to run, time per five-page build, the numbers, and risks and fixes. Shared without its author's name; nothing in it identifies them. | small | aside
 
@@ -21,6 +23,7 @@ status: published
 - **The client should own the stack:** Claude or ChatGPT, GitHub with Pages, a domain.
 - **Charge once, for a finished job.** Setup, build, designs to choose from, QA, handover.
 - **After that, blocks of hours, only if wanted.** Every engagement ends.
+- **See it working:** a made-up studio and three client sites, [each a vault you can open](#mockup).
 
 ## What I was sent {#infographic}
 
@@ -89,9 +92,18 @@ The tech stack for someone to maintain a website today is an AI account, GitHub 
 
 Every engagement is finite, which is what [jobs that never scaled](https://newsroom.sgit.ai/articles/jobs-that-never-scaled.html) describes: a piece of expert work, delivered end to end, and finished. The client is empowered and in control, and delighted clients tell others. For someone who is not very technical, I think finite work is especially important. You could call these explorer services, in the language of [explorer coding](https://newsroom.sgit.ai/articles/explorer-coding.html): someone without an engineering background, selling what they can now build, on top of powerful open-source technology like ours, with villager and town planner services for what needs more.
 
-## What it looks like {#mockup}
+## What it looks like: open it and try it {#mockup}
 
-To make this concrete, I asked the agents to build a mock-up: Kitewing Websites, a made-up studio selling exactly this offer, and three made-up client sites in three industries, a potter's catalogue, a community garden and a local plumber with a guides library. Each is a vault app, a site in an encrypted folder. The tour is in [inside Kitewing Websites](https://newsroom.sgit.ai/articles/inside-kitewing-websites.html).
+To make this concrete, I asked the agents to build it. Not a description: a working mock-up of the whole business. Kitewing Websites is a made-up studio whose own site sells exactly this offer, and next to it are three made-up client sites, in three industries, each with its own design. All four are real, finished sites you can click through, and each is an encrypted sgit vault you can open.
+
+!shot kw-sites.webp | images/ | What is on the other side: Kitewing Websites, the made-up studio's own site, "a website you own, and can talk to"; Tidewrack Studio Pottery, a catalogue of 28 pieces in clay and sea-grey; Fennick Lane Community Garden, with events, a rota and growing guides, in leaf green and sunflower yellow; and Quillon Heat & Plumbing, a local trade with a map and 19 household guides, in navy and safety orange. All made up, for a demonstration. | collage
+
+- **[Kitewing Websites](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/index.html)**, the studio: the offer in five steps, the one-off prices, why there is no monthly fee, and the three examples. Its vault holds the three examples inside it. [Open the vault](https://dev.vault.sgraph.ai/#sgit_public_read_59d20551766612f10442bf3c39c994a572a6967ebb7e4e289033b29f3db443b8%3Aixrnfp9r).
+- **[Tidewrack Studio Pottery](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/tidewrack-pottery/index.html)**, a catalogue: 28 pieces, each drawn in its glaze, filtered by kind and glaze, with an enquiry note instead of a checkout. [Open the vault](https://dev.vault.sgraph.ai/#sgit_public_read_6c45a6c6c6d2e3770d170d7af19b21db3e5c2126106a3669ad357ae14f136ffd%3Ampyp4tkh).
+- **[Fennick Lane Community Garden](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/fennick-lane-garden/index.html)**, a community group: plots and the waiting list, a season of 15 events, a volunteer rota and 14 growing guides. [Open the vault](https://dev.vault.sgraph.ai/#sgit_public_read_8ea698f00b104bfdbde7a184264e2e782e53c2dde85380933cbd09e1708f7d15%3A39jyfa9l).
+- **[Quillon Heat & Plumbing](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/quillon-heating/index.html)**, a local trade: eight services, a map of the villages it covers, what to do in an emergency, and 19 household guides. [Open the vault](https://dev.vault.sgraph.ai/#sgit_public_read_1e1699bbf9fbe0880410b1b86aacc197e8aa3a1d0d24d65bf116192de1a24fa3%3A7ff1r1bi).
+
+Each one is a single HTML file with its words in a JSON file beside it, so its owner changes it by asking: "add a mug in the celadon glaze", "move the June work day". [Inside Kitewing Websites](https://newsroom.sgit.ai/articles/inside-kitewing-websites.html) is the tour: how each site is made, and how the vaults work.
 
 ## What this does not claim {#limits}
 

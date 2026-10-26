@@ -295,3 +295,6 @@ main section.aseries-all .aseries-n{display:inline-block;min-width:1.6em;font-we
    57 article pages past a phone's width. As a wrapping flex row, the byline breaks between items at any width. */
 p:has(> .chip){display:flex;flex-wrap:wrap;align-items:center;column-gap:.3em;row-gap:.25rem}
 p:has(> .chip) > .chip{margin-right:0}
+
+/* A trail of six cards: two rows of three, not four and two (v0.13.96). */
+@media (min-width:861px){.trail-row:has(> :nth-child(6):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}

@@ -10,11 +10,25 @@
 
 # Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.1.0, 2 versions](versions/inside-kitewing-websites.md) · [newsroom v0.13.92](https://newsroom.sgit.ai/admin/versions.html) · websitesvaultssgitdemosbusiness-modelsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.2.0, 3 versions](versions/inside-kitewing-websites.md) · [newsroom v0.13.96](https://newsroom.sgit.ai/admin/versions.html) · websitesvaultssgitdemosbusiness-modelsarticle
 
 ***Abstract:** To make the model in websites you own concrete, the agents built a mock-up of it. Kitewing Websites is a made-up studio that sells exactly that offer: setup of three accounts the client owns, a build from the client's own material with designs to choose from, QA, a handover, and nothing monthly. Next to it are three made-up client sites in a made-up town called Harrowby, chosen because they are the kinds of site that sound complicated and are easy for an agent to maintain: Tidewrack Studio Pottery, a catalogue of 28 pieces with filters; Fennick Lane Community Garden, with a season of events, a volunteer rota and 14 growing guides; and Quillon Heat & Plumbing, a local trade with a map of the villages it covers and 19 household guides. Each is one HTML file with its words and data in a JSON file beside it, no external requests, no fonts or images to fetch, and each looks different. They are built as vault apps, so each can live in an encrypted sgit vault, and the studio's vault holds the three examples inside it: a vault in a vault. The four vaults are pushed and published with their public read keys, and the four sites are also served here, as previews.*
 
 Kitewing Websites and its three example clients, all made up: the studio's own site, "a website you own, and can talk to"; Tidewrack Studio Pottery, a catalogue in clay and sea-grey; Fennick Lane Community Garden, in leaf green and sunflower yellow; and Quillon Heat & Plumbing, in navy and safety orange.
+
+Websites you own: the idea, the tour, and four vaults to open
+
+Why rent is the wrong model, then a made-up studio that sells the alternative and three made-up client sites built with it, each an encrypted vault you can open.
+
+[1 · The ideaWebsites you ownWhy selling AI-built websites by the month gets it wrong, and the one-off model I propose.](websites-you-own.md)[you are here2 · The tourInside Kitewing WebsitesThe studio and its three example sites: what each one is, how it is made, and how to open it.](inside-kitewing-websites.md)
+
+3 · The studioKitewing WebsitesThe studio's own site, selling the offer, with the three examples inside its vault.[Open the vault ↗](https://dev.vault.sgraph.ai/#sgit_public_read_59d20551766612f10442bf3c39c994a572a6967ebb7e4e289033b29f3db443b8%3Aixrnfp9r)[Preview](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/index.html)
+
+4 · A catalogueTidewrack Studio PotteryA potter's catalogue of 28 pieces, filtered by kind and glaze.[Open the vault ↗](https://dev.vault.sgraph.ai/#sgit_public_read_6c45a6c6c6d2e3770d170d7af19b21db3e5c2126106a3669ad357ae14f136ffd%3Ampyp4tkh)[Preview](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/tidewrack-pottery/index.html)
+
+5 · A communityFennick Lane Community GardenPlots, a season of events, a volunteer rota and 14 growing guides.[Open the vault ↗](https://dev.vault.sgraph.ai/#sgit_public_read_8ea698f00b104bfdbde7a184264e2e782e53c2dde85380933cbd09e1708f7d15%3A39jyfa9l)[Preview](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/fennick-lane-garden/index.html)
+
+6 · A local tradeQuillon Heat & PlumbingServices, a map of the villages it covers and 19 household guides.[Open the vault ↗](https://dev.vault.sgraph.ai/#sgit_public_read_1e1699bbf9fbe0880410b1b86aacc197e8aa3a1d0d24d65bf116192de1a24fa3%3A7ff1r1bi)[Preview](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/quillon-heating/index.html)
 
 ## In short
 

@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.95 · 298 articles since 2026-08-17; the newest is 2026-10-26. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.96 · 298 articles since 2026-08-17; the newest is 2026-10-26. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -16,7 +16,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## Highlights
 
-- [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](articles/websites-you-own.md), 2026-10-26, 9 min.
+- [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](articles/websites-you-own.md), 2026-10-26, 11 min.
 - [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](articles/inside-kitewing-websites.md), 2026-10-26, 5 min.
 - [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](articles/one-researcher-for-every-newsroom.md), 2026-10-26, 7 min.
 - [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](articles/web-summit-2026-the-plan.md), 2026-10-26, 10 min.
@@ -58,7 +58,7 @@ For editors, journalists and publishers asking how news gets paid for when agent
 
 ### Strategy & startups (54)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](articles/websites-you-own.md), 2026-10-26, 9 min.
+- [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](articles/websites-you-own.md), 2026-10-26, 11 min.
 - [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](articles/web-summit-2026-the-plan.md), 2026-10-26, 10 min.
 - [Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on](articles/simplified-or-outsourced.md), 2026-10-25, 6 min.
 

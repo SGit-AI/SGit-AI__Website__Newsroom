@@ -4,13 +4,15 @@ date: 2026-10-26
 author: Dinis Cruz
 author_url: about/index.html
 summary: To make the model in websites you own concrete, the agents built a mock-up of it. Kitewing Websites is a made-up studio that sells exactly that offer: setup of three accounts the client owns, a build from the client's own material with designs to choose from, QA, a handover, and nothing monthly. Next to it are three made-up client sites in a made-up town called Harrowby, chosen because they are the kinds of site that sound complicated and are easy for an agent to maintain: Tidewrack Studio Pottery, a catalogue of 28 pieces with filters; Fennick Lane Community Garden, with a season of events, a volunteer rota and 14 growing guides; and Quillon Heat & Plumbing, a local trade with a map of the villages it covers and 19 household guides. Each is one HTML file with its words and data in a JSON file beside it, no external requests, no fonts or images to fetch, and each looks different. They are built as vault apps, so each can live in an encrypted sgit vault, and the studio's vault holds the three examples inside it: a vault in a vault. The four vaults are pushed and published with their public read keys, and the four sites are also served here, as previews.
-version: v0.13.92
+version: v0.13.96
 license: https://creativecommons.org/licenses/by/4.0/
 tags: websites, vaults, sgit, demos, business-models, article
 status: published
 ---
 
 !shot kw-sites.webp | images/ | Kitewing Websites and its three example clients, all made up: the studio's own site, "a website you own, and can talk to"; Tidewrack Studio Pottery, a catalogue in clay and sea-grey; Fennick Lane Community Garden, in leaf green and sunflower yellow; and Quillon Heat & Plumbing, in navy and safety orange. | collage
+
+!trail kitewing
 
 ## In short {#in-short}
 
