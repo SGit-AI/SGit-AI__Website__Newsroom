@@ -24,7 +24,11 @@ const { startMock } = await import(pathToFileURL(path.join(ROOT, 'admin/build/va
 const mock = await startMock()
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'review-vault-'))
 const T = (...p) => path.join(tmp, ...p)
-const env0 = { ...process.env, HOME: T('home'), SG_SEND_ACCESS_TOKEN: mock.token, SG_SEND_PASSPHRASE: 'test-passphrase' }
+// HOME is a fresh folder so sgit pki's key store stays out of the real home. On a runner that installed sgit-ai with
+// pip --user, the `sgit` script finds sgit_ai through the user site under HOME (see test_vault.mjs), so the user base is
+// pinned to the real home's before HOME moves.
+const userBase = process.env.PYTHONUSERBASE || path.join(os.homedir(), '.local')
+const env0 = { ...process.env, HOME: T('home'), PYTHONUSERBASE: userBase, SG_SEND_ACCESS_TOKEN: mock.token, SG_SEND_PASSPHRASE: 'test-passphrase' }
 fs.mkdirSync(T('home'), { recursive: true })
 const run = (cmd, args, { env = {}, cwd = ROOT, input = null } = {}) => new Promise(resolve => {      // async: the mock answers in this process
     const p = spawn(cmd, args, { cwd, env: { ...env0, ...env } })
