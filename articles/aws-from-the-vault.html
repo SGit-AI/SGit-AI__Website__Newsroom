@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go</p>
  <h1>AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/aws-from-the-vault.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.16</a> &middot; <span class="chip">aws</span><span class="chip">vaults</span><span class="chip">cloud</span><span class="chip">pki</span><span class="chip">architecture</span><span class="chip">proposal</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> I have wanted to build this for a long time: a website for managing AWS and working with its data, all on the client. It will be aws.twin.sgit.ai, because it is a twin first: an AWS-shaped interface whose backend is a vault, with the live account put in front of it later as a second backend. Two pieces were always missing. The first was a safe place in the browser for the AWS credentials. The second was somewhere to put the data: the inventories, logs and costs you gather. Now that every user has a vault, both are solved. You sign in to the AWS access portal, IAM Identity Center, copy the temporary credentials for one account and role, which last from one to twelve hours, and paste them into your vault, which can itself be temporary. For that session the site can do whatever that role can do, from the browser, with the normal AWS SDK for JavaScript: an S3 browser, Lambda functions, EC2 instances, billing, logs. The results go back into the vault, where they are versioned and can be turned into graphs. The first job I want from it is a better way to deploy the SG/Send server components to many regions and accounts. There may be a PKI way to get the session as well: IAM Roles Anywhere exchanges X.509 certificates for temporary credentials. That is to test. This is a proposal.</em></p>
 <figure class="shot shot--narrow" data-shot="aw-flow.webp" data-dir="images/" data-alt="The proposed flow. Sign in to the AWS access portal and copy temporary credentials for one account and role. Paste them into the vault. The site, in the browser, calls AWS with them, and the results go back into the vault, where they become graphs and workflows." data-kind="architecture"><figcaption>The proposed flow. Sign in to the AWS access portal and copy temporary credentials for one account and role. Paste them into the vault. The site, in the browser, calls AWS with them, and the results go back into the vault, where they become graphs and workflows.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -314,7 +315,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="aws-from-the-vault.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="aws-from-the-vault.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

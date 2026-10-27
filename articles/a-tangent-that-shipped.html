@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after</p>
  <h1>A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-24 &middot; <a href="versions/a-tangent-that-shipped.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.65</a> &middot; <span class="chip">sgit</span><span class="chip">pack-mode</span><span class="chip">performance</span><span class="chip">agents</span><span class="chip">vaults</span><span class="chip">innovation</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> This is a story about how innovation sometimes happens organically, and why I let myself go on tangents. It started with a bug: a vault that took 59 seconds to clone, measured by this newsroom, and the comms vault that took three and a half minutes. Fixing that led me to ask whether sgit could run a vault from a zip file, partly because I want vaults that live on Google Drive, Dropbox or a USB stick, with no server for us to maintain. The CLI team researched it with no code, designed a pack per push, had it reviewed four times by a second agent, and released sgit-ai 0.24.0 on 22 October. The next day, the PHP story's source watch needed it: 63,662 objects and 1.6 GB, a server that could no longer list it, a clone that took 13 minutes and 47 seconds, and one push that took 12 attempts and 2 hours 42 minutes. As a pack vault, the same history cloned in 95 seconds and pushed in 96. And it shipped without everything: the web UI still cannot open a pack vault. That was fine, because the vault that needed it did not need the UI. Small, incremental changes, done properly, made a very large difference.</em></p>
 <figure class="shot" data-shot="zv-php-top.webp" data-dir="images/" data-alt="The PHP site&#x27;s pack-mode page, 23 October 2026: the source watch, 63,662 objects and 1,614.4 MB, cloned in 95 seconds as a pack vault against 13 minutes 47 seconds as a normal vault, its whole history pushed in 96 seconds, in 4 requests, 1.36 times smaller on the server." data-kind="screenshot"><figcaption>The PHP site's pack-mode page, 23 October 2026: the source watch, 63,662 objects and 1,614.4 MB, cloned in 95 seconds as a pack vault against 13 minutes 47 seconds as a normal vault, its whole history pushed in 96 seconds, in 4 requests, 1.36 times smaller on the server.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -252,7 +253,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-tangent-that-shipped.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-tangent-that-shipped.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

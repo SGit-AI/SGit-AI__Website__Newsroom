@@ -22,7 +22,7 @@ The graphs are data first and pictures second. Take them as JSON: [all articles 
 
 302 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 40 articles not yet linked either way.
 
-## [Meta's new terms and the news: what the crawling clause says, what has happened in five weeks, and why publishers should answer with their own machine-readable terms, not only with letters](meta-terms-and-the-news.md)
+## [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](meta-terms-and-the-news.md)
 
 2026-10-27 · News & evidenceStartups & strategy
 
@@ -35,7 +35,7 @@ Meta's updated Commercial Terms, effective 20 November 2026, let it crawl, cache
 
 - **The crawling clause** (artefact) Crawlers, test credentials, periodic pulls.
 - **Almost every news site** (claim) Every Page links to a site.
-- **Five weeks** (example) Train removed; date moved to 20 November.
+- **Since mid-October** (example) Train removed; date moved to 20 November.
 - **WAN-IFRA's five demands** (claim) Exclusion, paywalls, robots.txt binding, licence, opt-out.
 - **A statement is not a term** (concept) Meta's limits are not in the text.
 - **Machine-readable terms** (method) RSL and a price per crawl.
@@ -44,7 +44,7 @@ Meta's updated Commercial Terms, effective 20 November 2026, let it crawl, cache
 
 > Journalism is not raw material to be collected as a condition of being present on a platform. What publishers are asking for.
 
-> This postponement is a welcome step, but it does not address our concerns. Five weeks of it.
+> This postponement is a welcome step, but it does not address our concerns. Since mid-October.
 
 ## [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](the-evidence-behind-four-days.md)
 

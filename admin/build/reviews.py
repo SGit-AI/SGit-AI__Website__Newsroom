@@ -62,9 +62,10 @@ def articles():
             continue
         page = (ROOT / "articles" / f"{a['slug']}.html").read_text(encoding="utf-8")
         v = re.search(r'release it was published in">(?:newsroom )?(v[0-9.]+)</a>', page)
+        av = re.search(r'>article (v\d+\.\d+\.\d+)\b', page)
         text = "\n".join(f"{sid}\n{t}" for sid, _, t in secs)
         out.append({"n": a["n"], "slug": a["slug"], "title": a["title"], "date": a["date"],
-                    "version": v.group(1) if v else None,
+                    "version": v.group(1) if v else None, "aversion": av.group(1) if av else None,
                     "hash": hashlib.sha256(text.encode("utf-8")).hexdigest()[:12],
                     "text": " ".join(t for _, _, t in secs)})
     out.sort(key=lambda a: (a["date"], a["n"]), reverse=True)
@@ -150,9 +151,25 @@ def check(arts=None):
     return errors, warnings
 
 
+def release():
+    return (ROOT / "admin/build/version.txt").read_text(encoding="utf-8").strip()
+
+
 def stamp():
     by = {a["slug"]: a for a in articles()}
     n = 0
+    # an answer marked fixed in this release gets the article version that carries the fix, so the version pages can
+    # credit the review long after this release
+    rel, (_, status) = release(), records()
+    for slug, st in status.items():
+        a = by.get(slug)
+        hit = 0
+        for s in (st.get("findings") or {}).values():
+            if a and a.get("aversion") and s.get("status") == "fixed" and s.get("in") == rel and not s.get("article"):
+                s["article"] = a["aversion"]; hit += 1
+        if hit:
+            (SRC / slug / "status.json").write_text(json.dumps(st, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+            n += hit
     for f, r in records()[0]:
         if not r.get("article_hash") and r.get("slug") in by:
             r["article_hash"] = by[r["slug"]]["hash"]
@@ -191,9 +208,17 @@ def skeleton(rid, slug):
 
 # ---------- the pages ----------
 
+CURRENT = {}  # slug: the article version in this build, for answers fixed in this release and not stamped yet
+
+
 def answers(status, slug, fname):
     st = (status.get(slug) or {}).get("findings") or {}
-    return {ref.split("#", 1)[1]: s for ref, s in st.items() if ref.split("#", 1)[0] == fname}
+    out = {ref.split("#", 1)[1]: s for ref, s in st.items() if ref.split("#", 1)[0] == fname}
+    rel = release()
+    for s in out.values():
+        if s.get("status") == "fixed" and not s.get("article") and s.get("in") == rel and CURRENT.get(slug):
+            s["article"] = CURRENT[slug]
+    return out
 
 
 def tally(r, ans):
@@ -208,24 +233,165 @@ def who(r, regs):
     return reg.get("name") or r.get("reviewer")
 
 
-def section_html(a, revs, status, regs, up):
-    rows = []
+PEOPLE = ("editor", "journalist", "reader")
+
+
+def standing(a, revs, status, regs):
+    """Where an article stands in peer review: who has read which text, what they said, and what is still open.
+    Counts, not a score: a reader can see how many fresh looks the current text has had, by agents and by people."""
+    cur = [(f, r) for f, r in revs if r.get("article_hash") == a["hash"]]
+    old = [(f, r) for f, r in revs if r.get("article_hash") != a["hash"]]
+    names = lambda rs: sorted({who(r, regs) for _, r in rs})  # noqa: E731
+    agents = names([x for x in cur if x[1].get("kind") == "agent"])
+    people = names([x for x in cur if x[1].get("kind") in PEOPLE])
+    t = {"open": 0, "fixed": 0, "declined": 0}
     for f, r in revs:
-        ans = answers(status, a["slug"], f.name)
-        t = tally(r, ans)
-        current = r.get("article_hash") == a["hash"]
-        n = len(r.get("findings") or [])
-        fsum = "no findings" if not n else f"{n} finding{'s' if n != 1 else ''}: " + ", ".join(f"{v} {k}" for k, v in t.items() if v)
-        note = "" if current else ' <span class="dim">(an earlier text)</span>'
-        rows.append(f'<li><b>{e(who(r, regs))}</b> <span class="tchip">{e(r.get("kind", ""))}</span> '
-                    f'{e(VERDICTS.get(r.get("verdict"), ""))}, {e((r.get("at") or "")[:10])}, at {e(r.get("article_version") or "")}{note}. '
-                    f'{e(r.get("summary") or "")} <span class="dim">{e(fsum)}.</span> '
-                    f'<a href="{up}reviews/records/{e(a["slug"])}/{e(f.name)}">The record</a></li>')
-    body = ("<ul>" + "".join(rows) + "</ul>") if rows else "<p class=\"dim\">No reviews yet.</p>"
+        for k, v in tally(r, answers(status, a["slug"], f.name)).items():
+            t[k] += v
+    against = [who(r, regs) for _, r in cur if r.get("verdict") == "changes-needed"]
+    if not revs:
+        label, cls = "Not reviewed yet", "none"
+    elif against or t["open"]:
+        label, cls = (f"Disputed: {', '.join(against)} asked for changes" if against else f"{t['open']} finding{'s' if t['open'] != 1 else ''} open"), "open"
+    elif not cur:
+        label, cls = "Corrected after review; this text not yet re-read", "stale"
+    elif people and agents:
+        label, cls = "Checked by agents and people", "both"
+    elif people:
+        label, cls = "Checked by people", "people"
+    else:
+        label, cls = f"Checked by {len(agents)} agent{'s' if len(agents) != 1 else ''}; no person yet", "agents"
+    return {"label": label, "cls": cls, "agents": agents, "people": people, "earlier": names(old), "tally": t,
+            "fresh": len({r.get("reviewer") for _, r in cur}), "all": len({r.get("reviewer") for _, r in revs})}
+
+
+def strip_html(a, s, up):
+    if not s["all"]:
+        return (f'<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. '
+                f'<a href="{up}reviews/criteria.html">Review it</a></p>')
+    bits = [f'<b>{e(s["label"])}</b>']
+    on = []
+    if not s["fresh"]:
+        on.append("no review yet")
+    if s["agents"]:
+        on.append(f'{len(s["agents"])} agent{"s" if len(s["agents"]) != 1 else ""} ({e(", ".join(s["agents"]))})')
+    if s["fresh"]:
+        on.append(f'{len(s["people"])} {"person" if len(s["people"]) == 1 else "people"}' + (f' ({e(", ".join(s["people"]))})' if s["people"] else ""))
+    bits.append("this text: " + ", ".join(on))
+    if s["earlier"]:
+        bits.append("earlier texts: " + e(", ".join(s["earlier"])))
+    t = s["tally"]
+    n = sum(t.values())
+    if n:
+        bits.append(f'{n} finding{"s" if n != 1 else ""}: ' + ", ".join(f"{v} {k}" for k, v in t.items() if v))
+    return (f'<p class="rvstatus rv-{s["cls"]}"><span class="rv-k">Peer review</span> ' + " &middot; ".join(bits)
+            + ' &middot; <a href="#reviews">the reviews</a></p>')
+
+
+def review_li(a, f, r, status, regs, up):
+    ans = answers(status, a["slug"], f.name)
+    t = tally(r, ans)
+    current = r.get("article_hash") == a["hash"]
+    n = len(r.get("findings") or [])
+    fsum = "no findings" if not n else f"{n} finding{'s' if n != 1 else ''}: " + ", ".join(f"{v} {k}" for k, v in t.items() if v)
+    fixed_in = sorted({s["article"] for s in ans.values() if s.get("status") == "fixed" and s.get("article")})
+    if current:
+        note = ' <span class="tchip">this text</span>'
+    else:
+        note = ' <span class="dim">(an earlier text' + (f'; answered in <a href="{up}articles/versions/{e(a["slug"])}/{e(fixed_in[-1])}.html">article {e(fixed_in[-1])}</a>' if fixed_in else "") + ')</span>'
+    model = f' <span class="dim">{e(r.get("model"))}</span>' if r.get("kind") == "agent" and r.get("model") and r["model"] not in who(r, regs) else ""
+    return (f'<li><b>{e(who(r, regs))}</b>{model} <span class="tchip">{e(r.get("kind", ""))}</span> '
+            f'{e(VERDICTS.get(r.get("verdict"), ""))}, {e((r.get("at") or "")[:10])}, at newsroom {e(r.get("article_version") or "")}{note}. '
+            f'{e(r.get("summary") or "")} <span class="dim">{e(fsum)}.</span> '
+            f'<a href="{up}reviews/records/{e(a["slug"])}/{e(f.name)}">The record</a></li>')
+
+
+def section_html(a, revs, status, regs, up):
+    s = standing(a, revs, status, regs)
+    people = [x for x in revs if x[1].get("kind") in PEOPLE]
+    agents = [x for x in revs if x[1].get("kind") not in PEOPLE]
+    parts = []
+    if revs:
+        parts.append(f'<p><b>{e(s["label"])}.</b> This text has had {s["fresh"]} fresh look{"s" if s["fresh"] != 1 else ""}; '
+                     f'the article, {s["all"]} reviewer{"s" if s["all"] != 1 else ""} in all. A review is of one text: when the article changes, '
+                     f'its earlier reviews stay on the record, marked as of an earlier text, and the new text waits for a fresh look.</p>')
+        parts.append('<h3>People</h3>' + ("<ul>" + "".join(review_li(a, f, r, status, regs, up) for f, r in people) + "</ul>" if people
+                     else f'<p class="dim">No person has reviewed it yet: the editor, a journalist or a reader who signs what they write. <a href="{up}reviews/criteria.html">How to review it</a>.</p>'))
+        parts.append('<h3>Agents</h3>' + ("<ul>" + "".join(review_li(a, f, r, status, regs, up) for f, r in agents) + "</ul>" if agents
+                     else '<p class="dim">No agent has reviewed it yet.</p>'))
+    body = "\n ".join(parts) if parts else "<p class=\"dim\">No reviews yet.</p>"
     return (f'<section class="athreads areviews" id="reviews">\n <h2>Reviews</h2>\n'
             f' <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against '
             f'<a href="{up}reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. '
             f'<a href="{up}reviews/index.html">All reviews &rarr;</a></p>\n {body}\n</section>')
+
+
+def inject_strip(a, html_strip):
+    """The peer-review line under the byline, before the abstract: outside every section's text, so the article's hash
+    and its section summaries do not see it."""
+    p = ROOT / "articles" / f"{a['slug']}.html"
+    page = p.read_text(encoding="utf-8")
+    page2 = re.sub(r'\n *<p class="rvstatus[^"]*">.*?</p>', "", page, flags=re.S)
+    page2 = re.sub(r'\n  (?=\n *<p class="abstract">)', "", page2)  # an indent an earlier removal left behind
+    m = re.search(r'\n\s*<p class="abstract">', page2)
+    if not m:
+        return False
+    page2 = page2[:m.start()] + "\n  " + html_strip + page2[m.start():]
+    if page2 != page:
+        p.write_text(page2, encoding="utf-8")
+        return True
+    return False
+
+
+def credit_versions(a, revs, status, regs):
+    """The version pages credit the reviews whose findings each version fixed."""
+    by_ver = {}
+    for f, r in revs:
+        ans = answers(status, a["slug"], f.name)
+        for v in sorted({s["article"] for s in ans.values() if s.get("status") == "fixed" and s.get("article")}):
+            k = sum(1 for s in ans.values() if s.get("status") == "fixed" and s.get("article") == v)
+            by_ver.setdefault(v, []).append((f, r, k))
+    changed = 0
+    up = "../../../"
+    for v, items in by_ver.items():
+        phr = "; ".join(f'{e(who(r, regs))}&rsquo;s review of the text published in newsroom {e(r.get("article_version") or "")} '
+                        f'({k} finding{"s" if k != 1 else ""} fixed, <a href="{up}reviews/records/{e(a["slug"])}/{e(f.name)}">the review</a>, '
+                        f'<a href="{up}reviews/records/{e(a["slug"])}/status.json">the answers</a>)' for f, r, k in items)
+        txt = "; ".join(f'{who(r, regs)}\u2019s review of the text published in newsroom {r.get("article_version") or ""} ({k} finding{"s" if k != 1 else ""} fixed)' for f, r, k in items)
+        # the diff page of that version, and its markdown twin
+        dp = ROOT / "articles/versions" / a["slug"] / f"{v}.html"
+        if dp.exists():
+            page = dp.read_text(encoding="utf-8")
+            page2 = re.sub(r'\n *<p class="rvcredit">.*?</p>', "", page, flags=re.S)
+            page2 = re.sub(r'(<p class="lead">.*?</p>) +(?=\n)', r"\1", page2, count=1, flags=re.S)  # indents an earlier removal left
+            page2 = re.sub(r'(<p class="lead">.*?</p>)\n(?:[ ]*\n)+', r"\1\n", page2, count=1, flags=re.S)
+            m = re.search(r'(<p class="lead">.*?</p>)', page2, re.S)
+            if m:
+                page2 = page2[:m.end()] + f'\n <p class="rvcredit"><b>Prompted by review.</b> This version answers {phr}.</p>' + page2[m.end():]
+            if page2 != page:
+                dp.write_text(page2, encoding="utf-8"); changed += 1
+        mp = dp.with_suffix(".md")
+        if mp.exists():
+            md = mp.read_text(encoding="utf-8")
+            md2 = re.sub(r"\n\*\*Prompted by review\.\*\*[^\n]*\n", "", md)
+            m = re.search(r"\nFrom v[^\n]*paragraph by paragraph\.\n", md2)
+            if m:
+                md2 = md2[:m.end()] + f"\n**Prompted by review.** This version answers {txt}.\n" + md2[m.end():]
+            if md2 != md:
+                mp.write_text(md2, encoding="utf-8")
+    # the versions table: a line in each credited version's row
+    vp = ROOT / "articles/versions" / f"{a['slug']}.html"
+    if vp.exists():
+        page = vp.read_text(encoding="utf-8")
+        page2 = re.sub(r'<br><span class="rvcredit">.*?</span>', "", page, flags=re.S)
+        for v, items in by_ver.items():
+            names = ", ".join(e(who(r, regs)) for f, r, k in items)
+            row = re.search(r'(<tr><td[^>]*><b>' + re.escape(v) + r'</b></td>(?:<td[^>]*>.*?</td>){3}<td[^>]*>.*?)(</td>)', page2)
+            if row:
+                page2 = page2[:row.end(1)] + f'<br><span class="rvcredit">prompted by {names}&rsquo;s review</span>' + page2[row.end(1):]
+        if page2 != page:
+            vp.write_text(page2, encoding="utf-8"); changed += 1
+    return changed
 
 
 def inject(a, html_section):
@@ -253,6 +419,7 @@ def build():
     arts = articles()
     regs = {r["id"]: r for r in reviewers()}
     recs, status = records()
+    CURRENT.update({a["slug"]: a["aversion"] for a in arts if a.get("aversion")})
     per = {}
     for f, r in recs:
         per.setdefault(r["slug"], []).append((f, r))
@@ -317,7 +484,9 @@ def build():
         "reviews/index.html", "Reviews on the record", "Every review of every article on newsroom.sgit.ai, by agents, the editor and the desk, against published criteria.",
         body, eyebrow="Reviews", agent="Machine-readable: <a href=\"status.json\">status.json</a> (every article's current hash and its reviews), <a href=\"criteria.md\">criteria.md</a>, and each record under <code>reviews/records/&lt;slug&gt;/</code>."))
     changed = sum(inject(a, section_html(a, per.get(a["slug"], []), status, regs, "../")) for a in arts)
-    print(f"reviews: {len(recs)} record(s) on {reviewed} of {len(arts)} articles; {len(open_rows)} open finding(s); {changed} page(s) updated")
+    strips = sum(inject_strip(a, strip_html(a, standing(a, per.get(a["slug"], []), status, regs), "../")) for a in arts)
+    credits = sum(credit_versions(a, per.get(a["slug"], []), status, regs) for a in arts)
+    print(f"reviews: {len(recs)} record(s) on {reviewed} of {len(arts)} articles; {len(open_rows)} open finding(s); {changed} page(s) updated, {strips} peer-review line(s), {credits} version page(s) credited")
 
 
 def main():

@@ -393,6 +393,10 @@ try {
       [/\u00b7 site v\d+\.\d+\.\d+ \u00b7/, '\u00b7 site \u00b7'],
       [/<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+<\/span>/, '<span>newsroom.sgit.ai &middot; </span>'],
       [/<section class="athreads areviews" id="reviews">[\s\S]*?<\/section>\n/, ''],  // stamped by reviews.py
+      [/\n  <p class="rvstatus[^"]*">[\s\S]*?<\/p>/, ''],  // stamped by reviews.py
+      [/\n <p class="rvcredit">[\s\S]*?<\/p>/, ''],  // stamped by reviews.py
+      [/<br><span class="rvcredit">[\s\S]*?<\/span>/g, ''],  // stamped by reviews.py, one per credited version
+      [/\n\*\*Prompted by review\.\*\*[^\n]*\n/, ''],  // stamped by reviews.py
       [/<nav class="aseries"[^>]*>[\s\S]*?<\/nav>\n/, ''],  // stamped by series.py
       [/<section class="aseries-all"[^>]*>[\s\S]*?<\/section>\n/, ''],  // stamped by series.py
       [/<nav class="trail-end"[^>]*>[\s\S]*?<\/nav>\n/, ''],  // stamped by trail_end.py

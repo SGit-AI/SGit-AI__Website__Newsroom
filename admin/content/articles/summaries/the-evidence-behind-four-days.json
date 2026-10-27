@@ -5,7 +5,7 @@
   "top": {
    "line": "Jeremiah Grossman's php2shell post, checked claim by claim against public data and the PHP story site's evidence, and corrected after review.",
    "para": "Four days after php2shell went public, Jeremiah Grossman wrote that the evidence shows no wave of breaches. Re-counted from NVD, CISA, EPSS and the PHP story site, most of the post holds: an exact timestamp, 1,394 CVEs in the window, no Exploit-DB or Metasploit references in NVD, no confirmed victim as of 27 October. Corrected after a review by ChatGPT.",
-   "hash": "e5a7346d2ca1"
+   "hash": "251d43790a00"
   },
   "in-short": {
    "line": "Eleven lines: the post holds, the timestamp, 1,394 unreconciled, a forecast, a dated absence, specific exploits, two changes, the yearly data, Wiz, the asks.",
@@ -19,8 +19,8 @@
   },
   "claims": {
    "line": "A table of every claim, what the data says, and a verdict: exact, close, holds, a count that matches, or not reproduced.",
-   "para": "The timestamp matches the CVE record to the second. NVD counts 1,394, close to 1,448 but not reconciled. No NVD record cites Exploit-DB or Metasploit. VulnCheck's 25 match in count; membership and assignment not checked. CISA listed only the Arista flaw at the time. Censys's 32 million was not reproduced. No confirmed compromise holds as a time-bounded absence.",
-   "hash": "72e75da91c6a"
+   "para": "The timestamp matches the CVE record to the second. NVD counts 1,394, close to 1,448 but not reconciled. No NVD record cites Exploit-DB or Metasploit. VulnCheck's 25 old-ID CVEs are close to the post's 24 of 25, not the same. CISA listed only the Arista flaw then. Censys's 32 million was not reproduced. No confirmed compromise, as a dated absence.",
+   "hash": "c0dcdcb92c04"
   },
   "record": {
    "line": "53 rows of evidence, eight named organisations, and no confirmed php2shell victim at 09:43 UTC on 27 October.",
@@ -30,16 +30,16 @@
   "specific": {
    "line": "The public exploits are tuned to one build, raced, or have the wrong mechanism; CISA marks it not automatable.",
    "para": "The CVSS vector rates attack complexity high, and CISA's assessment says not automatable. The bounty win needed one exact build, worked seven times in ten and took three hours once a target existed. A honeypot's 35 shells came from a favourable setup. VulnCheck found no public proof of concept with the right mechanism. Honeypots caught many attempts.",
-   "hash": "ccf9ef5674fc"
+   "hash": "6d8f5d90fd1d"
   },
   "window": {
    "line": "Of 1,394 CVEs, 1,361 of 1,383 have an EPSS below 0.01, a forecast, and none cites Exploit-DB or Metasploit in NVD.",
-   "para": "NVD counts 1,394 CVEs; the difference from 1,448 is not reconciled. EPSS scored 1,383: 1,361 below 0.01, and php2shell at 0.99997 and 0.99981. A low score means the model does not expect exploitation, not that none was seen. VulnCheck published 25 old-ID CVEs on 22 October; whether they are the 25 on its KEV is not checked.",
-   "hash": "0522ad7fbf2b"
+   "para": "NVD counts 1,394 CVEs; the difference from 1,448 is not reconciled. EPSS scored 1,383: 1,361 below 0.01, and php2shell at 0.99997 and 0.99981. A low score means the model does not expect exploitation, not that none was seen. VulnCheck published 25 old-ID CVEs on 22 October, close to the post's 24 of 25; KEV membership is not checked.",
+   "hash": "40ecf0c5023d"
   },
   "changed": {
    "line": "Since the post, CISA listed both php2shell CVEs, and EPSS went above 0.999 a day earlier.",
-   "para": "CISA added both CVEs to its catalogue on 26 October, with a 29 October deadline for federal agencies and no victim named, so the window's count is three. EPSS for php2shell went from about 0.1 to above 0.999 on 25 October, while the Arista flaw CISA listed as exploited stays at 0.01. The two instruments disagree in both directions.",
+   "para": "CISA added both CVEs to its catalogue on 26 October, with a 29 October deadline for federal agencies and no victim named, so the window's count is three. EPSS for php2shell went from 0.06 and 0.12 to above 0.999 on 25 October, while the Arista flaw CISA listed as exploited stays at 0.01. The two instruments disagree in both directions.",
    "hash": "c3308e52ed1c"
   },
   "attention": {
@@ -55,7 +55,7 @@
   "exposure": {
    "line": "The 32 million counts services; a lower figure than 36.7 million could be patching, or a change of scan or method.",
    "para": "Censys's dashboard was quoted at 36.7 million services on 22 October. A lower later count could be patching, scan coverage, services offline or a method change, and Fortinet notes version-based counts can include backported fixes. We could not read the dashboard. Other figures range from 1.57 million unpatched hosts to a share of websites.",
-   "hash": "cafd1f6c45ef"
+   "hash": "5830f7d23460"
   },
   "asked": {
    "line": "The data we asked the PHP team for: VulnCheck's KEV, Censys's series, exploit modules, comparable attention, volumes and timing.",
@@ -68,14 +68,14 @@
    "hash": "e81cf38104c2"
   },
   "review": {
-   "line": "ChatGPT's review, asked for by the editor: changes needed, nine findings, all agreed and corrected.",
-   "para": "The editor asked ChatGPT to review the article. It found nine problems: EPSS used as observation, the yearly ratio used about AI, Wiz's account missing, a rounded score, an unbounded absence, an unreconciled count, VulnCheck claims merged, a loosely controlled chart, and an exposure trend. All are corrected; one claim about watchTowr could not be confirmed.",
-   "hash": "c4724dbd897a"
+   "line": "Two reviews: ChatGPT asked for changes, nine fixed; Claude Fable then approved with changes, seven fixed.",
+   "para": "The editor asked ChatGPT to review the article; it found nine problems, from EPSS used as observation to an unreconciled count, all corrected. A fresh review by Claude Fable confirmed the nine fixes hold and found seven smaller points: VulnCheck's count only close, expired data links, a heading off by one, a stale count, and wording. All seven are fixed.",
+   "hash": "cec788a43502"
   },
   "sources": {
    "line": "NVD, CISA's catalogue, EPSS, the CVE records, Fortinet, Wiz, and the PHP story site's data at version 0.1.77.",
    "para": "The post as shared on 27 October 2026; NVD's API; CISA's KEV catalogue 2026.10.26; FIRST's EPSS API; the CVE record for CVE-2026-109618; Fortinet's post for Censys's 22 October figure; Wiz Research's PHP2Shell post; the PHP story site's compromise, exploitation, claims, numbers and pulse data at version 0.1.77; and this article's dataset.",
-   "hash": "cfabafee5409"
+   "hash": "781289961b5e"
   }
  }
 }

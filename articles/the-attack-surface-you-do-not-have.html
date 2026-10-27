@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed</p>
  <h1>The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/the-attack-surface-you-do-not-have.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.24</a> &middot; <span class="chip">security</span><span class="chip">architecture</span><span class="chip">client-side</span><span class="chip">attack-surface</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> Every time I see a CVE now, I smile, because it is one less thing to worry about. My server-side attack surface is very small: fundamentally, the SG/Send upload server, and that only ever stores encrypted data. Today two critical PHP vulnerabilities were released, unauthenticated remote code execution in every supported PHP branch. In the month before, CISA's catalogue of exploited vulnerabilities filled with VPN gateways, mail gateways, firewalls, media servers and a help desk, and WordPress shipped a critical fix. None of it runs in my stack. That is the result of a constraint I have been writing about for months: no database, then no back end, everything that can run in the browser running there. It is good engineering, and it is not a limitation. It is giving me speed: 45 static sites in eleven weeks, a newsroom that can take payments, 100+ users and customers, a key register, and accounts and an AWS twin on the way, with nothing to provision or patch. Internal applications are where the risk is going, because they are rarely tested like public ones. The question to ask of every component is the one this article ends with: why does this need to be on the server?</em></p>
 <figure class="shot" data-shot="cv-month.webp" data-dir="images/" data-alt="A month of critical vulnerabilities in server software, from 22 September to 21 October 2026: PHP, Plex Media Server, SiteGuard, Palo Alto PAN-OS, Cisco Secure Email Gateway, Ahsay, Ivanti Connect Secure, Zammad, Fortinet FortiMail, Citrix NetScaler and WordPress. My exposure to each: none." data-kind="comparison"><figcaption>A month of critical vulnerabilities in server software, from 22 September to 21 October 2026: PHP, Plex Media Server, SiteGuard, Palo Alto PAN-OS, Cisco Secure Email Gateway, Ahsay, Ivanti Connect Secure, Zammad, Fortinet FortiMail, Citrix NetScaler and WordPress. My exposure to each: none.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -262,7 +263,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-attack-surface-you-do-not-have.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-attack-surface-you-do-not-have.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.104 · 302 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.105 · 302 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,11 +12,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Meta's new terms and the news: what the crawling clause says, what has happened in five weeks, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27, 10 min. Meta's crawling clause, the five weeks of publisher pushback, and why newsrooms should answer with machine-readable terms of their own.
+- [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27, 12 min. Meta's crawling clause, publisher pushback since mid-October, and why newsrooms should answer with machine-readable terms of their own.
 
 ## Highlights
 
-- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
+- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 17 min.
 - [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](articles/the-ipo-filing-and-the-agents.md), 2026-10-27, 12 min.
 - [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](articles/what-the-bitcoin-bounty-actually-proves.md), 2026-10-26, 11 min.
 - [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](articles/php-daily-2026-10-26.md), 2026-10-26, 13 min.
@@ -46,7 +46,7 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 
 ### Vaults & provenance (68)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
-- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
+- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 17 min.
 - [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](articles/php-daily-2026-10-26.md), 2026-10-26, 13 min.
 - [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](articles/inside-kitewing-websites.md), 2026-10-26, 5 min.
 
@@ -58,7 +58,7 @@ For editors, journalists and publishers asking how news gets paid for when agent
 
 ### Strategy & startups (55)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
-- [Meta's new terms and the news: what the crawling clause says, what has happened in five weeks, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27, 10 min.
+- [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27, 12 min.
 - [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](articles/websites-you-own.md), 2026-10-26, 11 min.
 - [Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on](articles/web-summit-2026-the-plan.md), 2026-10-26, 10 min.
 

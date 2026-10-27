@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next</p>
  <h1>Where the vault keys live: key management at sgit-ai v0.20.0, and what comes next</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-10 &middot; <a href="versions/where-the-vault-keys-live.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.7.32</a> &middot; <span class="chip">sgit</span><span class="chip">vault-keys</span><span class="chip">key-management</span><span class="chip">secrets</span><span class="chip">append-lanes</span><span class="chip">pki</span><span class="chip">passkeys</span><span class="chip">password-managers</span><span class="chip">agents</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> Every vault on this site is encrypted in the client, so the server never sees a key and the key is the whole question. This is the current state of vault key management at sgit-ai v0.20.0: where everything lives, the one secret and the keys derived from it, where vault keys are kept today (a password manager, and a registry vault run by an isolated agent session), how a new key reaches the registry without ever entering a chat, append lanes as the transport behind most of it, the small communication vaults that made the problem urgent, and the four tracks that come next: password manager integrations, secrets.sgit.ai's passkey-unlocked keyring, PKI, and decryption that happens out of band. Plus the one gap we cannot close ourselves: agent platforms have no per-session secrets.</em></p>
 <p>This site has a gap, and a reader found it this week. The docs say a great deal about what a vault key can do and almost nothing about where mine are kept. That is worth fixing for its own sake, and it is also a good example of how this project solves problems: as they arrive. For a long time I had a handful of vaults and kept their keys by hand. Now my agents create vaults all the time, several a day, and keeping track of the keys has become a real problem. So this is the current state, at sgit-ai v0.20.0: how it works today, where it is weak, and what I am building next.</p>
 <figure class="shot" data-shot="km-architecture.webp" data-dir="images/" data-alt="Where everything lives. Encryption and decryption happen in the client; the edge, the API and the bucket only ever handle ciphertext and hashes of capability keys."><figcaption>Where everything lives. Encryption and decryption happen in the client; the edge, the API and the bucket only ever handle ciphertext and hashes of capability keys.</figcaption></figure>
@@ -327,7 +328,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-the-vault-keys-live.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="where-the-vault-keys-live.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

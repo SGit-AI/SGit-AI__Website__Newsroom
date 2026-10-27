@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Before you give an agent a connector, give the connector a twin</p>
  <h1>Before you give an agent a connector, give the connector a twin</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-09-24 &middot; <a href="versions/connector-twin-before-you-deploy-an-agent.html" title="Every published version of this article, and what changed">article v1.1.1, 3 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.6.3</a> &middot; <span class="chip">agents</span><span class="chip">connectors</span><span class="chip">digital-twins</span><span class="chip">provenance</span><span class="chip">risk</span><span class="chip">riskmandate</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> When an AI agent is given a Gmail or Google Calendar connector, it can read, send, move, decline and permanently delete on somebody's behalf, and for several of those actions the platform itself documents that there is no way back. This article argues that a twin of the connector is the minimum requirement for deploying an agent with confidence. The twin is a journal of every request and response the agent makes, appended as it happens to a write-only lane, processed later, and replayed into the inbox and calendar as the agent saw them, with a before and after for every change and a revert plan for each one. It gives provenance, explanation and a named list of what can and cannot be undone, and it changes the agent's behaviour policy from a hope into a list. Every claim about Gmail and Calendar is taken from Google's own documentation and linked. A working replay of an invented session, and a business plan for the service, are published alongside it as a vault.</em></p>
 <figure class="shot" data-shot="connector-twin-pipeline.webp" data-dir="images/" data-alt="A twin of the connector. Every call the agent makes is copied, request and response, into an append-only journal in a vault. The journal is processed later and replayed into the inbox and calendar as the agent saw them, with a before and after for every change, and a revert plan that a person approves."><figcaption>A twin of the connector. Every call the agent makes is copied, request and response, into an append-only journal in a vault. The journal is processed later and replayed into the inbox and calendar as the agent saw them, with a before and after for every change, and a revert plan that a person approves.</figcaption></figure>
 <p>Here is the claim, stated so it can be wrong. <b>If you cannot say what your agent did, what it saw when it did it, and which of its actions you can undo, you are not ready to give it a connector.</b> Answering those three questions takes a twin of the connector: a journal of every request and response, and a replay of that journal into the views the agent saw. It is not exotic. Everything it needs exists today.</p>
@@ -312,7 +313,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="connector-twin-before-you-deploy-an-agent.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="connector-twin-before-you-deploy-an-agent.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

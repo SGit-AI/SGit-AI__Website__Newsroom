@@ -248,6 +248,10 @@ NORMALISE = [
     (re.compile(r'<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+</span>'),
      '<span>newsroom.sgit.ai &middot; </span>'),
     (re.compile(r'<section class="athreads areviews" id="reviews">[\s\S]*?</section>\n'), ''),  # stamped by reviews.py
+    (re.compile(r'\n  <p class="rvstatus[^"]*">[\s\S]*?</p>'), ''),  # stamped by reviews.py
+    (re.compile(r'\n <p class="rvcredit">[\s\S]*?</p>'), ''),  # stamped by reviews.py
+    (re.compile(r'<br><span class="rvcredit">[\s\S]*?</span>'), '', 0),  # stamped by reviews.py, one per credited version
+    (re.compile(r'\n\*\*Prompted by review\.\*\*[^\n]*\n'), ''),  # stamped by reviews.py
     (re.compile(r'<nav class="aseries"[^>]*>[\s\S]*?</nav>\n'), ''),  # stamped by series.py
     (re.compile(r'<section class="aseries-all"[^>]*>[\s\S]*?</section>\n'), ''),  # stamped by series.py
     (re.compile(r'<nav class="trail-end"[^>]*>[\s\S]*?</nav>\n'), ''),  # stamped by trail_end.py
@@ -258,8 +262,8 @@ def content_sha(data, path):
     if not path.endswith((".html", ".md")):
         return sha(data)
     text = data.decode("utf-8")
-    for pattern, repl in NORMALISE:
-        text = pattern.sub(repl, text, count=1)
+    for pattern, repl, *n in NORMALISE:
+        text = pattern.sub(repl, text, count=n[0] if n else 1)
     return sha(text.encode("utf-8"))
 
 

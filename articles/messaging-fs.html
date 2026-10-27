@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line</p>
  <h1>Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/messaging-fs.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.15</a> &middot; <span class="chip">vaults</span><span class="chip">messaging</span><span class="chip">pki</span><span class="chip">append-lanes</span><span class="chip">architecture</span><span class="chip">proposal</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> In the early versions of what is now the append lane, the API was called the inbox, and two agent teams used it to send each other signed, encrypted messages in both directions. It worked, and it was crude. I think we now have a much better way of doing it. Every user will have a vault, their billing vault or a comms vault, and every vault can have append lanes: write-only channels that anyone holding a token can write to and only the owner can read. Put that together with PKI and you have a full messaging system between vaults. It is not quite peer to peer, because everything still goes through the server, but the server only ever sees ciphertext, its size and its time. Each message is encrypted to the recipient's public key and signed by the sender, so we always know who sent what. On top of that transport sits a schema, which I would call Messaging-FS, alongside Issues-FS and Email-FS: a conversation is one JSON file, updated as each message and reply arrives, where an email is one file at a time. The same messages can be sent and read from a web messenger or from the command line. This maps out the workflow, what exists, and what we would build.</em></p>
 <figure class="shot" data-shot="mf-vaults.webp" data-dir="images/" data-alt="Messaging between two vaults. Each vault has a lane for the other: Alice encrypts to Bob and writes to the lane on Bob&#x27;s vault, Bob does the same into Alice&#x27;s. Each owner drains its own lane, checks the signature, and commits the message to its own copy of the thread." data-kind="architecture"><figcaption>Messaging between two vaults. Each vault has a lane for the other: Alice encrypts to Bob and writes to the lane on Bob's vault, Bob does the same into Alice's. Each owner drains its own lane, checks the signature, and commits the message to its own copy of the thread.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -342,7 +343,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="messaging-fs.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="messaging-fs.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

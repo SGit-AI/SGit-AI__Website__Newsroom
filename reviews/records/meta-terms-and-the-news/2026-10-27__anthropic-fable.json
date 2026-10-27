@@ -1,0 +1,187 @@
+{
+  "schema": "newsroom-review/v1",
+  "criteria": "v1.2",
+  "slug": "meta-terms-and-the-news",
+  "article_version": "v0.13.104",
+  "article_hash": "bf25b0e67e27",
+  "reviewer": "anthropic-fable",
+  "kind": "agent",
+  "model": "Claude Fable",
+  "run_by": "newsroom.writer, at the editor's request, as a fresh look",
+  "at": "2026-10-27T15:48:52Z",
+  "verdict": "changes-needed",
+  "summary": "The clause, the quotes from Tami Hoffman, WAN-IFRA, the News/Media Alliance, the News Media Association and the European Commission, and the two Meta dates all check out against the screenshots and the cited reports, and the article keeps Meta's text apart from Meta's public statements. Fix first the figure caption on the newsroom's own crawler: the licence tier counts 73, 523 and 15 match no record on the PHP story site, whose source watch export of 23 October gives A 74, B 876 and C 16 by publisher, and the 1,330 page count is from a run on 27 October, not 23 October.",
+  "checks": {
+    "facts": {
+      "result": "issues",
+      "notes": "Quotes checked against the two screenshots, Meta's update page (the 20 November date and the 'If you do not agree' sentence), Press Gazette, Engadget, Unite.ai, InPublishing, PPC Land, The Register, the WAN-IFRA letter PDF of 22 October, the RSL site and press release, Cloudflare's post, and the PHP story site's source watch page and data files. Three dates are off (WAN-IFRA's letter, the NMA's 'pause' statement, and the tier counts' date), one Meta quote is not word for word, and the tier counts are wrong."
+    },
+    "voice": {
+      "result": "issues",
+      "notes": "First person, plain words, sources named and dated, no em dashes, British spelling. One absolute without a count ('most businesses accept without reading'). No superlative self-claims or hype found."
+    },
+    "claims": {
+      "result": "issues",
+      "notes": "What exists, what is built and what is proposed are mostly marked. 'Four of them ask Meta to write into the contract what Meta already says in public' is more than Meta's statements support. 'Business products is not defined' overlooks the illustrative list in the clause itself, which the article quotes from. 'Five weeks' in the title and section heading does not match a dispute that became public on 15 to 16 October."
+    },
+    "conversions": {
+      "result": "pass",
+      "notes": "Nothing to convert: no currency, unit or percentage conversion. Same-number check done: 20 November, 30 October, 2,000 publishers, five demands and 1,330 pages agree across the summary, In short, body, captions, section summaries and graph; the tier counts appear only in one caption."
+    },
+    "health": {
+      "result": "pass",
+      "notes": "All nine internal article links and the rights page exist in the repository. External links resolve, except that Nieman Lab returns 403 to automated fetches, which is bot blocking rather than a dead page. The graph's three quotes appear in the article and its linked articles exist. Section summaries match the body, including its errors ('Four of the five', 'a licence tier for every page')."
+    },
+    "people": {
+      "result": "pass",
+      "notes": "Tami Hoffman is quoted from a public LinkedIn post with the title the post shows. Andy Stone, Danielle Coffey, Theo Bamber, Ladina Heimgartner, Stig Ørskov and Joel Kaplan are public figures quoted from public sources. No keys or tokens."
+    }
+  },
+  "findings": [
+    {
+      "id": "f1",
+      "criterion": "facts",
+      "severity": "high",
+      "section": "crawler",
+      "quote": "three licence tiers, A keep and show (73 pages), B at most 25 words and a link (523), C link only (15), as recorded on 23 October",
+      "issue": "The tier counts match no record on the PHP story site. The source watch page, whose counts are from the export of 23 October 2026, gives the tiers by publisher, not by page: A 74, B 876, C 16. The current data file gives A 74, B 933, C 16. The runs of 23 October in that file count 826 to 965 pages; 1,330 is the pages_total of a run on 27 October.",
+      "verification": "contradicted",
+      "evidence": "https://refs.php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.md and https://data.php.oct.2026.newsroom.sgit.ai/v/0.1.82/source-watch.json, read 27 October 2026",
+      "source_passage": "Counts read from the watch's `index/counts.json`, `runs/` and `tips/` by `admin/build/export_watch.py`, in the export of 23 October 2026 ... | Tier | Publishers | What a site page may show | ... | **A** | 74 | open or public-sector: keep and show | | **B** | 876 | quote up to 25 words and link | | **C** | 16 | link only |",
+      "method": "Read the tier table on the source watch page. In source-watch.json read 'tiers': {'A': 74, 'B': 933, 'C': 16} and 'pages': 1365; filtered 'runs' whose run id starts 20261023 (pages_total 826 to 965) and found pages_total 1330 first in the run 20261027T120716Z. 73+523+15 = 611 matches no total in either file.",
+      "suggestion": "Replace the caption's counts with the tiers by publisher from the source watch page (A 74, B 876, C 16 in the export of 23 October), say they are per publisher, and date the 1,330 page count to the 27 October run."
+    },
+    {
+      "id": "f2",
+      "criterion": "facts",
+      "severity": "medium",
+      "section": "timeline",
+      "quote": "23 October: WAN-IFRA, the World Association of News Publishers, wrote to Meta's Chief Global Affairs Officer, Joel Kaplan, with five demands.",
+      "issue": "The letter is dated 22 October 2026, the same day as the News/Media Alliance's letter. InPublishing reported it on 23 October, which is the date the article took.",
+      "verification": "contradicted",
+      "evidence": "https://cdn.wan-ifra.org/wp-content/uploads/2026/10/22151536/20261022_WAN-IFRA-Meta-TC-Letter.pdf (linked from the InPublishing article the article cites), read 27 October 2026",
+      "source_passage": "Mr Joel Kaplan, Chief Global Affairs Officer, Meta Platforms, Inc. By email. Frankfurt and Paris, 22 October 2026",
+      "method": "Downloaded the PDF linked from the cited InPublishing article and read its dateline on page 1.",
+      "suggestion": "Move WAN-IFRA's letter to the 22 October entry, beside the News/Media Alliance's, and keep 23 October for Meta's move to 20 November and the Commission's statement."
+    },
+    {
+      "id": "f3",
+      "criterion": "facts",
+      "severity": "medium",
+      "section": "timeline",
+      "quote": "26 October: the News Media Association: \"This delay is welcome, but it is a pause, not a solution.\"",
+      "issue": "The article's own source for this statement, PPC Land, dates Theo Bamber's post to Friday 23 October, hours before Meta's delay was reported by Reuters. 26 October was the News/Media Alliance's deadline for a reply, a different event.",
+      "verification": "contradicted",
+      "evidence": "https://ppc.land/meta-delays-website-crawling-terms-to-nov-20-after-publisher-complaints/, published 23 October 2026, read 27 October 2026",
+      "source_passage": "\"This delay is welcome, but it is a pause not a solution,\" Bamber wrote.",
+      "method": "Read the PPC Land article; it says the statement was posted on LinkedIn on Friday 23 October 2026 and the article itself is dated 23 October, so the statement cannot be from 26 October.",
+      "suggestion": "Date the statement 23 October, and if a 26 October entry is kept, make it the News/Media Alliance's deadline passing."
+    },
+    {
+      "id": "f4",
+      "criterion": "facts",
+      "severity": "medium",
+      "section": "clause",
+      "quote": "Meta's spokesperson Andy Stone said the terms apply \"only to our ads and business products\"",
+      "issue": "Not word for word. Stone's statement, as The Verge and Engadget carry it, reads 'the crawling terms we consolidated only applied to our ads and business products' (Press Gazette) or 'only applies to our ads and business products' (Engadget). The quoted fragment drops the verb and does not appear in any report read.",
+      "verification": "contradicted",
+      "evidence": "https://www.engadget.com/2291188/meta-tweaks-its-new-terms-of-service-after-backlash-against-scraping/ and https://pressgazette.co.uk/news/facebook-terms-publishers/, read 27 October 2026",
+      "source_passage": "We've heard you and want to clarify: the crawling terms we consolidated only applied to our ads and business products, and we've clarified that in the terms themselves. It does not change how Meta uses web crawlers.",
+      "method": "Searched the two cited reports and a third carrying the full statement for the string 'only to our ads'; none contains it. Both contain 'only applie' followed by 'to our ads and business products'.",
+      "suggestion": "Quote the statement as reported: the crawling terms 'only applied to our ads and business products'."
+    },
+    {
+      "id": "f5",
+      "criterion": "claims",
+      "severity": "medium",
+      "section": "asks",
+      "quote": "Four of them ask Meta to write into the contract what Meta already says in public.",
+      "issue": "Meta's public statements, as reported, cover three things: the terms concern only ads and business products, this is not about scraping news sites, and robots.txt preferences still count. That supports demand three (robots.txt) and, loosely, demand one (an exclusion for news). No report read has Meta saying in public that paywalls will not be circumvented (demand two), that content will not feed AI without a licence (demand four), or that publishers may decline without losing the tools (demand five).",
+      "verification": "overstated",
+      "evidence": "https://pressgazette.co.uk/news/facebook-terms-publishers/ and https://www.engadget.com/2291188/meta-tweaks-its-new-terms-of-service-after-backlash-against-scraping/ for Meta's statements; https://inpublishing.co.uk/articles/worlds-news-publishers-call-on-meta-to-halt-scraping-clause-in-new-commercial-terms-27049 for the demands; read 27 October 2026",
+      "source_passage": "This is not about scraping news sites, and these updates don't give us new rights that supersede those preferences.",
+      "method": "Listed each of the five demands against each sentence of Meta's reported statements and counted the matches: two at most.",
+      "suggestion": "Say 'two of them' (robots.txt and an exclusion for news), or name which public statements the four demands answer."
+    },
+    {
+      "id": "f6",
+      "criterion": "claims",
+      "severity": "medium",
+      "section": "top",
+      "quote": "what has happened in five weeks",
+      "issue": "The dispute became public on 15 to 16 October (Nieman Lab, PPC Land and The Register all first reported the clause then), eleven days before the article. 'Five weeks' only holds if the count runs forward to 20 November, which has not happened yet. The section heading 'Five weeks of it', the timeline node 'Five weeks' in the graph and the section summaries repeat it.",
+      "verification": "inconsistent",
+      "evidence": "https://www.theregister.com/ai-and-ml/2026/10/16/meta-grants-itself-right-to-scrape-content-from-business-customers-for-model-training/5303658, published 16 October 2026; https://ppc.land/meta-delays-website-crawling-terms-to-nov-20-after-publisher-complaints/ timeline; read 27 October 2026",
+      "source_passage": "October 16, 2026: Meta's revised Commercial Terms, due to take effect October 30, are reported to let it crawl business websites and use the content to train AI.",
+      "method": "Earliest dated event in the article's own timeline is 16 October; 27 October minus 16 October is 11 days. 16 October to 20 November is five weeks, but the title says 'has happened'.",
+      "suggestion": "Say 'in eleven days' or 'since 16 October', or make the five weeks explicit as the span from the first report to 20 November."
+    },
+    {
+      "id": "f7",
+      "criterion": "claims",
+      "severity": "low",
+      "section": "clause",
+      "quote": "\"Business products\" is not defined",
+      "issue": "The clause itself carries an illustrative list, visible in the article's own screenshot and quoted two paragraphs earlier: 'including business, commercial and related products to help you create and deliver ads and other commercial content, provide users information about your products and services, and connect you with users'. WAN-IFRA's letter makes the sharper point: the list is illustrative rather than limiting.",
+      "verification": "overstated",
+      "evidence": "mt-terms.webp in the article, and https://cdn.wan-ifra.org/wp-content/uploads/2026/10/22151536/20261022_WAN-IFRA-Meta-TC-Letter.pdf, read 27 October 2026",
+      "source_passage": "The remaining purposes, to provide, develop, improve and research \"advertising and business products\", are open-ended, and the list that follows them is illustrative rather than limiting.",
+      "method": "Read the highlighted paragraph in the screenshot to its end and compared it with the article's sentence.",
+      "suggestion": "Say 'business products' is given only an open-ended list, not a limiting definition."
+    },
+    {
+      "id": "f8",
+      "criterion": "facts",
+      "severity": "low",
+      "section": "view",
+      "quote": "Cloudflare's pay per crawl, launched in July 2025, answers an AI crawler with HTTP 402",
+      "issue": "Cloudflare's post of 1 July 2025 describes a private beta, not a launch. The 402 mechanism is as the article says.",
+      "verification": "overstated",
+      "evidence": "https://blog.cloudflare.com/introducing-pay-per-crawl/, published 1 July 2025, read 27 October 2026",
+      "source_passage": "Pay per crawl, in private beta, is our first experiment in this area.",
+      "method": "Read the cited post for its description of availability.",
+      "suggestion": "Say 'announced in July 2025 as a private beta'."
+    },
+    {
+      "id": "f9",
+      "criterion": "voice",
+      "severity": "low",
+      "section": "post",
+      "quote": "one paragraph among many that most businesses accept without reading",
+      "issue": "An absolute about what most businesses do, with no count or source behind it.",
+      "verification": "style",
+      "evidence": "the article's text",
+      "source_passage": "",
+      "method": "Read for absolutes without a count, per the criteria's voice section.",
+      "suggestion": "Say 'that a business can accept without reading'."
+    }
+  ],
+  "verified": [
+    "Tami Hoffman's title and post text match the screenshot mt-post.webp word for word, including 'This ⬇️ is filling up my inbox' and '90 seconds of your time and I will explain why'.",
+    "The clause as quoted in the first caption matches the text on the card in mt-post.webp and the highlighted paragraph in mt-terms.webp word for word.",
+    "The banner 'We're updating the Meta Commercial Terms. These updates will come into effect on 20 November 2026', the heading 'Licences and rights you provide Meta', and the ending 'and maintain the integrity and security of Meta Company Products' all appear in mt-terms.webp; Meta's update page, read 27 October, gives 'November 20, 2026'.",
+    "'please stop all access or use of our Products for business or commercial purposes' matches Meta's update page: 'If you do not agree to the updated terms, please stop all access or use of our Products for business or commercial purposes.'",
+    "The definition list (ads, a Page, a product catalogue, a group for business purposes, Meta Business Suite) is in the opening paragraph shown in mt-terms.webp.",
+    "'outrageous and probably illegal' is Danielle Coffey's, in a News/Media Alliance release quoted by The Register on 16 October 2026 and by Engadget; 'more than 2,000' US publishers matches the Alliance's letter.",
+    "'shameless landgrab attempt' is Theo Bamber's, quoted by Press Gazette on 19 October 2026 (updated 21 October), as the article dates it.",
+    "The Movement for an Open Web's advice to stop using and delete Meta business accounts before 30 October, and its planned challenge via the European Commission and the CMA, are in the Press Gazette report.",
+    "The News/Media Alliance's open letter to Mark Zuckerberg of 22 October with a public reply requested by 26 October matches Unite.ai and PPC Land.",
+    "Meta removed 'train' and added 'periodically pull updates' between 16 and 17 October, and Andy Stone's statement followed on 17 October, per Engadget and the PPC Land timeline; the first version's 'provide, develop, improve, research, train' and the 30 October date match Engadget and Press Gazette.",
+    "Ladina Heimgartner's 'Journalism is not raw material to be collected as a condition of being present on a platform', Stig Ørskov's 'This postponement is a welcome step, but it does not address our concerns', the five demands and the Meta One point all match the InPublishing report of 23 October and its addendum; the letter PDF confirms Joel Kaplan's title and the robots.txt point.",
+    "The European Commission's 'welcomes Meta's announcement that it has postponed the entry into force of its new commercial terms' matches the Nieman Lab wording as surfaced in search results, dated 23 October, the day Meta told Reuters the date was moving to 20 November.",
+    "RSL 1.0 was published on 10 December 2025 (RSL press release, via a syndicated copy); rslstandard.org says 'The RSL 1.0 Standard Specification is now available' and lists robots.txt as a place to add it.",
+    "Cloudflare's post is dated 1 July 2025 and describes the 402 Payment Required response with a price.",
+    "The PHP story site's source watch is run by a researcher agent, keeps captures in the vault with hashes published, has tier B at 'quote up to 25 words and link' and tier C 'link only', and had 1,330 pages in its run of 27 October 12:07 UTC.",
+    "WAN-IFRA's letter supports 'Almost every news organisation has a Facebook Page': 'Almost every news organisation in the world maintains a Facebook Page, an Instagram business profile, a WhatsApp channel or an advertising account.'",
+    "The article separates Meta's text from Meta's public statements and says so in the clause section."
+  ],
+  "not_checked": [
+    "Whether the crawling paragraph is on Meta's Commercial Terms and update pages as served on 27 October: both pages returned a login wall to a plain fetch, and a rendered fetch of the update page gave the 20 November date and the 'If you do not agree' sentence but did not return the crawling paragraph; the clause was checked against the screenshot and the press reports instead.",
+    "Tami Hoffman's video and the date of the post beyond the screenshot ('5h' on a 27 October capture); LinkedIn was not opened.",
+    "The Nieman Lab article the article cites, and Nieman Lab's other reports, which returned 403 to automated fetches; the Commission quote was checked only through search excerpts of that page.",
+    "'complaints for interim measures on 22 October' in the timeline caption and 'the requests for interim measures' in the watch section: no readable cited source uses the phrase 'interim measures' or dates a filing to 22 October; German publishers' request to the Commission and the Movement for an Open Web's complaints are reported without that term.",
+    "The exact date Meta first posted the updated terms notice; the earliest report found is 15 to 16 October.",
+    "The source watch's rules on robots.txt and the opt-out in the shared research design were not re-read; the rights page and the related newsroom articles were checked for existence only.",
+    "Whether the figures are readable on a phone."
+  ]
+}

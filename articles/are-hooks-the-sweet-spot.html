@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine</p>
  <h1>Are hooks the sweet spot? Moving an agent's rules from hope into hooks, rule by rule, until enforcement moves off the machine</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/are-hooks-the-sweet-spot.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.43</a> &middot; <span class="chip">hooks</span><span class="chip">agents</span><span class="chip">agent-behaviour-policy</span><span class="chip">enforcement</span><span class="chip">policy-as-code</span><span class="chip">claude-code</span><span class="chip">guardrails</span><span class="chip">owasp</span><span class="chip">security</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> Most of the rules we give agents today are hope-based security: written in the prompt, kept only if the model keeps them. The agent writing this site works under a behaviour policy of eleven rules, and only one of them is kept by something other than the agent. So I asked the question directly: in October 2026, are hooks the sweet spot? Can we move the rules out of the prompt and into small deterministic programs the agent's harness runs before and after every action, and keep them there until enforcement moves into a gateway or the platform itself? I took this session's own policy and tried, rule by rule, in a throwaway repository. Four rules moved into hooks fully, two mostly, three partly and two not at all, and the tests found a gap in the check I trust most. Hooks are the first layer that does not rely on the model and the last that still sees the action in the agent's own terms, which is why I think they are the right place to start, provided they are installed where the agent cannot edit them and set to fail closed. The open hook collections that exist block dangerous commands; the step that is missing is generating hooks from a written policy, and testing them, so the same rules can later be enforced by a gateway. We already need this for our own agents, so we can be among its heaviest users.</em></p>
 <figure class="shot" data-shot="hs-rules.webp" data-dir="images/" data-alt="The eleven rules of this site&#x27;s writing session, rule by rule. Today one rule is kept by a hook, one in part by a disabled push URL, and the rest by the agent&#x27;s good behaviour. Moved into hooks and tested on fixed inputs in a throwaway repository: four fully, two mostly, three partly, two not at all." data-kind="comparison"><figcaption>The eleven rules of this site's writing session, rule by rule. Today one rule is kept by a hook, one in part by a disabled push URL, and the rest by the agent's good behaviour. Moved into hooks and tested on fixed inputs in a throwaway repository: four fully, two mostly, three partly, two not at all.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -257,7 +258,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="are-hooks-the-sweet-spot.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="are-hooks-the-sweet-spot.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

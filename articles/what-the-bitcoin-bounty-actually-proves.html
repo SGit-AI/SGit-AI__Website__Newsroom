@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.104</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.105</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,12 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.104</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.105</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch</p>
  <h1>What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-26 &middot; <a href="versions/what-the-bitcoin-bounty-actually-proves.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.97</a> &middot; <span class="chip">php2shell</span><span class="chip">security</span><span class="chip">exploitation</span><span class="chip">detection</span><span class="chip">waf</span><span class="chip">article</span></p>
+  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> A researcher won a public "steal my bitcoin" bounty against a deliberately vulnerable PHP server, a rare independent, live confirmation that php2shell gives an attacker full control of a machine. I wanted to know more than that it worked. How hard was it, really, once the target was actually reachable? Could a web application firewall have blocked it, given how many vendors say they already detect it? And if you cannot patch today, does hardening the server around PHP, rather than PHP itself, actually protect you? The answers, checked against the operator's own site, the researcher's public write-up, five vendors' own advisories and GrapheneOS's own record of a server it chose to take offline rather than trust its own mitigations: the bounty took three hours once there was a page to attack, not the nineteen the headlines reported; every vendor's own detection coverage comes with a gap it names itself; and every hardening measure anyone has published is described by its own authors as partial. Patching remains the only complete fix.</em></p>
 <figure class="shot" data-shot="dt-timeline.webp" data-dir="images/" data-alt="The real timeline: the challenge launched at 08:21 UTC on 21 October with no page that executed PHP at all, so the flaw could not be reached; the operator added one at 22:00 JST on 25 October; it was solved about three hours later, at 00:47 JST on 26 October, not the &quot;19.28 hours&quot; the site&#x27;s own counter and most press reports gave." data-kind="chart"><figcaption>The real timeline: the challenge launched at 08:21 UTC on 21 October with no page that executed PHP at all, so the flaw could not be reached; the operator added one at 22:00 JST on 25 October; it was solved about three hours later, at 00:47 JST on 26 October, not the "19.28 hours" the site's own counter and most press reports gave.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -266,7 +267,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.104</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="what-the-bitcoin-bounty-actually-proves.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.105</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="what-the-bitcoin-bounty-actually-proves.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
