@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1051 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 711 | 2961 | links to sgit.ai's pages and the network sites (30 files this site writes itself) |
-| words | 1431 | 9748 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1054 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 713 | 2964 | links to sgit.ai's pages and the network sites (30 files this site writes itself) |
+| words | 1435 | 9763 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 72 | 202 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 603 × `sgit.ai/about/index.html`
-- 301 × `sgit.ai/about/index.md`
+- 605 × `sgit.ai/about/index.html`
+- 302 × `sgit.ai/about/index.md`
 - 126 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 44 × `pki.sgit.ai/`
@@ -98,6 +98,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `network/index.html` (21)
 - `engineering/index.html` (20)
 - `articles/ids.json` (19)
+- `desks/vaults.html` (19)
 - `engineering/issues/067.html` (19)
 - `README.md` (18)
 - `engineering/issues/019.html` (18)
@@ -105,7 +106,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/020.html` (17)
 - `engineering/issues/090.html` (17)
 - `llms.txt` (17)
-- `desks/vaults.html` (16)
 - `articles/summaries/the-user-keeps-the-meter.json` (15)
 - `engineering/issues/021.html` (15)
 - `engineering/releases/v0.13.16.html` (15)
@@ -127,7 +127,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/summaries/aws-from-the-vault.json` (10)
 - `assets/pen/pen.js` (10)
 - `assets/pen/identity.js` (9)
-- `desks/security.html` (9)
 - `engineering/releases/v0.13.64.html` (9)
 - `reviews/status.json` (9)
 - `articles/summaries/a-pen-and-a-key.json` (8)
@@ -149,3 +148,4 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `shipped/index.html` (7)
 - `articles/summaries/a-directory-of-people-and-keys.json` (6)
 - `articles/summaries/a-website-to-finish-the-book.json` (6)
+- `articles/summaries/nineteen-sites.json` (6)

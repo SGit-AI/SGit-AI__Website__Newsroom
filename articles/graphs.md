@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-306 of 306 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+307 of 307 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-306 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 44 articles not yet linked either way.
+307 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 45 articles not yet linked either way.
+
+## [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](you-can-feel-good-engineering.md)
+
+2026-10-27 · Site & engineeringAgents & policy
+
+Good engineering has a presence: speed, quality, effectiveness, and bugs where you expect them. Many agent teams behave like many human teams, slowed by engineering gaps, but agents absorb the overhead quietly, so waste hides until you push the limits. The PHP newsroom pushed sgit to 228,000-file vaults through three releases in five days, and split one repository whose every release touched about 1,936 files into six where a change touches one to three; this site still touches about 1,588. Scheduled agents hold the quality level, and explorer coding gives way to villager refactoring when innovation slows.
+
+*[diagram]*
+**concept**claim**method**example
+
+**8 nodes, 7 edges**
+
+- **The feel of good engineering** (concept) Speed, quality, where bugs occur.
+- **Agent teams like human teams** (claim) Engineering gaps slow them down.
+- **The hidden overhead** (claim) Agents absorb it; tokens hide it.
+- **Every release touches every page** (example) 1,936 and 1,588 files.
+- **sgit under load** (example) Three releases in five days.
+- **One repository into six** (example) One to three files a change.
+- **Constant velocity** (method) Scheduled agents hold the level.
+- **Explorer, then villager** (method) Refactor when innovation slows.
+
+> Good engineering has a kind of presence, a weight, a smoothness. The feel of it.
+
+> None of these is a bug in an agent. Each is an engineering gap Many agent teams behave like many human teams.
 
 ## [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](legal-on-demand-for-startups.md)
 

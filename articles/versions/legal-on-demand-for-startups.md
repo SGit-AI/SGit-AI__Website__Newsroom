@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-27 | published | 2,706 | first published | this release | [current](../legal-on-demand-for-startups.md) |
+| **v1.0.0** | 2026-10-27 | published | 2,706 | first published | [`1caac3c01`](https://github.com/SGit-AI/SGit-AI__Website/commit/1caac3c01a9a355037d8a86857d1ab1fca1945cf) | [current](../legal-on-demand-for-startups.md) |
 
 [← Back to the article](../legal-on-demand-for-startups.md) · [All articles](../index.md)
 
