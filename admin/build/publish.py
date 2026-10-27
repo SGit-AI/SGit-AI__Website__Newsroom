@@ -35,6 +35,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -95,6 +96,20 @@ def authored_slugs(files):
     return sorted(Path(f).stem for f in files if f.startswith(CONTENT + "/") and f.count("/") == 3 and f.endswith(".md"))
 
 
+PENDING = b"v999.0.0"   # admin/build/release_stamp.py: the version a work commit carries until CI numbers it
+
+
+def settle_pending(path, body):
+    """An article written in a work commit says `version: <pending>`, and CI's release commit changes that line
+    to the number it picked. Replayed as is, that second commit would be a change to the article's details, a
+    patch version (v1.0.1) of every new article. So a past commit's pending version reads as the number the
+    article has now; while it is still pending, it stays pending, and CI stamps the pages."""
+    if PENDING not in body or not path.endswith(".md") or not (ROOT / path).exists():
+        return body
+    m = re.search(rb"^version: (v\d+\.\d+\.\d+)\s*$", (ROOT / path).read_bytes(), re.M)
+    return body.replace(PENDING, m.group(1)) if m else body
+
+
 def replay(clone):
     """One commit in the clone for each commit here that touched the article sources."""
     log = git("log", "--reverse", "--format=%H%x09%aI%x09%an%x09%ae%x09%s", "--", CONTENT, NEWSLETTER).splitlines()
@@ -117,7 +132,8 @@ def replay(clone):
             if path in folds and (ROOT / path).exists():
                 dest.write_bytes((ROOT / path).read_bytes())          # folded: the current text at every commit
                 continue
-            dest.write_bytes(subprocess.run(["git", "show", f"{sha}:{path}"], cwd=ROOT, capture_output=True).stdout)
+            body = subprocess.run(["git", "show", f"{sha}:{path}"], cwd=ROOT, capture_output=True).stdout
+            dest.write_bytes(settle_pending(path, body))
         run(["git", "add", "-A"], clone, quiet=True)
         env = dict(os.environ, GIT_AUTHOR_DATE=date, GIT_COMMITTER_DATE=date, GIT_AUTHOR_NAME=name,
                    GIT_AUTHOR_EMAIL=email, GIT_COMMITTER_NAME=name, GIT_COMMITTER_EMAIL=email)

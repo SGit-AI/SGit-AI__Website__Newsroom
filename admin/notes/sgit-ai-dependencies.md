@@ -5,9 +5,9 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 | kind | files | references | what it is |
 |---|---:|---:|---|
 | generator | 1057 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 712 | 2457 | links to sgit.ai's pages and the network sites (31 files this site writes itself) |
-| words | 1447 | 9909 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
-| vault | 74 | 204 | links to a vault: the one dependency that stays |
+| network | 713 | 2461 | links to sgit.ai's pages and the network sites (32 files this site writes itself) |
+| words | 1454 | 9940 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| vault | 74 | 205 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
@@ -60,6 +60,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `network/index.html` (5)
 - `admin/build/pki-message/message.js` (4)
 - `admin/notes/2026-10-10__newsroom-move-and-content-audit.md` (4)
+- `reviews/vaults.html` (4)
 - `admin/build/pki-message/VENDOR.md` (3)
 - `engineering/issues/010.html` (3)
 - `admin/build/review_lane.mjs` (2)
@@ -140,6 +141,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.25.html` (8)
 - `engineering/releases/v0.12.49.html` (8)
 - `engineering/releases/v0.12.60.html` (8)
+- `reviews/vaults.html` (8)
 - `about/index.html` (7)
 - `admin/index.html` (7)
 - `admin/notes/2026-10-13__design-lab-review.md` (7)
@@ -147,6 +149,5 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `articles/summaries/pki-everywhere.json` (7)
 - `assets/vendor/pki/v0.2.25/directory.js` (7)
 - `engineering/issues/037.html` (7)
+- `engineering/issues/093.html` (7)
 - `engineering/releases/v0.13.111.html` (7)
-- `replicate/index.html` (7)
-- `shipped/index.html` (7)

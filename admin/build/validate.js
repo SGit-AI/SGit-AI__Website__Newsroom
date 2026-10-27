@@ -84,6 +84,14 @@ for (const f of htmlFiles) {
     errors.push(`${rel(f)}: version badge ${b} != ${VERSION}`);
   }
 }
+// CI owns the version (admin/build/release_stamp.py): a work commit carries the pending version, which
+// CI's release job turns into the number it picks. A tree that says a real version must hold no pending one.
+const PENDING = 'v999.0.0';
+if (VERSION !== PENDING) {
+  for (const f of files.filter(f => /\.(html|md|json|txt|xml)$/.test(f) && !rel(f).startsWith('admin/build/'))) {
+    if (fs.readFileSync(f, 'utf8').includes(PENDING)) errors.push(`${rel(f)}: still carries the pending version; only CI's release stamps it`);
+  }
+}
 for (const extra of ['llms.txt', 'index.md']) {
   const t = fs.readFileSync(path.join(ROOT, extra), 'utf8');
   if (!t.includes(VERSION)) errors.push(`${extra} does not mention ${VERSION}`);

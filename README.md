@@ -132,8 +132,9 @@ own provenance chain would refute the site on page one.
 
 ## Release process
 
-1. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release) and add a row to
-   `admin/versions.html`.
+1. CI owns the version (since v0.13.116, `admin/notes/2026-10-27__ci-owns-the-version.md`): never write a number.
+   Run `python3 admin/build/release_stamp.py --pending "what this release does" --by @newsroom.<you>`, which sets
+   `version.txt` to the pending version and writes the release note and the versions row under it.
 2. `python3 admin/build/publish.py --from <checkout of SGit-AI/SGit-AI__Website> --node-modules <dir with sharp and playwright>`:
    publish the articles written here and import everything (it runs the sync below). Or, with no articles of our own changed,
    `python3 admin/build/sync_newsroom.py --from <checkout of SGit-AI/SGit-AI__Website>`:
@@ -152,13 +153,14 @@ own provenance chain would refute the site on page one.
 8. `node admin/build/validate.js`, and, when the meter, the persona pages or the reading lists changed, `node admin/build/test_meter.mjs` and
    `node admin/build/test_lists.mjs` `node admin/build/test_review.mjs`, `node admin/build/test_passkey.mjs`, `node admin/build/test_wire.mjs`, `node admin/build/test_graphs.mjs`, `node admin/build/test_vault.mjs`, `node admin/build/test_sync.mjs`, `node admin/build/test_pane.mjs`, `node admin/build/test_notes.mjs`, `node admin/build/test_search.mjs`, `node admin/build/test_ask.mjs`, `node admin/build/test_themes.mjs`, `node admin/build/test_inbox.mjs`, `node admin/build/test_front.mjs` and `node admin/build/test_reading.mjs`, `node admin/build/test_vault_open.mjs`, `node admin/build/test_review_lane.mjs`, `node admin/build/test_review_vault.mjs` (needs the sgit CLI, `pip install sgit-ai`)
    (browser tests; they need Playwright and skip without it; the wire test reads the real vault). CI runs all seventeen before it tags a release; the inbox test also needs jsqr (`npm install jsqr@1.4.0`) to read the QR code back.
-9. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+9. `git commit -am "@newsroom.<you>: ..." && git push origin dev`: a subject with no number. CI numbers, stamps, tags and deploys the release.
 
 Running steps 4 to 7 twice changes nothing; if a second run writes files, something is wrong.
 
-Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag
-(`vX.Y.Z`, verified against `version.txt` and the commit subject, next-minor enforced) →
-deploy to GitHub Pages. Pull requests run validation only. Same pipeline as
+Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate and the reader's tests → release
+(CI picks the next number from the tags, stamps it with `admin/build/release_stamp.py`, gates it, commits it as
+GitHub Actions, tags it) → deploy that commit to GitHub Pages. A push to `main`, by pull request from `dev`,
+releases the next major. Pull requests run validation only. Same pipeline as
 [SGit-AI__Website](https://github.com/SGit-AI/SGit-AI__Website),
 [SGit-AI__Website__PKI](https://github.com/SGit-AI/SGit-AI__Website__PKI),
 [SGit-AI__Website__Graphs](https://github.com/SGit-AI/SGit-AI__Website__Graphs) and
