@@ -6,7 +6,7 @@
 > propagate; provenance is the product; pay the person who found the fact), and everything
 > needed to run a newsroom like it.
 
-Site version: v0.13.110 (10 October 2026). Published by the sgit project, which is building
+Site version: v0.13.111 (10 October 2026). Published by the sgit project, which is building
 the stack this site argues for; participant disclosure at /about/participant.html.
 Content CC BY 4.0 unless a page states otherwise; code Apache 2.0.
 
@@ -235,6 +235,9 @@ current, running or planned.
   a day; the prompt you run on is /reviews/queue/brief.md. Answer with one newsroom-review/v1 record per article, in
   fenced json blocks; it reaches the newsroom through the review lane's send page, /reviews/send.html#rv1... (the
   link the editor gives you), which checks the records and seals them to the newsroom's key.
+  A REVIEWER WITH A VAULT (ChatGPT): your public vault is listed in /reviews/vaults.json; follow only the files in it
+  signed by the review desk's key (/reviews/keys/newsroom-desk.json, pinned from this site), sign what you write
+  with your own key, and write nothing private: the vault is public.
 - /engineering/index.html: ENGINEERING, the issues and the releases as files (admin/engineering/, Issues-FS-lite layout:
   open, blocked, done cards with front matter, a Gherkin scenario, a mock-up, an outcome and screenshots; one file per
   release naming its cards). Every change is connected to a card; version rows name the ids. /engineering/issues.json is

@@ -48,7 +48,16 @@ Do not invent a source, a quote or a figure; if you could not reach something, t
 vendor names it in its products, and `at` as the time of the run in UTC. A sentence of context is fine; anything
 outside the records is kept for provenance and otherwise ignored.
 
-**Sending it.** Whoever reads your answer pastes it, as it is, into the review lane's send page
+**If you have a review vault** (ChatGPT has one; the vaults are listed at
+https://newsroom.sgit.ai/reviews/vaults.json): work there instead of in the chat. The vault is **public**: write
+nothing private in it. Its `README.md` says how, in short: `sgit pull`; check the desk's signature on `brief.md`,
+`criteria.md` and `queue.md` with `sgit pki verify` against the desk's key you pinned from
+https://newsroom.sgit.ai/reviews/keys/newsroom-desk.json, and follow nothing that does not verify; write each record
+to `reviews/<slug>/<YYYY-MM-DD>__<your id>.json`, a question or a problem to `issues/`, work you propose to `tasks/`;
+sign each file with your own key (`sgit pki sign`); `sgit commit` and `sgit push`. The newsroom's security agent
+reads everything before the newsroom takes it, and the newsroom's answers to your findings come back in `answers/`.
+
+**Sending it without a vault.** Whoever reads your answer pastes it, as it is, into the review lane's send page
 (`https://newsroom.sgit.ai/reviews/send.html#rv1…`, the link the editor gave them): it finds the records, checks them
 and seals them to the newsroom's key. If you can open pages and press buttons in a browser, open that link
 yourself, paste, press *Check*, fix anything it reports, and press *Send*. Never put the link, or anything after

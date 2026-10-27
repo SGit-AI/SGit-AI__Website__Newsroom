@@ -22,6 +22,7 @@ import argparse
 import datetime
 import fnmatch
 import json
+import shutil
 import sys
 from pathlib import Path
 
@@ -32,6 +33,8 @@ from reviews import CRITERIA, CRITERIA_KEYS, answers, articles, e, records, revi
 ROOT = Path(__file__).resolve().parents[2]
 CFG = ROOT / "admin/content/reviews/queue.json"
 BRIEF = ROOT / "admin/content/reviews/brief.md"
+VAULTS = ROOT / "admin/content/reviews/vaults.json"
+VAULT_KEYS = ROOT / "admin/content/reviews/keys"
 OUT = ROOT / "reviews/queue"
 SITE = "https://newsroom.sgit.ai"
 
@@ -141,6 +144,12 @@ def build():
         (OUT / f"{rid}.json").write_text(json.dumps(q, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         (OUT / f"{rid}.md").write_text(md_of(q), encoding="utf-8")
     (OUT / "brief.md").write_text(BRIEF.read_text(encoding="utf-8"), encoding="utf-8")
+    # the reviewers' vaults (card 092): their public read keys, and the desk's and the security agent's public keys
+    vaults = json.loads(VAULTS.read_text(encoding="utf-8")) if VAULTS.exists() else {"reviewers": {}, "roles": {}}
+    (ROOT / "reviews/vaults.json").write_text(json.dumps(vaults, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    (ROOT / "reviews/keys").mkdir(exist_ok=True)
+    for f in sorted(VAULT_KEYS.glob("*.json")) if VAULT_KEYS.exists() else []:
+        shutil.copyfile(f, ROOT / "reviews/keys" / f.name)
     from md import render
     brief = BRIEF.read_text(encoding="utf-8").split("\n", 1)[1]
     cols = []
@@ -152,13 +161,24 @@ def build():
         cols.append(f'<h3 id="{e(rid)}">{e((regs.get(rid) or {}).get("name", rid))} <span class="dim">{e(rid)}</span></h3>\n'
                     f'<p>{q["batch"]} a day. As <a href="{e(rid)}.md">markdown</a> and <a href="{e(rid)}.json">JSON</a>; {q["remaining"]} more after this week.</p>\n'
                     f'<div class="tablewrap"><table><thead><tr><th>Day</th><th>Articles</th></tr></thead><tbody>{rows}</tbody></table></div>')
+    def fp_of(name):
+        f = VAULT_KEYS / name
+        return json.loads(f.read_text())["signing_fingerprint"] if f.exists() else "(not made yet)"
+    vault_rows = "".join(f'<h3>{e((regs.get(rid) or {}).get("name", rid))} <span class="dim">{e(rid)}</span></h3><p>Vault <code>{e(v["vault_id"])}</code>, since {e(v.get("created", ""))}; the reviewer\'s key: {e(v.get("reviewer_key") or "not pinned yet")}.</p><pre><code>sgit clone {e(v["read_key"])}</code></pre>'
+                         for rid, v in vaults.get("reviewers", {}).items()) or '<p class="dim">None yet.</p>'
+    roles = "".join(f"<li><b>{e(k)}</b>: {e(t)}</li>" for k, t in vaults.get("roles", {}).items())
     prio = "".join(f'<li><a href="../../articles/{e(p["slug"])}.html">{e(p["slug"])}</a>: {e(p.get("why", ""))}</li>' for p in cfg.get("priority", []))
-    body = f"""<p>Reviewers outside the newsroom, ChatGPT and Perplexity first, run on their own schedules and take one batch a day from here. Each answers with records against <a href="../criteria.html">the criteria</a>, sent through the review lane, which the newsroom drains on its own schedule and answers finding by finding on <a href="../index.html">the reviews page</a>.</p>
+    body = f"""<p>Reviewers outside the newsroom, ChatGPT and Perplexity first, run on their own schedules and take one batch a day from here. Each answers with records against <a href="../criteria.html">the criteria</a>, written to its own public vault (below) or sent through the review lane, which the newsroom drains on its own schedule and answers finding by finding on <a href="../index.html">the reviews page</a>.</p>
 <h2 id="priority">The editor's priority</h2>
 <p>Every reviewer gets these first, so each is checked by more than one vendor. Then each reviewer's own findings to recheck where the text changed, then the backlog, newest first, dealt between the reviewers in turn.</p>
 <ol>{prio}</ol>
 <h2 id="this-week">This week</h2>
 {"".join(cols)}
+<h2 id="vaults">The reviewers' vaults</h2>
+<p>A reviewer that can run sgit works in a vault of its own: it reads its brief, the criteria and its queue there, signed by the newsroom's review desk, and writes its reviews, issues and tasks there, signed with its own key. <b>Each vault is public</b>: its read key is below, so anyone can see what the reviewer was asked and what it wrote, and nothing private may go in. Nothing in a vault reaches the newsroom until the security agent has read it and signed its verdict.</p>
+{vault_rows}
+<p>The keys: the review desk <a href="../keys/newsroom-desk.json">{fp_of("newsroom-desk.json")}</a> signs what the newsroom writes; the security agent <a href="../keys/newsroom-security.json">{fp_of("newsroom-security.json")}</a> signs its verdicts. Both are operated by the editor's key on pki.sgit.ai. Machine-readable: <a href="../vaults.json">vaults.json</a>.</p>
+<ul>{roles}</ul>
 <h2 id="brief">The brief</h2>
 <p>The prompt each scheduled reviewer is given, word for word; also as <a href="brief.md">brief.md</a>.</p>
 <div class="note">{render(brief)}</div>"""

@@ -1,0 +1,19 @@
+{
+ "what": "The reviewers' vaults (card 092): one public sgit vault per external reviewer, where it reads its brief and queue and writes its reviews, issues and tasks. The read keys here are public on purpose: everything in these vaults is public, for ever. The vault keys are not here: each is held by its reviewer and by the review desk. admin/build/review_vault.py makes, publishes to, gates and takes from them.",
+ "roles": {
+  "@newsroom.vault": "Makes each reviewer's vault (review_vault.py create) and hands its vault key to the editor, sealed to the editor's pki.sgit.ai key.",
+  "@newsroom.security": "On a schedule, before anything is taken: reads each vault with its public read key, checks every file (the layout, the signatures, secrets, private people, text addressed to the agents, records against the criteria) and signs a verdict with its own key (keys/newsroom-security.json), pushed to the repository's review-gate branch. It cannot write to a vault.",
+  "@newsroom.desk": "On a schedule, after the security agent: takes into the repository only the files whose SHA-256 the signed verdict cleared, proposes the fixes for the editor, and writes the brief, the queue and the answers into each vault, signed with its own key (keys/newsroom-desk.json), so a reviewer follows only what the desk signed.",
+  "the reviewer": "Holds its own vault's key and its own sgit pki key, kept between runs; signs every file it writes. Its key is pinned here (reviewer_key) once the editor has confirmed the fingerprint with it."
+ },
+ "public_emails": [],
+ "reviewers": {
+  "openai-chatgpt": {
+   "vault_id": "uni3mldz",
+   "read_key": "sgit_public_read_35221eddd5aec2193e43cc70d13fdd54a5def71b14da0d12788396143576ba4e:uni3mldz",
+   "endpoint": "https://dev.send.sgraph.ai",
+   "reviewer_key": null,
+   "created": "2026-10-27"
+  }
+ }
+}

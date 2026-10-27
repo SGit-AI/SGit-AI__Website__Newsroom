@@ -5,9 +5,9 @@ Built 2026-10-27, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-10-28
 
-- **The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since** (`the-evidence-behind-four-days`), published 2026-10-27, text `f3b1a7905865` at v0.13.101
+- **The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since** (`the-evidence-behind-four-days`), published 2026-10-27, text `aa464b31ebd3` at v0.13.105
   - read: https://newsroom.sgit.ai/articles/the-evidence-behind-four-days.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/the-evidence-behind-four-days.html)
-  - article_hash: `f3b1a7905865`, article_version: `v0.13.101`
+  - article_hash: `aa464b31ebd3`, article_version: `v0.13.105`
   - why: The editor's priority. The editor's first ask: a fact check by more than one vendor before the article is called checked. ChatGPT reviewed it on 27 October (changes needed); Perplexity's is the independent second reading.
 
 ## 2026-10-29
@@ -26,33 +26,33 @@ Built 2026-10-27, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-10-31
 
-- **Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it** (`inside-kitewing-websites`), published 2026-10-26, text `5b59b3afbb7b` at v0.13.96
-  - read: https://newsroom.sgit.ai/articles/inside-kitewing-websites.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/inside-kitewing-websites.html)
-  - article_hash: `5b59b3afbb7b`, article_version: `v0.13.96`
+- **Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room** (`legal-on-demand-for-startups`), published 2026-10-27, text `55790800e9e2` at v0.13.109
+  - read: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.html)
+  - article_hash: `55790800e9e2`, article_version: `v0.13.109`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-01
 
-- **Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on** (`web-summit-2026-the-plan`), published 2026-10-26, text `cee1514801fe` at v0.13.90
-  - read: https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html)
-  - article_hash: `cee1514801fe`, article_version: `v0.13.90`
+- **What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it** (`what-an-agent-is`), published 2026-10-27, text `d468ffef7b41` at v0.13.108
+  - read: https://newsroom.sgit.ai/articles/what-an-agent-is.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-an-agent-is.html)
+  - article_hash: `d468ffef7b41`, article_version: `v0.13.108`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
 
-- **Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy** (`translate-the-assumption`), published 2026-10-25, text `8d4d08a6fe0c` at v0.13.84
-  - read: https://newsroom.sgit.ai/articles/translate-the-assumption.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/translate-the-assumption.html)
-  - article_hash: `8d4d08a6fe0c`, article_version: `v0.13.84`
-  - why: Never reviewed by you; never reviewed by anyone.
+- **Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters** (`meta-terms-and-the-news`), published 2026-10-27, text `eb193eea2f6a` at v0.13.105
+  - read: https://newsroom.sgit.ai/articles/meta-terms-and-the-news.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/meta-terms-and-the-news.html)
+  - article_hash: `eb193eea2f6a`, article_version: `v0.13.105`
+  - why: Never reviewed by you; 1 other reviewer have.
 
 ## 2026-11-03
 
-- **Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on** (`simplified-or-outsourced`), published 2026-10-25, text `be6e320afd3d` at v0.13.80
-  - read: https://newsroom.sgit.ai/articles/simplified-or-outsourced.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/simplified-or-outsourced.html)
-  - article_hash: `be6e320afd3d`, article_version: `v0.13.80`
+- **Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it** (`websites-you-own`), published 2026-10-26, text `cedcea2d49fa` at v0.13.96
+  - read: https://newsroom.sgit.ai/articles/websites-you-own.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/websites-you-own.html)
+  - article_hash: `cedcea2d49fa`, article_version: `v0.13.96`
   - why: Never reviewed by you; never reviewed by anyone.
 
-292 more after these.
+297 more after these.
 
 The empty record, to fill (one per article):
 
