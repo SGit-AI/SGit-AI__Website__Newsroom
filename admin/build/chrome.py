@@ -82,7 +82,8 @@ NAV = [
         ("The board", "newsroom/board.html"),
         ("The run log", "newsroom/log.html"),
         ("The briefs: what is left to build", "briefs/index.html"),
-    ], ("newsroom/", "briefs/")),
+        ("Independent review: ChatGPT, Perplexity and the gate", "reviews/index.html"),
+    ], ("newsroom/", "briefs/", "reviews/")),
     ("Design", "design/index.html", [
         ("The design, and what runs", "design/index.html"),
         ("The thesis: sell the graph", "thesis/index.html"),
@@ -162,6 +163,7 @@ FOOTER = [
         ("How to publish", "newsroom/publish.html"),
         ("The board", "newsroom/board.html"),
         ("The run log", "newsroom/log.html"),
+        ("Independent review", "reviews/index.html"),
     ]),
     ("The design", [
         ("The design, and what runs", "design/index.html"),

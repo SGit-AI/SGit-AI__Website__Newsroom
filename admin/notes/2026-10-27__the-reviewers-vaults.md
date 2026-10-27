@@ -1,5 +1,7 @@
 # The reviewers' vaults: a public vault per reviewer, a security gate, a review desk (card 092)
 
+**Since v0.13.115 (card 093):** ChatGPT's vault is gfzbzp41, the desk's key sha256:fb35b723a2ae8b98 and the security agent's sha256:2f1a036313b78b1d, each secret sealed small enough for one QR code; the first vault and keys are retired. Everything public is on [Vaults and keys](../../reviews/vaults.html), in the section [Independent review](../../reviews/index.html).
+
 **27 October 2026.** Hours after the review lane (card 091), the editor: ChatGPT can use vaults, so give it a
 collaborative vault rather than a lane; make it public, so everything in it must be public; track issues and tasks
 there too; and decide which agent processes it, which holds the vault key, which makes the pki keys, with the

@@ -384,10 +384,9 @@ def cmd_create(ctx, rid):
         if ctx.a.unsealed:
             (out / "vault-key.txt").write_text(vk + "\n")
         else:
-            s = subprocess.run(["node", str(ROOT / "admin/build/review_keys.mjs"), "seal", "--subject", f"{var}: the vault key of {rid}'s review vault ({vid})",
+            s = subprocess.run(["node", str(ROOT / "admin/build/review_keys.mjs"), "seal", "--subject", f"{var}, vault {vid}: give it to {rid} too",
                                 "--out", str(out / f"{rid}__vault-key__for-the-editor.txt")],
-                               input=f"The vault key of {rid}'s review vault ({vid}). Give it to {rid} (with an SG/Send access token, to push), "
-                                     f"and keep it as {var} in the environment of the review desk's scheduled run.\n\n{vk}", capture_output=True, text=True)
+                               input=f"{var}={vk}", capture_output=True, text=True)
             if s.returncode != 0:
                 die("sealing the vault key failed: " + s.stderr.strip()[-300:])
     print(f"review_vault: made {rid}'s vault {vid}; read key published in {ctx.config.relative_to(ROOT) if ctx.config.is_relative_to(ROOT) else ctx.config}; "

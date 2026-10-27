@@ -116,6 +116,10 @@ try {
     check(/^Sent: 1 record/.test(await pg.textContent('#rv-sent')), 'Send: sealed and appended')
     check(errors.length === 0, `no page errors${errors.length ? ': ' + errors.join(' | ') : ''}`)
     const m = await br.newPage({ viewport: { width: 390, height: 800 } })
+    await m.goto(B + 'reviews/vaults.html'); await m.waitForFunction(() => document.querySelectorAll('[data-qr] svg').length >= 3, null, { timeout: 20000 }).catch(() => {})
+    check(await m.evaluate(() => document.querySelectorAll('[data-qr] svg').length === document.querySelectorAll('[data-qr]').length && document.querySelectorAll('[data-qr]').length >= 3), 'Vaults and keys: a QR code for each vault\'s read key and each signing key')
+    check(await m.evaluate(() => !/sgit_private_|PRIVATE KEY/.test(document.body.innerHTML)), 'and nothing private on it')
+    check(await m.evaluate(() => document.documentElement.scrollWidth <= 390), 'and no sideways scroll at 390px')
     await m.goto(B + 'reviews/send.html'); await m.waitForSelector('#rv-link', { timeout: 20000 })
     check(await m.evaluate(() => document.documentElement.scrollWidth <= 390), 'no sideways scroll at 390px, and with no link remembered the page asks for one')
 

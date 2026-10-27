@@ -26,33 +26,33 @@ Built 2026-10-27, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-10-31
 
-- **Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room** (`legal-on-demand-for-startups`), published 2026-10-27, text `55790800e9e2` at v0.13.109
-  - read: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.html)
-  - article_hash: `55790800e9e2`, article_version: `v0.13.109`
+- **You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity** (`you-can-feel-good-engineering`), published 2026-10-27, text `3be2222d0f50` at v0.13.110
+  - read: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.html)
+  - article_hash: `3be2222d0f50`, article_version: `v0.13.110`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-01
 
-- **What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it** (`what-an-agent-is`), published 2026-10-27, text `d468ffef7b41` at v0.13.108
-  - read: https://newsroom.sgit.ai/articles/what-an-agent-is.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-an-agent-is.html)
-  - article_hash: `d468ffef7b41`, article_version: `v0.13.108`
+- **Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision** (`who-has-not-patched`), published 2026-10-27, text `4bfdec56a9b4` at v0.13.108
+  - read: https://newsroom.sgit.ai/articles/who-has-not-patched.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/who-has-not-patched.html)
+  - article_hash: `4bfdec56a9b4`, article_version: `v0.13.108`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
 
-- **Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters** (`meta-terms-and-the-news`), published 2026-10-27, text `eb193eea2f6a` at v0.13.105
-  - read: https://newsroom.sgit.ai/articles/meta-terms-and-the-news.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/meta-terms-and-the-news.html)
-  - article_hash: `eb193eea2f6a`, article_version: `v0.13.105`
-  - why: Never reviewed by you; 1 other reviewer have.
+- **Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart** (`take-it-or-leave-it`), published 2026-10-27, text `29f9f938e0c9` at v0.13.107
+  - read: https://newsroom.sgit.ai/articles/take-it-or-leave-it.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/take-it-or-leave-it.html)
+  - article_hash: `29f9f938e0c9`, article_version: `v0.13.107`
+  - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-03
 
-- **Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it** (`websites-you-own`), published 2026-10-26, text `cedcea2d49fa` at v0.13.96
-  - read: https://newsroom.sgit.ai/articles/websites-you-own.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/websites-you-own.html)
-  - article_hash: `cedcea2d49fa`, article_version: `v0.13.96`
+- **Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it** (`inside-kitewing-websites`), published 2026-10-26, text `5b59b3afbb7b` at v0.13.96
+  - read: https://newsroom.sgit.ai/articles/inside-kitewing-websites.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/inside-kitewing-websites.html)
+  - article_hash: `5b59b3afbb7b`, article_version: `v0.13.96`
   - why: Never reviewed by you; never reviewed by anyone.
 
-297 more after these.
+298 more after these.
 
 The empty record, to fill (one per article):
 

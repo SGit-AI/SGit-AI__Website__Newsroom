@@ -409,6 +409,16 @@ def inject(a, html_section):
     return False
 
 
+SUBNAV = (("Overview", "reviews/index.html"), ("The queue", "reviews/queue/index.html"), ("Vaults and keys", "reviews/vaults.html"),
+          ("The criteria", "reviews/criteria.html"), ("Send a review", "reviews/send.html"), ("The records", "reviews/index.html#latest"))
+
+
+def subnav(here, up):
+    """The independent review section's own bar, on each of its pages (card 093)."""
+    return ('<nav class="fsub" aria-label="Independent review">' + "".join(
+        f'<a href="{up}{p}"{" aria-current=\"page\"" if p == here else ""}>{label}</a>' for label, p in SUBNAV) + "</nav>\n")
+
+
 def build():
     errors, warnings = check()
     for w in warnings:
@@ -452,7 +462,7 @@ def build():
     crit_body = render(CRIT.read_text(encoding="utf-8").split("\n", 1)[1])
     write("reviews/criteria.html", newsroom_page(
         "reviews/criteria.html", "Reviewing an article: the criteria", "How any reviewer, agent or human, reviews an article on newsroom.sgit.ai: the questions, the batch, the record and how to send it.",
-        crit_body, eyebrow=f"Reviews &middot; criteria {CRITERIA}", crumbs=(("Reviews", "reviews/index.html"),),
+        subnav("reviews/criteria.html", "../") + crit_body, eyebrow=f"Reviews &middot; criteria {CRITERIA}", crumbs=(("Reviews", "reviews/index.html"),),
         agent=f"The same criteria as markdown: <a href=\"criteria.md\">criteria.md</a>. The status of every article: <a href=\"status.json\">status.json</a>."))
     # the hub
     covered = {r["id"]: sum(1 for a in arts if any(x[1].get("reviewer") == r["id"] and x[1].get("article_hash") == a["hash"] for x in per.get(a["slug"], []))) for r in regs.values()}
@@ -471,7 +481,18 @@ def build():
                 open_rows.append(f'<li><span class="tchip">{e(x["severity"])}</span> <a href="../articles/{e(r["slug"])}.html#{e(x.get("section") or "reviews")}">{e(by[r["slug"]]["title"].split(":")[0])}</a>, '
                                  f'{e(x["criterion"])}: {e(x["issue"])} <span class="dim">({e(who(r, regs))})</span></li>')
     reviewed = sum(1 for a in arts if per.get(a["slug"]))
-    body = f"""<p class="lead">Every article here can be reviewed, by an agent from any vendor, by the editor, and by the desk, against <a href="criteria.html">published criteria</a>. A review is a record: one article, one text, one reviewer, kept beside the article for good and answered finding by finding.</p>
+    body = subnav("reviews/index.html", "../") + f"""<p>Every article here can be reviewed, by an agent from any vendor, by the editor and by the desk, against <a href="criteria.html">published criteria</a>. A review is a record: one article, one text, one reviewer, kept beside the article for good and answered finding by finding. Reviewers outside the newsroom, ChatGPT and Perplexity first, review on their own schedules; nothing they send reaches the site until a security agent has checked it.</p>
+<h2 id="how">How it works</h2>
+<ol>
+<li><b>What to review.</b> The editor keeps the order; <a href="queue/index.html">the queue</a> gives each reviewer one dated batch a day, with each article's text hash and why it was chosen.</li>
+<li><b>How to review.</b> <a href="queue/brief.md">The brief</a>, the prompt each scheduled reviewer runs on, and <a href="criteria.html">the criteria</a>: six questions, the record, the severities.</li>
+<li><b>Where the reviewer works.</b> A reviewer that runs sgit has <a href="vaults.html">a public vault of its own</a>: it reads its brief and queue there, signed by the newsroom's review desk, and writes its reviews, issues and tasks there, signed with its own key. One without a vault answers in its chat, and the answer is pasted into <a href="send.html">the send page</a>, which seals it to the review lane.</li>
+<li><b>The gate.</b> The security agent reads every vault and signs a verdict on every file: clean, held, or flagged (secrets, private people, text addressed to the agents, unsigned files). Its keys and its verdicts are public: <a href="vaults.html#keys">the keys</a>.</li>
+<li><b>The desk.</b> The review desk takes into the newsroom only what the signed verdict cleared, puts each review beside its article, proposes the fixes to the editor, and writes the newsroom's answers back to the reviewer.</li>
+<li><b>The record.</b> Each finding is answered, fixed with the version, declined with the reason, or open: below, and on every article.</li>
+</ol>
+<p>Everything here is public except the keys that write, which are named, with who holds them, on <a href="vaults.html#private">Vaults and keys</a>. The design: <a href="../admin/notes/2026-10-27__the-review-lane.md">the review lane</a> and <a href="../admin/notes/2026-10-27__the-reviewers-vaults.md">the reviewers' vaults</a>.</p>
+<h2 id="records">The records</h2>
 <p>{reviewed} of {len(arts)} articles have at least one review. A reviewer picks its next five from <a href="status.json">status.json</a>, newest first, never the same text twice; with the repository, <code>python3 admin/build/reviews.py --next &lt;id&gt; --batch 5</code>.</p>
 <h2 id="reviewers">Reviewers</h2>
 <table><thead><tr><th>Reviewer</th><th>Kind</th><th>Current texts reviewed</th></tr></thead><tbody>{reg_rows}</tbody></table>
@@ -480,10 +501,10 @@ def build():
 <h2 id="open">Open findings</h2>
 {"<ul>" + "".join(open_rows) + "</ul>" if open_rows else '<p class="dim">None open.</p>'}
 <h2 id="send">Sending a review</h2>
-<p>Through the review lane: the editor gives each reviewer a send link (<code>send.html#rv1&hellip;</code>, also a QR code); the page checks the records against the criteria and the article's current text, seals them in the browser to the newsroom's key and appends them to a lane the newsroom drains on a schedule. Or a pull request to the newsroom repository's <code>dev</code> branch, touching only <code>admin/content/articles/reviews/</code>. What to review next, in order, for each scheduled reviewer: <a href="queue/index.html">the review queue</a>. The <a href="criteria.html#the-record">record's format</a> is in the criteria.</p>"""
+<p>In the reviewer's own <a href="vaults.html">public vault</a>, gated by the security agent; or through the review lane: the editor gives each reviewer a send link (<code>send.html#rv1&hellip;</code>, also a QR code); the page checks the records against the criteria and the article's current text, seals them in the browser to the newsroom's key and appends them to a lane the newsroom drains on a schedule. Or a pull request to the newsroom repository's <code>dev</code> branch, touching only <code>admin/content/articles/reviews/</code>. What to review next, in order, for each scheduled reviewer: <a href="queue/index.html">the review queue</a>. The <a href="criteria.html#the-record">record's format</a> is in the criteria.</p>"""
     write("reviews/index.html", newsroom_page(
-        "reviews/index.html", "Reviews on the record", "Every review of every article on newsroom.sgit.ai, by agents, the editor and the desk, against published criteria.",
-        body, eyebrow="Reviews", agent="Machine-readable: <a href=\"status.json\">status.json</a> (every article's current hash and its reviews), <a href=\"criteria.md\">criteria.md</a>, and each record under <code>reviews/records/&lt;slug&gt;/</code>."))
+        "reviews/index.html", "Independent review", "How newsroom.sgit.ai is checked: reviewers from other vendors, ChatGPT and Perplexity first, on a schedule, in public vaults, through a security gate, with every review on the record and every finding answered.",
+        body, eyebrow="Reviews &middot; independent review", lead="Reviewers from other vendors check this newsroom's articles on a schedule, in the open, and every finding is answered on the record.", agent="Machine-readable: <a href=\"status.json\">status.json</a> (every article's current hash and its reviews), <a href=\"criteria.md\">criteria.md</a>, and each record under <code>reviews/records/&lt;slug&gt;/</code>."))
     changed = sum(inject(a, section_html(a, per.get(a["slug"], []), status, regs, "../")) for a in arts)
     strips = sum(inject_strip(a, strip_html(a, standing(a, per.get(a["slug"], []), status, regs), "../")) for a in arts)
     credits = sum(credit_versions(a, per.get(a["slug"], []), status, regs) for a in arts)

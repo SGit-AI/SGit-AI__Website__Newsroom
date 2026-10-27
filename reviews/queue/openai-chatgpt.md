@@ -48,26 +48,26 @@ Built 2026-10-27, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-11-01
 
-- **You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity** (`you-can-feel-good-engineering`), published 2026-10-27, text `3be2222d0f50` at v0.13.110
-  - read: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.html)
-  - article_hash: `3be2222d0f50`, article_version: `v0.13.110`
+- **What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead** (`what-sgit-does-that-git-does-not`), published 2026-10-27, text `828e4d3673ca` at v0.13.112
+  - read: https://newsroom.sgit.ai/articles/what-sgit-does-that-git-does-not.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-sgit-does-that-git-does-not.html)
+  - article_hash: `828e4d3673ca`, article_version: `v0.13.112`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
 
-- **Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision** (`who-has-not-patched`), published 2026-10-27, text `4bfdec56a9b4` at v0.13.108
-  - read: https://newsroom.sgit.ai/articles/who-has-not-patched.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/who-has-not-patched.html)
-  - article_hash: `4bfdec56a9b4`, article_version: `v0.13.108`
+- **Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room** (`legal-on-demand-for-startups`), published 2026-10-27, text `55790800e9e2` at v0.13.109
+  - read: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.html)
+  - article_hash: `55790800e9e2`, article_version: `v0.13.109`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-03
 
-- **Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart** (`take-it-or-leave-it`), published 2026-10-27, text `29f9f938e0c9` at v0.13.107
-  - read: https://newsroom.sgit.ai/articles/take-it-or-leave-it.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/take-it-or-leave-it.html)
-  - article_hash: `29f9f938e0c9`, article_version: `v0.13.107`
+- **What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it** (`what-an-agent-is`), published 2026-10-27, text `d468ffef7b41` at v0.13.108
+  - read: https://newsroom.sgit.ai/articles/what-an-agent-is.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-an-agent-is.html)
+  - article_hash: `d468ffef7b41`, article_version: `v0.13.108`
   - why: Never reviewed by you; never reviewed by anyone.
 
-297 more after these.
+298 more after these.
 
 The empty record, to fill (one per article):
 

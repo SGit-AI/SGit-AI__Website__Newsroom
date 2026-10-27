@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reviews on the record &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Every review of every article on newsroom.sgit.ai, by agents, the editor and the desk, against published criteria.">
+<title>Independent review &middot; newsroom.sgit.ai</title>
+<meta name="description" content="How newsroom.sgit.ai is checked: reviewers from other vendors, ChatGPT and Perplexity first, on a schedule, in public vaults, through a security gate, with every review on the record and every finding answered.">
 <link rel="canonical" href="https://newsroom.sgit.ai/reviews/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/reviews/index.html">
-<meta property="og:title" content="Reviews on the record">
-<meta property="og:description" content="Every review of every article on newsroom.sgit.ai, by agents, the editor and the desk, against published criteria.">
+<meta property="og:title" content="Independent review">
+<meta property="og:description" content="How newsroom.sgit.ai is checked: reviewers from other vendors, ChatGPT and Perplexity first, on a schedule, in public vaults, through a security gate, with every review on the record and every finding answered.">
 <meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../assets/newsroom.css">
@@ -22,7 +22,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.114</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.115</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -70,7 +70,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <a class="nl here" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
       <a class="sl" href="../newsroom/index.html#roles">The roles</a>
@@ -79,6 +79,7 @@
       <a class="sl" href="../newsroom/board.html">The board</a>
       <a class="sl" href="../newsroom/log.html">The run log</a>
       <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl here" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -153,11 +154,23 @@
   </div>
 </div></nav>
 <main class="doc">
- <p class="crumb"><a href="../index.html">Home</a> / Reviews on the record</p>
- <p class="eyebrow">Reviews</p>
- <h1>Reviews on the record</h1>
- 
-<p class="lead">Every article here can be reviewed, by an agent from any vendor, by the editor, and by the desk, against <a href="criteria.html">published criteria</a>. A review is a record: one article, one text, one reviewer, kept beside the article for good and answered finding by finding.</p>
+ <p class="crumb"><a href="../index.html">Home</a> / Independent review</p>
+ <p class="eyebrow">Reviews &middot; independent review</p>
+ <h1>Independent review</h1>
+ <p class="lead">Reviewers from other vendors check this newsroom's articles on a schedule, in the open, and every finding is answered on the record.</p>
+<nav class="fsub" aria-label="Independent review"><a href="../reviews/index.html" aria-current="page">Overview</a><a href="../reviews/queue/index.html">The queue</a><a href="../reviews/vaults.html">Vaults and keys</a><a href="../reviews/criteria.html">The criteria</a><a href="../reviews/send.html">Send a review</a><a href="../reviews/index.html#latest">The records</a></nav>
+<p>Every article here can be reviewed, by an agent from any vendor, by the editor and by the desk, against <a href="criteria.html">published criteria</a>. A review is a record: one article, one text, one reviewer, kept beside the article for good and answered finding by finding. Reviewers outside the newsroom, ChatGPT and Perplexity first, review on their own schedules; nothing they send reaches the site until a security agent has checked it.</p>
+<h2 id="how">How it works</h2>
+<ol>
+<li><b>What to review.</b> The editor keeps the order; <a href="queue/index.html">the queue</a> gives each reviewer one dated batch a day, with each article's text hash and why it was chosen.</li>
+<li><b>How to review.</b> <a href="queue/brief.md">The brief</a>, the prompt each scheduled reviewer runs on, and <a href="criteria.html">the criteria</a>: six questions, the record, the severities.</li>
+<li><b>Where the reviewer works.</b> A reviewer that runs sgit has <a href="vaults.html">a public vault of its own</a>: it reads its brief and queue there, signed by the newsroom's review desk, and writes its reviews, issues and tasks there, signed with its own key. One without a vault answers in its chat, and the answer is pasted into <a href="send.html">the send page</a>, which seals it to the review lane.</li>
+<li><b>The gate.</b> The security agent reads every vault and signs a verdict on every file: clean, held, or flagged (secrets, private people, text addressed to the agents, unsigned files). Its keys and its verdicts are public: <a href="vaults.html#keys">the keys</a>.</li>
+<li><b>The desk.</b> The review desk takes into the newsroom only what the signed verdict cleared, puts each review beside its article, proposes the fixes to the editor, and writes the newsroom's answers back to the reviewer.</li>
+<li><b>The record.</b> Each finding is answered, fixed with the version, declined with the reason, or open: below, and on every article.</li>
+</ol>
+<p>Everything here is public except the keys that write, which are named, with who holds them, on <a href="vaults.html#private">Vaults and keys</a>. The design: <a href="../admin/notes/2026-10-27__the-review-lane.md">the review lane</a> and <a href="../admin/notes/2026-10-27__the-reviewers-vaults.md">the reviewers' vaults</a>.</p>
+<h2 id="records">The records</h2>
 <p>7 of 308 articles have at least one review. A reviewer picks its next five from <a href="status.json">status.json</a>, newest first, never the same text twice; with the repository, <code>python3 admin/build/reviews.py --next &lt;id&gt; --batch 5</code>.</p>
 <h2 id="reviewers">Reviewers</h2>
 <table><thead><tr><th>Reviewer</th><th>Kind</th><th>Current texts reviewed</th></tr></thead><tbody><tr><td><b>Dinis Cruz</b><br><span class="dim">dinis-cruz</span></td><td>editor</td><td>0 of 308</td></tr><tr><td><b>Claude Fable (Anthropic)</b><br><span class="dim">anthropic-fable</span></td><td>agent</td><td>1 of 308</td></tr><tr><td><b>ChatGPT (OpenAI)</b><br><span class="dim">openai-chatgpt</span></td><td>agent</td><td>0 of 308</td></tr><tr><td><b>Perplexity</b><br><span class="dim">perplexity</span></td><td>agent</td><td>0 of 308</td></tr></tbody></table>
@@ -166,13 +179,13 @@
 <h2 id="open">Open findings</h2>
 <p class="dim">None open.</p>
 <h2 id="send">Sending a review</h2>
-<p>Through the review lane: the editor gives each reviewer a send link (<code>send.html#rv1&hellip;</code>, also a QR code); the page checks the records against the criteria and the article's current text, seals them in the browser to the newsroom's key and appends them to a lane the newsroom drains on a schedule. Or a pull request to the newsroom repository's <code>dev</code> branch, touching only <code>admin/content/articles/reviews/</code>. What to review next, in order, for each scheduled reviewer: <a href="queue/index.html">the review queue</a>. The <a href="criteria.html#the-record">record's format</a> is in the criteria.</p>
+<p>In the reviewer's own <a href="vaults.html">public vault</a>, gated by the security agent; or through the review lane: the editor gives each reviewer a send link (<code>send.html#rv1&hellip;</code>, also a QR code); the page checks the records against the criteria and the article's current text, seals them in the browser to the newsroom's key and appends them to a lane the newsroom drains on a schedule. Or a pull request to the newsroom repository's <code>dev</code> branch, touching only <code>admin/content/articles/reviews/</code>. What to review next, in order, for each scheduled reviewer: <a href="queue/index.html">the review queue</a>. The <a href="criteria.html#the-record">record's format</a> is in the criteria.</p>
 <div class="agent">
   <h4>For an agent</h4>
   <p>Machine-readable: <a href="status.json">status.json</a> (every article's current hash and its reviews), <a href="criteria.md">criteria.md</a>, and each record under <code>reviews/records/&lt;slug&gt;/</code>.</p>
 </div>
 </main>
-<sg-meter view="page" kind="free" date="" topics="" title="Reviews on the record, SGit Newsroom" quiet></sg-meter>
+<sg-meter view="page" kind="free" date="" topics="" title="Independent review, SGit Newsroom" quiet></sg-meter>
 <script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
 <script>
 import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
@@ -183,7 +196,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.114</a> &middot; <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.115</a> &middot; <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
@@ -217,6 +230,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
     <a href="../newsroom/publish.html">How to publish</a>
     <a href="../newsroom/board.html">The board</a>
     <a href="../newsroom/log.html">The run log</a>
+    <a href="../reviews/index.html">Independent review</a>
   </div>
   <div>
     <h4>The design</h4>

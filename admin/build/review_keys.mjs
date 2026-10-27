@@ -11,7 +11,8 @@
  *       --secret-out <file> also writes it unsealed (mode 600), for a smoke test by whoever ran it; delete it after.
  *
  *   node admin/build/review_keys.mjs seal --subject <s> --out <file> < secret
- *       seal what is on stdin to the editor's key (--to; Dinis Cruz's root by default) as a pki.sgit.ai message link.
+ *       seal what is on stdin to the editor's key (--to; Dinis Cruz's root by default) as a pki.sgit.ai message link,
+ *       and its QR code beside it (<file without .txt>.svg) when it fits one code (message.js MAX_QR_CHARS).
  *
  * The private half is base64 of { v, role, signing_fingerprint, fingerprint, sign, encrypt } (PKCS#8, base64), the
  * shape admin/build/review_vault.py signs with.
@@ -38,10 +39,17 @@ async function editorBundle() {
     if (!r) throw new Error(`${EDITOR} is not in pki.sgit.ai's register`)
     return r.statements.find(s => s.type === 'identity').body.bundle
 }
-export async function sealToEditor(text, subject) {
-    const bundle = await editorBundle()
+export async function sealToEditor(text, subject, toBundle = null) {
+    const bundle = toBundle || await editorBundle()
     const msg = await M.compose({ to: bundle, subject, text, expires: new Date(Date.now() + 30 * 864e5).toISOString() })
     return (await M.sealMessage(msg, bundle)).url
+}
+/** The sealed link, and its QR code beside it (<file>.svg): one code, scanned by a phone that holds the editor's key. */
+export async function writeSealed(file, url) {
+    fs.writeFileSync(file, url + '\n')
+    if (url.length > M.MAX_QR_CHARS + 40) { console.log(`review_keys: ${path.basename(file)} is ${url.length} characters, too long for one QR code`); return }
+    const I = await imp('assets/vault-pane/inbox.js')
+    fs.writeFileSync(file.replace(/\.txt$/, '') + '.svg', (await I.qrSvg(url, { cell: 4, label: 'A secret sealed to the editor\'s key on pki.sgit.ai' })).svg)
 }
 
 const cmd = args[0]
@@ -60,16 +68,17 @@ if (cmd === 'make') {
     fs.mkdirSync(path.dirname(pub), { recursive: true })
     fs.writeFileSync(pub, JSON.stringify(id.bundle, null, 1) + '\n')
     fs.writeFileSync(path.join(out, `${role}__submission.json`), JSON.stringify(D.submission(statements), null, 1) + '\n')
-    const secret = Buffer.from(JSON.stringify({ v: 1, role, signing_fingerprint: id.bundle.signing_fingerprint, fingerprint: id.bundle.fingerprint, sign: K.b64(id.private.sign), encrypt: K.b64(id.private.encrypt) })).toString('base64')
+    // only the signing half: the role signs and never decrypts, and so the sealed secret fits one QR code
+    const secret = Buffer.from(JSON.stringify({ v: 1, role, signing_fingerprint: id.bundle.signing_fingerprint, sign: K.b64(id.private.sign) })).toString('base64')
     if (opt('--secret-out')) fs.writeFileSync(opt('--secret-out'), secret + '\n', { mode: 0o600 })
     if (!args.includes('--unsealed')) {
-        const link = await sealToEditor(`Keep this as ${R.env} in the environment of the scheduled run of ${role}.\n\n${secret}`, `${R.env} (${role}, ${id.bundle.signing_fingerprint})`)
-        fs.writeFileSync(path.join(out, `${role}__for-the-editor.txt`), link + '\n')
+        const link = await sealToEditor(`${R.env}=${secret}`, `${R.env}, ${role} ${id.bundle.signing_fingerprint}`)
+        await writeSealed(path.join(out, `${role}__for-the-editor.txt`), link)
     }
     console.log(`review_keys: ${role} is ${id.bundle.signing_fingerprint}; public bundle ${pub}; the submission and the sealed private half are in ${out}`)
 } else if (cmd === 'seal') {
     const text = fs.readFileSync(0, 'utf8').trim()
     if (!text || !opt('--out')) { console.error('review_keys: seal --subject <s> --out <file> < secret'); process.exit(2) }
-    fs.writeFileSync(opt('--out'), await sealToEditor(text, opt('--subject') || 'a secret from the newsroom') + '\n')
+    await writeSealed(opt('--out'), await sealToEditor(text, opt('--subject') || 'a secret from the newsroom'))
     console.log(`review_keys: sealed to ${EDITOR}, in ${opt('--out')}`)
 } else { console.error('usage: review_keys.mjs make <role> --out <dir> | seal --subject <s> --out <file> < secret'); process.exitCode = 2 }
