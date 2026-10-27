@@ -3,29 +3,29 @@
  "kept_by": "newsroom.accountant",
  "runs": {
   "total": {
-   "runs": 46,
-   "cost_usd": 46.810097,
-   "published": 17,
-   "blocked": 27,
-   "refused": 57
+   "runs": 49,
+   "cost_usd": 50.443611,
+   "published": 19,
+   "blocked": 28,
+   "refused": 59
   },
-  "per_edition_usd": 2.2875,
+  "per_edition_usd": 2.214,
   "by_task": {
    "newsroom": {
-    "runs": 12,
-    "cost_usd": 3.858694,
+    "runs": 13,
+    "cost_usd": 4.31424,
     "published": 0,
-    "blocked": 12,
-    "output": 63499,
-    "duration_s": 2825.5
+    "blocked": 13,
+    "output": 73187,
+    "duration_s": 3370.6
    },
    "industry": {
-    "runs": 10,
-    "cost_usd": 29.539263,
-    "published": 10,
+    "runs": 11,
+    "cost_usd": 31.252809,
+    "published": 11,
     "blocked": 0,
-    "output": 2745808,
-    "duration_s": 7813.2
+    "output": 2906126,
+    "duration_s": 8317.1
    },
    "aws": {
     "runs": 6,
@@ -44,12 +44,12 @@
     "duration_s": 1073.1
    },
    "dinis": {
-    "runs": 10,
-    "cost_usd": 1.535549,
-    "published": 0,
+    "runs": 11,
+    "cost_usd": 2.999971,
+    "published": 1,
     "blocked": 10,
-    "output": 25464,
-    "duration_s": 7641.9
+    "output": 104796,
+    "duration_s": 8377.7
    },
    "owasp": {
     "runs": 2,
@@ -61,6 +61,14 @@
    }
   },
   "by_day": {
+   "2026-10-27": {
+    "runs": 3,
+    "cost_usd": 3.633514,
+    "published": 2,
+    "blocked": 1,
+    "output": 249338,
+    "duration_s": 1784.8
+   },
    "2026-10-26": {
     "runs": 4,
     "cost_usd": 4.246776,
@@ -160,12 +168,12 @@
   },
   "by_model": {
    "claude-sonnet-5-5": {
-    "cost_usd": 34.555251,
-    "input": 2470,
-    "output": 970937,
-    "cache_read": 82168931,
-    "cache_write": 5381304,
-    "thinking": 104699
+    "cost_usd": 37.984598,
+    "input": 2738,
+    "output": 1066564,
+    "cache_read": 89116560,
+    "cache_write": 5969555,
+    "thinking": 112588
    },
    "claude-opus-5-5": {
     "cost_usd": 8.203007,
@@ -176,15 +184,117 @@
     "thinking": 19418
    },
    "claude-haiku-5-5": {
-    "cost_usd": 4.051843,
-    "input": 18209041,
-    "output": 2860522,
-    "cache_read": 7600462,
-    "cache_write": 1362159,
-    "thinking": 1873627
+    "cost_usd": 4.25601,
+    "input": 19281378,
+    "output": 3014233,
+    "cache_read": 8005108,
+    "cache_write": 1490412,
+    "thinking": 1970242
    }
   },
   "rows": [
+   {
+    "id": "3a1739b7a697",
+    "task": "newsroom",
+    "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+    "fired_at": "2026-10-27T06:56:52Z",
+    "finished_at": "2026-10-27T07:06:04Z",
+    "duration_s": 545.1,
+    "models": {
+     "claude-sonnet-5-5": {
+      "cost_usd": 0.455546,
+      "input": 52,
+      "output": 9688,
+      "cache_read": 1576222,
+      "cache_write": 50235,
+      "thinking": 2003
+     }
+    },
+    "cost_usd": 0.455546,
+    "turns": 26,
+    "subagents": 0,
+    "refused": 0,
+    "refused_kinds": [],
+    "outcome": "blocked",
+    "release": null,
+    "added": null,
+    "updated": null,
+    "note": "The release was committed locally but not pushed, because the same four wire-test date checks failed again."
+   },
+   {
+    "id": "41d0352142a3",
+    "task": "dinis",
+    "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+    "fired_at": "2026-10-27T06:11:33Z",
+    "finished_at": "2026-10-27T06:23:52Z",
+    "duration_s": 735.8,
+    "models": {
+     "claude-haiku-5-5": {
+      "cost_usd": 0.052924,
+      "input": 304162,
+      "output": 34302,
+      "cache_read": 57293,
+      "cache_write": 38270,
+      "thinking": 21045
+     },
+     "claude-sonnet-5-5": {
+      "cost_usd": 1.411498,
+      "input": 114,
+      "output": 45030,
+      "cache_read": 2380686,
+      "cache_write": 239423,
+      "thinking": 3084
+     }
+    },
+    "cost_usd": 1.464422,
+    "turns": 32,
+    "subagents": 6,
+    "refused": 2,
+    "refused_kinds": [
+     "web fetch"
+    ],
+    "outcome": "published",
+    "release": "2026-10-27.1",
+    "added": 9,
+    "updated": 0,
+    "note": "The wire's first edition went out with nine stories, though the desk brief and charter could not be fetched."
+   },
+   {
+    "id": "9d98886cdd85",
+    "task": "industry",
+    "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+    "fired_at": "2026-10-27T05:48:04Z",
+    "finished_at": "2026-10-27T05:56:31Z",
+    "duration_s": 503.9,
+    "models": {
+     "claude-haiku-5-5": {
+      "cost_usd": 0.151243,
+      "input": 768175,
+      "output": 119409,
+      "cache_read": 347353,
+      "cache_write": 89983,
+      "thinking": 75570
+     },
+     "claude-sonnet-5-5": {
+      "cost_usd": 1.562303,
+      "input": 102,
+      "output": 40909,
+      "cache_read": 2990721,
+      "cache_write": 298593,
+      "thinking": 2802
+     }
+    },
+    "cost_usd": 1.713546,
+    "turns": 20,
+    "subagents": 5,
+    "refused": 0,
+    "refused_kinds": [],
+    "outcome": "published",
+    "release": "2026-10-27.1",
+    "added": 6,
+    "updated": 1,
+    "note": "Six new stories and one update, below the daily target because the desk did not pad."
+   },
    {
     "id": "52fa4941271a",
     "task": "newsroom",
@@ -1722,20 +1832,20 @@
     "name": "@newsroom.accountant's session",
     "kind": "accountant",
     "from": "2026-10-16",
-    "as_of": "2026-10-26T07:41:34Z",
+    "as_of": "2026-10-27T07:42:07Z",
     "models": [
      "claude-sonnet-5-5"
     ],
-    "cost_usd": 11.209893,
-    "input": 136,
-    "output": 49150,
-    "cache_read": 17072389,
-    "cache_write": 2251902,
+    "cost_usd": 13.528144,
+    "input": 150,
+    "output": 54675,
+    "cache_read": 20191302,
+    "cache_write": 2739420,
     "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
    }
   ]
  },
- "updated": "2026-10-27T01:19:09Z",
+ "updated": "2026-10-27T07:43:24Z",
  "what": "What the wires cost: every image the pipeline made (admin/build/infographics.py), with OpenRouter's own cost per image, summed by wire, edition, month, model and kind, and per piece of work; and every scheduled run of the desks and the newsroom (admin/build/wire-runs.json), with the platform's own cost and tokens per model.",
  "total": {
   "images": 71,

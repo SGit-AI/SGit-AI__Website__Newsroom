@@ -1516,6 +1516,108 @@
    "added": null,
    "updated": null,
    "note": "The run found all four vaults changed but stopped before building, because the git proxy refused the push."
+  },
+  {
+   "id": "9d98886cdd85",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-27T05:48:04Z",
+   "finished_at": "2026-10-27T05:56:31Z",
+   "duration_s": 503.9,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.151243,
+     "input": 768175,
+     "output": 119409,
+     "cache_read": 347353,
+     "cache_write": 89983,
+     "thinking": 75570
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.562303,
+     "input": 102,
+     "output": 40909,
+     "cache_read": 2990721,
+     "cache_write": 298593,
+     "thinking": 2802
+    }
+   },
+   "cost_usd": 1.713546,
+   "turns": 20,
+   "subagents": 5,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-27.1",
+   "added": 6,
+   "updated": 1,
+   "note": "Six new stories and one update, below the daily target because the desk did not pad."
+  },
+  {
+   "id": "41d0352142a3",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-27T06:11:33Z",
+   "finished_at": "2026-10-27T06:23:52Z",
+   "duration_s": 735.8,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.052924,
+     "input": 304162,
+     "output": 34302,
+     "cache_read": 57293,
+     "cache_write": 38270,
+     "thinking": 21045
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.411498,
+     "input": 114,
+     "output": 45030,
+     "cache_read": 2380686,
+     "cache_write": 239423,
+     "thinking": 3084
+    }
+   },
+   "cost_usd": 1.464422,
+   "turns": 32,
+   "subagents": 6,
+   "refused": 2,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "published",
+   "release": "2026-10-27.1",
+   "added": 9,
+   "updated": 0,
+   "note": "The wire's first edition went out with nine stories, though the desk brief and charter could not be fetched."
+  },
+  {
+   "id": "3a1739b7a697",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-27T06:56:52Z",
+   "finished_at": "2026-10-27T07:06:04Z",
+   "duration_s": 545.1,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.455546,
+     "input": 52,
+     "output": 9688,
+     "cache_read": 1576222,
+     "cache_write": 50235,
+     "thinking": 2003
+    }
+   },
+   "cost_usd": 0.455546,
+   "turns": 26,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The release was committed locally but not pushed, because the same four wire-test date checks failed again."
   }
  ],
  "sessions": [
@@ -1539,15 +1641,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-26T07:41:34Z",
+   "as_of": "2026-10-27T07:42:07Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 11.209893,
-   "input": 136,
-   "output": 49150,
-   "cache_read": 17072389,
-   "cache_write": 2251902,
+   "cost_usd": 13.528144,
+   "input": 150,
+   "output": 54675,
+   "cache_read": 20191302,
+   "cache_write": 2739420,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
