@@ -63,6 +63,7 @@ def sections_of(slug):
     if cut:
         body = body[:min(cut)]
     body = re.sub(r'<p class="crumb">.*?</p>', " ", body, flags=re.S)
+    body = re.sub(r'<p class="rvstatus[^"]*">.*?</p>', " ", body, flags=re.S)  # reviews.py's line, after the text (v0.13.113)
     parts = re.split(r'(<h2\b[^>]*>.*?</h2>)', body, flags=re.S)
     out = [["top", "The opening", parts[0]]]
     for i in range(1, len(parts), 2):
