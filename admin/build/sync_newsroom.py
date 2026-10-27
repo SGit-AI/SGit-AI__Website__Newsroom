@@ -248,7 +248,7 @@ NORMALISE = [
     (re.compile(r'<span>newsroom\.sgit\.ai &middot; v\d+\.\d+\.\d+</span>'),
      '<span>newsroom.sgit.ai &middot; </span>'),
     (re.compile(r'<section class="athreads areviews" id="reviews">[\s\S]*?</section>\n'), ''),  # stamped by reviews.py
-    (re.compile(r'\n  <p class="rvstatus[^"]*">[\s\S]*?</p>'), ''),  # stamped by reviews.py
+    (re.compile(r'\n *<p class="rvstatus[^"]*">[\s\S]*?</p>'), ''),  # stamped by reviews.py
     (re.compile(r'\n <p class="rvcredit">[\s\S]*?</p>'), ''),  # stamped by reviews.py
     (re.compile(r'<br><span class="rvcredit">[\s\S]*?</span>'), '', 0),  # stamped by reviews.py, one per credited version
     (re.compile(r'\n\*\*Prompted by review\.\*\*[^\n]*\n'), ''),  # stamped by reviews.py

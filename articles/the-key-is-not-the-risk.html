@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent</p>
  <h1>The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/the-key-is-not-the-risk.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.27</a> &middot; <span class="chip">security</span><span class="chip">agents</span><span class="chip">credentials</span><span class="chip">risk</span><span class="chip">abp</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> A post going round this week, by Christian Posta, makes a point I agree with: do not give AI agents credentials, inject them on the way out through a gateway, and then protect the credential store, which becomes a high-value target. It is a good pattern, and this is not an article against it. It is about the question I learned to ask in application security, before deciding how much a control matters: what are we actually worried about? When we found a password in a config file, the first question was never "we found a credential, this is critical". It was "can the attacker reach the system it opens?". If not, the key is of little use. Cloud and SaaS keys are the exception, because they work from anywhere by default. Then: would we see it used, what can it do, and what can an attacker make the agent do without it? I ran that question over the day of Pellbridge, the invented bank in our vault for the FCA's four elements. Of its nine incidents, three breaches and six near misses, hiding the keys touches two. The other seven are about what the agent may do: a payment to a crypto exchange, an alert closed without a second person, a standing order changed without approval. A gateway that injects keys adds the key to those calls too, and it sits in line, a new system to run, secure and pay for. In a good design, a leaked key should not matter much. What the agent can do with its permissions matters more, and if an attacker can inject instructions into an agent, leaking the credential may be the least dangerous thing they can do.</em></p>
 <figure class="shot" data-shot="kr-pellbridge.webp" data-dir="images/" data-alt="Pellbridge&#x27;s day through one question: would hiding the keys have stopped it? Two of nine incidents, yes." data-kind="comparison"><figcaption>Pellbridge's day through one question: would hiding the keys have stopped it? Two of nine incidents, yes.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -227,6 +226,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>My voice memo of 21 October 2026, prompted by a public LinkedIn post on credential injection for AI agents; Christian Posta's series, Parts 1, 2 and 2.5, read on his blog and on agentgateway.dev; the CB4A Internet-Draft; agentgateway's documentation; AWS's IAM documentation on access keys, condition keys and identifiers, and its data perimeter whitepaper; GitHub's posts and documentation on token formats, secret scanning and push protection. The Pellbridge agents vault, read the same day: its incidents, policies and gap decisions. Related: <a href="inside-the-pellbridge-agents.html">inside the Pellbridge agents</a>, <a href="attacks-rewritten-as-mandates.html">attacks rewritten as mandates</a>, <a href="the-attack-surface-you-do-not-have.html">the attack surface you do not have</a>, <a href="https://newsroom.sgit.ai/articles/hope-or-enforcement.html">hope or enforcement</a>, <a href="https://newsroom.sgit.ai/articles/who-are-you-protecting-against.html">who are you protecting against?</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-21" topics="agents-and-policy" title="The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#the-key-is-not-the-risk">This article as a graph &rarr;</a></p>
@@ -262,7 +262,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-key-is-not-the-risk.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-key-is-not-the-risk.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

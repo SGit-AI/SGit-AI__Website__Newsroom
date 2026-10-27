@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane</p>
  <h1>Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/agent-workflows-on-ephemeral-vaults.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.50</a> &middot; <span class="chip">sgit</span><span class="chip">agents</span><span class="chip">multi-agent</span><span class="chip">ephemeral-vaults</span><span class="chip">append-lanes</span><span class="chip">vault-apps</span><span class="chip">architecture</span><span class="chip">ci</span><span class="chip">templates</span><span class="chip">brief</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> There is a pattern I keep using for agents that work together: give them an encrypted vault as their shared memory and their way of talking, and let it exist only for as long as the work does. I would like to capture it properly, as a series of architectures from simple to complex, each in a repository of its own with its agents, its keys, its fixtures and a CI job that proves it works, so that people and agents can fork them as templates, recipes and skills. The repository should run as one of the checks before anything reaches sgit's main branch. The key questions are the same at every level: how do you give agents shared memory, how do they communicate, how do they work asynchronously, and how do you know what each one is doing at any moment. The answer depends on who holds which key. Because the only thing that ever leaves the environment is ciphertext, you can be more relaxed about where the logs and the data go: it is all about the keys, and about whether the vault is ephemeral. A vault app can draw what the agents are doing, and the screenshot can go back into the vault. And I wanted to know how far it scales, so we measured it locally: a hundred writers posting ten entries each landed a thousand entries in an append lane in 4.9 seconds, none lost. The same test found four defects, which is the case for the release gate in one paragraph.</em></p>
 <figure class="shot" data-shot="aw-catalogue.webp" data-dir="images/" data-alt="Agent workflows on ephemeral vaults: seven architectures, from one agent to a swarm of a hundred." data-kind="comparison"><figcaption>Agent workflows on ephemeral vaults: seven architectures, from one agent to a swarm of a hundred.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -247,6 +246,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 14 October 2026, written by this site's writer agent in the voice of this site; the argument and the editorial responsibility are mine. The measurements were run for this article by a research agent on one machine, against a local vault server, with throwaway vaults. sgit 0.21.0's command help; sgit.ai's skill for vault apps; Anthropic, <a href="https://code.claude.com/docs/en/sub-agents">Claude Code subagents</a>. All read on 14 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="vaults-and-method agents-and-policy" title="Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#agent-workflows-on-ephemeral-vaults">This article as a graph &rarr;</a></p>
@@ -282,7 +282,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="agent-workflows-on-ephemeral-vaults.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="agent-workflows-on-ephemeral-vaults.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

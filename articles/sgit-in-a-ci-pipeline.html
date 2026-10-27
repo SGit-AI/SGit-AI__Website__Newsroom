@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job</p>
  <h1>sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/sgit-in-a-ci-pipeline.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.34</a> &middot; <span class="chip">sgit</span><span class="chip">ci</span><span class="chip">github-actions</span><span class="chip">pipelines</span><span class="chip">vaults</span><span class="chip">append-lanes</span><span class="chip">pki</span><span class="chip">secrets</span><span class="chip">scoped-clone</span><span class="chip">supply-chain</span><span class="chip">artifacts</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> Getting data in and out of a CI pipeline is harder than it should be. GitHub Actions has artifacts, kept 90 days by default and deleted with their run; caches, 10 GB per repository and evicted after a week unused; and job outputs, at most 1 MB per job. Each is fine for its job, and none is a versioned, encrypted record that a person, an auditor or another pipeline can read from outside GitHub. This article maps how sgit vaults fill that gap, and every pattern in it was run for the article against a local vault server. A job pushes what it produced to a vault, and anything with the read key can clone it from anywhere, with history. Jobs pass data to each other through the same vault, each cloning only the folders it needs with --path, which is a large saving in time and in what lands on the runner, though it is a speed setting rather than a boundary. The boundaries are the keys: a read key clones and cannot commit; an append token, one per test shard, adds to its own write-only inbox and reads nothing; and each job can have its own key pair, so a deploy configuration encrypted to the deploy job fails to decrypt anywhere else, and a signed manifest fails verification once it is changed. Even done a little loosely, that turns wiring mistakes into loud failures. The keys come from secrets on stdin, and only the ciphertext half of a vault ever leaves the runner. And when you would rather not depend on a hosted server, the vault server runs as a sidecar whose storage folder holds only ciphertext: archive it into the Actions cache, an artifact or a git branch, and the next run restores it with its full history.</em></p>
 <figure class="shot" data-shot="vc-pipeline.webp" data-dir="images/" data-alt="A pipeline whose stages talk through a vault, with each job holding only the key it needs." data-kind="architecture"><figcaption>A pipeline whose stages talk through a vault, with each job holding only the key it needs.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -273,6 +272,7 @@ jobs:
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 14 October 2026, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The commands were run for this article with sgit 0.21.0 and the vault server package sgraph-ai-app-send 0.34.0, on a local server with disk storage; the append lane's routes and limits are from the server's source. GitHub: <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching">dependency caching</a>, <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax">workflow syntax</a> on outputs and service containers, <a href="https://docs.github.com/en/actions/concepts/security/secrets">using secrets</a>, and <a href="https://github.com/actions/upload-artifact">upload-artifact</a>, all read on 14 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="vaults-and-method site-and-engineering" title="sgit in a CI pipeline: encrypted, versioned data in and out of GitHub Actions, between its jobs, through write-only lanes, and a key for every job, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#sgit-in-a-ci-pipeline">This article as a graph &rarr;</a></p>
@@ -308,7 +308,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="sgit-in-a-ci-pipeline.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="sgit-in-a-ci-pipeline.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

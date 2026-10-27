@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot</p>
  <h1>The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/the-human-is-the-network.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.26</a> &middot; <span class="chip">qr-codes</span><span class="chip">pki</span><span class="chip">encryption</span><span class="chip">agents</span><span class="chip">experiments</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> This afternoon I ran one of those experiments that starts as a small question and ends somewhere much more interesting. Can two AI sessions that share nothing, no memory, no network link, no files, send each other data through QR codes that I screenshot in one browser tab and paste into another? In about three hours the answer went from maybe to yes, all the way to the format's limit. One session generated the codes; the other decoded and verified them. Text, then signed JSON, then public keys and an X.509 certificate, then images, then a real key exchange: one session published an encryption key as a QR code, the other encrypted and signed a message to it and returned it as a QR code, and the first decrypted it. The densest code, 2,953 bytes, the most one QR code can hold, decoded from a screenshot at about 1.3 pixels per square, and every screenshot payload was byte-identical to the original. The failures are as useful as the results: the AI cannot read a QR code by looking at it, the decoder mattered more than the resolution, and a lost key turned the experiment into a lesson in why fingerprints matter. For me the result is simple: QR codes are a far friendlier way to move keys and encrypted messages than the blobs of text we have been pasting.</em></p>
 <figure class="shot" data-shot="hn-collage.webp" data-dir="images/" data-alt="Six QR codes passed between two Claude sessions by screenshot and paste, from plain text to a certificate." data-kind="infographic"><figcaption>Six QR codes passed between two Claude sessions by screenshot and paste, from plain text to a certificate.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -235,6 +234,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>The experiment of 21 October 2026, about 14:20 to 17:30 BST: Session A's debrief pack, with its results, manifest, scripts and images, and Session B's own briefing, including the QRE1 format it wrote; and my voice memo afterwards, quoted above. The images were all made in the experiment; the photo-like image was generated, not photographed. Related: <a href="sixteen-notes-i-did-not-want-to-lose.html">sixteen notes I did not want to lose</a>, <a href="secrets-on-public-keys.html">secrets.sgit.ai on public keys</a>, <a href="handing-secrets-to-agents.html">handing secrets to agents</a>, <a href="a-directory-of-people-and-keys.html">a directory of people and their keys</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-21" topics="site-and-engineering" title="The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#the-human-is-the-network">This article as a graph &rarr;</a></p>
@@ -270,7 +270,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-human-is-the-network.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-human-is-the-network.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

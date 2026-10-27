@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief</p>
  <h1>Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/knowledge-that-maintains-itself.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.40</a> &middot; <span class="chip">knowledge-management</span><span class="chip">fractal-semantic-graphs</span><span class="chip">ontologies</span><span class="chip">taxonomies</span><span class="chip">briefing</span><span class="chip">agents</span><span class="chip">tokens</span><span class="chip">vectors</span><span class="chip">sgit</span><span class="chip">vaults</span><span class="chip">policies</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> In a conversation today I tried to put in a few sentences what all the graph work on this site is for, and it came out as knowledge management. Take an organisation's policies and internal information, and build a fractal semantic graph of it: an ontology and a taxonomy for every element, each part kept in its own vocabulary, with named edges between them. Then brief people and agents from the graph, not from the pile of documents. They get the slice they need and the diff since they last read it, so the context is there and the tokens are not wasted. It looks a bit like vector search, but vectors give you similarity, not a reason, and the answer can change with the model and the index; a graph gives the same answer to the same question and the path that led to it. The most important part is that the feedback loop maintains itself. You do not have to get the graph right first; you have to maintain it, and agents are very good at maintaining graphs. When something in the graph looks wrong, you ask why, and the answer is a fix at the right altitude. I measured the briefing on this site: the graphs of its 112 articles hold about an eighth of the articles' text. And the brief has to travel. That is what sgit is for: an encrypted git where I give an agent the key to a vault, it reads and writes there, I can scope it to one folder and encrypt to it with its own key, and the vault itself says, this is what you need to read now.</em></p>
 <figure class="shot" data-shot="kq-loop.webp" data-dir="images/" data-alt="Knowledge that maintains itself: sources, agents, graph, briefs and fixes, with each brief travelling as a vault." data-kind="architecture"><figcaption>Knowledge that maintains itself: sources, agents, graph, briefs and fixes, with each brief travelling as a vault.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -217,6 +216,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 14 October 2026, from a conversation about knowledge management, written by this site's agent in the voice of this site; the argument and the editorial responsibility are mine. The briefing figures were counted for this article from this site's article markdown and its graph files at v0.12.39. The examples are this site's own articles and the open vaults linked above.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="graphs-and-knowledge vaults-and-method" title="Knowledge that maintains itself: semantic graphs for an organisation's policies and internal knowledge, briefing people and agents from the graph, and vaults to carry the brief, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Graphs &amp; knowledge</span><span class="tchip">Vaults &amp; method</span> <a href="graphs.html#knowledge-that-maintains-itself">This article as a graph &rarr;</a></p>
@@ -252,7 +252,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="knowledge-that-maintains-itself.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="knowledge-that-maintains-itself.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

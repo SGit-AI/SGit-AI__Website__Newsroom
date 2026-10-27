@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing</p>
  <h1>How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/how-a-memo-becomes-a-release.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.8</a> &middot; <span class="chip">newsroom</span><span class="chip">engineering</span><span class="chip">ci</span><span class="chip">agents</span><span class="chip">pipeline</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> Every article on this site starts as a voice memo and ends as a tagged release on GitHub Pages. In between there are two sets of checks. In the session, the newsroom's writer agent researches, writes and builds: it runs sgit.ai's generator and validator through publish.py, this site's own builders and validator, the 18 tests, a phone-width check, and a leak scan of what it is about to commit. Then, on GitHub, Actions validate the site again, run the 18 tests again, tag the release and deploy it. After v0.13.7, a release that adds no new article takes about 400 seconds in the session and about 290 on GitHub, down from about 750 and 640; a release with a new article still takes about 720 in the session, because a new card and banner need all three of sgit.ai's page builds. This article documents all of it, with the times, and asks two questions about it. First, what is redundant: the 15 browser tests run in both places, and I propose they run only on GitHub unless the change is to the site's code, which would save almost three minutes in the session on every article release. Second, what a new session would have: the repository holds the builders, the tests, the workflow and the writing rules, but the release script, the graph writer, the figure helpers, the phone-width check, the session's behaviour policy and the leak scan live only in this session's container, and a new one would not have them.</em></p>
 <figure class="shot" data-shot="pi-flow.webp" data-dir="images/" data-alt="From a memo to a release in three stages: writing and checking in the session, then shipping on GitHub." data-kind="architecture"><figcaption>From a memo to a release in three stages: writing and checking in the session, then shipping on GitHub.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -347,6 +346,7 @@ flowchart TB
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of 21 October 2026. The repository's <code>admin/build/</code> scripts, <code>run_tests.sh</code>, <code>.github/workflows/deploy-pages.yml</code> and the articles README; the timings of a release measured step by step in the session, and of GitHub's run for v0.13.7, read from its jobs; and an inventory of the session's scratchpad and container. Related: <a href="v0-12-in-numbers.html">v0.12 in numbers</a>, <a href="a-leak-without-breaking-the-policy.html">a leak without breaking the policy</a>, <a href="hooks-are-kernel-code.html">hooks are kernel code</a>, <a href="the-riskmandate-roadmap.html">the RiskMandate roadmap</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-21" topics="site-and-engineering" title="How a memo becomes a release: the newsroom's pipeline end to end, what runs in the session and what runs on GitHub, how long each part takes, and what a new session would be missing, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#how-a-memo-becomes-a-release">This article as a graph &rarr;</a></p>
@@ -382,7 +382,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="how-a-memo-becomes-a-release.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="how-a-memo-becomes-a-release.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

@@ -327,16 +327,17 @@ def section_html(a, revs, status, regs, up):
 
 
 def inject_strip(a, html_strip):
-    """The peer-review line under the byline, before the abstract: outside every section's text, so the article's hash
-    and its section summaries do not see it."""
+    """The peer-review line after the article's text, before its Threads (the editor's call, 27 Oct; it sat under the
+    byline before the abstract until then): outside every section's text, so the article's hash and its section
+    summaries do not see it."""
     p = ROOT / "articles" / f"{a['slug']}.html"
     page = p.read_text(encoding="utf-8")
     page2 = re.sub(r'\n *<p class="rvstatus[^"]*">.*?</p>', "", page, flags=re.S)
     page2 = re.sub(r'\n  (?=\n *<p class="abstract">)', "", page2)  # an indent an earlier removal left behind
-    m = re.search(r'\n\s*<p class="abstract">', page2)
+    m = re.search(r'\n<section class="athreads" id="threads">', page2)
     if not m:
         return False
-    page2 = page2[:m.start()] + "\n  " + html_strip + page2[m.start():]
+    page2 = page2[:m.start()] + "\n" + html_strip + page2[m.start():]
     if page2 != page:
         p.write_text(page2, encoding="utf-8")
         return True

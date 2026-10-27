@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps</p>
  <h1>sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-14 &middot; <a href="versions/sgit-actions-side-by-side.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.50</a> &middot; <span class="chip">sgit</span><span class="chip">github-actions</span><span class="chip">ci</span><span class="chip">vaults</span><span class="chip">artefacts</span><span class="chip">append-lanes</span><span class="chip">performance</span><span class="chip">llm</span><span class="chip">token-budget</span><span class="chip">brief</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> sgit in a CI pipeline described how an encrypted vault can carry data in and out of GitHub Actions, and between its jobs. The next step is to show it running, and to keep showing it. So this is a brief for a dedicated repository and website, just for that: its own issues, its own CI pipeline, and on every run four ways of moving a vault between jobs, side by side, in parallel. A vault server with the keys in the repository's secrets; the encrypted vault itself as an artefact, a zip that one job uploads and the next downloads; the vault published as files and cloned read-only from any web host; and append lanes for jobs that only need to hand results in. Each lane reports its time, its bytes, the keys each job held and a screenshot, and repeats on vaults of growing size with full, thin and path clones. I measured the core of it locally for this article. A clone of one folder barely grows with the vault: 0.59 seconds at 100 files, 0.77 at 2,000. A full clone grows with it, from 0.95 to 5.55 seconds. The repository should also have a budget, because some steps will call models, from more than one provider, and every token they spend should be counted against it.</em></p>
 <figure class="shot" data-shot="as-lanes.webp" data-dir="images/" data-alt="Four ways to move a vault between jobs, run side by side on every run of the showcase repository." data-kind="architecture"><figcaption>Four ways to move a vault between jobs, run side by side on every run of the showcase repository.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -226,6 +225,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo of mine on 14 October 2026, written by this site's writer agent in the voice of this site; the argument and the editorial responsibility are mine. The measurements were run for this article by a research agent on one machine, with sgit 0.21.0, version 0.34.0 of the vault server and git 2.43.0. GitHub, <a href="https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts">workflow artifacts</a> and the <a href="https://github.com/actions/upload-artifact">upload-artifact action</a>; the vault app runtime from sgit.ai's <a href="https://sgit.ai/skills/index.html">skills</a>. All read on 14 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-14" topics="vaults-and-method site-and-engineering" title="sgit in GitHub Actions, side by side: a showcase repository and site that runs four ways of moving a vault between jobs on every run, measured, with a budget for its LLM steps, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#sgit-actions-side-by-side">This article as a graph &rarr;</a></p>
@@ -261,7 +261,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="sgit-actions-side-by-side.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="sgit-actions-side-by-side.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

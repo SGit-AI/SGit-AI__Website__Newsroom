@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask</p>
  <h1>A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-25 &middot; <a href="versions/a-secure-rule-applied-literally.html" title="Every published version of this article, and what changed">article v1.1.0, 2 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.79</a> &middot; <span class="chip">security</span><span class="chip">agents</span><span class="chip">accountability</span><span class="chip">csp</span><span class="chip">engineering</span><span class="chip">php2shell</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> The more complex agent workflows get, the more interesting their edge cases, and the more they need direction and someone accountable. Here is a real one from the PHP story. Its security agent set a sound rule: a page may only load scripts from its own site, which protects readers if anyone else's server is compromised. Then the designer, architect and developer agents planned the split of the site into six repositories, and the developer, starting the work, said that because of the security rule it would copy the shared code into each new site. The rule was right, and the copying followed from it. But it meant every fix applied four times, copies that drift apart, and no single source of truth: a security rule making the code less secure. Nobody challenged it, because every agent was doing its job. The good news about agents is that they can handle a lot of complexity; the bad news is the same. I caught it reading the developer's notes, and asked for one source instead: the shared code served once, at a fixed version with a published hash for every file, and the security policy widened by name to allow it. The first half of this article is the story; the second is the technical detail: Content-Security-Policy, hashes, versioned addresses, and how the fix keeps the protection.</em></p>
 <figure class="shot" data-shot="cq-copies.webp" data-dir="images/" data-alt="A secure rule applied literally: shared code copied into four sites, against loaded from the press." data-kind="comparison"><figcaption>A secure rule applied literally: shared code copied into four sites, against loaded from the press.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -208,6 +207,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>My voice memo of 25 October 2026. The PHP story site at release v0.22.2, read on 25 October 2026: the application security brief of 24 October and the security agent's debrief; the plan for one repository into six; the release notes of v0.22.0, v0.22.1 and v0.22.2; the board items on <code>sg-meter</code>; and the Content-Security-Policy of its front page. Related: <a href="https://newsroom.sgit.ai/articles/agents-need-direction.html">agents need direction</a>, <a href="https://newsroom.sgit.ai/articles/a-villager-for-the-agents.html">a villager for the agents</a>, <a href="https://newsroom.sgit.ai/articles/who-signs-for-this.html">who signs for this?</a>, <a href="https://newsroom.sgit.ai/articles/signed-by-the-source.html">signed by the source</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-25" topics="agents-and-policy site-and-engineering" title="A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#a-secure-rule-applied-literally">This article as a graph &rarr;</a></p>
@@ -243,7 +243,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-secure-rule-applied-literally.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-secure-rule-applied-literally.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

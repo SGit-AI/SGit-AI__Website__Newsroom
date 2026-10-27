@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against</p>
  <h1>Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-21 &middot; <a href="versions/drift-is-the-mandate-moving.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.34</a> &middot; <span class="chip">riskmandate</span><span class="chip">drift</span><span class="chip">abp</span><span class="chip">agents</span><span class="chip">assurance</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> The same analyst who sent us a blueprint from the WestCap CISO Summit sent a second note, on what may be our strongest story: drift. The question moves from "is this agent authorised?" to "is this agent still behaving within its intended mandate, and how do we know?" The note names four kinds of drift, policy, behavioural, goal and authority, all of which can happen without malicious code, stolen credentials or any single step breaking a rule. I agree, and I think we are better placed for it than the note assumes, because drift needs something to drift from. An Agent Behaviour Policy is exactly that: a versioned, signed statement of what an agent can do, what it may do, and what keeps each rule. Measure the grant again and policy drift shows up as a bigger delta. Check each action against its row and behavioural drift shows up as broken rows and near misses. Say what keeps every rule and authority drift shows up as a setting someone switched off. Our Pellbridge demo already does all three: every row is a test that runs on every model change, every policy change and every week, and a failed row stops the release. Goal drift, judging whether a sequence of allowed actions still serves the task, is the hard and open part. And a close-to-home example of drift is this session itself, an agent that loses its policy at every compaction and reads it back from disk.</em></p>
 <figure class="shot" data-shot="df-forms.webp" data-dir="images/" data-alt="Four kinds of drift, policy, behavioural, authority and goal, and what catches each." data-kind="concept"><figcaption>Four kinds of drift, policy, behavioural, authority and goal, and what catches each.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -226,6 +225,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>The analyst's second note to us, 21 October 2026, paraphrased. OpenAI's misalignment report on suppressed alerts and a removed monitor, and Reuters' coverage of 20 October 2026; Adrian's repository; the Agent Behavioral Contracts and AgentSpec papers; Zenity's and Upwind's pages. The Pellbridge agents vault, its policies, execution blocks and model-change test pack, read the same day; and this session's behaviour policy and hooks. Related: <a href="an-analysts-blueprint-for-riskmandate.html">an analyst's blueprint for RiskMandate</a>, <a href="inside-the-pellbridge-agents.html">inside the Pellbridge agents</a>, <a href="behaviour-policies-from-the-checks.html">behaviour policies from the checks</a>, <a href="the-key-is-not-the-risk.html">the key is not the risk</a>, <a href="what-can-your-agent-reach.html">what can your agent reach?</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-21" topics="agents-and-policy" title="Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#drift-is-the-mandate-moving">This article as a graph &rarr;</a></p>
@@ -261,7 +261,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="drift-is-the-mandate-moving.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="drift-is-the-mandate-moving.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

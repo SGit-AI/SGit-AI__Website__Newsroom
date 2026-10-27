@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors</p>
  <h1>Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/search-as-navigation.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.107</a> &middot; <span class="chip">search</span><span class="chip">graphs</span><span class="chip">fractal-semantic-graphs</span><span class="chip">ontology</span><span class="chip">taxonomy</span><span class="chip">graph-rag</span><span class="chip">newsroom</span><span class="chip">brief</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> This site's search works, but it answers the way every search box does, with a list. We now have far more than text to search with: a graph of the argument for every article, a one-line summary for every section, figures with captions, trails, topics and reviews. So the next version of search should be navigation rather than question and answer. Type Portugal and see not just the articles about Portugal, but the graph around them: their ideas, their sections as one-liners, their images as a collage, the people and things they connect to, and on the side, what the word could mean and which combinations are worth following, each with an exact count. The reader builds the query by walking. All of it deterministic, in the browser, with code and graphs and no model, plus a pane that shows exactly what was fetched, how each result arrived and how long each step took. It also exposes the work: 663 tags on 182 articles, 396 of them used once, and 2,230 ideas in the graphs, of which only 47 appear in more than one article. That is the taxonomy debt, and paying it down is what makes deterministic search good. My hypothesis is that the better the taxonomy, the ontology and the graph, the less a model is needed, and that when one is added, it will do better on a clean graph than on a vector store. This is the brief for the agent that builds it, and the test of that hypothesis.</em></p>
 <figure class="shot" data-shot="sn-explore.webp" data-dir="images/" data-alt="Search as navigation: a query built from chips, five views of the same result, and what was fetched." data-kind="concept"><figcaption>Search as navigation: a query built from chips, five views of the same result, and what was fetched.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -220,6 +219,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo from me on 18 October 2026. The counts were made that day from this site's own files: <code>search/docs.json</code>, <code>articles/graphs/</code>, <code>articles/summaries/</code>, <code>articles/ids.json</code> and <code>admin/content/trails.json</code>. The brief: <a href="https://newsroom.sgit.ai/admin/notes/2026-10-18__explore-search-as-navigation.md">Explore: search as navigation</a>. Today's search: <a href="https://newsroom.sgit.ai/admin/notes/2026-10-13__search-in-the-browser.md">search in the browser</a>. The engines: <a href="https://newsroom.sgit.ai/databases/index.html">databases with no server</a>. Related: <a href="reviews-on-the-record.html">reviews on the record</a>, <a href="the-editors-channel.html">the editor's channel</a>, <a href="code-review-as-a-fractal-semantic-graph.html">code review as a fractal semantic graph</a>, <a href="the-wire-as-a-graph.html">the wire as a graph</a>. Written up and checked by this site's agent; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-18" topics="graphs-and-knowledge site-and-engineering" title="Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Graphs &amp; knowledge</span><span class="tchip">Site &amp; engineering</span> <a href="graphs.html#search-as-navigation">This article as a graph &rarr;</a></p>
@@ -255,7 +255,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="search-as-navigation.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="search-as-navigation.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

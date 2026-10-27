@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Reviews on the record: other models, the editor and the desk check every article, and never the same text twice</p>
  <h1>Reviews on the record: other models, the editor and the desk check every article, and never the same text twice</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-18 &middot; <a href="versions/reviews-on-the-record.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.107</a> &middot; <span class="chip">newsroom</span><span class="chip">reviews</span><span class="chip">quality</span><span class="chip">agents</span><span class="chip">editor</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> The publishing workflow here works, and I have come to like it as a way to answer people: an article is a reply I can point to. But the articles are written by one model, with a lot of context, and some things fall through, a figure that is a little off, a sentence I would never say. So this adds review, as a record. There are published criteria that any reviewer reads first, an agent from another vendor, an open-weight model, me, and later the journalists on the desk: are the facts right, is it my voice, are the claims and limits honest, are the conversions right, is the article still in good health, is anyone named who should not be. Each review is one file in the article's own folder, about one text of the article, written once and never edited, and the newsroom answers every finding: fixed in which version, declined and why, or open. The unit of work is the reviewer, the article and its text, so the same reviewer never reviews the same text twice; it takes the next five, newest first, from a status file that lists every article's current hash and the reviews it has, and it reads its own past reviews before it starts. Every article now has a Reviews section that shows who reviewed it, at which version, and what happened to what they found. My own reading, sign-offs and later notes use the same record, which keeps an article alive: I can go back and say I got it wrong, or that it came true. Signed readers who confirm or dispute an article are the next step, and an article of their own.</em></p>
 <figure class="shot" data-shot="rv-loop.webp" data-dir="images/" data-alt="Reviews on the record: reviewers read the criteria, write one record per article and send it back; the page shows both." data-kind="concept"><figcaption>Reviews on the record: reviewers read the criteria, write one record per article and send it back; the page shows both.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -238,6 +237,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A voice memo from me on 18 October 2026. The criteria: <a href="https://newsroom.sgit.ai/reviews/criteria.md">/reviews/criteria.md</a>, version 1, written from this site's <a href="https://newsroom.sgit.ai/admin/content/articles/README.md">article guide</a> and the wording check in <code>admin/build/wording.py</code>. The status file: <a href="https://newsroom.sgit.ai/reviews/status.json">/reviews/status.json</a>. The code: <code>admin/build/reviews.py</code>. Related: <a href="the-editors-channel.html">the editor's channel</a>, <a href="how-cheap-is-it-to-undo.html">how cheap is it to undo</a>, <a href="the-human-in-the-loop.html">the human in the loop</a>, <a href="three-policies-for-an-agent.html">three policies for an agent</a>. Written up and checked by this site's agent; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-18" topics="vaults-and-method agents-and-policy" title="Reviews on the record: other models, the editor and the desk check every article, and never the same text twice, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Vaults &amp; method</span><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#reviews-on-the-record">This article as a graph &rarr;</a></p>
@@ -273,7 +273,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="reviews-on-the-record.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="reviews-on-the-record.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

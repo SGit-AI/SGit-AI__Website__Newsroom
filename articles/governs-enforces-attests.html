@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</p>
  <h1>Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-19 &middot; <a href="versions/governs-enforces-attests.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.135</a> &middot; <span class="chip">abp</span><span class="chip">agents</span><span class="chip">enforcement</span><span class="chip">assurance</span><span class="chip">ruflo</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> Someone working on assurance for agents described to me how ruv.sgit and their work fit together, and asked me to check it. They were almost right, and the part to make precise is the word "enforces". An Agent Behaviour Policy does not enforce anything by itself. It says what each role is granted and for, writes each rule down, and says how each rule is kept, at one of three levels: in the prompt, which is a hope; by hooks in the agent's harness, which are deterministic but sit on the agent's own machine; or by a third-party system that does the blocking, which is the level we recommend. In ruv.sgit that third party is Ruflo's own policy engine in enforce mode, which writes a decision receipt for every action, and an sgit vault keeps the memory encrypted and versioned. What none of that gives you is something a third party can check without taking the operator's word for it. That is the attestation layer: it signs what was assured, so a customer, an auditor or an insurer can verify it. Different layers of the same stack. This article shows the stack, the three levels, the business case with and without attestation, and one action going through all of it.</em></p>
 <figure class="shot" data-shot="at-stack.webp" data-dir="images/" data-alt="Four layers of the same stack: the mandate, enforcement, the record and attestation." data-kind="architecture"><figcaption>Four layers of the same stack: the mandate, enforcement, the record and attestation.</figcaption></figure>
 <h2 id="in-short">In short</h2>
@@ -216,6 +215,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A note from me on 19 October 2026, written to answer a summary I was asked to check; its author is not named, and it is described, not quoted. <a href="https://ruv.sgit.ai/">ruv.sgit.ai</a>, read that day, for Ruflo's policy engine, its modes and its decision receipts. Related: <a href="policy-as-code-needs-a-policy-first.html">policy as code needs a policy first</a>, <a href="are-hooks-the-sweet-spot.html">are hooks the sweet spot?</a>, <a href="hooks-are-kernel-code.html">hooks are kernel code</a>, <a href="our-first-pr-in-ruflo.html">our first PR in Ruflo</a>, <a href="the-policy-guards-the-door.html">the policy guards the door</a>, <a href="the-policy-draws-the-liability-line.html">the policy draws the liability line</a>, <a href="cedar-and-the-policy-vault.html">Cedar and the policy vault</a>. Written up and checked by this site's agent, newsroom.writer; the editorial responsibility is mine.</p>
 <sg-meter view="page" kind="article" date="2026-10-19" topics="agents-and-policy" title="Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#governs-enforces-attests">This article as a graph &rarr;</a></p>
@@ -251,7 +251,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="governs-enforces-attests.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="governs-enforces-attests.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

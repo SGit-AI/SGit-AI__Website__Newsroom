@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why</p>
  <h1>The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-13 &middot; <a href="versions/the-human-in-the-loop.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.12.19</a> &middot; <span class="chip">human-in-the-loop</span><span class="chip">agents</span><span class="chip">agency</span><span class="chip">approval-fatigue</span><span class="chip">agent-behaviour-policy</span><span class="chip">blast-radius</span><span class="chip">production</span><span class="chip">trust</span><span class="chip">governance</span><span class="chip">roundtable</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> Someone shaping a roundtable in London asked me this week for my thoughts on a question that keeps coming up: is the human in the loop a safety net or a bottleneck? Plenty of companies have agent pilots that look great, and very few trust an agent to make a real decision without someone checking every output. My answer is that a person checking every output is both, and is mostly neither: it is a bottleneck because it does not scale, and it is a weak safety net because people approve almost everything they are shown, which Anthropic measured at 93% of permission prompts. The question is not whether there is a human in the loop. It is which outputs need one, what that person is given to decide with, and what moves the line over time. Put the person where an output cannot be undone and the blast radius is large, sending an email in my name, typing a password, spending money. Everywhere else, replace the human check with controls that do not get tired: a validator, a second reader the agent cannot skip, a policy whose rows are enforced outside the model, and a record read afterwards. Make the review a quality step that fixes the source, not a sign-off. And let the record move the line: trust is built from drafts nobody had to change. This is how far I have got in production. On the day I am writing this, the newsroom shipped fourteen releases, every commit made by an agent, with nobody approving each one before it went live, while the agents that run my correspondence draft every email and send none of them: I do.</em></p>
 <figure class="shot" data-shot="hl-where.webp" data-dir="images/" data-alt="Where the person belongs: two questions place every output an agent produces, can it be undone, and what it would cost." data-kind="decision"><figcaption>Where the person belongs: two questions place every output an agent produces, can it be undone, and what it would cost.</figcaption></figure>
 <div class="note"><b>What came next.</b> <a href="how-cheap-is-it-to-undo.html">The human in the loop is a spectrum</a> takes the last section further: why this newsroom ships on its own while my email waits for me, and how both of those can move.</div>
@@ -226,6 +225,7 @@
 <h2 id="sources">Where this comes from</h2>
 <p>A question in a private message on 13 October 2026 from someone shaping a roundtable in London, paraphrased and not named, and my reply that I would answer it in an article. There was no voice memo: this article was assembled by this site's agent from my published positions, in the voice of this site, and the argument and the editorial responsibility are mine. Anthropic's figures: <a href="https://www.anthropic.com/engineering/claude-code-auto-mode">How we built Claude Code auto mode</a>, 25 March 2026, and <a href="https://www.anthropic.com/engineering/claude-code-sandboxing">Beyond permission prompts</a>, 20 October 2025. The production counts are from the newsroom repository's git log for 13 October 2026.</p>
 <sg-meter view="page" kind="article" date="2026-10-13" topics="agents-and-policy" title="The human in the loop, safety net or bottleneck: both, until you decide which outputs need a person and give that person the why, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span> <a href="graphs.html#the-human-in-the-loop">This article as a graph &rarr;</a></p>
@@ -261,7 +261,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-human-in-the-loop.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="the-human-in-the-loop.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

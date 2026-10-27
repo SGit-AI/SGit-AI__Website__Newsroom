@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.112</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.113</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,12 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.112</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.113</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A locked-down desktop for an agent, by the minute, is still hard to rent</p>
  <h1>A locked-down desktop for an agent, by the minute, is still hard to rent</h1>
  <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-07 &middot; <a href="versions/an-agent-desktop-by-the-minute.html" title="Every published version of this article, and what changed">article v1.0.1, 2 versions</a> &middot; <a href="https://sgit.ai/admin/versions.html" title="The sgit.ai release it was published in">sgit.ai v0.6.87</a> &middot; <span class="chip">agents</span><span class="chip">agent-desktops</span><span class="chip">computer-use</span><span class="chip">sandboxes</span><span class="chip">isolation</span><span class="chip">egress</span><span class="chip">secrets</span><span class="chip">macos</span><span class="chip">windows-365</span><span class="chip">startup-programmes</span><span class="chip">agent-behaviour-policy</span><span class="chip">article</span></p>
-  <p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
  <p class="abstract"><em><b>Abstract:</b> We want to give each agent a desktop of its own, away from the laptop, that a person can watch and take over, that can reach only what its task needs, that holds no secret it could leak, that is thrown away afterwards, and that is billed for the minutes it works. In October 2026 every one of those properties can be bought somewhere, and no single product we looked at offers all of them. This article lays out the nine properties, puts nine products against them from their own documentation, prices two hours of work a day on each, and explains the three things that make it hard: macOS cannot be leased for less than a day and Apple's licence limits what a leased Mac is for; the strongest isolation controls are weeks old or in private beta; and prompt injection is not solved, so the desktop has to be the barrier rather than the model. It proposes what we would build from what exists, and closes with the startup credit programmes that would pay for trying it, verified on the day, with how to apply.</em></p>
 <figure class="shot" data-shot="desk-matrix.webp" data-dir="images/" data-alt="Nine products against the nine properties of a locked-down agent desktop, from each product&#x27;s own documentation on 7 October 2026. No row has all nine."><figcaption>Nine products against the nine properties of a locked-down agent desktop, from each product's own documentation on 7 October 2026. No row has all nine.</figcaption></figure>
 <p>Our agents do not run on the laptop, for the reasons in <a href="why-my-agents-do-not-run-on-my-laptop.html">Why my agents do not run on my laptop</a>. Most of their work happens in cloud sessions with files in vaults. Some of it needs a screen: a web application without an API, a desktop tool, a form that only a browser will fill. For that work an agent needs a desktop, and the question this article tries to answer is a practical one. Can we rent, today, a desktop that is safe to hand to an agent, for the two to eight hours a day it would use it, and pay for those hours rather than for the whole month?</p>
@@ -246,6 +245,7 @@
 <h2>Back to the question</h2>
 <p>Can we rent, today, a desktop that is safe to hand to an agent, for the hours it works? On Linux, yes, with two of the most important controls in beta. On Windows, yes, with products that are four months old. On macOS, not by the hour, and not for general work without a legal answer first. Each of the nine properties is available somewhere. Putting them in one place is still the customer's work, and the reason this page exists.</p>
 <p><em>Drafted from a research debrief and a request from Dinis Cruz, who is the author of the argument and the person with editorial responsibility, by agent@riskmandate.ai (Claude Opus 5.5, claude-opus-5-5) in the sgit.ai site session, on 7 October 2026, with a research agent in the same session re-checking every programme, price, licence clause and product claim against the provider's own pages that day. The OpenAI quote is from news coverage, because the primary page could not be fetched. Prices are list prices before tax and are arithmetic, not quotes. Nothing here is legal advice, and no company was contacted in writing it.</em></p>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
 <section class="athreads" id="threads">
  <h2>Threads</h2>
  <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#an-agent-desktop-by-the-minute">This article as a graph &rarr;</a></p>
@@ -283,7 +283,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.112</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="an-agent-desktop-by-the-minute.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.113</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="an-agent-desktop-by-the-minute.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

@@ -6,7 +6,7 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 |---|---:|---:|---|
 | generator | 1057 | | pages imported from sgit.ai's build; goes when the generator is ported here |
 | network | 712 | 2457 | links to sgit.ai's pages and the network sites (31 files this site writes itself) |
-| words | 1446 | 9914 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| words | 1446 | 9905 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 74 | 204 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
@@ -130,7 +130,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `assets/pen/identity.js` (9)
 - `desks/security.html` (9)
 - `engineering/releases/v0.13.64.html` (9)
-- `publishers/versions/index.html` (9)
 - `reviews/status.json` (9)
 - `articles/summaries/a-pen-and-a-key.json` (8)
 - `assets/site.css` (8)
@@ -150,3 +149,4 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/037.html` (7)
 - `engineering/releases/v0.13.111.html` (7)
 - `replicate/index.html` (7)
+- `shipped/index.html` (7)
