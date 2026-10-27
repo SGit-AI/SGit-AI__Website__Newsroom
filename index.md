@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.108 · 305 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.109 · 306 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](articles/who-has-not-patched.md), 2026-10-27, 9 min. Before blaming business for not patching php2shell, ask how good the number is, and what makes a site actually vulnerable.
+- [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](articles/legal-on-demand-for-startups.md), 2026-10-27, 12 min. Legal services that scale: agent teams do the reading, lawyers sign, a meter instead of a retainer, and three vaults with real signatures.
 
 ## Highlights
 
+- [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](articles/who-has-not-patched.md), 2026-10-27, 9 min.
 - [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27, 10 min.
 - [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27, 15 min.
 - [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27, 11 min.
-- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
 
 ## Who are you reading as?
 
@@ -56,11 +56,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](articles/translate-the-assumption.md), 2026-10-25, 5 min.
 - [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](articles/a-call-for-help.md), 2026-10-25, 4 min.
 
-### Strategy & startups (56)
+### Strategy & startups (57)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](articles/legal-on-demand-for-startups.md), 2026-10-27, 12 min.
 - [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27, 15 min.
 - [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27, 11 min.
-- [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](articles/websites-you-own.md), 2026-10-26, 9 min.
 
 ## Collections
 

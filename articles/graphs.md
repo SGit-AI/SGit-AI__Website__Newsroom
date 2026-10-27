@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-305 of 305 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+306 of 306 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-305 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 43 articles not yet linked either way.
+306 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 44 articles not yet linked either way.
+
+## [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](legal-on-demand-for-startups.md)
+
+2026-10-27 · Startups & strategyAgents & policy
+
+Legal work runs through every part of a startup and founders rarely have the experience or the lawyers. Models now do the reading and find inconsistencies, so agent teams can drive lawyers' efficiency and the service can scale: on the founder's side, the investor's side and in a deal room where both teams meet, with principles, clauses, versions and understandings signed and verifiable, paid per task or monthly. Founders can publish their terms and let investors debate them. Three made-up vaults show it, built on an open-source stack that exists today.
+
+*[diagram]*
+**concept**claim**method**artefact
+
+**9 nodes, 8 edges**
+
+- **Founders new to legal** (claim) Bad deals, often not malicious.
+- **Why legal can scale now** (claim) Models read every detail.
+- **Mirror terms and understandings** (method) Ask the same of the other side; confirm in writing.
+- **Agent teams, lawyers who sign** (concept) Not a human in the loop.
+- **Per task or monthly** (method) Never a yearly retainer.
+- **Founder, investor, both** (concept) Investors will lose deals without it.
+- **The fractal agreement** (concept) Intent to principles to clauses to languages.
+- **Publish your terms** (method) This is my line.
+- **Three vaults** (artefact) Founder desk, investor desk, deal room.
+
+> even when they hallucinate, they are very good at reading every detail and picking up inconsistencies Why legal never scaled, and why it can now.
+
+> A yearly subscription makes no sense for this The service.
 
 ## [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](who-has-not-patched.md)
 

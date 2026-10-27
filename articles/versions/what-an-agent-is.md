@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-27 | published | 2,247 | first published | this release | [current](../what-an-agent-is.md) |
+| **v1.0.0** | 2026-10-27 | published | 2,247 | first published | [`fca498665`](https://github.com/SGit-AI/SGit-AI__Website/commit/fca498665478c857a38ea7d23f6fcf6f96ed5b1d) | [current](../what-an-agent-is.md) |
 
 [← Back to the article](../what-an-agent-is.md) · [All articles](../index.md)
 

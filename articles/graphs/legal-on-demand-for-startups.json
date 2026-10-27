@@ -1,0 +1,181 @@
+{
+  "slug": "legal-on-demand-for-startups",
+  "teaser": "Legal services that scale: agent teams do the reading, lawyers sign, a meter instead of a retainer, and three vaults with real signatures.",
+  "topics": [
+    "startups-and-strategy",
+    "agents-and-policy"
+  ],
+  "core_idea": "Legal work runs through every part of a startup and founders rarely have the experience or the lawyers. Models now do the reading and find inconsistencies, so agent teams can drive lawyers' efficiency and the service can scale: on the founder's side, the investor's side and in a deal room where both teams meet, with principles, clauses, versions and understandings signed and verifiable, paid per task or monthly. Founders can publish their terms and let investors debate them. Three made-up vaults show it, built on an open-source stack that exists today.",
+  "nodes": [
+    {
+      "id": "problem",
+      "label": "Founders new to legal",
+      "kind": "claim",
+      "summary": "Bad deals, often not malicious."
+    },
+    {
+      "id": "scale",
+      "label": "Why legal can scale now",
+      "kind": "claim",
+      "summary": "Models read every detail."
+    },
+    {
+      "id": "mirror",
+      "label": "Mirror terms and understandings",
+      "kind": "method",
+      "summary": "Ask the same of the other side; confirm in writing."
+    },
+    {
+      "id": "service",
+      "label": "Agent teams, lawyers who sign",
+      "kind": "concept",
+      "summary": "Not a human in the loop."
+    },
+    {
+      "id": "meter",
+      "label": "Per task or monthly",
+      "kind": "method",
+      "summary": "Never a yearly retainer."
+    },
+    {
+      "id": "markets",
+      "label": "Founder, investor, both",
+      "kind": "concept",
+      "summary": "Investors will lose deals without it."
+    },
+    {
+      "id": "fractal",
+      "label": "The fractal agreement",
+      "kind": "concept",
+      "summary": "Intent to principles to clauses to languages."
+    },
+    {
+      "id": "publish",
+      "label": "Publish your terms",
+      "kind": "method",
+      "summary": "This is my line."
+    },
+    {
+      "id": "vaults",
+      "label": "Three vaults",
+      "kind": "artefact",
+      "summary": "Founder desk, investor desk, deal room."
+    }
+  ],
+  "edges": [
+    {
+      "from": "scale",
+      "to": "problem",
+      "rel": "answers"
+    },
+    {
+      "from": "mirror",
+      "to": "scale",
+      "rel": "example-of"
+    },
+    {
+      "from": "service",
+      "to": "scale",
+      "rel": "produces"
+    },
+    {
+      "from": "meter",
+      "to": "service",
+      "rel": "depends-on"
+    },
+    {
+      "from": "markets",
+      "to": "service",
+      "rel": "extends"
+    },
+    {
+      "from": "fractal",
+      "to": "service",
+      "rel": "extends"
+    },
+    {
+      "from": "publish",
+      "to": "markets",
+      "rel": "extends"
+    },
+    {
+      "from": "vaults",
+      "to": "service",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "jobs-that-never-scaled",
+      "the-controllable-founder",
+      "the-exit-is-when-you-sell-control",
+      "sell-dont-issue",
+      "paying-after-the-value",
+      "the-user-keeps-the-meter",
+      "pki-everywhere",
+      "what-an-agent-is"
+    ],
+    "pages": [],
+    "sites": [
+      "https://newsroom.sgit.ai/demos/vaults/tallowmere-counsel/vault-app/deal-room/index.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "even when they hallucinate, they are very good at reading every detail and picking up inconsistencies",
+      "why": "Why legal never scaled, and why it can now."
+    },
+    {
+      "text": "A yearly subscription makes no sense for this",
+      "why": "The service."
+    },
+    {
+      "text": "Ask questions, find things, argue. But here are the terms, and this is my line.",
+      "why": "Publish your terms."
+    }
+  ],
+  "figures": [
+    {
+      "file": "tc-room.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tc-room.webp",
+      "caption": "The deal room: the founder's desk and the investor's desk, each people and agents, meeting over one agreement.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tc-flow.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tc-flow.webp",
+      "caption": "Two teams of people and agents, one on each side, and the deal room where they meet.",
+      "kind": "chart"
+    },
+    {
+      "file": "tc-terms.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tc-terms.webp",
+      "caption": "The founder desk: Ana Brindle's published terms, signed, with a QR code to share them.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tc-memo.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tc-memo.webp",
+      "caption": "The investor desk: the investment committee memo, drafted by an agent and signed by the partner.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tc-blocked.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tc-blocked.webp",
+      "caption": "The deal room: every version checked against every signed understanding, and v3 blocked.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tc-tamper.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tc-tamper.webp",
+      "caption": "Change one word of the signed agreement, and every signature on its root fails in your browser.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "tc-stack.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/tc-stack.webp",
+      "caption": "The features such a service needs, against what already exists in open source today.",
+      "kind": "chart"
+    }
+  ]
+}

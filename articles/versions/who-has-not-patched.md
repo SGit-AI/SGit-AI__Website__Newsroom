@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-27 | published | 2,057 | first published | this release | [current](../who-has-not-patched.md) |
+| **v1.0.0** | 2026-10-27 | published | 2,057 | first published | [`fca498665`](https://github.com/SGit-AI/SGit-AI__Website/commit/fca498665478c857a38ea7d23f6fcf6f96ed5b1d) | [current](../who-has-not-patched.md) |
 
 [← Back to the article](../who-has-not-patched.md) · [All articles](../index.md)
 
