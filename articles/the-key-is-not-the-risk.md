@@ -10,11 +10,11 @@
 
 # The key is not the risk: credential injection for AI agents is a good pattern, and the first question is still what an attacker can do with the agent
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/the-key-is-not-the-risk.md) · [newsroom v0.13.27](https://newsroom.sgit.ai/admin/versions.html) · securityagentscredentialsriskabparticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/the-key-is-not-the-risk.md) · [newsroom v0.13.27](https://newsroom.sgit.ai/admin/versions.html) · securityagentscredentialsriskabparticle
 
 ***Abstract:** A post going round this week, by Christian Posta, makes a point I agree with: do not give AI agents credentials, inject them on the way out through a gateway, and then protect the credential store, which becomes a high-value target. It is a good pattern, and this is not an article against it. It is about the question I learned to ask in application security, before deciding how much a control matters: what are we actually worried about? When we found a password in a config file, the first question was never "we found a credential, this is critical". It was "can the attacker reach the system it opens?". If not, the key is of little use. Cloud and SaaS keys are the exception, because they work from anywhere by default. Then: would we see it used, what can it do, and what can an attacker make the agent do without it? I ran that question over the day of Pellbridge, the invented bank in our vault for the FCA's four elements. Of its nine incidents, three breaches and six near misses, hiding the keys touches two. The other seven are about what the agent may do: a payment to a crypto exchange, an alert closed without a second person, a standing order changed without approval. A gateway that injects keys adds the key to those calls too, and it sits in line, a new system to run, secure and pay for. In a good design, a leaked key should not matter much. What the agent can do with its permissions matters more, and if an attacker can inject instructions into an agent, leaking the credential may be the least dangerous thing they can do.*
 
-Pellbridge's day through one question: would hiding the keys have stopped it? Of nine incidents, a gateway that injects credentials touches two, the readable bureau key and the ops-batch secret. The other seven are about what the agent may do: a payment, an email, an alert, a standing order, a trade record, advice.
+Pellbridge's day through one question: would hiding the keys have stopped it? Two of nine incidents, yes.
 
 ## In short
 
@@ -57,7 +57,7 @@ The same holds for the gaps: 4 of the 13 involve a credential, 9 are about what 
 
 ## What a proxy can and cannot see
 
-Credential injection, and where the risk goes: the agent holds no key, the gateway adds it on the way out from a credential store, to public APIs and internal systems. A hidden instruction that makes the agent ask for the wrong payment still gets its key added. Our drawing of the pattern.
+Credential injection: the agent holds no key, and the gateway adds it on the way out. Our drawing of the pattern.
 
 The series does have a policy step: "A policy decides whether the call is allowed; if so, inject the sensitive credentials." And Part 2.5 makes a version of my point itself: "the attacker who actually shows up doesn't need to decrypt the store anyway." So the question is what that policy can know. Could the proxy in the middle understand the business logic, and block the wrong payment? In principle, yes: it would act as a controller. In practice it is hard. To decide, it needs state and context, and the state usually lives in the application, not in the proxy. These proxies are products placed outside the application's domain, so even when they want to decide, they do not have the data. Imagine a proxy deciding about a customer when all it can see is the request in front of it; and the request is probably well formed, because the agent was tricked into a valid action. That is the catch.
 
@@ -71,7 +71,7 @@ If all it does is protect secrets and a few transactions, I do not think that is
 
 ## The questions, in order
 
-Five questions before protecting a key: can an attacker reach the target with it; would we see it used; what can the key do; what can an injected agent do without it; what does the control cost. Then defence in depth.
+Five questions to ask before protecting a key, followed by defence in depth.
 
 Securing secrets this way is attractive because it is technically simple: put a proxy in, inject the key. That does not make it the first thing to do. My point is the one Risk Mandate is built on: look at the whole use case, end to end, map the real threats, and then check whether a control moves the needle. In this case:
 

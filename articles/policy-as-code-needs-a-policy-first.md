@@ -10,11 +10,11 @@
 
 # Policy as code needs a policy first: what an agent behaviour policy adds, and how to reverse engineer one from the code, the spreadsheet or the paper you already have
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/policy-as-code-needs-a-policy-first.md) · [newsroom v0.12.35](https://newsroom.sgit.ai/admin/versions.html) · policy-as-codeagent-behaviour-policyopen-policy-agentregofractal-semantic-graphsgovernanceenforcementreverse-engineeringagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/policy-as-code-needs-a-policy-first.md) · [newsroom v0.12.35](https://newsroom.sgit.ai/admin/versions.html) · policy-as-codeagent-behaviour-policyopen-policy-agentregofractal-semantic-graphsgovernanceenforcementreverse-engineeringagentsarticle
 
 ***Abstract:** At an event this week a speaker described policy as code as the way to scale governance and AI innovation together, and it clicked. Policy as code is right, and it is where agent governance has to end up. But for agents it answers one question, is this request allowed, and the questions a business, an auditor or an insurer asks are the ones around it, the ones an Agent Behaviour Policy holds. What can this agent reach, measured. What was it asked to do, and why. Where the two differ. Which rules can no engine ever see. And the one that surprised me when I checked: for every rule that is code, who can change that code. A rule the agent can rewrite is a setting, not a control. Because an ABP has those columns, it can be written in both directions. From the policy, generate code: for this article, five rows of a real ABP became a Rego policy that Open Policy Agent ran against seven requests, denying a push to the wrong repository, a commit without a leak scan and a model id in a diff, asking before a pull request, and allowing a sentence no engine can judge. From what exists, reverse engineer the policy: parse the code back, and the gaps show on both sides, a row with no code and a rule nobody wrote a reason for. I did it to this session's own policy: of its eleven rules, eight have some code behind them, and only one has code the agent cannot change. Fractal semantic graphs are what make the round trip work across paper, spreadsheets, regulations and code, because each keeps its own vocabulary and the edges between them carry verbs both ways.*
 
-One policy at three altitudes. At the top, the business's words: a board policy, a row of a control spreadsheet, an article of a regulation. In the middle, the ABP row for one agent in one deployment: reach, mandate, gap, barrier and owner. At the bottom, the code where decisions are made: a Rego rule, a hook, a validator check. Generating code walks down; reverse engineering walks up; a node with no edge is a gap.
+One policy at three altitudes: the business's words, the ABP row for one agent, and the code where decisions are made.
 
 ## In short
 
@@ -50,7 +50,7 @@ That last one is the column I did not expect to matter so much, until I checked 
 
 ## Reverse engineering this session's own policy
 
-This session's own policy, reverse engineered from its code. Eleven rules; for each, the code that enforces it, who can change that code, and the barrier that results. Eight have some code behind them; only one, never pushing to sgit.ai, has code the agent cannot change.
+This session's own policy, reverse engineered from its code: eleven rules, the code behind each and the barrier.
 
 The agent writing this site works under a written policy, eleven rules, reloaded after every summary, as [Re-anchoring](re-anchoring-agent-behaviour-policies.md) describes. So I did the exercise on it: for each rule, find the code that enforces it, in the session's hooks, its leak scan, the site's validators and its git configuration, and then ask who can change that code.
 
@@ -64,7 +64,7 @@ And reverse engineering finds the reasons where they hide. The validator's rule 
 
 ## Generating code from the policy
 
-A round trip through Open Policy Agent. Five ABP rows as data, generated into a 35-line Rego policy, evaluated against seven requests, then parsed back with OPA's own parser and compared with the ABP: one row with no code, one rule with no row.
+A round trip through Open Policy Agent: five ABP rows generated into Rego, evaluated, then parsed back and compared.
 
 The other direction was built for this article. Five rows of the session's policy went into a small JSON file: an id, the rule, why it exists, the decision, a condition where there is one, the barrier, and what enforces it today. A generator of about twenty-five lines turned them into Rego, each rule carrying its row's id and reason as a comment and as the value it returns:
 

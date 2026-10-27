@@ -10,11 +10,11 @@
 
 # Connect your dots backwards: a look-back interview with your LLM, for founders, to find the non-linear path, the doors that were not what they seemed, and where a startup may be hiding
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/connect-your-dots-backwards.md) · [newsroom v0.13.21](https://newsroom.sgit.ai/admin/versions.html) · gen-z-bookfoundersstartupslearningtoolkitarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/connect-your-dots-backwards.md) · [newsroom v0.13.21](https://newsroom.sgit.ai/admin/versions.html) · gen-z-bookfoundersstartupslearningtoolkitarticle
 
 ***Abstract:** The book has a chapter called Connect the dots backwards, after Steve Jobs's line that you can only connect the dots looking backwards. I think founders should do it for themselves, now, and that it is easy to underestimate how much it gives. So here is a proposal, and a small toolkit: get your LLM to interview you about your life, your experience, your career and what you learned, and see whether you can already connect your dots backwards in ways that surprise you. Most people's paths are not linear, mine included. We mostly see the success stories, often retold with the challenges and the silly-sounding experiments glossed over, yet those experiments are often what made the person. That is why, when I interviewed people, I always looked at what else they had done. The interview finds the side roads, the doors that felt like one-way doors and were not, and the ones that felt small and set the path. It asks what you can evidence, because memory rewrites itself a little every time we recall it. It is an answer to impostor syndrome made of facts, not reassurance. And it may show you the startup hiding in something you were passionate about before, where it did not work out at the time.*
 
-Some of my own dots, as the book tells them: the ZX Spectrum, The Cyber Boardroom, MyFeeds, SG/Send, sgit and the newsroom. Looking back, the Cyber Boardroom's personas and its need for somewhere to keep the data, MyFeeds' graphs of the news, and what SG/Send taught about Stripe and pricing all feed the newsroom.
+Some of my own dots, as the book tells them, from the ZX Spectrum to the newsroom, and how they feed it.
 
 ## In short
 
@@ -42,7 +42,7 @@ The experiments are often the opposite of what the retelling suggests. Some of t
 
 ## Let your LLM interview you
 
-The look-back interview in seven stages: the timeline; the side roads; the doors; what each taught; the connections; remembered or evidenced; and where a startup may be hiding.
+The look-back interview in seven stages, from the timeline to where a startup may be hiding.
 
 So here is the exercise: get your LLM to interview you. About your life, your experience, what you learned, your career and the paths you took. Not a CV: a conversation, one question at a time, in your words, with an interviewer that keeps asking "and what else were you doing then?"
 
@@ -58,7 +58,7 @@ The interview has seven stages:
 
 ## The doors
 
-Doors as they felt and as they were. Felt big and was big; felt big and was small, where fear kept you longer than it had to; felt small and was big, the side project that set the path; and felt small and was small.
+Doors as they felt and as they were: felt big or small, and was big or small.
 
 Jeff Bezos, in his letter to shareholders for 2015, split decisions into two kinds. One-way doors: "consequential and irreversible or nearly irreversible", where "you can't get back to where you were before." And two-way doors: "changeable, reversible", where "You can reopen the door and go back through." The newsroom uses that split in [how cheap is it to undo?](how-cheap-is-it-to-undo.md), and the book uses it for walking a path you cannot see.
 

@@ -10,7 +10,7 @@ tags: reversibility, two-way-doors, trust, side-effects, human-in-the-loop, agen
 status: published
 ---
 
-!shot cu-spectrum.webp | images/ | The spectrum. Across: how much it costs to undo, from a two-way door to a one-way door. Up: how mature the controls and the record are, from explorer to town planner. Where an output sits decides how much a person has to hold it. The newsroom's articles sit where they can ship on their own; email in my name sits where I decide every one. The arrows are where each is moving. | decision
+!shot cu-spectrum.webp | images/ | The spectrum: how much it costs to undo, against how mature the controls and the record are. | decision
 
 ## In short {#in-short}
 
@@ -49,7 +49,7 @@ The checks and balances are also much further along than in email. Every release
 
 ## Two axes, and both move {#axes}
 
-!shot cu-compare.webp | images/ | The two workflows side by side, by what decides where they sit: how cheap it is to undo, how large the side effects are today, how mature the controls are, and what the record says. The same agents and the same person; opposite places on the spectrum. | comparison
+!shot cu-compare.webp | images/ | The two workflows side by side, by what decides where they sit on the spectrum. | comparison
 
 So the spectrum has two axes. Across, the cost of undoing: what it takes to reverse an output, and what it breaks before you do. Up, the maturity of the controls and of the record: from explorer, where the workflow is still being found and a person holds most of the weight, through villager, where the controls exist and are tested, to town planner, where the thing is boring, measured and cheap. Where an output sits on those two axes decides how much a person has to hold it.
 

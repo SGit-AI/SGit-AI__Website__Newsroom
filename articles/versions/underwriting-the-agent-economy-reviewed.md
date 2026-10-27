@@ -10,13 +10,14 @@
 
 # Versions of: Underwriting the agent economy, reviewed
 
-1 published version of [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](../underwriting-the-agent-economy-reviewed.md). The current one is **v1.0.0**.
+2 published versions of [Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it](../underwriting-the-agent-economy-reviewed.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-24 | published | 3,385 | first published | [`05830a1fe`](https://github.com/SGit-AI/SGit-AI__Website/commit/05830a1fe57fef2804e0693d3332f76a18655780) | [current](../underwriting-the-agent-economy-reviewed.md) |
+| **v1.1.0** | 2026-10-27 | minor | 3,169 | +0 / −216 words; 10 changed, 0 added, 0 removed paragraphs | this release | [what changed](underwriting-the-agent-economy-reviewed/v1.1.0.md) · [current](../underwriting-the-agent-economy-reviewed.md) |
+| **v1.0.0** | 2026-10-24 | published | 3,385 | first published | [`05830a1fe`](https://github.com/SGit-AI/SGit-AI__Website/commit/05830a1fe57fef2804e0693d3332f76a18655780) |  |
 
 [← Back to the article](../underwriting-the-agent-economy-reviewed.md) · [All articles](../index.md)
 

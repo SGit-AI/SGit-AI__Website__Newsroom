@@ -10,7 +10,7 @@ tags: newsroom, briefs, roadmap, agents, meta, article
 status: published
 ---
 
-!shot bs-map.webp | images/ | Sixty-five briefs this newsroom has published about itself, by area and status, as found in the code, the releases and the engineering cards on 18 October 2026. Each square is one brief: built, partly built, not built or superseded. The reader features and the reading account have the most; the wires have the most built; the editorial workflow has almost nothing built yet. Every open brief has a session brief at /briefs/. | comparison
+!shot bs-map.webp | images/ | Sixty-five briefs this newsroom has published about itself, by area and status, on 18 October 2026. | comparison
 
 ## In short {#in-short}
 

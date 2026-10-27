@@ -10,7 +10,7 @@ tags: sgit, websites, data, estate, article
 status: published
 ---
 
-!shot es-growth.webp | images/ | Fifty-three repositories in eleven weeks. Left: new site repositories each week, with the running total underneath. Right: commits across all of them each week, peaking at 331 in the week of 12 October. | comparison
+!shot es-growth.webp | images/ | Fifty-three repositories in eleven weeks: new site repositories each week, and commits across all of them. | comparison
 
 ## In short {#in-short}
 
@@ -41,7 +41,7 @@ Commits follow a different rhythm. The busiest week was the one of 12 October, w
 
 ## Where the work is {#work}
 
-!shot es-commits.webp | images/ | Commits per repository, the fourteen busiest. sgit.ai has 495, the newsroom 262, graphs 139 and PKI 137; together they hold 62% of the 1,679 commits. | comparison
+!shot es-commits.webp | images/ | Commits per repository, the fourteen busiest, with sgit.ai, the newsroom, graphs and PKI at the top. | comparison
 
 The shape is a long tail. Four repositories, sgit.ai, the newsroom, graphs and PKI, hold 62% of all the commits. The median site, among the 46 with content, has seven. And 22 of those 46 have their whole history inside a single day.
 
@@ -49,13 +49,13 @@ That is not a sign of neglect. It is how these sites are made: an idea gets a si
 
 ## Where the pages are {#pages}
 
-!shot es-pages.webp | images/ | Pages listed in each live site's sitemap, the fourteen largest. The newsroom lists 1,282 and its Portuguese edition 929; sgit.ai 604 and the Gen Z Developers book 496. | comparison
+!shot es-pages.webp | images/ | Pages listed in each live site's sitemap, the fourteen largest, led by the newsroom and its Portuguese edition. | comparison
 
 Pages tell a slightly different story from commits. The newsroom lists 1,282 pages, and its Portuguese edition, pt.newsroom.sgit.ai, 929, built in 74 commits. The Gen Z Developers book site lists 496 pages from 70 commits in three days. A site that renders a book or a corpus can be large and young at the same time.
 
 ## Families, and the naming they need {#families}
 
-!shot es-families.webp | images/ | The families held against the convention agreed on 21 October: plural for the hub, singular for the instance. The twins and hooks families follow it; four provider and game hosts break it; the demo, hook and twin instances are reserved, with no site yet. | architecture
+!shot es-families.webp | images/ | The site families held against the naming convention agreed on 21 October. | architecture
 
 The newest thing in the data is families: a hub site, and instance sites under it. There are three kinds of second-level host today:
 

@@ -10,7 +10,7 @@ tags: agents, agent-decision-policy, agent-behaviour-policy, risk-appetite, gove
 status: published
 ---
 
-!shot dn-altitude.webp | images/ | One envelope, automatic refunds, followed down five altitudes: the board's risk appetite; the head of support's limits, 2,000 GBP a day and a person above 100 GBP an order; the product workflow, a team lead to 500 GBP and finance above; the refund tool's limits; and one agent's run, one customer and one refund. Each level sits inside the one above. A new VIP workflow with automatic refunds up to 1,000 GBP an order is wider than the business limit, so it is flagged as out of its powers before it runs. | concept
+!shot dn-altitude.webp | images/ | One envelope, automatic refunds, followed down five altitudes from the board's risk appetite to one agent's run. | concept
 
 !trail decision-policy
 

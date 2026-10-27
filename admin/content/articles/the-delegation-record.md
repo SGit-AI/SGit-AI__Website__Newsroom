@@ -10,7 +10,7 @@ tags: riskmandate, go-to-market, abp, pilots, mandates, article
 status: published
 ---
 
-!shot dl-chain.webp | images/ | The chain to deliver once, end to end: an existing requirement, an approved delegation, an implemented control, an observed result, and evidence that still holds after a change. | concept
+!shot dl-chain.webp | images/ | The chain to deliver once: requirement, delegation, control, observed result, and evidence that holds after a change. | concept
 
 ## In short {#in-short}
 
@@ -32,7 +32,7 @@ I agree, and I think that is our go-to-market plan. Not a broader architecture, 
 
 ## The delegation record {#record}
 
-!shot dl-record.webp | images/ | The delegation record in six parts, business requirement, agent delegation, control mapping, evidence, remaining gaps and change conditions, filled in for pilot zero, our own inbox, as the plan stands; nothing in it has been tested yet. | comparison
+!shot dl-record.webp | images/ | The delegation record in six parts, filled in for pilot zero, our own inbox, as the plan stands. Nothing is tested yet. | comparison
 
 The answer to a buyer's question, "what exactly will I have at the end?", is a compact record in six parts:
 
@@ -47,7 +47,7 @@ It is the practical form of the coverage explanation, and it sits naturally on w
 
 ## A rule for people is not yet a delegation {#translate}
 
-!shot dl-translate.webp | images/ | A rule for people is not yet a delegation to an agent: refunds up to £100, the amount, one refund, a team lead's approval, eligibility and the process approval, each with the question an agent deployment must also answer. | comparison
+!shot dl-translate.webp | images/ | A rule for people is not yet a delegation to an agent: a refund rule, with the question an agent must also answer. | comparison
 
 The review adds the refinement that makes [approved business mandates](/articles/approved-business-mandates.html) workable. A rule the business already approves was written for a person or a role. Handing it to an agent raises new questions. "Staff may refund up to £100": can the agent execute the refund, or only recommend it? What establishes the amount owed? What limits apply across repeated requests and runs that happen at the same time? Who is the approver for an exception, and what exact action does the approval cover? Which record says the customer is eligible? What change requires the whole thing to be approved again?
 
@@ -63,7 +63,7 @@ Three rules from the review that I want in the product from the first day:
 
 ## Three stages {#stages}
 
-!shot dl-stages.webp | images/ | Three stages: immediate value, fix one mismatch and show it from the protected system; maintenance value, make a controlled change and show what it invalidates; repeatability, a related workflow or a second customer, measuring what was reused. | concept
+!shot dl-stages.webp | images/ | Three stages: immediate value, maintenance value and repeatability, each with what to show. | concept
 
 The plan runs in three stages, each testing a different claim:
 

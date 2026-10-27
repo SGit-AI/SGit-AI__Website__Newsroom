@@ -9,7 +9,7 @@ summary: For a few months I have been working with Chinmay Gupte, a consultant k
 
 > **Review draft.** Not linked from the home page or the article list, and not yet reviewed by Chinmay Gupte. Everything below is marked as built, designed or proposed.
 
-!shot ok-architecture.webp | images/ | The architecture for the knee health sites: the patient's device, where a passkey opens the patient's own vaults and all encryption happens; the sites, with one sign-in and no patient database; wherever the ciphertext lives, chosen by the patient; the clinician, who receives data sealed to their public key; the agents, with their own keys and write-only lanes; and the register at pki.sgit.ai, which says whose key is whose. | process
+!shot ok-architecture.webp | images/ | The architecture for the knee health sites: the patient's device, the sites, the clinician, the agents and the register. | process
 
 ## In short {#in-short}
 
@@ -40,7 +40,7 @@ We started a couple of months ago with MVPs on sgit vaults, and they worked well
 
 ## The missing piece was the first key {#first-key}
 
-!shot ok-firstkey.webp | images/ | The missing piece was the first key: a passkey; its PRF bytes, the same on every device it syncs to; a door vault derived from them; a master vault with the private keys, made in the browser; and the vault of vaults. Before, a key in a link; now, a key the patient's device makes, built and running on pki.sgit.ai. | process
+!shot ok-firstkey.webp | images/ | The first key: a passkey, its PRF bytes, a door vault derived from them, a master vault and the vault of vaults. | process
 
 This is the dot that connects the rest. A passkey is something the patient already has, in Safari, Chrome, a password manager or a security key, and the browser can ask it for a secret that never leaves the device. [pki.sgit.ai](https://pki.sgit.ai/) already runs the whole chain, [in its own words](https://pki.sgit.ai/articles/a-login-made-of-a-passkey.md):
 
@@ -54,7 +54,7 @@ The [passkey lab](https://newsroom.sgit.ai/passkey/index.html) on this newsroom 
 
 ## A patient's journey {#journey}
 
-!shot ok-journey.webp | images/ | A patient's journey across the sites, one login throughout: the score, into the patient's knee score vault; the scan, with payment at the payment provider and the report into the scan vault; the review, shared sealed to the consultant's key; treatment at Sports Healing; follow-up and check-ins on OmKneeHealth; and the guidance read, kept in the patient's own vault. | process
+!shot ok-journey.webp | images/ | A patient's journey across the sites with one login, from the score and the scan to the review and follow-up. | process
 
 Take me as the patient. I have a knee problem; I take my supplements; I want to know I am doing the right thing. On My Knee Score I sign in with my passkey and answer the ten questions; the answers and the score go into my knee score vault. On MyKneeScan I book an MRI; the payment goes to the payment provider, the only place that holds something about me in the clear, and the booking and later the report go into my scan vault. I share the report and my score history with the consultant, sealed to their key. If I need treatment, Sports Healing reads only what I shared with it. On OmKneeHealth I check in, retake the score over time, get guidance, and find discounts on what I buy. And what I have read stays in my own vault, so I am not shown the same article twice and can find it again.
 
@@ -82,7 +82,7 @@ The QR workflow is a good one in the other direction too. When a patient signs u
 
 ## Lanes: feedback, analytics and an agent's inbox {#lanes}
 
-!shot ok-lanes.webp | images/ | Write-only lanes: a site's feedback form and every page's anonymous event go in sealed; the lane accepts appends and answers every one the same way, so nothing can be read back through it; a Claude session that gave the site its public key reads the feedback, and the site's owner reads the events with the vault's key. | process
+!shot ok-lanes.webp | images/ | Write-only lanes: a site's feedback and anonymous events go in sealed, and cannot be read back through the lane. | process
 
 Three things we already use fit the same shape:
 
@@ -92,7 +92,7 @@ Three things we already use fit the same shape:
 
 ## Guidance a clinician signs {#certified}
 
-!shot ok-certified.webp | images/ | Guidance a clinician signs, with a date it expires: sources captured with their provenance; concepts mapped into a graph by agents; a clinician reviews and signs each fact with their key; every certified fact carries a review date; readers pay for what they read and the clinicians who certify are paid. Proposed. | process
+!shot ok-certified.webp | images/ | Guidance a clinician signs, with a date it expires: from captured sources to certified facts, as proposed. | process
 
 Chim has a lot of sites, and the strategy is to have many more: specific, deep guidance on narrow topics that the web covers badly. They should work like this newsroom does. The curation workflow maps the sources and their provenance, the concepts, the projections and the transformations; for medical guidance it adds one step. A fact is on the page because a clinician said it is correct: "if you have this injury, do this; if you have that one, do not". The clinician signs it with their key, on the record, the same idea as [signed by the source](https://newsroom.sgit.ai/articles/signed-by-the-source.html) and as [software that is certified and insurable](https://newsroom.sgit.ai/articles/software-is-now-a-product.html). And every certified fact expires: a piece of guidance may be good for six months, and after that the page says it is due for review until someone signs it again.
 
@@ -104,7 +104,7 @@ At a later stage, the workflows get the controls this newsroom and RiskMandate a
 
 ## GDPR: what the design does, and does not {#gdpr}
 
-!shot ok-gdpr.webp | images/ | What the design does for GDPR: Article 9 still applies to health data; Article 25's data protection by design and data minimisation become the architecture; Article 32 names encryption; Article 34 exempts a breach of data made unintelligible, such as by encryption, from being told to each patient; access, erasure and portability are with the patient already; and the EU Court's EDPS v SRB ruling of 2025 on pseudonymised data. Not legal advice. | chart
+!shot ok-gdpr.webp | images/ | What the design does for GDPR, by article, from Article 9 to the EDPS v SRB ruling of 2025. Not legal advice. | chart
 
 Health data is a special category: under Article 9, processing "data concerning health" is prohibited unless an exception applies. The design does not change that for whoever processes it. What it changes is how much of the regulation the sites carry:
 
@@ -118,7 +118,7 @@ None of this is legal advice, and the UK's version of the regulation, which appl
 
 ## What a compromise looks like {#compromise}
 
-!shot ok-breach.webp | images/ | What a server compromise exposes, the usual design against the vault design: patient records, questionnaires and scan reports readable in one database, against ciphertext with one key per patient; password hashes against no account on a server; IP addresses and cookies against country-level events with no IP; and the code served to browsers, the risk that remains, versioned, hashed and signed. | chart
+!shot ok-breach.webp | images/ | What a server compromise exposes: the usual design set against the vault design, row by row. | chart
 
 In the usual design, a compromise of the server is the end of the story: everything there is readable. Here, a compromise of storage exposes ciphertext. The risk that remains is the hosting: the code the sites serve to the browser. That is where the protections go. pki.sgit.ai already publishes its shared code as [immutable versions with a signed manifest](https://pki.sgit.ai/lib/index.json), every file's sha256 and its integrity hash, so a page can check what it loads, and a client can refuse code that is not signed. It is not as bad as a server compromise, where once it happens, everything is gone. This is what I mean by [the attack surface you do not have](https://newsroom.sgit.ai/articles/the-attack-surface-you-do-not-have.html): a whole class of risks architected out.
 

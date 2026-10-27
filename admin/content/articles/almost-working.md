@@ -12,7 +12,7 @@ status: published
 
 > **Update, 24 October.** This article read the PHP site's schedule vault, which the agents had not yet adopted, and so understated how far things had got. By 23:30 UTC on 23 October the scheduled curator had promoted 33 captures (the evidence vault at 260 sources) and the scheduled source watch was running five times a day; just after midnight the schedules moved out of the schedule vault and into the repository, and the source watch into a pack-mode vault, `7r83qic5`. The day is in [PHP October 2026, day three](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html).
 
-!shot wk-pipeline.webp | images/ | Three agents, three stores, one site: the researcher writes the source watch (oq9gflln, raw captures); the curator promotes what holds into the evidence vault (3ytzxm3g, 227 curated sources); the journalist updates the site from it. The schedule vault (weic8imn, public) records who runs, when, and what each run did. | architecture
+!shot wk-pipeline.webp | images/ | Three agents, three stores, one site: the source watch, the evidence vault and the schedule vault. | architecture
 
 ## In short {#in-short}
 
@@ -64,7 +64,7 @@ So we built the missing piece, and it is a slightly mad solution, and a lovely o
 
 That is the whole identity and secrets layer: a key pair that lives as long as the session, a root that both sides already know, and QR codes carried by a person. It is the workflow from [a secret is a QR code](https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.html) and [PKI everywhere](https://newsroom.sgit.ai/articles/pki-everywhere.html), now carrying a key that a mission-critical agent needs. The curator's scheduled session was the first to go through it for real, on 23 October; its fingerprint is `sha256:6c81ae257fee1938`.
 
-!shot wk-handshake.webp | images/ | One handshake, then a schedule: the agent makes a session key and pins the root; shows its fingerprint and QR; the editor checks it and seals the vault key to it on pki.sgit.ai; the agent opens it, clones the vault and deletes the file; a scheduled task wakes the same session. | diagram
+!shot wk-handshake.webp | images/ | One handshake, then a schedule: the agent's session key, the editor's check and the vault key sealed on pki.sgit.ai. | diagram
 
 ## A feature, and a vulnerability {#feature-and-vulnerability}
 
@@ -84,7 +84,7 @@ It is almost working. The structure is in place. Here is the honest state on the
 - **Set up, not yet proven.** The curator has its five wakes a day, but no run of its own is in the schedule vault yet. Every run record there so far was written by the conductor agent, from the agents' reports, not by an agent at wake time. The researcher's schedule and model are still to be confirmed. The source watch has no schedule of its own, so a curator wake can find nothing new; it should run half an hour before each wake. And the first key was sent as message text rather than as a file, which I accepted once.
 - **Missing.** Surviving a replaced container. Notifications: a wake reports only into its own session. An agreed behaviour policy for each agent (drafted). Queueing a task from the page. External collectors on a schedule.
 
-!shot wk-state.webp | images/ | Almost working, on the evening of 23 October: what works (the researcher's 40 recorded runs, the handshake, the schedule vault, the journalist's views, the last-checked stamp), what is set up but not yet proven (the curator's wakes, run records written by the agents themselves, the researcher's schedule), and what is missing. | comparison
+!shot wk-state.webp | images/ | Almost working, on the evening of 23 October: what works, what is set up but not yet proven, and what is missing. | comparison
 
 ## Next time, much easier {#next-time}
 

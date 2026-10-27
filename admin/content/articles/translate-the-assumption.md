@@ -10,7 +10,7 @@ tags: communication, boards, personas, cto, decks, php2shell, article
 status: published
 ---
 
-!shot ac-post.webp | images/ | Adelina Chalmers' post on LinkedIn, 23 October 2026: "The best CTO answer I've heard in a board meeting gave away his own budget." The same platform problem, five ways a CTO can answer it, depending on the executive mindset stage they are at, "and sadly only one gets invited into the exit conversation." | small | aside
+!shot ac-post.webp | images/ | Adelina Chalmers' LinkedIn post of 23 October 2026 on five ways a CTO can answer the same platform problem. | small | aside
 
 ## In short {#in-short}
 
@@ -23,7 +23,7 @@ status: published
 
 ## Five answers to the same problem {#stages}
 
-!shot ac-table.webp | images/ | Adelina Chalmers' "5 stages of a executive mindset for CTOs", Cambridge Executive Mindset and Diligence Lab: for each stage, where the thinking starts, what they say to the board, what investors think, and the assumption the CTO is making. From "We need to re-platform. It will take 18 months and 6 more engineers" at stage one, to "Our exit problem is enterprise churn, not the platform, so I'd spend the £250k on customer onboarding first" at stage five. | screenshot
+!shot ac-table.webp | images/ | Adelina Chalmers' "5 stages of a executive mindset for CTOs", from the Cambridge Executive Mindset and Diligence Lab. | screenshot
 
 Adelina Chalmers advises CTOs and CEOs, and the post takes one platform problem and shows five ways a CTO can answer it. The table is worth reading row by row, because every column moves.
 
@@ -43,13 +43,13 @@ Real translation is what happens in stages three to five. You start from the oth
 
 ## What it looks like for php2shell {#php}
 
-!shot tr-stages.webp | images/ | php2shell, told to a board at five stages, following Adelina Chalmers' stages: the technologist asks to patch and rebuild everything with more engineers; the translator says patching protects the business; the commercial partner names the two customer-facing sites and the cost of a weekend; the value creator has it patched and the evidence ready for due diligence; the trusted advisor says the exposure is closed and the bigger risk is a supplier running end-of-life PHP 7.4, which is a call for someone else to make. Illustrative. | concept
+!shot tr-stages.webp | images/ | php2shell told to a board at the five stages of Adelina Chalmers' model. Illustrative. | concept
 
 The same five stages apply to a security leader telling a board about [php2shell](https://php.oct.2026.newsroom.sgit.ai/). The figure above is our illustration, not Adelina's: the facts stay the same, and the assumption changes. At stage one, every PHP server is a problem and the answer is more engineers. At stage five, the leader has closed the company's own exposure, and points the board at the risk it actually carries: a supplier on end-of-life PHP, where the decision belongs to someone else.
 
 ## The PHP site already translates {#site}
 
-!shot tr-roles.webp | images/ | The PHP site already translates: seven roles, seven first questions. Executive: are we exposed, what do I decide; general reader: does it touch me, what do I do; security: what do we patch, block and watch; engineer: which versions, settings and commands; journalist: what holds up, who said it first; researcher: what's the evidence, what's still open; and everything. Next, a deck each, proposed on 25 October. | concept
+!shot tr-roles.webp | images/ | The PHP site's seven roles and the first question each asks, with a deck each proposed on 25 October. | concept
 
 This is exactly the kind of translation we want in our own communication. On the PHP story site, the line, live since 25 October, gives each of seven roles its own first question, its own order of what comes first, its own menu and its own depth. The [executive's view](https://php.oct.2026.newsroom.sgit.ai/as/executive/) starts with "Are we exposed? What do I decide?", in plain words; the engineer's with "Which versions, settings and commands?", in depth. Sixteen readers sit inside those roles, from the board member and the CFO to the data protection officer and the developer. The facts underneath are the same for everyone.
 
@@ -57,7 +57,7 @@ And we have just asked for the next step: [a deck per persona](https://php.oct.2
 
 ## What translation has to take into account {#dimensions}
 
-!shot tr-dims.webp | images/ | What a translation has to take into account: around the message, which keeps the facts and the sender's voice, the receiver's role and objectives, focus and pain points, understanding and depth, language and culture, power dynamics, how they consume it, and what they want to get. | concept
+!shot tr-dims.webp | images/ | What a translation has to take into account: the message, the sender's voice and the receiver's role, culture and needs. | concept
 
 This is also what I started exploring with [The Cyber Boardroom](https://thecyberboardroom.com): translating content to a person's role, focus, objectives, understanding, language and culture, and even the dynamics of power in that particular room. What do they want to get out of it? How do they want to consume it, five minutes or thirty, a deck, a page or a call? All of that has to be taken into account to communicate well, including everything Adelina is describing about where the other person's thinking starts.
 

@@ -10,7 +10,7 @@ tags: gen-z-book, work, agents, expertise, consulting, startups, article
 status: published
 ---
 
-!shot js-phases.webp | images/ | Before, the meeting, after. Then: a week or more gathering, a day or two meeting, three days or more writing up, about three weeks for one engagement. Now: agents gather and write up, and the expert's time goes on the meeting and the decisions. | concept
+!shot js-phases.webp | images/ | Before, the meeting, after: a week or more gathering, a day or two meeting, three days writing up, and now with agents. | concept
 
 ## In short {#in-short}
 
@@ -62,7 +62,7 @@ After the meeting, agents can turn the decisions into the actions, the roadmap a
 
 ## The clinic already works this way {#clinic}
 
-!shot js-clinic.webp | images/ | The clinic model. First, others collect your history; then the specialist reads the key facts and decides; last, a team carries out the plan. Agents can be that first and last group for any expert. | concept
+!shot js-clinic.webp | images/ | The clinic model: others collect your history, the specialist decides, a team carries out the plan. | concept
 
 This is not new as a shape. Think of what happens when you go to a clinic or a hospital. The first people you meet are the ones collecting information from you: the forms, the reception, the nurses. Eventually that is presented to the doctor or the specialist, who gets the key pieces of information and can make a decision very fast. And then a team carries out what was decided.
 
@@ -70,7 +70,7 @@ The specialist is not effective because they work less. They are effective becau
 
 ## The intersection that made expertise rare {#intersection}
 
-!shot js-intersection.webp | images/ | The intersection that made outside expertise rare: a company with the problem, someone who had hired the right talent, someone who could travel there, and a budget big enough. Now the expert can be anywhere, and the context and the delivery travel to and from them. | concept
+!shot js-intersection.webp | images/ | The intersection that made outside expertise rare, and how it changes when the expert can be anywhere. | concept
 
 Most consulting in the past happened at a strange intersection. You needed a company, in a location, with a problem; somebody who had hired the talent that fitted that problem; someone who could physically go to the office and meet them; and the money to pay for all of it. That is very inefficient and very expensive, so it was only used for specific things, and mostly by big companies.
 
@@ -78,7 +78,7 @@ And the talent is not, most of the time, going to live close to the client. It i
 
 ## Jobs that never scaled, and now can {#examples}
 
-!shot js-jobs.webp | images/ | Twelve jobs that never scaled: historian, librarian, cartographer, architect, on-demand consultant, lawyer reviewing a contract, accountant, doctor and specialist, sherpa, security lead, project manager, translator. | concept
+!shot js-jobs.webp | images/ | Twelve jobs that never scaled, from historian and librarian to security lead, project manager and translator. | concept
 
 You can go around all the houses and find professions where you could never get the value of the person without them having a large support network around them:
 
@@ -111,7 +111,7 @@ Their culture and their experience shaped what they focus on, and so did their l
 
 ## Twelve good hours {#part-time}
 
-!shot js-hours.webp | images/ | Twelve good hours, illustrative. Without support, a part-time expert's week goes mostly on gathering and writing up. With agents carrying those, nearly all of it goes on judgement and meetings. | comparison
+!shot js-hours.webp | images/ | Twelve good hours, illustrative: a part-time expert's week without support and with agents. | comparison
 
 These are roles you could never hire part-time and get real value from. Think of a parent working from home: a remarkable resource, who often needs the mental stimulation, but may only want to work twelve hours a week for this period of their life. Nothing wrong with that. You just need to make sure those twelve hours are very productive, so they get the best of both worlds.
 

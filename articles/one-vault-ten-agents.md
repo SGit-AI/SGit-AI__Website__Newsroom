@@ -10,11 +10,11 @@
 
 # One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/one-vault-ten-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitvaultsagentsperformancemeasurementpartial-clonesscionversion-controlsource-codearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.3.0, 4 versions](versions/one-vault-ten-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitvaultsagentsperformancemeasurementpartial-clonesscionversion-controlsource-codearticle
 
 ***Abstract:** Anthropic's post on Scion makes one observation that holds for any version control system: when the clients are agents, they are always online, there are many of them, and the expensive thing is moving bytes nobody needs. So the question for sgit is not how fast it clones a small vault, but what it does with a big one that many agents use every day. We have one. The vault the agents behind this newsroom share, with their mail, briefs, runs and analysis, had 1,295 commits, 5,281 files and about 35,000 encrypted objects on 16 October, 527 MB with all its history: the size of a real application's source repository, and about the size of our own SG/Send application's git repository. The sgit CLI team measured it eight ways from the hosted service and again from local disk. A full clone takes three and a half minutes; nobody needs one. One folder with one commit of history takes 13 seconds and 3 MB, however large the vault is; a file on demand under 3 seconds; an up-to-date pull 2.5. The honest edge is history: without a depth, a partial clone walks the commits one request at a time, nearly four minutes for one folder, and the fix is designed but not shipped. And with the same objects on local disk, the one-folder clone is 0.8 seconds: the time is the distance to the storage, not sgit. Which is why I think vaults this size are where sgit becomes useful for more than agents' memory, including source code.*
 
-The newsroom's vault against two of our own git repositories: 5,281 files, 1,295 commits and 35,423 objects, against the SG/Send application's 5,584 files, 4,399 commits and 42,434 objects, and the sgit CLI's 1,811 files, 1,603 commits and 13,985 objects.
+The newsroom's vault against two of our own git repositories: the SG/Send application and the sgit CLI.
 
 ## In short
 
@@ -36,7 +36,7 @@ The comparison in the figure above is why I think this matters beyond agents. Th
 
 ## What an agent fetches
 
-What an agent fetches from the 35,000-object vault and what it costs, on a log scale: the full clone 210 seconds; the whole tree with one commit 57; one 130-file folder with one commit 13 seconds and 137 objects; structure only 27; one folder with all its history 227; the biggest folder with all its history 264; widening a clone by a folder 7.8; one file on demand 2.9; a pull with nothing new 2.5.
+What an agent fetches from the 35,000-object vault and what it costs, in seconds, on a log scale.
 
 Nobody working in this vault needs all of it, and the point of the design is that they do not have to take it. The sgit CLI team measured each way of asking, from a cloud sandbox, on 14 and 16 October:
 
@@ -62,7 +62,7 @@ The command an agent runs most is not clone but pull: come back, take what chang
 
 ## Where the time goes
 
-The same vault and client with the objects in three places: hosted, a plain file server on local disk, and a local API server. Full clone 210, 111 and 69 seconds; one commit 57, 25 and 12; one folder with one commit 13, 2.3 and 0.8; one folder with all history 181 hosted against 7.1 locally; one file on demand 2.5, 1.8 and 1.8.
+The same vault and client with the objects in three places: hosted, a plain file server and a local API server.
 
 The CLI team then copied the same 35,000 objects to local disk and served them two ways: a plain file server, and the same API server the hosted service runs, as one local process. The one-folder, one-commit clone fell from 13 seconds to 2.3 and 0.8. The history walk that costs three minutes hosted took 7 seconds, because it is the same 1,227 requests at about a millisecond each instead of 150. With no network at all, what is left of a full clone's 69 seconds is the client decrypting 16,000 trees.
 

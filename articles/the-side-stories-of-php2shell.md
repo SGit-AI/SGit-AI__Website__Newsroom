@@ -10,11 +10,11 @@
 
 # The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/the-side-stories-of-php2shell.md) · [newsroom v0.13.74](https://newsroom.sgit.ai/admin/versions.html) · php2shellprovenancecorrectionsexploitationaiopen-sourcearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/the-side-stories-of-php2shell.md) · [newsroom v0.13.74](https://newsroom.sgit.ai/admin/versions.html) · php2shellprovenancecorrectionsexploitationaiopen-sourcearticle
 
 ***Abstract:** The PHP story site now holds enough data to go back in time and see how php2shell evolved, and that opens up stories beyond the headline. Provenance, which almost nobody does except Wikipedia. Building features against a real problem: 179 releases in three and a half days, each answering a need, none good enough the first time, and all of it a template for the next incident and for this newsroom. Who corrects their reporting: twelve correction requests are drafted, and one publisher, Amazon, changed "broadly exploited" to "broad exploitation attempts" without a note. A crisis with no named victim, which raises three questions at once: nobody has to disclose, nobody was hit, or sites were taken down for a danger that did not come. Detection: if an attack can be counted, it can be blocked, so why so few shared rules? The 17 entries in the ledger of sites that went dark, and what that cost. Who is being paid, when nobody is exploiting it. The flaws nobody watched: Zimbra's remote code execution is on CISA's exploited list with a national CERT reporting compromises, and got 16 news items to php2shell's 175. And how much of this was AI: AI helped find the flaws, but none of the public proofs of concept VulnCheck reviewed works the way the flaw does. If AI could do what people say it can now, where is the exploitation?*
 
-The side stories of php2shell, from the data the PHP site keeps: provenance; building on a real problem; who corrects, and how; no named victim; detection and the WAF; the sites that went dark; follow the money; the flaws nobody watched; and how much of it was AI.
+The side stories of php2shell, from the data the PHP site keeps, from provenance to how much of it was AI.
 
 ## In short
 
@@ -81,13 +81,13 @@ Then we can do the calculation. If that money had instead gone into the model I 
 
 ## The coverage, and whether the conversation moved
 
-How fast the coverage faded: the PHP site's evidence vault holds 4 sources published on 20 October, 117 on 21 October, 94 on 22 October, 34 on 23 October and 8 on 24 October, of 418 sources, 53 with no date; the latest days are partly the capture lag.
+How fast the coverage faded: sources in the PHP site's evidence vault by publication day, 20 to 24 October.
 
 We also need to track the coverage over time. If you just follow the news, it is not sustainable: the energy goes, everyone moves on, and nothing changes. The evidence vault shows the curve: 117 of its sources were published on 21 October, the day of the release, 94 the next day, 34 the day after, and 8 on 24 October, though the latest days are partly the time it takes to capture them. So the real question is whether the conversation moved. Are we now talking about the sustainability of open source, or about who maintains the software everything runs on? That is a story the data can answer, given time.
 
 ## The flaws nobody watched
 
-Attention against evidence, from the Pulse data: English-language news items over 30 days against the furthest step of evidence of exploitation. php2shell, 175 items, a public proof of concept and attempts reported, not on CISA's exploited list; Windows command injection, 40, on the list with attempts reported; BeyondTrust, 24; Ivanti, 23, on the list; a GitLab flaw rated 10.0, 22, no step reached; Zimbra, 16, on the list with a national CERT reporting compromises; SharePoint, 1, on the list with attempts reported.
+Attention against evidence, from the Pulse data: news items over 30 days against the furthest step of exploitation.
 
 The other big story is all the other vulnerabilities released at the same time, which got a fraction of the attention and, in some cases, have real exploitation behind them. We know the number of vulnerabilities is going to rise. The site has quietly started monitoring this, in a section called [Pulse](https://php.oct.2026.newsroom.sgit.ai/pulse/index.html), which keeps, for 26 flaws, the evidence of exploitation as eight dated steps, and beside it the attention each one gets, never combined.
 

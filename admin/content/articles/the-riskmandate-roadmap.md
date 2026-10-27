@@ -10,7 +10,7 @@ tags: riskmandate, agent-behaviour-policy, roadmap, strategy, customers, article
 status: published
 ---
 
-!shot rr-roadmap.webp | images/ | The proposed RiskMandate roadmap as a spectrum of trust: six stages, policies, understand, risk acceptance, contain, manage and insure, each answering the customer's next question. Acceleration runs through all of them. We are in the first stage. | concept
+!shot rr-roadmap.webp | images/ | The proposed RiskMandate roadmap as a spectrum of trust: six stages, each answering the customer's next question. | concept
 
 ## In short {#in-short}
 

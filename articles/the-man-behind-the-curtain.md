@@ -10,11 +10,11 @@
 
 # The man behind the curtain: the emails from my agents are from me, there is an article behind each one, and every line has to buy the next
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/the-man-behind-the-curtain.md) · [newsroom v0.12.112](https://newsroom.sgit.ai/admin/versions.html) · emailagentshuman-in-the-loopwizard-of-ozwritingnewsroomarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/the-man-behind-the-curtain.md) · [newsroom v0.12.112](https://newsroom.sgit.ai/admin/versions.html) · emailagentshuman-in-the-loopwizard-of-ozwritingnewsroomarticle
 
 ***Abstract:** Some of the people who get emails from my agents have assumed they were talking to a chatbot, and, because most of us have learned that chatbots are not very clever, read them that way. They are not talking to a chatbot. They are talking to me. The agents draft, follow up, map the thread and collect the evidence; I read every draft, use it to think, change it, and send it. It is the Wizard of Oz in reverse. In 1984 an IBM researcher named the method where a hidden person makes a half-built program look clever; here the program is the visible part and the person is the one hidden. And there is a second thing behind the curtain: an article. When I answer an email, there should almost always be an article behind the answer, with the evidence and the explanation, and if there is not one ready, that is a sign it is worth writing. That is why a short email to me can get a long answer, and why it scales: I write the article once and link it many times. The voice memo for this article also changed my mind about how the first email to someone should look. Every part of an email buys the next: the subject buys the first line, the first line buys the paragraph, the paragraph buys the email. So the first email should open with plain text, a short paragraph that says it all, and put the banner and the detail below. This page is also meant to be the link at the bottom of those emails.*
 
-In front of the curtain, what the person receiving the email sees: one email, in my name. Behind it, two things. The agents: they draft the reply, follow up the thread, map what was said in a CRM, collect the evidence and keep track of what is owed. And me: I read every draft, use it to think, change it, often ask for an article so the answer has evidence behind it, and then send it. The agents send nothing.
+In front of the curtain, one email in my name; behind it, the agents that draft and track, and me.
 
 ## In short
 
@@ -54,7 +54,7 @@ Some of the articles on this site started exactly like that. [What can your agen
 
 Someone pointed out to me that they had sent me an email of about two hundred words and got back something closer to two thousand. Fair. But it works, because I only have to write it once. The next person who asks the same question gets a link. The article can be read later, forwarded to a colleague, checked against its sources, and [corrected as a new version](my-memory-checked.md) when I learn more, none of which an email can do. Each answer makes the next one cheaper.
 
-One article, many emails. On the left, emails arriving with questions, a few hundred words each. In the middle, the test: is there an article that answers this? If yes, the reply is short and links it. If no, the agents write one and check it against its sources, it is published, I read it, and the reply links it. On the right, the article: written once, linked from every later reply, read later, forwarded, corrected as new versions.
+One article, many emails: questions arriving, the test of whether an article answers them, and the article itself.
 
 ## Every part of an email buys the next
 
@@ -75,7 +75,7 @@ So the changes for the agents that draft my emails are:
 
 We are starting to try variations of the first email, and I will report what we learn.
 
-Every part of an email buys the next. The subject buys the first line, which buys the first paragraph, which buys the email, which buys the article. Below, the same first email two ways: starting with a banner, where the inbox preview shows the banner's text; and starting with a plain paragraph that answers the question, where the preview is the answer.
+Every part of an email buys the next, and the same first email two ways: a banner, or a plain paragraph.
 
 ## The memo is where the thinking happens
 

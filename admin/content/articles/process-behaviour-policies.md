@@ -10,7 +10,7 @@ tags: behaviour-policies, linux, least-privilege, sandboxing, sgit, landlock, se
 status: published
 ---
 
-!shot px-walls.webp | images/ | Seven walls around one process, set from its policy and enforced by Linux inside this cloud container: an ephemeral user with no capabilities; an empty, read-only root holding only the listed files; its own namespaces; Landlock for paths, exec and TCP ports; a seccomp allowlist of the system calls the traced run made; a network broker that only opens tunnels to the policy's hosts; and cgroup limits. | concept
+!shot px-walls.webp | images/ | Seven walls around one process, set from its policy and enforced by Linux inside this cloud container. | concept
 
 ## In short {#in-short}
 
@@ -74,7 +74,7 @@ The broker is the shape of the key service. In this test it only decides where a
 
 To find out, we wrote a probe: a small program that tries everything a sandboxed process should never do, and reports each result. We ran it three ways.
 
-!shot px-probe.webp | images/ | What the probe tried, and what stopped it: as root in the container today, it could read /etc/shadow and the agent's home, write to /usr/lib and /tmp, see 92 processes, start a shell, mount a filesystem, make a user namespace, reach the internet and the agent's proxy, and open a netlink socket; under the Hello World policy, all of it was refused; with seccomp and Landlock switched off, the other walls still refused all but the netlink socket. | comparison
+!shot px-probe.webp | images/ | What the probe tried, and what stopped it: as root, under the Hello World policy, and with two walls switched off. | comparison
 
 - **As root, today.** It could do 13 of its 14 attempts. Only tracing process 1 was refused.
 - **Under the policy.** It could do none of them.
@@ -95,7 +95,7 @@ Then the real target. We traced sgit initialising a vault, committing a file and
 
 We expected the setup to be the expensive part, and at first it was: building the root with a shell script, calling `mount` three times per file, took 1.7 seconds for 169 files. Doing the same with direct system calls from one small program brought it to about 60 milliseconds, whatever the number of files.
 
-!shot px-cost.webp | images/ | The size of a policy, and what it costs: Hello World in C, 1 file, 12 system calls, no hosts, 5 ms bare, 103 ms of policy overhead; Hello World in Python, 37 files, 34 system calls, 30 ms bare, 92 ms overhead; Python fetching one page, 169 files, 44 system calls, one host, 565 ms bare, 149 ms overhead; sgit init, commit and status, 1,025 files, 58 system calls, one host, 3,495 ms bare, 187 ms overhead. | comparison
+!shot px-cost.webp | images/ | The size of a policy and what it costs, for four programs from Hello World in C to sgit init, commit and status. | comparison
 
 The overhead, the median of five runs, is between 92 and 187 milliseconds: making the user, the firewall rule and the limits, building the root, and cleaning up. The run itself is within noise of the bare run. For sgit, whose clone already takes from seconds to tens of seconds, that is 5% on a three-and-a-half-second job. And most of it can be done in advance: the user, the rules and the root can be prepared before they are needed. Making the user alone is about 20 milliseconds, and a uid that simply is not in use would do without it.
 
@@ -103,7 +103,7 @@ The overhead, the median of five runs, is between 92 and 187 milliseconds: makin
 
 This is also a great example of a policy of policies. There is a policy for the operating system, one for the environment, one for Python, one for sgit, and one for this execution. Each narrows the one before it and never widens it, the way [decisions at every level](https://newsroom.sgit.ai/articles/approve-at-altitude.html) may narrow the level above. The process gets only what is left.
 
-!shot px-layers.webp | images/ | A policy of policies: the operating system (what Linux can do here), the environment (this container's proxy, CA bundle and paths), the runtime (Python and its standard library), the application (sgit, its dependencies and its server), and this execution (one command, one folder, one host, one user for one run), each narrowing the one above. | concept
+!shot px-layers.webp | images/ | A policy of policies: operating system, environment, runtime, application and execution, each narrowing the one above. | concept
 
 And, as with hooks, the policy executes nothing. It says what is allowed; the runtime enforces it. [Hooks are kernel code](https://newsroom.sgit.ai/articles/hooks-are-kernel-code.html) argued that an agent's rules should move from hope into enforcement. This is the same move, one level down, into the kernel itself.
 

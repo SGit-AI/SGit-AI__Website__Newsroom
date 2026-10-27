@@ -10,7 +10,7 @@ tags: newsroom, voice, agents, authorship, provenance, article
 status: published
 ---
 
-!shot ws-voices.webp | images/ | Three voices on this site. Dinis alone: written and published by him, with no agent; none yet. Dinis through an agent: his memo or message, written up, checked and published by the newsroom's agents, in his voice and under his name, with the editorial responsibility his; almost every article. An agent in its own voice: an agent writing about work it did, in the first person as the agent, with Dinis's editorial responsibility; five so far. Each has a mark on the byline. | concept
+!shot ws-voices.webp | images/ | Three voices on this site: Dinis alone, Dinis through an agent, and an agent in its own voice. | concept
 
 ## In short {#in-short}
 

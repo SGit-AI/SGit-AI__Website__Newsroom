@@ -10,11 +10,11 @@
 
 # Short, punchy, and co-written with Claude: what Generation Z Developers (AI edition) has to be, and how we show it is not AI slop
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.3.0, 4 versions](versions/short-punchy-and-co-written.md) · [newsroom v0.12.119](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zwritingqualitygen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.4.0, 5 versions](versions/short-punchy-and-co-written.md) · [newsroom v0.12.119](https://newsroom.sgit.ai/admin/versions.html) · booksgeneration-zwritingqualitygen-z-bookarticle
 
 ***Abstract:** More notes for the book. It is a book I will send to anyone I know who wants to, or should, get into AI, so it needs chapters for people who do not yet work the way I do, including one on setting up a Google Workspace and the agentic workflow behind my emails. The first edition was liked for one thing above all: it was short and punchy, a condensation of ideas where almost every paragraph made you think. The second has to be the same. It will also be co-written with Claude, and I would like to say so and credit it, and to show the ratio: how many words of voice memos, edits and reviews go into each word of the book. Readers will open it expecting AI slop. My first published pieces, made with ChatGPT's deep research, got exactly that reaction; the articles on this site now get told they sound like me. So the book should meet the suspicion head on, with the evidence. To keep it tight, every paragraph, group of paragraphs and chapter should know what it is: its evidence, its facts, its hypotheses, its purpose, all in a graph, which also shows where we repeat ourselves. We can refactor everything until each part is signed off. Synthetic readers will tell us what they understood and what they did not. And not every issue they raise needs fixing: sometimes the answer is, we are not doing that.*
 
-Every paragraph knows what it is. One paragraph of the book as a node in its graph, carrying its purpose, the evidence behind it, the facts it states and the hypotheses it proposes, linked to the chapter above it and to the paragraphs that say something close, which is how repetition shows up. Around it, the loop: voice memos in, the draft, the editor's review, synthetic readers' reactions, a decision on each finding (fix, or not doing it), and sign-off.
+One paragraph of the book as a node in its graph, linked to its chapter and similar paragraphs, with the review loop.
 
 ## In short
 

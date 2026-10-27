@@ -10,7 +10,7 @@ tags: abp, ci, github, agents, security, policy, article
 status: published
 ---
 
-!shot rg-zones.webp | images/ | The rules of the game in five zones: content, free; the gates, a second key; identity, the owner only; vendored code, from upstream only; and the rules themselves, never by an agent. | concept
+!shot rg-zones.webp | images/ | The rules of the game in five zones: content, the gates, identity, vendored code and the rules themselves. | concept
 
 ## In short {#in-short}
 
@@ -30,7 +30,7 @@ And today the agents can open it. Between 11 and 22 October, 62 of the 227 commi
 
 None of those changes was malicious; most were improvements. That matters for the design. A rule that says "never change the pipeline" would have blocked good work 62 times. The rule we want is that the agent can propose a change to what checks it, and someone else has to agree.
 
-!shot rg-commits.webp | images/ | Commits that touched the checks, by agent, from 11 to 22 October 2026: the writer 17 of 154, unlabelled commits 25 of 35, the UX agent 9 of 18, the wire agent 7 of 10, the dev agent 2 of 2, the newsletter agent 1 of 2 and the vault agent 1 of 1; 62 of 227 in all. | comparison
+!shot rg-commits.webp | images/ | Commits that touched the checks, by agent, from 11 to 22 October 2026: 62 of 227 in all. | comparison
 
 ## The policy {#policy}
 
@@ -48,7 +48,7 @@ The copy published here is for reading. The copy that counts has to live somewhe
 
 ## What GitHub offers today {#github}
 
-!shot rg-github.webp | images/ | What GitHub offers a public repository today, without a new tool: branch rulesets and protection, code owners and required reviewers on deployments are available; path rules for pushes are for private and internal repositories on paid plans; required workflows from rulesets are organisation-level and pull-request only; and a token without permission to change workflow files is available, set by the owner. | comparison
+!shot rg-github.webp | images/ | What GitHub offers a public repository today without a new tool, and what needs a paid plan or an organisation. | comparison
 
 Then the research: what can GitHub itself enforce, on this repository, today? This site's repository is public, owned by an organisation, and its release branch had no protection when we checked on 22 October. From GitHub's documentation:
 
@@ -63,7 +63,7 @@ So, on a public repository where agents push straight to the release branch, Git
 
 ## The least we can do {#minimal}
 
-!shot rg-layers.webp | images/ | The controls, in order, and what it takes to get round each: the policy, nothing; a hook in the agent's harness, one change; a guard job in CI, a second deliberate change; a token that cannot change workflows, out of the agent's reach; and the sidecar repository, out of reach even when the agent is fully compromised. | concept
+!shot rg-layers.webp | images/ | The controls in order, and what it takes to get round each, from the policy to the sidecar repository. | concept
 
 Here is the smallest set that works, in the order of the barriers in an [Agent Behaviour Policy](/articles/behaviour-policies-from-the-checks.html):
 

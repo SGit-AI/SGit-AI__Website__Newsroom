@@ -10,7 +10,7 @@ tags: sgit, naming, twins, websites, decisions, article
 status: published
 ---
 
-!shot es-families.webp | images/ | The families held against the rule: plural for the hub, singular for the instance. The twins and hooks families follow it; the three provider hosts and the game break it; the twin, hook and demo instances are reserved, with no site yet. | architecture
+!shot es-families.webp | images/ | The families held against the rule: plural for the hub, singular for the instance. | architecture
 
 ## In short {#in-short}
 

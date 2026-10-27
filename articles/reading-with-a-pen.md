@@ -10,11 +10,11 @@
 
 # Reading with a pen again: I mark the printed page, photograph it, and an agent does the part that always made me stop, which changes how I read every book
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/reading-with-a-pen.md) · [newsroom v0.12.131](https://newsroom.sgit.ai/admin/versions.html) · readingbookspaperworkflowknowledgegen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/reading-with-a-pen.md) · [newsroom v0.12.131](https://newsroom.sgit.ai/admin/versions.html) · readingbookspaperworkflowknowledgegen-z-bookarticle
 
 ***Abstract:** I buy a lot of books, because a book is a better medium for me than a screen, and what people call its inefficiencies are its best features: it is not connected, it has no links, it has no undo. But I have never been able to capture what I learn from them. Reading has three moments: you read, you mark the page, and then you process what you marked. Nobody did the third, so the second was not worth its cost, and I stopped highlighting. That hurt, because the moment you read is when you have the best mental models, the best ideas and the best connections. Reviewing my own book on paper today, we found the answer by accident. I write on the printed page with a pen, take a photograph, and an agent reads my handwriting, captures every note, redraws the page so anyone can read it, tells me when it is not sure, and turns it into articles and decisions. Thirteen pages became 83 notes, and the evolution of the book's title, from Generation ZX Developers to Generation ZX Founders, is right there in the margins. That is the workflow I have wanted for every book, paper and magazine I read, and it is a better way for any author to get feedback. And it is a crude workflow, before anyone has built a tool for it.*
 
-Page 1 of the printed release candidate, two ways. On the left, my photograph: the spiral-bound page on a café table, with a box drawn at the top saying "Graph representation of book", an arrow saying it "can also go here", lines struck through the small print, and two notes in the margin: "should be what is the book all about" and "this paragraph buys more time from the reader to continue reading". On the right, the same page as the agent redrew it, every mark in place and every note typed and numbered, so anyone can read it. From the book's site, RC2 on paper, batch 1.
+Page 1 of the printed release candidate, two ways: my photograph with the pen marks, and the agent's redrawn page.
 
 ## In short
 
@@ -37,7 +37,7 @@ I also learn in graphs: in connections, in insights, in ideas that stick. Some o
 
 The problem that has always bugged me is that I cannot capture what I learn from books. There are three moments in reading. There is the moment you read, which always happens. There is the moment you mark the page while you read, and the best place to put that is the book itself: a highlight, a note in the margin, an arrow, a circle, a "look at this". And there is the moment you process what you marked: you type it up, connect it to what you already know, and put it somewhere you can find it again.
 
-Three moments of reading, and the one that always failed. Before: read, mark the page, and then process it, typing it up and cross-referencing it, which took hours, was rarely done, and so made the marking not worth its cost. Now: read, mark the page with a pen, photograph it, and an agent processes it, reading the handwriting, asking when it is unsure and capturing every note, which becomes an article that can be found later, links to the ideas it touches, or feedback the author receives. The pen review of 19 October: 13 pages, 83 notes, 7 uncertain readings.
+Three moments of reading: typing up marks, which failed, then marking with a pen and an agent processing it.
 
 Because nobody did the third moment, the second was not worth its cost. I used to highlight books, and I noticed I was stopping. In some books I highlighted too little, in others too much, but in all of them there was no follow-up, and the follow-up meant hours of processing, transforming and cross-referencing that I never had. So I stopped. Sometimes I stopped reading a book altogether, because I knew I was not going to keep what it was giving me.
 
@@ -57,7 +57,7 @@ The numbers from the book's site, for the first three batches: thirteen pages, 8
 
 You can see the book change in those reviews. On page 4, above "About this release candidate", I wrote "the ZX FOUNDER doesn't care yet → maybe at the end of the Book", and in the corner, "is this a better name than ZX developer?" On page 8, next to "You can be the founder", I wrote "ZX FOUNDER? :)". On page 10, "this should be about the READER → the ZX founder".
 
-Page 4 of the printed release candidate, with the agent's callouts. Note 14: "the ZX FOUNDER doesn't care yet → maybe at the end of the Book"; note 15: "is this a better name than ZX developer?"; and the notes that became the book's decisions that day: "WRONG" over "not a version", "this is an RC which will be added to Leanpub & sold", "this should be a release → not a draft". Each note is grouped by theme, with what it means. From the book's site, RC2 on paper, batch 2.
+Page 4 of the printed release candidate, with the agent's callouts on each handwritten note, grouped by theme.
 
 The same day I recorded the memo for [you are a developer](you-are-a-developer.md), and the book's site recorded [decision 019](https://gen-z-developers.sgit.ai/decisions/index.html#the-title-is-generation-zx-founders-genai-edition): the book is now *Generation ZX Founders (GenAI Edition)*. The idea started as a question in a margin and was a decision the same day, with every step on the record. Other notes on the same page became decisions too: that a release candidate is a release, shipped and sold now, and that this is a new book, not a second edition.
 

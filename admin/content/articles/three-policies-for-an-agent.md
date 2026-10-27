@@ -10,7 +10,7 @@ tags: agents, agent-behaviour-policy, agent-decision-policy, agent-workflow-poli
 status: published
 ---
 
-!shot dn-three.webp | images/ | The three policies, behaviour, decision and workflow, each with the question it answers; and one ABP row from the SGit memory adapter merged into Ruflo's docs, delete.memory.project with mandate approval, zoomed in: today the row says only that a human must approve, so the answer is stop; zoomed in, it holds a decision policy (who decides, on what evidence, within what envelope, with a record) and a workflow (request, verify the checkpoint, approve or refuse, delete, record). | concept
+!shot dn-three.webp | images/ | The three policies, behaviour, decision and workflow, and one ABP row, delete.memory.project, zoomed in. | concept
 
 !trail decision-policy
 

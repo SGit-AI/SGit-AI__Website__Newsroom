@@ -10,11 +10,11 @@
 
 # Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.2.0, 3 versions](versions/inside-kitewing-websites.md) · [newsroom v0.13.96](https://newsroom.sgit.ai/admin/versions.html) · websitesvaultssgitdemosbusiness-modelsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.3.0, 4 versions](versions/inside-kitewing-websites.md) · [newsroom v0.13.96](https://newsroom.sgit.ai/admin/versions.html) · websitesvaultssgitdemosbusiness-modelsarticle
 
 ***Abstract:** To make the model in websites you own concrete, the agents built a mock-up of it. Kitewing Websites is a made-up studio that sells exactly that offer: setup of three accounts the client owns, a build from the client's own material with designs to choose from, QA, a handover, and nothing monthly. Next to it are three made-up client sites in a made-up town called Harrowby, chosen because they are the kinds of site that sound complicated and are easy for an agent to maintain: Tidewrack Studio Pottery, a catalogue of 28 pieces with filters; Fennick Lane Community Garden, with a season of events, a volunteer rota and 14 growing guides; and Quillon Heat & Plumbing, a local trade with a map of the villages it covers and 19 household guides. Each is one HTML file with its words and data in a JSON file beside it, no external requests, no fonts or images to fetch, and each looks different. They are built as vault apps, so each can live in an encrypted sgit vault, and the studio's vault holds the three examples inside it: a vault in a vault. The four vaults are pushed and published with their public read keys, and the four sites are also served here, as previews.*
 
-Kitewing Websites and its three example clients, all made up: the studio's own site, "a website you own, and can talk to"; Tidewrack Studio Pottery, a catalogue in clay and sea-grey; Fennick Lane Community Garden, in leaf green and sunflower yellow; and Quillon Heat & Plumbing, in navy and safety orange.
+Kitewing Websites and its three example clients, all made up: the studio's own site and three client sites.
 
 Websites you own: the idea, the tour, and four vaults to open
 
@@ -41,7 +41,7 @@ Why rent is the wrong model, then a made-up studio that sells the alternative an
 
 ## Kitewing Websites
 
-The studio's own site: the offer in five steps, setup, build, choose a design, QA and handover; one-off packages as hypotheses, a simple site £500, a larger site £1,000, a lift and shift £200 to £1,000; a domain for a year and blocks of hours as extras; and why there is no monthly fee.
+The studio's own site: the offer in five steps, the one-off packages, the extras, and why there is no monthly fee.
 
 [Kitewing Websites](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/index.html) is the studio, and its site is the offer: "A website you own, and can talk to." It explains the five steps, what you pay, what you own, why there is no monthly fee, the lift and shift, and the examples, with a frequently asked questions section that answers the obvious ones: is there a page limit (no), what if the AI gets it wrong (GitHub keeps every version, so you can undo), what if I want help (buy a block of hours), and can I leave (there is nothing to leave: it is all yours). The prices are labelled as hypotheses, for a demonstration.
 
@@ -49,13 +49,13 @@ The studio's own site: the offer in five steps, setup, build, choose a design, Q
 
 The examples were chosen because they are the kinds of site that sound complicated and are easy for an agent to maintain: a lot of products, a lot of community things, a lot of guidance. All three live in the made-up town of Harrowby.
 
-Tidewrack Studio Pottery, a ceramicist's catalogue: 28 pieces drawn in their glazes, filtered by kind and glaze, each with a reference, size and a price or "price on enquiry", and an enquiry note instead of a checkout; plus the maker, the glazes, classes, open studio days and a care guide.
+Tidewrack Studio Pottery, a ceramicist's catalogue of 28 pieces, with the maker, the glazes and classes.
 
 - **[Tidewrack Studio Pottery](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/tidewrack-pottery/index.html)** is a catalogue: 28 pieces, mugs, bowls, vases and plates, each drawn in its glaze, filtered by kind and glaze, with a price or "price on enquiry". There is no checkout, on purpose: you enquire in the studio. That keeps the site static, which is what a brochure or catalogue on GitHub Pages should be.
-Fennick Lane Community Garden: what the garden grows, the plots and the waiting list, a season of 15 events filtered by month and type, a volunteer rota, news, and 14 growing guides that open in a reader view.
+Fennick Lane Community Garden: what it grows, the plots and waiting list, events, a rota, news and growing guides.
 
 - **[Fennick Lane Community Garden](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/fennick-lane-garden/index.html)** is a community group: what it grows, the plots and the waiting list, a season of 15 events, a volunteer rota, news, and 14 growing guides that open in a reader.
-Quillon Heat & Plumbing: services, the areas it covers on a sketch map, how to book, what to do in an emergency, and 19 household guides, each marked as general guidance for a demonstration, not professional advice.
+Quillon Heat & Plumbing: services, the areas covered on a sketch map, how to book and 19 household guides.
 
 - **[Quillon Heat & Plumbing](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/quillon-heating/index.html)** is a local trade: eight services, a clickable sketch map of Harrowby and ten villages, how to book, what to do in an emergency, and a library of 19 household guides, searchable and filtered by topic. Every guide is marked as general guidance for a demonstration, not professional advice, and anything to do with gas sends you to a registered engineer. There are no reviews or testimonials: they would have been invented.
 

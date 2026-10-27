@@ -10,13 +10,14 @@
 
 # Versions of: A secure rule, applied literally
 
-1 published version of [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](../a-secure-rule-applied-literally.md). The current one is **v1.0.0**.
+2 published versions of [A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask](../a-secure-rule-applied-literally.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 1,819 | first published | [`4f1aed799`](https://github.com/SGit-AI/SGit-AI__Website/commit/4f1aed799604adca8e4378cbd59a461b73174985) | [current](../a-secure-rule-applied-literally.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,680 | +0 / −139 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-secure-rule-applied-literally/v1.1.0.md) · [current](../a-secure-rule-applied-literally.md) |
+| **v1.0.0** | 2026-10-25 | published | 1,819 | first published | [`4f1aed799`](https://github.com/SGit-AI/SGit-AI__Website/commit/4f1aed799604adca8e4378cbd59a461b73174985) |  |
 
 [← Back to the article](../a-secure-rule-applied-literally.md) · [All articles](../index.md)
 

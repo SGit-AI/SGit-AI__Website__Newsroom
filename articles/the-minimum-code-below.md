@@ -10,11 +10,11 @@
 
 # The minimum code below: container security from the top down, from the user story to the immutable line, measured on one real tool
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/the-minimum-code-below.md) · [newsroom v0.12.38](https://newsroom.sgit.ai/admin/versions.html) · containerssupply-chainattack-surfaceminimisationchainguardfractal-semantic-graphscode-coveragehigh-assurancepythonarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/the-minimum-code-below.md) · [newsroom v0.12.38](https://newsroom.sgit.ai/admin/versions.html) · containerssupply-chainattack-surfaceminimisationchainguardfractal-semantic-graphscode-coveragehigh-assurancepythonarticle
 
 ***Abstract:** A conversation at Chainguard's event today sharpened something I have thought for a while. Chainguard does security from the bottom up, and does it very well: it rebuilds the operating system and the libraries from source, keeps the images minimal and manages the whole process. But even the most locked-down image still holds a great deal of code the application never runs, the assurance still depends on testing, and the loop that caused the problem in the first place is still there: when something breaks, you give it more. As soon as the work reaches the application, it stops. My proposal is to come from the other end. Start from the user story and, at every layer down, ask one question: what is the minimum code below this that the layer above needs? Keep that, remove everything else, and draw the immutable line as high as the evidence allows. It did not scale before; with models and fractal semantic graphs, it can. I measured it for this article on a real tool, sgit and its dependencies, running a CI-style use case under coverage and then running it again from a tree holding only the files that ran. Of 1,500 files, 428 were kept, and the use case passed; commands outside it failed because their code was not there. It also showed the limits: one compiled binary held three quarters of the bytes and no coverage tool can see inside it, and coverage missed a compiled module the tests then caught. Tools that minimise containers at run time already exist, so the new part is the direction: from what the application is for, through a graph, down to a build that can be certified. Chainguard is unusually well placed to offer it, and someone will build it.*
 
-Top down, one question at every layer: what is the minimum code below this that the layer above needs? From a user story, through the workflow, modules and functions, to the dependencies, the language runtime and the operating system. Projected from the top, derived from the code; derived and not projected is code nobody asked for.
+Top down, one question at every layer: what is the minimum code below this that the layer above needs?
 
 Less code: a series in four parts
 
@@ -58,7 +58,7 @@ What it kills is living off the land. An attacker who gets into a process uses w
 
 ## Measured on one real tool
 
-One use case, measured. sgit 0.21.0 and its dependencies, run under coverage for a CI-style use case, then run again from a tree holding only the files that ran: 1,500 files down to 428, Python source from 4.72 MB to 1.98 MB, compiled code unchanged at 14.78 MB. Inside the kept files 38% of the statements ran; commands outside the use case failed; coverage missed a compiled module the tests caught.
+One use case, measured: sgit 0.21.0 and its dependencies before and after keeping only the files that ran.
 
 Years ago I did a version of this by hand. I had a Python application with close to full code coverage, ran the coverage across the dependencies as well as my own code, took every file the coverage had touched, built a new package from only those, and deployed it. It worked. I used it to shrink Python deployments for Lambda functions, and the cut, as I remember it, was close to 90% of the dependency code.
 
@@ -86,7 +86,7 @@ And it is deterministic where it matters. The graph says what should be kept; th
 
 ## Who does what today
 
-Three ways to get to less code. Bottom up and hardened, as Chainguard does; runtime minimisation, as SlimToolkit and RapidFort do; and top down by use case, proposed here, which starts from what the application is for and ties every remaining line to a reason.
+Three ways to get to less code: bottom up and hardened, runtime minimisation, and top down by use case.
 
 I said it never scaled before, and that needs a correction: minimising containers is a real field already. [SlimToolkit](https://github.com/slimtoolkit/slim), formerly DockerSlim and now a CNCF Sandbox project, runs a container, watches what it touches and builds a smaller image, by up to 30 times in its own words. [RapidFort](https://www.rapidfort.com/) profiles applications at run time and removes the components that never run, and reports large reductions in attack surface and in vulnerabilities; those are its own figures.
 

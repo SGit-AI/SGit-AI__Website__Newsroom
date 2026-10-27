@@ -10,11 +10,11 @@
 
 # Start a company: the UK, where it takes an afternoon, Portugal, where I learned the hard way, and Lithuania, where I would like to go next
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/start-a-company.md) · [newsroom v0.12.128](https://newsroom.sgit.ai/admin/versions.html) · startupscompanieseuropegen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/start-a-company.md) · [newsroom v0.12.128](https://newsroom.sgit.ai/admin/versions.html) · startupscompanieseuropegen-z-bookarticle
 
 ***Abstract:** If you are an entrepreneur, start a company, as soon as you have a bit of revenue to put through it. It is more professional, it lets you register for things and keep your work and your intellectual property in one place, and above all it is something a founder has to learn: how companies work, how to read a balance sheet, how shares and the rules between shareholders are set. There is no magic to it. A company is governed by a set of contracts, which today we can read in detail, draw as infographics and make sure are in our favour, and the founder who understands them can bring the rules of the game instead of being played by them. Where you do it matters. In the UK it takes an afternoon: £100 online, model articles by default, and very little to do until you start making real money. In Portugal, forming one is just as quick, but keeping one costs a certified accountant every month, by law, even with no trading, which is why I am closing mine. Lithuania looks as if it has thought this through, and its e-residency is where I would like to look next. I count what I paid in Portugal as the cost of learning. And the first thing to do with the company is the same as before you have one: sell.*
 
-Three ways to start a company, side by side. The UK, the one I know well: about £100 online, usually within a day, model articles by default, and little to do until there is real trade. Portugal, where I learned the hard way: just as quick to form, but a certified accountant is required by law from the first month, about €200 to €300 a month in my case, trading or not. Lithuania, where I would like to go next: e-residency for a digital identity and signature, a small partnership with no minimum capital, and a registered address still needed.
+Three ways to start a company, side by side: the UK, Portugal and Lithuania.
 
 ## In short
 

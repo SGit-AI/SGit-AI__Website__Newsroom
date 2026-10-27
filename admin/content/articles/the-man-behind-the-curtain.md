@@ -10,7 +10,7 @@ tags: email, agents, human-in-the-loop, wizard-of-oz, writing, newsroom, article
 status: published
 ---
 
-!shot mc-curtain.webp | images/ | In front of the curtain, what the person receiving the email sees: one email, in my name. Behind it, two things. The agents: they draft the reply, follow up the thread, map what was said in a CRM, collect the evidence and keep track of what is owed. And me: I read every draft, use it to think, change it, often ask for an article so the answer has evidence behind it, and then send it. The agents send nothing. | architecture
+!shot mc-curtain.webp | images/ | In front of the curtain, one email in my name; behind it, the agents that draft and track, and me. | architecture
 
 ## In short {#in-short}
 
@@ -50,7 +50,7 @@ Some of the articles on this site started exactly like that. [What can your agen
 
 Someone pointed out to me that they had sent me an email of about two hundred words and got back something closer to two thousand. Fair. But it works, because I only have to write it once. The next person who asks the same question gets a link. The article can be read later, forwarded to a colleague, checked against its sources, and [corrected as a new version](/articles/my-memory-checked.html) when I learn more, none of which an email can do. Each answer makes the next one cheaper.
 
-!shot mc-scale.webp | images/ | One article, many emails. On the left, emails arriving with questions, a few hundred words each. In the middle, the test: is there an article that answers this? If yes, the reply is short and links it. If no, the agents write one and check it against its sources, it is published, I read it, and the reply links it. On the right, the article: written once, linked from every later reply, read later, forwarded, corrected as new versions. | concept
+!shot mc-scale.webp | images/ | One article, many emails: questions arriving, the test of whether an article answers them, and the article itself. | concept
 
 ## Every part of an email buys the next {#buys}
 
@@ -71,7 +71,7 @@ So the changes for the agents that draft my emails are:
 
 We are starting to try variations of the first email, and I will report what we learn.
 
-!shot mc-buys.webp | images/ | Every part of an email buys the next. The subject buys the first line, which buys the first paragraph, which buys the email, which buys the article. Below, the same first email two ways: starting with a banner, where the inbox preview shows the banner's text; and starting with a plain paragraph that answers the question, where the preview is the answer. | concept
+!shot mc-buys.webp | images/ | Every part of an email buys the next, and the same first email two ways: a banner, or a plain paragraph. | concept
 
 ## The memo is where the thinking happens {#memo}
 

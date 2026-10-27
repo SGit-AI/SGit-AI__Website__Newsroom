@@ -10,7 +10,7 @@ tags: wardley-maps, explorers, villagers, town-planners, citizen-developer, fire
 status: published
 ---
 
-!shot vt-map.webp | images/ | A product as explorers, villagers and town planners: users explore on top, talking to the app, keeping a personal version and writing the best brief the vendor will get; the vendor maintains customisations and turns popular ones into features; the core is a set of primitives, deterministic and accountable. | architecture
+!shot vt-map.webp | images/ | A product as explorers, villagers and town planners: users on top, the vendor in the middle, primitives at the core. | architecture
 
 ## In short {#in-short}
 
@@ -56,7 +56,7 @@ Mozilla is, to be fair, moving closer. On 12 October it [introduced Firefox Ente
 
 So here is the offer. Let me tell Firefox what I want, in words. Let an agent make my version, in a sandbox, reversible. And then charge me to keep it working: per version, per change, or a small subscription. Every one of those changes is also a signal of what users want, better than any survey. [A custom Firefox of my own](/articles/a-custom-firefox-of-my-own.html) works through the plan, and [explorer coding](/articles/explorer-coding.html) is the name I would give the first step.
 
-!shot vt-tiers.webp | images/ | Four ways a user would pay the vendor: explore, free or a pound a month; keep, ten to fifty pounds a year for changes maintained across releases; adopt, fifty to five hundred pounds a change built properly; own, a maintained fork by contract. | comparison
+!shot vt-tiers.webp | images/ | Four ways a user would pay the vendor: explore, keep, adopt and own, with a price range for each. | comparison
 
 ## Settings are not the answer {#settings}
 

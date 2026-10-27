@@ -10,11 +10,11 @@
 
 # Signed by the source: asking the people and companies we quote to sign that we represent them correctly, why that is cheaper than every reader checking, and how readers go on the record too
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.0.0](versions/signed-by-the-source.md) · [newsroom v0.13.67](https://newsroom.sgit.ai/admin/versions.html) · provenancesignaturespkipeer-revieweconomicsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.1.0, 2 versions](versions/signed-by-the-source.md) · [newsroom v0.13.67](https://newsroom.sgit.ai/admin/versions.html) · provenancesignaturespkipeer-revieweconomicsarticle
 
 ***Abstract:** Every article here is built on sources: papers, pages, government notices, company statements. Today, the only way to know that an article represents a source correctly is for someone downstream to check: a domain expert, or an agent with the right context, loading the article and every reference and mapping one to the other. That costs hours of human time or a lot of tokens, it is repeated by every reader, and it is done by someone who is not the best person to judge. The best person is the source. So I want to ask the people and companies we quote to review how we used their work, add a caveat where needed ("70%, but only of these"), and sign it with a key their own website vouches for. Every reader after that checks one signature and how much they trust the signer. Where an article earns money, the source should be paid to verify, as some journals now pay reviewers. Most of the pieces exist: the Pen on every article, signed notes checked against the register at pki.sgit.ai, sign in with a key, and a way for a domain to prove which key is its own. In my memo I said pki.sgit.ai's latest work was federation between organisations; it is not, and that part is still a proposal. Readers and researchers can go on the record too, with signed reviews and notes. I want to start with individuals, then companies.*
 
-Who is best placed to check a claim: today every reader, or an agent with the right context, loads the article and the source and maps one to the other, hours of work or a lot of tokens, repeated by every reader; instead, the author of the source reads how it is used, adds a caveat if needed, and signs it once, and every reader after that checks one signature.
+Who should check a claim: every reader today, or the author of the source signing it once.
 
 ## In short
 
@@ -39,7 +39,7 @@ The best person is the source: the author of the paper, the team that wrote the 
 
 So here is the idea. When an article uses someone's work, we ask them. We send them the passage, with its hash and the links it relies on, and one question: is this a fair representation of what you said? They can agree. They can disagree. Or, most usefully, they can add the caveat that makes it correct: "yes, 70%, but only of these", or "that was true of the first version, not the second". And then they sign it, with their own key.
 
-Signed by the source, the workflow: the article quotes or summarises a source; the newsroom sends the source the passage with its hash and links; the source agrees or adds the caveat that makes it correct; the source signs the passage with a key its own website vouches for; and a reader or an agent checks the signature and the signer's standing, without loading every reference. Paid where it earns money, and open to readers and researchers going on the record too.
+Signed by the source, the workflow: from the article quoting a source to a reader checking the signature.
 
 ## Why the economics work
 

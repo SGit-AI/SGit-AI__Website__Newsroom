@@ -10,11 +10,11 @@
 
 # The citizen developer is good news: the spreadsheet grown up, the best briefs ever written, and the handover from explorers to villagers and town planners that makes them last
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/the-citizen-developer.md) · [newsroom v0.12.54](https://newsroom.sgit.ai/admin/versions.html) · citizen-developervibe-codingspreadsheetswardley-mapsvillagerstown-plannersvault-appssgitempowermentarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/the-citizen-developer.md) · [newsroom v0.12.54](https://newsroom.sgit.ai/admin/versions.html) · citizen-developervibe-codingspreadsheetswardley-mapsvillagerstown-plannersvault-appssgitempowermentarticle
 
 ***Abstract:** At a conference today the phrase "citizen developer" came up as a worry, the new name for people outside IT building things they should not. I think it is one of the best things to happen to software, and a better way to talk about what is usually called vibe coding. It is not only citizens: it is the employee, the business owner, the expert, the person who knows the work. People have always built with what they controlled, and for most of them that was a spreadsheet; spreadsheets are full of errors, and the world runs on them anyway, because they were the only tool people had. Now they can build full applications, and those applications are also the best briefs ever written: what the user actually wants, in a form that runs. The work is the handover, from the explorer who built it to the villagers who harden it and the town planners who make it scale, with all the non-functional requirements the explorer never had to think about. Encrypted, versioned vaults are a natural carrier for that: a mini app with its UI and its data in one place, which is what a spreadsheet always was, with history, keys and a clean handover added. Done well, this lets people, organisations and even countries move from rent-seeking, control-based software to tools that serve them, which is also the direction of the business models this newsroom is testing.*
 
-From the spreadsheet to the town planners: the citizen developer's path. People built with what they controlled, a spreadsheet; now they build the application they need, which is also the best brief ever written; villagers harden it and town planners make it scale, and an sgit vault carries the app and its data through every handover.
+From the spreadsheet to the town planners: the citizen developer's path.
 
 ## In short
 

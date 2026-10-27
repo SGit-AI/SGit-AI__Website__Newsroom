@@ -10,7 +10,7 @@ tags: human-in-the-loop, agents, agency, approval-fatigue, agent-behaviour-polic
 status: published
 ---
 
-!shot hl-where.webp | images/ | Where the person belongs. Two questions place every output an agent produces: can it be undone, and how much would it cost if it went wrong. The person goes where the answers are no and a lot. Everywhere else, controls that do not get tired do the checking, and the person reads the record afterwards. Examples from the newsroom and from my own agent team. | decision
+!shot hl-where.webp | images/ | Where the person belongs: two questions place every output an agent produces, can it be undone, and what it would cost. | decision
 
 > **What came next.** [The human in the loop is a spectrum](/articles/how-cheap-is-it-to-undo.html) takes the last section further: why this newsroom ships on its own while my email waits for me, and how both of those can move.
 
@@ -48,7 +48,7 @@ Everywhere else, the person is the wrong control.
 
 ## Replace the other checks with controls that do not get tired {#controls}
 
-!shot hl-production.webp | images/ | How far I have got in production, as it ran on 13 October 2026. For each kind of output, who or what checks it before it counts, and what happens afterwards. Only two rows have a person before the fact. | comparison
+!shot hl-production.webp | images/ | How far I have got in production, as it ran on 13 October 2026, with who or what checks each kind of output. | comparison
 
 An article on this site is a good example, because it can be undone: a correction is a new version, with a page that shows what changed. So nobody approves an article before it goes live. What stands in the way instead is a set of controls that never get tired: a validator that fails the build on a broken link, a quote that is not word for word in its source, a banned word or a missing figure; browser tests; a leak scan on every commit that refuses a key or a name on the private list. I read every article, but I read it after it is live, and what I find becomes a new version and, if it is about wording, a rule.
 

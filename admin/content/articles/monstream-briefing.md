@@ -10,7 +10,7 @@ tags: research, monitoring, agents, apis, integrations, briefing, article
 status: published
 ---
 
-!shot mn-pages.webp | images/ | Monstream on 25 October 2026: the home page, where AI agents read sources against your rules and send what matters with short summaries and original sources; Discover, with 116 public streams, the largest with 24 subscribers; and the Integration API, with streams named by your own id, finds and webhooks. | screenshot
+!shot mn-pages.webp | images/ | Monstream on 25 October 2026: the home page, Discover with 116 public streams, and the Integration API. | screenshot
 
 ## In short {#in-short}
 
@@ -75,7 +75,7 @@ You asked what it currently has on the PHP incident. In Discover, nothing: none 
 
 ## How we could use it {#use}
 
-!shot mn-flow.webp | images/ | How Monstream could feed our newsrooms, through its documented API: a stream per story we follow, named by our own id; finds pushed to us by a signed webhook, or pulled; each find captured by our researcher into the source watch as a lead, not evidence; checked by the curator and the journalist; and our verdicts sent back as feedback on each find. Proposed, not built. | process
+!shot mn-flow.webp | images/ | How Monstream could feed our newsrooms through its documented API, from streams to our verdicts. Proposed, not built. | process
 
 Our job is to integrate, leverage and connect as much as we can, and Monstream fits that well:
 

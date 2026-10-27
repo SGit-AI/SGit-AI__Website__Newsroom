@@ -10,7 +10,7 @@ tags: security, agents, credentials, risk, abp, article
 status: published
 ---
 
-!shot kr-pellbridge.webp | images/ | Pellbridge's day through one question: would hiding the keys have stopped it? Of nine incidents, a gateway that injects credentials touches two, the readable bureau key and the ops-batch secret. The other seven are about what the agent may do: a payment, an email, an alert, a standing order, a trade record, advice. | comparison
+!shot kr-pellbridge.webp | images/ | Pellbridge's day through one question: would hiding the keys have stopped it? Two of nine incidents, yes. | comparison
 
 ## In short {#in-short}
 
@@ -53,7 +53,7 @@ The same holds for the gaps: 4 of the 13 involve a credential, 9 are about what 
 
 ## What a proxy can and cannot see {#proxy}
 
-!shot kr-pattern.webp | images/ | Credential injection, and where the risk goes: the agent holds no key, the gateway adds it on the way out from a credential store, to public APIs and internal systems. A hidden instruction that makes the agent ask for the wrong payment still gets its key added. Our drawing of the pattern. | concept
+!shot kr-pattern.webp | images/ | Credential injection: the agent holds no key, and the gateway adds it on the way out. Our drawing of the pattern. | concept
 
 The series does have a policy step: "A policy decides whether the call is allowed; if so, inject the sensitive credentials." And Part 2.5 makes a version of my point itself: "the attacker who actually shows up doesn't need to decrypt the store anyway." So the question is what that policy can know. Could the proxy in the middle understand the business logic, and block the wrong payment? In principle, yes: it would act as a controller. In practice it is hard. To decide, it needs state and context, and the state usually lives in the application, not in the proxy. These proxies are products placed outside the application's domain, so even when they want to decide, they do not have the data. Imagine a proxy deciding about a customer when all it can see is the request in front of it; and the request is probably well formed, because the agent was tricked into a valid action. That is the catch.
 
@@ -67,7 +67,7 @@ If all it does is protect secrets and a few transactions, I do not think that is
 
 ## The questions, in order {#questions}
 
-!shot kr-questions.webp | images/ | Five questions before protecting a key: can an attacker reach the target with it; would we see it used; what can the key do; what can an injected agent do without it; what does the control cost. Then defence in depth. | concept
+!shot kr-questions.webp | images/ | Five questions to ask before protecting a key, followed by defence in depth. | concept
 
 Securing secrets this way is attractive because it is technically simple: put a proxy in, inject the key. That does not make it the first thing to do. My point is the one Risk Mandate is built on: look at the whole use case, end to end, map the real threats, and then check whether a control moves the needle. In this case:
 

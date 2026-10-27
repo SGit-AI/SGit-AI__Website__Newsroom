@@ -10,13 +10,14 @@
 
 # Versions of: An agent that may only chat
 
-2 published versions of [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](../an-agent-that-may-only-chat.md). The current one is **v1.1.0**.
+3 published versions of [An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone](../an-agent-that-may-only-chat.md). The current one is **v1.2.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-23 | minor | 4,220 | +1,412 / −0 words; 0 changed, 39 added, 0 removed paragraphs | [`afc547de5`](https://github.com/SGit-AI/SGit-AI__Website/commit/afc547de55e443ad44060a4cb2baf71531e7acd7) | [what changed](an-agent-that-may-only-chat/v1.1.0.md) · [current](../an-agent-that-may-only-chat.md) |
+| **v1.2.0** | 2026-10-27 | minor | 3,976 | +0 / −244 words; 6 changed, 0 added, 0 removed paragraphs | this release | [what changed](an-agent-that-may-only-chat/v1.2.0.md) · [current](../an-agent-that-may-only-chat.md) |
+| **v1.1.0** | 2026-10-23 | minor | 4,220 | +1,412 / −0 words; 0 changed, 39 added, 0 removed paragraphs | [`afc547de5`](https://github.com/SGit-AI/SGit-AI__Website/commit/afc547de55e443ad44060a4cb2baf71531e7acd7) | [what changed](an-agent-that-may-only-chat/v1.1.0.md) |
 | **v1.0.0** | 2026-10-23 | published | 2,808 | first published | [`f18455477`](https://github.com/SGit-AI/SGit-AI__Website/commit/f18455477de46f188edd45bc8ffc49f9b11c4228) |  |
 
 [← Back to the article](../an-agent-that-may-only-chat.md) · [All articles](../index.md)

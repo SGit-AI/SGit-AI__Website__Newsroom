@@ -10,11 +10,11 @@
 
 # Local trust, certified upwards: why local and niche publishers should take everything that has become commodity, certify the big outlets' stories about their patch and be paid for it, and why stories, like software, need someone to maintain them
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/local-trust-certified-upwards.md) · [newsroom v0.13.76](https://newsroom.sgit.ai/admin/versions.html) · newslocal-newsbusiness-modelstrustprovenanceopen-bankingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/local-trust-certified-upwards.md) · [newsroom v0.13.76](https://newsroom.sgit.ai/admin/versions.html) · newslocal-newsbusiness-modelstrustprovenanceopen-bankingarticle
 
 ***Abstract:** The companion to my reply to Bert Kok. The publishers with the most to gain from AI are not the big generic ones but the local and the niche: the ones close to their readers, in their language and culture, with real expertise. They own the reader's trust, and trust is where the value is now. Such a publisher can take everything that has become commodity, the weather, sport results from official sources, the big outlets' global news, and serve it to its readers from their point of view, captured and kept current by agents. And it can certify upwards: when a big outlet runs a story about its area, the local journalists are the ones who can say whether it is right, and should be paid for saying so. A story with no local source behind it reads as a shadow, and readers will go to the source. This needs open interfaces, as the Competition and Markets Authority forced UK banks to open theirs from 2018, and it needs a map of who reports and who recycles, where a newsroom that cuts its experts shows it. Stories, like software, go off if nobody maintains them, and the same argument I made for maintainers applies to journalists: whoever does the expert work should be the one who is paid and the one who signs off.*
 
-Local trust, certified upwards: a local or niche publisher at the centre, owning the trust, the expertise and the stack; flowing in, facts that are commodity, the big outlets' global news told from its audience's point of view, and other local and niche sources, credited; flowing up, certification of the big outlets' stories about its area, paid per use, and a record of who reports and who recycles; and below, the reader, who trusts it, pays it and tells it what is missing.
+Local trust, certified upwards: a local publisher at the centre, with what flows in, what flows up and the reader below.
 
 ## In short
 
@@ -65,7 +65,7 @@ That last point matters because stories need maintaining. As I argued in [source
 
 ## The same argument as for software
 
-The same argument, twice: in software, the maintainer does the expert work, signs off the version you run, is free-ridden by everyone who runs it unpaid, maintains patches for years, and when they leave nobody can fix it; in news, the journalist or local expert does the expert work, signs off the story and its facts, is free-ridden by outlets that recycle without a source, maintains the story's facts as they change, and when they leave nobody vouches for it. In both, the money should flow to them.
+The same argument twice: in software, the maintainer; in news, the local expert. In both, money should flow to them.
 
 This is exactly the argument I made about software in [who maintains the PHP you run?](https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html). The maintainer, the person who knows the code, should be paid, and should sign off the version you run. The journalist, the expert who takes the time to understand something, should be paid, and should sign off the stories that rest on their work. In both cases the free-riders are invisible today, and in both cases the damage shows only when the expert has gone and nobody can fix, or vouch for, what is left. Making [who signs for what](https://newsroom.sgit.ai/articles/who-signs-for-this.html) visible is how both get funded.
 

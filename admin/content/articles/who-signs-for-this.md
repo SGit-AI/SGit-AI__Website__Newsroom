@@ -10,7 +10,7 @@ tags: accountability, signatures, attestation, supply-chain, maintenance, fracta
 status: published
 ---
 
-!shot ky-map.webp | images/ | Who signs for each layer: an accountability map from the business to the hardware. Each line says what is claimed, whether it is measured or declared, and who signs it: the business owner for the contract, the product owner for what was delivered, a maintainer for the code that goes live and the release, the platform team for the process, the cloud provider for the platform, a hardware root and a verifier for the device. The building, who can reach it and what is plugged in, is signed by nobody: a blind spot. An illustration of the argument, not an audit of any system. | concept
+!shot ky-map.webp | images/ | An accountability map from the business to the hardware: who signs each layer, with the building signed by nobody. | concept
 
 ## In short {#in-short}
 
@@ -24,7 +24,7 @@ status: published
 
 ## The thread {#thread}
 
-!shot ky-thread.webp | images/ | The LinkedIn thread under my post sharing "Who maintains the PHP you run?", 24 October 2026: Andrey Lazarev on what a maintainer's signature does and does not prove, my replies, and his split between what a device can measure and what an operator or auditor has to declare. | small | aside
+!shot ky-thread.webp | images/ | The LinkedIn thread under my post sharing "Who maintains the PHP you run?", 24 October 2026. | small | aside
 
 I shared [who maintains the PHP you run?](https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html) on LinkedIn, and it started a thread worth more than a reply. Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, wrote:
 
@@ -62,7 +62,7 @@ The declared lines are the rest: who can reach the machine, what network it sits
 
 ## A fractal graph of signed certificates {#fractal}
 
-!shot ky-fractal.webp | images/ | Every signed line is a graph of its own: the line "the device: this is what actually booted", signed by a verifier, opens into the measurement, the reference it should match, the verifier who checked one against the other, and the endorsement of the hardware root. The same holds in every domain: the business, the product, the code, the release, the platform, the device. Each opening ends in somebody who signed, or in a blind spot. | concept
+!shot ky-fractal.webp | images/ | Every signed line is a graph of its own: the device line opens into measurement, reference, verifier and endorsement. | concept
 
 This is why I call it fractal. It is the same idea as [fractal semantic graphs](https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html): there are multiple universes, multiple domains, each a graph that can be opened into more graph. Here the domains are hardware, software, business applications and even business contracts. Is the application actually doing what it is supposed to do? Have the business owners signed that? Have the product owners signed what was delivered? Has someone read the code that went live? Is the release the one the maintainers stand behind? Is it what booted? Every one of those is a line, every line has a signer, and every signature can be opened into its own graph of evidence and the people who stand behind it.
 

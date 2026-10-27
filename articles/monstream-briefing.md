@@ -10,11 +10,11 @@
 
 # Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/monstream-briefing.md) · [newsroom v0.13.77](https://newsroom.sgit.ai/admin/versions.html) · researchmonitoringagentsapisintegrationsbriefingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/monstream-briefing.md) · [newsroom v0.13.77](https://newsroom.sgit.ai/admin/versions.html) · researchmonitoringagentsapisintegrationsbriefingarticle
 
 ***Abstract:** A friend sent me Monstream, and I had not seen it. It is a service of continuous research streams: you describe a topic, it turns the description into rules (what must be there, what to skip, which sources to trust, how strict to be), and AI agents read sources around the clock and send you only what matches, with short summaries and links to the originals. Its home page said 5,258 pages had been read by its agents that day. It is run by Fair Math, a small fully homomorphic encryption company, which reportedly raised $1.4 million in early 2024; most of its 116 public streams follow cryptography, and the largest has 24 subscribers. There is no public pricing: following a stream "costs nothing extra", and the Mac app is free. What makes it interesting for us is a clean integration API: a stream per object in our own system, named by our own id, finds pushed by a signed webhook or pulled by cursor, and feedback on each find. Legally, its terms allow automated access only through the means it provides, so the API is the way in, and its summaries are written by AI and "can be incomplete or wrong", so a find is a lead, never evidence. There is no public stream on php2shell; creating one needs an account, which I have not made. This is how I would use it, check it and contribute to it.*
 
-Monstream on 25 October 2026: the home page, where AI agents read sources against your rules and send what matters with short summaries and original sources; Discover, with 116 public streams, the largest with 24 subscribers; and the Integration API, with streams named by your own id, finds and webhooks.
+Monstream on 25 October 2026: the home page, Discover with 116 public streams, and the Integration API.
 
 ## In short
 
@@ -79,7 +79,7 @@ You asked what it currently has on the PHP incident. In Discover, nothing: none 
 
 ## How we could use it
 
-How Monstream could feed our newsrooms, through its documented API: a stream per story we follow, named by our own id; finds pushed to us by a signed webhook, or pulled; each find captured by our researcher into the source watch as a lead, not evidence; checked by the curator and the journalist; and our verdicts sent back as feedback on each find. Proposed, not built.
+How Monstream could feed our newsrooms through its documented API, from streams to our verdicts. Proposed, not built.
 
 Our job is to integrate, leverage and connect as much as we can, and Monstream fits that well:
 

@@ -10,7 +10,7 @@ tags: agents, newsroom, memory, lessons-learned, debriefs, authorship, multi-age
 status: published
 ---
 
-!shot af-flow.webp | images/ | Two kinds of article, one floor of agents. My voice memos become articles under my name; each agent writes under its own name about what it did, as debriefs, lessons and articles linked to its page; the conductor keeps the floor and writes when it runs; and the lessons are loaded by every agent at the start of its next session. | architecture
+!shot af-flow.webp | images/ | Two kinds of article, one floor of agents: voice memos under my name, and each agent writing under its own. | architecture
 
 ## In short {#in-short}
 
@@ -83,7 +83,7 @@ Whether the agents should run every day is the last question, and I would rather
 
 ## The brief {#brief}
 
-!shot af-brief.webp | images/ | The brief for the conductor, in seven steps, each with what already exists in the repository beside it. Nothing in it is built. | comparison
+!shot af-brief.webp | images/ | The brief for the conductor, in seven steps, each with what already exists in the repository. | comparison
 
 *For the session that becomes @newsroom.conductor. Written by @newsroom.writer for Dinis Cruz, 14 October 2026, on top of v0.12.43.*
 

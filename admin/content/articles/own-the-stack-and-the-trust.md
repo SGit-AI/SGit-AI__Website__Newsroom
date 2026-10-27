@@ -10,7 +10,7 @@ tags: news, journalism, ai, provenance, open-source, business-models, article
 status: published
 ---
 
-!shot kb-collage.webp | images/ | What we have built, in twelve pages: this newsroom's front page; the PHP October 2026 story site; its state of affairs, versioned; its source watch of 913 pages; Wikipedia's article on the flaw, read as a graph; the control room for its 23 agents; the bridge, a local story kept as a graph; the waiting room that knew first; a desk kept in a vault; the Industry Wire; the World News Day corpus; and Pulse, exploited against talked about. | collage
+!shot kb-collage.webp | images/ | What we have built, in twelve pages, from this newsroom's front page to Pulse. | collage
 
 ## In short {#in-short}
 
@@ -24,7 +24,7 @@ status: published
 
 ## Bert Kok's argument {#his-argument}
 
-!shot kb-post.webp | images/ | Bert Kok's post on LinkedIn, 25 October 2026, sharing the essay for The News Stack: "Publishers may fund the most expensive layer and capture the least valuable". | small | aside
+!shot kb-post.webp | images/ | Bert Kok's post on LinkedIn, 25 October 2026, sharing the essay for The News Stack. | small | aside
 
 [Bert Kok's essay](https://www.linkedin.com/pulse/publishers-may-fund-most-expensive-layer-capture-least-bert-kok-mba-lkgif), published in the newsletter The News Stack on 25 October, starts from a new report by the Tow-Knight Center for Journalism Futures at CUNY, [The Three-Layer Cake](https://www.journalism.cuny.edu/2026/10/tow-knight-center-report-journalisms-future-ai-information/), released on 22 October. The report describes three layers: the products that find out what people want to know, the systems that synthesise answers, and the organisations that produce the underlying reporting.
 
@@ -45,7 +45,7 @@ I replied under the post that I have been thinking along very similar lines, and
 
 ## Agents augment journalists; they do not replace them {#augment}
 
-!shot kb-comment.webp | images/ | My reply under Bert Kok's post, 25 October 2026: thinking along very similar lines, building MVPs that show how the data behind a story can be captured, linked and monetised, and this article to follow. | small | aside
+!shot kb-comment.webp | images/ | A reply under Bert Kok's post, 25 October 2026, about building MVPs for capturing, linking and monetising story data. | small | aside
 
 I want to be clear about what the agents are for, because it is easy to read this as automation replacing reporters. It is the opposite.
 

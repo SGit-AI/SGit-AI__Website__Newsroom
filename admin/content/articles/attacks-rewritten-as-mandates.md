@@ -10,7 +10,7 @@ tags: supply-chain, agents, agent-behaviour-policy, reach, mandate, open-source,
 status: published
 ---
 
-!shot am-ledger.webp | images/ | The ledger. Chainguard's 28 public supply-chain incidents, May 2024 to October 2026, each dot one incident, coloured by its first vector; 23 of them are from 2026. Below, every vector counted, by our reading: an install-time hook ran the payload in 17, a maintainer account or token was taken over in 16. | timeline
+!shot am-ledger.webp | images/ | Chainguard's 28 public supply-chain incidents, May 2024 to October 2026, one dot each, with every vector counted. | timeline
 
 ## In short {#in-short}
 
@@ -46,7 +46,7 @@ By my reading, the other rows have the same shape. A version tag that could be m
 
 ## Two kinds of barrier {#barriers}
 
-!shot am-barriers.webp | images/ | For each of the 28 incidents, the control that would most likely have stopped it, by our reading: on the consumer's side, what you let in; on the publisher's side, what a credential was for. A consumer-side control appears in 26, a publisher-side mandate in 16, both in 14. And one case where the consumer was a model. | comparison
+!shot am-barriers.webp | images/ | For each of the 28 incidents, the control that would most likely have stopped it, by our reading. | comparison
 
 For each incident I wrote down what would most likely have stopped it, and sorted the answers into two kinds.
 
@@ -66,7 +66,7 @@ Read as a policy, that post already has three of the four columns. The reach is 
 
 ## One pipeline, three records {#records}
 
-!shot am-records.webp | images/ | One pipeline, three records: what an agent consumes, what it was allowed to do, and what it produced and remembers. The first has products; the second and third are what RiskMandate and sgit work on. | architecture
+!shot am-records.webp | images/ | One pipeline, three records: what an agent consumes, what it was allowed to do, and what it produced and remembers. | architecture
 
 So I think the supply chain for an agent needs three records, and only the first has a market yet.
 

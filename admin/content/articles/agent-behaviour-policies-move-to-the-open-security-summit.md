@@ -10,7 +10,7 @@ tags: agent-behaviour-policy, open-source, governance, open-security-summit, ris
 status: published
 ---
 
-!shot hp-structure.webp | images/ | The proposed structure: the Open Security Summit CIC as the legal host, a hosted-project programme, Agent Behaviour Policies as its first project, governed by a steering group and maintainers under a charter, with RiskMandate contributing on the same terms as anyone else. | architecture
+!shot hp-structure.webp | images/ | The proposed structure: the Open Security Summit CIC as legal host, with a steering group and maintainers. | architecture
 
 ## In short {#in-short}
 

@@ -10,7 +10,7 @@ tags: agents, ruflo, sgit, vaults, architecture, agent-behaviour-policy, mcp, me
 status: published
 ---
 
-!shot rf-matrix.webp | images/ | Who does what, step by step: the vault is written or read in steps 5, 8 and 11, protected in step 6 and survives step 7; Ruflo's own command line touches memory in steps 3, 9 and 10, where the ABP is not on the path. From the architecture addendum to the analysis of Mondweep Chakravorty's video. | comparison
+!shot rf-matrix.webp | images/ | Who does what, step by step: which steps write or read the vault and which use Ruflo's own command line. | comparison
 
 !trail sgit-ruflo
 
@@ -40,13 +40,13 @@ Throughout, I keep apart what is shown on screen and what is inferred from it, a
 
 ## The component map {#map}
 
-!shot rf-map.webp | images/ | The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the ABP rows are compiled to Ruflo rules and checked by a pinned copy of Ruflo's evaluator in enforce mode, which leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its running policy state and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files. | architecture
+!shot rf-map.webp | images/ | The component map: the test script, Ruflo's command line, the ABP adapter, the SGit library and the vault on disk. | architecture
 
 Two lines run from the test script. One goes to Ruflo's command line, which writes and reads its memory file directly. The other goes to the adapter's tools, `checkpoint`, `inspect`, `restore` and `close_run`, of which the run uses three. Each passes a policy gate, a pinned copy of Ruflo's evaluator running the compiled ABP rules in enforce mode, which fails closed, and through it reaches the SGit library, which writes the vault and keeps the keys apart. Everything happens on one machine's disk.
 
 ## Step 5: the vault is written {#step-5}
 
-!shot rf-stage-05.webp | images/ | Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart. | small | architecture
+!shot rf-stage-05.webp | images/ | Step 5: the checkpoint tool passes the policy gate and the SGit library writes ciphertext to the checkpoint store. | small | architecture
 
 This is where the vault is created. The checkpoint request for the `project` namespace is allowed. The adapter takes a consistent copy of Ruflo's memory file with a SQLite backup, fingerprints it, and SGit stores it encrypted, with the id `2fa35d1b71ce4361b458c8a64f6ec668`.
 
@@ -58,7 +58,7 @@ What goes into the vault is one consistent copy of the memory database, sealed w
 
 ## Step 8: the vault is read {#step-8}
 
-!shot rf-stage-08.webp | images/ | Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5. | narrow | architecture
+!shot rf-stage-08.webp | images/ | Step 8: a new MCP server process restores the checkpoint, and memory.sqlite is written into the fresh-runner workspace. | narrow | architecture
 
 A brand-new adapter process restores the checkpoint into a new workspace, `fresh-runner`. The restored database is byte for byte the one saved in step 5.
 
@@ -68,7 +68,7 @@ A brand-new adapter process restores the checkpoint into a new workspace, `fresh
 
 ## Step 11: the vault is read, and refuses {#step-11}
 
-!shot rf-stage-11.webp | images/ | Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt. | narrow | architecture
+!shot rf-stage-11.webp | images/ | Step 11: one object in the vault is altered, the adapter finds a digest mismatch and no workspace is created. | narrow | architecture
 
 One encrypted object in the vault is altered, and a restore is tried. The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.
 
@@ -82,7 +82,7 @@ In step 6, closing the run would delete memory. That ABP row needs approval, non
 
 ## Where the vault lives {#where}
 
-!shot rf-where.webp | images/ | Where the video's vault lives: on one machine, the adapter and SGit library, the checkpoint store, the private key folder and the workspaces; a vault server was not used. | architecture
+!shot rf-where.webp | images/ | Where the video's vault lives: on one machine, with the adapter, the SGit library, the checkpoint store and the keys. | architecture
 
 Encryption happens on the machine, and the ciphertext stays there. The README says so plainly: no remote push is performed, and remote sync is on its list of follow-ups. So it survives the project being deleted, which is what the video tests. It would not survive the machine being lost, which the video does not claim.
 

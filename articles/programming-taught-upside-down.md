@@ -10,11 +10,11 @@
 
 # Programming, taught upside down: what Lockhart said about maths applies to code, the tools that got the loop right, and why explorer coding finally starts at the right end
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/programming-taught-upside-down.md) · [newsroom v0.13.19](https://newsroom.sgit.ai/admin/versions.html) · gen-z-booklearningprogrammingeducationexplorer-codingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/programming-taught-upside-down.md) · [newsroom v0.13.19](https://newsroom.sgit.ai/admin/versions.html) · gen-z-booklearningprogrammingeducationexplorer-codingarticle
 
 ***Abstract:** In the book I quote Paul Lockhart's A Mathematician's Lament: if you set out to design a system that destroys a child's curiosity about maths, you could not do better than the one we have. I think we do the same thing with programming. It is usually taught upside down: concepts first, functions and structures that make no sense yet, exercises that build nothing anyone uses. Of course people hate it. What hooks a programmer is something else: the ability to control something, to go from a thought to something that works, in a short loop. I learned that way, on a ZX Spectrum, then an Amiga and an x86, meeting each concept when a problem needed it. The tools that taught people well all had that loop: BASIC at the prompt, Visual Basic, the spreadsheet, Scratch, and the Code Clubs in the UK. And when people were taught programming with nothing useful to build, they went back to Excel, and programmed there. Now explorer coding, by voice, starts at the right end: what you want, and seeing it work. Coding is communication with a computer, and I expect people will end up reading more code, not less, and understanding variables and classes because they already need them.*
 
-Programming, taught upside down. Usually: syntax and types, variables and functions, classes and structure, exercises with no purpose, and often nothing useful at the end. How it is learned: something you want to control, make it work and see it work, the concept you need when you need it, and structure because you need it.
+Programming, taught upside down: how it is usually taught, and how it is learned.
 
 ## In short
 
@@ -46,7 +46,7 @@ I was lucky. By the time I was taught any of those concepts, I already knew how 
 
 ## The tools that got the loop right
 
-The tools that got the loop right: BASIC on the ZX Spectrum, Visual Basic, the spreadsheet, Scratch, Code Club, and now explorer coding. Each made the distance from an idea to seeing it work very short.
+The tools that got the loop right, from BASIC on the ZX Spectrum to explorer coding.
 
 The places where I have seen programming taught really well all had that short loop:
 
@@ -57,7 +57,7 @@ The places where I have seen programming taught really well all had that short l
 
 ## The irony: back to Excel
 
-The irony: taught programming with nothing useful to build, people go back to the spreadsheet, and program there anyway. Microsoft calls Excel the world's most widely used programming language.
+The irony: people taught programming with nothing to build go back to the spreadsheet and program there anyway.
 
 The other problem with teaching programming upside down is that people learn it and then do nothing useful with it, so they do not use it day to day. And guess what? They go back to Excel, where they program anyway. That is the irony. Microsoft's own researchers call Excel "the world's most widely used programming language", and in January 2021, with the LAMBDA function, "Excel has become Turing-complete."
 
@@ -71,7 +71,7 @@ And here is what I find interesting. I know entrepreneurs who have been explorer
 
 ## Coding is communication
 
-Coding is communication: voice and briefs, visual blocks, code and its primitives, and the machine underneath. The way in changes; the primitives stay.
+Coding is communication: voice and briefs, visual blocks, code and its primitives, and the machine underneath.
 
 This is the trick we sometimes miss. Coding is communication: speaking to a computer, through an abstraction layer. Each programming language has its own sweet spot.
 

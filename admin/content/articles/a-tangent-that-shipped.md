@@ -10,7 +10,7 @@ tags: sgit, pack-mode, performance, agents, vaults, innovation, article
 status: published
 ---
 
-!shot zv-php-top.webp | images/ | The PHP site's pack-mode page, 23 October 2026: the source watch, 63,662 objects and 1,614.4 MB, cloned in 95 seconds as a pack vault against 13 minutes 47 seconds as a normal vault, its whole history pushed in 96 seconds, in 4 requests, 1.36 times smaller on the server. | screenshot
+!shot zv-php-top.webp | images/ | The PHP site's pack-mode page, 23 October 2026: a 95-second pack clone against 13 minutes 47 seconds as a normal vault. | screenshot
 
 ## In short {#in-short}
 
@@ -36,7 +36,7 @@ What I like most about what happened next is the order. I asked for research wit
 
 Then a spec, reviewed before anything was built ([pack mode, read closely](https://cli.sgit.ai/articles/pack-mode-read-closely.html), with five decisions). Then the build, with tests that count requests and bytes on a simulated host, so "how many requests" is a measurement, not a guess. Then a live trial on the comms vault's history: a full clone in 25 seconds against three and a half minutes. Then [four review rounds](https://cli.sgit.ai/articles/pack-mode-four-rounds.html) by a second agent with its own reproducing scripts: 8 findings, then 4, then 4 (one of them caused by a fix from the round before), then 3 nits and no blockers. sgit-ai 0.24.0 went up on PyPI at 19:53 UTC on 22 October. The CLI team's own account of the [whole path](https://cli.sgit.ai/research/pack-mode-idea-to-release.html) lists every document it left behind.
 
-!shot zv-path.webp | images/ | Ten days from a slow clone to a vault that clones in 95 seconds: the comms vault's 3½-minute clone (14 October), a 59-second clone measured by this newsroom and fixed in 0.23.0 (16 October), research with no code and the tangent about a vault in one file (16 to 20 October), a pack per push designed and specified (21 October), four review rounds (21 to 22 October), sgit-ai 0.24.0 (22 October), and the source watch moved to pack mode (23 October). | timeline
+!shot zv-path.webp | images/ | Ten days from a slow clone to a vault that clones in 95 seconds, with the dates of each step. | timeline
 
 ## The vault that needed it {#the-source-watch}
 
@@ -44,7 +44,7 @@ Meanwhile, the [PHP story](https://php.oct.2026.newsroom.sgit.ai/) was running. 
 
 The limit we hit was not storage. In my memo I said we hit a limit of S3 at around 64,000 objects; the measurements say something more precise. A normal vault stores every object as its own file, and several operations start by asking the server for the list. At 63,662 objects the server's gateway gave up first: listing the vault returned HTTP 504 after 91 seconds. So a fresh clone walked the history instead and fetched 34,453 file objects one by one: 13 minutes and 47 seconds. Pushing one pass of 6,161 objects took 11 failed attempts, connection resets, timeouts and 504s, and a twelfth that worked: 2 hours and 42 minutes from commit to server. That is a good example of a massive inefficiency that agents will cheerfully work around until it breaks.
 
-!shot zv-php-push.webp | images/ | One pass of the source watch, pushed to the normal vault on 23 October: 11 failed attempts from 16:32 UTC, connection resets, a 25-minute cap and 504 timeouts listing the vault, and a twelfth that pushed 6,161 objects at 19:09 UTC. From the PHP site's pack-mode page. | screenshot
+!shot zv-php-push.webp | images/ | One pass of the source watch pushed to the normal vault on 23 October: eleven failed attempts, then a twelfth. | screenshot
 
 On 23 October, the day after the release, the researcher imported the watch into a pack vault with `sgit pack import`, pushed it, cloned it fresh and checked it file for file. The PHP site [measured both](https://php.oct.2026.newsroom.sgit.ai/admin/pack-mode/index.html):
 
@@ -54,11 +54,11 @@ On 23 October, the day after the release, the researcher imported the watch into
 - **Pushing the whole history:** 96 seconds, in one go, against 2 hours 42 minutes for one pass.
 - **On the server:** 1,614.4 MB down to 1,184.2 MB, because files are compressed before they are encrypted.
 
-!shot zv-php-side.webp | images/ | The same operations, side by side, on the same vault, server and sandbox: a fresh clone in 13 minutes 47 seconds against 95 seconds; listing the vault, an HTTP 504 against 0.73 seconds; a pull with nothing new, 34 seconds against 4. From the PHP site's pack-mode page. | screenshot
+!shot zv-php-side.webp | images/ | The same operations side by side on the same vault: a fresh clone, listing the vault and a pull with nothing new. | screenshot
 
 That evening the scheduled curator followed the watch into its pack copy, and two agents wrote to it in turn, the scheduled session and the researcher, with no merge needed. A 1.6 GB set of files we can download in about a minute and a half, where it used to take nearly a quarter of an hour, is the difference between an agent that can start work and one that cannot. These are battle-hardened examples of the sgit CLI in action: not a benchmark, but agents using it on a story that was still breaking.
 
-!shot zv-why.webp | images/ | One request per object, or one zip per push: the normal vault's 63,662 objects, a listing that times out and a 13-minute clone, against the pack vault's one snapshot in 4 requests, a 95-second clone and 1.36 times less on the server. The server did not change. | comparison
+!shot zv-why.webp | images/ | One request per object, or one zip per push: the normal vault against the pack vault. The server did not change. | comparison
 
 ## Not everything at once {#not-everything}
 
@@ -66,7 +66,7 @@ Pack mode also shows that you do not have to do everything at once. It shipped w
 
 None of that mattered for the vault that needed it, which is read by agents, not in a browser. So it did not block it. Each change on the way was small, incremental and properly reviewed, and together they made a very large difference. That is how I want us to work: find the real constraint, fix it properly for the case that needs it, write down what it does not do yet, and come back for the rest.
 
-!shot zv-scope.webp | images/ | Not everything at once: what sgit-ai 0.24.0 shipped (the pack commands, clones in a handful of requests, compression before encryption, older clients refused by name, a round trip back, the full test suite and four review rounds) and what it left for later (the web view, scoped and shallow clones, automatic compaction, slow local walks). | comparison
+!shot zv-scope.webp | images/ | Not everything at once: what sgit-ai 0.24.0 shipped, and what it left for later. | comparison
 
 ## Why the tangent mattered {#why-it-mattered}
 

@@ -10,13 +10,13 @@
 
 # Almost working: a researcher, a curator and a journalist on a schedule, the QR handshake that gives each agent its key, and why a mission-critical workflow has to be built slowly
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-23 · [article v1.1.0, 2 versions](versions/almost-working.md) · [newsroom v0.13.56](https://newsroom.sgit.ai/admin/versions.html) · agentsschedulespkiqrevidencephp2shellarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-23 · [article v1.2.0, 3 versions](versions/almost-working.md) · [newsroom v0.13.56](https://newsroom.sgit.ai/admin/versions.html) · agentsschedulespkiqrevidencephp2shellarticle
 
 ***Abstract:** The PHP story site is now updated by three agents in a chain. A researcher follows the leads and captures pages, raw, into a large vault. A curator reads those captures and promotes what holds into a second, curated vault. A journalist reads that and updates the site, its numbers and its narrative. Each wakes on a schedule. Getting there took the better part of two days, with all the visibility and control I have, because the moment a workflow becomes mission critical every gap shows. The biggest gap was not the agents: neither Claude's scheduled tasks nor ChatGPT gives an agent an identity or a way to receive a secret. So we built one. A new agent session makes a key pair that lives only as long as the session, shows me its public key as a QR code, and I seal the vault key to it on pki.sgit.ai, signed by my root key. Then a schedule wakes that same session, which still holds the key. It is a slightly mad solution, and a lovely one. It is also not finished: on the evening of 23 October the researcher's passes are recorded, the curator has its key and its five wakes a day, and no agent has yet written its own run record. This is what it looks like to build something in its genesis stage, bit by bit, and why the next one will be much easier.*
 
 **Update, 24 October.** This article read the PHP site's schedule vault, which the agents had not yet adopted, and so understated how far things had got. By 23:30 UTC on 23 October the scheduled curator had promoted 33 captures (the evidence vault at 260 sources) and the scheduled source watch was running five times a day; just after midnight the schedules moved out of the schedule vault and into the repository, and the source watch into a pack-mode vault, `7r83qic5`. The day is in [PHP October 2026, day three](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html).
 
-Three agents, three stores, one site: the researcher writes the source watch (oq9gflln, raw captures); the curator promotes what holds into the evidence vault (3ytzxm3g, 227 curated sources); the journalist updates the site from it. The schedule vault (weic8imn, public) records who runs, when, and what each run did.
+Three agents, three stores, one site: the source watch, the evidence vault and the schedule vault.
 
 ## In short
 
@@ -68,7 +68,7 @@ So we built the missing piece, and it is a slightly mad solution, and a lovely o
 
 That is the whole identity and secrets layer: a key pair that lives as long as the session, a root that both sides already know, and QR codes carried by a person. It is the workflow from [a secret is a QR code](https://newsroom.sgit.ai/articles/a-secret-is-a-qr-code.html) and [PKI everywhere](https://newsroom.sgit.ai/articles/pki-everywhere.html), now carrying a key that a mission-critical agent needs. The curator's scheduled session was the first to go through it for real, on 23 October; its fingerprint is `sha256:6c81ae257fee1938`.
 
-One handshake, then a schedule: the agent makes a session key and pins the root; shows its fingerprint and QR; the editor checks it and seals the vault key to it on pki.sgit.ai; the agent opens it, clones the vault and deletes the file; a scheduled task wakes the same session.
+One handshake, then a schedule: the agent's session key, the editor's check and the vault key sealed on pki.sgit.ai.
 
 ## A feature, and a vulnerability
 
@@ -87,7 +87,7 @@ It is almost working. The structure is in place. Here is the honest state on the
 - **Works.** The researcher's passes: 40 runs recorded on 22 and 23 October. The handshake: the curator's session has its key. The schedule vault and its page. The journalist's versioned views, v0 and v1. The last-checked stamp.
 - **Set up, not yet proven.** The curator has its five wakes a day, but no run of its own is in the schedule vault yet. Every run record there so far was written by the conductor agent, from the agents' reports, not by an agent at wake time. The researcher's schedule and model are still to be confirmed. The source watch has no schedule of its own, so a curator wake can find nothing new; it should run half an hour before each wake. And the first key was sent as message text rather than as a file, which I accepted once.
 - **Missing.** Surviving a replaced container. Notifications: a wake reports only into its own session. An agreed behaviour policy for each agent (drafted). Queueing a task from the page. External collectors on a schedule.
-Almost working, on the evening of 23 October: what works (the researcher's 40 recorded runs, the handshake, the schedule vault, the journalist's views, the last-checked stamp), what is set up but not yet proven (the curator's wakes, run records written by the agents themselves, the researcher's schedule), and what is missing.
+Almost working, on the evening of 23 October: what works, what is set up but not yet proven, and what is missing.
 
 ## Next time, much easier
 

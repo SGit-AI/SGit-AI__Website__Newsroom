@@ -10,7 +10,7 @@ tags: agents, refactoring, quality, explorers-villagers, engineering, article
 status: published
 ---
 
-!shot vg-roles.webp | images/ | A villager beside the explorers: the task agents, each focused on its own job every wake; security, with a stricter gate on every release and a daily pass; the villager, once a day, proposed, reading what changed, asking what could be better and why it went wrong, and leaving recommendations for each agent; and, later, the town planner. | concept
+!shot vg-roles.webp | images/ | A villager beside the explorers: task agents, security, the villager and, later, the town planner. | concept
 
 ## In short {#in-short}
 
@@ -30,7 +30,7 @@ But each of them is focused on a particular task. That is what makes them effect
 
 ## What it costs: every release rewrites the site {#cost}
 
-!shot vg-rewrites.webp | images/ | Every release rewrites the whole site: the median of the PHP site's last 20 releases changed 2,140 files, about as many as the build writes (2,145) of the 3,332 in the repository, whatever the release was for, because the version is stamped on every page. | comparison
+!shot vg-rewrites.webp | images/ | Every release rewrites the whole site: files changed by the PHP site's last 20 releases, against the repository's total. | comparison
 
 Here is the kind of thing nobody notices while doing their own task. The PHP site stamps its version on every page. So every release, whether it is a redesign or one agent's run record, rewrites every page. Across the last 20 releases, each one changed between 1,950 and 2,227 files, with a median of 2,140, in a repository of about 3,300 files. A change of a few lines becomes a commit that touches two thousand. That is a good engineering problem to have: it means the site is busy and growing. But it is a problem.
 
@@ -38,7 +38,7 @@ It is not the only one. One repository, one build, one gate and one board file s
 
 ## What the dev agent saw, when asked {#proposal}
 
-!shot vg-proposal.webp | images/ | The dev agent's proposal on the PHP site, 25 October 2026: one repository into six, so that tens of agents can work without waiting on each other, with what one repository costs today: 3,332 files, 1,057 pages from one build script of 7,847 lines, up to 77 releases a day, a median of 1,936 generated files rewritten by every release, 28 release messages naming a conflict, and about 53 scheduled wakes a day. | screenshot
+!shot vg-proposal.webp | images/ | The dev agent's proposal on the PHP site, 25 October 2026: one repository into six, and what one costs today. | screenshot
 
 When I asked the dev agent to look at the whole, it saw all of this at once, and wrote [a proposal](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__proposal__one-repository-into-six/index.html): split the site into six repositories, kit, data, references, updates, the main site and the team, each with one group of writers, its own version, its own gate and its own site, meeting only through published, versioned addresses. Its principle is a good one: "Split along who writes and how often, not along technology." And its diagnosis is exactly right: "The cause is not the number of agents. It is that one version, one build, one gate, one board file and one output tree serve everything." It also proposes the obvious first fix: no version stamp on every page.
 

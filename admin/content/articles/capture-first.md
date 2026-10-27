@@ -10,7 +10,7 @@ tags: php2shell, breaking-news, evidence, provenance, vaults, article
 status: published
 ---
 
-!shot cf-morning.webp | images/ | The morning of 22 October 2026 in two lanes, in UTC from 06:00 to 12:15. The top lane is the story as its sources date it: the BBC live page opening at 06:16, the NSA's advice reported at 06:56, the researcher on Radio 4 at 07:00, two French prefecture sites on maintenance pages at 08:19, and the NCSC-NL inventory at 674 products at 08:41. The bottom lane is the newsroom: the first copy of the BBC page at 07:55, the vault at 08:03, the first complete capture at 08:06, the section here at 08:13, the dedicated site's first release at 09:27, and the vault at 184 sources by 12:05. | timeline
+!shot cf-morning.webp | images/ | The morning of 22 October 2026 in two lanes, UTC: the story as its sources date it, and the newsroom's captures. | timeline
 
 ## In short {#in-short}
 
@@ -47,7 +47,7 @@ At the same time four agents went out, one per beat. One for the primary sources
 
 The protocol had to change in the first half hour. The first version had one manifest that every agent appended to, and one claims file. Several agents writing to one file is a merge conflict waiting to happen, so before the agents had written much, each source got its own row in its own folder, and each agent its own claims and timeline files, merged by the build. This is the pattern [two agents, one vault](/articles/two-agents-one-vault.html) described for the Industry Wire, with more writers: a vault one agent writes and another reads, with the history as the audit trail.
 
-!shot cf-one-vault.webp | images/ | Who wrote the 184 sources in the evidence vault by 12:05 UTC, and what reads it. On the left, six writers with their counts: the dedicated site's agent 83, the government collector 37, the news collector 31, the primary-sources collector 17, the researchers' collector 14 and the lead agent 2. In the middle, the vault: 184 sources, 177 dated captures, 855 files hashed at capture, 128 claims and events in per-agent files. On the right, what reads it: this newsroom's section, the dedicated site, and, still to come, articles here and anyone the vault is opened to. | architecture
+!shot cf-one-vault.webp | images/ | Who wrote the 184 sources in the evidence vault by 12:05 UTC, and what reads it. | architecture
 
 ## Following the link someone sends {#link}
 

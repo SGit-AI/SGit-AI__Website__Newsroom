@@ -10,11 +10,11 @@
 
 # The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.0.0](versions/the-delegation-record.md) · [newsroom v0.13.37](https://newsroom.sgit.ai/admin/versions.html) · riskmandatego-to-marketabppilotsmandatesarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.1.0, 2 versions](versions/the-delegation-record.md) · [newsroom v0.13.37](https://newsroom.sgit.ai/admin/versions.html) · riskmandatego-to-marketabppilotsmandatesarticle
 
 ***Abstract:** The review of our strategy has converged, and the next step is not another argument about architecture. It is to deliver one chain, once, for one workflow, well enough that a customer can use it to make a decision and wants us to keep it current: an existing business requirement, an approved delegation to an agent, a control that implements it, an observed result, and evidence that is still valid after something changes. What the customer gets at the end is a delegation record in six parts: the business requirement, the agent delegation, the control mapping, the evidence, the remaining gaps, and the conditions that make it invalid. Two refinements make it work. A rule written for people is not yet a delegation to an agent: it has to be extracted, its ambiguities listed, and the delegation approved by its owner. And the approved baseline is never updated from observed behaviour. The plan runs in three stages, immediate value, maintenance value and repeatability, with a deliberately small first customer. And we start with ourselves: pilot zero is our own inbox, where the rule is that the agent drafts and I send, and where, it turns out, Gmail has no permission that allows drafting without also allowing sending.*
 
-The chain to deliver once, end to end: an existing requirement, an approved delegation, an implemented control, an observed result, and evidence that still holds after a change.
+The chain to deliver once: requirement, delegation, control, observed result, and evidence that holds after a change.
 
 ## In short
 
@@ -36,7 +36,7 @@ I agree, and I think that is our go-to-market plan. Not a broader architecture, 
 
 ## The delegation record
 
-The delegation record in six parts, business requirement, agent delegation, control mapping, evidence, remaining gaps and change conditions, filled in for pilot zero, our own inbox, as the plan stands; nothing in it has been tested yet.
+The delegation record in six parts, filled in for pilot zero, our own inbox, as the plan stands. Nothing is tested yet.
 
 The answer to a buyer's question, "what exactly will I have at the end?", is a compact record in six parts:
 
@@ -51,7 +51,7 @@ It is the practical form of the coverage explanation, and it sits naturally on w
 
 ## A rule for people is not yet a delegation
 
-A rule for people is not yet a delegation to an agent: refunds up to £100, the amount, one refund, a team lead's approval, eligibility and the process approval, each with the question an agent deployment must also answer.
+A rule for people is not yet a delegation to an agent: a refund rule, with the question an agent must also answer.
 
 The review adds the refinement that makes [approved business mandates](approved-business-mandates.md) workable. A rule the business already approves was written for a person or a role. Handing it to an agent raises new questions. "Staff may refund up to £100": can the agent execute the refund, or only recommend it? What establishes the amount owed? What limits apply across repeated requests and runs that happen at the same time? Who is the approver for an exception, and what exact action does the approval cover? Which record says the customer is eligible? What change requires the whole thing to be approved again?
 
@@ -67,7 +67,7 @@ Three rules from the review that I want in the product from the first day:
 
 ## Three stages
 
-Three stages: immediate value, fix one mismatch and show it from the protected system; maintenance value, make a controlled change and show what it invalidates; repeatability, a related workflow or a second customer, measuring what was reused.
+Three stages: immediate value, maintenance value and repeatability, each with what to show.
 
 The plan runs in three stages, each testing a different claim:
 

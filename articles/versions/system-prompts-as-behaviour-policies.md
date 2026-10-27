@@ -10,13 +10,14 @@
 
 # Versions of: System prompts as behaviour policies
 
-1 published version of [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](../system-prompts-as-behaviour-policies.md). The current one is **v1.0.0**.
+2 published versions of [System prompts as behaviour policies: Claude's published prompt and a leaked ChatGPT one, mapped into rows, a taxonomy of rules, and a JSON file a harness could enforce](../system-prompts-as-behaviour-policies.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-14 | published | 2,924 | first published | [`a5d5f7d8e`](https://github.com/SGit-AI/SGit-AI__Website/commit/a5d5f7d8e52cb0960b803bd16c928a12cd6b7a15) | [current](../system-prompts-as-behaviour-policies.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,837 | +0 / −87 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](system-prompts-as-behaviour-policies/v1.1.0.md) · [current](../system-prompts-as-behaviour-policies.md) |
+| **v1.0.0** | 2026-10-14 | published | 2,924 | first published | [`a5d5f7d8e`](https://github.com/SGit-AI/SGit-AI__Website/commit/a5d5f7d8e52cb0960b803bd16c928a12cd6b7a15) |  |
 
 [← Back to the article](../system-prompts-as-behaviour-policies.md) · [All articles](../index.md)
 

@@ -10,11 +10,11 @@
 
 # Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/portugal-and-europe-2025.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugaleuropesovereigntycloudopen-sourcelanguagegraphsregulationgenaihistoryarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/portugal-and-europe-2025.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugaleuropesovereigntycloudopen-sourcelanguagegraphsregulationgenaihistoryarticle
 
 ***Abstract:** Between February and June 2025 I wrote five essays on diniscruz.ai that took my Portugal talks to the scale of Europe. Portuguese as a programming language in the AI era argued that if language is the new programming, Portugal and the Portuguese-speaking world need their own models and tools. An open-source sovereign cloud for an open Europe proposed a cloud that is 100% open source, compatible with the APIs of the big US clouds so nothing has to be rewritten, and federated across countries, regions and cities. Scaling Europe's regulatory superpower proposed turning flat regulation, NIS2, the Cyber Resilience Act, the AI Act, into semantic graphs that answer for a specific context. Europe's strategic opportunity in GenAI named six trends that play to Europe's strengths, from commoditised, deterministic models and AI at the edge to semantic graphs and multilingual AI. And a comparison with the EU's federated cloud initiative asked whether Europe should build the Linux of cloud or a new platform. A year and a half later, two have moved: Portugal released an open model for European Portuguese, and semantic graphs became my daily work. The sovereign cloud has not, and I now think the better route is the one I took since: make the code movable and keep the server dumb, so sovereignty becomes the ability to move.*
 
-Sixteen years of talks about Portugal and what happened since: the IBWAS keynote in 2010, Hacking Portugal in 2016, GenAI in Portuguese in 2024, five essays on Europe in 2025; and since, the EU vulnerability database, Portugal's NIS2 law, Amália, the Cyber Resilience Act's reporting duties, the plan for a new Hacking Portugal at Web Summit, and software under product liability.
+Sixteen years of talks about Portugal and what happened since, from the IBWAS keynote in 2010 to 2026.
 
 ## In short
 

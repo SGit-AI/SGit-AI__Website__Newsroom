@@ -10,7 +10,7 @@ tags: gen-z-book, founders, startups, learning, toolkit, article
 status: published
 ---
 
-!shot cd-dots.webp | images/ | Some of my own dots, as the book tells them: the ZX Spectrum, The Cyber Boardroom, MyFeeds, SG/Send, sgit and the newsroom. Looking back, the Cyber Boardroom's personas and its need for somewhere to keep the data, MyFeeds' graphs of the news, and what SG/Send taught about Stripe and pricing all feed the newsroom. | concept
+!shot cd-dots.webp | images/ | Some of my own dots, as the book tells them, from the ZX Spectrum to the newsroom, and how they feed it. | concept
 
 ## In short {#in-short}
 
@@ -38,7 +38,7 @@ The experiments are often the opposite of what the retelling suggests. Some of t
 
 ## Let your LLM interview you {#interview}
 
-!shot cd-interview.webp | images/ | The look-back interview in seven stages: the timeline; the side roads; the doors; what each taught; the connections; remembered or evidenced; and where a startup may be hiding. | concept
+!shot cd-interview.webp | images/ | The look-back interview in seven stages, from the timeline to where a startup may be hiding. | concept
 
 So here is the exercise: get your LLM to interview you. About your life, your experience, what you learned, your career and the paths you took. Not a CV: a conversation, one question at a time, in your words, with an interviewer that keeps asking "and what else were you doing then?"
 
@@ -54,7 +54,7 @@ The interview has seven stages:
 
 ## The doors {#doors}
 
-!shot cd-doors.webp | images/ | Doors as they felt and as they were. Felt big and was big; felt big and was small, where fear kept you longer than it had to; felt small and was big, the side project that set the path; and felt small and was small. | comparison
+!shot cd-doors.webp | images/ | Doors as they felt and as they were: felt big or small, and was big or small. | comparison
 
 Jeff Bezos, in his letter to shareholders for 2015, split decisions into two kinds. One-way doors: "consequential and irreversible or nearly irreversible", where "you can't get back to where you were before." And two-way doors: "changeable, reversible", where "You can reopen the door and go back through." The newsroom uses that split in [how cheap is it to undo?](/articles/how-cheap-is-it-to-undo.html), and the book uses it for walking a path you cannot see.
 

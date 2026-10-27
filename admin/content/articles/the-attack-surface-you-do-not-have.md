@@ -10,7 +10,7 @@ tags: security, architecture, client-side, attack-surface, article
 status: published
 ---
 
-!shot cv-month.webp | images/ | A month of critical vulnerabilities in server software, from 22 September to 21 October 2026: PHP, Plex Media Server, SiteGuard, Palo Alto PAN-OS, Cisco Secure Email Gateway, Ahsay, Ivanti Connect Secure, Zammad, Fortinet FortiMail, Citrix NetScaler and WordPress. My exposure to each: none. | comparison
+!shot cv-month.webp | images/ | A month of critical vulnerabilities in server software, 22 September to 21 October 2026, and my exposure to each: none. | comparison
 
 ## In short {#in-short}
 
@@ -44,7 +44,7 @@ I did not have to patch any of them, because none of them runs anywhere in my st
 
 ## The attack surface you do not have {#surface}
 
-!shot cv-surface.webp | images/ | The attack surface compared. A typical web product runs a web server and runtime, a framework and CMS, a database, admin panels and APIs, VPN and mail gateways, and file processing. These sites run static files, the reader's browser, and one upload server that stores ciphertext. | comparison
+!shot cv-surface.webp | images/ | The attack surface compared: a typical web product, and these sites, which run static files and one upload server. | comparison
 
 Look at what a typical web product runs: a web server and a language runtime, a framework or a CMS with its plugins, a database, admin panels and APIs, and, around the company, VPN appliances and mail gateways. Every one of those is something that can appear in that list on any given morning.
 
@@ -60,7 +60,7 @@ I think this is good engineering. The constraint of not having anything on the s
 
 ## The constraint is speed {#speed}
 
-!shot cv-speed.webp | images/ | The constraint gives speed: 45 live sgit.ai sites, all static, in eleven weeks; 1,306 pages on this newsroom, with a meter and payments; 100+ users and customers across our vaults, sgit.ai and riskmandate.ai; and one server of our own, SG/Send, which stores only ciphertext. | comparison
+!shot cv-speed.webp | images/ | What the constraint gives: 45 live static sgit.ai sites in eleven weeks, and one server that stores only ciphertext. | comparison
 
 I also want to make the business case, because the usual reading is that no server is a limitation. It is the opposite. There is nothing to provision, patch, scale or keep running, so a new site is a repository and a session, and the innovation shows it:
 

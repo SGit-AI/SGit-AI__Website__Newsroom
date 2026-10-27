@@ -10,11 +10,11 @@
 
 # Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.0.0](versions/who-signs-for-this.md) · [newsroom v0.13.69](https://newsroom.sgit.ai/admin/versions.html) · accountabilitysignaturesattestationsupply-chainmaintenancefractal-graphsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.1.0, 2 versions](versions/who-signs-for-this.md) · [newsroom v0.13.69](https://newsroom.sgit.ai/admin/versions.html) · accountabilitysignaturesattestationsupply-chainmaintenancefractal-graphsarticle
 
 ***Abstract:** My article on who maintains the PHP you run argued for versions signed off by the people who maintain them. On LinkedIn, Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, took it a step further. A maintainer's signature says who stands behind a version, not whether that version is what the device actually booted. That needs a measured boot record, checked against the signed reference by someone other than the supplier. And the context of where it runs splits in two: what the device can measure itself, and what it cannot see, which has to be declared and signed by an operator or an auditor. A certificate stays honest when it keeps the two apart and names who signed each line. I think that is exactly right, and it generalises. Once people sign for what they are accountable for, they also define what they do not sign for. Map every layer, from the hardware to the business contract, and each line ends either in somebody who signed, or in a blind spot. That map is a fractal graph of signed certificates, and complexity is not the objection: how much of it you need depends on how much the application matters. The point is to make the blind spots visible, so the business and its insurers can decide whether they are comfortable with them, and so the experts who close them get paid. And when the person who signed leaves, the gap shows.*
 
-Who signs for each layer: an accountability map from the business to the hardware. Each line says what is claimed, whether it is measured or declared, and who signs it: the business owner for the contract, the product owner for what was delivered, a maintainer for the code that goes live and the release, the platform team for the process, the cloud provider for the platform, a hardware root and a verifier for the device. The building, who can reach it and what is plugged in, is signed by nobody: a blind spot. An illustration of the argument, not an audit of any system.
+An accountability map from the business to the hardware: who signs each layer, with the building signed by nobody.
 
 ## In short
 
@@ -28,7 +28,7 @@ Who signs for each layer: an accountability map from the business to the hardwar
 
 ## The thread
 
-The LinkedIn thread under my post sharing "Who maintains the PHP you run?", 24 October 2026: Andrey Lazarev on what a maintainer's signature does and does not prove, my replies, and his split between what a device can measure and what an operator or auditor has to declare.
+The LinkedIn thread under my post sharing "Who maintains the PHP you run?", 24 October 2026.
 
 I shared [who maintains the PHP you run?](https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html) on LinkedIn, and it started a thread worth more than a reply. Andrey Lazarev, co-founder and CEO/CTO of TactiQ AI, wrote:
 
@@ -66,7 +66,7 @@ The declared lines are the rest: who can reach the machine, what network it sits
 
 ## A fractal graph of signed certificates
 
-Every signed line is a graph of its own: the line "the device: this is what actually booted", signed by a verifier, opens into the measurement, the reference it should match, the verifier who checked one against the other, and the endorsement of the hardware root. The same holds in every domain: the business, the product, the code, the release, the platform, the device. Each opening ends in somebody who signed, or in a blind spot.
+Every signed line is a graph of its own: the device line opens into measurement, reference, verifier and endorsement.
 
 This is why I call it fractal. It is the same idea as [fractal semantic graphs](https://newsroom.sgit.ai/articles/introducing-fractal-semantic-graphs.html): there are multiple universes, multiple domains, each a graph that can be opened into more graph. Here the domains are hardware, software, business applications and even business contracts. Is the application actually doing what it is supposed to do? Have the business owners signed that? Have the product owners signed what was delivered? Has someone read the code that went live? Is the release the one the maintainers stand behind? Is it what booted? Every one of those is a line, every line has a signer, and every signature can be opened into its own graph of evidence and the people who stand behind it.
 

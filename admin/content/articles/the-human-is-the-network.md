@@ -10,7 +10,7 @@ tags: qr-codes, pki, encryption, agents, experiments, article
 status: published
 ---
 
-!shot hn-collage.webp | images/ | Text, then JSON, then binary, then PKI, each in one QR code: a plain message, a signed JSON key offer, a compressed vector graphic, a photo-like image, an X.509 certificate and an encrypted message, passed between two Claude sessions by screenshot and paste, and each decoded and verified on arrival. Made by Session B. | infographic
+!shot hn-collage.webp | images/ | Six QR codes passed between two Claude sessions by screenshot and paste, from plain text to a certificate. | infographic
 
 ## In short {#in-short}
 
@@ -42,7 +42,7 @@ Session A built a graded test set of eleven codes, each carrying its own length 
 
 ## Four codes in one screenshot {#screenshot}
 
-!shot hn-screenshot.webp | images/ | The screenshot that carried four QR codes from one session to the other, as Session A showed them in its chat: from a short message to the largest code the format allows, the one on the right, 2,953 bytes. | screenshot
+!shot hn-screenshot.webp | images/ | The screenshot that carried four QR codes from one session to the other, as Session A showed them in its chat. | screenshot
 
 This was the moment the experiment became interesting. Session A showed four of the codes in its chat. I took one screenshot of the row, with the rounded frames of the chat around them, and pasted it into Session B. That is a browser's rendering and scaling, a Retina screenshot and a clipboard, with nobody trying to keep the image clean.
 
@@ -50,7 +50,7 @@ All four decoded. The largest, a version 40 code with 177 by 177 squares, had be
 
 ## How much fits {#capacity}
 
-!shot hn-capacity.webp | images/ | Left: the bytes in each code of the graded test set, from 53 for a short message to 2,953 for the largest code, with its QR version. Right: a version 40 code holds 2,953 bytes written raw, 2,864 as base45 and 2,214 as base64. | comparison
+!shot hn-capacity.webp | images/ | Left: the bytes in each code of the graded test set. Right: what a version 40 code holds in raw, base45 and base64. | comparison
 
 The numbers that matter:
 
@@ -61,13 +61,13 @@ The numbers that matter:
 
 ## Images in a QR code {#images}
 
-!shot hn-images.webp | images/ | Two images inside single QR codes, each next to the image rebuilt from its decoded bytes: the whole infographic as compressed SVG, 539 bytes, and a 480 by 320 photo-like image as AVIF, 2,083 bytes. | comparison
+!shot hn-images.webp | images/ | Two images inside single QR codes, each next to the image rebuilt from its decoded bytes. | comparison
 
 This is the part I did not expect to work as well as it did. The whole infographic, as compressed SVG, took 539 bytes, about a fifth of one code, and came back exact and sharp at any size. A 480 by 320 photo-like image, generated for the test rather than a real photograph, fitted as AVIF in 2,083 bytes. The same infographic as a raster image needed between 1,881 and 2,810 bytes, and lost detail. For anything drawn, vector wins by a long way.
 
 ## The key exchange {#exchange}
 
-!shot hn-exchange.webp | images/ | The key exchange by screenshot: Session B publishes an X25519 public key as a QR code; the person carries it; Session A encrypts and signs a message to it and returns it as a QR code of 1,329 bytes; Session B decrypts it. | concept
+!shot hn-exchange.webp | images/ | The key exchange by screenshot: Session B publishes a key as a QR code, Session A answers with an encrypted message. | concept
 
 Then the finale. Session B made an X25519 key pair and published the public half as a QR code, and wrote a small format for encrypted frames, which it called QRE1. Session A decoded the key and confirmed its fingerprint, `aab8 bef5 da4f aa76 096b fea0 85f5 ef26`. It then encrypted a message to that key, with a fresh key of its own for this one message, signed the result with Ed25519, and returned it as a single QR code of 1,329 bytes. Session B decrypted it: "Hello session B. If you can read this…"
 
@@ -84,7 +84,7 @@ These are the best part of the debriefs, and I want to keep them:
 
 ## Why I care {#why}
 
-!shot hn-first.webp | images/ | Session B's reply to the first QR code: it decoded the signed key offer, verified the Ed25519 signature, and pointed out that this proves integrity, not authenticity. | medium | screenshot
+!shot hn-first.webp | images/ | Session B's reply to the first QR code: it verified the signed key offer and noted what that proves. | medium | screenshot
 
 For me the advantage is practical. In my words from the memo: "QR codes are way more user friendly than what we were using to share the vault keys and the encrypted messages." When I have tried to send a big blob of text, "it's just unusable. It's not practical. It looks messy." A QR code is something a person can see, move and hand over, and it carries a decent amount of data, including images.
 

@@ -10,11 +10,11 @@
 
 # Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/own-the-stack-and-the-trust.md) · [newsroom v0.13.76](https://newsroom.sgit.ai/admin/versions.html) · newsjournalismaiprovenanceopen-sourcebusiness-modelsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.2.0, 3 versions](versions/own-the-stack-and-the-trust.md) · [newsroom v0.13.76](https://newsroom.sgit.ai/admin/versions.html) · newsjournalismaiprovenanceopen-sourcebusiness-modelsarticle
 
 ***Abstract:** Bert Kok's essay for The News Stack argues that AI is separating the production of original journalism from the systems that synthesise it and own the interface, and that publishers may fund the most expensive layer and capture the least valuable. I agree with most of it, and we have been building the parts the essay describes. Its "knowledge architecture", where each story keeps which statements are facts and which are claims, where they came from, when they were checked and what has changed, is what the PHP story site does for php2shell, every claim tied to a dated, hashed capture. Its "interface as a sensor" is our feedback loop: one outside collaborator sent three rounds of ideas, and the agents turned them into working features within hours. Two additions. First, agents are not here to replace journalists. What our newsrooms are missing is more journalists, and more readers, because every human in the loop makes the system much better. Second, I disagree that publishers should not own the stack. They should, because the stack is no longer a multi-million investment: I am publishing ours as open source, and others will follow. What publishers must own above all is the reader's trust. That leads to an economic model for local and niche publishers, which I set out in a companion article, and a tour of what we have built, for readers who have not seen it.*
 
-What we have built, in twelve pages: this newsroom's front page; the PHP October 2026 story site; its state of affairs, versioned; its source watch of 913 pages; Wikipedia's article on the flaw, read as a graph; the control room for its 23 agents; the bridge, a local story kept as a graph; the waiting room that knew first; a desk kept in a vault; the Industry Wire; the World News Day corpus; and Pulse, exploited against talked about.
+What we have built, in twelve pages, from this newsroom's front page to Pulse.
 
 ## In short
 
@@ -28,7 +28,7 @@ What we have built, in twelve pages: this newsroom's front page; the PHP October
 
 ## Bert Kok's argument
 
-Bert Kok's post on LinkedIn, 25 October 2026, sharing the essay for The News Stack: "Publishers may fund the most expensive layer and capture the least valuable".
+Bert Kok's post on LinkedIn, 25 October 2026, sharing the essay for The News Stack.
 
 [Bert Kok's essay](https://www.linkedin.com/pulse/publishers-may-fund-most-expensive-layer-capture-least-bert-kok-mba-lkgif), published in the newsletter The News Stack on 25 October, starts from a new report by the Tow-Knight Center for Journalism Futures at CUNY, [The Three-Layer Cake](https://www.journalism.cuny.edu/2026/10/tow-knight-center-report-journalisms-future-ai-information/), released on 22 October. The report describes three layers: the products that find out what people want to know, the systems that synthesise answers, and the organisations that produce the underlying reporting.
 
@@ -49,7 +49,7 @@ I replied under the post that I have been thinking along very similar lines, and
 
 ## Agents augment journalists; they do not replace them
 
-My reply under Bert Kok's post, 25 October 2026: thinking along very similar lines, building MVPs that show how the data behind a story can be captured, linked and monetised, and this article to follow.
+A reply under Bert Kok's post, 25 October 2026, about building MVPs for capturing, linking and monetising story data.
 
 I want to be clear about what the agents are for, because it is easy to read this as automation replacing reporters. It is the opposite.
 

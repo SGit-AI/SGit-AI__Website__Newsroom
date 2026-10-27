@@ -10,7 +10,7 @@ tags: vaults, billing, pki, architecture, proposal, article
 status: published
 ---
 
-!shot um-parties.webp | images/ | The proposed design. The user's browser appends its activity, and adds credit when it pays, to a billing vault, signed by the user. The admin vault reads it, reads payments from Stripe, and commits validations back, signed by the admin. The upload server checks the validated credit through a small credits API before it accepts an upload. | narrow | architecture
+!shot um-parties.webp | images/ | The proposed design: a user's billing vault, the admin vault, Stripe, the credits API and the upload server. | narrow | architecture
 
 ## In short {#in-short}
 
@@ -90,7 +90,7 @@ How that reconciliation should work needs some care, because of how Stripe works
 
 So the flow is: the user is sent to Stripe with a payment link tagged with their billing vault; Stripe sends them back to a page that gives them the credit, and their browser adds it straight away and appends a signed claim, "I paid"; later, the admin's browser lists recent payments, matches each claim to a payment, and commits a signed validation. Two-way sync between the two vaults, with each side writing only its own records.
 
-!shot um-topup.webp | images/ | A top-up, step by step. The user pays through a payment link, comes back, and their browser adds the credit straight away with a signed claim. Later, the admin's browser reads recent payments from Stripe, matches the claim, and commits a signed validation. The upload server reads that validation and checks it. | architecture
+!shot um-topup.webp | images/ | A top-up, step by step: the payment link, the signed claim, the admin's signed validation and the upload server's check. | architecture
 
 ## Credit now, validated later {#when}
 

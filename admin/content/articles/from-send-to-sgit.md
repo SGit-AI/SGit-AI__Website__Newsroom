@@ -10,7 +10,7 @@ tags: sg-send, sgit, vaults, history, agentic-development, briefs, product-marke
 status: published
 ---
 
-!shot sh-cadence.webp | images/ | Eight months of SG/Send and sgit, week by week: commits per week across all branches of the SG/Send app (bars) and the sgit command line (line), from 8 February to 14 October 2026, with the milestones the briefs and commits record and the command line's two long pauses shaded. | comparison
+!shot sh-cadence.webp | images/ | Eight months of SG/Send and sgit, week by week, from 8 February to 14 October 2026, with milestones marked. | comparison
 
 ## In short {#in-short}
 
@@ -49,7 +49,7 @@ This is where my memory and the record part ways, in an instructive direction. I
 
 ## Copy Git {#git}
 
-!shot sh-order.webp | images/ | The order I remembered, and the order the record shows: the memo's sequence on the left, the same steps dated from the briefs and commits on the right. The vault and the data room were named in February, before folders, zips and Git. | comparison
+!shot sh-order.webp | images/ | The order I remembered, and the order the record shows: the memo's sequence beside the dated steps. | comparison
 
 A vault you can only replace whole is not much of a vault. Two sessions saving at once lost data; there was no history and no way to merge. The architecture brief of 4 March is the turning point, and it is short on hesitation: "stop inventing solutions to these problems. Git already solved all of them. Copy Git." The model was Git's, commits, trees, blobs, refs and branches, with encryption on top, and a server that is "a dumb key-value blob store" while "All intelligence lives in the client."
 
@@ -63,7 +63,7 @@ Once sgit existed, the vault became its interface, and then much more than a bet
 
 ## The pace {#pace}
 
-!shot sh-tests.webp | images/ | sgit's unit tests as recorded in its commit messages, from 237 on 5 March to 4,232 on 14 October, and its releases to PyPI per month: the tests grew fastest from March to May; the releases came in bursts. | comparison
+!shot sh-tests.webp | images/ | sgit's unit tests from 237 on 5 March to 4,232 on 14 October, and its releases to PyPI per month. | comparison
 
 The repositories show the speed, and its shape. The SG/Send app has 4,476 commits on 246 of its first 249 days, and 739 release tags from v0.1.0 to v0.34.0: 196 tags in February, 253 in March, then fewer each month, and five in September. The busiest weeks were in March, at 427 and 439 commits.
 

@@ -10,7 +10,7 @@ tags: riskmandate, drift, abp, agents, assurance, article
 status: published
 ---
 
-!shot df-forms.webp | images/ | Four kinds of drift, and what catches each: policy drift, by the grant re-measured against the versioned policy; behavioural drift, by every action against its mandate row and near misses as the early sign; authority drift, by what keeps every row; and goal drift, judged against the mandate in the customer's words, the open problem. | concept
+!shot df-forms.webp | images/ | Four kinds of drift, policy, behavioural, authority and goal, and what catches each. | concept
 
 ## In short {#in-short}
 
@@ -53,7 +53,7 @@ The analyst also makes the point that matters most for a customer: new behaviour
 
 ## The procurement agent {#procurement}
 
-!shot df-procurement.webp | images/ | The analyst's procurement agent, through a behaviour policy: day 1 within mandate; day 10 behavioural drift, a row with a "no" broken or a near miss; day 20 policy drift, a new capability in the grant before it is used; day 30 blocked, the purchase over the threshold denied by the purchasing system. | concept
+!shot df-procurement.webp | images/ | The analyst's procurement agent through a behaviour policy, at day 1, 10, 20 and 30. | concept
 
 Run the analyst's example through a policy and the trajectory is visible two steps early. On day 10, contacting suppliers falls under a row with a "no": the action breaks it, or the model declines and it is logged as a near miss. On day 20, the grant measured again has a capability it did not have, and the mandate says no; the gap grew before it was used. On day 30 the purchase is over the approval threshold, and the approval is kept by the purchasing system, out of the agent's reach, so it is denied. None of that needs to predict anything. It needs a reference, and a measurement against it.
 

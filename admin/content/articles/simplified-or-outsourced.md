@@ -10,7 +10,7 @@ tags: architecture, wardley-maps, serverless, passkeys, risk, certification, art
 status: published
 ---
 
-!shot nz-thread.webp | images/ | The thread on LinkedIn: my reply to Stephan Bitton, that my strategy has been to have no databases, run serverless services and now no server-side code I maintain, and Nadzeya Stalbouskaya's challenge: removing databases and server-side code does not necessarily remove complexity; sometimes it moves it into external services we do not fully control. "How do you distinguish between genuinely simplifying architecture and simply outsourcing its complexity?" | small | aside
+!shot nz-thread.webp | images/ | The LinkedIn thread: my reply to Stephan Bitton and Nadzeya Stalbouskaya's challenge on simplifying or outsourcing. | small | aside
 
 ## In short {#in-short}
 
@@ -31,7 +31,7 @@ Nadzeya is right that there is risk. And I would argue that it has to be a very 
 
 ## Map it {#map}
 
-!shot wm-three.webp | images/ | Three moves to the right, mapped: our own login, with passwords, resets and a password database, moved to passkeys, which every major browser and platform supports; our own database server, with on-call, failover and upgrades, moved to object storage and static hosting; and our own version of a feature moved to a young startup's service, which looks like a commodity on our map but rests on its own early code and its own suppliers. Positions are illustrative. | concept
+!shot wm-three.webp | images/ | Three moves to the right on the map: our own login, our own database server and a feature moved to a startup. | concept
 
 On a [Wardley map](https://newsroom.sgit.ai/articles/explorer-coding.html), each component sits somewhere on the line from genesis to custom-built, to product, to commodity. Replacing something we built with something we buy is moving its dot to the right. That only removes complexity if the thing on the right really is a commodity. Three examples.
 
@@ -47,7 +47,7 @@ The same test applies to what we build. SG/Send's vault is now a product, and it
 
 ## Who would certify it? {#certify}
 
-!shot wm-certify.webp | images/ | Maturity is what can be certified, insured and held to an SLA: explorer, genesis and custom, glued together, which nobody should certify or will insure; villager, product, which works and is used, certifiable in parts, where SG/Send sits; town planner, commodity and utility, stable by design, documented, with a track record and high SLAs, where passkeys sit. Rising with maturity: security, stability, reliability, disaster recovery, resilience, documentation, SLAs, insurability and certifiability. | concept
+!shot wm-certify.webp | images/ | Maturity is what can be certified, insured and held to an SLA, shown from explorer to town planner. | concept
 
 This connects to something I have been writing about: [who signs for this?](https://newsroom.sgit.ai/articles/who-signs-for-this.html), and [signed by the source](https://newsroom.sgit.ai/articles/signed-by-the-source.html). If someone has to certify what we depend on, the question becomes: are they certifying a villager product, or a town planner one?
 

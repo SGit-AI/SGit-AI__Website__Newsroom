@@ -10,11 +10,11 @@
 
 # Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/approved-business-mandates.md) · [newsroom v0.13.35](https://newsroom.sgit.ai/admin/versions.html) · riskmandatestrategyabpmandatesassurancearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.2.0, 3 versions](versions/approved-business-mandates.md) · [newsroom v0.13.35](https://newsroom.sgit.ai/admin/versions.html) · riskmandatestrategyabpmandatesassurancearticle
 
 ***Abstract:** I gave our answer to the analyst's blueprint back to the ChatGPT session the analysis came from, and asked it to review it. Its review is good, it corrects its own first recommendation, and it gives us a phrase I think is right for what RiskMandate does: turning approved business mandates into tested controls, and keeping the relationship between them accurate as the deployment changes. The words that matter are approved business mandates. Companies already have behaviour policies: delegated authority, approval limits, four-eyes rules, data handling, who may contact a customer and when. They wrote them for people. Our job is to work with them to capture what they already approve, convert it into Agent Behaviour Policies their agentic workflows can understand and enforce, test that each control holds, say plainly where a requirement cannot be enforced yet, and notice when a change to the deployment breaks what was true last month. The review also sharpens things we should accept: a policy described is not a policy delivered; our Cedar work is a demonstration, not a compiler; the Pellbridge bank explains, it does not measure; and the earlier notes were AI-assisted, which I have now said on those pages. It ends with the right next step: one real workflow, a policy the business understands, controls that demonstrably hold, and an honest account of what remains.*
 
-Companies already have behaviour policies: delegated authority, four-eyes, data handling, spending limits, communications and advice rules, each written for people, turned into an Agent Behaviour Policy row with its mandate and what keeps it. Illustrative rows.
+Companies' existing behaviour policies, each turned into an Agent Behaviour Policy row. Illustrative rows.
 
 ## In short
 
@@ -42,7 +42,7 @@ So our job is not to invent policy. It is to work with a company to capture what
 
 ## From the mandate to tested controls, and back
 
-From an approved mandate to tested controls, and back: specify the mandate; find what the environment supports; generate the configurations, or say why not; verify that prohibited actions stop and legitimate work continues; and maintain the evidence as the deployment changes.
+From an approved mandate to tested controls, and back: specify, find, generate, verify and maintain.
 
 The review proposes five responsibilities, and they fit what we do as a loop:
 
@@ -54,7 +54,7 @@ The review proposes five responsibilities, and they fit what we do as a loop:
 
 ## The output that matters
 
-A coverage explanation: for each requirement, what implements it, the evidence that it holds, and what remains, such as an approval that must be invalidated if the content changes, or a session rule that does not yet follow a task into another agent. Illustrative rows.
+A coverage explanation: for each requirement, what implements it, the evidence and what remains. Illustrative rows.
 
 The review suggests the most valuable output may be a coverage explanation: for each important requirement, what implements it, the evidence, and the remaining limitation. I agree, and it is close to what a behaviour policy row already holds: the barrier says what keeps the rule. What the review adds, usefully, is the last two columns: the evidence that it holds in this deployment, and what it still does not cover. A buyer can decide from that table whether to deploy, what to fix, and what exposure remains.
 
@@ -99,7 +99,7 @@ A few points I would keep, with the review's caveats:
 
 ## Room to grow
 
-Room to grow: capture the process and its approved rules, then the behaviour policy, both the focus now; and, already explored in published articles, the decision policy, the workflow policy, and approval at altitude with precedent.
+Room to grow: the process and approved rules, the behaviour policy, and the policies already explored in articles.
 
 One thing the review does not see, because it read only this exchange, is that we have already gone further than the behaviour policy in our published work. That matters, because it is part of our strength: we can evolve with a customer into more advanced cases, or give them the tools to evolve on their own.
 

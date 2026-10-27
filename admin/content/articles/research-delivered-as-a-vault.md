@@ -10,7 +10,7 @@ tags: research, vaults, sgit, agent-behaviour-policy, fractal-semantic-graphs, i
 status: published
 ---
 
-!shot rq-cover.webp | images/ | The example vault's cover: a synthetic research firm's assessment of a synthetic accounts payable product with and without its AI agent; insurability B before, D after, B again with four conditions; reach from 4 to 6 systems; three rules that rest on the model behaving. | comparison
+!shot rq-cover.webp | images/ | The example vault's cover: a synthetic firm's assessment of a synthetic accounts payable product and its AI agent. | comparison
 
 ## In short {#in-short}
 
@@ -31,7 +31,7 @@ What they deliver is mostly documents: reports, portals, spreadsheets, briefings
 
 ## One taxonomy is version one {#taxonomy}
 
-!shot rq-graph.webp | images/ | The example vault's fractal graph: the question opens into the vendor, the product, the AI agent and the buyer's systems, then capabilities, the rules that govern them, findings, evidence and the agent worker that produced each piece of evidence. | architecture
+!shot rq-graph.webp | images/ | The example vault's fractal graph, from the question through the vendor and the AI agent to the evidence. | architecture
 
 Under most research catalogues there is a taxonomy: markets, categories, vendors, and a row of fields for each. G2, for example, maintains a public [taxonomy of software categories](https://research.g2.com/methodology/research-agenda) that it adds to, cleans up and prunes "based on current market feedback". A taxonomy answers "which vendors are in this category", and it is the right first step. But it is version one. It cannot say why a rating changed, what evidence it rests on, or what is different for one particular buyer.
 
@@ -39,7 +39,7 @@ That is what [fractal semantic graphs](/articles/introducing-fractal-semantic-gr
 
 ## Deliver the research as a vault {#vault}
 
-!shot rq-delivery.webp | images/ | The same research delivered two ways: a report gives one document for every reader, a rating as a field, evidence described, a category and a row, a reissue next year, a document that is read and filed, an attachment; a vault gives a briefing per reader, a judgement over facts anyone can check, the evidence attached, a fractal graph, a refresh as a new commit with a diff, a lane to write back, and access by key. | comparison
+!shot rq-delivery.webp | images/ | The same research delivered two ways: as a report with one document for every reader, and as a vault. | comparison
 
 An [sgit vault](/articles/sgit-is-a-standard.html) is a folder of encrypted files, versioned like git and opened with a key, and it can carry its own app. So instead of a report, a research firm can deliver the research itself:
 
@@ -54,7 +54,7 @@ And because each vault has its own key, the commercial side is almost free. Put 
 
 ## AI-enabled products need a behaviour policy {#abp}
 
-!shot rq-policy.webp | images/ | The example's two behaviour policies: four rules before the AI agent, all held by boundaries and settings; eight after, three of them held only by hope that the model follows its instructions, including the one on supplier bank details. | comparison
+!shot rq-policy.webp | images/ | The example's two behaviour policies: four rules before the AI agent and eight after. | comparison
 
 The research I think is missing from most vendor assessments is about AI-enabled products: products that have added a model, often by putting it in front of their existing API. That looks like a feature. It is a change in what the product can reach and who can steer it. OWASP's [Top 10 for LLM applications](https://genai.owasp.org/llmrisk/llm062025-excessive-agency/) calls it Excessive Agency, "the vulnerability that enables damaging actions to be performed in response to unexpected, ambiguous or manipulated outputs from an LLM", with its root in "excessive functionality; excessive permissions; excessive autonomy." The incidents are real and recent: a crafted email made [Microsoft 365 Copilot disclose data](https://nvd.nist.gov/vuln/detail/CVE-2025-32711) with no click, in June 2025; a web form field let attackers [steal data through Salesforce's Agentforce](https://www.theregister.com/2025/09/26/salesforce_agentforce_forceleak_attack/), fixed in September.
 
@@ -62,7 +62,7 @@ An [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html) is th
 
 ## Licence to operate, and insurability {#insurability}
 
-!shot rq-rating.webp | images/ | Licence to operate and insurability in the example: B before the AI agent, D after, B with four conditions the vendor can meet; the grade is the research firm's judgement over facts that are all in the vault. | comparison
+!shot rq-rating.webp | images/ | Licence to operate and insurability in the example: grade B before the AI agent, D after, B with four conditions. | comparison
 
 The policy describes; the research firm judges. Over the policy's facts it can give the grade buyers and insurers need: is this product licensed to operate in this buyer's environment, and on what conditions; and how insurable is the risk it brings. That matters now because insurers are already moving. Security ratings [power underwriting](https://securityscorecard.com/solutions/cyber-insurance/), and insurers are paying [closer attention to vendor risk](https://www.insurancebusinessmag.com/us/news/cyber/vendor-risk-remains-cyber-insurances-biggest-missed-issue-582763.aspx); Lloyd's underwriters launched [affirmative cover for AI failures](https://www.armilla.ai/resources/armilla-launches-affirmative-ai-liability-insurance-with-lloyds-underwriter-chaucer) in 2025, warning of "silent AI cover"; and in November 2025 large insurers [asked US regulators](https://techcrunch.com/2025/11/23/ai-is-too-risky-to-insure-say-people-whose-job-is-insuring-risk/) for permission to exclude AI liabilities from corporate policies. A research firm that can show, with evidence, what an AI feature changes, and which conditions bring a product back to where it was, is giving its clients something they will need to buy cover. We have argued that [every risk is already accepted](/articles/every-risk-is-already-accepted.html); this is how a buyer accepts it knowingly.
 
@@ -74,13 +74,13 @@ So the evaluation becomes a product of its own. Give the hive access to the tool
 
 ## The business model {#business}
 
-!shot rq-loop.webp | images/ | The loop a research firm could sell: a live evaluation, the vault, a briefing per reader, the client writing back, and a refresh when the vendor ships a change, which starts the next run; each step a line on the invoice. Proposed. | comparison
+!shot rq-loop.webp | images/ | The loop a research firm could sell, from a live evaluation to a refresh when the vendor ships a change. Proposed. | comparison
 
 Here is a business model for anyone who wants it. Sell research by the block, priced for what a vault makes possible: a live evaluation; the vault for one product; a briefing for each extra reader; a portfolio subscription that covers a category, refreshed as vendors ship changes; and a branded app over the same data. The client's feedback from the lanes is the best brief the firm will get, and across clients it is a signal no survey gives. Everything we build for this is [open source](/articles/the-value-of-constraints.html#open), so a research firm can run it itself, or have us run it.
 
 ## The example vault {#example}
 
-!shot rq-briefings.webp | images/ | One finding, six readers: the example's briefings for the CISO, the CFO, general counsel, the head of procurement, the board and a cyber insurer, each written from the same findings. | comparison
+!shot rq-briefings.webp | images/ | One finding, six readers: briefings for the CISO, the CFO, general counsel, procurement, the board and an insurer. | comparison
 
 To show it working, this site built a vault for a made-up research firm, Corvane Research, assessing a made-up accounts payable product, Tallyfern Pay, before and after its AI agent, Copilot, for a made-up buyer. Everything in it is synthetic. It has thirteen pages: the product before and after AI, the two behaviour policies, the evaluation run and its ledger, six findings with their evidence, the fractal graph, a taxonomy beside the graph, the rating, six briefings, a cost calculator, the client's lane, the business model and the files. [Open it on its page](https://newsroom.sgit.ai/demos/vaults/corvane-research/index.html), full screen or embedded, with its public read key.
 

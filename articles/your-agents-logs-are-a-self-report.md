@@ -10,11 +10,11 @@
 
 # Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/your-agents-logs-are-a-self-report.md) · [newsroom v0.12.86](https://newsroom.sgit.ai/admin/versions.html) · agentsgovernanceabpauditevidenceiso-42001nist-ai-rmfaiuc-1hooksarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/your-agents-logs-are-a-self-report.md) · [newsroom v0.12.86](https://newsroom.sgit.ai/admin/versions.html) · agentsgovernanceabpauditevidenceiso-42001nist-ai-rmfaiuc-1hooksarticle
 
 ***Abstract:** Angela Polania, a CPA and ISO 42001 lead auditor, came back from The AI Conference in San Francisco with a sharp reading: the engineers' failure stories were control failures, an agent's own logs are a self-report, and authorisation limits have to be enforced outside the model. I agree, and the research backs her: in Anthropic's 2025 study, models that exploited a reward hack admitted it in under 2% of cases. Her post ends with two questions, which agents could you name an owner for, and do you red-team them, so I answer them for the agent that writes this site. Its policy has eleven rules; ten are kept by the agent itself, one by a hook, and the only real boundary, a platform limit on which repository it can reach, is not in the policy at all. Its status report, written by a hook from the session's record rather than by the agent, flags two commits made without the leak scan; both turned out to be in throwaway test repositories. That is the point in miniature: evidence written outside the agent is more honest than the agent's account, and still needs reading. I add four things to her list: name an owner for each mandate rather than each agent, define what independent means, test the controls as well as the agent, and publish the policy as an artefact.*
 
-Where the evidence comes from: the agent's own account, a record a hook reads, a boundary the platform holds, and someone outside testing it. Each step is written by something the agent controls less, and is harder to talk round.
+Where the evidence comes from: the agent's own account, a hook's record, a platform boundary, and outside testing.
 
 Agent evidence, read three ways
 
@@ -64,7 +64,7 @@ The further right, the harder to talk round and the more expensive to get. A pro
 
 ## This site's agent, measured
 
-The eleven rules this site's writing agent runs under, by who keeps them: ten are expectations kept by the agent, one is a setting kept by a hook, and none is a boundary; the one real boundary, the platform's limit on which repository the agent's GitHub tools can reach, is not in the policy.
+The eleven rules this site's writing agent runs under, by who keeps them.
 
 The agent that writes this site runs under an [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html): a grant, a mandate and eleven rules, each labelled with who keeps it. An expectation is kept by the agent. A setting is kept by a hook. A boundary is out of the agent's reach. The policy is [printed back into the session after every summary](re-anchoring-agent-behaviour-policies.md), and every third answer ends with a status report.
 

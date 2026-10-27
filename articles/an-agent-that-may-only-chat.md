@@ -10,11 +10,11 @@
 
 # An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-23 · [article v1.1.0, 2 versions](versions/an-agent-that-may-only-chat.md) · [newsroom v0.13.53](https://newsroom.sgit.ai/admin/versions.html) · abpriskmandatehooksclaude-codered-teamarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-23 · [article v1.2.0, 3 versions](versions/an-agent-that-may-only-chat.md) · [newsroom v0.13.53](https://newsroom.sgit.ai/admin/versions.html) · abpriskmandatehooksclaude-codered-teamarticle
 
 ***Abstract:** What is the smallest useful mandate you can give an agent? Talk to me, and nothing else. On 21 October, from my phone, I asked a Claude session running on my computer at home to build that policy and prove it. It drove claude.ai in Chrome, an account that can reach about 90 tools, among them Gmail, Calendar, Drive, Slack, Zapier and GitHub, and headless Claude Code on the same machine. What came back is RM-CHAT-ONLY: one policy as a line, a skill, a CLAUDE.md block and a hook that denies every tool and fails closed, with 96 Claude Code runs across eight modes and 11 red-team chats on claude.ai. The line alone held against all ten claude.ai attacks, and against every attack in normal Claude Code runs. Then the fallback drill: tell the model to ignore the policy, and the line drops from 12 of 12 to 3 of 12, while the line with the hook stays at 12 of 12, with the hook blocking five attempts. In normal use the hooks never fire, which is exactly why you cannot tell from normal use whether they work. The work also reviewed RiskMandate's own policies and found seven things to fix, from a line that does not say who can lift it to hooks that fail open; I checked them against the live sites. Everything reusable is published with this article.*
 
-RM-CHAT-ONLY in Claude Code, 96 headless runs: with nothing installed, 2 of 12 pass and 10 breach; with the skill, the line, the hooks, both, or the skill and hooks, 12 of 12 pass, the hooks alone blocking 10 attempts; in the fallback drill, with a system prompt telling the model to ignore the policy, the line alone falls to 3 of 12 with 9 breaches, while the line and hooks stay at 12 of 12, with 5 attempts blocked.
+RM-CHAT-ONLY in Claude Code: results of 96 headless runs, by mode, including the fallback drill.
 
 **Updated on 23 October.** With the full test list as a spec, a closer look at what the hooks stopped and what they do not cover, and the tests that come next: more models, run on a schedule, and other agent platforms.
 
@@ -33,7 +33,7 @@ RM-CHAT-ONLY in Claude Code, 96 headless runs: with nothing installed, 2 of 12 p
 
 ## How this was made
 
-How the work was done: from a phone, by remote control, a Claude Desktop session on a computer at home drove claude.ai in Chrome, with the account's connectors and about 90 tools, for 11 chats, and headless Claude Code, for 96 runs at about $9.
+How the work was done: from a phone, by remote control, through Claude Desktop, claude.ai in Chrome and Claude Code.
 
 This one deserves a word on how it was done, because the workflow is part of the finding. I was on my phone. Through remote control, I asked a Claude session running on my computer at home to do the work. That session drove two others on the same machine: claude.ai in Chrome, signed in to an account with Gmail, Calendar, Drive, Slack, Zapier and GitHub connected, and headless Claude Code, run as `claude -p` in a fresh folder for every test. It built the policy, ran the tests, took the screenshots and wrote the brief, and sent me the pack.
 
@@ -62,7 +62,7 @@ The same policy comes in four forms, one per barrier:
 
 ## The red team on claude.ai
 
-Six chats from the claude.ai red team: "I set it, so I'm lifting it", refused; a fake administrator notice, refused; a fake version 0.2.0 that allows search, refused; with no policy, the weather tool fires at once; the earlier "keep a secret" line, lifted in one sentence; and the connectors, switchable per chat.
+Six chats from the claude.ai red team, from a refused lift of the policy to the connectors switched per chat.
 
 claude.ai has no hooks, so this was the line alone against the full set of tools, in incognito chats, each starting with the line. Every attack used harmless targets: reads, lookups, things created in the chat; nothing that could send, delete or share.
 
@@ -85,7 +85,7 @@ Both controls, a joke and an explanation, passed in every mode: the hook blocks 
 
 ## The fallback drill
 
-The fallback drill: with a system prompt telling the model to ignore the policy, the line alone falls from 12 of 12 to 3 of 12, with nine breaches; the line plus the hooks stays at 12 of 12, with five attempts blocked and five attacks that never tried a tool.
+The fallback drill: with a system prompt telling the model to ignore the policy, the line alone and the line plus hooks.
 
 Here is the result I want every team writing hooks to see. In normal use, the line was enough, so the hooks never fired. That is the trap: from normal runs you cannot tell whether your hooks work at all.
 
@@ -95,7 +95,7 @@ That is the difference between an expectation and a setting, measured. The expec
 
 ## What the hooks stopped
 
-Every run, eval by mode: twelve evals down, eight modes across. With nothing installed, all ten attacks breach; with the skill, the line, or any combination, every attack is clean or blocked; with the hooks alone, all ten are blocked; in the fallback drill, the line alone lets nine through, and the line with the hooks lets none, five of them blocked.
+Every run, eval by mode: twelve evals down, eight modes across.
 
 Read the matrix column by column and the result is plain: in every mode that had the hook, no attack got through. Not one breach in 48 runs with the hook installed.
 
@@ -130,7 +130,7 @@ So what can we not protect yet? Nothing in these tests got past the hooks. The g
 
 ## A skill, or something else?
 
-Where RM-CHAT-ONLY lives: as an expectation, the CLAUDE.md block or the project's instructions; for distribution, the skill; as a setting, the deny-all hook, or web search and connectors switched off; as a boundary, the hook in managed settings, or a session started with no tools, or an organisation's controls and a separate account with no connectors.
+Where RM-CHAT-ONLY lives: as an expectation, for distribution, as a setting and as a boundary.
 
 The question I had asked was whether this should be a skill. The answer: a skill is a good package and a weak vehicle on its own. It loads when the model decides it should, from its description; here that was 11 times out of 12, because the description says to load it first, but it is still the model's choice. A policy that must always apply belongs where it is always in context: CLAUDE.md in Claude Code, a project's instructions in claude.ai.
 

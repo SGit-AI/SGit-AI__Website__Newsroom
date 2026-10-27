@@ -10,13 +10,13 @@
 
 # Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-23 · [article v1.3.0, 4 versions](versions/who-maintains-the-php-you-run.md) · [newsroom v0.13.57](https://newsroom.sgit.ai/admin/versions.html) · open-sourcephp2shellbusiness-modelsmaintainerssovereigntyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-23 · [article v1.4.0, 5 versions](versions/who-maintains-the-php-you-run.md) · [newsroom v0.13.57](https://newsroom.sgit.ai/admin/versions.html) · open-sourcephp2shellbusiness-modelsmaintainerssovereigntyarticle
 
 ***Abstract:** A follow-up to the maintenance deficit, with evidence, and this time with the solutions first. My proposal is simple to state. Every version of an open source platform that a product depends on should be signed off, cryptographically, by the people who maintain that platform, who help set it up, support it and patch it. Buyers, governments first, should refuse to buy products whose core pieces do not carry that signature. That creates a financial flow all the way down the chain, from the buyer to the product, to the platform, to the maintainers, and a commercial ecosystem of companies that provide the assurance, the maintenance and the ability to patch that php2shell showed we need. It is many small purchases, not one large one: the money spent maintaining the core pieces of an application should be in proportion to the money spent on that project, and it has to add value all the time, not sit there as insurance. And it scales now because of Gen AI, not because Gen AI writes the code, but because it helps people understand code bases, side effects and changes, so customised support can be sold at a price that makes sense. Today the market fails both ways: organisations running PHP have no maintenance of what they run to buy, and PHP's experts have no product to sell. When the flaws landed, the security team wrote the fixes for free and vendors resold them within a day. In Wardley's terms, the maintainers are the town planners: paid to read, maintain and sign off the code, pushing quality downstream, with their certification something insurers can price and regulators can require as a licence to operate. Here is the case I make on open-source.sgit.ai and at RiskMandate, the seven services that should exist now, and how they can be sold.*
 
 **A follow-up to [the maintenance deficit, with evidence](https://newsroom.sgit.ai/articles/the-maintenance-deficit-with-evidence.html).** That article followed Dion Wiggins' numbers on what governments spend on top of PHP against what reaches PHP itself. This one takes the next step: what each organisation running PHP should be buying, the services that should exist now, and how the money reaches the people who know the code.
 
-A market failing both ways: those who run open source budget for building and migrating and have no maintenance to buy; those in the middle, integrators, consultancies and platforms, win the contracts; those who know the code take donations and have no product to sell. The missing piece is a workflow for the first to buy maintenance from the last.
+A market failing both ways: those who run open source, those in the middle, those who know the code, and a missing step.
 
 ## In short: what I am proposing
 
@@ -42,7 +42,7 @@ php2shell is that argument with the market already in place. The PHP story's sou
 
 ## A version signed off by the people who maintain it
 
-The signature that makes the money flow: the buyer requires a signed-off version; the product's supplier gets the platform it builds on signed off by that platform's maintainers, who sign off what they depend on in turn. Signatures go up the chain, money comes down it, and Gen AI scales the work at every step.
+The signature chain that makes the money flow: signed-off versions go up to maintainers, money comes down.
 
 This is the idea I think makes the rest work. A version of an open source platform, the one a product actually ships with, should be signed off by the key authors of that technology. Not a logo, not a sponsorship: a cryptographic signature on a specific build, saying the people who maintain this code know this version, stand behind it for this use, and will help maintain it and patch it when something like php2shell lands. Those maintainers are involved in the set-up and the maintainability of the application built on top, and they provide a level of support for it.
 
@@ -90,7 +90,7 @@ In between, the money that does move stops with the integrators, the consultanci
 
 ## What happened to the old versions
 
-Who sold the fix for old PHP, and what flows back: the PHP security team published source backports for 7.4, 8.0 and 8.1 free; Zend by Perforce sold PHP LTS for 7.2 to 8.1 and is a Silver sponsor of the Foundation, with no revenue share stated; Canonical's Ubuntu Pro, TuxCare and HeroDevs sold subscriptions and are not shown as Foundation sponsors; Freexian sells PHP LTS for Debian with the packager's help.
+Who sold the fix for old PHP, and what flows back to the PHP Foundation, from the PHP security team to Freexian.
 
 This week shows the market half exists already. [php.net's advisory](https://www.php.net/) is clear that "PHP 8.1 and older no longer receive updates from the PHP project", and then: "Given the severity of these vulnerabilities, the PHP security team provided minimal source-backports for PHP 7.4, PHP 8.0, and PHP 8.1 to help people building from source or without access to an LTS vendor." Branches, not releases; free, for anyone who can build from source.
 
@@ -112,7 +112,7 @@ I have done this commercially, and I am doing it again at RiskMandate; I have se
 
 ## The services that should exist now
 
-The services that should exist now: bring it back; a maintained build; patch on behalf; remove what is not used; the dependency register; the incident desk; and the endorsed partner, with a stated share of revenue flowing to the foundation, the line procurement can require.
+The services that should exist now, from bringing it back to the endorsed partner, and the foundation's share.
 
 So here are the services I think should appear now, each sold to the people who run the code and delivered by, or with, the people who maintain it, with a stated share flowing upstream:
 
@@ -126,7 +126,7 @@ So here are the services I think should appear now, each sold to the people who 
 
 ## How we are thinking of selling it
 
-Ways to make money selling open source software, as RiskMandate is mapping them: paid to map one workflow or site; paid to engineer the implementation; a scoped custom version built on the open-source base; and recurring maintenance priced by criticality (standard, operational, critical). Every customer version is built on the open-source base; the customer decides what stays private.
+Ways to make money selling open source software, as RiskMandate is mapping them: from paid mapping to maintenance.
 
 Here is how we are mapping the ways to make money selling open source software at RiskMandate, in the words of our current proposal. They are directly applicable here, and they are still proposals, not proven revenue.
 

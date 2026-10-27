@@ -10,11 +10,11 @@
 
 # Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/governs-enforces-attests.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · abpagentsenforcementassurancerufloarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.2.0, 3 versions](versions/governs-enforces-attests.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · abpagentsenforcementassurancerufloarticle
 
 ***Abstract:** Someone working on assurance for agents described to me how ruv.sgit and their work fit together, and asked me to check it. They were almost right, and the part to make precise is the word "enforces". An Agent Behaviour Policy does not enforce anything by itself. It says what each role is granted and for, writes each rule down, and says how each rule is kept, at one of three levels: in the prompt, which is a hope; by hooks in the agent's harness, which are deterministic but sit on the agent's own machine; or by a third-party system that does the blocking, which is the level we recommend. In ruv.sgit that third party is Ruflo's own policy engine in enforce mode, which writes a decision receipt for every action, and an sgit vault keeps the memory encrypted and versioned. What none of that gives you is something a third party can check without taking the operator's word for it. That is the attestation layer: it signs what was assured, so a customer, an auditor or an insurer can verify it. Different layers of the same stack. This article shows the stack, the three levels, the business case with and without attestation, and one action going through all of it.*
 
-Four layers of the same stack. At the top, the mandate: an Agent Behaviour Policy per role, saying what the role is granted, what it is for, the rules, and how each rule is kept. Below it, enforcement at three levels: the prompt, hooks in the harness, and a third-party system that blocks, such as Ruflo's policy engine in enforce mode. Below that, the record: Ruflo's decision receipt for every action, and an sgit vault keeping memory and receipts encrypted and versioned. At the bottom, attestation: what was assured, signed, so that someone outside can verify it. The first three exist in ruv.sgit; the fourth is the attestation layer.
+Four layers of the same stack: the mandate, enforcement, the record and attestation.
 
 ## In short
 
@@ -43,7 +43,7 @@ So an ABP governs. It does not, by itself, enforce. It names the enforcer.
 
 We provide three levels at which an ABP rule can be kept, and an ABP says which one each rule uses.
 
-Three levels of enforcement for one rule of an Agent Behaviour Policy. Level 1, the prompt: the rule is in the agent's instructions; it sees everything and enforces nothing; the agent can ignore it; the evidence is the agent's own account. Level 2, hooks: small deterministic programs the harness runs before and after each action; they can block, but they sit on the agent's machine and are often editable by its account; the evidence is the hook's log. Level 3, a third-party system: a policy engine, gateway or service that does the blocking, out of the agent's reach; the evidence is that system's decision record. The recommended level for any rule that matters is the third.
+Three levels of enforcement for one rule of an Agent Behaviour Policy: the prompt, hooks and a third-party system.
 
 1. **The prompt.** The rule is written into the agent's instructions. This is where most rules live today, and it is what I call hope-based security: the rule holds only if the model keeps it. It is still worth writing down, because a rule that is not written cannot be checked at all.
 2. **Hooks.** Small deterministic programs that the agent's harness runs before and after each action, which can see, block or rewrite what the agent does. [Are hooks the sweet spot?](are-hooks-the-sweet-spot.md) tested this on this site's own policy: of eleven rules, four moved into hooks fully, two mostly, three partly and two not at all. Hooks are a big step up, but they run on the agent's machine, often where the agent's own account could change them, which is why [hooks are kernel code](hooks-are-kernel-code.md) proposes treating them that way.
@@ -61,7 +61,7 @@ That matters for attestation, because it says what there is to attest: a policy,
 
 Here is the gap. Everything above is evidence for the operator. If a customer, an auditor or an insurer asks "was this agent working under that policy, and did the enforcer actually block what it should have?", today the answer is the operator's word, and a folder of receipts they would have to trust.
 
-The same question, from a customer, an auditor or an insurer: was this agent working under that policy, and was each rule kept? Without an attestation layer: the operator sends the policy, the logs and the receipts; the third party cannot tell which version was in force, whether the receipts were edited, or which rules were only in the prompt; they take the operator's word. With an attestation layer: what was assured is signed, the policy version, the level of each rule, the receipts and the record's hash; the third party verifies the signature and reads what was and was not enforced; trust moves from the operator's word to a check.
+The same question from a customer, an auditor or an insurer, answered without and with an attestation layer.
 
 That is what an attestation layer adds: it attests and signs what was assured, so that a third party can verify it. Signed, the record says which version of the policy was in force, which level kept each rule, what the enforcer decided, and that none of it has changed. And because an ABP marks each rule's level, an honest attestation can say not only what was enforced, but what was only hoped for. That is the part I would most like an attestation to carry: a rule kept in the prompt should be attested as a prompt rule, not as a control.
 
@@ -69,7 +69,7 @@ This is also where the liability question lands. [The policy draws the liability
 
 ## One action, through the whole stack
 
-One action through the stack. The agent proposes a tool call. A hook checks it on the machine, as an early warning. The third-party policy engine decides allow or deny, in enforce mode, and writes a decision receipt. The receipt and the agent's memory go into the sgit vault, encrypted and versioned. The attestation layer signs what was assured: the policy version, each rule's level, the receipts, the record's hash. A customer, auditor or insurer verifies the signature without access to the operator's systems.
+One action through the stack, from the agent's tool call to the signed attestation a customer can verify.
 
 ## Different layers, one stack
 

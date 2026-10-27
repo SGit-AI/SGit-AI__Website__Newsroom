@@ -10,11 +10,11 @@
 
 # Sell, don't issue: a funding model for founders who have already won, where the investor buys the founder's shares, the founder lends the company what it needs, and open source keeps everyone honest
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/sell-dont-issue.md) · [newsroom v0.12.83](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsventure-capitalsecondariesopen-sourcebusiness-modelstaxukarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/sell-dont-issue.md) · [newsroom v0.12.83](https://newsroom.sgit.ai/admin/versions.html) · foundersstartupsinvestorsventure-capitalsecondariesopen-sourcebusiness-modelstaxukarticle
 
 ***Abstract:** In The controllable founder I argued that investors select partly for control. This piece asks what a founder should do once they hold the leverage: a product with customers, profit and growth, built cheaply with agents, and several investors who want in. My answer is a two-part model. First, the investor buys existing shares from the founder rather than new shares from the company, so the founder is paid now, the investor gets a stake in something already working, and nothing in the deal requires handing over control. Second, if the company needs money, the founder lends it, subordinated, to be repaid if the company succeeds. The founder gets financial security, the company gets cash, and the investors get exposure without the steering wheel. What protects the investors instead is open source: if the founder goes rogue, they can take the code and back a better service, because customers are locked in by service and trust, not technology. I think this raises the odds of success, because a founder lending their own money watches every penny. It also has real costs, which I set out: UK angels lose their EIS relief on bought shares, a large early sale can read as a lack of conviction, a founder who is also a lender has a conflict, and the details of the tax and the articles of association matter.*
 
-The two-part model: the investor buys the founder's ordinary shares and pays the founder; the founder lends part of the proceeds to the company as a subordinated loan; the company gets cash without new shares; and the investor's protection is the open-source fork, not a board seat.
+The two-part model: the investor buys the founder's shares, and the founder lends part of the proceeds to the company.
 
 Founders, investors and the fork
 
@@ -78,7 +78,7 @@ Two conditions make it real. The licence has to be genuinely open, not open core
 
 ## A worked example
 
-The same £2 million, two ways, for a UK company worth £10 million: the founder keeps 80% either way; a standard round gives the investor new preferred shares, rights and control, and puts £2 million into the company; selling and lending gives the investor ordinary shares and the fork as protection, and leaves the founder about £1.58 million after tax, to lend back as much as the company needs; and bought shares carry no EIS relief.
+The same £2 million, two ways, for a UK company worth £10 million: a standard round, and selling and lending.
 
 The numbers are illustrative: a UK company worth £10 million, a founder who owns all of it with a nil base cost and an unused BADR allowance, and an investor writing £2 million. The founder ends with 80% either way. In a standard round, the investor buys new preferred shares at £8 million pre-money and the £2 million goes into the company. In this model, the investor buys 20% of the founder's ordinary shares at £10 million, the founder pays about £420,000 in tax (18% on the first £1 million and 24% on the second), and has about £1.58 million to decide with: how much to keep, and how much to lend back. Lend £0.75 million and the company has that, as a subordinated loan, and the founder about £0.83 million. The buyer also pays stamp duty of 0.5% on the shares.
 

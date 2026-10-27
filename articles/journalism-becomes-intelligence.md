@@ -10,11 +10,11 @@
 
 # When journalism becomes intelligence, built: an observation desk for one data-center buildout, from an atlas of 78 events to a community impact tracker, in a vault you can open
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.2.0, 3 versions](versions/journalism-becomes-intelligence.md) · [newsroom v0.12.69](https://newsroom.sgit.ai/admin/versions.html) · journalismintelligenceobservationeventsontologydata-centersvaultssgitprovenancelocal-newssynthetic-dataarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.3.0, 4 versions](versions/journalism-becomes-intelligence.md) · [newsroom v0.12.69](https://newsroom.sgit.ai/admin/versions.html) · journalismintelligenceobservationeventsontologydata-centersvaultssgitprovenancelocal-newssynthetic-dataarticle
 
 ***Abstract:** Francesco Marconi shared the slides of an INMA talk with a line I agree with completely: "As AI makes content production easier, journalism's competitive advantage will increasingly come from how we observe the world." His deck makes it concrete with a data-center buildout in the desert: journalism as delta science, a map of who wants what, an atlas of events each with a definition and an observable signal, a domain ontology, observations that add to what the newsroom knows, a workflow of observe, compare, check, report and update, and a community impact tracker. I wanted to see it working, so this site's agent built it: a vault on this site, an app of seventeen pages that follows the eleven slides, runs each one on real data structures, and adds five graphs of the same knowledge. The atlas has all 12 families and 78 event types; the ontology has six entities and six relationships; sixteen source records produce seventeen observations, each a subject, a change, a time and its evidence; and the tracker turns them into an article and two alerts. The records are synthetic, on purpose: a fictional campus in a fictional county, because fake permits under real agencies' names would be exactly the kind of record a newsroom like this should never publish. The method is the point, and a vault is a natural home for it: the observation history is a versioned record, the evidence travels with every claim, and anyone with the read key can open it, check it, and copy it for their own beat.*
 
-The observation desk's cover, in the deck's style: the headline, and a synthetic data-center campus drawn in pen and ink, with orange markers on the power station, the data halls, the water tower, the town and the reservoir. Every marker in the vault opens a record.
+The observation desk's cover: the headline and a synthetic data-centre campus in pen and ink, with orange markers.
 
 One desk, three ways in
 
@@ -55,7 +55,7 @@ His example is a data-center buildout in the desert: a campus going up beside a 
 8. **Journalists direct the flow of intelligence.** Monitor, investigate, publish, as three queues.
 9. **What is this project changing for the community?** The tracker, and what it produced.
 10. **Your advantage is how you observe.** How to make one for your own beat.
-The ontology slide, working: six entities with their attributes and the six relationships between them, each entity drawn as a pen-and-ink vignette. Clicking an entity lists the observations that changed it.
+The working ontology slide: six entities with their attributes and six relationships, each a pen-and-ink vignette.
 
 ## What the observations found
 
@@ -65,17 +65,17 @@ The synthetic records were written to behave like real ones: they disagree with 
 - **The jobs shrank.** The school-district application promised 140 qualifying jobs; the state tax-program registration commits 120.
 - **The schedule slipped.** The developer said in April that the first 1 GW would be online in the second half of 2027; after the acquisition, the new owner's investor presentation says the first half of 2028, while the power station still says 2027.
 - **The water question stayed open.** The company says it will cool with non-potable water; the water district deferred a vote on three wells because nobody has said how much water a year the campus will use.
-Every observation adds to what the newsroom knows: four headline observations as folders, January to September 2026, and the full history below, each with time, subject, change, event type and the records it rests on.
+The observation history: four headline observations as folders, January to September 2026, and the full history below.
 
 Each of those is an observation with its evidence attached, and two became alerts and one a draft article in the tracker. None of them needed a model to be clever. They needed the atlas to say what a change is, the ontology to say what it changes, and the history to say what was known before.
 
 ## The same knowledge, at every level
 
-The fractal semantic graph in the vault: the question opens into the actors and the campus, the campus into twelve event families, and here Power and utilities into its seven event types; the breadcrumb leads back up, and every node's details open on the right.
+The fractal semantic graph in the vault, opened to Power and utilities and its seven event types.
 
 An atlas, an ontology and an observation history are three views of one graph, and the vault draws it five ways. The [fractal semantic graph](introducing-fractal-semantic-graphs.md) starts at the question and opens any node into the graph inside it: the campus into its twelve event families, a family into its event types, an event type into the observations that matched it, an observation into its records. Every level has the same shape, which is the point of a fractal graph, and it is the same idea as [reading code as a fractal semantic graph](code-review-as-a-fractal-semantic-graph.md): you never need the whole thing at once, only the level you are on and the way down. A radial view puts every level on one page, with the evidence in orange. A bipartite graph joins the sixteen records to the seventeen observations they support. And a delta chain lays the observations on a time axis, with an arc from each one to the earlier observation it was compared with.
 
-The knowledge graph, in time: the ontology instantiated with the campus, its buildings, the projects, the companies, the county, the water district and the residents, played one observation at a time; at the acquisition, the new relationship is orange.
+The knowledge graph in time: the ontology instantiated with the campus, played one observation at a time.
 
 The one I like most is the knowledge graph played in time. It is the ontology instantiated, the campus, its three buildings, the two projects, four companies and the public bodies, and each relationship carries the observation that created it, and, if one did, the observation that ended it. Press play and it is delta science you can watch: the generation station appears with its permit, the development agreement ties the county to the campus, two buildings appear in August, the developer is bought, and the ownership edge moves from one company to another. That is what a newsroom's memory should look like: not a pile of articles, but a graph whose every edge has a date and a source.
 
@@ -83,7 +83,7 @@ The one I like most is the knowledge graph played in time. It is the ontology in
 
 This is also where I think the deck is right about AI, and where it matters for newsrooms. Observing and comparing used to be the expensive part: reading every registry, every agenda, every filing, every week. Models make that cheap. What they do not replace is the definition of what matters, the check before anything is published, and the judgement about what to report, which is exactly the part the deck gives to journalists, in three labels: "Direct attention", "Investigate significance" and "Exercise editorial judgment". The workflow slide in the vault walks one cycle through it: the investor presentation arrives, is matched to *Planned milestone revised*, is compared with April's statement, is checked by a person, becomes an alert, and updates the history so the next statement is compared with 2028, not 2027.
 
-What is this project changing for the community: the impact tracker by jobs, water, power, land and public commitments, each item a claim, a change or an open question with its record, and the article and alerts it produced.
+The impact tracker by jobs, water, power, land and public commitments, with the article and alerts it produced.
 
 ## Why it is synthetic
 

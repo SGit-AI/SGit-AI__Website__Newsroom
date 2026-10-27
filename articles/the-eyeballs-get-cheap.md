@@ -10,11 +10,11 @@
 
 # The eyeballs get cheap: why open source is about to become the most secure software we have, and why secure, sovereign and paid-for meet at the least code in production
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/the-eyeballs-get-cheap.md) · [newsroom v0.12.53](https://newsroom.sgit.ai/admin/versions.html) · open-sourcesecurityai-security-reviewvulnerabilitiescurlsovereigntybusiness-modelswardley-mapssupply-chainarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/the-eyeballs-get-cheap.md) · [newsroom v0.12.53](https://newsroom.sgit.ai/admin/versions.html) · open-sourcesecurityai-security-reviewvulnerabilitiescurlsovereigntybusiness-modelswardley-mapssupply-chainarticle
 
 ***Abstract:** For as long as I have worked in security there has been no clear winner between open source and proprietary software. Open source had the code in view, and fixes that sweep a bug's variants; it also had very few people and almost no budget for the slow, expensive reviews that find the hard bugs. Proprietary software had the budget, and the cover of being hidden, and got away with a lot. That balance just moved. Models can now run deep security reviews over and over, on every project, at a cost that used to buy one consultant for a day. The thing open source lacked was paid attention, and that is the thing that just became abundant. I thought Chainguard had started publishing the projects where its AI found nothing; I could not find that. What I found is better: the maintainer of curl writing about a year in which AI review first drowned his project in noise, then produced hundreds of real fixes, then a frontier scan that found a single low-severity bug, and then, today, deeper tools finding more. That is what a project getting harder to break looks like. Put it next to two things I have argued before, that sovereignty needs open code and open schemas, and that the business is maintaining the version each customer actually runs, and three forces meet at one place: the least amount of code in production.*
 
-Open source against proprietary: the balance that just moved. Open source had the source in view and paid for few reviews; proprietary had the budget and the cover of being hidden. Cheap, deep, model-driven security review changes one side of that balance far more than the other.
+Open source against proprietary: the balance that moved when model-driven security review became cheap and deep.
 
 ## In short
 
@@ -44,7 +44,7 @@ The numbers are already large. Anthropic's update on its Project Glasswing in Ma
 
 ## What it looks like from inside one project
 
-One project, one year of machine eyeballs: curl, from its maintainer's own posts. A bug bounty that found 87 vulnerabilities; a year of reports that were mostly noise; a first wave of AI-assisted reports that triggered hundreds of fixes; the end of the bounty; a frontier scan that found one bug; and, in October, deeper tools finding more.
+One project, one year of machine eyeballs: curl, from its maintainer's own posts.
 
 I went looking for something I thought I had seen, Chainguard publishing the projects where its AI hunting found nothing, with curl among them. I could not find it, from Chainguard or anyone else. What I found tells the story better, in the words of curl's maintainer, Daniel Stenberg.
 
@@ -66,7 +66,7 @@ What will not go away is security research by people motivated to find what the 
 
 ## Three forces, one place
 
-Three forces meeting at the least code in production: open source becoming very secure, open source becoming required for sovereignty, and open source with commercial models that pay for maintenance. Where they meet is the customer running exactly the code they need, maintained by the people who know it best.
+Three forces meeting at the least code in production: secure, sovereign and commercially maintained open source.
 
 Put this next to two things I have argued before, and they line up.
 

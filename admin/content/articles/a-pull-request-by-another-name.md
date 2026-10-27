@@ -10,7 +10,7 @@ tags: books, gen-z-book, writing, review, vaults, article
 status: published
 ---
 
-!shot gb-printed.webp | images/ | Release candidate 2, printed and spiral-bound on a café table, with a pen for marking it up: Generation ZX Developers, GenAI Startup Edition, release candidate v2.0.0-rc2, 19 October 2026, page 1 of 168. This is the copy I am reading this morning, while the agents read the same text. Photographed by Dinis. | photo
+!shot gb-printed.webp | images/ | Release candidate 2 of Generation ZX Developers, printed and spiral-bound on a café table, photographed by Dinis. | photo
 
 ## In short {#in-short}
 
@@ -39,7 +39,7 @@ The brief had one rule above the others: never invent a fact, a number, a quote,
 
 The main finding is that the book repeats itself. Each chapter was drafted from the register of ideas and from the newsroom articles, and each one retold what it needed. So the 2018 *Be a founder* answer is told in chapter 1, again in 17 and again in 11. The habit of one session per topic appears, nearly word for word, in four chapters. The six-line email policy is in 13 and again in 30. "Users buy credits, test once, and don't come back" is in 5, 14 and 18. None of these is wrong on its own. Together, they are why a book that should be short and punchy was not.
 
-!shot rp-patches.webp | images/ | Seven patches, in priority order. Body words before and after for each part of release candidate 2: the opening, 11,120 to 8,982; hands-on 2026, 11,326 to 9,425; the frame and the job, 14,357 to 12,145; agents, judgement and how it was made, 11,085 to 9,986; building without a server and the long game, 15,134 to 13,320; the company, 11,644 to 10,347. The seventh patch works across the parts. The whole book goes from 74,666 to 64,351 words, about 215 pages, above the 60,000-word floor. | comparison
+!shot rp-patches.webp | images/ | Seven patches in priority order, with body words before and after for each part of release candidate 2. | comparison
 
 The second finding is about where the point is. "You are lucky to be here", which is the core idea of the book, first appeared in the eighth paragraph of chapter 2. Chapter after chapter opened well, then turned to the 2018 book, or the method, or a tour of later parts, before the argument landed. In the last two argument parts, three chapters, 25, 26 and 29, opened with the 2018 book.
 
@@ -53,7 +53,7 @@ And the fifth is the one only I can fix. *Start the company* has five chapters o
 
 The clearest numbers are in the hands-on part. The editor measured how much of each hands-on chapter was also in the chapter it follows, in runs of six words. Chapter 30, the agentic workflow from zero, was 49% chapter 13; chapter 39, the first price and first ten customers, was 37% chapter 19. After the edit, an argument chapter argues and a hands-on chapter instructs: it opens with what you will have, points back in one line, gives the steps, and ends with what you have at the end.
 
-!shot rp-overlap.webp | images/ | Argument chapters argue; hands-on chapters instruct. The share of each hands-on chapter's six-word runs also found in the earlier chapter it follows, before and after the edit: chapter 30 against 13, 49% to 22%; 39 against 19, 37% to 10%; 33 against 7, 20% to 3%; 32 against 7, 18% to 4%; 35 against 16, 16% to 3%; 37 against 22, 13% to 7%; 36 against 12, 11% to 1%. | comparison
+!shot rp-overlap.webp | images/ | The share of each hands-on chapter's six-word runs also found in the chapter before it, before and after the edit. | comparison
 
 They also suggest moving them. Today the eleven hands-on chapters sit together at the end. Interleaved, each would be the last chapter of the part it serves, still marked 2026 and listed on one index page so it can be renewed each year. That way you read *Price it, then give it away* and then you price it. I like that. It fits something I said in [zoom in, not discover](https://gen-z-developers.sgit.ai/articles/zoom-in-not-discover.html), which the book's own team published this morning while the review was being put together: the book is a manual, not a journey, and you learn by doing.
 
@@ -61,7 +61,7 @@ They also suggest moving them. Today the eleven hands-on chapters sit together a
 
 There is one finding about the review itself that I think matters as much as any finding about the book. Two editors, working at the same time, each cut the same passage. The editor of chapter 12 cut the steps for setting up your own newsroom and pointed to chapter 36. The editor of chapter 36 cut the same steps and pointed to chapter 12. Each pointer was correct when it was written. Together, they left the steps in neither chapter.
 
-!shot rp-hole.webp | images/ | A hand-off is only done when the other side has it. Chapter 12's editor cut the five steps and pointed to chapter 36; chapter 36's editor cut the eight steps and pointed to chapter 12. The steps were left in neither. Patch 0007 puts the eight steps back in chapter 36, where the hands-on part instructs, and chapter 12 keeps the why. | concept
+!shot rp-hole.webp | images/ | The hand-off between chapters 12 and 36, and how patch 0007 puts the eight steps back in chapter 36. | concept
 
 That is why there is a seventh patch. After the six editors finished, the agent did a pass across the parts: every passage that had been cut and replaced with a pointer was checked against the chapter it pointed to. That pass found the missing steps, and four citations of chapter 25's old title. It is the same lesson as running agents in parallel anywhere: the work in each lane can be right and the whole still be wrong, so the join needs its own check.
 
@@ -83,7 +83,7 @@ Several of these are what [short, punchy and co-written](/articles/short-punchy-
 
 I asked whether one of the visualisations could represent the book. The proposal is a graph: the 41 chapters in a ring, in reading order. Each dot is sized by the number of ideas the chapter is written from and coloured by its part. A line joins two chapters that stand on three or more of the same sources. It is drawn by code from the same front matter the book's build checks, so when the book changes, the picture does.
 
-!shot rp-cover.webp | images/ | Generation ZX Developers, the book as a graph: a proposal for the back cover. 41 chapters in a ring, sized by their ideas, 198 in all, and coloured by their part. 50 lines join chapters that share three or more sources. The argument chapters form a dense web; the hands-on chapters are barely joined to it, with 14 of the 50 lines, and eight of them name no ideas at all. Drawn by code from release candidate 2's front matter. | concept
+!shot rp-cover.webp | images/ | Generation ZX Developers as a graph: 41 chapters in a ring, joined by shared sources, drawn from release candidate 2. | concept
 
 And it shows something the text hides. The argument chapters are a dense web. The hands-on chapters are barely connected to it: 14 of the 50 lines touch them, and eight of the eleven name no ideas at all. That is the same thing the book's team found with its own graph test this morning, from the other direction. When the hands-on chapters are joined to the parts they serve, the back cover will show it. I like a cover that changes when the book gets better.
 

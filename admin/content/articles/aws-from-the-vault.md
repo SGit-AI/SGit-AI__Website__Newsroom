@@ -10,7 +10,7 @@ tags: aws, vaults, cloud, pki, architecture, proposal, article
 status: published
 ---
 
-!shot aw-flow.webp | images/ | The proposed flow. Sign in to the AWS access portal and copy temporary credentials for one account and role. Paste them into the vault. The site, in the browser, calls AWS with them, and the results go back into the vault, where they become graphs and workflows. | narrow | architecture
+!shot aw-flow.webp | images/ | The proposed flow: AWS temporary credentials pasted into the vault, used by the site, results saved back. | narrow | architecture
 
 ## In short {#in-short}
 
@@ -77,7 +77,7 @@ That is what makes graph-based analysis of AWS practical. The resources become n
 
 ## The first job: deploying our servers {#deploy}
 
-!shot aw-deploy.webp | images/ | The first job, as an example. One template, deployed through one session per account into several regions, with each deployment recorded in the vault. The accounts and regions are illustrative. | architecture
+!shot aw-deploy.webp | images/ | The first job, as an example: one template deployed through one session per account into several regions. | architecture
 
 The short-term reason I want this is our own deployments. The SG/Send server components, the small API that stores vaults, need to run in many regions and, increasingly, in many accounts. The pieces already exist: CloudFormation templates for Lambda, as a container image with a function URL, and for ECS Fargate, an S3 storage mode with buckets named per account and region, and runbooks for new accounts and regions. What is painful is running them across all of those, and knowing afterwards what is deployed where.
 

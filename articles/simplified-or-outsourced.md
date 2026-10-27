@@ -10,11 +10,11 @@
 
 # Simplified, or outsourced? A reply to Nadzeya Stalbouskaya on removing servers and databases: the risk is real, so map it, move only to real commodities, and ask who would certify what you now depend on
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.3.0, 4 versions](versions/simplified-or-outsourced.md) · [newsroom v0.13.80](https://newsroom.sgit.ai/admin/versions.html) · architecturewardley-mapsserverlesspasskeysriskcertificationarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.4.0, 5 versions](versions/simplified-or-outsourced.md) · [newsroom v0.13.80](https://newsroom.sgit.ai/admin/versions.html) · architecturewardley-mapsserverlesspasskeysriskcertificationarticle
 
 ***Abstract:** Under my LinkedIn comment that I run with no databases, serverless services and no server-side code of my own, Nadzeya Stalbouskaya asked a good question: removing servers and databases does not necessarily remove complexity; sometimes it just moves it into external services, APIs and dependencies we do not fully control, trading operational overhead today for dependency and lock-in tomorrow. So how do you tell genuinely simplifying an architecture from outsourcing its complexity? My answer: Nadzeya is right that there is risk, and it must be a conscious decision. The way to make it is to map it. On a Wardley map, moving a component from custom-built to commodity removes complexity only if what you move to really is a commodity. Replacing our own login with passkeys is that: a standard every major browser and platform supports, with a track record. Moving our data to object storage and static hosting is too. But moving to a young startup's service can look like a commodity on our map while, behind it, it is as messy as what we had, or worse. So you de-risk the move by choosing the commodity, and you can test which one you have by asking who would certify it, insure it, or sign a high SLA on it. Maturity and certifiability go together.*
 
-The thread on LinkedIn: my reply to Stephan Bitton, that my strategy has been to have no databases, run serverless services and now no server-side code I maintain, and Nadzeya Stalbouskaya's challenge: removing databases and server-side code does not necessarily remove complexity; sometimes it moves it into external services we do not fully control. "How do you distinguish between genuinely simplifying architecture and simply outsourcing its complexity?"
+The LinkedIn thread: my reply to Stephan Bitton and Nadzeya Stalbouskaya's challenge on simplifying or outsourcing.
 
 ## In short
 
@@ -35,7 +35,7 @@ Nadzeya is right that there is risk. And I would argue that it has to be a very 
 
 ## Map it
 
-Three moves to the right, mapped: our own login, with passwords, resets and a password database, moved to passkeys, which every major browser and platform supports; our own database server, with on-call, failover and upgrades, moved to object storage and static hosting; and our own version of a feature moved to a young startup's service, which looks like a commodity on our map but rests on its own early code and its own suppliers. Positions are illustrative.
+Three moves to the right on the map: our own login, our own database server and a feature moved to a startup.
 
 On a [Wardley map](https://newsroom.sgit.ai/articles/explorer-coding.html), each component sits somewhere on the line from genesis to custom-built, to product, to commodity. Replacing something we built with something we buy is moving its dot to the right. That only removes complexity if the thing on the right really is a commodity. Three examples.
 
@@ -51,7 +51,7 @@ The same test applies to what we build. SG/Send's vault is now a product, and it
 
 ## Who would certify it?
 
-Maturity is what can be certified, insured and held to an SLA: explorer, genesis and custom, glued together, which nobody should certify or will insure; villager, product, which works and is used, certifiable in parts, where SG/Send sits; town planner, commodity and utility, stable by design, documented, with a track record and high SLAs, where passkeys sit. Rising with maturity: security, stability, reliability, disaster recovery, resilience, documentation, SLAs, insurability and certifiability.
+Maturity is what can be certified, insured and held to an SLA, shown from explorer to town planner.
 
 This connects to something I have been writing about: [who signs for this?](https://newsroom.sgit.ai/articles/who-signs-for-this.html), and [signed by the source](https://newsroom.sgit.ai/articles/signed-by-the-source.html). If someone has to certify what we depend on, the question becomes: are they certifying a villager product, or a town planner one?
 

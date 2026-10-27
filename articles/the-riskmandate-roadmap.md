@@ -10,11 +10,11 @@
 
 # A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.4.0, 5 versions](versions/the-riskmandate-roadmap.md) · [newsroom v0.13.5](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyroadmapstrategycustomersarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.5.0, 6 versions](versions/the-riskmandate-roadmap.md) · [newsroom v0.13.5](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyroadmapstrategycustomersarticle
 
 ***Abstract:** This is a proposed strategy for RiskMandate as a company, and the path we would walk with each customer. It is still being discussed between RiskMandate's founders, so read it as a proposal, not a decision. The question behind it is how we start engaging with a customer, how we earn their trust, and how we become a player: running our code and our vaults, and being there with them. So think of the roadmap as a spectrum of trust, where each stage answers the next question a customer asks once the last one is answered. Policies first, because we can create them today and they are a microcosm of what we do: the grant, the gap, the hooks, a first picture. Then understand: help us get a grip, what is our exposure, where are our agents and what can they reach. Then risk acceptance: which of these risks do we carry, and who decides. Then contain: make the blast radius smaller. Then manage: run the agents as a fleet. And then insure: by then the evidence an insurer needs exists, and insurance is the end game that gives the whole path its arc, so we want to start talking to insurers now. Acceleration is not a stage; it is what every stage gives the business. At every stage there are other companies that should be the big players, and where they do not move fast enough, there is an opportunity for us. We are in the first stage, with our first customers.*
 
-The proposed RiskMandate roadmap as a spectrum of trust: six stages, policies, understand, risk acceptance, contain, manage and insure, each answering the customer's next question. Acceleration runs through all of them. We are in the first stage.
+The proposed RiskMandate roadmap as a spectrum of trust: six stages, each answering the customer's next question.
 
 ## In short
 

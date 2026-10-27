@@ -10,7 +10,7 @@ tags: system-prompts, agent-behaviour-policy, claude, chatgpt, ontology, taxonom
 status: published
 ---
 
-!shot sp-map.webp | images/ | Claude Haiku 5.5's published system prompt as policy rows. 4,255 words, 181 sentences, 87 that read as rules and 82 once explanations are set aside, sorted into eight kinds, with where each kind could be kept other than in the model's good behaviour: 36 rules by the harness, 21 in part by classifiers, 25 by the model alone. | comparison
+!shot sp-map.webp | images/ | Claude Haiku 5.5's published system prompt as policy rows, sorted into eight kinds by where each could be kept. | comparison
 
 ## In short {#in-short}
 
@@ -72,7 +72,7 @@ OpenAI has the best public answer to the authority question, in the Model Spec r
 
 ## A proposed ontology {#ontology}
 
-!shot sp-ontology.webp | images/ | A system prompt as a policy file. A policy per layer, the vendor's, the deployer's and the user's, each with a mandate, a reach, its inputs and how far each is trusted, the state that changes the rules mid-conversation, and its rules: each with a kind, a trigger, a decision, a reason, an authority, a barrier, what enforces it, tests and the source text it came from. | architecture
+!shot sp-ontology.webp | images/ | A system prompt as a policy file: a policy per layer, each with its mandate, inputs, state and rules. | architecture
 
 So here is the shape I propose, building on the columns this site's policies already use: mandate, reach, gap and barriers, as in [Footprint and blast radius](/articles/footprint-and-blast-radius.html).
 

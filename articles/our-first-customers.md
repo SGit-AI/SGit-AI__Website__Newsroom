@@ -10,11 +10,11 @@
 
 # Our first customers: an early access programme for Agent Behaviour Policies, with credit to spend, a start-here site, daily follow-up, and a list for the next batch
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/our-first-customers.md) · [newsroom v0.12.154](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policystartupscustomerspricingearly-accessarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/our-first-customers.md) · [newsroom v0.12.154](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policystartupscustomerspricingearly-accessarticle
 
 ***Abstract:** Agent Behaviour Policies are ready for the next level. We have a workflow that works, a mapping to what regulators are asking for, and a clear idea of how it should all fit together. What is left is execution, and execution starts with customers. We now have a first group of people who are engaged and motivated: consultants who will sell this and already use some of it, people I work with, and us. So we are launching an early access programme, and I would like to call the people in it customers, not beta users: each one starts with credit to spend on a site we run, and the site already meters and bills, the way this newsroom does today, starting at £5. We will follow each customer closely, an email every day if that is what it takes, with objectives and milestones written with them, on a dedicated site with a start-here page. What we want to discover is the usage moment: the simplest policy that is useful, the entry point with least friction, and the price that feels fair. Everyone else who asks goes on a mailing list for the next batch. This is the brief.*
 
-The first customers, from credit to the moment they would pay: credit, a start-here page, a first policy, milestones and the value, with a daily follow-up and the meter alongside. Proposed.
+The first customers, from credit to the moment they would pay, with a daily follow-up and the meter. Proposed.
 
 ## In short
 
@@ -68,7 +68,7 @@ The things to track for each customer are simple: when they started, when they w
 
 This is not a launch. It is a first batch, small enough to follow closely. Alongside it we start a mailing list: everyone who asks to join is kept for the next batch, with what they want to use it for. The next batch gets a start-here page made from what the first one taught us, and needs less hand-holding per customer.
 
-Batches, not a launch: the first batch of friendlies, what we learn from them, the mailing list, and the second batch. Proposed.
+Batches, not a launch: the first batch of friendlies, the mailing list and the second batch. Proposed.
 
 ## What this does not claim
 

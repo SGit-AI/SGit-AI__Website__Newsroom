@@ -10,7 +10,7 @@ tags: sgit, scion, anthropic, version-control, git, agents, encryption, caching,
 status: published
 ---
 
-!shot sq-architecture-v2.webp | images/ | Two answers to agents at scale: Scion's always-online clients, three cache tiers and a server that does history, blame, merges and commits; and sgit's clients that encrypt, merge and read history, a dumb server that stores encrypted objects in batches of 50, and reads that any static host can serve, from objects any cache can keep. | architecture
+!shot sq-architecture-v2.webp | images/ | Two answers to agents at scale: Scion's always-online clients and server, and sgit's encrypting clients and dumb server. | architecture
 
 ## In short {#in-short}
 
@@ -33,7 +33,7 @@ The results, by the company's own figures: about 200 times less CPU and memory t
 
 [sgit](https://sgit.ai/) started from the same instruction Anthropic arrived at: Git solved most of the hard problems, so [copy Git](/articles/from-send-to-sgit.html#git). Commits, trees, blobs, refs and branches, with encryption underneath, and a server that, in the words of the March brief, is "a dumb key-value blob store" while "All intelligence lives in the client." Reading Scion's post, the overlap is not in the centre of gravity, which is the opposite, but in the properties that make agents fast.
 
-!shot sq-matrix-v2.webp | images/ | Scion, sgit and Git side by side: who does the work, whether the server holds plaintext, how a folder is protected, object ids, packing, partial copies, reads without the server, writes, merge, history, implementations, deployment, proven scale and availability. | comparison
+!shot sq-matrix-v2.webp | images/ | Scion, sgit and Git side by side, from who does the work to proven scale and availability. | comparison
 
 **Fetch only what you need, the same way.** Scion's post: "Scion's negotiation doesn't tell the server what the client already has; instead, it operates exclusively on trees and blobs the client wants. Starting from a root tree, the client checks its local store for missing trees and requests them recursively, then repeats the process for blobs." That is sgit's clone and pull walk: level by level over the trees, then the blobs in batches of 50 with 16 requests in flight. A scoped clone asks only for the spine down to its folders, and an unchanged folder keeps its tree id across commits, so it is never fetched twice.
 
@@ -47,7 +47,7 @@ The results, by the company's own figures: about 200 times less CPU and memory t
 
 ## Measured on a real, busy vault {#measured}
 
-!shot sq-bench-v2.webp | images/ | The measurements now: the 83-file vault this article first measured, 59 seconds with sgit 0.22.0 and about 11 with the fix, 4 seconds for one folder, 1.6 from a plain static host; and the 35,000-object vault the newsroom's agents share, 210 seconds in full, 57 with one commit of history, 13 for one folder with one commit. | comparison
+!shot sq-bench-v2.webp | images/ | The measurements now: the 83-file vault and the 35,000-object vault, in full, with history and for one folder. | comparison
 
 An 83-file vault says little about Scion's question: what happens when the repository is big and the clients are many. The right vault is the agents behind this newsroom share every day, with their mail, briefs, runs and analysis. On 16 October it had 1,295 commits, 5,281 files and about 35,000 encrypted objects, 527 MB with all its history, which is the size of a real application's source repository.
 

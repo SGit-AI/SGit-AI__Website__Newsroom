@@ -10,11 +10,11 @@
 
 # Software vendors should become villagers and town planners: let users explore on top of the product, sell them the maintenance of what they build, and use Firefox as the example of what happens if you don't
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/software-vendors-as-villagers.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · wardley-mapsexplorersvillagerstown-plannerscitizen-developerfirefoxmozillamalleable-softwarebusiness-modelscustomisationsaasarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/software-vendors-as-villagers.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · wardley-mapsexplorersvillagerstown-plannerscitizen-developerfirefoxmozillamalleable-softwarebusiness-modelscustomisationsaasarticle
 
 ***Abstract:** I am reaching a point where every piece of software that gets in my way is not just annoying, it is a little offensive, because I know that I could rebuild the part I need. I could make my own version of a browser that behaves exactly as I want. What stops me is not building it; it is maintaining it. That is the opportunity software companies are missing, and I think it is why they should be worried. My argument is a positioning one, in Simon Wardley's terms: a software company should stop thinking of itself as the explorer that invents features, and become the villager and town planner underneath its users, who explore on top of the product, by talking to it, while the company sells them the maintenance of what they built and learns from it. I could not find anyone making this argument; the nearest are Ink & Switch's essay on malleable software and Wardley's own model of innovating on a commodity. Firefox is the example. I came back to it and found a good browser that I could not bend: on the desktop its compact mode was hidden for five years, until Firefox 157 brought it back on 29 September, and on the iPad there is still no way to hide the toolbar. Mozilla's revenue is about 73% royalties, mostly from one customer. I would pay Firefox instead, a pound, ten pounds, fifty, for my version, kept working. The sell-off in software stocks in February, and a developer's open-source clones of seven Adobe applications this month, are early signs of what happens to companies that do not make that move.*
 
-A product as explorers, villagers and town planners: users explore on top, talking to the app, keeping a personal version and writing the best brief the vendor will get; the vendor maintains customisations and turns popular ones into features; the core is a set of primitives, deterministic and accountable.
+A product as explorers, villagers and town planners: users on top, the vendor in the middle, primitives at the core.
 
 ## In short
 
@@ -60,7 +60,7 @@ Mozilla is, to be fair, moving closer. On 12 October it [introduced Firefox Ente
 
 So here is the offer. Let me tell Firefox what I want, in words. Let an agent make my version, in a sandbox, reversible. And then charge me to keep it working: per version, per change, or a small subscription. Every one of those changes is also a signal of what users want, better than any survey. [A custom Firefox of my own](a-custom-firefox-of-my-own.md) works through the plan, and [explorer coding](explorer-coding.md) is the name I would give the first step.
 
-Four ways a user would pay the vendor: explore, free or a pound a month; keep, ten to fifty pounds a year for changes maintained across releases; adopt, fifty to five hundred pounds a change built properly; own, a maintained fork by contract.
+Four ways a user would pay the vendor: explore, keep, adopt and own, with a price range for each.
 
 ## Settings are not the answer
 

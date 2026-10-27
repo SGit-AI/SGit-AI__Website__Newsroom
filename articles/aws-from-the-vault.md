@@ -10,11 +10,11 @@
 
 # AWS from the vault: a proposed aws.twin.sgit.ai, where a temporary AWS session lives in the user's vault, the browser does the work, and AWS data finally has a place to go
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.2.0, 3 versions](versions/aws-from-the-vault.md) · [newsroom v0.13.16](https://newsroom.sgit.ai/admin/versions.html) · awsvaultscloudpkiarchitectureproposalarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.3.0, 4 versions](versions/aws-from-the-vault.md) · [newsroom v0.13.16](https://newsroom.sgit.ai/admin/versions.html) · awsvaultscloudpkiarchitectureproposalarticle
 
 ***Abstract:** I have wanted to build this for a long time: a website for managing AWS and working with its data, all on the client. It will be aws.twin.sgit.ai, because it is a twin first: an AWS-shaped interface whose backend is a vault, with the live account put in front of it later as a second backend. Two pieces were always missing. The first was a safe place in the browser for the AWS credentials. The second was somewhere to put the data: the inventories, logs and costs you gather. Now that every user has a vault, both are solved. You sign in to the AWS access portal, IAM Identity Center, copy the temporary credentials for one account and role, which last from one to twelve hours, and paste them into your vault, which can itself be temporary. For that session the site can do whatever that role can do, from the browser, with the normal AWS SDK for JavaScript: an S3 browser, Lambda functions, EC2 instances, billing, logs. The results go back into the vault, where they are versioned and can be turned into graphs. The first job I want from it is a better way to deploy the SG/Send server components to many regions and accounts. There may be a PKI way to get the session as well: IAM Roles Anywhere exchanges X.509 certificates for temporary credentials. That is to test. This is a proposal.*
 
-The proposed flow. Sign in to the AWS access portal and copy temporary credentials for one account and role. Paste them into the vault. The site, in the browser, calls AWS with them, and the results go back into the vault, where they become graphs and workflows.
+The proposed flow: AWS temporary credentials pasted into the vault, used by the site, results saved back.
 
 ## In short
 
@@ -81,7 +81,7 @@ That is what makes graph-based analysis of AWS practical. The resources become n
 
 ## The first job: deploying our servers
 
-The first job, as an example. One template, deployed through one session per account into several regions, with each deployment recorded in the vault. The accounts and regions are illustrative.
+The first job, as an example: one template deployed through one session per account into several regions.
 
 The short-term reason I want this is our own deployments. The SG/Send server components, the small API that stores vaults, need to run in many regions and, increasingly, in many accounts. The pieces already exist: CloudFormation templates for Lambda, as a container image with a function URL, and for ECS Fargate, an S3 storage mode with buckets named per account and region, and runbooks for new accounts and regions. What is painful is running them across all of those, and knowing afterwards what is deployed where.
 

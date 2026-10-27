@@ -10,7 +10,7 @@ tags: patching, ci-cd, maintenance, php2shell, non-functional-requirements, arti
 status: published
 ---
 
-!shot bx-surgery.webp | images/ | A patch is a change to a system: without tests, a pipeline and the people who know the side effects, patching is surgery, postponed and risky; with them, it is routine, and the teams with the best pipelines run out of things to patch. | concept
+!shot bx-surgery.webp | images/ | A patch is a change to a system: surgery without tests and a pipeline, routine with them. | concept
 
 ## In short {#in-short}
 
@@ -53,7 +53,7 @@ It is also more urgent than it was. We are not yet seeing large amounts of AI-dr
 
 So here is the opportunity. Do not answer this crisis by patching PHP, bringing the site back, saying "all good" and moving on. That is the whack-a-mole we have been playing for decades, and the next flaw, next week or next month, will find the same system in the same state.
 
-!shot bx-three-ways.webp | images/ | Three ways to answer the crisis: the one-off (patch, bring it back, move on, and meet the same problem next time), the measured (record when each system was last updated, how long a change would take and who can still build it), and the investment (fund the pipeline, the tests and paid maintenance, with a signed, supported version). | concept
+!shot bx-three-ways.webp | images/ | Three ways to answer the crisis: the one-off, the measured and the investment. | concept
 
 Instead, invest. Fix the second and third stories, not only the first: the pipeline, the tests, the people who can change the system. And pay for it properly. Somebody should be supporting that work and providing it as a cost-effective service, and the money is there: look at what organisations are spending this week to bring their sites back online, and imagine paying a fraction of that, every month, to keep them maintainable. I would argue the economics add up.
 

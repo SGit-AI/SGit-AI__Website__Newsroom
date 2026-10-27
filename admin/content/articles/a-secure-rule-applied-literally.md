@@ -10,7 +10,7 @@ tags: security, agents, accountability, csp, engineering, php2shell, article
 status: published
 ---
 
-!shot cq-copies.webp | images/ | A secure rule, applied literally: as planned in the first pass of the split, the press, the shared code, is copied into each of the four sites, so one fix means four copies and four releases, and copies drift; as changed from v0.22.2, the four sites load it from the press at a fixed version, with a published sha256 for every file and the security policy naming the press and data hosts. Both protect readers against a compromised outside host; the difference is cost and drift. | comparison
+!shot cq-copies.webp | images/ | A secure rule applied literally: shared code copied into four sites, against loaded from the press. | comparison
 
 ## In short {#in-short}
 
@@ -41,7 +41,7 @@ That is the pattern. The good news about agents is that they can handle a lot of
 
 ## Where the person comes in {#accountable}
 
-!shot cq-chain.webp | images/ | Where the question was asked: security on 24 October sets a policy on every page, scripts only from the site itself and hashed inline scripts; the architects on 25 October plan one repository into six; the developer's first pass gives each site its own runtime because of the policy; the editor reads the developer's notes, sees the copies and asks why; and the developer's v0.22.2 adds one resolver, with assets from the press, data from the data API, and the policy to allow those hosts. | process
+!shot cq-chain.webp | images/ | Where the question was asked: from the security policy of 24 October to the developer's v0.22.2. | process
 
 I caught it because I was reading the developer's notes. I asked for one source for every file across the split sites, and gave my go for the security policy to name the new shared hosts. The developer's next release, v0.22.2, does exactly that.
 

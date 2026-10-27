@@ -10,7 +10,7 @@ tags: qr-codes, pki, secrets, agents, encryption, article
 status: published
 ---
 
-!shot qw-flow.webp | images/ | The workflow: publish my public key as a QR code and a link; their browser or agent encrypts the secret to it and adds its own public key; the ciphertext travels as a QR code by any channel; I decrypt it and check their fingerprint once; from then on it is two-way. Agents do the same. | concept
+!shot qw-flow.webp | images/ | The workflow: publish a public key as a QR code, the sender encrypts to it, the ciphertext travels as a QR code. | concept
 
 ## In short {#in-short}
 
@@ -46,7 +46,7 @@ We could do all of this with blocks of text, and we have. In the memo: "even whe
 
 ## Who else already does this {#prior}
 
-!shot qw-prior.webp | images/ | Who already moves keys and secrets in QR codes: the EU Digital COVID Certificate, key verification in Signal, WhatsApp and Matrix, device linking in Signal and WhatsApp, Threema, passkeys on another device, offline wallets, Keybase and OpenKeychain, and provisioning codes for authenticators, Wi-Fi, WireGuard and eSIMs. | comparison
+!shot qw-prior.webp | images/ | Who already moves keys and secrets in QR codes, from the EU Digital COVID Certificate to Signal, WireGuard and eSIMs. | comparison
 
 I asked for research on who else is doing this, and the answer is reassuring: every piece is already in use, at scale, which is good evidence that it works. From their own specifications and documentation:
 
@@ -63,7 +63,7 @@ What I have not found is the combination: published public keys, secrets encrypt
 
 ## A format to share: QRE1 {#qre1}
 
-!shot qw-qre1.webp | images/ | Anatomy of a QRE1 frame: the version, the recipient's key id, the sender's one-off X25519 key, a nonce, the ChaCha20-Poly1305 ciphertext, and optionally the sender's Ed25519 key and signature, in one line of text. | concept
+!shot qw-qre1.webp | images/ | Anatomy of a QRE1 frame: version, key id, one-off X25519 key, nonce, ChaCha20-Poly1305 ciphertext and signature. | concept
 
 In the experiment Session B wrote a small format for an encrypted message in a QR code, QRE1. It is one line of text, with fields separated by a vertical bar: a version, an 8-byte id of the recipient's key, a one-off X25519 key made for this message, a nonce, the ciphertext, and optionally the sender's Ed25519 key and a signature over the rest. The shared key comes from X25519 and HKDF, and the cipher is ChaCha20-Poly1305, the same pair that TLS 1.3 and WireGuard use.
 

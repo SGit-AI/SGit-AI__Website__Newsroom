@@ -10,13 +10,13 @@
 
 # PHP October 2026, at 8pm: where the php2shell story stands, and a guided tour of the site that tracks it, built in one day by a team of agents from an evidence vault anyone can read
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.4.0, 5 versions](versions/php-october-at-8pm.md) · [newsroom v0.13.49](https://newsroom.sgit.ai/admin/versions.html) · php2shellbreaking-newsevidencevaultsversionsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.5.0, 6 versions](versions/php-october-at-8pm.md) · [newsroom v0.13.49](https://newsroom.sgit.ai/admin/versions.html) · php2shellbreaking-newsevidencevaultsversionsarticle
 
 ***Abstract:** At 8pm UK time on 22 October, this is where the php2shell story stands. The fix has been out since 21 October; sixteen agencies say install it; attackers are trying, in large numbers, and Amazon saw an attempt four days before the announcement; no named organisation has said it was broken into through these flaws, and the US list of flaws known to be used in attacks still does not include these two. The Dutch inventory of affected software has 724 rows, and only 61 of them have a fix. And behind that update is something I want to show properly: php.oct.2026.newsroom.sgit.ai, a site built today, from 09:27 to 19:04 UTC, in 34 versions, by two people and thirteen agents. It reads an evidence vault of 184 sources and 177 dated captures, now public. It has a front page in plain English and fifteen briefings, 70 claims each graded by a fact-check desk, ten contradictions in a ledger, a graph of 209 nodes, the fix read in the code, the inventory hour by hour, every section versioned, a phone app, synthetic readers and eight vaults. This is a guided tour of it, with the versions of everything, so the next update can say exactly what changed.*
 
 **Update 1.** This is the first update on the php2shell story and the newsroom covering it. [Update 2](https://newsroom.sgit.ai/articles/php-daily-2026-10-23.html) follows, as of 23:30 UTC on 23 October, and [update 3](https://newsroom.sgit.ai/articles/php-daily-2026-10-24.html), as of 23:40 UTC on 24 October.
 
-A guided tour of php.oct.2026.newsroom.sgit.ai in nine pages: the front page for everyone, the inventory hour by hour, the story as a graph, every section versioned, a source and its captures, the fix read in the code, the team, the eight vaults, and the six synthetic readers.
+A guided tour of php.oct.2026.newsroom.sgit.ai in nine pages, from the front page to the six synthetic readers.
 
 **Updated at 22:15 UTC.** The story's site has moved from v0.5.5 to v0.6.0 since 8pm. What changed is in [since 8pm](#since): a map of the evidence on compromise, a second fact-check run that answers the incomplete-fix report, and a new risk and compliance section. Two lines below are corrected to match: no *named* organisation has said it was compromised through these flaws, and the incomplete-fix report was answered that morning. At 22:45 UTC, a third correction: the source watch did not stop at 15:11, and the vendor reports were captured; see [what the day showed](#lessons).
 
@@ -43,7 +43,7 @@ What the evidence shows:
 - **Compromise.** No named organisation had said it was broken into through these flaws, in anything the vault had captured. At 19:00 the US government's [catalogue of known exploited vulnerabilities](https://php.oct.2026.newsroom.sgit.ai/impact/index.html) still did not list either flaw; its latest edition was released at 14:04 UTC on 21 October.
 - **Systems taken offline.** [Ten entries](https://php.oct.2026.newsroom.sgit.ai/impact/index.html) in the site's ledger of organisations that took websites offline as a precaution, from the Dutch government's login service to UK councils and game wikis. Taken offline is not the same as compromised, and the site keeps them in separate ledgers.
 - **Affected software.** The Dutch national cyber security centre keeps a public list of software that ships or depends on PHP. At its latest version, 15:28 UTC, it had 724 rows: 61 fixed, 216 vulnerable, 440 still under investigation, 6 not affected.
-The Dutch inventory of affected software, at each of its 38 versions from 21 October: 724 rows at 15:28 UTC on 22 October, of which 61 fixed, 216 vulnerable and 440 still under investigation.
+The Dutch inventory of affected software at 15:28 UTC on 22 October, one of its 38 versions since 21 October.
 
 ## What we still do not know
 
@@ -55,7 +55,7 @@ The Dutch inventory of affected software, at each of its 38 versions from 21 Oct
 
 ## A site built in one day
 
-One day, 34 versions of php.oct.2026.newsroom.sgit.ai, from v0.1.0 at 09:27 UTC to v0.5.5 at 19:04 UTC, with two lines of versions running in parallel until the design branch was merged into v0.4.0.
+One day of releases of php.oct.2026.newsroom.sgit.ai: 34 versions, from v0.1.0 at 09:27 UTC to v0.5.5 at 19:04 UTC.
 
 The site's first version went out at 09:27 UTC. The thirty-fourth, v0.5.5, went out at 19:04. In between, 62 commits, two lines of versions developed in parallel and merged, and a team that grew through the day: the [team page](https://php.oct.2026.newsroom.sgit.ai/team/index.html) now lists 17 members, two of them people, a project manager and me as the editor, and 13 agents, each with a role, what it owns, the rules it works by and the work it has shipped. Their tasks are on a board of 89 items, 25 of them done.
 
@@ -67,7 +67,7 @@ There is a lot here, so this is the route I would take a colleague through.
 
 **1. The front page, for everyone.** The [front page](https://php.oct.2026.newsroom.sgit.ai/) starts in plain English: what happened, what to do, what is not known, every line linked to the sources it rests on. Then it splits by reader. [Start here](https://php.oct.2026.newsroom.sgit.ai/start/index.html) maps fifteen readers, from a curious reader to a CISO, a CFO, a journalist and a PHP engineer, each with a thirty-second answer and a reading path, and each has [a briefing](https://php.oct.2026.newsroom.sgit.ai/briefings/board/index.html). There is a glossary of 40 terms, linked on first use on every page, and [ten questions readers ask](https://php.oct.2026.newsroom.sgit.ai/questions/index.html), each with a short answer to paste back to whoever asked you.
 
-On a phone: the front page, and Now, which answers what to know for the time you have, one, five, ten or thirty minutes, from the data alone or written by a model with the reader's own key.
+The site on a phone: the front page, and Now, which answers what to know for the time you have.
 
 **2. On a phone.** [Now](https://php.oct.2026.newsroom.sgit.ai/now/index.html) asks how much time you have, one, five, ten or thirty minutes, and gives you what you have not read yet. "From the data" is built from the site alone. "Written for me" uses a model with your own key, kept in your own vault, and every claim it makes must cite an item on the site. Since v0.5.4, every page also has an Ask pane: you talk to the site with your own key, the model can only use the site's read-only tools, every call is shown, every fact is cited to an item, and it changes nothing without your say-so.
 
@@ -89,11 +89,11 @@ On a phone: the front page, and Now, which answers what to know for the time you
 
 **11. The readers, real and synthetic.** The telemetry lane counted 120 anonymous events from 74 sessions by the afternoon, with no cookie and no IP address. And six [synthetic readers](https://php.oct.2026.newsroom.sgit.ai/admin/synthetic/index.html), a board member, a CTO, a project manager, a security lead, a developer and a designer, each read the live site in a real browser on its own device, follow their own reading path, and say whether they got their answer, each into its own private vault. They are a test instrument, not readers, and the site says so.
 
-The site in numbers at v0.5.5: 34 versions in one day, 144 sources in its export of the vault, 70 claims, 68 events, 16 agencies, 724 inventory rows, 209 graph nodes, 15 readers and briefings, 110 sections with 207 versions, 341 items, 17 team members, 8 vaults, 328 pages in the site's export of the source watch, 6 synthetic readers, 70 claims graded and 89 board items.
+The site in numbers at v0.5.5, after 34 versions in one day.
 
 ## Since 8pm
 
-From attempts to a named compromise, as of 20:50 UTC on 22 October: millions of attempts; three security vendors reporting exploitation without naming a victim; one named organisation saying it was attacked, with the attack stopped; and none saying php2shell was the way in.
+From attempts to a named compromise, as of 20:50 UTC on 22 October, in four layers of evidence.
 
 By 22:00 the story's site had gone from v0.5.5 to [v0.6.0](https://php.oct.2026.newsroom.sgit.ai/admin/versions.html), in five more versions. The ones that change the story:
 

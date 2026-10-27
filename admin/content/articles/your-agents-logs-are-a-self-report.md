@@ -10,7 +10,7 @@ tags: agents, governance, abp, audit, evidence, iso-42001, nist-ai-rmf, aiuc-1, 
 status: published
 ---
 
-!shot lg-evidence.webp | images/ | Where the evidence comes from: the agent's own account, a record a hook reads, a boundary the platform holds, and someone outside testing it. Each step is written by something the agent controls less, and is harder to talk round. | comparison
+!shot lg-evidence.webp | images/ | Where the evidence comes from: the agent's own account, a hook's record, a platform boundary, and outside testing. | comparison
 
 !trail self-report
 
@@ -56,7 +56,7 @@ The further right, the harder to talk round and the more expensive to get. A pro
 
 ## This site's agent, measured {#measured}
 
-!shot lg-rules.webp | images/ | The eleven rules this site's writing agent runs under, by who keeps them: ten are expectations kept by the agent, one is a setting kept by a hook, and none is a boundary; the one real boundary, the platform's limit on which repository the agent's GitHub tools can reach, is not in the policy. | comparison
+!shot lg-rules.webp | images/ | The eleven rules this site's writing agent runs under, by who keeps them. | comparison
 
 The agent that writes this site runs under an [Agent Behaviour Policy](https://abp.sgit.ai/what-is-an-abp/index.html): a grant, a mandate and eleven rules, each labelled with who keeps it. An expectation is kept by the agent. A setting is kept by a hook. A boundary is out of the agent's reach. The policy is [printed back into the session after every summary](/articles/re-anchoring-agent-behaviour-policies.html), and every third answer ends with a status report.
 

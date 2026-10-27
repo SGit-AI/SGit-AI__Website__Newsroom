@@ -10,7 +10,7 @@ tags: pki, keys, agents, identity, security, sgit, article
 status: published
 ---
 
-!shot ke-patterns.webp | images/ | How an agent gets its first key: two patterns. A, the agent's own key, confirmed by a person comparing fingerprints, is built at pki.sgit.ai. B, an identity key issued and held centrally after a second-step approval, is proposed. | concept
+!shot ke-patterns.webp | images/ | How an agent gets its first key: pattern A, its own key confirmed by a person, and pattern B, a central identity key. | concept
 
 ## In short {#in-short}
 

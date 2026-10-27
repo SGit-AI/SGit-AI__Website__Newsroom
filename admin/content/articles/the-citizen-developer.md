@@ -10,7 +10,7 @@ tags: citizen-developer, vibe-coding, spreadsheets, wardley-maps, villagers, tow
 status: published
 ---
 
-!shot cz-path.webp | images/ | From the spreadsheet to the town planners: the citizen developer's path. People built with what they controlled, a spreadsheet; now they build the application they need, which is also the best brief ever written; villagers harden it and town planners make it scale, and an sgit vault carries the app and its data through every handover. | architecture
+!shot cz-path.webp | images/ | From the spreadsheet to the town planners: the citizen developer's path. | architecture
 
 ## In short {#in-short}
 

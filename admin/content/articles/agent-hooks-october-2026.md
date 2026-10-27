@@ -10,7 +10,7 @@ tags: hooks, agents, claude-code, codex, gemini-cli, copilot, cursor, guardrails
 status: published
 ---
 
-!shot hq-map.webp | images/ | Agent hooks in October 2026, from each vendor's documentation: whether a hook can block a tool call, rewrite its input, act at the model call, be forced by the organisation, fail closed, and whether hooks shipped in a repository need trust. The design has converged; the security properties have not. | comparison
+!shot hq-map.webp | images/ | Agent hooks in October 2026, from each vendor's documentation, compared on blocking, rewriting and failing closed. | comparison
 
 > **What came next.** [Are hooks the sweet spot?](/articles/are-hooks-the-sweet-spot.html) takes this site's own behaviour policy and moves it into hooks rule by rule, tested in a sandbox, and asks how long hooks are the right place to keep an agent's rules.
 
@@ -26,7 +26,7 @@ status: published
 
 ## What a hook is {#what}
 
-!shot hq-where.webp | images/ | Where a hook sits: beside the agent, on the same machine, with the user's permissions. Hooks fire when a prompt is submitted, before and after a tool call, at the stop, and on one platform around the model call itself. They are good at deterministic checks at the moment of action, and cannot undo what ran or see what was not routed through them. | architecture
+!shot hq-where.webp | images/ | Where a hook sits: beside the agent, on the same machine, with the user's permissions, firing at five moments. | architecture
 
 A hook is a program the agent's harness runs at a fixed point in its loop, with a description of the event on its input and a decision on its output. The harness is the program around the model: it sends the prompt, receives the model's request to use a tool, runs the tool and returns the result. Hooks plug into that loop. The one that matters most for security runs before a tool call: it sees the tool's name and its full input, the shell command, the file path, the MCP server and tool, and it can allow the call, deny it with a reason the model sees, ask the person, or on most platforms rewrite the input.
 

@@ -10,7 +10,7 @@ tags: agents, agent-behaviour-policy, agent-decision-policy, agent-workflow-poli
 status: published
 ---
 
-!shot dn-map.webp | images/ | Three scenarios mapped element by element: memory deletion in the SGit adapter for Ruflo, this newsroom's release, and an illustrative customer refund. Each element is labelled ABP, decision or workflow, with five states: defined, implemented, enforced, observed and verified. The memory row is enforced but not observed; the newsroom's decision to ship with a failing test is not defined at all; the refund's limits are enforced and observed, and nothing verifies the amount under them. | matrix
+!shot dn-map.webp | images/ | Three scenarios mapped element by element, each labelled by kind and by five states from defined to verified. | matrix
 
 !trail decision-policy
 

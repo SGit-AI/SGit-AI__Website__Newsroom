@@ -10,7 +10,7 @@ tags: ux, customisation, bookmarklets, browser-extensions, javascript, accessibi
 status: published
 ---
 
-!shot pz-before-after.webp | images/ | One click on this newsroom: an article as published, and the same page after three fixes from its page API, reading mode, bigger text and an outline of the headings. Nothing on the site changed; it is CSS in the reader's browser. | comparison
+!shot pz-before-after.webp | images/ | One click on this newsroom: an article as published, and the same page after three fixes from its page API. | comparison
 
 ## In short {#in-short}
 
@@ -51,7 +51,7 @@ The fix is for the site to take part. If a page publishes a small JavaScript API
 
 We already have the convention. The SGraph tools put each tool's API on the page at `window.__tools`, announce it with a `tool:ready` event, and describe it in an `api.json`; the principle, in the architect's review, is "API is the tool, UI is a consumer". The same surface that a user's fix calls is the one Playwright tests call, and the one an agent driving a browser calls. A page with an API is a page that can be automated, tested and fixed with the least code, by people and by agents alike.
 
-!shot pz-loop.webp | images/ | The user's fix is the best brief the site will get: the site publishes primitives; readers write fixes in a line or two; the site learns from the fixes people keep; popular ones are adopted as settings or themes, and personal ones are maintained for a fee. | architecture
+!shot pz-loop.webp | images/ | How the user's fix becomes a brief: the site publishes primitives, readers write fixes and the site adopts popular ones. | architecture
 
 And here is the part sites should want. A fix a user writes, and keeps, is a better brief than any the site could write itself: what a real person needed, in a form that runs. It is [explorer coding](/articles/explorer-coding.html) applied to the page in front of you. The fixes many people keep should become settings, and then the script disappears, because the product does it. This newsroom has done exactly that once already: the first outside reaction to its Industry Wire was two words on WhatsApp, "Dark mode!", and [five themes](/articles/dark-mode-and-four-more.html) shipped soon after. The personal fixes that stay personal are where the vendor becomes the villager and is paid to maintain them.
 

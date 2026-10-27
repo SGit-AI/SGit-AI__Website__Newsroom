@@ -10,11 +10,11 @@
 
 # Handing secrets to agents and browsers: SG/Send's next focus, a key pair where the work runs, one-time drops, and a brief for a site that does only this
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.3.0, 4 versions](versions/handing-secrets-to-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · secretspkiagentsbrowserssg-sendsgitvaultsqr-codespasskeysone-time-linksbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.4.0, 5 versions](versions/handing-secrets-to-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · secretspkiagentsbrowserssg-sendsgitvaultsqr-codespasskeysone-time-linksbriefarticle
 
 ***Abstract:** The pain I have right now is giving secrets to the places that do my work: vault keys to a browser where the passkey does not reach, and vault keys to the agent sessions I schedule every day. Copying them by hand is slow and risky, and when I tell an agent in its prompt that something is a secret to be careful with, it sometimes refuses to use it at all. So I would like SG/Send's technology to focus on one use case: handing a secret, or a public key, to an agent or a browser, as a separate site, mostly client-side, with a command line. The back end already has most of what this needs: a transfer that can be downloaded once and then deleted, an expiry, and client-side encryption; it does not, I found, restrict by location, which I thought it did. The design flips the usual direction: the recipient makes its own key pair where it runs and shows only the public half, by QR code, link or paste; the owner encrypts the secret to it and signs it; the drop is read once; and the secret goes from the drop into the tool, never into the chat. This site's agent ran it end to end on a local server: the agent decrypted the secret, the second download got a 410, the owner's signature verified once the agent knew the owner's key, and a browser made a key pair it refused to export. The industry is moving the other way, keeping secrets out of agents entirely; for an encrypted vault that cannot work, because the key has to reach the place that decrypts.*
 
-Handing a secret to an agent or a browser, without anyone seeing it: the recipient makes its own key pair and shows only the public half; the owner encrypts to it, signs and drops the ciphertext for one download; the recipient decrypts it straight into the tool that needs it. Steps 1 to 4 ran end to end on a local SG/Send server.
+Handing a secret to an agent or a browser without anyone seeing it. Steps 1 to 4 ran on a local SG/Send server.
 
 ## In short
 
@@ -67,7 +67,7 @@ A vault key is different. The whole point of a zero-knowledge vault is that decr
 
 ## What exists, and the name
 
-One-time secret sharing, and what is different about handing one to an agent: where the secret is encrypted, whether it is read once, whether it expires, whether it is encrypted to the recipient's own key, and whether there is a command line, from each tool's documentation; the last row was run.
+One-time secret sharing tools compared with handing a secret to an agent, from each tool's documentation.
 
 One-time secrets are a solved problem for people: Bitwarden Send, 1Password's share links, Yopass and PrivateBin all encrypt in the client and expire. [Magic Wormhole](https://magic-wormhole.readthedocs.io/en/latest/welcome.html) solves the short code properly, with a key exchange where "Each code is one-time use only", and [age](https://github.com/FiloSottile/age) encrypts to a recipient's public key from the command line. What none of them is built around is a recipient that is an agent or a browser, making its own key, with an owner's signature it checks. The closest I found are small plugins for agent frameworks, such as Hermes' secret handoff, which keeps the value out of the transcript but, by its own account, not out of the chat history of the surface that asked for it.
 

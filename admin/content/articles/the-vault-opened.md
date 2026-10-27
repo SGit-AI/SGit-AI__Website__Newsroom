@@ -10,7 +10,7 @@ tags: vaults, vault-in-vault, sub-vaults, vault-apps, devices, merge, encryption
 status: published
 ---
 
-!shot vo-viewer.webp | images/ | A demo reader vault opened in the SG/App at dev.vault.sgraph.ai, read-only, from its published read key. The page is the newsroom's viewer: its code came from a different vault, lkypj6zq, through a link file, and it drew the account from the demo vault's own records, a balance of £4.84, three pages read, two notes, two devices. The badge at the top right says the session cannot write. | screenshot
+!shot vo-viewer.webp | images/ | A demo reader vault opened read-only in the SG/App at dev.vault.sgraph.ai, drawn by the newsroom's viewer. | screenshot
 
 ## In short {#in-short}
 
@@ -29,7 +29,7 @@ Dinis had just used [open or connect](/articles/the-vault-crosses-chrome-profile
 
 ## Merging devices {#merge}
 
-!shot vo-merge.webp | images/ | The Vault tab in the pane, 400 pixels wide, in Newsprint, with two devices ticked in Across your devices. The bar under the table offers to merge them into one of the two, under a name that can be changed, and says that nothing is deleted. The total row is the account recomputed from the records. | small | screenshot
+!shot vo-merge.webp | images/ | The Vault tab in the pane, 400 pixels wide in Newsprint, with two devices ticked and an offer to merge them. | small | screenshot
 
 A device in this vault is a file: `activity/devices/<id>.json`, everything one browser originated. Merging three iPads means one file, so `mergeDevices` re-files each source into the target and combines them, keeping the version of a record that knows more where two exist. Nothing is dropped. That matters for money: a top-up is a payment record, and Dinis was clear that a payment entry is not something to lose. The test merges three devices with reads, notes and a top-up and checks that the balance, the spend and the credit are the same before and after.
 
@@ -41,7 +41,7 @@ The chooser asked the right question, which device is this, but every option loo
 
 ## The calls, as a tab {#calls}
 
-!shot vo-calls.webp | images/ | The Calls tab, widened, after an update of the reader vault. One batch call is open: inside it, a file's contents (the entry page the update wrote), a tree with six entries, a commit with its message, time, tree and parent, and a ref pointing at that commit. Each was decrypted in the page with the reader vault's key; the server holds only the ciphertext. | narrow | screenshot
+!shot vo-calls.webp | images/ | The Calls tab after an update of the reader vault, with one batch call open: file, tree, commit and ref. | narrow | screenshot
 
 The pane always listed its calls, one line each, a method, an address, a status. The address already says a lot once it is read: `bare/data/obj-cas-imm-…` is an immutable object, `bare/refs/ref-pid-muw-…` the published ref, `ref-pid-snw-…` a device's working ref, `idx-pid-…` the branch index, `/append/…` an inbox call. So the Calls tab names each call from its address, gives it a badge and the vault it touched by name, your reader vault, your master vault, your door, your lane.
 
@@ -49,13 +49,13 @@ Opening a call goes further. The page keeps each call's bytes in memory, and whe
 
 ## Your vaults, file by file {#browse}
 
-!shot vo-browse.webp | images/ | The page Your vaults, opened, after a merge: the reader vault's tree on the left, the merged device's file in the middle with the device it was merged from in its header, and the commits on the right, newest first, from the merge back to the vault's creation. Picking a commit shows the tree and the files as they were then. | small | screenshot
+!shot vo-browse.webp | images/ | The page Your vaults after a merge: the reader vault's tree, the merged device's file and the commits, newest first. | small | screenshot
 
 The page `/vault/browse.html` is linked from the Vault and Keys tabs as Browse your vault. It uses the session the pane keeps for the tab, the door it opened with your passkey, to open the door, the master, the reader vault and the lane itself, with the same library, and shows each one: the files and folders, any file's contents, and the commits, with the tree and the files as they were at each. It writes nothing. The reader vault can also be opened in the SG/Vault app from there: a press hands the app the vault's read key over its embed protocol, never in an address and never stored, and the test checks that the read key, and nothing else, is what the app receives.
 
 ## One viewer that every reader vault opens with {#viewer}
 
-!shot vo-link.webp | images/ | How the viewer is linked. Left, a reader vault: its records under activity/, and four small files the next Update writes. Right, the newsroom's viewer in vault lkypj6zq, with its code. Below, what the SG/App does when it opens the reader vault: reads the manifest, opens the viewer vault read-only from the owner record, loads the viewer's code through the link, and lets it read the reader's own records. | architecture
+!shot vo-link.webp | images/ | How the viewer is linked: a reader vault, the newsroom's viewer vault, and what the SG/App does to open them. | architecture
 
 sgit.ai describes [sub-vaults](https://sgit.ai/docs/vault/sub-vaults.html) as a convention rather than a format: a file named `*.link.json` points at another vault and carries no key; the child's read key sits in `.vault/owner/ro-links.json`; and in App Mode an app's reads under the link's folder are served from the child, opened read-only. I read the SG/Vault interface's own code on 16 October to check the details, the record's fields and the read-only open, before relying on them.
 

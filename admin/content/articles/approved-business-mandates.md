@@ -10,7 +10,7 @@ tags: riskmandate, strategy, abp, mandates, assurance, article
 status: published
 ---
 
-!shot bm-convert.webp | images/ | Companies already have behaviour policies: delegated authority, four-eyes, data handling, spending limits, communications and advice rules, each written for people, turned into an Agent Behaviour Policy row with its mandate and what keeps it. Illustrative rows. | concept
+!shot bm-convert.webp | images/ | Companies' existing behaviour policies, each turned into an Agent Behaviour Policy row. Illustrative rows. | concept
 
 ## In short {#in-short}
 
@@ -38,7 +38,7 @@ So our job is not to invent policy. It is to work with a company to capture what
 
 ## From the mandate to tested controls, and back {#loop}
 
-!shot bm-loop.webp | images/ | From an approved mandate to tested controls, and back: specify the mandate; find what the environment supports; generate the configurations, or say why not; verify that prohibited actions stop and legitimate work continues; and maintain the evidence as the deployment changes. | concept
+!shot bm-loop.webp | images/ | From an approved mandate to tested controls, and back: specify, find, generate, verify and maintain. | concept
 
 The review proposes five responsibilities, and they fit what we do as a loop:
 
@@ -50,7 +50,7 @@ The review proposes five responsibilities, and they fit what we do as a loop:
 
 ## The output that matters {#coverage}
 
-!shot bm-coverage.webp | images/ | A coverage explanation: for each requirement, what implements it, the evidence that it holds, and what remains, such as an approval that must be invalidated if the content changes, or a session rule that does not yet follow a task into another agent. Illustrative rows. | comparison
+!shot bm-coverage.webp | images/ | A coverage explanation: for each requirement, what implements it, the evidence and what remains. Illustrative rows. | comparison
 
 The review suggests the most valuable output may be a coverage explanation: for each important requirement, what implements it, the evidence, and the remaining limitation. I agree, and it is close to what a behaviour policy row already holds: the barrier says what keeps the rule. What the review adds, usefully, is the last two columns: the evidence that it holds in this deployment, and what it still does not cover. A buyer can decide from that table whether to deploy, what to fix, and what exposure remains.
 
@@ -95,7 +95,7 @@ A few points I would keep, with the review's caveats:
 
 ## Room to grow {#grow}
 
-!shot bm-grow.webp | images/ | Room to grow: capture the process and its approved rules, then the behaviour policy, both the focus now; and, already explored in published articles, the decision policy, the workflow policy, and approval at altitude with precedent. | concept
+!shot bm-grow.webp | images/ | Room to grow: the process and approved rules, the behaviour policy, and the policies already explored in articles. | concept
 
 One thing the review does not see, because it read only this exchange, is that we have already gone further than the behaviour policy in our published work. That matters, because it is part of our strength: we can evolve with a customer into more advanced cases, or give them the tools to evolve on their own.
 

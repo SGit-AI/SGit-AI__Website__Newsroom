@@ -10,7 +10,7 @@ tags: provenance, signatures, pki, peer-review, economics, article
 status: published
 ---
 
-!shot vs-economics.webp | images/ | Who is best placed to check a claim: today every reader, or an agent with the right context, loads the article and the source and maps one to the other, hours of work or a lot of tokens, repeated by every reader; instead, the author of the source reads how it is used, adds a caveat if needed, and signs it once, and every reader after that checks one signature. | concept
+!shot vs-economics.webp | images/ | Who should check a claim: every reader today, or the author of the source signing it once. | concept
 
 ## In short {#in-short}
 
@@ -35,7 +35,7 @@ The best person is the source: the author of the paper, the team that wrote the 
 
 So here is the idea. When an article uses someone's work, we ask them. We send them the passage, with its hash and the links it relies on, and one question: is this a fair representation of what you said? They can agree. They can disagree. Or, most usefully, they can add the caveat that makes it correct: "yes, 70%, but only of these", or "that was true of the first version, not the second". And then they sign it, with their own key.
 
-!shot vs-workflow.webp | images/ | Signed by the source, the workflow: the article quotes or summarises a source; the newsroom sends the source the passage with its hash and links; the source agrees or adds the caveat that makes it correct; the source signs the passage with a key its own website vouches for; and a reader or an agent checks the signature and the signer's standing, without loading every reference. Paid where it earns money, and open to readers and researchers going on the record too. | process
+!shot vs-workflow.webp | images/ | Signed by the source, the workflow: from the article quoting a source to a reader checking the signature. | process
 
 ## Why the economics work {#economics}
 

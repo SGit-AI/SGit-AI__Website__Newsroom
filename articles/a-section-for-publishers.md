@@ -10,11 +10,11 @@
 
 # A section for publishers: where to send someone new to this newsroom, and a site that keeps itself current
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/a-section-for-publishers.md) · [newsroom v0.12.108](https://newsroom.sgit.ai/admin/versions.html) · newsroompublishersfindabilitytaxonomyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/a-section-for-publishers.md) · [newsroom v0.12.108](https://newsroom.sgit.ai/admin/versions.html) · newsroompublishersfindabilitytaxonomyarticle
 
 ***Abstract:** Where do I send a publisher who has never read anything on newsroom.sgit.ai? The publishers page is a good distillation, but it was written once, and this site changes most days: some of what a publisher would care about most, like the way an article now folds away the sections you have already read, shipped in the last few days. So the newsroom now has sections, and the first is for publishers. A section is the newsroom as one audience reads it: five pieces to start with, chosen by the editor; the latest pieces for that audience; the features they can use today, each with when it shipped; and every relevant article, placed into streams by rule, each saying which rule placed it. Nothing on the page is listed by hand except the five to start with. The placement uses the desks and controlled subjects the site already gives every article, and a new register of features, updated in the release that ships each one. So a new article about paying for news lands in the publishers' section on the day it is published, and a new feature appears there as it ships. Building it also showed where the classification is still loose: one subject swept up history talks as journalism, and another was broad enough to pull in a dark mode. Those are fixed by rule, in the open, with the reason written down. Sections for security leads, builders and investors can follow the same pattern.*
 
-A section for publishers, and how it keeps itself current. Three inputs: the desks and controlled subjects every article already has, the section's own file of rules and the editor's words, and a register of the site's features with when each shipped. One build step places every article into the section's streams, says which rule placed it, and writes the page and its JSON twin. The page: five pieces to start with, the latest, the features a publisher can use today, and four streams of articles.
+A section for publishers and how it keeps itself current: three inputs, one build step, and the page with its JSON twin.
 
 ## In short
 

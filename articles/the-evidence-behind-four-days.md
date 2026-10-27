@@ -10,11 +10,11 @@
 
 # The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-27 · [article v1.2.0, 3 versions](versions/the-evidence-behind-four-days.md) · [newsroom v0.13.105](https://newsroom.sgit.ai/admin/versions.html) · php2shellevidencevulnerabilitieskevepssdataarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-27 · [article v1.3.0, 4 versions](versions/the-evidence-behind-four-days.md) · [newsroom v0.13.105](https://newsroom.sgit.ai/admin/versions.html) · php2shellevidencevulnerabilitieskevepssdataarticle
 
 ***Abstract:** Four days after php2shell went public, Jeremiah Grossman, CEO of Root Evidence, posted on LinkedIn that the evidence does not support the wave of AI-enabled breaches many were bracing for, that the exploits are environment-specific, that in the same four days over a thousand CVEs were published and almost none were exploited, and that the rule is the old one: patch what adversaries exploit. This is the data behind each claim, re-counted from public sources and from the PHP story site's evidence, with every number traceable to a query or a captured source. Most of it holds. The post's timestamp is the CVE record's to the second; NVD counts 1,394 CVEs in the same window, not 1,448; none references Exploit-DB or Metasploit; VulnCheck published 25 old bugs with 2017 to 2025 IDs on 22 October; CISA had listed one, the Arista flaw. Two things changed after the post: CISA added both php2shell CVEs to its catalogue on 26 October, and their EPSS scores went from 0.06 and 0.12 to above 0.999 the day before. As of 09:43 UTC on 27 October, no named organisation had said it was compromised through php2shell. The yearly numbers are consistent with the post's wider point, but cannot test it: CVE publications more than doubled this year, while additions to CISA's catalogue rose by 30%. Corrected on 27 October after a review by ChatGPT, which the editor asked for; the changes are listed at the end.*
 
-Jeremiah Grossman's post on LinkedIn, four days after php2shell went public, as shared with me on 27 October 2026: "php2shell went public four days ago, at 13:48:34 UTC on October 21, 2026", the claims in the same four days, and the conclusion, "patch what adversaries exploit".
+Jeremiah Grossman's LinkedIn post on php2shell, four days after it went public, as shared with me on 27 October 2026.
 
 ## In short
 
@@ -37,7 +37,7 @@ The [PHP story site](https://php.oct.2026.newsroom.sgit.ai/) keeps exactly the r
 
 ## Claim by claim
 
-Four days of CVEs, from 13:48:34 UTC on 21 October to the same time on 25 October 2026, re-counted on 27 October: 1,394 published according to NVD (the post says 1,448), 1,383 scored by EPSS, 22 with an EPSS of 0.01 or more, 25 old bugs given IDs by VulnCheck on 22 October, none with an Exploit-DB or Metasploit reference, one on CISA's KEV catalogue at the time of the post, and three now, the Arista flaw and both php2shell CVEs. Log scale.
+The CVEs of the four-day window, re-counted on 27 October 2026, against Jeremiah Grossman's figures. Log scale.
 
 | Claim in the post | What the data says | Verdict |
 |---|---|---|
@@ -53,7 +53,7 @@ Four days of CVEs, from 13:48:34 UTC on 21 October to the same time on 25 Octobe
 
 ## No wave, and nothing confirmed
 
-The compromise record on the PHP story site at 09:43 UTC on 27 October, by kind: 22 rows of no success known, 13 of exploitation attempts, 8 named organisations, 5 vendor statements of exploitation with no victim named, 4 official signals and 1 anonymous allegation; and what the eight named organisations said: a break-in with no cause stated, an attack stopped, a retraction, a precaution, "was not hacked", attempts only, a link denied, and an unverified second-hand report.
+The compromise record on the PHP story site at 09:43 UTC on 27 October, by kind, and what eight organisations said.
 
 The PHP story site's [evidence on compromise](https://php.oct.2026.newsroom.sgit.ai/compromise/index.html) is a list of every statement, each with its captured source. Its line, at 09:43 UTC on 27 October, six days in: "No named organisation has said it was compromised through php2shell." Its 53 rows divide as the figure shows. Three kinds of evidence need keeping apart here: attempts, seen by honeypots and sensors; successful exploitation in a lab or honeypot set up for it, such as the 35 shells below; and a confirmed compromise of a production system, of which there is none so far. CISA's listing sits between them: CISA's own assessment, added to both CVE records, marks exploitation as "active", and names no victim. The eight named organisations are the "reports of individual breaches": GMO Internet Group found malicious programs on servers of its trading service and has not stated the cause; Czech Technical University stopped an attack; Valtec first blamed the PHP flaw, then said the attackers used a flaw in its own service; DMM halted services and would not say whether it was PHP; Germany's Interior Ministry said its site "was not hacked"; Anexia confirmed attempts; Ahold Delhaize denied any link; and the Square Enix report is second-hand and does not say how the access happened.
 
@@ -72,7 +72,7 @@ Honeypots did catch plenty: Amazon's MadPot saw an attempt four days before disc
 
 ## The other 1,392
 
-EPSS for the window: 1,361 of 1,383 scored CVEs below 0.01, 19 between 0.01 and 0.1, one between 0.1 and 0.5, and two above 0.5, the php2shell pair; and the daily EPSS of the two php2shell CVEs, about 0.05 to 0.12 from 22 to 24 October, then above 0.999 on 25 and 26 October, against the Arista flaw, listed by CISA on 23 October, at about 0.01.
+EPSS scores for the 1,383 CVEs in the window, and the daily scores of the two php2shell CVEs.
 
 NVD counts 1,394 CVEs published between 13:48:34 UTC on 21 October and the same time on 25 October. The difference from the post's 1,448 is small, and not reconciled. Two possible causes: NVD's publication time is not always the CVE record's, and counts move as records are added, rejected or re-dated. Only comparing the two lists of IDs would settle it, and we do not have the post's list. Of the 1,394, NVD had fully analysed 3 when we counted on the morning of 27 October (30 by 15:44 UTC the same day); 12 were rejected; most were waiting. They came mostly on weekdays: 494 and 497 on 22 and 23 October, 39 on the Sunday.
 
@@ -87,13 +87,13 @@ Two things, both in the direction of "php2shell is exploited", neither in the di
 
 ## Attention is not exploitation
 
-News items about each flaw, with 53 to 55 feeds checked for each, not necessarily the same ones, from the PHP story site's Pulse agent on 24 October: php2shell 295, against 11 to 48 for twelve flaws already on CISA's catalogue in the same fortnight, from BeyondTrust and Ivanti to a 2015 ProFTPD flaw; php2shell had reached evidence levels 1 and 4, the others level 5, a KEV listing.
+News items about php2shell and twelve flaws already on CISA's catalogue, from the PHP site's Pulse agent, 24 October.
 
 The PHP story site has an agent, Pulse, that tracks other vulnerabilities in the news beside php2shell, with two things kept apart: the evidence of exploitation, as eight levels from a public proof of concept to a named victim, and the attention, as counts of news items. On 24 October, with 53 to 55 feeds checked for each row, php2shell had 295 news items and had reached levels 1 and 4: a public proof of concept and attempts reported by a named party. Twelve flaws that CISA had listed as exploited in the same fortnight, or that were old flaws newly listed, had 11 to 48 news items each. Three of them were from 2015 and 2016. Read it as a description of coverage in this collection, not a controlled measure: similar numbers of feeds are not the same feeds, and a named pair of flaws is counted against single CVEs. Even so, it is consistent with the post's closing argument: what is exploited and what is talked about are different lists, and patching should follow the first. A run with the same feeds for every row is in our brief.
 
 ## Is AI driving it?
 
-CVEs published by NVD and entries added to CISA's KEV catalogue, 1 January to 26 October of each year: 25,326 and 156 in 2023, 32,569 and 148 in 2024, 40,266 and 210 in 2025, 89,531 and 274 in 2026; the additions as a share of publications, 0.62%, 0.45%, 0.52% and 0.31%.
+CVEs published by NVD and entries added to CISA's KEV catalogue, 1 January to 26 October of each year, 2023 to 2026.
 
 Jeremiah's opinion is that nothing in the record shows AI driving up how many vulnerabilities adversaries exploit, or how fast. The yearly numbers describe the background, but they cannot test that. From 1 January to 26 October, NVD published 89,531 CVEs this year, more than twice the 40,266 of the same period in 2025; CISA's catalogue added 274 entries, 30% more than the 210 of 2025, so additions as a share of publications fell from 0.62% in 2023 to 0.31%. The two numbers count different populations, since CISA's additions include CVEs published in earlier years; the catalogue records what CISA has evidence for, not attack volume or speed; and neither says anything about AI. Testing the claim needs matched cohorts: the CVEs published in a period, each followed for the same time, with the time to the first evidence of exploitation. We have asked for that below.
 
@@ -101,7 +101,7 @@ Three questions need keeping apart. Can AI help build exploits? Yes, by the acco
 
 ## The 32 million
 
-What each exposure figure counts: Censys 1.57 million unpatched hosts on 21 October, VulnCheck about 2.6 million hosts exposing PHP, VirusTotal 5.1 million IPs running PHP, Unit 42 22.6 million instances potentially vulnerable, Censys's dashboard 32 million services in the post and 36.7 million on 22 October as quoted by Fortinet, and "almost 70% of websites", a share, not a count. Log scale.
+What each published exposure figure for PHP counts, from Censys to Unit 42 and "almost 70% of websites". Log scale.
 
 The post's 32 million is Censys's count of services, not servers or organisations. Censys's dashboard was quoted at 36.7 million services on 22 October. If both figures are the same measure, the count went down. That could be patching, but also scan coverage, services going offline, fingerprints or the method changing; and, as Fortinet notes, "version-based estimates may include installations already patched through vendor backports". We could not read the dashboard ourselves, so the trend is a question, not a finding. What the record does show is how far apart the published figures are: from 1.57 million unpatched hosts to "almost 70% of websites", because each counts a different thing, and a version string is not the same as an exploitable server.
 

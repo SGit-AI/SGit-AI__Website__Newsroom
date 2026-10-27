@@ -183,19 +183,19 @@
     {
       "file": "vc-pipeline.webp",
       "url": "https://newsroom.sgit.ai/articles/images/vc-pipeline.webp",
-      "caption": "A pipeline whose stages talk through a vault. Each job clones only the folders it needs, with only the key it needs: build writes with the vault key, test shards append to write-only inboxes, the summary reads the lane, release and deploy read with the read key and their own key pairs, and anyone outside GitHub can clone the results with a read key. What leaves a runner is ciphertext.",
+      "caption": "A pipeline whose stages talk through a vault, with each job holding only the key it needs.",
       "kind": "architecture"
     },
     {
       "file": "vc-keys.webp",
       "url": "https://newsroom.sgit.ai/articles/images/vc-keys.webp",
-      "caption": "Which job holds which key. Build and the summary hold the vault key, release, deploy and outside readers the read key, each test shard one append token, the summary the lane's enum key, and the jobs that sign or decrypt their own key pair. The server access token opens a private server's door for everyone; it is not a vault permission.",
+      "caption": "Which job holds which key, and what the server access token does and does not do.",
       "kind": "comparison"
     },
     {
       "file": "vc-noserver.webp",
       "url": "https://newsroom.sgit.ai/articles/images/vc-noserver.webp",
-      "caption": "No hosted server. The vault server runs as a container inside the job with its storage in a folder; the folder holds only ciphertext, so it can be saved to the Actions cache, an artifact, a release asset or a git branch, and the next run restores it and clones with its full history. Reading needs no server at all; pushing needs the server's API, which the sidecar provides.",
+      "caption": "No hosted server: the vault server runs as a container inside the job, and its ciphertext is saved between runs.",
       "kind": "architecture"
     }
   ]

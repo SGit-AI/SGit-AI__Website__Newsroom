@@ -34,6 +34,10 @@
 //      has to open the same list in a year.
 //  13. the vendored vault library is unedited — every file of assets/vendor/sg-vault/v0.2.3
 //      hashes to what its VENDOR.md records; one code base, pinned, refreshed from upstream.
+//  14. figure captions are short — the caption of every `!shot` and `!frames` line in an article
+//      or a draft is at most 120 characters: what the image is, not the data or the argument.
+//      Long captions overflowed the page beside a figure and could not be carried into a LinkedIn
+//      article or newsletter (the editor's rule, 27 October 2026; admin/build/captions.py lists them).
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs   = require('fs');
@@ -489,6 +493,24 @@ try {
   }
 }
 
+// --- 14. figure captions are short -----------------------------------------
+{
+  const CAPTION_LIMIT = 120;  // keep in step with admin/build/captions.py
+  for (const dir of ['admin/content/articles', 'admin/content/drafts']) {
+    const abs = path.join(ROOT, dir);
+    if (!fs.existsSync(abs)) continue;
+    for (const f of fs.readdirSync(abs).filter(x => x.endsWith('.md'))) {
+      const lines = fs.readFileSync(path.join(abs, f), 'utf8').split('\n');
+      lines.forEach((line, i) => {
+        const m = line.match(/^!(shot|frames)\s+(.+)$/);
+        if (!m) return;
+        const cap = (m[2].split('|')[2] || '').trim();
+        if (cap.length > CAPTION_LIMIT) errors.push(`${dir}/${f}:${i + 1}: figure caption is ${cap.length} characters, over ${CAPTION_LIMIT}: say what the image is, and put the detail in the text`);
+      });
+    }
+  }
+}
+
 // --- report ---------------------------------------------------------------
 if (errors.length) {
   console.error(`validate: ${errors.length} error(s)`);
@@ -498,4 +520,4 @@ if (errors.length) {
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
             `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, blocks balanced, ` +
             `every page carries an agent block, provenance blocks sourced, no redacted material, ` +
-            `no key-shaped strings, the imported newsroom unedited, the article numbers hold`);
+            `no key-shaped strings, the imported newsroom unedited, the article numbers hold, captions short`);

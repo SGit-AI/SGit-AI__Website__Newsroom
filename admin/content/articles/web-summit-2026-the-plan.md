@@ -10,7 +10,7 @@ tags: web-summit, strategy, team, agents, outreach, briefing, article
 status: published
 ---
 
-!shot wt-loop.webp | images/ | Web Summit 2026, usage first, then the sale: intelligence on who to talk to, from public material only; an asset made for one company or one post; a link to it, published on the Web Summit newsroom and sent by email or LinkedIn; usage, five minutes to value in their browser; and what they tell us, pain points from use, not from asking; the next asset is better. The sale comes after the usage, as the RiskMandate customer programme does. | process
+!shot wt-loop.webp | images/ | Web Summit 2026, usage first, then the sale: from intelligence on who to talk to, to what they tell us. | process
 
 ## In short {#in-short}
 
@@ -26,7 +26,7 @@ status: published
 
 Web Summit runs from [9 to 12 November 2026](https://websummit.com/) in Lisbon. The good news is that, this time, we have help. Three people are joining us, so with the two founders there are five of us with tickets, all part of the team, and we can work the summit as a team rather than as individuals walking the floor.
 
-!shot wt-team.webp | images/ | Five people, five tickets, who leads what: the two founders, the story, the products and the sale, approving every message that goes out; the project manager, the board and the rhythm, and the daily follow-up; the Gen AI consultant and technical expert, the demos, the onboarding and the website workflow; the Gen AI founder and explorer coder, the assets built for one company or one post. | concept
+!shot wt-team.webp | images/ | Five people, five tickets: who leads what at Web Summit 2026. | concept
 
 - **The two founders** own the story, the products and the sale: deciding who matters most, taking the meetings, recording interviews, and approving every message that goes out in our name.
 - **The project manager** owns the board and the rhythm: the task list on the summit's newsroom, who does what by when, and the daily follow-up with every contact.
@@ -76,7 +76,7 @@ I will work with the developers on the Git structure, how we operate, and how it
 
 ## The two agentic workflows we run today {#workflows}
 
-!shot wt-flows.webp | images/ | The two agentic workflows we run today: the email workflow, agent@riskmandate.ai, where the agent reads, researches, drafts for one person and keeps the records, and the editor reads and sends every draft, the drafts folder a work queue labelled send, review or decide, 178 emails by 18 October; and the website workflow, agents with a role, a policy and a schedule card that wake on their own and release through a gate, 23 agents and 13 schedule cards on the PHP story site. | comparison
+!shot wt-flows.webp | images/ | The two agentic workflows we run today: the email workflow and the website workflow. | comparison
 
 Everyone on the team will use both, so here is how each works.
 

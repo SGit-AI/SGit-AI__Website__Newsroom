@@ -10,11 +10,11 @@
 
 # A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/a-call-for-help.md) · [newsroom v0.13.78](https://newsroom.sgit.ai/admin/versions.html) · journalismagentsjobscommunitycall-for-helparticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/a-call-for-help.md) · [newsroom v0.13.78](https://newsroom.sgit.ai/admin/versions.html) · journalismagentsjobscommunitycall-for-helparticle
 
 ***Abstract:** This is a call for help. Journalists are going through an identity crisis: they love the work, and the industry is not helping them through a massive transformation. There is a win-win here. They need to see agentic workflows doing real work, and where they add value to them; and the biggest limitation of our projects is that there are not enough humans working on them. The PHP story site shows it. Its team page lists 21 members: two humans, the editor and a project manager, and 19 roles run by agents or waiting to be filled. Every one of those roles should have a person connected to it: coordinating it, steering its agents, reviewing what they produce, and doing what only a person can, like the interviews and op-eds of the previous article. I cannot pay right now. What I can offer is coverage, exposure, credit under your own name, and a learning experience that is hard to find anywhere else. And if this generates revenue, the people in the roles are the ones who should be paid. Students and teachers are welcome too. If that is you, or someone you know, get in touch.*
 
-Every role should have a human: the PHP story's team page lists 21 members, two of them human, the editor and a project manager; the other 19 roles, from the conductor and the journalist to the historian, the verifier and the corrections liaison, are run by agents or waiting to be filled, and each could have a person coordinating it.
+Every role should have a human: the PHP story's team page lists 21 members, two of them human.
 
 ## In short
 
@@ -41,7 +41,7 @@ As I wrote in [jobs that never scaled](https://newsroom.sgit.ai/articles/jobs-th
 
 ## What we ask, and what we offer
 
-A call for help: what we ask, to take a role, review and steer its agents, and do what only a person can, or a few minutes an ask as a power user; what we offer now, no pay yet, but coverage, exposure, credit under your own name, and a close look at a newsroom run with agents; and when there is revenue, the people in the roles are the ones who get paid.
+A call for help: what we ask, what we offer now, and what happens when there is revenue.
 
 **What we ask.** Take a role, or part of one. Read what its agents produce, steer them, and do what only a person can: the interview, the judgement, the caveat that matters. Or start smaller, as one of the site's [power users](https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html): a few minutes an ask, trying what is new and saying what works.
 

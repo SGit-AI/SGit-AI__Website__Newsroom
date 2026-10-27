@@ -10,11 +10,11 @@
 
 # Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.2.0, 3 versions](versions/can-you-sell-it.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · startupssellingpricingfoundersgen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.3.0, 4 versions](versions/can-you-sell-it.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · startupssellingpricingfoundersgen-z-bookarticle
 
 ***Abstract:** One of the most important pieces of advice I can give any founder is to start selling, now, what you have. It does not matter how rough it is. Expect not to sell; that is not the point. The point is to learn, and you only learn by trying to sell. You cannot sell what you cannot ship, so selling makes you ship. The attempt tells you where you really are, and it starts the feedback loops that fix a hundred small problems. A customer who pays is the best signal you will get, and it is surprising how hard it is to get one, even when you give them the money to do it: with SG/Send I offered five pounds back for five pounds of credits, and people still had to choose to buy. So making it easy to pay you is not something you add at the end; it goes in early. Do not worry about your idea being copied; it is all execution, and putting things up for sale is already the part that counts. Then make the customers profitable, and keep the price free to change: no subscriptions, no yearly contracts, something atomic, with a beginning, a middle and an end. My first question to any founder is the same: can you sell it?*
 
-Selling is how you learn. Put up for sale what you have, however rough. To sell it you have to ship it; to ship it you solve the small problems; someone either buys or does not, and both are signals; you change the product or the price, and try again. Underneath, the rule that holds it together: make it easy to pay you, from the start.
+Selling is how you learn: put it up for sale, ship it, learn from a buy or no buy, change it, and try again.
 
 ## In short
 

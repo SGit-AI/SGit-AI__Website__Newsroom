@@ -10,11 +10,11 @@
 
 # The human in the loop is a spectrum: how cheap it is to undo decides where a person belongs, and why the newsroom ships on its own while my email still waits for me
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.2.0, 3 versions](versions/how-cheap-is-it-to-undo.md) · [newsroom v0.12.22](https://newsroom.sgit.ai/admin/versions.html) · reversibilitytwo-way-doorstrustside-effectshuman-in-the-loopagentsreleasematuritywardley-mapsnewsroomarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.3.0, 4 versions](versions/how-cheap-is-it-to-undo.md) · [newsroom v0.12.22](https://newsroom.sgit.ai/admin/versions.html) · reversibilitytwo-way-doorstrustside-effectshuman-in-the-loopagentsreleasematuritywardley-mapsnewsroomarticle
 
 ***Abstract:** Writing about the human in the loop, we noticed something about our own workflow: this newsroom arrived, organically, at releasing on its own, fourteen times in one day, with nobody approving each release, while every email my agents write still waits for me to press send. I think that contrast goes to the heart of the question, and it is a spectrum, not a switch. A useful test for how much to let go is how cheap it is to undo. I remember a senior executive, I think from Google, whose test for people asking to start a project or an experiment was exactly that: if it does not reach many people and can be switched off with little side effect, say yes, trust the people, have a go, because the only cost is the time and there is always learning; what worried him was how hard it would be to undo. Amazon put the same idea as one-way and two-way doors. An email is a one-way door: once it goes, you cannot claim it back, a mistake does damage straight away, and my email workflow is still in the explorer phase, with nascent controls and not yet many emails read and sent without changes. The newsroom is a two-way door: a correction is a new version, anyone who arrives after the fix gets the fixed page, few people are reading yet, new articles land in the latest list without being placed on the front page, and the checks and balances are mature, from the validator to the leak scan to briefing packs that hand work between sites. When I read an article, I am either happy with it or I make small changes; I have not yet read one and thought I do not want that live. So the spectrum has two axes, the cost of undoing and the maturity of the controls and the record, and both move: as readership grows the newsroom's side effects grow with it, and as the email controls mature, email can move the other way.*
 
-The spectrum. Across: how much it costs to undo, from a two-way door to a one-way door. Up: how mature the controls and the record are, from explorer to town planner. Where an output sits decides how much a person has to hold it. The newsroom's articles sit where they can ship on their own; email in my name sits where I decide every one. The arrows are where each is moving.
+The spectrum: how much it costs to undo, against how mature the controls and the record are.
 
 ## In short
 
@@ -53,7 +53,7 @@ The checks and balances are also much further along than in email. Every release
 
 ## Two axes, and both move
 
-The two workflows side by side, by what decides where they sit: how cheap it is to undo, how large the side effects are today, how mature the controls are, and what the record says. The same agents and the same person; opposite places on the spectrum.
+The two workflows side by side, by what decides where they sit on the spectrum.
 
 So the spectrum has two axes. Across, the cost of undoing: what it takes to reverse an output, and what it breaks before you do. Up, the maturity of the controls and of the record: from explorer, where the workflow is still being found and a person holds most of the weight, through villager, where the controls exist and are tested, to town planner, where the thing is boring, measured and cheap. Where an output sits on those two axes decides how much a person has to hold it.
 

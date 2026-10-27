@@ -10,11 +10,11 @@
 
 # Free to copy, paid at the source: why an official website can charge per use for open policies and hooks, and why we will have them reviewed, audited and signed
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/free-to-copy-paid-at-the-source.md) · [newsroom v0.12.158](https://newsroom.sgit.ai/admin/versions.html) · business-modelsopen-sourceagent-behaviour-policyhookstrustarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/free-to-copy-paid-at-the-source.md) · [newsroom v0.12.158](https://newsroom.sgit.ai/admin/versions.html) · business-modelsopen-sourceagent-behaviour-policyhookstrustarticle
 
 ***Abstract:** I think we have hit on a commercial model almost by accident. This newsroom, and the book's website, already charge per use: every reader starts with £5 of credit, and each page draws a few pence from it. Now apply that to our behaviour policies and hooks. They are open, CC BY 4.0 and Apache 2.0, and anyone may copy them. But a hook is code: Claude Code's own documentation says a plugin "can execute arbitrary code on your machine with your user privileges". Taking one from a website you do not know is like downloading software from unknown sources, and a company will not do it. So the official website, with its brand, its authority, its usability and its trust, is where people will come, even for something free to copy, and it can charge per use there: a customer with £50 of credit might pay £1 for the page with a hook on it. To earn that, it cannot be us saying "trust us". The policies we publish, the hooks above all, should be reviewed and audited by others, with the scanners and services that now exist for skills and plugins, and signed with our keys. The price is something to discover.*
 
-Free to copy, paid at the source. The policy and its hook are open; the official site adds who published it, who reviewed it, which version, and a signature; each use there draws down credit.
+Free to copy, paid at the source: the policy and its hook are open; the official site adds provenance and a signature.
 
 ## In short
 

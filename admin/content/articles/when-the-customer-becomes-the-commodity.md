@@ -10,7 +10,7 @@ tags: wardley-maps, strategy, trust, startups, gen-z-book, article
 status: published
 ---
 
-!shot cc-map.webp | images/ | Where does your customer sit on your map? Along the evolution axis of a Wardley map: custom built, a customer you know and care for; product, a customer you sell to; commodity, a customer you do not care about. Arrows show the drift, as I see it: search users and shoppers moved right as ads became the purpose, and so did social media users; airport passengers moved back left, once better service made them spend more. | concept
+!shot cc-map.webp | images/ | Where the customer sits on a Wardley map's evolution axis, with arrows showing the drift, as I see it. | concept
 
 ## In short {#in-short}
 

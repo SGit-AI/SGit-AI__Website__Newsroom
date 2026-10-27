@@ -10,11 +10,11 @@
 
 # What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.0.0](versions/what-the-bitcoin-bounty-actually-proves.md) · [newsroom v0.13.97](https://newsroom.sgit.ai/admin/versions.html) · php2shellsecurityexploitationdetectionwafarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.1.0, 2 versions](versions/what-the-bitcoin-bounty-actually-proves.md) · [newsroom v0.13.97](https://newsroom.sgit.ai/admin/versions.html) · php2shellsecurityexploitationdetectionwafarticle
 
 ***Abstract:** A researcher won a public "steal my bitcoin" bounty against a deliberately vulnerable PHP server, a rare independent, live confirmation that php2shell gives an attacker full control of a machine. I wanted to know more than that it worked. How hard was it, really, once the target was actually reachable? Could a web application firewall have blocked it, given how many vendors say they already detect it? And if you cannot patch today, does hardening the server around PHP, rather than PHP itself, actually protect you? The answers, checked against the operator's own site, the researcher's public write-up, five vendors' own advisories and GrapheneOS's own record of a server it chose to take offline rather than trust its own mitigations: the bounty took three hours once there was a page to attack, not the nineteen the headlines reported; every vendor's own detection coverage comes with a gap it names itself; and every hardening measure anyone has published is described by its own authors as partial. Patching remains the only complete fix.*
 
-The real timeline: the challenge launched at 08:21 UTC on 21 October with no page that executed PHP at all, so the flaw could not be reached; the operator added one at 22:00 JST on 25 October; it was solved about three hours later, at 00:47 JST on 26 October, not the "19.28 hours" the site's own counter and most press reports gave.
+The real timeline of the challenge from 21 October to 26 October, against the "19.28 hours" the site's counter gave.
 
 ## In short
 
@@ -58,7 +58,7 @@ You asked, reasonably, what "shell" means here. By the author's own account, the
 
 ## Could a firewall have seen it coming
 
-Could a firewall have seen it coming? Cloudflare, AWS WAF, Azure Front Door, Emerging Threats and Sophos each publish detection coverage for php2shell, and each names its own gap: request-only inspection, header amplification under a size cap, a rule disabled by default, signatures a reshaped request can dodge, or no specific rule at all.
+Detection coverage for php2shell from Cloudflare, AWS WAF, Azure Front Door, Emerging Threats and Sophos, and each gap.
 
 You asked, in a LinkedIn comment at the time, whether any web application firewall could see this coming a mile away. The honest answer is: several vendors say they already do, and each says so with a caveat attached, in their own words, not mine.
 
@@ -72,7 +72,7 @@ So: not "any WAF could see that coming", and not "nothing can see it coming" eit
 
 ## Hardening without patching: what actually holds
 
-Hardening without patching: session.upload_progress=0, memory_limit=-1, blocking multipart requests at the edge, and a container or cgroup memory cap are each described by their own authors as partial. GrapheneOS deployed and tested the first three, decided not to trust them, and took its only PHP service offline instead, patching and returning within about seven hours.
+Hardening without patching: four measures that their own authors call partial, and what GrapheneOS did instead.
 
 This is the question I most wanted answered: if upgrading breaks things and people are nervous about it, can you harden the environment around PHP, invisibly to the application, and be safe without touching the PHP binary? The published record says: not fully, and the people who wrote these mitigations say so themselves.
 

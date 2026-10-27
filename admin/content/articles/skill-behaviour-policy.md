@@ -10,7 +10,7 @@ tags: agent-skills, skill-behaviour-policy, agent-behaviour-policy, hooks, sandb
 status: published
 ---
 
-!shot sb-three.webp | images/ | A skill behaviour policy: three mandates, two gaps, one control. What the description says, what the skill's files and instructions can do, and what the environment grants. Actual minus described is the suspicious part; grant minus actual is the reach nobody asked for; the control brings the grant down to the described mandate. | architecture
+!shot sb-three.webp | images/ | A skill behaviour policy: three mandates, two gaps and one control. | architecture
 
 ## In short {#in-short}
 
@@ -47,7 +47,7 @@ The important design choice is that every finding is a feature, not a verdict. A
 
 ## 899 skills, read statically {#measured}
 
-!shot sb-measured.webp | images/ | 899 skills from three public sources, every file read as text and nothing run: what they can reach, and what their descriptions leave out. 812 can reach something beyond their own scripts, 782 of them through one third-party tool server; 39 have a feature their description does not mention; none was obfuscated, and none sets allowed-tools. | comparison
+!shot sb-measured.webp | images/ | 899 skills from three public sources: what they can reach, and what their descriptions leave out. | comparison
 
 So I built the calculator's first half and ran it. It reads a skill folder as text, never runs anything, finds features by pattern in the instructions and every bundled file, finds the features the description declares by its words, and reports the difference. I ran it on three public sources, read on 14 October: Anthropic's own [skills repository](https://github.com/anthropics/skills) (20 skills), a popular methodology collection, [obra/superpowers](https://github.com/obra/superpowers) (15), and a large community catalogue, [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) (864).
 
@@ -60,7 +60,7 @@ These are curated public sources, not a marketplace sample, so the absence of ob
 
 ## One skill, end to end {#example}
 
-!shot sb-example.webp | images/ | One skill, end to end: developer-growth-analysis. An honest description and the whole lethal trifecta: it reads your Claude Code chat history, searches HackerNews, and sends a report to Slack through a third-party tool server. The policy states the minimal grant and the reach on Claude Code, and generates a hook, tested on nine fixed inputs, with what it cannot see and what stays an expectation. | architecture
+!shot sb-example.webp | images/ | One skill, end to end: developer-growth-analysis, its description, its policy and the hook generated from it. | architecture
 
 The clearest case in the set was an honest one. `developer-growth-analysis` describes itself as a skill that "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs." Its instructions read `~/.claude/history.jsonl`, search HackerNews and post to Slack, all through a third-party tool server. That is [the lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), private data, untrusted content and a way out, in one skill, and the description says so. The only thing it leaves out is the server in the middle.
 

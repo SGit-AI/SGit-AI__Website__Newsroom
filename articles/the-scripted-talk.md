@@ -10,11 +10,11 @@
 
 # The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/the-scripted-talk.md) · [newsroom v0.12.61](https://newsroom.sgit.ai/admin/versions.html) · presentationstalksslidesscriptinganimationclaude-motionvault-appssgitruvagenticsbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.2.0, 3 versions](versions/the-scripted-talk.md) · [newsroom v0.12.61](https://newsroom.sgit.ai/admin/versions.html) · presentationstalksslidesscriptinganimationclaude-motionvault-appssgitruvagenticsbriefarticle
 
 ***Abstract:** I usually give a talk by reading it, with the slides behind me. For a short slot tonight I would like to try something else: a talk that is completely scripted, where the slides, the builds, the animations and even the demo play on a clock, and I speak to them instead of reading from them. This grows out of two talks already published as vaults on sgit.ai. The Black Hat Europe 2025 keynote made the slides data: 26 slides in one JSON file that the app reads at load time, with ten versions of the slide system beside it. The VoiceDebrief pitch added a presenter with per-slide timings, a countdown and speaker notes, built from a template by a script. The next step is to make the whole talk a timeline. This site's agent built a first version: one HTML file that plays a file of beats, each with a start, a duration, a slide and the words to say, with builds, a terminal that types a command and prints its recorded output, tables that reveal row by row, video, and a presenter view with the words, the seconds left and what comes next. A rehearsal mode records planned against actual times. The first timeline is the five-minute demo for ruv.sgit.ai, the newest site in the sgit family, built for tonight's Agentic Engineering Live with rUv in London. And Claude Motion, which Anthropic released in beta on 8 October, makes the animations the same way: as code, exported as MP4.*
 
-A scripted talk, from the memo to the room: a file of beats, each with its slide and its words; a player that turns it into slides on a clock; the audience sees the slide, the speaker sees the words, the time left and what comes next; a rehearsal records planned against actual times. Dashed boxes are proposed.
+A scripted talk, from the memo to the room: a file of beats, a player on a clock, a speaker view and a rehearsal record.
 
 ## In short
 
@@ -31,7 +31,7 @@ I usually read my presentations, with the slides behind me as a backdrop. It wor
 
 ## Where it comes from
 
-Three talks, one direction: Black Hat Europe 2025 made the slides data; the VoiceDebrief pitch added a presenter with timings, notes and a countdown; the player for tonight makes the whole talk a timeline that plays on a clock. All three live in vaults.
+Three talks, one direction: Black Hat Europe 2025, the VoiceDebrief pitch, and tonight's player, all living in vaults.
 
 This is the third step of something I have done twice before, and both are published as vaults on sgit.ai.
 
@@ -43,7 +43,7 @@ The next step is to let the clock drive. Instead of a deck with timings beside i
 
 ## The player
 
-The prototype's presenter view, at 2:58 of the five-minute demo: the slide on the left, with every row of the table revealed; on the right, the words for this beat, the seconds left and what comes next; along the bottom, the clock and a progress bar marked at every beat.
+The prototype's presenter view at 2:58 of the five-minute demo: the slide, the words, the time left and a progress bar.
 
 This site's agent built a first version, and it is deliberately small: one HTML file and one JSON file, no build. It is a page made for one moment, which [Custom UIs are not the exception](custom-uis-are-not-the-exception.md) argued is normal now: "A custom interface per message or moment is not an exception". The talk is a list of beats. Each beat has a start in seconds, a duration, a title, the words to say, and a slide with a layout:
 

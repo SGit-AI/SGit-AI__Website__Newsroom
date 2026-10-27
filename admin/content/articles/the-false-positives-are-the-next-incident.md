@@ -10,7 +10,7 @@ tags: php2shell, scanners, false-positives, detection, evidence, article
 status: published
 ---
 
-!shot qn-grossman-post.webp | images/ | Jeremiah Grossman's LinkedIn post: "The false-positives for php2shell from makeshift scanners is what's going to be apocalyptic." 32 reactions, 8 comments and 1 repost when the screenshot was taken on 23 October 2026. | screenshot
+!shot qn-grossman-post.webp | images/ | Jeremiah Grossman's LinkedIn post on php2shell false positives, as captured on 23 October 2026. | screenshot
 
 ## In short {#in-short}
 
@@ -28,7 +28,7 @@ On the evening of 22 October (UTC), Jeremiah Grossman, chief executive of Root E
 
 The two statements are not in tension. They describe the same situation from two sides. When the confirmed damage is small and the fear is large, what organisations act on is whatever their tools tell them. If the tools are wrong, the action is wrong too. So I asked the PHP story's researcher to make it a research angle: how good the scanners and detection rules are, who reports them getting it wrong, and how the noise flows. The [brief is public](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/), and by 12:40 UTC on 23 October the source watch (vault `oq9gflln`) had twelve captured pages in it, each with its snapshot and hash.
 
-!shot qn-twelve.webp | images/ | The twelve pieces of evidence in the scanner-noise angle, captured 12:38 to 12:40 UTC on 23 October 2026: scanner method, a false positive, a false negative, a claim to test, a bulk notification, volume, two detection limits, coverage, scanner templates and two scanner releases. | concept
+!shot qn-twelve.webp | images/ | The twelve pieces of evidence in the scanner-noise angle, captured 12:38 to 12:40 UTC on 23 October 2026. | concept
 
 ## Why a version check gets it wrong {#version-strings}
 
@@ -41,7 +41,7 @@ That is not a hypothetical. In the watch:
 - **Searchlight Cyber**, which released an open-source scanner, is quoted by Help Net Security saying that most of the scanners in circulation "rely on version checks, or do not accurately depict vulnerable conditions for both mod_php and php-fpm". Its own scanner tries to produce the fault first and reads the version only as a last resort.
 - **An issue on a community check script, `php2shell-check`,** reports that the script calls Ubuntu's patched `8.5.4-0ubuntu1.5` vulnerable, because the version string is older than the fixed upstream release. Exactly the error the method predicts.
 
-!shot qn-two-checks.webp | images/ | Two ways a scanner decides, on the same patched Ubuntu server: reading the version string gives a false positive; trying to produce the fault gives the right answer. | diagram
+!shot qn-two-checks.webp | images/ | Two ways a scanner decides on the same patched Ubuntu server: reading the version string, or trying the fault. | diagram
 
 ## The noise is already in bulk {#bulk}
 
@@ -69,7 +69,7 @@ None of this is a criticism of the people doing the work. It is what the first d
 
 Put the noise next to the PHP story's [compromise map](https://php.oct.2026.newsroom.sgit.ai/compromise/), as it stood at 20:50 UTC on 22 October. Millions of attempts against sensors, honeypots and edges. Exploitation reported by three vendors, none naming a victim. One named organisation saying it was attacked, with success not stated. Zero named organisations saying php2shell was the way in. That is a time-bounded absence, not proof that nothing happened, and one statement from one organisation would end it.
 
-!shot qn-signal-noise.webp | images/ | Lots of alarms, no named victim: the compromise map's layers on 22 October at 20:50 UTC (millions of attempts, 3 vendors reporting exploitation, 1 named organisation attacked, 0 saying php2shell was the way in) next to the scanner noise by 12:38 UTC on 23 October (53 templated issues, 62 false-positive issues, 10 nuclei-templates issues). | comparison
+!shot qn-signal-noise.webp | images/ | The compromise map's layers on 22 October next to the scanner noise by 12:38 UTC on 23 October. | comparison
 
 This is where Jeremiah Grossman's word, apocalyptic, earns its place. Organisations across Europe switched websites off as a precaution on 21 and 22 October. When nobody can say quickly whether a site is safe, a scanner's red line is the deciding fact. A false positive on a patched Ubuntu server becomes a ticket, then an escalation, then a site taken offline, for real people who needed it. Multiply that by every makeshift scanner and every bulk notice, and the cost of the noise can exceed the cost of the attacks we can see. It is an incident of its own, and it is not in anyone's breach count.
 

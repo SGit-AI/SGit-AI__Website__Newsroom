@@ -10,11 +10,11 @@
 
 # Plural for the family, singular for the site: why the AWS site is aws.twin.sgit.ai, the naming rule behind it, and what it changes on the twins and providers sites
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/plural-for-the-family-singular-for-the-site.md) · [newsroom v0.13.16](https://newsroom.sgit.ai/admin/versions.html) · sgitnamingtwinswebsitesdecisionsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/plural-for-the-family-singular-for-the-site.md) · [newsroom v0.13.16](https://newsroom.sgit.ai/admin/versions.html) · sgitnamingtwinswebsitesdecisionsarticle
 
 ***Abstract:** The site proposed in AWS from the vault now has a name: aws.twin.sgit.ai, with its repository SGit-AI__Website__Twin__AWS and its hub at twins.sgit.ai. The name carries the design. It is a twin first: an AWS-shaped interface, for S3, Lambda, EC2, IAM, billing and logs, whose backend is a vault, with the real AWS account put in front of it later as a second backend behind the same interface. That is the same pattern as the one twin that already works, the S3-compatible vault container, where boto3 cannot tell the difference. The name also follows a rule we have now fixed for every family of sites: plural for the hub, singular for the instance, so twins.sgit.ai and aws.twin.sgit.ai, hooks.sgit.ai and tokens.hook.sgit.ai, providers.sgit.ai and elevenlabs.provider.sgit.ai. Held against the hosts that exist, the newer families follow it, and four hosts break it: three under providers and one under games. This records the decisions, the options we rejected, what changes on the twins and providers sites, and one correction: on GitHub Pages, no wildcard certificate is needed.*
 
-The families held against the rule: plural for the hub, singular for the instance. The twins and hooks families follow it; the three provider hosts and the game break it; the twin, hook and demo instances are reserved, with no site yet.
+The families held against the rule: plural for the hub, singular for the instance.
 
 ## In short
 

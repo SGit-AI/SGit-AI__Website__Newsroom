@@ -10,7 +10,7 @@ tags: newsroom, identity, public-keys, experts, payments, reviews, provenance, a
 status: published
 ---
 
-!shot or-levels.webp | images/ | Going on the record. Left, the levels of identity, from an anonymous tap to a key bound to a domain and a track record; each level allows more: a tap, a note, a review, an opinion that counts, and payment. Right, an opinion on the record: a position on the article, the reasons, the evidence, signed by its author's key, answered by the newsroom, rated by readers, paid from what readers pay, and withdrawable, with the withdrawal recorded. | concept
+!shot or-levels.webp | images/ | Going on the record: the levels of identity on the left, and a signed opinion on the record on the right. | concept
 
 ## In short {#in-short}
 

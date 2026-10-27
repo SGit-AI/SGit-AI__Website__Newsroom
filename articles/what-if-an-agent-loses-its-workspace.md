@@ -10,11 +10,11 @@
 
 # What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.1.0, 2 versions](versions/what-if-an-agent-loses-its-workspace.md) · [newsroom v0.12.90](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitvaultsagent-behaviour-policymcpmemoryrecoveryvideoarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/what-if-an-agent-loses-its-workspace.md) · [newsroom v0.12.90](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitvaultsagent-behaviour-policymcpmemoryrecoveryvideoarticle
 
 ***Abstract:** Mondweep Chakravorty has made a short video that answers a question every team running agents should ask: if an agent loses its workspace, does its memory come back, and do its written permissions still hold? In 104.7 seconds it replays a real terminal run in twelve steps. Ruflo, rUv's open-source agent orchestration, stores two facts in its memory. An adapter governed by an Agent Behaviour Policy saves that memory as an encrypted checkpoint made of SGit objects. The original project is deleted. A brand-new process restores the checkpoint, the restored database has the same SHA-256 fingerprint as the one saved, and Ruflo reads both facts back word for word. Along the way three safeguards are tested and hold: a request outside the agent's permission is refused, a deletion that needs approval is stopped, and a tampered checkpoint is rejected. The video is careful about its limits: recall by meaning was not validated. The code is public too, MIT, with 16 tests and recorded evidence, and its runner has since also validated keyword recall against Ruflo's real memory store. This is the first of three pieces on it, with a page that lets you step through the run yourself.*
 
-The twelve steps of the run and how each ended: five worked, three were safeguards refusing as intended, four were setup or summary. Not tested, and said so on screen: recall by meaning. From the video by Mondweep Chakravorty.
+The twelve steps of the run and how each ended, from the video by Mondweep Chakravorty.
 
 SGit × Ruflo: one run, five ways in
 
@@ -64,7 +64,7 @@ At [0:32](https://youtu.be/rkh6BJiaIrQ?t=32), the run asks the adapter to checkp
 
 ### 5 · Save an encrypted recovery point
 
-Step 5 on the terminal: the checkpoint is saved with its id, a consistent SQLite backup, and three SHA-256 fingerprints, of the database, the ABP and the compiled policy. "Only encrypted SGit bare objects enter the checkpoint store." Frame from the video by Mondweep Chakravorty.
+Step 5 on the terminal: the checkpoint is saved with its id and three SHA-256 fingerprints. Frame from the video.
 
 At [0:38](https://youtu.be/rkh6BJiaIrQ?t=38), the checkpoint for the `project` namespace is allowed. The adapter takes a consistent copy of the memory database, a SQLite backup rather than a raw file copy, and records three fingerprints: of the database, of the ABP and of the compiled policy. The screen says: "Only encrypted SGit bare objects enter the checkpoint store. Private keys remain in a separate private directory." Binding the data to the rules in force is the detail I like most. [Step 5](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-5).
 
@@ -78,13 +78,13 @@ At [0:51](https://youtu.be/rkh6BJiaIrQ?t=51), the disposable test project is del
 
 ### 8 · Restore in a fresh process
 
-Step 8 on the terminal: a new MCP server restores the checkpoint into a workspace called fresh-runner; the database fingerprint is the same as in step 5, and matches_checkpoint is true. Frame from the video by Mondweep Chakravorty.
+Step 8 on the terminal: a new MCP server restores the checkpoint into a workspace called fresh-runner. Video frame.
 
 At [0:58](https://youtu.be/rkh6BJiaIrQ?t=58), a brand-new MCP server process restores the checkpoint into a workspace called `fresh-runner`. The database's SHA-256 begins `10ab6c56` and ends `d66a0b`, the same as in step 5, and `matches_checkpoint` is true. [Step 8](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-8).
 
 ### 9 · Ask Ruflo what it remembers
 
-Step 9 on the terminal: Ruflo's own retrieve command returns both facts word for word, and the run reports a pass. Frame from the video by Mondweep Chakravorty.
+Step 9 on the terminal: Ruflo's retrieve command returns both facts and the run reports a pass. Frame from the video.
 
 At [1:04](https://youtu.be/rkh6BJiaIrQ?t=64), Ruflo itself, not the adapter, reads the restored memory. Both facts come back word for word: "PASS: both values match the CLI-written facts exactly." That the original tool does the reading is what makes this proof stronger than a demo that checks its own output. [Step 9](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-9).
 
@@ -94,7 +94,7 @@ At [1:14](https://youtu.be/rkh6BJiaIrQ?t=74), a key that was never stored is loo
 
 ### 11 · Change the saved copy, try again
 
-Step 11 on the terminal: one checkpoint object is altered, the restore fails with a ValueError, and tampered_workspace_created is false. Frame from the video by Mondweep Chakravorty.
+Step 11 on the terminal: one checkpoint object is altered and the restore fails with a ValueError. Frame from the video.
 
 At [1:20](https://youtu.be/rkh6BJiaIrQ?t=80), one encrypted checkpoint object is altered and a restore is tried into a workspace called `tampered`. It fails with a `ValueError`, and `tampered_workspace_created` is false. Integrity fails closed. The code shows how: the adapter compares the digest of the stored ciphertext with the one it recorded when it saved the checkpoint, and refuses before anything is decrypted. [Step 11](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-11).
 
@@ -104,7 +104,7 @@ At [1:26](https://youtu.be/rkh6BJiaIrQ?t=86), the acceptance summary: exact reca
 
 ## What it proves, and what it says it does not
 
-The video's closing slide: the facts came back and the safeguards held; still to validate, recall by meaning, real-world value, and installation and ongoing reliability. Frame from the video by Mondweep Chakravorty.
+The video's closing slide: the facts came back, the safeguards held, and three things are still to validate.
 
 The video's own closing slide puts it well: both facts recovered exactly; unauthorised access blocked; unapproved deletion blocked; altered checkpoint rejected. And still to validate: recall by meaning, real-world value, and installation and ongoing reliability.
 

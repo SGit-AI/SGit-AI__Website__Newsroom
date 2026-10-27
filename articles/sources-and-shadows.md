@@ -10,11 +10,11 @@
 
 # Sources and their shadows: the licence, the access, the links and the quotes of every reference, how a paywalled article can be seen through what others say about it, and paying the sources we use
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/sources-and-shadows.md) · [newsroom v0.13.73](https://newsroom.sgit.ai/admin/versions.html) · sourcesprovenancepaywallswikipediamicropaymentswiresarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/sources-and-shadows.md) · [newsroom v0.13.73](https://newsroom.sgit.ai/admin/versions.html) · sourcesprovenancepaywallswikipediamicropaymentswiresarticle
 
 ***Abstract:** The PHP story is where this newsroom explores, and this newsroom is where the lessons settle: the wires here, the Industry Wire, AWS, OWASP and Portugal, will become more effective with what the PHP agents are learning. One lesson is about references. Every source a story uses comes with a set of primitives worth recording: its licence (Creative Commons, Wikipedia's share-alike, or all rights reserved), its access (open, behind a bot challenge, behind a paywall), its links, its quotes, its quality, and its history. The PHP site's source watch already records the access and keeps the history: of 913 pages it watches, 735 were open, 59 behind a bot challenge and 15 paywalled. The idea I want to explore is the shadow. When we cannot read an article, we can still read what others say about it. Wikipedia's PHP2Shell article rests 8 of its 39 statements on paywalled sources, including a quote from The New York Times, which its editors could read and we can now cite. From enough shadow you can start to see the article. You can also see where the shadow and the source disagree, and, over time, who did the research and who recycled it. And where we use a source's work, there should be a payment funnel back to it, through the micropayments our readers pay us, especially when the source certifies how we used it.*
 
-Seeing an article through its shadow: a paywalled article we hold no licence for, at the centre, and around it what we can read: Wikipedia, whose editors read it, cite it and quote it; other outlets that quote, summarise or disagree with it; social posts that pull out one line; and our own captures, which keep every quote with its source.
+Seeing a paywalled article through its shadow: Wikipedia, other outlets, social posts and our own captures around it.
 
 ## In short
 
@@ -33,7 +33,7 @@ This article is for this newsroom, but it comes from the PHP one. Remember that 
 
 ## What every reference should carry
 
-What every reference should carry, recorded each time a page is captured: its licence; its access; its links, out and in; its quotes, made and received; its quality; its history; and who to pay. Proposed; the access and the history are already recorded by the PHP site's source watch.
+What every reference should carry, recorded at each capture: licence, access, links, quotes, quality, history and payee.
 
 When a story has a reference, it already comes with a set of primitives that are quite interesting.
 
@@ -43,7 +43,7 @@ When a story has a reference, it already comes with a set of primitives that are
 
 The PHP site's [source watch](https://php.oct.2026.newsroom.sgit.ai/vaults/source-watch/index.html) already records the access of every page it watches, every time it looks. Of 913 pages from 597 publishers in 59 countries, 735 served their content to an anonymous browser, 59 served a bot challenge, 61 were down, 8 were gone, 35 were unchecked, and 15 were paywalled: "subscription press we hold no licence for". It also keeps the history: a new snapshot whenever a page changes, 2,946 of them, each with its text, a screenshot and the hashes. What it does not record yet is the licence of each page. That is the first gap.
 
-The PHP site's source watch: a vault that watches every outside source on the story, 913 pages from 597 publishers in 59 countries, in 34 languages, recording what access it had on each run and keeping a new snapshot whenever the content changed, 2,946 snapshots and graphs over 38 runs.
+The PHP site's source watch: a vault watching 913 pages from 597 publishers, keeping a snapshot when content changed.
 
 **The links and the quotes.** For every page we track, we should also track every link on it and every quote it makes. And, the other way round, every page that links to it and every quote taken from it. Take a BBC story: a whole set of other sites will quote it. We should track the quotes, and what they say about the story.
 
@@ -57,7 +57,7 @@ Say Wikipedia links to an article behind a paywall. The Wikipedia editors could 
 
 The PHP site has just made this measurable. Its ontologist now reads [Wikipedia's PHP2Shell article](https://php.oct.2026.newsroom.sgit.ai/wikipedia/php2shell/index.html) as a graph: one statement per sentence, each joined to the references it cites. At the latest revision it read, 8 of its 39 statements rest on references from The New York Times, The Wall Street Journal, the Australian Financial Review and The Atlantic, all of them subscription titles. One of those statements is a quote: "Coverage in The New York Times said that PHP was "pervasive" and speculated that "everyday users" could have their personal data put at risk." Another, from the Australian Financial Review: "The Internet Archive briefly shut down to fix the issue." We have not read either article; we can still cite what Wikipedia's editors said they say, and say so.
 
-Every reference in Wikipedia's PHP2Shell article, as the PHP site reads it: 43 references at revision 1381798757, 16 of them pages the site's evidence vault holds, the others not yet captured, including The New York Times and The Wall Street Journal; for each, its publisher, which of the article's statements cite it, and which of the site's own claims rest on it.
+Every reference in Wikipedia's PHP2Shell article as the PHP site reads it: 43 references at revision 1381798757.
 
 Of the article's 43 references, 16 are pages the site's evidence vault already holds; the rest are requests to the collectors. A reference we hold is evidence we can cite as our own, with the capture's hash. A reference we cannot read, because we have no licence, is still a node in the graph, with its shadow around it.
 

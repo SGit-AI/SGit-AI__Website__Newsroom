@@ -10,7 +10,7 @@ tags: open-security-summit, technical-debt, community, events, agents, article
 status: published
 ---
 
-!shot os-commits.webp | images/ | Left: commits a quarter across the four summit websites, 19,045 in all, with spikes in the summit weeks of June 2018, 2019 and 2020. Right: the number of different people committing each year, from 180 in 2018 to 14 in 2024 and 2 in 2025. | comparison
+!shot os-commits.webp | images/ | Left: commits a quarter across the four summit websites. Right: people committing each year, 2018 to 2025. | comparison
 
 ## In short {#in-short}
 
@@ -34,7 +34,7 @@ The website was not a brochure. It was a Hugo site in a public repository, and p
 
 ## What the code shows {#code}
 
-!shot os-frozen.webp | images/ | Left: lines of Hugo template code, from about 5,200 in the 2018 site to about 9,600, flat from 2022. Right: content files in the current site, from 140 at the end of 2020 to 998 at the end of 2024. | comparison
+!shot os-frozen.webp | images/ | Left: lines of Hugo template code, 2018 to now. Right: content files in the current site, 2020 to 2024. | comparison
 
 I went back to the repositories. The OpenSecuritySummit organisation on GitHub has 24 of them; four are the summit websites, `oss2018`, `oss2019`, `oss2020` and `oss-website`, with 19,045 commits between them. Read as a record, they show the debt growing:
 
@@ -55,7 +55,7 @@ And the live site shows where it stopped. Its home page still says "Open Securit
 
 ## The follow-up never scaled {#follow-up}
 
-!shot os-sessions.webp | images/ | Sessions on the current site by year and how many link a recording: 87 and 1 in 2020, 91 and 25 in 2021, 110 and 67 in 2022, 70 and 58 in 2023, 51 and 45 in 2024. | comparison
+!shot os-sessions.webp | images/ | Sessions on the current site by year, and how many link a recording, from 2020 to 2024. | comparison
 
 The sad part is what is in there. The summit holds a lot of very good material on security: working sessions on application security, threat modelling, DevSecOps, governance, and, when this whole AI wave started, some very good sessions on it. The current site alone has 409 session pages from 2020 to 2024, and 194 recordings. Some of my own history, and a lot of knowledge I shared in those sessions, is in those videos, and it got lost.
 
@@ -63,7 +63,7 @@ What never scaled was the follow-up. In person, the summit worked because of wha
 
 ## Why now {#now}
 
-!shot os-loop.webp | images/ | How the debt grew: a new summit copied last year's site, a new need added an exception, there was no time to refactor, every change got slower, and the loop repeated. The restart: agents map what is there, a personal path for each person, in person in London and online, and hosted open source projects. | concept
+!shot os-loop.webp | images/ | How the debt grew, as a loop of copying, exceptions and slower changes, and the restart that follows. | concept
 
 The difference now is the workflow I have. I am not going to start by rebuilding the website. I am going to put an agent on the case: to understand everything that is there, map the data, connect the dots, analyse the videos and what was said in them, and create much better personal pages for everybody. Then follow up with people, which is the part we could never afford.
 

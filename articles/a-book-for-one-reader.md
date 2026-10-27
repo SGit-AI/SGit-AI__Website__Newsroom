@@ -10,11 +10,11 @@
 
 # A book for one reader: a personalised edition of Generation Z Developers, assembled by an agent for one person, and paid for as it is read
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/a-book-for-one-reader.md) · [newsroom v0.12.118](https://newsroom.sgit.ai/admin/versions.html) · bookspersonalisationpay-as-you-readvaultsgeneration-zgen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/a-book-for-one-reader.md) · [newsroom v0.12.118](https://newsroom.sgit.ai/admin/versions.html) · bookspersonalisationpay-as-you-readvaultsgeneration-zgen-z-bookarticle
 
 ***Abstract:** Once the book is a graph, an agent can assemble it. And if an agent can assemble it, it can assemble a version for one person: the chapters that matter to them, at their altitude, with examples from their world, eventually in their language. I would send it as a PDF, made for them and not published. The brief for each one already exists, in a way: the agents that run my correspondence keep a folder for each person I work with, with what we talked about and how they think, so I can say, here is this person, make them their edition. And then the part I really like: pay for it as you read it, the way this newsroom already works. Start with five pounds of credit; the more of the book you read, the more you pay; the edition starts in your browser, and you can keep it in your vault. This article maps how that would work, what has to stay private, and what is still open. It is also an example of how innovation works for me: I know the book's website is coming and how it will be built, so I am already building on top of it.*
 
-A book for one reader. On the left, what the edition is made from: the book as a graph, at every altitude, and a private brief for one person from Dinis's correspondence notes. In the middle, an agent assembles the edition: the chapters that matter, at the right altitude, with examples from the reader's world, later in their language. On the right, the reader: a PDF made for them, or the edition in their browser, metered as they read it, starting with five pounds of credit, and kept in their own vault if they want it. The brief never leaves Dinis's side.
+A book for one reader: what the edition is made from, how an agent assembles it, and the reader's side.
 
 ## In short
 

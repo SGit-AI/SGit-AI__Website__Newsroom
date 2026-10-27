@@ -10,11 +10,11 @@
 
 # The sidecar repository: a second repository the agent cannot write to, which checks every release against the policy, trusts signed checks instead of re-running them, and is the only thing that deploys, designed for an agent that is fully compromised
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.0.0](versions/the-sidecar-repository.md) · [newsroom v0.13.39](https://newsroom.sgit.ai/admin/versions.html) · abpcigithubagentssecuritypkiarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.1.0, 2 versions](versions/the-sidecar-repository.md) · [newsroom v0.13.39](https://newsroom.sgit.ai/admin/versions.html) · abpcigithubagentssecuritypkiarticle
 
 ***Abstract:** In the rules of the game we wrote down which files an agent may change and found that, on a public repository, GitHub can enforce only part of it. This is the other part. A sidecar repository, which no agent can write to, holds the Agent Behaviour Policies, the policy for this repository, the approved hashes of every file that checks the agent's work, the public keys, and the private lists. At the end of each release it reads the release commit; checks the changed paths against the policy; compares the workflow and the tests with their approved copies; verifies GitHub's signed attestation that the approved tests passed on that exact commit, instead of running them again; runs its own checks, which the agent can neither see nor change; and only then deploys the site, which moves to the sidecar. We designed it assuming the worst: an agent that removes its hooks, rewrites the workflow, fakes statuses and adds workflows of its own. Each of those either does nothing or stops the deploy until the owner looks. It uses only what we already have: GitHub Actions, GitHub's attestations and its command-line tool, and our own signing. It is a design, not yet built, and it has residual risks we say plainly.*
 
-The sidecar, end to end: the agent pushes a release to the site's repository; its CI runs the tests and signs the result; the sidecar reads the commit, checks the paths against the policy, compares the workflow and tests with approved hashes, verifies the signed result, runs its own private checks, asks the owner when something in the gates changed, and deploys the site.
+The sidecar end to end, from the agent's release push to the site's deployment.
 
 ## In short
 
@@ -58,7 +58,7 @@ Nothing in it needs a new tool. GitHub Actions runs it. Artifact attestations ar
 
 ## Trust the signed check, not the status
 
-When the sidecar trusts a check and when it runs it again: if the workflow and every test file match the lock and the attestation is valid for the commit, the result is trusted and nothing is re-run; if anything in the gates differs, the owner decides, and the tests run again in the sidecar, without secrets.
+When the sidecar trusts a check and when it runs it again, depending on the lock and the attestation.
 
 The efficiency in the memo comes from here. The reader's tests are the slowest part of a release: 227 seconds in the last run, against 19 for validation and 44 for the deploy. The sidecar should not run them again if it can know they ran honestly.
 
@@ -70,7 +70,7 @@ The agents' own signatures fit here too, with a clear label. When the agents hav
 
 ## Assume total compromise
 
-What a fully compromised agent can try, and what the sidecar does: remove its hooks, nothing relies on them; rewrite the workflow or the tests, the lock differs and the owner decides; fake a status, ignored; forge a signed result, it fails verification; add a workflow to steal secrets, the site's repository holds none; bring back an old workflow, the lock differs; rewrite history, the sidecar deploys only from the last release; ring the doorbell, it reads the state itself; leak in content, the private lists catch it.
+What a fully compromised agent can try, and what the sidecar does about each attempt.
 
 The memo asked for the analysis to assume the agent is fully compromised: it can do anything its credentials allow. So, attack by attack:
 

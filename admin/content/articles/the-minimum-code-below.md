@@ -10,7 +10,7 @@ tags: containers, supply-chain, attack-surface, minimisation, chainguard, fracta
 status: published
 ---
 
-!shot mq-layers.webp | images/ | Top down, one question at every layer: what is the minimum code below this that the layer above needs? From a user story, through the workflow, modules and functions, to the dependencies, the language runtime and the operating system. Projected from the top, derived from the code; derived and not projected is code nobody asked for. | architecture
+!shot mq-layers.webp | images/ | Top down, one question at every layer: what is the minimum code below this that the layer above needs? | architecture
 
 !trail less-code
 
@@ -50,7 +50,7 @@ What it kills is living off the land. An attacker who gets into a process uses w
 
 ## Measured on one real tool {#measured}
 
-!shot mq-measured.webp | images/ | One use case, measured. sgit 0.21.0 and its dependencies, run under coverage for a CI-style use case, then run again from a tree holding only the files that ran: 1,500 files down to 428, Python source from 4.72 MB to 1.98 MB, compiled code unchanged at 14.78 MB. Inside the kept files 38% of the statements ran; commands outside the use case failed; coverage missed a compiled module the tests caught. | comparison
+!shot mq-measured.webp | images/ | One use case, measured: sgit 0.21.0 and its dependencies before and after keeping only the files that ran. | comparison
 
 Years ago I did a version of this by hand. I had a Python application with close to full code coverage, ran the coverage across the dependencies as well as my own code, took every file the coverage had touched, built a new package from only those, and deployed it. It worked. I used it to shrink Python deployments for Lambda functions, and the cut, as I remember it, was close to 90% of the dependency code.
 
@@ -78,7 +78,7 @@ And it is deterministic where it matters. The graph says what should be kept; th
 
 ## Who does what today {#landscape}
 
-!shot mq-landscape.webp | images/ | Three ways to get to less code. Bottom up and hardened, as Chainguard does; runtime minimisation, as SlimToolkit and RapidFort do; and top down by use case, proposed here, which starts from what the application is for and ties every remaining line to a reason. | comparison
+!shot mq-landscape.webp | images/ | Three ways to get to less code: bottom up and hardened, runtime minimisation, and top down by use case. | comparison
 
 I said it never scaled before, and that needs a correction: minimising containers is a real field already. [SlimToolkit](https://github.com/slimtoolkit/slim), formerly DockerSlim and now a CNCF Sandbox project, runs a container, watches what it touches and builds a smaller image, by up to 30 times in its own words. [RapidFort](https://www.rapidfort.com/) profiles applications at run time and removes the components that never run, and reports large reductions in attack surface and in vulnerabilities; those are its own figures.
 

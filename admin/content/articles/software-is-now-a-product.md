@@ -10,7 +10,7 @@ tags: regulation, liability, software, saas, cybersecurity, php2shell, briefing,
 status: published
 ---
 
-!shot lz-card.webp | images/ | Lauren Zabierek's post on LinkedIn, 25 October 2026: a card, R-05, on the Product Liability Directive. The 1985 directive never named software; Directive 2024/2853 makes standalone software, SaaS, AI systems and digital manufacturing files products, subject to strict, no-fault liability; courts can presume defectiveness and causation where a defect is too complex to prove; the liability cannot be waived by a EULA; it applies to products placed on the EU market from 9 December 2026. | small | aside
+!shot lz-card.webp | images/ | Lauren Zabierek's LinkedIn post of 25 October 2026: card R-05 on the Product Liability Directive. | small | aside
 
 ## In short {#in-short}
 
@@ -30,7 +30,7 @@ The card is accurate. Two small precisions: the articles name software and digit
 
 ## What the articles say {#articles}
 
-!shot lz-tests.webp | images/ | Does the new Product Liability Directive bite? Six questions, in order: is it a product (software is, including SaaS; services as such and mere source code are not); was it placed on the market after 9 December 2026; was it supplied in a commercial activity (non-commercial open source is excluded); is the injured person a natural person; is the damage covered (injury, private property, private data destroyed or corrupted); is the product defective (judged with safety-relevant cybersecurity requirements). Then the defences, and what is not a defence. | concept
+!shot lz-tests.webp | images/ | Does the new Product Liability Directive bite? Six questions in order, then the defences and what is not a defence. | concept
 
 **Software is a product.** Article 4(1): "'product' means all movables … it includes electricity, digital manufacturing files, raw materials and software". Recital 13 removes any doubt about delivery: software is a product "irrespective of the mode of its supply or usage, and therefore irrespective of whether the software is stored on a device, accessed through a communication network or cloud technologies, or supplied through a software-as-a-service model". Two exclusions in the same recital: information is not a product, nor is "the mere source code of software". And recital 17: the directive "should not apply to services as such", though a digital service integrated into a product, a "related service", counts as a component of it.
 
@@ -48,7 +48,7 @@ The card is accurate. Two small precisions: the articles name software and digit
 
 ## php2shell, under the new rules {#php}
 
-!shot lz-php.webp | images/ | php2shell under the new directive: the PHP project, no, open source outside a commercial activity; a vendor shipping an appliance or app on unpatched PHP, likely, for a consumer's injury, property or personal data destroyed; a SaaS whose unpatched PHP lets attackers wipe or encrypt consumers' personal files, likely; the same SaaS if attackers only steal the data, not under this directive; a business that loses its own data, no claim under this directive; a product shipped on end-of-life PHP 7.4, hard to defend. A reading of the text, not legal advice. | concept
+!shot lz-php.webp | images/ | php2shell under the new directive: who is likely liable and who is not, across the PHP project, vendors and SaaS. | concept
 
 The PHP story gives us real cases. The two flaws were fixed in PHP 8.2.35, 8.3.36, 8.4.27 and 8.5.12 on 21 October 2026; the end-of-life branches, 7.4 to 8.1, got backport branches but no release. The Dutch NCSC's list tracks [674 products](https://github.com/NCSC-NL/php2shell) that ship or depend on PHP: 206 marked vulnerable, 418 still under investigation and 46 fixed, as the site recorded it. And, as of 25 October, no named organisation has said it was compromised.
 

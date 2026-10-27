@@ -10,7 +10,7 @@ tags: abp, ci, github, agents, security, pki, article
 status: published
 ---
 
-!shot zq-flow.webp | images/ | The sidecar, end to end: the agent pushes a release to the site's repository; its CI runs the tests and signs the result; the sidecar reads the commit, checks the paths against the policy, compares the workflow and tests with approved hashes, verifies the signed result, runs its own private checks, asks the owner when something in the gates changed, and deploys the site. | concept
+!shot zq-flow.webp | images/ | The sidecar end to end, from the agent's release push to the site's deployment. | concept
 
 ## In short {#in-short}
 
@@ -54,7 +54,7 @@ Nothing in it needs a new tool. GitHub Actions runs it. Artifact attestations ar
 
 ## Trust the signed check, not the status {#trust}
 
-!shot zq-trust.webp | images/ | When the sidecar trusts a check and when it runs it again: if the workflow and every test file match the lock and the attestation is valid for the commit, the result is trusted and nothing is re-run; if anything in the gates differs, the owner decides, and the tests run again in the sidecar, without secrets. | comparison
+!shot zq-trust.webp | images/ | When the sidecar trusts a check and when it runs it again, depending on the lock and the attestation. | comparison
 
 The efficiency in the memo comes from here. The reader's tests are the slowest part of a release: 227 seconds in the last run, against 19 for validation and 44 for the deploy. The sidecar should not run them again if it can know they ran honestly.
 
@@ -66,7 +66,7 @@ The agents' own signatures fit here too, with a clear label. When the agents hav
 
 ## Assume total compromise {#compromise}
 
-!shot zq-compromise.webp | images/ | What a fully compromised agent can try, and what the sidecar does: remove its hooks, nothing relies on them; rewrite the workflow or the tests, the lock differs and the owner decides; fake a status, ignored; forge a signed result, it fails verification; add a workflow to steal secrets, the site's repository holds none; bring back an old workflow, the lock differs; rewrite history, the sidecar deploys only from the last release; ring the doorbell, it reads the state itself; leak in content, the private lists catch it. | comparison
+!shot zq-compromise.webp | images/ | What a fully compromised agent can try, and what the sidecar does about each attempt. | comparison
 
 The memo asked for the analysis to assume the agent is fully compromised: it can do anything its credentials allow. So, attack by attack:
 

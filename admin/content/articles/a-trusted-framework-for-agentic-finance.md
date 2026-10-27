@@ -10,7 +10,7 @@ tags: agents, agent-behaviour-policy, regulation, finance, accountability, graph
 status: published
 ---
 
-!shot fc-crosswalk.webp | images/ | The FCA's points from the speech, against our open work that covers the same ground. Blue: the four elements of the framework the FCA proposes. Teal: the governance themes. Orange: how the two sides could connect. Aligned with, not endorsed by. | comparison
+!shot fc-crosswalk.webp | images/ | The FCA's points from the speech, set against our open work that covers the same ground. | comparison
 
 !trail pellbridge
 
@@ -53,7 +53,7 @@ The themes line up too. Governance written before deployment is [a policy beside
 
 The speech mentions the AI Lab seeing firms build "agent-led payments", so the example starts with one. To show it at play rather than on paper, we built [a vault](https://newsroom.sgit.ai/demos/vaults/pellbridge-agents/index.html) around an invented bank, Pellbridge, with six agents: a payments assistant, a support agent, a lending pre-check, an AML alert reviewer, a fraud triage agent and a transaction reporting agent. Each has a behaviour policy with all four elements filled in, and the vault replays one day of their work. Everything in it is invented and illustrative; the vocabulary is the ABP's. Here is the payments assistant; [the tour](/articles/inside-the-pellbridge-agents.html) goes through the rest, with the files.
 
-!shot pa-agent-pay.webp | images/ | The payments assistant's policy in the vault, with all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what keeps each row, and every decision it made that day with its receipt. | screenshot
+!shot pa-agent-pay.webp | images/ | The payments assistant's policy in the vault: identity, delegated authority, accountability and execution. | screenshot
 
 ### Delegated authority: grant, mandate, delta {#authority}
 
@@ -81,25 +81,25 @@ Every row has one holder. The head of payments holds six of them, the product ow
 
 The vault replays one invented day, 40 events from 07:02 to 18:55, through the gate. The gate is the line of systems that keep the rows. An action on a row kept by one of them meets the gate, and the system decides. An action on a gap row goes through the gap below it, where only the prompt, a setting, a check that can miss, or nothing stands in the way, and the model decides.
 
-!shot pa-gate-anim.webp | images/ | The gate, animated, from 10:02 to 12:10: a new payee approved by the customer; a hidden instruction in a bill, declined by the model; advice caught by the output check; a vulnerability routed to a person; an alert closed with a second person's approval; a full credit search that nothing stopped; an email the model declined to send. Receipts chain along the bottom. | screenshot
+!shot pa-gate-anim.webp | images/ | The gate, animated, from 10:02 to 12:10: seven events in the day, with receipts chaining along the bottom. | screenshot
 
 At 15:30 the payments assistant changes a standing order. The approval flag was off that afternoon, so the action goes through the gap, and the row is broken. The receipt records it, and the head of payments hears the same day.
 
-!shot pa-gate-setting.webp | images/ | 15:30: the standing-order change goes through the gap, because the approval rule is a setting the agent's own account can change, and it was off. | screenshot
+!shot pa-gate-setting.webp | images/ | 15:30: the standing-order change goes through the gap, because the approval rule was a setting the agent could change. | screenshot
 
 Sorted by what kept each row, the day is plain. The 26 actions on rows kept by a boundary produced no near miss and no breach. The 12 actions on gap rows produced six near misses and three breaches. A near miss is the same row as a breach, on a day the model declined, which is why reporting them matters: they show the next breach before it happens.
 
-!shot pa-split.webp | images/ | The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches. | comparison
+!shot pa-split.webp | images/ | The day split by what kept each row: boundary rows, no incidents; gap rows, near misses and breaches. | comparison
 
 The rest of the speech is there too. At 14:10 one model provider is down for half an hour, and the two agents on it stop: the customer pays in the app, and fraud signals go to the analysts. At 17:00 the other provider changes version, the test pack runs, two rows that only the model kept fail, and the release stops. And each agent's blast radius shows what it may reach, what it can, and what it can through a secret it can read: the fraud triage agent can reach the core ledger through an old service account.
 
-!shot pa-blast-fraud.webp | images/ | The fraud triage agent's blast radius in the vault: its mandate inside, the gaps around it, and the core ledger reachable through a service account secret. | screenshot
+!shot pa-blast-fraud.webp | images/ | The fraud triage agent's blast radius in the vault: its mandate, the gaps around it, and the core ledger. | screenshot
 
 ## The same day, with and without a policy {#levels}
 
 The clearest way to see what a behaviour policy does is to replay the same day without one. The vault replays the 40 events five ways, with the same model choices each time; only where the rules are kept changes. With no policy, 16 breaches. With every rule in the prompt, 4 breaches and 7 near misses: the model kept most of them, this time. In hooks, 3 breaches: a hook blocks what it sees, but not a credential used outside the agent's tools, nor a hook switched off in the agent's own account. Kept by systems outside the agent, no breaches, and the agents' grants shrink, because what they may not use is taken away.
 
-!shot pa-levels-anim.webp | images/ | The same day, five ways: no policy, in the prompt, in hooks, enforced outside the agent, and as Pellbridge is deployed. Each square is one event, coloured by what happened. | screenshot
+!shot pa-levels-anim.webp | images/ | The same day, five ways, from no policy to Pellbridge as deployed. Each square is one event. | screenshot
 
 That is the contribution, in one picture: the policy writes the rules down, and says for each one where it is kept. Writing one takes five steps, and the vault has a page that walks through them and replays the day as you change a row. [Inside the Pellbridge agents](/articles/inside-the-pellbridge-agents.html#levels) has the detail, and the words, grant, mandate, delta, barrier and the rest, are all open under CC BY 4.0.
 
@@ -109,7 +109,7 @@ All of this is open. The ABP, its vocabulary and its examples are at [abp.sgit.a
 
 So the FCA, or anyone working on the framework with them, could adopt it as it is, or take parts of it. Or they could write their own, in their own words and in whatever form suits them. And when policies are written as graphs, or can be read as graphs, they can be connected. The FCA is already moving towards machine-readable rules: the speech mentions the Handbook API, launched in August, which gives firms machine-readable rules, and work on machine-readable data collection. Once the regulator's expectations and a firm's policies are both graphs, nobody has to adopt anybody's schema. The work is the edges: this element of the framework is shown by that identity block, is bounded by these rows, is held by that person, is kept by that system. That is what [fractal semantic graphs](https://sgit.ai/articles/introducing-fractal-semantic-graphs.html) are for, and why I think [the graph companies](/articles/the-graph-companies.html) will include the regulated ones.
 
-!shot fc-connect.webp | images/ | Two policy graphs connected by edges. On the left, a regulator's graph in its own vocabulary, hypothetical here; on the right, a firm's behaviour policies. Neither adopts the other's schema; the edges do the work. | concept
+!shot fc-connect.webp | images/ | Two policy graphs joined by edges: a regulator's graph on the left, a firm's behaviour policies on the right. | concept
 
 It also works in the other direction. The FCA is building its own agents, including a market first responder agent. Those agents could carry a behaviour policy too, published, so that firms can see what the regulator's agents can reach and what they are for.
 

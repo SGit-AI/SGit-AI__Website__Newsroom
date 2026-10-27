@@ -10,11 +10,11 @@
 
 # GenAI in Portuguese, 2024: my OWASP Global AppSec talk in Lisbon, the first public demo of The Cyber Boardroom, slide by slide, with what two years of agents have confirmed and changed
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/portugal-2024-genai-in-portuguese.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugalowaspgenaicyber-boardroomtalksprovenancegraphsagentslanguagehistoryarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/portugal-2024-genai-in-portuguese.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugalowaspgenaicyber-boardroomtalksprovenancegraphsagentslanguagehistoryarticle
 
 ***Abstract:** On 28 June 2024, at OWASP Global AppSec EU in Lisbon, I gave Deterministic GenAI Outputs with Provenance, 132 slides and a live demo of The Cyber Boardroom, the project I had been building for two months: an assistant that explains cyber security to board members, in their language and at their level. The talk opened with a quiz, what is the sixth most powerful programming language in the world, and the answer was Portuguese, because prompts are written in natural languages and 236 million people speak it first. Its core was a set of principles: GenAI matters because it can understand content, not because it creates it; hallucinations are a feature for creativity and a bug for facts; use read-only models, bring your own content, assume every prompt is exposed, and use graphs instead of RAG. And it ended with a challenge to Portugal: the future depends on getting this right, otherwise Portugal becomes just another consumer of global technology. Two years later most of it holds, and some of it is the foundation of what I do now: provenance, graphs and determinism are the core of this newsroom; the board assistant became agents with a mandate; and Portugal has released Amália, an open model for European Portuguese, which is what I asked for. What changed is the word: in 2024 I talked about models and prompts; in 2026 it is agents, and the problem is controlling what they do.*
 
-Twelve slides from Deterministic GenAI Outputs with Provenance, OWASP Global AppSec EU, Lisbon, June 2024: the title, prompts in natural language, Portuguese as a programming language, GenAI understands, hallucinations, secure or safe, The Cyber Boardroom, GenAI as the most vulnerable API, key principles, what GenAI is good at, graphs instead of RAG, and security incidents as a good thing.
+Twelve slides from Deterministic GenAI Outputs with Provenance, OWASP Global AppSec EU, Lisbon, June 2024.
 
 ## In short
 

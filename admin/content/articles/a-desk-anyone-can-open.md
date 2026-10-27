@@ -10,7 +10,7 @@ tags: php2shell, admin, roles, agents, vaults, read-key, provenance, debrief, si
 status: published
 ---
 
-!shot ad-desk.webp | images/ | The PHP desk at /admin/php-oct-2026/, Newsprint theme, 1280 pixels wide. Under the title, four counts: pieces of work done, work still open or blocked, the people and agents on the story, and the sources in the vault. Below, the work table: status, what, owner, when it was opened and closed in UTC, and the proof for each row, with work in progress, blocked and open first. | screenshot
+!shot ad-desk.webp | images/ | The PHP desk at /admin/php-oct-2026/, Newsprint theme, 1280 pixels wide: four counts above the work table. | screenshot
 
 ## In short {#in-short}
 
@@ -50,7 +50,7 @@ A published read key cannot be withdrawn from anyone who has fetched the objects
 
 ## Reading half a gigabyte one source at a time {#view}
 
-!shot ad-vault-view.webp | images/ | The live view on the PHP desk page, 916 pixels wide, read from the vault in the browser with its public read key. The status line names the vault's head and its commit message, and counts what was fetched: 7 objects and 197 KB for the whole manifest. Below, the filter for slug, publisher or title, kind and writer, and the BBC live page opened: its first capture's time and HTTP status, the vault app's thumbnail, the buttons for the full screenshot and the text, and the full screenshot loaded on request. | medium | screenshot
+!shot ad-vault-view.webp | images/ | The live view on the PHP desk page, 916 pixels wide, read from the vault in the browser, with the BBC live page opened. | medium | screenshot
 
 The plan was to link the vault to the SG/App vault browser, where its own app draws it. Other public vaults open there in a few seconds. This one did not open: after four minutes the browser had made 742 requests and still showed "Reading vault". The browser reads the whole vault before it draws anything, and this vault is 1,839 files and about half a gigabyte, most of it screenshots.
 

@@ -10,7 +10,7 @@ tags: agents, explorers-villagers, engineering, teams, pull-requests, article
 status: published
 ---
 
-!shot dr-many.webp | images/ | One role, many skills, one scope: the historian at the centre, and around it the data scientist, the designer, the developer and the architect that the same agent can also be; around all of them, the scope that contains it, writing only its own paths, appending in its own rows, and asking the editor for anything else; outside, another team's code, pages and data, where it asks or sends a change. | concept
+!shot dr-many.webp | images/ | One role, many skills, one scope: the historian at the centre, the roles it can also be, and the scope that contains it. | concept
 
 ## In short {#in-short}
 
@@ -51,7 +51,7 @@ What is new is that we can now iterate very fast, add features very fast, and al
 
 ## Teams that send each other pull requests {#pull-requests}
 
-!shot dr-flow.webp | images/ | Teams that send each other pull requests: an agent needs a feature another team owns; it builds the smallest thing that works, as an explorer, in its own space; it sends it to the owning team as a pull request, which that team reviews and decides; the villagers refactor it to the team's guidelines, with a human; and the town planner replaces it with shared code when the pattern is clear. Below, the humans give the direction. | process
+!shot dr-flow.webp | images/ | Teams that send each other pull requests: an explorer builds, the owner reviews, villagers refactor, planners replace. | process
 
 There is one more property of these focused agents. They can ask other agents for work, and they can also do some of that work themselves. That brings back a principle I have held for a long time: when one team interacts with another, it should send that team pull requests. It should contribute to the other team, not only ask. In corporate environments that never really worked. Open source has some of it, as with [our first pull request into Ruflo](https://newsroom.sgit.ai/articles/our-first-pr-in-ruflo.html), and our own [chapter-by-chapter patches to the book](https://newsroom.sgit.ai/articles/a-pull-request-by-another-name.html). Now we can scale it.
 

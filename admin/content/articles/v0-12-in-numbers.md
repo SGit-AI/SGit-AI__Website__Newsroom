@@ -10,7 +10,7 @@ tags: newsroom, releases, data, agents, article
 status: published
 ---
 
-!shot wu-days.webp | images/ | Releases and words, day by day. Left: releases each day, from 5 on the first afternoon to 30 on Tuesday 13 October. Right: words published in new articles by the date each carries, peaking at 51,000 on Sunday 18 October. | comparison
+!shot wu-days.webp | images/ | Releases and words, day by day: releases each day on the left, words published in new articles on the right. | comparison
 
 ## In short {#in-short}
 
@@ -28,7 +28,7 @@ Version 0.12.0 went out at 13:43 UTC on Monday 12 October, and v0.12.158 at 19:2
 
 The busiest days were the two Tuesdays, with 30 releases on 13 October and 18 on the 20th, and Sunday 18 October, with 28. The quietest full day was Saturday, with 13. Weekends did not slow it down much: Saturday and Sunday together had 41 releases.
 
-!shot wu-hours.webp | images/ | Releases by hour of day, UTC. Every hour from 06:00 to 01:00 saw at least one; the busiest was 16:00, with 17; nothing between 02:00 and 06:00. | comparison
+!shot wu-hours.webp | images/ | Releases by hour of day, UTC, from 06:00 to 01:00, with nothing between 02:00 and 06:00. | comparison
 
 The hours tell the same story. Every hour from 06:00 to 01:00 UTC saw at least one release, and all but one hour from 09:00 to midnight saw five or more. The busiest was 16:00, with 17. Between 02:00 and 06:00 there were none: the agents work when a person is there to ask them for something.
 
@@ -44,7 +44,7 @@ They carry 384 figures in the text, 2.9 an article, and 406 new images, 31 MB of
 
 The site as a whole grew from 511 pages in its sitemap to 1,245, and from 2,440 files to 6,677. The release commits added about 895,000 lines and removed about 460,000, almost all of them generated: pages, summaries, search indexes and the versions of each article.
 
-!shot wu-scatter.webp | images/ | Each of the 131 new articles by its length and its figures. Correlation r = 0.38. The articles with the most figures are the vault tours. | comparison
+!shot wu-scatter.webp | images/ | Each of the 131 new articles by its length and its figures, with a correlation of r = 0.38. | comparison
 
 Longer articles carry more figures, but only loosely: the correlation between words and figures is 0.38. The articles far above the line are the tours of vaults, where the screenshots carry the story: [inside the Pellbridge agents](/articles/inside-the-pellbridge-agents.html) has 14 figures in about 3,000 words, and [your reading, your controls](/articles/your-reading-your-controls.html) 13 in about 3,400.
 

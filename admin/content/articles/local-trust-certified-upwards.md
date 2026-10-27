@@ -10,7 +10,7 @@ tags: news, local-news, business-models, trust, provenance, open-banking, articl
 status: published
 ---
 
-!shot lt-flows.webp | images/ | Local trust, certified upwards: a local or niche publisher at the centre, owning the trust, the expertise and the stack; flowing in, facts that are commodity, the big outlets' global news told from its audience's point of view, and other local and niche sources, credited; flowing up, certification of the big outlets' stories about its area, paid per use, and a record of who reports and who recycles; and below, the reader, who trusts it, pays it and tells it what is missing. | concept
+!shot lt-flows.webp | images/ | Local trust, certified upwards: a local publisher at the centre, with what flows in, what flows up and the reader below. | concept
 
 ## In short {#in-short}
 
@@ -61,7 +61,7 @@ That last point matters because stories need maintaining. As I argued in [source
 
 ## The same argument as for software {#software}
 
-!shot lt-parallel.webp | images/ | The same argument, twice: in software, the maintainer does the expert work, signs off the version you run, is free-ridden by everyone who runs it unpaid, maintains patches for years, and when they leave nobody can fix it; in news, the journalist or local expert does the expert work, signs off the story and its facts, is free-ridden by outlets that recycle without a source, maintains the story's facts as they change, and when they leave nobody vouches for it. In both, the money should flow to them. | comparison
+!shot lt-parallel.webp | images/ | The same argument twice: in software, the maintainer; in news, the local expert. In both, money should flow to them. | comparison
 
 This is exactly the argument I made about software in [who maintains the PHP you run?](https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html). The maintainer, the person who knows the code, should be paid, and should sign off the version you run. The journalist, the expert who takes the time to understand something, should be paid, and should sign off the stories that rest on their work. In both cases the free-riders are invisible today, and in both cases the damage shows only when the expert has gone and nobody can fix, or vouch for, what is left. Making [who signs for what](https://newsroom.sgit.ai/articles/who-signs-for-this.html) visible is how both get funded.
 

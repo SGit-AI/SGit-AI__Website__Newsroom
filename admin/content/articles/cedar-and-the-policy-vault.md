@@ -10,7 +10,7 @@ tags: cedar, policy-as-code, agent-behaviour-policy, sgit, vaults, append-lanes,
 status: published
 ---
 
-!shot cd-pipeline.webp | images/ | Cedar policies in an sgit vault, from the rule to the evidence: a gate that validates every version against the schema and its tests, tags signed by the releasing clone, enforcement points that clone with the read key only, and an append lane that keeps a sealed record of every decision. What ran in the demo for this article is solid; the gateway and the sync into managed stores are proposed. | architecture
+!shot cd-pipeline.webp | images/ | Cedar policies in an sgit vault, from the rule to the evidence: a gate, signed tags, enforcement points, an append lane. | architecture
 
 ## In short {#in-short}
 
@@ -44,7 +44,7 @@ The paper is also direct about the comparison with the other two languages peopl
 
 ## Their terms, our terms {#crosswalk}
 
-!shot cd-crosswalk.webp | images/ | Our behaviour-policy terms, Cedar's, and where each one lives in the vault. Most map directly: the grant is permit, the barrier is forbid, the footprint is the entities. Two have no Cedar construct, the mandate and the version in force, and those are what the vault adds. | comparison
+!shot cd-crosswalk.webp | images/ | Our behaviour-policy terms, Cedar's, and where each one lives in the vault, with the two Cedar lacks. | comparison
 
 Most of an [agent behaviour policy](/articles/re-anchoring-agent-behaviour-policies.html) maps onto Cedar without strain. The grant, what the agent can touch, is a permit and the actions and resource types in the schema. A barrier, a limit on the grant, is a forbid, and Cedar's rule that forbid always wins is exactly how we want barriers to behave. The footprint, what exists to act on, from [Footprint and blast radius](/articles/footprint-and-blast-radius.html), is the entities. A row of a [skill behaviour policy](/articles/skill-behaviour-policy.html) is a forbid on labels the session carries. And the business layers of [The behaviour policy is the business logic](/articles/the-behaviour-policy-is-the-business-logic.html) are forbids on facts from the ledger or the CRM, passed in as context.
 
@@ -54,7 +54,7 @@ This is the translation element I keep coming back to. A [fractal semantic graph
 
 ## How Cedar policies are kept today {#today}
 
-!shot cd-today.webp | images/ | Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo. The managed store validates strictly and is protected by IAM, but its API has no history or export, and deleting it is permanent. A repository has history but no keys. The vault has both, and puts the evidence next to the rules. | comparison
+!shot cd-today.webp | images/ | Amazon Verified Permissions as its documentation describes it, a plain repository, and the vault from the demo. | comparison
 
 My guess in the memo was that policies are often deployed as loose JSON with no version control. The truth is better than that, and the gap is still real. Cedar policies are text, with a JSON form "to allow for programmatically constructing and parsing policies". In AWS, they live in a [policy store](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/policy-stores.html), "a container for policies and policy templates", with a STRICT validation mode that "Requires a schema to be present in the policy store", and IAM deciding who can change what.
 

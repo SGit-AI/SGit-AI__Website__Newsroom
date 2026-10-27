@@ -10,13 +10,14 @@
 
 # Versions of: Governed semi-autonomous development, read in a newsroom run by agents
 
-1 published version of [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](../governed-semi-autonomous-development-read-here.md). The current one is **v1.0.0**.
+2 published versions of [Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add](../governed-semi-autonomous-development-read-here.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-21 | published | 1,780 | first published | [`ce2e11671`](https://github.com/SGit-AI/SGit-AI__Website/commit/ce2e11671a2cca84f3cad502b349c1610384b504) | [current](../governed-semi-autonomous-development-read-here.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,698 | +0 / −82 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](governed-semi-autonomous-development-read-here/v1.1.0.md) · [current](../governed-semi-autonomous-development-read-here.md) |
+| **v1.0.0** | 2026-10-21 | published | 1,780 | first published | [`ce2e11671`](https://github.com/SGit-AI/SGit-AI__Website/commit/ce2e11671a2cca84f3cad502b349c1610384b504) |  |
 
 [← Back to the article](../governed-semi-autonomous-development-read-here.md) · [All articles](../index.md)
 

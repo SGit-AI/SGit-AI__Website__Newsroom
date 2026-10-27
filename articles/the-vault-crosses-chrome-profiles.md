@@ -10,11 +10,11 @@
 
 # The vault crosses Chrome profiles: state and memory between browser sessions, found by using it rather than by building it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.0.0](versions/the-vault-crosses-chrome-profiles.md) · [newsroom v0.12.11](https://newsroom.sgit.ai/admin/versions.html) · vaultschrome-profilesbrowserstatememorypasskeysnewsroomlocal-firstfeedback-loopagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-13 · [article v1.1.0, 2 versions](versions/the-vault-crosses-chrome-profiles.md) · [newsroom v0.12.11](https://newsroom.sgit.ai/admin/versions.html) · vaultschrome-profilesbrowserstatememorypasskeysnewsroomlocal-firstfeedback-loopagentsarticle
 
 ***Abstract:** In the newsroom workflow we just found something I did not plan. I keep separate Google accounts in separate Chrome profiles, and moving anything between them has always been awkward. The newsroom's reader vault fixed that without a line of new code. It got there by a path that was not a straight line: first we tracked what a reader does, in local storage; then the activity was worth keeping, so we persisted it, driven by what the reader valued; then we opened sgit vaults in the browser, which we already knew how to do; then the marks arrived, read later, not for me, more like this, and I started to have a stake in my own newsroom, with the usage and the payment travelling with it. Across devices was the feature I asked for. Across Chrome profiles is the one I found, and I suspect it is the more common case, because people switch between browser profiles far more often than between computers. What it really is, is memory and state between sessions, the same thing sgit already does for agents in different Claude accounts, now done through the interface of a website. This is how it works, what each profile needs to get in, and why the best features are sometimes the ones you discover by using what you built.*
 
-Two Chrome profiles on one computer, each signed in to a different Google account, each with its own local storage that the other cannot see. The reader's vault sits outside both: each profile writes its own file to it and reads the other's, so the marks, the reading and the balance in one are there in the other. The way in differs by where the passkey lives.
+Two Chrome profiles on one computer, each signed in to a different Google account, sharing the reader's vault.
 
 ## In short
 
@@ -32,7 +32,7 @@ I have several Google accounts, and each lives in its own Chrome profile: mine, 
 
 ## How we got here, which was not a straight line
 
-Six steps, three days, and not a straight line. Each of the first five was built for its own reason, following what the reader valued; the sixth was not built at all, it was found by using the others. Dates and releases from the release histories of sgit.ai and the newsroom.
+Six steps over three days, from the release histories of sgit.ai and the newsroom.
 
 None of this was designed as a way to cross profiles, and the path is worth telling, because I wrote yesterday that [progress is not a straight line](not-a-straight-line.md) and this is a small, clean example of it.
 

@@ -123,25 +123,25 @@
     {
       "file": "px-walls.webp",
       "url": "https://newsroom.sgit.ai/articles/images/px-walls.webp",
-      "caption": "Seven walls around one process, set from its policy and enforced by Linux inside this cloud container: an ephemeral user with no capabilities; an empty, read-only root holding only the listed files; its own namespaces; Landlock for paths, exec and TCP ports; a seccomp allowlist of the system calls the traced run made; a network broker that only opens tunnels to the policy's hosts; and cgroup limits.",
+      "caption": "Seven walls around one process, set from its policy and enforced by Linux inside this cloud container.",
       "kind": "concept"
     },
     {
       "file": "px-probe.webp",
       "url": "https://newsroom.sgit.ai/articles/images/px-probe.webp",
-      "caption": "What the probe tried, and what stopped it: as root in the container today, it could read /etc/shadow and the agent's home, write to /usr/lib and /tmp, see 92 processes, start a shell, mount a filesystem, make a user namespace, reach the internet and the agent's proxy, and open a netlink socket; under the Hello World policy, all of it was refused; with seccomp and Landlock switched off, the other walls still refused all but the netlink socket.",
+      "caption": "What the probe tried, and what stopped it: as root, under the Hello World policy, and with two walls switched off.",
       "kind": "comparison"
     },
     {
       "file": "px-cost.webp",
       "url": "https://newsroom.sgit.ai/articles/images/px-cost.webp",
-      "caption": "The size of a policy, and what it costs: Hello World in C, 1 file, 12 system calls, no hosts, 5 ms bare, 103 ms of policy overhead; Hello World in Python, 37 files, 34 system calls, 30 ms bare, 92 ms overhead; Python fetching one page, 169 files, 44 system calls, one host, 565 ms bare, 149 ms overhead; sgit init, commit and status, 1,025 files, 58 system calls, one host, 3,495 ms bare, 187 ms overhead.",
+      "caption": "The size of a policy and what it costs, for four programs from Hello World in C to sgit init, commit and status.",
       "kind": "comparison"
     },
     {
       "file": "px-layers.webp",
       "url": "https://newsroom.sgit.ai/articles/images/px-layers.webp",
-      "caption": "A policy of policies: the operating system (what Linux can do here), the environment (this container's proxy, CA bundle and paths), the runtime (Python and its standard library), the application (sgit, its dependencies and its server), and this execution (one command, one folder, one host, one user for one run), each narrowing the one above.",
+      "caption": "A policy of policies: operating system, environment, runtime, application and execution, each narrowing the one above.",
       "kind": "concept"
     }
   ]

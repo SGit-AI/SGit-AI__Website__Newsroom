@@ -10,7 +10,7 @@ tags: memory, archive, back-catalogue, agents, newsroom, brief, article
 status: published
 ---
 
-!shot pw-worker.webp | images/ | The back-catalogue worker. On the left, the sources in the order the worker takes them: the essays at diniscruz.ai, the NotebookLM repository, the talks and books, the tools, the blog, the videos, and the LinkedIn and Twitter history once exported. In the middle, a register with one line per item and its status, and the worker, which takes two or three items a day. On the right, each article: what it was, what it said, then and now, and how it connects. Underneath, the compound effect: each article becomes a node the next one links to. | architecture
+!shot pw-worker.webp | images/ | The back-catalogue worker: the sources it takes, the register, the article format, and how each article becomes a node. | architecture
 
 ## In short {#in-short}
 

@@ -10,7 +10,7 @@ tags: agents, ruflo, sgit, vaults, agent-behaviour-policy, mcp, memory, recovery
 status: published
 ---
 
-!shot rf-board.webp | images/ | The twelve steps of the run and how each ended: five worked, three were safeguards refusing as intended, four were setup or summary. Not tested, and said so on screen: recall by meaning. From the video by Mondweep Chakravorty. | comparison
+!shot rf-board.webp | images/ | The twelve steps of the run and how each ended, from the video by Mondweep Chakravorty. | comparison
 
 !trail sgit-ruflo
 
@@ -52,7 +52,7 @@ At [0:32](https://youtu.be/rkh6BJiaIrQ?t=32), the run asks the adapter to checkp
 
 ### 5 · Save an encrypted recovery point {#step-5}
 
-!shot rf-term-05.webp | images/ | Step 5 on the terminal: the checkpoint is saved with its id, a consistent SQLite backup, and three SHA-256 fingerprints, of the database, the ABP and the compiled policy. "Only encrypted SGit bare objects enter the checkpoint store." Frame from the video by Mondweep Chakravorty. | comparison
+!shot rf-term-05.webp | images/ | Step 5 on the terminal: the checkpoint is saved with its id and three SHA-256 fingerprints. Frame from the video. | comparison
 
 At [0:38](https://youtu.be/rkh6BJiaIrQ?t=38), the checkpoint for the `project` namespace is allowed. The adapter takes a consistent copy of the memory database, a SQLite backup rather than a raw file copy, and records three fingerprints: of the database, of the ABP and of the compiled policy. The screen says: "Only encrypted SGit bare objects enter the checkpoint store. Private keys remain in a separate private directory." Binding the data to the rules in force is the detail I like most. [Step 5](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-5).
 
@@ -66,13 +66,13 @@ At [0:51](https://youtu.be/rkh6BJiaIrQ?t=51), the disposable test project is del
 
 ### 8 · Restore in a fresh process {#step-8}
 
-!shot rf-term-08.webp | images/ | Step 8 on the terminal: a new MCP server restores the checkpoint into a workspace called fresh-runner; the database fingerprint is the same as in step 5, and matches_checkpoint is true. Frame from the video by Mondweep Chakravorty. | comparison
+!shot rf-term-08.webp | images/ | Step 8 on the terminal: a new MCP server restores the checkpoint into a workspace called fresh-runner. Video frame. | comparison
 
 At [0:58](https://youtu.be/rkh6BJiaIrQ?t=58), a brand-new MCP server process restores the checkpoint into a workspace called `fresh-runner`. The database's SHA-256 begins `10ab6c56` and ends `d66a0b`, the same as in step 5, and `matches_checkpoint` is true. [Step 8](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-8).
 
 ### 9 · Ask Ruflo what it remembers {#step-9}
 
-!shot rf-term-09.webp | images/ | Step 9 on the terminal: Ruflo's own retrieve command returns both facts word for word, and the run reports a pass. Frame from the video by Mondweep Chakravorty. | comparison
+!shot rf-term-09.webp | images/ | Step 9 on the terminal: Ruflo's retrieve command returns both facts and the run reports a pass. Frame from the video. | comparison
 
 At [1:04](https://youtu.be/rkh6BJiaIrQ?t=64), Ruflo itself, not the adapter, reads the restored memory. Both facts come back word for word: "PASS: both values match the CLI-written facts exactly." That the original tool does the reading is what makes this proof stronger than a demo that checks its own output. [Step 9](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-9).
 
@@ -82,7 +82,7 @@ At [1:14](https://youtu.be/rkh6BJiaIrQ?t=74), a key that was never stored is loo
 
 ### 11 · Change the saved copy, try again {#step-11}
 
-!shot rf-term-11.webp | images/ | Step 11 on the terminal: one checkpoint object is altered, the restore fails with a ValueError, and tampered_workspace_created is false. Frame from the video by Mondweep Chakravorty. | comparison
+!shot rf-term-11.webp | images/ | Step 11 on the terminal: one checkpoint object is altered and the restore fails with a ValueError. Frame from the video. | comparison
 
 At [1:20](https://youtu.be/rkh6BJiaIrQ?t=80), one encrypted checkpoint object is altered and a restore is tried into a workspace called `tampered`. It fails with a `ValueError`, and `tampered_workspace_created` is false. Integrity fails closed. The code shows how: the adapter compares the digest of the stored ciphertext with the one it recorded when it saved the checkpoint, and refuses before anything is decrypted. [Step 11](https://newsroom.sgit.ai/demos/videos/sgit-ruflo-poc/index.html#step-11).
 
@@ -92,7 +92,7 @@ At [1:26](https://youtu.be/rkh6BJiaIrQ?t=86), the acceptance summary: exact reca
 
 ## What it proves, and what it says it does not {#proves}
 
-!shot rf-outcome.webp | images/ | The video's closing slide: the facts came back and the safeguards held; still to validate, recall by meaning, real-world value, and installation and ongoing reliability. Frame from the video by Mondweep Chakravorty. | comparison
+!shot rf-outcome.webp | images/ | The video's closing slide: the facts came back, the safeguards held, and three things are still to validate. | comparison
 
 The video's own closing slide puts it well: both facts recovered exactly; unauthorised access blocked; unapproved deletion blocked; altered checkpoint rejected. And still to validate: recall by meaning, real-world value, and installation and ongoing reliability.
 

@@ -10,7 +10,7 @@ tags: meter, payments, vaults, reading-account, status, article
 status: published
 ---
 
-!shot rb-built.webp | images/ | The reading account, piece by piece: the meter, £5 of starting credit, top-up with Stripe, the account in your vault, a balance across devices, devices merged, notes and send to my vault, and a server that sees only ciphertext, all built; checking payments against Stripe, signed validations and one account across our sites, proposed. | comparison
+!shot rb-built.webp | images/ | The reading account, piece by piece: what is built, and what is proposed. | comparison
 
 ## In short {#in-short}
 

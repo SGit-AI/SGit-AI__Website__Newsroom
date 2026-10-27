@@ -10,11 +10,11 @@
 
 # A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.1.0, 2 versions](versions/a-team-frozen-in-time.md) · [newsroom v0.13.68](https://newsroom.sgit.ai/admin/versions.html) · agentsteamsknowledgemaintenancesessionsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.2.0, 3 versions](versions/a-team-frozen-in-time.md) · [newsroom v0.13.68](https://newsroom.sgit.ai/admin/versions.html) · agentsteamsknowledgemaintenancesessionsarticle
 
 ***Abstract:** Every project has a moment when the team is sharp, everyone is there, and features ship fast. Then the project dries out, the goals are met, or the company is sold, and the team moves on, taking with it the knowledge of why the system was built the way it was, its side effects, and how to build and ship it. Years later a fix is needed, as with PHP this week, and nobody can make it safely; sometimes even the pipeline is gone. I am now experiencing something we never had: agent sessions that are focused on one piece of work, with one mandate, one role and one repository, which can be paused and picked up again later, with the conversation, the reasoning, the lessons and the code exactly where they were. The best examples are the teams behind the sgit CLI and SG/Send, the vaults, which I keep coming back to: one of their sessions has resumed after 43 days without a commit, and another after 36, starting from the current code and getting straight back to tested work. On the PHP story's team, two sessions did the same this week after 28 hours. A new developer who joins such a project inherits the history, the materials, and agents ready to make the change. That is a very powerful idea, and I want to capture it.*
 
-When the team leaves, and when it can be woken: the usual life of a project team, where people move on and the knowledge goes with them, against a team of agent sessions, each with one mandate, role and repository, paused at no cost and picked up again with its history intact.
+When the team leaves, and when it can be woken: a usual project team against a team of agent sessions.
 
 ## In short
 
@@ -42,7 +42,7 @@ The new part is that such a session can be paused, and picked up again later. No
 
 The best examples are the teams behind [the sgit CLI](https://cli.sgit.ai/), whose source is [SGit-AI/SGit-AI__CLI](https://github.com/SGit-AI/SGit-AI__CLI), and behind SG/Send, the vaults, in [SGraph-AI__App__Send](https://github.com/the-cyber-boardroom/SGraph-AI__App__Send). I have dedicated Claude Code sessions for that work, and every commit they make names its session, so their git histories show when a session went quiet and when it came back. Increasingly there are long periods when they are paused. And when they start again, they pick up where I left them, with a lot of quality.
 
-Four sessions that keep coming back, from the git histories of the sgit CLI and SG/Send: an SG/Send session over 158 days with pauses of 23.5, 18.9 and 43 days; another over 69 days with a pause of 37; a CLI session over 86 days with pauses of 15, 15 and 36; and another over 47 days with pauses of 22 and 17.5. Each pause was ended by the same session.
+Four sessions that keep coming back, from the git histories of the sgit CLI and SG/Send, with their pauses.
 
 - **SG/Send, a 43-day pause.** One session's last commit before the pause, on 29 June, updated a dependency with the full unit suite at "977 passed, 9 skipped". Its next, on 11 August, started from the current dev branch, 19 releases later, with "Add DevOps review: API deployment current state, container unification, and AWS Marketplace". The next day it shipped "Phase A: universal container image", with "Container unit tests: 36 green", and the deployment templates with "all cfn-lint clean". The same session had paused for 23.5 days in the spring and come back with "rebase debrief to v0.27.53 after dev sync": catch up first, then work.
 - **SG/Send, a 37-day pause.** Another session stopped on 9 June with a fix to the vault editor and came back on 16 July with documentation, then a review of its own docs against the live sources, the fixes from that review, and then features: "native LLM chat, talk to the file you are viewing".
@@ -55,7 +55,7 @@ Two honest qualifications. These are not one session per project: the CLI's hist
 
 The PHP story's git history shows the same thing on a short scale, because every commit names the session that made it.
 
-Two sessions on the PHP story's team, paused and picked up again: the librarian's last commit on 22 October at 20:20 UTC and its next on 24 October at 00:12; the cartographer's last on 22 October at 19:48 and its next on 24 October at 00:16. Each resumed by taking in what the rest of the team had done.
+Two sessions on the PHP story's team, the librarian and the cartographer, paused on 22 October, resumed on 24 October.
 
 - **The librarian**, which keeps the questions readers ask and maps every member of the team, last committed at 20:20 UTC on 22 October. Its next commit, at 00:12 on 24 October, was "Merge dev (v0.10.18) into the librarian's branch, and the librarian's pass of 24 October". It read what the team had shipped while it waited, then did its work. Six hours later it ran its first scheduled pass.
 - **The cartographer**, which builds the story's graphs, last committed at 19:48 on 22 October. It came back at 00:16 on 24 October: "dev taken in, 76 new parties resolved". It took in two more releases as it worked, and within the hour its role was renamed the ontologist, at my word, and it carried on under the new name.

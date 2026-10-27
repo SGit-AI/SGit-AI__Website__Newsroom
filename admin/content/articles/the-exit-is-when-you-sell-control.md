@@ -10,7 +10,7 @@ tags: startups, founders, exits, control, governance, open-source, article
 status: published
 ---
 
-!shot ex-negotiate.webp | images/ | Negotiate the exit at the start. The company moves from explorer to villager to town planner; the founder's exit is the day control is sold, and its terms, the trigger, the terms, what you keep and your number, are best written before anyone needs them. | concept
+!shot ex-negotiate.webp | images/ | The company's path from explorer to villager to town planner, and the founder's exit as the day control is sold. | concept
 
 ## In short {#in-short}
 
@@ -30,7 +30,7 @@ Control and ownership are not the same thing, and they part company early. A fou
 
 It works the other way too. Mark Zuckerberg owns about 13.6% of Meta's shares and holds 61.0% of the votes, because his Class B shares carry ten votes each, according to Meta's 2025 proxy statement. He has sold most of the company and kept control of it.
 
-!shot ex-control.webp | images/ | Owning the company is not controlling it: an illustrative founder with 60% who has lost control to the board and the investors' vetoes, and Meta's founder with about 13.6% of the shares and 61% of the votes. | comparison
+!shot ex-control.webp | images/ | Owning is not controlling: an illustrative founder with 60%, and Meta's founder with 13.6% of shares and 61% of votes. | comparison
 
 So the exit is not the day you sell your last share. It is the day you are no longer the one deciding.
 
@@ -48,7 +48,7 @@ Open source makes leaving easier. If the work you care about is open, you take i
 
 Losing the top job early is the norm, not the exception. Noam Wasserman studied 212 American start-ups for the Harvard Business Review in 2008: by the time they were three years old, half of the founders were no longer CEO; in year four, 40% were still in the post; and fewer than a quarter led their companies' initial public offerings. "Four out of five entrepreneurs," he wrote, "are forced to step down from the CEO's post."
 
-!shot ex-wasserman.webp | images/ | How long founders stay in charge, from Noam Wasserman's study of 212 American start-ups: half still CEO in year three, 40% in year four, fewer than a quarter at the IPO. | comparison
+!shot ex-wasserman.webp | images/ | How long founders stay in charge, from Noam Wasserman's study of 212 American start-ups. | comparison
 
 His conclusion was that founders choose, knowingly or not, between being rich and being king: they "make 'rich' versus 'king' trade-offs to maximize either their wealth or their control over the company", in the words of the article's abstract. Giving up control tends to build a more valuable company; keeping it tends to mean a smaller one. Neither is wrong. What hurts is not knowing which one you chose.
 
@@ -62,7 +62,7 @@ My theory about him, and it is a theory, is this. He had great success early, an
 
 What the record does show is that the exits were priced in advance. When he left Real Madrid by mutual agreement in 2013, he gave up, as AFP reported, "the €20 million ($26 million) compensation clause in the event he was sacked", and the club gave up "a clause of the same amount" payable if he left for another club: the exit was priced both ways before either side needed it. Manchester United's dismissal of him in 2018 cost the club [£19.6m in compensation](https://www.skysports.com/football/news/11667/11637177/jose-mourinhos-manchester-united-dismissal-cost-club-19-6m-in-compensation) to him and his staff. And his contract at Benfica reportedly carried a €15m termination clause, the price at which Real Madrid hired him back this year. His third seasons have been hard often enough that [Sky Sports named the pattern](https://www.skysports.com/football/news/11095/11584817/jose-mourinho-sacked-by-manchester-united-third-season-syndrome) "third-season syndrome".
 
-!shot ex-mourinho.webp | images/ | Mourinho's clubs since 2004, how long he stayed and how each spell ended; in blue, where the money on leaving is documented. | timeline
+!shot ex-mourinho.webp | images/ | Mourinho's clubs since 2004: the length of each spell and how it ended. | timeline
 
 I think most senior executives do the same these days, once they have enough power and someone who wants them: they negotiate the exit on the way in. Founders should too.
 

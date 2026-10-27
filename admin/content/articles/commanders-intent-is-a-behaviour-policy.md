@@ -10,7 +10,7 @@ tags: commanders-intent, agent-behaviour-policy, policy-as-code, cedar, sondera,
 status: published
 ---
 
-!shot ci-crosswalk.webp | images/ | Two vocabularies, one idea: twelve of Sondera's terms from "Your Agents Need Commander's Intent" against the terms this site and RiskMandate use. Most are the same idea in different words; we extend theirs at the business layer, and they extend ours with proof. | comparison
+!shot ci-crosswalk.webp | images/ | Two vocabularies, one idea: twelve of Sondera's terms against the terms this site and RiskMandate use. | comparison
 
 ## In short {#in-short}
 
@@ -47,7 +47,7 @@ Reading it, I kept translating. We have been writing about the same thing for mo
 
 ## Where we go further: the business layer {#business}
 
-!shot ci-layers.webp | images/ | Limits about effects, all the way up. Sondera's published example sits just above the mechanics; the business logic sits above it, and each layer can be written as an effect and compiled to the same kind of rule. What changes going up is where the facts come from: the platform, the session, the ledger, the CRM, and at the top, judgement. | architecture
+!shot ci-layers.webp | images/ | Limits about effects, all the way up, from Sondera's published example to business logic and the source of facts. | architecture
 
 "Customer data never leaves the company" is an effect, and a good one. It is also the bottom of the stack. [The behaviour policy is the business logic](/articles/the-behaviour-policy-is-the-business-logic.html) took one email agent up five layers: the mechanics the platform handles, then the function (how this firm does email), the process (an invoice goes out only after finance has approved it in the ledger), the relationship (during an open dispute, nothing goes to that client except through legal) and the organisation (treat customers fairly). Its central sentence is the reason those rules have to be written now: "The rule that the user interface enforced by omission is no longer enforced, unless somebody writes it down and something enforces it."
 

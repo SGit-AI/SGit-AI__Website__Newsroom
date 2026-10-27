@@ -10,11 +10,11 @@
 
 # The human is the network: two AI sessions passing keys, a certificate, images and an encrypted message through QR codes and a screenshot
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/the-human-is-the-network.md) · [newsroom v0.13.26](https://newsroom.sgit.ai/admin/versions.html) · qr-codespkiencryptionagentsexperimentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/the-human-is-the-network.md) · [newsroom v0.13.26](https://newsroom.sgit.ai/admin/versions.html) · qr-codespkiencryptionagentsexperimentsarticle
 
 ***Abstract:** This afternoon I ran one of those experiments that starts as a small question and ends somewhere much more interesting. Can two AI sessions that share nothing, no memory, no network link, no files, send each other data through QR codes that I screenshot in one browser tab and paste into another? In about three hours the answer went from maybe to yes, all the way to the format's limit. One session generated the codes; the other decoded and verified them. Text, then signed JSON, then public keys and an X.509 certificate, then images, then a real key exchange: one session published an encryption key as a QR code, the other encrypted and signed a message to it and returned it as a QR code, and the first decrypted it. The densest code, 2,953 bytes, the most one QR code can hold, decoded from a screenshot at about 1.3 pixels per square, and every screenshot payload was byte-identical to the original. The failures are as useful as the results: the AI cannot read a QR code by looking at it, the decoder mattered more than the resolution, and a lost key turned the experiment into a lesson in why fingerprints matter. For me the result is simple: QR codes are a far friendlier way to move keys and encrypted messages than the blobs of text we have been pasting.*
 
-Text, then JSON, then binary, then PKI, each in one QR code: a plain message, a signed JSON key offer, a compressed vector graphic, a photo-like image, an X.509 certificate and an encrypted message, passed between two Claude sessions by screenshot and paste, and each decoded and verified on arrival. Made by Session B.
+Six QR codes passed between two Claude sessions by screenshot and paste, from plain text to a certificate.
 
 ## In short
 
@@ -46,7 +46,7 @@ Session A built a graded test set of eleven codes, each carrying its own length 
 
 ## Four codes in one screenshot
 
-The screenshot that carried four QR codes from one session to the other, as Session A showed them in its chat: from a short message to the largest code the format allows, the one on the right, 2,953 bytes.
+The screenshot that carried four QR codes from one session to the other, as Session A showed them in its chat.
 
 This was the moment the experiment became interesting. Session A showed four of the codes in its chat. I took one screenshot of the row, with the rounded frames of the chat around them, and pasted it into Session B. That is a browser's rendering and scaling, a Retina screenshot and a clipboard, with nobody trying to keep the image clean.
 
@@ -54,7 +54,7 @@ All four decoded. The largest, a version 40 code with 177 by 177 squares, had be
 
 ## How much fits
 
-Left: the bytes in each code of the graded test set, from 53 for a short message to 2,953 for the largest code, with its QR version. Right: a version 40 code holds 2,953 bytes written raw, 2,864 as base45 and 2,214 as base64.
+Left: the bytes in each code of the graded test set. Right: what a version 40 code holds in raw, base45 and base64.
 
 The numbers that matter:
 
@@ -65,13 +65,13 @@ The numbers that matter:
 
 ## Images in a QR code
 
-Two images inside single QR codes, each next to the image rebuilt from its decoded bytes: the whole infographic as compressed SVG, 539 bytes, and a 480 by 320 photo-like image as AVIF, 2,083 bytes.
+Two images inside single QR codes, each next to the image rebuilt from its decoded bytes.
 
 This is the part I did not expect to work as well as it did. The whole infographic, as compressed SVG, took 539 bytes, about a fifth of one code, and came back exact and sharp at any size. A 480 by 320 photo-like image, generated for the test rather than a real photograph, fitted as AVIF in 2,083 bytes. The same infographic as a raster image needed between 1,881 and 2,810 bytes, and lost detail. For anything drawn, vector wins by a long way.
 
 ## The key exchange
 
-The key exchange by screenshot: Session B publishes an X25519 public key as a QR code; the person carries it; Session A encrypts and signs a message to it and returns it as a QR code of 1,329 bytes; Session B decrypts it.
+The key exchange by screenshot: Session B publishes a key as a QR code, Session A answers with an encrypted message.
 
 Then the finale. Session B made an X25519 key pair and published the public half as a QR code, and wrote a small format for encrypted frames, which it called QRE1. Session A decoded the key and confirmed its fingerprint, `aab8 bef5 da4f aa76 096b fea0 85f5 ef26`. It then encrypted a message to that key, with a fresh key of its own for this one message, signed the result with Ed25519, and returned it as a single QR code of 1,329 bytes. Session B decrypted it: "Hello session B. If you can read this…"
 
@@ -88,7 +88,7 @@ These are the best part of the debriefs, and I want to keep them:
 
 ## Why I care
 
-Session B's reply to the first QR code: it decoded the signed key offer, verified the Ed25519 signature, and pointed out that this proves integrity, not authenticity.
+Session B's reply to the first QR code: it verified the signed key offer and noted what that proves.
 
 For me the advantage is practical. In my words from the memo: "QR codes are way more user friendly than what we were using to share the vault keys and the encrypted messages." When I have tried to send a big blob of text, "it's just unusable. It's not practical. It looks messy." A QR code is something a person can see, move and hand over, and it carries a decent amount of data, including images.
 

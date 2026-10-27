@@ -10,11 +10,11 @@
 
 # Who creates the original? Mapping where the PHP story's data comes from, giving that map to the historian, and the places where we can make content nobody else has: our own counts, interviews and op-eds
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/who-creates-the-original.md) · [newsroom v0.13.78](https://newsroom.sgit.ai/admin/versions.html) · provenancesourcesoriginal-contentinterviewsagentsphp2shellarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/who-creates-the-original.md) · [newsroom v0.13.78](https://newsroom.sgit.ai/admin/versions.html) · provenancesourcesoriginal-contentinterviewsagentsphp2shellarticle
 
 ***Abstract:** With publishing working well, and the PHP site about to be split into six repositories, I want to start a new piece of work: a map of where the data in the story actually comes from. Who is creating original data, and who is passing it on? The site already holds the answer in raw form. Of the 418 sources it has captured, 277 are news pages, but when you count who first states each of the 107 claims, numbers and exploitation reports the site attributes, news outlets originate 5 of 146; organisations, agencies and named people originate almost all the rest, led by the PHP Foundation, Wiz, CISA and Cloudflare. The fact-check desk found claims relayed 29 times, 11 of them by the BBC. That map is a job for the historian, the agent that keeps the record and finds the pivot points, and it needs its own visualisations and data work. The second question is where we can create original content ourselves. We already do in a few places: figures we counted, a source watch that catches silent rewording, correction requests. The bigger opportunity is people: interviews with those affected, recorded by me or drafted by an agent, under the Open Security Summit banner, and op-eds from people involved, published on our site.*
 
-Who creates the original, in the PHP story's own data: of the 418 sources captured, 277 are news pages; of the 146 originations behind the 107 attributed claims, numbers and exploitation reports, organisations account for 79, agencies 27, named people 22 and news outlets 5. Outlets relay more than they originate: claims were found relayed 29 times, 11 by the BBC and 6 by The Hacker News.
+Who creates the original, in the PHP story's data: 418 sources captured, 107 attributed claims, and who originated them.
 
 ## In short
 
@@ -48,7 +48,7 @@ It is also more than a list. This part of the site needs its own visualisations 
 
 ## Where can we be original?
 
-Where we can create original content: counted by us (exists), figures the site counted from captured files and clones; the record (exists), a source watch of 913 pages that catches silent rewording, and 12 correction requests drafted; analysis (exists, to grow), Pulse, the risk graph and history; interviews (started), the editor's own, with a live one pending, and, proposed, interviews with people affected; op-eds (proposed), from people involved, under their own name.
+Where we can create original content: counted, recorded, analysed, interviewed or written by others, with each status.
 
 The second question turns the first on ourselves. Where are we creating content that nobody else has?
 

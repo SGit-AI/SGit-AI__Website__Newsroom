@@ -10,7 +10,7 @@ tags: agents, scheduling, automation, observability, explorers-villagers, articl
 status: published
 ---
 
-!shot lp-timeline.webp | images/ | The PHP site's wake timeline at 11:34 London on 25 October 2026: every scheduled agent's wakes for the day, from the conductor's hourly checks to the ontologist's one a day. Green: a run record within 45 minutes. Red: the wake passed and left no record. Hollow: still to come. 5 met, 11 missed so far, most of them runs that did their work but left no record. | screenshot
+!shot lp-timeline.webp | images/ | The PHP site's wake timeline at 11:34 London on 25 October 2026, with each agent's wakes marked met, missed or due. | screenshot
 
 ## In short {#in-short}
 
@@ -29,13 +29,13 @@ If you look at the [PHP story's newsroom](https://php.oct.2026.newsroom.sgit.ai/
 
 Then, once those have run, the others need to run after them: the Sherpa, who answers readers; the desk; the librarian; and the ontologist, who keeps the semantic graphs. So I already have a sequence of about ten agents, some of which run three or four times a day and others once.
 
-!shot lp-schedule.webp | images/ | The PHP site's schedule page on 25 October 2026: 11 schedules active, 53 wakes a day, 31 runs recorded and 11 messages unread between agents, and one day of wakes in London time, from the conductor's hourly checks between 07:15 and 21:15 to the librarian's one wake a day; the quiet hours, 22:00 to 07:00, shaded. | screenshot
+!shot lp-schedule.webp | images/ | The PHP site's schedule page on 25 October 2026: one day of wakes in London time, with the quiet hours shaded. | screenshot
 
 The point is not to run them as often as possible. If I can get an agent to run effectively once a day, or four times a day, that scales, because the objective is something that runs when I am not looking. Removing myself from the loop, smoothly, is the whole game.
 
 ## What each wake needs {#needs}
 
-!shot lp-pieces.webp | images/ | What a loop of agents needs before it can run without you: a schedule that lands in the right session; continuity of the session between wakes; secrets handed over once, by QR handshake; data that scales, a vault per stage; a record of every wake; and somewhere to see all of it. Learned while ten agents were taught to run in sequence on the PHP story. | concept
+!shot lp-pieces.webp | images/ | What a loop of agents needs before it can run without you: six needs, learned on the PHP story. | concept
 
 My requirements are practical. I need to be able to see each execution. So I want each agent's runs to land in the same session, on the same machine, where I can open it and read what it did. That one choice solves a lot: the secrets the agent was given stay with it; the state stays where it was; and the data does not have to be fetched again on every wake. This is gigabytes of data by now, and you do not want clones of it all over the place.
 
@@ -45,7 +45,7 @@ And continuing the previous session matters for more than state. It matters for 
 
 ## How the platform got here {#history}
 
-!shot lp-history.webp | images/ | How scheduling agents got easier, one platform feature at a time: tools in the loop, where an agent is a session; scheduled runs, where each run opens a new session and secrets and state start again; a schedule into a chosen session, where the wake lands in a session already briefed and holding its keys; and, proposed, a dedicated account for the whole team. | timeline
+!shot lp-history.webp | images/ | How scheduling agents got easier, one platform feature at a time, ending with a proposed dedicated account for the team. | timeline
 
 This is where small features in the platforms matter a lot. I am using Claude here.
 
@@ -63,7 +63,7 @@ One example: the agents try to help. At one point an agent tried to set up its o
 
 Another, from this morning. The [control room](https://php.oct.2026.newsroom.sgit.ai/team/control/index.html)'s wake timeline at 11:34 London showed 5 wakes met and 11 missed. Most of the misses were not failures of work. The conductor checked, and the researcher and the curator do run: the curator's 08:00 wake promoted 18 sources and took the evidence vault to 400. They just left no commit and no run record, so to the rest of the team they looked like they had not happened. The fix, at my go, was to make every scheduled wake's prompt small, with a shared wake procedure that always ends in a run record, and a way to publish that record without releasing the site.
 
-!shot lp-runs.webp | images/ | The latest runs on the PHP site's schedule page, 25 October 2026: the conductor making every scheduled wake prompt small, with a new shared wake procedure and a run record that can be published without a release; the conductor's light check turned incident, because the researcher and the curator run but leave no record; the desk's morning line; and the factcheck's daily sweep. | screenshot
+!shot lp-runs.webp | images/ | The latest runs on the PHP site's schedule page, 25 October 2026: the conductor, the desk and the factcheck sweep. | screenshot
 
 None of this is exotic. It is what happens when four or five agents, then ten, have to work in sequence, unattended, on a platform whose limits you live with.
 

@@ -10,11 +10,11 @@
 
 # Hired for the workflow: why October 2026 is the moment to get into agentic work, why you are more technical than you think, and how the edge starts with the application
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.1, 2 versions](versions/hired-for-the-workflow.md) · [newsroom v0.12.114](https://newsroom.sgit.ai/admin/versions.html) · careershiringagentsai-operatorsskillsexplorer-codingarticlegen-z-book
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 3 versions](versions/hired-for-the-workflow.md) · [newsroom v0.12.114](https://newsroom.sgit.ai/admin/versions.html) · careershiringagentsai-operatorsskillsexplorer-codingarticlegen-z-book
 
 ***Abstract:** I think October 2026 is a moment of real opportunity for anyone willing to get properly into agentic workflows. The first phase has passed. The tools and the workflows are maturing, still rough at the edges, but you can now glue the pieces together and get real work done, and companies are moving from pilots to products. I have lived this pattern before, in security and in software. There was a time when, if you could break an application, read code, build a website, build a mobile app or make a spreadsheet do something clever, you had a job, degree or no degree. This is that time again. And the people companies need are not the ones who build models, which is who the first wave of AI hiring went to; they are good AI operators, people who know how to use the tools and the workflows to get things done. The data agrees: in Microsoft and LinkedIn's 2024 survey, 71% of leaders said they would rather hire a less experienced candidate with AI skills than a more experienced one without, and PwC found this year that jobs asking for AI skills pay 62% more. When two candidates look equally good on paper, someone still has to choose. If you work this way, the choice starts with your application: a CV fitted to the role, an analysis of their problem, something they have not seen. I got jobs that way, before any of this existed, because of my OWASP work.*
 
-There was a time. Each row is a skill that, for a while, got people hired on what they could show rather than what their CV said: breaking applications, reading code, threat modelling, programming without a degree, building websites, sending email campaigns, building mobile apps after the App Store opened in July 2008, mastering Salesforce or a spreadsheet. Each later became something everyone is expected to know. The last row is now: running agentic workflows.
+Skills that, for a while, got people hired on what they could show, ending with running agentic workflows.
 
 ## In short
 
@@ -65,7 +65,7 @@ Think about how hiring actually works. However good you are, there is always a m
 
 My bet is: because you work this way. If you know how to run these agentic workflows and map a problem out, you have a real edge, and it shows from the very first step.
 
-When all things are equal. Two candidates match the job specification equally well. One sends a CV. The other sends a CV fitted to the role, a short analysis of the company's problem, and an infographic or a small working site they have not seen before. The interview starts from that material, on the candidate's strengths, instead of from gaps in a CV.
+When all things are equal: two candidates for the same job, one sending a CV and one sending much more.
 
 ## It starts with the application
 

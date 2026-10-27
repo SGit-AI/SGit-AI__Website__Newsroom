@@ -10,11 +10,11 @@
 
 # A directory of people and their keys: pki.sgit.ai for the people I work with, verified by me first, then by each other, and a link that only counts when it goes both ways
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.0.0](versions/a-directory-of-people-and-keys.md) · [newsroom v0.12.114](https://newsroom.sgit.ai/admin/versions.html) · pkipublic-keysidentityweb-of-trustpasskeyssgitbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/a-directory-of-people-and-keys.md) · [newsroom v0.12.114](https://newsroom.sgit.ai/admin/versions.html) · pkipublic-keysidentityweb-of-trustpasskeyssgitbriefarticle
 
 ***Abstract:** One of the first things I wanted when I started building these tools was a place to publish people's public keys, so I could find someone and send them something only they can read. I got stuck because there was nowhere good to put them. Now sgit is moving to public-key cryptography, and we have the pieces to build it, so it is time. The brief is for the agent that runs pki.sgit.ai, which until now has designed a key registry for agents. The first records should be people. You go to the site, register a passkey, and it opens a vault, as the newsroom's does; you make a key pair, or bring one, and publish the public half. Then you add evidence: your website, GitHub, a DNS record on a domain you own. For now I am the anchor: I verify people, by meeting them or on a channel I already know is theirs, and sign it, and they confirm it. Then anyone verified can verify someone else, and one rule makes it safe: a link only counts when it goes both ways. I can say I know you; you still have to say you know me. That rule, written in each person's own record, is also the answer to how the old web of trust was destroyed in 2019. From the links come degrees of separation, and an invitation is a QR code. The point is practical: find someone, and send them a secret or a message, as a QR code that opens in their browser. The number to watch is how many real keys are in the register.*
 
-From a passkey to a message. A person registers a passkey on pki.sgit.ai, which opens their vault; makes or imports a key pair, with the private keys kept in the vault; publishes the public half; adds evidence (a website, GitHub, a DNS record); is verified by Dinis, who signs it, and confirms that from their side; and links with others, each link counting only when both confirm. Then anyone in the register can be sent a secret as a QR code that opens in their browser and is read with their vault.
+From a passkey to a message: registering, publishing a key, evidence, verification, links, and a secret sent by QR code.
 
 ## In short
 
@@ -70,7 +70,7 @@ Then the part that makes it spread: anyone who is verified can verify someone el
 
 It turns out that rule also answers the question the old web of trust left open. pki.sgit.ai's first rule is that only the owner writes to their own record. So my vouch for you is written in my record, and your confirmation in yours. Nobody can add anything to anybody else's record, which is exactly what the 2019 attack did. A vouch nobody confirmed is visible as a claim in the voucher's record, and adds nothing to the other person. A link exists only when both statements do. And each record has a limit on how many it can hold, so even your own record cannot be turned into a flood.
 
-Two ways, or not at all. On the left, 2019: anyone could append a signature to anyone's key, and nothing could be deleted, so keys were flooded until they broke. On the right, the rule here: each person writes only to their own record. A vouches for B in A's record; B confirms in B's record; the link exists only when both do. A vouch that nobody confirms stays a claim in the voucher's own record, and each record has a size limit.
+Two ways, or not at all: the 2019 signing model on the left, and the rule here, each person writing to their own record.
 
 ## Degrees of separation
 

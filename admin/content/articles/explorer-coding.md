@@ -10,7 +10,7 @@ tags: explorer-coding, vibe-coding, wardley-maps, explorers, villagers, town-pla
 status: published
 ---
 
-!shot ec-handover.webp | images/ | Explorer coding and the handover that makes it last: explorers build by talking to an agent, and what they build is the brief; villagers maintain it, with policies, data handling and tests; town planners own the code in production. From left to right, fewer agents in line and more deterministic code. | architecture
+!shot ec-handover.webp | images/ | Explorer coding and its handover: explorers build, villagers maintain, town planners own the code in production. | architecture
 
 ## In short {#in-short}
 
@@ -52,7 +52,7 @@ They can use agents, of course. But the direction is set by where the code sits 
 
 ## An explorer version of every product {#products}
 
-!shot ec-tiers.webp | images/ | An explorer version of every product, and paid conversions from it: the explorer version where users reshape the product by talking to it; the submission, which is the brief; the villager product, maintained; and the town planner product, built properly or as a maintained fork. Proposed. | comparison
+!shot ec-tiers.webp | images/ | An explorer version of every product and the paid conversions from it, up to the town planner product. Proposed. | comparison
 
 The name also suggests a commercial model, and it follows from [the previous article](/articles/software-vendors-as-villagers.html). Products need to become explorer-friendly; more than that, they need an explorer version. In it, users can talk to the product with a model, reshape it, move things around and keep their own version; the product is treated as primitives. When the user has something they want to keep, they submit it, and pay to convert it into a villager product, maintained across releases, and, if it matters enough, into a town planner product, built properly or kept as a maintained fork. Each step is a revenue stream, and each submission tells the vendor exactly what its users want.
 

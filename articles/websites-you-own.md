@@ -10,7 +10,7 @@
 
 # Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.2.0, 3 versions](versions/websites-you-own.md) · [newsroom v0.13.96](https://newsroom.sgit.ai/admin/versions.html) · business-modelswebsitesagentspricingexplorers-villagersarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.3.0, 4 versions](versions/websites-you-own.md) · [newsroom v0.13.96](https://newsroom.sgit.ai/admin/versions.html) · business-modelswebsitesagentspricingexplorers-villagersarticle
 
 ***Abstract:** Someone I am helping, who is doing a lot of agentic work now, sent me an infographic for a business selling websites built with Claude: three monthly plans from £39 to £119 with a setup fee, a cap of five or ten pages, half an hour to two hours of edits a month, the seller's Claude subscription as the main cost, and ten clients making about £570 a month. It is a good sign that people see the opportunity. But the temptation is always rent, money while you sleep, and the economics are wrong. On a monthly plan you earn most when your clients use you least, the clients who use you most cost you most, and a few of them will never stop asking. The page caps make no sense either: a static page costs almost nothing, and this newsroom runs about 1,500 of them on GitHub Pages. The model I propose is different. The client owns three accounts, Claude or ChatGPT, GitHub with Pages, and a domain. You charge once, to set them up and wire them together, build the site from the client's own material with designs to choose from, check it, and hand it over with a lesson in changing it by talking to their AI. After that, help is a block of hours, if they want it. Every engagement ends, the client is in control, and delighted clients tell others. Here is the infographic, section by section, and the alternative.*
 
@@ -28,7 +28,7 @@ Why rent is the wrong model, then a made-up studio that sells the alternative an
 
 6 · A local tradeQuillon Heat & PlumbingServices, a map of the villages it covers and 19 household guides.[Open the vault ↗](https://dev.vault.sgraph.ai/#sgit_public_read_1e1699bbf9fbe0880410b1b86aacc197e8aa3a1d0d24d65bf116192de1a24fa3%3A7ff1r1bi)[Preview](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/quillon-heating/index.html)
 
-The infographic as I received it, on 26 October 2026: a pay-monthly website business built with Claude, in five sections: price plans, cost to run, time per five-page build, the numbers, and risks and fixes. Shared without its author's name; nothing in it identifies them.
+The infographic as received on 26 October 2026: a pay-monthly website business built with Claude, in five sections.
 
 ## In short
 
@@ -51,7 +51,7 @@ It is a good piece of work, and a good sign. People are seeing the opportunity t
 
 ## 1. The price plans
 
-Section 1, price plans: Starter £39 a month and £149 setup, up to five pages, hosting, DNS and SSL, 30 minutes of edits a month; Standard £69 a month and £299 setup, up to ten pages, contact form, analytics, uptime checks, an hour of edits; Plus £119 a month and £499 setup, blog or booking, two hours of edits, a quarterly report; extra work £35 an hour; the client owns the domain and content.
+Section 1 of the infographic, price plans: Starter, Standard and Plus, with setup fees and what each includes.
 
 Three monthly plans, each with a setup fee, a page cap and a monthly allowance of edits. Two things are wrong here.
 
@@ -63,7 +63,7 @@ What I agree with: "Client owns the domain and content." Yes, and they should ow
 
 ## 2. The cost to run
 
-Section 2, cost to run: fixed £95 to £190 a month, Claude Max at $100 or $200 (about £75 to £150), insurance, email and accounts £20 to £40; each extra site £1 to £5 a month, Route 53 $0.50 per site, Amplify hosting free to a few pounds, a domain about $12 a year, passed to the client.
+Section 2 of the infographic, cost to run: fixed monthly costs and the cost of each extra site.
 
 The biggest cost in the plan is the seller's own Claude subscription, used to run every client's site. That puts the cost, and the bottleneck, in the wrong place. The client can have their own Claude or ChatGPT account, which they are probably already paying for, and use it for everything else too. Reselling access to someone else's AI service may also have legal ramifications, so I would not build a business on it; I would read the provider's terms first.
 
@@ -71,31 +71,31 @@ The hosting is right in spirit: static, cheap, nearly free. On GitHub Pages it i
 
 ## 3. The time per build
 
-Section 3, time per five-page build: 10 to 15 hours in total, 3 to 5 hours of coding, fast with Claude Code, and 7 to 10 hours of everything else, calls, content, revisions, testing and launch. "Price on the client's time, not Claude's speed."
+Section 3 of the infographic, time per five-page build: 10 to 15 hours in total.
 
 This is the best section, and I agree with it. Most of the time is not the code: it is the calls, the content, the revisions and the launch. And "price on the client's time, not Claude's speed" is right. Which is exactly why the work should be priced as a job: a finite number of hours, delivered and finished.
 
 ## 4. The numbers
 
-Section 4, the numbers: £1,127 from one Standard client in year one (£299 plus 12 times £69); two Standard clients needed to cover fixed costs; £690 a month from ten Standard clients, about £570 after costs, for about ten hours' work.
+Section 4 of the infographic, the numbers: what one Standard client and ten Standard clients bring in.
 
 The arithmetic mostly holds, at the optimistic end. £299 plus twelve months at £69 is £1,127. Two Standard clients bring £138 a month, which covers the fixed costs only at their low end of £95; at £190 it takes three. And ten clients bring £690 a month, which leaves about £570 only if the costs are at their lowest; at the top end it is closer to £450.
 
 But the real problem is not the arithmetic, it is the incentive.
 
-Who wins when the client uses it more? On a monthly plan the fee is fixed and the cost of serving the client rises with every request, so the margin shrinks as use grows. On a handover the job is priced once, and afterwards the client's own use costs the studio nothing. Illustrative.
+Who wins when the client uses it more: a monthly plan against a handover. Illustrative.
 
 On a monthly plan you make money when your clients do not use you. The more they use what you sell, the less profitable they are. And in my experience something like 10 or 15 per cent of clients will drive you absolutely mad: endless requests, a lot of noise, never content, because to them a monthly fee is permission to keep asking. That is fair from their side; they are getting what they can for the money. But it is a perverse position to build a business in. I have written about the other side of it: "A subscription is a discount for committing to regular use. It is not rent on something you have the right to ignore", in [stop the bleeding, then ask for it back](https://newsroom.sgit.ai/articles/stop-the-bleeding-then-ask-for-it-back.html), and why paying after the value feels different, in [paying after the value](https://newsroom.sgit.ai/articles/paying-after-the-value.html).
 
 ## 5. The risks
 
-Section 5, risks and fixes: code I cannot fix, keep sites simple and static, read what Claude writes; Claude usage caps, never promise same-hour fixes in the contract.
+Section 5 of the infographic, risks and fixes: code I cannot fix, and Claude usage caps.
 
 "Keep sites simple and static. Read what Claude writes." Agreed. The second risk, Claude's usage caps, only exists because the seller holds one AI account for every client. When each client has their own, a cap is theirs, and nobody has promised anyone a same-hour fix.
 
 ## The model I propose
 
-Two ways to sell a website made with an agent: rent, a monthly plan where the seller holds the AI account, the hosting and the edits, with caps on pages and edits; and handover, a finished job where the client owns Claude or ChatGPT, GitHub with Pages and the domain, the studio charges once for setup, build, designs, QA and handover, and help afterwards is a block of hours.
+Two ways to sell a website made with an agent: rent, a monthly plan, and handover, a finished job the client owns.
 
 The tech stack for someone to maintain a website today is an AI account, GitHub Pages and a DNS account, the recipe in [your own newsroom](https://newsroom.sgit.ai/articles/your-own-newsroom.html). So package that, and sell the work, not the rent.
 
@@ -112,7 +112,7 @@ Every engagement is finite, which is what [jobs that never scaled](https://newsr
 
 To make this concrete, I asked the agents to build it. Not a description: a working mock-up of the whole business. Kitewing Websites is a made-up studio whose own site sells exactly this offer, and next to it are three made-up client sites, in three industries, each with its own design. All four are real, finished sites you can click through, and each is an encrypted sgit vault you can open.
 
-What is on the other side: Kitewing Websites, the made-up studio's own site, "a website you own, and can talk to"; Tidewrack Studio Pottery, a catalogue of 28 pieces in clay and sea-grey; Fennick Lane Community Garden, with events, a rota and growing guides, in leaf green and sunflower yellow; and Quillon Heat & Plumbing, a local trade with a map and 19 household guides, in navy and safety orange. All made up, for a demonstration.
+Four made-up websites for a demonstration: Kitewing, Tidewrack Studio Pottery, Fennick Lane and Quillon Heat & Plumbing.
 
 - **[Kitewing Websites](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/index.html)**, the studio: the offer in five steps, the one-off prices, why there is no monthly fee, and the three examples. Its vault holds the three examples inside it. [Open the vault](https://dev.vault.sgraph.ai/#sgit_public_read_59d20551766612f10442bf3c39c994a572a6967ebb7e4e289033b29f3db443b8%3Aixrnfp9r).
 - **[Tidewrack Studio Pottery](https://newsroom.sgit.ai/demos/vaults/kitewing-websites/vault-app/examples/tidewrack-pottery/index.html)**, a catalogue: 28 pieces, each drawn in its glaze, filtered by kind and glaze, with an enquiry note instead of a checkout. [Open the vault](https://dev.vault.sgraph.ai/#sgit_public_read_6c45a6c6c6d2e3770d170d7af19b21db3e5c2126106a3669ad357ae14f136ffd%3Ampyp4tkh).

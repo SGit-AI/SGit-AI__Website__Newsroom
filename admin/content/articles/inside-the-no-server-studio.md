@@ -10,7 +10,7 @@ tags: startups, architecture, client-side, no-server, vaults, business-models, a
 status: published
 ---
 
-!shot nv-live.webp | images/ | The no-server studio, opened from its vault in the official vault UI, read-only, with the published key. The host reports no AI key for a public read, and the studio says so and stays in simulation. | screenshot
+!shot nv-live.webp | images/ | The no-server studio opened from its vault in the official vault UI, read-only, staying in simulation. | screenshot
 
 !trail no-server
 
@@ -52,7 +52,7 @@ There are three ways, and the studio shows which one is in use.
 
 The flow tab walks the blueprint's eight steps. Press each one: a simulated passkey produces a storage key; a simulated OAuth round trip returns a key on the user's account; £10 of credit is bought at the provider, not the studio; a cap of £2 is set; a generation spends a penny of it; the result is kept with the user. The eighth step is the gap: the studio would earn £2 of that £10 if a provider paid apps a fifth, and none does today.
 
-!shot nv-flow.webp | images/ | The flow after every step has been tried: the credit at the provider, what was spent, and what the studio would earn at a fifth. | screenshot
+!shot nv-flow.webp | images/ | The flow after every step has been tried: the credit at the provider, what was spent, and what the studio would earn. | screenshot
 
 ## The business plan {#plan}
 

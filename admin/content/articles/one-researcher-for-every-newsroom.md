@@ -10,7 +10,7 @@ tags: research, archive, provenance, sgit, vaults, agents, design, article
 status: published
 ---
 
-!shot rz-arch.webp | images/ | research.newsroom.sgit.ai, one researcher shared by every newsroom: a watch list of what to watch, who asked, how often and its licence tier; three kinds of scheduled run, the daily web, Wikipedia, and focus runs for current work; a pack a day in an sgit pack vault, with an index of what is inside; the research site, where tier A is published in full and tiers B and C as index, hashes and links; and the readers, the PHP story site, the Industry Wire, the Web Summit newsroom and anyone outside. Proposed. | process
+!shot rz-arch.webp | images/ | research.newsroom.sgit.ai, one researcher shared by every newsroom: watch list, runs, packs, site and readers. Proposed. | process
 
 ## In short {#in-short}
 
@@ -53,13 +53,13 @@ What it adds to what the Internet Archive already does is focus and structure: t
 
 ## Why pack mode makes it possible {#packs}
 
-!shot rz-pack.webp | images/ | Why pack mode makes this possible: the source watch vault measured by the PHP site's researcher on 23 October 2026, as a normal sgit vault and as a pack vault; a fresh clone took 827 seconds and 95 seconds, listing the vault on the server 91 seconds (a failure, HTTP 504) and 0.73 seconds, a pull with nothing new 34 seconds and 4 seconds; the vault was 1,614 MB as loose objects and 1,184 MB as packs. | chart
+!shot rz-pack.webp | images/ | Pack mode against a normal sgit vault, measured on the PHP site's source watch vault on 23 October 2026. | chart
 
 The new versions of sgit change what is practical. In pack mode, released in sgit 0.24.0, a push is one zip with its commits, and a clone is the newest snapshot plus the packs since it. The PHP site's researcher measured the difference on the source watch itself, a vault of 29,861 files: a fresh clone went from 827 seconds to 95, listing the vault on the server from a timeout after 91 seconds to 0.73 seconds, and a pull with nothing new from 34 seconds to 4. Packs are also what make "a pack a day" a natural unit to publish: a dated zip, with its own index, that anyone can fetch directly.
 
 ## What we may publish {#tiers}
 
-!shot rz-tiers.webp | images/ | What the research site may publish, by tier: tier A, open or public sector, the full capture in a public pack with a published read key, 73 of the source watch's pages, and Wikipedia under its open licence; tier B, at most 25 words and a link, the index, hash and change record in public and the full bytes in a private vault, 523 pages; tier C, link only, 15 pages. And an opt-out: any publisher who asks us to stop, we stop. | concept
+!shot rz-tiers.webp | images/ | What the research site may publish, by licence tier A, B and C, and the opt-out for any publisher. | concept
 
 We only use public sources. But public is not the same as free to republish, and the research site has to respect that. The source watch already gives every page a licence tier: A, open or public sector, "keep and show"; B, quote up to 25 words and link; C, link only. Its data counts 73 pages at tier A, 523 at B and 15 at C. And the Industry Wire's contract already sets the rule for public vaults: everything in a vault with a published read key is public, including its history, so "frozen tier-B bytes" never go in one.
 

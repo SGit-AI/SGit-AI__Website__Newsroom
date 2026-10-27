@@ -133,19 +133,19 @@
     {
       "file": "zq-flow.webp",
       "url": "https://newsroom.sgit.ai/articles/images/zq-flow.webp",
-      "caption": "The sidecar, end to end: the agent pushes a release to the site's repository; its CI runs the tests and signs the result; the sidecar reads the commit, checks the paths against the policy, compares the workflow and tests with approved hashes, verifies the signed result, runs its own private checks, asks the owner when something in the gates changed, and deploys the site.",
+      "caption": "The sidecar end to end, from the agent's release push to the site's deployment.",
       "kind": "concept"
     },
     {
       "file": "zq-trust.webp",
       "url": "https://newsroom.sgit.ai/articles/images/zq-trust.webp",
-      "caption": "When the sidecar trusts a check and when it runs it again: if the workflow and every test file match the lock and the attestation is valid for the commit, the result is trusted and nothing is re-run; if anything in the gates differs, the owner decides, and the tests run again in the sidecar, without secrets.",
+      "caption": "When the sidecar trusts a check and when it runs it again, depending on the lock and the attestation.",
       "kind": "comparison"
     },
     {
       "file": "zq-compromise.webp",
       "url": "https://newsroom.sgit.ai/articles/images/zq-compromise.webp",
-      "caption": "What a fully compromised agent can try, and what the sidecar does: remove its hooks, nothing relies on them; rewrite the workflow or the tests, the lock differs and the owner decides; fake a status, ignored; forge a signed result, it fails verification; add a workflow to steal secrets, the site's repository holds none; bring back an old workflow, the lock differs; rewrite history, the sidecar deploys only from the last release; ring the doorbell, it reads the state itself; leak in content, the private lists catch it.",
+      "caption": "What a fully compromised agent can try, and what the sidecar does about each attempt.",
       "kind": "comparison"
     }
   ]

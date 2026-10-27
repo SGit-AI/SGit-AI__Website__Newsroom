@@ -10,7 +10,7 @@ tags: newsroom, editor, feedback-loop, vaults, append-lanes, agents, privacy, pk
 status: published
 ---
 
-!shot ec-channel.webp | images/ | The editor's channel. A key turns a browser into an editor's; on newsroom pages it sends what I read, sign off and want changed to an editor vault; a daily pass, or a press, reads it, runs the checks, acts and replies. Below, five audiences, each a lane with its own key: the plain reader sends nothing; a reader with a vault syncs only their own devices; an anonymous checkbox appends a little and reads nothing back; a named reader sends notes they choose; an editor sends everything and gets answers. | concept
+!shot ec-channel.webp | images/ | The editor's channel: how a key turns a browser into an editor's, and the five audiences, each a lane with its own key. | concept
 
 ## In short {#in-short}
 

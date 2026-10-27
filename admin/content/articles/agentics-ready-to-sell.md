@@ -10,7 +10,7 @@ tags: agentics, agentic-workflows, consulting, ruflo, sgit, agent-behaviour-poli
 status: published
 ---
 
-!shot gx-market.webp | images/ | Where agentic services sit in October 2026: boutiques with fixed-price audits, Cognitum's consulting, the big consultancies, agent platforms and the model vendors' engineers, by the price of a first engagement and how much the offer rests on governance and evidence you can check; ruv.sgit engagements sit at low price and high evidence. | comparison
+!shot gx-market.webp | images/ | Where agentic services sit in October 2026, by price of a first engagement and how much rests on evidence. | comparison
 
 ## In short {#in-short}
 
@@ -46,7 +46,7 @@ What they lack is not another platform. It is evidence: a run they can inspect, 
 
 ## The engagement path {#path}
 
-!shot gx-path.webp | images/ | The engagement path: a free conversation, a first run on a real problem for £10 to £50, expert time at £500 for two hours or £1,500 for a day, a four-day pilot in the client's environment for £5,000, and a maintained repository from £149 a month. | architecture
+!shot gx-path.webp | images/ | The engagement path: from a free conversation and a first run to a pilot and a maintained repository. | architecture
 
 ruv.sgit.ai already publishes [four offers](https://ruv.sgit.ai/business/): task runs from £10 to £50, dedicated compute by the eight-hour block, a maintained repository of the whole setup from £149 a month, and expert time at £500 for about two hours, £1,500 for a day, and £5,000 for four days setting it up in the client's own environment. Expert time sits exactly in the band I would like to start with, £1,500 to £5,000, and in the middle of the boutiques' prices.
 
@@ -54,7 +54,7 @@ So the path is: a conversation, free, about what the client wants agents to do a
 
 ## A marketplace for the people who deliver it {#marketplace}
 
-!shot gx-market-place.webp | images/ | A marketplace for the people who deliver it: clients pick a project type, then the consultants; consultants join through an application, proof of work, peer review, an interview, a shadowed pilot and standards; the platform share is a proposal. | architecture
+!shot gx-market-place.webp | images/ | A marketplace for the people who deliver it: clients pick a project type, then the consultants. | architecture
 
 This only scales with people. Agentic engagements need someone who knows the client's world and can steer a hive in it, and there are many more of those people in the community than there are hours in my week. So alongside the offers, the idea is a marketplace: a small, curated list of consultants who deliver agentic engagements on this stack, where a client picks the kind of project first and then the people.
 

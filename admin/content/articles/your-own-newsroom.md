@@ -10,7 +10,7 @@ tags: newsroom, replicate, voice-memos, github-pages, github-actions, claude-cod
 status: published
 ---
 
-!shot yn-loop.webp | images/ | The loop: speak a memo; an agent session connected to one repository researches, writes and checks it; it commits and pushes; GitHub Actions validates and publishes to GitHub Pages; readers read, rate and top up through a payment link you own; and the record grows. | architecture
+!shot yn-loop.webp | images/ | The loop: speak a memo, an agent researches and writes, GitHub Actions publishes, readers read, rate and top up. | architecture
 
 ## In short {#in-short}
 
@@ -34,7 +34,7 @@ And there is a second reason. Building one teaches what a pure client-side site 
 
 ## What you need {#need}
 
-!shot yn-need.webp | images/ | What you need, what it costs, and what is ready: a public GitHub repository, GitHub Pages published by GitHub Actions, a Claude plan with cloud sessions and the Claude GitHub App, a recorder that transcribes, house rules, the reader meter from api.newsroom.sgit.ai, a Stripe Payment Link; the writing pipeline as one package is not ready yet. | comparison
+!shot yn-need.webp | images/ | What you need, what it costs and what is ready, from a public GitHub repository to a Stripe Payment Link. | comparison
 
 - **A GitHub account and one repository.** GitHub Pages is free, with one condition that matters: "If the account that owns the repository uses GitHub Free or GitHub Free for organizations, the repository must be public." [GitHub's limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits) are generous for a writing site: "Published GitHub Pages sites may be no larger than 1 GB", with "a *soft* bandwidth limit of 100 GB per month."
 - **A Claude plan with cloud sessions.** [Cloud sessions](https://code.claude.com/docs/en/claude-code-on-the-web) "are available on Pro, Max, and Team plans", and run from the browser at claude.ai/code or from the Code tab of the Claude app on a phone. They need GitHub connected; the Claude GitHub App gives them "Any public repository, and private repositories that the Claude GitHub App is installed on".

@@ -10,7 +10,7 @@ tags: journalism, agents, jobs, community, call-for-help, article
 status: published
 ---
 
-!shot wn-roles.webp | images/ | Every role should have a human: the PHP story's team page lists 21 members, two of them human, the editor and a project manager; the other 19 roles, from the conductor and the journalist to the historian, the verifier and the corrections liaison, are run by agents or waiting to be filled, and each could have a person coordinating it. | concept
+!shot wn-roles.webp | images/ | Every role should have a human: the PHP story's team page lists 21 members, two of them human. | concept
 
 ## In short {#in-short}
 
@@ -37,7 +37,7 @@ As I wrote in [jobs that never scaled](https://newsroom.sgit.ai/articles/jobs-th
 
 ## What we ask, and what we offer {#offer}
 
-!shot wn-offer.webp | images/ | A call for help: what we ask, to take a role, review and steer its agents, and do what only a person can, or a few minutes an ask as a power user; what we offer now, no pay yet, but coverage, exposure, credit under your own name, and a close look at a newsroom run with agents; and when there is revenue, the people in the roles are the ones who get paid. | concept
+!shot wn-offer.webp | images/ | A call for help: what we ask, what we offer now, and what happens when there is revenue. | concept
 
 **What we ask.** Take a role, or part of one. Read what its agents produce, steer them, and do what only a person can: the interview, the judgement, the caveat that matters. Or start smaller, as one of the site's [power users](https://php.oct.2026.newsroom.sgit.ai/collaborators/index.html): a few minutes an ask, trying what is new and saying what works.
 

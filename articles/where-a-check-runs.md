@@ -10,11 +10,11 @@
 
 # Where a check runs is part of the policy: tests as enforcers of Agent Behaviour Policies, and what moving them out of the agent's environment would gain, measured on this newsroom
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.0.0](versions/where-a-check-runs.md) · [newsroom v0.13.38](https://newsroom.sgit.ai/admin/versions.html) · abptestingciagentssecurityarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.1.0, 2 versions](versions/where-a-check-runs.md) · [newsroom v0.13.38](https://newsroom.sgit.ai/admin/versions.html) · abptestingciagentssecurityarticle
 
 ***Abstract:** Tests are deterministic: they run, or they do not, and they pass, or they fail. That makes them good enforcers of an Agent Behaviour Policy, and it raises a question we had not asked: where should each test run? A test the agent runs in its own environment is, at best, a setting the agent could skip. The same test run in a CI pipeline that stops the deploy is out of the agent's session; and with the platform protecting the pipeline, it is out of the agent's reach altogether. Moving checks outward should reduce the agent's grant. So we measured it on this newsroom, where a release takes about 7 minutes of building and testing on the agent's machine and about 5 more in CI. Of the 57 checks we mapped this week, 19 stop a deploy in CI today; 26 run only on the agent's side. Moving everything that can run on the repository into CI, as a gate, would make it 49, leave 7 with the agent because they govern the agent itself, and, by our estimate from the measured parts, cut each release by about a third. The cost of moving is small and visible: most checks already pass on all of today's content; a few need a clean-up first. One rule matters more than the numbers: moving a check out of the agent's environment improves security only if the new place is a gate. And whether a policy can be enforced is always specific to its context, so this is one example, with the cases that do not work yet said plainly.*
 
-Where a check can run, and what that makes it: in the agent's environment, a prompt rule, a hook, a test the agent runs or signs, which the agent can skip or change; in CI as a gate, a required job or one that holds private lists as secrets, a setting while the agent can edit the workflow; and on the platform, branch protection and a person's review, a boundary set by the owner.
+Where a check can run, and what that makes it: in the agent's environment, in CI, or on the platform.
 
 ## In short
 
@@ -36,7 +36,7 @@ But a test run by the agent, in the agent's own environment, is only as strong a
 
 ## Today, measured
 
-One release, today and moved: on the agent's machine 435 seconds, the generator 223, builders 33, validation 7 and the 18 test files 172; in CI 324 seconds; and, estimated, about 266 seconds on the agent's machine and 217 in CI with the browser tests moved to CI in parallel jobs.
+One release, today and moved: where the time goes on the agent's machine and in CI, and the estimate if moved.
 
 We rebuilt the current release on 22 October and timed every step:
 
@@ -48,7 +48,7 @@ The ten to fifteen minutes it feels like is that, plus my own checks, plus the r
 
 ## Where each check could run
 
-Where the 57 checks run, today and moved: today 19 block the deploy in CI, 12 report in CI and 26 run only on the agent's side; moved, 49 block the deploy, 1 reports and 7 stay with the agent.
+Where the 57 checks run, today and moved: blocking the deploy in CI, reporting in CI, or on the agent's side only.
 
 We gave each of the 57 checks in the policy map a proposed place:
 
@@ -66,7 +66,7 @@ And CI itself is only a setting while the agent can edit the workflow and the va
 
 ## What it takes to move them
 
-What it takes to move them: the voice and the summaries already pass on all of today's content; wording has 13 hits, mostly one phrase; graphs have two stale quotes; a rebuild differs from the commit in ten files; and two browser tests reach live services.
+What it takes to move the checks: what already passes, and what still needs work first.
 
 A check can only stop a deploy if today's content passes it. We ran each one against everything:
 

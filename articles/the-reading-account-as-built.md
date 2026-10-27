@@ -10,11 +10,11 @@
 
 # The reading account, as built: the meter, the credit, Stripe top-ups and the account in your own vault are running today; checking each payment and signing it is what is proposed
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/the-reading-account-as-built.md) · [newsroom v0.13.33](https://newsroom.sgit.ai/admin/versions.html) · meterpaymentsvaultsreading-accountstatusarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/the-reading-account-as-built.md) · [newsroom v0.13.33](https://newsroom.sgit.ai/admin/versions.html) · meterpaymentsvaultsreading-accountstatusarticle
 
 ***Abstract:** An agent that helps me write emails read our articles and told a reader that the meter and the credit kept in the reader's own vault were a proposal, and that nothing of it was built. That is wrong, and the fault is ours: no single page says what is running. So here it is. Built and in use: the meter, which charges each page by how much of it was read; £5 of starting credit; a £5 top-up through Stripe, live since 11 October; and the reading account in the reader's own vault, opened with a passkey, with one file per device, a balance consolidated across devices, devices you can merge, notes, and a lane any browser can write to, even one where the passkey does not work. The server only ever sees ciphertext. I use it every day: my balance is down to £2, so I am about to top up again, and my vault shows every device I have read on and every page I opened. What is proposed, and not built, is the next layer from the user keeps the meter: checking each payment against Stripe afterwards, and signing the result into a vault both sides write to, so credit is validated or not valid. The page a payment returns to says so plainly today: it adds the credit, and it does not verify the payment.*
 
-The reading account, piece by piece: the meter, £5 of starting credit, top-up with Stripe, the account in your vault, a balance across devices, devices merged, notes and send to my vault, and a server that sees only ciphertext, all built; checking payments against Stripe, signed validations and one account across our sites, proposed.
+The reading account, piece by piece: what is built, and what is proposed.
 
 ## In short
 

@@ -10,11 +10,11 @@
 
 # What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.3.0, 4 versions](versions/what-can-your-agent-reach.md) · [newsroom v0.12.105](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyenterprise-aioversharingdue-diligenceinsurancegovernanceexplainerarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.4.0, 5 versions](versions/what-can-your-agent-reach.md) · [newsroom v0.12.105](https://newsroom.sgit.ai/admin/versions.html) · riskmandateagent-behaviour-policyenterprise-aioversharingdue-diligenceinsurancegovernanceexplainerarticle
 
 ***Abstract:** A thoughtful reader spent real time on RiskMandate and abp.sgit.ai and came back with four fair points. The pages are hard to understand. As they read it, the idea is to inspect an agent and report what it can actually do, which is valuable, and they could not think of anything else that does it. Their guess was that it does not yet work with commercial agents, or in real time. And the hard problem is not the product but the room: most people do not see how fast agents are moving, so how does anyone surface the need? This is a plain answer to all four. RiskMandate writes down, for one agent in one deployment, what it can reach, what you authorised it to do, the gap between the two, and what actually stands in the way of each capability. It is read-only on purpose and never sits in the agent's path; enforcing belongs to the gateways, hooks and runtimes, and the policy is what they enforce. It already covers commercial agents, Claude with Gmail or Microsoft 365, ChatGPT, Google Workspace and others, from the vendors' own pages and measured deployments. The worry that prompted the conversation, an enterprise assistant like Atlassian's Rovo surfacing data to people who should not see it, is exactly the gap it measures, and I walk through it. The newer work goes further: decision and workflow policies for who decides and in what order, and a twin of a refund agent where every decision can be replayed. And the way into the room is not a new budget line. It is five questions someone already has to answer, with a deadline: a contract, a security questionnaire, an insurance renewal, the board's risk appetite, and twenty minutes with the assistant you already run.*
 
-One agent, three sets. The grant is everything the agent can actually reach through its credentials and connectors; the mandate is what the organisation authorised it to do; the delta is the difference, the authority nobody accepted. Each capability in the grant carries a barrier: nothing in the way, a rule in prose, a setting the agent's own account can change, or a boundary enforced above it. Only the last bounds anything.
+One agent, three sets: the grant, the mandate and the delta, with a barrier on each capability in the grant.
 
 ## In short
 
@@ -90,7 +90,7 @@ To make it something you can see rather than read, we built the refund as a twin
 
 ## How does it get into the room?
 
-Five ways into the room, each a question someone already has to answer: a contract, where legal and procurement ask what the vendor's agent will do with the data; a security questionnaire, where a customer asks which agents touch their data; an insurance renewal, where the question is whether AI is excluded from cover; the board's risk appetite, where the question is who can pull the plug; and twenty minutes, where anyone running an assistant asks what it can actually do.
+Five ways into the room: a contract, a security questionnaire, an insurance renewal, the board and twenty minutes.
 
 This is the hardest of the four points, and the one I agree with most. There really are two groups: the people who see how fast this is moving, and the much larger group who do not. The second group will not ask for an agent risk tool, because they do not see the risk. So I do not think the way in is to sell the need. It is to answer a question somebody already has, with a deadline, and that needs exactly this record.
 

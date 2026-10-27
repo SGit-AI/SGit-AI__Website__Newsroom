@@ -10,11 +10,11 @@
 
 # Search as navigation: walking the newsroom's graph with no model, and why a clean graph should beat vectors
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/search-as-navigation.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · searchgraphsfractal-semantic-graphsontologytaxonomygraph-ragnewsroombriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/search-as-navigation.md) · [newsroom v0.12.107](https://newsroom.sgit.ai/admin/versions.html) · searchgraphsfractal-semantic-graphsontologytaxonomygraph-ragnewsroombriefarticle
 
 ***Abstract:** This site's search works, but it answers the way every search box does, with a list. We now have far more than text to search with: a graph of the argument for every article, a one-line summary for every section, figures with captions, trails, topics and reviews. So the next version of search should be navigation rather than question and answer. Type Portugal and see not just the articles about Portugal, but the graph around them: their ideas, their sections as one-liners, their images as a collage, the people and things they connect to, and on the side, what the word could mean and which combinations are worth following, each with an exact count. The reader builds the query by walking. All of it deterministic, in the browser, with code and graphs and no model, plus a pane that shows exactly what was fetched, how each result arrived and how long each step took. It also exposes the work: 663 tags on 182 articles, 396 of them used once, and 2,230 ideas in the graphs, of which only 47 appear in more than one article. That is the taxonomy debt, and paying it down is what makes deterministic search good. My hypothesis is that the better the taxonomy, the ontology and the graph, the less a model is needed, and that when one is added, it will do better on a clean graph than on a vector store. This is the brief for the agent that builds it, and the test of that hypothesis.*
 
-Search as navigation. A query built from chips, Portugal and startups, each resolved to a thing in the graph; on the side, what the words could mean, what sits nearest and which combinations are worth following, each with an exact count; in the middle, the views of the same result: the graph, the sections as one-liners, a collage of the figures, a timeline and the ranked list; and a pane that shows what was fetched, how each result arrived and the time each step took. All of it in the browser, from files built at release, with no model.
+Search as navigation: a query built from chips, five views of the same result, and what was fetched.
 
 ## In short
 

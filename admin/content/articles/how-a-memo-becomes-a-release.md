@@ -10,7 +10,7 @@ tags: newsroom, engineering, ci, agents, pipeline, article
 status: published
 ---
 
-!shot pi-flow.webp | images/ | From a memo to a release, in three stages: writing in the session, checking in the session, and shipping on GitHub. A failed leak scan sends the work back to the first stage. | architecture
+!shot pi-flow.webp | images/ | From a memo to a release in three stages: writing and checking in the session, then shipping on GitHub. | architecture
 
 ## In short {#in-short}
 
@@ -48,7 +48,7 @@ Then the commit, named `site vX.Y.Z: @newsroom.writer: <title>`, and the push to
 
 A push to `dev` starts the workflow in `.github/workflows/deploy-pages.yml`. Two jobs run side by side: `validate`, which runs `validate.js` again, and `reader-tests`, which installs Chromium, cached between runs, and runs the same 18 tests, four at a time. When both pass, `tag-release` checks that the version in `version.txt` matches the commit and is the next one, and tags it. Then `deploy` publishes the site to GitHub Pages. If either check fails, nothing is tagged and nothing is deployed.
 
-!shot pi-ci.webp | images/ | The jobs on GitHub. A push to dev validates, tests, tags and deploys. A pull request into main must be a major. A push to main checks the major, tags it if needed, publishes a GitHub Release and deploys. | architecture
+!shot pi-ci.webp | images/ | The jobs on GitHub: a push to dev, a pull request into main, and a push to main. | architecture
 
 Majors take a different path. A release that bumps to the next `.0`, such as v0.13.0, goes from `dev` to `main` by pull request: `major-gate` refuses anything but a major with its release note, and on the merge `major-release` makes sure the tag exists and publishes a GitHub Release. Pull requests run in their own queue, so their checks no longer cancel a release in progress, which is what happened to v0.13.0.
 
@@ -58,7 +58,7 @@ After the push, the writer polls the live `version.txt` until the new version ap
 
 Measured on v0.13.7, which added no article, the session's part took about 402 seconds and GitHub's about 291. Before v0.13.7 they took about 747 and 636. A release that adds an article is slower in the session: this article's own release took about 720 seconds, because a new article needs a new card and banner, and then all three of sgit.ai's page builds still run.
 
-!shot pi-time.webp | images/ | One release, in seconds. In the session, the 18 tests are the longest step, then the cards and banners and sgit.ai's page build. On GitHub, the tests again. | timeline
+!shot pi-time.webp | images/ | One release timed in seconds, in the session and on GitHub. | timeline
 
 In the session, the cards and banners take about 74 seconds, sgit.ai's page build about 90, this site's builders and validator about 40, and the tests about 170. On GitHub, the tests take about 174 seconds of the 291, and the rest is starting the jobs, installing, tagging and deploying. The writing itself, the research, the figures and the graph, is not in these numbers; it is most of the time an article takes.
 
@@ -68,7 +68,7 @@ v0.13.7 halved both by running the tests side by side, by building sgit.ai's pag
 
 Not all of this lives in the same place, and that matters for what happens when this session ends.
 
-!shot pi-where.webp | images/ | Where each part lives. The builders, tests, workflow and writing rules are in the repository. The release script, graph writer, figure helpers and width check exist only in this session; the behaviour policy and the leak scan only in this container. | architecture
+!shot pi-where.webp | images/ | Where each part lives: in the repository, only in this session, or only in this container. | architecture
 
 - **In the repository, and lasting.** The 47 builders in `admin/build/`, including `publish.py`, `validate.js`, `wording.py` and `summaries.py`; the 18 tests and `run_tests.sh`; the workflow; and the articles README, with the voice, the shape, the run and the checklist.
 - **On GitHub.** The Actions runs, the tags, the GitHub Releases and the published site.
@@ -86,7 +86,7 @@ So I propose that the session runs only what only the session can check, and lea
 - **On GitHub:** `validate.js` and the 15 browser tests, then the tag and the deploy.
 - **Both, when the code changes.** A change to `assets/` or `admin/build/` is a change to what the browser tests test, so then the session runs them too.
 
-!shot pi-split.webp | images/ | The proposed split: the session runs what only it can check, about 4 minutes; GitHub runs the browser tests, about 5. A change to the site's code runs the browser tests in the session too. | architecture
+!shot pi-split.webp | images/ | The proposed split between the session and GitHub, with the time each would take. | architecture
 
 That would take about 165 seconds off every release in the session, from about 720 to about 555 for a new article and from about 400 to about 235 for anything else, while every release is still tested in full before it is deployed. The cost is that a browser test failing on GitHub is found after the push, so the fix is the next version rather than the same one. For an article release, which does not change what those tests test, that should be rare.
 

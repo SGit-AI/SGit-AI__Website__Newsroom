@@ -10,7 +10,7 @@ tags: business-models, pricing, psychology, subscriptions, reading-meter, pay-af
 status: published
 ---
 
-!shot py-before-after.webp | images/ | Paying for the future, or paying for what you got. A subscription, a gym or an annual donation asks you to pay at the moment of most doubt, for value that may arrive. A meter that lets the balance go negative turns it round: the value arrives first, piece by piece, and the payment comes when you can see what it bought. | comparison
+!shot py-before-after.webp | images/ | Paying for the future, or paying for what you got: a subscription asks first, a meter that can go negative asks last. | comparison
 
 ## In short {#in-short}
 
@@ -37,7 +37,7 @@ So paying first feels good at the moment of use and bad at the moment of payment
 
 ## The newsroom's version {#meter}
 
-!shot py-experiment.webp | images/ | The experiment, as it runs today and what comes next: what the reading meter on this site does now, what is partly built, and what this article proposes, with the five hypotheses it will be reviewed against on 6 December 2026. | comparison
+!shot py-experiment.webp | images/ | The reading meter experiment: what works now, what is partly built, and what the article proposes, with five hypotheses. | comparison
 
 This site runs the experiment, and its rules are written down in [Pay after you read](/articles/pay-after-you-read.html) and [Going live with the reading meter](/articles/going-live-with-the-reading-meter.html). "Everyone starts with £5.00 of credit." Reading uses it: "10p for a new article read to the end, 5p for an older one, less for other pages", and only as far as you read, so the first screen of an article costs a penny. You set the price: a rating moves it from free to double, and you can refuse to pay for a page, with a reason, and the charge comes back. And "Your balance can go below zero and stay there; nothing is blocked and nothing nags." When you want to, you top up with one £5 payment link, which has been live on this site since 11 October, with no account and nothing that renews.
 

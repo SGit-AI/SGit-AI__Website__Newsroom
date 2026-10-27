@@ -10,11 +10,11 @@
 
 # Agents need direction: how agent roles differ from human ones, why one focused agent can also be a developer, a designer and a data scientist, why that power has to be contained, and teams that send each other pull requests
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/agents-need-direction.md) · [newsroom v0.13.78](https://newsroom.sgit.ai/admin/versions.html) · agentsexplorers-villagersengineeringteamspull-requestsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/agents-need-direction.md) · [newsroom v0.13.78](https://newsroom.sgit.ai/admin/versions.html) · agentsexplorers-villagersengineeringteamspull-requestsarticle
 
 ***Abstract:** The agents in our newsrooms are different from people in a few important ways, some good and some not. A line that keeps coming back in our own work is that agents can go in all directions, so they need direction. They can do a lot, and when they are not contained they cause damage: the technical debt that made us add a villager is a sign of it. But they have something we never had. Each agent runs on a model that can reason, learn and fetch what it needs, so a role focused on one thing also brings every other skill with it. My brief for the historian asks for a historian, and also a data scientist, a designer, a developer and an architect. That is powerful, and it has to be contained: the historian's role file lists the paths it may write, the shared files it may only append to, and what needs my go. Containing it means agents giving guidance to other agents, which gets complex fast, and that is where people come in: focus, ownership, and sometimes slowing things down. The refactoring we are doing now is cheaper because we did not automate too far. And one principle we can now scale: teams that send each other pull requests, an agent building what it needs as an explorer and handing it to the owning team, for the villagers and later the town planners to refactor or replace.*
 
-One role, many skills, one scope: the historian at the centre, and around it the data scientist, the designer, the developer and the architect that the same agent can also be; around all of them, the scope that contains it, writing only its own paths, appending in its own rows, and asking the editor for anything else; outside, another team's code, pages and data, where it asks or sends a change.
+One role, many skills, one scope: the historian at the centre, the roles it can also be, and the scope that contains it.
 
 ## In short
 
@@ -55,7 +55,7 @@ What is new is that we can now iterate very fast, add features very fast, and al
 
 ## Teams that send each other pull requests
 
-Teams that send each other pull requests: an agent needs a feature another team owns; it builds the smallest thing that works, as an explorer, in its own space; it sends it to the owning team as a pull request, which that team reviews and decides; the villagers refactor it to the team's guidelines, with a human; and the town planner replaces it with shared code when the pattern is clear. Below, the humans give the direction.
+Teams that send each other pull requests: an explorer builds, the owner reviews, villagers refactor, planners replace.
 
 There is one more property of these focused agents. They can ask other agents for work, and they can also do some of that work themselves. That brings back a principle I have held for a long time: when one team interacts with another, it should send that team pull requests. It should contribute to the other team, not only ask. In corporate environments that never really worked. Open source has some of it, as with [our first pull request into Ruflo](https://newsroom.sgit.ai/articles/our-first-pr-in-ruflo.html), and our own [chapter-by-chapter patches to the book](https://newsroom.sgit.ai/articles/a-pull-request-by-another-name.html). Now we can scale it.
 

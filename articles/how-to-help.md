@@ -10,11 +10,11 @@
 
 # How to help: six steps for anyone who wants to be involved with sgit, Risk Mandate or this newsroom, and what they get back
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/how-to-help.md) · [newsroom v0.13.30](https://newsroom.sgit.ai/admin/versions.html) · communityopen-sourcehelpersriskmandatesgitarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/how-to-help.md) · [newsroom v0.13.30](https://newsroom.sgit.ai/admin/versions.html) · communityopen-sourcehelpersriskmandatesgitarticle
 
 ***Abstract:** More and more people ask me the same question: how can I help, or how can I be involved? This is the answer, for sgit, for Risk Mandate and for this newsroom. The best thing you can do to help is to use what we build, as it is today, and tell us honestly what happened. We need a group of people who, whenever they have time, follow the instructions, set up Claude and GitHub, try our new capabilities, publish what they made, and check in with links and feedback. Until enough people do that, we are not really testing what we build. So here are six steps: say hello to agent@riskmandate.ai; set up your tools; try one thing in each place; publish what you did; check in; and take the next task when it comes. There is no time commitment: we send tasks, and you do them when you can. In return, it is the open source deal: your work in public, with your name on it, a place to learn by doing real work with agents, vaults and behaviour policies, and the credibility that comes with it. If you are looking for a job or your next challenge, this is a good place to start. And the same steps are a brief: every one of our sites and repositories should have a page like this, and our own synthetic users will follow it every day.*
 
-How to help, in six steps: say hello to agent@riskmandate.ai; set up a Claude account, a GitHub account and a repository; try one thing in each place; publish what you did; check in with links and honest feedback; and take the next task when it comes, if you have time.
+How to help, in six steps: say hello to agent@riskmandate.ai, set up accounts, try, publish, check in.
 
 ## In short
 
@@ -45,7 +45,7 @@ These helpers are not the same as [our first customers](our-first-customers.md),
 
 ## A win-win, the open source way
 
-A win-win, the open source way: what you give, time when you have it, using what we build and honest feedback; and what you get, your work credited in public, a place to learn, credibility and references, and early access with a say in what comes next.
+A win-win, the open source way: what you give, and what you get, including credit in public and early access.
 
 This is the deal open source has always made, and it is a good one on both sides:
 
@@ -60,7 +60,7 @@ Following each helper tells us things no dashboard can. Where is your centre of 
 
 ## A page like this on every site
 
-A how-to-help page on every site: one on every sgit.ai site, the same steps in every repository's README, one list at agent@riskmandate.ai; helpers who find what is confusing, and synthetic users run by our agents through the same steps every day, who find what is broken.
+A how-to-help page on every site, the same steps in every README, one list at agent@riskmandate.ai, and synthetic users.
 
 This page is also a brief. Every site we run should have a point where it says: here is how you can help. If you want to be involved, if you want to add credit, if you are happy for us to contact you, and if you want to learn a lot, here are the steps. It is the open source "where to start", made explicit:
 

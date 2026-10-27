@@ -10,7 +10,7 @@ tags: firefox, mozilla, customisation, forks, agents, ruflo, sgit, agent-behavio
 status: published
 ---
 
-!shot fx-layers.webp | images/ | A custom Firefox, from the least invasive layer to a fork: policies, preferences, the browser's own stylesheet, an extension, and a patch set rebased every two weeks; the iPad has only one option, a fork of the separate iOS codebase. | architecture
+!shot fx-layers.webp | images/ | A custom Firefox, from the least invasive layer to a fork: policies, preferences, stylesheet, extension and patch set. | architecture
 
 ## In short {#in-short}
 
@@ -62,7 +62,7 @@ None of the desktop layers exist there. The only route is a fork of that codebas
 
 ## Step 5: keeping it working {#loop}
 
-!shot fx-loop.webp | images/ | The maintenance loop: each Firefox release starts a run in which the hive rebases the patches, rebuilds, tests each want, compares screenshots and reports, with everything in the sgit vault and every role under a behaviour policy; I approve or refuse. | architecture
+!shot fx-loop.webp | images/ | The maintenance loop: each Firefox release starts a run in which the hive rebases, rebuilds, tests and reports. | architecture
 
 This is the step that decides whether the whole thing is worth it. Since Firefox 155, on 1 September, [a new major release is made every two weeks](https://firefox-admin-docs.mozilla.org/guides/firefox-channels/), so a fork has 26 releases a year to follow, on each of two codebases. LibreWolf, with a team, ships within "three days from each upstream stable release". Waterfox's maintainer, [writing about 15 years of forking](https://waterfox.com/blog/15-years-of-forking), describes a project often run by one person and "a few months in the red recently".
 
@@ -72,7 +72,7 @@ Agents can do much of this. [PortGPT](https://arxiv.org/abs/2510.22396), a resea
 
 ## Step 6: what Mozilla could sell {#business}
 
-!shot fx-model.webp | images/ | How Mozilla could sell it: explore in the browser for free; keep your customisation tested against every release for about 50p a release; adopt a change built properly for £50 to £500; own a maintained branded build by contract, which exists today for organisations. | comparison
+!shot fx-model.webp | images/ | How Mozilla could sell it: explore free, keep tested, adopt a change, or own a maintained build. | comparison
 
 The plan works, and it makes the case for its own replacement. Two codebases rebased 26 times a year is a lot of work to keep a browser the way I like it. I would much rather pay Firefox to do it, and Mozilla is better placed than I am: it is the only one that can ship a modified build called Firefox; it signs the extensions; it builds the next release and can test my changes against it before it ships; and it already maintains both codebases.
 

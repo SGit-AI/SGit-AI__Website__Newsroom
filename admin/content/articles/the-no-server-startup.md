@@ -10,7 +10,7 @@ tags: startups, architecture, client-side, no-server, agents, business-models, b
 status: published
 ---
 
-!shot ns-compare.webp | images/ | The usual SaaS and the no-server product. On the left, the company sits in the line of every request, with its servers, its database, its AI key and its bill. On the right, the product is a folder of files, and the user brings the AI key, the storage and the passkey. | comparison
+!shot ns-compare.webp | images/ | The usual SaaS beside the no-server product: the company in the line of every request, against a folder of files. | comparison
 
 !trail no-server
 
@@ -47,7 +47,7 @@ It needs a name. I would call it a **no-server product**, and a company built th
 9. **Everything is in version control, and agents maintain it.** A dev site and a main site, every change a commit, every release a note, held to the [non-functional requirements](https://nfrs.sgit.ai/) from the first release.
 10. **Charge for value, not for servers.** For building it, for its users, and for the keys, even when the user brings their own.
 
-!shot ns-anywhere.webp | images/ | One folder, served from anywhere: a laptop with no network, a simple server, a container, GitHub Pages, Cloudflare or any cloud, a function that returns files, or a customer's isolated network. | architecture
+!shot ns-anywhere.webp | images/ | One folder, served from anywhere: a laptop, a simple server, a container, GitHub Pages, any cloud, a customer's network. | architecture
 
 ## A worked example: an infographic studio {#example}
 
@@ -57,7 +57,7 @@ The user opens the studio, which is a folder of static files, served from anywhe
 
 Nothing in that loop passes through the company that built the studio. It did the work once, in the product, and a sale can happen without anyone at the company doing anything.
 
-!shot ns-flow.webp | images/ | The infographic studio as eight steps, none through the company that built it. Six work today; a cap on the user's own key works with a catch; and getting paid for bringing the provider a customer is missing. | concept
+!shot ns-flow.webp | images/ | The infographic studio as eight steps, none through the company that built it: six work today, one has a catch. | concept
 
 Every AI feature should also work without a key, in a simulation mode that returns example results. It is how a prospect tries the product before paying anyone, how the synthetic users test it, and how a demo survives a bad network.
 
@@ -88,7 +88,7 @@ Add synthetic users early: personas that use every page on every release, and te
 
 The team grows in Simon Wardley's order, in the names this site uses: explorers, villagers, town planners. The founder's first hire is an explorer, one person who works with the agents in [explorer coding](/articles/explorer-coding.html) mode, from a chat or the command line, and changes the dev site fast. Villagers come next, to turn what works into a product: tests, versions, releases that do not break. Town planners come last, when it has to be a utility.
 
-!shot ns-team.webp | images/ | How a founder builds it: agent sessions and synthetic users around one repository, a dev site and a main site, and the team hired in order, explorers, then villagers, then town planners. | concept
+!shot ns-team.webp | images/ | How a founder builds it: agent sessions and synthetic users around one repository, and the team hired in order. | concept
 
 ## How to charge for it {#model}
 
@@ -117,7 +117,7 @@ The plan in the vault has who it is for, packages and prices as hypotheses, go-t
 
 The pitch is one line long: infographics from your own documents, in your browser, with your own AI credit, and nothing kept by us.
 
-!shot nv-plan.webp | images/ | The business plan in the vault: three businesses in one blueprint, packages and prices as hypotheses, go-to-market, ninety days, a calculator, risks as acceptances and open questions. | screenshot
+!shot nv-plan.webp | images/ | The business plan in the vault: three businesses in one blueprint, with packages, prices, ninety days and risks. | screenshot
 
 ## For agents: the next steps {#next}
 

@@ -10,11 +10,11 @@
 
 # The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/the-policy-guards-the-door.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitagent-behaviour-policysecuritymcpenforcementmemoryvideoarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.3.0, 4 versions](versions/the-policy-guards-the-door.md) · [newsroom v0.12.135](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitagent-behaviour-policysecuritymcpenforcementmemoryvideoarticle
 
 ***Abstract:** The third piece on Mondweep Chakravorty's SGit × Ruflo proof of concept is about a path, not a failure. His adapter compiles the four Agent Behaviour Policy rows into Ruflo rules and checks every one of its tools with a pinned copy of Ruflo's own policy evaluator, in enforce mode. In the video those checks cover steps 4, 5, 6, 8 and 11, and every one behaved as the policy said. But in steps 3, 9 and 10, Ruflo's own command line writes and reads the same SQLite memory file directly, and that path does not pass the gate. His README states the limit in one line: "Only adapter tools pass through this gate. Other shell/network tools are unaffected." It is the same lesson this site keeps learning about its own agent: a policy holds only on the paths that pass through its enforcer. The fix is on his list of follow-ups, native plugin registration, so the same compiled rules run where Ruflo runs. His code also answers the other questions the video left open: why every error reads the same, whether decisions are recorded, where the vault goes next, why the file name changes, and why approval means stop.*
 
-Two ways into the same memory: the adapter's tools pass the policy gate, a pinned copy of Ruflo's evaluator running the compiled ABP rules, on their way to SGit and the vault, in steps 4, 5, 6, 8 and 11; Ruflo's own command line reads and writes the memory file directly, in steps 3, 9 and 10, with no ABP check. The author states this limit in his README.
+Two ways into the same memory: the adapter's tools through the policy gate, and Ruflo's own command line without one.
 
 SGit × Ruflo: one run, five ways in
 
@@ -46,11 +46,11 @@ The second is Ruflo's own command line. In step 3 it writes the two facts straig
 
 ## What the screen shows, and what it does not
 
-Step 3: the test script calls the ruflo command line's memory store, which loads its embedding model, stores no vectors, and writes two rows of plain text into the source workspace's memory.db; the ABP adapter and the vault are not on this path.
+Step 3: the ruflo command line's memory store writes two rows of plain text; the ABP adapter and vault are not used.
 
 **Shown on screen:** in step 3, `ruflo memory store` with `--no-embedding --path memory.db`, "[OK] Data stored", and "Vector: No". At this point the memory file is ordinary, unencrypted SQLite.
 
-Step 9: the ruflo command line's memory retrieve reads memory.sqlite in the fresh-runner workspace and returns both facts exactly; the vault and the ABP adapter are not on this path.
+Step 9: the ruflo command line's memory retrieve reads memory.sqlite and returns both facts exactly.
 
 **Shown on screen:** in step 9, `ruflo memory retrieve` reading `memory.sqlite`, both values printed, and a pass. Ruflo reads a plain copy that came out of the vault; neither the vault nor the ABP is on this path.
 

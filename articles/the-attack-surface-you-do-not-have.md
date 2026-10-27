@@ -10,11 +10,11 @@
 
 # The attack surface you do not have: every CVE now makes me smile, because moving to the client side took my servers out of the news, and the constraint turned out to be speed
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/the-attack-surface-you-do-not-have.md) · [newsroom v0.13.24](https://newsroom.sgit.ai/admin/versions.html) · securityarchitectureclient-sideattack-surfacearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.2.0, 3 versions](versions/the-attack-surface-you-do-not-have.md) · [newsroom v0.13.24](https://newsroom.sgit.ai/admin/versions.html) · securityarchitectureclient-sideattack-surfacearticle
 
 ***Abstract:** Every time I see a CVE now, I smile, because it is one less thing to worry about. My server-side attack surface is very small: fundamentally, the SG/Send upload server, and that only ever stores encrypted data. Today two critical PHP vulnerabilities were released, unauthenticated remote code execution in every supported PHP branch. In the month before, CISA's catalogue of exploited vulnerabilities filled with VPN gateways, mail gateways, firewalls, media servers and a help desk, and WordPress shipped a critical fix. None of it runs in my stack. That is the result of a constraint I have been writing about for months: no database, then no back end, everything that can run in the browser running there. It is good engineering, and it is not a limitation. It is giving me speed: 45 static sites in eleven weeks, a newsroom that can take payments, 100+ users and customers, a key register, and accounts and an AWS twin on the way, with nothing to provision or patch. Internal applications are where the risk is going, because they are rarely tested like public ones. The question to ask of every component is the one this article ends with: why does this need to be on the server?*
 
-A month of critical vulnerabilities in server software, from 22 September to 21 October 2026: PHP, Plex Media Server, SiteGuard, Palo Alto PAN-OS, Cisco Secure Email Gateway, Ahsay, Ivanti Connect Secure, Zammad, Fortinet FortiMail, Citrix NetScaler and WordPress. My exposure to each: none.
+A month of critical vulnerabilities in server software, 22 September to 21 October 2026, and my exposure to each: none.
 
 ## In short
 
@@ -48,7 +48,7 @@ I did not have to patch any of them, because none of them runs anywhere in my st
 
 ## The attack surface you do not have
 
-The attack surface compared. A typical web product runs a web server and runtime, a framework and CMS, a database, admin panels and APIs, VPN and mail gateways, and file processing. These sites run static files, the reader's browser, and one upload server that stores ciphertext.
+The attack surface compared: a typical web product, and these sites, which run static files and one upload server.
 
 Look at what a typical web product runs: a web server and a language runtime, a framework or a CMS with its plugins, a database, admin panels and APIs, and, around the company, VPN appliances and mail gateways. Every one of those is something that can appear in that list on any given morning.
 
@@ -64,7 +64,7 @@ I think this is good engineering. The constraint of not having anything on the s
 
 ## The constraint is speed
 
-The constraint gives speed: 45 live sgit.ai sites, all static, in eleven weeks; 1,306 pages on this newsroom, with a meter and payments; 100+ users and customers across our vaults, sgit.ai and riskmandate.ai; and one server of our own, SG/Send, which stores only ciphertext.
+What the constraint gives: 45 live static sgit.ai sites in eleven weeks, and one server that stores only ciphertext.
 
 I also want to make the business case, because the usual reading is that no server is a limitation. It is the opposite. There is nothing to provision, patch, scale or keep running, so a new site is a repository and a session, and the innovation shows it:
 

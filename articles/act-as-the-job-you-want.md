@@ -10,11 +10,11 @@
 
 # Act as the job you want: if you are looking for a job, you have time, so do the work in public, make it linkable, and let the people who want to help you help you
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 3 versions](versions/act-as-the-job-you-want.md) · [newsroom v0.12.115](https://newsroom.sgit.ai/admin/versions.html) · careershiringpublishinglinkableopen-sourceadvicearticlegen-z-book
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 4 versions](versions/act-as-the-job-you-want.md) · [newsroom v0.12.115](https://newsroom.sgit.ai/admin/versions.html) · careershiringpublishinglinkableopen-sourceadvicearticlegen-z-book
 
 ***Abstract:** This is the advice I end up giving most often to people I know who are looking for a job. They are between jobs, or just out of university, or back from maternity leave, or still in a job with an evening free. Whatever the reason, if you are looking for a job, you have time. And the best use of that time is to act as the person in the job you want. If you want to be a project manager, find a startup or an open-source project and start managing something for them: add value, tag them, send them ideas, connect with the people there. If you want to be an artist, publish your art. Do it in public, because then it can be linked. I wrote this down in 2018, in a book for young developers: act like you are part of the company. It matters even more now. Do not worry about reach; most of what I publish is read by a few hundred people at most, and that is fine. The point is not to be read by everyone. It is to have something you can link, so that the people who want to help you can send it to someone and say: look at this. That is also why your CV should be online. And if you cannot yet open a GitHub account, connect it to Claude or ChatGPT and have it build and edit your site, learn that first. The bar is not high, and it is the skill that connects the rest.*
 
-Act as the job you want. If you are looking for a job, you have time. Pick the job you want and act as that person: for a startup, an open-source project or a company you admire, add value, send ideas, tag them and connect with their people. Do it in public, so the work can be linked. Then the people who want to help you can forward it, and the work turns into references, paid work, introductions and, in time, the job.
+Act as the job you want: add value in public, so the work can be linked, forwarded and turned into the job.
 
 ## In short
 

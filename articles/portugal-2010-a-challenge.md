@@ -10,11 +10,11 @@
 
 # A web application security challenge to Portugal, 2010: my IBWAS keynote in Lisbon, slide by slide, with what came true, what I got wrong and what still stands
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.0.0](versions/portugal-2010-a-challenge.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugalowaspapplication-securitytalkshistoryregulationeuropeopen-sourcehacking-portugalarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/portugal-2010-a-challenge.md) · [newsroom v0.12.78](https://newsroom.sgit.ai/admin/versions.html) · portugalowaspapplication-securitytalkshistoryregulationeuropeopen-sourcehacking-portugalarticle
 
 ***Abstract:** In December 2010, at OWASP's IBWAS conference in Lisbon, I gave a keynote called A 'Web Application Security' Challenge to Portugal. It had 168 slides, five proposed focuses and twelve proposed actions for government and industry, from allowing ethical hacking and publishing security score cards to liability for software, an independent vulnerability-disclosure agency, paying for open-source security and proper SSL for half of all websites. It ended with an argument that Portugal, which had nothing to lose, could become the Switzerland of hacking. Reading it again sixteen years later, more of it came true than I expected, though mostly from Brussels rather than Lisbon: software now falls under strict product liability, Europe has its own vulnerability database, manufacturers must report exploited vulnerabilities, and encrypted connections are the norm. What I got wrong was the mechanism. I thought fear of disasters would move governments; what moved them was regulation built slowly over a decade. And the part about Portugal itself, an open, ethical security industry as a way out of a depressed economy, is still mostly to do. This is the first of a series of articles on the talks I have given about Portugal, ahead of a new edition of Hacking Portugal.*
 
-Twelve slides from the IBWAS 2010 keynote in Lisbon: the title, the five proposed focuses, the twelve proposed actions such as allowing ethical hacking, score cards, procurement requirements, rewriting computer laws and open-sourcing end-of-life applications, application security as health and safety, a country-wide fire drill, and Portugal as the Switzerland of hacking.
+Twelve slides from the IBWAS 2010 keynote in Lisbon: the five focuses, the twelve actions and Portugal as Switzerland.
 
 ## In short
 

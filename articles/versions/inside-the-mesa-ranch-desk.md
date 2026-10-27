@@ -10,13 +10,14 @@
 
 # Versions of: Inside the Mesa Ranch desk
 
-1 published version of [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](../inside-the-mesa-ranch-desk.md). The current one is **v1.0.0**.
+2 published versions of [Inside the Mesa Ranch desk: a page-by-page tour of an observation vault, from the cover to the knowledge graph you can play in time](../inside-the-mesa-ranch-desk.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-15 | published | 2,511 | first published | [`b4d872995`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4d872995721407b9723e840e250e3e1d634d405) | [current](../inside-the-mesa-ranch-desk.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,317 | +0 / −194 words; 12 changed, 0 added, 0 removed paragraphs | this release | [what changed](inside-the-mesa-ranch-desk/v1.1.0.md) · [current](../inside-the-mesa-ranch-desk.md) |
+| **v1.0.0** | 2026-10-15 | published | 2,511 | first published | [`b4d872995`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4d872995721407b9723e840e250e3e1d634d405) |  |
 
 [← Back to the article](../inside-the-mesa-ranch-desk.md) · [All articles](../index.md)
 

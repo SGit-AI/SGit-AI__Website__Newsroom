@@ -10,7 +10,7 @@ tags: abp, testing, ci, policy, graphs, article
 status: published
 ---
 
-!shot bv-graph.webp | images/ | 57 checks, 8 behaviours: the site in the centre, the eight behaviours around it, sized by their checks, and each check as a dot coloured by what keeps it today: one boundary, 34 settings and 22 expectations. | concept
+!shot bv-graph.webp | images/ | 57 checks, 8 behaviours: the site at the centre, the behaviours around it, and each check coloured by what keeps it. | concept
 
 ## In short {#in-short}
 
@@ -30,7 +30,7 @@ So the exercise is to reverse-engineer the rules. For every check, ask what it i
 
 ## The method: up the graph and back down {#method}
 
-!shot bv-chains.webp | images/ | Two checks taken apart the same way. The em-dash: no em-dash in prose; many readers find it off-putting; the house voice; run by sgit.ai's validator in my build and the leak scan; kept only because I run them. The key tripwire: nothing looks like a vault key; a published key opens a vault for ever; never publish a secret; CI blocks the deploy; kept by a file my own push can change. | concept
+!shot bv-chains.webp | images/ | Two checks taken apart the same way: the em-dash rule and the key tripwire, from the rule to what keeps each one. | concept
 
 This is a [fractal semantic graph](https://sgit.ai/articles/introducing-fractal-semantic-graphs.html) built from the bottom. Each check is a leaf, and every leaf gets the same five edges:
 
@@ -57,7 +57,7 @@ Some of these were never written down as rules. "Every page can be reached" exis
 
 ## Where each behaviour is kept {#where}
 
-!shot bv-where.webp | images/ | The checks for each behaviour by where they run: CI that blocks the deploy, CI that only reports, the local build, the session, and the container or hooks. The house voice and the agents' mandate have no check in CI; the reader's data is checked in CI, but a failure does not stop the deploy. | comparison
+!shot bv-where.webp | images/ | The checks for each behaviour by where they run: CI that blocks, CI that reports, the local build, the session, hooks. | comparison
 
 Back down the graph, the picture is uneven:
 
@@ -176,7 +176,7 @@ Here is the whole map: every check, why it exists, where it runs and what keeps 
 
 ## What to change {#target}
 
-!shot bv-target.webp | images/ | Where each behaviour should be kept: each behaviour's checks moved into this site's validator and CI where they can run on the repository, the tests required once decoupled from live services, the mandate kept in grants and hooks; and the checks protected, so a change to them needs a person's review. | concept
+!shot bv-target.webp | images/ | Where each behaviour should be kept: checks moved into this site's validator and CI, the mandate in grants and hooks. | concept
 
 Two moves do most of the work, and both are proposals for Dinis to decide:
 

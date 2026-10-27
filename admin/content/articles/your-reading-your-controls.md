@@ -10,7 +10,7 @@ tags: reading, reading-meter, attention, user-control, summaries, folding, desig
 status: published
 ---
 
-!shot rc-collage.webp | images/ | An article on a return visit, four of the six ways to show what was already read. Top left, Margin: a solid line beside the sections read, a pale one beside the one half read. Top right, Paragraph: each read section folded to its heading and two or three sentences of what it said. Bottom left, Line: one line each. Bottom right, Hidden: the five read sections behind one marker, the reading resuming at "The hook". The bar at the top of each says how many sections are read and switches between the views. | collage
+!shot rc-collage.webp | images/ | An article on a return visit in four of the six views: Margin, Paragraph, Line and Hidden. | collage
 
 ## In short {#in-short}
 
@@ -32,11 +32,11 @@ Dinis used all of this for a day and sent five changes. They shipped in v0.12.11
 - **Scrolling slowly counts as reading.** "If I scroll up at a slower speed, you can assume that I'm reading." Text that passes the reading line no faster than 450 words a minute now counts as read, going down or up. A section's share read is the larger of its time and its pace, never the sum. On *The tokens hook*, a scroll to the end at about 320 words a minute ends at 100% read; the same scroll at four times that speed counts, by pace, only its first few seconds.
 - **The jump is fixed.** With Paragraph, Line or Hidden on, scrolling back up could throw the page thousands of pixels. The causes, and the test that now holds it, are below.
 
-!shot rc-settings.webp | images/ | The chip's panel, Settings tab, at 1,280 pixels in Newsprint. Six views for every article, each with what it does; Margin line is chosen. Under them, this article's own choice, here "As every article", and Pause. The page behind keeps its live margin lines. | screenshot
+!shot rc-settings.webp | images/ | The chip's panel, Settings tab, at 1,280 pixels in Newsprint, with the six views and Margin line chosen. | screenshot
 
 !shot rc-margin-live.webp | images/ | medium | The live margin on *The tokens hook*, at 1,280 pixels in Newsprint, with four sections read and the next four at 70%, 45%, 20% and 5%. The line goes from solid teal, with a tick beside the heading, to the pale rule colour. The colours are mixed in oklab so that the steps look even. | screenshot
 
-!shot rc-tick-night.webp | images/ | The same view in Night with every section read: a tick beside each heading, clear of the line, and the solid line beside the text. | screenshot
+!shot rc-tick-night.webp | images/ | The same view in Night with every section read: a tick beside each heading and a solid line beside the text. | screenshot
 
 !shot rc-settings-phone.webp | images/ | medium | Settings at 390 pixels: the six views as a list you can read, this article's choice as a row of buttons, the chip at the foot. | screenshot
 
@@ -63,7 +63,7 @@ My [last article](/articles/scrolled-is-not-read.html) ended with a question for
 
 Read is the measure the reading strip already kept: time on each section while the tab is in front and the reader active, against the section's words at 300 a minute. The meter now takes that number instead of the scroll depth. The account page says it in plain words, and the meter's own block at the foot of an article says what was read on this visit and what was read before:
 
-!shot rc-foot.webp | images/ | The meter's block at the foot of an article on a return visit: 1p charged, "0% read this visit (58% read before, not charged again)". The reader read most of this article on an earlier visit and has read nothing new yet, so this visit costs the minimum. | screenshot
+!shot rc-foot.webp | images/ | The meter's block at the foot of an article on a return visit, charging 1p for 0% read this visit. | screenshot
 
 ## The reader is in control {#control}
 
@@ -73,9 +73,9 @@ Dinis's words were the brief: "the user is in control". If the measure says a se
 - **Reset this page.** Every section goes back to unread, and the meter refunds the page to its minimum; reading it again is charged again.
 - **Read, or Unread, on each section.** A section marked read counts as read, and is charged as read; a section marked unread goes back to zero. The map says which sections were marked by hand.
 
-!shot rc-map.webp | images/ | The map of an article, from the chip at the foot: Pause measuring and Reset this page at the top, then every section with how far it was scrolled, how long it was read against the time it needs, and a button to mark it read or unread. Five sections are read; "The hook" is half read. | screenshot
+!shot rc-map.webp | images/ | The map of an article, opened from the chip at the foot, with every section and a button to mark it read or unread. | screenshot
 
-!shot rc-paused.webp | images/ | Paused. The button says Resume, a note says the pause holds on every page and that nothing more is charged, and the chip's mark turns from a dot to two bars. | narrow | screenshot
+!shot rc-paused.webp | images/ | The chip's panel when paused: the button says Resume and the chip's mark shows two bars. | narrow | screenshot
 
 ## Showing what you have read {#views}
 
@@ -92,15 +92,15 @@ Dinis described the experience he wanted: "I start reading an article halfway th
 
 Each folded section has *Show*, which opens it where it is. The choice is one key in the browser, next to the theme.
 
-!shot rc-view-margin.webp | images/ | Margin, on a return visit, at the top of the article: a solid line beside the abstract and the figure, which were read. Nothing on the page has moved. | screenshot
+!shot rc-view-margin.webp | images/ | Margin, on a return visit, at the top of the article: a solid line beside the abstract and the figure. | screenshot
 
-!shot rc-view-para.webp | images/ | Paragraph: the five read sections folded, each to its heading and the paragraph written for it. The first one names the 132-line hook, the two refusals and the 99% read from the cache. | screenshot
+!shot rc-view-para.webp | images/ | Paragraph: the five read sections folded, each to its heading and the paragraph written for it. | screenshot
 
-!shot rc-view-line.webp | images/ | Line: the same five sections in five lines. "Asking the model does not work: Asked by prompt, the model refused to invent figures." The article resumes at "The hook", the first section not yet read. | screenshot
+!shot rc-view-line.webp | images/ | Line: the same five sections in five lines, with the article resuming at "The hook". | screenshot
 
 !shot rc-view-hide.webp | images/ | Hidden: one dashed marker names the five sections read and opens them all; the page starts where the reading stopped. | screenshot
 
-!shot rc-line-night.webp | images/ | Line, in Night. The folds, the margin lines and the bar are drawn from the theme's tokens, like everything else on the site. | screenshot
+!shot rc-line-night.webp | images/ | Line, in Night, with the folds, the margin lines and the bar drawn from the theme's tokens. | screenshot
 
 **When they appear.** Dinis was precise about this too: "we don't want to show that when the user is reading the page, because you want to allow the user to read at the pace that the user is reading". So the views switch on in two cases only: the reader comes back to an article they had read some of before, or they scroll back up by more than half a window after going down at least a window. Once on, they stay on for the visit. A section on screen is never folded or unfolded by the clock; it changes when it is off screen, or when the reader asks. When a fold changes the height of the page above what the reader is looking at, the scroll position is corrected so the words in view do not move.
 

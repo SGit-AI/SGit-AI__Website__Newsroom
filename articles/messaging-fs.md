@@ -10,11 +10,11 @@
 
 # Messaging-FS: an encrypted messenger between vaults, built on append lanes and PKI, from the first crude inbox to messages in the browser and on the command line
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/messaging-fs.md) · [newsroom v0.13.15](https://newsroom.sgit.ai/admin/versions.html) · vaultsmessagingpkiappend-lanesarchitectureproposalarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/messaging-fs.md) · [newsroom v0.13.15](https://newsroom.sgit.ai/admin/versions.html) · vaultsmessagingpkiappend-lanesarchitectureproposalarticle
 
 ***Abstract:** In the early versions of what is now the append lane, the API was called the inbox, and two agent teams used it to send each other signed, encrypted messages in both directions. It worked, and it was crude. I think we now have a much better way of doing it. Every user will have a vault, their billing vault or a comms vault, and every vault can have append lanes: write-only channels that anyone holding a token can write to and only the owner can read. Put that together with PKI and you have a full messaging system between vaults. It is not quite peer to peer, because everything still goes through the server, but the server only ever sees ciphertext, its size and its time. Each message is encrypted to the recipient's public key and signed by the sender, so we always know who sent what. On top of that transport sits a schema, which I would call Messaging-FS, alongside Issues-FS and Email-FS: a conversation is one JSON file, updated as each message and reply arrives, where an email is one file at a time. The same messages can be sent and read from a web messenger or from the command line. This maps out the workflow, what exists, and what we would build.*
 
-Messaging between two vaults. Each vault has a lane for the other: Alice encrypts to Bob and writes to the lane on Bob's vault, Bob does the same into Alice's. Each owner drains its own lane, checks the signature, and commits the message to its own copy of the thread.
+Messaging between two vaults: each has a lane for the other, which its owner drains, checks and commits.
 
 ## In short
 
@@ -59,7 +59,7 @@ The transport already exists, as six calls on the vault API, and the reason it w
 
 So a sender "can put something into your vault and learn nothing at all, not the contents, not the volume, not whether anyone else writes there". The write call answers with exactly `{"ok": true}`.
 
-One message, step by step. Alice encrypts to Bob's public key, signs with her own key, keeps a copy in her thread, and writes to Bob's lane. The server answers only "ok". Bob lists and fetches with his enum key, decrypts, checks that the signature, the lane and the sender agree, adds the message to his copy of the thread, and marks it processed.
+One message, step by step: Alice encrypts to Bob and signs, and Bob fetches, decrypts, checks and marks it processed.
 
 ## Messaging-FS and Email-FS
 

@@ -10,7 +10,7 @@ tags: presentations, talks, slides, scripting, animation, claude-motion, vault-a
 status: published
 ---
 
-!shot tp-architecture.webp | images/ | A scripted talk, from the memo to the room: a file of beats, each with its slide and its words; a player that turns it into slides on a clock; the audience sees the slide, the speaker sees the words, the time left and what comes next; a rehearsal records planned against actual times. Dashed boxes are proposed. | architecture
+!shot tp-architecture.webp | images/ | A scripted talk, from the memo to the room: a file of beats, a player on a clock, a speaker view and a rehearsal record. | architecture
 
 ## In short {#in-short}
 
@@ -27,7 +27,7 @@ I usually read my presentations, with the slides behind me as a backdrop. It wor
 
 ## Where it comes from {#lineage}
 
-!shot tp-lineage.webp | images/ | Three talks, one direction: Black Hat Europe 2025 made the slides data; the VoiceDebrief pitch added a presenter with timings, notes and a countdown; the player for tonight makes the whole talk a timeline that plays on a clock. All three live in vaults. | comparison
+!shot tp-lineage.webp | images/ | Three talks, one direction: Black Hat Europe 2025, the VoiceDebrief pitch, and tonight's player, all living in vaults. | comparison
 
 This is the third step of something I have done twice before, and both are published as vaults on sgit.ai.
 
@@ -39,7 +39,7 @@ The next step is to let the clock drive. Instead of a deck with timings beside i
 
 ## The player {#player}
 
-!shot tp-presenter.webp | images/ | The prototype's presenter view, at 2:58 of the five-minute demo: the slide on the left, with every row of the table revealed; on the right, the words for this beat, the seconds left and what comes next; along the bottom, the clock and a progress bar marked at every beat. | comparison
+!shot tp-presenter.webp | images/ | The prototype's presenter view at 2:58 of the five-minute demo: the slide, the words, the time left and a progress bar. | comparison
 
 This site's agent built a first version, and it is deliberately small: one HTML file and one JSON file, no build. It is a page made for one moment, which [Custom UIs are not the exception](/articles/custom-uis-are-not-the-exception.html) argued is normal now: "A custom interface per message or moment is not an exception". The talk is a list of beats. Each beat has a start in seconds, a duration, a title, the words to say, and a slide with a layout:
 

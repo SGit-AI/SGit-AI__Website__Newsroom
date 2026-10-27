@@ -10,11 +10,11 @@
 
 # PKI everywhere: from now on every message, secret and handover starts with a signature, and how an agent gets its first key
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/pki-everywhere.md) · [newsroom v0.12.155](https://newsroom.sgit.ai/admin/versions.html) · pkikeysagentsidentitysecuritysgitarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/pki-everywhere.md) · [newsroom v0.12.155](https://newsroom.sgit.ai/admin/versions.html) · pkikeysagentsidentitysecuritysgitarticle
 
 ***Abstract:** This is a strategic decision. From now on, every message, every secret and every transmission of data we make should be signed, and in some cases encrypted, with public key cryptography. Everything starts with a PKI handshake, including our first customers and the workflows we build for them. We are at a level of maturity where this is possible: pki.sgit.ai now has a register of people and their public keys, and since its v0.2.1 a workflow for an agent to get a key its operator confirms, with trust that runs both ways and has an end date. The hard part is the first key. As far as we found, no major agent platform gives an individual agent session its own key pair; what exists signs at the level of the platform. So there are two patterns, and we need both. In the first, the agent makes a key only it knows, sends the public half over an append lane, and a person compares fingerprints and approves it: that proves who is here now. In the second, the agent asks a central workflow, a person approves as a second step, and the agent receives an identity key that is made and held centrally: logged, revocable, and the same in the next session. A central store of the keys that give agents their identity is fine, and the agent can always make its own keys for its own work.*
 
-How an agent gets its first key: two patterns. A, the agent's own key, confirmed by a person comparing fingerprints, is built at pki.sgit.ai. B, an identity key issued and held centrally after a second-step approval, is proposed.
+How an agent gets its first key: pattern A, its own key confirmed by a person, and pattern B, a central identity key.
 
 ## In short
 

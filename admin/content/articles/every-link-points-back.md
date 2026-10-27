@@ -10,7 +10,7 @@ tags: links, graphs, corrections, versions, navigation, newsroom, analysis, read
 status: published
 ---
 
-!shot lb-counts.webp | images/ | Every link points back. The links written into the text of 105 articles to other articles, counted by article number: 551 of 566 point to an earlier article; of 551 later citations, 11 are answered by a link the other way; and of 104 pairs published one after the other, the later links the earlier six times as often as the reverse. | comparison
+!shot lb-counts.webp | images/ | Every link points back: links between 105 articles, counted by article number. | comparison
 
 ## In short {#in-short}
 
@@ -58,7 +58,7 @@ A forward link to a sequel is a convenience. A forward link to a correction is t
 
 ## Four kinds of forward link {#proposal}
 
-!shot lb-chain.webp | images/ | Four articles written in a row on 13 October: each was written with a link back, and none could link forward. This release adds a What came next note to the top of the first three. Below, the four kinds of forward link proposed, three at the top of the page and one at the foot. | architecture
+!shot lb-chain.webp | images/ | Four articles written in a row on 13 October, and the four kinds of forward link proposed. | architecture
 
 What I would like, for every article, is to be able to see what came after it, and to be told when something later changed what it says. Concretely:
 

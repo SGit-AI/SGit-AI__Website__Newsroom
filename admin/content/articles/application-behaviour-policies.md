@@ -10,7 +10,7 @@ tags: abp, php2shell, applications, blast-radius, appsec, article
 status: published
 ---
 
-!shot ay-grant.webp | images/ | What a remote code execution flaw does to the grant: before, an anonymous visitor can request pages and submit a form; after, on an unpatched server, the same visitor runs commands as the application, with everything it can reach: its files, its database, its mail, its secrets, its network and the systems that trust it. | concept
+!shot ay-grant.webp | images/ | What a remote code execution flaw does to the grant: a visitor requests pages before, and runs commands after. | concept
 
 > **Updated at 21:30 UTC.** With the story site's new [compromise map](https://php.oct.2026.newsroom.sgit.ai/compromise/index.html): what it searched, what it found, three readings of the silence, and whether this is where everyone should be looking. The report that the fix might be incomplete has also been answered.
 
@@ -36,7 +36,7 @@ Almost nobody can answer that quickly, because almost nobody has written down wh
 
 ## What the compromise map shows {#compromise}
 
-!shot ay-layers.webp | images/ | From attempts to a named compromise, as of 20:50 UTC on 22 October: millions of attempts against sensors, honeypots and edges; three security vendors reporting exploitation without naming a victim; one named organisation saying it was attacked, with the attack stopped; and none saying php2shell was the way in. Behind it, 184 vault sources, 773 watched pages from 474 publishers in 57 countries, 3,444 news items scanned and 295 named sites probed every 30 minutes. | comparison
+!shot ay-layers.webp | images/ | From attempts to a named compromise, as of 20:50 UTC on 22 October, with the sources the PHP site watches behind it. | comparison
 
 There is also a second half to the bring-back decision: how likely is the takeover? This evening the story's site published a page that answers that as well as anyone can today: [the compromise map](https://php.oct.2026.newsroom.sgit.ai/compromise/index.html). It takes one statement, "No named organisation has said it was compromised through php2shell", as of 20:50 UTC on 22 October, and lays out the evidence behind it, row by row: 33 statements, each with who said it, when, in their words, and where the capture is.
 
@@ -84,7 +84,7 @@ A remote code execution flaw shows it directly. Before it, an anonymous visitor'
 
 ## Three policies, not one {#three}
 
-!shot ay-three.webp | images/ | Three policies for an application: behaviour, what it can reach and what it is for, with the gap and blast radius per row; decision, who accepts each row's blast radius and who decides to bring the site back; workflow, the order things happen in, from patching and mapping to cutting rows, naming signals, deciding and restoring. | concept
+!shot ay-three.webp | images/ | Three policies for an application: behaviour, decision and workflow, with the gap and blast radius per row. | concept
 
 For agents we use three kinds of policy, and an application needs all three:
 
@@ -94,7 +94,7 @@ For agents we use three kinds of policy, and an application needs all three:
 
 ## A worked example {#example}
 
-!shot ay-map.webp | images/ | An application behaviour policy for an invented council website on PHP: ten rows of reach, from serving pages and the contact form to writing its own code, the database, mail, outbound network, the internal network, cloud credentials, administrator sessions, backups and payment keys; for each, whether it is in the mandate, the blast radius, whether there is a way back, the barrier today and the cut. | comparison
+!shot ay-map.webp | images/ | An application behaviour policy for an invented council website on PHP: ten rows of reach, with the barrier and the cut. | comparison
 
 To make it concrete, here is an invented example: a council website running a PHP content management system on a virtual machine in a cloud. It serves pages, has a contact form and a search box, and a few editors publish news. Nothing here describes any real council. The rows are typical of how such sites are often set up, which is exactly why they are worth mapping:
 
@@ -119,7 +119,7 @@ But the blast radius did not disappear; it moved to the pipeline. Whoever contro
 
 ## Bringing a site back {#bring-back}
 
-!shot ay-back.webp | images/ | Bringing a site back, in order: patch; map the reach; cut the cheap rows; name the signals; the owner decides on the blast radius that remains; restore; and read the footprint, in the first hours and then weekly. | concept
+!shot ay-back.webp | images/ | Bringing a site back, in order: patch, map the reach, cut rows, name the signals, decide, restore, read the footprint. | concept
 
 So the workflow for a site switched off for php2shell, written as a policy:
 

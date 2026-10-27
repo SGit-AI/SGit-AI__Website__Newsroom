@@ -10,7 +10,7 @@ tags: pen, feedback, pki, keys, identity, signatures, vault, editor, reading, ar
 status: published
 ---
 
-!shot pn-pen.webp | images/ | An article with the Pen open on the right, at 1280 pixels wide in the Newsprint theme. In the article, a highlighted sentence. In the Pen, from the top: what is selected; the reader's own marks on this page, private, with a comment; and Tell the newsroom, with a note kept with the passage it is about and waiting to be sent. Below them, out of the picture, Signed as you: this browser's key and what the register says about it. | screenshot
+!shot pn-pen.webp | images/ | An article with the Pen open on the right, at 1280 pixels wide in the Newsprint theme, and a highlighted sentence. | screenshot
 
 ## In short {#in-short}
 
@@ -34,7 +34,7 @@ The site has had pieces of it for a while. A Highlight button appears when you s
 
 On an iPad, selecting words in Safari brings up the system's own menu, Copy, Look Up, Translate, Find, just above the selection. That is exactly where the site put its Highlight button, so on an iPad the button sat under the menu. It was not a bug in either; they simply wanted the same place.
 
-!shot pn-ipad.webp | images/ | Two ways to place a button for selected words on an iPad. Left, as it was: the button above the selection, under the system's Copy, Look Up and Translate menu. Right, as it is now: the Highlight button below the selection, and the Pen's bar at the foot of the screen with Keep, Comment and Tell the newsroom. Drawn, not a screenshot. | comparison
+!shot pn-ipad.webp | images/ | Two ways to place a button for selected words on an iPad: as it was, and as it is now. Drawn, not a screenshot. | comparison
 
 Two changes fix it. On a touch screen the Highlight button now goes below the selection, not above it. And while words are selected, a small bar appears at the foot of the screen, out of the menu's way, with three choices: keep the words, comment on them, or tell the newsroom. The Pen keeps the selection the moment it is made, so a tap that clears the selection, as taps on an iPad often do, no longer loses it.
 
@@ -53,7 +53,7 @@ The Pen is a button in the bar at the top of every article, beside the Vault. It
 
 A browser is the same kind of thing as an agent: something that acts for me, for a while. So the Pen makes a key pair for this browser with pki.sgit.ai's own code, which the newsroom now carries unedited, signs two statements, who it is and that I operate it, and gives me the submission for the register. Once the register holds it and my key on pki.sgit.ai says it operates that browser, every note I keep in the Pen is signed with it.
 
-!shot pn-chain.webp | images/ | How a note is checked as mine. This browser's key signs the note. The register at pki.sgit.ai holds the browser's record, which says it is operated by my key, and my record, which says I operate it until a date. The newsroom pins my key as the root, reads the register, checks the signature against the browser's key and the chain back to the root, and marks the note signed and checked, valid but not vouched for, or failing. | diagram
+!shot pn-chain.webp | images/ | How a note is checked as mine: the browser's key, the register at pki.sgit.ai, and the chain back to my key as the root. | diagram
 
 The check is the part that matters. Anyone can do it, from the public register, without taking the newsroom's word for it: a page does it in the browser with the register's own code, and the newsroom's lane reader does it in Python when it reads my notes. Both start from a pinned root, my key's fingerprint, never from whatever the register's list of anchors says, because whoever can change a site can change that list. A note from this browser then reads as "signed and checked: operated by the root until" its date. A note changed after it was signed fails. A key nobody vouches for is valid and says so.
 
@@ -61,7 +61,7 @@ The check is the part that matters. Anyone can do it, from the public register, 
 
 The question behind all of this is how I log in here with my pki.sgit.ai key. The two sites share a design and code: pki.sgit.ai's passkey door is this site's, copied with one constant changed. They differ on purpose in two places. Each passkey belongs to its own host, and each site derives its own door from it. So the same passkey cannot open both, and would open two different doors if it could. There are four ways through.
 
-!shot pn-options.webp | images/ | Four ways to log in to newsroom.sgit.ai with a pki.sgit.ai key, compared on what it needs from pki.sgit.ai, the steps for the person, where the private key lives, and the decision: a key per browser in the register now, the same by QR code next, a sign-in redirect when pki.sgit.ai has a page for it, and not one passkey for both sites. | comparison
+!shot pn-options.webp | images/ | Four ways to log in to newsroom.sgit.ai with a pki.sgit.ai key, compared, and the decision taken. | comparison
 
 - **One passkey for both sites.** Both could ask for passkeys made for sgit.ai, and then one passkey works on both. But every passkey made so far is for its own host, so everyone would make a new one, and it would let every sgit.ai site ask for the same passkey, a wider door than either needs. Not now.
 - **Sign in with pki.sgit.ai.** The newsroom sends me to pki.sgit.ai with a key it made for this browser; pki.sgit.ai, where I am signed in, signs "this key acts for me here until this date" and sends me back. One click, and my private key never leaves pki.sgit.ai. It needs a page on pki.sgit.ai that does not exist yet. The best end state.

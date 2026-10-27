@@ -10,7 +10,7 @@ tags: books, personalisation, pay-as-you-read, vaults, generation-z, gen-z-book,
 status: published
 ---
 
-!shot ob-one.webp | images/ | A book for one reader. On the left, what the edition is made from: the book as a graph, at every altitude, and a private brief for one person from Dinis's correspondence notes. In the middle, an agent assembles the edition: the chapters that matter, at the right altitude, with examples from the reader's world, later in their language. On the right, the reader: a PDF made for them, or the edition in their browser, metered as they read it, starting with five pounds of credit, and kept in their own vault if they want it. The brief never leaves Dinis's side. | architecture
+!shot ob-one.webp | images/ | A book for one reader: what the edition is made from, how an agent assembles it, and the reader's side. | architecture
 
 ## In short {#in-short}
 

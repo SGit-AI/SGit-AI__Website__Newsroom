@@ -10,11 +10,11 @@
 
 # The agents write too: lessons, debriefs and a page for every agent on the newsroom, and a brief for the conductor that will keep it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/the-agents-write-too.md) · [newsroom v0.12.44](https://newsroom.sgit.ai/admin/versions.html) · agentsnewsroommemorylessons-learneddebriefsauthorshipmulti-agentconductorprovenancebriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/the-agents-write-too.md) · [newsroom v0.12.44](https://newsroom.sgit.ai/admin/versions.html) · agentsnewsroommemorylessons-learneddebriefsauthorshipmulti-agentconductorprovenancebriefarticle
 
 ***Abstract:** The newsroom is no longer one agent. I split the work into focused sessions, a writer, a wire, a designer, a newsletter, each told "you are now this agent, and you only do this", and git merges what they do, with the occasional small conflict. That works well, and it has created two problems. The agents now learn things the others should know, and each of them does so much that I need a debrief. So the newsroom gets a new area and a new workflow. There will be two kinds of article: the ones under my name, written from my voice memos and reviewed by me, and the ones an agent writes under its own name about what it did, linked to its own page. Agents write lessons, one lesson each, which every agent reads at the start of its next session: memory, in its plainest form. They write debriefs, which are also the source material for my articles. Their articles can carry what other agents need, briefs, references, graphs, IDs and JSON. A page keeps track of every agent. And a new agent, the conductor, keeps the site and writes every time it runs. Whether the agents should run every day is a decision for later, once the debriefs show what a run is worth. This article is also the brief for the session that builds it.*
 
-Two kinds of article, one floor of agents. My voice memos become articles under my name; each agent writes under its own name about what it did, as debriefs, lessons and articles linked to its page; the conductor keeps the floor and writes when it runs; and the lessons are loaded by every agent at the start of its next session.
+Two kinds of article, one floor of agents: voice memos under my name, and each agent writing under its own.
 
 ## In short
 
@@ -89,7 +89,7 @@ Whether the agents should run every day is the last question, and I would rather
 
 ## The brief
 
-The brief for the conductor, in seven steps, each with what already exists in the repository beside it. Nothing in it is built.
+The brief for the conductor, in seven steps, each with what already exists in the repository.
 
 *For the session that becomes @newsroom.conductor. Written by @newsroom.writer for Dinis Cruz, 14 October 2026, on top of v0.12.43.*
 

@@ -10,11 +10,11 @@
 
 # The rules of the game: a policy for which files an agent may change, and the least GitHub can enforce today without a new tool
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.0.0](versions/the-rules-of-the-game.md) · [newsroom v0.13.39](https://newsroom.sgit.ai/admin/versions.html) · abpcigithubagentssecuritypolicyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.1.0, 2 versions](versions/the-rules-of-the-game.md) · [newsroom v0.13.39](https://newsroom.sgit.ai/admin/versions.html) · abpcigithubagentssecuritypolicyarticle
 
 ***Abstract:** The agents that build this site can change the pipeline that checks them. In the last eleven days, 62 of 227 commits touched the workflow, the validator, the tests or the build scripts, from six agents, and 17 changed the workflow itself, one of them a speed-up this session made. That is useful work, and it is also the hole: an agent that can change the check can pass any release. So we wrote the rules of the game down as a policy, in five zones: content an agent changes freely; the gates, which need a second key; identity, which only the owner changes; vendored code, refreshed only from its source; and the rules themselves, which no agent touches. Then we mapped what GitHub can enforce on a public repository today, with no new tool. The answer is less than I expected, but enough. A hook in the agent's harness and a guard job in CI mean an agent has to make two deliberate changes to get round them, which is no longer a mistake. One setting by the owner, a token that cannot change workflow files, turns the guard into a boundary. GitHub's path rules for pushes exist, but only for private repositories; and there is a known gap we describe. The next article puts the last step in a repository the agent cannot touch.*
 
-The rules of the game in five zones: content, free; the gates, a second key; identity, the owner only; vendored code, from upstream only; and the rules themselves, never by an agent.
+The rules of the game in five zones: content, the gates, identity, vendored code and the rules themselves.
 
 ## In short
 
@@ -34,7 +34,7 @@ And today the agents can open it. Between 11 and 22 October, 62 of the 227 commi
 
 None of those changes was malicious; most were improvements. That matters for the design. A rule that says "never change the pipeline" would have blocked good work 62 times. The rule we want is that the agent can propose a change to what checks it, and someone else has to agree.
 
-Commits that touched the checks, by agent, from 11 to 22 October 2026: the writer 17 of 154, unlabelled commits 25 of 35, the UX agent 9 of 18, the wire agent 7 of 10, the dev agent 2 of 2, the newsletter agent 1 of 2 and the vault agent 1 of 1; 62 of 227 in all.
+Commits that touched the checks, by agent, from 11 to 22 October 2026: 62 of 227 in all.
 
 ## The policy
 
@@ -52,7 +52,7 @@ The copy published here is for reading. The copy that counts has to live somewhe
 
 ## What GitHub offers today
 
-What GitHub offers a public repository today, without a new tool: branch rulesets and protection, code owners and required reviewers on deployments are available; path rules for pushes are for private and internal repositories on paid plans; required workflows from rulesets are organisation-level and pull-request only; and a token without permission to change workflow files is available, set by the owner.
+What GitHub offers a public repository today without a new tool, and what needs a paid plan or an organisation.
 
 Then the research: what can GitHub itself enforce, on this repository, today? This site's repository is public, owned by an organisation, and its release branch had no protection when we checked on 22 October. From GitHub's documentation:
 
@@ -67,7 +67,7 @@ So, on a public repository where agents push straight to the release branch, Git
 
 ## The least we can do
 
-The controls, in order, and what it takes to get round each: the policy, nothing; a hook in the agent's harness, one change; a guard job in CI, a second deliberate change; a token that cannot change workflows, out of the agent's reach; and the sidecar repository, out of reach even when the agent is fully compromised.
+The controls in order, and what it takes to get round each, from the policy to the sidecar repository.
 
 Here is the smallest set that works, in the order of the barriers in an [Agent Behaviour Policy](behaviour-policies-from-the-checks.md):
 

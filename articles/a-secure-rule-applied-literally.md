@@ -10,11 +10,11 @@
 
 # A secure rule, applied literally: how the PHP story's security agent's sound rule about scripts led the developer agent to copy the same code into every new repository, why nobody challenged it, and why the person accountable is the one who has to ask
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/a-secure-rule-applied-literally.md) · [newsroom v0.13.79](https://newsroom.sgit.ai/admin/versions.html) · securityagentsaccountabilitycspengineeringphp2shellarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/a-secure-rule-applied-literally.md) · [newsroom v0.13.79](https://newsroom.sgit.ai/admin/versions.html) · securityagentsaccountabilitycspengineeringphp2shellarticle
 
 ***Abstract:** The more complex agent workflows get, the more interesting their edge cases, and the more they need direction and someone accountable. Here is a real one from the PHP story. Its security agent set a sound rule: a page may only load scripts from its own site, which protects readers if anyone else's server is compromised. Then the designer, architect and developer agents planned the split of the site into six repositories, and the developer, starting the work, said that because of the security rule it would copy the shared code into each new site. The rule was right, and the copying followed from it. But it meant every fix applied four times, copies that drift apart, and no single source of truth: a security rule making the code less secure. Nobody challenged it, because every agent was doing its job. The good news about agents is that they can handle a lot of complexity; the bad news is the same. I caught it reading the developer's notes, and asked for one source instead: the shared code served once, at a fixed version with a published hash for every file, and the security policy widened by name to allow it. The first half of this article is the story; the second is the technical detail: Content-Security-Policy, hashes, versioned addresses, and how the fix keeps the protection.*
 
-A secure rule, applied literally: as planned in the first pass of the split, the press, the shared code, is copied into each of the four sites, so one fix means four copies and four releases, and copies drift; as changed from v0.22.2, the four sites load it from the press at a fixed version, with a published sha256 for every file and the security policy naming the press and data hosts. Both protect readers against a compromised outside host; the difference is cost and drift.
+A secure rule applied literally: shared code copied into four sites, against loaded from the press.
 
 ## In short
 
@@ -45,7 +45,7 @@ That is the pattern. The good news about agents is that they can handle a lot of
 
 ## Where the person comes in
 
-Where the question was asked: security on 24 October sets a policy on every page, scripts only from the site itself and hashed inline scripts; the architects on 25 October plan one repository into six; the developer's first pass gives each site its own runtime because of the policy; the editor reads the developer's notes, sees the copies and asks why; and the developer's v0.22.2 adds one resolver, with assets from the press, data from the data API, and the policy to allow those hosts.
+Where the question was asked: from the security policy of 24 October to the developer's v0.22.2.
 
 I caught it because I was reading the developer's notes. I asked for one source for every file across the split sites, and gave my go for the security policy to name the new shared hosts. The developer's next release, v0.22.2, does exactly that.
 

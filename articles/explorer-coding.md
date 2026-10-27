@@ -10,11 +10,11 @@
 
 # Explorer coding: a better name for what people call vibe coding, what it is good for, and the handover to villagers and town planners before anyone depends on it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/explorer-coding.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · explorer-codingvibe-codingwardley-mapsexplorersvillagerstown-plannerscitizen-developeraccountabilitybusiness-modelsagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.3.0, 4 versions](versions/explorer-coding.md) · [newsroom v0.12.76](https://newsroom.sgit.ai/admin/versions.html) · explorer-codingvibe-codingwardley-mapsexplorersvillagerstown-plannerscitizen-developeraccountabilitybusiness-modelsagentsarticle
 
 ***Abstract:** I would like to propose a better name for what is usually called vibe coding: explorer coding. Vibe coding sounds as if people are just typing and ad-libbing, and I have never liked it, because what they are doing is the best thing to happen to software since the spreadsheet: everyone with a need can now explore it by building, with the fast feedback loop that made spreadsheets win, and what they build is a better brief than any document. Explorer is Simon Wardley's word for exactly that kind of work. It also makes the limit clear. An explorer-coded app may look and feel like an application, but nobody has read the code or checked the architecture, and it is not ready to be in line: once other people depend on it, it is mission critical, and it needs villagers to maintain it, with agent behaviour policies, data handling and releases that do not break it, and then town planners who own the code in production and are accountable for it, as the Linux kernel, Fedora and GitHub already say the human who ships code must be. The further towards commodity, the fewer agents in line and the more deterministic code. And it suggests a commercial model: every product should have an explorer version, where users reshape it by talking to it, and paid conversions from there to a villager product and a town planner one.*
 
-Explorer coding and the handover that makes it last: explorers build by talking to an agent, and what they build is the brief; villagers maintain it, with policies, data handling and tests; town planners own the code in production. From left to right, fewer agents in line and more deterministic code.
+Explorer coding and its handover: explorers build, villagers maintain, town planners own the code in production.
 
 ## In short
 
@@ -56,7 +56,7 @@ They can use agents, of course. But the direction is set by where the code sits 
 
 ## An explorer version of every product
 
-An explorer version of every product, and paid conversions from it: the explorer version where users reshape the product by talking to it; the submission, which is the brief; the villager product, maintained; and the town planner product, built properly or as a maintained fork. Proposed.
+An explorer version of every product and the paid conversions from it, up to the town planner product. Proposed.
 
 The name also suggests a commercial model, and it follows from [the previous article](software-vendors-as-villagers.md). Products need to become explorer-friendly; more than that, they need an explorer version. In it, users can talk to the product with a model, reshape it, move things around and keep their own version; the product is treated as primitives. When the user has something they want to keep, they submit it, and pay to convert it into a villager product, maintained across releases, and, if it matters enough, into a town planner product, built properly or kept as a maintained fork. Each step is a revenue stream, and each submission tells the vendor exactly what its users want.
 

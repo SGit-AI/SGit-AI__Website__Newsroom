@@ -10,13 +10,14 @@
 
 # Versions of: The side stories of php2shell
 
-1 published version of [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](../the-side-stories-of-php2shell.md). The current one is **v1.0.0**.
+2 published versions of [The side stories of php2shell: provenance, features built against a real problem, who corrects their reporting, a crisis with no named victim, the sites that went dark, the flaws nobody watched, and how much of it was AI](../the-side-stories-of-php2shell.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-25 | published | 2,676 | first published | [`872f937d1`](https://github.com/SGit-AI/SGit-AI__Website/commit/872f937d14a059c7c67c053a76fdfb7f0b33767a) | [current](../the-side-stories-of-php2shell.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,555 | +0 / −121 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-side-stories-of-php2shell/v1.1.0.md) · [current](../the-side-stories-of-php2shell.md) |
+| **v1.0.0** | 2026-10-25 | published | 2,676 | first published | [`872f937d1`](https://github.com/SGit-AI/SGit-AI__Website/commit/872f937d14a059c7c67c053a76fdfb7f0b33767a) |  |
 
 [← Back to the article](../the-side-stories-of-php2shell.md) · [All articles](../index.md)
 

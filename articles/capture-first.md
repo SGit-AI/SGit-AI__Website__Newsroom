@@ -10,11 +10,11 @@
 
 # Capture first: how a BBC live page at breakfast became an evidence vault, a section here and a site of its own by lunchtime, for a story that was still changing as we covered it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.0.1, 2 versions](versions/capture-first.md) · [newsroom v0.13.41](https://newsroom.sgit.ai/admin/versions.html) · php2shellbreaking-newsevidenceprovenancevaultsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-22 · [article v1.1.0, 3 versions](versions/capture-first.md) · [newsroom v0.13.41](https://newsroom.sgit.ai/admin/versions.html) · php2shellbreaking-newsevidenceprovenancevaultsarticle
 
 ***Abstract:** On the morning of 22 October I was reading the BBC's live page on two critical flaws in PHP, the language behind WordPress, Wikipedia and a large share of the web. Governments were telling organisations to take websites offline, a figure of 70% of the internet was going round, and some of the numbers did not add up. I asked the newsroom's agent to read the page, and then to set up a section and a vault to capture evidence. The vault was created at 08:03 UTC, eight minutes after the agent's first copy of the BBC page. The section was pushed at 08:13 with one source. Four collecting agents went out by beat: the primary sources, the researchers, the governments, the news. At 09:27 a second session released the first version of a site of its own, php.oct.2026.newsroom.sgit.ai, which reads the same vault. By 12:05 the vault held 184 sources, 177 dated captures and 855 files hashed at the moment of capture, from six writers. This is the newsroom's first story covered while it was breaking, and the order we did things in is the argument: capture first, because a live page, a down page and a social post change or disappear within hours, and a claim can only be checked later against the bytes someone kept. It also showed what went wrong. Two of the four agents stopped before committing, and forty sources, including the maintenance pages of French prefectures, sat in their working folders until the lead agent found them. The section here was the first step; the dedicated site is where the facts now live, and this newsroom keeps the context and the opinion. The plan is to retire the section once the site has taken everything over.*
 
-The morning of 22 October 2026 in two lanes, in UTC from 06:00 to 12:15. The top lane is the story as its sources date it: the BBC live page opening at 06:16, the NSA's advice reported at 06:56, the researcher on Radio 4 at 07:00, two French prefecture sites on maintenance pages at 08:19, and the NCSC-NL inventory at 674 products at 08:41. The bottom lane is the newsroom: the first copy of the BBC page at 07:55, the vault at 08:03, the first complete capture at 08:06, the section here at 08:13, the dedicated site's first release at 09:27, and the vault at 184 sources by 12:05.
+The morning of 22 October 2026 in two lanes, UTC: the story as its sources date it, and the newsroom's captures.
 
 ## In short
 
@@ -51,7 +51,7 @@ At the same time four agents went out, one per beat. One for the primary sources
 
 The protocol had to change in the first half hour. The first version had one manifest that every agent appended to, and one claims file. Several agents writing to one file is a merge conflict waiting to happen, so before the agents had written much, each source got its own row in its own folder, and each agent its own claims and timeline files, merged by the build. This is the pattern [two agents, one vault](two-agents-one-vault.md) described for the Industry Wire, with more writers: a vault one agent writes and another reads, with the history as the audit trail.
 
-Who wrote the 184 sources in the evidence vault by 12:05 UTC, and what reads it. On the left, six writers with their counts: the dedicated site's agent 83, the government collector 37, the news collector 31, the primary-sources collector 17, the researchers' collector 14 and the lead agent 2. In the middle, the vault: 184 sources, 177 dated captures, 855 files hashed at capture, 128 claims and events in per-agent files. On the right, what reads it: this newsroom's section, the dedicated site, and, still to come, articles here and anyone the vault is opened to.
+Who wrote the 184 sources in the evidence vault by 12:05 UTC, and what reads it.
 
 ## Following the link someone sends
 

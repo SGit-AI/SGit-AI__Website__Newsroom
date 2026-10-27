@@ -10,11 +10,11 @@
 
 # When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.2.0, 3 versions](versions/when-is-the-vault-actually-used.md) · [newsroom v0.12.90](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitvaultsarchitectureagent-behaviour-policymcpmemoryvideoarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-17 · [article v1.3.0, 4 versions](versions/when-is-the-vault-actually-used.md) · [newsroom v0.12.90](https://newsroom.sgit.ai/admin/versions.html) · agentsruflosgitvaultsarchitectureagent-behaviour-policymcpmemoryvideoarticle
 
 ***Abstract:** The first piece walked through Mondweep Chakravorty's video step by step. This one asks a sharper question: in a run that is about an encrypted vault, when is the vault actually used? The answer, drawn stage by stage from the frames, is in three steps of twelve. It is written in step 5, when a consistent copy of Ruflo's memory database is saved as encrypted SGit objects with fingerprints of the data, the ABP and the compiled policy. It is read in step 8, when a brand-new process restores it with the same fingerprint. It is read and rejected in step 11, when one object has been altered. In step 6 it is what the policy protects, and in step 7 it survives the deletion because it lives outside the project. It sits on the same machine, with its keys in a separate folder; no vault server, push or clone appears. It is implemented in the adapter, which calls the SGit library at a pinned commit and creates a separate vault for each checkpoint, and Ruflo knows nothing about it. The policy is compiled into Ruflo's own rule format and checked by a pinned copy of Ruflo's evaluator, inside the adapter. Not used: Ruflo's hive-mind, Ruflo's running policy state, and vector search. All of this is confirmed by the author's published code. That is not a weakness; it is what a recovery copy should look like, and it shows the pattern works with any tool's memory file. What it does not yet show is the vault leaving the machine.*
 
-Who does what, step by step: the vault is written or read in steps 5, 8 and 11, protected in step 6 and survives step 7; Ruflo's own command line touches memory in steps 3, 9 and 10, where the ABP is not on the path. From the architecture addendum to the analysis of Mondweep Chakravorty's video.
+Who does what, step by step: which steps write or read the vault and which use Ruflo's own command line.
 
 SGit × Ruflo: one run, five ways in
 
@@ -52,13 +52,13 @@ Throughout, I keep apart what is shown on screen and what is inferred from it, a
 
 ## The component map
 
-The component map: the test script calls Ruflo's command line in steps 3, 9 and 10 and the ABP adapter's tools in steps 4, 5, 6, 8 and 11; the ABP rows are compiled to Ruflo rules and checked by a pinned copy of Ruflo's evaluator in enforce mode, which leads to the SGit library, which writes the vault and its keys on the machine's disk. Ruflo's hive-mind, its running policy state and a remote vault server were not used. Blue is Ruflo, amber the ABP adapter, green SGit and the vault, grey plain files.
+The component map: the test script, Ruflo's command line, the ABP adapter, the SGit library and the vault on disk.
 
 Two lines run from the test script. One goes to Ruflo's command line, which writes and reads its memory file directly. The other goes to the adapter's tools, `checkpoint`, `inspect`, `restore` and `close_run`, of which the run uses three. Each passes a policy gate, a pinned copy of Ruflo's evaluator running the compiled ABP rules in enforce mode, which fails closed, and through it reaches the SGit library, which writes the vault and keeps the keys apart. Everything happens on one machine's disk.
 
 ## Step 5: the vault is written
 
-Step 5: the checkpoint tool passes the policy gate; a SQLite backup takes a consistent copy of memory.db; fingerprints of the database, the ABP and the policy are taken; the SGit library encrypts on the machine and writes ciphertext only to the checkpoint store, with keys kept apart.
+Step 5: the checkpoint tool passes the policy gate and the SGit library writes ciphertext to the checkpoint store.
 
 This is where the vault is created. The checkpoint request for the `project` namespace is allowed. The adapter takes a consistent copy of Ruflo's memory file with a SQLite backup, fingerprints it, and SGit stores it encrypted, with the id `2fa35d1b71ce4361b458c8a64f6ec668`.
 
@@ -70,7 +70,7 @@ What goes into the vault is one consistent copy of the memory database, sealed w
 
 ## Step 8: the vault is read
 
-Step 8: a new MCP server process restores the checkpoint; the policy gate allows it; the SGit library reads ciphertext from the vault and keys from the private folder, decrypts and verifies, and writes memory.sqlite into the fresh-runner workspace, with the same SHA-256 as in step 5.
+Step 8: a new MCP server process restores the checkpoint, and memory.sqlite is written into the fresh-runner workspace.
 
 A brand-new adapter process restores the checkpoint into a new workspace, `fresh-runner`. The restored database is byte for byte the one saved in step 5.
 
@@ -80,7 +80,7 @@ A brand-new adapter process restores the checkpoint into a new workspace, `fresh
 
 ## Step 11: the vault is read, and refuses
 
-Step 11: one object in the vault is altered; the restore tool passes the policy gate; the adapter compares the digest of the stored ciphertext with the one recorded in step 5, finds a mismatch, and a ValueError means the tampered workspace is never created; SGit is never asked to decrypt.
+Step 11: one object in the vault is altered, the adapter finds a digest mismatch and no workspace is created.
 
 One encrypted object in the vault is altered, and a restore is tried. The ABP allows the restore; the adapter's check of the stored ciphertext is what refuses it.
 
@@ -94,7 +94,7 @@ In step 6, closing the run would delete memory. That ABP row needs approval, non
 
 ## Where the vault lives
 
-Where the video's vault lives: on one machine, the adapter and SGit library, the checkpoint store, the private key folder and the workspaces; a vault server was not used.
+Where the video's vault lives: on one machine, with the adapter, the SGit library, the checkpoint store and the keys.
 
 Encryption happens on the machine, and the ciphertext stays there. The README says so plainly: no remote push is performed, and remote sync is on its list of follow-ups. So it survives the project being deleted, which is what the video tests. It would not survive the machine being lost, which the video does not claim.
 

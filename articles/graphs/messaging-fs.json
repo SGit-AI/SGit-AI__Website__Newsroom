@@ -162,13 +162,13 @@
     {
       "file": "mf-vaults.webp",
       "url": "https://newsroom.sgit.ai/articles/images/mf-vaults.webp",
-      "caption": "Messaging between two vaults. Each vault has a lane for the other: Alice encrypts to Bob and writes to the lane on Bob's vault, Bob does the same into Alice's. Each owner drains its own lane, checks the signature, and commits the message to its own copy of the thread.",
+      "caption": "Messaging between two vaults: each has a lane for the other, which its owner drains, checks and commits.",
       "kind": "architecture"
     },
     {
       "file": "mf-send.webp",
       "url": "https://newsroom.sgit.ai/articles/images/mf-send.webp",
-      "caption": "One message, step by step. Alice encrypts to Bob's public key, signs with her own key, keeps a copy in her thread, and writes to Bob's lane. The server answers only \"ok\". Bob lists and fetches with his enum key, decrypts, checks that the signature, the lane and the sender agree, adds the message to his copy of the thread, and marks it processed.",
+      "caption": "One message, step by step: Alice encrypts to Bob and signs, and Bob fetches, decrypts, checks and marks it processed.",
       "kind": "architecture"
     }
   ]

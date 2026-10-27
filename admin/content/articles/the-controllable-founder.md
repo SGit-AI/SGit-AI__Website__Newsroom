@@ -10,7 +10,7 @@ tags: founders, startups, investors, venture-capital, survivorship-bias, wardley
 status: published
 ---
 
-!shot fo-survivors.webp | images/ | We study the survivors: of everyone who made the same moves, a few won and are studied; others were funded, did the same and failed; most did the same and were never funded. A risky practice can be unrelated to success across everyone and still look like its cause among survivors. Illustrative. | comparison
+!shot fo-survivors.webp | images/ | Survivorship bias: those who won are studied, while others did the same and failed. Illustrative. | comparison
 
 !trail founders-and-forks
 
@@ -33,7 +33,7 @@ Jerker Denrell put this on a formal footing in 2003. In [Vicarious Learning, Und
 
 ## Who is the commodity {#commodity}
 
-!shot fo-commodity.webp | images/ | Who is the commodity: in music, the songs, the producers, the venues and radio stay scarce while the performer is moved towards commodity; in venture, the investor's network stays scarce while the founder is moved the same way. A sketch of the argument, not a measured map. | architecture
+!shot fo-commodity.webp | images/ | Who is the commodity: the performer in music and the founder in venture. A sketch of the argument, not measured. | architecture
 
 One way to say this is with a [Wardley map](/articles/why-i-love-wardley-maps.html). On the evolution axis, from genesis to commodity, where does the person sit? Record labels behave like investors: someone with capital chooses which artist to put it behind. And some of the most successful pop acts were not the best musicians, singers or performers. What I used to tell musician friends is: look at who is actually the talent. Often it was not the performer. It was the production, the access to venues and radio, and above all the songs.
 
@@ -53,7 +53,7 @@ The key line comes from the researchers themselves. Reviewing the evidence in 20
 
 ## Control is written into the contract {#contract}
 
-!shot fo-control.webp | images/ | Control moves with performance: when a company performs poorly, investors take full control; as it improves, the founder gains control; when it performs very well, investors keep their cash-flow rights but give up most control. A schematic of Kaplan and Strömberg's finding, not their data. | comparison
+!shot fo-control.webp | images/ | Control moves with performance: a schematic of Kaplan and Strömberg's finding, not their data. | comparison
 
 You do not have to guess whether investors care about control. It is in the paperwork. Kaplan and Strömberg read [213 venture investments in 119 companies](https://doi.org/10.1111/1467-937X.00245). What distinguishes venture deals, they found, is that cash-flow, voting, board and liquidation rights are separated and allocated separately, often contingent on performance: "if the firm performs poorly, the VCs obtain full control. As performance improves, the entrepreneur retains/obtains more control rights. If the firm performs very well, the VCs retain their cash flow rights, but relinquish most of their control and liquidation rights." That last clause is what I call the big stick: once the founder, or the artist, can credibly say "I leave and you cannot replace me", the contract hands power back.
 

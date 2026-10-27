@@ -10,7 +10,7 @@ tags: ciso, graphs, risk-acceptance, vaults, agents, article
 status: published
 ---
 
-!shot tt-graph-q9.webp | images/ | Question 9 on the Thistlewood twin's graph: who are the humans and agents with the largest blast radius? Everything the answer does not use has faded. What is left is the plot: three identity admins and five deploy agents, the secrets store and staff sign-on they can reach, the risks those open, customer personal data exposed among them, and the path up to the board. | screenshot
+!shot tt-graph-q9.webp | images/ | Question 9 on the Thistlewood twin's graph: who has the largest blast radius, with everything not used faded. | screenshot
 
 !trail thistlewood
 
@@ -37,7 +37,7 @@ His bar for answering them is the right one: "an enterprise knowledge graph, pre
 
 Look at what each question has to touch. The budget questions need risks, controls, their cost and their coverage. The process questions need processes, the systems under them, the suppliers under those, and the channels and sales above them. The blast-radius question needs every human and agent, what they can reach, and what they can act as. The accepted-risk question needs the acceptances, who made them, until when, and the events that change their assumptions.
 
-!shot tt-map.webp | images/ | Ten questions, one graph. Each of Phil Venables' questions against the parts of the company it has to traverse: risks and holders, controls and cost, processes, systems, suppliers, channels and sales, humans and agents, incidents and causes, acceptances and events. No question is answered by one part alone; all of them are answered by the whole. | concept
+!shot tt-map.webp | images/ | Ten questions, one graph: each of Phil Venables' questions against the parts of the company it has to traverse. | concept
 
 No question can be answered from one part of the company. All of them can be answered from the whole, if the whole is connected. That is the point of [the graph companies](/articles/the-graph-companies.html): once a graph has the right connections, you remove the nodes that are not relevant, and the answer becomes obvious, like the end of a whodunit. All the clues were there. What changes at the end is that the right ones are connected and the rest fall away.
 
@@ -47,7 +47,7 @@ It is also why Phil's phrase "context graph federation" matters. The specialist 
 
 Our earlier work on risk acceptance, in [every risk is already accepted](/articles/every-risk-is-already-accepted.html), has most of the structure these questions need. A risk exists the moment the exposure does, so it is always being carried; the only questions are who has accepted it, and until when. There is no deny button, only three doors: accept for a stated interval, fund the work, or fix it. Every risk has a holder, every holder has a boss, and every path ends at the board. Risks are fractal: a board line such as "loss of customer trust" opens into business, operational and technical risks, each with its own holder, down to the configuration that makes it true.
 
-!shot view-role-risk-map.webp | ../demos/vaults/risk-graph-explorer/images/ | The role risk map in the Risk Graph Explorer vault, from that earlier work. Every risk is assigned to somebody, and every risk reaches the board: each role shows what it holds and what passes through it on the way up. | screenshot
+!shot view-role-risk-map.webp | ../demos/vaults/risk-graph-explorer/images/ | The role risk map in the Risk Graph Explorer vault, from that earlier work, showing what each role holds. | screenshot
 
 Read Phil's questions with that in mind and several of them are acceptance questions. Cutting £250k is accepting more risk, so someone has to hold that acceptance. The accepted risks to revisit are acceptances whose assumptions changed. A cheaper control is a reason to reopen an acceptance that was made at the old price. And every answer to every question ends the same way: someone has to accept, fund or fix, and their boss should see it arrive.
 
@@ -59,13 +59,13 @@ A small deterministic engine answers the ten questions on that graph, and every 
 
 The graph view is where the whodunit happens. Pick a question, and everything the answer did not use fades out; what is left is the plot, from the people or the supplier at one end to the board at the other.
 
-!shot tt-graph-q7.webp | images/ | Question 7 on the graph: the minimum viable processes, and the most severe plausible scenario they cannot withstand. Ransomware in the warehouse system, run by one supplier with no fallback, stops pick, pack and ship. | screenshot
+!shot tt-graph-q7.webp | images/ | Question 7 on the graph: the minimum viable processes and the most severe plausible scenario they cannot withstand. | screenshot
 
 ## How our workflow fits {#workflow}
 
 The twin is small, but each step in it is something we already do elsewhere.
 
-!shot tt-loop.webp | images/ | From a question to a decision the board can see. Ask; query the graph; see the plot, with what is not relevant faded; decide, accept for an interval, fund or fix, with one holder; record the decision in a vault with its evidence and hash; back-test the model against what happened, and recalibrate. Underneath each step, the work it comes from: fractal semantic graphs, the whodunit view, risk acceptance, sgit vaults, measured evidence. | concept
+!shot tt-loop.webp | images/ | From a question to a decision the board can see: ask, query the graph, decide, record in a vault, back-test. | concept
 
 - **Each decision is a record.** In the twin, every proposed decision is a file in `decisions/`, with the question, the answer, the evidence, the holder, the door and the interval. In practice each material risk deserves a vault of its own, the evidence pack of the decision, readable by each audience with its own key.
 - **Agents are in the graph, with their policies.** Phil's question 9 asks for 100 agents as well as 100 humans. When every agent has an [Agent Behaviour Policy](/articles/governs-enforces-attests.html), its mandate is data, so its reach can be compared with it, which is how the twin finds the 29 agents that can reach beyond what they need.

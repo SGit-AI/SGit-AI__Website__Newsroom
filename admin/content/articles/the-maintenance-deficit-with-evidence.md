@@ -10,7 +10,7 @@ tags: php2shell, open-source, sovereignty, funding, maintainers, article
 status: published
 ---
 
-!shot dw-built-on-volunteers.webp | images/ | "Built on volunteers: €108 million for the building, €112,000 for the foundation." Dion Wiggins' illustration for the article: a building labelled Digital Sovereignty, lifted by a crane carrying the €108 million contract, resting on a cracked column of PHP, OpenSSL, curl, FFmpeg, libxml2, core-js and pgBackRest, held up by volunteers, beside a jar of $730,534 from 536 donors and a sign saying 11 part-time engineers on duty, while an official with binoculars holds a €2 billion, seven-year sovereignty package. Reused from Dion's public post, with credit. | wide
+!shot dw-built-on-volunteers.webp | images/ | Dion Wiggins' illustration of a building labelled Digital Sovereignty resting on a cracked column of volunteer software. | wide
 
 > **What came next.** [Who maintains the PHP you run?](https://newsroom.sgit.ai/articles/who-maintains-the-php-you-run.html) takes the business models further: what the PHP Foundation sells today, who sold the fix for old PHP, the OpenJS model that shares revenue with the projects, and seven services that should exist now.
 
@@ -34,7 +34,7 @@ This is very much what we have been talking about here, with numbers attached. S
 
 ## The numbers, checked {#checked}
 
-!shot dw-ratio.webp | images/ | The maintenance deficit ratio, checked: with Dion Wiggins' figures, 241 to 1; with the whole contract and the Sovereign Tech Agency's own page, 263 to 1; with the migration share alone, 179 to 1. Two orders of magnitude in every case. | comparison
+!shot dw-ratio.webp | images/ | The maintenance deficit ratio, checked three ways: Dion Wiggins' figures, the whole contract and the migration share. | comparison
 
 I checked the main figures against their primary sources on 23 October:
 
@@ -50,7 +50,7 @@ None of that changes the argument. It sharpens it: the migration share alone is 
 
 ## Two days on, from our evidence {#two-days}
 
-!shot dw-inventory.webp | images/ | The Dutch NCSC's inventory of software that ships or depends on PHP: on 22 October at 15:28 UTC, 724 rows, 61 fixed, 216 vulnerable, 440 under investigation; on 23 October at 12:50 UTC, 751 rows, 109 fixed, 222 vulnerable, 389 under investigation, 30 not affected. | comparison
+!shot dw-inventory.webp | images/ | The Dutch NCSC's inventory of software that ships or depends on PHP, as of 22 and 23 October. | comparison
 
 Dion writes that "every government in every country waited for the same patch from the same" small team. The patch itself came fast: PHP's four fixed releases were all out by 21 October. What followed is the part Dion's article calls the packaging and distribution layer, and our data shows how slow that layer is.
 
@@ -66,7 +66,7 @@ The [PHP story's own site](https://php.oct.2026.newsroom.sgit.ai/), as I describ
 
 ## Why this is a business model failure {#model}
 
-!shot dw-flow.webp | images/ | Where the money flows: Germany's €108 million contract over four years, Acquia sold for $1 billion, Automattic's reported revenue of over $700 million in 2024, the EU's €2 billion seven-year open source strategy and its €264 billion a year on proprietary IT; against the PHP Foundation's $730,534 from 536 donors, 11 to 13 developers, one security engineer for six months, €205,000 from the Sovereign Tech Agency, and one person packaging PHP for Debian and Ubuntu. | comparison
+!shot dw-flow.webp | images/ | Where the money flows: the contracts and revenues on one side, against the PHP Foundation's donations and engineers. | comparison
 
 I want to be careful about the framing. This is not a story about governments or companies being mean. It is a business model that pays the wrong layer.
 

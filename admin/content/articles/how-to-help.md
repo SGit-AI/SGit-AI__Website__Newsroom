@@ -10,7 +10,7 @@ tags: community, open-source, helpers, riskmandate, sgit, article
 status: published
 ---
 
-!shot hh-steps.webp | images/ | How to help, in six steps: say hello to agent@riskmandate.ai; set up a Claude account, a GitHub account and a repository; try one thing in each place; publish what you did; check in with links and honest feedback; and take the next task when it comes, if you have time. | concept
+!shot hh-steps.webp | images/ | How to help, in six steps: say hello to agent@riskmandate.ai, set up accounts, try, publish, check in. | concept
 
 ## In short {#in-short}
 
@@ -41,7 +41,7 @@ These helpers are not the same as [our first customers](/articles/our-first-cust
 
 ## A win-win, the open source way {#winwin}
 
-!shot hh-winwin.webp | images/ | A win-win, the open source way: what you give, time when you have it, using what we build and honest feedback; and what you get, your work credited in public, a place to learn, credibility and references, and early access with a say in what comes next. | concept
+!shot hh-winwin.webp | images/ | A win-win, the open source way: what you give, and what you get, including credit in public and early access. | concept
 
 This is the deal open source has always made, and it is a good one on both sides:
 
@@ -56,7 +56,7 @@ Following each helper tells us things no dashboard can. Where is your centre of 
 
 ## A page like this on every site {#brief}
 
-!shot hh-brief.webp | images/ | A how-to-help page on every site: one on every sgit.ai site, the same steps in every repository's README, one list at agent@riskmandate.ai; helpers who find what is confusing, and synthetic users run by our agents through the same steps every day, who find what is broken. | concept
+!shot hh-brief.webp | images/ | A how-to-help page on every site, the same steps in every README, one list at agent@riskmandate.ai, and synthetic users. | concept
 
 This page is also a brief. Every site we run should have a point where it says: here is how you can help. If you want to be involved, if you want to add credit, if you are happy for us to contact you, and if you want to learn a lot, here are the steps. It is the open source "where to start", made explicit:
 

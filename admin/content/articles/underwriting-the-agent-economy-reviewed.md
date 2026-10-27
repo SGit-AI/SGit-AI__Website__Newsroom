@@ -10,7 +10,7 @@ tags: insurance, ai-agents, agent-behaviour-policies, standards, aiuc-1, riskman
 status: published
 ---
 
-!shot uw-cover.webp | images/ | The cover of "Underwriting the Agent Economy: The Blueprint for an AI Insurance Stack", July 2026, arXiv 2607.11999v2, published under CC BY 4.0. | screenshot
+!shot uw-cover.webp | images/ | The cover of "Underwriting the Agent Economy: The Blueprint for an AI Insurance Stack", July 2026, arXiv 2607.11999v2. | screenshot
 
 ## In short {#in-short}
 
@@ -26,7 +26,7 @@ status: published
 
 [Underwriting the Agent Economy](https://arxiv.org/abs/2607.11999v2) was published on arXiv on 13 July 2026 and revised on 15 July. Its lead author, Cristian Trout, is at the [Artificial Intelligence Underwriting Company](https://www.aiuc.com/) (AIUC), alongside co-authors from [QBE](https://www.qbe.com/), [Generali](https://www.generali.com/), [Aon](https://www.aon.com/en/), [Tysers](https://www.tysers.com/), [Moody's](https://www.moodys.com/), [RAND](https://www.rand.org/), Stanford, MIT, Oxford's [AI Governance Initiative](https://aigi.ox.ac.uk/), [GovAI](https://www.governance.ai/), [AVERI](https://www.averi.org/), [Fathom](https://fathom.org/), the [Institute for Law & AI](https://law-ai.org/), [The Spark](https://www.thesparkins.com/), [AkinovA](https://akinova.com/), [FinTLV](https://fintlv.com/), [MATS](https://www.matsprogram.org/), Anthropic and OpenAI, among others. The authors say plainly that inclusion "does not entail endorsement of all claims in the report", and that three of them, including the lead author, work for the company that maintains the AIUC-1 standard the report compares with others.
 
-!shot uw-cliff.webp | images/ | The paper on one page: the problem (silent coverage, a disconnect between underwriters and businesses, three providers carrying over 80% of deployments, agent task length doubling every four months), the proposal (affirmative cover in the billions by 2030, an eight-part stack, recurring technical tests, expected-loss pricing), the precedents (Underwriters Laboratories, the Closed Claims Project, cyber, nuclear) and the tails (a coverage tower up to a government backstop). | concept
+!shot uw-cliff.webp | images/ | The paper on one page: the problem, the proposal, the precedents and the tails. | concept
 
 **The problem.** The paper's starting point is that most AI agent risk is in what insurers call silent coverage: sitting inside existing cyber, professional and general liability policies, "unpriced, invisible, and potentially destabilizing". It points to a disconnect: nearly half of the Lloyd's underwriters surveyed believe their policyholders have "adequate" AI risk management, while only one in five businesses surveyed report a mature governance model for autonomous agents. Insurers are starting to respond with exclusions, which only widens the gap.
 
@@ -34,7 +34,7 @@ status: published
 
 **What can go wrong.** The paper's table of failure modes is a good reference in its own right: reliability failures (Air Canada's chatbot inventing a refund policy), alignment failures (an agent told to freeze changes that deleted a production database and faked about 4,000 records), security vulnerabilities (an agent gaining read-write database access to an internal AI platform in two hours), and multi-agent failures (two agents that each correctly judged a scam to be fake, then agreed with each other instead of checking, and grew overconfident about the system they oversaw).
 
-!shot uw-failures.webp | images/ | Table 1 of the paper: common failure modes of AI agents (reliability, alignment, security, multi-agent), with the paradigmatic risks and a real example of each. | screenshot
+!shot uw-failures.webp | images/ | Table 1 of the paper: common failure modes of AI agents, with the risks and a real example of each. | screenshot
 
 ## The AI insurance stack {#the-stack}
 
@@ -49,7 +49,7 @@ The core of the paper is an eight-part stack of shared infrastructure, which it 
 7. **Ongoing monitoring and loss control.** First labour-intensive evaluations, then telemetry from cloud and model providers.
 8. **Incident response and claims.** AI-literate claims handling and forensics, feeding back into everything above.
 
-!shot uw-stack.webp | images/ | Figure 1 of the paper, the AI insurance stack: incident data at the top feeding standards and accumulation risk research, which feed risk selection and pricing, then ongoing loss control and incident response and claims, which loop back to incident data. | screenshot
+!shot uw-stack.webp | images/ | Figure 1 of the paper, the AI insurance stack, with incident data looping through each stage back to itself. | screenshot
 
 Three details are worth pulling out. First, the questions underwriters should ask: "To whom is AI risk management delegated?", whether the system recommends or executes actions, how much human oversight it has, and its controls: "Deployment and change management (version control, roll-back evidence)", "Agent access-control configurations", "Pre-deployment test logs", "Near-miss reporting protocols". Second, pricing should reward strong safeguards, distinguishing defences that provide "deterministic security guarantees by architecturally separating control and data flows" from those that rely on heuristic detection. Third, the paper cites the "rule of two": an agent should have permission for at most two of three high-risk actions, processing untrusted input, accessing non-public data, and communicating externally or making material changes.
 
@@ -57,17 +57,17 @@ Three details are worth pulling out. First, the questions underwriters should as
 
 The paper compares four standards: ISO 42001, the NIST AI RMF, the Cloud Security Alliance's STAR for AI, and AIUC-1. Its table is a useful summary: AIUC-1 is the only one of the four that is performance-based, with certification requiring "meeting certain benchmarks in standardized performance evaluations, run quarterly", and the only one with a quarterly revision cadence. The authors disclose the conflict of interest and say they drew only on each standard's published text.
 
-!shot uw-standards.webp | images/ | Table 3 of the paper: ISO 42001, the NIST AI RMF, STAR for AI and AIUC-1 compared by issuing body, release, revision cadence, type, focus, whether certification is performance-based, and depth of technical prescription. | screenshot
+!shot uw-standards.webp | images/ | Table 3 of the paper: ISO 42001, the NIST AI RMF, STAR for AI and AIUC-1 compared side by side. | screenshot
 
 The strongest argument in the paper is historical. In 1894, property insurers facing the new fire hazards of electrical equipment founded Underwriters Laboratories. "The UL mark has become a de facto litmus test for insurability." Compliance "was not and is not mandated by law", but UL standards became referenced in electrical codes, and arc-fault interrupters went from a UL standard in 1996 to a code requirement in 1999. Insurers first, then standards, then codes: that is the path the paper proposes for AI agents, with one caveat it states itself, that agent standards will have to be updated far faster.
 
-!shot uw-ul.webp | images/ | Section II.3.E of the paper: Underwriters Laboratories, founded by property insurers in 1894, testing fire suppression sprinklers around 1919; the UL mark as a de facto test of insurability, later referenced in electrical codes. | screenshot
+!shot uw-ul.webp | images/ | Section II.3.E of the paper: Underwriters Laboratories, founded by property insurers in 1894, and the UL mark. | screenshot
 
 ## The tails {#the-tails}
 
 The last part looks at catastrophic risk from frontier AI, "AI CAT". Catastrophes in the low tens of billions would strain private markets; beyond that, societal-scale risks such as critical infrastructure collapse or chemical, biological, radiological or nuclear harm are "all but uninsurable by private markets". The paper sketches a tower: self-insured retention, primary insurance, a mutual for frontier model developers, reinsurance, catastrophe bonds and a government backstop. And it states the stakes: a disaster with about $100 billion in direct damage could erase several trillion dollars of US GDP if it triggered a slowdown, as the collapse of terrorism insurance did after 9/11.
 
-!shot uw-tower.webp | images/ | Figure 2 of the paper: a hypothetical coverage tower for frontier AI catastrophic risk, from self-insured retention and primary insurance through mutual insurance, reinsurance and catastrophe bonds to a government backstop. Proportions are illustrative. | screenshot
+!shot uw-tower.webp | images/ | Figure 2 of the paper: a hypothetical coverage tower for frontier AI catastrophic risk. Proportions are illustrative. | screenshot
 
 ## The market already selling it {#the-market}
 
@@ -99,7 +99,7 @@ At [RiskMandate](https://riskmandate.ai), the company I co-founded, the unit of 
 - **Change management.** The supported version and its change review are part of what a customer is retained to maintain.
 - **Who answers for the failure.** In [the policy draws the liability line](https://newsroom.sgit.ai/articles/the-policy-draws-the-liability-line.html) I argued that a behaviour policy beside every agent's prompt is what makes accountability possible at all.
 
-!shot uw-map.webp | images/ | The paper's eight components on the left; on the right, what RiskMandate and sgit already produce: the agent behaviour policy (reach, mandate, the gap), hooks and their audit logs, tests and drills, the delegation record, AIUC-1 as a graph with its conformance layer, insurability as a query, and the maintainers' sign-off on what agents run on. Solid lines exist; dashed lines are proposed. | concept
+!shot uw-map.webp | images/ | The paper's eight components, and what RiskMandate and sgit already produce for each. Dashed lines are proposed. | concept
 
 ## What we did with AIUC-1 {#aiuc-1}
 
@@ -107,7 +107,7 @@ On sgit.ai we went further with AIUC-1 than reading it. In August we published [
 
 That layer then asks the question this paper is about: given what is actually evidenced, on a given date, what would be insurable? For an invented subject, the answer was one condition met, 52 exclusions, and none of five consequences covered, each exclusion with the reason in the control's own words. Move the date forward and conditions become exclusions on their own, because the evidence behind them expires. Joined to [the EU AI Act as a graph](https://sgit.ai/demos/vaults/regulation-graph/index.html), 62 of the standard's 1,126 published crosswalks resolved to articles, and 8 of the 27 articles reached had since been amended: the crosswalk was written against text that no longer says what it said.
 
-!shot uw-insurability.webp | images/ | The AIUC-1 conformance layer on sgit.ai computing insurability for an invented subject on a given date: one condition met, 52 exclusions, none of five consequences covered, each with the reason in the control's own words. Unofficial and derivative; not approved, certified or endorsed by AIUC. | screenshot
+!shot uw-insurability.webp | images/ | The AIUC-1 conformance layer on sgit.ai computing insurability for an invented subject. Unofficial and derivative. | screenshot
 
 Both vaults are unofficial and derivative: not approved, certified, endorsed or reviewed by AIUC, and not a substitute for the standard. But they show something the paper needs: a standard and the evidence against it, as data, so that insurability can be computed rather than asserted, and recomputed when the evidence changes.
 
@@ -115,7 +115,7 @@ Both vaults are unofficial and derivative: not approved, certified, endorsed or 
 
 Reading it against our own work, the paper is also a good list of what we have not built.
 
-!shot uw-gaps.webp | images/ | What the paper has that we still miss: a loss number, incident data at scale, accumulation, contract language, a recurring test cadence, and multi-agent failures. | concept
+!shot uw-gaps.webp | images/ | What the paper has that we still miss: a loss number, incident data at scale, accumulation and more. | concept
 
 - **A loss number.** Our policies say what an agent may do and prove the boundary held. They do not yet put a price on the failure. The paper's severity × probability × usage is the missing column in the delegation record.
 - **Incident data at scale.** Our hooks log every call they see. Nothing pools such records across organisations, in a shared taxonomy, with near misses.

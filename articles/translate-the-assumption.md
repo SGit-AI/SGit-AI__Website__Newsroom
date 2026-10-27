@@ -10,11 +10,11 @@
 
 # Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/translate-the-assumption.md) · [newsroom v0.13.84](https://newsroom.sgit.ai/admin/versions.html) · communicationboardspersonasctodecksphp2shellarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/translate-the-assumption.md) · [newsroom v0.13.84](https://newsroom.sgit.ai/admin/versions.html) · communicationboardspersonasctodecksphp2shellarticle
 
 ***Abstract:** Adelina Chalmers posted the same platform problem answered by a CTO at five stages of an executive mindset, technologist, translator, commercial partner, value creator and trusted advisor, and only the last one gets invited into the exit conversation. I agree, and the table deserves to be read closely. The key line is this: "Notice what changes. It isn't the vocabulary. It's the assumption underneath." That is what real translation is: not putting engineering words into business words, which is stage two in the table, but starting from the other person's problem. It is exactly what we are trying to do on the PHP story site, where each of seven roles, from the executive to the engineer, gets its own first question, its own order and its own depth, and where we have just asked for a deck per reader. It is what I started exploring with The Cyber Boardroom: translating content to someone's role, focus, objectives, understanding, language and culture, even the power dynamics in the room, and how they want to consume it. With LLMs, we can now do this for every stakeholder, at scale. But the deck is still the voice of the person giving the information. Going to the receiver's pain points, in their language, is communicating with empathy, and very efficiently.*
 
-Adelina Chalmers' post on LinkedIn, 23 October 2026: "The best CTO answer I've heard in a board meeting gave away his own budget." The same platform problem, five ways a CTO can answer it, depending on the executive mindset stage they are at, "and sadly only one gets invited into the exit conversation."
+Adelina Chalmers' LinkedIn post of 23 October 2026 on five ways a CTO can answer the same platform problem.
 
 ## In short
 
@@ -27,7 +27,7 @@ Adelina Chalmers' post on LinkedIn, 23 October 2026: "The best CTO answer I've h
 
 ## Five answers to the same problem
 
-Adelina Chalmers' "5 stages of a executive mindset for CTOs", Cambridge Executive Mindset and Diligence Lab: for each stage, where the thinking starts, what they say to the board, what investors think, and the assumption the CTO is making. From "We need to re-platform. It will take 18 months and 6 more engineers" at stage one, to "Our exit problem is enterprise churn, not the platform, so I'd spend the £250k on customer onboarding first" at stage five.
+Adelina Chalmers' "5 stages of a executive mindset for CTOs", from the Cambridge Executive Mindset and Diligence Lab.
 
 Adelina Chalmers advises CTOs and CEOs, and the post takes one platform problem and shows five ways a CTO can answer it. The table is worth reading row by row, because every column moves.
 
@@ -47,13 +47,13 @@ Real translation is what happens in stages three to five. You start from the oth
 
 ## What it looks like for php2shell
 
-php2shell, told to a board at five stages, following Adelina Chalmers' stages: the technologist asks to patch and rebuild everything with more engineers; the translator says patching protects the business; the commercial partner names the two customer-facing sites and the cost of a weekend; the value creator has it patched and the evidence ready for due diligence; the trusted advisor says the exposure is closed and the bigger risk is a supplier running end-of-life PHP 7.4, which is a call for someone else to make. Illustrative.
+php2shell told to a board at the five stages of Adelina Chalmers' model. Illustrative.
 
 The same five stages apply to a security leader telling a board about [php2shell](https://php.oct.2026.newsroom.sgit.ai/). The figure above is our illustration, not Adelina's: the facts stay the same, and the assumption changes. At stage one, every PHP server is a problem and the answer is more engineers. At stage five, the leader has closed the company's own exposure, and points the board at the risk it actually carries: a supplier on end-of-life PHP, where the decision belongs to someone else.
 
 ## The PHP site already translates
 
-The PHP site already translates: seven roles, seven first questions. Executive: are we exposed, what do I decide; general reader: does it touch me, what do I do; security: what do we patch, block and watch; engineer: which versions, settings and commands; journalist: what holds up, who said it first; researcher: what's the evidence, what's still open; and everything. Next, a deck each, proposed on 25 October.
+The PHP site's seven roles and the first question each asks, with a deck each proposed on 25 October.
 
 This is exactly the kind of translation we want in our own communication. On the PHP story site, the line, live since 25 October, gives each of seven roles its own first question, its own order of what comes first, its own menu and its own depth. The [executive's view](https://php.oct.2026.newsroom.sgit.ai/as/executive/) starts with "Are we exposed? What do I decide?", in plain words; the engineer's with "Which versions, settings and commands?", in depth. Sixteen readers sit inside those roles, from the board member and the CFO to the data protection officer and the developer. The facts underneath are the same for everyone.
 
@@ -61,7 +61,7 @@ And we have just asked for the next step: [a deck per persona](https://php.oct.2
 
 ## What translation has to take into account
 
-What a translation has to take into account: around the message, which keeps the facts and the sender's voice, the receiver's role and objectives, focus and pain points, understanding and depth, language and culture, power dynamics, how they consume it, and what they want to get.
+What a translation has to take into account: the message, the sender's voice and the receiver's role, culture and needs.
 
 This is also what I started exploring with [The Cyber Boardroom](https://thecyberboardroom.com): translating content to a person's role, focus, objectives, understanding, language and culture, and even the dynamics of power in that particular room. What do they want to get out of it? How do they want to consume it, five minutes or thirty, a deck, a page or a call? All of that has to be taken into account to communicate well, including everything Adelina is describing about where the other person's thinking starts.
 

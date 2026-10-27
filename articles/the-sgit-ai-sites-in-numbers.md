@@ -10,11 +10,11 @@
 
 # The sgit.ai sites in numbers: 53 repositories, 45 live sites, 1,679 commits and 5,419 pages in eleven weeks, and what the shape of the estate says
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/the-sgit-ai-sites-in-numbers.md) · [newsroom v0.13.16](https://newsroom.sgit.ai/admin/versions.html) · sgitwebsitesdataestatearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/the-sgit-ai-sites-in-numbers.md) · [newsroom v0.13.16](https://newsroom.sgit.ai/admin/versions.html) · sgitwebsitesdataestatearticle
 
 ***Abstract:** It is worth taking a step back and looking at all the sgit.ai sites together. On 21 October 2026 there were 53 website repositories under SGit-AI, the first started on 11 August. 45 of them answer as live sites, one is built and not yet serving, and seven are placeholders, two of them created this morning for the AWS twin and the user site. Between them they hold 1,679 commits, 33,541 files and 5,419 pages listed in their sitemaps. The estate grew in bursts of about ten new sites a week, and the busiest week for commits was the one of 12 October, with 331. The shape is a long tail: four repositories, sgit.ai, the newsroom, graphs and PKI, hold 62% of the commits, while the median site has seven, because most sites were built in a session or two and then left to do their job. Families are appearing, hubs with instances under them, which is why the naming now needs a rule. This is the data, with the charts, and what I read from it.*
 
-Fifty-three repositories in eleven weeks. Left: new site repositories each week, with the running total underneath. Right: commits across all of them each week, peaking at 331 in the week of 12 October.
+Fifty-three repositories in eleven weeks: new site repositories each week, and commits across all of them.
 
 ## In short
 
@@ -45,7 +45,7 @@ Commits follow a different rhythm. The busiest week was the one of 12 October, w
 
 ## Where the work is
 
-Commits per repository, the fourteen busiest. sgit.ai has 495, the newsroom 262, graphs 139 and PKI 137; together they hold 62% of the 1,679 commits.
+Commits per repository, the fourteen busiest, with sgit.ai, the newsroom, graphs and PKI at the top.
 
 The shape is a long tail. Four repositories, sgit.ai, the newsroom, graphs and PKI, hold 62% of all the commits. The median site, among the 46 with content, has seven. And 22 of those 46 have their whole history inside a single day.
 
@@ -53,13 +53,13 @@ That is not a sign of neglect. It is how these sites are made: an idea gets a si
 
 ## Where the pages are
 
-Pages listed in each live site's sitemap, the fourteen largest. The newsroom lists 1,282 and its Portuguese edition 929; sgit.ai 604 and the Gen Z Developers book 496.
+Pages listed in each live site's sitemap, the fourteen largest, led by the newsroom and its Portuguese edition.
 
 Pages tell a slightly different story from commits. The newsroom lists 1,282 pages, and its Portuguese edition, pt.newsroom.sgit.ai, 929, built in 74 commits. The Gen Z Developers book site lists 496 pages from 70 commits in three days. A site that renders a book or a corpus can be large and young at the same time.
 
 ## Families, and the naming they need
 
-The families held against the convention agreed on 21 October: plural for the hub, singular for the instance. The twins and hooks families follow it; four provider and game hosts break it; the demo, hook and twin instances are reserved, with no site yet.
+The site families held against the naming convention agreed on 21 October.
 
 The newest thing in the data is families: a hub site, and instance sites under it. There are three kinds of second-level host today:
 

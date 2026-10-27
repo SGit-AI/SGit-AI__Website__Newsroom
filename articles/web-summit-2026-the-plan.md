@@ -10,11 +10,11 @@
 
 # Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.0.0](versions/web-summit-2026-the-plan.md) · [newsroom v0.13.90](https://newsroom.sgit.ai/admin/versions.html) · web-summitstrategyteamagentsoutreachbriefingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.1.0, 2 versions](versions/web-summit-2026-the-plan.md) · [newsroom v0.13.90](https://newsroom.sgit.ai/admin/versions.html) · web-summitstrategyteamagentsoutreachbriefingarticle
 
 ***Abstract:** Web Summit runs in Lisbon from 9 to 12 November 2026, and this time we have help. There are five of us with tickets, two founders, a project manager, a Gen AI consultant and technical expert, and a Gen AI founder and explorer coder, so we can work the summit as a team. This is the briefing to align us. The main objectives are usage and the sale, in that order: the sale happens after people use what we build. Usage depends on very easy onboarding, five minutes to the value, as the RiskMandate customer site does. Around that, three parallel tracks: intelligence on who to talk to, from public material only; outreach, with messaging made for one company or one post; and content, articles and interviews that bring traffic, because only traffic and use show us where we add value and what hurts. The method is the one I always use, on steroids: create an asset, put it on a website, send a link. We will run all of it from a Web Summit newsroom of our own, with vaults to collaborate and a data feed, built like the PHP story site but simpler. And the team will learn the two agentic workflows we run today, the email workflow and the website workflow on a schedule, starting with the website one.*
 
-Web Summit 2026, usage first, then the sale: intelligence on who to talk to, from public material only; an asset made for one company or one post; a link to it, published on the Web Summit newsroom and sent by email or LinkedIn; usage, five minutes to value in their browser; and what they tell us, pain points from use, not from asking; the next asset is better. The sale comes after the usage, as the RiskMandate customer programme does.
+Web Summit 2026, usage first, then the sale: from intelligence on who to talk to, to what they tell us.
 
 ## In short
 
@@ -30,7 +30,7 @@ Web Summit 2026, usage first, then the sale: intelligence on who to talk to, fro
 
 Web Summit runs from [9 to 12 November 2026](https://websummit.com/) in Lisbon. The good news is that, this time, we have help. Three people are joining us, so with the two founders there are five of us with tickets, all part of the team, and we can work the summit as a team rather than as individuals walking the floor.
 
-Five people, five tickets, who leads what: the two founders, the story, the products and the sale, approving every message that goes out; the project manager, the board and the rhythm, and the daily follow-up; the Gen AI consultant and technical expert, the demos, the onboarding and the website workflow; the Gen AI founder and explorer coder, the assets built for one company or one post.
+Five people, five tickets: who leads what at Web Summit 2026.
 
 - **The two founders** own the story, the products and the sale: deciding who matters most, taking the meetings, recording interviews, and approving every message that goes out in our name.
 - **The project manager** owns the board and the rhythm: the task list on the summit's newsroom, who does what by when, and the daily follow-up with every contact.
@@ -80,7 +80,7 @@ I will work with the developers on the Git structure, how we operate, and how it
 
 ## The two agentic workflows we run today
 
-The two agentic workflows we run today: the email workflow, agent@riskmandate.ai, where the agent reads, researches, drafts for one person and keeps the records, and the editor reads and sends every draft, the drafts folder a work queue labelled send, review or decide, 178 emails by 18 October; and the website workflow, agents with a role, a policy and a schedule card that wake on their own and release through a gate, 23 agents and 13 schedule cards on the PHP story site.
+The two agentic workflows we run today: the email workflow and the website workflow.
 
 Everyone on the team will use both, so here is how each works.
 

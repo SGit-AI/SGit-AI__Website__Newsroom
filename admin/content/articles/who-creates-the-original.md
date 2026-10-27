@@ -10,7 +10,7 @@ tags: provenance, sources, original-content, interviews, agents, php2shell, arti
 status: published
 ---
 
-!shot og-who.webp | images/ | Who creates the original, in the PHP story's own data: of the 418 sources captured, 277 are news pages; of the 146 originations behind the 107 attributed claims, numbers and exploitation reports, organisations account for 79, agencies 27, named people 22 and news outlets 5. Outlets relay more than they originate: claims were found relayed 29 times, 11 by the BBC and 6 by The Hacker News. | chart
+!shot og-who.webp | images/ | Who creates the original, in the PHP story's data: 418 sources captured, 107 attributed claims, and who originated them. | chart
 
 ## In short {#in-short}
 
@@ -44,7 +44,7 @@ It is also more than a list. This part of the site needs its own visualisations 
 
 ## Where can we be original? {#original}
 
-!shot og-map.webp | images/ | Where we can create original content: counted by us (exists), figures the site counted from captured files and clones; the record (exists), a source watch of 913 pages that catches silent rewording, and 12 correction requests drafted; analysis (exists, to grow), Pulse, the risk graph and history; interviews (started), the editor's own, with a live one pending, and, proposed, interviews with people affected; op-eds (proposed), from people involved, under their own name. | concept
+!shot og-map.webp | images/ | Where we can create original content: counted, recorded, analysed, interviewed or written by others, with each status. | concept
 
 The second question turns the first on ourselves. Where are we creating content that nobody else has?
 

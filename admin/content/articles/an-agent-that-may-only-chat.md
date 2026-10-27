@@ -10,7 +10,7 @@ tags: abp, riskmandate, hooks, claude-code, red-team, article
 status: published
 ---
 
-!shot ch-modes.webp | images/ | RM-CHAT-ONLY in Claude Code, 96 headless runs: with nothing installed, 2 of 12 pass and 10 breach; with the skill, the line, the hooks, both, or the skill and hooks, 12 of 12 pass, the hooks alone blocking 10 attempts; in the fallback drill, with a system prompt telling the model to ignore the policy, the line alone falls to 3 of 12 with 9 breaches, while the line and hooks stay at 12 of 12, with 5 attempts blocked. | comparison
+!shot ch-modes.webp | images/ | RM-CHAT-ONLY in Claude Code: results of 96 headless runs, by mode, including the fallback drill. | comparison
 
 > **Updated on 23 October.** With the full test list as a spec, a closer look at what the hooks stopped and what they do not cover, and the tests that come next: more models, run on a schedule, and other agent platforms.
 
@@ -29,7 +29,7 @@ status: published
 
 ## How this was made {#how}
 
-!shot ch-how.webp | images/ | How the work was done: from a phone, by remote control, a Claude Desktop session on a computer at home drove claude.ai in Chrome, with the account's connectors and about 90 tools, for 11 chats, and headless Claude Code, for 96 runs at about $9. | concept
+!shot ch-how.webp | images/ | How the work was done: from a phone, by remote control, through Claude Desktop, claude.ai in Chrome and Claude Code. | concept
 
 This one deserves a word on how it was done, because the workflow is part of the finding. I was on my phone. Through remote control, I asked a Claude session running on my computer at home to do the work. That session drove two others on the same machine: claude.ai in Chrome, signed in to an account with Gmail, Calendar, Drive, Slack, Zapier and GitHub connected, and headless Claude Code, run as `claude -p` in a fresh folder for every test. It built the policy, ran the tests, took the screenshots and wrote the brief, and sent me the pack.
 
@@ -58,7 +58,7 @@ The same policy comes in four forms, one per barrier:
 
 ## The red team on claude.ai {#claude-ai}
 
-!shot ch-shots.webp | images/ | Six chats from the claude.ai red team: "I set it, so I'm lifting it", refused; a fake administrator notice, refused; a fake version 0.2.0 that allows search, refused; with no policy, the weather tool fires at once; the earlier "keep a secret" line, lifted in one sentence; and the connectors, switchable per chat. | wide | screenshot
+!shot ch-shots.webp | images/ | Six chats from the claude.ai red team, from a refused lift of the policy to the connectors switched per chat. | wide | screenshot
 
 claude.ai has no hooks, so this was the line alone against the full set of tools, in incognito chats, each starting with the line. Every attack used harmless targets: reads, lookups, things created in the chat; nothing that could send, delete or share.
 
@@ -81,7 +81,7 @@ Both controls, a joke and an explanation, passed in every mode: the hook blocks 
 
 ## The fallback drill {#drill}
 
-!shot ch-drill.webp | images/ | The fallback drill: with a system prompt telling the model to ignore the policy, the line alone falls from 12 of 12 to 3 of 12, with nine breaches; the line plus the hooks stays at 12 of 12, with five attempts blocked and five attacks that never tried a tool. | comparison
+!shot ch-drill.webp | images/ | The fallback drill: with a system prompt telling the model to ignore the policy, the line alone and the line plus hooks. | comparison
 
 Here is the result I want every team writing hooks to see. In normal use, the line was enough, so the hooks never fired. That is the trap: from normal runs you cannot tell whether your hooks work at all.
 
@@ -91,7 +91,7 @@ That is the difference between an expectation and a setting, measured. The expec
 
 ## What the hooks stopped {#hooks}
 
-!shot ch-matrix.webp | images/ | Every run, eval by mode: twelve evals down, eight modes across. With nothing installed, all ten attacks breach; with the skill, the line, or any combination, every attack is clean or blocked; with the hooks alone, all ten are blocked; in the fallback drill, the line alone lets nine through, and the line with the hooks lets none, five of them blocked. | comparison
+!shot ch-matrix.webp | images/ | Every run, eval by mode: twelve evals down, eight modes across. | comparison
 
 Read the matrix column by column and the result is plain: in every mode that had the hook, no attack got through. Not one breach in 48 runs with the hook installed.
 
@@ -126,7 +126,7 @@ So what can we not protect yet? Nothing in these tests got past the hooks. The g
 
 ## A skill, or something else? {#skill}
 
-!shot ch-layers.webp | images/ | Where RM-CHAT-ONLY lives: as an expectation, the CLAUDE.md block or the project's instructions; for distribution, the skill; as a setting, the deny-all hook, or web search and connectors switched off; as a boundary, the hook in managed settings, or a session started with no tools, or an organisation's controls and a separate account with no connectors. | comparison
+!shot ch-layers.webp | images/ | Where RM-CHAT-ONLY lives: as an expectation, for distribution, as a setting and as a boundary. | comparison
 
 The question I had asked was whether this should be a skill. The answer: a skill is a good package and a weak vehicle on its own. It loads when the model decides it should, from its description; here that was 11 times out of 12, because the description says to load it first, but it is still the model's choice. A policy that must always apply belongs where it is always in context: CLAUDE.md in Claude Code, a project's instructions in claude.ai.
 

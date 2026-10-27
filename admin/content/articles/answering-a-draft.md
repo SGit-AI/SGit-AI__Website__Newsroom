@@ -10,7 +10,7 @@ tags: agents, email, inbox, riskmandate, decisions, article
 status: published
 ---
 
-!shot ib-queue.webp | images/ | The drafts folder as a work queue: a decision draft labelled next/3 decide, two replies labelled next/2 review, and one labelled next/1 send. Example, names invented. | screenshot
+!shot ib-queue.webp | images/ | The drafts folder as a work queue: one decision draft, two replies to review and one to send. Example, names invented. | screenshot
 
 > **What came next.** [A newsroom for one](/articles/a-newsroom-for-one.html) follows one kind of these emails, the reading lists, to the page the person opens, and what changed on it.
 
@@ -32,7 +32,7 @@ The agent behind agent@riskmandate.ai reads the mail, does the research, writes 
 
 ## The numbers {#numbers}
 
-!shot ib-numbers.webp | images/ | Left: emails sent each week from agent@riskmandate.ai, 4, 64, 48 and 53, from a sample of 169 of the 178. Right: the reasons the draft guard gave when it blocked drafts, led by 28 for a claim with no source. | comparison
+!shot ib-numbers.webp | images/ | Emails sent each week from agent@riskmandate.ai, and the reasons the draft guard gave when it blocked drafts. | comparison
 
 From the debrief, as of 18 October 2026:
 
@@ -56,7 +56,7 @@ None of it is a newsletter. Each email is written for one person. And most of th
 
 ## The loop {#loop}
 
-!shot ib-loop.webp | images/ | The loop in six steps: mail comes in; a draft with sources; filed by label; I work the queues; the agent acts on my answers; everything logged. | concept
+!shot ib-loop.webp | images/ | The loop in six steps: mail comes in, a draft with sources, filed by label, the queues, the agent acts, all logged. | concept
 
 What we ended up with is simple, and it took two weeks of changes to get there:
 
@@ -69,7 +69,7 @@ What we ended up with is simple, and it took two weeks of changes to get there:
 
 ## The decision draft {#decision}
 
-!shot ib-decision.webp | images/ | A decision draft, answered: the instruction at the top, where we are, why it matters, two questions with options, and the answers written into the answer boxes. Example, names invented. | narrow | screenshot
+!shot ib-decision.webp | images/ | A decision draft, answered: the instruction, two questions with options and the answers in the boxes. Names invented. | narrow | screenshot
 
 The most useful thing we built is the decision draft. It is an email to the agent's own address that is never sent, and it has a fixed shape: where we are, the facts, short, with dates; why it matters, what is waiting on this; the questions, each with two or three concrete options and an empty answer box; and, at the top, exactly what to do when done: remove the label.
 

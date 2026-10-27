@@ -10,7 +10,7 @@ tags: agents, agent-behaviour-policy, agent-decision-policy, agent-workflow-poli
 status: published
 ---
 
-!shot nt-mapping.webp | images/ | Ashish Rajan's four questions down the side, SECURE, OBSERVE, RESPOND and VERIFY, and this newsroom's three policies across the top, behaviour, decision and workflow. Each cell holds the controls in the Northstar twin that answer that question in that policy. VERIFY has nothing in the behaviour column: a limit says what may be done, never what is right. | concept
+!shot nt-mapping.webp | images/ | Ashish Rajan's four questions against this newsroom's three policies: behaviour, decision and workflow. | concept
 
 !trail northstar
 
@@ -75,7 +75,7 @@ Two cells are worth reading on their own. VERIFY has nothing in the behaviour co
 
 To test this, we built Northstar as a twin: [the Northstar refund twin](https://newsroom.sgit.ai/demos/vaults/northstar-twin/index.html), an sgit vault you can open and play. It has thirteen synthetic refund requests, each with something an agent can get wrong: his misread discount, a refund already paid, an instruction hidden in a customer's message, the right name on the wrong order, shipping refunded when it should not be, a refund split to fit under the limit, a discount applied twice, a retry loop, and three damaged items the customer wants to keep, which no rule covers. Each runs through four designs of the controls, and every step can be played, replayed and compared. Nothing is called live: the agent's mistakes are scripted per case, so every run replays exactly. [The tour](/articles/inside-the-northstar-twin.html) walks through it.
 
-!shot nt-compare.webp | images/ | The thirteen cases under the four designs. Design A, as in the article, overpays on nine cases. B refuses several of them and leaves customers owed. C gets every amount right, with a person on most cases. D gets every case right, including the split refund, which only a decision policy catches. | medium | screenshot
+!shot nt-compare.webp | images/ | The thirteen cases under the four designs, A to D, and how each design pays them. | medium | screenshot
 
 | Design | Overpaid | Short or still owed | Right | People's time |
 |---|---|---|---|---|

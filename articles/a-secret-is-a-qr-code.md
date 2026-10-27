@@ -10,11 +10,11 @@
 
 # A secret is a QR code and a link to a public key: the workflow the QR experiment opens, who else already does this, and a format to share
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/a-secret-is-a-qr-code.md) · [newsroom v0.13.26](https://newsroom.sgit.ai/admin/versions.html) · qr-codespkisecretsagentsencryptionarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/a-secret-is-a-qr-code.md) · [newsroom v0.13.26](https://newsroom.sgit.ai/admin/versions.html) · qr-codespkisecretsagentsencryptionarticle
 
 ***Abstract:** The QR experiment showed that two AI sessions can pass keys and an encrypted message through QR codes and a screenshot. This is what I want to do with it. If I want to give someone a secret, all I have to do now is send them a QR code and a link to my public key; if they want to give me one, they encrypt it to my key and send me back a QR code. The first message carries their public key too, so after one exchange we can both write to each other, and once we have checked each other's fingerprints, we know who we are talking to. The same works for agents: an agent makes its own key pair, publishes the public half, and swaps QR codes with me or with another agent. None of it needs a server. The pieces are not new, and that is a good sign: QR codes already carry signed health certificates, verify keys in messaging apps, sign people in with a passkey on another device, and move signed transactions in and out of offline wallets. What is new is putting them together for secrets and agents, on top of public keys we publish, in a format we can share across our tools. The experiment's QRE1 format is a good start for that, with three things to add.*
 
-The workflow: publish my public key as a QR code and a link; their browser or agent encrypts the secret to it and adds its own public key; the ciphertext travels as a QR code by any channel; I decrypt it and check their fingerprint once; from then on it is two-way. Agents do the same.
+The workflow: publish a public key as a QR code, the sender encrypts to it, the ciphertext travels as a QR code.
 
 ## In short
 
@@ -50,7 +50,7 @@ We could do all of this with blocks of text, and we have. In the memo: "even whe
 
 ## Who else already does this
 
-Who already moves keys and secrets in QR codes: the EU Digital COVID Certificate, key verification in Signal, WhatsApp and Matrix, device linking in Signal and WhatsApp, Threema, passkeys on another device, offline wallets, Keybase and OpenKeychain, and provisioning codes for authenticators, Wi-Fi, WireGuard and eSIMs.
+Who already moves keys and secrets in QR codes, from the EU Digital COVID Certificate to Signal, WireGuard and eSIMs.
 
 I asked for research on who else is doing this, and the answer is reassuring: every piece is already in use, at scale, which is good evidence that it works. From their own specifications and documentation:
 
@@ -67,7 +67,7 @@ What I have not found is the combination: published public keys, secrets encrypt
 
 ## A format to share: QRE1
 
-Anatomy of a QRE1 frame: the version, the recipient's key id, the sender's one-off X25519 key, a nonce, the ChaCha20-Poly1305 ciphertext, and optionally the sender's Ed25519 key and signature, in one line of text.
+Anatomy of a QRE1 frame: version, key id, one-off X25519 key, nonce, ChaCha20-Poly1305 ciphertext and signature.
 
 In the experiment Session B wrote a small format for an encrypted message in a QR code, QRE1. It is one line of text, with fields separated by a vertical bar: a version, an 8-byte id of the recipient's key, a one-off X25519 key made for this message, a nonce, the ciphertext, and optionally the sender's Ed25519 key and a signature over the rest. The shared key comes from X25519 and HKDF, and the cipher is ChaCha20-Poly1305, the same pair that TLS 1.3 and WireGuard use.
 

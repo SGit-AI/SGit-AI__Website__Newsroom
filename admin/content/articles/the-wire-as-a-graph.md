@@ -10,7 +10,7 @@ tags: wire, newsroom, fractal-semantic-graphs, ontology, ids, evidence, provenan
 status: published
 ---
 
-!shot wg-reader.webp | images/ | Start from what the reader sees. One story from the Industry Wire, shortened, as it could read: every name in its narrative is a link to something with an ID and a type, and every sentence is a claim with its evidence. The NCSC is named in this story's text but not in its tags, and is tagged in another story; with an ID, the two would join. Below, the three other views the same data gives: the day, the story of stories, and the name. | architecture
+!shot wg-reader.webp | images/ | One story from the Industry Wire, shortened, with every name a link and every sentence a claim with its evidence. | architecture
 
 ## In short {#in-short}
 
@@ -47,7 +47,7 @@ None of this is a mistake by the desks; it is what tags are. It is why the next 
 
 ## The primitives {#primitives}
 
-!shot wg-model.webp | images/ | The primitives, and where each lives. A run collects; captures freeze what was read; claims are typed and point at evidence; a story is a short narrative over claims and names; stories group into stories; a name earns its own folder when it has gravity. Every object has a long-lived random ID, and an index of every ID, alias and slug. | architecture
+!shot wg-model.webp | images/ | The primitives and where each lives: runs, captures, claims, stories and names, each with a long-lived random ID. | architecture
 
 Working back from the reader, these are the objects the data needs.
 

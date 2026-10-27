@@ -10,11 +10,11 @@
 
 # The jobs that never scaled: on-demand expertise, the work before and after the meeting, and why a historian, a librarian or a consultant can now work for every project that needs one
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/jobs-that-never-scaled.md) · [newsroom v0.13.18](https://newsroom.sgit.ai/admin/versions.html) · gen-z-bookworkagentsexpertiseconsultingstartupsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/jobs-that-never-scaled.md) · [newsroom v0.13.18](https://newsroom.sgit.ai/admin/versions.html) · gen-z-bookworkagentsexpertiseconsultingstartupsarticle
 
 ***Abstract:** In the book I say that the opportunity is not only in new jobs, but in jobs we have done for a very long time that never really scaled, and now can. The editor asked for more detail, and fairly: without examples it is a claim without a case. So here it is. What never scaled is on-demand expertise: getting the value of someone with skills the team does not have, for the few days it is needed. An engagement like that has three phases. Before, the expert has to gather context, and the questions they ask are their experience. Then the meeting, short, where the value is. After, the write-up, for every audience. The first and third took weeks, most experts dislike them, and they are not what the expert is hired for, so only big companies could pay for it, and only when the company, the talent and the travel all lined up. The clinic has long worked differently: others take your history, so the specialist decides fast. Agents can now be that support for any expert, anywhere, even twelve hours a week. My own agent team has a historian, a librarian, a cartographer, an accountant and a sherpa: roles I could never have had. That is the opportunity, for the people who have spent twenty years in one of those jobs, and for the startups that never scaled before.*
 
-Before, the meeting, after. Then: a week or more gathering, a day or two meeting, three days or more writing up, about three weeks for one engagement. Now: agents gather and write up, and the expert's time goes on the meeting and the decisions.
+Before, the meeting, after: a week or more gathering, a day or two meeting, three days writing up, and now with agents.
 
 ## In short
 
@@ -66,7 +66,7 @@ After the meeting, agents can turn the decisions into the actions, the roadmap a
 
 ## The clinic already works this way
 
-The clinic model. First, others collect your history; then the specialist reads the key facts and decides; last, a team carries out the plan. Agents can be that first and last group for any expert.
+The clinic model: others collect your history, the specialist decides, a team carries out the plan.
 
 This is not new as a shape. Think of what happens when you go to a clinic or a hospital. The first people you meet are the ones collecting information from you: the forms, the reception, the nurses. Eventually that is presented to the doctor or the specialist, who gets the key pieces of information and can make a decision very fast. And then a team carries out what was decided.
 
@@ -74,7 +74,7 @@ The specialist is not effective because they work less. They are effective becau
 
 ## The intersection that made expertise rare
 
-The intersection that made outside expertise rare: a company with the problem, someone who had hired the right talent, someone who could travel there, and a budget big enough. Now the expert can be anywhere, and the context and the delivery travel to and from them.
+The intersection that made outside expertise rare, and how it changes when the expert can be anywhere.
 
 Most consulting in the past happened at a strange intersection. You needed a company, in a location, with a problem; somebody who had hired the talent that fitted that problem; someone who could physically go to the office and meet them; and the money to pay for all of it. That is very inefficient and very expensive, so it was only used for specific things, and mostly by big companies.
 
@@ -82,7 +82,7 @@ And the talent is not, most of the time, going to live close to the client. It i
 
 ## Jobs that never scaled, and now can
 
-Twelve jobs that never scaled: historian, librarian, cartographer, architect, on-demand consultant, lawyer reviewing a contract, accountant, doctor and specialist, sherpa, security lead, project manager, translator.
+Twelve jobs that never scaled, from historian and librarian to security lead, project manager and translator.
 
 You can go around all the houses and find professions where you could never get the value of the person without them having a large support network around them:
 
@@ -115,7 +115,7 @@ Their culture and their experience shaped what they focus on, and so did their l
 
 ## Twelve good hours
 
-Twelve good hours, illustrative. Without support, a part-time expert's week goes mostly on gathering and writing up. With agents carrying those, nearly all of it goes on judgement and meetings.
+Twelve good hours, illustrative: a part-time expert's week without support and with agents.
 
 These are roles you could never hire part-time and get real value from. Think of a parent working from home: a remarkable resource, who often needs the mental stimulation, but may only want to work twelve hours a week for this period of their life. Nothing wrong with that. You just need to make sure those twelve hours are very productive, so they get the best of both worlds.
 

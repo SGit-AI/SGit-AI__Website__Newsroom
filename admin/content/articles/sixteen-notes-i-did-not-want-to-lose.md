@@ -10,7 +10,7 @@ tags: vaults, append-lanes, qr-codes, passkeys, identity, usability, gmail, agen
 status: published
 ---
 
-!shot sn-lane.webp | images/ | Send to my vault, from any browser. The reader's vault offers a link three ways, a URL, text and a QR code, carrying only where to write and the public key to encrypt with. Any browser, with no passkey and no sign-in, encrypts what it holds and appends it to the lane; it can write and never read. The next time the vault is opened with the passkey, the pane drains the lane into the reader's records. | architecture
+!shot sn-lane.webp | images/ | Send to my vault, from any browser: a link offered three ways that lets a browser write to a lane and never read. | architecture
 
 ## In short {#in-short}
 
@@ -47,7 +47,7 @@ And this is a good example of the non-linear path I keep writing about, in [Not 
 
 ## The brief {#brief}
 
-!shot sn-brief.webp | images/ | The brief in six steps, with what already exists beside each: the append lanes, the browser-side encryption the meter already uses, the drain the reply lane needs anyway, and the tests. Only the reader's key pair and the pane's link are new. | playbook
+!shot sn-brief.webp | images/ | The brief in six steps, with what already exists beside each, and the little that is new. | playbook
 
 *For the session that builds the reader's vault pane on newsroom.sgit.ai. Written by @newsroom.writer for Dinis Cruz, 13 October 2026, on top of the vault pane at v0.12.22.*
 
@@ -78,7 +78,7 @@ None of these are limits of Gmail itself. Google's API lets a program ["upload f
 
 ## Two config files, a new product line {#wire}
 
-!shot sn-wires.webp | images/ | One pipeline, three wires. A wire is a vault plus a config: the Industry Wire came first, and the OWASP Wire and the AWS Wire were added on 13 October with two 17-line configs, the same builder and the same reader, each with its own audience to find. | architecture
+!shot sn-wires.webp | images/ | One pipeline, three wires: the Industry Wire, the OWASP Wire and the AWS Wire, each a vault plus a config. | architecture
 
 The day's other story is the opposite of all that friction. The wire started simple: one agent writing industry news into an encrypted vault, [and this site drawing it](/articles/two-agents-one-vault.html) with only the read key. Today the agent that runs it added two more: an [OWASP Wire](https://newsroom.sgit.ai/wire/owasp/), everything happening at and about OWASP, joined to a graph of its projects, and an [AWS Wire](https://newsroom.sgit.ai/wire/aws/), everything AWS announced, filtered by a declared stack. On this site that was barely a feature: two configuration files of seventeen lines each, and one builder that now serves every wire. In the release's own words, "a wire is a vault plus a config".
 

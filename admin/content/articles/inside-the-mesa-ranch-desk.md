@@ -10,7 +10,7 @@ tags: journalism, intelligence, vaults, sgit, observation, fractal-semantic-grap
 status: published
 ---
 
-!shot jt-cover.webp | images/ | The vault's cover page: the menu on the left groups the seventeen pages as the deck does, the synthetic campus is drawn in pen and ink with orange markers, and the panel on the right waits for anything you click. | comparison
+!shot jt-cover.webp | images/ | The vault's cover page: a menu of seventeen pages, a synthetic campus drawn in pen and ink, and a panel on the right. | comparison
 
 !trail mesa-ranch
 
@@ -36,7 +36,7 @@ Every page has the same frame. On the left, the menu, in five groups that follow
 
 **The advantage** is Marconi's second slide made countable. *What you watch*: 13 registries and sources, from the state's environmental regulator to the county clerk. *What you recognize*: 78 event types, each with a signal you can observe. *What you connect*: seven observations that were compared with an earlier one, which is where the stories are.
 
-!shot jt-delta.webp | images/ | Journalism is delta science, after: the same landscape with a permitted power station, three data halls and four documents, Permissions, Resources, Ownership and Commitments, each opening its record in the panel. | comparison
+!shot jt-delta.webp | images/ | Journalism is delta science, after: the landscape with a permitted power station, three data halls and four documents. | comparison
 
 **Delta science** is a before and after of the same landscape. Before, November 2025: ranch land, a town, a reservoir, a power line. After, October 2026: a permitted power station, three data halls, and four documents that appear on the landscape, Permissions, Resources, Ownership and Commitments. Click one and its record opens on the right: the air permit, the water district's minutes, the deed, the development agreement. It is the shortest way to see what *delta* means: not the landscape, but what changed in it, and the record that says so.
 
@@ -44,27 +44,27 @@ Every page has the same frame. On the left, the menu, in five groups that follow
 
 **Who wants what** names the four actors of the deck's system map and what each wants: the power provider, reliable supply; the developer, capacity and returns; the local government, development and public obligations; the residents, livelihoods and quality of life. Under each is who that is in Mesa Ranch: the generation company, the developer and later its buyer, the commissioners court and the school district, the town.
 
-!shot jt-atlas.webp | images/ | An atlas of events: twelve families around the buildout, each with its featured event and how many of its types have been seen; Power and utilities is open in the panel, with every event type's definition and observable signal. | comparison
+!shot jt-atlas.webp | images/ | An atlas of events: twelve families around the buildout, with Power and utilities open in the panel. | comparison
 
 **An atlas of events** is the heart of the method. Twelve families sit around a drawing of the buildout, as on the slide, each with its featured event and two counts: how many event types it has, and how many have been seen. Click a family and all its event types open on the right, each with a definition and an observable signal: *Power target stated or reiterated* is "The developer states its power figure, again or for the first time", and its signal is "A megawatt or gigawatt figure in a statement, compared with earlier ones." Click an event type and you see the observations that matched it. The deck shows 12 of 78; the vault has all 78, and most have not been seen yet, which is the point: the atlas is what the desk is ready to recognize.
 
-!shot jt-ontology.webp | images/ | A domain ontology: campus, building, construction work, source record, company and project, with the six relationships between them; click an entity to see what it relates to and the observations that changed it. | architecture
+!shot jt-ontology.webp | images/ | A domain ontology: campus, building, construction work, source record, company and project, with six relationships. | architecture
 
 **A domain ontology** draws the six entities and six relationships of the deck's slide: a campus contains buildings, construction work modifies a building, a source record documents a campus, a company owns a building and participates in a project, a project includes construction work. Click an entity and the panel lists its relationships and every observation that changed it. The slide's closing line is the rule the whole vault follows: an event changes a state or relationship in this model.
 
 ## The record {#record}
 
-!shot jt-observations.webp | images/ | Every observation adds to what the newsroom knows: four headline folders, from the air permit in January to the power target in September, and the full history below; the selected observation, its comparison and its records are in the panel. | comparison
+!shot jt-observations.webp | images/ | The observations view: four headline folders, from January to September, with the full history below. | comparison
 
 **Every observation** has the deck's four folders, January to September 2026, on a red timeline, and below them all seventeen observations, each with its time, subject, change, event type and evidence. A tag says what kind of change it is: new, changed, confirmed, a claim, or an open question. Click a row and the panel shows the observation, the earlier one it was compared with, the event type's definition and signal, and the records, each stamped synthetic.
 
-!shot jt-workflow.webp | images/ | The AI workflow, stepped through one cycle: observe, compare, check, report and update, with a small graph that grows at each step, from the investor presentation to the alert and the updated history. | architecture
+!shot jt-workflow.webp | images/ | The AI workflow stepped through one cycle: observe, compare, check, report and update, with a small graph that grows. | architecture
 
 **The AI workflow** steps through one cycle from the vault, with a small graph that grows at each step. *Observe*: Northline's investor presentation, R14, arrives and matches *Planned milestone revised*. *Compare*: in April the first phase was due in the second half of 2027; now it is the first half of 2028, while the power station still says 2027. *Check*: a journalist confirms both describe the same phase, and notes the owner changed in August. *Report*: an alert goes to the desk. *Update*: O15 is written to the history, so the next statement is compared with 2028.
 
 **Journalists direct** puts the deck's three verbs over three queues: what to monitor, what to investigate, what to publish. The investigate queue is every observation that changed something or left a question open.
 
-!shot jt-community.webp | images/ | The community impact tracker: jobs, water, power, land and public commitments, each item a claim, a change or an open question with its record; beside it, the draft article and the two alerts. | comparison
+!shot jt-community.webp | images/ | The community impact tracker: jobs, water, power, land and public commitments, beside the draft article and two alerts. | comparison
 
 **The community tracker** answers the deck's question, what will this development change for the community, in five areas. Under *Jobs*: 140 qualifying jobs in the school-district application, 120 in the state tax registration, and an open question about how many are local. Under *Water*: the company's claim of non-potable cooling, and the district's open question about annual demand. Beside it are the outputs: a draft article on the water question, and two alerts, the schedule slip and the dropped job commitment.
 
@@ -72,23 +72,23 @@ Every page has the same frame. On the left, the menu, in five groups that follow
 
 The five graph pages show the same knowledge in five shapes. Hover any node to light its neighbours; click it for its details on the right.
 
-!shot jt-fractal.webp | images/ | The fractal semantic graph at level 1: the campus opens into the twelve event families; the number on each node is how many more it opens into, and the breadcrumb leads back to the question. | architecture
+!shot jt-fractal.webp | images/ | The fractal semantic graph at level 1: the campus opens into twelve event families, with a breadcrumb back. | architecture
 
 **The fractal semantic graph** starts at the question. Click it open and it becomes the four actors and the campus; open the campus and it becomes the twelve families; open a family and it becomes its event types; an event type becomes the observations that matched it, and an observation its records. Each node shows how many more it opens into, a breadcrumb leads back up, and comparisons between observations appear as dashed red links inside a view. It is the same shape at every level, which is what makes a graph [fractal](/articles/introducing-fractal-semantic-graphs.html).
 
-!shot jt-rings.webp | images/ | Every level at once: the question at the centre, then the twelve families, the 78 event types, the observations and the records in rings, with evidence in orange. | architecture
+!shot jt-rings.webp | images/ | Every level at once: the question at the centre, then families, event types, observations and records in rings. | architecture
 
 **Every level at once** draws the same tree in rings: the question at the centre, then the families, the 78 event types, the observations and the records. Most event types have no observation yet, and the rings show that at a glance: a few branches carry all the news.
 
-!shot jt-knowledge.webp | images/ | The knowledge graph, in time: the campus, its buildings, the projects, the companies, the county, the water district and the residents, played one observation at a time; at the acquisition, the new relationship is orange. | architecture
+!shot jt-knowledge.webp | images/ | The knowledge graph played one observation at a time, with the new relationship at the acquisition in orange. | architecture
 
 **The knowledge graph, in time** is the ontology instantiated: the campus and its three buildings, the generation station and phase 1, four companies, the county, the water district and the residents. Every relationship carries the observation that created it and, if one did, the one that ended it. Press play and it builds itself one observation at a time, the new relationship in orange: the power company and its station, the county's agreement, the buildings in July and August, the acquisition, and then the ownership edge moving from the developer to the buyer's new company, the old one dashed. The slider stops on any date and the panel shows that day's observation.
 
-!shot jt-evidence.webp | images/ | Records to observations: sixteen synthetic records on the left, seventeen observations on the right, and the evidence between them; the solid line is each observation's main record, the dashed ones the other records it cites. | comparison
+!shot jt-evidence.webp | images/ | Sixteen synthetic records on the left, seventeen observations on the right, and the evidence lines between them. | comparison
 
 **Records to observations** puts the sixteen records on the left and the seventeen observations on the right, and draws the evidence: a solid line to each observation's main record, dashed lines to the others it cites. Some records carry several observations; the developer's April statement alone supports three.
 
-!shot jt-chain.webp | images/ | The delta chain: observations on a time axis, by the entity they change, with an arc from each to the earlier observation it was compared with, and the comparisons listed below. | comparison
+!shot jt-chain.webp | images/ | The delta chain: observations on a time axis by entity, with an arc from each to the earlier one it was compared with. | comparison
 
 **The delta chain** lays the observations on a time axis, in lanes by what they change, coloured by kind, with an arc from each to the earlier observation it was compared with. Below it, the seven comparisons are listed as earlier and later. It is the page that shows where the stories came from: every arc is a change that only a record of the earlier state could reveal.
 

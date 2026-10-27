@@ -10,11 +10,11 @@
 
 # The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.1.0, 2 versions](versions/the-librarians-daily-brief.md) · [newsroom v0.12.111](https://newsroom.sgit.ai/admin/versions.html) · agentslibrariandaily-briefgithubmemorynewsroombriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-18 · [article v1.2.0, 3 versions](versions/the-librarians-daily-brief.md) · [newsroom v0.12.111](https://newsroom.sgit.ai/admin/versions.html) · agentslibrariandaily-briefgithubmemorynewsroombriefarticle
 
 ***Abstract:** I am in the most productive mode I have been in for years, and I would like to keep it, and even speed it up. But I work on many things at once, I follow tangents, and because I try to work where my leverage is highest, it is easy to miss a thread that has become worth picking up again. Today I could not even remember which cloud session had built something. So the idea is a daily brief, written by an agent before I start: everything that happened yesterday across every repository and organisation, the pull requests, including other people's, the releases, what each scheduled run and cloud session did and cost, the reviews, the briefs that moved; then the threads I left that are worth returning to, what is coming up, and at most three suggestions for where my leverage is today. The agent is the Librarian, my favourite role: the one that catalogues everything and keeps it in sync. Most of the sources already exist on this site: one file per release, a ledger of every scheduled run with its cost, a map of sixty-eight briefs, a status file for every review. It borrows its loop from rUv's Ruflo: retrieve, judge, distill, consolidate, so each day's brief learns from what I acted on the day before. It is for me first. But every team needs one, and it can be started small and retrofitted backwards.*
 
-The Librarian's daily brief. On the left, what it reads each morning: GitHub across the organisations, pull requests including outside contributions, this site's release files, the accountant's ledger of scheduled runs and costs, the cloud sessions, the briefs map, the review status, a calendar file and the wires. In the middle, the Librarian, which reads everything and writes only its own folder. On the right, one page: what needs Dinis, yesterday, the agents' debrief, threads to pick up, what is coming, and at most three places where his leverage is. Underneath, the loop: what he acted on weights the next day's brief.
+The Librarian's daily brief: what it reads each morning, its page, and the loop.
 
 ## In short
 

@@ -10,11 +10,11 @@
 
 # Inside the Pellbridge agents: six behaviour policies with the FCA's four elements filled in, one day of their work replayed through the gate, and the files that make it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/inside-the-pellbridge-agents.md) · [newsroom v0.12.151](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyregulationfinancevaultstwinarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/inside-the-pellbridge-agents.md) · [newsroom v0.12.151](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policyregulationfinancevaultstwinarticle
 
 ***Abstract:** A tour of the vault behind a trusted framework for agentic finance. Pellbridge Bank is invented. It runs six agents, a payments assistant, a support agent, a lending pre-check, an AML alert reviewer, a fraud triage agent and a transaction reporting agent, and each has an Agent Behaviour Policy that fills in the four elements the FCA named: agent identity, delegated authority, accountability and execution. Between them the policies have 43 rows; 30 are kept by a system the agent cannot reach, and 13 are gaps. Then one day of their work, 40 events from 07:02 to 18:55, replayed through the gate by a deterministic engine, each decision with a receipt chained to the one before. The 26 actions on rows kept by a boundary produce no incident. The 12 actions on gap rows produce six near misses and three breaches. A provider outage stops two agents, which fall back to people. A model change fails two rows of the test pack, so the release stops. Each agent's blast radius shows what it may reach, what it can, and what it can through a secret it can read. Every gap has a holder, a decision and a chain to the board. The same day replays at five levels of policy: with none it has 16 breaches; with every rule in the prompt, 4; in hooks, 3; kept outside the agent, none. A page shows how a policy is written, in five steps, and lets you change any row and replay the day. Everything in the vault is open, under CC BY 4.0. This article is the technical one: the policy as JSON, the receipts, and how the vault is built.*
 
-The gate, animated: 10:02 to 12:10 of the invented day. Each action leaves its agent and meets the gate, the line of systems that keep the rows, or the gap below it, where only the prompt, a setting or nothing stands in the way. Receipts chain along the bottom.
+The gate, animated, from 10:02 to 12:10 of the invented day: each action meets the gate or the gap below it.
 
 Pellbridge: agentic finance, at play
 
@@ -43,7 +43,7 @@ Pellbridge Bank is invented, and so is everything in it. It runs six agents, eac
 
 Each agent has a policy in the vault, under `policies/`. The rows say what it can do (the grant, measured), what it may do (the mandate), and what stands in the way (the barrier). Around them sit the parts proposed for the FCA's four elements: an identity block, a holder for every row, who keeps each rule, and how the policy is executed and re-tested.
 
-The payments assistant in the vault, with all four elements: identity, from consent to policy hash; delegated authority, twelve rows with three gaps marked; accountability, the chain from the product owner to the board and a decision for each gap; execution, what keeps each row and every decision it made that day, with its receipt.
+The payments assistant in the vault: identity, delegated authority, accountability and execution.
 
 ## One day at the gate
 
@@ -51,11 +51,11 @@ The gate is the line of systems that keep the rows: the payment platform, the AP
 
 The day has 40 events. Sixteen are allowed, three approved by a person, four denied, two escalated to a person, two caught by the output check. Six are near misses and three are breaches. Two actions are stopped by an outage, and one release is stopped by the test pack.
 
-15:30: the payments assistant changes a standing order. The approval rule is a setting in the agent's own profile, and that afternoon it was off. The action goes through the gap and the row is broken; the receipt says so, and the head of payments hears the same day.
+15:30: the payments assistant changes a standing order through a gap, and the receipt says so.
 
 The gate has a panel beside it. It picks the level of policy being enforced, which kinds of event to play (routine, denied, caught, near misses, breaches, the outage and the test pack), and two speeds: one for everything, from half speed to five times, and one that makes routine events up to five times faster still. Incidents play at half speed by default, so they can be followed. A list of moments jumps straight to a breach, a near miss, the outage, the test pack or the end of the day, and each has its own address, so a demo can open on it.
 
-The gate and its panel: the policy level, what to show, the two speeds with incidents slowed to half, the moments to jump to, and how to read it.
+The gate and its panel: the policy level, what to show, two speeds, the moments to jump to and how to read it.
 
 Some moments from the day:
 
@@ -68,7 +68,7 @@ Some moments from the day:
 
 Sort the day by what kept the row each action used, and the result is plain. The 26 actions on rows kept by a boundary produced no near miss and no breach. The 12 actions on gap rows produced six near misses and three breaches. Two more were caught by the output check, and one was approved only because a setting happened to be on.
 
-The day split by what kept each row: 26 actions on boundary rows, no incidents; 12 on gap rows, six near misses and three breaches.
+The day split by what kept each row: 26 actions on boundary rows and 12 on gap rows.
 
 A near miss is the same row as a breach, on a day the model declined. That is why the speech's point about near misses matters: they are where the next breach is visible before it happens.
 
@@ -81,11 +81,11 @@ The same 40 events, the same agents and the same model choices, replayed five wa
 - **Policy in hooks.** Every rule is a hook in the agent's harness: deterministic, but on the agent's own machine. It sees the agent's tool calls, not a credential used outside them, and its configuration is a setting the agent's account can change.
 - **Policy enforced outside the agent.** Every rule is kept by a system the agent cannot reach, and credentials it does not need are removed from its grant.
 - **As deployed.** Pellbridge's own policies: 30 rows kept outside, 13 gaps.
-The same day, five ways. Each square is one event, in order, coloured by what happened; the counts on the right are the breaches and near misses so far.
+The same day, five ways: each square is one event, in order, coloured by what happened.
 
 With no policy, the day has 16 breaches, and the weight of the systems they reached adds up to 92. With every rule in the prompt, 4 breaches and 7 near misses: the model kept most rules, and every one it kept is a near miss, the same row as a breach on a day it declined. In hooks, 3 breaches and 2 near misses: a hook blocks what it sees, but the full credit search used a bureau key the hook never saw, and two hooks were off that afternoon, because their configuration is in the agent's own account. Kept outside the agent, no breaches, and one near miss: investment advice, which an output check keeps, and a check can miss. As deployed, 3 breaches and 6 near misses.
 
-The gate with every rule in hooks: the purple line is the harness, in the agent's own machine. A hook blocks a hidden instruction to pay a crypto exchange.
+The gate with every rule in hooks: a hook blocks a hidden instruction to pay a crypto exchange.
 
 The grant and its exposure show the same thing in size. The outer circle is everything an agent can reach, weighted by what reaching it can cost; the red part is what it can reach and may not use, with nothing out of its reach in the way. A system counts as exposed if any one path to it is open, so one gap is enough: as deployed, Pellbridge's gaps reach the same systems as no policy at all. The rules kept outside make breaches rarer; only keeping every rule outside makes the blast radius smaller. Kept outside, the grant itself shrinks, because what an agent may not use is taken away: the fraud triage agent's grant goes from 39 to 20, and its exposure from 28 to none.
 
@@ -107,7 +107,7 @@ An Agent Behaviour Policy is written in five steps.
 
 The vault's "Write a policy" page does this for each of the six agents. Each row has two choices, what the agent may do and what keeps the rule, and the agent's day replays as you change them. Set the payments assistant's rows to be kept out of its reach and its breach and near miss go; the one gap left is investment advice, which an output check keeps. The policy is shown as JSON as it changes.
 
-Write a policy: the five steps, then the payments assistant's twelve rows, with what it may do and what keeps each rule, and its day replayed beside them.
+Write a policy: the five steps, the payments assistant's twelve rows, and its day replayed beside them.
 
 ## The lexicon
 
@@ -121,7 +121,7 @@ Each agent's blast radius ripples out in three rings. The inner ring is what its
 
 The fraud triage agent is the widest. It may reach systems weighing 20, can reach 39, and 28 of that is exposed by a gap: it can read the secret of an old ops-batch service account, which can post to the core ledger. The lending pre-check may reach 19 and can reach 28, through the full bureau key. The reporting agent may reach and can reach the same 16.
 
-The fraud triage agent's blast radius: customer records and the customer app inside its mandate; the payment platform and the secrets store through gaps; the core ledger through the ops-batch secret. On the right, all six agents compared.
+The fraud triage agent's blast radius, with all six agents compared on the right.
 
 ## Accountability
 

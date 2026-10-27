@@ -10,11 +10,11 @@
 
 # Drift is the mandate moving: an analyst's case for policy and behavioural drift as RiskMandate's thesis, and why a versioned behaviour policy is what drift is measured against
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/drift-is-the-mandate-moving.md) · [newsroom v0.13.34](https://newsroom.sgit.ai/admin/versions.html) · riskmandatedriftabpagentsassurancearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.2.0, 3 versions](versions/drift-is-the-mandate-moving.md) · [newsroom v0.13.34](https://newsroom.sgit.ai/admin/versions.html) · riskmandatedriftabpagentsassurancearticle
 
 ***Abstract:** The same analyst who sent us a blueprint from the WestCap CISO Summit sent a second note, on what may be our strongest story: drift. The question moves from "is this agent authorised?" to "is this agent still behaving within its intended mandate, and how do we know?" The note names four kinds of drift, policy, behavioural, goal and authority, all of which can happen without malicious code, stolen credentials or any single step breaking a rule. I agree, and I think we are better placed for it than the note assumes, because drift needs something to drift from. An Agent Behaviour Policy is exactly that: a versioned, signed statement of what an agent can do, what it may do, and what keeps each rule. Measure the grant again and policy drift shows up as a bigger delta. Check each action against its row and behavioural drift shows up as broken rows and near misses. Say what keeps every rule and authority drift shows up as a setting someone switched off. Our Pellbridge demo already does all three: every row is a test that runs on every model change, every policy change and every week, and a failed row stops the release. Goal drift, judging whether a sequence of allowed actions still serves the task, is the hard and open part. And a close-to-home example of drift is this session itself, an agent that loses its policy at every compaction and reads it back from disk.*
 
-Four kinds of drift, and what catches each: policy drift, by the grant re-measured against the versioned policy; behavioural drift, by every action against its mandate row and near misses as the early sign; authority drift, by what keeps every row; and goal drift, judged against the mandate in the customer's words, the open problem.
+Four kinds of drift, policy, behavioural, authority and goal, and what catches each.
 
 ## In short
 
@@ -57,7 +57,7 @@ The analyst also makes the point that matters most for a customer: new behaviour
 
 ## The procurement agent
 
-The analyst's procurement agent, through a behaviour policy: day 1 within mandate; day 10 behavioural drift, a row with a "no" broken or a near miss; day 20 policy drift, a new capability in the grant before it is used; day 30 blocked, the purchase over the threshold denied by the purchasing system.
+The analyst's procurement agent through a behaviour policy, at day 1, 10, 20 and 30.
 
 Run the analyst's example through a policy and the trajectory is visible two steps early. On day 10, contacting suppliers falls under a row with a "no": the action breaks it, or the model declines and it is logged as a near miss. On day 20, the grant measured again has a capability it did not have, and the mandate says no; the gap grew before it was used. On day 30 the purchase is over the approval threshold, and the approval is kept by the purchasing system, out of the agent's reach, so it is denied. None of that needs to predict anything. It needs a reference, and a measurement against it.
 

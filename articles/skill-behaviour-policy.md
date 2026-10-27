@@ -10,11 +10,11 @@
 
 # A skill behaviour policy: what a skill says it does, what it can do, what it is given, and the control that closes the gap, measured on 899 skills
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/skill-behaviour-policy.md) · [newsroom v0.12.51](https://newsroom.sgit.ai/admin/versions.html) · agent-skillsskill-behaviour-policyagent-behaviour-policyhookssandboxlethal-trifectasupply-chainskillspectormcparticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/skill-behaviour-policy.md) · [newsroom v0.12.51](https://newsroom.sgit.ai/admin/versions.html) · agent-skillsskill-behaviour-policyagent-behaviour-policyhookssandboxlethal-trifectasupply-chainskillspectormcparticle
 
 ***Abstract:** I saw a video today that said "1 in 20 Claude skills are built to hack your computer". It is an overstatement of a real study, and the real finding is interesting enough: in one large study of public marketplaces, 5.2% of the skills analysed showed "high-severity patterns strongly suggesting malicious intent". It made me think about what an agent behaviour policy can do for skills. A skill behaviour policy looks at three things. The mandate the description promises; the mandate the skill actually has, from what its instructions and files can do, treated as features; and the grant, which depends on where it runs. The gap between the first two is the suspicious part; the gap between the last two is the reach nobody asked for. Then the policy becomes a control: a hook and a sandbox setting, generated from the described mandate, that bring the grant down to what you expected. I built a static calculator and ran it on 899 public skills from three sources: 812 can reach something beyond their own scripts, 782 of them through one third-party tool server, and 39 have a feature their description does not mention. None was obfuscated. The clearest case was honest: a skill that reads your Claude Code chat history, searches HackerNews and sends a report to Slack has the whole lethal trifecta, says so, and still needs a control. NVIDIA's scanner rated it safe, which is right for the question a scanner asks. A policy asks a different one.*
 
-A skill behaviour policy: three mandates, two gaps, one control. What the description says, what the skill's files and instructions can do, and what the environment grants. Actual minus described is the suspicious part; grant minus actual is the reach nobody asked for; the control brings the grant down to the described mandate.
+A skill behaviour policy: three mandates, two gaps and one control.
 
 ## In short
 
@@ -51,7 +51,7 @@ The important design choice is that every finding is a feature, not a verdict. A
 
 ## 899 skills, read statically
 
-899 skills from three public sources, every file read as text and nothing run: what they can reach, and what their descriptions leave out. 812 can reach something beyond their own scripts, 782 of them through one third-party tool server; 39 have a feature their description does not mention; none was obfuscated, and none sets allowed-tools.
+899 skills from three public sources: what they can reach, and what their descriptions leave out.
 
 So I built the calculator's first half and ran it. It reads a skill folder as text, never runs anything, finds features by pattern in the instructions and every bundled file, finds the features the description declares by its words, and reports the difference. I ran it on three public sources, read on 14 October: Anthropic's own [skills repository](https://github.com/anthropics/skills) (20 skills), a popular methodology collection, [obra/superpowers](https://github.com/obra/superpowers) (15), and a large community catalogue, [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) (864).
 
@@ -64,7 +64,7 @@ These are curated public sources, not a marketplace sample, so the absence of ob
 
 ## One skill, end to end
 
-One skill, end to end: developer-growth-analysis. An honest description and the whole lethal trifecta: it reads your Claude Code chat history, searches HackerNews, and sends a report to Slack through a third-party tool server. The policy states the minimal grant and the reach on Claude Code, and generates a hook, tested on nine fixed inputs, with what it cannot see and what stays an expectation.
+One skill, end to end: developer-growth-analysis, its description, its policy and the hook generated from it.
 
 The clearest case in the set was an honest one. `developer-growth-analysis` describes itself as a skill that "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs." Its instructions read `~/.claude/history.jsonl`, search HackerNews and post to Slack, all through a third-party tool server. That is [the lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/), private data, untrusted content and a way out, in one skill, and the description says so. The only thing it leaves out is the server in the middle.
 

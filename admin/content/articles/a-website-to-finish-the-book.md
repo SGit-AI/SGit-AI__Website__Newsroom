@@ -10,7 +10,7 @@ tags: books, generation-z, vaults, graphs, publishing, gen-z-book, brief, articl
 status: published
 ---
 
-!shot gw-site.webp | images/ | The book's website. On the left, the repository: the official versions, starting with the 2018 book as released, and a delta between each version. On the right, the public vault: the working versions, the graph, the altitudes and their infographics, comments by voice, the board and issues, and the agents in their roles. A second, private vault holds the OpenRouter key and opens only with Dinis's passkey. When a version is ready, it moves from the vault into the repository. | architecture
+!shot gw-site.webp | images/ | The book's website: the repository with the official versions, and the public vault with the working versions. | architecture
 
 ## In short {#in-short}
 

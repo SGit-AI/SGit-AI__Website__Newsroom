@@ -10,7 +10,7 @@ tags: vaults, messaging, pki, append-lanes, architecture, proposal, article
 status: published
 ---
 
-!shot mf-vaults.webp | images/ | Messaging between two vaults. Each vault has a lane for the other: Alice encrypts to Bob and writes to the lane on Bob's vault, Bob does the same into Alice's. Each owner drains its own lane, checks the signature, and commits the message to its own copy of the thread. | architecture
+!shot mf-vaults.webp | images/ | Messaging between two vaults: each has a lane for the other, which its owner drains, checks and commits. | architecture
 
 ## In short {#in-short}
 
@@ -55,7 +55,7 @@ The transport already exists, as six calls on the vault API, and the reason it w
 
 So a sender "can put something into your vault and learn nothing at all, not the contents, not the volume, not whether anyone else writes there". The write call answers with exactly `{"ok": true}`.
 
-!shot mf-send.webp | images/ | One message, step by step. Alice encrypts to Bob's public key, signs with her own key, keeps a copy in her thread, and writes to Bob's lane. The server answers only "ok". Bob lists and fetches with his enum key, decrypts, checks that the signature, the lane and the sender agree, adds the message to his copy of the thread, and marks it processed. | medium | architecture
+!shot mf-send.webp | images/ | One message, step by step: Alice encrypts to Bob and signs, and Bob fetches, decrypts, checks and marks it processed. | medium | architecture
 
 ## Messaging-FS and Email-FS {#fs}
 

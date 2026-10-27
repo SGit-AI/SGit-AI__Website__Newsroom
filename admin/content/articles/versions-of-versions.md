@@ -10,7 +10,7 @@ tags: versioning, publishers, releases, brief, article
 status: published
 ---
 
-!shot vv-tree.webp | images/ | A tree of versions. At the top, a release of the newsroom, v0.12.118. Inside it, the parts it carries, each with a version line of its own: the publishers' section and its page, at version 2.0.0; the articles, each with its own versions; the API release the site pins, with its own site version and reader-code release. Coming later: the home page and the feeds. Each node can hold more versions inside it; the release records which version of each it carries. | architecture
+!shot vv-tree.webp | images/ | A tree of versions: a newsroom release, v0.12.118, and the parts it carries, each with its own version line. | architecture
 
 ## In short {#in-short}
 

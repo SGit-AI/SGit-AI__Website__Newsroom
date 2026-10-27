@@ -10,7 +10,7 @@ tags: founders, developers, explorer-coding, books, gen-z-book, article
 status: published
 ---
 
-!shot yd-roles.webp | images/ | One GenAI founder, many roles. In the middle, the founder who says "I am not a developer, I just tell the model what to do". Around them, what they actually do every day: senior stakeholder and business owner (decides what matters and pays for it), product owner (writes the requirements), designer, developer and engineer (builds, with agents), release manager (continuous deployment), and the head of a development team (the agents). Each of those is a job title in a technology company. | concept
+!shot yd-roles.webp | images/ | One GenAI founder, many roles: the founder at the centre and the job titles they hold around them. | concept
 
 ## In short {#in-short}
 
@@ -58,7 +58,7 @@ There is a funny example of the other side. In the early days of the new generat
 
 So some teams started making their mock-ups look rough on purpose, with themes that look hand-drawn and slightly misaligned, so that the business would see something still being worked on. Bootstrap has one, [Sketchy](https://bootswatch.com/sketchy/), "a hand-drawn look suitable for mockups". The idea is older. In 2002 Joel Spolsky wrote, in [The Iceberg Secret, Revealed](https://www.joelonsoftware.com/2002/02/13/the-iceberg-secret-revealed/): "If you show a nonprogrammer a screen which has a user interface which is 100% beautiful, they will think the program is almost done." His advice was to build the interface "in such a way that unfinished parts *look* unfinished", and around 2004 [Napkin Look & Feel](https://napkinlaf.sourceforge.net/) did exactly that for Java applications.
 
-!shot yd-iceberg.webp | images/ | The iceberg they never saw. Above the waterline, what a user of polished products sees: the interface and the demo, about 10% of the work in Joel Spolsky's 2002 estimate. Below it, what was there when those products were new: the back end and the data; versioning; validation, authentication and authorisation; resilience; the release pipeline and real users. On the left, what founders saw, such as the iPhone launched on a golden path of taps; on the right, what they meet now that they build: versioning, stability and security. | concept
+!shot yd-iceberg.webp | images/ | An iceberg: above the waterline what a user sees, below it what polished products were built on. | concept
 
 It is a bit of a joke, but it was common. The business made decisions without the visibility, and it was not their fault: how could they know? They had never been inside.
 

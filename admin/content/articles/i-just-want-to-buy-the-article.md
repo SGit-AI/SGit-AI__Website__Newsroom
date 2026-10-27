@@ -10,7 +10,7 @@ tags: news, publishing, business-models, micropayments, paywalls, subscriptions,
 status: published
 ---
 
-!shot bh-cost.webp | images/ | What it costs to read one HBR article, and what it could cost: £11 for a month of the digital plan, £105 billed yearly, against about 24p an article if £11 covers the 45 articles HBR.org published in September 2026, or 55p if I read twenty; and 10p for a new article on this newsroom. The reprint, $11.95, is noted separately. | comparison
+!shot bh-cost.webp | images/ | What it costs to read one HBR article, and what it could cost, against 10p for a new article on this newsroom. | comparison
 
 ## In short {#in-short}
 
@@ -28,11 +28,11 @@ On Saturday I saw Olivier Laplace's post on LinkedIn about [Turn Vibe-Coded Prot
 
 So I clicked the link in the comments. This is what I got.
 
-!shot bh-modal.webp | images/ | What a LinkedIn reader sees on arriving at the article: "If you only read HBR on Linkedin, you're only getting part of the story. Subscribe for unlimited access to every can't-miss core article on HBR.org." Screenshot of hbr.org, 17 October 2026. | small | comparison
+!shot bh-modal.webp | images/ | What a LinkedIn reader sees on arriving at the HBR article. Screenshot of hbr.org, 17 October 2026. | small | comparison
 
 "If you only read HBR on Linkedin, you're only getting part of the story." Then "Subscribe now", and three plans.
 
-!shot bh-plans.webp | images/ | HBR's subscription offer to a UK reader: Digital at £8.75 a month billed yearly or £11 monthly; Digital & Print at £10 or £13; Premium at £15 or £18. Screenshot of hbr.org, 17 October 2026. | narrow | comparison
+!shot bh-plans.webp | images/ | HBR's subscription offer to a UK reader: three plans, billed yearly or monthly. Screenshot of hbr.org, 17 October 2026. | narrow | comparison
 
 Digital at £8.75 a month billed yearly, or £11 monthly. Digital & Print at £10, or £13. Premium at £15, or £18. Every one of them is a subscription. None of them is the article.
 
@@ -50,17 +50,17 @@ So the price I would expect to pay for one article, read once, is somewhere betw
 
 ## How it works here {#here}
 
-!shot bh-card.webp | images/ | The card at the foot of every article on newsroom.sgit.ai: what the page cost, the share read, the reading list, three ratings that set the price and the reader's picks, and "Something wrong with this page? Don't charge me". | narrow | comparison
+!shot bh-card.webp | images/ | The card at the foot of every article on newsroom.sgit.ai: the page's cost, the share read, three ratings, a refund. | narrow | comparison
 
 This newsroom has run the other way since 11 October, with real payments. Every page has a price of a few pence, 10p for a new article and 5p for an older one, and you pay for the share of it you read, after you read it, from a balance kept in your own browser. You never hit a wall: the balance can go below zero and nothing is blocked. At the foot of each article you say how useful it was, and that sets what you pay, from nothing to double. If something was wrong with the page, you say so and you are not charged. It is all on [the page for publishers](https://newsroom.sgit.ai/publishers/index.html), and the argument is in [Pay after you read](/articles/pay-after-you-read.html) and [Paying after the value](/articles/paying-after-the-value.html).
 
-!shot bh-account.webp | images/ | The reading account: every page has a price of a few pence and you pay for the share you read; your balance, history and receipts are kept in your browser; credit can go below zero and no page is blocked; top up £5. | narrow | comparison
+!shot bh-account.webp | images/ | The reading account: a price of a few pence a page, a balance kept in your browser, and a top-up of £5. | narrow | comparison
 
 That is what I wanted on HBR. Read the article, pay for what I read, and say what I thought of it.
 
 ## The article is the least of what they could sell me {#units}
 
-!shot bh-units.webp | images/ | Ten things a reader like me would buy from one article, each a billable unit: the article as read, my reading record, my vault, personas, the argument as a graph, the ontology and taxonomy, the evidence, other versions, a licence to quote, and a check of my use. Eight run on newsroom.sgit.ai today; two are proposed. | comparison
+!shot bh-units.webp | images/ | Ten things a reader like me would buy from one article, each a billable unit: eight run today, two are proposed. | comparison
 
 Paying for one article is only the start. Think about who arrives at an HBR article from LinkedIn: very often, someone like me, an executive who wants to use it at work, quote it, follow it up, and take its advice back to a team. Everything that person needs next is something HBR could sell, and each is a billable unit.
 

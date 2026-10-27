@@ -10,11 +10,11 @@
 
 # Can a key leak without breaking the policy? Told, checked, never given: three levels for secrets and personal data, and a hook we tested against nine leaks
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/a-leak-without-breaking-the-policy.md) · [newsroom v0.12.158](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policysecretshooksprivacyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.2.0, 3 versions](versions/a-leak-without-breaking-the-policy.md) · [newsroom v0.12.158](https://newsroom.sgit.ai/admin/versions.html) · agentsagent-behaviour-policysecretshooksprivacyarticle
 
 ***Abstract:** One of our first customers asked a good question: could an API key, or someone's personal data, leak without breaking any Agent Behaviour Policy? The answer is yes, if the policy only lists what the agent can do. Sending an email is a capability; putting a key in it is content. So a policy that covers secrets needs rows about content too, such as disclosing a secret, and each row needs a barrier like any other. There are three levels. Told: a sentence in the prompt, kept by the model. Checked: a hook that scans every tool call, every tool result and the final answer. Never given: the agent asks for the action, and something out of its reach holds the key. We wrote the hook and tested it against nine ways a secret tries to leave. It denied three, redacted one, blocked one, let an ordinary command through, and missed three: a key encoded in base64, a key split in two, and a file of secrets piped straight out. Then we added four experimental rules: look inside base64 and hex, match any ten characters of the session's own secrets, refuse long base64 in outbound calls as a matter of policy, and refuse a command that sends a secrets file to the network. With them, all nine were caught. Run over the 3,451 real commands of the session that wrote this article, the hook refused 22, and none was ordinary work. The third level is still the best answer: an agent that never sees the key cannot leak it.*
 
-Nine ways a secret tries to leave, at each level. Told leaves every case to the model. Checked is the measured result of the hook: three denied, one redacted, one blocked, three missed. With four experimental rules, the three are refused. Never given leaves nothing to leak.
+Nine ways a secret tries to leave, at each level: told, checked and never given.
 
 ## In short
 

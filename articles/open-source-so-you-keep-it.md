@@ -10,11 +10,11 @@
 
 # Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/open-source-so-you-keep-it.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · open-sourcefounderscareerspublishinggen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/open-source-so-you-keep-it.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · open-sourcefounderscareerspublishinggen-z-bookarticle
 
 ***Abstract:** People worry that if they open source their ideas, others will copy them. It does not happen: I have been open sourcing my ideas for years, and the ones I did not follow up are still there, not taken. The advantage people miss is that open source is how you get to keep using your own work. When you work for a company, what you build gets locked in, and when you leave you start from scratch. My trick was to work on open source projects that I brought into each company, so I was more productive there and never started again; my work kept getting better as I moved. The Cyber Boardroom began like that: an open experiment with AI while I was working for two companies, with my managers aware of it, and when I left both roles I continued where I had left off. So publish early, and rough. A rough public history shows an employer that it is an experiment and learning, which it is, and shows anyone who asks later how it evolved, bit by bit. A polished thing that appears from nowhere raises questions, and you never want lawyers involved. Keep it on separate machines, never build a competitor to your employer, and remember that the learning makes you better at the day job too.*
 
-Two careers, side by side. Closed: at each company you build something, it stays locked in when you leave, and at the next company you start from zero. Open: you bring your open source projects into each company, improve them there in the open, and carry them forward, so each job starts where the last one ended; the experiment you started on the side becomes a company.
+Two careers, side by side: closed, where each job starts from zero, and open, where the work carries forward.
 
 ## In short
 

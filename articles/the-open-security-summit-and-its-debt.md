@@ -10,11 +10,11 @@
 
 # The Open Security Summit and its debt: how a summit that treated every participant as a presenter stalled on its own website, what the code shows, and why agents make it worth restarting
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/the-open-security-summit-and-its-debt.md) · [newsroom v0.13.22](https://newsroom.sgit.ai/admin/versions.html) · open-security-summittechnical-debtcommunityeventsagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/the-open-security-summit-and-its-debt.md) · [newsroom v0.13.22](https://newsroom.sgit.ai/admin/versions.html) · open-security-summittechnical-debtcommunityeventsagentsarticle
 
 ***Abstract:** The Open Security Summit is something I started a long time ago, out of the OWASP Summits of 2008, 2011 and 2017. What made the in-person summits work was that every participant was treated as a presenter: working sessions, collaboration, outcomes. In 2018 the website was part of that: 180 different people committed to it that year, editing their own pages and sessions, 434 commits on the first day alone. Then the summit went online, became monthly mini-summits, and kept going until the end of 2024. But each year's site was a copy of the last, with more exceptions added and no time to refactor. The template code grew from about 5,200 lines to 9,600 and then froze in 2022, while the content kept coming; the number of people committing fell from 180 to 14. The technical debt ground it to a halt, and the follow-up, the personal path for each participant that the in-person summits had, never scaled. It holds a lot of very good material on security, 194 recorded sessions among it. I kept it alive at a cost to me. Now, with agents to map it, follow up and personalise, it is time to restart it: in person in London, online, and as a home for open source projects. It needs someone to fund it.*
 
-Left: commits a quarter across the four summit websites, 19,045 in all, with spikes in the summit weeks of June 2018, 2019 and 2020. Right: the number of different people committing each year, from 180 in 2018 to 14 in 2024 and 2 in 2025.
+Left: commits a quarter across the four summit websites. Right: people committing each year, 2018 to 2025.
 
 ## In short
 
@@ -38,7 +38,7 @@ The website was not a brochure. It was a Hugo site in a public repository, and p
 
 ## What the code shows
 
-Left: lines of Hugo template code, from about 5,200 in the 2018 site to about 9,600, flat from 2022. Right: content files in the current site, from 140 at the end of 2020 to 998 at the end of 2024.
+Left: lines of Hugo template code, 2018 to now. Right: content files in the current site, 2020 to 2024.
 
 I went back to the repositories. The OpenSecuritySummit organisation on GitHub has 24 of them; four are the summit websites, `oss2018`, `oss2019`, `oss2020` and `oss-website`, with 19,045 commits between them. Read as a record, they show the debt growing:
 
@@ -59,7 +59,7 @@ And the live site shows where it stopped. Its home page still says "Open Securit
 
 ## The follow-up never scaled
 
-Sessions on the current site by year and how many link a recording: 87 and 1 in 2020, 91 and 25 in 2021, 110 and 67 in 2022, 70 and 58 in 2023, 51 and 45 in 2024.
+Sessions on the current site by year, and how many link a recording, from 2020 to 2024.
 
 The sad part is what is in there. The summit holds a lot of very good material on security: working sessions on application security, threat modelling, DevSecOps, governance, and, when this whole AI wave started, some very good sessions on it. The current site alone has 409 session pages from 2020 to 2024, and 194 recordings. Some of my own history, and a lot of knowledge I shared in those sessions, is in those videos, and it got lost.
 
@@ -67,7 +67,7 @@ What never scaled was the follow-up. In person, the summit worked because of wha
 
 ## Why now
 
-How the debt grew: a new summit copied last year's site, a new need added an exception, there was no time to refactor, every change got slower, and the loop repeated. The restart: agents map what is there, a personal path for each person, in person in London and online, and hosted open source projects.
+How the debt grew, as a loop of copying, exceptions and slower changes, and the restart that follows.
 
 The difference now is the workflow I have. I am not going to start by rebuilding the website. I am going to put an agent on the case: to understand everything that is there, map the data, connect the dots, analyse the videos and what was said in them, and create much better personal pages for everybody. Then follow up with people, which is the part we could never afford.
 

@@ -10,11 +10,11 @@
 
 # Answering a draft: three and a half weeks of agent@riskmandate.ai, 178 emails, 47 decisions, and the drafts folder as a work queue
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/answering-a-draft.md) · [newsroom v0.13.23](https://newsroom.sgit.ai/admin/versions.html) · agentsemailinboxriskmandatedecisionsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.2.0, 3 versions](versions/answering-a-draft.md) · [newsroom v0.13.23](https://newsroom.sgit.ai/admin/versions.html) · agentsemailinboxriskmandatedecisionsarticle
 
 ***Abstract:** This is how email works for me now, and it is a follow-up to how I set up the agentic inbox. The agent behind agent@riskmandate.ai reads the mail, does the research, writes the drafts and keeps the records; I read every draft and send it myself. Its own debrief of 18 October has the numbers: 178 emails since the first on 24 September, all reviewed and sent by me, in 145 threads, to at least 47 organisations, each one written for one person. 145 drafts logged, 47 decisions recorded, and a draft guard that blocked 36 of 125 drafts, mostly for a claim with no source. What made it work is simple. Every draft waits in the drafts folder with one of three labels, send, review or decide, so the folder is a work queue. And the most useful thing we built is the decision draft: an email to the agent's own address, never sent, with where we are, why it matters, questions with options and an empty answer box. I answer in my own words and remove the label, and the agent acts on it. It lets me shift context: when I go to the drafts, I am in answer-email context. Most of the rules exist because something went wrong once, and some limits remain.*
 
-The drafts folder as a work queue: a decision draft labelled next/3 decide, two replies labelled next/2 review, and one labelled next/1 send. Example, names invented.
+The drafts folder as a work queue: one decision draft, two replies to review and one to send. Example, names invented.
 
 **What came next.** [A newsroom for one](a-newsroom-for-one.md) follows one kind of these emails, the reading lists, to the page the person opens, and what changed on it.
 
@@ -36,7 +36,7 @@ The agent behind agent@riskmandate.ai reads the mail, does the research, writes 
 
 ## The numbers
 
-Left: emails sent each week from agent@riskmandate.ai, 4, 64, 48 and 53, from a sample of 169 of the 178. Right: the reasons the draft guard gave when it blocked drafts, led by 28 for a claim with no source.
+Emails sent each week from agent@riskmandate.ai, and the reasons the draft guard gave when it blocked drafts.
 
 From the debrief, as of 18 October 2026:
 
@@ -60,7 +60,7 @@ None of it is a newsletter. Each email is written for one person. And most of th
 
 ## The loop
 
-The loop in six steps: mail comes in; a draft with sources; filed by label; I work the queues; the agent acts on my answers; everything logged.
+The loop in six steps: mail comes in, a draft with sources, filed by label, the queues, the agent acts, all logged.
 
 What we ended up with is simple, and it took two weeks of changes to get there:
 
@@ -73,7 +73,7 @@ What we ended up with is simple, and it took two weeks of changes to get there:
 
 ## The decision draft
 
-A decision draft, answered: the instruction at the top, where we are, why it matters, two questions with options, and the answers written into the answer boxes. Example, names invented.
+A decision draft, answered: the instruction, two questions with options and the answers in the boxes. Names invented.
 
 The most useful thing we built is the decision draft. It is an email to the agent's own address that is never sent, and it has a fixed shape: where we are, the facts, short, with dates; why it matters, what is waiting on this; the questions, each with two or three concrete options and an empty answer box; and, at the top, exactly what to do when done: remove the label.
 

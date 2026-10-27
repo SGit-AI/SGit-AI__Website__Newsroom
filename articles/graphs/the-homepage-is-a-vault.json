@@ -195,25 +195,25 @@
     {
       "file": "hm-architecture.webp",
       "url": "https://newsroom.sgit.ai/articles/images/hm-architecture.webp",
-      "caption": "The homepage as a vault: a morning job writes an edition and tags it, the encrypted objects go to plain static hosting, a small shell on GitHub Pages carries the read key and a snapshot for search engines, and the browser reads the edition. A stats lane and a daily run of synthetic users feed the next morning's edition. Dashed boxes are proposed.",
+      "caption": "The homepage as a vault: the morning job, static hosting, the GitHub Pages shell and the browser reading the edition.",
       "kind": "architecture"
     },
     {
       "file": "hm-editions.webp",
       "url": "https://newsroom.sgit.ai/articles/images/hm-editions.webp",
-      "caption": "Three editions of the demo homepage vault, each a commit with a signed tag, carrying its page, the links it showed and why, both variants, its release note and a screenshot of itself. Any edition opens again from its commit id.",
+      "caption": "Three editions of the demo homepage vault, each a commit with a signed tag.",
       "kind": "comparison"
     },
     {
       "file": "hm-sequence.webp",
       "url": "https://newsroom.sgit.ai/articles/images/hm-sequence.webp",
-      "caption": "One page load: the shell from GitHub Pages, then four chained requests to the static host for the ref, the commit, the tree and the page, decrypted in the browser; the dynamic slots load from their own vaults; a beacon goes to the stats lane. Each step waits for the one before, so where the bytes come from decides the time.",
+      "caption": "One page load: the shell from GitHub Pages, four chained requests to the static host, and a beacon to the stats lane.",
       "kind": "architecture"
     },
     {
       "file": "hm-numbers.webp",
       "url": "https://newsroom.sgit.ai/articles/images/hm-numbers.webp",
-      "caption": "What the measurements say: the live numbers from this sandbox to newsroom.sgit.ai and its vault API, and the vault numbers from a local static server and a local vault server, which count requests and bytes, not network time.",
+      "caption": "The measurements: live numbers from this sandbox to newsroom.sgit.ai, and vault numbers from local servers.",
       "kind": "comparison"
     }
   ]

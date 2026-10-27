@@ -10,7 +10,7 @@ tags: agents, agent-decision-policy, case-law, precedent, common-law, governance
 status: published
 ---
 
-!shot dn-caselaw.webp | images/ | How a decision earns its way into code. A case arrives at a branch point. If a rule settles it, or a recorded precedent with the same material facts matches, it is resolved and recorded. If not, or if the facts differ in a way that matters, it is distinguished and escalated to a person with the context to decide. The decision is recorded with its reasons and becomes a precedent that the next matching case follows. A precedent that holds case after case is written into the policy, then compiled into deterministic, tested code. | process
+!shot dn-caselaw.webp | images/ | How a decision earns its way into code: from a case at a branch point to a precedent, then to tested code. | process
 
 !trail decision-policy
 

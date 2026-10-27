@@ -10,7 +10,7 @@ tags: careers, hiring, publishing, linkable, open-source, advice, article, gen-z
 status: published
 ---
 
-!shot aj-loop.webp | images/ | Act as the job you want. If you are looking for a job, you have time. Pick the job you want and act as that person: for a startup, an open-source project or a company you admire, add value, send ideas, tag them and connect with their people. Do it in public, so the work can be linked. Then the people who want to help you can forward it, and the work turns into references, paid work, introductions and, in time, the job. | concept
+!shot aj-loop.webp | images/ | Act as the job you want: add value in public, so the work can be linked, forwarded and turned into the job. | concept
 
 ## In short {#in-short}
 

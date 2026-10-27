@@ -10,7 +10,7 @@ tags: reading-lists, personas, email, riskmandate, agents, design, newsroom, the
 status: published
 ---
 
-!shot nf-list.webp | images/ | A reading list from me to Steve, the site's own example, as it opens since 21 October, at 1440 pixels wide in the Newsprint theme, after one article was read and half of another. At the top, a dateline and my note, signed; a ring at 32% with one of seven read and 55 minutes left; the first article as a card, its section bar full, marked Read; and on the right, what the page is, in four steps, and the list as a persona. | screenshot
+!shot nf-list.webp | images/ | A reading list from me to Steve as it opens since 21 October, at 1440 pixels wide in the Newsprint theme. | screenshot
 
 > **What came next.** [A pen and a key](/articles/a-pen-and-a-key.html): a Pen on every article to mark it and tell the newsroom, and notes signed with a browser key that pki.sgit.ai vouches for.
 
@@ -36,7 +36,7 @@ It shipped the same day, as release v0.8.0 of this site. Every article has a num
 
 What made the reading list useful was not the page. It was that I stopped building the links myself. The agent behind agent@riskmandate.ai, which [drafts my email and waits for me to send it](/articles/answering-a-draft.html), now does it as part of a reply: it reads the thread, picks the articles by number, writes a line on why for each, builds the link, opens it on the live site to check that every article is there and in order, and puts it in the draft. Its debrief of 18 October counts about 20 reading lists among the 178 emails it had drafted, each written for one person. Every one waited in my drafts folder until I read it, changed it and sent it.
 
-!shot nf-flow.webp | images/ | How a reading list goes out and what comes back. The agent reads the thread, picks the articles, builds and tests the link; I read the draft and send it. The person opens the list, reads at their own pace, marks articles and replies; the answer or the next list is drafted for me to read. What they read or skip stays in their browser and their own vault: the newsroom, the agent and I see a reply only if they write one. | diagram
+!shot nf-flow.webp | images/ | How a reading list goes out and what comes back: the agent drafts, I send, the person reads and replies. | diagram
 
 That is [the man behind the curtain](/articles/the-man-behind-the-curtain.html) again, in a small form. The agent does the work of choosing and checking; the email is from me, because I read it and send it; and behind the email there is not one article but a short course, in an order I chose for that person.
 
@@ -44,7 +44,7 @@ That is [the man behind the curtain](/articles/the-man-behind-the-curtain.html) 
 
 What I had not thought through is who opens these links. The front page is written for people who already know what this newsroom is. The people I send a list to mostly do not. They arrive from an email, sometimes through a link their mail client has wrapped in a long redirect, and the list is the first page of the newsroom they ever see.
 
-!shot nf-before-after.webp | images/ | The same list from me to Steve, as it opened until 20 October (left) and since 21 October (right), at 1440 pixels wide in the Newsprint theme, before anything on it was read. On the left, a narrow column: the title, the note, two buttons, a box about personas, and the articles as a list of links. On the right, a dateline, my note signed, a line on what the list holds and costs, the first article as a large card, and a side column that explains the page. | comparison
+!shot nf-before-after.webp | images/ | The same list from me to Steve as it opened until 20 October (left) and since 21 October (right), at 1440 pixels wide. | comparison
 
 The first version answered the question I asked, which was how to send a list. It did not answer the questions the person on the other end had. What is this site? Why does an article say 10p? Is that money? Do I need an account? What happens if I read half of it? It used a third of a desktop screen, and the first article started below the fold. It was a list of links, which is the thing a newsroom page should not look like.
 
@@ -66,7 +66,7 @@ Every article also has three quiet buttons: done, later and not for me. They are
 
 A list of seven articles is about an hour and a half of reading, and not everyone wants to start by reading. So the same list has five views, and the page remembers the one the reader chose.
 
-!shot nf-views.webp | images/ | The same list in four of its five views, after one article was read and half of another. Headlines: one line per article, with its one-liner, the date and the time. Sections: every section of every article in one line, ticked as it is read, each a link to that section. Pictures: the articles' figures, uncropped. Graph: the articles in order along a path, their main ideas under them, an arc where one links to another, and below, the articles beyond the list that several of them link to. | collage
+!shot nf-views.webp | images/ | The same list in four of its five views: Headlines, Sections, Pictures and Graph, after some reading. | collage
 
 *Cards* is the default. *Headlines* is the list in one screen, each article's headline and its one-liner. *Sections* uses the line every section of every article now has: the whole argument of the list, a line at a time, each a link straight to that section. *Pictures* shows the articles' figures, because for some readers the figure is the article. And *Graph* draws the list as a path, with the main ideas of each article under it, an arc where one article links to another, and at the foot, the articles outside the list that several of them point to, which is where a curious reader goes next.
 

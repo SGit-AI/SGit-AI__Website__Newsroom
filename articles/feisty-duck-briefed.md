@@ -10,11 +10,11 @@
 
 # Feisty Duck, briefed: Ivan Ristić's cryptography and security news, newsletter, guide and history as an anchor for everything SSL, TLS and PKI, what it shares with our newsrooms, and how we could integrate with it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.0.0](versions/feisty-duck-briefed.md) · [newsroom v0.13.86](https://newsroom.sgit.ai/admin/versions.html) · tlspkicryptographysourcesanchorsintegrationsbriefingarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-25 · [article v1.1.0, 2 versions](versions/feisty-duck-briefed.md) · [newsroom v0.13.86](https://newsroom.sgit.ai/admin/versions.html) · tlspkicryptographysourcesanchorsintegrationsbriefingarticle
 
 ***Abstract:** Feisty Duck, the small London publisher run by Jelena and Ivan Ristić since 2009, is one of the sources I trust most for anything to do with SSL, TLS, PKI and applied cryptography. Ivan wrote SSL Labs and Bulletproof TLS and PKI, and the Cryptography & Security Newsletter goes to more than 50,000 subscribers. In August it launched Feisty Duck News: it monitors 37 sources, from Adam Langley and Filippo Valsorda to Let's Encrypt and the IETF, takes reader submissions, summarises each article with an LLM, and promotes items to the front page by hand. Its feed held 100 items from 1 September to 25 October, a quarter of them on post-quantum cryptography. The rest of the site is just as useful: a free Bulletproof TLS Guide, updated in June, and an SSL/TLS and PKI history of 174 events, from SSL v2 in 1994 to 47-day certificates in 2029. Feisty Duck has believed in continuous publishing since 2009, which is what we do with versioned articles. This is a brief on what it is, a debrief against what we are building, and integration ideas: an anchor for our crypto claims, a crypto and TLS wire, provenance for the LLM summaries, and the history as a graph. A vault of its content would need its permission: its terms reserve reproduction, and its robots.txt asks crawlers to stay out of the news section.*
 
-Feisty Duck on 25 October 2026: Feisty Duck News, the live front page of cryptography and security news; the Cryptography & Security Newsletter, with issues to #141, "Get Ready for Seven-Day Certificates"; the SSL/TLS and PKI History, starting with SSL v2 in 1994; and the free Bulletproof TLS Guide, last updated on 16 June 2026.
+Feisty Duck on 25 October 2026: its news front page, newsletter, SSL/TLS and PKI History, and Bulletproof TLS Guide.
 
 ## In short
 
@@ -33,7 +33,7 @@ For me, it is one of the places whose content can be taken with a high degree of
 
 ## Feisty Duck News
 
-Feisty Duck, in numbers: the 100 items in the news feed between 1 September and 25 October 2026, by category, led by post-quantum cryptography (24), PKI (21), cryptography (18) and security (17); and the 174 events in the SSL/TLS and PKI history, by decade, 109 of them in the 2010s, scored 115 positive and 56 negative.
+Feisty Duck in numbers: its news feed from 1 September to 25 October 2026, by category, and its history, by decade.
 
 [Feisty Duck News](https://www.feistyduck.com/news/) launched with the newsletter's issue #140, on 27 August 2026. Its [about page](https://www.feistyduck.com/news/about) is short and honest: "There's so much happening in cybersecurity that it's difficult to keep up, and so we built this tool to help us curate our newsletter." How it works:
 
@@ -66,7 +66,7 @@ And the same caution applies to both. Feisty Duck's summaries are written by an 
 
 ## How we could integrate
 
-How Feisty Duck and our newsrooms could fit together: Feisty Duck curates and explains; we link our crypto, TLS and PKI claims to its guide, book and newsletter as an anchor, now; we could run a crypto and TLS wire that follows the same public sources and credits Feisty Duck News; we could add provenance to the LLM summaries of items we cite; and, with permission, keep the history as a graph and capture pages in a vault.
+How Feisty Duck and our newsrooms could fit together, from linking its guide now to a crypto and TLS wire.
 
 - **An anchor, now.** Our articles make claims about cryptography all the time: AES-256-GCM and PBKDF2 in sgit, passkeys on pki.sgit.ai, signatures in [signed by the source](https://newsroom.sgit.ai/articles/signed-by-the-source.html). Those claims should link to the guide, the book's chapters and the newsletter, the way the PHP site uses [Wikipedia as an anchor](https://php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-25__brief__wikipedia-as-an-anchor/index.html) for php2shell. The CSP discussion in [a secure rule, applied literally](https://newsroom.sgit.ai/articles/a-secure-rule-applied-literally.html) belongs next to the book's chapter on HSTS, CSP and pinning.
 - **A crypto and TLS wire.** Our [Industry Wire](https://newsroom.sgit.ai/wire/index.html) has three wires, AWS, OWASP and Portugal. A fourth could follow the same public sources Feisty Duck lists, and credit and link to Feisty Duck News for what it found first.

@@ -10,11 +10,11 @@
 
 # The graphs books: three books written by agents in a day, the altitudes, the board and the book as a graph, what they got right, and why they stopped under review
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/the-graphs-books.md) · [newsroom v0.12.77](https://newsroom.sgit.ai/admin/versions.html) · booksgraphsfractal-semantic-graphsagentspublishingworkflowscase-studyreviewfeedback-looparticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/the-graphs-books.md) · [newsroom v0.12.77](https://newsroom.sgit.ai/admin/versions.html) · booksgraphsfractal-semantic-graphsagentspublishingworkflowscase-studyreviewfeedback-looparticle
 
 ***Abstract:** In August, on graphs.sgit.ai, agents wrote three books from a month of work on fractal semantic graphs, about 100,000 words between them, because I had a long flight the next day and wanted something to read. I read them, printed, and made a lot of notes. They are good, and much of what is in them, and in how they were made, now runs this newsroom. But two months later they are still at v0.3.0, v0.2.0 and v0.1.0, under review or held. This is the story of those books: what each one argues; the experiments around them, from an altitude ladder that compresses a book into one paragraph and lets you climb back down, to a board of workstreams and a book decomposed to the word and rebuilt byte-identical; why the book about making books read far better than the book about graphs; and where it stopped, which is the most useful part. The change-control workflow designed to apply my review notes had seven stages, and the approve stage was me. Nothing ever passed through it. It is a good example of a workflow that moves fast while there is energy and then stops, because the next step is too big, and it is why the next books will be made from articles.*
 
-The shelf on graphs.sgit.ai: three books, each with its own version, and v1.0.0 reserved for a final release; Fractal Semantic Graphs at v0.3.0, under review, 18 chapters and 38,824 words, with the change that moved it.
+The shelf on graphs.sgit.ai: three books, each with its own version, and v1.0.0 reserved for a final release.
 
 ## In short
 
@@ -44,7 +44,7 @@ Then, on 26 August, I sent a memo: "can you write a brief to write three books/p
 
 ## The experiments around them
 
-The altitude ladder: the first edition at five altitudes, from the book in one paragraph to the six parts, the seventeen units, the sections and the book itself; every highlighted phrase descends into what it compressed, coloured by the evidence behind it.
+The first edition at five altitudes, from the book in one paragraph to the book itself, each phrase descending further.
 
 What I find most valuable now is not the books but what was tried around them.
 
@@ -58,7 +58,7 @@ What I find most valuable now is not the books but what was tried around them.
 
 ## Why one book read better
 
-The book as a graph: Creating a Book Using Agentic Workflows decomposed into book, chapter, section, block, sentence and word, with the counts per chapter, and every chapter rebuilt byte-identical on the build.
+The book Creating a Book Using Agentic Workflows as a graph, from book and chapter down to sentence and word.
 
 When I read them, the difference was striking. In my memo after the flight I said the alignment of the making-of was "way stronger, like by orders of magnitude" than the book about graphs; reading it, "there was actually not that much stuff I felt wanted to change." The site's release notes give the reason, and it is the most important lesson in the whole estate: "the same agent, the same day, the difference being that book C was written over 41 narrated release rows, 38 verbatim briefs and a repository it could interrogate, while book B was written over an argument."
 
@@ -66,7 +66,7 @@ That is what these articles are now: a record. Every article here starts from a 
 
 ## Where it stopped
 
-The project board for the making-of book: queued, up next and in progress, nothing done; the naming question and the workflow document both four stages of seven in and blocked, waiting on the founder, and publishing held until part one lands.
+The project board for the making-of book: queued, up next and in progress, with nothing done.
 
 This is the part worth learning from. After the flight I asked for review as change control: "we start by planning, mapping, defining, reviewing, approving, and then implementing, and then approving the implementation". The agents built it, with care: a [board](https://graphs.sgit.ai/v2/books/making-a-book/board.html) of eight workstreams, 40 tasks and seven stages per change. And the board tells the story itself: "The two change-control workstreams are both blocked at the same stage, on the same person." The state map says it more plainly: the approved stage "has two items waiting and nothing has ever passed through it".
 

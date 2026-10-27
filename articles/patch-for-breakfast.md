@@ -10,11 +10,11 @@
 
 # Patch for breakfast: nobody refuses to patch because they want to, a patch is surgery without tests and a pipeline, and why the PHP crisis is the moment to invest in being able to change
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.0.0](versions/patch-for-breakfast.md) · [newsroom v0.13.67](https://newsroom.sgit.ai/admin/versions.html) · patchingci-cdmaintenancephp2shellnon-functional-requirementsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-24 · [article v1.1.0, 2 versions](versions/patch-for-breakfast.md) · [newsroom v0.13.67](https://newsroom.sgit.ai/admin/versions.html) · patchingci-cdmaintenancephp2shellnon-functional-requirementsarticle
 
 ***Abstract:** php2shell has done something rare: it has the board's attention, and executives are asking good questions. There is some hype, but the impact is real. Nobody takes a website down lightly, and organisations took real sites down this week because they could not answer one question: are we safe? And you cannot be safe if you cannot deploy a patch. In my experience nobody fails to patch because they do not want to. The teams with the best pipelines patch for breakfast and run out of things to patch, because a patch is a change to a system, and they have the tests and the automation that make a change routine. Without them, patching is surgery: manual testing, people who could deploy long gone, side effects nobody knows. So it gets postponed, and a system that has not been updated in years is a signal of technical debt and of risk that we can measure. The PHP fix itself touched 389 files. The answer is not to patch, bring the site back and move on, because the next flaw will find it in the same state. It is to invest in the pipeline, the tests and paid maintenance, and the money being spent bringing sites back this week says the economics already add up.*
 
-A patch is a change to a system: without tests, a pipeline and the people who know the side effects, patching is surgery, postponed and risky; with them, it is routine, and the teams with the best pipelines run out of things to patch.
+A patch is a change to a system: surgery without tests and a pipeline, routine with them.
 
 ## In short
 
@@ -57,7 +57,7 @@ It is also more urgent than it was. We are not yet seeing large amounts of AI-dr
 
 So here is the opportunity. Do not answer this crisis by patching PHP, bringing the site back, saying "all good" and moving on. That is the whack-a-mole we have been playing for decades, and the next flaw, next week or next month, will find the same system in the same state.
 
-Three ways to answer the crisis: the one-off (patch, bring it back, move on, and meet the same problem next time), the measured (record when each system was last updated, how long a change would take and who can still build it), and the investment (fund the pipeline, the tests and paid maintenance, with a signed, supported version).
+Three ways to answer the crisis: the one-off, the measured and the investment.
 
 Instead, invest. Fix the second and third stories, not only the first: the pipeline, the tests, the people who can change the system. And pay for it properly. Somebody should be supporting that work and providing it as a cost-effective service, and the money is there: look at what organisations are spending this week to bring their sites back online, and imagine paying a fraction of that, every month, to keep them maintainable. I would argue the economics add up.
 

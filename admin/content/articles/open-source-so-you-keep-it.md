@@ -10,7 +10,7 @@ tags: open-source, founders, careers, publishing, gen-z-book, article
 status: published
 ---
 
-!shot os-keep.webp | images/ | Two careers, side by side. Closed: at each company you build something, it stays locked in when you leave, and at the next company you start from zero. Open: you bring your open source projects into each company, improve them there in the open, and carry them forward, so each job starts where the last one ended; the experiment you started on the side becomes a company. | comparison
+!shot os-keep.webp | images/ | Two careers, side by side: closed, where each job starts from zero, and open, where the work carries forward. | comparison
 
 ## In short {#in-short}
 

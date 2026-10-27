@@ -10,7 +10,7 @@ tags: careers, hiring, agents, ai-operators, skills, explorer-coding, article, g
 status: published
 ---
 
-!shot hw-there-was-a-time.webp | images/ | There was a time. Each row is a skill that, for a while, got people hired on what they could show rather than what their CV said: breaking applications, reading code, threat modelling, programming without a degree, building websites, sending email campaigns, building mobile apps after the App Store opened in July 2008, mastering Salesforce or a spreadsheet. Each later became something everyone is expected to know. The last row is now: running agentic workflows. | concept
+!shot hw-there-was-a-time.webp | images/ | Skills that, for a while, got people hired on what they could show, ending with running agentic workflows. | concept
 
 ## In short {#in-short}
 
@@ -61,7 +61,7 @@ Think about how hiring actually works. However good you are, there is always a m
 
 My bet is: because you work this way. If you know how to run these agentic workflows and map a problem out, you have a real edge, and it shows from the very first step.
 
-!shot hw-the-edge.webp | images/ | When all things are equal. Two candidates match the job specification equally well. One sends a CV. The other sends a CV fitted to the role, a short analysis of the company's problem, and an infographic or a small working site they have not seen before. The interview starts from that material, on the candidate's strengths, instead of from gaps in a CV. | concept
+!shot hw-the-edge.webp | images/ | When all things are equal: two candidates for the same job, one sending a CV and one sending much more. | concept
 
 ## It starts with the application {#application}
 

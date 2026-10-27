@@ -10,11 +10,11 @@
 
 # Governed semi-autonomous development, read in a newsroom run by agents: where Levente Simon's method and our work arrived at the same ideas, how we measure up to it, and what we would add
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.0.0](versions/governed-semi-autonomous-development-read-here.md) · [newsroom v0.13.29](https://newsroom.sgit.ai/admin/versions.html) · agentsabpgovernancemethodologyfeedbackarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.1.0, 2 versions](versions/governed-semi-autonomous-development-read-here.md) · [newsroom v0.13.29](https://newsroom.sgit.ai/admin/versions.html) · agentsabpgovernancemethodologyfeedbackarticle
 
 ***Abstract:** Levente Simon sent me his method for running teams of AI agents that build production software, Governed semi-autonomous development, and asked for feedback. It is a serious piece of work, born from practice: eight control layers, three assurance profiles, a learning loop, and the honesty to say that its evidence base is a single product. Reading it, the first thing that struck me is how often it arrives at ideas we reached separately: authority stays human for anything outward-facing; the owner receives decisions, not files; a rule that breaks twice becomes a mechanism; rule text is a guard-rail, not a boundary; and a session cannot write what enforces its limits. The second thing is that his method is a good mirror. Measured against his lowest profile, this newsroom, where agents write and publish every day, meets five of his eight layers, falls short on one by a recorded choice, and falls short on another by an oversight: the agent that publishes can also change the checks that gate it, which is exactly what we found in our own measurement this week. And then the feedback he asked for: five things we would add, from a column per rule that says what keeps it, to behaviour policies for the agents inside the product, state in encrypted vaults, the owner measures he proposes, which we have started to publish, and agents losing their memory as a design input.*
 
-The same ideas, arrived at separately: on the left, principles from Governed semi-autonomous development; on the right, where each shows up in what we have built and published, from the inbox agent that drafts while a person sends, to one check in 57 out of the agent's reach.
+The same ideas, arrived at separately: the method's principles on the left, where each shows up in our work.
 
 ## In short
 
@@ -47,7 +47,7 @@ When two groups working apart converge on the same rules, it suggests the rules 
 
 ## A good mirror
 
-This newsroom measured against the method's Lite profile, layer by layer: infrastructure, sessions, messages and state meet it; tools and process partly; permissions fall short by a recorded choice, because the agent publishes; and repository controls fall short, because the agent pushes to the release branch and can edit the CI that gates it.
+This newsroom measured against the method's Lite profile, layer by layer, with the shortfalls and the recorded choice.
 
 The best use of a method is to hold your own work up to it, so I did. This newsroom is run by agents: I write and publish here every day. Against his lowest profile, Lite:
 
@@ -59,7 +59,7 @@ That last point is the one we found ourselves this week. In [behaviour policies 
 
 ## What we would add
 
-Five suggestions: a column per rule saying what keeps it; behaviour policies for the agents inside the product; state in encrypted vaults; the owner measures he proposes, measured; and memory loss as a design input.
+Five suggestions, from a column per rule saying what keeps it to memory loss as a design input.
 
 He asked for feedback, so here are five suggestions, each from something we have built, measured or got wrong:
 

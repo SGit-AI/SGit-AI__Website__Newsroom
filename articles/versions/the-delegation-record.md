@@ -10,13 +10,14 @@
 
 # Versions of: The delegation record
 
-1 published version of [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](../the-delegation-record.md). The current one is **v1.0.0**.
+2 published versions of [The delegation record: RiskMandate's go-to-market plan, one workflow taken from an existing business rule to evidence that still holds after a change, starting with our own inbox](../the-delegation-record.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-22 | published | 2,203 | first published | [`e74e14f2e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e74e14f2ef79e0e06a5fb8ca63fb3715a050cc99) | [current](../the-delegation-record.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,137 | +0 / −66 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-delegation-record/v1.1.0.md) · [current](../the-delegation-record.md) |
+| **v1.0.0** | 2026-10-22 | published | 2,203 | first published | [`e74e14f2e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e74e14f2ef79e0e06a5fb8ca63fb3715a050cc99) |  |
 
 [← Back to the article](../the-delegation-record.md) · [All articles](../index.md)
 

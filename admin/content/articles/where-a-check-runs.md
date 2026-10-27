@@ -10,7 +10,7 @@ tags: abp, testing, ci, agents, security, article
 status: published
 ---
 
-!shot tx-layers.webp | images/ | Where a check can run, and what that makes it: in the agent's environment, a prompt rule, a hook, a test the agent runs or signs, which the agent can skip or change; in CI as a gate, a required job or one that holds private lists as secrets, a setting while the agent can edit the workflow; and on the platform, branch protection and a person's review, a boundary set by the owner. | concept
+!shot tx-layers.webp | images/ | Where a check can run, and what that makes it: in the agent's environment, in CI, or on the platform. | concept
 
 ## In short {#in-short}
 
@@ -32,7 +32,7 @@ But a test run by the agent, in the agent's own environment, is only as strong a
 
 ## Today, measured {#today}
 
-!shot tx-time.webp | images/ | One release, today and moved: on the agent's machine 435 seconds, the generator 223, builders 33, validation 7 and the 18 test files 172; in CI 324 seconds; and, estimated, about 266 seconds on the agent's machine and 217 in CI with the browser tests moved to CI in parallel jobs. | comparison
+!shot tx-time.webp | images/ | One release, today and moved: where the time goes on the agent's machine and in CI, and the estimate if moved. | comparison
 
 We rebuilt the current release on 22 October and timed every step:
 
@@ -44,7 +44,7 @@ The ten to fifteen minutes it feels like is that, plus my own checks, plus the r
 
 ## Where each check could run {#where}
 
-!shot tx-move.webp | images/ | Where the 57 checks run, today and moved: today 19 block the deploy in CI, 12 report in CI and 26 run only on the agent's side; moved, 49 block the deploy, 1 reports and 7 stay with the agent. | comparison
+!shot tx-move.webp | images/ | Where the 57 checks run, today and moved: blocking the deploy in CI, reporting in CI, or on the agent's side only. | comparison
 
 We gave each of the 57 checks in the policy map a proposed place:
 
@@ -62,7 +62,7 @@ And CI itself is only a setting while the agent can edit the workflow and the va
 
 ## What it takes to move them {#ready}
 
-!shot tx-ready.webp | images/ | What it takes to move them: the voice and the summaries already pass on all of today's content; wording has 13 hits, mostly one phrase; graphs have two stale quotes; a rebuild differs from the commit in ten files; and two browser tests reach live services. | comparison
+!shot tx-ready.webp | images/ | What it takes to move the checks: what already passes, and what still needs work first. | comparison
 
 A check can only stop a deploy if today's content passes it. We ran each one against everything:
 

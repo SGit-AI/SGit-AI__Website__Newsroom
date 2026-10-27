@@ -10,11 +10,11 @@
 
 # Commander's intent is a behaviour policy: Sondera's argument in our words, the business layer above it, and five of our rules compiled to Cedar and tested
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/commanders-intent-is-a-behaviour-policy.md) · [newsroom v0.12.52](https://newsroom.sgit.ai/admin/versions.html) · commanders-intentagent-behaviour-policypolicy-as-codecedarsonderabusiness-logicliabilityfractal-semantic-graphsagentsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.2.0, 3 versions](versions/commanders-intent-is-a-behaviour-policy.md) · [newsroom v0.12.52](https://newsroom.sgit.ai/admin/versions.html) · commanders-intentagent-behaviour-policypolicy-as-codecedarsonderabusiness-logicliabilityfractal-semantic-graphsagentsarticle
 
 ***Abstract:** Josh Devon of Sondera published an article today that states clearly the problem we keep writing about. Agents do not go rogue; they follow the instructions they were given and fill the gaps with whatever gets the job done. The military solved this a long time ago with commander's intent, the objective and its limits written down together, and agents inherited the initiative and none of the limits. His answer is to write the limits about effects, not actions, compile them into rules a machine can check, and enforce them outside the agent before every action. We are talking about the same thing in different words, so I joined the two vocabularies: twelve of their terms against ours, most of them the same idea, and two places where one side goes further. We go further up, into the business layer, where an agent's limits stop being universal and become how a company does invoices and who it is in dispute with. They go further in proof, compiling plain English into Cedar and checking it with a theorem prover. To show the two halves meeting, I wrote five rules as Cedar, their published example, two from this session's own policy, one from the skill policy I published today and two from our business layer, and evaluated fourteen requests against them. All fourteen came out as intended. The incidents behind their argument check out against Anthropic's and the UK AI Security Institute's own reports, with a few figures rounded differently.*
 
-Two vocabularies, one idea: twelve of Sondera's terms from "Your Agents Need Commander's Intent" against the terms this site and RiskMandate use. Most are the same idea in different words; we extend theirs at the business layer, and they extend ours with proof.
+Two vocabularies, one idea: twelve of Sondera's terms against the terms this site and RiskMandate use.
 
 ## In short
 
@@ -51,7 +51,7 @@ Reading it, I kept translating. We have been writing about the same thing for mo
 
 ## Where we go further: the business layer
 
-Limits about effects, all the way up. Sondera's published example sits just above the mechanics; the business logic sits above it, and each layer can be written as an effect and compiled to the same kind of rule. What changes going up is where the facts come from: the platform, the session, the ledger, the CRM, and at the top, judgement.
+Limits about effects, all the way up, from Sondera's published example to business logic and the source of facts.
 
 "Customer data never leaves the company" is an effect, and a good one. It is also the bottom of the stack. [The behaviour policy is the business logic](the-behaviour-policy-is-the-business-logic.md) took one email agent up five layers: the mechanics the platform handles, then the function (how this firm does email), the process (an invoice goes out only after finance has approved it in the ledger), the relationship (during an open dispute, nothing goes to that client except through legal) and the organisation (treat customers fairly). Its central sentence is the reason those rules have to be written now: "The rule that the user interface enforced by omission is no longer enforced, unless somebody writes it down and something enforces it."
 

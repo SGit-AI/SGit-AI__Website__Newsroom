@@ -12,7 +12,7 @@ status: published
 
 > **A follow-up to [the maintenance deficit, with evidence](https://newsroom.sgit.ai/articles/the-maintenance-deficit-with-evidence.html).** That article followed Dion Wiggins' numbers on what governments spend on top of PHP against what reaches PHP itself. This one takes the next step: what each organisation running PHP should be buying, the services that should exist now, and how the money reaches the people who know the code.
 
-!shot mk-both-ways.webp | images/ | A market failing both ways: those who run open source budget for building and migrating and have no maintenance to buy; those in the middle, integrators, consultancies and platforms, win the contracts; those who know the code take donations and have no product to sell. The missing piece is a workflow for the first to buy maintenance from the last. | concept
+!shot mk-both-ways.webp | images/ | A market failing both ways: those who run open source, those in the middle, those who know the code, and a missing step. | concept
 
 ## In short: what I am proposing {#in-short}
 
@@ -38,7 +38,7 @@ php2shell is that argument with the market already in place. The PHP story's sou
 
 ## A version signed off by the people who maintain it {#signed-off}
 
-!shot mk-signed-chain.webp | images/ | The signature that makes the money flow: the buyer requires a signed-off version; the product's supplier gets the platform it builds on signed off by that platform's maintainers, who sign off what they depend on in turn. Signatures go up the chain, money comes down it, and Gen AI scales the work at every step. | concept
+!shot mk-signed-chain.webp | images/ | The signature chain that makes the money flow: signed-off versions go up to maintainers, money comes down. | concept
 
 This is the idea I think makes the rest work. A version of an open source platform, the one a product actually ships with, should be signed off by the key authors of that technology. Not a logo, not a sponsorship: a cryptographic signature on a specific build, saying the people who maintain this code know this version, stand behind it for this use, and will help maintain it and patch it when something like php2shell lands. Those maintainers are involved in the set-up and the maintainability of the application built on top, and they provide a level of support for it.
 
@@ -86,7 +86,7 @@ In between, the money that does move stops with the integrators, the consultanci
 
 ## What happened to the old versions {#old-versions}
 
-!shot mk-vendors.webp | images/ | Who sold the fix for old PHP, and what flows back: the PHP security team published source backports for 7.4, 8.0 and 8.1 free; Zend by Perforce sold PHP LTS for 7.2 to 8.1 and is a Silver sponsor of the Foundation, with no revenue share stated; Canonical's Ubuntu Pro, TuxCare and HeroDevs sold subscriptions and are not shown as Foundation sponsors; Freexian sells PHP LTS for Debian with the packager's help. | comparison
+!shot mk-vendors.webp | images/ | Who sold the fix for old PHP, and what flows back to the PHP Foundation, from the PHP security team to Freexian. | comparison
 
 This week shows the market half exists already. [php.net's advisory](https://www.php.net/) is clear that "PHP 8.1 and older no longer receive updates from the PHP project", and then: "Given the severity of these vulnerabilities, the PHP security team provided minimal source-backports for PHP 7.4, PHP 8.0, and PHP 8.1 to help people building from source or without access to an LTS vendor." Branches, not releases; free, for anyone who can build from source.
 
@@ -108,7 +108,7 @@ I have done this commercially, and I am doing it again at RiskMandate; I have se
 
 ## The services that should exist now {#services}
 
-!shot mk-services.webp | images/ | The services that should exist now: bring it back; a maintained build; patch on behalf; remove what is not used; the dependency register; the incident desk; and the endorsed partner, with a stated share of revenue flowing to the foundation, the line procurement can require. | comparison
+!shot mk-services.webp | images/ | The services that should exist now, from bringing it back to the endorsed partner, and the foundation's share. | comparison
 
 So here are the services I think should appear now, each sold to the people who run the code and delivered by, or with, the people who maintain it, with a stated share flowing upstream:
 
@@ -122,7 +122,7 @@ So here are the services I think should appear now, each sold to the people who 
 
 ## How we are thinking of selling it {#selling}
 
-!shot mk-options.webp | images/ | Ways to make money selling open source software, as RiskMandate is mapping them: paid to map one workflow or site; paid to engineer the implementation; a scoped custom version built on the open-source base; and recurring maintenance priced by criticality (standard, operational, critical). Every customer version is built on the open-source base; the customer decides what stays private. | concept
+!shot mk-options.webp | images/ | Ways to make money selling open source software, as RiskMandate is mapping them: from paid mapping to maintenance. | concept
 
 Here is how we are mapping the ways to make money selling open source software at RiskMandate, in the words of our current proposal. They are directly applicable here, and they are still proposals, not proven revenue.
 

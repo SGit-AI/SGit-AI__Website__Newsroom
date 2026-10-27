@@ -10,7 +10,7 @@ tags: gen-z-book, learning, programming, education, explorer-coding, article
 status: published
 ---
 
-!shot pu-upside.webp | images/ | Programming, taught upside down. Usually: syntax and types, variables and functions, classes and structure, exercises with no purpose, and often nothing useful at the end. How it is learned: something you want to control, make it work and see it work, the concept you need when you need it, and structure because you need it. | concept
+!shot pu-upside.webp | images/ | Programming, taught upside down: how it is usually taught, and how it is learned. | concept
 
 ## In short {#in-short}
 
@@ -42,7 +42,7 @@ I was lucky. By the time I was taught any of those concepts, I already knew how 
 
 ## The tools that got the loop right {#loop}
 
-!shot pu-loop.webp | images/ | The tools that got the loop right: BASIC on the ZX Spectrum, Visual Basic, the spreadsheet, Scratch, Code Club, and now explorer coding. Each made the distance from an idea to seeing it work very short. | timeline
+!shot pu-loop.webp | images/ | The tools that got the loop right, from BASIC on the ZX Spectrum to explorer coding. | timeline
 
 The places where I have seen programming taught really well all had that short loop:
 
@@ -53,7 +53,7 @@ The places where I have seen programming taught really well all had that short l
 
 ## The irony: back to Excel {#excel}
 
-!shot pu-excel.webp | images/ | The irony: taught programming with nothing useful to build, people go back to the spreadsheet, and program there anyway. Microsoft calls Excel the world's most widely used programming language. | concept
+!shot pu-excel.webp | images/ | The irony: people taught programming with nothing to build go back to the spreadsheet and program there anyway. | concept
 
 The other problem with teaching programming upside down is that people learn it and then do nothing useful with it, so they do not use it day to day. And guess what? They go back to Excel, where they program anyway. That is the irony. Microsoft's own researchers call Excel "the world's most widely used programming language", and in January 2021, with the LAMBDA function, "Excel has become Turing-complete."
 
@@ -67,7 +67,7 @@ And here is what I find interesting. I know entrepreneurs who have been explorer
 
 ## Coding is communication {#communication}
 
-!shot pu-communication.webp | images/ | Coding is communication: voice and briefs, visual blocks, code and its primitives, and the machine underneath. The way in changes; the primitives stay. | concept
+!shot pu-communication.webp | images/ | Coding is communication: voice and briefs, visual blocks, code and its primitives, and the machine underneath. | concept
 
 This is the trick we sometimes miss. Coding is communication: speaking to a computer, through an abstraction layer. Each programming language has its own sweet spot.
 

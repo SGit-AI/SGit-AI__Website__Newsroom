@@ -10,11 +10,11 @@
 
 # Agent Behaviour Policies move to the Open Security Summit: the first hosted project of a community interest company, with RiskMandate as a founding contributor
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.0.0](versions/agent-behaviour-policies-move-to-the-open-security-summit.md) · [newsroom v0.13.3](https://newsroom.sgit.ai/admin/versions.html) · agent-behaviour-policyopen-sourcegovernanceopen-security-summitriskmandatearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-20 · [article v1.1.0, 2 versions](versions/agent-behaviour-policies-move-to-the-open-security-summit.md) · [newsroom v0.13.3](https://newsroom.sgit.ai/admin/versions.html) · agent-behaviour-policyopen-sourcegovernanceopen-security-summitriskmandatearticle
 
 ***Abstract:** The Agent Behaviour Policy is moving to a home of its own. We propose that it becomes the first project hosted by the Open Security Summit, a UK community interest company, rather than setting up a new foundation. The reason is the one that made us propose it to OWASP on 8 October: a description of what an agent can do should not belong to the company that sells it. The Open Security Summit is a great home for it. It has always been about collaboration between developers and security people, it fits the strategy there, and it is an organisation I want to put energy into anyway. I am its director, so hosting the project there separates it from RiskMandate as an organisation, but it does not by itself make the governance independent. That has to be designed and written down: a public charter, and a steering group with a majority independent of RiskMandate and The Cyber Boardroom. The material is already open, CC BY 4.0 and Apache 2.0, so nothing needs to be made open again; what needs doing is recording what is hosted, who decides, and how. RiskMandate stays a founding contributor and a commercial implementer, on the same terms as anyone else. This is a proposal, for discussion and legal review.*
 
-The proposed structure: the Open Security Summit CIC as the legal host, a hosted-project programme, Agent Behaviour Policies as its first project, governed by a steering group and maintainers under a charter, with RiskMandate contributing on the same terms as anyone else.
+The proposed structure: the Open Security Summit CIC as legal host, with a steering group and maintainers.
 
 ## In short
 

@@ -10,7 +10,7 @@ tags: agents, governance, conferences, evaluations, interpretability, observabil
 status: published
 ---
 
-!shot aq-items.webp | images/ | The six items in the post, traced to the programme: the three failure stories trace to keynotes by Ion Stoica, Emmanuel Ameisen and Mike Chambers; the 43% poll and the 1,200-developer case are not in any abstract, deck or recap we read; the 1,500-agent architecture matches PayPal's abstract closely, but its count does not appear. | comparison
+!shot aq-items.webp | images/ | The six items in the post, traced to the conference programme: which trace to keynotes and which we could not find. | comparison
 
 !trail self-report
 
@@ -63,7 +63,7 @@ None of this says the post is wrong. Polls and numbers said on stage are often n
 
 ## Where the talks disagree {#tensions}
 
-!shot aq-tensions.webp | images/ | Five questions on which speakers took opposite sides: whether humans stay in the loop, whether a model or a rule enforces policy, whether agents can be inventoried, whether internal probes beat reading the output, and whether open models are cheaper for the same work. The right-hand column is this site's reading. | comparison
+!shot aq-tensions.webp | images/ | Five questions on which speakers took opposite sides, with this site's reading in the right-hand column. | comparison
 
 **Humans in the loop.** Rubrik's abstract says "'human-in-the-loop' safeguards are dead". Monday.com's deck says "Deploy and release are still a human job", and Dropbox, Navan and C1 all keep approvals. RSA's line resolves most of it: a human "approves the entry" but "doesn't approve the onward journey". A person can approve a mandate; they cannot approve every step after it.
 

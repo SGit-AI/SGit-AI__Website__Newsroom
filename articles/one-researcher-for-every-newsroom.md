@@ -10,11 +10,11 @@
 
 # One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.0.0](versions/one-researcher-for-every-newsroom.md) · [newsroom v0.13.91](https://newsroom.sgit.ai/admin/versions.html) · researcharchiveprovenancesgitvaultsagentsdesignarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-26 · [article v1.1.0, 2 versions](versions/one-researcher-for-every-newsroom.md) · [newsroom v0.13.91](https://newsroom.sgit.ai/admin/versions.html) · researcharchiveprovenancesgitvaultsagentsdesignarticle
 
 ***Abstract:** Every newsroom we run has its own researcher. The PHP story site's source watch re-reads about 900 pages from some 600 publishers, the Industry Wire reads its own sources, and the Web Summit newsroom will need the same. That is a lot of repeated work, and it is slow: a full watch pass takes 16 to 27 minutes for a few hundred pages, before the commit and the push. Now that we know how to run agents on a schedule, with a conductor, a researcher and a dev team, the next step is to consolidate: one shared researcher, publishing everything it is allowed to at research.newsroom.sgit.ai, a light and very focused version of the Internet Archive. Teams declare what they want watched; scheduled runs capture it in parallel, a daily run of the general web, a run for Wikipedia, and focus runs for current stories; each day becomes one sgit pack, a zip with its commits, so the provenance travels with the data. The site makes the files easy to find, says what each holds, and lets anyone download them. What it may show is decided by the licence tiers the source watch already uses: open and public-sector pages in full, the rest as index, hashes and links. This is the design, for review before we build it.*
 
-research.newsroom.sgit.ai, one researcher shared by every newsroom: a watch list of what to watch, who asked, how often and its licence tier; three kinds of scheduled run, the daily web, Wikipedia, and focus runs for current work; a pack a day in an sgit pack vault, with an index of what is inside; the research site, where tier A is published in full and tiers B and C as index, hashes and links; and the readers, the PHP story site, the Industry Wire, the Web Summit newsroom and anyone outside. Proposed.
+research.newsroom.sgit.ai, one researcher shared by every newsroom: watch list, runs, packs, site and readers. Proposed.
 
 ## In short
 
@@ -57,13 +57,13 @@ What it adds to what the Internet Archive already does is focus and structure: t
 
 ## Why pack mode makes it possible
 
-Why pack mode makes this possible: the source watch vault measured by the PHP site's researcher on 23 October 2026, as a normal sgit vault and as a pack vault; a fresh clone took 827 seconds and 95 seconds, listing the vault on the server 91 seconds (a failure, HTTP 504) and 0.73 seconds, a pull with nothing new 34 seconds and 4 seconds; the vault was 1,614 MB as loose objects and 1,184 MB as packs.
+Pack mode against a normal sgit vault, measured on the PHP site's source watch vault on 23 October 2026.
 
 The new versions of sgit change what is practical. In pack mode, released in sgit 0.24.0, a push is one zip with its commits, and a clone is the newest snapshot plus the packs since it. The PHP site's researcher measured the difference on the source watch itself, a vault of 29,861 files: a fresh clone went from 827 seconds to 95, listing the vault on the server from a timeout after 91 seconds to 0.73 seconds, and a pull with nothing new from 34 seconds to 4. Packs are also what make "a pack a day" a natural unit to publish: a dated zip, with its own index, that anyone can fetch directly.
 
 ## What we may publish
 
-What the research site may publish, by tier: tier A, open or public sector, the full capture in a public pack with a published read key, 73 of the source watch's pages, and Wikipedia under its open licence; tier B, at most 25 words and a link, the index, hash and change record in public and the full bytes in a private vault, 523 pages; tier C, link only, 15 pages. And an opt-out: any publisher who asks us to stop, we stop.
+What the research site may publish, by licence tier A, B and C, and the opt-out for any publisher.
 
 We only use public sources. But public is not the same as free to republish, and the research site has to respect that. The source watch already gives every page a licence tier: A, open or public sector, "keep and show"; B, quote up to 25 words and link; C, link only. Its data counts 73 pages at tier A, 523 at B and 15 at C. And the Industry Wire's contract already sets the rule for public vaults: everything in a vault with a published read key is public, including its history, so "frozen tier-B bytes" never go in one.
 

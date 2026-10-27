@@ -10,11 +10,11 @@
 
 # The AI Conference 2026, read for agent governance: six claims traced, five disagreements, and what the speaker notes say that the slides do not
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.1.0, 2 versions](versions/the-ai-conference-read-for-governance.md) · [newsroom v0.12.86](https://newsroom.sgit.ai/admin/versions.html) · agentsgovernanceconferencesevaluationsinterpretabilityobservabilityopen-modelsresearcharticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.2.0, 3 versions](versions/the-ai-conference-read-for-governance.md) · [newsroom v0.12.86](https://newsroom.sgit.ai/admin/versions.html) · agentsgovernanceconferencesevaluationsinterpretabilityobservabilityopen-modelsresearcharticle
 
 ***Abstract:** A GRC adviser's post about The AI Conference in San Francisco said agent governance was the subtext of almost every keynote, and named three failure stories, a live poll and two case studies. We read the programme to see where each came from and what else connects: the official agenda of 134 sessions, 35 of the 36 published slide decks with their speaker notes, the abstracts and the adviser's own recap. The three failure stories trace to keynotes by Ion Stoica, Emmanuel Ameisen of Anthropic and Mike Chambers of AWS. The poll and the two case-study numbers do not appear in anything we could read, although one architecture matches PayPal's talk closely. Across the programme, the most repeated idea is that policy has to be enforced outside the model, and the talks disagree openly on five questions: whether humans stay in the loop, whether a model or a rule should decide, whether agents can be inventoried, whether reading a model's internals beats reading its output, and whether open models are now cheaper for the same work. The best fact-checking we found was in one speaker's notes.*
 
-The six items in the post, traced to the programme: the three failure stories trace to keynotes by Ion Stoica, Emmanuel Ameisen and Mike Chambers; the 43% poll and the 1,200-developer case are not in any abstract, deck or recap we read; the 1,500-agent architecture matches PayPal's abstract closely, but its count does not appear.
+The six items in the post, traced to the conference programme: which trace to keynotes and which we could not find.
 
 Agent evidence, read three ways
 
@@ -71,7 +71,7 @@ None of this says the post is wrong. Polls and numbers said on stage are often n
 
 ## Where the talks disagree
 
-Five questions on which speakers took opposite sides: whether humans stay in the loop, whether a model or a rule enforces policy, whether agents can be inventoried, whether internal probes beat reading the output, and whether open models are cheaper for the same work. The right-hand column is this site's reading.
+Five questions on which speakers took opposite sides, with this site's reading in the right-hand column.
 
 **Humans in the loop.** Rubrik's abstract says "'human-in-the-loop' safeguards are dead". Monday.com's deck says "Deploy and release are still a human job", and Dropbox, Navan and C1 all keep approvals. RSA's line resolves most of it: a human "approves the entry" but "doesn't approve the onward journey". A person can approve a mandate; they cannot approve every step after it.
 

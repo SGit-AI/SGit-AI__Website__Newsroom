@@ -10,7 +10,7 @@ tags: riskmandate, strategy, agents, security, market, article
 status: published
 ---
 
-!shot wb-landscape.webp | images/ | Who does what, by their own description: Drata, Endor Labs, Socket, Bedrock Data, Sondera, AWS AgentCore Policy, the agent gateways, the testers and the incident responders, against the analyst's four layers, discover, evaluate, enforce and prove; and RiskMandate as the policy each layer is configured from. | comparison
+!shot wb-landscape.webp | images/ | Who does what, by their own description, against the analyst's four layers: discover, evaluate, enforce and prove. | comparison
 
 ## In short {#in-short}
 
@@ -58,7 +58,7 @@ The analyst read the logos from a photograph, and some I could not match to a co
 
 ## Their architecture, our pieces {#map}
 
-!shot wb-map.webp | images/ | Their architecture, our pieces: discover is the grant, measured; evaluate is the mandate and the delta; enforce is hooks in the agent's harness and rules compiled to Cedar for gateways; prove is a receipt per decision, a replayable day, and a holder for every gap. And the roadmap adds risk acceptance and insurance. | comparison
+!shot wb-map.webp | images/ | The analyst's four layers, each mapped to our pieces: discover, evaluate, enforce and prove. | comparison
 
 Laid against [our proposed roadmap](/articles/the-riskmandate-roadmap.html), the four layers are already there in some form:
 
@@ -71,7 +71,7 @@ And two things the four layers leave out, which our roadmap adds: risk acceptanc
 
 ## The controls fitted to the context {#fit}
 
-!shot wb-fit.webp | images/ | The controls fitted to the context: a line in the prompt where little is at stake; a hook in the harness where the agent acts alone; a gateway or proxy where it reaches systems that matter; monitoring and a person where money, customers or regulators are involved. The same behaviour policy feeds all four. | concept
+!shot wb-fit.webp | images/ | The controls fitted to the context, from a line in the prompt to monitoring and a person. | concept
 
 This is the part of our positioning I most want to be clear about, because it is what makes it different from any single product on that backdrop. What we provide is a map of the whole situation: a good understanding of each environment, a risk analysis of each agent in it, and the set of security controls that fits that context.
 
@@ -92,7 +92,7 @@ And we map the environment first, so the customer knows which of their agents ne
 
 ## Where to start {#start}
 
-!shot wb-start.webp | images/ | Where to start: the analyst's first build list, and our order. Tool-call interception through the hooks and the customer's own gateways; behavioural policies, which we have; cross-step detection in hooks that keep state; allow, block and approve generated from the policy; audit and replay, which we have; and partners for skill and MCP risk scoring. | comparison
+!shot wb-start.webp | images/ | Where to start: the analyst's first build list, and our order. | comparison
 
 So the list becomes: use the hooks and the gateways customers already have; keep building the policy, which is the part nobody else does openly; make the hooks hold the sequences; and partner for the rest, Socket and Endor Labs on skills and dependencies, exactly as the analyst suggests. The analyst's own conclusion is that RiskMandate's best opportunity is to be the layer those platforms integrate with. I agree, with one change of words: the policy layer, not another runtime layer.
 
@@ -102,7 +102,7 @@ I do not see these companies moving into our space as a bad thing. I see it as a
 
 ## Who plays open source {#open}
 
-!shot wb-open.webp | images/ | Who plays open source, and what they open: agentgateway, Docker's MCP gateway and Sondera's harness are open; AWS opens its Cedar language, Socket and Endor Labs their agent tooling; no public code was found for Drata's, Bedrock Data's or Ping's agent products. RiskMandate opens the vocabulary, the policies, the engine and the apps. | comparison
+!shot wb-open.webp | images/ | Which of the vendors open their code, and what RiskMandate opens. | comparison
 
 We play open source, and that is a design choice: everything we make is meant to be used by the customer, in their own hands. So it is worth asking how many of these companies do the same. From their public repositories and documentation:
 

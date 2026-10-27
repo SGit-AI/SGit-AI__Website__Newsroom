@@ -10,11 +10,11 @@
 
 # The wire as a graph: start from what the reader sees, give every story and every name a long-lived ID, link every phrase of a short narrative, and a brief for the desks
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.0.0](versions/the-wire-as-a-graph.md) · [newsroom v0.12.46](https://newsroom.sgit.ai/admin/versions.html) · wirenewsroomfractal-semantic-graphsontologyidsevidenceprovenancevaultssgitmulti-modelbriefarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-14 · [article v1.1.0, 2 versions](versions/the-wire-as-a-graph.md) · [newsroom v0.12.46](https://newsroom.sgit.ai/admin/versions.html) · wirenewsroomfractal-semantic-graphsontologyidsevidenceprovenancevaultssgitmulti-modelbriefarticle
 
 ***Abstract:** The wires already collect the day's news into encrypted vaults on a schedule. This is the next step, and the way to design it is to start at the end, with what the reader sees, and work backwards to the data. A story should read as a short narrative in which every name is a link, to a person, a company, an event or a place, each with a long-lived ID, and every sentence is a claim with its evidence: a fact, an observation, a statement by a party, or our analysis. Stories group into stories, and that is the fractal part: a thread is a story made of stories, and an article someone else published is a story too. From there, the primitives: a run that collects, captures that freeze what was read, claims, stories, stories of stories and names, each with a random ID that never changes. I measured the four wires' public vaults today: 202 stories, 1,358 distinct names, only 171 of them in more than one story and 48 in more than one wire, and only 44% of the names a story lists appear in its own text. Those numbers say where the work is, and how big a folder tree it needs: a name gets its own folder when it has gravity. Earlier experiments that linked every word of a long text were the right idea done too much. A wire story's narrative is about 55 words, small enough to link every phrase. Cheaper models can do the heavy lifting and a more capable one can check it. This article is also the brief for the desks and the wire agent.*
 
-Start from what the reader sees. One story from the Industry Wire, shortened, as it could read: every name in its narrative is a link to something with an ID and a type, and every sentence is a claim with its evidence. The NCSC is named in this story's text but not in its tags, and is tagged in another story; with an ID, the two would join. Below, the three other views the same data gives: the day, the story of stories, and the name.
+One story from the Industry Wire, shortened, with every name a link and every sentence a claim with its evidence.
 
 ## In short
 
@@ -51,7 +51,7 @@ None of this is a mistake by the desks; it is what tags are. It is why the next 
 
 ## The primitives
 
-The primitives, and where each lives. A run collects; captures freeze what was read; claims are typed and point at evidence; a story is a short narrative over claims and names; stories group into stories; a name earns its own folder when it has gravity. Every object has a long-lived random ID, and an index of every ID, alias and slug.
+The primitives and where each lives: runs, captures, claims, stories and names, each with a long-lived random ID.
 
 Working back from the reader, these are the objects the data needs.
 

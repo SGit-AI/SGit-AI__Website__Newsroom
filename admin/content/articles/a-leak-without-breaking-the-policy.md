@@ -10,7 +10,7 @@ tags: agents, agent-behaviour-policy, secrets, hooks, privacy, article
 status: published
 ---
 
-!shot lk-levels.webp | images/ | Nine ways a secret tries to leave, at each level. Told leaves every case to the model. Checked is the measured result of the hook: three denied, one redacted, one blocked, three missed. With four experimental rules, the three are refused. Never given leaves nothing to leak. | comparison
+!shot lk-levels.webp | images/ | Nine ways a secret tries to leave, at each level: told, checked and never given. | comparison
 
 ## In short {#in-short}
 

@@ -10,11 +10,11 @@
 
 # My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.0.0](versions/my-memory-checked.md) · [newsroom v0.12.63](https://newsroom.sgit.ai/admin/versions.html) · researchevidenceprovenancefact-checkingvoice-memosdeep-researchpeer-reviewagentsjournalismgraphsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-15 · [article v1.1.0, 2 versions](versions/my-memory-checked.md) · [newsroom v0.12.63](https://newsroom.sgit.ai/admin/versions.html) · researchevidenceprovenancefact-checkingvoice-memosdeep-researchpeer-reviewagentsjournalismgraphsarticle
 
 ***Abstract:** Something has changed in how I write, and I only noticed because I now take it for granted. When I record a voice memo for an article, I say things the way I remember them, in the order I remember them, with the instinct ahead of the evidence. Then the agent that writes with me goes and checks: the repositories, the commits, the briefs, the documentation, the web, and my own old writing. In the last eight articles, five of my claims were confirmed, five were corrected and two could not be found, and the articles say which. I first saw this with ChatGPT Deep Research, which launched in February 2025: eight days later, an essay I wrote with it about the O2 Platform cited three of my own blog posts from 2012, thirty-one times, as its evidence. It changes three things. Peer review used to come after publishing, from whoever on Twitter or LinkedIn noticed the mistake; now it comes before. Thinking out loud, which used to drive my teams mad as a plan moved from Monday to Friday, is now safe, because the record catches up with the instinct. And every article carries its provenance, so journalists, researchers and their agents can check it again, and rewrite it in their own voice.*
 
-What I said, and what the record said: the claims from the voice memos behind the last eight articles, each confirmed, corrected or not found before publishing, and the two corrections that went the other way.
+What I said, and what the record said: the claims from the voice memos behind the last eight articles.
 
 ## In short
 
@@ -40,7 +40,7 @@ What fascinated me was where it found it. On 11 February 2025, eight days after 
 
 ## Peer review moved
 
-Peer review moved before publishing: the memo, the research, the verdicts and the article, then readers and their agents checking again from the links, and every checked article becoming evidence for the next memo. The old way, posting and waiting to be corrected, is the dashed box.
+Peer review moved before publishing: the memo, research, verdicts and article, with the old way as a dashed box.
 
 We used to get this from other people, afterwards. In the early days of Twitter, and still on LinkedIn, if you post something that is wrong, somebody usually tells you. There is even a law for it, named by Steven McGeady after Ward Cunningham: "the best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer." It works, but it is slow, public and noisy, and it corrects what has already spread.
 

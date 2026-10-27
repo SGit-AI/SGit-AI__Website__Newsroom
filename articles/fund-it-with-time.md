@@ -10,11 +10,11 @@
 
 # Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.0.0](versions/fund-it-with-time.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · startupsfundingfounderstimegen-z-bookarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-19 · [article v1.1.0, 2 versions](versions/fund-it-with-time.md) · [newsroom v0.12.132](https://newsroom.sgit.ai/admin/versions.html) · startupsfundingfounderstimegen-z-bookarticle
 
 ***Abstract:** How do you fund a startup? My answer starts with what a startup needs most, which is time. A startup is like a work of art: it is all-consuming, you have to love it and lose yourself in it, and making money should be a side effect of being good at it, not the reason. So the question is how to find as much time as you can while earning a living. The best alignment is to make money around the area you want to go into, and the best start is your own revenue stream: make the work you already do more effective, or sell to people you already know, because if you are not solving a real problem you are chasing shadows. You have more time than you think: stop watching streaming. In a weird way, the best place to start a company is while you are employed, because the constraint makes you focus, and if you are good, many employers would rather have you part time than lose you. I did exactly that. It is still a gamble. I paid off all my debt, started my GenAI startup and went back into debt, and I am using the money from an exit to pay myself instead of taking an executive role. Debt is paying someone to buy your time. What you do not want is regret.*
 
-Where a founder's time comes from, from the least risky to the most. Time you already have: evenings, weekends, the hours that go to streaming. Time inside the job: work you already do, made more effective with the same technology. Time you negotiate: part time, with an employer who would rather have you half the time than not at all. Time you buy: savings, an exit, debt, which is paying someone to buy your time. Investment comes later, when the company is profitable.
+Where a founder's time comes from: time you have, time inside the job, time you negotiate and time you buy.
 
 ## In short
 

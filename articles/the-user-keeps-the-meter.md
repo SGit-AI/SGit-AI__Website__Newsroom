@@ -10,11 +10,11 @@
 
 # The user keeps the meter: a proposed design for user management, activity and billing on vaults, with one billing vault per user, two signed writers, and one light check at the server
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.3.0, 4 versions](versions/the-user-keeps-the-meter.md) · [newsroom v0.13.13](https://newsroom.sgit.ai/admin/versions.html) · vaultsbillingpkiarchitectureproposalarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-21 · [article v1.4.0, 5 versions](versions/the-user-keeps-the-meter.md) · [newsroom v0.13.13](https://newsroom.sgit.ai/admin/versions.html) · vaultsbillingpkiarchitectureproposalarticle
 
 ***Abstract:** Billing is usually a server problem: a server, a database, a balance every action has to update, race conditions, and either a bottleneck or a scheduler to keep it all in step. This is an exploration of doing it the other way round, on the client, with vaults. Each user gets a billing vault that both they and I can write to. The user's browser meters its own activity and appends it there, signed with the user's key, the way this newsroom's meter already works. When the user pays, their browser adds the credit straight away, so they can carry on. My admin vault, which can be offline for a while, later reconciles payments with Stripe, from my browser, and commits a validation back into the user's vault, signed with the admin key, so anyone can check it. Credit is then unvalidated, validated, or not valid, and the product keeps working on unvalidated credit, because on the client it costs us nothing. Since the vault's first commit is pinned and every commit is signed, we always know who wrote what. The one server left, the sgit upload server, does a light check only: is the key valid, and is there credit, read from a cached, signed value through a small credits API. Four parties, each with its own key: the admin vault, the user, the upload server and the API. And because the user's data lives in their vault, it travels with them across our sites. It is all PKI from here. Where it lives is open: user.sgit.ai, or billing.sgit.ai, so others can use it too. This is a proposal, with the open questions written down.*
 
-The proposed design. The user's browser appends its activity, and adds credit when it pays, to a billing vault, signed by the user. The admin vault reads it, reads payments from Stripe, and commits validations back, signed by the admin. The upload server checks the validated credit through a small credits API before it accepts an upload.
+The proposed design: a user's billing vault, the admin vault, Stripe, the credits API and the upload server.
 
 ## In short
 
@@ -96,7 +96,7 @@ How that reconciliation should work needs some care, because of how Stripe works
 
 So the flow is: the user is sent to Stripe with a payment link tagged with their billing vault; Stripe sends them back to a page that gives them the credit, and their browser adds it straight away and appends a signed claim, "I paid"; later, the admin's browser lists recent payments, matches each claim to a payment, and commits a signed validation. Two-way sync between the two vaults, with each side writing only its own records.
 
-A top-up, step by step. The user pays through a payment link, comes back, and their browser adds the credit straight away with a signed claim. Later, the admin's browser reads recent payments from Stripe, matches the claim, and commits a signed validation. The upload server reads that validation and checks it.
+A top-up, step by step: the payment link, the signed claim, the admin's signed validation and the upload server's check.
 
 ## Credit now, validated later
 

@@ -10,7 +10,7 @@ tags: php2shell, provenance, corrections, exploitation, ai, open-source, article
 status: published
 ---
 
-!shot sz-stories.webp | images/ | The side stories of php2shell, from the data the PHP site keeps: provenance; building on a real problem; who corrects, and how; no named victim; detection and the WAF; the sites that went dark; follow the money; the flaws nobody watched; and how much of it was AI. | concept
+!shot sz-stories.webp | images/ | The side stories of php2shell, from the data the PHP site keeps, from provenance to how much of it was AI. | concept
 
 ## In short {#in-short}
 
@@ -77,13 +77,13 @@ Then we can do the calculation. If that money had instead gone into the model I 
 
 ## The coverage, and whether the conversation moved {#coverage}
 
-!shot sz-coverage.webp | images/ | How fast the coverage faded: the PHP site's evidence vault holds 4 sources published on 20 October, 117 on 21 October, 94 on 22 October, 34 on 23 October and 8 on 24 October, of 418 sources, 53 with no date; the latest days are partly the capture lag. | comparison
+!shot sz-coverage.webp | images/ | How fast the coverage faded: sources in the PHP site's evidence vault by publication day, 20 to 24 October. | comparison
 
 We also need to track the coverage over time. If you just follow the news, it is not sustainable: the energy goes, everyone moves on, and nothing changes. The evidence vault shows the curve: 117 of its sources were published on 21 October, the day of the release, 94 the next day, 34 the day after, and 8 on 24 October, though the latest days are partly the time it takes to capture them. So the real question is whether the conversation moved. Are we now talking about the sustainability of open source, or about who maintains the software everything runs on? That is a story the data can answer, given time.
 
 ## The flaws nobody watched {#nobody-watched}
 
-!shot sz-attention.webp | images/ | Attention against evidence, from the Pulse data: English-language news items over 30 days against the furthest step of evidence of exploitation. php2shell, 175 items, a public proof of concept and attempts reported, not on CISA's exploited list; Windows command injection, 40, on the list with attempts reported; BeyondTrust, 24; Ivanti, 23, on the list; a GitLab flaw rated 10.0, 22, no step reached; Zimbra, 16, on the list with a national CERT reporting compromises; SharePoint, 1, on the list with attempts reported. | comparison
+!shot sz-attention.webp | images/ | Attention against evidence, from the Pulse data: news items over 30 days against the furthest step of exploitation. | comparison
 
 The other big story is all the other vulnerabilities released at the same time, which got a fraction of the attention and, in some cases, have real exploitation behind them. We know the number of vulnerabilities is going to rise. The site has quietly started monitoring this, in a section called [Pulse](https://php.oct.2026.newsroom.sgit.ai/pulse/index.html), which keeps, for 26 flaws, the evidence of exploitation as eight dated steps, and beside it the attention each one gets, never combined.
 

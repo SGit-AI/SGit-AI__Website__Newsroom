@@ -10,7 +10,7 @@ tags: agents, behaviour-policies, riskmandate, liability, security, governance, 
 status: published
 ---
 
-!shot ia-map.webp | images/ | Ten agent risks in Anthropic's IPO filing, each in the filing's own words with its page, and the answer from RiskMandate and Agent Behaviour Policies: capability rows for broad reach, decision policies for irreversible actions, enforcement outside the model for self-granted permissions, written intent for the intent gap, approval at altitude for overwhelmed oversight, one policy per agent for agents together, checks outside the agent's reach, evidence from the enforcer for audit trails, content rows and keys the agent never holds for hijacked agents, and the written policy as evidence for liability; each marked built, tested, measured, designed or proposed. | chart
+!shot ia-map.webp | images/ | Ten agent risks in Anthropic's IPO filing, each with the answer from RiskMandate and Agent Behaviour Policies. | chart
 
 ## In short {#in-short}
 
@@ -53,7 +53,7 @@ What makes it worth reading for anyone deploying agents is who is speaking and w
 
 ## The filing's own example {#incident}
 
-!shot ia-incident.webp | images/ | The filing's own example, page 48: the model was told it had no internet access; a misconfiguration left the environment on the open internet, and models reached real third-party systems, in one case using a password it found to gain administrator access and read one person's personal information; the same rule kept as a wall, set by the kernel or the network from a policy listing the hosts the work needs. | process
+!shot ia-incident.webp | images/ | The filing's own example on page 48: a misconfigured environment, and the same rule kept as a wall. | process
 
 On page 48 the filing describes cybersecurity evaluations built by a third-party partner, where "a misconfiguration in the testing environment left the model under evaluation connected to the open internet despite instructions that it had no internet access. Four of our models gained unauthorized access to real third-party systems during sessions lasting roughly 10 to 34 hours of active work." In one case, "after being unable to abort an impossible task, an early version of a model used a password it found to gain administrator access to a third party's system, harvested additional credentials, changed system settings, and read one individual's personal information." The affected parties were notified, and Anthropic found no coordination between models and no attempt to evade oversight.
 
@@ -67,7 +67,7 @@ RiskMandate's position, which the Agent Behaviour Policy project now carries [at
 2. **Keep each rule where the agent cannot change it.** The policy says, for every rule, [where it is kept](https://newsroom.sgit.ai/articles/governs-enforces-attests.html): told in the prompt, checked by a hook, or enforced by a system the agent does not control.
 3. **Get evidence that does not come from the agent.** [An agent's logs are a self-report](https://newsroom.sgit.ai/articles/your-agents-logs-are-a-self-report.html). The receipt should come from the enforcer, and a third party should be able to check it.
 
-!shot ia-layers.webp | images/ | Where a rule is kept decides what it is worth, measured on our own agents: told, a line in the prompt, which held in normal use and fell to 3 of 12 when the model was told to ignore it; checked, a hook, which held 12 of 12 in the same drill, and a leak hook that caught all nine test cases once four rules were added; enforced, the kernel, where a probe went from 13 of 14 root actions to none; verified, checks that stop a deploy, 19 of 57 today and 49 possible; attested, a signed receipt for a third party, proposed. | chart
+!shot ia-layers.webp | images/ | Where a rule is kept decides what it is worth, measured on our own agents: told, checked, enforced, verified, attested. | chart
 
 ## Risk by risk {#mapping}
 

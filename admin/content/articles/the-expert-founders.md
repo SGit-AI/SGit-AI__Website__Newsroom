@@ -10,7 +10,7 @@ tags: startups, founders, subject-matter-experts, venture-capital, europe, open-
 status: published
 ---
 
-!shot ef-playbooks.webp | images/ | Two playbooks: on the left, the outsider who finds a gap, raises first, hires the experts, displaces the incumbents and becomes one; on the right, the expert who lives the problem, builds it with agents, shows it working, raises for scale and stays close to the field. | comparison
+!shot ef-playbooks.webp | images/ | Two playbooks: the outsider who finds a gap, and the expert who lives the problem and builds it with agents. | comparison
 
 ## In short {#in-short}
 
@@ -50,7 +50,7 @@ The data is moving the same way. Carta reports that the share of new US startups
 
 ## The experts were always the better bet {#experts}
 
-!shot ef-evidence.webp | images/ | What the data says: the rate at which US founders build a 1-in-1,000 fastest-growing firm doubles with three or more years in the same industry; European startups raise at higher revenue, lower valuations and smaller targets than US ones; and premature scaling is the most common way high-growth startups fail. | comparison
+!shot ef-evidence.webp | images/ | What the data says about founders with experience in an industry, European startups and premature scaling. | comparison
 
 The myth of the young outsider was never the whole story. The largest study I know, of 2.7 million US founders, found that "The mean age at founding for the 1-in-1,000 fastest growing new ventures is 45.0", and that ["successful entrepreneurs are middle-aged, not young."](https://www.aeaweb.org/articles?id=10.1257/aeri.20180582) More to the point: "Prior experience in the specific industry predicts much greater rates of entrepreneurial success." Founders with three or more years in the same industry reached top-tier growth at twice the rate of those with none.
 
@@ -58,7 +58,7 @@ What held the experts back was not knowledge. It was access: to capital, to engi
 
 ## Three expert founders {#founders}
 
-!shot ef-founders.webp | images/ | Three subject-matter experts, building in their own field: what each comes from, what they build for, what exists, and why the expertise is the advantage. | comparison
+!shot ef-founders.webp | images/ | Three subject-matter experts, building in their own field: what each comes from and what they build for. | comparison
 
 **Me, in security.** I come from application security, much of it in OWASP, and from working as a CISO. I tried this before with [The Cyber Boardroom](https://thecyberboardroom.com), which [taught me what personas are worth and paused](/articles/not-a-straight-line.html) for want of a place to keep confidential data. [sgit.ai](https://sgit.ai/) and [RiskMandate](https://riskmandate.ai/) are much better examples of using my security knowledge to build a company: encrypted vaults whose server holds nothing, and [behaviour policies for agents](/articles/riskmandate-ten-questions.html) that a risk owner can sign. The agents write most of the code, and [SG/Send alone has 4,476 commits](/articles/from-send-to-sgit.html); the briefs, the buyers and the risk model are mine.
 
