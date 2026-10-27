@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-301 of 301 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+302 of 302 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-301 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 39 articles not yet linked either way.
+302 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 40 articles not yet linked either way.
+
+## [Meta's new terms and the news: what the crawling clause says, what has happened in five weeks, and why publishers should answer with their own machine-readable terms, not only with letters](meta-terms-and-the-news.md)
+
+2026-10-27 · News & evidenceStartups & strategy
+
+Meta's updated Commercial Terms, effective 20 November 2026, let it crawl, cache and keep pulling the websites tied to any business using its products, which covers almost every news organisation; after objections Meta removed 'train' and delayed the date, but robots.txt is not in the contract and refusing means leaving Meta for business. Publishers' letters and regulators are needed, but they are defensive; newsrooms should also state machine-readable licence terms, price crawls, sign their content, own their channels, and show how a crawler can behave.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**8 nodes, 7 edges**
+
+- **The crawling clause** (artefact) Crawlers, test credentials, periodic pulls.
+- **Almost every news site** (claim) Every Page links to a site.
+- **Five weeks** (example) Train removed; date moved to 20 November.
+- **WAN-IFRA's five demands** (claim) Exclusion, paywalls, robots.txt binding, licence, opt-out.
+- **A statement is not a term** (concept) Meta's limits are not in the text.
+- **Machine-readable terms** (method) RSL and a price per crawl.
+- **Own the channel** (method) The platform as one door, not the house.
+- **How a crawler can behave** (example) Tiers, hashes, opt-out.
+
+> Journalism is not raw material to be collected as a condition of being present on a platform. What publishers are asking for.
+
+> This postponement is a welcome step, but it does not address our concerns. Five weeks of it.
 
 ## [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](the-evidence-behind-four-days.md)
 

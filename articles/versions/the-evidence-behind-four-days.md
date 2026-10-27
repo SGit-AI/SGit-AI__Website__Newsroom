@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-27 | published | 2,797 | first published | this release | [current](../the-evidence-behind-four-days.md) |
+| **v1.0.0** | 2026-10-27 | published | 2,797 | first published | [`15683c53c`](https://github.com/SGit-AI/SGit-AI__Website/commit/15683c53c8e6c79759a6c7db4db2a1dc0e33a94a) | [current](../the-evidence-behind-four-days.md) |
 
 [← Back to the article](../the-evidence-behind-four-days.md) · [All articles](../index.md)
 

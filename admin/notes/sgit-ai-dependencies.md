@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1036 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 698 | 2935 | links to sgit.ai's pages and the network sites (27 files this site writes itself) |
-| words | 1408 | 9700 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| generator | 1039 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 700 | 2938 | links to sgit.ai's pages and the network sites (27 files this site writes itself) |
+| words | 1411 | 9712 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
 | vault | 70 | 190 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 593 × `sgit.ai/about/index.html`
-- 296 × `sgit.ai/about/index.md`
+- 595 × `sgit.ai/about/index.html`
+- 297 × `sgit.ai/about/index.md`
 - 126 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 43 × `pki.sgit.ai/`
@@ -95,6 +95,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `network/index.html` (21)
 - `engineering/index.html` (20)
 - `articles/ids.json` (19)
+- `desks/vaults.html` (19)
 - `engineering/issues/067.html` (19)
 - `README.md` (18)
 - `engineering/issues/019.html` (18)
@@ -102,7 +103,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/020.html` (17)
 - `engineering/issues/090.html` (17)
 - `llms.txt` (17)
-- `desks/vaults.html` (16)
 - `articles/summaries/the-user-keeps-the-meter.json` (15)
 - `engineering/issues/021.html` (15)
 - `engineering/releases/v0.13.16.html` (15)
