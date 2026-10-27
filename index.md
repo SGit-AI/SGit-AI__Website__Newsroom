@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.100 · 300 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.101 · 301 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](articles/the-ipo-filing-and-the-agents.md), 2026-10-27, 12 min. Anthropic's IPO filing lists the risks of its own agents, in its own words; where RiskMandate and Agent Behaviour Policies answer each.
+- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 12 min. Jeremiah Grossman's php2shell post, checked claim by claim against public data and the PHP story site's evidence, with graphs.
 
 ## Highlights
 
+- [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](articles/the-ipo-filing-and-the-agents.md), 2026-10-27, 12 min.
 - [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](articles/what-the-bitcoin-bounty-actually-proves.md), 2026-10-26, 11 min.
 - [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](articles/php-daily-2026-10-26.md), 2026-10-26, 13 min.
 - [Websites you own: a reply to an infographic that sells AI-built websites by the month, section by section, why rent is the wrong model, and the one-off model I propose, where the client owns Claude, GitHub and the domain, and changes their own site by talking to it](articles/websites-you-own.md), 2026-10-26, 11 min.
-- [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](articles/inside-kitewing-websites.md), 2026-10-26, 5 min.
 
 ## Who are you reading as?
 
@@ -44,11 +44,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](articles/a-villager-for-the-agents.md), 2026-10-25, 7 min.
 - [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 9 min.
 
-### Vaults & provenance (67)
+### Vaults & provenance (68)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 12 min.
 - [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](articles/php-daily-2026-10-26.md), 2026-10-26, 13 min.
 - [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](articles/inside-kitewing-websites.md), 2026-10-26, 5 min.
-- [One researcher for every newsroom: a research site that works as a light, focused Internet Archive for the sources our stories rest on, captured on a schedule into a pack a day, published by licence tier, and shared by the PHP site, the wires and the Web Summit newsroom](articles/one-researcher-for-every-newsroom.md), 2026-10-26, 7 min.
 
 ### The future of news (46)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

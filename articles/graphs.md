@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-300 of 300 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+301 of 301 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-300 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 38 articles not yet linked either way.
+301 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 39 articles not yet linked either way.
+
+## [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](the-evidence-behind-four-days.md)
+
+2026-10-27 · News & evidence
+
+Four days after php2shell, Jeremiah Grossman argued the evidence shows no wave of breaches and that adversaries exploit a small set of bugs. Re-counted from NVD, CISA, EPSS, the CVE records and the PHP story site's captured evidence, most of the post holds: the timestamp is exact, NVD counts 1,394 CVEs in the window, none cites Exploit-DB or Metasploit, VulnCheck gave 25 old bugs IDs on 22 October, and no organisation has said it was compromised. Since then CISA listed php2shell and EPSS jumped to 0.9998; yearly, CVE publications more than doubled while CISA's catalogue grew by 30%.
+
+*[diagram]*
+**concept**claim**artefact**example
+
+**8 nodes, 7 edges**
+
+- **The post** (artefact) Four days after disclosure.
+- **1,394 CVEs** (claim) Almost none show exploitation.
+- **No confirmed victim** (claim) 53 rows, 8 named organisations.
+- **Environment-specific exploits** (claim) Tuned, raced or wrong.
+- **CISA listing, EPSS jump** (example) 26 and 25 October.
+- **Attention is not exploitation** (concept) 295 news items, evidence levels 1 and 4.
+- **Twice the CVEs, 30% more KEV** (claim) 0.62% down to 0.31%.
+- **The data we asked for** (artefact) VulnCheck, Censys, Metasploit, timing.
+
+> the evidence says otherwise The post.
+
+> No named organisation has said it was compromised through php2shell. No wave, and nothing confirmed.
 
 ## [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](the-ipo-filing-and-the-agents.md)
 

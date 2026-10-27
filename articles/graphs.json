@@ -55,6 +55,190 @@
   ],
   "articles": [
     {
+      "slug": "the-evidence-behind-four-days",
+      "title": "The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since",
+      "date": "2026-10-27",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-evidence-behind-four-days.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-evidence-behind-four-days.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-evidence-behind-four-days.webp",
+      "teaser": "Jeremiah Grossman's php2shell post, checked claim by claim against public data and the PHP story site's evidence, with graphs.",
+      "topics": [
+        "news-and-evidence"
+      ],
+      "tags": [
+        "php2shell",
+        "evidence",
+        "vulnerabilities",
+        "kev",
+        "epss",
+        "data",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "jg-window.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/jg-window.webp",
+          "caption": "Four days of CVEs, from 13:48:34 UTC on 21 October to the same time on 25 October 2026, re-counted on 27 October: 1,394 published according to NVD (the post says 1,448), 1,383 scored by EPSS, 22 with an EPSS of 0.01 or more, 25 old bugs given IDs by VulnCheck on 22 October, none with an Exploit-DB or Metasploit reference, one on CISA's KEV catalogue at the time of the post, and three now, the Arista flaw and both php2shell CVEs. Log scale.",
+          "kind": "chart"
+        },
+        {
+          "file": "jg-record.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/jg-record.webp",
+          "caption": "The compromise record on the PHP story site at 09:43 UTC on 27 October, by kind: 22 rows of no success known, 13 of exploitation attempts, 8 named organisations, 5 vendor statements of exploitation with no victim named, 4 official signals and 1 anonymous allegation; and what the eight named organisations said: a break-in with no cause stated, an attack stopped, a retraction, a precaution, \"was not hacked\", attempts only, a link denied, and an unverified second-hand report.",
+          "kind": "chart"
+        },
+        {
+          "file": "jg-epss.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/jg-epss.webp",
+          "caption": "EPSS for the window: 1,361 of 1,383 scored CVEs below 0.01, 19 between 0.01 and 0.1, one between 0.1 and 0.5, and two above 0.5, the php2shell pair; and the daily EPSS of the two php2shell CVEs, about 0.05 to 0.12 from 22 to 24 October, then 0.9998 on 25 and 26 October, against the Arista flaw, listed by CISA on 23 October, at about 0.01.",
+          "kind": "chart"
+        },
+        {
+          "file": "jg-attention.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/jg-attention.webp",
+          "caption": "News items about each flaw in the same 53 to 55 feeds, from the PHP story site's Pulse agent on 24 October: php2shell 295, against 11 to 48 for twelve flaws already on CISA's catalogue in the same fortnight, from BeyondTrust and Ivanti to a 2015 ProFTPD flaw; php2shell had reached evidence levels 1 and 4, the others level 5, a KEV listing.",
+          "kind": "chart"
+        },
+        {
+          "file": "jg-ratio.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/jg-ratio.webp",
+          "caption": "CVEs published by NVD and entries added to CISA's KEV catalogue, 1 January to 26 October of each year: 25,326 and 156 in 2023, 32,569 and 148 in 2024, 40,266 and 210 in 2025, 89,531 and 274 in 2026; the additions as a share of publications, 0.62%, 0.45%, 0.52% and 0.31%.",
+          "kind": "chart"
+        },
+        {
+          "file": "jg-exposure.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/jg-exposure.webp",
+          "caption": "What each exposure figure counts: Censys 1.57 million unpatched hosts on 21 October, VulnCheck about 2.6 million hosts exposing PHP, VirusTotal 5.1 million IPs running PHP, Unit 42 22.6 million instances potentially vulnerable, Censys's dashboard 32 million services in the post and 36.7 million on 22 October as quoted by Fortinet, and \"almost 70% of websites\", a share, not a count. Log scale.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "the-evidence-behind-four-days",
+        "teaser": "Jeremiah Grossman's php2shell post, checked claim by claim against public data and the PHP story site's evidence, with graphs.",
+        "topics": [
+          "news-and-evidence"
+        ],
+        "core_idea": "Four days after php2shell, Jeremiah Grossman argued the evidence shows no wave of breaches and that adversaries exploit a small set of bugs. Re-counted from NVD, CISA, EPSS, the CVE records and the PHP story site's captured evidence, most of the post holds: the timestamp is exact, NVD counts 1,394 CVEs in the window, none cites Exploit-DB or Metasploit, VulnCheck gave 25 old bugs IDs on 22 October, and no organisation has said it was compromised. Since then CISA listed php2shell and EPSS jumped to 0.9998; yearly, CVE publications more than doubled while CISA's catalogue grew by 30%.",
+        "nodes": [
+          {
+            "id": "post",
+            "label": "The post",
+            "kind": "artefact",
+            "summary": "Four days after disclosure."
+          },
+          {
+            "id": "window",
+            "label": "1,394 CVEs",
+            "kind": "claim",
+            "summary": "Almost none show exploitation."
+          },
+          {
+            "id": "record",
+            "label": "No confirmed victim",
+            "kind": "claim",
+            "summary": "53 rows, 8 named organisations."
+          },
+          {
+            "id": "specific",
+            "label": "Environment-specific exploits",
+            "kind": "claim",
+            "summary": "Tuned, raced or wrong."
+          },
+          {
+            "id": "changed",
+            "label": "CISA listing, EPSS jump",
+            "kind": "example",
+            "summary": "26 and 25 October."
+          },
+          {
+            "id": "attention",
+            "label": "Attention is not exploitation",
+            "kind": "concept",
+            "summary": "295 news items, evidence levels 1 and 4."
+          },
+          {
+            "id": "ratio",
+            "label": "Twice the CVEs, 30% more KEV",
+            "kind": "claim",
+            "summary": "0.62% down to 0.31%."
+          },
+          {
+            "id": "brief",
+            "label": "The data we asked for",
+            "kind": "artefact",
+            "summary": "VulnCheck, Censys, Metasploit, timing."
+          }
+        ],
+        "edges": [
+          {
+            "from": "window",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "record",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "specific",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "changed",
+            "to": "record",
+            "rel": "extends"
+          },
+          {
+            "from": "attention",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "ratio",
+            "to": "post",
+            "rel": "answers"
+          },
+          {
+            "from": "brief",
+            "to": "post",
+            "rel": "extends"
+          }
+        ],
+        "links": {
+          "articles": [
+            "what-the-bitcoin-bounty-actually-proves",
+            "php-daily-2026-10-26",
+            "the-side-stories-of-php2shell",
+            "patch-for-breakfast"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/compromise/index.html",
+            "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "the evidence says otherwise",
+            "why": "The post."
+          },
+          {
+            "text": "No named organisation has said it was compromised through php2shell.",
+            "why": "No wave, and nothing confirmed."
+          },
+          {
+            "text": "what is exploited and what is talked about are different lists",
+            "why": "Attention is not exploitation."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-ipo-filing-and-the-agents",
       "title": "The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one",
       "date": "2026-10-27",
