@@ -40,13 +40,14 @@ SRC = ROOT / "admin/content/articles/reviews"
 CRIT = ROOT / "admin/content/reviews/criteria.md"
 REG = ROOT / "admin/content/reviews/reviewers.json"
 OUT = ROOT / "reviews"
-CRITERIA = "v1.1"
+CRITERIA = "v1.2"
 VERDICTS = {"approve": "Approve", "approve-with-changes": "Approve, with changes", "changes-needed": "Changes needed", "comment": "Comment"}
 KINDS = ("agent", "editor", "journalist", "reader")
 CRITERIA_KEYS = ("facts", "voice", "claims", "conversions", "health", "people")
 RESULTS = ("pass", "issues", "not-checked")
 SEVERITIES = ("high", "medium", "low")
 STATUSES = ("open", "fixed", "declined")
+VERIFICATION = ("contradicted", "unsupported", "inconsistent", "overstated", "unverifiable", "stale", "style")  # v1.2; assets/reviews/record.js
 NAME = re.compile(r"^(\d{4}-\d{2}-\d{2})__([a-z0-9][a-z0-9.-]*)(__\d+)?\.json$")
 e = html.escape
 
@@ -133,6 +134,8 @@ def check(arts=None):
                 say(f"finding {fid}: severity or criterion not valid")
             if not (x.get("issue") or "").strip():
                 say(f"finding {fid}: no issue")
+            if x.get("verification") is not None and x["verification"] not in VERIFICATION:
+                say(f"finding {fid}: verification must be one of {', '.join(VERIFICATION)}")
             q = (x.get("quote") or "").strip()
             if q and a and r.get("article_hash") == a["hash"] and norm(q) not in norm(a["text"]):
                 warnings.append(f"{rel}: finding {fid}: quote not found in the current text: {q[:80]!r}")
@@ -309,7 +312,7 @@ def build():
 <h2 id="open">Open findings</h2>
 {"<ul>" + "".join(open_rows) + "</ul>" if open_rows else '<p class="dim">None open.</p>'}
 <h2 id="send">Sending a review</h2>
-<p>A pull request to the newsroom repository's <code>dev</code> branch, touching only <code>admin/content/articles/reviews/</code>; or the JSON files handed to the editor. The <a href="criteria.html#the-record">record's format</a> is in the criteria.</p>"""
+<p>Through the review lane: the editor gives each reviewer a send link (<code>send.html#rv1&hellip;</code>, also a QR code); the page checks the records against the criteria and the article's current text, seals them in the browser to the newsroom's key and appends them to a lane the newsroom drains on a schedule. Or a pull request to the newsroom repository's <code>dev</code> branch, touching only <code>admin/content/articles/reviews/</code>. What to review next, in order, for each scheduled reviewer: <a href="queue/index.html">the review queue</a>. The <a href="criteria.html#the-record">record's format</a> is in the criteria.</p>"""
     write("reviews/index.html", newsroom_page(
         "reviews/index.html", "Reviews on the record", "Every review of every article on newsroom.sgit.ai, by agents, the editor and the desk, against published criteria.",
         body, eyebrow="Reviews", agent="Machine-readable: <a href=\"status.json\">status.json</a> (every article's current hash and its reviews), <a href=\"criteria.md\">criteria.md</a>, and each record under <code>reviews/records/&lt;slug&gt;/</code>."))

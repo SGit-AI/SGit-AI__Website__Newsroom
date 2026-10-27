@@ -1,0 +1,179 @@
+{
+ "schema": "newsroom-review/v1",
+ "criteria": "v1.2",
+ "slug": "the-evidence-behind-four-days",
+ "article_version": "v0.13.101",
+ "article_hash": "f3b1a7905865",
+ "reviewer": "openai-chatgpt",
+ "kind": "agent",
+ "model": "ChatGPT (the answer did not name the model)",
+ "run_by": "Dinis Cruz, in a ChatGPT conversation on 27 October 2026, asked to fact-check the article as an editor would",
+ "at": "2026-10-27T00:00:00Z",
+ "verdict": "changes-needed",
+ "summary": "Changes needed, not all good: conclusions go beyond the evidence (a forecast used as observation, catalogue counts used to judge AI's effect), one number is rounded inconsistently with the dataset, and the 1,448 against 1,394 difference is explained but not reconciled. Fix first: separate what EPSS predicts from what was observed.",
+ "checks": {
+  "facts": {
+   "result": "issues",
+   "notes": "Read the article, its dataset, the PHP story site's compromise and exploitation records, the CVE records for both php2shell CVEs, FIRST's EPSS definition, Fortinet's write-up of the Censys count and Wiz's research account. Could not reproduce NVD's window count or the historical EPSS responses through the access available; CISA's catalogue endpoint answered 403."
+  },
+  "voice": {
+   "result": "not-checked",
+   "notes": ""
+  },
+  "claims": {
+   "result": "issues",
+   "notes": "The limits section names some weaknesses, but the summaries and the AI section draw firmer conclusions than the analysis carries (findings f1, f2, f3, f5)."
+  },
+  "conversions": {
+   "result": "issues",
+   "notes": "EPSS values rounded to 0.9998 where the dataset has 0.99997 and 0.99981 (f4). The yearly shares were not recomputed."
+  },
+  "health": {
+   "result": "not-checked",
+   "notes": "The rendered charts were not checked."
+  },
+  "people": {
+   "result": "not-checked",
+   "notes": ""
+  }
+ },
+ "findings": [
+  {
+   "id": "f1",
+   "criterion": "claims",
+   "severity": "high",
+   "section": "in-short",
+   "quote": "Almost none show signs of exploitation.",
+   "issue": "Low EPSS scores and the absence of Exploit-DB or Metasploit references are used to support a statement about signs of exploitation in the window. EPSS is a forecast of exploitation activity in the next 30 days, not a count of observed exploitation.",
+   "verification": "overstated",
+   "evidence": "https://www.first.org/epss/, read 27 October 2026",
+   "source_passage": "EPSS is a prediction of exploitation activity over the next 30 days.",
+   "method": "Compared the article's use of EPSS in In short and #window with FIRST's definition.",
+   "suggestion": "Separate three questions in the summary and the body: what the model predicts, what exploitation was observed, and what exploit code was found; do not let the forecast stand in for either observation."
+  },
+  {
+   "id": "f2",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "ai",
+   "quote": "The yearly numbers are consistent with it, with one caveat.",
+   "issue": "Annual CVE publications against annual KEV additions mix populations (KEV additions include vulnerabilities published in earlier years) and measure catalogue activity, not attack volume, attacker speed or the use of AI. The article states caveats, but still reads the comparison as consistent with the claim about AI.",
+   "verification": "overstated",
+   "evidence": "The article's own figure jg-ratio and #ai, read 27 October 2026",
+   "source_passage": "CISA's additions include older CVEs, and neither number says what caused it.",
+   "method": "Checked what each series counts: NVD publications by publication date; KEV additions by date added, whatever the CVE's year.",
+   "suggestion": "Keep the comparison as description and stop using it as evidence for or against AI's effect; testing that needs matched cohorts, the same observation periods, reporting lag, and evidence linking activity to AI."
+  },
+  {
+   "id": "f3",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "ai",
+   "quote": "Jeremiah's opinion is that nothing in the record shows AI driving up how many vulnerabilities adversaries exploit, or how fast.",
+   "issue": "The AI discussion leaves out directly relevant counterevidence: Wiz's research account says AI helped it develop and adapt exploits across several applications in hours. That is a researcher's account, not proof of criminal exploitation at scale, but it bears on whether AI changes the effort of building exploits.",
+   "verification": "unsupported",
+   "evidence": "Wiz's research write-up on php2shell, as cited by the reviewer, read 27 October 2026",
+   "source_passage": "AI helped develop and adapt exploits across multiple applications in hours (the reviewer's summary of the account).",
+   "method": "Looked for the strongest evidence against the claim.",
+   "suggestion": "Distinguish three propositions: what research shows is possible, what adversaries are observed doing, and confirmed impact on victims; cite Wiz's account under the first."
+  },
+  {
+   "id": "f4",
+   "criterion": "conversions",
+   "severity": "medium",
+   "section": "window",
+   "quote": "and the two php2shell CVEs at 0.9998",
+   "issue": "The dataset gives 0.99997 for CVE-2026-109619 and 0.99981 for CVE-2026-109618; describing both as 0.9998 does not reproduce either. The same rounding is in In short (\"EPSS jumped to 0.9998\"). Found from the article's own data; the historical FIRST API response could not be retrieved.",
+   "verification": "inconsistent",
+   "evidence": "https://newsroom.sgit.ai/articles/data/the-evidence-behind-four-days__dataset.json, read 27 October 2026",
+   "source_passage": "0.99997 (CVE-2026-109619), 0.99981 (CVE-2026-109618)",
+   "method": "Compared the article's text with the dataset's values for each CVE.",
+   "suggestion": "Give the two values, or say both were above 0.999."
+  },
+  {
+   "id": "f5",
+   "criterion": "claims",
+   "severity": "medium",
+   "section": "in-short",
+   "quote": "Still no confirmed victim.",
+   "issue": "The absence of named victims is a time-bounded search result, and the qualification the compromise dataset carries does not survive into the headline summaries. Meanwhile the CVE records carry CISA's enrichment marking exploitation as active, and watchTowr reports exploitation through its honeypot network; both can coexist with no named production victim.",
+   "verification": "overstated",
+   "evidence": "The PHP story site's compromise record, the CVE records for CVE-2026-109618 and CVE-2026-109619, and watchTowr's report, read 27 October 2026",
+   "source_passage": "No named organisation has said it was compromised through php2shell (the compromise record's line at 09:43 UTC on 27 October).",
+   "method": "Compared the summaries' wording with the compromise record's own scope.",
+   "suggestion": "Name the sources searched and the cutoff in the summary, and separate attempts, successful exploitation of honeypots and confirmed compromise of production systems."
+  },
+  {
+   "id": "f6",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "window",
+   "quote": "The difference from the post's 1,448 is small, and has two likely causes",
+   "issue": "Plausible causes are given for 1,448 against 1,394, but plausibility is not reconciliation; the dataset has totals and categories, not the record-level comparison that would show which CVEs differ.",
+   "verification": "unsupported",
+   "evidence": "https://newsroom.sgit.ai/articles/data/the-evidence-behind-four-days__dataset.json, read 27 October 2026",
+   "source_passage": "",
+   "method": "Looked in the dataset for the ID-level list behind each count; it is not there.",
+   "suggestion": "Mark the count as not reproduced, the discrepancy unresolved, until both ID lists are compared by publication time, rejection and window boundaries."
+  },
+  {
+   "id": "f7",
+   "criterion": "facts",
+   "severity": "medium",
+   "section": "window",
+   "quote": "which is the pattern Jeremiah describes: old bugs, known to be exploited, given an ID only now",
+   "issue": "An old year in a CVE ID and an October publication date do not establish when the ID was assigned, nor that the flaw is on VulnCheck's KEV; the dataset itself says KEV membership was not reproduced. A matching count does not verify membership.",
+   "verification": "unsupported",
+   "evidence": "https://newsroom.sgit.ai/articles/data/the-evidence-behind-four-days__dataset.json, read 27 October 2026",
+   "source_passage": "KEV membership was not reproduced (the dataset's note, as the reviewer read it).",
+   "method": "Compared what the CVE records show (publication date, ID year) with what the sentence claims (assignment now, known exploitation).",
+   "suggestion": "Keep publication, assignment and known exploitation as separate claims, each with its own evidence, until VulnCheck's records are read."
+  },
+  {
+   "id": "f8",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "attention",
+   "quote": "On 24 October, in comparable feeds, php2shell had 295 news items",
+   "issue": "The Pulse dataset names its common English-language feed pair as the like-for-like measure; the wider totals come from varying feed coverage. A similar number of feeds is not the same feeds, coverage or chance to appear, and a branded pair of CVEs is compared with single CVEs.",
+   "verification": "overstated",
+   "evidence": "The PHP story site's Pulse data, read 27 October 2026",
+   "source_passage": "",
+   "method": "Compared the chart's basis (53 to 55 feeds) with the dataset's own like-for-like definition.",
+   "suggestion": "Recount on identical feeds and windows, say how items were de-duplicated and how the pair was counted; or label the chart as descriptive coverage within this collection."
+  },
+  {
+   "id": "f9",
+   "criterion": "facts",
+   "severity": "low",
+   "section": "exposure",
+   "quote": "which, if both figures are the same measure, would mean the count is falling as sites patch",
+   "issue": "Fortinet supports the attribution of about 36.7 million services to Censys on 22 October, and says these are services, not organisations or servers, and that version-based counts can include backported fixes. A lower later count could reflect patching, or scan coverage, availability, fingerprint changes or method.",
+   "verification": "overstated",
+   "evidence": "Fortinet's write-up of php2shell, read 27 October 2026",
+   "source_passage": "about 36.7 million services, per a Censys snapshot of 22 October (the reviewer's summary).",
+   "method": "Checked the attribution and what the figure counts.",
+   "suggestion": "Do not read a trend into two figures until the snapshots are comparable, and do not attribute a cause without more evidence."
+  }
+ ],
+ "verified": [
+  "The publication timestamp of CVE-2026-109618 in its primary CVE record.",
+  "Both PHP CNA records carry CVSS v4.0 AC:H.",
+  "Both CVE records carry CISA's enrichment recording the KEV addition on 26 October.",
+  "Fortinet attributes about 36.7 million services to a Censys snapshot of 22 October."
+ ],
+ "not_checked": [
+  "NVD's count for the window, and the historical EPSS responses: not reproducible through the access available.",
+  "CISA's catalogue: the endpoint answered 403.",
+  "Jeremiah Grossman's quotations against the original LinkedIn post.",
+  "VulnCheck's KEV membership for the 25 CVEs.",
+  "Each named organisation's statement in the compromise record.",
+  "The rendered charts."
+ ],
+ "received": {
+  "via": "transcribed by the newsroom from the reviewer's answer, which the editor pasted into the newsroom's session on 27 October 2026; the reviewer's own wording is kept in each issue, shortened",
+  "file": "",
+  "sent_at": "2026-10-27",
+  "from": "Dinis Cruz"
+ }
+}

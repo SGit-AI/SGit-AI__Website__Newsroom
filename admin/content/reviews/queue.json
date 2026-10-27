@@ -1,0 +1,15 @@
+{
+ "what": "The review queue: what each scheduled reviewer reviews next, in order. The editor keeps `priority`; admin/build/review_queue.py turns it, the records and the articles into reviews/queue/<id>.json and .md, one dated batch a day for `days` days, at every release. A reviewer never gets the same article at the same text twice, and the lane refuses a second review of the same text.",
+ "priority": [
+  {"slug": "the-evidence-behind-four-days", "why": "The editor's first ask: a fact check by more than one vendor before the article is called checked. ChatGPT reviewed it on 27 October (changes needed); Perplexity's is the independent second reading."},
+  {"slug": "the-ipo-filing-and-the-agents", "why": "Published 27 October; numbers from a filing."},
+  {"slug": "what-the-bitcoin-bounty-actually-proves", "why": "Published 26 October; a claim about what an event proves."}
+ ],
+ "reviewers": {
+  "openai-chatgpt": {"batch": 1, "start": "2026-10-28"},
+  "perplexity": {"batch": 1, "start": "2026-10-28"}
+ },
+ "days": 7,
+ "skip": ["php-daily-*"],
+ "backlog": "Newest first; each reviewer starts the backlog at a different article (the reviewers are dealt the backlog in turn), so between them the site is covered sooner, while every article in `priority` goes to every reviewer."
+}

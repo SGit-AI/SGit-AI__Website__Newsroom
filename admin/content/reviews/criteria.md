@@ -1,6 +1,6 @@
 # Reviewing an article on newsroom.sgit.ai: the criteria, the batch and the record
 
-**Criteria v1.1, 18 October 2026.** (v1.1 answers the questions the first reviewer raised: which text is canonical, what each verdict means, product names, conversions with nothing to convert, the severity of a weak link, and where the files are.) For any reviewer: an agent from any vendor, an open-weight model, the editor, a
+**Criteria v1.2, 27 October 2026.** (v1.2 adds what the first scheduled review, ChatGPT's of *The evidence behind four days*, showed a fact check needs: each finding says how it failed (`verification`), with the source's own words and the calculation or query behind it, and the record lists the claims checked and found sound and those not checked. It adds the review queue, which says what to review next, and the review lane, which takes a review from anyone with its link. v1.1 answered the questions the first reviewer raised: which text is canonical, what each verdict means, product names, conversions with nothing to convert, the severity of a weak link, and where the files are.) For any reviewer: an agent from any vendor, an open-weight model, the editor, a
 journalist on the desk, and later a reader who signs what they write. Read all of this before the first review,
 and again when the version above changes.
 
@@ -26,7 +26,10 @@ Three rules make it scale:
    source is `admin/content/reviews/reviewers.json`; `status.json` is rebuilt from it at every release). If
    you are not there, use `<vendor>-<product>` in lower case (for example `openai-chatgpt`) and say which model
    you are in the record's `model` field; the newsroom registers you when your first review arrives.
-2. **Find your batch.** In [status.json](status.json), each article has its current `hash` and the reviews it has.
+2. **Find your batch.** The newsroom keeps a queue for each scheduled reviewer at
+   `https://newsroom.sgit.ai/reviews/queue/<your id>.json` (and `.md`, and the page [queue/](queue/index.html)): today's
+   articles, in the editor's order, each with its hash, why it was chosen and the findings to recheck. Take today's
+   batch from it. With no queue for your id, in [status.json](status.json), each article has its current `hash` and the reviews it has.
    Your batch is the five newest articles with no review by your id at the current hash. Articles you reviewed
    at an older hash come after every article you have never reviewed. With repository access, the same list is:
 
@@ -138,7 +141,7 @@ If a second review by you of the same article is due on the same day (the text c
 ```json
 {
   "schema": "newsroom-review/v1",
-  "criteria": "v1.1",
+  "criteria": "v1.2",
   "slug": "allowed-is-not-right",
   "article_version": "v0.12.101",
   "article_hash": "3f2a9c1e0b7d",
@@ -165,10 +168,15 @@ If a second review by you of the same article is due on the same day (the text c
       "section": "the-twin",
       "quote": "the exact words from the article, copied",
       "issue": "What is wrong.",
+      "verification": "contradicted",
       "evidence": "https://the.source/that/shows/it, read 18 October 2026",
+      "source_passage": "the source's own words that show it, copied",
+      "method": "the calculation, the query or the steps, so anyone can repeat it",
       "suggestion": "What would fix it, in a sentence."
     }
-  ]
+  ],
+  "verified": ["A claim checked and found sound, with its source: \"36.7 million services\" matches Shodan's count of 22 October"],
+  "not_checked": ["A claim not checked, and why: the paywalled report"]
 }
 ```
 
@@ -184,18 +192,40 @@ If a second review by you of the same article is due on the same day (the text c
   words that are wrong, not the paragraph.
 - `article_hash` is the `hash` for the article in [status.json](status.json) when you started. With the repository,
   leave it out and run `python3 admin/build/reviews.py --stamp` straight after writing the record.
+- `verification` (v1.2) says how the claim failed, so findings can be counted across reviews:
+  - `contradicted`: a source says otherwise;
+  - `unsupported`: the cited source does not say it, and none found does;
+  - `inconsistent`: the article says two different things (a number in two places, a date that cannot be both);
+  - `overstated`: the source supports a weaker claim than the article makes (a forecast stated as observed, a
+    correlation stated as a cause);
+  - `unverifiable`: the source could not be reached or read (a paywall, a dead link), so the claim is not checked;
+  - `stale`: true when published, wrong today, with the date of the change;
+  - `style`: voice and wording, not fact.
+  It is optional for `voice` findings and expected for every `facts`, `claims` and `conversions` finding.
+- `source_passage` is the source's own words that show the problem, copied; `method` is the arithmetic, the query
+  or the steps, so the newsroom can repeat the check. A conversion or a count without its `method` is a weak finding.
+- `verified` and `not_checked` (v1.2) are short lists: the material claims you checked and found sound, with their
+  source, and the ones you did not check, with why. A clean bill of health is a finding too: the next reviewer
+  starts from it.
+- When a source may change (a count, a catalogue, a live page), say in the finding's `evidence` when you read it;
+  the newsroom rechecks it, and the queue asks the next reviewer to recheck it.
 - A finding without a quote is allowed only for something missing ("the limits do not mention…").
 - Write nothing else in the file. No markdown, no commentary outside the JSON.
 
 ## Sending it
 
+- **The review lane** (v1.2): open the send link the editor gave you (`https://newsroom.sgit.ai/reviews/send.html#rv1…`,
+  also as a QR code), paste everything you wrote, records and all, and press *Check*: the page finds the records,
+  checks each one against these criteria and the article's current text, and says what is wrong before anything is
+  sent. *Send* seals them in the browser to the newsroom's key and appends them to the lane, which the newsroom
+  drains on a schedule. Anyone with the link can add to the lane; nobody with it can read it. A reviewer that runs
+  on a schedule and cannot open pages writes its records in its answer, and whoever reads the answer pastes it there.
 - **A pull request** to the `dev` branch of the newsroom's repository, touching only files under
   `admin/content/articles/reviews/`. One pull request per batch. Title: `review: <reviewer id>, <n> articles`.
 - **An agent working in the repository** commits the files the same way, and runs
   `python3 admin/build/reviews.py --check` first.
 - **No repository access:** give the JSON files, one per article, to whoever started you; they hand them to the
   newsroom.
-- **Later:** an append lane in a vault, sealed to the newsroom's key, so a reviewer can send without an account.
 
 `python3 admin/build/reviews.py --check` validates every record: the file name, the fields, a second review of
 the same text by the same reviewer, and whether each quote is in the article's current text.

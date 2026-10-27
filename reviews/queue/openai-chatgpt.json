@@ -1,0 +1,288 @@
+{
+ "what": "The review queue for openai-chatgpt: one batch a day. Take today's (UTC). The brief: https://newsroom.sgit.ai/reviews/queue/brief.md; the criteria: https://newsroom.sgit.ai/reviews/criteria.md.",
+ "reviewer": "openai-chatgpt",
+ "built": "2026-10-27",
+ "criteria": "v1.2",
+ "batch": 1,
+ "brief": "https://newsroom.sgit.ai/reviews/queue/brief.md",
+ "criteria_md": "https://newsroom.sgit.ai/reviews/criteria.md",
+ "status": "https://newsroom.sgit.ai/reviews/status.json",
+ "days": [
+  {
+   "date": "2026-10-28",
+   "articles": [
+    {
+     "slug": "the-ipo-filing-and-the-agents",
+     "title": "The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one",
+     "date": "2026-10-27",
+     "version": "v0.13.99",
+     "hash": "e460b8a399c8",
+     "md": "https://newsroom.sgit.ai/articles/the-ipo-filing-and-the-agents.md",
+     "html": "https://newsroom.sgit.ai/articles/the-ipo-filing-and-the-agents.html",
+     "why": "The editor's priority. Published 27 October; numbers from a filing.",
+     "recheck": []
+    }
+   ]
+  },
+  {
+   "date": "2026-10-29",
+   "articles": [
+    {
+     "slug": "what-the-bitcoin-bounty-actually-proves",
+     "title": "What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch",
+     "date": "2026-10-26",
+     "version": "v0.13.97",
+     "hash": "c8f43b81134d",
+     "md": "https://newsroom.sgit.ai/articles/what-the-bitcoin-bounty-actually-proves.md",
+     "html": "https://newsroom.sgit.ai/articles/what-the-bitcoin-bounty-actually-proves.html",
+     "why": "The editor's priority. Published 26 October; a claim about what an event proves.",
+     "recheck": []
+    }
+   ]
+  },
+  {
+   "date": "2026-10-30",
+   "articles": [
+    {
+     "slug": "what-can-your-agent-reach",
+     "title": "What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide",
+     "date": "2026-10-18",
+     "version": "v0.12.105",
+     "hash": "65cdbb00cc89",
+     "md": "https://newsroom.sgit.ai/articles/what-can-your-agent-reach.md",
+     "html": "https://newsroom.sgit.ai/articles/what-can-your-agent-reach.html",
+     "why": "The text has changed since your review of 2026-10-18: recheck your findings, then review the rest.",
+     "recheck": [
+      {
+       "finding": "f1",
+       "issue": "Effective permissions depend on the agent's configured identity and how it is invoked: in chat with User's account, the requester's; in automation, the connection account's, which need not be the rule's creator or the agent's creator; with Agent's account, the agent's own. 'Typically whoever created the rule' implies more than Atlassian documents.",
+       "quote": "Some paths run as somebody else. When a Rovo agent runs from Jira Automation, it uses the permissions of the automation's connection user, typically whoever created the rule",
+       "answer": "fixed",
+       "note": "The identity point is rewritten around Atlassian's identity setting: the requester in chat, the connection account in automation (quoting ROVO-837's 'always use the permissions of the connection user in the automation', since the support-article sentence the review quoted was not found), or the agent's own account; the agent's creator is named as not the deciding identity."
+      },
+      {
+       "finding": "f2",
+       "issue": "ROVO-837 documents disclosure of a restricted page reference in an automation's output; opening the link still failed. It does not show access to the page or its full content. The reporter notes it does not occur in Rovo Chat.",
+       "quote": "links to pages the triggering user cannot view",
+       "answer": "fixed",
+       "note": "Now says the case disclosed a link to a restricted page, not the page; the link still failed; reading with one identity and publishing to a wider audience is the risk."
+      },
+      {
+       "finding": "f3",
+       "issue": "Atlassian now documents agents with their own accounts; its 6 October announcement still lists wider agent-account controls and a non-human identity inventory as coming. Availability should be checked per tenant. Agent's-account agents also make content shared with them available to their users.",
+       "quote": "dedicated agent accounts are planned",
+       "answer": "fixed",
+       "note": "Agent accounts described as documented, with the 6 October announcement quoted for the wider controls, a check-your-tenant line, and Atlassian's warning that content shared with such an agent is shared with its users."
+      },
+      {
+       "finding": "f4",
+       "issue": "The file was less discoverable, not safe; Drive sharing settings still apply.",
+       "quote": "was safe while nobody knew the link",
+       "answer": "fixed",
+       "note": "Now 'hard to find', with 'Google Drive sharing settings still apply.'"
+      },
+      {
+       "finding": "f5",
+       "issue": "True of Google Drive, not of every connector: synced, direct and Smart Link connectors differ in setup, indexing and authentication.",
+       "quote": "Connectors are set up by an administrator with broad rights, and then each user links their own account",
+       "answer": "fixed",
+       "note": "Now distinguishes synced, direct and Smart Link connectors, quoting Atlassian's connector types page."
+      },
+      {
+       "finding": "f6",
+       "issue": "Restricting who creates agents (by group) and who uses a particular agent (individuals only) are different controls.",
+       "quote": "administrators can narrow it to selected groups",
+       "answer": "fixed",
+       "note": "Creation by group and use by individual are now separate, with Atlassian's sentence on group restriction not being supported."
+      },
+      {
+       "finding": "f7",
+       "issue": "Audit logs record events; they do not prevent them. Classification identifies sensitivity and bounds only through a policy acting on it. Only blocking and redaction can prevent data moving.",
+       "quote": "classification, redaction of sensitive data and audit logs, sit in the boundary row too",
+       "answer": "fixed",
+       "note": "The governance tools are now sorted by what each does: blocking and redaction can bound, classification only through a policy, audit logs are evidence, not a barrier."
+      },
+      {
+       "finding": "f8",
+       "issue": "Indexing allowlists control indexing, not everything Rovo can fetch at run time with the user's access; MCP server permissions govern that server's operations, not every Rovo path, on Atlassian's documentation.",
+       "quote": "The administrator's allowlists for which drives and sites are indexed",
+       "answer": "fixed",
+       "note": "The allowlists are scoped to indexing, and the MCP switches to what the MCP server does, as Atlassian's page states."
+      },
+      {
+       "finding": "f9",
+       "issue": "The PromptArmor report is accurate as a historical report; present exploitability is unverified.",
+       "quote": "I found no statement from Atlassian on a fix",
+       "answer": "fixed",
+       "note": "Now dated, described as reported as of publication, with current exploitability marked unverified, here and in the limits."
+      },
+      {
+       "finding": "f10",
+       "issue": "No population evidence for the size of the gap or how often controls are only prompt instructions.",
+       "quote": "for most organisations that is most of the company",
+       "answer": "fixed",
+       "note": "Now 'It can be large, and it has to be measured for the particular deployment rather than assumed'; the earlier 'most organisations' and 'almost nobody' wording is softened."
+      },
+      {
+       "finding": "f11",
+       "issue": "The library is example policies; connectors to customer systems are built per engagement and none is a product yet.",
+       "quote": "It already covers commercial agents.",
+       "answer": "fixed",
+       "note": "Now 'policies for commercial agents', with RiskMandate's own sentence that no connector is a product yet."
+      },
+      {
+       "finding": "f12",
+       "issue": "The pricing page marks the £500 and £1,500 levels specified, never run, as of 15 September 2026.",
+       "quote": "from £10 for the pack to £1,500 reviewed",
+       "answer": "fixed",
+       "note": "Now quotes the pricing page's 'specified, never run' for the top two levels, and adds it to the limits."
+      },
+      {
+       "finding": "f13",
+       "issue": "The merged page documents an external adapter governed by a pinned copy of the evaluator; it does not alter Ruflo's running policy or restrict other shell or MCP tools.",
+       "quote": "enforced it in Ruflo's evaluator, in real time, on every memory operation",
+       "answer": "fixed",
+       "note": "Now scoped to the memory operations of the external adapter, with the page's own statement of what it does not change."
+      },
+      {
+       "finding": "f14",
+       "issue": "The Northstar results come from a scripted simulation with synthetic cases and no model.",
+       "quote": "overpays $458 in a day; the design with three policies gets all thirteen right",
+       "answer": "fixed",
+       "note": "Now 'thirteen synthetic refund requests', 'a scripted simulation: invented orders, scripted mistakes, no model called', and what it does and does not show."
+      },
+      {
+       "finding": "f15",
+       "issue": "The Code applies to specified listed companies, not every UK board.",
+       "quote": "Under the UK Corporate Governance Code, boards already have to determine the principal risks",
+       "answer": "fixed",
+       "note": "Now 'For companies the UK Corporate Governance Code applies to'."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "date": "2026-10-31",
+   "articles": [
+    {
+     "slug": "meta-terms-and-the-news",
+     "title": "Meta's new terms and the news: what the crawling clause says, what has happened in five weeks, and why publishers should answer with their own machine-readable terms, not only with letters",
+     "date": "2026-10-27",
+     "version": "v0.13.102",
+     "hash": "489854b7459d",
+     "md": "https://newsroom.sgit.ai/articles/meta-terms-and-the-news.md",
+     "html": "https://newsroom.sgit.ai/articles/meta-terms-and-the-news.html",
+     "why": "Never reviewed by you; never reviewed by anyone.",
+     "recheck": []
+    }
+   ]
+  },
+  {
+   "date": "2026-11-01",
+   "articles": [
+    {
+     "slug": "inside-kitewing-websites",
+     "title": "Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it",
+     "date": "2026-10-26",
+     "version": "v0.13.96",
+     "hash": "5b59b3afbb7b",
+     "md": "https://newsroom.sgit.ai/articles/inside-kitewing-websites.md",
+     "html": "https://newsroom.sgit.ai/articles/inside-kitewing-websites.html",
+     "why": "Never reviewed by you; never reviewed by anyone.",
+     "recheck": []
+    }
+   ]
+  },
+  {
+   "date": "2026-11-02",
+   "articles": [
+    {
+     "slug": "web-summit-2026-the-plan",
+     "title": "Web Summit 2026, the plan: a briefing for the team on usage first and the sale after, intelligence from public material, an asset, a page and a link for every person we want to reach, a newsroom of our own for the summit, and the two agentic workflows the team will learn on",
+     "date": "2026-10-26",
+     "version": "v0.13.90",
+     "hash": "cee1514801fe",
+     "md": "https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.md",
+     "html": "https://newsroom.sgit.ai/articles/web-summit-2026-the-plan.html",
+     "why": "Never reviewed by you; never reviewed by anyone.",
+     "recheck": []
+    }
+   ]
+  },
+  {
+   "date": "2026-11-03",
+   "articles": [
+    {
+     "slug": "translate-the-assumption",
+     "title": "Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy",
+     "date": "2026-10-25",
+     "version": "v0.13.84",
+     "hash": "8d4d08a6fe0c",
+     "md": "https://newsroom.sgit.ai/articles/translate-the-assumption.md",
+     "html": "https://newsroom.sgit.ai/articles/translate-the-assumption.html",
+     "why": "Never reviewed by you; never reviewed by anyone.",
+     "recheck": []
+    }
+   ]
+  }
+ ],
+ "remaining": 291,
+ "skeleton": {
+  "schema": "newsroom-review/v1",
+  "criteria": "v1.2",
+  "slug": "",
+  "article_version": "",
+  "article_hash": "",
+  "reviewer": "openai-chatgpt",
+  "kind": "agent",
+  "model": "",
+  "run_by": "",
+  "at": "",
+  "verdict": "",
+  "summary": "",
+  "checks": {
+   "facts": {
+    "result": "not-checked",
+    "notes": ""
+   },
+   "voice": {
+    "result": "not-checked",
+    "notes": ""
+   },
+   "claims": {
+    "result": "not-checked",
+    "notes": ""
+   },
+   "conversions": {
+    "result": "not-checked",
+    "notes": ""
+   },
+   "health": {
+    "result": "not-checked",
+    "notes": ""
+   },
+   "people": {
+    "result": "not-checked",
+    "notes": ""
+   }
+  },
+  "findings": [
+   {
+    "id": "f1",
+    "criterion": "facts",
+    "severity": "",
+    "section": "",
+    "quote": "",
+    "issue": "",
+    "verification": "",
+    "evidence": "",
+    "source_passage": "",
+    "method": "",
+    "suggestion": ""
+   }
+  ],
+  "verified": [],
+  "not_checked": []
+ }
+}
