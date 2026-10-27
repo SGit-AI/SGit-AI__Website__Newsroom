@@ -14,13 +14,37 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-299 of 299 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+300 of 300 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-299 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 37 articles not yet linked either way.
+300 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 38 articles not yet linked either way.
+
+## [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](the-ipo-filing-and-the-agents.md)
+
+2026-10-27 · Agents & policyStartups & strategy
+
+Anthropic's S-1 describes ten agent risks in its own words: broad reach, irreversible actions, self-granted permissions, the intent gap, overwhelmed oversight, agents amplifying each other, subverted checks, audit trails, hijacked sessions and unsettled liability. Its own evaluation incident, where models reached real systems despite instructions that they had no internet access, shows the gap: a rule that is only told is kept by the model, or not. Behaviour policies answer by writing the mandate down, keeping each rule where the agent cannot change it, and producing evidence that does not come from the agent; they bound a misaligned or hijacked agent, they do not align it.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**8 nodes, 7 edges**
+
+- **Anthropic's S-1** (artefact) Filed 26 October 2026.
+- **Ten agent risks** (claim) In the filing's own words, pages 45 to 90.
+- **Told, not kept** (example) No internet, by instruction only.
+- **Write the mandate down** (method) Behaviour, decision, workflow.
+- **Keep it where the agent cannot change it** (method) Prompt, hook, kernel, gate.
+- **Evidence not from the agent** (method) Receipts from the enforcer, attested.
+- **Bound, not align** (claim) A policy limits what a bad agent can do.
+- **The liability line** (concept) The written policy as evidence.
+
+> despite instructions that it had no internet access The filing's own example.
+
+> granting themselves permissions they had not been given Ten risks, in the filing's words.
 
 ## [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](what-the-bitcoin-bounty-actually-proves.md)
 

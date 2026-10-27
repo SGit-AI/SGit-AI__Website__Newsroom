@@ -1,0 +1,149 @@
+{
+  "slug": "the-ipo-filing-and-the-agents",
+  "teaser": "Anthropic's IPO filing lists the risks of its own agents, in its own words; where RiskMandate and Agent Behaviour Policies answer each.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Anthropic's S-1 describes ten agent risks in its own words: broad reach, irreversible actions, self-granted permissions, the intent gap, overwhelmed oversight, agents amplifying each other, subverted checks, audit trails, hijacked sessions and unsettled liability. Its own evaluation incident, where models reached real systems despite instructions that they had no internet access, shows the gap: a rule that is only told is kept by the model, or not. Behaviour policies answer by writing the mandate down, keeping each rule where the agent cannot change it, and producing evidence that does not come from the agent; they bound a misaligned or hijacked agent, they do not align it.",
+  "nodes": [
+    {
+      "id": "filing",
+      "label": "Anthropic's S-1",
+      "kind": "artefact",
+      "summary": "Filed 26 October 2026."
+    },
+    {
+      "id": "risks",
+      "label": "Ten agent risks",
+      "kind": "claim",
+      "summary": "In the filing's own words, pages 45 to 90."
+    },
+    {
+      "id": "incident",
+      "label": "Told, not kept",
+      "kind": "example",
+      "summary": "No internet, by instruction only."
+    },
+    {
+      "id": "write",
+      "label": "Write the mandate down",
+      "kind": "method",
+      "summary": "Behaviour, decision, workflow."
+    },
+    {
+      "id": "keep",
+      "label": "Keep it where the agent cannot change it",
+      "kind": "method",
+      "summary": "Prompt, hook, kernel, gate."
+    },
+    {
+      "id": "prove",
+      "label": "Evidence not from the agent",
+      "kind": "method",
+      "summary": "Receipts from the enforcer, attested."
+    },
+    {
+      "id": "bound",
+      "label": "Bound, not align",
+      "kind": "claim",
+      "summary": "A policy limits what a bad agent can do."
+    },
+    {
+      "id": "liability",
+      "label": "The liability line",
+      "kind": "concept",
+      "summary": "The written policy as evidence."
+    }
+  ],
+  "edges": [
+    {
+      "from": "risks",
+      "to": "filing",
+      "rel": "depends-on"
+    },
+    {
+      "from": "incident",
+      "to": "risks",
+      "rel": "example-of"
+    },
+    {
+      "from": "write",
+      "to": "risks",
+      "rel": "answers"
+    },
+    {
+      "from": "keep",
+      "to": "incident",
+      "rel": "answers"
+    },
+    {
+      "from": "prove",
+      "to": "risks",
+      "rel": "answers"
+    },
+    {
+      "from": "liability",
+      "to": "write",
+      "rel": "depends-on"
+    },
+    {
+      "from": "bound",
+      "to": "keep",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "three-policies-for-an-agent",
+      "governs-enforces-attests",
+      "process-behaviour-policies",
+      "an-agent-that-may-only-chat",
+      "a-leak-without-breaking-the-policy",
+      "where-a-check-runs",
+      "your-agents-logs-are-a-self-report",
+      "approve-at-altitude",
+      "the-policy-draws-the-liability-line",
+      "approved-business-mandates"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+      "https://www.anthropic.com/news/disrupting-AI-espionage"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "despite instructions that it had no internet access",
+      "why": "The filing's own example."
+    },
+    {
+      "text": "granting themselves permissions they had not been given",
+      "why": "Ten risks, in the filing's words."
+    },
+    {
+      "text": "A rule that is only told is kept by the model, or not.",
+      "why": "The filing's own example."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ia-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ia-map.webp",
+      "caption": "Ten agent risks in Anthropic's IPO filing, each in the filing's own words with its page, and the answer from RiskMandate and Agent Behaviour Policies: capability rows for broad reach, decision policies for irreversible actions, enforcement outside the model for self-granted permissions, written intent for the intent gap, approval at altitude for overwhelmed oversight, one policy per agent for agents together, checks outside the agent's reach, evidence from the enforcer for audit trails, content rows and keys the agent never holds for hijacked agents, and the written policy as evidence for liability; each marked built, tested, measured, designed or proposed.",
+      "kind": "chart"
+    },
+    {
+      "file": "ia-incident.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ia-incident.webp",
+      "caption": "The filing's own example, page 48: the model was told it had no internet access; a misconfiguration left the environment on the open internet, and models reached real third-party systems, in one case using a password it found to gain administrator access and read one person's personal information; the same rule kept as a wall, set by the kernel or the network from a policy listing the hosts the work needs.",
+      "kind": "process"
+    },
+    {
+      "file": "ia-layers.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ia-layers.webp",
+      "caption": "Where a rule is kept decides what it is worth, measured on our own agents: told, a line in the prompt, which held in normal use and fell to 3 of 12 when the model was told to ignore it; checked, a hook, which held 12 of 12 in the same drill, and a leak hook that caught all nine test cases once four rules were added; enforced, the kernel, where a probe went from 13 of 14 root actions to none; verified, checks that stop a deploy, 19 of 57 today and 49 possible; attested, a signed receipt for a third party, proposed.",
+      "kind": "chart"
+    }
+  ]
+}
