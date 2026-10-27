@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-27 | minor | 2,653 | +30 / −0 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](meta-terms-and-the-news/v1.4.0.md) · [current](../meta-terms-and-the-news.md) |
+| **v1.4.0** | 2026-10-27 | minor | 2,653 | +30 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`871ea4c75`](https://github.com/SGit-AI/SGit-AI__Website/commit/871ea4c759810e5ac0a273da3d3c8c84559f2340) | [what changed](meta-terms-and-the-news/v1.4.0.md) · [current](../meta-terms-and-the-news.md) |
 | **v1.3.0** | 2026-10-27 | minor | 2,623 | +0 / −411 words; 8 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](meta-terms-and-the-news/v1.3.0.md) |
 | **v1.2.0** | 2026-10-27 | minor | 3,034 | +468 / −94 words; 9 changed, 7 added, 2 removed paragraphs | [`4cb930e25`](https://github.com/SGit-AI/SGit-AI__Website/commit/4cb930e25b99ae2d389f2b9962b1a37273a1fd09) | [what changed](meta-terms-and-the-news/v1.2.0.md) |
 | **v1.1.0** | 2026-10-27 | minor | 2,659 | +33 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`019ddf902`](https://github.com/SGit-AI/SGit-AI__Website/commit/019ddf90254f4e20ec51d9597647bdeea6b3b0a8) | [what changed](meta-terms-and-the-news/v1.1.0.md) |

@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.107 · 303 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.108 · 305 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27, 15 min. Is Meta's crawling clause legal? The competition, platform and copyright rules that could reach it, and Meta's own terms run the other way.
+- [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](articles/who-has-not-patched.md), 2026-10-27, 9 min. Before blaming business for not patching php2shell, ask how good the number is, and what makes a site actually vulnerable.
 
 ## Highlights
 
+- [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27, 10 min.
+- [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27, 15 min.
 - [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](articles/meta-terms-and-the-news.md), 2026-10-27, 11 min.
 - [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
-- [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](articles/the-ipo-filing-and-the-agents.md), 2026-10-27, 12 min.
-- [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](articles/what-the-bitcoin-bounty-actually-proves.md), 2026-10-26, 11 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (85)
+### Agent security & policy (86)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](articles/who-has-not-patched.md), 2026-10-27, 9 min.
 - [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](articles/the-ipo-filing-and-the-agents.md), 2026-10-27, 12 min.
 - [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](articles/what-the-bitcoin-bounty-actually-proves.md), 2026-10-26, 11 min.
-- [Software is now a product: what the EU's new Product Liability Directive actually says about software, SaaS and updates, how it would apply to php2shell, and the questions it leaves open](articles/software-is-now-a-product.md), 2026-10-25, 9 min.
 
 ### Building with agents (48)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
@@ -50,11 +50,11 @@ For anyone who needs evidence they can open: encrypted vaults, keys, graphs and 
 - [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](articles/php-daily-2026-10-26.md), 2026-10-26, 12 min.
 - [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](articles/inside-kitewing-websites.md), 2026-10-26, 5 min.
 
-### The future of news (46)
+### The future of news (47)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.
+- [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27, 10 min.
 - [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](articles/translate-the-assumption.md), 2026-10-25, 5 min.
 - [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](articles/a-call-for-help.md), 2026-10-25, 4 min.
-- [Own the stack, and the trust: a reply to Bert Kok on who gets paid for journalism when AI sits between the newsroom and the reader, with agents that augment journalists rather than replace them, and a tour of what we have built](articles/own-the-stack-and-the-trust.md), 2026-10-25, 9 min.
 
 ### Strategy & startups (56)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.

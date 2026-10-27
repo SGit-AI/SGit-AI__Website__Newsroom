@@ -14,13 +14,61 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-303 of 303 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+305 of 305 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-303 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 41 articles not yet linked either way.
+305 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 43 articles not yet linked either way.
+
+## [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](who-has-not-patched.md)
+
+2026-10-27 · News & evidence
+
+Every 'unpatched' figure for php2shell is a count of version strings, in different units, distorted by backports and hidden versions; Italy's 81.9% is of the readable half, 38.5% of all detected. A site is vulnerable only if it is reachable, unprotected at the edge, on a runtime the exploit fits, holds something worth taking and is unwatched. With no named victim six days in and 17 exploited flaws listed by CISA in the same fortnight, not patching is more likely a wrong count and rational prioritisation than negligence.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**8 nodes, 7 edges**
+
+- **The 'not patched' headline** (claim) It implies negligence.
+- **Version counts** (artefact) Different units, backports, hidden versions.
+- **Italy's 81.9%** (example) Of the readable half: 38.5% of all.
+- **Five conditions for vulnerable** (concept) Reachable, unprotected, runtime, value, unwatched.
+- **The edge moved first** (example) Cloudflare rules nine hours before disclosure.
+- **No named victim** (example) Six days in.
+- **Prioritisation** (method) 17 KEV entries in the fortnight.
+- **What can't be ruled out** (question) Silent compromises.
+
+> a site that cannot be exploited is not vulnerable, whatever its version says What makes a site vulnerable.
+
+> Choosing not to patch this server today usually means patching another one first. That is not negligence. It is the job. The call the team had to answer.
+
+## [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](what-an-agent-is.md)
+
+2026-10-27 · Agents & policyNews & evidence
+
+The PHP newsroom's agents now run on schedules, a pipeline of researcher, curator, journalist and correspondent five times a day plus a desk, a conductor and eight more, and also in one session as subagents for breaking news and projects. Checked against the team's record: the conductor does not start breaking runs, keys seal secrets but do not yet sign work, and nothing has run beyond Claude. An agent is six parts, and only the session is the model; the memory is the repository, which is what makes a move of account a setup cost, not a loss.
+
+*[diagram]*
+**concept**claim**method**example
+
+**8 nodes, 6 edges**
+
+- **The pipeline on a schedule** (example) Five cycles a day, in order.
+- **One standing session each** (method) Context, clones and keys survive.
+- **One session, every step** (method) Breaking and projects as subagents.
+- **The KEV listing run** (example) 5 h 21 min to readers; 45.8 min run.
+- **Six parts of an agent** (concept) Session, card, role, memory, loop, key.
+- **Memory is the repository** (claim) Which is why an agent can move.
+- **Where the record corrected me** (claim) No signing yet; no non-Claude runs.
+- **Moving account** (example) Today's test of the design.
+
+> Only the first is the model. The other five are files and keys. What an agent is.
+
+> That is why the move is simple: a new session is told who it is, pulls team, and reads its card. Today's test.
 
 ## [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](take-it-or-leave-it.md)
 

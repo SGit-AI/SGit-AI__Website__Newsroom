@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-27 | published | 3,428 | first published | this release | [current](../take-it-or-leave-it.md) |
+| **v1.0.0** | 2026-10-27 | published | 3,428 | first published | [`871ea4c75`](https://github.com/SGit-AI/SGit-AI__Website/commit/871ea4c759810e5ac0a273da3d3c8c84559f2340) | [current](../take-it-or-leave-it.md) |
 
 [← Back to the article](../take-it-or-leave-it.md) · [All articles](../index.md)
 

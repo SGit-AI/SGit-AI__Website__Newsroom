@@ -73,6 +73,63 @@
   ],
   "articles": [
     {
+      "slug": "who-has-not-patched",
+      "title": "Who has not patched? How good the \"unpatched\" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision",
+      "date": "2026-10-27",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/who-has-not-patched.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-has-not-patched.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-has-not-patched.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/who-has-not-patched.json",
+      "teaser": "Before blaming business for not patching php2shell, ask how good the number is, and what makes a site actually vulnerable.",
+      "summary": "Six days after php2shell, the headlines say most websites have not patched, and the subtext is that businesses do not take security seriously. Before accepting that, ask how good the number is. Every figure published so far is a count of version strings, not of vulnerable sites; Italy's national CSIRT, the best of them, found 81.9% of PHP services whose version it could read below the fix, which is 38.5% of all it detected, and a fixed package can keep its old number. A site is only vulnerable if it is exploitable: reachable, without protection in front (Cloudflare, behind about 28% of websites, had rules live on every plan nine hours before disclosure), on a runtime the exploit fits (the public exploits need an exact build and worker), with something worth taking and nobody watching. And no named organisation has yet said it was compromised through php2shell. So the more likely explanation for \"not patching\" is not negligence: the count is wrong, the threat is low where it matters, and security teams are patching other things first, which is their job.",
+      "topics": [
+        "news-and-evidence"
+      ],
+      "tags": [
+        "php2shell",
+        "patching",
+        "risk",
+        "evidence",
+        "security",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "what-an-agent-is",
+      "title": "What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it",
+      "date": "2026-10-27",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/what-an-agent-is.html",
+      "markdown": "https://newsroom.sgit.ai/articles/what-an-agent-is.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/what-an-agent-is.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/what-an-agent-is.json",
+      "teaser": "An agent is a session, a card, a role, a loop, a key and memory in repositories. How the PHP newsroom's agents run, checked against the record.",
+      "summary": "I have moved from many Claude sessions to agent teams that run on schedules. The PHP October 2026 newsroom is the furthest along: a pipeline of researcher, curator, journalist and correspondent runs in order five times a day, a desk twice, a conductor every hour, and eight more agents keep the house, all on their own schedule cards. For two days it has run in sequence with no content commit from me. Then there is a second way to run the same agents: in one session, as subagents, which is how the newsroom carried CISA's listing of php2shell to readers in 5 hours 21 minutes. Writing this up against the team's own record corrected me in several places: the conductor does not start the breaking run, the agents' keys seal secrets but do not yet sign their work, and nothing has run on anything but Claude. What it confirmed is the main point: an agent is a session plus a card, a role, a loop, a key and memory kept in repositories and vaults, and only the first part is the model.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "agents",
+        "agentic-workflows",
+        "php2shell",
+        "newsroom",
+        "schedules",
+        "pki",
+        "vaults",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "take-it-or-leave-it",
       "title": "Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart",
       "date": "2026-10-27",

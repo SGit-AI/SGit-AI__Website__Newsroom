@@ -1,0 +1,94 @@
+{
+ "slug": "who-has-not-patched",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 183,
+   "line": "Before blaming business for not patching php2shell: how good the number is, what makes a site vulnerable, and why not patching can be rational.",
+   "para": "Every 'unpatched' figure counts version strings, distorted by backports and hidden versions; Italy's 81.9% is of the readable half, 38.5% of all. A site is vulnerable only if reachable, unprotected, on a runtime the exploit fits, valuable and unwatched. With no named victim and 17 exploited flaws competing, negligence is the least likely explanation.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 124,
+   "line": "Eight lines: the implied negligence, version counts, lying strings, five conditions, the edge, no victim, priorities, the likelier story.",
+   "para": "The headline implies business doesn't care. Every number is a version count, and versions mislead both ways. Vulnerable means reachable, unprotected, the right runtime, something worth taking, unwatched. Cloudflare had rules nine hours before disclosure. No named victim six days in. CISA listed 17 exploited flaws that fortnight. The likelier story: a wrong count and prioritisation.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "headline",
+   "label": "The headline and what it implies",
+   "words": 184,
+   "line": "No '90% not patched' headline was found; the closest figures, and the habit of telling business it is irresponsible.",
+   "para": "Searching 614 sources found no '90% not patched'. The closest: Italy's CSIRT saying only about 18% of organisations concerned had updated, and '1.5M servers unpatched on day one'; a hosting firm reported 90% patched in 18 minutes. All imply negligence, a habit of the security profession. Two questions first: how good is the number, and what is vulnerable?",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "number",
+   "label": "How good is the number?",
+   "words": 277,
+   "line": "Every figure counts version strings in different units; Italy's 81.9% is 38.5% of all detected, and backports keep old numbers.",
+   "para": "Censys's hosts, services and Palo Alto's instances are different units, and no one measurer has a series. Italy detected 741,523 PHP services, read 47% of versions, and found 81.9% of those below the fix: 38.5% of all. Distributions backport fixes without changing numbers; scanners can also under-count 7.4 to 8.1, and one French count was a fingerprinting error.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "vulnerable",
+   "label": "What makes a site vulnerable",
+   "words": 355,
+   "line": "Five conditions a version count does not measure: reachable, nothing in front, the right runtime, something worth taking, nobody watching.",
+   "para": "A site that cannot be exploited is not vulnerable. It must be reachable; unprotected (Cloudflare, about 28% of websites, had rules on every plan nine hours before disclosure); on a runtime the exploit fits (mod_php, an exact build, 7 in 10 in a lab); valuable; and unwatched. The vulnerable, valuable, unwatched population is much smaller, and unmeasured.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "record",
+   "label": "What the record shows",
+   "words": 152,
+   "line": "Still no named victim six days in; vendors report attempts, CERTs report none; 34 services taken offline as precautions.",
+   "para": "The compromise record at 14:41 UTC on 27 October: no named organisation says it was compromised through php2shell. Two vendors retracted success claims; eight national CERTs report none; watchTowr says 'a firm No'. 34 services went offline as precautions, which raises another question: how many did not need to, and a site offline is not 'not patching'.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "call",
+   "label": "The call the team had to answer",
+   "words": 245,
+   "line": "The executive's questions: are we vulnerable, how many have been hit? With none hit, the threat is rationally low.",
+   "para": "Executives make risk decisions daily and ask how many companies have been hit; 'none so far' means a low threat. You stop everything only for a clear and present danger. Security teams are paid to put limited time on real threats: CISA added 17 exploited flaws in the same fortnight, and php2shell's EPSS stayed low until 25 October.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "secondary",
+   "label": "The secondary stories",
+   "words": 114,
+   "line": "The likelier explanations, in order: the count is wrong, the threat isn't there, protection was put in front, teams patch what's exploited.",
+   "para": "When the headline says sites are not patching, the likelier explanations are a count much smaller than it looks, a threat not yet present for most sites, protection at the edge or in configuration for sites worth attacking, and teams patching what is actively exploited first. 'They don't care' is the least likely, and the one the headline chooses.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "unreported",
+   "label": "The part I can't rule out",
+   "words": 119,
+   "line": "Some compromises may be unreported: detection is hard and disclosure goes to regulators, but a high profile makes hiding hard.",
+   "para": "JPCERT warned a lack of traces is not proof; GMO found malware on 26,739 servers with no stated cause; GDPR and NIS2 reports go to regulators, not the public. Given the profile, many hidden cases would be surprising, and one regulator's notice naming the flaw would end the 'no named victim' line.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 103,
+   "line": "Patch anyway; the record is a dated absence; exploitable sites are unmeasured; some figures are relayed; no '90%' headline found.",
+   "para": "Patching is still needed: rules and settings are stopgaps, and a third flaw affects patched releases. No compromise is a dated absence. Nobody has measured exploitable sites. Italy's figure comes via two outlets and Censys's via others. The '90% not patched' headline was not found; a link would be added.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 107,
+   "line": "The PHP story site's compromise, patching and defence data, captured vendor and CERT sources, and live reads of Fortinet, W3Techs, CISA and EPSS.",
+   "para": "The PHP story site's compromise record, patching tracker, defence and numbers data at version 0.1.85, with captured sources from CyberSecItalia, SecurityWeek, Cryptoast, php.net, Cloudflare, Akamai, Fastly and Imperva; Fortinet's post, W3Techs' reverse proxy survey, CISA's KEV catalogue and FIRST's EPSS API read live on 27 October 2026; and earlier newsroom articles on php2shell.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "what-an-agent-is",
+  "teaser": "An agent is a session, a card, a role, a loop, a key and memory in repositories. How the PHP newsroom's agents run, checked against the record.",
+  "topics": [
+    "agents-and-policy",
+    "news-and-evidence"
+  ],
+  "core_idea": "The PHP newsroom's agents now run on schedules, a pipeline of researcher, curator, journalist and correspondent five times a day plus a desk, a conductor and eight more, and also in one session as subagents for breaking news and projects. Checked against the team's record: the conductor does not start breaking runs, keys seal secrets but do not yet sign work, and nothing has run beyond Claude. An agent is six parts, and only the session is the model; the memory is the repository, which is what makes a move of account a setup cost, not a loss.",
+  "nodes": [
+    {
+      "id": "pipeline",
+      "label": "The pipeline on a schedule",
+      "kind": "example",
+      "summary": "Five cycles a day, in order."
+    },
+    {
+      "id": "standing",
+      "label": "One standing session each",
+      "kind": "method",
+      "summary": "Context, clones and keys survive."
+    },
+    {
+      "id": "subagents",
+      "label": "One session, every step",
+      "kind": "method",
+      "summary": "Breaking and projects as subagents."
+    },
+    {
+      "id": "kev",
+      "label": "The KEV listing run",
+      "kind": "example",
+      "summary": "5 h 21 min to readers; 45.8 min run."
+    },
+    {
+      "id": "anatomy",
+      "label": "Six parts of an agent",
+      "kind": "concept",
+      "summary": "Session, card, role, memory, loop, key."
+    },
+    {
+      "id": "memory",
+      "label": "Memory is the repository",
+      "kind": "claim",
+      "summary": "Which is why an agent can move."
+    },
+    {
+      "id": "corrections",
+      "label": "Where the record corrected me",
+      "kind": "claim",
+      "summary": "No signing yet; no non-Claude runs."
+    },
+    {
+      "id": "move",
+      "label": "Moving account",
+      "kind": "example",
+      "summary": "Today's test of the design."
+    }
+  ],
+  "edges": [
+    {
+      "from": "standing",
+      "to": "pipeline",
+      "rel": "produces"
+    },
+    {
+      "from": "subagents",
+      "to": "kev",
+      "rel": "produces"
+    },
+    {
+      "from": "anatomy",
+      "to": "memory",
+      "rel": "depends-on"
+    },
+    {
+      "from": "memory",
+      "to": "move",
+      "rel": "answers"
+    },
+    {
+      "from": "corrections",
+      "to": "anatomy",
+      "rel": "extends"
+    },
+    {
+      "from": "subagents",
+      "to": "standing",
+      "rel": "compared-with"
+    }
+  ],
+  "links": {
+    "articles": [
+      "why-agent-loops-are-hard",
+      "agents-need-direction",
+      "one-vault-ten-agents",
+      "agent-workflows-on-ephemeral-vaults",
+      "what-if-an-agent-loses-its-workspace",
+      "process-behaviour-policies"
+    ],
+    "pages": [],
+    "sites": [
+      "https://team.php.oct.2026.newsroom.sgit.ai/team/schedule/wiring/",
+      "https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-27__report__the-kev-listing-run/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Only the first is the model. The other five are files and keys.",
+      "why": "What an agent is."
+    },
+    {
+      "text": "That is why the move is simple: a new session is told who it is, pulls team, and reads its card.",
+      "why": "Today's test."
+    },
+    {
+      "text": "Nothing is signed, although every agent can have a key",
+      "why": "Where the record corrected me."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ag-day.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ag-day.webp",
+      "caption": "Every scheduled wake of the PHP newsroom's agents in one day, London time.",
+      "kind": "chart"
+    },
+    {
+      "file": "ag-modes.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ag-modes.webp",
+      "caption": "Three ways to run the same agent: a standing session on a schedule, subagents in one session, or a fresh session.",
+      "kind": "chart"
+    },
+    {
+      "file": "ag-anatomy.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ag-anatomy.webp",
+      "caption": "The six parts of an agent on the PHP newsroom: session, card, role and policy, memory, loop and key.",
+      "kind": "chart"
+    }
+  ]
+}

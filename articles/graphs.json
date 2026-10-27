@@ -55,6 +55,332 @@
   ],
   "articles": [
     {
+      "slug": "who-has-not-patched",
+      "title": "Who has not patched? How good the \"unpatched\" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision",
+      "date": "2026-10-27",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-has-not-patched.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-has-not-patched.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-has-not-patched.webp",
+      "teaser": "Before blaming business for not patching php2shell, ask how good the number is, and what makes a site actually vulnerable.",
+      "topics": [
+        "news-and-evidence"
+      ],
+      "tags": [
+        "php2shell",
+        "patching",
+        "risk",
+        "evidence",
+        "security",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "np-layers.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/np-layers.webp",
+          "caption": "The layers between \"running PHP\" and \"compromised\", and which of them a version count measures.",
+          "kind": "chart"
+        },
+        {
+          "file": "np-week.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/np-week.webp",
+          "caption": "CISA's exploited-vulnerability additions from 14 to 26 October 2026, and php2shell's EPSS score.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "who-has-not-patched",
+        "teaser": "Before blaming business for not patching php2shell, ask how good the number is, and what makes a site actually vulnerable.",
+        "topics": [
+          "news-and-evidence"
+        ],
+        "core_idea": "Every 'unpatched' figure for php2shell is a count of version strings, in different units, distorted by backports and hidden versions; Italy's 81.9% is of the readable half, 38.5% of all detected. A site is vulnerable only if it is reachable, unprotected at the edge, on a runtime the exploit fits, holds something worth taking and is unwatched. With no named victim six days in and 17 exploited flaws listed by CISA in the same fortnight, not patching is more likely a wrong count and rational prioritisation than negligence.",
+        "nodes": [
+          {
+            "id": "headline",
+            "label": "The 'not patched' headline",
+            "kind": "claim",
+            "summary": "It implies negligence."
+          },
+          {
+            "id": "count",
+            "label": "Version counts",
+            "kind": "artefact",
+            "summary": "Different units, backports, hidden versions."
+          },
+          {
+            "id": "italy",
+            "label": "Italy's 81.9%",
+            "kind": "example",
+            "summary": "Of the readable half: 38.5% of all."
+          },
+          {
+            "id": "layers",
+            "label": "Five conditions for vulnerable",
+            "kind": "concept",
+            "summary": "Reachable, unprotected, runtime, value, unwatched."
+          },
+          {
+            "id": "edge",
+            "label": "The edge moved first",
+            "kind": "example",
+            "summary": "Cloudflare rules nine hours before disclosure."
+          },
+          {
+            "id": "record",
+            "label": "No named victim",
+            "kind": "example",
+            "summary": "Six days in."
+          },
+          {
+            "id": "priority",
+            "label": "Prioritisation",
+            "kind": "method",
+            "summary": "17 KEV entries in the fortnight."
+          },
+          {
+            "id": "unreported",
+            "label": "What can't be ruled out",
+            "kind": "question",
+            "summary": "Silent compromises."
+          }
+        ],
+        "edges": [
+          {
+            "from": "count",
+            "to": "headline",
+            "rel": "contrasts"
+          },
+          {
+            "from": "italy",
+            "to": "count",
+            "rel": "example-of"
+          },
+          {
+            "from": "layers",
+            "to": "count",
+            "rel": "extends"
+          },
+          {
+            "from": "edge",
+            "to": "layers",
+            "rel": "example-of"
+          },
+          {
+            "from": "record",
+            "to": "headline",
+            "rel": "contrasts"
+          },
+          {
+            "from": "priority",
+            "to": "headline",
+            "rel": "answers"
+          },
+          {
+            "from": "unreported",
+            "to": "record",
+            "rel": "contrasts"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-evidence-behind-four-days",
+            "what-the-bitcoin-bounty-actually-proves",
+            "patch-for-breakfast",
+            "the-side-stories-of-php2shell",
+            "translate-the-assumption"
+          ],
+          "pages": [],
+          "sites": [
+            "https://php.oct.2026.newsroom.sgit.ai/compromise/",
+            "https://php.oct.2026.newsroom.sgit.ai/patching/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "a site that cannot be exploited is not vulnerable, whatever its version says",
+            "why": "What makes a site vulnerable."
+          },
+          {
+            "text": "Choosing not to patch this server today usually means patching another one first. That is not negligence. It is the job.",
+            "why": "The call the team had to answer."
+          },
+          {
+            "text": "A version count is a starting point, not a finding.",
+            "why": "How good is the number?"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "what-an-agent-is",
+      "title": "What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it",
+      "date": "2026-10-27",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/what-an-agent-is.html",
+      "markdown": "https://newsroom.sgit.ai/articles/what-an-agent-is.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/what-an-agent-is.webp",
+      "teaser": "An agent is a session, a card, a role, a loop, a key and memory in repositories. How the PHP newsroom's agents run, checked against the record.",
+      "topics": [
+        "agents-and-policy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "agents",
+        "agentic-workflows",
+        "php2shell",
+        "newsroom",
+        "schedules",
+        "pki",
+        "vaults",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "ag-day.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ag-day.webp",
+          "caption": "Every scheduled wake of the PHP newsroom's agents in one day, London time.",
+          "kind": "chart"
+        },
+        {
+          "file": "ag-modes.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ag-modes.webp",
+          "caption": "Three ways to run the same agent: a standing session on a schedule, subagents in one session, or a fresh session.",
+          "kind": "chart"
+        },
+        {
+          "file": "ag-anatomy.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ag-anatomy.webp",
+          "caption": "The six parts of an agent on the PHP newsroom: session, card, role and policy, memory, loop and key.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "what-an-agent-is",
+        "teaser": "An agent is a session, a card, a role, a loop, a key and memory in repositories. How the PHP newsroom's agents run, checked against the record.",
+        "topics": [
+          "agents-and-policy",
+          "news-and-evidence"
+        ],
+        "core_idea": "The PHP newsroom's agents now run on schedules, a pipeline of researcher, curator, journalist and correspondent five times a day plus a desk, a conductor and eight more, and also in one session as subagents for breaking news and projects. Checked against the team's record: the conductor does not start breaking runs, keys seal secrets but do not yet sign work, and nothing has run beyond Claude. An agent is six parts, and only the session is the model; the memory is the repository, which is what makes a move of account a setup cost, not a loss.",
+        "nodes": [
+          {
+            "id": "pipeline",
+            "label": "The pipeline on a schedule",
+            "kind": "example",
+            "summary": "Five cycles a day, in order."
+          },
+          {
+            "id": "standing",
+            "label": "One standing session each",
+            "kind": "method",
+            "summary": "Context, clones and keys survive."
+          },
+          {
+            "id": "subagents",
+            "label": "One session, every step",
+            "kind": "method",
+            "summary": "Breaking and projects as subagents."
+          },
+          {
+            "id": "kev",
+            "label": "The KEV listing run",
+            "kind": "example",
+            "summary": "5 h 21 min to readers; 45.8 min run."
+          },
+          {
+            "id": "anatomy",
+            "label": "Six parts of an agent",
+            "kind": "concept",
+            "summary": "Session, card, role, memory, loop, key."
+          },
+          {
+            "id": "memory",
+            "label": "Memory is the repository",
+            "kind": "claim",
+            "summary": "Which is why an agent can move."
+          },
+          {
+            "id": "corrections",
+            "label": "Where the record corrected me",
+            "kind": "claim",
+            "summary": "No signing yet; no non-Claude runs."
+          },
+          {
+            "id": "move",
+            "label": "Moving account",
+            "kind": "example",
+            "summary": "Today's test of the design."
+          }
+        ],
+        "edges": [
+          {
+            "from": "standing",
+            "to": "pipeline",
+            "rel": "produces"
+          },
+          {
+            "from": "subagents",
+            "to": "kev",
+            "rel": "produces"
+          },
+          {
+            "from": "anatomy",
+            "to": "memory",
+            "rel": "depends-on"
+          },
+          {
+            "from": "memory",
+            "to": "move",
+            "rel": "answers"
+          },
+          {
+            "from": "corrections",
+            "to": "anatomy",
+            "rel": "extends"
+          },
+          {
+            "from": "subagents",
+            "to": "standing",
+            "rel": "compared-with"
+          }
+        ],
+        "links": {
+          "articles": [
+            "why-agent-loops-are-hard",
+            "agents-need-direction",
+            "one-vault-ten-agents",
+            "agent-workflows-on-ephemeral-vaults",
+            "what-if-an-agent-loses-its-workspace",
+            "process-behaviour-policies"
+          ],
+          "pages": [],
+          "sites": [
+            "https://team.php.oct.2026.newsroom.sgit.ai/team/schedule/wiring/",
+            "https://team.php.oct.2026.newsroom.sgit.ai/admin/briefs/2026-10-27__report__the-kev-listing-run/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Only the first is the model. The other five are files and keys.",
+            "why": "What an agent is."
+          },
+          {
+            "text": "That is why the move is simple: a new session is told who it is, pulls team, and reads its card.",
+            "why": "Today's test."
+          },
+          {
+            "text": "Nothing is signed, although every agent can have a key",
+            "why": "Where the record corrected me."
+          }
+        ]
+      }
+    },
+    {
       "slug": "take-it-or-leave-it",
       "title": "Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart",
       "date": "2026-10-27",
