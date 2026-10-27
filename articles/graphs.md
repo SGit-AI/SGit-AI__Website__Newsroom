@@ -50,7 +50,7 @@ Meta's updated Commercial Terms, effective 20 November 2026, let it crawl, cache
 
 2026-10-27 · News & evidence
 
-Four days after php2shell, Jeremiah Grossman argued the evidence shows no wave of breaches and that adversaries exploit a small set of bugs. Re-counted from NVD, CISA, EPSS, the CVE records and the PHP story site's captured evidence, most of the post holds: the timestamp is exact, NVD counts 1,394 CVEs in the window, none cites Exploit-DB or Metasploit, VulnCheck gave 25 old bugs IDs on 22 October, and no organisation has said it was compromised. Since then CISA listed php2shell and EPSS jumped to 0.9998; yearly, CVE publications more than doubled while CISA's catalogue grew by 30%.
+Four days after php2shell, Jeremiah Grossman argued the evidence shows no wave of breaches and that adversaries exploit a small set of bugs. Re-counted from NVD, CISA, EPSS, the CVE records and the PHP story site's captured evidence, most of the post holds: the timestamp is exact, NVD counts 1,394 CVEs in the window, none cites Exploit-DB or Metasploit, VulnCheck gave 25 old bugs IDs on 22 October, and, as of 27 October, no named organisation has said it was compromised. Since then CISA listed php2shell and EPSS went above 0.999; yearly, CVE publications more than doubled while CISA's catalogue grew by 30%, a description that cannot test AI's effect; Wiz's own account shows AI cutting the effort of building exploits.
 
 *[diagram]*
 **concept**claim**artefact**example

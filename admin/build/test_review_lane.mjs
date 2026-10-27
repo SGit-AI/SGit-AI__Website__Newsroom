@@ -24,13 +24,15 @@ const { startMock } = await import(pathToFileURL(path.join(ROOT, 'admin/build/va
 // ------------------------------------------------------------ part one: the record checks, in node
 const status = JSON.parse(fs.readFileSync(path.join(ROOT, 'reviews/status.json'), 'utf8'))
 const ipo = status.articles.find(a => a.slug === 'the-ipo-filing-and-the-agents')
-const four = status.articles.find(a => a.slug === 'the-evidence-behind-four-days')
+// a review on the record that is still of the article's current text (an article corrected after its review no longer is)
+const [four, onRecord] = status.articles.flatMap(a => (a.reviews || []).filter(r => r.current).map(r => [a, r]))[0] || []
+if (!four) { console.log('FAIL no review on the record is of an article\'s current text, so the repeat cannot be tested'); process.exit(1) }
 const checks = Object.fromEntries(R.CHECKS.map(k => [k, { result: 'not-checked', notes: '' }]))
 const good = { schema: R.SCHEMA, criteria: 'v1.2', slug: ipo.slug, article_version: ipo.version, article_hash: ipo.hash, reviewer: 'perplexity', kind: 'agent', model: 'a test model',
                run_by: 'test_review_lane.mjs', at: '2026-10-28T06:00:00Z', verdict: 'approve-with-changes', summary: 'A test review.', checks: { ...checks, facts: { result: 'issues', notes: '' } },
                findings: [{ id: 'f1', criterion: 'facts', severity: 'medium', section: 'in-short', quote: 'Anthropic filed to go public on 26 October.', issue: 'A test finding.', verification: 'unsupported', evidence: 'https://example.org/, read 28 October 2026', suggestion: 'A test fix.' }],
                verified: [], not_checked: [] }
-const repeat = { ...good, slug: four.slug, article_hash: four.hash, article_version: four.version, reviewer: 'openai-chatgpt', findings: [] }
+const repeat = { ...good, slug: four.slug, article_hash: four.hash, article_version: four.version, reviewer: onRecord.reviewer, findings: [] }
 const answer = `Batch 2026-10-28 for perplexity: 2 articles.\n\n\`\`\`json\n${JSON.stringify(good, null, 2)}\n\`\`\`\n\nAnd:\n\n\`\`\`json\n${JSON.stringify(repeat, null, 2)}\n\`\`\`\n\`\`\`json\n{"schema": "newsroom-review/v1", "slug": oops}\n\`\`\`\n`
 const ex = R.extract(answer)
 check(ex.records.length === 2 && ex.unreadable === 1, `extract finds the two records in an answer with words round them, and counts the broken one (${ex.records.length}, ${ex.unreadable})`)

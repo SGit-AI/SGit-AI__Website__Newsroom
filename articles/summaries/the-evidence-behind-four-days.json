@@ -5,23 +5,23 @@
   {
    "id": "top",
    "label": "The opening",
-   "words": 210,
-   "line": "Jeremiah Grossman's php2shell post, checked claim by claim against public data and the PHP story site's evidence.",
-   "para": "Four days after php2shell went public, Jeremiah Grossman wrote that the evidence shows no wave of breaches. Re-counted from NVD, CISA, EPSS and the PHP story site, most of the post holds: an exact timestamp, 1,394 CVEs in the window, no Exploit-DB or Metasploit references, no confirmed victim. Since then CISA listed php2shell, and EPSS jumped the day before.",
+   "words": 245,
+   "line": "Jeremiah Grossman's php2shell post, checked claim by claim against public data and the PHP story site's evidence, and corrected after review.",
+   "para": "Four days after php2shell went public, Jeremiah Grossman wrote that the evidence shows no wave of breaches. Re-counted from NVD, CISA, EPSS and the PHP story site, most of the post holds: an exact timestamp, 1,394 CVEs in the window, no Exploit-DB or Metasploit references in NVD, no confirmed victim as of 27 October. Corrected after a review by ChatGPT.",
    "by": "newsroom.writer"
   },
   {
    "id": "in-short",
    "label": "In short",
-   "words": 158,
-   "line": "Nine lines: the post holds, an exact timestamp, 1,394 CVEs, almost no exploitation, no victim, specific exploits, two changes, the yearly data, the asks.",
-   "para": "Most numbers reproduce from public data. The CVE record was published at 13:48:34 UTC. NVD counts 1,394 CVEs in the window; 1,361 of 1,383 score below 0.01 on EPSS. Eight named organisations, none confirmed. Exploits are tuned or raced. CISA listed php2shell on 26 October; CVEs more than doubled this year while CISA's catalogue grew by 30%.",
+   "words": 216,
+   "line": "Eleven lines: the post holds, the timestamp, 1,394 unreconciled, a forecast, a dated absence, specific exploits, two changes, the yearly data, Wiz, the asks.",
+   "para": "Most numbers reproduce. NVD counts 1,394 CVEs, not reconciled with 1,448. EPSS, a forecast, puts 1,361 of 1,383 below 0.01. No confirmed victim as of 27 October. CISA listed php2shell on 26 October. The yearly data is consistent with the post but cannot test it; Wiz's account shows AI cutting the effort of building exploits.",
    "by": "newsroom.writer"
   },
   {
    "id": "post",
    "label": "The post",
-   "words": 232,
+   "words": 235,
    "line": "The post's claims, in its order, and where each can be checked.",
    "para": "Jeremiah Grossman, CEO of Root Evidence, argued the evidence does not support a wave of AI-enabled breaches; exploits are environment-specific; honeypots caught attempts; nothing is confirmed; 1,448 CVEs came in four days with no public exploit code, 25 on VulnCheck's KEV and one on CISA's; Censys counts 32 million services. The conclusion: patch what adversaries exploit.",
    "by": "newsroom.writer"
@@ -29,65 +29,65 @@
   {
    "id": "claims",
    "label": "Claim by claim",
-   "words": 222,
-   "line": "A table of every claim, what the data says, and a verdict: exact, close, holds, consistent, or not reproduced.",
-   "para": "The timestamp matches the CVE record to the second. NVD counts 1,394 in the window. No NVD record cites Exploit-DB or Metasploit. VulnCheck published 25 old-ID CVEs on 22 October. CISA listed only the Arista flaw at the time, three now. Censys's 32 million could not be reproduced. Attempts, no confirmed compromise and environment-specific exploits all hold.",
+   "words": 236,
+   "line": "A table of every claim, what the data says, and a verdict: exact, close, holds, a count that matches, or not reproduced.",
+   "para": "The timestamp matches the CVE record to the second. NVD counts 1,394, close to 1,448 but not reconciled. No NVD record cites Exploit-DB or Metasploit. VulnCheck's 25 match in count; membership and assignment not checked. CISA listed only the Arista flaw at the time. Censys's 32 million was not reproduced. No confirmed compromise holds as a time-bounded absence.",
    "by": "newsroom.writer"
   },
   {
    "id": "record",
    "label": "No wave, and nothing confirmed",
-   "words": 206,
-   "line": "53 rows of evidence, eight named organisations, and no confirmed php2shell victim six days in.",
-   "para": "The PHP story site's compromise record at 09:43 UTC on 27 October still says no named organisation has said it was compromised through php2shell. The eight named organisations range from a break-in with no stated cause to a retraction and a denial. Unit 42 retracted its agency attribution, and watchTowr put reliable indiscriminate exploitation at a firm no.",
+   "words": 273,
+   "line": "53 rows of evidence, eight named organisations, and no confirmed php2shell victim at 09:43 UTC on 27 October.",
+   "para": "The compromise record still says no named organisation has said it was compromised through php2shell. Attempts, lab or honeypot success, and production compromise are kept apart; CISA's assessment marks exploitation active without naming a victim. The eight organisations range from a break-in with no stated cause to a denial. Unit 42 retracted its agency attribution.",
    "by": "newsroom.writer"
   },
   {
    "id": "specific",
    "label": "Exploits built for specific environments",
-   "words": 161,
-   "line": "The public exploits are tuned to one build, raced, or have the wrong mechanism.",
-   "para": "The CVSS vector rates attack complexity high. The bounty win needed one exact build, worked seven times in ten and took three hours once a target existed. A honeypot's 35 shells came from a favourable setup. VulnCheck found no public proof of concept with the right mechanism. Honeypots and sensors did catch many attempts, each in the site's timeline.",
+   "words": 172,
+   "line": "The public exploits are tuned to one build, raced, or have the wrong mechanism; CISA marks it not automatable.",
+   "para": "The CVSS vector rates attack complexity high, and CISA's assessment says not automatable. The bounty win needed one exact build, worked seven times in ten and took three hours once a target existed. A honeypot's 35 shells came from a favourable setup. VulnCheck found no public proof of concept with the right mechanism. Honeypots caught many attempts.",
    "by": "newsroom.writer"
   },
   {
    "id": "window",
    "label": "The other 1,393",
-   "words": 177,
-   "line": "Of 1,394 CVEs in the window, 1,361 of 1,383 scored below 0.01 on EPSS, and none cites Exploit-DB or Metasploit.",
-   "para": "NVD counts 1,394 CVEs in the window; the difference from 1,448 is likely publication times and moving records. Three were fully analysed, twelve rejected. EPSS scored 1,383: 1,361 below 0.01, 19 below 0.1, one Brotli flaw at 0.36, and php2shell at 0.9998. VulnCheck published 25 old-ID CVEs on 22 October, as the post says.",
+   "words": 249,
+   "line": "Of 1,394 CVEs, 1,361 of 1,383 have an EPSS below 0.01, a forecast, and none cites Exploit-DB or Metasploit in NVD.",
+   "para": "NVD counts 1,394 CVEs; the difference from 1,448 is not reconciled. EPSS scored 1,383: 1,361 below 0.01, and php2shell at 0.99997 and 0.99981. A low score means the model does not expect exploitation, not that none was seen. VulnCheck published 25 old-ID CVEs on 22 October; whether they are the 25 on its KEV is not checked.",
    "by": "newsroom.writer"
   },
   {
    "id": "changed",
    "label": "What changed after the post",
    "words": 166,
-   "line": "Since the post, CISA listed both php2shell CVEs, and EPSS jumped to 0.9998 a day earlier.",
-   "para": "CISA added both CVEs to its catalogue on 26 October, with a 29 October deadline for federal agencies and no victim named, so the window's count is three. EPSS for php2shell went from about 0.1 to 0.9998 on 25 October, while the Arista flaw CISA listed as exploited stays at 0.01. The two instruments disagree in both directions.",
+   "line": "Since the post, CISA listed both php2shell CVEs, and EPSS went above 0.999 a day earlier.",
+   "para": "CISA added both CVEs to its catalogue on 26 October, with a 29 October deadline for federal agencies and no victim named, so the window's count is three. EPSS for php2shell went from about 0.1 to above 0.999 on 25 October, while the Arista flaw CISA listed as exploited stays at 0.01. The two instruments disagree in both directions.",
    "by": "newsroom.writer"
   },
   {
    "id": "attention",
    "label": "Attention is not exploitation",
-   "words": 137,
-   "line": "php2shell had 295 news items and two levels of evidence; flaws already on CISA's catalogue had 11 to 48.",
-   "para": "The PHP story site's Pulse agent keeps evidence of exploitation and attention apart. On 24 October, in comparable feeds, php2shell had 295 news items and had reached a public proof of concept and named-party attempts. Twelve flaws already listed as exploited, three from 2015 and 2016, had 11 to 48 items each. What is exploited and what is talked about differ.",
+   "words": 191,
+   "line": "php2shell had 295 news items; flaws already on CISA's catalogue had 11 to 48: descriptive, not controlled.",
+   "para": "Pulse keeps evidence and attention apart. On 24 October, with 53 to 55 feeds checked per row, not necessarily the same ones, php2shell had 295 news items; twelve flaws already listed as exploited had 11 to 48. It describes coverage in this collection. It is consistent with the post: what is exploited and what is talked about differ.",
    "by": "newsroom.writer"
   },
   {
    "id": "ai",
    "label": "Is AI driving it?",
-   "words": 144,
-   "line": "CVE publications more than doubled this year; CISA's exploited catalogue grew by 30%.",
-   "para": "From 1 January to 26 October, NVD published 89,531 CVEs this year against 40,266 in 2025, while CISA added 274 entries against 210. The rate fell from 0.62% in 2023 to 0.31%. That is consistent with the post's view that AI is not driving exploitation, with caveats: 30% is still growth, and neither number shows a cause.",
+   "words": 290,
+   "line": "The yearly numbers describe the background but cannot test AI's effect; Wiz shows AI cutting the effort of building exploits.",
+   "para": "NVD published 89,531 CVEs this year against 40,266; CISA added 274 entries against 210. Different populations, and neither measures attack volume, speed or AI. Wiz says frontier models helped it build exploits across applications in hours. That is research capability; adversaries' use and victims are separate questions, and this record shows no rise yet.",
    "by": "newsroom.writer"
   },
   {
    "id": "exposure",
    "label": "The 32 million",
-   "words": 99,
-   "line": "The 32 million counts services; published exposure figures range from 1.57 million hosts to a share of websites.",
-   "para": "Censys's dashboard was quoted at 36.7 million services on 22 October; the post's 32 million, if the same measure, would mean the count is falling. We could not read the dashboard. Other figures count hosts, IPs or instances, from 1.57 million unpatched hosts to almost 70% of websites, which is a share, not a count.",
+   "words": 124,
+   "line": "The 32 million counts services; a lower figure than 36.7 million could be patching, or a change of scan or method.",
+   "para": "Censys's dashboard was quoted at 36.7 million services on 22 October. A lower later count could be patching, scan coverage, services offline or a method change, and Fortinet notes version-based counts can include backported fixes. We could not read the dashboard. Other figures range from 1.57 million unpatched hosts to a share of websites.",
    "by": "newsroom.writer"
   },
   {
@@ -101,17 +101,25 @@
   {
    "id": "limits",
    "label": "What this does not claim",
-   "words": 83,
-   "line": "Quoted, not endorsed; snapshots of moving records; two sources not read; a rate, not a share.",
-   "para": "The post is quoted, not endorsed by its author. NVD's count differs from the post's, and both move. VulnCheck's KEV and Censys's dashboard were not read. No NVD reference is not the same as no exploit anywhere. The yearly ratio is a rate, not a share of one set. The compromise record is a time-bounded absence.",
+   "words": 122,
+   "line": "Quoted, not endorsed; moving records; two sources not read; a rate; EPSS a forecast; a descriptive chart.",
+   "para": "The post is quoted, not endorsed by its author. NVD's count differs from the post's, and both move. VulnCheck's KEV and Censys's dashboard were not read. No NVD reference is not no exploit anywhere. The yearly ratio describes and does not test AI. EPSS is a forecast. The attention rows do not share feeds. The absence is time-bounded.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "review",
+   "label": "Reviewed, and corrected",
+   "words": 305,
+   "line": "ChatGPT's review, asked for by the editor: changes needed, nine findings, all agreed and corrected.",
+   "para": "The editor asked ChatGPT to review the article. It found nine problems: EPSS used as observation, the yearly ratio used about AI, Wiz's account missing, a rounded score, an unbounded absence, an unreconciled count, VulnCheck claims merged, a loosely controlled chart, and an exposure trend. All are corrected; one claim about watchTowr could not be confirmed.",
    "by": "newsroom.writer"
   },
   {
    "id": "sources",
    "label": "Where this comes from",
-   "words": 133,
-   "line": "NVD, CISA's catalogue, EPSS, the CVE records, Fortinet, and the PHP story site's data at version 0.1.77.",
-   "para": "The post as shared on 27 October 2026; NVD's API for the window and yearly totals; CISA's KEV catalogue 2026.10.26; FIRST's EPSS API; the CVE record for CVE-2026-109618; Fortinet's post for Censys's 22 October figure; the PHP story site's compromise, exploitation, claims, numbers and pulse data at version 0.1.77; and this article's dataset.",
+   "words": 148,
+   "line": "NVD, CISA's catalogue, EPSS, the CVE records, Fortinet, Wiz, and the PHP story site's data at version 0.1.77.",
+   "para": "The post as shared on 27 October 2026; NVD's API; CISA's KEV catalogue 2026.10.26; FIRST's EPSS API; the CVE record for CVE-2026-109618; Fortinet's post for Censys's 22 October figure; Wiz Research's PHP2Shell post; the PHP story site's compromise, exploitation, claims, numbers and pulse data at version 0.1.77; and this article's dataset.",
    "by": "newsroom.writer"
   }
  ]
