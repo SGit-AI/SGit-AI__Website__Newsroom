@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-27 | published | 2,835 | first published | this release | [current](../what-sgit-does-that-git-does-not.md) |
+| **v1.0.0** | 2026-10-27 | published | 2,835 | first published | [`6ede018fc`](https://github.com/SGit-AI/SGit-AI__Website/commit/6ede018fc5641d116b9440783c70ed52a743dcda) | [current](../what-sgit-does-that-git-does-not.md) |
 
 [← Back to the article](../what-sgit-does-that-git-does-not.md) · [All articles](../index.md)
 
