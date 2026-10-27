@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 3,010 | +0 / −265 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-newsroom-for-one/v1.2.0.md) · [current](../a-newsroom-for-one.md) |
+| **v1.2.0** | 2026-10-27 | minor | 3,010 | +0 / −265 words; 4 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](a-newsroom-for-one/v1.2.0.md) · [current](../a-newsroom-for-one.md) |
 | **v1.1.0** | 2026-10-24 | minor | 3,275 | +32 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`c743cbb1a`](https://github.com/SGit-AI/SGit-AI__Website/commit/c743cbb1ac7a50e10c445643b45735e5e56f3d46) | [what changed](a-newsroom-for-one/v1.1.0.md) |
 | **v1.0.0** | 2026-10-24 | published | 3,243 | first published | [`78674b59b`](https://github.com/SGit-AI/SGit-AI__Website/commit/78674b59b627a757a9d8198fe2e6c7f961196830) |  |
 

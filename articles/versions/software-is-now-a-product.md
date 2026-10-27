@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,179 | +0 / −199 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](software-is-now-a-product/v1.2.0.md) · [current](../software-is-now-a-product.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,179 | +0 / −199 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](software-is-now-a-product/v1.2.0.md) · [current](../software-is-now-a-product.md) |
 | **v1.1.0** | 2026-10-25 | minor | 2,378 | +0 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`9b4a89d1f`](https://github.com/SGit-AI/SGit-AI__Website/commit/9b4a89d1fba4ffd961a447ea7b15bc13d3a09abc) | [what changed](software-is-now-a-product/v1.1.0.md) |
 | **v1.0.0** | 2026-10-25 | published | 2,378 | first published | [`3b8ae9586`](https://github.com/SGit-AI/SGit-AI__Website/commit/3b8ae95860e932fc213e1fae288d0940626c99cf) |  |
 

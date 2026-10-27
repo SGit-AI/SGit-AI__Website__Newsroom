@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,929 | +0 / −124 words; 6 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-human-is-the-network/v1.1.0.md) · [current](../the-human-is-the-network.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,929 | +0 / −124 words; 6 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-human-is-the-network/v1.1.0.md) · [current](../the-human-is-the-network.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,053 | first published | [`e835280b3`](https://github.com/SGit-AI/SGit-AI__Website/commit/e835280b3a717f9c93c03b2e261d5e504af4c626) |  |
 
 [← Back to the article](../the-human-is-the-network.md) · [All articles](../index.md)

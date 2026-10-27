@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,842 | +0 / −56 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-briefs-so-far/v1.1.0.md) · [current](../the-briefs-so-far.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,842 | +0 / −56 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-briefs-so-far/v1.1.0.md) · [current](../the-briefs-so-far.md) |
 | **v1.0.0** | 2026-10-18 | published | 1,898 | first published | [`9f74e5714`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f74e5714f015270209da9682fa8846c51b941fb) |  |
 
 [← Back to the article](../the-briefs-so-far.md) · [All articles](../index.md)

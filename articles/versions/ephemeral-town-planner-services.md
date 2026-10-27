@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,092 | +0 / −79 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](ephemeral-town-planner-services/v1.2.0.md) · [current](../ephemeral-town-planner-services.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,092 | +0 / −79 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](ephemeral-town-planner-services/v1.2.0.md) · [current](../ephemeral-town-planner-services.md) |
 | **v1.1.0** | 2026-10-19 | minor | 2,171 | +1 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](ephemeral-town-planner-services/v1.1.0.md) |
 | **v1.0.0** | 2026-10-18 | published | 2,170 | first published | [`7954fc4ea`](https://github.com/SGit-AI/SGit-AI__Website/commit/7954fc4ea94c684eb811644f2935d0001e3b2a81) |  |
 

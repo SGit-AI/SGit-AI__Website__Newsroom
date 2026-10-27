@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,118 | +0 / −110 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-eyeballs-get-cheap/v1.2.0.md) · [current](../the-eyeballs-get-cheap.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,118 | +0 / −110 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-eyeballs-get-cheap/v1.2.0.md) · [current](../the-eyeballs-get-cheap.md) |
 | **v1.1.0** | 2026-10-15 | minor | 2,228 | +0 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`e4a2670ec`](https://github.com/SGit-AI/SGit-AI__Website/commit/e4a2670ec788c55ffc9da1bf151fcd97a5f67cf6) | [what changed](the-eyeballs-get-cheap/v1.1.0.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,228 | first published | [`bb6b171a1`](https://github.com/SGit-AI/SGit-AI__Website/commit/bb6b171a1cfd2dcc3f4b00d5ac788e64b5051fef) |  |
 

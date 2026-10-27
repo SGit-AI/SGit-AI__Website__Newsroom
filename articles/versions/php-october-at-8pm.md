@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.5.0** | 2026-10-27 | minor | 3,198 | +0 / −157 words; 6 changed, 0 added, 0 removed paragraphs | this release | [what changed](php-october-at-8pm/v1.5.0.md) · [current](../php-october-at-8pm.md) |
+| **v1.5.0** | 2026-10-27 | minor | 3,198 | +0 / −157 words; 6 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](php-october-at-8pm/v1.5.0.md) · [current](../php-october-at-8pm.md) |
 | **v1.4.0** | 2026-10-25 | minor | 3,355 | +10 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`56972098f`](https://github.com/SGit-AI/SGit-AI__Website/commit/56972098f75c5701211bf6c318d2f042d4766a51) | [what changed](php-october-at-8pm/v1.4.0.md) |
 | **v1.3.0** | 2026-10-24 | minor | 3,345 | +27 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`78539ac8d`](https://github.com/SGit-AI/SGit-AI__Website/commit/78539ac8db3e14085d0e8c6c332d1f84e3ba8d36) | [what changed](php-october-at-8pm/v1.3.0.md) |
 | **v1.2.0** | 2026-10-22 | minor | 3,318 | +163 / −0 words; 5 changed, 0 added, 0 removed paragraphs | [`4eb6d050d`](https://github.com/SGit-AI/SGit-AI__Website/commit/4eb6d050d5f42cc5b587b4212a0284436d8453e3) | [what changed](php-october-at-8pm/v1.2.0.md) |

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,545 | +0 / −254 words; 5 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-pull-request-by-another-name/v1.1.0.md) · [current](../a-pull-request-by-another-name.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,545 | +0 / −254 words; 5 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](a-pull-request-by-another-name/v1.1.0.md) · [current](../a-pull-request-by-another-name.md) |
 | **v1.0.0** | 2026-10-19 | published | 2,799 | first published | [`570502ed5`](https://github.com/SGit-AI/SGit-AI__Website/commit/570502ed5d7cac3b75217a4f7729e513c816c261) |  |
 
 [← Back to the article](../a-pull-request-by-another-name.md) · [All articles](../index.md)

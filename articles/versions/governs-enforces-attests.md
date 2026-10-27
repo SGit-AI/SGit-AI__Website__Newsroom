@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 1,619 | +0 / −352 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](governs-enforces-attests/v1.2.0.md) · [current](../governs-enforces-attests.md) |
+| **v1.2.0** | 2026-10-27 | minor | 1,619 | +0 / −352 words; 4 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](governs-enforces-attests/v1.2.0.md) · [current](../governs-enforces-attests.md) |
 | **v1.1.0** | 2026-10-19 | minor | 1,971 | +0 / −12 words; 1 changed, 0 added, 0 removed paragraphs | [`4805e6671`](https://github.com/SGit-AI/SGit-AI__Website/commit/4805e6671026e3e51cc0de8f493b74b61a53cc3d) | [what changed](governs-enforces-attests/v1.1.0.md) |
 | **v1.0.0** | 2026-10-19 | published | 1,983 | first published | [`2763ef787`](https://github.com/SGit-AI/SGit-AI__Website/commit/2763ef787f84160904d911a5b42eafb061017c36) |  |
 

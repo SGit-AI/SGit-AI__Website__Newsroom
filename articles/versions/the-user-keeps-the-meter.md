@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-27 | minor | 3,351 | +0 / −71 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-user-keeps-the-meter/v1.4.0.md) · [current](../the-user-keeps-the-meter.md) |
+| **v1.4.0** | 2026-10-27 | minor | 3,351 | +0 / −71 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-user-keeps-the-meter/v1.4.0.md) · [current](../the-user-keeps-the-meter.md) |
 | **v1.3.0** | 2026-10-21 | minor | 3,422 | +102 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`66d2d429f`](https://github.com/SGit-AI/SGit-AI__Website/commit/66d2d429fbd0a4197a7a1a1f029a42431235fe40) | [what changed](the-user-keeps-the-meter/v1.3.0.md) |
 | **v1.2.0** | 2026-10-21 | minor | 3,320 | +968 / −334 words; 17 changed, 21 added, 9 removed paragraphs | [`e1df4631e`](https://github.com/SGit-AI/SGit-AI__Website/commit/e1df4631ebb7f4afd9c5e0e95112e70c665cdc13) | [what changed](the-user-keeps-the-meter/v1.2.0.md) |
 | **v1.1.0** | 2026-10-21 | minor | 2,686 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`2d1bfa2af`](https://github.com/SGit-AI/SGit-AI__Website/commit/2d1bfa2af37e9eb5650b2517cfda4f361f7e5157) | [what changed](the-user-keeps-the-meter/v1.1.0.md) |

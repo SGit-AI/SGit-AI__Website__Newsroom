@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.6.0** | 2026-10-27 | minor | 2,442 | +0 / −240 words; 10 changed, 0 added, 0 removed paragraphs | this release | [what changed](who-will-fix-your-mess/v1.6.0.md) · [current](../who-will-fix-your-mess.md) |
+| **v1.6.0** | 2026-10-27 | minor | 2,442 | +0 / −240 words; 10 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](who-will-fix-your-mess/v1.6.0.md) · [current](../who-will-fix-your-mess.md) |
 | **v1.5.0** | 2026-10-19 | minor | 2,682 | +1 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](who-will-fix-your-mess/v1.5.0.md) |
 | **v1.4.0** | 2026-10-18 | minor | 2,681 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`9f74e5714`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f74e5714f015270209da9682fa8846c51b941fb) | [what changed](who-will-fix-your-mess/v1.4.0.md) |
 | **v1.3.0** | 2026-10-18 | minor | 2,679 | +0 / −2 words; 3 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](who-will-fix-your-mess/v1.3.0.md) |

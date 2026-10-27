@@ -43,7 +43,7 @@ The Commercial Terms apply when anyone uses Meta's products "for a business or c
 - **For what:** "provide, develop, improve, research and maintain advertising and business products", including products that help businesses create ads and "connect you with users", and "the integrity and security of Meta Company Products".
 - **If you do not agree:** "please stop all access or use of our Products for business or commercial purposes."
 
-There is a fair reading of part of this. An ad platform checks the pages its ads link to, for safety and for quality, and that needs a crawler. Meta's spokesperson Andy Stone said the crawling terms "only applied to our ads and business products", that this "is not about scraping news sites", and that robots.txt preferences still count. The problem is that none of those limits is in the text. "Business products" is not defined: the examples that follow it are illustrative, not limiting, and, as WAN-IFRA put it, Meta's robots.txt assurances are not in the terms.
+There is a fair reading of part of this. An ad platform checks the pages its ads link to, for safety and for quality, and that needs a crawler. Meta's spokesperson Andy Stone said on X that the update was "not about scraping news sites", and a later Meta statement said the crawling terms "only applied to our ads and business products" and that robots.txt preferences still count (reports differ on which spokesperson gave it). The problem is that none of those limits is in the text. "Business products" is not defined: the examples that follow it are illustrative, not limiting, and, as WAN-IFRA put it, Meta's robots.txt assurances are not in the terms.
 
 ## Since mid-October {#timeline}
 
@@ -51,7 +51,7 @@ There is a fair reading of part of this. An ad platform checks the pages its ads
 
 - **The first version** said Meta could use content from those sites "to provide, develop, improve, research, train" its products, effective 30 October.
 - **16 October:** the News/Media Alliance, which represents more than 2,000 US publishers, called the terms "outrageous and probably illegal".
-- **16 to 17 October:** Meta removed "train" and added the periodic pulling of updates. Andy Stone's statement followed.
+- **16 to 17 October:** Meta removed "train", and its spokespeople said the update was not about scraping news sites.
 - **19 October:** the UK's News Media Association called it a "shameless landgrab attempt", and the Movement for an Open Web prepared complaints to the European Commission and the UK's Competition and Markets Authority, advising businesses to consider leaving Meta's business accounts before 30 October.
 - **22 October:** the News/Media Alliance sent an open letter to Mark Zuckerberg asking Meta to withdraw the terms, with a reply requested by 26 October.
 - **22 October:** WAN-IFRA, the World Association of News Publishers, wrote to Meta's Chief Global Affairs Officer, Joel Kaplan, with five demands; the letter is dated 22 October and was reported the next day.
@@ -110,7 +110,7 @@ The editor asked for a fresh review of this article on the day it was published.
 1. **Our own crawler's numbers were wrong.** The licence tiers are set per publisher, and the source watch's export of 27 October gives 74 at A, 933 at B and 16 at C, of about 1,365 pages; the counts and the date we had matched no record.
 2. **WAN-IFRA's letter is dated 22 October,** not 23 October; it was reported the next day.
 3. **The News Media Association's "pause not a solution" was on 23 October,** not 26 October.
-4. **Andy Stone's words** are that the crawling terms "only applied to our ads and business products"; we had paraphrased them inside quotation marks.
+4. **Meta's words** are that the crawling terms "only applied to our ads and business products"; we had paraphrased them inside quotation marks. (Reports differ on which spokesperson said it, so we now attribute it to Meta.)
 5. **"Four of the five demands" was overstated.** Meta's public statements match two: robots.txt, and leaving news sites alone.
 6. **"Five weeks" was wrong** for something that started in mid-October. The dispute is eleven days old; the terms take effect five weeks after it started.
 7. **"Business products" has examples after it.** The point is that they are illustrative, not limiting.

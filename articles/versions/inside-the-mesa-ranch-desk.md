@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,317 | +0 / −194 words; 12 changed, 0 added, 0 removed paragraphs | this release | [what changed](inside-the-mesa-ranch-desk/v1.1.0.md) · [current](../inside-the-mesa-ranch-desk.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,317 | +0 / −194 words; 12 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](inside-the-mesa-ranch-desk/v1.1.0.md) · [current](../inside-the-mesa-ranch-desk.md) |
 | **v1.0.0** | 2026-10-15 | published | 2,511 | first published | [`b4d872995`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4d872995721407b9723e840e250e3e1d634d405) |  |
 
 [← Back to the article](../inside-the-mesa-ranch-desk.md) · [All articles](../index.md)

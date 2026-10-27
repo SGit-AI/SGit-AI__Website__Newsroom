@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,024 | +0 / −93 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](own-the-stack-and-the-trust/v1.2.0.md) · [current](../own-the-stack-and-the-trust.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,024 | +0 / −93 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](own-the-stack-and-the-trust/v1.2.0.md) · [current](../own-the-stack-and-the-trust.md) |
 | **v1.1.0** | 2026-10-25 | minor | 2,117 | +133 / −18 words; 11 changed, 2 added, 1 removed paragraphs | [`497f38621`](https://github.com/SGit-AI/SGit-AI__Website/commit/497f386211bf7b29e4772214167a135b8540d602) | [what changed](own-the-stack-and-the-trust/v1.1.0.md) |
 | **v1.0.0** | 2026-10-25 | published | 2,002 | first published | [`5c4be7f95`](https://github.com/SGit-AI/SGit-AI__Website/commit/5c4be7f9597a7a4e3e29ddd5e1feda485a9eaf4b) |  |
 

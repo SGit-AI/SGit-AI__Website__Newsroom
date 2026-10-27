@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,486 | +0 / −63 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](fund-it-with-time/v1.1.0.md) · [current](../fund-it-with-time.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,486 | +0 / −63 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](fund-it-with-time/v1.1.0.md) · [current](../fund-it-with-time.md) |
 | **v1.0.0** | 2026-10-19 | published | 1,549 | first published | [`3d49fb8d6`](https://github.com/SGit-AI/SGit-AI__Website/commit/3d49fb8d64b7ed0a9dceda322239deee568d4235) |  |
 
 [← Back to the article](../fund-it-with-time.md) · [All articles](../index.md)

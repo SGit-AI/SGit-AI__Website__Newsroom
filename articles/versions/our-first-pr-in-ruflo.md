@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,082 | +0 / −257 words; 7 changed, 0 added, 0 removed paragraphs | this release | [what changed](our-first-pr-in-ruflo/v1.2.0.md) · [current](../our-first-pr-in-ruflo.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,082 | +0 / −257 words; 7 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](our-first-pr-in-ruflo/v1.2.0.md) · [current](../our-first-pr-in-ruflo.md) |
 | **v1.1.0** | 2026-10-17 | minor | 2,339 | +12 / −0 words; 6 changed, 0 added, 0 removed paragraphs | [`fa14a1449`](https://github.com/SGit-AI/SGit-AI__Website/commit/fa14a1449327df8fcff2240790b5db21e5f4a329) | [what changed](our-first-pr-in-ruflo/v1.1.0.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,327 | first published | [`991d90f9f`](https://github.com/SGit-AI/SGit-AI__Website/commit/991d90f9f5f2362c3f87292d47a1125b3fd2e0a6) |  |
 

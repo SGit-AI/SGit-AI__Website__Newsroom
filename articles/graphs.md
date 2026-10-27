@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-302 of 302 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+303 of 303 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-302 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 40 articles not yet linked either way.
+303 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 41 articles not yet linked either way.
+
+## [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](take-it-or-leave-it.md)
+
+2026-10-27 · News & evidenceStartups & strategy
+
+Meta's updated Commercial Terms make crawling, caching and test credentials on a business's websites the price of any business use of Facebook, Instagram or WhatsApp. Not legal advice and not yet ruled on, but EU and UK competition law forbid a dominant firm from imposing obligations with no connection to the contract, Meta was fined for unfair business terms in 2024, the DMA requires fair access for business users, and a signed licence can sidestep copyright opt-outs. Meta's own terms forbid the same acts on its products. If it is legal, reciprocity should be the minimum.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **The crawling clause** (artefact) Crawl, cache, test credentials, or leave.
+- **Article 102 and s.18** (concept) No supplementary obligations without connection.
+- **The Marketplace fine** (example) €797.72 million for unfair business terms.
+- **DMA Article 6(12)** (concept) Fair access for business users, untested.
+- **A licence beats an opt-out** (claim) Signing can make robots.txt irrelevant.
+- **The asymmetry** (claim) Meta forbids on its products what it asks of yours.
+- **Fines as a cost** (claim) About $166 million of profit a day.
+- **Enshittification** (concept) Abuse business customers to claw back value.
+- **Reciprocity** (method) Terms a platform would not accept, it should not impose.
+
+> a platform should not be able to impose on its business users terms it would not accept from them My view: if it is legal, it should not be.
+
+> Fake accounts used to collect data from behind a login is close to a description of what "test credentials" would let Meta do on a news site. The asymmetry.
 
 ## [Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters](meta-terms-and-the-news.md)
 

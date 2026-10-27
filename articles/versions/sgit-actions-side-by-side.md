@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,767 | +0 / −91 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](sgit-actions-side-by-side/v1.1.0.md) · [current](../sgit-actions-side-by-side.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,767 | +0 / −91 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](sgit-actions-side-by-side/v1.1.0.md) · [current](../sgit-actions-side-by-side.md) |
 | **v1.0.0** | 2026-10-14 | published | 1,858 | first published | [`362d46bff`](https://github.com/SGit-AI/SGit-AI__Website/commit/362d46bff1ef62c3ea1e8fb4af336873a1a49bc3) |  |
 
 [← Back to the article](../sgit-actions-side-by-side.md) · [All articles](../index.md)

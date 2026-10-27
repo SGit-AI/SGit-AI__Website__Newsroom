@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-27 | minor | 3,305 | +0 / −78 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](cloudflare-as-lego-blocks/v1.3.0.md) · [current](../cloudflare-as-lego-blocks.md) |
+| **v1.3.0** | 2026-10-27 | minor | 3,305 | +0 / −78 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](cloudflare-as-lego-blocks/v1.3.0.md) · [current](../cloudflare-as-lego-blocks.md) |
 | **v1.2.0** | 2026-10-19 | minor | 3,383 | +3 / −0 words; 4 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](cloudflare-as-lego-blocks/v1.2.0.md) |
 | **v1.1.0** | 2026-10-18 | minor | 3,380 | +26 / −2 words; 5 changed, 0 added, 0 removed paragraphs | [`e9fbb78e9`](https://github.com/SGit-AI/SGit-AI__Website/commit/e9fbb78e9e3647c0b6933a9e7d242b4148f34937) | [what changed](cloudflare-as-lego-blocks/v1.1.0.md) |
 | **v1.0.0** | 2026-10-18 | published | 3,356 | first published | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) |  |

@@ -30,7 +30,7 @@
   <script src="../assets/themes/themes.js"></script>
   <script src="../assets/reader/anim.js" defer></script>
   <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.106</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.13.107</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -160,11 +160,11 @@
   <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
   </div>
 </div></nav>
-<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.106</span></a></div>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v0.13.107</span></a></div>
 <main class="doc">
  <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters</p>
  <h1>Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters</h1>
- <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-27 &middot; <a href="versions/meta-terms-and-the-news.html" title="Every published version of this article, and what changed">article v1.3.0, 4 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.105</a> &middot; <span class="chip">meta</span><span class="chip">publishers</span><span class="chip">licensing</span><span class="chip">ai</span><span class="chip">crawlers</span><span class="chip">rights</span><span class="chip">article</span></p>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-27 &middot; <a href="versions/meta-terms-and-the-news.html" title="Every published version of this article, and what changed">article v1.4.0, 5 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v0.13.105</a> &middot; <span class="chip">meta</span><span class="chip">publishers</span><span class="chip">licensing</span><span class="chip">ai</span><span class="chip">crawlers</span><span class="chip">rights</span><span class="chip">article</span></p>
   <p class="rvstatus rv-stale"><span class="rv-k">Peer review</span> <b>Corrected after review; this text not yet re-read</b> &middot; this text: no review yet &middot; earlier texts: Claude Fable (Anthropic) &middot; 9 findings: 9 fixed &middot; <a href="#reviews">the reviews</a></p>
  <p class="abstract"><em><b>Abstract:</b> Meta has updated the Commercial Terms that apply to any business use of Facebook, Instagram, WhatsApp and its ad tools. One clause authorises Meta, or anyone acting for it, to use "web scrapers, bots, robots, spiders, crawlers and user agents" and "create test credentials" to access, cache and collect the websites associated with a business, and to pull updates periodically, to "provide, develop, improve, research and maintain advertising and business products". Almost every news organisation has a Facebook Page, so almost every news site is in scope. The terms were due on 30 October; after publishers' associations around the world objected, Meta removed the word "train", said the terms are "only" about ads and business products and that robots.txt still counts, and moved the date to 20 November. Robots.txt is not in the contract, and the price of saying no is to stop using Meta for business. Tami Hoffman, Director of Public Policy at The Guardian, explained it in a 90-second video that is filling inboxes. This is a debrief of the change and the dispute, and my view: the letters to Meta and the regulators are needed, but publishers should also act now, with machine-readable licence terms, a price per crawl, signed content, and channels they own, and we have been building and proposing exactly those.</em></p>
 <figure class="shot shot--medium" data-shot="mt-post.webp" data-dir="images/" data-alt="Tami Hoffman&#x27;s LinkedIn post of 27 October 2026, with the video opening on the clause." data-kind="aside"><figcaption>Tami Hoffman's LinkedIn post of 27 October 2026, with the video opening on the clause.</figcaption></figure>
@@ -194,13 +194,13 @@
 <li><b>For what:</b> "provide, develop, improve, research and maintain advertising and business products", including products that help businesses create ads and "connect you with users", and "the integrity and security of Meta Company Products".</li>
 <li><b>If you do not agree:</b> "please stop all access or use of our Products for business or commercial purposes."</li>
 </ul>
-<p>There is a fair reading of part of this. An ad platform checks the pages its ads link to, for safety and for quality, and that needs a crawler. Meta's spokesperson Andy Stone said the crawling terms "only applied to our ads and business products", that this "is not about scraping news sites", and that robots.txt preferences still count. The problem is that none of those limits is in the text. "Business products" is not defined: the examples that follow it are illustrative, not limiting, and, as WAN-IFRA put it, Meta's robots.txt assurances are not in the terms.</p>
+<p>There is a fair reading of part of this. An ad platform checks the pages its ads link to, for safety and for quality, and that needs a crawler. Meta's spokesperson Andy Stone said on X that the update was "not about scraping news sites", and a later Meta statement said the crawling terms "only applied to our ads and business products" and that robots.txt preferences still count (reports differ on which spokesperson gave it). The problem is that none of those limits is in the text. "Business products" is not defined: the examples that follow it are illustrative, not limiting, and, as WAN-IFRA put it, Meta's robots.txt assurances are not in the terms.</p>
 <h2 id="timeline">Since mid-October</h2>
 <figure class="shot" data-shot="mt-timeline.webp" data-dir="images/" data-alt="Meta&#x27;s Commercial Terms, October to November 2026: a timeline of the update, the reactions and the changes." data-kind="chart"><figcaption>Meta's Commercial Terms, October to November 2026: a timeline of the update, the reactions and the changes.</figcaption></figure>
 <ul>
 <li><b>The first version</b> said Meta could use content from those sites "to provide, develop, improve, research, train" its products, effective 30 October.</li>
 <li><b>16 October:</b> the News/Media Alliance, which represents more than 2,000 US publishers, called the terms "outrageous and probably illegal".</li>
-<li><b>16 to 17 October:</b> Meta removed "train" and added the periodic pulling of updates. Andy Stone's statement followed.</li>
+<li><b>16 to 17 October:</b> Meta removed "train", and its spokespeople said the update was not about scraping news sites.</li>
 <li><b>19 October:</b> the UK's News Media Association called it a "shameless landgrab attempt", and the Movement for an Open Web prepared complaints to the European Commission and the UK's Competition and Markets Authority, advising businesses to consider leaving Meta's business accounts before 30 October.</li>
 <li><b>22 October:</b> the News/Media Alliance sent an open letter to Mark Zuckerberg asking Meta to withdraw the terms, with a reply requested by 26 October.</li>
 <li><b>22 October:</b> WAN-IFRA, the World Association of News Publishers, wrote to Meta's Chief Global Affairs Officer, Joel Kaplan, with five demands; the letter is dated 22 October and was reported the next day.</li>
@@ -248,7 +248,7 @@
 <li><b>Our own crawler's numbers were wrong.</b> The licence tiers are set per publisher, and the source watch's export of 27 October gives 74 at A, 933 at B and 16 at C, of about 1,365 pages; the counts and the date we had matched no record.</li>
 <li><b>WAN-IFRA's letter is dated 22 October,</b> not 23 October; it was reported the next day.</li>
 <li><b>The News Media Association's "pause not a solution" was on 23 October,</b> not 26 October.</li>
-<li><b>Andy Stone's words</b> are that the crawling terms "only applied to our ads and business products"; we had paraphrased them inside quotation marks.</li>
+<li><b>Meta's words</b> are that the crawling terms "only applied to our ads and business products"; we had paraphrased them inside quotation marks. (Reports differ on which spokesperson said it, so we now attribute it to Meta.)</li>
 <li><b>"Four of the five demands" was overstated.</b> Meta's public statements match two: robots.txt, and leaving news sites alone.</li>
 <li><b>"Five weeks" was wrong</b> for something that started in mid-October. The dispute is eleven days old; the terms take effect five weeks after it started.</li>
 <li><b>"Business products" has examples after it.</b> The point is that they are illustrative, not limiting.</li>
@@ -296,7 +296,7 @@ import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.13.106</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="meta-terms-and-the-news.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.13.107</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="meta-terms-and-the-news.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>

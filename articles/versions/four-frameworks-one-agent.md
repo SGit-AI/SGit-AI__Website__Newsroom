@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 5,194 | +0 / −204 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](four-frameworks-one-agent/v1.2.0.md) · [current](../four-frameworks-one-agent.md) |
+| **v1.2.0** | 2026-10-27 | minor | 5,194 | +0 / −204 words; 4 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](four-frameworks-one-agent/v1.2.0.md) · [current](../four-frameworks-one-agent.md) |
 | **v1.1.0** | 2026-10-13 | minor | 5,398 | +12 / −1 words; 5 changed, 0 added, 0 removed paragraphs | [`f5462b64c`](https://github.com/SGit-AI/SGit-AI__Website/commit/f5462b64c2f8169ccda5d31ca94d154bbd6c6cad) | [what changed](four-frameworks-one-agent/v1.1.0.md) |
 | **v1.0.0** | 2026-10-13 | published | 5,387 | first published | [`e2ff68380`](https://github.com/SGit-AI/SGit-AI__Website/commit/e2ff68380fd4f013ceceaa3d351333d25c6d0723) |  |
 

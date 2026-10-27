@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,680 | +0 / −139 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-secure-rule-applied-literally/v1.1.0.md) · [current](../a-secure-rule-applied-literally.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,680 | +0 / −139 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](a-secure-rule-applied-literally/v1.1.0.md) · [current](../a-secure-rule-applied-literally.md) |
 | **v1.0.0** | 2026-10-25 | published | 1,819 | first published | [`4f1aed799`](https://github.com/SGit-AI/SGit-AI__Website/commit/4f1aed799604adca8e4378cbd59a461b73174985) |  |
 
 [← Back to the article](../a-secure-rule-applied-literally.md) · [All articles](../index.md)

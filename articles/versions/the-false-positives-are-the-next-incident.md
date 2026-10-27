@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,076 | +0 / −90 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-false-positives-are-the-next-incident/v1.1.0.md) · [current](../the-false-positives-are-the-next-incident.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,076 | +0 / −90 words; 4 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-false-positives-are-the-next-incident/v1.1.0.md) · [current](../the-false-positives-are-the-next-incident.md) |
 | **v1.0.0** | 2026-10-23 | published | 2,166 | first published | [`e50452d9f`](https://github.com/SGit-AI/SGit-AI__Website/commit/e50452d9f6687e04f34bf22764904617086cc3c7) |  |
 
 [← Back to the article](../the-false-positives-are-the-next-incident.md) · [All articles](../index.md)

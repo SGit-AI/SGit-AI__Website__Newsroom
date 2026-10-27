@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,431 | +0 / −108 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](agents-need-direction/v1.1.0.md) · [current](../agents-need-direction.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,431 | +0 / −108 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](agents-need-direction/v1.1.0.md) · [current](../agents-need-direction.md) |
 | **v1.0.0** | 2026-10-25 | published | 1,539 | first published | [`6c9721119`](https://github.com/SGit-AI/SGit-AI__Website/commit/6c9721119b6758627b985dcfc32f5747158b9ab8) |  |
 
 [← Back to the article](../agents-need-direction.md) · [All articles](../index.md)

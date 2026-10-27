@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,527 | +0 / −87 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](how-to-help/v1.1.0.md) · [current](../how-to-help.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,527 | +0 / −87 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](how-to-help/v1.1.0.md) · [current](../how-to-help.md) |
 | **v1.0.0** | 2026-10-21 | published | 1,614 | first published | [`227de9287`](https://github.com/SGit-AI/SGit-AI__Website/commit/227de9287adcf6f5c55dd66e8935e9fb3aa979a2) |  |
 
 [← Back to the article](../how-to-help.md) · [All articles](../index.md)

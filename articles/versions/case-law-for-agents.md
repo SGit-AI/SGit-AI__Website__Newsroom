@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,195 | +0 / −73 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](case-law-for-agents/v1.1.0.md) · [current](../case-law-for-agents.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,195 | +0 / −73 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](case-law-for-agents/v1.1.0.md) · [current](../case-law-for-agents.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,268 | first published | [`4c750bd9b`](https://github.com/SGit-AI/SGit-AI__Website/commit/4c750bd9bbea12d2ec6d1876f2d70552a26fa511) |  |
 
 [← Back to the article](../case-law-for-agents.md) · [All articles](../index.md)

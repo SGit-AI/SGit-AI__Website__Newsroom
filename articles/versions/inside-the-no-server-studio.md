@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,604 | +0 / −23 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](inside-the-no-server-studio/v1.1.0.md) · [current](../inside-the-no-server-studio.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,604 | +0 / −23 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](inside-the-no-server-studio/v1.1.0.md) · [current](../inside-the-no-server-studio.md) |
 | **v1.0.0** | 2026-10-20 | published | 1,627 | first published | [`67c1d54f0`](https://github.com/SGit-AI/SGit-AI__Website/commit/67c1d54f0081ad4441c90877f7168f8e7f646c99) |  |
 
 [← Back to the article](../inside-the-no-server-studio.md) · [All articles](../index.md)

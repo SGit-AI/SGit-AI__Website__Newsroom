@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,539 | +0 / −109 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-wire-as-a-graph/v1.1.0.md) · [current](../the-wire-as-a-graph.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,539 | +0 / −109 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-wire-as-a-graph/v1.1.0.md) · [current](../the-wire-as-a-graph.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,648 | first published | [`cabd9d517`](https://github.com/SGit-AI/SGit-AI__Website/commit/cabd9d51758942d4a2cc3344da0ece94464c3ac6) |  |
 
 [← Back to the article](../the-wire-as-a-graph.md) · [All articles](../index.md)

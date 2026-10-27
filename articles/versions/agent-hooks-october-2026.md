@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,231 | +0 / −79 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](agent-hooks-october-2026/v1.2.0.md) · [current](../agent-hooks-october-2026.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,231 | +0 / −79 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](agent-hooks-october-2026/v1.2.0.md) · [current](../agent-hooks-october-2026.md) |
 | **v1.1.0** | 2026-10-14 | minor | 2,310 | +41 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`2d0143c83`](https://github.com/SGit-AI/SGit-AI__Website/commit/2d0143c83ae2b667233dccc90729828966ad88b4) | [what changed](agent-hooks-october-2026/v1.1.0.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,269 | first published | [`37e101541`](https://github.com/SGit-AI/SGit-AI__Website/commit/37e1015411eded37d2e67649ac9aceb3e173547f) |  |
 

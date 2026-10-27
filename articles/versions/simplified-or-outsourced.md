@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-27 | minor | 1,461 | +0 / −159 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](simplified-or-outsourced/v1.4.0.md) · [current](../simplified-or-outsourced.md) |
+| **v1.4.0** | 2026-10-27 | minor | 1,461 | +0 / −159 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](simplified-or-outsourced/v1.4.0.md) · [current](../simplified-or-outsourced.md) |
 | **v1.3.0** | 2026-10-25 | minor | 1,620 | +44 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`a2736ecb7`](https://github.com/SGit-AI/SGit-AI__Website/commit/a2736ecb74c7676ab0c1ee912753b7db01acae29) | [what changed](simplified-or-outsourced/v1.3.0.md) |
 | **v1.2.0** | 2026-10-25 | minor | 1,576 | +0 / −3 words; 3 changed, 0 added, 0 removed paragraphs | [`9b4a89d1f`](https://github.com/SGit-AI/SGit-AI__Website/commit/9b4a89d1fba4ffd961a447ea7b15bc13d3a09abc) | [what changed](simplified-or-outsourced/v1.2.0.md) |
 | **v1.1.0** | 2026-10-25 | minor | 1,579 | +7 / −4 words; 3 changed, 0 added, 0 removed paragraphs | [`b4bf7bb20`](https://github.com/SGit-AI/SGit-AI__Website/commit/b4bf7bb20274a3fbe538b886a29cd65c9c9742d6) | [what changed](simplified-or-outsourced/v1.1.0.md) |

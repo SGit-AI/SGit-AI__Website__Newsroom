@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,698 | +0 / −82 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](governed-semi-autonomous-development-read-here/v1.1.0.md) · [current](../governed-semi-autonomous-development-read-here.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,698 | +0 / −82 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](governed-semi-autonomous-development-read-here/v1.1.0.md) · [current](../governed-semi-autonomous-development-read-here.md) |
 | **v1.0.0** | 2026-10-21 | published | 1,780 | first published | [`ce2e11671`](https://github.com/SGit-AI/SGit-AI__Website/commit/ce2e11671a2cca84f3cad502b349c1610384b504) |  |
 
 [← Back to the article](../governed-semi-autonomous-development-read-here.md) · [All articles](../index.md)

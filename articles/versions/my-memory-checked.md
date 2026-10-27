@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,607 | +0 / −45 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](my-memory-checked/v1.1.0.md) · [current](../my-memory-checked.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,607 | +0 / −45 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](my-memory-checked/v1.1.0.md) · [current](../my-memory-checked.md) |
 | **v1.0.0** | 2026-10-15 | published | 1,652 | first published | [`00890bba0`](https://github.com/SGit-AI/SGit-AI__Website/commit/00890bba06c93be86156bc769e180d7cbc357c38) |  |
 
 [← Back to the article](../my-memory-checked.md) · [All articles](../index.md)

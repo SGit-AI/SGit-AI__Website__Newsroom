@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-27 | minor | 2,407 | +0 / −75 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](handing-secrets-to-agents/v1.4.0.md) · [current](../handing-secrets-to-agents.md) |
+| **v1.4.0** | 2026-10-27 | minor | 2,407 | +0 / −75 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](handing-secrets-to-agents/v1.4.0.md) · [current](../handing-secrets-to-agents.md) |
 | **v1.3.0** | 2026-10-19 | minor | 2,482 | +2 / −0 words; 2 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](handing-secrets-to-agents/v1.3.0.md) |
 | **v1.2.0** | 2026-10-16 | minor | 2,480 | +0 / −8 words; 1 changed, 0 added, 0 removed paragraphs | [`62d7d61bb`](https://github.com/SGit-AI/SGit-AI__Website/commit/62d7d61bbe675fde217c65280275f5bf66ca5c92) | [what changed](handing-secrets-to-agents/v1.2.0.md) |
 | **v1.1.0** | 2026-10-15 | minor | 2,488 | +73 / −0 words; 2 changed, 1 added, 0 removed paragraphs | [`9dede7851`](https://github.com/SGit-AI/SGit-AI__Website/commit/9dede78514b22264f3d17f17e92b7cbbf5e5764f) | [what changed](handing-secrets-to-agents/v1.1.0.md) |

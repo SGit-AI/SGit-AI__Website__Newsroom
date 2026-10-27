@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,445 | +0 / −76 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](messaging-fs/v1.1.0.md) · [current](../messaging-fs.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,445 | +0 / −76 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](messaging-fs/v1.1.0.md) · [current](../messaging-fs.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,521 | first published | [`4404c4a42`](https://github.com/SGit-AI/SGit-AI__Website/commit/4404c4a42bcaea33d57c544e5c68eb97e9d813db) |  |
 
 [← Back to the article](../messaging-fs.md) · [All articles](../index.md)

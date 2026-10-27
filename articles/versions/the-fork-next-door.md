@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 3,317 | +0 / −101 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-fork-next-door/v1.1.0.md) · [current](../the-fork-next-door.md) |
+| **v1.1.0** | 2026-10-27 | minor | 3,317 | +0 / −101 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-fork-next-door/v1.1.0.md) · [current](../the-fork-next-door.md) |
 | **v1.0.0** | 2026-10-16 | published | 3,418 | first published | [`ebc03336e`](https://github.com/SGit-AI/SGit-AI__Website/commit/ebc03336e9788a2c8e70e23e57053bc1e17f816e) |  |
 
 [← Back to the article](../the-fork-next-door.md) · [All articles](../index.md)

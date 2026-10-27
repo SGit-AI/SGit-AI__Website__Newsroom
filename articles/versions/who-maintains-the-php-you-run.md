@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-27 | minor | 4,609 | +0 / −192 words; 5 changed, 0 added, 0 removed paragraphs | this release | [what changed](who-maintains-the-php-you-run/v1.4.0.md) · [current](../who-maintains-the-php-you-run.md) |
+| **v1.4.0** | 2026-10-27 | minor | 4,609 | +0 / −192 words; 5 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](who-maintains-the-php-you-run/v1.4.0.md) · [current](../who-maintains-the-php-you-run.md) |
 | **v1.3.0** | 2026-10-24 | minor | 4,801 | +53 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`451608794`](https://github.com/SGit-AI/SGit-AI__Website/commit/451608794f0c2b2c97b1dfa6022dc53e24243f1e) | [what changed](who-maintains-the-php-you-run/v1.3.0.md) |
 | **v1.2.0** | 2026-10-24 | minor | 4,748 | +2,613 / −423 words; 8 changed, 45 added, 9 removed paragraphs | [`ac82adf34`](https://github.com/SGit-AI/SGit-AI__Website/commit/ac82adf346ae3b94546292adbd1faaf9ca64040b) | [what changed](who-maintains-the-php-you-run/v1.2.0.md) |
 | **v1.1.0** | 2026-10-23 | minor | 2,553 | +366 / −278 words; 1 changed, 3 added, 2 removed paragraphs | [`e50452d9f`](https://github.com/SGit-AI/SGit-AI__Website/commit/e50452d9f6687e04f34bf22764904617086cc3c7) | [what changed](who-maintains-the-php-you-run/v1.1.0.md) |

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 3,005 | +0 / −96 words; 5 changed, 0 added, 0 removed paragraphs | this release | [what changed](jobs-that-never-scaled/v1.1.0.md) · [current](../jobs-that-never-scaled.md) |
+| **v1.1.0** | 2026-10-27 | minor | 3,005 | +0 / −96 words; 5 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](jobs-that-never-scaled/v1.1.0.md) · [current](../jobs-that-never-scaled.md) |
 | **v1.0.0** | 2026-10-21 | published | 3,101 | first published | [`1f9952ea2`](https://github.com/SGit-AI/SGit-AI__Website/commit/1f9952ea207a28ea7baaa67e00f96a6d97de34c3) |  |
 
 [← Back to the article](../jobs-that-never-scaled.md) · [All articles](../index.md)

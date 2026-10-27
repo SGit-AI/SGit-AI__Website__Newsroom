@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,770 | +0 / −122 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](cedar-and-the-policy-vault/v1.2.0.md) · [current](../cedar-and-the-policy-vault.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,770 | +0 / −122 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](cedar-and-the-policy-vault/v1.2.0.md) · [current](../cedar-and-the-policy-vault.md) |
 | **v1.1.0** | 2026-10-19 | minor | 2,892 | +1 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](cedar-and-the-policy-vault/v1.1.0.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,891 | first published | [`ad8bf5ac5`](https://github.com/SGit-AI/SGit-AI__Website/commit/ad8bf5ac53660f99ac08822678b28c50c3a7d866) |  |
 

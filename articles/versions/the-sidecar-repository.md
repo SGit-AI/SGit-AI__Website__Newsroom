@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,162 | +0 / −161 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-sidecar-repository/v1.1.0.md) · [current](../the-sidecar-repository.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,162 | +0 / −161 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-sidecar-repository/v1.1.0.md) · [current](../the-sidecar-repository.md) |
 | **v1.0.0** | 2026-10-22 | published | 2,323 | first published | [`08e700b32`](https://github.com/SGit-AI/SGit-AI__Website/commit/08e700b3272eb5ef4a19aeac1e746d8467ebfdc6) |  |
 
 [← Back to the article](../the-sidecar-repository.md) · [All articles](../index.md)

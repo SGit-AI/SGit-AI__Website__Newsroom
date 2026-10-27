@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 1,696 | +0 / −75 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-attack-surface-you-do-not-have/v1.2.0.md) · [current](../the-attack-surface-you-do-not-have.md) |
+| **v1.2.0** | 2026-10-27 | minor | 1,696 | +0 / −75 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-attack-surface-you-do-not-have/v1.2.0.md) · [current](../the-attack-surface-you-do-not-have.md) |
 | **v1.1.0** | 2026-10-21 | minor | 1,771 | +14 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`7c8ad22c8`](https://github.com/SGit-AI/SGit-AI__Website/commit/7c8ad22c8b9b75e416aaca91fdb350c56e5f9b24) | [what changed](the-attack-surface-you-do-not-have/v1.1.0.md) |
 | **v1.0.0** | 2026-10-21 | published | 1,757 | first published | [`783757bc4`](https://github.com/SGit-AI/SGit-AI__Website/commit/783757bc4746ec33e090795cc5db15b371d520c6) |  |
 

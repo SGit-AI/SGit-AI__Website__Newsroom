@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,297 | +0 / −182 words; 7 changed, 0 added, 0 removed paragraphs | this release | [what changed](research-delivered-as-a-vault/v1.1.0.md) · [current](../research-delivered-as-a-vault.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,297 | +0 / −182 words; 7 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](research-delivered-as-a-vault/v1.1.0.md) · [current](../research-delivered-as-a-vault.md) |
 | **v1.0.0** | 2026-10-16 | published | 2,479 | first published | [`5b5bfeedc`](https://github.com/SGit-AI/SGit-AI__Website/commit/5b5bfeedcbccc8e31781d787cebb4a4bde573015) |  |
 
 [← Back to the article](../research-delivered-as-a-vault.md) · [All articles](../index.md)

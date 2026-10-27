@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 3,976 | +0 / −244 words; 6 changed, 0 added, 0 removed paragraphs | this release | [what changed](an-agent-that-may-only-chat/v1.2.0.md) · [current](../an-agent-that-may-only-chat.md) |
+| **v1.2.0** | 2026-10-27 | minor | 3,976 | +0 / −244 words; 6 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](an-agent-that-may-only-chat/v1.2.0.md) · [current](../an-agent-that-may-only-chat.md) |
 | **v1.1.0** | 2026-10-23 | minor | 4,220 | +1,412 / −0 words; 0 changed, 39 added, 0 removed paragraphs | [`afc547de5`](https://github.com/SGit-AI/SGit-AI__Website/commit/afc547de55e443ad44060a4cb2baf71531e7acd7) | [what changed](an-agent-that-may-only-chat/v1.1.0.md) |
 | **v1.0.0** | 2026-10-23 | published | 2,808 | first published | [`f18455477`](https://github.com/SGit-AI/SGit-AI__Website/commit/f18455477de46f188edd45bc8ffc49f9b11c4228) |  |
 

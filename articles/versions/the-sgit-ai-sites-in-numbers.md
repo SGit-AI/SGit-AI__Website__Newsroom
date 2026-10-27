@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,368 | +0 / −68 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-sgit-ai-sites-in-numbers/v1.1.0.md) · [current](../the-sgit-ai-sites-in-numbers.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,368 | +0 / −68 words; 4 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-sgit-ai-sites-in-numbers/v1.1.0.md) · [current](../the-sgit-ai-sites-in-numbers.md) |
 | **v1.0.0** | 2026-10-21 | published | 1,436 | first published | [`c06c9ae1e`](https://github.com/SGit-AI/SGit-AI__Website/commit/c06c9ae1ebc25440a5c3a751f3f05d70fd609c57) |  |
 
 [← Back to the article](../the-sgit-ai-sites-in-numbers.md) · [All articles](../index.md)

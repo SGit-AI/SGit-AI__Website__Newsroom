@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,681 | +0 / −198 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](one-researcher-for-every-newsroom/v1.1.0.md) · [current](../one-researcher-for-every-newsroom.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,681 | +0 / −198 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](one-researcher-for-every-newsroom/v1.1.0.md) · [current](../one-researcher-for-every-newsroom.md) |
 | **v1.0.0** | 2026-10-26 | published | 1,879 | first published | [`1186f008e`](https://github.com/SGit-AI/SGit-AI__Website/commit/1186f008eb5b5eb5354460d2d50d8be8a4c60ade) |  |
 
 [← Back to the article](../one-researcher-for-every-newsroom.md) · [All articles](../index.md)

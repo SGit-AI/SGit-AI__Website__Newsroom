@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,543 | +0 / −69 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](commanders-intent-is-a-behaviour-policy/v1.2.0.md) · [current](../commanders-intent-is-a-behaviour-policy.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,543 | +0 / −69 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](commanders-intent-is-a-behaviour-policy/v1.2.0.md) · [current](../commanders-intent-is-a-behaviour-policy.md) |
 | **v1.1.0** | 2026-10-18 | minor | 2,612 | +0 / −7 words; 1 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](commanders-intent-is-a-behaviour-policy/v1.1.0.md) |
 | **v1.0.0** | 2026-10-14 | published | 2,619 | first published | [`915fd959b`](https://github.com/SGit-AI/SGit-AI__Website/commit/915fd959b4d4999946b204903172340120fc06eb) |  |
 

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,168 | +0 / −41 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-reading-account-as-built/v1.1.0.md) · [current](../the-reading-account-as-built.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,168 | +0 / −41 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-reading-account-as-built/v1.1.0.md) · [current](../the-reading-account-as-built.md) |
 | **v1.0.0** | 2026-10-21 | published | 1,209 | first published | [`66d2d429f`](https://github.com/SGit-AI/SGit-AI__Website/commit/66d2d429fbd0a4197a7a1a1f029a42431235fe40) |  |
 
 [← Back to the article](../the-reading-account-as-built.md) · [All articles](../index.md)

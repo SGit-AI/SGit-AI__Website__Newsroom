@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,335 | +0 / −86 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-vault-crosses-chrome-profiles/v1.1.0.md) · [current](../the-vault-crosses-chrome-profiles.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,335 | +0 / −86 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-vault-crosses-chrome-profiles/v1.1.0.md) · [current](../the-vault-crosses-chrome-profiles.md) |
 | **v1.0.0** | 2026-10-13 | published | 2,421 | first published | [`c40ffa924`](https://github.com/SGit-AI/SGit-AI__Website/commit/c40ffa924e7cb994112937d3d21b7d0b06ef6c2c) |  |
 
 [← Back to the article](../the-vault-crosses-chrome-profiles.md) · [All articles](../index.md)

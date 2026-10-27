@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 1,962 | +0 / −94 words; 6 changed, 0 added, 0 removed paragraphs | this release | [what changed](what-if-an-agent-loses-its-workspace/v1.2.0.md) · [current](../what-if-an-agent-loses-its-workspace.md) |
+| **v1.2.0** | 2026-10-27 | minor | 1,962 | +0 / −94 words; 6 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](what-if-an-agent-loses-its-workspace/v1.2.0.md) · [current](../what-if-an-agent-loses-its-workspace.md) |
 | **v1.1.0** | 2026-10-17 | minor | 2,056 | +222 / −0 words; 7 changed, 1 added, 0 removed paragraphs | [`04eef66c8`](https://github.com/SGit-AI/SGit-AI__Website/commit/04eef66c8bdfad32da425f58f08d87d470357b2c) | [what changed](what-if-an-agent-loses-its-workspace/v1.1.0.md) |
 | **v1.0.0** | 2026-10-17 | published | 1,834 | first published | [`c3c97c54d`](https://github.com/SGit-AI/SGit-AI__Website/commit/c3c97c54d627e10929cc4fa7798c927f8c927371) |  |
 

@@ -55,6 +55,194 @@
   ],
   "articles": [
     {
+      "slug": "take-it-or-leave-it",
+      "title": "Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart",
+      "date": "2026-10-27",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/take-it-or-leave-it.html",
+      "markdown": "https://newsroom.sgit.ai/articles/take-it-or-leave-it.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/take-it-or-leave-it.webp",
+      "teaser": "Is Meta's crawling clause legal? The competition, platform and copyright rules that could reach it, and Meta's own terms run the other way.",
+      "topics": [
+        "news-and-evidence",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "meta",
+        "publishers",
+        "law",
+        "competition",
+        "licensing",
+        "crawlers",
+        "rights",
+        "article"
+      ],
+      "links_out": [],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "mt-terms.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/mt-terms.webp",
+          "caption": "Meta's Commercial Terms page, with the crawling clause highlighted.",
+          "kind": "aside"
+        },
+        {
+          "file": "ml-asymmetry.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ml-asymmetry.webp",
+          "caption": "What Meta's terms let it do to a business's website, against what Meta allows on Facebook and WhatsApp.",
+          "kind": "chart"
+        },
+        {
+          "file": "ml-routes.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ml-routes.webp",
+          "caption": "The legal routes in the EU, the UK, Germany and India, and where each stands on 27 October 2026.",
+          "kind": "chart"
+        },
+        {
+          "file": "ml-fines.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ml-fines.webp",
+          "caption": "Meta's largest fines and penalties, in euros and in dollars, against its 2025 earnings.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "take-it-or-leave-it",
+        "teaser": "Is Meta's crawling clause legal? The competition, platform and copyright rules that could reach it, and Meta's own terms run the other way.",
+        "topics": [
+          "news-and-evidence",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Meta's updated Commercial Terms make crawling, caching and test credentials on a business's websites the price of any business use of Facebook, Instagram or WhatsApp. Not legal advice and not yet ruled on, but EU and UK competition law forbid a dominant firm from imposing obligations with no connection to the contract, Meta was fined for unfair business terms in 2024, the DMA requires fair access for business users, and a signed licence can sidestep copyright opt-outs. Meta's own terms forbid the same acts on its products. If it is legal, reciprocity should be the minimum.",
+        "nodes": [
+          {
+            "id": "clause",
+            "label": "The crawling clause",
+            "kind": "artefact",
+            "summary": "Crawl, cache, test credentials, or leave."
+          },
+          {
+            "id": "art102",
+            "label": "Article 102 and s.18",
+            "kind": "concept",
+            "summary": "No supplementary obligations without connection."
+          },
+          {
+            "id": "marketplace",
+            "label": "The Marketplace fine",
+            "kind": "example",
+            "summary": "€797.72 million for unfair business terms."
+          },
+          {
+            "id": "dma",
+            "label": "DMA Article 6(12)",
+            "kind": "concept",
+            "summary": "Fair access for business users, untested."
+          },
+          {
+            "id": "copyright",
+            "label": "A licence beats an opt-out",
+            "kind": "claim",
+            "summary": "Signing can make robots.txt irrelevant."
+          },
+          {
+            "id": "asymmetry",
+            "label": "The asymmetry",
+            "kind": "claim",
+            "summary": "Meta forbids on its products what it asks of yours."
+          },
+          {
+            "id": "fines",
+            "label": "Fines as a cost",
+            "kind": "claim",
+            "summary": "About $166 million of profit a day."
+          },
+          {
+            "id": "enshitt",
+            "label": "Enshittification",
+            "kind": "concept",
+            "summary": "Abuse business customers to claw back value."
+          },
+          {
+            "id": "recip",
+            "label": "Reciprocity",
+            "kind": "method",
+            "summary": "Terms a platform would not accept, it should not impose."
+          }
+        ],
+        "edges": [
+          {
+            "from": "art102",
+            "to": "clause",
+            "rel": "answers"
+          },
+          {
+            "from": "marketplace",
+            "to": "art102",
+            "rel": "example-of"
+          },
+          {
+            "from": "dma",
+            "to": "clause",
+            "rel": "answers"
+          },
+          {
+            "from": "copyright",
+            "to": "clause",
+            "rel": "depends-on"
+          },
+          {
+            "from": "asymmetry",
+            "to": "clause",
+            "rel": "contrasts"
+          },
+          {
+            "from": "fines",
+            "to": "art102",
+            "rel": "contrasts"
+          },
+          {
+            "from": "enshitt",
+            "to": "clause",
+            "rel": "extends"
+          },
+          {
+            "from": "recip",
+            "to": "asymmetry",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "meta-terms-and-the-news",
+            "free-to-copy-paid-at-the-source",
+            "websites-you-own",
+            "who-creates-the-original",
+            "signed-by-the-source"
+          ],
+          "pages": [],
+          "sites": [
+            "https://ec.europa.eu/commission/presscorner/detail/en/ip_24_5801",
+            "https://www.facebook.com/apps/site_scraping_tos_terms.php",
+            "https://pluralistic.net/2023/01/21/potemkin-ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "a platform should not be able to impose on its business users terms it would not accept from them",
+            "why": "My view: if it is legal, it should not be."
+          },
+          {
+            "text": "Fake accounts used to collect data from behind a login is close to a description of what \"test credentials\" would let Meta do on a news site.",
+            "why": "The asymmetry."
+          },
+          {
+            "text": "Companies that fear a regulator will fine them more than they expect to make from cheating, will cheat less.",
+            "why": "If we get sued, we pay the fine."
+          }
+        ]
+      }
+    },
+    {
       "slug": "meta-terms-and-the-news",
       "title": "Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters",
       "date": "2026-10-27",

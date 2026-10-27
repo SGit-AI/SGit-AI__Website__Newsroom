@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,317 | +0 / −72 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](connect-your-dots-backwards/v1.1.0.md) · [current](../connect-your-dots-backwards.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,317 | +0 / −72 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](connect-your-dots-backwards/v1.1.0.md) · [current](../connect-your-dots-backwards.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,389 | first published | [`b10a4384d`](https://github.com/SGit-AI/SGit-AI__Website/commit/b10a4384d597cb178bb629adf7d2419a699b2c35) |  |
 
 [← Back to the article](../connect-your-dots-backwards.md) · [All articles](../index.md)

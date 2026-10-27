@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-27 | minor | 2,853 | +0 / −191 words; 5 changed, 0 added, 0 removed paragraphs | this release | [what changed](an-analysts-blueprint-for-riskmandate/v1.3.0.md) · [current](../an-analysts-blueprint-for-riskmandate.md) |
+| **v1.3.0** | 2026-10-27 | minor | 2,853 | +0 / −191 words; 5 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](an-analysts-blueprint-for-riskmandate/v1.3.0.md) · [current](../an-analysts-blueprint-for-riskmandate.md) |
 | **v1.2.0** | 2026-10-21 | minor | 3,044 | +94 / −0 words; 5 changed, 0 added, 0 removed paragraphs | [`d9d4562f2`](https://github.com/SGit-AI/SGit-AI__Website/commit/d9d4562f26c69d3dabd07b573a993a0f1eb41643) | [what changed](an-analysts-blueprint-for-riskmandate/v1.2.0.md) |
 | **v1.1.0** | 2026-10-21 | minor | 2,950 | +889 / −87 words; 5 changed, 17 added, 2 removed paragraphs | [`78bb7903d`](https://github.com/SGit-AI/SGit-AI__Website/commit/78bb7903dcd86041f5c4e6570b99a4b544ed9654) | [what changed](an-analysts-blueprint-for-riskmandate/v1.1.0.md) |
 | **v1.0.0** | 2026-10-21 | published | 2,148 | first published | [`bc8da6c24`](https://github.com/SGit-AI/SGit-AI__Website/commit/bc8da6c245ef752072db406a99a44733f60063cc) |  |

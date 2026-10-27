@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,482 | +0 / −199 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-pen-and-a-key/v1.1.0.md) · [current](../a-pen-and-a-key.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,482 | +0 / −199 words; 4 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](a-pen-and-a-key/v1.1.0.md) · [current](../a-pen-and-a-key.md) |
 | **v1.0.0** | 2026-10-24 | published | 2,681 | first published | [`c743cbb1a`](https://github.com/SGit-AI/SGit-AI__Website/commit/c743cbb1ac7a50e10c445643b45735e5e56f3d46) |  |
 
 [← Back to the article](../a-pen-and-a-key.md) · [All articles](../index.md)

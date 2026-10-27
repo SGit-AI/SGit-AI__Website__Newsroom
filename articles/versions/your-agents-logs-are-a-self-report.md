@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 2,275 | +0 / −63 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](your-agents-logs-are-a-self-report/v1.1.0.md) · [current](../your-agents-logs-are-a-self-report.md) |
+| **v1.1.0** | 2026-10-27 | minor | 2,275 | +0 / −63 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](your-agents-logs-are-a-self-report/v1.1.0.md) · [current](../your-agents-logs-are-a-self-report.md) |
 | **v1.0.0** | 2026-10-17 | published | 2,338 | first published | [`fb83a977e`](https://github.com/SGit-AI/SGit-AI__Website/commit/fb83a977ec85802ad6d4bf2f08155a119b6e123e) |  |
 
 [← Back to the article](../your-agents-logs-are-a-self-report.md) · [All articles](../index.md)

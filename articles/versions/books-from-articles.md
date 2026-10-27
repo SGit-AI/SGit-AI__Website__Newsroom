@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.4.0** | 2026-10-27 | minor | 1,857 | +0 / −57 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](books-from-articles/v1.4.0.md) · [current](../books-from-articles.md) |
+| **v1.4.0** | 2026-10-27 | minor | 1,857 | +0 / −57 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](books-from-articles/v1.4.0.md) · [current](../books-from-articles.md) |
 | **v1.3.0** | 2026-10-19 | minor | 1,914 | +1 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`d303ce0f1`](https://github.com/SGit-AI/SGit-AI__Website/commit/d303ce0f1704db6965e50ec5265bd99eaf0ec179) | [what changed](books-from-articles/v1.3.0.md) |
 | **v1.2.0** | 2026-10-18 | minor | 1,913 | +0 / −4 words; 2 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](books-from-articles/v1.2.0.md) |
 | **v1.1.0** | 2026-10-16 | minor | 1,917 | +10 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`96399b767`](https://github.com/SGit-AI/SGit-AI__Website/commit/96399b76723378d4d98520c296ecb182ba9c0842) | [what changed](books-from-articles/v1.1.0.md) |

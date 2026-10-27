@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,932 | +0 / −100 words; 2 changed, 0 added, 0 removed paragraphs | this release | [what changed](hired-for-the-workflow/v1.1.0.md) · [current](../hired-for-the-workflow.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,932 | +0 / −100 words; 2 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](hired-for-the-workflow/v1.1.0.md) · [current](../hired-for-the-workflow.md) |
 | **v1.0.1** | 2026-10-18 | patch | 2,032 | front matter only (the text is unchanged) | [`7b0b11b76`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b0b11b763d4520cb5b1e3a257a87d466f0cb17b) | [what changed](hired-for-the-workflow/v1.0.1.md) |
 | **v1.0.0** | 2026-10-18 | published | 2,032 | first published | [`928a4383e`](https://github.com/SGit-AI/SGit-AI__Website/commit/928a4383ead25175806fdb254f5980b980c69aa6) |  |
 

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-27 | minor | 2,832 | +0 / −95 words; 3 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-controllable-founder/v1.3.0.md) · [current](../the-controllable-founder.md) |
+| **v1.3.0** | 2026-10-27 | minor | 2,832 | +0 / −95 words; 3 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-controllable-founder/v1.3.0.md) · [current](../the-controllable-founder.md) |
 | **v1.2.0** | 2026-10-18 | minor | 2,927 | +0 / −3 words; 1 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](the-controllable-founder/v1.2.0.md) |
 | **v1.1.0** | 2026-10-16 | minor | 2,930 | +23 / −0 words; 1 changed, 1 added, 0 removed paragraphs | [`ebc03336e`](https://github.com/SGit-AI/SGit-AI__Website/commit/ebc03336e9788a2c8e70e23e57053bc1e17f816e) | [what changed](the-controllable-founder/v1.1.0.md) |
 | **v1.0.0** | 2026-10-16 | published | 2,907 | first published | [`94931f47c`](https://github.com/SGit-AI/SGit-AI__Website/commit/94931f47c178da87ced6c2ec10d74cd3af4ad46a) |  |

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 1,729 | +0 / −78 words; 4 changed, 0 added, 0 removed paragraphs | this release | [what changed](the-graphs-books/v1.2.0.md) · [current](../the-graphs-books.md) |
+| **v1.2.0** | 2026-10-27 | minor | 1,729 | +0 / −78 words; 4 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](the-graphs-books/v1.2.0.md) · [current](../the-graphs-books.md) |
 | **v1.1.0** | 2026-10-18 | minor | 1,807 | +0 / −2 words; 1 changed, 0 added, 0 removed paragraphs | [`de821285d`](https://github.com/SGit-AI/SGit-AI__Website/commit/de821285d78b0ed667dda217e6b56a89e9dd919f) | [what changed](the-graphs-books/v1.1.0.md) |
 | **v1.0.0** | 2026-10-16 | published | 1,809 | first published | [`e7ee4035c`](https://github.com/SGit-AI/SGit-AI__Website/commit/e7ee4035c1d1460ffc449c42732714e10204560e) |  |
 

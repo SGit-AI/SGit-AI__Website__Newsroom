@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-27 | minor | 2,045 | +0 / −210 words; 6 changed, 0 added, 0 removed paragraphs | this release | [what changed](when-is-the-vault-actually-used/v1.3.0.md) · [current](../when-is-the-vault-actually-used.md) |
+| **v1.3.0** | 2026-10-27 | minor | 2,045 | +0 / −210 words; 6 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](when-is-the-vault-actually-used/v1.3.0.md) · [current](../when-is-the-vault-actually-used.md) |
 | **v1.2.0** | 2026-10-18 | minor | 2,255 | +6 / −0 words; 3 changed, 0 added, 0 removed paragraphs | [`9f74e5714`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f74e5714f015270209da9682fa8846c51b941fb) | [what changed](when-is-the-vault-actually-used/v1.2.0.md) |
 | **v1.1.0** | 2026-10-17 | minor | 2,249 | +394 / −29 words; 17 changed, 3 added, 2 removed paragraphs | [`04eef66c8`](https://github.com/SGit-AI/SGit-AI__Website/commit/04eef66c8bdfad32da425f58f08d87d470357b2c) | [what changed](when-is-the-vault-actually-used/v1.1.0.md) |
 | **v1.0.0** | 2026-10-17 | published | 1,884 | first published | [`c3c97c54d`](https://github.com/SGit-AI/SGit-AI__Website/commit/c3c97c54d627e10929cc4fa7798c927f8c927371) |  |

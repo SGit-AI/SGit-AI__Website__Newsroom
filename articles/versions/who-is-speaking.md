@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.1.0** | 2026-10-27 | minor | 1,776 | +0 / −65 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](who-is-speaking/v1.1.0.md) · [current](../who-is-speaking.md) |
+| **v1.1.0** | 2026-10-27 | minor | 1,776 | +0 / −65 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](who-is-speaking/v1.1.0.md) · [current](../who-is-speaking.md) |
 | **v1.0.0** | 2026-10-18 | published | 1,841 | first published | [`9f74e5714`](https://github.com/SGit-AI/SGit-AI__Website/commit/9f74e5714f015270209da9682fa8846c51b941fb) |  |
 
 [← Back to the article](../who-is-speaking.md) · [All articles](../index.md)

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.2.0** | 2026-10-27 | minor | 2,830 | +0 / −32 words; 1 changed, 0 added, 0 removed paragraphs | this release | [what changed](a-leak-without-breaking-the-policy/v1.2.0.md) · [current](../a-leak-without-breaking-the-policy.md) |
+| **v1.2.0** | 2026-10-27 | minor | 2,830 | +0 / −32 words; 1 changed, 0 added, 0 removed paragraphs | [`db67c5ce1`](https://github.com/SGit-AI/SGit-AI__Website/commit/db67c5ce1a796bfd42b5d323870e6b403ae2c85b) | [what changed](a-leak-without-breaking-the-policy/v1.2.0.md) · [current](../a-leak-without-breaking-the-policy.md) |
 | **v1.1.0** | 2026-10-20 | minor | 2,862 | +889 / −91 words; 5 changed, 20 added, 3 removed paragraphs | [`992e2627f`](https://github.com/SGit-AI/SGit-AI__Website/commit/992e2627fa8004c3cea934ff37f9d48f21d758f7) | [what changed](a-leak-without-breaking-the-policy/v1.1.0.md) |
 | **v1.0.0** | 2026-10-20 | published | 2,064 | first published | [`79a26dda3`](https://github.com/SGit-AI/SGit-AI__Website/commit/79a26dda346b133768e5b714e34c72d10dcc7259) |  |
 
