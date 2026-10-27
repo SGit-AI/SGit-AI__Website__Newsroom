@@ -1,0 +1,168 @@
+{
+  "slug": "what-sgit-does-that-git-does-not",
+  "teaser": "Ten sgit releases turned minutes into seconds; the honest map of what sgit does that Git does not, and where Git is ahead.",
+  "topics": [
+    "vaults-and-method",
+    "site-and-engineering"
+  ],
+  "core_idea": "Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck a real workload found: a one-file commit on 76,000 files from 29 minutes to 4.6 seconds, a pull on 228,000 files from 566 to 31.7 seconds. The ideas came from earlier work: MGraph-DB's cross-references, Memory-FS's reads by offset, caching on content addresses, and the writer pays. sgit should stop calling itself like Git: Git has no equivalent for encrypted metadata, read keys, blind writes and byte-range folder reads from plain storage; Git also has partial, shallow and no-checkout clones and kept packs; Git is far ahead on merges, identity and ecosystem; one-file reads with no clone and websites from vaults are next.",
+  "nodes": [
+    {
+      "id": "releases",
+      "label": "Ten releases in October",
+      "kind": "example",
+      "summary": "Each one a bottleneck fixed."
+    },
+    {
+      "id": "speed",
+      "label": "Minutes to seconds",
+      "kind": "claim",
+      "summary": "Per command, with caveats."
+    },
+    {
+      "id": "lineage",
+      "label": "Where the speed came from",
+      "kind": "concept",
+      "summary": "MGraph-DB, Memory-FS, caching."
+    },
+    {
+      "id": "writer",
+      "label": "The writer pays",
+      "kind": "method",
+      "summary": "Index packs beside data packs."
+    },
+    {
+      "id": "framing",
+      "label": "Stop comparing with Git",
+      "kind": "claim",
+      "summary": "Map what Git lacks."
+    },
+    {
+      "id": "only",
+      "label": "What Git has no equivalent for",
+      "kind": "claim",
+      "summary": "Encryption, read keys, blind writes."
+    },
+    {
+      "id": "too",
+      "label": "What Git has too",
+      "kind": "claim",
+      "summary": "Partial, shallow, kept packs."
+    },
+    {
+      "id": "ahead",
+      "label": "Where Git is ahead",
+      "kind": "claim",
+      "summary": "Merges, identity, ecosystem."
+    },
+    {
+      "id": "next",
+      "label": "Next, not now",
+      "kind": "question",
+      "summary": "One file, no clone; sites from vaults."
+    }
+  ],
+  "edges": [
+    {
+      "from": "speed",
+      "to": "releases",
+      "rel": "depends-on"
+    },
+    {
+      "from": "lineage",
+      "to": "writer",
+      "rel": "produces"
+    },
+    {
+      "from": "writer",
+      "to": "speed",
+      "rel": "produces"
+    },
+    {
+      "from": "framing",
+      "to": "only",
+      "rel": "leads-to"
+    },
+    {
+      "from": "too",
+      "to": "only",
+      "rel": "contrasts"
+    },
+    {
+      "from": "ahead",
+      "to": "only",
+      "rel": "compared-with"
+    },
+    {
+      "from": "next",
+      "to": "only",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "you-can-feel-good-engineering",
+      "explorer-coding",
+      "a-team-frozen-in-time"
+    ],
+    "pages": [],
+    "sites": [
+      "https://cli.sgit.ai/docs/update-to-0-26-0.html",
+      "https://cli.sgit.ai/articles/indexes-the-writer-pays-for.html",
+      "https://cli.sgit.ai/docs/limitations.html",
+      "https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The writer pays once, at push time; every reader after it skips the walk.",
+      "why": "Where the speed came from."
+    },
+    {
+      "text": "A partial clone is not an access boundary",
+      "why": "What Git has no equivalent for."
+    },
+    {
+      "text": "Push a tool until something breaks, measure exactly where it broke, fix that, release, and push again.",
+      "why": "Every bottleneck becomes a release."
+    }
+  ],
+  "figures": [
+    {
+      "file": "sf-speedups.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sf-speedups.webp",
+      "caption": "sgit's measured speed-ups in October 2026, before and after, on a log scale.",
+      "kind": "chart"
+    },
+    {
+      "file": "sf-releases.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sf-releases.webp",
+      "caption": "Ten sgit releases, 3 to 27 October 2026, with the number that made the case for each one.",
+      "kind": "chart"
+    },
+    {
+      "file": "sf-cli-pack-indexes-shipped.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sf-cli-pack-indexes-shipped.webp",
+      "caption": "From the newsroom's first morning on 0.25.0 to 0.26.0 in eighteen hours. Figure from cli.sgit.ai.",
+      "kind": "screenshot"
+    },
+    {
+      "file": "sf-lineage.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sf-lineage.webp",
+      "caption": "Where the speed came from: earlier work, the principle it taught, and the sgit release that used it.",
+      "kind": "chart"
+    },
+    {
+      "file": "sf-map.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sf-map.webp",
+      "caption": "What sgit does that Git does not, what Git also has, where Git is ahead, and what is next.",
+      "kind": "chart"
+    },
+    {
+      "file": "sf-cli-where-git-is-faster.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/sf-cli-where-git-is-faster.webp",
+      "caption": "Where sgit does less work than Git, and where Git is faster. Figure from cli.sgit.ai.",
+      "kind": "screenshot"
+    }
+  ]
+}

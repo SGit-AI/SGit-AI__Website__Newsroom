@@ -4,15 +4,15 @@ Written by `admin/build/deps.py`; do not edit. The rule: the newsroom is self-co
 
 | kind | files | references | what it is |
 |---|---:|---:|---|
-| generator | 1054 | | pages imported from sgit.ai's build; goes when the generator is ported here |
-| network | 713 | 2964 | links to sgit.ai's pages and the network sites (30 files this site writes itself) |
-| words | 1435 | 9763 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
-| vault | 72 | 202 | links to a vault: the one dependency that stays |
+| generator | 1057 | | pages imported from sgit.ai's build; goes when the generator is ported here |
+| network | 716 | 2968 | links to sgit.ai's pages and the network sites (31 files this site writes itself) |
+| words | 1444 | 9867 | sgit.ai or the sgit project named in prose: the disclosure, the kit, the method |
+| vault | 74 | 204 | links to a vault: the one dependency that stays |
 
 ## Network links, by target
 
-- 605 × `sgit.ai/about/index.html`
-- 302 × `sgit.ai/about/index.md`
+- 607 × `sgit.ai/about/index.html`
+- 303 × `sgit.ai/about/index.md`
 - 126 × `sgit.ai/admin/versions.html`
 - 98 × `sgit.ai/admin/versions.md`
 - 44 × `pki.sgit.ai/`
@@ -74,6 +74,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `rights/index.html` (2)
 - `LICENSES.md` (1)
 - `README.md` (1)
+- `admin/build/review_keys.mjs` (1)
 - `admin/build/test_pen.mjs` (1)
 - `admin/build/vault-mock.mjs` (1)
 - `admin/notes/2026-10-16__the-vault-opened.md` (1)
@@ -98,7 +99,6 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `network/index.html` (21)
 - `engineering/index.html` (20)
 - `articles/ids.json` (19)
-- `desks/vaults.html` (19)
 - `engineering/issues/067.html` (19)
 - `README.md` (18)
 - `engineering/issues/019.html` (18)
@@ -106,6 +106,7 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/issues/020.html` (17)
 - `engineering/issues/090.html` (17)
 - `llms.txt` (17)
+- `desks/vaults.html` (16)
 - `articles/summaries/the-user-keeps-the-meter.json` (15)
 - `engineering/issues/021.html` (15)
 - `engineering/releases/v0.13.16.html` (15)
@@ -121,17 +122,18 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `engineering/releases/v0.12.5.html` (12)
 - `engineering/releases/v0.12.65.html` (12)
 - `admin/notes/2026-10-11__newsroom-api-map-and-review.md` (11)
-- `desks/building.html` (11)
 - `admin/build/newsroom-text.json` (10)
 - `articles/find.json` (10)
 - `articles/summaries/aws-from-the-vault.json` (10)
 - `assets/pen/pen.js` (10)
 - `assets/pen/identity.js` (9)
+- `desks/security.html` (9)
 - `engineering/releases/v0.13.64.html` (9)
 - `reviews/status.json` (9)
 - `articles/summaries/a-pen-and-a-key.json` (8)
 - `assets/site.css` (8)
 - `databases/index.html` (8)
+- `desks/building.html` (8)
 - `engineering/issues.json` (8)
 - `engineering/issues/091.html` (8)
 - `engineering/releases/v0.12.10.html` (8)
@@ -141,11 +143,10 @@ The pages this site can fix now (an imported page is fixed in the generator, whe
 - `about/index.html` (7)
 - `admin/index.html` (7)
 - `admin/notes/2026-10-13__design-lab-review.md` (7)
+- `admin/notes/2026-10-27__the-reviewers-vaults.md` (7)
 - `articles/summaries/pki-everywhere.json` (7)
 - `assets/vendor/pki/v0.2.25/directory.js` (7)
 - `engineering/issues/037.html` (7)
+- `engineering/releases/v0.13.111.html` (7)
 - `replicate/index.html` (7)
 - `shipped/index.html` (7)
-- `articles/summaries/a-directory-of-people-and-keys.json` (6)
-- `articles/summaries/a-website-to-finish-the-book.json` (6)
-- `articles/summaries/nineteen-sites.json` (6)

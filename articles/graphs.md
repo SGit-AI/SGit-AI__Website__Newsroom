@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-307 of 307 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+308 of 308 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-307 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 45 articles not yet linked either way.
+308 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 46 articles not yet linked either way.
+
+## [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](what-sgit-does-that-git-does-not.md)
+
+2026-10-27 · Vaults & methodSite & engineering
+
+Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck a real workload found: a one-file commit on 76,000 files from 29 minutes to 4.6 seconds, a pull on 228,000 files from 566 to 31.7 seconds. The ideas came from earlier work: MGraph-DB's cross-references, Memory-FS's reads by offset, caching on content addresses, and the writer pays. sgit should stop calling itself like Git: Git has no equivalent for encrypted metadata, read keys, blind writes and byte-range folder reads from plain storage; Git also has partial, shallow and no-checkout clones and kept packs; Git is far ahead on merges, identity and ecosystem; one-file reads with no clone and websites from vaults are next.
+
+*[diagram]*
+**concept**claim**method**example**question
+
+**9 nodes, 7 edges**
+
+- **Ten releases in October** (example) Each one a bottleneck fixed.
+- **Minutes to seconds** (claim) Per command, with caveats.
+- **Where the speed came from** (concept) MGraph-DB, Memory-FS, caching.
+- **The writer pays** (method) Index packs beside data packs.
+- **Stop comparing with Git** (claim) Map what Git lacks.
+- **What Git has no equivalent for** (claim) Encryption, read keys, blind writes.
+- **What Git has too** (claim) Partial, shallow, kept packs.
+- **Where Git is ahead** (claim) Merges, identity, ecosystem.
+- **Next, not now** (question) One file, no clone; sites from vaults.
+
+> The writer pays once, at push time; every reader after it skips the walk. Where the speed came from.
+
+> A partial clone is not an access boundary What Git has no equivalent for.
 
 ## [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](you-can-feel-good-engineering.md)
 

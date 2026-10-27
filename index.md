@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.111 · 307 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v0.13.112 · 308 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](articles/you-can-feel-good-engineering.md), 2026-10-27, 8 min. Good engineering has a presence you can feel; agent teams make the gaps show, and pushing the limits shows where to fix.
+- [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 13 min. Ten sgit releases turned minutes into seconds; the honest map of what sgit does that Git does not, and where Git is ahead.
 
 ## Highlights
 
+- [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](articles/you-can-feel-good-engineering.md), 2026-10-27, 8 min.
 - [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](articles/legal-on-demand-for-startups.md), 2026-10-27, 12 min.
 - [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](articles/who-has-not-patched.md), 2026-10-27, 9 min.
 - [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27, 10 min.
-- [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27, 15 min.
 
 ## Who are you reading as?
 
@@ -44,11 +44,11 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 - [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](articles/a-villager-for-the-agents.md), 2026-10-25, 6 min.
 - [A team frozen in time: agent sessions with a mandate, a role and a repository, paused and picked up again, and why that changes what happens when the people who built a system move on](articles/a-team-frozen-in-time.md), 2026-10-24, 8 min.
 
-### Vaults & provenance (68)
+### Vaults & provenance (69)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 13 min.
 - [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
 - [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](articles/php-daily-2026-10-26.md), 2026-10-26, 12 min.
-- [Inside Kitewing Websites: a made-up studio that sells websites you own, and three made-up client sites built as vault apps, a potter's catalogue, a community garden and a local plumber's guides library, each one file, each different, and each ready to be changed by talking to it](articles/inside-kitewing-websites.md), 2026-10-26, 5 min.
 
 ### The future of news (47)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

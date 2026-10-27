@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-27 | published | 1,889 | first published | this release | [current](../you-can-feel-good-engineering.md) |
+| **v1.0.0** | 2026-10-27 | published | 1,889 | first published | [`7b888e044`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b888e0445abb017b66b353993d771f367030e6b) | [current](../you-can-feel-good-engineering.md) |
 
 [← Back to the article](../you-can-feel-good-engineering.md) · [All articles](../index.md)
 
