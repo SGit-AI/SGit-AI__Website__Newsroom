@@ -111,7 +111,9 @@ The LinkedIn thread under my post sharing [who maintains the PHP you run?](https
 
 Agents & policyStartups & strategy[This article as a graph →](graphs.md#who-signs-for-this)
 
-No other article links here yet.
+### Continued by
+
+- [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](the-vendors-layer.md) Each row of an agent behaviour policy gets a vendor's share, carried when the vendor's conditions held; contracts cap at a year's fees, Europe moves the line.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

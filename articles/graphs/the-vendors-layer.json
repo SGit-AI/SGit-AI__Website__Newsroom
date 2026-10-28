@@ -1,0 +1,179 @@
+{
+  "slug": "the-vendors-layer",
+  "teaser": "Each row of an agent behaviour policy gets a vendor's share, carried when the vendor's conditions held; contracts cap at a year's fees, Europe moves the line.",
+  "topics": [
+    "agents-and-policy",
+    "startups-and-strategy"
+  ],
+  "core_idea": "Every row of an agent's behaviour policy has two parties, the vendor whose product decides some outcomes and the customer who granted access and connected data, so as cloud providers split security of and in the cloud, each row should carry a vendor's share paid when the vendor's conditions held; today's published terms cap vendors at a year's fees and leave outputs to the customer, Microsoft's guardrail-conditional cover shows the shape, and Europe's product liability directive treats software as a product from 9 December 2026.",
+  "nodes": [
+    {
+      "id": "two",
+      "label": "Two parties in every row",
+      "kind": "claim",
+      "summary": "The vendor's product decides some outcomes; the customer's grant decides others."
+    },
+    {
+      "id": "cloud",
+      "label": "Security of and in the cloud",
+      "kind": "example",
+      "summary": "AWS's shared responsibility model."
+    },
+    {
+      "id": "terms",
+      "label": "Caps at a year's fees",
+      "kind": "example",
+      "summary": "Anthropic and Salesforce cap liability at 12 months' fees and indemnify IP."
+    },
+    {
+      "id": "ms",
+      "label": "Cover on a condition",
+      "kind": "example",
+      "summary": "Microsoft pays if the customer used its guardrails."
+    },
+    {
+      "id": "perf",
+      "label": "Performance guarantees",
+      "kind": "example",
+      "summary": "Intercom's money back; outcome pricing at Sierra and Zendesk."
+    },
+    {
+      "id": "pld",
+      "label": "Software is a product",
+      "kind": "concept",
+      "summary": "The EU directive applies from 9 December 2026, no cap against injured persons."
+    },
+    {
+      "id": "aiact",
+      "label": "Provider and deployer",
+      "kind": "concept",
+      "summary": "The AI Act splits duties between who builds and who uses."
+    },
+    {
+      "id": "layer",
+      "label": "The vendor's layer",
+      "kind": "method",
+      "summary": "A share of each row, carried when the vendor's conditions held."
+    },
+    {
+      "id": "example",
+      "label": "£1,816 of £6,720",
+      "kind": "example",
+      "summary": "The vendor's share in the worked example."
+    },
+    {
+      "id": "vault",
+      "label": "The formula as a vault",
+      "kind": "artefact",
+      "summary": "Inputs, a script and a calculator anyone can open."
+    },
+    {
+      "id": "next",
+      "label": "Questions for vendors and insurers",
+      "kind": "question",
+      "summary": "Which rows, which shares, which conditions."
+    }
+  ],
+  "edges": [
+    {
+      "from": "two",
+      "to": "cloud",
+      "rel": "compared-with"
+    },
+    {
+      "from": "terms",
+      "to": "two",
+      "rel": "contrasts"
+    },
+    {
+      "from": "ms",
+      "to": "layer",
+      "rel": "example-of"
+    },
+    {
+      "from": "perf",
+      "to": "layer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "pld",
+      "to": "terms",
+      "rel": "contrasts"
+    },
+    {
+      "from": "aiact",
+      "to": "two",
+      "rel": "extends"
+    },
+    {
+      "from": "cloud",
+      "to": "layer",
+      "rel": "leads-to"
+    },
+    {
+      "from": "layer",
+      "to": "example",
+      "rel": "produces"
+    },
+    {
+      "from": "example",
+      "to": "vault",
+      "rel": "depends-on"
+    },
+    {
+      "from": "vault",
+      "to": "next",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "a-payout-for-every-row",
+      "who-carries-the-risk",
+      "who-signs-for-this"
+    ],
+    "pages": [],
+    "sites": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/",
+      "https://www.anthropic.com/legal/commercial-terms",
+      "https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/salesforce_MSA.pdf",
+      "https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns/",
+      "https://intercom.help/fin4all/en/articles/11645601-what-is-the-fin-guarantee",
+      "https://www.zendesk.com/newsroom/articles/zendesk-outcome-based-pricing/",
+      "https://elevenlabs.io/blog/aiuc-announcement",
+      "https://www.munichre.com/en/solutions/for-industry-clients/insure-ai.html",
+      "https://eur-lex.europa.eu/eli/dir/2024/2853/oj",
+      "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Every row has two parties in it, and I think the vendor should carry a share of the rows its product decides.",
+      "why": "The claim the article rests on."
+    },
+    {
+      "text": "That is exactly the vendor's layer, for one row: the vendor carries the risk, on the condition that the customer kept the vendor's controls on.",
+      "why": "The existing shape of the proposal."
+    }
+  ],
+  "figures": [
+    {
+      "file": "vl-split.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vl-split.webp",
+      "caption": "Each row's premium split between the agent's vendor and the customer's insurer. Illustrative, from the vault.",
+      "kind": "comparison"
+    },
+    {
+      "file": "vl-shared.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vl-shared.webp",
+      "caption": "The cloud's shared responsibility model, and the same split for an agent: of the agent, and in the agent.",
+      "kind": "diagram"
+    },
+    {
+      "file": "vl-terms.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/vl-terms.webp",
+      "caption": "Two AI vendors' published terms beside the EU's product liability directive and AI Act.",
+      "kind": "comparison"
+    }
+  ]
+}

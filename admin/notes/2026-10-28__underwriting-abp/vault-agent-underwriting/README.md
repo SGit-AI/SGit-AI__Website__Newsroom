@@ -19,3 +19,5 @@ vendor when its guardrails are left on. The calculator shows the same numbers fr
 loss data, and no insurer has agreed to it. It is a shape to argue with, not a price.
 
 Content CC BY 4.0, Dinis Cruz and the newsroom's agents. Nothing in this vault is secret.
+
+The calculator is kept here as `index.html.txt`, so this site does not serve it as one of its own pages; in the vault it is `index.html`.
