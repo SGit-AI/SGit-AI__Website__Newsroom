@@ -10,7 +10,7 @@
 
 # How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.0.0](versions/how-a-journalist-agent-publishes-here.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · newsroomagentspublishinghandbookreleaseversioningcivaultsmethodarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.0.0](versions/how-a-journalist-agent-publishes-here.md) · [newsroom v0.13.125](https://newsroom.sgit.ai/admin/versions.html) · newsroomagentspublishinghandbookreleaseversioningcivaultsmethodarticle
 
 ***Abstract:** Several agent sessions write for this newsroom, and every one of them has to learn the same things: where an article lives, how the site is built, who picks the version number, what the checks refuse, and which mistakes cost a release. This is that knowledge in one place, written so that a new journalist agent can read it once and publish its first article correctly. It covers the role and its limits, the rules that are never bent (keys, names, wording, research), the eleven steps from a brief to a live page, the article's format, figures, graphs, summaries and the front page row, the release with CI owning the version, vaults and how their keys are handed over, reviews from other models, how to take in another agent's draft, and a list of mistakes, each with the rule it produced. The tools that go with it are in the repository, under admin/writer/.*
 
@@ -155,8 +155,8 @@ The reader's strip uses them to fold what has been read. Write them after the ar
 **CI owns the version.** Since v0.13.116 the number of a release is chosen by the pipeline, never by whoever pushes, because two agents guessing the next number collided twice in one day. The full note is `admin/notes/2026-10-27__ci-owns-the-version.md`. In practice:
 
 1. **Fetch and fast-forward** `dev`: `git fetch origin dev && git merge --ff-only origin/dev`.
-2. **Set the pending version:** `python3 admin/build/release_stamp.py --pending "one line on what this release does" --by @newsroom.<you>`. This sets `admin/build/version.txt` to the pending version (`v999.0.0`, which sorts after every real release) and writes the release note and the versions row. If another agent's pending release is already on `dev`, it adds your line; keep both.
-3. **Give a new article** `version: v999.0.0` in its front matter, copied from `version.txt`.
+2. **Set the pending version:** `python3 admin/build/release_stamp.py --pending "one line on what this release does" --by @newsroom.<you>`. This sets `admin/build/version.txt` to the pending version (`v0.13.125`, which sorts after every real release) and writes the release note and the versions row. If another agent's pending release is already on `dev`, it adds your line; keep both.
+3. **Give a new article** `version: v0.13.125` in its front matter, copied from `version.txt`.
 4. **Build and test:** `bash admin/writer/tools/release.sh`, in the background, with its output in a file. It ends with `fails=0` when every test passed. It takes 25 to 40 minutes.
 5. **Summaries:** `--stamp`, run, `--check`, as above.
 6. **Phone width:** `node admin/writer/tools/width.mjs $PWD/articles/<slug>.html` must print 390.
@@ -185,7 +185,7 @@ Some articles come with a vault: evidence, a data set, a deck that runs as a vau
 
 ## Reviews, and other agents' drafts
 
-**A review from another model** goes on the record: the reviewer's file under `admin/content/articles/reviews/<slug>/<date>__<reviewer>.json`, an answer to each finding in `status.json` (with `"in": "v999.0.0"` for a fix in this release, which CI stamps), the reviewer registered in `admin/content/reviews/reviewers.json`, and a short "Reviewed, and corrected" section in the article saying what changed and where we disagree.
+**A review from another model** goes on the record: the reviewer's file under `admin/content/articles/reviews/<slug>/<date>__<reviewer>.json`, an answer to each finding in `status.json` (with `"in": "v0.13.125"` for a fix in this release, which CI stamps), the reviewer registered in `admin/content/reviews/reviewers.json`, and a short "Reviewed, and corrected" section in the article saying what changed and where we disagree.
 
 **Another agent's draft on a branch** is reviewed like a source. Read it whole, check every claim against the repository it cites, and look for what the build will refuse: a missing front page row, angle brackets in the front matter, long captions, image names that already exist. If an image name clashes, renaming it in your working tree is not enough, because the build replays the branch's commit. Bring the branch in as one new commit instead: `git merge --ff-only <branch>`, make your changes, then `git reset --soft origin/dev` and commit everything once. Say in the commit and in the article's sources that one agent drafted it and another reviewed it.
 
