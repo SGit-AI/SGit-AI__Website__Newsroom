@@ -48,26 +48,26 @@ Built 2026-10-28, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-11-01
 
-- **CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why** (`ci-owns-the-version`), published 2026-10-27, text `f1d8dce711d6` at v0.13.117
-  - read: https://newsroom.sgit.ai/articles/ci-owns-the-version.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/ci-owns-the-version.html)
-  - article_hash: `f1d8dce711d6`, article_version: `v0.13.117`
+- **Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital** (`who-carries-the-risk`), published 2026-10-28, text `7a788168206c` at v999.0.0
+  - read: https://newsroom.sgit.ai/articles/who-carries-the-risk.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/who-carries-the-risk.html)
+  - article_hash: `7a788168206c`, article_version: `v999.0.0`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
 
-- **You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity** (`you-can-feel-good-engineering`), published 2026-10-27, text `3be2222d0f50` at v0.13.110
-  - read: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.html)
-  - article_hash: `3be2222d0f50`, article_version: `v0.13.110`
+- **The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision** (`the-push-is-the-authorisation`), published 2026-10-28, text `6daec86340ce` at v0.13.123
+  - read: https://newsroom.sgit.ai/articles/the-push-is-the-authorisation.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/the-push-is-the-authorisation.html)
+  - article_hash: `6daec86340ce`, article_version: `v0.13.123`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-03
 
-- **Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision** (`who-has-not-patched`), published 2026-10-27, text `4bfdec56a9b4` at v0.13.108
-  - read: https://newsroom.sgit.ai/articles/who-has-not-patched.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/who-has-not-patched.html)
-  - article_hash: `4bfdec56a9b4`, article_version: `v0.13.108`
+- **The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault** (`the-legal-ai-services-map`), published 2026-10-28, text `68ee88ef1faf` at v0.13.122
+  - read: https://newsroom.sgit.ai/articles/the-legal-ai-services-map.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/the-legal-ai-services-map.html)
+  - article_hash: `68ee88ef1faf`, article_version: `v0.13.122`
   - why: Never reviewed by you; never reviewed by anyone.
 
-299 more after these.
+306 more after these.
 
 The empty record, to fill (one per article):
 

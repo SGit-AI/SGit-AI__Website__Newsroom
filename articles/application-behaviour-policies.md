@@ -156,7 +156,9 @@ My voice memo of 22 October 2026; the method in [footprint and blast radius](htt
 
 Agents & policyNews & evidence[This article as a graph →](graphs.md#application-behaviour-policies)
 
-No other article links here yet.
+### Continued by
+
+- [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md) Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

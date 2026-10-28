@@ -73,6 +73,70 @@
   ],
   "articles": [
     {
+      "slug": "who-carries-the-risk",
+      "title": "Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital",
+      "date": "2026-10-28",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/who-carries-the-risk.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-carries-the-risk.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-carries-the-risk.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/who-carries-the-risk.json",
+      "teaser": "Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.",
+      "summary": "In the last article I described insuring an agent row by row, from its behaviour policy. We have most of the pieces to put a number on it: the open behaviour policy, a way to map controls to agents and risks, the AIUC-1 standard as a graph on sgit.ai, and a deterministic formula. So the next questions are who sells this today, and what it would take to build a company that does. Today several companies sell AI agent cover: AIUC pairs a standard and audits with insurance, Armilla and Testudo write it as Lloyd's coverholders with limits up to $25 million and $9.25 million, Munich Re prices AI model performance itself, and Harbor distributes cover from surplus lines carriers. We found nobody pricing per row of a behaviour policy yet. The industry already has every part such a company needs: someone to measure, someone to price and bind, someone whose balance sheet pays, and someone who reinsures the tail. I thought it was mostly a capital problem, as I understood it was for neobanks, and asked to be corrected. Partly I was: many early neobanks needed little capital because they could not lend, and their hard part was the licence and the build-out. For an insurance carrier, capital is the business: enough to survive a one-in-two-hundred-year year. But the first company does not need to be a carrier. Coalition and At-Bay started by pricing on other insurers' capital and bought carriers later. So a company built on open behaviour policies could start small, with niche agents, agents in QA, or cover for a few per cent of users, and earn the record that brings capital, then the large providers insuring their own agents. Cover that lapses with an unpatched known vulnerability already exists, which is where this connects to the PHP story.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "insurance",
+        "underwriting",
+        "agent-behaviour-policy",
+        "riskmandate",
+        "mga",
+        "capital",
+        "reinsurance",
+        "aiuc",
+        "startups",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "a-payout-for-every-row",
+      "title": "A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered",
+      "date": "2026-10-28",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/a-payout-for-every-row.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-payout-for-every-row.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-payout-for-every-row.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/a-payout-for-every-row.json",
+      "teaser": "Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.",
+      "summary": "RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting. An insurer de-risks an action. When I insure the laptops and phones in my house against burglary, the insurer asks about the locks, where I live and where I keep things, sets a limit for any one item and a limit for the policy, leaves out the things it will not cover, and at the claim asks whether the doors were locked. If they were, it pays, up to the limit. Agents need exactly that, and an agent behaviour policy already has the shape: every capability the agent can reach is a row, the mandate says which rows the business authorised, and the delta between them is the reach nobody asked for. So the insurance policy is one-to-one with the behaviour policy: each row it names has its own limit (say £20,000 for corrupted customer records, £50,000 for leaked customer data), each row it does not name is excluded, and every real control on a row, one that something enforces, lowers that row's premium. A line in the prompt is not a control and earns nothing. The formula has to be deterministic, if this, then that, and the runtime the agent runs on is part of it. Start from the maximum: in a worked example, an uncontrolled support agent pays £69,850 a year for £80,000 of cover, insurable but hardly worth buying; with five enforced controls on a certified runtime it pays £6,720 for the same cover. The numbers are illustrative; the shape is the point, and the Licence to Operate vault on sgit.ai already runs a simulated version of it. This is the first of a series: next, who can underwrite this today.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "insurance",
+        "underwriting",
+        "agent-behaviour-policy",
+        "riskmandate",
+        "licence-to-operate",
+        "cyber-insurance",
+        "premiums",
+        "controls",
+        "mandate",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
       "slug": "the-push-is-the-authorisation",
       "title": "The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision",
       "date": "2026-10-28",

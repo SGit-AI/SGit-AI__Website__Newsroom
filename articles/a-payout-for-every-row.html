@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered, SGit Newsroom</title>
+<meta name="description" content="RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting. An insurer de-risks an action. When I insure the laptops and phones in my house against burglary, the insurer asks about the locks, where I live and where I keep things, sets a limit for any one item and a limit for the policy, leaves out the things it will not cover, and at the claim asks whether the doors were locked. If they were, it pays, up to the limit. Agents need exactly that, and an agent behaviour policy already has the shape: every capability the agent can reach is a row, the mandate says which rows the business authorised, and the delta between them is the reach nobody asked for. So the insurance policy is one-to-one with the behaviour policy: each row it names has its own limit (say £20,000 for corrupted customer records, £50,000 for leaked customer data), each row it does not name is excluded, and every real control on a row, one that something enforces, lowers that row's premium. A line in the prompt is not a control and earns nothing. The formula has to be deterministic, if this, then that, and the runtime the agent runs on is part of it. Start from the maximum: in a worked example, an uncontrolled support agent pays £69,850 a year for £80,000 of cover, insurable but hardly worth buying; with five enforced controls on a certified runtime it pays £6,720 for the same cover. The numbers are illustrative; the shape is the point, and the Licence to Operate vault on sgit.ai already runs a simulated version of it. This is the first of a series: next, who can underwrite this today.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/a-payout-for-every-row.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/a-payout-for-every-row.html">
+<meta property="og:title" content="A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered, SGit Newsroom">
+<meta property="og:description" content="RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting. An insurer de-risks an action. When I insure the laptops and phones in my house against burglary, the insurer asks about the locks, where I live and where I keep things, sets a limit for any one item and a limit for the policy, leaves out the things it will not cover, and at the claim asks whether the doors were locked. If they were, it pays, up to the limit. Agents need exactly that, and an agent behaviour policy already has the shape: every capability the agent can reach is a row, the mandate says which rows the business authorised, and the delta between them is the reach nobody asked for. So the insurance policy is one-to-one with the behaviour policy: each row it names has its own limit (say £20,000 for corrupted customer records, £50,000 for leaked customer data), each row it does not name is excluded, and every real control on a row, one that something enforces, lowers that row's premium. A line in the prompt is not a control and earns nothing. The formula has to be deterministic, if this, then that, and the runtime the agent runs on is part of it. Start from the maximum: in a worked example, an uncontrolled support agent pays £69,850 a year for £80,000 of cover, insurable but hardly worth buying; with five enforced controls on a certified runtime it pays £6,720 for the same cover. The numbers are illustrative; the shape is the point, and the Licence to Operate vault on sgit.ai already runs a simulated version of it. This is the first of a series: next, who can underwrite this today.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/a-payout-for-every-row.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/a-payout-for-every-row.jpg">
+<link rel="alternate" type="text/markdown" href="a-payout-for-every-row.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered, SGit Newsroom", "headline": "A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered, SGit Newsroom", "description": "RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting. An insurer de-risks an action. When I insure the laptops and phones in my house against burglary, the insurer asks about the locks, where I live and where I keep things, sets a limit for any one item and a limit for the policy, leaves out the things it will not cover, and at the claim asks whether the doors were locked. If they were, it pays, up to the limit. Agents need exactly that, and an agent behaviour policy already has the shape: every capability the agent can reach is a row, the mandate says which rows the business authorised, and the delta between them is the reach nobody asked for. So the insurance policy is one-to-one with the behaviour policy: each row it names has its own limit (say £20,000 for corrupted customer records, £50,000 for leaked customer data), each row it does not name is excluded, and every real control on a row, one that something enforces, lowers that row's premium. A line in the prompt is not a control and earns nothing. The formula has to be deterministic, if this, then that, and the runtime the agent runs on is part of it. Start from the maximum: in a worked example, an uncontrolled support agent pays £69,850 a year for £80,000 of cover, insurable but hardly worth buying; with five enforced controls on a certified runtime it pays £6,720 for the same cover. The numbers are illustrative; the shape is the point, and the Licence to Operate vault on sgit.ai already runs a simulated version of it. This is the first of a series: next, who can underwrite this today.", "url": "https://newsroom.sgit.ai/articles/a-payout-for-every-row.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</p>
+ <h1>A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-28 &middot; <a href="versions/a-payout-for-every-row.html" title="Every published version of this article, and what changed">article v1.2.0, 3 versions</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">insurance</span><span class="chip">underwriting</span><span class="chip">agent-behaviour-policy</span><span class="chip">riskmandate</span><span class="chip">licence-to-operate</span><span class="chip">cyber-insurance</span><span class="chip">premiums</span><span class="chip">controls</span><span class="chip">mandate</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting. An insurer de-risks an action. When I insure the laptops and phones in my house against burglary, the insurer asks about the locks, where I live and where I keep things, sets a limit for any one item and a limit for the policy, leaves out the things it will not cover, and at the claim asks whether the doors were locked. If they were, it pays, up to the limit. Agents need exactly that, and an agent behaviour policy already has the shape: every capability the agent can reach is a row, the mandate says which rows the business authorised, and the delta between them is the reach nobody asked for. So the insurance policy is one-to-one with the behaviour policy: each row it names has its own limit (say £20,000 for corrupted customer records, £50,000 for leaked customer data), each row it does not name is excluded, and every real control on a row, one that something enforces, lowers that row's premium. A line in the prompt is not a control and earns nothing. The formula has to be deterministic, if this, then that, and the runtime the agent runs on is part of it. Start from the maximum: in a worked example, an uncontrolled support agent pays £69,850 a year for £80,000 of cover, insurable but hardly worth buying; with five enforced controls on a certified runtime it pays £6,720 for the same cover. The numbers are illustrative; the shape is the point, and the Licence to Operate vault on sgit.ai already runs a simulated version of it. This is the first of a series: next, who can underwrite this today.</em></p>
+<figure class="shot" data-shot="pr-rows.webp" data-dir="images/" data-alt="One agent&#x27;s behaviour policy as an insurance policy: a limit, controls and a premium per row. Illustrative." data-kind="comparison"><figcaption>One agent's behaviour policy as an insurance policy: a limit, controls and a premium per row. Illustrative.</figcaption></figure>
+<div class="note"><b>What came next.</b> <a href="who-carries-the-risk.html">Who carries the risk</a> maps who already insures AI agents and what a company that priced per row would need, starting as a managing agent on someone else's capital.</div>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>An insurer de-risks an action, up to a limit, under conditions.</b> A house policy asks about the locks, caps any one item, leaves some things out, and pays if the conditions held.</li>
+<li><b>An agent behaviour policy already has that shape.</b> Each capability the agent can reach is a row; the mandate says which rows the business authorised.</li>
+<li><b>So the insurance is one-to-one with the policy.</b> Each row it names has its own limit; each row it does not name is excluded.</li>
+<li><b>Not everything is insurable, and that is the point.</b> The bigger the reach, the bigger the delta, and the delta is what no policy covers.</li>
+<li><b>The formula is deterministic.</b> If this control is enforced on this row, the rate falls by this factor; if it was not holding at the time of the loss, the row does not pay.</li>
+<li><b>Only enforced controls count.</b> A hook, a proxy, a capability removed from the grant. A line in the prompt earns nothing.</li>
+<li><b>Where the agent runs is part of the price.</b> A certified runtime lowers it; an uncertified one raises it, or ends the licence to operate.</li>
+<li><b>Start from the maximum and come down.</b> In the worked example, £69,850 a year for £80,000 of cover, uncontrolled; £6,720 with five enforced controls on a certified runtime.</li>
+<li><b>The first version already runs.</b> The Licence to Operate vault on sgit.ai simulates one agent's policy, with a band, a ceiling, a pool and a premium.</li>
+<li><b>Next in this series: who can underwrite this today.</b> And what the vendors of agents should cover themselves.</li>
+</ul>
+<h2 id="house">An insurer de-risks an action</h2>
+<p>The question behind this series is simple to ask. RiskMandate writes agent behaviour policies, and the end of <a href="the-riskmandate-roadmap.html">the roadmap</a> is agents an insurer can cover. So who would underwrite an agent behaviour policy, today, and what would they be underwriting? Before the first question, I would like to answer the second, because I think the answer is simpler than it usually gets made.</p>
+<p>Take a house. I have laptops and phones in it, and some jewellery, and I would like to be covered against burglary. The insurer asks where the house is, what kind of locks it has, and where I keep things. It sets a limit for the policy and a limit for any one item, and it asks me to list anything valuable above a certain value. It does not cover everything: a laptop worth £20,000 or a data centre in the spare room is not something a contents policy is built for. Then, when something is stolen, it asks the questions again: were the doors locked, was the phone left in plain view? If the conditions held, it pays, up to the limit.</p>
+<p>None of that is my invention. A broker's guide puts the limit for any one item "usually between £1,000 to £2,500" and tells you to "declare any expensive items to your insurer" (<a href="https://www.howdeninsurance.co.uk/personal/home/home-insurance/guides/single-article-limit/">Howden</a>, 9 January 2025). A comparison site says "You may need BS3621 standard five-lever mortice deadlocks on all your external doors in order to get home insurance", and that "you are unlikely to be able to claim on your home insurance if you leave your doors unlocked" (<a href="https://moneysupermarket.com/home-insurance/house-locks">MoneySuperMarket</a>, updated 3 September 2026). Conditions, limits per item, exclusions, and a check at the claim.</p>
+<figure class="shot" data-shot="pr-house.webp" data-dir="images/" data-alt="A home contents policy and an agent behaviour policy, question by question." data-kind="comparison"><figcaption>A home contents policy and an agent behaviour policy, question by question.</figcaption></figure>
+<p>That is a very simple proposition, and it is what agents need. Not a policy for "AI", and not a questionnaire about the company's security programme, but a policy for one agent, in one deployment, that names what is at risk, the conditions, the limits, and what is left out.</p>
+<h2 id="uninsurable">Not every action is insurable, and that is the point</h2>
+<p>An agent behaviour policy starts from the same place as the house: an inventory. <a href="what-can-your-agent-reach.html">What can your agent reach?</a> explains it for the person who has to decide. The grant is everything the agent can technically do. The mandate is what the business actually asked it to do. The delta is the gap: inside the agent's reach, outside its authority.</p>
+<p>The <a href="https://sgit.ai/demos/vaults/licence-to-operate/index.html">Licence to Operate vault</a> on sgit.ai makes it countable. Its support agent has a grant of 12 capabilities and a mandate of 4: read the customer record, search the help centre, generate an answer, draft a reply. The other 8, including <code>crm:write</code>, <code>crm:export</code>, <code>mail:send</code> and <code>shell:exec</code>, are in its reach and in nobody's mandate, and the vault says it plainly: no policy covers them.</p>
+<p>That is not a weakness of the idea. It is the idea. You are not going to insure every action of an agent, and the bigger its reach, the more of it will be uninsurable. What insurance can do is cover the rows you want covered, one by one, and leave the rest visibly outside. The vault even has a number for it: customer records are marked uninsurable above 20 per action.</p>
+<h2 id="one-to-one">One row, one limit</h2>
+<p>So the insurance policy has the same rows as the behaviour policy. Take an agent connected to the customer database. It can make changes, so it can corrupt records or delete users; it can read them, so it can leak them; it answers customers, so it can tell them something wrong that they act on. Each of those is a row, and each row gets its own limit: up to £20,000 for customer records corrupted, up to £50,000 for customer data leaked, up to £10,000 for a wrong answer acted on.</p>
+<p>The lead figure is that policy, row by row. The last row is the one that matters most: <code>shell:exec</code> is in the agent's reach and there is no limit beside it, so it is excluded, at any price. If the business wants it covered, it has to name it, decide who accepts it, and put a control on it.</p>
+<p>This one-to-one mapping is what makes the rest work. A claim maps to a row; a row has a capability, a limit and the controls that stand in its way; each control has something that enforces it and a log that says whether it held. That is a graph, and it is the kind of graph we now build every day: <a href="governs-enforces-attests.html">governs, enforces, attests</a> set out the three levels at which a rule is kept, and <a href="approved-business-mandates.html">approved business mandates</a> why most companies already have the policies and need them turned into tested controls. With generative AI to read the systems and keep the graph current, a mapping at this level of detail is something that can be maintained at scale, and I think that is what will make this kind of insurance scale too.</p>
+<h2 id="formula">The formula has to be deterministic</h2>
+<p>The underwriter's part is a formula, and it has to be exact: if this, then that. Here is the shape I have in mind, written down so it can be argued with:</p>
+<ol>
+<li><b>A row with no limit is excluded.</b> If a capability is reachable and the policy names no limit for it, it is not covered.</li>
+<li><b>Each row starts at a base rate.</b> The share of the limit that an uncontrolled agent would pay for that row in a year.</li>
+<li><b>Each enforced control on a row multiplies its rate by a factor below one.</b> Write removed from the grant, a proxy that caps records per action, drafts only, an egress allow list, a hook that holds a reply for a person.</li>
+<li><b>Where the agent runs multiplies every row.</b> Below one for a certified runtime, above one for an uncertified one.</li>
+<li><b>The premium for a row is its limit times its rate.</b> The policy's premium is the sum.</li>
+<li><b>A claim pays if the event maps to a row and every condition on that row held at the time, up to the row's limit.</b> If a condition was not holding, the row does not pay: the door was not locked.</li>
+</ol>
+<p>The rule that does the most work is in step 3: only an enforced control counts. RiskMandate's <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a> puts it as "A condition with nothing enforcing it is an expectation". We measured the difference in <a href="an-agent-that-may-only-chat.html">an agent that may only chat</a>: when a system prompt told the model to ignore it, the policy as a line in the prompt held 3 of 12 attacks; with a deny-all hook, 12 of 12. So in the formula, a line in the prompt gets a factor of 1. It may be good practice; it is not a control an insurer can price.</p>
+<p>The worked example is <a href="https://newsroom.sgit.ai/articles/data/a-payout-for-every-row__worked-example.json">in a data file</a>, computed by a short script, with every input in it. The factors are mine and illustrative; fitting them is what an underwriter does with loss data, and that is the part we do not have.</p>
+<h2 id="maximum">Start from the maximum and come down</h2>
+<p>The formula makes one thing visible that I think matters commercially. You can still insure an uncontrolled agent; it is just expensive. In the worked example, a support agent with no enforced controls, on an uncertified runtime, pays £69,850 a year for £80,000 of cover, 87% of it. That is insurable and close to not worth buying, and it is not far from what I have seen in cyber insurance, where the premium can come near the payout. There is still a reason to pay it: when you need cover to operate at all, a contract or a regulator asking for it, the price of the cover is a cost of doing business.</p>
+<figure class="shot" data-shot="pr-walk.webp" data-dir="images/" data-alt="The annual premium for £80,000 of cover as enforced controls are added, one at a time. Illustrative." data-kind="comparison"><figcaption>The annual premium for £80,000 of cover as enforced controls are added, one at a time. Illustrative.</figcaption></figure>
+<p>Then each real control brings it down. A certified runtime takes it to £50,800. Removing <code>crm:write</code> from the grant, to £39,280. Drafts only, with <code>mail:send</code> removed, to £22,280. At most 20 records per action, enforced by a proxy, to £11,440. Outbound traffic only to an allow list, to £8,720. Refunds and legal points held for a person, to £6,720: 8% of the cover. The line in the prompt, second in the figure, moves nothing.</p>
+<p>That is how I think cyber insurance should have worked. Much of it has priced on a questionnaire about the company, filled in once a year, rather than on the detail of what a given system could do and what stopped it. RiskMandate's <a href="https://riskmandate.ai/insurance.html">insurability page</a> says the same thing more sharply: "Questionnaires describe. Evidence prices."</p>
+<h2 id="measured">Insurers already price what they can measure</h2>
+<p>None of this is new to insurance. Wherever insurers can measure, they price on the measurement.</p>
+<p><b>Young drivers.</b> A black box in the car measures how it is driven, and the price follows. One insurer says "We'll collect data on your speed, acceleration, braking and cornering", and that the data helps "work out your renewal price" (<a href="https://www.ingenie.com/how-it-works">ingenie</a>). A broker adds that many such policies restrict night driving, "usually between 10pm and 6am", and that poor driving may "increase your premium" (<a href="https://www.howdeninsurance.co.uk/personal/motor/young-driver/guides/black-box-insurance-myths/">Howden</a>, 1 September 2025). That is a licence to operate with conditions, measured, and priced on the measurement.</p>
+<p><b>Health.</b> UK private medical insurance is underwritten on what you bring to it. Under a moratorium, a condition you had in the five years before joining is not covered until you have gone two years without it; under full medical underwriting, you disclose your history and the exclusions are set before the policy starts, as AXA Health and Bupa describe their own policies. The cover goes up or down with the preconditions.</p>
+<p><b>Cyber, where it measures.</b> Some cyber insurers have moved from the form to the scan. Coalition wrote in 2021 that "Traditional cyber insurers will typically ask insureds to fill out long applications", and that it uses "scanning technology that collects and correlates data from internet accessible devices" instead (<a href="https://www.coalitioninc.com/blog/risk-engineering-at-coalition-collaboration-to">Coalition</a>, 3 August 2021). And for AI itself, Munich Re says of its aiSure cover that "The quality of the model and its performance stability determine the premium" (<a href="https://www.munichre.com/en/solutions/for-industry-clients/insure-ai/faq.html">Munich Re</a>). The founder of AIUC, which insures agents, put the idea in one line: "Just like consumers get a better car insurance rate for having airbags and anti-lock brakes" (<a href="https://fortune.com/2025/07/23/ai-agent-insurance-startup-aiuc-stealth-15-million-seed-nat-friedman/">Fortune</a>, 23 July 2025).</p>
+<p>My argument is that the more mature an insurance line is, and the more data its insurers can measure, the more precisely it prices, and the more of the risk it is willing to take. Agents are unusual in how much can be measured: every tool call, every record read, every hook decision is logged by the systems that run them. The data an underwriter would need is already being produced. What is missing is the mapping from that data to a row and a limit.</p>
+<h2 id="where">Where the agent runs</h2>
+<p>Some of the conditions are not about the agent at all, but about where it runs, the way a house policy asks for the postcode. There will be places where certification is needed: of the runtime, of the hooks and proxies that enforce the controls, down to the software they run on. If an agent runs somewhere that is not certified, either the premium goes up or the row is not covered.</p>
+<p>This is also where the licence to operate comes in. RiskMandate describes it as four facts and a date: the organisation as the authority, one agent in one deployment as the licensee, the behaviour policy as the instrument, and an interval after which it has to be renewed, with each condition beside the thing that enforces it. An insurer could reasonably make a current licence a condition of cover, and a change of runtime a reason to look again.</p>
+<h2 id="licence">The licence to operate, simulated</h2>
+<p>We already have a working version of this, simulated. In the Licence to Operate vault, the policy is a rate table: a normal band, a threshold above which the agent has to ask, a ceiling per action, a pool with an untouchable reserve, and a premium per interval. A simulated support conversation offers three replies at every turn, one inside the band, one that draws on the pool, one outside cover, each with its cost before you choose: 1,400 tokens and 1 record for looking up the customer, 4,800 tokens and 3 records for reading two linked accounts as well, and <code>mail:send</code>, outside the mandate entirely. You can let the policy lapse, reinstate it, or trigger a repricing.</p>
+<p>The terms are files in the vault, and they read like the formula above. The simulated policy for the support agent, <code>concierge-sim-2026-09-03</code>, has a normal band of 2,000 tokens and 5 customer records per action, asks a person above 6,000 tokens or 12 records, sets a ceiling of 8,000 tokens and 20 records per action, refills a pool of 12,000 tokens and 40 records per conversation, and holds back a reserve of 10% that no decision may draw on. Above 20 records the action is not a bigger draw but an exclusion, and the policy gives the reason in one line: "a record once read by an agent is exposure that cannot be unread". Its rating rule is the experience rating an underwriter would recognise: if the pool is drawn on most days, the normal band is wrong, "and the response is to raise the band and shrink the pool, never to enlarge the pool".</p>
+<p>At the top it asserts four things: licence held, mandate in force, policy paid, inside cover. All four can be lost. That is the top-up and the payout I had in mind, run in a browser. It is in credits, not money, and the vault says so on its surface: "Simulated. The terms are real files in this vault; the replies are scripted; the numbers are made up."</p>
+<h2 id="vendors">The vendors' share</h2>
+<p>There is one more party I think has to carry some of this: the vendor that provides the agentic workflow. When a company buys an agent from a vendor, part of what goes wrong will be the vendor's, and I believe vendors will have to start backing their agents with cover of their own.</p>
+<p>Some vendors have started, and the most interesting part is the conditions. Microsoft's commitment for Copilot says "we will defend the customer and pay the amount of any adverse judgments or settlements", but only "as long as the customer used the guardrails and content filters we have built into our products" (<a href="https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns/">Microsoft</a>, 7 September 2023). That is the locked door again: cover, conditional on a control. Google and Anthropic made similar commitments in late 2023, and like Microsoft's they cover copyright claims, not what an agent does.</p>
+<p>The closer examples are about performance. Intercom offers "up to $1M of your money back" for its Fin agent under stated conditions, and a programme that pays if Fin does not reach "at least a resolution rate of 65%" (<a href="https://intercom.help/fin4all/en/articles/11645601-what-is-the-fin-guarantee">Intercom</a>, 24 June 2025). ElevenLabs announced on 12 February 2026 a policy backed by the AIUC-1 standard, so that "these AI voice agents - and their actions - can now be insured, just like any other employee" (<a href="https://elevenlabs.io/blog/aiuc-announcement">ElevenLabs</a>). Munich Re offers vendors "performance warranties" that "enable you to indemnify your clients for their financial losses". None of these is yet a payout per row of a behaviour policy. Each is a step towards one, and the third article in this series is about what the vendor's share of a row should be.</p>
+<h2 id="next">What comes next</h2>
+<p>This article defines what would be underwritten. The series continues with the questions it leaves:</p>
+<ol>
+<li><b>Who can underwrite an agent behaviour policy today, and what does that look like?</b> A research brief, starting from the companies in <a href="underwriting-the-agent-economy-reviewed.html">underwriting the agent economy, reviewed</a>, which already sell AI agent cover, and asking each what it would need to price per row.</li>
+<li><b>What should the vendors of agents cover themselves?</b> What exists, and what a vendor's share of a row would look like.</li>
+<li><b>The formula as a vault.</b> The rows, the limits, the factors and the claim rule as data, with a page that computes the premium for your own agent, so the formula can be argued with in numbers rather than in words.</li>
+</ol>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>The numbers are illustrative.</b> Every limit, base rate and factor in the worked example is mine, chosen to show the shape; none is fitted to loss data, and an underwriter would set them differently.</li>
+<li><b>No insurer has agreed to this.</b> It is a definition of what we would like to have underwritten, not a product anyone sells.</li>
+<li><b>The formula is a sketch.</b> Real controls interact, losses correlate across agents that share a model, and a fleet needs an aggregate limit; a multiplier per control is the simplest form, not the right one.</li>
+<li><b>Certification of runtimes does not exist yet in this form.</b> Which body would certify a runtime, and against what, is open.</li>
+<li><b>The Licence to Operate vault is a simulation.</b> Its replies are scripted and its numbers are in credits; it shows the mechanism, not a price.</li>
+<li><b>The comparisons with other insurance are by analogy.</b> The sources for how motor, health and home insurers price are below, and each works under its own rules and regulators.</li>
+</ul>
+<p>If you underwrite, or would like to underwrite, the risk of one agent at a time, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 28 October 2026, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine.</p>
+<p>The insurance framing, the one-to-one mapping, the deterministic formula, starting from the maximum, the runtime and the vendors' share are from the memo. The six-step formula, the worked example and its numbers are this site's agent's, written to make the memo's argument checkable; the factors are illustrative.</p>
+<p>On this site and its neighbours:</p>
+<ul>
+<li>The worked example: <a href="https://newsroom.sgit.ai/articles/data/a-payout-for-every-row__worked-example.json">the data file</a>, computed by <code>admin/notes/2026-10-28__underwriting-abp/premium.py</code> in this site's repository; every figure in this article's tables and its premium walk comes from it.</li>
+<li>The <a href="https://sgit.ai/demos/vaults/licence-to-operate/index.html">Licence to Operate vault</a> on sgit.ai, vault <code>posrhzp3</code>, read from its published page on 28 October 2026 for the 12, 4 and 8 capabilities, the three replies and their costs and the quoted banner, and cloned with sgit 0.26.11 the same day for the policy file <code>policies/concierge/concierge-sim-2026-09-03.json</code>: the bands, the ceiling, the pool, the 10% reserve, the 20-record exclusion and the two quoted lines.</li>
+<li>RiskMandate's <a href="https://riskmandate.ai/licence-to-operate.html">licence to operate</a> and <a href="https://riskmandate.ai/insurance.html">insurable</a> pages, read on 28 October 2026 (site v1.39.0), for the four facts of a licence and the two quoted lines.</li>
+<li><a href="an-agent-that-may-only-chat.html">An agent that may only chat</a> for the 3 of 12 and 12 of 12; <a href="what-can-your-agent-reach.html">what can your agent reach?</a>, <a href="governs-enforces-attests.html">governs, enforces, attests</a>, <a href="approved-business-mandates.html">approved business mandates</a>, <a href="the-riskmandate-roadmap.html">the RiskMandate roadmap</a> and <a href="underwriting-the-agent-economy-reviewed.html">underwriting the agent economy, reviewed</a>.</li>
+</ul>
+<p>Outside sources, each linked where it is used and read on 28 October 2026 by a research agent of this site, which fetched every page quoted: Howden on single-article limits (9 January 2025) and on black boxes (1 September 2025); MoneySuperMarket on locks (updated 3 September 2026); ingenie's own page; Coalition (3 August 2021); Munich Re's aiSure pages (undated); Fortune on AIUC (23 July 2025); Microsoft (7 September 2023); Intercom (24 June 2025); ElevenLabs (12 February 2026). The health insurance paragraph is a paraphrase of AXA Health's and Bupa's descriptions of their underwriting, which could not be fetched directly, and quotes neither. The research notes, with what could and could not be verified, are <code>admin/notes/2026-10-28__underwriting-abp/research-01.md</code>.</p>
+<sg-meter view="page" kind="article" date="2026-10-28" topics="agents-and-policy startups-and-strategy" title="A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#a-payout-for-every-row">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="who-carries-the-risk.html">Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital</a> <span class="dim">Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.</span></li><li><a href="the-riskmandate-roadmap.html">A proposed roadmap for RiskMandate: policies, understand, risk acceptance, contain, manage and insure, a spectrum of trust we would walk with each customer</a> <span class="dim">A proposed strategy for RiskMandate, a spectrum of trust: policies, understand, risk acceptance, contain, manage, insure.</span></li><li><a href="what-can-your-agent-reach.html">What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide</a> <span class="dim">RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.</span></li><li><a href="governs-enforces-attests.html">Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs</a> <span class="dim">An ABP governs and names the enforcer at three levels: prompt, hooks, or a third-party system. An attestation layer signs it so a third party can verify.</span></li><li><a href="approved-business-mandates.html">Approved business mandates: companies already have behaviour policies, and RiskMandate's job is to turn them into tested controls and keep them true as the deployment changes</a> <span class="dim">Companies already have behaviour policies: RiskMandate's job is to turn approved business mandates into tested controls and keep them true.</span></li><li><a href="an-agent-that-may-only-chat.html">An agent that may only chat: RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats by an agent on my computer at home, driven from my phone</a> <span class="dim">RM-CHAT-ONLY, the smallest behaviour policy, tested in 96 Claude Code runs and 11 claude.ai chats, and the fallback drill that shows what a hook is for.</span></li><li><a href="underwriting-the-agent-economy-reviewed.html">Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it</a> <span class="dim">A review of the AI insurance stack blueprint, the companies selling agent cover, and what agent behaviour policies add to it.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="who-carries-the-risk.html">Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital</a> <span class="dim">Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 315 &middot; <a href="../for/make.html#r=315">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/a-payout-for-every-row.jpg" download>a-payout-for-every-row.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="a-payout-for-every-row.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

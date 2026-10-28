@@ -26,33 +26,33 @@ Built 2026-10-28, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-10-31
 
-- **What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead** (`what-sgit-does-that-git-does-not`), published 2026-10-27, text `828e4d3673ca` at v0.13.112
-  - read: https://newsroom.sgit.ai/articles/what-sgit-does-that-git-does-not.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-sgit-does-that-git-does-not.html)
-  - article_hash: `828e4d3673ca`, article_version: `v0.13.112`
+- **A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered** (`a-payout-for-every-row`), published 2026-10-28, text `167ad03a97ce` at v999.0.0
+  - read: https://newsroom.sgit.ai/articles/a-payout-for-every-row.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/a-payout-for-every-row.html)
+  - article_hash: `167ad03a97ce`, article_version: `v999.0.0`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-01
 
-- **Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room** (`legal-on-demand-for-startups`), published 2026-10-27, text `55790800e9e2` at v0.13.109
-  - read: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.html)
-  - article_hash: `55790800e9e2`, article_version: `v0.13.109`
+- **Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault** (`where-to-invest-in-sgit`), published 2026-10-28, text `969cd8695877` at v0.13.122
+  - read: https://newsroom.sgit.ai/articles/where-to-invest-in-sgit.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/where-to-invest-in-sgit.html)
+  - article_hash: `969cd8695877`, article_version: `v0.13.122`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
 
-- **What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it** (`what-an-agent-is`), published 2026-10-27, text `d468ffef7b41` at v0.13.108
-  - read: https://newsroom.sgit.ai/articles/what-an-agent-is.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-an-agent-is.html)
-  - article_hash: `d468ffef7b41`, article_version: `v0.13.108`
+- **The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it** (`the-inbox-team-as-a-recipe`), published 2026-10-28, text `4afe4f6a3c77` at v0.13.121
+  - read: https://newsroom.sgit.ai/articles/the-inbox-team-as-a-recipe.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/the-inbox-team-as-a-recipe.html)
+  - article_hash: `4afe4f6a3c77`, article_version: `v0.13.121`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-03
 
-- **Meta's new terms and the news: what the crawling clause says, what has happened since mid-October, and why publishers should answer with their own machine-readable terms, not only with letters** (`meta-terms-and-the-news`), published 2026-10-27, text `eb193eea2f6a` at v0.13.105
-  - read: https://newsroom.sgit.ai/articles/meta-terms-and-the-news.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/meta-terms-and-the-news.html)
-  - article_hash: `eb193eea2f6a`, article_version: `v0.13.105`
-  - why: Never reviewed by you; 1 other reviewer have.
+- **CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why** (`ci-owns-the-version`), published 2026-10-27, text `f1d8dce711d6` at v0.13.117
+  - read: https://newsroom.sgit.ai/articles/ci-owns-the-version.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/ci-owns-the-version.html)
+  - article_hash: `f1d8dce711d6`, article_version: `v0.13.117`
+  - why: Never reviewed by you; never reviewed by anyone.
 
-299 more after these.
+306 more after these.
 
 The empty record, to fill (one per article):
 

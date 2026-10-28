@@ -205,7 +205,9 @@ The chat-only policy pack produced on 21 October 2026 by a Claude session on my 
 
 Agents & policySite & engineering[This article as a graph →](graphs.md#an-agent-that-may-only-chat)
 
-No other article links here yet.
+### Continued by
+
+- [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md) Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

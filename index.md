@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.123 · 314 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 316 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](articles/the-push-is-the-authorisation.md), 2026-10-28, 15 min. The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.
+- [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](articles/who-carries-the-risk.md), 2026-10-28, 14 min. Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.
 
 ## Highlights
 
+- [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](articles/a-payout-for-every-row.md), 2026-10-28, 16 min.
+- [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](articles/the-push-is-the-authorisation.md), 2026-10-28, 15 min.
 - [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](articles/where-to-invest-in-sgit.md), 2026-10-28, 9 min.
 - [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](articles/the-legal-ai-services-map.md), 2026-10-28, 7 min.
-- [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 2026-10-28, 8 min.
-- [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 2026-10-28, 7 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (87)
+### Agent security & policy (89)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](articles/who-carries-the-risk.md), 2026-10-28, 14 min.
+- [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](articles/a-payout-for-every-row.md), 2026-10-28, 16 min.
 - [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](articles/the-push-is-the-authorisation.md), 2026-10-28, 15 min.
-- [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](articles/who-has-not-patched.md), 2026-10-27, 9 min.
-- [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](articles/the-ipo-filing-and-the-agents.md), 2026-10-27, 12 min.
 
 ### Building with agents (50)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

@@ -55,6 +55,507 @@
   ],
   "articles": [
     {
+      "slug": "who-carries-the-risk",
+      "title": "Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital",
+      "date": "2026-10-28",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/who-carries-the-risk.html",
+      "markdown": "https://newsroom.sgit.ai/articles/who-carries-the-risk.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/who-carries-the-risk.webp",
+      "teaser": "Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "insurance",
+        "underwriting",
+        "agent-behaviour-policy",
+        "riskmandate",
+        "mga",
+        "capital",
+        "reinsurance",
+        "aiuc",
+        "startups",
+        "article"
+      ],
+      "links_out": [
+        "a-payout-for-every-row",
+        "what-can-your-agent-reach",
+        "underwriting-the-agent-economy-reviewed",
+        "application-behaviour-policies",
+        "who-maintains-the-php-you-run"
+      ],
+      "links_in": [
+        "a-payout-for-every-row"
+      ],
+      "figures": [
+        {
+          "file": "ck-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ck-chain.webp",
+          "caption": "The four parts of an insurer for agent behaviour policies, and who already does each one today.",
+          "kind": "diagram"
+        },
+        {
+          "file": "ck-capital.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ck-capital.webp",
+          "caption": "What an e-money firm, a new bank, an insurance carrier and a managing agent must hold, and the hard part of each.",
+          "kind": "comparison"
+        },
+        {
+          "file": "ck-path.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/ck-path.webp",
+          "caption": "From a managing agent on someone else's capital to a carrier that reinsures the tail, with two cyber precedents.",
+          "kind": "timeline"
+        }
+      ],
+      "graph": {
+        "slug": "who-carries-the-risk",
+        "teaser": "Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "Several companies already sell AI agent cover but none we found prices per row of a behaviour policy; the insurance industry already separates the parts such a company needs (evidence, pricing and binding, the balance sheet, reinsurance), capital is the business for a carrier but not for a managing agent, so the first company can price on someone else's capital, start small, earn a loss record, and later carry the risk, with providers insuring their own agents and cover that lapses on unpatched known vulnerabilities.",
+        "nodes": [
+          {
+            "id": "have",
+            "label": "Most of the pieces exist",
+            "kind": "claim",
+            "summary": "The open policy, controls mapped to risks, AIUC-1 as a graph, the formula."
+          },
+          {
+            "id": "market",
+            "label": "Who sells agent cover today",
+            "kind": "example",
+            "summary": "AIUC, Armilla, Testudo, Munich Re, Harbor."
+          },
+          {
+            "id": "gap",
+            "label": "Nobody found prices per row",
+            "kind": "claim",
+            "summary": "Per named risk and per enforced control, not yet."
+          },
+          {
+            "id": "chain",
+            "label": "Four parts of an insurer",
+            "kind": "concept",
+            "summary": "Evidence, pricing and binding, balance sheet, reinsurance."
+          },
+          {
+            "id": "mga",
+            "label": "The managing agent",
+            "kind": "concept",
+            "summary": "Prices and binds on a carrier's behalf, without balance-sheet risk."
+          },
+          {
+            "id": "parametric",
+            "label": "Claims close to parametric",
+            "kind": "method",
+            "summary": "The event maps to a row; the log says if conditions held."
+          },
+          {
+            "id": "neobank",
+            "label": "The neobank comparison",
+            "kind": "question",
+            "summary": "Early neobanks needed little capital; the licence was the hard part."
+          },
+          {
+            "id": "capital",
+            "label": "Capital is a carrier's business",
+            "kind": "claim",
+            "summary": "Survive a one-in-two-hundred-year year; floors of £2.4 million."
+          },
+          {
+            "id": "path",
+            "label": "MGA first, carrier later",
+            "kind": "example",
+            "summary": "Coalition in 2022 and At-Bay in 2023 bought carriers."
+          },
+          {
+            "id": "small",
+            "label": "Start small",
+            "kind": "method",
+            "summary": "Niche agents, agents in QA, a few per cent of users."
+          },
+          {
+            "id": "lapse",
+            "label": "Cover lapses on unpatched CVEs",
+            "kind": "example",
+            "summary": "Chubb's 45-day grace period; a CVSS 8 exclusion after three weeks."
+          },
+          {
+            "id": "providers",
+            "label": "Providers insuring their agents",
+            "kind": "question",
+            "summary": "OpenAI considered self-insurance; cover up to $300 million."
+          },
+          {
+            "id": "compulsory",
+            "label": "Insurance may become required",
+            "kind": "question",
+            "summary": "Like motor insurance; the European Parliament asked in 2020."
+          },
+          {
+            "id": "questions",
+            "label": "Seven questions for experts",
+            "kind": "question",
+            "summary": "Binding authority, capital, correlation, claims, certification, providers, market."
+          }
+        ],
+        "edges": [
+          {
+            "from": "have",
+            "to": "market",
+            "rel": "leads-to"
+          },
+          {
+            "from": "market",
+            "to": "gap",
+            "rel": "produces"
+          },
+          {
+            "from": "gap",
+            "to": "chain",
+            "rel": "leads-to"
+          },
+          {
+            "from": "chain",
+            "to": "mga",
+            "rel": "produces"
+          },
+          {
+            "from": "chain",
+            "to": "parametric",
+            "rel": "produces"
+          },
+          {
+            "from": "neobank",
+            "to": "capital",
+            "rel": "contrasts"
+          },
+          {
+            "from": "capital",
+            "to": "mga",
+            "rel": "leads-to"
+          },
+          {
+            "from": "mga",
+            "to": "path",
+            "rel": "example-of"
+          },
+          {
+            "from": "path",
+            "to": "small",
+            "rel": "depends-on"
+          },
+          {
+            "from": "lapse",
+            "to": "chain",
+            "rel": "extends"
+          },
+          {
+            "from": "small",
+            "to": "providers",
+            "rel": "leads-to"
+          },
+          {
+            "from": "providers",
+            "to": "compulsory",
+            "rel": "leads-to"
+          },
+          {
+            "from": "compulsory",
+            "to": "questions",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "a-payout-for-every-row",
+            "what-can-your-agent-reach",
+            "underwriting-the-agent-economy-reviewed",
+            "application-behaviour-policies",
+            "who-maintains-the-php-you-run"
+          ],
+          "pages": [],
+          "sites": [
+            "https://fortune.com/2025/07/23/ai-agent-insurance-startup-aiuc-stealth-15-million-seed-nat-friedman/",
+            "https://fintech.global/2026/09/17/aiuc-raises-40m-to-police-risk-in-frontier-ai-agents/",
+            "https://www.armilla.ai/resources/armilla-launches-affirmative-ai-liability-insurance-with-lloyds-underwriter-chaucer",
+            "https://fintech.global/2026/03/09/testudo-expands-ai-liability-capacity-to-9-25m/",
+            "https://www.munichre.com/en/solutions/for-industry-clients/insure-ai/faq.html",
+            "https://www.lloyds.com/market-resources/delegated-authorities/compliance-and-operations/about-coverholders",
+            "https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2188_en",
+            "https://www.prarulebook.co.uk/pra-rules/minimum-capital-requirement/03-06-2026",
+            "https://www.bankofengland.co.uk/prudential-regulation/new-bank-start-up-unit",
+            "https://www.coalitioninc.com/announcements/Coalition-completes-acquisition-of-insurance-carrier-with-licenses-in-all-50-states",
+            "https://www.at-bay.com/articles/introducing-at-bay-specialty-insurance-company/",
+            "https://chubb.com/content/dam/chubb-sites/chubb-com/nordic-en/_assets/documents/Chubb_DK_EN043_Cyber_Endorsement_202202.pdf",
+            "https://amp.insurancejournal.com/news/national/2025/10/08/843087.htm",
+            "https://www.legislation.gov.uk/ukpga/1988/52/section/143"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "For an insurer, I was closer to right. The risk is the product, so capital is the business.",
+            "why": "The correction to the neobank comparison, in one line."
+          },
+          {
+            "text": "A row of a behaviour policy is close to that: the event maps to a row, and the log says whether the conditions held.",
+            "why": "Why claims on agents can be simple."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "a-payout-for-every-row",
+      "title": "A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered",
+      "date": "2026-10-28",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/a-payout-for-every-row.html",
+      "markdown": "https://newsroom.sgit.ai/articles/a-payout-for-every-row.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/a-payout-for-every-row.webp",
+      "teaser": "Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.",
+      "topics": [
+        "agents-and-policy",
+        "startups-and-strategy"
+      ],
+      "tags": [
+        "insurance",
+        "underwriting",
+        "agent-behaviour-policy",
+        "riskmandate",
+        "licence-to-operate",
+        "cyber-insurance",
+        "premiums",
+        "controls",
+        "mandate",
+        "article"
+      ],
+      "links_out": [
+        "who-carries-the-risk",
+        "the-riskmandate-roadmap",
+        "what-can-your-agent-reach",
+        "governs-enforces-attests",
+        "approved-business-mandates",
+        "an-agent-that-may-only-chat",
+        "underwriting-the-agent-economy-reviewed"
+      ],
+      "links_in": [
+        "who-carries-the-risk"
+      ],
+      "figures": [
+        {
+          "file": "pr-rows.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pr-rows.webp",
+          "caption": "One agent's behaviour policy as an insurance policy: a limit, controls and a premium per row. Illustrative.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pr-house.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pr-house.webp",
+          "caption": "A home contents policy and an agent behaviour policy, question by question.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pr-walk.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pr-walk.webp",
+          "caption": "The annual premium for £80,000 of cover as enforced controls are added, one at a time. Illustrative.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "a-payout-for-every-row",
+        "teaser": "Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.",
+        "topics": [
+          "agents-and-policy",
+          "startups-and-strategy"
+        ],
+        "core_idea": "An insurer de-risks an action up to a limit under conditions, and an agent behaviour policy already has that shape, so the insurance should be one-to-one with it: each row it names has its own limit, each row it does not name is excluded, each enforced control lowers that row's premium by a deterministic factor while a line in the prompt earns nothing, the runtime is part of the price, and the premium starts near the cover for an uncontrolled agent and falls with every real control.",
+        "nodes": [
+          {
+            "id": "house",
+            "label": "A house against burglary",
+            "kind": "example",
+            "summary": "Conditions, a limit per item, exclusions, and a check at the claim."
+          },
+          {
+            "id": "abp",
+            "label": "The behaviour policy as rows",
+            "kind": "concept",
+            "summary": "Grant, mandate and delta: each reachable capability is a row."
+          },
+          {
+            "id": "delta",
+            "label": "The delta is uninsurable",
+            "kind": "claim",
+            "summary": "Reach outside the mandate is what no policy covers, by design."
+          },
+          {
+            "id": "row",
+            "label": "One row, one limit",
+            "kind": "method",
+            "summary": "£20,000 for corrupted records, £50,000 for leaked data, and so on."
+          },
+          {
+            "id": "formula",
+            "label": "A deterministic formula",
+            "kind": "method",
+            "summary": "Base rate times the factors of enforced controls times the runtime."
+          },
+          {
+            "id": "enforced",
+            "label": "Only enforced controls count",
+            "kind": "claim",
+            "summary": "A hook, a proxy or a removed grant earns a factor; a prompt line does not."
+          },
+          {
+            "id": "hooks",
+            "label": "3 of 12 against 12 of 12",
+            "kind": "example",
+            "summary": "The line alone against the line with a deny-all hook, in a drill."
+          },
+          {
+            "id": "max",
+            "label": "Start from the maximum",
+            "kind": "claim",
+            "summary": "Uncontrolled: £69,850 for £80,000 of cover; controlled: £6,720."
+          },
+          {
+            "id": "measured",
+            "label": "Insurers price what they measure",
+            "kind": "example",
+            "summary": "Black boxes for young drivers, medical underwriting, cyber scans."
+          },
+          {
+            "id": "runtime",
+            "label": "Where the agent runs",
+            "kind": "concept",
+            "summary": "A certified runtime lowers the price; an uncertified one raises it."
+          },
+          {
+            "id": "licence",
+            "label": "The licence to operate",
+            "kind": "artefact",
+            "summary": "Simulated in vault posrhzp3: band, ceiling, pool, premium."
+          },
+          {
+            "id": "vendors",
+            "label": "The vendors' share",
+            "kind": "question",
+            "summary": "Indemnities conditional on guardrails, performance guarantees, AIUC-1 cover."
+          },
+          {
+            "id": "next",
+            "label": "Who can underwrite this today?",
+            "kind": "question",
+            "summary": "The next article in the series, a research brief."
+          }
+        ],
+        "edges": [
+          {
+            "from": "house",
+            "to": "row",
+            "rel": "leads-to"
+          },
+          {
+            "from": "abp",
+            "to": "row",
+            "rel": "produces"
+          },
+          {
+            "from": "abp",
+            "to": "delta",
+            "rel": "produces"
+          },
+          {
+            "from": "row",
+            "to": "formula",
+            "rel": "depends-on"
+          },
+          {
+            "from": "enforced",
+            "to": "formula",
+            "rel": "extends"
+          },
+          {
+            "from": "hooks",
+            "to": "enforced",
+            "rel": "example-of"
+          },
+          {
+            "from": "formula",
+            "to": "max",
+            "rel": "produces"
+          },
+          {
+            "from": "runtime",
+            "to": "formula",
+            "rel": "extends"
+          },
+          {
+            "from": "measured",
+            "to": "formula",
+            "rel": "compared-with"
+          },
+          {
+            "from": "licence",
+            "to": "formula",
+            "rel": "example-of"
+          },
+          {
+            "from": "vendors",
+            "to": "row",
+            "rel": "extends"
+          },
+          {
+            "from": "max",
+            "to": "next",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "the-riskmandate-roadmap",
+            "what-can-your-agent-reach",
+            "governs-enforces-attests",
+            "approved-business-mandates",
+            "an-agent-that-may-only-chat",
+            "underwriting-the-agent-economy-reviewed"
+          ],
+          "pages": [
+            "articles/data/a-payout-for-every-row__worked-example.json"
+          ],
+          "sites": [
+            "https://sgit.ai/demos/vaults/licence-to-operate/index.html",
+            "https://riskmandate.ai/licence-to-operate.html",
+            "https://riskmandate.ai/insurance.html",
+            "https://www.howdeninsurance.co.uk/personal/home/home-insurance/guides/single-article-limit/",
+            "https://moneysupermarket.com/home-insurance/house-locks",
+            "https://www.ingenie.com/how-it-works",
+            "https://www.howdeninsurance.co.uk/personal/motor/young-driver/guides/black-box-insurance-myths/",
+            "https://www.coalitioninc.com/blog/risk-engineering-at-coalition-collaboration-to",
+            "https://www.munichre.com/en/solutions/for-industry-clients/insure-ai/faq.html",
+            "https://fortune.com/2025/07/23/ai-agent-insurance-startup-aiuc-stealth-15-million-seed-nat-friedman/",
+            "https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns/",
+            "https://intercom.help/fin4all/en/articles/11645601-what-is-the-fin-guarantee",
+            "https://elevenlabs.io/blog/aiuc-announcement"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It may be good practice; it is not a control an insurer can price.",
+            "why": "The rule that decides what counts as a control."
+          },
+          {
+            "text": "That is not a weakness of the idea. It is the idea.",
+            "why": "Exclusion is the design, not the flaw."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-push-is-the-authorisation",
       "title": "The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision",
       "date": "2026-10-28",
@@ -8130,7 +8631,10 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "who-carries-the-risk",
+        "a-payout-for-every-row"
+      ],
       "figures": [
         {
           "file": "uw-cover.webp",
@@ -9024,7 +9528,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "who-carries-the-risk"
+      ],
       "figures": [
         {
           "file": "mk-both-ways.webp",
@@ -9503,7 +10009,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "a-payout-for-every-row"
+      ],
       "figures": [
         {
           "file": "ch-modes.webp",
@@ -9721,7 +10229,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "who-carries-the-risk"
+      ],
       "figures": [
         {
           "file": "ay-grant.webp",
@@ -11399,6 +11909,7 @@
         "our-first-customers"
       ],
       "links_in": [
+        "a-payout-for-every-row",
         "the-delegation-record",
         "an-analysts-blueprint-for-riskmandate"
       ],
@@ -16093,6 +16604,7 @@
         "three-policies-for-an-agent"
       ],
       "links_in": [
+        "a-payout-for-every-row",
         "approved-business-mandates",
         "an-analysts-blueprint-for-riskmandate",
         "how-a-memo-becomes-a-release",
@@ -19251,6 +19763,7 @@
         "cedar-and-the-policy-vault"
       ],
       "links_in": [
+        "a-payout-for-every-row",
         "a-leak-without-breaking-the-policy",
         "inside-the-pellbridge-agents",
         "a-trusted-framework-for-agentic-finance",
@@ -26174,6 +26687,8 @@
         "hope-or-enforcement"
       ],
       "links_in": [
+        "who-carries-the-risk",
+        "a-payout-for-every-row",
         "approved-business-mandates",
         "drift-is-the-mandate-moving",
         "an-analysts-blueprint-for-riskmandate",

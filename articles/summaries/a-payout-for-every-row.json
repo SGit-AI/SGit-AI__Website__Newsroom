@@ -1,0 +1,118 @@
+{
+ "slug": "a-payout-for-every-row",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 335,
+   "line": "Insure an agent row by row, under enforced controls",
+   "para": "An agent behaviour policy already has the shape of an insurance policy: a limit for each risk it names, nothing for what it does not, and a lower premium for each enforced control. In a worked example, an uncontrolled agent pays £69,850 for £80,000 of cover; a controlled one, £6,720.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 262,
+   "line": "Ten lines from the house to the next article",
+   "para": "An insurer de-risks an action under conditions and limits; the behaviour policy has rows; the insurance is one-to-one with them; the delta is uninsurable; the formula is deterministic; only enforced controls count; the runtime matters; premiums start high and fall; the vault simulates it.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "house",
+   "label": "An insurer de-risks an action",
+   "words": 335,
+   "line": "A house policy has conditions, limits and exclusions",
+   "para": "Home contents insurance asks about locks and location, caps any one item, usually between £1,000 and £2,500, asks for valuables to be declared, and at the claim checks the doors were locked. Agents need that same simple proposition, one agent at a time.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "uninsurable",
+   "label": "Not every action is insurable, and that is the point",
+   "words": 202,
+   "line": "The delta is outside cover, and that is the point",
+   "para": "The Licence to Operate vault's agent has a grant of 12 capabilities and a mandate of 4; the other 8 are in reach and covered by nothing. The bigger the reach, the more is uninsurable; customer records are uninsurable above 20 per action.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "one-to-one",
+   "label": "One row, one limit",
+   "words": 288,
+   "line": "Each named risk gets its own limit",
+   "para": "Corrupted records up to £20,000, leaked data up to £50,000, a wrong answer up to £10,000; shell access has no row, so it is excluded. A claim maps to a row, a row to its controls, a control to its log: a graph that can now be kept current.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "formula",
+   "label": "The formula has to be deterministic",
+   "words": 342,
+   "line": "Six steps: exclude, rate, factor, runtime, premium, claim",
+   "para": "No limit means no cover; each row has a base rate; each enforced control multiplies it down; the runtime multiplies every row; premium is limit times rate; a claim pays if the conditions held. A prompt line gets a factor of 1: it held 3 of 12 attacks, a hook 12 of 12.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "maximum",
+   "label": "Start from the maximum and come down",
+   "words": 252,
+   "line": "Uncontrolled costs 87% of the cover; controlled, 8%",
+   "para": "An uncontrolled agent on an uncertified runtime pays £69,850 for £80,000 of cover, worth it only when cover is needed to operate. A certified runtime and five enforced controls take it to £6,720. That is how cyber insurance should have priced: on evidence, not a questionnaire.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "measured",
+   "label": "Insurers already price what they can measure",
+   "words": 366,
+   "line": "Motor, health and cyber already price on measurement",
+   "para": "Black boxes measure speed, braking and cornering and set the renewal price; medical underwriting sets cover by preconditions; Coalition scans instead of asking; Munich Re prices model performance. Agents log every call, so the data exists; the mapping to rows is missing.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "where",
+   "label": "Where the agent runs",
+   "words": 151,
+   "line": "The runtime is a condition, and so is the licence",
+   "para": "Certification of the runtime and of the enforcing software lowers the price; an uncertified runtime raises it or ends cover. A licence to operate, four facts and a date, could be a condition of cover, and a change of runtime a reason to look again.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "licence",
+   "label": "The licence to operate, simulated",
+   "words": 348,
+   "line": "The vault already simulates a licence and a premium",
+   "para": "Vault posrhzp3 holds a rate table: a band, an ask threshold, a ceiling per action, a pool with a reserve, and a premium per interval. Each reply in its support conversation shows its cost first; licence, mandate, payment and cover can each be lost. In credits, not money.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "vendors",
+   "label": "The vendors' share",
+   "words": 272,
+   "line": "Vendors already cover some things, on conditions",
+   "para": "Microsoft's copyright commitment applies only if the customer used its guardrails: the locked door again. Intercom backs Fin with up to $1M; ElevenLabs has an AIUC-1-backed policy; Munich Re offers vendors performance warranties. None is yet a payout per row.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "next",
+   "label": "What comes next",
+   "words": 121,
+   "line": "Who can underwrite it, the vendors' share, a vault",
+   "para": "The series continues with a research brief on who can underwrite an agent behaviour policy today, then what agent vendors should cover themselves, then the formula as a vault with a premium calculator for your own agent.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 188,
+   "line": "Illustrative numbers, no insurer, a sketch of a formula",
+   "para": "The factors are not fitted to loss data; no insurer has agreed to this; the formula ignores interactions and correlated losses; runtime certification does not exist in this form; the vault is a simulation; the other insurance lines are analogies.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 366,
+   "line": "A memo, a script, the vault and dated sources",
+   "para": "From Dinis's memo of 28 October 2026; the formula and numbers from premium.py and its data file; the Licence to Operate vault and RiskMandate's pages read that day; outside sources fetched by a research agent, with the health paragraph paraphrased.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

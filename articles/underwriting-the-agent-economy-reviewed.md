@@ -144,7 +144,10 @@ There is one gap the paper has that we may be able to fill. It barely mentions o
 
 Agents & policyStartups & strategyGraphs & knowledge[This article as a graph →](graphs.md#underwriting-the-agent-economy-reviewed)
 
-No other article links here yet.
+### Continued by
+
+- [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md) Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.
+- [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md) Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-28 | published | 3,383 | first published | this release | [current](../the-push-is-the-authorisation.md) |
+| **v1.0.0** | 2026-10-28 | published | 3,383 | first published | [`401e29513`](https://github.com/SGit-AI/SGit-AI__Website/commit/401e29513343b32dfa1bab8f5db0b0c5303c1499) | [current](../the-push-is-the-authorisation.md) |
 
 [← Back to the article](../the-push-is-the-authorisation.md) · [All articles](../index.md)
 

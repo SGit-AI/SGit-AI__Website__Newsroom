@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital, SGit Newsroom</title>
+<meta name="description" content="In the last article I described insuring an agent row by row, from its behaviour policy. We have most of the pieces to put a number on it: the open behaviour policy, a way to map controls to agents and risks, the AIUC-1 standard as a graph on sgit.ai, and a deterministic formula. So the next questions are who sells this today, and what it would take to build a company that does. Today several companies sell AI agent cover: AIUC pairs a standard and audits with insurance, Armilla and Testudo write it as Lloyd's coverholders with limits up to $25 million and $9.25 million, Munich Re prices AI model performance itself, and Harbor distributes cover from surplus lines carriers. We found nobody pricing per row of a behaviour policy yet. The industry already has every part such a company needs: someone to measure, someone to price and bind, someone whose balance sheet pays, and someone who reinsures the tail. I thought it was mostly a capital problem, as I understood it was for neobanks, and asked to be corrected. Partly I was: many early neobanks needed little capital because they could not lend, and their hard part was the licence and the build-out. For an insurance carrier, capital is the business: enough to survive a one-in-two-hundred-year year. But the first company does not need to be a carrier. Coalition and At-Bay started by pricing on other insurers' capital and bought carriers later. So a company built on open behaviour policies could start small, with niche agents, agents in QA, or cover for a few per cent of users, and earn the record that brings capital, then the large providers insuring their own agents. Cover that lapses with an unpatched known vulnerability already exists, which is where this connects to the PHP story.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/who-carries-the-risk.html">
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/who-carries-the-risk.html">
+<meta property="og:title" content="Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital, SGit Newsroom">
+<meta property="og:description" content="In the last article I described insuring an agent row by row, from its behaviour policy. We have most of the pieces to put a number on it: the open behaviour policy, a way to map controls to agents and risks, the AIUC-1 standard as a graph on sgit.ai, and a deterministic formula. So the next questions are who sells this today, and what it would take to build a company that does. Today several companies sell AI agent cover: AIUC pairs a standard and audits with insurance, Armilla and Testudo write it as Lloyd's coverholders with limits up to $25 million and $9.25 million, Munich Re prices AI model performance itself, and Harbor distributes cover from surplus lines carriers. We found nobody pricing per row of a behaviour policy yet. The industry already has every part such a company needs: someone to measure, someone to price and bind, someone whose balance sheet pays, and someone who reinsures the tail. I thought it was mostly a capital problem, as I understood it was for neobanks, and asked to be corrected. Partly I was: many early neobanks needed little capital because they could not lend, and their hard part was the licence and the build-out. For an insurance carrier, capital is the business: enough to survive a one-in-two-hundred-year year. But the first company does not need to be a carrier. Coalition and At-Bay started by pricing on other insurers' capital and bought carriers later. So a company built on open behaviour policies could start small, with niche agents, agents in QA, or cover for a few per cent of users, and earn the record that brings capital, then the large providers insuring their own agents. Cover that lapses with an unpatched known vulnerability already exists, which is where this connects to the PHP story.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/who-carries-the-risk.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/who-carries-the-risk.jpg">
+<link rel="alternate" type="text/markdown" href="who-carries-the-risk.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital, SGit Newsroom", "headline": "Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital, SGit Newsroom", "description": "In the last article I described insuring an agent row by row, from its behaviour policy. We have most of the pieces to put a number on it: the open behaviour policy, a way to map controls to agents and risks, the AIUC-1 standard as a graph on sgit.ai, and a deterministic formula. So the next questions are who sells this today, and what it would take to build a company that does. Today several companies sell AI agent cover: AIUC pairs a standard and audits with insurance, Armilla and Testudo write it as Lloyd's coverholders with limits up to $25 million and $9.25 million, Munich Re prices AI model performance itself, and Harbor distributes cover from surplus lines carriers. We found nobody pricing per row of a behaviour policy yet. The industry already has every part such a company needs: someone to measure, someone to price and bind, someone whose balance sheet pays, and someone who reinsures the tail. I thought it was mostly a capital problem, as I understood it was for neobanks, and asked to be corrected. Partly I was: many early neobanks needed little capital because they could not lend, and their hard part was the licence and the build-out. For an insurance carrier, capital is the business: enough to survive a one-in-two-hundred-year year. But the first company does not need to be a carrier. Coalition and At-Bay started by pricing on other insurers' capital and bought carriers later. So a company built on open behaviour policies could start small, with niche agents, agents in QA, or cover for a few per cent of users, and earn the record that brings capital, then the large providers insuring their own agents. Cover that lapses with an unpatched known vulnerability already exists, which is where this connects to the PHP story.", "url": "https://newsroom.sgit.ai/articles/who-carries-the-risk.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}, "author": {"@type": "Person", "name": "Dinis Cruz", "url": "https://sgit.ai/about/index.html"}, "license": "https://creativecommons.org/licenses/by/4.0/"}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../assets/themes/themes.css">
+  <link rel="stylesheet" href="../assets/site-nav.css">
+  <script src="../assets/themes/themes.js"></script>
+  <script src="../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../index.html">Front page</a>
+      <a class="sl" href="../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../about/index.html">Why this exists</a>
+      <a class="sl" href="../desks/index.html">The five desks</a>
+      <a class="sl" href="../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../articles/index.html#all">Every article</a>
+      <a class="sl" href="../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../for/make.html">Make a reading list</a>
+      <a class="sl" href="../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../wire/index.html">Today's edition</a>
+      <a class="sl" href="../wire/sources.html">The sources</a>
+      <a class="sl" href="../wire/how.html">How the wire works</a>
+      <a class="sl" href="../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../wire/days.html">Day by day</a>
+      <a class="sl" href="../wire/charter.html">The charter</a>
+      <a class="sl" href="../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../account/index.html">Your reading account</a>
+      <a class="sl" href="../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../account/personas.html">Your personas</a>
+      <a class="sl" href="../account/top-up.html">Top up</a>
+      <a class="sl" href="../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../newsroom/board.html">The board</a>
+      <a class="sl" href="../newsroom/log.html">The run log</a>
+      <a class="sl" href="../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../team/index.html">The team: who does what</a>
+      <a class="sl" href="../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../archive/index.html">The archive</a>
+      <a class="sl" href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../network/index.html">The network</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../assets/reader/strip.css">
+  <script src="../assets/reader/strip.js" defer></script>
+  <script src="../assets/reader/highlights.js" defer></script>
+  <script src="../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../assets/pen/pen.css">
+  <script type="module" src="../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc">
+ <p class="crumb"><a href="../index.html">Home</a> / <a href="index.html">Articles</a> / Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital</p>
+ <h1>Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital</h1>
+ <p class="small dim">By <a href="https://sgit.ai/about/index.html" rel="author">Dinis Cruz</a> &middot; 2026-10-28 &middot; <a href="versions/who-carries-the-risk.html" title="Every published version of this article, and what changed">article v1.0.0</a> &middot; <a href="../admin/versions.html" title="The newsroom release it was published in">newsroom v999.0.0</a> &middot; <span class="chip">insurance</span><span class="chip">underwriting</span><span class="chip">agent-behaviour-policy</span><span class="chip">riskmandate</span><span class="chip">mga</span><span class="chip">capital</span><span class="chip">reinsurance</span><span class="chip">aiuc</span><span class="chip">startups</span><span class="chip">article</span></p>
+ <p class="abstract"><em><b>Abstract:</b> In the last article I described insuring an agent row by row, from its behaviour policy. We have most of the pieces to put a number on it: the open behaviour policy, a way to map controls to agents and risks, the AIUC-1 standard as a graph on sgit.ai, and a deterministic formula. So the next questions are who sells this today, and what it would take to build a company that does. Today several companies sell AI agent cover: AIUC pairs a standard and audits with insurance, Armilla and Testudo write it as Lloyd's coverholders with limits up to $25 million and $9.25 million, Munich Re prices AI model performance itself, and Harbor distributes cover from surplus lines carriers. We found nobody pricing per row of a behaviour policy yet. The industry already has every part such a company needs: someone to measure, someone to price and bind, someone whose balance sheet pays, and someone who reinsures the tail. I thought it was mostly a capital problem, as I understood it was for neobanks, and asked to be corrected. Partly I was: many early neobanks needed little capital because they could not lend, and their hard part was the licence and the build-out. For an insurance carrier, capital is the business: enough to survive a one-in-two-hundred-year year. But the first company does not need to be a carrier. Coalition and At-Bay started by pricing on other insurers' capital and bought carriers later. So a company built on open behaviour policies could start small, with niche agents, agents in QA, or cover for a few per cent of users, and earn the record that brings capital, then the large providers insuring their own agents. Cover that lapses with an unpatched known vulnerability already exists, which is where this connects to the PHP story.</em></p>
+<figure class="shot" data-shot="ck-chain.webp" data-dir="images/" data-alt="The four parts of an insurer for agent behaviour policies, and who already does each one today." data-kind="diagram"><figcaption>The four parts of an insurer for agent behaviour policies, and who already does each one today.</figcaption></figure>
+<h2 id="in-short">In short</h2>
+<ul>
+<li><b>We have most of the pieces to put a number on an agent.</b> The open behaviour policy, the controls mapped to risks, AIUC-1 as a graph, and <a href="a-payout-for-every-row.html">a deterministic formula</a>.</li>
+<li><b>Several companies already sell AI agent cover.</b> AIUC, Armilla, Testudo, Munich Re, and Harbor as a distributor; we found nobody pricing per row of a behaviour policy.</li>
+<li><b>The industry already has every part such a company needs.</b> Measure, price and bind, carry the balance sheet, reinsure the tail.</li>
+<li><b>I thought it was a capital problem, like neobanks, and was partly wrong.</b> Many early neobanks could not lend and needed little capital; their hard part was the licence and the build-out.</li>
+<li><b>For a carrier, capital is the business.</b> Enough own funds to survive a one-in-two-hundred-year year, with a floor of £2.4 million in the UK.</li>
+<li><b>The first company does not need to be a carrier.</b> A managing agent prices and sells on a carrier's capital; Coalition and At-Bay started there and bought carriers later.</li>
+<li><b>Cover that lapses with a known vulnerability already exists.</b> Chubb shifts the risk to the policyholder in steps after a 45-day grace period to patch.</li>
+<li><b>Start small, then the large providers.</b> Niche agents, agents in QA, a few per cent of users; then the model providers insuring their own agents, which some have already looked at.</li>
+</ul>
+<h2 id="have">What we have, and the question it leaves</h2>
+<p>In <a href="a-payout-for-every-row.html">a payout for every row</a> I described how an agent behaviour policy could be insured: each row it names with its own limit, each enforced control lowering the premium, and what it does not name excluded. I think we now have most of the pieces of the puzzle to calculate that number. The behaviour policy exists and is open source; <a href="what-can-your-agent-reach.html">what can your agent reach?</a> explains it. We have a way to map controls to agents and to risks: on sgit.ai we turned the AIUC-1 standard into a graph and asked it what would be insurable, as <a href="underwriting-the-agent-economy-reviewed.html">underwriting the agent economy, reviewed</a> describes. And we have a formula that says: with this agent, with these controls, the premium is this and the payout is that.</p>
+<p>So the next questions are practical. Who sells that today? And if someone, or an investor, wanted to build a company that does, what would it take? I should say first what I am not: this has to be built by people who are experts in insurance and understand the medium, and it needs a lot of capital. What I can do is map the pieces, and ask the questions an expert would have to answer.</p>
+<h2 id="landscape">Who sells AI agent cover today</h2>
+<p>The market is already moving, and the last review of it on this site is four days old. What it found, and what has been checked since:</p>
+<ul>
+<li><b>AIUC</b> combines a standard, audits and insurance. When it came out of stealth, its policies were described as covering "customers and vendors in the event an agent causes harm", with pricing that "reflects how safe the system is" (<a href="https://fortune.com/2025/07/23/ai-agent-insurance-startup-aiuc-stealth-15-million-seed-nat-friedman/">Fortune</a>, 23 July 2025). In September 2026 it raised $40 million to extend its audits, standards and insurance to frontier models; the companies certified to AIUC-1 include Cursor, ElevenLabs, Harvey, KPMG, Lovable, UiPath and Intercom's Fin (<a href="https://fintech.global/2026/09/17/aiuc-raises-40m-to-police-risk-in-frontier-ai-agents/">FinTech Global</a>, 17 September 2026).</li>
+<li><b>Armilla</b> is a Lloyd's coverholder whose affirmative AI liability cover is "underwritten by certain underwriters at Lloyd's, including Chaucer" (<a href="https://www.armilla.ai/resources/armilla-launches-affirmative-ai-liability-insurance-with-lloyds-underwriter-chaucer">Armilla</a>, 30 April 2025), now with limits "up to $25 million per organization" and cover for "AI Agent Failures: Claims arising from incorrect decisions, improper tool use, or escalation errors" (<a href="https://www.armilla.ai/resources/armilla-ai-raises-lloyds-backed-coverage-to-25m-as-traditional-insurers-retreat-from-ai-risk">Armilla</a>).</li>
+<li><b>Testudo</b>, another Lloyd's coverholder, covers third-party claims from "AI-generated outputs", with limits of "$9.25m per insured" since Atrium and QBE joined Apollo on its panel (<a href="https://fintech.global/2026/03/09/testudo-expands-ai-liability-capacity-to-9-25m/">FinTech Global</a>, 9 March 2026).</li>
+<li><b>Munich Re</b> has written AI cover since 2018 as aiSure, and says "The quality of the model and its performance stability determine the premium" (<a href="https://www.munichre.com/en/solutions/for-industry-clients/insure-ai/faq.html">Munich Re</a>).</li>
+<li><b>Harbor</b> takes a company from discovering its agents to insuring them, and its policies "are issued by surplus lines insurance carriers", as the last review recorded.</li>
+</ul>
+<p>Each of these is a real step. None, as far as we found, prices an agent per row of its behaviour policy, with a limit per named risk and a factor per enforced control. AIUC comes nearest, because it pairs a standard and its audits with the cover. That is the gap, and since the behaviour policy is open, the company that fills it does not have to be RiskMandate: anyone can build on the policies, and sponsor the mapping for the agents they insure.</p>
+<h2 id="chain">The parts of an insurer</h2>
+<p>The insurance industry has spent a long time separating the jobs, and it helps to name them, because a new company does not have to do them all.</p>
+<ol>
+<li><b>The policy and the evidence.</b> What the agent can reach, what it may do, and the logs that show each control held. This is the behaviour policy's job, and where RiskMandate works; AIUC's audits are another form of it.</li>
+<li><b>Pricing and binding.</b> A managing general agent, which Lloyd's calls a coverholder, prices and sells policies on an insurer's behalf. In Lloyd's words, it "is a company that has been authorised" "by a Lloyd's Managing Agent to enter into insurance contracts on behalf of a Lloyd's syndicate", and "This authority is granted through a formal Binding Authority agreement" (<a href="https://www.lloyds.com/market-resources/delegated-authorities/compliance-and-operations/about-coverholders">Lloyd's</a>). It does not carry the risk on its own balance sheet; the insurer does.</li>
+<li><b>The balance sheet.</b> The carrier pays the claim and holds the capital for it. At Lloyd's, "A Lloyd's syndicate is formed by one or more members joining together to provide capital and accept insurance risks on a several liability basis" (<a href="https://www.lloyds.com/market-resources/member-services/about/what-is-a-member">Lloyd's</a>). A fronting carrier lends its licence and balance sheet to business an MGA places and passes most of the risk on: in the US in 2025, fronting carriers wrote "more than $22 billion in gross premiums" and ceded "nearly $19 billion to nonaffiliated reinsurers" (<a href="https://www.insurancebusinessmag.com/us/news/breaking-news/conning-fronting-sectors-easy-growth-phase-is-ending-587956.aspx">Insurance Business</a>, 31 August 2026, citing a Conning study).</li>
+<li><b>Reinsurance.</b> "Reinsurance, often referred to as "insurance for insurance companies," is a contract between a reinsurer and an insurer" (<a href="https://content.naic.org/insurance-topics/reinsurance">NAIC</a>). It takes the tail and the correlated loss: the day one model's flaw hits every agent built on it.</li>
+</ol>
+<p>Around them sit distribution, brokers and platforms, and the claim. For agents, the claim could be the simplest part. Swiss Re describes parametric insurance as "a type of insurance that covers the probability of a predefined event happening", paid on an index rather than on a loss adjuster's assessment (<a href="https://corporatesolutions.swissre.com/en/japan/insights/knowledge/parametric-solutions-srij/what-is-parametric.html">Swiss Re</a>). A row of a behaviour policy is close to that: the event maps to a row, and the log says whether the conditions held.</p>
+<h2 id="capital">Is it a capital problem?</h2>
+<p>My understanding going in was that this is like the fintech revolution in banking. When the neobanks arrived, they did not give much credit to new accounts, so they carried little risk, and I thought the main gap was having enough capital to cover the balances if something major went wrong. I asked to be corrected if that was wrong, and partly it was.</p>
+<figure class="shot" data-shot="ck-capital.webp" data-dir="images/" data-alt="What an e-money firm, a new bank, an insurance carrier and a managing agent must hold, and the hard part of each." data-kind="comparison"><figcaption>What an e-money firm, a new bank, an insurance carrier and a managing agent must hold, and the hard part of each.</figcaption></figure>
+<p>Many early neobanks were e-money institutions. Those need initial capital "of not less than EUR 350 000" (<a href="https://www.legislation.gov.uk/eudr/2009/110/article/4">EMD2, article 4</a>), and customer money is safeguarded: credit may be granted only "provided that such credit is not granted from funds safeguarded" (<a href="https://www.legislation.gov.uk/uksi/2011/99/regulation/32">EMR 2011, regulation 32</a>). A full bank holds capital mostly against its lending: in the EU at the end of 2025, credit risk was 77.9% of banks' risk-weighted assets, operational risk 13.4% and market risk 3.7% (<a href="https://eba.europa.eu/sites/default/files/2026-03/f99324ee-6d5c-451f-9cfa-5b58a908c18d/EBA%20Risk%20Dashboard%20-%20Q4%202025.pdf">EBA Risk Dashboard, Q4 2025</a>). A new UK bank goes through mobilisation, which "typically lasts no longer than 12 months", while "the bank's deposit-taking permission is restricted to a total of £50,000" (<a href="https://www.bankofengland.co.uk/prudential-regulation/new-bank-start-up-unit">Bank of England</a>). Revolut was granted its licence with restrictions in July 2024 and left mobilisation on 11 March 2026 (<a href="https://tech.eu/2026/03/11/revolut-wins-full-uk-banking-licence-as-finally-exits-mobilisation-phase/">tech.eu</a>). So for the neobanks, the hard part was the licence and the build-out as much as the capital.</p>
+<p>For an insurer, I was closer to right. The risk is the product, so capital is the business. Under Solvency II, the capital requirement corresponds to the value at risk of the insurer's own funds "subject to a confidence level of 99,5 % over a one-year period" (<a href="https://www.eiopa.europa.eu/rulebook/solvency-ii-single-rulebook/article-2188_en">Solvency II, article 101</a>): enough to survive a year that comes once in two hundred. Below that there is a minimum, which in the UK "must neither fall below 25% nor exceed 45% of the firm's SCR", with a floor of £2,400,000 for a general insurer (<a href="https://www.prarulebook.co.uk/pra-rules/minimum-capital-requirement/03-06-2026">PRA Rulebook</a>). In the US, risk-based capital sets "a statutory minimum level of capital" by size and by "the inherent riskiness of its financial assets and operations" (<a href="https://content.naic.org/cipr-topics/risk-based-capital">NAIC</a>).</p>
+<p>And this is where the deterministic formula matters most. Capital is held against what could go wrong at once. A policy that excludes what it does not name, caps every row, and holds a reserve for the catastrophe layer makes the worst year easier to bound, and a bounded worst year needs less capital per pound of cover. It is still a question of how many policies, how much risk accumulates, and how much the balance sheet can hold; but it is a question with numbers.</p>
+<h2 id="path">Start as a managing agent, carry the risk later</h2>
+<p>So the first company does not need to be a carrier. It can price and sell on someone else's capital, prove its loss record, and then carry the risk. Two cyber insurers bought carriers of their own once they had a book.</p>
+<figure class="shot" data-shot="ck-path.webp" data-dir="images/" data-alt="From a managing agent on someone else&#x27;s capital to a carrier that reinsures the tail, with two cyber precedents." data-kind="timeline"><figcaption>From a managing agent on someone else's capital to a carrier that reinsures the tail, with two cyber precedents.</figcaption></figure>
+<p>Coalition "completed the acquisition of Digital Affect Insurance Company from Munich Re Digital Partners US Holding Corporation" on 15 August 2022, a carrier "licensed in all 50 states" (<a href="https://www.coalitioninc.com/announcements/Coalition-completes-acquisition-of-insurance-carrier-with-licenses-in-all-50-states">Coalition</a>). At-Bay followed on 24 January 2023: "Taking on balance sheet risk and owning our own insurance carrier are crucial steps on our journey" (<a href="https://www.at-bay.com/articles/introducing-at-bay-specialty-insurance-company/">At-Bay</a>). And a full carrier still cedes part of its risk: Lemonade "expects to cede approximately 18% of premium to reinsurers" under the agreements it renewed in June 2026 (<a href="https://www.lemonade.com/investor/news/lemonade-renews-reinsurance-program-improving-costs-coverage-and-capital-efficiency">Lemonade</a>).</p>
+<p>That answers whether one company or several are needed: at the start, several, with the new company as the managing agent and established carriers and reinsurers behind it; later, possibly one group that does most of it. I would also expect the large insurers to build exactly these divisions themselves, once the market matures and they trust their models. The open behaviour policy makes collaboration easy either way: whoever prices the risk works from the same rows.</p>
+<h2 id="small">Start small</h2>
+<p>The way in is small. Insure smaller agents first, or agents while they are in QA, or agents that serve only a small share of users, 1% or 5%, with low limits per row. Each of those gives a carrier a bounded exposure and gives the new company a loss record against named rows and logged controls. Once that works, it can go to the large providers.</p>
+<p>There are signs the industry is ready to fund the attempt. Lloyd's Lab's sixteenth cohort includes Exona Lab, a "Risk engine quantifying advanced and systemic AI risks" (<a href="https://fintech.global/2026/03/20/lloyds-lab-unveils-cohort-16-insurtech-innovators/">FinTech Global</a>, 20 March 2026). Deloitte projected in May 2024 that "by 2032, insurers can potentially write around US$4.7 billion" of AI insurance premiums, "at a compounded annual growth rate of around 80%" (<a href="https://www.deloitte.com/us/en/insights/industry/financial-services/risk-insurance-for-ai.html">Deloitte</a>).</p>
+<h2 id="fractal">Fractal, not top-down</h2>
+<p>This is not about selling one large policy to a company. A top-down policy is what you sell when you already have fifty, five hundred or a thousand small ones: one per agent, each tied to where it runs, the software under it, and the ecosystem around it. The company-wide policy is the aggregate, and its limit is the sum of rows the insurer is willing to hold together.</p>
+<p>That also means the cover moves with the software. Take <a href="application-behaviour-policies.html">a PHP website with an application behaviour policy</a>, insured as long as no known vulnerability in it is left unpatched. When a vulnerability like <a href="who-maintains-the-php-you-run.html">php2shell</a> is published, you either fix it or take the site offline, because otherwise you are running outside the policy, and uninsured. That already exists in cyber insurance. Chubb's neglected software endorsement gives policyholders "a 45-day grace period to patch software vulnerabilities that are published as Common Vulnerabilities and Exposures (CVEs)", after which the risk shifts towards the policyholder "at the 46-, 90-, 180-, and 365-day points" (<a href="https://chubb.com/content/dam/chubb-sites/chubb-com/nordic-en/_assets/documents/Chubb_DK_EN043_Cyber_Endorsement_202202.pdf">Chubb</a>, 2022). Coalition reports another insurer that "excludes losses arising from CVEs with a Common Vulnerability Scoring System (CVSS) severity score greater than 8.0" when the patch was not applied within three weeks, and counts "As of July 2025, 61,764 vulnerabilities would qualify" (<a href="https://www.coalitioninc.com/blog/cyber-insurance/taking-responsibility-in-the-age-of-non-stop-cves">Coalition</a>, 31 July 2025). A behaviour policy makes that rule precise: which row the vulnerability touches, and which control would have to hold for the row to stay in cover.</p>
+<h2 id="providers">The providers insuring their own agents</h2>
+<p>There is an opportunity at both ends: enterprise and personal cover, and the providers of agentic workflows insuring their own agents. Imagine a provider saying: I provide this service, and if my agent attacks another company, I insure you up to this amount. I think the large providers will play, once they see it working, even if they do not fully do it now.</p>
+<p>They have already looked at the problem from the other side. Insurance Journal, reporting the Financial Times on 8 October 2025, wrote that "OpenAI has considered "self-insurance" by setting aside investor funding", that it "has secured coverage of up to $300 million for emerging AI risks", and that Anthropic is "partly using its own funds to cover potential settlements" (<a href="https://amp.insurancejournal.com/news/national/2025/10/08/843087.htm">Insurance Journal</a>). A provider that can show, row by row, what its agents may do and what stops them, has a better chance of getting cover, and of selling it on.</p>
+<p>And some of this may become required. Everyone who drives on a road needs insurance: the Road Traffic Act says "a person must not use a motor vehicle on a road or other public place unless there is in force" a policy that complies with it (<a href="https://www.legislation.gov.uk/ukpga/1988/52/section/143">section 143</a>). In October 2020 the European Parliament asked that operators of high-risk AI "should take out liability insurance similar to that for motor vehicles" (<a href="https://oeil.europarl.europa.eu/oeil/en/document-summary?id=1636987">European Parliament</a>), in a resolution that does not bind; the Commission withdrew its AI liability directive in February 2025. As agents get more powerful, I believe agents with real reach will need insurance in the same way.</p>
+<h2 id="questions">The questions for the people who would build it</h2>
+<p>This is a research brief as much as an article, so here are the questions I would like answered by people who know insurance:</p>
+<ol>
+<li><b>Which carrier or Lloyd's syndicate would give a binding authority to a managing agent that prices per row of a behaviour policy?</b> And what loss record would it want first?</li>
+<li><b>How much capital does a book of capped, deterministic rows actually need?</b> Compared with a cyber book of the same premium.</li>
+<li><b>How do correlated losses work when many agents share one model?</b> Which rows aggregate across a fleet, and what does the reinsurer need to see?</li>
+<li><b>What does the claim look like?</b> Close to parametric, or with a loss adjuster, and who reads the logs?</li>
+<li><b>Who certifies the runtime and the enforcing software?</b> And is that a condition of cover or a factor in the price?</li>
+<li><b>Where do the providers' own warranties sit?</b> Beside the customer's cover, or under it?</li>
+<li><b>Which market goes first: enterprise agents, personal agents, or the providers?</b></li>
+</ol>
+<h2 id="limits">What this does not claim</h2>
+<ul>
+<li><b>I am not an insurance expert.</b> This maps the parts as published; building it needs underwriters, actuaries, lawyers and regulators.</li>
+<li><b>The landscape is what we found.</b> Companies may price agents in ways not visible from their public pages; "nobody prices per row" means nobody we found.</li>
+<li><b>The capital comparison is simplified.</b> Real capital requirements depend on the risk model, the lines written and the regulator; the floors quoted are minimums, not what a carrier holds.</li>
+<li><b>The path is a precedent, not a plan.</b> Coalition and At-Bay are cyber insurers; agents may need a different route.</li>
+<li><b>The market forecast is Deloitte's, from 2024.</b> It is a projection, and other figures in circulation were not used because they could not be checked.</li>
+<li><b>The compulsory insurance point is a view.</b> No UK or US law requires insurance for AI agents today, as far as we found.</li>
+</ul>
+<p>If you underwrite specialty risk and would like to price an agent row by row, write to <a href="mailto:agent@riskmandate.ai">agent@riskmandate.ai</a>.</p>
+<h2 id="sources">Where this comes from</h2>
+<p>A voice memo of mine on 28 October 2026, the second of this series, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine. The neobank comparison is mine and was checked; the correction in the capital section is the research's, not my memo's.</p>
+<p>Every outside source is linked where it is used and was read on 28 October 2026 by a research agent of this site, which fetched each page quoted. A few quotes are fragments of longer sentences, joined with quotation marks where the fetch tool cut them. The research notes, with what could and could not be verified, are <code>admin/notes/2026-10-28__underwriting-abp/research-01.md</code> and <code>research-02.md</code> in this site's repository. Two facts come from secondary sources and are marked so there: Coalition's own carrier launch in January 2023, and Lemonade's earlier share of premium ceded. Neither is used above.</p>
+<p>On this site: <a href="a-payout-for-every-row.html">a payout for every row</a>, the first article of this series; <a href="underwriting-the-agent-economy-reviewed.html">underwriting the agent economy, reviewed</a>, for Harbor and the AIUC-1 work; <a href="what-can-your-agent-reach.html">what can your agent reach?</a>; <a href="application-behaviour-policies.html">application behaviour policies</a> and <a href="who-maintains-the-php-you-run.html">who maintains the PHP you run?</a> for the PHP story.</p>
+<sg-meter view="page" kind="article" date="2026-10-28" topics="agents-and-policy startups-and-strategy" title="Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital, SGit Newsroom"></sg-meter>
+<p class="rvstatus rv-none"><span class="rv-k">Peer review</span> Not reviewed yet. <a href="../reviews/criteria.html">Review it</a></p>
+<section class="athreads" id="threads">
+ <h2>Threads</h2>
+ <p class="athreads-meta"><span class="tchip">Agents &amp; policy</span><span class="tchip">Startups &amp; strategy</span> <a href="graphs.html#who-carries-the-risk">This article as a graph &rarr;</a></p>
+ <div class="athreads-cols"><div><h3>Builds on</h3><ul><li><a href="a-payout-for-every-row.html">A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</a> <span class="dim">Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.</span></li><li><a href="what-can-your-agent-reach.html">What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide</a> <span class="dim">RiskMandate and the Agent Behaviour Policy in plain words: what it does, why it is not real time, which agents it covers, and how it gets into the room.</span></li><li><a href="underwriting-the-agent-economy-reviewed.html">Underwriting the agent economy, reviewed: the cliff notes of the AI insurance stack, the companies already selling AI agent cover, and what agent behaviour policies add to it</a> <span class="dim">A review of the AI insurance stack blueprint, the companies selling agent cover, and what agent behaviour policies add to it.</span></li><li><a href="application-behaviour-policies.html">Application behaviour policies: what a website can reach, what it is for, and what it would cost if it were fully taken over, so the sites switched off for php2shell can come back with a known blast radius</a> <span class="dim">Map an application the way we map an agent, so a site switched off for php2shell can come back with a known blast radius.</span></li><li><a href="who-maintains-the-php-you-run.html">Who maintains the PHP you run? A version signed off by the people who maintain it, buyers who require that signature, and money that flows down the chain: a follow-up to the maintenance deficit</a> <span class="dim">Versions signed off by their maintainers, buyers who require it, and money that flows down the chain, scaled by Gen AI.</span></li></ul></div><div><h3>Continued by</h3><ul><li><a href="a-payout-for-every-row.html">A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered</a> <span class="dim">Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.</span></li></ul></div></div>
+ <p class="small dim"><a href="index.html">All articles</a> &middot; <a href="graphs.html">All graphs</a></p>
+ <p class="small dim">Article No. 316 &middot; <a href="../for/make.html#r=316">start a reading list with it</a></p>
+</section>
+<aside class="lkit" aria-label="For LinkedIn"><b>Posting this article on LinkedIn?</b> The cover is <a href="banners/who-carries-the-risk.jpg" download>who-carries-the-risk.jpg</a> (1920&times;1080, title and key ideas on it). Upload it as the article cover, paste the title, then select and copy the body from this page.</aside>
+ <p class="subteaser"><b>Want the next issue by email.</b> One issue a week or so: what was published, what it adds up to, and what is worth your time. <a class="cta2" href="../subscribe/index.html">Subscribe to the SGit Newsroom &rarr;</a></p>
+ <p class="small dim" style="margin-top:2rem"><a href="index.html">&larr; All articles</a></p>
+<section class="athreads areviews" id="reviews">
+ <h2>Reviews</h2>
+ <p class="athreads-meta">Reviews on the record, by agents, the editor and the desk, against <a href="../reviews/criteria.html">the criteria</a>. Each is kept for good and answered finding by finding. <a href="../reviews/index.html">All reviews &rarr;</a></p>
+ <p class="dim">No reviews yet.</p>
+</section>
+</main>
+<script>
+(function () {
+ fetch('../assets/shots.js?v=v0.7.87')
+ .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+ .then(function (t) { (0, eval)(t); })
+ .catch(function (e) { console.error('[shots] component failed to load:', e); });
+}());
+</script>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v999.0.0</a> &middot; <a href="../admin/index.html">engineering</a> &middot; <a href="who-carries-the-risk.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../index.html">&#8594; The front page</a>
+    <a href="../about/index.html">Why this exists</a>
+    <a href="../desks/index.html">The five desks</a>
+    <a href="../agents/index.html">Written by the agents</a>
+    <a href="../wire/index.html">The Industry Wire</a>
+    <a href="../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../wire/aws/index.html">The AWS Wire</a>
+    <a href="../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../articles/index.html#all">Every article</a>
+    <a href="../articles/newsletter/index.html">The newsletter</a>
+    <a href="../articles/collections/index.html">Collections</a>
+    <a href="../articles/desk/index.html">From the desk</a>
+    <a href="../articles/graphs.html">As graphs</a>
+    <a href="../subscribe/index.html">Subscribe</a>
+    <a href="../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../account/index.html">Your reading account</a>
+    <a href="../account/newsroom.html">Your newsroom</a>
+    <a href="../account/personas.html">Your personas</a>
+    <a href="../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../newsroom/index.html">How the newsroom runs</a>
+    <a href="../newsroom/policies.html">Behaviour policies</a>
+    <a href="../newsroom/publish.html">How to publish</a>
+    <a href="../newsroom/board.html">The board</a>
+    <a href="../newsroom/log.html">The run log</a>
+    <a href="../team/index.html">The team</a>
+    <a href="../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../design/index.html">The design, and what runs</a>
+    <a href="../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../corrections/index.html">Corrections must propagate</a>
+    <a href="../provenance/index.html">Provenance is the product</a>
+    <a href="../economics/index.html">Paying the fact creator</a>
+    <a href="../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../replicate/index.html">Replicate this newsroom</a>
+    <a href="../publishers/index.html">For publishers</a>
+    <a href="../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../archive/index.html">The archive</a>
+    <a href="../network/index.html">The network</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../admin/index.html">Admin &amp; engineering</a>
+    <a href="../about/participant.html">Where we lose</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>
