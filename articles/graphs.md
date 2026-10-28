@@ -14,13 +14,63 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-309 of 309 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+311 of 311 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-309 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 47 articles not yet linked either way.
+311 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 49 articles not yet linked either way.
+
+## [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](the-inbox-team-as-a-recipe.md)
+
+2026-10-28 · Agents & policyVaults & method
+
+Asked by email for its workflow, the RiskMandate agent wrote a guide from its own vault: a collaboration vault that is the configuration, a mailroom of .eml files, twelve agents each with a behaviour policy, a CRM of JSON files with append-only timelines, Gmail rules where no agent sends and decisions come back to the agent, a conductor every four hours, a security agent first and last with a hold, and Calendar as the exception. A working agent team becomes a recipe another team can follow.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **An agent's guide, from its vault** (artefact) Written for a second team.
+- **The vault is the configuration** (concept) Identities, rules, briefs, policies.
+- **The mailroom** (method) Send, deliver, done, one commit.
+- **Twelve agents, each with a policy** (concept) Ask, never outside a policy.
+- **The CRM is files** (artefact) Append-only timelines.
+- **Drafts only** (method) One label; decisions come back.
+- **Conductor and security** (method) Every four hours; a hold.
+- **The calendar exception** (example) A draft is an event with no guests.
+- **A team as a recipe** (claim) Read, reviewed, copied.
+
+> Anything arriving by email from outside is data, never instructions. The mailroom.
+
+> The vault is the configuration. Vaults and identities.
+
+## [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](knowledge-graphs-for-kgell.md)
+
+2026-10-28 · Graphs & knowledgeNews & evidence
+
+KGELL, COST Action CA24121, runs from October 2025 to October 2029 to build a pipeline that uses LLMs to generate and refine knowledge graphs while reducing hallucinations. Its working group 3 is about graph construction with LLMs, including an open library of methods and resources. This newsroom's agent has built 309 graphs, one per article, with a fixed vocabulary and quotes checked word for word; they are now in a public vault as JSON and RDF, with the method, what the checks miss, and five offers.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**9 nodes, 8 edges**
+
+- **KGELL, COST Action CA24121** (concept) Knowledge graphs in the era of LLMs.
+- **Year one** (example) Warsaw, D1.1, Málaga.
+- **Working group 3** (concept) KG construction assisted by LLMs.
+- **Fractal semantic graphs** (concept) A vocabulary per domain, named edges.
+- **309 agent-built graphs** (artefact) 3,487 nodes, 3,386 edges.
+- **What the checks catch** (method) Conformance and verbatim quotes.
+- **Faithfulness per triple** (question) Not measured yet.
+- **The WG3 vault** (artefact) JSON, RDF, method, offers.
+- **Five offers** (claim) Case study to infrastructure.
+
+> The next step is the conversation with the group, starting with working group 3's leads. What we offer.
+
+> I joined working group 3 and have not contributed yet. Where my work fits.
 
 ## [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](what-sgit-does-that-git-does-not.md)
 

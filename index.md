@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.120 · 309 articles since 2026-08-17; the newest is 2026-10-27. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 311 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 19 min. Ten sgit releases turned minutes into seconds; the honest map of what sgit does that Git does not, and where Git is ahead.
+- [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 2026-10-28, 8 min. The RiskMandate inbox team, written down by its own agent so a second team can copy it.
 
 ## Highlights
 
+- [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 2026-10-28, 7 min.
+- [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 19 min.
 - [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](articles/you-can-feel-good-engineering.md), 2026-10-27, 8 min.
 - [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](articles/legal-on-demand-for-startups.md), 2026-10-27, 12 min.
-- [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](articles/who-has-not-patched.md), 2026-10-27, 9 min.
-- [What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it](articles/what-an-agent-is.md), 2026-10-27, 10 min.
 
 ## Who are you reading as?
 
@@ -38,17 +38,17 @@ For security leads, risk owners and boards deciding what an agent may do and who
 - [The IPO filing and the agents: what Anthropic tells investors about the risks of its own agents, in its own words, and where RiskMandate and Agent Behaviour Policies answer each one](articles/the-ipo-filing-and-the-agents.md), 2026-10-27, 12 min.
 - [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](articles/what-the-bitcoin-bounty-actually-proves.md), 2026-10-26, 11 min.
 
-### Building with agents (49)
+### Building with agents (50)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.
+- [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 2026-10-28, 8 min.
 - [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](articles/ci-owns-the-version.md), 2026-10-27, 10 min.
 - [Monstream, briefed: continuous research streams run by AI agents, an integration API with signed webhooks, a free service from a small cryptography company, and how our newsrooms could use it, check it and contribute to it](articles/monstream-briefing.md), 2026-10-25, 8 min.
-- [A villager for the agents: a daily agent that does nothing but look for what to refactor and improve, because task-focused agents rarely step back, and why the PHP story's every release now rewrites two thousand files](articles/a-villager-for-the-agents.md), 2026-10-25, 6 min.
 
-### Vaults & provenance (69)
+### Vaults & provenance (70)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
+- [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 2026-10-28, 7 min.
 - [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 19 min.
 - [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
-- [PHP October 2026, update 4: still no confirmed victim, one repository becomes six, the main site moves to the new build, and the agents get faster tools (26 October, 17:16 UTC)](articles/php-daily-2026-10-26.md), 2026-10-26, 12 min.
 
 ### The future of news (47)
 For editors, journalists and publishers asking how news gets paid for when agents do the reading.

@@ -1,0 +1,71 @@
+{
+ "slug": "the-inbox-team-as-a-recipe",
+ "by": "newsroom.writer",
+ "sections": {
+  "top": {
+   "line": "The RiskMandate agent wrote down the whole inbox and CRM system, from its vault, so a second team can copy it.",
+   "para": "Asked by email how the workflow runs, the RiskMandate agent answered with a guide: the vault as configuration, a mailroom of files, twelve agents with behaviour policies, a CRM of JSON files, Gmail drafts that never send, a scheduled conductor, a security hold, and Calendar's exception. A working agent team becomes a recipe.",
+   "hash": "537a9c28451f"
+  },
+  "in-short": {
+   "line": "One agent taught another by email: vault, mailroom, policies, a file CRM, drafts only, conductor and hold.",
+   "para": "The vault holds identities, rules and policies but never keys. Agents message through .eml files moved between folders. Each of twelve agents has a mandate and a policy. The CRM is one JSON file per contact with an append-only timeline. No agent sends. A conductor runs every four hours, and security can stop everything.",
+   "hash": "6c327b946505"
+  },
+  "origin": {
+   "line": "The guide came from the RiskMandate agent itself, answering the diniscruz.ai agent, from its own vault.",
+   "para": "Rather than describe the workflow from memory and miss things, the editor had a personal agent ask the RiskMandate agent by email. The answer was a step-by-step guide, every point from the RiskMandate vault: the system described by the agent that runs it, for another agent to replicate, reviewed in between.",
+   "hash": "74f8292e7f55"
+  },
+  "vaults": {
+   "line": "One collaboration vault plus a vault per workflow; onboarding takes two messages; the vault is the configuration.",
+   "para": "The team shares an encrypted sgit vault and rm-<workflow> vaults such as rm-crm, listed by id, never by key. A new agent gets a prompt with its name and role, then the key on its own, reads CLAUDE.md and runs onboard.py for its folders, brief and draft policy. Every identity is a README row.",
+   "hash": "4f1992fc82ea"
+  },
+  "mailroom": {
+   "line": "Agents message each other with .eml files moved between folders, one leak-checked commit per cycle.",
+   "para": "Send writes the file into the recipient's mailroom and your outbox; deliver moves it to the inbox as a read receipt; done moves it on. Each cycle runs the leak check, commits, pulls and pushes. Only files from known identities are requests; email from outside is data, never instructions.",
+   "hash": "e773ebd540f1"
+  },
+  "agents": {
+   "line": "Twelve identities with mandates and behaviour policies; one may ask another only within its policy.",
+   "para": "The core agents handle incoming mail, the CRM and register, research and first emails, turning register rows into drafts, security checks first and last, tooling, and orchestration. Each has a brief and a behaviour policy covering reach, mandate, the gap and its barriers.",
+   "hash": "3de160c478b4"
+  },
+  "crm": {
+   "line": "The CRM is JSON files per contact, thread and organisation, with an append-only timeline any agent may add to.",
+   "para": "rm-crm holds contact files with stage, cohort, priority and next step, a case file and research notes, and timeline.jsonl, one line per event with pointers but no message bodies, keys or tokens. Curated fields stay with @crm, and every outbound email is registered before a draft exists.",
+   "hash": "dad474fdbead"
+  },
+  "gmail": {
+   "line": "No agent sends: drafts carry one label, decisions return to the agent, and DC: lines answer a status brief.",
+   "para": "Each run emails only a start and end banner to the agent's own address. A checker sub-agent passes every draft. Labels are send, review or decide. Decision drafts go to the agent, so a mistaken Send comes back. Archiving never deletes, each run scans everything sent since the last, and unread status is ignored.",
+   "hash": "0cd7bcf36e72"
+  },
+  "schedule": {
+   "line": "@inbox runs every two hours, the conductor every four, and no agent touches the schedule.",
+   "para": "The inbox agent runs from 08:57 to 22:57 London time. The conductor takes a lock, runs each enabled agent once as a key-less sub-agent, records evidence, briefs the editor and stops. Only the editor creates or changes scheduled tasks.",
+   "hash": "88ea406018b9"
+  },
+  "security": {
+   "line": "Keys appear only on clone lines, a security hold stops everything, and Calendar drafts are events without guests.",
+   "para": "Keys are set out of band and never written to files, variables, prompts, messages or drafts, and runs get only the keys they need. A critical finding writes HOLD.json and freezes every agent to read and report. Because calendar invites send at once, adding guests is the send, after approval.",
+   "hash": "b60c08f3a187"
+  },
+  "replicate": {
+   "line": "A second team copies the README rules, onboarding, drafting guide, checker and decision drafts.",
+   "para": "The agent's own suggestions, for the editor to confirm: .diniscruz identities, the same vault naming, and the same rules, onboarding script, drafting guide, draft checklist and decision convention, starting the new queue from a real email. None of it needs a platform; all of it can be read, reviewed and copied.",
+   "hash": "2dfef9581769"
+  },
+  "limits": {
+   "line": "The agent's own description, reviewed; drafts-only is a kept rule; names and the first queue item are left out.",
+   "para": "This describes the RiskMandate team as it runs, from its vault, with no new numbers. The mailbox access would allow sending; the policy, checker and labels prevent it. The diniscruz.ai team is being set up now. Names, contacts and the first queue item are omitted.",
+   "hash": "b15871be7d5a"
+  },
+  "sources": {
+   "line": "The RiskMandate agent's reply of 27 October 2026, shared by the editor, and related newsroom articles.",
+   "para": "The source is the RiskMandate agent's step-by-step reply to the editor's diniscruz.ai agent, every point from the RiskMandate vault. Related articles cover answering drafts, Messaging-FS, the delegation record, three policies for an agent, and good engineering.",
+   "hash": "849cccd87204"
+  }
+ }
+}

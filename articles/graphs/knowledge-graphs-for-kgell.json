@@ -1,0 +1,152 @@
+{
+  "slug": "knowledge-graphs-for-kgell",
+  "teaser": "What the KGELL COST Action is doing, and 309 agent-built graphs offered to its working group on construction.",
+  "topics": [
+    "graphs-and-knowledge",
+    "news-and-evidence"
+  ],
+  "core_idea": "KGELL, COST Action CA24121, runs from October 2025 to October 2029 to build a pipeline that uses LLMs to generate and refine knowledge graphs while reducing hallucinations. Its working group 3 is about graph construction with LLMs, including an open library of methods and resources. This newsroom's agent has built 309 graphs, one per article, with a fixed vocabulary and quotes checked word for word; they are now in a public vault as JSON and RDF, with the method, what the checks miss, and five offers.",
+  "nodes": [
+    {
+      "id": "kgell",
+      "label": "KGELL, COST Action CA24121",
+      "kind": "concept",
+      "summary": "Knowledge graphs in the era of LLMs."
+    },
+    {
+      "id": "year",
+      "label": "Year one",
+      "kind": "example",
+      "summary": "Warsaw, D1.1, Málaga."
+    },
+    {
+      "id": "wg3",
+      "label": "Working group 3",
+      "kind": "concept",
+      "summary": "KG construction assisted by LLMs."
+    },
+    {
+      "id": "fsg",
+      "label": "Fractal semantic graphs",
+      "kind": "concept",
+      "summary": "A vocabulary per domain, named edges."
+    },
+    {
+      "id": "graphs",
+      "label": "309 agent-built graphs",
+      "kind": "artefact",
+      "summary": "3,487 nodes, 3,386 edges."
+    },
+    {
+      "id": "checks",
+      "label": "What the checks catch",
+      "kind": "method",
+      "summary": "Conformance and verbatim quotes."
+    },
+    {
+      "id": "gap",
+      "label": "Faithfulness per triple",
+      "kind": "question",
+      "summary": "Not measured yet."
+    },
+    {
+      "id": "vault",
+      "label": "The WG3 vault",
+      "kind": "artefact",
+      "summary": "JSON, RDF, method, offers."
+    },
+    {
+      "id": "offer",
+      "label": "Five offers",
+      "kind": "claim",
+      "summary": "Case study to infrastructure."
+    }
+  ],
+  "edges": [
+    {
+      "from": "wg3",
+      "to": "kgell",
+      "rel": "example-of"
+    },
+    {
+      "from": "year",
+      "to": "kgell",
+      "rel": "example-of"
+    },
+    {
+      "from": "fsg",
+      "to": "wg3",
+      "rel": "answers"
+    },
+    {
+      "from": "graphs",
+      "to": "wg3",
+      "rel": "answers"
+    },
+    {
+      "from": "checks",
+      "to": "graphs",
+      "rel": "depends-on"
+    },
+    {
+      "from": "gap",
+      "to": "checks",
+      "rel": "contrasts"
+    },
+    {
+      "from": "vault",
+      "to": "graphs",
+      "rel": "produces"
+    },
+    {
+      "from": "offer",
+      "to": "vault",
+      "rel": "extends"
+    }
+  ],
+  "links": {
+    "articles": [
+      "knowledge-that-maintains-itself",
+      "search-as-navigation"
+    ],
+    "pages": [],
+    "sites": [
+      "https://kgell-cost.eu/",
+      "https://www.cost.eu/actions/CA24121/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "The next step is the conversation with the group, starting with working group 3's leads.",
+      "why": "What we offer."
+    },
+    {
+      "text": "I joined working group 3 and have not contributed yet.",
+      "why": "Where my work fits."
+    },
+    {
+      "text": "What the checks do not do is the interesting part for working group 3",
+      "why": "309 graphs, and what the checks catch."
+    }
+  ],
+  "figures": [
+    {
+      "file": "kgl-action.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kgl-action.webp",
+      "caption": "KGELL, COST Action CA24121: four years, six working groups, and what its first year produced.",
+      "kind": "chart"
+    },
+    {
+      "file": "kgl-fit.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kgl-fit.webp",
+      "caption": "Working group 3's four tasks, and what the newsroom's graphs and vault bring to each.",
+      "kind": "chart"
+    },
+    {
+      "file": "kgl-vault.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/kgl-vault.webp",
+      "caption": "The KGELL WG3 vault: 309 graphs as JSON and RDF, the vocabulary, the method and the offers.",
+      "kind": "chart"
+    }
+  ]
+}
