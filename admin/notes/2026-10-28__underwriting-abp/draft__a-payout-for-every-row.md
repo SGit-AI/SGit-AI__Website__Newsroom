@@ -1,0 +1,130 @@
+---
+title: A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered
+date: 2026-10-28
+author: Dinis Cruz
+author_url: about/index.html
+summary: RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting. An insurer de-risks an action. When I insure the laptops and phones in my house against burglary, the insurer asks about the locks, where I live and where I keep things, sets a limit for any one item and a limit for the policy, leaves out the things it will not cover, and at the claim asks whether the doors were locked. If they were, it pays, up to the limit. Agents need exactly that, and an agent behaviour policy already has the shape: every capability the agent can reach is a row, the mandate says which rows the business authorised, and the delta between them is the reach nobody asked for. So the insurance policy is one-to-one with the behaviour policy: each row it names has its own limit (say £20,000 for corrupted customer records, £50,000 for leaked customer data), each row it does not name is excluded, and every real control on a row, one that something enforces, lowers that row's premium. A line in the prompt is not a control and earns nothing. The formula has to be deterministic, if this, then that, and the runtime the agent runs on is part of it. Start from the maximum: in a worked example, an uncontrolled support agent pays £69,850 a year for £80,000 of cover, insurable but hardly worth buying; with five enforced controls on a certified runtime it pays £6,720 for the same cover. The numbers are illustrative; the shape is the point, and the Licence to Operate vault on sgit.ai already runs a simulated version of it. This is the first of a series: next, who can underwrite this today.
+version: v999.0.0
+license: https://creativecommons.org/licenses/by/4.0/
+tags: insurance, underwriting, agent-behaviour-policy, riskmandate, licence-to-operate, cyber-insurance, premiums, controls, mandate, article
+status: published
+---
+
+!shot pr-rows.webp | images/ | One agent's behaviour policy as an insurance policy: a limit, controls and a premium per row. Illustrative. | comparison
+
+## In short {#in-short}
+
+- **An insurer de-risks an action, up to a limit, under conditions.** A house policy asks about the locks, caps any one item, leaves some things out, and pays if the conditions held.
+- **An agent behaviour policy already has that shape.** Each capability the agent can reach is a row; the mandate says which rows the business authorised.
+- **So the insurance is one-to-one with the policy.** Each row it names has its own limit; each row it does not name is excluded.
+- **Not everything is insurable, and that is the point.** The bigger the reach, the bigger the delta, and the delta is what no policy covers.
+- **The formula is deterministic.** If this control is enforced on this row, the rate falls by this factor; if it was not holding at the time of the loss, the row does not pay.
+- **Only enforced controls count.** A hook, a proxy, a capability removed from the grant. A line in the prompt earns nothing.
+- **Where the agent runs is part of the price.** A certified runtime lowers it; an uncertified one raises it, or ends the licence to operate.
+- **Start from the maximum and come down.** In the worked example, £69,850 a year for £80,000 of cover, uncontrolled; £6,720 with five enforced controls on a certified runtime.
+- **The first version already runs.** The Licence to Operate vault on sgit.ai simulates one agent's policy, with a band, a ceiling, a pool and a premium.
+- **Next in this series: who can underwrite this today.** And what the vendors of agents should cover themselves.
+
+## An insurer de-risks an action {#house}
+
+The question behind this series is simple to ask. RiskMandate writes agent behaviour policies, and the end of [the roadmap](/articles/the-riskmandate-roadmap.html) is agents an insurer can cover. So who would underwrite an agent behaviour policy, today, and what would they be underwriting? Before the first question, I would like to answer the second, because I think the answer is simpler than it usually gets made.
+
+Take a house. I have laptops and phones in it, and some jewellery, and I would like to be covered against burglary. The insurer asks where the house is, what kind of locks it has, and where I keep things. It sets a limit for the policy and a limit for any one item, and it asks me to list anything valuable above a certain value. It does not cover everything: a laptop worth £20,000 or a data centre in the spare room is not something a contents policy is built for. Then, when something is stolen, it asks the questions again: were the doors locked, was the phone left in plain view? If the conditions held, it pays, up to the limit.
+
+!shot pr-house.webp | images/ | A home contents policy and an agent behaviour policy, question by question. | comparison
+
+That is a very simple proposition, and it is what agents need. Not a policy for "AI", and not a questionnaire about the company's security programme, but a policy for one agent, in one deployment, that names what is at risk, the conditions, the limits, and what is left out.
+
+## Not every action is insurable, and that is the point {#uninsurable}
+
+An agent behaviour policy starts from the same place as the house: an inventory. [What can your agent reach?](/articles/what-can-your-agent-reach.html) explains it for the person who has to decide. The grant is everything the agent can technically do. The mandate is what the business actually asked it to do. The delta is the gap: inside the agent's reach, outside its authority.
+
+The [Licence to Operate vault](https://sgit.ai/demos/vaults/licence-to-operate/index.html) on sgit.ai makes it countable. Its support agent has a grant of 12 capabilities and a mandate of 4: read the customer record, search the help centre, generate an answer, draft a reply. The other 8, including `crm:write`, `crm:export`, `mail:send` and `shell:exec`, are in its reach and in nobody's mandate, and the vault says it plainly: no policy covers them.
+
+That is not a weakness of the idea. It is the idea. You are not going to insure every action of an agent, and the bigger its reach, the more of it will be uninsurable. What insurance can do is cover the rows you want covered, one by one, and leave the rest visibly outside. The vault even has a number for it: customer records are marked uninsurable above 20 per action.
+
+## One row, one limit {#one-to-one}
+
+So the insurance policy has the same rows as the behaviour policy. Take an agent connected to the customer database. It can make changes, so it can corrupt records or delete users; it can read them, so it can leak them; it answers customers, so it can tell them something wrong that they act on. Each of those is a row, and each row gets its own limit: up to £20,000 for customer records corrupted, up to £50,000 for customer data leaked, up to £10,000 for a wrong answer acted on.
+
+The lead figure is that policy, row by row. The last row is the one that matters most: `shell:exec` is in the agent's reach and there is no limit beside it, so it is excluded, at any price. If the business wants it covered, it has to name it, decide who accepts it, and put a control on it.
+
+This one-to-one mapping is what makes the rest work. A claim maps to a row; a row has a capability, a limit and the controls that stand in its way; each control has something that enforces it and a log that says whether it held. That is a graph, and it is the kind of graph we now build every day: [governs, enforces, attests](/articles/governs-enforces-attests.html) set out the three levels at which a rule is kept, and [approved business mandates](/articles/approved-business-mandates.html) why most companies already have the policies and need them turned into tested controls. With generative AI to read the systems and keep the graph current, a mapping at this level of detail is something that can be maintained at scale, and I think that is what will make this kind of insurance scale too.
+
+## The formula has to be deterministic {#formula}
+
+The underwriter's part is a formula, and it has to be exact: if this, then that. Here is the shape I have in mind, written down so it can be argued with:
+
+1. **A row with no limit is excluded.** If a capability is reachable and the policy names no limit for it, it is not covered.
+2. **Each row starts at a base rate.** The share of the limit that an uncontrolled agent would pay for that row in a year.
+3. **Each enforced control on a row multiplies its rate by a factor below one.** Write removed from the grant, a proxy that caps records per action, drafts only, an egress allow list, a hook that holds a reply for a person.
+4. **Where the agent runs multiplies every row.** Below one for a certified runtime, above one for an uncertified one.
+5. **The premium for a row is its limit times its rate.** The policy's premium is the sum.
+6. **A claim pays if the event maps to a row and every condition on that row held at the time, up to the row's limit.** If a condition was not holding, the row does not pay: the door was not locked.
+
+The rule that does the most work is in step 3: only an enforced control counts. RiskMandate's [licence to operate](https://riskmandate.ai/licence-to-operate.html) puts it as "A condition with nothing enforcing it is an expectation". We measured the difference in [an agent that may only chat](/articles/an-agent-that-may-only-chat.html): when a system prompt told the model to ignore it, the policy as a line in the prompt held 3 of 12 attacks; with a deny-all hook, 12 of 12. So in the formula, a line in the prompt gets a factor of 1. It may be good practice; it is not a control an insurer can price.
+
+The worked example is [in a data file](https://newsroom.sgit.ai/articles/data/a-payout-for-every-row__worked-example.json), computed by a short script, with every input in it. The factors are mine and illustrative; fitting them is what an underwriter does with loss data, and that is the part we do not have.
+
+## Start from the maximum and come down {#maximum}
+
+The formula makes one thing visible that I think matters commercially. You can still insure an uncontrolled agent; it is just expensive. In the worked example, a support agent with no enforced controls, on an uncertified runtime, pays £69,850 a year for £80,000 of cover, 87% of it. That is insurable and close to not worth buying, and it is not far from what I have seen in cyber insurance, where the premium can come near the payout. There is still a reason to pay it: when you need cover to operate at all, a contract or a regulator asking for it, the price of the cover is a cost of doing business.
+
+!shot pr-walk.webp | images/ | The annual premium for £80,000 of cover as enforced controls are added, one at a time. Illustrative. | comparison
+
+Then each real control brings it down. A certified runtime takes it to £50,800. Removing `crm:write` from the grant, to £39,280. Drafts only, with `mail:send` removed, to £22,280. At most 20 records per action, enforced by a proxy, to £11,440. Outbound traffic only to an allow list, to £8,720. Refunds and legal points held for a person, to £6,720: 8% of the cover. The line in the prompt, second in the figure, moves nothing.
+
+That is how cyber insurance should have worked, and mostly did not: it priced on a questionnaire about the company, filled in once a year, and never went down to the detail of what a given system could do and what stopped it. RiskMandate's [insurability page](https://riskmandate.ai/insurance.html) says the same thing more sharply: "Questionnaires describe. Evidence prices."
+
+## Insurers already price what they can measure {#measured}
+
+None of this is new to insurance. Wherever insurers can measure, they price on the measurement. 
+
+TELEMATICS_PARAGRAPH
+
+HEALTH_PARAGRAPH
+
+My argument is that the more mature an insurance line is, and the more data its insurers can measure, the more precisely it prices, and the more of the risk it is willing to take. Agents are unusual in how much can be measured: every tool call, every record read, every hook decision is logged by the systems that run them. The data an underwriter would need is already being produced. What is missing is the mapping from that data to a row and a limit.
+
+## Where the agent runs {#where}
+
+Some of the conditions are not about the agent at all, but about where it runs, the way a house policy asks for the postcode. There will be places where certification is needed: of the runtime, of the hooks and proxies that enforce the controls, down to the software they run on. If an agent runs somewhere that is not certified, either the premium goes up or the row is not covered.
+
+This is also where the licence to operate comes in. RiskMandate describes it as four facts and a date: the organisation as the authority, one agent in one deployment as the licensee, the behaviour policy as the instrument, and an interval after which it has to be renewed, with each condition beside the thing that enforces it. An insurer could reasonably make a current licence a condition of cover, and a change of runtime a reason to look again.
+
+## The licence to operate, simulated {#licence}
+
+We already have a working version of this, simulated. In the Licence to Operate vault, the policy is a rate table: a normal band, a threshold above which the agent has to ask, a ceiling per action, a pool with a reserve nobody can touch, and a premium per interval. A simulated support conversation offers three replies at every turn, one inside the band, one that draws on the pool, one outside cover, each with its cost before you choose: 1,400 tokens and 1 record for looking up the customer, 4,800 tokens and 3 records for reading two linked accounts as well, and `mail:send`, outside the mandate entirely. You can let the policy lapse, reinstate it, or trigger a repricing.
+
+At the top it asserts four things: licence held, mandate in force, policy paid, inside cover. All four can be lost. That is the top-up and the payout I had in mind, run in a browser. It is in credits, not money, and the vault says so on its surface: "Simulated. The terms are real files in this vault; the replies are scripted; the numbers are made up."
+
+## The vendors' share {#vendors}
+
+There is one more party I think has to carry some of this: the vendor that provides the agentic workflow. When a company buys an agent from a vendor, part of what goes wrong will be the vendor's, and I believe vendors will have to start backing their agents with cover of their own.
+
+VENDORS_PARAGRAPH
+
+## What comes next {#next}
+
+This article defines what would be underwritten. The series continues with the questions it leaves:
+
+1. **Who can underwrite an agent behaviour policy today, and what does that look like?** A research brief, starting from the companies in [underwriting the agent economy, reviewed](/articles/underwriting-the-agent-economy-reviewed.html), which already sell AI agent cover, and asking each what it would need to price per row.
+2. **What should the vendors of agents cover themselves?** What exists, and what a vendor's share of a row would look like.
+3. **The formula as a vault.** The rows, the limits, the factors and the claim rule as data, with a page that computes the premium for your own agent, so the formula can be argued with in numbers rather than in words.
+
+## What this does not claim {#limits}
+
+- **The numbers are illustrative.** Every limit, base rate and factor in the worked example is mine, chosen to show the shape; none is fitted to loss data, and an underwriter would set them differently.
+- **No insurer has agreed to this.** It is a definition of what we would like to have underwritten, not a product anyone sells.
+- **The formula is a sketch.** Real controls interact, losses correlate across agents that share a model, and a fleet needs an aggregate limit; a multiplier per control is the simplest form, not the right one.
+- **Certification of runtimes does not exist yet in this form.** Which body would certify a runtime, and against what, is open.
+- **The Licence to Operate vault is a simulation.** Its replies are scripted and its numbers are in credits; it shows the mechanism, not a price.
+- **The comparisons with other insurance are by analogy.** The sources for how motor, health and home insurers price are below, and each works under its own rules and regulators.
+
+If you underwrite, or would like to underwrite, the risk of one agent at a time, write to [agent@riskmandate.ai](mailto:agent@riskmandate.ai).
+
+## Where this comes from {#sources}
+
+A voice memo of mine on 28 October 2026, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine.
+
+SOURCES_PARAGRAPH
