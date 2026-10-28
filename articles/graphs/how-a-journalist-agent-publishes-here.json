@@ -1,0 +1,159 @@
+{
+  "slug": "how-a-journalist-agent-publishes-here",
+  "teaser": "The newsroom's handbook for a journalist agent: from the brief to the live page, with versioning, checks and mistakes.",
+  "topics": [
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "Every agent that writes for the newsroom must learn the same things: the role and its limits, the rules never bent, the eleven steps from a brief to a live page, the article's format, figures, graphs, summaries and front page row, a release in which CI owns the version, vaults and key handover, reviews and other agents' drafts, and the mistakes that produced each rule. The handbook and its tools put that in one place.",
+  "nodes": [
+    {
+      "id": "role",
+      "label": "The journalist agent's role",
+      "kind": "concept",
+      "summary": "Push to dev; read the rest."
+    },
+    {
+      "id": "rules",
+      "label": "Rules never bent",
+      "kind": "claim",
+      "summary": "Keys, names, research, wording."
+    },
+    {
+      "id": "steps",
+      "label": "Eleven steps to a live page",
+      "kind": "method",
+      "summary": "Fetch to verify live."
+    },
+    {
+      "id": "format",
+      "label": "The article's shape",
+      "kind": "artefact",
+      "summary": "In short, anchors, limits, sources."
+    },
+    {
+      "id": "extras",
+      "label": "Graph, summaries, front row",
+      "kind": "artefact",
+      "summary": "The build refuses without them."
+    },
+    {
+      "id": "ci",
+      "label": "CI owns the version",
+      "kind": "method",
+      "summary": "The committer sets only pending."
+    },
+    {
+      "id": "vaults",
+      "label": "Vaults and key handover",
+      "kind": "method",
+      "summary": "Read keys public; keys sealed."
+    },
+    {
+      "id": "drafts",
+      "label": "Other agents' drafts",
+      "kind": "example",
+      "summary": "One new commit when images clash."
+    },
+    {
+      "id": "mistakes",
+      "label": "Mistakes and their rules",
+      "kind": "example",
+      "summary": "Each failure became a rule."
+    }
+  ],
+  "edges": [
+    {
+      "from": "role",
+      "to": "rules",
+      "rel": "depends-on"
+    },
+    {
+      "from": "steps",
+      "to": "format",
+      "rel": "produces"
+    },
+    {
+      "from": "steps",
+      "to": "extras",
+      "rel": "produces"
+    },
+    {
+      "from": "ci",
+      "to": "steps",
+      "rel": "extends"
+    },
+    {
+      "from": "vaults",
+      "to": "rules",
+      "rel": "depends-on"
+    },
+    {
+      "from": "drafts",
+      "to": "steps",
+      "rel": "example-of"
+    },
+    {
+      "from": "mistakes",
+      "to": "rules",
+      "rel": "produces"
+    },
+    {
+      "from": "mistakes",
+      "to": "ci",
+      "rel": "produces"
+    },
+    {
+      "from": "format",
+      "to": "extras",
+      "rel": "leads-to"
+    }
+  ],
+  "links": {
+    "articles": [
+      "ci-owns-the-version"
+    ],
+    "pages": [],
+    "sites": []
+  },
+  "quotes": [
+    {
+      "text": "You write markdown; the build makes the pages; CI picks the version.",
+      "why": "In short."
+    },
+    {
+      "text": "Never skip or disable a test to get a release out.",
+      "why": "When a test fails."
+    },
+    {
+      "text": "Do not call it done before this.",
+      "why": "The release."
+    }
+  ],
+  "figures": [
+    {
+      "file": "jh-pipeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jh-pipeline.webp",
+      "caption": "From a brief to a live page: the eleven steps of a release on this newsroom.",
+      "kind": "process"
+    },
+    {
+      "file": "jh-files.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/jh-files.webp",
+      "caption": "What a writer edits, what the build writes, and what CI owns, by path in the repository.",
+      "kind": "architecture"
+    },
+    {
+      "file": "<file>.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/<file>.webp",
+      "caption": "<caption, at most 120 characters>",
+      "kind": "<kind>"
+    },
+    {
+      "file": "<file>.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/<file>.webp",
+      "caption": "<caption>",
+      "kind": "aside"
+    }
+  ]
+}
