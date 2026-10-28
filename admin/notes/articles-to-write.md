@@ -4,6 +4,13 @@
 
 ## Queued
 
+### An article brief: investor.sgit.ai, a website for investors and founders
+
+- **Added:** 28 October 2026. **Status:** collecting memos; not to be written until Dinis says the ideas are all in.
+- **Source:** Dinis's voice memos, kept word for word in `admin/notes/2026-10-28__investor-sgit-ai/` (memo-01 so far).
+- **First:** read the notebook-lm.sgit.ai items listed in memo-01 (the startup maturity model first), where to invest in
+  sgit, and sgit.ai's guidance for a new repository (CI owns the version; coding, nfrs and ux.sgit.ai).
+
 ### Maintaining the core platforms as a cost item in every project
 
 - **Added:** 24 October 2026. **Status:** queued, not started. Not to be mentioned as a coming article in published pages.
