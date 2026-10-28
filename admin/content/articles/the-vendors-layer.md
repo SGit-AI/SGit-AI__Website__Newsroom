@@ -6,11 +6,13 @@ author_url: about/index.html
 summary: The first two articles of this series described insuring an agent row by row from its behaviour policy, and who could carry that risk. This one is about a party I think has to carry some of it: the vendor that sells the agent. When a company buys an agentic workflow, part of what can go wrong is the company's own doing, the access it granted and the data it connected, and part is the vendor's, the model's answer, the guardrail that let something through. Cloud providers settled the same question years ago with a shared responsibility model: AWS calls it security of the cloud and security in the cloud. Agent vendors' published terms put almost all of it on the customer: Anthropic's and Salesforce's both cap liability at the fees paid in the previous twelve months, indemnify intellectual property claims, and leave it to the customer to decide whether outputs are appropriate or use is safe. Some vendors already back their products with money, and the most useful shape is Microsoft's: cover, as long as the customer used the guardrails the product provides. Europe is moving the line from 9 December 2026, when software, AI systems included, becomes a product under the new product liability directive, with no contractual cap against an injured person. So I propose the vendor's layer: in each row of a behaviour policy, a share the vendor carries when its own conditions held. In the worked example, of a £6,720 premium for £80,000 of cover, the vendor carries £1,816, mostly on the rows its product decides; the row the customer decided by granting write access stays the customer's. The formula, the inputs and a calculator are in a vault anyone can open.
 version: v0.13.126
 license: https://creativecommons.org/licenses/by/4.0/
-tags: insurance, underwriting, agent-behaviour-policy, riskmandate, vendors, liability, product-liability, shared-responsibility, vaults, article
+tags: insurance, underwriting, agent-behaviour-policy, riskmandate, vendors, liability, product-liability, shared-responsibility, vaults, insuring-agents, article
 status: published
 ---
 
 !shot vl-split.webp | images/ | Each row's premium split between the agent's vendor and the customer's insurer. Illustrative, from the vault. | comparison
+
+!trail insuring-agents
 
 > **What came next.** [Where to build the agent insurer](/articles/where-to-build-the-agent-insurer.html) asks where such a company should be built, and what a raise of £10 million or £50 million buys in cover.
 

@@ -6,11 +6,13 @@ author_url: about/index.html
 summary: In the last article I described insuring an agent row by row, from its behaviour policy. We have most of the pieces to put a number on it: the open behaviour policy, a way to map controls to agents and risks, the AIUC-1 standard as a graph on sgit.ai, and a deterministic formula. So the next questions are who sells this today, and what it would take to build a company that does. Today several companies sell AI agent cover: AIUC pairs a standard and audits with insurance, Armilla and Testudo write it as Lloyd's coverholders with limits up to $25 million and $9.25 million, Munich Re prices AI model performance itself, and Harbor distributes cover from surplus lines carriers. We found nobody pricing per row of a behaviour policy yet. The industry already has every part such a company needs: someone to measure, someone to price and bind, someone whose balance sheet pays, and someone who reinsures the tail. I thought it was mostly a capital problem, as I understood it was for neobanks, and asked to be corrected. Partly I was: many early neobanks needed little capital because they could not lend, and their hard part was the licence and the build-out. For an insurance carrier, capital is the business: enough to survive a one-in-two-hundred-year year. But the first company does not need to be a carrier. Coalition and At-Bay started by pricing on other insurers' capital and bought carriers later. So a company built on open behaviour policies could start small, with niche agents, agents in QA, or cover for a few per cent of users, and earn the record that brings capital, then the large providers insuring their own agents. Cover that lapses with an unpatched known vulnerability already exists, which is where this connects to the PHP story.
 version: v0.13.124
 license: https://creativecommons.org/licenses/by/4.0/
-tags: insurance, underwriting, agent-behaviour-policy, riskmandate, mga, capital, reinsurance, aiuc, startups, article
+tags: insurance, underwriting, agent-behaviour-policy, riskmandate, mga, capital, reinsurance, aiuc, startups, insuring-agents, article
 status: published
 ---
 
 !shot ck-chain.webp | images/ | The four parts of an insurer for agent behaviour policies, and who already does each one today. | diagram
+
+!trail insuring-agents
 
 > **What came next.** [The vendor's layer](/articles/the-vendors-layer.html) gives each row a share the agent's vendor carries, and puts the formula and a calculator in a vault.
 
