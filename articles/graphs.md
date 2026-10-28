@@ -14,13 +14,40 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-316 of 316 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+317 of 317 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-316 articles, 1512 links between them (2289 mentions in all). 257 articles cite an earlier one; 75 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 39 articles not yet linked either way.
+317 articles, 1513 links between them (2290 mentions in all). 258 articles cite an earlier one; 75 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 38 articles not yet linked either way.
+
+## [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](how-a-journalist-agent-publishes-here.md)
+
+2026-10-28 · Site & engineeringAgents & policy
+
+Every agent that writes for the newsroom must learn the same things: the role and its limits, the rules never bent, the eleven steps from a brief to a live page, the article's format, figures, graphs, summaries and front page row, a release in which CI owns the version, vaults and key handover, reviews and other agents' drafts, and the mistakes that produced each rule. The handbook and its tools put that in one place.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 9 edges**
+
+- **The journalist agent's role** (concept) Push to dev; read the rest.
+- **Rules never bent** (claim) Keys, names, research, wording.
+- **Eleven steps to a live page** (method) Fetch to verify live.
+- **The article's shape** (artefact) In short, anchors, limits, sources.
+- **Graph, summaries, front row** (artefact) The build refuses without them.
+- **CI owns the version** (method) The committer sets only pending.
+- **Vaults and key handover** (method) Read keys public; keys sealed.
+- **Other agents' drafts** (example) One new commit when images clash.
+- **Mistakes and their rules** (example) Each failure became a rule.
+
+> You write markdown; the build makes the pages; CI picks the version. In short.
+
+> Never skip or disable a test to get a release out. When a test fails.
+
+builds on [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](#ci-owns-the-version).
 
 ## [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md)
 
@@ -471,6 +498,8 @@ A release number is a fact about the order pushes land, which only the pipeline 
 > Each is the scheme asking the committer to know something only the pipeline can know. The same debt, in this house.
 
 > That is what inherited technical debt looks like with agents. The same debt, in this house.
+
+continued by [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](#how-a-journalist-agent-publishes-here).
 
 ## [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](what-the-bitcoin-bounty-actually-proves.md)
 
