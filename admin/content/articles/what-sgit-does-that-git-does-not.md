@@ -107,7 +107,7 @@ My memo for this article listed "packs, the path, the ability to have selective 
 - **Packs.** Git has stored and transferred packs from its early days, and they are delta-compressed, which sgit's are not. Keeping received packs whole, as `--pack-store` does, is Git's default above `fetch.unpackLimit`. What is different is that sgit's packs are ciphertext on plain object storage, with no Git server.
 - **The path.** `clone --path` is close to Git's partial clone plus sparse-checkout, which is mature and used at very large scale. sgit's differences: it works against ciphertext on S3, it refuses a commit outside the scope by name, and two scoped clones in different folders never conflict.
 - **Selective working copies.** `git clone --no-checkout` has existed for years. sgit's addition is the agent loop: `pull --no-checkout`, then `checkout --since-pull`, so an agent writes the few hundred files that changed instead of 79,000.
-- **Committing some files, or some hunks.** `sgit commit <paths>` and `sgit write` commit the files you name and leave other edits alone, as `git commit -- <paths>` does; since 0.27.0, `commit -p` commits parts of a file, and `--list-hunks` and `--hunk` let an agent pick hunks by number. There is no persistent staging area, by design.
+- **Committing named files, and now hunks.** `sgit write` commits the files you name, atomically, and leaves other edits alone: Git's `git commit <paths>`, in the form an agent needs. Since 0.27.0, `sgit commit` takes paths too, `commit -p` commits parts of a file, and `--list-hunks` and `--hunk` let an agent pick hunks by number. There is no persistent staging area, by design.
 - **History tools.** `history log` with `--grep`, `--since`, `--until`, `--author`, `--file`, `--patch` and `--stat`; `history diff`, `show`, `reflog`, `undo`, `revert` and `reset`; `commit --amend`, stash and signed tags; and since 0.27.0, `history blame`, `sgit grep` over the working copy or any revision, `log -S` and `-G`, and rename detection with `log --follow`.
 - **Shallow clones, private branches and signed commits** all have Git equivalents, and sgit has them: `clone --depth`, `fetch --unshallow`, combinable with `--path`, and a key per clone; since 0.27.0, also a signature with your own SSH or OpenPGP key, verified against your allowed signers, beside the clone's own.
 
@@ -122,7 +122,7 @@ These were real gaps when I wrote the first version of this map, and most of the
 **Closed in sgit-ai 0.27.0, 28 October**, each checked by the CLI's build agent against Git's own output:
 
 - **Line-level merges.** `pull --merge lines` and `branch merge --merge lines`, with Git's conflict markers; opt-in, with the whole-file `.conflict` still the default. 4,500 random merges were byte-identical to `git merge-file`.
-- **Partial commits.** `commit <paths>`, `commit -p`, and `--list-hunks` and `--hunk` for agents.
+- **Partial commits.** `commit` with paths, `commit -p`, and `--list-hunks` and `--hunk` for agents.
 - **Signing with your own key.** `commit -S`, signed tags, merges and reverts, with SSH or OpenPGP keys, verified against the allowed signers in your Git configuration. It is a second signature beside the clone's own.
 - **Rename detection,** a port of Git's: 90 of 90 pairs equal `git diff -M --name-status`.
 - **Blame:** 25 of 25 files equal `git blame --porcelain`.
