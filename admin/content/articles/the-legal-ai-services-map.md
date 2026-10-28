@@ -4,7 +4,7 @@ date: 2026-10-28
 author: Dinis Cruz
 author_url: about/index.html
 summary: Which companies sell legal work done by AI, by AI and lawyers together, or by lawyers with AI help, and can an agent hire any of them? I asked this site's agent to map them in the style of an analyst's quadrant, but with a method fixed before any company was scored, a formula anyone can re-run, and the evidence for every score kept in a public vault. Three scores, from public evidence only. Automation: how much of the work AI does. Accountability: whether a regulated firm and a named lawyer stand behind the output. Agentic readiness: an API, an MCP server, llms.txt, whether AI crawlers are allowed, published prices. Of 44 companies, 24 services and one reference are on the map; tools sold to lawyers are scored apart. Two services sit where AI does the work and a lawyer stands behind it: Garfield.Law, the UK's first SRA-authorised AI law firm, and Crosby. Three expose an agent interface: Soxton, whose MCP server lets an agent file an incorporation, LegalZoom and Rocket Lawyer. None of them has all three, which is where our own proposal, legal on demand for startups, sits as a target, not a competitor.
-version: v999.0.0
+version: v0.13.122
 license: https://creativecommons.org/licenses/by/4.0/
 tags: legal, ai, law-firms, agents, mcp, startups, regulation, vaults, evidence, article
 status: published

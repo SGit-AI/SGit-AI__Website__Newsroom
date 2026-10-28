@@ -4,7 +4,7 @@ date: 2026-10-28
 author: Dinis Cruz
 author_url: about/index.html
 summary: If money goes into sgit, where should it go? The tool and its open format, a hub for vaults (SGitHub, the way GitHub is for code and Hugging Face for models), or open core in the GitLab style? I asked this site's agent to look at it as an investor would, with the history of developer platforms, what they were worth and how they captured the value, the state of sgit on 28 October 2026, and the evidence of use, including what is not there yet. The history says the network beats the host (SourceForge sold for about $20M, GitHub for $7.5B), registries struggle alone, hosting is where open source gets paid, and the hub of public work is the moat (Hugging Face, $12.93B to Nvidia, pending). Git is under strain from agents (Anthropic replaced it with Scion), and capital is following (Entire's $60M seed). My answer is the hub, with the format open and self-hosting always possible. The deck, the thesis, three business plans, the data and the evidence are in a public vault that runs as an app, and is meant to be forked for each investor.
-version: v999.0.0
+version: v0.13.122
 license: https://creativecommons.org/licenses/by/4.0/
 tags: sgit, investment, startups, open-source, platforms, vaults, sgithub, pitch, article
 status: published
