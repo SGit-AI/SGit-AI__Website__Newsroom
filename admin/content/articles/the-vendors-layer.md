@@ -12,6 +12,8 @@ status: published
 
 !shot vl-split.webp | images/ | Each row's premium split between the agent's vendor and the customer's insurer. Illustrative, from the vault. | comparison
 
+> **What came next.** [Where to build the agent insurer](/articles/where-to-build-the-agent-insurer.html) asks where such a company should start, and what it would cost: about £4 million as a managing agent, then capital that follows from the limits sold.
+
 ## In short {#in-short}
 
 - **Part of an agent's risk belongs to the vendor that sells it.** The model's answer and the guardrail that let something through are the vendor's product; the access granted and the data connected are the customer's.
