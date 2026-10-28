@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-28 | published | 1,920 | first published | this release | [current](../the-inbox-team-as-a-recipe.md) |
+| **v1.0.0** | 2026-10-28 | published | 1,920 | first published | [`16afeefc5`](https://github.com/SGit-AI/SGit-AI__Website/commit/16afeefc5d8d4df2e9e8b1afd87532c6fdabc763) | [current](../the-inbox-team-as-a-recipe.md) |
 
 [← Back to the article](../the-inbox-team-as-a-recipe.md) · [All articles](../index.md)
 

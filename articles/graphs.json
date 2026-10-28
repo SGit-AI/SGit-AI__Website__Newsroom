@@ -55,6 +55,418 @@
   ],
   "articles": [
     {
+      "slug": "where-to-invest-in-sgit",
+      "title": "Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault",
+      "date": "2026-10-28",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/where-to-invest-in-sgit.html",
+      "markdown": "https://newsroom.sgit.ai/articles/where-to-invest-in-sgit.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/where-to-invest-in-sgit.webp",
+      "teaser": "Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.",
+      "topics": [
+        "startups-and-strategy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "sgit",
+        "investment",
+        "startups",
+        "open-source",
+        "platforms",
+        "vaults",
+        "sgithub",
+        "pitch",
+        "article"
+      ],
+      "links_out": [
+        "scion-and-sgit",
+        "open-source-so-you-keep-it",
+        "a-tangent-that-shipped",
+        "what-sgit-does-that-git-does-not",
+        "one-vault-ten-agents",
+        "the-inbox-team-as-a-recipe",
+        "our-first-pr-in-ruflo",
+        "knowledge-graphs-for-kgell",
+        "from-send-to-sgit"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "inv-paths.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-paths.webp",
+          "caption": "Three ways to build a company on sgit, and the companies that went each way before.",
+          "kind": "chart"
+        },
+        {
+          "file": "inv-strain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-strain.webp",
+          "caption": "The companies that outgrew Git built their own; startups building version control for agents are being funded.",
+          "kind": "chart"
+        },
+        {
+          "file": "inv-history.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-history.webp",
+          "caption": "What developer platforms were worth, and how they captured it, on a log scale.",
+          "kind": "chart"
+        },
+        {
+          "file": "inv-velocity.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-velocity.webp",
+          "caption": "Commits per month on the CLI's dev branch and releases per month on PyPI, March to October 2026.",
+          "kind": "chart"
+        },
+        {
+          "file": "inv-parity.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-parity.webp",
+          "caption": "Git parity on 28 October 2026, from the CLI team's roadmap.",
+          "kind": "chart"
+        },
+        {
+          "file": "inv-use.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-use.webp",
+          "caption": "sgit in use, measured, and what is not there yet.",
+          "kind": "chart"
+        },
+        {
+          "file": "inv-timeline.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-timeline.webp",
+          "caption": "From sending a file to a hub for vaults: the concepts in the order they arrived in 2026.",
+          "kind": "chart"
+        },
+        {
+          "file": "inv-deck.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/inv-deck.webp",
+          "caption": "The investor deck, running from its vault: the title slide and the three business plans side by side.",
+          "kind": "screenshot"
+        }
+      ],
+      "graph": {
+        "slug": "where-to-invest-in-sgit",
+        "teaser": "Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.",
+        "topics": [
+          "startups-and-strategy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Three places to put investment in sgit: the tool and open format, a hub for vaults (SGitHub), or open core. The history of developer platforms says the network beats the host, registries struggle alone, hosting is where open source gets paid, and the hub of public work is the moat. Git is under strain from agents and capital is following. The answer is the hub, with the format open and self-hosting support as the bridge; the deck, thesis, plans and evidence are a public vault forked per investor.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "Where to invest",
+            "kind": "question",
+            "summary": "The tool, the hub, or open core."
+          },
+          {
+            "id": "history",
+            "label": "Platform history",
+            "kind": "example",
+            "summary": "SourceForge to Hugging Face."
+          },
+          {
+            "id": "network",
+            "label": "The network beats the host",
+            "kind": "claim",
+            "summary": "GitHub $7.5B, SourceForge about $20M."
+          },
+          {
+            "id": "hosting",
+            "label": "Hosting gets paid",
+            "kind": "claim",
+            "summary": "MongoDB, Supabase, Vercel."
+          },
+          {
+            "id": "strain",
+            "label": "Git under strain",
+            "kind": "example",
+            "summary": "Anthropic's Scion; git-for-agents rounds."
+          },
+          {
+            "id": "state",
+            "label": "sgit today",
+            "kind": "artefact",
+            "summary": "99 releases, parity mostly done."
+          },
+          {
+            "id": "gap",
+            "label": "No paying customer yet",
+            "kind": "question",
+            "summary": "Most use is our own."
+          },
+          {
+            "id": "hub",
+            "label": "SGitHub, the hub",
+            "kind": "claim",
+            "summary": "Format open, self-host possible."
+          },
+          {
+            "id": "vault",
+            "label": "The deck as a vault",
+            "kind": "artefact",
+            "summary": "Forked per investor."
+          }
+        ],
+        "edges": [
+          {
+            "from": "history",
+            "to": "network",
+            "rel": "produces"
+          },
+          {
+            "from": "history",
+            "to": "hosting",
+            "rel": "produces"
+          },
+          {
+            "from": "network",
+            "to": "hub",
+            "rel": "depends-on"
+          },
+          {
+            "from": "hosting",
+            "to": "hub",
+            "rel": "depends-on"
+          },
+          {
+            "from": "strain",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "hub",
+            "to": "question",
+            "rel": "answers"
+          },
+          {
+            "from": "state",
+            "to": "hub",
+            "rel": "depends-on"
+          },
+          {
+            "from": "gap",
+            "to": "state",
+            "rel": "contrasts"
+          },
+          {
+            "from": "vault",
+            "to": "hub",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "scion-and-sgit",
+            "what-sgit-does-that-git-does-not",
+            "a-tangent-that-shipped",
+            "one-vault-ten-agents",
+            "the-inbox-team-as-a-recipe",
+            "our-first-pr-in-ruflo",
+            "knowledge-graphs-for-kgell",
+            "from-send-to-sgit",
+            "open-source-so-you-keep-it"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.anthropic.com/research/redesigning-source-control",
+            "https://sgit.ai/investors/",
+            "https://cli.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "My answer is the hub.",
+            "why": "Three paths, and my answer."
+          },
+          {
+            "text": "Everything is in a public vault, and the vault is the pitch.",
+            "why": "The deck is a vault."
+          },
+          {
+            "text": "There is no paying customer of sgit itself",
+            "why": "Real use, and what is not there yet."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "the-legal-ai-services-map",
+      "title": "The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault",
+      "date": "2026-10-28",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-legal-ai-services-map.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-legal-ai-services-map.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-legal-ai-services-map.webp",
+      "teaser": "44 legal companies scored on who does the work, who stands behind it, and whether an agent can hire them.",
+      "topics": [
+        "startups-and-strategy",
+        "news-and-evidence"
+      ],
+      "tags": [
+        "legal",
+        "ai",
+        "law-firms",
+        "agents",
+        "mcp",
+        "startups",
+        "regulation",
+        "vaults",
+        "evidence",
+        "article"
+      ],
+      "links_out": [
+        "legal-on-demand-for-startups"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "lm-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lm-map.webp",
+          "caption": "Legal services that use AI: automation across, accountability up, agentic readiness as the size of the mark.",
+          "kind": "chart"
+        },
+        {
+          "file": "lm-agentic.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/lm-agentic.webp",
+          "caption": "Agentic readiness: which services and tools an agent can use, and how.",
+          "kind": "chart"
+        }
+      ],
+      "graph": {
+        "slug": "the-legal-ai-services-map",
+        "teaser": "44 legal companies scored on who does the work, who stands behind it, and whether an agent can hire them.",
+        "topics": [
+          "startups-and-strategy",
+          "news-and-evidence"
+        ],
+        "core_idea": "A map of companies selling legal work done with AI, built with a method fixed before scoring and a formula anyone can re-run, from public evidence only, with every score's URL and quote and the page captures in a public vault. Automation, accountability and agentic readiness are scored from fourteen indicators. Garfield.Law and Crosby combine AI doing the work with a lawyer standing behind it; Soxton, LegalZoom and Rocket Lawyer can be used by an agent; none has both, which is where the newsroom's proposal of legal on demand sits as a target.",
+        "nodes": [
+          {
+            "id": "question",
+            "label": "Who sells legal work done with AI",
+            "kind": "question",
+            "summary": "And can an agent hire them?"
+          },
+          {
+            "id": "method",
+            "label": "A method fixed before scoring",
+            "kind": "method",
+            "summary": "Fourteen indicators, public evidence."
+          },
+          {
+            "id": "scores",
+            "label": "Automation, accountability, agentic readiness",
+            "kind": "concept",
+            "summary": "Three scores out of 100."
+          },
+          {
+            "id": "signed",
+            "label": "AI does the work, a lawyer signs",
+            "kind": "example",
+            "summary": "Garfield.Law and Crosby."
+          },
+          {
+            "id": "agentic",
+            "label": "An agent can hire them",
+            "kind": "example",
+            "summary": "Soxton, LegalZoom, Rocket Lawyer."
+          },
+          {
+            "id": "regulation",
+            "label": "Different rules in each country",
+            "kind": "concept",
+            "summary": "SRA ahead; US unlicensed-practice rules."
+          },
+          {
+            "id": "gap",
+            "label": "Nobody has both",
+            "kind": "claim",
+            "summary": "The gap on the map."
+          },
+          {
+            "id": "north",
+            "label": "Legal on demand",
+            "kind": "claim",
+            "summary": "Our proposal, a target, not ranked."
+          },
+          {
+            "id": "vault",
+            "label": "The evidence vault",
+            "kind": "artefact",
+            "summary": "Captures, hashes, scores."
+          }
+        ],
+        "edges": [
+          {
+            "from": "method",
+            "to": "scores",
+            "rel": "produces"
+          },
+          {
+            "from": "scores",
+            "to": "signed",
+            "rel": "produces"
+          },
+          {
+            "from": "scores",
+            "to": "agentic",
+            "rel": "produces"
+          },
+          {
+            "from": "signed",
+            "to": "gap",
+            "rel": "contrasts"
+          },
+          {
+            "from": "agentic",
+            "to": "gap",
+            "rel": "contrasts"
+          },
+          {
+            "from": "regulation",
+            "to": "signed",
+            "rel": "depends-on"
+          },
+          {
+            "from": "north",
+            "to": "gap",
+            "rel": "answers"
+          },
+          {
+            "from": "vault",
+            "to": "method",
+            "rel": "depends-on"
+          },
+          {
+            "from": "question",
+            "to": "scores",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "legal-on-demand-for-startups"
+          ],
+          "pages": [],
+          "sites": [
+            "https://www.sra.org.uk/sra/news/press/garfield-ai-authorised/",
+            "https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "Nobody combines a regulated signature with an agent interface.",
+            "why": "Walking back from the North Star."
+          },
+          {
+            "text": "No evidence means the lowest value, never a guess.",
+            "why": "Why a map."
+          },
+          {
+            "text": "Prices per task are rare.",
+            "why": "Walking back from the North Star."
+          }
+        ]
+      }
+    },
+    {
       "slug": "the-inbox-team-as-a-recipe",
       "title": "The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it",
       "date": "2026-10-28",
@@ -78,7 +490,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "where-to-invest-in-sgit"
+      ],
       "figures": [
         {
           "file": "rmx-system.webp",
@@ -257,7 +671,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "where-to-invest-in-sgit"
+      ],
       "figures": [
         {
           "file": "kgl-action.webp",
@@ -435,7 +851,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "where-to-invest-in-sgit"
+      ],
       "figures": [
         {
           "file": "sf-speedups.webp",
@@ -798,7 +1216,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "the-legal-ai-services-map"
+      ],
       "figures": [
         {
           "file": "tc-room.webp",
@@ -6764,7 +7184,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "where-to-invest-in-sgit"
+      ],
       "figures": [
         {
           "file": "zv-php-top.webp",
@@ -18924,6 +19346,7 @@
         "can-you-sell-it"
       ],
       "links_in": [
+        "where-to-invest-in-sgit",
         "the-exit-is-when-you-sell-control",
         "a-trusted-framework-for-agentic-finance",
         "fund-it-with-time"
@@ -27567,6 +27990,7 @@
         "the-policy-guards-the-door"
       ],
       "links_in": [
+        "where-to-invest-in-sgit",
         "governs-enforces-attests",
         "the-librarians-daily-brief",
         "three-linkedin-pages",
@@ -30686,6 +31110,7 @@
         "scion-and-sgit"
       ],
       "links_in": [
+        "where-to-invest-in-sgit",
         "three-linkedin-pages",
         "when-is-the-vault-actually-used",
         "sgit-is-a-standard",
@@ -33203,6 +33628,7 @@
         "what-sgit-is"
       ],
       "links_in": [
+        "where-to-invest-in-sgit",
         "sgit-is-a-standard",
         "one-vault-ten-agents",
         "the-value-of-constraints"
@@ -36082,6 +36508,7 @@
         "the-agent-team-as-it-runs"
       ],
       "links_in": [
+        "where-to-invest-in-sgit",
         "can-you-sell-it",
         "the-librarians-daily-brief",
         "three-linkedin-pages",

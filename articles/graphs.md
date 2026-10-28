@@ -14,13 +14,67 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-311 of 311 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+313 of 313 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-311 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 49 articles not yet linked either way.
+313 articles, 1496 links between them (2257 mentions in all). 254 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 44 articles not yet linked either way.
+
+## [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md)
+
+2026-10-28 · Startups & strategyVaults & method
+
+Three places to put investment in sgit: the tool and open format, a hub for vaults (SGitHub), or open core. The history of developer platforms says the network beats the host, registries struggle alone, hosting is where open source gets paid, and the hub of public work is the moat. Git is under strain from agents and capital is following. The answer is the hub, with the format open and self-hosting support as the bridge; the deck, thesis, plans and evidence are a public vault forked per investor.
+
+*[diagram]*
+**claim**artefact**example**question
+
+**9 nodes, 9 edges**
+
+- **Where to invest** (question) The tool, the hub, or open core.
+- **Platform history** (example) SourceForge to Hugging Face.
+- **The network beats the host** (claim) GitHub $7.5B, SourceForge about $20M.
+- **Hosting gets paid** (claim) MongoDB, Supabase, Vercel.
+- **Git under strain** (example) Anthropic's Scion; git-for-agents rounds.
+- **sgit today** (artefact) 99 releases, parity mostly done.
+- **No paying customer yet** (question) Most use is our own.
+- **SGitHub, the hub** (claim) Format open, self-host possible.
+- **The deck as a vault** (artefact) Forked per investor.
+
+> My answer is the hub. Three paths, and my answer.
+
+> Everything is in a public vault, and the vault is the pitch. The deck is a vault.
+
+builds on [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [Open source what you build, even while you are employed: nobody copies it, and it is the only way you get to keep using it](#open-source-so-you-keep-it), [A tangent that shipped: how sgit's pack mode went from a slow clone to a release in ten days, and took the PHP story's biggest vault from a 13-minute clone to 95 seconds the day after](#a-tangent-that-shipped), [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](#what-sgit-does-that-git-does-not), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](#the-inbox-team-as-a-recipe), [Our first PR in Ruflo: an ABP-governed SGit page, merged into ruvnet/ruflo, and the four pieces that got it there](#our-first-pr-in-ruflo), [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](#knowledge-graphs-for-kgell), [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit).
+
+## [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](the-legal-ai-services-map.md)
+
+2026-10-28 · Startups & strategyNews & evidence
+
+A map of companies selling legal work done with AI, built with a method fixed before scoring and a formula anyone can re-run, from public evidence only, with every score's URL and quote and the page captures in a public vault. Automation, accountability and agentic readiness are scored from fourteen indicators. Garfield.Law and Crosby combine AI doing the work with a lawyer standing behind it; Soxton, LegalZoom and Rocket Lawyer can be used by an agent; none has both, which is where the newsroom's proposal of legal on demand sits as a target.
+
+*[diagram]*
+**concept**claim**method**artefact**example**question
+
+**9 nodes, 9 edges**
+
+- **Who sells legal work done with AI** (question) And can an agent hire them?
+- **A method fixed before scoring** (method) Fourteen indicators, public evidence.
+- **Automation, accountability, agentic readiness** (concept) Three scores out of 100.
+- **AI does the work, a lawyer signs** (example) Garfield.Law and Crosby.
+- **An agent can hire them** (example) Soxton, LegalZoom, Rocket Lawyer.
+- **Different rules in each country** (concept) SRA ahead; US unlicensed-practice rules.
+- **Nobody has both** (claim) The gap on the map.
+- **Legal on demand** (claim) Our proposal, a target, not ranked.
+- **The evidence vault** (artefact) Captures, hashes, scores.
+
+> Nobody combines a regulated signature with an agent interface. Walking back from the North Star.
+
+> No evidence means the lowest value, never a guess. Why a map.
+
+builds on [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](#legal-on-demand-for-startups).
 
 ## [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](the-inbox-team-as-a-recipe.md)
 
@@ -47,6 +101,8 @@ Asked by email for its workflow, the RiskMandate agent wrote a guide from its ow
 
 > The vault is the configuration. Vaults and identities.
 
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
+
 ## [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](knowledge-graphs-for-kgell.md)
 
 2026-10-28 · Graphs & knowledgeNews & evidence
@@ -72,6 +128,8 @@ KGELL, COST Action CA24121, runs from October 2025 to October 2029 to build a pi
 
 > I joined working group 3 and have not contributed yet. Where my work fits.
 
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
+
 ## [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](what-sgit-does-that-git-does-not.md)
 
 2026-10-27 · Vaults & methodSite & engineering
@@ -96,6 +154,8 @@ Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck a r
 > The writer pays once, at push time; every reader after it skips the walk. Where the speed came from.
 
 > A partial clone is not an access boundary What Git has no equivalent for.
+
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
 
 ## [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](you-can-feel-good-engineering.md)
 
@@ -145,6 +205,8 @@ Legal work runs through every part of a startup and founders rarely have the exp
 > even when they hallucinate, they are very good at reading every detail and picking up inconsistencies Why legal never scaled, and why it can now.
 
 > A yearly subscription makes no sense for this The service.
+
+continued by [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](#the-legal-ai-services-map).
 
 ## [Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision](who-has-not-patched.md)
 
@@ -985,6 +1047,8 @@ A slow-clone bug and a tangent about running vaults from zip files, treated as r
 > That is not luck. Why the tangent mattered.
 
 > The limit we hit was not storage. The vault that needed it.
+
+continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit).
 
 ## [A pen and a key: a place on every page to mark it, comment on it and tell the newsroom, and a browser key that pki.sgit.ai vouches for, so a note can be checked as mine](a-pen-and-a-key.md)
 
@@ -2646,7 +2710,7 @@ Open sourcing your work, including what you bring into and build at your job wit
 
 > Showing the sausage factory works in your favour. Why rough is better.
 
-builds on [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it); continued by [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time).
+builds on [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [The exit is when you sell control: why a founder should leave the day someone else is calling the shots, and why to negotiate that day at the start, the Mourinho clause](#the-exit-is-when-you-sell-control), [A trusted framework for agentic finance: a reply to the FCA's Jessica Rusu, how our open behaviour policies line up with it, and a payments agent's policy with identity, delegated authority, accountability and execution filled in](#a-trusted-framework-for-agentic-finance), [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](#fund-it-with-time).
 
 ## [Fund it with time: what a startup needs most is time, the best place to find it is the job you have, and money is only ever a way to buy more of it](fund-it-with-time.md)
 
@@ -3881,7 +3945,7 @@ A proof of concept, a one-file documentation pull request, a maintainer's merge 
 
 > Ruflo merged first. The next merge is ours to make, after a review. The open piece.
 
-builds on [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](#agentics-ready-to-sell), [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](#what-if-an-agent-loses-its-workspace), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door); continued by [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped).
+builds on [Agentics, ready to sell: what we showed at Agentic Engineering Live, who else is selling agentic services and at what price, the engagement path, and a marketplace for the consultants who deliver it](#agentics-ready-to-sell), [What if an agent loses its workspace? Mondweep Chakravorty's SGit × Ruflo proof of concept, step by step: memory saved encrypted, the project deleted, the memory back in a fresh process, and three safeguards that held](#what-if-an-agent-loses-its-workspace), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [The policy guards the door; the command line uses the window: in the SGit × Ruflo run, the ABP is compiled into Ruflo's own rules and enforced on the adapter's tools, while Ruflo's command line reaches the same memory file without it, as the author's own README says](#the-policy-guards-the-door); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [Governs, enforces, attests: what an Agent Behaviour Policy does, the three levels at which its rules are kept, and why an attestation layer on top is the piece a third party needs](#governs-enforces-attests), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [What can your agent reach? RiskMandate and the Agent Behaviour Policy, explained for the person who has to decide](#what-can-your-agent-reach), [Three policies for an agent: behaviour says what it may do, decision says who chooses, workflow says in what order](#three-policies-for-an-agent), [Three decisions, mapped: an agent's memory, this newsroom's release and a customer refund, through behaviour, decision and workflow](#three-decisions-mapped).
 
 ## [Fix the page yourself: the bookmarklet trick from my security days, a page API every site should publish, and why the next user experience is the one the user customises, with six fixes running on this newsroom](fix-the-page-yourself.md)
 
@@ -4267,7 +4331,7 @@ The vault the newsroom's ten agents share, 1,295 commits, 5,281 files and 35,000
 
 > So sgit is not the bottleneck; the distance to the storage is. Where the time goes.
 
-builds on [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit); continued by [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit).
+builds on [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Agent workflows on ephemeral vaults: seven architectures from one agent to a swarm, a repository of recipes that gates sgit's releases, and what a hundred writers did to an append lane](#agent-workflows-on-ephemeral-vaults), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [When is the vault actually used? In Mondweep Chakravorty's SGit × Ruflo run, the encrypted vault is written or read in three steps of twelve, on one machine, inside the adapter, and why that is the honest shape of a recovery copy](#when-is-the-vault-actually-used), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit).
 
 ## [Portugal and Europe, 2025: five essays on Portuguese as a programming language, an open-source sovereign cloud, regulation as graphs and Europe's chance in GenAI, and how they read a year and a half later](portugal-and-europe-2025.md)
 
@@ -4609,7 +4673,7 @@ Agents broke Git's offline, full-clone assumptions at Anthropic, which built Sci
 
 > by no means a suitable replacement for git for general use Scion's own status.
 
-builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Git for things you cannot put on GitHub](#what-sgit-is); continued by [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints).
+builds on [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](#from-send-to-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [Git for things you cannot put on GitHub](#what-sgit-is); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom](#one-vault-ten-agents), [The value of constraints: what client-side encryption and open source actually gave us, which is not what you would think](#the-value-of-constraints).
 
 ## [Your agent's logs are a self-report: an answer to a GRC adviser's post on The AI Conference, with this site's own agent as the worked example, including the two commits its own counter got wrong](your-agents-logs-are-a-self-report.md)
 
@@ -4975,7 +5039,7 @@ SG/Send began as file sharing where the server holds nothing, went live five day
 
 > Users buy credits, test once, and don't come back. Credits sit unused. What the market said, already on 5 March.
 
-builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
+builds on [No server, by design: first I retired the database, now I am retiring the back end](#no-server-by-design), [How much of this did I write? The numbers behind twenty articles in four weeks, and what the input actually was](#how-much-of-this-did-i-write), [Git for things you cannot put on GitHub](#what-sgit-is), [The agent team as it runs: one person, twelve agents, encrypted vaults, and a mailbox nobody sends from](#the-agent-team-as-it-runs); continued by [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](#where-to-invest-in-sgit), [Can you sell it? Start selling what you have, however rough it is, because the point is not to sell, it is to learn](#can-you-sell-it), [The Librarian's daily brief: everything that happened in my universe yesterday, the threads I left, and where my leverage is today](#the-librarians-daily-brief), [Three companies, three LinkedIn pages: the brief, the drafts and the first posts, in the open](#three-linkedin-pages), [A minimal viable browser: why Firefox is the one that can build it, and what it would take](#a-minimal-viable-browser), [sgit is a standard, not a server: everything in a vault is one hash away, any storage can serve it, and the server is the least interesting part](#sgit-is-a-standard), [Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it](#scion-and-sgit), [The expert founders: why the next startups will be built by the people who know the problem, and why Europe's slower, sceptical money suits them](#the-expert-founders), [My memory, checked: thinking out loud in a voice memo, publishing only what the record supports, and why peer review has moved to before publishing](#my-memory-checked).
 
 ## [The scripted talk: a presentation as a timeline that plays on a clock, the two vaults it grows out of, and a player built for tonight's ten minutes](the-scripted-talk.md)
 

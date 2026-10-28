@@ -1,0 +1,195 @@
+{
+  "slug": "where-to-invest-in-sgit",
+  "teaser": "Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.",
+  "topics": [
+    "startups-and-strategy",
+    "vaults-and-method"
+  ],
+  "core_idea": "Three places to put investment in sgit: the tool and open format, a hub for vaults (SGitHub), or open core. The history of developer platforms says the network beats the host, registries struggle alone, hosting is where open source gets paid, and the hub of public work is the moat. Git is under strain from agents and capital is following. The answer is the hub, with the format open and self-hosting support as the bridge; the deck, thesis, plans and evidence are a public vault forked per investor.",
+  "nodes": [
+    {
+      "id": "question",
+      "label": "Where to invest",
+      "kind": "question",
+      "summary": "The tool, the hub, or open core."
+    },
+    {
+      "id": "history",
+      "label": "Platform history",
+      "kind": "example",
+      "summary": "SourceForge to Hugging Face."
+    },
+    {
+      "id": "network",
+      "label": "The network beats the host",
+      "kind": "claim",
+      "summary": "GitHub $7.5B, SourceForge about $20M."
+    },
+    {
+      "id": "hosting",
+      "label": "Hosting gets paid",
+      "kind": "claim",
+      "summary": "MongoDB, Supabase, Vercel."
+    },
+    {
+      "id": "strain",
+      "label": "Git under strain",
+      "kind": "example",
+      "summary": "Anthropic's Scion; git-for-agents rounds."
+    },
+    {
+      "id": "state",
+      "label": "sgit today",
+      "kind": "artefact",
+      "summary": "99 releases, parity mostly done."
+    },
+    {
+      "id": "gap",
+      "label": "No paying customer yet",
+      "kind": "question",
+      "summary": "Most use is our own."
+    },
+    {
+      "id": "hub",
+      "label": "SGitHub, the hub",
+      "kind": "claim",
+      "summary": "Format open, self-host possible."
+    },
+    {
+      "id": "vault",
+      "label": "The deck as a vault",
+      "kind": "artefact",
+      "summary": "Forked per investor."
+    }
+  ],
+  "edges": [
+    {
+      "from": "history",
+      "to": "network",
+      "rel": "produces"
+    },
+    {
+      "from": "history",
+      "to": "hosting",
+      "rel": "produces"
+    },
+    {
+      "from": "network",
+      "to": "hub",
+      "rel": "depends-on"
+    },
+    {
+      "from": "hosting",
+      "to": "hub",
+      "rel": "depends-on"
+    },
+    {
+      "from": "strain",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "hub",
+      "to": "question",
+      "rel": "answers"
+    },
+    {
+      "from": "state",
+      "to": "hub",
+      "rel": "depends-on"
+    },
+    {
+      "from": "gap",
+      "to": "state",
+      "rel": "contrasts"
+    },
+    {
+      "from": "vault",
+      "to": "hub",
+      "rel": "example-of"
+    }
+  ],
+  "links": {
+    "articles": [
+      "scion-and-sgit",
+      "what-sgit-does-that-git-does-not",
+      "a-tangent-that-shipped",
+      "one-vault-ten-agents",
+      "the-inbox-team-as-a-recipe",
+      "our-first-pr-in-ruflo",
+      "knowledge-graphs-for-kgell",
+      "from-send-to-sgit",
+      "open-source-so-you-keep-it"
+    ],
+    "pages": [],
+    "sites": [
+      "https://www.anthropic.com/research/redesigning-source-control",
+      "https://sgit.ai/investors/",
+      "https://cli.sgit.ai/"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "My answer is the hub.",
+      "why": "Three paths, and my answer."
+    },
+    {
+      "text": "Everything is in a public vault, and the vault is the pitch.",
+      "why": "The deck is a vault."
+    },
+    {
+      "text": "There is no paying customer of sgit itself",
+      "why": "Real use, and what is not there yet."
+    }
+  ],
+  "figures": [
+    {
+      "file": "inv-paths.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-paths.webp",
+      "caption": "Three ways to build a company on sgit, and the companies that went each way before.",
+      "kind": "chart"
+    },
+    {
+      "file": "inv-strain.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-strain.webp",
+      "caption": "The companies that outgrew Git built their own; startups building version control for agents are being funded.",
+      "kind": "chart"
+    },
+    {
+      "file": "inv-history.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-history.webp",
+      "caption": "What developer platforms were worth, and how they captured it, on a log scale.",
+      "kind": "chart"
+    },
+    {
+      "file": "inv-velocity.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-velocity.webp",
+      "caption": "Commits per month on the CLI's dev branch and releases per month on PyPI, March to October 2026.",
+      "kind": "chart"
+    },
+    {
+      "file": "inv-parity.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-parity.webp",
+      "caption": "Git parity on 28 October 2026, from the CLI team's roadmap.",
+      "kind": "chart"
+    },
+    {
+      "file": "inv-use.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-use.webp",
+      "caption": "sgit in use, measured, and what is not there yet.",
+      "kind": "chart"
+    },
+    {
+      "file": "inv-timeline.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-timeline.webp",
+      "caption": "From sending a file to a hub for vaults: the concepts in the order they arrived in 2026.",
+      "kind": "chart"
+    },
+    {
+      "file": "inv-deck.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/inv-deck.webp",
+      "caption": "The investor deck, running from its vault: the title slide and the three business plans side by side.",
+      "kind": "screenshot"
+    }
+  ]
+}

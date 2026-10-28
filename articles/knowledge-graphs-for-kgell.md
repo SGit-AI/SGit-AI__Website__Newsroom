@@ -107,7 +107,9 @@ KGELL's site: [home](https://kgell-cost.eu/), [about](https://kgell-cost.eu/abou
 
 Graphs & knowledgeNews & evidence[This article as a graph →](graphs.md#knowledge-graphs-for-kgell)
 
-No other article links here yet.
+### Continued by
+
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

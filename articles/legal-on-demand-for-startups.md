@@ -132,7 +132,9 @@ The editor's voice memo of 27 October 2026. The demonstration: [the founder desk
 
 Startups & strategyAgents & policy[This article as a graph →](graphs.md#legal-on-demand-for-startups)
 
-No other article links here yet.
+### Continued by
+
+- [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](the-legal-ai-services-map.md) 44 legal companies scored on who does the work, who stands behind it, and whether an agent can hire them.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

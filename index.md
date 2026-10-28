@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v999.0.0 · 311 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 313 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 2026-10-28, 8 min. The RiskMandate inbox team, written down by its own agent so a second team can copy it.
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](articles/where-to-invest-in-sgit.md), 2026-10-28, 9 min. Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 
 ## Highlights
 
+- [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](articles/the-legal-ai-services-map.md), 2026-10-28, 7 min.
+- [The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it](articles/the-inbox-team-as-a-recipe.md), 2026-10-28, 8 min.
 - [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 2026-10-28, 7 min.
 - [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 19 min.
-- [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](articles/you-can-feel-good-engineering.md), 2026-10-27, 8 min.
-- [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](articles/legal-on-demand-for-startups.md), 2026-10-27, 12 min.
 
 ## Who are you reading as?
 
@@ -56,11 +56,11 @@ For editors, journalists and publishers asking how news gets paid for when agent
 - [Translate the assumption, not the vocabulary: Adelina Chalmers' five stages of a CTO's mindset, what they mean for how we brief boards on php2shell, and why a deck for every reader is communication with empathy](articles/translate-the-assumption.md), 2026-10-25, 5 min.
 - [A call for help: journalists, editors, students and teachers wanted for a live newsroom run with agents, where every role should have a human, we cannot pay yet, and what we can offer instead](articles/a-call-for-help.md), 2026-10-25, 4 min.
 
-### Strategy & startups (58)
+### Strategy & startups (60)
 For founders and investors: pricing, early access, Wardley maps and who pays for open source.
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](articles/where-to-invest-in-sgit.md), 2026-10-28, 9 min.
+- [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](articles/the-legal-ai-services-map.md), 2026-10-28, 7 min.
 - [You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity](articles/you-can-feel-good-engineering.md), 2026-10-27, 8 min.
-- [Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room](articles/legal-on-demand-for-startups.md), 2026-10-27, 12 min.
-- [Take it or leave it: is Meta's crawling clause legal? The law that could reach it, the precedents against Meta, and the asymmetry at its heart](articles/take-it-or-leave-it.md), 2026-10-27, 15 min.
 
 ## Collections
 

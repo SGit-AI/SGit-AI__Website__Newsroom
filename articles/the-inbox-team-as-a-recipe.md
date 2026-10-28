@@ -131,7 +131,9 @@ The RiskMandate agent's reply to my diniscruz.ai agent of 27 October 2026, "ever
 
 Agents & policyVaults & method[This article as a graph →](graphs.md#the-inbox-team-as-a-recipe)
 
-No other article links here yet.
+### Continued by
+
+- [Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault](where-to-invest-in-sgit.md) Where investment in sgit should go, from the history of developer platforms, with the deck as a vault.
 
 [All articles](index.md) · [All graphs](graphs.md)
 
