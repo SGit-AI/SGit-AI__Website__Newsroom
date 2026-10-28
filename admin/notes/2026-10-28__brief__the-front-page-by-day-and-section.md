@@ -1,6 +1,6 @@
 # Brief for @newsroom.dev: the front page by day and by section
 
-**Status: proposal, waiting for the editor's go.** Written by @newsroom.writer on 28 October 2026, at the editor's request. Do not start until the editor approves it; the approval comes as a card.
+**Status: approved by the editor on 28 October 2026, as card 095.** Written by @newsroom.writer on 28 October 2026, at the editor's request.
 
 ## What the editor asked
 
@@ -18,18 +18,19 @@
 The Broadsheet view (the default) becomes, from the top:
 
 1. **A compact masthead** with the date and the count, and a row of the section names as jump links.
-2. **The lead and the running story**, as today: the editor's lead from `front.json`, and the developing-story box (`developing.json`).
+2. **The lead and the running story.** The editor's lead from `front.json`, large, **with its image** (the article's card, `articles/cards/<slug>.webp`, which is its lead figure), and the developing-story box (`developing.json`) beside it.
+2b. **Five more, with images.** The editor's highlights from `front.json`, or, when it names none, the five newest after the lead: each with its card image, its section label, the headline, a short subtitle, the date and the reading time. The editor: "one big headline and maybe five, all with images … and then as you go down, then the text based".
 3. **The last five days.** One band per publishing day, newest first, for the five most recent days that have an article. Each band: the day, its count, the mix of sections in one line, then every article that day in two columns: the section label, the headline (the title up to ": " or "? "), the subtitle (the rest, capitalised, cut at a word), and the reading time. On a phone: one column, and subtitles only for the newest day.
 4. **Sections.** Eight cards, each with its name, one line of scope, its count, its five newest headlines with dates, and "All N →" to the section's page.
 5. **Then, lower and unchanged for now:** Start here, Collections, the newsletter, Who are you reading as?, Every article, the archive.
 
-![The proposed front page on a desktop: the lead, the running story, and the last five days by day](2026-10-28__front-page/mock-desktop-top.webp)
+![The proposed front page on a desktop: the lead with its image, the running story, five more with images, and the last five days by day](2026-10-28__front-page/mock-desktop-top.webp)
 
 ![The eight section cards](2026-10-28__front-page/mock-desktop-sections.webp)
 
 ![The same on a phone](2026-10-28__front-page/mock-phone-top.webp)
 
-The mock-ups are built from the real data of 28 October (the last five publishing days hold 44 articles).
+The mock-ups are built from the real data of 28 October (the last five publishing days hold 44 articles), images included.
 
 ## The sections
 
@@ -63,8 +64,9 @@ Eight centres of gravity, by topic, never by audience. **Every article is in exa
 - Changing the desks or the tag vocabulary. The desks can stay as the audience layer, and the Librarian can still map the 470 tags.
 - Refreshing Collections and From the agents: a separate small card.
 
-## Questions for the editor
+## The editor's answers, 28 October 2026
 
-1. The eight section names and scopes, as above?
-2. Five days, or seven?
-3. Is "Running story: php2shell" a section, or should running stories live only in the box and file their articles under their topics?
+1. The eight sections, names and scopes: yes.
+2. Five days: yes.
+3. php2shell is a section ("we have enough articles on it"), and keeps the running-story box while `developing.json` names it.
+4. Added: the lead and five more with their images, above the text list.
