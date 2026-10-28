@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.128 · 319 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 320 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,14 +12,14 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min. Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.
+- [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](articles/insuring-agents-the-whole-story.md), 2026-10-28, 7 min. The five articles on insuring agents in one place, and the three vaults where the ideas run: the simulation, the calculator and AIUC-1.
 
 ## Highlights
 
+- [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min.
 - [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](articles/the-vendors-layer.md), 2026-10-28, 10 min.
 - [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](articles/how-a-journalist-agent-publishes-here.md), 2026-10-28, 14 min.
 - [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](articles/who-carries-the-risk.md), 2026-10-28, 14 min.
-- [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](articles/a-payout-for-every-row.md), 2026-10-28, 16 min.
 
 ## Who are you reading as?
 
@@ -32,11 +32,11 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The five desks
 
-### Agent security & policy (91)
+### Agent security & policy (92)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
+- [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](articles/insuring-agents-the-whole-story.md), 2026-10-28, 7 min.
 - [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min.
 - [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](articles/the-vendors-layer.md), 2026-10-28, 10 min.
-- [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](articles/who-carries-the-risk.md), 2026-10-28, 14 min.
 
 ### Building with agents (50)
 For engineers and builders running agents day to day: tools, memory, email, desktops and review.

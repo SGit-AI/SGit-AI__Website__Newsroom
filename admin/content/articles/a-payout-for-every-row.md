@@ -6,11 +6,13 @@ author_url: about/index.html
 summary: RiskMandate needs somebody to underwrite agent behaviour policies, and before asking who can, I would like to define what they would be underwriting. An insurer de-risks an action. When I insure the laptops and phones in my house against burglary, the insurer asks about the locks, where I live and where I keep things, sets a limit for any one item and a limit for the policy, leaves out the things it will not cover, and at the claim asks whether the doors were locked. If they were, it pays, up to the limit. Agents need exactly that, and an agent behaviour policy already has the shape: every capability the agent can reach is a row, the mandate says which rows the business authorised, and the delta between them is the reach nobody asked for. So the insurance policy is one-to-one with the behaviour policy: each row it names has its own limit (say £20,000 for corrupted customer records, £50,000 for leaked customer data), each row it does not name is excluded, and every real control on a row, one that something enforces, lowers that row's premium. A line in the prompt is not a control and earns nothing. The formula has to be deterministic, if this, then that, and the runtime the agent runs on is part of it. Start from the maximum: in a worked example, an uncontrolled support agent pays £69,850 a year for £80,000 of cover, insurable but hardly worth buying; with five enforced controls on a certified runtime it pays £6,720 for the same cover. The numbers are illustrative; the shape is the point, and the Licence to Operate vault on sgit.ai already runs a simulated version of it. This is the first of a series: next, who can underwrite this today.
 version: v0.13.124
 license: https://creativecommons.org/licenses/by/4.0/
-tags: insurance, underwriting, agent-behaviour-policy, riskmandate, licence-to-operate, cyber-insurance, premiums, controls, mandate, article
+tags: insurance, underwriting, agent-behaviour-policy, riskmandate, licence-to-operate, cyber-insurance, premiums, controls, mandate, insuring-agents, article
 status: published
 ---
 
 !shot pr-rows.webp | images/ | One agent's behaviour policy as an insurance policy: a limit, controls and a premium per row. Illustrative. | comparison
+
+!trail insuring-agents
 
 > **What came next.** [Who carries the risk](/articles/who-carries-the-risk.html) maps who already insures AI agents and what a company that priced per row would need, starting as a managing agent on someone else's capital.
 

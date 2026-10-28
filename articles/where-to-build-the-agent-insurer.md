@@ -10,11 +10,19 @@
 
 # Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.1.0, 2 versions](versions/where-to-build-the-agent-insurer.md) · [newsroom v0.13.127](https://newsroom.sgit.ai/admin/versions.html) · insuranceunderwritingagent-behaviour-policyriskmandatecapitalregulationlloydsfundraisingstartupsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.2.0, 3 versions](versions/where-to-build-the-agent-insurer.md) · [newsroom v0.13.127](https://newsroom.sgit.ai/admin/versions.html) · insuranceunderwritingagent-behaviour-policyriskmandatecapitalregulationlloydsfundraisingstartupsinsuring-agentsarticle
 
 ***Abstract:** The last three articles described insuring an agent row by row from its behaviour policy, who could carry the risk, and the vendor's share of it. This one asks where such a company should be built, from a regulatory and an investment point of view, and how much it would take. My answer is London first, for two of its three jobs. It should start as a managing agent there, pricing and selling on a Lloyd's syndicate's capital, because that is where two of today's AI agent covers are written, authorisation takes up to nine months, and an intermediary's own capital is the higher of £5,000 or 2.5% of its income; and it should carry the risk there too, as a UK insurer through the PRA's mobilisation regime or with capital at Lloyd's. It should sell into the US through surplus lines, a $143.3 billion market built for risks without a loss history, and into the EU by one registration, once Europe's product rules make software a product on 9 December 2026. The Gulf's funds are a place to raise capital. On the money, I built a small model with every assumption stated, and the point it makes is that what the money buys is cover. Two years of running the company cost about £4.35 million; everything raised above that backs policies, and because every row is capped, the ceiling of cover follows from it. Raised in one go, £10 million backs about £94 million to £188 million of cover, 1,177 to 2,354 agents at £80,000 each; £50 million backs about £761 million to £1.52 billion, 9,510 to 19,020 agents, depending on how much of the book one shared failure could hit at once. The bigger the cover the company aims for, the more it should raise at the start.*
 
 Underwrite and carry the risk in London, sell into the US and EU, raise the capital in one go.
+
+Insuring agents
+
+Five articles and three vaults on one idea: an agent's behaviour policy read as an insurance policy, priced row by row, split with the vendor, and backed by capital.
+
+[1 · The definitionA payout for every rowA limit per row of the behaviour policy, a lower premium per enforced control, and no cover for what it does not name.](a-payout-for-every-row.md)[2 · The marketWho carries the riskWho sells AI agent cover today, the four parts of an insurer, and starting as a managing agent.](who-carries-the-risk.md)[3 · The splitThe vendor's layerA share of each row the agent's vendor carries, when its own conditions held.](the-vendors-layer.md)[you are here4 · Where and how muchWhere to build the agent insurerLondon to underwrite and carry the risk, and what £10 million or £50 million buys in cover.](where-to-build-the-agent-insurer.md)[5 · The whole storyInsuring agents, the whole storyThe four articles and the three vaults, in one place.](insuring-agents-the-whole-story.md)[Vault · posrhzp3Licence to OperateOne agent's policy, simulated: every reply priced against a band, a ceiling, a pool and a premium.](https://dev.vault.sgraph.ai/#sgit_public_read_d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29%3Aposrhzp3)[Vault · m1wbrefrThe underwriting calculatorThe series' formula as data, with a calculator and a script that reproduces every number.](https://dev.vault.sgraph.ai/#sgit_public_read_54a5d5d39863f124c6a304b20874e53436d77df42945ba15c74712a680b22991%3Am1wbrefr)[Vault · 2wzct4k7AIUC-1, as a graph you can citeThe standard as a graph, with a conformance layer that asks what would be insurable. Unofficial.](https://dev.vault.sgraph.ai/#sgit_public_read_0f01d367b04f886f6c65038649b76504f4cd2ad06480d88a5e933a671e0db072%3A2wzct4k7)
+
+**What came next.** [Insuring agents, the whole story](insuring-agents-the-whole-story.md) ties the five articles together and shows the three vaults where the ideas run.
 
 ## In short
 
@@ -112,12 +120,14 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#where-
 
 ### Builds on
 
+- [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](insuring-agents-the-whole-story.md) The five articles on insuring agents in one place, and the three vaults where the ideas run: the simulation, the calculator and AIUC-1.
 - [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md) Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.
 - [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md) Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.
 - [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](the-vendors-layer.md) Each row of an agent behaviour policy gets a vendor's share, carried when the vendor's conditions held; contracts cap at a year's fees, Europe moves the line.
 
 ### Continued by
 
+- [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](insuring-agents-the-whole-story.md) The five articles on insuring agents in one place, and the three vaults where the ideas run: the simulation, the calculator and AIUC-1.
 - [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](the-vendors-layer.md) Each row of an agent behaviour policy gets a vendor's share, carried when the vendor's conditions held; contracts cap at a year's fees, Europe moves the line.
 
 [All articles](index.md) · [All graphs](graphs.md)
