@@ -10,7 +10,7 @@
 
 # CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-27 · [article v1.0.0](versions/ci-owns-the-version.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · engineeringcireleasesagentsgithub-actionstechnical-debtarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-27 · [article v1.0.0](versions/ci-owns-the-version.md) · [newsroom v0.13.117](https://newsroom.sgit.ai/admin/versions.html) · engineeringcireleasesagentsgithub-actionstechnical-debtarticle
 
 ***Abstract:** A release number is a fact about the order in which pushes land, and the only thing that knows that order is the pipeline. So the pipeline should pick the number, not whoever pushes. I wrote that scheme for OSBot-Utils on 27 October 2023, the night CI made its first tag there; it has numbered 1,129 releases of that library and runs sgit and the send app. This week the sites built by agents learnt it the hard way. sharness.ai adopted it after three days of collisions, the PHP newsroom's six repositories on 27 October, and this site on the same night, after two version races and a refused release in one day. This is the scheme, the history, how it runs here, and a job you can copy, so the next project starts from this page.*
 

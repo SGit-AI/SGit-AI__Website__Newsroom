@@ -4,7 +4,7 @@ date: 2026-10-27
 author: Dinis Cruz
 author_url: about/index.html
 summary: A release number is a fact about the order in which pushes land, and the only thing that knows that order is the pipeline. So the pipeline should pick the number, not whoever pushes. I wrote that scheme for OSBot-Utils on 27 October 2023, the night CI made its first tag there; it has numbered 1,129 releases of that library and runs sgit and the send app. This week the sites built by agents learnt it the hard way. sharness.ai adopted it after three days of collisions, the PHP newsroom's six repositories on 27 October, and this site on the same night, after two version races and a refused release in one day. This is the scheme, the history, how it runs here, and a job you can copy, so the next project starts from this page.
-version: v999.0.0
+version: v0.13.117
 license: https://creativecommons.org/licenses/by/4.0/
 tags: engineering, ci, releases, agents, github-actions, technical-debt, article
 status: published

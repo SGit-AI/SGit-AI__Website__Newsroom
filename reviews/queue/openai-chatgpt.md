@@ -48,9 +48,9 @@ Built 2026-10-28, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-11-01
 
-- **CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why** (`ci-owns-the-version`), published 2026-10-27, text `f1d8dce711d6` at v999.0.0
+- **CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why** (`ci-owns-the-version`), published 2026-10-27, text `f1d8dce711d6` at v0.13.117
   - read: https://newsroom.sgit.ai/articles/ci-owns-the-version.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/ci-owns-the-version.html)
-  - article_hash: `f1d8dce711d6`, article_version: `v999.0.0`
+  - article_hash: `f1d8dce711d6`, article_version: `v0.13.117`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
