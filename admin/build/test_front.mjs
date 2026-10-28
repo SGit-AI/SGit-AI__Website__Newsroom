@@ -52,6 +52,41 @@ for (const rel of ['assets/front/front.css', 'assets/reader/strip.css']) {
   check(!/#[0-9a-fA-F]{3,8}\b/.test(t) && !/\brgba?\(/.test(t), `${rel}: colour through tokens only`)
 }
 
+
+// ---- by day and by section (card 095)
+const wire = JSON.parse(read('newsroom/wire.json')), secs = JSON.parse(read('admin/content/front/sections.json'))
+const bs = html.slice(html.indexOf('<section class="view bs"'), html.indexOf('<section class="view bf"'))
+const daysHtml = bs.slice(bs.indexOf('id="days"'), bs.indexOf('id="sections"'))
+const lastDays = [...new Set(wire.articles.map(a => a.date))].sort().reverse().slice(0, 5)
+const inDays = [...daysHtml.matchAll(/<li class="day-item">.*?<a href="articles\/([^"]+)\.html">/g)].map(m => m[1])
+const expectDays = wire.articles.filter(a => lastDays.includes(a.date)).map(a => a.slug)
+check(inDays.length === expectDays.length && new Set(inDays).size === inDays.length && expectDays.every(s => inDays.includes(s)) && (daysHtml.match(/<section class="day/g) || []).length === 5,
+  `the last five publishing days (${lastDays[4]} to ${lastDays[0]}): all ${expectDays.length} articles appear once, in five bands`)
+check(Object.keys(secs.articles).length === wire.articles.length && wire.articles.every(a => secs.sections.some(s => s.id === secs.articles[a.slug])), `sections.json: every one of ${wire.articles.length} articles is in exactly one defined section`)
+const five = [...bs.matchAll(/<li class="five-item"><a class="tile"[^>]*><img[^>]*src="articles\/cards\//g)].length
+check(five === 5, 'the lead has five more, each with its card image')
+check(/<article class="lead"[^>]*>\s*<a class="tile"[^>]*><img[^>]*src="articles\/cards\/[^"]+\.webp"/.test(bs), 'the lead has its card image')
+const cards = [...bs.matchAll(/<article class="sec-card" id="sec-([a-z0-9]+)".*?<\/article>/gs)]
+check(cards.length === secs.sections.length && cards.map(m => m[1]).join() === secs.sections.map(s => s.id).join(), `${cards.length} section cards, in the editor's order`)
+for (const [, id, ] of cards) {
+  const s = secs.sections.find(x => x.id === id), card = cards.find(m => m[1] === id)[0]
+  const mine = wire.articles.filter(a => secs.articles[a.slug] === id).sort((a, b) => b.date.localeCompare(a.date) || wire.articles.indexOf(a) - wire.articles.indexOf(b))
+  const shown = [...card.matchAll(/<li><a href="articles\/([^"]+)\.html">/g)].map(m => m[1])
+  check(shown.length === Math.min(5, mine.length) && shown.every((x, i) => x === mine[i].slug) && card.includes(`All ${mine.length} &rarr;`) && card.includes(`href="sections/${id}/index.html"`),
+    `section ${id}: its ${shown.length} newest, "All ${mine.length}", a link to its page`)
+  const page = read(`sections/${id}/index.html`), twin = read(`sections/${id}/index.md`)
+  check(mine.every(a => page.includes(`articles/${a.slug}.html`) && twin.includes(`articles/${a.slug}.md`)) && /<h2 id="m-\d{4}-\d\d">/.test(page), `sections/${id}/: all ${mine.length} articles, by month, and the markdown twin`)
+}
+{ // an article with no section, or an unknown one, stops the build and names the slug
+  const f = path.join(ROOT, 'admin/content/front/sections.json'), orig = fs.readFileSync(f, 'utf8')
+  const slug = wire.articles[0].slug
+  const run = txt => { fs.writeFileSync(f, txt); try { execSync('python3 admin/build/front.py', { cwd: ROOT, stdio: 'pipe' }); return '' } catch (e) { return String(e.stderr) + String(e.stdout) } finally { fs.writeFileSync(f, orig) } }
+  const j = JSON.parse(orig)
+  const none = run(JSON.stringify({ ...j, articles: Object.fromEntries(Object.entries(j.articles).filter(([k]) => k !== slug)) }))
+  const unknown = run(JSON.stringify({ ...j, articles: { ...j.articles, [slug]: 'nowhere' } }))
+  check(none.includes(slug) && unknown.includes(slug) && unknown.includes('nowhere'), 'an article with no section, or one naming an unknown section, fails the build and names the slug')
+}
+
 // ---------------------------------------------------------------- the browser
 const g = (() => { try { return execSync('npm root -g').toString().trim() } catch (e) { return '' } })()
 let chromium
@@ -139,8 +174,26 @@ const open = async (opts = {}) => {
   await ctx.close()
 }
 
+{ // phone: no sideways scroll on the Broadsheet; the jump links land on the cards; a subtitle only under the newest day
+  const [ctx, pg] = await open({ width: 390 })
+  check(await pg.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), 'the Broadsheet at 390 px has no horizontal scroll')
+  const vis = await pg.evaluate(() => [...document.querySelectorAll('.bs .day')].map(d => [...d.querySelectorAll('.day-dek')].some(e => getComputedStyle(e).display !== 'none')).join())
+  check(vis === 'true,false,false,false,false', `on a phone only the newest day shows subtitles (${vis})`)
+  await ctx.close()
+  const [c2, p2] = await open({ width: 1280 })
+  const hrefs = await p2.evaluate(() => [...document.querySelectorAll('.bs .sec-jump a')].map(a => a.getAttribute('href')))
+  check(hrefs.length === secs.sections.length && hrefs.every(h => /^#sec-/.test(h)), `${hrefs.length} jump links in the masthead`)
+  let landed = 0
+  for (const h of hrefs) {
+    await p2.evaluate(() => scrollTo(0, 0)); await p2.click(`.bs .sec-jump a[href="${h}"]`); await p2.waitForTimeout(1200)
+    landed += await p2.evaluate(id => { const r = document.getElementById(id).getBoundingClientRect(); return r.top >= -2 && r.top < innerHeight - 100 ? 1 : 0 }, h.slice(1))
+  }
+  check(landed === hrefs.length, `each jump link lands on its card (${landed} of ${hrefs.length})`)
+  await c2.close()
+}
+
 { // the five themes hold on each view, and the bar stays one row
-  const lum = c => { const [r, g, b] = c.match(/\d+(\.\d+)?/g).slice(0, 3).map(Number).map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4) }); return 0.2126 * r + 0.7152 * g + 0.0722 * b }
+  const lum = c => { const k = c.startsWith('color(') ? 255 : 1; const [r, g, b] = c.match(/\d+(\.\d+)?/g).slice(0, 3).map(Number).map(v => v * k).map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4) }); return 0.2126 * r + 0.7152 * g + 0.0722 * b }
   const contrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05) }
   for (const theme of ['newsprint', 'night', 'paper', 'blueprint', 'ember']) {
     for (const v of ['broadsheet', 'briefing', 'desk']) {
@@ -149,6 +202,11 @@ const open = async (opts = {}) => {
       const r = await pg.evaluate(([s, vv]) => { const el = document.querySelector(s), cs = getComputedStyle(el); let bg = 'rgba(0, 0, 0, 0)', n = el; while (n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) { bg = getComputedStyle(n).backgroundColor; n = n.parentElement } return { fg: cs.color, bg, theme: document.documentElement.dataset.theme, row: document.querySelector('nav.site .row').getBoundingClientRect().height, shown: [...document.querySelectorAll('.view')].filter(x => getComputedStyle(x).display !== 'none').map(x => x.dataset.view).join('') } }, [sel, v])
       const c = contrast(r.fg, r.bg)
       check(r.theme === theme && r.shown === v && c >= 4.5 && r.row < 70, `${theme} · ${v}: body text ${c.toFixed(1)}:1, bar one row (${Math.round(r.row)}px)`)
+      if (v === 'broadsheet') {
+        const tags = await pg.evaluate(() => [...document.querySelectorAll('.bs .sec-tag, .bs .sec-jump a, .bs .sec-h a, .bs .sec-all a')].map(el => { let bg = 'rgba(0, 0, 0, 0)', n = el; while (n && /rgba\(0, 0, 0, 0\)|transparent/.test(bg)) { bg = getComputedStyle(n).backgroundColor; n = n.parentElement } if (/rgba\(0, 0, 0, 0\)|transparent/.test(bg)) { const d = document.createElement('div'); d.style.background = 'var(--bg)'; document.body.appendChild(d); bg = getComputedStyle(d).backgroundColor; d.remove() } return [getComputedStyle(el).color, bg] }))
+        const worst = Math.min(...tags.map(([f, b]) => contrast(f, b)))
+        check(worst >= 4.5, `${theme} · the section colours as text hold ${worst.toFixed(1)}:1 at worst (${tags.length} labels)`)
+      }
       await ctx.close()
     }
   }

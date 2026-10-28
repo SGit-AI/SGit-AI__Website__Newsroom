@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>095: The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one &middot; newsroom.sgit.ai</title>
-<meta name="description" content="Issue 095 (story, open): The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one">
+<meta name="description" content="Issue 095 (story, done): The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one">
 <link rel="canonical" href="https://newsroom.sgit.ai/engineering/issues/095.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="newsroom.sgit.ai">
 <meta property="og:url" content="https://newsroom.sgit.ai/engineering/issues/095.html">
 <meta property="og:title" content="095: The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one">
-<meta property="og:description" content="Issue 095 (story, open): The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one">
+<meta property="og:description" content="Issue 095 (story, done): The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one">
 <meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../../assets/newsroom.css">
@@ -22,7 +22,7 @@
   <script src="../../assets/themes/themes.js"></script>
   <script src="../../assets/reader/anim.js" defer></script>
   <a class="brand" href="../../index.html">newsroom<span>.sgit.ai</span></a>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.13.125</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v999.0.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -156,10 +156,10 @@
 </div></nav>
 <main class="doc">
  <p class="crumb"><a href="../../index.html">Home</a> / <a href="../../about/participant.html">About</a> / <a href="../../engineering/index.html">Engineering</a> / 095: The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one</p>
- <p class="eyebrow">Engineering · open</p>
+ <p class="eyebrow">Engineering · done</p>
  <h1>095: The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one</h1>
  <p class="lead">The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one</p>
-<table class="eng-meta"><tr><td class="k">Id</td><td>095</td></tr><tr><td class="k">Status</td><td><span class="eng-tag open">open</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag story">Story</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-28T12:00:00Z</td></tr><tr><td class="k">Source</td><td>Dinis, in chat, 28 October 2026: &quot;we&#x27;re publishing quite a lot of articles every day … have a section where you list per day, so you have the last 5 days … and then maybe go per section … in terms of the topic … I don&#x27;t think you should have the article in more than one section&quot;; approving the brief: &quot;those sections are good. 5 days is fine … PHP shell should be a section … one big headline and maybe five, all with images … and then as you go down, then the text based that you have there now</td></tr><tr><td class="k">Release</td><td>not planned yet</td></tr><tr><td class="k">Effort</td><td>medium</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/open/095-the-front-page-by-day-and-section.md</code></td></tr></table><div class="eng-body"><h2 id="what-is-asked">What is asked</h2>
+<table class="eng-meta"><tr><td class="k">Id</td><td>095</td></tr><tr><td class="k">Status</td><td><span class="eng-tag done">done</span></td></tr><tr><td class="k">Kind</td><td><span class="eng-tag story">Story</span></td></tr><tr><td class="k">Priority</td><td><span class="eng-tag high">high</span></td></tr><tr><td class="k">Created</td><td>2026-10-28T12:00:00Z</td></tr><tr><td class="k">Source</td><td>Dinis, in chat, 28 October 2026: &quot;we&#x27;re publishing quite a lot of articles every day … have a section where you list per day, so you have the last 5 days … and then maybe go per section … in terms of the topic … I don&#x27;t think you should have the article in more than one section&quot;; approving the brief: &quot;those sections are good. 5 days is fine … PHP shell should be a section … one big headline and maybe five, all with images … and then as you go down, then the text based that you have there now</td></tr><tr><td class="k">Release</td><td><a href="../releases/v999.0.0.html">v999.0.0</a></td></tr><tr><td class="k">Effort</td><td>medium</td></tr><tr><td class="k">File</td><td><code>admin/engineering/issues/done/095-the-front-page-by-day-and-section.md</code></td></tr></table><div class="eng-body"><h2 id="what-is-asked">What is asked</h2>
 <p>The Broadsheet view of the front page, rebuilt from the top: a compact masthead with the sections as jump links; the editor's lead, large, with its image, beside the running-story box; five more with their images; the last five publishing days, every article listed under its day; eight topic section cards, each with its five newest and a link to a page per section. The full brief, with mock-ups and the decisions, is <code>admin/notes/2026-10-28__brief__the-front-page-by-day-and-section.md</code>. The section of every article is in <code>admin/content/front/sections.json</code>.</p>
 <h2 id="scenario">Scenario</h2>
 <pre><code class="lang-gherkin">Given admin/content/front/sections.json assigns every article to exactly one of eight sections
@@ -173,10 +173,11 @@ And a phone at 390 px has no horizontal scroll</code></pre>
 <h2 id="mock-up">Mock-up</h2>
 <p>In the brief: <code>admin/notes/2026-10-28__front-page/</code>.</p>
 <h2 id="outcome">Outcome</h2>
-<p>To be filled by @newsroom.dev when it ships.</p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
+<p>Shipped in v999.0.0 (stamped by CI). The Broadsheet is rebuilt from the top: a compact masthead with the eight sections as jump links; the lead with its card image beside the running-story box (<code>developing.json</code>); five more with images (the editor's <code>highlights</code>, else the five newest after the lead); the last five publishing days, every article under its day with its section, a subtitle cut at a word, and on a phone a subtitle only under the newest day; eight section cards (five newest, the count, "All N") and a page per section at <code>sections/&lt;id&gt;/index.html</code> with its <code>.md</code> twin, by month. Below, as before: the newsletter and Start here, Collections, Who are you reading as?, From the agents, and a foot line to every article, the desks and the archive. The five desks band left the Broadsheet; the desk pages stay.</p>
+<p><code>front.py</code> stops the build, naming the slug, for an article with no row in <code>admin/content/front/sections.json</code>, a row naming an undefined section, or a row for no article. The two articles published after the brief was approved (<code>a-payout-for-every-row</code>, <code>who-carries-the-risk</code>) were placed in Agent security &amp; behaviour policies, so the build passes; the writer adds the row in the commit that publishes an article from now on. The Briefing and Your desk are unchanged (four highlights). Section colours are inline custom properties from <code>sections.json</code>, and text in them is mixed toward the ink so it holds 4.5:1 in all five themes; the stylesheet still names no colour. Tests in <code>test_front.mjs</code>: the last five days appear once each, five more with images, the eight cards with their five newest, the pages and twins, the failing build, 390 px with no sideways scroll and subtitles only on the newest day, the jump links landing, and the section colours' contrast in five themes. Not done, as the brief says: feeds per section, and refreshing Collections and From the agents.</p></div><p class="dim"><a href="../index.html">Back to the board</a>.</p>
 <div class="agent">
   <h4>For an agent</h4>
-  <p>Issue 095 on newsroom.sgit.ai: The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one. Status open, kind story, priority high, release unplanned. Source file admin/engineering/issues/open/095-the-front-page-by-day-and-section.md.</p>
+  <p>Issue 095 on newsroom.sgit.ai: The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one. Status done, kind story, priority high, release v999.0.0. Source file admin/engineering/issues/done/095-the-front-page-by-day-and-section.md.</p>
 </div>
 </main>
 <sg-meter view="page" kind="free" date="" topics="" title="095: The front page by day and by section: the lead and five with images, the last five days in full, eight topic sections with every article in one, SGit Newsroom" quiet></sg-meter>
@@ -190,7 +191,7 @@ import('../../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js')
     <div class="brandline">newsroom<span>.sgit.ai</span></div>
     <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
     <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.13.125</a> &middot; <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v999.0.0</a> &middot; <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>The newsroom</h4>
