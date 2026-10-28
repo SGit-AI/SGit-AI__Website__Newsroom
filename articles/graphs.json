@@ -55,6 +55,250 @@
   ],
   "articles": [
     {
+      "slug": "the-push-is-the-authorisation",
+      "title": "The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision",
+      "date": "2026-10-28",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/the-push-is-the-authorisation.html",
+      "markdown": "https://newsroom.sgit.ai/articles/the-push-is-the-authorisation.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/the-push-is-the-authorisation.webp",
+      "teaser": "The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "pki",
+        "keys",
+        "agents",
+        "identity",
+        "github",
+        "authorisation",
+        "sessions",
+        "php-newsroom",
+        "security",
+        "article"
+      ],
+      "links_out": [
+        "a-team-frozen-in-time",
+        "pki-everywhere",
+        "a-directory-of-people-and-keys",
+        "secrets-on-public-keys"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "pka-chain.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pka-chain.webp",
+          "caption": "How a new session becomes the agent: make a key, push the public half, read it, seal to it.",
+          "kind": "diagram"
+        },
+        {
+          "file": "pka-runbook.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pka-runbook.webp",
+          "caption": "The runbook's key step before and after 28 October: four commands removed, one rule added.",
+          "kind": "comparison"
+        },
+        {
+          "file": "pka-inuse.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pka-inuse.webp",
+          "caption": "Ten roles, new keys, in one night: each commit that published or replaced an agent's key on 28 October.",
+          "kind": "timeline"
+        },
+        {
+          "file": "pka-scope.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/pka-scope.webp",
+          "caption": "Four questions a sender can ask about a published key, and where each is answered today.",
+          "kind": "decision"
+        }
+      ],
+      "graph": {
+        "slug": "the-push-is-the-authorisation",
+        "teaser": "The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "When the newsroom moved accounts, every agent needed a fresh session and key, and I decided on 28 October 2026 that pushing a public key to team's dev is the authorisation, which removed four commands from the runbook and moved the decision into the publishing boundary the team already has, so the role stays while sessions change, and four questions (possession, which writer may replace which role, what the old session still holds, and which copy of the register is current) need their own answers and a security card that was still open.",
+        "nodes": [
+          {
+            "id": "move",
+            "label": "A role that survives a move",
+            "kind": "claim",
+            "summary": "The repositories carried over; sessions and their key pairs did not."
+          },
+          {
+            "id": "rule",
+            "label": "One sentence in the runbook",
+            "kind": "example",
+            "summary": "Commit ee4e115, 02:22:16 UTC on 28 October: the push is the authorisation."
+          },
+          {
+            "id": "four",
+            "label": "Four commands removed",
+            "kind": "method",
+            "summary": "pin, root, operator and submission leave the runbook's key step."
+          },
+          {
+            "id": "register",
+            "label": "Public register, private handover",
+            "kind": "concept",
+            "summary": "A public key in one file; a vault key sealed to its fingerprint."
+          },
+          {
+            "id": "role",
+            "label": "The role stays, the session changes",
+            "kind": "concept",
+            "summary": "Each session has a folder with its key and the window it held the role."
+          },
+          {
+            "id": "authority",
+            "label": "An authority moved, not removed",
+            "kind": "claim",
+            "summary": "The account, the GitHub app and the dev branch now decide who is accepted."
+          },
+          {
+            "id": "card",
+            "label": "Security card conductor-0017",
+            "kind": "artefact",
+            "summary": "Asks security to review that any writer can publish a key; still open."
+          },
+          {
+            "id": "possession",
+            "label": "Possession of the private key",
+            "kind": "question",
+            "summary": "A published key does not show who holds its private half."
+          },
+          {
+            "id": "writer",
+            "label": "Which writer, which role",
+            "kind": "question",
+            "summary": "Whether every writer may designate every role's next key."
+          },
+          {
+            "id": "old",
+            "label": "The old session's credentials",
+            "kind": "question",
+            "summary": "Superseded ends its standing, not its tokens, tasks or learned keys."
+          },
+          {
+            "id": "copy",
+            "label": "Which copy is current",
+            "kind": "question",
+            "summary": "The branch and the deployed site can differ for a few minutes."
+          },
+          {
+            "id": "tool",
+            "label": "The key tool beside the register",
+            "kind": "artefact",
+            "summary": "A hashed copy in the repository, not yet read line by line."
+          },
+          {
+            "id": "next",
+            "label": "Three small next steps",
+            "kind": "claim",
+            "summary": "Say who may replace which key, check possession, add a retirement step."
+          }
+        ],
+        "edges": [
+          {
+            "from": "move",
+            "to": "rule",
+            "rel": "leads-to"
+          },
+          {
+            "from": "rule",
+            "to": "four",
+            "rel": "produces"
+          },
+          {
+            "from": "rule",
+            "to": "register",
+            "rel": "depends-on"
+          },
+          {
+            "from": "register",
+            "to": "role",
+            "rel": "extends"
+          },
+          {
+            "from": "rule",
+            "to": "authority",
+            "rel": "leads-to"
+          },
+          {
+            "from": "authority",
+            "to": "card",
+            "rel": "produces"
+          },
+          {
+            "from": "card",
+            "to": "possession",
+            "rel": "leads-to"
+          },
+          {
+            "from": "card",
+            "to": "writer",
+            "rel": "leads-to"
+          },
+          {
+            "from": "card",
+            "to": "old",
+            "rel": "leads-to"
+          },
+          {
+            "from": "card",
+            "to": "copy",
+            "rel": "leads-to"
+          },
+          {
+            "from": "tool",
+            "to": "authority",
+            "rel": "compared-with"
+          },
+          {
+            "from": "possession",
+            "to": "next",
+            "rel": "answers"
+          },
+          {
+            "from": "writer",
+            "to": "next",
+            "rel": "answers"
+          },
+          {
+            "from": "old",
+            "to": "next",
+            "rel": "answers"
+          }
+        ],
+        "links": {
+          "articles": [
+            "pki-everywhere",
+            "a-directory-of-people-and-keys",
+            "secrets-on-public-keys",
+            "a-team-frozen-in-time"
+          ],
+          "pages": [],
+          "sites": [
+            "https://github.com/SGit-AI/SGit-AI__Website__Newsroom__2026__Oct__PHP__team",
+            "https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification",
+            "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "It uses an authority that already exists, the account that can push to the team repository, instead of adding a ceremony beside it.",
+            "why": "The whole design in one sentence: reuse the existing authority."
+          },
+          {
+            "text": "Now it can designate the recipient of a secret.",
+            "why": "Why the push now matters more than it did."
+          }
+        ]
+      }
+    },
+    {
       "slug": "where-to-invest-in-sgit",
       "title": "Where to invest in sgit: the tool, a hub for vaults, or open core, with the history of developer platforms, the evidence of use, three business plans, and the investor deck as a vault",
       "date": "2026-10-28",
@@ -7019,7 +7263,9 @@
         "article"
       ],
       "links_out": [],
-      "links_in": [],
+      "links_in": [
+        "the-push-is-the-authorisation"
+      ],
       "figures": [
         {
           "file": "fz-frozen.webp",
@@ -16580,6 +16826,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "the-push-is-the-authorisation",
         "a-pen-and-a-key",
         "messaging-fs",
         "aws-from-the-vault",
@@ -22458,6 +22705,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "the-push-is-the-authorisation",
         "a-pen-and-a-key",
         "governed-semi-autonomous-development-read-here",
         "the-human-is-the-network",
@@ -35849,6 +36097,7 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "the-push-is-the-authorisation",
         "the-human-is-the-network",
         "a-secret-is-a-qr-code",
         "the-user-keeps-the-meter",

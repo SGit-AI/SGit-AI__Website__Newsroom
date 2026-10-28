@@ -96,7 +96,9 @@ My voice memos of 24 October 2026; the git histories of [SGit-AI__CLI](https://g
 
 Agents & policyStartups & strategy[This article as a graph →](graphs.md#a-team-frozen-in-time)
 
-No other article links here yet.
+### Continued by
+
+- [The push is the authorisation: a new agent session publishes its public key to the team repository, that push is how I accept it, and so who can push becomes a security decision](the-push-is-the-authorisation.md) The PHP newsroom accepts a new agent session's key because it was pushed to the team repository, which makes who can push a security decision.
 
 [All articles](index.md) · [All graphs](graphs.md)
 

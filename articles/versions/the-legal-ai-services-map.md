@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-28 | published | 1,801 | first published | this release | [current](../the-legal-ai-services-map.md) |
+| **v1.0.0** | 2026-10-28 | published | 1,801 | first published | [`ade6b9149`](https://github.com/SGit-AI/SGit-AI__Website/commit/ade6b914987426b39999cb7e9164f78c65db75d9) | [current](../the-legal-ai-services-map.md) |
 
 [← Back to the article](../the-legal-ai-services-map.md) · [All articles](../index.md)
 
