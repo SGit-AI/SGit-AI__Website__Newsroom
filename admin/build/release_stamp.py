@@ -109,11 +109,14 @@ def served_files():
 def stamp_pending(new):
     """Every pending version in the served tree becomes the release's number: contents, then paths."""
     token, changed, moved = PENDING.encode(), 0, 0
+    stamped = []
     for p, rel in list(served_files()):
         b = p.read_bytes()
         if token in b:
             p.write_bytes(b.replace(token, new.encode()))
             changed += 1
+            stamped.append(rel)
+    rerecord(stamped)
     for p, rel in sorted(served_files(), key=lambda x: -len(x[1])):
         if PENDING in p.name:
             p.rename(p.with_name(p.name.replace(PENDING, new)))
@@ -124,6 +127,29 @@ def stamp_pending(new):
                 (Path(dirpath) / d).rename(Path(dirpath) / d.replace(PENDING, new))
                 moved += 1
     return changed, moved
+
+
+SYNC_RECORD = ROOT / "admin/build/newsroom-sync.json"
+
+
+def rerecord(stamped):
+    """The import record keeps a hash of every page the sync wrote, and the gate refuses a page edited after it
+    ("imported from sgit.ai and edited here"). A page the sync wrote with the pending version is edited by this
+    stamp and nothing else, so its hash is recorded again, the way the sync itself would have recorded it."""
+    if not stamped or not SYNC_RECORD.exists():
+        return
+    sys.path.insert(0, str(ROOT / "admin/build"))
+    from sync_newsroom import content_sha
+    record = json.loads(SYNC_RECORD.read_text(encoding="utf-8"))
+    n = 0
+    for rel in stamped:
+        entry = record.get("files", {}).get(rel)
+        if entry is not None:
+            entry["sha256"] = content_sha((ROOT / rel).read_bytes(), rel)
+            n += 1
+    if n:
+        SYNC_RECORD.write_text(json.dumps(record, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(f"release_stamp: {n} imported page(s) re-recorded after the stamp")
 
 
 def git(*a):
