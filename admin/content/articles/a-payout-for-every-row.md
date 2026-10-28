@@ -120,7 +120,7 @@ This article defines what would be underwritten. The series continues with the q
 
 1. **Who can underwrite an agent behaviour policy today, and what does that look like?** A research brief, starting from the companies in [underwriting the agent economy, reviewed](/articles/underwriting-the-agent-economy-reviewed.html), which already sell AI agent cover, and asking each what it would need to price per row.
 2. **What should the vendors of agents cover themselves?** What exists, and what a vendor's share of a row would look like.
-3. **The formula as a vault.** The rows, the limits, the factors and the claim rule as data, with a page that computes the premium for your own agent, so the formula can be argued with in numbers rather than in words.
+3. **The formula as a vault.** The rows, the limits, the factors and the claim rule as data, with a page that computes the premium for your own agent, so the formula can be argued with in numbers rather than in words. It is now [vault m1wbrefr](/articles/the-vendors-layer.html#vault), with a calculator.
 
 ## What this does not claim {#limits}
 

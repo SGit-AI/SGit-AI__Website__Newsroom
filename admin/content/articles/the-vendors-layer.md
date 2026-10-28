@@ -75,7 +75,7 @@ The shares are mine and illustrative; who carries what is the negotiation, and t
 
 The formula, its inputs and the worked example are now a vault, so they can be argued with in numbers rather than words.
 
-VAULT_PARAGRAPH
+It is vault `m1wbrefr`, published with its read key so anyone can open it: [open the calculator in the vault viewer](https://dev.vault.sgraph.ai/#sgit_public_read_54a5d5d39863f124c6a304b20874e53436d77df42945ba15c74712a680b22991%3Am1wbrefr), or clone it with `sgit clone sgit_public_read_54a5d5d39863f124c6a304b20874e53436d77df42945ba15c74712a680b22991:m1wbrefr agent-underwriting` and run `python3 premium.py`.
 
 It holds `formula.md`, the seven steps in words; `policy.json`, every input, the four rows, the seven controls, the runtime factors, the vendor's share per row; `premium.py`, which reproduces every number in this series with Python's standard library; and a calculator. In the calculator you switch controls on and off, choose the runtime, change any row's limit or the vendor's share, and test a claim against a row with its conditions held or not. A control nothing enforces, such as a line in the prompt, can be ticked and moves nothing.
 

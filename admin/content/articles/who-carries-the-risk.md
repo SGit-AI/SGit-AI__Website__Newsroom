@@ -12,6 +12,8 @@ status: published
 
 !shot ck-chain.webp | images/ | The four parts of an insurer for agent behaviour policies, and who already does each one today. | diagram
 
+> **What came next.** [The vendor's layer](/articles/the-vendors-layer.html) gives each row a share the agent's vendor carries, and puts the formula and a calculator in a vault.
+
 ## In short {#in-short}
 
 - **We have most of the pieces to put a number on an agent.** The open behaviour policy, the controls mapped to risks, AIUC-1 as a graph, and [a deterministic formula](/articles/a-payout-for-every-row.html).
