@@ -146,7 +146,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#who-ca
 
 ### Continued by
 
-- [Where to build the agent insurer: underwrite in London, sell into the US, carry the risk in Bermuda, raise capital in the Gulf, and about £4 million to start, with the capital following from the limits sold](where-to-build-the-agent-insurer.md) Underwrite in London, sell into the US and EU, carry the risk in Bermuda, raise capital in the Gulf; about £4 million to start.
+- [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](where-to-build-the-agent-insurer.md) Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.
 - [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](the-vendors-layer.md) Each row of an agent behaviour policy gets a vendor's share, carried when the vendor's conditions held; contracts cap at a year's fees, Europe moves the line.
 - [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md) Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.
 

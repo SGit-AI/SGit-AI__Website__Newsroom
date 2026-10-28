@@ -4,7 +4,7 @@
 
 The reading meter charges a few pence a page from credit kept in your browser, by how far you read and how useful you said it was. Nothing to sign up for.
 
-> newsroom.sgit.ai · site v0.13.127 · 319 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
+> newsroom.sgit.ai · site v999.0.0 · 319 articles since 2026-08-17; the newest is 2026-10-28. Three views of this page: Broadsheet, Briefing, Your desk (https://newsroom.sgit.ai/).
 
 ## Developing story: php2shell: the two PHP flaws of October 2026
 
@@ -12,7 +12,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ## The lead
 
-- [Where to build the agent insurer: underwrite in London, sell into the US, carry the risk in Bermuda, raise capital in the Gulf, and about £4 million to start, with the capital following from the limits sold](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min. Underwrite in London, sell into the US and EU, carry the risk in Bermuda, raise capital in the Gulf; about £4 million to start.
+- [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min. Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.
 
 ## Highlights
 
@@ -34,7 +34,7 @@ Governments told organisations to take sites offline if they could not patch. Th
 
 ### Agent security & policy (91)
 For security leads, risk owners and boards deciding what an agent may do and who carries the risk.
-- [Where to build the agent insurer: underwrite in London, sell into the US, carry the risk in Bermuda, raise capital in the Gulf, and about £4 million to start, with the capital following from the limits sold](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min.
+- [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](articles/where-to-build-the-agent-insurer.md), 2026-10-28, 10 min.
 - [The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product](articles/the-vendors-layer.md), 2026-10-28, 10 min.
 - [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](articles/who-carries-the-risk.md), 2026-10-28, 14 min.
 
@@ -47,7 +47,7 @@ For engineers and builders running agents day to day: tools, memory, email, desk
 ### Vaults & provenance (70)
 For anyone who needs evidence they can open: encrypted vaults, keys, graphs and the publishing method.
 - [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](articles/knowledge-graphs-for-kgell.md), 2026-10-28, 7 min.
-- [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 19 min.
+- [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](articles/what-sgit-does-that-git-does-not.md), 2026-10-27, 20 min.
 - [The evidence behind four days: Jeremiah Grossman's php2shell post, checked claim by claim against the data, with the provenance and the graphs, and the two things that changed since](articles/the-evidence-behind-four-days.md), 2026-10-27, 16 min.
 
 ### The future of news (48)

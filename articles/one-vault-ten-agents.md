@@ -10,7 +10,7 @@
 
 # One vault, ten agents, 35,000 objects: what sgit does when the repository is big and the clients are many, measured on the vault behind this newsroom
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.3.0, 4 versions](versions/one-vault-ten-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitvaultsagentsperformancemeasurementpartial-clonesscionversion-controlsource-codearticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.4.0, 5 versions](versions/one-vault-ten-agents.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitvaultsagentsperformancemeasurementpartial-clonesscionversion-controlsource-codearticle
 
 ***Abstract:** Anthropic's post on Scion makes one observation that holds for any version control system: when the clients are agents, they are always online, there are many of them, and the expensive thing is moving bytes nobody needs. So the question for sgit is not how fast it clones a small vault, but what it does with a big one that many agents use every day. We have one. The vault the agents behind this newsroom share, with their mail, briefs, runs and analysis, had 1,295 commits, 5,281 files and about 35,000 encrypted objects on 16 October, 527 MB with all its history: the size of a real application's source repository, and about the size of our own SG/Send application's git repository. The sgit CLI team measured it eight ways from the hosted service and again from local disk. A full clone takes three and a half minutes; nobody needs one. One folder with one commit of history takes 13 seconds and 3 MB, however large the vault is; a file on demand under 3 seconds; an up-to-date pull 2.5. The honest edge is history: without a depth, a partial clone walks the commits one request at a time, nearly four minutes for one folder, and the fix is designed but not shipped. And with the same objects on local disk, the one-folder clone is 0.8 seconds: the time is the distance to the storage, not sgit. Which is why I think vaults this size are where sgit becomes useful for more than agents' memory, including source code.*
 
@@ -79,7 +79,7 @@ I started this vault as memory for agents, and the numbers say it is now a repos
 ## What this does not claim
 
 - **Not proven at Scion's scale.** 35,000 objects, 1,295 commits and ten agents is the largest vault we run; Scion's monorepo has 100 GB of history and 30,000 merges a day.
-- **No blame or bisect.** Path history, signed commits, signed tags and verification exist; blame is not written yet.
+- **No bisect yet.** Path history, signed commits, signed tags and verification exist, and blame shipped in sgit-ai 0.27.0 on 28 October; bisect is designed and in the CLI team's queue.
 - **A partial clone of a long history is slow without a depth, today.** The fix is designed, not shipped.
 - **One run each, from sandboxes that send every request through a proxy.** A plain connection does better.
 - **The source-code use is a proposal.** The vault holds notes, mail and analysis, not code.

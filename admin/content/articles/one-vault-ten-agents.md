@@ -75,7 +75,7 @@ I started this vault as memory for agents, and the numbers say it is now a repos
 ## What this does not claim {#limits}
 
 - **Not proven at Scion's scale.** 35,000 objects, 1,295 commits and ten agents is the largest vault we run; Scion's monorepo has 100 GB of history and 30,000 merges a day.
-- **No blame or bisect.** Path history, signed commits, signed tags and verification exist; blame is not written yet.
+- **No bisect yet.** Path history, signed commits, signed tags and verification exist, and blame shipped in sgit-ai 0.27.0 on 28 October; bisect is designed and in the CLI team's queue.
 - **A partial clone of a long history is slow without a depth, today.** The fix is designed, not shipped.
 - **One run each, from sandboxes that send every request through a proxy.** A plain connection does better.
 - **The source-code use is a proposal.** The vault holds notes, mail and analysis, not code.

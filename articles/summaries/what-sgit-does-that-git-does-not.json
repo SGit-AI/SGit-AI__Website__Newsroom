@@ -5,17 +5,17 @@
   {
    "id": "top",
    "label": "The opening",
-   "words": 157,
+   "words": 195,
    "line": "Ten sgit releases turned minutes into seconds; an honest map against Git, corrected after the sgit CLI team's review.",
-   "para": "Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck real work found. The ideas came from MGraph-DB, Memory-FS, content-address caching and the writer pays. The article maps what Git lacks, what it shares, where Git leads today and how much can be built, and what a host that reads nothing never can.",
+   "para": "Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck real work found, and on 28 October 0.27.0 closed six of Git's eighteen leads. The ideas came from MGraph-DB, Memory-FS, content-address caching and the writer pays. The article maps what Git lacks, what it shares, where Git still leads and what a host that reads nothing never can.",
    "by": "newsroom.writer"
   },
   {
    "id": "in-short",
    "label": "In short",
-   "words": 214,
+   "words": 253,
    "line": "Ten releases, per-command speed-ups, the lineage, and a five-way verdict against Git, reviewed by the CLI team.",
-   "para": "Releases fixed real bottlenecks, taking commands from minutes to seconds. Git has no equivalent for a host that reads nothing, read keys, custody without access, vault-carried policy, blind writes or ranged folder reads. Git shares clones, packs and named-file commits. Git leads on merges, identity, deltas and tools, mostly buildable; some things are impossible by design.",
+   "para": "Releases took commands from minutes to seconds. Git has no equivalent for a host that reads nothing, read keys, custody without access, vault-carried policy, blind writes or ranged folder reads. 0.27.0 closed line merges, partial commits, own-key signing, renames, blame and grep; Git still leads on rebase, bisect, deltas and hosted tools.",
    "by": "newsroom.writer"
   },
   {
@@ -61,17 +61,17 @@
   {
    "id": "git-has-it",
    "label": "What Git has too, and my memo over-claimed",
-   "words": 275,
+   "words": 338,
    "line": "The memo over-claimed: Git has packs, partial, shallow and no-checkout clones, and named-file commits.",
-   "para": "Git's packs are delta-compressed and kept whole by default. clone --path resembles partial clone with sparse-checkout. git clone --no-checkout is old. sgit write commits named files atomically, Git's commit with paths. sgit has the history tools too: log filters, diff, show, reflog, undo, revert, reset, amend, stash and signed tags.",
+   "para": "Git's packs are delta-compressed and kept whole by default. clone --path resembles partial clone with sparse-checkout. Both commit some files, and since 0.27.0 sgit commits hunks too, with no persistent staging area. sgit has the history tools, and since 0.27.0 blame, grep, the pickaxe, renames and own-key signatures.",
    "by": "newsroom.writer"
   },
   {
    "id": "git-ahead",
-   "label": "Where Git is ahead today, and how much of it can be built",
-   "words": 242,
-   "line": "Git leads today on merges, hunks, per-person identity, deltas and tools; almost all of it is buildable client-side.",
-   "para": "Most gaps are minor or mid-level for agent workflows. Git merges by line and detects renames; sgit merges whole files. Hunk staging is missing. sgit signatures prove a key holder, not a clone, with no per-key expiry. No deltas or garbage collection yet. Blame, bisect and grep are client-side in Git too. Maturity takes time.",
+   "label": "Where Git is ahead, and how fast the gap is closing",
+   "words": 405,
+   "line": "Six of Git's leads closed in 0.27.0; twelve remain, most designed",
+   "para": "sgit-ai 0.27.0 shipped line-level merges, partial commits, own-key signing, rename detection, blame and grep, each checked against Git: 4,500 merges byte-identical, 90 of 90 renames, 25 of 25 blames, 120 of 120 greps. Cherry-pick, hooks, rebase, bisect and worktrees are designed and next; deltas, GC and per-folder keys later; accounts and review go to a future server.",
    "by": "newsroom.writer"
   },
   {
@@ -101,9 +101,9 @@
   {
    "id": "limits",
    "label": "What this does not claim",
-   "words": 126,
+   "words": 115,
    "line": "Timings are others' measurements, verdicts are against 0.26.0, and sgit's own docs are partly stale.",
-   "para": "The timings come from the CLI team, cli.sgit.ai and the newsroom, not re-run. Verdicts compare sgit-ai 0.26.0 with Git's and GitHub's documentation. sgit's limitations page still calls signing planned and partial commits impossible; main's changelog still heads 0.26.0 as unreleased. No equivalent means the mainstream toolchain, not add-ons.",
+   "para": "The timings come from the CLI team, cli.sgit.ai and the newsroom, not re-run. Verdicts compare sgit-ai 0.26.0, and for Git's lead 0.27.0, with Git's and GitHub's documentation. The checks against Git are the CLI build agent's. No equivalent means the mainstream toolchain, not add-ons.",
    "by": "newsroom.writer"
   },
   {
@@ -117,9 +117,9 @@
   {
    "id": "sources",
    "label": "Where this comes from",
-   "words": 152,
+   "words": 183,
    "line": "sgit's release notes, cli.sgit.ai articles and docs, the CLI repository, the CLI team's review, PyPI, briefs, Git and GitHub docs.",
-   "para": "Sources include sgit's 0.24.0 to 0.26.0 notes, cli.sgit.ai's articles and docs, the CLI repository's changelog and threat model, the sgit CLI team's review of 28 October, PyPI release times, the PHP newsroom's briefs, and Git's and GitHub's documentation. Two figures are cli.sgit.ai's own.",
+   "para": "Sources include cli.sgit.ai's sgit-and-Git comparison, its 0.27.0 sign-off and the Git-parity roadmap, sgit's 0.24.0 to 0.26.0 notes, cli.sgit.ai's articles and docs, the CLI changelog and threat model, the CLI team's review of 28 October, PyPI, the PHP newsroom's briefs, and Git's and GitHub's documentation.",
    "by": "newsroom.writer"
   }
  ]

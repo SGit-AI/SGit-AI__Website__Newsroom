@@ -16,7 +16,7 @@ v1.0.0 is the article as first published. A change to its text (title, abstract 
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.3.0** | 2026-10-28 | minor | 3,404 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`3dfdf8678`](https://github.com/SGit-AI/SGit-AI__Website/commit/3dfdf86786e6d4d258dd4364116d35371637b32e) | [what changed](who-carries-the-risk/v1.3.0.md) · [current](../who-carries-the-risk.md) |
+| **v1.3.0** | 2026-10-28 | minor | 3,404 | +2 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`a1b5e3bf2`](https://github.com/SGit-AI/SGit-AI__Website/commit/a1b5e3bf210c660b76b39345983e47449417443e) | [what changed](who-carries-the-risk/v1.3.0.md) · [current](../who-carries-the-risk.md) |
 | **v1.2.0** | 2026-10-28 | minor | 3,402 | +26 / −0 words; 0 changed, 1 added, 0 removed paragraphs | [`9743a435c`](https://github.com/SGit-AI/SGit-AI__Website/commit/9743a435cc09efd5a5e2a73f3d6a77c37edbd086) | [what changed](who-carries-the-risk/v1.2.0.md) |
 | **v1.1.0** | 2026-10-28 | minor | 3,376 | +14 / −0 words; 1 changed, 0 added, 0 removed paragraphs | [`bc99b7f68`](https://github.com/SGit-AI/SGit-AI__Website/commit/bc99b7f68cd66f11f1ef9bcfffc4f1d384cd311c) | [what changed](who-carries-the-risk/v1.1.0.md) |
 | **v1.0.0** | 2026-10-28 | published | 3,362 | first published | [`7b80e2576`](https://github.com/SGit-AI/SGit-AI__Website/commit/7b80e2576576cac52fbffe015dbb38300956e57f) |  |

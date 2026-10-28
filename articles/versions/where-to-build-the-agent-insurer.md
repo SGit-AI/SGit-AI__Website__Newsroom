@@ -10,13 +10,14 @@
 
 # Versions of: Where to build the agent insurer
 
-1 published version of [Where to build the agent insurer: underwrite in London, sell into the US, carry the risk in Bermuda, raise capital in the Gulf, and about £4 million to start, with the capital following from the limits sold](../where-to-build-the-agent-insurer.md). The current one is **v1.0.0**.
+2 published versions of [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](../where-to-build-the-agent-insurer.md). The current one is **v1.1.0**.
 
 v1.0.0 is the article as first published. A change to its text (title, abstract or body) is the next minor version, v1.1.0; a change only to its other details (a LinkedIn link, the release it belongs to) is the next patch, v1.0.1. The list is read from the site's git history at every build, so it cannot be edited by hand and cannot leave a version out. Views extracted from an article, such as the Five readers, are not part of its text and do not change its version.
 
 | Version | Date | Kind | Words | Change from the version before | Commit |  |
 |---|---|---|---|---|---|---|
-| **v1.0.0** | 2026-10-28 | published | 2,543 | first published | [`3dfdf8678`](https://github.com/SGit-AI/SGit-AI__Website/commit/3dfdf86786e6d4d258dd4364116d35371637b32e) | [current](../where-to-build-the-agent-insurer.md) |
+| **v1.1.0** | 2026-10-28 | minor | 2,577 | +981 / −948 words; 8 changed, 18 added, 17 removed paragraphs | this release | [what changed](where-to-build-the-agent-insurer/v1.1.0.md) · [current](../where-to-build-the-agent-insurer.md) |
+| **v1.0.0** | 2026-10-28 | published | 2,543 | first published | [`a1b5e3bf2`](https://github.com/SGit-AI/SGit-AI__Website/commit/a1b5e3bf210c660b76b39345983e47449417443e) |  |
 
 [← Back to the article](../where-to-build-the-agent-insurer.md) · [All articles](../index.md)
 

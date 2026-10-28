@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" data-root="../../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where to build the agent insurer: what changed in v1.1.0, SGit Newsroom</title>
+<meta name="description" content="The changes to the article "Where to build the agent insurer" in v1.1.0, paragraph by paragraph.">
+<link rel="canonical" href="https://newsroom.sgit.ai/articles/versions/where-to-build-the-agent-insurer/v1.1.0.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SGit Newsroom">
+<meta property="og:url" content="https://newsroom.sgit.ai/articles/versions/where-to-build-the-agent-insurer/v1.1.0.html">
+<meta property="og:title" content="Where to build the agent insurer: what changed in v1.1.0, SGit Newsroom">
+<meta property="og:description" content="The changes to the article "Where to build the agent insurer" in v1.1.0, paragraph by paragraph.">
+<meta property="og:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Where to build the agent insurer: what changed in v1.1.0, SGit Newsroom">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://newsroom.sgit.ai/og/default.jpg">
+<link rel="alternate" type="text/markdown" href="v1.1.0.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Where to build the agent insurer: what changed in v1.1.0, SGit Newsroom", "headline": "Where to build the agent insurer: what changed in v1.1.0, SGit Newsroom", "description": "The changes to the article \"Where to build the agent insurer\" in v1.1.0, paragraph by paragraph.", "url": "https://newsroom.sgit.ai/articles/versions/where-to-build-the-agent-insurer/v1.1.0.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "SGit Newsroom", "url": "https://newsroom.sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <link rel="stylesheet" href="../../../assets/themes/themes.css">
+  <link rel="stylesheet" href="../../../assets/site-nav.css">
+  <script src="../../../assets/themes/themes.js"></script>
+  <script src="../../../assets/reader/anim.js" defer></script>
+  <a class="brand" href="../../../index.html">newsroom<span>.sgit.ai</span></a>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v999.0.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../index.html">Newsroom<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../index.html">Front page</a>
+      <a class="sl" href="../../../php-flaws/index.html">Investigation: the PHP flaws</a>
+      <a class="sl" href="../../../sections/publishers/index.html">For publishers: start here</a>
+      <a class="sl" href="../../../about/index.html">Why this exists</a>
+      <a class="sl" href="../../../desks/index.html">The five desks</a>
+      <a class="sl" href="../../../agents/index.html">Written by the agents</a>
+      <a class="sl" href="../../../articles/newsletter/index.html">Newsletter</a>
+      <a class="sl" href="../../../articles/index.html#all">Every article</a>
+      <a class="sl" href="../../../articles/collections/index.html">Collections</a>
+      <a class="sl" href="../../../articles/desk/index.html">From the desk</a>
+      <a class="sl" href="../../../articles/graphs.html">As graphs</a>
+      <a class="sl" href="../../../persona/index.html">Read as a persona</a>
+      <a class="sl" href="../../../for/make.html">Make a reading list</a>
+      <a class="sl" href="../../../subscribe/index.html">Subscribe</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../wire/index.html">Industry Wire<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../wire/index.html">Today's edition</a>
+      <a class="sl" href="../../../wire/sources.html">The sources</a>
+      <a class="sl" href="../../../wire/how.html">How the wire works</a>
+      <a class="sl" href="../../../wire/owasp/index.html">The OWASP Wire</a>
+      <a class="sl" href="../../../wire/aws/index.html">The AWS Wire</a>
+      <a class="sl" href="../../../wire/portugal/index.html">The Portugal Wire</a>
+      <a class="sl" href="../../../wire/days.html">Day by day</a>
+      <a class="sl" href="../../../wire/charter.html">The charter</a>
+      <a class="sl" href="../../../articles/dark-mode-and-four-more.html">Themes: dark mode and four more</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../account/index.html">Account<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../account/index.html">Your reading account</a>
+      <a class="sl" href="../../../account/newsroom.html">Your newsroom</a>
+      <a class="sl" href="../../../account/share.html">A newsroom designed for you</a>
+      <a class="sl" href="../../../account/personas.html">Your personas</a>
+      <a class="sl" href="../../../account/top-up.html">Top up</a>
+      <a class="sl" href="../../../vault/index.html">Your vault, between devices</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../newsroom/index.html">How it runs<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../newsroom/index.html">How the newsroom runs</a>
+      <a class="sl" href="../../../newsroom/index.html#roles">The roles</a>
+      <a class="sl" href="../../../newsroom/policies.html">Behaviour policies</a>
+      <a class="sl" href="../../../newsroom/publish.html">How to publish</a>
+      <a class="sl" href="../../../newsroom/board.html">The board</a>
+      <a class="sl" href="../../../newsroom/log.html">The run log</a>
+      <a class="sl" href="../../../briefs/index.html">The briefs: what is left to build</a>
+      <a class="sl" href="../../../team/index.html">The team: who does what</a>
+      <a class="sl" href="../../../reviews/index.html">Independent review: ChatGPT, Perplexity and the gate</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../design/index.html">Design<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../design/index.html">The design, and what runs</a>
+      <a class="sl" href="../../../thesis/index.html">The thesis: sell the graph</a>
+      <a class="sl" href="../../../corrections/index.html">Corrections must propagate</a>
+      <a class="sl" href="../../../provenance/index.html">Provenance is the product</a>
+      <a class="sl" href="../../../economics/index.html">Paying the fact creator</a>
+      <a class="sl" href="../../../rights/index.html">Content rights: CC-Signed</a>
+      <a class="sl" href="../../../databases/index.html">Databases with no server</a>
+      <a class="sl" href="../../../shipped/index.html">What runs, what is designed</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../replicate/index.html">Replicate<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../replicate/index.html">Replicate this newsroom</a>
+      <a class="sl" href="../../../publishers/index.html">For publishers: what is live, how to try it</a>
+      <a class="sl" href="../../../meter/index.html">SG Meter: the reading meter</a>
+      <a class="sl" href="../../../meter/security.html">The meter's security model</a>
+      <a class="sl" href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+      <a class="sl" href="../../../demos/vaults/newsroom-synthetic-users/index.html">The study: five readers tested this site</a>
+      <a class="sl" href="../../../mvps/seed-companies.html">Seed companies</a>
+      <a class="sl" href="../../../newsroom-api/index.html">The reader API: a map, and a review</a>
+      <a class="sl" href="../../../passkey/index.html">The passkey lab</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../archive/index.html">Archive<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../archive/index.html">The archive</a>
+      <a class="sl" href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+      <a class="sl" href="../../../world-news-day/stories/free-to-republish-is-not-a-licence.html">World News Day: free to republish is not a licence</a>
+      <a class="sl" href="../../../world-news-day/method.html">World News Day: the method</a>
+      <a class="sl" href="../../../archive/2026-08-22-home.html">The first home page (Aug 2026)</a>
+      <a class="sl" href="../../../governance/index.html">The Governance Wire (Aug 2026)</a>
+      <a class="sl" href="../../../portugal/index.html">Portugal Startups (Sep 2026)</a>
+      <a class="sl" href="../../../documents/index.html">The brief pack (Aug 2026)</a>
+      <a class="sl" href="../../../library/index.html">The library: prior art (2025)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/participant.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/participant.html">Where we lose: the disclosure</a>
+      <a class="sl" href="../../../network/index.html">The network</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../engineering/index.html">Engineering: issues &amp; releases</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      </div>
+    </div>
+  </div>
+  <div class="nav-tools">
+  <a class="search-btn" href="../../../search/index.html" title="Search the site, in your browser">Search</a>
+  <link rel="stylesheet" href="../../../assets/search/search-nav.css">
+  <sg-meter class="meter-nav" view="balance"></sg-meter>
+  <button class="vault-btn" type="button" aria-expanded="false" title="Your vault: the reading account carried between your devices"><span class="dot"></span>Vault</button>
+  <link rel="stylesheet" href="../../../assets/vault-pane/vault-pane.css">
+  <script type="module" src="../../../assets/vault-pane/vault-pane.js"></script>
+  <link rel="stylesheet" href="../../../assets/reader/strip.css">
+  <script src="../../../assets/reader/strip.js" defer></script>
+  <script src="../../../assets/reader/highlights.js" defer></script>
+  <script src="../../../assets/reader/folds.js" defer></script>
+  <link rel="stylesheet" href="../../../assets/pen/pen.css">
+  <script type="module" src="../../../assets/pen/pen.js"></script>
+  <div class="theme-pick"></div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom" title="The source of this site, on GitHub">&#9733;<span class="lbl">GitHub</span></a>
+  </div>
+</div></nav>
+<div class="llmschip"><a href="../../../llms.txt" title="Regenerated on every release. If this page changed and that stamp did not, the index has not caught up."><span class="llmschip-k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-3 3 3 3"/><path d="m16 9 3 3-3 3"/></svg>for agents</span><span class="llmschip-p">/llms.txt</span><span class="llmschip-m">v999.0.0</span></a></div>
+<main class="doc diff">
+ <p class="crumb"><a href="../../../index.html">Home</a> / <a href="../../index.html">Articles</a> / <a href="../../where-to-build-the-agent-insurer.html">Where to build the agent insurer</a> / <a href="../where-to-build-the-agent-insurer.html">Versions</a> / v1.1.0</p>
+ <h1>Where to build the agent insurer: what changed in v1.1.0</h1>
+ <p class="lead">From v1.0.0 (2026-10-28, <code>a1b5e3bf2</code>) to v1.1.0 (2026-10-28, this release), paragraph by paragraph.</p>
+ <p class="small dim">18 paragraphs added, 17 removed, 8 changed in place, 27 unchanged. About 981 words added and 948 removed. Insertions are marked like <ins>this</ins>, deletions like <del>this</del>; unchanged runs are folded to one line; figures appear as their file names.</p>
+ <style>.diff ins{background:#e6f4ea;color:#1a5c36;text-decoration:none;padding:0 2px}.diff del{background:#fde8e6;color:#8a1c12;text-decoration:line-through;padding:0 2px}.diff .diff-same{color:#8a8780;font-size:.85em;border-left:3px solid #e3e0d8;padding-left:.7em;margin:1.2em 0}.diff .added{border-left:3px solid #1a7f5a;padding-left:.7em}.diff .removed{border-left:3px solid #b42318;padding-left:.7em;color:#6b6863;text-decoration:line-through}.diff .changed{border-left:3px solid #b45309;padding-left:.7em}.diff .diff-fig{font-style:italic;color:#6b6863}.diff .diff-li{margin:.3em 0 .3em 1em}</style>
+ <p class="small"><a href="../where-to-build-the-agent-insurer.html">all versions</a></p>
+ <p class="changed"># Where to build the agent insurer: underwrite <ins>and carry the risk </ins>in London, sell into the <del>US,</del><ins>US</ins> <del>carry</del><ins>and</ins> the <del>risk in Bermuda,</del><ins>EU,</ins> raise<ins> the</ins> capital in <del>the</del><ins>one</ins> <del>Gulf,</del><ins>go,</ins> and <del>about</del><ins>what</ins> <del>£4</del><ins>£10</ins> million <del>to</del><ins>or</ins> <del>start,</del><ins>£50</ins> <del>with</del><ins>million</ins> <del>the</del><ins>buys</ins> <del>capital</del><ins>in</ins> <del>following from the limits sold</del><ins>cover</ins></p>
+ <p class="changed">Summary: The last three articles described insuring an agent row by row from its behaviour policy, who could carry the risk, and the vendor's share of it. This one asks where such a company should be built, from a regulatory and an investment point of view, and how much it would <del>take to start.</del><ins>take.</ins> My answer is <del>that</del><ins>London</ins> <del>it</del><ins>first,</ins> <del>has</del><ins>for</ins> <del>more</del><ins>two</ins> <del>than</del><ins>of</ins> <del>one</del><ins>its</ins> <del>home,</del><ins>three</ins> <del>because it does more than one job.</del><ins>jobs.</ins> It should start as a managing agent <del>in London,</del><ins>there,</ins> pricing and selling on a Lloyd's syndicate's capital, because that is where two of today's AI agent covers are written, authorisation takes up to nine months, and an intermediary's own capital is the higher of £5,000 or 2.5% of its <del>income.</del><ins>income; and it should carry the risk there too, as a UK insurer through the PRA's mobilisation regime or with capital at Lloyd's.</ins> It should sell into the US through surplus lines, a $143.3 billion market built for risks without a loss history, and into the EU by one registration, once Europe's product rules make software a product on 9 December 2026. <del>When</del><ins>The</ins> <del>its</del><ins>Gulf's</ins> <del>loss record allows, it should carry the risk itself in Bermuda, where a small commercial insurer has a $1 million floor, an innovative class and a sandbox exist, and most insurance-linked securities</del><ins>funds</ins> are<del> listed. The Gulf is</del> a place to raise <del>capital before it is a market.</del><ins>capital.</ins> On the money, I built a small model with every assumption <del>stated:</del><ins>stated, and the point it makes is that what the money buys is cover. Two years of running the company cost</ins> about £4.35 <del>million</del><ins>million;</ins> <del>for</del><ins>everything</ins> <del>two</del><ins>raised</ins> <del>years as a managing agent, a seed or Series A; then capital</del><ins>above</ins> that <del>follows</del><ins>backs</ins> <del>from</del><ins>policies,</ins> <del>the limits sold,</del><ins>and</ins> because every row is <del>capped.</del><ins>capped,</ins> <del>For</del><ins>the</ins> <del>2,000</del><ins>ceiling</ins> <del>agents</del><ins>of</ins> <del>with</del><ins>cover</ins> <del>£160</del><ins>follows from it. Raised in one go, £10 million backs about £94 million to £188</ins> million of <del>limits,</del><ins>cover,</ins> <del>if</del><ins>1,177 to 2,354 agents at £80,000 each; £50 million backs about £761 million to £1.52 billion, 9,510 to 19,020 agents, depending on how much of the book</ins> one shared failure could hit <del>5%</del><ins>at</ins> <del>to</del><ins>once.</ins> <del>10%</del><ins>The</ins> <del>of</del><ins>bigger</ins> <del>them</del><ins>the cover the company aims for, the more it should raise</ins> at <del>once and half is reinsured, </del>the <del>capital is £4.8 million to £9.6 million. At 10,000 agents, £24 million to £48 million.</del><ins>start.</ins></p>
+ <p class="changed">!shot wh-route.webp | images/ | <del>Three</del><ins>Underwrite</ins> <del>homes</del><ins>and</ins> <del>for</del><ins>carry</ins> <del>three</del><ins>the</ins> <del>jobs: underwrite</del><ins>risk</ins> in London, sell into the US and EU, <del>carry</del><ins>raise</ins> the <del>risk</del><ins>capital</ins> in <del>Bermuda.</del><ins>one go.</ins> | process</p>
+ <p class="diff-same">1 unchanged paragraph, under In short {#in-short}</p>
+ <p class="changed diff-li">&bull; <b>The company does three jobs, <del>so</del><ins>and</ins> <del>it</del><ins>London</ins> <del>can</del><ins>suits</ins> <del>have</del><ins>two</ins> <del>three</del><ins>of</ins> <del>homes.</b></del><ins>them.**</ins> Pricing and selling, <del>distribution, </del>and carrying the <del>risk</del><ins>risk;</ins> <del>need</del><ins>distribution</ins> <del>different</del><ins>goes</ins> <del>licences</del><ins>where</ins> <del>and</del><ins>the</ins> <del>different</del><ins>customers</ins> <del>money.</del><ins>are.</ins></p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="diff-li added">&bull; <b>Carry the risk in London too.</b> A UK insurer through the PRA's mobilisation regime, or capital at Lloyd's behind a syndicate.</p>
+ <p class="diff-same">2 unchanged paragraphs</p>
+ <p class="diff-li removed">&bull; <b>Carry the risk in Bermuda when the record allows.</b> A $1 million floor for a small commercial insurer, an innovative class and a sandbox.</p>
+ <p class="diff-li removed">&bull; <b>Raise capital in the Gulf before selling there.</b> Saudi insurers need SAR 300 million paid up; the region's funds are the opening.</p>
+ <p class="diff-li removed">&bull; <b>About £4.35 million to start.</b> Two years as a managing agent, in a model with every assumption stated.</p>
+ <p class="diff-li removed">&bull; <b>Then the capital follows from the limits sold.</b> £4.8 million to £9.6 million for 2,000 agents; £24 million to £48 million for 10,000.</p>
+ <p class="diff-li added">&bull; <b>What the money buys is cover.</b> About £4.35 million runs the company for two years; everything raised above that backs policies.</p>
+ <p class="diff-li added">&bull; <b>£10 million in one go backs about £94 million to £188 million of cover.</b> 1,177 to 2,354 agents.</p>
+ <p class="diff-li added">&bull; <b>£50 million in one go backs about £761 million to £1.52 billion.</b> 9,510 to 19,020 agents; the bigger the aim, the more to raise at the start.</p>
+ <p class="diff-same">2 unchanged paragraphs, under The question, and why it has more than one answer {#question}</p>
+ <p class="changed">I think the honest answer is that it <del>has</del><ins>can have</ins> more than one home, because it does more than one job. A managing agent prices and sells policies on an insurer's behalf and carries no risk on its own balance sheet; it needs a licence to distribute insurance and a carrier willing to lend its capital. An insurer pays the claims and has to hold capital against a bad year. Distribution needs licences where the customers are. Those three jobs are regulated differently in each place, and the best place for one is not the best place for the others.</p>
+ <p class="changed">!shot wh-homes.webp | images/ | The UK, US, <del>EU, Bermuda</del><ins>EU</ins> and <del>the Middle East:</del><ins>UAE:</ins> what each asks of a managing agent and an insurer. | comparison</p>
+ <p class="diff-same">2 unchanged paragraphs, under Start in London {#london}</p>
+ <p class="changed">The UK licence is within reach of a start-up. A managing agent is either authorised directly by the FCA, which "can typically take up to nine months from when an applicant starts preparing its application", or works as an appointed representative of a firm that is; its own capital requirement, if it does not hold client money, is the higher of "GBP5,000 or 2.5% of annual income from regulated insurance distribution activity", with professional indemnity cover on top (<a href="https://intelligence.dlapiper.com/managing-general-agents/?c=GB">DLA Piper</a>, September 2026). <del>For</del><ins>The</ins> <del>the</del><ins>same</ins> <del>later step, the PRA</del><ins>city</ins> has <del>run a mobilisation</del><ins>the</ins> regime for <del>new insurers since 31 December 2024, "to facilitate new insurer expansion and entry into </del>the <del>UK</del><ins>next</ins> <del>market"</del><ins>step,</ins> <del>(<a href="https://www.bankofengland.co.uk/prudential-regulation/new-insurer-start-up-unit">Bank of England</a>), with a minimum capital floor of £2.4 million for a general insurer.</del><ins>below.</ins></p>
+ <p class="diff-same">7 unchanged paragraphs, under Sell into the US {#us}, The EU, second {#eu}</p>
+ <h2 class="removed">Carry the risk in Bermuda {#bermuda}</h2>
+ <p class="removed">When the loss record exists and the company is ready to carry risk, I would do it in Bermuda. Its regime has a class for this stage: a Class 3A "Small commercial insurer" holds capital set by a risk-based formula, with "a $1 million floor" (<a href="https://bma.bm/insurance-licensing">BMA</a>). It has a class for an insurer that "intends to carry on general business in an innovative manner", and a sandbox for "a company aiming to carry on general business in an innovative and experimental manner"; cyber insurers have used both, and one, Breach Insurance, moved from the sandbox to the innovative class in 2023 (<a href="https://www.bma.bm/insurance-innovation">BMA</a>). And it is where risk capital meets insurance: the Bermuda Stock Exchange listed "more than 93% of global issuance" of insurance-linked securities in 2025, including "new cyber catastrophe bonds" (<a href="https://www.insurancebusinessmag.com/reinsurance/news/breaking-news/bermuda-stock-exchange-seizes-93-of-ils-market-as-cat-bond-issuance-explodes-564989.aspx">Insurance Business</a>, 11 February 2026). Once agent risk has a record, that is the market that will take its tail.</p>
+ <p class="removed">The UK is the alternative, with the PRA's mobilisation regime and the same Solvency-style discipline; and an insurer that wants EU clients directly may need an EU carrier as well. But for a first balance sheet, Bermuda's floor and its capital markets make it the place I would look first.</p>
+ <h2 class="removed">The Middle East, for capital first {#gulf}</h2>
+ <p class="removed">The Gulf has new regimes and a great deal of money, and I think its first role is the money. As an insurance market, its entry costs differ widely: in Saudi Arabia an insurer's paid-up capital "shall not be less than three hundred million Saudi riyals" under the law as amended in 2021; in Abu Dhabi, the ADGM's captive rules started from US$150,000, and its regulator proposed in December 2025 that insurers hold "120% of the ASCR under normal circumstances" (<a href="https://www.reinsurancene.ws/fsra-proposes-comprehensive-updates-to-adgm-insurance-regulatory-framework/">Reinsurance News</a>). We could not read the DIFC regulator's own pages, so its figures are from secondary sources and are left out here.</p>
+ <p class="removed">As a source of capital it is a different story: the region's funds invest in balance sheets of exactly the kind the third stage needs, and the ADGM's regulator is rewriting its insurance rules as it does so. I would raise there, and sell there later.</p>
+ <h2 class="added">Carry the risk in London too {#carry}</h2>
+ <p class="added">When the company is ready to carry risk itself, I would do that in London as well, so that the underwriting and the balance sheet sit under the same supervisors and the same market. There are two ways in. The first is a UK insurer: the PRA has run a mobilisation regime for new insurers since 31 December 2024, "to facilitate new insurer expansion and entry into the UK market", an optional stage of up to twelve months with restrictions that begins at authorisation (<a href="https://www.bankofengland.co.uk/prudential-regulation/new-insurer-start-up-unit">Bank of England</a>), and a general insurer's minimum capital floor is £2.4 million. The second is capital at Lloyd's: "A Lloyd's syndicate is formed by one or more members joining together to provide capital and accept insurance risks on a several liability basis", and the members' capital is held as Funds at Lloyd's (<a href="https://www.lloyds.com/market-resources/member-services/about/what-is-a-member">Lloyd's</a>). A company that starts as a coverholder already works inside that market, so putting its own capital behind its own book is a short step.</p>
+ <p class="added">An insurer that wants EU clients directly may need an EU carrier as well, under Solvency II's €2.7 million floor. That can wait for the second market.</p>
+ <h2 class="added">The Gulf, for capital {#gulf}</h2>
+ <p class="added">The Gulf has new regimes and a great deal of money, and I think its role here is the money. The UAE's two financial centres are both reworking their insurance rules: in Abu Dhabi, the ADGM's regulator proposed in December 2025 that insurers hold "120% of the ASCR under normal circumstances" (<a href="https://www.reinsurancene.ws/fsra-proposes-comprehensive-updates-to-adgm-insurance-regulatory-framework/">Reinsurance News</a>); the DIFC's own pages could not be read, so its figures are left out. The region's funds invest in balance sheets of exactly the kind the third job needs. I would raise there, and leave selling there for later.</p>
+ <p class="diff-same">2 unchanged paragraphs, under How much it would take {#money}</p>
+ <p class="removed"><b>Stage one, two years as a managing agent: about £4.35 million.</b> A team of eight in the first year and fifteen in the second, at £150,000 each including everything, and £450,000 a year for regulatory, legal, actuarial, professional indemnity and technology costs: £1.65 million in the first year and £2.7 million in the second. No capital backs the policies, because the carrier's does. That is a seed or Series A, and the market is funding it: insurtech funding was "US$5.08 billion" in 2025 (<a href="https://www.insurancejournal.com/magazines/mag-features/2026/03/09/860638.htm">Insurance Journal</a>, 9 March 2026, citing Gallagher Re), and in the first quarter of 2026 "InsurTechs linked to AI liability and cyber insurance attracted USD 444.84 million" (<a href="https://www.reinsurancene.ws/global-insurtech-funding-holds-firm-as-ai-dominates-q126-investment-gallagher-re/">Reinsurance News</a>, 7 May 2026). AIUC has raised $55 million in two rounds, and Harbor was reported this month to have raised a $10 million seed.</p>
+ <p class="removed"><b>Stage two, carrying the risk: the capital follows from the limits sold.</b> This is where the deterministic policy pays off. Because every row is capped and every unnamed capability excluded, the worst year can be bounded from the limits on the book: take all the limits sold, the share of them one shared failure could hit at once (one model's flaw, one tool's bug, every agent built on it), keep half after reinsurance, and add a 20% buffer.</p>
+ <p class="diff-fig removed">[figure wh-capital.webp] Capital to carry the risk, from the limits sold and the share one shared failure could hit. Illustrative. | chart</p>
+ <p class="removed">With £80,000 of limits per agent, as in the worked example:</p>
+ <p class="removed">| Agents | Limits on the book | 5% hit at once | 10% hit at once |
+|---|---|---|---|
+| 500 | £40 million | £1.2 million (the UK floor makes it £2.4 million) | £2.4 million |
+| 2,000 | £160 million | £4.8 million | £9.6 million |
+| 10,000 | £800 million | £24 million | £48 million |</p>
+ <p class="removed">So my opinion: raise about £5 million to start, which is stage one with some headroom; plan a second raise of £5 million to £10 million to carry the first two thousand agents, from investors who fund balance sheets; and by ten thousand agents, the capital is a reinsurance and capital markets question, which is where Bermuda comes in. The share hit at once is the number that matters most, and it is the one with no loss data behind it yet: it is why the first books should be small and spread across models and tools.</p>
+ <p class="added"><b>Running the company: about £4.35 million for two years.</b> A team of eight in the first year and fifteen in the second, at £150,000 each including everything, and £450,000 a year for regulatory, legal, actuarial, professional indemnity and technology costs: £1.65 million in the first year and £2.7 million in the second. The market is funding companies like this: insurtech funding was "US$5.08 billion" in 2025 (<a href="https://www.insurancejournal.com/magazines/mag-features/2026/03/09/860638.htm">Insurance Journal</a>, 9 March 2026, citing Gallagher Re), and in the first quarter of 2026 "InsurTechs linked to AI liability and cyber insurance attracted USD 444.84 million" (<a href="https://www.reinsurancene.ws/global-insurtech-funding-holds-firm-as-ai-dominates-q126-investment-gallagher-re/">Reinsurance News</a>, 7 May 2026). AIUC has raised $55 million in two rounds, and Harbor was reported this month to have raised a $10 million seed.</p>
+ <p class="added"><b>Backing the policies: what the rest of the money buys is cover.</b> This is where the deterministic policy pays off. Because every row is capped and every unnamed capability excluded, the worst year can be bounded from the limits on the book: take all the limits sold, the share of them one shared failure could hit at once (one model's flaw, one tool's bug, every agent built on it), keep half after reinsurance, and add a 20% buffer. Turn that round, and every pound of capital raised above the running costs sets a ceiling on the cover the company can sell. So rather than raising in stages, the company can raise once, for the cover it intends to sell from the start, and the size of the raise decides that ceiling.</p>
+ <p class="diff-fig added">[figure wh-capital.webp] The ceiling of cover a raise of £10 million or £50 million can back. Illustrative, from capital.py. | chart</p>
+ <p class="added">With £80,000 of limits per agent, as in the worked example, and two years of running costs taken out first:</p>
+ <p class="added">| Raised in one go | Capital backing policies | If 5% can be hit at once | If 10% can be hit at once |
+|---|---|---|---|
+| £10 million | £5.65 million | about £188 million of cover, 2,354 agents | about £94 million of cover, 1,177 agents |
+| £50 million | £45.65 million | about £1.52 billion of cover, 19,020 agents | about £761 million of cover, 9,510 agents |</p>
+ <p class="added">Both are above the UK's £2.4 million floor. At the worked example's rate, £6,720 a year for £80,000 of cover with five enforced controls, the £10 million book could earn about £7.9 million to £15.8 million of premium a year, and the £50 million book about £64 million to £128 million; those are ceilings at full use of the capital, not forecasts.</p>
+ <p class="added">So my opinion: decide the cover first, and raise for it in one go. £10 million is enough to prove the model on about a thousand to two thousand agents; £50 million is the raise for a company that means to insure ten to twenty thousand agents from the start, and to be the place the large providers come to. The share hit at once is the number that matters most, and it is the one with no loss data behind it yet: it is why even a large book should start spread across models and tools.</p>
+ <p class="diff-same">4 unchanged paragraphs, under What this does not claim {#limits}</p>
+ <p class="diff-li removed">&bull; <b>The Middle East figures are thinner.</b> The DIFC's pages could not be read; the ADGM captive figures are from its 2015 rules; Saudi Arabia's guidelines and its law give different minimums, and the law's SAR 300 million is used.</p>
+ <p class="diff-li added">&bull; <b>The Gulf figures are thinner.</b> The DIFC's pages could not be read; the ADGM's proposal is a discussion paper, not a rule.</p>
+ <p class="diff-li added">&bull; <b>The premium figures are ceilings.</b> They assume every pound of capital is used at the worked example's rate; a real book would sell less, and price each agent on its own rows.</p>
+ <p class="diff-same">1 unchanged paragraph</p>
+ <p class="changed diff-li">&bull; <b>Tax is left out.</b> <del>Bermuda's</del><ins>Where</ins> <del>15%</del><ins>to</ins> <del>corporate</del><ins>be</ins> <del>income</del><ins>taxed</ins> <del>tax</del><ins>is a separate question</ins> from <del>2025 applies only</del><ins>where</ins> to <del>groups</del><ins>be</ins> <del>with revenue of €750 million or more.</del><ins>regulated.</ins></p>
+ <p class="diff-same">5 unchanged paragraphs, under Where this comes from {#sources}</p>
+ <p class="small" style="margin-top:2rem"><a href="../where-to-build-the-agent-insurer.html">all versions</a></p>
+</main>
+<sg-meter view="page" kind="page" date="" topics="" title="Where to build the agent insurer: what changed in v1.1.0, SGit Newsroom" quiet></sg-meter>
+<script type="application/json" id="sg-meter-config">{"storageKey": "sgit.meter.v1", "start": 500, "newDays": 7, "symbol": "£", "prices": {"article_new": 10, "article": 5, "issue": 3, "note": 2, "collection": 2, "page": 1, "free": 0}, "depth": true, "minDepth": 0.1, "topup": {"amount": 500, "link": "https://buy.stripe.com/6oUfZ9ez65vVgU2fY15os04"}, "packs": [{"id": "p2", "price": 200, "bonus": 0}, {"id": "p5", "price": 500, "bonus": 0}, {"id": "p10", "price": 1000, "bonus": 100}, {"id": "p20", "price": 2000, "bonus": 300}], "links": {"account": "account/index.html", "topup": "account/top-up.html", "how": "articles/going-live-with-the-reading-meter.html"}, "rating": {"price": [0, 0.5, 1, 1.5, 2], "more": [-3, -1, 0, 3, 6]}, "autoKeep": true, "picks": {"feed": "articles/graphs.json", "base": "articles/"}, "links2": {"newsroom": "account/newsroom.html", "personas": "account/personas.html", "share": "account/share.html"}, "share": {"contact": ".well-known/sgit-subscribe.json", "form": "reading-share", "site": "sgit.ai", "max": 300}, "personas": {"presets": [{"id": "founder", "label": "The founder", "name": "Morgan", "theme": "#b45309", "blurb": "Building a company: what to build, what to charge, what to secure and when to stop. Strategy, pricing and the questions investors ask.", "topics": {"startups-and-strategy": 3, "agents-and-policy": 1}, "articles": ["the-question-is-whether-they-miss-it", "price-it-then-give-it-away", "saas-apocalypse-decided-by-inertia-not-by-ai", "who-are-you-protecting-against", "knowing-when-to-stop", "open-source-is-not-free", "going-live-with-the-reading-meter"]}, {"id": "journalist", "label": "The journalist", "name": "Rowan", "theme": "#1d4ed8", "blurb": "Where news came from and where it could go: story vaults, liquid content, local evidence, and what publishers are owed by the machines that read them.", "topics": {"news-and-evidence": 3, "graphs-and-knowledge": 1}, "articles": ["how-news-got-here", "future-of-news-story-vault-not-paywall", "liquid-content-needs-water", "the-bridge-followed-to-the-end", "story-vault-meets-reader-skills", "the-waiting-room-knew-first", "token-bill-nobody-is-sending"]}, {"id": "security", "label": "The security lead", "name": "Sam", "theme": "#b91c1c", "blurb": "Agents as insiders: who you are protecting against, blast radius, identity, incidents and the controls that hold when a model does not.", "topics": {"agents-and-policy": 3, "vaults-and-method": 1}, "articles": ["who-are-you-protecting-against", "ultimate-insider-three-collisions", "footprint-and-blast-radius", "six-agents-one-inbox", "the-investigation-github-owes-its-customers", "why-my-agents-do-not-run-on-my-laptop", "the-identity-we-wanted-to-give-the-agents", "where-is-the-why"]}, {"id": "builder", "label": "The AI builder", "name": "Kai", "theme": "#0f766e", "blurb": "Making agents work day to day: Claude Code sessions, hooks, memory, behaviour policies, and the engineering lessons each mistake left behind.", "topics": {"agents-and-policy": 2, "site-and-engineering": 2, "vaults-and-method": 1}, "articles": ["how-i-work-with-claude", "a-second-reader-the-agent-cannot-skip", "re-anchoring-agent-behaviour-policies", "every-mistake-added-a-rule", "memory-is-not-a-spectator-sport", "encrypted-memory-for-isolated-agents", "hope-or-enforcement"]}, {"id": "board", "label": "The board member", "name": "Jordan", "theme": "#6d28d9", "blurb": "How AI is changing the business and how to govern it: business models, due diligence, risk acceptance, accountability and the governance frameworks.", "topics": {"graphs-and-knowledge": 2, "startups-and-strategy": 2, "agents-and-policy": 1}, "articles": ["saas-apocalypse-decided-by-inertia-not-by-ai", "send-an-agent-not-a-spreadsheet", "every-risk-is-already-accepted", "agency-is-not-a-yes", "the-ai-governance-stack-as-a-graph", "ai-baseline-control-framework", "what-sgit-is"]}], "names": {"agents-and-policy": "The Policy Architect", "vaults-and-method": "The Vault Keeper", "news-and-evidence": "The Fact Finder", "startups-and-strategy": "The Strategist", "graphs-and-knowledge": "The Cartographer", "site-and-engineering": "The Builder"}}}</script>
+<script>
+import('../../../assets/components/sg-meter/v1/v1.5/v1.5.0/sg-meter.js?v=v0.7.87')
+ .catch(function (e) { console.error('[sg-meter] component failed to load:', e); });
+</script>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">newsroom<span>.sgit.ai</span></div>
+    <p>The SGit Newsroom: one page, one argument, with the figures, the data and the links to check it. Articles by Dinis Cruz, written from his voice notes by an agent working as the newsroom; the roles and the rules they work under are public. The method is published so that anyone can run a newsroom like it. All content CC BY 4.0 unless a page states otherwise.</p>
+    <p class="partnote">&#9888; Participant disclosure: published by the sgit project, which is building the stack this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v999.0.0</a> &middot; <a href="../../../admin/index.html">engineering</a> &middot; <a href="v1.1.0.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The newsroom</h4>
+    <a href="../../../index.html">&#8594; The front page</a>
+    <a href="../../../about/index.html">Why this exists</a>
+    <a href="../../../desks/index.html">The five desks</a>
+    <a href="../../../agents/index.html">Written by the agents</a>
+    <a href="../../../wire/index.html">The Industry Wire</a>
+    <a href="../../../wire/owasp/index.html">The OWASP Wire</a>
+    <a href="../../../wire/aws/index.html">The AWS Wire</a>
+    <a href="../../../wire/portugal/index.html">The Portugal Wire</a>
+    <a href="../../../articles/index.html#all">Every article</a>
+    <a href="../../../articles/newsletter/index.html">The newsletter</a>
+    <a href="../../../articles/collections/index.html">Collections</a>
+    <a href="../../../articles/desk/index.html">From the desk</a>
+    <a href="../../../articles/graphs.html">As graphs</a>
+    <a href="../../../subscribe/index.html">Subscribe</a>
+    <a href="../../../articles/feed.xml">The feed</a>
+  </div>
+  <div>
+    <h4>Your account</h4>
+    <a href="../../../account/index.html">Your reading account</a>
+    <a href="../../../account/newsroom.html">Your newsroom</a>
+    <a href="../../../account/personas.html">Your personas</a>
+    <a href="../../../account/top-up.html">Top up</a>
+  </div>
+  <div>
+    <h4>How it runs</h4>
+    <a href="../../../newsroom/index.html">How the newsroom runs</a>
+    <a href="../../../newsroom/policies.html">Behaviour policies</a>
+    <a href="../../../newsroom/publish.html">How to publish</a>
+    <a href="../../../newsroom/board.html">The board</a>
+    <a href="../../../newsroom/log.html">The run log</a>
+    <a href="../../../team/index.html">The team</a>
+    <a href="../../../reviews/index.html">Independent review</a>
+  </div>
+  <div>
+    <h4>The design</h4>
+    <a href="../../../design/index.html">The design, and what runs</a>
+    <a href="../../../thesis/index.html">The thesis: sell the graph</a>
+    <a href="../../../corrections/index.html">Corrections must propagate</a>
+    <a href="../../../provenance/index.html">Provenance is the product</a>
+    <a href="../../../economics/index.html">Paying the fact creator</a>
+    <a href="../../../shipped/index.html">What runs, what is designed</a>
+  </div>
+  <div>
+    <h4>Build your own</h4>
+    <a href="../../../replicate/index.html">Replicate this newsroom</a>
+    <a href="../../../publishers/index.html">For publishers</a>
+    <a href="../../../meter/index.html">SG Meter: the reading meter</a>
+    <a href="../../../world-news-day/index.html">World News Day 2026: the corpus</a>
+    <a href="../../../world-news-day/method.html">The method: fetch, freeze, hash</a>
+    <a href="../../../articles/how-to-run-synthetic-users.html">How to run synthetic users</a>
+    <a href="../../../mvps/seed-companies.html">Seed companies</a>
+  </div>
+  <div>
+    <h4>Site</h4>
+    <a href="../../../archive/index.html">The archive</a>
+    <a href="../../../network/index.html">The network</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../../about/participant.html">Where we lose</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.7.87';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/newsroom.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg,name){name=name||'assets/site.js';for(var i=0;i<C.length;i++){var p=C[i]+name;if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',name,e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;window.__sgitBoot={roots:C,grab:function(p){return grab(sg,p)},version:V};await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+var mine=V.slice(3),last=0;
+function fresh(){if(location.hostname!=='sgit.ai'||Date.now()-last<60000)return;last=Date.now();
+fetch('/version.txt?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.text():''}).then(function(t){t=(t||'').trim();if(!/^v[0-9]+[.][0-9]+[.][0-9]+$/.test(t)||t===mine)return;
+var k='sgit.fresh:'+location.pathname;try{if(sessionStorage.getItem(k)===t)return;sessionStorage.setItem(k,t)}catch(e){}
+var u=new URL(location.href);u.searchParams.set('v',t);location.replace(u.href)}).catch(function(){})}
+try{var u=new URL(location.href);if(u.searchParams.get('v')===mine){u.searchParams.delete('v');history.replaceState(history.state,'',u.pathname+u.search+u.hash)}}catch(e){}
+fresh();addEventListener('pageshow',function(e){if(e.persisted){last=0;fresh()}});document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')fresh()});
+})();
+</script>
+</body>
+</html>

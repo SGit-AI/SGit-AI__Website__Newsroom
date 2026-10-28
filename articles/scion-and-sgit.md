@@ -10,7 +10,7 @@
 
 # Scion and sgit: Anthropic rebuilt source control for agents inside one company, and an open-source encrypted version already does much of the same thing outside it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.3.0, 4 versions](versions/scion-and-sgit.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitscionanthropicversion-controlgitagentsencryptioncachingmonorepoopen-sourcecomparisonarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-16 · [article v1.4.0, 5 versions](versions/scion-and-sgit.md) · [newsroom v0.12.80](https://newsroom.sgit.ai/admin/versions.html) · sgitscionanthropicversion-controlgitagentsencryptioncachingmonorepoopen-sourcecomparisonarticle
 
 ***Abstract:** On 13 October Anthropic described Scion, the system that replaced Git for its monorepo after merges grew from about 2,500 a day in May to more than 30,000 in September, most of them by Claude. Git's offline, full-clone design, its post says, "was actively undermining our ability to scale", because nearly every client is now an always-online agent or job. Scion moves the work to the server, fetches only what a job needs, and serves immutable objects from three tiers of cache. Reading it, I recognised most of the ideas, because sgit, the encrypted version control we build in the open, arrived at many of them from the other direction: immutable objects named by the hash of their ciphertext, which anyone can keep for ever; a server that cannot read what it holds, so reads can come from any static host; clones that take one folder, one commit or only the structure; and, like Scion, no packfiles and no maintenance. Measured on the vault the agents behind this newsroom share every day, 35,000 encrypted objects and 1,295 commits, an agent takes one folder with one commit of history in 13 seconds and 3 MB, however large the vault is. The differences are real too. Scion does history, blame and merges on the server and runs at a scale sgit has never been tested at; sgit does them on the client and has no blame or bisect yet. But Scion is internal and, in Anthropic's words, "by no means a suitable replacement for git for general use". sgit is open source and on PyPI today, and it encrypts everything.*
 
@@ -23,7 +23,7 @@ Two answers to agents at scale: Scion's always-online clients and server, and sg
 - **sgit shares the core ideas.** Immutable objects, fetch only what you need, no packfiles, compare-and-swap.
 - **It arrived from the other side.** The server is dumb and blind; the client encrypts, merges and verifies.
 - **Measured on a real, busy vault.** 35,000 objects: one folder, one commit, in 13 seconds and 3 MB.
-- **The gaps are real.** No blame or bisect; long histories need a depth; never tested at Scion's scale.
+- **The gaps are real.** No bisect yet, though blame shipped in sgit-ai 0.27.0; long histories need a depth; never tested at Scion's scale.
 
 ## What Anthropic built
 
@@ -63,7 +63,7 @@ And the time is the distance to the storage, not sgit. The same objects on local
 
 ## Where Scion is ahead
 
-Scion does blame, bisect and merges on the server and builds history indexes as derived data; sgit's server cannot read a commit, so those run on the client. Today sgit has path history, signed authorship, signed tags and verification, but no blame and no bisect. Where it is behind on its own terms: a partial clone of a long history still walks the commits one request at a time, so a folder with all 1,295 commits takes nearly four minutes, and a depth avoids it; `history log` for one file over that history takes minutes of CPU; one server process queues concurrent full clones; and the largest vault it has been proven on is 35,000 objects and ten agents, not 100 GB and 30,000 merges a day. Being designed for something is not the same as being proven at it.
+Scion does blame, bisect and merges on the server and builds history indexes as derived data; sgit's server cannot read a commit, so those run on the client. Today sgit has path history, signed authorship, signed tags and verification, and since sgit-ai 0.27.0 on 28 October, blame, grep and line-level merges on the client; bisect is designed but not yet built. Where it is behind on its own terms: a partial clone of a long history still walks the commits one request at a time, so a folder with all 1,295 commits takes nearly four minutes, and a depth avoids it; `history log` for one file over that history takes minutes of CPU; one server process queues concurrent full clones; and the largest vault it has been proven on is 35,000 objects and ten agents, not 100 GB and 30,000 merges a day. Being designed for something is not the same as being proven at it.
 
 Git and sgit also live side by side rather than in sync. A vault can sit in the same folder as a Git repository, and a vault can be committed into one and attached with its key on the other side; but there is no bridge that turns Git history into sgit history or back.
 
