@@ -26,9 +26,9 @@ Built 2026-10-28, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-10-31
 
-- **A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered** (`a-payout-for-every-row`), published 2026-10-28, text `167ad03a97ce` at v999.0.0
+- **A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered** (`a-payout-for-every-row`), published 2026-10-28, text `167ad03a97ce` at v0.13.124
   - read: https://newsroom.sgit.ai/articles/a-payout-for-every-row.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/a-payout-for-every-row.html)
-  - article_hash: `167ad03a97ce`, article_version: `v999.0.0`
+  - article_hash: `167ad03a97ce`, article_version: `v0.13.124`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-01
