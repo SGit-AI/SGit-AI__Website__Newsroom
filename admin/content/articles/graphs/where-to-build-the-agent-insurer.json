@@ -1,23 +1,29 @@
 {
  "slug": "where-to-build-the-agent-insurer",
- "teaser": "Underwrite in London, sell into the US and EU, carry the risk in Bermuda, raise capital in the Gulf; about £4 million to start.",
+ "teaser": "Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.",
  "topics": [
   "startups-and-strategy",
   "agents-and-policy"
  ],
- "core_idea": "An insurer for agent behaviour policies does three jobs, pricing and selling, distribution and carrying the risk, so it can have three homes: a managing agent in London on a Lloyd's syndicate's capital, distribution into the US through surplus lines and the EU by one registration, and its own balance sheet in Bermuda once the loss record allows, with capital raised in the Gulf; it would take about £4.35 million for two years as a managing agent, and then capital that follows from the capped limits sold.",
+ "core_idea": "An insurer for agent behaviour policies does three jobs, and London suits two of them: a managing agent and Lloyd's coverholder on a syndicate's capital, then its own capital as a UK insurer or at Lloyd's, with distribution into the US through surplus lines and the EU by one registration, and capital raised from investors including the Gulf's funds; because every row is capped, the capital raised above about £4.35 million of running costs sets a ceiling on the cover it can sell, so £10 million in one go backs about £94 million to £188 million and £50 million about £761 million to £1.52 billion.",
  "nodes": [
   {
    "id": "jobs",
-   "label": "Three jobs, three homes",
+   "label": "Three jobs, London for two",
    "kind": "claim",
-   "summary": "Pricing and selling, distribution, carrying the risk."
+   "summary": "Pricing and selling and carrying the risk in London; distribution where customers are."
   },
   {
    "id": "london",
    "label": "Start in London",
    "kind": "method",
    "summary": "A managing agent and Lloyd's coverholder on a syndicate's capital."
+  },
+  {
+   "id": "carry",
+   "label": "Carry the risk in London",
+   "kind": "method",
+   "summary": "A UK insurer through the PRA's mobilisation regime, or capital at Lloyd's."
   },
   {
    "id": "us",
@@ -32,16 +38,10 @@
    "summary": "One registration; software a product from 9 December 2026; EIOPA wary of MGAs."
   },
   {
-   "id": "bermuda",
-   "label": "Carry the risk in Bermuda",
-   "kind": "method",
-   "summary": "Class 3A with a $1 million floor, an innovative class, a sandbox."
-  },
-  {
    "id": "gulf",
    "label": "Capital from the Gulf",
    "kind": "concept",
-   "summary": "High entry costs as a market; funds as a source of capital."
+   "summary": "The UAE's funds as a source of capital, not a first market."
   },
   {
    "id": "captive",
@@ -50,22 +50,28 @@
    "summary": "From $250,000 in Vermont."
   },
   {
-   "id": "stage1",
-   "label": "About £4.35 million to start",
+   "id": "running",
+   "label": "About £4.35 million to run",
    "kind": "claim",
-   "summary": "Two years as a managing agent: team, licences, technology."
+   "summary": "Two years of team, licences and technology."
   },
   {
-   "id": "limits",
-   "label": "Capital from the limits sold",
-   "kind": "method",
-   "summary": "Limits times the share hit at once, half reinsured, plus a buffer."
+   "id": "cover",
+   "label": "What the money buys is cover",
+   "kind": "claim",
+   "summary": "Capital above running costs sets a ceiling on the cover sold."
   },
   {
-   "id": "table",
-   "label": "£4.8m to £9.6m for 2,000 agents",
+   "id": "ten",
+   "label": "£10 million in one go",
    "kind": "example",
-   "summary": "£24m to £48m at 10,000 agents."
+   "summary": "About £94 million to £188 million of cover, 1,177 to 2,354 agents."
+  },
+  {
+   "id": "fifty",
+   "label": "£50 million in one go",
+   "kind": "example",
+   "summary": "About £761 million to £1.52 billion, 9,510 to 19,020 agents."
   },
   {
    "id": "unknown",
@@ -82,12 +88,12 @@
   },
   {
    "from": "jobs",
-   "to": "us",
+   "to": "carry",
    "rel": "leads-to"
   },
   {
    "from": "jobs",
-   "to": "bermuda",
+   "to": "us",
    "rel": "leads-to"
   },
   {
@@ -97,7 +103,7 @@
   },
   {
    "from": "gulf",
-   "to": "bermuda",
+   "to": "carry",
    "rel": "depends-on"
   },
   {
@@ -107,21 +113,26 @@
   },
   {
    "from": "london",
-   "to": "stage1",
+   "to": "running",
    "rel": "produces"
   },
   {
-   "from": "limits",
-   "to": "table",
-   "rel": "produces"
-  },
-  {
-   "from": "bermuda",
-   "to": "limits",
+   "from": "carry",
+   "to": "cover",
    "rel": "depends-on"
   },
   {
-   "from": "table",
+   "from": "cover",
+   "to": "ten",
+   "rel": "produces"
+  },
+  {
+   "from": "cover",
+   "to": "fifty",
+   "rel": "produces"
+  },
+  {
+   "from": "fifty",
    "to": "unknown",
    "rel": "leads-to"
   }
@@ -144,20 +155,19 @@
    "https://www.reinsurancene.ws/conning-estimates-us-mga-premiums-reached-128bn-in-2025/",
    "https://legislature.vermont.gov/statutes/section/08/141/06004",
    "https://edit.centralbank.ie/regulation/industry-market-sectors/brokers-retail-intermediaries/insurance-brokers-intermediaries/passporting-in-and-out",
-   "https://bma.bm/insurance-licensing",
-   "https://www.bma.bm/insurance-innovation",
    "https://www.reinsurancene.ws/fsra-proposes-comprehensive-updates-to-adgm-insurance-regulatory-framework/",
-   "https://www.insurancejournal.com/magazines/mag-features/2026/03/09/860638.htm"
+   "https://www.insurancejournal.com/magazines/mag-features/2026/03/09/860638.htm",
+   "https://www.lloyds.com/market-resources/member-services/about/what-is-a-member"
   ]
  },
  "quotes": [
   {
-   "text": "I think the honest answer is that it has more than one home, because it does more than one job.",
+   "text": "I think the honest answer is that it can have more than one home, because it does more than one job.",
    "why": "The answer to where, in one line."
   },
   {
-   "text": "This is where the deterministic policy pays off.",
-   "why": "Why capped rows make capital computable."
+   "text": "So rather than raising in stages, the company can raise once, for the cover it intends to sell from the start, and the size of the raise decides that ceiling.",
+   "why": "Why the raise should match the cover from the start."
   }
  ]
 }
