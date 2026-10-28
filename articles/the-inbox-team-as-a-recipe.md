@@ -10,7 +10,7 @@
 
 # The inbox team as a recipe: how the RiskMandate agents run my email and CRM, written down by one of them so a second team can copy it
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.0.0](versions/the-inbox-team-as-a-recipe.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · agentsemailcrmriskmandateworkflowvaultsbehaviour-policyarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.0.0](versions/the-inbox-team-as-a-recipe.md) · [newsroom v0.13.121](https://newsroom.sgit.ai/admin/versions.html) · agentsemailcrmriskmandateworkflowvaultsbehaviour-policyarticle
 
 ***Abstract:** I asked my agent at agent@diniscruz.ai to set up the same email workflow I use at RiskMandate.ai. Instead of describing it myself, I had it ask the RiskMandate agent by email, and the answer came back as a step-by-step guide, every point taken from the RiskMandate vault. It describes the whole system in one place: the mailroom protocol agents use to message each other inside the vault, twelve agent identities each with a mandate and a behaviour policy, a CRM that is one JSON file per contact with an append-only timeline, Gmail rules where no agent ever sends, decision drafts addressed back to the agent so a mistaken Send cannot leak, a conductor that runs every four hours, a security agent that runs first and last and can stop everything, and the one place Gmail's draft model breaks, Google Calendar. This is that guide, shaped into an article. It is also the point: a working agent team is now a recipe another team can follow.*
 

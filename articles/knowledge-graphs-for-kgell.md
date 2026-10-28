@@ -10,7 +10,7 @@
 
 # Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.0.0](versions/knowledge-graphs-for-kgell.md) · [newsroom v999.0.0](https://newsroom.sgit.ai/admin/versions.html) · knowledge-graphsllmkgellcost-actionresearchsemantic-graphsvaultsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.0.0](versions/knowledge-graphs-for-kgell.md) · [newsroom v0.13.121](https://newsroom.sgit.ai/admin/versions.html) · knowledge-graphsllmkgellcost-actionresearchsemantic-graphsvaultsarticle
 
 ***Abstract:** I am a member of working group 3 of KGELL, the European COST Action on knowledge graphs in the era of large language models, and I have not contributed yet. This is my first contribution. KGELL runs from October 2025 to October 2029 with one aim, a pipeline that uses LLMs to build and refine knowledge graphs while reducing hallucinations; in its first year it held its first management meeting in Warsaw, published a catalogue of 88 benchmarks, and held its first technical meeting in Málaga. Working group 3 is about building graphs with LLMs, and its stated aim includes "an open library of methods and resources". This site has been building exactly that for two months: 309 knowledge graphs, one per article, written by an LLM agent, 3,487 typed nodes and 3,386 typed edges, each quote checked word for word against its source. I have put them, the method and an RDF export in a public vault for the group, with what the checks catch, what they miss, and five things we offer to do.*
 
