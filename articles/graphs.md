@@ -14,13 +14,38 @@ Every article here has a semantic graph beside it: the ideas it rests on, the cl
 
 The graphs are data first and pictures second. Take them as JSON: [all articles in one file](graphs.json), with the topics, the teasers and the links between articles resolved, or one file per article at `articles/graphs/<slug>.json` (for example [this one](graphs/footprint-and-blast-radius.json)). The pages on this site are rendered from the same files at build time; nothing here is hand-written HTML. Since v0.7.77 each graph also carries the article's `figures`: file, URL, caption, the kind the author gave it (`wardley-map`, for one) and every frame of a multi-frame figure, so a picture and its context travel together and "every Wardley map on this site" is a filter, not a reading list.
 
-308 of 308 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
+309 of 309 articles have a graph. The map draws every article in date order round the circle, oldest at the top and clockwise from there, sized by how many other articles link to it. Teal edges run from an article to an earlier one it cites; amber edges run the other way, from an older article that was updated to point at a newer one. Thicker edges are articles that mention each other more than once.
 
 ## How the articles connect
 
 *[diagram]*
 
-308 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 46 articles not yet linked either way.
+309 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 47 articles not yet linked either way.
+
+## [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](ci-owns-the-version.md)
+
+2026-10-27 · Site & engineeringAgents & policy
+
+A release number is a fact about the order pushes land, which only the pipeline sees, so CI should pick it. Written for OSBot-Utils on 27 October 2023, the scheme has numbered 1,129 releases of that library and runs sgit and the send app. Agent-built sites relearnt it this week: sharness.ai after three days of collisions, the PHP newsroom's six repositories, and this site after two version races and a refused release. Here the committer builds against a pending version and CI stamps the real one, tags it and deploys that commit; main takes majors by pull request.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **The committer guesses** (claim) Collisions with several agents.
+- **Inherited technical debt** (concept) Fine for one agent, debt for two.
+- **Nobody but CI writes the number** (method) One serialised release job.
+- **The pending version** (method) Build here, stamp in CI.
+- **Majors go to main** (method) Pull request bumps the middle number.
+- **OSBot-Utils, 2023** (example) 1,129 tags since.
+- **Many sites, one scheme** (example) sharness.ai, PHP newsroom, this site.
+- **The portable job** (artefact) Thirty lines of shell and git.
+- **Written where agents read** (claim) The newsroom keeps it findable.
+
+> Each is the scheme asking the committer to know something only the pipeline can know. The same debt, in this house.
+
+> That is what inherited technical debt looks like with agents. The same debt, in this house.
 
 ## [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](what-sgit-does-that-git-does-not.md)
 

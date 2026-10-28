@@ -57,6 +57,7 @@
    "admin/content/articles/case-law-for-agents.md": "c492ebba4469539ccd3ad7f20f61b75dc5ec18d5cc13880b33ccb6b228578296",
    "admin/content/articles/cedar-and-the-policy-vault.md": "3eebda17d71fdf818e001ea1eed6cbfcdfbf0a82c0afac41b5fdd0c891533874",
    "admin/content/articles/chainguard-mapped.md": "886b38727bbd271116a9473d057c72fd29a201a8419b30f1aeef375a00f5a749",
+   "admin/content/articles/ci-owns-the-version.md": "c543b97e5fe8fefca96a7ad5f7141cdbeeaf277cdbe6fd8c2948ad12fc98209b",
    "admin/content/articles/cloudflare-as-lego-blocks.md": "4e6dd8577bf079dba32adb2d420950b780ca98c9aa747be57b4d8bf1b8e6c2a2",
    "admin/content/articles/commanders-intent-is-a-behaviour-policy.md": "f88a3cac46a0ae72fbd9a726b8524d4c5b15c9dddce6d9e6386914f2a9c9e43f",
    "admin/content/articles/connect-your-dots-backwards.md": "1fc6fd4e7ccdbcc39db1a8d54db101f96d4f23691b3efd7440d05b17833f23aa",
@@ -131,6 +132,7 @@
    "admin/content/articles/graphs/case-law-for-agents.json": "aee8dc5ea3a357f6c61237f311075d9c15bee4e47966d701694b25f3abebadc9",
    "admin/content/articles/graphs/cedar-and-the-policy-vault.json": "a3fb2ca3e62b157cc84c6552730a1a8bd5168d3bd8f3a09eec3a97e89f67d4f0",
    "admin/content/articles/graphs/chainguard-mapped.json": "7a1a24b7478961f99aef1bb1eaeb840a78ffe53bc29ab1653e32e963779e9a52",
+   "admin/content/articles/graphs/ci-owns-the-version.json": "e7fb8a5beb6d0ca5699759327e0ecb3bd05d4e77b8ff65fdfa36d890f607111f",
    "admin/content/articles/graphs/cloudflare-as-lego-blocks.json": "191d93f3ea434551ccb01a18dababeed82fffe4618fb85903aecd1e2dd7c6556",
    "admin/content/articles/graphs/commanders-intent-is-a-behaviour-policy.json": "1e51923665186d494c1be8e7915a12e3f3e99d0278f39f47cd98728b6892e8ca",
    "admin/content/articles/graphs/connect-your-dots-backwards.json": "a8cf5c90902d7efb4b199bea86f07d0532b1f11879afd587926412d01383d509",
@@ -373,6 +375,8 @@
    "admin/content/articles/images/ch-shots.webp": "d5f087e0245511d4c088a716c4dcbf6d20c9a6c44118c95b71cb6c8b4c51ed2a",
    "admin/content/articles/images/ci-crosswalk.webp": "e5c3aed0949abf1f0a7af8955142259ef958dae0247dc0062586265404efb426",
    "admin/content/articles/images/ci-layers.webp": "6f7b93f3e0811515c0a5c9c106e0c818fddb70ee23e64ea08246dbdbb5ee8f55",
+   "admin/content/articles/images/ciov-history.webp": "a26989b3a1e10fc37918f2beacf6e871025d51086b16421a7b577b568ca5401f",
+   "admin/content/articles/images/ciov-who-picks.webp": "ae8e02aacd394dce8235639bf4f1ba4181f2685ebd3ca604e27d01b193b3b204",
    "admin/content/articles/images/cn-context.webp": "2dbd474f68c72811715706f7505546020073cef2ecbf9ae18efd0fca9e6f0554",
    "admin/content/articles/images/cn-map.webp": "166c28d3c3553ddbce371b161d8dedfef8e1b66cb8b5451d9b00629e058d1557",
    "admin/content/articles/images/co-three.webp": "0d007bf444e21b8b26eb51391b8cb1ce4d44cfb9b9e01c3ba04e8be8c046c548",
@@ -1150,6 +1154,7 @@
    "admin/content/articles/summaries/cedar-and-the-policy-vault.json": "2b92f7b8078091b1faa3fba5046cf9fd04d4c5ed375341bddb013cfddda064ca",
    "admin/content/articles/summaries/chainguard-mapped.json": "4c598be9d6f84385886748421d9f8612b170d2409750be5ce03169a62ddda6ac",
    "admin/content/articles/summaries/chat-on-a-static-site.json": "4499f2eada5e956376109d9a26e5e913f334232eb596e18815d659eceeeec97a",
+   "admin/content/articles/summaries/ci-owns-the-version.json": "534e26acba76c803f26692d728997f4b3e6c925e975caceec6c704f24e397b3a",
    "admin/content/articles/summaries/cloudflare-as-lego-blocks.json": "d6071d7ab0a3c4ad0d77861e24c78651c97b30f22b0bec3c579fb0d4ceab42bd",
    "admin/content/articles/summaries/code-review-as-a-fractal-semantic-graph.json": "4f944cd0e00c749e835a0689f29be9530ccc6c77f226ffdfa766a00d105e7a39",
    "admin/content/articles/summaries/commanders-intent-is-a-behaviour-policy.json": "011c476e307155ea3100bed6421d951a33bc2b086efff19abb314c4ae9ea074c",
@@ -1573,10 +1578,10 @@
   }
  ],
  "counts": {
-  "files": 4952,
-  "pages": 1215,
-  "articles": 308,
-  "verbatim": 2213,
+  "files": 4962,
+  "pages": 1217,
+  "articles": 309,
+  "verbatim": 2218,
   "dependencies": 52,
   "text_overrides": 11,
   "unresolved_on_sgit_ai": 0
@@ -2169,8 +2174,8 @@
   },
   "articles/banners/.hashes.json": {
    "from": "articles/banners/.hashes.json",
-   "sha256_source": "c6b977815d00747add936bf86cde4305011cd3a6cf6957e545970f3cb6933fbc",
-   "sha256": "c6b977815d00747add936bf86cde4305011cd3a6cf6957e545970f3cb6933fbc"
+   "sha256_source": "fc7dacf8428b9e7bd46819e63b0afe58a50948b5b35f200e815b60a317e93e3f",
+   "sha256": "fc7dacf8428b9e7bd46819e63b0afe58a50948b5b35f200e815b60a317e93e3f"
   },
   "articles/banners/001-agents-doing-real-work.jpg": {
    "from": "articles/banners/001-agents-doing-real-work.jpg",
@@ -2526,6 +2531,11 @@
    "from": "articles/banners/chat-on-a-static-site.jpg",
    "sha256_source": "ad4d373ee7e49593c54856e34c5d2e38217a5acbf006b84d50431fe21b5fab64",
    "sha256": "ad4d373ee7e49593c54856e34c5d2e38217a5acbf006b84d50431fe21b5fab64"
+  },
+  "articles/banners/ci-owns-the-version.jpg": {
+   "from": "articles/banners/ci-owns-the-version.jpg",
+   "sha256_source": "0d8fc8cbb708b88fec19e51f3368c492e665781a523b0a47441dc601bb950af2",
+   "sha256": "0d8fc8cbb708b88fec19e51f3368c492e665781a523b0a47441dc601bb950af2"
   },
   "articles/banners/cloudflare-as-lego-blocks.jpg": {
    "from": "articles/banners/cloudflare-as-lego-blocks.jpg",
@@ -2909,8 +2919,8 @@
   },
   "articles/banners/manifest.json": {
    "from": "articles/banners/manifest.json",
-   "sha256_source": "2c8f18ac8e1c21533eb3ce4edd40d89ebd8c535a5339d813684c43419f536e95",
-   "sha256": "2c8f18ac8e1c21533eb3ce4edd40d89ebd8c535a5339d813684c43419f536e95"
+   "sha256_source": "61936a3f871d991b63a5a5e4edfe734a90e2d61f35bd4940d60b4174a3b34c95",
+   "sha256": "61936a3f871d991b63a5a5e4edfe734a90e2d61f35bd4940d60b4174a3b34c95"
   },
   "articles/banners/memory-is-not-a-spectator-sport.jpg": {
    "from": "articles/banners/memory-is-not-a-spectator-sport.jpg",
@@ -3269,8 +3279,8 @@
   },
   "articles/banners/subscribe.jpg": {
    "from": "articles/banners/subscribe.jpg",
-   "sha256_source": "7de76c9e742150a267aa09c62bf6185aa83e89f910ae159d8524c6c178cd75cc",
-   "sha256": "7de76c9e742150a267aa09c62bf6185aa83e89f910ae159d8524c6c178cd75cc"
+   "sha256_source": "fba9389ec7da8915a396ea43df4221715611895c6a7235dfee7b20b08e9e249e",
+   "sha256": "fba9389ec7da8915a396ea43df4221715611895c6a7235dfee7b20b08e9e249e"
   },
   "articles/banners/supply-chain-of-vaults.jpg": {
    "from": "articles/banners/supply-chain-of-vaults.jpg",
@@ -4201,6 +4211,11 @@
    "from": "articles/cards/chat-on-a-static-site.webp",
    "sha256_source": "f582e54db63ed3632a6f5fd5ff4910dd1a1b2f52212d7313a1bff5940160d446",
    "sha256": "f582e54db63ed3632a6f5fd5ff4910dd1a1b2f52212d7313a1bff5940160d446"
+  },
+  "articles/cards/ci-owns-the-version.webp": {
+   "from": "articles/cards/ci-owns-the-version.webp",
+   "sha256_source": "5de84647bfd30d0b5f4ae1ba2285421454d38874c30fb71c8eaefb593c79ddb0",
+   "sha256": "5de84647bfd30d0b5f4ae1ba2285421454d38874c30fb71c8eaefb593c79ddb0"
   },
   "articles/cards/cloudflare-as-lego-blocks.webp": {
    "from": "articles/cards/cloudflare-as-lego-blocks.webp",
@@ -5477,6 +5492,16 @@
    "sha256_source": "fd951d59ed0ed1fbe7545f1e3a9b211c16512fe1c5d99315f208e91b84c162b9",
    "sha256": "60db2069dfef4336569c988f1758480a74c1d03678ef45a50fa47b6ed795315b"
   },
+  "articles/ci-owns-the-version.html": {
+   "from": "articles/ci-owns-the-version.html",
+   "sha256_source": "c7365489c42276a9931dbab3b1179d362d2fe26a22108e6d48a924cb0bc38be5",
+   "sha256": "f5e7fe3789740b86595209dd7a0b093659bea2e306d08928d70bf5d8e3d077c7"
+  },
+  "articles/ci-owns-the-version.md": {
+   "from": "articles/ci-owns-the-version.md",
+   "sha256_source": "f06fb513942a26567037e85dce31c2239494ff1084546a1e7337d9534def4b5e",
+   "sha256": "c07bf01bf6d82e42dfaadbf2b52d64bbcc9ef433ec2e360af72bc673a5b511b7"
+  },
   "articles/cloudflare-as-lego-blocks.html": {
    "from": "articles/cloudflare-as-lego-blocks.html",
    "sha256_source": "969b6508eab83d5fd0f57f6d0e586119685cd9acbb0c75c7176e27d1d0b3e3d9",
@@ -5519,13 +5544,13 @@
   },
   "articles/collections/index.html": {
    "from": "articles/collections/index.html",
-   "sha256_source": "73a66e75af3d01d5d5b37c0811dd9edd498ed4c5b27f5431a9c4a53309c162c3",
-   "sha256": "3de2a413fd077906f951ccf0e32c05c12d09551280c4f00b3ac098ed4748bfd1"
+   "sha256_source": "4a24ed94203fb9bc9843b4ac09a552ce3df097c50f00abeb3ad26b0eff712495",
+   "sha256": "3a6953fe0c10bf91174f1b4eb757705d8153272f771b94ab53d7efd5f6125c65"
   },
   "articles/collections/index.md": {
    "from": "articles/collections/index.md",
-   "sha256_source": "e34355ee7737df939befdd81ffb85df1f962975885eb8ae36a9ae1246d85c95e",
-   "sha256": "066a3130e46f96e68d69a6e2bd3e4449778394fc2ecf9220368396790bc67a2f"
+   "sha256_source": "2daeea5086a22432f430d20a69aaa0086c34c1d0a6cc4f3dd11b026174a537a6",
+   "sha256": "66f5edbf30569a23754adbe7cc8847c641335c439a9d8f633e360d266dcbcad7"
   },
   "articles/collections/local-news-kept-as-evidence.html": {
    "from": "articles/collections/local-news-kept-as-evidence.html",
@@ -5709,13 +5734,13 @@
   },
   "articles/desk/index.html": {
    "from": "articles/desk/index.html",
-   "sha256_source": "76fd8b0a18753bd7054e8c9c00baf90f1bc5d61e9982ef5f834d86cb7ee561eb",
-   "sha256": "7fcc46d7fb01d1bbe05b243ef065dcf2fe9a1bac292911f94bcc6e06c12aaa59"
+   "sha256_source": "4f0f2b52d93c95334774e01d377e917e1a91e03934f3486e428d7a86c29adba4",
+   "sha256": "c284fa5cf23dc5ea2c0273c4a90fd5eb124020f2bcda6eb26bc0c340acb0ecb2"
   },
   "articles/desk/index.md": {
    "from": "articles/desk/index.md",
-   "sha256_source": "67850eb34bcfd068324880a440e8422dc63231def2327815f1525f0bed0ef564",
-   "sha256": "4327b2592b63986253ce0f61096b648d0b7e6776607e008a23b350b857add838"
+   "sha256_source": "b3a49aebd7595f3de1e6003c2b71e58402c409e535406e53ac782ae9a8cb5334",
+   "sha256": "1f1a7a0a41c9ac74fe1e45458ccad55541f52d91a39a1b7c14f2cfaac599b1d6"
   },
   "articles/desk/range-is-the-feature-so-the-stop-is-designed.html": {
    "from": "articles/desk/range-is-the-feature-so-the-stop-is-designed.html",
@@ -5839,8 +5864,8 @@
   },
   "articles/feed.xml": {
    "from": "articles/feed.xml",
-   "sha256_source": "6954bdb033a4494e39d1264df230346bf3c5aca21e4d044b638eccc60e9cabe6",
-   "sha256": "308ac3bf301bde06e153b21b64d4e9149f967ba7f264155b145d814dbaa59bab"
+   "sha256_source": "69aa28511b545bc8a327e9db58effce8971b6b4f11cd1757d76c0f9ce2636257",
+   "sha256": "652c01c823917f7788fc4655ad9e3e3bcb3a95bcfee8db9a6d4833f38d711c71"
   },
   "articles/feisty-duck-briefed.html": {
    "from": "articles/feisty-duck-briefed.html",
@@ -5994,18 +6019,18 @@
   },
   "articles/graphs.html": {
    "from": "articles/graphs.html",
-   "sha256_source": "615b048d0e8bd1b49a2fa3ee1450c4dbb9ce6752d9b3e915abd4014c61bdb16e",
-   "sha256": "da9d2d5324659784708e02d2612120c79a151b2fdc7a40863eb3e10ea946ff06"
+   "sha256_source": "fce0c583fc1281020da91a18892fd99dde8defc87fd5fbb27581170dc2d9dedb",
+   "sha256": "4de5e5f9fd07d43b54e6a92d4423d7f111756d99ed5d3cbd49fd765c25c2a9de"
   },
   "articles/graphs.json": {
    "from": "articles/graphs.json",
-   "sha256_source": "e7193dff6c7489565b5c09d5a6457301f2fb89219a5d8f6f3731ec0cc0ffeb7f",
-   "sha256": "726e1bf646bb3fb27a7c9ceb51dda10f830d59f591fe414f51dba59349623eb2"
+   "sha256_source": "e7e0a4e5a5aecf7fb716029eb14c8cf888b247ac1c35d9cb6a58db20aae03f8f",
+   "sha256": "cf69215a2414db01da7272e8404cea79d2acee172d7e3c2f62d86aea281ccbfb"
   },
   "articles/graphs.md": {
    "from": "articles/graphs.md",
-   "sha256_source": "46650986f75760985e4ec7ca85562f67648da650b39c5de6faacba0ad3747cf4",
-   "sha256": "975c6590fbac7e76a2d76850955c03208a3a4628fd3c12ae0ef48553255752ae"
+   "sha256_source": "9bee2b04034ebfb267c404e4115b705603e9dd08cad5ecfbf0259699c109febb",
+   "sha256": "ab7c9250bbf7150f7f4282a8d43df7252534ab1d14d30c385689a487ca7df8bc"
   },
   "articles/graphs/a-book-for-one-reader.json": {
    "from": "articles/graphs/a-book-for-one-reader.json",
@@ -6316,6 +6341,11 @@
    "from": "articles/graphs/chat-on-a-static-site.json",
    "sha256_source": "279ca59e52fb542732e10ecda66768dd6b949e62e465e040e9c8bd775fada934",
    "sha256": "102d36b0d263171d39cc6b61a3bf3a038440a0327e90e1c04dabb3133c994bf7"
+  },
+  "articles/graphs/ci-owns-the-version.json": {
+   "from": "articles/graphs/ci-owns-the-version.json",
+   "sha256_source": "6b1bef2b0b7525b933c9aea9468ab7dafd1f7506cd3efcf3b159e0af0723d8b8",
+   "sha256": "ca1540644f9ce40af9fa95223b4656cbdb1b1deb1e9c56fde3b1c97e63d3020d"
   },
   "articles/graphs/cloudflare-as-lego-blocks.json": {
    "from": "articles/graphs/cloudflare-as-lego-blocks.json",
@@ -8341,6 +8371,16 @@
    "from": "articles/images/ci-layers.webp",
    "sha256_source": "6f7b93f3e0811515c0a5c9c106e0c818fddb70ee23e64ea08246dbdbb5ee8f55",
    "sha256": "6f7b93f3e0811515c0a5c9c106e0c818fddb70ee23e64ea08246dbdbb5ee8f55"
+  },
+  "articles/images/ciov-history.webp": {
+   "from": "articles/images/ciov-history.webp",
+   "sha256_source": "a26989b3a1e10fc37918f2beacf6e871025d51086b16421a7b577b568ca5401f",
+   "sha256": "a26989b3a1e10fc37918f2beacf6e871025d51086b16421a7b577b568ca5401f"
+  },
+  "articles/images/ciov-who-picks.webp": {
+   "from": "articles/images/ciov-who-picks.webp",
+   "sha256_source": "ae8e02aacd394dce8235639bf4f1ba4181f2685ebd3ca604e27d01b193b3b204",
+   "sha256": "ae8e02aacd394dce8235639bf4f1ba4181f2685ebd3ca604e27d01b193b3b204"
   },
   "articles/images/ck-flow.webp": {
    "from": "articles/images/ck-flow.webp",
@@ -13249,13 +13289,13 @@
   },
   "articles/index.html": {
    "from": "articles/index.html",
-   "sha256_source": "8328787e2e1651d5ed2436f999e3f5e0d2ad8ed237cbdeaeb452c43d9e327733",
-   "sha256": "8717a5876f0ecd48b70a6ce8ae378588cd33f937c83722adba8fd9a4f369758f"
+   "sha256_source": "d0816c1d77c554951e910a577c508ea6bbdbab9e36b03614bfce1dc68cd90328",
+   "sha256": "d2d083117a981cd4c524875f20421f880a0353612c0128e3b8f857bf5cdb3610"
   },
   "articles/index.md": {
    "from": "articles/index.md",
-   "sha256_source": "30a74c46fbf9848c62f1d3ac77757bd1b63cf75b743be6f9805ec1f040e76936",
-   "sha256": "6b4d789ca25dd1b7e391f8794b55580ecf9e22c5cea5ac0e9bbbab9d7420857b"
+   "sha256_source": "8ef2d4c618d357cc1493bba6db49fbc7604becb8122316ab223fc5336b0175b6",
+   "sha256": "52866428ea0da73a36e9c588d93a2496c9cafef71aaaf6c609d2ea6d6ac5b3af"
   },
   "articles/inside-kitewing-websites.html": {
    "from": "articles/inside-kitewing-websites.html",
@@ -13559,13 +13599,13 @@
   },
   "articles/newsletter/index.html": {
    "from": "articles/newsletter/index.html",
-   "sha256_source": "9469c667c5e582ba12325dd56ecbae2c8fc4e88106454050afc8dd7d7db03570",
-   "sha256": "6a74d942fc1bc7475bd14cfffe1fed835bd3ccc275bff556d3c6bda0036d70a4"
+   "sha256_source": "fede3a5e8b3bee09eb820e4e0b5825d00cbca650250f10690ba0aa0b1255bc0a",
+   "sha256": "0e9bdd0e26164ba6f1f54abceadd0827abda2e4fd493e2b64e7dc362bebe48c6"
   },
   "articles/newsletter/index.md": {
    "from": "articles/newsletter/index.md",
-   "sha256_source": "f102f971951ff7a01eeeaeb276f53aa6a5f80f62864ce09e9f8ce14cc6d43144",
-   "sha256": "816ca1e50e98f5507f7afa292e705213b4f16cefa015d3715dc67fa0b18b0c78"
+   "sha256_source": "3627fbd8e398bacef52e6067d2f6bbca03109edbf839439784ff359bc810127b",
+   "sha256": "41b85cc27adbd6c9d910446094d40758eb38cdff9883a16ec98c219255f433e3"
   },
   "articles/nineteen-sites.html": {
    "from": "articles/nineteen-sites.html",
@@ -16706,6 +16746,16 @@
    "from": "articles/versions/chat-on-a-static-site/v1.2.2.md",
    "sha256_source": "77211beaf1da49d817901da79cf92330e63f2995c07f6a343de0d501c963e5c3",
    "sha256": "dfaee973a5d3c22b65b47aef5177186e2247095cef3b4a8625e44dd417c81d94"
+  },
+  "articles/versions/ci-owns-the-version.html": {
+   "from": "articles/versions/ci-owns-the-version.html",
+   "sha256_source": "1bef2416f505921f8a643ec4cdc71c1d936d6e6c7c947ae0da6ed393124f689d",
+   "sha256": "a461b7435da67532c1c9e77a6257be7b7a13fa6b75aaeea580c46aedd623c22b"
+  },
+  "articles/versions/ci-owns-the-version.md": {
+   "from": "articles/versions/ci-owns-the-version.md",
+   "sha256_source": "7e8046785316b23b35e8250e019035395bcf3886573de46cfb18bac489a44083",
+   "sha256": "04bb7abf956bb56c591a6db1a1bd6aa5fa02a9bab8239c59c4a2e0b405084b66"
   },
   "articles/versions/cloudflare-as-lego-blocks.html": {
    "from": "articles/versions/cloudflare-as-lego-blocks.html",
@@ -24842,13 +24892,13 @@
   },
   "newsroom/index.html": {
    "from": "newsroom/index.html",
-   "sha256_source": "75a99ae46f67161da29e818d16a0d107f4ad76bd5971a359d3f07ff3b9823cb8",
-   "sha256": "a3a4f0c935e9d6166e1aab36758f87fed364eec480fb48ac49f60814f57893eb"
+   "sha256_source": "c1f0bb6513083264e3094f00f302d199d6128ddfade8744ffe583cb189dac321",
+   "sha256": "267d64ae98faaa120586c32ff018f767053662ca7835bf8d7d6729760d98ad02"
   },
   "newsroom/index.md": {
    "from": "newsroom/index.md",
-   "sha256_source": "2e6bb84bf84e274dbf572758363d5a774bef5fb749b1ad518010b7eb0475c7b2",
-   "sha256": "1087609c953d006d983636c5fe6178ae7aaff174c358a423dab26bdc44d7c6a7"
+   "sha256_source": "207c1824897469841b7eeacc82766a4bbf18c2ec60d3733b72b895135f7383a7",
+   "sha256": "d370b7105a3f89507620ba6b0be3a75810039bfe82e4af7145970ddea6918443"
   },
   "newsroom/log.html": {
    "from": "newsroom/log.html",
@@ -24942,8 +24992,8 @@
   },
   "newsroom/wire.json": {
    "from": "newsroom/wire.json",
-   "sha256_source": "e46f6d0e9d793c32786361f261be979fcfe81d8e96ff53879e4ffefa6515a97b",
-   "sha256": "1a0cc61b30426fe0574f92640094c7281ff3055fa88b45c3d6ab1b40a99fb751"
+   "sha256_source": "8d2b9d3a02d5cdb03c3e6cc3635e29cde300d19c3c84e989b3bb1b927e287b19",
+   "sha256": "32c783fef2ba3afbfac2342ed26c01f6589711c48ba884ca48ef2ab27b6e6aa9"
   },
   "og/a-book-for-one-reader.jpg": {
    "from": "og/a-book-for-one-reader.jpg",
@@ -25254,6 +25304,11 @@
    "from": "og/chat-on-a-static-site.jpg",
    "sha256_source": "a58096e8eccc74ae8115b819a72ffec578cc8673881f98ea239b221162e5460d",
    "sha256": "a58096e8eccc74ae8115b819a72ffec578cc8673881f98ea239b221162e5460d"
+  },
+  "og/ci-owns-the-version.jpg": {
+   "from": "og/ci-owns-the-version.jpg",
+   "sha256_source": "46b17050f240fe5104eaed2ae0cb40c8a0cb0ca3aec71375d489ba85943e02ae",
+   "sha256": "46b17050f240fe5104eaed2ae0cb40c8a0cb0ca3aec71375d489ba85943e02ae"
   },
   "og/cloudflare-as-lego-blocks.jpg": {
    "from": "og/cloudflare-as-lego-blocks.jpg",

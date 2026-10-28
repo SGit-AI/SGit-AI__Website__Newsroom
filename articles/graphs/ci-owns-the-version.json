@@ -1,0 +1,146 @@
+{
+  "slug": "ci-owns-the-version",
+  "teaser": "The pipeline, not whoever pushes, picks the release number: a 2023 scheme now on every site we run.",
+  "topics": [
+    "site-and-engineering",
+    "agents-and-policy"
+  ],
+  "core_idea": "A release number is a fact about the order pushes land, which only the pipeline sees, so CI should pick it. Written for OSBot-Utils on 27 October 2023, the scheme has numbered 1,129 releases of that library and runs sgit and the send app. Agent-built sites relearnt it this week: sharness.ai after three days of collisions, the PHP newsroom's six repositories, and this site after two version races and a refused release. Here the committer builds against a pending version and CI stamps the real one, tags it and deploys that commit; main takes majors by pull request.",
+  "nodes": [
+    {
+      "id": "problem",
+      "label": "The committer guesses",
+      "kind": "claim",
+      "summary": "Collisions with several agents."
+    },
+    {
+      "id": "debt",
+      "label": "Inherited technical debt",
+      "kind": "concept",
+      "summary": "Fine for one agent, debt for two."
+    },
+    {
+      "id": "rule",
+      "label": "Nobody but CI writes the number",
+      "kind": "method",
+      "summary": "One serialised release job."
+    },
+    {
+      "id": "pending",
+      "label": "The pending version",
+      "kind": "method",
+      "summary": "Build here, stamp in CI."
+    },
+    {
+      "id": "main",
+      "label": "Majors go to main",
+      "kind": "method",
+      "summary": "Pull request bumps the middle number."
+    },
+    {
+      "id": "history",
+      "label": "OSBot-Utils, 2023",
+      "kind": "example",
+      "summary": "1,129 tags since."
+    },
+    {
+      "id": "sites",
+      "label": "Many sites, one scheme",
+      "kind": "example",
+      "summary": "sharness.ai, PHP newsroom, this site."
+    },
+    {
+      "id": "portable",
+      "label": "The portable job",
+      "kind": "artefact",
+      "summary": "Thirty lines of shell and git."
+    },
+    {
+      "id": "why",
+      "label": "Written where agents read",
+      "kind": "claim",
+      "summary": "The newsroom keeps it findable."
+    }
+  ],
+  "edges": [
+    {
+      "from": "debt",
+      "to": "problem",
+      "rel": "depends-on"
+    },
+    {
+      "from": "rule",
+      "to": "problem",
+      "rel": "answers"
+    },
+    {
+      "from": "pending",
+      "to": "rule",
+      "rel": "extends"
+    },
+    {
+      "from": "main",
+      "to": "rule",
+      "rel": "extends"
+    },
+    {
+      "from": "history",
+      "to": "rule",
+      "rel": "example-of"
+    },
+    {
+      "from": "sites",
+      "to": "history",
+      "rel": "extends"
+    },
+    {
+      "from": "portable",
+      "to": "rule",
+      "rel": "produces"
+    },
+    {
+      "from": "why",
+      "to": "portable",
+      "rel": "depends-on"
+    }
+  ],
+  "links": {
+    "articles": [
+      "you-can-feel-good-engineering",
+      "explorer-coding",
+      "what-an-agent-is"
+    ],
+    "pages": [],
+    "sites": [
+      "https://sharness.ai/articles/ci-owns-the-version.html"
+    ]
+  },
+  "quotes": [
+    {
+      "text": "Each is the scheme asking the committer to know something only the pipeline can know.",
+      "why": "The same debt, in this house."
+    },
+    {
+      "text": "That is what inherited technical debt looks like with agents.",
+      "why": "The same debt, in this house."
+    },
+    {
+      "text": "The fix was not new.",
+      "why": "Why this article is here."
+    }
+  ],
+  "figures": [
+    {
+      "file": "ciov-who-picks.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ciov-who-picks.webp",
+      "caption": "Before, each agent guessed the next version. Now one CI job numbers, tags and deploys.",
+      "kind": "chart"
+    },
+    {
+      "file": "ciov-history.webp",
+      "url": "https://newsroom.sgit.ai/articles/images/ciov-history.webp",
+      "caption": "One release scheme, from OSBot-Utils in 2023 to this site on 27 October 2026.",
+      "kind": "chart"
+    }
+  ]
+}
