@@ -31,6 +31,8 @@ The question behind this series is simple to ask. RiskMandate writes agent behav
 
 Take a house. I have laptops and phones in it, and some jewellery, and I would like to be covered against burglary. The insurer asks where the house is, what kind of locks it has, and where I keep things. It sets a limit for the policy and a limit for any one item, and it asks me to list anything valuable above a certain value. It does not cover everything: a laptop worth £20,000 or a data centre in the spare room is not something a contents policy is built for. Then, when something is stolen, it asks the questions again: were the doors locked, was the phone left in plain view? If the conditions held, it pays, up to the limit.
 
+None of that is my invention. A broker's guide puts the limit for any one item "usually between £1,000 to £2,500" and tells you to "declare any expensive items to your insurer" ([Howden](https://www.howdeninsurance.co.uk/personal/home/home-insurance/guides/single-article-limit/), 9 January 2025). A comparison site says "You may need BS3621 standard five-lever mortice deadlocks on all your external doors in order to get home insurance", and that "you are unlikely to be able to claim on your home insurance if you leave your doors unlocked" ([MoneySuperMarket](https://moneysupermarket.com/home-insurance/house-locks), updated 3 September 2026). Conditions, limits per item, exclusions, and a check at the claim.
+
 !shot pr-house.webp | images/ | A home contents policy and an agent behaviour policy, question by question. | comparison
 
 That is a very simple proposition, and it is what agents need. Not a policy for "AI", and not a questionnaire about the company's security programme, but a policy for one agent, in one deployment, that names what is at risk, the conditions, the limits, and what is left out.
@@ -74,15 +76,17 @@ The formula makes one thing visible that I think matters commercially. You can s
 
 Then each real control brings it down. A certified runtime takes it to £50,800. Removing `crm:write` from the grant, to £39,280. Drafts only, with `mail:send` removed, to £22,280. At most 20 records per action, enforced by a proxy, to £11,440. Outbound traffic only to an allow list, to £8,720. Refunds and legal points held for a person, to £6,720: 8% of the cover. The line in the prompt, second in the figure, moves nothing.
 
-That is how cyber insurance should have worked, and mostly did not: it priced on a questionnaire about the company, filled in once a year, and never went down to the detail of what a given system could do and what stopped it. RiskMandate's [insurability page](https://riskmandate.ai/insurance.html) says the same thing more sharply: "Questionnaires describe. Evidence prices."
+That is how I think cyber insurance should have worked. Much of it has priced on a questionnaire about the company, filled in once a year, rather than on the detail of what a given system could do and what stopped it. RiskMandate's [insurability page](https://riskmandate.ai/insurance.html) says the same thing more sharply: "Questionnaires describe. Evidence prices."
 
 ## Insurers already price what they can measure {#measured}
 
 None of this is new to insurance. Wherever insurers can measure, they price on the measurement. 
 
-TELEMATICS_PARAGRAPH
+**Young drivers.** A black box in the car measures how it is driven, and the price follows. One insurer says "We'll collect data on your speed, acceleration, braking and cornering", and that the data helps "work out your renewal price" ([ingenie](https://www.ingenie.com/how-it-works)). A broker adds that many such policies restrict night driving, "usually between 10pm and 6am", and that poor driving may "increase your premium" ([Howden](https://www.howdeninsurance.co.uk/personal/motor/young-driver/guides/black-box-insurance-myths/), 1 September 2025). That is a licence to operate with conditions, measured, and priced on the measurement.
 
-HEALTH_PARAGRAPH
+**Health.** UK private medical insurance is underwritten on what you bring to it. Under a moratorium, a condition you had in the five years before joining is not covered until you have gone two years without it; under full medical underwriting, you disclose your history and the exclusions are set before the policy starts, as AXA Health and Bupa describe their own policies. The cover goes up or down with the preconditions.
+
+**Cyber, where it measures.** Some cyber insurers have moved from the form to the scan. Coalition wrote in 2021 that "Traditional cyber insurers will typically ask insureds to fill out long applications", and that it uses "scanning technology that collects and correlates data from internet accessible devices" instead ([Coalition](https://www.coalitioninc.com/blog/risk-engineering-at-coalition-collaboration-to), 3 August 2021). And for AI itself, Munich Re says of its aiSure cover that "The quality of the model and its performance stability determine the premium" ([Munich Re](https://www.munichre.com/en/solutions/for-industry-clients/insure-ai/faq.html)). The founder of AIUC, which insures agents, put the idea in one line: "Just like consumers get a better car insurance rate for having airbags and anti-lock brakes" ([Fortune](https://fortune.com/2025/07/23/ai-agent-insurance-startup-aiuc-stealth-15-million-seed-nat-friedman/), 23 July 2025).
 
 My argument is that the more mature an insurance line is, and the more data its insurers can measure, the more precisely it prices, and the more of the risk it is willing to take. Agents are unusual in how much can be measured: every tool call, every record read, every hook decision is logged by the systems that run them. The data an underwriter would need is already being produced. What is missing is the mapping from that data to a row and a limit.
 
@@ -94,7 +98,7 @@ This is also where the licence to operate comes in. RiskMandate describes it as 
 
 ## The licence to operate, simulated {#licence}
 
-We already have a working version of this, simulated. In the Licence to Operate vault, the policy is a rate table: a normal band, a threshold above which the agent has to ask, a ceiling per action, a pool with a reserve nobody can touch, and a premium per interval. A simulated support conversation offers three replies at every turn, one inside the band, one that draws on the pool, one outside cover, each with its cost before you choose: 1,400 tokens and 1 record for looking up the customer, 4,800 tokens and 3 records for reading two linked accounts as well, and `mail:send`, outside the mandate entirely. You can let the policy lapse, reinstate it, or trigger a repricing.
+We already have a working version of this, simulated. In the Licence to Operate vault, the policy is a rate table: a normal band, a threshold above which the agent has to ask, a ceiling per action, a pool with an untouchable reserve, and a premium per interval. A simulated support conversation offers three replies at every turn, one inside the band, one that draws on the pool, one outside cover, each with its cost before you choose: 1,400 tokens and 1 record for looking up the customer, 4,800 tokens and 3 records for reading two linked accounts as well, and `mail:send`, outside the mandate entirely. You can let the policy lapse, reinstate it, or trigger a repricing.
 
 At the top it asserts four things: licence held, mandate in force, policy paid, inside cover. All four can be lost. That is the top-up and the payout I had in mind, run in a browser. It is in credits, not money, and the vault says so on its surface: "Simulated. The terms are real files in this vault; the replies are scripted; the numbers are made up."
 
@@ -102,7 +106,9 @@ At the top it asserts four things: licence held, mandate in force, policy paid, 
 
 There is one more party I think has to carry some of this: the vendor that provides the agentic workflow. When a company buys an agent from a vendor, part of what goes wrong will be the vendor's, and I believe vendors will have to start backing their agents with cover of their own.
 
-VENDORS_PARAGRAPH
+Some vendors have started, and the most interesting part is the conditions. Microsoft's commitment for Copilot says "we will defend the customer and pay the amount of any adverse judgments or settlements", but only "as long as the customer used the guardrails and content filters we have built into our products" ([Microsoft](https://blogs.microsoft.com/on-the-issues/2023/09/07/copilot-copyright-commitment-ai-legal-concerns/), 7 September 2023). That is the locked door again: cover, conditional on a control. Google and Anthropic made similar commitments in late 2023, and like Microsoft's they cover copyright claims, not what an agent does.
+
+The closer examples are about performance. Intercom offers "up to $1M of your money back" for its Fin agent under stated conditions, and a programme that pays if Fin does not reach "at least a resolution rate of 65%" ([Intercom](https://intercom.help/fin4all/en/articles/11645601-what-is-the-fin-guarantee), 24 June 2025). ElevenLabs announced on 12 February 2026 a policy backed by the AIUC-1 standard, so that "these AI voice agents - and their actions - can now be insured, just like any other employee" ([ElevenLabs](https://elevenlabs.io/blog/aiuc-announcement)). Munich Re offers vendors "performance warranties" that "enable you to indemnify your clients for their financial losses". None of these is yet a payout per row of a behaviour policy. Each is a step towards one, and the third article in this series is about what the vendor's share of a row should be.
 
 ## What comes next {#next}
 
@@ -127,4 +133,13 @@ If you underwrite, or would like to underwrite, the risk of one agent at a time,
 
 A voice memo of mine on 28 October 2026, written by this site's agent in the voice of this site. The argument and the editorial responsibility are mine.
 
-SOURCES_PARAGRAPH
+The insurance framing, the one-to-one mapping, the deterministic formula, starting from the maximum, the runtime and the vendors' share are from the memo. The six-step formula, the worked example and its numbers are this site's agent's, written to make the memo's argument checkable; the factors are illustrative.
+
+On this site and its neighbours:
+
+- The worked example: [the data file](https://newsroom.sgit.ai/articles/data/a-payout-for-every-row__worked-example.json), computed by `admin/notes/2026-10-28__underwriting-abp/premium.py` in this site's repository; every figure in this article's tables and its premium walk comes from it.
+- The [Licence to Operate vault](https://sgit.ai/demos/vaults/licence-to-operate/index.html) on sgit.ai, vault `posrhzp3`, read from its published page on 28 October 2026: the 12, 4 and 8 capabilities, the rate table, the 20-record limit, the three replies and their costs, and the quoted banner.
+- RiskMandate's [licence to operate](https://riskmandate.ai/licence-to-operate.html) and [insurable](https://riskmandate.ai/insurance.html) pages, read on 28 October 2026 (site v1.39.0), for the four facts of a licence and the two quoted lines.
+- [An agent that may only chat](/articles/an-agent-that-may-only-chat.html) for the 3 of 12 and 12 of 12; [what can your agent reach?](/articles/what-can-your-agent-reach.html), [governs, enforces, attests](/articles/governs-enforces-attests.html), [approved business mandates](/articles/approved-business-mandates.html), [the RiskMandate roadmap](/articles/the-riskmandate-roadmap.html) and [underwriting the agent economy, reviewed](/articles/underwriting-the-agent-economy-reviewed.html).
+
+Outside sources, each linked where it is used and read on 28 October 2026 by a research agent of this site, which fetched every page quoted: Howden on single-article limits (9 January 2025) and on black boxes (1 September 2025); MoneySuperMarket on locks (updated 3 September 2026); ingenie's own page; Coalition (3 August 2021); Munich Re's aiSure pages (undated); Fortune on AIUC (23 July 2025); Microsoft (7 September 2023); Intercom (24 June 2025); ElevenLabs (12 February 2026). The health insurance paragraph is a paraphrase of AXA Health's and Bupa's descriptions of their underwriting, which could not be fetched directly, and quotes neither. The research notes, with what could and could not be verified, are `admin/notes/2026-10-28__underwriting-abp/research-01.md`.

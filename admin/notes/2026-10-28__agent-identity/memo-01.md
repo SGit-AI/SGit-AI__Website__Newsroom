@@ -36,3 +36,12 @@ own (not the investor.sgit.ai brief). Kept word for word; the likely readings ar
 - **To gather:** one agent-to-agent secret handover from the records (which agents, when, the commit or message);
   the vault of vaults; the scheduled tasks as evidence that the agents run on their own; what the hyperscalers offer
   today for workload identity and per-agent keys, dated and linked, so the "they have not" is stated with what exists.
+
+## Checked since: what the hyperscalers offer (28 October 2026)
+
+The memo says the hyperscalers have not provided an identity per agent. They now offer one each, so the article has to
+be precise about what is missing: Microsoft Entra Agent ID (generally available), AWS Bedrock AgentCore Identity
+(generally available since 13 October 2025) and Google Cloud Agent Identity ("a strongly attested, cryptographic
+identity for each agent", an X.509 certificate valid for 24 hours). Sources in
+`../2026-10-28__underwriting-abp/research-01.md`. To check before writing: whether any of them gives an agent a key pair
+that others can encrypt a secret to and find in a public place, which is what the sgit workflow does.
