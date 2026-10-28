@@ -19,7 +19,7 @@ status: published
 - **sgit shares the core ideas.** Immutable objects, fetch only what you need, no packfiles, compare-and-swap.
 - **It arrived from the other side.** The server is dumb and blind; the client encrypts, merges and verifies.
 - **Measured on a real, busy vault.** 35,000 objects: one folder, one commit, in 13 seconds and 3 MB.
-- **The gaps are real.** No blame or bisect; long histories need a depth; never tested at Scion's scale.
+- **The gaps are real.** No bisect yet, though blame shipped in sgit-ai 0.27.0; long histories need a depth; never tested at Scion's scale.
 
 ## What Anthropic built {#scion}
 
@@ -59,7 +59,7 @@ And the time is the distance to the storage, not sgit. The same objects on local
 
 ## Where Scion is ahead {#gaps}
 
-Scion does blame, bisect and merges on the server and builds history indexes as derived data; sgit's server cannot read a commit, so those run on the client. Today sgit has path history, signed authorship, signed tags and verification, but no blame and no bisect. Where it is behind on its own terms: a partial clone of a long history still walks the commits one request at a time, so a folder with all 1,295 commits takes nearly four minutes, and a depth avoids it; `history log` for one file over that history takes minutes of CPU; one server process queues concurrent full clones; and the largest vault it has been proven on is 35,000 objects and ten agents, not 100 GB and 30,000 merges a day. Being designed for something is not the same as being proven at it.
+Scion does blame, bisect and merges on the server and builds history indexes as derived data; sgit's server cannot read a commit, so those run on the client. Today sgit has path history, signed authorship, signed tags and verification, and since sgit-ai 0.27.0 on 28 October, blame, grep and line-level merges on the client; bisect is designed but not yet built. Where it is behind on its own terms: a partial clone of a long history still walks the commits one request at a time, so a folder with all 1,295 commits takes nearly four minutes, and a depth avoids it; `history log` for one file over that history takes minutes of CPU; one server process queues concurrent full clones; and the largest vault it has been proven on is 35,000 objects and ten agents, not 100 GB and 30,000 merges a day. Being designed for something is not the same as being proven at it.
 
 Git and sgit also live side by side rather than in sync. A vault can sit in the same folder as a Git repository, and a vault can be committed into one and attached with its key on the other side; but there is no bridge that turns Git history into sgit history or back.
 
