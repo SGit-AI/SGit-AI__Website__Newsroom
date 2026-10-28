@@ -4,6 +4,12 @@
 
 ## Queued
 
+### Agents have an identity now: a key per session, a role, and GitHub as the place they meet
+
+- **Added:** 28 October 2026. **Status:** memo captured; to write next, unless Dinis adds more.
+- **Source:** Dinis's voice memo, word for word in `admin/notes/2026-10-28__agent-identity/memo-01.md`.
+- **First:** an agent-to-agent handover from the PHP newsroom's records, the vault of vaults, and what the hyperscalers offer today.
+
 ### An article brief: investor.sgit.ai, a website for investors and founders
 
 - **Added:** 28 October 2026. **Status:** collecting memos; not to be written until Dinis says the ideas are all in.
