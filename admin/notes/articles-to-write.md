@@ -6,7 +6,7 @@
 
 ### A series on underwriting agent behaviour policies
 
-- **Added:** 28 October 2026. **Status:** article 1 (a payout for every row) written, on branch claude/stoic-cannon-n6u37a-next, not yet built; 2 (who can underwrite today, a research brief) and 3 (the vendors' share) queued.
+- **Added:** 28 October 2026. **Status:** article 1 (a payout for every row) written, on branch claude/stoic-cannon-n6u37a-next, not yet built; 2 (who carries the risk) written, not yet built; 3 (the vendors' share) and the formula as a vault queued.
 - **Source:** Dinis's memo, `admin/notes/2026-10-28__underwriting-abp/memo-01.md`; worked example `premium.py`.
 
 ### Agents have an identity now: a key per session, a role, and GitHub as the place they meet

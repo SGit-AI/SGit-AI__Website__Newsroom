@@ -12,6 +12,8 @@ status: published
 
 !shot pr-rows.webp | images/ | One agent's behaviour policy as an insurance policy: a limit, controls and a premium per row. Illustrative. | comparison
 
+> **What came next.** [Who carries the risk](/articles/who-carries-the-risk.html) maps who already insures AI agents and what a company that priced per row would need, starting as a managing agent on someone else's capital.
+
 ## In short {#in-short}
 
 - **An insurer de-risks an action, up to a limit, under conditions.** A house policy asks about the locks, caps any one item, leaves some things out, and pays if the conditions held.
