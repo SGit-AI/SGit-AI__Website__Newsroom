@@ -171,6 +171,18 @@ def unreleased_messages(since):
     return out
 
 
+def dev_releases(new):
+    """The dev releases a major on main carries: every vA.(B-1).N tag after vA.(B-1).0, with its subject."""
+    a, b, _ = (int(x) for x in new[1:].split("."))
+    out = []
+    for t in git("tag", "-l", f"v{a}.{b - 1}.*").split():
+        if not SEMVER.match(t) or t.endswith(".0"):
+            continue
+        subj = re.sub(r"^site v\d+\.\d+\.\d+:\s*", "", git("log", "-1", "--format=%s", t).strip())
+        out.append((t, subj))
+    return sorted(out, key=lambda x: int(x[0].rsplit(".", 1)[1]))
+
+
 def release(new, since, branch):
     if not SEMVER.match(new) or new == PENDING:
         sys.exit(f"release_stamp: {new!r} is not a release number")
@@ -181,8 +193,10 @@ def release(new, since, branch):
     if not note_path(new).exists():
         msgs = unreleased_messages(since)
         if branch == "main":
-            line = f"Merged to main: the releases since {since} on dev." if since else "Merged to main."
-            body = line + "\n\n" + "\n".join(f"- {s}" for s, _ in msgs[-40:])
+            rels = dev_releases(new)
+            line = (f"The major release {new}: {len(rels)} releases from dev, {rels[0][0]} to {rels[-1][0]}."
+                    if rels else f"The major release {new}.")
+            body = line + "\n\n" + "\n".join(f"- {v}: {subj}" for v, subj in rels)
             write_note(new, line, body, kind="major")
         else:
             line = "; ".join(s for s, _ in msgs) or "A release with no change of its own."
