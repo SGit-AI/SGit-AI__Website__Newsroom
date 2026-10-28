@@ -48,9 +48,9 @@ Built 2026-10-28, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-11-01
 
-- **Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital** (`who-carries-the-risk`), published 2026-10-28, text `7a788168206c` at v999.0.0
+- **Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital** (`who-carries-the-risk`), published 2026-10-28, text `7a788168206c` at v0.13.124
   - read: https://newsroom.sgit.ai/articles/who-carries-the-risk.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/who-carries-the-risk.html)
-  - article_hash: `7a788168206c`, article_version: `v999.0.0`
+  - article_hash: `7a788168206c`, article_version: `v0.13.124`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
