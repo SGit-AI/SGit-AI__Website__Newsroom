@@ -1,6 +1,6 @@
 # Review queue: openai-chatgpt
 
-Built 2026-10-27, criteria v1.2. One batch a day: take **today's** (UTC). Read the brief first: https://newsroom.sgit.ai/reviews/queue/brief.md
+Built 2026-10-28, criteria v1.2. One batch a day: take **today's** (UTC). Read the brief first: https://newsroom.sgit.ai/reviews/queue/brief.md
 (the criteria: https://newsroom.sgit.ai/reviews/criteria.md). Answer with one record per article, each in its own fenced json block.
 
 ## 2026-10-28
@@ -48,26 +48,26 @@ Built 2026-10-27, criteria v1.2. One batch a day: take **today's** (UTC). Read t
 
 ## 2026-11-01
 
-- **What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead** (`what-sgit-does-that-git-does-not`), published 2026-10-27, text `828e4d3673ca` at v0.13.112
-  - read: https://newsroom.sgit.ai/articles/what-sgit-does-that-git-does-not.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-sgit-does-that-git-does-not.html)
-  - article_hash: `828e4d3673ca`, article_version: `v0.13.112`
+- **CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why** (`ci-owns-the-version`), published 2026-10-27, text `f1d8dce711d6` at v999.0.0
+  - read: https://newsroom.sgit.ai/articles/ci-owns-the-version.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/ci-owns-the-version.html)
+  - article_hash: `f1d8dce711d6`, article_version: `v999.0.0`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-02
 
-- **Legal on demand for startups: agent teams that do the reading, lawyers who sign, and a meter instead of a retainer, with three vaults that show the founder's desk, the investor's desk and the deal room** (`legal-on-demand-for-startups`), published 2026-10-27, text `55790800e9e2` at v0.13.109
-  - read: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/legal-on-demand-for-startups.html)
-  - article_hash: `55790800e9e2`, article_version: `v0.13.109`
+- **You can feel good engineering: the weight, the speed and the smoothness of it, why agent teams make the gaps show, and how to keep a constant velocity** (`you-can-feel-good-engineering`), published 2026-10-27, text `3be2222d0f50` at v0.13.110
+  - read: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/you-can-feel-good-engineering.html)
+  - article_hash: `3be2222d0f50`, article_version: `v0.13.110`
   - why: Never reviewed by you; never reviewed by anyone.
 
 ## 2026-11-03
 
-- **What an agent is: a session, a card, a loop and a key. How the PHP newsroom's agents now run on schedules and in one session, and what the record says about it** (`what-an-agent-is`), published 2026-10-27, text `d468ffef7b41` at v0.13.108
-  - read: https://newsroom.sgit.ai/articles/what-an-agent-is.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/what-an-agent-is.html)
-  - article_hash: `d468ffef7b41`, article_version: `v0.13.108`
+- **Who has not patched? How good the "unpatched" numbers for php2shell are, what makes a website actually vulnerable, and why not patching can be the rational decision** (`who-has-not-patched`), published 2026-10-27, text `4bfdec56a9b4` at v0.13.108
+  - read: https://newsroom.sgit.ai/articles/who-has-not-patched.md (and the page, which is canonical: https://newsroom.sgit.ai/articles/who-has-not-patched.html)
+  - article_hash: `4bfdec56a9b4`, article_version: `v0.13.108`
   - why: Never reviewed by you; never reviewed by anyone.
 
-298 more after these.
+299 more after these.
 
 The empty record, to fill (one per article):
 
