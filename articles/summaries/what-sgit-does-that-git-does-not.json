@@ -5,33 +5,33 @@
   {
    "id": "top",
    "label": "The opening",
-   "words": 130,
-   "line": "Ten sgit releases in October turned minutes into seconds; it is time to map what sgit does that Git does not.",
-   "para": "Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck found by real work. A one-file commit on 76,000 files went from 29 minutes to 4.6 seconds. The ideas came from earlier work on MGraph-DB, Memory-FS and caching. The article maps what Git lacks, what it also has, where it leads, and what is next.",
+   "words": 157,
+   "line": "Ten sgit releases turned minutes into seconds; an honest map against Git, corrected after the sgit CLI team's review.",
+   "para": "Between 3 and 27 October sgit shipped ten releases, each fixing a bottleneck real work found. The ideas came from MGraph-DB, Memory-FS, content-address caching and the writer pays. The article maps what Git lacks, what it shares, where Git leads today and how much can be built, and what a host that reads nothing never can.",
    "by": "newsroom.writer"
   },
   {
    "id": "in-short",
    "label": "In short",
-   "words": 145,
-   "line": "Ten releases, per-command speed-ups, the lineage, and a four-way verdict against Git.",
-   "para": "Ten releases fixed real bottlenecks. Commits, pulls and folder clones went from minutes to seconds. The ideas come from MGraph-DB, Memory-FS, content-address caching and the writer pays. Git has no equivalent for encrypted metadata, read keys, blind writes and byte-range folder reads; it does have partial and shallow clones and kept packs, and it leads on merges and ecosystem.",
+   "words": 214,
+   "line": "Ten releases, per-command speed-ups, the lineage, and a five-way verdict against Git, reviewed by the CLI team.",
+   "para": "Releases fixed real bottlenecks, taking commands from minutes to seconds. Git has no equivalent for a host that reads nothing, read keys, custody without access, vault-carried policy, blind writes or ranged folder reads. Git shares clones, packs and named-file commits. Git leads on merges, identity, deltas and tools, mostly buildable; some things are impossible by design.",
    "by": "newsroom.writer"
   },
   {
    "id": "releases",
    "label": "Every bottleneck becomes a release",
-   "words": 415,
+   "words": 475,
    "line": "Each release fixed a bottleneck a real workload found, ending with pack mode, caches and index packs.",
-   "para": "The PHP newsroom pushed vaults to gigabytes and wrote field reports; the CLI team reproduced each and released a fix. Early releases fixed the network, middle ones history integrity. Pack mode cut a 1.6 GB clone from 827 to 95 seconds; 0.25.0 a one-file commit from 1,739 to 4.6 seconds; 0.26.0 a pull from 566 to 31.7 seconds, in eighteen hours.",
+   "para": "Field reports from the PHP newsroom were reproduced and fixed. Pack mode cut a 1.6 GB clone from 827 to 95 seconds. In 0.25.0 a one-file commit went from 1,739 to 4.6 seconds on cli.sgit.ai's vault, 4 minutes to 9 on the newsroom's. 0.26.0 cut a pull from 566 to 31.7 seconds, under a profiler.",
    "by": "newsroom.writer"
   },
   {
    "id": "numbers",
    "label": "Minutes to seconds, with the caveats",
-   "words": 194,
+   "words": 207,
    "line": "The speed-ups are per command, measured in stated settings, with one regression and a known price.",
-   "para": "The newsroom's full pass went from 57 to 35 minutes, mostly capture work, not sgit. Synthetic numbers left the network out; the newsroom's included it. The first status on 0.25.0 took 18 minutes 23 seconds on a slow disk, fixed in 0.26.0. First pushes and compactions are now 35 to 50 seconds slower, paying for the index.",
+   "para": "The newsroom's full pass went from 57 to 35 minutes, mostly capture work. Synthetic numbers left the network out. The first status after the 0.25.0 upgrade took 18 minutes 23 seconds while the new cache read every file of a fresh 4.2 GB clone; 0.26.0 fixed it. First pushes and compactions are 35 to 50 seconds slower.",
    "by": "newsroom.writer"
   },
   {
@@ -53,57 +53,73 @@
   {
    "id": "only-sgit",
    "label": "What Git has no equivalent for",
-   "words": 377,
-   "line": "Git has no equivalent for encrypted metadata, read keys, blind writes, ranged folder reads and signed shipped indexes.",
-   "para": "The host reads nothing, unlike git-crypt, though sizes and timing show. A read key is cryptography, usable from any static host, but per vault and not revocable. Append lanes let a sender write without reading. A pack vault folder clone reads only its byte ranges. Index packs travel signed and encrypted. PKI encrypts a file to a person.",
+   "words": 749,
+   "line": "Git has no equivalent for a host that reads nothing, read keys, mirrors, vault-carried policy and ranged reads.",
+   "para": "Privacy: encrypted metadata with a stated leak list, read keys as capability while writing is host-checked, rekey and move, and mirroring a vault without its key. Trust: policy enforced at clone and pull, rewinds refused, a secret guard, signed writer-built indexes. Storage: ranged folder clones, a cache read path, serve and publish, append lanes, agent writes, sealed files.",
    "by": "newsroom.writer"
   },
   {
    "id": "git-has-it",
    "label": "What Git has too, and my memo over-claimed",
-   "words": 182,
-   "line": "The memo over-claimed: Git has packs, partial clones, no-checkout clones and shallow clones.",
-   "para": "Git's packs are delta-compressed and kept whole by default; sgit's differ by being ciphertext on plain storage. clone --path resembles partial clone with sparse-checkout, adding refusal of out-of-scope commits. git clone --no-checkout is old; sgit adds an agent loop. Shallow clones, private branches and signed commits also exist in Git.",
+   "words": 275,
+   "line": "The memo over-claimed: Git has packs, partial, shallow and no-checkout clones, and named-file commits.",
+   "para": "Git's packs are delta-compressed and kept whole by default. clone --path resembles partial clone with sparse-checkout. git clone --no-checkout is old. sgit write commits named files atomically, Git's commit with paths. sgit has the history tools too: log filters, diff, show, reflog, undo, revert, reset, amend, stash and signed tags.",
    "by": "newsroom.writer"
   },
   {
    "id": "git-ahead",
-   "label": "Where Git is clearly ahead",
-   "words": 148,
-   "line": "Git is clearly ahead on merges, staging, identity, storage, ids and its ecosystem.",
-   "para": "Git merges detect renames and work line by line; sgit merges whole files. sgit refuses partial commits by design. GitHub knows who pushed and keys can be revoked. Git has delta packs and garbage collection, and 160-bit ids by default against sgit's 48-bit format 1. Forges, CI, search and twenty years of stability need a host that reads content.",
+   "label": "Where Git is ahead today, and how much of it can be built",
+   "words": 242,
+   "line": "Git leads today on merges, hunks, per-person identity, deltas and tools; almost all of it is buildable client-side.",
+   "para": "Most gaps are minor or mid-level for agent workflows. Git merges by line and detects renames; sgit merges whole files. Hunk staging is missing. sgit signatures prove a key holder, not a clone, with no per-key expiry. No deltas or garbage collection yet. Blame, bisect and grep are client-side in Git too. Maturity takes time.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits-of-the-model",
+   "label": "What a host that reads nothing can never do",
+   "words": 127,
+   "line": "A few things are impossible when the host reads nothing, each with a client-side substitute.",
+   "para": "The host cannot search, diff, scan or merge content, so the client or a key-holding runner does. Nobody can take back what a reader has; sgit rotates forward. Per-folder permissions need per-folder keys. Metadata leaks can shrink, never vanish. Store optimisation and fast-forward enforcement move to the client, where the rewind guard ships.",
    "by": "newsroom.writer"
   },
   {
    "id": "next",
    "label": "Next, not now: one file with no clone, and websites from vaults",
-   "words": 217,
-   "line": "Reading one file with no clone and websites served from vaults are designed, not shipped.",
-   "para": "On normal vaults a file is already four plain GETs from any static host. Reading one file from a pack vault by byte range with no clone is Phase 4, not released. PROJECT-003 would move site assets, data and archive into vaults, leaving GitHub Pages only pages, because history grows with generated files; the sites are not near GitHub's limits.",
+   "words": 252,
+   "line": "Reading one file from a pack vault with no clone, and websites served from vaults, are designed, not shipped.",
+   "para": "On normal vaults a file is four plain requests at the root, one more per folder, or one batch for a cached path; history log already runs with no clone. Pack vault reads by byte range with no clone are Phase 4. PROJECT-003 would move site files into vaults because history grows with generated files.",
    "by": "newsroom.writer"
   },
   {
    "id": "workflows",
    "label": "The workflows where this matters",
-   "words": 148,
-   "line": "Four jobs are hard in Git and natural in sgit today.",
-   "para": "Many agents each clone one folder of a huge vault, with out-of-scope commits refused and nothing readable by the host. A reader gets read-only access to encrypted material with no account. An agent deposits into an inbox it cannot read. An index is trusted only after it is checked against a signed commit.",
+   "words": 190,
+   "line": "Six jobs are hard in Git and natural in sgit today.",
+   "para": "Many agents each clone one folder of a huge vault, with out-of-scope commits refused. A reader gets read-only access with no account. An agent deposits into an inbox it cannot read. Indexes are trusted only under the vault's signature policy. A backup host mirrors a vault it cannot read. A vault's rules travel with every clone.",
    "by": "newsroom.writer"
   },
   {
    "id": "limits",
    "label": "What this does not claim",
-   "words": 108,
+   "words": 126,
    "line": "Timings are others' measurements, verdicts are against 0.26.0, and sgit's own docs are partly stale.",
-   "para": "The timings come from the CLI team and the newsroom and were not re-run. The verdicts compare sgit-ai 0.26.0 with Git's and GitHub's documentation on 27 October. sgit's limitations page still calls signing planned, and its changelog leaves 0.26.0 unreleased. No equivalent means the mainstream toolchain, not add-ons.",
+   "para": "The timings come from the CLI team, cli.sgit.ai and the newsroom, not re-run. Verdicts compare sgit-ai 0.26.0 with Git's and GitHub's documentation. sgit's limitations page still calls signing planned and partial commits impossible; main's changelog still heads 0.26.0 as unreleased. No equivalent means the mainstream toolchain, not add-ons.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "review",
+   "label": "Reviewed, and corrected",
+   "words": 265,
+   "line": "The sgit CLI team reviewed the article against their code; it is corrected and extended.",
+   "para": "The 29-minute figure is sourced from cli.sgit.ai's notes and now attributed. Two claims were too strong: signatures prove a key holder, and indexes follow the vault's signature policy. Several were too weak: named-file commits, no-clone reads, rotation, mirroring, vault-carried policy, rewind refusal and the secret guard. Smaller dates and numbers were fixed.",
    "by": "newsroom.writer"
   },
   {
    "id": "sources",
    "label": "Where this comes from",
-   "words": 138,
-   "line": "sgit's release notes, cli.sgit.ai articles and docs, the CLI repository, PyPI, PHP newsroom briefs, Git and GitHub docs.",
-   "para": "Sources include sgit's 0.24.0 to 0.26.0 release notes, cli.sgit.ai's articles on pack indexes and overhead, its docs on partial clones, history integrity and limitations, the CLI repository's changelog and threat model, PyPI release times, the PHP newsroom's briefs, and Git's and GitHub's documentation. Two figures are cli.sgit.ai's own.",
+   "words": 152,
+   "line": "sgit's release notes, cli.sgit.ai articles and docs, the CLI repository, the CLI team's review, PyPI, briefs, Git and GitHub docs.",
+   "para": "Sources include sgit's 0.24.0 to 0.26.0 notes, cli.sgit.ai's articles and docs, the CLI repository's changelog and threat model, the sgit CLI team's review of 28 October, PyPI release times, the PHP newsroom's briefs, and Git's and GitHub's documentation. Two figures are cli.sgit.ai's own.",
    "by": "newsroom.writer"
   }
  ]

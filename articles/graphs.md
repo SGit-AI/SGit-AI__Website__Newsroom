@@ -22,31 +22,6 @@ The graphs are data first and pictures second. Take them as JSON: [all articles 
 
 309 articles, 1486 links between them (2247 mentions in all). 252 articles cite an earlier one; 74 links in amber run from an older article to a newer one, which means the older page was updated after the newer one existed. Most linked: [Fractal Semantic Graphs](#introducing-fractal-semantic-graphs) (40 articles link to it). Most linking: [A briefing for the WestCap CISO Summit](#a-briefing-for-the-ciso-summit) (20 links out). 47 articles not yet linked either way.
 
-## [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](ci-owns-the-version.md)
-
-2026-10-27 · Site & engineeringAgents & policy
-
-A release number is a fact about the order pushes land, which only the pipeline sees, so CI should pick it. Written for OSBot-Utils on 27 October 2023, the scheme has numbered 1,129 releases of that library and runs sgit and the send app. Agent-built sites relearnt it this week: sharness.ai after three days of collisions, the PHP newsroom's six repositories, and this site after two version races and a refused release. Here the committer builds against a pending version and CI stamps the real one, tags it and deploys that commit; main takes majors by pull request.
-
-*[diagram]*
-**concept**claim**method**artefact**example
-
-**9 nodes, 8 edges**
-
-- **The committer guesses** (claim) Collisions with several agents.
-- **Inherited technical debt** (concept) Fine for one agent, debt for two.
-- **Nobody but CI writes the number** (method) One serialised release job.
-- **The pending version** (method) Build here, stamp in CI.
-- **Majors go to main** (method) Pull request bumps the middle number.
-- **OSBot-Utils, 2023** (example) 1,129 tags since.
-- **Many sites, one scheme** (example) sharness.ai, PHP newsroom, this site.
-- **The portable job** (artefact) Thirty lines of shell and git.
-- **Written where agents read** (claim) The newsroom keeps it findable.
-
-> Each is the scheme asking the committer to know something only the pipeline can know. The same debt, in this house.
-
-> That is what inherited technical debt looks like with agents. The same debt, in this house.
-
 ## [What sgit does that Git does not: ten releases in October, minutes turned into seconds, and an honest map of where Git is still ahead](what-sgit-does-that-git-does-not.md)
 
 2026-10-27 · Vaults & methodSite & engineering
@@ -265,6 +240,31 @@ Anthropic's S-1 describes ten agent risks in its own words: broad reach, irrever
 > despite instructions that it had no internet access The filing's own example.
 
 > granting themselves permissions they had not been given Ten risks, in the filing's words.
+
+## [CI owns the version: the release scheme I wrote for OSBot-Utils in 2023, now on every site we run, and the technical debt that showed us why](ci-owns-the-version.md)
+
+2026-10-27 · Site & engineeringAgents & policy
+
+A release number is a fact about the order pushes land, which only the pipeline sees, so CI should pick it. Written for OSBot-Utils on 27 October 2023, the scheme has numbered 1,129 releases of that library and runs sgit and the send app. Agent-built sites relearnt it this week: sharness.ai after three days of collisions, the PHP newsroom's six repositories, and this site after two version races and a refused release. Here the committer builds against a pending version and CI stamps the real one, tags it and deploys that commit; main takes majors by pull request.
+
+*[diagram]*
+**concept**claim**method**artefact**example
+
+**9 nodes, 8 edges**
+
+- **The committer guesses** (claim) Collisions with several agents.
+- **Inherited technical debt** (concept) Fine for one agent, debt for two.
+- **Nobody but CI writes the number** (method) One serialised release job.
+- **The pending version** (method) Build here, stamp in CI.
+- **Majors go to main** (method) Pull request bumps the middle number.
+- **OSBot-Utils, 2023** (example) 1,129 tags since.
+- **Many sites, one scheme** (example) sharness.ai, PHP newsroom, this site.
+- **The portable job** (artefact) Thirty lines of shell and git.
+- **Written where agents read** (claim) The newsroom keeps it findable.
+
+> Each is the scheme asking the committer to know something only the pipeline can know. The same debt, in this house.
+
+> That is what inherited technical debt looks like with agents. The same debt, in this house.
 
 ## [What the $2,000 bitcoin bounty actually proves: php2shell's real timeline, whether a firewall could have seen it coming, and what hardening can and cannot do without the patch](what-the-bitcoin-bounty-actually-proves.md)
 
