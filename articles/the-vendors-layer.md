@@ -10,11 +10,13 @@
 
 # The vendor's layer: what the companies that sell AI agents should cover themselves, row by row, when their contracts cap liability at a year's fees and Europe's new product rules treat software as a product
 
-By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.0.0](versions/the-vendors-layer.md) · [newsroom v0.13.126](https://newsroom.sgit.ai/admin/versions.html) · insuranceunderwritingagent-behaviour-policyriskmandatevendorsliabilityproduct-liabilityshared-responsibilityvaultsarticle
+By [Dinis Cruz](https://sgit.ai/about/index.md) · 2026-10-28 · [article v1.1.0, 2 versions](versions/the-vendors-layer.md) · [newsroom v0.13.126](https://newsroom.sgit.ai/admin/versions.html) · insuranceunderwritingagent-behaviour-policyriskmandatevendorsliabilityproduct-liabilityshared-responsibilityvaultsarticle
 
 ***Abstract:** The first two articles of this series described insuring an agent row by row from its behaviour policy, and who could carry that risk. This one is about a party I think has to carry some of it: the vendor that sells the agent. When a company buys an agentic workflow, part of what can go wrong is the company's own doing, the access it granted and the data it connected, and part is the vendor's, the model's answer, the guardrail that let something through. Cloud providers settled the same question years ago with a shared responsibility model: AWS calls it security of the cloud and security in the cloud. Agent vendors' published terms put almost all of it on the customer: Anthropic's and Salesforce's both cap liability at the fees paid in the previous twelve months, indemnify intellectual property claims, and leave it to the customer to decide whether outputs are appropriate or use is safe. Some vendors already back their products with money, and the most useful shape is Microsoft's: cover, as long as the customer used the guardrails the product provides. Europe is moving the line from 9 December 2026, when software, AI systems included, becomes a product under the new product liability directive, with no contractual cap against an injured person. So I propose the vendor's layer: in each row of a behaviour policy, a share the vendor carries when its own conditions held. In the worked example, of a £6,720 premium for £80,000 of cover, the vendor carries £1,816, mostly on the rows its product decides; the row the customer decided by granting write access stays the customer's. The formula, the inputs and a calculator are in a vault anyone can open.*
 
 Each row's premium split between the agent's vendor and the customer's insurer. Illustrative, from the vault.
+
+**What came next.** [Where to build the agent insurer](where-to-build-the-agent-insurer.md) asks where such a company should start, and what it would cost: about £4 million as a managing agent, then capital that follows from the limits sold.
 
 ## In short
 
@@ -115,12 +117,14 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#the-ve
 
 ### Builds on
 
+- [Where to build the agent insurer: underwrite in London, sell into the US, carry the risk in Bermuda, raise capital in the Gulf, and about £4 million to start, with the capital following from the limits sold](where-to-build-the-agent-insurer.md) Underwrite in London, sell into the US and EU, carry the risk in Bermuda, raise capital in the Gulf; about £4 million to start.
 - [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md) Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.
 - [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md) Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.
 - [Who signs for this? Accountability maps from the hardware to the business, what is measured and what is declared, and why the parts nobody signs are the blind spots worth paying to see](who-signs-for-this.md) Map every layer from the hardware to the business contract by who signs it; the lines nobody signs are the blind spots worth paying to see.
 
 ### Continued by
 
+- [Where to build the agent insurer: underwrite in London, sell into the US, carry the risk in Bermuda, raise capital in the Gulf, and about £4 million to start, with the capital following from the limits sold](where-to-build-the-agent-insurer.md) Underwrite in London, sell into the US and EU, carry the risk in Bermuda, raise capital in the Gulf; about £4 million to start.
 - [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md) Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.
 - [A payout for every row: underwriting an agent behaviour policy, where each risk it names has its own limit, each enforced control lowers the premium, and what it does not name is not covered](a-payout-for-every-row.md) Underwriting an agent behaviour policy row by row: a limit per named risk, a lower premium per enforced control, and no cover for what is not named.
 
