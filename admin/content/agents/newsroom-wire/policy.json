@@ -1,0 +1,29 @@
+{
+ "id": "newsroom-wire",
+ "handle": "@newsroom.wire",
+ "status": "draft",
+ "agreed_by_editor": false,
+ "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+ "writes": [
+  "admin/build/wire*",
+  "admin/build/infographics.py",
+  "admin/build/test_wire.mjs",
+  "wire/**",
+  "admin/notes/wires-ux/**"
+ ],
+ "writes_except": [
+  "wire/costs.html",
+  "wire/costs.json",
+  "admin/build/wire-runs.json"
+ ],
+ "appends": [
+  "admin/notes/**"
+ ],
+ "vaults_may_hold": [
+  "OPENROUTER_API_KEY, from the environment"
+ ],
+ "never_holds": [
+  "a vault's write key on a page"
+ ],
+ "note": ""
+}

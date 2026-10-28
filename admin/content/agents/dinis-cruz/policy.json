@@ -1,0 +1,22 @@
+{
+ "id": "dinis-cruz",
+ "handle": "Dinis Cruz",
+ "status": "draft",
+ "agreed_by_editor": false,
+ "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+ "writes": [
+  "admin/content/reviews/queue.json",
+  "admin/content/team.json",
+  "admin/content/agents/*/policy.json"
+ ],
+ "writes_except": [],
+ "appends": [],
+ "vaults_may_hold": [
+  "the root key sha256:db7f79fdd87e030a",
+  "every vault key",
+  "SG_SEND_ACCESS_TOKEN",
+  "the cloud environment's secrets"
+ ],
+ "never_holds": [],
+ "note": "A person: no write scope is enforced; he can change anything and the history shows it. These are the files that are his alone to decide: the review queue's priority order, the roster, and every member's policy."
+}

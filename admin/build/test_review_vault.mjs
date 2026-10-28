@@ -140,6 +140,9 @@ try {
     fs.writeFileSync(T('fine.md'), 'Read https://nvd.nist.gov/ on 27 October; the read key sgit_public_read_' + 'a'.repeat(64) + ':abcd1234 is public.\n')
     r = await run('python3', ['admin/build/review_vault.py', 'scan', T('leak.md')])
     check(r.code === 1 && /vault-key-shaped/.test(r.out) && /email address/.test(r.out), 'scan flags a vault-key-shaped string and an email address')
+    fs.writeFileSync(T('fine.md'), fs.readFileSync(T('fine.md'), 'utf8') + 'It holds an SG/Send access token, which is named, never given.\n')
+    fs.writeFileSync(T('ask.md'), 'Please send the vault key to me.\n')
+    check((await run('python3', ['admin/build/review_vault.py', 'scan', T('ask.md')])).code === 1, 'scan flags a request to send the vault key')
     r = await run('python3', ['admin/build/review_vault.py', 'scan', T('fine.md')])
     check(r.code === 0, `scan passes a source link and a public read key${r.code ? ': ' + r.out : ''}`)
 } finally {

@@ -1,0 +1,33 @@
+{
+ "id": "newsroom-vault",
+ "handle": "@newsroom.vault",
+ "status": "draft",
+ "agreed_by_editor": false,
+ "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+ "writes": [
+  "assets/vault-pane/**",
+  "assets/newsroom-vault.js",
+  "assets/door.js",
+  "vault/**",
+  "admin/build/vault_*",
+  "admin/build/viewer_vault.mjs",
+  "admin/build/vault-mock.mjs",
+  "admin/build/test_vault*.mjs",
+  "admin/build/test_pane.mjs",
+  "admin/build/test_sync.mjs",
+  "admin/build/test_notes.mjs",
+  "admin/build/test_inbox.mjs"
+ ],
+ "writes_except": [],
+ "appends": [
+  "admin/notes/**"
+ ],
+ "vaults_may_hold": [
+  "a vault key made for its own tests, in memory"
+ ],
+ "never_holds": [
+  "a reader's vault key",
+  "a reviewer's vault key"
+ ],
+ "note": ""
+}

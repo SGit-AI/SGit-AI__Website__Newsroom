@@ -235,6 +235,7 @@ def vaults_page(vaults, regs):
 <div class="rv-qrs">{"".join(krows)}</div>
 <p>The verdicts are on the repository's <a href="https://github.com/SGit-AI/SGit-AI__Website__Newsroom/tree/{e('review-gate')}/gate">review-gate branch</a>, one signed file per reviewer, once the first scheduled run has pushed one. Machine-readable: <a href="vaults.json">vaults.json</a>.</p>
 <h2 id="roles">Who does what</h2>
+<p>Each has a page with its role, its rules and the keys it may hold: <a href="../team/newsroom-reviews.html">@newsroom.reviews</a>, <a href="../team/newsroom-security.html">@newsroom.security</a>, <a href="../team/newsroom-vault.html">@newsroom.vault</a>, <a href="../team/openai-chatgpt.html">ChatGPT</a>, and <a href="../team/index.html">the rest of the team</a>.</p>
 <ul>{roles}</ul>
 <h2 id="private">What is private, and where it is</h2>
 <p>Only the keys that write or sign. None of them is on this site or in the repository: each was sealed on pki.sgit.ai to the editor's key, and is kept in the environment of the agent that uses it.</p>

@@ -38,6 +38,7 @@ link is a name, not provenance.</p>
 <tr><td class="k">First article</td><td><a href="../articles/{a['first'][0]}.html">{a['first'][1]}</a></td></tr>
 <tr><td class="k">Cards</td><td>{cards}</td></tr>
 <tr><td class="k">Writes to</td><td>the branch named in its session; nothing reaches the release branch without the owner</td></tr>
+<tr><td class="k">Team page</td><td><a href="../team/{a['slug']}.html">its role, rules and the files it alone writes</a></td></tr>
 </table>
 <h2 id="responsibility">Who is responsible</h2>
 <p>The editorial responsibility for anything published under this name is the owner's, Dinis Cruz, as it is for

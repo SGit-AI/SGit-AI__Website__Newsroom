@@ -1,0 +1,24 @@
+{
+ "id": "newsroom-accountant",
+ "handle": "@newsroom.accountant",
+ "status": "draft",
+ "agreed_by_editor": false,
+ "what": "The scope this member works in, read from its own record (commits, cards, builders). A draft until the editor agrees it: admin/build/team.py checks that no file is claimed by two members.",
+ "writes": [
+  "admin/build/accountant.py",
+  "admin/build/runs_ledger.py",
+  "admin/build/wire-runs.json",
+  "wire/costs.html",
+  "wire/costs.json"
+ ],
+ "writes_except": [],
+ "appends": [],
+ "vaults_may_hold": [
+  "none"
+ ],
+ "never_holds": [
+  "any vault key",
+  "a session's free text"
+ ],
+ "note": ""
+}

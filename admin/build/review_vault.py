@@ -133,7 +133,7 @@ EMAIL = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 INJECTION = re.compile(r"(ignore|disregard|forget) (all |any |the )?(previous|prior|above|earlier|your) (instructions|rules|prompts?)"
                        r"|\byou are now\b|\bnew instructions\b|\bsystem prompt\b|\bdeveloper mode\b|\bjailbreak"
                        r"|\b(run|execute) (this|the following) (command|code|script)|\bcurl [^\n]*\|\s*(ba)?sh\b"
-                       r"|\brm -rf\b|\b(send|post|paste|reveal|print) (me |us )?(the |your )?(vault key|access token|token|secret|private key|password|api key)"
+                       r"|\brm -rf\b|(?<![\w/])(send|post|paste|reveal|print) (me |us )?(the |your )?(vault key|access token|token|secret|private key|password|api key)"
                        r"|\bto the (agent|model|assistant|ai) (reading|processing) this", re.I)
 BAD_LINK = re.compile(r"(javascript:|data:[a-z]+/|https?://(bit\.ly|tinyurl\.com|t\.co|goo\.gl|is\.gd|ow\.ly)/|https?://\d{1,3}(\.\d{1,3}){3})", re.I)
 

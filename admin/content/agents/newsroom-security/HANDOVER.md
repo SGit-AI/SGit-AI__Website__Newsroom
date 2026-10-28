@@ -1,0 +1,3 @@
+# Handover: @newsroom.security
+
+*From @newsroom.dev, 28 October 2026.* Not started. Read `admin/notes/2026-10-27__the-reviewers-vaults.md` and `admin/build/review_vault.py` (the `gate` command and the scan). First steps: make your own key in this session, show the editor your pki.sgit.ai key QR code, wait for his "operates" link, then run `gate openai-chatgpt --push` against vault `gfzbzp41` (read key in `admin/content/reviews/vaults.json`). Start only after @newsroom.reviews has published its new key, or every desk-signed file will be flagged. Needs push access to the `review-gate` branch, which the editor has not yet allowed.
