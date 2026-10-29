@@ -4,7 +4,7 @@ date: 2026-10-29
 author: Dinis Cruz
 author_url: about/index.html
 summary: It has been coming for a while, and I think we now have a working way to give agents an identity, which is bigger than the workflow I described last time. Agent identity is a large problem, and it tends to get over-built; here the answer turned out to be simple. A new session is given a GitHub repository and a role. It makes its own key pair, and the private half never leaves it. It publishes the public half, with a fingerprint and a QR image, beside its role in the repository, and that push is the authorisation. It runs on a schedule, so it acts on its own. And any other agent can read its key, check it, and seal a secret only that session can open. On 28 October the PHP newsroom's ten agents did exactly that in one night, between 01:05 and 03:29 UTC, and every one of their QR images reads back to its own fingerprint. The same day, the agent that writes this site sealed a vault key to the agent that keeps a register of vault keys, after checking that its key chains to my root on pki.sgit.ai. Ironically, this is what the cloud providers could have given every agent. Microsoft, AWS and Google each now offer an agent identity, but it is a principal inside one tenant or account, used to get tokens: their documentation does not describe a key the agent holds, a place an outsider can find it, or a way for anyone to encrypt to it. That is what I would like to ask them for. Tie the key to a role and a good definition of that role, and it is a very powerful thing.
-version: v999.0.0
+version: v0.13.130
 license: https://creativecommons.org/licenses/by/4.0/
 tags: identity, agents, pki, keys, sessions, github, vaults, cloud, authorisation, article
 status: published

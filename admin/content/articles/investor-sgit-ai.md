@@ -4,7 +4,7 @@ date: 2026-10-29
 author: Dinis Cruz
 author_url: about/index.html
 summary: This is an article brief: one idea and one task, and the direction of travel behind them. We are starting to talk to investors, and the challenge with most of what we build is that it has to be experienced to be understood. So the best way to talk to investors is to have them use it, and the place to do that is a website of its own, investor.sgit.ai, for investors and founders together, angel to Series A. It would carry the news from investor circles, tracked from public sources as a graph; startup contracts, cap tables and term sheets as linked graphs with their versions and caveats; a section for founders on how to talk to an investor and what comes next; the funding models from open source to proprietary; deal rooms as vaults, and keys for investors as a demonstration of PKI; RiskMandate's due diligence and de-risking at work; and sgit itself as the case study, its strategy and thinking published as it happens. It would also put back in front of people work that got lost: the GenAI cybersecurity startup evaluation framework I published in March, seven criteria and a meta-criterion scored to forty, which is the first piece of the maturity model I had in mind. Like the PHP newsroom, it would be run by a small team of agents on a schedule, built from the first commit to sgit.ai's rules for a new repository, with CI owning the version. And then I would show it to investors and ask: is this useful, and what would help?
-version: v999.0.0
+version: v0.13.130
 license: https://creativecommons.org/licenses/by/4.0/
 tags: investors, founders, startups, brief, vaults, pki, riskmandate, sgit, funding, article
 status: published
