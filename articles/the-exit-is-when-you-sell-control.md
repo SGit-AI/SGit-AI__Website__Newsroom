@@ -113,6 +113,7 @@ Startups & strategy[This article as a graph →](graphs.md#the-exit-is-when-you-
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
 - [A small slice sets the price: what the 2026 mega-listings actually sold, how much of each company changed hands, and what founders should take from it](a-small-slice-sets-the-price.md) The 2026 mega-listings priced trillion-dollar companies by selling a few per cent of them. What was sold, what it raised, and the founder's lesson.
 
 [All articles](index.md) · [All graphs](graphs.md)

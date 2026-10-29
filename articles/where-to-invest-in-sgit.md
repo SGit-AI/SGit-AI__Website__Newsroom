@@ -146,6 +146,10 @@ Startups & strategyVaults & method[This article as a graph →](graphs.md#where-
 - [Knowledge graphs in the era of LLMs: what the KGELL COST Action is doing, and what 309 graphs built by agents in a working newsroom can bring to its working group on construction](knowledge-graphs-for-kgell.md) What the KGELL COST Action is doing, and 309 agent-built graphs offered to its working group on construction.
 - [From sending a file to sgit: eight months of SG/Send, told by its own briefs and commits, and how a file-sharing service became encrypted version control and vaults](from-send-to-sgit.md) Eight months of SG/Send, checked against its own briefs and commits: how file sharing became sgit and vaults, the pace, and what the market said.
 
+### Continued by
+
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
+
 [All articles](index.md) · [All graphs](graphs.md)
 
 Article No. 313 · [start a reading list with it](https://newsroom.sgit.ai/for/make.html#r=313)

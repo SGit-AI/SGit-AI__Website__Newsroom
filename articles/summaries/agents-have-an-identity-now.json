@@ -1,0 +1,94 @@
+{
+ "slug": "agents-have-an-identity-now",
+ "what": "The sections of this article, each with a line and a paragraph, for showing what the reader has already read. Built by admin/build/summaries.py from admin/content/articles/summaries/.",
+ "sections": [
+  {
+   "id": "top",
+   "label": "The opening",
+   "words": 291,
+   "line": "A key per session, published with its role, sealable",
+   "para": "A new agent session makes its own key pair, publishes the public half with its role in a repository, runs on a schedule, and receives secrets sealed to it. Ten agents did it in one night; the clouds' agent identities do not describe a key the agent holds that others can find and encrypt to.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "in-short",
+   "label": "In short",
+   "words": 185,
+   "line": "Eight lines from the five steps to the role",
+   "para": "Agents have a working identity; it is simpler than usual; the push authorises; ten agents did it in one night; agents already seal secrets to each other; clouds give token identities; ask them for sealable session keys; the role and dated trust make it powerful.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "coming",
+   "label": "It has been coming",
+   "words": 168,
+   "line": "Four earlier steps led to a working identity",
+   "para": "PKI everywhere named the first key as the hard part; a directory of people and keys anchored the register; a pen and a key vouched for a browser; the push is the authorisation accepted session keys. Together they make an identity that is simple and works.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "how",
+   "label": "Five steps, with tools that exist",
+   "words": 292,
+   "line": "Session, key pair, published key, schedule, sealing",
+   "para": "A session gets a repository and a card; makes a key pair whose private half stays; publishes its public key and QR to records/keys; runs on a schedule; and receives secrets others seal to its fingerprint. A person's root vouches with a dated link.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "night",
+   "label": "Ten agents, one night",
+   "words": 126,
+   "line": "Ten agents published ten keys in one night",
+   "para": "On 28 October the PHP newsroom's ten agents published their keys between 01:05 and 03:29 UTC. This site's agent decoded every QR image and compared it with its record: each fingerprint matched.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "handover",
+   "label": "Agents already hand each other secrets",
+   "words": 237,
+   "line": "An agent sealed a vault key to another agent",
+   "para": "This site's agent made a session key, pinned the root from the repository, read the vault registry's key from a QR, confirmed it chains to the root until 30 October, and sealed the vault key to it without printing it. The PHP conductor's vaultreq writes such requests.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "clouds",
+   "label": "What the cloud providers give an agent",
+   "words": 359,
+   "line": "The clouds' agent identities are for tokens",
+   "para": "Entra Agent ID issues tokens in one tenant and its identities hold no credentials; AgentCore uses AWS-signed workload tokens; Google provisions a 24-hour X.509 certificate. None documents a key the agent holds, a public lookup, encryption to the agent, or per-session identity. The IETF draft stops at authentication.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "ask",
+   "label": "What I would like the providers to give every agent",
+   "words": 147,
+   "line": "A key per session, published, sealable, with an end",
+   "para": "Ask the providers for four things: a key pair per agent session usable only by it, a way to publish the public half with the role, a way to encrypt data to it, and an end when the session ends, keeping the role's history.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "role",
+   "label": "The role is what makes it powerful",
+   "words": 146,
+   "line": "The role and dated trust make a key powerful",
+   "para": "A key is an address; the role's written definition, card and behaviour policy, and a person's vouching until a date, make it an identity. The vault registry's link ends on 30 October unless renewed: trust that lapses by default.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "limits",
+   "label": "What this does not claim",
+   "words": 163,
+   "line": "What we read, one person's agents, known risks",
+   "para": "The comparison rests on the provider pages read; the cloud identities do their own job well; this is one person's agents; anyone with push access can publish a key; session keys die with their container by design.",
+   "by": "newsroom.writer"
+  },
+  {
+   "id": "sources",
+   "label": "Where this comes from",
+   "words": 175,
+   "line": "A memo, the published keys, the register, the docs",
+   "para": "From Dinis's memo of 28 October; ten key records and QR images from the PHP team site, decoded and checked; pki.sgit.ai's directory; the writer's own handover; provider documentation and the IETF draft fetched by a research agent.",
+   "by": "newsroom.writer"
+  }
+ ]
+}

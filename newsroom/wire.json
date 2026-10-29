@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "site_version": "v0.7.87",
   "about": "https://newsroom.sgit.ai/newsroom/index.html",
   "front": {
@@ -72,6 +72,70 @@
     }
   ],
   "articles": [
+    {
+      "slug": "investor-sgit-ai",
+      "title": "investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study",
+      "date": "2026-10-29",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/investor-sgit-ai.html",
+      "markdown": "https://newsroom.sgit.ai/articles/investor-sgit-ai.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/investor-sgit-ai.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/investor-sgit-ai.json",
+      "teaser": "A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.",
+      "summary": "This is an article brief: one idea and one task, and the direction of travel behind them. We are starting to talk to investors, and the challenge with most of what we build is that it has to be experienced to be understood. So the best way to talk to investors is to have them use it, and the place to do that is a website of its own, investor.sgit.ai, for investors and founders together, angel to Series A. It would carry the news from investor circles, tracked from public sources as a graph; startup contracts, cap tables and term sheets as linked graphs with their versions and caveats; a section for founders on how to talk to an investor and what comes next; the funding models from open source to proprietary; deal rooms as vaults, and keys for investors as a demonstration of PKI; RiskMandate's due diligence and de-risking at work; and sgit itself as the case study, its strategy and thinking published as it happens. It would also put back in front of people work that got lost: the GenAI cybersecurity startup evaluation framework I published in March, seven criteria and a meta-criterion scored to forty, which is the first piece of the maturity model I had in mind. Like the PHP newsroom, it would be run by a small team of agents on a schedule, built from the first commit to sgit.ai's rules for a new repository, with CI owning the version. And then I would show it to investors and ask: is this useful, and what would help?",
+      "topics": [
+        "startups-and-strategy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "investors",
+        "founders",
+        "startups",
+        "brief",
+        "vaults",
+        "pki",
+        "riskmandate",
+        "sgit",
+        "funding",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
+    {
+      "slug": "agents-have-an-identity-now",
+      "title": "Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add",
+      "date": "2026-10-29",
+      "updated": "",
+      "author": "Dinis Cruz",
+      "url": "https://newsroom.sgit.ai/articles/agents-have-an-identity-now.html",
+      "markdown": "https://newsroom.sgit.ai/articles/agents-have-an-identity-now.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/agents-have-an-identity-now.webp",
+      "graph": "https://newsroom.sgit.ai/articles/graphs/agents-have-an-identity-now.json",
+      "teaser": "A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.",
+      "summary": "It has been coming for a while, and I think we now have a working way to give agents an identity, which is bigger than the workflow I described last time. Agent identity is a large problem, and it tends to get over-built; here the answer turned out to be simple. A new session is given a GitHub repository and a role. It makes its own key pair, and the private half never leaves it. It publishes the public half, with a fingerprint and a QR image, beside its role in the repository, and that push is the authorisation. It runs on a schedule, so it acts on its own. And any other agent can read its key, check it, and seal a secret only that session can open. On 28 October the PHP newsroom's ten agents did exactly that in one night, between 01:05 and 03:29 UTC, and every one of their QR images reads back to its own fingerprint. The same day, the agent that writes this site sealed a vault key to the agent that keeps a register of vault keys, after checking that its key chains to my root on pki.sgit.ai. Ironically, this is what the cloud providers could have given every agent. Microsoft, AWS and Google each now offer an agent identity, but it is a principal inside one tenant or account, used to get tokens: their documentation does not describe a key the agent holds, a place an outsider can find it, or a way for anyone to encrypt to it. That is what I would like to ask them for. Tie the key to a role and a good definition of that role, and it is a very powerful thing.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "identity",
+        "agents",
+        "pki",
+        "keys",
+        "sessions",
+        "github",
+        "vaults",
+        "cloud",
+        "authorisation",
+        "article"
+      ],
+      "placement": [],
+      "linkedin": null,
+      "notes": []
+    },
     {
       "slug": "insuring-agents-the-whole-story",
       "title": "Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital",

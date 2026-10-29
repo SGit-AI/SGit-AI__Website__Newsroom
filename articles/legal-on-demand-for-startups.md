@@ -134,6 +134,7 @@ Startups & strategyAgents & policy[This article as a graph →](graphs.md#legal-
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
 - [The legal AI services map: 44 companies scored on who does the work, who stands behind it, and whether an agent can hire them, with the evidence in a public vault](the-legal-ai-services-map.md) 44 legal companies scored on who does the work, who stands behind it, and whether an agent can hire them.
 
 [All articles](index.md) · [All graphs](graphs.md)

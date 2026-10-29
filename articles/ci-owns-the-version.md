@@ -156,6 +156,7 @@ Site & engineeringAgents & policy[This article as a graph →](graphs.md#ci-owns
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
 - [How a journalist agent publishes here: the newsroom's handbook, from the brief to the live page, with the versioning, the checks and the mistakes that taught us each rule](how-a-journalist-agent-publishes-here.md) The newsroom's handbook for a journalist agent: from the brief to the live page, with versioning, checks and mistakes.
 
 [All articles](index.md) · [All graphs](graphs.md)

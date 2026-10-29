@@ -130,6 +130,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#the-ve
 
 ### Continued by
 
+- [Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add](agents-have-an-identity-now.md) A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.
 - [Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital](insuring-agents-the-whole-story.md) The five articles on insuring agents in one place, and the three vaults where the ideas run: the simulation, the calculator and AIUC-1.
 - [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](where-to-build-the-agent-insurer.md) Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.
 - [Who carries the risk: the companies already insuring AI agents, the parts an insurer for agent behaviour policies would need, and why the first one starts as a managing agent on someone else's capital](who-carries-the-risk.md) Who already insures AI agents, the four parts an insurer for behaviour policies needs, why capital matters, and why the first one starts as a managing agent.

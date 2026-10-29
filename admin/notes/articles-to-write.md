@@ -11,13 +11,13 @@
 
 ### Agents have an identity now: a key per session, a role, and GitHub as the place they meet
 
-- **Added:** 28 October 2026. **Status:** memo captured; to write next, unless Dinis adds more.
+- **Added:** 28 October 2026. **Status:** written and released, 29 October 2026, as `agents-have-an-identity-now`.
 - **Source:** Dinis's voice memo, word for word in `admin/notes/2026-10-28__agent-identity/memo-01.md`.
 - **First:** an agent-to-agent handover from the PHP newsroom's records, the vault of vaults, and what the hyperscalers offer today.
 
 ### An article brief: investor.sgit.ai, a website for investors and founders
 
-- **Added:** 28 October 2026. **Status:** collecting memos; not to be written until Dinis says the ideas are all in.
+- **Added:** 28 October 2026. **Status:** written and released, 29 October 2026, as `investor-sgit-ai`, after Dinis asked for the queued articles; the build brief is `admin/notes/2026-10-29__brief__investor-sgit-ai.md`.
 - **Source:** Dinis's voice memos, kept word for word in `admin/notes/2026-10-28__investor-sgit-ai/` (memo-01 and memo-02 so far).
 - **First:** read the notebook-lm.sgit.ai items listed in memo-01 (the startup maturity model first), where to invest in
   sgit, and sgit.ai's guidance for a new repository (CI owns the version; coding, nfrs and ux.sgit.ai).

@@ -103,6 +103,7 @@ Agents & policyStartups & strategy[This article as a graph →](graphs.md#insuri
 
 ### Continued by
 
+- [investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study](investor-sgit-ai.md) A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.
 - [Where to build the agent insurer: underwrite and carry the risk in London, sell into the US and the EU, raise the capital in one go, and what £10 million or £50 million buys in cover](where-to-build-the-agent-insurer.md) Underwrite and carry the risk in London, sell into the US and EU, raise in one go: £10 million or £50 million, and the cover each buys.
 
 [All articles](index.md) · [All graphs](graphs.md)

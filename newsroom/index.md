@@ -46,9 +46,9 @@ Edition of **2026-10-08**. Third edition. A day of articles on how agents decide
 
 Computed at every build from the files: placements that point at nothing, articles published since the edition, open pitches, articles without a graph or a card. The same list is what `python3 admin/build/desk.py` prints for the Editor.
 
-- Fix`front.json` the lead is 20 days older than the newest article and 271 newer article(s) are unplaced
-- To do`front.json` 271 article(s) published since the 2026-10-08 edition: insuring-agents-the-whole-story, where-to-build-the-agent-insurer, the-vendors-layer, how-a-journalist-agent-publishes-here, who-carries-the-risk, a-payout-for-every-row
-- To do`newsletter/` a newsletter issue is due: 116 articles since issue 9 (2026-10-18)
+- Fix`front.json` the lead is 21 days older than the newest article and 273 newer article(s) are unplaced
+- To do`front.json` 273 article(s) published since the 2026-10-08 edition: investor-sgit-ai, agents-have-an-identity-now, insuring-agents-the-whole-story, where-to-build-the-agent-insurer, the-vendors-layer, how-a-journalist-agent-publishes-here
+- To do`newsletter/` a newsletter issue is due: 118 articles since issue 9 (2026-10-18)
 - To do`newsroom/pitches/2026-10-11__where-the-platform-draws-the-line.md` open pitch from contributor: highlight for where-the-platform-draws-the-line
 - To do`newsroom/pitches/2026-10-11__the-same-argument-in-our-words.md` open pitch from contributor: lead for the-same-argument-in-our-words
 - To do`newsroom/pitches/2026-10-11__the-agent-is-the-reader.md` open pitch from contributor: lead for the-agent-is-the-reader

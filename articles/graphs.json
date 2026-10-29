@@ -1,6 +1,6 @@
 {
   "site": "https://sgit.ai",
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "site_version": "v0.7.87",
   "schema": "https://newsroom.sgit.ai/articles/graphs.html",
   "topics": [
@@ -55,6 +55,436 @@
   ],
   "articles": [
     {
+      "slug": "investor-sgit-ai",
+      "title": "investor.sgit.ai: a brief for a website where investors and founders use our tools, not read about them, with the news, contracts as graphs, deal rooms as vaults and sgit as the case study",
+      "date": "2026-10-29",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/investor-sgit-ai.html",
+      "markdown": "https://newsroom.sgit.ai/articles/investor-sgit-ai.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/investor-sgit-ai.webp",
+      "teaser": "A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.",
+      "topics": [
+        "startups-and-strategy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "investors",
+        "founders",
+        "startups",
+        "brief",
+        "vaults",
+        "pki",
+        "riskmandate",
+        "sgit",
+        "funding",
+        "article"
+      ],
+      "links_out": [
+        "where-to-invest-in-sgit",
+        "legal-on-demand-for-startups",
+        "insuring-agents-the-whole-story",
+        "sell-dont-issue",
+        "the-exit-is-when-you-sell-control",
+        "start-a-company",
+        "the-controllable-founder",
+        "open-source-so-you-keep-it",
+        "a-small-slice-sets-the-price",
+        "agents-have-an-identity-now",
+        "ci-owns-the-version"
+      ],
+      "links_in": [],
+      "figures": [
+        {
+          "file": "iv-map.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/iv-map.webp",
+          "caption": "What investor.sgit.ai would hold, for investors and founders, angel to Series A. A proposal.",
+          "kind": "diagram"
+        },
+        {
+          "file": "iv-framework.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/iv-framework.webp",
+          "caption": "The GenAI cybersecurity startup evaluation framework: seven criteria and a meta-criterion, scored to 40.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "investor-sgit-ai",
+        "teaser": "A brief for investor.sgit.ai: investors and founders using our tools, with news, contracts as graphs, deal rooms as vaults and sgit as the case study.",
+        "topics": [
+          "startups-and-strategy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Because what we build has to be experienced to be understood, investor.sgit.ai would let investors and founders use it: news from investor circles as a graph, contracts as linked graphs, a founders' section, funding models, an evaluation framework for security startups, deal rooms as vaults, keys for investors, sgit as the case study and RiskMandate at work, run by a small agent team, built to sgit.ai's repository rules with CI owning the version, and shown to investors for their answer.",
+        "nodes": [
+          {
+            "id": "why",
+            "label": "Experience is the explanation",
+            "kind": "claim",
+            "summary": "What we build has to be used to be understood."
+          },
+          {
+            "id": "site",
+            "label": "investor.sgit.ai",
+            "kind": "artefact",
+            "summary": "One site for investors and founders, angel to Series A."
+          },
+          {
+            "id": "news",
+            "label": "The news as a graph",
+            "kind": "method",
+            "summary": "Angel and Series A from public sources."
+          },
+          {
+            "id": "contracts",
+            "label": "Contracts as graphs",
+            "kind": "method",
+            "summary": "Term sheets and cap tables linked clause to clause."
+          },
+          {
+            "id": "founders",
+            "label": "A section for founders",
+            "kind": "concept",
+            "summary": "Talking to investors, next steps, services, models."
+          },
+          {
+            "id": "framework",
+            "label": "The evaluation framework",
+            "kind": "artefact",
+            "summary": "Seven criteria and a meta-criterion, scored to 40."
+          },
+          {
+            "id": "vaults",
+            "label": "Deal rooms as vaults",
+            "kind": "example",
+            "summary": "Desks and a deal room, each a vault."
+          },
+          {
+            "id": "case",
+            "label": "sgit as the case study",
+            "kind": "example",
+            "summary": "Strategy and thinking published as it happens."
+          },
+          {
+            "id": "team",
+            "label": "Run by agents",
+            "kind": "method",
+            "summary": "A small scheduled team; feeds from the newsroom's wire."
+          },
+          {
+            "id": "rules",
+            "label": "Built to the house rules",
+            "kind": "method",
+            "summary": "A brief in full, a reality file, CI owns the version."
+          },
+          {
+            "id": "ask",
+            "label": "Ask investors",
+            "kind": "question",
+            "summary": "Is this useful, and what would help?"
+          }
+        ],
+        "edges": [
+          {
+            "from": "why",
+            "to": "site",
+            "rel": "leads-to"
+          },
+          {
+            "from": "site",
+            "to": "news",
+            "rel": "produces"
+          },
+          {
+            "from": "site",
+            "to": "contracts",
+            "rel": "produces"
+          },
+          {
+            "from": "site",
+            "to": "founders",
+            "rel": "produces"
+          },
+          {
+            "from": "framework",
+            "to": "site",
+            "rel": "extends"
+          },
+          {
+            "from": "vaults",
+            "to": "site",
+            "rel": "example-of"
+          },
+          {
+            "from": "case",
+            "to": "site",
+            "rel": "example-of"
+          },
+          {
+            "from": "team",
+            "to": "news",
+            "rel": "produces"
+          },
+          {
+            "from": "rules",
+            "to": "site",
+            "rel": "depends-on"
+          },
+          {
+            "from": "site",
+            "to": "ask",
+            "rel": "leads-to"
+          }
+        ],
+        "links": {
+          "articles": [
+            "where-to-invest-in-sgit",
+            "legal-on-demand-for-startups",
+            "insuring-agents-the-whole-story",
+            "sell-dont-issue",
+            "the-exit-is-when-you-sell-control",
+            "start-a-company",
+            "the-controllable-founder",
+            "open-source-so-you-keep-it",
+            "a-small-slice-sets-the-price",
+            "agents-have-an-identity-now",
+            "ci-owns-the-version"
+          ],
+          "pages": [],
+          "sites": [
+            "https://notebook-lm.sgit.ai/",
+            "https://php.oct.2026.newsroom.sgit.ai/",
+            "https://sgit.ai/docs/guidance/repositories.md",
+            "https://coding.sgit.ai/",
+            "https://nfrs.sgit.ai/",
+            "https://ux.sgit.ai/"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "So I think the best way to talk to investors is to have them use our own technology, on the problems they actually have.",
+            "why": "The reason for the site."
+          },
+          {
+            "text": "My inclination is the first, because it shows the point of vaults: one team writes, another site reads, and the vault is the contract between them.",
+            "why": "The answer to who makes the feeds."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "agents-have-an-identity-now",
+      "title": "Agents have an identity now: a key pair made in every session, published with its role, so any agent can seal a secret to it, and the piece the cloud providers could add",
+      "date": "2026-10-29",
+      "updated": "",
+      "url": "https://newsroom.sgit.ai/articles/agents-have-an-identity-now.html",
+      "markdown": "https://newsroom.sgit.ai/articles/agents-have-an-identity-now.md",
+      "card": "https://newsroom.sgit.ai/articles/cards/agents-have-an-identity-now.webp",
+      "teaser": "A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.",
+      "topics": [
+        "agents-and-policy",
+        "vaults-and-method"
+      ],
+      "tags": [
+        "identity",
+        "agents",
+        "pki",
+        "keys",
+        "sessions",
+        "github",
+        "vaults",
+        "cloud",
+        "authorisation",
+        "article"
+      ],
+      "links_out": [
+        "pki-everywhere",
+        "a-directory-of-people-and-keys",
+        "a-pen-and-a-key",
+        "the-push-is-the-authorisation",
+        "the-vendors-layer"
+      ],
+      "links_in": [
+        "investor-sgit-ai"
+      ],
+      "figures": [
+        {
+          "file": "id-steps.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/id-steps.webp",
+          "caption": "An agent's identity in five steps: a session, its own key pair, role and key published, a schedule, sealed secrets.",
+          "kind": "diagram"
+        },
+        {
+          "file": "id-keys.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/id-keys.webp",
+          "caption": "The PHP newsroom's ten agents and their public keys, published on 28 October 2026 with a QR image each.",
+          "kind": "collage"
+        },
+        {
+          "file": "id-clouds.webp",
+          "url": "https://newsroom.sgit.ai/articles/images/id-clouds.webp",
+          "caption": "What Microsoft, AWS and Google give an agent, against what an agent needs to receive a secret.",
+          "kind": "comparison"
+        }
+      ],
+      "graph": {
+        "slug": "agents-have-an-identity-now",
+        "teaser": "A key pair made in every agent session, published with its role in a repository, so any agent can seal a secret to it; what the clouds could add.",
+        "topics": [
+          "agents-and-policy",
+          "vaults-and-method"
+        ],
+        "core_idea": "Agents now have a simple working identity: each session makes its own key pair, publishes the public half with its role in a repository where the push is the authorisation, runs on a schedule, and receives secrets other agents seal to it, with a person's root key vouching until a date; the cloud providers' agent identities authenticate agents inside a tenant but do not describe a key the agent holds, a public place to find it, or a way to encrypt to it, which is what they could give every agent.",
+        "nodes": [
+          {
+            "id": "coming",
+            "label": "It has been coming",
+            "kind": "claim",
+            "summary": "PKI everywhere, a directory of keys, a pen and a key, the push."
+          },
+          {
+            "id": "steps",
+            "label": "Five steps",
+            "kind": "method",
+            "summary": "Session, key pair, published role and key, schedule, sealed secrets."
+          },
+          {
+            "id": "push",
+            "label": "The push is the authorisation",
+            "kind": "concept",
+            "summary": "Publishing to the team's repository accepts a session's key."
+          },
+          {
+            "id": "night",
+            "label": "Ten agents, one night",
+            "kind": "example",
+            "summary": "The PHP newsroom's keys, 01:05 to 03:29 UTC on 28 October."
+          },
+          {
+            "id": "handover",
+            "label": "An agent seals to an agent",
+            "kind": "example",
+            "summary": "A vault key sealed to the vault registry after a trust check."
+          },
+          {
+            "id": "clouds",
+            "label": "The clouds' agent identities",
+            "kind": "concept",
+            "summary": "Tokens inside a tenant: Entra, AgentCore, Google Agent Identity."
+          },
+          {
+            "id": "missing",
+            "label": "What is missing",
+            "kind": "claim",
+            "summary": "A key the agent holds, a place to find it, a way to encrypt to it."
+          },
+          {
+            "id": "standards",
+            "label": "The IETF draft",
+            "kind": "example",
+            "summary": "Cryptographic binding required; no encryption to agents defined."
+          },
+          {
+            "id": "ask",
+            "label": "What to ask the providers",
+            "kind": "method",
+            "summary": "A key per session, published, sealable, with an end."
+          },
+          {
+            "id": "role",
+            "label": "The role makes it powerful",
+            "kind": "claim",
+            "summary": "A key tied to a defined role and a person's dated trust."
+          },
+          {
+            "id": "expiry",
+            "label": "Trust that ends",
+            "kind": "example",
+            "summary": "The registry's link ends on 30 October unless renewed."
+          }
+        ],
+        "edges": [
+          {
+            "from": "coming",
+            "to": "steps",
+            "rel": "leads-to"
+          },
+          {
+            "from": "push",
+            "to": "steps",
+            "rel": "extends"
+          },
+          {
+            "from": "steps",
+            "to": "night",
+            "rel": "produces"
+          },
+          {
+            "from": "steps",
+            "to": "handover",
+            "rel": "produces"
+          },
+          {
+            "from": "clouds",
+            "to": "missing",
+            "rel": "produces"
+          },
+          {
+            "from": "standards",
+            "to": "missing",
+            "rel": "example-of"
+          },
+          {
+            "from": "missing",
+            "to": "ask",
+            "rel": "leads-to"
+          },
+          {
+            "from": "steps",
+            "to": "clouds",
+            "rel": "contrasts"
+          },
+          {
+            "from": "role",
+            "to": "steps",
+            "rel": "extends"
+          },
+          {
+            "from": "expiry",
+            "to": "role",
+            "rel": "example-of"
+          }
+        ],
+        "links": {
+          "articles": [
+            "pki-everywhere",
+            "a-directory-of-people-and-keys",
+            "a-pen-and-a-key",
+            "the-push-is-the-authorisation",
+            "the-vendors-layer"
+          ],
+          "pages": [],
+          "sites": [
+            "https://learn.microsoft.com/en-us/entra/agent-id/what-are-agent-identities",
+            "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html",
+            "https://docs.cloud.google.com/iam/docs/agent-identity-overview",
+            "https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/",
+            "https://pki.sgit.ai/directory/index.json",
+            "https://team.php.oct.2026.newsroom.sgit.ai/records/keys/conductor.json"
+          ]
+        },
+        "quotes": [
+          {
+            "text": "A key on its own is an address.",
+            "why": "Why the role matters more than the key."
+          },
+          {
+            "text": "Trust that ends unless someone renews it is how an agent's identity should work.",
+            "why": "Expiry as a feature of identity."
+          }
+        ]
+      }
+    },
+    {
       "slug": "insuring-agents-the-whole-story",
       "title": "Insuring agents, the whole story: five articles and three vaults on one idea, that an agent's behaviour policy can be read as an insurance policy, priced row by row and backed by capital",
       "date": "2026-10-28",
@@ -86,6 +516,7 @@
         "where-to-build-the-agent-insurer"
       ],
       "links_in": [
+        "investor-sgit-ai",
         "where-to-build-the-agent-insurer"
       ],
       "figures": [
@@ -514,6 +945,7 @@
         "who-signs-for-this"
       ],
       "links_in": [
+        "agents-have-an-identity-now",
         "insuring-agents-the-whole-story",
         "where-to-build-the-agent-insurer",
         "who-carries-the-risk",
@@ -1430,7 +1862,9 @@
         "a-directory-of-people-and-keys",
         "secrets-on-public-keys"
       ],
-      "links_in": [],
+      "links_in": [
+        "agents-have-an-identity-now"
+      ],
       "figures": [
         {
           "file": "pka-chain.webp",
@@ -1678,7 +2112,9 @@
         "knowledge-graphs-for-kgell",
         "from-send-to-sgit"
       ],
-      "links_in": [],
+      "links_in": [
+        "investor-sgit-ai"
+      ],
       "figures": [
         {
           "file": "inv-paths.webp",
@@ -2812,6 +3248,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "investor-sgit-ai",
         "the-legal-ai-services-map"
       ],
       "figures": [
@@ -4090,6 +4527,7 @@
       ],
       "links_out": [],
       "links_in": [
+        "investor-sgit-ai",
         "how-a-journalist-agent-publishes-here"
       ],
       "figures": [
@@ -9002,6 +9440,7 @@
         "a-newsroom-for-one"
       ],
       "links_in": [
+        "agents-have-an-identity-now",
         "a-newsroom-for-one"
       ],
       "figures": [
@@ -18192,6 +18631,7 @@
         "the-editors-channel"
       ],
       "links_in": [
+        "agents-have-an-identity-now",
         "the-push-is-the-authorisation",
         "a-pen-and-a-key",
         "messaging-fs",
@@ -18716,6 +19156,7 @@
         "explorer-coding"
       ],
       "links_in": [
+        "investor-sgit-ai",
         "a-small-slice-sets-the-price"
       ],
       "figures": [
@@ -18893,6 +19334,7 @@
         "the-exit-is-when-you-sell-control"
       ],
       "links_in": [
+        "investor-sgit-ai",
         "the-exit-is-when-you-sell-control"
       ],
       "figures": [
@@ -20960,6 +21402,7 @@
         "can-you-sell-it"
       ],
       "links_in": [
+        "investor-sgit-ai",
         "where-to-invest-in-sgit",
         "the-exit-is-when-you-sell-control",
         "a-trusted-framework-for-agentic-finance",
@@ -21643,6 +22086,7 @@
         "the-expert-founders"
       ],
       "links_in": [
+        "investor-sgit-ai",
         "jobs-that-never-scaled",
         "fund-it-with-time",
         "can-you-sell-it"
@@ -24072,6 +24516,7 @@
         "the-man-behind-the-curtain"
       ],
       "links_in": [
+        "agents-have-an-identity-now",
         "the-push-is-the-authorisation",
         "a-pen-and-a-key",
         "governed-semi-autonomous-development-read-here",
@@ -31830,6 +32275,7 @@
         "the-fork-next-door"
       ],
       "links_in": [
+        "investor-sgit-ai",
         "the-exit-is-when-you-sell-control",
         "a-small-slice-sets-the-price",
         "the-fork-next-door",
@@ -32046,6 +32492,7 @@
         "paying-after-the-value"
       ],
       "links_in": [
+        "investor-sgit-ai",
         "the-exit-is-when-you-sell-control",
         "a-small-slice-sets-the-price",
         "fund-it-with-time",
