@@ -1712,6 +1712,108 @@
    "added": null,
    "updated": null,
    "note": "The release was built under the new pending-version scheme but not pushed, because the same four wire-test date checks failed."
+  },
+  {
+   "id": "2699d7db8d59",
+   "task": "industry",
+   "trigger": "trig_011zoPuraUqDP1iQczeDj4rX",
+   "fired_at": "2026-10-29T05:47:35Z",
+   "finished_at": "2026-10-29T05:58:09Z",
+   "duration_s": 630.8,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.168353,
+     "input": 857241,
+     "output": 134321,
+     "cache_read": 454595,
+     "cache_write": 87379,
+     "thinking": 80491
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 1.987559,
+     "input": 118,
+     "output": 66425,
+     "cache_read": 4000925,
+     "cache_write": 312564,
+     "thinking": 5408
+    }
+   },
+   "cost_usd": 2.155911,
+   "turns": 23,
+   "subagents": 4,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "published",
+   "release": "2026-10-29.1",
+   "added": 8,
+   "updated": 3,
+   "note": "Eight new stories and three updates, at the bottom of the daily target."
+  },
+  {
+   "id": "b638c8d40267",
+   "task": "dinis",
+   "trigger": "trig_01HpWP4wn9pvaWDi2XC5AnQo",
+   "fired_at": "2026-10-29T06:13:09Z",
+   "finished_at": "2026-10-29T06:26:57Z",
+   "duration_s": 824.2,
+   "models": {
+    "claude-haiku-5-5": {
+     "cost_usd": 0.060087,
+     "input": 357722,
+     "output": 39207,
+     "cache_read": 50911,
+     "cache_write": 33619,
+     "thinking": 25887
+    },
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.374924,
+     "input": 30,
+     "output": 12730,
+     "cache_read": 680322,
+     "cache_write": 44883,
+     "thinking": 1278
+    }
+   },
+   "cost_usd": 0.435011,
+   "turns": 29,
+   "subagents": 1,
+   "refused": 4,
+   "refused_kinds": [
+    "web fetch"
+   ],
+   "outcome": "published",
+   "release": "2026-10-29.1",
+   "added": 10,
+   "updated": 0,
+   "note": "Ten new stories from pages it could reach, though the desk brief and charter were refused again."
+  },
+  {
+   "id": "4fe0dc5d6555",
+   "task": "newsroom",
+   "trigger": "trig_01H41yFnc3ZmuahVDLaPkCYr",
+   "fired_at": "2026-10-29T06:57:19Z",
+   "finished_at": "2026-10-29T07:08:04Z",
+   "duration_s": 640.2,
+   "models": {
+    "claude-sonnet-5-5": {
+     "cost_usd": 0.652394,
+     "input": 68,
+     "output": 11640,
+     "cache_read": 2484020,
+     "cache_write": 71864,
+     "thinking": 2619
+    }
+   },
+   "cost_usd": 0.652394,
+   "turns": 34,
+   "subagents": 0,
+   "refused": 0,
+   "refused_kinds": [],
+   "outcome": "blocked",
+   "release": null,
+   "added": null,
+   "updated": null,
+   "note": "The refresh was committed locally but not pushed, because the same four wire-test date checks failed."
   }
  ],
  "sessions": [
@@ -1735,15 +1837,15 @@
    "name": "@newsroom.accountant's session",
    "kind": "accountant",
    "from": "2026-10-16",
-   "as_of": "2026-10-28T07:42:20Z",
+   "as_of": "2026-10-29T07:42:23Z",
    "models": [
     "claude-sonnet-5-5"
    ],
-   "cost_usd": 16.035782,
-   "input": 164,
-   "output": 59646,
-   "cache_read": 23579495,
-   "cache_write": 3269000,
+   "cost_usd": 19.190208,
+   "input": 190,
+   "output": 66799,
+   "cache_read": 31006631,
+   "cache_write": 3853664,
    "note": "the accountant's own session, read from the platform at the end of the run of 17 October"
   }
  ],
